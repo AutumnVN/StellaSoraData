@@ -1,0 +1,1019 @@
+{
+  "perk": {
+    "Id": "perk",
+    "Probability": 50,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 3
+  },
+  "subPerk": {
+    "Id": "subPerk",
+    "Probability": 50,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "chat": {
+    "Id": "chat",
+    "Probability": 100,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "chatLvUp": {
+    "Id": "chatLvUp",
+    "Probability": 100,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "chatNext": {
+    "Id": "chatNext",
+    "Probability": 100,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 3
+  },
+  "shopRoom": {
+    "Id": "shopRoom",
+    "Probability": 50,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "restRoom": {
+    "Id": "restRoom",
+    "Probability": 50,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "eventRoom": {
+    "Id": "eventRoom",
+    "Probability": 50,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "battleClear": {
+    "Id": "battleClear",
+    "Probability": 50,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "music": {
+    "Id": "music",
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "uniMusic": {
+    "Id": "uniMusic",
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "swap": {
+    "Id": "swap",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "buildPick": {
+    "Id": "buildPick",
+    "Probability": 100,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "win": {
+    "Id": "win",
+    "Probability": 100,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "lose": {
+    "Id": "lose",
+    "Probability": 100,
+    "ResType": 3,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "gachaNew": {
+    "Id": "gachaNew",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "gacha": {
+    "Id": "gacha",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "charUp": {
+    "Id": "charUp",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Cd": 5.0,
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "exCharUp": {
+    "Id": "exCharUp",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Cd": 5.0,
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "unlockLook": {
+    "Id": "unlockLook",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "unlockCG": {
+    "Id": "unlockCG",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "thankSmall": {
+    "Id": "thankSmall",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Cd": 5.0,
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "thank": {
+    "Id": "thank",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Cd": 5.0,
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "thankEx": {
+    "Id": "thankEx",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Cd": 5.0,
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "afflv1": {
+    "Id": "afflv1",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "afflv2": {
+    "Id": "afflv2",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "afflv3": {
+    "Id": "afflv3",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "afflv4": {
+    "Id": "afflv4",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "greet": {
+    "Id": "greet",
+    "Probability": 30,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 10.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "greetmorn": {
+    "Id": "greetmorn",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "greetnoon": {
+    "Id": "greetnoon",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "greetnight": {
+    "Id": "greetnight",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "standee": {
+    "Id": "standee",
+    "Probability": 50,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "fullscreen": {
+    "Id": "fullscreen",
+    "Probability": 50,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "posterchat": {
+    "Id": "posterchat",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "affchat1": {
+    "Id": "affchat1",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "affchat2": {
+    "Id": "affchat2",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "affchat3": {
+    "Id": "affchat3",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "affchat4": {
+    "Id": "affchat4",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "affchat5": {
+    "Id": "affchat5",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "hfc": {
+    "Id": "hfc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 15.0,
+    "VoPlayer": 3,
+    "Priority": 3
+  },
+  "hang": {
+    "Id": "hang",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 3
+  },
+  "exhang": {
+    "Id": "exhang",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 2.0,
+    "VoPlayer": 3,
+    "Priority": 3
+  },
+  "yostar": {
+    "Id": "yostar",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "confirm": {
+    "Id": "confirm",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "deny": {
+    "Id": "deny",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "question": {
+    "Id": "question",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "confuse": {
+    "Id": "confuse",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "sad": {
+    "Id": "sad",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "excit": {
+    "Id": "excit",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "angry": {
+    "Id": "angry",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "happy": {
+    "Id": "happy",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "sigh": {
+    "Id": "sigh",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "catchphrase": {
+    "Id": "catchphrase",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "ultskill": {
+    "Id": "ultskill",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "dead": {
+    "Id": "dead",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "valentine": {
+    "Id": "valentine",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 1,
+    "DateTrigger": true,
+    "Date": "2.14"
+  },
+  "xmas": {
+    "Id": "xmas",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 1,
+    "DateTrigger": true,
+    "Date": "12.25"
+  },
+  "newyear": {
+    "Id": "newyear",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 1,
+    "DateTrigger": true,
+    "Date": "1.1"
+  },
+  "birth": {
+    "Id": "birth",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "yourbirth": {
+    "Id": "yourbirth",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 1
+  },
+  "Tower_typeA": {
+    "Id": "Tower_typeA",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "Tower_typeB": {
+    "Id": "Tower_typeB",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "Tower_typeC": {
+    "Id": "Tower_typeC",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "final": {
+    "Id": "final",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "leave": {
+    "Id": "leave",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "chat_lv1": {
+    "Id": "chat_lv1",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "chat_lv2": {
+    "Id": "chat_lv2",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "chat_lv3": {
+    "Id": "chat_lv3",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "event_lv1": {
+    "Id": "event_lv1",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "event_lv2": {
+    "Id": "event_lv2",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "event_lv3": {
+    "Id": "event_lv3",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "greet_npc": {
+    "Id": "greet_npc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "greetmorn_npc": {
+    "Id": "greetmorn_npc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "greetnoon_npc": {
+    "Id": "greetnoon_npc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "greetnight_npc": {
+    "Id": "greetnight_npc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "posterchat_npc": {
+    "Id": "posterchat_npc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "hfc_npc": {
+    "Id": "hfc_npc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 3
+  },
+  "hang_npc": {
+    "Id": "hang_npc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "exhang_npc": {
+    "Id": "exhang_npc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "thank_npc": {
+    "Id": "thank_npc",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "thanksp": {
+    "Id": "thanksp",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "thankLvup": {
+    "Id": "thankLvup",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "onsale": {
+    "Id": "onsale",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "limited": {
+    "Id": "limited",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "Tab": {
+    "Id": "Tab",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "clear": {
+    "Id": "clear",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 3
+  },
+  "Lvup": {
+    "Id": "Lvup",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "enterTourGuild": {
+    "Id": "enterTourGuild",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "enterWorldClass": {
+    "Id": "enterWorldClass",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "enterDailyQuest": {
+    "Id": "enterDailyQuest",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "questCompelete": {
+    "Id": "questCompelete",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "twin_greet": {
+    "Id": "twin_greet",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  },
+  "twin_effect": {
+    "Id": "twin_effect",
+    "Probability": 100,
+    "ResType": 4,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "VoPlayer": 3,
+    "Priority": 2
+  }
+}
