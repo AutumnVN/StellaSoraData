@@ -1,0 +1,21 @@
+{
+  "10100": {
+    "Id": 10100,
+    "ActivityGroupType": 1,
+    "ActivityThemeType": 1,
+    "StartTime": "2025-10-28T12:00:00+08:00",
+    "EndTime": "2025-11-11T04:00:00+08:00",
+    "EnterEndTime": "2025-11-18T04:00:00+08:00",
+    "EnterRes": "Icon/Banner/banner_swimsuit_m",
+    "PanelId": 149,
+    "PreLimit": 1,
+    "LimitParam": "3",
+    "StartCondType": 71,
+    "Enter": "{\"MiniGame\":[400000,1,110],\"Task\":[1010003,2,171],\"AVG\":[1010002,3,163],\"Store\":[1010004,4,172],\"Level\":[1010001,5,157]}",
+    "UIAssetsPrefab": "Swim",
+    "CtrlName": "ActivitySwimCtrl",
+    "DesText": "ActivityGroup.10100.1",
+    "TabBgRes": "Icon/Banner/tab_activity_swimsuit",
+    "TransitionId": 26
+  }
+}
