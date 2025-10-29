@@ -7,6 +7,10 @@
     "IsServer": true,
     "Type": 1,
     "Priority": 1,
+    "Position": [
+      1,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.10101.2",
     "ItemId1": 51,
     "ItemQty1": 10
@@ -19,6 +23,10 @@
     "IsServer": true,
     "Type": 1,
     "Priority": 2,
+    "Position": [
+      1,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.10102.2",
     "ItemId1": 51,
     "ItemQty1": 10
@@ -31,6 +39,10 @@
     "IsServer": true,
     "Type": 1,
     "Priority": 3,
+    "Position": [
+      1,
+      3
+    ],
     "Desc": "StarTowerGrowthNode.10103.2",
     "ItemId1": 51,
     "ItemQty1": 10
@@ -43,9 +55,16 @@
     "IsServer": true,
     "IsClient": true,
     "Type": 1,
+    "PreNodes": [
+      10101
+    ],
     "EffectClient": 21,
     "ClientParams": "[500]",
     "Priority": 4,
+    "Position": [
+      2,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.10201.2",
     "ItemId1": 51,
     "ItemQty1": 20
@@ -57,7 +76,14 @@
     "Name": "StarTowerGrowthNode.10202.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10102
+    ],
     "Priority": 5,
+    "Position": [
+      2,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.10202.2",
     "ItemId1": 51,
     "ItemQty1": 20
@@ -69,7 +95,14 @@
     "Name": "StarTowerGrowthNode.10203.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10103
+    ],
     "Priority": 6,
+    "Position": [
+      2,
+      3
+    ],
     "Desc": "StarTowerGrowthNode.10203.2",
     "ItemId1": 51,
     "ItemQty1": 20
@@ -83,9 +116,18 @@
     "IsClient": true,
     "Type": 2,
     "Color": 1,
+    "PreNodes": [
+      10201,
+      10202,
+      10203
+    ],
     "EffectClient": 4,
     "Priority": 7,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      3,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.10301.2",
     "ItemId1": 51,
     "ItemQty1": 50
@@ -97,7 +139,14 @@
     "Name": "StarTowerGrowthNode.10401.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10301
+    ],
     "Priority": 8,
+    "Position": [
+      4,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.10401.2",
     "ItemId1": 51,
     "ItemQty1": 20
@@ -109,7 +158,14 @@
     "Name": "StarTowerGrowthNode.10402.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10301
+    ],
     "Priority": 9,
+    "Position": [
+      4,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.10402.2",
     "ItemId1": 51,
     "ItemQty1": 20
@@ -121,7 +177,14 @@
     "Name": "StarTowerGrowthNode.10403.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10301
+    ],
     "Priority": 10,
+    "Position": [
+      4,
+      3
+    ],
     "Desc": "StarTowerGrowthNode.10403.2",
     "ItemId1": 51,
     "ItemQty1": 20
@@ -133,7 +196,14 @@
     "Name": "StarTowerGrowthNode.10501.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10401
+    ],
     "Priority": 11,
+    "Position": [
+      5,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.10501.2",
     "ItemId1": 51,
     "ItemQty1": 20
@@ -146,9 +216,16 @@
     "IsServer": true,
     "IsClient": true,
     "Type": 1,
+    "PreNodes": [
+      10402
+    ],
     "EffectClient": 21,
     "ClientParams": "[1000]",
     "Priority": 12,
+    "Position": [
+      5,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.10502.2",
     "ItemId1": 51,
     "ItemQty1": 20
@@ -160,7 +237,14 @@
     "Name": "StarTowerGrowthNode.10503.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10403
+    ],
     "Priority": 13,
+    "Position": [
+      5,
+      3
+    ],
     "Desc": "StarTowerGrowthNode.10503.2",
     "ItemId1": 51,
     "ItemQty1": 20
@@ -173,8 +257,16 @@
     "IsServer": true,
     "Type": 2,
     "Color": 2,
+    "PreNodes": [
+      10501,
+      10502
+    ],
     "Priority": 14,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_2",
+    "Position": [
+      6,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.10601.2",
     "ItemId1": 51,
     "ItemQty1": 50
@@ -188,10 +280,18 @@
     "IsClient": true,
     "Type": 2,
     "Color": 2,
+    "PreNodes": [
+      10502,
+      10503
+    ],
     "EffectClient": 26,
     "ClientParams": "[1]",
     "Priority": 15,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      6,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.10602.2",
     "ItemId1": 51,
     "ItemQty1": 50
@@ -203,7 +303,15 @@
     "Name": "StarTowerGrowthNode.10701.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10601,
+      10602
+    ],
     "Priority": 16,
+    "Position": [
+      7,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.10701.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -215,7 +323,15 @@
     "Name": "StarTowerGrowthNode.10702.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10601,
+      10602
+    ],
     "Priority": 17,
+    "Position": [
+      7,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.10702.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -227,7 +343,14 @@
     "Name": "StarTowerGrowthNode.10801.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10701
+    ],
     "Priority": 18,
+    "Position": [
+      8,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.10801.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -239,7 +362,14 @@
     "Name": "StarTowerGrowthNode.10802.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      10702
+    ],
     "Priority": 19,
+    "Position": [
+      8,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.10802.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -252,8 +382,16 @@
     "IsServer": true,
     "Type": 2,
     "Color": 2,
+    "PreNodes": [
+      10801,
+      10802
+    ],
     "Priority": 20,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      9,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.10901.2",
     "ItemId1": 51,
     "ItemQty1": 60
@@ -266,6 +404,10 @@
     "IsServer": true,
     "Type": 1,
     "Priority": 21,
+    "Position": [
+      1,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.20101.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -278,6 +420,10 @@
     "IsServer": true,
     "Type": 1,
     "Priority": 22,
+    "Position": [
+      1,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.20102.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -289,7 +435,14 @@
     "Name": "StarTowerGrowthNode.20201.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20101
+    ],
     "Priority": 23,
+    "Position": [
+      2,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.20201.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -301,7 +454,14 @@
     "Name": "StarTowerGrowthNode.20202.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20102
+    ],
     "Priority": 24,
+    "Position": [
+      2,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.20202.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -314,8 +474,16 @@
     "IsServer": true,
     "Type": 2,
     "Color": 1,
+    "PreNodes": [
+      20201,
+      20202
+    ],
     "Priority": 25,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      3,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.20301.2",
     "ItemId1": 51,
     "ItemQty1": 80
@@ -329,10 +497,18 @@
     "IsClient": true,
     "Type": 2,
     "Color": 1,
+    "PreNodes": [
+      20201,
+      20202
+    ],
     "EffectClient": 26,
     "ClientParams": "[2]",
     "Priority": 26,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      3,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.20302.2",
     "ItemId1": 51,
     "ItemQty1": 80
@@ -344,7 +520,14 @@
     "Name": "StarTowerGrowthNode.20401.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20301
+    ],
     "Priority": 27,
+    "Position": [
+      4,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.20401.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -356,7 +539,15 @@
     "Name": "StarTowerGrowthNode.20402.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20301,
+      20302
+    ],
     "Priority": 28,
+    "Position": [
+      4,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.20402.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -368,7 +559,14 @@
     "Name": "StarTowerGrowthNode.20403.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20302
+    ],
     "Priority": 29,
+    "Position": [
+      4,
+      3
+    ],
     "Desc": "StarTowerGrowthNode.20403.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -380,7 +578,14 @@
     "Name": "StarTowerGrowthNode.20501.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20401
+    ],
     "Priority": 30,
+    "Position": [
+      5,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.20501.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -392,7 +597,14 @@
     "Name": "StarTowerGrowthNode.20502.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20402
+    ],
     "Priority": 31,
+    "Position": [
+      5,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.20502.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -404,7 +616,14 @@
     "Name": "StarTowerGrowthNode.20503.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20403
+    ],
     "Priority": 32,
+    "Position": [
+      5,
+      3
+    ],
     "Desc": "StarTowerGrowthNode.20503.2",
     "ItemId1": 51,
     "ItemQty1": 30
@@ -418,10 +637,19 @@
     "IsClient": true,
     "Type": 2,
     "Color": 3,
+    "PreNodes": [
+      20501,
+      20502,
+      20503
+    ],
     "EffectClient": 30,
     "ClientParams": "[1]",
     "Priority": 33,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      6,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.20601.2",
     "ItemId1": 51,
     "ItemQty1": 80
@@ -433,7 +661,14 @@
     "Name": "StarTowerGrowthNode.20701.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20601
+    ],
     "Priority": 34,
+    "Position": [
+      7,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.20701.2",
     "ItemId1": 51,
     "ItemQty1": 40
@@ -445,7 +680,14 @@
     "Name": "StarTowerGrowthNode.20702.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20601
+    ],
     "Priority": 35,
+    "Position": [
+      7,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.20702.2",
     "ItemId1": 51,
     "ItemQty1": 40
@@ -457,7 +699,14 @@
     "Name": "StarTowerGrowthNode.20801.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20701
+    ],
     "Priority": 36,
+    "Position": [
+      8,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.20801.2",
     "ItemId1": 51,
     "ItemQty1": 40
@@ -469,7 +718,14 @@
     "Name": "StarTowerGrowthNode.20802.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      20702
+    ],
     "Priority": 37,
+    "Position": [
+      8,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.20802.2",
     "ItemId1": 51,
     "ItemQty1": 40
@@ -482,8 +738,16 @@
     "IsServer": true,
     "Type": 2,
     "Color": 3,
+    "PreNodes": [
+      20801,
+      20802
+    ],
     "Priority": 38,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      9,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.20901.2",
     "ItemId1": 51,
     "ItemQty1": 80
@@ -496,8 +760,16 @@
     "IsServer": true,
     "Type": 2,
     "Color": 3,
+    "PreNodes": [
+      20801,
+      20802
+    ],
     "Priority": 39,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_2",
+    "Position": [
+      9,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.20902.2",
     "ItemId1": 51,
     "ItemQty1": 80
@@ -510,6 +782,10 @@
     "IsServer": true,
     "Type": 1,
     "Priority": 40,
+    "Position": [
+      1,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.30101.2",
     "ItemId1": 51,
     "ItemQty1": 60
@@ -522,6 +798,10 @@
     "IsServer": true,
     "Type": 1,
     "Priority": 41,
+    "Position": [
+      1,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.30102.2",
     "ItemId1": 51,
     "ItemQty1": 60
@@ -533,7 +813,14 @@
     "Name": "StarTowerGrowthNode.30201.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30101
+    ],
     "Priority": 42,
+    "Position": [
+      2,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.30201.2",
     "ItemId1": 51,
     "ItemQty1": 80
@@ -545,7 +832,14 @@
     "Name": "StarTowerGrowthNode.30202.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30102
+    ],
     "Priority": 43,
+    "Position": [
+      2,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.30202.2",
     "ItemId1": 51,
     "ItemQty1": 80
@@ -559,10 +853,18 @@
     "IsClient": true,
     "Type": 2,
     "Color": 1,
+    "PreNodes": [
+      30201,
+      30202
+    ],
     "EffectClient": 30,
     "ClientParams": "[3]",
     "Priority": 44,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      3,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.30301.2",
     "ItemId1": 51,
     "ItemQty1": 120
@@ -574,7 +876,14 @@
     "Name": "StarTowerGrowthNode.30401.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30301
+    ],
     "Priority": 45,
+    "Position": [
+      4,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.30401.2",
     "ItemId1": 51,
     "ItemQty1": 100
@@ -586,7 +895,14 @@
     "Name": "StarTowerGrowthNode.30402.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30301
+    ],
     "Priority": 46,
+    "Position": [
+      4,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.30402.2",
     "ItemId1": 51,
     "ItemQty1": 100
@@ -598,7 +914,14 @@
     "Name": "StarTowerGrowthNode.30501.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30401
+    ],
     "Priority": 47,
+    "Position": [
+      5,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.30501.2",
     "ItemId1": 51,
     "ItemQty1": 120
@@ -610,7 +933,14 @@
     "Name": "StarTowerGrowthNode.30502.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30402
+    ],
     "Priority": 48,
+    "Position": [
+      5,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.30502.2",
     "ItemId1": 51,
     "ItemQty1": 120
@@ -623,8 +953,16 @@
     "IsServer": true,
     "Type": 2,
     "Color": 2,
+    "PreNodes": [
+      30501,
+      30502
+    ],
     "Priority": 49,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_2",
+    "Position": [
+      6,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.30601.2",
     "ItemId1": 51,
     "ItemQty1": 200
@@ -636,7 +974,14 @@
     "Name": "StarTowerGrowthNode.30701.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30601
+    ],
     "Priority": 50,
+    "Position": [
+      7,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.30701.2",
     "ItemId1": 51,
     "ItemQty1": 150
@@ -648,7 +993,14 @@
     "Name": "StarTowerGrowthNode.30702.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30601
+    ],
     "Priority": 51,
+    "Position": [
+      7,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.30702.2",
     "ItemId1": 51,
     "ItemQty1": 150
@@ -660,7 +1012,14 @@
     "Name": "StarTowerGrowthNode.30801.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30701
+    ],
     "Priority": 52,
+    "Position": [
+      8,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.30801.2",
     "ItemId1": 51,
     "ItemQty1": 150
@@ -672,7 +1031,14 @@
     "Name": "StarTowerGrowthNode.30802.1",
     "IsServer": true,
     "Type": 1,
+    "PreNodes": [
+      30702
+    ],
     "Priority": 53,
+    "Position": [
+      8,
+      2
+    ],
     "Desc": "StarTowerGrowthNode.30802.2",
     "ItemId1": 51,
     "ItemQty1": 150
@@ -685,8 +1051,16 @@
     "IsServer": true,
     "Type": 2,
     "Color": 3,
+    "PreNodes": [
+      30801,
+      30802
+    ],
     "Priority": 54,
     "Icon": "Icon/ZZZOther/startowergrowth_keypoint_1",
+    "Position": [
+      9,
+      1
+    ],
     "Desc": "StarTowerGrowthNode.30901.2",
     "ItemId1": 51,
     "ItemQty1": 310

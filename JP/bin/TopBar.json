@@ -32,7 +32,10 @@
     "Id": "CharSkill",
     "Title": "TopBar.CharSkill.1",
     "EntryId": 100301,
-    "Coin": true
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
   },
   "RoguelikeBuildBriefList": {
     "Id": "RoguelikeBuildBriefList",
@@ -61,6 +64,10 @@
     "Id": "Mail",
     "Title": "TopBar.Mail.1",
     "Coin": true,
+    "CoinIds": [
+      1,
+      2
+    ],
     "HideCoinAdd": true
   },
   "Friend": {
@@ -74,7 +81,10 @@
   "Mainline": {
     "Id": "Mainline",
     "Title": "TopBar.Mainline.1",
-    "Coin": true
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
   },
   "RoguelikeLevel": {
     "Id": "RoguelikeLevel",
@@ -102,7 +112,10 @@
     "Id": "CharUpPanel",
     "Title": "TopBar.CharUpPanel.1",
     "EntryId": 100201,
-    "Coin": true
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
   },
   "Achievement": {
     "Id": "Achievement",
@@ -150,6 +163,10 @@
     "Title": "TopBar.ExChangePanel.1",
     "HideBack": true,
     "Coin": true,
+    "CoinIds": [
+      2,
+      3
+    ],
     "HideCoinAdd": true
   },
   "GachaPreview": {
@@ -168,6 +185,10 @@
     "HideBack": true,
     "Energy": true,
     "Coin": true,
+    "CoinIds": [
+      2,
+      3
+    ],
     "HideCoinAdd": true
   },
   "Dictionary": {
@@ -210,7 +231,10 @@
     "Id": "Disc",
     "Title": "TopBar.Disc.1",
     "EntryId": 300104,
-    "Coin": true
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
   },
   "DiscList": {
     "Id": "DiscList",
@@ -223,7 +247,10 @@
   "Equipment": {
     "Id": "Equipment",
     "Title": "TopBar.Equipment.1",
-    "Coin": true
+    "Coin": true,
+    "CoinIds": [
+      1
+    ]
   },
   "EquipmentSelect": {
     "Id": "EquipmentSelect",
@@ -284,7 +311,10 @@
     "Id": "StarTowerGrowth",
     "Title": "TopBar.StarTowerGrowth.1",
     "EntryId": 200202,
-    "Coin": true
+    "Coin": true,
+    "CoinIds": [
+      51
+    ]
   },
   "StarTowerRankLevel": {
     "Id": "StarTowerRankLevel",
@@ -299,6 +329,9 @@
     "Title": "TopBar.VampireSurvivorLevelSelectPanel.1",
     "EntryId": 201301,
     "Coin": true,
+    "CoinIds": [
+      31
+    ],
     "HideCoinAdd": true
   },
   "MiningGame": {
@@ -371,7 +404,10 @@
   "SwimTheme": {
     "Id": "SwimTheme",
     "Title": "TopBar.SwimTheme.1",
-    "Coin": true
+    "Coin": true,
+    "CoinIds": [
+      73101
+    ]
   },
   "MiningGameGuidePanel": {
     "Id": "MiningGameGuidePanel",
@@ -408,7 +444,10 @@
   "SwimShop": {
     "Id": "SwimShop",
     "Title": "TopBar.SwimShop.1",
-    "Coin": true
+    "Coin": true,
+    "CoinIds": [
+      73101
+    ]
   },
   "SwimShopPopup": {
     "Id": "SwimShopPopup",
@@ -419,7 +458,10 @@
   "SwimTask": {
     "Id": "SwimTask",
     "Title": "TopBar.SwimTask.1",
-    "Coin": true
+    "Coin": true,
+    "CoinIds": [
+      73101
+    ]
   },
   "MallSkinPreview": {
     "Id": "MallSkinPreview",
