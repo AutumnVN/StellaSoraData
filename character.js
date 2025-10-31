@@ -40,14 +40,12 @@ for (const id in CHARACTER) {
         loveGift: getGifts(CHARACTERDES[id].PreferTags),
         hateGift: getGifts(CHARACTERDES[id].HateTags),
         normalAtk: {
-            id: CHARACTER[id].NormalAtkId,
             name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc],
             params: getSkillParams(CHARACTER[id].NormalAtkId),
         },
         skill: {
-            id: CHARACTER[id].SkillId,
             name: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Title],
             cooldown: SKILL[CHARACTER[id].SkillId].SkillCD / 10000 + 's',
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].BriefDesc],
@@ -55,7 +53,6 @@ for (const id in CHARACTER) {
             params: getSkillParams(CHARACTER[id].SkillId),
         },
         supportSkill: {
-            id: CHARACTER[id].AssistSkillId,
             name: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
             cooldown: SKILL[CHARACTER[id].AssistSkillId].SkillCD / 10000 + 's',
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].BriefDesc],
@@ -63,7 +60,6 @@ for (const id in CHARACTER) {
             params: getSkillParams(CHARACTER[id].AssistSkillId),
         },
         ultimate: {
-            id: CHARACTER[id].UltimateId,
             name: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
             cooldown: SKILL[CHARACTER[id].UltimateId].SkillCD / 10000 + 's',
             energy: SKILL[CHARACTER[id].UltimateId].UltraEnergy / 10000,
@@ -262,7 +258,7 @@ function getUpgrades(charId) {
 
     return keys.map(key => {
         const a = CHARACTERADVANCE[key];
-        const mats = [];
+        const mats = {};
 
         for (let i = 1; ; i++) {
             const tidKey = `Tid${i}`;
@@ -275,18 +271,13 @@ function getUpgrades(charId) {
             const itemTitle = ITEM[tid] && ITEM[tid].Title;
             const name = LANG_ITEM[itemTitle];
 
-            mats.push({
-                id: tid,
-                name,
-                quantity: qty,
-            });
+            mats[name] = qty;
         }
 
-        return {
-            mats,
-            dorra: a.GoldQty,
-        };
-    }).filter(u => u.mats && u.mats.length > 0);
+        mats.Dorra = a.GoldQty;
+
+        return mats;
+    }).filter(mats => Object.keys(mats).length > 1);
 }
 
 function getSkillUpgrades(charId) {
@@ -295,7 +286,7 @@ function getSkillUpgrades(charId) {
 
     return keys.map(key => {
         const a = CHARACTERSKILLUPGRADE[key];
-        const mats = [];
+        const mats = {};
 
         for (let i = 1; ; i++) {
             const tidKey = `Tid${i}`;
@@ -307,18 +298,13 @@ function getSkillUpgrades(charId) {
             const qty = a[qtyKey];
             const name = LANG_ITEM[ITEM[tid].Title];
 
-            mats.push({
-                id: tid,
-                name,
-                quantity: qty,
-            });
+            mats[name] = qty;
         }
 
-        return {
-            mats,
-            dorra: a.GoldQty,
-        };
-    }).filter(u => u.mats && u.mats.length > 0);
+        mats.Dorra = a.GoldQty;
+
+        return mats;
+    }).filter(mats => Object.keys(mats).length > 1);
 }
 
 function getPotentials(charId) {
@@ -327,35 +313,30 @@ function getPotentials(charId) {
 
     return {
         mainCore: pot.MasterSpecificPotentialIds.map(id => ({
-            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             params: getPotentialParams(id),
         })),
         mainNormal: pot.MasterNormalPotentialIds.map(id => ({
-            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             params: getPotentialParams(id),
         })),
         common: pot.CommonPotentialIds.map(id => ({
-            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             params: getPotentialParams(id),
         })),
         supportCore: pot.AssistSpecificPotentialIds.map(id => ({
-            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             params: getPotentialParams(id),
         })),
         supportNormal: pot.AssistNormalPotentialIds.map(id => ({
-            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
@@ -395,10 +376,7 @@ function getGifts(tagIds) {
         const giftIds = Object.keys(AFFINITYGIFT)
             .filter(key => AFFINITYGIFT[key].Tags.includes(tagId));
 
-        return giftIds.map(giftId => ({
-            id: +giftId,
-            name: LANG_ITEM[ITEM[giftId].Title],
-        }));
+        return giftIds.map(giftId => LANG_ITEM[ITEM[giftId].Title]);
     }).flat();
 }
 
