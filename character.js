@@ -29,6 +29,8 @@ const LANG_TALENTGROUP = require('./EN/language/en_US/TalentGroup.json');
 const character = {};
 
 for (const id in CHARACTER) {
+    if (LANG_CHARACTER[CHARACTER[id].Name] === '???') continue;
+
     character[id] = {
         id: +id,
         name: LANG_CHARACTER[CHARACTER[id].Name],

@@ -29,6 +29,7 @@ jobs:
         git fetch upstream
         git merge --allow-unrelated-histories --no-edit upstream/main
         node character.js
+        node disc.js
         node gacha.js
         git add .
         if git diff --cached --quiet; then

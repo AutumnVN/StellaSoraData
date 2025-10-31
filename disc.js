@@ -16,6 +16,8 @@ const LANG_SUBNOTESKILL = require('./EN/language/en_US/SubNoteSkill.json');
 const disc = {};
 
 for (const id in DISC) {
+    if (LANG_ITEM[ITEM[id].Title] === '???') continue;
+
     disc[id] = {
         id: +id,
         name: LANG_ITEM[ITEM[id].Title],
