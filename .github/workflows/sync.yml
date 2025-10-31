@@ -1,0 +1,42 @@
+name: Sync
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v5
+
+    - uses: actions/setup-node@v6
+      with:
+        node-version: 24
+
+    - run: |
+        git config --global pull.rebase false
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git remote add upstream https://github.com/Hiro420/StellaSoraData
+        git fetch upstream
+        git merge --allow-unrelated-histories --no-edit upstream/main
+        node character.js
+        node gacha.js
+        git add .
+        if git diff --cached --quiet; then
+          exit 0
+        fi
+        git commit -m 'sync' || true
+        git push origin main
+
+
+
+
