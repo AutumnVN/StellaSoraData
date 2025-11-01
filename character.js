@@ -369,9 +369,6 @@ function getStats(charId) {
                 lvl: attr.lvl,
                 hp: attr.Hp,
                 atk: attr.Atk,
-                def: attr.Def,
-                critRate: attr.CritRate / 100 + '%',
-                critDmg: attr.CritPower / 100 + '%',
             };
         });
 }
@@ -422,7 +419,7 @@ function getDates(charId) {
         return {
             name: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Name],
             clue: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Clue],
-            secondChoice: `${DATINGCHARACTEREVENT[eventId].BranchTag}. ${LANG_DATINGBRANCH[DATINGBRANCH[`${DATINGCHARACTEREVENT[eventId].DatingEventParams[1]}001`][`Option${DATINGCHARACTEREVENT[eventId].BranchTag}`]]}`,
+            secondChoice: LANG_DATINGBRANCH[DATINGBRANCH[`${DATINGCHARACTEREVENT[eventId].DatingEventParams[1]}001`][`Option${DATINGCHARACTEREVENT[eventId].BranchTag}`]],
         }
     });
 }
