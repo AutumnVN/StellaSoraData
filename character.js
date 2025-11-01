@@ -15,6 +15,8 @@ const ATTRIBUTE = require('./EN/bin/Attribute.json');
 const AFFINITYGIFT = require('./EN/bin/AffinityGift.json');
 const TALENT = require('./EN/bin/Talent.json');
 const TALENTGROUP = require('./EN/bin/TalentGroup.json');
+const DATINGCHARACTEREVENT = require('./EN/bin/DatingCharacterEvent.json');
+const DATINGBRANCH = require('./EN/bin/DatingBranch.json');
 const ONCEADDITTIONALATTRIBUTEVALUE = require('./EN/bin/OnceAdditionalAttributeValue.json');
 const SCRIPTPARAMETERVALUE = require('./EN/bin/ScriptParameterValue.json');
 const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
@@ -25,6 +27,8 @@ const LANG_ITEM = require('./EN/language/en_US/Item.json');
 const LANG_POTENTIAL = require('./EN/language/en_US/Potential.json');
 const LANG_TALENT = require('./EN/language/en_US/Talent.json');
 const LANG_TALENTGROUP = require('./EN/language/en_US/TalentGroup.json');
+const LANG_DATINGCHARACTEREVENT = require('./EN/language/en_US/DatingCharacterEvent.json');
+const LANG_DATINGBRANCH = require('./EN/language/en_US/DatingBranch.json');
 
 const character = {};
 
@@ -41,6 +45,7 @@ for (const id in CHARACTER) {
         tag: CHARACTERDES[id].Tag.map(tagId => LANG_CHARACTERTAG[`CharacterTag.${tagId}.1`]),
         loveGift: getGifts(CHARACTERDES[id].PreferTags),
         hateGift: getGifts(CHARACTERDES[id].HateTags),
+        date: getDates(id),
         normalAtk: {
             name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
@@ -409,4 +414,16 @@ function getTalentParams(talentId) {
     return resolveParam(params);
 }
 
+function getDates(charId) {
+    const eventIds = Object.keys(DATINGCHARACTEREVENT)
+        .filter(key => DATINGCHARACTEREVENT[key].DatingEventParams[0] === +charId);
+
+    return eventIds.map(eventId => {
+        return {
+            name: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Name],
+            clue: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Clue],
+            secondChoice: `${DATINGCHARACTEREVENT[eventId].BranchTag}. ${LANG_DATINGBRANCH[DATINGBRANCH[`${DATINGCHARACTEREVENT[eventId].DatingEventParams[1]}001`][`Option${DATINGCHARACTEREVENT[eventId].BranchTag}`]]}`,
+        }
+    });
+}
 
