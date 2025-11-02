@@ -397,6 +397,9 @@ function getTalents(charId) {
         const talentIds = Object.keys(TALENT)
             .filter(key => TALENT[key].GroupId === +groupId);
 
+        const last = talentIds.pop();
+        talentIds.unshift(last);
+
         return {
             name: LANG_TALENTGROUP[TALENTGROUP[groupId].Title],
             boost: talentIds.map(talentId => ({
