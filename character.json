@@ -1598,7 +1598,7 @@
                     "desc": "When Tilia takes fatal DMG, grants immunity to the DMG and restores <color=#ec6d21>&Param2&</color> of her Max HP. This effect can only be triggered once per battle.",
                     "params": [
                         "Aegis Protection",
-                        "30/40/50/60/70/80/90/100/100"
+                        "30%/40%/50%/60%/70%/80%/90%/100%/100%"
                     ]
                 },
                 {
@@ -15430,7 +15430,7 @@
                     "briefDesc": "When any ally triggers a Ventus Mark, there is a chance to restore Ann's HP.",
                     "desc": "When any ally triggers a Ventus Mark, There is a 30% chance to restore <color=#ec6d21>&Param1&</color> HP to Ann. This effect can only be triggered once every 5s.",
                     "params": [
-                        "3.8/5.1/6.4/7.7/9/10.3/11.6/12.9/14.2"
+                        "3.8%/5.1%/6.4%/7.7%/9%/10.3%/11.6%/12.9%/14.2%"
                     ]
                 },
                 {
@@ -18399,7 +18399,7 @@
                     "briefDesc": "When an ally lands a Crit Hit, restores the main Trekker's HP.",
                     "desc": "When an ally lands a Crit Hit, the main Trekker's HP is restored by <color=#ec6d21>&Param1&</color>. This effect can only be triggered once every 6s.",
                     "params": [
-                        "1.6/2.1/2.7/3.2/3.7/4.3/4.8/5.3/5.9"
+                        "1.6%/2.1%/2.7%/3.2%/3.7%/4.3%/4.8%/5.3%/5.9%"
                     ]
                 },
                 {
@@ -22409,7 +22409,7 @@
                     "briefDesc": "When Mistique deals DMG with an Auto Attack, restores HP to nearby Pumpka Phantoms. Increases her &Param2&.",
                     "desc": "When Mistique deals DMG with an Auto Attack, restores <color=#ec6d21>&Param1&</color> HP to nearby Pumpka Phantoms. This effect can only be triggered once per sec.\u000bIncreases her &Param2& by <color=#ec6d21>&Param3&</color>.",
                     "params": [
-                        "10/10/15/15/20/20/20/20/20",
+                        "10%/10%/15%/15%/20%/20%/20%/20%/20%",
                         "Minion DMG",
                         "11%/18%/25%/31%/38%/45%/51%/58%/65%"
                     ]
@@ -33451,7 +33451,7 @@
             "desc": "Raffles 5 times and follows the main Trekker.\u000bFull penguins: Throws the plushie and generates a penguin statue, dealing <color=#fb8037>&Param1& of ATK x7</color> as AoE Terra DMG. Full hearts: Shoots a heart arrow that restores the main Trekker's HP by <color=#fb8037>&Param2&</color> and explodes, dealing <color=#fb8037>&Param3& of ATK</color> as AoE Terra DMG. Hearts and penguins: Shoots in a sweeping motion, dealing <color=#fb8037>&Param4& of ATK x6</color> as Terra DMG. All these attacks inflict ##Terra Mark: Earth Vein#2029#.\u000bMore penguins than hearts: The squad receive Kiss of Penguin, which increases &Param5& by <color=#fb8037>&Param6&</color> for &Param7&s. More hearts than penguins: The squad receive Kiss of Love, which increases &Param8& by <color=#fb8037>&Param9&</color> for &Param10&s.",
             "params": [
                 "12%/13.3%/15.1%/20.3%/21.9%/23.5%/26.8%/28.2%/29.6%/32.3%/34.7%/37%/39.3%",
-                "5.9",
+                "5.9%",
                 "41%/47%/53%/71%/77%/82%/94%/99%/103%/113%/121%/129%/137%",
                 "19%/22%/24.8%/33.4%/36.1%/38.7%/44.1%/46.4%/48.7%/53.3%/57.1%/60.9%/64.7%",
                 "ATK",
@@ -33494,7 +33494,7 @@
                     "desc": "The penguin plushie dances while moving, dealing <color=#0abec5>&Param1& of ATK x11</color> as AoE Terra DMG and inflicting ##Terra Mark: Earth Vein#2029#. Also restores <color=#0abec5>&Param2&</color> HP to the main Trekker 5 times.",
                     "params": [
                         "1.7%/1.9%/2.2%/2.9%/3.1%/3.4%/3.8%/4%/4.2%/4.6%/4.9%/5.3%/5.6%",
-                        "1.6"
+                        "1.6%"
                     ]
                 },
                 {
