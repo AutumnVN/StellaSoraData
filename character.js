@@ -98,7 +98,7 @@ function resolveParam(params) {
 
         if (p[0] === 'HitDamage') {
             if (!HITDAMAGE[p[2]]) return param;
-            return HITDAMAGE[p[2]].SkillPercentAmend.map(v => v / 10000 + '%').join('/');
+            return HITDAMAGE[p[2]].SkillPercentAmend.filter(v => v !== 0).map(v => v / 10000 + '%').join('/');
         }
 
         if (p[1] === 'NoLevel' || (p[0] === 'Buff' && BUFFVALUE[p[2]])) {
@@ -238,9 +238,6 @@ function resolveParam(params) {
 
             if (results.length === 0) return param;
             if (results.every(r => r === results[0])) return results[0];
-
-            results = results.filter(v => v !== 0 && v !== '0%');
-
             return results.join('/');
         }
 
