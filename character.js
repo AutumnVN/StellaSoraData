@@ -238,6 +238,9 @@ function resolveParam(params) {
 
             if (results.length === 0) return param;
             if (results.every(r => r === results[0])) return results[0];
+
+            results = results.filter(v => v !== 0 && v !== '0%');
+
             return results.join('/');
         }
 
