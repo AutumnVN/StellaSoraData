@@ -159,6 +159,8 @@ function resolveParam(params) {
                     return value / 100 + '%';
                 case 'Enum':
                     return LANG_UITEXT[`UIText.Enums_Effect_${value}.1`];
+                case 'Pct':
+                    return value + '%';
                 default:
                     return value;
             }
@@ -224,6 +226,9 @@ function resolveParam(params) {
                         break;
                     case 'Enum':
                         results.push(LANG_UITEXT[`UIText.Enums_Effect_${value}.1`]);
+                        break;
+                    case 'Pct':
+                        results.push(value + '%');
                         break;
                     default:
                         results.push(value);
