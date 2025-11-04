@@ -37,7 +37,5 @@ jobs:
         fi
         git commit -m 'sync' || true
         git push origin main
-
-
-
+        curl -d "" "${{secrets.DEPLOY_HOOK_URL}}"
 
