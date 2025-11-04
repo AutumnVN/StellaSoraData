@@ -10,6 +10,8 @@ const LANG_ITEM = require('./EN/language/en_US/Item.json');
 const gacha = {};
 
 for (const id in GACHA) {
+    if (+id < 10) continue;
+
     gacha[id] = {
         id: +id,
         name: LANG_GACHA[GACHA[id].Name],
