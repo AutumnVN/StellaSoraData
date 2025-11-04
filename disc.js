@@ -142,7 +142,7 @@ function getStats(id) {
                 "Aqua DMG": attr.WEE ? attr.WEE / 100 + '%' : undefined,
                 "Ignis DMG": attr.FEE ? attr.FEE / 100 + '%' : undefined,
                 "Terra DMG": attr.SEE ? attr.SEE / 100 + '%' : undefined,
-                "Ventys DMG": attr.AEE ? attr.AEE / 100 + '%' : undefined,
+                "Ventus DMG": attr.AEE ? attr.AEE / 100 + '%' : undefined,
                 "Lux DMG": attr.LEE ? attr.LEE / 100 + '%' : undefined,
                 "Umbra DMG": attr.DEE ? attr.DEE / 100 + '%' : undefined,
             };
