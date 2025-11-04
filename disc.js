@@ -1,11 +1,14 @@
 const { writeFileSync } = require('fs');
 const DISC = require('./EN/bin/Disc.json');
 const DISCTAG = require('./EN/bin/DiscTag.json');
+const DISCPROMOTE = require('./EN/bin/DiscPromote.json');
 const ITEM = require('./EN/bin/Item.json');
 const MAINSKILL = require('./EN/bin/MainSkill.json');
 const SECONDARYSKILL = require('./EN/bin/SecondarySkill.json');
 const SUBNOTESKILL = require('./EN/bin/SubNoteSkill.json');
 const SUBNOTESKILLPROMOTEGROUP = require('./EN/bin/SubNoteSkillPromoteGroup.json');
+const ATTRIBUTE = require('./EN/bin/Attribute.json');
+const DISCEXTRAATTRIBUTE = require('./EN/bin/DiscExtraAttribute.json');
 const LANG_ITEM = require('./EN/language/en_US/Item.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_DISCTAG = require('./EN/language/en_US/DiscTag.json');
@@ -28,6 +31,9 @@ for (const id in DISC) {
         secondarySkill1: getSeconarySkill(DISC[id].SecondarySkillGroupId1),
         secondarySkill2: getSeconarySkill(DISC[id].SecondarySkillGroupId2),
         supportNote: getSupportNote(DISC[id].SubNoteSkillGroupId),
+        stat: getStats(DISC[id].AttrBaseGroupId),
+        dupe: getDupes(DISC[id].AttrExtraGroupId),
+        upgrade: getUpgrades(DISC[id].PromoteGroupId),
     };
 }
 
@@ -121,5 +127,62 @@ function getSupportNote(id) {
     });
 
     return notes;
+}
+
+function getStats(id) {
+    return Object.keys(ATTRIBUTE)
+        .filter(key => ATTRIBUTE[key].GroupId === +id)
+        .map(key => {
+            const attr = ATTRIBUTE[key];
+            return {
+                lvl: attr.lvl,
+                hp: attr.Hp,
+                atk: attr.Atk,
+                skillDmg: attr.SKILLDMG,
+                ultraDmg: attr.ULTRADMG,
+                aquaDmg: attr.WEE ? attr.WEE / 100 + '%' : undefined,
+                ignisDmg: attr.FEE ? attr.FEE / 100 + '%' : undefined,
+                terraDmg: attr.SEE ? attr.SEE / 100 + '%' : undefined,
+                ventusDmg: attr.AEE ? attr.AEE / 100 + '%' : undefined,
+                luxDmg: attr.LEE ? attr.LEE / 100 + '%' : undefined,
+                umbraDmg: attr.DEE ? attr.DEE / 100 + '%' : undefined,
+            };
+        });
+}
+
+function getDupes(id) {
+    return Object.keys(DISCEXTRAATTRIBUTE)
+        .filter(key => DISCEXTRAATTRIBUTE[key].GroupId === +id)
+        .map(key => {
+            const attr = DISCEXTRAATTRIBUTE[key];
+            return {
+                atk: attr.Atk,
+            };
+        });
+}
+
+function getUpgrades(id) {
+    return Object.keys(DISCPROMOTE)
+        .filter(key => key.startsWith(id.toString()))
+        .map(key => {
+            const p = DISCPROMOTE[key];
+            const mats = {};
+
+            for (let i = 1; ; i++) {
+                const itemIdKey = `ItemId${i}`;
+                const numKey = `Num${i}`;
+
+                if (!p[itemIdKey]) break;
+
+                const itemId = p[itemIdKey];
+                const num = p[numKey];
+
+                mats[LANG_ITEM[ITEM[itemId].Title]] = num;
+            }
+
+            mats.Dorra = p.ExpenseGold;
+
+            return mats;
+        }).filter(mats => Object.keys(mats).length > 1);
 }
 

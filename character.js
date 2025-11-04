@@ -265,58 +265,54 @@ function iHateFloatingPointNumber(a, op, b) {
 }
 
 function getUpgrades(charId) {
-    const keys = Object.keys(CHARACTERADVANCE)
-        .filter(key => CHARACTERADVANCE[key].Group === +charId);
+    return Object.keys(CHARACTERADVANCE)
+        .filter(key => CHARACTERADVANCE[key].Group === +charId).map(key => {
+            const a = CHARACTERADVANCE[key];
+            const mats = {};
 
-    return keys.map(key => {
-        const a = CHARACTERADVANCE[key];
-        const mats = {};
+            for (let i = 1; ; i++) {
+                const tidKey = `Tid${i}`;
+                const qtyKey = `Qty${i}`;
 
-        for (let i = 1; ; i++) {
-            const tidKey = `Tid${i}`;
-            const qtyKey = `Qty${i}`;
+                if (!a[tidKey]) break;
 
-            if (!a[tidKey]) break;
+                const tid = a[tidKey];
+                const qty = a[qtyKey] || 0;
+                const itemTitle = ITEM[tid] && ITEM[tid].Title;
+                const name = LANG_ITEM[itemTitle];
 
-            const tid = a[tidKey];
-            const qty = a[qtyKey] || 0;
-            const itemTitle = ITEM[tid] && ITEM[tid].Title;
-            const name = LANG_ITEM[itemTitle];
+                mats[name] = qty;
+            }
 
-            mats[name] = qty;
-        }
+            mats.Dorra = a.GoldQty;
 
-        mats.Dorra = a.GoldQty;
-
-        return mats;
-    }).filter(mats => Object.keys(mats).length > 1);
+            return mats;
+        }).filter(mats => Object.keys(mats).length > 1);
 }
 
 function getSkillUpgrades(charId) {
-    const keys = Object.keys(CHARACTERSKILLUPGRADE)
-        .filter(key => CHARACTERSKILLUPGRADE[key].Group === +charId);
+    return Object.keys(CHARACTERSKILLUPGRADE)
+        .filter(key => CHARACTERSKILLUPGRADE[key].Group === +charId).map(key => {
+            const a = CHARACTERSKILLUPGRADE[key];
+            const mats = {};
 
-    return keys.map(key => {
-        const a = CHARACTERSKILLUPGRADE[key];
-        const mats = {};
+            for (let i = 1; ; i++) {
+                const tidKey = `Tid${i}`;
+                const qtyKey = `Qty${i}`;
 
-        for (let i = 1; ; i++) {
-            const tidKey = `Tid${i}`;
-            const qtyKey = `Qty${i}`;
+                if (!a[tidKey]) break;
 
-            if (!a[tidKey]) break;
+                const tid = a[tidKey];
+                const qty = a[qtyKey];
+                const name = LANG_ITEM[ITEM[tid].Title];
 
-            const tid = a[tidKey];
-            const qty = a[qtyKey];
-            const name = LANG_ITEM[ITEM[tid].Title];
+                mats[name] = qty;
+            }
 
-            mats[name] = qty;
-        }
+            mats.Dorra = a.GoldQty;
 
-        mats.Dorra = a.GoldQty;
-
-        return mats;
-    }).filter(mats => Object.keys(mats).length > 1);
+            return mats;
+        }).filter(mats => Object.keys(mats).length > 1);
 }
 
 function getPotentials(charId) {
@@ -390,25 +386,23 @@ function getGifts(tagIds) {
 }
 
 function getTalents(charId) {
-    const talentGroupIds = Object.keys(TALENTGROUP)
-        .filter(key => TALENTGROUP[key].CharId === +charId);
+    return Object.keys(TALENTGROUP)
+        .filter(key => TALENTGROUP[key].CharId === +charId).map(groupId => {
+            const talentIds = Object.keys(TALENT)
+                .filter(key => TALENT[key].GroupId === +groupId);
 
-    return talentGroupIds.map(groupId => {
-        const talentIds = Object.keys(TALENT)
-            .filter(key => TALENT[key].GroupId === +groupId);
+            const last = talentIds.pop();
+            talentIds.unshift(last);
 
-        const last = talentIds.pop();
-        talentIds.unshift(last);
-
-        return {
-            name: LANG_TALENTGROUP[TALENTGROUP[groupId].Title],
-            boost: talentIds.map(talentId => ({
-                name: LANG_TALENT[TALENT[talentId].Title],
-                desc: LANG_TALENT[TALENT[talentId].Desc],
-                params: getTalentParams(talentId),
-            })),
-        };
-    });
+            return {
+                name: LANG_TALENTGROUP[TALENTGROUP[groupId].Title],
+                boost: talentIds.map(talentId => ({
+                    name: LANG_TALENT[TALENT[talentId].Title],
+                    desc: LANG_TALENT[TALENT[talentId].Desc],
+                    params: getTalentParams(talentId),
+                })),
+            };
+        });
 }
 
 function getTalentParams(talentId) {
@@ -420,15 +414,13 @@ function getTalentParams(talentId) {
 }
 
 function getDates(charId) {
-    const eventIds = Object.keys(DATINGCHARACTEREVENT)
-        .filter(key => DATINGCHARACTEREVENT[key].DatingEventParams[0] === +charId);
-
-    return eventIds.map(eventId => {
-        return {
-            name: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Name],
-            clue: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Clue],
-            secondChoice: LANG_DATINGBRANCH[DATINGBRANCH[`${DATINGCHARACTEREVENT[eventId].DatingEventParams[1]}001`][`Option${DATINGCHARACTEREVENT[eventId].BranchTag}`]],
-        }
-    });
+    return Object.keys(DATINGCHARACTEREVENT)
+        .filter(key => DATINGCHARACTEREVENT[key].DatingEventParams[0] === +charId).map(eventId => {
+            return {
+                name: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Name],
+                clue: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Clue],
+                secondChoice: LANG_DATINGBRANCH[DATINGBRANCH[`${DATINGCHARACTEREVENT[eventId].DatingEventParams[1]}001`][`Option${DATINGCHARACTEREVENT[eventId].BranchTag}`]],
+            }
+        });
 }
 
