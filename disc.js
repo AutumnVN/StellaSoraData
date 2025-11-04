@@ -135,17 +135,17 @@ function getStats(id) {
         .map(key => {
             const attr = ATTRIBUTE[key];
             return {
-                lvl: attr.lvl,
-                hp: attr.Hp,
-                atk: attr.Atk,
-                skillDmg: attr.SKILLDMG,
-                ultraDmg: attr.ULTRADMG,
-                aquaDmg: attr.WEE ? attr.WEE / 100 + '%' : undefined,
-                ignisDmg: attr.FEE ? attr.FEE / 100 + '%' : undefined,
-                terraDmg: attr.SEE ? attr.SEE / 100 + '%' : undefined,
-                ventusDmg: attr.AEE ? attr.AEE / 100 + '%' : undefined,
-                luxDmg: attr.LEE ? attr.LEE / 100 + '%' : undefined,
-                umbraDmg: attr.DEE ? attr.DEE / 100 + '%' : undefined,
+                LVL: attr.lvl,
+                HP: attr.Hp,
+                ATK: attr.Atk,
+                "Skill DMG": attr.SKILLDMG ? attr.SKILLDMG / 100 + '%' : undefined,
+                "Ultimate DMG": attr.ULTRADMG ? attr.ULTRADMG / 100 + '%' : undefined,
+                "Aqua DMG": attr.WEE ? attr.WEE / 100 + '%' : undefined,
+                "Ignis DMG": attr.FEE ? attr.FEE / 100 + '%' : undefined,
+                "Terra DMG": attr.SEE ? attr.SEE / 100 + '%' : undefined,
+                "Ventys DMG": attr.AEE ? attr.AEE / 100 + '%' : undefined,
+                "Lux DMG": attr.LEE ? attr.LEE / 100 + '%' : undefined,
+                "Umbra DMG": attr.DEE ? attr.DEE / 100 + '%' : undefined,
             };
         });
 }
@@ -156,7 +156,7 @@ function getDupes(id) {
         .map(key => {
             const attr = DISCEXTRAATTRIBUTE[key];
             return {
-                atk: attr.Atk,
+                ATK: attr.Atk,
             };
         });
 }
