@@ -367,7 +367,6 @@ function getStats(charId) {
         .map(key => {
             const attr = ATTRIBUTE[key];
             return {
-                lvl: attr.lvl,
                 hp: attr.Hp,
                 atk: attr.Atk,
             };

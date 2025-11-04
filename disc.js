@@ -135,7 +135,6 @@ function getStats(id) {
         .map(key => {
             const attr = ATTRIBUTE[key];
             return {
-                LVL: attr.lvl,
                 HP: attr.Hp,
                 ATK: attr.Atk,
                 "Skill DMG": attr.SKILLDMG ? attr.SKILLDMG / 100 + '%' : undefined,
