@@ -16,36 +16,36 @@ const MAP = {
     '暴击伤害': 'CRITDMG',
     '防御穿透': 'PENETRATE',
     '无视防御': 'DEF_IGNORE',
-    '水系抗性': 'WER',
-    '火系抗性': 'FER',
-    '地系抗性': 'SER',
-    '风系抗性': 'AER',
-    '光系抗性': 'LER',
-    '暗系抗性': 'DER',
-    '水系伤害': 'WEE',
-    '火系伤害': 'FEE',
-    '地系伤害': 'SEE',
-    '风系伤害': 'AEE',
-    '光系伤害': 'LEE',
-    '暗系伤害': 'DEE',
-    '水系穿透': 'WEP',
-    '火系穿透': 'FEP',
-    '地系穿透': 'SEP',
-    '风系穿透': 'AEP',
-    '光系穿透': 'LEP',
-    '暗系穿透': 'DEP',
-    '无视水系伤害': 'WEI',
-    '无视火系伤害': 'FEI',
-    '无视地系伤害': 'SEI',
-    '无视风系伤害': 'AEI',
-    '无视光系伤害': 'LEI',
-    '无视暗系伤害': 'DEI',
-    '受到水系伤害': 'WEERCD',
-    '受到火系伤害': 'FEERCD',
-    '受到地系伤害': 'SEERCD',
-    '受到风系伤害': 'AEERCD',
-    '受到光系伤害': 'LEERCD',
-    '受到暗系伤害': 'DEERCD',
+    '水系抗性': 'WATER_RES',
+    '火系抗性': 'FIRE_RES',
+    '地系抗性': 'SOIL_RES',
+    '风系抗性': 'AIR_RES',
+    '光系抗性': 'LIGHT_RES',
+    '暗系抗性': 'DARK_RES',
+    '水系伤害': 'WATER_DMG',
+    '火系伤害': 'FIRE_DMG',
+    '地系伤害': 'SOIL_DMG',
+    '风系伤害': 'AIR_DMG',
+    '光系伤害': 'LIGHT_DMG',
+    '暗系伤害': 'DARK_DMG',
+    '水系穿透': 'WATER_PEN',
+    '火系穿透': 'FIRE_PEN',
+    '地系穿透': 'SOIL_PEN',
+    '风系穿透': 'AIR_PEN',
+    '光系穿透': 'LIGHT_PEN',
+    '暗系穿透': 'DARK_PEN',
+    '无视水系伤害': 'WATER_DMG_IGNORE',
+    '无视火系伤害': 'FIRE_DMG_IGNORE',
+    '无视地系伤害': 'SOIL_DMG_IGNORE',
+    '无视风系伤害': 'AIR_DMG_IGNORE',
+    '无视光系伤害': 'LIGHT_DMG_IGNORE',
+    '无视暗系伤害': 'DARK_DMG_IGNORE',
+    '受到水系伤害': 'WATER_DMG_RECEIVED',
+    '受到火系伤害': 'FIRE_DMG_RECEIVED',
+    '受到地系伤害': 'SOIL_DMG_RECEIVED',
+    '受到风系伤害': 'AIR_DMG_RECEIVED',
+    '受到光系伤害': 'LIGHT_DMG_RECEIVED',
+    '受到暗系伤害': 'DARK_DMG_RECEIVED',
     '重量': 'WEIGHT',
     '最大韧性': 'TOUGHNESS_MAX',
     '破韧效率': 'TOUGHNESS_DAMAGE_ADJUST',
@@ -125,20 +125,57 @@ const MAP = {
 
 const emblem = {};
 
-for (const id in CHARGEMATTRTYPE) {
-
-    emblem[id] = {
-        attrType: MAP[CHARGEMATTRTYPE[id].AttrType] || CHARGEMATTRTYPE[id].AttrType,
-        attrTypeId: Object.values(CHARGEMATTRVALUE).find(a => a.TypeId === +id).AttrTypeFirstSubtype,
-        groupId: CHARGEMATTRTYPE[id].GroupId,
-        weight: [11, 12].includes(CHARGEMATTRTYPE[id].GroupId) ? JSON.parse(Object.values(CHARGEMATTRGROUP).find(g => g.GroupId === CHARGEMATTRTYPE[id].GroupId).UniqueAttrNumWeight) : Object.values(CHARGEMATTRGROUP).find(g => g.GroupId === CHARGEMATTRTYPE[id].GroupId).Weight / 100 + '%',
-        unlockLevel: Object.values(CHARGEMSLOTCONTROL).find(s => s.AttrGroupId.includes(CHARGEMATTRTYPE[id].GroupId) || s.UniqueAttrGroupId === CHARGEMATTRTYPE[id].GroupId).UnlockLevel,
-        value: Object.values(CHARGEMATTRVALUE).filter(a => a.TypeId === +id).map(a => ({
-            value: a.Value.includes('.') ? iHateFloatingPointNumber(a.Value, '*', 100) + '%' : a.Value,
-            rarity: a.Rarity,
-        })),
+for (const id in CHARGEMSLOTCONTROL) {
+    emblem[`lv${CHARGEMSLOTCONTROL[id].UnlockLevel}`] = {
+        attrGroup: CHARGEMSLOTCONTROL[id].AttrGroupId.map(gid => {
+            const group = Object.values(CHARGEMATTRGROUP).find(g => g.GroupId === gid);
+            return {
+                groupId: group.GroupId,
+                weight: group.Weight ? group.Weight / 100 + '%' : undefined,
+                uniqueAttrNumWeight: group.UniqueAttrNumWeight ? Object.fromEntries(Object.entries(JSON.parse(group.UniqueAttrNumWeight)).map(([k, v]) => [k, v / 100 + '%'])) : undefined,
+                attr: Object.values(CHARGEMATTRTYPE).filter(t => t.GroupId === gid).map(t => ({
+                    attrType: MAP[t.AttrType] || t.AttrType,
+                    attrTypeId: Object.values(CHARGEMATTRVALUE).find(a => a.TypeId === t.Id).AttrTypeFirstSubtype,
+                    value: Object.values(CHARGEMATTRVALUE).filter(a => a.TypeId === t.Id).map(a => ({
+                        value: a.Value.includes('.') ? iHateFloatingPointNumber(a.Value, '*', 100) + '%' : a.Value,
+                        rarity: a.Rarity,
+                    })),
+                })),
+            };
+        }),
+        uniqueAttrGroup: CHARGEMSLOTCONTROL[id].UniqueAttrGroupId ? (() => {
+            const group = Object.values(CHARGEMATTRGROUP).find(g => g.GroupId === CHARGEMSLOTCONTROL[id].UniqueAttrGroupId);
+            return {
+                groupId: group.GroupId,
+                weight: group.Weight ? group.Weight / 100 + '%' : undefined,
+                uniqueAttrNumWeight: group.UniqueAttrNumWeight ? Object.fromEntries(Object.entries(JSON.parse(group.UniqueAttrNumWeight)).map(([k, v]) => [k, v / 100 + '%'])) : undefined,
+                attr: Object.values(CHARGEMATTRTYPE).filter(t => t.GroupId === CHARGEMSLOTCONTROL[id].UniqueAttrGroupId).map(t => ({
+                    attrType: MAP[t.AttrType] || t.AttrType,
+                    attrTypeId: Object.values(CHARGEMATTRVALUE).find(a => a.TypeId === t.Id).AttrTypeFirstSubtype,
+                    value: Object.values(CHARGEMATTRVALUE).filter(a => a.TypeId === t.Id).map(a => ({
+                        value: a.Value.includes('.') ? iHateFloatingPointNumber(a.Value, '*', 100) + '%' : a.Value,
+                        rarity: a.Rarity,
+                    })),
+                })),
+            };
+        })() : undefined,
     }
 }
+
+// for (const id in CHARGEMATTRTYPE) {
+
+//     emblem[id] = {
+//         attrType: MAP[CHARGEMATTRTYPE[id].AttrType] || CHARGEMATTRTYPE[id].AttrType,
+//         attrTypeId: Object.values(CHARGEMATTRVALUE).find(a => a.TypeId === +id).AttrTypeFirstSubtype,
+//         groupId: CHARGEMATTRTYPE[id].GroupId,
+//         weight: [11, 12].includes(CHARGEMATTRTYPE[id].GroupId) ? JSON.parse(Object.values(CHARGEMATTRGROUP).find(g => g.GroupId === CHARGEMATTRTYPE[id].GroupId).UniqueAttrNumWeight) : Object.values(CHARGEMATTRGROUP).find(g => g.GroupId === CHARGEMATTRTYPE[id].GroupId).Weight / 100 + '%',
+//         unlockLevel: Object.values(CHARGEMSLOTCONTROL).find(s => s.AttrGroupId.includes(CHARGEMATTRTYPE[id].GroupId) || s.UniqueAttrGroupId === CHARGEMATTRTYPE[id].GroupId).UnlockLevel,
+//         value: Object.values(CHARGEMATTRVALUE).filter(a => a.TypeId === +id).map(a => ({
+//             value: a.Value.includes('.') ? iHateFloatingPointNumber(a.Value, '*', 100) + '%' : a.Value,
+//             rarity: a.Rarity,
+//         })),
+//     }
+// }
 
 function iHateFloatingPointNumber(a, op, b) {
     const smallest = String(a < b ? a : b);

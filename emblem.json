@@ -1,2825 +1,2458 @@
 {
-    "1": {
-        "attrType": "MAXHP",
-        "attrTypeId": 3,
-        "groupId": 1,
-        "weight": "30%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "680",
-                "rarity": 4
-            },
-            {
-                "value": "850",
-                "rarity": 3
-            },
-            {
-                "value": "1020",
-                "rarity": 2
-            },
-            {
-                "value": "2040",
-                "rarity": 1
-            }
-        ]
-    },
-    "2": {
-        "attrType": "ATK",
-        "attrTypeId": 1,
-        "groupId": 1,
-        "weight": "30%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "70",
-                "rarity": 4
-            },
-            {
-                "value": "88",
-                "rarity": 3
-            },
-            {
-                "value": "105",
-                "rarity": 2
-            },
-            {
-                "value": "210",
-                "rarity": 1
-            }
-        ]
-    },
-    "3": {
-        "attrType": "DEF",
-        "attrTypeId": 2,
-        "groupId": 1,
-        "weight": "30%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "44",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "105",
-                "rarity": 1
-            }
-        ]
-    },
-    "4": {
-        "attrType": "MAXHP",
-        "attrTypeId": 3,
-        "groupId": 1,
-        "weight": "30%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "5": {
-        "attrType": "ATK",
-        "attrTypeId": 1,
-        "groupId": 1,
-        "weight": "30%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "6": {
-        "attrType": "DEF",
-        "attrTypeId": 2,
-        "groupId": 1,
-        "weight": "30%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "12.5%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "7": {
-        "attrType": "CRITDMG",
-        "attrTypeId": 8,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "8%",
-                "rarity": 4
-            },
-            {
-                "value": "10%",
-                "rarity": 3
-            },
-            {
-                "value": "12%",
-                "rarity": 2
-            },
-            {
-                "value": "24%",
-                "rarity": 1
-            }
-        ]
-    },
-    "8": {
-        "attrType": "CRITRATE",
-        "attrTypeId": 6,
-        "groupId": 4,
-        "weight": "8%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "9": {
-        "attrType": "WEE",
-        "attrTypeId": 17,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "10": {
-        "attrType": "FEE",
-        "attrTypeId": 18,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "11": {
-        "attrType": "SEE",
-        "attrTypeId": 19,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "12": {
-        "attrType": "AEE",
-        "attrTypeId": 20,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "13": {
-        "attrType": "LEE",
-        "attrTypeId": 21,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "14": {
-        "attrType": "DEE",
-        "attrTypeId": 22,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "15": {
-        "attrType": "WEP",
-        "attrTypeId": 23,
-        "groupId": 4,
-        "weight": "8%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "16": {
-        "attrType": "FEP",
-        "attrTypeId": 24,
-        "groupId": 4,
-        "weight": "8%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "17": {
-        "attrType": "SEP",
-        "attrTypeId": 25,
-        "groupId": 4,
-        "weight": "8%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "18": {
-        "attrType": "AEP",
-        "attrTypeId": 26,
-        "groupId": 4,
-        "weight": "8%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "19": {
-        "attrType": "LEP",
-        "attrTypeId": 27,
-        "groupId": 4,
-        "weight": "8%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "20": {
-        "attrType": "DEP",
-        "attrTypeId": 28,
-        "groupId": 4,
-        "weight": "8%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "21": {
-        "attrType": "NORMALDMG",
-        "attrTypeId": 56,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "12.5%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "22": {
-        "attrType": "SKILLDMG",
-        "attrTypeId": 57,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "7%",
-                "rarity": 4
-            },
-            {
-                "value": "8%",
-                "rarity": 3
-            },
-            {
-                "value": "10%",
-                "rarity": 2
-            },
-            {
-                "value": "20%",
-                "rarity": 1
-            }
-        ]
-    },
-    "23": {
-        "attrType": "ULTRADMG",
-        "attrTypeId": 58,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "13%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "24": {
-        "attrType": "MARKDMG",
-        "attrTypeId": 64,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "27%",
-                "rarity": 4
-            },
-            {
-                "value": "33%",
-                "rarity": 3
-            },
-            {
-                "value": "40%",
-                "rarity": 2
-            },
-            {
-                "value": "80%",
-                "rarity": 1
-            }
-        ]
-    },
-    "25": {
-        "attrType": "SUMMONDMG",
-        "attrTypeId": 66,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "7%",
-                "rarity": 4
-            },
-            {
-                "value": "8%",
-                "rarity": 3
-            },
-            {
-                "value": "10%",
-                "rarity": 2
-            },
-            {
-                "value": "20%",
-                "rarity": 1
-            }
-        ]
-    },
-    "26": {
-        "attrType": "PROJECTILEDMG",
-        "attrTypeId": 68,
-        "groupId": 3,
-        "weight": "34.35%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "7%",
-                "rarity": 4
-            },
-            {
-                "value": "8%",
-                "rarity": 3
-            },
-            {
-                "value": "10%",
-                "rarity": 2
-            },
-            {
-                "value": "20%",
-                "rarity": 1
-            }
-        ]
-    },
-    "27": {
-        "attrType": "FRONT_ADD_ENERGY",
-        "attrTypeId": 1,
-        "groupId": 4,
-        "weight": "8%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "12.5%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "28": {
-        "attrType": "ADD_ENERGY",
-        "groupId": 4,
-        "weight": "8%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "13.5%",
-                "rarity": 4
-            },
-            {
-                "value": "17%",
-                "rarity": 3
-            },
-            {
-                "value": "20.3%",
-                "rarity": 2
-            },
-            {
-                "value": "40%",
-                "rarity": 1
-            }
-        ]
-    },
-    "29": {
-        "attrType": "NORMALCRITRATE",
-        "attrTypeId": 70,
-        "groupId": 2,
-        "weight": "27.65%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "30": {
-        "attrType": "SKILLCRITRATE",
-        "attrTypeId": 71,
-        "groupId": 2,
-        "weight": "27.65%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "31": {
-        "attrType": "ULTRACRITRATE",
-        "attrTypeId": 72,
-        "groupId": 2,
-        "weight": "27.65%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "32": {
-        "attrType": "MARKCRITRATE",
-        "attrTypeId": 73,
-        "groupId": 2,
-        "weight": "27.65%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "33": {
-        "attrType": "SUMMONCRITRATE",
-        "attrTypeId": 74,
-        "groupId": 2,
-        "weight": "27.65%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "34": {
-        "attrType": "PROJECTILECRITRATE",
-        "attrTypeId": 75,
-        "groupId": 2,
-        "weight": "27.65%",
-        "unlockLevel": 70,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "35": {
-        "attrType": "NormalAtk",
-        "attrTypeId": 1,
-        "groupId": 11,
-        "weight": {
-            "1": 7500,
-            "2": 2000,
-            "3": 450,
-            "4": 50
-        },
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "36": {
-        "attrType": "Skill",
-        "attrTypeId": 2,
-        "groupId": 11,
-        "weight": {
-            "1": 7500,
-            "2": 2000,
-            "3": 450,
-            "4": 50
-        },
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "37": {
-        "attrType": "AssistSkill",
-        "attrTypeId": 3,
-        "groupId": 11,
-        "weight": {
-            "1": 7500,
-            "2": 2000,
-            "3": 450,
-            "4": 50
-        },
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "38": {
-        "attrType": "Ultimate",
-        "attrTypeId": 4,
-        "groupId": 11,
-        "weight": {
-            "1": 7500,
-            "2": 2000,
-            "3": 450,
-            "4": 50
-        },
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "39": {
-        "attrType": "Potential5",
-        "attrTypeId": 5,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "40": {
-        "attrType": "Potential6",
-        "attrTypeId": 6,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "41": {
-        "attrType": "Potential7",
-        "attrTypeId": 7,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "42": {
-        "attrType": "Potential8",
-        "attrTypeId": 8,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "43": {
-        "attrType": "Potential9",
-        "attrTypeId": 9,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "44": {
-        "attrType": "Potential10",
-        "attrTypeId": 10,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "45": {
-        "attrType": "Potential11",
-        "attrTypeId": 11,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "46": {
-        "attrType": "Potential12",
-        "attrTypeId": 12,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "47": {
-        "attrType": "Potential13",
-        "attrTypeId": 13,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "48": {
-        "attrType": "Potential25",
-        "attrTypeId": 25,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "49": {
-        "attrType": "Potential26",
-        "attrTypeId": 26,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "50": {
-        "attrType": "Potential27",
-        "attrTypeId": 27,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "51": {
-        "attrType": "Potential28",
-        "attrTypeId": 28,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "52": {
-        "attrType": "Potential29",
-        "attrTypeId": 29,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "53": {
-        "attrType": "Potential30",
-        "attrTypeId": 30,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "54": {
-        "attrType": "Potential31",
-        "attrTypeId": 31,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "55": {
-        "attrType": "Potential32",
-        "attrTypeId": 32,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "56": {
-        "attrType": "Potential33",
-        "attrTypeId": 33,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "57": {
-        "attrType": "Potential41",
-        "attrTypeId": 41,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "58": {
-        "attrType": "Potential42",
-        "attrTypeId": 42,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "59": {
-        "attrType": "Potential43",
-        "attrTypeId": 43,
-        "groupId": 12,
-        "weight": {
-            "1": 6700,
-            "2": 2650,
-            "3": 500,
-            "4": 150
-        },
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "1",
-                "rarity": 2
-            },
-            {
-                "value": "2",
-                "rarity": 1
-            },
-            {
-                "value": "3",
-                "rarity": 1
-            }
-        ]
-    },
-    "60": {
-        "attrType": "MAXHP",
-        "attrTypeId": 3,
-        "groupId": 5,
-        "weight": "30%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "680",
-                "rarity": 4
-            },
-            {
-                "value": "850",
-                "rarity": 3
-            },
-            {
-                "value": "1020",
-                "rarity": 2
-            },
-            {
-                "value": "2040",
-                "rarity": 1
-            }
-        ]
-    },
-    "61": {
-        "attrType": "ATK",
-        "attrTypeId": 1,
-        "groupId": 5,
-        "weight": "30%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "70",
-                "rarity": 4
-            },
-            {
-                "value": "88",
-                "rarity": 3
-            },
-            {
-                "value": "105",
-                "rarity": 2
-            },
-            {
-                "value": "210",
-                "rarity": 1
-            }
-        ]
-    },
-    "62": {
-        "attrType": "DEF",
-        "attrTypeId": 2,
-        "groupId": 5,
-        "weight": "30%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "44",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "105",
-                "rarity": 1
-            }
-        ]
-    },
-    "63": {
-        "attrType": "MAXHP",
-        "attrTypeId": 3,
-        "groupId": 5,
-        "weight": "30%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "64": {
-        "attrType": "ATK",
-        "attrTypeId": 1,
-        "groupId": 5,
-        "weight": "30%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "65": {
-        "attrType": "DEF",
-        "attrTypeId": 2,
-        "groupId": 5,
-        "weight": "30%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "12.5%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "66": {
-        "attrType": "CRITDMG",
-        "attrTypeId": 8,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "8%",
-                "rarity": 4
-            },
-            {
-                "value": "10%",
-                "rarity": 3
-            },
-            {
-                "value": "12%",
-                "rarity": 2
-            },
-            {
-                "value": "24%",
-                "rarity": 1
-            }
-        ]
-    },
-    "67": {
-        "attrType": "CRITRATE",
-        "attrTypeId": 6,
-        "groupId": 8,
-        "weight": "8%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "68": {
-        "attrType": "WEE",
-        "attrTypeId": 17,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "69": {
-        "attrType": "FEE",
-        "attrTypeId": 18,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "70": {
-        "attrType": "SEE",
-        "attrTypeId": 19,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "71": {
-        "attrType": "AEE",
-        "attrTypeId": 20,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "72": {
-        "attrType": "LEE",
-        "attrTypeId": 21,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "73": {
-        "attrType": "DEE",
-        "attrTypeId": 22,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "74": {
-        "attrType": "WEP",
-        "attrTypeId": 23,
-        "groupId": 8,
-        "weight": "8%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "75": {
-        "attrType": "FEP",
-        "attrTypeId": 24,
-        "groupId": 8,
-        "weight": "8%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "76": {
-        "attrType": "SEP",
-        "attrTypeId": 25,
-        "groupId": 8,
-        "weight": "8%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "77": {
-        "attrType": "AEP",
-        "attrTypeId": 26,
-        "groupId": 8,
-        "weight": "8%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "78": {
-        "attrType": "LEP",
-        "attrTypeId": 27,
-        "groupId": 8,
-        "weight": "8%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "79": {
-        "attrType": "DEP",
-        "attrTypeId": 28,
-        "groupId": 8,
-        "weight": "8%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "40",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "110",
-                "rarity": 1
-            }
-        ]
-    },
-    "80": {
-        "attrType": "NORMALDMG",
-        "attrTypeId": 56,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "12.5%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "81": {
-        "attrType": "SKILLDMG",
-        "attrTypeId": 57,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "7%",
-                "rarity": 4
-            },
-            {
-                "value": "8%",
-                "rarity": 3
-            },
-            {
-                "value": "10%",
-                "rarity": 2
-            },
-            {
-                "value": "20%",
-                "rarity": 1
-            }
-        ]
-    },
-    "82": {
-        "attrType": "ULTRADMG",
-        "attrTypeId": 58,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "13%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "83": {
-        "attrType": "MARKDMG",
-        "attrTypeId": 64,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "27%",
-                "rarity": 4
-            },
-            {
-                "value": "33%",
-                "rarity": 3
-            },
-            {
-                "value": "40%",
-                "rarity": 2
-            },
-            {
-                "value": "80%",
-                "rarity": 1
-            }
-        ]
-    },
-    "84": {
-        "attrType": "SUMMONDMG",
-        "attrTypeId": 66,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "7%",
-                "rarity": 4
-            },
-            {
-                "value": "8%",
-                "rarity": 3
-            },
-            {
-                "value": "10%",
-                "rarity": 2
-            },
-            {
-                "value": "20%",
-                "rarity": 1
-            }
-        ]
-    },
-    "85": {
-        "attrType": "PROJECTILEDMG",
-        "attrTypeId": 68,
-        "groupId": 7,
-        "weight": "34.35%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "7%",
-                "rarity": 4
-            },
-            {
-                "value": "8%",
-                "rarity": 3
-            },
-            {
-                "value": "10%",
-                "rarity": 2
-            },
-            {
-                "value": "20%",
-                "rarity": 1
-            }
-        ]
-    },
-    "86": {
-        "attrType": "FRONT_ADD_ENERGY",
-        "attrTypeId": 1,
-        "groupId": 8,
-        "weight": "8%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "12.5%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "87": {
-        "attrType": "ADD_ENERGY",
-        "groupId": 8,
-        "weight": "8%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "13.5%",
-                "rarity": 4
-            },
-            {
-                "value": "17%",
-                "rarity": 3
-            },
-            {
-                "value": "20.3%",
-                "rarity": 2
-            },
-            {
-                "value": "40%",
-                "rarity": 1
-            }
-        ]
-    },
-    "88": {
-        "attrType": "NORMALCRITRATE",
-        "attrTypeId": 70,
-        "groupId": 6,
-        "weight": "27.65%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "89": {
-        "attrType": "SKILLCRITRATE",
-        "attrTypeId": 71,
-        "groupId": 6,
-        "weight": "27.65%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "90": {
-        "attrType": "ULTRACRITRATE",
-        "attrTypeId": 72,
-        "groupId": 6,
-        "weight": "27.65%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "91": {
-        "attrType": "MARKCRITRATE",
-        "attrTypeId": 73,
-        "groupId": 6,
-        "weight": "27.65%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "92": {
-        "attrType": "SUMMONCRITRATE",
-        "attrTypeId": 74,
-        "groupId": 6,
-        "weight": "27.65%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "93": {
-        "attrType": "PROJECTILECRITRATE",
-        "attrTypeId": 75,
-        "groupId": 6,
-        "weight": "27.65%",
-        "unlockLevel": 80,
-        "value": [
-            {
-                "value": "5%",
-                "rarity": 4
-            },
-            {
-                "value": "6.3%",
-                "rarity": 3
-            },
-            {
-                "value": "7.5%",
-                "rarity": 2
-            },
-            {
-                "value": "15%",
-                "rarity": 1
-            }
-        ]
-    },
-    "94": {
-        "attrType": "MAXHP",
-        "attrTypeId": 3,
-        "groupId": 9,
-        "weight": "51.17%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "680",
-                "rarity": 4
-            },
-            {
-                "value": "850",
-                "rarity": 3
-            },
-            {
-                "value": "1020",
-                "rarity": 2
-            },
-            {
-                "value": "2040",
-                "rarity": 1
-            }
-        ]
-    },
-    "95": {
-        "attrType": "ATK",
-        "attrTypeId": 1,
-        "groupId": 9,
-        "weight": "51.17%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "70",
-                "rarity": 4
-            },
-            {
-                "value": "88",
-                "rarity": 3
-            },
-            {
-                "value": "105",
-                "rarity": 2
-            },
-            {
-                "value": "210",
-                "rarity": 1
-            }
-        ]
-    },
-    "96": {
-        "attrType": "DEF",
-        "attrTypeId": 2,
-        "groupId": 9,
-        "weight": "51.17%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "35",
-                "rarity": 4
-            },
-            {
-                "value": "44",
-                "rarity": 3
-            },
-            {
-                "value": "53",
-                "rarity": 2
-            },
-            {
-                "value": "105",
-                "rarity": 1
-            }
-        ]
-    },
-    "97": {
-        "attrType": "MAXHP",
-        "attrTypeId": 3,
-        "groupId": 9,
-        "weight": "51.17%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "98": {
-        "attrType": "ATK",
-        "attrTypeId": 1,
-        "groupId": 9,
-        "weight": "51.17%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "99": {
-        "attrType": "DEF",
-        "attrTypeId": 2,
-        "groupId": 9,
-        "weight": "51.17%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "12.5%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "100": {
-        "attrType": "CRITDMG",
-        "attrTypeId": 8,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "8%",
-                "rarity": 4
-            },
-            {
-                "value": "10%",
-                "rarity": 3
-            },
-            {
-                "value": "12%",
-                "rarity": 2
-            },
-            {
-                "value": "24%",
-                "rarity": 1
-            }
-        ]
-    },
-    "101": {
-        "attrType": "WEE",
-        "attrTypeId": 17,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "102": {
-        "attrType": "FEE",
-        "attrTypeId": 18,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "103": {
-        "attrType": "SEE",
-        "attrTypeId": 19,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "104": {
-        "attrType": "AEE",
-        "attrTypeId": 20,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "105": {
-        "attrType": "LEE",
-        "attrTypeId": 21,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "106": {
-        "attrType": "DEE",
-        "attrTypeId": 22,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "4%",
-                "rarity": 4
-            },
-            {
-                "value": "5%",
-                "rarity": 3
-            },
-            {
-                "value": "6%",
-                "rarity": 2
-            },
-            {
-                "value": "12%",
-                "rarity": 1
-            }
-        ]
-    },
-    "107": {
-        "attrType": "NORMALDMG",
-        "attrTypeId": 56,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "12.5%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "108": {
-        "attrType": "SKILLDMG",
-        "attrTypeId": 57,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "7%",
-                "rarity": 4
-            },
-            {
-                "value": "8%",
-                "rarity": 3
-            },
-            {
-                "value": "10%",
-                "rarity": 2
-            },
-            {
-                "value": "20%",
-                "rarity": 1
-            }
-        ]
-    },
-    "109": {
-        "attrType": "ULTRADMG",
-        "attrTypeId": 58,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "10%",
-                "rarity": 4
-            },
-            {
-                "value": "13%",
-                "rarity": 3
-            },
-            {
-                "value": "15%",
-                "rarity": 2
-            },
-            {
-                "value": "30%",
-                "rarity": 1
-            }
-        ]
-    },
-    "110": {
-        "attrType": "MARKDMG",
-        "attrTypeId": 64,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "27%",
-                "rarity": 4
-            },
-            {
-                "value": "33%",
-                "rarity": 3
-            },
-            {
-                "value": "40%",
-                "rarity": 2
-            },
-            {
-                "value": "80%",
-                "rarity": 1
-            }
-        ]
-    },
-    "111": {
-        "attrType": "SUMMONDMG",
-        "attrTypeId": 66,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "7%",
-                "rarity": 4
-            },
-            {
-                "value": "8%",
-                "rarity": 3
-            },
-            {
-                "value": "10%",
-                "rarity": 2
-            },
-            {
-                "value": "20%",
-                "rarity": 1
-            }
-        ]
-    },
-    "112": {
-        "attrType": "PROJECTILEDMG",
-        "attrTypeId": 68,
-        "groupId": 10,
-        "weight": "48.83%",
-        "unlockLevel": 90,
-        "value": [
-            {
-                "value": "7%",
-                "rarity": 4
-            },
-            {
-                "value": "8%",
-                "rarity": 3
-            },
-            {
-                "value": "10%",
-                "rarity": 2
-            },
-            {
-                "value": "20%",
-                "rarity": 1
-            }
-        ]
+    "lv70": {
+        "attrGroup": [
+            {
+                "groupId": 1,
+                "weight": "30%",
+                "attr": [
+                    {
+                        "attrType": "MAXHP",
+                        "attrTypeId": 3,
+                        "value": [
+                            {
+                                "value": "680",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "850",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "1020",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "2040",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ATK",
+                        "attrTypeId": 1,
+                        "value": [
+                            {
+                                "value": "70",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "88",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "105",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "210",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DEF",
+                        "attrTypeId": 2,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "44",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "105",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "MAXHP",
+                        "attrTypeId": 3,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ATK",
+                        "attrTypeId": 1,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DEF",
+                        "attrTypeId": 2,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "12.5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "groupId": 2,
+                "weight": "27.65%",
+                "attr": [
+                    {
+                        "attrType": "NORMALCRITRATE",
+                        "attrTypeId": 70,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SKILLCRITRATE",
+                        "attrTypeId": 71,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ULTRACRITRATE",
+                        "attrTypeId": 72,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "MARKCRITRATE",
+                        "attrTypeId": 73,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SUMMONCRITRATE",
+                        "attrTypeId": 74,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "PROJECTILECRITRATE",
+                        "attrTypeId": 75,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "groupId": 3,
+                "weight": "34.35%",
+                "attr": [
+                    {
+                        "attrType": "CRITDMG",
+                        "attrTypeId": 8,
+                        "value": [
+                            {
+                                "value": "8%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "24%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "WATER_DMG",
+                        "attrTypeId": 17,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "FIRE_DMG",
+                        "attrTypeId": 18,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SOIL_DMG",
+                        "attrTypeId": 19,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "AIR_DMG",
+                        "attrTypeId": 20,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "LIGHT_DMG",
+                        "attrTypeId": 21,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DARK_DMG",
+                        "attrTypeId": 22,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "NORMALDMG",
+                        "attrTypeId": 56,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "12.5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SKILLDMG",
+                        "attrTypeId": 57,
+                        "value": [
+                            {
+                                "value": "7%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "8%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "20%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ULTRADMG",
+                        "attrTypeId": 58,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "13%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "MARKDMG",
+                        "attrTypeId": 64,
+                        "value": [
+                            {
+                                "value": "27%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "33%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "40%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "80%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SUMMONDMG",
+                        "attrTypeId": 66,
+                        "value": [
+                            {
+                                "value": "7%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "8%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "20%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "PROJECTILEDMG",
+                        "attrTypeId": 68,
+                        "value": [
+                            {
+                                "value": "7%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "8%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "20%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "groupId": 4,
+                "weight": "8%",
+                "attr": [
+                    {
+                        "attrType": "CRITRATE",
+                        "attrTypeId": 6,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "WATER_PEN",
+                        "attrTypeId": 23,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "FIRE_PEN",
+                        "attrTypeId": 24,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SOIL_PEN",
+                        "attrTypeId": 25,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "AIR_PEN",
+                        "attrTypeId": 26,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "LIGHT_PEN",
+                        "attrTypeId": 27,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DARK_PEN",
+                        "attrTypeId": 28,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "FRONT_ADD_ENERGY",
+                        "attrTypeId": 1,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "12.5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ADD_ENERGY",
+                        "value": [
+                            {
+                                "value": "13.5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "17%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "20.3%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "40%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "lv80": {
+        "attrGroup": [
+            {
+                "groupId": 5,
+                "weight": "30%",
+                "attr": [
+                    {
+                        "attrType": "MAXHP",
+                        "attrTypeId": 3,
+                        "value": [
+                            {
+                                "value": "680",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "850",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "1020",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "2040",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ATK",
+                        "attrTypeId": 1,
+                        "value": [
+                            {
+                                "value": "70",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "88",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "105",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "210",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DEF",
+                        "attrTypeId": 2,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "44",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "105",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "MAXHP",
+                        "attrTypeId": 3,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ATK",
+                        "attrTypeId": 1,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DEF",
+                        "attrTypeId": 2,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "12.5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "groupId": 6,
+                "weight": "27.65%",
+                "attr": [
+                    {
+                        "attrType": "NORMALCRITRATE",
+                        "attrTypeId": 70,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SKILLCRITRATE",
+                        "attrTypeId": 71,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ULTRACRITRATE",
+                        "attrTypeId": 72,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "MARKCRITRATE",
+                        "attrTypeId": 73,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SUMMONCRITRATE",
+                        "attrTypeId": 74,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "PROJECTILECRITRATE",
+                        "attrTypeId": 75,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "groupId": 7,
+                "weight": "34.35%",
+                "attr": [
+                    {
+                        "attrType": "CRITDMG",
+                        "attrTypeId": 8,
+                        "value": [
+                            {
+                                "value": "8%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "24%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "WATER_DMG",
+                        "attrTypeId": 17,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "FIRE_DMG",
+                        "attrTypeId": 18,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SOIL_DMG",
+                        "attrTypeId": 19,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "AIR_DMG",
+                        "attrTypeId": 20,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "LIGHT_DMG",
+                        "attrTypeId": 21,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DARK_DMG",
+                        "attrTypeId": 22,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "NORMALDMG",
+                        "attrTypeId": 56,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "12.5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SKILLDMG",
+                        "attrTypeId": 57,
+                        "value": [
+                            {
+                                "value": "7%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "8%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "20%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ULTRADMG",
+                        "attrTypeId": 58,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "13%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "MARKDMG",
+                        "attrTypeId": 64,
+                        "value": [
+                            {
+                                "value": "27%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "33%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "40%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "80%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SUMMONDMG",
+                        "attrTypeId": 66,
+                        "value": [
+                            {
+                                "value": "7%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "8%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "20%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "PROJECTILEDMG",
+                        "attrTypeId": 68,
+                        "value": [
+                            {
+                                "value": "7%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "8%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "20%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "groupId": 8,
+                "weight": "8%",
+                "attr": [
+                    {
+                        "attrType": "CRITRATE",
+                        "attrTypeId": 6,
+                        "value": [
+                            {
+                                "value": "5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "6.3%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "7.5%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "WATER_PEN",
+                        "attrTypeId": 23,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "FIRE_PEN",
+                        "attrTypeId": 24,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SOIL_PEN",
+                        "attrTypeId": 25,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "AIR_PEN",
+                        "attrTypeId": 26,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "LIGHT_PEN",
+                        "attrTypeId": 27,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DARK_PEN",
+                        "attrTypeId": 28,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "40",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "110",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "FRONT_ADD_ENERGY",
+                        "attrTypeId": 1,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "12.5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ADD_ENERGY",
+                        "value": [
+                            {
+                                "value": "13.5%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "17%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "20.3%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "40%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "uniqueAttrGroup": {
+            "groupId": 11,
+            "uniqueAttrNumWeight": {
+                "1": "75%",
+                "2": "20%",
+                "3": "4.5%",
+                "4": "0.5%"
+            },
+            "attr": [
+                {
+                    "attrType": "NormalAtk",
+                    "attrTypeId": 1,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Skill",
+                    "attrTypeId": 2,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "AssistSkill",
+                    "attrTypeId": 3,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Ultimate",
+                    "attrTypeId": 4,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "lv90": {
+        "attrGroup": [
+            {
+                "groupId": 9,
+                "weight": "51.17%",
+                "attr": [
+                    {
+                        "attrType": "MAXHP",
+                        "attrTypeId": 3,
+                        "value": [
+                            {
+                                "value": "680",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "850",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "1020",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "2040",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ATK",
+                        "attrTypeId": 1,
+                        "value": [
+                            {
+                                "value": "70",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "88",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "105",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "210",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DEF",
+                        "attrTypeId": 2,
+                        "value": [
+                            {
+                                "value": "35",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "44",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "53",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "105",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "MAXHP",
+                        "attrTypeId": 3,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ATK",
+                        "attrTypeId": 1,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DEF",
+                        "attrTypeId": 2,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "12.5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "groupId": 10,
+                "weight": "48.83%",
+                "attr": [
+                    {
+                        "attrType": "CRITDMG",
+                        "attrTypeId": 8,
+                        "value": [
+                            {
+                                "value": "8%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "24%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "WATER_DMG",
+                        "attrTypeId": 17,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "FIRE_DMG",
+                        "attrTypeId": 18,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SOIL_DMG",
+                        "attrTypeId": 19,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "AIR_DMG",
+                        "attrTypeId": 20,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "LIGHT_DMG",
+                        "attrTypeId": 21,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "DARK_DMG",
+                        "attrTypeId": 22,
+                        "value": [
+                            {
+                                "value": "4%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "6%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "12%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "NORMALDMG",
+                        "attrTypeId": 56,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "12.5%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SKILLDMG",
+                        "attrTypeId": 57,
+                        "value": [
+                            {
+                                "value": "7%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "8%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "20%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "ULTRADMG",
+                        "attrTypeId": 58,
+                        "value": [
+                            {
+                                "value": "10%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "13%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "15%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "30%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "MARKDMG",
+                        "attrTypeId": 64,
+                        "value": [
+                            {
+                                "value": "27%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "33%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "40%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "80%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "SUMMONDMG",
+                        "attrTypeId": 66,
+                        "value": [
+                            {
+                                "value": "7%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "8%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "20%",
+                                "rarity": 1
+                            }
+                        ]
+                    },
+                    {
+                        "attrType": "PROJECTILEDMG",
+                        "attrTypeId": 68,
+                        "value": [
+                            {
+                                "value": "7%",
+                                "rarity": 4
+                            },
+                            {
+                                "value": "8%",
+                                "rarity": 3
+                            },
+                            {
+                                "value": "10%",
+                                "rarity": 2
+                            },
+                            {
+                                "value": "20%",
+                                "rarity": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "uniqueAttrGroup": {
+            "groupId": 12,
+            "uniqueAttrNumWeight": {
+                "1": "67%",
+                "2": "26.5%",
+                "3": "5%",
+                "4": "1.5%"
+            },
+            "attr": [
+                {
+                    "attrType": "Potential5",
+                    "attrTypeId": 5,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential6",
+                    "attrTypeId": 6,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential7",
+                    "attrTypeId": 7,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential8",
+                    "attrTypeId": 8,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential9",
+                    "attrTypeId": 9,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential10",
+                    "attrTypeId": 10,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential11",
+                    "attrTypeId": 11,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential12",
+                    "attrTypeId": 12,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential13",
+                    "attrTypeId": 13,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential25",
+                    "attrTypeId": 25,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential26",
+                    "attrTypeId": 26,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential27",
+                    "attrTypeId": 27,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential28",
+                    "attrTypeId": 28,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential29",
+                    "attrTypeId": 29,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential30",
+                    "attrTypeId": 30,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential31",
+                    "attrTypeId": 31,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential32",
+                    "attrTypeId": 32,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential33",
+                    "attrTypeId": 33,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential41",
+                    "attrTypeId": 41,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential42",
+                    "attrTypeId": 42,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                },
+                {
+                    "attrType": "Potential43",
+                    "attrTypeId": 43,
+                    "value": [
+                        {
+                            "value": "1",
+                            "rarity": 2
+                        },
+                        {
+                            "value": "2",
+                            "rarity": 1
+                        },
+                        {
+                            "value": "3",
+                            "rarity": 1
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }
