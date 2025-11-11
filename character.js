@@ -99,10 +99,7 @@ for (const id in CHARACTER) {
 writeFileSync('./character.json', JSON.stringify(character, null, 4));
 
 function getSkillParams(skillId) {
-    const params = Object.keys(SKILL[skillId])
-        .filter(key => /^param\d+$/i.test(key))
-        .map(key => SKILL[skillId][key]);
-
+    const params = collectParamsFrom(SKILL[skillId]);
     return resolveParam(params);
 }
 
@@ -264,10 +261,7 @@ function resolveParam(params) {
 function getSkillDamageTypes(skillId) {
     const damageTypes = [];
 
-    const params = Object.keys(SKILL[skillId])
-        .filter(key => /^param\d+$/i.test(key))
-        .filter(key => SKILL[skillId][key].startsWith('HitDamage'))
-        .map(key => SKILL[skillId][key]);
+    const params = collectParamsFrom(SKILL[skillId]).filter(p => p && p.startsWith('HitDamage'));
 
     for (const param of params) {
         const p = param.split(',');
@@ -395,20 +389,14 @@ function getPotentials(charId) {
 }
 
 function getPotentialParams(potId) {
-    const params = Object.keys(POTENTIAL[potId])
-        .filter(key => /^param\d+$/i.test(key))
-        .map(key => POTENTIAL[potId][key]);
-
+    const params = collectParamsFrom(POTENTIAL[potId]);
     return resolveParam(params);
 }
 
 function getPotentialDamageTypes(potId) {
     const damageTypes = [];
 
-    const params = Object.keys(POTENTIAL[potId])
-        .filter(key => /^param\d+$/i.test(key))
-        .filter(key => POTENTIAL[potId][key].startsWith('HitDamage'))
-        .map(key => POTENTIAL[potId][key]);
+    const params = collectParamsFrom(POTENTIAL[potId]).filter(p => p && p.startsWith('HitDamage'));
 
     for (const param of params) {
         const p = param.split(',');
@@ -466,11 +454,34 @@ function getTalents(charId) {
 }
 
 function getTalentParams(talentId) {
-    const params = Object.keys(TALENT[talentId])
-        .filter(key => /^param\d+$/i.test(key))
-        .map(key => TALENT[talentId][key]);
-
+    const params = collectParamsFrom(TALENT[talentId]);
     return resolveParam(params);
+}
+
+function collectParamsFrom(obj) {
+    if (!obj) return [];
+
+    const paramKeys = Object.keys(obj).filter(k => /^param\d+$/i.test(k));
+    if (paramKeys.length === 0) return [];
+
+    const indices = paramKeys.map(k => {
+        const m = k.match(/^param(\d+)$/i);
+        return m ? Number(m[1]) : 0;
+    }).filter(n => n > 0);
+
+    if (indices.length === 0) return [];
+
+    const max = Math.max(...indices);
+    const params = new Array(max).fill('');
+
+    for (const k of paramKeys) {
+        const m = k.match(/^param(\d+)$/i);
+        if (!m) continue;
+        const idx = Number(m[1]);
+        params[idx - 1] = obj[k];
+    }
+
+    return params;
 }
 
 function getDates(charId) {
