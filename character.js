@@ -182,40 +182,42 @@ function resolveParam(params) {
 
         if (p[1] === 'LevelUp') {
             const results = [];
-            let currentId = Number(p[2]) + 10;
+            let currentId = Number(p[2]);
+
+            let source;
+            switch (p[0]) {
+                case 'Effect':
+                case 'EffectValue':
+                    source = EFFECTVALUE;
+                    break;
+
+                case 'Buff':
+                case 'BuffValue':
+                    source = BUFFVALUE;
+                    break;
+
+                case 'OnceAdditionalAttribute':
+                case 'OnceAdditionalAttributeValue':
+                    source = ONCEADDITTIONALATTRIBUTEVALUE;
+                    break;
+
+                case 'ScriptParameter':
+                case 'ScriptParameterValue':
+                    source = SCRIPTPARAMETERVALUE;
+                    break;
+
+                case 'Shield':
+                case 'ShieldValue':
+                    source = SHIELDVALUE;
+                    break;
+
+                default:
+                    break;
+            }
+
+            if (!source[currentId]) currentId += 10;
 
             for (; ; currentId += 10) {
-                let source;
-                switch (p[0]) {
-                    case 'Effect':
-                    case 'EffectValue':
-                        source = EFFECTVALUE;
-                        break;
-
-                    case 'Buff':
-                    case 'BuffValue':
-                        source = BUFFVALUE;
-                        break;
-
-                    case 'OnceAdditionalAttribute':
-                    case 'OnceAdditionalAttributeValue':
-                        source = ONCEADDITTIONALATTRIBUTEVALUE;
-                        break;
-
-                    case 'ScriptParameter':
-                    case 'ScriptParameterValue':
-                        source = SCRIPTPARAMETERVALUE;
-                        break;
-
-                    case 'Shield':
-                    case 'ShieldValue':
-                        source = SHIELDVALUE;
-                        break;
-
-                    default:
-                        break;
-                }
-
                 if (!source || !source[currentId]) break;
 
                 const value = source[currentId][p[3]];
