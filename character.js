@@ -30,6 +30,16 @@ const LANG_TALENTGROUP = require('./EN/language/en_US/TalentGroup.json');
 const LANG_DATINGCHARACTEREVENT = require('./EN/language/en_US/DatingCharacterEvent.json');
 const LANG_DATINGBRANCH = require('./EN/language/en_US/DatingBranch.json');
 
+const DAMAGE_TYPE = {
+    1: 'Auto Attack',
+    2: 'Skill',
+    3: 'Ultimate',
+    4: 'Other',
+    5: 'Mark',
+    6: 'Projectile',
+    7: 'Minion'
+}
+
 const character = {};
 
 for (const id in CHARACTER) {
@@ -50,6 +60,7 @@ for (const id in CHARACTER) {
             name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc],
+            damageType: getSkillDamageTypes(CHARACTER[id].NormalAtkId),
             params: getSkillParams(CHARACTER[id].NormalAtkId),
         },
         skill: {
@@ -57,6 +68,7 @@ for (const id in CHARACTER) {
             cooldown: SKILL[CHARACTER[id].SkillId].SkillCD / 10000 + 's',
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc],
+            damageType: getSkillDamageTypes(CHARACTER[id].SkillId),
             params: getSkillParams(CHARACTER[id].SkillId),
         },
         supportSkill: {
@@ -64,6 +76,7 @@ for (const id in CHARACTER) {
             cooldown: SKILL[CHARACTER[id].AssistSkillId].SkillCD / 10000 + 's',
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc],
+            damageType: getSkillDamageTypes(CHARACTER[id].AssistSkillId),
             params: getSkillParams(CHARACTER[id].AssistSkillId),
         },
         ultimate: {
@@ -72,6 +85,7 @@ for (const id in CHARACTER) {
             energy: SKILL[CHARACTER[id].UltimateId].UltraEnergy / 10000,
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Desc],
+            damageType: getSkillDamageTypes(CHARACTER[id].UltimateId),
             params: getSkillParams(CHARACTER[id].UltimateId),
         },
         potential: getPotentials(id),
@@ -245,6 +259,26 @@ function resolveParam(params) {
     });
 }
 
+function getSkillDamageTypes(skillId) {
+    const damageTypes = [];
+
+    const params = Object.keys(SKILL[skillId])
+        .filter(key => /^param\d+$/i.test(key))
+        .filter(key => SKILL[skillId][key].startsWith('HitDamage'))
+        .map(key => SKILL[skillId][key]);
+
+    for (const param of params) {
+        const p = param.split(',');
+        if (!HITDAMAGE[p[2]]) continue;
+
+        const type = HITDAMAGE[p[2]].DamageType;
+
+        damageTypes.push(DAMAGE_TYPE[type]);
+    }
+
+    return [...new Set(damageTypes)];
+}
+
 function iHateFloatingPointNumber(a, op, b) {
     const smallest = String(a < b ? a : b);
     const factor = smallest.length - smallest.indexOf('.');
@@ -324,30 +358,35 @@ function getPotentials(charId) {
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
         })),
         mainNormal: pot.MasterNormalPotentialIds.map(id => ({
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
         })),
         common: pot.CommonPotentialIds.map(id => ({
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
         })),
         supportCore: pot.AssistSpecificPotentialIds.map(id => ({
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
         })),
         supportNormal: pot.AssistNormalPotentialIds.map(id => ({
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
         })),
     }
@@ -359,6 +398,26 @@ function getPotentialParams(potId) {
         .map(key => POTENTIAL[potId][key]);
 
     return resolveParam(params);
+}
+
+function getPotentialDamageTypes(potId) {
+    const damageTypes = [];
+
+    const params = Object.keys(POTENTIAL[potId])
+        .filter(key => /^param\d+$/i.test(key))
+        .filter(key => POTENTIAL[potId][key].startsWith('HitDamage'))
+        .map(key => POTENTIAL[potId][key]);
+
+    for (const param of params) {
+        const p = param.split(',');
+        if (!HITDAMAGE[p[2]]) continue;
+
+        const type = HITDAMAGE[p[2]].DamageType;
+
+        damageTypes.push(DAMAGE_TYPE[type]);
+    }
+
+    return [...new Set(damageTypes)];
 }
 
 function getStats(charId) {
