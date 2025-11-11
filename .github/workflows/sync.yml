@@ -27,7 +27,7 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git remote add upstream https://github.com/Hiro420/StellaSoraData
         git fetch upstream
-        git merge --allow-unrelated-histories --no-edit upstream/main
+        git merge --allow-unrelated-histories -X theirs --no-edit upstream/main
         node character.js
         node disc.js
         node gacha.js
