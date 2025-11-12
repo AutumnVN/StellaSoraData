@@ -489,6 +489,7 @@ function getDates(charId) {
     return Object.keys(DATINGCHARACTEREVENT)
         .filter(key => DATINGCHARACTEREVENT[key].DatingEventParams[0] === +charId).map(eventId => {
             return {
+                id: +eventId,
                 name: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Name],
                 clue: LANG_DATINGCHARACTEREVENT[DATINGCHARACTEREVENT[eventId].Clue],
                 secondChoice: LANG_DATINGBRANCH[DATINGBRANCH[`${DATINGCHARACTEREVENT[eventId].DatingEventParams[1]}001`][`Option${DATINGCHARACTEREVENT[eventId].BranchTag}`]],
