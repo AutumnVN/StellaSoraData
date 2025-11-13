@@ -62,6 +62,7 @@ for (const id in CHARACTER) {
             desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc],
             damageType: getSkillDamageTypes(CHARACTER[id].NormalAtkId),
             params: getSkillParams(CHARACTER[id].NormalAtkId),
+            icon: SKILL[CHARACTER[id].NormalAtkId].Icon.split('/').pop(),
         },
         skill: {
             name: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Title],
@@ -70,6 +71,7 @@ for (const id in CHARACTER) {
             desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc],
             damageType: getSkillDamageTypes(CHARACTER[id].SkillId),
             params: getSkillParams(CHARACTER[id].SkillId),
+            icon: SKILL[CHARACTER[id].SkillId].Icon.split('/').pop(),
         },
         supportSkill: {
             name: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
@@ -78,6 +80,7 @@ for (const id in CHARACTER) {
             desc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc],
             damageType: getSkillDamageTypes(CHARACTER[id].AssistSkillId),
             params: getSkillParams(CHARACTER[id].AssistSkillId),
+            icon: SKILL[CHARACTER[id].AssistSkillId].Icon.split('/').pop(),
         },
         ultimate: {
             name: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
@@ -87,6 +90,7 @@ for (const id in CHARACTER) {
             desc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Desc],
             damageType: getSkillDamageTypes(CHARACTER[id].UltimateId),
             params: getSkillParams(CHARACTER[id].UltimateId),
+            icon: SKILL[CHARACTER[id].UltimateId].Icon.split('/').pop(),
         },
         potential: getPotentials(id),
         talent: getTalents(id),
