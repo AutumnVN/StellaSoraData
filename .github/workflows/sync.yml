@@ -33,6 +33,7 @@ jobs:
         node gacha.js
         node emblem.js
         node item.js
+        node raid.js
         git add .
         if git diff --cached --quiet; then
           exit 0

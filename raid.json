@@ -1,0 +1,145 @@
+{
+    "51001": {
+        "name": "Opera Ghost: Rovina",
+        "icon": "monsterhead_70001JuYuanMeiYing_Dark_L",
+        "subname": "Symphony",
+        "mechanic": [
+            {
+                "name": "Echo",
+                "desc": "The boss gains an Echo Codex that dissipates after taking a certain number of hits. When the boss casts certain skills, the Echo Codex casts similar skills.",
+                "icon": "Icon_JointDrill_JuYuanMeiYing_001"
+            },
+            {
+                "name": "Records",
+                "desc": "The boss gains a Record Codex that dissipates after taking a certain number of hits but revives after some time. When the boss casts certain skills, the Record Codex records similar skills and cast them later.",
+                "icon": "Icon_JointDrill_JuYuanMeiYing_002"
+            },
+            {
+                "name": "Codex's Protection",
+                "desc": "The boss initially has high DMG Resistance. Each Echo Codex or Record Codex removed lowers the boss's DMG Resistance.",
+                "icon": "Icon_JointDrill_JuYuanMeiYing_003"
+            },
+            {
+                "name": "Fear Resonance",
+                "desc": "Each time an ally deals DMG to the boss, it increases the DMG the boss takes for a short period.",
+                "icon": "Icon_JointDrill_JuYuanMeiYing_004"
+            },
+            {
+                "name": "Abyssal Lament",
+                "desc": "The boss summons multiple Echo Codices to continuously channel energy. The fewer Echo Codices remaining when the channeling ends, the weaker the attacks from the boss.",
+                "icon": "Icon_JointDrill_JuYuanMeiYing_005"
+            },
+            {
+                "name": "Nightmare Symphony",
+                "desc": "The boss summons the Record Codices on the battlefield and absorbs them. The more Record Codices absorbed, the stronger the boss's attacks will become.",
+                "icon": "Icon_JointDrill_JuYuanMeiYing_006"
+            }
+        ],
+        "weakTo": [
+            "None"
+        ],
+        "resistTo": "None",
+        "diff": [
+            {
+                "name": "Normal",
+                "stat": {
+                    "HP": "4,130,000",
+                    "ATK": "1,946",
+                    "DEF": "500",
+                    "Hit Rate": "100%",
+                    "Attack Speed": "100%",
+                    "Aqua DMG": "100%",
+                    "Ignis DMG": "100%",
+                    "Terra DMG": "100%",
+                    "Ventus DMG": "100%",
+                    "Lux DMG": "100%",
+                    "Umbra DMG": "100%",
+                    "Mark DMG Taken": "100%",
+                    "Resilience": "4,130,000",
+                    "Resilience Ratio (whatever that means)": "-66.67%",
+                    "Aqua RES": "570",
+                    "Ignis RES": "570",
+                    "Terra RES": "570",
+                    "Ventus RES": "570",
+                    "Lux RES": "570",
+                    "Umbra RES": "570"
+                }
+            },
+            {
+                "name": "Hard",
+                "stat": {
+                    "HP": "29,900,000",
+                    "ATK": "5,024",
+                    "DEF": "500",
+                    "Hit Rate": "100%",
+                    "Attack Speed": "100%",
+                    "Aqua DMG": "100%",
+                    "Ignis DMG": "100%",
+                    "Terra DMG": "100%",
+                    "Ventus DMG": "100%",
+                    "Lux DMG": "100%",
+                    "Umbra DMG": "100%",
+                    "Mark DMG Taken": "100%",
+                    "Resilience": "29,900,000",
+                    "Resilience Ratio (whatever that means)": "-66.67%",
+                    "Aqua RES": "570",
+                    "Ignis RES": "570",
+                    "Terra RES": "570",
+                    "Ventus RES": "570",
+                    "Lux RES": "570",
+                    "Umbra RES": "570"
+                }
+            },
+            {
+                "name": "Extra Hard",
+                "stat": {
+                    "HP": "63,780,000",
+                    "ATK": "8,620",
+                    "DEF": "500",
+                    "Hit Rate": "100%",
+                    "Attack Speed": "100%",
+                    "Aqua DMG": "100%",
+                    "Ignis DMG": "100%",
+                    "Terra DMG": "100%",
+                    "Ventus DMG": "100%",
+                    "Lux DMG": "100%",
+                    "Umbra DMG": "100%",
+                    "Mark DMG Taken": "100%",
+                    "Resilience": "63,780,000",
+                    "Resilience Ratio (whatever that means)": "-66.67%",
+                    "Aqua RES": "570",
+                    "Ignis RES": "570",
+                    "Terra RES": "570",
+                    "Ventus RES": "570",
+                    "Lux RES": "570",
+                    "Umbra RES": "570"
+                }
+            },
+            {
+                "name": "Ultimate",
+                "stat": {
+                    "HP": "207,914,000",
+                    "ATK": "16,544",
+                    "DEF": "500",
+                    "Hit Rate": "100%",
+                    "Attack Speed": "100%",
+                    "Aqua DMG": "100%",
+                    "Ignis DMG": "100%",
+                    "Terra DMG": "100%",
+                    "Ventus DMG": "100%",
+                    "Lux DMG": "100%",
+                    "Umbra DMG": "100%",
+                    "Mark DMG Taken": "100%",
+                    "Resilience": "207,914,000",
+                    "Resilience Ratio (whatever that means)": "-66.67%",
+                    "Aqua RES": "570",
+                    "Ignis RES": "570",
+                    "Terra RES": "570",
+                    "Ventus RES": "570",
+                    "Lux RES": "570",
+                    "Umbra RES": "570"
+                }
+            }
+        ]
+    }
+}
