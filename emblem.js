@@ -44,8 +44,8 @@ const MAP = {
     '仆从暴击': 'Minion Crit Rate',
     '衍生物暴击': 'Derivative Crit Rate',
 
-    '支援能量获取效率': 'Support Energy Gain Efficiency',
-    '主控能量获取效率': 'Main Energy Gain Efficiency',
+    '支援能量获取效率': 'Support Charge Efficiency',
+    '主控能量获取效率': 'Main Charge Efficiency',
 
     '普通攻击等级提升': 'Auto Attack',
     '技能等级提升': 'Main Skill',
