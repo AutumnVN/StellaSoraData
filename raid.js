@@ -36,9 +36,10 @@ for (const drillId in JOINTDRILLCONTROL) {
             return {
                 name: LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
                 stat: {
-                    'HP': monsterValueTemplate.Hp.toLocaleString(),
-                    'ATK': monsterValueTemplate.Atk.toLocaleString(),
-                    'DEF': monsterValueTemplate.Def.toLocaleString(),
+                    'HP': monsterValueTemplate.Hp,
+                    'HP Bar': level.HpBarNum,
+                    'ATK': monsterValueTemplate.Atk,
+                    'DEF': monsterValueTemplate.Def,
                     'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
                     'Attack Speed': monsterValueTemplate.AtkSpd / 100 + '%',
                     'Aqua DMG': monsterValueTemplate.WEE / 100 + '%',
@@ -48,14 +49,14 @@ for (const drillId in JOINTDRILLCONTROL) {
                     'Lux DMG': monsterValueTemplate.LEE / 100 + '%',
                     'Umbra DMG': monsterValueTemplate.DEE / 100 + '%',
                     'Mark DMG Taken': monsterValueTemplate.RCDMARKDMG / 100 + '%',
-                    'Resilience': monsterValueTemplate.Toughness.toLocaleString(),
+                    'Resilience': monsterValueTemplate.Toughness,
                     'Resilience Ratio (whatever that means)': monsterValueTemplateAdjust.ToughnessRatio / 100 + '%',
-                    'Aqua RES': monsterValueTemplateAdjust.WERFix.toLocaleString(),
-                    'Ignis RES': monsterValueTemplateAdjust.FERFix.toLocaleString(),
-                    'Terra RES': monsterValueTemplateAdjust.SERFix.toLocaleString(),
-                    'Ventus RES': monsterValueTemplateAdjust.AERFix.toLocaleString(),
-                    'Lux RES': monsterValueTemplateAdjust.LERFix.toLocaleString(),
-                    'Umbra RES': monsterValueTemplateAdjust.DERFix.toLocaleString(),
+                    'Aqua RES': monsterValueTemplateAdjust.WERFix,
+                    'Ignis RES': monsterValueTemplateAdjust.FERFix,
+                    'Terra RES': monsterValueTemplateAdjust.SERFix,
+                    'Ventus RES': monsterValueTemplateAdjust.AERFix,
+                    'Lux RES': monsterValueTemplateAdjust.LERFix,
+                    'Umbra RES': monsterValueTemplateAdjust.DERFix,
                 }
             }
         })
