@@ -361,6 +361,8 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
+            icon: ITEM[id].Icon.split('/').pop(),
+            rarity: getPotentialRarity(id),
         })),
         mainNormal: pot.MasterNormalPotentialIds.map(id => ({
             name: LANG_ITEM[ITEM[id].Title],
@@ -368,6 +370,8 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
+            icon: ITEM[id].Icon.split('/').pop(),
+            rarity: getPotentialRarity(id),
         })),
         common: pot.CommonPotentialIds.map(id => ({
             name: LANG_ITEM[ITEM[id].Title],
@@ -375,6 +379,8 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
+            icon: ITEM[id].Icon.split('/').pop(),
+            rarity: getPotentialRarity(id),
         })),
         supportCore: pot.AssistSpecificPotentialIds.map(id => ({
             name: LANG_ITEM[ITEM[id].Title],
@@ -382,6 +388,8 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
+            icon: ITEM[id].Icon.split('/').pop(),
+            rarity: getPotentialRarity(id),
         })),
         supportNormal: pot.AssistNormalPotentialIds.map(id => ({
             name: LANG_ITEM[ITEM[id].Title],
@@ -389,6 +397,8 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             params: getPotentialParams(id),
+            icon: ITEM[id].Icon.split('/').pop(),
+            rarity: getPotentialRarity(id),
         })),
     }
 }
@@ -413,6 +423,16 @@ function getPotentialDamageTypes(potId) {
     }
 
     return [...new Set(damageTypes)];
+}
+
+function getPotentialRarity(potId) {
+    const stype = ITEM[potId].Stype;
+    const rarity = ITEM[potId].Rarity;
+
+    if (stype === 42) return 'core';
+    if (stype === 41 && rarity === 1) return 'rare';
+    if (stype === 41 && rarity === 2) return 'common';
+    return 'common';
 }
 
 function getStats(charId) {
