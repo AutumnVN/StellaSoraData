@@ -1,0 +1,426 @@
+{
+    "1": {
+        "name": "Wrath Rock Juggernaut",
+        "icon": "challenge_boss_bust_01",
+        "mechanic": [
+            {
+                "name": "Bounty - Armor Break",
+                "desc": "Each Resilience Break inflicted on the boss by your squad grants <color=#ec6d21>400</color> Technique Points. It can be triggered up to <color=#ec6d21>5</color> times, granting a total of <color=#ec6d21>2,000</color> points.",
+                "icon": "Icon_Bossrush_Tongyongdefen_003"
+            },
+            {
+                "name": "Stellnanite Berserk",
+                "desc": "The boss starts with 1 stack of Berserk and gains 1 stack every 10s (up to 5 stacks). Each stack increases the boss' DMG by <color=#ec6d21>20%</color>.\nDealing 10 hits to the boss within 2s removes all Berserk stacks. The main Trekker then gains 10 stacks of Amplify (up to 10 stacks). Each hit dealt consumes 1 Amplify stack to increase that hit's DMG by <color=#ec6d21>50%</color>.",
+                "icon": "Icon_Bossrush_Teshujizhi_001"
+            }
+        ],
+        "weakTo": [
+            "Aqua",
+            "Ignis",
+            "Terra",
+            "Ventus",
+            "Lux",
+            "Umbra"
+        ],
+        "resistTo": "None",
+        "stat": {
+            "HP": 1057980,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 67200000,
+            "Aqua RES": 750,
+            "Ignis RES": 750,
+            "Terra RES": 750,
+            "Ventus RES": 750,
+            "Lux RES": 750,
+            "Umbra RES": 750
+        }
+    },
+    "2": {
+        "name": "Lithe Beauty",
+        "icon": "cover_Bossrush_fengcao",
+        "mechanic": [
+            {
+                "name": "Bounty - Wind Dodger",
+                "desc": "Whenever a boss casts a skill that triggers Tornado, dodging the Tornado grants <color=#ec6d21>450</color> Technique Points. It can be triggered up to <color=#ec6d21>12</color> times, granting a total of <color=#ec6d21>5,400</color> points.",
+                "icon": "Icon_Bossrush_Fengcao_001"
+            },
+            {
+                "name": "Stellnanite Berserk",
+                "desc": "The boss starts with 1 stack of Berserk and gains 1 stack every 10s (up to 5 stacks). Each stack increases the boss' DMG by <color=#ec6d21>20%</color>.\nDealing 10 hits to the boss within 2s removes all Berserk stacks. The main Trekker then gains 10 stacks of Amplify (up to 10 stacks). Each hit dealt consumes 1 Amplify stack to increase that hit's DMG by <color=#ec6d21>50%</color>.",
+                "icon": "Icon_Bossrush_Teshujizhi_001"
+            }
+        ],
+        "weakTo": [
+            "Ignis",
+            "Aqua"
+        ],
+        "resistTo": "Ventus",
+        "stat": {
+            "HP": 1057980,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 67200000,
+            "Aqua RES": 250,
+            "Ignis RES": 250,
+            "Terra RES": 750,
+            "Ventus RES": 2000,
+            "Lux RES": 750,
+            "Umbra RES": 750
+        }
+    },
+    "3": {
+        "name": "Flavor Dread",
+        "icon": "cover_Bossrush_chushi",
+        "mechanic": [
+            {
+                "name": "Bounty - Knife Destroyer",
+                "desc": "Each Blade thrown by the boss and destroyed by allies grants <color=#ec6d21>180</color> Technique Points. It can be triggered up to <color=#ec6d21>30</color> times, granting a total of <color=#ec6d21>5,400</color> points.",
+                "icon": "Icon_Bossrush_Chushi_001"
+            },
+            {
+                "name": "Pyro Blight",
+                "desc": "The boss gains a Fire Ring, increasing their DMG dealt by <color=#ec6d21>30%</color> and continuously dealing DMG to your squad within the ring.\nTriggering 3 Elemental Marks on the boss within 5s grants the squad Enhancement, increasing Auto Attack DMG by <color=#ec6d21>30%</color> for 10s, and disables the boss' Fire Ring for 10s.",
+                "icon": "Icon_Bossrush_Teshujizhi_002"
+            }
+        ],
+        "weakTo": [
+            "Aqua",
+            "Lux"
+        ],
+        "resistTo": "Ignis",
+        "stat": {
+            "HP": 880000,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 56000000,
+            "Aqua RES": 250,
+            "Ignis RES": 2000,
+            "Terra RES": 750,
+            "Ventus RES": 750,
+            "Lux RES": 250,
+            "Umbra RES": 750
+        }
+    },
+    "4": {
+        "name": "Lithe Beauty",
+        "icon": "cover_Bossrush_fengcao",
+        "mechanic": [
+            {
+                "name": "Bounty - Weed Killer",
+                "desc": "Whenever a boss summons monsters, each monster that survives for less than 10s grants 600 Technique Points. It can be triggered up to <color=#ec6d21>5</color> times, granting a total of <color=#ec6d21>3,000</color> points.",
+                "icon": "Icon_Bossrush_Fengcao_002"
+            },
+            {
+                "name": "Stellnanite Berserk",
+                "desc": "The boss starts with 1 stack of Berserk and gains 1 stack every 10s (up to 5 stacks). Each stack increases the boss' DMG by <color=#ec6d21>20%</color>.\nDealing 10 hits to the boss within 2s removes all Berserk stacks. The main Trekker then gains 10 stacks of Amplify (up to 10 stacks). Each hit dealt consumes 1 Amplify stack to increase that hit's DMG by <color=#ec6d21>50%</color>.",
+                "icon": "Icon_Bossrush_Teshujizhi_001"
+            }
+        ],
+        "weakTo": [
+            "Ignis",
+            "Aqua"
+        ],
+        "resistTo": "Ventus",
+        "stat": {
+            "HP": 1057980,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 67200000,
+            "Aqua RES": 250,
+            "Ignis RES": 250,
+            "Terra RES": 750,
+            "Ventus RES": 2000,
+            "Lux RES": 750,
+            "Umbra RES": 750
+        }
+    },
+    "5": {
+        "name": "Flavor Dread",
+        "icon": "cover_Bossrush_chushi",
+        "mechanic": [
+            {
+                "name": "Bounty - Knife Recycler",
+                "desc": "Each Blade thrown and then retrieved by the boss grants <color=#ec6d21>75 Technique Points. It can be triggered up to <color=#ec6d21>40</color> times, granting a total of <color=#ec6d21>3,000</color> points.",
+                "icon": "Icon_Bossrush_Chushi_002"
+            },
+            {
+                "name": "Pyro Blight",
+                "desc": "The boss gains a Fire Ring, increasing their DMG dealt by <color=#ec6d21>30%</color> and continuously dealing DMG to your squad within the ring.\nTriggering 3 Elemental Marks on the boss within 5s grants the squad Enhancement, increasing Auto Attack DMG by <color=#ec6d21>30%</color> for 10s, and disables the boss' Fire Ring for 10s.",
+                "icon": "Icon_Bossrush_Teshujizhi_002"
+            }
+        ],
+        "weakTo": [
+            "Aqua",
+            "Lux"
+        ],
+        "resistTo": "Ignis",
+        "stat": {
+            "HP": 880000,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 56000000,
+            "Aqua RES": 250,
+            "Ignis RES": 2000,
+            "Terra RES": 750,
+            "Ventus RES": 750,
+            "Lux RES": 250,
+            "Umbra RES": 750
+        }
+    },
+    "6": {
+        "name": "Abyssal Sea Sovereign",
+        "icon": "cover_Bossrush_shayu",
+        "mechanic": [
+            {
+                "name": "Bounty: Dodging Fissures",
+                "desc": "Whenever a boss casts a skill that triggers Ground Fissure, dodging the Ground Fissure grants <color=#ec6d21>100</color> Technique Points. It can be triggered up to <color=#ec6d21>30</color> times, granting a total of <color=#ec6d21>3,000</color> points.",
+                "icon": "Icon_Bossrush_ShaSha_001"
+            },
+            {
+                "name": "Pyro Blight",
+                "desc": "The boss gains a Fire Ring, increasing their DMG dealt by <color=#ec6d21>30%</color> and continuously dealing DMG to your squad within the ring.\nTriggering 3 Elemental Marks on the boss within 5s grants the squad Enhancement, increasing Auto Attack DMG by <color=#ec6d21>30%</color> for 10s, and disables the boss' Fire Ring for 10s.",
+                "icon": "Icon_Bossrush_Teshujizhi_002"
+            }
+        ],
+        "weakTo": [
+            "Ignis",
+            "Ventus"
+        ],
+        "resistTo": "Aqua",
+        "stat": {
+            "HP": 1057980,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 67200000,
+            "Aqua RES": 2000,
+            "Ignis RES": 250,
+            "Terra RES": 750,
+            "Ventus RES": 250,
+            "Lux RES": 750,
+            "Umbra RES": 750
+        }
+    },
+    "7": {
+        "name": "Abyssal Sea Sovereign",
+        "icon": "cover_Bossrush_shayu",
+        "mechanic": [
+            {
+                "name": "Bounty - Combo",
+                "desc": "Dealing continuous DMG to a boss for 5s by your squad grants <color=#ec6d21>100</color> Technique Points. It can be triggered up to <color=#ec6d21>20</color> times, granting a total of <color=#ec6d21>2,000</color> points.",
+                "icon": "Icon_Bossrush_ShaSha_002"
+            },
+            {
+                "name": "Pyro Blight",
+                "desc": "The boss gains a Fire Ring, increasing their DMG dealt by <color=#ec6d21>30%</color> and continuously dealing DMG to your squad within the ring.\nTriggering 3 Elemental Marks on the boss within 5s grants the squad Enhancement, increasing Auto Attack DMG by <color=#ec6d21>30%</color> for 10s, and disables the boss' Fire Ring for 10s.",
+                "icon": "Icon_Bossrush_Teshujizhi_002"
+            }
+        ],
+        "weakTo": [
+            "Ignis",
+            "Ventus"
+        ],
+        "resistTo": "Aqua",
+        "stat": {
+            "HP": 1057980,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 67200000,
+            "Aqua RES": 2000,
+            "Ignis RES": 250,
+            "Terra RES": 750,
+            "Ventus RES": 250,
+            "Lux RES": 750,
+            "Umbra RES": 750
+        }
+    },
+    "8": {
+        "name": "Forbidden Beauty",
+        "icon": "cover_Bossrush_jinduan",
+        "mechanic": [
+            {
+                "name": "!NONEED!",
+                "desc": "!NONEED!",
+                "icon": "Icon_Bossrush_JinDuanLiRong_001"
+            },
+            {
+                "name": "!NONEED!",
+                "desc": "!NONEED!",
+                "icon": "Icon_Bossrush_Teshujizhi_002"
+            }
+        ],
+        "weakTo": [
+            "Ignis",
+            "Lux"
+        ],
+        "resistTo": "Ventus",
+        "stat": {
+            "HP": 1057980,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 67200000,
+            "Aqua RES": 750,
+            "Ignis RES": 250,
+            "Terra RES": 750,
+            "Ventus RES": 2000,
+            "Lux RES": 250,
+            "Umbra RES": 750
+        }
+    },
+    "9": {
+        "name": "Forbidden Beauty",
+        "icon": "cover_Bossrush_jinduan",
+        "mechanic": [
+            {
+                "name": "!NONEED!",
+                "desc": "!NONEED!",
+                "icon": "Icon_Bossrush_JinDuanLiRong_002"
+            },
+            {
+                "name": "!NONEED!",
+                "desc": "!NONEED!",
+                "icon": "Icon_Bossrush_Teshujizhi_002"
+            }
+        ],
+        "weakTo": [
+            "Ignis",
+            "Lux"
+        ],
+        "resistTo": "Ventus",
+        "stat": {
+            "HP": 1057980,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 67200000,
+            "Aqua RES": 750,
+            "Ignis RES": 250,
+            "Terra RES": 750,
+            "Ventus RES": 2000,
+            "Lux RES": 250,
+            "Umbra RES": 750
+        }
+    },
+    "10": {
+        "name": "Abyssal Sea Sovereign",
+        "icon": "cover_Bossrush_shayu",
+        "mechanic": [
+            {
+                "name": "Bounty: Dodging Fissures",
+                "desc": "Whenever a boss casts a skill that triggers Ground Fissure, dodging the Ground Fissure grants <color=#ec6d21>100</color> Technique Points. It can be triggered up to <color=#ec6d21>30</color> times, granting a total of <color=#ec6d21>3,000</color> points.",
+                "icon": "Icon_Bossrush_ShaSha_001"
+            },
+            {
+                "name": "Pyro Blight",
+                "desc": "The boss gains a Fire Ring, increasing their DMG dealt by <color=#ec6d21>30%</color> and continuously dealing DMG to your squad within the ring.\nTriggering 3 Elemental Marks on the boss within 5s grants the squad Enhancement, increasing Auto Attack DMG by <color=#ec6d21>30%</color> for 10s, and disables the boss' Fire Ring for 10s.",
+                "icon": "Icon_Bossrush_Teshujizhi_002"
+            }
+        ],
+        "weakTo": [
+            "Ignis",
+            "Ventus"
+        ],
+        "resistTo": "Aqua",
+        "stat": {
+            "HP": 1057980,
+            "ATK": 6282,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 67200000,
+            "Aqua RES": 2000,
+            "Ignis RES": 250,
+            "Terra RES": 750,
+            "Ventus RES": 250,
+            "Lux RES": 750,
+            "Umbra RES": 750
+        }
+    }
+}

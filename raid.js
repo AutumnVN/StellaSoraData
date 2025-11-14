@@ -4,6 +4,7 @@ const JOINTDRILLCONTROL = require('./EN/bin/JointDrillControl.json');
 const JOINTDRILLLEVEL = require('./EN/bin/JointDrillLevel.json');
 const MONSTER = require('./EN/bin/Monster.json');
 const MONSTERMANUAL = require('./EN/bin/MonsterManual.json');
+const MONSTERSKIN = require('./EN/bin/MonsterSkin.json');
 const MONSTERVALUETEMPLETE = require('./EN/bin/MonsterValueTemplete.json');
 const MONSTERVALUETEMPLETEADJUST = require('./EN/bin/MonsterValueTempleteAdjust.json');
 const LANG_JOINTDRILLAFFIX = require('./EN/language/en_US/JointDrillAffix.json');
@@ -18,7 +19,7 @@ for (const drillId in JOINTDRILLCONTROL) {
     const drillLevels = Object.values(JOINTDRILLLEVEL).filter(level => level.DrillLevelGroupId === drillLevelGroupId);
 
     raid[drillLevelGroupId] = {
-        name: drillLevels.map(level => LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTER[level.BossId].FCId]?.Name]).filter(value => value)[0],
+        name: LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Name],
         icon: drillLevels.map(level => MONSTERMANUAL[MONSTER[level.BossId].FCId]?.Icon).filter(value => value)[0].split('/').pop(),
         subname: LANG_JOINTDRILLLEVEL[drillLevels[0].SubName],
         mechanic: drillLevels[0].BossAffix.map(affixId => ({
