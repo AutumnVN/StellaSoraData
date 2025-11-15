@@ -38,7 +38,56 @@ const DAMAGE_TYPE = {
     5: 'Mark',
     6: 'Projectile',
     7: 'Minion'
-}
+};
+
+const EFFECT_TYPE = {
+    1: 'STATE_CHANGE',
+    2: 'CURRENTCD',
+    3: 'CD',
+    6: 'ADDBUFF',
+    7: 'ADD_SKILL_LV',
+    8: 'SET_SKILL_LV',
+    9: 'IMM_BUFF',
+    10: 'ADDSKILLAMOUNT',
+    11: 'RESUMSKILLAMOUNT',
+    12: 'ATTR_FIX',
+    13: 'REMOVE_BUFF',
+    14: 'EFFECT_CD_FIX',
+    15: 'EFFECT_MAX_CD_FIX',
+    16: 'AMEND_NO_COST',
+    17: 'DAMAGE_IMM_ACC',
+    18: 'EFFECT_MUL',
+    19: 'EFFECT_HP_RECOVERY',
+    21: 'KILL_IMMEDIATELY',
+    22: 'ADD_BUFF_DURATION_EXISTING',
+    23: 'HIT_ELEMENT_TYPE_EXTEND',
+    24: 'CHANGE_EFFECT_RATE',
+    25: 'ADD_TAG',
+    27: 'EFFECT_HP_REVERTTO',
+    28: 'EFFECT_HP_ABSORB',
+    29: 'CHANGE_BUFF_LAMINATEDNUM',
+    30: 'CHANGE_BUFF_TIME',
+    31: 'EFFECT_REVIVE',
+    32: 'EFFECT_POSTREVIVE',
+    34: 'SPECIAL_ATTR_FIX',
+    35: 'AMMO_FIX',
+    36: 'MONSTER_ATTR_FIX',
+    37: 'PLAYER_ATTR_FIX',
+    38: 'IMMUNE_DEAD',
+    39: 'ENTER_TRANSPARENT',
+    40: 'UNABLE_RECOVER_ENERGY',
+    41: 'CLEAR_MONSTER_AI_BRANCH_CD',
+    42: 'ADD_SHIELD',
+    43: 'REDUCE_HP_BY_CURRENTHP',
+    44: 'REDUCE_HP_BY_MAXHP',
+    45: 'HITTED_ADDITIONAL_ATTR_FIX',
+    46: 'ATTR_ASSIGNMENT',
+    47: 'CAST_AREAEFFECT',
+    48: 'PASSIVE_SKILL',
+    49: 'IMM_CERTAIN_HITDAMAGEID',
+    50: 'STATE_AMOUNT',
+    51: 'DROP_ITEM_PICKUP_RANGE_FIX',
+};
 
 const character = {};
 
@@ -61,6 +110,7 @@ for (const id in CHARACTER) {
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc],
             damageType: getSkillDamageTypes(CHARACTER[id].NormalAtkId),
+            effectType: getSkillEffectTypes(CHARACTER[id].NormalAtkId),
             params: getSkillParams(CHARACTER[id].NormalAtkId),
             icon: SKILL[CHARACTER[id].NormalAtkId].Icon.split('/').pop(),
         },
@@ -70,6 +120,7 @@ for (const id in CHARACTER) {
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc],
             damageType: getSkillDamageTypes(CHARACTER[id].SkillId),
+            effectType: getSkillEffectTypes(CHARACTER[id].SkillId),
             params: getSkillParams(CHARACTER[id].SkillId),
             icon: SKILL[CHARACTER[id].SkillId].Icon.split('/').pop(),
         },
@@ -79,6 +130,7 @@ for (const id in CHARACTER) {
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc],
             damageType: getSkillDamageTypes(CHARACTER[id].AssistSkillId),
+            effectType: getSkillEffectTypes(CHARACTER[id].AssistSkillId),
             params: getSkillParams(CHARACTER[id].AssistSkillId),
             icon: SKILL[CHARACTER[id].AssistSkillId].Icon.split('/').pop(),
         },
@@ -89,6 +141,7 @@ for (const id in CHARACTER) {
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Desc],
             damageType: getSkillDamageTypes(CHARACTER[id].UltimateId),
+            effectType: getSkillEffectTypes(CHARACTER[id].UltimateId),
             params: getSkillParams(CHARACTER[id].UltimateId),
             icon: SKILL[CHARACTER[id].UltimateId].Icon.split('/').pop(),
         },
@@ -280,6 +333,26 @@ function getSkillDamageTypes(skillId) {
     return [...new Set(damageTypes)];
 }
 
+function getSkillEffectTypes(skillId) {
+    const effectTypes = [];
+
+    const params = collectParamsFrom(SKILL[skillId]).filter(p => p && p.startsWith('Effect'));
+
+    for (const param of params) {
+        const p = param.split(',');
+        let currentId = +p[2];
+        if (!EFFECTVALUE[currentId]) currentId += 10;
+        if (!EFFECTVALUE[currentId]) continue;
+
+        let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
+        if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+
+        effectTypes.push(LANG_UITEXT[`UIText.Enums_Effect_${type}.1`] || EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
+    }
+
+    return [...new Set(effectTypes)];
+}
+
 function iHateFloatingPointNumber(a, op, b) {
     const smallest = String(a < b ? a : b);
     const factor = smallest.length - smallest.indexOf('.');
@@ -360,6 +433,7 @@ function getPotentials(charId) {
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
+            effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             rarity: getPotentialRarity(id),
@@ -369,6 +443,7 @@ function getPotentials(charId) {
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
+            effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             rarity: getPotentialRarity(id),
@@ -378,6 +453,7 @@ function getPotentials(charId) {
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
+            effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             rarity: getPotentialRarity(id),
@@ -387,6 +463,7 @@ function getPotentials(charId) {
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
+            effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             rarity: getPotentialRarity(id),
@@ -396,6 +473,7 @@ function getPotentials(charId) {
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
+            effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             rarity: getPotentialRarity(id),
@@ -423,6 +501,27 @@ function getPotentialDamageTypes(potId) {
     }
 
     return [...new Set(damageTypes)];
+}
+
+function getPotentialEffectTypes(potId) {
+    const effectTypes = [];
+
+    const params = collectParamsFrom(POTENTIAL[potId]).filter(p => p && p.startsWith('Effect'));
+
+    for (const param of params) {
+        const p = param.split(',');
+
+        let currentId = +p[2];
+        if (!EFFECTVALUE[currentId]) currentId += 10;
+        if (!EFFECTVALUE[currentId]) continue;
+
+        let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
+        if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+
+        effectTypes.push(LANG_UITEXT[`UIText.Enums_Effect_${type}.1`] || EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
+    }
+
+    return [...new Set(effectTypes)];
 }
 
 function getPotentialRarity(potId) {
