@@ -98,6 +98,8 @@ function getMainSkill(id) {
         desc: LANG_MAINSKILL[MAINSKILL[key].Desc],
         effectType: getMainSkillEffectTypes(id),
         params: getMainSkillParams(id),
+        icon: MAINSKILL[key].Icon.split('/').pop(),
+        iconBg: MAINSKILL[key].IconBg.split('/').pop(),
     }
 }
 
@@ -145,6 +147,8 @@ function getSeconarySkill(id) {
         effectType: getSeconarySkillEffectTypes(id),
         params: getSecondarySkillParams(id),
         requirements: getNoteRequirements(id),
+        icon: SECONDARYSKILL[key].Icon.split('/').pop(),
+        iconBg: SECONDARYSKILL[key].IconBg.split('/').pop(),
     }
 }
 
