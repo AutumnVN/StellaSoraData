@@ -152,8 +152,8 @@ const ATTR_TYPE = {
     83: 'Other Crit DMG',
     84: 'Max Energy',
     85: 'Skill Intensity',
-    86: 'Shield',
-    87: 'Shield?',
+    86: 'ADD_SHIELD_STRENGTHEN',
+    87: 'BE_ADD_SHIELD_STRENGTHEN',
 };
 
 const disc = {};
