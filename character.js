@@ -89,6 +89,96 @@ const EFFECT_TYPE = {
     51: 'DROP_ITEM_PICKUP_RANGE_FIX',
 };
 
+const ATTR_TYPE = {
+    1: 'ATK',
+    2: 'DEF',
+    3: 'HP',
+    4: 'Accuracy',
+    5: 'Evasion',
+    6: 'Crit Rate',
+    7: 'Crit RES',
+    8: 'Crit DMG',
+    9: 'DEF PEN',
+    10: 'Ignore DEF',
+    11: 'Aqua RES',
+    12: 'Ignis RES',
+    13: 'Terra RES',
+    14: 'Ventus RES',
+    15: 'Lux RES',
+    16: 'Umbra RES',
+    17: 'Aqua DMG',
+    18: 'Ignis DMG',
+    19: 'Terra DMG',
+    20: 'Ventus DMG',
+    21: 'Lux DMG',
+    22: 'Umbra DMG',
+    23: 'Aqua PEN',
+    24: 'Ignis PEN',
+    25: 'Terra PEN',
+    26: 'Ventus PEN',
+    27: 'Lux PEN',
+    28: 'Umbra PEN',
+    29: 'Ignore Aqua RES',
+    30: 'Ignore Ignis RES',
+    31: 'Ignore Terra RES',
+    32: 'Ignore Ventus RES',
+    33: 'Ignore Lux RES',
+    34: 'Ignore Umbra RES',
+    35: 'Aqua DMG Taken',
+    36: 'Ignis DMG Taken',
+    37: 'Terra DMG Taken',
+    38: 'Ventus DMG Taken',
+    39: 'Lux DMG Taken',
+    40: 'Umbra DMG Taken',
+    41: 'Weight',
+    42: 'Resilience',
+    43: 'Resilience Break Efficiency',
+    44: 'Max Shield',
+    45: 'Shield PEN',
+    46: 'Movement Speed',
+    47: 'Attack Speed',
+    48: 'Intensity',
+    49: 'DMG Dealt',
+    50: 'DMG',
+    51: 'Final DMG',
+    52: 'Final DMG+',
+    53: 'DMG Taken',
+    54: 'DMG Taken+',
+    55: 'VUL Exploit',
+    56: 'Auto Attack Damage',
+    57: 'Skill DMG',
+    58: 'Ultimate DMG',
+    59: 'Other DMG',
+    60: 'Auto Attack DMG Taken',
+    61: 'Skill DMG Taken',
+    62: 'Ultimate DMG Taken',
+    63: 'Other DMG Taken',
+    64: 'Mark DMG',
+    65: 'Mark DMG Taken',
+    66: 'Minion DMG',
+    67: 'Minion DMG Taken',
+    68: 'Derivative DMG',
+    69: 'Derivative DMG Taken',
+    70: 'Auto Attack Crit Rate',
+    71: 'Skill Crit Rate',
+    72: 'Ultimate Crit Rate',
+    73: 'Mark Crit Rate',
+    74: 'Minion Crit Rate',
+    75: 'Derivative Crit Rate',
+    76: 'Other Crit',
+    77: 'Normal Attack Crit DMG',
+    78: 'Skill Crit DMG',
+    79: 'Ultimate Crit DMG',
+    80: 'Mark Crit DMG',
+    81: 'Minion Crit DMG',
+    82: 'Derivative Crit DMG',
+    83: 'Other Crit DMG',
+    84: 'Max Energy',
+    85: 'Skill Intensity',
+    86: 'Shield',
+    87: 'Shield?',
+};
+
 const character = {};
 
 for (const id in CHARACTER) {
@@ -227,7 +317,7 @@ function resolveParam(params) {
                 case '10KHdPct':
                     return value / 100 + '%';
                 case 'Enum':
-                    return LANG_UITEXT[`UIText.Enums_Effect_${value}.1`];
+                    return ATTR_TYPE[value];
                 case 'Pct':
                     return value + '%';
                 default:
@@ -296,7 +386,7 @@ function resolveParam(params) {
                         results.push(value / 100 + '%');
                         break;
                     case 'Enum':
-                        results.push(LANG_UITEXT[`UIText.Enums_Effect_${value}.1`]);
+                        results.push(ATTR_TYPE[value]);
                         break;
                     case 'Pct':
                         results.push(value + '%');
@@ -347,7 +437,7 @@ function getSkillEffectTypes(skillId) {
         let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
 
-        effectTypes.push(LANG_UITEXT[`UIText.Enums_Effect_${type}.1`] || EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
+        effectTypes.push(ATTR_TYPE[type] || EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
     }
 
     return [...new Set(effectTypes)];
@@ -518,7 +608,7 @@ function getPotentialEffectTypes(potId) {
         let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
 
-        effectTypes.push(LANG_UITEXT[`UIText.Enums_Effect_${type}.1`] || EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
+        effectTypes.push(ATTR_TYPE[type] || EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
     }
 
     return [...new Set(effectTypes)];
