@@ -12362,7 +12362,7 @@
             "Skills"
         ],
         "mainSkill": {
-            "name": "Aromatic Squad",
+            "name": "Aromatic Steam",
             "desc": "Increases the Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2}, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
                 "Skill DMG"
@@ -17850,7 +17850,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
-            "name": "Moment of Terror",
+            "name": "Startling Moment",
             "desc": "When the main Terra Trekker is hit, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Terra DMG"
@@ -21678,7 +21678,7 @@
         ],
         "mainSkill": {
             "name": "Meowing Cat God",
-            "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ignis character casts a skill, increases the ATK of Ignis characters in the squad by {2} for {3}s. The main Ignis character gains Blazing Armor: reduces DMG taken by {4} for {5}s.",
+            "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ignis Trekker casts a skill, increases the ATK of Ignis Trekkers in the squad by {2} for {3}s. The main Ignis Trekker gains Blazing Armor: reduces DMG taken by {4} for {5}s.",
             "effectType": [
                 "Ignis DMG",
                 "ATK",
@@ -22261,7 +22261,7 @@
         ],
         "mainSkill": {
             "name": "Sky, Flowers, Poem",
-            "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Ventus character deals non-Auto Attack DMG to a target, there is a {2} chance to inflict Laceration: increases Ventus DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Ventus character from targets inflicted with Laceration by {5}.",
+            "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Ventus Trekker deals non-Auto Attack DMG to a target, there is a {2} chance to inflict Laceration: increases Ventus DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Ventus Trekker from targets inflicted with Laceration by {5}.",
             "effectType": [
                 "Ventus DMG",
                 "Ventus DMG Taken",
@@ -22273,7 +22273,7 @@
         },
         "secondarySkill1": {
             "name": "Snowpetal Storm",
-            "desc": "Increases Ventus squadmates' Ultimate DMG dealt to targets inflicted with Laceration by <color=#ec6d21>{1}</color>.",
+            "desc": "Increases Ventus Trekkers' Ultimate DMG dealt to targets inflicted with Laceration by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Ultimate DMG"
             ],
@@ -22844,7 +22844,7 @@
         ],
         "mainSkill": {
             "name": "Sunlit Blossom",
-            "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bIncreases the Aqua DMG dealt by Aqua Trekkers in the squad to targets inflicted with ##Cold#1027# or ##Frozen#1002# by an additional <color=#ec6d21>{2}</color>.",
+            "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bIncreases the Aqua DMG dealt by Aqua Trekkers in the squad to targets inflicted with ##Chill#1027# or ##Frozen#1002# by an additional <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "Aqua DMG"
             ],
@@ -23469,7 +23469,7 @@
         },
         "secondarySkill2": {
             "name": "Dark Trace",
-            "desc": "Increases Umbra squadmates' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen any character triggers ##Umbra Mark#1019#, increases this effect by an additional <color=#ec6d21>{2}</color> and the DMG of all allied Umbra minions on the battlefield by an additional <color=#ec6d21>{3}</color> for {4}s.",
+            "desc": "Increases Umbra Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Umbra Mark#1019#, increases this effect by an additional <color=#ec6d21>{2}</color> and the DMG of all allied Umbra minions on the battlefield by an additional <color=#ec6d21>{3}</color> for {4}s.",
             "effectType": [
                 "Ultimate DMG",
                 "Minion DMG"
@@ -26921,7 +26921,7 @@
         ],
         "mainSkill": {
             "name": "Voyage Blueprint",
-            "desc": "Increases the ATK of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ignis Trekker casts a skill, the main Ignis Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
+            "desc": "Increases the ATK of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ignis Trekker casts a skill, the main Ignis Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
                 "ATK",
                 "ADD_SHIELD"
@@ -28073,6 +28073,584 @@
             }
         ]
     },
+    "214017": {
+        "id": 214017,
+        "name": "Fireworks",
+        "star": 5,
+        "element": "Ignis",
+        "tag": [
+            "VUL",
+            "Auto Attack",
+            "Skills"
+        ],
+        "mainSkill": {
+            "name": "Fireworks",
+            "desc": "The main Ignis Trekker gains {1} stacks of Explosive Flame after casting a skill. Each stack increases Auto Attack DMG by <color=#ec6d21>{2}</color>, stacking up to {3} times. Each ammo used by the main Ignis Trekker grants one additional stack.\u000bWhen Explosive Flame is at max stacks, increases the main Ignis Trekker's Ignis Auto Attack DMG to targets by <color=#ec6d21>{4}</color> for {5}s. All Explosive Flame stacks are removed after {6}s.",
+            "effectType": [],
+            "params": "3,7%,10,10%,12,3/3,8.4%,10,12%,12,3/3,9.8%,10,14%,12,3/3,11.2%,10,16%,12,3/3,12.6%,10,18%,12,3/3,14%,10,20%,12,3",
+            "icon": "DiscSkill_214017",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill1": {
+            "name": "Warmth in the Arms",
+            "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "effectType": [
+                "Ignis DMG",
+                "Skill DMG"
+            ],
+            "params": "4%,4%,4/8%,8%,4/12%,12%,4/16%,16%,4/20%,20%,4",
+            "requirements": [
+                {
+                    "Melody of Pummel": 10,
+                    "Melody of Ignis": 10
+                },
+                {
+                    "Melody of Pummel": 25,
+                    "Melody of Ignis": 25
+                },
+                {
+                    "Melody of Pummel": 40,
+                    "Melody of Ignis": 40
+                },
+                {
+                    "Melody of Pummel": 55,
+                    "Melody of Ignis": 55
+                },
+                {
+                    "Melody of Pummel": 70,
+                    "Melody of Ignis": 70
+                }
+            ],
+            "icon": "DiscSkill_13",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill2": {
+            "name": "Fervent Flames",
+            "desc": "Each stack of Explosive Flame additionally grants: Skill DMG +<color=#ec6d21>{1}</color>.",
+            "effectType": [],
+            "params": "1.5%/3%/4.5%/6%/7.5%",
+            "requirements": [
+                {
+                    "Melody of Pummel": 15,
+                    "Melody of Luck": 15,
+                    "Melody of Ignis": 15
+                },
+                {
+                    "Melody of Pummel": 30,
+                    "Melody of Luck": 30,
+                    "Melody of Ignis": 30
+                },
+                {
+                    "Melody of Pummel": 45,
+                    "Melody of Luck": 45,
+                    "Melody of Ignis": 45
+                },
+                {
+                    "Melody of Pummel": 60,
+                    "Melody of Luck": 60,
+                    "Melody of Ignis": 60
+                },
+                {
+                    "Melody of Pummel": 75,
+                    "Melody of Luck": 75,
+                    "Melody of Ignis": 75
+                }
+            ],
+            "icon": "DiscSkill_3",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "supportNote": [
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 7
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 9
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 10
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 15,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 20,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 24,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 29,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 33,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 47,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 51,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 56,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 67,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 71,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 76,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 80,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 85,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 89,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 94,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 98,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 103,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 107,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 112,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 134,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 138,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 143,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 147,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 152,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 156,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 161,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 165,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 170,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 174,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 179,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 215,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 219,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 224,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 228,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 233,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 237,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 242,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 246,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 251,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 255,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 260,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 312,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 316,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 321,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 325,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 330,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 334,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 339,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 343,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 348,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 352,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 357,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 428,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 433,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 437,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 442,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 446,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 451,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 455,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 460,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 464,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 469,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 473,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 568,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 572,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 577,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 581,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 586,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 590,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 595,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 599,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 604,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 608,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 613,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 735,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 740,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 744,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 749,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 753,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 758,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 762,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 767,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 771,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 776,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 780,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 936,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 941,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 945,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 950,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 954,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 959,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 963,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 968,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 972,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 977,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 981,
+                "Ignis DMG": "15%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Duloos Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Duloos Breath": 6,
+                "Duloos Soul Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Duloos Breath": 13,
+                "Duloos Soul Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Duloos Breath": 20,
+                "Duloos Soul Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Duloos Breath": 26,
+                "Duloos Soul Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Duloos Breath": 40,
+                "Duloos Soul Remnant": 73,
+                "Duloos Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Duloos Soul Remnant": 100,
+                "Duloos Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Duloos Soul Remnant": 126,
+                "Duloos Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
     "214018": {
         "id": 214018,
         "name": "Lemon & Black Tea",
@@ -28093,7 +28671,7 @@
         },
         "secondarySkill1": {
             "name": "Subtle Influence",
-            "desc": "Increases Ventus squadmates' Ventus DMG dealt to targets with Ventus VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ventus Trekker by {2}.",
+            "desc": "Increases Ventus Trekkers' Ventus DMG dealt to targets with Ventus VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ventus Trekker by {2}.",
             "effectType": [
                 "Ventus DMG",
                 "DMG Taken"
@@ -28673,7 +29251,7 @@
         },
         "secondarySkill1": {
             "name": "Windbreaking Shots",
-            "desc": "Increases Ignis squadmates' Ignis DMG dealt to targets with Ignis VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ignis Trekker by {2}.",
+            "desc": "Increases Ignis Trekkers' Ignis DMG dealt to targets with Ignis VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ignis Trekker by {2}.",
             "effectType": [
                 "Ignis DMG",
                 "DMG Taken"
@@ -28706,7 +29284,7 @@
         },
         "secondarySkill2": {
             "name": "Battle Rhapsody",
-            "desc": "Increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, increases this effect by an additional {3} every {2}s, stacking up to {4} times.",
+            "desc": "Increases Ignis Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, increases this effect by an additional {3} every {2}s, stacking up to {4} times.",
             "effectType": [],
             "params": "2.5%,8,1.36%,10/5%,8,1.36%,10/7.5%,8,1.36%,10/10%,8,1.36%,10/12.5%,8,1.36%,10",
             "requirements": [
@@ -29251,7 +29829,7 @@
         },
         "secondarySkill1": {
             "name": "Flashing Memories",
-            "desc": "Increases Lux squadmates' Lux DMG dealt to targets with Lux VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Lux Trekker by {2}.",
+            "desc": "Increases Lux Trekkers' Lux DMG dealt to targets with Lux VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Lux Trekker by {2}.",
             "effectType": [
                 "Lux DMG",
                 "DMG Taken"
@@ -29284,7 +29862,7 @@
         },
         "secondarySkill2": {
             "name": "Radiant Bonds",
-            "desc": "Increases Lux squadmates' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts an Ultimate, increases this effect by an additional {2}, stacking up to {3} times.",
+            "desc": "Increases Lux Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts an Ultimate, increases this effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
                 "Auto Attack Damage",
                 "Skill DMG"
@@ -29832,7 +30410,7 @@
         },
         "secondarySkill1": {
             "name": "Unbreakable Trio",
-            "desc": "Increases Aqua squadmates' Aqua DMG dealt to targets with Aqua VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Aqua Trekker by {2}.",
+            "desc": "Increases Aqua Trekkers' Aqua DMG dealt to targets with Aqua VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Aqua Trekker by {2}.",
             "effectType": [
                 "Aqua DMG",
                 "DMG Taken"
@@ -29865,7 +30443,7 @@
         },
         "secondarySkill2": {
             "name": "Moment of Unity",
-            "desc": "Increases Aqua squadmates' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
+            "desc": "Increases Aqua Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
             "effectType": [
                 "Auto Attack Damage",
                 "Skill DMG"
@@ -30413,7 +30991,7 @@
         },
         "secondarySkill1": {
             "name": "Moment of Terror",
-            "desc": "Increases Umbra squadmates' Umbra DMG dealt to targets with Umbra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Umbra Trekker by {2}.",
+            "desc": "Increases Umbra Trekkers' Umbra DMG dealt to targets with Umbra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Umbra Trekker by {2}.",
             "effectType": [
                 "Umbra DMG",
                 "DMG Taken"
@@ -30446,7 +31024,7 @@
         },
         "secondarySkill2": {
             "name": "Humble Courage",
-            "desc": "Increases Umbra squadmates' Skill and Ultimate DMG dealt to normal targets by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, for {2} normal targets killed in total, increases Umbra squadmates' Skill and Ultimate DMG dealt to elite or higher-tier targets by {3}.",
+            "desc": "Increases Umbra Trekkers' Skill and Ultimate DMG dealt to normal targets by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, for {2} normal targets killed in total, increases Umbra Trekkers' Skill and Ultimate DMG dealt to elite or higher-tier targets by {3}.",
             "effectType": [],
             "params": "3%,50,18%/6%,50,18%/9%,50,18%/12%,50,18%/15%,50,18%",
             "requirements": [
@@ -30991,7 +31569,7 @@
         },
         "secondarySkill1": {
             "name": "Street Spirit",
-            "desc": "Increases Terra squadmates' Terra DMG dealt to targets with Terra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Terra Trekker by {2}.",
+            "desc": "Increases Terra Trekkers' Terra DMG dealt to targets with Terra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Terra Trekker by {2}.",
             "effectType": [
                 "Terra DMG",
                 "Aqua DMG Taken"
@@ -31024,7 +31602,7 @@
         },
         "secondarySkill2": {
             "name": "Hit and Run",
-            "desc": "Increases Terra squadmates' Skill and Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
+            "desc": "Increases Terra Trekkers' Skill and Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
             "effectType": [],
             "params": "3%,10,1.8%,10/6%,10,1.8%,10/9%,10,1.8%,10/12%,10,1.8%,10/15%,10,1.8%,10",
             "requirements": [
@@ -31601,7 +32179,7 @@
         },
         "secondarySkill2": {
             "name": "Water Mirror",
-            "desc": "Increases Aqua squadmates' Skill DMG dealt to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
+            "desc": "Increases Aqua Trekkers' Skill DMG dealt to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
             ],
@@ -32140,7 +32718,7 @@
         ],
         "mainSkill": {
             "name": "Mystic Brushstrokes",
-            "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen any character triggers ##Ignis Mark#1016#, increases Ignis squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
                 "Ignis DMG",
                 "Skill DMG"
@@ -32151,7 +32729,7 @@
         },
         "secondarySkill1": {
             "name": "Wild Brushstrokes",
-            "desc": "Increases Ignis squadmates' Skill DMG by <color=#ec6d21>{1}</color>. When the target is inflicted with ##Burn#2027#, increases by an additional <color=#ec6d21>{2}</color>.",
+            "desc": "Increases Ignis Trekkers' Skill DMG by <color=#ec6d21>{1}</color>. When the target is inflicted with ##Burn#2027#, increases by an additional <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "Skill DMG"
             ],
@@ -32722,7 +33300,7 @@
         ],
         "mainSkill": {
             "name": "Daylight Garden",
-            "desc": "Increases the Auto Attack DMG & Skill DMG of the main Ventus character by <color=#ec6d21>{1}</color>.\u000bWhen any character triggers ##Ventus Mark#1017#, increases the main Ventus character's Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "desc": "Increases the Auto Attack DMG & Skill DMG of the main Ventus Trekker by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ventus Mark#1017#, increases the main Ventus Trekker's Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
                 "Auto Attack Damage",
                 "Skill DMG",
@@ -32734,7 +33312,7 @@
         },
         "secondarySkill1": {
             "name": "Fragrant Illusion",
-            "desc": "Increases Ventus squadmates' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ventus character deals Ultimate DMG, increases her Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "desc": "Increases Ventus Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ventus Trekker deals Ultimate DMG, increases her Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
                 "Ultimate DMG",
                 "Ventus DMG"
@@ -33304,7 +33882,7 @@
         ],
         "mainSkill": {
             "name": "A Moment in the Afternoon",
-            "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux character deals non-Auto Attack DMG to a target, there is a {2} chance to inflict Shock: increases Lux DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Lux character from targets inflicted with Shock by {5}.",
+            "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker deals non-Auto Attack DMG to a target, there is a {2} chance to inflict Shock: increases Lux DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Lux Trekker from targets inflicted with Shock by {5}.",
             "effectType": [
                 "Lux DMG",
                 "Lux DMG Taken",
@@ -33316,7 +33894,7 @@
         },
         "secondarySkill1": {
             "name": "Falling Gleam",
-            "desc": "Increases Lux squadmates' Skill DMG dealt to targets inflicted with Shock by <color=#ec6d21>{1}</color>.",
+            "desc": "Increases Lux Trekkers' Skill DMG dealt to targets inflicted with Shock by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
             ],
@@ -33887,7 +34465,7 @@
         ],
         "mainSkill": {
             "name": "The Clash of Blade and Axe",
-            "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Aqua character casts a skill, increases the Skill DMG of Aqua characters in the squad by {2} for {3}s. The main Aqua character gains Bless: reduces DMG taken by {4} for {5}s.",
+            "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Aqua Trekker casts a skill, increases the Skill DMG of Aqua Trekkers in the squad by {2} for {3}s. The main Aqua Trekker gains Bless: reduces DMG taken by {4} for {5}s.",
             "effectType": [
                 "Aqua DMG",
                 "Skill DMG",
@@ -34470,7 +35048,7 @@
         ],
         "mainSkill": {
             "name": "Dream Factory of ☆Truth",
-            "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra character deal non-Auto Attack DMG to a target, there is a {2} chance to inflict Corrosion: increases Umbra DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Umbra character from targets inflicted with Corrosion by {5}.",
+            "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker deal non-Auto Attack DMG to a target, there is a {2} chance to inflict Corrosion: increases Umbra DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Umbra Trekker from targets inflicted with Corrosion by {5}.",
             "effectType": [
                 "Umbra DMG",
                 "DMG Taken"
@@ -35050,7 +35628,7 @@
         ],
         "mainSkill": {
             "name": "Dancing with the Bones",
-            "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Terra character's HP is above {2} when any Terra character deals Skill DMG, increases the DMG of this hit by {3}. The main Terra character gains Boulder: reduces DMG taken by {4}.",
+            "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Terra Trekker's HP is above {2} when any Terra Trekker deals Skill DMG, increases the DMG of this hit by {3}. The main Terra Trekker gains Boulder: reduces DMG taken by {4}.",
             "effectType": [],
             "params": "10%,50%,8.5%,10%/12%,50%,8.5%,10%/14%,50%,8.5%,10%/16%,50%,8.5%,10%/18%,50%,8.5%,10%/20%,50%,8.5%,10%",
             "icon": "DiscSkill_214033",
@@ -35641,7 +36219,7 @@
         },
         "secondarySkill1": {
             "name": "Iron Love Embrace",
-            "desc": "Increases Terra squadmates' ATK by <color=#ec6d21>{1}</color>.\u000bWhen any Terra Trekker deals Skill DMG, if a support Terra Trekker is on the battlefield, increases the Skill DMG by <color=#ec6d21>{2}</color>.",
+            "desc": "Increases Terra Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bWhen any Terra Trekker deals Skill DMG, if a support Terra Trekker is on the battlefield, increases the Skill DMG by <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "ATK",
                 "Skill DMG"
@@ -37384,7 +37962,7 @@
         },
         "secondarySkill1": {
             "name": "Azure Horizon",
-            "desc": "Increases Lux squadmates' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts a skill, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
+            "desc": "Increases Lux Trekkers' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts a skill, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
             "effectType": [
                 "Skill DMG"
             ],
@@ -37937,6 +38515,584 @@
             {
                 "Duloos Soul Remnant": 126,
                 "Duloos Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214040": {
+        "id": 214040,
+        "name": "Fist of Courage",
+        "star": 5,
+        "element": "Ignis",
+        "tag": [
+            "Ultimate",
+            "Skills",
+            "DEF"
+        ],
+        "mainSkill": {
+            "name": "Fist of Courage",
+            "desc": "The main Ignis Trekker gains 1 stack of Courage when dealing Ultimate DMG, increasing Ultimate DMG by <color=#ec6d21>{1}</color> for {3}s, stacking up to {2} times.",
+            "effectType": [],
+            "params": "4%,10,8/4.8%,10,8/5.6%,10,8/6.4%,10,8/7.2%,10,8/8%,10,8",
+            "icon": "DiscSkill_214040",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill1": {
+            "name": "Passion of the Captain",
+            "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Trekker deals Skill DMG, increases Ignis Trekkers' ATK by <color=#ec6d21>{2}</color> for {3}s.",
+            "effectType": [
+                "Skill DMG",
+                "ATK"
+            ],
+            "params": "5%,2%,5/10%,4%,5/15%,6%,5/20%,8%,5/25%,10%,5",
+            "requirements": [
+                {
+                    "Melody of Pummel": 10,
+                    "Melody of Ignis": 10
+                },
+                {
+                    "Melody of Pummel": 25,
+                    "Melody of Ignis": 25
+                },
+                {
+                    "Melody of Pummel": 40,
+                    "Melody of Ignis": 40
+                },
+                {
+                    "Melody of Pummel": 55,
+                    "Melody of Ignis": 55
+                },
+                {
+                    "Melody of Pummel": 70,
+                    "Melody of Ignis": 70
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill2": {
+            "name": "Inspiration of Courage",
+            "desc": "When the duration of Courage ends, each stack of Courage increases the main Ignis Trekker's Auto Attack DMG by <color=#ec6d21>{1}</color> and grants {2} DEF for {3}s.",
+            "effectType": [],
+            "params": "1.5%,6,27/3%,6,27/4.5%,6,27/6%,6,27/7.5%,6,27",
+            "requirements": [
+                {
+                    "Melody of Burst": 15,
+                    "Melody of Skill": 15,
+                    "Melody of Ignis": 15
+                },
+                {
+                    "Melody of Burst": 30,
+                    "Melody of Skill": 30,
+                    "Melody of Ignis": 30
+                },
+                {
+                    "Melody of Burst": 45,
+                    "Melody of Skill": 45,
+                    "Melody of Ignis": 45
+                },
+                {
+                    "Melody of Burst": 60,
+                    "Melody of Skill": 60,
+                    "Melody of Ignis": 60
+                },
+                {
+                    "Melody of Burst": 75,
+                    "Melody of Skill": 75,
+                    "Melody of Ignis": 75
+                }
+            ],
+            "icon": "DiscSkill_1",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "supportNote": [
+            {
+                "Melody of Focus": 3,
+                "Melody of Ignis": 3
+            },
+            {
+                "Melody of Focus": 3,
+                "Melody of Ignis": 4
+            },
+            {
+                "Melody of Focus": 4,
+                "Melody of Ignis": 4
+            },
+            {
+                "Melody of Focus": 4,
+                "Melody of Ignis": 5
+            },
+            {
+                "Melody of Focus": 5,
+                "Melody of Ignis": 5
+            },
+            {
+                "Melody of Focus": 5,
+                "Melody of Ignis": 6
+            },
+            {
+                "Melody of Focus": 6,
+                "Melody of Ignis": 6
+            },
+            {
+                "Melody of Focus": 6,
+                "Melody of Ignis": 7
+            },
+            {
+                "Melody of Focus": 7,
+                "Melody of Ignis": 7
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 14,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 18,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 22,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 26,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 30,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 34,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 46,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 50,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 60,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 64,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 68,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 72,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 77,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 80,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 85,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 88,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 93,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 96,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 101,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 121,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 124,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 129,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 132,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 137,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 140,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 145,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 149,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 153,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 157,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 161,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 194,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 197,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 202,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 205,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 210,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 213,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 218,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 221,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 226,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 230,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 234,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 281,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 284,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 289,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 293,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 297,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 301,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 305,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 309,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 313,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 317,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 321,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 385,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 390,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 393,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 398,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 401,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 406,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 410,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 414,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 418,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 422,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 426,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 511,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 515,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 519,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 523,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 527,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 531,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 536,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 539,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 544,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 547,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 552,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 662,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 666,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 670,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 674,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 678,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 682,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 686,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 690,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 694,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 698,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 702,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 842,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 847,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 851,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 855,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 859,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 863,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 867,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 871,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 875,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 879,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 883,
+                "Ignis DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Eerie Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Eerie Breath": 6,
+                "Phantom Step Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Eerie Breath": 13,
+                "Phantom Step Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Eerie Breath": 20,
+                "Phantom Step Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Eerie Breath": 26,
+                "Phantom Step Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Eerie Breath": 40,
+                "Phantom Step Remnant": 73,
+                "Frenzied Waltz Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Phantom Step Remnant": 100,
+                "Frenzied Waltz Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Phantom Step Remnant": 126,
+                "Frenzied Waltz Essence": 66,
                 "Dorra": 1513800
             }
         ]
