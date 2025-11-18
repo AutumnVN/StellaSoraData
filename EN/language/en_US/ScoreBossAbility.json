@@ -1,10 +1,10 @@
 {
   "ScoreBossAbility.100001.1": "Stellnanite Berserk",
-  "ScoreBossAbility.100001.2": "The boss starts with 1 stack of Berserk and gains 1 stack every 10s (up to 5 stacks). Each stack increases the boss' DMG by <color=#ec6d21>20%</color>.\nDealing 10 hits to the boss within 2s removes all Berserk stacks. The main Trekker then gains 10 stacks of Amplify (up to 10 stacks). Each hit dealt consumes 1 Amplify stack to increase that hit's DMG by <color=#ec6d21>50%</color>.",
+  "ScoreBossAbility.100001.2": "The boss starts with 1 stack of Berserk and gains 1 stack every 10s (up to 5 stacks). Each stack increases the boss' DMG by <color=#ec6d21>&Param1&</color>.\nDealing 10 hits to the boss within 2s removes all Berserk stacks. The main Trekker then gains 10 stacks of Amplify (up to 10 stacks). Each hit dealt consumes 1 Amplify stack to increase that hit's DMG by <color=#ec6d21>&Param2&</color>.",
   "ScoreBossAbility.100002.1": "Pyro Blight",
-  "ScoreBossAbility.100002.2": "The boss gains a Fire Ring, increasing their DMG dealt by <color=#ec6d21>30%</color> and continuously dealing DMG to your squad within the ring.\nTriggering 3 Elemental Marks on the boss within 5s grants the squad Enhancement, increasing Auto Attack DMG by <color=#ec6d21>30%</color> for 10s, and disables the boss' Fire Ring for 10s.",
-  "ScoreBossAbility.100003.1": "!NONEED!",
-  "ScoreBossAbility.100003.2": "!NONEED!",
-  "ScoreBossAbility.100004.1": "!NONEED!",
-  "ScoreBossAbility.100004.2": "!NONEED!"
+  "ScoreBossAbility.100002.2": "The boss gains a Fire Ring, increasing their DMG dealt by <color=#ec6d21>&Param1&</color> and continuously dealing DMG to your squad within the ring.\nTriggering 3 Elemental Marks on the boss within 5s grants the squad Enhancement, increasing Auto Attack DMG by <color=#ec6d21>&Param2&</color> for 10s, and disables the boss's Fire Ring for 10s.",
+  "ScoreBossAbility.100003.1": "Fervent Combat",
+  "ScoreBossAbility.100003.2": "The boss gains 1 stack of Battle Frenzy every 5 seconds, increasing the DMG it deals by <color=#ec6d21>&Param1&</color> (up to 5 stacks). When the Main Trekker triggers a Mark, removes 1 stack of Battle Frenzy from the boss if it has any, restores 20 Energy for the squad, and increases the boss's Ultimate DMG Taken by <color=#ec6d21>&Param2&</color>, lasting for 10s and resets when triggered again.",
+  "ScoreBossAbility.100004.1": "Devouring Dark Ring",
+  "ScoreBossAbility.100004.2": "The boss has Dark Ring, which increases the boss's DMG by <color=#ec6d21>&Param1&</color>. The boss also creates an expanding Dark Ring every 5s that deals DMG.\nDealing 20 hits to the boss within 3s disables the boss's Dark Ring for 15s. The boss also takes <color=#ec6d21>&Param2&</color> more DMG dealt by Support Trekkers during this period."
 }
