@@ -187,69 +187,72 @@ const CORNER_TYPE = {
 
 const character = {};
 
-for (const id in CHARACTER) {
-    if (LANG_CHARACTER[CHARACTER[id].Name] === '???') continue;
+!async function () {
+    for (const id in CHARACTER) {
+        if (LANG_CHARACTER[CHARACTER[id].Name] === '???') continue;
 
-    character[id] = {
-        id: +id,
-        name: LANG_CHARACTER[CHARACTER[id].Name],
-        star: CHARACTER[id].Grade === 1 ? 5 : 4,
-        element: LANG_UITEXT[`UIText.T_Element_Attr_${CHARACTER[id].EET}.1`],
-        class: LANG_UITEXT[`UIText.Char_JobClass_${CHARACTER[id].Class}.1`],
-        attackType: CHARACTER[id].CharacterAttackType === 1 ? 'Melee' : 'Ranged',
-        tag: CHARACTERDES[id].Tag.map(tagId => LANG_CHARACTERTAG[`CharacterTag.${tagId}.1`]),
-        loveGift: getGifts(CHARACTERDES[id].PreferTags),
-        hateGift: getGifts(CHARACTERDES[id].HateTags),
-        date: getDates(id),
-        normalAtk: {
-            name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
-            briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
-            desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc],
-            damageType: getSkillDamageTypes(CHARACTER[id].NormalAtkId),
-            effectType: getSkillEffectTypes(CHARACTER[id].NormalAtkId),
-            params: getSkillParams(CHARACTER[id].NormalAtkId),
-            icon: SKILL[CHARACTER[id].NormalAtkId].Icon.split('/').pop(),
-        },
-        skill: {
-            name: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Title],
-            cooldown: SKILL[CHARACTER[id].SkillId].SkillCD / 10000 + 's',
-            briefDesc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].BriefDesc],
-            desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc],
-            damageType: getSkillDamageTypes(CHARACTER[id].SkillId),
-            effectType: getSkillEffectTypes(CHARACTER[id].SkillId),
-            params: getSkillParams(CHARACTER[id].SkillId),
-            icon: SKILL[CHARACTER[id].SkillId].Icon.split('/').pop(),
-        },
-        supportSkill: {
-            name: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
-            cooldown: SKILL[CHARACTER[id].AssistSkillId].SkillCD / 10000 + 's',
-            briefDesc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].BriefDesc],
-            desc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc],
-            damageType: getSkillDamageTypes(CHARACTER[id].AssistSkillId),
-            effectType: getSkillEffectTypes(CHARACTER[id].AssistSkillId),
-            params: getSkillParams(CHARACTER[id].AssistSkillId),
-            icon: SKILL[CHARACTER[id].AssistSkillId].Icon.split('/').pop(),
-        },
-        ultimate: {
-            name: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
-            cooldown: SKILL[CHARACTER[id].UltimateId].SkillCD / 10000 + 's',
-            energy: SKILL[CHARACTER[id].UltimateId].UltraEnergy / 10000,
-            briefDesc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].BriefDesc],
-            desc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Desc],
-            damageType: getSkillDamageTypes(CHARACTER[id].UltimateId),
-            effectType: getSkillEffectTypes(CHARACTER[id].UltimateId),
-            params: getSkillParams(CHARACTER[id].UltimateId),
-            icon: SKILL[CHARACTER[id].UltimateId].Icon.split('/').pop(),
-        },
-        potential: getPotentials(id),
-        talent: getTalents(id),
-        stat: getStats(id),
-        upgrade: getUpgrades(id),
-        skillUpgrade: getSkillUpgrades(id),
-    };
-}
+        character[id] = {
+            id: +id,
+            name: LANG_CHARACTER[CHARACTER[id].Name],
+            star: CHARACTER[id].Grade === 1 ? 5 : 4,
+            element: LANG_UITEXT[`UIText.T_Element_Attr_${CHARACTER[id].EET}.1`],
+            class: LANG_UITEXT[`UIText.Char_JobClass_${CHARACTER[id].Class}.1`],
+            attackType: CHARACTER[id].CharacterAttackType === 1 ? 'Melee' : 'Ranged',
+            tag: CHARACTERDES[id].Tag.map(tagId => LANG_CHARACTERTAG[`CharacterTag.${tagId}.1`]),
+            loveGift: getGifts(CHARACTERDES[id].PreferTags),
+            hateGift: getGifts(CHARACTERDES[id].HateTags),
+            date: getDates(id),
+            normalAtk: {
+                name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
+                briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
+                desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc],
+                damageType: getSkillDamageTypes(CHARACTER[id].NormalAtkId),
+                effectType: getSkillEffectTypes(CHARACTER[id].NormalAtkId),
+                params: getSkillParams(CHARACTER[id].NormalAtkId),
+                icon: SKILL[CHARACTER[id].NormalAtkId].Icon.split('/').pop(),
+            },
+            skill: {
+                name: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Title],
+                cooldown: SKILL[CHARACTER[id].SkillId].SkillCD / 10000 + 's',
+                briefDesc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].BriefDesc],
+                desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc],
+                damageType: getSkillDamageTypes(CHARACTER[id].SkillId),
+                effectType: getSkillEffectTypes(CHARACTER[id].SkillId),
+                params: getSkillParams(CHARACTER[id].SkillId),
+                icon: SKILL[CHARACTER[id].SkillId].Icon.split('/').pop(),
+            },
+            supportSkill: {
+                name: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
+                cooldown: SKILL[CHARACTER[id].AssistSkillId].SkillCD / 10000 + 's',
+                briefDesc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].BriefDesc],
+                desc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc],
+                damageType: getSkillDamageTypes(CHARACTER[id].AssistSkillId),
+                effectType: getSkillEffectTypes(CHARACTER[id].AssistSkillId),
+                params: getSkillParams(CHARACTER[id].AssistSkillId),
+                icon: SKILL[CHARACTER[id].AssistSkillId].Icon.split('/').pop(),
+            },
+            ultimate: {
+                name: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
+                cooldown: SKILL[CHARACTER[id].UltimateId].SkillCD / 10000 + 's',
+                energy: SKILL[CHARACTER[id].UltimateId].UltraEnergy / 10000,
+                briefDesc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].BriefDesc],
+                desc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Desc],
+                damageType: getSkillDamageTypes(CHARACTER[id].UltimateId),
+                effectType: getSkillEffectTypes(CHARACTER[id].UltimateId),
+                params: getSkillParams(CHARACTER[id].UltimateId),
+                icon: SKILL[CHARACTER[id].UltimateId].Icon.split('/').pop(),
+            },
+            special: await getSpecialSkills(id),
+            potential: getPotentials(id),
+            talent: getTalents(id),
+            stat: getStats(id),
+            upgrade: getUpgrades(id),
+            skillUpgrade: getSkillUpgrades(id),
+        };
+    }
 
-writeFileSync('./character.json', JSON.stringify(character, null, 4));
+    writeFileSync('./character.json', JSON.stringify(character, null, 4));
+}();
 
 function getSkillParams(skillId) {
     const params = collectParamsFrom(SKILL[skillId]);
@@ -721,3 +724,34 @@ function getDates(charId) {
         });
 }
 
+async function getSpecialSkills(id) {
+    const hitdamage = HITDAMAGE[`${CHARACTER[id].SpecialSkillId}1`] || HITDAMAGE[`${CHARACTER[id].DodgeId}1`];
+    if (!hitdamage) return;
+
+    const type = HITDAMAGE[`${CHARACTER[id].SpecialSkillId}1`] ? 'Special' : 'Dodge';
+    const params = hitdamage.SkillPercentAmend.filter(v => v !== 0).map(v => v / 10000 + '%');
+
+    return {
+        type,
+        name: `${await translateText(hitdamage.HitdamageInfo)} (${hitdamage.HitdamageInfo})`,
+        params: params.every(v => v === params[0]) ? params[0] : params.join('/'),
+        damageType: DAMAGE_TYPE[hitdamage.DamageType],
+    };
+
+}
+
+async function translateText(text) {
+    const GOOGLE_TRANSLATE_URL = "https://translate-pa.googleapis.com/v1/translate?" + new URLSearchParams({
+        "params.client": "gtx",
+        "dataTypes": "TRANSLATION",
+        "key": "AIzaSyDLEeFI5OtFBwYBIoK_jj5m32rZK5CkCXA",
+        "query.sourceLanguage": "zh-CN",
+        "query.targetLanguage": "en",
+        "query.text": text,
+    });
+
+    const response = await fetch(GOOGLE_TRANSLATE_URL);
+    const data = await response.json();
+
+    return data.translation;
+}

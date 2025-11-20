@@ -1599,6 +1599,12 @@
             ],
             "icon": "10701_Ultra"
         },
+        "special": {
+            "type": "Special",
+            "name": "Tilia's Sprint Damage (缇莉娅疾跑伤害)",
+            "params": "8.8%",
+            "damageType": "Skill"
+        },
         "potential": {
             "mainCore": [
                 {
@@ -4592,6 +4598,12 @@
                 "84%/92%/101%/126%/134%/142%/159%/168%/176%/184%/193%/201%/209%"
             ],
             "icon": "11101_Ultra"
+        },
+        "special": {
+            "type": "Dodge",
+            "name": "Iris - Failed dodge - Knockdown damage (鸢尾 闪避失败 倒地伤害)",
+            "params": "6.9%",
+            "damageType": "Skill"
         },
         "potential": {
             "mainCore": [
@@ -18204,6 +18216,12 @@
                 "91%/105%/119%/160%/172%/185%/211%/222%/233%/254%/273%/291%/309%"
             ],
             "icon": "12501_Ultra"
+        },
+        "special": {
+            "type": "Dodge",
+            "name": "Azure Orchid - Dodge - Fury - Dodge damage (苍兰 闪避 狂怒闪避伤害)",
+            "params": "53%/61%/69%/93%/100%/107%/122%/129%/135%/148%/158%/169%/179%",
+            "damageType": "Skill"
         },
         "potential": {
             "mainCore": [
