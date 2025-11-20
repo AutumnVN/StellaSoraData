@@ -179,6 +179,12 @@ const ATTR_TYPE = {
     87: 'BE_ADD_SHIELD_STRENGTHEN',
 };
 
+const CORNER_TYPE = {
+    1: 'Diamond',
+    2: 'Triangle',
+    3: 'Round',
+};
+
 const character = {};
 
 for (const id in CHARACTER) {
@@ -526,6 +532,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
+            corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
         })),
         mainNormal: pot.MasterNormalPotentialIds.map(id => ({
@@ -536,6 +543,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
+            corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
         })),
         common: pot.CommonPotentialIds.map(id => ({
@@ -546,6 +554,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
+            corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
         })),
         supportCore: pot.AssistSpecificPotentialIds.map(id => ({
@@ -556,6 +565,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
+            corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
         })),
         supportNormal: pot.AssistNormalPotentialIds.map(id => ({
@@ -566,6 +576,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
+            corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
         })),
     }
