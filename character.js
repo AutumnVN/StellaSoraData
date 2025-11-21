@@ -203,6 +203,7 @@ const character = {};
             hateGift: getGifts(CHARACTERDES[id].HateTags),
             date: getDates(id),
             normalAtk: {
+                id: CHARACTER[id].NormalAtkId,
                 name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
                 briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
                 desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc],
@@ -212,6 +213,7 @@ const character = {};
                 icon: SKILL[CHARACTER[id].NormalAtkId].Icon.split('/').pop(),
             },
             skill: {
+                id: CHARACTER[id].SkillId,
                 name: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Title],
                 cooldown: SKILL[CHARACTER[id].SkillId].SkillCD / 10000 + 's',
                 briefDesc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].BriefDesc],
@@ -222,6 +224,7 @@ const character = {};
                 icon: SKILL[CHARACTER[id].SkillId].Icon.split('/').pop(),
             },
             supportSkill: {
+                id: CHARACTER[id].AssistSkillId,
                 name: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
                 cooldown: SKILL[CHARACTER[id].AssistSkillId].SkillCD / 10000 + 's',
                 briefDesc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].BriefDesc],
@@ -232,6 +235,7 @@ const character = {};
                 icon: SKILL[CHARACTER[id].AssistSkillId].Icon.split('/').pop(),
             },
             ultimate: {
+                id: CHARACTER[id].UltimateId,
                 name: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
                 cooldown: SKILL[CHARACTER[id].UltimateId].SkillCD / 10000 + 's',
                 energy: SKILL[CHARACTER[id].UltimateId].UltraEnergy / 10000,
@@ -528,6 +532,7 @@ function getPotentials(charId) {
 
     return {
         mainCore: pot.MasterSpecificPotentialIds.map(id => ({
+            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
@@ -539,6 +544,7 @@ function getPotentials(charId) {
             rarity: getPotentialRarity(id),
         })),
         mainNormal: pot.MasterNormalPotentialIds.map(id => ({
+            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
@@ -550,6 +556,7 @@ function getPotentials(charId) {
             rarity: getPotentialRarity(id),
         })),
         common: pot.CommonPotentialIds.map(id => ({
+            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
@@ -561,6 +568,7 @@ function getPotentials(charId) {
             rarity: getPotentialRarity(id),
         })),
         supportCore: pot.AssistSpecificPotentialIds.map(id => ({
+            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
@@ -572,6 +580,7 @@ function getPotentials(charId) {
             rarity: getPotentialRarity(id),
         })),
         supportNormal: pot.AssistNormalPotentialIds.map(id => ({
+            id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
@@ -732,6 +741,7 @@ async function getSpecialSkills(id) {
     const params = hitdamage.SkillPercentAmend.filter(v => v !== 0).map(v => v / 10000 + '%');
 
     return {
+        id: type === 'Special' ? CHARACTER[id].SpecialSkillId : CHARACTER[id].DodgeId,
         type,
         name: `${await translateText(hitdamage.HitdamageInfo)} (${hitdamage.HitdamageInfo})`,
         params: params.every(v => v === params[0]) ? params[0] : params.join('/'),
