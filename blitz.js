@@ -32,7 +32,7 @@ for (const id in SCOREBOSSLEVEL) {
             },
             {
                 name: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Name],
-                desc: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Desc],
+                desc: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Desc].replaceAll('&Param1&', SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Value1 + '%').replaceAll('&Param2&', SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Value2 + '%'),
                 icon: SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].IconSource.split('/').pop(),
             }
         ],
