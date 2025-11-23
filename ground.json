@@ -2,6 +2,33 @@
     "62011": {
         "name": "Garden of Parasite",
         "icon": "boss_Tachie_02",
+        "mechanic": [
+            {
+                "name": "Lashing Vines",
+                "desc": "The Garden of Parasite lashes out at enemies with its vines.",
+                "icon": "regionaffix_1050105"
+            },
+            {
+                "name": "Sharp Spikes",
+                "desc": "The roots of the Garden of Parasite grow into sharp spikes, dividing the battlefield.",
+                "icon": "regionaffix_1050101"
+            },
+            {
+                "name": "Miasma Garden",
+                "desc": "The Garden of Parasite continuously spreads spores that grow into patches of toxic grass upon landing, periodically releasing clouds of miasma.",
+                "icon": "regionaffix_1050107"
+            },
+            {
+                "name": "Sowing",
+                "desc": "The Garden of Parasite produces mimic seeds. Upon maturing and wilting, they spawn a swarm of groundhogs that relentlessly attack their enemies.",
+                "icon": "regionaffix_1050104"
+            },
+            {
+                "name": "Flower Bud",
+                "desc": "Summons two flower buds that periodically release spreading attacks around it.",
+                "icon": "regionaffix_1050106"
+            }
+        ],
         "weakTo": [
             "Lux"
         ],
@@ -84,6 +111,33 @@
     "62021": {
         "name": "Spirit of Brutality",
         "icon": "boss_Tachie_03",
+        "mechanic": [
+            {
+                "name": "Charge",
+                "desc": "The Spirit of Brutality locks onto its target and launches a mid-to-long-range charge.",
+                "icon": "regionaffix_1000501"
+            },
+            {
+                "name": "Tusk Attack",
+                "desc": "The Spirit of Brutality swings its tusks, knocking enemies into the air.",
+                "icon": "regionaffix_1000502"
+            },
+            {
+                "name": "Savage Crash",
+                "desc": "The Spirit of Brutality quickly crashes into the enemy's side.",
+                "icon": "regionaffix_1000503"
+            },
+            {
+                "name": "Lightning Crash",
+                "desc": "The Spirit of Brutality dashes to the enemy's side and strikes, repeated three times in a row.",
+                "icon": "regionaffix_1000505"
+            },
+            {
+                "name": "Wild Rush",
+                "desc": "The Spirit of Brutality summons a horde of followers to launch a straight-line charge at the enemy.",
+                "icon": "regionaffix_1000504"
+            }
+        ],
         "weakTo": [
             "Ventus"
         ],
@@ -166,6 +220,33 @@
     "62031": {
         "name": "Spellbound Golem",
         "icon": "boss_Tachie_01",
+        "mechanic": [
+            {
+                "name": "Laser Sweep",
+                "desc": "Spellbound Golem moves its hands to either side of the upper battlefield, releasing a laser beam connecting its palms and slowly sweeping it downward across the battlefield.",
+                "icon": "regionaffix_1305202"
+            },
+            {
+                "name": "Rocket Punch",
+                "desc": "Spellbound Golem locks onto its enemy with both fists. Once locked on, it delivers rapid consecutive charges toward the enemy's position.",
+                "icon": "regionaffix_1305203"
+            },
+            {
+                "name": "Tracking Laser",
+                "desc": "Spellbound Golem continuously fires laser beams that track its enemies.",
+                "icon": "regionaffix_1305101"
+            },
+            {
+                "name": "Ground Sweeper",
+                "desc": "Spellbound Golem unleashes a wide-range machine gun barrage across the battlefield.",
+                "icon": "regionaffix_1305102"
+            },
+            {
+                "name": "Declaration of Destruction",
+                "desc": "Spellbound Golem unleashes Declaration of Destruction, building up energy for an extended period of time before firing a massive, wide-range laser beam. During the buildup, it disrupts enemies with punches or supplementary laser beams.",
+                "icon": "regionaffix_1305103"
+            }
+        ],
         "weakTo": [
             "Aqua"
         ],
@@ -248,6 +329,33 @@
     "62041": {
         "name": "Lithe Beauty",
         "icon": "boss_Tachie_05",
+        "mechanic": [
+            {
+                "name": "Lashing Thorns",
+                "desc": "Lithe Beauty swings the branches on both sides forward in an attack, then pauses briefly before sweeping them to each side.",
+                "icon": "regionaffix_1651001"
+            },
+            {
+                "name": "Falling Blossoms",
+                "desc": "Lithe Beauty spits flower orbs into the air, which split into multiple fragments and explode upon landing, dealing AoE DMG.",
+                "icon": "regionaffix_1651002"
+            },
+            {
+                "name": "Pollen Mist",
+                "desc": "Lithe Beauty unleashes a dangerous pollen ring that expands and contracts. If the ring touches the flowers at the edge of the battlefield, they will become activated.",
+                "icon": "regionaffix_1651003"
+            },
+            {
+                "name": "Blossom Whirlwind",
+                "desc": "Lithe Beauty charges toward the target, releasing tornadoes to attack during the second strike.",
+                "icon": "regionaffix_1651004"
+            },
+            {
+                "name": "Fatal Flowering",
+                "desc": "Lithe Beauty charges, releasing an expanding pollen ring during the process. Once charged, it summons a large tornado that keeps following its target.",
+                "icon": "regionaffix_1651005"
+            }
+        ],
         "weakTo": [
             "Ignis"
         ],
@@ -330,6 +438,33 @@
     "62051": {
         "name": "Jade Blade",
         "icon": "boss_Tachie_04",
+        "mechanic": [
+            {
+                "name": "Charge",
+                "desc": "The Jade Blade quickly charges once.",
+                "icon": "regionaffix_1551001"
+            },
+            {
+                "name": "Peck Dive",
+                "desc": "The Jade Blade soars into the sky before delivering a devastating peck attack on the ground level.",
+                "icon": "regionaffix_1551002"
+            },
+            {
+                "name": "Light Beam",
+                "desc": "The Jade Blade fires a narrow beam of light forward.",
+                "icon": "regionaffix_1551003"
+            },
+            {
+                "name": "Tail Power",
+                "desc": "The Jade Blade drives its tail deep into the ground, releasing powerful electricity all around.",
+                "icon": "regionaffix_1551004"
+            },
+            {
+                "name": "Total Bombardment",
+                "desc": "The Jade Blade awakens all the flowers on the battlefield, unleashing a barrage of hummingbird bullets across the field.",
+                "icon": "regionaffix_1551005"
+            }
+        ],
         "weakTo": [
             "Umbra"
         ],
@@ -412,6 +547,33 @@
     "62061": {
         "name": "Gobble Hexhorn Whale",
         "icon": "boss_Tachie_06",
+        "mechanic": [
+            {
+                "name": "Water Bubble Breath",
+                "desc": "Gobble Hexhorn Whale spits water bubbles forward.",
+                "icon": "regionaffix_1751001"
+            },
+            {
+                "name": "Summon Bubbles",
+                "desc": "Gobble Hexhorn Whale summons a bubble from above. The bubble will lock onto the enemy and fire medium to long range water bubbles.",
+                "icon": "regionaffix_1751002"
+            },
+            {
+                "name": "Gobble Charge",
+                "desc": "Gobble Hexhorn Whale charges across the battlefield, knocking the enemy back.",
+                "icon": "regionaffix_1751003"
+            },
+            {
+                "name": "Plop Bomb",
+                "desc": "Gobble Hexhorn Whale summons a huge water pillar bomb that triggers a water torrent to impact the battlefield and knock the enemy back.",
+                "icon": "regionaffix_1751004"
+            },
+            {
+                "name": "Violent Undercurrent",
+                "desc": "Gobble Hexhorn Whale dives underwater and launches a ferocious attack at the enemy's feet, destroying the field and knocking them back.",
+                "icon": "regionaffix_1751005"
+            }
+        ],
         "weakTo": [
             "Terra"
         ],

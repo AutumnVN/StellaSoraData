@@ -20,12 +20,18 @@ for (const typeId in WEEKBOSSTYPE) {
     const monster = MONSTER[`${typeId}01`] || MONSTER[`${typeId}10`];
     if (!monster) continue;
 
+    const affixIds = Object.keys(WEEKBOSSAFFIX).filter(affixId => affixId.startsWith(typeId));
     const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
     const monsterValueTemplates = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId).slice(0, 3);
 
     ground[typeId] = {
         name: LANG_WEEKBOSSTYPE[WEEKBOSSTYPE[typeId].Name],
         icon: WEEKBOSSTYPE[typeId].Episode.split('/').pop(),
+        mechanic: affixIds.map(affixId => ({
+            name: LANG_WEEKBOSSAFFIX[WEEKBOSSAFFIX[affixId].Name],
+            desc: LANG_WEEKBOSSAFFIX[WEEKBOSSAFFIX[affixId].Desc],
+            icon: WEEKBOSSAFFIX[affixId].Icon.split('/').pop(),
+        })),
         weakTo: WEEKBOSSTYPE[typeId].EET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
         resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${WEEKBOSSTYPE[typeId].AntiEET[0]}.1`],
         diff: monsterValueTemplates.map(monsterValueTemplate => ({
