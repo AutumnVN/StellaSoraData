@@ -39,7 +39,7 @@ for (const id in SCOREBOSSLEVEL) {
         weakTo: monsterValueTemplateAdjust.WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
         resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${monsterValueTemplateAdjust.EET}.1`],
         stat: {
-            'HP': monsterValueTemplate.Hp,
+            'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
             'ATK': monsterValueTemplate.Atk,
             'DEF': monsterValueTemplate.Def,
             'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
@@ -51,7 +51,7 @@ for (const id in SCOREBOSSLEVEL) {
             'Lux DMG': monsterValueTemplate.LEE / 100 + '%',
             'Umbra DMG': monsterValueTemplate.DEE / 100 + '%',
             'Mark DMG Taken': monsterValueTemplate.RCDMARKDMG / 100 + '%',
-            'Resilience': monsterValueTemplate.Toughness,
+            'Resilience': Math.floor(monsterValueTemplate.Toughness * (1 + (monsterValueTemplateAdjust.ToughnessRatio / 10000 || 0)) + (monsterValueTemplateAdjust.ToughnessFix || 0)),
             'Aqua RES': monsterValueTemplateAdjust.WERFix,
             'Ignis RES': monsterValueTemplateAdjust.FERFix,
             'Terra RES': monsterValueTemplateAdjust.SERFix,

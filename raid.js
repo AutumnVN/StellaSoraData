@@ -37,7 +37,7 @@ for (const drillId in JOINTDRILLCONTROL) {
             return {
                 name: LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
                 stat: {
-                    'HP': monsterValueTemplate.Hp,
+                    'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
                     'HP Bar': level.HpBarNum,
                     'ATK': monsterValueTemplate.Atk,
                     'DEF': monsterValueTemplate.Def,
@@ -50,8 +50,7 @@ for (const drillId in JOINTDRILLCONTROL) {
                     'Lux DMG': monsterValueTemplate.LEE / 100 + '%',
                     'Umbra DMG': monsterValueTemplate.DEE / 100 + '%',
                     'Mark DMG Taken': monsterValueTemplate.RCDMARKDMG / 100 + '%',
-                    'Resilience': monsterValueTemplate.Toughness,
-                    'Resilience Ratio (whatever that means)': monsterValueTemplateAdjust.ToughnessRatio / 100 + '%',
+                    'Resilience': Math.floor(monsterValueTemplate.Toughness * (1 + (monsterValueTemplateAdjust.ToughnessRatio / 10000 || 0)) + (monsterValueTemplateAdjust.ToughnessFix || 0)),
                     'Aqua RES': monsterValueTemplateAdjust.WERFix,
                     'Ignis RES': monsterValueTemplateAdjust.FERFix,
                     'Terra RES': monsterValueTemplateAdjust.SERFix,
