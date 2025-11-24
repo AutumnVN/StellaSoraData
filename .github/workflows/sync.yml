@@ -36,6 +36,7 @@ jobs:
         node raid.js
         node blitz.js
         node ground.js
+        node word.js
         git add .
         if git diff --cached --quiet; then
           exit 0

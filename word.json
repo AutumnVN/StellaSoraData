@@ -1,0 +1,471 @@
+{
+    "9": {
+        "name": "DEF PEN",
+        "desc": "Target DEF ignored when dealing DMG",
+        "params": []
+    },
+    "17": {
+        "name": "Aqua DMG",
+        "desc": "Additional DMG multiplier when dealing Aqua DMG",
+        "params": []
+    },
+    "18": {
+        "name": "Ignis DMG",
+        "desc": "Additional DMG multiplier when dealing Ignis DMG",
+        "params": []
+    },
+    "19": {
+        "name": "Terra DMG",
+        "desc": "Additional DMG multiplier when dealing Terra DMG",
+        "params": []
+    },
+    "20": {
+        "name": "Ventus DMG",
+        "desc": "Additional DMG multiplier when dealing Ventus DMG",
+        "params": []
+    },
+    "21": {
+        "name": "Lux DMG",
+        "desc": "Additional DMG multiplier when dealing Lux DMG",
+        "params": []
+    },
+    "22": {
+        "name": "Umbra DMG",
+        "desc": "Additional DMG multiplier when dealing Umbra DMG",
+        "params": []
+    },
+    "45": {
+        "name": "Max Energy",
+        "desc": "When reaching the Energy limit, the Trekker Ultimate becomes available",
+        "params": []
+    },
+    "66": {
+        "name": "VUL Exploit Multiplier",
+        "desc": "Additional DMG multiplier against targets with negative Elemental RES.",
+        "params": []
+    },
+    "1001": {
+        "name": "Shock",
+        "desc": "Receive additional DMG when attacked",
+        "params": [
+            "4/4/5/5/7/7/8/8/9",
+            "0.001%/0.0016%/0.0022%/0.0028000000000000004%/0.0034000000000000002%/0.004%/0.0046%/0.0052%/0.0058%"
+        ]
+    },
+    "1002": {
+        "name": "Freeze",
+        "desc": "Frozen and incapacitated. Unable to take action.",
+        "params": [
+            "9%/14.4%/19.8%/25.2%/30.6%/36%/41.4%/46.8%/52.2%"
+        ]
+    },
+    "1003": {
+        "name": "Slow",
+        "desc": "Reduce Movement SPD",
+        "params": [
+            "19%/31%/42%/54%/65%/77%/88%/100%/111%"
+        ]
+    },
+    "1004": {
+        "name": "Stun",
+        "desc": "Unable to take any actions",
+        "params": [
+            "8/11/14/17/19/22/25/28/31"
+        ]
+    },
+    "1005": {
+        "name": "Burn",
+        "desc": "Continuously take Ignis DMG",
+        "params": [
+            "7/9/12/14/16/19/21/23/25"
+        ]
+    },
+    "1006": {
+        "name": "Resilience Break",
+        "desc": "When Resilience decreases to 0, Superarmor effect is removed",
+        "params": []
+    },
+    "1007": {
+        "name": "Frigid",
+        "desc": "Reduce Aqua Res by 10",
+        "params": [
+            "22%/35%/48%/61%/74%/87%/101%/114%/127%"
+        ]
+    },
+    "1008": {
+        "name": "Bind",
+        "desc": "Unable to move but can cast skills",
+        "params": []
+    },
+    "1009": {
+        "name": "Damp",
+        "desc": "Reduce Movement SPD by 30%",
+        "params": []
+    },
+    "1010": {
+        "name": "Lucent Mark",
+        "desc": "Lux Mark. Reduce the target's Lux Res by 23",
+        "params": []
+    },
+    "1011": {
+        "name": "Blind",
+        "desc": "Unable to attack and wander aimlessly. Effect breaks when taking DMG",
+        "params": []
+    },
+    "1012": {
+        "name": "Incineration Mark",
+        "desc": "Ignis Mark. Reduce the target's Ignis Res by 23",
+        "params": []
+    },
+    "1013": {
+        "name": "Combustion",
+        "desc": "Deal Ignis DMG to all targets within the area",
+        "params": []
+    },
+    "1014": {
+        "name": "Ventus Mark: Breeze",
+        "desc": "A special status applied to the target by some Ventus Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ventus Trekkers. When triggered, removes the status and activates special effects.",
+        "params": []
+    },
+    "1015": {
+        "name": "Lux Mark",
+        "desc": "The generic name for all Lux Marks.\u000bWhen triggered by specific Lux Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "params": []
+    },
+    "1016": {
+        "name": "Ignis Mark",
+        "desc": "The generic name for all Ignis Marks.\u000bWhen triggered by specific Ignis Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "params": []
+    },
+    "1017": {
+        "name": "Ventus Mark",
+        "desc": "The generic name for all Ventus Marks.\u000bWhen triggered by specific Ventus Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "params": []
+    },
+    "1018": {
+        "name": "Aqua Mark",
+        "desc": "The generic name for all Aqua Marks.\u000bWhen triggered by specific Aqua Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "params": []
+    },
+    "1019": {
+        "name": "Umbra Mark",
+        "desc": "The generic name for all Umbra Marks.\u000bWhen triggered by specific Umbra Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "params": []
+    },
+    "1020": {
+        "name": "Terra Mark",
+        "desc": "The generic name for all Terra Marks.\u000bWhen triggered by specific Terra Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "params": []
+    },
+    "1021": {
+        "name": "Lightning Array",
+        "desc": "Light Orbs orbit the Trekker, dealing Lux DMG when colliding with a target. There can be a maximum of 3 Light Orbs at a time, lasts 3s",
+        "params": []
+    },
+    "1022": {
+        "name": "Chain of Radiance",
+        "desc": "Chains of Light will ricochet at a maximum of 2 times by default. Damage is reduced by 10% after each ricochet",
+        "params": []
+    },
+    "1023": {
+        "name": "Light of Thunder",
+        "desc": "Light of Thunder deals are of effect Lux DMG to targets within the area with an increased base Crit Rate of 12%",
+        "params": []
+    },
+    "1024": {
+        "name": "Wind Shear",
+        "desc": "Wind Shear will automatically track and ricochet between targets at a maximum of 3 times by default",
+        "params": []
+    },
+    "1025": {
+        "name": "Aqua-Etch",
+        "desc": "Aqua Mark, reduce target Movement SPD by 5%, up to 10 stacks",
+        "params": []
+    },
+    "1026": {
+        "name": "Ventus-Press",
+        "desc": "Ventus Mark, reduce target ATK SPD by 20%",
+        "params": []
+    },
+    "1027": {
+        "name": "Chill",
+        "desc": "Reduces Movement SPD by <color=#fb8037>25%</color> for <color=#fb8037>&Param2&</color>s, up to <color=#fb8037>&Param3&</color> stacks.\u000bAt <color=#fb8037>&Param3&</color> stacks, it converts into Freeze for <color=#fb8037>&Param4&</color>s.",
+        "params": [
+            "-25%",
+            10,
+            3,
+            3
+        ]
+    },
+    "1028": {
+        "name": "Burn",
+        "desc": "Burn deals 5% ATK + 20 as Ignis DMG to the target every second for 5s",
+        "params": []
+    },
+    "1029": {
+        "name": "Melt Armor",
+        "desc": "Increase target DMG received by 40% for 5s",
+        "params": []
+    },
+    "1030": {
+        "name": "Lightning Spirit",
+        "desc": "Each Electric Soul increases the Trekker's damage by 5%. When reaching 3 Electric Souls, Electric Soul will be activated and will automatically seek out enemies, dealing area of effect Lux DMG",
+        "params": []
+    },
+    "1031": {
+        "name": "Unstable Flowery Cloud",
+        "desc": "Determined after throwing Unstable Flowery Cloud:\nNormal: Explode 1 time\nSuccess: Explode 2 times\nGreat Success: Explode 3 times",
+        "params": []
+    },
+    "1032": {
+        "name": "Ring of Fog",
+        "desc": "Summon Dew to accumulate Ring of Fog\nFor every 3 Dew summons, expand 1 stack of Ring of Fog, up to 3 stacks\nDeal 30% ATK as Aqua DMG to targets within Ring of Fog every 2s\nIf less than 3 Dews are casted within 10s, remove 1 stack of Ring of Fog",
+        "params": []
+    },
+    "1033": {
+        "name": "Wind Realm",
+        "desc": "Firing Wind Shots can accumulate 15 Ventus Energy\nAccumulate 60 Ventus Energy to expand 1 stack of Wind Zone, up to 3 stacks\nEach stack of Wind Zone increases Ventus DMG received by the target by 5%\nIf less than 3 Wind Shots are fired within 10s, remove 1 stack of Wind Zone",
+        "params": []
+    },
+    "1034": {
+        "name": "Ignis Vulnerable",
+        "desc": "Increase Ignis DMG taken",
+        "params": []
+    },
+    "1035": {
+        "name": "Lux Vulnerable",
+        "desc": "Increase Lux DMG received",
+        "params": []
+    },
+    "1036": {
+        "name": "Ventus Vulnerable",
+        "desc": "Increase Ventus DMG received",
+        "params": []
+    },
+    "1037": {
+        "name": "Aqua Vulnerable",
+        "desc": "Increase Aqua DMG received",
+        "params": []
+    },
+    "1038": {
+        "name": "Terra Vulnerable",
+        "desc": "Increase Terra DMG received",
+        "params": []
+    },
+    "1039": {
+        "name": "Umbra Vulnerable",
+        "desc": "Increase Umbra DMG received",
+        "params": []
+    },
+    "1040": {
+        "name": "Light Explosion",
+        "desc": "Light Orbs detonate and disappear, dealing single-target Lux DMG",
+        "params": []
+    },
+    "1041": {
+        "name": "Mark of Kamaitachi",
+        "desc": "Increase Kamatachi damage to the marked target by for 5s, up to 10 stacks.",
+        "params": []
+    },
+    "1042": {
+        "name": "Mark of Great Kamaitachi",
+        "desc": "Increase Kamatachi damage and Crit Rate to the marked target for 30s. Cannot stack with Mark of Kamaitachi",
+        "params": []
+    },
+    "1043": {
+        "name": "Protection of Ranged Evasion",
+        "desc": "When receiving ranged damage, remove Protection of Ranged Evasion and Evade the damage",
+        "params": []
+    },
+    "1044": {
+        "name": "Electric Soul Vulnerable",
+        "desc": "Increase damage received from Electric Soul",
+        "params": []
+    },
+    "1045": {
+        "name": "Paralyze",
+        "desc": "Abnormal behavior that causes periodic convulsion",
+        "params": []
+    },
+    "1046": {
+        "name": "Dive Shark Vulnerable",
+        "desc": "Increase damage received from Dive Shark",
+        "params": []
+    },
+    "1047": {
+        "name": "Dive Shark Waters",
+        "desc": "A dangerous area that continues to summon Dive Sharks",
+        "params": []
+    },
+    "1048": {
+        "name": "Mark of Dive Shark Prey",
+        "desc": "Periodically summons 1 Dive Shark to attack the marked target",
+        "params": []
+    },
+    "1049": {
+        "name": "Dr. Cloud",
+        "desc": "In this state, increase Trekker ATK and all Unstable Flowery Cloud the Trekker throws is guaranteed to be Great Success",
+        "params": []
+    },
+    "1050": {
+        "name": "Flowery Cloud",
+        "desc": "Includes Unstable Flowery Cloud and Stable Flowery Cloud",
+        "params": []
+    },
+    "1051": {
+        "name": "Runic Ice",
+        "desc": "Each Runic Ice increases Trekker Aqua DMG and weakens target hit with Dew, reducing the target's damage",
+        "params": []
+    },
+    "1052": {
+        "name": "Heart",
+        "desc": "Each stack of Heart increases 15 DEF for 5s, up to 10 stacks",
+        "params": []
+    },
+    "1053": {
+        "name": "Sword Aura",
+        "desc": "Noya fires sword auras that penetrate enemies, dealing area of effect DMG.",
+        "params": []
+    },
+    "1054": {
+        "name": "Multi Sword Aura",
+        "desc": "Create a sword aura sphere at the enemy's position, dealing multi-hit area of effect DMG.",
+        "params": []
+    },
+    "2007": {
+        "name": "Shatter",
+        "desc": "When a specific DMG type hits a Frozen normal target, it immediately kills the target.",
+        "params": []
+    },
+    "2008": {
+        "name": "Aqua Mark: Torrent",
+        "desc": "A special status applied to the target by some Aqua Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Aqua Trekkers. When triggered, deals AoE DMG and applies Chill.",
+        "params": [
+            10
+        ]
+    },
+    "2013": {
+        "name": "Ignis Mark: Sacred Flame",
+        "desc": "A special status applied to the target by some Ignis Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ignis Trekkers. When triggered, deals large AoE DMG.",
+        "params": [
+            10
+        ]
+    },
+    "2014": {
+        "name": "Berserk",
+        "desc": "Freesia enters a frenzied state, increase ATK by <color=#fb8037>&Param1&</color>. Auto Attack changes.",
+        "params": [
+            "46%",
+            "Freesia"
+        ]
+    },
+    "2015": {
+        "name": "Agile",
+        "desc": "&Param1& more agile, enhancing her Auto Attacks and allowing her to shoot while moving.",
+        "params": [
+            "???"
+        ]
+    },
+    "2016": {
+        "name": "Lux Mark: Radiance",
+        "desc": "A special status applied to the target by some Lux Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Lux Trekkers. When triggered, deals DMG.",
+        "params": [
+            15
+        ]
+    },
+    "2017": {
+        "name": "Ventus Mark: Breeze",
+        "desc": "A special status applied to the target by some Ventus Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ventus Trekkers. When triggered, removes the status and activates special effects.",
+        "params": []
+    },
+    "2018": {
+        "name": "Umbra Mark: Gloom",
+        "desc": "A special status applied to the target by some Umbra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Umbra Trekkers. When triggered, removes the status and activates special effects.",
+        "params": []
+    },
+    "2019": {
+        "name": "Scorched Butterfly",
+        "desc": "Can apply Ignis Mark: Sacred Flame. Cannot apply Butterfly Mark.",
+        "params": [
+            "11.47%/12.6%/13.8%/17.2%/18.4%/19.5%/21.8%/23%/24.1%/26.4%/27.5%/28.7%/29.8%"
+        ]
+    },
+    "2020": {
+        "name": "Dark Shackles",
+        "desc": "After some Umbra Trekkers trigger Umbra Mark, deal damage and trigger Dark Shackles, binding weaker enemies in place.",
+        "params": []
+    },
+    "2021": {
+        "name": "Butterfly Mark",
+        "desc": "Each stack of Butterfly Mark increases the target's &Param1&, up to 3 stacks, for 6s.",
+        "params": [
+            "Ignis DMG Taken"
+        ]
+    },
+    "2022": {
+        "name": "Stream",
+        "desc": "A special status applied to the target by some Aqua Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Aqua Trekkers. When triggered, deals AoE DMG and applies Chill.",
+        "params": [
+            10
+        ]
+    },
+    "2023": {
+        "name": "Sacred Flame",
+        "desc": "A special status applied to the target by some Ignis Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ignis Trekkers. When triggered, deals large AoE DMG.",
+        "params": [
+            10
+        ]
+    },
+    "2024": {
+        "name": "Radiance",
+        "desc": "A special status applied to the target by some Lux Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Lux Trekkers. When triggered, deals DMG.",
+        "params": [
+            15
+        ]
+    },
+    "2025": {
+        "name": "Breeze",
+        "desc": "A special status applied to the target by some Ventus Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ventus Trekkers. When triggered, removes the status and activates special effects.",
+        "params": []
+    },
+    "2026": {
+        "name": "Dark Shadow",
+        "desc": "A special status applied to the target by some Umbra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Umbra Trekkers. When triggered, removes the status and activates special effects.",
+        "params": []
+    },
+    "2027": {
+        "name": "Ignite",
+        "desc": "Chixia's flames ignite the Ink applied on the target, dealing DMG pers for &Param2&s. Her flames deal Ignis DMG equal to &Param1& of ATK in total.",
+        "params": [
+            "28%/36%/45%/53%/61%/70%/78%/86%/95%",
+            8
+        ]
+    },
+    "2028": {
+        "name": "Dark Burn",
+        "desc": "After some Umbra Trekkers trigger the Umbra Mark, deal damage and trigger Dark Shackles, dealing DOT.",
+        "params": []
+    },
+    "2029": {
+        "name": "Terra Mark: Earth Vein",
+        "desc": "A special status applied to the target by some Terra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Terra Trekkers. When triggered, removes the status and activates special effects.",
+        "params": []
+    },
+    "2030": {
+        "name": "Earth Vein",
+        "desc": "A special status applied to the target by some Terra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Terra Trekkers. When triggered, removes the status and activates special effects.",
+        "params": []
+    },
+    "4002": {
+        "name": "Shadow Clone",
+        "desc": "Shadow Clone is &Param1&'s minion and has 100% of &Param1&'s ATK. It is immune to DMG and lasts for 5s.",
+        "params": [
+            "???"
+        ]
+    },
+    "4501": {
+        "name": "Fear",
+        "desc": "The target flees and cannot attack.",
+        "params": []
+    }
+}

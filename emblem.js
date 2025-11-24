@@ -1,4 +1,5 @@
 const { writeFileSync } = require('fs');
+const { iHateFloatingPointNumber } = require('./utils');
 const CHARGEMSLOTCONTROL = require('./EN/bin/CharGemSlotControl.json');
 const CHARGEMATTRTYPE = require('./EN/bin/CharGemAttrType.json');
 const CHARGEMATTRGROUP = require('./EN/bin/CharGemAttrGroup.json');
@@ -98,24 +99,7 @@ for (const id in CHARGEMSLOTCONTROL) {
     }
 }
 
-function iHateFloatingPointNumber(a, op, b) {
-    const smallest = String(a < b ? a : b);
-    const factor = smallest.length - smallest.indexOf('.');
 
-    for (let i = 0; i < factor; i++) {
-        a *= 10;
-        b *= 10;
-    }
-
-    a = Math.round(a);
-    b = Math.round(b);
-    switch (op) {
-        case '+': return (a + b) / (10 ** factor);
-        case '-': return (a - b) / (10 ** factor);
-        case '*': return (a * b) / (10 ** (factor * 2));
-        case '/': return a / b;
-    }
-}
 
 writeFileSync('./emblem.json', JSON.stringify(emblem, null, 4));
 
