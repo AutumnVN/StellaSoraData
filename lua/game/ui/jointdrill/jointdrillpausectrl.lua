@@ -1,0 +1,286 @@
+local JointDrillPauseCtrl = class("JointDrillPauseCtrl", BaseCtrl)
+local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
+JointDrillPauseCtrl._mapNodeConfig = {
+	goBlur = {
+		sNodeName = "t_fullscreen_blur_01"
+	},
+	aniBlur = {
+		sNodeName = "t_fullscreen_blur_01",
+		sComponentName = "Animator"
+	},
+	safeAreaRoot = {
+		sNodeName = "----SafeAreaRoot----"
+	},
+	aniWindow = {
+		sNodeName = "PauseWindow",
+		sComponentName = "Animator"
+	},
+	txtWindowTitle = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "MainBattle_Pause"
+	},
+	txtChallengeTimeCn = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "JointDrill_Battle_Challenge_Time_Left_Text"
+	},
+	txtChallengeTime = {sComponentName = "TMP_Text"},
+	txtBattleTimeCn = {sComponentName = "TMP_Text"},
+	txtBattleTime = {sComponentName = "TMP_Text"},
+	btnChar = {
+		nCount = 3,
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Char"
+	},
+	goChar = {
+		nCount = 3,
+		sNodeName = "btnChar",
+		sCtrlName = "Game.UI.TemplateEx.TemplateCharCtrl"
+	},
+	btnGiveUp = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_GiveUp"
+	},
+	txtBtnGiveUp = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "JointDrill_Battle_GiveUp"
+	},
+	btnRestart = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Restart",
+		sAction = "Retry"
+	},
+	txtBtnRestart = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "JointDrill_Battle_Restart"
+	},
+	btnRetreat = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Retreat"
+	},
+	txtBtnRetreat = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "JointDrill_Battle_Retreat"
+	},
+	btnBack = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Back",
+		sAction = "Back"
+	},
+	txtBtnBack = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "JointDrill_Battle_Continue"
+	},
+	btnClose = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Back"
+	},
+	ActionBar = {
+		sCtrlName = "Game.UI.ActionBar.ActionBarCtrl"
+	},
+	txtLeaderCn = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Build_Leader"
+	},
+	txtSubCn = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "Build_Sub"
+	}
+}
+JointDrillPauseCtrl._mapEventConfig = {
+	OpenJointDrillPause = "OnEvent_OpenJointDrillPause",
+	RefreshChallengeTime = "OnEvent_RefreshChallengeTime"
+}
+JointDrillPauseCtrl._mapRedDotConfig = {}
+function JointDrillPauseCtrl:PlayInAni()
+	self._mapNode.goBlur:SetActive(true)
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+		self._mapNode.safeAreaRoot:SetActive(true)
+		self._mapNode.aniWindow:Play("t_window_04_t_in")
+		EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
+	end
+	cs_coroutine.start(wait)
+end
+function JointDrillPauseCtrl:RefreshChallengeTime()
+	local nOpenTime = PlayerData.JointDrill:GetJointDrillStartTime()
+	local refreshTime = function()
+		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+		local nTime = self.nAllChallengeTime - (nCurTime - nOpenTime)
+		nTime = math.max(nTime, 0)
+		local nMin = math.floor(nTime / 60)
+		local nSec = math.fmod(nTime, 60)
+		NovaAPI.SetTMPText(self._mapNode.txtChallengeTime, string.format("%02d:%02d", nMin, nSec))
+		return nTime
+	end
+	local nTime = refreshTime()
+	if 0 < nTime then
+		self.challengeTimer = self:AddTimer(0, 1, function()
+			local nTime = refreshTime()
+			if nTime <= 0 then
+				self.challengeTimer:Cancel()
+				self.challengeTimer = nil
+			end
+		end, true, true, true)
+	end
+end
+function JointDrillPauseCtrl:Refresh(nTime)
+	for i = 1, 3 do
+		self._mapNode.goChar[i].gameObject:SetActive(self.tbChar[i])
+		if self.tbChar[i] then
+			self._mapNode.goChar[i]:SetChar(self.tbChar[i])
+		end
+	end
+	if self.challengeTimer == nil then
+		self:RefreshChallengeTime()
+	end
+	nTime = nTime or 0
+	nTime = self.nTotalTime * 1000 - nTime
+	local nMin = math.floor(nTime / 60000)
+	local nRemain = nTime % 60000
+	local nSec = math.floor(nRemain / 1000)
+	local nMs = nTime % 1000
+	NovaAPI.SetTMPText(self._mapNode.txtBattleTime, string.format("%02d:%02d:%03d", nMin, nSec, nMs))
+end
+function JointDrillPauseCtrl:PlayCloseAni(callback)
+	self._mapNode.aniWindow:Play("t_window_04_t_out")
+	self._mapNode.aniBlur:SetTrigger("tOut")
+	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
+	self:AddTimer(1, 0.2, "OnPanelClose", true, true, true, callback)
+end
+function JointDrillPauseCtrl:OnPanelClose(_, callback)
+	PanelManager.InputEnable()
+	GamepadUIManager.DisableGamepadUI("JointDrillPauseCtrl")
+	EventManager.Hit(EventId.BattleDashboardVisible, true)
+	self._mapNode.safeAreaRoot:SetActive(false)
+	self._mapNode.goBlur:SetActive(false)
+	if callback then
+		callback()
+	end
+	self.bShow = false
+end
+function JointDrillPauseCtrl:Awake()
+	self.nAllChallengeTime = ConfigTable.GetConfigNumber("JointDrill_Challenge_Time_Max")
+	self.nTotalTime = 0
+	local nLevelId = PlayerData.JointDrill:GetJointDrillLevelId()
+	local mapCfg = ConfigTable.GetData("JointDrillLevel", nLevelId)
+	if mapCfg ~= nil then
+		self.nTotalTime = mapCfg.BattleTime
+	end
+	self._mapNode.safeAreaRoot:SetActive(false)
+	self.tbGamepadUINode = self:GetGamepadUINode()
+	local tbConfig = {
+		{
+			sAction = "Giveup",
+			sLang = "JointDrill_Battle_GiveUp"
+		},
+		{
+			sAction = "Leave",
+			sLang = "JointDrill_Battle_Retreat"
+		}
+	}
+	self._mapNode.ActionBar:InitActionBar(tbConfig)
+end
+function JointDrillPauseCtrl:OnEnable()
+end
+function JointDrillPauseCtrl:OnDisable()
+end
+function JointDrillPauseCtrl:OnDestroy()
+end
+function JointDrillPauseCtrl:OnBtnClick_Char(btn, index)
+end
+function JointDrillPauseCtrl:OnBtnClick_GiveUp()
+	local confirmCallback = function()
+		self:PlayCloseAni(function()
+			NovaAPI.DispatchEventWithData("JointDrill_Level_GiveUp")
+			EventManager.Hit("GiveUpJointDrill")
+		end)
+	end
+	local nOpenTime = PlayerData.JointDrill:GetJointDrillStartTime()
+	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+	local nTime = self.nAllChallengeTime - (nCurTime - nOpenTime)
+	local nMin = math.floor(nTime / 60)
+	local nSec = math.fmod(nTime, 60)
+	local sTip = orderedFormat(ConfigTable.GetUIText("JointDrill_Battle_GiveUp_Tip"), string.format("%02d:%02d", nMin, nSec))
+	local sContentSub = orderedFormat(ConfigTable.GetUIText("JointDrill_Challenge_Count"), self.nAllBattleCount - self.nCurBattleCount)
+	local msg = {
+		nType = AllEnum.MessageBox.Confirm,
+		sContent = sTip,
+		sContentSub = sContentSub,
+		callbackConfirm = confirmCallback
+	}
+	EventManager.Hit(EventId.OpenMessageBox, msg)
+end
+function JointDrillPauseCtrl:OnBtnClick_Restart()
+	local confirmCallback = function()
+		self:PlayCloseAni(function()
+			EventManager.Hit("RestartJointDrill")
+		end)
+	end
+	local nOpenTime = PlayerData.JointDrill:GetJointDrillStartTime()
+	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+	local nTime = self.nAllChallengeTime - (nCurTime - nOpenTime)
+	local nMin = math.floor(nTime / 60)
+	local nSec = math.fmod(nTime, 60)
+	local sTip = orderedFormat(ConfigTable.GetUIText("JointDrill_Battle_Restart_Tip"), string.format("%02d:%02d", nMin, nSec))
+	local msg = {
+		nType = AllEnum.MessageBox.Confirm,
+		sContent = sTip,
+		callbackConfirm = confirmCallback
+	}
+	EventManager.Hit(EventId.OpenMessageBox, msg)
+end
+function JointDrillPauseCtrl:OnBtnClick_Retreat()
+	local confirmCallback = function()
+		self:PlayCloseAni(function()
+			EventManager.Hit("RetreatJointDrill")
+		end)
+	end
+	local nOpenTime = PlayerData.JointDrill:GetJointDrillStartTime()
+	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+	local nTime = self.nAllChallengeTime - (nCurTime - nOpenTime)
+	local nMin = math.floor(nTime / 60)
+	local nSec = math.fmod(nTime, 60)
+	local sTip = orderedFormat(ConfigTable.GetUIText("JointDrill_Battle_Retreat_Tip"), string.format("%02d:%02d", nMin, nSec))
+	local sContentSub = orderedFormat(ConfigTable.GetUIText("JointDrill_Challenge_Count"), self.nAllBattleCount - self.nCurBattleCount + 1)
+	local msg = {
+		nType = AllEnum.MessageBox.Confirm,
+		sContent = sTip,
+		sContentSub = sContentSub,
+		callbackConfirm = confirmCallback
+	}
+	EventManager.Hit(EventId.OpenMessageBox, msg)
+end
+function JointDrillPauseCtrl:OnBtnClick_Back()
+	self:PlayCloseAni()
+end
+function JointDrillPauseCtrl:OnEvent_OpenJointDrillPause(nLevelId, tbCharId, nBattleTime)
+	self.bShow = true
+	self.tbChar = tbCharId
+	self.nLevelId = nLevelId
+	local tbTeam = PlayerData.JointDrill:GetJointDrillBuildList()
+	self.nCurBattleCount = #tbTeam
+	self.nAllBattleCount = 0
+	local mapLevelCfg = ConfigTable.GetData("JointDrillLevel", self.nLevelId)
+	if mapLevelCfg ~= nil then
+		self.nAllBattleCount = mapLevelCfg.MaxBattleNum
+	end
+	local sCount = ConfigTable.GetUIText("JointDrill_Battle_Time_" .. self.nCurBattleCount)
+	NovaAPI.SetTMPText(self._mapNode.txtBattleTimeCn, ConfigTable.GetUIText("JointDrill_Battle_Time_Text"))
+	EventManager.Hit(EventId.BattleDashboardVisible, false)
+	PanelManager.InputDisable()
+	self:PlayInAni()
+	self:Refresh(nBattleTime)
+	GamepadUIManager.EnableGamepadUI("JointDrillPauseCtrl", self.tbGamepadUINode)
+end
+function JointDrillPauseCtrl:OnEvent_RefreshChallengeTime(nTime)
+	if not self.bShow then
+		return
+	end
+	local nMin = math.floor(nTime / 60)
+	local nSec = math.fmod(nTime, 60)
+	NovaAPI.SetTMPText(self._mapNode.txtChallengeTime, string.format("%02d:%02d", nMin, nSec))
+end
+return JointDrillPauseCtrl

@@ -1,0 +1,222 @@
+local PotentialCardItemCtrl = class("PotentialCardItemCtrl", BaseCtrl)
+PotentialCardItemCtrl._mapNodeConfig = {
+	db_SSR = {},
+	goPotentialNormal = {},
+	imgRare_Gold = {},
+	imgRare_RainBow = {},
+	goIcon = {
+		sCtrlName = "Game.UI.StarTower.Potential.PotentialIconCtrl"
+	},
+	txtName = {sComponentName = "TMP_Text"},
+	imgCharBg = {},
+	imgCharIcon = {sComponentName = "Image"},
+	imgCharSpBg = {},
+	imgCharSpIcon = {sComponentName = "Image"},
+	Content = {
+		sComponentName = "RectTransform"
+	},
+	txtDesc = {sComponentName = "TMP_Text"},
+	TMP_Link1 = {
+		sNodeName = "txtDesc",
+		sComponentName = "TMPHyperLink",
+		callback = "OnBtnClick_Word"
+	},
+	txtLevelValue = {sComponentName = "TMP_Text"},
+	txtLevel = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Potential_Level"
+	},
+	imgArrow = {},
+	goUpgrade = {},
+	txtUpLevelValue = {sComponentName = "TMP_Text"},
+	goPotentialSpecial = {},
+	imgSpIcon = {sComponentName = "Image"},
+	txtSpName = {sComponentName = "TMP_Text"},
+	SpContent = {
+		sComponentName = "RectTransform"
+	},
+	txtSpDesc = {sComponentName = "TMP_Text"},
+	TMP_Link2 = {
+		sNodeName = "txtSpDesc",
+		sComponentName = "TMPHyperLink",
+		callback = "OnBtnClick_Word"
+	},
+	animCtrl = {sComponentName = "Animator", sNodeName = "AnimRoot"},
+	imgReommend = {},
+	imgNew = {},
+	txtNew = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "StarTower_Book_New_Text"
+	},
+	N = {},
+	SR = {},
+	SSR = {},
+	BgEffect = {},
+	ArrowEffect = {}
+}
+PotentialCardItemCtrl._mapEventConfig = {}
+PotentialCardItemCtrl._mapRedDotConfig = {}
+local level_txt_color = {
+	[1] = "#44587f",
+	[2] = "#4e76d4"
+}
+function PotentialCardItemCtrl:SetPotentialItem(nTid, nLevel, nNextLevel, bSimpleDesc, bShowChar, nPotentialAddLevel, nShowType, bNew, bLucky)
+	self.nTid = nTid
+	self.nLevel = nLevel
+	self.nNextLevel = nNextLevel
+	self.nShowType = nShowType or AllEnum.PotentialCardType.CharInfo
+	self.nPotentialAddLevel = nPotentialAddLevel or 0
+	self.bLucky = bLucky
+	self._mapNode.imgNew.gameObject:SetActive(bNew)
+	self._mapNode.ArrowEffect:SetActive(self.bLucky)
+	local itemCfg = ConfigTable.GetData_Item(nTid)
+	if nil == itemCfg then
+		printError(string.format("\232\142\183\229\143\150\233\129\147\229\133\183\232\161\168\233\133\141\231\189\174\229\164\177\232\180\165\239\188\129\239\188\129\239\188\129id = [%s])", nTid))
+		return
+	end
+	self.itemCfg = itemCfg
+	local potentialCfg = ConfigTable.GetData("Potential", nTid)
+	if nil == potentialCfg then
+		return
+	end
+	self._mapNode.db_SSR:SetActive(itemCfg.Rarity == GameEnum.itemRarity.SSR)
+	local bSpecial = itemCfg.Stype == GameEnum.itemStype.SpecificPotential
+	self._mapNode.goPotentialNormal.gameObject:SetActive(not bSpecial)
+	self._mapNode.goPotentialSpecial.gameObject:SetActive(bSpecial)
+	if not bSpecial then
+		self:SetNormalCard(itemCfg, potentialCfg, bShowChar)
+	else
+		self:SetSpecialCard(itemCfg, potentialCfg, bShowChar)
+	end
+	self:ChangeDesc(bSimpleDesc)
+	self:ChangeWordRaycast(false)
+	return bSpecial
+end
+function PotentialCardItemCtrl:SetNormalCard(itemCfg, potentialCfg, bShowChar)
+	self._mapNode.imgCharBg.gameObject:SetActive(bShowChar)
+	local nCharId = potentialCfg.CharId
+	if bShowChar then
+		local nCharSkinId = PlayerData.Char:GetCharSkinId(nCharId)
+		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
+		self:SetPngSprite(self._mapNode.imgCharIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+	end
+	NovaAPI.SetTMPText(self._mapNode.txtName, itemCfg.Title)
+	local nColor = AllEnum.FrameColor_New[itemCfg.Rarity]
+	if nColor == "4" then
+		self._mapNode.imgRare_Gold.gameObject:SetActive(true)
+		self._mapNode.imgRare_RainBow.gameObject:SetActive(false)
+	elseif nColor == "5" then
+		self._mapNode.imgRare_Gold.gameObject:SetActive(false)
+		self._mapNode.imgRare_RainBow.gameObject:SetActive(true)
+	else
+		self._mapNode.imgRare_Gold.gameObject:SetActive(false)
+		self._mapNode.imgRare_RainBow.gameObject:SetActive(false)
+	end
+	self._mapNode.goIcon:SetIcon(potentialCfg.Id)
+	local bUpgrade = self.nNextLevel ~= nil and self.nLevel ~= self.nNextLevel
+	self._mapNode.imgArrow.gameObject:SetActive(bUpgrade)
+	self._mapNode.goUpgrade.gameObject:SetActive(bUpgrade)
+	if self.nPotentialAddLevel > 0 then
+		NovaAPI.SetTMPText(self._mapNode.txtLevelValue, self.nLevel .. "<color=#4e76d4>+" .. self.nPotentialAddLevel .. "</color>")
+	else
+		NovaAPI.SetTMPText(self._mapNode.txtLevelValue, self.nLevel)
+	end
+	if bUpgrade then
+		if self.nPotentialAddLevel > 0 then
+			NovaAPI.SetTMPText(self._mapNode.txtUpLevelValue, self.nNextLevel .. "<color=#4e76d4>+" .. self.nPotentialAddLevel .. "</color>")
+		else
+			NovaAPI.SetTMPText(self._mapNode.txtUpLevelValue, self.nNextLevel)
+		end
+	end
+end
+function PotentialCardItemCtrl:SetSpecialCard(itemCfg, potentialCfg, bShowChar)
+	self._mapNode.imgCharSpBg.gameObject:SetActive(bShowChar)
+	local nCharId = potentialCfg.CharId
+	if bShowChar then
+		local nCharSkinId = PlayerData.Char:GetCharSkinId(nCharId)
+		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
+		self:SetPngSprite(self._mapNode.imgCharSpIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+	end
+	NovaAPI.SetTMPText(self._mapNode.txtSpName, itemCfg.Title)
+	self:SetPngSprite(self._mapNode.imgSpIcon, itemCfg.Icon .. AllEnum.PotentialIconSurfix.A)
+end
+function PotentialCardItemCtrl:ChangeDesc(bSimpleDesc)
+	local potentialCfg = ConfigTable.GetData("Potential", self.nTid)
+	if nil == potentialCfg then
+		printError(string.format("\232\142\183\229\143\150\230\189\156\232\131\189\232\161\168\233\133\141\231\189\174\229\164\177\232\180\165\239\188\129\239\188\129\239\188\129id = [%s])", self.nTid))
+		return
+	end
+	local nLevel = self.nLevel + self.nPotentialAddLevel
+	local nNextLevel
+	if self.nNextLevel ~= nil and self.nNextLevel ~= self.nLevel then
+		nNextLevel = self.nNextLevel + self.nPotentialAddLevel
+	end
+	local nDescLevel
+	if self.nShowType == AllEnum.PotentialCardType.Book or self.nShowType == AllEnum.PotentialCardType.CharInfo then
+		nDescLevel = self.nLevel
+	else
+		nDescLevel = nLevel
+	end
+	NovaAPI.SetTMPText(self._mapNode.txtDesc, UTILS.ParseDesc(potentialCfg, GameEnum.levelTypeData.Exclusive, nNextLevel, bSimpleDesc, nDescLevel))
+	NovaAPI.SetTMPText(self._mapNode.txtSpDesc, UTILS.ParseDesc(potentialCfg, GameEnum.levelTypeData.Exclusive, nNextLevel, bSimpleDesc, nDescLevel))
+	self._mapNode.Content.anchoredPosition = Vector2(0, 0)
+	self._mapNode.SpContent.anchoredPosition = Vector2(0, 0)
+end
+function PotentialCardItemCtrl:ActiveRollEffect()
+	if not self.itemCfg then
+		return
+	end
+	self._mapNode.SSR:SetActive(self.itemCfg.Rarity == GameEnum.itemRarity.SSR)
+	self._mapNode.SR:SetActive(self.itemCfg.Rarity == GameEnum.itemRarity.SR)
+	self._mapNode.N:SetActive(self.itemCfg.Rarity == GameEnum.itemRarity.N)
+end
+function PotentialCardItemCtrl:CloseBgEffect()
+	self._mapNode.BgEffect:SetActive(false)
+end
+function PotentialCardItemCtrl:PlayAnim(sAnimName)
+	self._mapNode.animCtrl:Play(sAnimName)
+	self._mapNode.BgEffect:SetActive(self.bLucky and sAnimName == "tc_newperk_card_in")
+end
+function PotentialCardItemCtrl:OnEnable()
+end
+function PotentialCardItemCtrl:OnDisable()
+end
+function PotentialCardItemCtrl:OnDestroy()
+end
+function PotentialCardItemCtrl:OnBtnClick_Word(link, sWordId)
+	local potentialCfg = ConfigTable.GetData("Potential", self.nTid)
+	local nLevel = self.nLevel
+	local nNextLevel = self.nNextLevel
+	local nType = potentialCfg.BranchType
+	local nCharId = potentialCfg.CharId
+	local tbSkillLevel
+	if self.nShowType == AllEnum.PotentialCardType.StarTower then
+		tbSkillLevel = self._panel:GetSkillLevel(nCharId)
+	elseif self.nShowType == AllEnum.PotentialCardType.CharInfo or self.nShowType == AllEnum.PotentialCardType.Book or self.nShowType == AllEnum.PotentialCardType.Detial then
+		tbSkillLevel = PlayerData.Char:GetSkillLevel(nCharId)
+	end
+	if nType == GameEnum.BranchType.Master then
+		nLevel = tbSkillLevel[GameEnum.skillSlotType.B]
+		nNextLevel = nil
+	elseif nType == GameEnum.BranchType.Assist then
+		nLevel = tbSkillLevel[GameEnum.skillSlotType.C]
+		nNextLevel = nil
+	end
+	local mapData = {
+		nPerkId = 0,
+		nCount = 0,
+		bWordTip = true,
+		sWordId = sWordId,
+		nLevel = nLevel,
+		nNextLevel = nNextLevel
+	}
+	EventManager.Hit(EventId.OpenPanel, PanelId.PerkTips, link, mapData)
+end
+function PotentialCardItemCtrl:ChangeWordRaycast(bEnable)
+	NovaAPI.SetTMPRaycastTarget(self._mapNode.txtDesc, bEnable)
+	NovaAPI.SetTMPRaycastTarget(self._mapNode.txtSpDesc, bEnable)
+end
+function PotentialCardItemCtrl:SetRecommend(bEnable)
+	self._mapNode.imgReommend:SetActive(bEnable)
+end
+return PotentialCardItemCtrl

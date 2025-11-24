@@ -1,0 +1,5 @@
+AVG_EDITOR = true
+CAN_EDIT = true
+TRANSLATE_SIGNAL = false
+DEL_RT_SIGNAL = true
+ADJUST = false
