@@ -11,6 +11,7 @@ for (const id in WORD) {
     word[id] = {
         name: LANG_WORD[WORD[id].Title],
         desc: LANG_WORD[WORD[id].Desc],
+        icon: WORD[id].TitleIcon?.slice(13, -1),
         params: getWordParams(id),
     };
 }

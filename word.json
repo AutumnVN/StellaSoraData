@@ -130,31 +130,37 @@
     "1015": {
         "name": "Lux Mark",
         "desc": "The generic name for all Lux Marks.\u000bWhen triggered by specific Lux Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "icon": "Icon_ElementTag_Light1_small",
         "params": []
     },
     "1016": {
         "name": "Ignis Mark",
         "desc": "The generic name for all Ignis Marks.\u000bWhen triggered by specific Ignis Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "icon": "Icon_ElementTag_Fire1_small",
         "params": []
     },
     "1017": {
         "name": "Ventus Mark",
         "desc": "The generic name for all Ventus Marks.\u000bWhen triggered by specific Ventus Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "icon": "Icon_ElementTag_Wind1_small",
         "params": []
     },
     "1018": {
         "name": "Aqua Mark",
         "desc": "The generic name for all Aqua Marks.\u000bWhen triggered by specific Aqua Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "icon": "Icon_ElementTag_Water1_small",
         "params": []
     },
     "1019": {
         "name": "Umbra Mark",
         "desc": "The generic name for all Umbra Marks.\u000bWhen triggered by specific Umbra Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "icon": "Icon_ElementTag_Dark1_small",
         "params": []
     },
     "1020": {
         "name": "Terra Mark",
         "desc": "The generic name for all Terra Marks.\u000bWhen triggered by specific Terra Trekkers' attacks, the status is removed, and a special effect is activated.",
+        "icon": "Icon_ElementTag_Earth1_small",
         "params": []
     },
     "1021": {
@@ -340,6 +346,7 @@
     "2008": {
         "name": "Aqua Mark: Torrent",
         "desc": "A special status applied to the target by some Aqua Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Aqua Trekkers. When triggered, deals AoE DMG and applies Chill.",
+        "icon": "Icon_ElementTag_Water1_small",
         "params": [
             10
         ]
@@ -347,6 +354,7 @@
     "2013": {
         "name": "Ignis Mark: Sacred Flame",
         "desc": "A special status applied to the target by some Ignis Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ignis Trekkers. When triggered, deals large AoE DMG.",
+        "icon": "Icon_ElementTag_Fire1_small",
         "params": [
             10
         ]
@@ -369,6 +377,7 @@
     "2016": {
         "name": "Lux Mark: Radiance",
         "desc": "A special status applied to the target by some Lux Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Lux Trekkers. When triggered, deals DMG.",
+        "icon": "Icon_ElementTag_Light1_small",
         "params": [
             15
         ]
@@ -376,11 +385,13 @@
     "2017": {
         "name": "Ventus Mark: Breeze",
         "desc": "A special status applied to the target by some Ventus Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ventus Trekkers. When triggered, removes the status and activates special effects.",
+        "icon": "Icon_ElementTag_Wind1_small",
         "params": []
     },
     "2018": {
         "name": "Umbra Mark: Gloom",
         "desc": "A special status applied to the target by some Umbra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Umbra Trekkers. When triggered, removes the status and activates special effects.",
+        "icon": "Icon_ElementTag_Dark1_small",
         "params": []
     },
     "2019": {
@@ -449,6 +460,7 @@
     "2029": {
         "name": "Terra Mark: Earth Vein",
         "desc": "A special status applied to the target by some Terra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Terra Trekkers. When triggered, removes the status and activates special effects.",
+        "icon": "Icon_ElementTag_Earth1_small",
         "params": []
     },
     "2030": {
