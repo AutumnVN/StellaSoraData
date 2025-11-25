@@ -11,7 +11,8 @@ const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const ground = {};
 
 for (const typeId in WEEKBOSSTYPE) {
-    const monster = MONSTER[`${typeId}01`] || MONSTER[`${typeId}10`];
+    const monsterKeys = Object.keys(MONSTER).filter(key => key.startsWith(typeId) && MONSTER[key].Tag2 === 'Boss');
+    const monster = MONSTER[monsterKeys[0]];
     if (!monster) continue;
 
     const affixIds = Object.keys(WEEKBOSSAFFIX).filter(affixId => affixId.startsWith(typeId));
