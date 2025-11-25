@@ -31,8 +31,6 @@ const LANG_TALENTGROUP = require('./EN/language/en_US/TalentGroup.json');
 const LANG_DATINGCHARACTEREVENT = require('./EN/language/en_US/DatingCharacterEvent.json');
 const LANG_DATINGBRANCH = require('./EN/language/en_US/DatingBranch.json');
 
-
-
 const character = {};
 
 !async function () {
@@ -57,6 +55,7 @@ const character = {};
                 desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc],
                 damageType: getSkillDamageTypes(CHARACTER[id].NormalAtkId),
                 effectType: getSkillEffectTypes(CHARACTER[id].NormalAtkId),
+                addAttrType: getSkillAddAttrTypes(CHARACTER[id].NormalAtkId),
                 params: getSkillParams(CHARACTER[id].NormalAtkId),
                 icon: SKILL[CHARACTER[id].NormalAtkId].Icon.split('/').pop(),
             },
@@ -68,6 +67,7 @@ const character = {};
                 desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc],
                 damageType: getSkillDamageTypes(CHARACTER[id].SkillId),
                 effectType: getSkillEffectTypes(CHARACTER[id].SkillId),
+                addAttrType: getSkillAddAttrTypes(CHARACTER[id].SkillId),
                 params: getSkillParams(CHARACTER[id].SkillId),
                 icon: SKILL[CHARACTER[id].SkillId].Icon.split('/').pop(),
             },
@@ -79,6 +79,7 @@ const character = {};
                 desc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc],
                 damageType: getSkillDamageTypes(CHARACTER[id].AssistSkillId),
                 effectType: getSkillEffectTypes(CHARACTER[id].AssistSkillId),
+                addAttrType: getSkillAddAttrTypes(CHARACTER[id].AssistSkillId),
                 params: getSkillParams(CHARACTER[id].AssistSkillId),
                 icon: SKILL[CHARACTER[id].AssistSkillId].Icon.split('/').pop(),
             },
@@ -91,6 +92,7 @@ const character = {};
                 desc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Desc],
                 damageType: getSkillDamageTypes(CHARACTER[id].UltimateId),
                 effectType: getSkillEffectTypes(CHARACTER[id].UltimateId),
+                addAttrType: getSkillAddAttrTypes(CHARACTER[id].UltimateId),
                 params: getSkillParams(CHARACTER[id].UltimateId),
                 icon: SKILL[CHARACTER[id].UltimateId].Icon.split('/').pop(),
             },
@@ -110,8 +112,6 @@ function getSkillParams(skillId) {
     const params = collectParamsFrom(SKILL[skillId]);
     return resolveParam(params);
 }
-
-
 
 function getSkillDamageTypes(skillId) {
     const damageTypes = [];
@@ -137,6 +137,7 @@ function getSkillEffectTypes(skillId) {
 
     for (const param of params) {
         const p = param.split(',');
+
         let currentId = +p[2];
         if (!EFFECTVALUE[currentId]) currentId += 10;
         if (!EFFECTVALUE[currentId]) continue;
@@ -150,7 +151,23 @@ function getSkillEffectTypes(skillId) {
     return [...new Set(effectTypes)];
 }
 
+function getSkillAddAttrTypes(skillId) {
+    const addAttrTypes = [];
 
+    const params = collectParamsFrom(SKILL[skillId]).filter(p => p && p.startsWith('OnceAdditionalAttribute'));
+
+    for (const param of params) {
+        const p = param.split(',');
+
+        let currentId = +p[2];
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) currentId += 10;
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) continue;
+
+        addAttrTypes.push(ATTR_TYPE[ONCEADDITTIONALATTRIBUTEVALUE[currentId].AttributeType1]);
+    }
+
+    return [...new Set(addAttrTypes)];
+}
 
 function getUpgrades(charId) {
     return Object.keys(CHARACTERADVANCE)
@@ -215,6 +232,7 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
+            addAttrType: getPotentialAddAttrTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -227,6 +245,7 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
+            addAttrType: getPotentialAddAttrTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -239,6 +258,7 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
+            addAttrType: getPotentialAddAttrTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -251,6 +271,7 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
+            addAttrType: getPotentialAddAttrTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -263,6 +284,7 @@ function getPotentials(charId) {
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
+            addAttrType: getPotentialAddAttrTypes(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -312,6 +334,24 @@ function getPotentialEffectTypes(potId) {
     }
 
     return [...new Set(effectTypes)];
+}
+
+function getPotentialAddAttrTypes(potId) {
+    const addAttrTypes = [];
+
+    const params = collectParamsFrom(POTENTIAL[potId]).filter(p => p && p.startsWith('OnceAdditionalAttribute'));
+
+    for (const param of params) {
+        const p = param.split(',');
+
+        let currentId = +p[2];
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) currentId += 10;
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) continue;
+
+        addAttrTypes.push(ATTR_TYPE[ONCEADDITTIONALATTRIBUTEVALUE[currentId].AttributeType1]);
+    }
+
+    return [...new Set(addAttrTypes)];
 }
 
 function getPotentialRarity(potId) {
