@@ -69,6 +69,7 @@ function MallShopCtrl:RefreshData(tbList)
 	self.nSelectPage = self.tbPages[self.nCurTab].Id
 end
 function MallShopCtrl:RefreshTab()
+	self._mapNode.svTab.gameObject:SetActive(true)
 	NovaAPI.SetScrollHorizontal(self._mapNode.svTab, self.nPageCount > 4)
 	self.ctrlTab = {}
 	delChildren(self._mapNode.trTab)
@@ -153,6 +154,7 @@ function MallShopCtrl:OnGridBtnClick(goGrid, gridIndex)
 	EventManager.Hit(EventId.OpenPanel, PanelId.MallPopup, AllEnum.MallToggle.Shop, mapData, tbCoin)
 end
 function MallShopCtrl:RefreshTime()
+	self._mapNode.goRefresh:SetActive(true)
 	self.nRemainTime = self.nRemainTime - 1
 	if self.nRemainTime > 0 then
 		NovaAPI.SetTMPText(self._mapNode.txtRefreshCn, ConfigTable.GetUIText("Shop_NextRefresh"))
@@ -204,6 +206,8 @@ function MallShopCtrl:ResetTab()
 end
 function MallShopCtrl:Awake()
 	self.tbGridCtrl = {}
+	self._mapNode.svTab.gameObject:SetActive(false)
+	self._mapNode.goRefresh:SetActive(false)
 end
 function MallShopCtrl:OnEnable()
 end

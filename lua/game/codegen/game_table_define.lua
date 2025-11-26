@@ -194,8 +194,6 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Title", "Desc"}
 	},
-	CharGemAttrGroup = {},
-	CharGemAttrType = {Key = true},
 	CharGemAttrValue = {Key = true},
 	CharGemInstance = {
 		Key = true,

@@ -2323,7 +2323,7 @@ return {
 		param = {
 			11,
 			"avg1_116",
-			"Eek!==W== N-No!==W==Ah!==W== I can't take...==W== Tap! I'm tapping out!",
+			"Eek!==W== N-No!==W== Ah!==W== I can't take...==W== Tap! I'm tapping out!",
 			1,
 			"",
 			false,

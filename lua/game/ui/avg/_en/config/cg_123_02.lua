@@ -567,7 +567,7 @@ return {
 			"",
 			false,
 			"",
-			"Uh... I don't really get it...==RT====W==You mean it's like the \"big boss,\" right?",
+			"Uh... I don't really get it...==W== You mean it's like the \"big boss,\" right?",
 			""
 		}
 	},
@@ -880,7 +880,7 @@ return {
 			"",
 			false,
 			"",
-			"To make sure no one wanders in by mistake, we'll also need to put up warning signs around here...==RT====W==Hey, are you even listening, Ann?",
+			"To make sure no one wanders in by mistake, we'll also need to put up warning signs around here...==W== Hey, are you even listening, Ann?",
 			""
 		}
 	},
@@ -1492,7 +1492,7 @@ return {
 			"",
 			false,
 			"",
-			"Um, Mr. Big Boar...?==RT====W==I'm Ann, and I'm not a bad person. I'm the captain of the forest scout squad.",
+			"Um, Mr. Big Boar...?==W== I'm Ann, and I'm not a bad person. I'm the captain of the forest scout squad.",
 			""
 		}
 	},
@@ -1603,7 +1603,7 @@ return {
 			"",
 			false,
 			"",
-			"\"Is a captain tasty?\"==RT====W==Of course not! A captain is just like you\226\128\148the boss of everyone!",
+			"\"Is a captain tasty?\"==W== Of course not! A captain is just like you\226\128\148the boss of everyone!",
 			""
 		}
 	},
@@ -3852,7 +3852,7 @@ return {
 			"",
 			false,
 			"",
-			"Help\226\128\148==W==Me\226\128\148==RT====W==Ugh! I can't reach it!",
+			"Help\226\128\148==W== Me\226\128\148 ==W== Ugh! I can't reach it!",
 			""
 		}
 	},
@@ -4117,7 +4117,7 @@ return {
 			"",
 			false,
 			"",
-			"...==RT====W==Once you really grow up, you won't think that anymore.",
+			"...==W== Once you really grow up, you won't think that anymore.",
 			""
 		}
 	},
@@ -5674,7 +5674,7 @@ return {
 			"",
 			false,
 			"",
-			"N-no reason! No peeking, Bossy!==RT==And ...==W== Mr. Big Boar, take care of yourself too, okay...?",
+			"N-no reason! No peeking, Bossy! And ...==W== Mr. Big Boar, take care of yourself too, okay...?",
 			""
 		}
 	},
@@ -6072,7 +6072,7 @@ return {
 			"",
 			false,
 			"",
-			"When I was saying goodbye to Mr. Big Boar, I could feel he wanted to say something.==RT====W==He must've known his time is almost up... That's why he came here.",
+			"When I was saying goodbye to Mr. Big Boar, I could feel he wanted to say something. ==W== He must've known his time is almost up... That's why he came here.",
 			""
 		}
 	},

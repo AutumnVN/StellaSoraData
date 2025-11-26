@@ -1079,6 +1079,9 @@ function CookieBoardCtrl:ResumeTrigger()
 	self.bPressed = false
 	self.bNewBeat = true
 	EventManager.Hit(EventId.BlockInput, false)
+	if self.bRhythmMode then
+		EventManager.Hit(EventId.TemporaryBlockInput, 0.1)
+	end
 	if self.timerPause ~= nil then
 		self.timerPause:Cancel()
 	end

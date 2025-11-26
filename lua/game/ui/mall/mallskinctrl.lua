@@ -174,6 +174,9 @@ function MallSkinCtrl:ResetTab()
 end
 function MallSkinCtrl:Awake()
 	self.tbGridCtrl = {}
+	self._mapNode.goEmpty.gameObject:SetActive(false)
+	self._mapNode.sv.gameObject:SetActive(false)
+	self._mapNode.svTab.gameObject:SetActive(false)
 end
 function MallSkinCtrl:OnEnable()
 end

@@ -1545,6 +1545,10 @@ function VampireSurvivorLevelData:AddExp(nExp)
 	end
 end
 function VampireSurvivorLevelData:GetChest(nType, nWave)
+	if self.bHandleChest or self.bHandleFateCard then
+		table.insert(self.tbChest, {nType, nWave})
+		return
+	end
 	if not self.isFirstHalf and -3 < nType then
 		local mapVampireFloorData = ConfigTable.GetData("VampireFloor", self.floorId)
 		if mapVampireFloorData == nil then
@@ -1552,10 +1556,6 @@ function VampireSurvivorLevelData:GetChest(nType, nWave)
 		end
 		local tbWaveCount = mapVampireFloorData.WaveCount
 		nWave = nWave + tbWaveCount[1]
-	end
-	if self.bHandleChest or self.bHandleFateCard then
-		table.insert(self.tbChest, {nType, nWave})
-		return
 	end
 	local mapRewardCard
 	local SelectCallback = function(nIdx, nId, panelCallback, bReRoll)

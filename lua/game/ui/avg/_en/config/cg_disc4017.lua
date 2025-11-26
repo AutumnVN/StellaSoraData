@@ -473,7 +473,7 @@ return {
 			"",
 			false,
 			"",
-			"I see.==W==If I may ask, Miss Nazuna... For your part, what are you doing?",
+			"I see. ==W==If I may ask, Miss Nazuna... For your part, what are you doing?",
 			""
 		}
 	},

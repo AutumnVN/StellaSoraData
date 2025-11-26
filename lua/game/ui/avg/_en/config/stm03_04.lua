@@ -5836,7 +5836,7 @@ return {
 			"",
 			false,
 			"",
-			"Serena's words are harsh, but it's hard to argue with her. Looking purely at the results, Nazuka clearly done better after leaving Petal Bloom.",
+			"Serena's words are harsh, but it's hard to argue with her. Looking purely at the results, Nazuka clearly did better after leaving Petal Bloom.",
 			""
 		}
 	},

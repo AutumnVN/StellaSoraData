@@ -185,7 +185,7 @@ end
 function BdConvertBuildCtrl:OnGridBtnClick(goGrid, nIndex)
 	local nDataIndex = nIndex + 1
 	local itemId = self.tbItem[nDataIndex].itemId
-	UTILS.ClickItemGridWithTips(itemId, goGrid.transform, true, false, false)
+	UTILS.ClickItemGridWithTips(itemId, goGrid.transform:Find("btnGrid"), true, false, false)
 end
 function BdConvertBuildCtrl:InitSort()
 	NovaAPI.SetTMPColor(self._mapNode.txt_srot_timeTitle, BtnTextColor[self.nSortype == SortType.Time])

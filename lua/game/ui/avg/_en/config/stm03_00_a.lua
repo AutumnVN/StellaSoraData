@@ -3079,7 +3079,7 @@ return {
 			"",
 			false,
 			"",
-			"Wow, that's quite something. Well, in that context ... ==W==a talking phone seem almost normal.",
+			"Wow, that's quite something. Well, in that context ... ==W==a talking phone seems almost normal.",
 			""
 		}
 	},

@@ -73,6 +73,7 @@ function MallPackageCtrl:RefreshList(bResetPos)
 	self._mapNode.sv:Init(#tbCur, self, self.OnGridRefresh, self.OnGridBtnClick, not bResetPos)
 end
 function MallPackageCtrl:RefreshTab()
+	self._mapNode.svTab.gameObject:SetActive(true)
 	NovaAPI.SetScrollHorizontal(self._mapNode.svTab, self.nPageCount > 4)
 	self.ctrlTab = {}
 	delChildren(self._mapNode.trTab)
@@ -149,6 +150,7 @@ function MallPackageCtrl:ResetTab(nTab)
 end
 function MallPackageCtrl:Awake()
 	self.tbGridCtrl = {}
+	self._mapNode.svTab.gameObject:SetActive(false)
 end
 function MallPackageCtrl:OnEnable()
 end

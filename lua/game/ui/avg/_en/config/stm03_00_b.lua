@@ -3,7 +3,7 @@ return {
 		cmd = "SetIntro",
 		param = {
 			"ep_mainline_001",
-			"Interlude II",
+			"Interlude (II)",
 			"Vita",
 			"Vita wants you to collect souls to raise your authorization level. But being cautious, you're not about to trust her that easily. And somehow, an unfamiliar soul has appeared in your phone.",
 			0
@@ -1133,7 +1133,7 @@ return {
 			"",
 			false,
 			"",
-			"Apologies. the system level is insufficient for Vita to answer that question.",
+			"Apologies. The system level is insufficient for Vita to answer that question.",
 			""
 		}
 	},
@@ -3794,7 +3794,7 @@ return {
 			"",
 			false,
 			"",
-			"The chess ...==W== it's floating, and glowing.",
+			"The piece...==W== It's floating, and glowing.",
 			""
 		}
 	},
@@ -4043,7 +4043,7 @@ return {
 			"",
 			false,
 			"",
-			"However, since the system isn't at advanced level yet, we can only access part of its powers\226\128\148information replication.",
+			"However, since the system isn't at an advanced level yet, we can only access part of its powers\226\128\148information replication.",
 			""
 		}
 	},
@@ -12916,7 +12916,7 @@ return {
 		cmd = "SetTalk",
 		param = {
 			0,
-			"Noya & Amber",
+			"",
 			"",
 			0,
 			"",

@@ -5859,7 +5859,7 @@ return {
 			"",
 			false,
 			"",
-			"We have a new customer wanting to try our authentic Loong cuisine today! She's not a Loong, but don't hold back! Give him the full treatment!",
+			"We have a new customer wanting to try our authentic Loong cuisine today! ==SEX1=='s not a Loong, but don't hold back! Give ==SEX4== the full treatment!",
 			""
 		}
 	},

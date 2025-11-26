@@ -3397,7 +3397,7 @@ return {
 			"",
 			false,
 			"",
-			"Mr. Puffy Dango reluctantly slips out of my arms==W== and wobbles his way<r=climbs onto the top bunk></r> up into the sky.==W==",
+			"Mr. Puffy Dango reluctantly slips out of my arms==W== and wobbles his<r=climbs onto the></r> way up<r=top bunk></r> into the sky.==W==",
 			""
 		}
 	},

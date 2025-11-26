@@ -121,7 +121,7 @@ end
 function BdConvertActCtrl:OnGridBtnClick(go, nIndex)
 	local nDataIndex = nIndex + 1
 	local itemId = self.tbReward[nDataIndex]
-	UTILS.ClickItemGridWithTips(itemId, go.transform, true, false, false)
+	UTILS.ClickItemGridWithTips(itemId, go.transform:Find("btnGrid"), true, false, false)
 end
 function BdConvertActCtrl:InitQuest()
 	local allCount = self.actData:GetAllQuestCount()
