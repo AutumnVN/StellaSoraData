@@ -27425,7 +27425,7 @@
                     "id": 513409,
                     "name": "Blast Pursuit",
                     "briefDesc": "Fuyuka's fourth attack on the same target deals additional DMG.",
-                    "desc": "Every time Fuyuka deals DMG to a target 4 times, she launches an additional attack on the same target, dealing <color=#ec6d21>&Param1& of ATK</color> as Ignis Skill DMG.",
+                    "desc": "Every time Fuyuka deals DMG to a target 4 times, she launches an additional attack on the same target, dealing <color=#ec6d21>&Param1& of ATK</color> as Ignis Skill DMG.\u000bAfter this effect triggers, it has a 1.5s cooldown before it can stack again.",
                     "damageType": [
                         "Skill"
                     ],
@@ -32026,7 +32026,7 @@
                     "briefDesc": "When a squadmate lands a Crit Hit, reduces the Main Skill's Cooldown, leaves claw marks and inflicts ##Umbra Mark: Gloom#2018#.",
                     "desc": "When a squadmate lands a Crit Hit, reduces the Cooldown of Nocturn Hooks (Main Skill) by <color=#0abec5>1</color>s, and leaves claw marks at the target's location, dealing <color=#0abec5>&Param1& of Cosette's ATK</color> as AoE Umbra Skill DMG and inflicting ##Umbra Mark: Gloom#2018#. \u000bThis effect can only be triggered 5 times per Skill cast.",
                     "damageType": [
-                        "Projectile"
+                        "Skill"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -32063,7 +32063,7 @@
                     "briefDesc": "When Cosette inflicts ##Umbra Mark: Gloom#2018# multiple times on the target, leaves claw marks and increases the target's &Param2&.",
                     "desc": "When Cosette inflicts ##Umbra Mark: Gloom#2018# on the same target for the 3rd time, leaves claw marks, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Umbra Skill DMG, increasing the target's &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s, and inflicting ##Umbra Mark: Gloom#2018#. This effect can only be triggered once per second.",
                     "damageType": [
-                        "Projectile"
+                        "Skill"
                     ],
                     "effectType": [
                         "Umbra DMG Taken"
