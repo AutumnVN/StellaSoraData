@@ -370,8 +370,14 @@ function getStats(charId) {
         .map(key => {
             const attr = ATTRIBUTE[key];
             return {
+                lv: attr.lvl,
                 hp: attr.Hp,
                 atk: attr.Atk,
+                def: attr.Def,
+                critRate: attr.CritRate / 100 + '%',
+                critDmg: attr.CritPower / 100 + '%',
+                resilienceBreakDmg: attr.ToughnessDamageAdjust / 100 + '%',
+                vul: attr.Suppress ? attr.Suppress / 100 + '%' : '0%',
             };
         });
 }
