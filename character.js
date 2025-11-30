@@ -30,6 +30,8 @@ const LANG_TALENT = require('./EN/language/en_US/Talent.json');
 const LANG_TALENTGROUP = require('./EN/language/en_US/TalentGroup.json');
 const LANG_DATINGCHARACTEREVENT = require('./EN/language/en_US/DatingCharacterEvent.json');
 const LANG_DATINGBRANCH = require('./EN/language/en_US/DatingBranch.json');
+const LANG_FORCE = require('./EN/language/en_US/Force.json');
+const LANG_CHARACTERDES = require('./EN/language/en_US/CharacterDes.json');
 
 const character = {};
 
@@ -40,11 +42,17 @@ const character = {};
         character[id] = {
             id: +id,
             name: LANG_CHARACTER[CHARACTER[id].Name],
+            desc: LANG_CHARACTERDES[CHARACTERDES[id].CharDes],
             star: CHARACTER[id].Grade === 1 ? 5 : 4,
             element: LANG_UITEXT[`UIText.T_Element_Attr_${CHARACTER[id].EET}.1`],
             class: LANG_UITEXT[`UIText.Char_JobClass_${CHARACTER[id].Class}.1`],
             attackType: CHARACTER[id].CharacterAttackType === 1 ? 'Melee' : 'Ranged',
+            style: LANG_CHARACTERTAG[`CharacterTag.${CHARACTERDES[id].Tag[1]}.1`],
+            faction: LANG_FORCE[`Force.${CHARACTER[id].Faction}.1`],
             tag: CHARACTERDES[id].Tag.map(tagId => LANG_CHARACTERTAG[`CharacterTag.${tagId}.1`]),
+            cnCv: CHARACTERDES[id].CnCv,
+            jpCv: CHARACTERDES[id].JpCv,
+            birthday: CHARACTERDES[id].Birthday,
             loveGift: getGifts(CHARACTERDES[id].PreferTags),
             hateGift: getGifts(CHARACTERDES[id].HateTags),
             date: getDates(id),

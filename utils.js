@@ -164,6 +164,48 @@ const CORNER_TYPE = {
     3: 'Round',
 };
 
+const ITEM_STYPE = {
+    1: 'Res',
+    2: 'Item',
+    3: 'Char',
+    4: 'Energy',
+    5: 'WorldRankExp',
+    6: 'CharShard',
+    8: 'Disc',
+    9: 'TalentStrengthen',
+    12: 'DiscStrengthen',
+    13: 'DiscPromote',
+    17: 'TreasureBox',
+    18: 'GearTreasureBox',
+    19: 'SubNoteSkill',
+    24: 'SkillStrengthen',
+    25: 'CharacterLimitBreak',
+    30: 'MonthlyCard',
+    31: 'EnergyItem',
+    32: 'ComCYO',
+    33: 'OutfitCYO',
+    34: 'RandomPackage',
+    35: 'Equipment',
+    37: 'FateCard',
+    38: 'EquipmentExp',
+    40: 'DiscLimitBreak',
+    41: 'Potential',
+    42: 'SpecificPotential',
+    43: 'Honor',
+    44: 'CharacterYO',
+    45: 'PlayHead',
+    46: 'CharacterSkin',
+    47: 'SouvenirEnergyItem'
+};
+
+const ITEM_RARITY = {
+    1: 'SSR',
+    2: 'SR',
+    3: 'R',
+    4: 'M',
+    5: 'N'
+};
+
 function collectParamsFrom(obj) {
     if (!obj) return [];
 
@@ -378,4 +420,6 @@ module.exports = {
     DAMAGE_TYPE,
     EFFECT_TYPE,
     CORNER_TYPE,
+    ITEM_STYPE,
+    ITEM_RARITY,
 };
