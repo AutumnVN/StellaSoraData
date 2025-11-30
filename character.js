@@ -48,7 +48,7 @@ const character = {};
             class: LANG_UITEXT[`UIText.Char_JobClass_${CHARACTER[id].Class}.1`],
             attackType: CHARACTER[id].CharacterAttackType === 1 ? 'Melee' : 'Ranged',
             style: LANG_CHARACTERTAG[`CharacterTag.${CHARACTERDES[id].Tag[1]}.1`],
-            faction: LANG_FORCE[`Force.${CHARACTER[id].Faction}.1`],
+            force: LANG_FORCE[`Force.${CHARACTERDES[id].Force}.1`],
             tag: CHARACTERDES[id].Tag.map(tagId => LANG_CHARACTERTAG[`CharacterTag.${tagId}.1`]),
             cnCv: CHARACTERDES[id].CnCv,
             jpCv: CHARACTERDES[id].JpCv,
