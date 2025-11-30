@@ -32,6 +32,7 @@ const LANG_DATINGCHARACTEREVENT = require('./EN/language/en_US/DatingCharacterEv
 const LANG_DATINGBRANCH = require('./EN/language/en_US/DatingBranch.json');
 const LANG_FORCE = require('./EN/language/en_US/Force.json');
 const LANG_CHARACTERDES = require('./EN/language/en_US/CharacterDes.json');
+const LANG_CHARACTERARCHIVEBASEINFO = require('./EN/language/en_US/CharacterArchiveBaseInfo.json');
 
 const character = {};
 
@@ -52,7 +53,7 @@ const character = {};
             tag: CHARACTERDES[id].Tag.map(tagId => LANG_CHARACTERTAG[`CharacterTag.${tagId}.1`]),
             cnCv: CHARACTERDES[id].CnCv,
             jpCv: CHARACTERDES[id].JpCv,
-            birthday: CHARACTERDES[id].Birthday,
+            birthday: LANG_CHARACTERARCHIVEBASEINFO[`CharacterArchiveBaseInfo.${id}02.2`],
             loveGift: getGifts(CHARACTERDES[id].PreferTags),
             hateGift: getGifts(CHARACTERDES[id].HateTags),
             date: getDates(id),
