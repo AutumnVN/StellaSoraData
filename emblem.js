@@ -83,23 +83,20 @@ for (const id in CHARGEMSLOTCONTROL) {
         attrGroup: CHARGEMSLOTCONTROL[id].AttrGroupId.map(gid => {
             const group = Object.values(CHARGEMATTRGROUP).find(g => g.GroupId === gid);
             return {
-                weight: group.Weight ? group.Weight / 100 + '%' : undefined,
-                uniqueAttrNumWeight: group.UniqueAttrNumWeight ? Object.fromEntries(Object.entries(JSON.parse(group.UniqueAttrNumWeight)).map(([k, v]) => [k, v / 100 + '%'])) : undefined,
+                weight: group.Weight / 100 + '%',
                 attr: [...new Set(Object.values(CHARGEMATTRTYPE).filter(t => t.GroupId === gid).map(t => `${MAP[t.AttrType] || t.AttrType}: ${Object.values(CHARGEMATTRVALUE).filter(a => a.TypeId === t.Id).map(a => a.Value.includes('.') ? iHateFloatingPointNumber(a.Value, '*', 100) + '%' : a.Value).join(' / ')}`))],
             };
         }),
         uniqueAttrGroup: CHARGEMSLOTCONTROL[id].UniqueAttrGroupId ? (() => {
             const group = Object.values(CHARGEMATTRGROUP).find(g => g.GroupId === CHARGEMSLOTCONTROL[id].UniqueAttrGroupId);
             return {
-                weight: group.Weight ? group.Weight / 100 + '%' : undefined,
-                uniqueAttrNumWeight: group.UniqueAttrNumWeight ? Object.fromEntries(Object.entries(JSON.parse(group.UniqueAttrNumWeight)).map(([k, v]) => [k, v / 100 + '%'])) : undefined,
+                uniqueAttrGroupProb: CHARGEMSLOTCONTROL[id].UniqueAttrGroupProb / 100 + '%',
+                guaranteeCount: CHARGEMSLOTCONTROL[id].GuaranteeCount,
+                uniqueAttrNumWeight: Object.fromEntries(Object.entries(JSON.parse(group.UniqueAttrNumWeight)).map(([k, v]) => [k, v / 100 + '%'])),
                 attr: [...new Set(Object.values(CHARGEMATTRTYPE).filter(t => t.GroupId === CHARGEMSLOTCONTROL[id].UniqueAttrGroupId).map(t => `${MAP[t.AttrType] || t.AttrType}: ${Object.values(CHARGEMATTRVALUE).filter(a => a.TypeId === t.Id).map(a => a.Value.includes('.') ? iHateFloatingPointNumber(a.Value, '*', 100) + '%' : a.Value).join(' / ')}`))],
             };
         })() : undefined,
     }
 }
 
-
-
 writeFileSync('./emblem.json', JSON.stringify(emblem, null, 4));
-
