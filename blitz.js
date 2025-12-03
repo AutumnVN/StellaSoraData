@@ -2,6 +2,7 @@ const { writeFileSync } = require('fs');
 const SCOREBOSSLEVEL = require('./EN/bin/ScoreBossLevel.json');
 const SCOREBOSSGETCONTROL = require('./EN/bin/ScoreBossGetControl.json');
 const SCOREBOSSABILITY = require('./EN/bin/ScoreBossAbility.json');
+const SCOREGETSWITCH = require('./EN/bin/ScoreGetSwitch.json');
 const MONSTER = require('./EN/bin/Monster.json');
 const MONSTERMANUAL = require('./EN/bin/MonsterManual.json');
 const MONSTERSKIN = require('./EN/bin/MonsterSkin.json');
@@ -16,6 +17,7 @@ const blitz = {};
 
 for (const id in SCOREBOSSLEVEL) {
     const scoreBossLevel = SCOREBOSSLEVEL[id];
+    const scoreGetSwitch = SCOREGETSWITCH[`${scoreBossLevel.ScoreGetSwitchGroup}001`];
     const monster = MONSTER[scoreBossLevel.MonsterId];
     const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster.FAId].MonsterManual];
     const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
@@ -58,6 +60,7 @@ for (const id in SCOREBOSSLEVEL) {
             'Ventus RES': monsterValueTemplateAdjust.AERFix,
             'Lux RES': monsterValueTemplateAdjust.LERFix,
             'Umbra RES': monsterValueTemplateAdjust.DERFix,
+            'divide total damage by this number to almost get damage score': scoreGetSwitch.SwitchRate,
         }
     }
 }
