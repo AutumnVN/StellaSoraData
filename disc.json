@@ -22866,8 +22866,7 @@
             "name": "Tears of Joy",
             "desc": "When any Aqua Trekker casts an Ultimate, increases Aqua Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
-                "Auto Attack Damage",
-                "Skill DMG"
+                "Auto Attack Damage"
             ],
             "params": "10%,18/20%,18/30%,18/40%,18/50%,18",
             "requirements": [
@@ -23448,8 +23447,7 @@
             "name": "Spectral Fragrance",
             "desc": "When any Umbra Trekker casts a Support Skill, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.\u000bFor every minion summoned by an Umbra squadmate, increases the DMG of all allied Umbra minions on the battlefield by <color=#ec6d21>{3}</color> for {4}s, stacking up to {5} times.",
             "effectType": [
-                "ATK",
-                "Minion DMG"
+                "ATK"
             ],
             "params": "2.5%,8,0.5%,10,10/5%,8,1%,10,10/7.5%,8,1.5%,10,10/10%,8,2%,10,10/12.5%,8,2.5%,10,10",
             "requirements": [
@@ -23481,8 +23479,7 @@
             "name": "Dark Trace",
             "desc": "Increases Umbra Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Umbra Mark#1019#, increases this effect by an additional <color=#ec6d21>{2}</color> and the DMG of all allied Umbra minions on the battlefield by an additional <color=#ec6d21>{3}</color> for {4}s.",
             "effectType": [
-                "Ultimate DMG",
-                "Minion DMG"
+                "Ultimate DMG"
             ],
             "params": "6%,5%,2.5%,4/12%,10%,5%,4/18%,15%,7.5%,4/24%,20%,10%,4/30%,25%,12.5%,4",
             "requirements": [
@@ -25811,8 +25808,7 @@
             "name": "Dancing Waters",
             "desc": "When any Aqua Trekker deals Skill DMG, if the main Aqua Trekker has a shield, increases the DMG of this hit by <color=#ec6d21>{1}</color>.\u000bIncreases the main Aqua Trekker's Aqua DMG dealt to elite or higher-tier targets by <color=#ec6d21>{2}</color>.",
             "effectType": [
-                "Skill DMG",
-                "Aqua DMG"
+                "Skill DMG"
             ],
             "params": "4%,3%/8%,6%/12%,9%/16%,12%/20%,15%",
             "requirements": [
@@ -26394,8 +26390,7 @@
             "name": "Greedy Pursuit",
             "desc": "When any Trekker triggers ##Umbra Mark#1019#, if the main Trekker has a shield, increases Umbra squadmates' Skill and Ultimate DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
-                "Skill DMG",
-                "Ultimate DMG"
+                "Skill DMG"
             ],
             "params": "6%,4/12%,4/18%,4/24%,4/30%,4",
             "requirements": [
@@ -28109,8 +28104,7 @@
             "name": "Warmth in the Arms",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Ignis DMG",
-                "Skill DMG"
+                "Ignis DMG"
             ],
             "params": "4%,4%,4/8%,8%,4/12%,12%,4/16%,16%,4/20%,20%,4",
             "requirements": [
@@ -28141,7 +28135,9 @@
         "secondarySkill2": {
             "name": "Fervent Flames",
             "desc": "Each stack of Explosive Flame additionally grants: Skill DMG +<color=#ec6d21>{1}</color>.",
-            "effectType": [],
+            "effectType": [
+                "Skill DMG"
+            ],
             "params": "1.5%/3%/4.5%/6%/7.5%",
             "requirements": [
                 {
@@ -28689,8 +28685,7 @@
             "name": "Subtle Influence",
             "desc": "Increases Ventus Trekkers' Ventus DMG dealt to targets with Ventus VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ventus Trekker by {2}.",
             "effectType": [
-                "Ventus DMG",
-                "DMG Taken"
+                "Ventus DMG"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -29271,8 +29266,7 @@
             "name": "Windbreaking Shots",
             "desc": "Increases Ignis Trekkers' Ignis DMG dealt to targets with Ignis VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ignis Trekker by {2}.",
             "effectType": [
-                "Ignis DMG",
-                "DMG Taken"
+                "Ignis DMG"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -29303,7 +29297,9 @@
         "secondarySkill2": {
             "name": "Battle Rhapsody",
             "desc": "Increases Ignis Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, increases this effect by an additional {3} every {2}s, stacking up to {4} times.",
-            "effectType": [],
+            "effectType": [
+                "ATK"
+            ],
             "params": "2.5%,8,1.36%,10/5%,8,1.36%,10/7.5%,8,1.36%,10/10%,8,1.36%,10/12.5%,8,1.36%,10",
             "requirements": [
                 {
@@ -29851,8 +29847,7 @@
             "name": "Flashing Memories",
             "desc": "Increases Lux Trekkers' Lux DMG dealt to targets with Lux VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Lux Trekker by {2}.",
             "effectType": [
-                "Lux DMG",
-                "DMG Taken"
+                "Lux DMG"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -29884,8 +29879,7 @@
             "name": "Radiant Bonds",
             "desc": "Increases Lux Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts an Ultimate, increases this effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
-                "Auto Attack Damage",
-                "Skill DMG"
+                "Auto Attack Damage"
             ],
             "params": "3%,3%,6/6%,3%,6/9%,3%,6/12%,3%,6/15%,3%,6",
             "requirements": [
@@ -30434,8 +30428,7 @@
             "name": "Unbreakable Trio",
             "desc": "Increases Aqua Trekkers' Aqua DMG dealt to targets with Aqua VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Aqua Trekker by {2}.",
             "effectType": [
-                "Aqua DMG",
-                "DMG Taken"
+                "Aqua DMG"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -30467,8 +30460,7 @@
             "name": "Moment of Unity",
             "desc": "Increases Aqua Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
             "effectType": [
-                "Auto Attack Damage",
-                "Skill DMG"
+                "Auto Attack Damage"
             ],
             "params": "3%,10,1.8%,10/6%,10,1.8%,10/9%,10,1.8%,10/12%,10,1.8%,10/15%,10,1.8%,10",
             "requirements": [
@@ -31017,8 +31009,7 @@
             "name": "Moment of Terror",
             "desc": "Increases Umbra Trekkers' Umbra DMG dealt to targets with Umbra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Umbra Trekker by {2}.",
             "effectType": [
-                "Umbra DMG",
-                "DMG Taken"
+                "Umbra DMG"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -31597,8 +31588,7 @@
             "name": "Street Spirit",
             "desc": "Increases Terra Trekkers' Terra DMG dealt to targets with Terra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Terra Trekker by {2}.",
             "effectType": [
-                "Terra DMG",
-                "Aqua DMG Taken"
+                "Terra DMG"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -31629,7 +31619,9 @@
         "secondarySkill2": {
             "name": "Hit and Run",
             "desc": "Increases Terra Trekkers' Skill and Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
-            "effectType": [],
+            "effectType": [
+                "Ultimate DMG"
+            ],
             "params": "3%,10,1.8%,10/6%,10,1.8%,10/9%,10,1.8%,10/12%,10,1.8%,10/15%,10,1.8%,10",
             "requirements": [
                 {
@@ -32176,7 +32168,9 @@
         "secondarySkill1": {
             "name": "Splashing Moves",
             "desc": "After the main Aqua Trekker deals DMG {1} times in total, increases Aqua squadmates' ATK by <color=#ec6d21>{2}</color> for {3}s. This effect can only be triggered once every {4}s.",
-            "effectType": [],
+            "effectType": [
+                "ATK"
+            ],
             "params": "20,14%,10,15/20,28%,10,15/20,42%,10,15/20,56%,10,15/20,70%,10,15",
             "requirements": [
                 {
@@ -33340,8 +33334,7 @@
             "name": "Fragrant Illusion",
             "desc": "Increases Ventus Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ventus Trekker deals Ultimate DMG, increases her Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Ultimate DMG",
-                "Ventus DMG"
+                "Ultimate DMG"
             ],
             "params": "8%,4.8%,20/16%,9.6%,20/24%,14.4%,20/32%,19.2%,20/40%,24%,20",
             "requirements": [
@@ -33372,7 +33365,9 @@
         "secondarySkill2": {
             "name": "Swaying Petals",
             "desc": "After the main Ventus Trekker deals DMG to the same target {1} times, increases the Ventus DMG the target takes by <color=#ec6d21>{2}</color> for {3}s. This effect can only be triggered once every {4}s for the same target.",
-            "effectType": [],
+            "effectType": [
+                "Ventus DMG Taken"
+            ],
             "params": "10,4%,6,10/10,8%,6,10/10,12%,6,10/10,16%,6,10/10,20%,6,10",
             "requirements": [
                 {
@@ -35087,7 +35082,9 @@
         "secondarySkill1": {
             "name": "Veiled Negative",
             "desc": "When inflicting Corrosion on a target, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
-            "effectType": [],
+            "effectType": [
+                "ATK"
+            ],
             "params": "5%,8/10%,8/15%,8/20%,8/25%,8",
             "requirements": [
                 {
@@ -36252,8 +36249,7 @@
             "name": "Iron Love Embrace",
             "desc": "Increases Terra Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bWhen any Terra Trekker deals Skill DMG, if a support Terra Trekker is on the battlefield, increases the Skill DMG by <color=#ec6d21>{2}</color>.",
             "effectType": [
-                "ATK",
-                "Skill DMG"
+                "ATK"
             ],
             "params": "2.5%,5%/5%,10%/7.5%,15%/10%,20%/12.5%,25%",
             "requirements": [
@@ -36834,7 +36830,9 @@
         "secondarySkill1": {
             "name": "Lucky Clip",
             "desc": "When any Terra Trekker restores HP, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
-            "effectType": [],
+            "effectType": [
+                "Terra DMG"
+            ],
             "params": "5%,10/10%,10/15%,10/20%,10/25%,10",
             "requirements": [
                 {
@@ -37415,8 +37413,7 @@
             "name": "Dance of Shimmers",
             "desc": "Increases the main Lux Trekker's Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Lux Trekker deals Skill DMG, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Auto Attack Damage",
-                "Skill DMG"
+                "Auto Attack Damage"
             ],
             "params": "5%,4.5%,6/10%,9%,6/15%,13.5%,6/20%,18%,6/25%,22.5%,6",
             "requirements": [
@@ -37447,7 +37444,9 @@
         "secondarySkill2": {
             "name": "Gleaming Steps",
             "desc": "After the main Lux Trekker deals Skill DMG {1} times in total, increases the squad's Lux DMG by <color=#ec6d21>{2}</color> for {3}s.",
-            "effectType": [],
+            "effectType": [
+                "Lux DMG"
+            ],
             "params": "30,9%,10/30,18%,10/30,27%,10/30,36%,10/30,45%,10",
             "requirements": [
                 {
@@ -38028,7 +38027,9 @@
         "secondarySkill2": {
             "name": "Infinite Sunshine",
             "desc": "When any Lux Trekker deals Skill DMG, the main Lux Trekker gains 1 stack of Diffraction, stacking up to {1} times.\u000bWhen the main Lux Trekker casts a skill, increases Lux squadmates' Skill DMG by the number of Diffraction stacks x<color=#ec6d21>{2}</color> for {3}s, and removes all the Diffraction stacks.",
-            "effectType": [],
+            "effectType": [
+                "Skill DMG"
+            ],
             "params": "6,1%,10/6,2%,10/6,3%,10/6,4%,10/6,5%,10",
             "requirements": [
                 {
@@ -38576,8 +38577,7 @@
             "name": "Passion of the Captain",
             "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Trekker deals Skill DMG, increases Ignis Trekkers' ATK by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Skill DMG",
-                "ATK"
+                "Skill DMG"
             ],
             "params": "5%,2%,5/10%,4%,5/15%,6%,5/20%,8%,5/25%,10%,5",
             "requirements": [
@@ -38608,7 +38608,9 @@
         "secondarySkill2": {
             "name": "Inspiration of Courage",
             "desc": "When the duration of Courage ends, each stack of Courage increases the main Ignis Trekker's Auto Attack DMG by <color=#ec6d21>{1}</color> and grants {2} DEF for {3}s.",
-            "effectType": [],
+            "effectType": [
+                "Auto Attack Damage"
+            ],
             "params": "1.5%,6,27/3%,6,27/4.5%,6,27/6%,6,27/7.5%,6,27",
             "requirements": [
                 {
