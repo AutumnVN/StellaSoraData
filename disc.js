@@ -10,6 +10,7 @@ const SUBNOTESKILL = require('./EN/bin/SubNoteSkill.json');
 const SUBNOTESKILLPROMOTEGROUP = require('./EN/bin/SubNoteSkillPromoteGroup.json');
 const ATTRIBUTE = require('./EN/bin/Attribute.json');
 const DISCEXTRAATTRIBUTE = require('./EN/bin/DiscExtraAttribute.json');
+const EFFECT = require('./EN/bin/Effect.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
 const LANG_ITEM = require('./EN/language/en_US/Item.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
@@ -74,7 +75,7 @@ function getMainSkillEffectTypes(id) {
     const key = Object.keys(MAINSKILL).find(key => MAINSKILL[key].GroupId === id);
     if (!key) return effectTypes;
 
-    const effectKeys = MAINSKILL[key].EffectId || [];
+    const effectKeys = MAINSKILL[key].EffectId || Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`));
 
     for (const effectKey of effectKeys) {
         let currentId = +effectKey;
