@@ -95,8 +95,9 @@ const ATTR_TYPE = {
     83: 'Other Crit DMG',
     84: 'Max Energy',
     85: 'Skill Intensity',
-    86: 'ADD_SHIELD_STRENGTHEN',
-    87: 'BE_ADD_SHIELD_STRENGTHEN',
+    86: 'TOUGHNESS_BROKEN_DMG',
+    87: 'ADD_SHIELD_STRENGTHEN',
+    88: 'BE_ADD_SHIELD_STRENGTHEN',
 };
 
 const DAMAGE_TYPE = {
