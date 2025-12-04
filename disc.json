@@ -28086,7 +28086,10 @@
         "mainSkill": {
             "name": "Fireworks",
             "desc": "The main Ignis Trekker gains {1} stacks of Explosive Flame after casting a skill. Each stack increases Auto Attack DMG by <color=#ec6d21>{2}</color>, stacking up to {3} times. Each ammo used by the main Ignis Trekker grants one additional stack.\u000bWhen Explosive Flame is at max stacks, increases the main Ignis Trekker's Ignis Auto Attack DMG to targets by <color=#ec6d21>{4}</color> for {5}s. All Explosive Flame stacks are removed after {6}s.",
-            "effectType": [],
+            "effectType": [
+                "Auto Attack Damage",
+                "Auto Attack DMG Taken"
+            ],
             "params": "3,7%,10,10%,12,3/3,8.4%,10,12%,12,3/3,9.8%,10,14%,12,3/3,11.2%,10,16%,12,3/3,12.6%,10,18%,12,3/3,14%,10,20%,12,3",
             "icon": "DiscSkill_214017",
             "iconBg": "db_DiscSkill_1"
@@ -28664,7 +28667,9 @@
         "mainSkill": {
             "name": "Lemon & Black Tea",
             "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
-            "effectType": [],
+            "effectType": [
+                "Ventus DMG"
+            ],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214018",
             "iconBg": "db_DiscSkill_4"
@@ -29244,7 +29249,9 @@
         "mainSkill": {
             "name": "One Shot, One Down",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
-            "effectType": [],
+            "effectType": [
+                "Ignis DMG"
+            ],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214019",
             "iconBg": "db_DiscSkill_1"
@@ -29822,7 +29829,9 @@
         "mainSkill": {
             "name": "Sparkling Moment",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
-            "effectType": [],
+            "effectType": [
+                "Lux DMG"
+            ],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214020",
             "iconBg": "db_DiscSkill_3"
@@ -30403,7 +30412,9 @@
         "mainSkill": {
             "name": "United by Fate",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
-            "effectType": [],
+            "effectType": [
+                "Aqua DMG"
+            ],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214021",
             "iconBg": "db_DiscSkill_5"
@@ -30984,7 +30995,9 @@
         "mainSkill": {
             "name": "The Meow",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
-            "effectType": [],
+            "effectType": [
+                "Umbra DMG"
+            ],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214022",
             "iconBg": "db_DiscSkill_6"
@@ -31562,7 +31575,9 @@
         "mainSkill": {
             "name": "Colors Pierce the Grey",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
-            "effectType": [],
+            "effectType": [
+                "Terra DMG"
+            ],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214023",
             "iconBg": "db_DiscSkill_2"
@@ -35629,7 +35644,11 @@
         "mainSkill": {
             "name": "Dancing with the Bones",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Terra Trekker's HP is above {2} when any Terra Trekker deals Skill DMG, increases the DMG of this hit by {3}. The main Terra Trekker gains Boulder: reduces DMG taken by {4}.",
-            "effectType": [],
+            "effectType": [
+                "Terra DMG",
+                "Skill DMG",
+                "DMG Taken"
+            ],
             "params": "10%,50%,8.5%,10%/12%,50%,8.5%,10%/14%,50%,8.5%,10%/16%,50%,8.5%,10%/18%,50%,8.5%,10%/20%,50%,8.5%,10%",
             "icon": "DiscSkill_214033",
             "iconBg": "db_DiscSkill_2"
@@ -38532,7 +38551,9 @@
         "mainSkill": {
             "name": "Fist of Courage",
             "desc": "The main Ignis Trekker gains 1 stack of Courage when dealing Ultimate DMG, increasing Ultimate DMG by <color=#ec6d21>{1}</color> for {3}s, stacking up to {2} times.",
-            "effectType": [],
+            "effectType": [
+                "Ultimate DMG"
+            ],
             "params": "4%,10,8/4.8%,10,8/5.6%,10,8/6.4%,10,8/7.2%,10,8/8%,10,8",
             "icon": "DiscSkill_214040",
             "iconBg": "db_DiscSkill_1"
