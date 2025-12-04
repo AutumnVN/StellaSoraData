@@ -385,7 +385,7 @@ function getStats(charId) {
                 def: attr.Def,
                 critRate: attr.CritRate / 100 + '%',
                 critDmg: attr.CritPower / 100 + '%',
-                resilienceBreakDmg: attr.ToughnessDamageAdjust / 100 + '%',
+                resilienceBreakEfficiency: attr.ToughnessDamageAdjust / 100 + '%',
                 vul: attr.Suppress ? attr.Suppress / 100 + '%' : '0%',
             };
         });
