@@ -11,7 +11,8 @@
             "name": "Fortissimo: Main Theme",
             "desc": "Increases the main Trekker's ATK by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "ATK"
+                "ATK",
+                "Crit Rate"
             ],
             "params": "7%/8.4%/9.8%/11.2%/12.6%/14%",
             "icon": "DiscSkill_1",
@@ -12365,7 +12366,8 @@
             "name": "Aromatic Steam",
             "desc": "Increases the Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2}, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
-                "Skill DMG"
+                "Skill DMG",
+                "ADD_SKILL_LV"
             ],
             "params": "7.5%,80%,8%/9%,80%,9.6%/10.5%,80%,11.2%/12%,80%,12.8%/13.5%,80%,14.4%/15%,80%,16%",
             "icon": "DiscSkill_4",
@@ -17843,7 +17845,15 @@
             "name": "Kitschphobia",
             "desc": "Increases the Skill DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Skill DMG"
+                "Skill DMG",
+                "ADDBUFF",
+                "DMG Dealt",
+                "Evasion",
+                "Crit Rate",
+                "Final DMG+",
+                "DMG Taken",
+                "Crit DMG",
+                "IMM_BUFF"
             ],
             "params": "7.5%,12.5%,16/9%,15%,16/10.5%,17.5%,16/12%,20%,16/13.5%,22.5%,16/15%,25%,16",
             "icon": "DiscSkill_4",
@@ -26341,7 +26351,8 @@
             "name": "Those with Ambition",
             "desc": "Increases the ATK of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any support Umbra Trekker or Umbra minion inflicts ##Umbra Mark#1019#, the main Umbra Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
-                "ATK"
+                "ATK",
+                "ADD_SHIELD"
             ],
             "params": "10%,15%,20,20/12%,15%,20,20/14%,15%,20,20/16%,15%,20,20/18%,15%,20,20/20%,15%,20,20",
             "icon": "DiscSkill_214012",
@@ -35066,6 +35077,7 @@
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker deal non-Auto Attack DMG to a target, there is a {2} chance to inflict Corrosion: increases Umbra DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Umbra Trekker from targets inflicted with Corrosion by {5}.",
             "effectType": [
                 "Umbra DMG",
+                "Umbra DMG Taken",
                 "DMG Taken"
             ],
             "params": "10%,35%,10%,8,10%/12%,35%,10%,8,10%/14%,35%,10%,8,10%/16%,35%,10%,8,10%/18%,35%,10%,8,10%/20%,35%,10%,8,10%",
@@ -36812,7 +36824,8 @@
             "name": "Claw the Claw",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen a target's ##Terra Mark#1020# is triggered, the target takes <color=#ec6d21>{2}</color> more Terra DMG for {3}s.",
             "effectType": [
-                "Terra DMG"
+                "Terra DMG",
+                "Terra DMG Taken"
             ],
             "params": "10%,7.5%,4/12%,9%,4/14%,10.5%,4/16%,12%,4/18%,13.5%,4/20%,15%,4",
             "icon": "DiscSkill_214037",
@@ -37973,7 +37986,8 @@
             "desc": "Increases the main Lux Trekker's Auto Attack & Skill DMG by <color=#ec6d21>{1}</color>.\u000bIf any Trekker triggers ##Lux Mark#1015# while the main Lux Trekker's Ultimate is active, increases the squad's Lux DMG by <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
             "effectType": [
                 "Auto Attack Damage",
-                "Skill DMG"
+                "Skill DMG",
+                "Lux DMG"
             ],
             "params": "6%,3%,10,5/7.2%,3.6%,10,5/8.4%,4.2%,10,5/9.6%,4.8%,10,5/10.8%,5.4%,10,5/12%,6%,10,5",
             "icon": "DiscSkill_214039",

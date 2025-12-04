@@ -124,7 +124,7 @@ function getSeconarySkillEffectTypes(id) {
     const keys = Object.keys(SECONDARYSKILL).find(key => SECONDARYSKILL[key].GroupId === id);
     if (!keys) return effectTypes;
 
-    const effectKeys = SECONDARYSKILL[keys].EffectId || [];
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`)) || [];
 
     for (const effectKey of effectKeys) {
         let currentId = +effectKey;
