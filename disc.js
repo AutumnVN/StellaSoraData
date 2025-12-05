@@ -49,6 +49,7 @@ function getMainSkill(id) {
     if (!key) return;
 
     return {
+        id: +id,
         name: LANG_MAINSKILL[MAINSKILL[key].Name],
         desc: LANG_MAINSKILL[MAINSKILL[key].Desc],
         effectType: getMainSkillEffectTypes(id),
@@ -116,6 +117,7 @@ function getSeconarySkill(id) {
     if (LANG_SECONDARYSKILL[SECONDARYSKILL[key].Name] === '!NONEED!') return;
 
     return {
+        id: +id,
         name: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Name],
         desc: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Desc],
         effectType: getSeconarySkillEffectTypes(id),
