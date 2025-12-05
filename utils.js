@@ -558,13 +558,9 @@ function getEffectData(effectId) {
     let takeEffectLine = [takeEffectTarget1, takeEffectCondition1, takeEffectParam1, takeEffectLogicType, takeEffectTarget2, takeEffectCondition2, takeEffectParam2].filter(v => v).join(', ');
     let targetLine = [target1, targetCondition1, targetParam1].filter(v => v).join(', ');
 
-    if (triggerLine === 'NOTHING, SELF, DEFAULT') triggerLine = ' ';
-    if (takeEffectLine === 'SELF, DEFAULT') takeEffectLine = ' ';
-    if (targetLine === 'SELF, DEFAULT') targetLine = ' ';
-
     const result = [triggerLine, takeEffectLine, targetLine].join(' | ');
 
-    if (result === '  |   |  ') return;
+    if (result === 'NOTHING, SELF, DEFAULT | SELF, DEFAULT | SELF, DEFAULT') return;
 
     return result;
 }
