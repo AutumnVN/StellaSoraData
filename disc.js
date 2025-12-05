@@ -76,7 +76,7 @@ function getMainSkillEffectTypes(id) {
     const key = Object.keys(MAINSKILL).find(key => MAINSKILL[key].GroupId === id);
     if (!key) return effectTypes;
 
-    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`));
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
         let currentId = +effectKey;
@@ -95,7 +95,7 @@ function getMainSkillEffectTypes(id) {
 function getMainSkillEffectData(id) {
     const effectDatas = [];
 
-    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`));
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
         let currentId = +effectKey;
@@ -144,7 +144,7 @@ function getSeconarySkillEffectTypes(id) {
     const keys = Object.keys(SECONDARYSKILL).find(key => SECONDARYSKILL[key].GroupId === id);
     if (!keys) return effectTypes;
 
-    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`)) || [];
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
         let currentId = +effectKey;
@@ -163,7 +163,7 @@ function getSeconarySkillEffectTypes(id) {
 function getSeconarySkillEffectData(id) {
     const effectDatas = [];
 
-    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`)) || [];
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
         let currentId = +effectKey;
