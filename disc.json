@@ -14,6 +14,10 @@
                 "ATK",
                 "Crit Rate"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "NOTHING, ENEMY, DEFAULT | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "7%/8.4%/9.8%/11.2%/12.6%/14%",
             "icon": "DiscSkill_1",
             "iconBg": "db_DiscSkill_1"
@@ -514,6 +518,9 @@
             "desc": "Increases the support Trekker's ATK by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_ASSISTANT | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "7%/8.4%/9.8%/11.2%/12.6%/14%",
             "icon": "DiscSkill_1",
@@ -1016,6 +1023,9 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "10%/12%/14%/16%/18%/20%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_2"
@@ -1516,6 +1526,9 @@
             "desc": "Increases the support Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_ASSISTANT | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "10%/12%/14%/16%/18%/20%",
             "icon": "DiscSkill_4",
@@ -2018,6 +2031,9 @@
             "effectType": [
                 "Ultimate DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "22.5%/27%/31.5%/36%/40.5%/45%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_3"
@@ -2518,6 +2534,9 @@
             "desc": "Increases the support Trekker's Ultimate DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Ultimate DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_ASSISTANT | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "22.5%/27%/31.5%/36%/40.5%/45%",
             "icon": "DiscSkill_4",
@@ -3021,6 +3040,9 @@
                 "Skill DMG",
                 "Ultimate DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "8%/9.6%/11.2%/12.8%/14.4%/16%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_4"
@@ -3522,6 +3544,9 @@
             "effectType": [
                 "Skill DMG",
                 "Ultimate DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_ASSISTANT | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "8%/9.6%/11.2%/12.8%/14.4%/16%",
             "icon": "DiscSkill_4",
@@ -4025,6 +4050,9 @@
                 "Auto Attack Damage",
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "8%/9.6%/11.2%/12.8%/14.4%/16%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_5"
@@ -4525,6 +4553,9 @@
             "desc": "Increases the main Trekker's ATK by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "7%/8.4%/9.8%/11.2%/12.6%/14%",
             "icon": "DiscSkill_1",
@@ -5028,6 +5059,9 @@
                 "Auto Attack Damage",
                 "Ultimate DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "8%/9.6%/11.2%/12.8%/14.4%/16%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_1"
@@ -5529,6 +5563,7 @@
             "effectType": [
                 "Ignis DMG"
             ],
+            "effectData": [],
             "params": "6%/7.2%/8.4%/9.6%/10.8%/12%",
             "icon": "DiscSkill_13",
             "iconBg": "db_DiscSkill_1"
@@ -6030,6 +6065,7 @@
             "effectType": [
                 "Lux DMG"
             ],
+            "effectData": [],
             "params": "6%/7.2%/8.4%/9.6%/10.8%/12%",
             "icon": "DiscSkill_14",
             "iconBg": "db_DiscSkill_3"
@@ -6531,6 +6567,7 @@
             "effectType": [
                 "Ventus DMG"
             ],
+            "effectData": [],
             "params": "6%/7.2%/8.4%/9.6%/10.8%/12%",
             "icon": "DiscSkill_9",
             "iconBg": "db_DiscSkill_4"
@@ -7032,6 +7069,7 @@
             "effectType": [
                 "Aqua DMG"
             ],
+            "effectData": [],
             "params": "6%/7.2%/8.4%/9.6%/10.8%/12%",
             "icon": "DiscSkill_12",
             "iconBg": "db_DiscSkill_5"
@@ -7533,6 +7571,7 @@
             "effectType": [
                 "Umbra DMG"
             ],
+            "effectData": [],
             "params": "6%/7.2%/8.4%/9.6%/10.8%/12%",
             "icon": "DiscSkill_10",
             "iconBg": "db_DiscSkill_6"
@@ -8034,6 +8073,7 @@
             "effectType": [
                 "Terra DMG"
             ],
+            "effectData": [],
             "params": "6%/7.2%/8.4%/9.6%/10.8%/12%",
             "icon": "DiscSkill_11",
             "iconBg": "db_DiscSkill_2"
@@ -8536,6 +8576,10 @@
                 "ATK",
                 "Ultimate DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ignis"
+            ],
             "params": "5%,25%,5/6%,30%,5/7%,35%,5/8%,40%,5/9%,45%,5/10%,50%,5",
             "icon": "DiscSkill_1",
             "iconBg": "db_DiscSkill_1"
@@ -8545,6 +8589,9 @@
             "desc": "When any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Ignis | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ignis"
             ],
             "params": "4%,4/8%,4/12%,4/16%,4/20%,4",
             "requirements": [
@@ -9083,6 +9130,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Ignis | MAINCONTROL_PLAYER, HEALTHUP, 80 | ONESELF, ACTORELEMENTTYPE, Ignis"
+            ],
             "params": "7.5%,80%,8%/9%,80%,9.6%/10.5%,80%,11.2%/12%,80%,12.8%/13.5%,80%,14.4%/15%,80%,16%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_1"
@@ -9092,6 +9143,9 @@
             "desc": "When a support Ignis Trekker is on the battlefield, increases the main Ignis Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Ignis, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 2 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ignis"
             ],
             "params": "8%/16%/24%/32%/40%",
             "requirements": [
@@ -9631,6 +9685,10 @@
                 "ATK",
                 "Ultimate DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Lux"
+            ],
             "params": "5%,25%,5/6%,30%,5/7%,35%,5/8%,40%,5/9%,45%,5/10%,50%,5",
             "icon": "DiscSkill_1",
             "iconBg": "db_DiscSkill_3"
@@ -9640,6 +9698,9 @@
             "desc": "When any Trekker triggers ##Lux Mark#1015#, increases Lux squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Lux | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Lux"
             ],
             "params": "4%,4/8%,4/12%,4/16%,4/20%,4",
             "requirements": [
@@ -10178,6 +10239,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Lux | MAINCONTROL_PLAYER, HEALTHUP, 80 | ONESELF, ACTORELEMENTTYPE, Lux"
+            ],
             "params": "7.5%,80%,8%/9%,80%,9.6%/10.5%,80%,11.2%/12%,80%,12.8%/13.5%,80%,14.4%/15%,80%,16%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_3"
@@ -10187,6 +10252,9 @@
             "desc": "When a support Lux Trekker is on the battlefield, increases the main Lux Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Lux, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 5 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Lux"
             ],
             "params": "8%/16%/24%/32%/40%",
             "requirements": [
@@ -10726,6 +10794,10 @@
                 "ATK",
                 "Ultimate DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ventus"
+            ],
             "params": "5%,25%,5/6%,30%,5/7%,35%,5/8%,40%,5/9%,45%,5/10%,50%,5",
             "icon": "DiscSkill_1",
             "iconBg": "db_DiscSkill_4"
@@ -10735,6 +10807,9 @@
             "desc": "When any Trekker triggers ##Ventus Mark#1017#, increases Ventus squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Ventus | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ventus"
             ],
             "params": "4%,4/8%,4/12%,4/16%,4/20%,4",
             "requirements": [
@@ -11273,6 +11348,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Ventus | MAINCONTROL_PLAYER, HEALTHUP, 80 | ONESELF, ACTORELEMENTTYPE, Ventus"
+            ],
             "params": "7.5%,80%,8%/9%,80%,9.6%/10.5%,80%,11.2%/12%,80%,12.8%/13.5%,80%,14.4%/15%,80%,16%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_4"
@@ -11282,6 +11361,9 @@
             "desc": "When a support Ventus Trekker is on the battlefield, increases the main Ventus Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Ventus, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 4 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ventus"
             ],
             "params": "8%/16%/24%/32%/40%",
             "requirements": [
@@ -11821,6 +11903,10 @@
                 "ATK",
                 "Ultimate DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Aqua"
+            ],
             "params": "5%,25%,5/6%,30%,5/7%,35%,5/8%,40%,5/9%,45%,5/10%,50%,5",
             "icon": "DiscSkill_1",
             "iconBg": "db_DiscSkill_5"
@@ -11830,6 +11916,9 @@
             "desc": "When any Trekker triggers ##Aqua Mark#1018#, increases Aqua squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Aqua | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Aqua"
             ],
             "params": "4%,4/8%,4/12%,4/16%,4/20%,4",
             "requirements": [
@@ -12369,6 +12458,10 @@
                 "Skill DMG",
                 "ADD_SKILL_LV"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Aqua | MAINCONTROL_PLAYER, HEALTHUP, 80 | ONESELF, ACTORELEMENTTYPE, Aqua"
+            ],
             "params": "7.5%,80%,8%/9%,80%,9.6%/10.5%,80%,11.2%/12%,80%,12.8%/13.5%,80%,14.4%/15%,80%,16%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_5"
@@ -12378,6 +12471,9 @@
             "desc": "When a support Aqua Trekker is on the battlefield, increases the main Aqua Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Aqua, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 1 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Aqua"
             ],
             "params": "8%/16%/24%/32%/40%",
             "requirements": [
@@ -12917,6 +13013,10 @@
                 "ATK",
                 "Ultimate DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Umbra"
+            ],
             "params": "5%,25%,5/6%,30%,5/7%,35%,5/8%,40%,5/9%,45%,5/10%,50%,5",
             "icon": "DiscSkill_1",
             "iconBg": "db_DiscSkill_6"
@@ -12926,6 +13026,9 @@
             "desc": "When any Trekker triggers ##Umbra Mark#1019#, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Umbra | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Umbra"
             ],
             "params": "4%,4/8%,4/12%,4/16%,4/20%,4",
             "requirements": [
@@ -13464,6 +13567,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Umbra | MAINCONTROL_PLAYER, HEALTHUP, 80 | ONESELF, ACTORELEMENTTYPE, Umbra"
+            ],
             "params": "7.5%,80%,8%/9%,80%,9.6%/10.5%,80%,11.2%/12%,80%,12.8%/13.5%,80%,14.4%/15%,80%,16%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_6"
@@ -13473,6 +13580,9 @@
             "desc": "When a support Umbra Trekker is on the battlefield, increases the main Umbra Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Umbra, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 6 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Umbra"
             ],
             "params": "8%/16%/24%/32%/40%",
             "requirements": [
@@ -14012,6 +14122,10 @@
                 "ATK",
                 "Ultimate DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra"
+            ],
             "params": "5%,25%,5/6%,30%,5/7%,35%,5/8%,40%,5/9%,45%,5/10%,50%,5",
             "icon": "DiscSkill_1",
             "iconBg": "db_DiscSkill_2"
@@ -14021,6 +14135,9 @@
             "desc": "When any Trekker triggers ##Terra Mark#1020#, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Terra | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra"
             ],
             "params": "4%,4/8%,4/12%,4/16%,4/20%,4",
             "requirements": [
@@ -14559,6 +14676,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Terra | MAINCONTROL_PLAYER, HEALTHUP, 80 | ONESELF, ACTORELEMENTTYPE, Terra"
+            ],
             "params": "7.5%,80%,8%/9%,80%,9.6%/10.5%,80%,11.2%/12%,80%,12.8%/13.5%,80%,14.4%/15%,80%,16%",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_2"
@@ -14568,6 +14689,9 @@
             "desc": "When a support Terra Trekker is on the battlefield, increases the main Terra Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Terra, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 3 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Terra"
             ],
             "params": "8%/16%/24%/32%/40%",
             "requirements": [
@@ -15107,6 +15231,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4 | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ventus"
+            ],
             "params": "7.5%,12.5%,16/9%,15%,16/10.5%,17.5%,16/12%,20%,16/13.5%,22.5%,16/15%,25%,16",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_4"
@@ -15116,6 +15244,9 @@
             "desc": "When the main Ventus Trekker is hit, increases the squad's Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Ventus DMG"
+            ],
+            "effectData": [
+                "BEHIT, ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "4%,8/8%,8/12%,8/16%,8/20%,8",
             "requirements": [
@@ -15655,6 +15786,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4 | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ignis"
+            ],
             "params": "7.5%,12.5%,16/9%,15%,16/10.5%,17.5%,16/12%,20%,16/13.5%,22.5%,16/15%,25%,16",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_1"
@@ -15664,6 +15799,9 @@
             "desc": "When the main Ignis Trekker is hit, increases the squad's Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Ignis DMG"
+            ],
+            "effectData": [
+                "BEHIT, ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "4%,8/8%,8/12%,8/16%,8/20%,8",
             "requirements": [
@@ -16203,6 +16341,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4 | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Lux"
+            ],
             "params": "7.5%,12.5%,16/9%,15%,16/10.5%,17.5%,16/12%,20%,16/13.5%,22.5%,16/15%,25%,16",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_3"
@@ -16212,6 +16354,9 @@
             "desc": "When the main Lux Trekker is hit, increases the squad's Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Lux DMG"
+            ],
+            "effectData": [
+                "BEHIT, ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "4%,8/8%,8/12%,8/16%,8/20%,8",
             "requirements": [
@@ -16751,6 +16896,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4 | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Aqua"
+            ],
             "params": "7.5%,12.5%,16/9%,15%,16/10.5%,17.5%,16/12%,20%,16/13.5%,22.5%,16/15%,25%,16",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_5"
@@ -16760,6 +16909,9 @@
             "desc": "When the main Aqua Trekker is hit, increases the squad's Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Aqua DMG"
+            ],
+            "effectData": [
+                "BEHIT, ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "4%,8/8%,8/12%,8/16%,8/20%,8",
             "requirements": [
@@ -17299,6 +17451,10 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4 | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Umbra"
+            ],
             "params": "7.5%,12.5%,16/9%,15%,16/10.5%,17.5%,16/12%,20%,16/13.5%,22.5%,16/15%,25%,16",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_6"
@@ -17308,6 +17464,9 @@
             "desc": "When the main Umbra Trekker is hit, increases the squad's Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Umbra DMG"
+            ],
+            "effectData": [
+                "BEHIT, ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "4%,8/8%,8/12%,8/16%,8/20%,8",
             "requirements": [
@@ -17855,6 +18014,28 @@
                 "Crit DMG",
                 "IMM_BUFF"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4 | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, OR, ONESELF, SKILLSLOTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ENEMY, HEALTHDOWN, 40 | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "KILLENEMY, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CRIT, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ENEMY, CARRYBUFFIDENTIFYING, 眩晕 | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ENEMY, CARRYBUFFIDENTIFYING, 冰冻 | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 5 | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ENEMY, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ENEMY, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | ENEMY, DEFAULT",
+                "HITTING, ENEMY, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ENEMY, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ENEMY, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ENEMY, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ENEMY, CARRYBUFFGROUP, 10411 | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ONESELF, DEFAULT | ONESELF, DEFAULT | ENEMY, DEFAULT",
+                "CRIT, ONESELF, DEFAULT | ONESELF, DEFAULT | ENEMY, DEFAULT",
+                "HITTING, ONESELF, DEFAULT | ONESELF, DEFAULT | ENEMY, DEFAULT"
+            ],
             "params": "7.5%,12.5%,16/9%,15%,16/10.5%,17.5%,16/12%,20%,16/13.5%,22.5%,16/15%,25%,16",
             "icon": "DiscSkill_4",
             "iconBg": "db_DiscSkill_2"
@@ -17864,6 +18045,9 @@
             "desc": "When the main Terra Trekker is hit, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Terra DMG"
+            ],
+            "effectData": [
+                "BEHIT, ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "4%,8/8%,8/12%,8/16%,8/20%,8",
             "requirements": [
@@ -18403,6 +18587,10 @@
                 "Ultimate DMG",
                 "Accuracy"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "IN_BATTLE_STATE, ONESELF, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "16%,15/19.2%,18/22.4%,21/25.6%,24/28.8%,27/32%,30",
             "icon": "DiscSkill_7",
             "iconBg": "db_DiscSkill_4"
@@ -18412,6 +18600,9 @@
             "desc": "When any Ventus Trekker casts an Ultimate, increases Ventus squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ventus"
             ],
             "params": "1.8%,30,3/3.6%,30,3/5.4%,30,3/7.2%,30,3/9%,30,3",
             "requirements": [
@@ -18951,6 +19142,10 @@
                 "Ultimate DMG",
                 "Accuracy"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "IN_BATTLE_STATE, ONESELF, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "16%,15/19.2%,18/22.4%,21/25.6%,24/28.8%,27/32%,30",
             "icon": "DiscSkill_7",
             "iconBg": "db_DiscSkill_1"
@@ -18960,6 +19155,9 @@
             "desc": "When any Ignis Trekker casts an Ultimate, increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ignis"
             ],
             "params": "1.8%,30,3/3.6%,30,3/5.4%,30,3/7.2%,30,3/9%,30,3",
             "requirements": [
@@ -19499,6 +19697,10 @@
                 "Ultimate DMG",
                 "Accuracy"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "IN_BATTLE_STATE, ONESELF, ACTORELEMENTTYPE, Lux | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "16%,15/19.2%,18/22.4%,21/25.6%,24/28.8%,27/32%,30",
             "icon": "DiscSkill_7",
             "iconBg": "db_DiscSkill_3"
@@ -19508,6 +19710,9 @@
             "desc": "When any Lux Trekker casts an Ultimate, increases Lux squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Lux"
             ],
             "params": "1.8%,30,3/3.6%,30,3/5.4%,30,3/7.2%,30,3/9%,30,3",
             "requirements": [
@@ -20047,6 +20252,10 @@
                 "Ultimate DMG",
                 "Accuracy"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "IN_BATTLE_STATE, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "16%,15/19.2%,18/22.4%,21/25.6%,24/28.8%,27/32%,30",
             "icon": "DiscSkill_7",
             "iconBg": "db_DiscSkill_5"
@@ -20056,6 +20265,9 @@
             "desc": "When any Aqua Trekker casts an Ultimate, increases Aqua squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Aqua"
             ],
             "params": "1.8%,30,3/3.6%,30,3/5.4%,30,3/7.2%,30,3/9%,30,3",
             "requirements": [
@@ -20595,6 +20807,10 @@
                 "Ultimate DMG",
                 "Accuracy"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "IN_BATTLE_STATE, ONESELF, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "16%,15/19.2%,18/22.4%,21/25.6%,24/28.8%,27/32%,30",
             "icon": "DiscSkill_7",
             "iconBg": "db_DiscSkill_6"
@@ -20604,6 +20820,9 @@
             "desc": "When any Umbra Trekker casts an Ultimate, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Umbra"
             ],
             "params": "1.8%,30,3/3.6%,30,3/5.4%,30,3/7.2%,30,3/9%,30,3",
             "requirements": [
@@ -21143,6 +21362,10 @@
                 "Ultimate DMG",
                 "Accuracy"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "IN_BATTLE_STATE, ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "16%,15/19.2%,18/22.4%,21/25.6%,24/28.8%,27/32%,30",
             "icon": "DiscSkill_7",
             "iconBg": "db_DiscSkill_2"
@@ -21152,6 +21375,9 @@
             "desc": "When any Terra Trekker casts an Ultimate, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra"
             ],
             "params": "1.8%,30,3/3.6%,30,3/5.4%,30,3/7.2%,30,3/9%,30,3",
             "requirements": [
@@ -21694,6 +21920,11 @@
                 "ATK",
                 "DMG Taken"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF_AND_SUMMONED, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2 | ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | FULL_TEAM, ACTORELEMENTTYPE, Ignis",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2 | ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ignis"
+            ],
             "params": "10%,5%,8,10%,8/12%,5%,8,10%,8/14%,5%,8,10%,8/16%,5%,8,10%,8/18%,5%,8,10%,8/20%,5%,8,10%,8",
             "icon": "DiscSkill_214001",
             "iconBg": "db_DiscSkill_1"
@@ -21703,6 +21934,10 @@
             "desc": "If the main Trekker is inflicted with Blazing Armor, increases Ignis squadmates' Ultimate DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Ultimate DMG"
+            ],
+            "effectData": [
+                "GETBUFF, MAINCONTROL_PLAYER, CERTAINBUFFID, 4001041 | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ignis",
+                "HITTING, ONESELF, DEFAULT | ENEMY, CERTAIN_MONSTER_EPICTYPE, 2,3,4 | ONESELF, DEFAULT"
             ],
             "params": "20%/40%/60%/80%/100%",
             "requirements": [
@@ -21735,6 +21970,9 @@
             "desc": "When the target is killed, if the main Trekker is inflicted with Blazing Armor, increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "KILLENEMY, ONESELF, DEFAULT | MAINCONTROL_PLAYER, CARRYBUFFID, 4001041 | FULL_TEAM, ACTORELEMENTTYPE, Ignis"
             ],
             "params": "1%,4,5/2%,4,5/3%,4,5/4%,4,5/5%,4,5",
             "requirements": [
@@ -22277,6 +22515,11 @@
                 "Ventus DMG Taken",
                 "DMG Taken"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF_AND_SUMMONED, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Ventus, AND, ONESELF, DAMAGE_NOT_NORMAL | ONESELF, DEFAULT | ENEMY, DEFAULT",
+                "BEHIT, ENEMY, CARRYBUFFID, 4002021 | ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT"
+            ],
             "params": "10%,35%,10%,8,10%/12%,35%,10%,8,10%/14%,35%,10%,8,10%/16%,35%,10%,8,10%/18%,35%,10%,8,10%/20%,35%,10%,8,10%",
             "icon": "DiscSkill_214002",
             "iconBg": "db_DiscSkill_4"
@@ -22286,6 +22529,9 @@
             "desc": "Increases Ventus Trekkers' Ultimate DMG dealt to targets inflicted with Laceration by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Ultimate DMG"
+            ],
+            "effectData": [
+                "HITTING, ENEMY, CARRYBUFFID, 4002021 | ONESELF, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT"
             ],
             "params": "16%/32%/48%/64%/80%",
             "requirements": [
@@ -22318,6 +22564,9 @@
             "desc": "When any Ventus Trekker kills a target inflicted with Laceration, increases the squad's Ventus DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "Ventus DMG"
+            ],
+            "effectData": [
+                "KILLENEMY, ENEMY, CARRYBUFFID, 4002021 | ONESELF, ACTORELEMENTTYPE, Ventus | FULL_TEAM, DEFAULT"
             ],
             "params": "1%,4,5/2%,4,5/3%,4,5/4%,4,5/5%,4,5",
             "requirements": [
@@ -22858,6 +23107,9 @@
             "effectType": [
                 "Aqua DMG"
             ],
+            "effectData": [
+                "HITTING, ENEMY, CARRYBUFFIDENTIFYING, Cold, OR, ENEMY, CARRYBUFFIDENTIFYING | ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT"
+            ],
             "params": "10%,10%/12%,12%/14%,14%/16%,16%/18%,18%/20%,20%",
             "icon": "DiscSkill_214005",
             "iconBg": "db_DiscSkill_5"
@@ -22866,7 +23118,11 @@
             "name": "Tears of Joy",
             "desc": "When any Aqua Trekker casts an Ultimate, increases Aqua Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
-                "Auto Attack Damage"
+                "Auto Attack Damage",
+                "Skill DMG"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Aqua"
             ],
             "params": "10%,18/20%,18/30%,18/40%,18/50%,18",
             "requirements": [
@@ -22899,6 +23155,10 @@
             "desc": "Increases Aqua Trekkers' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Aqua Trekker deals Skill DMG, if a support Aqua Trekker is on the battlefield, increases the DMG of this hit by <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 1 | ONESELF, ACTORELEMENTTYPE, Aqua"
             ],
             "params": "4%,4.8%/8%,9.6%/12%,14.4%/16%,19.2%/20%,24%",
             "requirements": [
@@ -23439,6 +23699,10 @@
             "effectType": [
                 "Umbra DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF_AND_SUMMONED, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_ASSISTANT | FULL_TEAM_AND_SUMMONED, DEFAULT"
+            ],
             "params": "10%,15%,8/12%,18%,8/14%,21%,8/16%,24%,8/18%,27%,8/20%,30%,8",
             "icon": "DiscSkill_214006",
             "iconBg": "db_DiscSkill_6"
@@ -23447,7 +23711,12 @@
             "name": "Spectral Fragrance",
             "desc": "When any Umbra Trekker casts a Support Skill, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.\u000bFor every minion summoned by an Umbra squadmate, increases the DMG of all allied Umbra minions on the battlefield by <color=#ec6d21>{3}</color> for {4}s, stacking up to {5} times.",
             "effectType": [
-                "ATK"
+                "ATK",
+                "Minion DMG"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_ASSISTANT | FULL_TEAM, ACTORELEMENTTYPE, Umbra",
+                "SUMMON, ONESELF, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | TEAM_SUMMONED, ACTORELEMENTTYPE, Umbra"
             ],
             "params": "2.5%,8,0.5%,10,10/5%,8,1%,10,10/7.5%,8,1.5%,10,10/10%,8,2%,10,10/12.5%,8,2.5%,10,10",
             "requirements": [
@@ -23479,7 +23748,13 @@
             "name": "Dark Trace",
             "desc": "Increases Umbra Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Umbra Mark#1019#, increases this effect by an additional <color=#ec6d21>{2}</color> and the DMG of all allied Umbra minions on the battlefield by an additional <color=#ec6d21>{3}</color> for {4}s.",
             "effectType": [
-                "Ultimate DMG"
+                "Ultimate DMG",
+                "Minion DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "ANY_ACTOR_TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Umbra | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Umbra",
+                "ANY_ACTOR_TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Umbra | ONESELF, DEFAULT | TEAM_SUMMONED, ACTORELEMENTTYPE, Umbra"
             ],
             "params": "6%,5%,2.5%,4/12%,10%,5%,4/18%,15%,7.5%,4/24%,20%,10%,4/30%,25%,12.5%,4",
             "requirements": [
@@ -24022,6 +24297,10 @@
                 "Ultimate DMG",
                 "Auto Attack Damage"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Lux | ONESELF, DEFAULT | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Lux"
+            ],
             "params": "12%,13.8%,4/14.4%,16.5%,4/16.8%,19.3%,4/19.2%,22%,4/21.6%,24.8%,4/24%,27.5%,4",
             "icon": "DiscSkill_214007",
             "iconBg": "db_DiscSkill_3"
@@ -24031,6 +24310,10 @@
             "desc": "When a Lux main Trekker hits a target, increases all Lux squadmates' ATK by <color=#ec6d21>{1}</color> for {3}s.\u000bWhen any Lux Trekker hits a stunned target, increases this effect by an additional <color=#ec6d21>{2}</color> for {4}s.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_MAINCONTROL | FULL_TEAM, ACTORELEMENTTYPE, Lux",
+                "HITTING, ENEMY, CARRYBUFFIDENTIFYING, Stun, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Lux"
             ],
             "params": "2.5%,2.5%,15,15/5%,5%,15,15/7.5%,7.5%,15,15/10%,10%,15,15/12.5%,12.5%,15,15",
             "requirements": [
@@ -24063,6 +24346,9 @@
             "desc": "When a Lux Support Skill hits a target, increases the Lux DMG taken by the target by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Lux DMG Taken"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_ASSISTANT | ENEMY, DEFAULT"
             ],
             "params": "4%,10/8%,10/12%,10/16%,10/20%,10",
             "requirements": [
@@ -24604,6 +24890,10 @@
                 "ATK",
                 "ADD_SHIELD"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CERTAIN_TIME_INTERVAL, ONESELF, TIME_INTERVAL, 20 | ONESELF, DEFAULT | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ventus"
+            ],
             "params": "10%,20%,15,20/12%,20%,15,20/14%,20%,15,20/16%,20%,15,20/18%,20%,15,20/20%,20%,15,20",
             "icon": "DiscSkill_214009",
             "iconBg": "db_DiscSkill_4"
@@ -24613,6 +24903,9 @@
             "desc": "When the main Ventus Trekker gains a shield, increases the squad's Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Ventus DMG"
+            ],
+            "effectData": [
+                "GET_SHIELD, MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "5%,12/10%,12/15%,12/20%,12/25%,12",
             "requirements": [
@@ -24645,6 +24938,9 @@
             "desc": "When any Ventus Trekker deals Skill DMG, if the main Ventus Trekker has a shield, increases the DMG of this hit by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Ventus | MAINCONTROL_PLAYER, HAVE_SHIELD, AND, MAINCONTROL_PLAYER, ACTORELEMENTTYPE | ONESELF, ACTORELEMENTTYPE, Ventus"
             ],
             "params": "7.5%/15%/22.5%/30%/37.5%",
             "requirements": [
@@ -25186,6 +25482,10 @@
                 "ATK",
                 "ADD_SHIELD"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ONESELF, ACTORELEMENTTYPE, Lux, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Lux"
+            ],
             "params": "10%,15%,20,20/12%,15%,20,20/14%,15%,20,20/16%,15%,20,20/18%,15%,20,20/20%,15%,20,20",
             "icon": "DiscSkill_214010",
             "iconBg": "db_DiscSkill_3"
@@ -25195,6 +25495,9 @@
             "desc": "When the main Lux Trekker gains a shield, increases the squad's Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Lux DMG"
+            ],
+            "effectData": [
+                "GET_SHIELD, ONESELF, ACTORELEMENTTYPE, Lux, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "5%,12/10%,12/15%,12/20%,12/25%,12",
             "requirements": [
@@ -25227,6 +25530,9 @@
             "desc": "When any Lux Trekker casts a skill, if the main Trekker has a shield, increases Lux squadmates' Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | MAINCONTROL_PLAYER, HAVE_SHIELD | FULL_TEAM, ACTORELEMENTTYPE, Lux"
             ],
             "params": "10%,6/20%,6/30%,6/40%,6/50%,6",
             "requirements": [
@@ -25768,6 +26074,10 @@
                 "ATK",
                 "ADD_SHIELD"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Aqua"
+            ],
             "params": "10%,15%,20/12%,15%,20/14%,15%,20/16%,15%,20/18%,15%,20/20%,15%,20",
             "icon": "DiscSkill_214011",
             "iconBg": "db_DiscSkill_5"
@@ -25777,6 +26087,9 @@
             "desc": "When the main Aqua Trekker gains a shield, increases the squad's Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Aqua DMG"
+            ],
+            "effectData": [
+                "GET_SHIELD, ONESELF, ACTORELEMENTTYPE, Aqua, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "5%,12/10%,12/15%,12/20%,12/25%,12",
             "requirements": [
@@ -25808,7 +26121,12 @@
             "name": "Dancing Waters",
             "desc": "When any Aqua Trekker deals Skill DMG, if the main Aqua Trekker has a shield, increases the DMG of this hit by <color=#ec6d21>{1}</color>.\u000bIncreases the main Aqua Trekker's Aqua DMG dealt to elite or higher-tier targets by <color=#ec6d21>{2}</color>.",
             "effectType": [
-                "Skill DMG"
+                "Skill DMG",
+                "Aqua DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Aqua | MAINCONTROL_PLAYER, HAVE_SHIELD, AND, MAINCONTROL_PLAYER, ACTORELEMENTTYPE | ONESELF, ACTORELEMENTTYPE, Aqua",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Aqua, AND, ONESELF, SELF_BE_MAINCONTROL | ENEMY, CERTAIN_MONSTER_EPICTYPE, 2,3,4 | ONESELF, DEFAULT"
             ],
             "params": "4%,3%/8%,6%/12%,9%/16%,12%/20%,15%",
             "requirements": [
@@ -26350,6 +26668,9 @@
                 "ATK",
                 "ADD_SHIELD"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Umbra | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "10%,15%,20,20/12%,15%,20,20/14%,15%,20,20/16%,15%,20,20/18%,15%,20,20/20%,15%,20,20",
             "icon": "DiscSkill_214012",
             "iconBg": "db_DiscSkill_6"
@@ -26359,6 +26680,9 @@
             "desc": "When the main Umbra Trekker gains a shield, increases the squad's Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Umbra DMG"
+            ],
+            "effectData": [
+                "GET_SHIELD, ONESELF, ACTORELEMENTTYPE, Umbra, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "5%,12/10%,12/15%,12/20%,12/25%,12",
             "requirements": [
@@ -26390,7 +26714,11 @@
             "name": "Greedy Pursuit",
             "desc": "When any Trekker triggers ##Umbra Mark#1019#, if the main Trekker has a shield, increases Umbra squadmates' Skill and Ultimate DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
-                "Skill DMG"
+                "Skill DMG",
+                "Ultimate DMG"
+            ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Umbra | MAINCONTROL_PLAYER, HAVE_SHIELD | FULL_TEAM, ACTORELEMENTTYPE, Umbra"
             ],
             "params": "6%,4/12%,4/18%,4/24%,4/30%,4",
             "requirements": [
@@ -26932,6 +27260,10 @@
                 "ATK",
                 "ADD_SHIELD"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ignis"
+            ],
             "params": "10%,15%,20,20/12%,15%,20,20/14%,15%,20,20/16%,15%,20,20/18%,15%,20,20/20%,15%,20,20",
             "icon": "DiscSkill_214013",
             "iconBg": "db_DiscSkill_1"
@@ -26941,6 +27273,9 @@
             "desc": "When the main Ignis Trekker gains a shield, increases the squad's Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Ignis DMG"
+            ],
+            "effectData": [
+                "GET_SHIELD, ONESELF, ACTORELEMENTTYPE, Ignis, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "5%,12/10%,12/15%,12/20%,12/25%,12",
             "requirements": [
@@ -26973,6 +27308,9 @@
             "desc": "When the main Ignis Trekker deals Skill DMG, if her HP is above {1}, increases the DMG of this hit by <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, HEALTHUP, 50, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_MAINCONTROL | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ignis"
             ],
             "params": "50%,11%/50%,22%/50%,33%/50%,44%/50%,55%",
             "requirements": [
@@ -27514,6 +27852,10 @@
                 "ATK",
                 "ADD_SHIELD"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Terra | ONESELF, DEFAULT | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Terra"
+            ],
             "params": "10%,15%,20,20/12%,15%,20,20/14%,15%,20,20/16%,15%,20,20/18%,15%,20,20/20%,15%,20,20",
             "icon": "DiscSkill_214014",
             "iconBg": "db_DiscSkill_2"
@@ -27523,6 +27865,9 @@
             "desc": "When the main Terra Trekker gains a shield, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Terra DMG"
+            ],
+            "effectData": [
+                "GET_SHIELD, ONESELF, ACTORELEMENTTYPE, Terra, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "5%,12/10%,12/15%,12/20%,12/25%,12",
             "requirements": [
@@ -27555,6 +27900,9 @@
             "desc": "When any Terra Trekker casts an Ultimate, if the main Trekker has a shield, increases Terra squadmates' Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | MAINCONTROL_PLAYER, HAVE_SHIELD | FULL_TEAM, ACTORELEMENTTYPE, Terra"
             ],
             "params": "10%,15/20%,15/30%,15/40%,15/50%,15",
             "requirements": [
@@ -28096,6 +28444,9 @@
                 "Auto Attack Damage",
                 "Auto Attack DMG Taken"
             ],
+            "effectData": [
+                "BEHIT, ENEMY, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "3,7%,10,10%,12,3/3,8.4%,10,12%,12,3/3,9.8%,10,14%,12,3/3,11.2%,10,16%,12,3/3,12.6%,10,18%,12,3/3,14%,10,20%,12,3",
             "icon": "DiscSkill_214017",
             "iconBg": "db_DiscSkill_1"
@@ -28104,7 +28455,11 @@
             "name": "Warmth in the Arms",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Ignis DMG"
+                "Ignis DMG",
+                "Skill DMG"
+            ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Ignis | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ignis"
             ],
             "params": "4%,4%,4/8%,8%,4/12%,12%,4/16%,16%,4/20%,20%,4",
             "requirements": [
@@ -28138,6 +28493,7 @@
             "effectType": [
                 "Skill DMG"
             ],
+            "effectData": [],
             "params": "1.5%/3%/4.5%/6%/7.5%",
             "requirements": [
                 {
@@ -28677,6 +29033,7 @@
             "effectType": [
                 "Ventus DMG"
             ],
+            "effectData": [],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214018",
             "iconBg": "db_DiscSkill_4"
@@ -28685,7 +29042,12 @@
             "name": "Subtle Influence",
             "desc": "Increases Ventus Trekkers' Ventus DMG dealt to targets with Ventus VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ventus Trekker by {2}.",
             "effectType": [
-                "Ventus DMG"
+                "Ventus DMG",
+                "DMG Taken"
+            ],
+            "effectData": [
+                "HITTING, ENEMY, WEAKELEMENTTYPE, Ventus, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ONESELF, ACTORELEMENTTYPE, Ventus, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -28718,6 +29080,9 @@
             "desc": "For each target killed, increases Ventus squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "KILLENEMY, ONESELF, DEFAULT | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ventus"
             ],
             "params": "0.6%,4,10/1.2%,4,10/1.8%,4,10/2.4%,4,10/3%,4,10",
             "requirements": [
@@ -29258,6 +29623,7 @@
             "effectType": [
                 "Ignis DMG"
             ],
+            "effectData": [],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214019",
             "iconBg": "db_DiscSkill_1"
@@ -29266,7 +29632,12 @@
             "name": "Windbreaking Shots",
             "desc": "Increases Ignis Trekkers' Ignis DMG dealt to targets with Ignis VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ignis Trekker by {2}.",
             "effectType": [
-                "Ignis DMG"
+                "Ignis DMG",
+                "DMG Taken"
+            ],
+            "effectData": [
+                "HITTING, ENEMY, WEAKELEMENTTYPE, Ignis, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ONESELF, ACTORELEMENTTYPE, Ignis, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -29298,7 +29669,13 @@
             "name": "Battle Rhapsody",
             "desc": "Increases Ignis Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, increases this effect by an additional {3} every {2}s, stacking up to {4} times.",
             "effectType": [
-                "ATK"
+                "ATK",
+                "ADDBUFF"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "IN_BATTLE_STATE, ONESELF, DEFAULT, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CERTAIN_TIME_INTERVAL, ONESELF, TIME_INTERVAL, 8 | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "2.5%,8,1.36%,10/5%,8,1.36%,10/7.5%,8,1.36%,10/10%,8,1.36%,10/12.5%,8,1.36%,10",
             "requirements": [
@@ -29839,6 +30216,7 @@
             "effectType": [
                 "Lux DMG"
             ],
+            "effectData": [],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214020",
             "iconBg": "db_DiscSkill_3"
@@ -29847,7 +30225,12 @@
             "name": "Flashing Memories",
             "desc": "Increases Lux Trekkers' Lux DMG dealt to targets with Lux VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Lux Trekker by {2}.",
             "effectType": [
-                "Lux DMG"
+                "Lux DMG",
+                "DMG Taken"
+            ],
+            "effectData": [
+                "HITTING, ENEMY, WEAKELEMENTTYPE, Lux, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ONESELF, ACTORELEMENTTYPE, Lux, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -29879,7 +30262,12 @@
             "name": "Radiant Bonds",
             "desc": "Increases Lux Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts an Ultimate, increases this effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
-                "Auto Attack Damage"
+                "Auto Attack Damage",
+                "Skill DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Lux"
             ],
             "params": "3%,3%,6/6%,3%,6/9%,3%,6/12%,3%,6/15%,3%,6",
             "requirements": [
@@ -30420,6 +30808,7 @@
             "effectType": [
                 "Aqua DMG"
             ],
+            "effectData": [],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214021",
             "iconBg": "db_DiscSkill_5"
@@ -30428,7 +30817,12 @@
             "name": "Unbreakable Trio",
             "desc": "Increases Aqua Trekkers' Aqua DMG dealt to targets with Aqua VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Aqua Trekker by {2}.",
             "effectType": [
-                "Aqua DMG"
+                "Aqua DMG",
+                "DMG Taken"
+            ],
+            "effectData": [
+                "HITTING, ENEMY, WEAKELEMENTTYPE, Aqua, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ONESELF, ACTORELEMENTTYPE, Aqua, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -30460,7 +30854,11 @@
             "name": "Moment of Unity",
             "desc": "Increases Aqua Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
             "effectType": [
-                "Auto Attack Damage"
+                "Auto Attack Damage",
+                "Skill DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "3%,10,1.8%,10/6%,10,1.8%,10/9%,10,1.8%,10/12%,10,1.8%,10/15%,10,1.8%,10",
             "requirements": [
@@ -31001,6 +31399,7 @@
             "effectType": [
                 "Umbra DMG"
             ],
+            "effectData": [],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214022",
             "iconBg": "db_DiscSkill_6"
@@ -31009,7 +31408,12 @@
             "name": "Moment of Terror",
             "desc": "Increases Umbra Trekkers' Umbra DMG dealt to targets with Umbra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Umbra Trekker by {2}.",
             "effectType": [
-                "Umbra DMG"
+                "Umbra DMG",
+                "DMG Taken"
+            ],
+            "effectData": [
+                "HITTING, ENEMY, WEAKELEMENTTYPE, Umbra, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ONESELF, ACTORELEMENTTYPE, Umbra, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -31041,6 +31445,7 @@
             "name": "Humble Courage",
             "desc": "Increases Umbra Trekkers' Skill and Ultimate DMG dealt to normal targets by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, for {2} normal targets killed in total, increases Umbra Trekkers' Skill and Ultimate DMG dealt to elite or higher-tier targets by {3}.",
             "effectType": [],
+            "effectData": [],
             "params": "3%,50,18%/6%,50,18%/9%,50,18%/12%,50,18%/15%,50,18%",
             "requirements": [
                 {
@@ -31580,6 +31985,7 @@
             "effectType": [
                 "Terra DMG"
             ],
+            "effectData": [],
             "params": "5%,2%,10/8%,2%,10/11%,2%,10/14%,2%,10/17%,2%,10/20%,2%,10",
             "icon": "DiscSkill_214023",
             "iconBg": "db_DiscSkill_2"
@@ -31588,7 +31994,12 @@
             "name": "Street Spirit",
             "desc": "Increases Terra Trekkers' Terra DMG dealt to targets with Terra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Terra Trekker by {2}.",
             "effectType": [
-                "Terra DMG"
+                "Terra DMG",
+                "Aqua DMG Taken"
+            ],
+            "effectData": [
+                "HITTING, ENEMY, WEAKELEMENTTYPE, Terra, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "BEHIT, ONESELF, ACTORELEMENTTYPE, Terra, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "2.5%,10%/5%,10%/7.5%,10%/10%,10%/12.5%,10%",
             "requirements": [
@@ -31620,7 +32031,16 @@
             "name": "Hit and Run",
             "desc": "Increases Terra Trekkers' Skill and Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
             "effectType": [
-                "Ultimate DMG"
+                "Ultimate DMG",
+                "Skill DMG",
+                "ADDBUFF",
+                "REMOVE_BUFF"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "KILLENEMY, ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "GETBUFF, ONESELF, BUFF_NUM, 10, 4023245 | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "EFFECT_EXECUTE, ONESELF, CERTAIN_EFFECT_ID, 4023243 | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "3%,10,1.8%,10/6%,10,1.8%,10/9%,10,1.8%,10/12%,10,1.8%,10/15%,10,1.8%,10",
             "requirements": [
@@ -32161,6 +32581,9 @@
             "effectType": [
                 "Aqua DMG"
             ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Aqua, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
+            ],
             "params": "15%,15%,4/18%,18%,4/21%,21%,4/24%,24%,4/27%,27%,4/30%,30%,4",
             "icon": "DiscSkill_214026",
             "iconBg": "db_DiscSkill_5"
@@ -32170,6 +32593,9 @@
             "desc": "After the main Aqua Trekker deals DMG {1} times in total, increases Aqua squadmates' ATK by <color=#ec6d21>{2}</color> for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "20,14%,10,15/20,28%,10,15/20,42%,10,15/20,56%,10,15/20,70%,10,15",
             "requirements": [
@@ -32202,6 +32628,9 @@
             "desc": "Increases Aqua Trekkers' Skill DMG dealt to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ENEMY, CERTAIN_MONSTER_EPICTYPE, 2,3,4 | ONESELF, ACTORELEMENTTYPE, Aqua | ONESELF, DEFAULT"
             ],
             "params": "12%/24%/36%/48%/60%",
             "requirements": [
@@ -32743,6 +33172,10 @@
                 "Ignis DMG",
                 "Skill DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF_AND_SUMMONED, DEFAULT",
+                "ANY_ACTOR_TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Ignis | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ignis"
+            ],
             "params": "10%,15%,4/12%,18%,4/14%,21%,4/16%,24%,4/18%,27%,4/20%,30%,4",
             "icon": "DiscSkill_214027",
             "iconBg": "db_DiscSkill_1"
@@ -32752,6 +33185,10 @@
             "desc": "Increases Ignis Trekkers' Skill DMG by <color=#ec6d21>{1}</color>. When the target is inflicted with ##Burn#2027#, increases by an additional <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ENEMY, CARRYBUFFIDENTIFYING, 141_Burn, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "4%,4%/8%,8%/12%,12%/16%,16%/20%,20%",
             "requirements": [
@@ -32784,6 +33221,10 @@
             "desc": "When any Ignis Trekker casts a Support Skill, increases the ATK of the main Ignis Trekker and minions by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, SELF_BE_ASSISTANT | ONESELF, ACTORELEMENTTYPE, Ignis | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ignis",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, SELF_BE_ASSISTANT | ONESELF, ACTORELEMENTTYPE, Ignis | TEAM_SUMMONED, DEFAULT"
             ],
             "params": "3%,8/6%,8/9%,8/12%,8/15%,8",
             "requirements": [
@@ -33326,6 +33767,10 @@
                 "Skill DMG",
                 "Ventus DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ventus, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Ventus | ONESELF, DEFAULT | MAINCONTROL_PLAYER, DEFAULT"
+            ],
             "params": "14%,12%,4/16.8%,14.4%,4/19.6%,16.8%,4/22.4%,19.2%,4/25.2%,21.6%,4/28%,24%,4",
             "icon": "DiscSkill_214028",
             "iconBg": "db_DiscSkill_4"
@@ -33334,7 +33779,12 @@
             "name": "Fragrant Illusion",
             "desc": "Increases Ventus Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ventus Trekker deals Ultimate DMG, increases her Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Ultimate DMG"
+                "Ultimate DMG",
+                "Ventus DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ventus | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 4 | ONESELF, ACTORELEMENTTYPE, Ventus, AND, ONESELF, SELF_BE_MAINCONTROL | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ventus"
             ],
             "params": "8%,4.8%,20/16%,9.6%,20/24%,14.4%,20/32%,19.2%,20/40%,24%,20",
             "requirements": [
@@ -33368,6 +33818,7 @@
             "effectType": [
                 "Ventus DMG Taken"
             ],
+            "effectData": [],
             "params": "10,4%,6,10/10,8%,6,10/10,12%,6,10/10,16%,6,10/10,20%,6,10",
             "requirements": [
                 {
@@ -33909,6 +34360,11 @@
                 "Lux DMG Taken",
                 "DMG Taken"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF_AND_SUMMONED, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Lux, AND, ONESELF, DAMAGE_NOT_NORMAL | ONESELF, DEFAULT | ENEMY, DEFAULT",
+                "BEHIT, ENEMY, CARRYBUFFID, 4030021 | ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT"
+            ],
             "params": "10%,35%,10%,8,10%/12%,35%,10%,8,10%/14%,35%,10%,8,10%/16%,35%,10%,8,10%/18%,35%,10%,8,10%/20%,35%,10%,8,10%",
             "icon": "DiscSkill_214030",
             "iconBg": "db_DiscSkill_3"
@@ -33918,6 +34374,9 @@
             "desc": "Increases Lux Trekkers' Skill DMG dealt to targets inflicted with Shock by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ENEMY, CARRYBUFFID, 4030021, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "7.5%/15%/22.5%/30%/37.5%",
             "requirements": [
@@ -33950,6 +34409,9 @@
             "desc": "When any Lux Trekker kills a target inflicted with Shock, increases the squad's Lux DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "Lux DMG"
+            ],
+            "effectData": [
+                "KILLENEMY, ENEMY, CARRYBUFFID, 4030021, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "1%,4,5/2%,4,5/3%,4,5/4%,4,5/5%,4,5",
             "requirements": [
@@ -34492,6 +34954,11 @@
                 "Skill DMG",
                 "DMG Taken"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF_AND_SUMMONED, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_MAINCONTROL | FULL_TEAM, ACTORELEMENTTYPE, Aqua",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_MAINCONTROL | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Aqua"
+            ],
             "params": "10%,8%,8,10%,8/12%,8%,8,10%,8/14%,8%,8,10%,8/16%,8%,8,10%,8/18%,8%,8,10%,8/20%,8%,8,10%,8",
             "icon": "DiscSkill_214031",
             "iconBg": "db_DiscSkill_5"
@@ -34501,6 +34968,10 @@
             "desc": "If the main Trekker is inflicted with Bless, increases the squad's Aqua DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "Aqua DMG"
+            ],
+            "effectData": [
+                "GETBUFF, MAINCONTROL_PLAYER, CERTAINBUFFID, 4031041 | ONESELF, DEFAULT | FULL_TEAM, DEFAULT",
+                "HITTING, ENEMY, CERTAIN_MONSTER_EPICTYPE, 2,3,4 | ONESELF, DEFAULT | ONESELF, DEFAULT"
             ],
             "params": "6%/12%/18%/24%/30%",
             "requirements": [
@@ -34533,6 +35004,9 @@
             "desc": "When the target is killed, if the main Trekker is inflicted with Bless, increases Aqua squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "KILLENEMY, ONESELF, DEFAULT | MAINCONTROL_PLAYER, CARRYBUFFID, 4031041 | FULL_TEAM, ACTORELEMENTTYPE, Aqua"
             ],
             "params": "1%,4,5/2%,4,5/3%,4,5/4%,4,5/5%,4,5",
             "requirements": [
@@ -35075,6 +35549,12 @@
                 "Umbra DMG Taken",
                 "DMG Taken"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF_AND_SUMMONED, DEFAULT",
+                "HITTING, ONESELF, ACTORELEMENTTYPE, Umbra, AND, ONESELF, DAMAGE_NOT_NORMAL | ONESELF, DEFAULT | ENEMY, DEFAULT",
+                "NOTHING, ONESELF, DEFAULT | ONESELF, DEFAULT | ENEMY, DEFAULT",
+                "BEHIT, ENEMY, CARRYBUFFID, 4032021 | ONESELF, SELF_BE_MAINCONTROL, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT"
+            ],
             "params": "10%,35%,10%,8,10%/12%,35%,10%,8,10%/14%,35%,10%,8,10%/16%,35%,10%,8,10%/18%,35%,10%,8,10%/20%,35%,10%,8,10%",
             "icon": "DiscSkill_214032",
             "iconBg": "db_DiscSkill_6"
@@ -35085,6 +35565,7 @@
             "effectType": [
                 "ATK"
             ],
+            "effectData": [],
             "params": "5%,8/10%,8/15%,8/20%,8/25%,8",
             "requirements": [
                 {
@@ -35116,6 +35597,9 @@
             "desc": "When any Umbra Trekker kills a target inflicted with Corrosion, increases the squad's Umbra DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "Umbra DMG"
+            ],
+            "effectData": [
+                "KILLENEMY, ENEMY, CARRYBUFFID, 4032021, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, DEFAULT"
             ],
             "params": "1%,4,5/2%,4,5/3%,4,5/4%,4,5/5%,4,5",
             "requirements": [
@@ -35658,6 +36142,11 @@
                 "Skill DMG",
                 "DMG Taken"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, DEFAULT | ONESELF, DEFAULT | ONESELF_AND_SUMMONED, DEFAULT",
+                "HITTING, ONESELF, HEALTHUP, 50, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_MAINCONTROL | FULL_TEAM, ACTORELEMENTTYPE, Terra",
+                "BEHIT, ONESELF, HEALTHUP, 50, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_MAINCONTROL | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Terra"
+            ],
             "params": "10%,50%,8.5%,10%/12%,50%,8.5%,10%/14%,50%,8.5%,10%/16%,50%,8.5%,10%/18%,50%,8.5%,10%/20%,50%,8.5%,10%",
             "icon": "DiscSkill_214033",
             "iconBg": "db_DiscSkill_2"
@@ -35667,6 +36156,9 @@
             "desc": "If the main Trekker is inflicted with Boulder, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "GETBUFF, MAINCONTROL_PLAYER, CERTAINBUFFID, 4033041 | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra"
             ],
             "params": "5%/10%/15%/20%/25%",
             "requirements": [
@@ -35699,6 +36191,9 @@
             "desc": "When the target is killed, if the main Trekker is inflicted with Boulder, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "KILLENEMY, ONESELF, DEFAULT, AND, MAINCONTROL_PLAYER, CARRYBUFFID | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra"
             ],
             "params": "1.6%,4,5/3.2%,4,5/4.8%,4,5/6.4%,4,5/8%,4,5",
             "requirements": [
@@ -36241,6 +36736,9 @@
                 "Skill DMG",
                 "Auto Attack Damage"
             ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Terra | ONESELF, DEFAULT | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Terra"
+            ],
             "params": "10%,14%,4/12%,16.8%,4/14%,19.6%,4/16%,22.4%,4/18%,25.2%,4/20%,28%,4",
             "icon": "DiscSkill_214036",
             "iconBg": "db_DiscSkill_2"
@@ -36249,7 +36747,12 @@
             "name": "Iron Love Embrace",
             "desc": "Increases Terra Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bWhen any Terra Trekker deals Skill DMG, if a support Terra Trekker is on the battlefield, increases the Skill DMG by <color=#ec6d21>{2}</color>.",
             "effectType": [
-                "ATK"
+                "ATK",
+                "Skill DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 3 | ONESELF, ACTORELEMENTTYPE, Terra | ONESELF, DEFAULT"
             ],
             "params": "2.5%,5%/5%,10%/7.5%,15%/10%,20%/12.5%,25%",
             "requirements": [
@@ -36282,6 +36785,9 @@
             "desc": "When any Trekker triggers ##Terra Mark#1020#, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ATK"
+            ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Terra | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra"
             ],
             "params": "1%,5,4/2%,5,4/3%,5,4/4%,5,4/5%,5,4",
             "requirements": [
@@ -36823,6 +37329,9 @@
                 "Terra DMG",
                 "Terra DMG Taken"
             ],
+            "effectData": [
+                "TRIGGER_MARK, ONESELF, CERTAIN_MARK_ELEMENT_TYPE, Terra | ONESELF, DEFAULT | ENEMY, DEFAULT"
+            ],
             "params": "10%,7.5%,4/12%,9%,4/14%,10.5%,4/16%,12%,4/18%,13.5%,4/20%,15%,4",
             "icon": "DiscSkill_214037",
             "iconBg": "db_DiscSkill_2"
@@ -36833,6 +37342,7 @@
             "effectType": [
                 "Terra DMG"
             ],
+            "effectData": [],
             "params": "5%,10/10%,10/15%,10/20%,10/25%,10",
             "requirements": [
                 {
@@ -36864,6 +37374,9 @@
             "desc": "When a support Trekker deals Skill DMG, increases Terra squadmates' Skill DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, SELF_BE_ASSISTANT | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra"
             ],
             "params": "1.4%,8,6/2.8%,8,6/4.2%,8,6/5.6%,8,6/7%,8,6",
             "requirements": [
@@ -37405,6 +37918,9 @@
                 "Lux DMG",
                 "Lux DMG Taken"
             ],
+            "effectData": [
+                "HITTING, ONESELF, SKILLSLOTTYPE, 4, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_MAINCONTROL | ENEMY, DEFAULT"
+            ],
             "params": "15%,2.5%,15,9/18%,3%,15,9/21%,3.5%,15,9/24%,4%,15,9/27%,4.5%,15,9/30%,5%,15,9",
             "icon": "DiscSkill_214038",
             "iconBg": "db_DiscSkill_3"
@@ -37413,7 +37929,12 @@
             "name": "Dance of Shimmers",
             "desc": "Increases the main Lux Trekker's Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Lux Trekker deals Skill DMG, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Auto Attack Damage"
+                "Auto Attack Damage",
+                "Skill DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, SELF_BE_MAINCONTROL | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Lux"
             ],
             "params": "5%,4.5%,6/10%,9%,6/15%,13.5%,6/20%,18%,6/25%,22.5%,6",
             "requirements": [
@@ -37447,6 +37968,7 @@
             "effectType": [
                 "Lux DMG"
             ],
+            "effectData": [],
             "params": "30,9%,10/30,18%,10/30,27%,10/30,36%,10/30,45%,10",
             "requirements": [
                 {
@@ -37988,6 +38510,9 @@
                 "Skill DMG",
                 "Lux DMG"
             ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux, AND, ONESELF, SELF_BE_MAINCONTROL | ONESELF, DEFAULT | ONESELF, DEFAULT"
+            ],
             "params": "6%,3%,10,5/7.2%,3.6%,10,5/8.4%,4.2%,10,5/9.6%,4.8%,10,5/10.8%,5.4%,10,5/12%,6%,10,5",
             "icon": "DiscSkill_214039",
             "iconBg": "db_DiscSkill_3"
@@ -37997,6 +38522,10 @@
             "desc": "Increases Lux Trekkers' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts a skill, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Lux | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "CASTSKILL, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Lux"
             ],
             "params": "3%,1.5%,10,3/6%,3%,10,3/9%,4.5%,10,3/12%,6%,10,3/15%,7.5%,10,3",
             "requirements": [
@@ -38029,6 +38558,9 @@
             "desc": "When any Lux Trekker deals Skill DMG, the main Lux Trekker gains 1 stack of Diffraction, stacking up to {1} times.\u000bWhen the main Lux Trekker casts a skill, increases Lux squadmates' Skill DMG by the number of Diffraction stacks x<color=#ec6d21>{2}</color> for {3}s, and removes all the Diffraction stacks.",
             "effectType": [
                 "Skill DMG"
+            ],
+            "effectData": [
+                "HITTING, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Lux"
             ],
             "params": "6,1%,10/6,2%,10/6,3%,10/6,4%,10/6,5%,10",
             "requirements": [
@@ -38569,6 +39101,7 @@
             "effectType": [
                 "Ultimate DMG"
             ],
+            "effectData": [],
             "params": "4%,10,8/4.8%,10,8/5.6%,10,8/6.4%,10,8/7.2%,10,8/8%,10,8",
             "icon": "DiscSkill_214040",
             "iconBg": "db_DiscSkill_1"
@@ -38577,7 +39110,12 @@
             "name": "Passion of the Captain",
             "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Trekker deals Skill DMG, increases Ignis Trekkers' ATK by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Skill DMG"
+                "Skill DMG",
+                "ATK"
+            ],
+            "effectData": [
+                "NOTHING, ONESELF, ACTORELEMENTTYPE, Ignis | ONESELF, DEFAULT | ONESELF, DEFAULT",
+                "HITTING, ONESELF, SKILLSLOTTYPE, 2, AND, ONESELF, ACTORELEMENTTYPE | ONESELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ignis"
             ],
             "params": "5%,2%,5/10%,4%,5/15%,6%,5/20%,8%,5/25%,10%,5",
             "requirements": [
@@ -38609,8 +39147,10 @@
             "name": "Inspiration of Courage",
             "desc": "When the duration of Courage ends, each stack of Courage increases the main Ignis Trekker's Auto Attack DMG by <color=#ec6d21>{1}</color> and grants {2} DEF for {3}s.",
             "effectType": [
-                "Auto Attack Damage"
+                "Auto Attack Damage",
+                "DEF"
             ],
+            "effectData": [],
             "params": "1.5%,6,27/3%,6,27/4.5%,6,27/6%,6,27/7.5%,6,27",
             "requirements": [
                 {

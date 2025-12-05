@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom } = require('./utils');
+const { collectParamsFrom, getEffectData } = require('./utils');
 const DISC = require('./EN/bin/Disc.json');
 const DISCTAG = require('./EN/bin/DiscTag.json');
 const DISCPROMOTE = require('./EN/bin/DiscPromote.json');
@@ -52,6 +52,7 @@ function getMainSkill(id) {
         name: LANG_MAINSKILL[MAINSKILL[key].Name],
         desc: LANG_MAINSKILL[MAINSKILL[key].Desc],
         effectType: getMainSkillEffectTypes(id),
+        effectData: getMainSkillEffectData(id),
         params: getMainSkillParams(id),
         icon: MAINSKILL[key].Icon.split('/').pop(),
         iconBg: MAINSKILL[key].IconBg.split('/').pop(),
@@ -91,6 +92,24 @@ function getMainSkillEffectTypes(id) {
     return [...new Set(effectTypes)];
 }
 
+function getMainSkillEffectData(id) {
+    const effectDatas = [];
+
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`));
+
+    for (const effectKey of effectKeys) {
+        let currentId = +effectKey;
+        if (!EFFECT[currentId]) continue;
+
+        const data = getEffectData(currentId);
+        if (!data) continue;
+
+        effectDatas.push(data);
+    }
+
+    return [...new Set(effectDatas)];
+}
+
 function getSeconarySkill(id) {
     const key = Object.keys(SECONDARYSKILL).find(key => SECONDARYSKILL[key].GroupId === id);
     if (!key) return;
@@ -100,6 +119,7 @@ function getSeconarySkill(id) {
         name: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Name],
         desc: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Desc],
         effectType: getSeconarySkillEffectTypes(id),
+        effectData: getSeconarySkillEffectData(id),
         params: getSecondarySkillParams(id),
         requirements: getNoteRequirements(id),
         icon: SECONDARYSKILL[key].Icon.split('/').pop(),
@@ -124,7 +144,7 @@ function getSeconarySkillEffectTypes(id) {
     const keys = Object.keys(SECONDARYSKILL).find(key => SECONDARYSKILL[key].GroupId === id);
     if (!keys) return effectTypes;
 
-    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`)) || [];
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`)) || [];
 
     for (const effectKey of effectKeys) {
         let currentId = +effectKey;
@@ -138,6 +158,24 @@ function getSeconarySkillEffectTypes(id) {
     }
 
     return [...new Set(effectTypes)];
+}
+
+function getSeconarySkillEffectData(id) {
+    const effectDatas = [];
+
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`)) || [];
+
+    for (const effectKey of effectKeys) {
+        let currentId = +effectKey;
+        if (!EFFECT[currentId]) continue;
+
+        const data = getEffectData(currentId);
+        if (!data) continue;
+
+        effectDatas.push(data);
+    }
+
+    return [...new Set(effectDatas)];
 }
 
 function getNoteRequirements(id) {

@@ -1,5 +1,6 @@
 const CHARACTER = require('./EN/bin/Character.json');
 const HITDAMAGE = require('./EN/bin/HitDamage.json');
+const EFFECT = require('./EN/bin/Effect.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
 const BUFFVALUE = require('./EN/bin/BuffValue.json');
 const ONCEADDITTIONALATTRIBUTEVALUE = require('./EN/bin/OnceAdditionalAttributeValue.json');
@@ -8,6 +9,7 @@ const SHIELDVALUE = require('./EN/bin/ShieldValue.json');
 const SKILL = require('./EN/bin/Skill.json');
 const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
 const LANG_SKILL = require('./EN/language/en_US/Skill.json');
+const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 
 const ATTR_TYPE = {
     1: 'ATK',
@@ -205,6 +207,120 @@ const ITEM_RARITY = {
     3: 'R',
     4: 'M',
     5: 'N'
+};
+
+const TRIGGER_TYPE = {
+    1: 'NOTHING',
+    2: 'HITTING',
+    3: 'BEHIT',
+    4: 'KILLENEMY',
+    5: 'CRIT',
+    6: 'CASTSKILL',
+    7: 'GETBUFF',
+    8: 'REMOVEBUFF',
+    9: 'ENTERBATTLE',
+    10: 'LEAVEBATTLE',
+    11: 'BECRIT',
+    12: 'BEGIN_RELOAD',
+    13: 'FINISH_RELOAD',
+    18: 'EFFECT_EXECUTE',
+    19: 'CERTAIN_TIME_INTERVAL',
+    20: 'CASTSKILLEND',
+    21: 'HP_CHANGE',
+    22: 'ON_IMMUNE_DEAD',
+    23: 'DAMAGE_CAUSE_DEAD',
+    24: 'PERFECT_DODGE',
+    25: 'BATTLE_WIN',
+    26: 'SWICH_PLAYER',
+    27: 'TO_BREAK_ALLSHIELD',
+    28: 'BE_BREAK_ALLSHIELD',
+    29: 'BE_BREAK_CERTAINSHIELD',
+    30: 'BE_FINISH_CERTAINSHIELD',
+    31: 'BREAK_TOUGHNESS',
+    32: 'TRIGGER_MARK',
+    33: 'ULTIMATE_ENERGY_CHANGE',
+    34: 'ATTACKING',
+    35: 'BEATTACK',
+    36: 'SUMMONED_DIED',
+    37: 'SUMMON',
+    38: 'ADD_SHIELD',
+    39: 'GET_SHIELD',
+    40: 'IN_BATTLE_STATE',
+    41: 'ANY_ACTOR_TRIGGER_MARK'
+};
+
+const TARGET_TYPE = {
+    1: 'SELF',
+    2: 'ENEMY',
+    3: 'FULL_TEAM',
+    4: 'TEAMMATE',
+    5: 'FULL_ENEMY',
+    6: 'MAINCONTROL_PLAYER',
+    7: 'ASSISTANT_PLAYER',
+    8: 'TEAM_SUMMONED',
+    9: 'FULL_TEAM_AND_SUMMONED',
+    10: 'SELF_AND_SUMMONED'
+};
+
+const CONDITION_TYPE = {
+    1: 'DEFAULT',
+    2: 'HEALTHUP',
+    3: 'HEALTHDOWN',
+    4: 'CARRYBUFFID',
+    5: 'CARRYBUFFGROUP',
+    6: 'CARRYBUFFIDENTIFYING',
+    7: 'SKILLSLOTTYPE',
+    8: 'HITELEMENTTYPE',
+    9: 'DISTANCETYPE',
+    10: 'ACTORELEMENTTYPE',
+    11: 'CERTAINBUFFID',
+    12: 'CERTAINBUFFGROUPID',
+    13: 'CERTAINBUFFTAG',
+    14: 'CERTAINSHIELDID',
+    15: 'NEARBY_ACTOR_LARGE_OR_EQUAL',
+    16: 'NEARBY_ACTOR_LESS_OR_EQUAL',
+    17: 'CERTAIN_SKILL_ID',
+    18: 'HAVE_SHIELD',
+    19: 'NO_SHIELD',
+    20: 'LEAVE_STAGE',
+    21: 'HIT_TARGET_MOREOREQUAL_THAN',
+    22: 'HIT_TARGET_LESSOREQUAL_THAN',
+    23: 'BUFF_NUM',
+    24: 'PROBOBILITY_UP',
+    25: 'CERTAIN_LEVEL_TYPE',
+    26: 'CERTAIN_EFFECT_ID',
+    27: 'CERTAIN_EFFECT_TAG',
+    28: 'CERTAIN_MONSTER_EPICTYPE',
+    29: 'TIME_INTERVAL',
+    30: 'CHARACTER_JOBCLASS',
+    31: 'ROGUELIKE_LEVELSTYLE',
+    32: 'CERTAIN_MONSTER_TAG',
+    33: 'TARGET_CONTAIN_TAG',
+    34: 'DAMAGE_CONTAIN_TAG',
+    35: 'DISTANCE_LESSOREQUAL_THAN',
+    36: 'DISTANCE_MOREOREQUAL_THAN',
+    37: 'CERTAIN_FACTION_TYPE',
+    38: 'IN_FORWARDAREA',
+    39: 'CERTAIN_HITDAMAGEID',
+    40: 'HAVE_FRIENDLY_SUMMONS',
+    41: 'SELF_BE_MAINCONTROL',
+    42: 'SELF_BE_ASSISTANT',
+    43: 'CERTAIN_TYPE_ASSISTANT_IN_BATTLE',
+    44: 'CERTAIN_MARK_ELEMENT_TYPE',
+    45: 'ULTIMATE_ENERGY_MOREOREQUAL_THAN',
+    46: 'SELF_HP_PERCENT_MOREOREQUAL_THAN',
+    47: 'ULTIMATE_ENERGY_LESSOREQUAL_THAN',
+    48: 'IS_TOUGHNESS_BROKEN',
+    49: 'DAMAGE_NOT_NORMAL',
+    50: 'WEAKELEMENTTYPE',
+    51: 'CERTAIN_MARK_TYPE',
+    52: 'BE_MAINCONTROL',
+    53: 'BE_ASSISTANT'
+};
+
+const LOGIC_TYPE = {
+    1: 'AND',
+    2: 'OR',
 };
 
 function collectParamsFrom(obj) {
@@ -413,14 +529,59 @@ function resolveParam(params) {
     });
 }
 
+function getEffectData(effectId) {
+    const effect = EFFECT[effectId];
+    if (!effect) return;
+
+    const trigger = TRIGGER_TYPE[effect.Trigger];
+    const triggerTarget = TARGET_TYPE[effect.TriggerTarget];
+    const triggerCondition1 = CONDITION_TYPE[effect.TriggerCondition1];
+    const triggerParam1 = triggerCondition1?.includes('ELEMENT') ? LANG_UITEXT[`UIText.T_Element_Attr_${effect.TriggerParam1}.1`] : effect.TriggerParam1;
+    const triggerTarget2 = TARGET_TYPE[effect.TriggerTarget2];
+    const triggerCondition2 = CONDITION_TYPE[effect.TriggerCondition2];
+    const triggerParam2 = triggerCondition2?.includes('ELEMENT') ? LANG_UITEXT[`UIText.T_Element_Attr_${effect.TriggerParam2}.1`] : effect.TriggerParam2;
+    const triggerLogicType = triggerTarget2 && LOGIC_TYPE[effect.TriggerLogicType];
+
+    const takeEffectTarget1 = TARGET_TYPE[effect.TakeEffectTarget1];
+    const takeEffectCondition1 = CONDITION_TYPE[effect.TakeEffectCondition1];
+    const takeEffectParam1 = takeEffectCondition1?.includes('ELEMENT') ? LANG_UITEXT[`UIText.T_Element_Attr_${effect.TakeEffectParam1}.1`] : effect.TakeEffectParam1;
+    const takeEffectTarget2 = TARGET_TYPE[effect.TakeEffectTarget2];
+    const takeEffectCondition2 = CONDITION_TYPE[effect.TakeEffectCondition2];
+    const takeEffectParam2 = takeEffectCondition2?.includes('ELEMENT') ? LANG_UITEXT[`UIText.T_Element_Attr_${effect.TakeEffectParam2}.1`] : effect.TakeEffectParam2;
+    const takeEffectLogicType = takeEffectTarget2 && LOGIC_TYPE[effect.TakeEffectLogicType];
+
+    const target1 = TARGET_TYPE[effect.Target1];
+    const targetCondition1 = CONDITION_TYPE[effect.TargetCondition1];
+    const targetParam1 = targetCondition1?.includes('ELEMENT') ? LANG_UITEXT[`UIText.T_Element_Attr_${effect.TargetParam1}.1`] : effect.TargetParam1;
+
+    let triggerLine = [trigger, triggerTarget, triggerCondition1, triggerParam1, triggerLogicType, triggerTarget2, triggerCondition2, triggerParam2].filter(v => v).join(', ');
+    let takeEffectLine = [takeEffectTarget1, takeEffectCondition1, takeEffectParam1, takeEffectLogicType, takeEffectTarget2, takeEffectCondition2, takeEffectParam2].filter(v => v).join(', ');
+    let targetLine = [target1, targetCondition1, targetParam1].filter(v => v).join(', ');
+
+    if (triggerLine === 'NOTHING, SELF, DEFAULT') triggerLine = ' ';
+    if (takeEffectLine === 'SELF, DEFAULT') takeEffectLine = ' ';
+    if (targetLine === 'SELF, DEFAULT') targetLine = ' ';
+
+    const result = [triggerLine, takeEffectLine, targetLine].join(' | ');
+
+    if (result === ' |  | ') return;
+
+    return result;
+}
+
 module.exports = {
     collectParamsFrom,
     iHateFloatingPointNumber,
     resolveParam,
+    getEffectData,
     ATTR_TYPE,
     DAMAGE_TYPE,
     EFFECT_TYPE,
     CORNER_TYPE,
     ITEM_STYPE,
     ITEM_RARITY,
+    TRIGGER_TYPE,
+    TARGET_TYPE,
+    CONDITION_TYPE,
+    LOGIC_TYPE,
 };
