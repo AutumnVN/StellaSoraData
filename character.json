@@ -2803,7 +2803,7 @@
                     ],
                     "addAttrType": [],
                     "effectData": [
-                        "DAMAGE_CAUSE_DEAD, SELF, DEFAULT |   |  "
+                        "DAMAGE_CAUSE_DEAD, SELF, DEFAULT | SELF, DEFAULT | SELF, DEFAULT"
                     ],
                     "params": [
                         "Aegis Protection",
@@ -5973,7 +5973,7 @@
                             "Skill DMG"
                         ],
                         "effectData": [
-                            "HITTING, SELF, DEFAULT |   |  "
+                            "HITTING, SELF, DEFAULT | SELF, DEFAULT | SELF, DEFAULT"
                         ]
                     },
                     {
