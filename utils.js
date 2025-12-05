@@ -564,7 +564,7 @@ function getEffectData(effectId) {
 
     const result = [triggerLine, takeEffectLine, targetLine].join(' | ');
 
-    if (result === ' |  | ') return;
+    if (result === '  |   |  ') return;
 
     return result;
 }
