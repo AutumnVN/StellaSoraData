@@ -8,6 +8,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 1001,
             "name": "Fortissimo: Main Theme",
             "desc": "Increases the main Trekker's ATK by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -512,6 +513,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 1002,
             "name": "Fortissimo: Harmony",
             "desc": "Increases the support Trekker's ATK by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -1016,6 +1018,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 1003,
             "name": "Cadence: Main Theme",
             "desc": "Increases the main Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -1520,6 +1523,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 1004,
             "name": "Cadence: Harmony",
             "desc": "Increases the support Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -2024,6 +2028,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 1005,
             "name": "Crescendo: Main Theme",
             "desc": "Increases the main Trekker's Ultimate DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -2528,6 +2533,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 1006,
             "name": "Crescendo: Harmony",
             "desc": "Increases the support Trekker's Ultimate DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -3032,6 +3038,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 1007,
             "name": "Harmonics: Main Theme",
             "desc": "Increases the main Trekker's Skill DMG and Ultimate DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -3537,6 +3544,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 1008,
             "name": "Harmonics: Harmony",
             "desc": "Increases the support Trekker's Skill DMG and Ultimate DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -4042,6 +4050,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 2001,
             "name": "Feasts and Revelry",
             "desc": "Increases the main Trekker's Auto Attack DMG and Skill DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -4547,6 +4556,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 2002,
             "name": "Cry of the Valor",
             "desc": "Increases the main Trekker's ATK by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -5051,6 +5061,7 @@
             "Verse"
         ],
         "mainSkill": {
+            "id": 2003,
             "name": "In Ecstasy",
             "desc": "Increases the main Trekker's Auto Attack DMG and Ultimate DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -5556,6 +5567,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 2005,
             "name": "Passion Ablaze",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -6058,6 +6070,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 2006,
             "name": "Radiant Omen",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -6560,6 +6573,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 2007,
             "name": "Rise with Zephyr",
             "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -7062,6 +7076,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 2008,
             "name": "Bubbling Torrent",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -7564,6 +7579,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 2009,
             "name": "Echoes of Eclipse",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -8066,6 +8082,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 2010,
             "name": "Will of Steel",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -8568,6 +8585,7 @@
             "Ultimate"
         ],
         "mainSkill": {
+            "id": 3003,
             "name": "Rock Party",
             "desc": "Increases the ATK of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Trekker casts a skill, increases Ignis Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -8583,6 +8601,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 30031,
             "name": "Lingering Heatwave",
             "desc": "When any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -9123,6 +9142,7 @@
             "Skills"
         ],
         "mainSkill": {
+            "id": 3004,
             "name": "Ardent Twin Moons",
             "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Ignis Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
@@ -9137,6 +9157,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 30041,
             "name": "Twin Moons' Waltz",
             "desc": "When a support Ignis Trekker is on the battlefield, increases the main Ignis Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -9677,6 +9698,7 @@
             "Ultimate"
         ],
         "mainSkill": {
+            "id": 3005,
             "name": "Glimmer Bubbles",
             "desc": "Increases the ATK of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen a Lux Trekker casts a skill, increases Lux Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -9692,6 +9714,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 30051,
             "name": "Shining Burst",
             "desc": "When any Trekker triggers ##Lux Mark#1015#, increases Lux squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -10232,6 +10255,7 @@
             "Skills"
         ],
         "mainSkill": {
+            "id": 3006,
             "name": "Light Lullaby",
             "desc": "Increases the Skill DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Lux Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
@@ -10246,6 +10270,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 30061,
             "name": "Tranquil Light",
             "desc": "When a support Lux Trekker is on the battlefield, increases the main Lux Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -10786,6 +10811,7 @@
             "Ultimate"
         ],
         "mainSkill": {
+            "id": 3007,
             "name": "Emerald Dreamscape",
             "desc": "Increases the ATK of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen a Ventus Trekker casts a skill, increases Ventus Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -10801,6 +10827,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill1": {
+            "id": 30071,
             "name": "Evening Breeze",
             "desc": "When any Trekker triggers ##Ventus Mark#1017#, increases Ventus squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -11341,6 +11368,7 @@
             "Skills"
         ],
         "mainSkill": {
+            "id": 3008,
             "name": "Tailwind Journey",
             "desc": "Increases the Skill DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Ventus Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
@@ -11355,6 +11383,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill1": {
+            "id": 30081,
             "name": "Companion's Bond",
             "desc": "When a support Ventus Trekker is on the battlefield, increases the main Ventus Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -11895,6 +11924,7 @@
             "Ultimate"
         ],
         "mainSkill": {
+            "id": 3009,
             "name": "Dreamlike Illusion",
             "desc": "Increases the ATK of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Aqua Trekker casts a skill, increases Aqua Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -11910,6 +11940,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill1": {
+            "id": 30091,
             "name": "Silken Raindrops",
             "desc": "When any Trekker triggers ##Aqua Mark#1018#, increases Aqua squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -12450,6 +12481,7 @@
             "Skills"
         ],
         "mainSkill": {
+            "id": 3010,
             "name": "Aromatic Steam",
             "desc": "Increases the Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2}, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
@@ -12464,6 +12496,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill1": {
+            "id": 30101,
             "name": "Shroud of Mist",
             "desc": "When a support Aqua Trekker is on the battlefield, increases the main Aqua Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -13004,6 +13037,7 @@
             "Ultimate"
         ],
         "mainSkill": {
+            "id": 3011,
             "name": "Nocturne Beat",
             "desc": "Increases the ATK of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Umbra Trekker casts a skill, increases Umbra Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -13019,6 +13053,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill1": {
+            "id": 30111,
             "name": "Dancing Shadows",
             "desc": "When any Trekker triggers ##Umbra Mark#1019#, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -13559,6 +13594,7 @@
             "Skills"
         ],
         "mainSkill": {
+            "id": 3012,
             "name": "Starry Reverie",
             "desc": "Increases the Skill DMG of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Umbra Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
@@ -13573,6 +13609,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill1": {
+            "id": 30121,
             "name": "Moonlit Taps",
             "desc": "When a support Umbra Trekker is on the battlefield, increases the main Umbra Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -14113,6 +14150,7 @@
             "Ultimate"
         ],
         "mainSkill": {
+            "id": 3013,
             "name": "Dappled Shade",
             "desc": "Increases the ATK of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen a Terra Trekker casts a skill, increases Terra Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -14128,6 +14166,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
+            "id": 30131,
             "name": "Snuggle Up",
             "desc": "When any Trekker triggers ##Terra Mark#1020#, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -14668,6 +14707,7 @@
             "Skills"
         ],
         "mainSkill": {
+            "id": 3014,
             "name": "Forged to Perfection",
             "desc": "Increases the Skill DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Terra Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
@@ -14682,6 +14722,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
+            "id": 30141,
             "name": "Engine Lubrication",
             "desc": "When a support Terra Trekker is on the battlefield, increases the main Terra Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -15223,6 +15264,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 3015,
             "name": "Lingering Fragrance",
             "desc": "Increases the Skill DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -15237,6 +15279,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill1": {
+            "id": 30151,
             "name": "Caressing Breeze",
             "desc": "When the main Ventus Trekker is hit, increases the squad's Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -15778,6 +15821,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 3016,
             "name": "Fury in Bloom",
             "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -15792,6 +15836,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 30161,
             "name": "Thorning Rose",
             "desc": "When the main Ignis Trekker is hit, increases the squad's Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -16333,6 +16378,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 3017,
             "name": "Twirl of Light",
             "desc": "Increases the Skill DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -16347,6 +16393,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 30171,
             "name": "Spinning Light",
             "desc": "When the main Lux Trekker is hit, increases the squad's Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -16888,6 +16935,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 3018,
             "name": "Fizz and Pop",
             "desc": "Increases the Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -16902,6 +16950,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill1": {
+            "id": 30181,
             "name": "Chilling Coolness",
             "desc": "When the main Aqua Trekker is hit, increases the squad's Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -17443,6 +17492,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 3019,
             "name": "Ephemeral Shadowfall",
             "desc": "Increases the Skill DMG of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -17457,6 +17507,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill1": {
+            "id": 30191,
             "name": "Fleeting Dreams",
             "desc": "When the main Umbra Trekker is hit, increases the squad's Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -17998,6 +18049,7 @@
             "Element"
         ],
         "mainSkill": {
+            "id": 3020,
             "name": "Kitschphobia",
             "desc": "Increases the Skill DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -18012,6 +18064,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
+            "id": 30201,
             "name": "Startling Moment",
             "desc": "When the main Terra Trekker is hit, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -18552,6 +18605,7 @@
             "Charge"
         ],
         "mainSkill": {
+            "id": 3021,
             "name": "A Refraction of Mirage",
             "desc": "Increases the Ultimate DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Ventus Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
@@ -18567,6 +18621,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill1": {
+            "id": 30211,
             "name": "Squall",
             "desc": "When any Ventus Trekker casts an Ultimate, increases Ventus squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -19107,6 +19162,7 @@
             "Charge"
         ],
         "mainSkill": {
+            "id": 3022,
             "name": "Benediction Under Lantern",
             "desc": "Increases the Ultimate DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Ignis Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
@@ -19122,6 +19178,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 30221,
             "name": "Surge of Flame",
             "desc": "When any Ignis Trekker casts an Ultimate, increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -19662,6 +19719,7 @@
             "Charge"
         ],
         "mainSkill": {
+            "id": 3023,
             "name": "Angel's Prayer",
             "desc": "Increases the Ultimate DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Lux Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
@@ -19677,6 +19735,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 30231,
             "name": "Holy Glow",
             "desc": "When any Lux Trekker casts an Ultimate, increases Lux squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -20217,6 +20276,7 @@
             "Charge"
         ],
         "mainSkill": {
+            "id": 3024,
             "name": "Call of Holiday",
             "desc": "Increases the Ultimate DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Aqua Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
@@ -20232,6 +20292,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill1": {
+            "id": 30241,
             "name": "Sweet Creek",
             "desc": "When any Aqua Trekker casts an Ultimate, increases Aqua squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -20772,6 +20833,7 @@
             "Charge"
         ],
         "mainSkill": {
+            "id": 3025,
             "name": "Forbidden Nectar",
             "desc": "Increases the Ultimate DMG of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Umbra Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
@@ -20787,6 +20849,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill1": {
+            "id": 30251,
             "name": "Phantom Realm",
             "desc": "When any Umbra Trekker casts an Ultimate, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -21327,6 +21390,7 @@
             "Charge"
         ],
         "mainSkill": {
+            "id": 3026,
             "name": "Business Tips",
             "desc": "Increases the Ultimate DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Terra Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
@@ -21342,6 +21406,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
+            "id": 30261,
             "name": "Livestream Prep",
             "desc": "When any Terra Trekker casts an Ultimate, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -21884,6 +21949,7 @@
             "DMG RES"
         ],
         "mainSkill": {
+            "id": 4001,
             "name": "Meowing Cat God",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ignis Trekker casts a skill, increases the ATK of Ignis Trekkers in the squad by {2} for {3}s. The main Ignis Trekker gains Blazing Armor: reduces DMG taken by {4} for {5}s.",
             "effectType": [
@@ -21901,6 +21967,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 40011,
             "name": "Cat God's Penalty",
             "desc": "If the main Trekker is inflicted with Blazing Armor, increases Ignis squadmates' Ultimate DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -21937,6 +22004,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill2": {
+            "id": 40012,
             "name": "Destructive Aura",
             "desc": "When the target is killed, if the main Trekker is inflicted with Blazing Armor, increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -22479,6 +22547,7 @@
             "VUL"
         ],
         "mainSkill": {
+            "id": 4002,
             "name": "Sky, Flowers, Poem",
             "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Ventus Trekker deals non-Auto Attack DMG to a target, there is a {2} chance to inflict Laceration: increases Ventus DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Ventus Trekker from targets inflicted with Laceration by {5}.",
             "effectType": [
@@ -22496,6 +22565,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill1": {
+            "id": 40021,
             "name": "Snowpetal Storm",
             "desc": "Increases Ventus Trekkers' Ultimate DMG dealt to targets inflicted with Laceration by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -22531,6 +22601,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill2": {
+            "id": 40022,
             "name": "Fragrance of Heart",
             "desc": "When any Ventus Trekker kills a target inflicted with Laceration, increases the squad's Ventus DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -23073,6 +23144,7 @@
             "Skills"
         ],
         "mainSkill": {
+            "id": 4005,
             "name": "Sunlit Blossom",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bIncreases the Aqua DMG dealt by Aqua Trekkers in the squad to targets inflicted with ##Chill#1027# or ##Frozen#1002# by an additional <color=#ec6d21>{2}</color>.",
             "effectType": [
@@ -23086,6 +23158,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill1": {
+            "id": 40051,
             "name": "Tears of Joy",
             "desc": "When any Aqua Trekker casts an Ultimate, increases Aqua Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -23122,6 +23195,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill2": {
+            "id": 40052,
             "name": "Bygone Echoes",
             "desc": "Increases Aqua Trekkers' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Aqua Trekker deals Skill DMG, if a support Aqua Trekker is on the battlefield, increases the DMG of this hit by <color=#ec6d21>{2}</color>.",
             "effectType": [
@@ -23665,6 +23739,7 @@
             "Minion"
         ],
         "mainSkill": {
+            "id": 4006,
             "name": "Witch's Swing",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker casts a Support Skill, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -23679,6 +23754,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill1": {
+            "id": 40061,
             "name": "Spectral Fragrance",
             "desc": "When any Umbra Trekker casts a Support Skill, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.\u000bFor every minion summoned by an Umbra squadmate, increases the DMG of all allied Umbra minions on the battlefield by <color=#ec6d21>{3}</color> for {4}s, stacking up to {5} times.",
             "effectType": [
@@ -23716,6 +23792,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill2": {
+            "id": 40062,
             "name": "Dark Trace",
             "desc": "Increases Umbra Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Umbra Mark#1019#, increases this effect by an additional <color=#ec6d21>{2}</color> and the DMG of all allied Umbra minions on the battlefield by an additional <color=#ec6d21>{3}</color> for {4}s.",
             "effectType": [
@@ -24261,6 +24338,7 @@
             "VUL"
         ],
         "mainSkill": {
+            "id": 4007,
             "name": "Midnight Mayhem",
             "desc": "Increases the Skill DMG & Ultimate DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Lux Mark#1015#, increases the main Lux Trekker' Auto Attack & Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -24277,6 +24355,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 40071,
             "name": "Decisive Strike",
             "desc": "When a Lux main Trekker hits a target, increases all Lux squadmates' ATK by <color=#ec6d21>{1}</color> for {3}s.\u000bWhen any Lux Trekker hits a stunned target, increases this effect by an additional <color=#ec6d21>{2}</color> for {4}s.",
             "effectType": [
@@ -24313,6 +24392,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill2": {
+            "id": 40072,
             "name": "Reach of Radiance",
             "desc": "When a Lux Support Skill hits a target, increases the Lux DMG taken by the target by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -24855,6 +24935,7 @@
             "Shield"
         ],
         "mainSkill": {
+            "id": 4009,
             "name": "New Star Prelude",
             "desc": "Increases the ATK of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, the main Ventus Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
@@ -24870,6 +24951,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill1": {
+            "id": 40091,
             "name": "Starlit Winds",
             "desc": "When the main Ventus Trekker gains a shield, increases the squad's Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -24905,6 +24987,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill2": {
+            "id": 40092,
             "name": "Windswept Prayer",
             "desc": "When any Ventus Trekker deals Skill DMG, if the main Ventus Trekker has a shield, increases the DMG of this hit by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -25447,6 +25530,7 @@
             "Shield"
         ],
         "mainSkill": {
+            "id": 4010,
             "name": "Prayer Beneath Light",
             "desc": "Increases the ATK of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen the main Lux Trekker is hit, gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
@@ -25462,6 +25546,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 40101,
             "name": "Light of Mercy",
             "desc": "When the main Lux Trekker gains a shield, increases the squad's Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -25497,6 +25582,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill2": {
+            "id": 40102,
             "name": "Divine Protection",
             "desc": "When any Lux Trekker casts a skill, if the main Trekker has a shield, increases Lux squadmates' Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -26039,6 +26125,7 @@
             "Shield"
         ],
         "mainSkill": {
+            "id": 4011,
             "name": "Summer Afternoon Rain",
             "desc": "Increases the ATK of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Aqua Trekker casts an Ultimate, the main Aqua Trekker gains a shield equal to {2} of Max HP for {3}s.",
             "effectType": [
@@ -26054,6 +26141,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill1": {
+            "id": 40111,
             "name": "Frosted Blossom",
             "desc": "When the main Aqua Trekker gains a shield, increases the squad's Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -26089,6 +26177,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill2": {
+            "id": 40112,
             "name": "Dancing Waters",
             "desc": "When any Aqua Trekker deals Skill DMG, if the main Aqua Trekker has a shield, increases the DMG of this hit by <color=#ec6d21>{1}</color>.\u000bIncreases the main Aqua Trekker's Aqua DMG dealt to elite or higher-tier targets by <color=#ec6d21>{2}</color>.",
             "effectType": [
@@ -26633,6 +26722,7 @@
             "Shield"
         ],
         "mainSkill": {
+            "id": 4012,
             "name": "Those with Ambition",
             "desc": "Increases the ATK of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any support Umbra Trekker or Umbra minion inflicts ##Umbra Mark#1019#, the main Umbra Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
@@ -26647,6 +26737,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill1": {
+            "id": 40121,
             "name": "Dark Reckoning",
             "desc": "When the main Umbra Trekker gains a shield, increases the squad's Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -26682,6 +26773,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill2": {
+            "id": 40122,
             "name": "Greedy Pursuit",
             "desc": "When any Trekker triggers ##Umbra Mark#1019#, if the main Trekker has a shield, increases Umbra squadmates' Skill and Ultimate DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -27225,6 +27317,7 @@
             "Shield"
         ],
         "mainSkill": {
+            "id": 4013,
             "name": "Voyage Blueprint",
             "desc": "Increases the ATK of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ignis Trekker casts a skill, the main Ignis Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
@@ -27240,6 +27333,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 40131,
             "name": "Raging Wildfire",
             "desc": "When the main Ignis Trekker gains a shield, increases the squad's Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -27275,6 +27369,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill2": {
+            "id": 40132,
             "name": "Epic Adventure",
             "desc": "When the main Ignis Trekker deals Skill DMG, if her HP is above {1}, increases the DMG of this hit by <color=#ec6d21>{2}</color>.",
             "effectType": [
@@ -27817,6 +27912,7 @@
             "Shield"
         ],
         "mainSkill": {
+            "id": 4014,
             "name": "Sweet Times",
             "desc": "Increases the ATK of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Terra Mark#1020#, the main Terra Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
@@ -27832,6 +27928,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
+            "id": 40141,
             "name": "Fruity & Fragrant",
             "desc": "When the main Terra Trekker gains a shield, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -27867,6 +27964,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill2": {
+            "id": 40142,
             "name": "Juicy & Healthy",
             "desc": "When any Terra Trekker casts an Ultimate, if the main Trekker has a shield, increases Terra squadmates' Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -28409,6 +28507,7 @@
             "Skills"
         ],
         "mainSkill": {
+            "id": 4017,
             "name": "Fireworks",
             "desc": "The main Ignis Trekker gains {1} stacks of Explosive Flame after casting a skill. Each stack increases Auto Attack DMG by <color=#ec6d21>{2}</color>, stacking up to {3} times. Each ammo used by the main Ignis Trekker grants one additional stack.\u000bWhen Explosive Flame is at max stacks, increases the main Ignis Trekker's Ignis Auto Attack DMG to targets by <color=#ec6d21>{4}</color> for {5}s. All Explosive Flame stacks are removed after {6}s.",
             "effectType": [
@@ -28423,6 +28522,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 40171,
             "name": "Warmth in the Arms",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -28459,6 +28559,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill2": {
+            "id": 40172,
             "name": "Fervent Flames",
             "desc": "Each stack of Explosive Flame additionally grants: Skill DMG +<color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -28999,6 +29100,7 @@
             "DMG RES"
         ],
         "mainSkill": {
+            "id": 4018,
             "name": "Lemon & Black Tea",
             "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
@@ -29010,6 +29112,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill1": {
+            "id": 40181,
             "name": "Subtle Influence",
             "desc": "Increases Ventus Trekkers' Ventus DMG dealt to targets with Ventus VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ventus Trekker by {2}.",
             "effectType": [
@@ -29047,6 +29150,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill2": {
+            "id": 40182,
             "name": "Lasting Trends",
             "desc": "For each target killed, increases Ventus squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -29589,6 +29693,7 @@
             "DMG RES"
         ],
         "mainSkill": {
+            "id": 4019,
             "name": "One Shot, One Down",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
@@ -29600,6 +29705,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 40191,
             "name": "Windbreaking Shots",
             "desc": "Increases Ignis Trekkers' Ignis DMG dealt to targets with Ignis VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ignis Trekker by {2}.",
             "effectType": [
@@ -29637,6 +29743,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill2": {
+            "id": 40192,
             "name": "Battle Rhapsody",
             "desc": "Increases Ignis Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, increases this effect by an additional {3} every {2}s, stacking up to {4} times.",
             "effectType": [
@@ -30182,6 +30289,7 @@
             "DMG RES"
         ],
         "mainSkill": {
+            "id": 4020,
             "name": "Sparkling Moment",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
@@ -30193,6 +30301,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 40201,
             "name": "Flashing Memories",
             "desc": "Increases Lux Trekkers' Lux DMG dealt to targets with Lux VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Lux Trekker by {2}.",
             "effectType": [
@@ -30230,6 +30339,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill2": {
+            "id": 40202,
             "name": "Radiant Bonds",
             "desc": "Increases Lux Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts an Ultimate, increases this effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
@@ -30774,6 +30884,7 @@
             "DMG RES"
         ],
         "mainSkill": {
+            "id": 4021,
             "name": "United by Fate",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
@@ -30785,6 +30896,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill1": {
+            "id": 40211,
             "name": "Unbreakable Trio",
             "desc": "Increases Aqua Trekkers' Aqua DMG dealt to targets with Aqua VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Aqua Trekker by {2}.",
             "effectType": [
@@ -30822,6 +30934,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill2": {
+            "id": 40212,
             "name": "Moment of Unity",
             "desc": "Increases Aqua Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
             "effectType": [
@@ -31365,6 +31478,7 @@
             "DMG RES"
         ],
         "mainSkill": {
+            "id": 4022,
             "name": "The Meow",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
@@ -31376,6 +31490,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill1": {
+            "id": 40221,
             "name": "Moment of Terror",
             "desc": "Increases Umbra Trekkers' Umbra DMG dealt to targets with Umbra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Umbra Trekker by {2}.",
             "effectType": [
@@ -31413,6 +31528,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill2": {
+            "id": 40222,
             "name": "Humble Courage",
             "desc": "Increases Umbra Trekkers' Skill and Ultimate DMG dealt to normal targets by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, for {2} normal targets killed in total, increases Umbra Trekkers' Skill and Ultimate DMG dealt to elite or higher-tier targets by {3}.",
             "effectType": [],
@@ -31951,6 +32067,7 @@
             "DMG RES"
         ],
         "mainSkill": {
+            "id": 4023,
             "name": "Colors Pierce the Grey",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
             "effectType": [
@@ -31962,6 +32079,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
+            "id": 40231,
             "name": "Street Spirit",
             "desc": "Increases Terra Trekkers' Terra DMG dealt to targets with Terra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Terra Trekker by {2}.",
             "effectType": [
@@ -31999,6 +32117,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill2": {
+            "id": 40232,
             "name": "Hit and Run",
             "desc": "Increases Terra Trekkers' Skill and Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
             "effectType": [
@@ -32547,6 +32666,7 @@
             "ATK"
         ],
         "mainSkill": {
+            "id": 4026,
             "name": "Sword Against Stream",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Aqua Mark#1018#, increases the squad's Aqua DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -32560,6 +32680,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill1": {
+            "id": 40261,
             "name": "Splashing Moves",
             "desc": "After the main Aqua Trekker deals DMG {1} times in total, increases Aqua squadmates' ATK by <color=#ec6d21>{2}</color> for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
@@ -32595,6 +32716,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill2": {
+            "id": 40262,
             "name": "Water Mirror",
             "desc": "Increases Aqua Trekkers' Skill DMG dealt to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -33137,6 +33259,7 @@
             "Minion"
         ],
         "mainSkill": {
+            "id": 4027,
             "name": "Mystic Brushstrokes",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -33152,6 +33275,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 40271,
             "name": "Wild Brushstrokes",
             "desc": "Increases Ignis Trekkers' Skill DMG by <color=#ec6d21>{1}</color>. When the target is inflicted with ##Burn#2027#, increases by an additional <color=#ec6d21>{2}</color>.",
             "effectType": [
@@ -33188,6 +33312,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill2": {
+            "id": 40272,
             "name": "Power Unleashed",
             "desc": "When any Ignis Trekker casts a Support Skill, increases the ATK of the main Ignis Trekker and minions by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -33731,6 +33856,7 @@
             "Ultimate"
         ],
         "mainSkill": {
+            "id": 4028,
             "name": "Daylight Garden",
             "desc": "Increases the Auto Attack DMG & Skill DMG of the main Ventus Trekker by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ventus Mark#1017#, increases the main Ventus Trekker's Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -33747,6 +33873,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill1": {
+            "id": 40281,
             "name": "Fragrant Illusion",
             "desc": "Increases Ventus Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ventus Trekker deals Ultimate DMG, increases her Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -33784,6 +33911,7 @@
             "iconBg": "db_DiscSkill_4"
         },
         "secondarySkill2": {
+            "id": 40282,
             "name": "Swaying Petals",
             "desc": "After the main Ventus Trekker deals DMG to the same target {1} times, increases the Ventus DMG the target takes by <color=#ec6d21>{2}</color> for {3}s. This effect can only be triggered once every {4}s for the same target.",
             "effectType": [
@@ -34324,6 +34452,7 @@
             "VUL"
         ],
         "mainSkill": {
+            "id": 4030,
             "name": "A Moment in the Afternoon",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker deals non-Auto Attack DMG to a target, there is a {2} chance to inflict Shock: increases Lux DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Lux Trekker from targets inflicted with Shock by {5}.",
             "effectType": [
@@ -34341,6 +34470,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 40301,
             "name": "Falling Gleam",
             "desc": "Increases Lux Trekkers' Skill DMG dealt to targets inflicted with Shock by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -34376,6 +34506,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill2": {
+            "id": 40302,
             "name": "Relaxing Tea",
             "desc": "When any Lux Trekker kills a target inflicted with Shock, increases the squad's Lux DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -34918,6 +35049,7 @@
             "DMG RES"
         ],
         "mainSkill": {
+            "id": 4031,
             "name": "The Clash of Blade and Axe",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Aqua Trekker casts a skill, increases the Skill DMG of Aqua Trekkers in the squad by {2} for {3}s. The main Aqua Trekker gains Bless: reduces DMG taken by {4} for {5}s.",
             "effectType": [
@@ -34935,6 +35067,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill1": {
+            "id": 40311,
             "name": "Surging Slash",
             "desc": "If the main Trekker is inflicted with Bless, increases the squad's Aqua DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -34971,6 +35104,7 @@
             "iconBg": "db_DiscSkill_5"
         },
         "secondarySkill2": {
+            "id": 40312,
             "name": "Preferred Enemy",
             "desc": "When the target is killed, if the main Trekker is inflicted with Bless, increases Aqua squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -35513,6 +35647,7 @@
             "VUL"
         ],
         "mainSkill": {
+            "id": 4032,
             "name": "Dream Factory of ☆Truth",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker deal non-Auto Attack DMG to a target, there is a {2} chance to inflict Corrosion: increases Umbra DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Umbra Trekker from targets inflicted with Corrosion by {5}.",
             "effectType": [
@@ -35531,6 +35666,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill1": {
+            "id": 40321,
             "name": "Veiled Negative",
             "desc": "When inflicting Corrosion on a target, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -35564,6 +35700,7 @@
             "iconBg": "db_DiscSkill_6"
         },
         "secondarySkill2": {
+            "id": 40322,
             "name": "News Spree",
             "desc": "When any Umbra Trekker kills a target inflicted with Corrosion, increases the squad's Umbra DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -36106,6 +36243,7 @@
             "DMG RES"
         ],
         "mainSkill": {
+            "id": 4033,
             "name": "Dancing with the Bones",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Terra Trekker's HP is above {2} when any Terra Trekker deals Skill DMG, increases the DMG of this hit by {3}. The main Terra Trekker gains Boulder: reduces DMG taken by {4}.",
             "effectType": [
@@ -36123,6 +36261,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
+            "id": 40331,
             "name": "Truth Digger",
             "desc": "If the main Trekker is inflicted with Boulder, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color>.",
             "effectType": [
@@ -36158,6 +36297,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill2": {
+            "id": 40332,
             "name": "Buried Past",
             "desc": "When the target is killed, if the main Trekker is inflicted with Boulder, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -36700,6 +36840,7 @@
             "ATK"
         ],
         "mainSkill": {
+            "id": 4036,
             "name": "The Lost Pilgrim",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Terra Mark#1020#, increases the main Terra Trekker's Skill & Auto Attack DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -36715,6 +36856,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
+            "id": 40361,
             "name": "Iron Love Embrace",
             "desc": "Increases Terra Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bWhen any Terra Trekker deals Skill DMG, if a support Terra Trekker is on the battlefield, increases the Skill DMG by <color=#ec6d21>{2}</color>.",
             "effectType": [
@@ -36752,6 +36894,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill2": {
+            "id": 40362,
             "name": "Prison of Passion",
             "desc": "When any Trekker triggers ##Terra Mark#1020#, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -37294,6 +37437,7 @@
             "VUL"
         ],
         "mainSkill": {
+            "id": 4037,
             "name": "Claw the Claw",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen a target's ##Terra Mark#1020# is triggered, the target takes <color=#ec6d21>{2}</color> more Terra DMG for {3}s.",
             "effectType": [
@@ -37308,6 +37452,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill1": {
+            "id": 40371,
             "name": "Lucky Clip",
             "desc": "When any Terra Trekker restores HP, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
@@ -37341,6 +37486,7 @@
             "iconBg": "db_DiscSkill_2"
         },
         "secondarySkill2": {
+            "id": 40372,
             "name": "Record Breaker",
             "desc": "When a support Trekker deals Skill DMG, increases Terra squadmates' Skill DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
@@ -37883,6 +38029,7 @@
             "Skills"
         ],
         "mainSkill": {
+            "id": 4038,
             "name": "Ripples of Nostalgia",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Lux Trekkers deals Ultimate DMG to a target, the target takes <color=#ec6d21>{2}</color> more Lux DMG for {3}s, stacking up to {4} times.",
             "effectType": [
@@ -37897,6 +38044,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 40381,
             "name": "Dance of Shimmers",
             "desc": "Increases the main Lux Trekker's Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Lux Trekker deals Skill DMG, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -37934,6 +38082,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill2": {
+            "id": 40382,
             "name": "Gleaming Steps",
             "desc": "After the main Lux Trekker deals Skill DMG {1} times in total, increases the squad's Lux DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -38474,6 +38623,7 @@
             "Auto Attack"
         ],
         "mainSkill": {
+            "id": 4039,
             "name": "Summer Sanctuary",
             "desc": "Increases the main Lux Trekker's Auto Attack & Skill DMG by <color=#ec6d21>{1}</color>.\u000bIf any Trekker triggers ##Lux Mark#1015# while the main Lux Trekker's Ultimate is active, increases the squad's Lux DMG by <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
             "effectType": [
@@ -38489,6 +38639,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill1": {
+            "id": 40391,
             "name": "Azure Horizon",
             "desc": "Increases Lux Trekkers' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts a skill, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
             "effectType": [
@@ -38525,6 +38676,7 @@
             "iconBg": "db_DiscSkill_3"
         },
         "secondarySkill2": {
+            "id": 40392,
             "name": "Infinite Sunshine",
             "desc": "When any Lux Trekker deals Skill DMG, the main Lux Trekker gains 1 stack of Diffraction, stacking up to {1} times.\u000bWhen the main Lux Trekker casts a skill, increases Lux squadmates' Skill DMG by the number of Diffraction stacks x<color=#ec6d21>{2}</color> for {3}s, and removes all the Diffraction stacks.",
             "effectType": [
@@ -39067,6 +39219,7 @@
             "DEF"
         ],
         "mainSkill": {
+            "id": 4040,
             "name": "Fist of Courage",
             "desc": "The main Ignis Trekker gains 1 stack of Courage when dealing Ultimate DMG, increasing Ultimate DMG by <color=#ec6d21>{1}</color> for {3}s, stacking up to {2} times.",
             "effectType": [
@@ -39078,6 +39231,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill1": {
+            "id": 40401,
             "name": "Passion of the Captain",
             "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Trekker deals Skill DMG, increases Ignis Trekkers' ATK by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
@@ -39115,6 +39269,7 @@
             "iconBg": "db_DiscSkill_1"
         },
         "secondarySkill2": {
+            "id": 40402,
             "name": "Inspiration of Courage",
             "desc": "When the duration of Courage ends, each stack of Courage increases the main Ignis Trekker's Auto Attack DMG by <color=#ec6d21>{1}</color> and grants {2} DEF for {3}s.",
             "effectType": [
