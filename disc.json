@@ -11,12 +11,10 @@
             "name": "Fortissimo: Main Theme",
             "desc": "Increases the main Trekker's ATK by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "ATK",
-                "Crit Rate"
+                "ATK"
             ],
             "effectData": [
-                "NOTHING, SELF, SELF_BE_MAINCONTROL | SELF, DEFAULT | SELF, DEFAULT",
-                "NOTHING, ENEMY, DEFAULT | SELF, DEFAULT | SELF, DEFAULT"
+                "NOTHING, SELF, SELF_BE_MAINCONTROL | SELF, DEFAULT | SELF, DEFAULT"
             ],
             "params": "7%/8.4%/9.8%/11.2%/12.6%/14%",
             "icon": "DiscSkill_1",
@@ -12455,8 +12453,7 @@
             "name": "Aromatic Steam",
             "desc": "Increases the Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2}, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
-                "Skill DMG",
-                "ADD_SKILL_LV"
+                "Skill DMG"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Aqua | SELF, DEFAULT | SELF, DEFAULT",
@@ -18004,37 +18001,11 @@
             "name": "Kitschphobia",
             "desc": "Increases the Skill DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
-                "Skill DMG",
-                "ADDBUFF",
-                "DMG Dealt",
-                "Evasion",
-                "Crit Rate",
-                "Final DMG+",
-                "DMG Taken",
-                "Crit DMG",
-                "IMM_BUFF"
+                "Skill DMG"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Terra | SELF, DEFAULT | SELF, DEFAULT",
-                "CASTSKILL, SELF, SKILLSLOTTYPE, 4 | SELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra",
-                "CASTSKILL, SELF, SKILLSLOTTYPE, 2, OR, SELF, SKILLSLOTTYPE | SELF, DEFAULT | SELF, DEFAULT",
-                "HITTING, ENEMY, HEALTHDOWN, 40 | SELF, DEFAULT | SELF, DEFAULT",
-                "BEHIT, SELF, DEFAULT | SELF, DEFAULT | SELF, DEFAULT",
-                "KILLENEMY, SELF, DEFAULT | SELF, DEFAULT | SELF, DEFAULT",
-                "CRIT, SELF, DEFAULT | SELF, DEFAULT | SELF, DEFAULT",
-                "HITTING, ENEMY, CARRYBUFFIDENTIFYING, 眩晕 | SELF, DEFAULT | SELF, DEFAULT",
-                "HITTING, ENEMY, CARRYBUFFIDENTIFYING, 冰冻 | SELF, DEFAULT | SELF, DEFAULT",
-                "CASTSKILL, SELF, SKILLSLOTTYPE, 5 | SELF, DEFAULT | SELF, DEFAULT",
-                "HITTING, ENEMY, ACTORELEMENTTYPE, Ventus | SELF, DEFAULT | SELF, DEFAULT",
-                "HITTING, ENEMY, ACTORELEMENTTYPE, Umbra | SELF, DEFAULT | ENEMY, DEFAULT",
-                "HITTING, ENEMY, ACTORELEMENTTYPE, Terra | SELF, DEFAULT | SELF, DEFAULT",
-                "BEHIT, ENEMY, ACTORELEMENTTYPE, Terra | SELF, DEFAULT | SELF, DEFAULT",
-                "BEHIT, ENEMY, ACTORELEMENTTYPE, Ventus | SELF, DEFAULT | SELF, DEFAULT",
-                "BEHIT, ENEMY, ACTORELEMENTTYPE, Umbra | SELF, DEFAULT | SELF, DEFAULT",
-                "HITTING, ENEMY, CARRYBUFFGROUP, 10411 | SELF, DEFAULT | SELF, DEFAULT",
-                "BEHIT, SELF, DEFAULT | SELF, DEFAULT | ENEMY, DEFAULT",
-                "CRIT, SELF, DEFAULT | SELF, DEFAULT | ENEMY, DEFAULT",
-                "HITTING, SELF, DEFAULT | SELF, DEFAULT | ENEMY, DEFAULT"
+                "CASTSKILL, SELF, SKILLSLOTTYPE, 4 | SELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Terra"
             ],
             "params": "7.5%,12.5%,16/9%,15%,16/10.5%,17.5%,16/12%,20%,16/13.5%,22.5%,16/15%,25%,16",
             "icon": "DiscSkill_4",
