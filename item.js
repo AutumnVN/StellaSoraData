@@ -9,7 +9,6 @@ for (const id in ITEM) {
     const itemName = LANG_ITEM[ITEM[id].Title];
     if (!itemName || itemName === '???' || itemName === '!NONEED!') continue;
 
-    item[itemName] = id;
     item[id] = {
         id: +id,
         name: LANG_ITEM[ITEM[id].Title],
