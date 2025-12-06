@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, getEffectData } = require('./utils');
+const { ATTR_TYPE, EFFECT_TYPE, collectParamsFrom, getEffectData, PARAM_TYPE } = require('./utils');
 const DISC = require('./EN/bin/Disc.json');
 const DISCTAG = require('./EN/bin/DiscTag.json');
 const DISCPROMOTE = require('./EN/bin/DiscPromote.json');
@@ -18,8 +18,6 @@ const LANG_DISCTAG = require('./EN/language/en_US/DiscTag.json');
 const LANG_MAINSKILL = require('./EN/language/en_US/MainSkill.json');
 const LANG_SECONDARYSKILL = require('./EN/language/en_US/SecondarySkill.json');
 const LANG_SUBNOTESKILL = require('./EN/language/en_US/SubNoteSkill.json');
-
-const { ATTR_TYPE, EFFECT_TYPE } = require('./utils');
 
 const disc = {};
 
