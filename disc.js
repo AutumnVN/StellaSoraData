@@ -87,7 +87,8 @@ function getMainSkillEffectTypes(id) {
         let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
 
-        effectTypes.push(ATTR_TYPE[type] || EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
+        effectTypes.push(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
+        if (ATTR_TYPE[type]) effectTypes.push(ATTR_TYPE[type]);
     }
 
     return [...new Set(effectTypes)];
@@ -156,7 +157,8 @@ function getSeconarySkillEffectTypes(id) {
         let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
 
-        effectTypes.push(ATTR_TYPE[type] || EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
+        effectTypes.push(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
+        if (ATTR_TYPE[type]) effectTypes.push(ATTR_TYPE[type]);
     }
 
     return [...new Set(effectTypes)];
