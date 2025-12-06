@@ -332,6 +332,8 @@ const LOGIC_TYPE = {
 function collectParamsFrom(obj) {
     if (!obj) return [];
 
+    const paramKeys = Object.keys(obj).filter(k => k.match(/^param\d+$/i));
+
     if (paramKeys.length === 0) return [];
 
     const indices = paramKeys.map(k => {
