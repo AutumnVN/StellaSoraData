@@ -86,9 +86,9 @@ function getMainSkillEffectTypes(id) {
 
         let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
-        if (ATTR_TYPE[type]) effectTypes.push(ATTR_TYPE[type]);
+        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${ATTR_TYPE[type]}:${PARAM_TYPE[paramType]}` : ''}`);
     }
 
     return [...new Set(effectTypes)];
@@ -156,9 +156,9 @@ function getSeconarySkillEffectTypes(id) {
 
         let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
-        if (ATTR_TYPE[type]) effectTypes.push(ATTR_TYPE[type]);
+        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${ATTR_TYPE[type]}:${PARAM_TYPE[paramType]}` : ''}`);
     }
 
     return [...new Set(effectTypes)];

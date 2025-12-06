@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, iHateFloatingPointNumber, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, TRIGGER_TYPE, TARGET_TYPE, CONDITION_TYPE, LOGIC_TYPE, getEffectData } = require('./utils');
+const { collectParamsFrom, iHateFloatingPointNumber, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, TRIGGER_TYPE, TARGET_TYPE, CONDITION_TYPE, LOGIC_TYPE, getEffectData, PARAM_TYPE } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -158,9 +158,9 @@ function getSkillEffectTypes(skillId) {
 
         let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
-        if (ATTR_TYPE[type]) effectTypes.push(ATTR_TYPE[type]);
+        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${ATTR_TYPE[type]}:${PARAM_TYPE[paramType]}` : ''}`);
     }
 
     return [...new Set(effectTypes)];
@@ -368,9 +368,9 @@ function getPotentialEffectTypes(potId) {
 
         let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
-        if (ATTR_TYPE[type]) effectTypes.push(ATTR_TYPE[type]);
+        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${ATTR_TYPE[type]}:${PARAM_TYPE[paramType]}` : ''}`);
     }
 
     return [...new Set(effectTypes)];
@@ -494,9 +494,9 @@ function getTalentEffectTypes(talentId) {
 
         let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]);
-        if (ATTR_TYPE[type]) effectTypes.push(ATTR_TYPE[type]);
+        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${ATTR_TYPE[type]}:${PARAM_TYPE[paramType]}` : ''}`);
     }
 
     return [...new Set(effectTypes)];

@@ -102,6 +102,12 @@ const ATTR_TYPE = {
     88: 'BE_ADD_SHIELD_STRENGTHEN',
 };
 
+const PARAM_TYPE = {
+    1: 'BASE',
+    2: 'PERCENTAGE',
+    3: 'ABSOLUTE'
+};
+
 const DAMAGE_TYPE = {
     1: 'Auto Attack',
     2: 'Skill',
@@ -326,7 +332,6 @@ const LOGIC_TYPE = {
 function collectParamsFrom(obj) {
     if (!obj) return [];
 
-    const paramKeys = Object.keys(obj).filter(k => /^param\d+$/i.test(k));
     if (paramKeys.length === 0) return [];
 
     const indices = paramKeys.map(k => {
@@ -571,6 +576,7 @@ module.exports = {
     resolveParam,
     getEffectData,
     ATTR_TYPE,
+    PARAM_TYPE,
     DAMAGE_TYPE,
     EFFECT_TYPE,
     CORNER_TYPE,
