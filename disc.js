@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { ATTR_TYPE, EFFECT_TYPE, collectParamsFrom, getEffectData, PARAM_TYPE } = require('./utils');
+const { ATTR_TYPE, EFFECT_TYPE, collectParamsFrom, getEffectData, PARAM_TYPE, formatEffectType } = require('./utils');
 const DISC = require('./EN/bin/Disc.json');
 const DISCTAG = require('./EN/bin/DiscTag.json');
 const DISCPROMOTE = require('./EN/bin/DiscPromote.json');
@@ -86,7 +86,7 @@ function getMainSkillEffectTypes(id) {
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
         const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${['ATTR_FIX', 'ADDBUFF'].includes(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]) ? ATTR_TYPE[type] : type}:${PARAM_TYPE[paramType]}` : ''}`);
+        effectTypes.push(formatEffectType(currentId, type, paramType));
     }
 
     return [...new Set(effectTypes)];
@@ -156,7 +156,7 @@ function getSeconarySkillEffectTypes(id) {
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
         const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${['ATTR_FIX', 'ADDBUFF'].includes(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]) ? ATTR_TYPE[type] : type}:${PARAM_TYPE[paramType]}` : ''}`);
+        effectTypes.push(formatEffectType(currentId, type, paramType));
     }
 
     return [...new Set(effectTypes)];

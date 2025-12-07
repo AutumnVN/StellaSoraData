@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE } = require('./utils');
+const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -157,7 +157,7 @@ function getSkillEffectTypes(skillId) {
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
         const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${['ATTR_FIX', 'ADDBUFF'].includes(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]) ? ATTR_TYPE[type] : type}:${PARAM_TYPE[paramType]}` : ''}`);
+        effectTypes.push(formatEffectType(currentId, type, paramType));
     }
 
     return [...new Set(effectTypes)];
@@ -367,7 +367,7 @@ function getPotentialEffectTypes(potId) {
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
         const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${['ATTR_FIX', 'ADDBUFF'].includes(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]) ? ATTR_TYPE[type] : type}:${PARAM_TYPE[paramType]}` : ''}`);
+        effectTypes.push(formatEffectType(currentId, type, paramType));
     }
 
     return [...new Set(effectTypes)];
@@ -493,7 +493,7 @@ function getTalentEffectTypes(talentId) {
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
         const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${['ATTR_FIX', 'ADDBUFF'].includes(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]) ? ATTR_TYPE[type] : type}:${PARAM_TYPE[paramType]}` : ''}`);
+        effectTypes.push(formatEffectType(currentId, type, paramType));
     }
 
     return [...new Set(effectTypes)];

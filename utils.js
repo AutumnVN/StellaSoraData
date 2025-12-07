@@ -572,11 +572,35 @@ function getEffectData(effectId) {
     return result;
 }
 
+function formatEffectType(id, type, paramType) {
+    let result = '';
+    const effectTypeStr = EFFECT_TYPE[EFFECTVALUE[id].EffectType];
+    const attrTypeStr = ATTR_TYPE[type];
+    const paramTypeStr = PARAM_TYPE[paramType];
+
+    result += effectTypeStr;
+
+    if (attrTypeStr) {
+        if (['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX', 'ADDBUFF'].includes(effectTypeStr)) {
+            result += `:${attrTypeStr}`;
+        } else {
+            result += `:${type}`;
+        }
+
+        if (['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
+            result += `:${paramTypeStr}`;
+        }
+    }
+
+    return result;
+}
+
 module.exports = {
     collectParamsFrom,
     iHateFloatingPointNumber,
     resolveParam,
     getEffectData,
+    formatEffectType,
     ATTR_TYPE,
     PARAM_TYPE,
     DAMAGE_TYPE,
