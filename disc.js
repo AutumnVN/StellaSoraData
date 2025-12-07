@@ -86,7 +86,7 @@ function getMainSkillEffectTypes(id) {
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
         const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${ATTR_TYPE[type]}:${PARAM_TYPE[paramType]}` : ''}`);
+        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${['ATTR_FIX', 'ADDBUFF'].includes(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]) ? ATTR_TYPE[type] : type}:${PARAM_TYPE[paramType]}` : ''}`);
     }
 
     return [...new Set(effectTypes)];
@@ -156,7 +156,7 @@ function getSeconarySkillEffectTypes(id) {
         if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
         const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
 
-        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${ATTR_TYPE[type]}:${PARAM_TYPE[paramType]}` : ''}`);
+        effectTypes.push(`${EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]}${ATTR_TYPE[type] ? `:${['ATTR_FIX', 'ADDBUFF'].includes(EFFECT_TYPE[EFFECTVALUE[currentId].EffectType]) ? ATTR_TYPE[type] : type}:${PARAM_TYPE[paramType]}` : ''}`);
     }
 
     return [...new Set(effectTypes)];
