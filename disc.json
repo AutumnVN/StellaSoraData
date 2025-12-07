@@ -9149,7 +9149,7 @@
             "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Ignis Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
                 "ATTR_FIX:Skill DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Ignis | SELF, DEFAULT | SELF, DEFAULT",
@@ -9164,7 +9164,7 @@
             "name": "Twin Moons' Waltz",
             "desc": "When a support Ignis Trekker is on the battlefield, increases the main Ignis Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, SELF, ACTORELEMENTTYPE, Ignis, AND, SELF, SELF_BE_MAINCONTROL | SELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 2 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ignis"
@@ -10265,7 +10265,7 @@
             "desc": "Increases the Skill DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Lux Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
                 "ATTR_FIX:Skill DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Lux | SELF, DEFAULT | SELF, DEFAULT",
@@ -10280,7 +10280,7 @@
             "name": "Tranquil Light",
             "desc": "When a support Lux Trekker is on the battlefield, increases the main Lux Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, SELF, ACTORELEMENTTYPE, Lux, AND, SELF, SELF_BE_MAINCONTROL | SELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 5 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Lux"
@@ -11381,7 +11381,7 @@
             "desc": "Increases the Skill DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Ventus Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
                 "ATTR_FIX:Skill DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Ventus | SELF, DEFAULT | SELF, DEFAULT",
@@ -11396,7 +11396,7 @@
             "name": "Companion's Bond",
             "desc": "When a support Ventus Trekker is on the battlefield, increases the main Ventus Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, SELF, ACTORELEMENTTYPE, Ventus, AND, SELF, SELF_BE_MAINCONTROL | SELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 4 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ventus"
@@ -12497,7 +12497,7 @@
             "desc": "Increases the Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2}, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
                 "ATTR_FIX:Skill DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Aqua | SELF, DEFAULT | SELF, DEFAULT",
@@ -12512,7 +12512,7 @@
             "name": "Shroud of Mist",
             "desc": "When a support Aqua Trekker is on the battlefield, increases the main Aqua Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, SELF, ACTORELEMENTTYPE, Aqua, AND, SELF, SELF_BE_MAINCONTROL | SELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 1 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Aqua"
@@ -13613,7 +13613,7 @@
             "desc": "Increases the Skill DMG of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Umbra Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
                 "ATTR_FIX:Skill DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Umbra | SELF, DEFAULT | SELF, DEFAULT",
@@ -13628,7 +13628,7 @@
             "name": "Moonlit Taps",
             "desc": "When a support Umbra Trekker is on the battlefield, increases the main Umbra Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, SELF, ACTORELEMENTTYPE, Umbra, AND, SELF, SELF_BE_MAINCONTROL | SELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 6 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Umbra"
@@ -14729,7 +14729,7 @@
             "desc": "Increases the Skill DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Terra Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
             "effectType": [
                 "ATTR_FIX:Skill DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Terra | SELF, DEFAULT | SELF, DEFAULT",
@@ -14744,7 +14744,7 @@
             "name": "Engine Lubrication",
             "desc": "When a support Terra Trekker is on the battlefield, increases the main Terra Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, SELF, ACTORELEMENTTYPE, Terra, AND, SELF, SELF_BE_MAINCONTROL | SELF, CERTAIN_TYPE_ASSISTANT_IN_BATTLE, 3 | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Terra"
@@ -18640,7 +18640,7 @@
             "desc": "Increases the Ultimate DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Ventus Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
                 "ATTR_FIX:Ultimate DMG:BASE",
-                "SPECIAL_ATTR_FIX:Accuracy:ABSOLUTE"
+                "SPECIAL_ATTR_FIX:4:ABSOLUTE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Ventus | SELF, DEFAULT | SELF, DEFAULT",
@@ -19198,7 +19198,7 @@
             "desc": "Increases the Ultimate DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Ignis Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
                 "ATTR_FIX:Ultimate DMG:BASE",
-                "SPECIAL_ATTR_FIX:Accuracy:ABSOLUTE"
+                "SPECIAL_ATTR_FIX:4:ABSOLUTE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Ignis | SELF, DEFAULT | SELF, DEFAULT",
@@ -19756,7 +19756,7 @@
             "desc": "Increases the Ultimate DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Lux Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
                 "ATTR_FIX:Ultimate DMG:BASE",
-                "SPECIAL_ATTR_FIX:Accuracy:ABSOLUTE"
+                "SPECIAL_ATTR_FIX:4:ABSOLUTE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Lux | SELF, DEFAULT | SELF, DEFAULT",
@@ -20314,7 +20314,7 @@
             "desc": "Increases the Ultimate DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Aqua Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
                 "ATTR_FIX:Ultimate DMG:BASE",
-                "SPECIAL_ATTR_FIX:Accuracy:ABSOLUTE"
+                "SPECIAL_ATTR_FIX:4:ABSOLUTE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Aqua | SELF, DEFAULT | SELF, DEFAULT",
@@ -20872,7 +20872,7 @@
             "desc": "Increases the Ultimate DMG of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Umbra Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
                 "ATTR_FIX:Ultimate DMG:BASE",
-                "SPECIAL_ATTR_FIX:Accuracy:ABSOLUTE"
+                "SPECIAL_ATTR_FIX:4:ABSOLUTE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Umbra | SELF, DEFAULT | SELF, DEFAULT",
@@ -21430,7 +21430,7 @@
             "desc": "Increases the Ultimate DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Terra Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
             "effectType": [
                 "ATTR_FIX:Ultimate DMG:BASE",
-                "SPECIAL_ATTR_FIX:Accuracy:ABSOLUTE"
+                "SPECIAL_ATTR_FIX:4:ABSOLUTE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Terra | SELF, DEFAULT | SELF, DEFAULT",
@@ -22010,7 +22010,7 @@
             "desc": "If the main Trekker is inflicted with Blazing Armor, increases Ignis squadmates' Ultimate DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "ADDBUFF:Ultimate DMG:undefined",
-                "HITTED_ADDITIONAL_ATTR_FIX:Ultimate DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:58:BASE"
             ],
             "effectData": [
                 "GETBUFF, MAINCONTROL_PLAYER, CERTAINBUFFID, 4001041 | SELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ignis",
@@ -22610,7 +22610,7 @@
             "name": "Snowpetal Storm",
             "desc": "Increases Ventus Trekkers' Ultimate DMG dealt to targets inflicted with Laceration by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Ultimate DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:58:BASE"
             ],
             "effectData": [
                 "HITTING, ENEMY, CARRYBUFFID, 4002021 | SELF, ACTORELEMENTTYPE, Ventus | SELF, DEFAULT"
@@ -23191,7 +23191,7 @@
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bIncreases the Aqua DMG dealt by Aqua Trekkers in the squad to targets inflicted with ##Chill#1027# or ##Frozen#1002# by an additional <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "ATTR_FIX:Aqua DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Aqua DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:17:BASE"
             ],
             "effectData": [
                 "HITTING, ENEMY, CARRYBUFFIDENTIFYING, Cold, OR, ENEMY, CARRYBUFFIDENTIFYING | SELF, ACTORELEMENTTYPE, Aqua | SELF, DEFAULT"
@@ -23245,7 +23245,7 @@
             "desc": "Increases Aqua Trekkers' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Aqua Trekker deals Skill DMG, if a support Aqua Trekker is on the battlefield, increases the DMG of this hit by <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "ATTR_FIX:Skill DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Aqua | SELF, DEFAULT | SELF, DEFAULT",
@@ -25047,7 +25047,7 @@
             "name": "Windswept Prayer",
             "desc": "When any Ventus Trekker deals Skill DMG, if the main Ventus Trekker has a shield, increases the DMG of this hit by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, SELF, ACTORELEMENTTYPE, Ventus | MAINCONTROL_PLAYER, HAVE_SHIELD, AND, MAINCONTROL_PLAYER, ACTORELEMENTTYPE | SELF, ACTORELEMENTTYPE, Ventus"
@@ -26240,8 +26240,8 @@
             "name": "Dancing Waters",
             "desc": "When any Aqua Trekker deals Skill DMG, if the main Aqua Trekker has a shield, increases the DMG of this hit by <color=#ec6d21>{1}</color>.\u000bIncreases the main Aqua Trekker's Aqua DMG dealt to elite or higher-tier targets by <color=#ec6d21>{2}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Aqua DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE",
+                "HITTED_ADDITIONAL_ATTR_FIX:17:BASE"
             ],
             "effectData": [
                 "HITTING, SELF, ACTORELEMENTTYPE, Aqua | MAINCONTROL_PLAYER, HAVE_SHIELD, AND, MAINCONTROL_PLAYER, ACTORELEMENTTYPE | SELF, ACTORELEMENTTYPE, Aqua",
@@ -27436,7 +27436,7 @@
             "name": "Epic Adventure",
             "desc": "When the main Ignis Trekker deals Skill DMG, if her HP is above {1}, increases the DMG of this hit by <color=#ec6d21>{2}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, SELF, HEALTHUP, 50, AND, SELF, ACTORELEMENTTYPE | SELF, SELF_BE_MAINCONTROL | MAINCONTROL_PLAYER, ACTORELEMENTTYPE, Ignis"
@@ -29182,7 +29182,7 @@
             "name": "Subtle Influence",
             "desc": "Increases Ventus Trekkers' Ventus DMG dealt to targets with Ventus VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ventus Trekker by {2}.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Ventus DMG:BASE",
+                "HITTED_ADDITIONAL_ATTR_FIX:20:BASE",
                 "ATTR_FIX:DMG Taken:BASE"
             ],
             "effectData": [
@@ -29776,7 +29776,7 @@
             "name": "Windbreaking Shots",
             "desc": "Increases Ignis Trekkers' Ignis DMG dealt to targets with Ignis VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ignis Trekker by {2}.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Ignis DMG:BASE",
+                "HITTED_ADDITIONAL_ATTR_FIX:18:BASE",
                 "ATTR_FIX:DMG Taken:BASE"
             ],
             "effectData": [
@@ -30373,7 +30373,7 @@
             "name": "Flashing Memories",
             "desc": "Increases Lux Trekkers' Lux DMG dealt to targets with Lux VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Lux Trekker by {2}.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Lux DMG:BASE",
+                "HITTED_ADDITIONAL_ATTR_FIX:21:BASE",
                 "ATTR_FIX:DMG Taken:BASE"
             ],
             "effectData": [
@@ -30970,7 +30970,7 @@
             "name": "Unbreakable Trio",
             "desc": "Increases Aqua Trekkers' Aqua DMG dealt to targets with Aqua VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Aqua Trekker by {2}.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Aqua DMG:BASE",
+                "HITTED_ADDITIONAL_ATTR_FIX:17:BASE",
                 "ATTR_FIX:DMG Taken:BASE"
             ],
             "effectData": [
@@ -31564,7 +31564,7 @@
             "name": "Moment of Terror",
             "desc": "Increases Umbra Trekkers' Umbra DMG dealt to targets with Umbra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Umbra Trekker by {2}.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Umbra DMG:BASE",
+                "HITTED_ADDITIONAL_ATTR_FIX:22:BASE",
                 "ATTR_FIX:DMG Taken:BASE"
             ],
             "effectData": [
@@ -32153,7 +32153,7 @@
             "name": "Street Spirit",
             "desc": "Increases Terra Trekkers' Terra DMG dealt to targets with Terra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Terra Trekker by {2}.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Terra DMG:BASE",
+                "HITTED_ADDITIONAL_ATTR_FIX:19:BASE",
                 "ATTR_FIX:Aqua DMG Taken:BASE"
             ],
             "effectData": [
@@ -32791,7 +32791,7 @@
             "name": "Water Mirror",
             "desc": "Increases Aqua Trekkers' Skill DMG dealt to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, ENEMY, CERTAIN_MONSTER_EPICTYPE, 2,3,4 | SELF, ACTORELEMENTTYPE, Aqua | SELF, DEFAULT"
@@ -33352,7 +33352,7 @@
             "desc": "Increases Ignis Trekkers' Skill DMG by <color=#ec6d21>{1}</color>. When the target is inflicted with ##Burn#2027#, increases by an additional <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "ATTR_FIX:Skill DMG:BASE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Ignis | SELF, DEFAULT | SELF, DEFAULT",
@@ -34551,7 +34551,7 @@
             "name": "Falling Gleam",
             "desc": "Increases Lux Trekkers' Skill DMG dealt to targets inflicted with Shock by <color=#ec6d21>{1}</color>.",
             "effectType": [
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "HITTING, ENEMY, CARRYBUFFID, 4030021, AND, SELF, ACTORELEMENTTYPE | SELF, DEFAULT | SELF, DEFAULT"
@@ -35152,7 +35152,7 @@
             "desc": "If the main Trekker is inflicted with Bless, increases the squad's Aqua DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "ADDBUFF:Aqua DMG:undefined",
-                "HITTED_ADDITIONAL_ATTR_FIX:Aqua DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:17:BASE"
             ],
             "effectData": [
                 "GETBUFF, MAINCONTROL_PLAYER, CERTAINBUFFID, 4031041 | SELF, DEFAULT | FULL_TEAM, DEFAULT",
@@ -36951,7 +36951,7 @@
             "desc": "Increases Terra Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bWhen any Terra Trekker deals Skill DMG, if a support Terra Trekker is on the battlefield, increases the Skill DMG by <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "ATTR_FIX:ATK:PERCENTAGE",
-                "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Terra | SELF, DEFAULT | SELF, DEFAULT",

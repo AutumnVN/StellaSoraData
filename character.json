@@ -5970,7 +5970,7 @@
                             3
                         ],
                         "effectType": [
-                            "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG:BASE"
+                            "HITTED_ADDITIONAL_ATTR_FIX:57:BASE"
                         ],
                         "effectData": [
                             "HITTING, SELF, DEFAULT | SELF, DEFAULT | SELF, DEFAULT"
@@ -17348,7 +17348,7 @@
                     "desc": "Reduces the Cooldown of &Param1& (Main Skill) by <color=#0abec5>&Param2&</color>s. \u000bCasting the Main Skill will automatically launch continuous attacks on the target until available charges run out.",
                     "damageType": [],
                     "effectType": [
-                        "CD:Evasion:ABSOLUTE"
+                        "CD:5:ABSOLUTE"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -44373,7 +44373,7 @@
                     "desc": "Energy Charge Efficiency +<color=#ec6d21>&Param1&</color> for &Param2&s when Mistique casts the Main Skill or Support Skill.",
                     "damageType": [],
                     "effectType": [
-                        "PLAYER_ATTR_FIX:ATK:BASE"
+                        "PLAYER_ATTR_FIX:1:BASE"
                     ],
                     "addAttrType": [],
                     "effectData": [],
