@@ -28553,6 +28553,599 @@
             }
         ]
     },
+    "214015": {
+        "id": 214015,
+        "name": "Deer's Song",
+        "star": 5,
+        "element": "Ventus",
+        "tag": [
+            "Element",
+            "VUL",
+            "Skills"
+        ],
+        "mainSkill": {
+            "id": 4015,
+            "name": "Deer's Song",
+            "desc": "Increases the Skill DMG of Ventus Support Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ventus Support Trekker deals Skill DMG, inflicts Flowing Fragrance on the target, up to {2} stacks.\nWhen any Ventus Support Trekker deals Skill DMG to a target with max stacks of Flowing Fragrance, removes all stacks and inflicts the following effects on the target: Increases the Skill DMG Taken by the target by <color=#ec6d21>{3}</color> for {4}s, up to {5} stacks.",
+            "effectType": [
+                "Skill DMG (base)",
+                "Skill DMG Taken (base)"
+            ],
+            "effectData": [
+                "NOTHING, SELF, SELF_BE_ASSISTANT, AND, SELF, ACTORELEMENTTYPE | SELF, DEFAULT | SELF, DEFAULT",
+                "BEHIT, ENEMY, ACTORELEMENTTYPE, Ventus | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "params": "20%,5,1.5%,6,10/24%,5,1.8%,6,10/28%,5,2.1%,6,10/32%,5,2.4%,6,10/36%,5,2.7%,6,10/40%,5,3%,6,10",
+            "icon": "DiscSkill_214015",
+            "iconBg": "db_DiscSkill_4"
+        },
+        "secondarySkill1": {
+            "id": 40151,
+            "name": "Dreamflow Breeze",
+            "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Ventus Trekker casts a Skill, increases their Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "effectType": [
+                "Ventus DMG (base)",
+                "ADDBUFF:Skill DMG",
+                "Skill DMG (base)"
+            ],
+            "effectData": [
+                "CASTSKILL, SELF, SKILLSLOTTYPE, 2, AND, SELF, ACTORELEMENTTYPE | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "params": "2.5%,6.5%,10/5%,13%,10/7.5%,19.5%,10/10%,26%,10/12.5%,32.5%,10",
+            "requirements": [
+                {
+                    "Melody of Pummel": 10,
+                    "Melody of Ventus": 10
+                },
+                {
+                    "Melody of Pummel": 25,
+                    "Melody of Ventus": 25
+                },
+                {
+                    "Melody of Pummel": 40,
+                    "Melody of Ventus": 40
+                },
+                {
+                    "Melody of Pummel": 55,
+                    "Melody of Ventus": 55
+                },
+                {
+                    "Melody of Pummel": 70,
+                    "Melody of Ventus": 70
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_4"
+        },
+        "secondarySkill2": {
+            "id": 40152,
+            "name": "Scattered Fragrance",
+            "desc": "When the Ventus Main Trekker deals DMG to a target inflicted with Flowing Fragrance, increases the Ventus DMG of this hit by <color=#ec6d21>{1}</color>.",
+            "effectType": [],
+            "effectData": [],
+            "params": "8%/16%/24%/32%/40%",
+            "requirements": [
+                {
+                    "Melody of Pummel": 15,
+                    "Melody of Luck": 15,
+                    "Melody of Ventus": 15
+                },
+                {
+                    "Melody of Pummel": 30,
+                    "Melody of Luck": 30,
+                    "Melody of Ventus": 30
+                },
+                {
+                    "Melody of Pummel": 45,
+                    "Melody of Luck": 45,
+                    "Melody of Ventus": 45
+                },
+                {
+                    "Melody of Pummel": 60,
+                    "Melody of Luck": 60,
+                    "Melody of Ventus": 60
+                },
+                {
+                    "Melody of Pummel": 75,
+                    "Melody of Luck": 75,
+                    "Melody of Ventus": 75
+                }
+            ],
+            "icon": "DiscSkill_9",
+            "iconBg": "db_DiscSkill_4"
+        },
+        "supportNote": [
+            {
+                "Melody of Luck": 2,
+                "Melody of Ultimate": 4
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Ultimate": 5
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Ultimate": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Ultimate": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Ultimate": 7
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Ultimate": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Ultimate": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Ultimate": 9
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Ultimate": 10
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 15,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 20,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 24,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 29,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 33,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 47,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 51,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 56,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 67,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 71,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 76,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 80,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 85,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 89,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 94,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 98,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 103,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 107,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 112,
+                "Ventus DMG": "3%"
+            },
+            {
+                "ATK": 134,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 138,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 143,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 147,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 152,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 156,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 161,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 165,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 170,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 174,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 179,
+                "Ventus DMG": "5%"
+            },
+            {
+                "ATK": 215,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 219,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 224,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 228,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 233,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 237,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 242,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 246,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 251,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 255,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 260,
+                "Ventus DMG": "7%"
+            },
+            {
+                "ATK": 312,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 316,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 321,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 325,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 330,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 334,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 339,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 343,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 348,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 352,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 357,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 428,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 433,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 437,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 442,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 446,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 451,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 455,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 460,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 464,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 469,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 473,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 568,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 572,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 577,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 581,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 586,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 590,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 595,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 599,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 604,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 608,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 613,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 735,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 740,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 744,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 749,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 753,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 758,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 762,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 767,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 771,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 776,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 780,
+                "Ventus DMG": "13%"
+            },
+            {
+                "ATK": 936,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 941,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 945,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 950,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 954,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 959,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 963,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 968,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 972,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 977,
+                "Ventus DMG": "15%"
+            },
+            {
+                "ATK": 981,
+                "Ventus DMG": "15%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Light Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Faint Light Breath": 6,
+                "Emberflies Soul": 13,
+                "Dorra": 26700
+            },
+            {
+                "Faint Light Breath": 13,
+                "Emberflies Soul": 20,
+                "Dorra": 59900
+            },
+            {
+                "Faint Light Breath": 20,
+                "Emberflies Soul": 33,
+                "Dorra": 89900
+            },
+            {
+                "Faint Light Breath": 26,
+                "Emberflies Soul": 53,
+                "Dorra": 197200
+            },
+            {
+                "Faint Light Breath": 40,
+                "Emberflies Soul": 73,
+                "Evernight Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Emberflies Soul": 100,
+                "Evernight Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Emberflies Soul": 126,
+                "Evernight Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
     "214017": {
         "id": 214017,
         "name": "Fireworks",
@@ -32713,6 +33306,599 @@
             {
                 "Phantom Step Remnant": 126,
                 "Frenzied Waltz Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214024": {
+        "id": 214024,
+        "name": "One, Two, Three, Jump!",
+        "star": 5,
+        "element": "Ventus",
+        "tag": [
+            "Skills",
+            "Ultimate",
+            "ATK"
+        ],
+        "mainSkill": {
+            "id": 4024,
+            "name": "One, Two, Three, Jump!",
+            "desc": "When any Ventus Trekker deals Ultimate DMG, increases the Skill DMG of the Ventus Trekkers in the squad by <color=#ec6d21>{1}</color> for {2}s.",
+            "effectType": [
+                "ADDBUFF:Skill DMG",
+                "Skill DMG (base)"
+            ],
+            "effectData": [
+                "HITTING, SELF, SKILLSLOTTYPE, 4, AND, SELF, ACTORELEMENTTYPE | SELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ventus"
+            ],
+            "params": "25%,3/30%,3/35%,3/40%,3/45%,3/50%,3",
+            "icon": "DiscSkill_214024",
+            "iconBg": "db_DiscSkill_4"
+        },
+        "secondarySkill1": {
+            "id": 40241,
+            "name": "Graceful Dive",
+            "desc": "Increases the Ultimate DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ventus Mark#1017#, increases Ventus squadmates' ATK by <color=#ec6d21>{2}</color> for {3}s.",
+            "effectType": [
+                "Ultimate DMG (base)",
+                "ADDBUFF:ATK",
+                "ATK (%)"
+            ],
+            "effectData": [
+                "NOTHING, SELF, ACTORELEMENTTYPE, Ventus | SELF, DEFAULT | SELF, DEFAULT",
+                "TRIGGER_MARK, SELF, CERTAIN_MARK_ELEMENT_TYPE, Ventus | SELF, DEFAULT | FULL_TEAM, ACTORELEMENTTYPE, Ventus"
+            ],
+            "params": "6%,2%,3/12%,4%,3/18%,6%,3/24%,8%,3/30%,10%,3",
+            "requirements": [
+                {
+                    "Melody of Pummel": 10,
+                    "Melody of Ventus": 10
+                },
+                {
+                    "Melody of Pummel": 25,
+                    "Melody of Ventus": 25
+                },
+                {
+                    "Melody of Pummel": 40,
+                    "Melody of Ventus": 40
+                },
+                {
+                    "Melody of Pummel": 55,
+                    "Melody of Ventus": 55
+                },
+                {
+                    "Melody of Pummel": 70,
+                    "Melody of Ventus": 70
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_4"
+        },
+        "secondarySkill2": {
+            "id": 40242,
+            "name": "Team Spirit",
+            "desc": "When any Support Ventus Trekker inflicts Marks, increases this Trekker's Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "effectType": [],
+            "effectData": [],
+            "params": "7%,3/14%,3/21%,3/28%,3/35%,3",
+            "requirements": [
+                {
+                    "Melody of Focus": 15,
+                    "Melody of Ultimate": 15,
+                    "Melody of Ventus": 15
+                },
+                {
+                    "Melody of Focus": 30,
+                    "Melody of Ultimate": 30,
+                    "Melody of Ventus": 30
+                },
+                {
+                    "Melody of Focus": 45,
+                    "Melody of Ultimate": 45,
+                    "Melody of Ventus": 45
+                },
+                {
+                    "Melody of Focus": 60,
+                    "Melody of Ultimate": 60,
+                    "Melody of Ventus": 60
+                },
+                {
+                    "Melody of Focus": 75,
+                    "Melody of Ultimate": 75,
+                    "Melody of Ventus": 75
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_4"
+        },
+        "supportNote": [
+            {
+                "Melody of Burst": 3,
+                "Melody of Ventus": 3
+            },
+            {
+                "Melody of Burst": 3,
+                "Melody of Ventus": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Ventus": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Ventus": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Ventus": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Ventus": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Ventus": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Ventus": 7
+            },
+            {
+                "Melody of Burst": 7,
+                "Melody of Ventus": 7
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 14,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 18,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 22,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 26,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 30,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 34,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 46,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 50,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 60,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 64,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 68,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 72,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 77,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 80,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 85,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 88,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 93,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 96,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 101,
+                "Ventus DMG": "2%"
+            },
+            {
+                "ATK": 121,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 124,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 129,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 132,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 137,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 140,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 145,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 149,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 153,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 157,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 161,
+                "Ventus DMG": "4%"
+            },
+            {
+                "ATK": 194,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 197,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 202,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 205,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 210,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 213,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 218,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 221,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 226,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 230,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 234,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 281,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 284,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 289,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 293,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 297,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 301,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 305,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 309,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 313,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 317,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 321,
+                "Ventus DMG": "6%"
+            },
+            {
+                "ATK": 385,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 390,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 393,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 398,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 401,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 406,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 410,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 414,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 418,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 422,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 426,
+                "Ventus DMG": "8%"
+            },
+            {
+                "ATK": 511,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 515,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 519,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 523,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 527,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 531,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 536,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 539,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 544,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 547,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 552,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 662,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 666,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 670,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 674,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 678,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 682,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 686,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 690,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 694,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 698,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 702,
+                "Ventus DMG": "10%"
+            },
+            {
+                "ATK": 842,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 847,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 851,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 855,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 859,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 863,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 867,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 871,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 875,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 879,
+                "Ventus DMG": "12%"
+            },
+            {
+                "ATK": 883,
+                "Ventus DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Duloos Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Duloos Breath": 6,
+                "Duloos Soul Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Duloos Breath": 13,
+                "Duloos Soul Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Duloos Breath": 20,
+                "Duloos Soul Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Duloos Breath": 26,
+                "Duloos Soul Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Duloos Breath": 40,
+                "Duloos Soul Remnant": 73,
+                "Duloos Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Duloos Soul Remnant": 100,
+                "Duloos Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Duloos Soul Remnant": 126,
+                "Duloos Essence": 66,
                 "Dorra": 1513800
             }
         ]

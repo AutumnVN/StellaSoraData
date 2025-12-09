@@ -301,6 +301,14 @@
         "type": "Char",
         "rarity": "SSR"
     },
+    "133": {
+        "id": 133,
+        "name": "Nazuka",
+        "desc": "Proof of invitation to add Nazuka to your squad",
+        "literary": "That young reformer always wants to carry the weight of the world on her shoulders alone.\u000bNever yielding, never settling.",
+        "type": "Char",
+        "rarity": "SSR"
+    },
     "134": {
         "id": 134,
         "name": "Fuyuka",
@@ -585,6 +593,14 @@
         "name": "Minova's Soul Key",
         "desc": "Activates Trekker Talents.",
         "literary": "Strangers are the desks, the classroom, the uniform.\u000bYet, your familiar smile is comforting.",
+        "type": "CharShard",
+        "rarity": "SSR"
+    },
+    "1330": {
+        "id": 1330,
+        "name": "Nazuka's Soul Key",
+        "desc": "Activates Trekker Talents.",
+        "literary": "That young reformer always wants to carry the weight of the world on her shoulders alone.\u000bNever yielding, never settling.",
         "type": "CharShard",
         "rarity": "SSR"
     },
@@ -889,6 +905,18 @@
         "name": "Tipsy Daydream",
         "desc": "Certificate that unlocks Minova's exclusive appearance \"Tipsy Daydream\"!",
         "literary": "The coolness of the desk beneath my arms, the warmth of the sun on my back.\u000bThe scent of books enchants me, as I drift into a gentle daydream.",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "13301": {
+        "id": 13301,
+        "name": "Nazuka: Default",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "13302": {
+        "id": 13302,
+        "name": "Nazuka: Awakened",
         "type": "CharacterSkin",
         "rarity": "SSR"
     },
@@ -1853,7 +1881,7 @@
     "73103": {
         "id": 73103,
         "name": "Healthy Rice Ball",
-        "desc": "Currency earned via active participation in the ??? event. Can be used to redeem items in the Event Shop.",
+        "desc": "Currency earned via active participation in the Beyond the Dream event. Can be used to redeem items in the Event Shop.",
         "literary": "Food prepared by Kaede for battles against monsters. Stuffed with vegetables, it tastes refreshing while offering good nutrition.",
         "type": "Item",
         "rarity": "SR"
@@ -2407,6 +2435,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "112133": {
+        "id": 112133,
+        "name": "Kindred Spirits",
+        "desc": "Unlocks the honorary title \"Kindred Spirits\".",
+        "literary": "Proof of friendship with Nazuka!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "112134": {
         "id": 112134,
         "name": "Best Master Ever",
@@ -2559,6 +2595,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "116003": {
+        "id": 116003,
+        "name": "Beyond the Dream",
+        "desc": "Unlocks the Honor Title: Beyond the Dream.",
+        "literary": "Proof of a great success in the event: Beyond the Dream!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "117001": {
         "id": 117001,
         "name": "Season 1 Endgame Ace",
@@ -2642,7 +2686,7 @@
     "120002": {
         "id": 120002,
         "name": "Forest Treasure Shovel",
-        "desc": "Exclusive item for the event: ???.",
+        "desc": "Exclusive item for the event: Beyond the Dream.",
         "literary": "A treasure shovel said to bring good fortune. Unfortunately, it's not very durable.",
         "type": "Item",
         "rarity": "R"
@@ -3107,6 +3151,13 @@
         "type": "Disc",
         "rarity": "SSR"
     },
+    "214015": {
+        "id": 214015,
+        "name": "Deer's Song",
+        "literary": "Deer call softly in the grove, wild grass their sweet feast.\nA maiden rests in afternoon shade, where sunbeams dance and weave.\nLike wind through time the moments flow, \"Click\"—a memory to keep.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
     "214017": {
         "id": 214017,
         "name": "Fireworks",
@@ -3153,6 +3204,13 @@
         "id": 214023,
         "name": "Colors Pierce the Grey",
         "literary": "We had to take a day off now and then.\nEscape the gang fights and the daily grind,\nstep out under a clear sky, and spray paint a rainbow of our own across it.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
+    "214024": {
+        "id": 214024,
+        "name": "One, Two, Three, Jump!",
+        "literary": "A rope\ndangled from a sunlit ledge,\ndropping into the long-forgotten ruins.\nThe girl grabbed it\nand rappelled down.\n\"Hah, just some treasure?\nWatch me haul it up!\"",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -3656,6 +3714,14 @@
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
+    "224015": {
+        "id": 224015,
+        "name": "Deer's Song Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "Deer call softly in the grove, wild grass their sweet feast.\u000bA maiden rests in afternoon shade, where sunbeams dance and weave.\u000bLike wind through time the moments flow, \"Click\"—a memory to keep.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
     "224017": {
         "id": 224017,
         "name": "Fireworks Melody",
@@ -3709,6 +3775,14 @@
         "name": "Colors Pierce the Grey Melody",
         "desc": "Material required for the Crescendo of specific Discs.",
         "literary": "We had to take a day off now and then.\u000bEscape the gang fights and the daily grind,\u000bstep out under a clear sky, and spray paint a rainbow of our own across it.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224024": {
+        "id": 224024,
+        "name": "One, Two, Three, Jump! Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "A rope\u000bdangled from a sunlit ledge,\u000bdropping into the long-forgotten ruins.\u000bThe girl grabbed it\u000band rappelled down.\u000b\"Hah, just some treasure?\u000bWatch me haul it up!\"",
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
@@ -6592,6 +6666,180 @@
         "type": "Potential",
         "rarity": "SR"
     },
+    "513301": {
+        "id": 513301,
+        "name": "Blooming Gale",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513302": {
+        "id": 513302,
+        "name": "Everlasting Elegance",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513303": {
+        "id": 513303,
+        "name": "Fierce Arrow",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513304": {
+        "id": 513304,
+        "name": "Spiral Vortex",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513305": {
+        "id": 513305,
+        "name": "Wind Erosion Impact",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513306": {
+        "id": 513306,
+        "name": "Gale Shield",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513307": {
+        "id": 513307,
+        "name": "Unyielding Leaves",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513308": {
+        "id": 513308,
+        "name": "Gale's Might",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513309": {
+        "id": 513309,
+        "name": "Storm Overturned",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513310": {
+        "id": 513310,
+        "name": "Whisper of Wind",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513311": {
+        "id": 513311,
+        "name": "Precision Control",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513312": {
+        "id": 513312,
+        "name": "Gale Fading",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513313": {
+        "id": 513313,
+        "name": "Willowy Grace",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513321": {
+        "id": 513321,
+        "name": "Youth: Dazzling",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513322": {
+        "id": 513322,
+        "name": "Youth: Hunting",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513323": {
+        "id": 513323,
+        "name": "Flower Formation: Waves",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513324": {
+        "id": 513324,
+        "name": "Flower Formation: Turbulent",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513325": {
+        "id": 513325,
+        "name": "Youth: Weakness",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513326": {
+        "id": 513326,
+        "name": "Youth: Annihilation",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513327": {
+        "id": 513327,
+        "name": "Youth: Blooming",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513328": {
+        "id": 513328,
+        "name": "Flower Formation: Convergence",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513329": {
+        "id": 513329,
+        "name": "Flower Formation: Erosion",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513330": {
+        "id": 513330,
+        "name": "Flower Formation: Blast",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513331": {
+        "id": 513331,
+        "name": "Wind Demon Seed",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513332": {
+        "id": 513332,
+        "name": "Self-Improvement",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513333": {
+        "id": 513333,
+        "name": "Almighty Leader",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513341": {
+        "id": 513341,
+        "name": "Multi-Hurricane",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513342": {
+        "id": 513342,
+        "name": "Aeolus's Blessing",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513343": {
+        "id": 513343,
+        "name": "Maelstrom",
+        "type": "Potential",
+        "rarity": "SR"
+    },
     "513401": {
         "id": 513401,
         "name": "Reload",
@@ -6642,7 +6890,7 @@
     },
     "513409": {
         "id": 513409,
-        "name": "Blast Pursuit",
+        "name": "Blast Chase",
         "type": "Potential",
         "rarity": "SSR"
     },
@@ -6708,7 +6956,7 @@
     },
     "513427": {
         "id": 513427,
-        "name": "Gaining Momentum",
+        "name": "Momentum Primed",
         "type": "Potential",
         "rarity": "SR"
     },
@@ -6744,7 +6992,7 @@
     },
     "513433": {
         "id": 513433,
-        "name": "Companion's Power",
+        "name": "Companions' Power",
         "type": "Potential",
         "rarity": "SSR"
     },
@@ -6762,7 +7010,7 @@
     },
     "513443": {
         "id": 513443,
-        "name": "Peak Condition",
+        "name": "Peak Performance",
         "type": "Potential",
         "rarity": "SR"
     },
@@ -6774,13 +7022,13 @@
     },
     "513502": {
         "id": 513502,
-        "name": "Rapid Fire",
+        "name": "Burst Shooting",
         "type": "SpecificPotential",
         "rarity": "SSR"
     },
     "513503": {
         "id": 513503,
-        "name": "Super Long Exposure",
+        "name": "Extended Exposure",
         "type": "SpecificPotential",
         "rarity": "SSR"
     },
@@ -6846,7 +7094,7 @@
     },
     "513521": {
         "id": 513521,
-        "name": "Stay Happy",
+        "name": "Happy Face",
         "type": "SpecificPotential",
         "rarity": "SSR"
     },

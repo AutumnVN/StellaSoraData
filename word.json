@@ -470,10 +470,22 @@
     },
     "4002": {
         "name": "Shadow Clone",
-        "desc": "Shadow Clone is &Param1&'s minion and has 100% of &Param1&'s ATK. It is immune to DMG and lasts for 5s.",
+        "desc": "Shadow Clone is &Param1&'s minion and has 100% of &Param1&'s ATK. It is immune to DMG and lasts for 5s. Up to 5 Shadow Clones can exist at the same time.",
         "params": [
             "???"
         ]
+    },
+    "4003": {
+        "name": "Wind Chant",
+        "desc": "Can stack up to &Param1& times. When Wind Chant is at max stacks, Nazuka consumes all stacks of Wind Chant upon casting her next Skill and enters Wind Roar.",
+        "params": [
+            20
+        ]
+    },
+    "4004": {
+        "name": "Flower Formation",
+        "desc": "Up to 3 Flower Formations can be present at the same time. Flower Formations of Bouquet Blast (Support Skill) can deal DMG to the same target no more than once per second.",
+        "params": []
     },
     "4501": {
         "name": "Fear",

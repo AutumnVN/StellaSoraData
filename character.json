@@ -22552,7 +22552,7 @@
                     "id": 511922,
                     "name": "Gentle Thaw",
                     "briefDesc": "When the Support Skill triggers a ##Ventus Mark#1017#, causes an explosion and reduces Skill Cooldown.",
-                    "desc": "When Flowers Bloom (Support Skill) triggers ##Ventus Mark#1017#, causes an explosion that deals <color=#0abec5>&Param1&</color> Ventus Skill DMG and reduces Skill Cooldown by <color=#0abec5>&Param2&</color>s.\u000bThis effect can only be triggered &Param3&</color> times per Skill cast.",
+                    "desc": "When Flowers Bloom (Support Skill) triggers ##Ventus Mark#1017#, causes an explosion that deals <color=#0abec5>&Param1&</color> Ventus Skill DMG and reduces Skill Cooldown by <color=#0abec5>&Param2&</color>s.\u000bThis effect can only be triggered <color=#0abec5>&Param3&</color> times per Skill cast.",
                     "damageType": [
                         "Skill"
                     ],
@@ -39298,21 +39298,21 @@
     "133": {
         "id": 133,
         "name": "Nazuka",
-        "desc": "???",
+        "desc": "A powerful trekker who wields Ventus magic, her exceptional judgment is an innate gift that makes her a natural leader.",
         "star": 5,
         "element": "Ventus",
         "class": "Versatile",
         "attackType": "Ranged",
         "style": "Steady",
-        "force": "Petal Bloom Guild",
+        "force": "Petal Bloom",
         "tag": [
             "Versatile",
             "Steady",
-            "Petal Bloom Guild"
+            "Petal Bloom"
         ],
-        "cnCv": "???",
-        "jpCv": "???",
-        "birthday": "???",
+        "cnCv": "Liu Fourteen",
+        "jpCv": "Shizuka Ito",
+        "birthday": "June 17th",
         "loveGift": [
             "Whisper Wind Spinner",
             "Chilling Wind Spinner",
@@ -39329,12 +39329,25 @@
             "Reflective Photo Capturer",
             "Ultra-Precision Photo Capturer"
         ],
-        "date": [],
+        "date": [
+            {
+                "id": 133301,
+                "name": "False Alarm",
+                "clue": "Visit the Market to unlock",
+                "secondChoice": "What's that? Looks suspicious."
+            },
+            {
+                "id": 133302,
+                "name": "Ever-Turning Waterwheel",
+                "clue": "Visit the Port to unlock",
+                "secondChoice": "Take a small boat out for some coastal sightseeing."
+            }
+        ],
         "normalAtk": {
             "id": 13310000,
-            "name": "???",
-            "briefDesc": "???",
-            "desc": "???",
+            "name": "Wind Pellets",
+            "briefDesc": "Fires consecutive wind bullets to deal DMG.",
+            "desc": "Fires consecutive wind bullets.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK</color> as Ventus DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK</color> as Ventus DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK x3</color> as Ventus DMG.",
             "damageType": [
                 "Auto Attack"
             ],
@@ -39342,18 +39355,18 @@
             "addAttrType": [],
             "effectData": [],
             "params": [
-                "35%/40%/46%/61%/66%/71%/81%/85%/89%/98%/105%/112%/119%",
-                "39%/45%/51%/69%/74%/80%/91%/96%/100%/110%/118%/125%/133%",
-                "23.4%/26.9%/30.4%/40.9%/44.2%/47.5%/54%/56.8%/59.7%/65.3%/69.9%/74.6%/79.3%"
+                "28%/32%/36%/49%/53%/57%/65%/68%/72%/78%/84%/90%/95%",
+                "31%/36%/41%/55%/59%/64%/73%/76%/80%/88%/94%/100%/107%",
+                "18.7%/21.5%/24.3%/32.8%/35.4%/38%/43.2%/45.5%/47.7%/52.2%/56%/59.7%/63.4%"
             ],
             "icon": "13301_Normal"
         },
         "skill": {
             "id": 13331001,
-            "name": "???",
+            "name": "Blooming Draught",
             "cooldown": "8s",
-            "briefDesc": "???",
-            "desc": "???",
+            "briefDesc": "The windmill blows ahead to deal DMG.\u000bThe Main Skill can trigger ##Ventus Mark#1017#.",
+            "desc": "The windmill blows ahead, dealing <color=#ec6d21>&Param1& of ATK x7</color> as Ventus Skill DMG.\u000bBlooming Draught (Main Skill) can trigger ##Ventus Mark#1017#, dealing &Param2& of ATK as AoE Ventus Mark DMG.",
             "damageType": [
                 "Skill",
                 "Mark"
@@ -39362,8 +39375,8 @@
             "addAttrType": [],
             "effectData": [],
             "params": [
-                "14.7%/16.9%/19.1%/25.7%/27.8%/29.9%/34%/35.7%/37.5%/41%/44%/46.9%/49.9%",
-                "25.6%/33.2%/40.8%/48.5%/56.1%/63.8%/71.4%/79%/86.7%"
+                "11.8%/13.5%/15.3%/20.6%/22.2%/23.9%/27.2%/28.6%/30%/32.8%/35.2%/37.5%/39.9%",
+                "20.5%/26.6%/32.7%/38.8%/44.9%/51%/57.1%/63.2%/69.3%"
             ],
             "icon": "13301_Skill_Main"
         },
@@ -39371,8 +39384,8 @@
             "id": 13332000,
             "name": "Bouquet Blast",
             "cooldown": "12s",
-            "briefDesc": "Fires a flower bouquet that deals DMG. The flower bouquet then blasts, generating a \"Flower Formation\" and shoots several \"Flower Petals.\"\u000bThe Support Skill can inflict ##Ventus Mark: Breeze#2017#.",
-            "desc": "Fires a flower bouquet that deals DMG. The flower bouquet then blasts, generating a \"Flower Formation\" and shoots several \"Flower Petals.\"\u000bThe Support Skill can inflict ##Ventus Mark: Breeze#2017#.",
+            "briefDesc": "Fires a flower bouquet that deals DMG. The flower bouquet then blasts, generating a Flower Formation and shoots several Flower Petals.\u000bThe Support Skill can inflict ##Ventus Mark: Breeze#2017#.",
+            "desc": "Fires a flower bouquet, dealing <color=#ec6d21>&Param1& of ATK</color> as Ventus Skill DMG. The flower bouquet then blasts, generating a Flower Formation and shoots 6 Flower Petals.\u000bFlower Formation: Reduces the Movement SPD of targets within its range by 25%. Deals <color=#ec6d21>&Param3& of ATK</color> as Ventus Skill DMG per second for 6s.\u000bFlower Petals: Deals <color=#ec6d21>&Param2& of ATK</color> as Ventus Skill DMG.\u000bBouquet Blast (Support Skill) can inflict ##Ventus Mark: Breeze#2017#.",
             "damageType": [
                 "Skill"
             ],
@@ -39380,9 +39393,9 @@
             "addAttrType": [],
             "effectData": [],
             "params": [
-                "145%/167%/189%/254%/274%/295%/335%/353%/370%/405%/434%/463%/492%",
-                "100%/115%/130%/175%/189%/203%/231%/243%/255%/278%/298%/318%/338%",
-                "152%/175%/198%/267%/288%/309%/352%/370%/389%/425%/456%/486%/517%"
+                "196%/225%/255%/343%/370%/398%/453%/476%/500%/547%/586%/625%/664%",
+                "108%/124%/140%/189%/204%/219%/249%/262%/275%/301%/322%/344%/365%",
+                "196%/225%/254%/342%/370%/397%/452%/475%/499%/545%/585%/624%/663%"
             ],
             "icon": "13301_Skill_Support"
         },
@@ -39391,8 +39404,8 @@
             "name": "Aromatic Tempest",
             "cooldown": "30s",
             "energy": 275,
-            "briefDesc": "Holds up the staff and chants for a while, creating several tornados consecutively to deal DMG.",
-            "desc": "Holds up the staff and chants for a while, creating several tornados consecutively to deal DMG.",
+            "briefDesc": "Holds up the staff and chants for a while, creating several tornadoes consecutively to deal DMG.",
+            "desc": "Holds up the staff and chants for a while, creating 3 tornados every 3s, each time dealing <color=#ec6d21>&Param1& of ATK</color> as Ventus Ultimate DMG.",
             "damageType": [
                 "Ultimate"
             ],
@@ -39400,7 +39413,7 @@
             "addAttrType": [],
             "effectData": [],
             "params": [
-                "173%/199%/225%/303%/327%/351%/399%/420%/441%/482%/517%/552%/586%"
+                "138%/159%/180%/242%/261%/281%/320%/336%/353%/386%/414%/441%/469%"
             ],
             "icon": "13301_Ultra"
         },
@@ -39408,27 +39421,25 @@
             "mainCore": [
                 {
                     "id": 513301,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Blooming Gale",
+                    "briefDesc": "While the Main Skill is active, increases Nazuka's Movement SPD and Attack Range. Reduces the Main Skill's Attack Interval.",
+                    "desc": "While Blooming Draught (Main Skill) is active, increases Nazuka's Movement SPD and Attack Range by <color=#0abec5>40%</color> and reduces the Attack Interval by <color=#0abec5>50%</color>.",
                     "damageType": [],
                     "effectType": [],
-                    "addAttrType": [
-                        "Skill DMG (base)"
-                    ],
+                    "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "Skill DMG",
-                        "3.1%"
+                        "OnceAdditionalAttributeValue,NoLevel,13350111,AttributeType1,Enum,EAT",
+                        "OnceAdditionalAttributeValue,NoLevel,13350111,Value1,10KHdPct"
                     ],
                     "icon": "13301_Potential_01",
                     "rarity": "core"
                 },
                 {
                     "id": 513302,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Everlasting Elegance",
+                    "briefDesc": "Increases the duration of the Main Skill. If the Skill is interrupted, its cooldown is partially reduced.",
+                    "desc": "Increases the duration of Blooming Draught (Main Skill) by <color=#0abec5>100%</color>. When Blooming Draught is interrupted, its cooldown is partially refunded.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -39442,9 +39453,9 @@
                 },
                 {
                     "id": 513303,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Fierce Arrow",
+                    "briefDesc": "When the pinwheel stops, unleashes a burst of piercing gale, dealing DMG.",
+                    "desc": "When the pinwheel from Blooming Draught (Main Skill) stops, unleashes a burst of piercing gale, dealing <color=#0abec5>&Param1& of ATK</color> as Ventus Skill DMG. It can trigger ##Ventus Mark#1017#.",
                     "damageType": [
                         "Skill"
                     ],
@@ -39452,16 +39463,16 @@
                     "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "171%/197%/223%/300%/324%/348%/396%/417%/437%/478%/513%/547%/581%"
+                        "137%/158%/178%/240%/259%/278%/317%/333%/350%/383%/410%/438%/465%"
                     ],
                     "icon": "13301_Potential_03",
                     "rarity": "core"
                 },
                 {
                     "id": 513304,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Spiral Vortex",
+                    "briefDesc": "The Main Skill deals additional DMG and increases the target's &Param4&. Also, the wind of the pinwheel can pull in weak targets.",
+                    "desc": "Blooming Draught (Main Skill) deals an additional <color=#0abec5>&Param1& of ATK x16</color> as Ventus Skill DMG in 2s, increasing the target's &Param4& by <color=#0abec5>&Param5&</color> for &Param2&s, up to &Param3& stacks. This effect also pulls in weak targets.",
                     "damageType": [
                         "Skill"
                     ],
@@ -39471,7 +39482,7 @@
                     "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "6.2%/7.2%/8.1%/10.9%/11.8%/12.6%/14.4%/15.1%/15.9%/17.4%/18.6%/19.9%/21.1%",
+                        "5%/5.7%/6.5%/8.7%/9.4%/10.1%/11.5%/12.1%/12.7%/13.9%/14.9%/15.9%/16.9%",
                         6,
                         10,
                         "Ventus DMG Taken",
@@ -39484,20 +39495,20 @@
             "mainNormal": [
                 {
                     "id": 513305,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Wind Erosion Impact",
+                    "briefDesc": "Increases the &Param1& of the Main Skill and increases the targets' &Param3&.",
+                    "desc": "Increases Blooming Draught (Main Skill)'s &Param1& by <color=#ec6d21>&Param2&</color>, and increases the target's &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s, up to &Param6& stacks.",
                     "damageType": [],
                     "effectType": [
                         "Ventus DMG Taken (base)"
                     ],
                     "addAttrType": [
-                        "ATK (%)"
+                        "Ventus DMG (base)"
                     ],
                     "effectData": [],
                     "params": [
-                        "ATK",
-                        "10%/16%/22%/28%/34%/40%/46%/52%/58%",
+                        "Ventus DMG",
+                        "9%/14%/19%/24%/29%/34%/39%/44%/49%",
                         "Ventus DMG Taken",
                         "0.5%/0.8%/1.1%/1.4%/1.7%/2%/2.3%/2.6%/2.9%",
                         8,
@@ -39509,9 +39520,9 @@
                 },
                 {
                     "id": 513306,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Gale Shield",
+                    "briefDesc": "While the Main Skill is active, increases Nazuka's &Param1&. When hit, deals DMG to the attacker.",
+                    "desc": "While Blooming Draught (Main Skill) is active, increases Nazuka's &Param1& by <color=#ec6d21>&Param2&</color>. When she is hit, deals <color=#ec6d21>&Param3& of ATK</color> as Ventus Skill DMG to the attacker. This effect can only be triggered once per second.",
                     "damageType": [
                         "Skill"
                     ],
@@ -39522,8 +39533,8 @@
                     "effectData": [],
                     "params": [
                         "DEF",
-                        "29/38/48/58/67/77/86/96/106",
-                        "38%/61%/84%/106%/129%/152%/175%/198%/221%"
+                        "50/67/84/101/118/134/151/168/185",
+                        "30%/49%/67%/85%/103%/122%/140%/158%/176%"
                     ],
                     "icon": "13301_Potential_01",
                     "corner": "Triangle",
@@ -39531,18 +39542,18 @@
                 },
                 {
                     "id": 513307,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Unyielding Leaves",
+                    "briefDesc": "When the Main Skill is active, &Param1& increases over time.",
+                    "desc": "When Blooming Draught (Main Skill) is active, increases &Param1& by <color=#ec6d21>&Param2&</color> every second. Resets after the Skill ends.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Mark DMG (base)"
+                        "Skill DMG (base)"
                     ],
                     "effectData": [],
                     "params": [
-                        "Mark DMG",
-                        "85%/136%/187%/238%/289%/340%/391%/442%/493%"
+                        "Skill DMG",
+                        "9%/14%/19%/25%/30%/35%/41%/46%/51%"
                     ],
                     "icon": "13301_Potential_01",
                     "corner": "Round",
@@ -39550,9 +39561,9 @@
                 },
                 {
                     "id": 513308,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Gale's Might",
+                    "briefDesc": "When casting the Main Skill, increases &Param1&.",
+                    "desc": "When casting Blooming Draught (Main Skill), increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -39561,7 +39572,7 @@
                     "effectData": [],
                     "params": [
                         "ATK",
-                        "300%",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%",
                         10
                     ],
                     "icon": "13301_Potential_03",
@@ -39570,18 +39581,22 @@
                 },
                 {
                     "id": 513309,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Storm Overturned",
+                    "briefDesc": "Increases Nazuka's &Param3&. When there are more than 1 target within the Main Skill's Attack Range, increases &Param1&.",
+                    "desc": "Increases Nazuka's &Param3& by <color=#ec6d21>&Param4&</color>.\u000bWhen there are more than 1 target within the Main Skill's Attack Range, increases &Param1& by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
-                    "effectType": [],
-                    "addAttrType": [
+                    "effectType": [
                         "ATK (%)"
+                    ],
+                    "addAttrType": [
+                        "Skill DMG (base)"
                     ],
                     "effectData": [],
                     "params": [
+                        "Skill DMG",
+                        "10%/16%/22%/29%/35%/41%/47%/53%/59%",
                         "ATK",
-                        "17%/27%/37%/47%/57%/67%/77%/88%/98%"
+                        "5%/8%/11%/14%/17%/20%/23%/26%/29%"
                     ],
                     "icon": "13301_Potential_03",
                     "corner": "Triangle",
@@ -39589,21 +39604,21 @@
                 },
                 {
                     "id": 513311,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Precision Control",
+                    "briefDesc": "Increases Nazuka's &Param1&.\u000bThe Ultimate can trigger ##Ventus Mark#1017#.",
+                    "desc": "Increases Nazuka's &Param1& by <color=#ec6d21>&Param2&</color>. \u000bAromatic Tempest (Ultimate) can trigger ##Ventus Mark: Breeze#1017#.",
                     "damageType": [
                         "Mark"
                     ],
                     "effectType": [
-                        "ATK (%)"
+                        "Ventus DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "ATK",
+                        "Ventus DMG",
                         "15%/24%/33%/42%/51%/60%/69%/78%/87%",
-                        "25.6%/33.2%/40.8%/48.5%/56.1%/63.8%/71.4%/79%/86.7%"
+                        "20.5%/26.6%/32.7%/38.8%/44.9%/51%/57.1%/63.2%/69.3%"
                     ],
                     "icon": "Common_Potential_Wind_1",
                     "corner": "Diamond",
@@ -39611,9 +39626,9 @@
                 },
                 {
                     "id": 513313,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Willowy Grace",
+                    "briefDesc": "Nazuka can dodge one more time.\u000bIncreases her &Param1& after dodging.",
+                    "desc": "Nazuka can dodge one more time.\u000bAfter dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -39631,9 +39646,9 @@
                 },
                 {
                     "id": 513310,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Whisper of Wind",
+                    "briefDesc": "After the Main Skill ends, increases &Param1& for a short period of time.",
+                    "desc": "When the pinwheel from Blooming Draught (Main Skill) stops, increases &Param1& by <color=#ec6d21>&Param2&</color> for 2s.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -39642,7 +39657,7 @@
                     "effectData": [],
                     "params": [
                         "ATK",
-                        "88%/141%/194%/247%/300%/353%/406%/459%/511%"
+                        "60%/96%/132%/168%/204%/240%/276%/312%/348%"
                     ],
                     "icon": "13301_Potential_04",
                     "corner": "Round",
@@ -39650,9 +39665,9 @@
                 },
                 {
                     "id": 513312,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Gale Fading",
+                    "briefDesc": "When Auto Attacks deal DMG, there is a chance to increase the target's &Param1&.",
+                    "desc": "When Wind Pellets deal DMG, there is a 30% chance to increase the target's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "damageType": [],
                     "effectType": [
                         "Ventus DMG Taken (base)"
@@ -39661,7 +39676,7 @@
                     "effectData": [],
                     "params": [
                         "Ventus DMG Taken",
-                        "6%/10%/14%/18%/22%/25%/29%/33%/37%",
+                        "8%/13%/18%/23%/28%/33%/38%/43%/48%",
                         6
                     ],
                     "icon": "Common_Potential_24",
@@ -39672,18 +39687,18 @@
             "common": [
                 {
                     "id": 513341,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Multi-Hurricane",
+                    "briefDesc": "Increases the Ultimate DMG and the number of tornados.",
+                    "desc": "Increases the Ultimate, Aromatic Tempest's DMG by <color=#ec6d21>&Param2&</color>. \u000bNazuka can summon 4 tornados per Ultimate cast.",
                     "damageType": [],
                     "effectType": [
-                        "ATK (%)"
+                        "Ultimate DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "ATK",
-                        "9%/15%/21%/26%/32%/37%/43%/49%/54%"
+                        "Ultimate DMG",
+                        "6%/10%/14%/17%/21%/25%/28%/32%/36%"
                     ],
                     "icon": "13301_Potential_41",
                     "corner": "Diamond",
@@ -39691,18 +39706,18 @@
                 },
                 {
                     "id": 513342,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Aeolus's Blessing",
+                    "briefDesc": "When casting the Ultimate, increases Nazuka's &Param1& and the tornado's duration.",
+                    "desc": "When casting Aromatic Tempest (Ultimate), increases Nazuka's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bIncreases the tornadoes' duration by 66%.",
                     "damageType": [],
                     "effectType": [
-                        "ATK (%)"
+                        "Ventus DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "ATK",
-                        "9%/14%/19%/24%/30%/35%/40%/45%/50%",
+                        "Ventus DMG",
+                        "22%/36%/49%/62%/75%/89%/102%/115%/129%",
                         18
                     ],
                     "icon": "13301_Potential_41",
@@ -39711,22 +39726,21 @@
                 },
                 {
                     "id": 513343,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Maelstrom",
+                    "briefDesc": "Increases Ultimate's DMG. When the Ultimate deals DMG, increases the target's &Param3&.",
+                    "desc": "Increases Aromatic Tempest (Ultimate)'s DMG by <color=#ec6d21>&Param2&</color>.\u000bWhen the tornado deals DMG, increases the target's &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s, up to &Param6& stacks.",
                     "damageType": [],
                     "effectType": [
+                        "Ultimate DMG (base)",
                         "Ventus DMG Taken (base)"
                     ],
-                    "addAttrType": [
-                        "ATK (%)"
-                    ],
+                    "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "ATK",
-                        "16%/26%/36%/45%/55%/65%/74%/84%/94%",
+                        "Ultimate DMG",
+                        "8%/13%/18%/22%/27%/32%/37%/42%/46%",
                         "Ventus DMG Taken",
-                        "1.7%/2.7%/3.7%/4.7%/5.7%/6.7%/7.7%/8.7%/9.7%",
+                        "1.2%/1.9%/2.6%/3.3%/4%/4.7%/5.4%/6.1%/6.8%",
                         18,
                         8
                     ],
@@ -39738,9 +39752,9 @@
             "supportCore": [
                 {
                     "id": 513321,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Youth: Dazzling",
+                    "briefDesc": "When casting the Support Skill, continuously creates a dozen Flower Petals at the Ventus Main Trekker's location, each dealing DMG and inflicting ##Ventus Mark: Breeze#2017#.",
+                    "desc": "When casting Bouquet Blast (Support Skill), continuously creates 18 Flower Petals at the Ventus Main Trekker's location, with each petal dealing <color=#0abec5>&Param1&</color> of Nazuka's ATK as Ventus Skill DMG and inflicting ##Ventus Mark: Breeze#2017#.",
                     "damageType": [
                         "Skill"
                     ],
@@ -39748,34 +39762,34 @@
                     "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "9.2%/10.6%/12%/16.1%/17.4%/18.7%/21.3%/22.4%/23.5%/25.7%/27.5%/29.4%/31.2%"
+                        "11%/12.7%/14.4%/19.3%/20.9%/22.4%/25.5%/26.8%/28.2%/30.8%/33%/35.2%/37.4%"
                     ],
                     "icon": "13301_Potential_21",
                     "rarity": "core"
                 },
                 {
                     "id": 513322,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Youth: Hunting",
+                    "briefDesc": "Increases the &Param1& of Flower Petals, and they can follow targets.",
+                    "desc": "Increases the &Param1& of Flower Petals by <color=#0abec5>&Param2&</color>, and they can follow targets.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Skill DMG (base)"
+                        "Ventus DMG (base)"
                     ],
                     "effectData": [],
                     "params": [
-                        "Skill DMG",
-                        "71%"
+                        "Ventus DMG",
+                        "10%"
                     ],
                     "icon": "13301_Potential_22",
                     "rarity": "core"
                 },
                 {
                     "id": 513323,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Flower Formation: Waves",
+                    "briefDesc": "Increases the duration of Flower Formation.\u000bAfter casting the skill, when another friendly Ventus unit deals DMG to a target outside Flower Formation, creates another ##Flower Formation#4004#.",
+                    "desc": "Increases the duration of Flower Formation by <color=#0abec5>50%</color>.\u000bWithin 8s after casting the skill, when another friendly Ventus unit deals DMG to a target outside Flower Formation, creates another ##Flower Formation#4004#. This effect can only be triggered once per second.",
                     "damageType": [
                         "Skill"
                     ],
@@ -39787,16 +39801,16 @@
                     "params": [
                         "Movement Speed",
                         "-30%",
-                        "152%/175%/198%/267%/288%/309%/352%/370%/389%/425%/456%/486%/517%"
+                        "196%/225%/254%/342%/370%/397%/452%/475%/499%/545%/585%/624%/663%"
                     ],
                     "icon": "13301_Potential_23",
                     "rarity": "core"
                 },
                 {
                     "id": 513324,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Flower Formation: Turbulent",
+                    "briefDesc": "When another friendly Ventus unit deals DMG to targets caught in Flower Formation, Flower Formation deals additional DMG.",
+                    "desc": "When another friendly Ventus unit deals DMG to targets caught in Flower Formation, Flower Formation deals an additional <color=#ec6d21>&Param1&</color> of Nazuka's ATK as AoE Ventus Skill DMG. This effect can only be triggered once per second, dealing DMG to the same target no more than once per second.",
                     "damageType": [
                         "Skill"
                     ],
@@ -39804,7 +39818,7 @@
                     "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "142%/163%/185%/249%/269%/289%/328%/345%/362%/397%/425%/453%/482%"
+                        "182%/210%/237%/319%/345%/370%/421%/443%/465%/509%/545%/582%/618%"
                     ],
                     "icon": "13301_Potential_24",
                     "rarity": "core"
@@ -39813,9 +39827,9 @@
             "supportNormal": [
                 {
                     "id": 513325,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Youth: Weakness",
+                    "briefDesc": "When Flower Petals deal DMG, increases the targets' &Param1&.",
+                    "desc": "When Flower Petals deal DMG, increases the targets' &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
                     "damageType": [],
                     "effectType": [
                         "Ventus DMG Taken (base)"
@@ -39824,7 +39838,7 @@
                     "effectData": [],
                     "params": [
                         "Ventus DMG Taken",
-                        "1.7%/2.7%/3.7%/4.7%/5.7%/6.7%/7.7%/8.7%/9.7%",
+                        "1%/1.6%/2.2%/2.8%/3.4%/4%/4.6%/5.2%/5.8%",
                         3,
                         10
                     ],
@@ -39834,18 +39848,18 @@
                 },
                 {
                     "id": 513326,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Youth: Annihilation",
+                    "briefDesc": "The Flower Petal has a chance to kill a normal target immediately and its DMG is increased.",
+                    "desc": "The Flower Petal has a 15% chance to kill a normal target immediately and its DMG is increased by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "ATK (%)"
+                        "Skill DMG (base)"
                     ],
                     "effectData": [],
                     "params": [
-                        "ATK",
-                        "52%/83%/115%/146%/177%/209%/240%/271%/303%"
+                        "Skill DMG",
+                        "20%/31%/43%/55%/66%/78%/90%/101%/113%"
                     ],
                     "icon": "13301_Potential_21",
                     "corner": "Triangle",
@@ -39853,12 +39867,12 @@
                 },
                 {
                     "id": 513327,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Youth: Blooming",
+                    "briefDesc": "Increases Flower Petal's DMG. \u000bFor each Flower Petal created, increases Nazuka's &Param3&.",
+                    "desc": "Increases Flower Petal's DMG by <color=#ec6d21>&Param2&</color>.\u000bFor each Flower Petal created, increases Nazuka's &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s, up to &Param6& stacks.",
                     "damageType": [],
                     "effectType": [
-                        "ATK (%)"
+                        "Ventus DMG (base)"
                     ],
                     "addAttrType": [
                         "Skill DMG (base)"
@@ -39866,9 +39880,9 @@
                     "effectData": [],
                     "params": [
                         "Skill DMG",
-                        "13%/21%/29%/36%/44%/52%/60%/68%/75%",
-                        "ATK",
-                        "1.9%/3%/4.1%/5.2%/6.3%/7.4%/8.5%/9.6%/10.7%",
+                        "6%/10%/14%/17%/21%/25%/28%/32%/36%",
+                        "Ventus DMG",
+                        "1.8%/2.9%/4%/5.1%/6.2%/7.3%/8.4%/9.5%/10.6%",
                         8,
                         12
                     ],
@@ -39878,9 +39892,9 @@
                 },
                 {
                     "id": 513328,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Flower Formation: Convergence",
+                    "briefDesc": "Increases Flower Formation's DMG. When there are 2 or more targets caught in Flower Formation, increases its DMG.",
+                    "desc": "Increases Flower Formation's DMG by <color=#ec6d21>&Param2&</color>. When there are 2 or more targets caught in Flower Formation, increases its DMG by <color=#ec6d21>&Param4&</color>.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -39889,9 +39903,9 @@
                     "effectData": [],
                     "params": [
                         "Skill DMG",
-                        "13%/21%/29%/36%/44%/52%/60%/68%/75%",
+                        "15%/24%/33%/42%/51%/59%/68%/77%/86%",
                         "Skill DMG",
-                        "13%/21%/29%/36%/44%/52%/60%/68%/75%"
+                        "10%/16%/22%/29%/35%/41%/47%/53%/59%"
                     ],
                     "icon": "13301_Potential_23",
                     "corner": "Diamond",
@@ -39899,17 +39913,21 @@
                 },
                 {
                     "id": 513330,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Flower Formation: Blast",
+                    "briefDesc": "Increases the Flower Formation's &Param2&. When the Flower Formation dissipates, deals DMG and inflicts ##Ventus Mark: Breeze#2017#.",
+                    "desc": "Increases the Flower Formation's &Param2& by <color=#ec6d21>&Param3&</color>. When the Flower Formation dissipates, deals <color=#ec6d21>&Param1&</color> of Nazuka's ATK as AoE Ventus Skill DMG and inflicts ##Ventus Mark: Breeze#2017#.",
                     "damageType": [
                         "Skill"
                     ],
                     "effectType": [],
-                    "addAttrType": [],
+                    "addAttrType": [
+                        "Ventus DMG (base)"
+                    ],
                     "effectData": [],
                     "params": [
-                        "565%/903%/1242%/1581%/1920%/2258%/2597%/2936%/3275%"
+                        "105%/168%/231%/294%/357%/420%/484%/547%/610%",
+                        "Ventus DMG",
+                        "29%/46%/64%/81%/98%/115%/133%/150%/167%"
                     ],
                     "icon": "13301_Potential_24",
                     "corner": "Round",
@@ -39917,9 +39935,9 @@
                 },
                 {
                     "id": 513331,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Wind Demon Seed",
+                    "briefDesc": "Increases Nazuka's &Param1&.\u000bThe Ultimate can inflict ##Ventus Mark: Breeze#2017#.",
+                    "desc": "Increases Nazuka's &Param1& by <color=#ec6d21>&Param2&</color>. \u000bAromatic Tempest (Ultimate) can inflict ##Ventus Mark: Breeze#2017#.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -39936,17 +39954,17 @@
                 },
                 {
                     "id": 513332,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Self-Improvement",
+                    "briefDesc": "When there is a Flower Formation on the battlefield, increases Nazuka's &Param1&.",
+                    "desc": "When there is a Flower Formation on the battlefield, increases Nazuka's &Param1& by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "ATK (%)"
+                        "Skill DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "ATK",
+                        "Skill DMG",
                         "24%/38%/53%/67%/82%/96%/110%/125%/139%"
                     ],
                     "icon": "Common_Potential_11",
@@ -39955,9 +39973,9 @@
                 },
                 {
                     "id": 513329,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Flower Formation: Erosion",
+                    "briefDesc": "When Flower Formation deals DMG, increases the target's &Param1&.",
+                    "desc": "When Flower Formation deals DMG, increases the target's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
                     "damageType": [],
                     "effectType": [
                         "Ventus DMG Taken (base)"
@@ -39966,7 +39984,7 @@
                     "effectData": [],
                     "params": [
                         "Ventus DMG Taken",
-                        "8%/13%/18%/23%/28%/33%/38%/43%/48%",
+                        "1.5%/2.4%/3.3%/4.2%/5.1%/6%/6.9%/7.8%/8.7%",
                         2,
                         10
                     ],
@@ -39976,18 +39994,18 @@
                 },
                 {
                     "id": 513333,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Almighty Leader",
+                    "briefDesc": "Increases all Vanguard and Versatile Ventus Trekkers' &Param1& in the squad.",
+                    "desc": "Increases all Vanguard and Versatile Ventus Trekkers' &Param1& by <color=#ec6d21>&Param2&</color> in the squad.",
                     "damageType": [],
                     "effectType": [
-                        "ATK (%)"
+                        "Ventus DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "params": [
-                        "ATK",
-                        "4%/6%/8%/10%/12%/14%/16%/18%/20%"
+                        "Ventus DMG",
+                        "16%/25%/35%/44%/54%/63%/73%/82%/92%"
                     ],
                     "icon": "Common_Potential_15",
                     "corner": "Round",
@@ -39997,411 +40015,634 @@
         },
         "talent": [
             {
-                "name": "Core Talent I",
+                "name": "In the Name of Trekkers",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "In the Name of Trekkers",
+                        "desc": "When tornadoes generated by Nazuka's Ultimate are on the field, all squadmates' Skill DMG is increased by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "45%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     }
                 ]
             },
             {
-                "name": "Core Talent II",
+                "name": "In the Name of Wisdom",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "In the Name of Wisdom",
+                        "desc": "Nazuka gains ##Wind Chant#4003# every time she deals Skill DMG. Upon meeting certain conditions, Wind Chant turns into Wind Roar: Increases her Ventus DMG by <color=#0abec5>&Param1&</color> for &Param2&s. This effect can only be triggered once every &Param3&s.",
+                        "params": [
+                            "20%",
+                            12,
+                            12,
+                            20
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     }
                 ]
             },
             {
-                "name": "Core Talent III",
+                "name": "In the Name of Responsibility",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "In the Name of Responsibility",
+                        "desc": "Every time Nazuka deals Skill DMG to a target, the Ventus DMG dealt to that target is increased by <color=#0abec5>&Param1&</color> for 6s, stacking up to &Param2& times.",
+                        "params": [
+                            "1.4%",
+                            10
+                        ],
+                        "effectType": [
+                            "Ventus DMG Taken (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     }
                 ]
             },
             {
-                "name": "Core Talent IV",
+                "name": "The Burden of a Role Model",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "The Burden of a Role Model",
+                        "desc": "When any Trekker in the squad triggers a ##Ventus Mark#1017#, increases Nazuka's Skill DMG by <color=#0abec5>&Param1&</color> for &Param2&s.",
+                        "params": [
+                            "28%",
+                            6
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     }
                 ]
             },
             {
-                "name": "Core Talent V",
+                "name": "The Resolve of Companions",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
+                        "name": "The Resolve of Companions",
+                        "desc": "Increases Nazuka's Ventus DMG dealt to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "24%"
+                        ],
                         "effectType": [],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "50"
+                        ],
+                        "effectType": [
+                            "ATK (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "10"
+                        ],
+                        "effectType": [
+                            "DEF (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "params": [
+                            "575"
+                        ],
+                        "effectType": [
+                            "HP (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Skill DMG Boost",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "2.1%"
+                        ],
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
                         "effectData": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???",
-                        "params": [],
-                        "effectType": [],
+                        "name": "Ventus DMG Boost",
+                        "desc": "Increases Ventus DMG by <color=#0abec5>&Param1&</color>",
+                        "params": [
+                            "1.5%"
+                        ],
+                        "effectType": [
+                            "Ventus DMG (base)"
+                        ],
                         "effectData": []
                     }
                 ]
@@ -40415,7 +40656,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40425,7 +40666,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40435,7 +40676,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40445,7 +40686,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40455,7 +40696,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40465,7 +40706,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40475,7 +40716,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40485,7 +40726,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40495,7 +40736,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40505,7 +40746,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40515,7 +40756,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40525,7 +40766,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40535,7 +40776,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40545,7 +40786,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40555,7 +40796,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40565,7 +40806,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40575,7 +40816,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40585,7 +40826,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40595,7 +40836,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40605,7 +40846,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40615,7 +40856,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40625,7 +40866,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40635,7 +40876,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40645,7 +40886,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40655,7 +40896,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40665,7 +40906,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40675,7 +40916,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40685,7 +40926,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40695,7 +40936,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40705,7 +40946,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40715,7 +40956,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40725,7 +40966,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40735,7 +40976,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40745,7 +40986,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40755,7 +40996,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40765,7 +41006,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40775,7 +41016,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40785,7 +41026,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40795,7 +41036,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40805,7 +41046,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40815,7 +41056,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40825,7 +41066,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40835,7 +41076,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40845,7 +41086,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40855,7 +41096,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40865,7 +41106,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40875,7 +41116,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40885,7 +41126,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40895,7 +41136,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40905,7 +41146,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40915,7 +41156,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40925,7 +41166,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40935,7 +41176,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40945,7 +41186,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40955,7 +41196,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40965,7 +41206,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40975,7 +41216,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40985,7 +41226,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -40995,7 +41236,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41005,7 +41246,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41015,7 +41256,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41025,7 +41266,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41035,7 +41276,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41045,7 +41286,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41055,7 +41296,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41065,7 +41306,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41075,7 +41316,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41085,7 +41326,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41095,7 +41336,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41105,7 +41346,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41115,7 +41356,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41125,7 +41366,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41135,7 +41376,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41145,7 +41386,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41155,7 +41396,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41165,7 +41406,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41175,7 +41416,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41185,7 +41426,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41195,7 +41436,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41205,7 +41446,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41215,7 +41456,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41225,7 +41466,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41235,7 +41476,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41245,7 +41486,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41255,7 +41496,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41265,7 +41506,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41275,7 +41516,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41285,7 +41526,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41295,7 +41536,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41305,7 +41546,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41315,7 +41556,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41325,7 +41566,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41335,7 +41576,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41345,7 +41586,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41355,7 +41596,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41365,7 +41606,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41375,7 +41616,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41385,7 +41626,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             },
             {
@@ -41395,7 +41636,7 @@
                 "def": 190,
                 "critRate": "5%",
                 "critDmg": "150%",
-                "resilienceBreakEfficiency": "100%",
+                "resilienceBreakEfficiency": "150%",
                 "vul": "0%"
             }
         ],
@@ -41510,11 +41751,11 @@
         "class": "Vanguard",
         "attackType": "Melee",
         "style": "Inquisitive",
-        "force": "Petal Bloom Guild",
+        "force": "Petal Bloom",
         "tag": [
             "Vanguard",
             "Inquisitive",
-            "Petal Bloom Guild"
+            "Petal Bloom"
         ],
         "cnCv": "Liu Yilei",
         "jpCv": "Chika Anzai",
@@ -41806,7 +42047,7 @@
                 },
                 {
                     "id": 513409,
-                    "name": "Blast Pursuit",
+                    "name": "Blast Chase",
                     "briefDesc": "Fuyuka's fourth attack on the same target deals additional DMG.",
                     "desc": "Every time Fuyuka deals DMG to a target 4 times, she launches an additional attack on the same target, dealing <color=#ec6d21>&Param1& of ATK</color> as Ignis Skill DMG.\u000bAfter this effect triggers, it has a 1.5s cooldown before it can stack again.",
                     "damageType": [
@@ -41949,7 +42190,7 @@
                 },
                 {
                     "id": 513443,
-                    "name": "Peak Condition",
+                    "name": "Peak Performance",
                     "briefDesc": "When casting the Ultimate, increases Fuyuka's &Param4&. This buff decays over time.",
                     "desc": "When Fuyuka casts &Param1& (Ultimate), she gains &Param2& stacks of buff, each increasing her &Param4& by <color=#ec6d21>&Param3&</color>, and then removes 1 stack of the buff per second.",
                     "damageType": [],
@@ -42090,7 +42331,7 @@
                 },
                 {
                     "id": 513427,
-                    "name": "Gaining Momentum",
+                    "name": "Momentum Primed",
                     "briefDesc": "When Fuyuka is not present, for every few seconds, increases the &Param4& of the next Support Skill.",
                     "desc": "After Fuyuka casts her &Param1& (Support Skill) or &Param5& (Ultimate) and leaves the battlefield, increases the &Param4& of the next &Param1& (Support Skill) by <color=#ec6d21>&Param2&</color> every second, up to &Param3& stacks.\u000bResets after casting the Support Skill.",
                     "damageType": [],
@@ -42213,7 +42454,7 @@
                 },
                 {
                     "id": 513433,
-                    "name": "Companion's Power",
+                    "name": "Companions' Power",
                     "briefDesc": "Increases Ignis Trekkers' &Param2&.",
                     "desc": "Increases Ignis Trekkers' &Param2& by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
@@ -44108,7 +44349,7 @@
                 },
                 {
                     "id": 513502,
-                    "name": "Rapid Fire",
+                    "name": "Burst Shooting",
                     "briefDesc": "The Main Skill deals additional DMG. When casting, removes all Pumpka Phantoms from the battlefield and summons them again.",
                     "desc": "Pumpka Pummel (Main Skill) deals an additional <color=#0abec5>&Param1& of ATK</color> as AoE Umbra DMG. \u000bWhen cast, removes all Pumpka Phantoms from the battlefield and summons them again.",
                     "damageType": [
@@ -44125,7 +44366,7 @@
                 },
                 {
                     "id": 513503,
-                    "name": "Super Long Exposure",
+                    "name": "Extended Exposure",
                     "briefDesc": "While in Exposure status, if the maximum number of Pumpka Phantoms are on the battlefield, increases their duration and &Param1&.",
                     "desc": "While in Exposure status, if the maximum number of Pumpka Phantoms are on the battlefield, increases their duration. Also increases their &Param1& by <color=#0abec5>&Param2&</color> every 3s, up to &Param3& stacks.",
                     "damageType": [],
@@ -44411,7 +44652,7 @@
             "supportCore": [
                 {
                     "id": 513521,
-                    "name": "Stay Happy",
+                    "name": "Happy Face",
                     "briefDesc": "Increases the duration of the magic circle. Also increases the &Param2& of Lanterna Phantoms.",
                     "desc": "Increases the duration of the magic circle by <color=#0abec5>3</color>s. \u000bAlso increases the &Param2& of Lanterna Phantoms by <color=#0abec5>&Param1&</color>.",
                     "damageType": [],
@@ -48951,7 +49192,7 @@
                     "id": 514202,
                     "name": "Nightscar Trace",
                     "briefDesc": "When any other friendly unit lands a Crit Hit, reduces the Main Skill's Cooldown, leaves claw marks and inflicts ##Umbra Mark: Gloom#2018#.",
-                    "desc": "When any other friendly unit lands a Crit Hit, reduces the Cooldown of Nocturn Hooks (Main Skill) by <color=#0abec5>1</color>s, and leaves claw marks at the target's location, dealing <color=#0abec5>&Param1& of Cosette's ATK</color> as AoE Umbra Skill DMG and inflicting ##Umbra Mark: Gloom#2018#. \u000bThis effect can only be triggered 5 times per Skill cast.",
+                    "desc": "When any other friendly unit lands a Crit Hit, reduces the Cooldown of Nocturn Hooks (Main Skill) by <color=#0abec5>1</color>s, and leaves claw marks at the target's location, dealing <color=#0abec5>&Param1&</color> of Cosette's ATK as AoE Umbra Skill DMG and inflicting ##Umbra Mark: Gloom#2018#.\u000bThis effect can only be triggered 5 times per Skill cast.",
                     "damageType": [
                         "Skill"
                     ],
@@ -58565,7 +58806,7 @@
             "Grace Imperium"
         ],
         "cnCv": "Song Yuanyuan",
-        "jpCv": "Minami Tanaka",
+        "jpCv": "Aimi Tanaka",
         "birthday": "August 20th",
         "loveGift": [
             "Whisper Wind Spinner",
@@ -63651,11 +63892,11 @@
         "class": "Support",
         "attackType": "Ranged",
         "style": "Collector",
-        "force": "Petal Bloom Guild",
+        "force": "Petal Bloom",
         "tag": [
             "Support",
             "Collector",
-            "Petal Bloom Guild"
+            "Petal Bloom"
         ],
         "cnCv": "Xie Ying",
         "jpCv": "Moe Ehara",
