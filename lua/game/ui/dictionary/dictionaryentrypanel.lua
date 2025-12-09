@@ -1,5 +1,6 @@
 local DictionaryEntryPanel = class("DictionaryEntryPanel", BasePanel)
 DictionaryEntryPanel._bIsMainPanel = false
+DictionaryEntryPanel._sSortingLayerName = AllEnum.SortingLayerName.UI_Top
 DictionaryEntryPanel._tbDefine = {
 	{
 		sPrefabPath = "Dictionary/DictionaryEntryPanel.prefab",

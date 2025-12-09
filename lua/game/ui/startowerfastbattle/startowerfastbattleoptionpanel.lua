@@ -7,14 +7,17 @@ StarTowerFastBattleOptionPanel._tbDefine = {
 	}
 }
 function StarTowerFastBattleOptionPanel:Awake()
-	self.bShop = self:GetPanelParam()[1]
-	self.bMachine = self:GetPanelParam()[2]
-	self.nMachineCount = self:GetPanelParam()[3]
-	self.nCoinCount = self:GetPanelParam()[4]
-	self.closeCallback = self:GetPanelParam()[5]
-	self.nDiscount = self:GetPanelParam()[6]
-	self.bFirstFree = self:GetPanelParam()[7]
-	self.bLastFloor = self:GetPanelParam()[8]
+	local tbParams = self:GetPanelParam()
+	if type(tbParams) == "table" then
+		self.bShop = tbParams[1]
+		self.bMachine = tbParams[2]
+		self.nMachineCount = tbParams[3]
+		self.nCoinCount = tbParams[4]
+		self.closeCallback = tbParams[5]
+		self.nDiscount = tbParams[6]
+		self.bFirstFree = tbParams[7]
+		self.bLastFloor = tbParams[8]
+	end
 end
 function StarTowerFastBattleOptionPanel:OnEnable()
 end

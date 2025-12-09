@@ -372,7 +372,15 @@ function SettingsAcountCtrl:OnDestroy()
 end
 function SettingsAcountCtrl:OnBtnClick_Center()
 	if SDKManager:IsSDKInit() then
-		SDKManager.SDK:ShowUserCenter()
+		local sDestoryUrl = PlayerData.Base:GetDestoryUrl()
+		if sDestoryUrl == "" then
+			local cb = function(sUrl)
+				SDKManager.SDK:ShowUserCenter(sUrl, sUrl)
+			end
+			PlayerData.Base:RequestDestoryUrl(cb)
+		else
+			SDKManager.SDK:ShowUserCenter(sDestoryUrl, sDestoryUrl)
+		end
 	else
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Function_NotAvailable"))
 	end

@@ -192,7 +192,7 @@ function CharSkillCtrl:RefreshContent()
 		return
 	end
 	if self.nCharId ~= self._panel.nCharId then
-		self.nUpgradeIndex = 1
+		self._panel.nUpgradeIndex = 1
 	end
 	self.nCharId = self._panel.nCharId
 	self.EET = ConfigTable.GetData_Character(self.nCharId).EET
@@ -222,7 +222,6 @@ function CharSkillCtrl:Awake()
 			[2] = false
 		}
 	}
-	self.nUpgradeIndex = 1
 end
 function CharSkillCtrl:OnEnable()
 	self:RefreshContent()
@@ -251,10 +250,10 @@ function CharSkillCtrl:SetSkillList()
 		local mapSkillData = self.tbSKillData[i]
 		self._mapNode.ctrlSkill[i]:SetSkill(mapSkillData.nId, i, mapSkillData.nLv, self.EET, mapSkillData.nAddLv)
 	end
-	self._mapNode.ctrlSkill[self.nUpgradeIndex]:SetSelect(true)
+	self._mapNode.ctrlSkill[self._panel.nUpgradeIndex]:SetSelect(true)
 end
 function CharSkillCtrl:SetUpgrade()
-	local mapSkillData = self.tbSKillData[self.nUpgradeIndex]
+	local mapSkillData = self.tbSKillData[self._panel.nUpgradeIndex]
 	local nId = mapSkillData.nId
 	local nLv = mapSkillData.nLv
 	local nAddLv = mapSkillData.nAddLv
@@ -279,7 +278,7 @@ function CharSkillCtrl:SetUpgrade()
 	end
 	self._mapNode.goLv:SetActive(nLv ~= nMaxLv)
 	self._mapNode.goLvMax:SetActive(nLv == nMaxLv)
-	local skillShowCfg = AllEnum.SkillTypeShow[self.nUpgradeIndex]
+	local skillShowCfg = AllEnum.SkillTypeShow[self._panel.nUpgradeIndex]
 	NovaAPI.SetTMPText(self._mapNode.txtSkillType, ConfigTable.GetUIText(skillShowCfg.sLanguageId))
 	local skillTypeIconIdx = skillShowCfg.iconIndex
 	self:SetAtlasSprite(self._mapNode.imgSkillType, "05_language", "zs_character_skill_text_" .. skillTypeIconIdx)
@@ -401,12 +400,12 @@ function CharSkillCtrl:RefreshHeight(nType, bMax)
 end
 function CharSkillCtrl:OnBtn_Skill(btn)
 	local nIndex = btn.transform:GetSiblingIndex() + 1
-	if self.nUpgradeIndex == nIndex then
+	if self._panel.nUpgradeIndex == nIndex then
 		return
 	end
-	self.nUpgradeIndex = nIndex
+	self._panel.nUpgradeIndex = nIndex
 	for i, v in ipairs(self._mapNode.ctrlSkill) do
-		v:SetSelect(i == self.nUpgradeIndex)
+		v:SetSelect(i == self._panel.nUpgradeIndex)
 	end
 	self:SetUpgrade()
 end
@@ -422,7 +421,7 @@ function CharSkillCtrl:OnBtn_Mat(btn)
 	elseif sName == "btnMat4" then
 		nIndex = 4
 	end
-	local mapSkillData = self.tbSKillData[self.nUpgradeIndex]
+	local mapSkillData = self.tbSKillData[self._panel.nUpgradeIndex]
 	local mapReq = mapSkillData.mapReq
 	if nil ~= mapReq.tbReqItem[nIndex][1] and mapReq.tbReqItem[nIndex][1] > 0 then
 		local mapData = {
@@ -447,7 +446,7 @@ function CharSkillCtrl:OnBtn_Upgrade(btn)
 		end
 		PlayerData.Voice:PlayCharVoice("charUp", self.nCharId)
 	end
-	PlayerCharData:CharSkillUpgrade(self.nCharId, self.nUpgradeIndex, callBack)
+	PlayerCharData:CharSkillUpgrade(self.nCharId, self._panel.nUpgradeIndex, callBack)
 end
 function CharSkillCtrl:OnBtnClick_AutoFill()
 	EventManager.Hit(EventId.OpenPanel, PanelId.FillMaterial, self.tbFillStep, self.tbUseItem, self.tbShowNeedItem)

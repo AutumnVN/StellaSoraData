@@ -59,6 +59,7 @@ function TutorialLevelData:FinishLevel(result)
 	local tbCharId = self:GetCharList() or {}
 	if not result then
 		EventManager.Hit(EventId.OpenPanel, PanelId.TutorialResult, 2, self.nlevelId, {}, nCurQuestCount, nMaxQuestCount, tbCharId, {}, false)
+		PlayerData.Build:DeleteTrialBuild()
 	else
 		local tbSkin = {}
 		for _, nCharId in ipairs(self.tbCharId) do

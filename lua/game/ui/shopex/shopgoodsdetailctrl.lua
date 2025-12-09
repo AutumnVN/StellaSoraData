@@ -180,7 +180,7 @@ function ShopGoodsDetailCtrl:OnBtnClick_Buy()
 			EventManager.Hit("ShopRefreshGoods")
 			EventManager.Hit("ShopCloseDetail")
 			local bSale = self.mapData.nOriginalPrice > 0
-			local bLimit = 0 < self.mapData.nMaximumLimit
+			local bLimit = 0 < self.mapData.nMaximumLimit or 0 < self.mapData.nDownShelfTime
 			EventManager.Hit("ShopBuyVoice", bSale, bLimit)
 		end
 		PlayerData.Shop:SendResidentShopPurchaseReq(self.nShopId, self.mapData.nId, self.nBuyCount, callback)

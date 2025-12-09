@@ -9,14 +9,7 @@ ScoreBossRankingTeamDetailCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Close"
 	},
-	txtTeam1 = {
-		sComponentName = "TMP_Text",
-		sLanguageId = "ScoreBossRankingTeamOne"
-	},
-	txtTeam2 = {
-		sComponentName = "TMP_Text",
-		sLanguageId = "ScoreBossRankingTeamTwo"
-	},
+	txtTeam = {nCount = 2, sComponentName = "TMP_Text"},
 	tcChar1_ = {nCount = 3},
 	imgItemIcon1_ = {nCount = 3, sComponentName = "Image"},
 	imgItemRare1_ = {nCount = 3, sComponentName = "Image"},
@@ -71,7 +64,25 @@ function ScoreBossRankingTeamDetailCtrl:Refresh(mapRanking)
 	for k = 1, 3 do
 		self._mapNode.tcChar1_[k]:SetActive(false)
 	end
+	local tbCurLevelGroups = ConfigTable.GetData("ScoreBossControl", PlayerData.ScoreBoss.ControlId)
+	if tbCurLevelGroups ~= nil and next(tbCurLevelGroups) ~= nil then
+		local nFirstLevelId = tbCurLevelGroups.LevelGroup[1]
+		if mapRanking.Teams ~= nil and mapRanking.Teams[1] ~= nil and mapRanking.Teams[2] ~= nil and mapRanking.Teams[1].LevelId ~= nil and mapRanking.Teams[1].LevelId ~= nFirstLevelId then
+			local tbTempTeams = mapRanking.Teams[1]
+			mapRanking.Teams[1] = mapRanking.Teams[2]
+			mapRanking.Teams[2] = tbTempTeams
+		end
+	end
 	if mapRanking.Teams ~= nil and mapRanking.Teams[1] ~= nil then
+		if mapRanking.Teams[1].LevelId ~= nil and mapRanking.Teams[1].LevelId > 0 then
+			local bossLevelData = ConfigTable.GetData("ScoreBossLevel", mapRanking.Teams[1].LevelId)
+			local mData = ConfigTable.GetData("Monster", bossLevelData.MonsterId)
+			local mSkin = ConfigTable.GetData("MonsterSkin", mData.FAId)
+			local mManual = ConfigTable.GetData("MonsterManual", mSkin.MonsterManual)
+			NovaAPI.SetTMPText(self._mapNode.txtTeam[1], mManual.Name)
+		else
+			NovaAPI.SetTMPText(self._mapNode.txtTeam[1], ConfigTable.GetUIText("ScoreBossRankingTeamOne"))
+		end
 		self._mapNode.imgTeamBG[1]:SetActive(true)
 		local rank = PlayerData.Build:CalBuildRank(mapRanking.Teams[1].BuildScore)
 		local sScore = "Icon/BuildRank/BuildRank_" .. rank.Id
@@ -103,6 +114,15 @@ function ScoreBossRankingTeamDetailCtrl:Refresh(mapRanking)
 		self._mapNode.tcChar2_[k]:SetActive(false)
 	end
 	if mapRanking.Teams ~= nil and mapRanking.Teams[2] ~= nil then
+		if mapRanking.Teams[2].LevelId ~= nil and mapRanking.Teams[2].LevelId > 0 then
+			local bossLevelData = ConfigTable.GetData("ScoreBossLevel", mapRanking.Teams[2].LevelId)
+			local mData = ConfigTable.GetData("Monster", bossLevelData.MonsterId)
+			local mSkin = ConfigTable.GetData("MonsterSkin", mData.FAId)
+			local mManual = ConfigTable.GetData("MonsterManual", mSkin.MonsterManual)
+			NovaAPI.SetTMPText(self._mapNode.txtTeam[2], mManual.Name)
+		else
+			NovaAPI.SetTMPText(self._mapNode.txtTeam[2], ConfigTable.GetUIText("ScoreBossRankingTeamTwo"))
+		end
 		self._mapNode.imgTeamBG[2]:SetActive(true)
 		local rank = PlayerData.Build:CalBuildRank(mapRanking.Teams[2].BuildScore)
 		local sScore = "Icon/BuildRank/BuildRank_" .. rank.Id

@@ -275,12 +275,12 @@ return {
 	{
 		id = "avg1_158",
 		name = "Laru",
-		name_bg_color = "#c5bbb5"
+		name_bg_color = "#79092e"
 	},
 	{
 		id = "avg1_159",
 		name = "Coronis",
-		name_bg_color = "#cfbf93"
+		name_bg_color = "#c553a5"
 	},
 	{
 		id = "avg2_001",
@@ -854,7 +854,7 @@ return {
 	},
 	{
 		id = "avg3_184",
-		name = "Lady Ash",
+		name = "Lady Gray",
 		name_bg_color = "#0ABEC5"
 	},
 	{
@@ -946,6 +946,11 @@ return {
 		id = "avg3_203",
 		name = "Okra",
 		name_bg_color = "#b5bdeb"
+	},
+	{
+		id = "avg3_204",
+		name = "Miss Witch",
+		name_bg_color = "#ccc5b3"
 	},
 	{
 		id = "avg3_205",

@@ -66,7 +66,7 @@ function MiningGridListCtrl:FindReward(rewardIndex, scoreTra)
 				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 			end
 			go:SetActive(false)
-			go.transform:SetSiblingIndex(rewardIndex)
+			go.transform:SetSiblingIndex(1)
 			Trail.gameObject:SetActive(false)
 			EventManager.Hit("MiningGameRewardFxOver")
 			EventManager.Hit(EventId.BlockInput, false)

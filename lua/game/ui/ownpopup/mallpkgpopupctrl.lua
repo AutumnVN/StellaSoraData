@@ -1,10 +1,12 @@
 local MallPkgPopupCtrl = class("MallPkgPopupCtrl", BaseCtrl)
 local JumpUtil = require("Game.Common.Utils.JumpUtil")
 local ClientManager = CS.ClientManager.Instance
+local LayoutRebuilder = CS.UnityEngine.UI.LayoutRebuilder
 MallPkgPopupCtrl._mapNodeConfig = {
 	goContent = {
 		sNodeName = "---Common---"
 	},
+	nameRoot = {sNodeName = "--Name--", sComponentName = "Transform"},
 	btnGo = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Goto"
@@ -44,6 +46,7 @@ function MallPkgPopupCtrl:ShowPopUp(id, callback, index)
 	self:PlayOpenAnim()
 end
 function MallPkgPopupCtrl:PlayOpenAnim()
+	self:RefreshName()
 	if self.anim then
 		self.anim:Play("open", 0, 0)
 	end
@@ -57,6 +60,49 @@ function MallPkgPopupCtrl:RefreshDate()
 	local strEndDay = string.format("%02d", nEndDay)
 	local dateStr = string.format("%s/%s ~ %s/%s", nOpenMonth, strOpenDay, nEndMonth, strEndDay)
 	NovaAPI.SetTMPText(self._mapNode.txtDate, dateStr)
+end
+function MallPkgPopupCtrl:RefreshName()
+	local tbParams = decodeJson(self.mapCfg.ScriptParams)
+	local nCount = #tbParams
+	for i = 1, nCount do
+		local mapCfg = ConfigTable.GetData("MallPackage", tbParams[i])
+		if mapCfg then
+			local sName = mapCfg.SimpleName
+			local goRoot = self._mapNode.nameRoot:Find("goName" .. i)
+			if goRoot then
+				local goCal = self._mapNode.nameRoot:Find("goName" .. i .. "/txtCalNameWidth")
+				local txtCal = goCal:GetComponent("TMP_Text")
+				local rtCal = goCal:GetComponent("RectTransform")
+				local goName1 = self._mapNode.nameRoot:Find("goName" .. i .. "/Mask/txtName1")
+				local txtName1 = goName1:GetComponent("TMP_Text")
+				local goName2 = self._mapNode.nameRoot:Find("goName" .. i .. "/Mask/txtName2")
+				local txtName2 = goName2:GetComponent("TMP_Text")
+				local rtName2 = goName2:GetComponent("RectTransform")
+				local rtMask = self._mapNode.nameRoot:Find("goName" .. i .. "/Mask"):GetComponent("RectTransform")
+				NovaAPI.SetTMPText(txtName1, sName)
+				NovaAPI.SetTMPText(txtName2, sName)
+				NovaAPI.SetTMPText(txtCal, sName)
+				LayoutRebuilder.ForceRebuildLayoutImmediate(rtCal)
+				local nWidth = rtCal.rect.width
+				local nMaxWidth = rtMask.rect.width
+				rtName2.anchoredPosition = Vector2(0, 0)
+				goName1.gameObject:SetActive(nWidth <= nMaxWidth)
+				goName2.gameObject:SetActive(nWidth > nMaxWidth)
+				if nWidth > nMaxWidth then
+					do
+						local nPosX = 0
+						self:AddTimer(0, 0.034, function()
+							nPosX = nPosX - 1
+							if nPosX < -nWidth then
+								nPosX = 0
+							end
+							rtName2.anchoredPosition = Vector2(nPosX, 0)
+						end, true, true)
+					end
+				end
+			end
+		end
+	end
 end
 function MallPkgPopupCtrl:ClosePopUp(callback)
 	if self.anim ~= nil then

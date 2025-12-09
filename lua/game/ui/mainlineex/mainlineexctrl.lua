@@ -206,6 +206,9 @@ function MainlineExCtrl:OnEvent_SelectMainlineBattle(bConfirm)
 end
 function MainlineExCtrl:OnEvent_Story_Done(bHasReward)
 	self:RefreshPanel()
+	if bHasReward and self.curChapterCtrl ~= nil then
+		self.curChapterCtrl:ForbidClick()
+	end
 end
 function MainlineExCtrl:OnEvent_UIBackConfirm(nPanelId)
 	if self._panel._nPanelId ~= nPanelId then

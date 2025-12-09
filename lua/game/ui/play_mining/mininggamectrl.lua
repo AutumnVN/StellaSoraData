@@ -72,7 +72,8 @@ MiningGameCtrl._mapEventConfig = {
 	MiningKnockResult = "OnEvent_MiningKnockResult",
 	MiningGameUpdateScore = "OnEvent_UpdateScore",
 	MiningGameRewardFxOver = "OnEvent_UpdateScoreFx",
-	MiningShowReward = "OnEvent_ShowReward"
+	MiningShowReward = "OnEvent_ShowReward",
+	Mining_Error = "OnEvent_Error"
 }
 MiningGameCtrl._mapRedDotConfig = {}
 function MiningGameCtrl:Awake()
@@ -175,6 +176,7 @@ function MiningGameCtrl:UpdateLevelData()
 	end
 	EventManager.Hit(EventId.BlockInput, true)
 	self:AddTimer(1, 0.55, function()
+		self.gridListCtrl:HideReward()
 		self.gridListCtrl:InitRewardList(self.tbRewardDataList)
 		EventManager.Hit(EventId.BlockInput, false)
 	end, true, true, true, nil)
@@ -359,5 +361,11 @@ function MiningGameCtrl:OnEvent_UpdateAxeCount(nCount)
 end
 function MiningGameCtrl:OnEvent_ShowReward()
 	self.gridListCtrl:ShowReward(self.tbRewardDataList)
+end
+function MiningGameCtrl:OnEvent_Error()
+	EventManager.Hit(EventId.BlockInput, true)
+	self.miningData:RequestLevelData(0, function()
+		EventManager.Hit(EventId.BlockInput, false)
+	end)
 end
 return MiningGameCtrl

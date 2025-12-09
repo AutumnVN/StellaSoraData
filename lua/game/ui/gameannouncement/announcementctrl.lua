@@ -2,8 +2,8 @@ local AnnouncementCtrl = class("AnnouncementCtrl", BaseCtrl)
 local SDKManager = CS.SDKManager.Instance
 local Data = PlayerData.AnnouncementData
 local titleText = {
-	"Ann_System",
 	"Ann_Activity",
+	"Ann_System",
 	"Ann_Activity",
 	"Ann_Activity"
 }

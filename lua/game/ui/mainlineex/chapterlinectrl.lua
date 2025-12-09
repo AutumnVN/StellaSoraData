@@ -30,6 +30,7 @@ local UnlockConditionPriority = {
 	[6] = "MustAchievementIds"
 }
 function ChapterLineCtrl:Awake()
+	self.bCanClick = true
 	local callback = function()
 		self.bHasAchievementData = true
 	end
@@ -548,6 +549,9 @@ function ChapterLineCtrl:PlayLineAnim(goLine)
 	lineRect:DOScaleX(1, self.lineAnimTime)
 end
 function ChapterLineCtrl:OnClickGrid(avgId)
+	if self.bCanClick == false then
+		return
+	end
 	local storyConfig = AvgData:GetStoryCfgData(avgId)
 	local bUnlock, tbResult = AvgData:IsUnlock(storyConfig.ConditionId)
 	if not bUnlock then
@@ -685,5 +689,11 @@ function ChapterLineCtrl:IsAllStoryCompleted()
 		end
 	end
 	return false
+end
+function ChapterLineCtrl:ForbidClick()
+	self.bCanClick = false
+	self:AddTimer(1, 1.5, function()
+		self.bCanClick = true
+	end, true, true, true)
 end
 return ChapterLineCtrl

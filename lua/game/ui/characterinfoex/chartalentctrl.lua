@@ -189,6 +189,14 @@ function CharTalentCtrl:Awake()
 	self.nCurGroupIndex = 1
 	self.nGroupNum = #self._mapNode.KeyNode
 end
+function CharTalentCtrl:OnEnable()
+	if self._panel.nPanelId == PanelId.CharTalent then
+		self:SetAllVisibale(true)
+		self._mapNode.anim:Play("CharTalent_Root_in")
+		self:BuildUIData()
+		self:RefreshAll()
+	end
+end
 function CharTalentCtrl:OnDisable()
 	Actor2DManager.UnsetActor2D(false, 2, true)
 end

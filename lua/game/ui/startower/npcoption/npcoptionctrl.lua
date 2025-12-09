@@ -563,11 +563,19 @@ function NpcOptionCtrl:OnBtnClick_Talk(btn)
 		self:ClosePanel(true)
 		return
 	end
+	local nAnimLen = 0
 	if self.nType == 1 then
 		self._mapNode.ainPanel:Play("NpcOptionSelect_in")
+		nAnimLen = NovaAPI.GetAnimClipLength(self._mapNode.ainPanel, {
+			"NpcOptionSelect_in"
+		})
 	else
 		self._mapNode.ainPanel:Play("NpcOptionSelectRed_in")
+		nAnimLen = NovaAPI.GetAnimClipLength(self._mapNode.ainPanel, {
+			"NpcOptionSelectRed_in"
+		})
 	end
+	EventManager.Hit(EventId.TemporaryBlockInput, nAnimLen)
 	if self.nEventAction ~= 0 then
 		local mapEventAction = ConfigTable.GetData("StarTowerEventAction", self.nEventAction)
 		if mapEventAction ~= nil and mapEventAction.TrigVoice ~= "" then

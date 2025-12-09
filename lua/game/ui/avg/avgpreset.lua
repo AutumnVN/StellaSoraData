@@ -349,6 +349,8 @@ local AvgPreset = {
 		"story_main_04_001_b",
 		"story_main_04_001_c",
 		"story_main_04_002",
+		"story_main_04_002_a",
+		"story_main_04_002_b",
 		"story_main_04_003",
 		"story_main_04_003_FP",
 		"story_main_04_003_MP",

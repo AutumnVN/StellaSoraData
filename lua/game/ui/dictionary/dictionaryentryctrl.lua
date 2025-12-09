@@ -176,7 +176,7 @@ function DictionaryEntryCtrl:Resume()
 end
 function DictionaryEntryCtrl:InitSort()
 	self.sortingOrder = NovaAPI.GetCanvasSortingOrder(self.gameObject:GetComponent("Canvas"))
-	local nId = CS.UnityEngine.SortingLayer.NameToID(AllEnum.SortingLayerName.UI)
+	local nId = CS.UnityEngine.SortingLayer.NameToID(AllEnum.SortingLayerName.UI_Top)
 	NovaAPI.SetCanvasSortingId(self._mapNode.cvBase, nId)
 	NovaAPI.SetCanvasSortingId(self._mapNode.cvAni, nId)
 	self:RefreshSort(true)

@@ -50,6 +50,7 @@ function PlayerBaseData:Init()
 	self._tbHonorTitleList = nil
 	self._nSendGiftCnt = 0
 	self._nRenameTime = 0
+	self._sDestoryUrl = ""
 	self._bWorldClassChange = false
 	self.bNewDay = false
 	self.bNeedHotfix = false
@@ -929,6 +930,20 @@ function PlayerBaseData:SendPlayerHonorTitleEditReq(tbhonorTitle, callback)
 		end
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.player_honor_edit_req, msgData, nil, successCallback)
+end
+function PlayerBaseData:GetDestoryUrl()
+	return self._sDestoryUrl
+end
+function PlayerBaseData:SetDestoryUrl(sUrl)
+	self._sDestoryUrl = sUrl
+end
+function PlayerBaseData:RequestDestoryUrl(cb)
+	local callback = function(_, msgData)
+		if cb ~= nil then
+			cb(self._sDestoryUrl)
+		end
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.player_destroy_req, {}, nil, callback)
 end
 function PlayerBaseData:OnNewDay()
 	self._nBuyEnergyCount = 0

@@ -172,6 +172,7 @@ function StoryChapterCtrl:RefreshChapterList(grid, index)
 	btn.onClick:RemoveAllListeners()
 	btn.onClick:AddListener(function()
 		if isUnlock then
+			goLock.gameObject:SetActive(false)
 			aniTrans:Play("StoryChapter_chapter_setout")
 			self:OnBtn_ClickChapterGrid(chapterData.Id, grid)
 		else

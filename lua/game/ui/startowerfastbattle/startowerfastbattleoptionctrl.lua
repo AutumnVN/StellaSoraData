@@ -4,6 +4,10 @@ StarTowerFastBattleOptionCtrl._mapNodeConfig = {
 	goBlur = {
 		sNodeName = "t_fullscreen_blur_blue"
 	},
+	trRoot = {
+		sNodeName = "----SafeAreaRoot----",
+		sComponentName = "Transform"
+	},
 	rtSelectOption = {},
 	TMP_Title = {sComponentName = "TMP_Text"},
 	rtChoose = {nCount = 5},
@@ -18,7 +22,15 @@ StarTowerFastBattleOptionCtrl._mapNodeConfig = {
 	Select = {nCount = 5},
 	goCoin = {sNodeName = "imgBg_Coin"},
 	imgCoin = {sComponentName = "Image"},
-	textCoinCount = {sComponentName = "TMP_Text"}
+	textCoinCount = {sComponentName = "TMP_Text"},
+	btnBack = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Back"
+	},
+	btnDepot = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Depot"
+	}
 }
 StarTowerFastBattleOptionCtrl._mapEventConfig = {
 	RefreshStrengthMachineCost = "OnEvent_RefreshStrengthMachineCost",
@@ -163,6 +175,18 @@ function StarTowerFastBattleOptionCtrl:OnBtnSelect_Select(btn, nIndex)
 	end
 	self.nSelectIdx = nIndex
 end
+function StarTowerFastBattleOptionCtrl:OnBtnClick_Back()
+	EventManager.Hit("LeaveStarTowerFastBattle", function()
+		self.closeCallBack = nil
+		EventManager.Hit(EventId.ClosePanel, PanelId.StarTowerFastBattleOption)
+	end)
+end
+function StarTowerFastBattleOptionCtrl:OnBtnClick_Depot()
+	EventManager.Hit("StarTowerSetButtonEnable", false, false)
+	self._mapNode.trRoot.gameObject:SetActive(false)
+	self._mapNode.goBlur.gameObject:SetActive(false)
+	EventManager.Hit(EventId.StarTowerDepot, AllEnum.StarTowerDepotTog.Potential)
+end
 function StarTowerFastBattleOptionCtrl:OnEvent_GamepadUIChange(sName, nBeforeType, nAfterType)
 	if sName ~= "StarTowerFastBattleOptionCtrl" then
 		return
@@ -185,6 +209,8 @@ function StarTowerFastBattleOptionCtrl:OnEvent_Reopen(sName)
 	if sName ~= "StarTowerFastBattleOptionCtrl" then
 		return
 	end
+	self._mapNode.goBlur.gameObject:SetActive(true)
+	self._mapNode.trRoot.gameObject:SetActive(true)
 	local nSelect = self.nSelectIdx ~= 0 and self.nSelectIdx or 3
 	GamepadUIManager.SetSelectedUI(self._mapNode.btnChoose[nSelect].gameObject)
 	self:SelectChoose()

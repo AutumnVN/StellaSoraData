@@ -135,12 +135,21 @@ local mapConfig = {
 function TopBarCtrl:CreateCoin(tbCoin, bHideCoinAdd)
 	self.mapCoinIndex, self.mapItemIndex = nil, nil
 	local coinList = {}
-	table.sort(tbCoin, function(a, b)
-		local aIsGold = a == CoinItemId.Gold
-		local bIsGold = b == CoinItemId.Gold
-		return aIsGold and not bIsGold
-	end)
-	for _, v in pairs(tbCoin) do
+	local bHasGold = false
+	for _, v in ipairs(tbCoin) do
+		if v == CoinItemId.Gold then
+			bHasGold = true
+			break
+		end
+	end
+	if bHasGold then
+		table.sort(tbCoin, function(a, b)
+			local aIsGold = a == CoinItemId.Gold
+			local bIsGold = b == CoinItemId.Gold
+			return aIsGold and not bIsGold
+		end)
+	end
+	for _, v in ipairs(tbCoin) do
 		table.insert(coinList, v)
 	end
 	self.bForceHide = bHideCoinAdd or false

@@ -245,6 +245,7 @@ function MiningGameData:ResponseLevelData(msgData, callback)
 end
 function MiningGameData:DoEnterResult()
 	self:DoResult(self.tbCurlevelEnterChange)
+	self.tbCurlevelEnterChange = nil
 end
 function MiningGameData:DoResult(changeInfo)
 	if changeInfo == nil then

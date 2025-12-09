@@ -71,7 +71,7 @@ DispatchCtrl._mapNodeConfig = {
 		sComponentName = "RectTransform"
 	},
 	snapshot = {
-		sComponentName = "Button",
+		sComponentName = "UIButton",
 		callback = "OnBtnClick_CloseResult"
 	},
 	txtInfo = {
@@ -840,7 +840,6 @@ function DispatchCtrl:OnBtnClick_CloseStartDispatch()
 	self._mapNode.txtNoticeClick.gameObject:SetActive(false)
 end
 function DispatchCtrl:OnBtnClick_CloseResult(...)
-	self._mapNode.goResultCtrl:OnBtnClick_ClosePanel()
 end
 function DispatchCtrl:OnBtnClick_OneClickSelection()
 	local data = ConfigTable.GetData("Agent", self.curChoseDispatchId)

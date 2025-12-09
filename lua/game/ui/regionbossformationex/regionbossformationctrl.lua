@@ -724,6 +724,7 @@ function RegionBossFormationCtrl:OnBtnClick_Start(btn)
 					NovaAPI.SetEntryLevelFade(true)
 				end
 				local CancelCb = function()
+					self.bStartBattle = false
 				end
 				EventManager.Hit(EventId.OpenPanel, PanelId.ScoreBossClearBD, otherLevelId, ConfirmCb, CancelCb)
 				return

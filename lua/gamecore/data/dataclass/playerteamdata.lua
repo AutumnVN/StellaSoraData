@@ -53,6 +53,9 @@ function PlayerTeamData:CacheFormationInfo(mapData)
 			end
 		end
 	end
+	if mapData.Record ~= nil then
+		PlayerData.StarTower:CacheFormationInfo(mapData.Record)
+	end
 end
 function PlayerTeamData:UpdateFormationInfo(nTeamId, tbCharIds, tbDiscIds, callback)
 	local PlayerFormationReq = {}

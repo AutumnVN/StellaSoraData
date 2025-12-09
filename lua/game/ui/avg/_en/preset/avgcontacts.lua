@@ -105,6 +105,13 @@ return {
 		signature = "One good deed a day!"
 	},
 	{
+		id = 130,
+		icon = "Icon/Head/head_13001_S",
+		name = "Donna",
+		landmark = "No. 9 Tenth Street, Port Bellin",
+		signature = "Keeping it real!"
+	},
+	{
 		id = 132,
 		icon = "Icon/Head/head_13201_S",
 		name = "Minova",

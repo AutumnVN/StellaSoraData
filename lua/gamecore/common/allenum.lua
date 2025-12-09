@@ -1391,8 +1391,8 @@ AllEnum.ShopCondSource = {
 	MallPackage = 4
 }
 AllEnum.AnnType = {
-	SystemAnn = 1,
-	ActivityAnn = 2,
+	ActivityAnn = 1,
+	SystemAnn = 2,
 	Other1 = 3,
 	Other2 = 4
 }

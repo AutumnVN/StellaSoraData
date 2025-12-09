@@ -26,6 +26,13 @@ GachaHistotyCtrl._mapNodeConfig = {
 	TMPTag = {sComponentName = "TMP_Text", nCount = 5},
 	TMPTime = {sComponentName = "TMP_Text", nCount = 5},
 	ImgRare = {sComponentName = "Image", nCount = 5},
+	imgSSRBg = {nCount = 5},
+	imgUPMark = {nCount = 5},
+	TMPUPMarkTitle = {
+		sComponentName = "TMP_Text",
+		nCount = 5,
+		sLanguageId = "Gacha_History_UPMark"
+	},
 	imgTypeIconChar = {nCount = 5},
 	imgTypeIconDisc = {nCount = 5},
 	btnCloseScreen = {
@@ -200,6 +207,8 @@ function GachaHistotyCtrl:RefreshPage(nPage)
 			NovaAPI.SetTMPText(self._mapNode.TMPName[i], "")
 			NovaAPI.SetTMPText(self._mapNode.TMPTag[i], "")
 			NovaAPI.SetTMPText(self._mapNode.TMPTime[i], "")
+			self._mapNode.imgUPMark[i]:SetActive(false)
+			self._mapNode.imgSSRBg[i]:SetActive(false)
 			self._mapNode.ImgRare[i].gameObject:SetActive(false)
 			self._mapNode.imgTypeIconChar[i].gameObject:SetActive(false)
 			self._mapNode.imgTypeIconDisc[i].gameObject:SetActive(false)
@@ -216,6 +225,8 @@ function GachaHistotyCtrl:RefreshPage(nPage)
 			self._mapNode.ImgRare[i].gameObject:SetActive(false)
 			self._mapNode.imgTypeIconChar[i].gameObject:SetActive(false)
 			self._mapNode.imgTypeIconDisc[i].gameObject:SetActive(false)
+			self._mapNode.imgUPMark[i]:SetActive(false)
+			self._mapNode.imgSSRBg[i]:SetActive(false)
 		else
 			local mapItemCfgData = ConfigTable.GetData_Item(tbData[1])
 			if mapItemCfgData == nil then
@@ -226,6 +237,8 @@ function GachaHistotyCtrl:RefreshPage(nPage)
 				self._mapNode.ImgRare[i].gameObject:SetActive(false)
 				self._mapNode.imgTypeIconChar[i].gameObject:SetActive(false)
 				self._mapNode.imgTypeIconDisc[i].gameObject:SetActive(false)
+				self._mapNode.imgUPMark[i]:SetActive(false)
+				self._mapNode.imgSSRBg[i]:SetActive(false)
 			else
 				NovaAPI.SetTMPText(self._mapNode.TMPType[i], mapItemCfgData.Type == GameEnum.itemType.Char and ConfigTable.GetUIText("RoleCn") or ConfigTable.GetUIText("ItemStye_Outfit"))
 				self._mapNode.imgTypeIconChar[i].gameObject:SetActive(mapItemCfgData.Type == GameEnum.itemType.Char)
@@ -241,6 +254,17 @@ function GachaHistotyCtrl:RefreshPage(nPage)
 				else
 					NovaAPI.SetTMPText(self._mapNode.TMPTag[i], tbData[3])
 				end
+				local mapProbData = PlayerData.Gacha:GetPoolProbData(tbData[3])
+				local bUpItem = false
+				if mapProbData ~= nil and mapProbData.tbProbUpItem ~= nil then
+					for _, mapUpItem in ipairs(mapProbData.tbProbUpItem) do
+						if mapUpItem.nGoodsId == tbData[1] then
+							bUpItem = true
+						end
+					end
+				end
+				self._mapNode.imgUPMark[i]:SetActive(bUpItem)
+				self._mapNode.imgSSRBg[i]:SetActive(mapItemCfgData.Rarity == GameEnum.itemRarity.SSR)
 			end
 		end
 	end

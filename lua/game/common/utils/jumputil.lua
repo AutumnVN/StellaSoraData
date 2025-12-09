@@ -218,6 +218,8 @@ function JumpUtil.JumpTo(jumpId, ...)
 		PlayerData.StarTower:SendTowerGrowthDetailReq(callback)
 	elseif nType == GameEnum.jumpType.SwimActivityTask then
 		local nActId = mapJumpTo.Param[1]
+		local panelId = mapJumpTo.Param[2]
+		local tabId = mapJumpTo.Param[3]
 		if PlayerData.Activity:IsActivityInActivityGroup(nActId) then
 			local actGroupId = ConfigTable.GetData("Activity", nActId).MidGroupId
 			if actGroupId == 0 then
@@ -227,7 +229,7 @@ function JumpUtil.JumpTo(jumpId, ...)
 			local taskActId = actGroupData:GetActivityDataByIndex(AllEnum.ActivityThemeFuncIndex.Task).ActivityId
 			local taskActData = PlayerData.Activity:GetActivityDataById(taskActId)
 			if taskActData ~= nil and taskActData:CheckActivityOpen() then
-				EventManager.Hit(EventId.OpenPanel, PanelId.SwimTask, taskActId)
+				EventManager.Hit(EventId.OpenPanel, panelId, taskActId, tabId)
 				return
 			end
 			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_End_Notice"))

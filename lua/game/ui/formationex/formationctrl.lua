@@ -224,12 +224,6 @@ function FormationCtrl:EnterStarTower()
 	PlayerData.Build:GetBuildCount(CheckBuildCountCallBack)
 end
 function FormationCtrl:Awake()
-	local LocalData = require("GameCore.Data.LocalData")
-	local nIdx = LocalData.GetPlayerLocalData("SavedTeamIdx")
-	if nIdx == nil then
-		nIdx = 1
-	end
-	self._panel.nTeamIndex = nIdx
 	self.isOpenTeamMember = false
 	self:CheckBannedChar(true)
 end
@@ -251,6 +245,22 @@ function FormationCtrl:OnEnable()
 			self.mapTrialChar = PlayerData.Char:CreateTrialChar(tbTeamMemberId)
 			self.bTrialLevel = true
 		end
+	elseif self.nFRType == AllEnum.FormationEnterType.StarTower then
+		local mapStartowerCfg = ConfigTable.GetData("StarTower", self.curRoguelikeId)
+		if mapStartowerCfg ~= nil then
+			local nCachedIdx = PlayerData.StarTower:GetGroupFormation(mapStartowerCfg.GroupId)
+			if 0 < nCachedIdx and self._panel.nTeamIndex == nil then
+				self._panel.nTeamIndex = nCachedIdx
+			end
+		end
+	end
+	local LocalData = require("GameCore.Data.LocalData")
+	if self._panel.nTeamIndex == nil then
+		local nIdx = tonumber(LocalData.GetPlayerLocalData("SavedTeamIdx"))
+		if nIdx == nil then
+			nIdx = 1
+		end
+		self._panel.nTeamIndex = nIdx
 	end
 	self._mapNode.btnLeft.gameObject:SetActive(not self.bTrialLevel)
 	self._mapNode.btnRight.gameObject:SetActive(not self.bTrialLevel)

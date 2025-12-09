@@ -123,7 +123,8 @@ StarTowerFastBattleCtrl._mapEventConfig = {
 	[EventId.StarTowerDepot] = "OnEvent_OpenStarTowerDepot",
 	RefreshNoteCount = "OnEvent_RefreshNoteCount",
 	TryCloseStarTowerLastShop = "OnEvent_TryCloseStarTowerLastShop",
-	ShowNPCAffinity = "OnEvent_AffinityTips"
+	ShowNPCAffinity = "OnEvent_AffinityTips",
+	LeaveStarTowerFastBattle = "OnEvent_Leave"
 }
 StarTowerFastBattleCtrl._mapRedDotConfig = {}
 local theme_sprite_path = "UI/big_sprites/"
@@ -388,33 +389,16 @@ function StarTowerFastBattleCtrl:GetTeamNeedExpByLevel(nGroupId, nLevel)
 	end
 	return nNeedExp, bMaxLevel
 end
-function StarTowerFastBattleCtrl:OnHandleCasesOver()
-	local CurHandleCasesOver = function()
-		self.bOpenOption = false
-		self.Animator:Play("StarTowerFastBattlePanel_idle")
-		if self.bAuto and not self.bPause then
-			self:EnterRoom()
-		end
-	end
-	local bShop, bMachine, nMachineCount, nDiscount, bFirstFree = self._panel.LevelData:GetShopAndMachine()
-	if bShop or bMachine then
-		self.bOpenOption = true
-		local bLastShopRoom = self._panel.LevelData:CheckLastShopRoom()
-		EventManager.Hit(EventId.OpenPanel, PanelId.StarTowerFastBattleOption, bShop, bMachine, nMachineCount, self._panel.LevelData._mapItem[AllEnum.CoinItemId.FixedRogCurrency], CurHandleCasesOver, nDiscount, bFirstFree, bLastShopRoom)
-	else
-		CurHandleCasesOver()
-	end
-end
-function StarTowerFastBattleCtrl:OnBackButtonClick()
-	if not self.bHandleOver then
-		return
-	end
+function StarTowerFastBattleCtrl:LeaveStarTower(callback)
 	local msg = {
 		nType = AllEnum.MessageBox.Confirm,
 		sContent = ConfigTable.GetUIText("StarTower_Sweep_BackTips_Content"),
 		sConfirm = ConfigTable.GetUIText("StarTower_Sweep_Leave_Btn"),
 		sCancel = ConfigTable.GetUIText("StarTower_Sweep_GiveUp_Btn"),
 		callbackConfirm = function()
+			if callback ~= nil then
+				callback()
+			end
 			self._panel.LevelData:StarTowerLeave()
 			PanelManager.Home()
 		end,
@@ -424,6 +408,9 @@ function StarTowerFastBattleCtrl:OnBackButtonClick()
 				PlayerData.StarTower:GiveUpReconnect(mapStarTowerState.Id, mapStarTowerState.CharIds, false, function()
 					local wait = function()
 						coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+						if callback ~= nil then
+							callback()
+						end
 						EventManager.Hit(EventId.ClosePanel, PanelId.StarTowerFastBattle)
 					end
 					cs_coroutine.start(wait)
@@ -441,6 +428,30 @@ function StarTowerFastBattleCtrl:OnBackButtonClick()
 		bRedCancel = true
 	}
 	EventManager.Hit(EventId.OpenMessageBox, msg)
+end
+function StarTowerFastBattleCtrl:OnHandleCasesOver()
+	local CurHandleCasesOver = function()
+		self.bOpenOption = false
+		self.Animator:Play("StarTowerFastBattlePanel_idle")
+		if self.bAuto and not self.bPause then
+			self:EnterRoom()
+		end
+	end
+	local bShop, bMachine, nMachineCount, nDiscount, bFirstFree = self._panel.LevelData:GetShopAndMachine()
+	if bShop or bMachine then
+		self.bOpenOption = true
+		local bLastShopRoom = self._panel.LevelData:CheckLastShopRoom()
+		local nItemCount = self._panel.LevelData._mapItem[AllEnum.CoinItemId.FixedRogCurrency] or 0
+		EventManager.Hit(EventId.OpenPanel, PanelId.StarTowerFastBattleOption, bShop, bMachine, nMachineCount, nItemCount, CurHandleCasesOver, nDiscount, bFirstFree, bLastShopRoom)
+	else
+		CurHandleCasesOver()
+	end
+end
+function StarTowerFastBattleCtrl:OnBackButtonClick()
+	if not self.bHandleOver then
+		return
+	end
+	self:LeaveStarTower()
 end
 function StarTowerFastBattleCtrl:OnLogButtonClick()
 	if not self.bHandleOver then
@@ -630,5 +641,8 @@ function StarTowerFastBattleCtrl:OnEvent_AffinityTips(nNpcId, nAffinity)
 		nTipType = AllEnum.StarTowerTipsType.NPCAffinity
 	})
 	self._mapNode.Tips:StartShowTips(tbTips)
+end
+function StarTowerFastBattleCtrl:OnEvent_Leave(callback)
+	self:LeaveStarTower(callback)
 end
 return StarTowerFastBattleCtrl

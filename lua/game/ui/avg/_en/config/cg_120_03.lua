@@ -2376,7 +2376,7 @@ return {
 			"",
 			false,
 			"",
-			"As the people in Cangwu would say, \"among any three people, one can be my teacher.\" That's why she said she was my student.",
+			"As the people in Cangwu would say, \"among any three people, one can be my teacher.\" That's why ==SEX== said ==SEX== was my student.",
 			""
 		}
 	},
@@ -2600,7 +2600,7 @@ return {
 			"",
 			false,
 			"",
-			"Oh, right! It's afternoon tea time, isn't it? I'll get everything ready, please have a seat on the sofa.",
+			"Oh, right! It's afternoon tea time, isn't it? I'll get everything ready. Please have a seat on the sofa.",
 			""
 		}
 	},
@@ -4600,7 +4600,7 @@ return {
 			"",
 			false,
 			"",
-			"A night has past.==W== It's almost noon now\226\128\166 I think.",
+			"A night has passed.==W== It's almost noon now\226\128\166 I think.",
 			""
 		}
 	},
@@ -4677,7 +4677,7 @@ return {
 			"",
 			false,
 			"",
-			"Don't worry,==W== it's weekend.==W== There's no one else here==W== but us.",
+			"Don't worry,==W== it's the weekend.==W== There's no one else here==W== but us.",
 			""
 		}
 	},
@@ -4768,7 +4768,7 @@ return {
 			"",
 			false,
 			"",
-			"Of course not.==W== It is my responsibility that things end up like this.==W== I couldn't just leave you alone here and go home myself.==W== So,==W== I just stayed with you overnight.",
+			"Of course not.==W== It is my responsibility that things ended up like this.==W== I couldn't just leave you alone here and go home myself.==W== So,==W== I just stayed with you overnight.",
 			""
 		}
 	},

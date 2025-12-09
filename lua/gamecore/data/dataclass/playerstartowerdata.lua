@@ -19,6 +19,7 @@ function PlayerStarTowerData:Init()
 	self:InitConfig()
 	self.tbPassedId = {}
 	self.bPotentialDescSimple = nil
+	self.mapGroupFormation = {}
 	self.mapNpcAffinityGroupMaxLevel = {}
 	local forEachAffinityLevel = function(mapData)
 		if self.mapNpcAffinityGroupMaxLevel[mapData.AffinityGroupId] == nil then
@@ -52,6 +53,10 @@ function PlayerStarTowerData:EnterTower(nTowerId, nTeamIdx, tbDisc)
 	local stRoomMeta = CS.Lua2CSharpInfo_FixedRoguelike(nTowerId, nStageId, {}, tbTeam, tbCharSkinId, 0, "", 0, -1, false, 0)
 	local curMapId, nFloorId, sExdata, scenePrefabId = safe_call_cs_func2(CS.AdventureModuleHelper.RandomStarTowerMap, stRoomMeta)
 	local applyCallback = function(_, mapMsgData)
+		local mapStartowerCfg = ConfigTable.GetData("StarTower", nTowerId)
+		if mapStartowerCfg ~= nil then
+			self.mapGroupFormation[mapStartowerCfg.GroupId] = nTeamIdx
+		end
 		local mapStateInfo = {
 			Id = nTowerId,
 			ReConnection = 0,
@@ -396,6 +401,17 @@ function PlayerStarTowerData:CacheOnePassedId(passedId)
 	if table.indexof(self.tbPassedId, passedId) < 1 then
 		table.insert(self.tbPassedId, passedId)
 	end
+end
+function PlayerStarTowerData:CacheFormationInfo(tbData)
+	for _, mapFormation in ipairs(tbData) do
+		self.mapGroupFormation[mapFormation.GroupId] = mapFormation.Number
+	end
+end
+function PlayerStarTowerData:GetGroupFormation(nGroupId)
+	if self.mapGroupFormation[nGroupId] ~= nil then
+		return self.mapGroupFormation[nGroupId]
+	end
+	return 0
 end
 function PlayerStarTowerData:GetFirstPassReward(nLevelId)
 	local mapLevelCfgData = ConfigTable.GetData("StarTower", nLevelId)

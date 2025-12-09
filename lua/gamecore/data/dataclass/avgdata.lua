@@ -692,7 +692,7 @@ function AvgData:SendMsg_STORY_ENTER(nStoryId, nBuildId, bNewestStory)
 				end
 			end
 			printLog("\232\191\155AVG\230\188\148\229\135\186\228\186\134 " .. mapCfgData_Story.AvgLuaName)
-			EventManager.Add("StoryDialog_DialogEnd", self, self.OnEvent_AvgSTEnd)
+			EventManager.Add("AvgSTEnd", self, self.OnEvent_AvgSTEnd)
 			EventManager.Hit("StoryDialog_DialogStart", mapCfgData_Story.AvgLuaName, nil, nil, nil, nil, mapCfgData_Story.AvgMotion)
 		end
 	end
@@ -911,8 +911,8 @@ function AvgData:OnEvent_AvgSTEnd()
 		self.mapTempPersonalityFactor = {}
 		return
 	end
+	EventManager.Remove("AvgSTEnd", self, self.OnEvent_AvgSTEnd)
 	self:SendMsg_STORY_DONE()
-	EventManager.Remove("StoryDialog_DialogEnd", self, self.OnEvent_AvgSTEnd)
 end
 function AvgData:LevelEnd()
 	PlayerData.Build:DeleteTrialBuild()

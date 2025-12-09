@@ -576,6 +576,7 @@ function BattleDashboardCtrl:Refresh(nCurPlayerId)
 			NovaAPI.SetImageColor(self._mapNode["imgSupRole" .. i], Color(0, 0, 0, 0))
 		end
 	end
+	self._mapNode.RUN.transform.localScale = Vector3.zero
 end
 function BattleDashboardCtrl:Add_Skill_EntityEvent(nPlayerId)
 	EventManager.AddEntityEvent("SkillBind", nPlayerId, self, self.OnEvent_SkillBind)

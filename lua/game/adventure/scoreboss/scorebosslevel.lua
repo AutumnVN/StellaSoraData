@@ -129,6 +129,8 @@ function ScoreBossLevel:OnEvent_LevelResult(tbStar, bAbandon)
 end
 function ScoreBossLevel:OnEvent_BossRushSpawnId(bossId)
 	self.BossId = bossId
+	local healthInfo = CS.AdventureModuleHelper.GetEntityHealthInfo(bossId)
+	self.BossMaxHp = healthInfo ~= nil and healthInfo.hpMax:AsInt() or 0
 	EventManager.AddEntityEvent("HpChanged", self.BossId, self, self.OnEvent_HpChanged)
 	EventManager.AddEntityEvent("BossRushMonsterLevelChanged", self.BossId, self, self.OnEvent_BossRushMonsterLevelChanged)
 	EventManager.AddEntityEvent("BossRushMonsterBattleAttrChanged", self.BossId, self, self.OnEvent_BossRushMonsterBattleAttrChanged)
@@ -137,10 +139,10 @@ function ScoreBossLevel:OnEvent_HpChanged(hp, hpMax)
 	if self.isSettlement then
 		return
 	end
+	self.BossMaxHp = hpMax
 	if self.isDontChangeHp then
 		return
 	end
-	self.BossMaxHp = hpMax
 	if self.BossCurLvMinHp == -1 then
 		self.BossCurLvMinHp = hp
 		self.parent:DamageToScore(hpMax - hp, self.SwitchRate, self.BattleLv)

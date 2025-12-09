@@ -677,7 +677,7 @@ return {
 			"",
 			false,
 			"",
-			"Ghost-catching's my master's specialty! You can wait for her to come out of retreat, then ask her for help!",
+			"Ghost-catching's my master's specialty! You can wait for her to come out of the retreat, then ask her for help!",
 			""
 		}
 	},

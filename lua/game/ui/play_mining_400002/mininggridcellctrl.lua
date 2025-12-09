@@ -107,11 +107,51 @@ function MiningGridCellCtrl:UpdateEffect(nEffectType)
 		self:UpdateDigEffect()
 	elseif nEffectType == GameEnum.miningSupportEffect.NeighborDestroyed then
 	elseif nEffectType == GameEnum.miningSupportEffect.AreaDamageOnDig then
+		WwiseAudioMgr:PostEvent("mode_digging2_transform")
+		self._mapNode.effect_Transform:SetActive(true)
+		timer = self:AddTimer(1, 1, function()
+			self._mapNode.effect_Transform:SetActive(false)
+			local index = table.indexof(self.tbTimer, timer)
+			if 0 < index then
+				table.remove(self.tbTimer, index)
+			end
+		end, true, true, true, nil)
+		table.insert(self.tbTimer, timer)
 	elseif nEffectType == GameEnum.miningSupportEffect.ConsumePreserver then
 		self.bNextIsUnUse = true
 	elseif nEffectType == GameEnum.miningSupportEffect.ConverterOnEnterLayer then
+		WwiseAudioMgr:PostEvent("mode_digging2_transform")
+		self._mapNode.effect_Transform:SetActive(true)
+		timer = self:AddTimer(1, 1, function()
+			self._mapNode.effect_Transform:SetActive(false)
+			local index = table.indexof(self.tbTimer, timer)
+			if 0 < index then
+				table.remove(self.tbTimer, index)
+			end
+		end, true, true, true, nil)
+		table.insert(self.tbTimer, timer)
 	elseif nEffectType == GameEnum.miningSupportEffect.ConverterOnReceiveTreasure then
+		WwiseAudioMgr:PostEvent("mode_digging2_transform")
+		self._mapNode.effect_Transform:SetActive(true)
+		timer = self:AddTimer(1, 1, function()
+			self._mapNode.effect_Transform:SetActive(false)
+			local index = table.indexof(self.tbTimer, timer)
+			if 0 < index then
+				table.remove(self.tbTimer, index)
+			end
+		end, true, true, true, nil)
+		table.insert(self.tbTimer, timer)
 	elseif nEffectType == GameEnum.miningSupportEffect.ConverterOnGridDestroyed then
+		WwiseAudioMgr:PostEvent("mode_digging2_transform")
+		self._mapNode.effect_Transform:SetActive(true)
+		timer = self:AddTimer(1, 1, function()
+			self._mapNode.effect_Transform:SetActive(false)
+			local index = table.indexof(self.tbTimer, timer)
+			if 0 < index then
+				table.remove(self.tbTimer, index)
+			end
+		end, true, true, true, nil)
+		table.insert(self.tbTimer, timer)
 	elseif nEffectType == GameEnum.miningSupportEffect.CriticalDamage then
 		self.bNextIsCritical = true
 	elseif nEffectType == GameEnum.miningSupportEffect.TreasureMarkerOnGridDestroyed then

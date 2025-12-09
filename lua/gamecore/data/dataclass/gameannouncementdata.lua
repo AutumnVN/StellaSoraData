@@ -1,37 +1,5 @@
 local GameAnnouncementData = class("GameAnnouncementData")
 local LocalData = require("GameCore.Data.LocalData")
-local AnnServerChannel_CN = {
-	[1] = "cn_android_official",
-	[2] = "cn_ios_official",
-	[4] = "cn_android_bilibili",
-	[8] = "cn_harmony_official",
-	[16] = "cn_pc_official",
-	[32] = "cn_pc_bilibili"
-}
-local AnnServerChannel_JP = {
-	[1] = "jp_android_official",
-	[2] = "jp_ios_official",
-	[4] = "jp_android_onestore",
-	[8] = "jp_pc_official"
-}
-local AnnServerChannel_US = {
-	[1] = "us_android_official",
-	[2] = "us_ios_official",
-	[4] = "us_android_onestore",
-	[8] = "us_pc_official"
-}
-local AnnServerChannel_KR = {
-	[1] = "kr_android_official",
-	[2] = "kr_ios_official",
-	[4] = "kr_android_onestore",
-	[8] = "kr_pc_official"
-}
-local AnnServerChannel_TW = {
-	[1] = "tw_android_official",
-	[2] = "tw_ios_official",
-	[4] = "tw_android_onestore",
-	[8] = "tw_pc_official"
-}
 local htmlConfigId = 1
 function GameAnnouncementData:ctor()
 end
@@ -153,33 +121,6 @@ function GameAnnouncementData:AllAnnResponse(listData)
 	self.tbTypeList = {}
 	self.tbAnnContentCache = {}
 	self.tbCurAnnList = {}
-	for i = 0, listData.System.Length - 1 do
-		local v = listData.System[i]
-		if UTILS.CheckChannelList(v.Channel) and v.ContentUrl ~= "" then
-			self.tbAnnBaseInfo[v.Id] = {
-				info = v,
-				nType = AllEnum.AnnType.SystemAnn
-			}
-			if self.tbTypeList[AllEnum.AnnType.SystemAnn] == nil then
-				local list = {}
-				table.insert(list, v)
-				self.tbTypeList[AllEnum.AnnType.SystemAnn] = list
-			else
-				table.insert(self.tbTypeList[AllEnum.AnnType.SystemAnn], v)
-			end
-			local bIsRead = false
-			if LocalData.GetLocalData("AnnouncementIsRead", tostring(v.Id)) == nil then
-				bIsRead = false
-			else
-				bIsRead = LocalData.GetLocalData("AnnouncementIsRead", tostring(v.Id))
-			end
-			RedDotManager.SetValid(RedDotDefine.Announcement_Content, {
-				AllEnum.AnnType.SystemAnn,
-				v.Id
-			}, not bIsRead)
-			table.insert(self.tbCurAnnList, v.Id)
-		end
-	end
 	for i = 0, listData.Activity.Length - 1 do
 		local v = listData.Activity[i]
 		if UTILS.CheckChannelList(v.Channel) and v.ContentUrl ~= "" then
@@ -206,6 +147,33 @@ function GameAnnouncementData:AllAnnResponse(listData)
 			}, not bIsRead)
 		end
 		table.insert(self.tbCurAnnList, v.Id)
+	end
+	for i = 0, listData.System.Length - 1 do
+		local v = listData.System[i]
+		if UTILS.CheckChannelList(v.Channel) and v.ContentUrl ~= "" then
+			self.tbAnnBaseInfo[v.Id] = {
+				info = v,
+				nType = AllEnum.AnnType.SystemAnn
+			}
+			if self.tbTypeList[AllEnum.AnnType.SystemAnn] == nil then
+				local list = {}
+				table.insert(list, v)
+				self.tbTypeList[AllEnum.AnnType.SystemAnn] = list
+			else
+				table.insert(self.tbTypeList[AllEnum.AnnType.SystemAnn], v)
+			end
+			local bIsRead = false
+			if LocalData.GetLocalData("AnnouncementIsRead", tostring(v.Id)) == nil then
+				bIsRead = false
+			else
+				bIsRead = LocalData.GetLocalData("AnnouncementIsRead", tostring(v.Id))
+			end
+			RedDotManager.SetValid(RedDotDefine.Announcement_Content, {
+				AllEnum.AnnType.SystemAnn,
+				v.Id
+			}, not bIsRead)
+			table.insert(self.tbCurAnnList, v.Id)
+		end
 	end
 	for i = 0, listData.Other1.Length - 1 do
 		local v = listData.Other1[i]

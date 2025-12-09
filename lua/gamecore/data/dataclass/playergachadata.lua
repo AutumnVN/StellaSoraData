@@ -316,6 +316,7 @@ function PlayerGachaData:GetPoolProbData(nPoolId)
 	else
 		local probUpItem, probItem = self:GetPoolProbDetail(nPoolId)
 		self._mapPoolProbCache[nPoolId] = {tbProbUpItem = probUpItem, tbProbItem = probItem}
+		return self._mapPoolProbCache[nPoolId]
 	end
 end
 function PlayerGachaData:GetPoolProbDetail(nPoolID)

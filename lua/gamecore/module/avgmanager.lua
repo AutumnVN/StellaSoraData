@@ -58,6 +58,9 @@ local OnEvent_AvgSTStart = function(_, sAvgId, sLanguage, sVoLan, sGroupId, nSta
 		})
 		objAvgPanel:_PreEnter()
 		objAvgPanel:_Enter()
+		if nTransitionType == 12 then
+			nTransitionType = 0
+		end
 	end
 	local func_OnEvent_TransAnimInClear = function()
 		EventManager.Hit(EventId.SetTransition)
@@ -80,6 +83,9 @@ local OnEvent_AvgSTStart = function(_, sAvgId, sLanguage, sVoLan, sGroupId, nSta
 	end
 end
 local OnEvent_AvgSTEnd = function(_)
+	local func_AvgSTEnd = function()
+		EventManager.Hit("AvgSTEnd")
+	end
 	local func_DoEnd = function()
 		NovaAPI.DispatchEventWithData("StoryDialog_DialogEnd")
 		if objAvgPanel ~= nil then
@@ -99,16 +105,14 @@ local OnEvent_AvgSTEnd = function(_)
 	local func_OnEvent_TransAnimInClear = function()
 		EventManager.Hit(EventId.SetTransition)
 		func_DoEnd()
+		func_AvgSTEnd()
 	end
 	if nTransitionType ~= 0 then
-		if nTransitionType == 12 then
-			func_DoEnd()
-		else
-			EventManager.Hit(EventId.SetTransition, nTransitionType, func_OnEvent_TransAnimInClear)
-		end
+		EventManager.Hit(EventId.SetTransition, nTransitionType, func_OnEvent_TransAnimInClear)
 		nTransitionType = 0
 	else
 		func_DoEnd()
+		func_AvgSTEnd()
 	end
 end
 local function Uninit(_)
