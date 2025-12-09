@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType } = require('./utils');
+const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -175,7 +175,10 @@ function getSkillAddAttrTypes(skillId) {
         if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) currentId += 10;
         if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) continue;
 
-        addAttrTypes.push(ATTR_TYPE[ONCEADDITTIONALATTRIBUTEVALUE[currentId].AttributeType1]);
+        const type = ONCEADDITTIONALATTRIBUTEVALUE[currentId].AttributeType1;
+        const paramType = ONCEADDITTIONALATTRIBUTEVALUE[currentId].ParameterType1;
+
+        addAttrTypes.push(formatAddAttrType(type, paramType));
     }
 
     return [...new Set(addAttrTypes)];
@@ -385,7 +388,10 @@ function getPotentialAddAttrTypes(potId) {
         if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) currentId += 10;
         if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) continue;
 
-        addAttrTypes.push(ATTR_TYPE[ONCEADDITTIONALATTRIBUTEVALUE[currentId].AttributeType1]);
+        const type = ONCEADDITTIONALATTRIBUTEVALUE[currentId].AttributeType1;
+        const paramType = ONCEADDITTIONALATTRIBUTEVALUE[currentId].ParameterType1;
+
+        addAttrTypes.push(formatAddAttrType(type, paramType));
     }
 
     return [...new Set(addAttrTypes)];

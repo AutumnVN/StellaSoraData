@@ -602,12 +602,22 @@ function formatEffectType(id, type, paramType) {
     return result;
 }
 
+function formatAddAttrType(type, paramType) {
+    const attrTypeStr = ATTR_TYPE[type];
+    const paramTypeStr = PARAM_TYPE[paramType];
+
+    let result = `${attrTypeStr} (${paramTypeStr})`;
+
+    return result;
+}
+
 module.exports = {
     collectParamsFrom,
     iHateFloatingPointNumber,
     resolveParam,
     getEffectData,
     formatEffectType,
+    formatAddAttrType,
     ATTR_TYPE,
     PARAM_TYPE,
     DAMAGE_TYPE,
