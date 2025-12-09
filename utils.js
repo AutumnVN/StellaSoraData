@@ -581,10 +581,13 @@ function formatEffectType(id, type, paramType) {
 
     if (!['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
         result += effectTypeStr;
-        result += ':';
     }
 
     if (attrTypeStr) {
+        if (!['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
+            result += ':';
+        }
+
         if (['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX', 'ADDBUFF'].includes(effectTypeStr)) {
             result += `${attrTypeStr}`;
         } else {
