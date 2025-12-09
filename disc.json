@@ -24987,7 +24987,7 @@
             "desc": "Increases the ATK of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, the main Ventus Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
                 "ATK (%)",
-                "ADD_SHIELD:"
+                "ADD_SHIELD"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Ventus | SELF, DEFAULT | SELF, DEFAULT",
@@ -25583,7 +25583,7 @@
             "desc": "Increases the ATK of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen the main Lux Trekker is hit, gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
                 "ATK (%)",
-                "ADD_SHIELD:"
+                "ADD_SHIELD"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Lux | SELF, DEFAULT | SELF, DEFAULT",
@@ -26180,7 +26180,7 @@
             "desc": "Increases the ATK of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Aqua Trekker casts an Ultimate, the main Aqua Trekker gains a shield equal to {2} of Max HP for {3}s.",
             "effectType": [
                 "ATK (%)",
-                "ADD_SHIELD:"
+                "ADD_SHIELD"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Aqua | SELF, DEFAULT | SELF, DEFAULT",
@@ -26778,7 +26778,7 @@
             "desc": "Increases the ATK of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any support Umbra Trekker or Umbra minion inflicts ##Umbra Mark#1019#, the main Umbra Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
                 "ATK (%)",
-                "ADD_SHIELD:"
+                "ADD_SHIELD"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Umbra | SELF, DEFAULT | SELF, DEFAULT"
@@ -27376,7 +27376,7 @@
             "desc": "Increases the ATK of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ignis Trekker casts a skill, the main Ignis Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
                 "ATK (%)",
-                "ADD_SHIELD:"
+                "ADD_SHIELD"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Ignis | SELF, DEFAULT | SELF, DEFAULT",
@@ -27972,7 +27972,7 @@
             "desc": "Increases the ATK of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Terra Mark#1020#, the main Terra Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
             "effectType": [
                 "ATK (%)",
-                "ADD_SHIELD:"
+                "ADD_SHIELD"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Terra | SELF, DEFAULT | SELF, DEFAULT",
@@ -29807,7 +29807,7 @@
             "desc": "Increases Ignis Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, increases this effect by an additional {3} every {2}s, stacking up to {4} times.",
             "effectType": [
                 "ATK (%)",
-                "ADDBUFF:",
+                "ADDBUFF",
                 "ADDBUFF:ATK"
             ],
             "effectData": [
@@ -32185,8 +32185,8 @@
             "effectType": [
                 "Ultimate DMG (base)",
                 "Skill DMG (base)",
-                "ADDBUFF:",
-                "REMOVE_BUFF:"
+                "ADDBUFF",
+                "REMOVE_BUFF"
             ],
             "effectData": [
                 "NOTHING, SELF, ACTORELEMENTTYPE, Terra | SELF, DEFAULT | SELF, DEFAULT",

@@ -2799,7 +2799,7 @@
                     "desc": "When Tilia takes fatal DMG, grants immunity to the DMG and restores <color=#ec6d21>&Param2&</color> of her Max HP. This effect can only be triggered once per battle.",
                     "damageType": [],
                     "effectType": [
-                        "EFFECT_HP_RECOVERY:"
+                        "EFFECT_HP_RECOVERY"
                     ],
                     "addAttrType": [],
                     "effectData": [
@@ -27213,7 +27213,7 @@
                     "desc": "When any Trekker in the squad triggers a Ventus Mark, there is a 30% chance to restore <color=#ec6d21>&Param1&</color> HP to Ann. This effect can only be triggered once every 5s.",
                     "damageType": [],
                     "effectType": [
-                        "EFFECT_HP_RECOVERY:"
+                        "EFFECT_HP_RECOVERY"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -32643,7 +32643,7 @@
                     "desc": "When an ally lands a Crit Hit, the main Trekker's HP is restored by <color=#ec6d21>&Param1&</color>. This effect can only be triggered once every 6s.",
                     "damageType": [],
                     "effectType": [
-                        "EFFECT_HP_RECOVERY:"
+                        "EFFECT_HP_RECOVERY"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -44267,7 +44267,7 @@
                     "desc": "When Mistique deals DMG with an Auto Attack, restores <color=#ec6d21>&Param1&</color> HP to nearby Pumpka Phantoms. This effect can only be triggered once per sec.\u000bIncreases her &Param2& by <color=#ec6d21>&Param3&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "EFFECT_HP_RECOVERY:",
+                        "EFFECT_HP_RECOVERY",
                         "Minion DMG (base)"
                     ],
                     "addAttrType": [],
@@ -63738,7 +63738,7 @@
                 "Skill"
             ],
             "effectType": [
-                "EFFECT_HP_RECOVERY:",
+                "EFFECT_HP_RECOVERY",
                 "ATK (%)",
                 "Terra DMG (base)"
             ],
@@ -63812,7 +63812,7 @@
                         "Skill"
                     ],
                     "effectType": [
-                        "EFFECT_HP_RECOVERY:"
+                        "EFFECT_HP_RECOVERY"
                     ],
                     "addAttrType": [],
                     "effectData": [],
