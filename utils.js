@@ -103,9 +103,9 @@ const ATTR_TYPE = {
 };
 
 const PARAM_TYPE = {
-    1: 'BASE',
-    2: 'PERCENTAGE',
-    3: 'ABSOLUTE'
+    1: 'base',
+    2: '%',
+    3: 'abs'
 };
 
 const DAMAGE_TYPE = {
@@ -578,17 +578,21 @@ function formatEffectType(id, type, paramType) {
     const attrTypeStr = ATTR_TYPE[type];
     const paramTypeStr = PARAM_TYPE[paramType];
 
-    result += effectTypeStr;
+
+    if (!['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
+        result += effectTypeStr;
+        result += ':';
+    }
 
     if (attrTypeStr) {
         if (['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX', 'ADDBUFF'].includes(effectTypeStr)) {
-            result += `:${attrTypeStr}`;
+            result += `${attrTypeStr}`;
         } else {
-            result += `:${type}`;
+            result += `${type}`;
         }
 
         if (['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
-            result += `:${paramTypeStr}`;
+            result += ` (${paramTypeStr})`;
         }
     }
 
