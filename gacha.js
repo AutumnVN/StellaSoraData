@@ -2,10 +2,12 @@ const { writeFileSync } = require('fs');
 const GACHA = require('./EN/bin/Gacha.json');
 const GACHAPKG = require('./EN/bin/GachaPkg.json');
 const CHARACTER = require('./EN/bin/Character.json');
+const DISC = require('./EN/bin/Disc.json');
 const ITEM = require('./EN/bin/Item.json');
 const LANG_GACHA = require('./EN/language/en_US/Gacha.json');
 const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
 const LANG_ITEM = require('./EN/language/en_US/Item.json');
+const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 
 const gacha = {};
 
@@ -33,6 +35,7 @@ function getGachaPkg(pkgId) {
             return {
                 id,
                 name: LANG_CHARACTER[CHARACTER[id]?.Name] || LANG_ITEM[ITEM[id]?.Title],
+                element: LANG_UITEXT[`UIText.T_Element_Attr_${CHARACTER[id]?.EET}.1`] || LANG_UITEXT[`UIText.T_Element_Attr_${DISC[id]?.EET}.1`]
             };
         });
 }
