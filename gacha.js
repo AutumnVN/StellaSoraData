@@ -14,6 +14,7 @@ for (const id in GACHA) {
 
     gacha[id] = {
         id: +id,
+        type: GACHA[id].StorageId === 1 ? 'character' : 'disc',
         name: LANG_GACHA[GACHA[id].Name],
         rateUp5Star: getGachaPkg(GACHA[id].ATypeUpPkg),
         rateUp4Star: getGachaPkg(GACHA[id].BTypeUpPkg),
