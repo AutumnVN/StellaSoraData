@@ -515,6 +515,10 @@ function Avg_4_TalkCtrl:OnEvent_ClearTalk()
 	self:_SetBtnEnable(false)
 end
 function Avg_4_TalkCtrl:_ClearTalk()
+	if self.twDOText ~= nil then
+		self.twDOText:Kill()
+		self.twDOText = nil
+	end
 	if self.curCanvasGroup == nil then
 		return
 	end

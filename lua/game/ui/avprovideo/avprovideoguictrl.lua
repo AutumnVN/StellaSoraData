@@ -91,6 +91,9 @@ function AVProVideoGUICtrl:SetParam(tbParam, bActive)
 	end
 end
 function AVProVideoGUICtrl:FadeIn()
+	if self:GetPanelId() == PanelId.AvgEditor then
+		return
+	end
 	if self:GetPanelId() == PanelId.AvgST and self.bInAvg ~= true then
 		return
 	end
@@ -248,10 +251,6 @@ function AVProVideoGUICtrl:ParseFileName()
 		[2] = sBaseName .. "_" .. sVoTag .. "_FP" .. sLanSurfix .. ".srt",
 		[3] = sBaseName .. sLanSurfix .. ".srt"
 	}
-	printLog("==========\230\146\173\232\167\134\233\162\145+\233\159\179\232\189\168+\229\173\151\229\185\149\232\167\132\229\136\153==========")
-	printTable(tbVideoFileNameOrder)
-	printTable(tbSoundTrackNameOrder)
-	printTable(tbSrtFileNameOrder)
 	return tbVideoFileNameOrder, tbSoundTrackNameOrder, tbSrtFileNameOrder
 end
 return AVProVideoGUICtrl

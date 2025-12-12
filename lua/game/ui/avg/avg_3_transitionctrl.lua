@@ -2,10 +2,7 @@ local Avg_3_TransitionCtrl = class("Avg_3_TransitionCtrl", BaseCtrl)
 local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
 Avg_3_TransitionCtrl._mapNodeConfig = {
-	AVProVideoGUICtrl = {
-		sNodeName = "AVProVideoGUI",
-		sCtrlName = "Game.UI.AVProVideo.AVProVideoGUICtrl"
-	},
+	AVProVideoGUI = {},
 	rtFilmMode = {
 		sNodeName = "----film_mode----",
 		sComponentName = "RectTransform"
@@ -44,6 +41,21 @@ Avg_3_TransitionCtrl._mapEventConfig = {
 function Avg_3_TransitionCtrl:Awake()
 	self.nFilmHeight = 0
 	self.canvas = self.gameObject:GetComponent("Canvas")
+end
+function Avg_3_TransitionCtrl:OnEnable()
+	if self:GetPanelId() == PanelId.AvgST then
+		if self.AVProVideoGUICtrl ~= nil then
+			self:UnbindCtrlByNode(self.AVProVideoGUICtrl)
+			self.AVProVideoGUICtrl = nil
+		end
+		self.AVProVideoGUICtrl = self:BindCtrlByNode(self._mapNode.AVProVideoGUI, "Game.UI.AVProVideo.AVProVideoGUICtrl")
+	end
+end
+function Avg_3_TransitionCtrl:OnDisable()
+	if self:GetPanelId() == PanelId.AvgST and self.AVProVideoGUICtrl ~= nil then
+		self:UnbindCtrlByNode(self.AVProVideoGUICtrl)
+		self.AVProVideoGUICtrl = nil
+	end
 end
 function Avg_3_TransitionCtrl:OnEvent_Clear()
 	if self:GetPanelId() == PanelId.AvgEditor then
@@ -327,8 +339,9 @@ end
 function Avg_3_TransitionCtrl:_PlayVideoStart(timer, sVideoResName)
 	if type(self.tbTransForVideo) == "table" and #self.tbTransForVideo > 0 and self.tbTransForVideo[1] == 0 then
 		EventManager.Add("VIDEO_START", self, self.OnEvent_VideoStart)
+		EventManager.Add("VIDEO_FINISHED", self, self.OnEvent_VideoFinished)
 		local nColor = self.tbTransForVideo[2] == 1 and 1 or 0
-		self._mapNode.AVProVideoGUICtrl:SetParam({
+		self.AVProVideoGUICtrl:SetParam({
 			sVideoResName,
 			false,
 			0,
@@ -339,12 +352,11 @@ function Avg_3_TransitionCtrl:_PlayVideoStart(timer, sVideoResName)
 			true,
 			nColor
 		}, true)
-		self._mapNode.AVProVideoGUICtrl:FadeIn()
+		self.AVProVideoGUICtrl:FadeIn()
 	end
 end
 function Avg_3_TransitionCtrl:OnEvent_VideoStart()
 	EventManager.Remove("VIDEO_START", self, self.OnEvent_VideoStart)
-	EventManager.Add("VIDEO_FINISHED", self, self.OnEvent_VideoFinished)
 	if type(self.tbTransForVideo) == "table" and #self.tbTransForVideo > 0 and self.tbTransForVideo[1] == 0 then
 		self.tbTransForVideo[1] = 1
 		self.tbTransForVideo[5] = false
@@ -354,7 +366,7 @@ function Avg_3_TransitionCtrl:OnEvent_VideoStart()
 end
 function Avg_3_TransitionCtrl:OnEvent_VideoFinished()
 	EventManager.Remove("VIDEO_FINISHED", self, self.OnEvent_VideoFinished)
-	if type(self.tbTransForVideo) == "table" and #self.tbTransForVideo > 0 and self.tbTransForVideo[1] == 1 then
+	if type(self.tbTransForVideo) == "table" and #self.tbTransForVideo > 0 then
 		self.tbTransForVideo[1] = 0
 		local nDuration = self:SetTrans(self.tbTransForVideo)
 		self:AddTimer(1, nDuration, "_PlayVideoEnd", true, true, true)
@@ -362,7 +374,7 @@ function Avg_3_TransitionCtrl:OnEvent_VideoFinished()
 end
 function Avg_3_TransitionCtrl:_PlayVideoEnd()
 	if type(self.tbTransForVideo) == "table" and #self.tbTransForVideo > 0 and self.tbTransForVideo[1] == 0 then
-		self._mapNode.AVProVideoGUICtrl:SetParam(nil, false)
+		self.AVProVideoGUICtrl:SetParam(nil, false)
 		self.tbTransForVideo[1] = 1
 		local nDuration = self:SetTrans(self.tbTransForVideo)
 		self:AddTimer(1, nDuration, "_GoOn", true, true, true)

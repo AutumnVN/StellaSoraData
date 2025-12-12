@@ -205,7 +205,6 @@ function Avg_7_MajorChoiceCtrl:_ChoiceInAnim(n)
 end
 function Avg_7_MajorChoiceCtrl:_ForceClearAll()
 	EventManager.Hit(EventId.AvgClearAllChar)
-	EventManager.Hit(EventId.AvgClearTalk)
 	EventManager.Hit(EventId.AvgClearStage)
 	WwiseAudioMgr:WwiseVoice_StopInAVG()
 	WwiseAudioMgr:PlaySound("avg_sfx_all_stop")
@@ -252,6 +251,7 @@ function Avg_7_MajorChoiceCtrl:SetMajorChoice(tbParam)
 	local AvgUIText = require(GetAvgLuaRequireRoot(self._panel.nCurLanguageIdx) .. "Preset/AvgUIText")
 	EventManager.Hit(EventId.AvgResetSpeed, true)
 	EventManager.Hit(EventId.AvgAllMenuBtnEnable, false)
+	EventManager.Hit(EventId.AvgClearTalk)
 	self.nCurGroupId = tbParam[1]
 	local i = 2
 	local tbIcon = {

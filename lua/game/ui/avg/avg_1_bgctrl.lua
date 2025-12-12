@@ -242,6 +242,9 @@ function Avg_1_BgCtrl:DisableCharHeadFrameAnim(nType)
 	animator.enabled = false
 end
 function Avg_1_BgCtrl:ClearAll()
+	if self.renderTexture == nil then
+		return
+	end
 	local _clear = function(trParent)
 		if trParent.childCount > 1 then
 			for i = trParent.childCount - 1, 1, -1 do
