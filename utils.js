@@ -611,6 +611,13 @@ function formatAddAttrType(type, paramType) {
     return result;
 }
 
+function getSkillType(skillId) {
+    if (skillId.toString().endsWith('10000')) return 'Auto Attack';
+    if (skillId.toString().endsWith('31000')) return 'Main Skill';
+    if (skillId.toString().endsWith('32000')) return 'Support Skill';
+    if (skillId.toString().endsWith('33000')) return 'Ultimate';
+}
+
 module.exports = {
     collectParamsFrom,
     iHateFloatingPointNumber,
@@ -618,6 +625,7 @@ module.exports = {
     getEffectData,
     formatEffectType,
     formatAddAttrType,
+    getSkillType,
     ATTR_TYPE,
     PARAM_TYPE,
     DAMAGE_TYPE,

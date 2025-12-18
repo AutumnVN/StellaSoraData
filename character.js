@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType } = require('./utils');
+const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -134,8 +134,9 @@ function getSkillDamageTypes(skillId) {
         if (!HITDAMAGE[p[2]]) continue;
 
         const type = HITDAMAGE[p[2]].DamageType;
+        const skillId = HITDAMAGE[p[2]].SkillId;
 
-        damageTypes.push(DAMAGE_TYPE[type]);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${skillId ? ` (from ${getSkillType(skillId)})` : ''}`);
     }
 
     return [...new Set(damageTypes)];
@@ -347,8 +348,9 @@ function getPotentialDamageTypes(potId) {
         if (!HITDAMAGE[p[2]]) continue;
 
         const type = HITDAMAGE[p[2]].DamageType;
+        const skillId = HITDAMAGE[p[2]].SkillId;
 
-        damageTypes.push(DAMAGE_TYPE[type]);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${skillId ? ` (from ${getSkillType(skillId)})` : ''}`);
     }
 
     return [...new Set(damageTypes)];
