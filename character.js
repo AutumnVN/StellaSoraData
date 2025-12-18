@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType } = require('./utils');
+const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -135,8 +135,9 @@ function getSkillDamageTypes(skillId) {
 
         const type = HITDAMAGE[p[2]].DamageType;
         const skillId = HITDAMAGE[p[2]].SkillId;
+        const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
 
-        damageTypes.push(`${DAMAGE_TYPE[type]}${skillId ? ` (from ${getSkillType(skillId)})` : ''}`);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]})` : ''}`);
     }
 
     return [...new Set(damageTypes)];
@@ -348,9 +349,9 @@ function getPotentialDamageTypes(potId) {
         if (!HITDAMAGE[p[2]]) continue;
 
         const type = HITDAMAGE[p[2]].DamageType;
-        const skillId = HITDAMAGE[p[2]].SkillId;
+        const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
 
-        damageTypes.push(`${DAMAGE_TYPE[type]}${skillId ? ` (from ${getSkillType(skillId)})` : ''}`);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]})` : ''}`);
     }
 
     return [...new Set(damageTypes)];

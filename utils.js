@@ -329,6 +329,14 @@ const LOGIC_TYPE = {
     2: 'OR',
 };
 
+const SKILL_SLOT_TYPE = {
+    1: 'A',
+    2: 'Skill',
+    3: 'C',
+    4: 'Ultimate',
+    5: 'Normal attack',
+}
+
 function collectParamsFrom(obj) {
     if (!obj) return [];
 
@@ -611,13 +619,6 @@ function formatAddAttrType(type, paramType) {
     return result;
 }
 
-function getSkillType(skillId) {
-    if (skillId.toString().endsWith('10000')) return 'Auto Attack';
-    if (skillId.toString().endsWith('31000')) return 'Main Skill';
-    if (skillId.toString().endsWith('32000')) return 'Support Skill';
-    if (skillId.toString().endsWith('33000')) return 'Ultimate';
-}
-
 module.exports = {
     collectParamsFrom,
     iHateFloatingPointNumber,
@@ -625,7 +626,6 @@ module.exports = {
     getEffectData,
     formatEffectType,
     formatAddAttrType,
-    getSkillType,
     ATTR_TYPE,
     PARAM_TYPE,
     DAMAGE_TYPE,
@@ -637,4 +637,5 @@ module.exports = {
     TARGET_TYPE,
     CONDITION_TYPE,
     LOGIC_TYPE,
+    SKILL_SLOT_TYPE,
 };
