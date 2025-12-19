@@ -12,6 +12,7 @@ const ATTRIBUTE = require('./EN/bin/Attribute.json');
 const DISCEXTRAATTRIBUTE = require('./EN/bin/DiscExtraAttribute.json');
 const EFFECT = require('./EN/bin/Effect.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
+const BUFF = require('./EN/bin/Buff.json');
 const LANG_ITEM = require('./EN/language/en_US/Item.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_DISCTAG = require('./EN/language/en_US/DiscTag.json');
@@ -52,6 +53,7 @@ function getMainSkill(id) {
         desc: LANG_MAINSKILL[MAINSKILL[key].Desc],
         effectType: getMainSkillEffectTypes(id),
         effectData: getMainSkillEffectData(id),
+        buffIcon: getMainSkillBuffIcons(id),
         params: getMainSkillParams(id),
         icon: MAINSKILL[key].Icon.split('/').pop(),
         iconBg: MAINSKILL[key].IconBg.split('/').pop(),
@@ -110,6 +112,22 @@ function getMainSkillEffectData(id) {
     return [...new Set(effectDatas)];
 }
 
+function getMainSkillBuffIcons(id) {
+    const buffIcons = [];
+
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`) && k.length === 7);
+
+    for (const effectKey of effectKeys) {
+        let currentId = +effectKey;
+        if (!BUFF[currentId]) continue;
+
+        const buffIcon = BUFF[currentId].Icon ? BUFF[currentId].Icon.split('/').pop() : 'No Icon';
+        buffIcons.push(buffIcon);
+    }
+
+    return [...new Set(buffIcons)];
+}
+
 function getSeconarySkill(id) {
     const key = Object.keys(SECONDARYSKILL).find(key => SECONDARYSKILL[key].GroupId === id);
     if (!key) return;
@@ -121,6 +139,7 @@ function getSeconarySkill(id) {
         desc: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Desc],
         effectType: getSeconarySkillEffectTypes(id),
         effectData: getSeconarySkillEffectData(id),
+        buffIcon: getSecondarySkillBuffIcons(id),
         params: getSecondarySkillParams(id),
         requirements: getNoteRequirements(id),
         icon: SECONDARYSKILL[key].Icon.split('/').pop(),
@@ -178,6 +197,22 @@ function getSeconarySkillEffectData(id) {
     }
 
     return [...new Set(effectDatas)];
+}
+
+function getSecondarySkillBuffIcons(id) {
+    const buffIcons = [];
+
+    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`) && k.length === 7);
+
+    for (const effectKey of effectKeys) {
+        let currentId = +effectKey;
+        if (!BUFF[currentId]) continue;
+
+        const buffIcon = BUFF[currentId].Icon ? BUFF[currentId].Icon.split('/').pop() : 'No Icon';
+        buffIcons.push(buffIcon);
+    }
+
+    return [...new Set(buffIcons)];
 }
 
 function getNoteRequirements(id) {

@@ -9,6 +9,7 @@ const SKILL = require('./EN/bin/Skill.json');
 const HITDAMAGE = require('./EN/bin/HitDamage.json');
 const EFFECT = require('./EN/bin/Effect.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
+const BUFF = require('./EN/bin/Buff.json');
 const ITEM = require('./EN/bin/Item.json');
 const POTENTIAL = require('./EN/bin/Potential.json');
 const ATTRIBUTE = require('./EN/bin/Attribute.json');
@@ -64,6 +65,7 @@ const character = {};
                 effectType: getSkillEffectTypes(CHARACTER[id].NormalAtkId),
                 addAttrType: getSkillAddAttrTypes(CHARACTER[id].NormalAtkId),
                 effectData: getSkillEffectData(CHARACTER[id].NormalAtkId),
+                buffIcon: getSkillBuffIcons(CHARACTER[id].NormalAtkId),
                 params: getSkillParams(CHARACTER[id].NormalAtkId),
                 icon: SKILL[CHARACTER[id].NormalAtkId].Icon.split('/').pop(),
             },
@@ -77,6 +79,7 @@ const character = {};
                 effectType: getSkillEffectTypes(CHARACTER[id].SkillId),
                 addAttrType: getSkillAddAttrTypes(CHARACTER[id].SkillId),
                 effectData: getSkillEffectData(CHARACTER[id].SkillId),
+                buffIcon: getSkillBuffIcons(CHARACTER[id].SkillId),
                 params: getSkillParams(CHARACTER[id].SkillId),
                 icon: SKILL[CHARACTER[id].SkillId].Icon.split('/').pop(),
             },
@@ -90,6 +93,7 @@ const character = {};
                 effectType: getSkillEffectTypes(CHARACTER[id].AssistSkillId),
                 addAttrType: getSkillAddAttrTypes(CHARACTER[id].AssistSkillId),
                 effectData: getSkillEffectData(CHARACTER[id].AssistSkillId),
+                buffIcon: getSkillBuffIcons(CHARACTER[id].AssistSkillId),
                 params: getSkillParams(CHARACTER[id].AssistSkillId),
                 icon: SKILL[CHARACTER[id].AssistSkillId].Icon.split('/').pop(),
             },
@@ -104,6 +108,7 @@ const character = {};
                 effectType: getSkillEffectTypes(CHARACTER[id].UltimateId),
                 addAttrType: getSkillAddAttrTypes(CHARACTER[id].UltimateId),
                 effectData: getSkillEffectData(CHARACTER[id].UltimateId),
+                buffIcon: getSkillBuffIcons(CHARACTER[id].UltimateId),
                 params: getSkillParams(CHARACTER[id].UltimateId),
                 icon: SKILL[CHARACTER[id].UltimateId].Icon.split('/').pop(),
             },
@@ -205,6 +210,23 @@ function getSkillEffectData(skillId) {
     return [...new Set(effectDatas)];
 }
 
+function getSkillBuffIcons(skillId) {
+    const buffIcons = [];
+
+    const params = collectParamsFrom(SKILL[skillId]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect')));
+
+    for (const param of params) {
+        const p = param.split(',');
+        const buffId = +p[2];
+        if (!BUFF[buffId]) continue;
+
+        const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
+        buffIcons.push(icon);
+    }
+
+    return [...new Set(buffIcons)];
+}
+
 function getUpgrades(charId) {
     return Object.keys(CHARACTERADVANCE)
         .filter(key => CHARACTERADVANCE[key].Group === +charId).map(key => {
@@ -270,6 +292,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
+            buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -284,6 +307,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
+            buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -298,6 +322,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
+            buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -312,6 +337,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
+            buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -326,6 +352,7 @@ function getPotentials(charId) {
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
+            buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
@@ -420,6 +447,23 @@ function getPotentialEffectData(potId) {
     return [...new Set(effectDatas)];
 }
 
+function getPotentialBuffIcons(potId) {
+    const buffIcons = [];
+
+    const params = collectParamsFrom(POTENTIAL[potId]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect')));
+
+    for (const param of params) {
+        const p = param.split(',');
+        const buffId = +p[2];
+        if (!BUFF[buffId]) continue;
+
+        const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
+        buffIcons.push(icon);
+    }
+
+    return [...new Set(buffIcons)];
+}
+
 function getPotentialRarity(potId) {
     const stype = ITEM[potId].Stype;
     const rarity = ITEM[potId].Rarity;
@@ -476,6 +520,7 @@ function getTalents(charId) {
                     params: getTalentParams(talentId),
                     effectType: getTalentEffectTypes(talentId),
                     effectData: getTalentEffectData(talentId),
+                    buffIcon: getTalentBuffIcons(talentId),
                 })),
             };
         });
@@ -526,6 +571,23 @@ function getTalentEffectData(talentId) {
     }
 
     return [...new Set(effectDatas)];
+}
+
+function getTalentBuffIcons(talentId) {
+    const buffIcons = [];
+
+    const params = collectParamsFrom(TALENT[talentId]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect')));
+
+    for (const param of params) {
+        const p = param.split(',');
+        const buffId = +p[2];
+        if (!BUFF[buffId]) continue;
+
+        const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
+        buffIcons.push(icon);
+    }
+
+    return [...new Set(buffIcons)];
 }
 
 function getDates(charId) {
