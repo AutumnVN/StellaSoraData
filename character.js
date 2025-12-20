@@ -37,7 +37,7 @@ const character = {};
 
 !async function () {
     for (const id in CHARACTER) {
-        if (LANG_CHARACTER[CHARACTER[id].Name] === '???' && getUpgrades(id).length === 0) continue;
+        if (LANG_CHARACTER[CHARACTER[id].Name] === '???' && (getUpgrades(id).length === 0 || getSkillUpgrades(id).length === 0)) continue;
 
         character[id] = {
             id: +id,
