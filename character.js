@@ -37,7 +37,7 @@ const character = {};
 
 !async function () {
     for (const id in CHARACTER) {
-        if (LANG_CHARACTER[CHARACTER[id].Name] === '???') continue;
+        if (LANG_CHARACTER[CHARACTER[id].Name] === '???' && getUpgrades(id).length === 0) continue;
 
         character[id] = {
             id: +id,
@@ -119,6 +119,17 @@ const character = {};
             upgrade: getUpgrades(id),
             skillUpgrade: getSkillUpgrades(id),
         };
+
+        if (character[id].name === '???') character[id].name = `ID_${id}`;
+        if (character[id].normalAtk.desc === '???') character[id].normalAtk.desc = collectParamsFrom(SKILL[CHARACTER[id].NormalAtkId]).map((param, index) => `Param${index + 1}: &Param${index + 1}&`).join('\u000b');
+        if (character[id].skill.desc === '???') character[id].skill.desc = collectParamsFrom(SKILL[CHARACTER[id].SkillId]).map((param, index) => `Param${index + 1}: &Param${index + 1}&`).join('\u000b');
+        if (character[id].supportSkill.desc === '???') character[id].supportSkill.desc = collectParamsFrom(SKILL[CHARACTER[id].AssistSkillId]).map((param, index) => `Param${index + 1}: &Param${index + 1}&`).join('\u000b');
+        if (character[id].ultimate.desc === '???') character[id].ultimate.desc = collectParamsFrom(SKILL[CHARACTER[id].UltimateId]).map((param, index) => `Param${index + 1}: &Param${index + 1}&`).join('\u000b');
+        if (character[id].potential.mainCore.filter(p => p.desc === '???').length > 0) character[id].potential.mainCore.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}&`).join('\u000b'));
+        if (character[id].potential.mainNormal.filter(p => p.desc === '???').length > 0) character[id].potential.mainNormal.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}&`).join('\u000b'));
+        if (character[id].potential.common.filter(p => p.desc === '???').length > 0) character[id].potential.common.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}&`).join('\u000b'));
+        if (character[id].potential.supportCore.filter(p => p.desc === '???').length > 0) character[id].potential.supportCore.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}&`).join('\u000b'));
+        if (character[id].potential.supportNormal.filter(p => p.desc === '???').length > 0) character[id].potential.supportNormal.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}&`).join('\u000b'));
     }
 
     writeFileSync('./character.json', JSON.stringify(character, null, 4));
@@ -139,7 +150,6 @@ function getSkillDamageTypes(skillId) {
         if (!HITDAMAGE[p[2]]) continue;
 
         const type = HITDAMAGE[p[2]].DamageType;
-        const skillId = HITDAMAGE[p[2]].SkillId;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
 
         damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]})` : ''}`);
