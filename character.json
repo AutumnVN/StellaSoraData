@@ -7693,6 +7693,2301 @@
             }
         ]
     },
+    "110": {
+        "id": 110,
+        "name": "ID_110",
+        "desc": "???",
+        "star": 5,
+        "element": "Umbra",
+        "class": "Vanguard",
+        "attackType": "Melee",
+        "style": "Adventurous",
+        "force": "United Harvest",
+        "tag": [
+            "Vanguard",
+            "Adventurous",
+            "United Harvest"
+        ],
+        "cnCv": "???",
+        "jpCv": "???",
+        "birthday": "???",
+        "loveGift": [
+            "Love Candle",
+            "Blazing Wings",
+            "Fiery Honeypot",
+            "Portable Blower",
+            "Exquisite Blower",
+            "Deluxe Blower",
+            "Gilded Ceramic Bowl",
+            "Blossom Porcelain Cup",
+            "Mystic Potion Kettle"
+        ],
+        "hateGift": [
+            "Rising Star",
+            "Emerging Talent",
+            "Shining Star"
+        ],
+        "date": [],
+        "normalAtk": {
+            "id": 11010000,
+            "name": "???",
+            "briefDesc": "???",
+            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&\u000bParam6: &Param6&",
+            "damageType": [
+                "Auto Attack (from Normal attack)",
+                "Minion (from Skill)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "14.7%/16.6%/18.5%/20.4%/22.3%/24.2%/26.8%/29.4%/32%/34.7%/37.3%/39.9%/42.5%",
+                "16.1%/18.2%/20.3%/22.4%/24.5%/26.6%/29.5%/32.4%/35.2%/38.1%/41%/43.8%/46.7%",
+                "18.3%/20.7%/23.1%/25.5%/27.8%/30.2%/33.5%/36.7%/40%/43.3%/46.5%/49.8%/53%",
+                "11%/12.4%/13.9%/15.3%/16.7%/18.1%/20.1%/22.1%/24%/26%/27.9%/29.9%/31.9%",
+                "13.2%/14.9%/16.6%/18.3%/20%/21.7%/24.1%/26.4%/28.8%/31.1%/33.5%/35.8%/38.2%",
+                "8.3%/9.3%/10.4%/11.5%/12.5%/13.6%/15.1%/16.5%/18%/19.5%/21%/22.4%/23.9%"
+            ],
+            "icon": "11001_Normal"
+        },
+        "skill": {
+            "id": 11031000,
+            "name": "???",
+            "cooldown": "6s",
+            "briefDesc": "???",
+            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "damageType": [
+                "Skill (from Skill)",
+                "Minion (from Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": [
+                "33.5%/37.9%/42.2%/46.6%/50.9%/55.3%/61.3%/67.2%/73.2%/79.1%/85.1%/91.1%/97%",
+                "4.9%/5.5%/6.1%/6.8%/7.4%/8%/8.9%/9.8%/10.6%/11.5%/12.4%/13.2%/14.1%",
+                "25.6%/31.6%/37.7%/43.8%/49.8%/55.9%/61.9%/68%/74.1%",
+                "1.4%/1.7%/2.1%/2.4%/2.7%/3.1%/3.4%/3.7%/4.1%",
+                5
+            ],
+            "icon": "11001_Skill_Main"
+        },
+        "supportSkill": {
+            "id": 11032000,
+            "name": "???",
+            "cooldown": "12s",
+            "briefDesc": "???",
+            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "damageType": [
+                "Skill (from Skill)",
+                "Minion (from Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": [
+                "90%/102%/113%/125%/137%/148%/164%/180%/196%/212%/228%/244%/260%",
+                "29%/33%/37%/40%/44%/48%/53%/58%/63%/69%/74%/79%/84%",
+                "25.6%/31.6%/37.7%/43.8%/49.8%/55.9%/61.9%/68%/74.1%",
+                "1.4%/1.7%/2.1%/2.4%/2.7%/3.1%/3.4%/3.7%/4.1%",
+                5
+            ],
+            "icon": "11001_Skill_Support"
+        },
+        "ultimate": {
+            "id": 11040000,
+            "name": "???",
+            "cooldown": "40s",
+            "energy": 325,
+            "briefDesc": "???",
+            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "damageType": [
+                "Ultimate (from Ultimate)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": [
+                "88%/99%/111%/122%/134%/145%/161%/177%/192%/208%/224%/239%/255%",
+                "440%/497%/554%/612%/669%/726%/804%/883%/961%/1039%/1118%/1196%/1274%",
+                "25.6%/31.6%/37.7%/43.8%/49.8%/55.9%/61.9%/68%/74.1%",
+                "1.4%/1.7%/2.1%/2.4%/2.7%/3.1%/3.4%/3.7%/4.1%",
+                5
+            ],
+            "icon": "11001_Ultra"
+        },
+        "potential": {
+            "mainCore": [
+                {
+                    "id": 511001,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Skill DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "100%",
+                        "Skill DMG"
+                    ],
+                    "icon": "11001_Potential_01",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511002,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Skill DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "53%",
+                        "Skill DMG"
+                    ],
+                    "icon": "11001_Potential_02",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511003,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Minion DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "23%",
+                        "Minion DMG"
+                    ],
+                    "icon": "11001_Potential_03",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511004,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Minion DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "23%",
+                        "Minion DMG"
+                    ],
+                    "icon": "11001_Potential_04",
+                    "rarity": "core"
+                }
+            ],
+            "mainNormal": [
+                {
+                    "id": 511005,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [
+                        "Skill"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "27%/36%/45%/53%/62%/71%/79%/88%/96%"
+                    ],
+                    "icon": "11001_Potential_01",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511006,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%",
+                        3
+                    ],
+                    "icon": "11001_Potential_01",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511007,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "12%/19%/26%/34%/41%/48%/55%/62%/70%",
+                        5,
+                        5
+                    ],
+                    "icon": "11001_Potential_02",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511009,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "1/1/2/2/3/3/4/4/4",
+                        "ATK",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%"
+                    ],
+                    "icon": "11001_Potential_03",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511010,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "ATK",
+                        "18%/29%/40%/51%/62%/73%/84%/95%/106%"
+                    ],
+                    "icon": "11001_Potential_03",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511011,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "ATK",
+                        "14%/22%/31%/39%/47%/55%/64%/72%/80%"
+                    ],
+                    "icon": "11001_Potential_04",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511013,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "6%/10%/13%/17%/20%/24%/28%/31%/35%",
+                        6,
+                        "ATK"
+                    ],
+                    "icon": "11001_Potential_04",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511008,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [
+                        "Minion"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "12%/16%/20%/23%/27%/31%/35%/39%/42%"
+                    ],
+                    "icon": "11001_Potential_03",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511012,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Minion DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Minion DMG",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%"
+                    ],
+                    "icon": "11001_Potential_04",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                }
+            ],
+            "common": [
+                {
+                    "id": 511041,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "damageType": [],
+                    "effectType": [
+                        "Ultimate DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_DefenseDown"
+                    ],
+                    "params": [
+                        "12%/19%/26%/34%/41%/48%/55%/62%/70%",
+                        5,
+                        "Ultimate DMG"
+                    ],
+                    "icon": "11001_Potential_41",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511042,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Ultimate Crit Rate (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Ultimate Crit Rate",
+                        "16%/26%/36%/45%/55%/65%/74%/84%/94%"
+                    ],
+                    "icon": "11001_Potential_41",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511043,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "16%/26%/36%/45%/55%/65%/74%/84%/94%",
+                        20,
+                        2
+                    ],
+                    "icon": "11001_Potential_41",
+                    "corner": "Round",
+                    "rarity": "common"
+                }
+            ],
+            "supportCore": [
+                {
+                    "id": 511021,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "7.5%/8.4%/9.4%/10.4%/11.4%/12.3%/13.7%/15%/16.3%/17.6%/19%/20.3%/21.6%"
+                    ],
+                    "icon": "11001_Potential_21",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511022,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "90%/102%/113%/125%/137%/148%/164%/180%/196%/212%/228%/244%/260%"
+                    ],
+                    "icon": "11001_Potential_22",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511023,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [],
+                    "icon": "11001_Potential_23",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511024,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [],
+                    "icon": "11001_Potential_24",
+                    "rarity": "core"
+                }
+            ],
+            "supportNormal": [
+                {
+                    "id": 511025,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "ATK (%)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "26%/41%/57%/72%/88%/103%/119%/134%/150%",
+                        "ATK"
+                    ],
+                    "icon": "11001_Potential_21",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511026,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "ATK (%)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "13%/20%/28%/35%/43%/50%/58%/65%/73%",
+                        "ATK"
+                    ],
+                    "icon": "11001_Potential_21",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511027,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "8%/13%/18%/22%/27%/32%/37%/42%/46%",
+                        10,
+                        "ATK"
+                    ],
+                    "icon": "11001_Potential_21",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511028,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "10/10/20/20/30/30/40/40/40",
+                        "38%/61%/84%/107%/130%/153%/176%/198%/221%",
+                        "ATK"
+                    ],
+                    "icon": "11001_Potential_23",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511030,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "17%/28%/38%/48%/58%/69%/79%/89%/100%",
+                        3,
+                        "ATK"
+                    ],
+                    "icon": "11001_Potential_23",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511031,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Minion DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "26%/41%/57%/72%/87%/103%/118%/134%/149%",
+                        "Minion DMG"
+                    ],
+                    "icon": "11001_Potential_24",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511032,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%",
+                        "ATK"
+                    ],
+                    "icon": "11001_Potential_24",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511029,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [
+                        "Minion"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "10%/14%/17%/20%/23%/27%/30%/33%/36%"
+                    ],
+                    "icon": "11001_Potential_23",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511033,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "11%/17%/23%/29%/36%/42%/48%/55%/61%",
+                        "ATK"
+                    ],
+                    "icon": "11001_Potential_24",
+                    "corner": "Round",
+                    "rarity": "rare"
+                }
+            ]
+        },
+        "talent": [
+            {
+                "name": "Core Talent I",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            },
+            {
+                "name": "Core Talent II",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            },
+            {
+                "name": "Core Talent III",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            },
+            {
+                "name": "Core Talent IV",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            },
+            {
+                "name": "Core Talent V",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            }
+        ],
+        "stat": [
+            {
+                "lv": 1,
+                "hp": 1329,
+                "atk": 115,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 2,
+                "hp": 1726,
+                "atk": 150,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 3,
+                "hp": 2125,
+                "atk": 184,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 4,
+                "hp": 2523,
+                "atk": 219,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 5,
+                "hp": 2922,
+                "atk": 254,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 6,
+                "hp": 3320,
+                "atk": 288,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 7,
+                "hp": 3718,
+                "atk": 323,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 8,
+                "hp": 4117,
+                "atk": 357,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 9,
+                "hp": 4515,
+                "atk": 392,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 10,
+                "hp": 4914,
+                "atk": 427,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 10,
+                "hp": 5897,
+                "atk": 512,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 11,
+                "hp": 6295,
+                "atk": 546,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 12,
+                "hp": 6694,
+                "atk": 581,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 13,
+                "hp": 7092,
+                "atk": 616,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 14,
+                "hp": 7491,
+                "atk": 650,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 15,
+                "hp": 7889,
+                "atk": 685,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 16,
+                "hp": 8288,
+                "atk": 719,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 17,
+                "hp": 8686,
+                "atk": 754,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 18,
+                "hp": 9085,
+                "atk": 789,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 19,
+                "hp": 9483,
+                "atk": 823,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 20,
+                "hp": 9881,
+                "atk": 858,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 20,
+                "hp": 11860,
+                "atk": 1029,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 21,
+                "hp": 12259,
+                "atk": 1064,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 22,
+                "hp": 12657,
+                "atk": 1099,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 23,
+                "hp": 13055,
+                "atk": 1133,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 24,
+                "hp": 13454,
+                "atk": 1168,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 25,
+                "hp": 13852,
+                "atk": 1202,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 26,
+                "hp": 14251,
+                "atk": 1237,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 27,
+                "hp": 14649,
+                "atk": 1272,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 28,
+                "hp": 15048,
+                "atk": 1306,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 29,
+                "hp": 15446,
+                "atk": 1341,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 30,
+                "hp": 15845,
+                "atk": 1375,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 30,
+                "hp": 19019,
+                "atk": 1651,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 31,
+                "hp": 19417,
+                "atk": 1685,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 32,
+                "hp": 19816,
+                "atk": 1720,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 33,
+                "hp": 20214,
+                "atk": 1755,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 34,
+                "hp": 20612,
+                "atk": 1789,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 35,
+                "hp": 21011,
+                "atk": 1824,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 36,
+                "hp": 21409,
+                "atk": 1858,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 37,
+                "hp": 21808,
+                "atk": 1893,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 38,
+                "hp": 22206,
+                "atk": 1927,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 39,
+                "hp": 22605,
+                "atk": 1962,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 40,
+                "hp": 23003,
+                "atk": 1997,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 40,
+                "hp": 27600,
+                "atk": 2396,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 41,
+                "hp": 27998,
+                "atk": 2430,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 42,
+                "hp": 28397,
+                "atk": 2465,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 43,
+                "hp": 28795,
+                "atk": 2499,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 44,
+                "hp": 29193,
+                "atk": 2534,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 45,
+                "hp": 29592,
+                "atk": 2568,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 46,
+                "hp": 29990,
+                "atk": 2603,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 47,
+                "hp": 30389,
+                "atk": 2638,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 48,
+                "hp": 30787,
+                "atk": 2672,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 49,
+                "hp": 31186,
+                "atk": 2707,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 50,
+                "hp": 31584,
+                "atk": 2741,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 50,
+                "hp": 37906,
+                "atk": 3290,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 51,
+                "hp": 38305,
+                "atk": 3325,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 52,
+                "hp": 38703,
+                "atk": 3359,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 53,
+                "hp": 39101,
+                "atk": 3394,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 54,
+                "hp": 39500,
+                "atk": 3428,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 55,
+                "hp": 39898,
+                "atk": 3463,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 56,
+                "hp": 40297,
+                "atk": 3498,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 57,
+                "hp": 40695,
+                "atk": 3532,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 58,
+                "hp": 41094,
+                "atk": 3567,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 59,
+                "hp": 41492,
+                "atk": 3601,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 60,
+                "hp": 41891,
+                "atk": 3636,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 60,
+                "hp": 50272,
+                "atk": 4363,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 61,
+                "hp": 50670,
+                "atk": 4398,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 62,
+                "hp": 51069,
+                "atk": 4433,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 63,
+                "hp": 51467,
+                "atk": 4467,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 64,
+                "hp": 51866,
+                "atk": 4502,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 65,
+                "hp": 52264,
+                "atk": 4536,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 66,
+                "hp": 52663,
+                "atk": 4571,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 67,
+                "hp": 53061,
+                "atk": 4605,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 68,
+                "hp": 53459,
+                "atk": 4640,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 69,
+                "hp": 53858,
+                "atk": 4675,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 70,
+                "hp": 54256,
+                "atk": 4709,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 70,
+                "hp": 65107,
+                "atk": 5651,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 71,
+                "hp": 65505,
+                "atk": 5686,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 72,
+                "hp": 65904,
+                "atk": 5720,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 73,
+                "hp": 66302,
+                "atk": 5755,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 74,
+                "hp": 66700,
+                "atk": 5789,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 75,
+                "hp": 67099,
+                "atk": 5824,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 76,
+                "hp": 67497,
+                "atk": 5859,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 77,
+                "hp": 67896,
+                "atk": 5893,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 78,
+                "hp": 68294,
+                "atk": 5928,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 79,
+                "hp": 68693,
+                "atk": 5962,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 80,
+                "hp": 69091,
+                "atk": 5997,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 80,
+                "hp": 82904,
+                "atk": 7196,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 81,
+                "hp": 83303,
+                "atk": 7230,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 82,
+                "hp": 83701,
+                "atk": 7265,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 83,
+                "hp": 84100,
+                "atk": 7300,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 84,
+                "hp": 84498,
+                "atk": 7334,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 85,
+                "hp": 84897,
+                "atk": 7369,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 86,
+                "hp": 85295,
+                "atk": 7403,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 87,
+                "hp": 85693,
+                "atk": 7438,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 88,
+                "hp": 86092,
+                "atk": 7472,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 89,
+                "hp": 86490,
+                "atk": 7507,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 90,
+                "hp": 86889,
+                "atk": 7542,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            },
+            {
+                "lv": 91,
+                "hp": 86889,
+                "atk": 7542,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "150%",
+                "vul": "0%"
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Wick": 5,
+                "Dorra": 7900
+            },
+            {
+                "Faint Wick": 5,
+                "Lumen Essence": 10,
+                "Dorra": 19800
+            },
+            {
+                "Faint Wick": 10,
+                "Lumen Essence": 15,
+                "Dorra": 44400
+            },
+            {
+                "Faint Wick": 15,
+                "Lumen Essence": 25,
+                "Dorra": 66600
+            },
+            {
+                "Faint Wick": 20,
+                "Lumen Essence": 40,
+                "Dorra": 146100
+            },
+            {
+                "Faint Wick": 30,
+                "Lumen Essence": 55,
+                "Eternal Gloom Core": 20,
+                "Dorra": 291600
+            },
+            {
+                "Lumen Essence": 75,
+                "Eternal Gloom Core": 30,
+                "Dorra": 560200
+            },
+            {
+                "Lumen Essence": 95,
+                "Eternal Gloom Core": 50,
+                "Dorra": 1121300
+            }
+        ],
+        "skillUpgrade": [
+            {
+                "Kung Fu Game Cartridge": 6,
+                "Chess Piece of Skill": 2,
+                "Dorra": 13300
+            },
+            {
+                "Kung Fu Game Cartridge": 12,
+                "Chess Piece of Skill": 6,
+                "Dorra": 17600
+            },
+            {
+                "Kung Fu Game Cartridge": 24,
+                "Fighting Game Cartridge": 3,
+                "Chess Piece of Skill": 10,
+                "Dorra": 49800
+            },
+            {
+                "Kung Fu Game Cartridge": 38,
+                "Fighting Game Cartridge": 8,
+                "Chess Piece of Skill": 24,
+                "Dorra": 100000
+            },
+            {
+                "Kung Fu Game Cartridge": 70,
+                "Fighting Game Cartridge": 14,
+                "Phantom Game Cartridge": 6,
+                "Chess Piece of Skill": 55,
+                "Dorra": 400000
+            },
+            {
+                "Crimson Tempter": 1,
+                "Fighting Game Cartridge": 50,
+                "Phantom Game Cartridge": 18,
+                "Chess Piece of Skill": 232,
+                "Dorra": 900000
+            },
+            {
+                "Crimson Tempter": 2,
+                "Fighting Game Cartridge": 90,
+                "Phantom Game Cartridge": 34,
+                "Chess Piece of Skill": 323,
+                "Dorra": 1600000
+            },
+            {
+                "Crimson Tempter": 3,
+                "Fighting Game Cartridge": 140,
+                "Phantom Game Cartridge": 50,
+                "Chess Piece of Skill": 478,
+                "Dorra": 2300000
+            },
+            {
+                "Crimson Tempter": 6,
+                "Fighting Game Cartridge": 200,
+                "Phantom Game Cartridge": 70,
+                "Chess Piece of Skill": 927,
+                "Dorra": 3400000
+            }
+        ]
+    },
     "111": {
         "id": 111,
         "name": "Iris",
@@ -69592,6 +71887,2234 @@
                 "Forest Elf Fang": 6,
                 "Barrage Game Cartridge": 200,
                 "Demon Bee Game Cartridge": 70,
+                "Chess Piece of Skill": 927,
+                "Dorra": 3400000
+            }
+        ]
+    },
+    "158": {
+        "id": 158,
+        "name": "ID_158",
+        "desc": "???",
+        "star": 5,
+        "element": "Ignis",
+        "class": "Versatile",
+        "attackType": "Melee",
+        "style": "Adventurous",
+        "force": "Grace Imperium",
+        "tag": [
+            "Versatile",
+            "Adventurous",
+            "Grace Imperium"
+        ],
+        "cnCv": "???",
+        "jpCv": "???",
+        "loveGift": [],
+        "hateGift": [],
+        "date": [],
+        "normalAtk": {
+            "id": 15810000,
+            "name": "???",
+            "briefDesc": "???",
+            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "damageType": [
+                "Auto Attack (from Normal attack)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "12.2%/14%/15.8%/21.3%/23%/24.7%/28.1%/29.6%/31%/34%/36.4%/38.8%/41.3%",
+                "14.7%/16.9%/19.2%/25.8%/27.8%/29.9%/34%/35.8%/37.6%/41.1%/44.1%/47%/50%",
+                "7.2%/8.3%/9.4%/12.6%/13.6%/14.6%/16.6%/17.5%/18.4%/20.1%/21.5%/23%/24.4%",
+                "6.7%/7.7%/8.7%/11.8%/12.7%/13.6%/15.5%/16.3%/17.1%/18.8%/20.1%/21.4%/22.8%",
+                "HitDamage,DamageNum,158100009"
+            ],
+            "icon": "14101_Normal"
+        },
+        "skill": {
+            "id": 15831000,
+            "name": "???",
+            "cooldown": "7s",
+            "briefDesc": "???",
+            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+            "damageType": [
+                "Skill (from Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "12.2%/14%/73%/99%/107%/115%/131%/137%/144%/158%/169%/38.8%/41.3%",
+                "???",
+                "28%/36%/45%/53%/61%/70%/78%/86%/95%"
+            ],
+            "icon": "14101_Skill_Main"
+        },
+        "supportSkill": {
+            "id": 15832000,
+            "name": "???",
+            "cooldown": "18s",
+            "briefDesc": "???",
+            "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+            "damageType": [
+                "Skill (from Skill)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "39%/45%/51%/69%/74%/80%/91%/95%/100%/109%/117%/125%/133%",
+                "57%/65%/73%/99%/107%/115%/131%/137%/144%/158%/169%/180%/192%"
+            ],
+            "icon": "14101_Skill_Support"
+        },
+        "ultimate": {
+            "id": 15840000,
+            "name": "???",
+            "cooldown": "30s",
+            "energy": 285,
+            "briefDesc": "???",
+            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "damageType": [
+                "Ultimate (from Ultimate)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "87%/101%/114%/153%/165%/177%/202%/212%/223%/244%/261%/279%/296%",
+                "36%/58%/80%/102%/124%/146%/167%/189%/211%",
+                "92%/148%/203%/258%/313%/369%/424%/479%/535%",
+                "???",
+                "28%/36%/45%/53%/61%/70%/78%/86%/95%"
+            ],
+            "icon": "14101_Ultra"
+        },
+        "potential": {
+            "mainCore": [
+                {
+                    "id": 515801,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "OnceAdditionalAttributeValue,NoLevel,15801011,Value1,10KHdPct"
+                    ],
+                    "icon": "15801_Potential_01",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515802,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "HitDamage,DamageNum,158102001",
+                        "HitDamage,DamageNum,158102002"
+                    ],
+                    "icon": "15801_Potential_02",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515803,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "24.4%/28%/146%/198%/214%/230%/262%/274%/288%/349%/374%/399%/424%"
+                    ],
+                    "icon": "15801_Potential_03",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515804,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "OnceAdditionalAttributeValue,NoLevel,15804012,Value1,10KHdPct"
+                    ],
+                    "icon": "15801_Potential_04",
+                    "rarity": "core"
+                }
+            ],
+            "mainNormal": [
+                {
+                    "id": 515805,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Effect,LevelUp,15805002,EffectTypeParam1,HdPct"
+                    ],
+                    "icon": "15801_Potential_01",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515806,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [
+                        "Minion (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "31%/50%/68%/87%/106%/124%/143%/162%/180%"
+                    ],
+                    "icon": "15801_Potential_02",
+                    "corner": "Triangle",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 515807,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Effect,LevelUp,15807001,EffectTypeParam1,HdPct"
+                    ],
+                    "icon": "15801_Potential_01",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515808,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [
+                        "Auto Attack Damage (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "100%/1%/1.4%/1.8%/2.2%/2.6%/3%/3.4%/3.8%"
+                    ],
+                    "icon": "15801_Potential_04",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515809,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "HitDamage,DamageNum,158509001",
+                        "Effect,LevelUp,15809002,EffectTypeParam1,HdPct"
+                    ],
+                    "icon": "15801_Potential_03",
+                    "corner": "Triangle",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 515811,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "damageType": [
+                        "Mark"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "28%/36%/45%/53%/61%/70%/78%/86%/95%",
+                        "Effect,LevelUp,15811001,EffectTypeParam1,HdPct",
+                        "BuffValue,NoLevel,15811011,Time,10K",
+                        "BuffValue,NoLevel,15811011,LaminatedNum,Fixed"
+                    ],
+                    "icon": "Common_Potential_11",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515813,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "ScriptParameter,LevelUp,15813002,CommonData,10K"
+                    ],
+                    "icon": "Common_Potential_4",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 515810,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Shield,LevelUp,15810001,ReferenceScale,10KHdPct"
+                    ],
+                    "icon": "15801_Potential_04",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515812,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "damageType": [],
+                    "effectType": [
+                        "Ultimate DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "100%/20%/27%/34%/41%/49%/56%/63%/71%",
+                        -1,
+                        1
+                    ],
+                    "icon": "Common_Potential_13",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                }
+            ],
+            "common": [
+                {
+                    "id": 515841,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "damageType": [],
+                    "effectType": [
+                        "Ultimate DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_CritDamageUp",
+                        "Icon_CommonBuff_DefenseDown"
+                    ],
+                    "params": [
+                        "100%/6%/8%/10%/12%/15%/17%/19%/21%",
+                        10,
+                        1,
+                        "Ultimate DMG"
+                    ],
+                    "icon": "15801_Potential_42",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515842,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "HitDamage,DamageNum,158442001"
+                    ],
+                    "icon": "15801_Potential_42",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515843,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "HitDamage,DamageNum,158443001"
+                    ],
+                    "icon": "15801_Potential_43",
+                    "corner": "Round",
+                    "rarity": "common"
+                }
+            ],
+            "supportCore": [
+                {
+                    "id": 515821,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "EffectValue,NoLevel,15821011,EffectTypeParam1,HdPct"
+                    ],
+                    "icon": "15801_Potential_21",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515822,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Skill DMG Taken (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_DefenseDown"
+                    ],
+                    "params": [
+                        "EffectValue,NoLevel,15822012,EffectTypeParam1,HdPct",
+                        "100%"
+                    ],
+                    "icon": "15801_Potential_22",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515823,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "damageType": [],
+                    "effectType": [
+                        "Minion DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "100%",
+                        "HitDamage,DamageNum,158523002",
+                        "HitDamage,DamageNum,158523003",
+                        "HitDamage,DamageNum,158523004"
+                    ],
+                    "icon": "15801_Potential_23",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515824,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [
+                        "Minion (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "171%/195%/219%/297%/321%/345%/393%/411%/432%/474%/507%/540%/81.3%"
+                    ],
+                    "icon": "15801_Potential_24",
+                    "rarity": "core"
+                }
+            ],
+            "supportNormal": [
+                {
+                    "id": 515825,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Effect,LevelUp,15825001,EffectTypeParam1,HdPct"
+                    ],
+                    "icon": "15801_Potential_21",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515826,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "HitDamage,DamageNum,158526001",
+                        "HitDamage,DamageNum,158526002"
+                    ],
+                    "icon": "15801_Potential_21",
+                    "corner": "Triangle",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 515827,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Effect,LevelUp,15827002,EffectTypeParam1,HdPct",
+                        "BuffValue,NoLevel,15827012,LaminatedNum,Fixed"
+                    ],
+                    "icon": "15801_Potential_22",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515828,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Lux DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "100%/200%/200%/200%/200%/200%/200%/200%/200%",
+                        1
+                    ],
+                    "icon": "15801_Potential_23",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515830,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "OnceAdditionalAttribute,LevelUp,15830001,Value1,10KHdPct"
+                    ],
+                    "icon": "15801_Potential_23",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515831,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "100%/200%/200%/200%/200%/200%/200%/200%/200%",
+                        "ATK"
+                    ],
+                    "icon": "Common_Potential_14",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515832,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_DefenseDown"
+                    ],
+                    "params": [
+                        "100%/14%/20%/25%/31%/36%/41%/47%/52%",
+                        -1,
+                        1,
+                        "ATK"
+                    ],
+                    "icon": "Common_Potential_7",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515829,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "damageType": [],
+                    "effectType": [
+                        "Minion DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "100%/200%/200%/200%/200%/200%/200%/200%/200%",
+                        2
+                    ],
+                    "icon": "15801_Potential_24",
+                    "corner": "Triangle",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 515833,
+                    "name": "???",
+                    "briefDesc": "???",
+                    "desc": "Param1: &Param1&",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "100%/77%/106%/134%/163%/192%/221%/250%/278%"
+                    ],
+                    "icon": "Common_Potential_15",
+                    "corner": "Round",
+                    "rarity": "rare"
+                }
+            ]
+        },
+        "talent": [
+            {
+                "name": "Core Talent I",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            },
+            {
+                "name": "Core Talent II",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            },
+            {
+                "name": "Core Talent III",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            },
+            {
+                "name": "Core Talent IV",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            },
+            {
+                "name": "Core Talent V",
+                "boost": [
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    },
+                    {
+                        "name": "???",
+                        "desc": "???",
+                        "params": [],
+                        "effectType": [],
+                        "effectData": [],
+                        "buffIcon": []
+                    }
+                ]
+            }
+        ],
+        "stat": [
+            {
+                "lv": 1,
+                "hp": 807,
+                "atk": 92,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 2,
+                "hp": 1049,
+                "atk": 120,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 3,
+                "hp": 1291,
+                "atk": 148,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 4,
+                "hp": 1533,
+                "atk": 176,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 5,
+                "hp": 1775,
+                "atk": 203,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 6,
+                "hp": 2017,
+                "atk": 231,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 7,
+                "hp": 2259,
+                "atk": 259,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 8,
+                "hp": 2502,
+                "atk": 286,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 9,
+                "hp": 2744,
+                "atk": 314,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 10,
+                "hp": 2986,
+                "atk": 342,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 10,
+                "hp": 3583,
+                "atk": 410,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 11,
+                "hp": 3825,
+                "atk": 438,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 12,
+                "hp": 4067,
+                "atk": 466,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 13,
+                "hp": 4309,
+                "atk": 493,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 14,
+                "hp": 4551,
+                "atk": 521,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 15,
+                "hp": 4793,
+                "atk": 549,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 16,
+                "hp": 5035,
+                "atk": 577,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 17,
+                "hp": 5278,
+                "atk": 604,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 18,
+                "hp": 5520,
+                "atk": 632,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 19,
+                "hp": 5762,
+                "atk": 660,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 20,
+                "hp": 6004,
+                "atk": 687,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 20,
+                "hp": 7206,
+                "atk": 825,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 21,
+                "hp": 7448,
+                "atk": 853,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 22,
+                "hp": 7690,
+                "atk": 881,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 23,
+                "hp": 7932,
+                "atk": 908,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 24,
+                "hp": 8175,
+                "atk": 936,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 25,
+                "hp": 8417,
+                "atk": 964,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 26,
+                "hp": 8659,
+                "atk": 991,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 27,
+                "hp": 8901,
+                "atk": 1019,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 28,
+                "hp": 9143,
+                "atk": 1047,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 29,
+                "hp": 9385,
+                "atk": 1075,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 30,
+                "hp": 9627,
+                "atk": 1102,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 30,
+                "hp": 11556,
+                "atk": 1323,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 31,
+                "hp": 11798,
+                "atk": 1351,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 32,
+                "hp": 12040,
+                "atk": 1379,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 33,
+                "hp": 12282,
+                "atk": 1406,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 34,
+                "hp": 12524,
+                "atk": 1434,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 35,
+                "hp": 12766,
+                "atk": 1462,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 36,
+                "hp": 13008,
+                "atk": 1489,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 37,
+                "hp": 13250,
+                "atk": 1517,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 38,
+                "hp": 13492,
+                "atk": 1545,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 39,
+                "hp": 13734,
+                "atk": 1573,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 40,
+                "hp": 13977,
+                "atk": 1600,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 40,
+                "hp": 16769,
+                "atk": 1920,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 41,
+                "hp": 17011,
+                "atk": 1948,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 42,
+                "hp": 17253,
+                "atk": 1976,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 43,
+                "hp": 17495,
+                "atk": 2003,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 44,
+                "hp": 17737,
+                "atk": 2031,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 45,
+                "hp": 17979,
+                "atk": 2059,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 46,
+                "hp": 18221,
+                "atk": 2086,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 47,
+                "hp": 18463,
+                "atk": 2114,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 48,
+                "hp": 18705,
+                "atk": 2142,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 49,
+                "hp": 18947,
+                "atk": 2170,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 50,
+                "hp": 19190,
+                "atk": 2197,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 50,
+                "hp": 23031,
+                "atk": 2637,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 51,
+                "hp": 23273,
+                "atk": 2665,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 52,
+                "hp": 23515,
+                "atk": 2693,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 53,
+                "hp": 23757,
+                "atk": 2720,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 54,
+                "hp": 23999,
+                "atk": 2748,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 55,
+                "hp": 24241,
+                "atk": 2776,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 56,
+                "hp": 24483,
+                "atk": 2803,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 57,
+                "hp": 24725,
+                "atk": 2831,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 58,
+                "hp": 24967,
+                "atk": 2859,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 59,
+                "hp": 25209,
+                "atk": 2887,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 60,
+                "hp": 25452,
+                "atk": 2914,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 60,
+                "hp": 30543,
+                "atk": 3497,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 61,
+                "hp": 30786,
+                "atk": 3525,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 62,
+                "hp": 31028,
+                "atk": 3553,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 63,
+                "hp": 31270,
+                "atk": 3581,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 64,
+                "hp": 31512,
+                "atk": 3608,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 65,
+                "hp": 31754,
+                "atk": 3636,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 66,
+                "hp": 31996,
+                "atk": 3664,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 67,
+                "hp": 32238,
+                "atk": 3691,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 68,
+                "hp": 32480,
+                "atk": 3719,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 69,
+                "hp": 32722,
+                "atk": 3747,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 70,
+                "hp": 32964,
+                "atk": 3775,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 70,
+                "hp": 39557,
+                "atk": 4529,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 71,
+                "hp": 39799,
+                "atk": 4557,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 72,
+                "hp": 40041,
+                "atk": 4585,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 73,
+                "hp": 40283,
+                "atk": 4613,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 74,
+                "hp": 40526,
+                "atk": 4640,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 75,
+                "hp": 40768,
+                "atk": 4668,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 76,
+                "hp": 41010,
+                "atk": 4696,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 77,
+                "hp": 41252,
+                "atk": 4723,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 78,
+                "hp": 41494,
+                "atk": 4751,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 79,
+                "hp": 41736,
+                "atk": 4779,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 80,
+                "hp": 41978,
+                "atk": 4807,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 80,
+                "hp": 50370,
+                "atk": 5768,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 81,
+                "hp": 50613,
+                "atk": 5795,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 82,
+                "hp": 50855,
+                "atk": 5823,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 83,
+                "hp": 51097,
+                "atk": 5851,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 84,
+                "hp": 51339,
+                "atk": 5878,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 85,
+                "hp": 51581,
+                "atk": 5906,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 86,
+                "hp": 51823,
+                "atk": 5934,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 87,
+                "hp": 52065,
+                "atk": 5962,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 88,
+                "hp": 52307,
+                "atk": 5989,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 89,
+                "hp": 52549,
+                "atk": 6017,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 90,
+                "hp": 52791,
+                "atk": 6045,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            },
+            {
+                "lv": 91,
+                "hp": 52791,
+                "atk": 6045,
+                "def": 190,
+                "critRate": "5%",
+                "critDmg": "150%",
+                "resilienceBreakEfficiency": "100%",
+                "vul": "0%"
+            }
+        ],
+        "upgrade": [
+            {
+                "Backstage Ragged Hat": 5,
+                "Dorra": 7900
+            },
+            {
+                "Backstage Ragged Hat": 5,
+                "Spotlight Bowler": 10,
+                "Dorra": 19800
+            },
+            {
+                "Backstage Ragged Hat": 10,
+                "Spotlight Bowler": 15,
+                "Dorra": 44400
+            },
+            {
+                "Backstage Ragged Hat": 15,
+                "Spotlight Bowler": 25,
+                "Dorra": 66600
+            },
+            {
+                "Backstage Ragged Hat": 20,
+                "Spotlight Bowler": 40,
+                "Dorra": 146100
+            },
+            {
+                "Backstage Ragged Hat": 30,
+                "Spotlight Bowler": 55,
+                "Exeunt Bowler": 20,
+                "Dorra": 291600
+            },
+            {
+                "Spotlight Bowler": 75,
+                "Exeunt Bowler": 30,
+                "Dorra": 560200
+            },
+            {
+                "Spotlight Bowler": 95,
+                "Exeunt Bowler": 50,
+                "Dorra": 1121300
+            }
+        ],
+        "skillUpgrade": [
+            {
+                "Tapping Game Cartridge": 6,
+                "Chess Piece of Skill": 2,
+                "Dorra": 13300
+            },
+            {
+                "Tapping Game Cartridge": 12,
+                "Chess Piece of Skill": 6,
+                "Dorra": 17600
+            },
+            {
+                "Tapping Game Cartridge": 24,
+                "Rhythm Game Cartridge": 3,
+                "Chess Piece of Skill": 10,
+                "Dorra": 49800
+            },
+            {
+                "Tapping Game Cartridge": 38,
+                "Rhythm Game Cartridge": 8,
+                "Chess Piece of Skill": 24,
+                "Dorra": 100000
+            },
+            {
+                "Tapping Game Cartridge": 70,
+                "Rhythm Game Cartridge": 14,
+                "Magic Sound Game Cartridge": 6,
+                "Chess Piece of Skill": 55,
+                "Dorra": 400000
+            },
+            {
+                "Colossus Essence": 1,
+                "Rhythm Game Cartridge": 50,
+                "Magic Sound Game Cartridge": 18,
+                "Chess Piece of Skill": 232,
+                "Dorra": 900000
+            },
+            {
+                "Colossus Essence": 2,
+                "Rhythm Game Cartridge": 90,
+                "Magic Sound Game Cartridge": 34,
+                "Chess Piece of Skill": 323,
+                "Dorra": 1600000
+            },
+            {
+                "Colossus Essence": 3,
+                "Rhythm Game Cartridge": 140,
+                "Magic Sound Game Cartridge": 50,
+                "Chess Piece of Skill": 478,
+                "Dorra": 2300000
+            },
+            {
+                "Colossus Essence": 6,
+                "Rhythm Game Cartridge": 200,
+                "Magic Sound Game Cartridge": 70,
                 "Chess Piece of Skill": 927,
                 "Dorra": 3400000
             }
