@@ -7732,7 +7732,7 @@
             "id": 11010000,
             "name": "???",
             "briefDesc": "???",
-            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&\u000bParam6: &Param6&",
+            "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (HitDamage)\u000bParam3: &Param3& (HitDamage)\u000bParam4: &Param4& (HitDamage)\u000bParam5: &Param5& (HitDamage)\u000bParam6: &Param6& (HitDamage)",
             "damageType": [
                 "Auto Attack (from Normal attack)",
                 "Minion (from Skill)"
@@ -7756,7 +7756,7 @@
             "name": "???",
             "cooldown": "6s",
             "briefDesc": "???",
-            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (HitDamage)\u000bParam3: &Param3& (HitDamage)\u000bParam4: &Param4& (HitDamage)\u000bParam5: &Param5& (Buff,Time)",
             "damageType": [
                 "Skill (from Skill)",
                 "Minion (from Skill)",
@@ -7782,7 +7782,7 @@
             "name": "???",
             "cooldown": "12s",
             "briefDesc": "???",
-            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (HitDamage)\u000bParam3: &Param3& (HitDamage)\u000bParam4: &Param4& (HitDamage)\u000bParam5: &Param5& (Buff,Time)",
             "damageType": [
                 "Skill (from Skill)",
                 "Minion (from Skill)",
@@ -7809,7 +7809,7 @@
             "cooldown": "40s",
             "energy": 325,
             "briefDesc": "???",
-            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (HitDamage)\u000bParam3: &Param3& (HitDamage)\u000bParam4: &Param4& (HitDamage)\u000bParam5: &Param5& (Buff,Time)",
             "damageType": [
                 "Ultimate (from Ultimate)",
                 "Mark"
@@ -7835,7 +7835,7 @@
                     "id": 511001,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (EffectValue,EffectTypeParam1)\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Skill DMG (base)"
@@ -7854,7 +7854,7 @@
                     "id": 511002,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (EffectValue,EffectTypeParam1)\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Skill DMG (base)"
@@ -7873,7 +7873,7 @@
                     "id": 511003,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (EffectValue,EffectTypeParam1)\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Minion DMG (base)"
@@ -7894,7 +7894,7 @@
                     "id": 511004,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (EffectValue,EffectTypeParam1)\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Minion DMG (base)"
@@ -7917,7 +7917,7 @@
                     "id": 511005,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [
                         "Skill"
                     ],
@@ -7936,7 +7936,7 @@
                     "id": 511006,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeFirstSubtype)\u000bParam2: &Param2& (Effect,EffectTypeParam1)\u000bParam3: &Param3& (BuffValue,Time)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -7959,7 +7959,7 @@
                     "id": 511007,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeFirstSubtype)\u000bParam2: &Param2& (Effect,EffectTypeParam1)\u000bParam3: &Param3& (BuffValue,Time)\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -7983,7 +7983,7 @@
                     "id": 511009,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "desc": "Param1: &Param1& (ScriptParameter,CommonData)\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)\u000bParam3: &Param3& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8004,7 +8004,7 @@
                     "id": 511010,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeFirstSubtype)\u000bParam2: &Param2& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8024,7 +8024,7 @@
                     "id": 511011,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeFirstSubtype)\u000bParam2: &Param2& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8044,7 +8044,7 @@
                     "id": 511013,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,Time)\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8067,7 +8067,7 @@
                     "id": 511008,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [
                         "Minion"
                     ],
@@ -8086,7 +8086,7 @@
                     "id": 511012,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeFirstSubtype)\u000bParam2: &Param2& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [
                         "Minion DMG (base)"
@@ -8108,7 +8108,7 @@
                     "id": 511041,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,LaminatedNum)\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Ultimate DMG (base)"
@@ -8131,7 +8131,7 @@
                     "id": 511042,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeFirstSubtype)\u000bParam2: &Param2& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [
                         "Ultimate Crit Rate (%)"
@@ -8151,7 +8151,7 @@
                     "id": 511043,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeFirstSubtype)\u000bParam2: &Param2& (Effect,EffectTypeParam1)\u000bParam3: &Param3& (BuffValue,Time)\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8177,7 +8177,7 @@
                     "id": 511021,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -8195,7 +8195,7 @@
                     "id": 511022,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -8243,7 +8243,7 @@
                     "id": 511025,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (OnceAdditionalAttribute,Value1)\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -8263,7 +8263,7 @@
                     "id": 511026,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (OnceAdditionalAttribute,Value1)\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -8283,7 +8283,7 @@
                     "id": 511027,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,Time)\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8306,7 +8306,7 @@
                     "id": 511028,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "desc": "Param1: &Param1& (ScriptParameter,CommonData)\u000bParam2: &Param2& (Effect,EffectTypeParam1)\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8327,7 +8327,7 @@
                     "id": 511030,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,LaminatedNum)\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8350,7 +8350,7 @@
                     "id": 511031,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Minion DMG (base)"
@@ -8370,7 +8370,7 @@
                     "id": 511032,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8390,7 +8390,7 @@
                     "id": 511029,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [
                         "Minion"
                     ],
@@ -8409,7 +8409,7 @@
                     "id": 511033,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -71916,7 +71916,7 @@
             "id": 15810000,
             "name": "???",
             "briefDesc": "???",
-            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (HitDamage)\u000bParam3: &Param3& (HitDamage)\u000bParam4: &Param4& (HitDamage)\u000bParam5: &Param5& (HitDamage)",
             "damageType": [
                 "Auto Attack (from Normal attack)"
             ],
@@ -71938,7 +71938,7 @@
             "name": "???",
             "cooldown": "7s",
             "briefDesc": "???",
-            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+            "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (Skill,Title)\u000bParam3: &Param3& (HitDamage)",
             "damageType": [
                 "Skill (from Skill)",
                 "Mark"
@@ -71959,7 +71959,7 @@
             "name": "???",
             "cooldown": "18s",
             "briefDesc": "???",
-            "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+            "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (HitDamage)",
             "damageType": [
                 "Skill (from Skill)"
             ],
@@ -71979,7 +71979,7 @@
             "cooldown": "30s",
             "energy": 285,
             "briefDesc": "???",
-            "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&\u000bParam5: &Param5&",
+            "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (HitDamage)\u000bParam3: &Param3& (HitDamage)\u000bParam4: &Param4& (Skill,Title)\u000bParam5: &Param5& (HitDamage)",
             "damageType": [
                 "Ultimate (from Ultimate)",
                 "Mark"
@@ -72003,7 +72003,7 @@
                     "id": 515801,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (OnceAdditionalAttributeValue,Value1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72019,7 +72019,7 @@
                     "id": 515802,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (HitDamage)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72036,7 +72036,7 @@
                     "id": 515803,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -72054,7 +72054,7 @@
                     "id": 515804,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (OnceAdditionalAttributeValue,Value1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72072,7 +72072,7 @@
                     "id": 515805,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72089,7 +72089,7 @@
                     "id": 515806,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [
                         "Minion (from Skill)"
                     ],
@@ -72108,7 +72108,7 @@
                     "id": 515807,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72125,7 +72125,7 @@
                     "id": 515808,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [
                         "Auto Attack Damage (base)"
@@ -72144,7 +72144,7 @@
                     "id": 515809,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72162,7 +72162,7 @@
                     "id": 515811,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (Effect,EffectTypeParam1)\u000bParam3: &Param3& (BuffValue,Time)\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [
                         "Mark"
                     ],
@@ -72184,7 +72184,7 @@
                     "id": 515813,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (ScriptParameter,CommonData)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72201,7 +72201,7 @@
                     "id": 515810,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (Shield,ReferenceScale)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72218,7 +72218,7 @@
                     "id": 515812,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,Time)\u000bParam3: &Param3& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
                         "Ultimate DMG (base)"
@@ -72243,7 +72243,7 @@
                     "id": 515841,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,Time)\u000bParam3: &Param3& (BuffValue,LaminatedNum)\u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Ultimate DMG (base)"
@@ -72268,7 +72268,7 @@
                     "id": 515842,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72285,7 +72285,7 @@
                     "id": 515843,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72304,7 +72304,7 @@
                     "id": 515821,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (EffectValue,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72320,7 +72320,7 @@
                     "id": 515822,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (EffectValue,EffectTypeParam1)\u000bParam2: &Param2& (EffectValue,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [
                         "Skill DMG Taken (base)"
@@ -72341,7 +72341,7 @@
                     "id": 515823,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "desc": "Param1: &Param1& (EffectValue,EffectTypeParam1)\u000bParam2: &Param2& (HitDamage)\u000bParam3: &Param3& (HitDamage)\u000bParam4: &Param4& (HitDamage)",
                     "damageType": [],
                     "effectType": [
                         "Minion DMG (base)"
@@ -72364,7 +72364,7 @@
                     "id": 515824,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (HitDamage)",
                     "damageType": [
                         "Minion (from Skill)"
                     ],
@@ -72384,7 +72384,7 @@
                     "id": 515825,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72401,7 +72401,7 @@
                     "id": 515826,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (HitDamage)\u000bParam2: &Param2& (HitDamage)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72419,7 +72419,7 @@
                     "id": 515827,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72437,7 +72437,7 @@
                     "id": 515828,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
                         "Lux DMG (base)"
@@ -72459,7 +72459,7 @@
                     "id": 515830,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (OnceAdditionalAttribute,Value1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -72476,7 +72476,7 @@
                     "id": 515831,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -72496,7 +72496,7 @@
                     "id": 515832,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&\u000bParam3: &Param3&\u000bParam4: &Param4&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,Time)\u000bParam3: &Param3& (BuffValue,LaminatedNum)\u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -72520,7 +72520,7 @@
                     "id": 515829,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&\u000bParam2: &Param2&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)\u000bParam2: &Param2& (BuffValue,Time)",
                     "damageType": [],
                     "effectType": [
                         "Minion DMG (base)"
@@ -72542,7 +72542,7 @@
                     "id": 515833,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "Param1: &Param1&",
+                    "desc": "Param1: &Param1& (Effect,EffectTypeParam1)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
