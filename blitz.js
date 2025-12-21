@@ -66,7 +66,7 @@ for (const id in SCOREBOSSLEVEL) {
                 'Cumulative HP': cumulativeHp(index),
                 'Estimated Score Damage': [Math.floor(cumulativeHp(index - 1) / scoreGetSwitch.SwitchRate), Math.floor(cumulativeHp(index) / scoreGetSwitch.SwitchRate)].map(value => value.toLocaleString()).join(' - '),
                 'Damage Per Score': scoreGetSwitch.SwitchRate,
-                'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (cumulativeAtkFix || 0))),
+                'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0) + (cumulativeAtkFix || 0)) + (monsterValueTemplateAdjust.AtkFix || 0)),
                 'DEF': monsterValueTemplate.Def,
                 'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
                 'Attack Speed': monsterValueTemplate.AtkSpd / 100 + '%',

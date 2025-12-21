@@ -35,7 +35,7 @@ for (const typeId in WEEKBOSSTYPE) {
             level: monsterValueTemplate.Lv,
             stat: {
                 'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
-                'ATK': monsterValueTemplate.Atk,
+                'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0)) + (monsterValueTemplateAdjust.AtkFix || 0)),
                 'DEF': monsterValueTemplate.Def,
                 'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
                 'Attack Speed': monsterValueTemplate.AtkSpd / 100 + '%',
