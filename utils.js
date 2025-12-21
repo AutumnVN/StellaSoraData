@@ -337,6 +337,17 @@ const SKILL_SLOT_TYPE = {
     5: 'Normal attack',
 }
 
+const MONSTER_EPIC_TYPE = {
+    1: 'ALL',
+    2: 'Overlord',
+    3: 'Leader',
+    4: 'Elite',
+    5: 'Normal',
+    6: 'Trap',
+    7: 'Blitz',
+    8: 'Raid'
+};
+
 function collectParamsFrom(obj) {
     if (!obj) return [];
 
@@ -638,4 +649,5 @@ module.exports = {
     CONDITION_TYPE,
     LOGIC_TYPE,
     SKILL_SLOT_TYPE,
+    MONSTER_EPIC_TYPE,
 };

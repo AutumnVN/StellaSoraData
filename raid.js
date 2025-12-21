@@ -11,6 +11,7 @@ const LANG_JOINTDRILLAFFIX = require('./EN/language/en_US/JointDrillAffix.json')
 const LANG_JOINTDRILLLEVEL = require('./EN/language/en_US/JointDrillLevel.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_MONSTERMANUAL = require('./EN/language/en_US/MonsterManual.json');
+const { MONSTER_EPIC_TYPE } = require('./utils');
 
 const raid = {};
 
@@ -22,6 +23,7 @@ for (const drillId in JOINTDRILLCONTROL) {
         name: LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Name],
         icon: drillLevels.map(level => MONSTERMANUAL[MONSTER[level.BossId].FCId]?.Icon).filter(value => value)[0].split('/').pop(),
         subname: LANG_JOINTDRILLLEVEL[drillLevels[0].SubName],
+        type: MONSTER_EPIC_TYPE[MONSTER[drillLevels[0].BossId].EpicLv],
         mechanic: drillLevels[0].BossAffix.map(affixId => ({
             name: LANG_JOINTDRILLAFFIX[JOINTDRILLAFFIX[affixId].Name],
             desc: LANG_JOINTDRILLAFFIX[JOINTDRILLAFFIX[affixId].Desc],

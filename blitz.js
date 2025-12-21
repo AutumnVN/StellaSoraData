@@ -13,6 +13,7 @@ const LANG_SCOREBOSSGETCONTROL = require('./EN/language/en_US/ScoreBossGetContro
 const LANG_SCOREBOSSABILITY = require('./EN/language/en_US/ScoreBossAbility.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_MONSTERMANUAL = require('./EN/language/en_US/MonsterManual.json');
+const { MONSTER_EPIC_TYPE } = require('./utils');
 
 const blitz = {};
 
@@ -28,6 +29,7 @@ for (const id in SCOREBOSSLEVEL) {
     blitz[id] = {
         name: LANG_MONSTERMANUAL[monsterManual.Name],
         icon: scoreBossLevel.Episode.split('/').pop(),
+        type: MONSTER_EPIC_TYPE[monster.EpicLv],
         mechanic: [
             {
                 name: LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].Name],

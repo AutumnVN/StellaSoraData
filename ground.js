@@ -7,6 +7,7 @@ const MONSTERVALUETEMPLETEADJUST = require('./EN/bin/MonsterValueTempleteAdjust.
 const LANG_WEEKBOSSAFFIX = require('./EN/language/en_US/WeekBossAffix.json');
 const LANG_WEEKBOSSTYPE = require('./EN/language/en_US/WeekBossType.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
+const { MONSTER_EPIC_TYPE } = require('./utils');
 
 const ground = {};
 
@@ -22,6 +23,7 @@ for (const typeId in WEEKBOSSTYPE) {
     ground[typeId] = {
         name: LANG_WEEKBOSSTYPE[WEEKBOSSTYPE[typeId].Name],
         icon: WEEKBOSSTYPE[typeId].Episode.split('/').pop(),
+        type: MONSTER_EPIC_TYPE[monster.EpicLv],
         mechanic: affixIds.map(affixId => ({
             name: LANG_WEEKBOSSAFFIX[WEEKBOSSAFFIX[affixId].Name],
             desc: LANG_WEEKBOSSAFFIX[WEEKBOSSAFFIX[affixId].Desc],
