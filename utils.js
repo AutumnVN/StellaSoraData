@@ -340,7 +340,7 @@ const SKILL_SLOT_TYPE = {
 const MONSTER_EPIC_TYPE = {
     1: 'ALL',
     2: 'Overlord',
-    3: 'Leader',
+    3: 'Sentinel',
     4: 'Elite',
     5: 'Normal',
     6: 'Trap',
