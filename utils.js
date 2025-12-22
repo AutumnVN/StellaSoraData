@@ -460,11 +460,11 @@ function resolveParam(params) {
                     if (value.toString().startsWith('0.')) return iHateFloatingPointNumber(value, '*', 100) + '%';
                     return value;
                 case '10K':
-                    return value / 10000;
+                    return iHateFloatingPointNumber(value, '/', 10000);
                 case '10KPct':
-                    return value / 10000 + '%';
+                    return iHateFloatingPointNumber(value, '/', 10000) + '%';
                 case '10KHdPct':
-                    return value / 100 + '%';
+                    return iHateFloatingPointNumber(value, '/', 100) + '%';
                 case 'Enum':
                     return ATTR_TYPE[value];
                 case 'Pct':
@@ -526,13 +526,13 @@ function resolveParam(params) {
                         results.push(value);
                         break;
                     case '10K':
-                        results.push(value / 10000);
+                        results.push(iHateFloatingPointNumber(value, '/', 10000));
                         break;
                     case '10KPct':
-                        results.push(value / 10000 + '%');
+                        results.push(iHateFloatingPointNumber(value, '/', 10000) + '%');
                         break;
                     case '10KHdPct':
-                        results.push(value / 100 + '%');
+                        results.push(iHateFloatingPointNumber(value, '/', 100) + '%');
                         break;
                     case 'Enum':
                         results.push(ATTR_TYPE[value]);
