@@ -10,6 +10,7 @@ const MONSTERMANUAL = require('./EN/bin/MonsterManual.json');
 const MONSTERSKIN = require('./EN/bin/MonsterSkin.json');
 const MONSTERVALUETEMPLETE = require('./EN/bin/MonsterValueTemplete.json');
 const MONSTERVALUETEMPLETEADJUST = require('./EN/bin/MonsterValueTempleteAdjust.json');
+const UITEXT = require('./EN/bin/UIText.json');
 const LANG_INFINITYTOWER = require('./EN/language/en_US/InfinityTower.json');
 const LANG_INFINITYTOWERDIFFICULTY = require('./EN/language/en_US/InfinityTowerDifficulty.json');
 const LANG_INFINITYTOWERAFFIX = require('./EN/language/en_US/InfinityTowerAffix.json');
@@ -23,7 +24,7 @@ for (const arenaGroupId in INFINITYTOWER) {
         name: LANG_INFINITYTOWER[INFINITYTOWER[arenaGroupId].Name],
         icon: INFINITYTOWER[arenaGroupId].Bg.split('/').pop(),
         weakTo: LANG_UITEXT[`UIText.T_Element_Attr_${INFINITYTOWER[arenaGroupId].ElementType}.1`],
-        openDayDesc: LANG_UITEXT[INFINITYTOWER[arenaGroupId].OpenDayDesc],
+        openDayDesc: LANG_UITEXT[UITEXT[INFINITYTOWER[arenaGroupId].OpenDayDesc].Text],
         openDay: INFINITYTOWER[arenaGroupId].OpenDay.map(day => ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][day]),
         diff: getArenaDiff(arenaGroupId),
     };
