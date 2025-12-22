@@ -43,7 +43,7 @@ function getAscensionMonster(previewMonsterGroupId, ascensionGroupId, valueDiffi
     const monsterIds = PREVIEWMONSTERGROUP[previewMonsterGroupId].MonsterIds;
 
     monsterIds.sort((a, b) => {
-        const epicDiff = MONSTER[b].EpicLv - MONSTER[a].EpicLv;
+        const epicDiff = MONSTER[a].EpicLv - MONSTER[b].EpicLv;
         return epicDiff !== 0 ? epicDiff : a - b;
     });
 
