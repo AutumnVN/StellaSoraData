@@ -30,7 +30,7 @@ function getAscensionDiff(ascensionGroupId) {
     const ascensionDiffKeys = Object.keys(STARTOWER).filter(key => STARTOWER[key].GroupId === +ascensionGroupId);
 
     return ascensionDiffKeys.map(ascensionDiffKey => ({
-        name: LANG_STARTOWER[STARTOWER[ascensionDiffKey].Name],
+        name: `[${LANG_STARTOWER[STARTOWER[ascensionDiffKey].Name]}] Difficulty ${STARTOWER[ascensionDiffKey].Difficulty}`,
         icon: STARTOWER[ascensionDiffKey].Image.split('/').pop(),
         diff: STARTOWER[ascensionDiffKey].Difficulty,
         weakTo: STARTOWER[ascensionDiffKey].EET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],

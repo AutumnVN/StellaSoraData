@@ -43,7 +43,8 @@ function getArenaDiff(arenaGroupId) {
 function getArenaFloor(arenaDiffKey) {
     const arenaFloorIds = Object.keys(INFINITYTOWERFLOOR).filter(key => key.startsWith(arenaDiffKey));
 
-    return arenaFloorIds.map(arenaFloorId => ({
+    return arenaFloorIds.map((arenaFloorId, index) => ({
+        name: `Floor ${index + 1}`,
         mechanic: INFINITYTOWERFLOOR[arenaFloorId].AffixId.map(affixId => getArenaAffix(affixId)),
         monster: getArenaMonster(INFINITYTOWERFLOOR[arenaFloorId].PreviewMonsterGroupId, INFINITYTOWERFLOOR[arenaFloorId].MonsterLv, INFINITYTOWERFLOOR[arenaFloorId].Stage),
     }));
