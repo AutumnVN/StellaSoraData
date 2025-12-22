@@ -43,6 +43,8 @@ function getArenaDiff(arenaGroupId) {
 function getArenaFloor(arenaDiffKey) {
     const arenaFloorIds = Object.keys(INFINITYTOWERFLOOR).filter(key => key.startsWith(arenaDiffKey));
 
+    arenaFloorIds.push(arenaFloorIds.shift());
+
     return arenaFloorIds.map((arenaFloorId, index) => ({
         name: `Floor ${index + 1}`,
         mechanic: INFINITYTOWERFLOOR[arenaFloorId].AffixId.map(affixId => getArenaAffix(affixId)),
