@@ -46,7 +46,7 @@ function getAscensionMonster(previewMonsterGroupId, ascensionGroupId, valueDiffi
         const monster = MONSTER[monsterId];
         const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster.FAId].MonsterManual];
         const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
-        const monsterValueTemplate = MONSTERVALUETEMPLETE[Object.keys(MONSTERVALUETEMPLETE).filter(key => key === `${monsterValueTemplateAdjust.TemplateId}0${ascensionGroupId}${valueDifficulty}`)[0]];
+        const monsterValueTemplate = MONSTERVALUETEMPLETE[Object.keys(MONSTERVALUETEMPLETE).filter(key => key === `${monsterValueTemplateAdjust.TemplateId * 1000 + ascensionGroupId * 10 + valueDifficulty}`)[0]];
 
         return {
             name: LANG_MONSTERMANUAL[monsterManual.Name],
