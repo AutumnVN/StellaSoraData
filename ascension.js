@@ -42,6 +42,11 @@ function getAscensionDiff(ascensionGroupId) {
 function getAscensionMonster(previewMonsterGroupId, ascensionGroupId, valueDifficulty) {
     const monsterIds = PREVIEWMONSTERGROUP[previewMonsterGroupId].MonsterIds;
 
+    monsterIds.sort((a, b) => {
+        const epicDiff = MONSTER[b].EpicLv - MONSTER[a].EpicLv;
+        return epicDiff !== 0 ? epicDiff : a - b;
+    });
+
     return monsterIds.map(monsterId => {
         const monster = MONSTER[monsterId];
         const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster.FAId].MonsterManual];
