@@ -172,6 +172,8 @@ const EFFECT_TYPE = {
     49: 'IMM_CERTAIN_HITDAMAGEID',
     50: 'STATE_AMOUNT',
     51: 'DROP_ITEM_PICKUP_RANGE_FIX',
+    52: 'ELEMENTTYPE_ATTR_FIX',
+    53: 'DAMAGETYPE_ATTR_FIX',
 };
 
 const CORNER_TYPE = {
@@ -605,22 +607,22 @@ function formatEffectType(id, type, paramType) {
     const paramTypeStr = PARAM_TYPE[paramType];
 
 
-    if (!['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
+    if (!['ATTR_FIX', 'ELEMENTTYPE_ATTR_FIX', 'DAMAGETYPE_ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
         result += effectTypeStr;
     }
 
     if (attrTypeStr) {
-        if (!['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
+        if (!['ATTR_FIX', 'ELEMENTTYPE_ATTR_FIX', 'DAMAGETYPE_ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
             result += ':';
         }
 
-        if (['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX', 'ADDBUFF'].includes(effectTypeStr)) {
+        if (['ATTR_FIX', 'ELEMENTTYPE_ATTR_FIX', 'DAMAGETYPE_ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX', 'ADDBUFF'].includes(effectTypeStr)) {
             result += `${attrTypeStr}`;
         } else {
             result += `${type}`;
         }
 
-        if (['ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
+        if (['ATTR_FIX', 'ELEMENTTYPE_ATTR_FIX', 'DAMAGETYPE_ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
             result += ` (${paramTypeStr})`;
         }
     }
