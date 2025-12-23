@@ -160,16 +160,15 @@
     },
     "61": {
         "id": 61,
-        "name": "Tyrant Points",
+        "name": "Daily Tyrant Points",
         "desc": "Points obtained by completing daily quests. Reaching certain milestones will unlock daily rewards.",
         "type": "Item",
         "rarity": "R"
     },
-    "62": {
-        "id": 62,
-        "name": "Vigor Reserve",
-        "desc": "Vigor Reserve",
-        "literary": "Vigor Reserve. Unused Vigor will be stored here for later use.",
+    "63": {
+        "id": 63,
+        "name": "Weekly Tyrant Points",
+        "desc": "Points obtained by completing Weekly Affairs. Reach milestones to unlock weekly rewards.",
         "type": "Item",
         "rarity": "R"
     },
@@ -389,19 +388,19 @@
         "type": "Char",
         "rarity": "SSR"
     },
+    "158": {
+        "id": 158,
+        "name": "Snowish Laru",
+        "desc": "Proof of invitation to add Snowish Laru to your squad",
+        "literary": "Guard the children's innocent wishes as a spirit.",
+        "type": "Char",
+        "rarity": "SSR"
+    },
     "401": {
         "id": 401,
         "name": "Everbright Wishes",
         "desc": "Valid for 30 days. Log in daily to receive 90 Stellanite Dust.",
         "type": "MonthlyCard",
-        "rarity": "SSR"
-    },
-    "501": {
-        "id": 501,
-        "name": "Neon Ticket",
-        "desc": "A certificate used for recruiting in Exclusive Trekker Banner.",
-        "literary": "Set the direction, embrace an unforgettable encounter.",
-        "type": "Item",
         "rarity": "SSR"
     },
     "502": {
@@ -420,19 +419,19 @@
         "type": "Item",
         "rarity": "SSR"
     },
-    "511": {
-        "id": 511,
-        "name": "Neon 10x Draw Ticket",
-        "desc": "A certificate used for recruiting 10 times in Exclusive Trekker Banner.",
+    "510": {
+        "id": 510,
+        "name": "Snowish Limited Ticket",
+        "desc": "An exclusive certificate used for recruiting in Holy Night Gift Rush!",
         "literary": "Set the direction, embrace an unforgettable encounter.",
         "type": "Item",
         "rarity": "SSR"
     },
-    "601": {
-        "id": 601,
-        "name": "Prismatic Disc",
-        "desc": "A certificate used for recruiting in Exclusive Disc Banner.",
-        "literary": "Clean up the memory hall and look for the eternal symphony.",
+    "511": {
+        "id": 511,
+        "name": "Snowish Exclusive 10x Draw Ticket",
+        "desc": "An exclusive certificate used for Recruit x10 in Holy Night Gift Rush!",
+        "literary": "Set the direction, embrace an unforgettable encounter.",
         "type": "Item",
         "rarity": "SSR"
     },
@@ -455,7 +454,6 @@
     "1000": {
         "id": 1000,
         "name": "Radiant Soul Key",
-        "desc": "Generic Trekker Token",
         "literary": "A soul key, radiant and brimming with emotional power.\u000bIt unseals the latent talents buried in the deepest corners of the soul...",
         "type": "Item",
         "rarity": "SSR"
@@ -463,7 +461,6 @@
     "1001": {
         "id": 1001,
         "name": "Charming Soul Key",
-        "desc": "Generic Trekker Token",
         "literary": "A soul key, radiant and brimming with emotional power.\u000bIt ignites the talents hidden in the depths of a soul...",
         "type": "Item",
         "rarity": "SR"
@@ -684,6 +681,14 @@
         "type": "CharShard",
         "rarity": "SSR"
     },
+    "1580": {
+        "id": 1580,
+        "name": "Snowish Laru's Soul Key",
+        "desc": "Activates Trekker Talents.",
+        "literary": "Guard the children's innocent wishes as a spirit.",
+        "type": "CharShard",
+        "rarity": "SSR"
+    },
     "10301": {
         "id": 10301,
         "name": "Amber: Default",
@@ -737,6 +742,14 @@
     "11102": {
         "id": 11102,
         "name": "Iris: Awakened",
+        "type": "CharacterSkin",
+        "rarity": "SR"
+    },
+    "11103": {
+        "id": 11103,
+        "name": "The 1/365th of You",
+        "desc": "Certificate that unlocks Iris's exclusive appearance \"The 1/365th of You\"!",
+        "literary": "In the pale winter sunlight, you hold a warm drink as your breath creates a white mist. You, who see yourself as just ordinary, are the one who makes this day special.",
         "type": "CharacterSkin",
         "rarity": "SR"
     },
@@ -861,6 +874,14 @@
     "12502": {
         "id": 12502,
         "name": "Freesia: Awakened",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "12503": {
+        "id": 12503,
+        "name": "The Gift of Falling Snow",
+        "desc": "Certificate that unlocks Freesia's exclusive appearance \"The Gift of Falling Snow\"!",
+        "literary": "The Snowish Festival she dreams of is a warm, cozy fire, a glass of sweet wine in hand, her best friends' laughter, and a unique gift just for her—from you.",
         "type": "CharacterSkin",
         "rarity": "SSR"
     },
@@ -1037,6 +1058,18 @@
     "15602": {
         "id": 15602,
         "name": "Nazuna: Awakened",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "15801": {
+        "id": 15801,
+        "name": "Snowish Laru: Default",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "15802": {
+        "id": 15802,
+        "name": "Snowish Laru: Awakened",
         "type": "CharacterSkin",
         "rarity": "SSR"
     },
@@ -1327,22 +1360,6 @@
         "type": "Item",
         "rarity": "SR"
     },
-    "31002": {
-        "id": 31002,
-        "name": "CEO's Crown",
-        "desc": "Upgrades high-level skills of any Trekker.",
-        "literary": "A testament to your victory over a mysterious and powerful boss.\u000b\"Exactly! If you don't work hard, how can I enjoy this fine wine?\"",
-        "type": "SkillStrengthen",
-        "rarity": "SSR"
-    },
-    "31007": {
-        "id": 31007,
-        "name": "Trekker's Crown",
-        "desc": "Upgrades any highest-ranked Trekkers.",
-        "literary": "Proof of having defeated a mysterious and powerful boss.\u000b\"You've got to be kidding me. I bet this belongs to someone else!\"",
-        "type": "SkillStrengthen",
-        "rarity": "SSR"
-    },
     "32000": {
         "id": 32000,
         "name": "Chess Piece of Skill",
@@ -1370,7 +1387,7 @@
     "32003": {
         "id": 32003,
         "name": "Magic Sound Game Cartridge",
-        "desc": "An advanced material used for Trekker ability upgrades.",
+        "desc": "An advanced material used for Trekker skill upgrades.",
         "literary": "Enter the realm of \"Boss's Tune,\" a music game series that pushes the limits. Only those with lightning-fast reflexes or perhaps an extra pair of hands dare to take up the challenge. Could this be the next step in human evolution?!",
         "type": "SkillStrengthen",
         "rarity": "SR"
@@ -1394,7 +1411,7 @@
     "32013": {
         "id": 32013,
         "name": "Demon Bee Game Cartridge",
-        "desc": "An advanced material used for Trekker ability upgrades.",
+        "desc": "An advanced material used for Trekker skill upgrades.",
         "literary": "For all those previous shooter games, Trekkers would always boast, \"It's nothing special...\" But then \"Demon Bee\" showed up.\u000bOh boy, is it a beast! Not a single soul has managed to clear the game without using continues or losing a life.\u000bCould this be the ultimate test of skill?",
         "type": "SkillStrengthen",
         "rarity": "SR"
@@ -1418,7 +1435,7 @@
     "32023": {
         "id": 32023,
         "name": "Phantom Game Cartridge",
-        "desc": "An advanced material used for Trekker ability upgrades.",
+        "desc": "An advanced material used for Trekker skill upgrades.",
         "literary": "Mindless attacks won't secure a win. Take the game \"Phantom\" as an example; there's an opponent who can seamlessly block 15 punches in the blink of an eye.\u000bIf you can break through his defense, your combat skills will truly be unparalleled.",
         "type": "SkillStrengthen",
         "rarity": "SR"
@@ -1806,6 +1823,46 @@
         "type": "Item",
         "rarity": "SR"
     },
+    "71008": {
+        "id": 71008,
+        "name": "Prefix Title: Athletic",
+        "desc": "Unlocks the title: Athletic.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "71009": {
+        "id": 71009,
+        "name": "Prefix Title: Artsy",
+        "desc": "Unlocks the title: Artsy.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "71010": {
+        "id": 71010,
+        "name": "Prefix Title: Erudite",
+        "desc": "Unlocks the title: Erudite.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "71011": {
+        "id": 71011,
+        "name": "Prefix Title: Charmer",
+        "desc": "Unlocks the title: Charmer.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "71012": {
+        "id": 71012,
+        "name": "Prefix Title: Passionate",
+        "desc": "Unlocks the title: Passionate.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
     "72001": {
         "id": 72001,
         "name": "Suffix Title: Tyrant",
@@ -1862,6 +1919,46 @@
         "type": "Item",
         "rarity": "SR"
     },
+    "72008": {
+        "id": 72008,
+        "name": "Suffix Title: Foodie",
+        "desc": "Unlocks the title: Foodie.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "72009": {
+        "id": 72009,
+        "name": "Suffix Title: Author",
+        "desc": "Unlocks the title: Author.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "72010": {
+        "id": 72010,
+        "name": "Suffix Title: Appraiser",
+        "desc": "Unlocks the title: Appraiser.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "72011": {
+        "id": 72011,
+        "name": "Suffix Title: Instrumentalist",
+        "desc": "Unlocks the title: Instrumentalist.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "72012": {
+        "id": 72012,
+        "name": "Suffix Title: Ninja",
+        "desc": "Unlocks the title: Ninja.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
     "73101": {
         "id": 73101,
         "name": "Squid Rice Cracker",
@@ -1883,6 +1980,22 @@
         "name": "Healthy Rice Ball",
         "desc": "Currency earned via active participation in the Beyond the Dream event. Can be used to redeem items in the Event Shop.",
         "literary": "Food prepared by Kaede for battles against monsters. Stuffed with vegetables, it tastes refreshing while offering good nutrition.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "73104": {
+        "id": 73104,
+        "name": "Snowish Gingerbread Cookie",
+        "desc": "Currency earned via active participation in [Radiant Messenger, Holy Night Spirit]. Can be used to redeem items in the Event Shop.",
+        "literary": "A traditional Snowish Festival treat baked in the shape of a person. It often stars as the hero in children's dream adventures.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "73105": {
+        "id": 73105,
+        "name": "Expense Receipt",
+        "desc": "???",
+        "literary": "Please submit all paper receipts to the Finance Department by the deadline. Late submissions will not be reimbursed.",
         "type": "Item",
         "rarity": "SR"
     },
@@ -1977,7 +2090,7 @@
     "82001": {
         "id": 82001,
         "name": "Novice Trekker Promotion Box",
-        "desc": "Grants one basic tier-up material from Tier-up Trial of your choice.",
+        "desc": "Grants one basic Trekker promotion material from Tier-up Trial of your choice.",
         "literary": "A gift box for new Trekkers filled with various Trekker Crescendo materials. Grants one material of your choice.",
         "type": "ComCYO",
         "rarity": "M"
@@ -1985,7 +2098,7 @@
     "82002": {
         "id": 82002,
         "name": "Premium Trekker Promotion Box",
-        "desc": "Grants one intermediate tier-up material from Tier-up Trial of your choice.",
+        "desc": "Grants one intermediate Trekker promotion material from Tier-up Trial of your choice.",
         "literary": "A premium gift box for Trekkers who are steadily progressing on their journey, filled with various Trekker Crescendo materials. Grants one material of your choice.",
         "type": "ComCYO",
         "rarity": "R"
@@ -1993,7 +2106,7 @@
     "82003": {
         "id": 82003,
         "name": "Deluxe Trekker Promotion Box",
-        "desc": "Grants one advanced tier-up material from Tier-up Trial of your choice.",
+        "desc": "Grants one advanced Trekker promotion material from Tier-up Trial of your choice.",
         "literary": "A deluxe gift box for seasoned Trekkers, filled with various Trekker Crescendo materials. Grants one material of your choice.",
         "type": "ComCYO",
         "rarity": "SR"
@@ -2136,91 +2249,91 @@
     "90011": {
         "id": 90011,
         "name": "Melody of Pummel",
-        "desc": "A Musical Note that records Assault Symphony. Increases ATK based on the total level.",
+        "desc": "A Musical Note that records Assault Symphony. Increases <color=#fb8037>ATK</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90012": {
         "id": 90012,
         "name": "Melody of Luck",
-        "desc": "A Musical Note that records Lucky Symphony. Increases Crit Rate based on the total level.",
+        "desc": "A Musical Note that records Lucky Symphony. Increases <color=#fb8037>Crit Rate</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90013": {
         "id": 90013,
         "name": "Melody of Burst",
-        "desc": "A Musical Note that records Burst Symphony. Increases Crit DMG based on the total level.",
+        "desc": "A Musical Note that records Burst Symphony. Increases <color=#fb8037>Crit DMG</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90014": {
         "id": 90014,
         "name": "Melody of Stamina",
-        "desc": "A Musical Note that records Stamina Symphony. Increases Max HP based on the total level.",
+        "desc": "A Musical Note that records Stamina Symphony. Increases <color=#fb8037>Max HP</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90015": {
         "id": 90015,
         "name": "Melody of Focus",
-        "desc": "A Musical Note that records Focus Symphony. Increases Auto Attack DMG based on the total level",
+        "desc": "A Musical Note that records Focus Symphony. Increases <color=#fb8037>Auto Attack DMG</color> based on its total quantity",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90016": {
         "id": 90016,
         "name": "Melody of Skill",
-        "desc": "A Musical Note that records Skill Symphony. Increases Skill Damage based on the total level.",
+        "desc": "A Musical Note that records Skill Symphony. Increases <color=#fb8037>Skill DMG</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90017": {
         "id": 90017,
         "name": "Melody of Ultimate",
-        "desc": "A Musical Note that records Ultimate Symphony. Increases Ultimate DMG based on the total level.",
+        "desc": "A Musical Note that records Ultimate Symphony. Increases <color=#fb8037>Ultimate DMG</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90018": {
         "id": 90018,
         "name": "Melody of Aqua",
-        "desc": "A Musical Note that records Water Flow Symphony. Increases Aqua DMG bonus based on the total level.",
+        "desc": "A Musical Note that records Water Flow Symphony. Increases <color=#fb8037></color> bonus based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90019": {
         "id": 90019,
         "name": "Melody of Ignis",
-        "desc": "A Musical Note that records Flaming Symphony. Increases Ignis DMG bonus based on the total level.",
+        "desc": "A Musical Note that records Flaming Symphony. Increases <color=#fb8037>Ignis DMG Boost</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90020": {
         "id": 90020,
         "name": "Melody of Ventus",
-        "desc": "A Musical Note that records Storm Symphony. Increases Ventus DMG bonus based on the total level.",
+        "desc": "A Musical Note that records Storm Symphony. Increases <color=#fb8037>Ventus DMG Boost</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90021": {
         "id": 90021,
         "name": "Melody of Terra",
-        "desc": "A Musical Note that records Dust Symphony. Increases Terra DMG bonus based on the total level.",
+        "desc": "A Musical Note that records Dust Symphony. Increases <color=#fb8037>Terra DMG Boost</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90022": {
         "id": 90022,
         "name": "Melody of Lux",
-        "desc": "A Musical Note that records Glowing Symphony. Increases Lux DMG bonus based on the total level.",
+        "desc": "A Musical Note that records Glowing Symphony. Increases <color=#fb8037>Lux DMG Boost</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
     "90023": {
         "id": 90023,
         "name": "Melody of Umbra",
-        "desc": "A Musical Note that records Shadow Symphony. Increases Umbra DMG bonus based on the total level.",
+        "desc": "A Musical Note that records Shadow Symphony. Increases <color=#fb8037>Umbra DMG Boost</color> based on its total quantity.",
         "type": "SubNoteSkill",
         "rarity": "SR"
     },
@@ -2267,6 +2380,20 @@
         "type": "Item",
         "rarity": "R"
     },
+    "101009": {
+        "id": 101009,
+        "name": "Royal Grant Bonus Item",
+        "desc": "Includes the bonus items corresponding to the purchase of the current Royal Startup Grant.",
+        "type": "Item",
+        "rarity": "R"
+    },
+    "101010": {
+        "id": 101010,
+        "name": "Upgrade Grant Differential Item",
+        "desc": "Includes the bonus items corresponding to the purchase of the current Royal Startup Grant.",
+        "type": "Item",
+        "rarity": "R"
+    },
     "111001": {
         "id": 111001,
         "name": "Novice Tyrant",
@@ -2304,6 +2431,22 @@
         "name": "Blooming Star",
         "desc": "Unlocks the Honor Title: Blooming Star.",
         "literary": "You've made a difference in this city, even if it's just a small one...",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "111006": {
+        "id": 111006,
+        "name": "Top Performer",
+        "desc": "Unlocks the Honor Title: Top Performer.",
+        "literary": "Your hard work has paid off.",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "111007": {
+        "id": 111007,
+        "name": "Light Catcher",
+        "desc": "Unlocks the Honor Title: Light Catcher.",
+        "literary": "Welcome a bright future.",
         "type": "Honor",
         "rarity": "SSR"
     },
@@ -2523,6 +2666,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "112158": {
+        "id": 112158,
+        "name": "Holy Night Spirit",
+        "desc": "Unlocks the Honor Title: Holy Night Spirit.",
+        "literary": "Proof of friendship with Snowish Laru!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "114001": {
         "id": 114001,
         "name": "Hello Gamer",
@@ -2579,6 +2730,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "115005": {
+        "id": 115005,
+        "name": "Season 5 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 5 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 5!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "116001": {
         "id": 116001,
         "name": "Daring Adventure! The Ghost Ship Haunts the Deep",
@@ -2603,6 +2762,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "116004": {
+        "id": 116004,
+        "name": "Radiant Messenger, Holy Night Spirit",
+        "desc": "Unlocks the Honor Title: Radiant Messenger, Holy Night Spirit.",
+        "literary": "Proof of a great success in the event: Radiant Messenger, Holy Night Spirit!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "117001": {
         "id": 117001,
         "name": "Season 1 Endgame Ace",
@@ -2624,6 +2791,30 @@
         "name": "Season 1 Endgame Elite",
         "desc": "Unlocks the Honor Title: Season 1 Endgame Elite.",
         "literary": "Proof of fighting tenaciously in Season 1 of A Finale Echoing and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117011": {
+        "id": 117011,
+        "name": "Season 2 Endgame Ace",
+        "desc": "Unlocks the Honor Title: Season 2 Endgame Ace.",
+        "literary": "Proof of fighting tenaciously in Season 2 of A Finale Echoing and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117012": {
+        "id": 117012,
+        "name": "Season 2 Endgame Master",
+        "desc": "Unlocks the Honor Title: Season 2 Endgame Master.",
+        "literary": "Proof of fighting tenaciously in Season 2 of A Finale Echoing and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117013": {
+        "id": 117013,
+        "name": "Season 2 Endgame Elite",
+        "desc": "Unlocks the Honor Title: Season 2 Endgame Elite.",
+        "literary": "Proof of fighting tenaciously in Season 2 of A Finale Echoing and achieving the honor of Elite!",
         "type": "Honor",
         "rarity": "SSR"
     },
@@ -2675,6 +2866,54 @@
         "type": "Honor",
         "rarity": "SR"
     },
+    "118021": {
+        "id": 118021,
+        "name": "Season 3 Hunting Ace",
+        "desc": "Unlocks the Honor Title: Season 3 Hunting Ace.",
+        "literary": "Proof of a stellar performance in Season 3 of Boss Blitz and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118022": {
+        "id": 118022,
+        "name": "Season 3 Hunting Master",
+        "desc": "Unlocks the Honor Title: Season 3 Hunting Master.",
+        "literary": "Proof of a stellar performance in Season 3 of Boss Blitz and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118023": {
+        "id": 118023,
+        "name": "Season 3 Hunting Elite",
+        "desc": "Unlocks the Honor Title: Season 3 Hunting Elite.",
+        "literary": "Proof of a stellar performance in Season 3 of Boss Blitz and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
+    "118031": {
+        "id": 118031,
+        "name": "Season 4 Hunting Ace",
+        "desc": "Unlocks the Honor Title: Season 4 Hunting Ace.",
+        "literary": "Proof of a stellar performance in Season 4 of Boss Blitz and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118032": {
+        "id": 118032,
+        "name": "Season 4 Hunting Master",
+        "desc": "Unlocks the Honor Title: Season 4 Hunting Master.",
+        "literary": "Proof of a stellar performance in Season 4 of Boss Blitz and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118033": {
+        "id": 118033,
+        "name": "Season 4 Hunting Elite",
+        "desc": "Unlocks the Honor Title: Season 4 Hunting Elite.",
+        "literary": "Proof of a stellar performance in Season 4 of Boss Blitz and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
     "120001": {
         "id": 120001,
         "name": "Beach Treasure Shovel",
@@ -2705,6 +2944,20 @@
         "desc": "Unlocks the Avatar: The Sharp Gaze",
         "literary": "Less about genius, more about curiosity.",
         "type": "PlayHead",
+        "rarity": "SR"
+    },
+    "130003": {
+        "id": 130003,
+        "name": "Times of Fragility",
+        "desc": "Unlocks the Avatar: Times of Fragility",
+        "literary": "Life won't be as good as you hope, but it won't be as bad as you fear.",
+        "type": "PlayHead",
+        "rarity": "SR"
+    },
+    "198025": {
+        "id": 198025,
+        "name": "Ventus Team Record",
+        "desc": "Grants a Ventus Monolith: Record to a beginner!",
         "rarity": "SR"
     },
     "199000": {
@@ -2741,9 +2994,9 @@
     },
     "199004": {
         "id": 199004,
-        "name": "Minova Appearance:\nTipsy Daydream",
-        "desc": "Minova Appearance:\nTipsy Daydream",
-        "literary": "Minova Appearance:\nTipsy Daydream",
+        "name": "Minova Appearance (2D):\nTipsy Daydream",
+        "desc": "Minova Appearance (2D):\nTipsy Daydream",
+        "literary": "Minova Appearance (2D):\nTipsy Daydream",
         "type": "Item",
         "rarity": "SSR"
     },
@@ -2773,9 +3026,9 @@
     },
     "199008": {
         "id": 199008,
-        "name": "Tilia Appearance:\nThis Is My Justice!",
-        "desc": "Tilia Appearance:\nThis Is My Justice!",
-        "literary": "Tilia Appearance:\nThis Is My Justice!",
+        "name": "Tilia Appearance (2D):\nThis Is My Justice!",
+        "desc": "Tilia Appearance (2D):\nThis Is My Justice!",
+        "literary": "Tilia Appearance (2D):\nThis Is My Justice!",
         "type": "Item",
         "rarity": "SSR"
     },
@@ -2784,6 +3037,22 @@
         "name": "Limited-Time Avatar:\nThe Sharp Gaze",
         "desc": "Limited-Time Avatar:\nThe Sharp Gaze",
         "literary": "Limited-Time Avatar:\nThe Sharp Gaze",
+        "type": "Item",
+        "rarity": "SSR"
+    },
+    "199010": {
+        "id": 199010,
+        "name": "Iris's Appearance (2D):\nThe 1/365th of You",
+        "desc": "Iris's Appearance (2D):\nThe 1/365th of You",
+        "literary": "Iris's Appearance (2D):\nThe 1/365th of You",
+        "type": "Item",
+        "rarity": "SSR"
+    },
+    "199011": {
+        "id": 199011,
+        "name": "Limited-Time Avatar:\nTimes of Fragility",
+        "desc": "Limited-Time Avatar:\nTimes of Fragility",
+        "literary": "Limited-Time Avatar:\nTimes of Fragility",
         "type": "Item",
         "rarity": "SSR"
     },
@@ -3295,6 +3564,20 @@
         "id": 214040,
         "name": "Fist of Courage",
         "literary": "To protect your companions, to summon the courage and become your best self,\nstrike your fist at the colossal enemy,\nand clear the path to a future full of hope.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
+    "214041": {
+        "id": 214041,
+        "name": "A Gift for the Journey",
+        "literary": "A sleigh full of gifts\nguided by the messenger\nheading toward the sunrise and its destination\nexcept—\nshouldn't reindeer be pulling it?!",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
+    "214048": {
+        "id": 214048,
+        "name": "Snowy Night Surprise",
+        "literary": "The winter wind carries prayers from afar\nThe messenger arrives with blessings and gifts\nStepping into view as the midnight bells ring\nThis Snowish Festival gift is for you, who never lost your childish wonder",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -3879,6 +4162,22 @@
         "name": "Fist of Courage Melody",
         "desc": "Material required for the Crescendo of specific Discs.",
         "literary": "To protect your companions, to summon the courage and become your best self,\u000bstrike your fist at the colossal enemy,\u000band clear the path to a future full of hope.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224041": {
+        "id": 224041,
+        "name": "A Gift for the Journey Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "A sleigh full of gifts\u000bguided by the messenger\u000bheading toward the sunrise and its destination\u000bexcept—\u000bshouldn't reindeer be pulling it?!",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224048": {
+        "id": 224048,
+        "name": "Snowy Night Surprise Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "The winter wind carries prayers from afar\u000bThe messenger arrives with blessings and gifts\u000bstepping into view as the midnight bells ring\u000bThis Snowish Festival gift is for you, who never lost your childish wonder",
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
@@ -8577,6 +8876,180 @@
     "515643": {
         "id": 515643,
         "name": "Rocket Cart",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515801": {
+        "id": 515801,
+        "name": "Solemn Look",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515802": {
+        "id": 515802,
+        "name": "Here Comes the Queen",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515803": {
+        "id": 515803,
+        "name": "Whipping Gale",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515804": {
+        "id": 515804,
+        "name": "Crossing Welts",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515805": {
+        "id": 515805,
+        "name": "Burning Whip",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515806": {
+        "id": 515806,
+        "name": "Starchain Blade",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515807": {
+        "id": 515807,
+        "name": "Fiery Rainbow",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515808": {
+        "id": 515808,
+        "name": "All-Out Whiplash",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515809": {
+        "id": 515809,
+        "name": "Wild Whip Waltz",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515810": {
+        "id": 515810,
+        "name": "Non-Stop Victory",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515811": {
+        "id": 515811,
+        "name": "Cannon Ensemble",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515812": {
+        "id": 515812,
+        "name": "Jazz of Rage",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515813": {
+        "id": 515813,
+        "name": "Elegant Moves",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515821": {
+        "id": 515821,
+        "name": "Fire Downpour",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515822": {
+        "id": 515822,
+        "name": "Special Ammo",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515823": {
+        "id": 515823,
+        "name": "Promotion Time",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515824": {
+        "id": 515824,
+        "name": "Investiture Ceremony",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515825": {
+        "id": 515825,
+        "name": "Two-Gun Salute",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515826": {
+        "id": 515826,
+        "name": "Uplifting Shot",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515827": {
+        "id": 515827,
+        "name": "First Taste of Sweetness",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515828": {
+        "id": 515828,
+        "name": "Heart's Benediction",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515829": {
+        "id": 515829,
+        "name": "Heart's Edict",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515830": {
+        "id": 515830,
+        "name": "Heart's Trumpet",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515831": {
+        "id": 515831,
+        "name": "Celebration Resumed",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515832": {
+        "id": 515832,
+        "name": "Ammo Rain",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515833": {
+        "id": 515833,
+        "name": "Fairy Tale Rule",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515841": {
+        "id": 515841,
+        "name": "Silver Bullet",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515842": {
+        "id": 515842,
+        "name": "Untouched King",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515843": {
+        "id": 515843,
+        "name": "Toy Army",
         "type": "Potential",
         "rarity": "SR"
     }
