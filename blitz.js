@@ -47,6 +47,7 @@ for (const id in SCOREBOSSLEVEL) {
         stat: monsterValueTemplateModify.map((modify, index) => {
             const cumulativeHpFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.HpFix || 0), 0);
             const cumulativeAtkFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.AtkFix || 0), 0);
+            const cumulativeDefFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.DefFix || 0), 0);
             const cumulativeToughnessFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.ToughnessFix || 0), 0);
 
             function cumulativeHp(index) {
@@ -54,7 +55,7 @@ for (const id in SCOREBOSSLEVEL) {
                 let totalHp = 0;
                 while (index2 <= index) {
                     const cumulativeHpFixOfThisIndex = monsterValueTemplateModify.slice(0, index2 + 1).reduce((sum, curr) => sum + (curr.HpFix || 0), 0);
-                    totalHp += Math.floor((monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0) + (cumulativeHpFixOfThisIndex || 0)) + (monsterValueTemplateAdjust.HpFix || 0)));
+                    totalHp += Math.floor((monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (cumulativeHpFixOfThisIndex || 0) + (monsterValueTemplateAdjust.HpFix || 0)));
                     index2++;
                 }
                 return totalHp;
@@ -62,12 +63,12 @@ for (const id in SCOREBOSSLEVEL) {
 
             return {
                 'Level': modify.Lv,
-                'HP': Math.floor((monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0) + (cumulativeHpFix || 0)) + (monsterValueTemplateAdjust.HpFix || 0))),
+                'HP': Math.floor((monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (cumulativeHpFix || 0) + (monsterValueTemplateAdjust.HpFix || 0))),
                 'Cumulative HP': cumulativeHp(index),
                 'Estimated Score Damage': [Math.floor(cumulativeHp(index - 1) / scoreGetSwitch.SwitchRate), Math.floor(cumulativeHp(index) / scoreGetSwitch.SwitchRate)].map(value => value.toLocaleString()).join(' - '),
                 'Damage Per Score': scoreGetSwitch.SwitchRate,
-                'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0) + (cumulativeAtkFix || 0)) + (monsterValueTemplateAdjust.AtkFix || 0)),
-                'DEF': monsterValueTemplate.Def,
+                'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0)) + (cumulativeAtkFix || 0) + (monsterValueTemplateAdjust.AtkFix || 0)),
+                'DEF': Math.floor(monsterValueTemplate.Def * (1 + (monsterValueTemplateAdjust.DefRatio || 0)) + (cumulativeDefFix || 0) + (monsterValueTemplateAdjust.DefFix || 0)),
                 'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
                 'Attack Speed': monsterValueTemplate.AtkSpd / 100 + '%',
                 'Aqua DMG': monsterValueTemplate.WEE / 100 + '%',
@@ -77,7 +78,7 @@ for (const id in SCOREBOSSLEVEL) {
                 'Lux DMG': monsterValueTemplate.LEE / 100 + '%',
                 'Umbra DMG': monsterValueTemplate.DEE / 100 + '%',
                 'Mark DMG Taken': monsterValueTemplate.RCDMARKDMG / 100 + '%',
-                'Resilience': Math.floor(monsterValueTemplate.Toughness * (1 + (monsterValueTemplateAdjust.ToughnessRatio / 10000 || 0) + (cumulativeToughnessFix || 0)) + (monsterValueTemplateAdjust.ToughnessFix || 0)),
+                'Resilience': Math.floor(monsterValueTemplate.Toughness * (1 + (monsterValueTemplateAdjust.ToughnessRatio / 10000 || 0)) + (cumulativeToughnessFix || 0) + (monsterValueTemplateAdjust.ToughnessFix || 0)),
                 'Aqua RES': monsterValueTemplateAdjust.WERFix,
                 'Ignis RES': monsterValueTemplateAdjust.FERFix,
                 'Terra RES': monsterValueTemplateAdjust.SERFix,
