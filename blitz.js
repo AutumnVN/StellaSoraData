@@ -78,7 +78,7 @@ for (const id in SCOREBOSSLEVEL) {
                 'Lux DMG': monsterValueTemplate.LEE / 100 + '%',
                 'Umbra DMG': monsterValueTemplate.DEE / 100 + '%',
                 'Mark DMG Taken': monsterValueTemplate.RCDMARKDMG / 100 + '%',
-                'Resilience': Math.floor(monsterValueTemplate.Toughness * (1 + (monsterValueTemplateAdjust.ToughnessRatio / 10000 || 0)) + (cumulativeToughnessFix || 0) + (monsterValueTemplateAdjust.ToughnessFix || 0)),
+                'Resilience': Math.floor(monsterValueTemplate.Toughness * (1 + (monsterValueTemplateAdjust.ToughnessRatio / 10000 || 0)) + (cumulativeToughnessFix || 0) + (monsterValueTemplateAdjust.ToughnessFix || 0)) || undefined,
                 'Aqua RES': monsterValueTemplateAdjust.WERFix,
                 'Ignis RES': monsterValueTemplateAdjust.FERFix,
                 'Terra RES': monsterValueTemplateAdjust.SERFix,
