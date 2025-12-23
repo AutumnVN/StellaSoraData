@@ -1796,7 +1796,7 @@ return {
 			"",
 			false,
 			"",
-			"111",
+			"Will do",
 			""
 		}
 	},
@@ -1824,7 +1824,7 @@ return {
 			"",
 			false,
 			"",
-			"Got it.",
+			"Okay!",
 			""
 		}
 	},

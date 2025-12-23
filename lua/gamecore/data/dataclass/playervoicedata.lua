@@ -33,6 +33,7 @@ function PlayerVoiceData:Init()
 	self.bFirstEnterGame = true
 	self.bNpc = false
 	self.nNpcId = 0
+	self.nNPCSkinId = 0
 	self.bStartBoardClickTimer = false
 	self.nContinuousClickCount = 0
 	self.nBoardClickTime = 0
@@ -166,15 +167,19 @@ end
 local getBoardClickFreeTime = function(bNpc)
 	return bNpc and npc_board_click_free_time or board_click_free_time
 end
-function PlayerVoiceData:StartBoardFreeTimer(nNpcId)
+function PlayerVoiceData:StartBoardFreeTimer(nNpcId, nSkinId)
 	if nNpcId ~= nil or self.bNpc then
 		self.bNpc = true
 		if nNpcId ~= nil then
-			self.nNpcId = nNpcId or 0
+			self.nNpcId = nNpcId
+		end
+		if nSkinId ~= nil then
+			self.nNPCSkinId = nSkinId
 		end
 	else
 		self.bNpc = false
 		self.nNpcId = 0
+		self.nNPCSkinId = 0
 	end
 	self.bStartBoardClickTimer = true
 	if nil == self.boardFreeTimer and self.nTriggerFreeVoiceState ~= board_free_trigger_ex_hang then
@@ -272,6 +277,7 @@ end
 function PlayerVoiceData:PlayBoardClickVoice()
 	self.bNpc = false
 	self.nNpcId = 0
+	self.nNPCSkinId = 0
 	if 0 == self.nBoardClickTime and nil == self.boardClickTimer then
 		self.boardClickTimer = TimerManager.Add(0, 0.1, self, self.CheckContinuousClick, true, true, false)
 	end
@@ -314,9 +320,10 @@ function PlayerVoiceData:PlayBoardClickVoice()
 		end
 	end
 end
-function PlayerVoiceData:PlayBoardNPCClickVoice(nNpcId)
+function PlayerVoiceData:PlayBoardNPCClickVoice(nNpcId, nSkinId)
 	self.bNpc = true
 	self.nNpcId = nNpcId
+	self.nNPCSkinId = nSkinId or 0
 	if 0 == self.nBoardClickTime and nil == self.boardClickTimer then
 		self.boardClickTimer = TimerManager.Add(0, 0.1, self, self.CheckContinuousClick, true, true, false)
 	end
@@ -330,7 +337,7 @@ function PlayerVoiceData:PlayBoardNPCClickVoice(nNpcId)
 		else
 			table.insert(tbVoiceKey, "posterchat_npc")
 		end
-		self:PlayCharVoice(tbVoiceKey, curBoardCharId, nil, true)
+		self:PlayCharVoice(tbVoiceKey, curBoardCharId, self.nNPCSkinId, true)
 	end
 end
 function PlayerVoiceData:PlayBoardFreeVoice()
@@ -343,7 +350,7 @@ function PlayerVoiceData:PlayBoardFreeVoice()
 		sVoiceKey = "hang_npc"
 	end
 	if nil ~= curBoardCharId then
-		self:PlayCharVoice(sVoiceKey, curBoardCharId)
+		self:PlayCharVoice(sVoiceKey, curBoardCharId, self.nNPCSkinId, self.bNpc)
 	end
 end
 function PlayerVoiceData:PlayBoardFreeLongTimeVoice()
@@ -356,8 +363,21 @@ function PlayerVoiceData:PlayBoardFreeLongTimeVoice()
 		sVoiceKey = "exhang_npc"
 	end
 	if nil ~= curBoardCharId then
-		self:PlayCharVoice(sVoiceKey, curBoardCharId)
+		self:PlayCharVoice(sVoiceKey, curBoardCharId, self.nNPCSkinId, self.bNpc)
 	end
+end
+function PlayerVoiceData:GetNPCGreetTimeVoiceKey()
+	local sTimeVoice = ""
+	local nServerTimeStamp = ClientManager.serverTimeStamp
+	local nHour = tonumber(os.date("%H", nServerTimeStamp))
+	if 6 <= nHour and nHour < 12 then
+		sTimeVoice = "greetmorn_npc"
+	elseif 12 <= nHour and nHour < 18 then
+		sTimeVoice = "greetnoon_npc"
+	else
+		sTimeVoice = "greetnight_npc"
+	end
+	return sTimeVoice
 end
 function PlayerVoiceData:PlayBattleResultVoice(tbChar, bWin)
 	local nIndex = math.random(1, #tbChar)
@@ -401,6 +421,7 @@ function PlayerVoiceData:ClearTimer()
 	self.bStartBoardClickTimer = false
 	self.bNpc = false
 	self.nNpcId = 0
+	self.nNPCSkinId = 0
 end
 function PlayerVoiceData:OnEvent_UIOperate()
 	self.nBoardFreeTime = 0

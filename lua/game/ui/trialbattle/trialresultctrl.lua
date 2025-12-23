@@ -142,7 +142,7 @@ function TrialResultCtrl:OnEnable()
 				local nCharSkinId = ConfigTable.GetData_Character(mapTrial.CharId).AdvanceSkinId
 				local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 				if mapCharSkin then
-					self:SetPngSprite(self._mapNode.imgHead, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+					self:SetPngSprite(self._mapNode.imgHead, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 				end
 			end
 		end

@@ -1,3 +1,4 @@
+local LocalData = require("GameCore.Data.LocalData")
 local statusOrder = {
 	[0] = 1,
 	[1] = 2,
@@ -17,7 +18,9 @@ local QuestType = {
 	VampireSurvivorSeason = 9,
 	Tower = 10,
 	Demon = 11,
-	TowerEvent = 12
+	TowerEvent = 12,
+	Weekly = 13,
+	Assist = 14
 }
 local QuestRedDotType = {
 	TourGuide = RedDotDefine.Task_Guide,
@@ -25,22 +28,31 @@ local QuestRedDotType = {
 	TravelerDuel = RedDotDefine.Task_Duel,
 	TravelerDuelChallenge = RedDotDefine.Task_Season,
 	Affinity = RedDotDefine.Role_AffinityTask,
-	Tower = RedDotDefine.StarTowerQuest
+	Tower = RedDotDefine.StarTowerQuest,
+	Weekly = RedDotDefine.Task_Weekly,
+	Assist = RedDotDefine.TaskNewbie_TeamFormation
 }
 function PlayerQuestData:Init()
 	self._mapQuest = {}
 	self.tbDailyActives = {}
+	self.tbWeeklyActives = {}
 	self.nCurTourGroupOrderIndex = 0
 	self.nMaxTourGroupOrderIndex = 0
+	self.nMaxTeamFormationGroupIdx = 0
 	self.tbTourGuideGroup = {}
 	self.tbTourGuide = {}
+	self.tbTeamFormation = {}
+	self.tbTeamFormationGroup = {}
+	self.tbTeamFormationAttr = {}
 	self:InitConfig()
 	EventManager.Add(EventId.IsNewDay, self, self.HandleExpire)
 	EventManager.Add(EventId.UpdateWorldClass, self, self.UpdateDailyQuestRedDot)
+	EventManager.Add(EventId.UpdateWorldClass, self, self.UpdateWeeklyQuestRedDot)
 end
 function PlayerQuestData:UnInit()
 	EventManager.Remove(EventId.IsNewDay, self, self.HandleExpire)
 	EventManager.Remove(EventId.UpdateWorldClass, self, self.UpdateDailyQuestRedDot)
+	EventManager.Remove(EventId.UpdateWorldClass, self, self.UpdateWeeklyQuestRedDot)
 end
 function PlayerQuestData:InitConfig()
 	local foreachDailyActive = function(mapData)
@@ -72,6 +84,29 @@ function PlayerQuestData:InitConfig()
 		CacheTable.InsertData("_DemonQuest", line.AdvanceGroup, line)
 	end
 	ForEachTableLine(ConfigTable.Get("DemonQuest"), foreachDemonQuest)
+	local foreachWeeklyActive = function(mapData)
+		self.tbWeeklyActives[mapData.Id] = {
+			bReward = false,
+			nActive = mapData.Active
+		}
+	end
+	ForEachTableLine(DataTable.WeeklyQuestActive, foreachWeeklyActive)
+	local foreachTeamFormationGroup = function(mapData)
+		table.insert(self.tbTeamFormationGroup, mapData)
+	end
+	ForEachTableLine(DataTable.AssistQuestGroup, foreachTeamFormationGroup)
+	table.sort(self.tbTeamFormationGroup, function(a, b)
+		return a.Id < b.Id
+	end)
+	self.nMaxTeamFormationGroupIdx = #self.tbTeamFormationGroup
+	local foreachTeamFormation = function(mapData)
+		table.insert(self.tbTeamFormation, mapData)
+	end
+	ForEachTableLine(DataTable.AssistQuest, foreachTeamFormation)
+	local foreachTeamFormationAttr = function(mapData)
+		table.insert(self.tbTeamFormationAttr, mapData)
+	end
+	ForEachTableLine(DataTable.AssistAttribute, foreachTeamFormationAttr)
 end
 function PlayerQuestData:GetAllQuestData()
 	local retDaily = {}
@@ -107,10 +142,56 @@ function PlayerQuestData:GetAllQuestData()
 			end
 		end
 	end
-	return retDaily, self._mapQuest[QuestType.TourGuide]
+	local retWeekly = {}
+	local sortWeekly = function(a, b)
+		if a.nStatus ~= b.nStatus then
+			return statusOrder[a.nStatus] > statusOrder[b.nStatus]
+		end
+		local mapQuestA = ConfigTable.GetData("WeeklyQuest", a.nTid)
+		local mapQuestB = ConfigTable.GetData("WeeklyQuest", b.nTid)
+		return mapQuestA.Order < mapQuestB.Order
+	end
+	if self._mapQuest[QuestType.Weekly] ~= nil then
+		for _, mapQuest in pairs(self._mapQuest[QuestType.Weekly]) do
+			table.insert(retWeekly, mapQuest)
+		end
+		if 0 < #retWeekly then
+			table.sort(retWeekly, sortWeekly)
+		end
+	end
+	if self._mapQuest[QuestType.Assist] == nil then
+		self._mapQuest[QuestType.Assist] = {}
+		local nGroupId = self.tbTeamFormationGroup[self.nMaxTeamFormationGroupIdx].Id
+		local tbQuest = self.tbTeamFormation[nGroupId]
+		if nil ~= tbQuest then
+			for _, v in ipairs(tbQuest) do
+				self._mapQuest[QuestType.Assist][v.Id] = {
+					nTid = v.Id,
+					nGoal = 1,
+					nCurProgress = 1,
+					nStatus = 2,
+					nExpire = 0
+				}
+			end
+		end
+	end
+	return retDaily, self._mapQuest[QuestType.TourGuide], retWeekly, self._mapQuest[QuestType.Assist]
 end
 function PlayerQuestData:CheckTourGroupReward(nIndex)
 	return nIndex <= self.nCurTourGroupOrderIndex
+end
+function PlayerQuestData:CheckTeamFormationGroupReward(nAttributeId, nIndex)
+	if self.tbCurTeamFormationGroupIndex[nAttributeId] == nil then
+		return false
+	end
+	return nIndex <= self.tbCurTeamFormationGroupIndex[nAttributeId]
+end
+function PlayerQuestData:CheckTeamFormationAllCompleted()
+	local nCompletedGroupCount = 0
+	for nAttributeId, nGroupCount in pairs(self.tbCurTeamFormationGroupIndex) do
+		nCompletedGroupCount = nCompletedGroupCount + nGroupCount
+	end
+	return nCompletedGroupCount >= #self.tbTeamFormationGroup
 end
 function PlayerQuestData:GetTourGuideQuestRewardId()
 	local tbQuest = self._mapQuest[QuestType.TourGuide]
@@ -129,6 +210,12 @@ end
 function PlayerQuestData:CheckDailyActiveReceive(nActiveId)
 	if self.tbDailyActives[nActiveId] ~= nil then
 		return self.tbDailyActives[nActiveId].bReward
+	end
+	return false
+end
+function PlayerQuestData:CheckWeeklyActiveReceive(nActiveId)
+	if self.tbWeeklyActives[nActiveId] ~= nil then
+		return self.tbWeeklyActives[nActiveId].bReward
 	end
 	return false
 end
@@ -152,6 +239,113 @@ function PlayerQuestData:GetStarTowerBookQuestData()
 		self._mapQuest[12] = {}
 	end
 	return self._mapQuest[12]
+end
+function PlayerQuestData:GetAttributeIdByGroupId(nGroupId)
+	for nGroupIdx, mapGroup in pairs(self.tbTeamFormationGroup) do
+		if mapGroup.Id == nGroupId then
+			return mapGroup.AttributeId
+		end
+	end
+	return 0
+end
+function PlayerQuestData:GetTeamFormationGroupIndexInAttribute(nGroupId)
+	local nAttributeId = self:GetAttributeIdByGroupId(nGroupId)
+	if nAttributeId == 0 then
+		return 0
+	end
+	local nIdx = 0
+	for nGroupIdx, mapGroup in pairs(self.tbTeamFormationGroup) do
+		if mapGroup.AttributeId == nAttributeId then
+			nIdx = nIdx + 1
+			if mapGroup.Id == nGroupId then
+				return nIdx
+			end
+		end
+	end
+	return 0
+end
+function PlayerQuestData:GetCurTeamFormationQuestGroup(nAttributeId)
+	if self._mapQuest[QuestType.Assist] == nil or self.tbCurTeamFormationGroupIndex[nAttributeId] == nil then
+		local mapFirstGroup
+		for nGroupIdx, mapGroup in pairs(self.tbTeamFormationGroup) do
+			if mapGroup.AttributeId == nAttributeId then
+				mapFirstGroup = mapGroup
+				break
+			end
+		end
+		if mapFirstGroup == nil then
+			return 0
+		end
+		return mapFirstGroup.Id
+	end
+	local nCurIndex = math.min(self.tbCurTeamFormationGroupIndex[nAttributeId] + 1, self.nMaxTeamFormationGroupIdx)
+	local mapCurGroup = self.tbTeamFormationGroup[nCurIndex]
+	return mapCurGroup.Id
+end
+function PlayerQuestData:GetTeamFormationQuestData()
+	if self._mapQuest[QuestType.Assist] == nil then
+		self._mapQuest[QuestType.Assist] = {}
+	end
+	return self._mapQuest[QuestType.Assist]
+end
+function PlayerQuestData:GetTeamFormationGroupById(nGroupId)
+	local tbTeamFormation = self:GetTeamFormationQuestData()
+	if tbTeamFormation == nil then
+		return nil
+	end
+	local tbGroupData = {}
+	for k, v in pairs(self.tbTeamFormation) do
+		if nGroupId == v.QuestGroup then
+			table.insert(tbGroupData, tbTeamFormation[v.Id])
+		end
+	end
+	return tbGroupData
+end
+function PlayerQuestData:CheckTeamFormationAttributeCompleted(nAttrId)
+	local tbGroups = {}
+	local bCompleted = true
+	for nGroupIndex, mapGroup in pairs(self.tbTeamFormationGroup) do
+		if mapGroup.AttributeId == nAttrId then
+			local bGroupCompleted = self:CheckTeamFormationGroupReward(nAttrId, nGroupIndex)
+			bCompleted = bCompleted and bGroupCompleted
+			if bCompleted == false then
+				return false
+			end
+		end
+	end
+	return bCompleted
+end
+function PlayerQuestData:CheckTeamFormationGroupCompleted(nGroupId)
+	local tbGroupData = self:GetTeamFormationGroupById(nGroupId)
+	if tbGroupData == nil then
+		return false
+	end
+	for k, questData in pairs(tbGroupData) do
+		if questData.nStatus ~= 1 then
+			return false
+		end
+	end
+	return true
+end
+function PlayerQuestData:CheckTeamFormationAttributeUnlocked(nAttrId)
+	local mapAttr = ConfigTable.GetData("AssistAttribute", nAttrId)
+	if mapAttr == nil then
+		return false
+	end
+	if mapAttr.Pre == nil or mapAttr.Pre == 0 then
+		return true
+	end
+	local bCompleted = true
+	for nGroupIndex, mapGroup in pairs(self.tbTeamFormationGroup) do
+		if mapGroup.AttributeId == mapAttr.Pre then
+			local bGroupCompleted = self:CheckTeamFormationGroupReward(nAttrId, nGroupIndex)
+			bCompleted = bCompleted and bGroupCompleted
+			if bCompleted == false then
+				return false
+			end
+		end
+	end
+	return bCompleted
 end
 function PlayerQuestData:GetCurTourGroup()
 	if self._mapQuest[QuestType.TourGuide] == nil then
@@ -318,6 +512,164 @@ function PlayerQuestData:ReceiveTourGroupReward(callback)
 	PlayerData.State:SetMailOverflow(false)
 	HttpNetHandler.SendMsg(NetMsgId.Id.quest_tour_guide_group_reward_receive_req, {}, nil, Callback)
 end
+function PlayerQuestData:ReceiveTeamFormationReward(nTid, nGroupId, callback)
+	local msg = {Group = nGroupId, Quest = nTid}
+	local tbReceivedId = {}
+	if nTid == 0 and nGroupId ~= 0 then
+		for _, mapData in pairs(self.tbTeamFormation) do
+			if mapData.QuestGroup == nGroupId then
+				local mapQuestData = self._mapQuest[QuestType.Assist][mapData.Id]
+				if mapQuestData.nStatus == 1 then
+					table.insert(tbReceivedId, mapData.Id)
+				end
+			end
+		end
+	end
+	local Callback = function(_, mapMsgData)
+		if nTid == 0 and nGroupId ~= 0 then
+			for _, nQuestId in ipairs(tbReceivedId) do
+				self._mapQuest[QuestType.Assist][nQuestId].nStatus = 2
+				self._mapQuest[QuestType.Assist][nQuestId].nCurProgress = 1
+				self._mapQuest[QuestType.Assist][nQuestId].nGoal = 1
+			end
+		elseif nTid ~= 0 and nGroupId == 0 then
+			self._mapQuest[QuestType.Assist][nTid].nStatus = 2
+			self._mapQuest[QuestType.Assist][nTid].nCurProgress = 1
+			self._mapQuest[QuestType.Assist][nTid].nGoal = 1
+		end
+		local tbItem = {}
+		if 0 < #tbReceivedId then
+			for _, nQuestId in pairs(tbReceivedId) do
+				local mapQuestData = ConfigTable.GetData("AssistQuest", nQuestId)
+				if mapQuestData ~= nil then
+					for i = 1, 4 do
+						local nItemId = mapQuestData["Item" .. i]
+						local nQty = mapQuestData["Qty" .. i]
+						if nItemId ~= 0 and 0 < nQty then
+							local bFoundInTable = false
+							for k, dataItem in pairs(tbItem) do
+								if dataItem.Tid == nItemId then
+									dataItem.Qty = dataItem.Qty + nQty
+									bFoundInTable = true
+									break
+								end
+							end
+							if not bFoundInTable then
+								table.insert(tbItem, {Tid = nItemId, Qty = nQty})
+							end
+						end
+					end
+				end
+			end
+		else
+			local mapQuestData = ConfigTable.GetData("AssistQuest", nTid)
+			if mapQuestData ~= nil then
+				for i = 1, 4 do
+					local nItemId = mapQuestData["Item" .. i]
+					local nQty = mapQuestData["Qty" .. i]
+					if nItemId ~= 0 and 0 < nQty then
+						local bFoundInTable = false
+						for k, dataItem in pairs(tbItem) do
+							if dataItem.Tid == nItemId then
+								dataItem.Qty = dataItem.Qty + nQty
+								bFoundInTable = true
+								break
+							end
+						end
+						if not bFoundInTable then
+							table.insert(tbItem, {Tid = nItemId, Qty = nQty})
+						end
+					end
+				end
+			end
+		end
+		local cb = function()
+			EventManager.Hit("UpdateTeamFormationGroup")
+		end
+		UTILS.OpenReceiveByDisplayItem(tbItem, mapMsgData, cb)
+		self:UpdateQuestRedDot("Assist")
+		if callback ~= nil then
+			callback(mapMsgData)
+		end
+	end
+	PlayerData.State:SetMailOverflow(false)
+	HttpNetHandler.SendMsg(NetMsgId.Id.quest_assist_reward_receive_req, msg, nil, Callback)
+end
+function PlayerQuestData:ReceiveTeamFormationGroupReward(nGroupId, nAttributeIdx, callback)
+	local msg = {Value = nGroupId}
+	local Callback = function(_, mapMsgData)
+		if mapMsgData.BuildInfo ~= nil then
+			if mapMsgData.BuildInfo.Brief ~= nil then
+				PlayerData.Build:CacheRogueBuild(mapMsgData.BuildInfo)
+			elseif mapMsgData.BuildInfo.BuildCoin ~= nil and mapMsgData.BuildInfo.BuildCoin > 0 then
+				local checkLimitCb = function()
+					local nLimit = PlayerData.StarTower:GetStarTowerRewardLimit()
+					local nCur = PlayerData.StarTower:GetStarTowerTicket()
+					if nLimit < mapMsgData.BuildInfo.BuildCoin + nCur then
+						local sTip = ConfigTable.GetUIText("BUILD_12")
+						EventManager.Hit(EventId.OpenMessageBox, sTip)
+					end
+					local encodeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
+					if encodeInfo["proto.Res"] ~= nil then
+						for _, mapCoin in ipairs(encodeInfo["proto.Res"]) do
+							if mapCoin.Tid == AllEnum.CoinItemId.FRRewardCurrency then
+								PlayerData.StarTower:AddStarTowerTicket(mapCoin.Qty)
+							end
+						end
+					end
+				end
+				PlayerData.StarTower:SendTowerGrowthDetailReq(checkLimitCb)
+			end
+		end
+		local nNextGroupIdx = self:GetTeamFormationGroupIndexInAttribute(nGroupId)
+		self.tbCurTeamFormationGroupIndex[nAttributeIdx] = nNextGroupIdx
+		local bAttributeComplete = self:CheckTeamFormationAttributeCompleted(nAttributeIdx)
+		local nNextGroupId = 0
+		for i = 1, #self.tbTeamFormationGroup do
+			if self.tbTeamFormationGroup[i].PreGroup == nGroupId then
+				nNextGroupId = self.tbTeamFormationGroup[i].Id
+				break
+			end
+		end
+		local tbItem = {}
+		local mapQuest = ConfigTable.GetData("AssistQuestGroup", nGroupId)
+		if mapQuest ~= nil then
+			for i = 1, 5 do
+				local nItemId = mapQuest["Item" .. i]
+				local nQty = mapQuest["Qty" .. i]
+				if nItemId ~= 0 and 0 < nQty then
+					local bFoundInTable = false
+					for k, dataItem in pairs(tbItem) do
+						if dataItem.Tid == nItemId then
+							dataItem.Qty = dataItem.Qty + nQty
+							bFoundInTable = true
+							break
+						end
+					end
+					if not bFoundInTable then
+						table.insert(tbItem, {Tid = nItemId, Qty = nQty})
+					end
+				end
+			end
+			if mapMsgData.BuildInfo ~= nil and mapMsgData.BuildInfo.Brief ~= nil then
+				table.insert(tbItem, {
+					Tid = mapQuest.ShowBuildId,
+					Qty = 1
+				})
+			end
+		end
+		local cb = function()
+			EventManager.Hit("UpdateTeamFormationGroup", bAttributeComplete, nNextGroupId)
+		end
+		UTILS.OpenReceiveByDisplayItem(tbItem, mapMsgData.Change, cb)
+		self:UpdateQuestRedDot("Assist")
+		if callback ~= nil then
+			callback(mapMsgData)
+		end
+	end
+	PlayerData.State:SetMailOverflow(false)
+	HttpNetHandler.SendMsg(NetMsgId.Id.quest_assist_group_reward_receive_req, msg, nil, Callback)
+end
 function PlayerQuestData:ReceiveDailyReward(nTid, callback)
 	local msg = {Value = nTid}
 	local tbReceivedId = {}
@@ -383,6 +735,72 @@ function PlayerQuestData:ReceiveDailyActiveReward(callBack)
 		EventManager.Hit(EventId.DailyQuestActiveReceived, tbShowReward)
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.quest_daily_active_reward_receive_req, {}, nil, callback)
+end
+function PlayerQuestData:ReceiveWeeklyReward(nTid, callback)
+	local msg = {Value = nTid}
+	local tbReceivedId = {}
+	for nId, mapQuestData in pairs(self._mapQuest[QuestType.Weekly]) do
+		local questCfg = ConfigTable.GetData("WeeklyQuest", nId)
+		if nil ~= questCfg and nTid == 0 and mapQuestData.nStatus == 1 then
+			table.insert(tbReceivedId, nId)
+		end
+	end
+	local Callback = function(_, mapMsgData)
+		if nTid == 0 then
+			for _, nId in ipairs(tbReceivedId) do
+				if self._mapQuest[QuestType.Weekly][nId].nStatus == 1 then
+					self._mapQuest[QuestType.Weekly][nId].nStatus = 2
+					self._mapQuest[QuestType.Weekly][nId].nCurProgress = 1
+					self._mapQuest[QuestType.Weekly][nId].nGoal = 1
+				end
+			end
+		else
+			self._mapQuest[QuestType.Weekly][nTid].nStatus = 2
+			self._mapQuest[QuestType.Weekly][nTid].nCurProgress = 1
+			self._mapQuest[QuestType.Weekly][nTid].nGoal = 1
+			table.insert(tbReceivedId, nTid)
+		end
+		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
+		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+		if callback ~= nil then
+			callback()
+		end
+		EventManager.Hit(EventId.WeeklyQuestReceived, mapMsgData)
+		self:UpdateQuestRedDot("Weekly")
+	end
+	PlayerData.State:SetMailOverflow(false)
+	HttpNetHandler.SendMsg(NetMsgId.Id.quest_weekly_reward_receive_req, msg, nil, Callback)
+end
+function PlayerQuestData:ReceiveWeeklyActiveReward(callBack)
+	local callback = function(_, mapMsgData)
+		local tbReward = {}
+		for _, v in ipairs(mapMsgData.ActiveIds) do
+			self.tbWeeklyActives[v].bReward = true
+			local mapCfg = ConfigTable.GetData("WeeklyQuestActive", v)
+			if mapCfg ~= nil then
+				for i = 1, 2 do
+					if mapCfg["ItemTid" .. i] ~= 0 then
+						if tbReward[mapCfg["ItemTid" .. i]] == nil then
+							tbReward[mapCfg["ItemTid" .. i]] = 0
+						end
+						tbReward[mapCfg["ItemTid" .. i]] = tbReward[mapCfg["ItemTid" .. i]] + mapCfg["Number" .. i]
+					end
+				end
+			end
+		end
+		self:UpdateWeeklyQuestRedDot()
+		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
+		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+		if callBack ~= nil then
+			callBack()
+		end
+		local tbShowReward = {}
+		for id, count in pairs(tbReward) do
+			table.insert(tbShowReward, {id = id, count = count})
+		end
+		EventManager.Hit(EventId.WeeklyQuestActiveReceived, tbShowReward)
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.quest_weekly_active_reward_receive_req, {}, nil, callback)
 end
 function PlayerQuestData:ReceiveTravelerDuelReward(nTid, callback)
 	local msg = {Id = nTid, Type = 3}
@@ -583,8 +1001,30 @@ function PlayerQuestData:CacheDailyActiveIds(tbIds)
 	end
 	self:UpdateDailyQuestRedDot()
 end
+function PlayerQuestData:CacheWeeklyActiveIds(tbIds)
+	self.curTime = CS.ClientManager.Instance.serverTimeStamp
+	for _, v in ipairs(tbIds) do
+		self.tbWeeklyActives[v].bReward = true
+	end
+	self:UpdateWeeklyQuestRedDot()
+end
 function PlayerQuestData:CacheTourGroupOrder(nIndex)
 	self.nCurTourGroupOrderIndex = nIndex
+end
+function PlayerQuestData:CacheTeamFormation(mapData)
+	self.tbCurTeamFormationGroupIndex = {}
+	for k, v in pairs(mapData) do
+		local nIdxInGroup = 0
+		for nGroupIdx, mapGroup in pairs(self.tbTeamFormationGroup) do
+			if v.Attribute == mapGroup.AttributeId then
+				nIdxInGroup = nIdxInGroup + 1
+				if mapGroup.Id == v.Group then
+					break
+				end
+			end
+		end
+		self.tbCurTeamFormationGroupIndex[v.Attribute] = nIdxInGroup
+	end
 end
 function PlayerQuestData:CheckClientType(nEventType)
 	local tbQuestId = {}
@@ -642,9 +1082,17 @@ function PlayerQuestData:HandleExpire()
 	for _, v in pairs(self.tbDailyActives) do
 		v.bReward = false
 	end
+	if not self:IsSameWeek(self.curTime, curTime, 4) then
+		for _, v in pairs(self.tbWeeklyActives) do
+			v.bReward = false
+		end
+	end
+	self.curTime = curTime
 	self:UpdateDailyQuestRedDot()
+	self:UpdateWeeklyQuestRedDot()
 	self:UpdateBattlePassRedDot()
 	self:UpdateVampireQuestRedDot()
+	self:UpdateTeamFormationRedDot()
 end
 function PlayerQuestData:IsQuestHasReceived(nType, nQuestId)
 	if self._mapQuest[nType] == nil then
@@ -705,6 +1153,10 @@ function PlayerQuestData:UpdateQuestRedDot(questType)
 		self:UpdateVampireQuestRedDot()
 	elseif questType == "TowerEvent" then
 		self:UpdateStarTowerBookQuestRedDot()
+	elseif questType == "Weekly" then
+		self:UpdateWeeklyQuestRedDot()
+	elseif questType == "Assist" then
+		self:UpdateTeamFormationRedDot()
 	end
 end
 function PlayerQuestData:UpdateDailyQuestRedDot()
@@ -729,6 +1181,65 @@ function PlayerQuestData:UpdateDailyQuestRedDot()
 	end
 	local bFuncUnlock = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.DailyQuest, false)
 	RedDotManager.SetValid(RedDotDefine.Task_Daily, nil, (bCanReceive or bActiveReward) and bFuncUnlock)
+end
+function PlayerQuestData:UpdateWeeklyQuestRedDot()
+	local bCanReceive = false
+	local bActiveReward = false
+	local nTotalActiveCount = 0
+	local questList = self._mapQuest[QuestType.Weekly]
+	if nil ~= questList then
+		for _, v in pairs(questList) do
+			if v.nStatus == 1 then
+				bCanReceive = true
+			elseif v.nStatus == 2 then
+				local questCfg = ConfigTable.GetData("WeeklyQuest", v.nTid)
+				if questCfg ~= nil then
+					nTotalActiveCount = nTotalActiveCount + questCfg.Active
+				end
+			end
+		end
+	end
+	for _, v in pairs(self.tbWeeklyActives) do
+		bActiveReward = bActiveReward or nTotalActiveCount >= v.nActive and v.bReward == false
+	end
+	local bFuncUnlock = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.WeeklyQuest, false)
+	RedDotManager.SetValid(RedDotDefine.Task_Weekly, nil, (bCanReceive or bActiveReward) and bFuncUnlock)
+end
+function PlayerQuestData:UpdateTeamFormationRedDot()
+	local bCanReceive = false
+	local bAllReceive = true
+	local nAttr = 0
+	for k, v in pairs(table) do
+		nAttr = nAttr + 1
+		local bComp = self:CheckTeamFormationAttributeCompleted(nAttr)
+		if not bComp then
+			break
+		end
+	end
+	local nCurGroupId = self:GetCurTeamFormationQuestGroup(nAttr)
+	local questList = self._mapQuest[QuestType.Assist]
+	if nil ~= questList then
+		for _, v in pairs(questList) do
+			local questCfg = ConfigTable.GetData("AssistQuest", v.nTid)
+			if nil ~= questCfg and nCurGroupId == questCfg.QuestGroup then
+				if v.nStatus == 1 then
+					bCanReceive = true
+				end
+				if v.nStatus ~= 2 then
+					bAllReceive = false
+				end
+			end
+		end
+	end
+	local bGroupReceived = true
+	if nCurGroupId ~= 0 then
+		local nIdx = self:GetTeamFormationGroupIndexInAttribute(nCurGroupId)
+		bGroupReceived = self:CheckTeamFormationGroupReward(nAttr, nIdx)
+	end
+	local bChapterCanReceive = bAllReceive and not bGroupReceived
+	local nSelectedTeam = LocalData.GetPlayerLocalData("TeamFormationQuestSelected")
+	local bTeamSelected = nSelectedTeam ~= nil
+	RedDotManager.SetValid(RedDotDefine.TaskNewbie_TeamFormation, nil, bCanReceive or bChapterCanReceive or not bTeamSelected)
 end
 function PlayerQuestData:UpdateTourGuideQuestRedDot()
 	local bCanReceive = false
@@ -956,5 +1467,28 @@ function PlayerQuestData:ClearVampireSeasonQuest(nCurSeason)
 			end
 		end
 	end
+end
+local GetCurrentYearInfo = function(time_s)
+	local day = os.date("%d", time_s)
+	local weekIndex = os.date("%W", time_s)
+	local month = os.date("%m", time_s)
+	local yearNum = os.date("%Y", time_s)
+	return {
+		year = yearNum,
+		month = month,
+		weekIdx = weekIndex,
+		day = day
+	}
+end
+function PlayerQuestData:IsSameWeek(stampA, stampB, resetHour)
+	resetHour = resetHour or 5
+	local resetSeconds = resetHour * 3600
+	stampA = stampA - resetSeconds
+	stampB = stampB - resetSeconds
+	stampA = math.max(stampA, 0)
+	stampB = math.max(stampB, 0)
+	local dateA = GetCurrentYearInfo(stampA)
+	local dateB = GetCurrentYearInfo(stampB)
+	return dateA.weekIdx == dateB.weekIdx and dateA.year == dateB.year
 end
 return PlayerQuestData

@@ -462,15 +462,18 @@ function PlayerBuildData:CreateTrialBuild(nTrialId)
 		tbSecondarySkill = {},
 		tbPotentials = {},
 		tbNotes = {},
-		nTowerId = 0
+		nTowerId = mapTrialData.StarTowerId or 0,
+		bTrial = true
 	}
 	local tbCharTrialId = {}
+	local tbCharPotentialCount = {}
 	for _, v in ipairs(mapTrialData.Char) do
 		table.insert(self._mapTrialBuild.tbChar, {
 			nTrialId = v,
 			nTid = 0,
 			nPotentialCount = 0
 		})
+		tbCharPotentialCount[v] = 0
 		table.insert(tbCharTrialId, v)
 	end
 	self._mapTrialBuild.tbDisc = mapTrialData.Disc
@@ -483,10 +486,20 @@ function PlayerBuildData:CreateTrialBuild(nTrialId)
 			if not self._mapTrialBuild.tbPotentials[nCharId] then
 				self._mapTrialBuild.tbPotentials[nCharId] = {}
 			end
+			if tbCharPotentialCount[nCharId] ~= nil then
+				tbCharPotentialCount[nCharId] = tbCharPotentialCount[nCharId] + v.Level
+			end
 			table.insert(self._mapTrialBuild.tbPotentials[nCharId], {
 				nPotentialId = v.Tid,
 				nLevel = v.Level
 			})
+		end
+	end
+	for nCharId, nCount in pairs(tbCharPotentialCount) do
+		for _, v in pairs(self._mapTrialBuild.tbChar) do
+			if v.nTrialId == nCharId then
+				v.nPotentialCount = nCount
+			end
 		end
 	end
 	local tbNoteJson = decodeJson(mapTrialData.Note)

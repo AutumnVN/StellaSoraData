@@ -134,13 +134,14 @@ function EnergyBuyCtrl:ChangePanelType()
 	self._mapNode.ItemUseRoot.gameObject:SetActive(self._panel.nPanelType == AllEnum.EnergyPanelType.ItemUse)
 	self._mapNode.BatteryUseRoot.gameObject:SetActive(self._panel.nPanelType == AllEnum.EnergyPanelType.BatteryUse)
 	if self.nDirectPanelType ~= nil then
-		self._mapNode.goEnergy.gameObject:SetActive(false)
-		self._mapNode.goRecoverTime.gameObject:SetActive(false)
-		self._mapNode.goResBarAnimRoot.gameObject:SetActive(true)
-		self._mapNode.animResBar:Play("tc_top_bar_01_t_in")
+		local bShowEnergy = self.nDirectPanelType == AllEnum.EnergyPanelType.ItemUse
+		self._mapNode.goEnergy.gameObject:SetActive(bShowEnergy)
+		self._mapNode.goResBarAnimRoot.gameObject:SetActive(not bShowEnergy)
+		local sAnim = bShowEnergy and "tc_top_bar_02_t_in" or "tc_top_bar_01_t_in"
+		self._mapNode.animResBar:Play(sAnim)
 		self.nDirectPanelType = nil
 	else
-		local bShowRecover = self._panel.nPanelType == AllEnum.EnergyPanelType.Main
+		local bShowRecover = self._panel.nPanelType == AllEnum.EnergyPanelType.Main or self._panel.nPanelType == AllEnum.EnergyPanelType.ItemUse
 		local sRecoverAnim = bShowRecover and "EnergyBuy_Time_in" or "EnergyBuy_Time_out"
 		local sEnergyAnim = bShowRecover and "tc_top_bar_02_t_in" or "tc_top_bar_02_t_out"
 		local sResBarAnim = not bShowRecover and "tc_top_bar_01_t_in" or "tc_top_bar_01_t_out"

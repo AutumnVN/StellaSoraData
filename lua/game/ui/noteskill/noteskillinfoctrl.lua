@@ -128,7 +128,7 @@ function NoteSkillInfoCtrl:OnEvent_SelectNoteListBtn(nNoteId, nLv)
 		return
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtSkillTitle, self.noteCfg.Name)
-	NovaAPI.SetTMPText(self._mapNode.txtSkillLevel, "Lv" .. nLv)
+	NovaAPI.SetTMPText(self._mapNode.txtSkillLevel, orderedFormat(ConfigTable.GetUIText("Note_Count"), nLv))
 	NovaAPI.SetTMPText(self._mapNode.txtSkillDesc, self.noteCfg.BriefDesc)
 	self:SetPngSprite(self._mapNode.imgSkillIcon, self.noteCfg.Icon)
 	if nLv <= 0 then
@@ -145,11 +145,11 @@ function NoteSkillInfoCtrl:RefreshSkillGrid(goGrid, gridIndex)
 	local sDesc = UTILS.ParseDesc(self.noteCfg, nil, nil, false, nIndex)
 	imgSelect:SetActive(nIndex == self.nLv)
 	if nIndex <= self.nLv then
-		NovaAPI.SetTMPText(txtLevel, "Lv." .. nIndex)
+		NovaAPI.SetTMPText(txtLevel, orderedFormat(ConfigTable.GetUIText("Note_Count"), nIndex))
 		NovaAPI.SetTMPText(txtLevelDesc, sDesc)
 	else
 		sDesc = sDesc:gsub("<color[^>]+>", ""):gsub("</color>", "")
-		NovaAPI.SetTMPText(txtLevel, sNotHaveColor .. "Lv." .. nIndex .. "</color>")
+		NovaAPI.SetTMPText(txtLevel, sNotHaveColor .. orderedFormat(ConfigTable.GetUIText("Note_Count"), nIndex) .. "</color>")
 		NovaAPI.SetTMPText(txtLevelDesc, sNotHaveColor .. sDesc .. "</color>")
 	end
 end

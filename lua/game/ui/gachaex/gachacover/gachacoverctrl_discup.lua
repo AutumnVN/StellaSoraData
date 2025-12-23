@@ -5,6 +5,10 @@ GachaCoverCtrl_DiscUp._mapNodeConfig = {
 		sComponentName = "Transform"
 	},
 	imgTimeBg = {},
+	TMPFes = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Gacha_FesGacha"
+	},
 	TMPCountDown = {sComponentName = "TMP_Text"},
 	TMPRemianCount = {sComponentName = "TMP_Text"},
 	btnUpDiscDetail = {

@@ -838,7 +838,7 @@ function AvgEditorCtrl:OnDD_VoLan(dd)
 	end
 end
 function AvgEditorCtrl:OnBtn_Back()
-	EventManager.Hit(EventId.OpenPanel, PanelId.ExeEditor)
+	EventManager.Hit(EventId.ClosePanel, PanelId.AvgEditor)
 end
 function AvgEditorCtrl:OnBtnClick_PreviewShake(btn)
 	local node = self._mapNode

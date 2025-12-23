@@ -91,7 +91,7 @@ function CraftingCtrl:SelectTog(nIndex)
 	if nil ~= self.tbTogCtrl[self.nSelectTogIndex].nType then
 		self:RefreshMtCrafting(self.tbTogCtrl[self.nSelectTogIndex].nType, bReset)
 		if bReset then
-			self._mapNode.animRoot:Play("CraftingPanel_switch_mat")
+			self._mapNode.animRoot:Play("CraftingPanel_switch_mat", 0, 0)
 		else
 		end
 	end

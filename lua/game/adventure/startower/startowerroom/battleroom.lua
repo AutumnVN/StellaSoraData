@@ -88,7 +88,7 @@ function BattleRoom:OnEvent_LevelStateChanged(nState)
 		local tbUsage = self.parent:GetFateCardUsage()
 		local clientData, nDataLength = self.parent:CacheTempData()
 		local tbDamage = self.parent:GetDamageRecord()
-		local tbSamples = UTILS.GetBattleSamples()
+		local tbSamples = {}
 		if self.parent.nTotalTime ~= nil then
 			self.parent.nTotalTime = self.parent.nTotalTime + self.nTime
 		end

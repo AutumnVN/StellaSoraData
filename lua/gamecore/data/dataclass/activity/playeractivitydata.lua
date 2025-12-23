@@ -18,6 +18,9 @@ local TimerManager = require("GameCore.Timer.TimerManager")
 local BdConvertData = require("GameCore.Data.DataClass.Activity.BdConvertData")
 local BreakOut_30101Data = require("GameCore.Data.DataClass.Activity.BreakOut_30101Data")
 local BreakOutData = require("GameCore.Data.DataClass.Activity.BreakOutData")
+local TrekkerVersusData = require("GameCore.Data.DataClass.Activity.TrekkerVersusData")
+local Christmas_20101Data = require("GameCore.Data.DataClass.Activity.Christmas_20101Data")
+local Miracle_10103Data = require("GameCore.Data.DataClass.Activity.Miracle_10103Data")
 function PlayerActivityData:Init()
 	self.bCacheActData = false
 	self.tbAllActivity = {}
@@ -74,8 +77,12 @@ function PlayerActivityData:CacheAllActivityData(mapNetMsg)
 		for _, v in ipairs(mapNetMsg.List) do
 			local nActId = v.Id
 			local actCfg = ConfigTable.GetData("Activity", nActId)
-			if nil ~= actCfg and actCfg.ActivityType == GameEnum.activityType.Avg then
-				self:RefreshActivityAvgData(nActId, v.Avg)
+			if nil ~= actCfg then
+				if actCfg.ActivityType == GameEnum.activityType.Avg then
+					self:RefreshActivityAvgData(nActId, v.Avg)
+				elseif actCfg.ActivityType == GameEnum.activityType.Story then
+					PlayerData.ActivityAvg:CacheAvgData(v.StoryChapter)
+				end
 			end
 			if nil ~= actCfg then
 				if actCfg.ActivityType == GameEnum.activityType.PeriodicQuest then
@@ -115,7 +122,9 @@ function PlayerActivityData:CacheAllActivityData(mapNetMsg)
 				elseif actCfg.ActivityType == GameEnum.activityType.BDConvert then
 					self:RefreshBdConvertData(nActId, v.BdConvert)
 				elseif actCfg.ActivityType == GameEnum.activityType.Breakout then
-					self:RefreshBreakoutData(nActId, v.Breakout)
+					self:RefreshBreakOutData(nActId, v.Breakout)
+				elseif actCfg.ActivityType == GameEnum.activityType.TrekkerVersus then
+					self:RefreshTrekkerVersusData(nActId, v.TrekkerVersus)
 				end
 			end
 		end
@@ -140,7 +149,6 @@ function PlayerActivityData:UpdateActivityState(mapNetMsg)
 			self.tbAllActivity[v.Id]:UpdateActivityState(v)
 		end
 	end
-	self:RefreshPopUpList()
 	self:RefreshActivityRedDot()
 end
 function PlayerActivityData:RefreshActivityData(mapNetMsg)
@@ -193,7 +201,7 @@ function PlayerActivityData:CreateActivityIns(actData)
 		actIns = JointDrillActData.new(actData)
 	elseif actCfg.ActivityType == GameEnum.activityType.Levels then
 		actIns = ActivityLevelTypeData.new(actData)
-	elseif actCfg.ActivityType == GameEnum.activityType.Avg then
+	elseif actCfg.ActivityType == GameEnum.activityType.Avg or actCfg.ActivityType == GameEnum.activityType.Story then
 		PlayerData.ActivityAvg:CacheActivityAvgData(actData)
 	elseif actCfg.ActivityType == GameEnum.activityType.Task then
 		actIns = ActivityTaskData.new(actData)
@@ -205,6 +213,8 @@ function PlayerActivityData:CreateActivityIns(actData)
 		actIns = BdConvertData.new(actData)
 	elseif actCfg.ActivityType == GameEnum.activityType.Breakout then
 		actIns = BreakOutData.new(actData)
+	elseif actCfg.ActivityType == GameEnum.activityType.TrekkerVersus then
+		actIns = TrekkerVersusData.new(actData)
 	end
 	if actIns ~= nil then
 		self.tbAllActivity[actData.Id] = actIns
@@ -294,6 +304,10 @@ function PlayerActivityData:CreateActivityGroupIns(actData)
 			actIns = Dream_10102Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.BreakOut_30101 then
 			actIns = BreakOut_30101Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Christmas_20101 then
+			actIns = Christmas_20101Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Miracle_10103 then
+			actIns = Miracle_10103Data.new(actData)
 		end
 		self.tbAllActivityGroup[actData.Id] = actIns
 		PlayerData.ActivityAvg:RefreshAvgRedDot()
@@ -407,7 +421,11 @@ function PlayerActivityData:RefreshSingleQuest(questData)
 		if nil ~= self.tbAllActivity[questData.ActivityId] then
 			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 		end
-	elseif actCfg.ActivityType == GameEnum.activityType.TowerDefense and nil ~= self.tbAllActivity[questData.ActivityId] then
+	elseif actCfg.ActivityType == GameEnum.activityType.TowerDefense then
+		if nil ~= self.tbAllActivity[questData.ActivityId] then
+			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
+		end
+	elseif actCfg.ActivityType == GameEnum.activityType.TrekkerVersus and nil ~= self.tbAllActivity[questData.ActivityId] then
 		self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 	end
 end
@@ -424,7 +442,6 @@ function PlayerActivityData:ReceiveLoginRewardSuc(nActId)
 	if nil ~= self.tbAllActivity[nActId] then
 		self.tbAllActivity[nActId]:ReceiveRewardSuc()
 	end
-	self:RefreshLoginRewardPopUpList()
 end
 function PlayerActivityData:RefreshPopUpList()
 	self.tbActivityPopUp = {}
@@ -454,7 +471,7 @@ function PlayerActivityData:RefreshLoginRewardPopUpList()
 	end
 	for nActId, data in pairs(self.tbAllActivity) do
 		local nActType = data:GetActType()
-		if nActType == GameEnum.activityType.LoginReward and data:CheckCanReceive() and data:CheckActivityOpen() then
+		if nActType == GameEnum.activityType.LoginReward and data:CheckCanReceive() and data:CheckActivityOpen() and data:CheckActPlay() then
 			table.insert(self.tbLoginRewardPopUp, data)
 		end
 	end
@@ -493,9 +510,14 @@ function PlayerActivityData:RefreshBdConvertData(nActId, msgData)
 		self.tbAllActivity[nActId]:RefreshBdConvertData(nActId, msgData)
 	end
 end
-function PlayerActivityData:RefreshBreakoutData(nActId, msgData)
+function PlayerActivityData:RefreshBreakOutData(nActId, msgData)
 	if nil ~= self.tbAllActivity[nActId] then
-		self.tbAllActivity[nActId]:RefreshBreakoutData(nActId, msgData)
+		self.tbAllActivity[nActId]:RefreshBreakOutData(nActId, msgData)
+	end
+end
+function PlayerActivityData:RefreshTrekkerVersusData(nActId, msgData)
+	if nil ~= self.tbAllActivity[nActId] then
+		self.tbAllActivity[nActId]:RefreshTrekkerVersusData(nActId, msgData)
 	end
 end
 function PlayerActivityData:RefreshActivityLevelGameActData(nActId, msgData)
@@ -588,10 +610,10 @@ function PlayerActivityData:ReceiveFinalRewardSuc(actId, mapMsgData)
 		UTILS.OpenReceiveByChangeInfo(mapMsgData)
 	end
 end
-function PlayerActivityData:SendReceiveLoginRewardMsg(nActId, callFunc)
+function PlayerActivityData:SendReceiveLoginRewardMsg(nActId, callFunc, mapNpc)
 	local callback = function(_, mapMsgData)
 		self:ReceiveLoginRewardSuc(nActId)
-		UTILS.OpenReceiveByChangeInfo(mapMsgData, callFunc)
+		UTILS.OpenReceiveByChangeInfo(mapMsgData, callFunc, nil, nil, mapNpc)
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_login_reward_receive_req, {Value = nActId}, nil, callback)
 end
@@ -615,11 +637,13 @@ function PlayerActivityData:OnEvent_NewDay()
 end
 function PlayerActivityData:OnEvent_UpdateWorldClass()
 	self:RefreshPopUpList()
+	self:RefreshLoginRewardPopUpList()
 	self:RefreshActStatus()
 	self:RefreshActGroupNewRedDot()
 end
 function PlayerActivityData:OnEvent_StoryEnd()
 	self:RefreshPopUpList()
+	self:RefreshLoginRewardPopUpList()
 	self:RefreshActStatus()
 	self:RefreshActGroupNewRedDot()
 end

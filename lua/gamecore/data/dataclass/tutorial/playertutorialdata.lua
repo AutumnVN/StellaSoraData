@@ -169,13 +169,13 @@ function PlayerTutorialData:GetCurDicId()
 	return self.LevelData:GetCurDicId()
 end
 function PlayerTutorialData:RefreshRedDot(bIsNew)
-	local bFuncUnlock = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.TutorialLevel)
-	if not bFuncUnlock then
-		return
-	end
 	LocalData.SetPlayerLocalData("Tutorial_IsNew", bIsNew)
 	if bIsNew then
-		RedDotManager.SetValid(RedDotDefine.Task_Tutorial, nil, true)
+		RedDotManager.SetValid(RedDotDefine.TaskNewbie_Tutorial, nil, true)
+		return
+	end
+	local bFuncUnlock = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.TutorialLevel)
+	if not bFuncUnlock then
 		return
 	end
 	local bRedDot = false
@@ -187,7 +187,7 @@ function PlayerTutorialData:RefreshRedDot(bIsNew)
 			end
 		end
 	end
-	RedDotManager.SetValid(RedDotDefine.Task_Tutorial, nil, bRedDot)
+	RedDotManager.SetValid(RedDotDefine.TaskNewbie_Tutorial, nil, bRedDot)
 end
 function PlayerTutorialData:QuestStateServer2Client(Passed, RewardReceived)
 	if not Passed then

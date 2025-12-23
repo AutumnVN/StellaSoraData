@@ -120,7 +120,7 @@ function CookieActCtrl:OnBtnClick_Enter(...)
 	local nRandom = math.random(28, 29)
 	local nActId = self.actData:GetActId()
 	local func = function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.CookieGamePanel, nActId)
+		EventManager.Hit(EventId.OpenPanel, PanelId.CookieGamePanel_400004, nActId)
 	end
 	EventManager.Hit(EventId.SetTransition, nRandom, func)
 end

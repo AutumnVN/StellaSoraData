@@ -21,6 +21,13 @@ return {
 		signature = "For mercenary business, please contact my work account"
 	},
 	{
+		id = 110,
+		icon = "Icon/Head/head_11001_S",
+		name = "Firenze",
+		landmark = "Building 6, Xueshi Ave, Gold District, Philae",
+		signature = "Do not disturb at off-hours"
+	},
+	{
 		id = 111,
 		icon = "Icon/Head/head_11101_S",
 		name = "Iris",
@@ -42,10 +49,24 @@ return {
 		signature = "To shops that have received Fire Hazard Abatement Notices: Please rectify immediately!!!"
 	},
 	{
+		id = 114,
+		icon = "Icon/Head/head_11401_S",
+		name = "Chaton",
+		landmark = "Top Floor, Building 14, Phoenix-tail Cat Alley, Mirage",
+		signature = "Open for music/fighting/danmaku shooting game carry services"
+	},
+	{
+		id = 115,
+		icon = "Icon/Head/head_11501_S",
+		name = "Firefly",
+		landmark = "Room 2707, Building 7, Grace Light Academy Dormitory, Emor",
+		signature = "Where can I find more plushies~"
+	},
+	{
 		id = 116,
 		icon = "Icon/Head/head_11601_S",
 		name = "Ridge",
-		landmark = "United Harvest, Philae City, South Sector, Greenhouse No. 6",
+		landmark = "Greenhouse No. 6, United Harvest South Sector, Philae ",
 		signature = "Still tryin' to figure out photosynthesis..."
 	},
 	{
@@ -115,7 +136,7 @@ return {
 		id = 132,
 		icon = "Icon/Head/head_13201_S",
 		name = "Minova",
-		landmark = "Under the Waterway in Emor City, Ash District",
+		landmark = "Under the Waterway, Ash District, Emor",
 		signature = "Am I r34lly str0ng, or just fl3x1ng?"
 	},
 	{
@@ -140,10 +161,17 @@ return {
 		signature = "No pic, no proof"
 	},
 	{
+		id = 138,
+		icon = "Icon/Head/head_13801_S",
+		name = "Nyx",
+		landmark = "No. 10, Meister Street, Philae",
+		signature = "On leave. Return date TBD."
+	},
+	{
 		id = 141,
 		icon = "Icon/Head/head_14101_S",
 		name = "Chixia",
-		landmark = "I spend four months a year in Cangwu City",
+		landmark = "I spend four months a year in Cangwu",
 		signature = "Top-tier Xuan Shi! If you need a talisman, I'm your master."
 	},
 	{
@@ -203,6 +231,13 @@ return {
 		signature = "Have you seen my rag doll?"
 	},
 	{
+		id = 158,
+		icon = "Icon/Head/head_15801_S",
+		name = "Snowish Laru",
+		landmark = "Snowwish Festival Organizing Committee Office",
+		signature = "In my super-productive, main-character work era. Do not disturb."
+	},
+	{
 		id = 999,
 		icon = "Icon/Head/head_group_S",
 		name = "WORK NEVER ENDS",
@@ -250,6 +285,13 @@ return {
 		name = "Petal Bloom Revival Meeting",
 		landmark = "",
 		signature = "Beat the monsters, complete the quests!"
+	},
+	{
+		id = 992,
+		icon = "Icon/Head/head_group_S",
+		name = "REMEMBER YOUR DELIVERIES",
+		landmark = "",
+		signature = "Don't forget to sign the delivery receipt!"
 	},
 	{
 		id = 9152,

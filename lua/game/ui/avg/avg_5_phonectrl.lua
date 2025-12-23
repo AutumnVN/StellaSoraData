@@ -1159,7 +1159,8 @@ function Avg_5_PhoneCtrl:SetPhoneContacts(sContactsId)
 	end
 	self._mapNode.goTitle:SetActive(constactData ~= sContactsId)
 	if constactData ~= sContactsId then
-		self:SetPngSprite(self._mapNode.imgContactHead, constactData.icon)
+		local sIcon = string.gsub(constactData.icon, AllEnum.CharHeadIconSurfix.S, "")
+		self:SetPngSprite(self._mapNode.imgContactHead, sIcon, AllEnum.CharHeadIconSurfix.S)
 		NovaAPI.SetTMPText(self._mapNode.txtCharName, ProcAvgTextContent(constactData.name, self._panel.nCurLanguageIdx))
 		NovaAPI.SetTMPText(self._mapNode.txtSignature, constactData.signature)
 	end

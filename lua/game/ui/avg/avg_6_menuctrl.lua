@@ -161,6 +161,9 @@ function Avg_6_MenuCtrl:Awake()
 		8,
 		16
 	}
+	if AVG_EDITOR == true then
+		table.insert(self.tbSpeed, 32)
+	end
 	self.mapIntroData = {}
 	self.bUnfoldMenu = false
 	self.bUILog = false

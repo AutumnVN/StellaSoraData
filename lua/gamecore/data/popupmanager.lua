@@ -56,6 +56,9 @@ function PopUpManager.StartShowPopUp(callback)
 	PopUpManager.PopUpDeQueue()
 end
 function PopUpManager.PopUpEnQueue(nType, mapData)
+	if EditorSettings and EditorSettings.bSkipPopup then
+		return
+	end
 	local bAdded = false
 	for nIndex, mapPopUp in ipairs(_tbPopUpQueue) do
 		if mapPopUp.nType == nType then

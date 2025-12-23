@@ -37,7 +37,7 @@ function CharFavourExpUpCtrl:OnRefreshGrid(goGrid, gridIndex)
 	local imgHeart = rootTrans:Find("imgHead/imgHeart"):GetComponent("Image")
 	local nSkinId = PlayerData.Char:GetCharSkinId(data)
 	local mapCfgData_Skin = ConfigTable.GetData_CharacterSkin(nSkinId)
-	self:SetPngSprite(imgHead, mapCfgData_Skin.Icon .. AllEnum.CharHeadIconSurfix.L)
+	self:SetPngSprite(imgHead, mapCfgData_Skin.Icon, AllEnum.CharHeadIconSurfix.L)
 	local mapData = PlayerData.Char:GetCharAffinityData(data)
 	local level = 0
 	local exp = 0

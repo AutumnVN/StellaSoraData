@@ -63,6 +63,7 @@ local PanelDefine = {
 	[PanelId.RogueBossBuildBrief] = "Game.UI.RegionBossFormationEx.RegionBossBuildPanel",
 	[PanelId.Mail] = "Game.UI.Mail.MailPanel",
 	[PanelId.ReceivePropsTips] = "Game.UI.ReceivePropsEx.ReceivePropsPanel",
+	[PanelId.ReceivePropsNPC] = "Game.UI.ReceivePropsEx.ReceivePropsNPCPanel",
 	[PanelId.Friend] = "Game.UI.FriendEx.FriendPanel",
 	[PanelId.FriendCarte] = "Game.UI.FriendEx.FriendCartePanel",
 	[PanelId.RoguelikeLevel] = "Game.UI.FixedRoguelikeLevelSelectEx.FixedRoguelikeLevelSelectPanel",
@@ -75,7 +76,6 @@ local PanelDefine = {
 	[PanelId.MallPopup] = "Game.UI.Mall.MallPopupPanel",
 	[PanelId.MallSkinPreview] = "Game.UI.Mall.MallSkinPreviewPanel",
 	[PanelId.CharShardsConvert] = "Game.UI.Mall.CharShardsConvertPanel",
-	[PanelId.TravelerDuelLevelSelect] = "Game.UI.TravelerDuelLevelSelect.TravelerDuelLevelPanel",
 	[PanelId.DailyInstanceLevelSelect] = "Game.UI.DailyInstanceLevelSelect.DailyInstanceLevelSelectPanel",
 	[PanelId.EquipmentInstanceLevelSelect] = "Game.UI.EquipmentInstanceLevelSelect.EquipmentInstanceLevelSelectPanel",
 	[PanelId.ItemTips] = "Game.UI.CommonTipsEx.ItemTipsPanel",
@@ -104,7 +104,7 @@ local PanelDefine = {
 	[PanelId.FRQuestComplete] = "Game.UI.FixedRoguelikeEx.FixedRoguelikeQuestCompletePanel",
 	[PanelId.PopupSkillPanel] = "Game.UI.CommonTipsEx.PopupSkillPanel",
 	[PanelId.TravelerDuelLevelQuestPanel] = "Game.UI.TravelerDuelLevelSelect.TravelerDuelQuest.TravelerDuelQuestPanel",
-	[PanelId.TDBattleResultPanel] = "Game.UI.BattleResult.TDBattleResultPanel",
+	[PanelId.TDBattleResultPanel] = "Game.UI.TrekkerVersus.TDBattleResultPanel",
 	[PanelId.TDLevelUpgrade] = "Game.UI.TravelerDuelLevelSelect.TDClassUpgradePanel",
 	[PanelId.CharacterRelation] = "Game.UI.CharacterInfoEx.CharacterPlotPanel",
 	[PanelId.ExChangePanel] = "Game.UI.ExChange.ExChangePanel",
@@ -155,6 +155,7 @@ local PanelDefine = {
 	[PanelId.StarTowerShop] = "Game.UI.StarTower.StarTowerShop.StarTowerShopPanel",
 	[PanelId.StarTowerBuildBriefList] = "Game.UI.StarTower.Build.StarTowerBuildBriefPanel",
 	[PanelId.StarTowerBuildDetail] = "Game.UI.StarTower.Build.StarTowerBuildDetailPanel",
+	[PanelId.StarTowerBuildDetailPreview] = "Game.UI.StarTower.Build.StarTowerBuildDetailPreviewPanel",
 	[PanelId.BuildAttrPreview] = "Game.UI.StarTower.Build.BuildAttrPreviewPanel",
 	[PanelId.FilterPopupPanel] = "Game.UI.Filter.FilterPopupPanel",
 	[PanelId.DispatchPanel] = "Game.UI.Dispatch.DispatchPanel",
@@ -188,6 +189,8 @@ local PanelDefine = {
 	[PanelId.CookieBoardPanel] = "Game.UI.Play_Cookie.CookieBoardPanel",
 	[PanelId.CookieGamePanel] = "Game.UI.Play_Cookie.CookieGamePanel",
 	[PanelId.CookieQuestPanel] = "Game.UI.Play_Cookie.CookieQuestPanel",
+	[PanelId.CookieBoardPanel_400004] = "Game.UI.Play_Cookie_400004.CookieBoardPanel",
+	[PanelId.CookieGamePanel_400004] = "Game.UI.Play_Cookie_400004.CookieGamePanel",
 	[PanelId.LampNoticePanel] = "Game.UI.LampNotice.LampNoticePanel",
 	[PanelId.TrialLevelSelect] = "Game.UI.TrialLevelSelect.TrialLevelSelectPanel",
 	[PanelId.TrialFormation] = "Game.UI.TrialLevelSelect.TrialFormationPanel",
@@ -246,13 +249,48 @@ local PanelDefine = {
 	[PanelId.DreamThemePanel] = "Game.UI.ActivityTheme.10102.DreamThemePanel",
 	[PanelId.BdConvertQuestPanel] = "Game.UI.Activity.BdConvert._500001.BdConvertQuestPanel",
 	[PanelId.BdConvertPanel] = "Game.UI.Activity.BdConvert._500001.BdConvertPanel",
-	[PanelId.BdConvertBuildPanel] = "Game.UI.Activity.BdConvert._500001.BdConvertBuildPanel",
+	[PanelId.BdConvertResultPanel] = "Game.UI.Activity.BdConvert._500001.BdConvertResultPanel",
 	[PanelId.BdConvertBuildDetail] = "Game.UI.Activity.BdConvert._500001.BdConvertBuildDetailPanel",
 	[PanelId.Task_10101] = "Game.UI.ActivityTheme.10101.Task.OurRegimentTaskPanel",
 	[PanelId.MiningGame_400002] = "Game.UI.Play_Mining_400002.MiningGamePanel",
 	[PanelId.MiningGameGuidePanel_400002] = "Game.UI.Play_Mining_400002.MiningGameGuidePanel",
-	[PanelId.TowerDefenseGiveupPanel] = "Game.UI.TowerDefense.TowerDefenseGiveUpPanel"
+	[PanelId.TowerDefenseGiveupPanel] = "Game.UI.TowerDefense.TowerDefenseGiveUpPanel",
+	[PanelId.BreakOutThemePanel] = "Game.UI.ActivityTheme.30101.BreakOutThemePanel",
+	[PanelId.Shop_30101] = "Game.UI.ActivityTheme.30101.Shop.ActivityShopPanel",
+	[PanelId.ShopPopup_30101] = "Game.UI.ActivityTheme.30101.Shop.ActivityShopPopupPanel",
+	[PanelId.Task_30101] = "Game.UI.ActivityTheme.30101.Task.BreakOutTaskPanel",
+	[PanelId.QuestNewbie] = "Game.UI.QuestNewbie.QuestNewbiePanel",
+	[PanelId.TowerDefenseTestPanel] = "Game.Editor.TowerDefense.TowerDefenseTestPanel",
+	[PanelId.TowerDefenseTestResultPanel] = "Game.Editor.TowerDefense.TowerDefenseTestResultPanel",
+	[PanelId.MiningGame_400003] = "Game.UI.Play_Mining.400003.MiningGamePanel",
+	[PanelId.MiningGameGuidePanel_400003] = "Game.UI.Play_Mining.400003.MiningGameGuidePanel",
+	[PanelId.TrekkerVersus] = "Game.UI.TrekkerVersus.TrekkerVersusPanel",
+	[PanelId.ActivityLevelsSelectPanel_20101] = "Game.UI.ActivityTheme.20101.ActivityLevels.ActivityLevelsSelectPanel",
+	[PanelId.ChristmasThemePanel] = "Game.UI.ActivityTheme.20101.ChristmasThemePanel",
+	[PanelId.BreakOutLevelDetailPanel] = "Game.UI.Play_BreakOut_30101.BreakOutLevelDetailPanel",
+	[PanelId.Shop_10103] = "Game.UI.ActivityTheme.10103.Shop.ActivityShopPanel",
+	[PanelId.ShopPopup_10103] = "Game.UI.ActivityTheme.10103.Shop.ActivityShopPopupPanel",
+	[PanelId.Task_10103] = "Game.UI.ActivityTheme.10103.Task.MiracleTaskPanel",
+	[PanelId.Main_10103] = "Game.UI.ActivityTheme.10103.MiracleThemePanel",
+	[PanelId.ActivityLevelsSelectPanel_10103] = "Game.UI.ActivityTheme.10103.ActivityLevels.ActivityLevelsSelectPanel",
+	[PanelId.BreakOutResultPanel] = "Game.UI.Play_BreakOut_30101.BreakOutResultPanel",
+	[PanelId.BreakOutPlayPanel] = "Game.UI.Play_BreakOut_30101.BreakOutPlayPanel",
+	[PanelId.Shop_20101] = "Game.UI.ActivityTheme.20101.Shop.ActivityShopPanel",
+	[PanelId.ShopPopup_20101] = "Game.UI.ActivityTheme.20101.Shop.ActivityShopPopupPanel",
+	[PanelId.Task_20101] = "Game.UI.ActivityTheme.20101.Task.ChristmasTaskPanel",
+	[PanelId.ActivityStory_20101] = "Game.UI.ActivityTheme.20101.Story.ChristmasStoryPanel"
 }
 if NovaAPI.GetClientChannel() == AllEnum.ChannelName.BanShu then
+end
+local sChannel = NovaAPI.GetClientChannel()
+local tbNeedTestLogin = {
+	"CN_TEST_2",
+	"EN_TEST_2",
+	"TW_TEST_2",
+	"JP_TEST_2",
+	"KR_TEST_2"
+}
+if table.indexof(tbNeedTestLogin, sChannel) > 0 then
+	PanelDefine[PanelId.Login] = "Game.UI.GMTool.LoginPanel_Test"
 end
 return PanelDefine

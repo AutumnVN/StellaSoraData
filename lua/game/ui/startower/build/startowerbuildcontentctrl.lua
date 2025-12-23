@@ -167,13 +167,18 @@ function StarTowerBuildContentCtrl:InitDisc()
 	for k, nId in ipairs(tbDisc) do
 		if k <= 3 then
 			local mapDisc = PlayerData.Disc:GetDiscById(nId)
-			local tbSubSkill = mapDisc:GetAllSubSkill(self.mapBuild.tbNotes)
-			for nSkillIndex, v in ipairs(tbSubSkill) do
-				table.insert(self.tbSkill, {
-					nSkillId = v,
-					nDiscIndex = k,
-					nSkillIndex = nSkillIndex
-				})
+			if mapDisc == nil then
+				mapDisc = PlayerData.Disc:GetTrialDiscById(nId)
+			end
+			if mapDisc ~= nil then
+				local tbSubSkill = mapDisc:GetAllSubSkill(self.mapBuild.tbNotes)
+				for nSkillIndex, v in ipairs(tbSubSkill) do
+					table.insert(self.tbSkill, {
+						nSkillId = v,
+						nDiscIndex = k,
+						nSkillIndex = nSkillIndex
+					})
+				end
 			end
 		end
 	end
@@ -236,6 +241,9 @@ function StarTowerBuildContentCtrl:OnBtnClick_Disc()
 	self:ChangeTab(2)
 end
 function StarTowerBuildContentCtrl:OnEvent_SelectDepotPotential(nPotentialId, nLevel, nPotentialAdd, btn)
+	if btn == nil or PanelManager.CheckPanelOpen(PanelId.CharBgTrialPanel) then
+		return
+	end
 	local tip = function()
 		EventManager.Hit(EventId.OpenPanel, PanelId.PotentialDetail, nPotentialId, nLevel, nPotentialAdd)
 	end

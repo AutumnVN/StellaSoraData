@@ -314,6 +314,7 @@ end
 function Avg_3_TransitionCtrl:PlayVideo(tbParam)
 	EventManager.Hit(EventId.AvgResetSpeed, true)
 	EventManager.Hit(EventId.AvgAllMenuBtnEnable, false)
+	EventManager.Hit(EventId.AvgClearTalk)
 	GamepadUIManager.ClearSelectedUI()
 	WwiseAudioMgr:PostEvent("avg_track1_stop")
 	WwiseAudioMgr:PostEvent("avg_track2_stop")

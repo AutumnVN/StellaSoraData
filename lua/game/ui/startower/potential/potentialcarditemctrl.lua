@@ -52,7 +52,8 @@ PotentialCardItemCtrl._mapNodeConfig = {
 	SR = {},
 	SSR = {},
 	BgEffect = {},
-	ArrowEffect = {}
+	ArrowEffect = {},
+	exId = {sComponentName = "TMP_Text"}
 }
 PotentialCardItemCtrl._mapEventConfig = {}
 PotentialCardItemCtrl._mapRedDotConfig = {}
@@ -79,6 +80,8 @@ function PotentialCardItemCtrl:SetPotentialItem(nTid, nLevel, nNextLevel, bSimpl
 	if nil == potentialCfg then
 		return
 	end
+	self._mapNode.exId.gameObject:SetActive(false)
+	EventManager.Hit("TipsId", self._mapNode.exId, nTid)
 	self._mapNode.db_SSR:SetActive(itemCfg.Rarity == GameEnum.itemRarity.SSR)
 	local bSpecial = itemCfg.Stype == GameEnum.itemStype.SpecificPotential
 	self._mapNode.goPotentialNormal.gameObject:SetActive(not bSpecial)
@@ -98,7 +101,7 @@ function PotentialCardItemCtrl:SetNormalCard(itemCfg, potentialCfg, bShowChar)
 	if bShowChar then
 		local nCharSkinId = PlayerData.Char:GetCharSkinId(nCharId)
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-		self:SetPngSprite(self._mapNode.imgCharIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgCharIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtName, itemCfg.Title)
 	local nColor = AllEnum.FrameColor_New[itemCfg.Rarity]
@@ -135,7 +138,7 @@ function PotentialCardItemCtrl:SetSpecialCard(itemCfg, potentialCfg, bShowChar)
 	if bShowChar then
 		local nCharSkinId = PlayerData.Char:GetCharSkinId(nCharId)
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-		self:SetPngSprite(self._mapNode.imgCharSpIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgCharSpIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtSpName, itemCfg.Title)
 	self:SetPngSprite(self._mapNode.imgSpIcon, itemCfg.Icon .. AllEnum.PotentialIconSurfix.A)

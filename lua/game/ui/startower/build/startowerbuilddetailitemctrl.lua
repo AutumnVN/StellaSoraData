@@ -61,6 +61,15 @@ StarTowerBuildDetailItemCtrl._mapEventConfig = {}
 StarTowerBuildDetailItemCtrl._mapRedDotConfig = {}
 function StarTowerBuildDetailItemCtrl:Refresh(mapData)
 	self.mapBuild = mapData
+	if self.mapBuild.bTrial == true then
+		self._mapNode.btnLeader.interactable = false
+		for k, v in pairs(self._mapNode.btnSub) do
+			v.interactable = false
+		end
+		for k, v in pairs(self._mapNode.btnDiscItem) do
+			v.interactable = false
+		end
+	end
 	self:RefreshInfo()
 	self:RefreshChar()
 	self:RefreshDisc()
@@ -85,7 +94,7 @@ function StarTowerBuildDetailItemCtrl:RefreshChar()
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 		local mapCharCfg = ConfigTable.GetData_Character(nCharTid)
 		local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-		self:SetPngSprite(self._mapNode.imgCharIcon[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+		self:SetPngSprite(self._mapNode.imgCharIcon[i], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 		self:SetAtlasSprite(self._mapNode.imgCharFrame[i], "12_rare", sFrame, true)
 		NovaAPI.SetTMPText(self._mapNode.txtPotentialCount[i], self.mapBuild.tbChar[i].nPotentialCount)
 		self:SetAtlasSprite(self._mapNode.imgCharElement[i], "12_rare", AllEnum.Char_Element[mapCharCfg.EET].icon)
@@ -99,6 +108,7 @@ function StarTowerBuildDetailItemCtrl:RefreshDisc()
 		end
 		nIndex = nIndex + 1
 	end
+	self._mapNode.btnDiscDetail.gameObject:SetActive(self.mapBuild.bTrial ~= true)
 end
 function StarTowerBuildDetailItemCtrl:SetName(sName)
 	NovaAPI.SetTMPText(self._mapNode.txtBuildName, sName)
@@ -121,6 +131,16 @@ function StarTowerBuildDetailItemCtrl:OnBtnClick_Attr()
 	EventManager.Hit(EventId.OpenPanel, PanelId.BuildAttrPreview, self.mapBuild.mapRank.Id, self.mapBuild.nScore)
 end
 function StarTowerBuildDetailItemCtrl:OnBtnClick_Disc(btn, nIndex)
+	if self.mapBuild.bTrial == true then
+		local nDiscId = self.mapBuild.tbDisc[nIndex]
+		local mapDiscData = PlayerData.Disc:GetDiscById(nDiscId)
+		if mapDiscData == nil then
+			EventManager.Hit(EventId.OpenPanel, PanelId.DiscSample, nDiscId)
+		else
+			EventManager.Hit(EventId.OpenPanel, PanelId.Disc, nDiscId, {nDiscId})
+		end
+		return
+	end
 	local nIdx = 0
 	local nDiscId = 0
 	local tbAllDisc = {}
@@ -132,10 +152,23 @@ function StarTowerBuildDetailItemCtrl:OnBtnClick_Disc(btn, nIndex)
 		table.insert(tbAllDisc, nId)
 	end
 	if nDiscId ~= 0 then
-		EventManager.Hit(EventId.OpenPanel, PanelId.Disc, nDiscId, tbAllDisc)
+		local mapDisc = PlayerData.Disc:GetDiscById(nDiscId)
+		if mapDisc ~= nil then
+			EventManager.Hit(EventId.OpenPanel, PanelId.Disc, nDiscId, tbAllDisc)
+		end
 	end
 end
 function StarTowerBuildDetailItemCtrl:OnBtnClick_Leader()
+	if self.mapBuild.bTrial == true then
+		local nCharTid = self.mapBuild.tbChar[1].nTid
+		local mapCharCfg = PlayerData.Char:GetCharDataByTid(nCharTid)
+		if mapCharCfg == nil then
+			EventManager.Hit(EventId.OpenPanel, PanelId.CharBgTrialPanel, PanelId.CharInfoTrial, nCharTid)
+		else
+			EventManager.Hit(EventId.OpenPanel, PanelId.CharBgPanel, PanelId.CharInfo, nCharTid, {nCharTid})
+		end
+		return
+	end
 	local tbCharId = {}
 	for _, v in ipairs(self.mapBuild.tbChar) do
 		table.insert(tbCharId, v.nTid)
@@ -143,19 +176,38 @@ function StarTowerBuildDetailItemCtrl:OnBtnClick_Leader()
 	EventManager.Hit(EventId.OpenPanel, PanelId.CharBgPanel, PanelId.CharInfo, tbCharId[1], tbCharId, true)
 end
 function StarTowerBuildDetailItemCtrl:OnBtnClick_Sub(btn, nIndex)
+	if self.mapBuild.bTrial == true then
+		local nCharTid = self.mapBuild.tbChar[nIndex + 1].nTid
+		local mapCharCfg = PlayerData.Char:GetCharDataByTid(nCharTid)
+		if mapCharCfg == nil then
+			EventManager.Hit(EventId.OpenPanel, PanelId.CharBgTrialPanel, PanelId.CharInfoTrial, nCharTid)
+		else
+			EventManager.Hit(EventId.OpenPanel, PanelId.CharBgPanel, PanelId.CharInfo, nCharTid, {nCharTid})
+		end
+		return
+	end
 	local tbCharId = {}
 	for _, v in ipairs(self.mapBuild.tbChar) do
 		table.insert(tbCharId, v.nTid)
 	end
 	EventManager.Hit(EventId.OpenPanel, PanelId.CharBgPanel, PanelId.CharInfo, tbCharId[nIndex + 1], tbCharId, true)
 end
-function StarTowerBuildDetailItemCtrl:OnBtnClick_DiscDetail()
+function StarTowerBuildDetailItemCtrl:OnBtnClick_DiscDetail(btn, nIndex)
+	if self.mapBuild.bTrial == true then
+		local nDiscId = self.mapBuild.tbDisc[nIndex]
+		EventManager.Hit(EventId.OpenPanel, PanelId.DiscSample, nDiscId)
+		return
+	end
 	local tbDisc = {}
 	local mapDiscData = {}
 	for i = 1, 6 do
 		tbDisc[i] = self.mapBuild.tbDisc[i] or 0
 		if 0 ~= tbDisc[i] then
-			mapDiscData[tbDisc[i]] = PlayerData.Disc:GetDiscById(tbDisc[i])
+			local mapDisc = PlayerData.Disc:GetDiscById(tbDisc[i])
+			if mapDisc == nil then
+				mapDisc = PlayerData.Disc:GetTrialDiscById(tbDisc[i])
+			end
+			mapDiscData[tbDisc[i]] = mapDisc
 		end
 	end
 	EventManager.Hit(EventId.OpenPanel, PanelId.DiscSkill, tbDisc, self.mapBuild.tbNotes, mapDiscData)

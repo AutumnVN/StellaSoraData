@@ -19,6 +19,10 @@ GachaCoverCtrl_CharUp._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "GachaCover_GuaranteeRemainTip"
 	},
+	TMPFes = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Gacha_FesGacha"
+	},
 	TMPGuaranteeGetTip = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "GachaCover_GuaranteeGetTip"
@@ -228,10 +232,10 @@ function GachaCoverCtrl_CharUp:RefreshGuaranteeReward()
 	elseif mapCfg.Type == GameEnum.itemType.Char then
 		local mapCfgData_Char = ConfigTable.GetData_Character(mapGachaData.GuaranteeTid)
 		local mapCfgData_Skin = ConfigTable.GetData_CharacterSkin(mapCfgData_Char.DefaultSkinId)
-		self:SetPngSprite(self._mapNode.imgGuaranteeCharHead, mapCfgData_Skin.Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgGuaranteeCharHead, mapCfgData_Skin.Icon, AllEnum.CharHeadIconSurfix.S)
 	elseif mapCfg.Type == GameEnum.itemType.CharacterSkin then
 		local mapCfgData_Skin = ConfigTable.GetData_CharacterSkin(mapGachaData.GuaranteeTid)
-		self:SetPngSprite(self._mapNode.imgGuaranteeCharHead, mapCfgData_Skin.Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgGuaranteeCharHead, mapCfgData_Skin.Icon, AllEnum.CharHeadIconSurfix.S)
 	end
 	self._mapNode.imgGuaranteeBg:SetActive(true)
 	if bGuaranteeReward then

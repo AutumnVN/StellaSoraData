@@ -2,6 +2,7 @@ local PopupSkillCtrl = class("PopupSkillCtrl", BaseCtrl)
 local ConfigData = require("GameCore.Data.ConfigData")
 local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 local LocalSettingData = require("GameCore.Data.LocalSettingData")
+local AdventureModuleHelper = CS.AdventureModuleHelper
 local nMaxHeight = 395
 PopupSkillCtrl._mapNodeConfig = {
 	btnCloseScreen = {
@@ -172,6 +173,7 @@ function PopupSkillCtrl:OnEnable()
 	local tbTrialId = tbParam[3]
 	self.mapCharInfo = tbParam[4]
 	local nSelectCharId = tbParam[5]
+	self.bOutBattle = tbParam[6]
 	self._mapNode.aniBlur.gameObject:SetActive(not bNoMask)
 	self._mapNode.aniBlur2.gameObject:SetActive(bNoMask)
 	self.mapCharSkill = {}
@@ -204,7 +206,7 @@ function PopupSkillCtrl:OnEnable()
 		self:SetPngSprite(self._mapNode.imgUltraSkillIcon[1], mapSkillUltraSub1.Icon)
 		local nCharSkinId1 = PlayerData.Char:GetCharSkinId(self.tbChar[2])
 		local mapCharSkin1 = ConfigTable.GetData_CharacterSkin(nCharSkinId1)
-		self:SetPngSprite(self._mapNode.imgRoleHeadIcon[1], mapCharSkin1.Icon .. AllEnum.CharHeadIconSurfix.L)
+		self:SetPngSprite(self._mapNode.imgRoleHeadIcon[1], mapCharSkin1.Icon, AllEnum.CharHeadIconSurfix.L)
 		self:SetAtlasSprite(self._mapNode.type_u1, "15_battle", "skill_btn_b_type_" .. mapCfgDataSub1.EET)
 		self:SetAtlasSprite(self._mapNode.type_s1, "15_battle", "skill_btn_b_type_" .. mapCfgDataSub1.EET)
 		self._mapNode.EmptySupportSkill[1]:SetActive(false)
@@ -239,7 +241,7 @@ function PopupSkillCtrl:OnEnable()
 		self:SetPngSprite(self._mapNode.imgUltraSkillIcon[2], mapSkillUltraSub2.Icon)
 		local nCharSkinId2 = PlayerData.Char:GetCharSkinId(self.tbChar[3])
 		local mapCharSkin2 = ConfigTable.GetData_CharacterSkin(nCharSkinId2)
-		self:SetPngSprite(self._mapNode.imgRoleHeadIcon[2], mapCharSkin2.Icon .. AllEnum.CharHeadIconSurfix.L)
+		self:SetPngSprite(self._mapNode.imgRoleHeadIcon[2], mapCharSkin2.Icon, AllEnum.CharHeadIconSurfix.L)
 		self:SetAtlasSprite(self._mapNode.type_u2, "15_battle", "skill_btn_b_type_" .. mapCfgDataSub2.EET)
 		self:SetAtlasSprite(self._mapNode.type_s2, "15_battle", "skill_btn_b_type_" .. mapCfgDataSub2.EET)
 		self._mapNode.EmptySupportSkill[2]:SetActive(false)
@@ -339,6 +341,21 @@ function PopupSkillCtrl:SetSkill(nSkillId, nLevel, nCharId, nType)
 	NovaAPI.SetTMPText(self._mapNode.TMPTitle, string.format("%s\194\183%s", mapCharCfgData.Name, mapCfgDataSkill.Title))
 	local sCD = tostring(nCD) .. ConfigTable.GetUIText("Talent_Sec")
 	local sCost = tostring(nCost)
+	if not self.bOutBattle then
+		local actorIdCSList = AdventureModuleHelper.GetCurrentGroupPlayers()
+		if actorIdCSList ~= nil then
+			for i = 0, actorIdCSList.Count - 1 do
+				local characterId = AdventureModuleHelper.GetCharacterId(actorIdCSList[i])
+				if characterId and 0 < characterId and characterId == nCharId then
+					local skillCd = AdventureModuleHelper.GetPlayerSkillCd(actorIdCSList[i])
+					if skillCd then
+						sCost = tostring(skillCd:GetTotalEnergy())
+					end
+					break
+				end
+			end
+		end
+	end
 	if nCD <= 0 then
 		sCD = ConfigTable.GetUIText("Skill_NoCD")
 	end

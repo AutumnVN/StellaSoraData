@@ -71,6 +71,9 @@ function TrialLevel:OnEvent_LoadLevelRefresh()
 end
 function TrialLevel:RefreshCharDamageData()
 	self.tbCharDamage = UTILS.GetCharDamageResult(self.tbCharId)
+	for i, v in ipairs(self.tbCharDamage) do
+		self.tbCharDamage[i].nSkinId = PlayerData.Char:GetCharSkinId(v.nCharId)
+	end
 end
 function TrialLevel:OnEvent_LevelResult(nLevelTime)
 	self:RefreshCharDamageData()

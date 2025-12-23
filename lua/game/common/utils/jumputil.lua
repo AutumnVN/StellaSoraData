@@ -65,7 +65,10 @@ function JumpUtil.JumpTo(jumpId, ...)
 	elseif nType == GameEnum.jumpType.Gacha then
 		local nPoolId = mapJumpTo.Param[1]
 		local getInfoCallback = function()
-			EventManager.Hit(EventId.OpenPanel, PanelId.GachaSpin, nPoolId)
+			local func = function()
+				EventManager.Hit(EventId.OpenPanel, PanelId.GachaSpin, nPoolId)
+			end
+			EventManager.Hit(EventId.SetTransition, 6, func, AllEnum.MainViewCorner.Recruit)
 		end
 		PlayerData.Gacha:GetGachaInfomation(getInfoCallback)
 	elseif nType == GameEnum.jumpType.DailyInstanceLevel then
@@ -77,15 +80,30 @@ function JumpUtil.JumpTo(jumpId, ...)
 			EventManager.Hit(EventId.OpenPanel, PanelId.DailyInstanceLevelSelect, nHard, nDailyType, true)
 		end
 	elseif nType == GameEnum.jumpType.TravelerDuelLevel then
-		local func = function()
-			local nHard = mapJumpTo.Param[1]
-			local nBossId = mapJumpTo.Param[2]
-			local callback = function()
-				EventManager.Hit(EventId.OpenPanel, PanelId.TravelerDuelLevelSelect, nHard, nBossId, true)
+		local callback = function()
+			local trekkerVersusData
+			local tbActList = PlayerData.Activity:GetActivityList()
+			for nId, v in pairs(tbActList) do
+				local nActType = v:GetActType()
+				if nActType == GameEnum.activityType.TrekkerVersus then
+					trekkerVersusData = v
+					break
+				end
 			end
-			PlayerData.TravelerDuel:GetTravelerDuelData(callback)
+			if trekkerVersusData ~= nil then
+				local nActEndTime = trekkerVersusData:GetChallengeEndTime()
+				local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+				if nActEndTime < nCurTime then
+					EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_Invalid_Tip_3"))
+					return
+				end
+				local func = function()
+					EventManager.Hit(EventId.OpenPanel, PanelId.TrekkerVersus, trekkerVersusData.nActId)
+				end
+				EventManager.Hit(EventId.SetTransition, 30, func)
+			end
 		end
-		EventManager.Hit(EventId.SetTransition, 4, func)
+		PlayerData.Activity:SendActivityDetailMsg(callback)
 	elseif nType == GameEnum.jumpType.Depot then
 		local nItemMark = mapJumpTo.Param[1]
 		EventManager.Hit(EventId.OpenPanel, PanelId.DepotPanel, nItemMark)
@@ -216,7 +234,7 @@ function JumpUtil.JumpTo(jumpId, ...)
 			EventManager.Hit(EventId.OpenPanel, PanelId.StarTowerGrowth)
 		end
 		PlayerData.StarTower:SendTowerGrowthDetailReq(callback)
-	elseif nType == GameEnum.jumpType.SwimActivityTask then
+	elseif nType == GameEnum.jumpType.ActivityTask then
 		local nActId = mapJumpTo.Param[1]
 		local panelId = mapJumpTo.Param[2]
 		local tabId = mapJumpTo.Param[3]
@@ -234,6 +252,34 @@ function JumpUtil.JumpTo(jumpId, ...)
 			end
 			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_End_Notice"))
 		end
+	elseif nType == GameEnum.jumpType.MainLineStoryChapter then
+		local chapterIndex = mapJumpTo.Param[1]
+		local isUnlock = PlayerData.Avg:IsStoryChapterUnlock(chapterIndex)
+		if not isUnlock then
+			EventManager.Hit(EventId.OpenPanel, PanelId.StoryChapter)
+		else
+			EventManager.Hit(EventId.OpenPanel, PanelId.MainlineEx, chapterIndex)
+		end
+	elseif nType == GameEnum.jumpType.QuestNewbie then
+		local nJumpTab = mapJumpTo.Param[1]
+		if PanelManager.GetCurPanelId() == PanelId.QuestNewbie then
+			EventManager.Hit("QuestNewbiePanelChangeTab", nJumpTab)
+		else
+			EventManager.Hit(EventId.OpenPanel, PanelId.QuestNewbie, nJumpTab)
+		end
+	elseif nType == GameEnum.jumpType.CharInfo then
+		local nCharId = mapJumpTo.Param[1]
+		local nModuleType = mapJumpTo.Param[2]
+		local tbCharInfoPanelId = {
+			[1] = PanelId.CharInfo,
+			[2] = PanelId.CharSkill,
+			[3] = PanelId.CharEquipment,
+			[4] = PanelId.CharPotential,
+			[5] = PanelId.CharTalent,
+			[6] = PanelId.CharacterRelation
+		}
+		local nCharInfoPanelId = tbCharInfoPanelId[nModuleType] or PanelId.CharInfo
+		EventManager.Hit(EventId.OpenPanel, PanelId.CharBgPanel, nCharInfoPanelId, nCharId, {nCharId})
 	end
 end
 function JumpUtil.CheckJumpUnLock(jumpId, showTips)
@@ -336,6 +382,19 @@ function JumpUtil.CheckJumpUnLock(jumpId, showTips)
 		bOpen = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.WeeklyCopies, true)
 		local mapLockCfgData = ConfigTable.GetData("OpenFunc", GameEnum.OpenFuncType.WeeklyCopies) or {}
 		sLockTip = UTILS.ParseParamDesc(mapLockCfgData.Tips, mapLockCfgData)
+	elseif nType == GameEnum.jumpType.QuestNewbie then
+		bOpen = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.QuestNewbie, true)
+		local mapLockCfgData = ConfigTable.GetData("OpenFunc", GameEnum.OpenFuncType.QuestNewbie) or {}
+		sLockTip = UTILS.ParseParamDesc(mapLockCfgData.Tips, mapLockCfgData)
+	elseif nType == GameEnum.jumpType.CharInfo then
+		local mapChar = PlayerData.Char:GetCharDataByTid(mapJumpTo.Param[1])
+		if mapChar == nil then
+			mapChar = ConfigTable.GetData_Character(mapJumpTo.Param[1])
+			sLockTip = orderedFormat(ConfigTable.GetUIText("CharacterInfo_NotHave"), mapChar.Name)
+			bOpen = false
+		else
+			bOpen = true
+		end
 	end
 	bOpen = bFuncUnlock and bOpen
 	if not bOpen and showTips then

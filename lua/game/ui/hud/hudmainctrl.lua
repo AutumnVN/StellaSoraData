@@ -340,6 +340,7 @@ function HudMainCtrl:OnEvent_NPCShow(bShow, id, uid, nCostCount, nHasCount)
 	if bShow then
 		if npcHud == nil then
 			npcHud = self:SpawnPrefabInstance(self.npcHudPrefab, "Game.UI.Hud.NpcHudCtrl", "HUD", self._mapNode.Root)
+			npcHud.gameObject.transform.localScale = Vector3.one
 			self.npcHuds[uid] = npcHud
 		end
 		if npcHud ~= nil then

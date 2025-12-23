@@ -44,7 +44,9 @@ function JointDrillRankUpCtrl:Refresh()
 	NovaAPI.SetTMPText(self._mapNode.txtRankBefore, self.nOld)
 	NovaAPI.SetTMPText(self._mapNode.txtRankAfter, self.nNew)
 	NovaAPI.SetTMPText(self._mapNode.txtRankAfterUp, self.nNew)
-	self._mapNode.imgRankUp.gameObject:SetActive(self.nNew < self.nOld or self.nOld == 0 and self.nNew > 0)
+	local bNew = self.nNew < self.nOld or self.nOld == 0 and self.nNew > 0
+	self._mapNode.imgRankUp.gameObject:SetActive(bNew)
+	self._mapNode.txtRankAfter.gameObject:SetActive(not bNew)
 	if self.mapScore ~= nil then
 		local nScoreNew = self.mapScore.nScore
 		local nScoreOld = self.mapScore.nScoreOld

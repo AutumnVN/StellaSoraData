@@ -2,10 +2,6 @@ local BdConvertBuildCtrl = class("BdConvertBuildCtrl", BaseCtrl)
 local LocalData = require("GameCore.Data.LocalData")
 local newDayTime = UTILS.GetDayRefreshTimeOffset()
 BdConvertBuildCtrl._mapNodeConfig = {
-	TopBar = {
-		sNodeName = "TopBarPanel",
-		sCtrlName = "Game.UI.TopBarEx.TopBarCtrl"
-	},
 	BuildListContent = {},
 	BuildListContent_Empty = {},
 	txt_empty = {
@@ -59,24 +55,13 @@ BdConvertBuildCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Submit"
 	},
-	BdConvertFinishPanel = {
-		sCtrlName = "Game.UI.Activity.BdConvert._500001.BdConvertFinishCtrl"
-	},
-	bg_anim = {sNodeName = "----BG----", sComponentName = "Animator"},
-	anim = {
-		sNodeName = "SafeAreaRoot",
-		sComponentName = "Animator"
-	},
 	txt_detailTips = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "BdConvert_DesTips"
 	}
 }
 BdConvertBuildCtrl._mapEventConfig = {
-	BdConvert_ShowReward = "OnEvent_ShowReward",
-	BdConvert_FinishPanelClose = "OnEvent_CloseReward",
-	[EventId.UIBackConfirm] = "OnEvent_BackHome",
-	[EventId.UIHomeConfirm] = "OnEvent_Home"
+	BdConvert_ShowReward = "OnEvent_ShowReward"
 }
 BdConvertBuildCtrl._mapRedDotConfig = {}
 local SortType = {Time = 1, Score = 2}
@@ -85,26 +70,28 @@ local BtnTextColor = {
 	[true] = Color(0.3288888888888889, 0.43555555555555553, 0.5422222222222223, 1),
 	[false] = Color(0.7288888888888889, 0.8, 0.8711111111111111, 1)
 }
-function BdConvertBuildCtrl:Awake()
-	self._mapNode.BdConvertFinishPanel.gameObject:SetActive(false)
-	local param = self:GetPanelParam()
-	if type(param) == "table" then
-		self.nActId = param[1]
-		self.nOptionId = param[2]
-	end
+function BdConvertBuildCtrl:SetData(nActId)
+	self.nActId = nActId
 	self.actData = PlayerData.Activity:GetActivityDataById(self.nActId)
+end
+function BdConvertBuildCtrl:Refresh(nOptionId)
+	if self.nOptionId == nOptionId then
+		return
+	end
+	self.nOptionId = nOptionId
 	self.nSortype = SortType.Score
 	self.nSortOrder = SortOrder.Ascending
 	self.tbSelected = {}
-end
-function BdConvertBuildCtrl:OnEnable()
-	EventManager.Hit(EventId.TemporaryBlockInput, 0.6)
+	self:ClearTempData()
 	self.tbItemIns = {}
 	self.mapListItemCtrl = {}
 	self:InitSort()
 	self:InitData()
 end
 function BdConvertBuildCtrl:OnDisable()
+	self:ClearTempData()
+end
+function BdConvertBuildCtrl:ClearTempData()
 	if self.tbItemIns ~= nil then
 		for _, ctrl in pairs(self.tbItemIns) do
 			self:UnbindCtrlByNode(ctrl)
@@ -115,8 +102,8 @@ function BdConvertBuildCtrl:OnDisable()
 			self:UnbindCtrlByNode(ctrl)
 		end
 	end
-end
-function BdConvertBuildCtrl:OnDestroy()
+	self.tbItemIns = {}
+	self.mapListItemCtrl = {}
 end
 function BdConvertBuildCtrl:InitData()
 	self._tbAllBuild = self.actData:GetAllBuildByOpId(self.nOptionId)
@@ -194,10 +181,6 @@ function BdConvertBuildCtrl:InitSort()
 	self._mapNode.btn_sort_score.transform:Find("AnimRoot/btn_DescIcon"):GetComponent("Button").interactable = self.nSortype == SortType.Score and self.nSortOrder == SortOrder.Descending
 	self._mapNode.btn_sort_time.transform:Find("AnimRoot/btn_AsceIcon"):GetComponent("Button").interactable = self.nSortype == SortType.Time and self.nSortOrder == SortOrder.Ascending
 	self._mapNode.btn_sort_time.transform:Find("AnimRoot/btn_DescIcon"):GetComponent("Button").interactable = self.nSortype == SortType.Time and self.nSortOrder == SortOrder.Descending
-end
-function BdConvertBuildCtrl:OnBtnClick_AAA()
-end
-function BdConvertBuildCtrl:OnEvent_AAA()
 end
 function BdConvertBuildCtrl:RefreshList()
 	self._tbAllBuild = self.actData:GetAllBuildByOpId(self.nOptionId)
@@ -411,28 +394,9 @@ function BdConvertBuildCtrl:OnEvent_ShowReward(tbItem, icon)
 	local callback = function()
 		self:InitData()
 		if self.data.nCurSub == self.data.nMaxSub then
-			self:OnEvent_BackHome(PanelId.BdConvertBuildPanel)
+			EventManager.Hit("BdConvert_Return")
 		end
 	end
-	self._mapNode.BdConvertFinishPanel.gameObject:SetActive(true)
-	self._mapNode.BdConvertFinishPanel:ShowReward(tbItemData, icon, callback)
-end
-function BdConvertBuildCtrl:OnEvent_CloseReward()
-	self._mapNode.BdConvertFinishPanel.gameObject:SetActive(false)
-end
-function BdConvertBuildCtrl:OnEvent_BackHome(nPanelId)
-	if nPanelId == PanelId.BdConvertBuildPanel then
-		self._mapNode.anim:Play("BdConvertBuildPanel_out")
-		self._mapNode.bg_anim:Play("BdConvertBuildPanel_Bg_out")
-		EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
-		self:AddTimer(1, 0.2, function()
-			EventManager.Hit(EventId.ClosePanel, PanelId.BdConvertBuildPanel)
-		end, true, true, true)
-	end
-end
-function BdConvertBuildCtrl:OnEvent_Home(nPanelId)
-	if nPanelId == PanelId.BdConvertBuildPanel then
-		PanelManager.Home()
-	end
+	EventManager.Hit(EventId.OpenPanel, PanelId.BdConvertResultPanel, tbItemData, icon, callback)
 end
 return BdConvertBuildCtrl

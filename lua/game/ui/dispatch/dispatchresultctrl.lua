@@ -47,6 +47,7 @@ function DispatchResultCtrl:OpenPanel(data, performanceData)
 	self._mapNode.loopsvRewardList:Init(#data, self, self.RefreshRewardItem)
 	EventManager.Hit(EventId.TemporaryBlockInput, 2)
 	if performanceData ~= nil and 0 < #performanceData then
+		self.bHasPerformanceData = true
 		self.curPerformanceData = performanceData
 		self.curPlayIndex = 1
 		EventManager.Hit(EventId.TemporaryBlockInput, 4)
@@ -129,13 +130,20 @@ function DispatchResultCtrl:OpenAvgPerformance()
 		EventManager.Hit("StoryDialog_DialogStart", data.Avg, nil, nil, data.AVGGroupId)
 	else
 		EventManager.Hit("DispatchAvgEnd")
+		self.bHasPerformance = false
 	end
 end
 function DispatchResultCtrl:OnBtnClick_ClosePanel()
+	if self.bHasPerformance == true then
+		return
+	end
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
 	EventManager.Hit(EventId.DispatchCloseResultPanel, self.bClickAgainClose == true)
 end
 function DispatchResultCtrl:OnBtnClick_OnDispatchAgain()
+	if self.bHasPerformance == true then
+		return
+	end
 	local AgentList = {}
 	local AgentData = {}
 	local _mapAllBuild = {}

@@ -558,15 +558,14 @@ function BattleDashboardCtrl:Refresh(nCurPlayerId)
 			end
 			local nSkinId = PlayerCharData:GetCharSkinId(nSupportCharId)
 			local mapCfgData_Skin = ConfigTable.GetData_CharacterSkin(nSkinId)
-			local spHead = mapCfgData_Skin ~= nil and self:GetPngSprite(mapCfgData_Skin.Icon .. AllEnum.CharHeadIconSurfix.L) or nil
 			local img
 			if i == 1 then
 				img = self._mapNode.imgSupRole1
 			elseif i == 2 then
 				img = self._mapNode.imgSupRole2
 			end
+			local spHead = mapCfgData_Skin ~= nil and self:GetPngSprite(mapCfgData_Skin.Icon, AllEnum.CharHeadIconSurfix.L, img) or nil
 			NovaAPI.SetImageSpriteAsset(img, spHead)
-			NovaAPI.SetImageNativeSize(img)
 			NovaAPI.SetImageColor(img, Color(1, 1, 1, 1))
 			self:Add_Skill_EntityEvent(nSupportPlayerId)
 			AdventureModuleHelper.ForceSyncSkillBtnToLua(nSupportPlayerId)
@@ -581,12 +580,12 @@ end
 function BattleDashboardCtrl:Add_Skill_EntityEvent(nPlayerId)
 	EventManager.AddEntityEvent("SkillBind", nPlayerId, self, self.OnEvent_SkillBind)
 	EventManager.AddEntityEvent("SyncSkillBtnToLua", nPlayerId, self, self.OnEvent_SyncSkillBtnToLua)
-	EventManager.AddEntityEvent("SkillEnableByActionKey", nPlayerId, self, self.OnEvent_SkillEnableByActionKey)
+	EventManager.AddEntityEvent("SkillUseableByActionKey", nPlayerId, self, self.OnEvent_SkillEnableByActionKey)
 end
 function BattleDashboardCtrl:Remove_Skill_EntityEvent(nPlayerId)
 	EventManager.RemoveEntityEvent("SkillBind", nPlayerId, self, self.OnEvent_SkillBind)
 	EventManager.RemoveEntityEvent("SyncSkillBtnToLua", nPlayerId, self, self.OnEvent_SyncSkillBtnToLua)
-	EventManager.RemoveEntityEvent("SkillUseableByActionKey", nPlayerId, self, self.OnEvent_SkillUseableByActionKey)
+	EventManager.RemoveEntityEvent("SkillUseableByActionKey", nPlayerId, self, self.OnEvent_SkillEnableByActionKey)
 end
 function BattleDashboardCtrl:OnEvent_SkillBind(nActionId, nSkillId, nCharId)
 	local data

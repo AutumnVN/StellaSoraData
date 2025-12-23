@@ -12,7 +12,18 @@ local cardAnimCD = 0.1
 local ItemType = {
 	CD = 1,
 	Count = 2,
-	Charge = 3
+	Charge = 3,
+	CD_And_Count = 4
+}
+local DragType = {
+	None = 1,
+	Char = 2,
+	Item = 3
+}
+local CardDragType = {
+	None = 1,
+	Drag = 2,
+	Pointer = 3
 }
 local colorWhite = Color(0.792156862745098, 0.8274509803921568, 0.8666666666666667)
 local colorRed = Color(0.7411764705882353, 0.18823529411764706, 0.34901960784313724)
@@ -34,6 +45,15 @@ TowerDefenseCtrl._mapNodeConfig = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_ChangeSpeed",
 		sAction = "TowerDefFast"
+	},
+	btn_dic = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_OpenDic",
+		sAction = "Depot"
+	},
+	txt_dic1 = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Tutorial_DicTitle"
 	},
 	btn_release = {
 		sComponentName = "NaviButton",
@@ -77,6 +97,7 @@ TowerDefenseCtrl._mapNodeConfig = {
 	txt_cd = {sComponentName = "TMP_Text"},
 	go_item = {},
 	cd_mask = {},
+	img_disable = {},
 	item_bar = {
 		sComponentName = "RectTransform"
 	},
@@ -101,6 +122,7 @@ TowerDefenseCtrl._mapNodeConfig = {
 	},
 	go_backupCard = {nCount = 3},
 	drag_area = {
+		sNodeName = "Char_Item",
 		sComponentName = "RectTransform"
 	},
 	img_item_null = {},
@@ -234,6 +256,9 @@ function TowerDefenseCtrl:Awake()
 	self.tempCharCardList = {}
 	self._mapNode.bg_skill:SetActive(false)
 	self.bHasDic = false
+	self.nDicId = 0
+	self.nDragType = DragType.None
+	self._mapNode.btn_dic.gameObject:SetActive(false)
 end
 function TowerDefenseCtrl:OnEnable()
 	self:BindHander()
@@ -267,7 +292,7 @@ function TowerDefenseCtrl:InitData()
 	self._mapNode.img_cd.gameObject:SetActive(false)
 	self._mapNode.cd_mask.gameObject:SetActive(false)
 	self._mapNode.go_item:SetActive(false)
-	self._mapNode.go_characterFunc:SetData(self.nActId)
+	self._mapNode.go_characterFunc:SetData(self.TowerDefenseData.TowerDefenseLevelData)
 	self._mapNode.potentialSelectPanel:SetData(self.nActId)
 	self:InitDragAreaThreshold()
 	self.point = 0
@@ -492,7 +517,11 @@ function TowerDefenseCtrl:ShowSkillDes(bIsShow, nCharId)
 end
 function TowerDefenseCtrl:ChangeGamepadUI(bEnable)
 	for _, v in pairs(self.tbGamepadUINode) do
-		v.mapNode.gameObject:SetActive(bEnable)
+		if v.mapNode.gameObject.name == "btn_dic" then
+			v.mapNode.gameObject:SetActive(bEnable and self.nDicId ~= 0)
+		else
+			v.mapNode.gameObject:SetActive(bEnable)
+		end
 	end
 end
 function TowerDefenseCtrl:BindHander()
@@ -537,48 +566,39 @@ function TowerDefenseCtrl:OnPointerExit_Item(go)
 	NovaAPI.DispatchEventWithData("TOWERDEFENSE_CARDPOINTEXIT")
 end
 function TowerDefenseCtrl:OnPointerDown_CharacterCard(go, nIndex)
-	if self.bPointItem then
-		self._mapNode.drag_itemIcon.gameObject:SetActive(false)
-		NovaAPI.DispatchEventWithData("TOWERDEFENSE_CANCEL_DRAG_STATE")
-		self.bPointItem = false
-		return
-	end
-	if self.goPointChar and self.dragCharacterId ~= 0 then
+	if self.goPointChar and self.dragCharacterId ~= 0 and self.CardDragType == CardDragType.Pointer then
 		NovaAPI.DispatchEventWithData("TOWERDEFENSE_CANCEL_DRAG_STATE")
 		self.goPointChar = nil
 		self:SetSlowSpeed(false)
 		WwiseAudioMgr:PostEvent("mode_TD_card_drag_end")
 		self:ShowSkillDes(false)
+		self:SetDragState(DragType.None)
+		self.CardDragType = CardDragType.None
 		return
 	end
 	self.goPointChar = go.gameObject
 	self:HideFuncIcon()
 end
 function TowerDefenseCtrl:OnPointerDown_Item(go)
-	if self.bPointItem then
+	if self.bPointItem and self.CardDragType == CardDragType.Pointer then
 		self._mapNode.drag_itemIcon.gameObject:SetActive(false)
 		NovaAPI.DispatchEventWithData("TOWERDEFENSE_CANCEL_DRAG_STATE")
 		self.bPointItem = false
-		return
-	end
-	if self.goPointChar then
-		local go_drag = self.goPointChar
-		local index = table.indexof(self.tbCardIndex, go_drag)
-		self:ShowCard(index)
-		NovaAPI.DispatchEventWithData("TOWERDEFENSE_CANCEL_DRAG_STATE")
-		self:SetSlowSpeed(false)
-		WwiseAudioMgr:PostEvent("mode_TD_item_drag_end")
-		self.goPointChar = nil
-		self:ShowSkillDes(false)
+		self:SetDragState(DragType.None)
+		self.CardDragType = CardDragType.None
 		return
 	end
 	self.bPointItem = true
 	self:HideFuncIcon()
 end
 function TowerDefenseCtrl:OnEvent_HoldCard(pos)
-	if self.goPointChar then
+	if self.CardDragType ~= CardDragType.Pointer then
+		return
+	end
+	if self.nDragType == DragType.Char and self.goPointChar then
 		local go_drag = self.goPointChar
 		local index = table.indexof(self.tbCardIndex, go_drag)
+		self:SetDragState(DragType.Char, index)
 		self.dragCharacterId = self.tbCharacterId[index]
 		local uipos = GameUIUtils.ScreenPointToLocalPointInRectangle(pos, self.goPointChar.transform.parent.transform.parent.transform)
 		if not self.bOutArea and (uipos.x < self.DragThresholdMinX or uipos.x > self.DragThresholdMaxX or uipos.y < self.DragThresholdMinY or uipos.y > self.DragThresholdMaxY) then
@@ -593,10 +613,11 @@ function TowerDefenseCtrl:OnEvent_HoldCard(pos)
 		rectTra.anchoredPosition = Vector2(new_uipos.x, new_uipos.y)
 		return
 	end
-	if self.bPointItem then
-		if self.ItemType == ItemType.Count and self.nItemCount == 0 then
+	if self.nDragType == DragType.Item and self.bPointItem then
+		if self.ItemType == ItemType.Count or self.ItemType == ItemType.CD_And_Count and self.nItemCount == 0 then
 			return
 		end
+		self:SetDragState(DragType.Item)
 		self._mapNode.drag_itemIcon.gameObject:SetActive(true)
 		local uipos = GameUIUtils.ScreenPointToLocalPointInRectangle(pos, self._mapNode.drag_itemIcon.gameObject.transform.parent.transform)
 		local rectTra = self._mapNode.drag_itemIcon.gameObject:GetComponent("RectTransform")
@@ -606,50 +627,61 @@ function TowerDefenseCtrl:OnEvent_HoldCard(pos)
 	end
 end
 function TowerDefenseCtrl:OnEvent_HoldCardChange(bHold)
-	if self.goPointChar == nil and not self.bPointItem then
-		return
-	end
-	self.bHoldCard = bHold
 	if bHold then
 		self.bOutArea = false
-		if self.goPointChar then
-			WwiseAudioMgr:PostEvent("mode_TD_card_drag")
-			local index = table.indexof(self.tbCardIndex, self.goPointChar)
-			self:ShowSkillDes(true, self.tbCharacterId[index])
+		if self.nDragType == DragType.None then
+			if self.goPointChar ~= nil then
+				WwiseAudioMgr:PostEvent("mode_TD_card_drag")
+				local index = table.indexof(self.tbCardIndex, self.goPointChar)
+				self:SetDragState(DragType.Char, index)
+				self:ShowSkillDes(true, self.tbCharacterId[index])
+				self:SetSlowSpeed(true)
+				self.CardDragType = CardDragType.Pointer
+			end
+			if self.bPointItem then
+				WwiseAudioMgr:PostEvent("mode_TD_item_drag")
+				self:SetDragState(DragType.Item)
+				self:SetSlowSpeed(true)
+				self.CardDragType = CardDragType.Pointer
+			end
 		end
-		if self.bPointItem then
-			WwiseAudioMgr:PostEvent("mode_TD_item_drag")
-		end
-		self:SetSlowSpeed(true)
-	elseif not self.bOutArea then
-		if self.goPointChar then
+	else
+		if not self.bOutArea and self.nDragType == DragType.Char then
 			local go_drag = self.goPointChar
 			local index = table.indexof(self.tbCardIndex, go_drag)
 			self:ShowCard(index)
 			WwiseAudioMgr:PostEvent("mode_TD_card_drag_end")
 			self:SetSlowSpeed(false)
 			self:ShowSkillDes(false)
+			self:SetDragState(DragType.None)
+			self.CardDragType = CardDragType.None
 		end
-		if self.bPointItem then
+		if self.nDragType == DragType.Item then
 			self._mapNode.drag_itemIcon.gameObject:SetActive(false)
 			WwiseAudioMgr:PostEvent("mode_TD_item_drag_end")
 			self:SetSlowSpeed(false)
+			self:SetDragState(DragType.None)
+			self.CardDragType = CardDragType.None
+			self.bPointItem = false
+			NovaAPI.DispatchEventWithData("TOWERDEFENSE_CANCEL_DRAG_STATE")
 		end
 	end
 end
 function TowerDefenseCtrl:OnDrag_CharacterCard(mDrag)
+	if self.CardDragType == CardDragType.Pointer then
+		return
+	end
 	if mDrag.DragEventType == AllEnum.UIDragType.DragStart then
+		self.CardDragType = CardDragType.Drag
 		self:HideFuncIcon()
-		self.goPointChar = nil
-		self.bDrag = true
 		self.bOutArea = false
 		local go_drag = mDrag.gameObject
-		self.goPointChar = mDrag.gameObject
 		local index = table.indexof(self.tbCardIndex, go_drag)
 		self.dragCharacterId = self.tbCharacterId[index]
 		WwiseAudioMgr:PostEvent("mode_TD_card_drag")
 		self:SetSlowSpeed(true)
 		self:ShowSkillDes(true, self.dragCharacterId)
+		self:SetDragState(DragType.Char, index)
 	elseif mDrag.DragEventType == AllEnum.UIDragType.Drag then
 		local uipos = GameUIUtils.ScreenPointToLocalPointInRectangle(mDrag.EventData.position, mDrag.gameObject.transform.parent.transform.parent.transform)
 		if not self.bOutArea and (uipos.x < self.DragThresholdMinX or uipos.x > self.DragThresholdMaxX or uipos.y < self.DragThresholdMinY or uipos.y > self.DragThresholdMaxY) then
@@ -665,30 +697,28 @@ function TowerDefenseCtrl:OnDrag_CharacterCard(mDrag)
 		local rectTra = mDrag.gameObject:GetComponent("RectTransform")
 		rectTra.anchoredPosition = Vector2(new_uipos.x, new_uipos.y)
 	elseif mDrag.DragEventType == AllEnum.UIDragType.DragEnd then
-		self.bDrag = false
 		if not self.bOutArea then
 			local go_drag = mDrag.gameObject
 			local index = table.indexof(self.tbCardIndex, go_drag)
 			self:ShowCard(index)
 			WwiseAudioMgr:PostEvent("mode_TD_card_drag_end")
 		end
-		if self.goPointChar == nil then
-			self:SetSlowSpeed(false)
-			self:ShowSkillDes(false)
-		elseif self.bHoldCard then
-			self:SetSlowSpeed(false)
-			self:ShowSkillDes(false)
-		end
+		self:SetSlowSpeed(false)
+		self:ShowSkillDes(false)
+		self:SetDragState(DragType.None)
+		self.CardDragType = CardDragType.None
 	end
 end
 function TowerDefenseCtrl:OnDrag_Item(mDrag)
-	if self.ItemType == ItemType.Count and self.nItemCount == 0 then
+	if self.ItemType == ItemType.Count or self.ItemType == ItemType.CD_And_Count and self.nItemCount == 0 then
+		return
+	end
+	if self.CardDragType == CardDragType.Pointer then
 		return
 	end
 	if mDrag.DragEventType == AllEnum.UIDragType.DragStart then
+		self.CardDragType = CardDragType.Drag
 		self:HideFuncIcon()
-		self.bDrag = true
-		self.bPointItem = true
 		self._mapNode.drag_itemIcon.gameObject:SetActive(true)
 		local uipos = GameUIUtils.ScreenPointToLocalPointInRectangle(mDrag.EventData.position, mDrag.gameObject.transform.parent.transform)
 		local rectTra = self._mapNode.drag_itemIcon.gameObject:GetComponent("RectTransform")
@@ -696,18 +726,16 @@ function TowerDefenseCtrl:OnDrag_Item(mDrag)
 		NovaAPI.DispatchEventWithData("TOWERDEFENSE_DRAG_ITEMCARD_BEGIN")
 		self:SetSlowSpeed(true)
 		WwiseAudioMgr:PostEvent("mode_TD_item_drag")
+		self:SetDragState(DragType.Item)
 	elseif mDrag.DragEventType == AllEnum.UIDragType.Drag then
 		local uipos = GameUIUtils.ScreenPointToLocalPointInRectangle(mDrag.EventData.position, mDrag.gameObject.transform.parent.transform)
 		local rectTra = self._mapNode.drag_itemIcon.gameObject:GetComponent("RectTransform")
 		rectTra.anchoredPosition = Vector2(uipos.x, uipos.y)
 	elseif mDrag.DragEventType == AllEnum.UIDragType.DragEnd then
-		self.bDrag = false
 		self._mapNode.drag_itemIcon.gameObject:SetActive(false)
-		if not self.bPointItem then
-			self:SetSlowSpeed(false)
-		elseif self.bHoldCard then
-			self:SetSlowSpeed(false)
-		end
+		self:SetSlowSpeed(false)
+		self:SetDragState(DragType.None)
+		self.CardDragType = CardDragType.None
 	end
 end
 function TowerDefenseCtrl:CharacterLevelUp(characterId)
@@ -760,7 +788,7 @@ function TowerDefenseCtrl:ShowCharacterDetail(characterId)
 		table.insert(tbChar, data.nCharacterId)
 	end
 	self:PauseLogic()
-	EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseCharacterDetailPanel, tbChar, characterId, self.nActId)
+	EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseCharacterDetailPanel, tbChar, characterId, self.TowerDefenseData.TowerDefenseLevelData)
 end
 function TowerDefenseCtrl:PauseLogic()
 	PanelManager.InputDisable()
@@ -792,6 +820,32 @@ function TowerDefenseCtrl:SetPointText(value)
 		NovaAPI.SetTMPColor(self._mapNode.txt_point, colorWhite)
 	end
 end
+function TowerDefenseCtrl:SetDragState(nType, nCharIndex)
+	self.nDragType = nType
+	if nType == DragType.None then
+		for _, go_card in ipairs(self.tbCardIndex) do
+			local canvasGroup = go_card:GetComponent("CanvasGroup")
+			NovaAPI.SetCanvasGroupBlocksRaycasts(canvasGroup, true)
+		end
+		local itemCanvasGroup = self._mapNode.go_item:GetComponent("CanvasGroup")
+		NovaAPI.SetCanvasGroupBlocksRaycasts(itemCanvasGroup, true)
+	elseif nType == DragType.Char then
+		for index, go_card in ipairs(self.tbCardIndex) do
+			local canvasGroup = go_card:GetComponent("CanvasGroup")
+			if index == nCharIndex then
+			else
+				NovaAPI.SetCanvasGroupBlocksRaycasts(canvasGroup, false)
+			end
+		end
+		local itemCanvasGroup = self._mapNode.go_item:GetComponent("CanvasGroup")
+		NovaAPI.SetCanvasGroupBlocksRaycasts(itemCanvasGroup, false)
+	elseif nType == DragType.Item then
+		for _, go_card in ipairs(self.tbCardIndex) do
+			local canvasGroup = go_card:GetComponent("CanvasGroup")
+			NovaAPI.SetCanvasGroupBlocksRaycasts(canvasGroup, false)
+		end
+	end
+end
 function TowerDefenseCtrl:HideFuncIcon()
 	self.ShowFuncCharId = -1
 	self._mapNode.go_characterFunc:HideIcon()
@@ -808,7 +862,6 @@ function TowerDefenseCtrl:OnEvent_GetCharacterCard(nCharacterId, bShowTips)
 	end
 end
 function TowerDefenseCtrl:OnEvent_UseCharacterCard(bUse, nEntityId, nCharacterId, screenPos)
-	print("OnEvent_UseCharacterCard:" .. tostring(bUse) .. " " .. tostring(nCharacterId))
 	self:SetSlowSpeed(false)
 	self:ShowSkillDes(false)
 	if bUse then
@@ -823,11 +876,14 @@ function TowerDefenseCtrl:OnEvent_UseCharacterCard(bUse, nEntityId, nCharacterId
 		EventManager.Hit("TowerDefensePointChange", self.point)
 	else
 		local nIndex = table.indexof(self.tbCharacterId, self.dragCharacterId)
-		print("OnEvent_UseCharacterCard:" .. tostring(self.dragCharacterId))
 		self:ShowCard(nIndex, true)
 		WwiseAudioMgr:PostEvent("mode_TD_card_drag_end")
 	end
 	self.dragCharacterId = 0
+	self.bPointItem = false
+	self.goPointChar = nil
+	self.CardDragType = CardDragType.None
+	self:SetDragState(DragType.None)
 end
 function TowerDefenseCtrl:OnEvent_ExpChange(curExp, maxExp)
 	self:UpdateExp(curExp, maxExp)
@@ -878,9 +934,15 @@ function TowerDefenseCtrl:OnEvent_FinishGame(bResult)
 		EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, bResult, sLevelName, tbTarget, cb, msgData)
 	end
 	self.TowerDefenseData:RequestFinishLevel(self.nLevelId, bResult, self.nCurHp, requestCb)
-	WwiseAudioMgr:PostEvent("ui_roguelike_challenge_firework")
+	if bResult then
+		WwiseAudioMgr:PostEvent("ui_roguelike_challenge_firework")
+	end
 end
 function TowerDefenseCtrl:OnEvent_ShowCharacterIcon(characterId, bIsShow)
+	local characterData = self.TowerDefenseData.TowerDefenseLevelData:GetCharacterData(characterId)
+	if bIsShow and characterData == nil then
+		return
+	end
 	if bIsShow then
 		self.ShowFuncCharId = characterId
 		self._mapNode.btn_release.gameObject:SetActive(false)
@@ -901,6 +963,7 @@ function TowerDefenseCtrl:OnEvent_UpdateItemCard(nItemId, nCount)
 	self.nItemId = nItemId
 	self.nItemCount = nCount
 	self._mapNode.drag_itemIcon.gameObject:SetActive(false)
+	self._mapNode.img_disable:SetActive(false)
 	if nItemId == 0 then
 		self._mapNode.go_item:SetActive(false)
 		return
@@ -910,12 +973,14 @@ function TowerDefenseCtrl:OnEvent_UpdateItemCard(nItemId, nCount)
 	if itemConfig == nil then
 		return
 	end
-	if 0 < itemConfig.Amount then
+	if 0 < itemConfig.Amount and 0 < itemConfig.Cd then
+		self.ItemType = ItemType.CD_And_Count
+	elseif 0 < itemConfig.Amount then
 		self.ItemType = ItemType.Count
 	elseif 0 < itemConfig.Cd then
 		self.ItemType = ItemType.CD
 	else
-		self.ItemType = ItemType.Charge
+		self.ItemType = ItemType.None
 	end
 	if itemConfig.CardIcon ~= nil and itemConfig.CardIcon ~= "" then
 		for _, icon in pairs(self._mapNode.icon_item) do
@@ -925,7 +990,20 @@ function TowerDefenseCtrl:OnEvent_UpdateItemCard(nItemId, nCount)
 	if itemConfig.Head ~= nil and itemConfig.Head ~= "" then
 		self:SetPngSprite(self._mapNode.drag_itemIcon, itemConfig.Head)
 	end
-	self._mapNode.txt_itemValue.gameObject:SetActive(0 < nCount)
+	if self.ItemType == ItemType.CD_And_Count or self.ItemType == ItemType.Count then
+		self._mapNode.txt_itemValue.gameObject:SetActive(true)
+		self._mapNode.img_disable:SetActive(nCount <= 0)
+		if nCount <= 0 then
+			if self.tweener ~= nil then
+				self.tweener:Kill()
+			end
+			self._mapNode.txt_cd.gameObject:SetActive(false)
+			self._mapNode.img_cd.gameObject:SetActive(false)
+			self._mapNode.cd_mask.gameObject:SetActive(false)
+		end
+	else
+		self._mapNode.txt_itemValue.gameObject:SetActive(0 < nCount)
+	end
 	NovaAPI.SetTMPText(self._mapNode.txt_itemValue, "x" .. tostring(nCount))
 	self._mapNode.go_item:SetActive(true)
 end
@@ -938,33 +1016,57 @@ function TowerDefenseCtrl:OnEvent_UseItemCard(bResult)
 		if self.tweener ~= nil then
 			self.tweener:Kill()
 		end
-		self.tweener = DOTween.To(function()
-			return itemConfig.Cd
-		end, function(v)
-			NovaAPI.SetTMPText(self._mapNode.txt_cd, string.format("%.1f", v))
-			self._mapNode.img_cd.sizeDelta = Vector2(self._mapNode.img_cd.sizeDelta.x, 259 * (v / itemConfig.Cd))
-		end, 0, itemConfig.Cd):OnComplete(function()
-			self._mapNode.txt_cd.gameObject:SetActive(false)
-			self._mapNode.img_cd.gameObject:SetActive(false)
-			self._mapNode.cd_mask.gameObject:SetActive(false)
-		end)
-		self._mapNode.txt_cd.gameObject:SetActive(true)
-		self._mapNode.img_cd.gameObject:SetActive(true)
-		self._mapNode.cd_mask.gameObject:SetActive(true)
+		self.nItemCD = itemConfig.Cd
+		EventManager.Hit("TowerDefenseGM_QueryFastCD", self)
+		if self.ItemType == ItemType.CD_And_Count or self.ItemType == ItemType.CD and self.nItemCD > 0 then
+			self.tweener = DOTween.To(function()
+				return self.nItemCD
+			end, function(v)
+				NovaAPI.SetTMPText(self._mapNode.txt_cd, string.format("%.1f", v))
+				self._mapNode.img_cd.sizeDelta = Vector2(self._mapNode.img_cd.sizeDelta.x, 259 * (v / self.nItemCD))
+			end, 0, self.nItemCD):OnComplete(function()
+				self._mapNode.txt_cd.gameObject:SetActive(false)
+				self._mapNode.img_cd.gameObject:SetActive(false)
+				self._mapNode.cd_mask.gameObject:SetActive(false)
+			end)
+			self._mapNode.txt_cd.gameObject:SetActive(true)
+			self._mapNode.img_cd.gameObject:SetActive(true)
+			self._mapNode.cd_mask.gameObject:SetActive(true)
+		end
 	else
 		WwiseAudioMgr:PostEvent("mode_TD_item_drag_end")
 	end
 	self:SetSlowSpeed(false)
+	self:SetDragState(DragType.None)
+	self.CardDragType = CardDragType.None
 	self.bPointItem = false
 	self.goPointChar = nil
+	self._mapNode.drag_itemIcon.gameObject:SetActive(false)
 end
 function TowerDefenseCtrl:OnEvent_Exit()
 	local confirmCallback = function()
+		self._mapNode.pauseCtrl:Close()
 		self:SetTimeScale(false)
-		EventManager.Hit(EventId.ClosePanel, PanelId.TowerDefenseHUD)
-		self:ResumeLogic(true)
-		CS.AdventureModuleHelper.LevelStateChanged(true, 0, true)
-		self.TowerDefenseData:RequestFinishLevel(self.nLevelId, false, 0, nil)
+		local requestCb = function(star, newStar, msgData)
+			local cb = function()
+				EventManager.Hit(EventId.ClosePanel, PanelId.TowerDefenseHUD)
+				self:ResumeLogic(true)
+			end
+			local config = ConfigTable.GetData("TowerDefenseLevel", self.nLevelId)
+			if config == nil then
+				return
+			end
+			local sLevelName = config.LevelName
+			local tbTarget = {}
+			for i = 1, 3 do
+				table.insert(tbTarget, {
+					sTargetDes = config["Des" .. i],
+					bResult = false
+				})
+			end
+			EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, false, sLevelName, tbTarget, cb, nil)
+		end
+		self.TowerDefenseData:RequestFinishLevel(self.nLevelId, false, 0, requestCb)
 	end
 	local sTip = ConfigTable.GetUIText("TowerDef_Exit_Confirm")
 	local msg = {
@@ -977,6 +1079,13 @@ end
 function TowerDefenseCtrl:OnBtnClick_Pause()
 	self._mapNode.pauseCtrl:Open()
 	self:PauseLogic()
+end
+function TowerDefenseCtrl:OnBtnClick_OpenDic()
+	if self.nDicId == 0 then
+		return
+	end
+	self:PauseLogic()
+	EventManager.Hit(EventId.OpenPanel, PanelId.DictionaryEntry, self.nDicId, true)
 end
 function TowerDefenseCtrl:OnBtnClick_SwitchPosNext()
 	NovaAPI.DispatchEventWithData("TOWERDEFENSE_HANDLE_CONTROL_L1R1", nil, {1})
@@ -1072,6 +1181,8 @@ function TowerDefenseCtrl:OnEvent_OpenDic(dicId)
 	end
 	self:PauseLogic()
 	EventManager.Hit(EventId.OpenPanel, PanelId.DictionaryEntry, dicId, true)
+	self.nDicId = dicId
+	self._mapNode.btn_dic.gameObject:SetActive(true)
 end
 function TowerDefenseCtrl:OnEvent_CloseDic(panelId)
 	if panelId == PanelId.DictionaryEntry then
@@ -1081,6 +1192,7 @@ end
 function TowerDefenseCtrl:OnEvent_CharLevelCallback(characterId)
 	local nLevel = self.TowerDefenseData.TowerDefenseLevelData:GetCharacterLevel(characterId)
 	EventManager.Hit("TowerDefense_character_levelUp", characterId, nLevel)
+	EventManager.Hit("TowerDefenseCheckTips")
 end
 function TowerDefenseCtrl:OnEvent_HasDic()
 	self.bHasDic = true

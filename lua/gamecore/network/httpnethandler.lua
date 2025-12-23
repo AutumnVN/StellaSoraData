@@ -77,9 +77,11 @@ local player_data_succeed_ack = function(mapMsgData)
 	PlayerData.State:CacheStateData(mapMsgData.State)
 	PlayerData.RogueBoss:CacheRogueBossData(mapMsgData.RegionBossLevels)
 	PlayerData.RogueBoss:CacheWeeklyCopiesData(mapMsgData.WeekBossLevels)
+	PlayerData.Quest:CacheTeamFormation(mapMsgData.Assists)
 	PlayerData.Quest:CacheTourGroupOrder(mapMsgData.TourGuideQuestGroup)
 	PlayerData.Quest:CacheAllQuest(mapMsgData.Quests.List)
 	PlayerData.Quest:CacheDailyActiveIds(mapMsgData.DailyActiveIds)
+	PlayerData.Quest:CacheWeeklyActiveIds(mapMsgData.WeeklyActiveIds)
 	PlayerData.Achievement:CacheBattleAchievementData(mapMsgData.Achievements)
 	PlayerData.Daily.CacheDailyData(mapMsgData.SigninIndex)
 	PlayerData.Handbook:CacheHandbookData(mapMsgData.Handbook)
@@ -900,6 +902,7 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.char_skin_set_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.gacha_spin_succeed_ack] = gacha_spin_succeed_ack,
 		[NetMsgId.Id.gacha_spin_failed_ack] = HttpNetHandlerPlus.gacha_spin_failed_ack,
+		[NetMsgId.Id.gacha_spin_sync_ack] = HttpNetHandlerPlus.gacha_spin_sync_ack,
 		[NetMsgId.Id.gacha_information_succeed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.gacha_information_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.gacha_guarantee_reward_receive_succeed_ack] = HttpNetHandlerPlus.gacha_guarantee_reward_receive_succeed_ack,
@@ -957,6 +960,10 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.tower_growth_group_node_unlock_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.quest_tower_reward_receive_succeed_ack] = quest_tower_reward_receive_succeed_ack,
 		[NetMsgId.Id.quest_tower_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.quest_assist_reward_receive_succeed_ack] = HttpNetHandlerPlus.quest_assist_reward_receive_succeed_ack,
+		[NetMsgId.Id.quest_assist_group_reward_receive_succeed_ack] = HttpNetHandlerPlus.quest_assist_group_reward_receive_succeed_ack,
+		[NetMsgId.Id.quest_assist_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.quest_assist_group_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.npc_affinity_plot_reward_receive_succeed_ack] = npc_affinity_plot_reward_receive_succeed_ack,
 		[NetMsgId.Id.npc_affinity_plot_reward_receive_failed_ack] = npc_affinity_plot_reward_receive_failed_ack,
 		[NetMsgId.Id.friend_list_get_succeed_ack] = NOTHING_NEED_TO_BE_DONE,
@@ -1160,6 +1167,7 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.order_collected_notify] = HttpNetHandlerPlus.order_collected_notify,
 		[NetMsgId.Id.vampire_survivor_new_season_notify] = HttpNetHandlerPlus.vampire_survivor_new_season_notify,
 		[NetMsgId.Id.item_expired_change_notify] = HttpNetHandlerPlus.item_expired_change_notify,
+		[NetMsgId.Id.assist_add_build_notify] = HttpNetHandlerPlus.assist_add_build_notify,
 		[NetMsgId.Id.st_skip_floor_notify] = st_skip_floor_notify,
 		[NetMsgId.Id.st_add_team_exp_notify] = st_add_team_exp_notify,
 		[NetMsgId.Id.st_add_new_case_notify] = st_add_new_case_notify,
@@ -1207,9 +1215,9 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.activity_mining_dig_failed_ack] = HttpNetHandlerPlus.activity_mining_dig_failed_ack,
 		[NetMsgId.Id.activity_mining_energy_convert_notify] = activity_mining_energy_convert_notify,
 		[NetMsgId.Id.activity_mining_enter_layer_notify] = HttpNetHandlerPlus.activity_mining_enter_layer_notify,
-		[NetMsgId.Id.activity_mining_grids_error_notify] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.score_boss_star_reward_receive_succeed_ack] = score_boss_star_reward_receive_succeed_ack,
 		[NetMsgId.Id.activity_cookie_settle_succeed_ack] = HttpNetHandlerPlus.activity_cookie_settle_succeed_ack,
+		[NetMsgId.Id.activity_trekker_versus_reward_receive_succeed_ack] = HttpNetHandlerPlus.activity_trekker_versus_reward_receive_succeed_ack,
 		[NetMsgId.Id.redeem_code_succeed_ack] = redeem_code_succeed_ack,
 		[NetMsgId.Id.redeem_code_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.notice_change_notify] = notice_change_notify,
@@ -1250,7 +1258,8 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.build_convert_submit_succeed_ack] = HttpNetHandlerPlus.build_convert_submit_succeed_ack,
 		[NetMsgId.Id.build_convert_submit_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.build_convert_group_reward_receive_succeed_ack] = HttpNetHandlerPlus.build_convert_group_reward_receive_succeed_ack,
-		[NetMsgId.Id.build_convert_group_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE
+		[NetMsgId.Id.build_convert_group_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.activity_story_settle_succeed_ack] = HttpNetHandlerPlus.activity_story_settle_succeed_ack
 	}
 end
 function HttpNetHandler.Init()

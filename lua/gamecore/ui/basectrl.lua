@@ -436,6 +436,7 @@ end
 function BaseCtrl:GetPanelParam()
 	return self._panel:GetPanelParam()
 end
+local bActive_AutoFit = true
 function BaseCtrl:GetAtlasSprite(sAtlasPath, sSpriteName)
 	if string.find(sAtlasPath, "/CommonEx/") ~= nil or string.find(sAtlasPath, "/Common/") ~= nil then
 		printError("\230\150\176\231\137\136UI\229\156\168\230\141\162\232\191\135\229\155\190\233\155\134\229\129\154\230\179\149\229\144\142\239\188\140\228\187\142\229\155\190\233\155\134\228\184\173\229\143\150Sprite\230\151\182\228\184\141\229\186\148\229\135\186\231\142\176/CommonEx/\231\155\174\229\189\149 \230\136\150 /Common/ \231\155\174\229\189\149\227\128\130" .. sAtlasPath .. "," .. sSpriteName)
@@ -445,10 +446,17 @@ function BaseCtrl:GetAtlasSprite(sAtlasPath, sSpriteName)
 	local sFullPath = string.format("%sUI/CommonEx/atlas_png/%s/%s.png", sRootPath, sAtlasPath, sSpriteName)
 	return GameResourceLoader.LoadAsset(ResType.Any, sFullPath, typeof(Sprite))
 end
-function BaseCtrl:GetPngSprite(sPath)
+function BaseCtrl:GetPngSprite(sPath, sSurfix, imgObj)
 	if type(sPath) == "number" then
 		printError("\232\176\131\231\148\168\230\142\165\229\143\163\229\164\132\233\156\128\230\155\180\230\150\176\239\188\140panel id:" .. self._panel._nPanelId .. "\239\188\140ctrl name:" .. self.__cname)
 		return nil
+	end
+	if type(sPath) == "string" and sPath ~= "" and type(sSurfix) == "string" and sSurfix ~= "" then
+		if bActive_AutoFit == true then
+			sPath = self:_AutoFitIcon(imgObj, sPath, sSurfix)
+		else
+			sPath = sPath .. sSurfix
+		end
 	end
 	if string.find(sPath, "Icon/") == nil and string.find(sPath, "Image/") == nil and string.find(sPath, "ImageAvg/") == nil and string.find(sPath, "big_sprites/") == nil then
 		printError("\233\133\141\231\189\174\232\161\168\228\184\173 Icon \232\181\132\230\186\144\229\173\151\230\174\181\229\134\133\229\174\185\229\161\171\229\134\153\233\148\153\232\175\175\239\188\140\229\186\148\229\161\171\232\183\175\229\190\132\239\188\140\229\166\130\239\188\154Icon/Item/item_1\239\188\140panel id:" .. self._panel._nPanelId .. "\239\188\140ctrl name:" .. self.__cname)
@@ -518,11 +526,62 @@ function BaseCtrl:SetActivityAtlasSprite(imgObj, sActivityPath, sSpriteName)
 	end
 	return bSuc
 end
-function BaseCtrl:SetPngSprite(imgObj, sPath)
+function BaseCtrl:SetActivityAtlasSprite_New(imgObj, sActivityPath, sSpriteName)
+	local sFullPath = string.format("%sUI_Activity/%s/%s.png", sRootPath, sActivityPath, sSpriteName)
+	local bSuc = NovaAPI.SetImageSprite(imgObj, sFullPath)
+	if not bSuc then
+		traceback(string.format("icon\232\174\190\231\189\174\229\164\177\232\180\165\239\188\154%s\239\188\140panel id\239\188\154%s\239\188\140ctrl name\239\188\154%s", sFullPath, tostring(self._panel._nPanelId), tostring(self.__cname)))
+	end
+	return bSuc
+end
+function BaseCtrl:_AutoFitIcon(imgObj, sPath, sSurfix)
+	local mapAutoFix = AllEnum.CharHeadIconSurfixAutoFit[sSurfix]
+	if mapAutoFix == nil then
+		return sPath .. sSurfix
+	end
+	local rectTransform = imgObj.gameObject:GetComponent("RectTransform")
+	local nTargetWidth = rectTransform.rect.width
+	local nTargetHeight = rectTransform.rect.height
+	local sAutoFit, nRange
+	for k, v in pairs(mapAutoFix) do
+		local nMultiple_W = math.abs(nTargetWidth - v.w) / v.w
+		local nMultiple_H = math.abs(nTargetHeight - v.h) / v.h
+		local nMultiple = nMultiple_W >= nMultiple_H and nMultiple_W or nMultiple_H
+		if nRange == nil then
+			nRange = nMultiple
+			sAutoFit = k
+		elseif nMultiple < nRange then
+			nRange = nMultiple
+			sAutoFit = k
+		end
+	end
+	if sAutoFit == nil then
+		return sPath .. sSurfix
+	else
+		local _sPath = sPath .. sAutoFit
+		local bExist = GameResourceLoader.ExistsAsset(sRootPath .. _sPath .. ".png")
+		if bExist == false then
+			if NovaAPI.IsEditorPlatform() == true then
+				printError(string.format("\230\138\189\229\141\161\232\167\146\232\137\178\229\164\180\229\131\143 icon \232\135\170\233\128\130\229\186\148\229\164\177\232\180\165\239\188\140\232\181\132\230\186\144\231\188\186\229\164\177\227\128\130%s \229\176\134 %s \232\135\170\233\128\130\229\186\148\232\176\131\230\149\180\228\184\186 %s", sPath, sSurfix, sAutoFit))
+			end
+			_sPath = sPath .. sSurfix
+			NovaAPI.SetImageColor(imgObj, Color.cyan)
+		end
+		return _sPath
+	end
+end
+function BaseCtrl:SetPngSprite(imgObj, sPath, sSurfix)
 	if type(sPath) == "number" then
 		traceback("\232\176\131\231\148\168\230\142\165\229\143\163\229\164\132\233\156\128\230\155\180\230\150\176\239\188\140panel id:" .. self._panel._nPanelId .. "\239\188\140ctrl name:" .. self.__cname)
 		NovaAPI.SetImageSpriteAsset(imgObj, nil)
 		return false
+	end
+	if type(sPath) == "string" and sPath ~= "" and type(sSurfix) == "string" and sSurfix ~= "" then
+		if bActive_AutoFit == true then
+			sPath = self:_AutoFitIcon(imgObj, sPath, sSurfix)
+		else
+			sPath = sPath .. sSurfix
+		end
 	end
 	if string.find(sPath, "Icon/") == nil and string.find(sPath, "Image/") == nil and string.find(sPath, "ImageAvg/") == nil and string.find(sPath, "big_sprites/") == nil and string.find(sPath, "Disc/") == nil and string.find(sPath, "Play_") == nil and string.find(sPath, "UI_Activity") == nil then
 		traceback("\233\133\141\231\189\174\232\161\168\228\184\173 Icon \232\181\132\230\186\144\229\173\151\230\174\181\229\134\133\229\174\185\229\161\171\229\134\153\233\148\153\232\175\175\239\188\140\229\186\148\229\161\171\232\183\175\229\190\132\239\188\140\229\166\130\239\188\154Icon/Item/item_1\239\188\140panel id:" .. self._panel._nPanelId .. "\239\188\140ctrl name:" .. self.__cname)

@@ -636,7 +636,7 @@ function PlayerMallData:CollectEnd(bError)
 	if not bError then
 		self:CloseOrderWait()
 	end
-	if PanelManager.CheckPanelOpen(PanelId.ReceiveAutoTrans) == true or PanelManager.CheckPanelOpen(PanelId.ReceivePropsTips) == true or PanelManager.CheckPanelOpen(PanelId.ReceiveSpecialReward) == true or PanelManager.CheckNextPanelOpening() then
+	if PanelManager.CheckPanelOpen(PanelId.ReceiveAutoTrans) == true or PanelManager.CheckPanelOpen(PanelId.ReceivePropsTips) == true or PanelManager.CheckPanelOpen(PanelId.ReceivePropsNPC) == true or PanelManager.CheckPanelOpen(PanelId.ReceiveSpecialReward) == true or PanelManager.CheckNextPanelOpening() then
 		funcClear()
 	else
 		local sTip

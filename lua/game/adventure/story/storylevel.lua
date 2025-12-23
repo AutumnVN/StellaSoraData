@@ -8,7 +8,7 @@ local mapEventConfig = {
 	BattlePause = "OnEvnet_Pause",
 	AdventureModuleEnter = "OnEvent_AdventureModuleEnter"
 }
-function StoryLevel:Init(parent, nLevelId, nBuildId)
+function StoryLevel:Init(parent, nLevelId, nBuildId, bActivityStory)
 	self.bSettle = false
 	self.parent = parent
 	self.nMainLineTime = 0
@@ -16,7 +16,8 @@ function StoryLevel:Init(parent, nLevelId, nBuildId)
 	self.nLevelId = nLevelId
 	self.curFloorIdx = 1
 	self.mapCharacterTempData = {}
-	local mapStory = ConfigTable.GetData_Story(nLevelId)
+	self.bActivityStory = bActivityStory == true
+	local mapStory = bActivityStory == true and ConfigTable.GetData("ActivityStory", nLevelId) or ConfigTable.GetData_Story(nLevelId)
 	if mapStory == nil then
 		printError("mapStory is nil,id = " .. nLevelId)
 		return
@@ -75,7 +76,7 @@ function StoryLevel:OnEvent_SendMsgFinishBattle(LevelResult, FadeTime, sVideoNam
 		self:OnEvent_AbandonBattle()
 		return
 	end
-	local mapStory = ConfigTable.GetData_Story(self.nLevelId)
+	local mapStory = self.bActivityStory == true and ConfigTable.GetData("ActivityStory", self.nLevelId) or ConfigTable.GetData_Story(self.nLevelId)
 	if self.curFloorIdx < #mapStory.FloorId then
 		self:ChangeFloor()
 		return
@@ -87,7 +88,11 @@ function StoryLevel:OnEvent_SendMsgFinishBattle(LevelResult, FadeTime, sVideoNam
 	local events = {
 		List = PlayerData.Achievement:GetBattleAchievement(GameEnum.levelType.Mainline, LevelResult ~= AllEnum.LevelResult.Failed)
 	}
-	PlayerData.Avg:SendMsg_STORY_DONE(func_cbFinishSucc, events)
+	if self.bActivityStory then
+		PlayerData.ActivityAvg:SendMsg_STORY_DONE(func_cbFinishSucc, events)
+	else
+		PlayerData.Avg:SendMsg_STORY_DONE(func_cbFinishSucc, events)
+	end
 end
 function StoryLevel:OnEvent_AbandonBattle()
 	self:RefreshCharDamageData()
@@ -164,8 +169,9 @@ function StoryLevel:PlaySuccessPerform(FadeTime, mapChangeInfo, sVideoName)
 		local function videoCallback()
 			EventManager.Remove("VIDEO_END", self, videoCallback)
 			EventManager.Hit(EventId.OpenPanel, PanelId.BattleResultMask)
-			local nFloorCount = #ConfigTable.GetData_Story(self.nLevelId).FloorId
-			local nMapId = ConfigTable.GetData_Story(self.nLevelId).FloorId[nFloorCount]
+			local storyCfg = self.bActivityStory == true and ConfigTable.GetData("ActivityStory", self.nLevelId) or ConfigTable.GetData_Story(self.nLevelId)
+			local nFloorCount = #storyCfg.FloorId
+			local nMapId = storyCfg.FloorId[nFloorCount]
 			local nType = ConfigTable.GetData("MainlineFloor", nMapId).Theme
 			local sName = ConfigTable.GetData("EndSceneType", nType).EndSceneName
 			EventManager.Add("SettlementPerformLoadFinish", self, openBattleResultPanel)
@@ -239,12 +245,12 @@ function StoryLevel:OnEvent_Time(nTime)
 	self.nMainLineTime = self.nCacheFloorTime + nTime
 end
 function StoryLevel:OnEvnet_Pause()
-	local sAim = ConfigTable.GetData_Story(self.nLevelId).Aim
+	local sAim = self.bActivityStory == true and ConfigTable.GetData("ActivityStory", self.nLevelId).Aim or ConfigTable.GetData_Story(self.nLevelId).Aim
 	EventManager.Hit(EventId.OpenPanel, PanelId.MainBattlePause, self.nMainLineTime or 0, self.mapBuildData.tbChar, sAim)
 end
 function StoryLevel:ChangeFloor()
 	self:CacheTempData()
-	local mapStory = ConfigTable.GetData_Story(self.nLevelId)
+	local mapStory = self.bActivityStory == true and ConfigTable.GetData("ActivityStory", self.nLevelId) or ConfigTable.GetData_Story(self.nLevelId)
 	self.curFloorIdx = self.curFloorIdx + 1
 	self.nCacheFloorTime = self.nMainLineTime
 	local function levelUnloadCallback()

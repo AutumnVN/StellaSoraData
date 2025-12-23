@@ -111,7 +111,7 @@ function NoteSkillPreviewCtrl:RefreshNote(nIndex, nPhase)
 				self:SetPngSprite(self._mapNode.imgNoteIcon[i], mapNote.Icon)
 				NovaAPI.SetTMPText(self._mapNode.txtNoteName[i], mapNote.Name)
 				NovaAPI.SetTMPText(self._mapNode.txtNoteDesc[i], mapNote.BriefDesc)
-				NovaAPI.SetTMPText(self._mapNode.txtNoteLv[i], orderedFormat(ConfigTable.GetUIText("StarTower_Disc_Info_Level"), tbSubNoteSkills[i].nCount))
+				NovaAPI.SetTMPText(self._mapNode.txtNoteLv[i], orderedFormat(ConfigTable.GetUIText("Note_Count"), tbSubNoteSkills[i].nCount))
 			end
 		end
 	end

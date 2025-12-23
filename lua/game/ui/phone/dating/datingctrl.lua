@@ -93,6 +93,10 @@ DatingCtrl._mapNodeConfig = {
 		sNodeName = "snapshot",
 		sComponentName = "Button",
 		callback = "OnBtnClick_HideImgMsg"
+	},
+	btnSkipVoice = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_SkipVoice"
 	}
 }
 DatingCtrl._mapEventConfig = {
@@ -378,12 +382,14 @@ function DatingCtrl:Awake()
 	self.nPanelType = 0
 	self._mapNode.goBubble.gameObject:SetActive(false)
 	self._mapNode.imgTimeBg1.gameObject:SetActive(false)
+	self._mapNode.btnSkipVoice.gameObject:SetActive(false)
 	LoadPresetEmoji()
 end
 function DatingCtrl:FadeIn()
 	EventManager.Hit(EventId.SetTransition)
 end
 function DatingCtrl:OnEnable()
+	self.nSkipClickedCount = 0
 	self.nOptionSelected = 0
 	self.nTotalValue = 0
 	self:CreateRT()
@@ -548,19 +554,46 @@ function DatingCtrl:OnEvent_AvgVoiceDuration(nDuration)
 		end
 		self.bPlayCharVoice = true
 		if self.goL2D ~= nil then
-			Actor2DManager.PlayL2DAnim(self.goL2D.tbRenderer.trL2DIns.transform, mapVoiceCfg.motion, false, true)
+			local tbAnim = BubbleVoiceManager.GetL2DAnim(mapVoiceCfg.voResource)
+			if tbAnim ~= nil then
+				local sAnim = tbAnim[1]
+				for k, v in pairs(tbAnim) do
+					if v ~= "" then
+						sAnim = v
+						break
+					end
+				end
+				Actor2DManager.PlayL2DAnim(self.goL2D.tbRenderer.trL2DIns.transform, sAnim, false, true)
+			end
 		end
 		self._mapNode.goBubble.gameObject:SetActive(true)
 		BubbleVoiceManager.PlayFixedBubbleAnim(self._mapNode.goBubble, mapVoiceCfg.voResource)
 		if nDuration ~= nil and 0 < nDuration then
-			self:AddTimer(1, nDuration, function()
+			self.timerWaitVoice = self:AddTimer(1, nDuration, function()
 				self:ShowReward()
 			end, true, true, true)
-			EventManager.Hit(EventId.TemporaryBlockInput, nDuration)
+			self._mapNode.btnSkipVoice.gameObject:SetActive(true)
 		else
 			self:ShowReward()
 		end
 	end
+end
+function DatingCtrl:OnBtnClick_SkipVoice()
+	self.nSkipClickedCount = self.nSkipClickedCount + 1
+	if self.nSkipClickedCount < 2 then
+		return
+	end
+	if self.charVoiceTimer ~= nil then
+		self.charVoiceTimer:Cancel()
+		self.charVoiceTimer = nil
+	end
+	if self.timerWaitVoice ~= nil then
+		self.timerWaitVoice:Cancel()
+		self.timerWaitVoice = nil
+	end
+	BubbleVoiceManager.StopBubbleAnim(true)
+	self:ShowReward()
+	self._mapNode.btnSkipVoice.gameObject:SetActive(false)
 end
 function DatingCtrl:OnBtnClick_DatingShowImgMsg(iconPath)
 	self:SetPngSprite(self._mapNode.imgMsgDetail, iconPath)

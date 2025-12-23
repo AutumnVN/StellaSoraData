@@ -57,7 +57,7 @@ function StarTowerShopGridCtrl:RefreshGrid(mapGoods, nHasCoin)
 	if mapGoods.nCharId ~= nil and 0 < mapGoods.nCharId then
 		self._mapNode.imgCharEdge.gameObject:SetActive(true)
 		local nCharSkinId = PlayerData.Char:GetCharSkinId(mapGoods.nCharId)
-		self:SetPngSprite(self._mapNode.imgCharIcon, ConfigTable.GetData_CharacterSkin(nCharSkinId).Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgCharIcon, ConfigTable.GetData_CharacterSkin(nCharSkinId).Icon, AllEnum.CharHeadIconSurfix.S)
 	else
 		self._mapNode.imgCharEdge.gameObject:SetActive(false)
 	end

@@ -27,6 +27,7 @@ LoginRewardItemCtrl._mapNodeConfig = {
 LoginRewardItemCtrl._mapEventConfig = {}
 LoginRewardItemCtrl._mapRedDotConfig = {}
 function LoginRewardItemCtrl:SetRewardItem(nDay, mapReward, bFinalDay, bNextDay)
+	self.mapReward = mapReward
 	for _, v in ipairs(self._mapNode.imgDay) do
 		self:SetAtlasSprite(v, "05_number", "zs_activity_02_num_" .. nDay)
 	end

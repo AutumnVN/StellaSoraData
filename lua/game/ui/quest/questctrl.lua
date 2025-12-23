@@ -8,6 +8,7 @@ QuestCtrl._mapNodeConfig = {
 	imgQuestBg = {},
 	role_offset01 = {sComponentName = "Transform"},
 	role_offset02 = {sComponentName = "Transform"},
+	role_offset03 = {sComponentName = "Transform"},
 	animImgQuestBg = {sNodeName = "imgQuestBg", sComponentName = "Animator"},
 	animActor = {sNodeName = "Actor", sComponentName = "Animator"},
 	animMaskRoot = {sNodeName = "MaskRoot", sComponentName = "Animator"},
@@ -59,8 +60,8 @@ QuestCtrl._mapNodeConfig = {
 	rtWorldClass = {
 		sCtrlName = "Game.UI.Quest.WorldClass.QuestWorldClassCtrl"
 	},
-	rtTutorial = {
-		sCtrlName = "Game.UI.Quest.Tutorial.TutorialLevelCtrl"
+	rtWeeklyQuest = {
+		sCtrlName = "Game.UI.Quest.WeeklyQuest.WeeklyQuestCtrl"
 	},
 	animWorldClass = {
 		sNodeName = "rtWorldClass",
@@ -68,22 +69,6 @@ QuestCtrl._mapNodeConfig = {
 	},
 	goAssistant = {
 		sCtrlName = "Game.UI.Quest.Assistant.AssistantCtrl"
-	},
-	openTabTra = {
-		sNodeName = "btn_openTab",
-		sComponentName = "RectTransform"
-	},
-	btn_openTab = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_OpenTab"
-	},
-	closeTabTra = {
-		sNodeName = "btn_closeTab",
-		sComponentName = "RectTransform"
-	},
-	btn_closeTab = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_CloseTab"
 	}
 }
 QuestCtrl._mapEventConfig = {
@@ -93,25 +78,31 @@ QuestCtrl._mapEventConfig = {
 	[EventId.TourGroupReceived] = "OnEvent_TourGroupReceived",
 	[EventId.DailyQuestReceived] = "OnEvent_DailyQuestReceived",
 	[EventId.DailyQuestActiveReceived] = "OnEvent_DailyQuestActiveReceived",
+	[EventId.WeeklyQuestReceived] = "OnEvent_WeeklyQuestReceived",
+	[EventId.WeeklyQuestActiveReceived] = "OnEvent_WeeklyQuestActiveReceived",
 	[EventId.UpdateWorldClass] = "OnEvent_UpdateWorldClass",
 	[EventId.QuestDataRefresh] = "OnEvent_QuestDataRefresh",
-	[EventId.TutorialQuestReceived] = "OnEvent_TutorialQuestReceived",
 	RefreshWorldClassBg = "OnEvent_RefreshWorldClassBg",
 	DemonAdvanceSuccess = "OnEvent_DemonAdvanceSuccess",
 	Guide_SelectQuestPage = "OnEvent_SelectQuestPage"
 }
 QuestCtrl._mapRedDotConfig = {
 	[RedDotDefine.Task_Guide] = {sNodeName = "redDot", nNodeIndex = 1},
-	[RedDotDefine.WorldClass] = {sNodeName = "redDot", nNodeIndex = 2},
-	[RedDotDefine.Task_Daily] = {sNodeName = "redDot", nNodeIndex = 3},
-	[RedDotDefine.Task_Tutorial] = {sNodeName = "redDot", nNodeIndex = 4}
+	[RedDotDefine.Task_Daily] = {sNodeName = "redDot", nNodeIndex = 2},
+	[RedDotDefine.Task_Weekly] = {sNodeName = "redDot", nNodeIndex = 3},
+	[RedDotDefine.WorldClass] = {sNodeName = "redDot", nNodeIndex = 4}
 }
-local MoveBarPos = {}
+local MoveBarPos = {
+	[1] = -497,
+	[2] = -163,
+	[3] = 163,
+	[4] = 497
+}
 local functionType = {
 	[1] = 0,
-	[2] = 0,
-	[3] = GameEnum.OpenFuncType.DailyQuest,
-	[4] = GameEnum.OpenFuncType.TutorialLevel
+	[2] = GameEnum.OpenFuncType.DailyQuest,
+	[3] = GameEnum.OpenFuncType.WeeklyQuest,
+	[4] = 0
 }
 local l2dCfg = {
 	[1] = {
@@ -145,6 +136,22 @@ local l2dCfg = {
 				animIdle = "dailyquest_f_idle"
 			}
 		}
+	},
+	[3] = {
+		male = {
+			path = "UI/Quest/L2D_Weekly_Male.prefab",
+			anim = {
+				animIn = "weeklyquest_m_in",
+				animIdle = "weeklyquest_m_idle"
+			}
+		},
+		female = {
+			path = "UI/Quest/L2D_Weekly_Female.prefab",
+			anim = {
+				animIn = "weeklyquest_f_in",
+				animIdle = "weeklyquest_f_idle"
+			}
+		}
 	}
 }
 function QuestCtrl:InitTab()
@@ -155,39 +162,6 @@ function QuestCtrl:InitTab()
 		self._mapNode.imgOn[i]:SetActive(self._panel.nCurTab == i)
 		self._mapNode.txtTabOn[i].gameObject:SetActive(self._panel.nCurTab == i)
 		self._mapNode.layoutOff[i].gameObject:SetActive(self._panel.nCurTab ~= i)
-	end
-end
-function QuestCtrl:InitTabButton()
-	self._mapNode.btn_openTab.gameObject:SetActive(false)
-	self._mapNode.btn_closeTab.gameObject:SetActive(false)
-	local nTotalCount, nReceivedCount = PlayerData.TutorialData:GetProgress()
-	if nReceivedCount < nTotalCount then
-		return
-	end
-	self._mapNode.btn_openTab.gameObject:SetActive(not self.bOpenTab)
-	self._mapNode.btn_closeTab.gameObject:SetActive(self.bOpenTab)
-	local tab4_off = self._mapNode.trTabOn:Find("tab4")
-	local tab4_on = self._mapNode.trTabOff:Find("tab4")
-	tab4_off.gameObject:SetActive(self.bOpenTab)
-	tab4_on.gameObject:SetActive(self.bOpenTab)
-	local wait = function()
-		CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.trTabOff)
-		CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.trTabOn)
-		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-		local x = self._mapNode.trTabOn.localPosition.x + self._mapNode.trTabOn.sizeDelta.x / 2 + 80
-		self._mapNode.openTabTra:DOLocalMoveX(x, 0.1):SetUpdate(true)
-		self._mapNode.closeTabTra:DOLocalMoveX(x, 0.1):SetUpdate(true)
-	end
-	cs_coroutine.start(wait)
-end
-function QuestCtrl:InitMoveBarPos()
-	MoveBarPos = {}
-	for i = 1, 4 do
-		local tab = self._mapNode.trTabOn:Find("tab" .. i)
-		if tab.gameObject.activeSelf then
-			local pos = tab.localPosition.x
-			table.insert(MoveBarPos, pos)
-		end
 	end
 end
 function QuestCtrl:RefreshTabUnlock()
@@ -211,17 +185,22 @@ function QuestCtrl:LoadL2d()
 		if self.bIsMale then
 			self.role01 = self:CreatePrefabInstance(l2dCfg[1].male.path, self._mapNode.role_offset01)
 			self.role02 = self:CreatePrefabInstance(l2dCfg[2].male.path, self._mapNode.role_offset02)
+			self.role03 = self:CreatePrefabInstance(l2dCfg[3].male.path, self._mapNode.role_offset03)
 			self.tbL2DAnim[1] = l2dCfg[1].male.anim
 			self.tbL2DAnim[2] = l2dCfg[2].male.anim
+			self.tbL2DAnim[3] = l2dCfg[3].male.anim
 		else
 			self.role01 = self:CreatePrefabInstance(l2dCfg[1].female.path, self._mapNode.role_offset01)
 			self.role02 = self:CreatePrefabInstance(l2dCfg[2].female.path, self._mapNode.role_offset02)
+			self.role03 = self:CreatePrefabInstance(l2dCfg[3].female.path, self._mapNode.role_offset03)
 			self.tbL2DAnim[1] = l2dCfg[1].female.anim
 			self.tbL2DAnim[2] = l2dCfg[2].female.anim
+			self.tbL2DAnim[3] = l2dCfg[3].female.anim
 		end
 		if self.role01 and self.role02 then
 			self.roleModle01 = self.role01.transform:Find("root/----live2d_modle----").transform:GetChild(0)
 			self.roleModle02 = self.role02.transform:Find("root/----live2d_modle----").transform:GetChild(0)
+			self.roleModle03 = self.role03.transform:Find("root/----live2d_modle----").transform:GetChild(0)
 		end
 	end
 	self.bLoadL2d = true
@@ -246,12 +225,13 @@ function QuestCtrl:RefreshContent()
 	self._mapNode.rtGuideQuest.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.GuideQuest)
 	self._mapNode.rtDailyQuest.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.DailyQuest)
 	self._mapNode.rtWorldClass.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.WorldClass)
-	self._mapNode.rtTutorial.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.Tutorial)
-	self._mapNode.goWorldClassBg.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.WorldClass or self._panel.nCurTab == AllEnum.QuestPanelTab.Tutorial)
-	self._mapNode.rtLevel.gameObject:SetActive(self._panel.nCurTab ~= AllEnum.QuestPanelTab.WorldClass and self._panel.nCurTab ~= AllEnum.QuestPanelTab.Tutorial)
-	self._mapNode.goAssistant.gameObject:SetActive(self._panel.nCurTab ~= AllEnum.QuestPanelTab.WorldClass and self._panel.nCurTab ~= AllEnum.QuestPanelTab.Tutorial)
+	self._mapNode.rtWeeklyQuest.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.WeeklyQuest)
+	self._mapNode.goWorldClassBg.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.WorldClass)
+	self._mapNode.rtLevel.gameObject:SetActive(self._panel.nCurTab ~= AllEnum.QuestPanelTab.WorldClass)
+	self._mapNode.goAssistant.gameObject:SetActive(self._panel.nCurTab ~= AllEnum.QuestPanelTab.WorldClass)
 	self.role01.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.GuideQuest)
 	self.role02.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.DailyQuest)
+	self.role03.gameObject:SetActive(self._panel.nCurTab == AllEnum.QuestPanelTab.WeeklyQuest)
 	if self._panel.nCurTab == AllEnum.QuestPanelTab.GuideQuest then
 		self._mapNode.rtGuideQuest:Refresh(self.mapGuideQuest, self.nCurGuideGroup)
 		if self.nLastTab == AllEnum.QuestPanelTab.WorldClass then
@@ -274,10 +254,6 @@ function QuestCtrl:RefreshContent()
 		EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
 	elseif self._panel.nCurTab == AllEnum.QuestPanelTab.WorldClass then
 		local curType = self._mapNode.rtWorldClass:Refresh() or 0
-		if self.nLastTab == AllEnum.QuestPanelTab.Tutorial then
-			self._mapNode.goWorldClassBg.gameObject:SetActive(false)
-			self._mapNode.goWorldClassBg.gameObject:SetActive(true)
-		end
 		local sAnimName = curType == AllEnum.WorldClassType.Advance and "rtWorldClass_switch1" or "rtWorldClass_in"
 		self._mapNode.animWorldClass:Play(sAnimName, 0, 0)
 		local nAnimLen = NovaAPI.GetAnimClipLength(self.animRoot, {
@@ -285,20 +261,24 @@ function QuestCtrl:RefreshContent()
 		})
 		self.animRoot:Play("QuestPanel_switch1", 0, 0)
 		EventManager.Hit(EventId.TemporaryBlockInput, nAnimLen)
-	elseif self._panel.nCurTab == AllEnum.QuestPanelTab.Tutorial then
+	elseif self._panel.nCurTab == AllEnum.QuestPanelTab.WeeklyQuest then
+		self._mapNode.rtWeeklyQuest:Refresh(self.tbWeeklyQuest)
 		if self.nLastTab == AllEnum.QuestPanelTab.WorldClass then
-			self._mapNode.goWorldClassBg.gameObject:SetActive(false)
-			self._mapNode.goWorldClassBg.gameObject:SetActive(true)
+			self.animRoot:Play("QuestPanel_switch2", 0, 0)
 		end
-		self._mapNode.rtTutorial:Refresh()
-		PlayerData.TutorialData:RefreshRedDot(false)
+		self._mapNode.animImgQuestBg:Play("imgQuestBg_in", 0, 0)
+		self._mapNode.animActor:Play("Actor_in", 0, 0)
+		self._mapNode.animMaskRoot:Play("MaskRoot_in", 0, 0)
+		Actor2DManager.PlayL2DAnim(self.roleModle03.transform, self.tbL2DAnim[3].animIn, false, true)
+		EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
 	end
 	self.nLastTab = self._panel.nCurTab
 end
 function QuestCtrl:RefreshQuestList()
-	local tbDaily, mapGuide = PlayerData.Quest:GetAllQuestData()
+	local tbDaily, mapGuide, tbWeekly = PlayerData.Quest:GetAllQuestData()
 	self.mapGuideQuest = {}
 	self.tbDailyQuest = tbDaily
+	self.tbWeeklyQuest = tbWeekly
 	local curGuideGroup = PlayerData.Quest:GetCurTourGroup()
 	if curGuideGroup == 0 then
 		print("\230\151\160\229\189\147\229\137\141\228\187\187\229\138\161\231\187\132 \230\137\139\229\134\140\228\187\187\229\138\161\229\143\175\232\131\189\229\183\178\229\133\168\233\131\168\229\174\140\230\136\144")
@@ -314,6 +294,8 @@ function QuestCtrl:RefreshQuestList()
 		self._mapNode.rtGuideQuest:Refresh(self.mapGuideQuest, curGuideGroup)
 	elseif self._panel.nCurTab == AllEnum.QuestPanelTab.DailyQuest then
 		self._mapNode.rtDailyQuest:Refresh(self.tbDailyQuest)
+	elseif self._panel.nCurTab == AllEnum.QuestPanelTab.WeeklyQuest then
+		self._mapNode.rtWeeklyQuest:Refresh(self.tbWeeklyQuest)
 	end
 end
 function QuestCtrl:Awake()
@@ -328,8 +310,9 @@ function QuestCtrl:OnEnable()
 	if nil ~= next(tbParam) then
 		nJumpTab = tbParam[1]
 	end
-	local tbDaily, mapGuide = PlayerData.Quest:GetAllQuestData()
+	local tbDaily, mapGuide, tbWeekly = PlayerData.Quest:GetAllQuestData()
 	self.tbDailyQuest = tbDaily
+	self.tbWeeklyQuest = tbWeekly
 	self.mapGuideQuest = {}
 	local curGuideGroup = PlayerData.Quest:GetCurTourGroup()
 	if curGuideGroup == 0 then
@@ -372,7 +355,7 @@ function QuestCtrl:OnEnable()
 		self._panel.nCurTab = nJumpTab
 	end
 	local sAnimName = ""
-	if self._panel.nCurTab == AllEnum.QuestPanelTab.GuideQuest or self._panel.nCurTab == AllEnum.QuestPanelTab.DailyQuest then
+	if self._panel.nCurTab == AllEnum.QuestPanelTab.GuideQuest or self._panel.nCurTab == AllEnum.QuestPanelTab.DailyQuest or self._panel.nCurTab == AllEnum.QuestPanelTab.WeeklyQuest then
 		sAnimName = "QuestPanel_in1"
 	else
 		sAnimName = "QuestPanel_in2"
@@ -381,22 +364,18 @@ function QuestCtrl:OnEnable()
 	self.animRoot:Play(sAnimName, 0, 0)
 	EventManager.Hit(EventId.TemporaryBlockInput, nAnimLen)
 	self:LoadL2d()
-	self:InitTabButton()
-	local wait = function()
-		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-		self:InitMoveBarPos()
-		self:InitTab()
-		self:RefreshTabUnlock()
-		self:RefreshWorldClass()
-		self:RefreshContent()
-	end
-	cs_coroutine.start(wait)
+	self:InitTab()
+	self:RefreshTabUnlock()
+	self:RefreshWorldClass()
+	self:RefreshContent()
 end
 function QuestCtrl:OnDisable()
 	local sPath1 = self.bIsMale and l2dCfg[1].male.path or l2dCfg[1].female.path
 	local sPath2 = self.bIsMale and l2dCfg[2].male.path or l2dCfg[2].female.path
+	local sPath3 = self.bIsMale and l2dCfg[3].male.path or l2dCfg[3].female.path
 	self:DestroyPrefabInstance(sPath1)
 	self:DestroyPrefabInstance(sPath2)
+	self:DestroyPrefabInstance(sPath3)
 	self.bLoadL2d = false
 end
 function QuestCtrl:OnDestroy()
@@ -421,20 +400,6 @@ function QuestCtrl:OnBtnClick_Tab(btn, nIndex)
 	self._mapNode.layoutOff[nIndex].gameObject:SetActive(false)
 	self._panel.nCurTab = nIndex
 	self:RefreshContent()
-end
-function QuestCtrl:OnBtnClick_OpenTab()
-	self.bOpenTab = true
-	self:InitTabButton()
-	self:InitMoveBarPos()
-	self._mapNode.rtImgMoveBar.localPosition = Vector3(MoveBarPos[1], self._mapNode.rtImgMoveBar.localPosition.y, 0)
-	self:OnBtnClick_Tab(_, 1)
-end
-function QuestCtrl:OnBtnClick_CloseTab()
-	self.bOpenTab = false
-	self:InitTabButton()
-	self:InitMoveBarPos()
-	self._mapNode.rtImgMoveBar.localPosition = Vector3(MoveBarPos[1], self._mapNode.rtImgMoveBar.localPosition.y, 0)
-	self:OnBtnClick_Tab(_, 1)
 end
 function QuestCtrl:OnEvent_Back(nPanelId)
 	if self._panel._nPanelId ~= nPanelId then
@@ -506,6 +471,31 @@ function QuestCtrl:OnEvent_DailyQuestActiveReceived(tbReward)
 	local mapReward = {tbReward = tbReward}
 	UTILS.OpenReceiveByReward(mapReward, tipCallback)
 end
+function QuestCtrl:OnEvent_WeeklyQuestReceived(mapChangeInfo)
+	local refreshFunc = function()
+		self:RefreshQuestList()
+	end
+	local tipCallback = function()
+		local bOpen = PlayerData.Base:TryOpenWorldClassUpgrade(refreshFunc)
+		if not bOpen then
+			refreshFunc()
+		end
+	end
+	UTILS.OpenReceiveByChangeInfo(mapChangeInfo, tipCallback)
+end
+function QuestCtrl:OnEvent_WeeklyQuestActiveReceived(tbReward)
+	local refreshFunc = function()
+		self:RefreshQuestList()
+	end
+	local tipCallback = function()
+		local bOpen = PlayerData.Base:TryOpenWorldClassUpgrade(refreshFunc)
+		if not bOpen then
+			refreshFunc()
+		end
+	end
+	local mapReward = {tbReward = tbReward}
+	UTILS.OpenReceiveByReward(mapReward, tipCallback)
+end
 function QuestCtrl:OnEvent_UpdateWorldClass()
 	self:RefreshWorldClass()
 	self:RefreshTabUnlock()
@@ -527,11 +517,5 @@ function QuestCtrl:OnEvent_DemonAdvanceSuccess()
 end
 function QuestCtrl:OnEvent_SelectQuestPage(nIndex)
 	self:OnBtnClick_Tab(nil, nIndex)
-end
-function QuestCtrl:OnEvent_TutorialQuestReceived(msgData)
-	local refreshFunc = function()
-		self._mapNode.rtTutorial:Refresh()
-	end
-	UTILS.OpenReceiveByChangeInfo(msgData, refreshFunc)
 end
 return QuestCtrl

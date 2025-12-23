@@ -181,7 +181,7 @@ function TrialCtrl:RefreshCharList()
 				local nCharId = self.tbCharId[i]
 				local nCharSkinId = ConfigTable.GetData_Character(nCharId).AdvanceSkinId
 				local sIcon = ConfigTable.GetData_CharacterSkin(nCharSkinId).Icon
-				self:SetPngSprite(self._mapNode.imgHead[i], sIcon .. AllEnum.CharHeadIconSurfix.L)
+				self:SetPngSprite(self._mapNode.imgHead[i], sIcon, AllEnum.CharHeadIconSurfix.L)
 				self._mapNode.goSelect[i]:SetActive(self.nSelectIndex == i)
 				self._mapNode.imgSelectBg[i]:SetActive(self.nSelectIndex == i)
 			end
@@ -198,7 +198,7 @@ function TrialCtrl:OnGridRefresh(goGrid, gridIndex)
 	local imgHead = goGrid.transform:Find("btnChar/AnimRoot/imgHead"):GetComponent("Image")
 	local goSelect = goGrid.transform:Find("btnChar/AnimRoot/goSelect").gameObject
 	local imgSelectBg = goGrid.transform:Find("btnChar/AnimRoot/imgSelectBg").gameObject
-	self:SetPngSprite(imgHead, sIcon .. AllEnum.CharHeadIconSurfix.L)
+	self:SetPngSprite(imgHead, sIcon, AllEnum.CharHeadIconSurfix.L)
 	goSelect:SetActive(self.nSelectIndex == nIndex)
 	imgSelectBg:SetActive(self.nSelectIndex == nIndex)
 end
@@ -275,7 +275,10 @@ function TrialCtrl:OnBtnClick_Trial()
 end
 function TrialCtrl:OnBtnClick_Gacha()
 	local getInfoCallback = function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.GachaSpin, self.tbGacha[self.nSelectIndex])
+		local func = function()
+			EventManager.Hit(EventId.OpenPanel, PanelId.GachaSpin, self.tbGacha[self.nSelectIndex])
+		end
+		EventManager.Hit(EventId.SetTransition, 6, func, AllEnum.MainViewCorner.Recruit)
 	end
 	PlayerData.Gacha:GetGachaInfomation(getInfoCallback)
 end

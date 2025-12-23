@@ -91,7 +91,7 @@ function PhoneDatingCtrl:Refresh(nCharId)
 		local nSkinId = mapCharacter.DefaultSkinId
 		local mapSkin = ConfigTable.GetData_CharacterSkin(nSkinId)
 		if mapSkin ~= nil then
-			self:SetPngSprite(self._mapNode.imgHeadIcon, mapSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+			self:SetPngSprite(self._mapNode.imgHeadIcon, mapSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 		end
 		NovaAPI.SetTMPText(self._mapNode.txtCharName, mapCharacter.Name)
 		local mapCharDes = ConfigTable.GetData("CharacterDes", nCharId)
@@ -252,7 +252,7 @@ function PhoneDatingCtrl:RefreshEventContent()
 		local nSkinId = PlayerData.Char:GetCharSkinId(nCharId)
 		local mapSkin = ConfigTable.GetData_CharacterSkin(nSkinId)
 		if mapSkin ~= nil then
-			self:SetPngSprite(self._mapNode.imgChar, mapSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+			self:SetPngSprite(self._mapNode.imgChar, mapSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 		end
 		NovaAPI.SetTMPText(self._mapNode.txtEventName, mapCfg.Name)
 		if self.curEventData.Status == AllEnum.DatingEventStatus.Lock then

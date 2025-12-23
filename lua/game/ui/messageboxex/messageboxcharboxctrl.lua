@@ -65,7 +65,7 @@ function MessageBoxCharBoxCtrl:OpenBox(mapMsg, ctrlBase)
 			local nCharSkinId = mapCharCfg.DefaultSkinId
 			local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 			if mapCharSkin then
-				self:SetPngSprite(self._mapNode.imgItemIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+				self:SetPngSprite(self._mapNode.imgItemIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 			end
 			local rareIconName = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
 			self:SetAtlasSprite(self._mapNode.imgItemRare, "12_rare", rareIconName)

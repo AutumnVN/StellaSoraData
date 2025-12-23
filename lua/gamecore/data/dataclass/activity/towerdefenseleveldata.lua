@@ -92,6 +92,12 @@ function TowerDefenseLevelData:GetCharacterEntityId(nCharacterId)
 	end
 	return self.tbCharacterData[nCharacterId].nEntityId
 end
+function TowerDefenseLevelData:GetCharacterData(nCharacterId)
+	if self.tbCharacterData[nCharacterId] == nil then
+		return nil
+	end
+	return self.tbCharacterData[nCharacterId]
+end
 function TowerDefenseLevelData:OnEvent_UnloadComplete()
 	if not self.bRestart then
 		NovaAPI.EnterModule("MainMenuModuleScene", true)

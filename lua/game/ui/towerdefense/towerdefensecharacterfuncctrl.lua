@@ -28,8 +28,8 @@ end
 function TowerDefenseCharacterFuncCtrl:SetLevelBtnState(bIsShow)
 	self.bIsShowLevelBtn = bIsShow
 end
-function TowerDefenseCharacterFuncCtrl:SetData(nActId)
-	self.TowerDefenseData = PlayerData.Activity:GetActivityDataById(nActId)
+function TowerDefenseCharacterFuncCtrl:SetData(levelData)
+	self.TowerDefenseLevelData = levelData
 end
 function TowerDefenseCharacterFuncCtrl:BindFuncIcon(characterId, uiPos, detailCallback, levelupCallback)
 	if self.UseFuncGo[characterId] ~= nil then
@@ -89,7 +89,10 @@ function TowerDefenseCharacterFuncCtrl:ShowIcon(characterId)
 	end
 	local go = self.UseFuncGo[characterId]
 	local btn_LevelUp = go.transform:Find("btn_levelUp")
-	local level = self.TowerDefenseData.TowerDefenseLevelData:GetCharacterLevel(self.nCharacterId)
+	local level = self.TowerDefenseLevelData:GetCharacterLevel(self.nCharacterId)
+	if level == nil then
+		return
+	end
 	local config = ConfigTable.GetData("TowerDefenseCharacter", self.nCharacterId)
 	if config == nil then
 		return
@@ -131,7 +134,7 @@ function TowerDefenseCharacterFuncCtrl:ShowIcon(characterId)
 	EventManager.Hit("TowerDefenseFuncShow", true, self.nCharacterId)
 end
 function TowerDefenseCharacterFuncCtrl:UpdateFunc(characterId, go)
-	local level = self.TowerDefenseData.TowerDefenseLevelData:GetCharacterLevel(characterId)
+	local level = self.TowerDefenseLevelData:GetCharacterLevel(characterId)
 	local config = ConfigTable.GetData("TowerDefenseCharacter", characterId)
 	if config == nil then
 		return

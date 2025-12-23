@@ -132,6 +132,11 @@ StoryEntranceCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtn_ClickHome"
 	},
+	txtActivityLock = {
+		sNodeName = "txtActivityLock",
+		sComponentName = "TMP_Text",
+		sLanguageId = "StoryEntrance_Activity_Lock"
+	},
 	redDotNovaStory = {},
 	redDotMainline = {}
 }
@@ -168,8 +173,13 @@ function StoryEntranceCtrl:RefreshMainlineQuickEntranceState()
 	local storConfig = ConfigTable.GetData_Story(curStoryId)
 	if storConfig.IsLast == true and AvgData:IsStoryReaded(curStoryId) == true then
 		curChapter = curChapter + 1
-		if ConfigTable.GetData("StoryChapter", curChapter, "") ~= nil then
-			curStoryId = AvgData:GetRecentStoryId(curChapter)
+		local nextChapterConfig = ConfigTable.GetData("StoryChapter", curChapter, "")
+		if nextChapterConfig ~= nil then
+			if AvgData:IsStoryChapterShow(curChapter) == true then
+				curStoryId = AvgData:GetRecentStoryId(curChapter)
+			else
+				curChapter = curChapter - 1
+			end
 		else
 			curChapter = curChapter - 1
 		end

@@ -1,7 +1,8 @@
 local JointDrillBuildListPanel = class("JointDrillBuildListPanel", BasePanel)
+JointDrillBuildListPanel._sUIResRootPath = "UI_Activity/"
 JointDrillBuildListPanel._tbDefine = {
 	{
-		sPrefabPath = "Play_JointDrill/JointDrillBuildList.prefab",
+		sPrefabPath = "_510001/JointDrillBuildList.prefab",
 		sCtrlName = "Game.UI.JointDrill.JointDrillBuildListCtrl"
 	}
 }

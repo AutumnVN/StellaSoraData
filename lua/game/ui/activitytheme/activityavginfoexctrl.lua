@@ -67,28 +67,38 @@ function ActivityAvgInfoExCtrl:OnDestroy()
 end
 function ActivityAvgInfoExCtrl:OnRelease()
 end
-function ActivityAvgInfoExCtrl:OpenLevelInfo(avgId, actId)
+function ActivityAvgInfoExCtrl:OpenLevelInfo(avgId, actId, bNewestStory)
 	self.avgId = avgId
 	self.actId = actId
-	local mapActivityAvg = ConfigTable.GetData("ActivityAvgLevel", avgId)
+	self.bNewestStory = bNewestStory
+	local mapActivityAvg = AvgData:GetStoryCfgData(avgId)
 	if mapActivityAvg == nil then
 		printError("nil mainlineData" .. avgId)
 		return
 	end
-	NovaAPI.SetTMPText(self._mapNode.mainLineAvgLvNum, mapActivityAvg.Index)
-	NovaAPI.SetTMPText(self._mapNode.mainLineAvgLvName, mapActivityAvg.Name)
-	NovaAPI.SetTMPText(self._mapNode.mainLineAvgLvDes, mapActivityAvg.Desc)
-	self._mapNode.goAvgRoot:SetActive(true)
-	self._mapNode.goBattleRoot:SetActive(false)
-	self._mapNode.txtClueNotice:SetActive(false)
-	self._mapNode.imgClueNotice:SetActive(false)
+	self.IsBattle = mapActivityAvg.IsBattle
+	if self.IsBattle then
+		NovaAPI.SetTMPText(self._mapNode.mainLineBattleLvNum, mapActivityAvg.Index)
+		NovaAPI.SetTMPText(self._mapNode.mainLineBattleLvName, mapActivityAvg.Title)
+		NovaAPI.SetTMPText(self._mapNode.txtBattleStoryDesc, mapActivityAvg.Desc)
+	else
+		NovaAPI.SetTMPText(self._mapNode.mainLineAvgLvNum, mapActivityAvg.Index)
+		NovaAPI.SetTMPText(self._mapNode.mainLineAvgLvName, mapActivityAvg.Title)
+		NovaAPI.SetTMPText(self._mapNode.mainLineAvgLvDes, mapActivityAvg.Desc)
+	end
+	self._mapNode.goAvgRoot:SetActive(not mapActivityAvg.IsBattle)
+	self._mapNode.goBattleRoot:SetActive(mapActivityAvg.IsBattle)
+	self._mapNode.txtClueNotice:SetActive(mapActivityAvg.HasEvidence)
+	self._mapNode.imgClueNotice:SetActive(mapActivityAvg.HasEvidence)
 	self._mapNode.goRewardInfo:SetActive(false)
-	if not AvgData:IsActivityAvgReaded(self.actId, mapActivityAvg.Id) then
-		local tbReward = decodeJson(mapActivityAvg.FirstCompleteRewardPreview)
-		if 0 < #tbReward then
+	if not AvgData:IsStoryReaded(mapActivityAvg.Id) then
+		local tbReward = decodeJson(mapActivityAvg.FirstCompleteReward)
+		if tbReward ~= nil then
 			self._mapNode.goRewardInfo:SetActive(true)
-			self:SetPngSprite(self._mapNode.imgReward, ConfigTable.GetData_Item(tbReward[1][1]).Icon)
-			NovaAPI.SetTMPText(self._mapNode.txtRewardCount, "\195\151" .. tbReward[1][2])
+			for index, value in pairs(tbReward) do
+				self:SetPngSprite(self._mapNode.imgReward, ConfigTable.GetData_Item(tonumber(index)).Icon)
+				NovaAPI.SetTMPText(self._mapNode.txtRewardCount, "\195\151" .. value)
+			end
 		end
 	end
 	self._mapNode.animator:Play("t_window_04_t_in")
@@ -99,10 +109,15 @@ function ActivityAvgInfoExCtrl:OnBtnClick_Close()
 	EventManager.Hit("CloseActivityAvgInfo", false)
 end
 function ActivityAvgInfoExCtrl:OnBtnClick_MonsterInfo(btn)
+	EventManager.Hit("OpenActivityStoryMonsterInfo", self.avgId)
 end
 function ActivityAvgInfoExCtrl:OnBtnClick_OpenAvg(btn)
 	self.gameObject:SetActive(false)
-	EventManager.Hit("SelectMainlineBattle", false)
-	AvgData:EnterAvg(self.avgId, self.actId)
+	if not self.IsBattle then
+		EventManager.Hit("SelectMainlineBattle", false)
+		AvgData:SendMsg_STORY_ENTER(self.actId, self.avgId, 0, self.bNewestStory)
+	else
+		EventManager.Hit("SelectMainlineBattle", true)
+	end
 end
 return ActivityAvgInfoExCtrl

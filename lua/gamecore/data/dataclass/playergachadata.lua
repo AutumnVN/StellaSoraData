@@ -270,7 +270,74 @@ function PlayerGachaData:GetGachaHistory(nSaveId, callback)
 	HttpNetHandler.SendMsg(NetMsgId.Id.gacha_histories_req, {Value = nSaveId}, nil, GetHistoryCallback)
 end
 function PlayerGachaData:SendGachaReq(nId, nMode, callback)
+	local mapMsgData = {Id = nId, Mode = nMode}
+	local tbCheck = {}
+	local mapGacha = ConfigTable.GetData("Gacha", nId)
+	local mapGachaStorage = ConfigTable.GetData("GachaStorage", mapGacha.StorageId)
+	local rapidjson = require("rapidjson")
+	if mapGacha.SpecificTid > 0 then
+		local nCurCount = PlayerData.Item:GetItemCountByID(mapGacha.SpecificTid)
+		table.insert(tbCheck, {
+			Tid = mapGacha.SpecificTid,
+			Qty = nCurCount
+		})
+	end
+	if nMode == 2 then
+		if type(mapGachaStorage.TenTimesPreferred) == "string" then
+			local tbTen = rapidjson.decode(mapGachaStorage.TenTimesPreferred)
+			if tbTen ~= nil then
+				mapGachaStorage.TenTimesPreferred = tbTen
+			else
+				mapGachaStorage.TenTimesPreferred = {}
+			end
+		end
+		if 0 < #mapGachaStorage.TenTimesPreferred then
+			for nIdx, mapCost in ipairs(mapGachaStorage.TenTimesPreferred) do
+				local f = pairs(mapCost)
+				local sTid, nCount = f(mapCost)
+				local nTid = tonumber(sTid)
+				local nCurCount = PlayerData.Item:GetItemCountByID(nTid)
+				table.insert(tbCheck, {Tid = nTid, Qty = nCurCount})
+			end
+		end
+	else
+		if type(mapGachaStorage.OncePreferred) == "string" then
+			local tbTen = rapidjson.decode(mapGachaStorage.OncePreferred)
+			if tbTen ~= nil then
+				mapGachaStorage.OncePreferred = tbTen
+			else
+				mapGachaStorage.OncePreferred = {}
+			end
+		end
+		if 0 < #mapGachaStorage.OncePreferred then
+			for nIdx, mapCost in ipairs(mapGachaStorage.OncePreferred) do
+				local f = pairs(mapCost)
+				local sTid, nCount = f(mapCost)
+				local nTid = tonumber(sTid)
+				local nCurCount = PlayerData.Item:GetItemCountByID(nTid)
+				table.insert(tbCheck, {Tid = nTid, Qty = nCurCount})
+			end
+		end
+	end
+	mapMsgData.Check = tbCheck
 	local GachaCallback = function(_, mapData)
+		if mapData.DaysCount == nil then
+			EventManager.Hit("GachaProcessStart", false)
+			for _, mapItemTpl in ipairs(tbCheck) do
+				EventManager.Hit(EventId.CoinResChange, mapItemTpl.Tid, mapItemTpl.Qty)
+			end
+			local wait = function()
+				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+				EventManager.Hit(EventId.OpenMessageBox, {
+					nType = AllEnum.MessageBox.Alert,
+					sContent = ConfigTable.GetUIText("Gacha_sync_ack"),
+					callbackConfirm = function()
+					end
+				})
+			end
+			cs_coroutine.start(wait)
+			return
+		end
 		self:GachaCountChanged(nId, mapData.DaysCount)
 		self:AupMissTimesCountChanged(nId, mapData.AupMissTimes)
 		self:AMissTimesCountChanged(nId, mapData.AMissTimes)
@@ -306,7 +373,6 @@ function PlayerGachaData:SendGachaReq(nId, nMode, callback)
 			end
 		end
 	end
-	local mapMsgData = {Id = nId, Mode = nMode}
 	EventManager.Hit("GachaProcessStart", true)
 	HttpNetHandler.SendMsg(NetMsgId.Id.gacha_spin_req, mapMsgData, nil, GachaCallback)
 end

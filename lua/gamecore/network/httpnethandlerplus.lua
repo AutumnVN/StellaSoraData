@@ -55,9 +55,6 @@ function HttpNetHandlerPlus.gacha_guarantee_reward_receive_succeed_ack(mapMsgDat
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
-function HttpNetHandlerPlus.vampire_survivor_talent_node_notify(mapData)
-	PlayerData.VampireSurvivor:CacheTalentData(mapData)
-end
 function HttpNetHandlerPlus.gacha_newbie_obtain_succeed_ack(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
@@ -68,6 +65,10 @@ function HttpNetHandlerPlus.gacha_newbie_spin_failed_ack(mapMsgData)
 end
 function HttpNetHandlerPlus.gacha_spin_failed_ack(mapMsgData)
 	EventManager.Hit("GachaProcessStart", false)
+end
+function HttpNetHandlerPlus.gacha_spin_sync_ack(mapMsgData)
+	PlayerData.Coin:CacheCoin(mapMsgData.Res)
+	PlayerData.Item:CacheItemData(mapMsgData.Items)
 end
 function HttpNetHandlerPlus.activity_story_reward_receive_succeed_ack(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
@@ -114,6 +115,9 @@ end
 function HttpNetHandlerPlus.vampire_survivor_new_season_notify(mapMsgData)
 	PlayerData.VampireSurvivor:OnNotifyRefresh(mapMsgData.Value)
 end
+function HttpNetHandlerPlus.vampire_survivor_talent_node_notify(mapData)
+	PlayerData.VampireSurvivor:CacheTalentData(mapData)
+end
 function HttpNetHandlerPlus.battle_pass_common_fail(mapMsgData)
 	EventManager.Hit("BattlePassNeedRefresh")
 end
@@ -146,9 +150,54 @@ end
 function HttpNetHandlerPlus.item_expired_change_notify(mapMsgData)
 	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Item_Change_Expired_Tips"))
 end
+function HttpNetHandlerPlus.quest_assist_reward_receive_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
+function HttpNetHandlerPlus.quest_assist_group_reward_receive_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
+function HttpNetHandlerPlus.assist_add_build_notify(mapMsgData)
+	if mapMsgData.BuildInfo ~= nil then
+		if mapMsgData.BuildInfo.Brief ~= nil then
+			PlayerData.Build:CacheRogueBuild(mapMsgData.BuildInfo)
+		elseif mapMsgData.BuildInfo.BuildCoin ~= nil and mapMsgData.BuildInfo.BuildCoin > 0 then
+			local checkLimitCb = function()
+				local nLimit = PlayerData.StarTower:GetStarTowerRewardLimit()
+				local nCur = PlayerData.StarTower:GetStarTowerTicket()
+				if nLimit < mapMsgData.BuildInfo.BuildCoin + nCur then
+					local sTip = ConfigTable.GetUIText("BUILD_12")
+					EventManager.Hit(EventId.OpenMessageBox, sTip)
+				end
+			end
+			PlayerData.StarTower:SendTowerGrowthDetailReq(checkLimitCb)
+		end
+	end
+	if mapMsgData.Change ~= nil then
+		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
+		if mapDecodedChangeInfo["proto.Res"] ~= nil then
+			for _, mapCoin in ipairs(mapDecodedChangeInfo["proto.Res"]) do
+				if mapCoin.Tid == AllEnum.CoinItemId.FRRewardCurrency then
+					PlayerData.StarTower:AddStarTowerTicket(mapCoin.Qty)
+				end
+			end
+		end
+		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+		UTILS.OpenReceiveByDisplayItem(mapDecodedChangeInfo["proto.Res"], mapMsgData.Change)
+	end
+end
+function HttpNetHandlerPlus.activity_trekker_versus_reward_receive_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
 function HttpNetHandlerPlus.player_destroy_succeed_ack(mapMsgData)
 	if mapMsgData.NotifyUrl ~= nil then
 		PlayerData.Base:SetDestoryUrl(mapMsgData.NotifyUrl)
 	end
+end
+function HttpNetHandlerPlus.activity_story_settle_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 return HttpNetHandlerPlus

@@ -38,6 +38,18 @@ GameTableDefine.CommonTable = {
 		Lang = {"Name"}
 	},
 	ActivityShopControl = {Key = true},
+	ActivityStory = {
+		Key = true,
+		Lang = {
+			"Index",
+			"Title",
+			"Desc",
+			"Aim"
+		}
+	},
+	ActivityStoryChapter = {Key = true},
+	ActivityStoryCondition = {Key = true},
+	ActivityStoryEvidence = {Key = true},
 	ActivityTask = {
 		Key = true,
 		Lang = {"Title", "Desc"}
@@ -84,8 +96,24 @@ GameTableDefine.CommonTable = {
 	},
 	AI = {Key = true},
 	AreaEffect = {},
+	AssistAttribute = {
+		Key = true,
+		Lang = {
+			"Desc",
+			"CharDesc1",
+			"CharDesc2",
+			"CharDesc3",
+			"TeamTitle"
+		}
+	},
+	AssistQuest = {
+		Key = true,
+		Lang = {"Title"}
+	},
+	AssistQuestGroup = {Key = true},
 	Attribute = {Key = true},
 	AttributeLimit = {Key = true},
+	AttributeSetLimit = {Key = true},
 	Banner = {Key = true},
 	BattlePass = {},
 	BattlePassLevel = {},
@@ -757,10 +785,7 @@ GameTableDefine.CommonTable = {
 	ScoreBossFloor = {Key = true},
 	ScoreBossGetControl = {
 		Key = true,
-		Lang = {
-			"Name",
-			"BehaviorDes"
-		}
+		Lang = {"Name", "Desc"}
 	},
 	ScoreBossLevel = {Key = true},
 	ScoreBossRank = {Key = true},
@@ -826,6 +851,7 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Desc"}
 	},
+	StarTowerBuild = {Key = true},
 	StarTowerBuildRank = {Key = true},
 	StarTowerCombatEvent = {Key = true},
 	StarTowerCombo = {Key = true},
@@ -1027,19 +1053,13 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Name", "Desc"}
 	},
+	TravelerDuelChallengeControl = {Key = true},
 	TravelerDuelChallengeDifficulty = {Key = true},
 	TravelerDuelChallengeQuest = {
 		Key = true,
-		Lang = {"Title", "Desc"}
+		Lang = {"Title"}
 	},
-	TravelerDuelChallengeRankReward = {Key = true},
-	TravelerDuelChallengeSeason = {Key = true},
 	TravelerDuelFloor = {Key = true},
-	TravelerDuelLevel = {Key = true},
-	TravelerDuelQuest = {
-		Key = true,
-		Lang = {"Title", "Desc"}
-	},
 	TrialBuild = {
 		Key = true,
 		Lang = {"Name"}
@@ -1105,6 +1125,11 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Name"}
 	},
+	WeeklyQuest = {
+		Key = true,
+		Lang = {"Title", "Desc"}
+	},
+	WeeklyQuestActive = {Key = true},
 	WeightParameter = {},
 	Word = {
 		Key = true,

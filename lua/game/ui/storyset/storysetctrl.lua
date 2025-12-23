@@ -60,8 +60,41 @@ function StorySetCtrl:RefreshChapter()
 					end
 				end
 			end
+			if 1 < nNewIndex then
+				do
+					local wait = function()
+						coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+						self._mapNode.chapterLsv:SetScrollGridPos(nNewIndex - 1, 0.5, 0)
+					end
+					cs_coroutine.start(wait)
+				end
+			end
+		else
+			local nRecentChapterId = PlayerData.StorySet:GetRecentChapterId()
+			local nNewIndex = 0
+			for k, v in ipairs(self.tbChapter) do
+				if v ~= nil and v.bUnlock then
+					local nChapterId = v.nId
+					local mapCfg = ConfigTable.GetData("StorySetChapter", nChapterId)
+					if mapCfg ~= nil and mapCfg.Id == nRecentChapterId then
+						nNewIndex = k
+					end
+				end
+			end
 			if 0 < nNewIndex then
-				self._mapNode.chapterLsv:SetScrollGridPos(nNewIndex - 1, 0.5, 0)
+				local wait = function()
+					coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+					self._mapNode.chapterLsv:SetScrollGridPos(nNewIndex - 1, 0)
+				end
+				cs_coroutine.start(wait)
+			else
+				do
+					local wait = function()
+						coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+						self._mapNode.chapterLsv:SetScrollGridPos(#self.tbChapter, 0)
+					end
+					cs_coroutine.start(wait)
+				end
 			end
 		end
 	end

@@ -97,7 +97,7 @@ function TutorialPotentialCardItemCtrl:SetNormalCard(itemCfg, potentialCfg, bSho
 	if bShowChar then
 		local nCharSkinId = PlayerData.Char:GetCharSkinId(nCharId)
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-		self:SetPngSprite(self._mapNode.imgCharIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgCharIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtName, itemCfg.Title)
 	local nColor = AllEnum.FrameColor_New[itemCfg.Rarity]
@@ -129,7 +129,7 @@ function TutorialPotentialCardItemCtrl:SetSpecialCard(itemCfg, potentialCfg, bSh
 	if bShowChar then
 		local nCharSkinId = PlayerData.Char:GetCharSkinId(nCharId)
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-		self:SetPngSprite(self._mapNode.imgCharSpIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgCharSpIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtSpName, itemCfg.Title)
 	self:SetPngSprite(self._mapNode.imgSpIcon, itemCfg.Icon .. AllEnum.PotentialIconSurfix.A)

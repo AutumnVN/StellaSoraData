@@ -19,7 +19,7 @@ function DatingCharItemCtrl:SetDatingCharItem(nCharId)
 		local nSkinId = mapCharacter.DefaultSkinId
 		local mapSkin = ConfigTable.GetData_CharacterSkin(nSkinId)
 		if mapSkin ~= nil then
-			self:SetPngSprite(self._mapNode.imgHeadIcon, mapSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+			self:SetPngSprite(self._mapNode.imgHeadIcon, mapSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 		end
 		NovaAPI.SetTMPText(self._mapNode.txtCharName[1], mapCharacter.Name)
 		NovaAPI.SetTMPText(self._mapNode.txtCharName[2], mapCharacter.Name)

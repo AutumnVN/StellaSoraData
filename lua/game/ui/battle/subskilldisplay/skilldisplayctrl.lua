@@ -48,7 +48,7 @@ function SkillDisplayCtrl:ShowSkillTips(nSkillId, nCharId, callback)
 	end
 	local nSkinId = PlayerData.Char:GetCharSkinId(nCharId)
 	local mapSkin = ConfigTable.GetData_CharacterSkin(nSkinId)
-	self:SetPngSprite(self._mapNode.imgSubSkillIcon, mapSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+	self:SetPngSprite(self._mapNode.imgSubSkillIcon, mapSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 	self.ShowEndCallback = callback
 	self.gameObject:SetActive(true)
 	self.timer = self:AddTimer(1, 1.5, "ShowEnd", true, true, true, true)

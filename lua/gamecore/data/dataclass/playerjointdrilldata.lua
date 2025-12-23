@@ -10,6 +10,7 @@ function PlayerJointDrillData:Init()
 	self.nActStatus = 0
 	self.tbPassedLevels = {}
 	self.bInBattle = false
+	self.bResetLevelSelect = false
 	self.curLevel = nil
 	self.nCurLevelId = 0
 	self.nCurLevel = 1
@@ -490,7 +491,7 @@ function PlayerJointDrillData:JointDrillGameOver(callback, bSettle)
 			self.nTotalScore = self.nTotalScore + netMsg.FightScore + netMsg.HpScore + netMsg.DifficultyScore
 		end
 		EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillBuildList)
-		EventManager.Hit("RefreshJointDrillLevel")
+		self.bResetLevelSelect = true
 		if callback ~= nil then
 			callback(netMsg)
 		end
@@ -545,11 +546,12 @@ function PlayerJointDrillData:JointDrillGiveUp(nFloor, nTime, nDamage, nBossHp, 
 	}
 	HttpNetHandler.SendMsg(NetMsgId.Id.joint_drill_give_up_req, msg, nil, NetCallback)
 end
-function PlayerJointDrillData:JointDrillRetreat(mapBuild, callback)
+function PlayerJointDrillData:JointDrillRetreat(mapBuild, nBossHp, callback)
 	self:SetRecorderExcludeIds(true)
 	self:StopRecord()
 	local NetCallback = function(_, netMsg)
 		self:RemoveJointDrillTeam(mapBuild)
+		self.mapBossInfo.nHp = nBossHp
 		if callback ~= nil then
 			callback()
 		end
@@ -572,6 +574,7 @@ function PlayerJointDrillData:JointDrillSettle(mapBuild, nTime, nDamage, callbac
 			})
 		end
 		EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillBuildList)
+		self.bResetLevelSelect = true
 		if callback ~= nil then
 			callback(netMsg)
 		end
@@ -580,8 +583,8 @@ function PlayerJointDrillData:JointDrillSettle(mapBuild, nTime, nDamage, callbac
 		end
 		self:EventUpload(4, 1)
 	end
-	local tbSamples = UTILS.GetBattleSamples()
 	local sKey = LocalData.GetPlayerLocalData("JointDrillRecordKey") or ""
+	local tbSamples = UTILS.GetBattleSamples(sKey)
 	local bSuccess, nCheckSum = NovaAPI.GetRecorderKey(sKey)
 	local tbSendSample = {Sample = tbSamples, Checksum = nCheckSum}
 	local msg = {
@@ -673,7 +676,6 @@ function PlayerJointDrillData:CheckChallengeCount()
 			if #self.tbTeams < mapLevelCfg.MaxBattleNum then
 				return true
 			else
-				EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillBuildList)
 				self:JointDrillGameOver()
 				return false
 			end
@@ -819,6 +821,12 @@ function PlayerJointDrillData:CheckActChallengeTime()
 end
 function PlayerJointDrillData:GetActStatus()
 	return self.nActStatus
+end
+function PlayerJointDrillData:SetResetLevelSelect(bReset)
+	self.bResetLevelSelect = bReset
+end
+function PlayerJointDrillData:GetResetLevelSelect()
+	return self.bResetLevelSelect
 end
 function PlayerJointDrillData:SendJointDrillRankMsg()
 	local NetCallback = function(_, netMsg)

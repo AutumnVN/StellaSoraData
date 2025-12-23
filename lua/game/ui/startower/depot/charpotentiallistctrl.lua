@@ -25,7 +25,7 @@ function CharPotentialListCtrl:RefreshPotential(nCharId, mapPotential, bShowAll,
 		NovaAPI.SetTMPText(self._mapNode.txtCharName, charCfg.Name)
 		local nSkinId = PlayerData.Char:GetCharUsedSkinId(nCharId)
 		local skinCfg = ConfigTable.GetData_CharacterSkin(nSkinId)
-		self:SetPngSprite(self._mapNode.imgHead, skinCfg.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+		self:SetPngSprite(self._mapNode.imgHead, skinCfg.Icon, AllEnum.CharHeadIconSurfix.XXL)
 		local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[charCfg.Grade]
 		self:SetAtlasSprite(self._mapNode.imgHeadFrame, "12_rare", sFrame)
 	end

@@ -82,22 +82,17 @@ local tbShowCoinAdd = {
 	[CoinItemId.FREESTONE] = true
 }
 local mapConfig = {
-	[PanelId.ShopPopupPanel] = {bDelayShow = true},
 	[PanelId.RoguelikeLevel] = {bEvent = true},
 	[PanelId.MainlineFormation] = {bEvent = true},
 	[PanelId.MainlineFormationDisc] = {bEvent = true},
 	[PanelId.RegionBossFormation] = {bEvent = true},
 	[PanelId.RogueBossBuildBrief] = {bEvent = true},
 	[PanelId.RogueBossLevel] = {bEvent = true},
-	[PanelId.MallPopup] = {bDelayShow = true},
-	[PanelId.TravelerDuelLevelSelect] = {bEvent = true},
-	[PanelId.ExChangePanel] = {bDelayShow = true},
-	[PanelId.Raid] = {bDelayShow = true},
-	[PanelId.EnergyBuy] = {bDelayShow = true},
-	[PanelId.DictionaryFR] = {bEvent = true, bHideHome = true},
+	[PanelId.TrekkerVersus] = {bEvent = true},
+	[PanelId.DictionaryFR] = {bEvent = true},
 	[PanelId.Dictionary] = {bEvent = true},
 	[PanelId.Quest] = {bEvent = true},
-	[PanelId.DiscSample] = {bEvent = true, bHideHome = true},
+	[PanelId.DiscSample] = {bEvent = true},
 	[PanelId.ChooseHomePageRolePanel] = {bEvent = true},
 	[PanelId.ChooseHomePageSkinPanel] = {bEvent = true},
 	[PanelId.CharacterSkinPanel] = {bEvent = true},
@@ -116,21 +111,12 @@ local mapConfig = {
 	[PanelId.ScoreBossSelectPanel] = {bEvent = true},
 	[PanelId.SkillInstanceLevelSelect] = {bEvent = true},
 	[PanelId.TrialFormation] = {bEvent = true},
-	[PanelId.TrialDepot] = {bEvent = true, bHideHome = true},
+	[PanelId.TrialDepot] = {bEvent = true},
 	[PanelId.JointDrillLevelSelect] = {bEvent = true},
-	[PanelId.SwimShopPopup] = {bDelayShow = true},
-	[PanelId.ShopPopup_10101] = {bDelayShow = true},
-	[PanelId.ShopPopup_10102] = {bDelayShow = true},
-	[PanelId.TowerDefenseCharacterDetailPanel] = {bEvent = true, bHideHome = true},
+	[PanelId.TowerDefenseCharacterDetailPanel] = {bEvent = true},
 	[PanelId.MallSkinPreview] = {bEvent = true},
 	[PanelId.StorySet] = {bEvent = true},
-	[PanelId.CharBgTrialPanel] = {bHideHome = true},
-	[PanelId.CharInfoTrial] = {bHideHome = true},
-	[PanelId.CharSkillTrial] = {bHideHome = true},
-	[PanelId.CharPotentialTrial] = {bHideHome = true},
-	[PanelId.CharTalentTrial] = {bHideHome = true},
-	[PanelId.BdConvertPanel] = {bEvent = true},
-	[PanelId.BdConvertBuildPanel] = {bEvent = true}
+	[PanelId.BdConvertPanel] = {bEvent = true}
 }
 function TopBarCtrl:CreateCoin(tbCoin, bHideCoinAdd)
 	self.mapCoinIndex, self.mapItemIndex = nil, nil
@@ -248,7 +234,7 @@ function TopBarCtrl:InitTopBar(nPanelId)
 		self.gameObject:SetActive(false)
 		return
 	end
-	if mapCfg.bDelayShow == true then
+	if mapTopBar.DelayShow == true then
 		self.bDelayShow = true
 		self.gameObject:SetActive(false)
 		local wait = function()
@@ -266,7 +252,7 @@ function TopBarCtrl:InitTopBar(nPanelId)
 	end
 	self._mapNode.btnBack.gameObject:SetActive(not bHideBackBtn)
 	self._mapNode.cgBack.gameObject:SetActive(not bHideBackBtn)
-	self._mapNode.btnHome.gameObject:SetActive(not mapCfg.bHideHome)
+	self._mapNode.btnHome.gameObject:SetActive(not mapTopBar.HideHome)
 	if type(mapCfg.bEvent) == "boolean" then
 		self.bEvent = mapCfg.bEvent
 	else

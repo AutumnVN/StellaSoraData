@@ -413,6 +413,24 @@ local CreatePlayerInfoTips = function()
 	objPlayerInfoPanel:_PreEnter()
 	objPlayerInfoPanel:_Enter()
 end
+local ResetTouchEffect = function()
+	local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
+	local ResType = GameResourceLoader.ResType
+	local objMain, objSlide
+	local sPathFormat = Settings.AB_ROOT_PATH .. "UI/CommonEx/TouchEffect/%s.prefab"
+	local sValue_Main = ConfigTable.GetConfigValue("TouchEffect_Main")
+	if type(sValue_Main) == "string" and sValue_Main ~= "" then
+		objMain = GameResourceLoader.LoadAsset(ResType.Any, string.format(sPathFormat, sValue_Main), typeof(GameObject), "UI")
+	end
+	local sValue_Slide = ConfigTable.GetConfigValue("TouchEffect_Slide")
+	if type(sValue_Slide) == "string" and sValue_Main ~= "" then
+		objSlide = GameResourceLoader.LoadAsset(ResType.Any, string.format(sPathFormat, sValue_Slide), typeof(GameObject), "UI")
+	end
+	if objMain ~= nil or objSlide ~= nil then
+		local trNode = mapUIRootTransform[AllEnum.SortingLayerName.Overlay]
+		NovaAPI.ResetTouchEffect(trNode:Find("TouchEffectUI/fxContainer"), objMain, objSlide)
+	end
+end
 function PanelManager.Init()
 	local goUIRoot = GameObject.Find("==== UI ROOT ====")
 	if goUIRoot ~= nil then
@@ -448,6 +466,7 @@ function PanelManager.Init()
 	local goLaunchUI = GameObject.Find("==== Builtin UI ====/LaunchUI")
 	NovaAPI.CloseLaunchLoading(goLaunchUI)
 	CreatePlayerInfoTips()
+	ResetTouchEffect()
 end
 function PanelManager.GetUIRoot(sSortingLayerName)
 	if sSortingLayerName == nil then

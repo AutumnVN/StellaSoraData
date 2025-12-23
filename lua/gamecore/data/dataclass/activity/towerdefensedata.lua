@@ -18,6 +18,7 @@ function TowerDefenseData:InitData()
 	self.cacheEnterLevelList = {}
 	self.TowerDefenseLevelData = TowerDefenseLevelData.new()
 	self.TempLevelTeamData = {}
+	self.tempData = nil
 end
 function TowerDefenseData:UpdateStatus()
 	for _, levelData in pairs(self.allLevelData) do
@@ -537,6 +538,8 @@ function TowerDefenseData:RequestFinishLevel(levelId, bResult, nHp, cb)
 		end)
 		return
 	end
+	self:CreateTempData(levelId, bResult)
+	EventManager.Hit(EventId.ClosePanel, PanelId.TowerDefenseLevelDetailPanel)
 	local nStar = 1
 	local config = ConfigTable.GetData("TowerDefenseLevel", levelId)
 	if nHp > config.Condition2 then
@@ -567,6 +570,48 @@ function TowerDefenseData:RequestFinishLevel(levelId, bResult, nHp, cb)
 		end
 		self:EventUpload(result)
 	end)
+end
+function TowerDefenseData:SkipLevel(levelId, characterList, itemId, cb)
+	local mapMsg = {
+		Level = levelId,
+		Characters = characterList,
+		ItemId = itemId
+	}
+	local callback = function()
+		self:CreateTempData(levelId, true)
+		local mapMsg = {LevelId = levelId, Star = 3}
+		HttpNetHandler.SendMsg(NetMsgId.Id.activity_tower_defense_level_settle_req, mapMsg, nil, function(_, mapMsgData)
+			self:UpdateLevelData({Id = levelId, Star = 3})
+			local mapReward = PlayerData.Item:ProcessRewardChangeInfo(mapMsgData)
+			local tbItem = {}
+			for _, v in ipairs(mapReward.tbReward) do
+				local item = {
+					Tid = v.id,
+					Qty = v.count,
+					rewardType = AllEnum.RewardType.First
+				}
+				table.insert(tbItem, item)
+			end
+			UTILS.OpenReceiveByDisplayItem(tbItem, mapMsgData)
+			if cb ~= nil then
+				cb()
+			end
+		end)
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.activity_tower_defense_level_apply_req, mapMsg, nil, callback)
+	self.TempLevelTeamData[levelId] = {
+		charList = clone(characterList),
+		itemId = itemId
+	}
+end
+function TowerDefenseData:CreateTempData(nLevelId, bResult)
+	self.tempData = {nLevelId = nLevelId, bResult = bResult}
+end
+function TowerDefenseData:GetTempData()
+	return self.tempData
+end
+function TowerDefenseData:ClearTempData()
+	self.tempData = nil
 end
 function TowerDefenseData:EventUpload(result)
 	local tabUpLevel = {}

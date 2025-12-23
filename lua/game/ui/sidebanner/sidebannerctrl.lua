@@ -142,7 +142,7 @@ function SideBannerCtrl:CreateFavour(mapData)
 	local nSkinId = PlayerData.Char:GetCharSkinId(mapData.nId)
 	local mapCfgData_Skin = ConfigTable.GetData_CharacterSkin(nSkinId)
 	if mapCfgData_Skin then
-		self:SetPngSprite(imgHead, mapCfgData_Skin.Icon .. AllEnum.CharHeadIconSurfix.L)
+		self:SetPngSprite(imgHead, mapCfgData_Skin.Icon, AllEnum.CharHeadIconSurfix.L)
 	end
 	local mapFavour = PlayerData.Char:GetCharAffinityData(mapData.nId)
 	local level = 0

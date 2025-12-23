@@ -75,7 +75,7 @@ function GuideGroup_7:Step_2()
 	self.parent:ActiveHide(true)
 	current = 2
 	self.openPanelId = PanelId.LevelMenu
-	self.waitAnimTime = 0.2
+	self.waitAnimTime = 0.5
 end
 function GuideGroup_7:Step_3()
 	self.msg = {

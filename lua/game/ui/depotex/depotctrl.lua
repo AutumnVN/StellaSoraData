@@ -92,7 +92,7 @@ end
 function DepotCtrl:SetSelectData()
 	if self.mapSelect then
 		for i, mapData in pairs(self.tbItem) do
-			if mapData.nId == self.mapSelect.nId then
+			if mapData.nId == self.mapSelect.nId and mapData.nExpire == self.mapSelect.nExpire then
 				self.mapSelect = mapData
 				self.nSelectIndex = i
 				return

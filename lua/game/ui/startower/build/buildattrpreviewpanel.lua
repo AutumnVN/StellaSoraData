@@ -1,5 +1,6 @@
 local BuildAttrPreviewPanel = class("BuildAttrPreviewPanel", BasePanel)
 BuildAttrPreviewPanel._bIsMainPanel = false
+BuildAttrPreviewPanel._sSortingLayerName = AllEnum.SortingLayerName.UI_Top
 BuildAttrPreviewPanel._tbDefine = {
 	{
 		sPrefabPath = "StarTowerBuild/BuildAttrPreviewPanel.prefab",

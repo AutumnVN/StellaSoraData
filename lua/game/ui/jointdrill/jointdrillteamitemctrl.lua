@@ -45,7 +45,7 @@ function JointDrillTeamItemCtrl:RefreshItem(mapTeam, nIndex)
 			NovaAPI.SetTMPText(self._mapNode.txtRank[i], mapTeam.Chars[i].Level)
 			local nCharSkinId = mapChar.DefaultSkinId
 			local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-			self:SetPngSprite(self._mapNode.imgItemIcon[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+			self:SetPngSprite(self._mapNode.imgItemIcon[i], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 			local nRarity = mapChar.Grade
 			local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[nRarity]
 			self:SetAtlasSprite(self._mapNode.imgItemRare[i], "12_rare", sFrame, true)

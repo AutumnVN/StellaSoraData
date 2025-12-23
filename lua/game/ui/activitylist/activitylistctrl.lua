@@ -49,10 +49,12 @@ function ActivityListCtrl:InitActivityList(nCurActId)
 		self.tbGridCtrl[nInstanceId] = nil
 	end
 	for k, v in pairs(tbActList) do
-		table.insert(self.tbActList, {
-			nType = AllEnum.ActivityMainType.Activity,
-			actData = v
-		})
+		if not v.actCfg.HideFromActivityList then
+			table.insert(self.tbActList, {
+				nType = AllEnum.ActivityMainType.Activity,
+				actData = v
+			})
+		end
 	end
 	for k, v in pairs(tbActGroupList) do
 		table.insert(self.tbActList, {
@@ -147,6 +149,11 @@ function ActivityListCtrl:OnGridBtnClick(goGrid, gridIndex)
 	self.nSelectIndex = nIndex
 	self.tbGridCtrl[nInstanceID]:SetSelect(true)
 	self:RefreshSelectActivity(true)
+	if self.tbActList[nIndex].nType == AllEnum.ActivityMainType.Activity then
+		EventManager.Hit("ActivityListChangeTab", actData:GetActId())
+	else
+		EventManager.Hit("ActivityListChangeTab", actData:GetActGroupId())
+	end
 end
 function ActivityListCtrl:AddPeriodicActivityCtrl(actData, bResetDay)
 	local actCtrl = self.tbActCtrlObj[actData:GetActId()]
@@ -334,7 +341,7 @@ function ActivityListCtrl:AddBdConvertActivityCtrl(actData)
 		if sFolder == nil then
 			return
 		end
-		local sPrefabPath = string.format(sEntranceFolder_old, sFolder, BdConvertActCfg.UIAssets)
+		local sPrefabPath = string.format(sEntranceFolder, BdConvertActCfg.UIAssets)
 		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.rtContent)
 		local sCtrlPath = string.format("Game.UI.Activity.%s.%s", "BdConvert", BdConvertActCfg.CtrlName)
 		actCtrl = self:BindCtrlByNode(goObj, sCtrlPath)
@@ -409,7 +416,9 @@ end
 function ActivityListCtrl:OnDisable()
 	self.tbActList = {}
 	for _, v in pairs(self.tbActCtrlObj) do
-		v:ClearActivity()
+		if v.ClearActivity ~= nil then
+			v:ClearActivity()
+		end
 		local obj = v.gameObject
 		self:UnbindCtrlByNode(v)
 		destroy(obj)

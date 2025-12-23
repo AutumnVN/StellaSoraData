@@ -285,6 +285,7 @@ function InfinityTowerSelectTowerCtrl:OnEvent_EntryInfinityTowerMap()
 	BubbleVoiceManager.StopBubbleAnim()
 	BubbleVoiceManager.StopBubbleAnim_EX()
 	PlayerData.Voice:StopCharVoice()
+	PlayerData.Voice:ClearTimer()
 	self.pageType = 1
 	PlayerData.InfinityTower:SetPageState(1)
 end
@@ -301,6 +302,7 @@ function InfinityTowerSelectTowerCtrl:OnDisable()
 	PlayerData.Voice:ClearTimer()
 	BubbleVoiceManager.StopBubbleAnim()
 	BubbleVoiceManager.StopBubbleAnim_EX()
+	PlayerData.Voice:ClearTimer()
 end
 function InfinityTowerSelectTowerCtrl:OnDestroy()
 end
@@ -427,6 +429,7 @@ function InfinityTowerSelectTowerCtrl:InfinitySelectTower(towerId, diffSort)
 	BubbleVoiceManager.StopBubbleAnim_EX()
 	PlayerData.Voice:StopCharVoice()
 	self.pageType = 3
+	PlayerData.Voice:ClearTimer()
 	PlayerData.InfinityTower:SetPageState(3)
 	self:SetLightActive(false)
 	self:LoadBG(towerId)
@@ -565,6 +568,7 @@ function InfinityTowerSelectTowerCtrl:OnEvent_Back(nPanelId)
 		self._mapNode.bottomBg:SetActive(true)
 	elseif self.pageType == 2 then
 		self.pageType = 1
+		PlayerData.Voice:ClearTimer()
 		PlayerData.InfinityTower:SetPageState(1)
 		self._mapNode.towerList:SetActive(true)
 		local waitCallback = function()
@@ -613,6 +617,7 @@ function InfinityTowerSelectTowerCtrl:PlayOneNpcVoiceGreen()
 	local npcId = rabbitLeftId
 	if self.pageType == 2 then
 		npcId = tabNPCTowerId[self.selectTowerId]
+		PlayerData.Voice:StartBoardFreeTimer(npcId)
 	end
 	local isFirst, sKey = PlayerData.InfinityTower:GetNPCVoiceKey(npcId)
 	if isFirst then
@@ -650,7 +655,8 @@ function InfinityTowerSelectTowerCtrl:OnBtnClick_Actor()
 	if self.pageType == 3 then
 		return
 	elseif self.pageType == 2 then
-		self:PlayOneNpcVoiceGreen()
+		local npcId = tabNPCTowerId[self.selectTowerId]
+		PlayerData.Voice:PlayBoardNPCClickVoice(npcId)
 	elseif self.pageType == 1 then
 		self:PlayTwoNpcVoice()
 	end

@@ -34,7 +34,8 @@ function PotentialBookCharItemCtrl:InitItem(nCharId)
 		local mapCharCfg = ConfigTable.GetData_Character(nCharId)
 		if mapCharCfg ~= nil then
 			self.nElement = mapCharCfg.EET
-			NovaAPI.SetTMPText(self._mapNode.txtName, mapCharCfg.Name)
+			local sName = self:_temp_proc_name(mapCharCfg.Name)
+			NovaAPI.SetTMPText(self._mapNode.txtName, sName)
 			local nSkinId = mapCharCfg.DefaultSkinId
 			local mapSkin = ConfigTable.GetData_CharacterSkin(nSkinId)
 			self:SetPngSprite(self._mapNode.imgChar, mapSkin.Icon .. AllEnum.CharHeadIconSurfix.GC)
@@ -55,5 +56,12 @@ function PotentialBookCharItemCtrl:Awake()
 	self.tbRedDotRegister = {}
 end
 function PotentialBookCharItemCtrl:OnDisable()
+end
+function PotentialBookCharItemCtrl:_temp_proc_name(sName)
+	local _sName = string.gsub(sName, "%(", [[
+
+(]])
+	local _sName = string.gsub(_sName, "\239\188\136", "\n\239\188\136")
+	return _sName
 end
 return PotentialBookCharItemCtrl

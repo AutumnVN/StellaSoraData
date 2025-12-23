@@ -3,12 +3,14 @@ local SDKManager = CS.SDKManager.Instance
 local BtnType = {
 	Community = 9,
 	Exchange = 10,
-	ToolBox = 11
+	ToolBox = 11,
+	QuestNewbie = 12
 }
 local BtnList = {
 	[1] = BtnType.Community,
 	[2] = BtnType.Exchange,
-	[3] = BtnType.ToolBox
+	[3] = BtnType.ToolBox,
+	[4] = BtnType.QuestNewbie
 }
 local BtnPos = Vector2(117, -52.5)
 MainViewSideCtrl._mapNodeConfig = {
@@ -90,6 +92,10 @@ MainViewSideCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_ToolBox"
 	},
+	btnQuestNewbie = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_QuestNewbie"
+	},
 	txtDictionary = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Menu_Dictionary"
@@ -122,6 +128,10 @@ MainViewSideCtrl._mapNodeConfig = {
 	txtToolBox = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Menu_ToolBox"
+	},
+	txtQuestNewbie = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "MainView_QuestNewbie"
 	},
 	redDotFriend = {},
 	redDotDictionary = {},
@@ -185,6 +195,9 @@ function MainViewSideCtrl:InitExchangeCode()
 	self._mapNode.btnExchange.gameObject:SetActive(bEnable)
 end
 function MainViewSideCtrl:CheckCodeEnable()
+	if NovaAPI.IsReviewServerEnv() then
+		return false
+	end
 	local bEnable = false
 	local sEnableStr = ConfigTable.GetConfigValue("EnableExchange")
 	if sEnableStr == "" or sEnableStr == nil then
@@ -223,6 +236,24 @@ function MainViewSideCtrl:CheckToolBoxEnable()
 	end
 	return bEnable
 end
+function MainViewSideCtrl:InitQuestNewbie()
+	local bEnable = self:CheckBtnEnable(BtnType.QuestNewbie)
+	local newParent = self:GetBtnNewParent(BtnType.QuestNewbie)
+	if newParent ~= nil then
+		local questNewbieTra = self._mapNode.btnQuestNewbie.transform
+		if questNewbieTra.parent.gameObject.name ~= newParent.gameObject.name then
+			questNewbieTra:SetParent(newParent)
+			questNewbieTra.anchoredPosition = BtnPos
+		end
+	end
+	self._mapNode.btnQuestNewbie.gameObject:SetActive(bEnable)
+end
+function MainViewSideCtrl:CheckQuestNewbieEnable()
+	local nTotalCount, nReceivedCount = PlayerData.TutorialData:GetProgress()
+	local bTutorialComplete = nTotalCount <= nReceivedCount
+	local bTeamFormationComplete = PlayerData.Quest:CheckTeamFormationAllCompleted()
+	return bTeamFormationComplete and bTutorialComplete
+end
 function MainViewSideCtrl:CheckBtnEnable(nBtnType)
 	local bEnable = false
 	if nBtnType == BtnType.Community then
@@ -231,6 +262,8 @@ function MainViewSideCtrl:CheckBtnEnable(nBtnType)
 		bEnable = self:CheckCodeEnable()
 	elseif nBtnType == BtnType.ToolBox then
 		bEnable = self:CheckToolBoxEnable()
+	elseif nBtnType == BtnType.QuestNewbie then
+		bEnable = self:CheckQuestNewbieEnable()
 	end
 	return bEnable
 end
@@ -268,6 +301,7 @@ function MainViewSideCtrl:Awake()
 	self:InitCommunity()
 	self:InitExchangeCode()
 	self:InitToolBox()
+	self:InitQuestNewbie()
 end
 function MainViewSideCtrl:OnEnable()
 	PanelManager.SetMainViewSkipAnimIn(true)
@@ -387,5 +421,14 @@ function MainViewSideCtrl:OnBtnClick_ToolBox()
 	else
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Function_NotAvailable"))
 	end
+end
+function MainViewSideCtrl:OnBtnClick_QuestNewbie()
+	local callback = function()
+		local func = function()
+			EventManager.Hit(EventId.OpenPanel, PanelId.QuestNewbie)
+		end
+		EventManager.Hit(EventId.SetTransition, 5, func)
+	end
+	PlayerData.Base:CheckFunctionBtn(GameEnum.OpenFuncType.QuestNewbie, callback)
 end
 return MainViewSideCtrl

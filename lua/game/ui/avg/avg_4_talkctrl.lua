@@ -541,6 +541,7 @@ function Avg_4_TalkCtrl:_ClearTalk()
 	NovaAPI.StopShakeEffect(self._mapNode.shake_Dialog_1R)
 	NovaAPI.StopShakeEffect(self._mapNode.shake_Dialog_2L)
 	NovaAPI.StopShakeEffect(self._mapNode.shake_Dialog_2R)
+	self:_SetWaitingVisible(false)
 end
 function Avg_4_TalkCtrl:OnL2DAnimEvent_RunNextCmd()
 	self:_RunNextCmd(true)
@@ -982,6 +983,11 @@ function Avg_4_TalkCtrl:SetTalk(tbParam)
 		sContent = "error: AutoParagraphSignal"
 	end
 	sContent = ProcAvgTextContent(sContent, self._panel.nCurLanguageIdx)
+	local bMarkInLog = true
+	if string.sub(sContent, 1, 12) == "_NOT_IN_LOG_" then
+		sContent = string.gsub(sContent, "_NOT_IN_LOG_", "")
+		bMarkInLog = false
+	end
 	if nType == 8 then
 		local bCenterBgActive = string.find(sContent, self.sCenterBgOff) == nil
 		self._mapNode.imgContentBg_Center:SetActive(bCenterBgActive)
@@ -1092,6 +1098,7 @@ function Avg_4_TalkCtrl:SetTalk(tbParam)
 		self:_SwitchSayThink(nType, false)
 	end
 	self:_SwitchWaitingRoot(trWaitingParent)
+	self:_SetWaitingVisible(false)
 	if nType == 0 or nType == 3 or nType == 4 or nType == 5 or nType == 6 or nType == 7 or nType == 9 or nType == 11 then
 		local sName, sColor = self._panel:GetAvgCharName(sAvgCharId)
 		local bVisible = true
@@ -1195,7 +1202,9 @@ function Avg_4_TalkCtrl:SetTalk(tbParam)
 		self.bProcVoiceCallbackEvent = true
 		WwiseAudioMgr:WwiseVoice_PlayInAVG(sVoiceName)
 	end
-	EventManager.Hit(EventId.AvgMarkLog, self.tbLogData)
+	if bMarkInLog == true then
+		EventManager.Hit(EventId.AvgMarkLog, self.tbLogData)
+	end
 	return -1
 end
 function Avg_4_TalkCtrl:SetTalkShake(tbParam)

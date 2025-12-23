@@ -64,7 +64,7 @@ function CharFavourTaskCtrl:OnEnable()
 	local nCharSkinId = PlayerData.Char:GetCharUsedSkinId(self.curCharId)
 	local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 	if mapCharSkin ~= nil then
-		self:SetPngSprite(self._mapNode.imgCharIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgCharIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 	end
 	self:OnRefreshTaskList()
 end

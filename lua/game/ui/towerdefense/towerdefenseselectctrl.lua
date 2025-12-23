@@ -1,6 +1,7 @@
 local TowerDefenseSelectCtrl = class("TowerDefenseSelectCtrl", BaseCtrl)
 local barMinX = -365
 local barMaxX = 0
+local scrollType = {levelIndex = 1, pos = 2}
 TowerDefenseSelectCtrl._mapNodeConfig = {
 	TopBar = {
 		sNodeName = "TopBarPanel",
@@ -105,10 +106,34 @@ function TowerDefenseSelectCtrl:Awake()
 	self._mapNode.blur.gameObject:SetActive(false)
 	self._mapNode.animator:Play("TowerDefenseSelectBg_in")
 	self.nSelectedTabIndex = 0
+	self.scrollType = scrollType.pos
+	self.nlevelId = 0
+	self.nScrollIndex = 0
+	self.scrollPos = 1
 end
 function TowerDefenseSelectCtrl:OnEnable()
 	if self.nSelectedTabIndex == 0 then
 		self.nSelectedTabIndex = 1
+	end
+	if self.nlevelId ~= 0 then
+		local tempData = self.TowerDefenseData:GetTempData()
+		if tempData ~= nil and tempData.nLevelId == self.nlevelId and tempData.bResult then
+			for index, value in ipairs(self.tbLevel) do
+				if value.nLevelId == self.nlevelId then
+					self.nScrollIndex = index
+					break
+				end
+			end
+			if self.nScrollIndex == #self.tbLevel and self.nSelectedTabIndex == 1 then
+				self.nSelectedTabIndex = 2
+				self.nScrollIndex = 0
+				self.scrollType = scrollType.pos
+				self.scrollPos = 1
+			else
+				self.scrollType = scrollType.levelIndex
+			end
+			self.TowerDefenseData:ClearTempData()
+		end
 	end
 	self:Init()
 end
@@ -162,8 +187,17 @@ function TowerDefenseSelectCtrl:UpdateLevel()
 		self:UnbindCtrlByNode(objCtrl)
 		self.tbGridCtrl[nInstanceId] = nil
 	end
-	self._mapNode.loopSv:SetAnim(0.1)
 	self._mapNode.loopSv:Init(#self.tbLevel, self, self.OnRefreshGrid)
+	if self.scrollType == scrollType.levelIndex then
+		self._mapNode.loopSv:SetScrollGridPos(self.nScrollIndex, 0)
+	elseif self.scrollType == scrollType.pos then
+		self._mapNode.loopSv:SetScrollPos(self.scrollPos, 0)
+	end
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+		self:PlayGridAnim()
+	end
+	cs_coroutine.start(wait)
 end
 function TowerDefenseSelectCtrl:OnRefreshGrid(goGrid, gridIndex)
 	local nIndex = gridIndex + 1
@@ -172,6 +206,27 @@ function TowerDefenseSelectCtrl:OnRefreshGrid(goGrid, gridIndex)
 		self.tbGridCtrl[nInstanceId] = self:BindCtrlByNode(goGrid, "Game.UI.TowerDefense.TowerDefenseLevelCellCtrl")
 	end
 	self.tbGridCtrl[nInstanceId]:SetData(self.nActId, self.tbLevel[nIndex])
+end
+function TowerDefenseSelectCtrl:PlayGridAnim()
+	local listInUse = {}
+	listInUse = self._mapNode.loopSv:GetInUseGridIndex()
+	local tbGridInUse = {}
+	for i = 0, listInUse.Count - 1 do
+		table.insert(tbGridInUse, listInUse[i])
+	end
+	for k, v in ipairs(tbGridInUse) do
+		local goGrid = self._mapNode.loopSv.transform:Find("Viewport/Content/" .. v)
+		local animRoot = goGrid:GetComponent("Animator")
+		local delayTime = (k - 1) * 0.1
+		animRoot:Play("ready")
+		if 0 < delayTime then
+			self:AddTimer(1, delayTime, function()
+				animRoot:Play("go")
+			end, true, true, true)
+		else
+			animRoot:Play("go")
+		end
+	end
 end
 function TowerDefenseSelectCtrl:OnBtnClick_Guide()
 	self._mapNode.blur.gameObject:SetActive(true)
@@ -182,6 +237,9 @@ function TowerDefenseSelectCtrl:OnBtnClick_LevelTab1()
 	if self.nSelectedTabIndex == 1 then
 		return
 	end
+	self.scrollPos = 1
+	self.nlevelId = 0
+	self.scrollType = self.scrollPos
 	self.TowerDefenseData:RefreshRedDotbyTab(self.nSelectedTabIndex)
 	self.nSelectedTabIndex = 1
 	self:SetTabUI()
@@ -191,6 +249,9 @@ function TowerDefenseSelectCtrl:OnBtnClick_LevelTab2()
 	if self.nSelectedTabIndex == 2 then
 		return
 	end
+	self.scrollPos = 1
+	self.nlevelId = 0
+	self.scrollType = self.scrollPos
 	self.TowerDefenseData:RefreshRedDotbyTab(self.nSelectedTabIndex)
 	self.nSelectedTabIndex = 2
 	self:SetTabUI()
@@ -214,6 +275,8 @@ function TowerDefenseSelectCtrl:OnEvent_LevelSelected(nLevelId)
 	if not self.TowerDefenseData:IsPreLevelPass(nLevelId) then
 		return
 	end
+	self.scrollPos = self._mapNode.loopSv:GetScrollPos()
+	self.nlevelId = nLevelId
 	self.TowerDefenseData:EnterLevelSelect(nLevelId)
 	EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseLevelDetailPanel, self.nActId, nLevelId)
 end

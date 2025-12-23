@@ -12,7 +12,7 @@ function DiscSubSkillItem:SetItem(nNoteId, nLevel)
 	self:SetPngSprite(self._mapNode.imgIcon, noteCfg.Icon)
 	NovaAPI.SetTMPText(self._mapNode.txtNoteName, noteCfg.Name)
 	NovaAPI.SetTMPText(self._mapNode.txtDesc, noteCfg.BriefDesc)
-	NovaAPI.SetTMPText(self._mapNode.txtLv, "Lv." .. nLevel)
+	NovaAPI.SetTMPText(self._mapNode.txtLv, orderedFormat(ConfigTable.GetUIText("Note_Count"), nLevel))
 	local nImgCount = 2
 	self:SetPngSprite(self._mapNode.imgLv, "UI/big_sprites/zs_outfit_lv_" .. nImgCount)
 end

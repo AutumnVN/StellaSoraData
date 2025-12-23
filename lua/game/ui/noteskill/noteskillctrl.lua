@@ -75,7 +75,7 @@ function NoteSkillCtrl:Refresh()
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtSkillTitle, mapCfg.Name)
 	NovaAPI.SetTMPText(self._mapNode.txtSkillDesc, mapCfg.BriefDesc)
-	NovaAPI.SetTMPText(self._mapNode.txtSkillLevel, orderedFormat(ConfigTable.GetUIText("StarTower_Disc_Info_Level"), self.tbNote[self.nSelectNote]))
+	NovaAPI.SetTMPText(self._mapNode.txtSkillLevel, orderedFormat(ConfigTable.GetUIText("Note_Count"), self.tbNote[self.nSelectNote]))
 	self:SetPngSprite(self._mapNode.imgSkillIcon, mapCfg.Icon)
 	if self.nMaxLevel < 0 then
 		return
@@ -92,7 +92,7 @@ function NoteSkillCtrl:OnGridRefresh(goGrid, gridIndex)
 	local imgOffBg = rtGrid.transform:Find("imgOffBg").gameObject
 	local imgOn = rtGrid.transform:Find("layout/imgOn").gameObject
 	local imgOff = rtGrid.transform:Find("layout/imgOff").gameObject
-	NovaAPI.SetTMPText(txtLevel, orderedFormat(ConfigTable.GetUIText("StarTower_Disc_Info_Level"), nIndex))
+	NovaAPI.SetTMPText(txtLevel, orderedFormat(ConfigTable.GetUIText("Note_Count"), nIndex))
 	local bOn = nIndex == self.tbNote[self.nSelectNote]
 	imgSelect:SetActive(bOn)
 	imgOnBg:SetActive(bOn)

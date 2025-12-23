@@ -53,8 +53,14 @@ local GetMonthAndDays = function()
 	local nMonth = tonumber(os.date("!%m", nServerTimeStampWithTimeZone))
 	local nDay = tonumber(os.date("!%d", nServerTimeStampWithTimeZone))
 	local nHour = tonumber(os.date("!%H", nServerTimeStampWithTimeZone))
-	if nDay == 1 and nHour < 5 then
-		nMonth = nMonth == 1 and 12 or nMonth - 1
+	local newDayTime = UTILS.GetDayRefreshTimeOffset()
+	if nDay == 1 and nHour < newDayTime then
+		if nMonth == 1 then
+			nMonth = 12
+			nYear = nYear - 1
+		else
+			nMonth = nMonth - 1
+		end
 	end
 	local nNextMonthTime = os.time({
 		year = tostring(nYear),
@@ -62,7 +68,7 @@ local GetMonthAndDays = function()
 		day = 0
 	})
 	local nDays = tonumber(os.date("!%d", nNextMonthTime))
-	return nMonth, nDays
+	return nYear, nMonth, nDays
 end
 local GetDailyCheckInIndex = function()
 	if _nDailyCheckInIndex == 0 then

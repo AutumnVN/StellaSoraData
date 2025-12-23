@@ -1,5 +1,7 @@
 local TowerDefenseGuideCtrl = class("TowerDefenseGuideCtrl", BaseCtrl)
+local iconPath = "UI/Play_TowerDefence/SpriteAtlas/Sprite/"
 TowerDefenseGuideCtrl._mapNodeConfig = {
+	anim = {sNodeName = "Root", sComponentName = "Animator"},
 	txt_Guide_window = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "TowerDef_Guide"
@@ -37,18 +39,19 @@ TowerDefenseGuideCtrl._mapNodeConfig = {
 	item_detail = {},
 	txt_itemName = {sComponentName = "TMP_Text"},
 	txt_itemCD = {sComponentName = "TMP_Text"},
-	txt_des = {sComponentName = "TMP_Text"}
+	txt_des = {sComponentName = "TMP_Text"},
+	btnAllClose = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Close"
+	}
 }
 TowerDefenseGuideCtrl._mapEventConfig = {
 	TowerDefenseGuideCellOnSelected = "OnEvent_CellOnSelected"
 }
 TowerDefenseGuideCtrl._mapRedDotConfig = {}
 local SelectType = {Char = 1, Item = 2}
-function TowerDefenseGuideCtrl:Awake()
-	self.animator = self.gameObject:GetComponent("Animator")
-end
 function TowerDefenseGuideCtrl:SetData(nActId)
-	self.animator:Play("t_window_04_t_in")
+	self._mapNode.anim:Play("t_window_04_t_in")
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
 	self.tbCharacterIds = {}
 	self.tbItemIds = {}
@@ -56,7 +59,7 @@ function TowerDefenseGuideCtrl:SetData(nActId)
 	self.selectedGridGo = nil
 	self.TowerDefenseData = PlayerData.Activity:GetActivityDataById(self.nActId)
 	local forEachFunction = function(config)
-		if config.ActivityId == nActId then
+		if config.ActivityId == nActId and config.IsShow then
 			if config.GuideType == GameEnum.TowerDefGuideType.Character then
 				table.insert(self.tbCharacterIds, config.Id)
 			elseif config.GuideType == GameEnum.TowerDefGuideType.Item then
@@ -113,6 +116,13 @@ function TowerDefenseGuideCtrl:CreateChar()
 			local icon = go.transform:Find("btn_grid/AnimRoot/img_icon/icon_char"):GetComponent("Image")
 			local lock = go.transform:Find("btn_grid/AnimRoot/img_icon/bg_Lock")
 			local txt_name = go.transform:Find("btn_grid/AnimRoot/img_icon/txt_name"):GetComponent("TMP_Text")
+			local img_new = go.transform:Find("btn_grid/AnimRoot/img_icon/img_New"):GetComponent("Image")
+			if guide_config.iconPath == "" then
+				img_new.gameObject:SetActive(false)
+			else
+				img_new.gameObject:SetActive(true)
+				self:SetPngSprite(img_new, iconPath .. guide_config.iconPath)
+			end
 			local bUnLock = true
 			if guide_config ~= nil then
 				bUnLock = self.TowerDefenseData:IsLevelUnlock(guide_config.LevelId) and self.TowerDefenseData:IsPreLevelPass(guide_config.LevelId)
@@ -156,6 +166,13 @@ function TowerDefenseGuideCtrl:CreateItem()
 			local icon = go.transform:Find("btn_grid/AnimRoot/img_icon"):GetComponent("Image")
 			local lock = go.transform:Find("btn_grid/AnimRoot/bg_Lock")
 			local txt_lock = go.transform:Find("btn_grid/AnimRoot/txt_lock"):GetComponent("TMP_Text")
+			local img_new = go.transform:Find("btn_grid/AnimRoot/img_New"):GetComponent("Image")
+			if guide_config.iconPath == "" then
+				img_new.gameObject:SetActive(false)
+			else
+				img_new.gameObject:SetActive(true)
+				self:SetPngSprite(img_new, iconPath .. guide_config.iconPath)
+			end
 			local bUnLock = true
 			if guide_config ~= nil then
 				bUnLock = self.TowerDefenseData:IsLevelUnlock(guide_config.LevelId) and self.TowerDefenseData:IsPreLevelPass(guide_config.LevelId)
@@ -287,7 +304,7 @@ function TowerDefenseGuideCtrl:UpdateDetail()
 end
 function TowerDefenseGuideCtrl:OnBtnClick_Close()
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
-	self.animator:Play("t_window_04_t_out")
+	self._mapNode.anim:Play("t_window_04_t_out")
 	self:AddTimer(1, 0.2, function()
 		self.selectedGridGo = nil
 		EventManager.Hit("CloseTowerDefenseGuidePanel")

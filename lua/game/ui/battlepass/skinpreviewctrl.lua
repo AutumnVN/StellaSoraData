@@ -310,7 +310,7 @@ function SkinPreviewCtrl:WaitReadyClipFinish()
 	if director == nil then
 		return
 	end
-	local readyClipName = self.nCharId .. "_Ready"
+	local readyClipName = "_Ready"
 	local wait = function()
 		while CS.AdventureModuleHelper.CheckTimelineClipFinish(director, readyClipName) == false do
 			coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())

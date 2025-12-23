@@ -30,7 +30,7 @@ function BuildExclusiveCtrl:RefreshChar(nCharId)
 	local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 	local mapCharCfg = ConfigTable.GetData_Character(nCharId)
 	local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-	self:SetPngSprite(self._mapNode.imgHead, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+	self:SetPngSprite(self._mapNode.imgHead, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 	self:SetAtlasSprite(self._mapNode.imgHeadFrame, "12_rare", sFrame)
 	NovaAPI.SetTMPText(self._mapNode.txtCharName, mapCharCfg.Name)
 end

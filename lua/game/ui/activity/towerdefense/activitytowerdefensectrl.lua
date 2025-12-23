@@ -9,11 +9,9 @@ local panelType = {
 	DesPanel = 4
 }
 ActivityTowerDefenseCtrl._mapNodeConfig = {
-	item = {
-		sCtrlName = "Game.UI.TemplateEx.TemplateItemCtrl",
-		nCount = 4
+	svItem = {
+		sComponentName = "LoopScrollView"
 	},
-	ItemBtn = {nCount = 4, sComponentName = "UIButton"},
 	txt_time = {sComponentName = "TMP_Text"},
 	txt_des = {
 		sComponentName = "TMP_Text",
@@ -115,26 +113,29 @@ function ActivityTowerDefenseCtrl:GetTimeText(remainTime)
 	return sTimeStr
 end
 function ActivityTowerDefenseCtrl:InitItem()
-	for _, item in pairs(self._mapNode.item) do
-		item.gameObject:SetActive(false)
-	end
 	local rewardData = ConfigTable.GetData("TowerDefenseControl", self.nActId)
 	if rewardData == nil then
 		return
 	end
 	local rewardData = rewardData.RewardsShow
-	local tbReward = decodeJson(rewardData)
-	for i = 1, math.min(4, #tbReward) do
-		self._mapNode.item[i]:SetItem(tbReward[i])
-		self._mapNode.item[i].gameObject:SetActive(true)
-		self._mapNode.ItemBtn[i].onClick:RemoveAllListeners()
-		self._mapNode.ItemBtn[i].onClick:AddListener(function()
-			local nRewardId = tbReward[i]
-			if nRewardId ~= nil then
-				UTILS.ClickItemGridWithTips(nRewardId, self._mapNode.ItemBtn[i].transform, true, false, false)
-			end
-		end)
+	self.tbReward = decodeJson(rewardData)
+	self.tbItemIns = {}
+	self._mapNode.svItem:Init(#self.tbReward, self, self.OnGridRefresh, self.OnGridBtnClick)
+end
+function ActivityTowerDefenseCtrl:OnGridRefresh(go, nIndex)
+	local nDataIndex = nIndex + 1
+	local itemId = self.tbReward[nDataIndex]
+	local goItem = go.transform:Find("btnGrid/AnimRoot/tcItem").gameObject
+	local instanceId = goItem:GetInstanceID()
+	if self.tbItemIns[instanceId] == nil then
+		self.tbItemIns[instanceId] = self:BindCtrlByNode(goItem, "Game.UI.TemplateEx.TemplateItemCtrl")
 	end
+	self.tbItemIns[instanceId]:SetItem(itemId)
+end
+function ActivityTowerDefenseCtrl:OnGridBtnClick(go, nIndex)
+	local nDataIndex = nIndex + 1
+	local itemId = self.tbReward[nDataIndex]
+	UTILS.ClickItemGridWithTips(itemId, go.transform:Find("btnGrid"), true, false, false)
 end
 function ActivityTowerDefenseCtrl:InitQuest()
 	local allCount = self.actData:GetAllQuestCount()
@@ -153,6 +154,12 @@ function ActivityTowerDefenseCtrl:InitActData(actData)
 	self:InitQuest()
 end
 function ActivityTowerDefenseCtrl:ClearActivity()
+	if self.tbItemIns ~= nil then
+		for _, ctrl in pairs(self.tbItemIns) do
+			self:UnbindCtrlByNode(ctrl)
+		end
+	end
+	self.tbItemIns = {}
 end
 function ActivityTowerDefenseCtrl:OnBtnClick_Detail()
 	local config = ConfigTable.GetData("TowerDefenseControl", self.nActId)

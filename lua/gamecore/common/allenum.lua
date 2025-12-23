@@ -62,21 +62,39 @@ AllEnum.CoinItemId = {
 	FRRewardCurrency = 12,
 	NormalSingleTicket = 501,
 	LimitedSingleTicket = 502,
-	DailyQuestActive = 61
+	DailyQuestActive = 61,
+	WeeklyQuestActive = 63
 }
 AllEnum.QuestStatus = {Undone = false, Done = true}
 AllEnum.CharHeadIconSurfix = {
 	GC = "_GC",
 	GD = "_GD",
 	L = "_L",
+	LS = "_LS",
 	S = "_S",
+	SS = "_SS",
 	SK = "_SK",
 	XL = "_XL",
 	XXL = "_XXL",
+	XXLS = "_XXLS",
 	GOODS = "_GOODS",
 	QM = "_QM",
 	QS = "_QS",
 	Q = "_Q"
+}
+AllEnum.CharHeadIconSurfixAutoFit = {
+	_L = {
+		_L = {w = 140, h = 152},
+		_LS = {w = 70, h = 76}
+	},
+	_S = {
+		_S = {w = 256, h = 256},
+		_SS = {w = 128, h = 128}
+	},
+	_XXL = {
+		_XXL = {w = 192, h = 192},
+		_XXLS = {w = 96, h = 96}
+	}
 }
 AllEnum.EET = {
 	[GameEnum.elementType.WE] = "WEE",
@@ -1291,7 +1309,8 @@ AllEnum.RegionBossFormationType = {
 	SkillInstance = 9,
 	WeeklyCopies = 10,
 	JointDrill = 11,
-	ActivityLevels = 12
+	ActivityLevels = 12,
+	ActivityStory = 13
 }
 AllEnum.EnergyPanelType = {
 	Main = 1,
@@ -1357,6 +1376,20 @@ AllEnum.DatingKrTags = {
 		["==KR4=="] = "\234\179\188"
 	}
 }
+AllEnum.KrTags = {
+	["1"] = {
+		[1] = "\234\176\128",
+		[2] = "\235\138\148",
+		[3] = "\235\165\188",
+		[4] = "\236\153\128"
+	},
+	["2"] = {
+		[1] = "\236\157\180",
+		[2] = "\236\157\128",
+		[3] = "\236\157\132",
+		[4] = "\234\179\188"
+	}
+}
 AllEnum.PotentialCardType = {
 	StarTower = 1,
 	CharInfo = 2,
@@ -1373,10 +1406,11 @@ AllEnum.ReceivePropsTitle = {Common = 1, Dating = 2}
 AllEnum.DiscSkillIconSurfix = {Small = "_S", Corner = "_jb"}
 AllEnum.QuestPanelTab = {
 	GuideQuest = 1,
-	WorldClass = 2,
-	DailyQuest = 3,
-	Tutorial = 4
+	DailyQuest = 2,
+	WeeklyQuest = 3,
+	WorldClass = 4
 }
+AllEnum.QuestNewbieTab = {TeamFormation = 1, Tutorial = 2}
 AllEnum.StarTowerFastBattleBg = {
 	Bg_L = "bg_fastBattle_%s_l",
 	Bg_R = "bg_fastBattle_%s_r",
@@ -1472,7 +1506,8 @@ AllEnum.ActivityThemeFuncIndex = {
 	Task = 2,
 	Story = 3,
 	Shop = 4,
-	Level = 5
+	Level = 5,
+	Other = 6
 }
 AllEnum.CgSurfix = {Main = "_M", Image = ""}
 AllEnum.Cg2DType = {Base = 1, L2D = 2}

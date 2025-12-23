@@ -156,6 +156,7 @@ GameEnum.damageSource = {
 	FATECARD = 5
 }
 GameEnum.damageType = {
+	NONE = 0,
 	NORMAL = 1,
 	SKILL = 2,
 	ULTIMATE = 3,
@@ -227,14 +228,14 @@ GameEnum.worldLevelType = {
 	ActivityLevels = 20,
 	BrickBreaker = 21,
 	TowerDefense = 22,
-	Tutorial = 23,
-	JointDrill_2 = 24
+	Tutorial = 23
 }
 GameEnum.dynamicLevelType = {
 	JointDrill = 1,
 	TowerDefense = 2,
 	Trial = 3,
-	Tutorial = 4
+	Tutorial = 4,
+	JointDrill_2 = 5
 }
 GameEnum.mainLineType = {Mainline = 1, Branchline = 2}
 GameEnum.hurtFlashTintType = {
@@ -327,7 +328,10 @@ GameEnum.jumpType = {
 	WeeklyCopies = 36,
 	StorySet = 37,
 	StarTowerGrowth = 38,
-	SwimActivityTask = 39
+	ActivityTask = 39,
+	MainLineStoryChapter = 40,
+	QuestNewbie = 41,
+	CharInfo = 42
 }
 GameEnum.characterSearchTargetType = {MELEE = 1, RANGED = 2}
 GameEnum.characterSearchTargetTypeTowerDefense = {NORMAL = 1}
@@ -572,7 +576,6 @@ GameEnum.achievementCond = {
 	LoginTotal = 51,
 	QuestTravelerDuelChallengeTotal = 52,
 	QuestTourGuideSpecific = 53,
-	QuestTravelerDuelSpecific = 54,
 	QuestWithSpecificType = 55,
 	RegionBossClearSpecificFullStarWithBossIdAndDifficulty = 56,
 	RegionBossClearSpecificLevelWithDifficultyAndTotal = 57,
@@ -583,12 +586,8 @@ GameEnum.achievementCond = {
 	StageClearSpecificStars = 62,
 	StoryClear = 63,
 	TravelerDuelChallengeSpecificBoosLevelWithDifficultyAndTotal = 64,
-	TravelerDuelClearBossTotal = 65,
-	TravelerDuelClearSpecificBossIdAndDifficulty = 66,
 	TravelerDuelChallengeClearSpecificBossLevelAndAffix = 67,
-	TravelerDuelClearSpecificBossLevelWithDifficultyAndTotal = 68,
 	TravelerDuelClearSpecificBossTotal = 69,
-	TravelerDuelChallengeRankUploadTotal = 70,
 	WorldClassSpecific = 71,
 	RegionBossClearSpecificTypeWithTotal = 72,
 	CharactersWithSpecificDatingCount = 73,
@@ -598,7 +597,6 @@ GameEnum.achievementCond = {
 	VampireSurvivorPassedSpecificLevel = 77,
 	CharacterParticipateTowerNumber = 78,
 	CharacterAllSkillReachSpecificLevel = 79,
-	TravelerDuelPlayTotal = 80,
 	VampireClearTotal = 81,
 	VampireWithSpecificClearTotal = 82,
 	AgentFinishTotal = 83,
@@ -618,6 +616,12 @@ GameEnum.achievementCond = {
 	AgentApplyTotal = 106,
 	DiscSpecific = 114,
 	StorySetClearSpecific = 116,
+	CharacterWithSpecificSkillAndLevel = 118,
+	DiscWithSpecificQuantityLevelAndAttr = 119,
+	TutorialLevelClearSpecific = 120,
+	TutorialLevelSpecificClearTotal = 121,
+	DiscWithSpecificQuantityPhaseAndAttr = 122,
+	WeekBossClearTotal = 123,
 	ClientReport = 200,
 	TowerBattleTimes = 501,
 	TowerBossChallengeSpecificHighRewardWithTotal = 502,
@@ -654,7 +658,8 @@ GameEnum.achievementCond = {
 	TowerSpecificSecondarySkillActivateTotal = 536,
 	TowerSpecificGetExtraNoteLvTotal = 537,
 	TowerSweepTimes = 539,
-	TowerSweepTotal = 540
+	TowerSweepTotal = 540,
+	TowerBattleWithPartner = 541
 }
 GameEnum.activityAcceptCond = {WorldClassSpecific = 71}
 GameEnum.activityBreakoutCharUnlockCond = {ActivityBreakoutWinSpecificLevel = 117}
@@ -672,7 +677,8 @@ GameEnum.chatCond = {
 	StageClearSpecificStars = 62,
 	WorldClassSpecific = 71,
 	BossRushTotalStars = 88,
-	DiscSpecific = 114
+	DiscSpecific = 114,
+	CharacterWithSpecificSkillAndLevel = 118
 }
 GameEnum.handBookCond = {
 	CharacterAcquire = 5,
@@ -681,7 +687,8 @@ GameEnum.handBookCond = {
 	ItemsAdd = 48,
 	SkinAcquire = 61,
 	StoryClear = 63,
-	StorySetClearSpecific = 116
+	StorySetClearSpecific = 116,
+	CharacterWithSpecificSkillAndLevel = 118
 }
 GameEnum.jointDrillCond = {JointDrillScoreTotal = 95}
 GameEnum.questAcceptCond = {
@@ -691,6 +698,8 @@ GameEnum.questAcceptCond = {
 	NpcAffinityWithSpecificLevel = 93,
 	CharacterPassedWithSpecificTowerAndCount = 94,
 	StorySetClearSpecific = 116,
+	TutorialLevelClearSpecific = 120,
+	TutorialLevelSpecificClearTotal = 121,
 	TowerSpecificDifficultyShopBuyTimes = 514,
 	TowerGrowthSpecificNote = 515,
 	TowerBookWithSpecificEvent = 517,
@@ -709,7 +718,8 @@ GameEnum.questAcceptCond = {
 	TowerSpecificPotentialLuckyTotal = 534,
 	TowerSpecificShopBuyDiscountTotal = 535,
 	TowerSpecificSecondarySkillActivateTotal = 536,
-	TowerSpecificGetExtraNoteLvTotal = 537
+	TowerSpecificGetExtraNoteLvTotal = 537,
+	TowerBattleWithPartner = 541
 }
 GameEnum.questCompleteCond = {
 	BattleTotal = 3,
@@ -748,7 +758,6 @@ GameEnum.questCompleteCond = {
 	LoginTotal = 51,
 	QuestTravelerDuelChallengeTotal = 52,
 	QuestTourGuideSpecific = 53,
-	QuestTravelerDuelSpecific = 54,
 	QuestWithSpecificType = 55,
 	RegionBossClearSpecificFullStarWithBossIdAndDifficulty = 56,
 	RegionBossClearSpecificLevelWithDifficultyAndTotal = 57,
@@ -758,12 +767,8 @@ GameEnum.questCompleteCond = {
 	StageClearSpecificStars = 62,
 	StoryClear = 63,
 	TravelerDuelChallengeSpecificBoosLevelWithDifficultyAndTotal = 64,
-	TravelerDuelClearBossTotal = 65,
-	TravelerDuelClearSpecificBossIdAndDifficulty = 66,
 	TravelerDuelChallengeClearSpecificBossLevelAndAffix = 67,
-	TravelerDuelClearSpecificBossLevelWithDifficultyAndTotal = 68,
 	TravelerDuelClearSpecificBossTotal = 69,
-	TravelerDuelChallengeRankUploadTotal = 70,
 	WorldClassSpecific = 71,
 	RegionBossClearSpecificTypeWithTotal = 72,
 	CharactersWithSpecificDatingCount = 73,
@@ -771,7 +776,6 @@ GameEnum.questCompleteCond = {
 	VampireSurvivorPassedSpecificLevel = 77,
 	CharacterParticipateTowerNumber = 78,
 	CharacterAllSkillReachSpecificLevel = 79,
-	TravelerDuelPlayTotal = 80,
 	VampireClearTotal = 81,
 	VampireWithSpecificClearTotal = 82,
 	AgentFinishTotal = 83,
@@ -802,10 +806,27 @@ GameEnum.questCompleteCond = {
 	ActivityTypeLevelPassedWithSpecificIdAndLevelIdAndSpecificPositionAndCharElem = 112,
 	ActivityTypeLevelPassedSpecificIdTotal = 113,
 	StorySetClearSpecific = 116,
+	CharacterWithSpecificSkillAndLevel = 118,
+	DiscWithSpecificQuantityLevelAndAttr = 119,
+	TutorialLevelClearSpecific = 120,
+	TutorialLevelSpecificClearTotal = 121,
+	DiscWithSpecificQuantityPhaseAndAttr = 122,
+	WeekBossClearTotal = 123,
+	ActivityStoryReadStory = 124,
 	ClientReport = 200,
+	TowerBattleTimes = 501,
+	TowerBossChallengeSpecificHighRewardWithTotal = 502,
+	TowerBuildSpecificCharacter = 503,
 	TowerBuildSpecificScoreWithTotal = 504,
+	TowerClearSpecificCharacterTypeWithTotal = 505,
+	TowerClearSpecificGroupIdAndDifficulty = 506,
 	TowerClearSpecificLevelWithDifficultyAndTotal = 507,
+	TowerClearTotal = 508,
+	TowerEnterRoom = 509,
 	TowerEnterTotal = 510,
+	TowerEventTimes = 511,
+	TowerFateTimes = 512,
+	TowerItemsGet = 513,
 	TowerSpecificDifficultyShopBuyTimes = 514,
 	TowerGrowthSpecificNote = 515,
 	TowerClearSpecificLevelWithDifficultyAndTotalHistory = 516,
@@ -830,7 +851,8 @@ GameEnum.questCompleteCond = {
 	TowerSpecificGetExtraNoteLvTotal = 537,
 	TowerEnterFloor = 538,
 	TowerSweepTimes = 539,
-	TowerSweepTotal = 540
+	TowerSweepTotal = 540,
+	TowerBattleWithPartner = 541
 }
 GameEnum.shopCond = {
 	StageClearSpecificStars = 62,
@@ -878,7 +900,8 @@ GameEnum.towerCond = {
 	TowerSpecificGetExtraNoteLvTotal = 537,
 	TowerEnterFloor = 538,
 	TowerSweepTimes = 539,
-	TowerSweepTotal = 540
+	TowerSweepTotal = 540,
+	TowerBattleWithPartner = 541
 }
 GameEnum.towerDefenseCond = {TowerDefenseClear = 102, TowerDefenseClearSpecificStar = 103}
 GameEnum.vampireSurvivorCond = {
@@ -1113,7 +1136,23 @@ GameEnum.effectAttributeType = {
 	TOUGHNESS_BROKEN_DMG = 86,
 	ADD_SHIELD_STRENGTHEN = 87,
 	BE_ADD_SHIELD_STRENGTHEN = 88,
-	MAX = 89
+	NORMAL_SUPPRESS = 89,
+	SKILL_SUPPRESS = 90,
+	ULTRA_SUPPRESS = 91,
+	MARK_SUPPRESS = 92,
+	SUMMON_SUPPRESS = 93,
+	PROJECTILE_SUPPRESS = 94,
+	OTHER_SUPPRESS = 95,
+	MAX = 96
+}
+GameEnum.attributeFinialLimitType = {
+	FINAL_ELEMENTTYPE_DAMAGETYPE_DMG = 1,
+	FINAL_ELEMENTTYPE_DAMAGETYPE_RCDDMG = 2,
+	FINAL_ELEMENTTYPE_DAMAGETYPE_CRITRATE = 3,
+	FINAL_ELEMENTTYPE_DAMAGETYPE_CRITPOWER = 4,
+	FINAL_ELEMENTTYPE_DAMAGETYPE_SUPPRESS = 5,
+	FINAL_ELEMENTTYPE_DAMAGETYPE_EP = 6,
+	MAX = 7
 }
 GameEnum.trigger = {
 	NONE = 0,
@@ -1255,7 +1294,9 @@ GameEnum.effectType = {
 	PASSIVE_SKILL = 48,
 	IMM_CERTAIN_HITDAMAGEID = 49,
 	STATE_AMOUNT = 50,
-	DROP_ITEM_PICKUP_RANGE_FIX = 51
+	DROP_ITEM_PICKUP_RANGE_FIX = 51,
+	ELEMENTTYPE_ATTR_FIX = 52,
+	DAMAGETYPE_ATTR_FIX = 53
 }
 GameEnum.stateAttributeType = {
 	NONE = 0,
@@ -1353,7 +1394,8 @@ GameEnum.itemStype = {
 	CharacterYO = 44,
 	PlayHead = 45,
 	CharacterSkin = 46,
-	SouvenirEnergyItem = 47
+	SouvenirEnergyItem = 47,
+	Build = 48
 }
 GameEnum.targetType = {
 	AllActor = 1,
@@ -1694,7 +1736,9 @@ GameEnum.activityType = {
 	Shop = 12,
 	Advertise = 13,
 	BDConvert = 14,
-	Breakout = 15
+	Breakout = 15,
+	TrekkerVersus = 16,
+	Story = 17
 }
 GameEnum.activityOpenType = {
 	None = 0,
@@ -2055,37 +2099,6 @@ GameEnum.AgentRefreshType = {
 	NonRefresh = 3
 }
 GameEnum.AgentMemberType = {CharType = 1, BuildType = 2}
-GameEnum.OpenFuncType = {
-	Char = 1,
-	Gacha = 2,
-	Mail = 3,
-	StarTower = 4,
-	DailyInstance = 5,
-	RegionBoss = 6,
-	TravelerDuel = 7,
-	SignIn = 8,
-	InfinityTower = 9,
-	SkillInstance = 10,
-	StarTowerRank = 11,
-	Agent = 12,
-	RegionBossChallenge = 13,
-	TravelerDuelChallenge = 14,
-	VampireSurvivor = 15,
-	Quest = 16,
-	Phone = 17,
-	Activity = 18,
-	Crafting = 19,
-	ScoreBoss = 20,
-	WeeklyCopies = 21,
-	DailyQuest = 22,
-	DailyReward = 23,
-	CharGemInstance = 24,
-	CharDating = 25,
-	JointDrill = 26,
-	TutorialLevel = 27,
-	BattlePass = 28,
-	NickNameReset = 29
-}
 GameEnum.DestructibleObjectType = {
 	Common = 1,
 	WaterAndDarkTower = 2,
@@ -2123,6 +2136,39 @@ GameEnum.honorTabType = {
 	Achieve = 1,
 	Character = 2,
 	Activity = 3
+}
+GameEnum.OpenFuncType = {
+	Char = 1,
+	Gacha = 2,
+	Mail = 3,
+	StarTower = 4,
+	DailyInstance = 5,
+	RegionBoss = 6,
+	TravelerDuel = 7,
+	SignIn = 8,
+	InfinityTower = 9,
+	SkillInstance = 10,
+	StarTowerRank = 11,
+	Agent = 12,
+	RegionBossChallenge = 13,
+	TravelerDuelChallenge = 14,
+	VampireSurvivor = 15,
+	Quest = 16,
+	Phone = 17,
+	Activity = 18,
+	Crafting = 19,
+	ScoreBoss = 20,
+	WeeklyCopies = 21,
+	DailyQuest = 22,
+	DailyReward = 23,
+	CharGemInstance = 24,
+	CharDating = 25,
+	JointDrill = 26,
+	TutorialLevel = 27,
+	BattlePass = 28,
+	NickNameReset = 29,
+	WeeklyQuest = 30,
+	QuestNewbie = 31
 }
 GameEnum.TowerQuestType = {Core = 1, Normal = 2}
 GameEnum.poolType = {Elite = 1, Boss = 2}
@@ -2201,7 +2247,9 @@ GameEnum.scoreBossBehavior = {
 	TriggerFengShanJiShootsMissPlayer = 19,
 	TriggerFengNiaoBeatFlower = 20,
 	TriggerFengNiaoBeatFlowerWhenUltraSkill = 21,
-	TriggerFengNiaoFlowerMissPlayer = 22
+	TriggerFengNiaoFlowerMissPlayer = 22,
+	TriggerTaiDengMissPlayer = 23,
+	TriggerTaiDengKill = 24
 }
 GameEnum.scoreBossType = {WildCard = 1}
 GameEnum.JointDrillBattleLvsToggle = {HpLessThan = 1}
@@ -2222,7 +2270,8 @@ GameEnum.bannerType = {
 	Mall = 5,
 	MallSkin = 6,
 	Payment = 7,
-	TimeLimit_Func = 8
+	TimeLimit_Func = 8,
+	JumpToUrl = 9
 }
 GameEnum.FrozenTimeHighlightUnit = {Self = 1, SelfAndTarget = 2}
 GameEnum.TowerDefGuideType = {Character = 1, Item = 2}
@@ -2347,12 +2396,15 @@ GameEnum.activityThemeType = {
 	Swim = 1,
 	OurRegiment_10101 = 2,
 	Dream_10102 = 3,
-	BreakOut_30101 = 4
+	BreakOut_30101 = 4,
+	Christmas_20101 = 5,
+	Miracle_10103 = 5
 }
 GameEnum.ActivityLevelType = {
 	Explore = 1,
 	Adventure = 2,
-	AVG = 3
+	AVG = 3,
+	HARD = 4
 }
 GameEnum.TutorialType = {
 	Character = 1,
@@ -2483,5 +2535,5 @@ GameEnum.ActivityBreakoutLevelType = {
 	Advanced = 3,
 	Expert = 4
 }
-GameEnum.ActivityBreakoutCharUnlockCond = {}
+GameEnum.JointDrillMode = {JointDrill_Mode_1 = 1, JointDrill_Mode_2 = 2}
 return GameEnum

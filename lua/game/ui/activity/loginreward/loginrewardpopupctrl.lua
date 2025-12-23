@@ -25,8 +25,10 @@ function LoginRewardPopUpCtrl:ShowLoginReward()
 	local actData = table.remove(self.tbActivityList, 1)
 	self._panel.nActId = actData:GetActId()
 	self._panel.actData = PlayerData.Activity:GetActivityDataById(self._panel.nActId)
-	if nil ~= self._panel.actData then
+	if nil ~= self._panel.actData and self._panel.actData:CheckCanReceive() then
 		self:RefreshActContent()
+	else
+		self:ShowLoginReward()
 	end
 end
 function LoginRewardPopUpCtrl:RefreshActContent()
@@ -78,8 +80,12 @@ function LoginRewardPopUpCtrl:OnEvent_RefreshLoginRewardPanel()
 		self._panel.actData = PlayerData.Activity:GetActivityDataById(self._panel.nActId)
 		self.curPopUpCtrl:RefreshActData()
 		local nAnimTime = self.curPopUpCtrl:PlayOutAnim()
-		self:AddTimer(1, nAnimTime, "ShowLoginReward", true, true, true)
-		EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
+		if 0 < nAnimTime then
+			self:AddTimer(1, nAnimTime, "ShowLoginReward", true, true, true)
+			EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
+		else
+			self:ShowLoginReward()
+		end
 	end
 end
 return LoginRewardPopUpCtrl

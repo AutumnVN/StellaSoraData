@@ -451,6 +451,9 @@ function AvgEditorQuickPreview:QP_SetTalk(tbParam)
 		sContent = "error: AutoParagraphSignal"
 	end
 	sContent = self:PreviewContent(sContent)
+	if string.sub(sContent, 1, 12) == "_NOT_IN_LOG_" then
+		sContent = string.gsub(sContent, "_NOT_IN_LOG_", "")
+	end
 	if nType == 3 and sName ~= "" then
 		sContent = string.format("%s\239\188\154%s", sName, sContent)
 	end

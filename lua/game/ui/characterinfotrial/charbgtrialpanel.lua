@@ -1,5 +1,6 @@
 local CharBgTrialPanel = class("CharBgTrialPanel", BasePanel)
 CharBgTrialPanel._bIsMainPanel = false
+CharBgTrialPanel._sSortingLayerName = AllEnum.SortingLayerName.UI_Top
 CharBgTrialPanel._tbDefine = {
 	{
 		sPrefabPath = "CharacterInfoTrial/CharBgTrialPanel.prefab",

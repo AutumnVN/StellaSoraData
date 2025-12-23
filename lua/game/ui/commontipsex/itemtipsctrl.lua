@@ -197,7 +197,7 @@ function ItemTipsCtrl:OnEnable()
 		else
 			titleTra.sizeDelta = Vector2(textTitleWidth, titleTra.sizeDelta.y)
 		end
-	elseif mapItemCfgData.Stype == GameEnum.itemStype.CharacterYO or mapItemCfgData.Stype == GameEnum.itemStype.OutfitCYO then
+	elseif mapItemCfgData.Stype == GameEnum.itemStype.CharacterYO or mapItemCfgData.Stype == GameEnum.itemStype.OutfitCYO or mapItemCfgData.Stype == GameEnum.itemStype.Build then
 		self.sDetailTitle = ConfigTable.GetUIText("ItemTip_ComCYOTitle")
 		self._mapNode.btnDetail.gameObject:SetActive(true)
 		local titleTra = self._mapNode.TMPItemTitle:GetComponent("RectTransform")
@@ -374,6 +374,13 @@ function ItemTipsCtrl:OnBtnClick_Detail()
 			EventManager.Hit(EventId.OpenPanel, PanelId.CharConsumablePanel, self.mapData.nTid, true)
 		elseif mapItemCfgData.Stype == GameEnum.itemStype.OutfitCYO then
 			EventManager.Hit(EventId.OpenPanel, PanelId.DiscPreview, self.mapData.nTid, true)
+		elseif mapItemCfgData.Stype == GameEnum.itemStype.Build then
+			local nBuildId = decodeJson(mapItemCfgData.UseArgs)["1"]
+			local mapBuildCfgData = PlayerData.Build:GetTrialBuild(tonumber(nBuildId))
+			if mapBuildCfgData == nil then
+				return
+			end
+			EventManager.Hit(EventId.OpenPanel, PanelId.StarTowerBuildDetailPreview, mapBuildCfgData)
 		else
 			local msg = {
 				nType = AllEnum.MessageBox.ItemList,

@@ -20,6 +20,10 @@ LoginRewardCtrl._mapNodeConfig = {
 		nCount = 7,
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Item"
+	},
+	btnActivity = {
+		sComponentName = "Button",
+		callback = "OnBtnClick_Activity"
 	}
 }
 LoginRewardCtrl._mapEventConfig = {}
@@ -74,7 +78,7 @@ function LoginRewardCtrl:RefreshRewardList()
 	self.tbRewardList = {}
 	local tbRewardList = self.actData:GetActLoginRewardList()
 	if nil ~= tbRewardList then
-		local nMaxDay = #self._mapNode.goRewardItem
+		local nMaxDay = #tbRewardList
 		local nReceiveDay = self.actData:GetCanReceive()
 		local nActual = self.actData:GetReceived()
 		for k, v in ipairs(self._mapNode.goRewardItem) do
@@ -94,9 +98,17 @@ function LoginRewardCtrl:RefreshRewardList()
 		end
 	end
 end
+function LoginRewardCtrl:RefreshDetail()
+	local mapActCfg = self.actData:GetLoginRewardControlCfg()
+	local bEmpty = mapActCfg.DesText == ""
+	self._mapNode.btnDetail.gameObject:SetActive(not bEmpty)
+end
 function LoginRewardCtrl:InitActData(actData)
 	self.actData = actData
 	self:RefreshRewardList()
+	self:RefreshDetail()
+	local canReceive = self.actData:CheckCanReceive()
+	self._mapNode.btnActivity.gameObject:SetActive(canReceive)
 	local actCfg = self.actData:GetActCfgData()
 	if actCfg.EndType == GameEnum.activityEndType.NoLimit then
 		self._mapNode.goActTime.gameObject:SetActive(false)
@@ -142,5 +154,18 @@ function LoginRewardCtrl:OnBtnClick_Item(btn, nIndex)
 			EventManager.Hit("ShowActRewardList", tbReward)
 		end
 	end
+end
+function LoginRewardCtrl:OnBtnClick_Activity()
+	local callback = function()
+		self._mapNode.btnActivity.gameObject:SetActive(false)
+		local actData = PlayerData.Activity:GetActivityDataById(self.actData:GetActId())
+		self:InitActData(actData)
+	end
+	local canReceive = self.actData:CheckCanReceive()
+	if not canReceive then
+		callback()
+		return
+	end
+	PlayerData.Activity:SendReceiveLoginRewardMsg(self.actData:GetActId(), callback)
 end
 return LoginRewardCtrl

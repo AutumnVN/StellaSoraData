@@ -306,7 +306,10 @@ function RegionBossBuildCtrl:OnBtnClickGrid(nIdx, itemCtrl)
 	if self.nType == AllEnum.RegionBossFormationType.RegionBoss then
 		PlayerData.RogueBoss:SetSelBuildId(self.tbCurShow[nIdx].nBuildId)
 	elseif self.nType == AllEnum.RegionBossFormationType.TravelerDuel then
-		PlayerData.TravelerDuel:SetSelBuildId(self.tbCurShow[nIdx].nBuildId)
+		if self.Other ~= nil then
+			local activityLevelsData = PlayerData.Activity:GetActivityDataById(self.Other[1])
+			activityLevelsData:SetCachedBuildId(self.tbCurShow[nIdx].nBuildId)
+		end
 	elseif self.nType == AllEnum.RegionBossFormationType.DailyInstance then
 		PlayerData.DailyInstance:SetSelBuildId(self.tbCurShow[nIdx].nBuildId)
 	elseif self.nType == AllEnum.RegionBossFormationType.InfinityTower then
@@ -330,6 +333,8 @@ function RegionBossBuildCtrl:OnBtnClickGrid(nIdx, itemCtrl)
 		local nActId = PlayerData.Activity:GetActivityLevelActId()
 		local activityLevelsData = PlayerData.Activity:GetActivityDataById(nActId)
 		activityLevelsData:SetCachedSelBuildId(self.tbCurShow[nIdx].nBuildId, self.selLvId)
+	elseif self.nType == AllEnum.RegionBossFormationType.ActivityStory then
+		PlayerData.ActivityAvg:SetSelBuildId(self.tbCurShow[nIdx].nBuildId)
 	end
 	local tbChar = self.tbCurShow[nIdx].tbChar
 	local nRandomIdx = math.random(1, #tbChar)
@@ -392,6 +397,9 @@ function RegionBossBuildCtrl:OnEnable()
 		self.nIdx = tbParam[3]
 	elseif self.nType == AllEnum.RegionBossFormationType.JointDrill then
 		self.tbUsedBuildList = PlayerData.JointDrill:GetJointDrillBuildList()
+	end
+	if tbParam[4] ~= nil then
+		self.Other = tbParam[4]
 	end
 	local GetDataCallback = function(tbBuildData, mapAllBuild)
 		self._mapAllBuild = mapAllBuild

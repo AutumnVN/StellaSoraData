@@ -478,8 +478,8 @@ function PotentialSelectCtrl:OnBtnClick_Confirm()
 	if self.nSelectIdx ~= 0 and self.callback ~= nil then
 		local completeFunc = function(nEventId, tbPotential, mapPotential, nType, nLevel, tbNewIds, mapRoll, nCoin, tbLuckyIds, tbRecommend)
 			self:SelectComplete(nEventId, tbPotential, mapPotential, nType, nLevel, tbNewIds, mapRoll, nCoin, tbLuckyIds, tbRecommend)
-			if nType == 2 then
-				PlayerData.Voice:PlayCharVoice("thankLvup", 9133)
+			if self.nPanelType == 2 then
+				PlayerData.Voice:PlayCharVoice("thankLvup", 9133, nil, true)
 			end
 		end
 		self.callback(self.nSelectIdx, self.nEventId, completeFunc)

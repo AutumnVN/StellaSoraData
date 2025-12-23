@@ -182,6 +182,8 @@ function CookieBoardCtrl:GameInit()
 	self.bAllPerfect = true
 	self.bPressed = false
 	self.nCurHealth = 0
+	self:UpdateActiveButtons()
+	self:ApplyButtonActivation()
 	if self.nPackModel == GameEnum.CookiePackModel.CookiePackPathsModel or self.nPackModel == GameEnum.CookiePackModel.CookiePackComplexModel then
 		self.nPathGroupId = self.tbFloor[self.nCurrLevelConfigIdx].PackagePathsGroupId
 	end
@@ -205,6 +207,47 @@ function CookieBoardCtrl:GameInit()
 	self.nBoardSize = self.tbFloor[self.nCurrLevelConfigIdx].Size
 	self:RoundStart()
 	self:RefreshNextBoards()
+end
+function CookieBoardCtrl:UpdateActiveButtons()
+	local tbButtonsConfig = self.tbFloor[self.nCurrLevelConfigIdx].Buttons
+	self.tbActiveCookieTypes = {}
+	self.tbActiveButtonNames = {}
+	if tbButtonsConfig == nil or #tbButtonsConfig == 0 then
+		self.tbActiveCookieTypes = {
+			1,
+			2,
+			3
+		}
+		self.tbActiveButtonNames = {
+			"A",
+			"B",
+			"C"
+		}
+	else
+		for _, nCookieType in ipairs(tbButtonsConfig) do
+			table.insert(self.tbActiveCookieTypes, nCookieType)
+			if nCookieType == 1 then
+				table.insert(self.tbActiveButtonNames, "A")
+			elseif nCookieType == 2 then
+				table.insert(self.tbActiveButtonNames, "B")
+			elseif nCookieType == 3 then
+				table.insert(self.tbActiveButtonNames, "C")
+			end
+		end
+	end
+end
+function CookieBoardCtrl:ApplyButtonActivation()
+	local IsButtonActive = function(sButtonName)
+		for _, name in ipairs(self.tbActiveButtonNames) do
+			if name == sButtonName then
+				return true
+			end
+		end
+		return false
+	end
+	self._mapNode.btnA.gameObject:SetActive(IsButtonActive("A"))
+	self._mapNode.btnB.gameObject:SetActive(IsButtonActive("B"))
+	self._mapNode.btnC.gameObject:SetActive(IsButtonActive("C"))
 end
 function CookieBoardCtrl:RoundStart()
 	if nil ~= self.CookieGameBoard then
@@ -252,6 +295,8 @@ function CookieBoardCtrl:GetBoardData()
 				self.bShowBeatLight = true
 			end
 		end
+		self:UpdateActiveButtons()
+		self:ApplyButtonActivation()
 	end
 	self.tbGrid, self.tbPath = self:GenerateBoard(not self.bPipelineMode)
 	self.CookieGameBoard = self.nBoardSize == 3 and self._mapNode.CookieGameBoard3x3 or self._mapNode.CookieGameBoard4x4
@@ -520,9 +565,6 @@ function CookieBoardCtrl:NextBox()
 			self.timerRound = self:AddTimer(0, 0.034, self.OnEvent_Time, true, true, true)
 			local sEvent = self:GetSwitchBoxSoundEvent()
 			CS.WwiseAudioManager.Instance:PostEvent(sEvent)
-			if self.bPipelineMode == true then
-				self:PlayPathEffect()
-			end
 			self:SetEnvironmentBeat(true)
 			self.tbGridCtrl[1]:SetSelect(true)
 			EventManager.Hit(EventId.BlockInput, false)
@@ -532,6 +574,9 @@ function CookieBoardCtrl:NextBox()
 			self:PlayRhythmStartTip(nextboxcb)
 		else
 			nextboxcb()
+		end
+		if self.bPipelineMode == true then
+			self:PlayPathEffect()
 		end
 	end, true, true, true)
 end
@@ -685,9 +730,12 @@ function CookieBoardCtrl:GenerateBoard(bFixedPath)
 	end
 	local tbPrev = {0, 0}
 	for k, v in pairs(self.tbCurrPath) do
-		local nCur = math.random(1, 3)
-		while nCur == tbPrev[1] and tbPrev[1] == tbPrev[2] do
-			nCur = math.random(1, 3)
+		local nActiveCookieCount = #self.tbActiveCookieTypes
+		local nRandomIndex = math.random(1, nActiveCookieCount)
+		local nCur = self.tbActiveCookieTypes[nRandomIndex]
+		while nCur == tbPrev[1] and tbPrev[1] == tbPrev[2] and 1 < nActiveCookieCount do
+			nRandomIndex = math.random(1, nActiveCookieCount)
+			nCur = self.tbActiveCookieTypes[nRandomIndex]
 		end
 		tbGrid[v[1]][v[2]] = nCur
 		tbPrev[1] = tbPrev[2]
@@ -706,9 +754,17 @@ function CookieBoardCtrl:ResetEff()
 	self._mapNode.animMissEff.gameObject:SetActive(false)
 end
 function CookieBoardCtrl:SetButtonsActive(bActive)
-	self._mapNode.btnA.interactable = bActive
-	self._mapNode.btnB.interactable = bActive
-	self._mapNode.btnC.interactable = bActive
+	if self.tbActiveButtonNames then
+		for _, sButtonName in ipairs(self.tbActiveButtonNames) do
+			if sButtonName == "A" then
+				self._mapNode.btnA.interactable = bActive
+			elseif sButtonName == "B" then
+				self._mapNode.btnB.interactable = bActive
+			elseif sButtonName == "C" then
+				self._mapNode.btnC.interactable = bActive
+			end
+		end
+	end
 end
 function CookieBoardCtrl:CalculateScore()
 	local nScore = (self.nCompBoxCount * 10 + self.nCompCookieCount + (self.nPerfectCount - self.nMissCount) * 3 + (self.nCriticalPerfectCount * self.nCriticalPerfectFactorA + self.nPerfectCount * self.nPerfectFactorA + self.nGoodCount * self.nGoodFactorA)) * (1 + (self.nCriticalPerfectCount * self.nCriticalPerfectFactorB + self.nPerfectCount * self.nPerfectFactorB + self.nGoodCount * self.nGoodFactorB))
@@ -768,6 +824,9 @@ function CookieBoardCtrl:GameStart()
 	else
 		self:GameTrigger()
 	end
+	if self.bPipelineMode == true then
+		self:PlayPathEffect()
+	end
 end
 function CookieBoardCtrl:GameTrigger()
 	if self.timerRound ~= nil then
@@ -780,9 +839,6 @@ function CookieBoardCtrl:GameTrigger()
 	self.nPrevTime = CS.UnityEngine.Time.time
 	self.timerRound = self:AddTimer(0, 0.034, self.OnEvent_Time, true, true, true)
 	self.timerBeat = self:AddTimer(0, self.nBeatInterval, self.OnEvent_Beat, true, true, true)
-	if self.bPipelineMode == true then
-		self:PlayPathEffect()
-	end
 	local sEvent = self:GetSwitchBoxSoundEvent()
 	CS.WwiseAudioManager.Instance:PostEvent(sEvent)
 	self.bGameStarted = true
@@ -892,7 +948,12 @@ function CookieBoardCtrl:NoteMiss()
 end
 function CookieBoardCtrl:PlayPathEffect()
 	local nCurIndex = 1
-	self.gridItemAnimTimer = self:AddTimer(0, 0.1, function()
+	local nEffInterval = 0.1
+	if self.bRhythmMode then
+		local nGridCount = self.nBoardSize * self.nBoardSize
+		nEffInterval = self.nBeatInterval / 2.5 / nGridCount
+	end
+	self.gridItemAnimTimer = self:AddTimer(0, nEffInterval, function()
 		nCurIndex = nCurIndex + 1
 		if nCurIndex > #self.tbGridCtrl and self.gridItemAnimTimer ~= nil then
 			self.gridItemAnimTimer:Cancel()
@@ -981,11 +1042,9 @@ function CookieBoardCtrl:StartBeatLightLoop(nInterval, endCallback)
 				"CookieBoard_out_Rhythm"
 			})
 			self._mapNode.animRoot:Play("CookieBoard_out_Rhythm", 0, 0)
-			self:AddTimer(1, nAnimLength, function()
-				if endCallback ~= nil then
-					endCallback()
-				end
-			end, true, true, true)
+			if endCallback ~= nil then
+				endCallback()
+			end
 			if self.timerBeatLight ~= nil then
 				self.timerBeatLight:Cancel()
 				self.timerBeatLight = nil

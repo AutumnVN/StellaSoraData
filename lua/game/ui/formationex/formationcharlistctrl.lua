@@ -50,11 +50,6 @@ FormationCharListCtrl._mapEventConfig = {
 	SelectTemplateDD = "OnEvent_SortRuleChange"
 }
 function FormationCharListCtrl:Awake()
-	self._mapNode.goSortDropdown:SetList(PlayerData.Char:GetCharSortNameTextCfg(), 0)
-	self.tbSortCfg = {
-		nSortType = AllEnum.SortType.Level,
-		bOrder = false
-	}
 end
 function FormationCharListCtrl:FadeIn()
 end
@@ -65,9 +60,11 @@ function FormationCharListCtrl:OnEnable()
 	self.gameObject:SetActive(false)
 	local isDirty = PlayerData.Filter:IsDirty(AllEnum.OptionType.Char)
 	self._mapNode.imgFilterChoose:SetActive(isDirty)
+	self.bOpen = false
 end
 function FormationCharListCtrl:OnDisable()
 	self:CloseList()
+	self.bOpen = false
 end
 function FormationCharListCtrl:OnDestroy()
 end
@@ -80,6 +77,19 @@ function FormationCharListCtrl:ShowList(tbCurSelectChar, bFastSelect, nIdx)
 	self.bFastSelect = bFastSelect == true
 	self.nIdx = not self.bFastSelect and nIdx or 0
 	self.curChar = tbCurSelectChar
+	self.tbSortCfg = {
+		nSortType = PlayerData.Filter.nFormationCharSrotType,
+		bOrder = PlayerData.Filter.bFormationCharOrder
+	}
+	local curSortIdx = 1
+	local tbSortType = PlayerData.Char:GetCharSortType()
+	for nIdx, nSortType in ipairs(tbSortType) do
+		if self.tbSortCfg.nSortType == nSortType then
+			curSortIdx = nIdx
+		end
+	end
+	self._mapNode.goSortDropdown:SetList(PlayerData.Char:GetCharSortNameTextCfg(), curSortIdx - 1)
+	self.bOpen = true
 	self.mapGridCtrl = {}
 	self.tbFilterCfg = {}
 	self:RefreshOrderState()
@@ -113,6 +123,7 @@ function FormationCharListCtrl:CloseList()
 	end
 	self.mapGridCtrl = {}
 	self.gameObject:SetActive(false)
+	self.bOpen = false
 end
 function FormationCharListCtrl:OnGridRefresh(goGrid, gridIndex)
 	local nInstanceId = goGrid:GetInstanceID()
@@ -265,13 +276,18 @@ function FormationCharListCtrl:OnEvent_ForamtionDown(nIdx)
 	EventManager.Hit("OnEvent_ChangeTeamModel", self.curChar)
 end
 function FormationCharListCtrl:OnEvent_SortRuleChange(nValue)
+	if not self.bOpen then
+		return
+	end
 	local nV = nValue + 1
 	self.tbSortCfg.nSortType = PlayerData.Char:GetCharSortType()[nV]
 	self.tbSortCfg.bOrder = false
+	PlayerData.Filter:CacheCharSort(self.tbSortCfg.nSortType, self.tbSortCfg.bOrder)
 	self:Refresh()
 end
 function FormationCharListCtrl:OnBtnClick_Order(btn)
 	self.tbSortCfg.bOrder = not self.tbSortCfg.bOrder
+	PlayerData.Filter:CacheCharSort(self.tbSortCfg.nSortType, self.tbSortCfg.bOrder)
 	self:Refresh()
 end
 function FormationCharListCtrl:OnBtnClick_Close(btn)

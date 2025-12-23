@@ -26,7 +26,8 @@ function AddressBookItemCtrl:SetAddressData(nAddressId, nChatId, bLast, bTop)
 	self:SetSelect(false)
 	local cfgData = PlayerData.Phone:GetAvgContactsData(self.nAddressId)
 	if nil ~= cfgData then
-		self:SetPngSprite(self._mapNode.imgHeadIcon, cfgData.icon)
+		local sIcon = string.gsub(cfgData.icon, AllEnum.CharHeadIconSurfix.S, "")
+		self:SetPngSprite(self._mapNode.imgHeadIcon, sIcon, AllEnum.CharHeadIconSurfix.S)
 		NovaAPI.SetTMPText(self._mapNode.txtName[1], cfgData.name)
 		NovaAPI.SetTMPText(self._mapNode.txtName[2], cfgData.name)
 	end

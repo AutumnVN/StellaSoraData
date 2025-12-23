@@ -70,7 +70,7 @@ TowerDefenseLevelDetailCtrl._mapNodeConfig = {
 	team_character = {nCount = 6},
 	special_item = {},
 	animator = {
-		sNodeName = "----SafeAreaRoot---",
+		sNodeName = "----SafeAreaRoot_Detail---",
 		sComponentName = "Animator"
 	},
 	teamCtrl = {
@@ -393,7 +393,46 @@ function TowerDefenseLevelDetailCtrl:OnBtnClick_Reward(btn, index)
 	end
 end
 function TowerDefenseLevelDetailCtrl:OnBtnClick_Go()
-	self:GoToPlay()
+	if self.levelConfig.Skip then
+		local CancelCallback = function()
+			local tbChar = {}
+			local itemId = 0
+			if self.nItemGuideId ~= 0 then
+				local itemGuidConfig = ConfigTable.GetData("TowerDefenseGuide", self.nItemGuideId)
+				if itemGuidConfig ~= nil then
+					itemId = itemGuidConfig.ObjectId
+				end
+			end
+			for index, id in ipairs(self.tbCharGuideId) do
+				local charGuidConfig = ConfigTable.GetData("TowerDefenseGuide", id)
+				if charGuidConfig ~= nil then
+					table.insert(tbChar, charGuidConfig.ObjectId)
+				end
+			end
+			local cb = function()
+				self:UpdateQuestInfo()
+				self:UpdateItem()
+			end
+			self.TowerDefenseData:SkipLevel(self.nLevelId, tbChar, itemId, cb)
+		end
+		local ConfirmCallback = function()
+			self:GoToPlay()
+		end
+		local data = {
+			nType = AllEnum.MessageBox.Confirm,
+			sTitle = ConfigTable.GetUIText("TowerDef_SkipTitle"),
+			sContent = ConfigTable.GetUIText("TowerDef_SkipTips"),
+			sContentSub = orderedFormat(ConfigTable.GetUIText("TowerDef_SkipSubTips"), self.levelConfig.LevelName),
+			sConfirm = ConfigTable.GetUIText("TowerDef_Skip_Go"),
+			sCancel = ConfigTable.GetUIText("TowerDef_Skip"),
+			callbackConfirm = ConfirmCallback,
+			callbackCancel = CancelCallback,
+			bCloseNoHandler = true
+		}
+		EventManager.Hit(EventId.OpenMessageBox, data)
+	else
+		self:GoToPlay()
+	end
 end
 function TowerDefenseLevelDetailCtrl:OnBtnClick_EditorTeam()
 	if self.bInEditorPanel then

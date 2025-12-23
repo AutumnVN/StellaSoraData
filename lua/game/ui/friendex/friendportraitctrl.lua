@@ -95,7 +95,7 @@ function FriendPortraitCtrl:OnGridRefresh(goGrid, gridIndex)
 	local rareIconName = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapData.Rare]
 	NovaAPI.SetTMPText(txtCur, ConfigTable.GetUIText("Friend_CurSelect"))
 	NovaAPI.SetTMPText(txtCharName, mapData.Name)
-	self:SetPngSprite(imgCharIcon, mapSkinCfg.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+	self:SetPngSprite(imgCharIcon, mapSkinCfg.Icon, AllEnum.CharHeadIconSurfix.XXL)
 	self:SetAtlasSprite(imgFrame, "12_rare", rareIconName)
 	imgSelect:SetActive(self.nSelectIndex == nIndex)
 	imgCur1:SetActive(mapData.nId == self.nCurCharId)

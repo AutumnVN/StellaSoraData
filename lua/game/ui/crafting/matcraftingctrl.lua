@@ -64,7 +64,13 @@ MatCraftingCtrl._mapNodeConfig = {
 	txtEmpty = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Crafting_Empty"
-	}
+	},
+	txtHave = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Depot_ItemQTY"
+	},
+	txtBeforeValue = {sComponentName = "TMP_Text"},
+	txtAfterValue = {sComponentName = "TMP_Text"}
 }
 MatCraftingCtrl._mapEventConfig = {
 	CraftingSuccess = "OnRefreshCraftingItem"
@@ -162,6 +168,15 @@ function MatCraftingCtrl:RefreshCraftingCount()
 	self._mapNode.btnAddGray.gameObject:SetActive(self.nCraftingCount >= self.nMaxCraftingCount)
 	self._mapNode.btnReduceCount.gameObject:SetActive(self.nCraftingCount > 1)
 	self._mapNode.btnReduceGray.gameObject:SetActive(self.nCraftingCount <= 1)
+	local nHasCount = PlayerData.Item:GetItemCountByID(self.nProductionId)
+	NovaAPI.SetTMPText(self._mapNode.txtBeforeValue, nHasCount)
+	local tbCfgData = PlayerData.Crafting:GetProductionById(self.nSelectPId)
+	local nPerCount = 0
+	if nil ~= tbCfgData then
+		nPerCount = tbCfgData.ShowProductionId == 0 and tbCfgData.ProductionPerBatch or tbCfgData.ShowProductionPerBatch
+	end
+	local nAfterCount = nHasCount + self.nCraftingCount * nPerCount
+	NovaAPI.SetTMPText(self._mapNode.txtAfterValue, nAfterCount)
 end
 function MatCraftingCtrl:ResetSelectProduction()
 	self.nSelectPId = 0

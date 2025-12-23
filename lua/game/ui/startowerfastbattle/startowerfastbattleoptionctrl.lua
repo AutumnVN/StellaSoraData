@@ -66,6 +66,7 @@ function StarTowerFastBattleOptionCtrl:OnEnable()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		self:Refresh()
 		self._mapNode.rtSelectOption:SetActive(true)
+		EventManager.Hit(EventId.TemporaryBlockInput, 1)
 	end
 	cs_coroutine.start(wait)
 	GamepadUIManager.EnableGamepadUI("StarTowerFastBattleOptionCtrl", self:GetGamepadUINode())

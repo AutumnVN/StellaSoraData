@@ -38,7 +38,8 @@ BdConvertQuestCtrl._mapNodeConfig = {
 		nCount = 2,
 		sComponentName = "TMP_Text",
 		sLanguageId = "BdConvert_GetQuestReward"
-	}
+	},
+	img_score = {sComponentName = "Image"}
 }
 BdConvertQuestCtrl._mapEventConfig = {}
 BdConvertQuestCtrl._mapRedDotConfig = {}
@@ -46,6 +47,10 @@ function BdConvertQuestCtrl:Awake()
 	local param = self:GetPanelParam()
 	if type(param) == "table" then
 		self.nActId = param[1]
+	end
+	local cfg = ConfigTable.GetData("BdConvert", self.nActId)
+	if cfg ~= nil and cfg.ScoreItemId ~= 0 then
+		self:SetPngSprite(self._mapNode.img_score, ConfigTable.GetData_Item(cfg.ScoreItemId).Icon2)
 	end
 	self:InitData()
 end

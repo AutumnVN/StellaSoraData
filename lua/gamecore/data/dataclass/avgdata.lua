@@ -229,6 +229,9 @@ function AvgData:AvgLuaNameToStoryId(sAvgId)
 	return nId, storyId
 end
 function AvgData:CheckIfTrue(bIsMajor, sAvgId, nGroupId, nIndex, nCheckount)
+	if self.IsActivityAvg == true then
+		return PlayerData.ActivityAvg:CheckIfTrue(bIsMajor, sAvgId, nGroupId, nIndex, nCheckount)
+	end
 	local n, sCheckTarget = self:AvgLuaNameToStoryId(sAvgId)
 	if table.indexof(self.tbTempStoryIds, sCheckTarget) > 0 then
 		return self:CheckIfTrue_Client(bIsMajor, sAvgId, nGroupId, nIndex, nCheckount)
@@ -281,6 +284,9 @@ function AvgData:CheckIfTrue_Client(bIsMajor, sAvgId, nGroupId, nIndex, nCheckou
 	return nCheckount <= nCount
 end
 function AvgData:IsUnlock(sConditionId)
+	if self.IsActivityAvg == true then
+		return PlayerData.ActivityAvg:IsUnlock(sConditionId)
+	end
 	if type(sConditionId) == "string" and sConditionId == "" then
 		return true
 	end
@@ -353,6 +359,10 @@ function AvgData:IsUnlock(sConditionId)
 	return bResult, tbResult
 end
 function AvgData:MarkStoryId(sAvgId)
+	if self.IsActivityAvg == true then
+		PlayerData.ActivityAvg:MarkStoryId(sAvgId)
+		return
+	end
 	if AVG_EDITOR == true then
 	elseif type(self.CURRENT_STORY_ID) == "number" then
 		local cfgdata = ConfigTable.GetData_Story(self.CURRENT_STORY_ID)
@@ -371,11 +381,18 @@ function AvgData:MarkStoryId(sAvgId)
 	end
 end
 function AvgData:MarkEvId(sId)
+	if self.IsActivityAvg == true then
+		PlayerData.ActivityAvg:MarkEvId(sId)
+		return
+	end
 	if table.indexof(self.tbTempEvIds, sId) <= 0 and 0 >= table.indexof(self.tbEvIds, sId) then
 		table.insert(self.tbTempEvIds, sId)
 	end
 end
 function AvgData:IsChosen(sAvgId, nGroupId, nIndex)
+	if self.IsActivityAvg == true then
+		return PlayerData.ActivityAvg:IsChosen(sAvgId, nGroupId, nIndex)
+	end
 	if self.mapChosen[sAvgId] == nil then
 		return false
 	end
@@ -394,6 +411,10 @@ function AvgData:IsChosen(sAvgId, nGroupId, nIndex)
 	return bIsChosen, bIsChosen_Temp
 end
 function AvgData:MarkChosen(sAvgId, nGroupId, nIndex)
+	if self.IsActivityAvg == true then
+		PlayerData.ActivityAvg:MarkChosen(sAvgId, nGroupId, nIndex)
+		return
+	end
 	if self.mapTempCL[sAvgId] == nil then
 		self.mapTempCL[sAvgId] = {}
 	end
@@ -434,6 +455,9 @@ function AvgData:IsStoryReaded(nStoryId)
 	return false
 end
 function AvgData:GetHistoryChoosedPersonality(sAvgId, nGroupId)
+	if self.IsActivityAvg == true then
+		return PlayerData.ActivityAvg:GetHistoryChoosedPersonality(sAvgId, nGroupId)
+	end
 	if self.mapPersonality[sAvgId] == nil then
 		return nil
 	end
@@ -450,6 +474,10 @@ function AvgData:GetHistoryChoosedPersonality(sAvgId, nGroupId)
 	return 0
 end
 function AvgData:MarkChoosedPersonality(sAvgId, nGroupId, nIndex, nFactor)
+	if self.IsActivityAvg == true then
+		PlayerData.ActivityAvg:MarkChoosedPersonality(sAvgId, nGroupId, nIndex, nFactor)
+		return
+	end
 	if self.mapTempPersonality[sAvgId] == nil then
 		self.mapTempPersonality[sAvgId] = {}
 	end
@@ -613,8 +641,10 @@ function AvgData:GetChapterCount()
 	local count = 0
 	local data = {}
 	local forEachChapter = function(mapData)
-		count = count + 1
-		table.insert(data, mapData)
+		if self:IsStoryChapterShow(mapData.Id) == true then
+			count = count + 1
+			table.insert(data, mapData)
+		end
 	end
 	ForEachTableLine(DataTable.StoryChapter, forEachChapter)
 	return count, data
@@ -638,6 +668,18 @@ function AvgData:IsStoryChapterUnlock(nChapterId)
 		end
 	end
 	return true
+end
+function AvgData:IsStoryChapterShow(nChapterId)
+	local mapStoryData = ConfigTable.GetData("StoryChapter", nChapterId)
+	if mapStoryData == nil then
+		return false
+	end
+	if mapStoryData.OpenTime == "" then
+		return true
+	end
+	local nOpenTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapStoryData.OpenTime)
+	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+	return nOpenTime <= nCurTime
 end
 function AvgData:SendMsg_STORY_ENTER(nStoryId, nBuildId, bNewestStory)
 	if type(nStoryId) == "string" then
@@ -1016,6 +1058,9 @@ function AvgData:GetNewLockChapterIndex()
 	local tempIndex = self.nNewLockChapterIndex
 	self.nNewLockChapterIndex = -1
 	return tempIndex
+end
+function AvgData:ChangeActivityAvgState(IsActivityAvg)
+	self.IsActivityAvg = IsActivityAvg
 end
 function AvgData:AvgEditorTempData(sConditionIds, bAdd)
 	if self.tbAvgEditorTempData_Unlocked_sConditionIds == nil then

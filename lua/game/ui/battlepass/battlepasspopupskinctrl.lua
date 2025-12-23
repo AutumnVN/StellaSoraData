@@ -19,7 +19,8 @@ BattlePassPopupSkinCtrl._mapNodeConfig = {
 	btnClosePopup = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Close"
-	}
+	},
+	imgSeasonTimeBar = {sComponentName = "Image"}
 }
 BattlePassPopupSkinCtrl._mapEventConfig = {}
 BattlePassPopupSkinCtrl._mapRedDotConfig = {}
@@ -43,10 +44,12 @@ function BattlePassPopupSkinCtrl:ShowPanel(mapBattlePassCfg)
 	self.animRoot:Play("rtSkinPopup_in")
 	local nSkinId = mapBattlePassCfg.Cover
 	local mapSkinCfg = ConfigTable.GetData("CharacterSkin", nSkinId)
+	local _, color = ColorUtility.TryParseHtmlString(mapBattlePassCfg.CoverColor)
+	self._mapNode.imgSeasonTimeBar.color = color
 	if mapSkinCfg ~= nil then
 		self._mapNode.Actor2D_PNG_Popup.gameObject:SetActive(true)
 		local nCharId = mapSkinCfg.CharId
-		Actor2DManager.SetActor2D_PNG(self._mapNode.Actor2D_PNG_Popup, PanelId.MainView, nCharId, nSkinId)
+		Actor2DManager.SetActor2D_PNG(self._mapNode.Actor2D_PNG_Popup, PanelId.BattlePass, nCharId, nSkinId)
 	else
 		self._mapNode.Actor2D_PNG_Popup.gameObject:SetActive(false)
 	end
@@ -56,6 +59,7 @@ function BattlePassPopupSkinCtrl:ShowPanel(mapBattlePassCfg)
 	local sCloseTime = os.date("%Y.%m.%d", nCloseTime)
 	NovaAPI.SetTMPText(self._mapNode.TMPSeasonTIme_popup, string.format("%s-%s", sOpenTime, sCloseTime))
 	self:SetPngSprite(self._mapNode.imgBattlePassLogo, "Icon/ArtText/CharSkin_ArtText_" .. mapBattlePassCfg.Cover)
+	NovaAPI.SetImageNativeSize(self._mapNode.imgBattlePassLogo)
 end
 function BattlePassPopupSkinCtrl:OnBtnClick_Close()
 	local callback = function()

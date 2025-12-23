@@ -33,6 +33,7 @@ function PlayerStorySetData:UpdateStorySetState(bState)
 end
 function PlayerStorySetData:CacheStorySetData(netMsg)
 	if netMsg.Chapters ~= nil then
+		local nChapterId = -1
 		for _, data in ipairs(netMsg.Chapters) do
 			if self.tbChapter[data.ChapterId] ~= nil then
 				self.tbChapter[data.ChapterId].bUnlock = true
@@ -55,6 +56,15 @@ function PlayerStorySetData:CacheStorySetData(netMsg)
 						v.nId
 					}, v.nStatus == AllEnum.StorySetStatus.UnLock and bShow)
 				end
+				local chapterHasRedDot = RedDotManager.GetValid(RedDotDefine.Story_Set_Chapter, data.ChapterId)
+				if chapterHasRedDot == true then
+					if nChapterId < 0 then
+						nChapterId = data.ChapterId
+					else
+						nChapterId = math.min(nChapterId, data.ChapterId)
+					end
+				end
+				self:SetRecentChapterId(nChapterId)
 			end
 		end
 	end
@@ -103,6 +113,12 @@ function PlayerStorySetData:TryOpenStorySetPanel(callback)
 		callback()
 	end
 end
+function PlayerStorySetData:SetRecentChapterId(chapterId)
+	self.nRecentChapterId = chapterId
+end
+function PlayerStorySetData:GetRecentChapterId()
+	return self.nRecentChapterId
+end
 function PlayerStorySetData:SendGetStorySetData(callback)
 	local func_cb = function(_, netMsg)
 		RedDotManager.SetValid(RedDotDefine.Story_Set_Server, nil, false)
@@ -141,6 +157,7 @@ function PlayerStorySetData:ReceiveStorySetReward(nChapterId, nSectionId, callba
 		if callback ~= nil then
 			callback(netMsg)
 		end
+		self:SetRecentChapterId(nChapterId)
 		EventManager.Hit("ReceiveStorySetRewardSuc")
 	end
 	local msg = {ChapterId = nChapterId, SectionId = nSectionId}

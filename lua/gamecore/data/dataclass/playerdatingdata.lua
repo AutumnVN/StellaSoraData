@@ -99,6 +99,10 @@ function PlayerDatingData:GetRandomLandmark()
 	for i = 1, #self.tbLandmarkCfg do
 		tbRandom[i] = i
 	end
+	math.randomseed(os.time())
+	math.random()
+	math.random()
+	math.random()
 	for i = 1, 3 do
 		local randomIndex = math.random(#tbRandom)
 		local nSelectIndex = tbRandom[randomIndex]

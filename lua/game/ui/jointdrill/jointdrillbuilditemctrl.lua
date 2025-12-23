@@ -71,7 +71,7 @@ function JointDrillBuildItemCtrl:SetItem(nIndex, mapBuild, nLevelId)
 			local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 			if mapCharCfg ~= nil and mapCharSkin ~= nil then
 				local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-				self:SetPngSprite(self._mapNode.imgItemIcon[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+				self:SetPngSprite(self._mapNode.imgItemIcon[i], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 				self:SetAtlasSprite(self._mapNode.imgItemRare[i], "12_rare", sFrame)
 				local nLevel = PlayerData.Char:GetCharLv(tbChar[i])
 				NovaAPI.SetTMPText(self._mapNode.txtRank[i], nLevel)

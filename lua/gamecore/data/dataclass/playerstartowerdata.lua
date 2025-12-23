@@ -1337,7 +1337,7 @@ function PlayerStarTowerData:GetPotentialDescSimple()
 			sValue = ConfigTable.GetConfigValue("PotentialShowDetail")
 			LocalData.SetPlayerLocalData("StarTowerPotentialDescSimple", sValue)
 		end
-		self.bPotentialDescSimple = tonumber(sValue) ~= 1
+		self.bPotentialDescSimple = tonumber(sValue) == 1
 	end
 	return self.bPotentialDescSimple
 end

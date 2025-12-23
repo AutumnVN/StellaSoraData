@@ -310,6 +310,7 @@ function Avg_7_MajorChoiceCtrl:SetMajorChoice(tbParam)
 		if tbType[i] == 1 and self._panel.nBEIndex == i then
 			bDisableBE = true
 		end
+		local bDisable = tbType[i] == 2
 		if tbIcon[i] == "" then
 			self.tbGoChoice[i]:SetActive(false)
 		else
@@ -342,6 +343,14 @@ function Avg_7_MajorChoiceCtrl:SetMajorChoice(tbParam)
 				self.tbGoChoosed[i]:SetActive(true)
 				self.tbGoChoosedBE[i]:SetActive(true)
 				NovaAPI.SetText_RubyTMP(self.tbTMP_Choosed[i], AvgUIText.AVG_ImportantChoice_BE)
+				_b, _c = ColorUtility.TryParseHtmlString("#cad3dd")
+				NovaAPI.SetTMPColor(self.tbTMP_Choosed[i], _c)
+			end
+			if bDisable == true then
+				bInteractable = false
+				self.tbGoChoosed[i]:SetActive(true)
+				self.tbGoChoosedBE[i]:SetActive(true)
+				NovaAPI.SetText_RubyTMP(self.tbTMP_Choosed[i], AvgUIText.AVG_ImportantChoice_Disable)
 				_b, _c = ColorUtility.TryParseHtmlString("#cad3dd")
 				NovaAPI.SetTMPColor(self.tbTMP_Choosed[i], _c)
 			end

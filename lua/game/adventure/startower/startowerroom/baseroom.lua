@@ -780,7 +780,7 @@ function BaseRoom:OpenNpcOptionPanel(nCaseId, nNpcConfigId)
 			local mapTalkCfg = ConfigTable.GetData("StarTowerTalk", nTalkId)
 			if mapTalkCfg ~= nil and mapAffinity[mapTalkCfg.NPCId] ~= nil then
 				local nAffinity = mapAffinity[mapTalkCfg.NPCId]
-				if #mapTalkCfg.Affinity == 2 and nAffinity ~= nil and nAffinity > mapTalkCfg.Affinity[1] and nAffinity <= mapTalkCfg.Affinity[2] then
+				if #mapTalkCfg.Affinity == 2 and nAffinity ~= nil and nAffinity >= mapTalkCfg.Affinity[1] and nAffinity <= mapTalkCfg.Affinity[2] then
 					table.insert(tbChat, nTalkId)
 				end
 			end
@@ -868,7 +868,7 @@ function BaseRoom:OpenNpcOptionPanel(nCaseId, nNpcConfigId)
 		local mapTalkCfg = ConfigTable.GetData("StarTowerTalk", nTalkId)
 		if mapTalkCfg ~= nil and mapAffinity[mapTalkCfg.NPCId] ~= nil then
 			local nAffinity = mapAffinity[mapTalkCfg.NPCId]
-			if #mapTalkCfg.Affinity == 2 and nAffinity ~= nil and nAffinity > mapTalkCfg.Affinity[1] and nAffinity <= mapTalkCfg.Affinity[2] then
+			if #mapTalkCfg.Affinity == 2 and nAffinity ~= nil and nAffinity >= mapTalkCfg.Affinity[1] and nAffinity <= mapTalkCfg.Affinity[2] then
 				table.insert(tbChat, nTalkId)
 			end
 		end
@@ -930,11 +930,18 @@ function BaseRoom:HandleNpcRecover(nCaseId, nNpcConfigId)
 		local tbChat = ConfigTable.GetData("NPCConfig", nNpcConfigId).Lines
 		local nCount = #tbChat
 		local nTalkId = tbChat[1]
+		local tbSelectedChat = {}
+		local nAffinity = PlayerData.StarTower:GetNpcAffinityData(9172).nTotalExp
 		if 1 < nCount then
-			nTalkId = tbChat[math.random(1, #tbChat)]
+			for _, nTalkId in ipairs(tbChat) do
+				local mapTalkCfg = ConfigTable.GetData("StarTowerTalk", nTalkId)
+				if mapTalkCfg ~= nil and nAffinity ~= nil and #mapTalkCfg.Affinity == 2 and nAffinity ~= nil and nAffinity >= mapTalkCfg.Affinity[1] and nAffinity <= mapTalkCfg.Affinity[2] then
+					table.insert(tbSelectedChat, nTalkId)
+				end
+			end
 		end
-		if nTalkId == nil then
-			nTalkId = 0
+		if 0 < #tbSelectedChat then
+			nTalkId = tbSelectedChat[math.random(1, #tbSelectedChat)]
 		end
 		local nCoin = self.parent._mapItem[AllEnum.CoinItemId.FixedRogCurrency] or 0
 		EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 0, 0, {}, nSkinId, 1, {}, {}, nTalkId, 0, true, false, nCoin, self.parent.nTowerId, self.parent._mapNote)

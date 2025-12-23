@@ -227,17 +227,8 @@ function ShopCtrl:RefreshDailyGift()
 	end
 end
 function ShopCtrl:PlayEnterVoice()
-	local nTimeNow = CS.ClientManager.Instance.serverTimeStampWithTimeZone
 	local bFirst = PlayerData.Shop:GetShopFirstIn()
-	local sTimeVoice = ""
-	local nHour = tonumber(os.date("!%H", nTimeNow))
-	if 6 <= nHour and nHour < 12 then
-		sTimeVoice = "greetmorn_npc"
-	elseif 12 <= nHour and nHour < 18 then
-		sTimeVoice = "greetnoon_npc"
-	else
-		sTimeVoice = "greetnight_npc"
-	end
+	local sTimeVoice = PlayerData.Voice:GetNPCGreetTimeVoiceKey()
 	if bFirst then
 		PlayerData.Voice:PlayCharVoice(sTimeVoice, npcId, nil, true)
 	else

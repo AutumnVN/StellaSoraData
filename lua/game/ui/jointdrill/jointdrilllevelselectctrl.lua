@@ -27,6 +27,14 @@ JointDrillLevelSelectCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "JointDrill_Btn_Reward"
 	},
+	btnShop = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Shop"
+	},
+	txtBtnShop = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "JointDrill_Btn_Shop"
+	},
 	redDotQuest = {},
 	goActTime = {},
 	txtActTimeCn = {sComponentName = "TMP_Text"},
@@ -35,6 +43,9 @@ JointDrillLevelSelectCtrl._mapNodeConfig = {
 	txtTitle = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "JointDrill_Difficulty_Select"
+	},
+	levelListSv = {
+		sComponentName = "UIScrollRect"
 	},
 	levelListContent = {
 		sComponentName = "RectTransform"
@@ -166,7 +177,12 @@ JointDrillLevelSelectCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "InfinityTower_Recommend_Construct"
 	},
-	imgProperty = {nCount = 6, sComponentName = "Image"},
+	goPropertyList = {nCount = 2, sComponentName = "Transform"},
+	txtPropertyNone = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "EnemyInfo_Window_Property_None"
+	},
 	txtBossSkill = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "JointDrill_Boss_Info"
@@ -299,6 +315,7 @@ function JointDrillLevelSelectCtrl:RefreshLevelList()
 	self._mapNode.goMain.gameObject:SetActive(true)
 	self._mapNode.goLevelInfo.gameObject:SetActive(false)
 	self._mapNode.animRoot:Play("JointDrill_Main_in", 0, 0)
+	local nLocationIndex = 0
 	if self.bInBattle or self.nActStatus == AllEnum.JointDrillActStatus.Start then
 		self._mapNode.goLevelList.gameObject:SetActive(true)
 		self._mapNode.goChallengeEnd.gameObject:SetActive(false)
@@ -323,6 +340,7 @@ function JointDrillLevelSelectCtrl:RefreshLevelList()
 					end
 					self.battleItemCtrl.gameObject:SetActive(true)
 					self.battleItemCtrl:SetItem(v, self.nCurLevelId)
+					nLocationIndex = k
 				else
 					if self.tbLevelItemCtrl[nIndex] == nil then
 						local itemObj = instantiate(self._mapNode.goLevelItem, self._mapNode.levelListContent)
@@ -339,6 +357,19 @@ function JointDrillLevelSelectCtrl:RefreshLevelList()
 				end
 			end
 		end
+		local wait = function()
+			coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+			if nLocationIndex == 0 then
+				for k, v in ipairs(mapLevelList) do
+					local bUnlock = PlayerData.JointDrill:IsJointDrillUnlock(v.Id)
+					if bUnlock then
+						nLocationIndex = k
+					end
+				end
+			end
+			NovaAPI.UIScrollRectScrollTo(self._mapNode.levelListSv, nLocationIndex - 1, false)
+		end
+		cs_coroutine.start(wait)
 	else
 		self._mapNode.goLevelList.gameObject:SetActive(false)
 		self._mapNode.goChallengeEnd.gameObject:SetActive(true)
@@ -393,21 +424,39 @@ function JointDrillLevelSelectCtrl:RefreshLevelInfo()
 	NovaAPI.SetTMPText(self._mapNode.txtRecLevel, mapLevelCfg.RecommendLv)
 	local sScoreIcon = "Icon/BuildRank/BuildRank_" .. mapLevelCfg.RecommendBuildRank
 	self:SetPngSprite(self._mapNode.imgRecommendBuild, sScoreIcon)
-	local tbEET = {}
+	local tbEET1, tbEET2 = {}, {}
 	local nMonsterId = mapLevelCfg.BossId
 	local mapMonsterCfgData = ConfigTable.GetData("Monster", nMonsterId)
 	if mapMonsterCfgData ~= nil then
 		local nTempleteId = mapMonsterCfgData.Templete
 		local mapTemplete = ConfigTable.GetData("MonsterValueTempleteAdjust", nTempleteId)
 		if mapTemplete ~= nil then
-			tbEET = clone(mapTemplete.WeakEET)
+			tbEET1 = clone(mapTemplete.WeakEET)
+			tbEET2 = clone(mapTemplete.ResistEET)
 		end
 	end
-	for k, v in ipairs(self._mapNode.imgProperty) do
-		v.gameObject:SetActive(tbEET[k] ~= nil)
-		if tbEET[k] ~= nil then
-			local sName = AllEnum.ElementIconType.Icon .. tbEET[k]
-			self:SetAtlasSprite(v, "12_rare", sName)
+	self._mapNode.goPropertyList[1].gameObject:SetActive(0 < #tbEET1)
+	self._mapNode.goPropertyList[2].gameObject:SetActive(0 < #tbEET2)
+	self._mapNode.txtPropertyNone[1].gameObject:SetActive(#tbEET1 == 0)
+	self._mapNode.txtPropertyNone[2].gameObject:SetActive(#tbEET2 == 0)
+	for i = 1, 5 do
+		local goProperty1 = self._mapNode.goPropertyList[1]:Find("goEmpty" .. i)
+		if goProperty1 then
+			goProperty1.gameObject:SetActive(tbEET1[i] ~= nil)
+			if tbEET1[i] ~= nil then
+				local img = goProperty1:Find("imgProperty"):GetComponent("Image")
+				local sName = AllEnum.ElementIconType.Icon .. tbEET1[i]
+				self:SetAtlasSprite(img, "12_rare", sName)
+			end
+		end
+		local goProperty2 = self._mapNode.goPropertyList[2]:Find("goEmpty" .. i)
+		if goProperty2 then
+			goProperty2.gameObject:SetActive(tbEET2[i] ~= nil)
+			if tbEET2[i] ~= nil then
+				local img = goProperty2:Find("imgProperty"):GetComponent("Image")
+				local sName = AllEnum.ElementIconType.Icon .. tbEET2[i]
+				self:SetAtlasSprite(img, "12_rare", sName)
+			end
 		end
 	end
 	self.tbBossSkill = mapLevelCfg.BossAffix
@@ -562,6 +611,11 @@ function JointDrillLevelSelectCtrl:Awake()
 	end
 end
 function JointDrillLevelSelectCtrl:OnEnable()
+	local bReset = PlayerData.JointDrill:GetResetLevelSelect()
+	if bReset then
+		self.nPanelType = panelType_main
+	end
+	PlayerData.JointDrill:SetResetLevelSelect(false)
 	self._mapNode.goAvgWindow.gameObject:SetActive(false)
 	self._mapNode.goSmoke.gameObject:SetActive(false)
 	self._mapNode.goLevelItem.gameObject:SetActive(false)
@@ -578,7 +632,7 @@ function JointDrillLevelSelectCtrl:OnEnable()
 			return
 		end
 		self.nGroupId = mapCfg.DrillLevelGroupId
-		self:SetPngSprite(self._mapNode.imgBg, "UI/Play_JointDrill/SpriteAtlas/Sprite/" .. mapCfg.BG)
+		self:SetPngSprite(self._mapNode.imgBg, mapCfg.BG)
 	end
 	local callback = function()
 	end
@@ -617,6 +671,9 @@ function JointDrillLevelSelectCtrl:OnBtnClick_Avg()
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_Quest()
 	EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillQuest)
+end
+function JointDrillLevelSelectCtrl:OnBtnClick_Shop()
+	EventManager.Hit(EventId.OpenPanel, PanelId.ShopPanel, 3)
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_Tickets()
 	if self.nTicketId ~= nil then
@@ -698,6 +755,11 @@ function JointDrillLevelSelectCtrl:OnBtnClick_Simulation()
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_Cancel()
 	local sTip = ConfigTable.GetUIText("JointDrill_Give_Up_Tip")
+	local sTip2
+	local bSimulate = PlayerData.JointDrill:GetBattleSimulate()
+	if not bSimulate then
+		sTip2 = ConfigTable.GetUIText("JointDrill_Give_Up_Tip_2")
+	end
 	local callback = function()
 		local gameOverCallback = function()
 			self.bInBattle = PlayerData.JointDrill:CheckJointDrillInBattle()
@@ -709,6 +771,7 @@ function JointDrillLevelSelectCtrl:OnBtnClick_Cancel()
 	local msg = {
 		nType = AllEnum.MessageBox.Confirm,
 		sContent = sTip,
+		sContentSub = sTip2,
 		callbackConfirm = callback
 	}
 	EventManager.Hit(EventId.OpenMessageBox, msg)

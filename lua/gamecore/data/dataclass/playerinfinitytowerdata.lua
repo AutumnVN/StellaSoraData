@@ -926,14 +926,7 @@ function PlayerInfinityTowerData:GetNPCVoiceKey(NpcId)
 	else
 		self.TabVoiceNpc[NpcId] = true
 	end
-	local timeNow = CS.ClientManager.Instance.serverTimeStamp
-	local nHour = tonumber(os.date("%H", timeNow))
-	if 6 <= nHour and nHour < 12 then
-		return isFirst, "greetmorn_npc"
-	elseif 12 <= nHour and nHour < 18 then
-		return isFirst, "greetnoon_npc"
-	else
-		return isFirst, "greetnight_npc"
-	end
+	local sTimeVoice = PlayerData.Voice:GetNPCGreetTimeVoiceKey()
+	return isFirst, sTimeVoice
 end
 return PlayerInfinityTowerData

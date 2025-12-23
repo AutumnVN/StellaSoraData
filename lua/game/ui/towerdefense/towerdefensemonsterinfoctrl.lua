@@ -183,10 +183,7 @@ function TowerDefenseMonsterInfoCtrl:RefreshMonsterInfo(nMonsterId)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtStory, monsterManual.Desc)
 	LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.goStory)
-	local eets = {}
-	if monsterAdjust.EET ~= GameEnum.elementType.NONE then
-		table.insert(eets, monsterAdjust.EET)
-	end
+	local eets = monsterAdjust.EET
 	self:RefreshAbility(monsterManual)
 	LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.rtContent)
 end

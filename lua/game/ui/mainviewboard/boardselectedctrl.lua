@@ -33,7 +33,7 @@ function BoardSelectedCtrl:Refresh(idx, id, bIsSelected)
 			end
 			local charSkinCfgData = handbookData:GetSkinCfgData()
 			if nil ~= charSkinCfgData then
-				self:SetPngSprite(self._mapNode.imgIcon, charSkinCfgData.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+				self:SetPngSprite(self._mapNode.imgIcon, charSkinCfgData.Icon, AllEnum.CharHeadIconSurfix.XXL)
 			end
 		elseif handbookData:GetType() == GameEnum.handbookType.OUTFIT then
 			local discCfgData = handbookData:GetDiscCfgData()

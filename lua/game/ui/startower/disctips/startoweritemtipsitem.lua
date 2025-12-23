@@ -32,7 +32,7 @@ function StarTowerItemTipsItem:Show(nTid, nCount)
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.canvasGroup, 0)
 	self._mapNode.itemTr.anchoredPosition = Vector2(0, 0)
 	local nInAnimLen = NovaAPI.GetAnimClipLength(self.animRoot, {
-		"TemplateTip_in"
+		"TemplateItemTip_in"
 	})
 	self:AddTimer(1, nInAnimLen + 1, function()
 		self:OnTipItemHide()
@@ -40,9 +40,9 @@ function StarTowerItemTipsItem:Show(nTid, nCount)
 end
 function StarTowerItemTipsItem:OnTipItemHide()
 	local nInAnimLen = NovaAPI.GetAnimClipLength(self.animRoot, {
-		"TemplateTip_out"
+		"TemplateItemTip_out"
 	})
-	self.animRoot:Play("TemplateTip_out")
+	self.animRoot:Play("TemplateItemTip_out")
 	self:AddTimer(1, nInAnimLen, function()
 		EventManager.Hit("StarTowerTipsShowEnd", self, AllEnum.StarTowerTipsType.ItemTip)
 	end, true, true, true, nil)

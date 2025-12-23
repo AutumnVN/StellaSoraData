@@ -39,7 +39,7 @@ function BuildDetailItemCtrl:RefreshChar()
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 		local mapCharCfg = ConfigTable.GetData_Character(nCharTid)
 		local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-		self:SetPngSprite(self._mapNode.imgCharIcon[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+		self:SetPngSprite(self._mapNode.imgCharIcon[i], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 		self:SetAtlasSprite(self._mapNode.imgCharFrame[i], "12_rare", sFrame)
 	end
 end

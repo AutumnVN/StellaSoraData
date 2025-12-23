@@ -97,8 +97,8 @@ function Avg_7_PersonalityChoiceCtrl:Awake()
 		self.tbTMP_Title[i] = tr:Find("goDefault_1/tmpTitle_1"):GetComponent("RubyTextMeshProUGUI")
 		self.tbTMP_Content[i] = tr:Find("goDefault_1/tmpContent_1"):GetComponent("RubyTextMeshProUGUI")
 		self.tbImgBright[i] = tr:Find("imgBright_1"):GetComponent("Image")
-		self.tbGoChoosed[i] = tr:Find("goChoosed_1").gameObject
-		self.tbTMP_Choosed[i] = tr:Find("goChoosed_1/tmpChoosed_1"):GetComponent("RubyTextMeshProUGUI")
+		self.tbGoChoosed[i] = tr:Find("goDefault_1/goChoosed_1").gameObject
+		self.tbTMP_Choosed[i] = tr:Find("goDefault_1/goChoosed_1/tmpChoosed_1"):GetComponent("RubyTextMeshProUGUI")
 	end
 	self.tbActionContent = {}
 	self.tbLogData = {}

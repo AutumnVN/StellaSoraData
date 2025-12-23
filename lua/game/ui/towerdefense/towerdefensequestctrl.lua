@@ -89,7 +89,7 @@ function TowerDefenseQuestCtrl:SetData(nActId, bIsSubPanel)
 	self.tbGroup = {}
 	self.tbGroupConfig = {}
 	local foreachQuestGroup = function(data)
-		if data.ActivityId then
+		if data.ActivityId == self.nActId then
 			table.insert(self.tbGroup, data.Id)
 			self.tbGroupConfig[data.Id] = data
 		end

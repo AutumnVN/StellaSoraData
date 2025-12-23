@@ -35,11 +35,11 @@ function StarTowerAffinityTipsItem:Show(nNpcId, nAffinity)
 		if mapNpcCfg ~= nil then
 			self:SetPngSprite(self._mapNode.imgItemIcon, mapNpcCfg.Head)
 			self._mapNode.itemIconTr.localScale = Vector3.one * 0.25
-			self._mapNode.itemIconTr.anchoredPosition = Vector2(38.8, 4.3)
+			self._mapNode.itemIconTr.anchoredPosition = Vector2(16.9, 3.89)
 		else
 			self:SetAtlasSprite(self._mapNode.imgItemIcon, "10_ico", "icon_favorability_01")
 			self._mapNode.itemIconTr.localScale = Vector3.one
-			self._mapNode.itemIconTr.anchoredPosition = Vector2(36.3, 0)
+			self._mapNode.itemIconTr.anchoredPosition = Vector2(16.9, 0)
 		end
 		NovaAPI.SetTMPText(self._mapNode.txtItemName, orderedFormat(ConfigTable.GetUIText("StarTowerNPCAffinity_Increase"), nAffinity))
 	end
@@ -47,7 +47,7 @@ function StarTowerAffinityTipsItem:Show(nNpcId, nAffinity)
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.canvasGroup, 0)
 	self._mapNode.itemTr.anchoredPosition = Vector2(0, 0)
 	local nInAnimLen = NovaAPI.GetAnimClipLength(self.animRoot, {
-		"TemplateTip_in"
+		"TemplateItemTip_in"
 	})
 	self:AddTimer(1, nInAnimLen + 1, function()
 		self:OnTipItemHide()
@@ -55,9 +55,9 @@ function StarTowerAffinityTipsItem:Show(nNpcId, nAffinity)
 end
 function StarTowerAffinityTipsItem:OnTipItemHide()
 	local nInAnimLen = NovaAPI.GetAnimClipLength(self.animRoot, {
-		"TemplateTip_out"
+		"TemplateItemTip_out"
 	})
-	self.animRoot:Play("TemplateTip_out")
+	self.animRoot:Play("TemplateItemTip_out")
 	self:AddTimer(1, nInAnimLen, function()
 		EventManager.Hit("StarTowerTipsShowEnd", self, AllEnum.StarTowerTipsType.NPCAffinity)
 	end, true, true, true, nil)

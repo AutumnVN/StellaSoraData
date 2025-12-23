@@ -89,7 +89,8 @@ MainlineMonsterInfoCtrl._mapEventConfig = {
 	OpenInfinityTowerMonsterInfo = "OnEvent_OpenInfinityTowerMonsterInfo",
 	OpenVampireMonsterInfo = "OnEvent_OpenVampireMonsterInfo",
 	OpenSkillMonsterInfo = "OnEvent_OpenSkillMonsterInfo",
-	OpenActivityLevelsMonsterInfo = "OnEvent_OpenActivityLevelsMonsterInfo"
+	OpenActivityLevelsMonsterInfo = "OnEvent_OpenActivityLevelsMonsterInfo",
+	OpenActivityStoryMonsterInfo = "OnEvent_OpenActivityStoryMonsterInfo"
 }
 function MainlineMonsterInfoCtrl:OnEnable()
 end
@@ -215,10 +216,7 @@ function MainlineMonsterInfoCtrl:RefreshMonsterInfo(nMonsterId)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtStory, monsterManual.Desc)
 	LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.goStory)
-	local eets = {}
-	if monsterAdjust.EET ~= GameEnum.elementType.NONE then
-		table.insert(eets, monsterAdjust.EET)
-	end
+	local eets = monsterAdjust.ResistEET
 	self:RefreshElement(self._mapNode.goPropertyList[1], self.tbOverrideWeakEET == nil and monsterAdjust.WeakEET or self.tbOverrideWeakEET, 1)
 	self:RefreshElement(self._mapNode.goPropertyList[2], eets, 2)
 	self:RefreshPropertys(monsterManual)
@@ -360,6 +358,13 @@ function MainlineMonsterInfoCtrl:OnEvent_OpenVampireMonsterInfo(nPreviewMonsterG
 end
 function MainlineMonsterInfoCtrl:OnEvent_OpenActivityLevelsMonsterInfo(nPreviewMonsterGroupId)
 	self:ShowPanel(nPreviewMonsterGroupId)
+end
+function MainlineMonsterInfoCtrl:OnEvent_OpenActivityStoryMonsterInfo(avgId)
+	local mapStory = PlayerData.ActivityAvg:GetStoryCfgData(avgId)
+	if mapStory == nil then
+		return
+	end
+	self:ShowPanel(mapStory.PreviewMonsterGroupId)
 end
 function MainlineMonsterInfoCtrl:OnCloseAnimFinish()
 	self.gameObject:SetActive(false)

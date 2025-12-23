@@ -8,10 +8,13 @@ function ActivityLevelTypeData:Init()
 	self.startTimeRefreshTime = 0
 	self.exploreLevelCount = 0
 	self.adventureLevelCount = 0
+	self.hardLevelCount = 0
 	self.levelTabExplore = {}
 	self.levelTabExploreDifficulty = {}
 	self.levelTabAdventure = {}
 	self.levelTabAdventureDifficulty = {}
+	self.levelTabHard = {}
+	self.levelTabHardDifficulty = {}
 	self.tabCachedBuildId = {}
 	EventManager.Add("ActivityLevels_Instance_Gameplay_Time", self, self.OnEvent_Time)
 end
@@ -37,13 +40,20 @@ function ActivityLevelTypeData:RefreshActivityLevelGameActData(actId, msgData)
 				self.levelTabExplore[baseData.Id].Star = 0
 				self.levelTabExplore[baseData.Id].BuildId = 0
 				self.levelTabExploreDifficulty[baseData.Difficulty] = baseData.Id
-			else
+			elseif baseData.Type == GameEnum.ActivityLevelType.Adventure then
 				self.adventureLevelCount = self.adventureLevelCount + 1
 				self.levelTabAdventure[baseData.Id] = {}
 				self.levelTabAdventure[baseData.Id].baseData = baseData
 				self.levelTabAdventure[baseData.Id].Star = 0
 				self.levelTabAdventure[baseData.Id].BuildId = 0
 				self.levelTabAdventureDifficulty[baseData.Difficulty] = baseData.Id
+			elseif baseData.Type == GameEnum.ActivityLevelType.HARD then
+				self.hardLevelCount = self.hardLevelCount + 1
+				self.levelTabHard[baseData.Id] = {}
+				self.levelTabHard[baseData.Id].baseData = baseData
+				self.levelTabHard[baseData.Id].Star = 0
+				self.levelTabHard[baseData.Id].BuildId = 0
+				self.levelTabHardDifficulty[baseData.Difficulty] = baseData.Id
 			end
 			self:CheckRedDot(baseData.Type, baseData.Id, baseData.DayOpen, isEnding)
 		end
@@ -58,9 +68,14 @@ function ActivityLevelTypeData:RefreshActivityLevelGameActData(actId, msgData)
 						self.levelTabExplore[v.Id].Star = v.Star
 						self.levelTabExplore[v.Id].BuildId = v.BuildId
 					end
-				elseif self.levelTabAdventure[v.Id] then
-					self.levelTabAdventure[v.Id].Star = v.Star
-					self.levelTabAdventure[v.Id].BuildId = v.BuildId
+				elseif tmpData.Type == GameEnum.ActivityLevelType.Adventure then
+					if self.levelTabAdventure[v.Id] then
+						self.levelTabAdventure[v.Id].Star = v.Star
+						self.levelTabAdventure[v.Id].BuildId = v.BuildId
+					end
+				elseif tmpData.Type == GameEnum.ActivityLevelType.HARD and self.levelTabHard[v.Id] then
+					self.levelTabHard[v.Id].Star = v.Star
+					self.levelTabHard[v.Id].BuildId = v.BuildId
 				end
 			end
 		end
@@ -84,8 +99,10 @@ function ActivityLevelTypeData:CheckRedDot(nType, levelId, dayOpen, isEnding)
 			local bActGroupUnlock = actGroupData:IsUnlock()
 			if nType == GameEnum.ActivityLevelType.Explore then
 				RedDotManager.SetValid(RedDotDefine.ActivityLevel_Explore_Level, {nActGroupId, levelId}, bActGroupUnlock)
-			else
+			elseif nType == GameEnum.ActivityLevelType.Adventure then
 				RedDotManager.SetValid(RedDotDefine.ActivityLevel_Adventure_Level, {nActGroupId, levelId}, bActGroupUnlock)
+			elseif nType == GameEnum.ActivityLevelType.HARD then
+				RedDotManager.SetValid(RedDotDefine.ActivityLevel_Hard_Level, {nActGroupId, levelId}, bActGroupUnlock)
 			end
 		end
 		return
@@ -93,7 +110,7 @@ function ActivityLevelTypeData:CheckRedDot(nType, levelId, dayOpen, isEnding)
 	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
 	local openTime = self.startTimeRefreshTime + dayOpen * 86400
 	local openTimeNextDay = self.startTimeRefreshTime + dayOpen * 86400 + 86400
-	if nCurTime >= openTime and nCurTime <= openTimeNextDay then
+	if nCurTime >= openTime and (nCurTime <= openTimeNextDay or nCurTime > openTimeNextDay and nState == 0) then
 		LocalData.SetPlayerLocalData(tmpKey, "1")
 		local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(self.nActId)
 		if bInActGroup then
@@ -101,8 +118,10 @@ function ActivityLevelTypeData:CheckRedDot(nType, levelId, dayOpen, isEnding)
 			local bActGroupUnlock = actGroupData:IsUnlock()
 			if nType == GameEnum.ActivityLevelType.Explore then
 				RedDotManager.SetValid(RedDotDefine.ActivityLevel_Explore_Level, {nActGroupId, levelId}, bActGroupUnlock)
-			else
+			elseif nType == GameEnum.ActivityLevelType.Adventure then
 				RedDotManager.SetValid(RedDotDefine.ActivityLevel_Adventure_Level, {nActGroupId, levelId}, bActGroupUnlock)
+			elseif nType == GameEnum.ActivityLevelType.HARD then
+				RedDotManager.SetValid(RedDotDefine.ActivityLevel_Hard_Level, {nActGroupId, levelId}, bActGroupUnlock)
 			end
 		end
 	end
@@ -117,8 +136,10 @@ function ActivityLevelTypeData:ChangeRedDot(nType, levelId)
 		if bInActGroup then
 			if nType == GameEnum.ActivityLevelType.Explore then
 				RedDotManager.SetValid(RedDotDefine.ActivityLevel_Explore_Level, {nActGroupId, levelId}, false)
-			else
+			elseif nType == GameEnum.ActivityLevelType.Adventure then
 				RedDotManager.SetValid(RedDotDefine.ActivityLevel_Adventure_Level, {nActGroupId, levelId}, false)
+			elseif nType == GameEnum.ActivityLevelType.HARD then
+				RedDotManager.SetValid(RedDotDefine.ActivityLevel_Hard_Level, {nActGroupId, levelId}, false)
 			end
 		end
 	end
@@ -129,14 +150,26 @@ function ActivityLevelTypeData:ChangeAllRedHot()
 	if nCurTime >= self.nEndTime then
 		isEnding = true
 	end
-	if not isEnding then
-		return
-	end
-	for i, v in pairs(self.levelTabExploreDifficulty) do
-		self:ChangeRedDot(GameEnum.ActivityLevelType.Explore, v)
-	end
-	for i, v in pairs(self.levelTabAdventureDifficulty) do
-		self:ChangeRedDot(GameEnum.ActivityLevelType.Adventure, v)
+	if isEnding then
+		for i, v in pairs(self.levelTabExploreDifficulty) do
+			self:ChangeRedDot(GameEnum.ActivityLevelType.Explore, v)
+		end
+		for i, v in pairs(self.levelTabAdventureDifficulty) do
+			self:ChangeRedDot(GameEnum.ActivityLevelType.Adventure, v)
+		end
+		for i, v in pairs(self.levelTabHardDifficulty) do
+			self:ChangeRedDot(GameEnum.ActivityLevelType.HARD, v)
+		end
+	else
+		for i, v in pairs(self.levelTabExplore) do
+			self:CheckRedDot(v.baseData.Type, v.baseData.Id, v.baseData.DayOpen, isEnding)
+		end
+		for i, v in pairs(self.levelTabAdventure) do
+			self:CheckRedDot(v.baseData.Type, v.baseData.Id, v.baseData.DayOpen, isEnding)
+		end
+		for i, v in pairs(self.levelTabHard) do
+			self:CheckRedDot(v.baseData.Type, v.baseData.Id, v.baseData.DayOpen, isEnding)
+		end
 	end
 end
 function ActivityLevelTypeData:GetLevelStarMsg(nType)
@@ -146,12 +179,18 @@ function ActivityLevelTypeData:GetLevelStarMsg(nType)
 			star = star + v.Star
 		end
 		return self.exploreLevelCount * 3, star
-	else
+	elseif nType == GameEnum.ActivityLevelType.Adventure then
 		local star = 0
 		for i, v in pairs(self.levelTabAdventure) do
 			star = star + v.Star
 		end
 		return self.adventureLevelCount * 3, star
+	elseif nType == GameEnum.ActivityLevelType.HARD then
+		local star = 0
+		for i, v in pairs(self.levelTabHard) do
+			star = star + v.Star
+		end
+		return self.hardLevelCount * 3, star
 	end
 end
 function ActivityLevelTypeData:GetLevelDayOpen(nType, id)
@@ -164,8 +203,17 @@ function ActivityLevelTypeData:GetLevelDayOpen(nType, id)
 				return true
 			end
 		end
-	elseif self.levelTabAdventure[id] ~= nil then
-		local dayOpen = self.levelTabAdventure[id].baseData.DayOpen
+	elseif nType == GameEnum.ActivityLevelType.Adventure then
+		if self.levelTabAdventure[id] ~= nil then
+			local dayOpen = self.levelTabAdventure[id].baseData.DayOpen
+			local openTime = self.startTimeRefreshTime + dayOpen * 86400
+			local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+			if openTime <= nCurTime then
+				return true
+			end
+		end
+	elseif nType == GameEnum.ActivityLevelType.HARD and self.levelTabHard[id] ~= nil then
+		local dayOpen = self.levelTabHard[id].baseData.DayOpen
 		local openTime = self.startTimeRefreshTime + dayOpen * 86400
 		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
 		if openTime <= nCurTime then
@@ -175,13 +223,15 @@ function ActivityLevelTypeData:GetLevelDayOpen(nType, id)
 	return false
 end
 function ActivityLevelTypeData:GetUnLockDay(nType, id)
+	local dayOpen = -1
 	if nType == GameEnum.ActivityLevelType.Explore then
-		local dayOpen = self.levelTabExplore[id].baseData.DayOpen
-		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
-		local nDay = math.floor((self.startTimeRefreshTime + dayOpen * 86400 - nCurTime) / 86400)
-		return nDay
-	else
-		local dayOpen = self.levelTabAdventure[id].baseData.DayOpen
+		dayOpen = self.levelTabExplore[id].baseData.DayOpen
+	elseif nType == GameEnum.ActivityLevelType.Adventure then
+		dayOpen = self.levelTabAdventure[id].baseData.DayOpen
+	elseif nType == GameEnum.ActivityLevelType.HARD then
+		dayOpen = self.levelTabHard[id].baseData.DayOpen
+	end
+	if dayOpen ~= -1 then
 		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
 		local nDay = math.floor((self.startTimeRefreshTime + dayOpen * 86400 - nCurTime) / 86400)
 		return nDay
@@ -189,17 +239,15 @@ function ActivityLevelTypeData:GetUnLockDay(nType, id)
 	return 1
 end
 function ActivityLevelTypeData:GetUnLockHour(nType, id)
+	local dayOpen = -1
 	if nType == GameEnum.ActivityLevelType.Explore then
-		local dayOpen = self.levelTabExplore[id].baseData.DayOpen
-		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
-		local openTime = self.startTimeRefreshTime + dayOpen * 86400
-		local nRemainTime = openTime - nCurTime
-		local hour = math.floor(nRemainTime / 3600)
-		local min = math.floor((nRemainTime - hour * 3600) / 60)
-		local sec = nRemainTime - hour * 3600 - min * 60
-		return hour, min, sec
-	else
-		local dayOpen = self.levelTabAdventure[id].baseData.DayOpen
+		dayOpen = self.levelTabExplore[id].baseData.DayOpen
+	elseif nType == GameEnum.ActivityLevelType.Adventure then
+		dayOpen = self.levelTabAdventure[id].baseData.DayOpen
+	elseif nType == GameEnum.ActivityLevelType.HARD then
+		dayOpen = self.levelTabHard[id].baseData.DayOpen
+	end
+	if dayOpen ~= -1 then
 		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
 		local openTime = self.startTimeRefreshTime + dayOpen * 86400
 		local nRemainTime = openTime - nCurTime
@@ -210,36 +258,126 @@ function ActivityLevelTypeData:GetUnLockHour(nType, id)
 	end
 	return 1, 0, 0
 end
+function ActivityLevelTypeData:GetUnLockDayHour(nType, id)
+	local dayOpen = -1
+	if nType == GameEnum.ActivityLevelType.Explore then
+		dayOpen = self.levelTabExplore[id].baseData.DayOpen
+	elseif nType == GameEnum.ActivityLevelType.Adventure then
+		dayOpen = self.levelTabAdventure[id].baseData.DayOpen
+	elseif nType == GameEnum.ActivityLevelType.HARD then
+		dayOpen = self.levelTabHard[id].baseData.DayOpen
+	end
+	if dayOpen ~= -1 then
+		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+		local openTime = self.startTimeRefreshTime + dayOpen * 86400
+		local nRemainTime = openTime - nCurTime
+		local nDay = math.floor(nRemainTime / 86400)
+		local hour = math.floor((nRemainTime - nDay * 86400) / 3600)
+		return nDay, hour
+	end
+	return 1, 0
+end
 function ActivityLevelTypeData:GetLevelUnLock(nType, id)
+	local tmpLevel = ConfigTable.GetData("ActivityLevelsLevel", id)
+	local preActivityStory = tmpLevel.PreActivityStory
+	if preActivityStory ~= nil and preActivityStory[1] ~= nil then
+		local isRead = PlayerData.ActivityAvg:IsStoryReaded(preActivityStory[2])
+		if not isRead then
+			return false
+		end
+	end
+	local preLevelId = -1
+	local preLevelData
+	local preLevelStar = 0
 	if nType == GameEnum.ActivityLevelType.Explore then
 		if self.levelTabExplore[id] ~= nil then
-			local preLevelId = self.levelTabExplore[id].baseData.PreLevelId
+			preLevelId = self.levelTabExplore[id].baseData.PreLevelId
 			if preLevelId == 0 then
 				return true
 			else
-				local preLevelData = self.levelTabExplore[preLevelId]
-				local preLevelStar = self.levelTabExplore[id].baseData.PreLevelStar
-				if preLevelData and preLevelStar <= preLevelData.Star then
-					return true
-				end
+				preLevelData = self.levelTabExplore[preLevelId]
+				preLevelStar = self.levelTabExplore[id].baseData.PreLevelStar
 			end
 		end
-	elseif self.levelTabAdventure[id] ~= nil then
-		local preLevelId = self.levelTabAdventure[id].baseData.PreLevelId
+	elseif nType == GameEnum.ActivityLevelType.Adventure then
+		if self.levelTabAdventure[id] ~= nil then
+			preLevelId = self.levelTabAdventure[id].baseData.PreLevelId
+			if preLevelId == 0 then
+				return true
+			else
+				preLevelData = self.levelTabAdventure[preLevelId]
+				if preLevelData == nil then
+					preLevelData = self.levelTabExplore[preLevelId]
+				end
+				preLevelStar = self.levelTabAdventure[id].baseData.PreLevelStar
+			end
+		end
+	elseif nType == GameEnum.ActivityLevelType.HARD and self.levelTabHard[id] ~= nil then
+		preLevelId = self.levelTabHard[id].baseData.PreLevelId
 		if preLevelId == 0 then
 			return true
 		else
-			local preLevelData = self.levelTabAdventure[preLevelId]
+			preLevelData = self.levelTabHard[preLevelId]
+			if preLevelData == nil then
+				preLevelData = self.levelTabAdventure[preLevelId]
+			end
 			if preLevelData == nil then
 				preLevelData = self.levelTabExplore[preLevelId]
 			end
-			local preLevelStar = self.levelTabAdventure[id].baseData.PreLevelStar
-			if preLevelData and preLevelStar <= preLevelData.Star then
-				return true
-			end
+			preLevelStar = self.levelTabHard[id].baseData.PreLevelStar
 		end
 	end
+	if preLevelData and preLevelStar <= preLevelData.Star then
+		return true
+	end
 	return false
+end
+function ActivityLevelTypeData:GetPreLevelStar(nType, id)
+	local preLevelId = -1
+	local preLevelData
+	local preLevelStar = 0
+	if nType == GameEnum.ActivityLevelType.Explore then
+		if self.levelTabExplore[id] ~= nil then
+			preLevelId = self.levelTabExplore[id].baseData.PreLevelId
+			if preLevelId == 0 then
+				return 3
+			else
+				preLevelData = self.levelTabExplore[preLevelId]
+				preLevelStar = self.levelTabExplore[id].baseData.PreLevelStar
+			end
+		end
+	elseif nType == GameEnum.ActivityLevelType.Adventure then
+		if self.levelTabAdventure[id] ~= nil then
+			preLevelId = self.levelTabAdventure[id].baseData.PreLevelId
+			if preLevelId == 0 then
+				return 3
+			else
+				preLevelData = self.levelTabAdventure[preLevelId]
+				if preLevelData == nil then
+					preLevelData = self.levelTabExplore[preLevelId]
+				end
+				preLevelStar = self.levelTabAdventure[id].baseData.PreLevelStar
+			end
+		end
+	elseif nType == GameEnum.ActivityLevelType.HARD and self.levelTabHard[id] ~= nil then
+		preLevelId = self.levelTabHard[id].baseData.PreLevelId
+		if preLevelId == 0 then
+			return 3
+		else
+			preLevelData = self.levelTabHard[preLevelId]
+			if preLevelData == nil then
+				preLevelData = self.levelTabAdventure[preLevelId]
+			end
+			if preLevelData == nil then
+				preLevelData = self.levelTabExplore[preLevelId]
+			end
+			preLevelStar = self.levelTabHard[id].baseData.PreLevelStar
+		end
+	end
+	if preLevelData and preLevelStar <= preLevelData.Star then
+		return preLevelStar
+	end
+	return 0
 end
 function ActivityLevelTypeData:GetDefaultSelectionType()
 	for i, v in pairs(self.levelTabAdventureDifficulty) do
@@ -250,25 +388,31 @@ function ActivityLevelTypeData:GetDefaultSelectionType()
 			return GameEnum.ActivityLevelType.Adventure
 		end
 	end
+	for i, v in pairs(self.levelTabHardDifficulty) do
+		local isOpen = self:GetLevelDayOpen(GameEnum.ActivityLevelType.HARD, v)
+		local isLevelUnLock = self:GetLevelUnLock(GameEnum.ActivityLevelType.HARD, v)
+		local star = self.levelTabHard[v].Star
+		if isOpen and isLevelUnLock and star == 0 then
+			return GameEnum.ActivityLevelType.HARD
+		end
+	end
 	return GameEnum.ActivityLevelType.Explore
 end
 function ActivityLevelTypeData:GetDefaultSelectionDifficulty(nType)
 	local index = 1
+	local tmpTab
 	if nType == GameEnum.ActivityLevelType.Explore then
-		for i, v in pairs(self.levelTabExploreDifficulty) do
-			local isOpen = self:GetLevelDayOpen(nType, v)
-			local isLevelUnLock = self:GetLevelUnLock(nType, v)
-			if isOpen and isLevelUnLock then
-				index = i
-			end
-		end
-	else
-		for i, v in pairs(self.levelTabAdventureDifficulty) do
-			local isOpen = self:GetLevelDayOpen(nType, v)
-			local isLevelUnLock = self:GetLevelUnLock(nType, v)
-			if isOpen and isLevelUnLock then
-				index = i
-			end
+		tmpTab = self.levelTabExploreDifficulty
+	elseif nType == GameEnum.ActivityLevelType.Adventure then
+		tmpTab = self.levelTabAdventureDifficulty
+	elseif nType == GameEnum.ActivityLevelType.HARD then
+		tmpTab = self.levelTabHardDifficulty
+	end
+	for i, v in pairs(tmpTab) do
+		local isOpen = self:GetLevelDayOpen(nType, v)
+		local isLevelUnLock = self:GetLevelUnLock(nType, v)
+		if isOpen and isLevelUnLock then
+			index = i
 		end
 	end
 	return index
@@ -278,7 +422,23 @@ function ActivityLevelTypeData:GetLevelFirstPass(nType, id)
 		if self.levelTabExplore[id] ~= nil and self.levelTabExplore[id].Star >= 1 then
 			return true
 		end
-	elseif self.levelTabAdventure[id] ~= nil and 1 <= self.levelTabAdventure[id].Star then
+	elseif nType == GameEnum.ActivityLevelType.Adventure then
+		if self.levelTabAdventure[id] ~= nil and 1 <= self.levelTabAdventure[id].Star then
+			return true
+		end
+	elseif nType == GameEnum.ActivityLevelType.HARD and self.levelTabHard[id] ~= nil and 1 <= self.levelTabHard[id].Star then
+		return true
+	end
+	return false
+end
+function ActivityLevelTypeData:GetLevelFirstPassNoneType(id)
+	if self.levelTabExplore[id] ~= nil and self.levelTabExplore[id].Star >= 1 then
+		return true
+	end
+	if self.levelTabAdventure[id] ~= nil and 1 <= self.levelTabAdventure[id].Star then
+		return true
+	end
+	if self.levelTabHard[id] ~= nil and 1 <= self.levelTabHard[id].Star then
 		return true
 	end
 	return false
@@ -341,6 +501,10 @@ function ActivityLevelTypeData:SendActivityLevelSettleReq(nActivityId, nStar, ca
 			if self.levelTabAdventure[self.entryLevelId] then
 				self.levelTabAdventure[self.entryLevelId].Star = nStar > self.levelTabAdventure[self.entryLevelId].Star and nStar or self.levelTabAdventure[self.entryLevelId].Star
 				self.levelTabAdventure[self.entryLevelId].BuildId = self.entryBuildId
+			end
+			if self.levelTabHard[self.entryLevelId] then
+				self.levelTabHard[self.entryLevelId].Star = nStar > self.levelTabHard[self.entryLevelId].Star and nStar or self.levelTabHard[self.entryLevelId].Star
+				self.levelTabHard[self.entryLevelId].BuildId = self.entryBuildId
 			end
 			if callback ~= nil then
 				local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(msgData.ChangeInfo)
@@ -429,6 +593,22 @@ function ActivityLevelTypeData:GetLevelBuild(nLevelId)
 			end
 		end
 	end
+	if self.levelTabHard[nLevelId] then
+		if self.levelTabHard[nLevelId].BuildId ~= 0 then
+			return self.levelTabHard[nLevelId].BuildId
+		else
+			local PreLevelId = self.levelTabHard[nLevelId].baseData.PreLevelId
+			if PreLevelId ~= 0 then
+				if self.levelTabHard[PreLevelId] then
+					return self.levelTabHard[PreLevelId].BuildId
+				elseif self.levelTabAdventure[PreLevelId] then
+					return self.levelTabAdventure[PreLevelId].BuildId
+				else
+					return self.levelTabExplore[PreLevelId].BuildId
+				end
+			end
+		end
+	end
 	return 0
 end
 function ActivityLevelTypeData:GetLevelStar(nLevelId)
@@ -437,6 +617,9 @@ function ActivityLevelTypeData:GetLevelStar(nLevelId)
 	end
 	if self.levelTabAdventure[nLevelId] then
 		return self.levelTabAdventure[nLevelId].Star
+	end
+	if self.levelTabHard[nLevelId] then
+		return self.levelTabHard[nLevelId].Star
 	end
 	return 0
 end

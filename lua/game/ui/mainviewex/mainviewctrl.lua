@@ -200,6 +200,15 @@ MainViewCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "MainView_Task"
 	},
+	btnQuestNewbie = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_QuestNewbie"
+	},
+	txtQuestNewbie = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "MainView_QuestNewbie"
+	},
 	btnDispatch = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Dispatch"
@@ -228,6 +237,11 @@ MainViewCtrl._mapNodeConfig = {
 		callback = "OnBtnClick_TowerDefenseFast"
 	},
 	imgTowerDefenseFastBg = {sComponentName = "Image"},
+	btnTrekkerVersusFast = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_TrekkerVersusFast"
+	},
+	imgTrekkerVersusFastBg = {sComponentName = "Image"},
 	btnRecruit = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Recruit"
@@ -294,6 +308,7 @@ MainViewCtrl._mapNodeConfig = {
 	redDotMall = {},
 	redDotMenu = {},
 	redDotTask = {},
+	redDotQuestNewbie = {},
 	redDotPhoneUnComplete = {},
 	redDotPhoneNew = {},
 	redDotDispatch = {},
@@ -307,10 +322,13 @@ MainViewCtrl._mapNodeConfig = {
 	redDotMainline = {},
 	goRedDotActivity = {},
 	goRedDotTask = {},
+	goRedDotQuestNewbie = {},
 	goRedDotPhone = {},
 	goRedDotDispatch = {},
 	activityRedDot_ = {nCount = 3},
 	activityRedDotNew_ = {nCount = 3},
+	goTrekkerVersusFastRedDot = {},
+	LockQuestNewbie = {},
 	LockTask = {},
 	LockRecruit = {},
 	LockDisc = {},
@@ -330,7 +348,9 @@ MainViewCtrl._mapEventConfig = {
 	[EventId.ShowBubbleVoiceText] = "OnEvent_ShowBubbleVoiceText",
 	[EventId.ActivityDataChange] = "OnEvent_ActivityDataChange",
 	MainViewCheckOpenPanel = "OnEvent_MainViewCheckOpenPanel",
-	[EventId.TransAnimOutClear] = "OnEvent_TransAnimOutClear"
+	[EventId.TransAnimOutClear] = "OnEvent_TransAnimOutClear",
+	AfterCloseNPCReceive = "OnEvent_AfterCloseNPCReceive",
+	RefreshActivityGroupRedDot = "OnEvent_RefreshActivityGroupRedDot"
 }
 MainViewCtrl._mapRedDotConfig = {
 	[RedDotDefine.Activity] = {
@@ -348,6 +368,9 @@ MainViewCtrl._mapRedDotConfig = {
 	[RedDotDefine.Mall] = {sNodeName = "redDotMall"},
 	[RedDotDefine.Menu] = {sNodeName = "redDotMenu"},
 	[RedDotDefine.Task] = {sNodeName = "redDotTask"},
+	[RedDotDefine.TaskNewbie] = {
+		sNodeName = "redDotQuestNewbie"
+	},
 	[RedDotDefine.Phone_UnComplete] = {
 		sNodeName = "redDotPhoneUnComplete"
 	},
@@ -370,6 +393,9 @@ MainViewCtrl._mapRedDotConfig = {
 	[RedDotDefine.Map] = {sNodeName = "redDotMap"},
 	[RedDotDefine.Map_MainLine] = {
 		sNodeName = "redDotMainline"
+	},
+	[RedDotDefine.TrekkerVersusQuest] = {
+		sNodeName = "goTrekkerVersusFastRedDot"
 	}
 }
 local view_state = {
@@ -395,16 +421,24 @@ function MainViewCtrl:RefreshShow()
 	self:RefreshResources()
 	self:RefreshEnergy()
 	self:RefreshActor2D()
+	self:RefreshNewbieQuestState()
 	self:RefreshComFuncState()
 	self:RefreshLeftActivityList()
-	self:RefreshJointDrillFast()
-	self:RefreshTowerDefenseFast()
 	self:RefreshActivityTask()
 	PlayerData.Activity:RefreshActivityRedDot()
 	PlayerData.Dispatch:CheckReddot()
 	PlayerData.Achievement:CheckReddot()
 	self:SetBanner()
 	PlayerData.SideBanner:TryOpenSideBanner()
+	self._mapNode.btnJointDrillFast.gameObject:SetActive(false)
+	self._mapNode.btnTrekkerVersusFast.gameObject:SetActive(false)
+	self._mapNode.btnTowerDefenseFast.gameObject:SetActive(false)
+	local RefreshFastBtn = function()
+		self:RefreshJointDrillFast()
+		self:RefreshTrekkerVersusFast()
+		self:RefreshTowerDefenseFast()
+	end
+	PlayerData.Activity:SendActivityDetailMsg(RefreshFastBtn)
 end
 function MainViewCtrl:RefreshPlayerInfo()
 	local sName = PlayerData.Base:GetPlayerNickName()
@@ -641,13 +675,15 @@ function MainViewCtrl:AddOtherBanner()
 				})
 			end
 		elseif mapLineData.BannerType == GameEnum.bannerType.Payment then
-			local clientPublishRegion = CS.ClientConfig.ClientPublishRegion
-			local channelName = CS.ClientConfig.ClientPublishChannelName
-			if SDKManager:IsSDKInit() and clientPublishRegion == CS.ClientPublishRegion.CN and (channelName == "Official" or channelName == "TEST_1" or channelName == "Taptap") then
-				table.insert(self.tbBannerList, {
-					nType = GameEnum.bannerType.Payment,
-					sBanner = mapLineData.bannerName
-				})
+			if not NovaAPI.IsReviewServerEnv() then
+				local clientPublishRegion = CS.ClientConfig.ClientPublishRegion
+				local channelName = CS.ClientConfig.ClientPublishChannelName
+				if SDKManager:IsSDKInit() and clientPublishRegion == CS.ClientPublishRegion.CN and (channelName == "Official" or channelName == "TEST_1" or channelName == "Taptap") then
+					table.insert(self.tbBannerList, {
+						nType = GameEnum.bannerType.Payment,
+						sBanner = mapLineData.bannerName
+					})
+				end
 			end
 		elseif mapLineData.BannerType == GameEnum.bannerType.Mall or mapLineData.BannerType == GameEnum.bannerType.MallSkin then
 			local curTime = CS.ClientManager.Instance.serverTimeStamp
@@ -677,6 +713,69 @@ function MainViewCtrl:AddOtherBanner()
 					nJumpTo = nJumpToId,
 					nFuncType = nFuncType
 				})
+			end
+		elseif mapLineData.BannerType == GameEnum.bannerType.JumpToUrl then
+			if NovaAPI.IsReviewServerEnv() and mapLineData.Param6 == "1" then
+				return
+			end
+			local curTime = CS.ClientManager.Instance.serverTimeStamp
+			local sUrl = mapLineData.Param3
+			if sUrl == nil or sUrl == "" then
+				return
+			end
+			local sPlatform = mapLineData.Param4
+			local sOption = mapLineData.Param5
+			local curPlatform = CS.ClientManager.Instance.Platform
+			if mapLineData.Param1 == "" then
+				if sPlatform == "" then
+					table.insert(self.tbBannerList, {
+						nType = GameEnum.bannerType.JumpToUrl,
+						sBanner = mapLineData.bannerName,
+						sUrl = sUrl,
+						bInside = true
+					})
+				else
+					local tbPlatformList = string.split(sPlatform, ",")
+					local tbOptionList = string.split(sOption, ",")
+					local nIndex = table.indexof(tbPlatformList, curPlatform)
+					if nIndex ~= nil then
+						local sOptionType = tbOptionList[nIndex]
+						local bInside = sOptionType == "0"
+						table.insert(self.tbBannerList, {
+							nType = GameEnum.bannerType.JumpToUrl,
+							sBanner = mapLineData.bannerName,
+							sUrl = sUrl,
+							bInside = bInside
+						})
+					end
+				end
+			else
+				local nOpenTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param1)
+				local nCloseTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param2)
+				if curTime >= nOpenTime and curTime <= nCloseTime then
+					if sPlatform == "" then
+						table.insert(self.tbBannerList, {
+							nType = GameEnum.bannerType.JumpToUrl,
+							sBanner = mapLineData.bannerName,
+							sUrl = sUrl,
+							bInside = true
+						})
+					else
+						local tbPlatformList = string.split(sPlatform, ",")
+						local tbOptionList = string.split(sOption, ",")
+						local nIndex = table.indexof(tbPlatformList, curPlatform)
+						if nIndex ~= nil then
+							local sOptionType = tbOptionList[nIndex]
+							local bInside = sOptionType == "0"
+							table.insert(self.tbBannerList, {
+								nType = GameEnum.bannerType.JumpToUrl,
+								sBanner = mapLineData.bannerName,
+								sUrl = sUrl,
+								bInside = bInside
+							})
+						end
+					end
+				end
 			end
 		end
 	end
@@ -770,12 +869,14 @@ function MainViewCtrl:CheckOpenPanel()
 	end
 	self.timerCheck = nil
 	self.bNeedCheckState = nil
+	NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.cgRoot, false)
 	local callbackFunc = function()
 		EventManager.Hit("OnEvent_MainViewCanOperate")
 		NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.cgRoot, true)
 		if self.nViewState == view_state.show_login then
 			PlayerVoiceData:PlayMainViewOpenVoice()
 		end
+		self:ChangeViewState(view_state.show_normal)
 	end
 	PopUpManager.StartShowPopUp(callbackFunc)
 end
@@ -823,6 +924,7 @@ function MainViewCtrl:PlayTransition(nType, callback, nParam)
 	EventManager.Hit(EventId.SetTransition, nType, callback, nParam)
 end
 function MainViewCtrl:RefreshFuncLock()
+	self._mapNode.LockQuestNewbie:SetActive(not PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.QuestNewbie))
 	self._mapNode.LockTask:SetActive(not PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.Quest))
 	self._mapNode.LockRecruit:SetActive(not PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.Gacha))
 	self._mapNode.LockDisc:SetActive(false)
@@ -835,6 +937,7 @@ function MainViewCtrl:RefreshFuncLock()
 	self._mapNode.goRedDotActivity:SetActive(PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.Activity))
 	self._mapNode.goRedDotPhone:SetActive(PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.Phone))
 	self._mapNode.goRedDotTask:SetActive(PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.Quest))
+	self._mapNode.goRedDotQuestNewbie:SetActive(PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.QuestNewbie))
 	self._mapNode.goRedDotDispatch:SetActive(PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.Agent))
 end
 function MainViewCtrl:SetHintLayout(bEnabled)
@@ -988,6 +1091,34 @@ function MainViewCtrl:RefreshTowerDefenseFast()
 				self:SetPngSprite(self._mapNode.imgTowerDefenseFastBg, mapCfg.FastEntranceIcon)
 			end
 			self._mapNode.btnTowerDefenseFast.gameObject:SetActive(bShow)
+		end
+	end
+	PlayerData.Activity:SendActivityDetailMsg(callback)
+end
+function MainViewCtrl:RefreshTrekkerVersusFast()
+	self._mapNode.btnTrekkerVersusFast.gameObject:SetActive(false)
+	local callback = function()
+		self.trekkerVersusData = nil
+		local tbActList = PlayerData.Activity:GetActivityList()
+		for nId, v in pairs(tbActList) do
+			local nActType = v:GetActType()
+			if nActType == GameEnum.activityType.TrekkerVersus then
+				self.trekkerVersusData = v
+				break
+			end
+		end
+		if self.trekkerVersusData ~= nil then
+			local bShow = self.trekkerVersusData:CheckActShow()
+			local mapCfg = self.trekkerVersusData:GetTrekkerVersusCfgData()
+			if mapCfg ~= nil then
+				self:SetPngSprite(self._mapNode.imgTrekkerVersusFastBg, mapCfg.FastEntranceIcon)
+			end
+			local nChallengeStartTime = self.trekkerVersusData:GetChallengeStartTime()
+			local nChallengeEndTime = self.trekkerVersusData:GetChallengeEndTime()
+			local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+			if nChallengeStartTime <= nCurTime and nChallengeEndTime > nCurTime and bShow then
+				self._mapNode.btnTrekkerVersusFast.gameObject:SetActive(true)
+			end
 		end
 	end
 	PlayerData.Activity:SendActivityDetailMsg(callback)
@@ -1338,6 +1469,18 @@ function MainViewCtrl:OnBtnClick_btnActBanner()
 			EventManager.Hit(EventId.SetTransition, 5, func)
 		end
 		PlayerData.Mall:SendMallPackageListReq(callback)
+	elseif bannerData.nType == GameEnum.bannerType.JumpToUrl then
+		local sUrl = bannerData.sUrl
+		local bInside = bannerData.bInside
+		if SDKManager:IsSDKInit() then
+			if bInside then
+				SDKManager:ShowWebView(false, "", sUrl, 1, 0, true)
+			else
+				SDKManager:ShowWebView(false, "", sUrl, 1, 1, true)
+			end
+		else
+			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Function_NotAvailable"))
+		end
 	end
 end
 function MainViewCtrl:OnDrag_ActBanner(mDrag)
@@ -1385,6 +1528,15 @@ function MainViewCtrl:OnBtnClick_Task(btn)
 		self:PlayTransition(5, func)
 	end
 	PlayerData.Base:CheckFunctionBtn(GameEnum.OpenFuncType.Quest, callback)
+end
+function MainViewCtrl:OnBtnClick_QuestNewbie(btn)
+	local callback = function()
+		local func = function()
+			EventManager.Hit(EventId.OpenPanel, PanelId.QuestNewbie)
+		end
+		self:PlayTransition(5, func)
+	end
+	PlayerData.Base:CheckFunctionBtn(GameEnum.OpenFuncType.QuestNewbie, callback)
 end
 function MainViewCtrl:OnBtnClick_Mail(btn)
 	local callback = function()
@@ -1510,10 +1662,13 @@ function MainViewCtrl:OnBtnClick_Dispatch()
 	PlayerData.Base:CheckFunctionBtn(GameEnum.OpenFuncType.Agent, callback)
 end
 function MainViewCtrl:OnBtnClick_GoToStarTower()
-	local callback = function()
-		PlayerData.State:CheckStarTowerState()
+	local AffinityCallback = function()
+		local callback = function()
+			PlayerData.State:CheckStarTowerState()
+		end
+		PlayerData.StarTower:SendTowerGrowthDetailReq(callback)
 	end
-	PlayerData.StarTower:SendTowerGrowthDetailReq(callback)
+	PlayerData.StarTower:GetAffinity(AffinityCallback)
 end
 function MainViewCtrl:OnBtnClick_GotoMainlineStory()
 	EventManager.Hit(EventId.OpenPanel, PanelId.MainlineEx, self.nRecentChapterId, PanelId.MainView)
@@ -1532,6 +1687,21 @@ function MainViewCtrl:OnBtnClick_JointDrillFast()
 			return
 		end
 		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect, self.jointDrillActData.nActId)
+	end
+end
+function MainViewCtrl:OnBtnClick_TrekkerVersusFast()
+	if self.trekkerVersusData ~= nil then
+		local nActEndTime = self.trekkerVersusData:GetChallengeEndTime()
+		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+		if nActEndTime < nCurTime then
+			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_Invalid_Tip_3"))
+			self._mapNode.btnTrekkerVersusFast.gameObject:SetActive(false)
+			return
+		end
+		local func = function()
+			EventManager.Hit(EventId.OpenPanel, PanelId.TrekkerVersus, self.trekkerVersusData.nActId)
+		end
+		EventManager.Hit(EventId.SetTransition, 30, func)
 	end
 end
 function MainViewCtrl:OnBtnClick_TowerDefenseFast()
@@ -1618,7 +1788,7 @@ function MainViewCtrl:OnEvent_ShowBubbleVoiceText(nCharId, nId)
 		return
 	end
 	local curBoardData = PlayerBoardData:GetCurBoardData()
-	if nil ~= curBoardData and curBoardData:GetType() == GameEnum.handbookType.SKIN then
+	if nil ~= curBoardData and curBoardData:GetType() == GameEnum.handbookType.SKIN and curBoardData:GetCharId() == nCharId then
 		local skinId = curBoardData:GetSkinId()
 		local bIsCG = self.nActorShowType == AllEnum.Actor2DType.FullScreen
 		BubbleVoiceManager.PlayBubbleAnim(self._mapNode.goBubbleRoot, mapVoDirectoryData.voResource, skinId, bIsCG)
@@ -1650,6 +1820,11 @@ function MainViewCtrl:OnEvent_TransAnimOutClear()
 		self.bDelayOpenVoice = false
 	end
 end
+function MainViewCtrl:OnEvent_AfterCloseNPCReceive()
+	self:RefreshActor2D()
+	BubbleVoiceManager.StopBubbleAnim()
+	PlayerVoiceData:StopCharVoice()
+end
 function MainViewCtrl:RefreshComFuncState()
 	local nState = ConfigTable.GetConfigNumber("IsShowComBtn")
 	local bActive = nState == 1
@@ -1657,5 +1832,14 @@ function MainViewCtrl:RefreshComFuncState()
 	self._mapNode.btnMall.gameObject:SetActive(bActive)
 	self._mapNode.imgBtn2.gameObject:SetActive(bActive)
 	self._mapNode.btnAdd2.gameObject:SetActive(bActive)
+end
+function MainViewCtrl:RefreshNewbieQuestState()
+	local nTotalCount, nReceivedCount = PlayerData.TutorialData:GetProgress()
+	local bTutorialComplete = nTotalCount <= nReceivedCount
+	local bTeamFormationComplete = PlayerData.Quest:CheckTeamFormationAllCompleted()
+	self._mapNode.btnQuestNewbie.gameObject:SetActive(not bTeamFormationComplete or not bTutorialComplete)
+end
+function MainViewCtrl:OnEvent_RefreshActivityGroupRedDot()
+	self:RefreshLeftActivityList()
 end
 return MainViewCtrl

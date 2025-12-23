@@ -53,7 +53,7 @@ function PotentialListItemCtrl:Init(nCharId, nCount, tbPotential, goPotential, b
 	local nCharSkinId = PlayerData.Char:GetCharSkinId(nCharId)
 	local charSkinCfg = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 	local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[charCfg.Grade]
-	self:SetPngSprite(self._mapNode.imgHead, charSkinCfg.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+	self:SetPngSprite(self._mapNode.imgHead, charSkinCfg.Icon, AllEnum.CharHeadIconSurfix.XXL)
 	self:SetAtlasSprite(self._mapNode.imgHeadFrame, "12_rare", sFrame, true)
 	NovaAPI.SetTMPText(self._mapNode.txtCharName, charCfg.Name)
 	self.mapPotential = {}

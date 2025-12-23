@@ -35,8 +35,10 @@ function BuffGridCtrl:SetBuff(nBuffId, nCount, nTime)
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.canvasGroup, 1)
 	self:SetPngSprite(self._mapNode.imgBuffBg, mapBuff.Icon)
 	self.rootAnim:Play("rtBuff_in")
-	if 1 < nCount then
-		NovaAPI.SetTMPText(self._mapNode.TMPCount, string.format("\195\151%d", nCount))
+	if 99 < nCount then
+		NovaAPI.SetTMPText(self._mapNode.TMPCount, "99+")
+	elseif 1 < nCount then
+		NovaAPI.SetTMPText(self._mapNode.TMPCount, string.format("%d", nCount))
 	else
 		NovaAPI.SetTMPText(self._mapNode.TMPCount, "")
 	end

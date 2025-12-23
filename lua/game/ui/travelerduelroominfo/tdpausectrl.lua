@@ -100,7 +100,15 @@ TDPauseCtrl._mapNodeConfig = {
 		nCount = 2,
 		sComponentName = "TMP_Text",
 		sLanguageId = "Build_Sub"
-	}
+	},
+	handObj = {},
+	texHandTimeTitle = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "MainBattle_Time"
+	},
+	texHandTime = {sComponentName = "TMP_Text"},
+	t_common_02_ = {nCount = 2},
+	imgBgTime = {}
 }
 TDPauseCtrl._mapEventConfig = {
 	TravelerDuel_Time_CountUp = "OnEvent_Time",
@@ -145,8 +153,8 @@ end
 function TDPauseCtrl:Awake()
 	self._mapNode.safeAreaRoot:SetActive(false)
 	self.tbGamepadUINode = self:GetGamepadUINode()
-	self.nLevelId = PlayerData.TravelerDuel.LevelId
 	NovaAPI.SetTMPText(self._mapNode.txtTime, string.format("%02d:%02d", 0, 0))
+	NovaAPI.SetTMPText(self._mapNode.texHandTime, string.format("%02d:%02d", 0, 0))
 	local tbConfig = {
 		{
 			sAction = "Skill",
@@ -160,14 +168,26 @@ function TDPauseCtrl:Awake()
 	self._mapNode.ActionBar:InitActionBar(tbConfig)
 end
 function TDPauseCtrl:OnEnable()
+	local tbParams = self:GetPanelParam()
+	self.nLevelId = tbParams[2]
+	for i = 1, 3 do
+		self._mapNode.goAim[i]:SetActive(false)
+	end
+	for i = 1, 2 do
+		self._mapNode.t_common_02_[i]:SetActive(false)
+	end
+	self._mapNode.imgBgTime:SetActive(false)
+	self._mapNode.txtTime.gameObject:SetActive(false)
+	self._mapNode.handObj:SetActive(true)
 end
 function TDPauseCtrl:OnDisable()
 end
 function TDPauseCtrl:OnDestroy()
 end
-function TDPauseCtrl:Pause(nLevelId, tbCharId)
+function TDPauseCtrl:Pause(nLevelId, tbCharId, nHard)
 	self.tbChar = tbCharId
 	self.nLevelId = nLevelId
+	self.nHard = nHard
 	EventManager.Hit(EventId.BattleDashboardVisible, false)
 	PanelManager.InputDisable()
 	self:PlayInAni()
@@ -183,6 +203,7 @@ function TDPauseCtrl:OnEvent_Time(nTime)
 		local nMin = math.floor(nTime / 60)
 		local nSec = math.fmod(nTime, 60)
 		NovaAPI.SetTMPText(self._mapNode.txtTime, string.format("%02d:%02d", nMin, nSec))
+		NovaAPI.SetTMPText(self._mapNode.texHandTime, string.format("%02d:%02d", nMin, nSec))
 	end
 end
 function TDPauseCtrl:OnBtnClick_GiveUp(btn)
@@ -191,10 +212,8 @@ function TDPauseCtrl:OnBtnClick_GiveUp(btn)
 	if mapCfg == nil then
 		printError("\230\178\161\230\156\137\229\189\147\229\137\141\229\133\179\229\141\161\228\191\161\230\129\175")
 		sTip = "Level None"
-	elseif mapCfg.Difficulty > 0 then
-		sTip = orderedFormat(ConfigTable.GetUIText("RogueBoss_Pause_GiveUpTips"), mapCfg.Name, mapCfg.Difficulty)
 	else
-		sTip = orderedFormat(ConfigTable.GetUIText("RogueBoss_Pause_GiveUpTips_Simple"), mapCfg.Name)
+		sTip = orderedFormat(ConfigTable.GetUIText("TD_Pause_GiveUpTips_Simple"), mapCfg.Name, self.nHard)
 	end
 	local confirmCallback = function()
 		self:PlayCloseAni(true)

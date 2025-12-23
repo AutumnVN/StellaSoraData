@@ -8,7 +8,7 @@ JointDrillBattlePanel._tbDefine = {
 		sCtrlName = "Game.UI.Battle.BattleDashboardCtrl"
 	},
 	{
-		sPrefabPath = "Play_JointDrill/JointDrillMenu.prefab",
+		sPrefabPath = "JointDrillBattle/JointDrillMenu.prefab",
 		sCtrlName = "Game.UI.JointDrill.JointDrillMenuCtrl"
 	},
 	{
@@ -32,11 +32,11 @@ JointDrillBattlePanel._tbDefine = {
 		sCtrlName = "Game.UI.Battle.CommonMonsterWarningCtrl"
 	},
 	{
-		sPrefabPath = "Play_JointDrill/JointDrillBossTime.prefab",
+		sPrefabPath = "JointDrillBattle/JointDrillBossTime.prefab",
 		sCtrlName = "Game.UI.JointDrill.JintDrillTimeCtrl"
 	},
 	{
-		sPrefabPath = "Play_JointDrill/JointDrillPausePanel.prefab",
+		sPrefabPath = "JointDrillBattle/JointDrillPausePanel.prefab",
 		sCtrlName = "Game.UI.JointDrill.JointDrillPauseCtrl"
 	}
 }

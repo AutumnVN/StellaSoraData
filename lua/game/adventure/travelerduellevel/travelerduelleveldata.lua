@@ -12,15 +12,7 @@ local mapEventConfig = {
 }
 function TravelerDuelLevelData:Init(parent, nLevel, tbAffixes, nBuildId)
 	self._EntryTime = CS.ClientManager.Instance.serverTimeStampWithTimeZone
-	local LocalData = require("GameCore.Data.LocalData")
-	local sKey = LocalData.GetPlayerLocalData("TravelerDuelRecordKey")
-	if sKey ~= nil or sKey ~= "" then
-		NovaAPI.DeleteRecFile(sKey)
-	end
 	self.bEnd = false
-	local ClientManager = CS.ClientManager.Instance
-	sKey = tostring(ClientManager.serverTimeStamp)
-	LocalData.SetPlayerLocalData("TravelerDuelRecordKey", sKey)
 	self.parent = parent
 	self.nlevelId = nLevel
 	self.tmpBuildId = nBuildId
@@ -48,7 +40,6 @@ function TravelerDuelLevelData:Init(parent, nLevel, tbAffixes, nBuildId)
 		end
 		PlayerData.nCurGameType = AllEnum.WorldMapNodeType.TravelerDuel
 		CS.AdventureModuleHelper.EnterTravelerDuel(nLevel, mapLevel.FloorId, self.tbCharId, tbAffixes)
-		safe_call_cs_func(CS.AdventureModuleHelper.SetDamageRecordId, sKey)
 		NovaAPI.EnterModule("AdventureModuleScene", true, 17)
 	end
 	PlayerData.Build:GetBuildDetailData(GetDataCallback, nBuildId)
@@ -67,7 +58,7 @@ function TravelerDuelLevelData:OnEvent_LevelResult(bSuccess, nTime)
 	end
 	self.bEnd = true
 	self:RefreshCharDamageData()
-	local msgCallback = function(mapMsgData)
+	local msgCallback = function(bNewRecord)
 		self._EndTime = CS.ClientManager.Instance.serverTimeStampWithTimeZone
 		local tabUpLevel = {}
 		local nResult = bSuccess and "1" or "2"
@@ -95,25 +86,49 @@ function TravelerDuelLevelData:OnEvent_LevelResult(bSuccess, nTime)
 			"battle_result",
 			tostring(nResult)
 		})
+		local tmp = table.concat(self.tbAffixes, ",")
+		table.insert(tabUpLevel, {
+			"battle_affix",
+			tmp
+		})
+		table.insert(tabUpLevel, {
+			"characterid1",
+			self.tbCharDamage[1] ~= nil and tostring(self.tbCharDamage[1].nCharId) or "0"
+		})
+		table.insert(tabUpLevel, {
+			"damage1",
+			self.tbCharDamage[1] ~= nil and tostring(self.tbCharDamage[1].nDamage) or "0"
+		})
+		table.insert(tabUpLevel, {
+			"characterid2",
+			self.tbCharDamage[2] ~= nil and tostring(self.tbCharDamage[2].nCharId) or "0"
+		})
+		table.insert(tabUpLevel, {
+			"damage2",
+			self.tbCharDamage[2] ~= nil and tostring(self.tbCharDamage[2].nDamage) or "0"
+		})
+		table.insert(tabUpLevel, {
+			"characterid3",
+			self.tbCharDamage[3] ~= nil and tostring(self.tbCharDamage[3].nCharId) or "0"
+		})
+		table.insert(tabUpLevel, {
+			"damage3",
+			self.tbCharDamage[3] ~= nil and tostring(self.tbCharDamage[3].nDamage) or "0"
+		})
 		NovaAPI.UserEventUpload("traveler_duel_battle", tabUpLevel)
 		if bSuccess then
-			self:PlaySuccessPerform(mapMsgData, 3, nTime)
+			self:PlaySuccessPerform(bNewRecord, 3, nTime)
 		else
-			EventManager.Hit(EventId.ClosePanel, PanelId.BtnTips)
 			EventManager.Hit(EventId.OpenPanel, PanelId.TDBattleResultPanel, false, {
 				false,
 				false,
 				false
-			}, mapMsgData.AwardItems, mapMsgData.FirstItems, {}, 0, false, nTime, self.nlevelId, self.tbCharId, self.tbAffixes, mapMsgData.TimeScore, mapMsgData.BaseScore, mapMsgData.FinalScore, mapMsgData.FinalScore > mapMsgData.MaxScore, mapMsgData.Change, mapMsgData.SurpriseItems, mapMsgData.CustomItems, self.tbCharDamage)
+			}, {}, {}, {}, 0, false, nTime, self.nlevelId, self.tbCharId, self.tbAffixes, 0, 0, 0, bNewRecord, {}, {}, {}, self.tbCharDamage)
 			self.parent:LevelEnd()
 		end
 	end
-	local nStar = 0
-	if bSuccess then
-		nStar = 3
-	end
 	local wait = function()
-		self.parent:SendMsg_TravelerDuelSettle(nStar, self.nlevelId, nTime, msgCallback)
+		self.parent:SettleBattle(bSuccess, self.nlevelId, nTime, self.tbAffixes, self.mapBuildData.nBuildId, msgCallback)
 	end
 	if bSuccess then
 		TimerManager.Add(1, 2, self, wait, true, true, nil, nil)
@@ -126,7 +141,7 @@ function TravelerDuelLevelData:OnEvent_AbandonBattle()
 end
 function TravelerDuelLevelData:OnEvent_AdventureModuleEnter()
 	PlayerData.Achievement:SetSpecialBattleAchievement(GameEnum.levelType.TravelerDuel)
-	EventManager.Hit(EventId.OpenPanel, PanelId.TDBattlePanel, self.tbCharId)
+	EventManager.Hit(EventId.OpenPanel, PanelId.TDBattlePanel, self.tbCharId, self.nlevelId)
 	self:SetPersonalPerk()
 	self:SetDiscInfo()
 	for idx, nCharId in ipairs(self.tbCharId) do
@@ -182,7 +197,7 @@ function TravelerDuelLevelData:SetDiscInfo()
 	end
 	safe_call_cs_func(CS.AdventureModuleHelper.SetDiscInfo, tbDiscInfo)
 end
-function TravelerDuelLevelData:PlaySuccessPerform(mapMsgData, nStar, nTime)
+function TravelerDuelLevelData:PlaySuccessPerform(bNewRecord, nStar, nTime)
 	local func_OpenResult = function(bSuccess)
 	end
 	local tbChar = self.tbCharId
@@ -191,10 +206,6 @@ function TravelerDuelLevelData:PlaySuccessPerform(mapMsgData, nStar, nTime)
 		local nFloorId = ConfigTable.GetData("TravelerDuelBossLevel", self.nlevelId).FloorId
 		local nType = ConfigTable.GetData("TravelerDuelFloor", nFloorId).Theme
 		local sName = ConfigTable.GetData("EndSceneType", nType).EndSceneName
-		local jumpPerform = function()
-			NovaAPI.DispatchEventWithData("SKIP_SETTLEMENT_PERFORM")
-		end
-		EventManager.Hit(EventId.OpenPanel, PanelId.BtnTips, jumpPerform)
 		local tbSkin = {}
 		for _, nCharId in ipairs(tbChar) do
 			local nSkinId = PlayerData.Char:GetCharSkinId(nCharId)
@@ -208,7 +219,7 @@ function TravelerDuelLevelData:PlaySuccessPerform(mapMsgData, nStar, nTime)
 			true,
 			true,
 			true
-		}, mapMsgData.AwardItems, mapMsgData.FirstItems, {}, 0, false, nTime, self.nlevelId, self.tbCharId, self.tbAffixes, mapMsgData.TimeScore, mapMsgData.BaseScore, mapMsgData.FinalScore, mapMsgData.FinalScore > mapMsgData.MaxScore, mapMsgData.Change, mapMsgData.SurpriseItems, mapMsgData.CustomItems, self.tbCharDamage)
+		}, {}, {}, {}, 0, false, nTime, self.nlevelId, self.tbCharId, self.tbAffixes, {}, {}, {}, bNewRecord, {}, {}, {}, self.tbCharDamage)
 		self.bSettle = false
 		self.parent:LevelEnd()
 		self:UnBindEvent()
@@ -224,7 +235,14 @@ function TravelerDuelLevelData:CalCharFixedEffect(nCharId, bMainChar, tbDiscId)
 	return stActorInfo
 end
 function TravelerDuelLevelData:OnEvnet_Pause()
-	EventManager.Hit("OpenTDPause", self.nlevelId, self.tbCharId)
+	local nHard = 0
+	for _, nAffixId in ipairs(self.tbAffixes) do
+		local mapAffixCfgData = ConfigTable.GetData("TravelerDuelChallengeAffix", nAffixId)
+		if mapAffixCfgData ~= nil then
+			nHard = nHard + mapAffixCfgData.Difficulty
+		end
+	end
+	EventManager.Hit("OpenTDPause", self.nlevelId, self.tbCharId, nHard)
 end
 function TravelerDuelLevelData:OnEvent_UploadDodgeEvent(padMode)
 	local tab = {}

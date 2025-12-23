@@ -72,14 +72,14 @@ function TemplatePropertyCtrl:SetNote(nNoteId, nLevel1, nLevel2, bShowArrow)
 	end
 	if nLevel2 then
 		self._mapNode.txtValue1.gameObject:SetActive(true)
-		NovaAPI.SetTMPText(self._mapNode.txtValue1, orderedFormat(ConfigTable.GetUIText("Disc_Advance_NoteSkill_SkillLevel"), nLevel1))
-		NovaAPI.SetTMPText(self._mapNode.txtValue2, orderedFormat(ConfigTable.GetUIText("Disc_Advance_NoteSkill_SkillLevel"), nLevel2))
+		NovaAPI.SetTMPText(self._mapNode.txtValue1, orderedFormat(ConfigTable.GetUIText("Note_Count"), nLevel1))
+		NovaAPI.SetTMPText(self._mapNode.txtValue2, orderedFormat(ConfigTable.GetUIText("Note_Count"), nLevel2))
 		NovaAPI.SetTMPColor(self._mapNode.txtValue2, ValueColor.up)
 		if bShowArrow then
 			self._mapNode.imgUp:SetActive(true)
 		end
 	else
-		NovaAPI.SetTMPText(self._mapNode.txtValue2, orderedFormat(ConfigTable.GetUIText("Disc_Advance_NoteSkill_SkillLevel"), nLevel1))
+		NovaAPI.SetTMPText(self._mapNode.txtValue2, orderedFormat(ConfigTable.GetUIText("Note_Count"), nLevel1))
 		NovaAPI.SetTMPColor(self._mapNode.txtValue2, ValueColor.black)
 		self._mapNode.txtValue1.gameObject:SetActive(false)
 	end

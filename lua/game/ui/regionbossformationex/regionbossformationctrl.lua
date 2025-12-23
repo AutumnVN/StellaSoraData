@@ -337,13 +337,13 @@ function RegionBossFormationCtrl:OpenDailyInstance()
 end
 function RegionBossFormationCtrl:OpenTravelerDuel()
 	if self.isHaveTeam then
-		local CheckItemCountExceededLimitCb = function(isExceeded)
-			if not isExceeded then
-				PlayerData.TravelerDuel:SetSelBuildId(0)
-				PlayerData.TravelerDuel:SendMsg_EnterTravelerDuel(self.selLvId, self.mbuildId, self.Other)
-			end
+		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+		local activityLevelsData = PlayerData.Activity:GetActivityDataById(self.Other[1])
+		if nCurTime > activityLevelsData.nEndTime then
+			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_End_Notice"))
+			return
 		end
-		PlayerData.Item:CheckItemCountExceededLimit(CheckItemCountExceededLimitCb)
+		activityLevelsData:EnterTrekkerVersus(self.selLvId, self.mbuildId, self.Other[2])
 	end
 end
 function RegionBossFormationCtrl:OpenInfinityTower()
@@ -415,6 +415,12 @@ function RegionBossFormationCtrl:OpenActivityLevelsBattle()
 		activityLevelsData:SendEnterActivityLevelsApplyReq(self.Other[1], self.selLvId, self.mbuildId)
 	end
 end
+function RegionBossFormationCtrl:OpenActivityStoryBattle()
+	if self.isHaveTeam then
+		local nBuildId = self.bTrial and 0 or self.mbuildId
+		PlayerData.ActivityAvg:SendMsg_STORY_ENTER(self.nActId, self.Other, nBuildId)
+	end
+end
 function RegionBossFormationCtrl:SwitchStoryType(bTrial)
 	self._mapNode.imgStoryModel:SetActive(bTrial)
 	self._mapNode.imgBasicModel:SetActive(not bTrial)
@@ -433,6 +439,9 @@ function RegionBossFormationCtrl:OnEnable()
 	self.nType = tbParam[1]
 	self.selLvId = tbParam[2]
 	self.Other = tbParam[3]
+	if tbParam[4] ~= nil then
+		self.nActId = tbParam[4]
+	end
 	self._mapNode.goLoadMask:SetActive(true)
 	self._mapNode.btnSwitch.gameObject:SetActive(false)
 	self:SwitchStoryType(false)
@@ -459,16 +468,8 @@ function RegionBossFormationCtrl:OnEnable()
 			self.isHaveTeam = true
 		end
 	elseif self.nType == AllEnum.RegionBossFormationType.TravelerDuel then
-		self.mbuildId = PlayerData.TravelerDuel:GetCachedBuildId(self.selLvId)
-		if self.mbuildId == 0 then
-			local tempTab = ConfigTable.GetData("TravelerDuelBossLevel", self.selLvId)
-			if 1 < tempTab.Difficulty then
-				local tempId = PlayerData.TravelerDuel:GetCachedBuildId(tempTab.PreLevelId)
-				if tempId then
-					self.mbuildId = tempId
-				end
-			end
-		end
+		local activityLevelsData = PlayerData.Activity:GetActivityDataById(self.Other[1])
+		self.mbuildId = activityLevelsData:GetCachedBuildId()
 		if self.mbuildId ~= 0 then
 			self.isHaveTeam = true
 		end
@@ -606,6 +607,32 @@ function RegionBossFormationCtrl:OnEnable()
 		if self.mbuildId ~= 0 then
 			self.isHaveTeam = true
 		end
+	elseif self.nType == AllEnum.RegionBossFormationType.ActivityStory then
+		local mapStoryCfg = PlayerData.ActivityAvg:GetStoryCfgData(self.Other)
+		local bHasTrial = 0 < mapStoryCfg.TrialBuild
+		self.bTrial = LocalData.GetPlayerLocalData("StoryTrialModel")
+		if self.bTrial == nil then
+			self.bTrial = true
+		end
+		if bHasTrial == false then
+			self.bTrial = false
+		end
+		LocalData.SetPlayerLocalData("StoryTrialModel", self.bTrial)
+		self._mapNode.btnSwitch.gameObject:SetActive(bHasTrial)
+		self:SwitchStoryType(self.bTrial)
+		if bHasTrial then
+			self.mapTrialBuild = PlayerData.Build:CreateTrialBuild(mapStoryCfg.TrialBuild)
+		end
+		if self.bTrial then
+			self.mbuildId = self.mapTrialBuild.nBuildId
+		else
+			self.mbuildId = PlayerData.ActivityAvg:GetCachedBuildId()
+		end
+		if self.mbuildId and self.mbuildId ~= 0 then
+			self.isHaveTeam = true
+		else
+			self.isHaveTeam = false
+		end
 	end
 	self.mapCurModel = {}
 	local sSceneName = ConfigTable.GetConfigValue("SelectRole_Main")
@@ -665,10 +692,10 @@ end
 function RegionBossFormationCtrl:OnDestroy()
 end
 function RegionBossFormationCtrl:OnBtnClick_AddBuild()
-	EventManager.Hit(EventId.OpenPanel, PanelId.RogueBossBuildBrief, self.nType, self.selLvId)
+	EventManager.Hit(EventId.OpenPanel, PanelId.RogueBossBuildBrief, self.nType, self.selLvId, 1, self.Other)
 end
 function RegionBossFormationCtrl:OnBtnClick_ChangeTeam()
-	EventManager.Hit(EventId.OpenPanel, PanelId.RogueBossBuildBrief, self.nType, self.selLvId)
+	EventManager.Hit(EventId.OpenPanel, PanelId.RogueBossBuildBrief, self.nType, self.selLvId, 1, self.Other)
 end
 function RegionBossFormationCtrl:OnBtnClick_TeamDetails()
 	local callback = function(mapData)
@@ -686,8 +713,10 @@ function RegionBossFormationCtrl:OnBtnClick_StorySwitch()
 	self:SwitchStoryType(self.bTrial)
 	if self.bTrial then
 		self.mbuildId = self.mapTrialBuild.nBuildId
-	else
+	elseif self.nType == AllEnum.RegionBossFormationType.Story then
 		self.mbuildId = PlayerData.Avg:GetCachedBuildId()
+	else
+		self.mbuildId = PlayerData.ActivityAvg:GetCachedBuildId()
 	end
 	if self.mbuildId and self.mbuildId ~= 0 then
 		self.isHaveTeam = true
@@ -737,6 +766,8 @@ function RegionBossFormationCtrl:OnBtnClick_Start(btn)
 		self:OpenWeeklyCopies()
 	elseif self.nType == AllEnum.RegionBossFormationType.ActivityLevels then
 		self:OpenActivityLevelsBattle()
+	elseif self.nType == AllEnum.RegionBossFormationType.ActivityStory then
+		self:OpenActivityStoryBattle()
 	end
 	NovaAPI.SetEntryLevelFade(true)
 end
@@ -744,7 +775,6 @@ function RegionBossFormationCtrl:OnEvent_Back(nPanelId)
 	if self._panel._nPanelId ~= nPanelId then
 		return
 	end
-	PlayerData.TravelerDuel:SetSelBuildId(0)
 	PlayerData.DailyInstance:SetSelBuildId(0)
 	if self.mapTrialBuild then
 		PlayerData.Build:DeleteTrialBuild()
@@ -761,7 +791,6 @@ function RegionBossFormationCtrl:OnEvent_BackHome(nPanelId)
 	if self.nType == AllEnum.RegionBossFormationType.InfinityTower then
 		PlayerData.InfinityTower:SetPageState(1)
 	end
-	PlayerData.TravelerDuel:SetSelBuildId(0)
 	PlayerData.DailyInstance:SetSelBuildId(0)
 	if self.mapTrialBuild then
 		PlayerData.Build:DeleteTrialBuild()

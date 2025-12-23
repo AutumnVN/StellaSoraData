@@ -82,6 +82,7 @@ function BattlePassPremiumBuyCtrl:OpenPanel(nCurType, nSeasonId, nVersion)
 	NovaAPI.SetTMPText(self._mapNode.txtBtnbtnBuyPremium, tostring(mapBattlePassCfgData.PremiumShowPrice))
 	local nSPremiumPrice = nCurType == 0 and mapBattlePassCfgData.LuxuryPrice or mapBattlePassCfgData.ComplementaryPrice
 	self:SetPngSprite(self._mapNode.imgBattlePassLogo, "Icon/ArtText/CharSkin_ArtText_" .. mapBattlePassCfgData.Cover)
+	NovaAPI.SetImageNativeSize(self._mapNode.imgBattlePassLogo)
 	local sSPremiumPrice = nCurType == 0 and mapBattlePassCfgData.LuxuryShowPrice or mapBattlePassCfgData.ComplementaryShowPrice
 	NovaAPI.SetTMPText(self._mapNode.txtBtnbtnBuySPremium, tostring(sSPremiumPrice))
 	NovaAPI.SetTMPText(self._mapNode.txtBtnbtnBuySPremiumDiscount, tostring(mapBattlePassCfgData.OriginShowPrice))
@@ -95,7 +96,7 @@ function BattlePassPremiumBuyCtrl:OpenPanel(nCurType, nSeasonId, nVersion)
 	if mapSkinCfg ~= nil then
 		self._mapNode.Actor2D_PNG_Buy.gameObject:SetActive(true)
 		local nCharId = mapSkinCfg.CharId
-		Actor2DManager.SetActor2D_PNG(self._mapNode.Actor2D_PNG_Buy, PanelId.MainView, nCharId, nSkinId)
+		Actor2DManager.SetActor2D_PNG(self._mapNode.Actor2D_PNG_Buy, PanelId.BattlePass, nCharId, nSkinId)
 	else
 		self._mapNode.Actor2D_PNG_Buy.gameObject:SetActive(false)
 	end

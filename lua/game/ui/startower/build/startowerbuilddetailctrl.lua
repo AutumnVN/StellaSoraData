@@ -51,12 +51,23 @@ function StarTowerBuildDetailCtrl:InitPanel()
 	end
 	self._mapNode.BuildDetail:Refresh(self.mapBuild)
 	self._mapNode.ContentList:Refresh(self.mapBuild)
-	self._mapNode.btn_PreferenceIcon.interactable = self.mapBuild.bPreference
-	NovaAPI.SetTMPColor(self._mapNode.txtLike, self.mapBuild.bPreference and Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764) or Color(0.5803921568627451, 0.6666666666666666, 0.7529411764705882))
-	self._mapNode.btn_LockIcon.interactable = self.mapBuild.bLock
-	NovaAPI.SetTMPText(self._mapNode.txtBuildLock, self.mapBuild.bLock and ConfigTable.GetUIText("RoguelikeBuild_Save_Lock") or ConfigTable.GetUIText("RoguelikeBuild_Save_Unlock"))
-	NovaAPI.SetTMPColor(self._mapNode.txtBuildLock, self.mapBuild.bLock and Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764) or Color(0.5803921568627451, 0.6666666666666666, 0.7529411764705882))
-	NovaAPI.SetTMPText(self._mapNode.TMPBuildSaveTime, string.format("<color=#5e89b4>\228\191\157\229\173\152\230\151\182\233\151\180\239\188\154</color>%s", os.date("%Y/%m/%d %H:%M", math.floor(self.mapBuild.nBuildId / 1.0E9))))
+	self._mapNode.btn_Preference.gameObject:SetActive(self.mapBuild.bTrial ~= true)
+	self._mapNode.btn_Lock.gameObject:SetActive(self.mapBuild.bTrial ~= true)
+	self._mapNode.TMPBuildSaveTime.gameObject:SetActive(self.mapBuild.bTrial ~= true)
+	self._mapNode.btnDelete.gameObject:SetActive(self.mapBuild.bTrial ~= true)
+	self._mapNode.btnRename.gameObject:SetActive(self.mapBuild.bTrial ~= true)
+	if self.mapBuild.bPreference ~= nil then
+		self._mapNode.btn_PreferenceIcon.interactable = self.mapBuild.bPreference
+		NovaAPI.SetTMPColor(self._mapNode.txtLike, self.mapBuild.bPreference and Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764) or Color(0.5803921568627451, 0.6666666666666666, 0.7529411764705882))
+	end
+	if self.mapBuild.bLock ~= nil then
+		self._mapNode.btn_LockIcon.interactable = self.mapBuild.bLock
+		NovaAPI.SetTMPText(self._mapNode.txtBuildLock, self.mapBuild.bLock and ConfigTable.GetUIText("RoguelikeBuild_Save_Lock") or ConfigTable.GetUIText("RoguelikeBuild_Save_Unlock"))
+		NovaAPI.SetTMPColor(self._mapNode.txtBuildLock, self.mapBuild.bLock and Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764) or Color(0.5803921568627451, 0.6666666666666666, 0.7529411764705882))
+	end
+	if self.mapBuild.bTrial ~= true then
+		NovaAPI.SetTMPText(self._mapNode.TMPBuildSaveTime, string.format("<color=#5e89b4>\228\191\157\229\173\152\230\151\182\233\151\180\239\188\154</color>%s", os.date("%Y/%m/%d %H:%M", math.floor(self.mapBuild.nBuildId / 1.0E9))))
+	end
 end
 function StarTowerBuildDetailCtrl:OpenConfirmHint()
 	local nCoin = math.floor(math.min(math.max(self.mapBuild.nScore / tonumber(self.tbCoinRate[1]), tonumber(self.tbCoinRate[2])), tonumber(self.tbCoinRate[3])))
@@ -111,6 +122,7 @@ end
 function StarTowerBuildDetailCtrl:OnDisable()
 end
 function StarTowerBuildDetailCtrl:OnDestroy()
+	PlayerData.Build:DeleteTrialBuild()
 end
 function StarTowerBuildDetailCtrl:OnRelease()
 end

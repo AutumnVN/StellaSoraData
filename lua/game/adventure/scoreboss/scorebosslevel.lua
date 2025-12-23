@@ -130,7 +130,7 @@ end
 function ScoreBossLevel:OnEvent_BossRushSpawnId(bossId)
 	self.BossId = bossId
 	local healthInfo = CS.AdventureModuleHelper.GetEntityHealthInfo(bossId)
-	self.BossMaxHp = healthInfo ~= nil and healthInfo.hpMax:AsInt() or 0
+	self.BossMaxHp = healthInfo ~= nil and healthInfo.hpMax or 0
 	EventManager.AddEntityEvent("HpChanged", self.BossId, self, self.OnEvent_HpChanged)
 	EventManager.AddEntityEvent("BossRushMonsterLevelChanged", self.BossId, self, self.OnEvent_BossRushMonsterLevelChanged)
 	EventManager.AddEntityEvent("BossRushMonsterBattleAttrChanged", self.BossId, self, self.OnEvent_BossRushMonsterBattleAttrChanged)

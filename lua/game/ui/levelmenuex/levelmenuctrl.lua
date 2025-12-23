@@ -381,10 +381,7 @@ function LevelMenuCtrl:Awake()
 	for nCharId, v in pairs(tbList) do
 		local mapCfg = ConfigTable.GetData_Character(nCharId)
 		if mapCfg ~= nil and mapCfg.Visible then
-			local isFilter = PlayerData.Filter:CheckFilterByChar(nCharId)
-			if isFilter then
-				table.insert(self.tbAllCharList, nCharId)
-			end
+			table.insert(self.tbAllCharList, nCharId)
 		end
 	end
 	self.nCurResIconIndex = 1
@@ -519,25 +516,28 @@ function LevelMenuCtrl:OnDisable()
 	end
 end
 function LevelMenuCtrl:OnBtnClick_StarTower(btn)
-	local bState = PlayerData.State:CheckStarTowerState()
-	if not bState then
-		CS.WwiseAudioManager.Instance:PlaySound("ui_level_select")
-		local callback = function()
-			local nAnimLen = NovaAPI.GetAnimClipLength(self._mapNode.panelAnimator, {
-				"levelmenu_t_out"
-			})
-			self._mapNode.panelAnimator:Play("levelmenu_t_out", 0, 0)
-			self:AddTimer(1, nAnimLen, function()
-				self._mapNode.panelAnimator:Play("levelmenu_t_StarTower_in", 0, 0)
-				self._panel.panelType = phone_page_starTower
-				self:ChangePhonePage()
-				self._mapNode.goStarTower:InitStarTower(self.mapAllStarTower, self.mapStarTowerGroup)
-				EventManager.Hit("Guide_PassiveCheck_Msg", "Guide_OpenLevelMenuStarTower")
-			end, true, true, true)
-			EventManager.Hit(EventId.TemporaryBlockInput, nAnimLen)
+	local AffinityCallback = function()
+		local bState = PlayerData.State:CheckStarTowerState()
+		if not bState then
+			CS.WwiseAudioManager.Instance:PlaySound("ui_level_select")
+			local callback = function()
+				local nAnimLen = NovaAPI.GetAnimClipLength(self._mapNode.panelAnimator, {
+					"levelmenu_t_out"
+				})
+				self._mapNode.panelAnimator:Play("levelmenu_t_out", 0, 0)
+				self:AddTimer(1, nAnimLen, function()
+					self._mapNode.panelAnimator:Play("levelmenu_t_StarTower_in", 0, 0)
+					self._panel.panelType = phone_page_starTower
+					self:ChangePhonePage()
+					self._mapNode.goStarTower:InitStarTower(self.mapAllStarTower, self.mapStarTowerGroup)
+					EventManager.Hit("Guide_PassiveCheck_Msg", "Guide_OpenLevelMenuStarTower")
+				end, true, true, true)
+				EventManager.Hit(EventId.TemporaryBlockInput, nAnimLen)
+			end
+			PlayerData.StarTower:SendTowerGrowthDetailReq(callback)
 		end
-		PlayerData.StarTower:SendTowerGrowthDetailReq(callback)
 	end
+	PlayerData.StarTower:GetAffinity(AffinityCallback)
 end
 function LevelMenuCtrl:OnBtnClick_Build(btn)
 	local func = function()

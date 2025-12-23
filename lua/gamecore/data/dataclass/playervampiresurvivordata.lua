@@ -20,6 +20,7 @@ function PlayerVampireSurvivorData:Init()
 	self.nCurSeasonId = 0
 	self.nTalentPointMax = 0
 	self.ObtainCount = 0
+	self.bFirstIn = true
 	self.bSuccessBattle = false
 	local mapQuestGroup = {}
 	local forEachTableLine = function(mapData)
@@ -685,5 +686,12 @@ function PlayerVampireSurvivorData:CacheScore(nScore)
 end
 function PlayerVampireSurvivorData:CachePassedId(tbIds)
 	self.tbPassedId = tbIds
+end
+function PlayerVampireSurvivorData:GetFirstIn()
+	local bFirst = self.bFirstIn
+	if self.bFirstIn == true then
+		self.bFirstIn = false
+	end
+	return bFirst
 end
 return PlayerVampireSurvivorData

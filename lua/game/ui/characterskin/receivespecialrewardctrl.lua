@@ -355,6 +355,24 @@ function ReceiveSpecialRewardCtrl:ShowSSRAnimEnd(_, voice)
 				NovaAPI.SetTMPText(self._mapNode.TMP_Word1, sContent)
 			end
 		end
+	elseif self.bChar then
+		if CacheTable.Get("_CharGetLinesBySkinId") == nil or next(CacheTable.Get("_CharGetLinesBySkinId")) == nil then
+			local func_Parse_CharGetLines = function(mapData)
+				if mapData.SkinId ~= 0 then
+					CacheTable.SetData("_CharGetLinesBySkinId", mapData.SkinId, mapData)
+				end
+			end
+			ForEachTableLine(DataTable.CharGetLines, func_Parse_CharGetLines)
+		end
+		local mapCfg = CacheTable.GetData("_CharGetLinesBySkinId", self.nId)
+		if mapCfg ~= nil then
+			self._mapNode.TMP_Word.gameObject:SetActive(true)
+			local sContent = mapCfg.Lines
+			sContent = string.gsub(sContent, "==RT==", "\n")
+			sContent = string.gsub(sContent, "==PLAYER_NAME==", PlayerData.Base:GetPlayerNickName())
+			NovaAPI.SetTMPText(self._mapNode.TMP_Word, sContent)
+			NovaAPI.SetTMPText(self._mapNode.TMP_Word1, sContent)
+		end
 	end
 	self._mapNode.goInfoContent:SetActive(true)
 	self._mapNode.animInfoContent:Play("Info_rtTitle_in")

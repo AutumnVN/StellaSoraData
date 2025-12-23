@@ -238,6 +238,11 @@ return {
 		name_bg_color = "#a87dc0"
 	},
 	{
+		id = "avg1_145",
+		name = "Otoha",
+		name_bg_color = "#90a1c6"
+	},
+	{
 		id = "avg1_146",
 		name = "Benito",
 		name_bg_color = "#0ABEC5"
@@ -295,6 +300,11 @@ return {
 	{
 		id = "avg2_003",
 		name = "Shrubshrew Grenadier",
+		name_bg_color = "#0ABEC5"
+	},
+	{
+		id = "avg2_953",
+		name = "Furnace's Delirium",
 		name_bg_color = "#0ABEC5"
 	},
 	{
@@ -961,6 +971,11 @@ return {
 		id = "avg3_206",
 		name = "Umbrara",
 		name_bg_color = "#394444"
+	},
+	{
+		id = "avg3_210",
+		name = "Hasana",
+		name_bg_color = "#0ABEC5"
 	},
 	{
 		id = "avg3_873",
@@ -2328,6 +2343,70 @@ return {
 		name = "Symbiotic Tree B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_976"
+	},
+	{
+		id = "avg3_1256",
+		name = "Laru A",
+		name_bg_color = "#79092e",
+		reuse = "avg1_158"
+	},
+	{
+		id = "avg3_1257",
+		name = "Laru B",
+		name_bg_color = "#79092e",
+		reuse = "avg1_158"
+	},
+	{
+		id = "avg3_1258",
+		name = "Laru Bright Ver A",
+		name_bg_color = "#79092e",
+		reuse = "avg4_100"
+	},
+	{
+		id = "avg3_1259",
+		name = "Little Laru Bright Ver A",
+		name_bg_color = "#79092e",
+		reuse = "avg4_101"
+	},
+	{
+		id = "avg3_1260",
+		name = "Weed Brawler A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_958"
+	},
+	{
+		id = "avg3_1261",
+		name = "Snowish Tree Spirit",
+		name_bg_color = "#ccc5b3",
+		reuse = "avg3_204"
+	},
+	{
+		id = "avg3_1262",
+		name = "United Harvest Forester C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_120"
+	},
+	{
+		id = "avg3_1263",
+		name = "Weed Brawler B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_958"
+	},
+	{
+		id = "avg3_1264",
+		name = "Mistique A",
+		name_bg_color = "#c27fe9",
+		reuse = "avg1_135"
+	},
+	{
+		id = "avg4_100",
+		name = "Laru Bright Ver",
+		name_bg_color = "#0ABEC5"
+	},
+	{
+		id = "avg4_101",
+		name = "Little Laru Bright Ver",
+		name_bg_color = "#0ABEC5"
 	},
 	{
 		id = "avg4_999",

@@ -232,6 +232,7 @@ function VampireLevelSelect_talentCtrl:OnBtnClick_ActiveTalent()
 			self:OnEvent_ClickNode(self.nCurTalent)
 			local WwiseManger = CS.WwiseAudioManager.Instance
 			WwiseManger:PostEvent("ui_vampire_talent_refresh")
+			PlayerData.Voice:PlayCharVoice("thankLvup", 9102, nil, true)
 		end
 		PlayerData.VampireSurvivor:ActiveTalent(self.nCurTalent, callback)
 	end

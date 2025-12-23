@@ -120,7 +120,7 @@ function ScoreBossClearBDCtrl:RefreshLevelMsg()
 			local mapCharData = PlayerData.Char:GetCharDataByTid(tmpCharId[j])
 			local nCharSkinId = mapCharData.nSkinId
 			local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-			self:SetPngSprite(imgItemIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+			self:SetPngSprite(imgItemIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 			local nRarity = mapChar.Grade
 			local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapChar.Grade]
 			self:SetAtlasSprite(imgItemRare, "12_rare", sFrame, true)

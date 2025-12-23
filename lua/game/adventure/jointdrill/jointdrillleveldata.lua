@@ -538,7 +538,7 @@ function JointDrillLevelData:OnEvent_MonsterSpawn(nBossId)
 	if self.bChangeLevel then
 		return
 	end
-	local data, nDataLength = self:CacheTempData(true, bBoss)
+	local data, nDataLength = self:CacheTempData(true, bBoss, true)
 	local nHp, nHpMax = 0, 0
 	if self.mapTempData ~= nil and self.mapTempData.mapBossTempData ~= nil then
 		nHp = self.mapTempData.mapBossTempData.nHp
@@ -560,19 +560,22 @@ function JointDrillLevelData:OnEvent_BattleLvsToggle(nBattleLv, nTotalTime, nDam
 	self.parent:AddJointDrillTeam(self.mapBuildData, nTotalTime, self.nDamageValue)
 	PanelManager.InputDisable()
 	self.parent:StopRecord()
-	local syncCallback = function()
-		PanelManager.InputEnable()
-		AdventureModuleHelper.LevelStateChanged(false)
-		EventManager.Hit("ResetBossHUD")
+	local func = function()
+		local syncCallback = function()
+			PanelManager.InputEnable()
+			AdventureModuleHelper.LevelStateChanged(false)
+			EventManager.Hit("ResetBossHUD")
+		end
+		local data, nDataLength = self.parent:EncodeTempDataJson(self.mapTempData)
+		local nHp, nHpMax = 1, 1
+		local tempBossData = self.mapTempData.mapBossTempData
+		if tempBossData ~= nil then
+			nHp = math.max(tempBossData.nHp, 1)
+			nHpMax = math.max(tempBossData.nHpMax, 1)
+		end
+		self.parent:JointDrillSync(self.nCurLevel, nTotalTime, self.nDamageValue, nHp, nHpMax, data, syncCallback)
 	end
-	local data, nDataLength = self.parent:EncodeTempDataJson(self.mapTempData)
-	local nHp, nHpMax = 1, 1
-	local tempBossData = self.mapTempData.mapBossTempData
-	if tempBossData ~= nil then
-		nHp = math.max(tempBossData.nHp, 1)
-		nHpMax = math.max(tempBossData.nHpMax, 1)
-	end
-	self.parent:JointDrillSync(self.nCurLevel, nTotalTime, self.nDamageValue, nHp, nHpMax, data, syncCallback)
+	EventManager.Hit(EventId.SetTransition, 3, func)
 end
 function JointDrillLevelData:OnEvent_UnloadComplete()
 	if self.bInResult == true then
@@ -601,6 +604,7 @@ end
 function JointDrillLevelData:OnEvent_RestartJointDrill()
 	self.bRestart = true
 	self.parent:SetGameTime(0)
+	AdventureModuleHelper.ClearCharacterDamageRecord(true)
 	local sRecord = self.parent:EncodeTempDataJson(self.mapInitTempData)
 	self.parent:ResetRecord(sRecord)
 	self.parent:SetRecorderExcludeIds(true)
@@ -613,7 +617,11 @@ function JointDrillLevelData:OnEvent_RetreatJointDrill()
 		self.parent:ResetRecord(sRecord)
 		self:JointDrillFail(AllEnum.JointDrillResultType.Retreat)
 	end
-	self.parent:JointDrillRetreat(self.mapBuildData, callback)
+	local nHp = 1
+	if self.mapInitTempData ~= nil and self.mapInitTempData.mapBossTempData ~= nil then
+		nHp = self.mapInitTempData.mapBossTempData.nHp
+	end
+	self.parent:JointDrillRetreat(self.mapBuildData, nHp, callback)
 end
 function JointDrillLevelData:OnEvent_JointDrill_Result(nLevelState, nTotalTime, nDamageValue)
 	if self.bInResult then

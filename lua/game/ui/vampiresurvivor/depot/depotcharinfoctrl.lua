@@ -82,7 +82,7 @@ function DepotCharInfoCtrl:RefreshChoose()
 		if charData ~= nil then
 			local nCharSkinId = charData.nSkinId
 			local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-			self:SetPngSprite(self._mapNode.imgHead[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.L)
+			self:SetPngSprite(self._mapNode.imgHead[i], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.L)
 			self._mapNode.goSelect[i]:SetActive(self.nSelectIndex == i)
 		end
 	end
@@ -95,30 +95,30 @@ function DepotCharInfoCtrl:RefreshAttribute()
 	local Info = self.tbActorInfo[self.nCharId]
 	local tbAttr = {}
 	if self.nSelectIndex == 1 then
-		local hp = HealthInfo ~= nil and HealthInfo.hp:AsInt() or 0
-		local hpMax = HealthInfo ~= nil and HealthInfo.hpMax:AsInt() or 0
+		local hp = HealthInfo ~= nil and HealthInfo.hp or 0
+		local hpMax = HealthInfo ~= nil and HealthInfo.hpMax or 0
 		tbAttr = {totalValue = hp, baseValue = hp}
 		self._mapNode.goProperty[1]:SetCharProperty(AllEnum.CharAttr[1], tbAttr, true, hpMax)
 		self._mapNode.goProperty[1].gameObject:SetActive(true)
 	else
-		local hpMax = HealthInfo ~= nil and HealthInfo.hpMax:AsInt() or 0
+		local hpMax = HealthInfo ~= nil and HealthInfo.hpMax or 0
 		tbAttr = {totalValue = hpMax, baseValue = hpMax}
 		self._mapNode.goProperty[1]:SetCharProperty(AllEnum.CharAttr[1], tbAttr, true)
 		self._mapNode.goProperty[1].gameObject:SetActive(true)
 	end
-	local atk = Info ~= nil and Info.atk:AsInt() or 0
+	local atk = Info ~= nil and Info.atk or 0
 	tbAttr = {totalValue = atk, baseValue = atk}
 	self._mapNode.goProperty[2]:SetCharProperty(AllEnum.CharAttr[2], tbAttr, true)
-	local def = Info ~= nil and Info.def:AsInt() or 0
+	local def = Info ~= nil and Info.def or 0
 	tbAttr = {totalValue = def, baseValue = def}
 	self._mapNode.goProperty[3]:SetCharProperty(AllEnum.CharAttr[3], tbAttr, true)
-	local critRate = Info ~= nil and Info.critRate:AsFloat() or 0
+	local critRate = Info ~= nil and Info.critRate or 0
 	tbAttr = {
 		totalValue = critRate * 100,
 		baseValue = critRate * 100
 	}
 	self._mapNode.goProperty[4]:SetCharProperty(AllEnum.CharAttr[4], tbAttr, false)
-	local critPower = Info ~= nil and Info.critPower:AsFloat() or 0
+	local critPower = Info ~= nil and Info.critPower or 0
 	tbAttr = {
 		totalValue = critPower * 100,
 		baseValue = critPower * 100
@@ -193,7 +193,7 @@ function DepotCharInfoCtrl:OnBtnClick_Char(btn, nIndex)
 	self:SwitchChar()
 end
 function DepotCharInfoCtrl:OnBtnClick_Skill(btn)
-	EventManager.Hit(EventId.OpenPanel, PanelId.PopupSkillPanel, self.tbTeam, false, {}, self.mapCharData)
+	EventManager.Hit(EventId.OpenPanel, PanelId.PopupSkillPanel, self.tbTeam, false, {}, self.mapCharData, self.nCharId)
 end
 function DepotCharInfoCtrl:OnBtnClick_Detail()
 	local HealthInfo = self.tbActorHealthInfo[self.nCharId]
@@ -206,19 +206,19 @@ function DepotCharInfoCtrl:OnBtnClick_Detail()
 	for k, v in pairs(AllEnum.CharAttr) do
 		local total, base
 		if v.sKey == "Hp" then
-			total = HealthInfo ~= nil and HealthInfo.hpMax:AsInt() or 0
+			total = HealthInfo ~= nil and HealthInfo.hpMax or 0
 		elseif v.sKey == "Atk" then
-			total = Info ~= nil and Info.atk:AsInt() or 0
+			total = Info ~= nil and Info.atk or 0
 		elseif v.sKey == "Def" then
-			total = Info ~= nil and Info.def:AsInt() or 0
+			total = Info ~= nil and Info.def or 0
 		elseif v.sKey == "CritRate" then
-			total = Info ~= nil and Info.critRate:AsFloat() or 0
+			total = Info ~= nil and Info.critRate or 0
 			total = total * 100
 		elseif v.sKey == "CritPower" then
-			total = Info ~= nil and Info.critPower:AsFloat() or 0
+			total = Info ~= nil and Info.critPower or 0
 			total = total * 100
 		elseif v.sKey == "Suppress" then
-			total = Info ~= nil and Info.suppressRatio:AsFloat() or 0
+			total = Info ~= nil and Info.suppressRatio or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "UltraEnergy" then
@@ -233,76 +233,76 @@ function DepotCharInfoCtrl:OnBtnClick_Detail()
 			total = total * 100
 			base = total
 		elseif v.sKey == "DefPierce" then
-			total = Info ~= nil and Info.defPenetrate:AsInt() or 0
+			total = Info ~= nil and Info.defPenetrate or 0
 			base = total
 		elseif v.sKey == "DefIgnore" then
-			total = Info ~= nil and Info.defIgnore:AsFloat() or 0
+			total = Info ~= nil and Info.defIgnore or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "WEE" then
-			total = ElementInfo ~= nil and ElementInfo.WEE:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.WEE or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "WEP" then
-			total = ElementInfo ~= nil and ElementInfo.WEP:AsInt() or 0
+			total = ElementInfo ~= nil and ElementInfo.WEP or 0
 			base = total
 		elseif v.sKey == "WEI" then
-			total = ElementInfo ~= nil and ElementInfo.WEI:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.WEI or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "FEE" then
-			total = ElementInfo ~= nil and ElementInfo.FEE:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.FEE or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "FEP" then
-			total = ElementInfo ~= nil and ElementInfo.FEP:AsInt() or 0
+			total = ElementInfo ~= nil and ElementInfo.FEP or 0
 			base = total
 		elseif v.sKey == "FEI" then
-			total = ElementInfo ~= nil and ElementInfo.FEI:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.FEI or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "SEE" then
-			total = ElementInfo ~= nil and ElementInfo.SEE:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.SEE or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "SEP" then
-			total = ElementInfo ~= nil and ElementInfo.SEP:AsInt() or 0
+			total = ElementInfo ~= nil and ElementInfo.SEP or 0
 			base = total
 		elseif v.sKey == "SEI" then
-			total = ElementInfo ~= nil and ElementInfo.SEI:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.SEI or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "AEE" then
-			total = ElementInfo ~= nil and ElementInfo.AEE:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.AEE or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "AEP" then
-			total = ElementInfo ~= nil and ElementInfo.AEP:AsInt() or 0
+			total = ElementInfo ~= nil and ElementInfo.AEP or 0
 			base = total
 		elseif v.sKey == "AEI" then
-			total = ElementInfo ~= nil and ElementInfo.AEI:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.AEI or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "LEE" then
-			total = ElementInfo ~= nil and ElementInfo.LEE:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.LEE or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "LEP" then
-			total = ElementInfo ~= nil and ElementInfo.LEP:AsInt() or 0
+			total = ElementInfo ~= nil and ElementInfo.LEP or 0
 			base = total
 		elseif v.sKey == "LEI" then
-			total = ElementInfo ~= nil and ElementInfo.LEI:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.LEI or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "DEE" then
-			total = ElementInfo ~= nil and ElementInfo.DEE:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.DEE or 0
 			total = total * 100
 			base = total
 		elseif v.sKey == "DEP" then
-			total = ElementInfo ~= nil and ElementInfo.DEP:AsInt() or 0
+			total = ElementInfo ~= nil and ElementInfo.DEP or 0
 			base = total
 		elseif v.sKey == "DEI" then
-			total = ElementInfo ~= nil and ElementInfo.DEI:AsFloat() or 0
+			total = ElementInfo ~= nil and ElementInfo.DEI or 0
 			total = total * 100
 			base = total
 		end

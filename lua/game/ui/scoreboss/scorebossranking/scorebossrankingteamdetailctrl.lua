@@ -101,7 +101,7 @@ function ScoreBossRankingTeamDetailCtrl:Refresh(mapRanking)
 					NovaAPI.SetTMPText(self._mapNode.txtRank1_[k], mapRanking.Teams[1].Chars[k].Level)
 					local nCharSkinId = mapChar.DefaultSkinId
 					local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-					self:SetPngSprite(self._mapNode.imgItemIcon1_[k], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+					self:SetPngSprite(self._mapNode.imgItemIcon1_[k], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 					local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapChar.Grade]
 					self:SetAtlasSprite(self._mapNode.imgItemRare1_[k], "12_rare", sFrame, true)
 				end
@@ -141,7 +141,7 @@ function ScoreBossRankingTeamDetailCtrl:Refresh(mapRanking)
 					NovaAPI.SetTMPText(self._mapNode.txtRank2_[k], mapRanking.Teams[2].Chars[k].Level)
 					local nCharSkinId = mapChar.DefaultSkinId
 					local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-					self:SetPngSprite(self._mapNode.imgItemIcon2_[k], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+					self:SetPngSprite(self._mapNode.imgItemIcon2_[k], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 					local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapChar.Grade]
 					self:SetAtlasSprite(self._mapNode.imgItemRare2_[k], "12_rare", sFrame, true)
 				end

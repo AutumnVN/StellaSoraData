@@ -244,7 +244,7 @@ function DispatchDetialInfoCtrl:RefreshCharList(Data, bAccepting)
 				local nCharSkinId = mapCharData.nSkinId
 				local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 				local imgHeadIcon = self._mapNode.charHead[i].transform:Find("imgIconBg/imgItemIcon"):GetComponent("Image")
-				self:SetPngSprite(imgHeadIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+				self:SetPngSprite(imgHeadIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 				local imgItemRare = self._mapNode.charHead[i].transform:Find("imgItemRare"):GetComponent("Image")
 				local nRarity = mapChar.Grade
 				local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[nRarity == GameEnum.characterGrade.R and GameEnum.characterGrade.SR or nRarity]
@@ -319,7 +319,7 @@ function DispatchDetialInfoCtrl:RefreshBuildInfo(buildData)
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 		local mapCharCfg = ConfigTable.GetData_Character(nCharTid)
 		local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-		self:SetPngSprite(imgCharIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+		self:SetPngSprite(imgCharIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 		self:SetAtlasSprite(imgCharFrame, "12_rare", sFrame)
 		local mapCharDescCfg = ConfigTable.GetData("CharacterDes", nCharTid)
 		for i = 1, #mapCharDescCfg.Tag do

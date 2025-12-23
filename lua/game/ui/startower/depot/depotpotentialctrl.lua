@@ -181,7 +181,6 @@ end
 function DepotPotentialCtrl:Clear()
 	self.bInit = false
 	self.nSelectId = nil
-	self.bPotentialAll = true
 	self._mapNode.PotentialDepotItem.gameObject:SetActive(false)
 	self._mapNode.PotentialCard.gameObject:SetActive(false)
 end

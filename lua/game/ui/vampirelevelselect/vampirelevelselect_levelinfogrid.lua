@@ -136,7 +136,7 @@ function VampireLevelSelect_levelInfoGrid:Refresh(mapLevelData, mapBuildData, bF
 				NovaAPI.SetTMPText(self._mapNode.txtRank[i], mapCharData.nLevel)
 				local nCharSkinId = mapCharData.nSkinId
 				local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-				self:SetPngSprite(self._mapNode.imgItemIcon[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+				self:SetPngSprite(self._mapNode.imgItemIcon[i], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 				local nRarity = mapChar.Grade
 				local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[nRarity == GameEnum.characterGrade.R and GameEnum.characterGrade.SR or nRarity]
 				self:SetAtlasSprite(self._mapNode.imgItemRare[i], "12_rare", sFrame, true)

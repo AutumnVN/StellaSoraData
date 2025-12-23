@@ -46,19 +46,10 @@ function ActivityPopUpCtrl:ShowPopUp()
 			end
 			self.tbPopUpCtrlObj = {}
 		end
-		local popFloderPath = ""
-		local ctrlFloderPath = ""
-		if popUpCfg.PopUpType == GameEnum.PopUpType.ActivityGroup or popUpCfg.PopUpType == GameEnum.PopUpType.Activity then
-			popFloderPath = "UI_Activity"
-			ctrlFloderPath = "ActivityPopUp"
-		elseif popUpCfg.PopUpType == GameEnum.PopUpType.OwnPopUP then
-			popFloderPath = "UI"
-			ctrlFloderPath = "OwnPopUp"
-		end
-		local sPrefabPath = string.format("%s/%s.prefab", popFloderPath, popUpCfg.PopUpRes)
+		local sPrefabPath = string.format("%s.prefab", popUpCfg.PopUpRes)
 		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.PopUpRoot)
 		local ctrlName = popUpCfg.ScriptName
-		local sCtrlPath = string.format("Game.UI.%s.%s", ctrlFloderPath, ctrlName)
+		local sCtrlPath = string.format("Game.UI.%s", ctrlName)
 		local popupCtrl = self:BindCtrlByNode(goObj, sCtrlPath)
 		local callback = function()
 			self:OnBtnClick_Close()

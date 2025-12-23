@@ -44,6 +44,7 @@ local sPath_BubbleOffset = ""
 local sPath_VoResLen = ""
 local InUnityEditor = NovaAPI.IsEditorPlatform()
 local bLoaded = false
+local nSpeed = 1
 local LoadAll = function()
 	if InUnityEditor == true then
 		sPath_BubbleData = NovaAPI.ApplicationDataPath .. "/../../GameDataTables/text_data/bubble/" .. sLanFolder .. "/BubbleData.json"
@@ -226,12 +227,12 @@ local GetBubbleData = function(sVoResName, nCharSkinId, bTextOnly)
 	if type(nCharSkinId) == "number" then
 		offset = map_BubbleOffset[tostring(nCharSkinId)]
 		local mapCfgData_CharacterSkin = ConfigTable.GetData("CharacterSkin", nCharSkinId)
-		if mapCfgData_CharacterSkin ~= nil and mapCfgData_CharacterSkin.Type == GameEnum.skinType.ADVANCE then
+		if mapCfgData_CharacterSkin ~= nil and mapCfgData_CharacterSkin.Type ~= GameEnum.skinType.BASIC then
 			local mapCfgData_Character = ConfigTable.GetData("Character", mapCfgData_CharacterSkin.CharId)
-			if mapCfgData_Character ~= nil then
-				local nCharDefaultSkinId = mapCfgData_Character.DefaultSkinId
-				if type(nCharDefaultSkinId) == "number" then
-					offset_ = map_BubbleOffset[tostring(nCharDefaultSkinId)]
+			if mapCfgData_Character ~= nil and type(mapCfgData_Character.DefaultSkinId) == "number" then
+				local mapCfgData_CharacterDefaultSkin = ConfigTable.GetData("CharacterSkin", mapCfgData_Character.DefaultSkinId)
+				if mapCfgData_CharacterDefaultSkin ~= nil and type(mapCfgData_CharacterDefaultSkin.CharacterCG) == "number" and mapCfgData_CharacterDefaultSkin.CharacterCG == mapCfgData_CharacterSkin.CharacterCG then
+					offset_ = map_BubbleOffset[tostring(mapCfgData_Character.DefaultSkinId)]
 				end
 			end
 		end
@@ -278,6 +279,9 @@ local function SetBubble()
 					Actor2DManager.PlayAnim(sAnim, true, nCharIdx)
 				end
 			end
+			if RUNNING_BBV_EDITOR == true then
+				nTime = nTime / nSpeed
+			end
 			timer = TimerManager.Add(1, nTime, nil, SetBubble, true, true, true, nil)
 		else
 			bBubbleDone = true
@@ -286,6 +290,9 @@ local function SetBubble()
 		bBubbleDone = true
 	end
 	if bBubbleDone == true then
+		if RUNNING_BBV_EDITOR == true then
+			NovaAPI.SetAnimatorSpeed(anim, nSpeed)
+		end
 		anim:Play("bb_out", -1, 0)
 		anim = nil
 		TMP = nil
@@ -419,14 +426,22 @@ function BubbleVoiceManager.GetBubbleText(sVoResName)
 end
 function BubbleVoiceManager.GetVoResLen(sVoResName)
 	if type(map_VoResLen) == "table" then
-		local nCurTxtLanIndex = GetLanguageIndex(Settings.sCurrentTxtLanguage)
-		local sLanFolder = GetLanguageSurfixByIndex(nCurTxtLanIndex)
+		local nCurVoLanIndex = GetLanguageIndex(Settings.sCurrentVoLanguage)
+		local sLanFolder = GetLanguageSurfixByIndex(nCurVoLanIndex)
 		local nDuration = map_VoResLen[sVoResName .. sLanFolder]
 		if nDuration == nil then
 			nDuration = 0
 		end
 		return nDuration
 	end
+end
+function BubbleVoiceManager.GetL2DAnim(sVoResName)
+	local data = map_BubbleData[sVoResName]
+	local tbAnim = GetAnim(data.anim)
+	if tbAnim == nil then
+		return nil
+	end
+	return tbAnim
 end
 local mapDisplayData_EX = {
 	{
@@ -750,6 +765,36 @@ function BubbleVoiceManager.IsNew(sVoResName)
 		return map_BubbleData[sVoResName] == nil
 	else
 		return false
+	end
+end
+function BubbleVoiceManager.CheckTime(sVoResName)
+	local data = map_BubbleData[sVoResName]
+	if data == nil then
+		return false
+	end
+	local mapTimeData = data.time
+	if mapTimeData == nil then
+		return false
+	end
+	if mapTimeData.female_cn[1] <= 0 and 0 >= mapTimeData.male_cn[1] then
+		return false
+	end
+	if 0 >= mapTimeData.female_jp[1] and 0 >= mapTimeData.male_jp[1] then
+		return false
+	end
+	return true
+end
+function BubbleVoiceManager.SetSpeed(nIndex)
+	local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+	if nIndex == 1 then
+		WwiseAudioMgr:PostEvent("avg_speed_100")
+		nSpeed = 1
+	elseif nIndex == 2 then
+		WwiseAudioMgr:PostEvent("avg_speed_50")
+		nSpeed = 2
+	elseif nIndex == 3 then
+		WwiseAudioMgr:PostEvent("avg_speed_25")
+		nSpeed = 4
 	end
 end
 return BubbleVoiceManager

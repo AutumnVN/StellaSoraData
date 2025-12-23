@@ -230,6 +230,7 @@ function StarTowerShopCtrl:RefreshCoin()
 	end
 end
 function StarTowerShopCtrl:PlayEnterShopNPCVoice()
+	PlayerData.Voice:StopCharVoice()
 	local mapCurCfg = ConfigTable.GetData("StarTower", self.nStarTowerId)
 	if nil == mapCurCfg then
 		return
@@ -328,7 +329,7 @@ function StarTowerShopCtrl:OpenBuyPanel(bOpen, mapGoods, bUnable, bQuit)
 	self._mapNode.imgGoodsTalentBg.gameObject:SetActive(false)
 	if mapGoods.nCharId ~= nil and mapGoods.nCharId > 0 then
 		local nCharSkinId = PlayerData.Char:GetCharSkinId(mapGoods.nCharId)
-		self:SetPngSprite(self._mapNode.imgGoodsCharIcon, ConfigTable.GetData_CharacterSkin(nCharSkinId).Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgGoodsCharIcon, ConfigTable.GetData_CharacterSkin(nCharSkinId).Icon, AllEnum.CharHeadIconSurfix.S)
 		self._mapNode.imgGoodsCharIcon.gameObject:SetActive(true)
 		self._mapNode.imgCharEdgeGoods.gameObject:SetActive(true)
 	else
@@ -462,6 +463,7 @@ function StarTowerShopCtrl:Awake()
 	}
 end
 function StarTowerShopCtrl:OnEnable()
+	NovaAPI.SetL2DTimeState(true)
 	PanelManager.InputDisable()
 	EventManager.Hit("StarTowerSetButtonEnable", false, false)
 	self:AddTimer(1, 0.1, "OpenPanel", true, true, true)
@@ -489,24 +491,18 @@ function StarTowerShopCtrl:OnDestroy()
 end
 function StarTowerShopCtrl:OnBtn_CloseShop()
 	PanelManager.InputEnable()
+	NovaAPI.SetL2DTimeState(false)
 	EventManager.Hit("StarTowerSetButtonEnable", true, true)
 	GamepadUIManager.DisableGamepadUI("StarTowerShopCtrl")
 	self:Clear()
 	EventManager.Hit("CloseFRShopPanel")
 	EventManager.Hit("ReplayShopRoomBGM")
 	EventManager.Hit(EventId.ClosePanel, PanelId.StarTowerShop)
-	local mapData = PlayerData.Char:GetCharAffinityData(self.nNPCId)
-	if mapData == nil then
-		return
-	end
-	local nLevel = mapData.Level
-	local tbPool = {}
-	for i = 3, 1, -1 do
-		local tbFavorability = ConfigTable.GetConfigArray("NpcFavorabilityRange" .. i)
-		if tbFavorability ~= nil and nLevel <= tbFavorability[2] and nLevel >= tbFavorability[1] then
-			table.insert(tbPool, "chat_lv" .. i)
-		end
-	end
+	PlayerData.Voice:StopCharVoice()
+	local tbPool = {
+		"leave",
+		"posterchat_npc"
+	}
 	if 0 < #tbPool then
 		PlayerData.Voice:PlayCharVoice(tbPool[math.random(1, #tbPool)], self.nNPCId, nil, true)
 	end

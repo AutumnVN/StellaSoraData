@@ -19,6 +19,15 @@ AvgEditorMultiLanTool._mapNodeConfig = {
 		sComponentName = "Button",
 		callback = "OnBtn_SellectNone_InCurLuaGroup"
 	},
+	tog_SortByMergeTime = {
+		sComponentName = "Toggle",
+		callback = "OnToggle_SortByMergeTime"
+	},
+	input_Search = {
+		sComponentName = "InputField",
+		callback = "OnInput_Search"
+	},
+	toggles = {sComponentName = "Transform"},
 	tbTog = {
 		nCount = 9,
 		sNodeName = "tog_",
@@ -36,7 +45,9 @@ AvgEditorMultiLanTool._mapNodeConfig = {
 		sComponentName = "Button",
 		callback = "OnBtnClick_ProcMultiLanguage"
 	},
-	procContent = {sComponentName = "Transform"}
+	procContent = {sComponentName = "Transform"},
+	goProcResult = {},
+	txtProcResult = {sComponentName = "Text"}
 }
 AvgEditorMultiLanTool._mapEventConfig = {}
 function AvgEditorMultiLanTool:Awake()
@@ -54,8 +65,9 @@ function AvgEditorMultiLanTool:Awake()
 	self.nToLanIdx = 2
 	NovaAPI.SetDropDownValue(self._mapNode.dd_MultiLanFrom, self.nFromLanIdx - 1)
 	NovaAPI.SetDropDownValue(self._mapNode.dd_MultiLanTo, self.nToLanIdx - 1)
+	self.bSortByTime = false
 end
-function AvgEditorMultiLanTool:OnBtn_Refresh()
+function AvgEditorMultiLanTool:OnBtn_Refresh(sSearchKeyWord)
 	if self.nFromLanIdx == self.nToLanIdx then
 		EventManager.Hit(EventId.OpenMessageBox, {
 			nType = AllEnum.MessageBox.Alert,
@@ -71,18 +83,71 @@ function AvgEditorMultiLanTool:OnBtn_Refresh()
 	sWriteFileRoot = sWriteFileRoot .. sRequireRoot
 	local sRootConfig = sWriteFileRoot .. "Config/"
 	local sRootPreset = sWriteFileRoot .. "Preset/"
-	local func_CollectLuaFileName = function(sRoot, sPattern)
+	local func_CollectLuaFileName = function(sRoot, sPattern, sAdd)
 		local files = CS_SYS_IO.Directory.GetFiles(sRoot, sPattern, CS_SYS_IO.SearchOption.TopDirectoryOnly)
 		local nFileCount = files.Length - 1
 		local tbFileName = {}
 		for i = 0, nFileCount do
 			local sFileName = string.gsub(CS_SYS_IO.Path.GetFileName(files[i]), ".lua", "")
-			table.insert(tbFileName, {sName = sFileName, bSelected = false})
+			if type(sSearchKeyWord) == "string" and sSearchKeyWord ~= "" then
+				if string.find(string.lower(sFileName), string.lower(sSearchKeyWord), 1, true) ~= nil then
+					local mt = NovaAPI.FileGetLastWriteTime(files[i])
+					table.insert(tbFileName, {
+						sName = sFileName,
+						bSelected = false,
+						nModifyTime = mt,
+						nDefaultIdx = i + 1
+					})
+				end
+			else
+				local mt = NovaAPI.FileGetLastWriteTime(files[i])
+				table.insert(tbFileName, {
+					sName = sFileName,
+					bSelected = false,
+					nModifyTime = mt,
+					nDefaultIdx = i + 1
+				})
+			end
+		end
+		if sAdd ~= nil then
+			local files = CS_SYS_IO.Directory.GetFiles(sAdd, sPattern, CS_SYS_IO.SearchOption.TopDirectoryOnly)
+			local nFileCount = files.Length - 1
+			for i = 0, nFileCount do
+				local sFileName = string.gsub(CS_SYS_IO.Path.GetFileName(files[i]), ".lua", "")
+				if type(sSearchKeyWord) == "string" and sSearchKeyWord ~= "" then
+					if string.find(string.lower(sFileName), string.lower(sSearchKeyWord), 1, true) ~= nil then
+						local mt = NovaAPI.FileGetLastWriteTime(files[i])
+						table.insert(tbFileName, {
+							sName = sFileName,
+							bSelected = false,
+							nModifyTime = mt,
+							nDefaultIdx = i + 1
+						})
+					end
+				else
+					local mt = NovaAPI.FileGetLastWriteTime(files[i])
+					table.insert(tbFileName, {
+						sName = sFileName,
+						bSelected = false,
+						nModifyTime = mt,
+						nDefaultIdx = i + 1
+					})
+				end
+			end
+		end
+		if self.bSortByTime == true then
+			table.sort(tbFileName, function(a, b)
+				if a.nModifyTime == b.nModifyTime then
+					return a.nDefaultIdx < b.nDefaultIdx
+				else
+					return a.nModifyTime > b.nModifyTime
+				end
+			end)
 		end
 		return tbFileName
 	end
 	self.tbLuaFileName = {}
-	self.tbLuaFileName[1] = 0
+	self.tbLuaFileName[1] = func_CollectLuaFileName(sRootConfig, "*.lua", sRootPreset)
 	self.tbLuaFileName[2] = func_CollectLuaFileName(sRootConfig, "BB*.lua")
 	self.tbLuaFileName[3] = func_CollectLuaFileName(sRootConfig, "BT*.lua")
 	self.tbLuaFileName[4] = func_CollectLuaFileName(sRootConfig, "CG*.lua")
@@ -105,34 +170,49 @@ function AvgEditorMultiLanTool:OnDD_LanTo()
 	self.nToLanIdx = NovaAPI.GetDropDownValue(self._mapNode.dd_MultiLanTo) + 1
 end
 function AvgEditorMultiLanTool:OnBtn_SelectAll_InCurLuaGroup()
-	if self.nCurTogIdx == 1 then
-		local nTogCount = #self.tbLuaFileName
-		for i = 2, nTogCount do
-			for ii, vv in ipairs(self.tbLuaFileName[i]) do
+	local tbNames = {}
+	for i, v in ipairs(self.tbLuaFileName[self.nCurTogIdx]) do
+		v.bSelected = true
+		table.insert(tbNames, v.sName)
+	end
+	local nFrom = self.nCurTogIdx == 1 and 2 or 1
+	local nTo = self.nCurTogIdx == 1 and #self.tbLuaFileName or 1
+	for i = nFrom, nTo do
+		local tb = self.tbLuaFileName[i]
+		for ii, vv in ipairs(tb) do
+			if table.indexof(tbNames, vv.sName) > 0 then
 				vv.bSelected = true
 			end
-		end
-	else
-		for i, v in ipairs(self.tbLuaFileName[self.nCurTogIdx]) do
-			v.bSelected = true
 		end
 	end
 	self._mapNode.lsv_multi_lan:ForceRefresh()
 end
 function AvgEditorMultiLanTool:OnBtn_SellectNone_InCurLuaGroup()
-	if self.nCurTogIdx == 1 then
-		local nTogCount = #self.tbLuaFileName
-		for i = 2, nTogCount do
-			for ii, vv in ipairs(self.tbLuaFileName[i]) do
+	local tbNames = {}
+	for i, v in ipairs(self.tbLuaFileName[self.nCurTogIdx]) do
+		v.bSelected = false
+		table.insert(tbNames, v.sName)
+	end
+	local nFrom = self.nCurTogIdx == 1 and 2 or 1
+	local nTo = self.nCurTogIdx == 1 and #self.tbLuaFileName or 1
+	for i = nFrom, nTo do
+		local tb = self.tbLuaFileName[i]
+		for ii, vv in ipairs(tb) do
+			if table.indexof(tbNames, vv.sName) > 0 then
 				vv.bSelected = false
 			end
 		end
-	else
-		for i, v in ipairs(self.tbLuaFileName[self.nCurTogIdx]) do
-			v.bSelected = false
-		end
 	end
 	self._mapNode.lsv_multi_lan:ForceRefresh()
+end
+function AvgEditorMultiLanTool:OnToggle_SortByMergeTime()
+	self.bSortByTime = NovaAPI.GetToggleIsOn(self._mapNode.tog_SortByMergeTime)
+	self:OnBtn_Refresh()
+end
+function AvgEditorMultiLanTool:OnInput_Search()
+	local sSearchKeyWord = NovaAPI.GetInputFieldText(self._mapNode.input_Search)
+	self._mapNode.toggles.localScale = sSearchKeyWord == "" and Vector3.one or Vector3.zero
+	self:OnBtn_Refresh(sSearchKeyWord)
 end
 function AvgEditorMultiLanTool:onToggle_LuaGroup(toggle, nIndex, bIsOn)
 	if bIsOn == false then
@@ -156,6 +236,10 @@ function AvgEditorMultiLanTool:InitLSV()
 		local nTogCount = #self.tbLuaFileName
 		for i = 2, nTogCount do
 			nCount = nCount + #self.tbLuaFileName[i]
+		end
+		if nCount ~= #self.tbLuaFileName[1] then
+			printError("\230\188\148\229\135\186\233\133\141\231\189\174\230\150\135\228\187\182\230\149\176\233\135\143\231\187\159\232\174\161\230\156\137\232\175\175\239\188\129")
+			nCount = 0
 		end
 	else
 		nCount = #self.tbLuaFileName[self.nCurTogIdx]
@@ -184,24 +268,23 @@ function AvgEditorMultiLanTool:OnGridBtnClick(go)
 	end
 	tbGridData.bSelected = not tbGridData.bSelected
 	NovaAPI.SetImageColor(go:GetComponent("Image"), tbGridData.bSelected == true and Color.green or Color.white)
-end
-function AvgEditorMultiLanTool:GetGridData(nIndex)
-	if self.nCurTogIdx == 1 then
-		local nTogCount = #self.tbLuaFileName
-		local n = 0
-		for i = 2, nTogCount do
-			for ii, vv in ipairs(self.tbLuaFileName[i]) do
-				n = n + 1
-				if n == nIndex then
-					return self.tbLuaFileName[i][ii]
-				end
+	local sName = tbGridData.sName
+	local bSelected = tbGridData.bSelected
+	local nFrom = self.nCurTogIdx == 1 and 2 or 1
+	local nTo = self.nCurTogIdx == 1 and #self.tbLuaFileName or 1
+	for i = nFrom, nTo do
+		local tb = self.tbLuaFileName[i]
+		for ii, vv in ipairs(tb) do
+			if vv.sName == sName then
+				vv.bSelected = bSelected
+				break
 			end
 		end
-	else
-		local tb = self.tbLuaFileName[self.nCurTogIdx]
-		return tb[nIndex]
 	end
-	return nil
+end
+function AvgEditorMultiLanTool:GetGridData(nIndex)
+	local tb = self.tbLuaFileName[self.nCurTogIdx]
+	return tb[nIndex]
 end
 function AvgEditorMultiLanTool:OnBtnClick_ProcMultiLanguage()
 	local tbSelected = {}
@@ -261,13 +344,12 @@ function AvgEditorMultiLanTool:OnBtnClick_ProcMultiLanguage()
 	local sFromLan = AllEnum.LanguageInfo[nLanguageIndex_From][2]
 	local sToLan = AllEnum.LanguageInfo[nLanguageIndex_To][2]
 	local sLogTitle = string.format("----------\227\128\144\230\156\172\229\156\176\229\140\150\229\164\132\231\144\134\230\151\165\229\191\151\227\128\145From:%s To:%s date:%s----------\n", sFromLan, sToLan, timeString)
-	sw:Write(sLogTitle .. sProcLog)
+	local sCurLog = sLogTitle .. sProcLog
+	sw:Write(sCurLog)
 	sw:Close()
 	fs:Close()
-	EventManager.Hit(EventId.OpenMessageBox, {
-		nType = AllEnum.MessageBox.Alert,
-		sContent = "\229\164\154\232\175\173\232\168\128\229\164\132\231\144\134\229\183\178\229\174\140\230\136\144\239\188\140\232\175\166\232\167\129\229\164\132\231\144\134\230\151\165\229\191\151\227\128\130\n" .. sProcLogPath
-	})
+	NovaAPI.SetText(self._mapNode.txtProcResult, sCurLog)
+	self._mapNode.goProcResult:SetActive(true)
 end
 function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLuaData, sWriteTo)
 	local sExcelPath_1 = sWriteTo .. "Excel_1_ToBeTranslate/" .. sLuaFileName .. ".xlsx"
@@ -278,7 +360,7 @@ function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLu
 		func_Export = self._Export_Text
 	end
 	local tbExportData = func_Export(self, tbLuaData)
-	NovaAPI.WriteDataToExcel(tbExportData, sExcelPath_1)
+	NovaAPI.WriteDataToExcel(tbExportData, sExcelPath_1, true)
 	if CS_SYS_IO.File.Exists(sExcelPath_2) == true then
 		CS_SYS_IO.File.Delete(sExcelPath_1)
 		return sLuaFileName .. " \230\173\163\229\156\168\231\191\187\232\175\145\228\184\173\233\156\128\231\168\141\229\144\142\229\164\132\231\144\134\227\128\130\n"
@@ -293,7 +375,7 @@ function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLu
 	end
 	local bSame, tbOverwriteTranslatedData = func_Compare(self, tbTranslatedData, tbExportData)
 	if bSame == false then
-		return sLuaFileName .. " \230\150\135\230\156\172\230\156\137\229\143\152\229\138\168\239\188\140\233\156\128\232\166\129\230\155\180\230\150\176\229\183\178\231\191\187\232\175\145\229\174\140\231\154\132 excel \230\149\176\230\141\174\227\128\130\n"
+		return sLuaFileName .. " <color=red>\230\150\135\230\156\172\230\156\137\229\143\152\229\138\168\239\188\140\233\156\128\232\166\129\230\155\180\230\150\176\229\183\178\231\191\187\232\175\145\229\174\140\231\154\132 excel \230\149\176\230\141\174\227\128\130</color>\n"
 	else
 		if tbOverwriteTranslatedData ~= nil then
 			NovaAPI.WriteDataToExcel(tbOverwriteTranslatedData, sExcelPath_3)
@@ -304,6 +386,9 @@ function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLu
 			func_Import = self._Import_Text
 		end
 		tbLuaData = func_Import(self, tbTranslatedData, tbLuaData)
+		if tbLuaData == nil then
+			return sLuaFileName .. " <color=red>\231\148\177\228\186\142\232\183\175\228\186\186\232\167\146\232\137\178\229\144\141\230\156\170\231\191\187\232\175\145\239\188\140\232\183\179\232\191\135\229\164\132\231\144\134\227\128\130</color>\n"
+		end
 		local sWriteLuaPath = sWriteTo .. sLuaFolder .. sLuaFileName .. ".lua"
 		if sLuaFolder == "Preset/" then
 			local tbLineData = {}
@@ -360,7 +445,7 @@ function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLu
 		else
 			EventManager.Hit("AvgMultiLanTool_SAVE_AVG_CONFIG", tbLuaData, sWriteLuaPath)
 		end
-		return sLuaFileName .. " \229\183\178\229\174\140\230\136\144\230\156\172\229\156\176\229\140\150\239\188\140\229\186\148\228\184\142 excel \228\184\128\232\181\183\230\143\144\228\186\164\232\135\179P4\227\128\130\n"
+		return sLuaFileName .. " <color=green>\229\183\178\229\174\140\230\136\144\230\156\172\229\156\176\229\140\150\239\188\140\229\186\148\228\184\142 excel \228\184\128\232\181\183\230\143\144\228\186\164\232\135\179P4\227\128\130</color>\n"
 	end
 end
 function AvgEditorMultiLanTool:_GetAvgCharName(sAvgCharId)
@@ -1353,6 +1438,9 @@ function AvgEditorMultiLanTool:_Import_Text(tbTranslatedData, tbLuaData)
 			local bExist, sCharName = self:_GetAvgCharName(sAvgCharId)
 			if bExist == false then
 				v.param[2] = rowData[1]
+				if v.param[2] == nil or v.param[2] == "" then
+					return nil
+				end
 			end
 			v.param[3] = self:_ProcText(rowData[3], false)
 			v.param[7] = self:_ProcText(rowData[5], false)

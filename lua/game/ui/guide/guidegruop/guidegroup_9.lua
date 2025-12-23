@@ -66,7 +66,7 @@ function GuideGroup_9:Step_1()
 end
 function GuideGroup_9:Step_2()
 	self.msg = {
-		BindIcon = "QuestPanel/----SafeAreaRoot----/rtTab/trTabOff/tab2/btnTab2",
+		BindIcon = "QuestPanel/----SafeAreaRoot----/rtTab/trTabOff/tab4/btnTab4",
 		Deviation = {0, 0},
 		Desc = "Guide_9_2",
 		DescDeviation = {0, 350},

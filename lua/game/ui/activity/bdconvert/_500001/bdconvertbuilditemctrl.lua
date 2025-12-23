@@ -100,7 +100,7 @@ function BdConvertBuildItemCtrl:RefreshChar()
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 		local mapCharCfg = ConfigTable.GetData_Character(nCharTid)
 		local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-		self:SetPngSprite(self._mapNode.imgCharIcon[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+		self:SetPngSprite(self._mapNode.imgCharIcon[i], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 		self:SetAtlasSprite(self._mapNode.imgCharFrame[i], "12_rare", sFrame)
 		NovaAPI.SetTMPText(self._mapNode.txtPotentialCount[i], self._mapData.tbChar[i].nPotentialCount)
 		self:SetAtlasSprite(self._mapNode.imgCharElement[i], "12_rare", AllEnum.Char_Element[mapCharCfg.EET].icon)

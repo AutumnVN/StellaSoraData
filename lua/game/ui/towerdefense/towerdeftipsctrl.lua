@@ -34,6 +34,9 @@ function TowerDefTipsCtrl:FadeOut()
 end
 function TowerDefTipsCtrl:OnEnable()
 	self:EnableGamepadUI(self._mapNode.btnShortcutClose)
+	self.sortingOrder = NovaAPI.GetCanvasSortingOrder(self.gameObject:GetComponent("Canvas"))
+	NovaAPI.SetComponentEnableByName(self.rtTarget.gameObject, "TopGridCanvas", true)
+	NovaAPI.SetTopGridCanvasSorting(self.rtTarget.gameObject, self.sortingOrder)
 	NovaAPI.SetTMPText(self._mapNode.txtName, self.name)
 	NovaAPI.SetTMPText(self._mapNode.txtDesc, self.des)
 	self._mapNode.rtContent.gameObject:SetActive(false)
@@ -53,6 +56,7 @@ end
 function TowerDefTipsCtrl:OnRelease()
 end
 function TowerDefTipsCtrl:OnBtnClick_ClosePanel(btn)
+	NovaAPI.SetComponentEnableByName(self.rtTarget.gameObject, "TopGridCanvas", false)
 	EventManager.Hit(EventId.ClosePanel, PanelId.TowerDefenseTipsPanel)
 end
 return TowerDefTipsCtrl

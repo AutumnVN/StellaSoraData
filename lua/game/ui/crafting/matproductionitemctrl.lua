@@ -27,17 +27,28 @@ function MatProductionItemCtrl:SetData(tbProduction)
 	if nCount <= 1 then
 		nCount = nil
 	end
+	self:RefreshCraftingItem()
 	self._mapNode.goItem:SetItem(self.nItemId, nil, nCount)
 	NovaAPI.SetTMPText(self._mapNode.txtProductionName, tbProduction.Name)
-	local hasCount = PlayerData.Item:GetItemCountByID(self.nItemId)
-	NovaAPI.SetTMPText(self._mapNode.txtHaveCount, hasCount)
 	self:SetSelect(false)
 	local sAudioEvent = self.bUnlock and "ui_common_slide" or "ui_systerm_locked"
 	self._mapNode.anAudioUI:SetAkAudioWiseEventName(sAudioEvent)
 end
 function MatProductionItemCtrl:RefreshCraftingItem()
-	local hasCount = PlayerData.Item:GetItemCountByID(self.nItemId)
-	NovaAPI.SetTMPText(self._mapNode.txtHaveCount, hasCount)
+	local nMaxCraftingCount = -1
+	local tbCfgData = PlayerData.Crafting:GetProductionById(self.nId)
+	if tbCfgData ~= nil then
+		for k, v in ipairs(tbCfgData.MaterialList) do
+			local hasCount = PlayerData.Item:GetItemCountByID(v.nItemId)
+			local nCount = math.floor(hasCount / v.nCount)
+			if -1 == nMaxCraftingCount then
+				nMaxCraftingCount = nCount
+			end
+			nMaxCraftingCount = math.min(nCount, nMaxCraftingCount)
+			nMaxCraftingCount = math.max(nMaxCraftingCount, 0)
+		end
+	end
+	NovaAPI.SetTMPText(self._mapNode.txtHaveCount, nMaxCraftingCount)
 end
 function MatProductionItemCtrl:SetSelect(bSelect)
 	self.bSelect = bSelect

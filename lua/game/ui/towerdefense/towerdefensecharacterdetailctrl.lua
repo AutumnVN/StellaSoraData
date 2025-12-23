@@ -81,9 +81,8 @@ function TowerDefenseCharacterDetailCtrl:Awake()
 			nSelectIndex = 1
 		end
 		self.nSelectedId = self.characterList[nSelectIndex]
-		self.nActId = param[3]
+		self.TowerdefenseLevelData = param[3]
 	end
-	self.TowerDefenseData = PlayerData.Activity:GetActivityDataById(self.nActId)
 	self.selectedGrid = nil
 	self:InitData()
 end
@@ -104,11 +103,11 @@ function TowerDefenseCharacterDetailCtrl:InitData()
 	self:OnTabSelected(1)
 end
 function TowerDefenseCharacterDetailCtrl:RefreshInfoData()
-	local nEntityId = self.TowerDefenseData.TowerDefenseLevelData:GetCharacterEntityId(self.nSelectedId)
+	local nEntityId = self.TowerdefenseLevelData:GetCharacterEntityId(self.nSelectedId)
 	local Info = AdventureModuleHelper.GetEntityInfo(nEntityId)
-	local atk = Info ~= nil and Info.atk:AsInt() or 0
+	local atk = Info ~= nil and Info.atk or 0
 	NovaAPI.SetTMPText(self._mapNode.txt_attackValue, tostring(atk))
-	local atkSpeed = Info ~= nil and Info.normalAttackSpd:AsFloat() or 0
+	local atkSpeed = Info ~= nil and Info.normalAttackSpd or 0
 	atkSpeed = clearFloat(atkSpeed)
 	NovaAPI.SetTMPText(self._mapNode.txt_AttackSpeedValue, FormatEffectValue(atkSpeed, true, GameEnum.ValueFormat.TDP))
 	local config = ConfigTable.GetData("TowerDefenseCharacter", self.nSelectedId)
@@ -116,12 +115,12 @@ function TowerDefenseCharacterDetailCtrl:RefreshInfoData()
 		return
 	end
 	NovaAPI.SetTMPText(self._mapNode.txt_detailName, config.Name)
-	local nCD = self.TowerDefenseData.TowerDefenseLevelData:GetCharSkillCD(self.nSelectedId)
+	local nCD = self.TowerdefenseLevelData:GetCharSkillCD(self.nSelectedId)
 	NovaAPI.SetTMPText(self._mapNode.txt_cdValue, string.format("%.1f", nCD) .. ConfigTable.GetUIText("TowerDef_Text_Sec"))
 	if config.Icon ~= nil and config.Icon ~= "" then
 		self:SetPngSprite(self._mapNode.img_char, config.Icon .. AllEnum.CharHeadIconSurfix.Q)
 	end
-	local level = self.TowerDefenseData.TowerDefenseLevelData:GetCharacterLevel(self.nSelectedId)
+	local level = self.TowerdefenseLevelData:GetCharacterLevel(self.nSelectedId)
 	NovaAPI.SetTMPText(self._mapNode.txtLevel, tostring(level))
 	self:SetSkillDes()
 	self:SetPotentialDes()
@@ -183,7 +182,7 @@ function TowerDefenseCharacterDetailCtrl:SetSkillDes()
 	cs_coroutine.start(wait)
 end
 function TowerDefenseCharacterDetailCtrl:SetPotentialDes()
-	local tbPotentialList = self.TowerDefenseData.TowerDefenseLevelData:GetPotentialByChar(self.nSelectedId)
+	local tbPotentialList = self.TowerdefenseLevelData:GetPotentialByChar(self.nSelectedId)
 	self._mapNode.go_potential1:SetActive(false)
 	self._mapNode.go_potential2:SetActive(false)
 	if tbPotentialList == nil then
@@ -287,7 +286,7 @@ function TowerDefenseCharacterDetailCtrl:OnTabSelected(nIndex)
 	self._mapNode.skill_sv:SetActive(nIndex == 2)
 	local bShowPotential = false
 	if nIndex == 1 then
-		local tbPotentialList = self.TowerDefenseData.TowerDefenseLevelData:GetPotentialByChar(self.nSelectedId)
+		local tbPotentialList = self.TowerdefenseLevelData:GetPotentialByChar(self.nSelectedId)
 		if tbPotentialList ~= nil then
 			for _, potentialId in pairs(tbPotentialList) do
 				local config = ConfigTable.GetData("TowerDefensePotential", potentialId)

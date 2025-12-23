@@ -41,21 +41,41 @@ BBVEditorCtrl._mapNodeConfig = {
 	CnMTextFallback = {nCount = 4, sComponentName = "Text"},
 	CnMTime = {nCount = 4, sComponentName = "InputField"},
 	CnMTimeFallback = {nCount = 4, sComponentName = "Text"},
+	CnMTimeSnip = {
+		nCount = 4,
+		sComponentName = "Button",
+		callback = "OnTimeSnip_CnM"
+	},
 	CnMAnim = {nCount = 4, sComponentName = "Dropdown"},
 	CnFText = {nCount = 4, sComponentName = "InputField"},
 	CnFTextFallback = {nCount = 4, sComponentName = "Text"},
 	CnFTime = {nCount = 4, sComponentName = "InputField"},
 	CnFTimeFallback = {nCount = 4, sComponentName = "Text"},
+	CnFTimeSnip = {
+		nCount = 4,
+		sComponentName = "Button",
+		callback = "OnTimeSnip_CnF"
+	},
 	CnFAnim = {nCount = 4, sComponentName = "Dropdown"},
 	JpMText = {nCount = 4, sComponentName = "InputField"},
 	JpMTextFallback = {nCount = 4, sComponentName = "Text"},
 	JpMTime = {nCount = 4, sComponentName = "InputField"},
 	JpMTimeFallback = {nCount = 4, sComponentName = "Text"},
+	JpMTimeSnip = {
+		nCount = 4,
+		sComponentName = "Button",
+		callback = "OnTimeSnip_JpM"
+	},
 	JpMAnim = {nCount = 4, sComponentName = "Dropdown"},
 	JpFText = {nCount = 4, sComponentName = "InputField"},
 	JpFTextFallback = {nCount = 4, sComponentName = "Text"},
 	JpFTime = {nCount = 4, sComponentName = "InputField"},
 	JpFTimeFallback = {nCount = 4, sComponentName = "Text"},
+	JpFTimeSnip = {
+		nCount = 4,
+		sComponentName = "Button",
+		callback = "OnTimeSnip_JpF"
+	},
 	JpFAnim = {nCount = 4, sComponentName = "Dropdown"},
 	goBubbleRoot = {
 		sNodeName = "----bubble----"
@@ -65,7 +85,12 @@ BBVEditorCtrl._mapNodeConfig = {
 		sComponentName = "RectTransform"
 	},
 	dd_BBLeftRight = {sComponentName = "Dropdown"},
-	tmp_CurVosResLen = {sComponentName = "TMP_Text"}
+	tmp_CurVosResLen = {sComponentName = "TMP_Text"},
+	sld_Progress = {sComponentName = "Slider"},
+	dd_Speed = {
+		sComponentName = "Dropdown",
+		callback = "OnDD_SpeedChanged"
+	}
 }
 BBVEditorCtrl._mapEventConfig = {
 	BBVE_SetTextTime = "onEvent_SetTextTime",
@@ -153,6 +178,7 @@ function BBVEditorCtrl:OnEnable()
 	local bReuseFunc = Settings.sCurrentTxtLanguage ~= AllEnum.Language.CN and Settings.sCurrentTxtLanguage ~= AllEnum.Language.JP
 	self._mapNode.btn_UseCn_Time_Anim.gameObject:SetActive(bReuseFunc)
 	self._mapNode.btn_UseJp_Time_Anim.gameObject:SetActive(bReuseFunc)
+	BubbleVoiceManager.SetSpeed(1)
 end
 function BBVEditorCtrl:OnDisable()
 	Actor2DManager.DestroyL2D_InBBVEditor()
@@ -194,7 +220,7 @@ function BBVEditorCtrl:OnDD_PlayerSex()
 	PlayerData.Base:SetPlayerSex(bIsMale)
 end
 function BBVEditorCtrl:OnBtn_Back()
-	EventManager.Hit(EventId.OpenPanel, PanelId.ExeEditor)
+	EventManager.Hit(EventId.ClosePanel, PanelId.BBVEditor)
 end
 function BBVEditorCtrl:OnEvent_SwitchVoLan(dd)
 	local nIndex = NovaAPI.GetDropDownValue(dd)
@@ -213,6 +239,7 @@ function BBVEditorCtrl:OnEvent_SwitchVoLan(dd)
 	end
 	NovaAPI.SetCur_VoiceLanguage(sVoLan)
 	Settings.sCurrentVoLanguage = sVoLan
+	NovaAPI.SetTMPText(self._mapNode.tmp_CurVosResLen, tostring(BubbleVoiceManager.GetVoResLen(self.sVoResName)))
 end
 function BBVEditorCtrl:OnEvent_SwitchTxtLan(dd)
 	local nLanIdx = NovaAPI.GetDropDownValue(dd) + 1
@@ -397,5 +424,34 @@ function BBVEditorCtrl:onEvent_CheckNewData(listVoResName, nCount)
 		end
 	end
 	self._mapNode.btn_SaveByDefault.gameObject:SetActive(BubbleVoiceManager.HasNewDataToSave(self.tbVoResName) == true)
+end
+function BBVEditorCtrl:GetCurTime()
+	local nSldValue = NovaAPI.GetSliderValue(self._mapNode.sld_Progress)
+	local nTotalTime = tonumber(NovaAPI.GetTMPText(self._mapNode.tmp_CurVosResLen))
+	if type(nTotalTime) == "number" and 0 < nTotalTime then
+		return string.format("%.2f", nTotalTime * nSldValue)
+	else
+		return 0
+	end
+end
+function BBVEditorCtrl:OnTimeSnip_CnM(btn, nIndex)
+	local nTime = self:GetCurTime()
+	NovaAPI.SetInputFieldText(self._mapNode.CnMTime[nIndex], tostring(nTime))
+end
+function BBVEditorCtrl:OnTimeSnip_CnF(btn, nIndex)
+	local nTime = self:GetCurTime()
+	NovaAPI.SetInputFieldText(self._mapNode.CnFTime[nIndex], tostring(nTime))
+end
+function BBVEditorCtrl:OnTimeSnip_JpM(btn, nIndex)
+	local nTime = self:GetCurTime()
+	NovaAPI.SetInputFieldText(self._mapNode.JpMTime[nIndex], tostring(nTime))
+end
+function BBVEditorCtrl:OnTimeSnip_JpF(btn, nIndex)
+	local nTime = self:GetCurTime()
+	NovaAPI.SetInputFieldText(self._mapNode.JpFTime[nIndex], tostring(nTime))
+end
+function BBVEditorCtrl:OnDD_SpeedChanged()
+	local nValue = NovaAPI.GetDropDownValue(self._mapNode.dd_Speed)
+	BubbleVoiceManager.SetSpeed(nValue + 1)
 end
 return BBVEditorCtrl

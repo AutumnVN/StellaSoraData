@@ -191,6 +191,7 @@ function StarTowerNpcAffinityCtrl:UnbindAllGridNodes()
 	end
 end
 function StarTowerNpcAffinityCtrl:Back()
+	self._panel.nAffinityNpcId = 0
 	self:UnbindAllGridNodes()
 	EventManager.Hit("ChangeStarTowerBookPanel", AllEnum.StarTowerBookPanelType.Main)
 end
@@ -205,6 +206,7 @@ function StarTowerNpcAffinityCtrl:OnBtnClick_NPCTab(btn, nIdx)
 		end
 	end
 	self.nCurNpcId = nSelectNpcId
+	self._panel.nAffinityNpcId = nSelectNpcId
 	self._mapNode.btnNpcTab[nIdx]:SetDefault(true)
 	self:RefreshContent(self.nCurNpcId)
 end

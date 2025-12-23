@@ -16,16 +16,18 @@ TowerDefenseTeamCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "TowerDef_TeamEditor_Char"
 	},
-	character_loopSv = {
-		sComponentName = "LoopScrollView"
+	char_teamContent = {
+		sComponentName = "RectTransform"
 	},
+	char_cell = {},
 	txt_sv_item_title = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "TowerDef_TeamEditor_Item"
 	},
-	item_loopSv = {
-		sComponentName = "LoopScrollView"
+	item_teamContent = {
+		sComponentName = "RectTransform"
 	},
+	item_cell = {},
 	txt_guide = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "TowerDef_Guide"
@@ -55,8 +57,14 @@ function TowerDefenseTeamCtrl:OnDisable()
 		self.tbGridCtrl[nInstanceId] = nil
 	end
 	self.tbGridCtrl = {}
+	delChildren(self._mapNode.char_teamContent.transform)
+	delChildren(self._mapNode.item_teamContent.transform)
 end
 function TowerDefenseTeamCtrl:SetData(nActId, nLevelId, tbChracter, nItemId)
+	for nInstanceId, objCtrl in pairs(self.tbGridCtrl) do
+		self:UnbindCtrlByNode(objCtrl)
+		self.tbGridCtrl[nInstanceId] = nil
+	end
 	self.tbGridCtrl = {}
 	self.nActId = nActId
 	self.tbSelectedCharGuideIds = tbChracter
@@ -69,52 +77,77 @@ function TowerDefenseTeamCtrl:SetData(nActId, nLevelId, tbChracter, nItemId)
 	self.tbCharGuideIds = {}
 	self.tbItemIds = {}
 	local forEachFunction = function(config)
-		if config.ActivityId == nActId and self.TowerDefenseData:IsLevelUnlock(config.LevelId) and self.TowerDefenseData:IsPreLevelPass(config.LevelId) then
+		if config.ActivityId == nActId and config.IsShow == true and self.TowerDefenseData:IsLevelUnlock(config.LevelId) and self.TowerDefenseData:IsPreLevelPass(config.LevelId) then
 			if config.GuideType == GameEnum.TowerDefGuideType.Character then
-				table.insert(self.tbCharGuideIds, config.Id)
+				if #floorConfig.CharPoolGroup == 0 then
+					table.insert(self.tbCharGuideIds, config.Id)
+				elseif 0 < table.indexof(floorConfig.CharPoolGroup, config.ObjectId) then
+					table.insert(self.tbCharGuideIds, config.Id)
+				end
 			elseif config.GuideType == GameEnum.TowerDefGuideType.Item then
 				table.insert(self.tbItemIds, config.Id)
 			end
 		end
 	end
 	ForEachTableLine(DataTable.TowerDefenseGuide, forEachFunction)
-	self._mapNode.character_loopSv:Init(#self.tbCharGuideIds, self, self.OnRefreshGrid_Character, self.OnCharacterGridBtnClick)
-	self._mapNode.item_loopSv:Init(#self.tbItemIds, self, self.OnRefreshGrid_Item, self.OnItemGridBtnClick)
+	self:CreateChar()
+	self:CreateItem()
 end
-function TowerDefenseTeamCtrl:OnRefreshGrid_Character(goGrid, gridIndex)
-	local nIndex = gridIndex + 1
-	local nInstanceId = goGrid:GetInstanceID()
-	if not self.tbGridCtrl[nInstanceId] then
-		self.tbGridCtrl[nInstanceId] = self:BindCtrlByNode(goGrid, "Game.UI.TowerDefense.TowerDefenseTeamCharCtrl")
+function TowerDefenseTeamCtrl:CreateChar()
+	delChildren(self._mapNode.char_teamContent.transform)
+	for i = 1, #self.tbCharGuideIds do
+		do
+			local go = instantiate(self._mapNode.char_cell, self._mapNode.char_teamContent.transform)
+			local index = i
+			local nInstanceId = go:GetInstanceID()
+			if not self.tbGridCtrl[nInstanceId] then
+				self.tbGridCtrl[nInstanceId] = self:BindCtrlByNode(go, "Game.UI.TowerDefense.TowerDefenseTeamCharCtrl")
+			end
+			local charIndex = table.indexof(self.tbSelectedCharGuideIds, self.tbCharGuideIds[index])
+			self.tbGridCtrl[nInstanceId]:SetData(self.tbCharGuideIds[index], charIndex)
+			local btn = go:GetComponent("UIButton")
+			btn.onClick:AddListener(function()
+				self:OnCharacterGridBtnClick(index)
+			end)
+			go:SetActive(true)
+		end
 	end
-	local charIndex = table.indexof(self.tbSelectedCharGuideIds, self.tbCharGuideIds[nIndex])
-	self.tbGridCtrl[nInstanceId]:SetData(self.tbCharGuideIds[nIndex], charIndex)
 end
-function TowerDefenseTeamCtrl:OnRefreshGrid_Item(goGrid, gridIndex)
-	local nIndex = gridIndex + 1
-	local icon = goGrid.transform:Find("btn_grid/AnimRoot/img_icon")
-	local guideConfig = ConfigTable.GetData("TowerDefenseGuide", self.tbItemIds[nIndex])
-	if guideConfig == nil then
-		return
+function TowerDefenseTeamCtrl:CreateItem()
+	delChildren(self._mapNode.item_teamContent.transform)
+	for i = 1, #self.tbItemIds do
+		do
+			local go = instantiate(self._mapNode.item_cell, self._mapNode.item_teamContent.transform)
+			local nIndex = i
+			local icon = go.transform:Find("AnimRoot/img_icon")
+			local guideConfig = ConfigTable.GetData("TowerDefenseGuide", self.tbItemIds[nIndex])
+			if guideConfig == nil then
+				return
+			end
+			local itemConfig = ConfigTable.GetData("TowerDefenseItem", guideConfig.ObjectId)
+			if itemConfig == nil then
+				return
+			end
+			if itemConfig.CardIcon ~= "" then
+				self:SetPngSprite(icon.gameObject:GetComponent("Image"), itemConfig.CardIcon)
+			end
+			local selected = go.transform:Find("AnimRoot/go_select")
+			selected.gameObject:SetActive(self.nItemId == self.tbItemIds[nIndex])
+			local go_selectMask = go.transform:Find("AnimRoot/go_selectMask")
+			go_selectMask.gameObject:SetActive(self.nItemId == self.tbItemIds[nIndex])
+			local selected_tips = go.transform:Find("AnimRoot/selected_tips")
+			selected_tips.gameObject:SetActive(self.nItemId == self.tbItemIds[nIndex])
+			local txt_selected = go.transform:Find("AnimRoot/selected_tips/txt_selected")
+			NovaAPI:SetTMPText(txt_selected:GetComponent("TMP_Text"), ConfigTable.GetUIText("TowerDef_TeamEditor_Selected"))
+			local btn = go:GetComponent("UIButton")
+			btn.onClick:AddListener(function()
+				self:OnItemGridBtnClick(go, nIndex)
+			end)
+			go:SetActive(true)
+		end
 	end
-	local itemConfig = ConfigTable.GetData("TowerDefenseItem", guideConfig.ObjectId)
-	if itemConfig == nil then
-		return
-	end
-	if itemConfig.CardIcon ~= "" then
-		self:SetPngSprite(icon.gameObject:GetComponent("Image"), itemConfig.CardIcon)
-	end
-	local selected = goGrid.transform:Find("btn_grid/AnimRoot/go_select")
-	selected.gameObject:SetActive(self.nItemId == self.tbItemIds[nIndex])
-	local go_selectMask = goGrid.transform:Find("btn_grid/AnimRoot/go_selectMask")
-	go_selectMask.gameObject:SetActive(self.nItemId == self.tbItemIds[nIndex])
-	local selected_tips = goGrid.transform:Find("btn_grid/AnimRoot/selected_tips")
-	selected_tips.gameObject:SetActive(self.nItemId == self.tbItemIds[nIndex])
-	local txt_selected = goGrid.transform:Find("btn_grid/AnimRoot/selected_tips/txt_selected")
-	NovaAPI:SetTMPText(txt_selected:GetComponent("TMP_Text"), ConfigTable.GetUIText("TowerDef_TeamEditor_Selected"))
 end
-function TowerDefenseTeamCtrl:OnCharacterGridBtnClick(goGrid, gridIndex)
-	local nIndex = gridIndex + 1
+function TowerDefenseTeamCtrl:OnCharacterGridBtnClick(nIndex)
 	local charIndex = table.indexof(self.tbSelectedCharGuideIds, self.tbCharGuideIds[nIndex])
 	if 0 < charIndex then
 		table.remove(self.tbSelectedCharGuideIds, charIndex)
@@ -126,8 +159,7 @@ function TowerDefenseTeamCtrl:OnCharacterGridBtnClick(goGrid, gridIndex)
 		EventManager.Hit("TowerDefense_CharUpdate", self.tbSelectedCharGuideIds)
 	end
 end
-function TowerDefenseTeamCtrl:OnItemGridBtnClick(goGrid, gridIndex)
-	local nIndex = gridIndex + 1
+function TowerDefenseTeamCtrl:OnItemGridBtnClick(goGrid, nIndex)
 	local selectItemId = self.tbItemIds[nIndex]
 	if self.nSelectedItemId == selectItemId then
 		local selected = goGrid.transform:Find("btn_grid/AnimRoot/selected")

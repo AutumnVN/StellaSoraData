@@ -90,7 +90,7 @@ function TemplateItemCtrl:_SetChar(nCharId)
 		self._mapNode.imgCharIcon.gameObject:SetActive(true)
 		local nCharSkinId = PlayerData.Char:GetCharSkinId(nCharId)
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-		self:SetPngSprite(self._mapNode.imgCharIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+		self:SetPngSprite(self._mapNode.imgCharIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 	else
 		self._mapNode.imgCharIcon.gameObject:SetActive(false)
 	end

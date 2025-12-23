@@ -16,7 +16,8 @@ PlayerHudCtrl._mapEventConfig = {
 	ResetEnergy = "OnEvent_UpdateEnergy",
 	TowerDefenseShowFullScreenPanel = "OnEvent_PauseEnergy",
 	TowerDefenseShowHideScreenPanel = "OnEvent_ResumeEnergy",
-	TowerDefenseFuncShow = "OnEvent_FuncShow"
+	TowerDefenseFuncShow = "OnEvent_FuncShow",
+	TowerDefenseCheckTips = "OnEvent_CheckTips"
 }
 PlayerHudCtrl._mapRedDotConfig = {}
 function PlayerHudCtrl:Awake()
@@ -138,5 +139,8 @@ function PlayerHudCtrl:OnEvent_FuncShow(bIsShow, characterId)
 	else
 		self:CheckTips()
 	end
+end
+function PlayerHudCtrl:OnEvent_CheckTips()
+	self:CheckTips()
 end
 return PlayerHudCtrl

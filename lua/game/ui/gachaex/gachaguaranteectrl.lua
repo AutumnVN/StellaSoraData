@@ -32,7 +32,7 @@ function GachaGuaranteeCtrl:Refresh(nPoolId)
 		return
 	end
 	local nStrogeId = mapPoolCfgData.StorageId
-	local mapStorageTypeCfgData = ConfigTable.GetData("GachaType", nStrogeId)
+	local mapStorageTypeCfgData = ConfigTable.GetData("GachaType", mapPoolCfgData.GachaType)
 	local mapStorageCfgData = ConfigTable.GetData("GachaStorage", nStrogeId)
 	if mapStorageTypeCfgData == nil or mapStorageCfgData == nil then
 		self._mapNode.Content:SetActive(false)
@@ -133,7 +133,7 @@ function GachaGuaranteeCtrl:Refresh(nPoolId)
 		local imgElement = goGrid.transform:Find("AnimRoot/rtScaleRoot/tc_char_03/imgElement"):GetComponent("Image")
 		local TMPName = goGrid.transform:Find("AnimRoot/TMPName"):GetComponent("TMP_Text")
 		NovaAPI.SetTMPText(TMPName, mapCharCfgData.Title)
-		self:SetPngSprite(imgIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+		self:SetPngSprite(imgIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 		self:SetAtlasSprite(imgElement, "12_rare", AllEnum.Star_Element[mapCharCfg.EET].icon)
 		self:SetAtlasSprite(imgRare, "12_rare", sFrame)
 		local btnGrid = goGrid:GetComponent("UIButton")

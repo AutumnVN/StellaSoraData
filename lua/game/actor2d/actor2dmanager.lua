@@ -1363,6 +1363,68 @@ function Actor2DManager.SetBoardNPC2D_PNG(trActor2D_PNG, nPanelId, nNPCId, nSkin
 	NovaAPI.SetImageNativeSize(imgBody)
 	NovaAPI.SetImageNativeSize(imgFace)
 end
+function Actor2DManager.SetBoardNPC2DWithRender(nPanelId, rawImg, nCharId, nSkinId, param, trRenderer)
+	if mapActor2DType["1"] ~= true then
+		LoadLocalData()
+	end
+	local mapCurChar = {}
+	local tbConfig = mapPanelConfig[nPanelId]
+	if tbConfig == nil then
+		printError("\230\173\164\231\149\140\233\157\162\230\156\170\229\174\154\228\185\137\226\128\156\229\166\130\228\189\149\226\128\157\230\152\190\231\164\1862D\232\167\146\232\137\178\239\188\140panel id:" .. tostring(nPanelId))
+		return
+	end
+	if nSkinId == nil then
+		nSkinId = PlayerData.Board:GetNPCDefaultSkinId(nCharId)
+	end
+	if nSkinId == nil then
+		printError("\231\179\187\231\187\159NPC\231\156\139\230\157\191 skinId \228\184\186\231\169\186\239\188\129\239\188\129\239\188\129 charId = " .. nCharId)
+		return
+	end
+	local mapSkinData = ConfigTable.GetData("NPCSkin", nSkinId)
+	if mapSkinData == nil then
+		printError("\230\156\170\230\137\190\229\136\176NPC\231\154\174\232\130\164\230\149\176\230\141\174")
+	end
+	local bL = tbConfig.bL2D and LocalSettingData.mapData.UseLive2D
+	local bF = not tbConfig.bHalf
+	if mapCurrent.nPanelId == nPanelId and mapCurrent.bUseFull ~= nil then
+		bF = mapCurrent.bUseFull
+	end
+	local nT = tbConfig.nType
+	local sBg = GetUIDefaultBgName(tbConfig.sBg)
+	if tbConfig.bSpBg == true then
+		sBg = mapSkinData.Bg .. ".png"
+	end
+	if nT == TF then
+		sBg = nil
+	end
+	local nOffsetDataPanelId = nPanelId
+	if tbConfig.nReuse > 0 then
+		nOffsetDataPanelId = tbConfig.nReuse
+	end
+	local sAssetPath = GetAssetPath(mapSkinData, bL, nT)
+	if sAssetPath == nil or sAssetPath == "" then
+		return
+	end
+	local sOffset = mapSkinData.Offset
+	local sFace
+	local tbRenderer = GetL2DRendererStructure(trRenderer)
+	if bL == true then
+		SetL2D(sAssetPath, sOffset, rawImg, nPanelId, nOffsetDataPanelId, nT, bF, sBg, tbRenderer)
+	else
+		sFace = GetFace(nSkinId, nPanelId, param)
+		SetPortrait(sAssetPath, sFace, sOffset, rawImg, nPanelId, nOffsetDataPanelId, nT, bF, sBg, tbRenderer)
+	end
+	local nAnimLength = 0
+	if bL == true then
+		if nT == TN then
+			Actor2DManager.PlayL2DAnim(tbRenderer.trL2DIns, "idle", true, true)
+		elseif nT ~= TF or nPanelId == PanelId.MainView then
+		else
+			Actor2DManager.PlayL2DAnim(tbRenderer.trL2DIns, "idle", true, true)
+		end
+	end
+	return true, nT, nAnimLength, tbRenderer
+end
 local sTempAssetPath, goTempL2DIns
 function Actor2DManager.SetActor2D_ForActor2DEditor(nPanelId, rawImg, sSkinId, bFull, sFullPath, s, x, y, bL2D, nL2DX, nL2DY, nL2DS, bNpc)
 	if rawImg == nil then

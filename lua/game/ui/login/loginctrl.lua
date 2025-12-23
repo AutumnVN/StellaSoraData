@@ -77,7 +77,7 @@ LoginCtrl._mapNodeConfig = {
 	},
 	SkipRoot = {},
 	togSkip = {
-		nCount = 2,
+		nCount = 3,
 		sComponentName = "Toggle",
 		callback = "OnTogChange_Skip"
 	},

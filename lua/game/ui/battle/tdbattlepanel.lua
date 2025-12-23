@@ -48,7 +48,7 @@ end
 function TDBattlePanel:OnEnable()
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-		local mapLevel = ConfigTable.GetData("TravelerDuelBossLevel", PlayerData.TravelerDuel.entryLevelId)
+		local mapLevel = ConfigTable.GetData("TravelerDuelBossLevel", self._tbParam[2])
 		if mapLevel then
 			local FloorId = mapLevel.FloorId
 			local floorData = ConfigTable.GetData("TravelerDuelFloor", FloorId)

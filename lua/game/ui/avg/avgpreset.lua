@@ -27,11 +27,13 @@ local AvgPreset = {
 		"city_alley_night",
 		"city_alley_night_winter",
 		"city_park_daylight",
+		"city_park_daylight_winter",
 		"city_park_dusk",
 		"city_park_night",
 		"city_park_night_winter",
 		"city_prison",
 		"city_room_inside_daylight",
+		"city_room_inside_xmas",
 		"city_street_daylight",
 		"city_street_daylight_winter",
 		"city_street_dusk",
@@ -60,6 +62,7 @@ local AvgPreset = {
 		"field_room_inside_daylight_winter",
 		"field_town_daylight",
 		"flatlands_daylight",
+		"flatlands_dusk",
 		"flavio_city_livehouse_a",
 		"flavio_city_livehouse_b",
 		"flavio_city_street",
@@ -197,9 +200,12 @@ local AvgPreset = {
 		"uniseed_lab_destroyed",
 		"uniseed_office",
 		"uniseed_office_night",
+		"uniseed_production",
+		"uniseed_production_night",
 		"uniseed_shop",
 		"uniseed_warehouse",
 		"uniseed_warehouse_daylight",
+		"view_sea_flying",
 		"view_sea_sunrise",
 		"view_secret_laboratory_a",
 		"view_secret_laboratory_b",
@@ -233,6 +239,13 @@ local AvgPreset = {
 		"story_event_01_004",
 		"story_event_01_005",
 		"story_event_01_006",
+		"story_event_02_001",
+		"story_event_02_002",
+		"story_event_02_003",
+		"story_event_02_004",
+		"story_event_02_005",
+		"story_event_02_006",
+		"story_event_02_007",
 		"story_main_00_001",
 		"story_main_00_002",
 		"story_main_00_003_FP",
@@ -365,6 +378,10 @@ local AvgPreset = {
 		"story_main_05_005",
 		"story_main_05_006",
 		"story_main_05_007",
+		"story_main_05_009",
+		"story_main_05_010",
+		"story_main_05_011",
+		"story_main_05_012",
 		"story_main_06_001",
 		"story_main_06_002",
 		"story_main_06_003",
@@ -400,7 +417,8 @@ local AvgPreset = {
 		"story_tales_03_001",
 		"story_tales_04_001",
 		"story_tales_05_001",
-		"story_tales_06_001"
+		"story_tales_06_001",
+		"story_tales_07_001"
 	},
 	FgResName = {
 		"circle_light",
@@ -426,7 +444,8 @@ local AvgPreset = {
 		"4037_B",
 		"4038_B",
 		"4015_B",
-		"4017_B"
+		"4017_B",
+		"4048_B"
 	},
 	BgEffectResName = {
 		"0",
@@ -5144,6 +5163,14 @@ local AvgPreset = {
 		},
 		{
 			"fx_avg_glass_break",
+			""
+		},
+		{
+			"fx_avg_story_014",
+			""
+		},
+		{
+			"fx_avg_story_015",
 			""
 		}
 	},

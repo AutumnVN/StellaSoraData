@@ -357,9 +357,7 @@ function ScoreBossSelectCtrl:SetBossInfo(levelId, isPlayAin)
 		end
 		imgElement.gameObject:SetActive(Adjust.WeakEET[i] ~= nil)
 	end
-	local tbEET = {
-		Adjust.EET
-	}
+	local tbEET = Adjust.ResistEET
 	if tbEET == nil or #tbEET == 0 then
 		self._mapNode.info_rtAntiElements.gameObject:SetActive(false)
 	else
@@ -415,7 +413,7 @@ function ScoreBossSelectCtrl:SetBossInfo(levelId, isPlayAin)
 	self._mapNode.FullPower:SetActive(isThanMaxNeed)
 	local getControl = ConfigTable.GetData("ScoreBossGetControl", bossLevelData.NonDamageScoreGet)
 	NovaAPI.SetTMPText(self._mapNode.skillInfoName1, getControl.Name)
-	NovaAPI.SetTMPText(self._mapNode.skillInfoDes1, getControl.BehaviorDes)
+	NovaAPI.SetTMPText(self._mapNode.skillInfoDes1, UTILS.ParseDesc(getControl))
 	self:SetPngSprite(self._mapNode.skillInfoIcon1, getControl.IconSource)
 	local bossAbility = ConfigTable.GetData("ScoreBossAbility", bossLevelData.ScoreBossAbility)
 	NovaAPI.SetTMPText(self._mapNode.skillInfoName2, bossAbility.Name)
@@ -437,7 +435,7 @@ function ScoreBossSelectCtrl:SetBossInfo(levelId, isPlayAin)
 			local mapCharData = PlayerData.Char:GetCharDataByTid(tmpCharId[i])
 			local nCharSkinId = mapCharData.nSkinId
 			local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-			self:SetPngSprite(self._mapNode.imgItemIcon_[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+			self:SetPngSprite(self._mapNode.imgItemIcon_[i], mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 			local nRarity = mapChar.Grade
 			local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapChar.Grade]
 			self:SetAtlasSprite(self._mapNode.imgItemRare_[i], "12_rare", sFrame, true)

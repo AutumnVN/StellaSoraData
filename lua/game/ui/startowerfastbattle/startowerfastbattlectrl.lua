@@ -195,7 +195,7 @@ function StarTowerFastBattleCtrl:Init()
 			local nSkinId = PlayerData.Char:GetCharSkinId(nCharId)
 			local mapSkin = ConfigTable.GetData_CharacterSkin(nSkinId)
 			if nil ~= mapSkin then
-				self:SetPngSprite(self._mapNode.imgRoleIcon[nIndex], mapSkin.Icon .. AllEnum.CharHeadIconSurfix.S)
+				self:SetPngSprite(self._mapNode.imgRoleIcon[nIndex], mapSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 			end
 		end
 		if nil ~= self._mapNode.textPerkCount[nIndex] then

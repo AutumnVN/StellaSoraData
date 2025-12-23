@@ -23,7 +23,7 @@ function NoteListBtnCtrl:SetItem(noteCfg, nLv)
 	self:SetPngSprite(self._mapNode.imgNoteIcon, noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
 	self:SetPngSprite(self._mapNode.imgIconMask, noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
 	NovaAPI.SetTMPText(self._mapNode.txtNoteName, noteCfg.Name)
-	NovaAPI.SetTMPText(self._mapNode.txtLv, "Lv." .. nLv)
+	NovaAPI.SetTMPText(self._mapNode.txtLv, orderedFormat(ConfigTable.GetUIText("Note_Count"), nLv))
 	if nLv <= 0 then
 		self._mapNode.imgIconMask.gameObject:SetActive(true)
 		self._mapNode.txtLv.gameObject:SetActive(false)

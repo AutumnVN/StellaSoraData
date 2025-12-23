@@ -205,7 +205,7 @@ function PlayerTravelerDuelData:SendMsg_UplodeTravelerDuelRanking(tbChar, Score,
 			NovaAPI.DeleteRecFile(sKey)
 		end
 	end
-	local tbSamples = UTILS.GetBattleSamples()
+	local tbSamples = UTILS.GetBattleSamples(sKey)
 	HttpNetHandler.SendMsg(NetMsgId.Id.traveler_duel_rank_upload_req, {Sample = tbSamples, Checksum = nCheckSum}, nil, msgCallback)
 end
 function PlayerTravelerDuelData:SendMsg_TravelerDuelSettle(nStar, nLevelId, nTime, callback)

@@ -1,8 +1,9 @@
 local JointDrilRankDetailPanel = class("JointDrilRankDetailPanel", BasePanel)
 JointDrilRankDetailPanel._bIsMainPanel = false
+JointDrilRankDetailPanel._sUIResRootPath = "UI_Activity/"
 JointDrilRankDetailPanel._tbDefine = {
 	{
-		sPrefabPath = "Play_JointDrill/JointDrillRankDetailPanel.prefab",
+		sPrefabPath = "_510001/JointDrillRankDetailPanel.prefab",
 		sCtrlName = "Game.UI.JointDrill.JointDrillRankDetailCtrl"
 	}
 }

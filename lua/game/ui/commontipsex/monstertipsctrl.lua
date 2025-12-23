@@ -82,11 +82,8 @@ function MonsterTipsCtrl:RefreshMonsterInfo(nMonsterId)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtName, monsterManual.Name)
 	NovaAPI.SetTMPText(self._mapNode.TMP_monsterInfo, monsterManual.Desc)
-	local eets = {
-		monsterAdjust.EET
-	}
 	self:RefreshElement(self._mapNode.goPropertyList[1], monsterAdjust.WeakEET, 1)
-	self:RefreshElement(self._mapNode.goPropertyList[2], eets, 2)
+	self:RefreshElement(self._mapNode.goPropertyList[2], monsterAdjust.ResistEET, 2)
 	if monsterData.EpicLv ~= GameEnum.monsterEpicType.NORMAL then
 		self._mapNode.goMonsterType:SetActive(true)
 		self._mapNode.goBoss:SetActive(monsterData.EpicLv == GameEnum.monsterEpicType.LORD)

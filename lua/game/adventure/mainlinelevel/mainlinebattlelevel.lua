@@ -398,6 +398,8 @@ function MainlineBattleLevel:OnEvent_SendMsgFinishBattle(LevelResult, _doorIdx, 
 	print("====== \229\189\147\229\137\141\233\128\154\229\133\179\228\184\187\231\186\191\229\133\179\229\141\161ID\239\188\154" .. self._nSelectId .. " ======")
 	if PlayerData.Mainline.bUseOldMainline then
 		HttpNetHandler.SendMsg(NetMsgId.Id.mainline_settle_req, mapSendMsg, nil, func_cbFinishSucc)
+	elseif self.bActivityStory then
+		PlayerData.ActivityAvg:SendMsg_STORY_DONE(func_cbFinishSucc)
 	else
 		PlayerData.Avg:SendMsg_STORY_DONE(func_cbFinishSucc)
 	end

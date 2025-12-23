@@ -351,8 +351,14 @@ function GamepadUIManager.DisableGamepadUI(sCtrlName)
 		sCurUIName = nil
 		if next(tbHistory) ~= nil then
 			sCurUIName = tbHistory[#tbHistory]
-			InputManager.Instance.IsVirtualMouseEnabled = mapMouseConfig[sCurUIName].VirtualMouse
-			InputManager.Instance.IsBlockCursor = mapMouseConfig[sCurUIName].BlockCursor
+			if mapMouseConfig[sCurUIName] then
+				InputManager.Instance.IsVirtualMouseEnabled = mapMouseConfig[sCurUIName].VirtualMouse
+				InputManager.Instance.IsBlockCursor = mapMouseConfig[sCurUIName].BlockCursor
+			elseif sCurUIName then
+				printWarn("GamepadUIManager\239\188\154\229\133\179\233\151\173\229\142\134\229\143\178\230\156\170\230\137\190\229\136\176\229\175\185\229\186\148\233\188\160\230\160\135\233\133\141\231\189\174" .. sCurUIName)
+			else
+				printWarn("GamepadUIManager\239\188\154\229\133\179\233\151\173\229\142\134\229\143\178\230\156\170\230\137\190\229\136\176\229\175\185\229\186\148\233\188\160\230\160\135\233\133\141\231\189\174")
+			end
 			RefreshCurTypeUI()
 			local wait = function()
 				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())

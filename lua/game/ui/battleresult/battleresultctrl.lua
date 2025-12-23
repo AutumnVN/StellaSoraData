@@ -102,7 +102,7 @@ function BattleResultCtrl:OnEnable()
 	for i = 1, 2 do
 		self._mapNode.btnDamageResult[i].gameObject:SetActive(self.tbCharDamage ~= nil and 0 < #self.tbCharDamage)
 	end
-	local mapMainline = ConfigTable.GetData_Story(nMainlineId)
+	local mapMainline = PlayerData.ActivityAvg:IsActivityStory(nMainlineId) and ConfigTable.GetData("ActivityStory", nMainlineId) or ConfigTable.GetData_Story(nMainlineId)
 	local sMainlineName = ""
 	if mapMainline ~= nil then
 		sMainlineName = mapMainline.Title

@@ -203,7 +203,7 @@ function MiningGameCtrl:UpdateSupData()
 			NovaAPI.SetTMPText(txt_skillName, supConfig.SkillName)
 			NovaAPI.SetTMPText(txt_skillDesc, supConfig.SkillDes)
 			if supConfig.CharIcon ~= "" then
-				self:SetPngSprite(img_head, supConfig.CharIcon .. AllEnum.CharHeadIconSurfix.S)
+				self:SetPngSprite(img_head, supConfig.CharIcon, AllEnum.CharHeadIconSurfix.S)
 			end
 			char:SetActive(true)
 		end

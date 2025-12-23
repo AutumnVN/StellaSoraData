@@ -23,7 +23,7 @@ NewTutorialsActCtrl._mapNodeConfig = {
 	},
 	txt_Title2 = {
 		sComponentName = "TMP_Text",
-		sLanguageId = "QuestPanel_Tab_4"
+		sLanguageId = "NewTutorialsAct_Tutorial"
 	},
 	txt_Plan2 = {sNodeName = "txt_Plan2", sComponentName = "TMP_Text"},
 	txt_Complete2 = {
@@ -78,7 +78,7 @@ function NewTutorialsActCtrl:OnBtnClick_GoTutorialPanel()
 	if not bPlayCond then
 		return
 	end
-	EventManager.Hit(EventId.OpenPanel, PanelId.Quest, AllEnum.QuestPanelTab.Tutorial)
+	EventManager.Hit(EventId.OpenPanel, PanelId.QuestNewbie, 2)
 end
 function NewTutorialsActCtrl:ClearActivity()
 end

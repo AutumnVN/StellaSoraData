@@ -455,7 +455,7 @@ function DispatchCtrl:RefreshCharGrid(goGrid, gridIndex)
 	local mapCharData = PlayerData.Char:GetCharDataByTid(self.tbCharList[index].Id)
 	local nCharSkinId = mapCharData.nSkinId
 	local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-	self:SetPngSprite(imgItemIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+	self:SetPngSprite(imgItemIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 	local nRarity = mapChar.Grade
 	local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[nRarity == GameEnum.characterGrade.R and GameEnum.characterGrade.SR or nRarity]
 	self:SetAtlasSprite(imgItemRare, "12_rare", sFrame, true)
@@ -652,7 +652,7 @@ function DispatchCtrl:RefreshBuildGrid(goGrid, gridIndex)
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 		local mapCharCfg = ConfigTable.GetData_Character(nCharTid)
 		local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-		self:SetPngSprite(imgCharIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+		self:SetPngSprite(imgCharIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
 		self:SetAtlasSprite(imgCharFrame, "12_rare", sFrame)
 		local mapCharDescCfg = ConfigTable.GetData("CharacterDes", nCharTid)
 		for j = 1, 3 do

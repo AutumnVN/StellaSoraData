@@ -46,6 +46,9 @@ function CookieActData:RefreshCookieGameActData(actId, msgData)
 		self:CacheAllQuestData(msgData.Quests)
 		self:CacheAllLevelData(msgData.Levels)
 	end
+	if self.nActId == 0 then
+		printWarn("CookieActDataInit: ActivityId is 0!!!")
+	end
 end
 function CookieActData:CacheAllQuestData(questListData)
 	self.tbQuestDataList = {}
@@ -231,6 +234,10 @@ function CookieActData:RequestLevelResult(nLevelId, nScore, nBoxCount, nCookieCo
 			callback(msgData)
 		end
 	end
+	if self.nActId == 0 then
+		printWarn("RequestCookieLevelResult: ActivityId is 0!!!")
+	end
+	printLog("RequestCookieLevelResult - ActivityId = " .. self.nActId .. ", nLevelId = " .. nLevelId .. ", nScore = " .. nScore .. ", nBoxCount = " .. nBoxCount .. ", nCookieCount = " .. nCookieCount .. ", nGoodCount = " .. nGoodCount .. ", nPerfectCount = " .. nPerfectCount .. ", nExcellentCount = " .. nExcellentCount .. ", nMissCount = " .. nMissCount)
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_cookie_settle_req, {
 		ActivityId = self.nActId,
 		LevelId = nLevelId,

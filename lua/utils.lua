@@ -556,6 +556,37 @@ function UFT8ToUnicode(convertStr)
 	end
 	return resultDec
 end
+function AddKrParticle(str, nParticleIdx)
+	local is_korean = function(cp)
+		return 4352 <= cp and cp <= 4607 or 12592 <= cp and cp <= 12687 or 44032 <= cp and cp <= 55215 or 43360 <= cp and cp <= 43391 or 55216 <= cp and cp <= 55295
+	end
+	local is_al = function(cp)
+		return 65 <= cp and cp <= 90 or 97 <= cp and cp <= 122
+	end
+	local start = utf8.offset(str, -1)
+	local lastChar = string.sub(str, start)
+	local codePoint = utf8.codepoint(lastChar)
+	if is_korean(codePoint) then
+		local modResult = (codePoint - 44032) % 28
+		if modResult == 0 then
+			local charTag = AllEnum.KrTags["1"][nParticleIdx]
+			if charTag ~= nil then
+				str = str .. charTag
+			end
+		else
+			local charTag = AllEnum.KrTags["2"][nParticleIdx]
+			if charTag ~= nil then
+				str = str .. charTag
+			end
+		end
+	elseif is_al(codePoint) then
+		local charTag = AllEnum.KrTags[1][nParticleIdx]
+		if charTag ~= nil then
+			str = str .. charTag
+		end
+	end
+	return str
+end
 local DecodeChangeInfo = function(mapChangeInfo)
 	local mapDecodedChangeInfo = {}
 	if type(mapChangeInfo) ~= "table" then
@@ -579,11 +610,11 @@ local DecodeChangeInfo = function(mapChangeInfo)
 	end
 	return mapDecodedChangeInfo
 end
-local OpenReceiveByChangeInfo = function(mapChangeInfo, callback, sTip)
+local OpenReceiveByChangeInfo = function(mapChangeInfo, callback, sTip, nTitleType, mapNpc)
 	local mapReward = PlayerData.Item:ProcessRewardChangeInfo(mapChangeInfo)
-	UTILS.OpenReceiveByReward(mapReward, callback, sTip)
+	UTILS.OpenReceiveByReward(mapReward, callback, sTip, nTitleType, mapNpc)
 end
-local OpenReceiveByDisplayItem = function(tbItem, mapChangeInfo, callback, sTip, nTitleType)
+local OpenReceiveByDisplayItem = function(tbItem, mapChangeInfo, callback, sTip, nTitleType, mapNpc)
 	local mapTrans = PlayerData.Item:ProcessTransChangeInfo(mapChangeInfo)
 	local tbReward, tbSpReward = PlayerData.Item:ProcessRewardDisplayItem(tbItem, mapTrans)
 	local mapReward = {
@@ -592,9 +623,9 @@ local OpenReceiveByDisplayItem = function(tbItem, mapChangeInfo, callback, sTip,
 		tbSrc = mapTrans.tbSrc,
 		tbDst = mapTrans.tbDst
 	}
-	UTILS.OpenReceiveByReward(mapReward, callback, sTip, nTitleType)
+	UTILS.OpenReceiveByReward(mapReward, callback, sTip, nTitleType, mapNpc)
 end
-local OpenReceiveByReward = function(mapReward, callback, sTip, nTitleType)
+local OpenReceiveByReward = function(mapReward, callback, sTip, nTitleType, mapNpc)
 	local bOverflow = PlayerData.State:GetMailOverflow()
 	local open_mail = function()
 		if bOverflow then
@@ -635,7 +666,11 @@ local OpenReceiveByReward = function(mapReward, callback, sTip, nTitleType)
 	end
 	local open_normal = function()
 		if mapReward and mapReward.tbReward and #mapReward.tbReward > 0 then
-			EventManager.Hit(EventId.OpenPanel, PanelId.ReceivePropsTips, mapReward.tbReward, open_trans, sTip, nTitleType)
+			if mapNpc then
+				EventManager.Hit(EventId.OpenPanel, PanelId.ReceivePropsNPC, mapReward.tbReward, mapNpc, open_trans, nTitleType)
+			else
+				EventManager.Hit(EventId.OpenPanel, PanelId.ReceivePropsTips, mapReward.tbReward, open_trans, sTip, nTitleType)
+			end
 		else
 			open_trans()
 		end
@@ -1189,9 +1224,23 @@ local ParseDesc = function(mapDescConfig, nCompareLevelType, nCompareLevel, bSim
 		end
 		return sDesc
 	end
+	local ParseLanguageParam = function(sParam)
+		local param, lang, num = sParam:match("^(.-)_([a-zA-Z]+)(%d+)$")
+		if not param then
+			return sParam, nil, nil
+		end
+		return param, lang, tonumber(num)
+	end
+	local LanguagePost = function(sLang, nIdx, sStr)
+		if sLang == "kr" and nIdx ~= nil then
+			return AddKrParticle(sStr, nIdx)
+		end
+		return sStr
+	end
 	local mapWord = {}
 	for word in string.gmatch(linkStr, "&.-&") do
-		local sParameterKey = string.gsub(word, "&", "")
+		local sParameterKeyOrigin = string.gsub(word, "&", "")
+		local sParameterKey, lang, langIdx = ParseLanguageParam(sParameterKeyOrigin)
 		local paramStr = mapDescConfig[sParameterKey]
 		local tbParam = string.split(paramStr, ",")
 		local sTable = tbParam[1]
@@ -1224,8 +1273,10 @@ local ParseDesc = function(mapDescConfig, nCompareLevelType, nCompareLevel, bSim
 						end
 						if sParseType == "DamageNum" and sTable == "HitDamage" then
 							local subStr = ParseHitDamageDesc(nKey, nLevel)
+							subStr = LanguagePost(lang, langIdx, subStr)
 							if nCompareLevelType ~= nil and mapData.levelTypeData == nCompareLevelType and nCompareLevel ~= nil then
 								local sCompareStr = ParseHitDamageDesc(nKey, nCompareLevel)
+								sCompareStr = LanguagePost(lang, langIdx, sCompareStr)
 								if subStr ~= sCompareStr then
 									subStr = string.format("%s<color=#8cac59>(%s\226\134\145)</color>", subStr, sCompareStr)
 								end
@@ -1233,15 +1284,19 @@ local ParseDesc = function(mapDescConfig, nCompareLevelType, nCompareLevel, bSim
 							mapWord[word] = subStr
 						elseif sParseType == "LevelUp" then
 							local subStr = ParseLevelUpDesc(sTable, nKey, nLevel, sParameter, sShowType, sEnumType)
+							subStr = LanguagePost(lang, langIdx, subStr)
 							if nCompareLevelType ~= nil and mapData.levelTypeData == nCompareLevelType and nCompareLevel ~= nil then
 								local sCompareStr = ParseLevelUpDesc(sTable, nKey, nCompareLevel, sParameter, sShowType, sEnumType)
+								sCompareStr = LanguagePost(lang, langIdx, sCompareStr)
 								if subStr ~= sCompareStr then
 									subStr = string.format("%s<color=#8cac59>(%s\226\134\145)</color>", subStr, sCompareStr)
 								end
 							end
 							mapWord[word] = subStr
 						elseif sParseType == "NoLevel" then
-							mapWord[word] = ParseNoLevelUpDesc(sTable, nKey, sParameter, sShowType, sEnumType)
+							local str = ParseNoLevelUpDesc(sTable, nKey, sParameter, sShowType, sEnumType)
+							str = LanguagePost(lang, langIdx, str)
+							mapWord[word] = str
 						end
 					else
 						mapWord[word] = string.format("<color=#BD3059>%s\232\161\168\228\184\173\232\175\165Id\230\137\190\228\184\141\229\136\176\230\149\176\230\141\174:%s</color>", sTable, nKey)
@@ -1362,7 +1417,7 @@ local ParseLevelQuestTargetDesc = function(originStr, mapTarget)
 		if mapWord[word] == nil then
 			local fieldName = string.sub(word, 2, #word - 1)
 			local sParam = mapTarget[fieldName]
-			if mapTarget.QuestType == GameEnum.LevelQuestTargetType.KillMonster and fieldName == "Param2" then
+			if mapTarget.QuestType == GameEnum.LevelQuestTargetType.KillMonster and fieldName == "Param2" or mapTarget.QuestType == GameEnum.LevelQuestTargetType.KillMonsterByDamageTag and fieldName == "Param3" then
 				local nMonsterId = tonumber(sParam)
 				local sMonsterName = sParam
 				if nMonsterId then
@@ -1557,8 +1612,12 @@ end
 local RemoveEffect = function(nEftUid, nCharId)
 	safe_call_cs_func(CS.AdventureModuleHelper.RemoveActorEffect, nCharId, nEftUid)
 end
-local GetBattleSamples = function()
-	local lstBattleSamples = CS.AdventureModuleHelper.GetBattleSamples()
+local GetBattleSamples = function(sFileName)
+	if sFileName == nil or sFileName == "" then
+		traceback("\227\128\144\230\136\152\230\138\165\227\128\145\228\188\160\229\133\165\231\154\132 fileName \228\184\186\231\169\186")
+		return
+	end
+	local lstBattleSamples = CS.AdventureModuleHelper.GetBattleSamples(sFileName)
 	local tbSamples = {}
 	if lstBattleSamples ~= nil then
 		local nCount = lstBattleSamples.Count - 1

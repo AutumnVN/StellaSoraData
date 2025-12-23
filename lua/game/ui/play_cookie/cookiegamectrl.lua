@@ -137,17 +137,6 @@ function CookieGameCtrl:RefreshQuestInfo()
 	if self.tbQuestGroupId == 0 then
 		return
 	end
-	local func_Parse_ActivityTask = function(mapData)
-		if mapData.ActivityTaskGroupId == self.tbQuestGroupId then
-			self.nTotalMiniGameQuest = self.nTotalMiniGameQuest + 1
-			local _nTaskId = mapData.Id
-			local taskData = PlayerData.Activity:GetActivityDataById(nQuestActId).mapActivityTaskDatas[_nTaskId]
-			if taskData.nStatus == AllEnum.ActQuestStatus.Received then
-				self.nCompletedMiniGameQuest = self.nCompletedMiniGameQuest + 1
-			end
-		end
-	end
-	ForEachTableLine(DataTable.ActivityTask, func_Parse_ActivityTask)
 end
 function CookieGameCtrl:RefreshLevelInfoPage(nIndex)
 	local levelData
@@ -245,6 +234,9 @@ function CookieGameCtrl:RefreshLevelData()
 		end
 	end
 	ForEachTableLine(ConfigTable.Get("CookieLevel"), fc)
+	table.sort(self.tbLevelData, function(a, b)
+		return a.Id < b.Id
+	end)
 	if self.nCurSelectLevelIndex ~= nil and self.nCurSelectLevelIndex > #self.tbLevelData then
 		self.nCurSelectLevelIndex = #self.tbLevelData
 	end

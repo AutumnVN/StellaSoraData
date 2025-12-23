@@ -40,7 +40,11 @@ function MallPkgPopupCtrl:ShowPopUp(id, callback, index)
 	self.callback = callback
 	self.mapCfg = ConfigTable.GetData("PopUp", self.nCurId)
 	self.nOpenTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(self.mapCfg.StartTime)
-	self.nEndTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(self.mapCfg.EndTime)
+	if self.mapCfg.EndType == GameEnum.PopUpEndType.Date then
+		self.nEndTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(self.mapCfg.EndTime)
+	elseif self.mapCfg.EndType == GameEnum.activityEndType.TimeLimit then
+		self.nEndTime = self.nOpenTime + self.mapCfg.EndDuration * 86400
+	end
 	self:RefreshDate()
 	self.anim = self.gameObject:GetComponent("Animator")
 	self:PlayOpenAnim()

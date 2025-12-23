@@ -347,6 +347,9 @@ function VampireLevelSelectCtrl:PlayNpcVoice(sType)
 	local sVoiceRes = PlayerData.Voice:PlayCharVoice(sType, 9102, nil, true)
 end
 function VampireLevelSelectCtrl:OnEvent_ShowBubbleVoiceText(nCharId, nId)
+	if self._panel.nLevelId ~= nil and self._panel.nLevelId > 0 or self._panel.bTalent then
+		return
+	end
 	local mapVoDirectoryData = ConfigTable.GetData("VoDirectory", nId)
 	if mapVoDirectoryData == nil then
 		printError("VoDirectory\230\156\170\230\137\190\229\136\176\230\149\176\230\141\174id:" .. nId)
@@ -388,18 +391,16 @@ function VampireLevelSelectCtrl:BlockNpc(nTime)
 	self:AddTimer(1, nTime, unBlockJump, true, true, nil, nil)
 end
 function VampireLevelSelectCtrl:NpcVoice()
-	local currentTimeTable = os.date("*t")
-	local nHour = currentTimeTable.hour
-	local sType = "greet_npc"
+	local sTimeVoice = PlayerData.Voice:GetNPCGreetTimeVoiceKey()
 	PlayerData.VampireSurvivor:CheckBattleSuccess()
-	if 6 < nHour and nHour <= 12 then
-		sType = "greetmorn_npc"
-	elseif 12 < nHour and nHour <= 18 then
-		sType = "greetnoon_npc"
-	elseif 18 < nHour or nHour <= 6 then
-		sType = "greetnight_npc"
-	end
-	self:PlayNpcVoice(sType)
 	PlayerData.Voice:StartBoardFreeTimer(9102)
+	local bFirstIn = PlayerData.VampireSurvivor:GetFirstIn()
+	if bFirstIn then
+		self:PlayNpcVoice(sTimeVoice)
+	else
+		local nIndex = math.random(1, 2)
+		local sVoice = nIndex == 1 and sTimeVoice or "greet_npc"
+		self:PlayNpcVoice(sVoice)
+	end
 end
 return VampireLevelSelectCtrl

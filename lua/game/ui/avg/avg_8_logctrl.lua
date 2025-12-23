@@ -87,6 +87,7 @@ function Avg_8_LogCtrl:ParseContent(sContent)
 	sContent = sCombine
 	sContent = ProcAvgTextContent(sContent, self._panel.nCurLanguageIdx)
 	sContent = string.gsub(sContent, "</?[^r>/][^/r>]?[^>]*>", "")
+	sContent = string.gsub(sContent, "<rotate[^>]*>", "")
 	return sContent
 end
 function Avg_8_LogCtrl:CalLogItemHeight(nType, sContent)

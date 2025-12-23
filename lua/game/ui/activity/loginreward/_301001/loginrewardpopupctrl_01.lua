@@ -25,6 +25,10 @@ function LoginRewardPopUpCtrl_01:RefreshRemainTime()
 	local endTime = self.actData:GetActEndTime()
 	local curTime = ClientManager.serverTimeStamp
 	local remainTime = endTime - curTime
+	if remainTime < 0 then
+		self._mapNode.goActTime.gameObject:SetActive(false)
+		return
+	end
 	local sTimeStr = ""
 	if remainTime <= 60 then
 		local sec = math.floor(remainTime)
