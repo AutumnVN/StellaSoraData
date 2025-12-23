@@ -231,6 +231,7 @@ function getSkillBuffIcons(skillId) {
         if (!BUFF[buffId]) continue;
 
         const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
+
         buffIcons.push(icon);
     }
 
@@ -468,6 +469,7 @@ function getPotentialBuffIcons(potId) {
         if (!BUFF[buffId]) continue;
 
         const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
+
         buffIcons.push(icon);
     }
 
@@ -594,6 +596,7 @@ function getTalentBuffIcons(talentId) {
         if (!BUFF[buffId]) continue;
 
         const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
+
         buffIcons.push(icon);
     }
 
