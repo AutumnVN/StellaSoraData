@@ -723,9 +723,10 @@
     },
     "2021": {
         "name": "Butterfly Mark",
-        "desc": "Each stack of Butterfly Mark increases the target's &Param1&, up to 3 stacks, for 6s.",
+        "desc": "Each stack of Butterfly Mark increases the target's &Param1& by &Param2&, up to 3 stacks, for 6s.",
         "params": [
-            "Ignis DMG Taken"
+            "Ignis DMG Taken",
+            "3.5%"
         ],
         "effectType": [
             "Ignis DMG Taken (base)"
@@ -807,7 +808,7 @@
     },
     "2028": {
         "name": "Dark Burn",
-        "desc": "After some Umbra Trekkers trigger the Umbra Mark, deal damage and trigger Dark Shackles, dealing DOT.",
+        "desc": "After some Umbra Trekkers trigger the Umbra Mark, deal damage and trigger Dark Burn, dealing DOT.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -867,6 +868,15 @@
     "4501": {
         "name": "Fear",
         "desc": "The target flees and cannot attack.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "6002": {
+        "name": "Ode",
+        "desc": "When a target inflicted with Ode takes minion DMG, Ode is converted into Hymn.\u000bEach Ignis Trekker can only inflict 1 stack of Ode, and this Ode can only be converted into Hymn by Minion DMG dealt by that Trekker's minion.",
         "params": [],
         "effectType": [],
         "addAttrType": [],

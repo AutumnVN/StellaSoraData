@@ -23925,7 +23925,7 @@
         "mainSkill": {
             "id": 4006,
             "name": "Witch's Swing",
-            "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker casts a Support Skill, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker casts a Support Skill, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
                 "Umbra DMG (base)",
                 "ADDBUFF:Umbra DMG"
@@ -40265,7 +40265,7 @@
         "secondarySkill1": {
             "id": 40391,
             "name": "Azure Horizon",
-            "desc": "Increases Lux Trekkers' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts a skill, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
+            "desc": "Increases Lux squadmates' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts a skill, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:Skill DMG"
@@ -41380,6 +41380,1206 @@
             {
                 "ATK": 883,
                 "Ignis DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Eerie Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Eerie Breath": 6,
+                "Phantom Step Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Eerie Breath": 13,
+                "Phantom Step Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Eerie Breath": 20,
+                "Phantom Step Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Eerie Breath": 26,
+                "Phantom Step Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Eerie Breath": 40,
+                "Phantom Step Remnant": 73,
+                "Frenzied Waltz Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Phantom Step Remnant": 100,
+                "Frenzied Waltz Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Phantom Step Remnant": 126,
+                "Frenzied Waltz Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214041": {
+        "id": 214041,
+        "name": "A Gift for the Journey",
+        "star": 5,
+        "element": "Ignis",
+        "tag": [
+            "ATK",
+            "Minion",
+            "Ultimate"
+        ],
+        "mainSkill": {
+            "id": 4041,
+            "name": "A Gift for the Journey",
+            "desc": "Increases the ATK of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Support Trekker's minion is present, increases Minion DMG dealt by Ignis Trekkers' minions in the squad by <color=#ec6d21>{2}</color>.",
+            "effectType": [
+                "ATK (%)",
+                "Minion DMG (base)"
+            ],
+            "effectData": [
+                "NOTHING, SELF, ACTORELEMENTTYPE, Ignis | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "5%,8%/6%,9.6%/7%,11.2%/8%,12.8%/9%,14.4%/10%,16%",
+            "icon": "DiscSkill_214041",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill1": {
+            "id": 40411,
+            "name": "Salutes Boomed",
+            "desc": "Increases the Main Ignis Trekker's Skill DMG by <color=#ec6d21>{1}</color>.\u000bIncreases Support Ignis Trekkers' Minion DMG by <color=#ec6d21>{2}</color>.",
+            "effectType": [
+                "Skill DMG (base)",
+                "Minion DMG (base)"
+            ],
+            "effectData": [
+                "NOTHING, SELF, ACTORELEMENTTYPE, Ignis, AND, SELF, SELF_BE_MAINCONTROL | SELF, DEFAULT | SELF, DEFAULT",
+                "NOTHING, SELF, ACTORELEMENTTYPE, Ignis, AND, SELF, SELF_BE_ASSISTANT | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "buffIcon": [],
+            "params": "2.4%,5%/4.8%,10%/7.2%,15%/9.6%,20%/12%,25%",
+            "requirements": [
+                {
+                    "Melody of Pummel": 10,
+                    "Melody of Skill": 10
+                },
+                {
+                    "Melody of Pummel": 25,
+                    "Melody of Skill": 25
+                },
+                {
+                    "Melody of Pummel": 40,
+                    "Melody of Skill": 40
+                },
+                {
+                    "Melody of Pummel": 55,
+                    "Melody of Skill": 55
+                },
+                {
+                    "Melody of Pummel": 70,
+                    "Melody of Skill": 70
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill2": {
+            "id": 40412,
+            "name": "Holy Night Revelry",
+            "desc": "When at least two Ignis Trekker's minions are present, increases the Ultimate DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.",
+            "effectType": [
+                "Ultimate DMG (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "12%/24%/36%/48%/60%",
+            "requirements": [
+                {
+                    "Melody of Pummel": 15,
+                    "Melody of Burst": 15,
+                    "Melody of Ignis": 15
+                },
+                {
+                    "Melody of Pummel": 30,
+                    "Melody of Burst": 30,
+                    "Melody of Ignis": 30
+                },
+                {
+                    "Melody of Pummel": 45,
+                    "Melody of Burst": 45,
+                    "Melody of Ignis": 45
+                },
+                {
+                    "Melody of Pummel": 60,
+                    "Melody of Burst": 60,
+                    "Melody of Ignis": 60
+                },
+                {
+                    "Melody of Pummel": 75,
+                    "Melody of Burst": 75,
+                    "Melody of Ignis": 75
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "supportNote": [
+            {
+                "Melody of Burst": 3,
+                "Melody of Skill": 3
+            },
+            {
+                "Melody of Burst": 3,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Skill": 7
+            },
+            {
+                "Melody of Burst": 7,
+                "Melody of Skill": 7
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 14,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 18,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 22,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 26,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 30,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 34,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 46,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 50,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 60,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 64,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 68,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 72,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 77,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 80,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 85,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 88,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 93,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 96,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 101,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 121,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 124,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 129,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 132,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 137,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 140,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 145,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 149,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 153,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 157,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 161,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 194,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 197,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 202,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 205,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 210,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 213,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 218,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 221,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 226,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 230,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 234,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 281,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 284,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 289,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 293,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 297,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 301,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 305,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 309,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 313,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 317,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 321,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 385,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 390,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 393,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 398,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 401,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 406,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 410,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 414,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 418,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 422,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 426,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 511,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 515,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 519,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 523,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 527,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 531,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 536,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 539,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 544,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 547,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 552,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 662,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 666,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 670,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 674,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 678,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 682,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 686,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 690,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 694,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 698,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 702,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 842,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 847,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 851,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 855,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 859,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 863,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 867,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 871,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 875,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 879,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 883,
+                "Ignis DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Light Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Faint Light Breath": 6,
+                "Emberflies Soul": 13,
+                "Dorra": 26700
+            },
+            {
+                "Faint Light Breath": 13,
+                "Emberflies Soul": 20,
+                "Dorra": 59900
+            },
+            {
+                "Faint Light Breath": 20,
+                "Emberflies Soul": 33,
+                "Dorra": 89900
+            },
+            {
+                "Faint Light Breath": 26,
+                "Emberflies Soul": 53,
+                "Dorra": 197200
+            },
+            {
+                "Faint Light Breath": 40,
+                "Emberflies Soul": 73,
+                "Evernight Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Emberflies Soul": 100,
+                "Evernight Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Emberflies Soul": 126,
+                "Evernight Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214048": {
+        "id": 214048,
+        "name": "Snowy Night Surprise",
+        "star": 5,
+        "element": "Ignis",
+        "tag": [
+            "Element",
+            "VUL",
+            "Skills"
+        ],
+        "mainSkill": {
+            "id": 4048,
+            "name": "Snowy Night Surprise",
+            "desc": "Increases Ignis DMG of the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ignis Trekker deals Skill DMG, inflicts ##Ode#6002#, lasting {2}s.\u000bOde can be converted into Hymn.\u000bHymn: Increase Ignis DMG taken by <color=#ec6d21>{3}</color> for {4}s, up to {5} stacks.",
+            "effectType": [
+                "Ignis DMG (base)",
+                "Ignis DMG Taken (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214048B1"
+            ],
+            "params": "20%,12.25,1%,18,15/24%,12.25,1.2%,18,15/28%,12.25,1.4%,18,15/32%,12.25,1.6%,18,15/36%,12.25,1.8%,18,15/40%,12.25,2%,18,15",
+            "icon": "DiscSkill_214048",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill1": {
+            "id": 40481,
+            "name": "Kingdom of Fires",
+            "desc": "Hymn grants extra effects: Increases the Ignis Skill DMG Taken by <color=#ec6d21>{1}</color>.\u000bWhen ##Ode#6002# is converted in to Hymn, increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{2}</color> for {3}s, up to {4} stacks.",
+            "effectType": [
+                "undefined:61",
+                "Skill DMG (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon",
+                "Icon_DiscBuff_214048B2"
+            ],
+            "params": "0.5%,1%,15,4/0.6%,2%,15,4/0.7%,3%,15,4/0.8%,4%,15,4/0.9%,5%,15,4",
+            "requirements": [
+                {
+                    "Melody of Pummel": 10,
+                    "Melody of Ignis": 10
+                },
+                {
+                    "Melody of Pummel": 25,
+                    "Melody of Ignis": 25
+                },
+                {
+                    "Melody of Pummel": 40,
+                    "Melody of Ignis": 40
+                },
+                {
+                    "Melody of Pummel": 55,
+                    "Melody of Ignis": 55
+                },
+                {
+                    "Melody of Pummel": 70,
+                    "Melody of Ignis": 70
+                }
+            ],
+            "icon": "DiscSkill_8",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill2": {
+            "id": 40482,
+            "name": "Crispy Crunch",
+            "desc": "##Ode#6002# grants extra effects: Reduces enemy ATK by <color=#ec6d21>{1}</color>.\u000bIgnis Trekkers in the squad deal increased Ultimate DMG to targets inflicted with Ode by <color=#ec6d21>{2}</color>.",
+            "effectType": [
+                "ATK (%)"
+            ],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "1%,20%/2%,40%/3%,60%/4%,80%/5%,100%",
+            "requirements": [
+                {
+                    "Melody of Pummel": 15,
+                    "Melody of Luck": 15,
+                    "Melody of Ignis": 15
+                },
+                {
+                    "Melody of Pummel": 30,
+                    "Melody of Luck": 30,
+                    "Melody of Ignis": 30
+                },
+                {
+                    "Melody of Pummel": 45,
+                    "Melody of Luck": 45,
+                    "Melody of Ignis": 45
+                },
+                {
+                    "Melody of Pummel": 60,
+                    "Melody of Luck": 60,
+                    "Melody of Ignis": 60
+                },
+                {
+                    "Melody of Pummel": 75,
+                    "Melody of Luck": 75,
+                    "Melody of Ignis": 75
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "supportNote": [
+            {
+                "Melody of Luck": 2,
+                "Melody of Ignis": 4
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Ignis": 5
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Ignis": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Ignis": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Ignis": 7
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Ignis": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Ignis": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Ignis": 9
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Ignis": 10
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 15,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 20,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 24,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 29,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 33,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 47,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 51,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 56,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 67,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 71,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 76,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 80,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 85,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 89,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 94,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 98,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 103,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 107,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 112,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 134,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 138,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 143,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 147,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 152,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 156,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 161,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 165,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 170,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 174,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 179,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 215,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 219,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 224,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 228,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 233,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 237,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 242,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 246,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 251,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 255,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 260,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 312,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 316,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 321,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 325,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 330,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 334,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 339,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 343,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 348,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 352,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 357,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 428,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 433,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 437,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 442,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 446,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 451,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 455,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 460,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 464,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 469,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 473,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 568,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 572,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 577,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 581,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 586,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 590,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 595,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 599,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 604,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 608,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 613,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 735,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 740,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 744,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 749,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 753,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 758,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 762,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 767,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 771,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 776,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 780,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 936,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 941,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 945,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 950,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 954,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 959,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 963,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 968,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 972,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 977,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 981,
+                "Ignis DMG": "15%"
             }
         ],
         "dupe": [
