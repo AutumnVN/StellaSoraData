@@ -109,6 +109,13 @@ const ATTR_TYPE = {
     95: 'OTHER_SUPPRESS',
 };
 
+const SPECIAL_ATTR_TYPE = {
+    1: 'HP',
+    2: 'TOUGHNESS_V',
+    3: 'SHIELD_V',
+    4: 'ENERGY',
+};
+
 const PARAM_TYPE = {
     1: 'base',
     2: '%',
@@ -606,23 +613,22 @@ function formatEffectType(id, type, paramType) {
     const attrTypeStr = ATTR_TYPE[type];
     const paramTypeStr = PARAM_TYPE[paramType];
 
-
-    if (!['ATTR_FIX', 'ELEMENTTYPE_ATTR_FIX', 'DAMAGETYPE_ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
-        result += effectTypeStr;
-    }
+    result += effectTypeStr.replace('ATTR_FIX', '');
 
     if (attrTypeStr) {
-        if (!['ATTR_FIX', 'ELEMENTTYPE_ATTR_FIX', 'DAMAGETYPE_ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
+        if (effectTypeStr !== 'ATTR_FIX') {
             result += ':';
         }
 
-        if (['ATTR_FIX', 'ELEMENTTYPE_ATTR_FIX', 'DAMAGETYPE_ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX', 'ADDBUFF'].includes(effectTypeStr)) {
+        if (effectTypeStr === 'SPECIAL_ATTR_FIX') {
+            result += `${SPECIAL_ATTR_TYPE[type]}`;
+        } else if (effectTypeStr.includes('ATTR_FIX') || effectTypeStr === 'ADDBUFF') {
             result += `${attrTypeStr}`;
         } else {
             result += `${type}`;
         }
 
-        if (['ATTR_FIX', 'ELEMENTTYPE_ATTR_FIX', 'DAMAGETYPE_ATTR_FIX', 'HITTED_ADDITIONAL_ATTR_FIX'].includes(effectTypeStr)) {
+        if (effectTypeStr.includes('ATTR_FIX')) {
             result += ` (${paramTypeStr})`;
         }
     }
@@ -647,6 +653,7 @@ module.exports = {
     formatEffectType,
     formatAddAttrType,
     ATTR_TYPE,
+    SPECIAL_ATTR_TYPE,
     PARAM_TYPE,
     DAMAGE_TYPE,
     EFFECT_TYPE,
