@@ -531,6 +531,7 @@ function getTalents(charId) {
                     desc: LANG_TALENT[TALENT[talentId].Desc],
                     params: getTalentParams(talentId),
                     effectType: getTalentEffectTypes(talentId),
+                    addAttrType: getTalentAddAttrTypes(talentId),
                     effectData: getTalentEffectData(talentId),
                     buffIcon: getTalentBuffIcons(talentId),
                 })),
@@ -563,6 +564,26 @@ function getTalentEffectTypes(talentId) {
     }
 
     return [...new Set(effectTypes)];
+}
+
+function getTalentAddAttrTypes(talentId) {
+    const addAttrTypes = [];
+
+    const params = collectParamsFrom(TALENT[talentId]).filter(p => p && p.startsWith('OnceAdditionalAttribute'));
+
+    for (const param of params) {
+        const p = param.split(',');
+        let currentId = +p[2];
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) currentId += 10;
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) continue;
+
+        const type = ONCEADDITTIONALATTRIBUTEVALUE[currentId].AttributeType1;
+        const paramType = ONCEADDITTIONALATTRIBUTEVALUE[currentId].ParameterType1;
+
+        addAttrTypes.push(formatAddAttrType(type, paramType));
+    }
+
+    return [...new Set(addAttrTypes)];
 }
 
 function getTalentEffectData(talentId) {
