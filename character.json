@@ -6328,7 +6328,7 @@
                             3
                         ],
                         "effectType": [
-                            "Skill DMG (base)"
+                            "HITTED_ADDITIONAL_:Skill DMG (base)"
                         ],
                         "effectData": [
                             "HITTING, SELF, DEFAULT | SELF, DEFAULT | SELF, DEFAULT"
@@ -49357,7 +49357,7 @@
                     "desc": "Energy Charge Efficiency +<color=#ec6d21>&Param1&</color> for &Param2&s when Mistique casts the Main Skill or Support Skill.",
                     "damageType": [],
                     "effectType": [
-                        "PLAYER_ATTR_FIX:1"
+                        "PLAYER_:ATK (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -72381,7 +72381,7 @@
                     "desc": "When Colonel Walnut and General Curly deal damage to targets with ##Ignis Mark#1016#, they have a &Param1& chance to gain 1 stack of Morale and increase their &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.",
                     "damageType": [],
                     "effectType": [
-                        "Minion DMG (%)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -72594,7 +72594,7 @@
                     "desc": "While transformed into Dame Laru, casting &Param1& increases her &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.",
                     "damageType": [],
                     "effectType": [
-                        "Ultimate DMG (%)"
+                        "ELEMENTTYPE_:Ultimate DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -72618,7 +72618,7 @@
                     "desc": "While transformed into Dame Laru, increases her &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s each time &Param1& deals DMG, up to &Param5& stacks.\u000bThis effect is removed if &Param1& is cast.",
                     "damageType": [],
                     "effectType": [
-                        "Ultimate DMG (%)"
+                        "ELEMENTTYPE_:Ultimate DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -72687,7 +72687,7 @@
                     "desc": "Increases the Attack Range of Gift Box Shells by <color=#0abec5>50%</color> and Skill DMG by <color=#0abec5>&Param5&</color>.\u000bIf the squad is Ignis-Trekker only, when Gift Box Shells deal DMG to the target, increases the target's Skill DMG Taken by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, up to <color=#0abec5>&Param4&</color> stacks.",
                     "damageType": [],
                     "effectType": [
-                        "Skill DMG Taken (%)"
+                        "ELEMENTTYPE_:Skill DMG Taken (%)"
                     ],
                     "addAttrType": [
                         "Skill DMG (base)"
@@ -72715,7 +72715,7 @@
                         "Minion (from Skill)"
                     ],
                     "effectType": [
-                        "Minion DMG (%)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -72742,7 +72742,7 @@
                         "Minion (from Skill)"
                     ],
                     "effectType": [
-                        "Minion Crit Rate (%)"
+                        "ELEMENTTYPE_:Minion Crit Rate (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -72790,7 +72790,7 @@
                     "damageType": [],
                     "effectType": [
                         "ATK (%)",
-                        "Minion DMG (%)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -72858,7 +72858,7 @@
                     "damageType": [],
                     "effectType": [
                         "Attack Speed (base)",
-                        "Minion DMG (%)",
+                        "ELEMENTTYPE_:Minion DMG (%)",
                         "ATK (%)"
                     ],
                     "addAttrType": [],
