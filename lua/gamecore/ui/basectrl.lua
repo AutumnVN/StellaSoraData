@@ -539,9 +539,20 @@ function BaseCtrl:_AutoFitIcon(imgObj, sPath, sSurfix)
 	if mapAutoFix == nil then
 		return sPath .. sSurfix
 	end
+	local nGlobalScale = 0
+	local v3GlobalScale = imgObj.transform.lossyScale
+	if v3GlobalScale.x < v3GlobalScale.y then
+		nGlobalScale = v3GlobalScale.x
+	else
+		nGlobalScale = v3GlobalScale.y
+	end
+	nGlobalScale = nGlobalScale / Settings.CANVAS_SCALE
+	if nGlobalScale <= 0 then
+		nGlobalScale = 1
+	end
 	local rectTransform = imgObj.gameObject:GetComponent("RectTransform")
-	local nTargetWidth = rectTransform.rect.width
-	local nTargetHeight = rectTransform.rect.height
+	local nTargetWidth = rectTransform.rect.width * nGlobalScale
+	local nTargetHeight = rectTransform.rect.height * nGlobalScale
 	local sAutoFit, nRange
 	for k, v in pairs(mapAutoFix) do
 		local nMultiple_W = math.abs(nTargetWidth - v.w) / v.w
@@ -556,8 +567,14 @@ function BaseCtrl:_AutoFitIcon(imgObj, sPath, sSurfix)
 		end
 	end
 	if sAutoFit == nil then
+		if NovaAPI.IsEditorPlatform() == true then
+			printLog("\227\128\144\230\138\189\229\141\161\232\167\146\232\137\178\229\164\180\229\131\143 icon \232\135\170\233\128\130\229\186\148\227\128\145\230\156\170\232\135\170\233\128\130\229\186\148")
+		end
 		return sPath .. sSurfix
 	else
+		if NovaAPI.IsEditorPlatform() == true then
+			printLog(string.format("\227\128\144\230\138\189\229\141\161\232\167\146\232\137\178\229\164\180\229\131\143 icon \232\135\170\233\128\130\229\186\148\227\128\145\229\133\168\229\177\128\231\188\169\230\148\190\239\188\154x%f\239\188\140y%f\239\188\140\230\156\128\231\187\136\229\143\150%f\239\188\140\229\186\148\231\148\168\229\164\132\231\174\151\228\184\138\229\133\168\229\177\128\231\188\169\230\148\190\229\144\142\231\154\132\229\176\186\229\175\184\239\188\154w%f\239\188\140h%f\239\188\140\232\135\170\233\128\130\229\186\148\232\135\179\229\144\142\231\188\128\239\188\154%s\239\188\140\229\174\189%f\239\188\140\233\171\152%f\227\128\130", v3GlobalScale.x, v3GlobalScale.y, nGlobalScale, nTargetWidth, nTargetHeight, sAutoFit, mapAutoFix[sAutoFit].w, mapAutoFix[sAutoFit].h))
+		end
 		local _sPath = sPath .. sAutoFit
 		local bExist = GameResourceLoader.ExistsAsset(sRootPath .. _sPath .. ".png")
 		if bExist == false then

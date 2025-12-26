@@ -80,6 +80,7 @@ end
 function GuideGroup_7:Step_3()
 	self.msg = {
 		BindIcon = "LevelMenuPanel/----SafeAreaRoot----/---Resource---/svResource/Viewport/Content/btnTimes",
+		ScrollView = "LevelMenuPanel/----SafeAreaRoot----/---Resource---/svResource",
 		Deviation = {0, 0},
 		Head = "Icon/Head/head_11101",
 		Desc = "Guide_7_3",

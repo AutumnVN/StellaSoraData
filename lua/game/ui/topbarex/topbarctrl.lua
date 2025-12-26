@@ -116,7 +116,8 @@ local mapConfig = {
 	[PanelId.TowerDefenseCharacterDetailPanel] = {bEvent = true},
 	[PanelId.MallSkinPreview] = {bEvent = true},
 	[PanelId.StorySet] = {bEvent = true},
-	[PanelId.BdConvertPanel] = {bEvent = true}
+	[PanelId.BdConvertPanel] = {bEvent = true},
+	[PanelId.GachaSpin] = {bEvent = true}
 }
 function TopBarCtrl:CreateCoin(tbCoin, bHideCoinAdd)
 	self.mapCoinIndex, self.mapItemIndex = nil, nil

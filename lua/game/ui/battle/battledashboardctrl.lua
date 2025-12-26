@@ -248,7 +248,7 @@ function BattleDashboardCtrl:OnPreExit()
 	end
 	for i, v in ipairs(self.tbDefine_SupportSkillBtn) do
 		if v.nPlayerId ~= nil then
-			self:Remove_Skill_EntityEvent(v.nPlayerId)
+			self:Remove_SupportSkill_EntityEvent(v.nPlayerId, i)
 			v.nPlayerId = nil
 		end
 	end
@@ -531,7 +531,7 @@ function BattleDashboardCtrl:Refresh(nCurPlayerId)
 			bSuccess, nSupportCharId, nSupportPlayerId = AdventureModuleHelper.GetSecondSlotPlayer()
 		end
 		if self.tbDefine_SupportSkillBtn[i].nPlayerId ~= nil then
-			self:Remove_Skill_EntityEvent(self.tbDefine_SupportSkillBtn[i].nPlayerId)
+			self:Remove_SupportSkill_EntityEvent(self.tbDefine_SupportSkillBtn[i].nPlayerId, i)
 		end
 		if nSupportCharId ~= 0 and nSupportPlayerId ~= 0 then
 			self.tbDefine_SupportSkillBtn[i].nPlayerId = nSupportPlayerId
@@ -567,7 +567,7 @@ function BattleDashboardCtrl:Refresh(nCurPlayerId)
 			local spHead = mapCfgData_Skin ~= nil and self:GetPngSprite(mapCfgData_Skin.Icon, AllEnum.CharHeadIconSurfix.L, img) or nil
 			NovaAPI.SetImageSpriteAsset(img, spHead)
 			NovaAPI.SetImageColor(img, Color(1, 1, 1, 1))
-			self:Add_Skill_EntityEvent(nSupportPlayerId)
+			self:Add_SupportSkill_EntityEvent(nSupportPlayerId, i)
 			AdventureModuleHelper.ForceSyncSkillBtnToLua(nSupportPlayerId)
 		else
 			self.tbDefine_SupportSkillBtn[i].skillBtnCtrl:SetEmptySkillBtn()
@@ -586,6 +586,24 @@ function BattleDashboardCtrl:Remove_Skill_EntityEvent(nPlayerId)
 	EventManager.RemoveEntityEvent("SkillBind", nPlayerId, self, self.OnEvent_SkillBind)
 	EventManager.RemoveEntityEvent("SyncSkillBtnToLua", nPlayerId, self, self.OnEvent_SyncSkillBtnToLua)
 	EventManager.RemoveEntityEvent("SkillUseableByActionKey", nPlayerId, self, self.OnEvent_SkillEnableByActionKey)
+end
+function BattleDashboardCtrl:Add_SupportSkill_EntityEvent(nPlayerId, nIdx)
+	EventManager.AddEntityEvent("SkillBind", nPlayerId, self, self.OnEvent_SkillBind)
+	EventManager.AddEntityEvent("SyncSkillBtnToLua", nPlayerId, self, self.OnEvent_SyncSkillBtnToLua)
+	if nIdx == 1 then
+		EventManager.AddEntityEvent("SkillUseableByActionKey", nPlayerId, self, self.OnEvent_Support1SkillEnableByActionKey)
+	else
+		EventManager.AddEntityEvent("SkillUseableByActionKey", nPlayerId, self, self.OnEvent_Support2SkillEnableByActionKey)
+	end
+end
+function BattleDashboardCtrl:Remove_SupportSkill_EntityEvent(nPlayerId, nIdx)
+	EventManager.RemoveEntityEvent("SkillBind", nPlayerId, self, self.OnEvent_SkillBind)
+	EventManager.RemoveEntityEvent("SyncSkillBtnToLua", nPlayerId, self, self.OnEvent_SyncSkillBtnToLua)
+	if nIdx == 1 then
+		EventManager.RemoveEntityEvent("SkillUseableByActionKey", nPlayerId, self, self.OnEvent_Support1SkillEnableByActionKey)
+	else
+		EventManager.RemoveEntityEvent("SkillUseableByActionKey", nPlayerId, self, self.OnEvent_Support2SkillEnableByActionKey)
+	end
 end
 function BattleDashboardCtrl:OnEvent_SkillBind(nActionId, nSkillId, nCharId)
 	local data
@@ -676,6 +694,24 @@ end
 function BattleDashboardCtrl:OnEvent_SkillEnableByActionKey(nActionId, bEnable)
 	local data = self.tbDefine_SkillBtn[nActionId]
 	data.skillBtnCtrl:SetBtnEnable(bEnable)
+end
+function BattleDashboardCtrl:OnEvent_Support1SkillEnableByActionKey(nActionId, bEnable)
+	if nActionId == 2 then
+		local data = self.tbDefine_SupportSkillBtn[1]
+		data.skillBtnCtrl:SetBtnEnable(bEnable)
+	elseif nActionId == 4 then
+		local data = self.tbDefine_SupportUltraBtn[1]
+		data.skillBtnCtrl:SetBtnEnable(bEnable)
+	end
+end
+function BattleDashboardCtrl:OnEvent_Support2SkillEnableByActionKey(nActionId, bEnable)
+	if nActionId == 2 then
+		local data = self.tbDefine_SupportSkillBtn[2]
+		data.skillBtnCtrl:SetBtnEnable(bEnable)
+	elseif nActionId == 4 then
+		local data = self.tbDefine_SupportUltraBtn[2]
+		data.skillBtnCtrl:SetBtnEnable(bEnable)
+	end
 end
 function BattleDashboardCtrl:OnBtn_ClickHand(btn)
 	if self.bInteractiveInCD == true then

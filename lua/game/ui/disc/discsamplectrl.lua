@@ -384,14 +384,14 @@ function DiscSampleCtrl:SwitchSkill()
 	self._mapNode.DiscSkill:SetActive(self.nCurTab == 1)
 	self._mapNode.DiscNote:SetActive(self.nCurTab == 2)
 end
-function DiscSampleCtrl:PlayBGM()
+function DiscSampleCtrl:PlayBGM(bFirst)
 	self.bPrevDisc = WwiseAudioMgr.IsPrevDiscBgm
 	local mapCfg = ConfigTable.GetData("DiscIP", self.nId)
 	if mapCfg == nil then
 		return
 	end
 	local sState = mapCfg.VoFile
-	if not self.bPrevDisc then
+	if not self.bPrevDisc and bFirst then
 		WwiseAudioMgr:PostEvent("music_outfit_enter")
 	end
 	WwiseAudioMgr:SetState("outfit", sState)
@@ -428,7 +428,7 @@ function DiscSampleCtrl:OnEnable()
 	self:RefreshData()
 	self:Refresh()
 	self:RefreshMiddle()
-	self:PlayBGM()
+	self:PlayBGM(true)
 end
 function DiscSampleCtrl:OnDisable()
 	self:QuitBGM()

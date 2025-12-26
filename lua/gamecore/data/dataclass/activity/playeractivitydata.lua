@@ -223,7 +223,7 @@ end
 function PlayerActivityData:RefreshActivityRedDot()
 	local bHasNewRedDot = false
 	for _, v in pairs(self.tbAllActivity) do
-		RedDotManager.SetValid(RedDotDefine.Activity_Tab, v:GetActId(), v:CheckActShow() and v:GetActivityRedDot())
+		RedDotManager.SetValid(RedDotDefine.Activity_Tab, v:GetActId(), v:CheckActShow() and v:GetActivityRedDot() and not v:CheckHideFromActList())
 		if type(v.RefreshRedDot) == "function" then
 			v:RefreshRedDot()
 		end
@@ -231,7 +231,7 @@ function PlayerActivityData:RefreshActivityRedDot()
 		if v:GetActCfgData().ActivityThemeType > 0 or self:IsActivityInActivityGroup(v:GetActId()) then
 			bInActGroup = true
 		end
-		if not bInActGroup and v:CheckActShow() then
+		if not bInActGroup and v:CheckActShow() and not v:CheckHideFromActList() then
 			local bTabRedDot = RedDotManager.GetValid(RedDotDefine.Activity_Tab, v:GetActId())
 			local sData = LocalData.GetPlayerLocalData("Activity_Tab_New_" .. v:GetActId())
 			local nValue = tonumber(sData == nil and "0" or sData)
@@ -257,7 +257,7 @@ end
 function PlayerActivityData:GetSortedActList()
 	local tbActList = {}
 	for k, v in pairs(self.tbAllActivity) do
-		if v:CheckActShow() then
+		if v:CheckActShow() and not v:CheckHideFromActList() then
 			local bInActGroup = false
 			if v:GetActCfgData().ActivityThemeType > 0 or self:IsActivityInActivityGroup(v:GetActId()) then
 				bInActGroup = true

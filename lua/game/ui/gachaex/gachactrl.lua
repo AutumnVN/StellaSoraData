@@ -143,7 +143,9 @@ GachaCtrl._mapEventConfig = {
 	GachaNewbieReplaceRecord = "OnEvent_GachaNewbieReplaceRecord",
 	GachaNewbieReplaceRecordOver = "OnEvent_GachaNewbieReplaceRecordOver",
 	GachaNewbieObtainRecordOver = "OnEvent_GachaNewbieObtainRecordOver",
-	GachaProcessStart = "OnEvent_GachaProcessStart"
+	GachaProcessStart = "OnEvent_GachaProcessStart",
+	[EventId.UIHomeConfirm] = "OnEvent_Home",
+	[EventId.UIBackConfirm] = "OnEvent_Back"
 }
 function GachaCtrl:Awake()
 	self.bGachaProcess = false
@@ -172,15 +174,17 @@ function GachaCtrl:OnEnable()
 	if type(tbParam) == "table" then
 		self.curPoolId = tbParam[1]
 	end
+	local bOpen = true
 	if self._panel.nCurPool ~= nil and self._panel.nCurPool ~= 0 then
 		self.curPoolId = self._panel.nCurPool
 		self._panel.nCurPool = 0
+		bOpen = false
 	end
 	self.mapCover = {}
 	local callback = function()
 		local wait = function()
 			coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-			self:RefreshAll()
+			self:RefreshAll(bOpen)
 		end
 		cs_coroutine.start(wait)
 		EventManager.Hit("Guide_GachaOpen")
@@ -211,7 +215,7 @@ function GachaCtrl:OnDestroy()
 end
 function GachaCtrl:OnRelease()
 end
-function GachaCtrl:RefreshAll()
+function GachaCtrl:RefreshAll(bOpen)
 	self.tbOpenedPool = PlayerData.Gacha:GetOpenedPool()
 	self:LoadCover()
 	self:RefreshTab()
@@ -221,17 +225,24 @@ function GachaCtrl:RefreshAll()
 	self:SetTabSelect(self.curPoolId, true)
 	self:RefreshInfo()
 	EventManager.Hit(EventId.SetTransition)
-	if self.mapCover[self.curPoolId] ~= nil then
-		self.mapCover[self.curPoolId].gameObject:SetActive(true)
-		local gachaData = ConfigTable.GetData("Gacha", self.curPoolId)
-		if gachaData ~= nil then
-			CS.WwiseAudioManager.Instance:PostEvent(gachaData.Voice)
+	local wait = function()
+		if self.mapCover[self.curPoolId] ~= nil then
+			self.mapCover[self.curPoolId].gameObject:SetActive(true)
+			local gachaData = ConfigTable.GetData("Gacha", self.curPoolId)
+			if gachaData ~= nil then
+				CS.WwiseAudioManager.Instance:PostEvent(gachaData.Voice)
+			end
+		end
+		self._mapNode.rootAnim:Play("GachaPanel_in")
+		if self.mapCover[self.curPoolId] then
+			self.mapCover[self.curPoolId]:PlayInAnim()
+			self.mapCover[self.curPoolId]:EnableCover()
 		end
 	end
-	self._mapNode.rootAnim:Play("GachaPanel_in")
-	if self.mapCover[self.curPoolId] then
-		self.mapCover[self.curPoolId]:PlayInAnim()
-		self.mapCover[self.curPoolId]:EnableCover()
+	if bOpen == true then
+		self:AddTimer(1, 0.3, wait, true, true, true)
+	else
+		wait()
 	end
 end
 function GachaCtrl:RefreshTab()
@@ -1409,5 +1420,17 @@ function GachaCtrl:OnBtnClick_NewBieJumpRecord()
 	else
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Gacha_NewBieNoRecordTip"))
 	end
+end
+function GachaCtrl:OnEvent_Back(nPanelId)
+	if self._panel._nPanelId ~= nPanelId or self.bGachaProcess then
+		return
+	end
+	EventManager.Hit(EventId.CloesCurPanel)
+end
+function GachaCtrl:OnEvent_Home(nPanelId)
+	if self._panel._nPanelId ~= nPanelId or self.bGachaProcess then
+		return
+	end
+	PanelManager.Home()
 end
 return GachaCtrl

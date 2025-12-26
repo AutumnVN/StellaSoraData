@@ -737,14 +737,15 @@ function ActivityAvgData:RefreshAvgRedDot()
 				if tbActGroupRedDot[nActGroupId] == nil then
 					tbActGroupRedDot[nActGroupId] = false
 				end
-				local isUnlock = self:IsUnlock(storyId)
+				local cfg = ConfigTable.GetData("ActivityStory", storyId)
+				local isUnlock = self:IsUnlock(cfg.ConditionId)
 				local isClicked = LocalData.GetPlayerLocalData("Act_Story_New" .. actId .. storyId) == true
 				local isNew = self:IsStoryReaded(storyId) == false
 				local curTime = CS.ClientManager.Instance.serverTimeStamp
 				local _ActAvg = self.tbActAvgList[actId]
 				local isOpen = false
 				if _ActAvg ~= nil then
-					isOpen = curTime < _ActAvg.nEndTime and curTime > _ActAvg.nOpenTime
+					isOpen = self:IsOpen(cfg.StoryId)
 				end
 				local actGroupData = PlayerData.Activity:GetActivityGroupDataById(nActGroupId)
 				local bActGroupUnlock = actGroupData:IsUnlock()

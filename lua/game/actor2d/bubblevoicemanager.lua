@@ -255,7 +255,7 @@ local CheckEnable = function()
 	local sBool = LocalData.GetPlayerLocalData("BubbleVoiceEnable")
 	return sBool == nil or sBool == "true"
 end
-local anim, TMP, nCurIndex, timer, nCharIdx
+local anim, TMP, nCurIndex, timer, nCharIdx, trL2D
 local function SetBubble()
 	if anim == nil or TMP == nil then
 		return
@@ -275,6 +275,8 @@ local function SetBubble()
 			if sAnim ~= "" then
 				if RUNNING_BBV_EDITOR == true then
 					Actor2DManager.PlayL2DAnim_InBBVEditor(sAnim)
+				elseif trL2D ~= nil and trL2D:IsNull() == false then
+					Actor2DManager.PlayL2DAnim(trL2D, sAnim, false, true)
 				else
 					Actor2DManager.PlayAnim(sAnim, true, nCharIdx)
 				end
@@ -297,6 +299,7 @@ local function SetBubble()
 		anim = nil
 		TMP = nil
 		timer = nil
+		trL2D = nil
 	end
 end
 function BubbleVoiceManager.Init(bEditor)
@@ -308,7 +311,7 @@ function BubbleVoiceManager.Init(bEditor)
 		end
 	end
 end
-function BubbleVoiceManager.PlayBubbleAnim(goBubbleRoot, sVoResName, nCharSkinId, bIsCG, nCharIndex)
+function BubbleVoiceManager.PlayBubbleAnim(goBubbleRoot, sVoResName, nCharSkinId, bIsCG, nCharIndex, trL2DInstance)
 	if nCharIndex == nil then
 		nCharIndex = 1
 	end
@@ -344,6 +347,7 @@ function BubbleVoiceManager.PlayBubbleAnim(goBubbleRoot, sVoResName, nCharSkinId
 			anim = tr:GetComponent("Animator")
 			TMP = tr:GetComponentInChildren(typeof(CS.TMPro.TMP_Text))
 			nCurIndex = 0
+			trL2D = trL2DInstance
 			SetBubble()
 		end
 	end
@@ -363,7 +367,12 @@ function BubbleVoiceManager.StopBubbleAnim(bNoAnim)
 		timer = nil
 	end
 	TMP = nil
-	Actor2DManager.PlayAnim("idle", true, nCharIdx)
+	if trL2D ~= nil and trL2D:IsNull() == false then
+		Actor2DManager.PlayL2DAnim(trL2D, "idle", true, true)
+		trL2D = nil
+	else
+		Actor2DManager.PlayAnim("idle", true, nCharIdx)
+	end
 end
 function BubbleVoiceManager.PauseBubbleAnim()
 	if CheckEnable() == false then
@@ -381,7 +390,7 @@ function BubbleVoiceManager.ResumeBubbleAnim()
 		timer:Pause(false)
 	end
 end
-function BubbleVoiceManager.PlayFixedBubbleAnim(goBubbleRoot, sVoResName, nCharIndex)
+function BubbleVoiceManager.PlayFixedBubbleAnim(goBubbleRoot, sVoResName, nCharIndex, trL2DInstance)
 	if nCharIndex == nil then
 		nCharIndex = 1
 	end
@@ -397,6 +406,7 @@ function BubbleVoiceManager.PlayFixedBubbleAnim(goBubbleRoot, sVoResName, nCharI
 		anim = goBubbleRoot:GetComponent("Animator")
 		TMP = goBubbleRoot:GetComponentInChildren(typeof(CS.TMPro.TMP_Text))
 		nCurIndex = 0
+		trL2D = trL2DInstance
 		SetBubble()
 	end
 end
@@ -425,15 +435,16 @@ function BubbleVoiceManager.GetBubbleText(sVoResName)
 	return tb
 end
 function BubbleVoiceManager.GetVoResLen(sVoResName)
+	local nDuration = 0
 	if type(map_VoResLen) == "table" then
 		local nCurVoLanIndex = GetLanguageIndex(Settings.sCurrentVoLanguage)
 		local sLanFolder = GetLanguageSurfixByIndex(nCurVoLanIndex)
-		local nDuration = map_VoResLen[sVoResName .. sLanFolder]
+		nDuration = map_VoResLen[sVoResName .. sLanFolder]
 		if nDuration == nil then
 			nDuration = 0
 		end
-		return nDuration
 	end
+	return nDuration
 end
 function BubbleVoiceManager.GetL2DAnim(sVoResName)
 	local data = map_BubbleData[sVoResName]

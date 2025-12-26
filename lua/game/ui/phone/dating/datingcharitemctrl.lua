@@ -21,13 +21,21 @@ function DatingCharItemCtrl:SetDatingCharItem(nCharId)
 		if mapSkin ~= nil then
 			self:SetPngSprite(self._mapNode.imgHeadIcon, mapSkin.Icon, AllEnum.CharHeadIconSurfix.S)
 		end
-		NovaAPI.SetTMPText(self._mapNode.txtCharName[1], mapCharacter.Name)
-		NovaAPI.SetTMPText(self._mapNode.txtCharName[2], mapCharacter.Name)
+		local sName = self:_temp_proc_name(mapCharacter.Name)
+		NovaAPI.SetTMPText(self._mapNode.txtCharName[1], sName)
+		NovaAPI.SetTMPText(self._mapNode.txtCharName[2], sName)
 	end
 	self:SetSelect(false)
 	self:RegisterRedDot()
 	local bDating = PlayerData.Dating:CheckDating(self.nCharId)
 	self._mapNode.imgDating.gameObject:SetActive(bDating)
+end
+function DatingCharItemCtrl:_temp_proc_name(sName)
+	local _sName = string.gsub(sName, "%(", [[
+
+(]])
+	local _sName = string.gsub(_sName, "\239\188\136", "\n\239\188\136")
+	return _sName
 end
 function DatingCharItemCtrl:RegisterRedDot()
 	RedDotManager.RegisterNode(RedDotDefine.Phone_Dating_Char, self.nCharId, self._mapNode.redDotDatingItem)

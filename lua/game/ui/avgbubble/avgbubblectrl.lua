@@ -1,5 +1,6 @@
 local LayoutRebuilder = CS.UnityEngine.UI.LayoutRebuilder
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local BubbleVoiceManager = require("Game.Actor2D.BubbleVoiceManager")
 local AvgBubbleCtrl = class("AvgBubbleCtrl", BaseCtrl)
 AvgBubbleCtrl._mapNodeConfig = {
 	cg1 = {
@@ -64,8 +65,6 @@ AvgBubbleCtrl._mapNodeConfig = {
 }
 AvgBubbleCtrl._mapEventConfig = {
 	[EventId.AvgBubbleShutDown] = "CloseBubble",
-	[EventId.AvgVoiceDuration] = "OnEvent_GetAvgVoiceDuration",
-	AvgVoiceResNotFound = "OnEvent_AvgVoiceResNotFound",
 	[EventId.PasueAvgBubble] = "OnEvent_Pause"
 }
 function AvgBubbleCtrl:OnEnable()
@@ -159,23 +158,6 @@ function AvgBubbleCtrl:EndAvgBubble(bCovered)
 		EventManager.Hit(EventId.AvgBubbleExit)
 	end
 	NovaAPI.DispatchEventWithData("AVG_BB_END", nil, string.format("%s|%s", self.sAvgId, tostring(self.sGroupId)))
-end
-function AvgBubbleCtrl:OnEvent_GetAvgVoiceDuration(time)
-	self.nTIME = time
-	if self.timer ~= nil then
-		self.timer:Cancel()
-		self.timer = nil
-	end
-	local tb = {
-		"PopupBubble",
-		"ShowAvgBubbleInPrologue",
-		"PopupBubble3"
-	}
-	local sFuncName = tb[self._panel.nBubbleType]
-	self.timer = self:AddTimer(1, self.nTIME + 0.5, sFuncName, true, false, true)
-end
-function AvgBubbleCtrl:OnEvent_AvgVoiceResNotFound()
-	self:OnEvent_GetAvgVoiceDuration(2)
 end
 function AvgBubbleCtrl:OnEvent_Pause(bPause)
 	self.bPause = bPause
@@ -354,6 +336,8 @@ function AvgBubbleCtrl:PopupBubble3()
 	self.sPreSpeakerAvgCharId = sAvgCharId
 	if type(sVoiceName) == "string" and sVoiceName ~= "" then
 		WwiseAudioMgr:WwiseVoice_PlayInAVG(sVoiceName)
+		self.nTIME = BubbleVoiceManager.GetVoResLen(sVoiceName) + 0.5
+		self.timer = self:AddTimer(1, self.nTIME, "PopupBubble3", true, false, true)
 	else
 		self.nTIME = CalcTextAnimDuration(sContent, self._panel.nCurLanguageIdx, true)
 		self.timer = self:AddTimer(1, self.nTIME, "PopupBubble3", true, false, true)

@@ -5046,7 +5046,7 @@ return {
 			"",
 			false,
 			"",
-			"You could tall it that~ But for the Loong people living in Philae, we have kept the traditional versions as well.",
+			"You could call it that~ But for the Loong people living in Philae, we have kept the traditional versions as well.",
 			""
 		}
 	},

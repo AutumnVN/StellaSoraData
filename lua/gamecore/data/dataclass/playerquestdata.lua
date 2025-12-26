@@ -1002,7 +1002,7 @@ function PlayerQuestData:CacheDailyActiveIds(tbIds)
 	self:UpdateDailyQuestRedDot()
 end
 function PlayerQuestData:CacheWeeklyActiveIds(tbIds)
-	self.curTime = CS.ClientManager.Instance.serverTimeStamp
+	self.nextWeekRefreshTime = GetNextWeekRefreshTime()
 	for _, v in ipairs(tbIds) do
 		self.tbWeeklyActives[v].bReward = true
 	end
@@ -1082,10 +1082,11 @@ function PlayerQuestData:HandleExpire()
 	for _, v in pairs(self.tbDailyActives) do
 		v.bReward = false
 	end
-	if not self:IsSameWeek(self.curTime, curTime, 4) then
+	if curTime > self.nextWeekRefreshTime then
 		for _, v in pairs(self.tbWeeklyActives) do
 			v.bReward = false
 		end
+		self.nextWeekRefreshTime = GetNextWeekRefreshTime()
 	end
 	self.curTime = curTime
 	self:UpdateDailyQuestRedDot()
@@ -1467,28 +1468,5 @@ function PlayerQuestData:ClearVampireSeasonQuest(nCurSeason)
 			end
 		end
 	end
-end
-local GetCurrentYearInfo = function(time_s)
-	local day = os.date("%d", time_s)
-	local weekIndex = os.date("%W", time_s)
-	local month = os.date("%m", time_s)
-	local yearNum = os.date("%Y", time_s)
-	return {
-		year = yearNum,
-		month = month,
-		weekIdx = weekIndex,
-		day = day
-	}
-end
-function PlayerQuestData:IsSameWeek(stampA, stampB, resetHour)
-	resetHour = resetHour or 5
-	local resetSeconds = resetHour * 3600
-	stampA = stampA - resetSeconds
-	stampB = stampB - resetSeconds
-	stampA = math.max(stampA, 0)
-	stampB = math.max(stampB, 0)
-	local dateA = GetCurrentYearInfo(stampA)
-	local dateB = GetCurrentYearInfo(stampB)
-	return dateA.weekIdx == dateB.weekIdx and dateA.year == dateB.year
 end
 return PlayerQuestData

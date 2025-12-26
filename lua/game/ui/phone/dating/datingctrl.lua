@@ -105,7 +105,6 @@ DatingCtrl._mapEventConfig = {
 	DatingEventFinish = "OnEvent_DatingEventFinish",
 	DatingSendGiftFinish = "OnEvent_DatingSendGiftFinish",
 	CloseDatingPanel = "OnEvent_CloseDatingPanel",
-	[EventId.AvgVoiceDuration] = "OnEvent_AvgVoiceDuration",
 	DatingOptionSelected = "OnEvent_DatingOptionSelected",
 	DatingShowImgMsg = "OnBtnClick_DatingShowImgMsg"
 }
@@ -443,11 +442,6 @@ function DatingCtrl:OnDisable()
 	if self.goL2D ~= nil and self.goL2D.tbRenderer ~= nil then
 		Actor2DManager.UnSetActor2DWithRender(self.goL2D.tbRenderer)
 	end
-	if self.charVoiceTimer ~= nil then
-		self.charVoiceTimer:Cancel()
-		self.charVoiceTimer = nil
-	end
-	BubbleVoiceManager.StopBubbleAnim(true)
 end
 function DatingCtrl:OnDestroy()
 end
@@ -514,14 +508,31 @@ function DatingCtrl:OnEvent_DatingEventFinish()
 end
 function DatingCtrl:OnEvent_DatingSendGiftFinish(sVoiceKey, msgData)
 	self.msgData = msgData
-	self.bPlayCharVoice = false
 	self.nGiftVoiceId = PlayerData.Voice:PlayCharVoice(sVoiceKey, self._panel.nCharId)
-	self.charVoiceTimer = self:AddTimer(1, 0.5, function()
-		if not self.bPlayCharVoice then
+	if type(self.nGiftVoiceId) == "number" and self.nGiftVoiceId ~= 0 then
+		local mapVoiceCfg = ConfigTable.GetData("VoDirectory", self.nGiftVoiceId)
+		if mapVoiceCfg == nil then
 			self:ShowReward()
+			return
 		end
-		self.charVoiceTimer = nil
-	end, true, true, true)
+		self._mapNode.goBubble.gameObject:SetActive(true)
+		local sVoResName = mapVoiceCfg.voResource
+		local trL2DInstance
+		if self.goL2D ~= nil then
+			trL2DInstance = self.goL2D.tbRenderer.trL2DIns.transform
+		end
+		BubbleVoiceManager.PlayFixedBubbleAnim(self._mapNode.goBubble, sVoResName, nil, trL2DInstance)
+		local nVoiceDuration = BubbleVoiceManager.GetVoResLen(sVoResName)
+		if 0 < nVoiceDuration then
+			self.timerWaitVoice = self:AddTimer(1, nVoiceDuration, function()
+				self:ShowReward()
+				self.timerWaitVoice = nil
+			end, true, true, true)
+			self._mapNode.btnSkipVoice.gameObject:SetActive(true)
+		end
+	else
+		self:ShowReward()
+	end
 end
 function DatingCtrl:OnEvent_CloseDatingPanel()
 	local nCharId = self._panel.nCharId
@@ -546,46 +557,10 @@ function DatingCtrl:OnEvent_CloseDatingPanel()
 		PlayerData.Dating:SetCharFavourLevelUpDelay(mapDelay)
 	end
 end
-function DatingCtrl:OnEvent_AvgVoiceDuration(nDuration)
-	if self.nGiftVoiceId ~= nil then
-		local mapVoiceCfg = ConfigTable.GetData("VoDirectory", self.nGiftVoiceId)
-		if mapVoiceCfg == nil then
-			return
-		end
-		self.bPlayCharVoice = true
-		if self.goL2D ~= nil then
-			local tbAnim = BubbleVoiceManager.GetL2DAnim(mapVoiceCfg.voResource)
-			if tbAnim ~= nil then
-				local sAnim = tbAnim[1]
-				for k, v in pairs(tbAnim) do
-					if v ~= "" then
-						sAnim = v
-						break
-					end
-				end
-				Actor2DManager.PlayL2DAnim(self.goL2D.tbRenderer.trL2DIns.transform, sAnim, false, true)
-			end
-		end
-		self._mapNode.goBubble.gameObject:SetActive(true)
-		BubbleVoiceManager.PlayFixedBubbleAnim(self._mapNode.goBubble, mapVoiceCfg.voResource)
-		if nDuration ~= nil and 0 < nDuration then
-			self.timerWaitVoice = self:AddTimer(1, nDuration, function()
-				self:ShowReward()
-			end, true, true, true)
-			self._mapNode.btnSkipVoice.gameObject:SetActive(true)
-		else
-			self:ShowReward()
-		end
-	end
-end
 function DatingCtrl:OnBtnClick_SkipVoice()
 	self.nSkipClickedCount = self.nSkipClickedCount + 1
 	if self.nSkipClickedCount < 2 then
 		return
-	end
-	if self.charVoiceTimer ~= nil then
-		self.charVoiceTimer:Cancel()
-		self.charVoiceTimer = nil
 	end
 	if self.timerWaitVoice ~= nil then
 		self.timerWaitVoice:Cancel()

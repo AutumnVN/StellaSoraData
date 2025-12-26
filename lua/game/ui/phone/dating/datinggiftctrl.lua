@@ -103,16 +103,14 @@ function DatingGiftCtrl:GetGiftFavourLevel(itemList)
 end
 function DatingGiftCtrl:GetGiftFeedbackLevel(tbItems)
 	local nLevel = self:GetGiftFavourLevel(tbItems)
-	if 1 < nLevel then
-		nLevel = 3
-	else
-		for _, v in ipairs(tbItems) do
-			local itemData = ConfigTable.GetData_Item(v.Tid)
-			if itemData.Rarity == GameEnum.itemRarity.SSR then
-				nLevel = 1
-			else
-				nLevel = 2
-			end
+	for _, v in ipairs(tbItems) do
+		local itemData = ConfigTable.GetData_Item(v.Tid)
+		if itemData.Rarity <= GameEnum.itemRarity.SR and nLevel == 1 then
+			nLevel = 1
+		elseif itemData.Rarity == GameEnum.itemRarity.R and nLevel == 1 or itemData.Rarity <= GameEnum.itemRarity.SR and nLevel == 2 then
+			nLevel = 2
+		elseif itemData.Rarity == GameEnum.itemRarity.R and nLevel == 2 or nLevel == 3 then
+			nLevel = 3
 		end
 	end
 	return nLevel

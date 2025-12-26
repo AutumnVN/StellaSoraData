@@ -58,6 +58,12 @@ function ActivityDataBase:CheckActShow()
 		return self:CheckActivityOpen()
 	end
 end
+function ActivityDataBase:CheckHideFromActList()
+	if self.actCfg ~= nil then
+		return self.actCfg.HideFromActivityList
+	end
+	return true
+end
 function ActivityDataBase:GetPlayState()
 	return self.bPlay
 end
