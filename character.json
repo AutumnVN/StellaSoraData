@@ -2757,7 +2757,7 @@
                         "Skill (from Skill)"
                     ],
                     "effectType": [
-                        "DEF (base)"
+                        "DEF (abs)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -19046,7 +19046,7 @@
                     "desc": "When Floral Storm (Support Skill)'s seed shower deals DMG, reduces the target's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "damageType": [],
                     "effectType": [
-                        "DEF (base)"
+                        "DEF (abs)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -19173,7 +19173,7 @@
                     "desc": "Reduces the &Param1& of target inflicted with Seed Orb by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "DEF (base)"
+                        "DEF (abs)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -47588,7 +47588,7 @@
                 {
                     "id": 513405,
                     "name": "Pyro Mark",
-                    "briefDesc": "Fiery Punches and Magma Burst deals increased &Param2& and can trigger ##Ignis Mark1016#.",
+                    "briefDesc": "Fiery Punches and Magma Burst deals increased &Param2& and can trigger ##Ignis Mark#1016#.",
                     "desc": "Increases the &Param2& dealt by Fiery Punches and Magma Burst by <color=#ec6d21>&Param1&, and allows them to trigger ##Ignis Mark#1016#.",
                     "damageType": [],
                     "effectType": [],
@@ -63485,7 +63485,7 @@
                         "Ultimate DMG (base)"
                     ],
                     "addAttrType": [
-                        "Ultimate DMG Taken (base)"
+                        "Ultimate DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
