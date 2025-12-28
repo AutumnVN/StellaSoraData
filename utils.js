@@ -609,6 +609,7 @@ function getEffectData(effectId) {
 
 function formatEffectType(id, type, paramType) {
     let result = '';
+    const effectRate = EFFECTVALUE[id].EffectRate;
     const effectTypeStr = EFFECT_TYPE[EFFECTVALUE[id].EffectType];
     const attrTypeStr = ATTR_TYPE[type];
     const paramTypeStr = PARAM_TYPE[paramType];
@@ -631,6 +632,10 @@ function formatEffectType(id, type, paramType) {
         if (effectTypeStr.includes('ATTR_FIX')) {
             result += ` (${paramTypeStr})`;
         }
+    }
+
+    if (effectRate && effectRate !== 100) {
+        result += ` @ ${effectRate}%`;
     }
 
     return result;
