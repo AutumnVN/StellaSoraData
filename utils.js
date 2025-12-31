@@ -7,6 +7,8 @@ const ONCEADDITTIONALATTRIBUTEVALUE = require('./EN/bin/OnceAdditionalAttributeV
 const SCRIPTPARAMETERVALUE = require('./EN/bin/ScriptParameterValue.json');
 const SHIELDVALUE = require('./EN/bin/ShieldValue.json');
 const SKILL = require('./EN/bin/Skill.json');
+const SCOREBOSSABILITY = require('./EN/bin/ScoreBossAbility.json');
+const SCOREBOSSGETCONTROL = require('./EN/bin/ScoreBossGetControl.json');
 const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
 const LANG_SKILL = require('./EN/language/en_US/Skill.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
@@ -461,6 +463,16 @@ function resolveParam(params) {
                 case 'Skill':
                     if (!SKILL[p[2]]) return param;
                     value = LANG_SKILL[SKILL[p[2]][p[3]]];
+                    break;
+
+                case 'ScoreBossAbility':
+                    if (!SCOREBOSSABILITY[p[2]]) return param;
+                    value = SCOREBOSSABILITY[p[2]][p[3]];
+                    break;
+
+                case 'ScoreBossGetControl':
+                    if (!SCOREBOSSGETCONTROL[p[2]]) return param;
+                    value = SCOREBOSSGETCONTROL[p[2]][p[3]];
                     break;
 
                 default:

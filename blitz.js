@@ -15,7 +15,7 @@ const LANG_SCOREBOSSGETCONTROL = require('./EN/language/en_US/ScoreBossGetContro
 const LANG_SCOREBOSSABILITY = require('./EN/language/en_US/ScoreBossAbility.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_MONSTERMANUAL = require('./EN/language/en_US/MonsterManual.json');
-const { MONSTER_EPIC_TYPE, formatEffectType } = require('./utils');
+const { MONSTER_EPIC_TYPE, formatEffectType, collectParamsFrom, resolveParam } = require('./utils');
 
 const blitz = {};
 
@@ -26,7 +26,7 @@ for (const id in SCOREBOSSLEVEL) {
     const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster.FAId].MonsterManual];
     const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
     const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[0];
-    const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === +(scoreBossLevel.MonsterId.toString().slice(2, 6)));
+    const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === +`100${fixId(id)}`);
 
     blitz[id] = {
         name: LANG_MONSTERMANUAL[monsterManual.Name],
@@ -35,12 +35,12 @@ for (const id in SCOREBOSSLEVEL) {
         mechanic: [
             {
                 name: LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].Name],
-                desc: LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].Desc],
+                desc: getScoreBossGetControlDesc(scoreBossLevel.NonDamageScoreGet),
                 icon: SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].IconSource.split('/').pop(),
             },
             {
                 name: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Name],
-                desc: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Desc].replaceAll('&Param1&', SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Value1 + '%').replaceAll('&Param2&', SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Value2 + '%'),
+                desc: getScoreBossAbilityDesc(scoreBossLevel.ScoreBossAbility),
                 icon: SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].IconSource.split('/').pop(),
                 effectType: getBlitzEffectType(id),
                 buffIcon: getBlitzBuffIcon(id),
@@ -95,6 +95,34 @@ for (const id in SCOREBOSSLEVEL) {
 }
 
 writeFileSync('./blitz.json', JSON.stringify(blitz, null, 4));
+
+function getScoreBossGetControlDesc(id) {
+    let result = LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[id].Desc];
+    const params = collectParamsFrom(SCOREBOSSGETCONTROL[id]);
+    const resolvedParams = resolveParam(params);
+
+    resolvedParams.forEach((paramSet, index) => {
+        const splitted = paramSet.toString().split('/');
+        const paramValue = splitted.length === 13 ? splitted[skillLevel2 - 1] : splitted.length === 9 ? splitted[potentialLevel - 1] : splitted[0];
+        result = result.replaceAll(`&Param${index + 1}&`, paramValue);
+    });
+
+    return result;
+}
+
+function getScoreBossAbilityDesc(id) {
+    let result = LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[id].Desc];
+    const params = collectParamsFrom(SCOREBOSSABILITY[id]);
+    const resolvedParams = resolveParam(params);
+
+    resolvedParams.forEach((paramSet, index) => {
+        const splitted = paramSet.toString().split('/');
+        const paramValue = splitted.length === 13 ? splitted[skillLevel2 - 1] : splitted.length === 9 ? splitted[potentialLevel - 1] : splitted[0];
+        result = result.replaceAll(`&Param${index + 1}&`, paramValue);
+    });
+
+    return result;
+}
 
 function getBlitzEffectType(id) {
     id = fixId(id);
