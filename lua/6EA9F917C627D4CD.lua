@@ -1,0 +1,21 @@
+local MiningGameQuestPanel = class("MiningGamePanel", BasePanel)
+MiningGameQuestPanel._bIsMainPanel = true
+MiningGameQuestPanel._tbDefine = {
+	{
+		sPrefabPath = "Activity/Play_Mining_400003/MiningGameQuestPanel.prefab",
+		sCtrlName = "Game.UI.Play_Mining.400003.MiningGameQuestCtrl"
+	}
+}
+function MiningGameQuestPanel:Awake()
+end
+function MiningGameQuestPanel:OnEnable()
+end
+function MiningGameQuestPanel:OnAfterEnter()
+end
+function MiningGameQuestPanel:OnDisable()
+end
+function MiningGameQuestPanel:OnDestroy()
+end
+function MiningGameQuestPanel:OnRelease()
+end
+return MiningGameQuestPanel

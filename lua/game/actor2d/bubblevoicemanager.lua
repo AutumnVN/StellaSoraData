@@ -435,6 +435,9 @@ function BubbleVoiceManager.GetBubbleText(sVoResName)
 	return tb
 end
 function BubbleVoiceManager.GetVoResLen(sVoResName)
+	if bLoaded ~= true then
+		LoadAll()
+	end
 	local nDuration = 0
 	if type(map_VoResLen) == "table" then
 		local nCurVoLanIndex = GetLanguageIndex(Settings.sCurrentVoLanguage)
