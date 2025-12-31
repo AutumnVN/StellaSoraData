@@ -485,7 +485,6 @@ function resolveParam(params) {
                 case 'HdPct':
                     return iHateFloatingPointNumber(value, '*', 100) + '%';
                 case 'Fixed':
-                    if (value.toString().startsWith('0.')) return iHateFloatingPointNumber(value, '*', 100) + '%';
                     return value;
                 case '10K':
                     return iHateFloatingPointNumber(value, '/', 10000);
