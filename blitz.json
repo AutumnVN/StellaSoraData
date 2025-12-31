@@ -12465,7 +12465,7 @@
             },
             {
                 "name": "Reality Shift",
-                "desc": "The boss shifts between Illusion Form and Reality Form every <color=#ec6d21>15s</color>.\nIn Reality Form, the boss takes <color=#ec6d21>50%</color> more Minion DMG. Triggering a mark increases the current form's duration by <color=#ec6d21>60%</color>s. It can only be triggered once per sec.\nIn Illusion Form, the boss takes <color=#ec6d21>50%</color> increased Skill DMG. Dealing Minion DMG each time increases the current form's duration by <color=#ec6d21>60%</color>s. It can only be triggered once per sec.",
+                "desc": "The boss shifts between Illusion Form and Reality Form every <color=#ec6d21>15s</color>.\nIn Reality Form, the boss takes <color=#ec6d21>50%</color> more Minion DMG. Triggering a mark increases the current form's duration by <color=#ec6d21>0.6</color>s. It can only be triggered once per sec.\nIn Illusion Form, the boss takes <color=#ec6d21>50%</color> increased Skill DMG. Dealing Minion DMG each time increases the current form's duration by <color=#ec6d21>0.6</color>s. It can only be triggered once per sec.",
                 "icon": "Icon_Bossrush_Teshujizhi_007",
                 "effectType": [
                     "Minion DMG Taken (base)",
