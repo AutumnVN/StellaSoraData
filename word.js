@@ -40,15 +40,15 @@ function getWordEffectType(id) {
     for (const param of params) {
         const p = param.split(',');
 
-        let currentId = +p[2];
-        if (!EFFECTVALUE[currentId]) currentId += 10;
-        if (!EFFECTVALUE[currentId]) continue;
+        let effectId = +p[2];
+        if (!EFFECTVALUE[effectId]) effectId += 10;
+        if (!EFFECTVALUE[effectId]) continue;
 
-        let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
-        if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
-        const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
+        let type = EFFECTVALUE[effectId].EffectTypeFirstSubtype;
+        if (!type) type = EFFECTVALUE[EFFECTVALUE[effectId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[effectId].EffectTypeSecondSubtype;
 
-        effectTypes.push(formatEffectType(currentId, type, paramType));
+        effectTypes.push(formatEffectType(effectId, type, paramType));
     }
 
     return [...new Set(effectTypes)];
@@ -62,14 +62,14 @@ function getWordAddAttrType(id) {
     for (const param of params) {
         const p = param.split(',');
 
-        let currentId = +p[2];
-        if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) currentId += 10;
-        if (!ONCEADDITTIONALATTRIBUTEVALUE[currentId]) continue;
+        let addAttrId = +p[2];
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) addAttrId += 10;
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) continue;
 
-        const type = ONCEADDITTIONALATTRIBUTEVALUE[currentId].AttributeType1;
-        const paramType = ONCEADDITTIONALATTRIBUTEVALUE[currentId].ParameterType1;
-        const type2 = ONCEADDITTIONALATTRIBUTEVALUE[currentId].AttributeType2;
-        const paramType2 = ONCEADDITTIONALATTRIBUTEVALUE[currentId].ParameterType2;
+        const type = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType1;
+        const paramType = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType1;
+        const type2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType2;
+        const paramType2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType2;
 
         addAttrTypes.push(formatAddAttrType(type, paramType));
         if (type2 && paramType2) addAttrTypes.push(formatAddAttrType(type2, paramType2));
@@ -85,10 +85,10 @@ function getWordEffectData(id) {
 
     for (const param of params) {
         const p = param.split(',');
-        let currentId = +p[2];
-        if (!EFFECT[currentId]) continue;
+        let effectId = +p[2];
+        if (!EFFECT[effectId]) continue;
 
-        const data = getEffectData(currentId);
+        const data = getEffectData(effectId);
         if (!data) continue;
 
         effectDatas.push(data);

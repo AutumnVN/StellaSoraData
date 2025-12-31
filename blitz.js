@@ -9,11 +9,13 @@ const MONSTERSKIN = require('./EN/bin/MonsterSkin.json');
 const MONSTERVALUETEMPLETE = require('./EN/bin/MonsterValueTemplete.json');
 const MONSTERVALUETEMPLETEADJUST = require('./EN/bin/MonsterValueTempleteAdjust.json');
 const MONSTERVALUETEMPLETEMODIFY = require('./EN/bin/MonsterValueTempleteModify.json');
+const EFFECTVALUE = require('./EN/bin/EffectValue.json');
+const BUFF = require('./EN/bin/Buff.json');
 const LANG_SCOREBOSSGETCONTROL = require('./EN/language/en_US/ScoreBossGetControl.json');
 const LANG_SCOREBOSSABILITY = require('./EN/language/en_US/ScoreBossAbility.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_MONSTERMANUAL = require('./EN/language/en_US/MonsterManual.json');
-const { MONSTER_EPIC_TYPE } = require('./utils');
+const { MONSTER_EPIC_TYPE, formatEffectType } = require('./utils');
 
 const blitz = {};
 
@@ -40,6 +42,8 @@ for (const id in SCOREBOSSLEVEL) {
                 name: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Name],
                 desc: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Desc].replaceAll('&Param1&', SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Value1 + '%').replaceAll('&Param2&', SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Value2 + '%'),
                 icon: SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].IconSource.split('/').pop(),
+                effectType: getBlitzEffectType(id),
+                buffIcon: getBlitzBuffIcon(id),
             }
         ],
         weakTo: monsterValueTemplateAdjust.WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
@@ -91,3 +95,41 @@ for (const id in SCOREBOSSLEVEL) {
 }
 
 writeFileSync('./blitz.json', JSON.stringify(blitz, null, 4));
+
+function getBlitzEffectType(id) {
+    id = fixId(id);
+
+    const effectIds = Object.keys(EFFECTVALUE).filter(effectId => effectId.startsWith(`63100${id}`));
+    const effectTypes = [];
+
+    for (const effectId of effectIds) {
+        let type = EFFECTVALUE[effectId].EffectTypeFirstSubtype;
+        if (!type) type = EFFECTVALUE[EFFECTVALUE[effectId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[effectId].EffectTypeSecondSubtype;
+
+        effectTypes.push(formatEffectType(effectId, type, paramType));
+    }
+
+    return [...new Set(effectTypes)];
+}
+
+function getBlitzBuffIcon(id) {
+    id = fixId(id);
+
+    const buffIds = Object.keys(BUFF).filter(buffId => buffId.startsWith(`63100${id}`));
+    const buffIcons = [];
+
+    for (const buffId of buffIds) {
+        const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
+
+        buffIcons.push(icon);
+    }
+
+    return [...new Set(buffIcons)];
+}
+
+function fixId(id) {
+    if (id === '2') return '3';
+    else if (id === '3') return '2';
+    else return id;
+}

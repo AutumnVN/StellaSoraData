@@ -80,15 +80,15 @@ function getMainSkillEffectTypes(id) {
     const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
-        let currentId = +effectKey;
-        if (!EFFECTVALUE[currentId]) currentId += 10;
-        if (!EFFECTVALUE[currentId]) continue;
+        let effectId = +effectKey;
+        if (!EFFECTVALUE[effectId]) effectId += 10;
+        if (!EFFECTVALUE[effectId]) continue;
 
-        let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
-        if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
-        const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
+        let type = EFFECTVALUE[effectId].EffectTypeFirstSubtype;
+        if (!type) type = EFFECTVALUE[EFFECTVALUE[effectId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[effectId].EffectTypeSecondSubtype;
 
-        effectTypes.push(formatEffectType(currentId, type, paramType));
+        effectTypes.push(formatEffectType(effectId, type, paramType));
     }
 
     return [...new Set(effectTypes)];
@@ -100,10 +100,10 @@ function getMainSkillEffectData(id) {
     const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
-        let currentId = +effectKey;
-        if (!EFFECT[currentId]) continue;
+        let effectId = +effectKey;
+        if (!EFFECT[effectId]) continue;
 
-        const data = getEffectData(currentId);
+        const data = getEffectData(effectId);
         if (!data) continue;
 
         effectDatas.push(data);
@@ -118,10 +118,10 @@ function getMainSkillBuffIcons(id) {
     const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
-        let currentId = +effectKey;
-        if (!BUFF[currentId]) continue;
+        let buffId = +effectKey;
+        if (!BUFF[buffId]) continue;
 
-        const buffIcon = BUFF[currentId].Icon ? BUFF[currentId].Icon.split('/').pop() : 'No Icon';
+        const buffIcon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon';
         buffIcons.push(buffIcon);
     }
 
@@ -167,15 +167,15 @@ function getSeconarySkillEffectTypes(id) {
     const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
-        let currentId = +effectKey;
-        if (!EFFECTVALUE[currentId]) currentId += 10;
-        if (!EFFECTVALUE[currentId]) continue;
+        let effectId = +effectKey;
+        if (!EFFECTVALUE[effectId]) effectId += 10;
+        if (!EFFECTVALUE[effectId]) continue;
 
-        let type = EFFECTVALUE[currentId].EffectTypeFirstSubtype;
-        if (!type) type = EFFECTVALUE[EFFECTVALUE[currentId].EffectTypeParam1]?.EffectTypeFirstSubtype;
-        const paramType = EFFECTVALUE[currentId].EffectTypeSecondSubtype;
+        let type = EFFECTVALUE[effectId].EffectTypeFirstSubtype;
+        if (!type) type = EFFECTVALUE[EFFECTVALUE[effectId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[effectId].EffectTypeSecondSubtype;
 
-        effectTypes.push(formatEffectType(currentId, type, paramType));
+        effectTypes.push(formatEffectType(effectId, type, paramType));
     }
 
     return [...new Set(effectTypes)];
@@ -187,10 +187,10 @@ function getSeconarySkillEffectData(id) {
     const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
-        let currentId = +effectKey;
-        if (!EFFECT[currentId]) continue;
+        let effectId = +effectKey;
+        if (!EFFECT[effectId]) continue;
 
-        const data = getEffectData(currentId);
+        const data = getEffectData(effectId);
         if (!data) continue;
 
         effectDatas.push(data);
@@ -205,10 +205,10 @@ function getSecondarySkillBuffIcons(id) {
     const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`) && k.length === 7);
 
     for (const effectKey of effectKeys) {
-        let currentId = +effectKey;
-        if (!BUFF[currentId]) continue;
+        let buffId = +effectKey;
+        if (!BUFF[buffId]) continue;
 
-        const buffIcon = BUFF[currentId].Icon ? BUFF[currentId].Icon.split('/').pop() : 'No Icon';
+        const buffIcon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon';
         buffIcons.push(buffIcon);
     }
 
