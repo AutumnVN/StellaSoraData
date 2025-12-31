@@ -35,7 +35,7 @@ for (const id in SCOREBOSSLEVEL) {
         mechanic: [
             {
                 name: LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].Name],
-                desc: LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].BehaviorDes],
+                desc: LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].Desc],
                 icon: SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].IconSource.split('/').pop(),
             },
             {
