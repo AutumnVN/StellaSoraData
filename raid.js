@@ -29,8 +29,10 @@ for (const drillId in JOINTDRILLCONTROL) {
             desc: LANG_JOINTDRILLAFFIX[JOINTDRILLAFFIX[affixId].Desc],
             icon: JOINTDRILLAFFIX[affixId].Icon.split('/').pop(),
         })),
-        weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[0].BossId].Templete].WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
-        resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[0].BossId].Templete].EET}.1`],
+        // weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[0].BossId].Templete].WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
+        // resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[0].BossId].Templete].EET}.1`],
+        weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId].Templete].WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
+        resistTo: (MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId].Templete].ResistEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'])[0],
         diff: drillLevels.map((level, index) => {
             const monster = MONSTER[level.BossId];
             const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
