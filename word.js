@@ -104,7 +104,9 @@ function getWordBuffIcons(id) {
 
     for (const param of params) {
         const p = param.split(',');
-        const buffId = +p[2];
+
+        let buffId = +p[2];
+        if (!BUFF[buffId]) buffId += 10;
         if (!BUFF[buffId]) continue;
 
         const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
