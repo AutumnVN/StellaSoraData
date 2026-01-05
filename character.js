@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom } = require('./utils');
+const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -294,13 +294,14 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            hiddenParams: getPotentialHiddenParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -309,13 +310,14 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            hiddenParams: getPotentialHiddenParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -324,13 +326,14 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            hiddenParams: getPotentialHiddenParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -339,13 +342,14 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            hiddenParams: getPotentialHiddenParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -354,13 +358,14 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            hiddenParams: getPotentialHiddenParams(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -370,6 +375,11 @@ function getPotentials(charId) {
 
 function getPotentialParams(potId) {
     const params = collectParamsFrom(POTENTIAL[potId]);
+    return resolveParam(params);
+}
+
+function getPotentialHiddenParams(potId) {
+    const params = collectPotentialHiddenParamsFrom(POTENTIAL[potId]).params;
     return resolveParam(params);
 }
 

@@ -406,6 +406,20 @@ function collectUnusedParamsFrom(obj, lang) {
     return paramKeys.map(k => `\u000b${k}: &${k}& (${obj[k].split(',')[0]}${obj[k].split(',')[3] ? `,${obj[k].split(',')[3]}` : ''})`).join(' ');
 }
 
+function collectPotentialHiddenParamsFrom(obj) {
+    if (!obj) return [];
+
+    const charId = obj.CharId;
+    const potId = obj.Id % 100;
+
+    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => id.startsWith(charId) && id.slice(5, 7) === String(potId).padStart(2, '0'));
+
+    return {
+        desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage)`).join(' '),
+        params: hiddenHitDamageIds.map(id => `HitDamage,DamageNum,${id}`)
+    };
+}
+
 function iHateFloatingPointNumber(a, op, b) {
     const smallest = String(a < b ? a : b);
     const factor = smallest.length - smallest.indexOf('.');
@@ -677,7 +691,7 @@ function formatAddAttrType(type, paramType) {
 module.exports = {
     collectParamsFrom,
     collectUnusedParamsFrom,
-    collectHiddenPotentialParamsFrom,
+    collectPotentialHiddenParamsFrom,
     iHateFloatingPointNumber,
     resolveParam,
     getEffectData,
