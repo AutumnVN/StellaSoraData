@@ -399,7 +399,7 @@ function collectUnusedParamsFrom(obj, lang) {
 
     const desc = lang[obj.Desc];
 
-    const paramKeys = Object.keys(obj).filter(k => k.match(/^param\d+$/i)).filter(k => !desc.includes(`&${k}&`));
+    const paramKeys = Object.keys(obj).filter(k => k.match(/^param\d+$/i)).filter(k => !desc.includes(`&${k}&`)).filter(k => obj[k] !== resolveParam([obj[k]])[0]);
 
     if (paramKeys.length === 0) return [];
 
@@ -412,7 +412,7 @@ function collectPotentialHiddenParamsFrom(obj) {
     const charId = obj.CharId;
     const potId = obj.Id % 100;
 
-    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => id.length === 9 && id.startsWith(charId) && id.includes(potId.toString().padStart(2, '0')) && HITDAMAGE[id].HitdamageInfo?.includes(`潜能${potId.toString().padStart(2, '0')}`));
+    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => `HitDamage,DamageNum,${id}` !== resolveParam([`HitDamage,DamageNum,${id}`])[0]).filter(id => id.length === 9 && id.startsWith(charId) && id.includes(potId.toString().padStart(2, '0')) && HITDAMAGE[id].HitdamageInfo?.includes(`潜能${potId.toString().padStart(2, '0')}`));
 
     return {
         desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage)`).join(' '),
@@ -444,7 +444,7 @@ function resolveParam(params) {
         const p = param.split(',');
 
         if (p[0] === 'HitDamage') {
-            if (!HITDAMAGE[p[2]]) return param;
+            if (!HITDAMAGE[p[2]] || !HITDAMAGE[p[2]].SkillPercentAmend) return param;
             return HITDAMAGE[p[2]].SkillPercentAmend.filter(v => v !== 0).map(v => v / 10000 + '%').join('/');
         }
 
