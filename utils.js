@@ -11,6 +11,7 @@ const SCOREBOSSABILITY = require('./EN/bin/ScoreBossAbility.json');
 const SCOREBOSSGETCONTROL = require('./EN/bin/ScoreBossGetControl.json');
 const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
 const LANG_SKILL = require('./EN/language/en_US/Skill.json');
+const LANG_POTENTIAL = require('./EN/language/en_US/Potential.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 
 const ATTR_TYPE = {
@@ -393,6 +394,18 @@ function collectParamsFrom(obj) {
     return params;
 }
 
+function collectUnusedParamsFrom(obj, lang) {
+    if (!obj) return [];
+
+    const desc = lang[obj.Desc];
+
+    const paramKeys = Object.keys(obj).filter(k => k.match(/^param\d+$/i)).filter(k => !desc.includes(`&${k}&`));
+
+    if (paramKeys.length === 0) return [];
+
+    return paramKeys.map(k => `\u000b${k}: &${k}& (${obj[k].split(',')[0]}${obj[k].split(',')[3] ? `,${obj[k].split(',')[3]}` : ''})`).join(' ');
+}
+
 function iHateFloatingPointNumber(a, op, b) {
     const smallest = String(a < b ? a : b);
     const factor = smallest.length - smallest.indexOf('.');
@@ -663,6 +676,8 @@ function formatAddAttrType(type, paramType) {
 
 module.exports = {
     collectParamsFrom,
+    collectUnusedParamsFrom,
+    collectHiddenPotentialParamsFrom,
     iHateFloatingPointNumber,
     resolveParam,
     getEffectData,

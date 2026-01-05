@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE } = require('./utils');
+const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -60,7 +60,7 @@ const character = {};
                 id: CHARACTER[id].NormalAtkId,
                 name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
                 briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
-                desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc],
+                desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].NormalAtkId], LANG_SKILL),
                 damageType: getSkillDamageTypes(CHARACTER[id].NormalAtkId),
                 effectType: getSkillEffectTypes(CHARACTER[id].NormalAtkId),
                 addAttrType: getSkillAddAttrTypes(CHARACTER[id].NormalAtkId),
@@ -74,7 +74,7 @@ const character = {};
                 name: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Title],
                 cooldown: SKILL[CHARACTER[id].SkillId].SkillCD / 10000 + 's',
                 briefDesc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].BriefDesc],
-                desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc],
+                desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].SkillId], LANG_SKILL),
                 damageType: getSkillDamageTypes(CHARACTER[id].SkillId),
                 effectType: getSkillEffectTypes(CHARACTER[id].SkillId),
                 addAttrType: getSkillAddAttrTypes(CHARACTER[id].SkillId),
@@ -88,7 +88,7 @@ const character = {};
                 name: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
                 cooldown: SKILL[CHARACTER[id].AssistSkillId].SkillCD / 10000 + 's',
                 briefDesc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].BriefDesc],
-                desc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc],
+                desc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].AssistSkillId], LANG_SKILL),
                 damageType: getSkillDamageTypes(CHARACTER[id].AssistSkillId),
                 effectType: getSkillEffectTypes(CHARACTER[id].AssistSkillId),
                 addAttrType: getSkillAddAttrTypes(CHARACTER[id].AssistSkillId),
@@ -103,7 +103,7 @@ const character = {};
                 cooldown: SKILL[CHARACTER[id].UltimateId].SkillCD / 10000 + 's',
                 energy: SKILL[CHARACTER[id].UltimateId].UltraEnergy / 10000,
                 briefDesc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].BriefDesc],
-                desc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Desc],
+                desc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].UltimateId], LANG_SKILL),
                 damageType: getSkillDamageTypes(CHARACTER[id].UltimateId),
                 effectType: getSkillEffectTypes(CHARACTER[id].UltimateId),
                 addAttrType: getSkillAddAttrTypes(CHARACTER[id].UltimateId),
@@ -121,15 +121,6 @@ const character = {};
         };
 
         if (character[id].name === '???') character[id].name = `ID_${id}`;
-        if (character[id].normalAtk.desc === '???') character[id].normalAtk.desc = collectParamsFrom(SKILL[CHARACTER[id].NormalAtkId]).map((param, index) => `Param${index + 1}: &Param${index + 1}& (${param.split(',')[0]}${param.split(',')[3] ? `,${param.split(',')[3]}` : ''})`).join('\u000b');
-        if (character[id].skill.desc === '???') character[id].skill.desc = collectParamsFrom(SKILL[CHARACTER[id].SkillId]).map((param, index) => `Param${index + 1}: &Param${index + 1}& (${param.split(',')[0]}${param.split(',')[3] ? `,${param.split(',')[3]}` : ''})`).join('\u000b');
-        if (character[id].supportSkill.desc === '???') character[id].supportSkill.desc = collectParamsFrom(SKILL[CHARACTER[id].AssistSkillId]).map((param, index) => `Param${index + 1}: &Param${index + 1}& (${param.split(',')[0]}${param.split(',')[3] ? `,${param.split(',')[3]}` : ''})`).join('\u000b');
-        if (character[id].ultimate.desc === '???') character[id].ultimate.desc = collectParamsFrom(SKILL[CHARACTER[id].UltimateId]).map((param, index) => `Param${index + 1}: &Param${index + 1}& (${param.split(',')[0]}${param.split(',')[3] ? `,${param.split(',')[3]}` : ''})`).join('\u000b');
-        if (character[id].potential.mainCore.filter(p => p.desc === '???').length > 0) character[id].potential.mainCore.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}& (${param.split(',')[0]}${param.split(',')[3] ? `,${param.split(',')[3]}` : ''})`).join('\u000b'));
-        if (character[id].potential.mainNormal.filter(p => p.desc === '???').length > 0) character[id].potential.mainNormal.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}& (${param.split(',')[0]}${param.split(',')[3] ? `,${param.split(',')[3]}` : ''})`).join('\u000b'));
-        if (character[id].potential.common.filter(p => p.desc === '???').length > 0) character[id].potential.common.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}& (${param.split(',')[0]}${param.split(',')[3] ? `,${param.split(',')[3]}` : ''})`).join('\u000b'));
-        if (character[id].potential.supportCore.filter(p => p.desc === '???').length > 0) character[id].potential.supportCore.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}& (${param.split(',')[0]}${param.split(',')[3] ? `,${param.split(',')[3]}` : ''})`).join('\u000b'));
-        if (character[id].potential.supportNormal.filter(p => p.desc === '???').length > 0) character[id].potential.supportNormal.filter(p => p.desc === '???').forEach(p => p.desc = collectParamsFrom(POTENTIAL[p.id]).map((param, index) => `Param${index + 1}: &Param${index + 1}& (${param.split(',')[0]}${param.split(',')[3] ? `,${param.split(',')[3]}` : ''})`).join('\u000b'));
     }
 
     writeFileSync('./character.json', JSON.stringify(character, null, 4));
@@ -303,7 +294,7 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -318,7 +309,7 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -333,7 +324,7 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -348,7 +339,7 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -363,7 +354,7 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc],
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL),
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
