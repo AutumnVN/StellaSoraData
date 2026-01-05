@@ -313,7 +313,7 @@
                     "id": 510309,
                     "name": "Grand Finale",
                     "briefDesc": "Increases Main Skill DMG and deals additional damage.",
-                    "desc": "Increases the DMG of Fireworks Jam (Main Skill) by <color=#ec6d21>&Param1&</color>, and the Skill shoots 2 extra rounds.\u000bParam2: &Param2& (ScriptParameterValue,CommonData) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "desc": "Increases the DMG of Fireworks Jam (Main Skill) by <color=#ec6d21>&Param1&</color>, and the Skill shoots 2 extra rounds.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -2696,7 +2696,7 @@
             "name": "Aegis Protection",
             "cooldown": "8s",
             "briefDesc": "Hold the Skill button to enter Fortify Stance with increased DEF. When Fortify Stance ends, deals DMG to nearby enemies.\u000bThe Main Skill can inflict ##Lux Mark: Radiance#2016#.",
-            "desc": "Hold the button to enter Fortify Stance for up to 8s, during which DEF is increased by &Param1&.\u000bUpon entering Fortify Stance, becomes immune to all DMG.\u000bWhen Fortify Stance ends, casts a counterattack that deals <color=#fb8037>&Param2& of ATK</color> as AoE Lux DMG and inflicts a ##Lux Mark: Radiance#2016# while boosting the squad's &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s.\u000bParam6: &Param6& (Effect,EffectTypeParam4) \u000bParam7: &Param7& (Effect,EffectTypeParam1) \u000bParam8: &Param8& (Effect,EffectTypeFirstSubtype) \u000bParam9: &Param9& (Effect,EffectTypeParam6)",
+            "desc": "Hold the button to enter Fortify Stance for up to 8s, during which DEF is increased by &Param1&.\u000bUpon entering Fortify Stance, becomes immune to all DMG.\u000bWhen Fortify Stance ends, casts a counterattack that deals <color=#fb8037>&Param2& of ATK</color> as AoE Lux DMG and inflicts a ##Lux Mark: Radiance#2016# while boosting the squad's &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s.",
             "damageType": [
                 "Skill (from Skill)"
             ],
@@ -2728,7 +2728,7 @@
             "name": "Aegis Intervention",
             "cooldown": "12s",
             "briefDesc": "Throws the Aegis of Light, which bounces multiple times and deals DMG.\u000bThe Support Skill can inflict ##Lux Mark: Radiance#2016#.",
-            "desc": "Tilia throws the Aegis of Light, dealing <color=#fb8037>&Param1& of ATK</color> as Lux DMG and stunning the target for &Param2&s, while inflicting ##Lux Mark: Radiance#2016#.\u000bWhen this skill deals DMG, increases the squad's &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s.\u000bParam6: &Param6& (Effect,EffectTypeParam4) \u000bParam7: &Param7& (Effect,EffectTypeParam1) \u000bParam8: &Param8& (Effect,EffectTypeFirstSubtype) \u000bParam9: &Param9& (Effect,EffectTypeParam6)",
+            "desc": "Tilia throws the Aegis of Light, dealing <color=#fb8037>&Param1& of ATK</color> as Lux DMG and stunning the target for &Param2&s, while inflicting ##Lux Mark: Radiance#2016#.\u000bWhen this skill deals DMG, increases the squad's &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s.\u000bParam8: &Param8& (Effect,EffectTypeFirstSubtype)",
             "damageType": [
                 "Skill (from Skill)"
             ],
@@ -5416,7 +5416,7 @@
             "name": "Banishing Barrage",
             "cooldown": "5s",
             "briefDesc": "Loads Incendiary Shells and shoots the target.\u000bThe Main Skill can trigger ##Ignis Mark: Sacred Flame#2013#.",
-            "desc": "Each use of this skill loads 1 Incendiary Shell. Each shell deals <color=#fb8037>&Param2& of ATK</color> as Ignis DMG.\u000bWhen Incendiary Shells (Main Skill) triggers ##Ignis Mark: Sacred Flame#2013#, deals &Param3& of ATK as AoE Ignis Mark DMG.\u000bUp to 10 shells can be loaded.\u000bParam1: &Param1& (OnceAdditionalAttribute,Value1)",
+            "desc": "Each use of this skill loads 1 Incendiary Shell. Each shell deals <color=#fb8037>&Param2& of ATK</color> as Ignis DMG.\u000bWhen Incendiary Shells (Main Skill) triggers ##Ignis Mark: Sacred Flame#2013#, deals &Param3& of ATK as AoE Ignis Mark DMG.\u000bUp to 10 shells can be loaded.",
             "damageType": [
                 "Skill (from Skill)",
                 "Mark"
@@ -5495,7 +5495,7 @@
                     "id": 510802,
                     "name": "Incendiary Warhead",
                     "briefDesc": "When Incendiary Shells deal DMG, inflicts burn on targets hit.",
-                    "desc": "When Incendiary Shells deal damage, inflicts burn on targets hit, dealing damage once per s for &Param3&s, with a total of <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG.\u000bParam1: &Param1& (EffectValue,EffectTypeParam2)",
+                    "desc": "When Incendiary Shells deal damage, inflicts burn on targets hit, dealing damage once per s for &Param3&s, with a total of <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG.",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -18761,7 +18761,7 @@
             "id": 11610000,
             "name": "Sprout Bomb",
             "briefDesc": "Fires consecutive energy rounds to deal DMG.",
-            "desc": "Fires energy rounds, each dealing <color=#fb8037>&Param1& of ATK</color> as Terra DMG. Magazine capacity: 24.\u000bWhen close, swings the shovel cannon to attack, dealing <color=#fb8037>&Param3& of ATK</color> as AoE Terra DMG.\u000bParam2: &Param2& (Character.Main,10K)",
+            "desc": "Fires energy rounds, each dealing <color=#fb8037>&Param1& of ATK</color> as Terra DMG. Magazine capacity: 24.\u000bWhen close, swings the shovel cannon to attack, dealing <color=#fb8037>&Param3& of ATK</color> as AoE Terra DMG.",
             "damageType": [
                 "Auto Attack (from Normal attack)"
             ],
@@ -24160,7 +24160,7 @@
                     "id": 511803,
                     "name": "Shadow Invasion",
                     "briefDesc": "Casting the Main Skill grants Necro Energy. Auto Attacks consume Necro Energy to unleash Shadow Scythes.",
-                    "desc": "When casting Sleight of Scythe (Main Skill), gains <color=#0abec5>2</color> stacks of Necro Energy.\u000bEach Auto Attack will automatically consume 2 stacks of Necro Energy to launch 3 Shadow Scythes, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Auto Attack DMG.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "desc": "When casting Sleight of Scythe (Main Skill), gains <color=#0abec5>2</color> stacks of Necro Energy.\u000bEach Auto Attack will automatically consume 2 stacks of Necro Energy to launch 3 Shadow Scythes, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Auto Attack DMG.",
                     "damageType": [
                         "Auto Attack"
                     ],
@@ -24181,7 +24181,7 @@
                     "id": 511804,
                     "name": "Phantom Blade",
                     "briefDesc": "The last strike of Auto Attack grants Necro Energy. Auto Attacks consume Necro Energy to unleash Shadow Scythes.",
-                    "desc": "When launching the final strike of Midnight Cleave, gains <color=#0abec5>1</color> stack of Necro Energy.\u000bEach Auto Attack will automatically consume 2 stacks of Necro Energy to launch 3 Shadow Scythes, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Auto Attack DMG.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "desc": "When launching the final strike of Midnight Cleave, gains <color=#0abec5>1</color> stack of Necro Energy.\u000bEach Auto Attack will automatically consume 2 stacks of Necro Energy to launch 3 Shadow Scythes, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Auto Attack DMG.",
                     "damageType": [
                         "Auto Attack"
                     ],
@@ -37451,7 +37451,7 @@
             "name": "Hat Toss",
             "cooldown": "12s",
             "briefDesc": "Throws the top hat, dealing DMG multiple times and inflicting ##Ignis Mark: Sacred Flame#2013#.",
-            "desc": "Throws the top hat, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG every 0.5s for a total of 5s, and inflicting ##Ignis Mark: Sacred Flame#2013#. \u000bWhen casting this skill, increases the squad's &Param9& by <color=#fb8037>&Param7&</color> for &Param4&s.\u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (Effect,EffectTypeParam5) \u000bParam6: &Param6& (Effect,EffectTypeParam4) \u000bParam8: &Param8& (Effect,EffectTypeParam6)",
+            "desc": "Throws the top hat, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG every 0.5s for a total of 5s, and inflicting ##Ignis Mark: Sacred Flame#2013#. \u000bWhen casting this skill, increases the squad's &Param9& by <color=#fb8037>&Param7&</color> for &Param4&s.\u000bParam3: &Param3& (Effect,EffectTypeParam1)",
             "damageType": [
                 "Skill (from Skill)"
             ],
@@ -37891,7 +37891,7 @@
                     "id": 512621,
                     "name": "Ember of Tomorrow",
                     "briefDesc": "Spawns more Soulflare Butterflies. \u000bEach stack of ##Butterfly Mark#2021# increases the target's &Param3&.",
-                    "desc": "Spawns <color=#0abec5>2</color> more Soulflare Butterflies. \u000bEach stack of ##Butterfly Mark#2021# increases the target's &Param3& by an additional <color=#0abec5>&Param1&</color>.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "desc": "Spawns <color=#0abec5>2</color> more Soulflare Butterflies. \u000bEach stack of ##Butterfly Mark#2021# increases the target's &Param3& by an additional <color=#0abec5>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [
                         "Ignis DMG Taken (base)"
@@ -37914,7 +37914,7 @@
                     "id": 512622,
                     "name": "Ember Rekindled",
                     "briefDesc": "When the main Ignis Trekker deals DMG to a target with Butterfly Mark, there is a chance to spawn a Soulflare Butterfly.",
-                    "desc": "When the main Ignis Trekker deals DMG to a target, for each stack of ##Butterfly Mark#2021# on the target, there is a <color=#0abec5>35%</color> chance to spawn a Soulflare Butterfly, dealing <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG. This effect can only be triggered once per second.\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                    "desc": "When the main Ignis Trekker deals DMG to a target, for each stack of ##Butterfly Mark#2021# on the target, there is a <color=#0abec5>35%</color> chance to spawn a Soulflare Butterfly, dealing <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG. This effect can only be triggered once per second.",
                     "damageType": [
                         "Skill"
                     ],
@@ -40670,7 +40670,7 @@
                     "id": 512727,
                     "name": "I'll Protect You!",
                     "briefDesc": "Surging Shield can absorb more DMG and increases the Trekker's resistance to interruption.",
-                    "desc": "While Surging Shield is active, enhances the Trekker's resistance to interruption, increasing the DMG it absorbs by <color=#ec6d21>&Param2&</color>.\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                    "desc": "While Surging Shield is active, enhances the Trekker's resistance to interruption, increasing the DMG it absorbs by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [
                         "ADD_SHIELD_STRENGTHEN (base)"
@@ -45477,7 +45477,7 @@
                     "id": 513301,
                     "name": "Blooming Gale",
                     "briefDesc": "While the Main Skill is active, increases Nazuka's Movement SPD and Attack Range. Reduces the Main Skill's Attack Interval.",
-                    "desc": "While Blooming Draught (Main Skill) is active, increases Nazuka's Movement SPD and Attack Range by <color=#0abec5>40%</color> and reduces the Attack Interval by <color=#0abec5>50%</color>.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "desc": "While Blooming Draught (Main Skill) is active, increases Nazuka's Movement SPD and Attack Range by <color=#0abec5>40%</color> and reduces the Attack Interval by <color=#0abec5>50%</color>.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -45495,7 +45495,7 @@
                     "id": 513302,
                     "name": "Everlasting Elegance",
                     "briefDesc": "Increases the duration of the Main Skill. If the Skill is interrupted, its cooldown is partially reduced.",
-                    "desc": "Increases the duration of Blooming Draught (Main Skill) by <color=#0abec5>100%</color>. When Blooming Draught is interrupted, its cooldown is partially refunded.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "desc": "Increases the duration of Blooming Draught (Main Skill) by <color=#0abec5>100%</color>. When Blooming Draught is interrupted, its cooldown is partially refunded.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -53432,7 +53432,7 @@
             "cooldown": "30s",
             "energy": 285,
             "briefDesc": "Conjures a Fire Dragon to attack the target's location.",
-            "desc": "Conjures a Fire Dragon to circle around the target, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG in a large area every 0.3s for a total of 5s.\u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (Skill,Title) \u000bParam5: &Param5& (HitDamage)",
+            "desc": "Conjures a Fire Dragon to circle around the target, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG in a large area every 0.3s for a total of 5s.\u000bParam4: &Param4& (Skill,Title) \u000bParam5: &Param5& (HitDamage)",
             "damageType": [
                 "Ultimate (from Ultimate)",
                 "Mark"
@@ -58777,7 +58777,7 @@
                     "id": 514401,
                     "name": "Serpent's Glide",
                     "briefDesc": "After Chitose casts the Main Skill, her Auto Attack will summon a Coiling Serpent, and her resistance to interruption is increased.",
-                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Coiling Serpent, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Auto Attack DMG. Can trigger ##Aqua Mark#1018#. Also, Chitose's resistance to interruption is increased for &Param9&s.\u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage) \u000bParam5: &Param5& (HitDamage) \u000bParam6: &Param6& (HitDamage) \u000bParam7: &Param7& (HitDamage) \u000bParam8: &Param8& (HitDamage)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Coiling Serpent, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Auto Attack DMG. Can trigger ##Aqua Mark#1018#. Also, Chitose's resistance to interruption is increased for &Param9&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
                         "Auto Attack (from Normal attack)"
                     ],
@@ -58910,7 +58910,7 @@
                     "id": 514406,
                     "name": "Dance of Elegance",
                     "briefDesc": "When the Coiling Serpent deals DMG, increases &Param1&.",
-                    "desc": "When the Coiling Serpent deals DMG, increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param5&s, up to &Param6& stacks.\u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1)",
+                    "desc": "When the Coiling Serpent deals DMG, increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param5&s, up to &Param6& stacks.",
                     "damageType": [],
                     "effectType": [
                         "Auto Attack Damage (base)"
@@ -59338,7 +59338,7 @@
                     "id": 514430,
                     "name": "Shattered Breath",
                     "briefDesc": "Increases Mirror Images' DMG to targets at less than 70% HP.",
-                    "desc": "Increases Mirror Images' DMG to targets at less than 70% HP by <color=#ec6d21>&Param2&</color>.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "desc": "Increases Mirror Images' DMG to targets at less than 70% HP by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -74907,7 +74907,7 @@
             "cooldown": "40s",
             "energy": 240,
             "briefDesc": "Transforms into toy: Dame Laru.\u000bAfter the transformation, her Auto Attacks become ranged shots, and her Main and Support Skills become Candy Barrage.",
-            "desc": "Transforms into toy: Dame Laru, gaining a shield equal to &Param7& of Base Max HP for &Param6&s.\u000bDame Laru cannot dodge or dash. Her Auto Attacks become shots that pierce targets, dealing <color=#fb8037>&Param2&</color> of ATK as Ignis Ultimate DMG. The Main and Support skills are replaced by Candy Barrage.\u000bCandy Barrage deals <color=#fb8037>&Param3& x5</color> of ATK as AoE Ignis Ultimate DMG to targets in the front with a 4s cooldown.\u000bParam1: &Param1& (HitDamage) \u000bParam4: &Param4& (Skill,Title) \u000bParam5: &Param5& (HitDamage)",
+            "desc": "Transforms into toy: Dame Laru, gaining a shield equal to &Param7& of Base Max HP for &Param6&s.\u000bDame Laru cannot dodge or dash. Her Auto Attacks become shots that pierce targets, dealing <color=#fb8037>&Param2&</color> of ATK as Ignis Ultimate DMG. The Main and Support skills are replaced by Candy Barrage.\u000bCandy Barrage deals <color=#fb8037>&Param3& x5</color> of ATK as AoE Ignis Ultimate DMG to targets in the front with a 4s cooldown.\u000bParam4: &Param4& (Skill,Title) \u000bParam5: &Param5& (HitDamage)",
             "damageType": [
                 "Ultimate (from Ultimate)",
                 "Mark"
