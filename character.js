@@ -387,6 +387,7 @@ function getPotentialDamageTypes(potId) {
     const damageTypes = [];
 
     const params = collectParamsFrom(POTENTIAL[potId]).filter(p => p && p.startsWith('HitDamage'));
+    const hiddenParams = collectPotentialHiddenParamsFrom(POTENTIAL[potId]).params.filter(p => p && p.startsWith('HitDamage'));
 
     for (const param of params) {
         const p = param.split(',');
@@ -396,6 +397,16 @@ function getPotentialDamageTypes(potId) {
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
 
         damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]})` : ''}`);
+    }
+
+    for (const param of hiddenParams) {
+        const p = param.split(',');
+        if (!HITDAMAGE[p[2]]) continue;
+
+        const type = HITDAMAGE[p[2]].DamageType;
+        const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
+
+        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]})` : ''} (hidden)`);
     }
 
     return [...new Set(damageTypes)];
