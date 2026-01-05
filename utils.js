@@ -412,7 +412,7 @@ function collectPotentialHiddenParamsFrom(obj) {
     const charId = obj.CharId;
     const potId = obj.Id % 100;
 
-    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => id.startsWith(charId) && id.slice(5, 7) === String(potId).padStart(2, '0'));
+    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => id.length === 9 && id.startsWith(charId) && id.slice(5, 7) === String(potId).padStart(2, '0'));
 
     return {
         desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage)`).join(' '),
