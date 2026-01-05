@@ -169,7 +169,7 @@
                     "id": 510303,
                     "name": "Precise Temperature Control",
                     "briefDesc": "After casting the Main Skill, can immediately cast again.",
-                    "desc": "Within <color=#0abec5>2s</color> after casting Fireworks Jam (Main Skill), can immediately cast again. \u000bWhen Fireworks Jam triggers an ##Ignis Mark: Sacred Flame#2013#, casting the Skill again increases its DMG by <color=#0abec5>&Param1&</color>.",
+                    "desc": "Within <color=#0abec5>2s</color> after casting Fireworks Jam (Main Skill), can immediately cast again. \u000bWhen Fireworks Jam triggers an ##Ignis Mark: Sacred Flame#2013#, casting the Skill again increases its DMG by <color=#0abec5>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -180,7 +180,12 @@
                     "params": [
                         "65%"
                     ],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "9.9%/10.9%/11.8%/14.8%/15.8%/16.8%/18.8%/19.7%/20.7%/22.7%/23.7%/24.7%/25.7%",
+                        "54%/14.2%/15.5%/19.4%/20.7%/22%/24.6%/25.9%/27.2%/29.7%/31%/32.3%/33.6%",
+                        "7.4%/8.1%/8.9%/11.1%/11.8%/12.6%/14%/14.8%/15.5%/17%/17.7%/18.5%/19.2%",
+                        "46%/51%/55%/69%/73%/78%/87%/92%/96%/106%/110%/115%/119%"
+                    ],
                     "icon": "10301_Potential_03",
                     "rarity": "core"
                 },
@@ -380,7 +385,7 @@
                     "id": 510310,
                     "name": "Spectacular Finale",
                     "briefDesc": "When the Main Skill kills a target with ##Ignis Mark: Sacred Flame#2013#, increases the next Main Skill's DMG.",
-                    "desc": "Every time Fireworks Jam (Main Skill) kills a target with ##Ignis Mark: Sacred Flame#2013#, the next time when Amber casts the Main Skill, increases &Param3& by <color=#ec6d21>&Param1&</color>, up to &Param2& stacks.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Every time Fireworks Jam (Main Skill) kills a target with ##Ignis Mark: Sacred Flame#2013#, the next time when Amber casts the Main Skill, increases &Param3& by <color=#ec6d21>&Param1&</color>, up to &Param2& stacks.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -393,9 +398,7 @@
                         3,
                         "Skill DMG"
                     ],
-                    "hiddenParams": [
-                        "22.5%/24.7%/27%/33.7%/35.9%/38.2%/42.7%/44.9%/47.2%/51.7%/53.9%/56.2%/58.4%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "10301_Potential_04",
                     "corner": "Round",
                     "rarity": "common"
@@ -666,7 +669,7 @@
                     "id": 510330,
                     "name": "Sky Splitter",
                     "briefDesc": "When Amber hits a target with ##Ignis Mark: Sacred Flame#2013#, increases her &Param3&.",
-                    "desc": "Each time Amber hits a target with ##Ignis Mark: Sacred Flame#2013#, increases her &Param3& by <color=#ec6d21>&Param1&</color>, stacking up to &Param2& times.\u000bThis effect can only be triggered once every 2s. Resets after casting her Ultimate.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage)",
+                    "desc": "Each time Amber hits a target with ##Ignis Mark: Sacred Flame#2013#, increases her &Param3& by <color=#ec6d21>&Param1&</color>, stacking up to &Param2& times.\u000bThis effect can only be triggered once every 2s. Resets after casting her Ultimate.",
                     "damageType": [],
                     "effectType": [
                         "Ultimate DMG (base)"
@@ -681,12 +684,7 @@
                         10,
                         "Ultimate DMG"
                     ],
-                    "hiddenParams": [
-                        "9.9%/10.9%/11.8%/14.8%/15.8%/16.8%/18.8%/19.7%/20.7%/22.7%/23.7%/24.7%/25.7%",
-                        "54%/14.2%/15.5%/19.4%/20.7%/22%/24.6%/25.9%/27.2%/29.7%/31%/32.3%/33.6%",
-                        "7.4%/8.1%/8.9%/11.1%/11.8%/12.6%/14%/14.8%/15.5%/17%/17.7%/18.5%/19.2%",
-                        "46%/51%/55%/69%/73%/78%/87%/92%/96%/106%/110%/115%/119%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "10301_Potential_24",
                     "corner": "Round",
                     "rarity": "common"
@@ -5716,7 +5714,7 @@
                     "id": 510810,
                     "name": "Opportunistic Ambush",
                     "briefDesc": "Increases the DMG of Incendiary Shells. After firing multiple Incendiary Shells, reduces Main Skill Cooldown.",
-                    "desc": "Increases the DMG of Incendiary Shells by <color=#ec6d21>&Param1&</color>. After firing 6 Incendiary Shells, reduces Banishing Barrage (Main Skill)'s Cooldown by &Param2&s.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "Increases the DMG of Incendiary Shells by <color=#ec6d21>&Param1&</color>. After firing 6 Incendiary Shells, reduces Banishing Barrage (Main Skill)'s Cooldown by &Param2&s.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -5729,10 +5727,7 @@
                         1,
                         "Skill DMG"
                     ],
-                    "hiddenParams": [
-                        "59%/65%/71%/89%/95%/101%/112%/118%/124%/136%/142%/148%/154%",
-                        "8.2%/9.1%/9.9%/12.3%/13.2%/14%/15.6%/16.5%/17.3%/18.9%/19.7%/20.6%/21.4%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "10801_Potential_04",
                     "corner": "Round",
                     "rarity": "common"
@@ -10978,7 +10973,7 @@
                     "id": 511110,
                     "name": "Cold Snap",
                     "briefDesc": "When Iris changes a target's status from ##Chill#1027# to ##Frozen#1002#, increases &Param5& and reduces Main Skill Cooldown.",
-                    "desc": "When Iris changes a target's status from ##Chill#1027# to ##Frozen#1002#, reduces &Param4& (Main Skill)'s Cooldown by &Param1&s. Also increases &Param5& by <color=#ec6d21>&Param2&</color> for &Param3&s. This effect can only be triggered once every 12s.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage)",
+                    "desc": "When Iris changes a target's status from ##Chill#1027# to ##Frozen#1002#, reduces &Param4& (Main Skill)'s Cooldown by &Param1&s. Also increases &Param5& by <color=#ec6d21>&Param2&</color> for &Param3&s. This effect can only be triggered once every 12s.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [],
                     "effectType": [
                         "Skill Crit Rate (base)"
@@ -11000,11 +10995,7 @@
                         "",
                         "Frozen Path"
                     ],
-                    "hiddenParams": [
-                        "147%/161%/176%/220%/235%/249%/279%/293%/308%/323%/337%/352%/367%",
-                        "92%/123%/154%/184%/215%/246%/276%/307%/338%",
-                        "148%/197%/247%/296%/345%/395%/444%/493%/542%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11101_Potential_04",
                     "corner": "Round",
                     "rarity": "common"
@@ -11466,7 +11457,7 @@
                     "id": 511130,
                     "name": "Sneaky Fisher",
                     "briefDesc": "While the Support Skill is active, increases the ATK of all other friendly units within its Attack Range.",
-                    "desc": "While &Param10& (Support Skill) is active, increases the ATK of all other friendly units within its Attack Range by <color=#ec6d21>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "While &Param10& (Support Skill) is active, increases the ATK of all other friendly units within its Attack Range by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -11488,10 +11479,7 @@
                         "",
                         "Iceberg Surge"
                     ],
-                    "hiddenParams": [
-                        "9.5%/10.4%/11.4%/14.2%/15.2%/16.1%/18%/18.9%/19.9%/20.8%/21.8%/22.7%/23.7%",
-                        "184%/202%/221%/276%/294%/313%/349%/368%/386%/405%/423%/441%/460%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11101_Potential_24",
                     "corner": "Round",
                     "rarity": "common"
@@ -13591,7 +13579,7 @@
                     "id": 511201,
                     "name": "Slash: Dual Strike!",
                     "briefDesc": "Adds Dragon Slash as the second phase of the Main Skill.",
-                    "desc": "Adds Dragon Slash as the second phase of the Main Skill, dealing <color=#0abec5>&Param1& of ATK x3</color>/<color=#0abec5>&Param2& of ATK</color> as Ventus Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage)",
+                    "desc": "Adds Dragon Slash as the second phase of the Main Skill, dealing <color=#0abec5>&Param1& of ATK x3</color>/<color=#0abec5>&Param2& of ATK</color> as Ventus Skill DMG.",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -13603,12 +13591,7 @@
                         "38%/41%/45%/56%/60%/64%/71%/75%/79%/86%/90%/94%/98%",
                         "146%/161%/175%/219%/233%/248%/277%/292%/306%/336%/350%/365%/379%"
                     ],
-                    "hiddenParams": [
-                        "38.1%/41.91%/45.72%/49.53%/53.34%/57.15%/60.96%/64.77%/68.58%/72.39%/76.2%/80.01%/83.82%",
-                        "20.1%/22.1%/24.1%/30.2%/32.2%/34.2%/38.2%/40.2%/42.2%/46.2%/48.2%/50.3%/52.3%",
-                        "8.3%/11%/13.8%/16.5%/19.3%/22%/24.8%/27.5%/30.3%",
-                        "11.5%/15.3%/19.1%/22.9%/26.8%/30.6%/34.4%/38.2%/42%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11201_Potential_01",
                     "rarity": "core"
                 },
@@ -19394,7 +19377,7 @@
                     "id": 511630,
                     "name": "Cone Bomb",
                     "briefDesc": "Increases Seed Orb's DMG. \u000bWhen Seed Orb deals DMG, fires 1 seed to the nearest target.",
-                    "desc": "Increases DMG of Seed Orb by <color=#ec6d21>&Param2&</color>.\u000bWhen Seed Orb deals DMG, fires 1 seed to the nearest target, dealing <color=#ec6d21>&Param3& of ATK</color> as Terra Skill DMG.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Increases DMG of Seed Orb by <color=#ec6d21>&Param2&</color>.\u000bWhen Seed Orb deals DMG, fires 1 seed to the nearest target, dealing <color=#ec6d21>&Param3& of ATK</color> as Terra Skill DMG.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -19409,9 +19392,7 @@
                         "14%/23%/31%/40%/48%/57%/65%/74%/82%",
                         "9.9%/13.2%/16.5%/19.7%/23%/26.3%/29.6%/32.9%/36.2%"
                     ],
-                    "hiddenParams": [
-                        "38%/41%/45%/57%/60%/64%/72%/75%/79%/87%/90%/94%/98%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11601_Potential_24",
                     "corner": "Round",
                     "rarity": "rare"
@@ -21500,7 +21481,7 @@
                     "id": 511702,
                     "name": "Energy Storage: Knot",
                     "briefDesc": "After casting the Main Skill, increases the DMG of the next Skill.",
-                    "desc": "After casting &Param1& (Main Skill), increases the DMG of the next Skill by <color=#0abec5>&Param2&</color>, up to 3 stacks. \u000bAt 3 stacks, casting the Main Skill again will remove the buff.\u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage)",
+                    "desc": "After casting &Param1& (Main Skill), increases the DMG of the next Skill by <color=#0abec5>&Param2&</color>, up to 3 stacks. \u000bAt 3 stacks, casting the Main Skill again will remove the buff.\u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -21516,7 +21497,10 @@
                         "92%/101%/110%/137%/146%/156%/174%/183%/192%/210%/220%/229%/238%",
                         "92%/101%/110%/137%/146%/156%/174%/183%/192%/210%/220%/229%/238%"
                     ],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "92%/101%/110%/137%/146%/156%/174%/183%/192%/210%/220%/229%/238%",
+                        "92%/101%/110%/137%/146%/156%/174%/183%/192%/210%/220%/229%/238%"
+                    ],
                     "icon": "11701_Potential_02",
                     "rarity": "core"
                 },
@@ -22042,7 +22026,7 @@
                     "id": 511730,
                     "name": "No Ones No Nines",
                     "briefDesc": "While the main Trekker is inside the Lightning Domain, increases their &Param3&.",
-                    "desc": "While the main Trekker is inside the Lightning Domain, increases their &Param3& by <color=#ec6d21>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "While the main Trekker is inside the Lightning Domain, increases their &Param3& by <color=#ec6d21>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -22057,10 +22041,7 @@
                         "13%/21%/29%/37%/45%/53%/61%/69%/76%",
                         "ATK"
                     ],
-                    "hiddenParams": [
-                        "11.4%/12.5%/13.6%/17%/18.2%/19.3%/21.6%/22.7%/23.9%/26.1%/27.3%/28.4%/29.6%",
-                        "34%/37%/41%/51%/55%/58%/65%/68%/72%/78%/82%/85%/89%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11701_Potential_24",
                     "corner": "Round",
                     "rarity": "common"
@@ -27030,7 +27011,7 @@
                     "id": 511910,
                     "name": "Blossom Shower",
                     "briefDesc": "When casting the Main Skill, the clones fire sunflower shurikens.",
-                    "desc": "When casting Flowers Dance (Main Skill), the clones fire non-returning sunflower shurikens, each dealing <color=#ec6d21>&Param1&</color> of Nanoha's ATK as Ventus Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When casting Flowers Dance (Main Skill), the clones fire non-returning sunflower shurikens, each dealing <color=#ec6d21>&Param1&</color> of Nanoha's ATK as Ventus Skill DMG.",
                     "damageType": [
                         "Skill"
                     ],
@@ -27041,9 +27022,7 @@
                     "params": [
                         "316%/506%/695%/885%/1074%/1264%/1453%/1643%/1833%"
                     ],
-                    "hiddenParams": [
-                        "9.4%/10.8%/12.2%/16.5%/17.8%/19.1%/21.7%/22.9%/24%/26.2%/28.1%/30%/31.9%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11901_Potential_41",
                     "corner": "Round",
                     "rarity": "rare"
@@ -27378,7 +27357,7 @@
                     "id": 511930,
                     "name": "Tender Care",
                     "briefDesc": "When an exploding sunflower disappears, the clones fire multiple shurikens forward.",
-                    "desc": "When an exploding sunflower disappears, the clones fire 5 shurikens forward, each dealing <color=#ec6d21>&Param1& of Nanoha's ATK</color> as Ventus Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When an exploding sunflower disappears, the clones fire 5 shurikens forward, each dealing <color=#ec6d21>&Param1& of Nanoha's ATK</color> as Ventus Skill DMG.",
                     "damageType": [
                         "Skill"
                     ],
@@ -27389,9 +27368,7 @@
                     "params": [
                         "22.2%/35.5%/48.8%/62.1%/75.4%/88.7%/102.1%/115.4%/128.7%"
                     ],
-                    "hiddenParams": [
-                        "14.2%/16.3%/18.5%/24.9%/26.9%/28.8%/32.8%/34.5%/36.2%/39.7%/42.5%/45.3%/48.2%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11901_Potential_41",
                     "corner": "Round",
                     "rarity": "rare"
@@ -29392,14 +29369,16 @@
                     "id": 512001,
                     "name": "Most Admired",
                     "briefDesc": "Summons more Flying Leaves.",
-                    "desc": "Summons <color=#0abec5>3</color> additional Flying Leaves.",
+                    "desc": "Summons <color=#0abec5>3</color> additional Flying Leaves.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "16.8%/18.5%/20.2%/25.2%/26.9%/28.6%/32%/33.6%/35.3%/38.7%/40.4%/42%/43.7%"
+                    ],
                     "icon": "12001_Potential_01",
                     "rarity": "core"
                 },
@@ -29633,7 +29612,7 @@
                     "id": 512010,
                     "name": "Counterstrike Tutorial",
                     "briefDesc": "Canace will launch the final strike of her Auto Attack right after dodging, and this strike's &Param1& is increased.",
-                    "desc": "Canace will launch the final strike of her Auto Attack right after dodging, and this strike's &Param1& is increased by <color=#ec6d21>&Param2&</color>. This effect can only be triggered once every &Param3&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Canace will launch the final strike of her Auto Attack right after dodging, and this strike's &Param1& is increased by <color=#ec6d21>&Param2&</color>. This effect can only be triggered once every &Param3&s.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -29646,9 +29625,7 @@
                         "165%/263%/362%/461%/560%/659%/757%/856%/955%",
                         5
                     ],
-                    "hiddenParams": [
-                        "16.8%/18.5%/20.2%/25.2%/26.9%/28.6%/32%/33.6%/35.3%/38.7%/40.4%/42%/43.7%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "12001_Potential_04",
                     "corner": "Round",
                     "rarity": "common"
@@ -37800,7 +37777,7 @@
                     "id": 512610,
                     "name": "Chekhov's Arm",
                     "briefDesc": "Increases Flora's &Param2&.\u000bThe fiery bird from her Auto Attacks can pierce through targets and has a chance to inflict ##Ignis Mark: Sacred Flame#2013#.",
-                    "desc": "Increases Flora's &Param2& by <color=#ec6d21>&Param1&</color>.\u000bThe fiery bird from her Auto Attacks can pierce through targets and has a 50% chance to inflict ##Ignis Mark: Sacred Flame#2013# after dealing DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Increases Flora's &Param2& by <color=#ec6d21>&Param1&</color>.\u000bThe fiery bird from her Auto Attacks can pierce through targets and has a 50% chance to inflict ##Ignis Mark: Sacred Flame#2013# after dealing DMG.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -37812,9 +37789,7 @@
                         "18%/29%/40%/50%/61%/72%/83%/94%/104%",
                         "ATK"
                     ],
-                    "hiddenParams": [
-                        "13.7%/15%/16.4%/20.5%/21.9%/23.3%/26%/27.4%/28.7%/31.5%/32.8%/34.2%/35.6%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "12601_Potential_03",
                     "corner": "Round",
                     "rarity": "rare"
@@ -38102,7 +38077,7 @@
                     "id": 512630,
                     "name": "Post-credits Scene",
                     "briefDesc": "When Mindflare Butterflies die, they will transform into ##Scorched Butterflies#2019#.",
-                    "desc": "When Mindflare Butterflies die, they will transform into ##Scorched Butterflies#2019#, each dealing <color=#ec6d21>&Param1& of ATK</color> as Ignis Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When Mindflare Butterflies die, they will transform into ##Scorched Butterflies#2019#, each dealing <color=#ec6d21>&Param1& of ATK</color> as Ignis Skill DMG.",
                     "damageType": [
                         "Skill"
                     ],
@@ -38113,9 +38088,7 @@
                     "params": [
                         "14.5%/19.4%/24.2%/29%/33.9%/38.7%/43.6%/48.4%/53.2%"
                     ],
-                    "hiddenParams": [
-                        "49%/66%/82%/99%/115%/132%/148%/165%/181%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "12601_Potential_23",
                     "corner": "Round",
                     "rarity": "common"
@@ -40381,7 +40354,7 @@
                     "id": 512710,
                     "name": "Restarting",
                     "briefDesc": "When a squadmate casts a Support Skill or Ultimate Skill, Teresa gains a Surging Shield.",
-                    "desc": "When a squadmate casts a Support Skill or Ultimate Skill, Teresa gains a Surging Shield equal to <color=#ec6d21> &Param1& of ATK</color> for &Param2&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When a squadmate casts a Support Skill or Ultimate Skill, Teresa gains a Surging Shield equal to <color=#ec6d21> &Param1& of ATK</color> for &Param2&s.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -40391,9 +40364,7 @@
                         "65%/86%/108%/130%/151%/173%/194%/216%/238%",
                         5
                     ],
-                    "hiddenParams": [
-                        "57%/62%/68%/85%/91%/97%/108%/114%/119%/125%/131%/136%/142%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "12701_Potential_03",
                     "corner": "Round",
                     "rarity": "rare"
@@ -40745,7 +40716,7 @@
                     "id": 512730,
                     "name": "How About This!",
                     "briefDesc": "When the main Aqua Trekker within Tidal Domain deals DMG, there is a chance to create a geyser at the target's location, dealing AoE Aqua Skill DMG and inflicting ##Aqua Mark: Torrent#2008#.",
-                    "desc": "When the main Aqua Trekker within Tidal Domain deals DMG, there is a 50% chance to create a geyser at the target's location, dealing <color=#ec6d21>&Param1& of ATK</color> as AoE Aqua Skill DMG and inflicting ##Aqua Mark: Torrent#2008#.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When the main Aqua Trekker within Tidal Domain deals DMG, there is a 50% chance to create a geyser at the target's location, dealing <color=#ec6d21>&Param1& of ATK</color> as AoE Aqua Skill DMG and inflicting ##Aqua Mark: Torrent#2008#.",
                     "damageType": [
                         "Skill"
                     ],
@@ -40756,9 +40727,7 @@
                     "params": [
                         "14%/18.7%/23.3%/28%/32.6%/37.3%/42%/46.6%/51.3%"
                     ],
-                    "hiddenParams": [
-                        "51%/56%/61%/77%/82%/87%/97%/102%/107%/112%/118%/123%/128%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "12701_Potential_24",
                     "corner": "Round",
                     "rarity": "common"
@@ -43257,7 +43226,7 @@
                     "id": 513222,
                     "name": "Radiant Burst",
                     "briefDesc": "Increases the DMG and Attack Range of Astral Hex.",
-                    "desc": "Increases the Attack Range of Astral Hex by <color=#0abec5>50%</color> and its DMG by <color=#0abec5>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "desc": "Increases the Attack Range of Astral Hex by <color=#0abec5>50%</color> and its DMG by <color=#0abec5>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -43270,7 +43239,9 @@
                         "44%",
                         "Skill DMG"
                     ],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "185%/213%/240%/323%/349%/375%/427%/449%/471%/516%/553%/590%/626%"
+                    ],
                     "icon": "13201_Potential_22",
                     "rarity": "core"
                 },
@@ -43342,7 +43313,7 @@
                     "id": 513226,
                     "name": "Shutout Desire",
                     "briefDesc": "When the main Trekker deals DMG to a target inflicted with Astral Hex, deals additional DMG.",
-                    "desc": "When the main Trekker deals damage to a target inflicted with Astral Hex, deals an additional <color=#ec6d21>&Param1& of Minova's ATK</color> as Lux Skill DMG. This effect can only be triggered once per second.",
+                    "desc": "When the main Trekker deals damage to a target inflicted with Astral Hex, deals an additional <color=#ec6d21>&Param1& of Minova's ATK</color> as Lux Skill DMG. This effect can only be triggered once per second.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -43351,7 +43322,9 @@
                     "params": [
                         "55%/74%/92%/111%/129%/148%/166%/184%/203%"
                     ],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "51%/82%/112%/143%/174%/204%/235%/265%/296%"
+                    ],
                     "icon": "13201_Potential_22",
                     "corner": "Triangle",
                     "rarity": "rare"
@@ -45763,7 +45736,7 @@
                     "id": 513310,
                     "name": "Whisper of Wind",
                     "briefDesc": "After the Main Skill ends, increases &Param1& for a short period of time.",
-                    "desc": "When the pinwheel from Blooming Draught (Main Skill) stops, increases &Param1& by <color=#ec6d21>&Param2&</color> for 2s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When the pinwheel from Blooming Draught (Main Skill) stops, increases &Param1& by <color=#ec6d21>&Param2&</color> for 2s.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -45777,9 +45750,7 @@
                         "ATK",
                         "60%/96%/132%/168%/204%/240%/276%/312%/348%"
                     ],
-                    "hiddenParams": [
-                        "11%/12.7%/14.4%/19.3%/20.9%/22.4%/25.5%/26.8%/28.2%/30.8%/33%/35.2%/37.4%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "13301_Potential_04",
                     "corner": "Round",
                     "rarity": "rare"
@@ -46074,7 +46045,7 @@
                     "id": 513330,
                     "name": "Flower Formation: Blast",
                     "briefDesc": "Increases the Flower Formation's &Param2&. When the Flower Formation dissipates, deals DMG and inflicts ##Ventus Mark: Breeze#2017#.",
-                    "desc": "Increases the Flower Formation's &Param2& by <color=#ec6d21>&Param3&</color>. When the Flower Formation dissipates, deals <color=#ec6d21>&Param1&</color> of Nazuka's ATK as AoE Ventus Skill DMG and inflicts ##Ventus Mark: Breeze#2017#.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "Increases the Flower Formation's &Param2& by <color=#ec6d21>&Param3&</color>. When the Flower Formation dissipates, deals <color=#ec6d21>&Param1&</color> of Nazuka's ATK as AoE Ventus Skill DMG and inflicts ##Ventus Mark: Breeze#2017#.",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -46089,10 +46060,7 @@
                         "Ventus DMG",
                         "29%/46%/64%/81%/98%/115%/133%/150%/167%"
                     ],
-                    "hiddenParams": [
-                        "137%/158%/178%/240%/259%/278%/317%/333%/350%/383%/410%/438%/465%",
-                        "196%/225%/254%/342%/370%/397%/452%/475%/499%/545%/585%/624%/663%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "13301_Potential_24",
                     "corner": "Round",
                     "rarity": "rare"
@@ -48301,7 +48269,7 @@
                     "id": 513406,
                     "name": "Thunder Punch",
                     "briefDesc": "The third strike of Fiery Punches deals additional DMG.",
-                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.",
+                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
                         "Auto Attack"
                     ],
@@ -48312,7 +48280,9 @@
                     "params": [
                         "108%/173%/238%/303%/368%/432%/497%/562%/627%"
                     ],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "127%/204%/280%/356%/432%/509%/585%/661%/738%"
+                    ],
                     "icon": "13401_Potential_02",
                     "corner": "Triangle",
                     "rarity": "rare"
@@ -48443,7 +48413,7 @@
                     "id": 513410,
                     "name": "Inertial Punch",
                     "briefDesc": "Every few seconds, increases the &Param2& of Fiery Punches and Magma Burst.",
-                    "desc": "Every 8s, increases the &Param2& of the next Fiery Punches and Magma Burst by <color=#ec6d21>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage)",
+                    "desc": "Every 8s, increases the &Param2& of the next Fiery Punches and Magma Burst by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -48455,11 +48425,7 @@
                         "50%/80%/110%/140%/171%/201%/231%/261%/291%",
                         "Auto Attack Damage"
                     ],
-                    "hiddenParams": [
-                        "99%/113%/128%/173%/186%/200%/228%/240%/251%/275%/295%/315%/334%",
-                        "502%/577%/652%/878%/948%/1019%/1159%/1219%/1280%/1400%/1500%/1601%/1701%",
-                        "388%/446%/504%/679%/733%/787%/896%/942%/989%/1082%/1159%/1237%/1315%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "13401_Potential_04",
                     "corner": "Round",
                     "rarity": "common"
@@ -48751,7 +48717,7 @@
                     "id": 513430,
                     "name": "Lightning Raid",
                     "briefDesc": "Reduces the Support Skill's Attack Interval and increases its DMG.",
-                    "desc": "Reduces &Param1& (Support Skill)'s Attack Interval by 40% and increases its &Param3& by <color=#ec6d21>&Param2&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Reduces &Param1& (Support Skill)'s Attack Interval by 40% and increases its &Param3& by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -48764,9 +48730,7 @@
                         "9%/15%/20%/26%/31%/37%/42%/48%/53%",
                         "Skill DMG"
                     ],
-                    "hiddenParams": [
-                        "46%/53%/60%/81%/87%/93%/106%/112%/117%/128%/138%/147%/156%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "13401_Potential_23",
                     "corner": "Round",
                     "rarity": "common"
@@ -53888,7 +53852,7 @@
                     "id": 514123,
                     "name": "Sigil Unleashed: Tiger of the East",
                     "briefDesc": "Crimson Dragon transforms into Tiger of the East.",
-                    "desc": "Crimson Dragon enhances into Tiger of the East. Increases its ATK by <color=#0abec5>&Param1&</color> every 2s. Tiger of the East lasts for 15s, dealing <color=#0abec5>&Param2& of ATK</color>/<color=#0abec5>&Param3& of ATK</color>/<color=#0abec5>&Param4& of ATK x2</color> as AoE Ignis Minion DMG, and inflicting ##Ignis Mark: Sacred Flame#2013#.",
+                    "desc": "Crimson Dragon enhances into Tiger of the East. Increases its ATK by <color=#0abec5>&Param1&</color> every 2s. Tiger of the East lasts for 15s, dealing <color=#0abec5>&Param2& of ATK</color>/<color=#0abec5>&Param3& of ATK</color>/<color=#0abec5>&Param4& of ATK x2</color> as AoE Ignis Minion DMG, and inflicting ##Ignis Mark: Sacred Flame#2013#.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
                         "Minion (from Skill)"
                     ],
@@ -53906,7 +53870,9 @@
                         "153%/175%/198%/267%/288%/310%/352%/371%/389%/426%/456%/487%/517%",
                         "102%/117%/132%/178%/192%/206%/235%/247%/259%/284%/304%/324%/345%"
                     ],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "57%/66%/74%/100%/108%/116%/132%/139%/146%/160%/171%/183%/194%"
+                    ],
                     "icon": "14101_Potential_23",
                     "rarity": "core"
                 },
@@ -53914,7 +53880,7 @@
                     "id": 514124,
                     "name": "Tiger of the East: Blazing Scales",
                     "briefDesc": "The first summon of the Support Skill creates a Blazing Sphere, dealing DMG to nearby targets continuously.",
-                    "desc": "The first minion summoned by &Param2& (Support Skill) is inflicted with Blazing Barrier, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Minion DMG to nearby targets every <color=#0abec5>0.5</color>s.",
+                    "desc": "The first minion summoned by &Param2& (Support Skill) is inflicted with Blazing Barrier, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Minion DMG to nearby targets every <color=#0abec5>0.5</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
                         "Minion (from Skill)"
                     ],
@@ -53926,7 +53892,9 @@
                         "37.7%/43.3%/49%/65.9%/71.2%/76.5%/87%/91.5%/96.1%/105.1%/112.6%/120.2%/127.7%",
                         "Awakening: Crimson Dragon"
                     ],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "8.3%/9.5%/10.8%/14.5%/15.7%/16.8%/19.1%/20.1%/21.1%/23.1%/24.8%/26.4%/28.1%"
+                    ],
                     "icon": "14101_Potential_24",
                     "rarity": "core"
                 }
@@ -54025,7 +53993,7 @@
                     "id": 514130,
                     "name": "Ink Sigil: Raid",
                     "briefDesc": "Increases the DMG dealt by Chixia's minions to close-by targets.",
-                    "desc": "Increases the Minion DMG dealt by Chixia's minions to close-by targets by <color=#ec6d21>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage) \u000bHiddenParam5: &HiddenParam5& (HitDamage) \u000bHiddenParam6: &HiddenParam6& (HitDamage)",
+                    "desc": "Increases the Minion DMG dealt by Chixia's minions to close-by targets by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -54036,14 +54004,7 @@
                     "params": [
                         "34%/54%/74%/95%/115%/135%/156%/176%/196%"
                     ],
-                    "hiddenParams": [
-                        "124%/198%/272%/346%/421%/495%/569%/643%/717%",
-                        "125%/144%/163%/219%/237%/254%/289%/304%/319%/349%/374%/399%/424%",
-                        "57%/66%/74%/100%/108%/116%/132%/139%/146%/160%/171%/183%/194%",
-                        "114%/132%/149%/200%/216%/232%/264%/278%/292%/319%/342%/365%/388%",
-                        "153%/175%/198%/267%/288%/310%/352%/371%/389%/426%/456%/487%/517%",
-                        "102%/117%/132%/178%/192%/206%/235%/247%/259%/284%/304%/324%/345%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "14101_Potential_23",
                     "corner": "Round",
                     "rarity": "common"
@@ -58885,7 +58846,7 @@
                     "id": 514403,
                     "name": "Cascade of Ruin",
                     "briefDesc": "Requires fewer Torrent Flash casts to unleash Torrent Flash: Scale. Also enhances Torrent Flash: Scale.",
-                    "desc": "Chitose may unleash Torrent Flash: Scale after one Torrent Flash cast. Also enhances Torrent Flash: Scale, dealing <color=#0abec5>&Param1& of ATK x4</color> as AoE Aqua Skill DMG.",
+                    "desc": "Chitose may unleash Torrent Flash: Scale after one Torrent Flash cast. Also enhances Torrent Flash: Scale, dealing <color=#0abec5>&Param1& of ATK x4</color> as AoE Aqua Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -58896,7 +58857,9 @@
                     "params": [
                         "98%/113%/127%/171%/185%/199%/226%/238%/250%/273%/293%/312%/332%"
                     ],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "98%/113%/127%/171%/185%/199%/226%/238%/250%/273%/293%/312%/332%"
+                    ],
                     "icon": "14401_Potential_03",
                     "rarity": "core"
                 },
@@ -58904,7 +58867,7 @@
                     "id": 514404,
                     "name": "Against the Flow",
                     "briefDesc": "Reduces Main Skill Cooldown. When casting Torrent Flash, summons a Mirror Image.",
-                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage) \u000bHiddenParam5: &HiddenParam5& (HitDamage) \u000bHiddenParam6: &HiddenParam6& (HitDamage)",
+                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -58914,8 +58877,6 @@
                     "hiddenParams": [
                         "109%/126%/142%/191%/206%/222%/252%/265%/279%/305%/327%/349%/370%",
                         "128%/147%/166%/223%/241%/259%/295%/310%/326%/356%/382%/407%/433%",
-                        "98%/113%/127%/171%/185%/199%/226%/238%/250%/273%/293%/312%/332%",
-                        "",
                         "",
                         ""
                     ],
@@ -59042,7 +59003,7 @@
                     "id": 514411,
                     "name": "Waltz of Ripples",
                     "briefDesc": "Chitose can dodge through barriers. After dodging, increases her &Param1&.",
-                    "desc": "Chitose can dodge through barriers. After dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "Chitose can dodge through barriers. After dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -59057,10 +59018,7 @@
                         "11%/17%/24%/30%/36%/43%/49%/56%/62%",
                         6
                     ],
-                    "hiddenParams": [
-                        "15.2%/17.5%/19.7%/26.6%/28.7%/30.8%/35.1%/36.9%/38.7%/42.3%/45.4%/48.4%/51.4%",
-                        ""
-                    ],
+                    "hiddenParams": [],
                     "icon": "Common_Potential_13",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -64124,7 +64082,7 @@
                     "id": 514901,
                     "name": "Beyond All Control",
                     "briefDesc": "When Gerie is in Lethal status, increases her Movement SPD and &Param1&. Lethal status remains active even when Gerie is not at the vicinity of Iron Cage.",
-                    "desc": "When Gerie is in Lethal status, increases her Movement SPD by <color=#0abec5>&Param3&</color> and her &Param1& by <color=#0abec5>&Param2&</color>. Lethal is no longer limited to the vicinity of Iron Cage.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When Gerie is in Lethal status, increases her Movement SPD by <color=#0abec5>&Param3&</color> and her &Param1& by <color=#0abec5>&Param2&</color>. Lethal is no longer limited to the vicinity of Iron Cage.",
                     "damageType": [],
                     "effectType": [
                         "Auto Attack Damage (base)",
@@ -64140,9 +64098,7 @@
                         "47%",
                         "15%"
                     ],
-                    "hiddenParams": [
-                        "7.6%/12.2%/16.8%/21.3%/25.9%/30.5%/35%/39.6%/44.2%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "14901_Potential_01",
                     "rarity": "core"
                 },
@@ -64333,7 +64289,7 @@
                     "id": 514911,
                     "name": "Hunt is On",
                     "briefDesc": "Gerie can dodge one more time.\u000bIncreases her &Param1& after dodging.",
-                    "desc": "Gerie can dodge one more time.\u000bAfter dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Gerie can dodge one more time.\u000bAfter dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -64348,9 +64304,7 @@
                         "9%/15%/21%/26%/32%/37%/43%/49%/54%",
                         8
                     ],
-                    "hiddenParams": [
-                        "47%/54%/61%/82%/89%/96%/109%/114%/120%/131%/141%/150%/160%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "Common_Potential_2",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -64503,7 +64457,7 @@
                     "id": 514921,
                     "name": "Deeper into Sin",
                     "briefDesc": "Increases the DMG of the Support Skill's chained spades. The Support Skill now conjures up more chained spades to deal DMG.",
-                    "desc": "Increases the damage of Immediate Execution (Support Skill)'s chained spades by <color=#0abec5>&Param2&</color>. When casting Immediate Execution, conjures up 2 additional chained spades, dealing <color=#0abec5>&Param3& of ATK</color> as Terra Skill DMG.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Increases the damage of Immediate Execution (Support Skill)'s chained spades by <color=#0abec5>&Param2&</color>. When casting Immediate Execution, conjures up 2 additional chained spades, dealing <color=#0abec5>&Param3& of ATK</color> as Terra Skill DMG.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -64518,9 +64472,7 @@
                         "11%",
                         "47%/54%/61%/82%/89%/96%/109%/114%/120%/131%/141%/150%/160%"
                     ],
-                    "hiddenParams": [
-                        "15.7%/18%/20.4%/27.4%/29.6%/31.8%/36.2%/38.1%/40%/43.8%/46.9%/50%/53.2%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "14901_Potential_21",
                     "rarity": "core"
                 },
@@ -64698,7 +64650,7 @@
                     "id": 514931,
                     "name": "Twilight's Verdict",
                     "briefDesc": "When Gerie triggers a ##Terra Mark#1020#, increases her &Param1&.",
-                    "desc": "When Gerie triggers a ##Terra Mark#1020#, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When Gerie triggers a ##Terra Mark#1020#, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
                     "damageType": [],
                     "effectType": [
                         "Terra DMG (base)"
@@ -64714,9 +64666,7 @@
                         8,
                         4
                     ],
-                    "hiddenParams": [
-                        "11%/12.6%/14.3%/19.2%/20.8%/22.3%/25.4%/26.7%/28%/30.7%/32.9%/35.1%/37.3%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "Common_Potential_Earth_1",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -69438,7 +69388,7 @@
                     "id": 515501,
                     "name": "Phantom Step Rediance",
                     "briefDesc": "When dealing Auto Attack DMG, Snow Rabbit inflicts Electro Music that deals additional DMG upon reaching the max stack limit.",
-                    "desc": "When Snow Rabbit deals Auto Attack DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When Snow Rabbit deals Auto Attack DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -69458,9 +69408,7 @@
                         "",
                         "Whirling Waves"
                     ],
-                    "hiddenParams": [
-                        "110%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "15501_Potential_01",
                     "rarity": "core"
                 },
@@ -69468,7 +69416,7 @@
                     "id": 515502,
                     "name": "Rimecrystal Edge",
                     "briefDesc": "The Main Skill summons a Snow Rabbit that inflicts Electro Music when dealing Skill DMG, dealing additional DMG upon reaching the max stack limit.",
-                    "desc": "&Param10& (Main Skill) summons a Snow Rabbit, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG upon entering combat.\u000bEvery time Snow Rabbit deals Skill DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param2&</color> of ATK as Lux Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "&Param10& (Main Skill) summons a Snow Rabbit, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG upon entering combat.\u000bEvery time Snow Rabbit deals Skill DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param2&</color> of ATK as Lux Skill DMG.",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -69488,9 +69436,7 @@
                         "",
                         "Whirling Waves"
                     ],
-                    "hiddenParams": [
-                        "220%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "15501_Potential_02",
                     "rarity": "core"
                 },
@@ -69498,7 +69444,7 @@
                     "id": 515503,
                     "name": "Moonlight Overflow",
                     "briefDesc": "Night Rabbit fires tracking bullets at nearby targets during Auto Attacks. When the tracking bullets deal DMG, Night Rabbit gains Moongaze, increasing its DMG.",
-                    "desc": "During Auto Attacks, Night Rabbit locks up to <color=#0abec5>4</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "During Auto Attacks, Night Rabbit locks up to <color=#0abec5>4</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
                         "Auto Attack (from Skill)"
                     ],
@@ -69523,7 +69469,6 @@
                         "Whirling Waves"
                     ],
                     "hiddenParams": [
-                        "55%",
                         ""
                     ],
                     "icon": "15501_Potential_03",
@@ -69569,7 +69514,7 @@
                     "id": 515505,
                     "name": "Glacial Dash",
                     "briefDesc": "Increases Snow Rabbit's Auto Attack DMG. Bullets from Auto Attacks can pierce through targets.",
-                    "desc": "Increases Snow Rabbit's Auto Attack DMG by <color=#ec6d21>&Param1&</color>. Bullets from Auto Attacks can pierce through targets.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Increases Snow Rabbit's Auto Attack DMG by <color=#ec6d21>&Param1&</color>. Bullets from Auto Attacks can pierce through targets.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -69589,9 +69534,7 @@
                         "",
                         "Whirling Waves"
                     ],
-                    "hiddenParams": [
-                        "95%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "15501_Potential_01",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -69600,7 +69543,7 @@
                     "id": 515506,
                     "name": "Subzero Dominion",
                     "briefDesc": "The Main Skill summons more Snow Rabbits.\u000bWhile the Main Skill is active, increases all Snow Rabbits' &Param2&.",
-                    "desc": "&Param10& (Main Skill) summons 1 additional Snow Rabbit.\u000bWhile the Main Skill is active, increases all Snow Rabbits' &Param2& by <color=#ec6d21>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "&Param10& (Main Skill) summons 1 additional Snow Rabbit.\u000bWhile the Main Skill is active, increases all Snow Rabbits' &Param2& by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -69620,9 +69563,7 @@
                         "",
                         "Whirling Waves"
                     ],
-                    "hiddenParams": [
-                        "105%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "15501_Potential_02",
                     "corner": "Triangle",
                     "rarity": "rare"
@@ -69662,7 +69603,7 @@
                     "id": 515508,
                     "name": "Final Crescent",
                     "briefDesc": "Based on the number of targets hit by Night Rabbit's Auto Attack, increases the DMG of its next Auto Attack.",
-                    "desc": "During Auto Attacks, every time Night Rabbit deals DMG to a different target, increases the DMG of its next Auto Attack by <color=#ec6d21>&Param1&</color>, stacking up to &Param2& times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "During Auto Attacks, every time Night Rabbit deals DMG to a different target, increases the DMG of its next Auto Attack by <color=#ec6d21>&Param1&</color>, stacking up to &Param2& times.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -69682,9 +69623,7 @@
                         "",
                         "Whirling Waves"
                     ],
-                    "hiddenParams": [
-                        "230%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "15501_Potential_03",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -70202,7 +70141,7 @@
                     "id": 515531,
                     "name": "Tidal Charge",
                     "briefDesc": "Every time Shia kills a target, increases her &Param4&.",
-                    "desc": "Every time Shia kills a target, increases her &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s, stacking up to &Param3& times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Every time Shia kills a target, increases her &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s, stacking up to &Param3& times.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -70224,9 +70163,7 @@
                         "",
                         "Surfing Rondo"
                     ],
-                    "hiddenParams": [
-                        "50%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "Common_Potential_11",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -70235,7 +70172,7 @@
                     "id": 515532,
                     "name": "Counter Current",
                     "briefDesc": "Every time Shia triggers ##Lux Mark#1015#, increases her &Param4&.",
-                    "desc": "Every time Shia triggers ##Lux Mark#1015#, increases her &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s, stacking up to &Param3& times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Every time Shia triggers ##Lux Mark#1015#, increases her &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s, stacking up to &Param3& times.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -70257,9 +70194,7 @@
                         "",
                         "Surfing Rondo"
                     ],
-                    "hiddenParams": [
-                        "50%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "Common_Potential_11",
                     "corner": "Triangle",
                     "rarity": "common"
@@ -75261,7 +75196,7 @@
                     "id": 515810,
                     "name": "Non-Stop Victory",
                     "briefDesc": "When Snowish Laru's Auto Attack lands a Crit Hit, increases her &Param1&.",
-                    "desc": "When Snowish Laru's Auto Attack lands a Crit Hit, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage) \u000bHiddenParam5: &HiddenParam5& (HitDamage) \u000bHiddenParam6: &HiddenParam6& (HitDamage) \u000bHiddenParam7: &HiddenParam7& (HitDamage)",
+                    "desc": "When Snowish Laru's Auto Attack lands a Crit Hit, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -75277,15 +75212,7 @@
                         8,
                         4
                     ],
-                    "hiddenParams": [
-                        "246%/283%/320%/430%/465%/499%/568%/598%/627%/686%/736%/785%/834%",
-                        "100%/115%/130%/175%/189%/203%/231%/243%/255%/278%/298%/318%/338%",
-                        "85%/97%/110%/148%/160%/172%/195%/205%/216%/236%/253%/270%/287%",
-                        "90%/103%/117%/157%/170%/182%/208%/218%/229%/251%/269%/287%/305%",
-                        "129%/206%/283%/361%/438%/515%/592%/670%/747%",
-                        "91%/146%/201%/255%/310%/365%/420%/474%/529%",
-                        "37%/42%/48%/64%/69%/75%/85%/89%/94%/103%/106%/110%/114%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "15801_Potential_04",
                     "corner": "Round",
                     "rarity": "common"
@@ -75597,7 +75524,7 @@
                     "id": 515830,
                     "name": "Heart's Trumpet",
                     "briefDesc": "Increases the &Param1& of Colonel Walnut and General Curly. Each time they deal DMG, increases their &Param3&; each time they land a Crit Hit, increases the &Param7& of Ignis Trekkers in the squad.",
-                    "desc": "Increases the &Param1& of Colonel Walnut and General Curly by &Param2&.\u000bEach time they deal DMG, increases their &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s, up to &Param6& stacks.\u000bEach time they land a Crit Hit, increases the &Param7& of Ignis Trekkers in the squad by <color=#ec6d21>&Param8&</color> for &Param9&s, up to &Param10& stacks.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "Increases the &Param1& of Colonel Walnut and General Curly by &Param2&.\u000bEach time they deal DMG, increases their &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s, up to &Param6& stacks.\u000bEach time they land a Crit Hit, increases the &Param7& of Ignis Trekkers in the squad by <color=#ec6d21>&Param8&</color> for &Param9&s, up to &Param10& stacks.",
                     "damageType": [],
                     "effectType": [
                         "Attack Speed (base)",
@@ -75622,10 +75549,7 @@
                         10,
                         10
                     ],
-                    "hiddenParams": [
-                        "92%/106%/120%/161%/174%/187%/212%/224%/235%/257%/275%/293%/312%",
-                        "53%/61%/69%/92%/100%/107%/122%/128%/135%/147%/153%/158%/163%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "15801_Potential_23",
                     "corner": "Round",
                     "rarity": "common"
