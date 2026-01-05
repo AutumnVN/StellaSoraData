@@ -170,7 +170,9 @@
                     "name": "Precise Temperature Control",
                     "briefDesc": "After casting the Main Skill, can immediately cast again.",
                     "desc": "Within <color=#0abec5>2s</color> after casting Fireworks Jam (Main Skill), can immediately cast again. \u000bWhen Fireworks Jam triggers an ##Ignis Mark: Sacred Flame#2013#, casting the Skill again increases its DMG by <color=#0abec5>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage)",
-                    "damageType": [],
+                    "damageType": [
+                        "Skill (from Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [
                         "Skill Intensity (base)"
@@ -3257,7 +3259,9 @@
                     "name": "Mystery of Gyration",
                     "briefDesc": "Tilia can throw more Aegis of Light.",
                     "desc": "When casting &Param1& (Support Skill), Tilia throws Aegis of Light at up to <color=#0abec5>5</color> targets simultaneously.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
-                    "damageType": [],
+                    "damageType": [
+                        "Skill (from Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -16488,7 +16492,9 @@
                     "name": "Intonation",
                     "briefDesc": "When casting the Ultimate, increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.",
                     "desc": "When casting Flood Mantra (Ultimate), increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& by <color=#ec6d21>&Param1&</color> to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
-                    "damageType": [],
+                    "damageType": [
+                        "Ultimate (from Ultimate) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [
                         "Ultimate DMG (base)"
@@ -21483,7 +21489,8 @@
                     "briefDesc": "After casting the Main Skill, increases the DMG of the next Skill.",
                     "desc": "After casting &Param1& (Main Skill), increases the DMG of the next Skill by <color=#0abec5>&Param2&</color>, up to 3 stacks. \u000bAt 3 stacks, casting the Main Skill again will remove the buff.\u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill)",
+                        "Skill (from Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -29370,7 +29377,9 @@
                     "name": "Most Admired",
                     "briefDesc": "Summons more Flying Leaves.",
                     "desc": "Summons <color=#0abec5>3</color> additional Flying Leaves.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
-                    "damageType": [],
+                    "damageType": [
+                        "Skill (from Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -35206,7 +35215,9 @@
                     "name": "Localized Snowfall",
                     "briefDesc": "After Freesia casts the Support Skill while in ##Berserk#2014#, there is a chance to summon an Ice Flower with an Auto Attack.",
                     "desc": "After Freesia casts &Param10& (Support Skill) while in ##Berserk#2014#, there is a <color=#0abec5>30%</color> chance to summon one Ice Flower with an Auto Attack within <color=#0abec5>&Param1&</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
-                    "damageType": [],
+                    "damageType": [
+                        "Skill (from Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -42831,7 +42842,8 @@
                     "briefDesc": "When &Param1& triggers a ##Lux Mark#1015#, enhances Two Base Hit.",
                     "desc": "When &Param1& (Main Skill) triggers a ##Lux Mark#1015#, enhances Two Base Hit, increasing its DMG by <color=#0abec5>&Param2&</color> and reducing its Attack Interval by <color=#0abec5>30%</color>.\u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill)",
+                        "Skill (from Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -42857,7 +42869,9 @@
                     "name": "Board Tricks",
                     "briefDesc": "Increases Skill DMG. When triggering a mark, increases the Skill DMG taken by the target.",
                     "desc": "Increases the damage of &Param1& (Main Skill) by <color=#0abec5>&Param2&</color>. \u000bWhen ##Lux Mark#1015# is triggered, increases the Skill DMG taken by the target by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
-                    "damageType": [],
+                    "damageType": [
+                        "Skill (from Skill) (hidden)"
+                    ],
                     "effectType": [
                         "Skill DMG Taken (base)"
                     ],
@@ -43227,7 +43241,9 @@
                     "name": "Radiant Burst",
                     "briefDesc": "Increases the DMG and Attack Range of Astral Hex.",
                     "desc": "Increases the Attack Range of Astral Hex by <color=#0abec5>50%</color> and its DMG by <color=#0abec5>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
-                    "damageType": [],
+                    "damageType": [
+                        "Skill (from Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [
                         "Skill DMG (base)"
@@ -43314,7 +43330,9 @@
                     "name": "Shutout Desire",
                     "briefDesc": "When the main Trekker deals DMG to a target inflicted with Astral Hex, deals additional DMG.",
                     "desc": "When the main Trekker deals damage to a target inflicted with Astral Hex, deals an additional <color=#ec6d21>&Param1& of Minova's ATK</color> as Lux Skill DMG. This effect can only be triggered once per second.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
-                    "damageType": [],
+                    "damageType": [
+                        "Skill (from Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -48271,7 +48289,8 @@
                     "briefDesc": "The third strike of Fiery Punches deals additional DMG.",
                     "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Auto Attack"
+                        "Auto Attack",
+                        "Auto Attack (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -53854,7 +53873,8 @@
                     "briefDesc": "Crimson Dragon transforms into Tiger of the East.",
                     "desc": "Crimson Dragon enhances into Tiger of the East. Increases its ATK by <color=#0abec5>&Param1&</color> every 2s. Tiger of the East lasts for 15s, dealing <color=#0abec5>&Param2& of ATK</color>/<color=#0abec5>&Param3& of ATK</color>/<color=#0abec5>&Param4& of ATK x2</color> as AoE Ignis Minion DMG, and inflicting ##Ignis Mark: Sacred Flame#2013#.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill)",
+                        "Minion (from Skill) (hidden)"
                     ],
                     "effectType": [
                         "Minion DMG (base)"
@@ -53882,7 +53902,8 @@
                     "briefDesc": "The first summon of the Support Skill creates a Blazing Sphere, dealing DMG to nearby targets continuously.",
                     "desc": "The first minion summoned by &Param2& (Support Skill) is inflicted with Blazing Barrier, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Minion DMG to nearby targets every <color=#0abec5>0.5</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill)",
+                        "Minion (from Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -58779,7 +58800,8 @@
                     "briefDesc": "After Chitose casts the Main Skill, her Auto Attack will summon a Coiling Serpent, and her resistance to interruption is increased.",
                     "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Coiling Serpent, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Auto Attack DMG. Can trigger ##Aqua Mark#1018#. Also, Chitose's resistance to interruption is increased for &Param9&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack)",
+                        "Auto Attack (from Normal attack) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -58808,8 +58830,10 @@
                     "id": 514402,
                     "name": "Mirror Blade",
                     "briefDesc": "After Chitose casts the Main Skill, her Auto Attack will summon a Mirror Image that performs Auto Attacks, and her resistance to interruption is increased.",
-                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Mirror Image that has <color=#0abec5>60%</color> of Chitose's ATK and performs Auto Attacks. Also, Chitose's resistance to interruption is increased for &Param1&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage) \u000bHiddenParam5: &HiddenParam5& (HitDamage) \u000bHiddenParam6: &HiddenParam6& (HitDamage) \u000bHiddenParam7: &HiddenParam7& (HitDamage) \u000bHiddenParam8: &HiddenParam8& (HitDamage) \u000bHiddenParam9: &HiddenParam9& (HitDamage) \u000bHiddenParam10: &HiddenParam10& (HitDamage) \u000bHiddenParam11: &HiddenParam11& (HitDamage) \u000bHiddenParam12: &HiddenParam12& (HitDamage) \u000bHiddenParam13: &HiddenParam13& (HitDamage) \u000bHiddenParam14: &HiddenParam14& (HitDamage) \u000bHiddenParam15: &HiddenParam15& (HitDamage) \u000bHiddenParam16: &HiddenParam16& (HitDamage) \u000bHiddenParam17: &HiddenParam17& (HitDamage) \u000bHiddenParam18: &HiddenParam18& (HitDamage)",
-                    "damageType": [],
+                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Mirror Image that has <color=#0abec5>60%</color> of Chitose's ATK and performs Auto Attacks. Also, Chitose's resistance to interruption is increased for &Param1&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage) \u000bHiddenParam5: &HiddenParam5& (HitDamage) \u000bHiddenParam6: &HiddenParam6& (HitDamage) \u000bHiddenParam7: &HiddenParam7& (HitDamage) \u000bHiddenParam8: &HiddenParam8& (HitDamage) \u000bHiddenParam9: &HiddenParam9& (HitDamage)",
+                    "damageType": [
+                        "Auto Attack (from Normal attack) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -58828,16 +58852,7 @@
                         "57%/66%/75%/100%/108%/117%/133%/139%/146%/160%/172%/183%/195%",
                         "31%/35%/40%/54%/58%/62%/71%/75%/78%/86%/92%/98%/104%",
                         "26.2%/30%/34%/46%/50%/53%/61%/64%/67%/73%/78%/84%/89%",
-                        "20.2%/23.3%/26.3%/35.4%/38.2%/41%/46.7%/49.1%/51.6%/56.4%/60.5%/64.5%/68.5%",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
+                        "20.2%/23.3%/26.3%/35.4%/38.2%/41%/46.7%/49.1%/51.6%/56.4%/60.5%/64.5%/68.5%"
                     ],
                     "icon": "14401_Potential_02",
                     "rarity": "core"
@@ -58846,7 +58861,7 @@
                     "id": 514403,
                     "name": "Cascade of Ruin",
                     "briefDesc": "Requires fewer Torrent Flash casts to unleash Torrent Flash: Scale. Also enhances Torrent Flash: Scale.",
-                    "desc": "Chitose may unleash Torrent Flash: Scale after one Torrent Flash cast. Also enhances Torrent Flash: Scale, dealing <color=#0abec5>&Param1& of ATK x4</color> as AoE Aqua Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Chitose may unleash Torrent Flash: Scale after one Torrent Flash cast. Also enhances Torrent Flash: Scale, dealing <color=#0abec5>&Param1& of ATK x4</color> as AoE Aqua Skill DMG.",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -58857,9 +58872,7 @@
                     "params": [
                         "98%/113%/127%/171%/185%/199%/226%/238%/250%/273%/293%/312%/332%"
                     ],
-                    "hiddenParams": [
-                        "98%/113%/127%/171%/185%/199%/226%/238%/250%/273%/293%/312%/332%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "14401_Potential_03",
                     "rarity": "core"
                 },
@@ -58867,8 +58880,10 @@
                     "id": 514404,
                     "name": "Against the Flow",
                     "briefDesc": "Reduces Main Skill Cooldown. When casting Torrent Flash, summons a Mirror Image.",
-                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage)",
-                    "damageType": [],
+                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "damageType": [
+                        "Skill (from Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -58876,9 +58891,7 @@
                     "params": [],
                     "hiddenParams": [
                         "109%/126%/142%/191%/206%/222%/252%/265%/279%/305%/327%/349%/370%",
-                        "128%/147%/166%/223%/241%/259%/295%/310%/326%/356%/382%/407%/433%",
-                        "",
-                        ""
+                        "128%/147%/166%/223%/241%/259%/295%/310%/326%/356%/382%/407%/433%"
                     ],
                     "icon": "14401_Potential_04",
                     "rarity": "core"
@@ -59210,7 +59223,7 @@
                     "id": 514423,
                     "name": "Blade of the Deep",
                     "briefDesc": "When casting the Support Skill, generates multiple Mirror Images in a row.",
-                    "desc": "When casting Water Surge, (Support Skill) generates Mirror Images, dealing <color=#0abec5>&Param1& of ATK</color> as Aqua DMG. Up to 6 Mirror Images can be generated through this effect.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When casting Water Surge, (Support Skill) generates Mirror Images, dealing <color=#0abec5>&Param1& of ATK</color> as Aqua DMG. Up to 6 Mirror Images can be generated through this effect.",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -59221,9 +59234,7 @@
                     "params": [
                         "23.6%/27.2%/30.7%/41.4%/44.7%/48%/54.6%/57.5%/60.3%/66%/70.7%/75.4%/80.2%"
                     ],
-                    "hiddenParams": [
-                        ""
-                    ],
+                    "hiddenParams": [],
                     "icon": "14401_Potential_23",
                     "rarity": "core"
                 },
@@ -66751,7 +66762,8 @@
                     "briefDesc": "The laser inflicts Shock on targets. When attacking Shocked targets, deals additional DMG.",
                     "desc": "The laser inflicts Shock on targets for 10s. When dealing damage to Shocked targets, deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG. With the 20th hit, deals <color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG and removes Shock.\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill)",
+                        "Skill (from Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -69444,7 +69456,7 @@
                     "id": 515503,
                     "name": "Moonlight Overflow",
                     "briefDesc": "Night Rabbit fires tracking bullets at nearby targets during Auto Attacks. When the tracking bullets deal DMG, Night Rabbit gains Moongaze, increasing its DMG.",
-                    "desc": "During Auto Attacks, Night Rabbit locks up to <color=#0abec5>4</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "During Auto Attacks, Night Rabbit locks up to <color=#0abec5>4</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
                         "Auto Attack (from Skill)"
                     ],
@@ -69468,9 +69480,7 @@
                         "",
                         "Whirling Waves"
                     ],
-                    "hiddenParams": [
-                        ""
-                    ],
+                    "hiddenParams": [],
                     "icon": "15501_Potential_03",
                     "rarity": "core"
                 },
@@ -69478,7 +69488,7 @@
                     "id": 515504,
                     "name": "Astral Pirouette",
                     "briefDesc": "Night Rabbit summoned by the Main Skill fires tracking bullets at nearby targets when attacking. When the tracking bullets deal DMG, Night Rabbit gains Moongaze, increasing its DMG.",
-                    "desc": "Night Rabbit summoned by the Main Skill locks up to <color=#0abec5>2</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Night Rabbit summoned by the Main Skill locks up to <color=#0abec5>2</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -69502,9 +69512,7 @@
                         "",
                         "Whirling Waves"
                     ],
-                    "hiddenParams": [
-                        ""
-                    ],
+                    "hiddenParams": [],
                     "icon": "15501_Potential_04",
                     "rarity": "core"
                 }
