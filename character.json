@@ -8109,7 +8109,7 @@
                     "id": 511001,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Skill DMG (base)"
@@ -8121,11 +8121,7 @@
                         "4%",
                         "Skill DMG"
                     ],
-                    "hiddenParams": [
-                        "100%",
-                        "50%",
-                        "50%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11001_Potential_01",
                     "rarity": "core"
                 },
@@ -8133,7 +8129,7 @@
                     "id": 511002,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -8151,9 +8147,7 @@
                         "Skill DMG",
                         "5%"
                     ],
-                    "hiddenParams": [
-                        "95%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11001_Potential_02",
                     "rarity": "core"
                 },
@@ -8161,7 +8155,7 @@
                     "id": 511003,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Minion DMG (base)"
@@ -8175,9 +8169,7 @@
                         "5%",
                         "Minion DMG"
                     ],
-                    "hiddenParams": [
-                        "45%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11001_Potential_03",
                     "rarity": "core"
                 },
@@ -8185,7 +8177,7 @@
                     "id": 511004,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Minion DMG (base)"
@@ -8199,9 +8191,7 @@
                         "5%",
                         "Minion DMG"
                     ],
-                    "hiddenParams": [
-                        "105%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11001_Potential_04",
                     "rarity": "core"
                 }
@@ -8211,7 +8201,7 @@
                     "id": 511005,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (HitDamage)",
                     "damageType": [
                         "Skill"
                     ],
@@ -8222,9 +8212,7 @@
                     "params": [
                         "59%/94%/129%/164%/199%/235%/270%/305%/340%"
                     ],
-                    "hiddenParams": [
-                        "110%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11001_Potential_01",
                     "corner": "Diamond",
                     "rarity": "rare"
@@ -8233,7 +8221,7 @@
                     "id": 511006,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8248,11 +8236,7 @@
                         "10%/15%/21%/27%/33%/39%/44%/50%/56%",
                         3
                     ],
-                    "hiddenParams": [
-                        "20%",
-                        "120%",
-                        "220%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11001_Potential_01",
                     "corner": "Triangle",
                     "rarity": "common"
@@ -8261,7 +8245,7 @@
                     "id": 511007,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
                         "Skill DMG (base)"
@@ -8277,10 +8261,7 @@
                         5,
                         3
                     ],
-                    "hiddenParams": [
-                        "100%",
-                        "160%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11001_Potential_02",
                     "corner": "Round",
                     "rarity": "common"
@@ -19076,7 +19057,7 @@
                     "id": 511611,
                     "name": "Power Slide",
                     "briefDesc": "Ridge can dodge one more time. Increases her &Param1& when dodging.",
-                    "desc": "Ridge can dodge one more time. When dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bParam4: &Param4& (BuffValue,LaminatedNum)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Ridge can dodge one more time. When dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
                         "Auto Attack Damage (base)"
@@ -19092,9 +19073,7 @@
                         8,
                         1
                     ],
-                    "hiddenParams": [
-                        "100%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "Common_Potential_2",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -27002,7 +26981,7 @@
                     "id": 511911,
                     "name": "Sky Piercer",
                     "briefDesc": "When casting the Main Skill, increases &Param3&.",
-                    "desc": "When casting Flowers Dance (Main Skill), increases &Param3& by <color=#ec6d21>&Param1&</color> for &Param2&s.\u000bParam4: &Param4& (BuffValue,LaminatedNum)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When casting Flowers Dance (Main Skill), increases &Param3& by <color=#ec6d21>&Param1&</color> for &Param2&s.\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -27018,9 +26997,7 @@
                         "ATK",
                         1
                     ],
-                    "hiddenParams": [
-                        "100%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "11901_Potential_01",
                     "corner": "Triangle",
                     "rarity": "rare"
@@ -32260,7 +32237,7 @@
                     "id": 512311,
                     "name": "Tall Tree Attracts Wind",
                     "briefDesc": "Ann can dodge one more time. Increases her &Param1& when dodging.",
-                    "desc": "Ann can dodge one more time.\u000bWhen dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Ann can dodge one more time.\u000bWhen dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "damageType": [],
                     "effectType": [
                         "DEF (base)"
@@ -32275,9 +32252,7 @@
                         "39/52/65/78/91/105/118/131/144",
                         4
                     ],
-                    "hiddenParams": [
-                        "100%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "Common_Potential_13",
                     "corner": "Diamond",
                     "rarity": "rare"
@@ -32331,7 +32306,7 @@
                     "id": 512312,
                     "name": "Wind's Track",
                     "briefDesc": "When Ann dodges through barriers, increases all other friendly units' &Param1&.",
-                    "desc": "Ann can dodge through barriers.\u000bWhen Ann dodges through barriers, increases all other friendly units' &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Ann can dodge through barriers.\u000bWhen Ann dodges through barriers, increases all other friendly units' &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "damageType": [],
                     "effectType": [
                         "Skill DMG (base)"
@@ -32346,9 +32321,7 @@
                         "17%/28%/38%/49%/59%/69%/80%/90%/101%",
                         4
                     ],
-                    "hiddenParams": [
-                        "120%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "Common_Potential_3",
                     "corner": "Triangle",
                     "rarity": "common"
@@ -66806,7 +66779,7 @@
                     "id": 515001,
                     "name": "Aerial Suspension",
                     "briefDesc": "After casting the Main Skill, creates a Thunder Domain that deals DMG over time.",
-                    "desc": "After casting &Param1& (Main Skill), creates a Thunder Domain, dealing <color=#0abec5>&Param2& of ATK</color> as AoE Lux Skill DMG every <color=#0abec5>0.5</color>s for a total of 10s.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "After casting &Param1& (Main Skill), creates a Thunder Domain, dealing <color=#0abec5>&Param2& of ATK</color> as AoE Lux Skill DMG every <color=#0abec5>0.5</color>s for a total of 10s.",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -66818,10 +66791,7 @@
                         "Thunderflare Strike",
                         "15.6%/17.2%/18.7%/23.4%/25%/26.5%/29.6%/31.2%/32.8%/35.9%/37.4%/39%/40.6%"
                     ],
-                    "hiddenParams": [
-                        "90%",
-                        "110%"
-                    ],
+                    "hiddenParams": [],
                     "icon": "15001_Potential_01",
                     "rarity": "core"
                 },
@@ -66829,7 +66799,7 @@
                     "id": 515002,
                     "name": "Arc Chain Laser",
                     "briefDesc": "The laser inflicts Shock on targets. When attacking Shocked targets, deals additional DMG.",
-                    "desc": "The laser inflicts Shock on targets for 10s. When dealing damage to Shocked targets, deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG. With the 20th hit, deals <color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG and removes Shock.\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage)",
+                    "desc": "The laser inflicts Shock on targets for 10s. When dealing damage to Shocked targets, deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG. With the 20th hit, deals <color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG and removes Shock.\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -66843,8 +66813,6 @@
                         "106%/117%/127%/159%/170%/180%/202%/212%/223%/244%/255%/265%/276%"
                     ],
                     "hiddenParams": [
-                        "90%",
-                        "110%",
                         "37.4%/41.2%/44.9%/56.1%/59.9%/63.6%/71.1%/74.9%/78.6%/86.1%/89.8%/93.6%/97.3%"
                     ],
                     "icon": "15001_Potential_02",
