@@ -8643,7 +8643,7 @@
                     "id": 511030,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,LaminatedNum) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Minion DMG (base)"
@@ -10977,7 +10977,7 @@
                     "id": 511110,
                     "name": "Cold Snap",
                     "briefDesc": "When Iris changes a target's status from ##Chill#1027# to ##Frozen#1002#, increases &Param5& and reduces Main Skill Cooldown.",
-                    "desc": "When Iris changes a target's status from ##Chill#1027# to ##Frozen#1002#, reduces &Param4& (Main Skill)'s Cooldown by &Param1&s. Also increases &Param5& by <color=#ec6d21>&Param2&</color> for &Param3&s. This effect can only be triggered once every 12s.\u000bParam10: &Param10& (Skill,Title)",
+                    "desc": "When Iris changes a target's status from ##Chill#1027# to ##Frozen#1002#, reduces &Param4& (Main Skill)'s Cooldown by &Param1&s. Also increases &Param5& by <color=#ec6d21>&Param2&</color> for &Param3&s. This effect can only be triggered once every 12s.",
                     "damageType": [],
                     "effectType": [
                         "Skill Crit Rate (base)"
@@ -11552,7 +11552,7 @@
                     "id": 511129,
                     "name": "Distressed Asset",
                     "briefDesc": "While the Support Skill is active, each time a target within its Attack Range is killed, deals additional AoE DMG and inflicts ##Frozen#1002# to nearby targets.",
-                    "desc": "While &Param10& (Support Skill) is active, each time a target within its Attack Range is killed, deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Aqua Skill DMG and inflicts ##Frozen#1002# on nearby targets for 3s.\u000bParam2: &Param2& (Skill,Title)",
+                    "desc": "While &Param10& (Support Skill) is active, each time a target within its Attack Range is killed, deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Aqua Skill DMG and inflicts ##Frozen#1002# on nearby targets for 3s.",
                     "damageType": [
                         "Skill"
                     ],
@@ -11581,7 +11581,7 @@
                     "id": 511133,
                     "name": "Positive Signal",
                     "briefDesc": "When casting the Support Skill for the first time, increases the squad's &Param4&.",
-                    "desc": "When casting &Param10& (Support Skill) for the first time, increases the squad's &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s.\u000bParam3: &Param3& (Skill,Title)",
+                    "desc": "When casting &Param10& (Support Skill) for the first time, increases the squad's &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -22057,7 +22057,7 @@
                     "id": 511731,
                     "name": "Effortless Mastery",
                     "briefDesc": "The Ultimate can inflict ##Lux Mark: Radiance#2016#. Also increases its DMG.",
-                    "desc": "&Param4& (Ultimate) can inflict ##Lux Mark: Radiance#2016#. Also increases its DMG by <color=#ec6d21>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "desc": "&Param4& (Ultimate) can inflict ##Lux Mark: Radiance#2016#. Also increases its DMG by <color=#ec6d21>&Param2&</color>.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -37462,7 +37462,7 @@
             "name": "Hat Toss",
             "cooldown": "12s",
             "briefDesc": "Throws the top hat, dealing DMG multiple times and inflicting ##Ignis Mark: Sacred Flame#2013#.",
-            "desc": "Throws the top hat, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG every 0.5s for a total of 5s, and inflicting ##Ignis Mark: Sacred Flame#2013#. \u000bWhen casting this skill, increases the squad's &Param9& by <color=#fb8037>&Param7&</color> for &Param4&s.\u000bParam3: &Param3& (Effect,EffectTypeParam1)",
+            "desc": "Throws the top hat, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG every 0.5s for a total of 5s, and inflicting ##Ignis Mark: Sacred Flame#2013#. \u000bWhen casting this skill, increases the squad's &Param9& by <color=#fb8037>&Param7&</color> for &Param4&s.",
             "damageType": [
                 "Skill (from Skill)"
             ],
@@ -40791,7 +40791,7 @@
                     "id": 512729,
                     "name": "Let Me Help!",
                     "briefDesc": "Increases the &Param3& of Aqua Trekkers within Tidal Domain every second.",
-                    "desc": "Increases the &Param3& of Aqua Trekkers within Tidal Domain by <color=#ec6d21>&Param1&</color> every second, stacking up to &Param4& times.\u000bParam2: &Param2& (BuffValue,LaminatedNum)",
+                    "desc": "Increases the &Param3& of Aqua Trekkers within Tidal Domain by <color=#ec6d21>&Param1&</color> every second, stacking up to &Param4& times.",
                     "damageType": [],
                     "effectType": [
                         "Auto Attack Damage (base)"
@@ -75382,7 +75382,7 @@
                     "id": 515823,
                     "name": "Promotion Time",
                     "briefDesc": "Combines Colonel Walnuts into General Curly.\u000bIf the squad is Ignis-Trekker only, increases General Curly's &Param3& over time.",
-                    "desc": "When 4 Colonel Walnuts are on the battlefield, combines them into 1 General Curly, dealing <color=#0abec5>&Param1&</color> of ATK as Ignis Minion DMG to the target.\u000bGeneral Curly fights for <color=#0abec5>10</color>s, and only 1 can exist.\u000bIf the squad is Ignis-Trekker only, increases General Curly's &Param3& by <color=#0abec5>&Param4&</color> every second, up to <color=#0abec5>&Param5&</color> stacks.\u000bParam2: &Param2& (ScriptParameterValue,CommonData) \u000bParam6: &Param6& (BuffValue,LaminatedNum)",
+                    "desc": "When 4 Colonel Walnuts are on the battlefield, combines them into 1 General Curly, dealing <color=#0abec5>&Param1&</color> of ATK as Ignis Minion DMG to the target.\u000bGeneral Curly fights for <color=#0abec5>10</color>s, and only 1 can exist.\u000bIf the squad is Ignis-Trekker only, increases General Curly's &Param3& by <color=#0abec5>&Param4&</color> every second, up to <color=#0abec5>&Param5&</color> stacks.\u000bParam2: &Param2& (ScriptParameterValue,CommonData)",
                     "damageType": [
                         "Minion (from Skill)"
                     ],
