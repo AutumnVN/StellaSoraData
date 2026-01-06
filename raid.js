@@ -18,11 +18,11 @@ const raid = {};
 for (const drillId in JOINTDRILLCONTROL) {
     const drillLevelGroupId = JOINTDRILLCONTROL[drillId].DrillLevelGroupId;
     const drillLevels = Object.values(JOINTDRILLLEVEL).filter(level => level.DrillLevelGroupId === drillLevelGroupId);
+    console.log(MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Icon);
 
     raid[drillLevelGroupId] = {
-        name: LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Name],
-        icon: MONSTERMANUAL[Object.keys(MONSTERMANUAL).filter(key => key.startsWith(MONSTER[drillLevels[0].BossId].FCId.toString().slice(0, 5)))[0]].Icon.split('/').pop(),
-        subname: LANG_JOINTDRILLLEVEL[drillLevels[0].SubName],
+        name: `[${LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Name]}] ${LANG_JOINTDRILLLEVEL[drillLevels[0].SubName]}`,
+        icon: MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Icon.split('/').pop(),
         type: MONSTER_EPIC_TYPE[MONSTER[drillLevels[0].BossId].EpicLv],
         mechanic: drillLevels[0].BossAffix.map(affixId => ({
             name: LANG_JOINTDRILLAFFIX[JOINTDRILLAFFIX[affixId].Name],
