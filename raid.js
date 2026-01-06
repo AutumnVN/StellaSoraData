@@ -21,7 +21,7 @@ for (const drillId in JOINTDRILLCONTROL) {
 
     raid[drillLevelGroupId] = {
         name: LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Name],
-        icon: drillLevels.map(level => MONSTERMANUAL[MONSTER[level.BossId].FCId]?.Icon).filter(value => value)[0]?.split('/')?.pop(),
+        icon: MONSTERMANUAL[Object.keys(MONSTERMANUAL).filter(key => key.startsWith(MONSTER[drillLevels[0].BossId].FCId.toString().slice(0, 5)))[0]].Icon.split('/').pop(),
         subname: LANG_JOINTDRILLLEVEL[drillLevels[0].SubName],
         type: MONSTER_EPIC_TYPE[MONSTER[drillLevels[0].BossId].EpicLv],
         mechanic: drillLevels[0].BossAffix.map(affixId => ({
