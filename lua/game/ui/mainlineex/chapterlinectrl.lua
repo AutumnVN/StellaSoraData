@@ -277,12 +277,15 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 	end
 	ForEachTableLine(DataTable.Story, forEachLine_Story)
 	local index = 1
+	local bHasUnlockBranch = false
 	for k, v in ipairs(self.tbBranch[avgId]) do
 		local bUnlock = AvgData:IsUnlock(v.ConditionId)
 		local bReaded = AvgData:IsStoryReaded(v.Id)
 		local branchGrid = root:Find("BranchGrid_" .. k)
 		local storyConfig = AvgData:GetStoryCfgData(branchIds[index])
-		root.gameObject:SetActive(bUnlock)
+		if bUnlock then
+			bHasUnlockBranch = true
+		end
 		if not bUnlock then
 			if table.indexof(self.tbLockedBranchGrid, avgId) <= 0 then
 				table.insert(self.tbLockedBranchGrid, avgId)
@@ -343,6 +346,7 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 		end
 		index = index + 1
 	end
+	root.gameObject:SetActive(bHasUnlockBranch)
 end
 function ChapterLineCtrl:RefreshTimeStamp(goTimeStamp, index)
 	local timeStampName

@@ -390,10 +390,26 @@ local AvgPreset = {
 		"story_main_06_006",
 		"story_main_06_007",
 		"story_main_06_008",
+		"story_main_06_010",
 		"story_main_06_011",
 		"story_main_06_012",
 		"story_main_06_013",
 		"story_main_06_014",
+		"story_main_06_015",
+		"story_main_06_016",
+		"story_main_06_017_a",
+		"story_main_06_017_b",
+		"story_main_06_018",
+		"story_main_06_019",
+		"story_main_06_020",
+		"story_main_06_021_FP",
+		"story_main_06_021_MP",
+		"story_main_06_022_FP",
+		"story_main_06_022_MP",
+		"story_main_06_023",
+		"story_main_06_024_a",
+		"story_main_06_024_b",
+		"story_main_06_025",
 		"story_main_be_01_001_FP",
 		"story_main_be_01_001_MP",
 		"story_main_be_01_002",
@@ -5119,6 +5135,14 @@ local AvgPreset = {
 		},
 		{
 			"fx_avg_meteor_right",
+			""
+		},
+		{
+			"fx_avg_spot_magic",
+			""
+		},
+		{
+			"fx_avg_elf_magic",
 			""
 		},
 		{

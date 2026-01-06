@@ -3993,7 +3993,7 @@ return {
 			"",
 			false,
 			"",
-			"Hurry up and hide! \"The Demon Doc\" is here!",
+			"Hurry up and hide! The \"Devil in White\" is here!",
 			""
 		}
 	},
@@ -4347,7 +4347,7 @@ return {
 			"",
 			false,
 			"",
-			"Wah ... The Demon Doc!",
+			"Wah ... The Devil in White!",
 			""
 		}
 	},
@@ -4865,7 +4865,7 @@ return {
 			"",
 			false,
 			"",
-			"\"The Demon Doc\" really lives up to her name.",
+			"The \"Devil in White\" really lives up to her name.",
 			""
 		}
 	},

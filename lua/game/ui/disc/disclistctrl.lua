@@ -194,6 +194,9 @@ function DiscListCtrl:OnBtnClick_BreakLimitAll()
 			tbMat = self.tbMat
 		}, AllEnum.DiscSucBar.BreakLimitAll)
 		self.tbAllDisc = PlayerData.Disc:GetAllDisc()
+		if not self.bOpen then
+			return
+		end
 		self:Refresh()
 	end
 	local allBreak = function()

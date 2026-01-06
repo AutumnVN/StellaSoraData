@@ -6617,7 +6617,7 @@ return {
 			"",
 			false,
 			"",
-			"You betcha! Jade Blade was captured last week by the squad she led.",
+			"You betcha! Jade Blade was captured last month by the squad she led.",
 			""
 		}
 	},

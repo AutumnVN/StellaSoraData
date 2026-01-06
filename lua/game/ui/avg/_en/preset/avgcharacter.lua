@@ -2399,6 +2399,36 @@ return {
 		reuse = "avg1_135"
 	},
 	{
+		id = "avg3_1265",
+		name = "Firenze A",
+		name_bg_color = "#8db947",
+		reuse = "avg1_110"
+	},
+	{
+		id = "avg3_1266",
+		name = "Grace Light Academy Student A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_178"
+	},
+	{
+		id = "avg3_1267",
+		name = "Grace Light Academy Student B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_178"
+	},
+	{
+		id = "avg3_1268",
+		name = "Ranged Grass A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_957"
+	},
+	{
+		id = "avg3_1269",
+		name = "Ranged Grass B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_957"
+	},
+	{
 		id = "avg4_100",
 		name = "Laru Bright Ver",
 		name_bg_color = "#0ABEC5"

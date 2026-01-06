@@ -80,7 +80,7 @@ return {
 		id = 118,
 		icon = "Icon/Head/head_11801_S",
 		name = "Coronis",
-		landmark = "\"That\" Clinic in Emor",
+		landmark = "*That* Clinic in Philae",
 		signature = "Hello"
 	},
 	{
@@ -246,10 +246,10 @@ return {
 	},
 	{
 		id = 998,
-		icon = "Icon/Head/head_group_S",
+		icon = "Icon/Head/head_9100_S",
 		name = "==PLAYER_NAME==",
-		landmark = "",
-		signature = ""
+		landmark = "Lucky Oasis",
+		signature = "CEO of Boss Accord Staffing Co."
 	},
 	{
 		id = 997,
@@ -275,35 +275,49 @@ return {
 	{
 		id = 994,
 		icon = "Icon/Head/head_group_S",
-		name = "Goodwind Homecare \226\128\147 Philae's First Squad",
+		name = "",
 		landmark = "",
 		signature = "With tea, we greet; with blade, we stand."
 	},
 	{
 		id = 993,
 		icon = "Icon/Head/head_group_S",
-		name = "Petal Bloom Revival Meeting",
+		name = "",
 		landmark = "",
 		signature = "Beat the monsters, complete the quests!"
 	},
 	{
 		id = 992,
 		icon = "Icon/Head/head_group_S",
-		name = "REMEMBER YOUR DELIVERIES",
+		name = "",
 		landmark = "",
 		signature = "Don't forget to sign the delivery receipt!"
 	},
 	{
+		id = 991,
+		icon = "Icon/Head/head_group_S",
+		name = "",
+		landmark = "",
+		signature = ""
+	},
+	{
+		id = 990,
+		icon = "Icon/Head/head_group_S",
+		name = "",
+		landmark = "",
+		signature = ""
+	},
+	{
 		id = 9152,
 		icon = "Icon/Head/head_npc15201_S",
-		name = "Bastelina",
+		name = "",
 		landmark = "Emor, Soul Shop Flagship",
 		signature = "My promotion to full-time is underway!"
 	},
 	{
 		id = 9999,
 		icon = "Icon/Head/head_npc99901_S",
-		name = "Vita",
+		name = "",
 		landmark = "File not found. The specified search pattern yielded no results.",
 		signature = "Pieces reset. Resources allocated. Process initiated."
 	}

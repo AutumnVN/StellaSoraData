@@ -848,7 +848,7 @@ return {
 			"",
 			false,
 			"",
-			"She's still in her signature \"Demon Doc\" outfit, with a faint scent of medicine lingering around her. But in this moment, to me, she looks more like a ...==W== guardian angel.",
+			"She's still in her signature \"Devil in White\" outfit, with a faint scent of medicine lingering around her. But in this moment, to me, she looks more like a ...==W== guardian angel.",
 			""
 		}
 	},
