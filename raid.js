@@ -18,7 +18,6 @@ const raid = {};
 for (const drillId in JOINTDRILLCONTROL) {
     const drillLevelGroupId = JOINTDRILLCONTROL[drillId].DrillLevelGroupId;
     const drillLevels = Object.values(JOINTDRILLLEVEL).filter(level => level.DrillLevelGroupId === drillLevelGroupId);
-    console.log(MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Icon);
 
     raid[drillLevelGroupId] = {
         name: `[${LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Name]}] ${LANG_JOINTDRILLLEVEL[drillLevels[0].SubName]}`,
@@ -43,6 +42,8 @@ for (const drillId in JOINTDRILLCONTROL) {
                 stat: {
                     'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
                     'HP Bar': level.HpBarNum,
+                    'Max Score': level.LevelScore + level.TimeScore + level.BaseHpScore,
+                    'Score': `${level.LevelScore} + (${level.TimeScore} - time_in_seconds * ${level.ScorePerSec}) + ${level.BaseHpScore}`,
                     'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0)) + (monsterValueTemplateAdjust.AtkFix || 0)),
                     'DEF': monsterValueTemplate.Def,
                     'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
