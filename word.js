@@ -100,7 +100,7 @@ function getWordEffectData(id) {
 function getWordBuffIcons(id) {
     const buffIcons = [];
 
-    const params = collectParamsFrom(WORD[id]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect')));
+    const params = collectParamsFrom(WORD[id]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect') || p.startsWith('OnceAdditionalAttribute')));
 
     for (const param of params) {
         const p = param.split(',');

@@ -217,7 +217,7 @@ function getSkillEffectData(skillId) {
 function getSkillBuffIcons(skillId) {
     const buffIcons = [];
 
-    const params = collectParamsFrom(SKILL[skillId]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect')));
+    const params = collectParamsFrom(SKILL[skillId]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect') || p.startsWith('OnceAdditionalAttribute')));
 
     for (const param of params) {
         const p = param.split(',');
@@ -481,7 +481,7 @@ function getPotentialEffectData(potId) {
 function getPotentialBuffIcons(potId) {
     const buffIcons = [];
 
-    const params = collectParamsFrom(POTENTIAL[potId]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect')));
+    const params = collectParamsFrom(POTENTIAL[potId]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect') || p.startsWith('OnceAdditionalAttribute')));
 
     for (const param of params) {
         const p = param.split(',');
@@ -634,7 +634,7 @@ function getTalentEffectData(talentId) {
 function getTalentBuffIcons(talentId) {
     const buffIcons = [];
 
-    const params = collectParamsFrom(TALENT[talentId]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect')));
+    const params = collectParamsFrom(TALENT[talentId]).filter(p => p && (p.startsWith('Buff') || p.startsWith('Effect') || p.startsWith('OnceAdditionalAttribute')));
 
     for (const param of params) {
         const p = param.split(',');
