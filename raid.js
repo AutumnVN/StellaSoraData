@@ -78,9 +78,52 @@ for (const drillId in JOINTDRILLCONTROL) {
                     'Lux RES': monsterValueTemplateAdjust.LERFix,
                     'Umbra RES': monsterValueTemplateAdjust.DERFix,
                 })),
+                bookStat: getBookStat(drillLevels[drillLevels.length - 1].BossId, index),
             }
-        })
+        }),
     };
 }
 
 writeFileSync('./raid.json', JSON.stringify(raid, null, 4));
+
+function getBookStartId(lastDiffBossId) {
+    for (let i = lastDiffBossId + 2; i < lastDiffBossId + 2 + 100; i++) {
+        const monster = MONSTER[i];
+
+        if (monster && monster.Name === '左壹白书') {
+            return i;
+        }
+    }
+
+    return;
+}
+
+function getBookStat(lastDiffBossId, index) {
+    const bookStartId = getBookStartId(lastDiffBossId);
+    if (!bookStartId) return;
+
+    const monster = MONSTER[bookStartId];
+    const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
+    const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[index];
+
+    return {
+        'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
+        'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0)) + (monsterValueTemplateAdjust.AtkFix || 0)),
+        'DEF': monsterValueTemplate.Def,
+        'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
+        'Attack Speed': monsterValueTemplate.AtkSpd / 100 + '%',
+        'Aqua DMG': monsterValueTemplate.WEE / 100 + '%',
+        'Ignis DMG': monsterValueTemplate.FEE / 100 + '%',
+        'Terra DMG': monsterValueTemplate.SEE / 100 + '%',
+        'Ventus DMG': monsterValueTemplate.AEE / 100 + '%',
+        'Lux DMG': monsterValueTemplate.LEE / 100 + '%',
+        'Umbra DMG': monsterValueTemplate.DEE / 100 + '%',
+        'Mark DMG Taken': monsterValueTemplate.RCDMARKDMG / 100 + '%',
+        'Aqua RES': monsterValueTemplateAdjust.WERFix,
+        'Ignis RES': monsterValueTemplateAdjust.FERFix,
+        'Terra RES': monsterValueTemplateAdjust.SERFix,
+        'Ventus RES': monsterValueTemplateAdjust.AERFix,
+        'Lux RES': monsterValueTemplateAdjust.LERFix,
+        'Umbra RES': monsterValueTemplateAdjust.DERFix,
+    };
+}
