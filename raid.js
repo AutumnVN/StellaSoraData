@@ -87,7 +87,7 @@ for (const drillId in JOINTDRILLCONTROL) {
 writeFileSync('./raid.json', JSON.stringify(raid, null, 4));
 
 function getBookStartId(lastDiffBossId) {
-    for (let i = lastDiffBossId + 2; i < lastDiffBossId + 2 + 100; i++) {
+    for (let i = lastDiffBossId + 2; i < lastDiffBossId + 2 + 10; i++) {
         const monster = MONSTER[i];
 
         if (monster && monster.Name === '左壹白书') {
