@@ -33,13 +33,28 @@ for (const drillId in JOINTDRILLCONTROL) {
         weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId].Templete].WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
         resistTo: (MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId].Templete].ResistEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'])[0],
         diff: drillLevels.map((level, index) => {
-            const monster = MONSTER[level.BossId];
-            const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
-            const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[index];
+            const monster1 = MONSTER[level.BossId];
+            const monster1ValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster1.Templete];
+            const monster1ValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monster1ValueTemplateAdjust.TemplateId)[index];
+
+            const monster2 = MONSTER[level.BossId + 1];
+            const monster2ValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster2.Templete];
+            const monster2ValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monster2ValueTemplateAdjust.TemplateId)[index];
+
+            const monsterObjects = [
+                {
+                    monsterValueTemplateAdjust: monster1ValueTemplateAdjust,
+                    monsterValueTemplate: monster1ValueTemplate,
+                },
+                {
+                    monsterValueTemplateAdjust: monster2ValueTemplateAdjust,
+                    monsterValueTemplate: monster2ValueTemplate,
+                }
+            ];
 
             return {
                 name: LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
-                stat: {
+                stat: monsterObjects.map(({ monsterValueTemplateAdjust, monsterValueTemplate }) => ({
                     'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
                     'HP Bar': level.HpBarNum,
                     'Max Score': level.LevelScore + level.TimeScore + level.BaseHpScore,
@@ -62,7 +77,7 @@ for (const drillId in JOINTDRILLCONTROL) {
                     'Ventus RES': monsterValueTemplateAdjust.AERFix,
                     'Lux RES': monsterValueTemplateAdjust.LERFix,
                     'Umbra RES': monsterValueTemplateAdjust.DERFix,
-                }
+                })),
             }
         })
     };
