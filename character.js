@@ -142,7 +142,7 @@ function getSkillDamageTypes(skillId) {
 
         const type = HITDAMAGE[p[2]].DamageType;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
-        const levelData = HITDAMAGE[p[2]].LevelDataType;
+        const levelData = HITDAMAGE[p[2]].LevelData;
 
         damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]}${[5, 2, 4].includes(levelData) ? `, scale with ${SKILL_SLOT_TYPE[levelData]}` : ''})` : ''}`);
     }
