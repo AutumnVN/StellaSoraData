@@ -152,7 +152,7 @@
                     "briefDesc": "After casting the Main Skill, Auto Attacks become AoE Attacks.",
                     "desc": "After casting Fireworks Jam (Main Skill), immediately <color=#0abec5>fully reloads</color> the magazine. \u000bAuto Attacks become AoE Attacks before the magazine is depleted, and deal <color=#0abec5>&Param1& of ATK</color> as AoE Ignis DMG.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Normal attack)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -171,7 +171,7 @@
                     "briefDesc": "After casting the Main Skill, can immediately cast again.",
                     "desc": "Within <color=#0abec5>2s</color> after casting Fireworks Jam (Main Skill), can immediately cast again. \u000bWhen Fireworks Jam triggers an ##Ignis Mark: Sacred Flame#2013#, casting the Skill again increases its DMG by <color=#0abec5>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -199,7 +199,7 @@
                     "briefDesc": "When the Main Skill hits a target, deals extra AoE DMG.",
                     "desc": "When Fireworks Jam (Main Skill) hits a target, deals an additional <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Skill DMG. \u000bThis effect can only be triggered <color=#0abec5>5</color> times/s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -510,7 +510,7 @@
                     "briefDesc": "The Support Skill locks onto and follow the targets.",
                     "desc": "While casting Bullet Waltz (Support Skill), Amber <color=#0abec5>follows</color> the target, dealing <color=#0abec5>&Param1& of ATK</color> as Ignis Skill DMG for 6s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -529,7 +529,7 @@
                     "briefDesc": "Constantly generates Shadows while casting the Support Skill.",
                     "desc": "While casting Bullet Waltz (Support Skill), generates <color=#0abec5>2</color> Shadows every <color=#0abec5>2</color>s. \u000bShadows deal <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Skill DMG every 0.25s for a total of 2.5s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -565,7 +565,7 @@
                     "briefDesc": "When the Support Skill ends, fires an additional shot.",
                     "desc": "When Bullet Waltz (Support Skill) ends, Amber fires <color=#0abec5>one</color> additional hit, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -2794,7 +2794,7 @@
                     "briefDesc": "When Tilia is immune to damage in Fortify Stance, increases her Counterattack DMG.",
                     "desc": "When Tilia is immune to damage in Fortify Stance, increases her Counterattack DMG. Tilia deals <color=#0abec5>&Param2& of ATK</color> as AoE Lux Skill DMG, inflicts ##Lux Mark: Radiance#2016#, and reduces the target's DEF by <color=#0abec5>&Param3&</color>, lasting for &Param4&s.\u000bParam1: &Param1& (Skill,Title) \u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "DEF (abs)"
@@ -2838,7 +2838,7 @@
                     "briefDesc": "When Tilia is in Fortify Stance, deals DMG over time and increases Lux DMG taken by the target.",
                     "desc": "When Tilia is in Fortify Stance, deals <color=#0abec5>&Param2& of ATK</color> as AoE Lux Skill DMG every <color=#0abec5>0.25</color>s and increases Lux DMG taken by the target by <color=#0abec5>&Param3&</color> for &Param4&s, stacking up to &Param5& times.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Lux DMG Taken (base)"
@@ -3234,7 +3234,7 @@
                     "briefDesc": "Aegis of Light ricochets with the main Trekker and deals AoE DMG, while increasing the Skill DMG Taken by nearby targets.",
                     "desc": "Aegis of Light shields the main Trekker and then ricochets.\u000bWhen it hits the main Trekker, deals <color=#0abec5>&Param2& of Tilia's ATK</color> as AoE Lux Skill DMG and increases the Skill DMG taken by nearby enemies by <color=#0abec5>&Param3&</color>, lasting for &Param4&s, up to &Param5& stacks.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Skill DMG Taken (base)"
@@ -3262,7 +3262,7 @@
                     "briefDesc": "Tilia can throw more Aegis of Light.",
                     "desc": "When casting &Param1& (Support Skill), Tilia throws Aegis of Light at up to <color=#0abec5>5</color> targets simultaneously.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -3388,7 +3388,7 @@
                     "briefDesc": "Aegis of Light deals additional AoE DMG to targets with low HP and increases the Skill DMG they take.",
                     "desc": "Aegis of Light deals an additional &Param3& of ATK as AoE Lux Skill DMG to targets whose HP are below <color=#ec6d21>&Param2&</color>. Also increases the Skill DMG they take by &Param4& for &Param5&s, stacking up to &Param6& times.\u000bThis effect can only be triggered once every &Param8&s.\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Skill DMG Taken (base)"
@@ -5484,7 +5484,7 @@
                     "briefDesc": "The Main Skill requires a single reload. After casting, the next shot deals additional DMG.",
                     "desc": "Banishing Barrage (Main Skill) requires a <color=#0abec5>single</color> reload. After casting, the next shot fires more pellets and deals an additional <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -5503,7 +5503,7 @@
                     "briefDesc": "When Incendiary Shells deal DMG, inflicts burn on targets hit.",
                     "desc": "When Incendiary Shells deal damage, inflicts burn on targets hit, dealing damage once per s for &Param3&s, with a total of <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -5840,7 +5840,7 @@
                     "briefDesc": "After casting the Support Skill, a bomb crater remains, dealing DMG over time.",
                     "desc": "After casting Precision Strike (Support Skill), a burning bomb crater remains on the battlefield, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Skill DMG every <color=#0abec5>0.5</color>s for a total of 8s, and inflicting ##Ignis Mark: Sacred Flame#2013#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -8132,7 +8132,7 @@
                     "briefDesc": "???",
                     "desc": "???\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Skill DMG (base)"
@@ -8484,7 +8484,7 @@
                     "briefDesc": "???",
                     "desc": "???\u000bParam1: &Param1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -8503,7 +8503,7 @@
                     "briefDesc": "???",
                     "desc": "???\u000bParam1: &Param1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -10741,7 +10741,7 @@
                     "briefDesc": "When Iris hits a target with an Auto Attack, increases the DMG of the next Main Skill. Once fully stacked, enhances the next Main Skill.",
                     "desc": "When Iris hits a target with an Auto Attack, increases the DMG of the next Main Skill by <color=#0abec5>&Param1&</color>, stacking up to &Param2& times.\u000bAt &Param2& stacks, Iris will cast &Param4& (Main Skill), dealing <color=#0abec5>&Param3& of ATK</color> as AoE Aqua Skill DMG.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Skill DMG (base)"
@@ -10773,7 +10773,7 @@
                     "briefDesc": "When the Main Skill hits a target, deals additional AoE DMG.",
                     "desc": "When &Param10& (Main Skill) hits a target, deals an additional <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Skill DMG. \u000bWhen &Param4& hits a target, deals an additional <color=#0abec5>&Param2& of ATK</color> as AoE Aqua Skill DMG and inflicts ##Frozen#1002# to the target for &Param3&s. \u000bThis effect can only be triggered once every 12s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -10803,7 +10803,7 @@
                     "briefDesc": "Casting the Main Skill has a chance to activate Frostflare, dealing damage over time.",
                     "desc": "When Iris casts &Param10& (Main Skill), there is a <color=#0abec5>&Param1&</color> chance to activate the second phase strike, &Param3&, launching multiple ice arrows, dealing <color=#0abec5>&Param2& of ATK</color> as Aqua Skill DMG, lasting for 5s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -10831,7 +10831,7 @@
                     "briefDesc": "When the Main Skill triggers a Mark, marks the target and deals additional DMG over time.",
                     "desc": "When &Param10& (Main Skill) triggers an ##Aqua Mark: Torrent#2008#, marks the target and deals an additional <color=#0abec5>&Param1& of ATK</color> as Aqua Skill DMG every 0.5s for a total of 2s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -11285,7 +11285,7 @@
                     "briefDesc": "When Glacier Array is created, deals additional DMG and stuns the target.",
                     "desc": "When Glacier Array is created, deals an additional <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Skill DMG and stuns the target for &Param2&s.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -11315,7 +11315,7 @@
                     "briefDesc": "When Glacier Array vanishes, deals additional DMG and sends the targets back flying.",
                     "desc": "When Glacier Array vanishes, deals an additional <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Skill DMG and sends the targets back flying.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -13587,7 +13587,7 @@
                     "briefDesc": "Adds Dragon Slash as the second phase of the Main Skill.",
                     "desc": "Adds Dragon Slash as the second phase of the Main Skill, dealing <color=#0abec5>&Param1& of ATK x3</color>/<color=#0abec5>&Param2& of ATK</color> as Ventus Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -13607,7 +13607,7 @@
                     "briefDesc": "Increases Noya's &Param3&. After casting the Main Skill, automatically casts Devastating Wind.",
                     "desc": "Increases Noya's &Param3& by <color=#0abec5>&Param2&</color>.\u000bAfter casting Sonic Slash (Main Skill) or Dragon Slash, Noya immediately casts Devastating Wind, dealing <color=#0abec5>&Param1& of ATK x4</color> as Ventus Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Skill DMG (base)"
@@ -13632,7 +13632,7 @@
                     "briefDesc": "When Noya deals DMG with an Auto Attack, there is a chance to cast ##Multi Sword Aura#1054#.",
                     "desc": "When Noya deals DMG with an Auto Attack, there is a 30% chance to cast ##Multi Sword Aura#1054#, dealing <color=#0abec5>&Param1& of ATK x5</color> as Ventus Auto Attack DMG and granting Noya &Param2& Energy. This effect can only be triggered once per second.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -13652,7 +13652,7 @@
                     "briefDesc": "After casting the Main Skill, Auto Attacks become sword aura Attacks for a period of time.",
                     "desc": "After casting Sonic Slash (Main Skill), Auto Attacks become sword aura Attacks for 6s. Each sword aura deals <color=#0abec5>&Param1& of ATK</color> as Ventus Auto Attack DMG.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -13954,7 +13954,7 @@
                     "briefDesc": "Major sword auras become cross major sword auras.",
                     "desc": "Major sword auras become cross major sword auras, dealing an additional <color=#0abec5>&Param1& of ATK</color> as Ventus Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -13973,7 +13973,7 @@
                     "briefDesc": "When the minor sword aura deals DMG for the first time, it splits into even smaller sword auras.",
                     "desc": "When the minor sword aura deals DMG for the first time, it splits into <color=#0abec5>3</color> even smaller sword auras, each dealing <color=#0abec5>&Param1& of ATK</color> as Ventus Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -16207,7 +16207,7 @@
                     "briefDesc": "When casting the Main Skill, Shimiao unleashes water blades instead, dealing increased DMG to elite or higher-tier targets.",
                     "desc": "When casting Rising Tides (Main Skill), Shimiao unleashes water blades instead, dealing <color=#0abec5>&Param1&</color>/<color=#0abec5>&Param2& of ATK</color> as Aqua Skill DMG. Also increases her damage dealt to elite or higher-tier targets by <color=#0abec5>&Param3&</color>.\u000bParam4: &Param4& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -16259,7 +16259,7 @@
                     "briefDesc": "When casting the Main Skill, creates water ripples based on the number of spins. The water ripples deal DMG and can trigger ##Aqua Mark: Torrent#2008#.",
                     "desc": "When casting Rising Tides (Main Skill), for every <color=#0abec5>2</color> spins, Shimiao creates a water ripple, dealing <color=#0abec5>&Param1& of ATK</color> as Aqua Skill DMG. \u000bThe water ripples can trigger ##Aqua Mark: Torrent#2008#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -16499,7 +16499,7 @@
                     "briefDesc": "When casting the Ultimate, increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.",
                     "desc": "When casting Flood Mantra (Ultimate), increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& by <color=#ec6d21>&Param1&</color> to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Ultimate (from Ultimate) (hidden)"
+                        "Ultimate (from Ultimate, scale with Ultimate) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -16575,7 +16575,7 @@
                     "briefDesc": "Increases the number and &Param1& of the Support Skill's water blades.",
                     "desc": "When casting Aqua Aide (Support Skill), Shimiao unleashes more water blades, and her &Param1& is increased by <color=#0abec5>&Param2&</color>. \u000bFor every 3 water blades fired, unleashes an additional medium water blade, dealing <color=#0abec5>&Param3& of ATK</color> as Aqua Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -16598,7 +16598,7 @@
                     "briefDesc": "The Support Skill has a chance to fire additional water pellets when shooting water blades, dealing DMG. Also increases Shimiao's &Param5&.",
                     "desc": "Casting Aqua Aide (Support Skill) has a 50% chance to fire additional water pellets along with the water blades, dealing <color=#0abec5>&Param1& of ATK</color> as Aqua Skill DMG. Also increases Shimiao's &Param5& by <color=#0abec5>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "ATK (%)"
@@ -16625,7 +16625,7 @@
                     "briefDesc": "Increases &Param1& of the Support Skill's water blades.\u000bAqua Aide (Support Skill) deals DMG with a major water blade that can pierce through targets.",
                     "desc": "When casting Aqua Aide (Support Skill), unleashes one major water blade that pierces through the target, dealing <color=#0abec5>&Param3& of ATK</color> as Aqua Skill DMG. \u000bAlso increases all water blades' &Param1& by <color=#0abec5>&Param2&</color>.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -18866,7 +18866,7 @@
                     "briefDesc": "The Main Skill tosses additional seeds.",
                     "desc": "Bean Cyclone (Main Skill) tosses <color=#0abec5>1</color> additional seed.\u000bParam1: &Param1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -18885,7 +18885,7 @@
                     "briefDesc": "Seeds from the Main Skill will transform into Bean Shooters, which continuously throw seeds to deal DMG.",
                     "desc": "Seeds from Bean Cyclone (Main Skill) will transform into Bean Shooters, which continuously throw seeds to deal <color=#0abec5>&Param1& of ATK</color> as Terra Skill DMG for 8s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -18904,7 +18904,7 @@
                     "briefDesc": "For every set number of energy rounds fired, the next Auto Attack fires 1 gigantic energy round.",
                     "desc": "For every 12 energy rounds fired with Sprout Round, the next Auto Attack fires 1 gigantic energy round, with its Attack Range increased by <color=#0abec5>100%</color> and dealing <color=#0abec5>&Param1& of ATK</color> as Terra Auto Attack DMG.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Normal attack)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -21501,8 +21501,8 @@
                     "briefDesc": "After casting the Main Skill, increases the DMG of the next Skill.",
                     "desc": "After casting &Param1& (Main Skill), increases the DMG of the next Skill by <color=#0abec5>&Param2&</color>, up to 3 stacks. \u000bAt 3 stacks, casting the Main Skill again will remove the buff.\u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)",
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill)",
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -21529,7 +21529,7 @@
                     "briefDesc": "When the Main Skill deals DMG to a target with ##Lux Mark: Radiance#2016#, summons Chain Lightning.",
                     "desc": "When &Param1& (Main Skill) deals damage to a target with ##Lux Mark: Radiance#2016#, summons Chain Lightning, dealing <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG, bouncing up to <color=#0abec5>5</color> stacks.\u000bParam3: &Param3& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -21937,7 +21937,7 @@
                     "briefDesc": "When the Lightning Domain emerges, deals additional DMG.",
                     "desc": "When the Lightning Domain emerges, deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG, and continues to deal <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG every <color=#0abec5>3</color>s.\u000bParam1: &Param1& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -26788,7 +26788,7 @@
                     "briefDesc": "After Nanoha deals multiple instances of Auto Attack DMG, deals additional AoE Ventus DMG.",
                     "desc": "After Nanoha deals DMG with Auto Attacks <color=#0abec5>3</color> times, deals an additional <color=#0abec5>&Param1& of ATK</color> as AoE Ventus DMG.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -26807,7 +26807,7 @@
                     "briefDesc": "After casting the Main Skill, Nanoha fires additional shurikens with her Auto Attacks.",
                     "desc": "Within 10s after casting Flowers Dance (Main Skill), Nanoha fires <color=#0abec5>3</color> additional shurikens with her Auto Attacks that can pierce through the target, each dealing <color=#0abec5>&Param1& of ATK</color> as Ventus Auto Attack DMG.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -27163,7 +27163,7 @@
                     "briefDesc": "When the Support Skill triggers a ##Ventus Mark#1017#, causes an explosion and reduces Skill Cooldown.",
                     "desc": "When Flowers Bloom (Support Skill) triggers ##Ventus Mark#1017#, causes an explosion that deals <color=#0abec5>&Param1&</color> Ventus Skill DMG and reduces Skill Cooldown by <color=#0abec5>&Param2&</color>s.\u000bThis effect can only be triggered <color=#0abec5>&Param3&</color> times per Skill cast.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -27204,7 +27204,7 @@
                     "briefDesc": "The Support Skill can inflict Marks. When the exploding sunflower disappears, it detonates all Marks to deal DMG.",
                     "desc": "Shurikens from Flowers Bloom (Support Skill) inflict Marks additionally, stacking up to <color=#0abec5>12</color> times.\u000bWhen the exploding sunflower disappears, it detonates all Marks, dealing <color=#0abec5>&Param1& of ATK</color> as Ventus Skill DMG. Each stack increases the DMG by <color=#0abec5>&Param2&</color>.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -29394,7 +29394,7 @@
                     "briefDesc": "Summons more Flying Leaves.",
                     "desc": "Summons <color=#0abec5>3</color> additional Flying Leaves.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -29449,7 +29449,7 @@
                     "briefDesc": "When Canace casts the Main Skill or when squadmate casts a Support Skill, Canace gains <color=#0abec5>Vortex Energy</color> and &Param3& is increased.",
                     "desc": "When Canace casts Verdant Shroud (Main Skill), she gains 5 <color=#0abec5>Vortex Energy</color>. When a squadmate casts a Support Skill, she gains 3 <color=#0abec5>Vortex Energy</color>, capped at 5. \u000bWhen performing an Auto Attack, consumes 1 <color=#0abec5>Vortex Energy</color> to increase &Param3& by <color=#0abec5>&Param4&</color>.\u000bParam1: &Param1& (HitDamage) \u000bParam2: &Param2& (HitDamage)",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Normal attack)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -29820,7 +29820,7 @@
                     "briefDesc": "The Laurel Wreath spins around the main Trekker and deals DMG to surrounding targets.",
                     "desc": "The Laurel Wreath spins around the main Trekker, deals <color=#0abec5>&Param1& of ATK</color> as Ventus Skill DMG to surrounding targets and inflicts ##Ventus Mark: Breeze#2017#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -32029,7 +32029,7 @@
                     "briefDesc": "When Bubble is on the battlefield, if Ann deals DMG, there is a chance to create a Wind Burst. When a Wind Burst is created, increases the squad's &Param2&.",
                     "desc": "When Bubble is on the battlefield, if Ann deals DMG, there is a <color=#0abec5>25%</color> chance to create a Wind Burst. \u000bWhen a Wind Burst is created, increases the squad's &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bParam1: &Param1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Mark DMG (base)"
@@ -32078,7 +32078,7 @@
                     "briefDesc": "After Bubble is summoned, it will fire a laser beam.",
                     "desc": "After Bubble is summoned, it will fire a laser beam within <color=#0abec5>5</color>s, dealing <color=#0abec5>&Param1& of ATK</color> as Ventus Minion DMG and inflicting ##Ventus Mark: Breeze#2017#.",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -32097,7 +32097,7 @@
                     "briefDesc": "When summoning Bubble, increases the squad's &Param1&. When a squadmate triggers a Ventus Mark, Bubble will fire an additional laser.",
                     "desc": "When summoning Bubble, increases the squad's &Param1& by <color=#0abec5>&Param2&</color> for &Param3&s. \u000bWhen a squadmate triggers a ##Ventus Mark#1017#, Bubble will fire an additional laser, dealing <color=#0abec5>&Param4& of ATK</color> as Ventus Minion DMG.",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Mark DMG (base)"
@@ -32265,7 +32265,7 @@
                     "briefDesc": "When dodging, Ann creates Wind Bursts and increases squadmates' &Param2&.",
                     "desc": "When dodging, Ann creates 2 Wind Bursts and increases squadmates' &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.\u000bParam1: &Param1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "ATK (%)"
@@ -32437,7 +32437,7 @@
                     "briefDesc": "The wall of wind will constantly attack nearby targets. Also increases their &Param4&.",
                     "desc": "The wall of wind will constantly deal AoE DMG, with each hit dealing <color=#0abec5>&Param1& of ATK</color> as Ventus Skill DMG. Also increases the targets' &Param4& by <color=#0abec5>&Param2&</color> for &Param3&s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Ventus DMG Taken (base)"
@@ -34724,7 +34724,7 @@
                     "briefDesc": "The Main Skill cannot be charged. When it ends, deals additional DMG.",
                     "desc": "&Param10& (Main Skill) cannot be charged. \u000bWhen it ends, deals <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Skill DMG. For each target hit, reduces Skill Cooldown by <color=#0abec5>2</color>s, up to a total of <color=#0abec5>6</color>s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -35232,7 +35232,7 @@
                     "briefDesc": "After Freesia casts the Support Skill while in ##Berserk#2014#, there is a chance to summon an Ice Flower with an Auto Attack.",
                     "desc": "After Freesia casts &Param10& (Support Skill) while in ##Berserk#2014#, there is a <color=#0abec5>30%</color> chance to summon one Ice Flower with an Auto Attack within <color=#0abec5>&Param1&</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -35265,7 +35265,7 @@
                     "briefDesc": "When Freesia hits targets inflicted with ##Chill#1027#/##Frozen#1002#, deals additional DMG.",
                     "desc": "When Freesia hits targets inflicted with ##Chill#1027#/##Frozen#1002#, deals an additional <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Skill DMG.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -37564,7 +37564,7 @@
                     "briefDesc": "When casting the Main Skill, throws two extra top hats.",
                     "desc": "When casting Hat Toss (Main Skill), throws <color=#0abec5>2</color> additional top hats, dealing <color=#0abec5>&Param1& of ATK</color> as Ignis Skill DMG every 0.5s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -40194,7 +40194,7 @@
                     "briefDesc": "Increases Skill DMG. Also triggers a surge of waves.",
                     "desc": "Increases the damage of Limpid Stream (Main Skill) by <color=#0abec5>&Param1&</color>. Also triggers a surge of waves, dealing <color=#0abec5>&Param2& of ATK</color> as Aqua Skill DMG and inflicting ##Aqua Mark: Torrent#2008#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -40216,7 +40216,7 @@
                     "briefDesc": "Adds a second phase to the Skill. When cast at the right moment, applies a bonus effect.",
                     "desc": "Adds a second phase to the Skill, dealing <color=#0abec5>&Param1& of ATK x2</color>, <color=#0abec5>&Param2& of ATK</color>, and <color=#0abec5>&Param7& of ATK</color> as Aqua Skill DMG.\u000bIf the second phase is cast after a 0.3s delay, increases its Attack Range by 30% and boosts the target's &Param5& by <color=#0abec5>&Param3&</color> for &Param4&s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Aqua DMG Taken (base)"
@@ -40245,7 +40245,7 @@
                     "briefDesc": "When Teresa gains a Surging Shield, unleashes a surge of waves and inflicts ##Aqua Mark: Torrent#2008#.",
                     "desc": "When Teresa gains a Surging Shield, unleashes a surge of waves, dealing <color=#0abec5>&Param1& of ATK</color> as Aqua Skill DMG, and inflicts ##Aqua Mark: Torrent#2008#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -40591,7 +40591,7 @@
                     "briefDesc": "While Surging Shield is active, when the main Trekker deals DMG, creates a surge of waves.",
                     "desc": "While Surging Shield is active, when the main Trekker deals damage, creates a surge of waves, dealing <color=#0abec5>&Param1& of Teresa's ATK</color> as Aqua Skill DMG and inflicting ##Aqua Mark: Torrent#2008#. This effect can only be triggered once every 0.5s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -40625,7 +40625,7 @@
                     "briefDesc": "Increases Tidal Domain's DMG, and can knock back targets repeatedly.",
                     "desc": "Increases Tidal Domain's DMG by <color=#0abec5>&Param2&</color>, and can knock back targets repeatedly...\u000bParam1: &Param1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -42837,7 +42837,7 @@
                     "briefDesc": "Adds a third phase to the Main Skill: Three Base Hit.",
                     "desc": "Adds a third phase to the Main Skill: Three Base Hit. Deals <color=#0abec5>&Param2& of ATK x2</color>/<color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG. \u000bDuring this phase, Minova becomes <color=#0abec5>immune</color> to damage.\u000bParam1: &Param1& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -42858,8 +42858,8 @@
                     "briefDesc": "When &Param1& triggers a ##Lux Mark#1015#, enhances Two Base Hit.",
                     "desc": "When &Param1& (Main Skill) triggers a ##Lux Mark#1015#, enhances Two Base Hit, increasing its DMG by <color=#0abec5>&Param2&</color> and reducing its Attack Interval by <color=#0abec5>30%</color>.\u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)",
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill)",
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -42886,7 +42886,7 @@
                     "briefDesc": "Increases Skill DMG. When triggering a mark, increases the Skill DMG taken by the target.",
                     "desc": "Increases the damage of &Param1& (Main Skill) by <color=#0abec5>&Param2&</color>. \u000bWhen ##Lux Mark#1015# is triggered, increases the Skill DMG taken by the target by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [
                         "Skill DMG Taken (base)"
@@ -42917,7 +42917,7 @@
                     "briefDesc": "Two Base Hit becomes a 3-hit combo and its DMG is increased. Casting Two Base Hit immediately after &Param1& deals additional DMG.",
                     "desc": "Two Base Hit becomes a 3-hit combo and its damage is increased by <color=#0abec5>&Param2&</color>. When cast within 2s after &Param1&, deals an additional <color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG with each hit.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -43258,7 +43258,7 @@
                     "briefDesc": "Increases the DMG and Attack Range of Astral Hex.",
                     "desc": "Increases the Attack Range of Astral Hex by <color=#0abec5>50%</color> and its DMG by <color=#0abec5>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -45551,7 +45551,7 @@
                     "briefDesc": "When the pinwheel stops, unleashes a burst of piercing gale, dealing DMG.",
                     "desc": "When the pinwheel from Blooming Draught (Main Skill) stops, unleashes a burst of piercing gale, dealing <color=#0abec5>&Param1& of ATK</color> as Ventus Skill DMG. It can trigger ##Ventus Mark#1017#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -45570,7 +45570,7 @@
                     "briefDesc": "The Main Skill deals additional DMG and increases the target's &Param4&. Also, the wind of the pinwheel can pull in weak targets.",
                     "desc": "Blooming Draught (Main Skill) deals an additional <color=#0abec5>&Param1& of ATK x16</color> as Ventus Skill DMG in 2s, increasing the target's &Param4& by <color=#0abec5>&Param5&</color> for &Param2&s, up to &Param3& stacks. This effect also pulls in weak targets.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Ventus DMG Taken (base)"
@@ -45900,7 +45900,7 @@
                     "briefDesc": "When casting the Support Skill, continuously creates a dozen Flower Petals at the main Ventus Trekker's location, each dealing DMG and inflicting ##Ventus Mark: Breeze#2017#.",
                     "desc": "When casting Bouquet Blast (Support Skill), continuously creates 18 Flower Petals at the main Ventus Trekker's location, with each petal dealing <color=#0abec5>&Param1&</color> of Nazuka's ATK as Ventus Skill DMG and inflicting ##Ventus Mark: Breeze#2017#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -45939,7 +45939,7 @@
                     "briefDesc": "Increases the duration of Flower Formation.\u000bAfter casting the skill, when another friendly Ventus unit deals DMG to a target outside Flower Formation, creates another ##Flower Formation#4004#.",
                     "desc": "Increases the duration of Flower Formation by <color=#0abec5>50%</color>.\u000bWithin 8s after casting the skill, when another friendly Ventus unit deals DMG to a target outside Flower Formation, creates another ##Flower Formation#4004#. This effect can only be triggered once per second.\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Movement Speed (%)"
@@ -45964,7 +45964,7 @@
                     "briefDesc": "When another friendly Ventus unit deals DMG to targets caught in Flower Formation, Flower Formation deals additional DMG.",
                     "desc": "When another friendly Ventus unit deals DMG to targets caught in Flower Formation, Flower Formation deals an additional <color=#ec6d21>&Param1&</color> of Nazuka's ATK as AoE Ventus Skill DMG. This effect can only be triggered once per second, dealing DMG to the same target no more than once per second.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -48196,7 +48196,7 @@
                     "briefDesc": "When casting the Main Skill, deals additional DMG and increases Magazine Capacity.",
                     "desc": "Fuyuka's Magazine now holds 9 ammo.\nWhen casting &Param1& (Main Skill), deals an additional <color=#0abec5>&Param2& of ATK x3</color> as Ignis Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -48216,7 +48216,7 @@
                     "briefDesc": "Each strike of Fiery Punches deals additional DMG.",
                     "desc": "Fiery Punches deal additional damage. \u000bStrike 1: <color=#0abec5>&Param1& of ATK</color> as Ignis Auto Attack DMG. \u000bStrike 2: <color=#0abec5>&Param2& of ATK</color> as Ignis Auto Attack DMG. \u000bStrike 3: <color=#0abec5>&Param3& of ATK</color> as Ignis Auto Attack DMG.",
                     "damageType": [
-                        "Auto Attack (from Skill)"
+                        "Auto Attack (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -48237,7 +48237,7 @@
                     "briefDesc": "When the Main Skill hits a target, inflicts Paw Print. \u000bWhen Fuyuka deals Auto Attack DMG to a target inflicted with Paw Print, deals additional damage.",
                     "desc": "When &Param1& (Main Skill) hits a target, inflicts Paw Print for &Param3&s. \u000bWhen Fuyuka deals Auto Attack DMG to a target inflicted with Paw Print, deals an additional <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG. \u000bThis effect can trigger ##Ignis Mark#1016#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -48260,7 +48260,7 @@
                     "briefDesc": "After Fuyuka casts the Main Skill, her next Fiery Punches are enhanced into Magma Burst.",
                     "desc": "After Fuyuka casts &Param1& (Main Skill), her next Fiery Punches are enhanced into Magma Burst, consuming 3 ammo at once to deal <color=#0abec5>&Param2&</color> and <color=#0abec5>&Param3&</color> of ATK as AoE Ignis Auto Attack DMG.\u000bWhen Fuyuka's magazine is empty, increases her ATK SPD by <color=#0abec5>&Param4&</color>.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Skill)"
                     ],
                     "effectType": [
                         "Attack Speed (base)"
@@ -48579,7 +48579,7 @@
                     "briefDesc": "Combines the multiple strikes of the Support Skill into a single massive blow.",
                     "desc": "&Param1& (Support Skill) now delivers a single massive blow, dealing <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG to nearby targets and stunning them for <color=#0abec5>&Param3&</color>s. It also deals <color=#0abec5>&Param4& of ATK</color> as Ignis Skill DMG to targets in a large area.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -48603,7 +48603,7 @@
                     "briefDesc": "When the Support Skill ends, Fuyuka deals additional DMG to nearby targets.",
                     "desc": "When &Param1& (Support Skill) ends, Fuyuka strikes the nearby targets one more time, dealing <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -50881,7 +50881,7 @@
                     "briefDesc": "The Main Skill deals additional DMG. When casting, removes all Pumpka Phantoms from the battlefield and summons them again.",
                     "desc": "Pumpka Pummel (Main Skill) deals an additional <color=#0abec5>&Param1& of ATK</color> as AoE Umbra DMG. \u000bWhen cast, removes all Pumpka Phantoms from the battlefield and summons them again.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -50923,7 +50923,7 @@
                     "briefDesc": "When Mistique deals DMG, Pumpka Phantom will cast Whirlwind Slash.",
                     "desc": "When Mistique deals damage, Pumpka Phantom will cast Whirlwind Slash, dealing <color=#0abec5>&Param1& of ATK x2</color> as AoE Umbra Minion DMG. \u000bThis effect can only be triggered once every 2.5s.",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -53520,7 +53520,7 @@
                     "briefDesc": "When Chixia unleashes flames with the Main Skill, builds up heat. Once full, enhances her Auto Attacks.",
                     "desc": "When casting Purifying Flames (Main Skill), generates 1 stack of heat every second. Once full, enhances Chixia's Auto Attacks, dealing <color=#0abec5>&Param1& of ATK x8</color>/<color=#0abec5>&Param2& of ATK x2</color> as AoE Ignis DMG. Each enhanced Auto Attack consumes 1 stack of heat. When an enhanced Auto Attack deals damage to targets with Ink, inflicts ##Ignite#2027#.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Normal attack)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -53540,7 +53540,7 @@
                     "briefDesc": "Ink can stack on targets. Once fully stacked, triggers ##Burn#2027#, dealing additional DMG.",
                     "desc": "Ink can stack up to <color=#0abec5>4</color> times on targets. When a target with 4 stacks of Ink triggers ##Burn#2027#, deals <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -53897,8 +53897,8 @@
                     "briefDesc": "Crimson Dragon transforms into Tiger of the East.",
                     "desc": "Crimson Dragon enhances into Tiger of the East. Increases its ATK by <color=#0abec5>&Param1&</color> every 2s. Tiger of the East lasts for 15s, dealing <color=#0abec5>&Param2& of ATK</color>/<color=#0abec5>&Param3& of ATK</color>/<color=#0abec5>&Param4& of ATK x2</color> as AoE Ignis Minion DMG, and inflicting ##Ignis Mark: Sacred Flame#2013#.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Minion (from Skill)",
-                        "Minion (from Skill) (hidden)"
+                        "Minion (from Skill, scale with Skill)",
+                        "Minion (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [
                         "Minion DMG (base)"
@@ -53926,8 +53926,8 @@
                     "briefDesc": "The first summon of the Support Skill creates a Blazing Sphere, dealing DMG to nearby targets continuously.",
                     "desc": "The first minion summoned by &Param2& (Support Skill) is inflicted with Blazing Barrier, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Minion DMG to nearby targets every <color=#0abec5>0.5</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Minion (from Skill)",
-                        "Minion (from Skill) (hidden)"
+                        "Minion (from Skill, scale with Skill)",
+                        "Minion (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -56167,7 +56167,7 @@
                     "briefDesc": "When any other friendly unit lands a Crit Hit, reduces the Main Skill's Cooldown, leaves claw marks and inflicts ##Umbra Mark: Gloom#2018#.",
                     "desc": "When any other friendly unit lands a Crit Hit, reduces the Cooldown of Nocturn Hooks (Main Skill) by <color=#0abec5>1</color>s, and leaves claw marks at the target's location, dealing <color=#0abec5>&Param1&</color> of Cosette's ATK as AoE Umbra Skill DMG and inflicting ##Umbra Mark: Gloom#2018#.\u000bThis effect can only be triggered 5 times per Skill cast.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -56212,7 +56212,7 @@
                     "briefDesc": "When Cosette inflicts ##Umbra Mark: Gloom#2018# multiple times on the target, leaves claw marks and increases the target's &Param2&.",
                     "desc": "When Cosette inflicts ##Umbra Mark: Gloom#2018# on the same target for the 3rd time, leaves claw marks, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Umbra Skill DMG, increasing the target's &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s, and inflicting ##Umbra Mark: Gloom#2018#. This effect can only be triggered once per second.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Umbra DMG Taken (base)"
@@ -56596,7 +56596,7 @@
                     "briefDesc": "Adds a finishing heavy strike to the Support Skill. Cosette's claw strikes can increase all friendly units' &Param2&.",
                     "desc": "Abyssal Hunter (Support Skill) will also launch a finishing heavy strike, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Skill DMG.\u000bFor every <color=#0abec5>4</color> claw strikes, increases all friendly units' &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s, stacking up to &Param5& times.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "ATK (%)"
@@ -58824,8 +58824,8 @@
                     "briefDesc": "After Chitose casts the Main Skill, her Auto Attack will summon a Coiling Serpent, and her resistance to interruption is increased.",
                     "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Coiling Serpent, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Auto Attack DMG. Can trigger ##Aqua Mark#1018#. Also, Chitose's resistance to interruption is increased for &Param9&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Auto Attack (from Normal attack)",
-                        "Auto Attack (from Normal attack) (hidden)"
+                        "Auto Attack (from Normal attack, scale with Normal attack)",
+                        "Auto Attack (from Normal attack, scale with Normal attack) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -58856,7 +58856,7 @@
                     "briefDesc": "After Chitose casts the Main Skill, her Auto Attack will summon a Mirror Image that performs Auto Attacks, and her resistance to interruption is increased.",
                     "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Mirror Image that has <color=#0abec5>60%</color> of Chitose's ATK and performs Auto Attacks. Also, Chitose's resistance to interruption is increased for &Param1&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage) \u000bHiddenParam5: &HiddenParam5& (HitDamage) \u000bHiddenParam6: &HiddenParam6& (HitDamage) \u000bHiddenParam7: &HiddenParam7& (HitDamage) \u000bHiddenParam8: &HiddenParam8& (HitDamage) \u000bHiddenParam9: &HiddenParam9& (HitDamage)",
                     "damageType": [
-                        "Auto Attack (from Normal attack) (hidden)"
+                        "Auto Attack (from Normal attack, scale with Normal attack) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -58887,7 +58887,7 @@
                     "briefDesc": "Requires fewer Torrent Flash casts to unleash Torrent Flash: Scale. Also enhances Torrent Flash: Scale.",
                     "desc": "Chitose may unleash Torrent Flash: Scale after one Torrent Flash cast. Also enhances Torrent Flash: Scale, dealing <color=#0abec5>&Param1& of ATK x4</color> as AoE Aqua Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -58906,7 +58906,7 @@
                     "briefDesc": "Reduces Main Skill Cooldown. When casting Torrent Flash, summons a Mirror Image.",
                     "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -59226,7 +59226,7 @@
                     "briefDesc": "Increases the &Param1& of the Support Skill's rapid combo slashes. When landing a Crit Hit, immediately casts rapid combo slashes again.",
                     "desc": "When casting Water Surge (Support Skill), increases the &Param1& of the rapid slashes by <color=#0abec5>&Param2&</color>. When Chitose lands a Crit Hit with a rapid slash, delivers another round of rapid slash immediately, dealing <color=#0abec5>&Param3& of ATK x4</color> as AoE Aqua Skill DMG. This extra slash cannot trigger this effect again.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -59249,7 +59249,7 @@
                     "briefDesc": "When casting the Support Skill, generates multiple Mirror Images in a row.",
                     "desc": "When casting Water Surge, (Support Skill) generates Mirror Images, dealing <color=#0abec5>&Param1& of ATK</color> as Aqua DMG. Up to 6 Mirror Images can be generated through this effect.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -59268,7 +59268,7 @@
                     "briefDesc": "Mirror Images of the Support Skill explode upon hits, dealing additional AoE Aqua DMG.",
                     "desc": "Mirror Images of Water Surge (Support Skill) explode upon hits, dealing <color=#0abec5>&Param1& of ATK</color> as additional AoE Aqua DMG. They can trigger ##Aqua Mark#1018#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -61474,7 +61474,7 @@
                     "briefDesc": "When Caramel is near Demonic Boombox, the last strike of her Auto Attack deals AoE DMG.",
                     "desc": "When Caramel is near Demonic Boombox, the last strike of her Auto Attack becomes an AoE Attack, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Umbra DMG. Can trigger ##Umbra Mark: Gloom#2018#.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Normal attack)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -61515,7 +61515,7 @@
                     "briefDesc": "Increases Caramel's &Param2&. Increases the additional DMG dealt by Demonic Boombox when pulsating.",
                     "desc": "Demonic Boombox additionally unleashes circular sound waves when pulsating, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Minion DMG. Can trigger ##Umbra Mark: Gloom#2018#.\u000bIncreases Caramel's &Param2& by <color=#0abec5>&Param3&</color>.",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "Minion DMG (base)"
@@ -61866,7 +61866,7 @@
                     "briefDesc": "When the Support Skill's horizontal sweep deals DMG, reduces its Cooldown and drops a boombox.",
                     "desc": "When the horizontal sweep deals DMG, reduces its Cooldown by <color=#0abec5>1</color>s and drops a boombox, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Skill DMG.\u000bThis effect can only be triggered 4 times every 2s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -61885,7 +61885,7 @@
                     "briefDesc": "The Support Skill's Musical Notes can ricochet.",
                     "desc": "The Musical Notes can ricochet <color=#0abec5>2</color> times, each dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -64143,7 +64143,7 @@
                     "briefDesc": "When Gerie is in Lethal status, increases the range of her Auto Attacks, and she can trigger ##Terra Mark#1020#. When an Auto Attack deals DMG, it also deals Terra Auto Attack DMG.",
                     "desc": "When Gerie is in Lethal status, increases the range of her Auto Attacks by <color=#0abec5>25%</color>, and she can trigger ##Terra Mark#1020#. When an Auto Attack deals DMG, it also deals <color=#0abec5>&Param1& of ATK</color> as Terra Auto Attack DMG.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -64182,7 +64182,7 @@
                     "briefDesc": "When Gerie deals Auto Attack DMG to targets linked by the Iron Cage, these targets receive additional DMG.",
                     "desc": "When Gerie deals Auto Attack DMG to targets linked by the Iron Cage, deals an additional <color=#0abec5>&Param1& of ATK</color> as Terra Skill DMG to these targets. This effect can only be triggered once per second. Can trigger ##Terra Mark#1020#.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -64494,7 +64494,7 @@
                     "briefDesc": "Increases the DMG of the Support Skill's chained spades. The Support Skill now conjures up more chained spades to deal DMG.",
                     "desc": "Increases the damage of Immediate Execution (Support Skill)'s chained spades by <color=#0abec5>&Param2&</color>. When casting Immediate Execution, conjures up 2 additional chained spades, dealing <color=#0abec5>&Param3& of ATK</color> as Terra Skill DMG.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -64517,7 +64517,7 @@
                     "briefDesc": "Increases the DMG of the Support Skill's chained spades. When the chained spades are withdrawn, each spade deals DMG.",
                     "desc": "Increases the damage of Immediate Execution (Support Skill)'s chained spades by <color=#0abec5>&Param2&</color>. When the chained spades are withdrawn, each spade deals <color=#0abec5>&Param3& of ATK</color> as Terra Skill DMG. Can trigger ##Terra Mark#1020#.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -64540,7 +64540,7 @@
                     "briefDesc": "When casting the Support Skill, Gerie remains on the battlefield for a period of time and creates seismic waves at her and the chained spades' location every second to deal DMG.",
                     "desc": "When casting Immediate Execution (Support Skill), Gerie remains on the battlefield for 6s and creates seismic waves at her and the chained spades' location once per second, each seismic wave dealing <color=#0abec5>&Param1& of ATK</color> as Terra Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -66766,7 +66766,7 @@
                     "briefDesc": "After casting the Main Skill, creates a Thunder Domain that deals DMG over time.",
                     "desc": "After casting &Param1& (Main Skill), creates a Thunder Domain, dealing <color=#0abec5>&Param2& of ATK</color> as AoE Lux Skill DMG every <color=#0abec5>0.5</color>s for a total of 10s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -66786,8 +66786,8 @@
                     "briefDesc": "The laser inflicts Shock on targets. When attacking Shocked targets, deals additional DMG.",
                     "desc": "The laser inflicts Shock on targets for 10s. When dealing damage to Shocked targets, deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG. With the 20th hit, deals <color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG and removes Shock.\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
                     "damageType": [
-                        "Skill (from Skill)",
-                        "Skill (from Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill)",
+                        "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -66810,7 +66810,7 @@
                     "briefDesc": "Hold the Main Skill button to launch more horizontal sweeps.",
                     "desc": "When casting &Param1& (Main Skill), hold the button to launch 3 horizontal sweeps, dealing <color=#0abec5>&Param2&</color>/<color=#0abec5>&Param3&</color>/<color=#0abec5>&Param4& of ATK</color> as AoE Lux Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -66832,7 +66832,7 @@
                     "briefDesc": "Each of the Main Skill's horizontal sweep increases the next laser beam's DMG.",
                     "desc": "Each of &Param1& (Main Skill)'s horizontal sweep increases the next laser beam's DMG by <color=#0abec5>&Param2&</color>. After 3 increments, the next laser beam will last for 3s, dealing <color=#0abec5>&Param3& of ATK x12</color> as AoE Lux Skill DMG.\u000bWhile the laser is active, Laru gains Super Armor, increasing her DEF by &Param4&.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "DEF (base)"
@@ -67149,7 +67149,7 @@
                     "briefDesc": "Thunder Domain will deal DMG over time.",
                     "desc": "Thunder Domain erupts for 1s, dealing <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG every 0.3s.\u000bParam1: &Param1& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -67189,7 +67189,7 @@
                     "briefDesc": "The center of the Thunder Domain deals additional DMG.",
                     "desc": "The center of the Thunder Domain deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG to the target. \u000bWhile the Thunder Domain erupts, dealing an additional <color=#0abec5>&Param3& of ATK</color> as Lux Skill DMG every 0.3s.\u000bParam1: &Param1& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -69426,7 +69426,7 @@
                     "briefDesc": "When dealing Auto Attack DMG, Snow Rabbit inflicts Electro Music that deals additional DMG upon reaching the max stack limit.",
                     "desc": "When Snow Rabbit deals Auto Attack DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -69454,7 +69454,7 @@
                     "briefDesc": "The Main Skill summons a Snow Rabbit that inflicts Electro Music when dealing Skill DMG, dealing additional DMG upon reaching the max stack limit.",
                     "desc": "&Param10& (Main Skill) summons a Snow Rabbit, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG upon entering combat.\u000bEvery time Snow Rabbit deals Skill DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param2&</color> of ATK as Lux Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -69482,7 +69482,7 @@
                     "briefDesc": "Night Rabbit fires tracking bullets at nearby targets during Auto Attacks. When the tracking bullets deal DMG, Night Rabbit gains Moongaze, increasing its DMG.",
                     "desc": "During Auto Attacks, Night Rabbit locks up to <color=#0abec5>4</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Auto Attack (from Skill)"
+                        "Auto Attack (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -69514,7 +69514,7 @@
                     "briefDesc": "Night Rabbit summoned by the Main Skill fires tracking bullets at nearby targets when attacking. When the tracking bullets deal DMG, Night Rabbit gains Moongaze, increasing its DMG.",
                     "desc": "Night Rabbit summoned by the Main Skill locks up to <color=#0abec5>2</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -69914,7 +69914,7 @@
                     "briefDesc": "After casting the Support Skill, summons Snow Rabbits that follow the main Trekker and attack targets.",
                     "desc": "When &Param10& (Support Skill) ends, summons <color=#0abec5>2</color> Snow Rabbits that follow the main Trekker and fire bullets to attack targets, dealing <color=#0abec5>&Param1& of ATK</color> as Lux Skill DMG for <color=#0abec5>8</color>s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -69942,7 +69942,7 @@
                     "briefDesc": "After casting the Support Skill, summons Night Rabbits that attack targets.",
                     "desc": "When &Param10& (Support Skill) ends, summons <color=#0abec5>2</color> Night Rabbits that fire missiles to attack targets, dealing <color=#0abec5>&Param1& of ATK</color> as Lux Skill DMG for <color=#0abec5>4</color>s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -69998,7 +69998,7 @@
                     "briefDesc": "Shia leaves behind a charged area as she surfs, dealing DMG over time.",
                     "desc": "Shia leaves behind a charged area as she surfs, dealing <color=#0abec5>&Param1&</color> AoE Lux Skill DMG every <color=#0abec5>0.3</color>s, lasting for <color=#0abec5>1</color>s.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -72332,7 +72332,7 @@
                     "briefDesc": "The penguin plushie deals multiple instances of DMG and restores the main Trekker's HP.",
                     "desc": "The penguin plushie dances while moving, dealing <color=#0abec5>&Param1& of ATK x11</color> as AoE Terra DMG and inflicting ##Terra Mark: Earth Vein#2029#. Also restores <color=#0abec5>&Param2&</color> HP to the main Trekker 5 times.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "EFFECT_HP_RECOVERY"
@@ -72371,7 +72371,7 @@
                     "briefDesc": "When Nazuna reloads during an Auto Attack, she delivers a spinning shot, firing multiple tracking crossbow bolts. Also increases the squad's &Param2&.",
                     "desc": "When Nazuna reloads during an Auto Attack, she delivers a spinning shot, firing 6 tracking crossbow bolts, each dealing <color=#0abec5>&Param1& of ATK</color> as Terra Auto Attack DMG and inflicting ##Terra Mark: Earth Vein#2029#. When reloading, increases the squad's &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s.",
                     "damageType": [
-                        "Auto Attack (from Normal attack)"
+                        "Auto Attack (from Normal attack, scale with Normal attack)"
                     ],
                     "effectType": [
                         "ATK (%)"
@@ -74973,7 +74973,7 @@
                     "briefDesc": "Enhances the Synergy Skills of Colonel Walnut and General Curly.\u000bEnhances Clockwork Queen's shots.",
                     "desc": "Empowers the toys following Snowish Laru.\u000bColonel Walnut's Synergy Skill deals <color=#0abec5>&Param1&</color> of ATK as AoE Ignis Minion DMG.\u000bGeneral Curly's Synergy Skill deals <color=#0abec5>&Param2& x6</color> of ATK as AoE Ignis Minion DMG.\u000bClockwork Queen's shots deal an additional <color=#0abec5>&Param4&</color> of ATK as AoE Ignis Minion DMG.\u000bParam3: &Param3& (HitDamage)",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -74995,7 +74995,7 @@
                     "briefDesc": "Casting &Param1& or &Param2& (Main Skill) summons Clockwork Queen and boosts Morale for Colonel Walnut and General Curly.",
                     "desc": "Casting &Param1& or &Param2& (Main Skill) summons Clockwork Queen for <color=#0abec5>&Param3&</color>s and grants Colonel Walnut or General Curly <color=#0abec5>2</color> stacks of Morale.\u000bClockwork Queen attacks the target, dealing <color=#0abec5>&Param4&</color> of ATK as Ignis Minion DMG.\u000bEach of Clockwork Queen's attacks can trigger the Synergy Skills of Colonel Walnut and General Curly.\u000bClockwork Queen can be summoned once every &Param5&s.",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -75018,7 +75018,7 @@
                     "briefDesc": "&Param1& (Main Skill) becomes a multi-hit attack.",
                     "desc": "&Param1& (Main Skill) becomes a multi-hit attack, dealing <color=#0abec5>&Param2& x5</color> of ATK as AoE Ignis Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -75038,7 +75038,7 @@
                     "briefDesc": "When Colonel Walnut and General Curly deal DMG, they inflict the Gift Box mark.\u000bSnowish Laru's skills deal additional AoE DMG against marked targets.",
                     "desc": "When Colonel Walnut and General Curly deal DMG, they inflict a Gift Box mark, lasting <color=#0abec5>&Param2&</color>s.\u000b&Param3& and &Param4& (Main Skill) deals <color=#0abec5>&Param1&</color> of ATK as AoE Ignis Skill DMG against marked targets.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -75368,7 +75368,7 @@
                     "briefDesc": "After a Gift Box Shell explodes, it deals DMG to targets within range over time.",
                     "desc": "After a Gift Box Shell explodes, it deals <color=#0abec5>&Param1&</color> of ATK as Ignis Skill DMG to targets within range every 0.3s for 2s.",
                     "damageType": [
-                        "Skill (from Skill)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -75414,7 +75414,7 @@
                     "briefDesc": "Combines Colonel Walnuts into General Curly.\u000bIf the squad is Ignis-Trekker only, increases General Curly's &Param3& over time.",
                     "desc": "When 4 Colonel Walnuts are on the battlefield, combines them into 1 General Curly, dealing <color=#0abec5>&Param1&</color> of ATK as Ignis Minion DMG to the target.\u000bGeneral Curly fights for <color=#0abec5>10</color>s, and only 1 can exist.\u000bIf the squad is Ignis-Trekker only, increases General Curly's &Param3& by <color=#0abec5>&Param4&</color> every second, up to <color=#0abec5>&Param5&</color> stacks.\u000bParam2: &Param2& (ScriptParameterValue,CommonData)",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "ELEMENTTYPE_:Minion DMG (%)"
@@ -75442,7 +75442,7 @@
                     "briefDesc": "Colonel Walnut and General Curly learn skills, which they automatically cast to attack targets.\u000bGeneral Curly's skill also increases its &Param5&.",
                     "desc": "Colonel Walnut and General Curly learn skills, which they automatically cast after a <color=#0abec5>4</color>s cooldown.\u000bColonel Walnut smashes the ground, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Ignis Minion DMG.\u000bGeneral Curly swings dual blades, dealing <color=#0abec5>&Param2& x6</color> of ATK as AoE Ignis Minion DMG and increasing its &Param5& by <color=#0abec5>&Param3&</color> for <color=#0abec5>&Param4&</color>s.",
                     "damageType": [
-                        "Minion (from Skill)"
+                        "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [
                         "ELEMENTTYPE_:Minion Crit Rate (%)"
