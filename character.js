@@ -142,8 +142,9 @@ function getSkillDamageTypes(skillId) {
 
         const type = HITDAMAGE[p[2]].DamageType;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
+        const levelData = HITDAMAGE[p[2]].LevelDataType;
 
-        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]})` : ''}`);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]}${[5, 2, 4].includes(levelData) ? `, scale with ${SKILL_SLOT_TYPE[levelData]}` : ''})` : ''}`);
     }
 
     return [...new Set(damageTypes)];
@@ -395,8 +396,9 @@ function getPotentialDamageTypes(potId) {
 
         const type = HITDAMAGE[p[2]].DamageType;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
+        const levelData = HITDAMAGE[p[2]].LevelData;
 
-        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]})` : ''}`);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]}${[5, 2, 4].includes(levelData) ? `, scale with ${SKILL_SLOT_TYPE[levelData]}` : ''})` : ''}`);
     }
 
     for (const param of hiddenParams) {
@@ -405,8 +407,9 @@ function getPotentialDamageTypes(potId) {
 
         const type = HITDAMAGE[p[2]].DamageType;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
+        const levelData = HITDAMAGE[p[2]].LevelData;
 
-        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]})` : ''} (hidden)`);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]}${[5, 2, 4].includes(levelData) ? `, scale with ${SKILL_SLOT_TYPE[levelData]}` : ''})` : ''} (hidden)`);
     }
 
     return [...new Set(damageTypes)];
