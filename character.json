@@ -48307,7 +48307,7 @@
                     "id": 513406,
                     "name": "Thunder Punch",
                     "briefDesc": "The third strike of Fiery Punches deals additional DMG.",
-                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
+                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack) +Multi-Shot",
                     "damageType": [
                         "Auto Attack",
                         "Auto Attack (hidden)"
@@ -58904,7 +58904,7 @@
                     "id": 514404,
                     "name": "Against the Flow",
                     "briefDesc": "Reduces Main Skill Cooldown. When casting Torrent Flash, summons a Mirror Image.",
-                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
+                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill) +Cascade of Ruin",
                     "damageType": [
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
@@ -58915,7 +58915,8 @@
                     "params": [],
                     "hiddenParams": [
                         "109%/126%/142%/191%/206%/222%/252%/265%/279%/305%/327%/349%/370%",
-                        "128%/147%/166%/223%/241%/259%/295%/310%/326%/356%/382%/407%/433%"
+                        "128%/147%/166%/223%/241%/259%/295%/310%/326%/356%/382%/407%/433%",
+                        "98%/113%/127%/171%/185%/199%/226%/238%/250%/273%/293%/312%/332%"
                     ],
                     "icon": "14401_Potential_04",
                     "rarity": "core"
@@ -75385,8 +75386,10 @@
                     "id": 515822,
                     "name": "Special Ammo",
                     "briefDesc": "Increases the Skill DMG and Attack Range of Gift Box Shells.\u000bIf the squad is Ignis-Trekker only, when Gift Box Shells deal DMG to the target, increases the Skill DMG Taken of the target.",
-                    "desc": "Increases the Attack Range of Gift Box Shells by <color=#0abec5>50%</color> and Skill DMG by <color=#0abec5>&Param5&</color>.\u000bIf the squad is Ignis-Trekker only, when Gift Box Shells deal DMG to the target, increases the target's Skill DMG Taken by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, up to <color=#0abec5>&Param4&</color> stacks.\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype)",
-                    "damageType": [],
+                    "desc": "Increases the Attack Range of Gift Box Shells by <color=#0abec5>50%</color> and Skill DMG by <color=#0abec5>&Param5&</color>.\u000bIf the squad is Ignis-Trekker only, when Gift Box Shells deal DMG to the target, increases the target's Skill DMG Taken by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, up to <color=#0abec5>&Param4&</color> stacks.\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill) +Fire Downpour",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill) (hidden)"
+                    ],
                     "effectType": [
                         "ELEMENTTYPE_:Skill DMG Taken (%)"
                     ],
@@ -75404,7 +75407,11 @@
                         20,
                         "13%"
                     ],
-                    "hiddenParams": [],
+                    "hiddenParams": [
+                        "168%/193%/218%/293%/317%/340%/387%/408%/428%/468%/485%/501%/518%",
+                        "119%/137%/154%/208%/225%/241%/274%/289%/303%/331%/343%/355%/367%",
+                        "37%/42%/48%/64%/69%/75%/85%/89%/94%/103%/106%/110%/114%"
+                    ],
                     "icon": "15801_Potential_22",
                     "rarity": "core"
                 },
