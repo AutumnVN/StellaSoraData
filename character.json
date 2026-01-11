@@ -169,7 +169,7 @@
                     "id": 510303,
                     "name": "Precise Temperature Control",
                     "briefDesc": "After casting the Main Skill, can immediately cast again.",
-                    "desc": "Within <color=#0abec5>2s</color> after casting Fireworks Jam (Main Skill), can immediately cast again. \u000bWhen Fireworks Jam triggers an ##Ignis Mark: Sacred Flame#2013#, casting the Skill again increases its DMG by <color=#0abec5>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage)",
+                    "desc": "Within <color=#0abec5>2s</color> after casting Fireworks Jam (Main Skill), can immediately cast again. \u000bWhen Fireworks Jam triggers an ##Ignis Mark: Sacred Flame#2013#, casting the Skill again increases its DMG by <color=#0abec5>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill) \u000bHiddenParam4: &HiddenParam4& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
@@ -3260,7 +3260,7 @@
                     "id": 510724,
                     "name": "Mystery of Gyration",
                     "briefDesc": "Tilia can throw more Aegis of Light.",
-                    "desc": "When casting &Param1& (Support Skill), Tilia throws Aegis of Light at up to <color=#0abec5>5</color> targets simultaneously.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When casting &Param1& (Support Skill), Tilia throws Aegis of Light at up to <color=#0abec5>5</color> targets simultaneously.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
@@ -8007,7 +8007,7 @@
             "id": 11010000,
             "name": "???",
             "briefDesc": "???",
-            "desc": "???\u000bParam1: &Param1& (HitDamage) \u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage) \u000bParam5: &Param5& (HitDamage) \u000bParam6: &Param6& (HitDamage)",
+            "desc": "???\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Auto Attack) \u000bParam5: &Param5& (HitDamage,Auto Attack) \u000bParam6: &Param6& (HitDamage,Minion)",
             "damageType": [
                 "Auto Attack (from Normal attack, scale with Normal attack)",
                 "Minion (from Skill, scale with Normal attack)"
@@ -8031,7 +8031,7 @@
             "name": "???",
             "cooldown": "6s",
             "briefDesc": "???",
-            "desc": "???\u000bParam1: &Param1& (HitDamage) \u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage) \u000bParam5: &Param5& (Buff,Time)",
+            "desc": "???\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Minion) \u000bParam3: &Param3& (HitDamage,Mark) \u000bParam4: &Param4& (HitDamage,Mark) \u000bParam5: &Param5& (Buff,Time)",
             "damageType": [
                 "Skill (from Skill, scale with Skill)",
                 "Minion (from Skill, scale with Skill)",
@@ -8057,7 +8057,7 @@
             "name": "???",
             "cooldown": "12s",
             "briefDesc": "???",
-            "desc": "???\u000bParam1: &Param1& (HitDamage) \u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage) \u000bParam5: &Param5& (Buff,Time)",
+            "desc": "???\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Minion) \u000bParam3: &Param3& (HitDamage,Mark) \u000bParam4: &Param4& (HitDamage,Mark) \u000bParam5: &Param5& (Buff,Time)",
             "damageType": [
                 "Skill (from Skill, scale with Skill)",
                 "Minion (from Skill, scale with Skill)",
@@ -8084,7 +8084,7 @@
             "cooldown": "25s",
             "energy": 218,
             "briefDesc": "???",
-            "desc": "???\u000bParam1: &Param1& (HitDamage) \u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage) \u000bParam5: &Param5& (Buff,Time)",
+            "desc": "???\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Mark) \u000bParam4: &Param4& (HitDamage,Mark) \u000bParam5: &Param5& (Buff,Time)",
             "damageType": [
                 "Ultimate (from Ultimate, scale with Ultimate)",
                 "Mark"
@@ -8130,7 +8130,7 @@
                     "id": 511002,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (HitDamage) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1)",
+                    "desc": "???\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (HitDamage,Skill) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -8202,7 +8202,7 @@
                     "id": 511005,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill"
                     ],
@@ -8365,7 +8365,7 @@
                     "id": 511008,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (HitDamage,Minion)",
                     "damageType": [
                         "Minion"
                     ],
@@ -8482,7 +8482,7 @@
                     "id": 511021,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -8501,7 +8501,7 @@
                     "id": 511022,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -8714,7 +8714,7 @@
                     "id": 511029,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage)",
+                    "desc": "???\u000bParam1: &Param1& (HitDamage,Minion)",
                     "damageType": [
                         "Minion"
                     ],
@@ -16497,7 +16497,7 @@
                     "id": 511341,
                     "name": "Intonation",
                     "briefDesc": "When casting the Ultimate, increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.",
-                    "desc": "When casting Flood Mantra (Ultimate), increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& by <color=#ec6d21>&Param1&</color> to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When casting Flood Mantra (Ultimate), increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& by <color=#ec6d21>&Param1&</color> to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Ultimate)",
                     "damageType": [
                         "Ultimate (from Ultimate, scale with Ultimate) (hidden)"
                     ],
@@ -18864,7 +18864,7 @@
                     "id": 511601,
                     "name": "Let Nature Thrive",
                     "briefDesc": "The Main Skill tosses additional seeds.",
-                    "desc": "Bean Cyclone (Main Skill) tosses <color=#0abec5>1</color> additional seed.\u000bParam1: &Param1& (HitDamage)",
+                    "desc": "Bean Cyclone (Main Skill) tosses <color=#0abec5>1</color> additional seed.\u000bParam1: &Param1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -21499,7 +21499,7 @@
                     "id": 511702,
                     "name": "Energy Storage: Knot",
                     "briefDesc": "After casting the Main Skill, increases the DMG of the next Skill.",
-                    "desc": "After casting &Param1& (Main Skill), increases the DMG of the next Skill by <color=#0abec5>&Param2&</color>, up to 3 stacks. \u000bAt 3 stacks, casting the Main Skill again will remove the buff.\u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "After casting &Param1& (Main Skill), increases the DMG of the next Skill by <color=#0abec5>&Param2&</color>, up to 3 stacks. \u000bAt 3 stacks, casting the Main Skill again will remove the buff.\u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)",
                         "Skill (from Skill, scale with Skill) (hidden)"
@@ -21527,7 +21527,7 @@
                     "id": 511703,
                     "name": "Energy Storage: Channel",
                     "briefDesc": "When the Main Skill deals DMG to a target with ##Lux Mark: Radiance#2016#, summons Chain Lightning.",
-                    "desc": "When &Param1& (Main Skill) deals damage to a target with ##Lux Mark: Radiance#2016#, summons Chain Lightning, dealing <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG, bouncing up to <color=#0abec5>5</color> stacks.\u000bParam3: &Param3& (HitDamage)",
+                    "desc": "When &Param1& (Main Skill) deals damage to a target with ##Lux Mark: Radiance#2016#, summons Chain Lightning, dealing <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG, bouncing up to <color=#0abec5>5</color> stacks.\u000bParam3: &Param3& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -24290,7 +24290,7 @@
                     "id": 511808,
                     "name": "Roaming Spectre",
                     "briefDesc": "Shadow Scythes will release venom when dealing DMG. Increases Coronis's &Param3&.",
-                    "desc": "Shadow Scythes will release venom when dealing DMG, dealing <color=#ec6d21>&Param1& of ATK</color> as AoE Umbra Auto Attack DMG every 0.5s for 6s.\u000bIncreases Coronis's &Param3& by <color=#ec6d21>&Param1&</color>.\u000bParam2: &Param2& (HitDamage)",
+                    "desc": "Shadow Scythes will release venom when dealing DMG, dealing <color=#ec6d21>&Param1& of ATK</color> as AoE Umbra Auto Attack DMG every 0.5s for 6s.\u000bIncreases Coronis's &Param3& by <color=#ec6d21>&Param1&</color>.\u000bParam2: &Param2& (HitDamage,Auto Attack)",
                     "damageType": [
                         "Auto Attack"
                     ],
@@ -29392,7 +29392,7 @@
                     "id": 512001,
                     "name": "Most Admired",
                     "briefDesc": "Summons more Flying Leaves.",
-                    "desc": "Summons <color=#0abec5>3</color> additional Flying Leaves.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Summons <color=#0abec5>3</color> additional Flying Leaves.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
@@ -29447,7 +29447,7 @@
                     "id": 512004,
                     "name": "Positive Score",
                     "briefDesc": "When Canace casts the Main Skill or when squadmate casts a Support Skill, Canace gains <color=#0abec5>Vortex Energy</color> and &Param3& is increased.",
-                    "desc": "When Canace casts Verdant Shroud (Main Skill), she gains 5 <color=#0abec5>Vortex Energy</color>. When a squadmate casts a Support Skill, she gains 3 <color=#0abec5>Vortex Energy</color>, capped at 5. \u000bWhen performing an Auto Attack, consumes 1 <color=#0abec5>Vortex Energy</color> to increase &Param3& by <color=#0abec5>&Param4&</color>.\u000bParam1: &Param1& (HitDamage) \u000bParam2: &Param2& (HitDamage)",
+                    "desc": "When Canace casts Verdant Shroud (Main Skill), she gains 5 <color=#0abec5>Vortex Energy</color>. When a squadmate casts a Support Skill, she gains 3 <color=#0abec5>Vortex Energy</color>, capped at 5. \u000bWhen performing an Auto Attack, consumes 1 <color=#0abec5>Vortex Energy</color> to increase &Param3& by <color=#0abec5>&Param4&</color>.\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
                     "damageType": [
                         "Auto Attack (from Normal attack, scale with Normal attack)"
                     ],
@@ -32027,7 +32027,7 @@
                     "id": 512301,
                     "name": "Wind's Breath",
                     "briefDesc": "When Bubble is on the battlefield, if Ann deals DMG, there is a chance to create a Wind Burst. When a Wind Burst is created, increases the squad's &Param2&.",
-                    "desc": "When Bubble is on the battlefield, if Ann deals DMG, there is a <color=#0abec5>25%</color> chance to create a Wind Burst. \u000bWhen a Wind Burst is created, increases the squad's &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bParam1: &Param1& (HitDamage)",
+                    "desc": "When Bubble is on the battlefield, if Ann deals DMG, there is a <color=#0abec5>25%</color> chance to create a Wind Burst. \u000bWhen a Wind Burst is created, increases the squad's &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bParam1: &Param1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -32263,7 +32263,7 @@
                     "id": 512313,
                     "name": "Zephyr Caress",
                     "briefDesc": "When dodging, Ann creates Wind Bursts and increases squadmates' &Param2&.",
-                    "desc": "When dodging, Ann creates 2 Wind Bursts and increases squadmates' &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.\u000bParam1: &Param1& (HitDamage)",
+                    "desc": "When dodging, Ann creates 2 Wind Bursts and increases squadmates' &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.\u000bParam1: &Param1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -35230,7 +35230,7 @@
                     "id": 512523,
                     "name": "Localized Snowfall",
                     "briefDesc": "After Freesia casts the Support Skill while in ##Berserk#2014#, there is a chance to summon an Ice Flower with an Auto Attack.",
-                    "desc": "After Freesia casts &Param10& (Support Skill) while in ##Berserk#2014#, there is a <color=#0abec5>30%</color> chance to summon one Ice Flower with an Auto Attack within <color=#0abec5>&Param1&</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "After Freesia casts &Param10& (Support Skill) while in ##Berserk#2014#, there is a <color=#0abec5>30%</color> chance to summon one Ice Flower with an Auto Attack within <color=#0abec5>&Param1&</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
@@ -40623,7 +40623,7 @@
                     "id": 512724,
                     "name": "Surge: Thunderbolt",
                     "briefDesc": "Increases Tidal Domain's DMG, and can knock back targets repeatedly.",
-                    "desc": "Increases Tidal Domain's DMG by <color=#0abec5>&Param2&</color>, and can knock back targets repeatedly...\u000bParam1: &Param1& (HitDamage)",
+                    "desc": "Increases Tidal Domain's DMG by <color=#0abec5>&Param2&</color>, and can knock back targets repeatedly...\u000bParam1: &Param1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -42856,7 +42856,7 @@
                     "id": 513202,
                     "name": "Clan Clash Artistry",
                     "briefDesc": "When &Param1& triggers a ##Lux Mark#1015#, enhances Two Base Hit.",
-                    "desc": "When &Param1& (Main Skill) triggers a ##Lux Mark#1015#, enhances Two Base Hit, increasing its DMG by <color=#0abec5>&Param2&</color> and reducing its Attack Interval by <color=#0abec5>30%</color>.\u000bParam3: &Param3& (HitDamage) \u000bParam4: &Param4& (HitDamage)\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "When &Param1& (Main Skill) triggers a ##Lux Mark#1015#, enhances Two Base Hit, increasing its DMG by <color=#0abec5>&Param2&</color> and reducing its Attack Interval by <color=#0abec5>30%</color>.\u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)",
                         "Skill (from Skill, scale with Skill) (hidden)"
@@ -42884,7 +42884,7 @@
                     "id": 513203,
                     "name": "Board Tricks",
                     "briefDesc": "Increases Skill DMG. When triggering a mark, increases the Skill DMG taken by the target.",
-                    "desc": "Increases the damage of &Param1& (Main Skill) by <color=#0abec5>&Param2&</color>. \u000bWhen ##Lux Mark#1015# is triggered, increases the Skill DMG taken by the target by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Increases the damage of &Param1& (Main Skill) by <color=#0abec5>&Param2&</color>. \u000bWhen ##Lux Mark#1015# is triggered, increases the Skill DMG taken by the target by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
@@ -43256,7 +43256,7 @@
                     "id": 513222,
                     "name": "Radiant Burst",
                     "briefDesc": "Increases the DMG and Attack Range of Astral Hex.",
-                    "desc": "Increases the Attack Range of Astral Hex by <color=#0abec5>50%</color> and its DMG by <color=#0abec5>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Increases the Attack Range of Astral Hex by <color=#0abec5>50%</color> and its DMG by <color=#0abec5>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
@@ -43345,7 +43345,7 @@
                     "id": 513226,
                     "name": "Shutout Desire",
                     "briefDesc": "When the main Trekker deals DMG to a target inflicted with Astral Hex, deals additional DMG.",
-                    "desc": "When the main Trekker deals damage to a target inflicted with Astral Hex, deals an additional <color=#ec6d21>&Param1& of Minova's ATK</color> as Lux Skill DMG. This effect can only be triggered once per second.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "When the main Trekker deals damage to a target inflicted with Astral Hex, deals an additional <color=#ec6d21>&Param1& of Minova's ATK</color> as Lux Skill DMG. This effect can only be triggered once per second.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill) (hidden)"
                     ],
@@ -45722,7 +45722,7 @@
                     "id": 513311,
                     "name": "Precision Control",
                     "briefDesc": "Increases Nazuka's &Param1&.\u000bThe Ultimate can trigger ##Ventus Mark#1017#.",
-                    "desc": "Increases Nazuka's &Param1& by <color=#ec6d21>&Param2&</color>. \u000bAromatic Tempest (Ultimate) can trigger ##Ventus Mark: Breeze#1017#.\u000bParam3: &Param3& (HitDamage)",
+                    "desc": "Increases Nazuka's &Param1& by <color=#ec6d21>&Param2&</color>. \u000bAromatic Tempest (Ultimate) can trigger ##Ventus Mark: Breeze#1017#.\u000bParam3: &Param3& (HitDamage,Mark)",
                     "damageType": [
                         "Mark"
                     ],
@@ -45937,7 +45937,7 @@
                     "id": 513323,
                     "name": "Flower Formation: Waves",
                     "briefDesc": "Increases the duration of Flower Formation.\u000bAfter casting the skill, when another friendly Ventus unit deals DMG to a target outside Flower Formation, creates another ##Flower Formation#4004#.",
-                    "desc": "Increases the duration of Flower Formation by <color=#0abec5>50%</color>.\u000bWithin 8s after casting the skill, when another friendly Ventus unit deals DMG to a target outside Flower Formation, creates another ##Flower Formation#4004#. This effect can only be triggered once per second.\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (HitDamage)",
+                    "desc": "Increases the duration of Flower Formation by <color=#0abec5>50%</color>.\u000bWithin 8s after casting the skill, when another friendly Ventus unit deals DMG to a target outside Flower Formation, creates another ##Flower Formation#4004#. This effect can only be triggered once per second.\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -48098,7 +48098,7 @@
             "id": 13410000,
             "name": "Blitz Combo",
             "briefDesc": "Punches rapidly, dealing multiple phases of DMG.\u000bCasts Fiery Punches when ammo is available.",
-            "desc": "Punches and kicks the target.\u000bStrike 1: <color=#fb8037>&Param1& of ATK x2</color> as Ignis DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Ignis DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK x2</color> as Ignis DMG.\u000bStrike 4: <color=#fb8037>&Param4& of ATK x5</color> as Ignis DMG.\u000bStrike 5: <color=#fb8037>&Param5& of ATK x2</color> as Ignis DMG.\u000bCasts Fiery Punches when ammo is available.\u000bStrike 1: <color=#fb8037>&Param6& of ATK</color> as Ignis DMG.\u000bStrike 2: <color=#fb8037>&Param7& of ATK</color> as Ignis DMG.\u000bStrike 3: <color=#fb8037>&Param8& of ATK</color> as Ignis DMG.\u000bBlitz Combo and Fiery Punches deal <color=#fb8037>&Param9& of ATK</color> as AoE Ignis DMG to other targets behind the target hit by them.\u000bParam10: &Param10& (HitDamage)",
+            "desc": "Punches and kicks the target.\u000bStrike 1: <color=#fb8037>&Param1& of ATK x2</color> as Ignis DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Ignis DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK x2</color> as Ignis DMG.\u000bStrike 4: <color=#fb8037>&Param4& of ATK x5</color> as Ignis DMG.\u000bStrike 5: <color=#fb8037>&Param5& of ATK x2</color> as Ignis DMG.\u000bCasts Fiery Punches when ammo is available.\u000bStrike 1: <color=#fb8037>&Param6& of ATK</color> as Ignis DMG.\u000bStrike 2: <color=#fb8037>&Param7& of ATK</color> as Ignis DMG.\u000bStrike 3: <color=#fb8037>&Param8& of ATK</color> as Ignis DMG.\u000bBlitz Combo and Fiery Punches deal <color=#fb8037>&Param9& of ATK</color> as AoE Ignis DMG to other targets behind the target hit by them.\u000bParam10: &Param10& (HitDamage,Mark)",
             "damageType": [
                 "Auto Attack (from Normal attack, scale with Normal attack)",
                 "Mark"
@@ -48307,7 +48307,7 @@
                     "id": 513406,
                     "name": "Thunder Punch",
                     "briefDesc": "The third strike of Fiery Punches deals additional DMG.",
-                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
                     "damageType": [
                         "Auto Attack",
                         "Auto Attack (hidden)"
@@ -53475,7 +53475,7 @@
             "cooldown": "30s",
             "energy": 285,
             "briefDesc": "Conjures a Fire Dragon to attack the target's location.",
-            "desc": "Conjures a Fire Dragon to circle around the target, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG in a large area every 0.3s for a total of 5s.\u000bParam4: &Param4& (Skill,Title) \u000bParam5: &Param5& (HitDamage)",
+            "desc": "Conjures a Fire Dragon to circle around the target, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG in a large area every 0.3s for a total of 5s.\u000bParam4: &Param4& (Skill,Title) \u000bParam5: &Param5& (HitDamage,Mark)",
             "damageType": [
                 "Ultimate (from Ultimate, scale with Ultimate)",
                 "Mark"
@@ -53895,7 +53895,7 @@
                     "id": 514123,
                     "name": "Sigil Unleashed: Tiger of the East",
                     "briefDesc": "Crimson Dragon transforms into Tiger of the East.",
-                    "desc": "Crimson Dragon enhances into Tiger of the East. Increases its ATK by <color=#0abec5>&Param1&</color> every 2s. Tiger of the East lasts for 15s, dealing <color=#0abec5>&Param2& of ATK</color>/<color=#0abec5>&Param3& of ATK</color>/<color=#0abec5>&Param4& of ATK x2</color> as AoE Ignis Minion DMG, and inflicting ##Ignis Mark: Sacred Flame#2013#.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "Crimson Dragon enhances into Tiger of the East. Increases its ATK by <color=#0abec5>&Param1&</color> every 2s. Tiger of the East lasts for 15s, dealing <color=#0abec5>&Param2& of ATK</color>/<color=#0abec5>&Param3& of ATK</color>/<color=#0abec5>&Param4& of ATK x2</color> as AoE Ignis Minion DMG, and inflicting ##Ignis Mark: Sacred Flame#2013#.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion)",
                     "damageType": [
                         "Minion (from Skill, scale with Skill)",
                         "Minion (from Skill, scale with Skill) (hidden)"
@@ -53924,7 +53924,7 @@
                     "id": 514124,
                     "name": "Tiger of the East: Blazing Scales",
                     "briefDesc": "The first summon of the Support Skill creates a Blazing Sphere, dealing DMG to nearby targets continuously.",
-                    "desc": "The first minion summoned by &Param2& (Support Skill) is inflicted with Blazing Barrier, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Minion DMG to nearby targets every <color=#0abec5>0.5</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "The first minion summoned by &Param2& (Support Skill) is inflicted with Blazing Barrier, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Minion DMG to nearby targets every <color=#0abec5>0.5</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion)",
                     "damageType": [
                         "Minion (from Skill, scale with Skill)",
                         "Minion (from Skill, scale with Skill) (hidden)"
@@ -58822,7 +58822,7 @@
                     "id": 514401,
                     "name": "Serpent's Glide",
                     "briefDesc": "After Chitose casts the Main Skill, her Auto Attack will summon a Coiling Serpent, and her resistance to interruption is increased.",
-                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Coiling Serpent, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Auto Attack DMG. Can trigger ##Aqua Mark#1018#. Also, Chitose's resistance to interruption is increased for &Param9&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Coiling Serpent, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Auto Attack DMG. Can trigger ##Aqua Mark#1018#. Also, Chitose's resistance to interruption is increased for &Param9&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
                     "damageType": [
                         "Auto Attack (from Normal attack, scale with Normal attack)",
                         "Auto Attack (from Normal attack, scale with Normal attack) (hidden)"
@@ -58854,7 +58854,7 @@
                     "id": 514402,
                     "name": "Mirror Blade",
                     "briefDesc": "After Chitose casts the Main Skill, her Auto Attack will summon a Mirror Image that performs Auto Attacks, and her resistance to interruption is increased.",
-                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Mirror Image that has <color=#0abec5>60%</color> of Chitose's ATK and performs Auto Attacks. Also, Chitose's resistance to interruption is increased for &Param1&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage) \u000bHiddenParam3: &HiddenParam3& (HitDamage) \u000bHiddenParam4: &HiddenParam4& (HitDamage) \u000bHiddenParam5: &HiddenParam5& (HitDamage) \u000bHiddenParam6: &HiddenParam6& (HitDamage) \u000bHiddenParam7: &HiddenParam7& (HitDamage) \u000bHiddenParam8: &HiddenParam8& (HitDamage) \u000bHiddenParam9: &HiddenParam9& (HitDamage)",
+                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Mirror Image that has <color=#0abec5>60%</color> of Chitose's ATK and performs Auto Attacks. Also, Chitose's resistance to interruption is increased for &Param1&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Auto Attack) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Auto Attack) \u000bHiddenParam4: &HiddenParam4& (HitDamage,Auto Attack) \u000bHiddenParam5: &HiddenParam5& (HitDamage,Auto Attack) \u000bHiddenParam6: &HiddenParam6& (HitDamage,Auto Attack) \u000bHiddenParam7: &HiddenParam7& (HitDamage,Auto Attack) \u000bHiddenParam8: &HiddenParam8& (HitDamage,Auto Attack) \u000bHiddenParam9: &HiddenParam9& (HitDamage,Auto Attack)",
                     "damageType": [
                         "Auto Attack (from Normal attack, scale with Normal attack) (hidden)"
                     ],
@@ -58904,7 +58904,7 @@
                     "id": 514404,
                     "name": "Against the Flow",
                     "briefDesc": "Reduces Main Skill Cooldown. When casting Torrent Flash, summons a Mirror Image.",
-                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage) \u000bHiddenParam2: &HiddenParam2& (HitDamage)",
+                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
@@ -66784,7 +66784,7 @@
                     "id": 515002,
                     "name": "Arc Chain Laser",
                     "briefDesc": "The laser inflicts Shock on targets. When attacking Shocked targets, deals additional DMG.",
-                    "desc": "The laser inflicts Shock on targets for 10s. When dealing damage to Shocked targets, deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG. With the 20th hit, deals <color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG and removes Shock.\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage)",
+                    "desc": "The laser inflicts Shock on targets for 10s. When dealing damage to Shocked targets, deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG. With the 20th hit, deals <color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG and removes Shock.\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)",
                         "Skill (from Skill, scale with Skill) (hidden)"
@@ -74945,7 +74945,7 @@
             "cooldown": "40s",
             "energy": 240,
             "briefDesc": "Transforms into toy: Dame Laru.\u000bAfter the transformation, her Auto Attacks become ranged shots, and her Main and Support Skills become Candy Barrage.",
-            "desc": "Transforms into toy: Dame Laru, gaining a shield equal to &Param7& of Base Max HP for &Param6&s.\u000bDame Laru cannot dodge or dash. Her Auto Attacks become shots that pierce targets, dealing <color=#fb8037>&Param2&</color> of ATK as Ignis Ultimate DMG. The Main and Support skills are replaced by Candy Barrage.\u000bCandy Barrage deals <color=#fb8037>&Param3& x5</color> of ATK as AoE Ignis Ultimate DMG to targets in the front with a 4s cooldown.\u000bParam4: &Param4& (Skill,Title) \u000bParam5: &Param5& (HitDamage)",
+            "desc": "Transforms into toy: Dame Laru, gaining a shield equal to &Param7& of Base Max HP for &Param6&s.\u000bDame Laru cannot dodge or dash. Her Auto Attacks become shots that pierce targets, dealing <color=#fb8037>&Param2&</color> of ATK as Ignis Ultimate DMG. The Main and Support skills are replaced by Candy Barrage.\u000bCandy Barrage deals <color=#fb8037>&Param3& x5</color> of ATK as AoE Ignis Ultimate DMG to targets in the front with a 4s cooldown.\u000bParam4: &Param4& (Skill,Title) \u000bParam5: &Param5& (HitDamage,Mark)",
             "damageType": [
                 "Ultimate (from Ultimate, scale with Ultimate)",
                 "Mark"
@@ -74971,7 +74971,7 @@
                     "id": 515801,
                     "name": "Solemn Look",
                     "briefDesc": "Enhances the Synergy Skills of Colonel Walnut and General Curly.\u000bEnhances Clockwork Queen's shots.",
-                    "desc": "Empowers the toys following Snowish Laru.\u000bColonel Walnut's Synergy Skill deals <color=#0abec5>&Param1&</color> of ATK as AoE Ignis Minion DMG.\u000bGeneral Curly's Synergy Skill deals <color=#0abec5>&Param2& x6</color> of ATK as AoE Ignis Minion DMG.\u000bClockwork Queen's shots deal an additional <color=#0abec5>&Param4&</color> of ATK as AoE Ignis Minion DMG.\u000bParam3: &Param3& (HitDamage)",
+                    "desc": "Empowers the toys following Snowish Laru.\u000bColonel Walnut's Synergy Skill deals <color=#0abec5>&Param1&</color> of ATK as AoE Ignis Minion DMG.\u000bGeneral Curly's Synergy Skill deals <color=#0abec5>&Param2& x6</color> of ATK as AoE Ignis Minion DMG.\u000bClockwork Queen's shots deal an additional <color=#0abec5>&Param4&</color> of ATK as AoE Ignis Minion DMG.\u000bParam3: &Param3& (HitDamage,Minion)",
                     "damageType": [
                         "Minion (from Skill, scale with Skill)"
                     ],
@@ -75259,7 +75259,7 @@
                     "id": 515812,
                     "name": "Jazz of Rage",
                     "briefDesc": "While transformed into Dame Laru, Snowish Laru's shots and &Param1& can trigger ##Ignis Mark#1016#.\u000bIncreases Snowish Laru's &Param3&.",
-                    "desc": "While transformed into Dame Laru, Snowish Laru's shots and &Param1& can trigger ##Ignis Mark#1016#.\u000bIncreases Snowish Laru's &Param3& by <color=#ec6d21>&Param4&</color>.\u000bParam2: &Param2& (HitDamage)",
+                    "desc": "While transformed into Dame Laru, Snowish Laru's shots and &Param1& can trigger ##Ignis Mark#1016#.\u000bIncreases Snowish Laru's &Param3& by <color=#ec6d21>&Param4&</color>.\u000bParam2: &Param2& (HitDamage,Mark)",
                     "damageType": [
                         "Mark"
                     ],
