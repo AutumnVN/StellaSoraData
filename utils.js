@@ -403,7 +403,7 @@ function collectUnusedParamsFrom(obj, lang) {
 
     if (paramKeys.length === 0) return [];
 
-    return paramKeys.map(k => `\u000b${k}: &${k}& (${obj[k].split(',')[0]}${obj[k].split(',')[3] ? `,${obj[k].split(',')[3]}` : ''})`).join(' ');
+    return paramKeys.map(k => `\u000b${k}: &${k}& (${obj[k].split(',')[0]}${obj[k].split(',')[3] ? `,${obj[k].split(',')[3]}` : ''}${obj[k].split(',')[0] === 'HitDamage' ? `,${DAMAGE_TYPE[HITDAMAGE[obj[k].split(',')[2]].DamageType]}` : ''})`).join(' ');
 }
 
 function collectPotentialHiddenParamsFrom(obj) {
@@ -415,7 +415,7 @@ function collectPotentialHiddenParamsFrom(obj) {
     const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => resolveParam([`HitDamage,DamageNum,${id}`])[0] && `HitDamage,DamageNum,${id}` !== resolveParam([`HitDamage,DamageNum,${id}`])[0]).filter(id => id.length === 9 && id.startsWith(charId) && id.slice(4, 7).includes(potId.toString().padStart(2, '0')) && HITDAMAGE[id].HitdamageInfo?.includes(`潜能${potId.toString().padStart(2, '0')}`));
 
     return {
-        desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage)`).join(' '),
+        desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage,${DAMAGE_TYPE[HITDAMAGE[id].DamageType]})`).join(' '),
         params: hiddenHitDamageIds.map(id => `HitDamage,DamageNum,${id}`)
     };
 }
