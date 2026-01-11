@@ -9,10 +9,12 @@ const SHIELDVALUE = require('./EN/bin/ShieldValue.json');
 const SKILL = require('./EN/bin/Skill.json');
 const SCOREBOSSABILITY = require('./EN/bin/ScoreBossAbility.json');
 const SCOREBOSSGETCONTROL = require('./EN/bin/ScoreBossGetControl.json');
+const ITEM = require('./EN/bin/Item.json');
 const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
 const LANG_SKILL = require('./EN/language/en_US/Skill.json');
 const LANG_POTENTIAL = require('./EN/language/en_US/Potential.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
+const LANG_ITEM = require('./EN/language/en_US/Item.json');
 
 const ATTR_TYPE = {
     1: 'ATK',
@@ -412,10 +414,11 @@ function collectPotentialHiddenParamsFrom(obj) {
     const charId = obj.CharId;
     const potId = obj.Id % 100;
 
-    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => resolveParam([`HitDamage,DamageNum,${id}`])[0] && `HitDamage,DamageNum,${id}` !== resolveParam([`HitDamage,DamageNum,${id}`])[0]).filter(id => id.length === 9 && id.startsWith(charId) && id.slice(4, 7).includes(potId.toString().padStart(2, '0')) && HITDAMAGE[id].HitdamageInfo?.includes(`潜能${potId.toString().padStart(2, '0')}`));
+    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => resolveParam([`HitDamage,DamageNum,${id}`])[0] && `HitDamage,DamageNum,${id}` !== resolveParam([`HitDamage,DamageNum,${id}`])[0]).filter(id => id.length === 9 && id.startsWith(charId) && id.slice(4, 7).includes(potId.toString().padStart(2, '0')) && HITDAMAGE[id].HitdamageInfo?.includes(potId.toString().padStart(2, '0')));
+    const relatedPotentialIds = hiddenHitDamageIds.map(id => HITDAMAGE[id].HitdamageInfo.match(/\b\d{2}\b/g).filter(pot => pot !== potId.toString().padStart(2, '0')));
 
     return {
-        desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage,${DAMAGE_TYPE[HITDAMAGE[id].DamageType]})`).join(' '),
+        desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage,${DAMAGE_TYPE[HITDAMAGE[id].DamageType]})${relatedPotentialIds[index].length > 0 ? ` +${relatedPotentialIds[index].map(potId2 => LANG_ITEM[ITEM[`5${charId}${potId2}`].Title]).join(',')}` : ''}`).join(' '),
         params: hiddenHitDamageIds.map(id => `HitDamage,DamageNum,${id}`)
     };
 }
