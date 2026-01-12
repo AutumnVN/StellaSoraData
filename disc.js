@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { ATTR_TYPE, EFFECT_TYPE, collectParamsFrom, getEffectData, PARAM_TYPE, formatEffectType } = require('./utils');
+const { ATTR_TYPE, EFFECT_TYPE, collectParamsFrom, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType } = require('./utils');
 const DISC = require('./EN/bin/Disc.json');
 const DISCTAG = require('./EN/bin/DiscTag.json');
 const DISCPROMOTE = require('./EN/bin/DiscPromote.json');
@@ -13,6 +13,7 @@ const DISCEXTRAATTRIBUTE = require('./EN/bin/DiscExtraAttribute.json');
 const EFFECT = require('./EN/bin/Effect.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
 const BUFF = require('./EN/bin/Buff.json');
+const ONCEADDITTIONALATTRIBUTEVALUE = require('./EN/bin/OnceAdditionalAttributeValue.json');
 const LANG_ITEM = require('./EN/language/en_US/Item.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_DISCTAG = require('./EN/language/en_US/DiscTag.json');
@@ -52,6 +53,7 @@ function getMainSkill(id) {
         name: LANG_MAINSKILL[MAINSKILL[key].Name],
         desc: LANG_MAINSKILL[MAINSKILL[key].Desc],
         effectType: getMainSkillEffectTypes(id),
+        addAttrType: getMainSkillAddAttrType(id),
         effectData: getMainSkillEffectData(id),
         buffIcon: getMainSkillBuffIcons(id),
         params: getMainSkillParams(id),
@@ -92,6 +94,31 @@ function getMainSkillEffectTypes(id) {
     }
 
     return [...new Set(effectTypes)];
+}
+
+function getMainSkillAddAttrType(id) {
+    const attrTypes = [];
+
+    const key = Object.keys(MAINSKILL).find(key => MAINSKILL[key].GroupId === id);
+    if (!key) return attrTypes;
+
+    const addAttrKeys = Object.keys(ONCEADDITTIONALATTRIBUTEVALUE).filter(k => k.startsWith(`${id}0`) && k.length === 7);
+
+    for (const addAttrKey of addAttrKeys) {
+        let addAttrId = +addAttrKey;
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) addAttrId += 10;
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) continue;
+
+        const type = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType1;
+        const paramType = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType1;
+        const type2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType2;
+        const paramType2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType2;
+
+        attrTypes.push(formatAddAttrType(type, paramType));
+        if (type2 && paramType2) attrTypes.push(formatAddAttrType(type2, paramType2));
+    }
+
+    return [...new Set(attrTypes)];
 }
 
 function getMainSkillEffectData(id) {
@@ -138,6 +165,7 @@ function getSeconarySkill(id) {
         name: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Name],
         desc: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Desc],
         effectType: getSeconarySkillEffectTypes(id),
+        addAttrType: getSeconarySkillAddAttrType(id),
         effectData: getSeconarySkillEffectData(id),
         buffIcon: getSecondarySkillBuffIcons(id),
         params: getSecondarySkillParams(id),
@@ -179,6 +207,31 @@ function getSeconarySkillEffectTypes(id) {
     }
 
     return [...new Set(effectTypes)];
+}
+
+function getSeconarySkillAddAttrType(id) {
+    const attrTypes = [];
+
+    const keys = Object.keys(SECONDARYSKILL).find(key => SECONDARYSKILL[key].GroupId === id);
+    if (!keys) return attrTypes;
+
+    const addAttrKeys = Object.keys(ONCEADDITTIONALATTRIBUTEVALUE).filter(k => k.startsWith(`${id}`) && k.length === 7);
+
+    for (const addAttrKey of addAttrKeys) {
+        let addAttrId = +addAttrKey;
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) addAttrId += 10;
+        if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) continue;
+
+        const type = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType1;
+        const paramType = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType1;
+        const type2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType2;
+        const paramType2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType2;
+
+        attrTypes.push(formatAddAttrType(type, paramType));
+        if (type2 && paramType2) attrTypes.push(formatAddAttrType(type2, paramType2));
+    }
+
+    return [...new Set(attrTypes)];
 }
 
 function getSeconarySkillEffectData(id) {
