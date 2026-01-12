@@ -553,7 +553,7 @@ function getTalents(charId) {
                 name: LANG_TALENTGROUP[TALENTGROUP[groupId].Title],
                 boost: talentIds.map(talentId => ({
                     name: LANG_TALENT[TALENT[talentId].Title],
-                    desc: LANG_TALENT[TALENT[talentId].Desc],
+                    desc: LANG_TALENT[TALENT[talentId].Desc] + collectUnusedParamsFrom(TALENT[talentId], LANG_TALENT),
                     params: getTalentParams(talentId),
                     effectType: getTalentEffectTypes(talentId),
                     addAttrType: getTalentAddAttrTypes(talentId),
