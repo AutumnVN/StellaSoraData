@@ -12,7 +12,6 @@ const SCOREBOSSGETCONTROL = require('./EN/bin/ScoreBossGetControl.json');
 const ITEM = require('./EN/bin/Item.json');
 const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
 const LANG_SKILL = require('./EN/language/en_US/Skill.json');
-const LANG_POTENTIAL = require('./EN/language/en_US/Potential.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_ITEM = require('./EN/language/en_US/Item.json');
 
@@ -119,6 +118,12 @@ const SPECIAL_ATTR_TYPE = {
     2: 'TOUGHNESS_V',
     3: 'SHIELD_V',
     4: 'ENERGY',
+};
+
+const PLAYER_ATTR_TYPE = {
+    0: 'ADD_ENERGY',
+    1: 'FRONT_ADD_ENERGY',
+    2: 'ADSORPTION_CHANGE',
 };
 
 const PARAM_TYPE = {
@@ -670,6 +675,8 @@ function formatEffectType(id, type, paramType) {
 
         if (effectTypeStr === 'SPECIAL_ATTR_FIX') {
             result += `${SPECIAL_ATTR_TYPE[type]}`;
+        } else if (effectTypeStr === 'PLAYER_ATTR_FIX') {
+            result += `${PLAYER_ATTR_TYPE[type]}`;
         } else if (effectTypeStr.includes('ATTR_FIX') || effectTypeStr === 'ADDBUFF') {
             result += `${attrTypeStr}`;
         } else {
