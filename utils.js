@@ -124,7 +124,13 @@ const SPECIAL_ATTR_TYPE = {
 const PARAM_TYPE = {
     1: 'base',
     2: '%',
-    3: 'abs'
+    3: 'abs',
+    4: 'SET_MAX_PERCENTAGE_VALUE',
+    5: 'SET_MAX_ABSOLUTE_VALUE',
+    6: '%',
+    7: 'abs',
+    8: 'SET_PERCENTAGE_VALUE',
+    9: 'SET_ABSOLUTE_VALUE'
 };
 
 const DAMAGE_TYPE = {
