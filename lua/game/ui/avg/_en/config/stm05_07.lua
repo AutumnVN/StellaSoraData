@@ -13656,7 +13656,7 @@ return {
 			1.25,
 			nil,
 			nil,
-			nil,
+			0.0,
 			0.0,
 			true,
 			nil

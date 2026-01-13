@@ -9,6 +9,7 @@ BdConvertPanel._tbDefine = {
 	}
 }
 function BdConvertPanel:Awake()
+	self.nTab = nil
 end
 function BdConvertPanel:OnEnable()
 end

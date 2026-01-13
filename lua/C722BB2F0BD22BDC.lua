@@ -18,6 +18,10 @@ ActivityMiracle_10103PopUpCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Close"
 	},
+	btnCloseFullscreen = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Close"
+	},
 	txtDate = {sComponentName = "TMP_Text"},
 	txtTime = {sComponentName = "TMP_Text"},
 	btnDontShow = {

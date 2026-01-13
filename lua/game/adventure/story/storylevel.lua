@@ -49,6 +49,12 @@ function StoryLevel:Init(parent, nLevelId, nBuildId, bActivityStory)
 end
 function StoryLevel:RefreshCharDamageData()
 	self.tbCharDamage = UTILS.GetCharDamageResult(self.tbCharId)
+	for k, v in pairs(self.tbCharDamage) do
+		local mapSkin = ConfigTable.GetData_CharacterSkin(PlayerData.Char:GetCharSkinId(v.nCharId))
+		if mapSkin ~= nil then
+			v.nSkinId = mapSkin.Id
+		end
+	end
 end
 function StoryLevel:OnEvent_LoadLevelRefresh()
 	local mapAllEft, mapDiscEft, mapNoteEffect, tbNoteInfo = {}, {}, {}, {}

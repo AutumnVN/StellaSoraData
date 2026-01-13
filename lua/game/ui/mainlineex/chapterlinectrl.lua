@@ -27,7 +27,8 @@ local UnlockConditionPriority = {
 	[3] = "MustEvIds",
 	[4] = "OneofEvIds",
 	[5] = "WorldLevel",
-	[6] = "MustAchievementIds"
+	[6] = "MustAchievementIds",
+	[7] = "TimeUnlock"
 }
 function ChapterLineCtrl:Awake()
 	self.bCanClick = true
@@ -43,6 +44,7 @@ function ChapterLineCtrl:Awake()
 	self.lineAnimTime = 0.14
 	self.tbBranchGrid = {}
 	self.tbLockedBranchGrid = {}
+	self.bFocusNotReadNode = true
 	self:CacheCurChapterConfig()
 	self:CacheChapterBranchNode()
 	self:Refresh()
@@ -91,7 +93,7 @@ function ChapterLineCtrl:RefreshFocusNode()
 		local avgId = storyConfig.StoryId
 		if 0 < table.indexof(self.tbLockedBranchGrid, avgId) and self.tbBranch[avgId] ~= nil then
 			for _, branchGrid in ipairs(self.tbBranch[avgId]) do
-				local bUnlock = AvgData:IsUnlock(branchGrid.ConditionId)
+				local bUnlock = AvgData:IsUnlock(branchGrid.ConditionId, branchGrid.StoryId)
 				if bUnlock then
 					self.bNeedPlayBranchAnim = true
 					break
@@ -126,7 +128,7 @@ function ChapterLineCtrl:Refresh()
 				depth = i
 			})
 			local storyConfig = AvgData:GetStoryCfgData(avgId)
-			local bUnlock = AvgData:IsUnlock(storyConfig.ConditionId)
+			local bUnlock = AvgData:IsUnlock(storyConfig.ConditionId, storyConfig.StoryId)
 			if i > self.maxStoryDepth then
 				self.maxStoryDepth = i
 			end
@@ -149,22 +151,26 @@ function ChapterLineCtrl:Refresh()
 	self:AddTimer(1, 0.1, function()
 		self._mapNode.scrollRect.horizontalNormalizedPosition = (self.curTimeStamp - 1) * 250
 	end, true, true, true)
+	CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.tranContent)
 	if 0 > self.curTimeStamp - 1 then
 		self._mapNode.imgMask.gameObject:SetActive(false)
 	else
 		self._mapNode.imgMask.gameObject:SetActive(true)
-		self._mapNode.imgMask.anchoredPosition = Vector2((self.curTimeStamp - 0.5) * 512, -6)
+		local node = self._mapNode.tranContent:Find(tostring(self.curTimeStamp))
+		local layout = self._mapNode.tranContent:GetComponent("HorizontalLayoutGroup")
+		local pos = node.localPosition.x - layout.padding.left
+		self._mapNode.imgMask.anchoredPosition = Vector2(pos, -6)
 	end
 end
 function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 	local avgId = goGrid.name
 	local storyConfig = AvgData:GetStoryCfgData(avgId)
-	local bUnlock = AvgData:IsUnlock(storyConfig.ConditionId)
+	local bUnlock = AvgData:IsUnlock(storyConfig.ConditionId, avgId)
 	local goLeftBorder = goGrid:Find("goLeftBorder")
 	local bAllLock = 1 < gridDepth and true or false
 	for i = 1, #storyConfig.ParentStoryId do
 		local parentConfig = AvgData:GetStoryCfgData(storyConfig.ParentStoryId[i])
-		local parentUnlock = AvgData:IsUnlock(parentConfig.ConditionId)
+		local parentUnlock = AvgData:IsUnlock(parentConfig.ConditionId, parentConfig.StoryId)
 		if parentUnlock then
 			bAllLock = false
 		end
@@ -279,18 +285,15 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 	local index = 1
 	local bHasUnlockBranch = false
 	for k, v in ipairs(self.tbBranch[avgId]) do
-		local bUnlock = AvgData:IsUnlock(v.ConditionId)
+		local bUnlock = AvgData:IsUnlock(v.ConditionId, v.StoryId)
 		local bReaded = AvgData:IsStoryReaded(v.Id)
 		local branchGrid = root:Find("BranchGrid_" .. k)
 		local storyConfig = AvgData:GetStoryCfgData(branchIds[index])
 		if bUnlock then
 			bHasUnlockBranch = true
 		end
-		if not bUnlock then
-			if table.indexof(self.tbLockedBranchGrid, avgId) <= 0 then
-				table.insert(self.tbLockedBranchGrid, avgId)
-			end
-		elseif table.indexof(self.tbLockedBranchGrid, avgId) > 0 then
+		table.insert(self.tbLockedBranchGrid, avgId)
+		if bUnlock and table.indexof(self.tbLockedBranchGrid, avgId) > 0 then
 			table.removebyvalue(self.tbLockedBranchGrid, avgId)
 		end
 		if isNeedPlayUnlockAnim and bUnlock then
@@ -378,7 +381,7 @@ end
 function ChapterLineCtrl:RefreshUnlockAnimList()
 	self.tbNeedPlayUnlockAnimGird = {}
 	self.curShouldPlayDepth = 9999
-	if not self.bNeedPlayUnlockAnim then
+	if not self.bNeedPlayUnlockAnim and not self.bNeedPlayBranchAnim then
 		return
 	end
 	local cachedGird = {}
@@ -398,7 +401,7 @@ function ChapterLineCtrl:RefreshUnlockAnimList()
 				if cachedGird[parentNode] ~= nil then
 					local parentStoryConfig = AvgData:GetStoryCfgData(parentNode)
 					local bHasPlayedAnim = LocalData.GetPlayerLocalData("MainlineUnlock_" .. storyConfig.Id)
-					local parentUnlock = AvgData:IsUnlock(parentStoryConfig.ConditionId)
+					local parentUnlock = AvgData:IsUnlock(parentStoryConfig.ConditionId, parentStoryConfig.StoryId)
 					if cachedGird[v.avgId] == nil and (bHasPlayedAnim == nil or bHasPlayedAnim == 0) and parentUnlock then
 						table.insert(self.tbNeedPlayUnlockAnimGird, v)
 						cachedGird[v.avgId] = v
@@ -462,7 +465,7 @@ function ChapterLineCtrl:PlayNormalNodeUnlockAnim(nodeInfo, depth)
 	imgRightPoint_1.gameObject:SetActive(false)
 	imgLeftPoint_1.gameObject:SetActive(false)
 	goLineContinue.gameObject:SetActive(false)
-	local bUnlock = AvgData:IsUnlock(storyConfig.ConditionId)
+	local bUnlock = AvgData:IsUnlock(storyConfig.ConditionId, storyConfig.StoryId)
 	local batteleNode = grid:Find("btnEnter/AnimRoot/BattleRoot")
 	local normalNode = grid:Find("btnEnter/AnimRoot/NormalRoot")
 	local lockNode = grid:Find("btnEnter/AnimRoot/LockRoot")
@@ -557,7 +560,7 @@ function ChapterLineCtrl:OnClickGrid(avgId)
 		return
 	end
 	local storyConfig = AvgData:GetStoryCfgData(avgId)
-	local bUnlock, tbResult = AvgData:IsUnlock(storyConfig.ConditionId)
+	local bUnlock, tbResult = AvgData:IsUnlock(storyConfig.ConditionId, avgId)
 	if not bUnlock then
 		WwiseAudioMgr:PostEvent("ui_systerm_locked")
 		if tbResult ~= nil then
@@ -606,15 +609,63 @@ function ChapterLineCtrl:OnClickGrid(avgId)
 						end
 						break
 					end
-					if UnlockConditionPriority[i] == "MustAchievementIds" and self.bHasAchievementData == true then
-						local tbAchievementList = value[2]
-						for k, v in pairs(tbAchievementList) do
-							if v == false then
-								local achievementId = k
-								local achievement = ConfigTable.GetData("Achievement", achievementId)
-								lockTxt = orderedFormat(ConfigTable.GetUIText("Story_UnlockAchievement") or "", achievement.Title) .. "\n" .. "(" .. achievement.Desc .. ")"
-								break
+					if UnlockConditionPriority[i] == "MustAchievementIds" then
+						if self.bHasAchievementData == true then
+							local tbAchievementList = value[2]
+							for k, v in pairs(tbAchievementList) do
+								if v == false then
+									local achievementId = k
+									local achievement = ConfigTable.GetData("Achievement", achievementId)
+									lockTxt = orderedFormat(ConfigTable.GetUIText("Story_UnlockAchievement") or "", achievement.Title) .. "\n" .. "(" .. achievement.Desc .. ")"
+									break
+								end
 							end
+						end
+						break
+					end
+					if UnlockConditionPriority[i] == "TimeUnlock" then
+						local curTime = CS.ClientManager.Instance.serverTimeStamp
+						local openTime = value[2]
+						local remainTime = openTime - curTime
+						if remainTime <= 60 then
+							do
+								local sec = math.floor(remainTime)
+								lockTxt = orderedFormat(ConfigTable.GetUIText("Mainline_Open_Time_Sec") or "", sec)
+							end
+							break
+						end
+						if 60 < remainTime and remainTime <= 3600 then
+							do
+								local min = math.floor(remainTime / 60)
+								local sec = math.floor(remainTime - min * 60)
+								if sec == 0 then
+									min = min - 1
+									sec = 60
+								end
+								lockTxt = orderedFormat(ConfigTable.GetUIText("Mainline_Open_Time_Min") or "", min, sec)
+							end
+							break
+						end
+						if 3600 < remainTime and remainTime <= 86400 then
+							do
+								local hour = math.floor(remainTime / 3600)
+								local min = math.floor((remainTime - hour * 3600) / 60)
+								if min == 0 then
+									hour = hour - 1
+									min = 60
+								end
+								lockTxt = orderedFormat(ConfigTable.GetUIText("Mainline_Open_Time_Hour") or "", hour, min)
+							end
+							break
+						end
+						if 86400 < remainTime then
+							local day = math.floor(remainTime / 86400)
+							local hour = math.floor((remainTime - day * 86400) / 3600)
+							if hour == 0 then
+								day = day - 1
+								hour = 24
+							end
+							lockTxt = orderedFormat(ConfigTable.GetUIText("Mainline_Open_Time_Day") or "", day, hour)
 						end
 					end
 					break

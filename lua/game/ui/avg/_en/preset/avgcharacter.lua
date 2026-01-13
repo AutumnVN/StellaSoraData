@@ -303,6 +303,11 @@ return {
 		name_bg_color = "#0ABEC5"
 	},
 	{
+		id = "avg2_952",
+		name = "Laifu",
+		name_bg_color = "#0ABEC5"
+	},
+	{
 		id = "avg2_953",
 		name = "Furnace's Delirium",
 		name_bg_color = "#0ABEC5"
@@ -2427,6 +2432,24 @@ return {
 		name = "Ranged Grass B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_957"
+	},
+	{
+		id = "avg3_1270",
+		name = "Darcia A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_985"
+	},
+	{
+		id = "avg3_1271",
+		name = "Darcia B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_985"
+	},
+	{
+		id = "avg3_1272",
+		name = "Poisoned UH Employee C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_962"
 	},
 	{
 		id = "avg4_100",

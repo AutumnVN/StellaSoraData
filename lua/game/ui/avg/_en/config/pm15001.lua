@@ -1177,7 +1177,7 @@ return {
 		param = {
 			3,
 			"avg1_150",
-			"emoji_angry_b",
+			"emoji_angry_a",
 			"0",
 			"",
 			false,

@@ -165,20 +165,6 @@ function ChristmasThemeCtrl:OnEnable()
 				self.nActId,
 				nActId
 			}, self._mapNode.reddotLevel)
-		elseif i == AllEnum.ActivityThemeFuncIndex.MiniGame then
-			local nActId = actData.ActivityId
-			local state = self.tbActState[nActId]
-			if state == ActivityState.Closed then
-				self._mapNode.redDotEntrance1:SetActive(false)
-			else
-				local nQuestActId = tonumber(tostring(self.nActId) .. "03")
-				local nMiniGameQuestActId = tonumber(tostring(self.nActId) .. "04")
-				RedDotManager.RegisterNode(RedDotDefine.Activity_Group_Task_Group, {
-					self.nActId,
-					nQuestActId,
-					nMiniGameQuestActId
-				}, self._mapNode.redDotEntrance1)
-			end
 		elseif i == AllEnum.ActivityThemeFuncIndex.Story then
 			local nActId = actData.ActivityId
 			RedDotManager.RegisterNode(RedDotDefine.Activity_GroupNew_Avg_Group, {

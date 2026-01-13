@@ -3488,7 +3488,7 @@ return {
 			"",
 			false,
 			"",
-			"Y-Yes, sir...",
+			"Y-Yes, ma'am...",
 			""
 		}
 	},
@@ -5523,7 +5523,7 @@ return {
 			"",
 			false,
 			"",
-			"She's backing down. Mistique instantly realized he was trying to pass the buck and called him out on his negligence.",
+			"She's backing down. Mistique instantly realized she was trying to pass the buck and called her out on her negligence.",
 			""
 		}
 	},

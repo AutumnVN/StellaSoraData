@@ -245,7 +245,7 @@ return {
 			"",
 			false,
 			"",
-			"Ugh, Serena always loves to play these little \"games\" ...==W== Heh, can't say I don't, though.",
+			"Ugh, Serena always loves to play these little \"games\" ...==W== Heh, can't say Idon't, though.",
 			""
 		}
 	},
@@ -6930,7 +6930,7 @@ return {
 			"",
 			false,
 			"",
-			"You met a mighty Trekker back at the camp, didn't you? Lady Nazuka, the one who led the expedition against the Jade Blade.",
+			"You met a mighty Trekker back at the camp, didn't you? Lady Nazuka, the one who led the expedition against the Blade of Jade.",
 			""
 		}
 	},

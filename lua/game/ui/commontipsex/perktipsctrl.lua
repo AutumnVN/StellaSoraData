@@ -253,7 +253,7 @@ function PerkTipsCtrl:OnBtnClick_CloseWord(btn)
 	self._mapNode.imgWordTipBg:SetActive(false)
 end
 function PerkTipsCtrl:OnBtnClick_ClosePanel(btn)
-	if self.rtTarget ~= nil then
+	if self.rtTarget and not self.rtTarget:IsNull() then
 		local btnComp = self.rtTarget:GetComponent("Button")
 		if btnComp ~= nil then
 			btnComp.interactable = true

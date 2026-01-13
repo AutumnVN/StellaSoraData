@@ -503,6 +503,18 @@ function Avg_ProcEnquotes(s)
 	s = string.gsub(s, "\"", "\\\"")
 	return s
 end
+function Avg_ProcContactsIcon_M_F(sIcon)
+	local tb = {
+		"Icon/Head/head_9100_S",
+		"Icon/Head/head_9101_S"
+	}
+	if table.indexof(tb, sIcon) > 0 then
+		local nIndex = PlayerData.Base:GetPlayerSex() == true and 2 or 1
+		return tb[nIndex]
+	else
+		return sIcon
+	end
+end
 function decodeJson(sJson)
 	local tbData = {}
 	if type(sJson) == "string" and sJson ~= "" then

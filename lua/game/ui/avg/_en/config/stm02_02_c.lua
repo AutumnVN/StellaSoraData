@@ -5850,10 +5850,10 @@ return {
 		cmd = "SetSceneHeading",
 		param = {
 			"??:??",
-			"?? Month",
+			"??",
 			"??th",
-			"The White Room",
-			"\231\153\189\232\137\178\230\136\191\233\151\180"
+			"????",
+			"The White Room"
 		}
 	},
 	{

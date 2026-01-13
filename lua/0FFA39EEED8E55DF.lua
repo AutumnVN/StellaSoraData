@@ -37,7 +37,7 @@ function MainLineStoryPopUpCtrl_201007:ShowPopUp(actId, callback, index)
 	if self.mapPopUpCfg ~= nil then
 		local nStartTime = ClientManager:ISO8601StrToTimeStamp(self.mapPopUpCfg.StartTime)
 		local sStartTime = os.date("%Y/%m/%d", nStartTime)
-		NovaAPI.SetTMPText(self._mapNode.txtActTime, sStartTime .. ConfigTable.GetUIText("Activity_MainLine_Story_Open"))
+		NovaAPI.SetTMPText(self._mapNode.txtActTime, string.format("%s %s", sStartTime, ConfigTable.GetUIText("Activity_MainLine_Story_Open")))
 	end
 	self._mapNode.imgDontShow1:SetActive(not self.dontShowAgain)
 	self._mapNode.imgDontShow2:SetActive(self.dontShowAgain)

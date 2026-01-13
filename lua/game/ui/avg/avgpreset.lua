@@ -103,6 +103,8 @@ local AvgPreset = {
 		"philae_street_grey_night",
 		"phoenix_food_street",
 		"phoenix_food_street_night",
+		"phoenix_hostel_room",
+		"phoenix_hostel_room_night",
 		"phoenix_house_inside",
 		"phoenix_street",
 		"posthouse",
@@ -142,6 +144,7 @@ local AvgPreset = {
 		"tower_inside",
 		"tower_inside_arcade",
 		"tower_intel",
+		"tower_phoenix_bossroom",
 		"tower_rest",
 		"tower_supermarket",
 		"tower_wind_light",
@@ -410,6 +413,9 @@ local AvgPreset = {
 		"story_main_06_024_a",
 		"story_main_06_024_b",
 		"story_main_06_025",
+		"story_main_06_026",
+		"story_main_06_027",
+		"story_main_06_028",
 		"story_main_be_01_001_FP",
 		"story_main_be_01_001_MP",
 		"story_main_be_01_002",
@@ -434,7 +440,8 @@ local AvgPreset = {
 		"story_tales_04_001",
 		"story_tales_05_001",
 		"story_tales_06_001",
-		"story_tales_07_001"
+		"story_tales_07_001",
+		"story_tales_08_001"
 	},
 	FgResName = {
 		"circle_light",
@@ -450,6 +457,7 @@ local AvgPreset = {
 		"story_main_02_021"
 	},
 	DiscResName = {
+		"4004_B",
 		"4005_B",
 		"4006_B",
 		"4007_B",

@@ -56,7 +56,9 @@ end
 function TowerDefTipsCtrl:OnRelease()
 end
 function TowerDefTipsCtrl:OnBtnClick_ClosePanel(btn)
-	NovaAPI.SetComponentEnableByName(self.rtTarget.gameObject, "TopGridCanvas", false)
+	if self.rtTarget and not self.rtTarget:IsNull() then
+		NovaAPI.SetComponentEnableByName(self.rtTarget.gameObject, "TopGridCanvas", false)
+	end
 	EventManager.Hit(EventId.ClosePanel, PanelId.TowerDefenseTipsPanel)
 end
 return TowerDefTipsCtrl

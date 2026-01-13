@@ -603,6 +603,10 @@ function AvgEditorCtrl:SetEditorBgm(bPlay, bOverWrite)
 	end
 end
 function AvgEditorCtrl:GetAvgCharName(sAvgCharId, bForce_zhCN)
+	if sAvgCharId == "avg3_100" or sAvgCharId == "avg3_101" then
+		local sName = PlayerData.Base:GetPlayerNickName()
+		return sName, "#0ABEC5"
+	end
 	local nLanIdx = self._panel.nCurLanguageIdx
 	if bForce_zhCN == true then
 		nLanIdx = 1

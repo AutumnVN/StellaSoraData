@@ -131,7 +131,7 @@ return {
 			"",
 			false,
 			"",
-			"Move it! Get those precious Jade Blades out of the way before the fighting ruins them!",
+			"Move it! Get those precious Jade Grasses out of the way before the fighting ruins them!",
 			""
 		}
 	},
@@ -9097,7 +9097,7 @@ return {
 			"",
 			false,
 			"",
-			"Though I admit, finding the Jade Blade and \"Intelligent Plants\" buried down here wasn't on my bingo card. Hehe, looks like it's my lucky day.",
+			"Though I admit, finding the Jade Grass and \"Intelligent Plants\" buried down here wasn't on my bingo card. Hehe, looks like it's my lucky day.",
 			""
 		}
 	},

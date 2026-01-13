@@ -8,6 +8,8 @@ TowerDefenseSelectPanel._tbDefine = {
 	}
 }
 function TowerDefenseSelectPanel:Awake()
+	self.nlevelId = 0
+	self.nSelectedTabIndex = 0
 end
 function TowerDefenseSelectPanel:OnEnable()
 end

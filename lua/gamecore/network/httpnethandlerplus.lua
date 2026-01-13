@@ -200,4 +200,7 @@ function HttpNetHandlerPlus.activity_story_settle_succeed_ack(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
+function HttpNetHandlerPlus.activity_tower_defense_level_settle_failed_ack(mapMsgData)
+	EventManager.Hit("ActivityTowerDefenseLevelSettleFailed")
+end
 return HttpNetHandlerPlus

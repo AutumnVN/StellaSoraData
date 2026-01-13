@@ -50,30 +50,38 @@ function BdConvertCtrl:OnEnable()
 	else
 		Actor2DManager.SetBoardNPC2D_PNG(self._mapNode.trActor2D_PNG, self:GetPanelId(), 9102)
 	end
-	if self.nTab == nil then
+	if self._panel.nTab == nil then
 		EventManager.Hit(EventId.TemporaryBlockInput, 0.7)
-		self.nTab = PanelTab.Content
+		self._panel.nTab = PanelTab.Content
 		self.animator:Play("BdConVertPanel_ConentRoot_in")
-		self:SwitchTab(self.nTab)
+		self:SwitchTab(self._panel.nTab)
 		self._mapNode.ContentRoot:Refresh()
-	elseif self.nTab == PanelTab.Content then
+	elseif self._panel.nTab == PanelTab.Content then
+		self._mapNode.BuildRoot.gameObject:SetActive(false)
+		self._mapNode.ContentRoot.gameObject:SetActive(true)
+		EventManager.Hit(EventId.TemporaryBlockInput, 0.7)
+		self.animator:Play("BdConVertPanel_ConentRoot_in")
 		self._mapNode.ContentRoot:Refresh()
-	elseif self.nTab == PanelTab.Build then
-		self._mapNode.BuildRoot:Refresh(self.nOptionId)
+	elseif self._panel.nTab == PanelTab.Build then
+		self._mapNode.BuildRoot.gameObject:SetActive(true)
+		self._mapNode.ContentRoot.gameObject:SetActive(false)
+		EventManager.Hit(EventId.TemporaryBlockInput, 0.7)
+		self.animator:Play("BdConVertPanel_BuildRoot_in")
+		self._mapNode.BuildRoot:Refresh(self.nOptionId, false)
 	end
 end
 function BdConvertCtrl:OnDisable()
 	Actor2DManager.UnsetBoardNPC2D()
 end
 function BdConvertCtrl:SwitchTab(nTab)
-	if self.nTab == nTab then
+	if self._panel.nTab == nTab then
 		return
 	end
-	self.nTab = nTab
-	if self.nTab == PanelTab.Build then
+	self._panel.nTab = nTab
+	if self._panel.nTab == PanelTab.Build then
 		self._mapNode.BuildRoot.gameObject:SetActive(true)
 		self._mapNode.ContentRoot.gameObject:SetActive(false)
-	elseif self.nTab == PanelTab.Content then
+	elseif self._panel.nTab == PanelTab.Content then
 		self._mapNode.BuildRoot.gameObject:SetActive(false)
 		self._mapNode.ContentRoot.gameObject:SetActive(true)
 	end
@@ -83,7 +91,7 @@ function BdConvertCtrl:OnEvent_JumpTo(nOptionId)
 	self.animator:Play("BdConVertPanel_BuildRoot_in")
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.7)
 	self:SwitchTab(PanelTab.Build)
-	self._mapNode.BuildRoot:Refresh(nOptionId)
+	self._mapNode.BuildRoot:Refresh(nOptionId, true)
 end
 function BdConvertCtrl:OnEvent_ReturnTo()
 	self.animator:Play("BdConVertPanel_BuildRoot_out")
@@ -93,13 +101,13 @@ function BdConvertCtrl:OnEvent_ReturnTo()
 end
 function BdConvertCtrl:OnEvent_BackHome(nPanelId)
 	if nPanelId == PanelId.BdConvertPanel then
-		if self.nTab == PanelTab.Content then
+		if self._panel.nTab == PanelTab.Content then
 			self.animator:Play("BdConVertPanel_ConentRoot_out")
 			EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
 			self:AddTimer(1, 0.2, function()
 				EventManager.Hit(EventId.ClosePanel, PanelId.BdConvertPanel)
 			end, true, true, true, nil)
-		elseif self.nTab == PanelTab.Build then
+		elseif self._panel.nTab == PanelTab.Build then
 			self._mapNode.BuildRoot:ClearTempData()
 			self.animator:Play("BdConVertPanel_BuildRoot_out")
 			EventManager.Hit(EventId.TemporaryBlockInput, 0.7)

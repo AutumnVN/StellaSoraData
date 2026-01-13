@@ -218,6 +218,10 @@ function PlayerStarTowerData:EnterTowerFastBattle(nTowerId, nTeamIdx)
 		table.insert(tbCharSkinId, PlayerData.Char:GetCharSkinId(nCharId))
 	end
 	local applyCallback = function(_, mapMsgData)
+		local mapStartowerCfg = ConfigTable.GetData("StarTower", nTowerId)
+		if mapStartowerCfg ~= nil then
+			self.mapGroupFormation[mapStartowerCfg.GroupId] = nTeamIdx
+		end
 		local mapStateInfo = {
 			Id = nTowerId,
 			ReConnection = 0,

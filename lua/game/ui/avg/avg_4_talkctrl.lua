@@ -229,15 +229,18 @@ Avg_4_TalkCtrl._mapNodeConfig = {
 	rubyTmp_FS = {
 		sComponentName = "RubyTextMeshProUGUI"
 	},
-	rtRubyTmp_FS = {
-		sNodeName = "rubyTmp_FS",
-		sComponentName = "RectTransform"
-	},
 	rubyTmp_FS_EndLine = {
 		sComponentName = "RubyTextMeshProUGUI"
 	},
 	rtEndLine = {
 		sNodeName = "rubyTmp_FS_EndLine",
+		sComponentName = "RectTransform"
+	},
+	rubyTmp_FS_Total = {
+		sComponentName = "RubyTextMeshProUGUI"
+	},
+	rtTotal = {
+		sNodeName = "rubyTmp_FS_Total",
 		sComponentName = "RectTransform"
 	},
 	rtWaiting = {
@@ -709,53 +712,47 @@ function Avg_4_TalkCtrl:_SetWaitingVisible(bVisible)
 	EventManager.Hit(EventId.AvgLogBtnEnable, bVisible == true and self.bForceDisableBtn_LogHide == false)
 end
 function Avg_4_TalkCtrl:_ResetWaitingPos()
-	local sContent = ""
-	local bMatchAgain = false
-	for i = self.nPageIndex, 1, -1 do
-		local tbPageData = self.tbPage[i]
-		if tbPageData[2] == "Paragraph" then
-			if bMatchAgain == false then
-				sContent = tbPageData[1]
-				bMatchAgain = true
-			else
-				break
+	local nX, nY, bCanScroll = 0, 0, false
+	if type(self.tbPage) == "table" and type(self.nPageIndex) == "number" then
+		local tbPageData = self.tbPage[self.nPageIndex]
+		if type(tbPageData) == "table" then
+			local sContent = tbPageData[1]
+			local sType = tbPageData[2]
+			if type(sContent) == "string" and sContent ~= "" and sType == "Paragraph" then
+				local nSVFS_Width, nSVGS_Height = 1570, 519
+				local tbSplit = string.split(sContent, "\n")
+				local nLen = #tbSplit
+				local sEndLineContent = tbSplit[nLen]
+				NovaAPI.SetText_RubyTMP(self._mapNode.rubyTmp_FS_EndLine, sEndLineContent)
+				LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.rtEndLine)
+				nX = self._mapNode.rtEndLine.rect.width
+				if nSVFS_Width < nX then
+					nX = nX % nSVFS_Width
+				end
+				if string.find(sEndLineContent, "<align=\"right\">") ~= nil then
+					nX = nSVFS_Width
+				elseif string.find(sEndLineContent, "<align=\"center\">") ~= nil then
+					nX = (nSVFS_Width + nX) / 2
+				end
+				local sTotalContent = NovaAPI.GetText_RubyTMP(self._mapNode.rubyTmp_FS)
+				NovaAPI.SetText_RubyTMP(self._mapNode.rubyTmp_FS_Total, sTotalContent)
+				LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.rtTotal)
+				nY = self._mapNode.rtTotal.rect.height
+				bCanScroll = nSVGS_Height < nY
+				if nSVGS_Height >= nY then
+					nY = nSVGS_Height - nY
+				else
+					nY = 0
+				end
 			end
-		else
-			sContent = tbPageData[1] .. sContent
 		end
 	end
-	local sEndLineContent = ""
-	local tbTemp = string.split(sContent, "\n")
-	if tbTemp ~= nil then
-		local nEndLineIndex = #tbTemp
-		sEndLineContent = tbTemp[nEndLineIndex]
-		if sEndLineContent == "" then
-			sEndLineContent = tbTemp[nEndLineIndex - 1]
-		end
-	end
-	NovaAPI.SetText_RubyTMP(self._mapNode.rubyTmp_FS_EndLine, sEndLineContent)
-	LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.rtEndLine)
-	local nX = self._mapNode.rtEndLine.rect.width
-	NovaAPI.SetText_RubyTMP(self._mapNode.rubyTmp_FS_EndLine, self.sPartialContent .. self.tbPage[self.nPageIndex][1])
-	LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.rtEndLine)
-	local nY = self._mapNode.rtEndLine.rect.height
-	nY = 520 - nY
-	local trParent = self._mapNode.rubyTmp_FS.transform.parent
-	if nY < 0 then
-		nY = 0
-		trParent = self._mapNode.rubyTmp_FS.transform
-	end
-	self._mapNode.rtWaiting_FS.transform:SetParent(trParent)
+	self:_SetScrollable(bCanScroll)
 	self._mapNode.rtWaiting_FS.anchoredPosition = Vector2(nX, nY)
 end
 function Avg_4_TalkCtrl:_SetScrollable(bEnable)
-	local bIsFullPage = false
-	if bEnable == true then
-		LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.rtRubyTmp_FS)
-		bIsFullPage = self._mapNode.rtRubyTmp_FS.rect.height > 520
-	end
-	NovaAPI.SetCanvasGroupInteractable(self._mapNode.canvasGroup_FS, bEnable == true and bIsFullPage == true)
-	NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.canvasGroup_FS, bEnable == true and bIsFullPage == true)
+	NovaAPI.SetCanvasGroupInteractable(self._mapNode.canvasGroup_FS, bEnable == true)
+	NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.canvasGroup_FS, bEnable == true)
 end
 function Avg_4_TalkCtrl:_ProcParagraph(nDelayTime)
 	if self.twDOText ~= nil then
@@ -767,9 +764,6 @@ function Avg_4_TalkCtrl:_ProcParagraph(nDelayTime)
 	local sType = tbPageData[2]
 	self:_SetScrollable(false)
 	NovaAPI.SetText_RubyTMP(self._mapNode.rubyTMP_ContentElement, self.sNone)
-	if sType == "Paragraph" then
-		self._mapNode.rtRubyTmp_FS:DOAnchorPosY(0, 0.2):SetUpdate(true)
-	end
 	if string.find(sContent, self.sAutoParagraphSignal) ~= nil then
 		sContent = string.gsub(sContent, "<alpha=#FF>", self.sNone)
 		local nDuration = tonumber(string.match(sContent, self.sAutoParagraphSignal))
@@ -826,14 +820,11 @@ function Avg_4_TalkCtrl:_ParagraphDone(n)
 	local sType = self.tbPage[self.nPageIndex][2]
 	self:_SetWaitingVisible(self.nPageIndex == #self.tbPage or sType == "Paragraph")
 	self:_SetBtnEnable(sType == "Break" or sType == "Paragraph")
-	if self.nCurTalkType == 10 then
-		self:_SetScrollable(true)
-	end
 	if sType == "Wait" then
 		self:_ProcAlphaCombine(false)
 		self:_RunNextCmd()
 	else
-		if sType == "Paragraph" then
+		if self.nCurTalkType == 10 and sType == "Paragraph" then
 			self:_ResetWaitingPos()
 		end
 		if self.bIsAutoPlaying == true and self.bInL2DTalk ~= true and self.timerVoicePlayWaiting == nil then

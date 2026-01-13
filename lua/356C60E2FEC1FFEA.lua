@@ -245,7 +245,7 @@ function MiracleTaskCtrl:RefreshScaleOnClick_State(tr, nIndex, mapCfgData_Activi
 	if self.nCurGroupIndex == nIndex then
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOn, 1)
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOff, 0)
-		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_on/tmpTabName_on"):GetComponent("TMP_Text"), ConfigTable.GetUIText(tbTabNameUITextId[mapCfgData_ActivityTaskGroup.TaskTabType]))
+		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_on/ImageBG/tmpTabName_on"):GetComponent("TMP_Text"), ConfigTable.GetUIText(tbTabNameUITextId[mapCfgData_ActivityTaskGroup.TaskTabType]))
 		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_on/tmpTabProgress_on"):GetComponent("TMP_Text"), sProgress)
 	else
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOn, 0)

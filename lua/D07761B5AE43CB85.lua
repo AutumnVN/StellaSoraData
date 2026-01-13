@@ -12,7 +12,8 @@ local mapToggle = {
 	[10] = GameEnum.diffculty.Diffculty_10
 }
 local colorSelect = Color(0.9725490196078431, 0.9647058823529412, 0.9254901960784314, 1)
-local colorUnSelect = Color(0.20392156862745098, 0.3333333333333333, 0.27450980392156865, 1)
+local colorUnSelect = Color(0.19607843137254902, 0.20784313725490197, 0.27450980392156865, 1)
+local colorUnSelectLock = Color(0.20392156862745098, 0.32941176470588235, 0.27450980392156865, 1)
 local timeUnLockColor = "fff7ca"
 ActivityLevelsSelectCtrl._mapNodeConfig = {
 	TopBar = {
@@ -220,20 +221,20 @@ function ActivityLevelsSelectCtrl:RefreshTogTypeCount()
 	self._mapNode.lockAdventure.gameObject:SetActive(not isOpenAdventure)
 	if isOpenAdventure then
 		NovaAPI.SetTMPText(texAdventure_SelectCount, string.format(str, adventureCount, totalAdventure))
-		NovaAPI.SetTMPText(texHard_UnSelectCount, string.format(str, adventureCount, totalAdventure))
+		NovaAPI.SetTMPText(texAdventure_UnSelectCount, string.format(str, adventureCount, totalAdventure))
 	else
 		NovaAPI.SetTMPText(texAdventure_SelectCount, "")
-		NovaAPI.SetTMPText(texHard_UnSelectCount, "")
+		NovaAPI.SetTMPText(texAdventure_UnSelectCount, "")
 	end
 	self.firstHardLevel = self.activityLevelsData.levelTabHardDifficulty[1]
 	local isOpenHard = self.activityLevelsData:GetLevelDayOpen(GameEnum.ActivityLevelType.HARD, self.firstHardLevel)
 	self._mapNode.lockHard.gameObject:SetActive(not isOpenHard)
 	if isOpenHard then
 		NovaAPI.SetTMPText(texHard_SelectCount, string.format(str, hardCount, totalHard))
-		NovaAPI.SetTMPText(texAdventure_UnSelectCount, string.format(str, hardCount, totalHard))
+		NovaAPI.SetTMPText(texHard_UnSelectCount, string.format(str, hardCount, totalHard))
 	else
 		NovaAPI.SetTMPText(texHard_SelectCount, "")
-		NovaAPI.SetTMPText(texAdventure_UnSelectCount, "")
+		NovaAPI.SetTMPText(texHard_UnSelectCount, "")
 	end
 end
 function ActivityLevelsSelectCtrl:OnClick_BtnLockExplore()
@@ -340,7 +341,7 @@ function ActivityLevelsSelectCtrl:RefreshTogList(nType, nDifficulty)
 		tabLevelInfo = self.activityLevelsData.levelTabAdventure
 		tabLevelInfoDifficulty = self.activityLevelsData.levelTabAdventureDifficulty
 		local tmpImageAdventure = self._mapNode.lockAdventure.gameObject.transform:Find("Image"):GetComponent("Image")
-		NovaAPI.SetImageColor(tmpImageAdventure, colorSelect)
+		NovaAPI.SetImageColor(tmpImageAdventure, colorUnSelect)
 		local tmpImageHard = self._mapNode.lockHard.gameObject.transform:Find("Image"):GetComponent("Image")
 		NovaAPI.SetImageColor(tmpImageHard, colorUnSelect)
 	else
@@ -349,7 +350,7 @@ function ActivityLevelsSelectCtrl:RefreshTogList(nType, nDifficulty)
 		local tmpImageAdventure = self._mapNode.lockAdventure.gameObject.transform:Find("Image"):GetComponent("Image")
 		NovaAPI.SetImageColor(tmpImageAdventure, colorUnSelect)
 		local tmpImageHard = self._mapNode.lockHard.gameObject.transform:Find("Image"):GetComponent("Image")
-		NovaAPI.SetImageColor(tmpImageHard, colorSelect)
+		NovaAPI.SetImageColor(tmpImageHard, colorUnSelect)
 	end
 	for i = 1, 10 do
 		self._mapNode.tog[i].gameObject:SetActive(i <= #tabLevelInfoDifficulty)
@@ -369,7 +370,7 @@ function ActivityLevelsSelectCtrl:RefreshTogList(nType, nDifficulty)
 			NovaAPI.SetImageColor(rtLockPreLvSelect, colorSelect)
 			self.SelectTogPreLvLock = rtLockPreLvSelect
 		else
-			NovaAPI.SetImageColor(rtLockPreLvSelect, colorUnSelect)
+			NovaAPI.SetImageColor(rtLockPreLvSelect, colorUnSelectLock)
 		end
 		local strTips = ""
 		local redH = objTog.transform:Find("AnimRoot/AnimSwitch/redH").gameObject
@@ -459,15 +460,15 @@ function ActivityLevelsSelectCtrl:OnBtnClick_Tog(btn)
 	end
 	if self.curSelectHard ~= nHard then
 		if self.SelectTogPreLvLock ~= nil then
-			NovaAPI.SetImageColor(self.SelectTogPreLvLock, colorUnSelect)
+			NovaAPI.SetImageColor(self.SelectTogPreLvLock, colorUnSelectLock)
 		end
 		for idx, value in pairs(mapToggle) do
 			if value == self.curSelectHard then
-				self._mapNode.togCtrl[idx]:SetDefault(false)
+				self._mapNode.togCtrl[idx]:SetDefaultActivity(false, colorSelect, colorUnSelect)
 				break
 			end
 		end
-		self._mapNode.togCtrl[togIdx]:SetDefault(true)
+		self._mapNode.togCtrl[togIdx]:SetDefaultActivity(true, colorSelect, colorUnSelect)
 		self.SelectTogPreLvLock = self._mapNode.togCtrl[togIdx].gameObject.transform:Find("AnimRoot/AnimSwitch/rtLockPreLv/rtLockPreLvSelect"):GetComponent("Image")
 		NovaAPI.SetImageColor(self.SelectTogPreLvLock, colorSelect)
 		self:RefreshInstanceInfo(self.nLevelType, nHard, nil, false)
@@ -493,7 +494,7 @@ function ActivityLevelsSelectCtrl:RefreshInstanceInfo(nType, nHard, bLocation, b
 	end
 	if bSetTog then
 		for i = 1, 10 do
-			self._mapNode.togCtrl[i]:SetDefault(i == nHard)
+			self._mapNode.togCtrl[i]:SetDefaultActivity(i == nHard, colorSelect, colorUnSelect)
 		end
 	end
 	self.curSelectHard = nHard

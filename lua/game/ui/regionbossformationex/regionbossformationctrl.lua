@@ -531,7 +531,7 @@ function RegionBossFormationCtrl:OnEnable()
 		LocalData.SetPlayerLocalData("StoryTrialModel", self.bTrial)
 		self._mapNode.btnSwitch.gameObject:SetActive(bHasTrial)
 		self:SwitchStoryType(self.bTrial)
-		if bHasTrial then
+		if bHasTrial and self.bTrial then
 			self.mapTrialBuild = PlayerData.Build:CreateTrialBuild(mapStoryCfg.TrialBuild)
 		end
 		if self.bTrial then
@@ -711,6 +711,20 @@ function RegionBossFormationCtrl:OnBtnClick_StorySwitch()
 	self.bTrial = not self.bTrial
 	LocalData.SetPlayerLocalData("StoryTrialModel", self.bTrial)
 	self:SwitchStoryType(self.bTrial)
+	if not self.bTrial and self.mapTrialBuild then
+		PlayerData.Build:DeleteTrialBuild()
+		self.mapTrialBuild = nil
+	else
+		local mapStoryCfg
+		if self.nType == AllEnum.RegionBossFormationType.Story then
+			mapStoryCfg = PlayerData.Avg:GetStoryCfgData(self.Other)
+		elseif self.nType == AllEnum.RegionBossFormationType.ActivityStory then
+			mapStoryCfg = PlayerData.ActivityAvg:GetStoryCfgData(self.Other)
+		end
+		if mapStoryCfg then
+			self.mapTrialBuild = PlayerData.Build:CreateTrialBuild(mapStoryCfg.TrialBuild)
+		end
+	end
 	if self.bTrial then
 		self.mbuildId = self.mapTrialBuild.nBuildId
 	elseif self.nType == AllEnum.RegionBossFormationType.Story then

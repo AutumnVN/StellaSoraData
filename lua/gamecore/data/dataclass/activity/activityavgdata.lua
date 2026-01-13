@@ -989,6 +989,7 @@ function ActivityAvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 			end
 		end
 	end
+	local eventStoryId = self.CURRENT_STORY_ID
 	local func_succ = function(_, mapChangeInfo)
 		if #self.tbTempStoryIds > 1 then
 			local nRecentChapterId = self.CFG_Story[self.tbTempStoryIds[#self.tbTempStoryIds]]
@@ -1050,6 +1051,18 @@ function ActivityAvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 					})
 				end
 			end
+			local tabEvent = {}
+			table.insert(tabEvent, {
+				"story_id",
+				tostring(eventStoryId)
+			})
+			local _skip = PlayerData.Avg.bSkip == true and "1" or "0"
+			table.insert(tabEvent, {"is_skip", _skip})
+			table.insert(tabEvent, {
+				"role_id",
+				tostring(PlayerData.Base._nPlayerId)
+			})
+			NovaAPI.UserEventUpload("activity_story", tabEvent)
 			local AfterRewardDisplay = function()
 				EventManager.Hit("Story_RewardClosed")
 			end

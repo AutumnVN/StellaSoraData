@@ -6617,7 +6617,7 @@ return {
 			"",
 			false,
 			"",
-			"You betcha! Jade Blade was captured last month by the squad she led.",
+			"You betcha! Blade of Jade was captured last month by the squad she led.",
 			""
 		}
 	},
@@ -8008,7 +8008,7 @@ return {
 			"",
 			false,
 			"",
-			"It's still hard to believe though... A quiet girl like her managed to capture Jade Blade...",
+			"It's still hard to believe though... A quiet girl like her managed to capture Blade of Jade...",
 			""
 		}
 	},
@@ -8047,7 +8047,7 @@ return {
 			"",
 			false,
 			"",
-			"Huh? What are you, a hater? Are you saying she didn't take down Jade Blade herself?",
+			"Huh? What are you, a hater? Are you saying she didn't take down Blade of Jade herself?",
 			""
 		}
 	},

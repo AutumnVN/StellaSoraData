@@ -161,6 +161,18 @@ function PlayerStorySetData:ReceiveStorySetReward(nChapterId, nSectionId, callba
 		EventManager.Hit("ReceiveStorySetRewardSuc")
 	end
 	local msg = {ChapterId = nChapterId, SectionId = nSectionId}
+	local tabEvent = {}
+	table.insert(tabEvent, {
+		"story_id",
+		tostring(nSectionId)
+	})
+	local _skip = PlayerData.Avg.bSkip == true and "1" or "0"
+	table.insert(tabEvent, {"is_skip", _skip})
+	table.insert(tabEvent, {
+		"role_id",
+		tostring(PlayerData.Base._nPlayerId)
+	})
+	NovaAPI.UserEventUpload("set_story", tabEvent)
 	HttpNetHandler.SendMsg(NetMsgId.Id.story_set_reward_receive_req, msg, nil, func_cb)
 end
 return PlayerStorySetData

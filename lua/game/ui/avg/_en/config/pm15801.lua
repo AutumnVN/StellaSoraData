@@ -1529,7 +1529,7 @@ return {
 		param = {
 			3,
 			"avg1_158",
-			"emoji_cry_c",
+			"emoji_cry_a",
 			"0",
 			"",
 			false,

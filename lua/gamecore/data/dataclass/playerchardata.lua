@@ -487,6 +487,18 @@ function PlayerCharData:EnterCharPlotAvg(nCharId, nPlotId, callback, bShowReward
 		if not bGetReward then
 			local finishCallBack = function(mapMsgData, nCharId)
 				if bShowReward then
+					local tabEvent = {}
+					table.insert(tabEvent, {
+						"story_id",
+						tostring(nPlotId)
+					})
+					local _skip = PlayerData.Avg.bSkip == true and "1" or "0"
+					table.insert(tabEvent, {"is_skip", _skip})
+					table.insert(tabEvent, {
+						"role_id",
+						tostring(PlayerData.Base._nPlayerId)
+					})
+					NovaAPI.UserEventUpload("character_favor_story", tabEvent)
 					TimerManager.Add(1, 1.3, self, function()
 						local rewardFunc = function()
 							local bHasReward = mapMsgData and mapMsgData.Props and #mapMsgData.Props > 0

@@ -30,7 +30,10 @@ MainlineAvgInfoExCtrl._mapNodeConfig = {
 		callback = "OnBtnClick_MonsterInfo"
 	},
 	imgBattleIcon = {},
-	txtClueNotice = {},
+	txtClueNotice = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "MainLine_Clue_Notice"
+	},
 	imgClueNotice = {},
 	goBattleRoot = {},
 	goAvgRoot = {},
@@ -87,7 +90,7 @@ function MainlineAvgInfoExCtrl:OpenLevelInfo(avgId, bNewestStory)
 	end
 	self._mapNode.goAvgRoot:SetActive(not mapMainline.IsBattle)
 	self._mapNode.goBattleRoot:SetActive(mapMainline.IsBattle)
-	self._mapNode.txtClueNotice:SetActive(mapMainline.HasEvidence)
+	self._mapNode.txtClueNotice.gameObject:SetActive(mapMainline.HasEvidence)
 	self._mapNode.imgClueNotice:SetActive(mapMainline.HasEvidence)
 	self._mapNode.goRewardInfo:SetActive(false)
 	if not AvgData:IsStoryReaded(mapMainline.Id) then

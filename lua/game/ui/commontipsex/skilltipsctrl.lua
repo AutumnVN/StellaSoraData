@@ -373,11 +373,13 @@ function SkillTipsCtrl:OnBtnClick_CloseWord(btn)
 	self._mapNode.imgWordTipBg:SetActive(false)
 end
 function SkillTipsCtrl:OnBtnClick_ClosePanel(btn)
-	local btnComp = self.rtTarget:GetComponent("Button")
-	if btnComp ~= nil then
-		btnComp.interactable = true
+	if self.rtTarget and not self.rtTarget:IsNull() then
+		local btnComp = self.rtTarget:GetComponent("Button")
+		if btnComp ~= nil then
+			btnComp.interactable = true
+		end
+		NovaAPI.SetComponentEnableByName(self.rtTarget.gameObject, "TopGridCanvas", false)
 	end
-	NovaAPI.SetComponentEnableByName(self.rtTarget.gameObject, "TopGridCanvas", false)
 	NovaAPI.SetComponentEnableByName(self._mapNode.imgBranchSkillBg.gameObject, "TopGridCanvas", false)
 	EventManager.Hit(EventId.ClosePanel, PanelId.SkillTips)
 end

@@ -69,7 +69,6 @@ MiracleThemeCtrl._mapNodeConfig = {
 	},
 	imgShopActivityTime = {},
 	txtShopActivityTime = {sComponentName = "TMP_Text"},
-	imgLevel = {sComponentName = "Image"},
 	txtLevel = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Activity_Level"

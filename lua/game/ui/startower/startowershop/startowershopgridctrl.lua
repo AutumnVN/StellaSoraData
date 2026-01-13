@@ -114,7 +114,7 @@ function StarTowerShopGridCtrl:OnEnable()
 	self._mapNode.ButtonBuy.onDeselect:AddListener(self.handler2)
 end
 function StarTowerShopGridCtrl:OnDisable()
-	if self._mapNode.ButtonBuy ~= 0 then
+	if self._mapNode.ButtonBuy and not self._mapNode.ButtonBuy:IsNull() then
 		self._mapNode.ButtonBuy.onSelect:RemoveListener(self.handler)
 		self._mapNode.ButtonBuy.onDeselect:RemoveListener(self.handler2)
 	end

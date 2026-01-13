@@ -51,7 +51,8 @@ TowerDefenseCtrl._mapNodeConfig = {
 		callback = "OnBtnClick_OpenDic",
 		sAction = "Depot"
 	},
-	txt_dic1 = {
+	txt_dic = {
+		nCount = 2,
 		sComponentName = "TMP_Text",
 		sLanguageId = "Tutorial_DicTitle"
 	},
@@ -220,7 +221,8 @@ TowerDefenseCtrl._mapEventConfig = {
 	TowerDefenseCharDetailPanelClose = "OnEvent_CloseCharDetailPanel",
 	ResetEnergy = "OnEvent_UpdateEnergy",
 	TowerDefenseShowFullScreenPanel = "OnEvent_OnPause",
-	TowerDefenseShowHideScreenPanel = "OnEvent_OnResume"
+	TowerDefenseShowHideScreenPanel = "OnEvent_OnResume",
+	ActivityTowerDefenseLevelSettleFailed = "OnEvent_ActivityTowerDefenseLevelSettleFailed"
 }
 TowerDefenseCtrl._mapRedDotConfig = {}
 function TowerDefenseCtrl:Awake()
@@ -1196,5 +1198,29 @@ function TowerDefenseCtrl:OnEvent_CharLevelCallback(characterId)
 end
 function TowerDefenseCtrl:OnEvent_HasDic()
 	self.bHasDic = true
+end
+function TowerDefenseCtrl:OnEvent_ActivityTowerDefenseLevelSettleFailed()
+	self:SetTimeScale(false)
+	self:PauseLogic()
+	local requestCb = function(star, newStar, msgData)
+		local cb = function()
+			EventManager.Hit(EventId.ClosePanel, PanelId.TowerDefenseHUD)
+			self:ResumeLogic(true)
+		end
+		local config = ConfigTable.GetData("TowerDefenseLevel", self.nLevelId)
+		if config == nil then
+			return
+		end
+		local sLevelName = config.LevelName
+		local tbTarget = {}
+		for i = 1, 3 do
+			table.insert(tbTarget, {
+				sTargetDes = config["Des" .. i],
+				bResult = false
+			})
+		end
+		EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, false, sLevelName, tbTarget, cb, msgData)
+	end
+	self.TowerDefenseData:RequestFinishLevelFailed(self.nLevelId, 0, requestCb)
 end
 return TowerDefenseCtrl

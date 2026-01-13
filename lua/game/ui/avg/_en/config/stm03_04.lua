@@ -2326,7 +2326,7 @@ return {
 			"",
 			false,
 			"",
-			"A green whirlwind tears through the forest. The Garden of Parasite's massive canopy thrashes wildly, blocking the Jade Blade's dive and blinding the Spirit of Brutality.",
+			"A green whirlwind tears through the forest. The Garden of Parasite's massive canopy thrashes wildly, blocking the Blade of Jade's dive and blinding the Spirit of Brutality.",
 			""
 		}
 	},
@@ -5600,7 +5600,7 @@ return {
 			"",
 			false,
 			"",
-			"It's simple. A month after that new squad was formed, Nazuka led her own team and took down the Jade Blade.",
+			"It's simple. A month after that new squad was formed, Nazuka led her own team and took down the Blade of Jade.",
 			""
 		}
 	},

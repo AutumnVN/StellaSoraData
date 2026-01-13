@@ -243,11 +243,13 @@ function EquipmentTipsCtrl:OnLinkClick_Word(link, sWordId)
 	UTILS.ClickWordLink(link, sWordId)
 end
 function EquipmentTipsCtrl:OnBtnClick_ClosePanel(btn)
-	local btnComp = self.rtTarget:GetComponent("Button")
-	if btnComp ~= nil then
-		btnComp.interactable = true
+	if self.rtTarget and not self.rtTarget:IsNull() then
+		local btnComp = self.rtTarget:GetComponent("Button")
+		if btnComp ~= nil then
+			btnComp.interactable = true
+		end
+		NovaAPI.SetComponentEnableByName(self.rtTarget.gameObject, "TopGridCanvas", false)
 	end
-	NovaAPI.SetComponentEnableByName(self.rtTarget.gameObject, "TopGridCanvas", false)
 	EventManager.Hit(EventId.ClosePanel, PanelId.EquipmentTips)
 end
 function EquipmentTipsCtrl:OnBtnClick_CloseWord(btn)

@@ -120,6 +120,7 @@ function AvgPanel:Awake()
 	EventManager.Add(EventId.AvgSpeedUp, self, self.OnEvent_AvgSpeedUp)
 	self.sExecutingCMDName = nil
 	self.nBEIndex = 0
+	AvgData:MarkSkip(false)
 end
 function AvgPanel:OnEnable()
 	self:BindCmdProcFunc()
@@ -541,6 +542,10 @@ function AvgPanel:FindCmdProcFunc(sCtrlName, sCmd)
 	end
 end
 function AvgPanel:GetAvgCharName(sAvgCharId)
+	if sAvgCharId == "avg3_100" or sAvgCharId == "avg3_101" then
+		local sName = PlayerData.Base:GetPlayerNickName()
+		return sName, "#0ABEC5"
+	end
 	local tbChar = self.tbAvgCharacter[sAvgCharId]
 	if tbChar == nil then
 		return sAvgCharId, "#0ABEC5"
@@ -600,6 +605,10 @@ function AvgPanel:GetNextProcFunc(nextIndex)
 	end
 end
 function AvgPanel:OnEvent_AvgSkipCheck()
+	if self.nCurIndex <= 1 then
+		return
+	end
+	AvgData:MarkSkip(true)
 	if self.timerWaiting ~= nil then
 		self.timerWaiting:Pause(true)
 	end

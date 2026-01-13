@@ -387,6 +387,7 @@ function VampireFateCardSelect:HidePanel()
 end
 function VampireFateCardSelect:Awake()
 	self.bOpen = false
+	self.bProcessing = false
 	self.canvas = self.gameObject:GetComponent("Canvas")
 	self.nInitSortingOrder = NovaAPI.GetCanvasSortingOrder(self.canvas)
 	self.btnConfirmPosY = self._mapNode.rtBtnConfirm.localPosition.y
@@ -439,7 +440,11 @@ function VampireFateCardSelect:OnDisable()
 	end
 end
 function VampireFateCardSelect:OnBtnClick_Confirm()
+	if self.bProcessing == true then
+		return
+	end
 	if nil ~= self.callback then
+		self.bProcessing = true
 		local completeFunc = function(nEventId, tbFateCard, mapRoll, nCoin, bReward, mapCurFateCard)
 			self.tbCount = {
 				0,
@@ -470,6 +475,7 @@ function VampireFateCardSelect:OnBtnClick_Confirm()
 			end
 			self._mapNode.imgGlory:SetActive(false)
 			self:SelectComplete(nEventId, tbFateCard, mapRoll, nCoin, bReward)
+			self.bProcessing = false
 		end
 		self.callback(self.nSelectIdx, self.nEventId, completeFunc, false, self.bReward)
 	end
@@ -478,6 +484,10 @@ function VampireFateCardSelect:OnBtnClick_Roll()
 	if not self.callback then
 		return
 	end
+	if self.bProcessing == true then
+		return
+	end
+	self.bProcessing = true
 	local completeFunc = function(nEventId, tbFateCard, mapRoll, nCoin, bReward, mapCurFateCard)
 		self.tbCount = {
 			0,
@@ -507,6 +517,7 @@ function VampireFateCardSelect:OnBtnClick_Roll()
 			self._mapNode.pkgInfo[i]:SetPackageAddMarket(false)
 		end
 		self:Refresh(nEventId, tbFateCard, mapRoll, nCoin, bReward, true)
+		self.bProcessing = false
 	end
 	self.callback(self.nSelectIdx, self.nEventId, completeFunc, true)
 end
@@ -768,6 +779,7 @@ function VampireFateCardSelect:OnEvent_Reopen(sName)
 end
 function VampireFateCardSelect:OnEvent_VampireRewardChestFailed()
 	EventManager.Hit(EventId.BlockInput, false)
+	self.bProcessing = false
 	CS.GameCameraStackManager.Instance:OpenMainCamera()
 	self:HidePanel()
 	if nil ~= self.callback then
@@ -776,6 +788,7 @@ function VampireFateCardSelect:OnEvent_VampireRewardChestFailed()
 end
 function VampireFateCardSelect:OnEvent_VampireLevelRewardFailed()
 	EventManager.Hit(EventId.BlockInput, false)
+	self.bProcessing = false
 	CS.GameCameraStackManager.Instance:OpenMainCamera()
 	self:HidePanel()
 	if nil ~= self.callback then

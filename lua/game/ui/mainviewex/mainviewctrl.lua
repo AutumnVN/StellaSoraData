@@ -875,8 +875,8 @@ function MainViewCtrl:CheckOpenPanel()
 		NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.cgRoot, true)
 		if self.nViewState == view_state.show_login then
 			PlayerVoiceData:PlayMainViewOpenVoice()
-			self:ChangeViewState(view_state.show_normal)
 		end
+		self:ChangeViewState(view_state.show_normal)
 	end
 	PopUpManager.StartShowPopUp(callbackFunc)
 end

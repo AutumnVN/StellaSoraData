@@ -176,7 +176,7 @@ function TowerDefenseQuestCtrl:OnBtnClick_GetAllReward()
 	self.TowerDefenseData:RequestReceiveQuest(self.nSelecedGroupId, 0)
 end
 function TowerDefenseQuestCtrl:OnBtnClick_GetAllReward_None()
-	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Quest_ReceiveNone"))
+	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("TowerDefense_Quest_ReceiveNone"))
 end
 function TowerDefenseQuestCtrl:OnBtnClick_Close()
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)

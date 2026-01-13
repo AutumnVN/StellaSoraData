@@ -74,17 +74,16 @@ function BdConvertBuildCtrl:SetData(nActId)
 	self.nActId = nActId
 	self.actData = PlayerData.Activity:GetActivityDataById(self.nActId)
 end
-function BdConvertBuildCtrl:Refresh(nOptionId)
-	if self.nOptionId == nOptionId then
-		return
+function BdConvertBuildCtrl:Refresh(nOptionId, bReset)
+	if self.nOptionId == nOptionId and not bReset then
+		self.tbSelected = self.tbSelected or {}
+	else
+		self.tbSelected = {}
 	end
 	self.nOptionId = nOptionId
 	self.nSortype = SortType.Score
 	self.nSortOrder = SortOrder.Ascending
-	self.tbSelected = {}
 	self:ClearTempData()
-	self.tbItemIns = {}
-	self.mapListItemCtrl = {}
 	self:InitSort()
 	self:InitData()
 end
@@ -194,6 +193,7 @@ function BdConvertBuildCtrl:RefreshList()
 		return
 	else
 		self._mapNode.BuildListContent:SetActive(true)
+		self._mapNode.BuildListContent_Empty:SetActive(false)
 		self._mapNode.btn_submit_none.gameObject:SetActive(false)
 		self._mapNode.btn_submit.gameObject:SetActive(true)
 	end
@@ -216,6 +216,12 @@ function BdConvertBuildCtrl:RefreshBuildGrid(goGrid, gridIndex)
 end
 function BdConvertBuildCtrl:RerfeshSelected()
 	EventManager.Hit("BdConvert_BuildCancleSelect")
+	for i = #self.tbSelected, 1, -1 do
+		local data = self.tbSelected[i]
+		if data.bLock then
+			table.remove(self.tbSelected, i)
+		end
+	end
 	for index, data in ipairs(self.tbSelected) do
 		EventManager.Hit("BdConvert_BuildRefreshIndex", data, index)
 	end
@@ -314,6 +320,12 @@ function BdConvertBuildCtrl:OnBuildGridLock(nIdx, itemCtrl)
 	local mapBuild = self._tbAllBuild[nIdx]
 	local callback = function()
 		itemCtrl:SetLockState(mapBuild.bLock)
+		if mapBuild.bLock then
+			local index = table.indexof(self.tbSelected, itemCtrl._mapData)
+			if index ~= nil and 0 < index then
+				table.remove(self.tbSelected, index)
+			end
+		end
 		self:RerfeshSelected()
 	end
 	self.actData:ChangeBuildLock(mapBuild.nBuildId, not mapBuild.bLock, callback)

@@ -33,7 +33,7 @@ function TemplateToggleCtrl:SetDefaultAct10101(bOn)
 	NovaAPI.SetTMPColor(self._mapNode.txt_Select, Color(1, 1, 1, 1))
 	NovaAPI.SetTMPColor(self._mapNode.txt_unSelect, Color(0.2196078431372549, 0.1803921568627451, 0.1450980392156863, 1))
 end
-function TemplateToggleCtrl:SetDefaultActivity(bOn)
+function TemplateToggleCtrl:SetDefaultActivity(bOn, colorSelect, colorUnSelect)
 	if self._mapNode.AnimSwitch.enabled == true then
 		self._mapNode.AnimSwitch.enabled = false
 	end
@@ -41,6 +41,10 @@ function TemplateToggleCtrl:SetDefaultActivity(bOn)
 	self._mapNode.unSelect:SetActive(not bOn)
 	self._mapNode.txt_Select.gameObject:SetActive(bOn)
 	self._mapNode.txt_unSelect.gameObject:SetActive(not bOn)
+	if colorSelect ~= nil then
+		NovaAPI.SetTMPColor(self._mapNode.txt_Select, colorSelect)
+		NovaAPI.SetTMPColor(self._mapNode.txt_unSelect, colorUnSelect)
+	end
 end
 function TemplateToggleCtrl:SetTrigger(bOn)
 	if self._mapNode.AnimSwitch.enabled == false then

@@ -945,7 +945,7 @@ function DispatchCtrl:find_min_roles(roles, normal_req, extra_req)
 end
 function DispatchCtrl:find_combination(roles, selected, normal_req, extra_req, start_index, max_depth)
 	self.findcombinationCount = self.findcombinationCount + 1
-	if self.findcombinationCount >= 9999 then
+	if self.findcombinationCount >= 999999 then
 		return false
 	end
 	if max_depth == 0 then

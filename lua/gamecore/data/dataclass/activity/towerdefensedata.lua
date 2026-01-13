@@ -571,6 +571,22 @@ function TowerDefenseData:RequestFinishLevel(levelId, bResult, nHp, cb)
 		self:EventUpload(result)
 	end)
 end
+function TowerDefenseData:RequestFinishLevelFailed(levelId, nHp, cb)
+	local levelData = self:GetLevelData(levelId)
+	local mapMsg = {LevelId = levelId, Star = 0}
+	if cb ~= nil then
+		cb(levelData.nStar, levelData.nStar)
+	end
+	local result = {
+		action = 5,
+		nActId = self.nActId,
+		nlevelId = levelId,
+		nStar = 0,
+		nHp = 0,
+		bIsFirstPass = false
+	}
+	self:EventUpload(result)
+end
 function TowerDefenseData:SkipLevel(levelId, characterList, itemId, cb)
 	local mapMsg = {
 		Level = levelId,

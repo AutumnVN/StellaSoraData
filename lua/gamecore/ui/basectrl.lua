@@ -59,12 +59,12 @@ function BaseCtrl:_Exit()
 	if type(self._mapNode) == "table" then
 		for sKey, obj in pairs(self._mapNode) do
 			if type(obj) ~= "table" then
-				self._mapNode[sKey] = 0
+				self._mapNode[sKey] = nil
 			elseif type(obj.__cname) == "string" then
 			else
 				for i, _obj in ipairs(obj) do
 					if type(_obj) ~= "table" then
-						self._mapNode[sKey][i] = 0
+						self._mapNode[sKey][i] = nil
 					else
 					end
 				end

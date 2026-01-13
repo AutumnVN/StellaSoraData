@@ -93,6 +93,7 @@ function AvgData:Init()
 	if AVG_EDITOR == true then
 		EventManager.Add("StoryDialog_DialogEnd", self, self.OnEvent_AvgSTEnd)
 	end
+	self.bSkip = false
 end
 function AvgData:UnInit()
 	EventManager.Remove(EventId.UpdateWorldClass, self, self.CheckNewStoryRedDot)
@@ -283,7 +284,7 @@ function AvgData:CheckIfTrue_Client(bIsMajor, sAvgId, nGroupId, nIndex, nCheckou
 	local nCount = mapA[nIndex] or 0
 	return nCheckount <= nCount
 end
-function AvgData:IsUnlock(sConditionId)
+function AvgData:IsUnlock(sConditionId, avgId)
 	if self.IsActivityAvg == true then
 		return PlayerData.ActivityAvg:IsUnlock(sConditionId)
 	end
@@ -347,15 +348,27 @@ function AvgData:IsUnlock(sConditionId)
 	local nNeedWorldLevel = cfgData.PlayerWorldLevel or 0
 	local bNeedLv = nNeedWorldLevel <= PlayerData.Base:GetWorldClass()
 	local bMustAchievementIds, mapAchieveInfo = PlayerData.Achievement:CheckAchieveIds(cfgData.AchieveIds)
+	local bTimeUnlock = true
+	local openTime
+	local configValue = ConfigTable.GetConfigValue("TimeUnlockStory", "")
+	if configValue ~= nil and configValue == avgId then
+		local curTime = CS.ClientManager.Instance.serverTimeStamp
+		local time = ConfigTable.GetConfigValue("StoryUnlockTime", "")
+		openTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(time)
+		if curTime < openTime then
+			bTimeUnlock = false
+		end
+	end
 	local tbResult = {
 		{bMustStoryIds, mapMustStoryIds},
 		{bOneOfStoryIds, mapOneOfStoryIds},
 		{bMustEvIds, mapMustEvIds},
 		{bOneOfEvIds, mapOneOfEvIds},
 		{bNeedLv, nNeedWorldLevel},
-		{bMustAchievementIds, mapAchieveInfo}
+		{bMustAchievementIds, mapAchieveInfo},
+		{bTimeUnlock, openTime}
 	}
-	local bResult = bMustEvIds == true and bOneOfEvIds == true and bMustStoryIds == true and bOneOfStoryIds == true and bNeedLv == true and bMustAchievementIds == true
+	local bResult = bMustEvIds == true and bOneOfEvIds == true and bMustStoryIds == true and bOneOfStoryIds == true and bNeedLv == true and bMustAchievementIds == true and bTimeUnlock == true
 	return bResult, tbResult
 end
 function AvgData:MarkStoryId(sAvgId)
@@ -453,6 +466,9 @@ function AvgData:IsStoryReaded(nStoryId)
 		return true
 	end
 	return false
+end
+function AvgData:MarkSkip(_bSkip)
+	self.bSkip = _bSkip == true
 end
 function AvgData:GetHistoryChoosedPersonality(sAvgId, nGroupId)
 	if self.IsActivityAvg == true then
@@ -925,6 +941,18 @@ function AvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 					})
 				end
 			end
+			local tabEvent = {}
+			table.insert(tabEvent, {
+				"story_id",
+				tostring(mapStoryCfg.Id)
+			})
+			local _skip = self.bSkip == true and "1" or "0"
+			table.insert(tabEvent, {"is_skip", _skip})
+			table.insert(tabEvent, {
+				"role_id",
+				tostring(PlayerData.Base._nPlayerId)
+			})
+			NovaAPI.UserEventUpload("main_story", tabEvent)
 			local AfterRewardDisplay = function()
 				EventManager.Hit("Story_RewardClosed")
 			end
@@ -1038,7 +1066,7 @@ function AvgData:CheckNewStory(nChapterId)
 	local tbNewUnlockStorys = {}
 	for k, v in ipairs(self.CFG_ChapterStoryNumIds[nChapterId]) do
 		local config = ConfigTable.GetData("Story", v)
-		local bUnlock = self:IsUnlock(config.ConditionId)
+		local bUnlock = self:IsUnlock(config.ConditionId, config.StoryId)
 		if bUnlock then
 			local bReaded = self:IsStoryReaded(v)
 			if not bReaded then

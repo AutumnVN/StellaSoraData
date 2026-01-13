@@ -105,27 +105,25 @@ function TowerDefenseSelectCtrl:Awake()
 	self._mapNode.questPanel.gameObject:SetActive(false)
 	self._mapNode.blur.gameObject:SetActive(false)
 	self._mapNode.animator:Play("TowerDefenseSelectBg_in")
-	self.nSelectedTabIndex = 0
 	self.scrollType = scrollType.pos
-	self.nlevelId = 0
 	self.nScrollIndex = 0
 	self.scrollPos = 1
 end
 function TowerDefenseSelectCtrl:OnEnable()
-	if self.nSelectedTabIndex == 0 then
-		self.nSelectedTabIndex = 1
+	if self._panel.nSelectedTabIndex == 0 then
+		self._panel.nSelectedTabIndex = 1
 	end
-	if self.nlevelId ~= 0 then
+	if self._panel.nlevelId ~= 0 then
 		local tempData = self.TowerDefenseData:GetTempData()
-		if tempData ~= nil and tempData.nLevelId == self.nlevelId and tempData.bResult then
+		if tempData ~= nil and tempData.nLevelId == self._panel.nlevelId and tempData.bResult then
 			for index, value in ipairs(self.tbLevel) do
-				if value.nLevelId == self.nlevelId then
+				if value.nLevelId == self._panel.nlevelId then
 					self.nScrollIndex = index
 					break
 				end
 			end
-			if self.nScrollIndex == #self.tbLevel and self.nSelectedTabIndex == 1 then
-				self.nSelectedTabIndex = 2
+			if self.nScrollIndex == #self.tbLevel and self._panel.nSelectedTabIndex == 1 then
+				self._panel.nSelectedTabIndex = 2
 				self.nScrollIndex = 0
 				self.scrollType = scrollType.pos
 				self.scrollPos = 1
@@ -145,7 +143,7 @@ function TowerDefenseSelectCtrl:OnDisable()
 	self.tbGridCtrl = {}
 end
 function TowerDefenseSelectCtrl:OnDestroy()
-	self.TowerDefenseData:RefreshRedDotbyTab(self.nSelectedTabIndex)
+	self.TowerDefenseData:RefreshRedDotbyTab(self._panel.nSelectedTabIndex)
 end
 function TowerDefenseSelectCtrl:Init()
 	self.tblevel = {}
@@ -163,20 +161,20 @@ function TowerDefenseSelectCtrl:InitQuest()
 	self._mapNode.imgMainBarFill.anchoredPosition = Vector2(barMinX + (barMaxX - barMinX) * (receivedCount / allCount), self._mapNode.imgMainBarFill.anchoredPosition.y)
 end
 function TowerDefenseSelectCtrl:SetTabUI()
-	self._mapNode.imgSelected1:SetActive(self.nSelectedTabIndex == 1)
-	self._mapNode.imgSelected2:SetActive(self.nSelectedTabIndex == 2)
+	self._mapNode.imgSelected1:SetActive(self._panel.nSelectedTabIndex == 1)
+	self._mapNode.imgSelected2:SetActive(self._panel.nSelectedTabIndex == 2)
 	local selectedColor = Color(0.9803921568627451, 0.9803921568627451, 0.9803921568627451)
 	local normalColor = Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764)
-	if self.nSelectedTabIndex == 1 then
+	if self._panel.nSelectedTabIndex == 1 then
 		NovaAPI.SetTMPColor(self._mapNode.txt_LevelTab1, selectedColor)
 		NovaAPI.SetTMPColor(self._mapNode.txt_LevelTab2, normalColor)
-	elseif self.nSelectedTabIndex == 2 then
+	elseif self._panel.nSelectedTabIndex == 2 then
 		NovaAPI.SetTMPColor(self._mapNode.txt_LevelTab1, normalColor)
 		NovaAPI.SetTMPColor(self._mapNode.txt_LevelTab2, selectedColor)
 	end
 end
 function TowerDefenseSelectCtrl:UpdateLevel()
-	self.tbLevel = self.TowerDefenseData:GetLevelsByTab(self.nSelectedTabIndex)
+	self.tbLevel = self.TowerDefenseData:GetLevelsByTab(self._panel.nSelectedTabIndex)
 	local sortFunc = function(a, b)
 		local aConfig = ConfigTable.GetData("TowerDefenseLevel", a.nLevelId)
 		local bConfig = ConfigTable.GetData("TowerDefenseLevel", b.nLevelId)
@@ -234,26 +232,26 @@ function TowerDefenseSelectCtrl:OnBtnClick_Guide()
 	self._mapNode.guidPanel:SetData(self.nActId)
 end
 function TowerDefenseSelectCtrl:OnBtnClick_LevelTab1()
-	if self.nSelectedTabIndex == 1 then
+	if self._panel.nSelectedTabIndex == 1 then
 		return
 	end
 	self.scrollPos = 1
-	self.nlevelId = 0
+	self._panel.nlevelId = 0
 	self.scrollType = self.scrollPos
-	self.TowerDefenseData:RefreshRedDotbyTab(self.nSelectedTabIndex)
-	self.nSelectedTabIndex = 1
+	self.TowerDefenseData:RefreshRedDotbyTab(self._panel.nSelectedTabIndex)
+	self._panel.nSelectedTabIndex = 1
 	self:SetTabUI()
 	self:UpdateLevel()
 end
 function TowerDefenseSelectCtrl:OnBtnClick_LevelTab2()
-	if self.nSelectedTabIndex == 2 then
+	if self._panel.nSelectedTabIndex == 2 then
 		return
 	end
 	self.scrollPos = 1
-	self.nlevelId = 0
+	self._panel.nlevelId = 0
 	self.scrollType = self.scrollPos
-	self.TowerDefenseData:RefreshRedDotbyTab(self.nSelectedTabIndex)
-	self.nSelectedTabIndex = 2
+	self.TowerDefenseData:RefreshRedDotbyTab(self._panel.nSelectedTabIndex)
+	self._panel.nSelectedTabIndex = 2
 	self:SetTabUI()
 	self:UpdateLevel()
 end
@@ -276,7 +274,7 @@ function TowerDefenseSelectCtrl:OnEvent_LevelSelected(nLevelId)
 		return
 	end
 	self.scrollPos = self._mapNode.loopSv:GetScrollPos()
-	self.nlevelId = nLevelId
+	self._panel.nlevelId = nLevelId
 	self.TowerDefenseData:EnterLevelSelect(nLevelId)
 	EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseLevelDetailPanel, self.nActId, nLevelId)
 end
