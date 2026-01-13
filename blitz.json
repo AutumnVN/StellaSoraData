@@ -5,7 +5,7 @@
         "type": "Blitz",
         "mechanic": [
             {
-                "name": "Bounty - Armor Break",
+                "name": "Bounty: Armor Break",
                 "desc": "Each Resilience Break inflicted on the boss by friendly units grants <color=#ec6d21>400</color> Technique Score, up to <color=#ec6d21>5</color> times, totaling <color=#ec6d21>2000</color> points.",
                 "icon": "Icon_Bossrush_Tongyongdefen_003"
             },
@@ -2435,7 +2435,7 @@
         "type": "Blitz",
         "mechanic": [
             {
-                "name": "Bounty - Armor Break",
+                "name": "Bounty: Armor Break",
                 "desc": "Each Resilience Break inflicted on the boss by friendly units grants <color=#ec6d21>400</color> Technique Score, up to <color=#ec6d21>5</color> times, totaling <color=#ec6d21>2000</color> points.",
                 "icon": "Icon_Bossrush_Tongyongdefen_003"
             },
@@ -4865,7 +4865,7 @@
         "type": "Blitz",
         "mechanic": [
             {
-                "name": "Bounty - Knife Destroyer",
+                "name": "Bounty: Knife Destroyer",
                 "desc": "Each Blade thrown by the boss and destroyed by friendly units grants <color=#ec6d21>180</color> Technique Score, up to <color=#ec6d21>30</color> times, totaling <color=#ec6d21>5400</color> points.",
                 "icon": "Icon_Bossrush_Chushi_001"
             },
@@ -7396,7 +7396,7 @@
         "type": "Blitz",
         "mechanic": [
             {
-                "name": "Bounty - Blower Bane",
+                "name": "Bounty: Blower Bane",
                 "desc": "Whenever a boss casts a skill with Tornado, dodging the Tornado grants <color=#ec6d21>540</color>Technique Score, up to <color=#ec6d21>10</color> times, totaling <color=#ec6d21>5400</color> points.",
                 "icon": "Icon_Bossrush_JinDuanLiRong_001"
             },
@@ -9928,7 +9928,7 @@
         "type": "Blitz",
         "mechanic": [
             {
-                "name": "Bounty - Combo",
+                "name": "Bounty: Combo",
                 "desc": "Dealing continuous DMG to a boss for <color=#ec6d21>5</color>s by friendly units grants <color=#ec6d21>360</color>Technique Score, up to <color=#ec6d21>15</color> times, totaling <color=#ec6d21>5400</color> points.",
                 "icon": "Icon_Bossrush_Tongyongdefen_001"
             },
@@ -14991,7 +14991,7 @@
         "mechanic": [
             {
                 "name": "Bounty: Pearl Cascade",
-                "desc": "Whenever a Light Bulb summoned by the boss lands, destroying it grants <color=#ec6d21>540</color> Technique Score, up to <color=#ec6d21>10</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "desc": "Whenever a Light Bulb summoned by the boss lands, destroying it grants <color=#ec6d21>900</color> Technique Score, up to <color=#ec6d21>6</color> times, totaling <color=#ec6d21>5400</color> points.",
                 "icon": "Icon_Bossrush_TaiDeng_002"
             },
             {
@@ -17515,5 +17515,71 @@
                 "Umbra RES": 750
             }
         ]
+    },
+    "8": {
+        "name": "Flavor Dread",
+        "icon": "cover_Bossrush_chushi",
+        "type": "Blitz",
+        "mechanic": [
+            {
+                "name": "Bounty: Blade Collector",
+                "desc": "Each Blade reclaimed by the boss increases Technique Score by <color=#ec6d21>270</color>, up to <color=#ec6d21>20</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "icon": "Icon_Bossrush_Chushi_002"
+            },
+            {
+                "name": "Momentum",
+                "desc": "The boss gains a <color=#ec6d21>30%</color> DMG Boost. For each player Minion on the field, the boss deals <color=#ec6d21>10%</color> less DMG and suffers <color=#ec6d21>10%</color> VUL. This effect stacks up to 3 times and persists for <color=#ec6d21>3</color>s after the Minion disappears.",
+                "icon": "Icon_Bossrush_Teshujizhi_009",
+                "effectType": [
+                    "Final DMG (base)",
+                    "DMG Taken (base)"
+                ],
+                "buffIcon": [
+                    "No Icon",
+                    "Icon_CommonBuff_AttackDown"
+                ]
+            }
+        ],
+        "weakTo": [
+            "Ignis",
+            "Umbra"
+        ],
+        "resistTo": "Lux",
+        "stat": []
+    },
+    "9": {
+        "name": "Blade of Jade",
+        "icon": "cover_Bossrush_fengniao",
+        "type": "Blitz",
+        "mechanic": [
+            {
+                "name": "Bounty: Petal Dodger",
+                "desc": "Each successful dodge from the boss's flower volley increases Technique Score by <color=#ec6d21>270</color>, up to <color=#ec6d21>20</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "icon": "Icon_Bossrush_FengNiao_003"
+            },
+            {
+                "name": "Focus",
+                "desc": "The boss gains a stack of Focus after taking DMG for <color=#ec6d21>20</color> times, boosting its DMG Dealt by <color=#ec6d21>15%</color>.\nTriggering a Mark <color=#ec6d21>2</color> times within <color=#ec6d21>6</color>s clears all Focus stacks. For the next <color=#ec6d21>20</color>s, the boss takes <color=#ec6d21>65%</color> more DMG from Support Skills. This effect triggers up to once every <color=#ec6d21>15</color>s. Retriggering resets the duration.",
+                "icon": "Icon_Bossrush_Teshujizhi_010",
+                "effectType": [
+                    "Final DMG (base)",
+                    "Skill DMG Taken (base)",
+                    "ADDBUFF"
+                ],
+                "buffIcon": [
+                    "Icon_CommonBuff_AttackUp",
+                    "Icon_CommonBuff_DefenseDown",
+                    "No Icon",
+                    "Icon_CommonBuff_AttackSpeedUp",
+                    "Icon_CommonBuff_AttackDown"
+                ]
+            }
+        ],
+        "weakTo": [
+            "Terra",
+            "Lux"
+        ],
+        "resistTo": "Ventus",
+        "stat": []
     }
 }

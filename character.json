@@ -7970,8 +7970,8 @@
     },
     "110": {
         "id": 110,
-        "name": "ID_110",
-        "desc": "???",
+        "name": "Firenze",
+        "desc": "Firenze can summon doppelgangers to fight for her on the battlefield. Rumor has it that she does the same in her office, which is how she always manages to stay so graceful.",
         "star": 5,
         "element": "Umbra",
         "class": "Vanguard",
@@ -7983,9 +7983,9 @@
             "Steady",
             "United Harvest"
         ],
-        "cnCv": "???",
-        "jpCv": "???",
-        "birthday": "???",
+        "cnCv": "Zi Yin",
+        "jpCv": "Chiwa Saito",
+        "birthday": "November 16th",
         "loveGift": [
             "Love Candle",
             "Blazing Wings",
@@ -8002,12 +8002,25 @@
             "Emerging Talent",
             "Shining Star"
         ],
-        "date": [],
+        "date": [
+            {
+                "id": 110301,
+                "name": "School Days",
+                "clue": "Visit the Academy to unlock",
+                "secondChoice": "Getting hungry. Gonna go to the cafeteria."
+            },
+            {
+                "id": 110302,
+                "name": "The Bait",
+                "clue": "Visit the Port to unlock",
+                "secondChoice": "How about doing some night fishing?"
+            }
+        ],
         "normalAtk": {
             "id": 11010000,
-            "name": "???",
-            "briefDesc": "???",
-            "desc": "???\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Auto Attack) \u000bParam5: &Param5& (HitDamage,Auto Attack) \u000bParam6: &Param6& (HitDamage,Minion)",
+            "name": "Blooming Shadows",
+            "briefDesc": "Swings the cane to strike multiple times and summons ##Shadow Clones#4002# to attack.",
+            "desc": "Swings the cane to strike multiple times.\u000bStrike 1: <color=#ec6d21>&Param1&</color> of ATK as Umbra DMG.\u000bStrike 2: <color=#ec6d21>&Param2&</color> of ATK as Umbra DMG.\u000bStrike 3: <color=#ec6d21>&Param3& x5</color> of ATK as Umbra DMG.\u000bStrike 4: <color=#ec6d21>&Param4&</color> of ATK and <color=#ec6d21>&Param5&</color> of ATK as Umbra DMG.\u000bWhen there is no ##Shadow Clone#4002# present, the 2nd hit of the Auto Attack summons 1 ##Shadow Clone#4002#.\u000bThe 4th hit of the Auto Attack commands all ##Shadow Clones#4002# to sprint strike, dealing <color=#ec6d21>&Param6&</color> of ATK as Umbra Minion DMG.",
             "damageType": [
                 "Auto Attack (from Normal attack, scale with Normal attack)",
                 "Minion (from Skill, scale with Normal attack)"
@@ -8017,21 +8030,21 @@
             "effectData": [],
             "buffIcon": [],
             "params": [
-                "31.5%/36.2%/41%/55.2%/59.6%/64%/72.8%/76.6%/80.4%/87.9%/94.2%/100.5%/106.8%",
+                "32%/36%/41%/55%/60%/64%/73%/77%/80%/88%/94%/101%/107%",
                 "16.6%/19.1%/21.6%/29.1%/31.4%/33.8%/38.4%/40.4%/42.4%/46.4%/49.7%/53.1%/56.4%",
                 "7%/8.1%/9.1%/12.3%/13.2%/14.2%/16.2%/17%/17.9%/19.5%/20.9%/22.3%/23.7%",
-                "36.8%/42.3%/47.8%/64.3%/69.5%/74.6%/84.9%/89.3%/93.7%/102.6%/109.9%/117.3%/124.6%",
-                "38.5%/44.3%/50.1%/67.4%/72.8%/78.2%/89%/93.6%/98.2%/107.4%/115.1%/122.8%/130.5%",
-                "90%/104%/117%/158%/171%/183%/209%/219%/230%/252%/270%/288%/306%"
+                "37%/42%/48%/64%/69%/75%/85%/89%/94%/103%/110%/117%/125%",
+                "39%/44%/50%/67%/73%/78%/89%/94%/98%/107%/115%/123%/131%",
+                "54%/62%/70%/94%/102%/109%/124%/131%/137%/150%/161%/171%/182%"
             ],
             "icon": "11001_Normal"
         },
         "skill": {
             "id": 11031000,
-            "name": "???",
+            "name": "Elegant Parade",
             "cooldown": "6s",
-            "briefDesc": "???",
-            "desc": "???\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Minion) \u000bParam3: &Param3& (HitDamage,Mark) \u000bParam4: &Param4& (HitDamage,Mark) \u000bParam5: &Param5& (Buff,Time)",
+            "briefDesc": "Unleashes combo slashes with the cane sword, dealing multiple instances of DMG. Casting the Main Skill can summon ##Shadow Clones#4002# and trigger combo slashes. The Main Skill and ##Shadow Clones#4002# can trigger ##Umbra Mark#1019#.",
+            "desc": "Unleashes combo slashes with the cane sword, dealing <color=#ec6d21>&Param1& x3</color> of ATK as Umbra Skill DMG. When casting the Main Skill, summons 1 ##Shadow Clone#4002# and orders all ##Shadow Clones#4002# to unleash combo slashes, dealing <color=#ec6d21>&Param2& x3</color> of ATK as Umbra Minion DMG.\u000bElegant Parade (Main Skill) and ##Shadow Clones#4002# can trigger ##Umbra Mark#1019#, dealing &Param3& of ATK as Umbra Mark DMG and inflicting Dark Burn, which deals DMG to the target once every 0.5s for &Param5&s, dealing &Param4& of ATK as Umbra Mark DMG in total.",
             "damageType": [
                 "Skill (from Skill, scale with Skill)",
                 "Minion (from Skill, scale with Skill)",
@@ -8045,7 +8058,7 @@
             ],
             "params": [
                 "109%/125%/142%/191%/206%/221%/252%/265%/278%/304%/326%/348%/370%",
-                "24.6%/28.3%/32%/43%/46.5%/49.9%/56.8%/59.7%/62.7%/68.6%/73.5%/78.4%/83.3%",
+                "40.5%/46.6%/52.7%/70.9%/76.6%/82.3%/93.7%/98.5%/103.4%/113.1%/121.2%/129.3%/137.4%",
                 "37%/48%/59%/70%/81%/92%/103%/114%/125%",
                 "4.1%/5.3%/6.6%/7.8%/9%/10.3%/11.5%/12.7%/14%",
                 5
@@ -8054,10 +8067,10 @@
         },
         "supportSkill": {
             "id": 11032000,
-            "name": "???",
+            "name": "Reign of Night",
             "cooldown": "12s",
-            "briefDesc": "???",
-            "desc": "???\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Minion) \u000bParam3: &Param3& (HitDamage,Mark) \u000bParam4: &Param4& (HitDamage,Mark) \u000bParam5: &Param5& (Buff,Time)",
+            "briefDesc": "Pounds the ground to deal AoE DMG and summons multiple ##Shadow Clones#4002#. When the main Trekker deals DMG, ##Shadow Clones#4002# also strike at the target. The Support Skill and ##Shadow Clones#4002# can trigger ##Umbra Mark#1019#.",
+            "desc": "Strikes the ground with the cane, dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Skill DMG, and summons 2 ##Shadow Clones#4002#.\u000bWhen the main Trekker deals DMG, ##Shadow Clones#4002# also strike at the target, dealing <color=#ec6d21>&Param2&</color> of ATK as Umbra Minion DMG. This effect can only be triggered once every 1.5s.\u000bReign of Night (Support Skill) and ##Shadow Clones#4002# can trigger ##Umbra Mark#1019#, dealing &Param3& of ATK as Umbra Mark DMG and inflicting Dark Burn, which deals DMG to the target once every 0.5s for &Param5&s, totaling &Param4& of ATK as Umbra Mark DMG.",
             "damageType": [
                 "Skill (from Skill, scale with Skill)",
                 "Minion (from Skill, scale with Skill)",
@@ -8080,11 +8093,11 @@
         },
         "ultimate": {
             "id": 11040000,
-            "name": "???",
+            "name": "Personal Tuition",
             "cooldown": "25s",
             "energy": 218,
-            "briefDesc": "???",
-            "desc": "???\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Mark) \u000bParam4: &Param4& (HitDamage,Mark) \u000bParam5: &Param5& (Buff,Time)",
+            "briefDesc": "Spreads a dark magic circle, dealing multiple instances of DMG. The Ultimate can trigger ##Umbra Mark#1019#.",
+            "desc": "Spreads a dark magic circle, dealing <color=#ec6d21>&Param1& x5</color> of ATK and <color=#ec6d21>&Param2&</color> of ATK as Umbra Ultimate DMG.\u000bPersonal Tuition (Ultimate) can trigger ##Umbra Mark#1019#, dealing &Param3& of ATK as Umbra Mark DMG and inflicting Dark Burn, which deals DMG to the target once every 0.5s for &Param5&s, dealing &Param4& of ATK as Umbra Mark DMG in total.",
             "damageType": [
                 "Ultimate (from Ultimate, scale with Ultimate)",
                 "Mark"
@@ -8108,19 +8121,18 @@
             "mainCore": [
                 {
                     "id": 511001,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
-                    "damageType": [],
-                    "effectType": [
-                        "Skill DMG (base)"
+                    "name": "Step Kicking",
+                    "briefDesc": "The Main Skill deals additional damage.",
+                    "desc": "When casting Elegant Parade (Main Skill), Firenze deals an additional <color=#0abec5>&Param1& x3</color> of ATK as AoE Umbra Skill DMG.",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
                     ],
+                    "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "4%",
-                        "Skill DMG"
+                        "55%/63%/71%/95%/103%/111%/126%/133%/139%/152%/163%/174%/185%"
                     ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_01",
@@ -8128,14 +8140,14 @@
                 },
                 {
                     "id": 511002,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (HitDamage,Skill) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1)",
+                    "name": "Nimble Step",
+                    "briefDesc": "When Firenze's Main Skill deals DMG for a certain number of times, she creates a domain that deals continuous AoE DMG and boosts her &Param3&.",
+                    "desc": "After Firenze's Elegant Parade (Main Skill) deals DMG <color=#0abec5>6</color> times, it creates a domain for &Param1&s, dealing <color=#0abec5>&Param2&</color> of ATK as AoE Umbra Skill DMG every 0.5s and increases Firenze's &Param3& by <color=#0abec5>&Param4&</color>. The domain's DMG can trigger ##Umbra Mark#1019#.",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
-                        "Skill DMG (base)"
+                        "ELEMENTTYPE_:Skill DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8143,8 +8155,8 @@
                         "Icon_CommonBuff_AttackUp"
                     ],
                     "params": [
-                        10,
-                        "45%/52%/59%/80%/86%/92%/105%/110%/116%/127%/136%/145%/154%",
+                        7,
+                        "67%/77%/87%/118%/127%/137%/155%/164%/172%/188%/201%/215%/228%",
                         "Skill DMG",
                         "5%"
                     ],
@@ -8154,21 +8166,16 @@
                 },
                 {
                     "id": 511003,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
+                    "name": "Phantom Waltz",
+                    "briefDesc": "Firenze automatically summons ##Shadow Clones#4002#. When casting the Main Skill, increases the number of ##Shadow Clones#4002# summoned.",
+                    "desc": "Firenze generates <color=#0abec5>1</color> ##Shadow Clone#4002# every <color=#0abec5>5</color>s.\u000bWhen casting Elegant Parade (Main Skill), increases the number of ##Shadow Clones#4002# summoned by <color=#0abec5>&Param1&</color>.",
                     "damageType": [],
-                    "effectType": [
-                        "Minion DMG (base)"
-                    ],
+                    "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
-                    "buffIcon": [
-                        "No Icon"
-                    ],
+                    "buffIcon": [],
                     "params": [
-                        "5%",
-                        "Minion DMG"
+                        1
                     ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_03",
@@ -8176,21 +8183,19 @@
                 },
                 {
                     "id": 511004,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
-                    "damageType": [],
-                    "effectType": [
-                        "Minion DMG (base)"
+                    "name": "Shadow Step",
+                    "briefDesc": "Upon vanishing, Firenze's ##Shadow Clones#4002# will explode, dealing AoE DMG. The max limit of ##Shadow Clones#4002# increases for every other Umbra Trekker in the squad.",
+                    "desc": "Upon vanishing, Firenze's ##Shadow Clones#4002# will explode, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Minion DMG.\u000bThe max limit of ##Shadow Clones#4002# increases by <color=#0abec5>&Param2&</color> for every other Umbra Trekker in the squad.",
+                    "damageType": [
+                        "Minion"
                     ],
+                    "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
-                    "buffIcon": [
-                        "No Icon"
-                    ],
+                    "buffIcon": [],
                     "params": [
-                        "5%",
-                        "Minion DMG"
+                        "117%/135%/152%/205%/221%/238%/271%/285%/299%/327%/350%/374%/397%",
+                        1
                     ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_04",
@@ -8200,9 +8205,9 @@
             "mainNormal": [
                 {
                     "id": 511005,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "name": "High Risk",
+                    "briefDesc": "When Firenze deals Skill DMG, there is a chance to deal additional DMG.",
+                    "desc": "When Firenze deals Skill DMG, there is a &Param2& chance to deal an additional <color=#ec6d21>&Param1&</color> of ATK as Umbra Skill DMG. The chance is increased to &Param3& if the target is inflicted with ##Umbra Burn#2028#. This effect can only be triggered &Param4& times every second.",
                     "damageType": [
                         "Skill"
                     ],
@@ -8211,7 +8216,10 @@
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "59%/94%/129%/164%/199%/235%/270%/305%/340%"
+                        "64%/103%/141%/180%/218%/256%/295%/333%/372%",
+                        "40%",
+                        "80%",
+                        2
                     ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_01",
@@ -8220,9 +8228,9 @@
                 },
                 {
                     "id": 511006,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "name": "Dark Pirouette",
+                    "briefDesc": "When Firenze triggers an ##Umbra Mark#1019#, increases &Param1&.",
+                    "desc": "When Firenze triggers an ##Umbra Mark#1019#, increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8234,7 +8242,7 @@
                     ],
                     "params": [
                         "ATK",
-                        "10%/15%/21%/27%/33%/39%/44%/50%/56%",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%",
                         3
                     ],
                     "hiddenParams": [],
@@ -8244,12 +8252,12 @@
                 },
                 {
                     "id": 511007,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "name": "Flash Break",
+                    "briefDesc": "When Firenze deals DMG with an Auto Attack, increases her &Param1&. The effect ends if the Main Skill is cast.",
+                    "desc": "When Firenze deals DMG with an Auto Attack, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to <color=#ec6d21>&Param4&</color> times. The effect ends if Elegant Parade (Main Skill) is cast.",
                     "damageType": [],
                     "effectType": [
-                        "Skill DMG (base)"
+                        "ELEMENTTYPE_:Skill DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8269,12 +8277,12 @@
                 },
                 {
                     "id": 511009,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
+                    "name": "Extended Shift",
+                    "briefDesc": "Firenze's ##Shadow Clone#4002# lasts longer on the battlefield. Also increases &Param2&.",
+                    "desc": "Firenze's ##Shadow Clone#4002# lasts <color=#ec6d21>&Param1&</color>s longer on the battlefield. Also increases &Param2& by <color=#ec6d21>&Param3&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "Umbra DMG (base)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8283,22 +8291,22 @@
                     ],
                     "params": [
                         "1/1/1/2/2/3/3/3/4",
-                        "Umbra DMG",
-                        "14%/23%/31%/40%/48%/57%/65%/74%/82%"
+                        "Minion DMG",
+                        "19%/31%/43%/54%/66%/77%/89%/101%/112%"
                     ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_03",
                     "corner": "Triangle",
-                    "rarity": "common"
+                    "rarity": "rare"
                 },
                 {
                     "id": 511010,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "name": "Accurate Coincidence",
+                    "briefDesc": "After Firenze casts the Main Skill, her next Auto Attack starts with the 4th strike. Also increases ##Shadow Clone#4002#'s &Param1&.",
+                    "desc": "After Firenze casts Elegant Parade (Main Skill), her next Auto Attack directly casts the last strike.\u000bAlso increases ##Shadow Clone#4002#'s &Param1& by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "Minion DMG (base)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8307,7 +8315,7 @@
                     ],
                     "params": [
                         "Minion DMG",
-                        "16%/25%/35%/44%/54%/63%/73%/82%/92%"
+                        "13%/20%/28%/35%/43%/50%/58%/65%/73%"
                     ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_03",
@@ -8316,9 +8324,9 @@
                 },
                 {
                     "id": 511011,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "name": "Hunting Command",
+                    "briefDesc": "Each Umbra Trekker in the squad increases Firenze's &Param1&.",
+                    "desc": "For each Umbra Trekker in the squad, increases Firenze's &Param1& by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [
                         "Umbra DMG (base)"
@@ -8339,9 +8347,9 @@
                 },
                 {
                     "id": 511013,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
+                    "name": "Announcement Time",
+                    "briefDesc": "Firenze can dodge one more time. Increases her &Param3& when dodging.",
+                    "desc": "Firenze can dodge one more time.\u000bWhen dodging, increases Firenze's &Param3& by <color=#ec6d21>&Param1&</color> for &Param2&s.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8363,32 +8371,36 @@
                 },
                 {
                     "id": 511008,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage,Minion)",
-                    "damageType": [
-                        "Minion"
+                    "name": "Gloomy Veil",
+                    "briefDesc": "Increases ##Shadow Clone#4002#'s max limit and &Param2&.",
+                    "desc": "Increases ##Shadow Clone#4002#'s max limit by &Param1& and &Param2& by <color=#ec6d21>&Param3&</color>.",
+                    "damageType": [],
+                    "effectType": [
+                        "Umbra DMG (base)"
                     ],
-                    "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
-                    "buffIcon": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
                     "params": [
-                        "133%/213%/292%/372%/452%/531%/611%/691%/770%"
+                        1,
+                        "Umbra DMG",
+                        "14%/22%/31%/39%/47%/55%/64%/72%/80%"
                     ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_03",
                     "corner": "Diamond",
-                    "rarity": "rare"
+                    "rarity": "common"
                 },
                 {
                     "id": 511012,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "name": "Clone Trick",
+                    "briefDesc": "Firenze can dodge through barriers. Increases ##Shadow Clone#4002#'s DMG.",
+                    "desc": "Firenze can dodge through barriers.\u000bIncreases ##Shadow Clone#4002#'s &Param1& by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "Minion DMG (base)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8397,7 +8409,7 @@
                     ],
                     "params": [
                         "Minion DMG",
-                        "10%/16%/22%/28%/34%/40%/46%/52%/58%"
+                        "8%/13%/17%/22%/27%/31%/36%/41%/46%"
                     ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_04",
@@ -8408,12 +8420,12 @@
             "common": [
                 {
                     "id": 511041,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,LaminatedNum) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
+                    "name": "Instant Liquidation",
+                    "briefDesc": "When Firenze casts her Ultimate, each ##Shadow Clone#4002# on the battlefield increases her Ultimate DMG.",
+                    "desc": "Firenze absorbs all ##Shadow Clones#4002# when casting Personal Tuition (Ultimate). Each ##Shadow Clone#4002# absorbed increases Ultimate DMG by <color=#ec6d21>&Param1&</color>, up to &Param2& stacks.\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
-                        "Ultimate DMG (base)"
+                        "ELEMENTTYPE_:Ultimate DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8432,19 +8444,22 @@
                 },
                 {
                     "id": 511042,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "name": "Instant Peak",
+                    "briefDesc": "When Firenze deals DMG, increases &Param1&.",
+                    "desc": "When Firenze deals DMG, increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "damageType": [],
                     "effectType": [
                         "Ultimate Crit Rate (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
-                    "buffIcon": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
                     "params": [
                         "Ultimate Crit Rate",
-                        "5%/7%/8%/10%/11%/13%/15%/16%/20%"
+                        "5%/7%/8%/10%/11%/13%/15%/16%/20%",
+                        5
                     ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_41",
@@ -8453,12 +8468,12 @@
                 },
                 {
                     "id": 511043,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "name": "Place Your Bets",
+                    "briefDesc": "When Firenze triggers an ##Umbra Mark#1019#, increases &Param1&.",
+                    "desc": "When Firenze triggers an ##Umbra Mark#1019#, increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks. The effect ends if Personal Tuition (Ultimate) is cast.",
                     "damageType": [],
                     "effectType": [
-                        "Ultimate DMG (base)"
+                        "ELEMENTTYPE_:Ultimate DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8480,9 +8495,9 @@
             "supportCore": [
                 {
                     "id": 511021,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "name": "Shadow Nail",
+                    "briefDesc": "The cane stays in the ground for a period of time, dealing DMG over time.",
+                    "desc": "The cane stays in the ground for 6s, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Skill DMG per second.",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -8499,9 +8514,9 @@
                 },
                 {
                     "id": 511022,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "name": "Shadow Flicker",
+                    "briefDesc": "When the cane disappears, triggers an explosion, dealing AoE DMG.",
+                    "desc": "When the cane disappears, triggers an explosion, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Skill DMG.",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -8518,24 +8533,26 @@
                 },
                 {
                     "id": 511023,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Twin Shadow",
+                    "briefDesc": "Increases the max limit and the number summoned of ##Shadow Clones#4002# by Support Skills.",
+                    "desc": "Reign of Night (Support Skill) summons <color=#0abec5>2</color> more ##Shadow Clones#4002#, with the max limit increased by <color=#0abec5>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
-                    "params": [],
+                    "params": [
+                        2
+                    ],
                     "hiddenParams": [],
                     "icon": "11001_Potential_23",
                     "rarity": "core"
                 },
                 {
                     "id": 511024,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???",
+                    "name": "Shadownight Descendant",
+                    "briefDesc": "The ##Shadow Clones#4002# summoned by the Support Skill will last longer on the battlefield.",
+                    "desc": "The ##Shadow Clones#4002# summoned by Reign of Night (Support Skill) will last <color=#0abec5>5</color>s longer on the battlefield.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -8550,9 +8567,9 @@
             "supportNormal": [
                 {
                     "id": 511025,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (OnceAdditionalAttribute,Value1) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (ScriptParameterValue,CommonData) \u000bParam4: &Param4& (ScriptParameterValue,CommonData)",
+                    "name": "Drinking Party",
+                    "briefDesc": "When cane DMG triggers an ##Umbra Mark#1019#, reduces Support Skill Cooldown. Also increases the cane's DMG.",
+                    "desc": "When cane DMG triggers an ##Umbra Mark#1019#, reduces Reign of Night (Support Skill)'s Cooldown by &Param3&s. This effect can only be triggered &Param4& times per cast.\u000bAlso increases DMG dealt by the cane by <color=#ec6d21>&Param1&</color>.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -8573,9 +8590,9 @@
                 },
                 {
                     "id": 511026,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (OnceAdditionalAttribute,Value1) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "name": "Typical Case",
+                    "briefDesc": "Increases the cane's Umbra DMG to targets inflicted with ##Dark Burn#2028#.",
+                    "desc": "Increases the cane's Umbra DMG to targets inflicted with ##Dark Burn#2028# by <color=#ec6d21>&Param1&</color>.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -8594,9 +8611,9 @@
                 },
                 {
                     "id": 511027,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "name": "Joyous Whip",
+                    "briefDesc": "When the cane deals DMG, increases Firenze's &Param3&.",
+                    "desc": "When the cane deals DMG, increases Firenze's &Param3& by <color=#ec6d21>&Param1&</color> for &Param2&s, up to &Param4& stacks.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8619,12 +8636,12 @@
                 },
                 {
                     "id": 511028,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
+                    "name": "Step Sync",
+                    "briefDesc": "Increases ##Shadow Clone#4002#'s &Param3&. Reduces the intervals between their sprint attacks.",
+                    "desc": "Increases ##Shadow Clone#4002#'s &Param3& by <color=#ec6d21>&Param2&</color>. Reduces the intervals between their sprint attacks by <color=#ec6d21>&Param1&%</color>.",
                     "damageType": [],
                     "effectType": [
-                        "Minion DMG (base)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8643,12 +8660,12 @@
                 },
                 {
                     "id": 511030,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
+                    "name": "Flexible Operation",
+                    "briefDesc": "When a ##Shadow Clone#4002# deals DMG, increases all ##Shadow Clones#4002#' &Param3& on the battlefield.",
+                    "desc": "When a ##Shadow Clone#4002# deals damage, increases all present ##Shadow Clones#4002#' &Param3& by <color=#ec6d21>&Param1&</color>, up to &Param4& stacks.",
                     "damageType": [],
                     "effectType": [
-                        "Minion DMG (base)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8668,12 +8685,12 @@
                 },
                 {
                     "id": 511031,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "name": "Shadow Waltz",
+                    "briefDesc": "Increases ##Shadow Clone#4002#'s DMG.",
+                    "desc": "Increases ##Shadow Clone#4002#'s &Param2& by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "Minion DMG (base)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8691,9 +8708,9 @@
                 },
                 {
                     "id": 511032,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "name": "Prime Stance",
+                    "briefDesc": "Increases Firenze's &Param2&.",
+                    "desc": "Increases Firenze's &Param2& by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -8712,9 +8729,9 @@
                 },
                 {
                     "id": 511029,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (HitDamage,Minion)",
+                    "name": "Dark Resurgence",
+                    "briefDesc": "Upon vanishing, Firenze's ##Shadow Clones#4002# will explode, dealing AoE DMG.",
+                    "desc": "Upon vanishing, ##Shadow Clones#4002# will explode, dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Minion DMG.",
                     "damageType": [
                         "Minion"
                     ],
@@ -8732,9 +8749,9 @@
                 },
                 {
                     "id": 511033,
-                    "name": "???",
-                    "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "name": "Special Care",
+                    "briefDesc": "Increases all Umbra Trekkers' &Param2&.",
+                    "desc": "Increases all Umbra Trekkers' &Param2& by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [
                         "Umbra DMG (base)"
@@ -8760,8 +8777,8 @@
                 "name": "Bleak Ruination",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "name": "Bleak Ruination",
+                        "desc": "When Firenze triggers an ##Umbra Mark#1019#, increases the Umbra DMG of Firenze and ##Shadow Clones#4002# on the field by <color=#0abec5>&Param1&</color> for &Param2&s, up to &Param3& stacks.",
                         "params": [
                             "7%",
                             5,
@@ -8777,8 +8794,8 @@
                         ]
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -8790,8 +8807,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -8803,8 +8820,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -8816,8 +8833,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -8829,8 +8846,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -8842,8 +8859,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -8855,8 +8872,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -8868,8 +8885,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -8881,8 +8898,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -8894,8 +8911,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -8912,8 +8929,8 @@
                 "name": "Sorrowful Strength",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "name": "Sorrowful Strength",
+                        "desc": "When Firenze summons a ##Shadow Clone#4002#, increases Firenze's ATK by <color=#0abec5>&Param1&</color> and the Minion DMG of ##Shadow Clones#4002# on the field by <color=#0abec5>&Param1&</color> for &Param2&s.",
                         "params": [
                             "20%",
                             5
@@ -8928,8 +8945,8 @@
                         ]
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -8941,8 +8958,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -8954,8 +8971,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -8967,8 +8984,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -8980,8 +8997,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -8993,8 +9010,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -9006,8 +9023,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -9019,8 +9036,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -9032,8 +9049,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9045,8 +9062,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9060,15 +9077,14 @@
                 ]
             },
             {
-                "name": "Adamantine Heart",
+                "name": "Tender Adamantine Heart",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "name": "Tender Adamantine Heart",
+                        "desc": "When Firenze casts a skill, increases Firenze's ATK by <color=#0abec5>&Param1&</color> and the Minion DMG of ##Shadow Clones#4002# on the field by <color=#0abec5>&Param1&</color> for &Param2&s.",
                         "params": [
-                            "10%",
-                            8,
-                            2
+                            "20%",
+                            8
                         ],
                         "effectType": [
                             "ATK (%)"
@@ -9080,8 +9096,8 @@
                         ]
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -9093,8 +9109,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -9106,8 +9122,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -9119,8 +9135,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9132,8 +9148,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9145,8 +9161,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -9158,8 +9174,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -9171,8 +9187,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -9184,8 +9200,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9197,8 +9213,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9215,8 +9231,8 @@
                 "name": "Tough Rose",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "name": "Tough Rose",
+                        "desc": "When any Trekker applies an ##Umbra Mark#1019# to a target, increases Firenze's Ultimate DMG by <color=#0abec5>&Param1&</color> for &Param2&s, up to &Param3& stacks.",
                         "params": [
                             "4%",
                             10,
@@ -9232,8 +9248,8 @@
                         ]
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -9245,8 +9261,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -9258,8 +9274,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -9271,8 +9287,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9284,8 +9300,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9297,8 +9313,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -9310,8 +9326,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -9323,8 +9339,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -9336,8 +9352,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9349,8 +9365,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9367,8 +9383,8 @@
                 "name": "Unique Individuals",
                 "boost": [
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Unique Individuals",
+                        "desc": "An all-Umbra squad increases Firenze's Umbra DMG by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "20%"
                         ],
@@ -9382,8 +9398,8 @@
                         ]
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -9395,8 +9411,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -9408,8 +9424,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -9421,8 +9437,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9434,8 +9450,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9447,8 +9463,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "60"
                         ],
@@ -9460,8 +9476,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10"
                         ],
@@ -9473,8 +9489,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "690"
                         ],
@@ -9486,8 +9502,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -9499,8 +9515,8 @@
                         "buffIcon": []
                     },
                     {
-                        "name": "???",
-                        "desc": "???\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
                         "params": [
                             "1.5%"
                         ],
@@ -10951,7 +10967,7 @@
                     "desc": "While Iris's Main Skill is active, grants Super Armor and increases her ATK by <color=#ec6d21>&Param1&</color>.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [],
                     "effectType": [
-                        "Skill DMG (base)"
+                        "ATK (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -36025,7 +36041,7 @@
                 "boost": [
                     {
                         "name": "Debate of Truth",
-                        "desc": "When Freesia is on the ##Berserk#2014# state, her Crit Rate is increased by <color=#0abec5>&Param1&</color>.",
+                        "desc": "When Freesia is om the ##Berserk#2014# state, her Crit Rate is increased by <color=#0abec5>&Param1&</color>.",
                         "params": [
                             "10%"
                         ],
@@ -45416,13 +45432,13 @@
         "date": [
             {
                 "id": 133301,
-                "name": "Ever-Turning Waterwheel",
+                "name": "False Alarm",
                 "clue": "Visit the Market to unlock",
                 "secondChoice": "What's that? Looks suspicious."
             },
             {
                 "id": 133302,
-                "name": "Manager for a Day",
+                "name": "Ever-Turning Waterwheel",
                 "clue": "Visit the Port to unlock",
                 "secondChoice": "Take a small boat out for some coastal sightseeing."
             }

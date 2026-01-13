@@ -196,6 +196,14 @@
         "type": "Char",
         "rarity": "SR"
     },
+    "110": {
+        "id": 110,
+        "name": "Firenze",
+        "desc": "Proof of invitation to add Firenze to your squad",
+        "literary": "Perched atop the world's gaze, she surveys all beneath her, like a monarch overlooking her realm.\u000bIn her tender grasp, her fingers trace the familiar, worn contours of an old chair.",
+        "type": "Char",
+        "rarity": "SSR"
+    },
     "111": {
         "id": 111,
         "name": "Iris",
@@ -489,6 +497,14 @@
         "type": "CharShard",
         "rarity": "SR"
     },
+    "1100": {
+        "id": 1100,
+        "name": "Firenze's Soul Key",
+        "desc": "Activates Trekker Talents.",
+        "literary": "Perched atop the world's gaze, she surveys all beneath her, like a monarch overlooking her realm.\u000bIn her tender grasp, her fingers trace the familiar, worn contours of an old chair.",
+        "type": "CharShard",
+        "rarity": "SSR"
+    },
     "1110": {
         "id": 1110,
         "name": "Iris's Soul Key",
@@ -701,6 +717,14 @@
         "type": "CharacterSkin",
         "rarity": "SR"
     },
+    "10303": {
+        "id": 10303,
+        "name": "Playful Innocence",
+        "desc": "Certificate that unlocks Amber's exclusive appearance \"Playful Innocence\"!",
+        "literary": "Woven from flowing flames and adorned with golden clouds—a majestic spirit, fierce and free.\u000bRawr—",
+        "type": "CharacterSkin",
+        "rarity": "SR"
+    },
     "10701": {
         "id": 10701,
         "name": "Tilia: Default",
@@ -732,6 +756,18 @@
         "name": "Kasimira: Awakened",
         "type": "CharacterSkin",
         "rarity": "SR"
+    },
+    "11001": {
+        "id": 11001,
+        "name": "Firenze: Default",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "11002": {
+        "id": 11002,
+        "name": "Firenze: Awakened",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
     },
     "11101": {
         "id": 11101,
@@ -950,6 +986,14 @@
     "13402": {
         "id": 13402,
         "name": "Fuyuka: Awakened",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "13403": {
+        "id": 13403,
+        "name": "Probation Period Cleared!",
+        "desc": "Certificate that unlocks Fuyuka's exclusive appearance \"Probation Period Cleared!\"!",
+        "literary": "Clock in on time? Check. Prep the materials? Check. Work hard, stay focused... Whoa there, how did I mess it up again?",
         "type": "CharacterSkin",
         "rarity": "SSR"
     },
@@ -1863,6 +1907,14 @@
         "type": "Item",
         "rarity": "SR"
     },
+    "71013": {
+        "id": 71013,
+        "name": "Prefix Title: Greenhouse",
+        "desc": "Unlocks the title: Greenhouse.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
     "72001": {
         "id": 72001,
         "name": "Suffix Title: Tyrant",
@@ -1959,6 +2011,14 @@
         "type": "Item",
         "rarity": "SR"
     },
+    "72013": {
+        "id": 72013,
+        "name": "Suffix Title: Protector",
+        "desc": "Unlocks the title: Protector.",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
     "73101": {
         "id": 73101,
         "name": "Squid Rice Cracker",
@@ -1994,7 +2054,7 @@
     "73105": {
         "id": 73105,
         "name": "Expense Receipt",
-        "desc": "???",
+        "desc": "Currency earned via active participation in the Miracle of a Flicker event. Can be used to redeem items in the Event Shop.",
         "literary": "Please submit all paper receipts to the Finance Department by the deadline. Late submissions will not be reimbursed.",
         "type": "Item",
         "rarity": "SR"
@@ -2394,6 +2454,20 @@
         "type": "Item",
         "rarity": "R"
     },
+    "101011": {
+        "id": 101011,
+        "name": "Royal Grant Bonus Item",
+        "desc": "Includes the bonus items corresponding to the purchase of the current Royal Startup Grant.",
+        "type": "Item",
+        "rarity": "R"
+    },
+    "101012": {
+        "id": 101012,
+        "name": "Upgrade Grant Differential Item",
+        "desc": "Includes the bonus items corresponding to the purchase of the current Royal Startup Grant.",
+        "type": "Item",
+        "rarity": "R"
+    },
     "111001": {
         "id": 111001,
         "name": "Novice Tyrant",
@@ -2471,6 +2545,14 @@
         "name": "Lucky Star",
         "desc": "Unlocks the Honor Title: Lucky Star.",
         "literary": "Proof of friendship with Kasimira!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "112110": {
+        "id": 112110,
+        "name": "Charming CEO",
+        "desc": "Unlocks the honorary title \"Charming CEO\".",
+        "literary": "Proof of friendship with Firenze!",
         "type": "Honor",
         "rarity": "SSR"
     },
@@ -2770,6 +2852,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "116005": {
+        "id": 116005,
+        "name": "Miracle of a Flicker",
+        "desc": "Unlocks the Honor Title: Miracle of a Flicker.",
+        "literary": "Proof of a great success in the event: Miracle of a Flicker!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "117001": {
         "id": 117001,
         "name": "Season 1 Endgame Ace",
@@ -2930,6 +3020,14 @@
         "type": "Item",
         "rarity": "R"
     },
+    "120003": {
+        "id": 120003,
+        "name": "Greenhouse Treasure Shovel",
+        "desc": "<Miracle of a Flicker>Exclusive Event Item",
+        "literary": "A treasure shovel said to bring good fortune. Unfortunately, it's not very durable.",
+        "type": "Item",
+        "rarity": "R"
+    },
     "130001": {
         "id": 130001,
         "name": "Best Wishes",
@@ -2951,6 +3049,14 @@
         "name": "Times of Fragility",
         "desc": "Unlocks the Avatar: Times of Fragility",
         "literary": "Life won't be as good as you hope, but it won't be as bad as you fear.",
+        "type": "PlayHead",
+        "rarity": "SR"
+    },
+    "130004": {
+        "id": 130004,
+        "name": "Festival Feast",
+        "desc": "Unlocks the Avatar: Festival Feast",
+        "literary": "Gain happy pounds and bliss that abounds!",
         "type": "PlayHead",
         "rarity": "SR"
     },
@@ -3053,6 +3159,22 @@
         "name": "Limited-Time Avatar:\nTimes of Fragility",
         "desc": "Limited-Time Avatar:\nTimes of Fragility",
         "literary": "Limited-Time Avatar:\nTimes of Fragility",
+        "type": "Item",
+        "rarity": "SSR"
+    },
+    "199012": {
+        "id": 199012,
+        "name": "Amber's exclusive appearance:\nPlayful Innocence",
+        "desc": "Amber's exclusive appearance:\nPlayful Innocence",
+        "literary": "Amber's exclusive appearance:\nPlayful Innocence",
+        "type": "Item",
+        "rarity": "SSR"
+    },
+    "199013": {
+        "id": 199013,
+        "name": "Limited-Time Avatar:\nFestival Feast",
+        "desc": "Limited-Time Avatar:\nFestival Feast",
+        "literary": "Limited-Time Avatar:\nFestival Feast",
         "type": "Item",
         "rarity": "SSR"
     },
@@ -3357,6 +3479,13 @@
         "type": "Disc",
         "rarity": "SSR"
     },
+    "214004": {
+        "id": 214004,
+        "name": "Wisteria Dream",
+        "literary": "Look who's here—two little soft kittens on my knee?\nAfternoon tea time stretches far.\nSleep soundly. Let purple wisteria shade your beautiful dreams.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
     "214005": {
         "id": 214005,
         "name": "Sunlit Blossom",
@@ -3571,6 +3700,13 @@
         "id": 214041,
         "name": "A Gift for the Journey",
         "literary": "A sleigh full of gifts\nguided by the messenger\nheading toward the sunrise and its destination\nexcept—\nshouldn't reindeer be pulling it?!",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
+    "214043": {
+        "id": 214043,
+        "name": "The Bud of Change",
+        "literary": "Beneath the soil steeped in conspiracy and intrigue,\nWatchful, calculating gazes interweave.\nSomething is struggling to break through the earth.",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -3925,6 +4061,14 @@
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
+    "224004": {
+        "id": 224004,
+        "name": "Wisteria Dream Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "Look who's here—two little soft kittens on my knee?\u000bAfternoon tea time stretches far.\u000bSleep soundly. Let purple wisteria shade your beautiful dreams.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
     "224005": {
         "id": 224005,
         "name": "Sunlit Blossom Melody",
@@ -4170,6 +4314,14 @@
         "name": "A Gift for the Journey Melody",
         "desc": "Material required for the Crescendo of specific Discs.",
         "literary": "A sleigh full of gifts\u000bguided by the messenger\u000bheading toward the sunrise and its destination\u000bexcept—\u000bshouldn't reindeer be pulling it?!",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224043": {
+        "id": 224043,
+        "name": "The Bud of Change Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "Beneath soil steeped in conspiracy and intrigue,\u000bWatchful, calculating gazes interweave.\u000bSomething is struggling to break through the earth.",
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
@@ -4700,6 +4852,180 @@
     "510843": {
         "id": 510843,
         "name": "Blazing Sweep",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511001": {
+        "id": 511001,
+        "name": "Step Kicking",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "511002": {
+        "id": 511002,
+        "name": "Nimble Step",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "511003": {
+        "id": 511003,
+        "name": "Phantom Waltz",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "511004": {
+        "id": 511004,
+        "name": "Shadow Step",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "511005": {
+        "id": 511005,
+        "name": "High Risk",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "511006": {
+        "id": 511006,
+        "name": "Dark Pirouette",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511007": {
+        "id": 511007,
+        "name": "Flash Break",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511008": {
+        "id": 511008,
+        "name": "Gloomy Veil",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511009": {
+        "id": 511009,
+        "name": "Extended Shift",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "511010": {
+        "id": 511010,
+        "name": "Accurate Coincidence",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511011": {
+        "id": 511011,
+        "name": "Hunting Command",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "511012": {
+        "id": 511012,
+        "name": "Clone Trick",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511013": {
+        "id": 511013,
+        "name": "Announcement Time",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511021": {
+        "id": 511021,
+        "name": "Shadow Nail",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "511022": {
+        "id": 511022,
+        "name": "Shadow Flicker",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "511023": {
+        "id": 511023,
+        "name": "Twin Shadow",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "511024": {
+        "id": 511024,
+        "name": "Shadownight Descendant",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "511025": {
+        "id": 511025,
+        "name": "Drinking Party",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "511026": {
+        "id": 511026,
+        "name": "Typical Case",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511027": {
+        "id": 511027,
+        "name": "Joyous Whip",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511028": {
+        "id": 511028,
+        "name": "Step Sync",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "511029": {
+        "id": 511029,
+        "name": "Dark Resurgence",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511030": {
+        "id": 511030,
+        "name": "Flexible Operation",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511031": {
+        "id": 511031,
+        "name": "Shadow Waltz",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511032": {
+        "id": 511032,
+        "name": "Prime Stance",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511033": {
+        "id": 511033,
+        "name": "Special Care",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "511041": {
+        "id": 511041,
+        "name": "Instant Liquidation",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511042": {
+        "id": 511042,
+        "name": "Instant Peak",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "511043": {
+        "id": 511043,
+        "name": "Place Your Bets",
         "type": "Potential",
         "rarity": "SR"
     },
