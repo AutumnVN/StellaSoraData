@@ -8187,7 +8187,7 @@
                     "briefDesc": "Upon vanishing, Firenze's ##Shadow Clones#4002# will explode, dealing AoE DMG. The max limit of ##Shadow Clones#4002# increases for every other Umbra Trekker in the squad.",
                     "desc": "Upon vanishing, Firenze's ##Shadow Clones#4002# will explode, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Minion DMG.\u000bThe max limit of ##Shadow Clones#4002# increases by <color=#0abec5>&Param2&</color> for every other Umbra Trekker in the squad.",
                     "damageType": [
-                        "Minion"
+                        "Minion (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -21566,7 +21566,7 @@
                     "briefDesc": "After casting the Main Skill, deals additional DMG per second.",
                     "desc": "After casting &Param1& (Main Skill), deals <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG to nearby targets per second for a total of 6s.",
                     "damageType": [
-                        "Skill"
+                        "Skill (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -24199,7 +24199,7 @@
                     "briefDesc": "Casting the Main Skill grants Necro Energy. Auto Attacks consume Necro Energy to unleash Shadow Scythes.",
                     "desc": "When casting Sleight of Scythe (Main Skill), gains <color=#0abec5>2</color> stacks of Necro Energy.\u000bEach Auto Attack will automatically consume 2 stacks of Necro Energy to launch 3 Shadow Scythes, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Auto Attack DMG.",
                     "damageType": [
-                        "Auto Attack"
+                        "Auto Attack (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -24220,7 +24220,7 @@
                     "briefDesc": "The last strike of Auto Attack grants Necro Energy. Auto Attacks consume Necro Energy to unleash Shadow Scythes.",
                     "desc": "When launching the final strike of Midnight Cleave, gains <color=#0abec5>1</color> stack of Necro Energy.\u000bEach Auto Attack will automatically consume 2 stacks of Necro Energy to launch 3 Shadow Scythes, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Auto Attack DMG.",
                     "damageType": [
-                        "Auto Attack"
+                        "Auto Attack (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -24523,7 +24523,7 @@
                     "briefDesc": "The Support Skill unleashes multiple Shadow Scythes. Increases the &Param3& of horizontal sweeps and Shadow Scythes.",
                     "desc": "When launching a horizontal sweep with Bone Chain (Support Skill), unleashes 3 Shadow Scythes, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Skill DMG and inflicting ##Umbra Mark: Gloom#2018#.\u000bWhile casting Bone Chain (Support Skill), increases the &Param3& of the horizontal sweep and Shadow Scythes by <color=#0abec5>&Param2&</color>.",
                     "damageType": [
-                        "Skill"
+                        "Skill (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -24546,7 +24546,7 @@
                     "briefDesc": "The Support Skill unleashes multiple Shadow Scythes to the opposite direction. Increases the &Param3& of horizontal sweeps and Shadow Scythes.",
                     "desc": "When Coronis breaks the chains with Bone Chain (Support Skill), unleashes 3 Shadow Scythes to the opposite direction, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Skill DMG and inflicting ##Umbra Mark: Gloom#2018#.\u000bWhile casting Bone Chain (Support Skill), increases the &Param3& of the horizontal sweep and Shadow Scythes by <color=#0abec5>&Param2&</color>.",
                     "damageType": [
-                        "Skill"
+                        "Skill (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -24593,7 +24593,7 @@
                     "briefDesc": "Releases venom when breaking the chains with the Support Skill.",
                     "desc": "When Coronis breaks the chains with Bone Chain (Support Skill), releases venom that deals <color=#0abec5>&Param1& of ATK</color> as AoE Umbra Skill DMG every 0.5s for a total of 6s. Venom DMG can inflict ##Umbra Mark: Gloom#2018#.",
                     "damageType": [
-                        "Skill"
+                        "Skill (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -37959,7 +37959,7 @@
                     "briefDesc": "When the main Ignis Trekker deals DMG to a target with Butterfly Mark, there is a chance to spawn a Soulflare Butterfly.",
                     "desc": "When the main Ignis Trekker deals DMG to a target, for each stack of ##Butterfly Mark#2021# on the target, there is a <color=#0abec5>35%</color> chance to spawn a Soulflare Butterfly, dealing <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG. This effect can only be triggered once per second.",
                     "damageType": [
-                        "Skill"
+                        "Skill (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -38001,7 +38001,7 @@
                     "briefDesc": "Mindflare Butterfly has a chance to increase the main Ignis Trekker's DMG and spawn a ##Scorched Butterfly#2019#.",
                     "desc": "When the main Ignis Trekker deals DMG to a target, for each Mindflare Butterfly present, there is a 20% chance to increase the damage dealt by <color=#0abec5>&Param1&</color> and spawn a ##Scorched Butterfly#2019#, dealing <color=#0abec5>&Param2& of ATK</color> as Ignis Skill DMG. This effect can only be triggered once per sec.\u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
-                        "Skill"
+                        "Skill (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -50878,7 +50878,7 @@
                     "briefDesc": "Reduces Main Skill Cooldown. Pumpka Phantom will explode upon vanishing.",
                     "desc": "Reduces the Cooldown of Pumpka Pummel (Main Skill) by 2s. \u000bPumpka Phantom will explode upon vanishing, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Umbra Minion DMG.",
                     "damageType": [
-                        "Minion"
+                        "Minion (scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
