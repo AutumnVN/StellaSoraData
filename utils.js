@@ -534,6 +534,8 @@ function resolveParam(params) {
                 case '10KHdPct':
                     return iHateFloatingPointNumber(value, '/', 100) + '%';
                 case 'Enum':
+                    if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'PLAYER_ATTR_FIX') return PLAYER_ATTR_TYPE[value];
+                    if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'SPECIAL_ATTR_FIX') return SPECIAL_ATTR_TYPE[value];
                     return ATTR_TYPE[value];
                 case 'Pct':
                     return value + '%';
@@ -603,7 +605,9 @@ function resolveParam(params) {
                         results.push(iHateFloatingPointNumber(value, '/', 100) + '%');
                         break;
                     case 'Enum':
-                        results.push(ATTR_TYPE[value]);
+                        if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'PLAYER_ATTR_FIX') results.push(PLAYER_ATTR_TYPE[value]);
+                        else if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'SPECIAL_ATTR_FIX') results.push(SPECIAL_ATTR_TYPE[value]);
+                        else results.push(ATTR_TYPE[value]);
                         break;
                     case 'Pct':
                         results.push(value + '%');
