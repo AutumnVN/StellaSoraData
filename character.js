@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom } = require('./utils');
+const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -141,11 +141,13 @@ function getSkillDamageTypes(skillId) {
         if (!HITDAMAGE[p[2]]) continue;
 
         const type = HITDAMAGE[p[2]].DamageType;
+        const energyCharge = HITDAMAGE[p[2]].EnergyCharge;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
         const levelData = HITDAMAGE[p[2]].LevelData;
         const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
+        const energy = energyCharge && `${iHateFloatingPointNumber(energyCharge, '/', 10000)}e`
         const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
-        const combined = [from, scaleWith].filter(v => v).join(', ');
+        const combined = [energy, from, scaleWith].filter(v => v).join(', ');
 
         damageTypes.push(`${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''}`);
     }
@@ -398,11 +400,13 @@ function getPotentialDamageTypes(potId) {
         if (!HITDAMAGE[p[2]]) continue;
 
         const type = HITDAMAGE[p[2]].DamageType;
+        const energyCharge = HITDAMAGE[p[2]].EnergyCharge;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
         const levelData = HITDAMAGE[p[2]].LevelData;
         const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
+        const energy = energyCharge && `${iHateFloatingPointNumber(energyCharge, '/', 10000)}e`
         const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
-        const combined = [from, scaleWith].filter(v => v).join(', ');
+        const combined = [energy, from, scaleWith].filter(v => v).join(', ');
 
         damageTypes.push(`${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''}`);
     }
@@ -412,11 +416,13 @@ function getPotentialDamageTypes(potId) {
         if (!HITDAMAGE[p[2]]) continue;
 
         const type = HITDAMAGE[p[2]].DamageType;
+        const energyCharge = HITDAMAGE[p[2]].EnergyCharge;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
         const levelData = HITDAMAGE[p[2]].LevelData;
         const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
+        const energy = energyCharge && `${iHateFloatingPointNumber(energyCharge, '/', 10000)}e`
         const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
-        const combined = [from, scaleWith].filter(v => v).join(', ');
+        const combined = [energy, from, scaleWith].filter(v => v).join(', ');
 
         damageTypes.push(`${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''} (hidden)`);
     }
