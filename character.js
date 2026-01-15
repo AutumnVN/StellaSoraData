@@ -143,8 +143,11 @@ function getSkillDamageTypes(skillId) {
         const type = HITDAMAGE[p[2]].DamageType;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
         const levelData = HITDAMAGE[p[2]].LevelData;
+        const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
+        const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
+        const combined = [from, scaleWith].filter(v => v).join(', ');
 
-        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]}${[5, 2, 4].includes(levelData) ? `, scale with ${SKILL_SLOT_TYPE[levelData]}` : ''})` : ''}`);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''}`);
     }
 
     return [...new Set(damageTypes)];
@@ -397,8 +400,11 @@ function getPotentialDamageTypes(potId) {
         const type = HITDAMAGE[p[2]].DamageType;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
         const levelData = HITDAMAGE[p[2]].LevelData;
+        const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
+        const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
+        const combined = [from, scaleWith].filter(v => v).join(', ');
 
-        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]}${[5, 2, 4].includes(levelData) ? `, scale with ${SKILL_SLOT_TYPE[levelData]}` : ''})` : ''}`);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''}`);
     }
 
     for (const param of hiddenParams) {
@@ -408,8 +414,11 @@ function getPotentialDamageTypes(potId) {
         const type = HITDAMAGE[p[2]].DamageType;
         const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
         const levelData = HITDAMAGE[p[2]].LevelData;
+        const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
+        const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
+        const combined = [from, scaleWith].filter(v => v).join(', ');
 
-        damageTypes.push(`${DAMAGE_TYPE[type]}${skillSlotType ? ` (from ${SKILL_SLOT_TYPE[skillSlotType]}${[5, 2, 4].includes(levelData) ? `, scale with ${SKILL_SLOT_TYPE[levelData]}` : ''})` : ''} (hidden)`);
+        damageTypes.push(`${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''} (hidden)`);
     }
 
     return [...new Set(damageTypes)];
