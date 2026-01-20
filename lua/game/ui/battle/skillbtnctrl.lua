@@ -102,6 +102,7 @@ function SkillBtnCtrl:Awake()
 	self:SetActionLayout()
 	self:SetCDTextSize()
 	self._mapNode.fx_tip:SetActive(false)
+	self.bChargeLoading_CurrentIsActive = false
 end
 function SkillBtnCtrl:InitSkillBtn(EET, icon, bShowSection, charId, actionId, bIsSupportChar)
 	self:SetMainAlpha(true)
@@ -249,8 +250,12 @@ function SkillBtnCtrl:SetCD(percent, second, bBeginResume)
 		NovaAPI.SetTMPSourceText(self._mapNode.TMP_CD, string.format("%.1f", second))
 	end
 	self._mapNode.TMP_CD.transform.localScale = bBeginResume == true and Vector3.one or Vector3.zero
-	self._mapNode.Charge_Max_glow:SetActive(self.bInCD and not self.bInCharge)
-	self._mapNode.Transform_ChargeLoading.gameObject:SetActive(self.bInCD and not self.bInCharge)
+	local bTargetIsActive = self.bInCD and not self.bInCharge
+	if self.bChargeLoading_CurrentIsActive ~= bTargetIsActive then
+		self.bChargeLoading_CurrentIsActive = bTargetIsActive
+		self._mapNode.Charge_Max_glow:SetActive(self.bChargeLoading_CurrentIsActive)
+		self._mapNode.Transform_ChargeLoading.gameObject:SetActive(self.bChargeLoading_CurrentIsActive)
+	end
 end
 function SkillBtnCtrl:SetCharge(percent, second)
 	if second == 0 and self.ActionId ~= SKILL_ULTRA then
@@ -278,7 +283,7 @@ function SkillBtnCtrl:SetCharge(percent, second)
 	NovaAPI.SetImageFillAmount(self._mapNode.imageChargeLoading[2], percent)
 	NovaAPI.SetTMPSourceText(self._mapNode.TMP_Charge, tostring(math.floor(second)))
 end
-function SkillBtnCtrl:SetForbidden(bForbidden, bAvailable)
+function SkillBtnCtrl:SetForbidden(bForbidden)
 	self._mapNode.transformX.localScale = bForbidden == true and Vector3.one or Vector3.zero
 end
 function SkillBtnCtrl:OpenUltraSpecialFX(mTmpActionPosId, isShow)

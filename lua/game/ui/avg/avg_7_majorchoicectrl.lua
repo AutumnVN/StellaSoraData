@@ -470,6 +470,11 @@ function Avg_7_MajorChoiceCtrl:OnBtnClick_MajorChoice(btn)
 			end
 			self.tbAnimChoice[i]:Play(sChoiceAnim)
 		end
+		self.tbLogData.nType = AllEnum.AvgLogType.Choice
+		self.tbLogData.sAvgId = nil
+		self.tbLogData.sContent = ProcAvgTextContent(self.tbDesc[self.nChosenIdx], self._panel.nCurLanguageIdx)
+		self.tbLogData.sVoice = nil
+		EventManager.Hit(EventId.AvgMarkLog, self.tbLogData)
 		EventManager.Hit(EventId.TemporaryBlockInput, 1.3)
 		self:AddTimer(1, 1.3, "_DoClickMajorChoice", true, true, true)
 	end
@@ -496,11 +501,6 @@ function Avg_7_MajorChoiceCtrl:_DoClickMajorChoice()
 		NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.cgBgRole, false)
 		NovaAPI.SetCanvasGroupInteractable(self._mapNode.cgBgRole, false)
 		self._panel:SetMajorChoiceJumpTo(self.nCurGroupId, self.nChosenIdx)
-		self.tbLogData.nType = AllEnum.AvgLogType.Choice
-		self.tbLogData.sAvgId = nil
-		self.tbLogData.sContent = ProcAvgTextContent(self.tbDesc[self.nChosenIdx], self._panel.nCurLanguageIdx)
-		self.tbLogData.sVoice = nil
-		EventManager.Hit(EventId.AvgMarkLog, self.tbLogData)
 	end
 end
 function Avg_7_MajorChoiceCtrl:AddGamepadUINode()

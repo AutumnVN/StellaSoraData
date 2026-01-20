@@ -2680,12 +2680,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Ugh... Hiccup! Ooh... I can todally handle... a lil spice like dis...",
+			"Hiss...==W== Gah...==W== A little spice ...==W== is no big ...==W== deal \226\128\166==W== to me!",
 			1,
 			"",
 			false,
 			"",
-			"Ugh... Hiccup! Ooh... I can todally handle... a lil spice like dis...",
+			"Ugh\226\128\166==W== Hiccup!==W== Uhh\226\128\166==W== I can todally handle...==W== a lil spice==W== like dis...",
 			""
 		}
 	},
@@ -2694,12 +2694,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"SO spicy! Hiccup! Ugh... whooo ordered dis hot pot...",
+			"Uhhh So spicy!==W== Ugh... Whooo \226\128\166==W== ordered \226\128\166==W== dis \226\128\166==W== liquid fire...",
 			0,
 			"",
 			false,
 			"",
-			"SO spicy! Hiccup! Ugh... whooo ordered dis hot pot...",
+			"SO spicy! Waah!==W== Eek...==W== Ugh...==W== Whooo ordered==W== dis hot pot...",
 			""
 		}
 	},
@@ -2734,7 +2734,7 @@ return {
 			},
 			"",
 			{
-				"Point at Shimiao",
+				"Are you alright?",
 				"",
 				"",
 				""
@@ -2775,12 +2775,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Wuz id you? Id wuz, wuzn id? You can'd fool me! Hiccup!",
+			"Wuz id you?==W== Id wuz, wuzn id?==W== You can'd fool me!==W== Hehe\226\128\166==W== Am I awesome?",
 			1,
 			"",
 			false,
 			"",
-			"Wuz id you? Id wuz, wuzn id? You can'd fool me! Hiccup!",
+			"Wuz id you Boss?==W== Id wuz, wuzn id?==W== You can'd fool me!==W== Hiccup!",
 			""
 		}
 	},
@@ -2789,12 +2789,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Isso spicy! Bud I love it!",
+			"Isso spicy!==W== Bud... I love it!",
 			0,
 			"",
 			false,
 			"",
-			"Isso spicy! Bud I love it!",
+			"Issooo spicy!==W== Bud==W== I love it!!!!!",
 			""
 		}
 	},
@@ -2870,12 +2870,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Drung? Uhh... Hiccup! Who, me? Of courz I'm nod!",
+			"Drung?==W== Uhh...==W== Me?==W== No!==W== Of courz I'm nod!",
 			1,
 			"",
 			false,
 			"",
-			"Drung? Uhh... Hiccup! Who, me? Of courz I'm nod!",
+			"Drung?==W== Uhh... Hiccup!==W== Who, me?==W== Of courz I'm nod!",
 			""
 		}
 	},
@@ -2884,12 +2884,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Lissen up. I am da most bestest... uh, model employee? Of da Baize Byoo-roh, ohkay?",
+			"Lissen up!==W== I am da most bestest... uh, model employee!==W== Of da Baize Byoo-roh, ohkay?",
 			0,
 			"",
 			false,
 			"",
-			"Lissen up. I am da most bestest... uh, model employee? Of da Baize Byoo-roh, ohkay?",
+			"Lissen up.==W== You know==W== dat Baize Byoo-roh?==W== I am da most bestest\226\128\166==W== model?==W== employee of them!",
 			""
 		}
 	},
@@ -2924,7 +2924,7 @@ return {
 			},
 			"",
 			{
-				"Okay, I get it! Just take it easy!",
+				"Okay, I get it! Just don't push yourself!",
 				"",
 				"",
 				""
@@ -2965,12 +2965,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Take id easy? Ughh... Whaddayu even talging about? Take id easy?",
+			"Push myself?==W== I'm not!==W== Ah...==W== Ugh...==W== I'm not ...==W== pushing myself\226\128\166",
 			1,
 			"",
 			false,
 			"",
-			"Take id easy? Ughh... Whaddayu even talging about? Take id easy?",
+			"Push myself?==W== Uuh\226\128\166==W== I'm not!==W== I \226\128\166==W== am not\226\128\166==W== Am not\226\128\166",
 			""
 		}
 	},
@@ -2979,12 +2979,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Waaaaaah! I am taking id easy! Waaaaah!",
+			"That's right!==W== I NEVER push myself!",
 			0,
 			"",
 			false,
 			"",
-			"Waaaaaah! I am taking id easy! Waaaaah!",
+			"Waaaaaah!==W== I'm not pushing myself!==W== AM NOT!!",
 			""
 		}
 	},
@@ -3060,12 +3060,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"I... I'm always trying so hard to meed erryone's expecdations! Waaah!",
+			"I just...==W== I wanna meed erryone's expecdations\226\128\166==W== So...==W== So I worked my hardest\226\128\166",
 			1,
 			"",
 			false,
 			"",
-			"I... I'm always trying so hard to meed erryone's expecdations! Waaah!",
+			"I...==W== I==W== wanna meed erryone's expecdations\226\128\166==W== So I always worked my hardest\226\128\166",
 			""
 		}
 	},
@@ -3074,12 +3074,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"And when I do good job, errryone says \"oh wow, nice job, Shimiao\" and then they trust me more...",
+			"And when==W== I do good job,==W== errryone says \"oh wow, nice job, Shimiao\"==W== and then==W== they trust me more\226\128\166",
 			0,
 			"",
 			false,
 			"",
-			"And when I do good job, errryone says \"oh wow, nice job, Shimiao\" and then they trust me more...",
+			"And==W== when I do good job,==W== errryone says==W== \"oh wow,==W== nice job, Shimiao\"==W== and then they trust me more...",
 			""
 		}
 	},
@@ -3114,7 +3114,7 @@ return {
 			},
 			"",
 			{
-				"Isn't that a good thing?",
+				"You're under too much pressure.",
 				"",
 				"",
 				""
@@ -3155,12 +3155,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Bud den... den I gotta work so, so, so hard to make sure erryone is happy...",
+			"I can't let everyone down\226\128\166==W== I have to ...==W== work harder==W== and even harder\226\128\166",
 			1,
 			"",
 			false,
 			"",
-			"Bud den... den I gotta work so, so, so hard to make sure erryone is happy...",
+			"That's why \226\128\166==W== I can't let everyone down\226\128\166==W== I have to work harder, harder, harder,==W== and even harder\226\128\166",
 			""
 		}
 	},
@@ -3169,12 +3169,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"But! Who'm I supposed to asg for help when I need it? Waaah!",
+			"But!==W== I get tired!==W== I really, really do!==W== I want someone I can lean on, too!",
 			0,
 			"",
 			false,
 			"",
-			"But! Who'm I supposed to asg for help when I need it? Waaah!",
+			"But!==W== Who'm I supposed to asg for help==W== when I need it?!",
 			""
 		}
 	},
@@ -3250,12 +3250,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Heh... Hehe... Sankyu, aww, I'm so happy. \226\153\170",
+			"Heh... Hehe\226\128\166==W== Boss\226\128\166==W== Thankyu, aww, I'm so happy. \226\153\170",
 			1,
 			"",
 			false,
 			"",
-			"Heh... Hehe... Sankyu, aww, I'm so happy. \226\153\170",
+			"Heh...==W== Hehe...==W== I got praised by Boss <size=60>\226\153\170</size>",
 			""
 		}
 	},
@@ -3264,12 +3264,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Iss like I'm always da one takin' care of people, ya know? Iss nice to hear someone say something nice aboud me.",
+			"Iss like I'm always da one takin' care of people\226\128\166==W== So iss nice to hear someone==W== say something nice==W== aboud me\226\128\166",
 			0,
 			"",
 			false,
 			"",
-			"Iss like I'm always da one takin' care of people, ya know? Iss nice to hear someone say something nice aboud me.",
+			"Iss like==W== I'm always da one takin' care of people\226\128\166==W== But get praised like dis\226\128\166==W== I'm truly,==W== incredibly happy~",
 			""
 		}
 	},
@@ -3345,12 +3345,12 @@ return {
 		param = {
 			11,
 			"avg1_113",
-			"Ugh... Boss... Boss...",
+			"Whaaah\226\128\166==W== Boss...==W== Boss...",
 			0,
 			"",
 			false,
 			"",
-			"Ugh... Boss... Boss...",
+			"Whaaah\226\128\166==W== Boss...==W== Boss...",
 			""
 		}
 	},

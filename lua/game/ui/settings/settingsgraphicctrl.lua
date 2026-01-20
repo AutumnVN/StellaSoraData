@@ -202,7 +202,7 @@ end
 function SettingsGraphicCtrl:ForceChange1080p(nBefore, nAfter)
 	if nBefore == 1 and nAfter == 2 then
 		local nCount = #self.tbResolution
-		local nMax = 4 <= nCount and 4 or nCount
+		local nMax = nCount
 		for i = 1, nMax do
 			if string.find(self.tbResolution[i], "1920") then
 				EventManager.Hit("SettingsSetResolution", i)

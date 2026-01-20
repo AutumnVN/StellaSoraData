@@ -14375,7 +14375,7 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {4.0}
+		param = {7.0}
 	},
 	{
 		cmd = "SetAudio",

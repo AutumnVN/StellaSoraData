@@ -33,6 +33,7 @@ local AvgPreset = {
 		"city_park_night_winter",
 		"city_prison",
 		"city_room_inside_daylight",
+		"city_room_inside_night_winter",
 		"city_room_inside_xmas",
 		"city_street_daylight",
 		"city_street_daylight_winter",
@@ -63,6 +64,7 @@ local AvgPreset = {
 		"field_town_daylight",
 		"flatlands_daylight",
 		"flatlands_dusk",
+		"flatlands_night",
 		"flavio_city_livehouse_a",
 		"flavio_city_livehouse_b",
 		"flavio_city_street",
@@ -89,6 +91,7 @@ local AvgPreset = {
 		"hotel_guest_room_night",
 		"hotel_senior_office",
 		"hotpot_inside",
+		"hotpot_inside_night",
 		"japanese_pond_daylight",
 		"jewelry_store_inside",
 		"luckyoasis_forest_daylight",
@@ -249,6 +252,10 @@ local AvgPreset = {
 		"story_event_02_005",
 		"story_event_02_006",
 		"story_event_02_007",
+		"story_event_03_001",
+		"story_event_03_002",
+		"story_event_03_003",
+		"story_event_03_004",
 		"story_main_00_001",
 		"story_main_00_002",
 		"story_main_00_003_FP",
@@ -416,6 +423,7 @@ local AvgPreset = {
 		"story_main_06_026",
 		"story_main_06_027",
 		"story_main_06_028",
+		"story_main_06_029",
 		"story_main_be_01_001_FP",
 		"story_main_be_01_001_MP",
 		"story_main_be_01_002",
@@ -469,6 +477,8 @@ local AvgPreset = {
 		"4038_B",
 		"4015_B",
 		"4017_B",
+		"4044_B",
+		"4016_B",
 		"4048_B"
 	},
 	BgEffectResName = {
@@ -5151,6 +5161,10 @@ local AvgPreset = {
 		},
 		{
 			"fx_avg_elf_magic",
+			""
+		},
+		{
+			"fx_avg_snowstorm_lp",
 			""
 		},
 		{

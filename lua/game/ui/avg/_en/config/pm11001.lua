@@ -48,8 +48,8 @@ return {
 	{
 		cmd = "SetPhoneMsg",
 		param = {
-			3,
-			"avg3_101",
+			4,
+			"avg3_100",
 			"emoji_great_a",
 			"0",
 			"",

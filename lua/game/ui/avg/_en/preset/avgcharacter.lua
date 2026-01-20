@@ -14,7 +14,8 @@ return {
 	{
 		id = "avg1_103",
 		name = "Amber",
-		name_bg_color = "#99d2d9"
+		name_bg_color = "#99d2d9",
+		ver = "1.0.0"
 	},
 	{
 		id = "avg1_1994",
@@ -263,6 +264,24 @@ return {
 		name_bg_color = "#c5bbb5"
 	},
 	{
+		id = "avg1_151",
+		name = "Yunshu",
+		name_bg_color = "#476370",
+		ver = "1.6.0"
+	},
+	{
+		id = "avg1_152",
+		name = "Jiyue",
+		name_bg_color = "#fcce7f",
+		ver = "1.6.0"
+	},
+	{
+		id = "avg1_153",
+		name = "Danyun",
+		name_bg_color = "#8c322c",
+		ver = "1.6.0"
+	},
+	{
 		id = "avg1_155",
 		name = "Shia",
 		name_bg_color = "#c4a5e6"
@@ -285,7 +304,8 @@ return {
 	{
 		id = "avg1_159",
 		name = "Coronis",
-		name_bg_color = "#c553a5"
+		name_bg_color = "#c553a5",
+		ver = "1.6.0"
 	},
 	{
 		id = "avg2_001",
@@ -305,7 +325,8 @@ return {
 	{
 		id = "avg2_952",
 		name = "Laifu",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#0ABEC5",
+		ver = "1.6.0"
 	},
 	{
 		id = "avg2_953",
@@ -974,7 +995,7 @@ return {
 	},
 	{
 		id = "avg3_206",
-		name = "Umbrara",
+		name = "Noctiluna",
 		name_bg_color = "#394444"
 	},
 	{
@@ -2459,6 +2480,11 @@ return {
 	{
 		id = "avg4_101",
 		name = "Little Laru Bright Ver",
+		name_bg_color = "#0ABEC5"
+	},
+	{
+		id = "avg4_102",
+		name = "Mysterious Figure",
 		name_bg_color = "#0ABEC5"
 	},
 	{

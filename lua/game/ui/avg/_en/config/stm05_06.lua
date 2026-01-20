@@ -8358,7 +8358,7 @@ return {
 	{cmd = "SetGoOn"},
 	{
 		cmd = "Wait",
-		param = {1.0}
+		param = {0.8}
 	},
 	{
 		cmd = "SetAudio",
@@ -8394,6 +8394,36 @@ return {
 			nil
 		}
 	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "Wait",
+		param = {0.5}
+	},
+	{
+		cmd = "CtrlChar",
+		param = {
+			"avg3_134",
+			"a",
+			"004",
+			"none",
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			"none",
+			"none",
+			"OutSine",
+			0,
+			nil,
+			false,
+			0.35,
+			true,
+			nil
+		}
+	},
 	{
 		cmd = "SetTalk",
 		param = {
@@ -8406,6 +8436,31 @@ return {
 			"",
 			"This is the manifest for the flour we bought straight from Production yesterday.",
 			""
+		}
+	},
+	{
+		cmd = "CtrlChar",
+		param = {
+			"avg3_134",
+			"a",
+			"002",
+			"none",
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			"none",
+			"none",
+			"OutSine",
+			0,
+			nil,
+			false,
+			0.35,
+			true,
+			nil
 		}
 	},
 	{

@@ -4,7 +4,8 @@ return {
 		icon = "Icon/Head/head_10301_S",
 		name = "Amber",
 		landmark = "Roof of the Lucky Oasis",
-		signature = "Left on read is a crime!!!"
+		signature = "Left on read is a crime!!!",
+		ver = "1.0.0"
 	},
 	{
 		id = 107,

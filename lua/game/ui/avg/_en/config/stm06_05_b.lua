@@ -9010,7 +9010,7 @@ return {
 			"",
 			false,
 			"",
-			"I am Cosson of the Senate, Commander of the 17th Legion. And which company, pray tell, do you represent?",
+			"I am Cosson of the Senate, Commander of the 3rd Legion. And which company, pray tell, do you represent?",
 			""
 		}
 	},
