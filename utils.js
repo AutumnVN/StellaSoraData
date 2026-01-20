@@ -670,7 +670,7 @@ function formatEffectType(id, type, paramType) {
     const attrTypeStr = ATTR_TYPE[type];
     const paramTypeStr = PARAM_TYPE[paramType];
 
-    result += effectTypeStr === 'ATTR_FIX' ? '' : effectTypeStr;
+    result += effectTypeStr.replace('ATTR_FIX', '');
 
     if (attrTypeStr) {
         if (effectTypeStr !== 'ATTR_FIX') {
