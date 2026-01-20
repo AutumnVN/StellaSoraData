@@ -132,8 +132,8 @@ const PARAM_TYPE = {
     3: 'abs',
     4: 'SET_MAX_PERCENTAGE_VALUE',
     5: 'SET_MAX_ABSOLUTE_VALUE',
-    6: '%',
-    7: 'abs',
+    6: '%*',
+    7: 'abs*',
     8: 'SET_PERCENTAGE_VALUE',
     9: 'SET_ABSOLUTE_VALUE'
 };
@@ -670,7 +670,7 @@ function formatEffectType(id, type, paramType) {
     const attrTypeStr = ATTR_TYPE[type];
     const paramTypeStr = PARAM_TYPE[paramType];
 
-    result += effectTypeStr.replace('ATTR_FIX', '');
+    result += effectTypeStr === 'ATTR_FIX' ? '' : effectTypeStr;
 
     if (attrTypeStr) {
         if (effectTypeStr !== 'ATTR_FIX') {
