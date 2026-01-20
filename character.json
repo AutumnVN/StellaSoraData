@@ -6585,7 +6585,7 @@
                             3
                         ],
                         "effectType": [
-                            "HITTED_ADDITIONAL_ATTR_FIX:Skill DMG (base)"
+                            "HITTED_ADDITIONAL_:Skill DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [
@@ -8154,7 +8154,7 @@
                         "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Skill DMG (%*)"
+                        "ELEMENTTYPE_:Skill DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8264,7 +8264,7 @@
                     "desc": "When Firenze deals DMG with an Auto Attack, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to <color=#ec6d21>&Param4&</color> times. The effect ends if Elegant Parade (Main Skill) is cast.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Skill DMG (%*)"
+                        "ELEMENTTYPE_:Skill DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8289,7 +8289,7 @@
                     "desc": "##Shadow Clone#4002# lasts <color=#ec6d21>&Param1&</color>s longer on the battlefield. Also increases &Param2& by <color=#ec6d21>&Param3&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%*)"
+                        "ELEMENTTYPE_:Minion DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8313,7 +8313,7 @@
                     "desc": "After Firenze casts Elegant Parade (Main Skill), her next Auto Attack directly casts the last strike.\u000bAlso increases ##Shadow Clone#4002#'s &Param1& by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%*)"
+                        "ELEMENTTYPE_:Minion DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8407,7 +8407,7 @@
                     "desc": "Firenze can dodge through barriers.\u000bIncreases ##Shadow Clone#4002#'s &Param1& by <color=#ec6d21>&Param2&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%*)"
+                        "ELEMENTTYPE_:Minion DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8432,7 +8432,7 @@
                     "desc": "Firenze absorbs all ##Shadow Clones#4002# when casting Personal Tuition (Ultimate). Each ##Shadow Clone#4002# absorbed increases Ultimate DMG by <color=#ec6d21>&Param1&</color>, up to &Param2& stacks.\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Ultimate DMG (%*)"
+                        "ELEMENTTYPE_:Ultimate DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8480,7 +8480,7 @@
                     "desc": "When Firenze triggers an ##Umbra Mark#1019#, increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks. The effect ends if Personal Tuition (Ultimate) is cast.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Ultimate DMG (%*)"
+                        "ELEMENTTYPE_:Ultimate DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8648,7 +8648,7 @@
                     "desc": "Increases ##Shadow Clone#4002#'s &Param3& by <color=#ec6d21>&Param2&</color>. Reduces the intervals between their sprint attacks by <color=#ec6d21>&Param1&%</color>.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%*)"
+                        "ELEMENTTYPE_:Minion DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8672,7 +8672,7 @@
                     "desc": "When a ##Shadow Clone#4002# deals damage, increases all present ##Shadow Clones#4002#' &Param3& by <color=#ec6d21>&Param1&</color>, up to &Param4& stacks.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%*)"
+                        "ELEMENTTYPE_:Minion DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -8697,7 +8697,7 @@
                     "desc": "Increases ##Shadow Clone#4002#'s &Param2& by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%*)"
+                        "ELEMENTTYPE_:Minion DMG (%*)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -51244,7 +51244,7 @@
                     "desc": "Energy Charge Efficiency +<color=#ec6d21>&Param1&</color> for &Param2&s when Mistique casts the Main Skill or Support Skill.\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
-                        "PLAYER_ATTR_FIX:FRONT_ADD_ENERGY (base)"
+                        "PLAYER_:FRONT_ADD_ENERGY (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -75143,7 +75143,7 @@
                     "desc": "When Colonel Walnut and General Curly deal damage to targets with ##Ignis Mark#1016#, they have a &Param1& chance to gain 1 stack of Morale and increase their &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.\u000bParam5: &Param5& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -75369,7 +75369,7 @@
                     "desc": "While transformed into Dame Laru, casting &Param1& increases her &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Ultimate DMG (%)"
+                        "ELEMENTTYPE_:Ultimate DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -75394,7 +75394,7 @@
                     "desc": "While transformed into Dame Laru, increases her &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s each time &Param1& deals DMG, up to &Param5& stacks.\u000bThis effect is removed if &Param1& is cast.",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Ultimate DMG (%)"
+                        "ELEMENTTYPE_:Ultimate DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -75468,7 +75468,7 @@
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Skill DMG Taken (%)"
+                        "ELEMENTTYPE_:Skill DMG Taken (%)"
                     ],
                     "addAttrType": [
                         "Skill DMG (base)"
@@ -75501,7 +75501,7 @@
                         "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -75529,7 +75529,7 @@
                         "Minion (from Skill, scale with Skill)"
                     ],
                     "effectType": [
-                        "ELEMENTTYPE_ATTR_FIX:Minion Crit Rate (%)"
+                        "ELEMENTTYPE_:Minion Crit Rate (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -75579,7 +75579,7 @@
                     "damageType": [],
                     "effectType": [
                         "ATK (%)",
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%)"
+                        "ELEMENTTYPE_:Minion DMG (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -75650,7 +75650,7 @@
                     "damageType": [],
                     "effectType": [
                         "Attack Speed (base)",
-                        "ELEMENTTYPE_ATTR_FIX:Minion DMG (%)",
+                        "ELEMENTTYPE_:Minion DMG (%)",
                         "ATK (%)"
                     ],
                     "addAttrType": [],
