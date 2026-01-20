@@ -8285,8 +8285,8 @@
                 {
                     "id": 511009,
                     "name": "Extended Shift",
-                    "briefDesc": "Firenze's ##Shadow Clone#4002# lasts longer on the battlefield. Also increases &Param2&.",
-                    "desc": "Firenze's ##Shadow Clone#4002# lasts <color=#ec6d21>&Param1&</color>s longer on the battlefield. Also increases &Param2& by <color=#ec6d21>&Param3&</color>.",
+                    "briefDesc": "##Shadow Clone#4002# lasts longer on the battlefield. Also increases &Param2&.",
+                    "desc": "##Shadow Clone#4002# lasts <color=#ec6d21>&Param1&</color>s longer on the battlefield. Also increases &Param2& by <color=#ec6d21>&Param3&</color>.",
                     "damageType": [],
                     "effectType": [
                         "ELEMENTTYPE_ATTR_FIX:Minion DMG (%*)"
@@ -24772,7 +24772,7 @@
                     "id": 511832,
                     "name": "Medical Research",
                     "briefDesc": "When the Support Skill deals DMG, reduces the target's Resilience. Increases Coronis' &Param3&.",
-                    "desc": "When Coronis deals DMG with Bone Chain (Support Skill), reduces the target's Resilience by <color=#ec6d21>&Param2&</color>. This effect can only be triggered once every 12s.\u000bIncreases Coronis' &Param3& by <color=#ec6d21>&Param1&</color>.",
+                    "desc": "When Coronis deals DMG with Bone Chain (Support Skill), reduces the target's Resilience by &Param2&. This effect can only be triggered once every 12s.\u000bIncreases Coronis's &Param3& by <color=#ec6d21>&Param1&</color>.",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
