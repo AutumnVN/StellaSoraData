@@ -380,6 +380,51 @@ const MONSTER_EPIC_TYPE = {
     8: 'Raid'
 };
 
+const STATE_TYPE = {
+    0: 'NONE',
+    1: 'CHAOS',
+    2: 'CHAOS_WEAKENED',
+    3: 'SUA',
+    4: 'FROZEN',
+    5: 'FROZEN_WEAKENED',
+    6: 'STUN',
+    7: 'STUN_WEAKENED',
+    8: 'DAMAGE_IMM',
+    9: 'BONDAGE',
+    10: 'BONDAGE_WEAKENED',
+    11: 'SEARCHED_IMMUNITY',
+    12: 'HIDE_MODEL',
+    13: 'CLOSE_MOVE_BLOCK',
+    14: 'SNEAK',
+    15: 'INVINCIBLE',
+    16: 'IMMUNE_KILL',
+    17: 'CURE_IMM',
+    18: 'BLINDNESS',
+    19: 'BLINDNESS_WEAKENED',
+    20: 'SLEEP',
+    21: 'SLEEP_WEAKENED',
+    22: 'CHARM',
+    23: 'CHARM_WEAKENED',
+    24: 'TERROR',
+    25: 'TERROR_WEAKENED',
+    26: 'TAUNT',
+    27: 'TAUNT_WEAKENED',
+    28: 'SILENCE',
+    29: 'SILENCE_WEAKENED',
+    30: 'REDUCE_FOV',
+    31: 'IMMUNE_CONTROL',
+    32: 'HIDE_OUT',
+    33: 'BATTLE_OUT',
+    34: 'DYINGSUA',
+    35: 'DODGE_CROSS_OBSTACLE',
+    36: 'PENETRATE',
+    37: 'FORBIDDEN_RUSH',
+    38: 'UNPARALLELED',
+    39: 'INDEFENSE',
+    40: 'DODGE',
+    41: 'MAX'
+};
+
 function collectParamsFrom(obj) {
     if (!obj) return [];
 
@@ -536,6 +581,7 @@ function resolveParam(params) {
                 case 'Enum':
                     if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'PLAYER_ATTR_FIX') return PLAYER_ATTR_TYPE[value];
                     if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'SPECIAL_ATTR_FIX') return SPECIAL_ATTR_TYPE[value];
+                    if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'STATE_CHANGE') return STATE_TYPE[value];
                     return ATTR_TYPE[value];
                 case 'Pct':
                     return value + '%';
@@ -607,6 +653,7 @@ function resolveParam(params) {
                     case 'Enum':
                         if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'PLAYER_ATTR_FIX') results.push(PLAYER_ATTR_TYPE[value]);
                         else if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'SPECIAL_ATTR_FIX') results.push(SPECIAL_ATTR_TYPE[value]);
+                        else if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'STATE_CHANGE') results.push(STATE_TYPE[value]);
                         else results.push(ATTR_TYPE[value]);
                         break;
                     case 'Pct':
@@ -681,6 +728,8 @@ function formatEffectType(id, type, paramType) {
             result += `${SPECIAL_ATTR_TYPE[type]}`;
         } else if (effectTypeStr === 'PLAYER_ATTR_FIX') {
             result += `${PLAYER_ATTR_TYPE[type]}`;
+        } else if (effectTypeStr === 'STATE_CHANGE') {
+            result += `${STATE_TYPE[type]}`;
         } else if (effectTypeStr.includes('ATTR_FIX') || effectTypeStr === 'ADDBUFF') {
             result += `${attrTypeStr}`;
         } else {
