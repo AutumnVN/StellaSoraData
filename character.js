@@ -32,6 +32,7 @@ const LANG_DATINGBRANCH = require('./EN/language/en_US/DatingBranch.json');
 const LANG_FORCE = require('./EN/language/en_US/Force.json');
 const LANG_CHARACTERDES = require('./EN/language/en_US/CharacterDes.json');
 const LANG_CHARACTERARCHIVEBASEINFO = require('./EN/language/en_US/CharacterArchiveBaseInfo.json');
+const characterId = require('./characterid.json');
 
 const character = {};
 
@@ -120,7 +121,7 @@ const character = {};
             skillUpgrade: getSkillUpgrades(id),
         };
 
-        if (character[id].name === '???') character[id].name = `ID_${id}`;
+        if (character[id].name === '???') character[id].name = `${id} ${characterId[id] || ''}`;
     }
 
     writeFileSync('./character.json', JSON.stringify(character, null, 4));

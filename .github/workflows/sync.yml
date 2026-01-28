@@ -28,10 +28,10 @@ jobs:
         git remote add upstream https://github.com/Hiro420/StellaSoraData
         git fetch upstream
         git merge --allow-unrelated-histories -X theirs --no-edit upstream/main
+        node characterid.js
         node character.js
         node disc.js
         node gacha.js
-        # node emblem.js
         node item.js
         node raid.js
         node blitz.js
@@ -39,6 +39,7 @@ jobs:
         node word.js
         node ascension.js
         node arena.js
+        # node emblem.js
         git add .
         if git diff --cached --quiet; then
           exit 0

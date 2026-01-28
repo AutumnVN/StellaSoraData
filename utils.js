@@ -579,9 +579,11 @@ function resolveParam(params) {
                 case '10KHdPct':
                     return iHateFloatingPointNumber(value, '/', 100) + '%';
                 case 'Enum':
-                    if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'PLAYER_ATTR_FIX') return PLAYER_ATTR_TYPE[value];
-                    if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'SPECIAL_ATTR_FIX') return SPECIAL_ATTR_TYPE[value];
-                    if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'STATE_CHANGE') return STATE_TYPE[value];
+                    if (p[0].includes('Effect') && EFFECTVALUE[p[2]]?.EffectType) {
+                        if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'PLAYER_ATTR_FIX') return PLAYER_ATTR_TYPE[value];
+                        if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'SPECIAL_ATTR_FIX') return SPECIAL_ATTR_TYPE[value];
+                        if (EFFECT_TYPE[EFFECTVALUE[p[2]]?.EffectType] === 'STATE_CHANGE') return STATE_TYPE[value];
+                    }
                     return ATTR_TYPE[value];
                 case 'Pct':
                     return value + '%';
@@ -651,10 +653,22 @@ function resolveParam(params) {
                         results.push(iHateFloatingPointNumber(value, '/', 100) + '%');
                         break;
                     case 'Enum':
-                        if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'PLAYER_ATTR_FIX') results.push(PLAYER_ATTR_TYPE[value]);
-                        else if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'SPECIAL_ATTR_FIX') results.push(SPECIAL_ATTR_TYPE[value]);
-                        else if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'STATE_CHANGE') results.push(STATE_TYPE[value]);
-                        else results.push(ATTR_TYPE[value]);
+                        if (p[0].includes('Effect') && EFFECTVALUE[currentId]?.EffectType) {
+                            if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'PLAYER_ATTR_FIX') {
+                                results.push(PLAYER_ATTR_TYPE[value]);
+                                break;
+                            }
+                            if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'SPECIAL_ATTR_FIX') {
+                                results.push(SPECIAL_ATTR_TYPE[value]);
+                                break;
+                            }
+                            if (EFFECT_TYPE[EFFECTVALUE[currentId]?.EffectType] === 'STATE_CHANGE') {
+                                results.push(STATE_TYPE[value]);
+                                break;
+                            }
+                        }
+
+                        results.push(ATTR_TYPE[value]);
                         break;
                     case 'Pct':
                         results.push(value + '%');
