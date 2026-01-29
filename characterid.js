@@ -4,7 +4,7 @@ const AVGCHARACTER = readFileSync('lua/game/ui/avg/_en/preset/avgcharacter.lua',
 
 const characterId = {};
 
-AVGCHARACTER.matchAll(/id = "avg1_(\d{3})",\r\n\t\tname = "([^"]+)"/g).forEach(([, id, name]) => {
+AVGCHARACTER.matchAll(/id = "avg1_(\d{3})",\r?\n?.{0,10}name = "([^"]+)"/g).forEach(([, id, name]) => {
     characterId[id] = name;
 });
 
