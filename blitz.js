@@ -26,7 +26,7 @@ for (const id in SCOREBOSSLEVEL) {
     const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster.FAId].MonsterManual];
     const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
     const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[0];
-    const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === +`100${fixId(id)}`);
+    const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === +`100${fixIdStat(id)}`);
 
     blitz[id] = {
         name: LANG_MONSTERMANUAL[monsterManual.Name],
@@ -125,7 +125,7 @@ function getScoreBossAbilityDesc(id) {
 }
 
 function getBlitzEffectType(id) {
-    id = fixId(id);
+    id = fixIdEffect(id);
 
     const effectIds = Object.keys(EFFECTVALUE).filter(effectId => effectId.startsWith(`63100${id}`));
     const effectTypes = [];
@@ -142,7 +142,7 @@ function getBlitzEffectType(id) {
 }
 
 function getBlitzBuffIcon(id) {
-    id = fixId(id);
+    id = fixIdEffect(id);
 
     const buffIds = Object.keys(BUFF).filter(buffId => buffId.startsWith(`63100${id}`));
     const buffIcons = [];
@@ -156,8 +156,16 @@ function getBlitzBuffIcon(id) {
     return [...new Set(buffIcons)];
 }
 
-function fixId(id) {
+function fixIdEffect(id) {
     if (id === '2') return '3';
     else if (id === '3') return '2';
+    else return id;
+}
+
+function fixIdStat(id) {
+    if (id === '2') return '3';
+    else if (id === '3') return '2';
+    else if (id === '8') return '7';
+    else if (id === '9') return '7';
     else return id;
 }
