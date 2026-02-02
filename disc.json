@@ -22182,8 +22182,8 @@
                 "Ignis DMG (base)",
                 "ADDBUFF:ATK",
                 "ATK (%)",
-                "ADDBUFF:DMG Taken",
-                "DMG Taken (base)"
+                "ADDBUFF:Final DMG Taken",
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [],
             "effectData": [
@@ -22796,7 +22796,7 @@
                 "Ventus DMG (base)",
                 "ADDBUFF:Ventus DMG Taken @ 35%",
                 "Ventus DMG Taken (base)",
-                "DMG Taken (base)"
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [],
             "effectData": [
@@ -30717,7 +30717,7 @@
             "desc": "Increases Ventus Trekkers' Ventus DMG dealt to targets with Ventus VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ventus Trekker by {2}.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Ventus DMG (base)",
-                "DMG Taken (base)"
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [],
             "effectData": [
@@ -31321,7 +31321,7 @@
             "desc": "Increases Ignis Trekkers' Ignis DMG dealt to targets with Ignis VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ignis Trekker by {2}.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Ignis DMG (base)",
-                "DMG Taken (base)"
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [],
             "effectData": [
@@ -31928,7 +31928,7 @@
             "desc": "Increases Lux Trekkers' Lux DMG dealt to targets with Lux VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Lux Trekker by {2}.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Lux DMG (base)",
-                "DMG Taken (base)"
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [],
             "effectData": [
@@ -32535,7 +32535,7 @@
             "desc": "Increases Aqua Trekkers' Aqua DMG dealt to targets with Aqua VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Aqua Trekker by {2}.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Aqua DMG (base)",
-                "DMG Taken (base)"
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [
                 "Aqua DMG (base)"
@@ -33141,7 +33141,7 @@
             "desc": "Increases Umbra Trekkers' Umbra DMG dealt to targets with Umbra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Umbra Trekker by {2}.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Umbra DMG (base)",
-                "DMG Taken (base)"
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [],
             "effectData": [
@@ -36765,7 +36765,7 @@
                 "Lux DMG (base)",
                 "ADDBUFF:Lux DMG Taken @ 35%",
                 "Lux DMG Taken (base)",
-                "DMG Taken (base)"
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [],
             "effectData": [
@@ -37374,8 +37374,8 @@
                 "Aqua DMG (base)",
                 "ADDBUFF:Skill DMG",
                 "Skill DMG (base)",
-                "ADDBUFF:DMG Taken",
-                "DMG Taken (base)"
+                "ADDBUFF:Final DMG Taken",
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [],
             "effectData": [
@@ -37990,7 +37990,7 @@
                 "Umbra DMG (base)",
                 "ADDBUFF:Umbra DMG Taken @ 35%",
                 "Umbra DMG Taken (base)",
-                "DMG Taken (base)"
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [],
             "effectData": [
@@ -38600,8 +38600,8 @@
                 "Terra DMG (base)",
                 "ADDBUFF:Skill DMG",
                 "Skill DMG (base)",
-                "ADDBUFF:DMG Taken",
-                "DMG Taken (base)"
+                "ADDBUFF:Final DMG Taken",
+                "Final DMG Taken (base)"
             ],
             "addAttrType": [
                 "Skill DMG (base)"
