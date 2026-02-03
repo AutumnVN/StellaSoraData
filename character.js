@@ -194,13 +194,15 @@ function getSkillAddAttrTypes(skillId) {
         if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) addAttrId += 10;
         if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) continue;
 
+        const element = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ElementType1;
         const type = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType1;
         const paramType = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType1;
+        const element2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ElementType2;
         const type2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType2;
         const paramType2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType2;
 
-        addAttrTypes.push(formatAddAttrType(type, paramType));
-        if (type2 && paramType2) addAttrTypes.push(formatAddAttrType(type2, paramType2));
+        addAttrTypes.push(formatAddAttrType(type, paramType, element));
+        if (type2 && paramType2) addAttrTypes.push(formatAddAttrType(type2, paramType2, element2));
     }
 
     return [...new Set(addAttrTypes)];
@@ -469,13 +471,15 @@ function getPotentialAddAttrTypes(potId) {
         if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) addAttrId += 10;
         if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) continue;
 
+        const element = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ElementType1;
         const type = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType1;
         const paramType = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType1;
+        const element2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ElementType2;
         const type2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType2;
         const paramType2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType2;
 
-        addAttrTypes.push(formatAddAttrType(type, paramType));
-        if (type2 && paramType2) addAttrTypes.push(formatAddAttrType(type2, paramType2));
+        addAttrTypes.push(formatAddAttrType(type, paramType, element));
+        if (type2 && paramType2) addAttrTypes.push(formatAddAttrType(type2, paramType2, element2));
     }
 
     return [...new Set(addAttrTypes)];
@@ -622,13 +626,15 @@ function getTalentAddAttrTypes(talentId) {
         if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) addAttrId += 10;
         if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) continue;
 
+        const element = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ElementType1;
         const type = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType1;
         const paramType = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType1;
+        const element2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ElementType2;
         const type2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType2;
         const paramType2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType2;
 
-        addAttrTypes.push(formatAddAttrType(type, paramType));
-        if (type2 && paramType2) addAttrTypes.push(formatAddAttrType(type2, paramType2));
+        addAttrTypes.push(formatAddAttrType(type, paramType, element));
+        if (type2 && paramType2) addAttrTypes.push(formatAddAttrType(type2, paramType2, element2));
     }
 
     return [...new Set(addAttrTypes)];

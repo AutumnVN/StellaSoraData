@@ -130,12 +130,12 @@ const PARAM_TYPE = {
     1: 'base',
     2: '%',
     3: 'abs',
-    4: 'SET_MAX_PERCENTAGE_VALUE',
-    5: 'SET_MAX_ABSOLUTE_VALUE',
+    4: 'set max %*',
+    5: 'set max abs*',
     6: '%*',
     7: 'abs*',
-    8: 'SET_PERCENTAGE_VALUE',
-    9: 'SET_ABSOLUTE_VALUE'
+    8: 'set %*',
+    9: 'set abs*'
 };
 
 const DAMAGE_TYPE = {
@@ -762,11 +762,12 @@ function formatEffectType(id, type, paramType) {
     return result;
 }
 
-function formatAddAttrType(type, paramType) {
+function formatAddAttrType(type, paramType, element) {
     const attrTypeStr = ATTR_TYPE[type];
     const paramTypeStr = PARAM_TYPE[paramType];
+    const elementStr = element ? ` (${LANG_UITEXT[`UIText.T_Element_Attr_${element}.1`]})` : '';
 
-    let result = `${attrTypeStr} (${paramTypeStr})`;
+    let result = `${attrTypeStr} (${paramTypeStr})${elementStr}`;
 
     return result;
 }
