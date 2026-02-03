@@ -43,6 +43,7 @@
         "normalAtk": {
             "id": 10310000,
             "name": "Duet",
+            "energyLimit": 25.56,
             "briefDesc": "Fires both pistols at the target rapidly.",
             "desc": "Fires both pistols. Each shot deals <color=#fb8037>&Param1& of ATK</color> as Ignis DMG. Magazine holds 12 ammo.",
             "damageType": [
@@ -61,6 +62,7 @@
             "id": 10331000,
             "name": "Fireworks Jam",
             "cooldown": "8s",
+            "energyLimit": 23.1,
             "briefDesc": "Fires both pistols in a sweeping motion three times.\u000bThe Main Skill can trigger ##Ignis Mark: Sacred Flame#2013#.",
             "desc": "Fires both pistols in a sweeping motion, dealing <color=#fb8037>&Param1& of ATK x2</color> and <color=#fb8037>&Param2& of ATK x4</color> as AoE Ignis DMG, and increasing Auto Attack DMG by &Param4& for &Param5&s.\u000bFireworks Jam (Main Skill) can trigger ##Ignis Mark: Sacred Flame#2013#, dealing &Param3& of ATK as AoE Ignis Mark DMG.",
             "damageType": [
@@ -2681,6 +2683,7 @@
         "normalAtk": {
             "id": 10710000,
             "name": "Guard Style: Melee",
+            "energyLimit": 14.58,
             "briefDesc": "Strikes the target multiple times with her shield and lance to deal damage.",
             "desc": "Wields the shield and lance to launch consecutive attacks.\u000bStrike 1: <color=#fb8037>&Param1& of ATK</color> as Lux DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Lux DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK</color> as Lux DMG.\u000bStrike 4: <color=#fb8037>&Param4& of ATK</color> as Lux DMG.",
             "damageType": [
@@ -2703,6 +2706,7 @@
             "id": 10731000,
             "name": "Aegis Protection",
             "cooldown": "8s",
+            "energyLimit": 36.99,
             "briefDesc": "Hold the Skill button to enter Fortify Stance with increased DEF. When Fortify Stance ends, deals DMG to nearby enemies.\u000bThe Main Skill can inflict ##Lux Mark: Radiance#2016#.",
             "desc": "Hold the button to enter Fortify Stance for up to 8s, during which DEF is increased by &Param1&.\u000bUpon entering Fortify Stance, becomes immune to all DMG.\u000bWhen Fortify Stance ends, casts a counterattack that deals <color=#fb8037>&Param2& of ATK</color> as AoE Lux DMG and inflicts a ##Lux Mark: Radiance#2016# while boosting the squad's &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s.",
             "damageType": [
@@ -5407,6 +5411,7 @@
         "normalAtk": {
             "id": 10810000,
             "name": "Purging Flames",
+            "energyLimit": 6.5,
             "briefDesc": "Fires the shotgun at the target.",
             "desc": "Fires a volley of pellets, each dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG. Magazine capacity: 1.",
             "damageType": [
@@ -5425,6 +5430,7 @@
             "id": 10831000,
             "name": "Banishing Barrage",
             "cooldown": "5s",
+            "energyLimit": null,
             "briefDesc": "Loads Incendiary Shells and shoots the target.\u000bThe Main Skill can trigger ##Ignis Mark: Sacred Flame#2013#.",
             "desc": "Each use of this skill loads 1 Incendiary Shell. Each shell deals <color=#fb8037>&Param2& of ATK</color> as Ignis DMG.\u000bWhen Incendiary Shells (Main Skill) triggers ##Ignis Mark: Sacred Flame#2013#, deals &Param3& of ATK as AoE Ignis Mark DMG.\u000bUp to 10 shells can be loaded.",
             "damageType": [
@@ -8023,6 +8029,7 @@
         "normalAtk": {
             "id": 11010000,
             "name": "Blooming Shadows",
+            "energyLimit": 12.55,
             "briefDesc": "Swings the cane to strike multiple times and summons ##Shadow Clones#4002# to attack.",
             "desc": "Swings the cane to strike multiple times.\u000bStrike 1: <color=#ec6d21>&Param1&</color> of ATK as Umbra DMG.\u000bStrike 2: <color=#ec6d21>&Param2&</color> of ATK as Umbra DMG.\u000bStrike 3: <color=#ec6d21>&Param3& x5</color> of ATK as Umbra DMG.\u000bStrike 4: <color=#ec6d21>&Param4&</color> of ATK and <color=#ec6d21>&Param5&</color> of ATK as Umbra DMG.\u000bWhen there is no ##Shadow Clone#4002# present, the 2nd hit of the Auto Attack summons 1 ##Shadow Clone#4002#.\u000bThe 4th hit of the Auto Attack commands all ##Shadow Clones#4002# to sprint strike, dealing <color=#ec6d21>&Param6&</color> of ATK as Umbra Minion DMG.",
             "damageType": [
@@ -8050,6 +8057,7 @@
             "id": 11031000,
             "name": "Elegant Parade",
             "cooldown": "6s",
+            "energyLimit": 10.5,
             "briefDesc": "Unleashes combo slashes with the cane sword, dealing multiple instances of DMG. Casting the Main Skill can summon ##Shadow Clones#4002# and trigger combo slashes. The Main Skill and ##Shadow Clones#4002# can trigger ##Umbra Mark#1019#.",
             "desc": "Unleashes combo slashes with the cane sword, dealing <color=#ec6d21>&Param1& x3</color> of ATK as Umbra Skill DMG. When casting the Main Skill, summons 1 ##Shadow Clone#4002# and orders all ##Shadow Clones#4002# to unleash combo slashes, dealing <color=#ec6d21>&Param2& x3</color> of ATK as Umbra Minion DMG.\u000bElegant Parade (Main Skill) and ##Shadow Clones#4002# can trigger ##Umbra Mark#1019#, dealing &Param3& of ATK as Umbra Mark DMG and inflicting Dark Burn, which deals DMG to the target once every 0.5s for &Param5&s, dealing &Param4& of ATK as Umbra Mark DMG in total.",
             "damageType": [
@@ -10675,6 +10683,7 @@
         "normalAtk": {
             "id": 11110001,
             "name": "Method of Fluxions",
+            "energyLimit": 8.4,
             "briefDesc": "Fires Frost Arrows at the target. When close, swings her school bag to attack.",
             "desc": "Shoots 3 Frost Arrows at the target.\u000bStrike 1: <color=#fb8037>&Param1& of ATK</color> as Aqua DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Aqua DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK ×3</color> as Aqua DMG.\u000bWhen close, swings her school bag to attack, dealing <color=#fb8037>&Param4& of ATK</color> as Aqua DMG.",
             "damageType": [
@@ -10699,6 +10708,7 @@
             "id": 11131001,
             "name": "Frozen Path",
             "cooldown": "6s",
+            "energyLimit": 54.81,
             "briefDesc": "Fires a Glacier Greatarrow at the target.\u000bThe Main Skill can trigger ##Aqua Mark: Torrent#2008#.",
             "desc": "Fires a Glacier Greatarrow at the target, dealing <color=#fb8037>&Param1& of ATK</color> as Aqua DMG.\u000bFrozen Path (Main Skill) can trigger ##Aqua Mark: Torrent#2008#, dealing &Param2& of ATK as AoE Aqua Mark DMG and inflicting ##Chill#1027#.",
             "damageType": [
@@ -13526,6 +13536,7 @@
         "normalAtk": {
             "id": 11210000,
             "name": "Nameless Style",
+            "energyLimit": 9.6,
             "briefDesc": "Swings the sword to perform multiple attacks.",
             "desc": "Swings the sword to attack.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK</color> as Ventus DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK ×2</color> as Ventus DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK ×8</color> as Ventus DMG.\u000bStrike 4: <color=#ec6d21>&Param4& of ATK ×3</color> as Ventus DMG.",
             "damageType": [
@@ -13549,6 +13560,7 @@
             "id": 11231001,
             "name": "Sonic Slash",
             "cooldown": "5s",
+            "energyLimit": 29.3,
             "briefDesc": "Unleashes a flurry of sword strikes. The Main Skill can trigger ##Ventus Mark: Breeze#2017#.",
             "desc": "Unleashes a flurry of sword strikes, dealing <color=#ec6d21>&Param1& of ATK x6</color> as Ventus Skill DMG.\u000bSonic Slash (Main Skill) can trigger ##Ventus Mark: Breeze#2017#, generating a Cyclone that deals &Param2& of ATK x3 as AoE Ventus Mark DMG.",
             "damageType": [
@@ -16122,6 +16134,7 @@
         "normalAtk": {
             "id": 11310000,
             "name": "Chilling Drizzle",
+            "energyLimit": 17.86,
             "briefDesc": "Creates surging waves, dealing damage multiple times.",
             "desc": "Use surging waves to attack 6 times, dealing DMG multiple times.\u000bStrike 1: <color=#fb8037>&Param1& of ATK</color> as Aqua DMG.\u000bStrike 2: <color=#fb8037>&Param1& of ATK</color> as Aqua DMG.\u000bStrike 3: <color=#fb8037>&Param2& of ATK</color> as Aqua DMG.\u000bStrike 4: <color=#fb8037>&Param3& of ATK</color> as Aqua DMG.\u000bStrike 5: <color=#fb8037>&Param3& of ATK</color> as Aqua DMG.\u000bStrike 6: <color=#fb8037>&Param4& of ATK</color> as Aqua DMG.",
             "damageType": [
@@ -16146,6 +16159,7 @@
             "id": 11331001,
             "name": "Rising Tides",
             "cooldown": "16s",
+            "energyLimit": 35.06,
             "briefDesc": "This skill is cast in two phases, dealing multiple instances of DMG during each phase. The Main Skill can trigger ##Aqua Mark: Torrent#2008#.",
             "desc": "Rising Tides is cast in two phases.\u000bPhase 1: Creates water waves, dealing <color=#fb8037>&Param1& of ATK x6</color> as Aqua DMG.\u000bPhase 2: Spins swiftly, dealing <color=#fb8037>&Param2& of ATK x6</color> as Aqua DMG.\u000bRising Tides (Main Skill) can trigger ##Aqua Mark: Torrent#2008#, dealing &Param3& of ATK as Aqua Mark DMG and inflicting ##Chill#1027#.",
             "damageType": [
@@ -18806,6 +18820,7 @@
         "normalAtk": {
             "id": 11610000,
             "name": "Sprout Bomb",
+            "energyLimit": 19.68,
             "briefDesc": "Fires consecutive energy rounds to deal DMG.",
             "desc": "Fires energy rounds, each dealing <color=#fb8037>&Param1& of ATK</color> as Terra DMG. Magazine capacity: 24.\u000bWhen close, swings the shovel cannon to attack, dealing <color=#fb8037>&Param3& of ATK</color> as AoE Terra DMG.",
             "damageType": [
@@ -18827,6 +18842,7 @@
             "id": 11631000,
             "name": "Bean Cyclone",
             "cooldown": "10s",
+            "energyLimit": 19.83,
             "briefDesc": "Swings the shovel cannon to fire seeds, dealing DMG.\u000bAfter casting a Skill, reloads the magazine and enhances Auto Attacks.\u000bThe Main Skill can trigger ##Terra Mark: Earth Vein#1020#.",
             "desc": "Swings the shovel cannon, dealing <color=#fb8037>&Param1& of ATK</color> as Terra DMG. Fires seeds, dealing <color=#fb8037>&Param2& of ATK</color> as AoE Terra DMG and reducing the target's Movement SPD by &Param3& for &Param4&s.\u000bAfter casting a skill, reloads the magazine and enhances Auto Attacks: Increases Fire Rate without consuming ammo for &Param5&s.\u000bBean Cyclone (Main Skill) can trigger ##Terra Mark: Earth Vein#2029#, dealing &Param6& of ATK as AoE Terra Mark DMG.",
             "damageType": [
@@ -21434,6 +21450,7 @@
         "normalAtk": {
             "id": 11710000,
             "name": "Thunder Palm",
+            "energyLimit": 10.98,
             "briefDesc": "Unleashes lightning from the palm, striking the target repeatedly and dealing damage.",
             "desc": "Unleashes lightning from the palm to strike the target.\u000bStrike 1: <color=#fb8037>&Param1& of ATK</color> as Lux DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Lux DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK</color> as Lux DMG.",
             "damageType": [
@@ -21454,6 +21471,7 @@
             "id": 11731000,
             "name": "Thunder Strike",
             "cooldown": "6s",
+            "energyLimit": 44,
             "briefDesc": "Summons a thunderbolt to deal DMG.\u000bThe Main Skill can trigger ##Lux Mark: Radiance#2016#.",
             "desc": "Summons a thunderbolt, dealing <color=#fb8037>&Param1& of ATK</color> as Lux DMG. Stores up to 4 thunderbolts.\u000bThunder Strike (Main Skill) can trigger ##Lux Mark: Radiance#2016#, dealing &Param2& of ATK as Lux Mark DMG.",
             "damageType": [
@@ -24089,6 +24107,7 @@
         "normalAtk": {
             "id": 11810000,
             "name": "Midnight Cleave",
+            "energyLimit": 10.48,
             "briefDesc": "Wields the scythe to attack targets.",
             "desc": "Wields the scythe to attack targets.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK</color> as Umbra DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK</color> as Umbra DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK</color> as Umbra DMG.\u000bStrike 4: <color=#ec6d21>&Param4& of ATK</color> as Umbra DMG.",
             "damageType": [
@@ -24110,6 +24129,7 @@
             "id": 11831000,
             "name": "Sleight of Scythe",
             "cooldown": "12s",
+            "energyLimit": 26.46,
             "briefDesc": "After multiple slices, delivers a powerful smash to the target. The Main Skill can trigger ##Umbra Mark: Gloom#2018#.",
             "desc": "After multiple slices, delivers a powerful smash to the target, dealing <color=#ec6d21>&Param1& of ATK x5</color>/<color=#ec6d21>&Param2& of ATK</color> as AoE Umbra DMG.\u000bSleight of Scythe (Main Skill) can trigger ##Umbra Mark: Gloom#2018#, dealing &Param3& of ATK as Umbra Mark DMG and inflicting ##Dark Shackles#2020#, lasting for &Param4&s.",
             "damageType": [
@@ -26738,6 +26758,7 @@
         "normalAtk": {
             "id": 11910000,
             "name": "Flowers Scatter",
+            "energyLimit": 6.17,
             "briefDesc": "Throws a number of darts.",
             "desc": "Throws multiple darts.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK ×2</color> as Ventus DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK ×2</color> as Ventus DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK ×3</color> as Ventus DMG.",
             "damageType": [
@@ -26759,6 +26780,7 @@
             "id": 11931000,
             "name": "Flowers Dance",
             "cooldown": "10s",
+            "energyLimit": 23.26,
             "briefDesc": "Throws sunflower shurikens that strike the target and return. The Main Skill can trigger ##Ventus Mark#1017#.",
             "desc": "Throws two sunflower shurikens that strike the target and return for 4 times. Each hit deals <color=#ec6d21>&Param1& of ATK</color> as Ventus DMG.\u000bFlowers Dance (Main Skill) can trigger ##Ventus Mark#1017#, dealing &Param2& of ATK as AoE Ventus Mark DMG.",
             "damageType": [
@@ -29351,6 +29373,7 @@
         "normalAtk": {
             "id": 12010000,
             "name": "Gush Shots",
+            "energyLimit": 12.43,
             "briefDesc": "Fires consecutive Ventus-imbued bullets to deal DMG.",
             "desc": "Fires consecutive Ventus-imbued bullets to deal DMG.\u000bStrike 1-4: <color=#ec6d21>&Param1& of ATK</color> as Ventus DMG.\u000bStrike 5: <color=#ec6d21>&Param2& of ATK x2</color> as Ventus DMG.",
             "damageType": [
@@ -29370,6 +29393,7 @@
             "id": 12031000,
             "name": "Verdant Shroud",
             "cooldown": "12s",
+            "energyLimit": 21.98,
             "briefDesc": "Deals DMG to nearby targets and summons Flying Leaves that orbit around herself.\u000bThe Main Skill can trigger ##Breeze#2025#.",
             "desc": "Deals <color=#ec6d21>&Param1& of ATK</color> as Ventus DMG to nearby targets, and then summons 2 Flying Leaves.\u000bA Flying Leaf can pierce through the target and deal <color=#ec6d21>&Param2&</color> of ATK as Ventus DMG for 7.2s.\u000bVerdant Shroud (Main Skill) can trigger ##Ventus Mark: Breeze#2017#, dealing &Param3& of ATK as AoE Ventus Mark DMG.",
             "damageType": [
@@ -31972,6 +31996,7 @@
         "normalAtk": {
             "id": 12310000,
             "name": "Fierce Bite",
+            "energyLimit": 16.16,
             "briefDesc": "Coco the Firefang pounces on the target repeatedly.",
             "desc": "Coco the Firefang pounces and bites multiple times.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK</color> as Ventus DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK</color> as Ventus DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK ×2</color> as Ventus DMG.\u000bStrike 4: <color=#ec6d21>&Param4& of ATK</color> as Ventus DMG.",
             "damageType": [
@@ -31993,6 +32018,7 @@
             "id": 12331000,
             "name": "Puffloon Spits",
             "cooldown": "15s",
+            "energyLimit": null,
             "briefDesc": "Summons Bubble the Puffloon to attack the target, with a chance to create a Wind Burst. Inflicts ##Ventus Mark: Breeze#2017#.\u000bWhen Bubble is on the battlefield, increases the squad's &Param3&.",
             "desc": "Summons Bubble the Puffloon who spits wind bullets, dealing <color=#ec6d21>&Param1& of ATK</color> as Ventus Minion DMG. \u000bBubble has 100% Ann's ATK and lasts for 15s. \u000bWhen Bubble deals DMG, there is a 25% chance to create a Wind Burst, dealing <color=#ec6d21>&Param2& of ATK</color> as Ventus Minion DMG, and inflicting ##Ventus Mark: Breeze#2017#. This effect can only be triggered once per second. \u000bWhen Bubble is on the field, increases the squad's &Param3& by <color=#fb8037>&Param4&</color>.\u000bParam5: &Param5& (BuffValue,Time)",
             "damageType": [
@@ -34633,6 +34659,7 @@
         "normalAtk": {
             "id": 12510000,
             "name": "Power of Reason",
+            "energyLimit": 10.55,
             "briefDesc": "Swings the greataxe to attack enemies. If Freesia is in ##Berserk#2014#, she rapidly hacks at enemies instead.",
             "desc": "Swings the great axe to attack the target.\u000bStrike 1: <color=#fb8037>&Param1& of ATK</color> as Aqua DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Aqua DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK</color> as Aqua DMG.\u000bStrike 4: <color=#fb8037>&Param4& of ATK</color> as Aqua DMG.\u000bStrike 5: <color=#fb8037>&Param5& of ATK</color> as Aqua DMG.\u000bIn ##Berserk#2014# state, rapidly hacks at enemies instead.\u000bStrike 1: <color=#fb8037>&Param6& of ATK x2</color> as Aqua DMG.\u000bStrike 2: <color=#fb8037>&Param7& of ATK x2</color> as Aqua DMG.\u000bStrike 3: <color=#fb8037>&Param8& of ATK</color>, <color=#fb8037>&Param9& of ATK x4</color>, and <color=#fb8037>&Param10& of ATK</color> as Aqua DMG.",
             "damageType": [
@@ -34664,6 +34691,7 @@
             "id": 12531000,
             "name": "Freezing Swirl",
             "cooldown": "8s",
+            "energyLimit": 78.42,
             "briefDesc": "Charges up and continuously deals DMG to nearby targets.\u000bThe Main Skill can trigger ##Aqua Mark#1018#.",
             "desc": "Charges up to unleash a Whirlwind Slash, dealing <color=#fb8037>&Param1& of ATK</color> as Aqua DMG to nearby targets every 0.3s. Charging increases the skill's duration.\u000bFreezing Swirl (Main Skill) can trigger ##Aqua Mark#1018#, dealing &Param2& of ATK as AoE Aqua Mark DMG and inflicting ##Chill#1027#.",
             "damageType": [
@@ -37500,6 +37528,7 @@
         "normalAtk": {
             "id": 12610000,
             "name": "Three-Act Show",
+            "energyLimit": 2.94,
             "briefDesc": "Consecutively spawns fiery birds to deal DMG.",
             "desc": "Consecutively spawns fiery birds to deal DMG.\u000bStrike 1: <color=#fb8037>&Param1& of ATK</color> as Ignis DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Ignis DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK</color> as Ignis DMG.",
             "damageType": [
@@ -37520,6 +37549,7 @@
             "id": 12631000,
             "name": "Hat Toss",
             "cooldown": "12s",
+            "energyLimit": 7.09,
             "briefDesc": "Throws the top hat, dealing DMG multiple times and inflicting ##Ignis Mark: Sacred Flame#2013#.",
             "desc": "Throws the top hat, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG every 0.5s for a total of 5s, and inflicting ##Ignis Mark: Sacred Flame#2013#. \u000bWhen casting this skill, increases the squad's &Param9& by <color=#fb8037>&Param7&</color> for &Param4&s.",
             "damageType": [
@@ -40150,6 +40180,7 @@
         "normalAtk": {
             "id": 12710000,
             "name": "Sweep Slash",
+            "energyLimit": 7,
             "briefDesc": "Swings the magic sword, dealing DMG multiple times.",
             "desc": "Swings the magic sword, dealing DMG multiple times.\u000bStrike 1: <color=#fb8037>&Param1& of ATK</color> as Aqua DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Aqua DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK</color> as Aqua DMG.\u000bStrike 4: <color=#fb8037>&Param4& of ATK</color> as Aqua DMG.",
             "damageType": [
@@ -40171,6 +40202,7 @@
             "id": 12731000,
             "name": "Limpid Stream",
             "cooldown": "8s",
+            "energyLimit": 38.48,
             "briefDesc": "Teresa gains a Surging Shield and launches an assault with the magic sword, dealing DMG multiple times and inflicting ##Aqua Mark: Torrent#2008#.",
             "desc": "Launches an assault with the magic sword, dealing <color=#fb8037>&Param1&</color> and <color=#fb8037>&Param2& of ATK</color> as Aqua DMG and inflicting ##Aqua Mark: Torrent#2008#. Teresa also gains a Surging Shield. \u000bSurging Shield can absorb DMG equal to <color=#fb8037>&Param3& of Teresa's Base ATK</color> for &Param4&s.",
             "damageType": [
@@ -40361,7 +40393,7 @@
                         "Icon_CommonBuff_DefenseDown"
                     ],
                     "params": [
-                        "8.799999999999999%/13.6%/19.2%/24%/29.6%/34.400000000000006%/40%/44.80000000000001%/50.4%",
+                        "8.8%/13.6%/19.2%/24%/29.6%/34.400000000000006%/40%/44.80000000000002%/50.4%",
                         "11%/17%/24%/30%/37%/43%/50%/56%/63%",
                         "Aqua DMG Taken",
                         6
@@ -42781,6 +42813,7 @@
         "normalAtk": {
             "id": 13010001,
             "name": "???",
+            "energyLimit": 2.56,
             "briefDesc": "???",
             "desc": "???\u000bParam1: &Param1& (HitDamage,Auto Attack)",
             "damageType": [
@@ -42799,6 +42832,7 @@
             "id": 13031000,
             "name": "???",
             "cooldown": "24s",
+            "energyLimit": null,
             "briefDesc": "???",
             "desc": "???\u000bParam1: &Param1& (HitDamage,Minion) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Mark)",
             "damageType": [
@@ -45417,6 +45451,7 @@
         "normalAtk": {
             "id": 13210000,
             "name": "Bat and Skate",
+            "energyLimit": 17.94,
             "briefDesc": "Swings the baseball bat and kickflips the skateboard to attack the target.",
             "desc": "Swings the baseball bat and kickflips the skateboard to attack the target.\u000bStrike 1: <color=#fb8037>&Param1&</color> of ATK as Lux DMG.\u000bStrike 2: <color=#fb8037>&Param2&</color> of ATK as Lux DMG.\u000bStrike 3: <color=#fb8037>&Param3&</color> of ATK as Lux DMG.\u000bStrike 4: <color=#fb8037>&Param4&</color> of ATK and <color=#fb8037>&Param6& x6</color> of ATK as Lux DMG.\u000bStrike 5: <color=#fb8037>&Param5&</color> of ATK as Lux DMG.",
             "damageType": [
@@ -45441,6 +45476,7 @@
             "id": 13231001,
             "name": "Syou: Pulsar Streak",
             "cooldown": "14s",
+            "energyLimit": 42.89,
             "briefDesc": "Swings the baseball bat to attack the target, then activates Two Base Hit: Charges at the target for a rapid series of strikes.\u000bThe Main Skill can trigger ##Lux Mark#1015#.",
             "desc": "Swings the baseball bat, dealing <color=#fb8037>&Param1& of ATK</color> as Lux DMG. Then, activates the second phase, Two Base Hit: Charges at the target, delivering rapid strikes. Hold to deal <color=#fb8037>&Param2& of ATK</color> as Lux DMG every 0.3s for a total of 3s. Finishes with a powerful smash, dealing <color=#fb8037>&Param3& of ATK</color> as Lux DMG.\u000bBoth Syou: Pulsar Streak (Main Skill) and Two Base Hit can trigger ##Lux Mark#1015#, dealing &Param4& of ATK as Lux Mark DMG.",
             "damageType": [
@@ -48103,6 +48139,7 @@
         "normalAtk": {
             "id": 13310000,
             "name": "Wind Pellets",
+            "energyLimit": 20.14,
             "briefDesc": "Fires consecutive wind bullets to deal DMG.",
             "desc": "Fires consecutive wind bullets.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK</color> as Ventus DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK</color> as Ventus DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK x3</color> as Ventus DMG.",
             "damageType": [
@@ -48124,6 +48161,7 @@
             "id": 13331001,
             "name": "Blooming Draught",
             "cooldown": "8s",
+            "energyLimit": 61.4,
             "briefDesc": "The windmill blows ahead to deal DMG.\u000bThe Main Skill can trigger ##Ventus Mark#1017#.",
             "desc": "The windmill blows ahead, dealing <color=#ec6d21>&Param1& of ATK x7</color> as Ventus Skill DMG.\u000bBlooming Draught (Main Skill) can trigger ##Ventus Mark#1017#, dealing &Param2& of ATK as AoE Ventus Mark DMG.",
             "damageType": [
@@ -50771,6 +50809,7 @@
         "normalAtk": {
             "id": 13410000,
             "name": "Blitz Combo",
+            "energyLimit": 23.65,
             "briefDesc": "Punches rapidly, dealing multiple phases of DMG.\u000bCasts Fiery Punches when ammo is available.",
             "desc": "Punches and kicks the target.\u000bStrike 1: <color=#fb8037>&Param1& of ATK x2</color> as Ignis DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Ignis DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK x2</color> as Ignis DMG.\u000bStrike 4: <color=#fb8037>&Param4& of ATK x5</color> as Ignis DMG.\u000bStrike 5: <color=#fb8037>&Param5& of ATK x2</color> as Ignis DMG.\u000bCasts Fiery Punches when ammo is available.\u000bStrike 1: <color=#fb8037>&Param6& of ATK</color> as Ignis DMG.\u000bStrike 2: <color=#fb8037>&Param7& of ATK</color> as Ignis DMG.\u000bStrike 3: <color=#fb8037>&Param8& of ATK</color> as Ignis DMG.\u000bBlitz Combo and Fiery Punches deal <color=#fb8037>&Param9& of ATK</color> as AoE Ignis DMG to other targets behind the target hit by them.\u000bParam10: &Param10& (HitDamage,Mark)",
             "damageType": [
@@ -50803,6 +50842,7 @@
             "id": 13431000,
             "name": "Ignis Infusion",
             "cooldown": "11s",
+            "energyLimit": 27.66,
             "briefDesc": "Strikes a Soaring Dragon Punch that deals two instances of DMG and receives ammo.\u000bThe Main Skill can trigger ##Ignis Mark#1016#.",
             "desc": "Strikes a Soaring Dragon Punch, dealing <color=#fb8037>&Param1& of ATK</color> as Ignis DMG, then slams the ground for an additional <color=#fb8037>&Param3& of ATK</color> as Ignis DMG and fully reloads ammo. Magazine capacity: 3 rounds.\u000b\"&Param2&\" (Main Skill) can trigger ##Ignis Mark#1016#, dealing &Param4& of ATK as Ignis Mark DMG to nearby targets.",
             "damageType": [
@@ -53452,6 +53492,7 @@
         "normalAtk": {
             "id": 13510000,
             "name": "Comet Sweep",
+            "energyLimit": 14.96,
             "briefDesc": "Sweeps her broom to attack repeatedly.",
             "desc": "Sweeps her broom to attack repeatedly.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK</color> as Umbra DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK</color> as Umbra DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK</color> as Umbra DMG.\u000bStrike 4: <color=#ec6d21>&Param4& of ATK</color> as Umbra DMG.",
             "damageType": [
@@ -53474,6 +53515,7 @@
             "id": 13531000,
             "name": "Pumpka Pummel",
             "cooldown": "11s",
+            "energyLimit": 7.27,
             "briefDesc": "Takes a photo to deal DMG and enters Exposure status. While in Exposure, summons multiple Pumpka Phantoms. The Main Skill and Pumpka Phantoms can trigger ##Umbra Mark#1019#.",
             "desc": "Mistique takes a photo to deal <color=#ec6d21>&Param6&</color> of ATK as AoE Umbra Skill DMG, then enters Exposure status: Summons one Pumpka Phantom every 3s for 15s.\u000bPumpka Phantoms automatically attack the target, dealing <color=#ec6d21>&Param1& of ATK</color> and <color=#ec6d21>&Param2& of ATK</color> as Umbra Minion DMG.\u000bEach Pumpka Phantom has 25% of Mistique's Base Max HP, 100% of her ATK, and lasts for 15s. Up to 4 Pumpka Phantoms can be present at the same time.\u000bPumpka Pummel (Main Skill) and Pumpka Phantoms can trigger ##Umbra Mark#1019#, dealing &Param3& of ATK as Umbra Mark DMG and inflicting Umbra Burn, which deals DMG to the target every 0.5s for &Param5&s, totaling to &Param4& of ATK as Umbra Mark DMG.\u000bWhen Pumpka Pummel (Main Skill) is interrupted, its cooldown is partially reduced.",
             "damageType": [
@@ -56077,6 +56119,7 @@
         "normalAtk": {
             "id": 14010000,
             "name": "Evergreen Needles",
+            "energyLimit": 15.48,
             "briefDesc": "!NONEED!",
             "desc": "!NONEED!",
             "damageType": [],
@@ -56091,6 +56134,7 @@
             "id": 14031000,
             "name": "Jade of Vitality",
             "cooldown": "1s",
+            "energyLimit": 26.2,
             "briefDesc": "!NONEED!",
             "desc": "!NONEED!",
             "damageType": [],
@@ -58378,6 +58422,7 @@
         "normalAtk": {
             "id": 14110000,
             "name": "Mystic Brushstrokes",
+            "energyLimit": 18.8,
             "briefDesc": "Hurls the writing brush to perform multiple attacks.",
             "desc": "Waves the writing brush and inflicts Ink.\u000bStrike 1: <color=#fb8037>&Param1& of ATK</color> as Ignis DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Ignis DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK x4</color> as Ignis DMG.\u000bStrike 4: <color=#fb8037>&Param4& of ATK x3</color> as Ignis DMG.\u000bStrike 5: <color=#fb8037>&Param5& of ATK</color> as Ignis DMG.",
             "damageType": [
@@ -58402,6 +58447,7 @@
             "id": 14131000,
             "name": "Purifying Flames",
             "cooldown": "7s",
+            "energyLimit": 31.7,
             "briefDesc": "Spreads out a torrent of flames ahead, dealing DMG over time.\u000bThe Main Skill can trigger ##Ignis Mark#1016#.",
             "desc": "Spreads out a torrent of flames, dealing <color=#fb8037>&Param1& of ATK</color> as AoE Ignis DMG every 0.2s for a total of 3s. When dealing DMG to targets with Ink, inflicts ##Ignite#2027#.\u000bPurifying Flames (Main Skill) can trigger ##Ignis Mark#1016#, dealing &Param3& of ATK as AoE Ignis Mark DMG.\u000bParam2: &Param2& (Skill,Title)",
             "damageType": [
@@ -61015,6 +61061,7 @@
         "normalAtk": {
             "id": 14210000,
             "name": "Abyssal Swipe",
+            "energyLimit": 11.1,
             "briefDesc": "Lashes out with both claws, dealing multiple instances of damage.",
             "desc": "Lashes out with both claws.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK</color> as Umbra DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK</color> as Umbra DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK x2</color> as Umbra DMG.\u000bStrike 4: <color=#ec6d21>&Param4& of ATK x2</color> as Umbra DMG.\u000bStrike 5: <color=#ec6d21>&Param5& of ATK</color> as Umbra DMG.",
             "damageType": [
@@ -61038,6 +61085,7 @@
             "id": 14231000,
             "name": "Nocturn Hooks",
             "cooldown": "12s",
+            "energyLimit": 19.57,
             "briefDesc": "Attacks with hook punches that deal multiple instances of DMG and inflicts ##Umbra Mark: Gloom#2018#. When the Main Skill deals DMG, increases the target's &Param3&.",
             "desc": "Attacks with double hook punches, each dealing <color=#ec6d21>&Param1& of ATK x2</color>/<color=#ec6d21>&Param2& of ATK x4</color> as Umbra DMG. Inflicts ##Umbra Mark: Gloom#2018#.\u000bWhen Nocturn Hooks (Main Skill) deals DMG, increases the target's &Param3& by <color=#ec6d21>&Param4&</color> for &Param5&s.",
             "damageType": [
@@ -63690,6 +63738,7 @@
         "normalAtk": {
             "id": 14310000,
             "name": "???",
+            "energyLimit": 14.96,
             "briefDesc": "???",
             "desc": "???\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Auto Attack) \u000bParam5: &Param5& (HitDamage,Auto Attack) \u000bParam6: &Param6& (HitDamage,Auto Attack) \u000bParam7: &Param7& (HitDamage,Auto Attack) \u000bParam8: &Param8& (HitDamage,Auto Attack)",
             "damageType": [
@@ -63721,6 +63770,7 @@
             "id": 14331000,
             "name": "???",
             "cooldown": "3s",
+            "energyLimit": 7.5,
             "briefDesc": "???",
             "desc": "???\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Skill) \u000bParam3: &Param3& (HitDamage,Mark)",
             "damageType": [
@@ -66101,6 +66151,7 @@
         "normalAtk": {
             "id": 14410000,
             "name": "Aeroflow",
+            "energyLimit": 20.43,
             "briefDesc": "Wields the odachi to deal DMG multiple times.",
             "desc": "Wields the odachi to deal DMG multiple times.\u000bStrike 1: <color=#fb8037>&Param1& of ATK x2</color> as Aqua DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Aqua DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK</color> and <color=#fb8037>&Param8& of ATK</color> as Aqua DMG.\u000bStrike 4: <color=#fb8037>&Param4& of ATK x2</color> as Aqua DMG.\u000bStrike 5: <color=#fb8037>&Param5& of ATK x2</color> and <color=#fb8037>&Param9& of ATK</color> as Aqua DMG.\u000bStrike 6: <color=#fb8037>&Param6& of ATK</color> and <color=#fb8037>&Param7& of ATK</color> as Aqua DMG.",
             "damageType": [
@@ -66128,6 +66179,7 @@
             "id": 14431000,
             "name": "Torrent Flash",
             "cooldown": "8s",
+            "energyLimit": 31.22,
             "briefDesc": "Dashes forward, dealing AoE Aqua DMG. After every 2 casts, the next cast of the skill is enhanced.\u000bThe Main Skill can trigger ##Aqua Mark#1018#.",
             "desc": "Dashes forward, dealing <color=#fb8037>&Param1& of ATK x2</color> as AoE Aqua DMG. It can be cast 2 times initially.\u000bAfter every 2 casts of Torrent Flash, the next Torrent Flash becomes Torrent Flash: Scale: Summons a Coiling Serpent, dealing <color=#fb8037>&Param2& of ATK x3</color> as AoE Aqua DMG.\u000bTorrent Flash (Main Skill) and Torrent Flash: Scale can trigger ##Aqua Mark#1018#, dealing &Param3& of ATK as AoE Aqua Mark DMG and inflicting ##Chill#1027#.",
             "damageType": [
@@ -68738,6 +68790,7 @@
         "normalAtk": {
             "id": 14510000,
             "name": "???",
+            "energyLimit": 11.1,
             "briefDesc": "???",
             "desc": "???\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
             "damageType": [
@@ -68760,6 +68813,7 @@
             "id": 14531000,
             "name": "???",
             "cooldown": "7s",
+            "energyLimit": 19.57,
             "briefDesc": "???",
             "desc": "???\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Skill)",
             "damageType": [
@@ -70947,6 +71001,7 @@
         "normalAtk": {
             "id": 14710000,
             "name": "Solo Flash",
+            "energyLimit": 18.96,
             "briefDesc": "Unleashes a barrage of musical notes at the target.",
             "desc": "Fires consecutive musical notes.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK</color> as Umbra DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK x2</color> as Umbra DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK x5</color> as Umbra DMG.",
             "damageType": [
@@ -70968,6 +71023,7 @@
             "id": 14731000,
             "name": "Co-Performance",
             "cooldown": "10.5s",
+            "energyLimit": null,
             "briefDesc": "Summons Demonic Boombox to attack the target repeatedly. When near the Demonic Boombox, increases Caramel's &Param3&. Demonic Boombox can trigger ##Umbra Mark: Gloom#2018#.",
             "desc": "Throws Demonic Boombox, dealing <color=#ec6d21>&Param1&</color> and <color=#ec6d21>&Param2& of ATK</color> as Umbra Minion DMG in a large area as it falls and pulsates.\u000bWhen Caramel is near the Demonic Boombox, a connection is established, increasing her &Param3& by <color=#ec6d21>&Param4&</color>.\u000bDemonic Boombox has 100% of Caramel's ATK and lasts for 15s.\u000bDemonic Boombox can trigger ##Umbra Mark: Gloom#2018#, dealing &Param5& of ATK as Umbra Mark DMG to the target, and inflict Umbra Burn, which deals DMG to the target every 0.5s for &Param7&s, totaling to &Param6& of ATK as Umbra Mark DMG.",
             "damageType": [
@@ -73600,6 +73656,7 @@
         "normalAtk": {
             "id": 14910000,
             "name": "Kiss of Death",
+            "energyLimit": 15.48,
             "briefDesc": "Swings the chain shovel to deal DMG multiple times.",
             "desc": "Slings the chain shovel to deal DMG multiple times.\u000bStrike 1: <color=#ec6d21>&Param1& of ATK</color> as Terra DMG.\u000bStrike 2: <color=#ec6d21>&Param2& of ATK x2</color> as Terra DMG.\u000bStrike 3: <color=#ec6d21>&Param3& of ATK</color> as Terra DMG.\u000bStrike 4: <color=#ec6d21>&Param4& of ATK x2</color> as Terra DMG.\u000bStrike 5: <color=#ec6d21>&Param5& of ATK</color>/<color=#ec6d21>&Param6& of ATK</color> as Terra DMG.",
             "damageType": [
@@ -73624,6 +73681,7 @@
             "id": 14931000,
             "name": "Thorned Inferno",
             "cooldown": "14s",
+            "energyLimit": 26.2,
             "briefDesc": "Leaps at the target, dealing AoE Terra DMG, and creates an Iron Cage that deals DMG over time.\u000bWhen Gerie is near the Iron Cage, she enters the Lethal status, which increases her Auto Attack DMG.\u000bThe Main Skill can trigger ##Terra Mark#1020#.",
             "desc": "Leaps at the target, dealing <color=#ec6d21>&Param1& of ATK</color>/<color=#ec6d21>&Param2& of ATK</color> as AoE Terra DMG, and creates an Iron Cage.\u000bIron Cage: Links 2 nearby targets, dealing <color=#ec6d21>&Param3& of ATK</color> as Terra DMG every second for 8s. When Gerie is near the Iron Cage, she enters the Lethal status, which increases her &Param4& by <color=#ec6d21>&Param5&</color>.\u000bThorned Inferno (Main Skill) can trigger ##Terra Mark#1020#, dealing &Param6& of ATK as AoE Terra Mark DMG.",
             "damageType": [
@@ -76254,6 +76312,7 @@
         "normalAtk": {
             "id": 15010000,
             "name": "Stormpiercer Dance",
+            "energyLimit": 20.88,
             "briefDesc": "Swings the lance to attack the target repeatedly.",
             "desc": "Wields the lance to launch consecutive attacks.\u000bStrike 1: <color=#fb8037>&Param1& of ATK x2</color> as Lux DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Lux DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK</color> as Lux DMG.\u000bStrike 4: <color=#fb8037>&Param4& of ATK x2</color> as Lux DMG.\u000bStrike 5: <color=#fb8037>&Param5& of ATK x2</color> and <color=#fb8037>&Param6& of ATK x6</color> as Lux DMG.",
             "damageType": [
@@ -76279,6 +76338,7 @@
             "id": 15031000,
             "name": "Thunderflare Strike",
             "cooldown": "12s",
+            "energyLimit": 33.7,
             "briefDesc": "Sweeps the target and then fires a ray of laser, dealing DMG multiple times.\u000bThe Main Skill can trigger ##Lux Mark: Radiance#2016#.",
             "desc": "Sweeps the target, dealing <color=#fb8037>&Param1& of ATK</color> as AoE Lux DMG, then fires a ray of laser, dealing <color=#fb8037>&Param2& of ATK</color> as AoE Lux DMG.\u000bThunderflare Strike (Main Skill) can trigger ##Lux Mark: Radiance#2016#, dealing &Param3& of ATK as Lux Mark DMG.",
             "damageType": [
@@ -78917,6 +78977,7 @@
         "normalAtk": {
             "id": 15510000,
             "name": "Sail of Twin Moons",
+            "energyLimit": 14.96,
             "briefDesc": "Commands Snow Rabbit and Night Rabbit to attack the target in turn to deal DMG.",
             "desc": "Commands drones to attack the target in turn.\u000bStrike 1: Snow Rabbit fires bullets in a sweeping motion, dealing <color=#fb8037>&Param1&</color> of ATK as Lux DMG.\u000bStrike 2: Night Rabbit fires missiles, dealing <color=#fb8037>&Param2&</color> of ATK as Lux DMG.\u000bStrike 3: Snow Rabbit fires bullets in a sweeping motion, dealing <color=#fb8037>&Param3&</color> of ATK as Lux DMG.\u000bStrike 4: Night Rabbit fires missiles, dealing <color=#fb8037>&Param4&</color> of ATK as Lux DMG.",
             "damageType": [
@@ -78941,6 +79002,7 @@
             "id": 15531000,
             "name": "Whirling Waves",
             "cooldown": "14s",
+            "energyLimit": 45.02,
             "briefDesc": "Summons several drones to attack the target repeatedly, dealing DMG.\u000bThe Main Skill can trigger ##Lux Mark#1015#.",
             "desc": "Calls for support. Commands 2 Snow Rabbits and 1 Night Rabbit to circle and attack the target for 10s.\u000bSnow Rabbits fire bullets in a sweeping motion, dealing <color=#fb8037>&Param1& of ATK</color> as Lux DMG.\u000bNight Rabbit fires missiles, dealing <color=#fb8037>&Param2& of ATK</color> as Lux DMG, and then explodes, dealing <color=#fb8037>&Param3& of ATK</color> as AoE Lux DMG.\u000bWhirling Waves (Main Skill) can trigger ##Lux Mark#1015#, dealing &Param4& of ATK as Lux Mark DMG.",
             "damageType": [
@@ -81785,6 +81847,7 @@
         "normalAtk": {
             "id": 15610000,
             "name": "Laid-back Shots",
+            "energyLimit": 15.24,
             "briefDesc": "Shoots consecutively with the crossbow.",
             "desc": "Shoots consecutively with the crossbow, each shot dealing <color=#fb8037>&Param1& of ATK</color> as Terra DMG. Stores up to 6 arrows.",
             "damageType": [
@@ -81803,6 +81866,7 @@
             "id": 15631000,
             "name": "Plushie Dance",
             "cooldown": "8s",
+            "energyLimit": 12.5,
             "briefDesc": "Generates a penguin plushie that will explode.",
             "desc": "Generates a penguin plushie that keeps moving toward the target and explodes in 3s, dealing <color=#fb8037>&Param1& of ATK</color> as AoE Terra DMG and inflicting ##Terra Mark: Earth Vein#2029#. When the penguin plushie deals DMG, the target's &Param2& increases by <color=#fb8037>&Param3&</color> for &Param4&s.",
             "damageType": [
@@ -84455,6 +84519,7 @@
         "normalAtk": {
             "id": 15810000,
             "name": "Snowish Warrior",
+            "energyLimit": 14.95,
             "briefDesc": "Wields the whip to perform multiple attacks.\u000bCarries toy: Colonel Walnut to attack targets.\u000bWhen Colonel Walnut's Morale is fully stacked, it evolves into toy: General Curly.",
             "desc": "Wields the whip to perform multiple attacks.\u000bStrike 1: <color=#fb8037>&Param1&</color> of ATK as Ignis DMG.\u000bStrike 2: <color=#fb8037>&Param2&</color> of ATK as Ignis DMG.\u000bStrike 3: <color=#fb8037>&Param3&</color> of ATK as Ignis DMG.\u000bStrike 4: <color=#fb8037>&Param4& x5</color> of ATK as Ignis DMG.\u000bStrike 5: <color=#fb8037>&Param5& x3</color> of ATK as Ignis DMG.\u000bUses toy Colonel Walnut to attack the target. Its Auto Attack deals <color=#fb8037>&Param6&</color> of ATK as Ignis Minion DMG and grants Colonel Walnut 1 stack of Morale.\u000bWhen Colonel Walnut's Morale reaches &Param7& stacks, it evolves into General Curly. Its Auto Attack deals <color=#fb8037>&Param8& x2</color> of ATK as Ignis Minion DMG and consumes 4 stacks of Morale.\u000bWhen General Curly's Morale reaches zero, it devolves into Colonel Walnut.",
             "damageType": [
@@ -84485,6 +84550,7 @@
             "id": 15831000,
             "name": "Whip Assault",
             "cooldown": "8s",
+            "energyLimit": 15.47,
             "briefDesc": "Whips forward to attack the target, boosting the toys' Morale and triggering the Synergy Skill of the toys.\u000bThe Main Skill can trigger ##Ignis Mark#1016#.",
             "desc": "Whips forward to attack the target, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Ignis DMG and granting 1 stack of Morale to the toys. If the toys are within the Main Skill's Attack Range, they gain 1 additional stack of Morale.\u000bWhen casting the Main Skill, toys will cast the Synergy Skill to attack the target.\u000bColonel Walnut smashes the ground, dealing <color=#fb8037>&Param3&</color> of ATK as AoE Ignis Minion DMG, and gains 1 stack of Morale.\u000bGeneral Curly swings dual blades, dealing <color=#fb8037>&Param4& x2</color> of ATK as AoE Ignis Minion DMG.\u000b&Param2& (Main Skill) can trigger ##Ignis Mark#1016#, dealing &Param5& of ATK as Ignis Mark DMG.",
             "damageType": [
@@ -87183,6 +87249,7 @@
         "normalAtk": {
             "id": 15910000,
             "name": "Evergreen Needles",
+            "energyLimit": 2.74,
             "briefDesc": "Fires consecutive streams of chemicals to deal DMG.",
             "desc": "Fires streams of chemicals, each dealing <color=#fb8037>&Param1& of ATK</color> as Terra DMG. Magazine capacity: 15.",
             "damageType": [
@@ -87201,6 +87268,7 @@
             "id": 15931000,
             "name": "Jade of Vitality",
             "cooldown": "14s",
+            "energyLimit": 32.33,
             "briefDesc": "Deals DMG to targets in front. Drops one Auspice, which fires continuous beam that deals DMG over time.\u000bWhen casting the Main Skill, enters Crystallized State.\u000bThe Main Skill and Auspice can trigger ##Terra Mark#1020#.",
             "desc": "Shoots forward, dealing <color=#fb8037>&Param1& of ATK</color> as AoE Terra DMG. Drops one Auspice, which fires continuous beam, dealing <color=#fb8037>&Param2& of ATK</color> every 0.6s for 8s.\u000bWhen casting Jade of Vitality (Main Skill), enters Crystallized State: Movement SPD increases by 15% for 8s.\u000bThe Main Skill and Auspice can trigger ##Terra Mark#1020#, dealing &Param3& of ATK as AoE Terra Mark DMG.",
             "damageType": [

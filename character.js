@@ -58,6 +58,7 @@ for (const id in CHARACTER) {
         normalAtk: {
             id: CHARACTER[id].NormalAtkId,
             name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
+            energyLimit: SKILL[CHARACTER[id].NormalAtkId].GetEnergyLimit / 10000,
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].NormalAtkId], LANG_SKILL),
             damageType: getSkillDamageTypes(CHARACTER[id].NormalAtkId),
@@ -72,6 +73,7 @@ for (const id in CHARACTER) {
             id: CHARACTER[id].SkillId,
             name: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Title],
             cooldown: SKILL[CHARACTER[id].SkillId].SkillCD / 10000 + 's',
+            energyLimit: SKILL[CHARACTER[id].SkillId].GetEnergyLimit / 10000,
             briefDesc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].SkillId], LANG_SKILL),
             damageType: getSkillDamageTypes(CHARACTER[id].SkillId),
