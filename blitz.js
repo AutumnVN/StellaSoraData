@@ -23,6 +23,7 @@ for (const id in SCOREBOSSLEVEL) {
     const scoreBossLevel = SCOREBOSSLEVEL[id];
     const scoreGetSwitch = SCOREGETSWITCH[`${scoreBossLevel.ScoreGetSwitchGroup}001`];
     const monster = MONSTER[scoreBossLevel.MonsterId];
+    if (!monster) continue;
     const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster.FAId].MonsterManual];
     const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
     const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[0];
