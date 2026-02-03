@@ -30,7 +30,7 @@ for (const typeId in WEEKBOSSTYPE) {
             icon: WEEKBOSSAFFIX[affixId].Icon.split('/').pop(),
         })),
         weakTo: WEEKBOSSTYPE[typeId].EET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
-        resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${WEEKBOSSTYPE[typeId].AntiEET[0]}.1`],
+        resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${monsterValueTemplateAdjust.ResistEET[0]}.1`],
         diff: monsterValueTemplates.map(monsterValueTemplate => ({
             level: monsterValueTemplate.Lv,
             stat: {
