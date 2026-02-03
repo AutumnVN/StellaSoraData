@@ -24613,7 +24613,7 @@
         "mainSkill": {
             "id": 4006,
             "name": "Witch's Swing",
-            "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker casts a Support Skill, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "desc": "Increases all friendly units' Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker casts a Support Skill, increases the effect by an additional <color=#ec6d21>{2}</color> for {3} sec.",
             "effectType": [
                 "Umbra DMG (base)",
                 "ADDBUFF:Umbra DMG"
@@ -42843,6 +42843,610 @@
             }
         ]
     },
+    "214042": {
+        "id": 214042,
+        "name": "Wine Warm, Lamps Alight",
+        "star": 5,
+        "element": "Terra",
+        "tag": [
+            "Ultimate",
+            "ATK",
+            "Auto Attack"
+        ],
+        "mainSkill": {
+            "id": 4042,
+            "name": "Wine Warm, Lamps Alight",
+            "desc": "Increases the Ultimate DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>. When a Versatile Terra Trekker deals Skill DMG, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "effectType": [
+                "Ultimate DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [
+                "NOTHING, SELF, ACTORELEMENTTYPE, Terra | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "10%,20%,4/12%,24%,4/14%,28%,4/16%,32%,4/18%,36%,4/20%,40%,4",
+            "icon": "DiscSkill_214042",
+            "iconBg": "db_DiscSkill_2"
+        },
+        "secondarySkill1": {
+            "id": 40421,
+            "name": "Eternal Pulse",
+            "desc": "Increases Terra Versatile Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bIncreases the main Terra Trekker's Auto Attack DMG by <color=#ec6d21>{2}</color>.",
+            "effectType": [
+                "ATK (%)",
+                "Auto Attack Damage (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [
+                "NOTHING, SELF, ACTORELEMENTTYPE, Terra, AND, SELF, SELF_BE_MAINCONTROL | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "2%,5%/4%,10%/6%,15%/8%,20%/10%,25%",
+            "requirements": [
+                {
+                    "Melody of Skill": 10,
+                    "Melody of Terra": 10
+                },
+                {
+                    "Melody of Skill": 25,
+                    "Melody of Terra": 25
+                },
+                {
+                    "Melody of Skill": 40,
+                    "Melody of Terra": 40
+                },
+                {
+                    "Melody of Skill": 55,
+                    "Melody of Terra": 55
+                },
+                {
+                    "Melody of Skill": 70,
+                    "Melody of Terra": 70
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_2"
+        },
+        "secondarySkill2": {
+            "id": 40422,
+            "name": "Bright Refrain",
+            "desc": "After the main Terra Trekker deals DMG {1} times, increases own ATK by <color=#ec6d21>{2}</color> for {3}s.",
+            "effectType": [
+                "ATK (%)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "10,5%,5/10,10%,5/10,15%,5/10,20%,5/10,25%,5",
+            "requirements": [
+                {
+                    "Melody of Focus": 15,
+                    "Melody of Ultimate": 15,
+                    "Melody of Terra": 15
+                },
+                {
+                    "Melody of Focus": 30,
+                    "Melody of Ultimate": 30,
+                    "Melody of Terra": 30
+                },
+                {
+                    "Melody of Focus": 45,
+                    "Melody of Ultimate": 45,
+                    "Melody of Terra": 45
+                },
+                {
+                    "Melody of Focus": 60,
+                    "Melody of Ultimate": 60,
+                    "Melody of Terra": 60
+                },
+                {
+                    "Melody of Focus": 75,
+                    "Melody of Ultimate": 75,
+                    "Melody of Terra": 75
+                }
+            ],
+            "icon": "DiscSkill_1",
+            "iconBg": "db_DiscSkill_2"
+        },
+        "supportNote": [
+            {
+                "Melody of Burst": 3,
+                "Melody of Terra": 3
+            },
+            {
+                "Melody of Burst": 3,
+                "Melody of Terra": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Terra": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Terra": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Terra": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Terra": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Terra": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Terra": 7
+            },
+            {
+                "Melody of Burst": 7,
+                "Melody of Terra": 7
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 14,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 18,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 22,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 26,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 30,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 34,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 46,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 50,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 60,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 64,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 68,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 72,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 77,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 80,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 85,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 88,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 93,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 96,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 101,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 121,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 124,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 129,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 132,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 137,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 140,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 145,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 149,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 153,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 157,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 161,
+                "Terra DMG": "4%"
+            },
+            {
+                "ATK": 194,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 197,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 202,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 205,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 210,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 213,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 218,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 221,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 226,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 230,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 234,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 281,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 284,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 289,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 293,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 297,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 301,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 305,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 309,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 313,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 317,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 321,
+                "Terra DMG": "6%"
+            },
+            {
+                "ATK": 385,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 390,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 393,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 398,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 401,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 406,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 410,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 414,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 418,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 422,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 426,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 511,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 515,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 519,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 523,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 527,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 531,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 536,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 539,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 544,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 547,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 552,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 662,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 666,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 670,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 674,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 678,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 682,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 686,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 690,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 694,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 698,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 702,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 842,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 847,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 851,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 855,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 859,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 863,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 867,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 871,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 875,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 879,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 883,
+                "Terra DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Duloos Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Duloos Breath": 6,
+                "Duloos Soul Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Duloos Breath": 13,
+                "Duloos Soul Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Duloos Breath": 20,
+                "Duloos Soul Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Duloos Breath": 26,
+                "Duloos Soul Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Duloos Breath": 40,
+                "Duloos Soul Remnant": 73,
+                "Duloos Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Duloos Soul Remnant": 100,
+                "Duloos Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Duloos Soul Remnant": 126,
+                "Duloos Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
     "214043": {
         "id": 214043,
         "name": "The Bud of Change",
@@ -43381,6 +43985,612 @@
             {
                 "ATK": 883,
                 "Umbra DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Light Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Faint Light Breath": 6,
+                "Emberflies Soul": 13,
+                "Dorra": 26700
+            },
+            {
+                "Faint Light Breath": 13,
+                "Emberflies Soul": 20,
+                "Dorra": 59900
+            },
+            {
+                "Faint Light Breath": 20,
+                "Emberflies Soul": 33,
+                "Dorra": 89900
+            },
+            {
+                "Faint Light Breath": 26,
+                "Emberflies Soul": 53,
+                "Dorra": 197200
+            },
+            {
+                "Faint Light Breath": 40,
+                "Emberflies Soul": 73,
+                "Evernight Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Emberflies Soul": 100,
+                "Evernight Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Emberflies Soul": 126,
+                "Evernight Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214044": {
+        "id": 214044,
+        "name": "Veiled Dawn of Spring",
+        "star": 5,
+        "element": "Terra",
+        "tag": [
+            "Skills",
+            "VUL",
+            "Crit DMG"
+        ],
+        "mainSkill": {
+            "id": 4044,
+            "name": "Veiled Dawn of Spring",
+            "desc": "Increases Skill DMG of Support Terra Trekkers by <color=#ec6d21>{1}</color>.\u000bWhen a Versatile Terra Trekker deals Skill DMG, inflicts Spring Blossom on the target: increases Terra Skill DMG taken by <color=#ec6d21>{2}</color> for {3}s.",
+            "effectType": [
+                "Skill DMG (base)",
+                "ELEMENTTYPE_:Skill DMG Taken (abs)"
+            ],
+            "addAttrType": [],
+            "effectData": [
+                "NOTHING, SELF, SELF_BE_ASSISTANT, AND, SELF, ACTORELEMENTTYPE | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "buffIcon": [
+                "Icon_DiscBuff_214044"
+            ],
+            "params": "20%,15%,4/24%,18%,4/28%,21%,4/32%,24%,4/36%,27%,4/40%,30%,4",
+            "icon": "DiscSkill_214044",
+            "iconBg": "db_DiscSkill_2"
+        },
+        "secondarySkill1": {
+            "id": 40441,
+            "name": "The Sovereign Elixir",
+            "desc": "Increases Terra Versatile Trekkers' Skill Crit DMG by <color=#ec6d21>{1}</color>.\u000bIncreases the main Terra Trekker's Skill DMG to targets inflicted with Spring Blossom by <color=#ec6d21>{2}</color>.",
+            "effectType": [
+                "Skill Crit DMG (base)"
+            ],
+            "addAttrType": [
+                "Skill DMG (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "15%,12%/20%,24%/25%,36%/30%,48%/35%,60%",
+            "requirements": [
+                {
+                    "Melody of Ultimate": 10,
+                    "Melody of Terra": 10
+                },
+                {
+                    "Melody of Ultimate": 25,
+                    "Melody of Terra": 25
+                },
+                {
+                    "Melody of Ultimate": 40,
+                    "Melody of Terra": 40
+                },
+                {
+                    "Melody of Ultimate": 55,
+                    "Melody of Terra": 55
+                },
+                {
+                    "Melody of Ultimate": 70,
+                    "Melody of Terra": 70
+                }
+            ],
+            "icon": "DiscSkill_3",
+            "iconBg": "db_DiscSkill_2"
+        },
+        "secondarySkill2": {
+            "id": 40442,
+            "name": "Blossom's Requiring",
+            "desc": "After the main Terra Trekker deals DMG to targets inflicted with Spring Blossom {1} times, increases Terra squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "effectType": [
+                "Skill DMG (base)"
+            ],
+            "addAttrType": [
+                "Skill DMG (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "10,10%,5/10,20%,5/10,30%,5/10,40%,5/10,50%,5",
+            "requirements": [
+                {
+                    "Melody of Luck": 15,
+                    "Melody of Ultimate": 15,
+                    "Melody of Terra": 15
+                },
+                {
+                    "Melody of Luck": 30,
+                    "Melody of Ultimate": 30,
+                    "Melody of Terra": 30
+                },
+                {
+                    "Melody of Luck": 45,
+                    "Melody of Ultimate": 45,
+                    "Melody of Terra": 45
+                },
+                {
+                    "Melody of Luck": 60,
+                    "Melody of Ultimate": 60,
+                    "Melody of Terra": 60
+                },
+                {
+                    "Melody of Luck": 75,
+                    "Melody of Ultimate": 75,
+                    "Melody of Terra": 75
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_2"
+        },
+        "supportNote": [
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 7
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 9
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 10
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 15,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 20,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 24,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 29,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 33,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 47,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 51,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 56,
+                "Terra DMG": "2%"
+            },
+            {
+                "ATK": 67,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 71,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 76,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 80,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 85,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 89,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 94,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 98,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 103,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 107,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 112,
+                "Terra DMG": "3%"
+            },
+            {
+                "ATK": 134,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 138,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 143,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 147,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 152,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 156,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 161,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 165,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 170,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 174,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 179,
+                "Terra DMG": "5%"
+            },
+            {
+                "ATK": 215,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 219,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 224,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 228,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 233,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 237,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 242,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 246,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 251,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 255,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 260,
+                "Terra DMG": "7%"
+            },
+            {
+                "ATK": 312,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 316,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 321,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 325,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 330,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 334,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 339,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 343,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 348,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 352,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 357,
+                "Terra DMG": "8%"
+            },
+            {
+                "ATK": 428,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 433,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 437,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 442,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 446,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 451,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 455,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 460,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 464,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 469,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 473,
+                "Terra DMG": "10%"
+            },
+            {
+                "ATK": 568,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 572,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 577,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 581,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 586,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 590,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 595,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 599,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 604,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 608,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 613,
+                "Terra DMG": "12%"
+            },
+            {
+                "ATK": 735,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 740,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 744,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 749,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 753,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 758,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 762,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 767,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 771,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 776,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 780,
+                "Terra DMG": "13%"
+            },
+            {
+                "ATK": 936,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 941,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 945,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 950,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 954,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 959,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 963,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 968,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 972,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 977,
+                "Terra DMG": "15%"
+            },
+            {
+                "ATK": 981,
+                "Terra DMG": "15%"
             }
         ],
         "dupe": [

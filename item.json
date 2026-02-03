@@ -404,10 +404,25 @@
         "type": "Char",
         "rarity": "SSR"
     },
+    "159": {
+        "id": 159,
+        "name": "Springseek Coronis",
+        "desc": "Proof of invitation to add Springseek Coronis to your squad",
+        "literary": "She wanders alone on the foreign streets.",
+        "type": "Char",
+        "rarity": "SSR"
+    },
     "401": {
         "id": 401,
-        "name": "Everbright Wishes",
+        "name": "Everbright Wishes: Stardust",
         "desc": "Valid for 30 days. Log in daily to receive 90 Stellanite Dust.",
+        "type": "MonthlyCard",
+        "rarity": "SSR"
+    },
+    "402": {
+        "id": 402,
+        "name": "Everbright Wishes: Ascent",
+        "desc": "Valid for 30 days. Log in daily to receive Canned Vigor Soda and Monolith Stairs Pass.",
         "type": "MonthlyCard",
         "rarity": "SSR"
     },
@@ -702,6 +717,14 @@
         "name": "Snowish Laru's Soul Key",
         "desc": "Activates Trekker Talents.",
         "literary": "Guard the children's innocent wishes as a spirit.",
+        "type": "CharShard",
+        "rarity": "SSR"
+    },
+    "1590": {
+        "id": 1590,
+        "name": "Springseek Coronis's Soul Key",
+        "desc": "Activates Trekker Talents.",
+        "literary": "She wanders alone on the foreign streets.",
         "type": "CharShard",
         "rarity": "SSR"
     },
@@ -1009,6 +1032,14 @@
         "type": "CharacterSkin",
         "rarity": "SSR"
     },
+    "13503": {
+        "id": 13503,
+        "name": "Cocoa Night Sweetheart",
+        "desc": "Certificate that unlocks Mistique's exclusive appearance \"Cocoa Night Sweetheart\"!",
+        "literary": "Indulge in the sweetness of cocoa as a broom zooms across the starlit sky. Leave your worries behind. This is an adventure meant just for you.",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
     "14101": {
         "id": 14101,
         "name": "Chixia: Default",
@@ -1114,6 +1145,18 @@
     "15802": {
         "id": 15802,
         "name": "Snowish Laru: Awakened",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "15901": {
+        "id": 15901,
+        "name": "Springseek Coronis: Default",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "15902": {
+        "id": 15902,
+        "name": "Springseek Coronis: Awakened",
         "type": "CharacterSkin",
         "rarity": "SSR"
     },
@@ -2059,11 +2102,27 @@
         "type": "Item",
         "rarity": "SR"
     },
+    "73106": {
+        "id": 73106,
+        "name": "Tasty Tanghulu",
+        "desc": "Currency earned via active participation in the Crackling Hint of Spring event. Can be used to redeem items in the Event Shop.",
+        "literary": "Loong's signature cuisine. Excessive consumption may lead to weight gain.\n—A word of advice from your doctor.",
+        "type": "Item",
+        "rarity": "SR"
+    },
     "73201": {
         "id": 73201,
         "name": "Banner of Clearance",
         "desc": "Currency earned via active participation in the Call for Best Records event.",
         "literary": "A banner sent by the Trekker Association to recognize Trekkers who have fully explored the Monolith and contributed Records—\"All for one, one for all.\"",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "73202": {
+        "id": 73202,
+        "name": "United Council Token",
+        "desc": "Item earned via active participation in the Bouncing Bumper Bash event!",
+        "literary": "Tokens distributed to honor combatants who made outstanding contributions to Planetary Defense.\n\"Dedicate your hearts to the United Council!\"",
         "type": "Item",
         "rarity": "SR"
     },
@@ -2756,6 +2815,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "112159": {
+        "id": 112159,
+        "name": "Healing Touch",
+        "desc": "Unlocks the Honor Title: Healing Touch.",
+        "literary": "Proof of friendship with Springseek Coronis!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "114001": {
         "id": 114001,
         "name": "Hello Gamer",
@@ -2820,6 +2887,22 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "115006": {
+        "id": 115006,
+        "name": "Season 6 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 6 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 6!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "115007": {
+        "id": 115007,
+        "name": "Season 7 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 7 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 7!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "116001": {
         "id": 116001,
         "name": "Daring Adventure! The Ghost Ship Haunts the Deep",
@@ -2857,6 +2940,14 @@
         "name": "Miracle of a Flicker",
         "desc": "Unlocks the Honor Title: Miracle of a Flicker.",
         "literary": "Proof of a great success in the event: Miracle of a Flicker!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "116006": {
+        "id": 116006,
+        "name": "Crackling Hint of Spring",
+        "desc": "Unlocks the Honor Title: Crackling Hint of Spring.",
+        "literary": "Proof of a great success in the event: Crackling Hint of Spring!",
         "type": "Honor",
         "rarity": "SSR"
     },
@@ -2904,6 +2995,30 @@
         "id": 117013,
         "name": "Season 2 Endgame Elite",
         "desc": "Unlocks the Honor Title: Season 2 Endgame Elite.",
+        "literary": "Proof of fighting tenaciously in Season 2 of A Finale Echoing and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117021": {
+        "id": 117021,
+        "name": "Season 3 Endgame Ace",
+        "desc": "Unlocks the Honor Title: Season 3 Endgame Ace.",
+        "literary": "Proof of fighting tenaciously in Season 2 of A Finale Echoing and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117022": {
+        "id": 117022,
+        "name": "Season 3 Endgame Master",
+        "desc": "Unlocks the Honor Title: Season 3 Endgame Master.",
+        "literary": "Proof of fighting tenaciously in Season 2 of A Finale Echoing and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117023": {
+        "id": 117023,
+        "name": "Season 3 Endgame Elite",
+        "desc": "Unlocks the Honor Title: Season 3 Endgame Elite.",
         "literary": "Proof of fighting tenaciously in Season 2 of A Finale Echoing and achieving the honor of Elite!",
         "type": "Honor",
         "rarity": "SSR"
@@ -3004,6 +3119,54 @@
         "type": "Honor",
         "rarity": "SR"
     },
+    "118041": {
+        "id": 118041,
+        "name": "Season 5 Hunting Ace",
+        "desc": "Unlocks the Honor Title: Season 5 Hunting Ace.",
+        "literary": "Proof of a stellar performance in Season 5 of Boss Blitz and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118042": {
+        "id": 118042,
+        "name": "Season 5 Hunting Master",
+        "desc": "Unlocks the Honor Title: Season 5 Hunting Master.",
+        "literary": "Proof of a stellar performance in Season 5 of Boss Blitz and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118043": {
+        "id": 118043,
+        "name": "Season 5 Hunting Elite",
+        "desc": "Unlocks the Honor Title: Season 5 Hunting Elite.",
+        "literary": "Proof of a stellar performance in Season 5 of Boss Blitz and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
+    "119011": {
+        "id": 119011,
+        "name": "Space Cadet S1",
+        "desc": "Unlocks the Honor Title: Space Cadet S1.",
+        "literary": "Proof of a great success in the event: Season 1 Bouncing Bumper Bash!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
+    "119012": {
+        "id": 119012,
+        "name": "Space Cadet S2",
+        "desc": "Unlocks the Honor Title: Space Cadet S2.",
+        "literary": "Proof of a great success in the event: Season 2 Bouncing Bumper Bash!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
+    "119013": {
+        "id": 119013,
+        "name": "Space Cadet S3",
+        "desc": "Unlocks the Honor Title: Space Cadet S3.",
+        "literary": "Proof of a great success in the event: Season 3 Bouncing Bumper Bash!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
     "120001": {
         "id": 120001,
         "name": "Beach Treasure Shovel",
@@ -3064,7 +3227,7 @@
         "id": 198025,
         "name": "Ventus Team Record",
         "desc": "Grants a Ventus Monolith: Record to a beginner!",
-        "rarity": "SR"
+        "rarity": "R"
     },
     "199000": {
         "id": 199000,
@@ -3703,10 +3866,24 @@
         "type": "Disc",
         "rarity": "SSR"
     },
+    "214042": {
+        "id": 214042,
+        "name": "Wine Warm, Lamps Alight",
+        "literary": "Midnight bells chime to welcome the Springseek Festival\u000bas fireworks set the night sky ablaze.\u000bAmid the revelry, the crowd wishes\u000bthat there is joy and peace for the days and years ahead.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
     "214043": {
         "id": 214043,
         "name": "The Bud of Change",
         "literary": "Beneath the soil steeped in conspiracy and intrigue,\nWatchful, calculating gazes interweave.\nSomething is struggling to break through the earth.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
+    "214044": {
+        "id": 214044,
+        "name": "Veiled Dawn of Spring",
+        "literary": "The drawn curtains create a cozy, warm retreat.\u000bHer smile is tender,\u000bbut the syringe in her hand glints chillingly.\u000b\"Don't be afraid. It will be over before you know it.\"",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -4317,11 +4494,27 @@
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
+    "224042": {
+        "id": 224042,
+        "name": "Wine Warm, Lamps Alight Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "Midnight bells chime to welcome the Springseek Festival\u000bas fireworks set the night sky ablaze.\u000bAmid the revelry, the crowd wishes\u000bthat there is joy and peace for the days and years ahead.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
     "224043": {
         "id": 224043,
         "name": "The Bud of Change Melody",
         "desc": "Material required for the Crescendo of specific Discs.",
         "literary": "Beneath soil steeped in conspiracy and intrigue,\u000bWatchful, calculating gazes interweave.\u000bSomething is struggling to break through the earth.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224044": {
+        "id": 224044,
+        "name": "Veiled Dawn of Spring Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "The drawn curtains create a cozy, warm retreat.\u000bHer smile is tender,\u000bbut the syringe in her hand glints chillingly.\u000b\"Don't be afraid. It will be over before you know it.\"",
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
@@ -9376,6 +9569,180 @@
     "515843": {
         "id": 515843,
         "name": "Toy Army",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515901": {
+        "id": 515901,
+        "name": "Radiance of Auspice",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515902": {
+        "id": 515902,
+        "name": "Reflection of Auspice",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515903": {
+        "id": 515903,
+        "name": "Needle Shower",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515904": {
+        "id": 515904,
+        "name": "Echo of Earth",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515905": {
+        "id": 515905,
+        "name": "Catalyst",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515906": {
+        "id": 515906,
+        "name": "Exquisite Cut",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515907": {
+        "id": 515907,
+        "name": "Jade Chime",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515908": {
+        "id": 515908,
+        "name": "Expanse: Everlasting Peace",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515909": {
+        "id": 515909,
+        "name": "Inner Stagnation",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515910": {
+        "id": 515910,
+        "name": "Fortune's Flow",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515911": {
+        "id": 515911,
+        "name": "Iridescent Robe",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515912": {
+        "id": 515912,
+        "name": "Omen Breaker",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515913": {
+        "id": 515913,
+        "name": "Shifting Brilliance",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515921": {
+        "id": 515921,
+        "name": "Essence Extraction",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515922": {
+        "id": 515922,
+        "name": "Vernal Breath",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515923": {
+        "id": 515923,
+        "name": "Return to Earth",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515924": {
+        "id": 515924,
+        "name": "Lasting Aftertaste",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "515925": {
+        "id": 515925,
+        "name": "Perfect Touch",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515926": {
+        "id": 515926,
+        "name": "Symptom Sight",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515927": {
+        "id": 515927,
+        "name": "Reciprocity",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515928": {
+        "id": 515928,
+        "name": "Faded Splendor",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515929": {
+        "id": 515929,
+        "name": "Aromatic Room",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515930": {
+        "id": 515930,
+        "name": "Waning Year",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515931": {
+        "id": 515931,
+        "name": "Herbal Tempering",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515932": {
+        "id": 515932,
+        "name": "Flying Fire",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515933": {
+        "id": 515933,
+        "name": "Terra Chorus",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "515941": {
+        "id": 515941,
+        "name": "Dream Shock",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515942": {
+        "id": 515942,
+        "name": "Lingering Grace",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "515943": {
+        "id": 515943,
+        "name": "United Flame",
         "type": "Potential",
         "rarity": "SR"
     }
