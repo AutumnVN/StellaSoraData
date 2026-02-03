@@ -11,7 +11,10 @@ MallPackageCtrl._mapNodeConfig = {
 	trTab = {sComponentName = "Transform"},
 	svTab = {sComponentName = "ScrollRect"}
 }
-MallPackageCtrl._mapEventConfig = {MallOrderClear = "Refresh"}
+MallPackageCtrl._mapEventConfig = {
+	MallOrderClear = "Refresh",
+	OpenMallPackageDetail = "OnEvent_OpenMallPackageDetail"
+}
 function MallPackageCtrl:Refresh(bResetPos)
 	if self._panel.nCurTog ~= AllEnum.MallToggle.Package then
 		return
@@ -22,6 +25,19 @@ function MallPackageCtrl:Refresh(bResetPos)
 		self:RefreshTab()
 		self:RefreshList(bResetPos)
 		self:SetTimer(nTime)
+		if self.nAutoSelectPackageId then
+			local nIndex = 1
+			for k, v in ipairs(self.tbPackagePage[1]) do
+				if v.sId == self.nAutoSelectPackageId then
+					nIndex = k
+					break
+				end
+			end
+			EventManager.Hit(EventId.OpenPanel, PanelId.MallPopup, AllEnum.MallToggle.Package, self.tbPackagePage[1][nIndex], {
+				AllEnum.CoinItemId.FREESTONE
+			})
+			self.nAutoSelectPackageId = nil
+		end
 		NovaAPI.SetCanvasGroupAlpha(self._mapNode.cgSv, 1)
 	end
 	PlayerData.Mall:SendMallPackageListReq(callback)
@@ -84,6 +100,11 @@ function MallPackageCtrl:RefreshTab()
 		local func_Handler = ui_handler(self, self.OnBtnClick_ChangeSheet, goTab, i)
 		btn.onClick:AddListener(func_Handler)
 		self.ctrlTab[i] = self:BindCtrlByNode(goTab, "Game.UI.TemplateEx.TemplateTabCtrl")
+		local goTabNew = goTab.transform:Find("btnTab/AnimRoot/redDot_New").gameObject
+		RedDotManager.RegisterNode(RedDotDefine.Mall_Tab_New, {
+			AllEnum.MallToggle.Package,
+			self.tbPages[i].Sort
+		}, goTabNew)
 		self.ctrlTab[i]:SetText(self.tbPages[i].Name)
 	end
 	for i = 1, self.nPageCount do
@@ -148,6 +169,9 @@ function MallPackageCtrl:ResetTab(nTab)
 	end
 	self.ctrlTab[self.nCurTab]:SetSelect(true, 1)
 end
+function MallPackageCtrl:GetCurTab()
+	return self.tbPages[self.nCurTab].Sort
+end
 function MallPackageCtrl:Awake()
 	self.tbGridCtrl = {}
 	self._mapNode.svTab.gameObject:SetActive(false)
@@ -167,6 +191,7 @@ function MallPackageCtrl:OnDisable()
 		end
 		self.ctrlTab = nil
 	end
+	self.nAutoSelectPackageId = nil
 end
 function MallPackageCtrl:OnDestroy()
 end
@@ -174,6 +199,7 @@ function MallPackageCtrl:OnBtnClick_ChangeSheet(btn, nIndex)
 	if nIndex == self.nCurTab then
 		return
 	end
+	PlayerData.Mall:RemovePackageNew(GameEnum.MallItemType.Package, self.tbPages[self.nCurTab].Sort)
 	local nState = self:GetTabState(self.nCurTab)
 	self.ctrlTab[self.nCurTab]:SetSelect(false, nState)
 	if self.nCurTab > 1 then
@@ -187,5 +213,21 @@ function MallPackageCtrl:OnBtnClick_ChangeSheet(btn, nIndex)
 	self.nCurTab = nIndex
 	self.nSelectPage = self.tbPages[self.nCurTab].Id
 	self:RefreshList(true)
+end
+function MallPackageCtrl:OnEvent_OpenMallPackageDetail(sPackageId)
+	local nPage = 1
+	local nIndex = 1
+	for i, v in ipairs(self.tbPackagePage) do
+		for j, m in ipairs(v) do
+			if m.sId == sPackageId then
+				nPage = i
+				nIndex = j
+				break
+			end
+		end
+	end
+	EventManager.Hit(EventId.OpenPanel, PanelId.MallPopup, AllEnum.MallToggle.Package, self.tbPackagePage[nPage][nIndex], {
+		AllEnum.CoinItemId.FREESTONE
+	})
 end
 return MallPackageCtrl

@@ -133,7 +133,82 @@ function PlayerDiscData:GetDiscSkillByNote(tbDisc, tbHasNote, nNeedNote)
 								tbNote[nNoteId] = nNoteCount
 							end
 						end
-						table.insert(tbSkill, {nId = nSubSkillId, tbNote = tbNote})
+						local tbMaxLayerActiveNote = decodeJson(tbGroup[nMaxLayer].NeedSubNoteSkills)
+						local nMaxLayerNoteNeed = 0
+						if tbMaxLayerActiveNote[sNote] then
+							for k, v in pairs(tbMaxLayerActiveNote) do
+								local nNoteId = tonumber(k)
+								local nNoteCount = tonumber(v)
+								if nNoteId == nNeedNote then
+									nMaxLayerNoteNeed = nNoteCount
+									break
+								end
+							end
+						end
+						table.insert(tbSkill, {
+							nId = nSubSkillId,
+							tbNote = tbNote,
+							nMaxLayerNoteNeed = nMaxLayerNoteNeed
+						})
+					end
+				end
+			end
+		end
+	end
+	return tbSkill
+end
+function PlayerDiscData:GetDiscSkillByNoteCurrentLevel(tbDisc, tbHasNote, nNeedNote)
+	local tbSkill = {}
+	local sNote = tostring(nNeedNote)
+	for _, nDiscId in pairs(tbDisc) do
+		local mapData = self:GetDiscById(nDiscId)
+		if mapData == nil then
+			return {}
+		end
+		for _, nSubSkillGroupId in pairs(mapData.tbSubSkillGroupId) do
+			local tbGroup = CacheTable.GetData("_SecondarySkill", nSubSkillGroupId)
+			if tbGroup then
+				local nCurLayer = 0
+				local nMaxLayer = #tbGroup
+				for i = nMaxLayer, 1, -1 do
+					if tbGroup[i] then
+						local bActive = mapData:CheckSubSkillActive(tbHasNote, tbGroup[i])
+						if bActive then
+							nCurLayer = i
+							break
+						end
+					end
+				end
+				local nNextLayer = nCurLayer == nMaxLayer and nMaxLayer or nCurLayer + 1
+				local nSubSkillId = tbGroup[nCurLayer] and tbGroup[nCurLayer].Id or tbGroup[nNextLayer].Id
+				if tbGroup[nNextLayer] then
+					local tbActiveNote = decodeJson(tbGroup[nNextLayer].NeedSubNoteSkills)
+					if tbActiveNote[sNote] then
+						local tbNote = {}
+						for k, v in pairs(tbActiveNote) do
+							local nNoteId = tonumber(k)
+							local nNoteCount = tonumber(v)
+							if nNoteId then
+								tbNote[nNoteId] = nNoteCount
+							end
+						end
+						local tbMaxLayerActiveNote = decodeJson(tbGroup[nMaxLayer].NeedSubNoteSkills)
+						local nMaxLayerNoteNeed = 0
+						if tbMaxLayerActiveNote[sNote] then
+							for k, v in pairs(tbMaxLayerActiveNote) do
+								local nNoteId = tonumber(k)
+								local nNoteCount = tonumber(v)
+								if nNoteId == nNeedNote then
+									nMaxLayerNoteNeed = nNoteCount
+									break
+								end
+							end
+						end
+						table.insert(tbSkill, {
+							nId = nSubSkillId,
+							tbNote = tbNote,
+							nMaxLayerNoteNeed = nMaxLayerNoteNeed
+						})
 					end
 				end
 			end

@@ -291,9 +291,10 @@ function ReceiveSpecialRewardCtrl:ShowCharCG()
 			Actor2DManager.PlayL2DAnim(self.goL2D.trL2DIns.transform, "idle", true, false)
 		end
 		self:ShowCGEnd()
+	else
+		self:AddTimer(1, nDuration, "ShowCGEnd", true, true, true)
 	end
 	self.callBack = curReward.callBack
-	self:AddTimer(1, nDuration, "ShowCGEnd", true, true, true)
 end
 function ReceiveSpecialRewardCtrl:ShowTitle()
 	local mapItemCfgData = ConfigTable.GetData_Item(self.nId)
@@ -382,11 +383,13 @@ function ReceiveSpecialRewardCtrl:ShowSSRAnimEnd(_, voice)
 	if self.bNew then
 		self:AddTimer(1, 0.4, function()
 			WwiseAudioMgr:PlaySound("ui_recuit_gacha_new")
+			print("ui_recuit_gacha_new")
 		end, true, true, true)
 	end
 	self.timerStep = self:AddTimer(1, animTime, "ShowTitleAnimEnd", true, true, true)
 end
 function ReceiveSpecialRewardCtrl:ShowCGEnd()
+	print("ShowCGEnd")
 	self:ShowCGTitle()
 	self._mapNode.goInfoContent:SetActive(false)
 	self._mapNode.goCGInfoContent:SetActive(true)
@@ -396,6 +399,7 @@ function ReceiveSpecialRewardCtrl:ShowCGEnd()
 	if self.bNew then
 		self:AddTimer(1, 0.4, function()
 			WwiseAudioMgr:PlaySound("ui_recuit_gacha_new")
+			print("ui_recuit_gacha_new")
 		end, true, true, true)
 	end
 	self.timerStep = self:AddTimer(1, animTime, "ShowTitleAnimEnd", true, true, true)

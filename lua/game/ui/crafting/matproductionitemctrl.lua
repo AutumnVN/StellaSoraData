@@ -28,7 +28,7 @@ function MatProductionItemCtrl:SetData(tbProduction)
 		nCount = nil
 	end
 	self:RefreshCraftingItem()
-	self._mapNode.goItem:SetItem(self.nItemId, nil, nCount)
+	self._mapNode.goItem:SetItem(self.nItemId, nil)
 	NovaAPI.SetTMPText(self._mapNode.txtProductionName, tbProduction.Name)
 	self:SetSelect(false)
 	local sAudioEvent = self.bUnlock and "ui_common_slide" or "ui_systerm_locked"

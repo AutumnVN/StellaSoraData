@@ -520,6 +520,24 @@ function TowerDefenseData:RequestEnterLevel(levelId, characterList, itemId, call
 end
 function TowerDefenseData:RequestFinishLevel(levelId, bResult, nHp, cb)
 	local levelData = self:GetLevelData(levelId)
+	local bIsInActivityTime = self:CheckActivityOpen()
+	if not bIsInActivityTime then
+		local mapMsg = {LevelId = levelId, Star = 0}
+		if cb ~= nil then
+			cb(levelData.nStar, levelData.nStar)
+		end
+		local result = {
+			action = 5,
+			nActId = self.nActId,
+			nlevelId = levelId,
+			nStar = 0,
+			nHp = 0,
+			bIsFirstPass = false
+		}
+		self:EventUpload(result)
+		HttpNetHandler.SendMsg(NetMsgId.Id.activity_tower_defense_level_settle_req, mapMsg, nil, nil)
+		return
+	end
 	if not bResult then
 		local mapMsg = {LevelId = levelId, Star = 0}
 		HttpNetHandler.SendMsg(NetMsgId.Id.activity_tower_defense_level_settle_req, mapMsg, nil, function()
@@ -547,6 +565,12 @@ function TowerDefenseData:RequestFinishLevel(levelId, bResult, nHp, cb)
 	end
 	if nHp > config.Condition3 then
 		nStar = nStar + 1
+	end
+	if nStar == 3 then
+		local bPerfect = self:IsPerfectClear(levelId, nHp)
+		if bPerfect then
+			nStar = nStar + 10
+		end
 	end
 	local mapMsg = {LevelId = levelId, Star = nStar}
 	local oldStar = levelData.nStar
@@ -619,6 +643,17 @@ function TowerDefenseData:SkipLevel(levelId, characterList, itemId, cb)
 		charList = clone(characterList),
 		itemId = itemId
 	}
+end
+function TowerDefenseData:IsPerfectClear(levelId, nHp)
+	local levelConfig = ConfigTable.GetData("TowerDefenseLevel", levelId)
+	if levelConfig == nil then
+		return false
+	end
+	local floorConfig = ConfigTable.GetData("TowerDefenseFloor", levelConfig.FloorId)
+	if floorConfig == nil then
+		return false
+	end
+	return nHp == floorConfig.Durability
 end
 function TowerDefenseData:CreateTempData(nLevelId, bResult)
 	self.tempData = {nLevelId = nLevelId, bResult = bResult}

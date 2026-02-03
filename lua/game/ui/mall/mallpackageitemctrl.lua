@@ -26,7 +26,8 @@ MallPackageItemCtrl._mapNodeConfig = {
 	},
 	txtSaleRate = {sComponentName = "TMP_Text"},
 	imgMask = {},
-	reddotPkg = {}
+	reddotPkg = {},
+	reddotNew = {}
 }
 MallPackageItemCtrl._mapEventConfig = {}
 function MallPackageItemCtrl:Refresh(mapData)
@@ -37,7 +38,7 @@ function MallPackageItemCtrl:Refresh(mapData)
 	self:RefreshLimit(mapCfg, mapData)
 	self:RefreshCond(mapCfg, mapData)
 	self:RefreshTime(mapCfg, mapData)
-	self:RegisterRedDot()
+	self:RegisterRedDot(mapCfg)
 end
 function MallPackageItemCtrl:RefreshPrice(mapCfg)
 	if mapCfg.CurrencyType == GameEnum.currencyType.Cash then
@@ -128,8 +129,17 @@ function MallPackageItemCtrl:RefreshCond(mapCfg, mapData)
 		end
 	end
 end
-function MallPackageItemCtrl:RegisterRedDot()
+function MallPackageItemCtrl:RegisterRedDot(mapCfg)
 	RedDotManager.RegisterNode(RedDotDefine.FreePackage, self.sId, self._mapNode.reddotPkg)
+	local groupCfg = ConfigTable.GetData("MallPackagePage", mapCfg.GroupId)
+	if groupCfg == nil then
+		return
+	end
+	RedDotManager.RegisterNode(RedDotDefine.Mall_Package_New, {
+		AllEnum.MallToggle.Package,
+		groupCfg.Sort,
+		self.sId
+	}, self._mapNode.reddotNew)
 end
 function MallPackageItemCtrl:Awake()
 end

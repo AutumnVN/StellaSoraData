@@ -2,7 +2,8 @@ local GuideGroup_4 = class("GuideGroup_4")
 local mapEventConfig = {
 	Positioning_Char_Grid = "OnEvent_PositioningCharGrid",
 	Guide_LoadFormationSuccess = "OnEvent_LoadFormationSuccess",
-	Guide_LoadCharacterSuccess = "OnEvent_LoadCharacterSuccess"
+	Guide_LoadCharacterSuccess = "OnEvent_LoadCharacterSuccess",
+	Guide_InitStarTowerFinish = "OnEvent_Guide_InitStarTowerFinish"
 }
 local groupId = 4
 local totalStep = 13
@@ -89,7 +90,6 @@ function GuideGroup_4:Step_2()
 	}
 	self.parent:ActiveHide(true)
 	current = 2
-	self.waitAnimTime = 1
 end
 function GuideGroup_4:Step_3()
 	self.msg = {
@@ -367,6 +367,15 @@ function GuideGroup_4:FinishCurrentStep()
 	if self.openPanelId == nil and self.waitAnimTime ~= 0 then
 		local wait = function()
 			coroutine.yield(CS.UnityEngine.WaitForSeconds(self.waitAnimTime + 0.2))
+			self.parent:PlayTypeMask(self.msg)
+		end
+		cs_coroutine.start(wait)
+	end
+end
+function GuideGroup_4:OnEvent_Guide_InitStarTowerFinish()
+	if current == 2 then
+		local wait = function()
+			coroutine.yield(CS.UnityEngine.WaitForSeconds(1.2))
 			self.parent:PlayTypeMask(self.msg)
 		end
 		cs_coroutine.start(wait)

@@ -48,7 +48,22 @@ GachaCoverCtrl_CharUp._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_GuaranteeGet"
 	},
-	imgGuaranteeCharHead = {sComponentName = "Image"}
+	imgGuaranteeCharHead = {sComponentName = "Image"},
+	iconProprety = {sComponentName = "Image"},
+	TMPNpcName = {sComponentName = "TMP_Text"},
+	TMPRateUp = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Gacha_Cover_CharUpTitle"
+	},
+	btnEntranceGo = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_EntranceGo"
+	},
+	txtBtnEntranceGo = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Trial_Btn_GotoTrial"
+	},
+	imgFes = {}
 }
 GachaCoverCtrl_CharUp._mapEventConfig = {}
 function GachaCoverCtrl_CharUp:Awake()
@@ -136,6 +151,7 @@ function GachaCoverCtrl_CharUp:SetCover(nId)
 	local bFirstTenReward = PlayerData.Gacha:GetRecvFirstTenReward(nId)
 	local mapGachaData = ConfigTable.GetData("Gacha", nId)
 	if mapGachaData ~= nil then
+		self._mapNode.imgFes:SetActive(mapGachaData.GachaType == 8 or mapGachaData.GachaType == 9)
 		local nStorage = mapGachaData.StorageId
 		local mapStorage = ConfigTable.GetData("GachaStorage", nStorage)
 		local nRewardCount = 0
@@ -204,6 +220,19 @@ function GachaCoverCtrl_CharUp:SetCover(nId)
 		for i = 1, 2 do
 			self._mapNode.itemChar[i]:SetItem(self.tbSubCharId[i])
 		end
+		local nUpChar = self.tbMainCharId[1]
+		if nUpChar ~= nil then
+			local mapCfgData_Char = ConfigTable.GetData_Character(nUpChar)
+			local mapCfgData_Item = ConfigTable.GetData_Item(nUpChar)
+			if mapCfgData_Item ~= nil then
+				local sTitle = orderedFormat(ConfigTable.GetUIText("Gacha_Cover_UpItemTitle") or "", mapCfgData_Item.Title)
+				NovaAPI.SetTMPText(self._mapNode.TMPNpcName, sTitle)
+			end
+			if mapCfgData_Char ~= nil then
+				self:SetAtlasSprite(self._mapNode.iconProprety, "12_rare", AllEnum.Star_Element[mapCfgData_Char.EET].icon)
+			end
+			return
+		end
 	end
 end
 function GachaCoverCtrl_CharUp:EnableCover()
@@ -269,5 +298,8 @@ function GachaCoverCtrl_CharUp:OnBtnClick_GuaranteeGet()
 		UTILS.OpenReceiveByChangeInfo(mapData)
 	end
 	PlayerData.Gacha:SendGachaGuaranteeRewardReq(self.nId, GachaCallback)
+end
+function GachaCoverCtrl_CharUp:OnBtnClick_EntranceGo()
+	EventManager.Hit("OnBtnClickGachaCoverEntranceGo")
 end
 return GachaCoverCtrl_CharUp

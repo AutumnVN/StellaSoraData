@@ -22,7 +22,11 @@ GachaHistotyCtrl._mapNodeConfig = {
 	},
 	TMPPage = {sComponentName = "TMP_Text"},
 	TMPType = {sComponentName = "TMP_Text", nCount = 5},
-	TMPName = {sComponentName = "TMP_Text", nCount = 5},
+	TMPName = {
+		sNodeName = "TMPHistoryName",
+		sComponentName = "TMP_Text",
+		nCount = 5
+	},
 	TMPTag = {sComponentName = "TMP_Text", nCount = 5},
 	TMPTime = {sComponentName = "TMP_Text", nCount = 5},
 	ImgRare = {sComponentName = "Image", nCount = 5},

@@ -4,7 +4,7 @@ return {
 		param = {
 			"ep_mainline_001",
 			"Act Two",
-			"Captive of Truth",
+			"Captive of Truth (PartII)",
 			"What kind of ordeal could have caused Coronis's eye to become like this? And what secret, profound enough to overturn all understanding, makes her dare to touch the taboo of the Grace Imperium?",
 			0
 		}

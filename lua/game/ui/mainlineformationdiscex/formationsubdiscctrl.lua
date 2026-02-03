@@ -59,26 +59,32 @@ function FormationSubDiscCtrl:Refresh(tbSubDisc, mapNoteNeed, nSubCount)
 		end
 		self._mapNode.rtDisc[i]:SetDisc(mapDiscData, mapNoteNeed, nSubCount < i)
 	end
-	self:RefreshNoteList(self.mapNote)
+	self:RefreshNoteList(self.mapNote, mapNoteNeed)
 end
-function FormationSubDiscCtrl:RefreshNoteList(mapNote)
-	local tbDisc = {}
+function FormationSubDiscCtrl:RefreshNoteList(mapNote, mapNoteNeed)
+	local tbNote = {}
 	for nNoteId, nCount in pairs(mapNote) do
-		table.insert(tbDisc, {nNoteId, nCount})
+		table.insert(tbNote, {nNoteId, nCount})
 	end
 	local sort = function(a, b)
 		return a[1] < b[1]
 	end
-	table.sort(tbDisc, sort)
+	table.sort(tbNote, sort)
 	for i = 1, 8 do
-		if tbDisc[i] == nil then
+		if tbNote[i] == nil then
 			self._mapNode.goNote[i].gameObject:SetActive(false)
 		else
 			self._mapNode.goNote[i].gameObject:SetActive(true)
-			local mapNote = ConfigTable.GetData("SubNoteSkill", tbDisc[i][1])
+			local mapNote = ConfigTable.GetData("SubNoteSkill", tbNote[i][1])
 			if mapNote then
-				self:SetPngSprite(self._mapNode.goNote[i], mapNote.Icon .. AllEnum.DiscSkillIconSurfix.Small)
-				NovaAPI.SetTMPText(self._mapNode.TMPNoteCount[i], tbDisc[i][2])
+				local sNotePath = ""
+				if mapNoteNeed[tbNote[i][1]] == nil then
+					sNotePath = mapNote.Icon .. AllEnum.DiscSkillIconSurfix.Small
+				else
+					sNotePath = mapNote.Icon .. AllEnum.DiscSkillIconSurfix.S_Light
+				end
+				self:SetPngSprite(self._mapNode.goNote[i], sNotePath)
+				NovaAPI.SetTMPText(self._mapNode.TMPNoteCount[i], tbNote[i][2])
 			end
 		end
 	end

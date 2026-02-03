@@ -50,7 +50,10 @@ BreakOutThemeCtrl._mapNodeConfig = {
 	},
 	redDotEntrance2 = {}
 }
-BreakOutThemeCtrl._mapEventConfig = {}
+BreakOutThemeCtrl._mapEventConfig = {
+	JumpToLevelDetail = "JumpTo_LevelDetail",
+	SetAnimatorState = "SetAnimatorState"
+}
 BreakOutThemeCtrl._mapRedDotConfig = {}
 local ActivityState = {
 	NotOpen = 1,
@@ -63,18 +66,24 @@ function BreakOutThemeCtrl:Awake()
 		self.nActId = param[1]
 	end
 	self.BreakOut_30101Data = PlayerData.Activity:GetActivityGroupDataById(self.nActId)
-	if self.BreakOut_30101Data ~= nil then
+	if self.BreakOut_30101Data == nil then
+		printError("\230\180\187\229\138\168\231\187\132 id:" .. self.nActId .. " \230\149\176\230\141\174\228\184\186\231\169\186")
+		return
+	else
 		self.ActivityGroupCfg = self.BreakOut_30101Data.actGroupConfig
 	end
-end
-function BreakOutThemeCtrl:FadeIn()
-	EventManager.Hit(EventId.SetTransition)
+	self.isLevelEnd = false
 end
 function BreakOutThemeCtrl:OnEnable()
+	self.BreakOutTheme_Animator = self.gameObject:GetComponent("Animator")
+	if self.BreakOut_30101Data == nil then
+		printError("\230\180\187\229\138\168\231\187\132 id:" .. self.nActId .. " \230\149\176\230\141\174\228\184\186\231\169\186")
+		return
+	end
 	self:RefreshPanel()
 	for i = 1, 5 do
 		local actData = self.BreakOut_30101Data:GetActivityDataByIndex(i)
-		if i == AllEnum.ActivityThemeFuncIndex.Task then
+		if actData ~= nil and i == AllEnum.ActivityThemeFuncIndex.Task then
 			local nActId = actData.ActivityId
 			RedDotManager.RegisterNode(RedDotDefine.Activity_Group_Task, {
 				self.nActId,
@@ -82,6 +91,7 @@ function BreakOutThemeCtrl:OnEnable()
 			}, self._mapNode.redDotEntrance2)
 		end
 	end
+	self:SetAnimatorState()
 end
 function BreakOutThemeCtrl:OnDisable()
 	if nil ~= self.remainTimer then
@@ -181,10 +191,12 @@ function BreakOutThemeCtrl:RefreshButtonState()
 	self.tbActState = {}
 	for i = 1, 5 do
 		local actData = self.BreakOut_30101Data:GetActivityDataByIndex(i)
-		if i == AllEnum.ActivityThemeFuncIndex.Task then
-			self:RefreshTaskButtonState(actData)
-		elseif i == AllEnum.ActivityThemeFuncIndex.Shop then
-			self:RefreshShopButtonState(actData)
+		if actData ~= nil then
+			if i == AllEnum.ActivityThemeFuncIndex.Task then
+				self:RefreshTaskButtonState(actData)
+			elseif i == AllEnum.ActivityThemeFuncIndex.Shop then
+				self:RefreshShopButtonState(actData)
+			end
 		end
 	end
 end
@@ -299,9 +311,6 @@ function BreakOutThemeCtrl:RefreshTaskButtonState(actData)
 		local progress = string.format("%d/%d", nDone, nTotal)
 		local rt = self._mapNode.imgProgressBg:GetComponent("RectTransform")
 		local nWidth = nDone / nTotal * rt.rect.width
-		if 0 < nWidth and nWidth < 309 then
-			nWidth = 309
-		end
 		self._mapNode.imgFill:GetComponent("RectTransform").sizeDelta = Vector2(nWidth, rt.rect.height)
 		NovaAPI.SetTMPText(self._mapNode.txtProgress, progress)
 	end
@@ -378,5 +387,19 @@ function BreakOutThemeCtrl:OnBtn_ClickActivityEntrance(btn, nIndex)
 	if actData.PanelId ~= nil and ActivityState.Open == state then
 		EventManager.Hit(EventId.OpenPanel, actData.PanelId, actData.ActivityId)
 	end
+end
+function BreakOutThemeCtrl:JumpTo_LevelDetail(nActId, nLevelId)
+	local OpenPanel = function()
+		EventManager.Hit(EventId.OpenPanel, PanelId.BreakOutLevelDetailPanel, nActId, nLevelId)
+	end
+	EventManager.Hit(EventId.SetTransition, 3, OpenPanel)
+end
+function BreakOutThemeCtrl:SetAnimatorState()
+	self.BreakOutTheme_Animator:Play("BreakOutThemePanel_idle", 0, 0)
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForSeconds(0.02))
+		self.BreakOutTheme_Animator:Play("BreakOutThemePanel_in", 0, 0)
+	end
+	cs_coroutine.start(wait)
 end
 return BreakOutThemeCtrl

@@ -25,10 +25,6 @@ ScoreBossRankingCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "STRanking_Refresh_Tips"
 	},
-	txtRefreshTimeReward = {
-		sComponentName = "TMP_Text",
-		sLanguageId = "STRanking_Refresh_Tips"
-	},
 	rtPlayerInfo = {
 		sCtrlName = "Game.UI.ScoreBoss.ScoreBossRanking.ScoreBossRankingGridCtrl"
 	},
@@ -40,35 +36,10 @@ ScoreBossRankingCtrl._mapNodeConfig = {
 	goSafeArea = {
 		sNodeName = "----SafeAreaRoot----"
 	},
-	svRankingReward = {
-		sComponentName = "LoopScrollView"
-	},
-	btnCloseReward = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_CloseReward"
-	},
-	btnRewardClose = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_CloseReward"
-	},
-	btnReward = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_ShowReward"
-	},
-	txtBtnReward = {
-		sComponentName = "TMP_Text",
-		sLanguageId = "STRanking_Reward_Btn"
-	},
-	goRewardView = {},
-	t_window_04 = {sComponentName = "Animator"},
 	goTeamDetail = {
 		sCtrlName = "Game.UI.ScoreBoss.ScoreBossRanking.ScoreBossRankingTeamDetailCtrl"
 	},
-	txtEndTime = {sComponentName = "TMP_Text"},
-	txt_Reward_Title = {
-		sComponentName = "TMP_Text",
-		sLanguageId = "StarTower_Ranking_Reward"
-	}
+	txtEndTime = {sComponentName = "TMP_Text"}
 }
 ScoreBossRankingCtrl._mapEventConfig = {
 	ShowTeamDetail = "OnEvent_ShowTeamDetail",
@@ -77,17 +48,12 @@ ScoreBossRankingCtrl._mapEventConfig = {
 }
 function ScoreBossRankingCtrl:Awake()
 	self._mapRankingGrid = {}
-	self._mapRewardGrid = {}
 end
 function ScoreBossRankingCtrl:OnDisable()
 	for go, mapCtrl in pairs(self._mapRankingGrid) do
 		self:UnbindCtrlByNode(mapCtrl)
 	end
-	for go, mapCtrl in pairs(self._mapRewardGrid) do
-		self:UnbindCtrlByNode(mapCtrl)
-	end
 	self._mapRankingGrid = {}
-	self._mapRewardGrid = {}
 	if self.timerRefreshRanking ~= nil then
 		self.timerRefreshRanking:Cancel()
 		self.timerRefreshRanking = nil
@@ -125,8 +91,6 @@ end
 function ScoreBossRankingCtrl:OpenPanel()
 	self._mapNode.goLoading:SetActive(false)
 	self._mapNode.goMainContent:SetActive(true)
-	local mapSelfRankingData = PlayerData.ScoreBoss:GetRankSelfMsg()
-	self.mapSelfRankingData = mapSelfRankingData
 	self._mapNode.rtPlayerInfo:Refresh(0, true)
 	local rankTable = PlayerData.ScoreBoss:GetRankTableCount()
 	if 0 < rankTable then
@@ -136,7 +100,6 @@ function ScoreBossRankingCtrl:OpenPanel()
 	else
 		self._mapNode.svRankingInfo.gameObject:SetActive(false)
 	end
-	self._mapNode.svRankingReward:Init(PlayerData.ScoreBoss.maxRankCount, self, self.OnGridRankingRewardRefresh)
 	self._mapNode.goTeamDetail.gameObject:SetActive(false)
 	local endTime = PlayerData.ScoreBoss.EndTime + ConfigTable.GetConfigNumber("SeasonEndThreshold")
 	local sTime = os.date("%m/%d %H:%M", endTime)
@@ -154,29 +117,6 @@ function ScoreBossRankingCtrl:OnGridRankingRefresh(grid)
 	end
 	nIdx = nIdx + 1
 	self._mapRankingGrid[grid]:Refresh(nIdx)
-end
-function ScoreBossRankingCtrl:OnGridRankingRewardRefresh(grid)
-	if self._mapRewardGrid[grid] == nil then
-		local mapCtrl = self:BindCtrlByNode(grid, "Game.UI.ScoreBoss.ScoreBossRanking.ScoreBossRewardGridCtrl")
-		self._mapRewardGrid[grid] = mapCtrl
-	end
-	local nIdx = tonumber(grid.name)
-	if nIdx == nil then
-		return
-	end
-	nIdx = nIdx + 1
-	local rankPlayerCount = 0
-	local nSelfIdx = -1.0
-	if self.mapSelfRankingData ~= nil then
-		rankPlayerCount = PlayerData.ScoreBoss:GetRankPlayerCount()
-		if 0 < rankPlayerCount and rankPlayerCount <= 100 then
-			nSelfIdx = self.mapSelfRankingData.Rank / 100
-		elseif 100 < rankPlayerCount then
-			nSelfIdx = self.mapSelfRankingData.Rank / rankPlayerCount
-		end
-		nSelfIdx = nSelfIdx * 10000
-	end
-	self._mapRewardGrid[grid]:Refresh(nIdx, nSelfIdx)
 end
 function ScoreBossRankingCtrl:PlayGridItemAnim()
 	local sv = self._mapNode.svRankingInfo
@@ -225,18 +165,6 @@ end
 function ScoreBossRankingCtrl:OnEvent_ShowTeamDetail(mapRanking)
 	self._mapNode.goTeamDetail.gameObject:SetActive(true)
 	self._mapNode.goTeamDetail:Refresh(mapRanking)
-end
-function ScoreBossRankingCtrl:OnBtnClick_ShowReward()
-	self._mapNode.goRewardView:SetActive(true)
-	self._mapNode.t_window_04:Play("t_window_04_t_in")
-end
-function ScoreBossRankingCtrl:OnBtnClick_CloseReward()
-	self._mapNode.t_window_04:Play("t_window_04_t_out")
-	local close = function()
-		self._mapNode.goRewardView:SetActive(false)
-	end
-	self:AddTimer(1, 0.2, close, true, true, true)
-	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
 end
 function ScoreBossRankingCtrl:OnEvent_Back(nPanelId)
 	EventManager.Hit(EventId.CloesCurPanel)

@@ -1,16 +1,29 @@
 local ActivityDataBase = require("GameCore.Data.DataClass.Activity.ActivityDataBase")
-local LocalData = require("GameCore.Data.LocalData")
 local BreakOutData = class("BreakOutData", ActivityDataBase)
+local LocalData = require("GameCore.Data.LocalData")
 local RapidJson = require("rapidjson")
 local RedDotManager = require("GameCore.RedDot.RedDotManager")
 local ClientManager = CS.ClientManager.Instance
+local BreakOutLevelData = require("GameCore.Data.DataClass.Activity.BreakOutLevelData")
 function BreakOutData:Init()
 	self.allLevelData = {}
 	self.cacheEnterLevelList = {}
+	self.BreakOutLevelData = BreakOutLevelData.new()
+	self.tempData = nil
+	self.ActEnd = self:IsActTimeEnd()
+	self:AddListeners()
+end
+function BreakOutData:AddListeners()
+	EventManager.Add("MilkoutCharacterUnlock", self, self.On_BreakoutCharacter_Unlock)
+	EventManager.Add("ClearAllLevels", self, self.OnEvent_GMClearAllLevels)
 end
 function BreakOutData:RefreshBreakOutData(actId, msgData)
 	self:Init()
 	self.nActId = actId
+	self.mapActData = PlayerData.Activity:GetActivityDataById(self.nActId)
+	if self.mapActData ~= nil then
+		self.nEndTime = self.mapActData:GetActEndTime() or 0
+	end
 	if msgData ~= nil then
 		self:CacheAllLevelData(msgData.Levels)
 		self:CacheAllCharacterData(msgData.Characters)
@@ -32,25 +45,34 @@ function BreakOutData:CacheAllCharacterData(UnLockedCharacterData)
 		table.insert(self.tbUnLockedCharacterDataList, CharacterData)
 	end
 end
-function BreakOutData:CacheIsUnlocked(CharacterId)
+function BreakOutData:CacheIsUnlocked(CharacterNid)
 	for _, v in pairs(self.tbUnLockedCharacterDataList) do
-		if v.nId == CharacterId then
+		if v.nId == CharacterNid then
 			return true
 		end
 	end
 	return false
 end
-function BreakOutData:GetDataFromBreakOutCharacter(CharacterId)
+function BreakOutData:GetDataFromBreakOutCharacter(CharacterNid)
 	for _, v in pairs(self.tbUnLockedCharacterDataList) do
-		if v.nId == CharacterId then
-			return CacheTable.GetData("_BreakOutCharacter", CharacterId)
+		if v.nId == CharacterNid then
+			return ConfigTable.GetData("BreakOutCharacter", CharacterNid)
 		end
 	end
 	return nil
 end
-function BreakOutData:GetBattleCount(CharacterId)
+function BreakOutData:GetSkillData(CharacterNid)
+	local tbCharacterData
+	self:GetDataFromBreakOutCharacter(CharacterNid)
+	if tbCharacterData == nil then
+		return nil
+	else
+		return tbCharacterData.SkillId
+	end
+end
+function BreakOutData:GetBattleCount(CharacterNid)
 	for _, v in pairs(self.tbUnLockedCharacterDataList) do
-		if v.nId == CharacterId then
+		if v.nId == CharacterNid then
 			return v.nBattleTimes
 		end
 	end
@@ -68,6 +90,14 @@ function BreakOutData:CacheAllLevelData(levelListData)
 		table.insert(self.tbLevelDataList, levelData)
 	end
 end
+function BreakOutData:IsAllLevelComplete()
+	for _, v in pairs(self.tbLevelDataList) do
+		if not v.bFirstComplete then
+			return false
+		end
+	end
+	return true
+end
 function BreakOutData:GetLevelData()
 	return self.tbLevelDataList
 end
@@ -80,6 +110,29 @@ function BreakOutData:GetLevelDataById(nId)
 		end
 	end
 	return levelData
+end
+function BreakOutData:UpdateLevelData(levelData)
+	for _, v in pairs(self.tbLevelDataList) do
+		if v.nId == levelData.Id then
+			v.bFirstComplete = levelData.FirstComplete
+			break
+		end
+	end
+	local levelConfig = ConfigTable.GetData("BreakOutLevel", levelData.Id)
+	if levelConfig == nil then
+		return
+	end
+	if not self:GetPlayState() or self:IsLevelUnlocked(levelData.Id) then
+	end
+end
+function BreakOutData:UpdateCharacterData(CharacterData)
+	for _, v in pairs(self.tbUnLockedCharacterDataList) do
+		if v.nId == CharacterData.CharacterNid then
+			v.nBattleTimes = v.nBattleTimes + 1
+			EventManager.Hit("RefreshCharacterBattleTimes")
+			break
+		end
+	end
 end
 function BreakOutData:GetDetailLevelDataById(nId)
 	local levelData
@@ -124,6 +177,16 @@ function BreakOutData:GetBreakoutLevelTypeNum()
 	end
 	return nNum
 end
+function BreakOutData:GetBreakoutPreLevelIdName(nLevelId)
+	local LevelData = ConfigTable.GetData("BreakOutLevel", nLevelId)
+	if LevelData == nil then
+		return
+	else
+		local nPreLevelId = ConfigTable.GetData("BreakOutLevel", nLevelId).PreLevelId
+		local PreLevelIdName = ConfigTable.GetData("BreakOutLevel", nPreLevelId).Name
+		return PreLevelIdName
+	end
+end
 function BreakOutData:GetBreakoutLevelDifficult(nLevelId)
 	local LevelData = ConfigTable.GetData("BreakOutLevel", nLevelId)
 	if LevelData == nil then
@@ -141,9 +204,40 @@ function BreakOutData:GetCurrentSelectedTabIndex()
 	end
 	return EasyDifficultyType
 end
-function BreakOutData:GetLevelIsNew()
+function BreakOutData:RefreshRedDot()
+	if self.tbLevelDataList == nil then
+		return
+	end
+	local bRedDot = false
+	local nActivityGroupId = ConfigTable.GetData("Activity", self.nActId).MidGroupId
+	for _, levelData in ipairs(self.tbLevelDataList) do
+		if self:IsLevelTimeUnlocked(levelData.nId) then
+			if self.ActEnd then
+				bRedDot = false
+			else
+				bRedDot = self:GetLevelIsNew(levelData.nId)
+			end
+			RedDotManager.SetValid(RedDotDefine.Activity_BreakOut_DifficultyTap_Level, {
+				nActivityGroupId,
+				levelData.nId
+			}, bRedDot)
+		end
+	end
+end
+function BreakOutData:IsActTimeEnd()
+	local isEnd = false
+	local LevelEndTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(ConfigTable.GetConfigValue("BreakOut_LevelClosed"))
+	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+	if LevelEndTime ~= nil then
+		return LevelEndTime < nCurTime
+	else
+		printError("config \232\161\168\239\188\154" .. "BreakOut_LevelClosed" .. " Value\230\149\176\230\141\174\228\184\186\231\169\186")
+	end
+	return isEnd
+end
+function BreakOutData:GetLevelIsNew(levelId)
 	local bResult = false
-	local levelData = self:GetLevelData(levelId)
+	local levelData = self:GetLevelDataById(levelId)
 	if levelData ~= nil and levelData.bFirstComplete == false and table.indexof(self.cacheEnterLevelList, levelId) == 0 then
 		bResult = true
 	end
@@ -155,45 +249,46 @@ function BreakOutData:EnterLevelSelect(nLevelId)
 		return
 	end
 	local nActivityGroupId = ConfigTable.GetData("Activity", levelData.ActivityId).MidGroupId
-	if table.indexof(self.cacheEnterLevelList, levelId) == 0 then
-		table.insert(self.cacheEnterLevelList, levelId)
-		RedDotManager.SetValid(RedDotDefine.Activity_BreakOut_DifficultyTap_Level, {
-			nActivityGroupId,
-			levelId
-		}, false)
-		LocalData.SetPlayerLocalData("BreakOutLevel", RapidJson.encode(self.cacheEnterLevelList))
+	if table.indexof(self.cacheEnterLevelList, nLevelId) == 0 or RedDotManager.GetValid(RedDotDefine.Activity_BreakOut_DifficultyTap_Level, {nActivityGroupId, nLevelId}) then
+		table.insert(self.cacheEnterLevelList, nLevelId)
+		local tbLocalSave = {}
+		for _, v in ipairs(self.cacheEnterLevelList) do
+			table.insert(tbLocalSave, v)
+		end
+		RedDotManager.SetValid(RedDotDefine.Activity_BreakOut_DifficultyTap_Level, {nActivityGroupId, nLevelId}, false)
+		LocalData.SetPlayerLocalData("BreakOutLevel", RapidJson.encode(tbLocalSave))
 		self:RefreshRedDot()
 	end
 end
 function BreakOutData:IsLevelUnlocked(nLevelId)
 	local bTimeUnlock, bPreComplete = false, false
-	local mapData = self:GetLevelDataById(nLevelId)
+	local mapData = self:GetDetailLevelDataById(nLevelId)
 	local curTime = CS.ClientManager.Instance.serverTimeStamp
-	local remainTime = curTime - (self.nOpenTime or 0 + mapData.DayOpen * 86400)
-	local nPreLevelId = mapData.nPreLevelId or 0
+	local openTime = CS.ClientManager.Instance:GetNextRefreshTime(self.nOpenTime) - 86400
+	local remainTime = openTime + mapData.DayOpen * 86400 - curTime
+	local nPreLevelId = mapData.PreLevelId or 0
 	local bIsLevelComplete = self:IsLevelComplete(nPreLevelId)
-	bTimeUnlock = 0 <= remainTime
+	bTimeUnlock = remainTime <= 0
 	bPreComplete = nPreLevelId == nil or bIsLevelComplete
 	return bTimeUnlock, bPreComplete
 end
 function BreakOutData:IsLevelTimeUnlocked(nLevelId)
 	local bTimeUnlock = false
-	local mapData = self:GetLevelDataById(nLevelId)
-	if mapData == nil then
-		return false
+	local remainTime = self:GetLevelStartTime(nLevelId)
+	if remainTime then
+		bTimeUnlock = remainTime <= 0
 	end
-	local curTime = CS.ClientManager.Instance.serverTimeStamp
-	local remainTime = curTime - (self.nOpenTime or 0 + mapData.DayOpen * 86400)
-	bTimeUnlock = 0 <= remainTime
 	return bTimeUnlock
 end
 function BreakOutData:GetLevelStartTime(nLevelId)
-	local levelConfig = ConfigTable.GetData("BreakOutLevel", nLevelId)
-	if levelConfig == nil then
-		return 0
+	local mapData = self:GetDetailLevelDataById(nLevelId)
+	if mapData == nil then
+		return nil
 	end
-	local openDayNextTime = ClientManager:GetNextRefreshTime(ClientManager.serverTimeStamp)
-	return openDayNextTime + (levelConfig.DayOpen - 1) * 86400
+	local curTime = CS.ClientManager.Instance.serverTimeStamp
+	local openTime = CS.ClientManager.Instance:GetNextRefreshTime(self.nOpenTime) - 86400
+	local remainTime = openTime + mapData.DayOpen * 86400 - curTime
+	return remainTime
 end
 function BreakOutData:IsPreLevelComplete(nLevelId)
 	local nPreLevelId = ConfigTable.GetData("BreakOutLevel", nLevelId).PreLevelId
@@ -209,11 +304,6 @@ function BreakOutData:IsLevelComplete(nLevelId)
 	local nLevelData = self:GetLevelDataById(nLevelId)
 	return nLevelData.bFirstComplete
 end
-function BreakOutData:GetActCloseTime(nLevelId)
-	local nActivityId = ConfigTable.GetData("BreakOutLevel", nLevelId).ActivityId
-	nEndTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(ConfigTable.GetData("Activity", nActivityId).EndTime)
-	return nEndTime
-end
 function BreakOutData:GetUnFinishEasyLevel()
 	local EasyDifficultyType = GameEnum.ActivityBreakoutLevelType.Expert
 	local levelId
@@ -224,5 +314,66 @@ function BreakOutData:GetUnFinishEasyLevel()
 		end
 	end
 	return levelId
+end
+function BreakOutData:RequestFinishLevel(arrayData, cb)
+	self:UpdateCharacterData({
+		CharacterNid = arrayData.CharId
+	})
+	EventManager.Hit("SetPlayFinishState", true)
+	if not arrayData.Win then
+		local mapMsg = arrayData
+		local failCallback = function()
+			if cb ~= nil then
+				cb()
+			end
+		end
+		EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanel)
+		HttpNetHandler.SendMsg(NetMsgId.Id.milkout_settle_req, mapMsg, nil, failCallback)
+		return
+	end
+	self:CreateTempData(arrayData.LevelId, arrayData.Win)
+	local mapMsg = arrayData
+	local successCallback = function(_, mapMainData)
+		cb(mapMainData)
+		self:UpdateLevelData({
+			Id = arrayData.LevelId,
+			FirstComplete = arrayData.Win
+		})
+	end
+	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanel)
+	HttpNetHandler.SendMsg(NetMsgId.Id.milkout_settle_req, mapMsg, nil, successCallback)
+end
+function BreakOutData:CreateTempData(nLevelId, bResult)
+	self.tempData = {nLevelId = nLevelId, bResult = bResult}
+end
+function BreakOutData:GetTempData()
+	return self.tempData
+end
+function BreakOutData:ClearTempData()
+	self.tempData = nil
+end
+function BreakOutData:On_BreakoutCharacter_Unlock(mapMsgData)
+	if self.nActId ~= mapMsgData.ActivityId then
+		return
+	end
+	self:RefreshCharacterData(mapMsgData.CharId)
+end
+function BreakOutData:RefreshCharacterData(charId)
+	local bIsLock = true
+	for _, v in pairs(self.tbUnLockedCharacterDataList) do
+		if v.Id == charId then
+			bIsLock = false
+			break
+		end
+	end
+	if bIsLock then
+		local CharacterData = {nId = charId, nBattleTimes = 0}
+		table.insert(self.tbUnLockedCharacterDataList, CharacterData)
+	end
+end
+function BreakOutData:OnEvent_GMClearAllLevels(mapMsgData)
+	if mapMsgData ~= nil then
+		self:CacheAllLevelData(mapMsgData.Levels)
+	end
 end
 return BreakOutData

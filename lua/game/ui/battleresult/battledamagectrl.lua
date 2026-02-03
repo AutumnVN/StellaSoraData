@@ -61,7 +61,7 @@ function BattleDamageCtrl:RefreshDamageList()
 			local mapCharCfg = ConfigTable.GetData_Character(mapDamage.nCharId)
 			if mapCharSkin ~= nil and mapCharSkin ~= nil then
 				local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-				self:SetPngSprite(imgItemIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
+				self:SetPngSprite(imgItemIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
 				self:SetAtlasSprite(imgItemRare, "12_rare", sFrame)
 				NovaAPI.SetTMPText(txtCharName, mapCharCfg.Name)
 			end

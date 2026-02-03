@@ -864,6 +864,7 @@ function TowerDefenseCtrl:OnEvent_GetCharacterCard(nCharacterId, bShowTips)
 	end
 end
 function TowerDefenseCtrl:OnEvent_UseCharacterCard(bUse, nEntityId, nCharacterId, screenPos)
+	print("OnEvent_UseCharacterCard:", tostring(bUse) .. "," .. "nCharacterId:" .. tostring(nCharacterId))
 	self:SetSlowSpeed(false)
 	self:ShowSkillDes(false)
 	if bUse then
@@ -912,6 +913,10 @@ end
 function TowerDefenseCtrl:OnEvent_FinishGame(bResult)
 	self:SetTimeScale(false)
 	self:PauseLogic()
+	local bIsInActivityTime = self.TowerDefenseData:CheckActivityOpen()
+	if not bIsInActivityTime then
+		bResult = false
+	end
 	local requestCb = function(star, newStar, msgData)
 		local cb = function()
 			EventManager.Hit(EventId.ClosePanel, PanelId.TowerDefenseHUD)
@@ -941,6 +946,7 @@ function TowerDefenseCtrl:OnEvent_FinishGame(bResult)
 	end
 end
 function TowerDefenseCtrl:OnEvent_ShowCharacterIcon(characterId, bIsShow)
+	print("OnEvent_ShowCharacterIcon:", tostring(characterId) .. "  isShow:" .. tostring(bIsShow))
 	local characterData = self.TowerDefenseData.TowerDefenseLevelData:GetCharacterData(characterId)
 	if bIsShow and characterData == nil then
 		return
@@ -1074,7 +1080,7 @@ function TowerDefenseCtrl:OnEvent_Exit()
 	local msg = {
 		nType = AllEnum.MessageBox.Confirm,
 		sContent = sTip,
-		callbackConfirm = confirmCallback
+		callbackConfirmAfterClose = confirmCallback
 	}
 	EventManager.Hit(EventId.OpenMessageBox, msg)
 end

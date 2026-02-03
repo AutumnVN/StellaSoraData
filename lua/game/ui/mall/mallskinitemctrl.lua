@@ -28,7 +28,8 @@ MallSkinItemCtrl._mapNodeConfig = {
 	imgMask = {},
 	reddotPkg = {},
 	imgRoleBg = {},
-	txtRoleName = {sComponentName = "TMP_Text"}
+	txtRoleName = {sComponentName = "TMP_Text"},
+	reddotNew = {}
 }
 MallSkinItemCtrl._mapEventConfig = {}
 function MallSkinItemCtrl:Refresh(mapData)
@@ -37,6 +38,7 @@ function MallSkinItemCtrl:Refresh(mapData)
 	self:RefreshInfo(mapCfg)
 	self:RefreshPrice(mapCfg)
 	self:RefreshTime(mapCfg, mapData)
+	self:RegisterRedDot(mapCfg)
 end
 function MallSkinItemCtrl:RefreshPrice(mapCfg)
 	local tbParam = decodeJson(mapCfg.Items)
@@ -143,6 +145,17 @@ function MallSkinItemCtrl:RefreshTime(mapCfg, mapData)
 	else
 		self._mapNode.goTime:SetActive(false)
 	end
+end
+function MallSkinItemCtrl:RegisterRedDot(mapCfg)
+	local groupCfg = ConfigTable.GetData("MallPackagePage", mapCfg.GroupId)
+	if groupCfg == nil then
+		return
+	end
+	RedDotManager.RegisterNode(RedDotDefine.Mall_Package_New, {
+		AllEnum.MallToggle.Skin,
+		groupCfg.Sort,
+		self.sId
+	}, self._mapNode.reddotNew)
 end
 function MallSkinItemCtrl:Awake()
 end

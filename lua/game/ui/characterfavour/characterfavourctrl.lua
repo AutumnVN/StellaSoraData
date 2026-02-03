@@ -32,8 +32,12 @@ CharacterFavourCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "CharacterRelation_Favour_Reward"
 	},
-	btnFavourGift = {
-		sNodeName = "btnFavourGift",
+	txtGiveGift = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "CharacterRelation_Favour_Gift"
+	},
+	btnGiveGift = {
+		sNodeName = "btnGiveGift",
 		sComponentName = "UIButton",
 		callback = "OnBtn_ClickOpenGiftPanel"
 	},
@@ -68,7 +72,14 @@ function CharacterFavourCtrl:OnBtn_ClickOpenRewardPreview()
 	EventManager.Hit(EventId.OpenPanel, PanelId.CharFavourReward, self.curCharId)
 end
 function CharacterFavourCtrl:OnBtn_ClickOpenGiftPanel()
-	EventManager.Hit(EventId.CharRelatePanelOpen, PanelId.CharFavourGift, self.curCharId)
+	local openCallback = function()
+		local callback = function()
+			local bSetGridPos = true
+			EventManager.Hit(EventId.OpenPanel, PanelId.Phone, 3, self.curCharId, bSetGridPos)
+		end
+		PlayerData.Phone:TrySendAddressListReq(callback)
+	end
+	PlayerData.Base:CheckFunctionBtn(GameEnum.OpenFuncType.Phone, openCallback)
 end
 function CharacterFavourCtrl:Refresh(nCharId)
 	self.curCharId = nCharId

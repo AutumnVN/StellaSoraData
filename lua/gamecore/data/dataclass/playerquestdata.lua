@@ -347,6 +347,20 @@ function PlayerQuestData:CheckTeamFormationAttributeUnlocked(nAttrId)
 	end
 	return bCompleted
 end
+function PlayerQuestData:GetTeamFormationAttributeProgress(nAttrId)
+	local nTotalCount = 0
+	local nReceivedCount = 0
+	for nGroupIndex, mapGroup in pairs(self.tbTeamFormationGroup) do
+		if mapGroup.AttributeId == nAttrId then
+			nTotalCount = nTotalCount + 1
+			local bGroupCompleted = self:CheckTeamFormationGroupReward(nAttrId, nGroupIndex)
+			if bGroupCompleted then
+				nReceivedCount = nReceivedCount + 1
+			end
+		end
+	end
+	return nReceivedCount, nTotalCount
+end
 function PlayerQuestData:GetCurTourGroup()
 	if self._mapQuest[QuestType.TourGuide] == nil then
 		return 0
@@ -1088,7 +1102,6 @@ function PlayerQuestData:HandleExpire()
 		end
 		self.nextWeekRefreshTime = GetNextWeekRefreshTime()
 	end
-	self.curTime = curTime
 	self:UpdateDailyQuestRedDot()
 	self:UpdateWeeklyQuestRedDot()
 	self:UpdateBattlePassRedDot()

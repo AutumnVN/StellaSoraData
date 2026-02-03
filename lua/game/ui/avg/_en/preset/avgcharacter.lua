@@ -324,7 +324,7 @@ return {
 	},
 	{
 		id = "avg2_952",
-		name = "Laifu",
+		name = "Lucky",
 		name_bg_color = "#0ABEC5",
 		ver = "1.6.0"
 	},
@@ -999,9 +999,16 @@ return {
 		name_bg_color = "#394444"
 	},
 	{
+		id = "avg3_207",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.8.0"
+	},
+	{
 		id = "avg3_210",
-		name = "Hasana",
-		name_bg_color = "#0ABEC5"
+		name = "***",
+		name_bg_color = "#e4a47a",
+		ver = "1.8.0"
 	},
 	{
 		id = "avg3_873",
@@ -2471,6 +2478,54 @@ return {
 		name = "Poisoned UH Employee C",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_962"
+	},
+	{
+		id = "avg3_1273",
+		name = "Loong Resident A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_175"
+	},
+	{
+		id = "avg3_1274",
+		name = "",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_143"
+	},
+	{
+		id = "avg3_1275",
+		name = "",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_981"
+	},
+	{
+		id = "avg3_1276",
+		name = "",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_981"
+	},
+	{
+		id = "avg3_1277",
+		name = "",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_981"
+	},
+	{
+		id = "avg3_1278",
+		name = "",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_974"
+	},
+	{
+		id = "avg3_1279",
+		name = "",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_974"
+	},
+	{
+		id = "avg3_1280",
+		name = "",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_974"
 	},
 	{
 		id = "avg4_100",

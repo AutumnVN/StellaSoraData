@@ -60,13 +60,13 @@ function FormationDisc_ListGridSubCtrl:Refresh(mapDisc, mapNote, nIdx, bMainUse)
 				local nNoteId = mapDisc.tbSubNoteSkills[i].nId
 				local nNoteCount = mapDisc.tbSubNoteSkills[i].nCount
 				NovaAPI.SetTMPText(self._mapNode.TMPNoteCount[i], nNoteCount)
-				self:SetPngSprite(self._mapNode.imgNote[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
 				self:SetPngSprite(self._mapNode.goNoteUnuse[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
 				if mapNote[nNoteId] == nil then
-					self._mapNode.goNoteUnuse[i].gameObject:SetActive(true)
+					self:SetPngSprite(self._mapNode.imgNote[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
 				else
-					self._mapNode.goNoteUnuse[i].gameObject:SetActive(false)
+					self:SetPngSprite(self._mapNode.imgNote[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.S_Light)
 				end
+				self._mapNode.goNoteUnuse[i].gameObject:SetActive(false)
 			end
 		end
 	end

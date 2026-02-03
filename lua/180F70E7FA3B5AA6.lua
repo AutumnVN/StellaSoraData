@@ -1,5 +1,5 @@
 local ActivityDataBase = require("GameCore.Data.DataClass.Activity.ActivityDataBase")
-local TrekkerVersusData = class("CookieActData", ActivityDataBase)
+local TrekkerVersusData = class("TrekkerVersusData", ActivityDataBase)
 function TrekkerVersusData:Init()
 	self.nActId = 0
 	self.nRecord = 0

@@ -102,6 +102,17 @@ function MallSkinCtrl:RefreshTab()
 		local func_Handler = ui_handler(self, self.OnBtnClick_ChangeSheet, goTab, i)
 		btn.onClick:AddListener(func_Handler)
 		self.ctrlTab[i] = self:BindCtrlByNode(goTab, "Game.UI.TemplateEx.TemplateTabCtrl")
+		local goTabNew = goTab.transform:Find("btnTab/AnimRoot/redDot_New").gameObject
+		if i == 1 then
+			RedDotManager.RegisterNode(RedDotDefine.Mall_Page_New, {
+				AllEnum.MallToggle.Skin
+			}, goTabNew)
+		else
+			RedDotManager.RegisterNode(RedDotDefine.Mall_Tab_New, {
+				AllEnum.MallToggle.Skin,
+				self.tbPages[i].Sort
+			}, goTabNew)
+		end
 		self.ctrlTab[i]:SetText(self.tbPages[i].Name)
 	end
 	for i = 1, self.nPageCount do
@@ -172,6 +183,13 @@ function MallSkinCtrl:ResetTab()
 	self.nCurTab = 1
 	self.ctrlTab[self.nCurTab]:SetSelect(true, 1)
 end
+function MallSkinCtrl:GetCurTab()
+	if self.tbPages[self.nCurTab].Sort == nil then
+		return nil
+	else
+		return self.tbPages[self.nCurTab].Sort
+	end
+end
 function MallSkinCtrl:Awake()
 	self.tbGridCtrl = {}
 	self._mapNode.goEmpty.gameObject:SetActive(false)
@@ -200,6 +218,8 @@ function MallSkinCtrl:OnBtnClick_ChangeSheet(btn, nIndex)
 	if nIndex == self.nCurTab then
 		return
 	end
+	local nTab = self:GetCurTab()
+	PlayerData.Mall:RemovePackageNew(GameEnum.MallItemType.Skin, nTab)
 	local nState = self:GetTabState(self.nCurTab)
 	self.ctrlTab[self.nCurTab]:SetSelect(false, nState)
 	if self.nCurTab > 1 then

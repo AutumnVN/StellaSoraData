@@ -156,7 +156,12 @@ BossHUDCtrl._mapNodeConfig = {
 	},
 	imgHpFillColor = {sNodeName = "imgHpFill", sComponentName = "HpBarColor"},
 	jointDrill_BossEnergy = {},
-	jointDrill_BossEnergyValue = {sComponentName = "Image"}
+	jointDrill_BossEnergyValue = {sComponentName = "Image"},
+	jointDrillGridCount = {},
+	imgGridRed = {},
+	TMP_JointDrillRed = {sComponentName = "TMP_Text", nCount = 2},
+	imgGridGreen = {},
+	TMP_JointDrillGreen = {sComponentName = "TMP_Text", nCount = 2}
 }
 BossHUDCtrl._mapEventConfig = {
 	AllHudShow = "OnEvent_HudShow",
@@ -297,6 +302,7 @@ function BossHUDCtrl:ResetHit()
 	self.nBeforeToughness = 0
 	self._mapNode.rtNormal:SetActive(true)
 	self._mapNode.imgBroken:SetActive(false)
+	self._mapNode.jointDrillGridCount.gameObject:SetActive(false)
 end
 function BossHUDCtrl:KillTween()
 	self._mapNode.aniRtHpDelay:Stop()
@@ -437,6 +443,8 @@ function BossHUDCtrl:AddEntityEvent()
 	EventManager.AddEntityEvent("JointDrillBossEnergyChanged", self.bossId, self, self.OnEvent_JointDrillBossEnergyChanged)
 	EventManager.AddEntityEvent("RefreshBossEnergyValueHUD", self.bossId, self, self.OnEvent_RefreshBossEnergyValueHUD)
 	EventManager.AddEntityEvent("CastUltra", self.bossId, self, self.OnEvent_JointDrillBossUseSkill)
+	EventManager.AddEntityEvent("RedCellNotify", self.bossId, self, self.OnEvent_RedCellNotify)
+	EventManager.AddEntityEvent("GreenCellNotify", self.bossId, self, self.OnEvent_GreenCellNotify)
 end
 function BossHUDCtrl:SetBossInfo(nDataId, nType, nBloodType)
 	local mapMonster = ConfigTable.GetData("Monster", nDataId)
@@ -452,7 +460,7 @@ function BossHUDCtrl:SetBossInfo(nDataId, nType, nBloodType)
 		if mapMonsterManual == nil then
 			return
 		end
-		if nBloodType == AllEnum.BossBloodType.Single then
+		if nBloodType == AllEnum.BossBloodType.Single or nBloodType == AllEnum.BossBloodType.JointDrill_Mode_2 then
 			self:SetPngSprite(self._mapNode.BossIcon, mapMonsterManual.Icon)
 		else
 			local sIcon = multipleBossIcon[nType]
@@ -480,7 +488,13 @@ function BossHUDCtrl:InitUI(bossId, nDataId, nType, nBloodType)
 	if nType == GameEnum.monsterBloodType.JOINTDRILLBOSS and self.maxJointDrillBossEnergy == nil then
 		self.maxJointDrillBossEnergy, self.curJointDrillBossEnergy = safe_call_cs_func2(CS.AdventureModuleHelper.GetJointDrillBossEnergy, bossId)
 		self:OnEvent_JointDrillBossEnergyChanged(self.curJointDrillBossEnergy)
-		self.jDBossHpBarNum = PlayerData.JointDrill:GetBossHpBarNum()
+		if self._panel.nType ~= nil then
+			if self._panel.nType == GameEnum.JointDrillMode.JointDrill_Mode_1 then
+				self.jDBossHpBarNum = PlayerData.JointDrill_1:GetBossHpBarNum()
+			elseif self._panel.nType == GameEnum.JointDrillMode.JointDrill_Mode_2 then
+				self.jDBossHpBarNum = PlayerData.JointDrill_2:GetBossHpBarNum()
+			end
+		end
 	end
 	if nType == GameEnum.monsterBloodType.JOINTDRILLBOSS then
 		self.JointDrillBossCount = self.JointDrillBossCount + 1
@@ -554,7 +568,13 @@ function BossHUDCtrl:RefreshUI(bossId, nDataId, nType, nBloodType)
 	if nType == GameEnum.monsterBloodType.JOINTDRILLBOSS and self.maxJointDrillBossEnergy == nil then
 		self.maxJointDrillBossEnergy, self.curJointDrillBossEnergy = safe_call_cs_func2(CS.AdventureModuleHelper.GetJointDrillBossEnergy, bossId)
 		self:OnEvent_JointDrillBossEnergyChanged(self.curJointDrillBossEnergy)
-		self.jDBossHpBarNum = PlayerData.JointDrill:GetBossHpBarNum()
+		if self._panel.nType ~= nil then
+			if self._panel.nType == GameEnum.JointDrillMode.JointDrill_Mode_1 then
+				self.jDBossHpBarNum = PlayerData.JointDrill_1:GetBossHpBarNum()
+			elseif self._panel.nType == GameEnum.JointDrillMode.JointDrill_Mode_2 then
+				self.jDBossHpBarNum = PlayerData.JointDrill_2:GetBossHpBarNum()
+			end
+		end
 	end
 	self.bossId = bossId
 	self:KillTween()
@@ -674,6 +694,8 @@ function BossHUDCtrl:CloseUI()
 	EventManager.RemoveEntityEvent("JointDrillBossEnergyChanged", self.bossId, self, self.OnEvent_JointDrillBossEnergyChanged)
 	EventManager.RemoveEntityEvent("RefreshBossEnergyValueHUD", self.bossId, self, self.OnEvent_RefreshBossEnergyValueHUD)
 	EventManager.RemoveEntityEvent("CastUltra", self.bossId, self, self.OnEvent_JointDrillBossUseSkill)
+	EventManager.RemoveEntityEvent("RedCellNotify", self.bossId, self, self.OnEvent_RedCellNotify)
+	EventManager.RemoveEntityEvent("GreenCellNotify", self.bossId, self, self.OnEvent_GreenCellNotify)
 	self._mapNode.rtBuff:UnbindEntity()
 	self.bossId = 0
 	self.isToughness = false
@@ -768,5 +790,21 @@ function BossHUDCtrl:OnEvent_JointDrillBossUseSkill()
 	anim:Play("Empty")
 	self._mapNode.rtHPAin:Play("JointDrill_BossEnergy_open")
 	self.JointDrillEnergyStage = jointDrillEnergyStage.None
+end
+function BossHUDCtrl:OnEvent_RedCellNotify(nCount)
+	self._mapNode.jointDrillGridCount.gameObject:SetActive(true)
+	self._mapNode.imgGridRed.gameObject:SetActive(true)
+	self._mapNode.imgGridGreen.gameObject:SetActive(false)
+	for _, v in ipairs(self._mapNode.TMP_JointDrillRed) do
+		NovaAPI.SetTMPText(v, nCount)
+	end
+end
+function BossHUDCtrl:OnEvent_GreenCellNotify(nCount)
+	self._mapNode.jointDrillGridCount.gameObject:SetActive(true)
+	self._mapNode.imgGridRed.gameObject:SetActive(false)
+	self._mapNode.imgGridGreen.gameObject:SetActive(true)
+	for _, v in ipairs(self._mapNode.TMP_JointDrillGreen) do
+		NovaAPI.SetTMPText(v, nCount)
+	end
 end
 return BossHUDCtrl

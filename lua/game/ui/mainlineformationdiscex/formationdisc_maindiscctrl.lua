@@ -19,7 +19,6 @@ FormationDisc_MainDiscCtrl._mapNodeConfig = {
 		sLanguageId = "DiscFormation_NeedNote"
 	},
 	goNote = {nCount = 6, sComponentName = "Image"},
-	goNoteActive = {nCount = 6, sComponentName = "Image"},
 	TMPNoteCount = {nCount = 6, sComponentName = "TMP_Text"},
 	TMPDiscTitle = {sComponentName = "TMP_Text"},
 	TMPEmptyTitle = {
@@ -72,16 +71,6 @@ function FormationDisc_MainDiscCtrl:SetDisc(mapDisc, mapNote)
 				local nNoteCount = mapDisc.tbSkillNeedNote[i].nCount
 				NovaAPI.SetTMPText(self._mapNode.TMPNoteCount[i], nNoteCount)
 				self:SetPngSprite(self._mapNode.goNote[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
-				self:SetPngSprite(self._mapNode.goNoteActive[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small .. "_Light")
-				if mapNote[nNoteId] ~= nil then
-					self._mapNode.goNoteActive[i].gameObject:SetActive(nNoteCount <= mapNote[nNoteId])
-					local _b, _c = ColorUtility.TryParseHtmlString("#8dffff")
-					NovaAPI.SetTMPColor(self._mapNode.TMPNoteCount[i], _c)
-				else
-					self._mapNode.goNoteActive[i].gameObject:SetActive(false)
-					local _b, _c = ColorUtility.TryParseHtmlString("#FAFAFA")
-					NovaAPI.SetTMPColor(self._mapNode.TMPNoteCount[i], _c)
-				end
 			end
 		end
 	end
@@ -108,12 +97,6 @@ function FormationDisc_MainDiscCtrl:RefreshNote(mapNote)
 				local nNoteCount = self.mapDisc.tbSkillNeedNote[i].nCount
 				NovaAPI.SetTMPText(self._mapNode.TMPNoteCount[i], nNoteCount)
 				self:SetPngSprite(self._mapNode.goNote[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
-				self:SetPngSprite(self._mapNode.goNoteActive[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small .. "_Light")
-				if mapNote[nNoteId] ~= nil and nNoteCount <= mapNote[nNoteId] then
-					self._mapNode.goNoteActive[i].gameObject:SetActive(true)
-				else
-					self._mapNode.goNoteActive[i].gameObject:SetActive(false)
-				end
 			end
 		end
 	end

@@ -97,6 +97,7 @@ function CharacterRecordCtrl:OnDisable()
 	PlayerData.Char:UpdateCharRecordReddot(self.curCharId, true)
 	PlayerData.Char:ResetArchiveContentUpdateRedDot(self.curCharId)
 	self:OnStopCharVoice()
+	self.bResetTog = true
 end
 function CharacterRecordCtrl:RegisterTogRedDot(nCharId)
 	RedDotManager.RegisterNode(RedDotDefine.Role_Record_Info, nCharId, self._mapNode.togRedDot[1])
@@ -130,15 +131,17 @@ function CharacterRecordCtrl:Refresh(nCharId)
 		self:OnStopCharVoice()
 		self:OnStopCharVoiceBubble()
 	end
-	local bReset = self.nCurTog == nil or self.nCurTog ~= RecordTogType.RecordInfo
+	local bReset = self.nCurTog == nil or self.nCurTog ~= RecordTogType.RecordInfo or self.bResetTog
 	if self.nCurTog == nil or self.curCharId ~= nCharId then
 		self.nCurTog = RecordTogType.RecordInfo
 	end
 	if bReset then
 		for k, v in ipairs(self._mapNode.ctrlTog) do
+			v:ResetTrigger()
 			v:SetTrigger(k == self.nCurTog)
 		end
 	end
+	self.bResetTog = false
 	self.ClickedRecordInfoTog = false
 	self.ClickedVoiceTog = false
 	self.bLevelChanged = true

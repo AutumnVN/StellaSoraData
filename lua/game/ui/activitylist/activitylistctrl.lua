@@ -148,12 +148,13 @@ function ActivityListCtrl:OnGridBtnClick(goGrid, gridIndex)
 	local nInstanceID = goGrid:GetInstanceID()
 	self.nSelectIndex = nIndex
 	self.tbGridCtrl[nInstanceID]:SetSelect(true)
-	self:RefreshSelectActivity(true)
 	if self.tbActList[nIndex].nType == AllEnum.ActivityMainType.Activity then
 		EventManager.Hit("ActivityListChangeTab", actData:GetActId())
 	else
 		EventManager.Hit("ActivityListChangeTab", actData:GetActGroupId())
 	end
+	self.tbInitActIds = {}
+	self:RefreshSelectActivity(true)
 end
 function ActivityListCtrl:AddPeriodicActivityCtrl(actData, bResetDay)
 	local actCtrl = self.tbActCtrlObj[actData:GetActId()]
@@ -286,7 +287,8 @@ function ActivityListCtrl:AddActivityGroupCtrl(actData)
 		self.tbActCtrlObj[actData:GetActGroupId()] = actCtrl
 	end
 	actCtrl.gameObject:SetActive(true)
-	actCtrl:InitActData(actData)
+	actCtrl:InitActData(actData, table.indexof(self.tbInitActIds, actData:GetActGroupId()) > 0)
+	table.insert(self.tbInitActIds, actData:GetActGroupId())
 end
 function ActivityListCtrl:AddAdvertisingActCtrl(actData)
 	local actCtrl = self.tbActCtrlObj[actData:GetActId()]
@@ -401,6 +403,7 @@ function ActivityListCtrl:Awake()
 	self.nSelectActId = nil
 	self.nInitActId = nil
 	self.bPlayAnim = true
+	self.tbInitActIds = {}
 	local tbParams = self:GetPanelParam()
 	if type(tbParams) == "table" then
 		self.nInitActId = tbParams[1]

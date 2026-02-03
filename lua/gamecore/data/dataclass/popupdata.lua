@@ -116,6 +116,9 @@ function PopUpData:IsNeedOwnPopUp(popUpId)
 end
 function PopUpData:IsNeedPopUp(popupId, localData)
 	local cfg = ConfigTable.GetData("PopUp", popupId)
+	if cfg == nil then
+		return false
+	end
 	if cfg.PopRefreshType == GameEnum.PopRefreshType.WholeFirst then
 		if nil == localData then
 			return cfg.PopUpRes ~= nil

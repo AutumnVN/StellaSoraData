@@ -3772,7 +3772,7 @@ return {
 			"",
 			false,
 			"",
-			"The lesson from the pork cutlet is still fresh in my mind...==W==So...==W==",
+			"The lesson from the pork cutlet is still fresh in my mind...==W== So...==W==",
 			""
 		}
 	},
@@ -4998,7 +4998,7 @@ return {
 			"",
 			false,
 			"",
-			"It's good, but I wouldn't call it amazing..",
+			"It's good, but I wouldn't call it amazing\226\128\166",
 			""
 		}
 	},

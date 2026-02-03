@@ -467,6 +467,18 @@ function AvgData:IsStoryReaded(nStoryId)
 	end
 	return false
 end
+function AvgData:IsChapterAllRead(nChapterId)
+	local chapterStoryIds = self.CFG_ChapterStoryNumIds[nChapterId]
+	if chapterStoryIds == nil or #chapterStoryIds == 0 then
+		return false
+	end
+	for _, nStoryId in ipairs(chapterStoryIds) do
+		if not self:IsStoryReaded(nStoryId) then
+			return false
+		end
+	end
+	return true
+end
 function AvgData:MarkSkip(_bSkip)
 	self.bSkip = _bSkip == true
 end
@@ -719,6 +731,7 @@ function AvgData:SendMsg_STORY_ENTER(nStoryId, nBuildId, bNewestStory)
 		self:ClearTempData()
 		if bNewestStory == true then
 			self:SetRecentStoryId(nStoryId)
+			PlayerData.Story:SetLastMainlineStoryId(nStoryId)
 		end
 		if nBuildId ~= 0 then
 			self.selBuildId = nBuildId

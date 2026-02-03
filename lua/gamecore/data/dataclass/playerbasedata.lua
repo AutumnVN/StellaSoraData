@@ -50,17 +50,21 @@ function PlayerBaseData:Init()
 	self._tbHonorTitleList = nil
 	self._nSendGiftCnt = 0
 	self._nRenameTime = 0
+	self.nRequestEnergyLimitTime = 10
 	self._sDestoryUrl = ""
 	self._bWorldClassChange = false
 	self.bNewDay = false
 	self.bNeedHotfix = false
+	self.bShowNewDayWindDelay = false
 	self.bShowNewDayWind = false
+	self.bSkipNewDayWind = false
 	self.bInLoading = false
 	self:ProcessTableData()
 	EventManager.Add(EventId.TransAnimInClear, self, self.OnEvent_TransAnimInClear)
 	EventManager.Add(EventId.TransAnimOutClear, self, self.OnEvent_TransAnimOutClear)
 	EventManager.Add(EventId.UserEvent_CreateRole, self, self.Event_CreateRole)
 	EventManager.Add("Prologue_EventUpload", self, self.PrologueEventUpload)
+	EventManager.Add("CS2LuaEvent_OnApplicationFocus", self, self.OnCS2LuaEvent_AppFocus)
 end
 function PlayerBaseData:UnInit()
 	if self.NextRefreshTimer ~= nil then
@@ -593,11 +597,11 @@ function PlayerBaseData:OnNextDayRefresh()
 		local bInAdventure = ModuleManager.GetIsAdventure()
 		local bInStarTowerSweep = not bInAdventure and (PlayerData.State:GetStarTowerSweepState() or PanelManager.GetCurPanelId() == PanelId.StarTowerResult or PanelManager.GetCurPanelId() == PanelId.StarTowerBuildSave)
 		local bInAvg = AvgManager.CheckInAvg()
-		if bInAdventure or bInStarTowerSweep or bInAvg then
+		if bInAdventure or bInStarTowerSweep or bInAvg or self.bSkipNewDayWind then
 			print("Inlevel")
 			self.bNewDay = true
 			if bInAvg then
-				self.bShowNewDayWind = true
+				self.bShowNewDayWindDelay = true
 			end
 			return
 		end
@@ -640,7 +644,7 @@ function PlayerBaseData:OnBackToMainMenuModule()
 		self:OnNextDayRefresh()
 		self.bNewDay = false
 		if self.bInLoading then
-			self.bShowNewDayWind = true
+			self.bShowNewDayWindDelay = true
 		else
 			self:BackToHome()
 		end
@@ -667,15 +671,26 @@ end
 function PlayerBaseData:BackToHome()
 	if PanelManager.GetCurPanelId() ~= PanelId.MainView then
 		EventManager.Hit("NewDay_Clear_Guide")
-		local msg = {
-			nType = AllEnum.MessageBox.Alert,
-			sContent = ConfigTable.GetUIText("Alert_NextDay"),
-			callbackConfirm = function()
-				PanelManager.Home()
-			end
-		}
-		EventManager.Hit(EventId.OpenMessageBox, msg)
+		if not self.bShowNewDayWind then
+			local msg = {
+				nType = AllEnum.MessageBox.Alert,
+				sContent = ConfigTable.GetUIText("Alert_NextDay"),
+				callbackConfirm = function()
+					self.bShowNewDayWind = false
+					if PanelManager.GetCurPanelId() == PanelId.MainView then
+						return
+					end
+					PanelManager.Home()
+				end
+			}
+			EventManager.Hit(EventId.OpenMessageBox, msg)
+			self.bShowNewDayWind = true
+			self.bSkipNewDayWind = false
+		end
 	end
+end
+function PlayerBaseData:SetSkipNewDayWindow(bSkip)
+	self.bSkipNewDayWind = bSkip
 end
 function PlayerBaseData:GetCurEnergy()
 	local mapRet = {}
@@ -1005,6 +1020,44 @@ function PlayerBaseData:SendPlayerRedeemCodeReq(sCode, callback)
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.redeem_code_req, msgData, nil, successCallback)
 end
+function PlayerBaseData:SendEnergyInfoReq()
+	local callback = function(_, msgData)
+		if msgData ~= nil then
+			self._nCurEnergy = msgData.Primary
+			self._nCurEnergyBattery = msgData.Secondary
+			local nServerTime = CS.ClientManager.Instance.serverTimeStamp
+			self._nEnergyTime = msgData.IsPrimary == true and msgData.NextDuration + nServerTime or 0
+			self._nEnergyBatteryTime = msgData.IsPrimary == true and 0 or msgData.NextDuration + nServerTime
+			if msgData.NextDuration == 0 then
+				if self._mapEnergyTimer ~= nil then
+					self._mapEnergyTimer:Cancel()
+					self._mapEnergyTimer = nil
+				end
+				if self._mapEnergyBatteryTimer ~= nil then
+					self._mapEnergyBatteryTimer:Cancel()
+					self._mapEnergyBatteryTimer = nil
+				end
+			end
+			if msgData.IsPrimary == false then
+				if self._mapEnergyBatteryTimer ~= nil then
+					self._mapEnergyBatteryTimer:Cancel()
+					self._mapEnergyBatteryTimer = nil
+				end
+				self._mapEnergyBatteryTimer = TimerManager.Add(1, msgData.NextDuration, self, self.HandleEnergyBatteryTimer, true, true, false)
+			else
+				if self._mapEnergyTimer ~= nil then
+					self._mapEnergyTimer:Cancel()
+					self._mapEnergyTimer = nil
+				end
+				self._mapEnergyTimer = TimerManager.Add(1, msgData.NextDuration, self, self.HandleEnergyTimer, true, true, false)
+			end
+			EventManager.Hit(EventId.UpdateEnergyBattery)
+			EventManager.Hit(EventId.UpdateEnergy)
+			printLog("Lua PlayerBaseData OnCS2LuaEvent_AppFocus, Get APP Focus, curEnergy: " .. tostring(self._nCurEnergy) .. ", curEnergyBattery: " .. tostring(self._nCurEnergyBattery))
+		end
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.energy_info_req, {}, nil, callback)
+end
 function PlayerBaseData:CheckFunctionBtn(nFuncId, PassCallback, sSound)
 	if sSound == nil then
 		sSound = "ui_common_feedback_error"
@@ -1126,8 +1179,8 @@ function PlayerBaseData:OnEvent_TransAnimInClear()
 	self.bInLoading = true
 end
 function PlayerBaseData:OnEvent_TransAnimOutClear()
-	if self.bShowNewDayWind and self.bInLoading then
-		self.bShowNewDayWind = false
+	if self.bShowNewDayWindDelay and self.bInLoading then
+		self.bShowNewDayWindDelay = false
 		self:BackToHome()
 	end
 	self.bInLoading = false
@@ -1182,6 +1235,32 @@ function PlayerBaseData:UserEventUpload_PC(eventName)
 			})
 			NovaAPI.UserEventUpload(tmpEventName, tab)
 		end
+	end
+end
+function PlayerBaseData:OnCS2LuaEvent_AppFocus(bFocus)
+	if self._nPlayerId == nil then
+		return
+	end
+	if bFocus == true then
+		if self.nCachedTime == nil then
+			return
+		end
+		local nPassedTime = CS.ClientManager.Instance.serverTimeStamp - self.nCachedTime
+		self.nCachedTime = nil
+		if nPassedTime >= self.nRequestEnergyLimitTime then
+			self:SendEnergyInfoReq()
+		end
+	else
+		self.nCachedTime = CS.ClientManager.Instance.serverTimeStamp
+		local nNextTime = self._nEnergyBatteryTime > 0 and self._nEnergyBatteryTime or self._nEnergyTime
+		nNextTime = nNextTime - self.nCachedTime
+		if nNextTime <= 10 then
+			nNextTime = 10
+		end
+		self.nRequestEnergyLimitTime = nNextTime
+		self.nLastEnergy = self._nCurEnergy
+		self.nLastEnergyBattery = self._nCurEnergyBattery
+		printLog("Lua PlayerBaseData OnCS2LuaEvent_AppFocus, Lose APP Focus, nCachedTime: " .. tostring(self.nCachedTime) .. ", nRequestEnergyLimitTime: " .. tostring(self.nRequestEnergyLimitTime) .. ", nLastEnergy: " .. tostring(self.nLastEnergy) .. ", nLastEnergyBattery: " .. tostring(self.nLastEnergyBattery))
 	end
 end
 return PlayerBaseData

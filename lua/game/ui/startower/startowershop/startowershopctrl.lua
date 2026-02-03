@@ -655,9 +655,10 @@ function StarTowerShopCtrl:SetNoteInfo(nNoteId)
 			table.insert(tbNoteInfo, {nTid, nCount})
 			if nTid == nNoteId then
 				nMaxNote = math.max(nMaxNote, nCount)
-				if nCurCount < nMaxNote then
-					bShowInfo = true
+				local nMaxLayerNoteNeed = mapData.nMaxLayerNoteNeed
+				if nCurCount < nMaxLayerNoteNeed then
 					bCurrShow = true
+					bShowInfo = true
 				end
 			end
 		end
@@ -677,11 +678,13 @@ function StarTowerShopCtrl:SetNoteInfo(nNoteId)
 	end
 	if bShowInfo == true then
 		self._mapNode.goNoteHint:SetActive(true)
+		local sCount = ""
 		if nCurCount >= nMaxNote then
-			NovaAPI.SetTMPText(self._mapNode.TMPNoteHintCount, string.format("%d/%d", nCurCount, nMaxNote))
+			sCount = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_3"), nCurCount, nMaxNote)
 		else
-			NovaAPI.SetTMPText(self._mapNode.TMPNoteHintCount, string.format("<color=#08d3d4>%d</color>/%d", nCurCount, nMaxNote))
+			sCount = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_2"), nCurCount, nMaxNote)
 		end
+		NovaAPI.SetTMPText(self._mapNode.TMPNoteHintCount, sCount)
 		local mapNote = ConfigTable.GetData("SubNoteSkill", nNoteId)
 		if mapNote ~= nil then
 			self:SetPngSprite(self._mapNode.imgIconNoteHint, mapNote.Icon .. AllEnum.DiscSkillIconSurfix.Small)
@@ -725,14 +728,17 @@ function StarTowerShopCtrl:OnDiscSkillInfoGridRefresh(goGrid, nIdx)
 			tbimgIconCount[i].gameObject:SetActive(true)
 			local mapNote = ConfigTable.GetData("SubNoteSkill", mapSkill.tbNote[i][1])
 			if mapNote ~= nil then
-				self:SetPngSprite(tbimgIconCount[i], mapNote.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+				local sNoteIconPath = mapNote.Icon .. AllEnum.DiscSkillIconSurfix.Small
+				self:SetPngSprite(tbimgIconCount[i], sNoteIconPath)
 			end
 			local nCurCount = self.mapNoteCount[mapSkill.tbNote[i][1]] == nil and 0 or self.mapNoteCount[mapSkill.tbNote[i][1]]
+			local sCount = ""
 			if nCurCount >= mapSkill.tbNote[i][2] then
-				NovaAPI.SetTMPText(tbNoteCount[i], string.format("%d/%d", nCurCount, mapSkill.tbNote[i][2]))
+				sCount = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_4"), nCurCount, mapSkill.tbNote[i][2])
 			else
-				NovaAPI.SetTMPText(tbNoteCount[i], string.format("<color=#08d3d4>%d</color>/%d", nCurCount, mapSkill.tbNote[i][2]))
+				sCount = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_5"), nCurCount, mapSkill.tbNote[i][2])
 			end
+			NovaAPI.SetTMPText(tbNoteCount[i], sCount)
 		else
 			tbNoteCount[i].gameObject:SetActive(false)
 			tbimgIconCount[i].gameObject:SetActive(false)

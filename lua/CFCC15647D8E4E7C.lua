@@ -37,52 +37,67 @@ BreakOutLevelCellCtrl._mapNodeConfig = {
 }
 BreakOutLevelCellCtrl._mapEventConfig = {}
 BreakOutLevelCellCtrl._mapRedDotConfig = {}
-function BreakOutLevelCellCtrl:SetData(nActId, nLevelId)
+function BreakOutLevelCellCtrl:SetData(nActId, nLevelId, bIsActEnd)
 	self.ActId = nActId
-	self.BreakOutData = PlayerData.Activity:GetActivityDataById(nActId)
+	self.bIsActEnd = bIsActEnd
 	self.nActivityGroupId = ConfigTable.GetData("Activity", nActId).MidGroupId
 	if self.levelData ~= nil then
 		RedDotManager.UnRegisterNode(RedDotDefine.Activity_BreakOut_DifficultyTap_Level, {
 			self.nActivityGroupId,
-			self.levelData.nLevelId
+			self.levelData.Id
 		}, self._mapNode.redDotNew)
 	end
 	self.LevelId = nLevelId
+	self.BreakOutData = PlayerData.Activity:GetActivityDataById(nActId)
+	if self.BreakOutData == nil then
+		printError("\230\180\187\229\138\168 id:" .. self.ActId .. " \230\149\176\230\141\174\228\184\186\231\169\186 \231\148\168\230\156\172\229\156\176\228\184\180\230\151\182\230\149\176\230\141\174\229\136\157\229\167\139\229\140\150")
+		self:InitErrorSate()
+		self.levelData = ConfigTable.GetData("BreakOutLevel", self.LevelId)
+		NovaAPI.SetTMPText(self._mapNode.txt_Name, self.levelData.Name)
+		return
+	end
 	self.levelData = self.BreakOutData:GetDetailLevelDataById(self.LevelId)
 	NovaAPI.SetTMPText(self._mapNode.txt_Name, self.levelData.Name)
 	self:RefreshLevelState()
-	RedDotManager.RegisterNode(RedDotDefine.Activity_BreakOut_DifficultyTap_Level, {
-		self.nActivityGroupId,
-		self.LevelId
-	}, self._mapNode.redDotNew)
 end
 function BreakOutLevelCellCtrl:RefreshLevelState()
 	self._mapNode.obj_TipTime.gameObject:SetActive(false)
 	self._mapNode.obj_TipUnLock.gameObject:SetActive(false)
 	self._mapNode.obj_TipEndMask.gameObject:SetActive(false)
 	self._mapNode.img_FinishIcon.gameObject:SetActive(false)
-	local bIsOpen = self:RefreshLevelTime(self.LevelId)
-	if bIsOpen == nil or not bIsOpen then
+	self._mapNode.redDotNew:SetActive(false)
+	self.bIsTimeOpen = self:RefreshLevelTime(self.LevelId)
+	if self.bIsTimeOpen == nil or not self.bIsTimeOpen then
 		return
 	end
-	local isEnd = self:IsLevelsEndTime()
-	if isEnd then
-		self._mapNode.img_FinishIcon.gameObject:SetActive(isEnd)
+	self._mapNode.obj_TipEndMask.gameObject:SetActive(self.bIsActEnd)
+	if self.bIsActEnd then
+		RedDotManager.SetValid(RedDotDefine.Activity_BreakOut_DifficultyTap_Level, {
+			self.nActivityGroupId,
+			self.LevelId
+		}, false)
+		RedDotManager.UnRegisterNode(RedDotDefine.Activity_BreakOut_DifficultyTap_Level, {
+			self.nActivityGroupId,
+			self.LevelId
+		}, self._mapNode.redDotNew)
 		return
 	end
 	self:RefreshLevelLockState()
 	self:RefreshLevelFinishState()
+	RedDotManager.RegisterNode(RedDotDefine.Activity_BreakOut_DifficultyTap_Level, {
+		self.nActivityGroupId,
+		self.LevelId
+	}, self._mapNode.redDotNew)
 end
 function BreakOutLevelCellCtrl:RefreshLevelTime()
 	if self.levelData == nil then
 		return
 	end
-	local curTime = CS.ClientManager.Instance.serverTimeStamp
-	if curTime >= self.BreakOutData:GetLevelStartTime(self.LevelId) then
+	if self.BreakOutData:IsLevelTimeUnlocked(self.LevelId) then
 		self._mapNode.obj_TipTime.gameObject:SetActive(false)
 		return true
 	else
-		local remainTime = self.BreakOutData:GetLevelStartTime(self.LevelId) - curTime
+		local remainTime = self.BreakOutData:GetLevelStartTime(self.LevelId)
 		local sTime = self:GetTimeText(remainTime)
 		NovaAPI.SetTMPText(self._mapNode.txt_Time, orderedFormat(ConfigTable.GetUIText("TowerDef_TimeTips") or "", sTime))
 		self._mapNode.obj_TipTime.gameObject:SetActive(true)
@@ -126,12 +141,11 @@ function BreakOutLevelCellCtrl:RefreshLevelLockState()
 		return
 	end
 	local bIsPreLevelComplete = self.BreakOutData:IsPreLevelComplete(self.LevelId)
-	if bIsPreLevelComplete then
+	if bIsPreLevelComplete or not self.bIsTimeOpen then
 		self._mapNode.obj_TipUnLock.gameObject:SetActive(false)
 	else
-		local nPreLevelId = ConfigTable.GetData("BreakOutLevel", self.LevelId).PreLevelId
-		local sDifficultState = ConfigTable.GetUIText(DifficultyState[self.BreakOutData:GetBreakoutLevelDifficult(nPreLevelId)])
-		local sTip = orderedFormat(ConfigTable.GetUIText("OpenAfterClearingLevel") or "", sDifficultState, self.BreakOutData:GetBreakoutLevelDifficult(nPreLevelId))
+		local PreLevelIdName = self.BreakOutData:GetBreakoutPreLevelIdName(self.LevelId)
+		local sTip = orderedFormat(ConfigTable.GetUIText("BreakOut_Act_OpenAfterClearingLevel") or "", PreLevelIdName)
 		NovaAPI.SetTMPText(self._mapNode.txt_Lock, sTip)
 		self._mapNode.obj_TipUnLock.gameObject:SetActive(true)
 	end
@@ -139,27 +153,33 @@ end
 function BreakOutLevelCellCtrl:RefreshLevelFinishState()
 	self._mapNode.img_FinishIcon.gameObject:SetActive(self.BreakOutData:IsLevelComplete(self.LevelId))
 end
-function BreakOutLevelCellCtrl:IsLevelsEndTime()
-	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
-	local nEndTime = self.BreakOutData:GetActCloseTime(self.LevelId)
-	if nCurTime > nEndTime then
-		return true
-	end
-	return false
-end
 function BreakOutLevelCellCtrl:OnBtnClick_SelectLevel()
-	printLog("\231\130\185\229\135\187\230\140\137\233\146\174")
+	if self.BreakOutData == nil then
+		return
+	end
 	local bTimeUnlock, bPreComplete = self.BreakOutData:IsLevelUnlocked(self.LevelId)
-	if not bTimeUnlock and not bPreComplete then
+	if not bTimeUnlock or self.bIsActEnd then
+		return
+	end
+	if not bPreComplete then
+		self.BreakOutData:EnterLevelSelect(self.LevelId)
 		return
 	end
 	self.BreakOutData:EnterLevelSelect(self.LevelId)
+	if self.BreakOutData:IsAllLevelComplete() then
+		self.SelectedTab = self.BreakOutData:GetBreakoutLevelDifficult(self.LevelId)
+		EventManager.Hit("SetSelectedTab", self.SelectedTab)
+	end
 	EventManager.Hit("JumpToLevelDetail", self.ActId, self.LevelId)
 end
 function BreakOutLevelCellCtrl:OnDrag_Act(mDrag)
-	printLog("\230\187\145\229\138\168\230\140\137\233\146\174")
-	if self.levelData.Type == GameEnum.ActivityBreakoutLevelType.Entry or self.levelData.Type ~= GameEnum.ActivityBreakoutLevelType.Expert then
-	end
 	EventManager.Hit("DragLevelList", mDrag)
+end
+function BreakOutLevelCellCtrl:InitErrorSate()
+	self._mapNode.obj_TipTime.gameObject:SetActive(false)
+	self._mapNode.obj_TipUnLock.gameObject:SetActive(false)
+	self._mapNode.img_FinishIcon.gameObject:SetActive(false)
+	self._mapNode.redDotNew:SetActive(false)
+	self._mapNode.obj_TipEndMask.gameObject:SetActive(true)
 end
 return BreakOutLevelCellCtrl

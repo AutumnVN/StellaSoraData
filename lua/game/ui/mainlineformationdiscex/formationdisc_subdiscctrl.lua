@@ -66,7 +66,11 @@ function FormationDisc_SubDiscCtrl:SetDisc(mapDisc, mapNote, bLock)
 				else
 					self._mapNode.goNote[i].gameObject:SetActive(true)
 					NovaAPI.SetTMPText(self._mapNode.TMPNoteCount[i], mapDisc.tbSubNoteSkills[i].nCount)
-					self:SetPngSprite(self._mapNode.goNote[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+					if mapNote[mapDisc.tbSubNoteSkills[i].nId] == nil then
+						self:SetPngSprite(self._mapNode.goNote[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+					else
+						self:SetPngSprite(self._mapNode.goNote[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.S_Light)
+					end
 				end
 				bHasNote = true
 			else

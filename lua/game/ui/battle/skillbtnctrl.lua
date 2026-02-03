@@ -102,7 +102,7 @@ function SkillBtnCtrl:Awake()
 	self:SetActionLayout()
 	self:SetCDTextSize()
 	self._mapNode.fx_tip:SetActive(false)
-	self.bChargeLoading_CurrentIsActive = false
+	self.bChargeLoading_CurrentIsActive = nil
 end
 function SkillBtnCtrl:InitSkillBtn(EET, icon, bShowSection, charId, actionId, bIsSupportChar)
 	self:SetMainAlpha(true)

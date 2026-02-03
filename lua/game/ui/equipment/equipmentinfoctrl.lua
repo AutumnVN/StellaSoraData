@@ -251,7 +251,10 @@ function EquipmentInfoCtrl:Awake()
 		self.nCharId = tbParam[1]
 		self.nSlotId = tbParam[2]
 		self.nEquipedGemIndex = tbParam[3]
-		self.nSelectGemIndex = self.nEquipedGemIndex == 0 and 1 or self.nEquipedGemIndex
+		self.nSelectGemIndex = tbParam[4]
+		if self.nSelectGemIndex == nil then
+			self.nSelectGemIndex = self.nEquipedGemIndex == 0 and 1 or self.nEquipedGemIndex
+		end
 	end
 end
 function EquipmentInfoCtrl:OnEnable()
@@ -330,7 +333,7 @@ function EquipmentInfoCtrl:OnBtnClick_Equip()
 end
 function EquipmentInfoCtrl:OnBtnClick_Roll()
 	EventManager.Hit(EventId.ClosePanel, PanelId.EquipmentInfo)
-	EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentRoll, self.nCharId, self.nSlotId, self.nSelectGemIndex)
+	EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentRoll, self.nCharId, self.nSlotId, self.nSelectGemIndex, self.nEquipedGemIndex)
 end
 function EquipmentInfoCtrl:OnBtnClick_Unload()
 	local nSelectPreset = PlayerData.Equipment:GetSelectPreset(self.nCharId)
@@ -356,6 +359,7 @@ function EquipmentInfoCtrl:OnBtnClick_Active()
 	local nHas = PlayerData.Item:GetItemCountByID(self.mapGemCfg.GenerateCostTid)
 	if nHas < self.mapSlotCfg.GeneratenCostQty then
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Equipment_MatNotEnough_Active"))
+		self:OnBtnClick_MatTip(self._mapNode.btnAdd)
 		return
 	end
 	local callback = function(nNewIndex)

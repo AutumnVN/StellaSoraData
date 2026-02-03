@@ -47,7 +47,7 @@ function CookieActData:RefreshCookieGameActData(actId, msgData)
 		self:CacheAllLevelData(msgData.Levels)
 	end
 	if self.nActId == 0 then
-		printWarn("CookieActDataInit: ActivityId is 0!!!")
+		printError("CookieActDataInit: ActivityId is 0!!!")
 	end
 end
 function CookieActData:CacheAllQuestData(questListData)
@@ -183,12 +183,6 @@ function CookieActData:IsLevelUnlocked(nLevelId)
 	bPreComplete = nPreLevelId == 0 or mapLevelStatus ~= nil and mapLevelStatus.bFirstComplete
 	return bTimeUnlock, bPreComplete
 end
-function CookieActData:GetActEndTime()
-	return self.nEndTime
-end
-function CookieActData:GetActOpenTime()
-	return self.nOpenTime
-end
 function CookieActData:SetLevelReward(changeInfo)
 	if changeInfo ~= nil and #changeInfo.Props > 0 then
 		self.tbLevelReward = changeInfo
@@ -235,9 +229,8 @@ function CookieActData:RequestLevelResult(nLevelId, nScore, nBoxCount, nCookieCo
 		end
 	end
 	if self.nActId == 0 then
-		printWarn("RequestCookieLevelResult: ActivityId is 0!!!")
+		printError("RequestCookieLevelResult: ActivityId is 0!!!  -  ActivityId = " .. self.nActId .. ", nLevelId = " .. nLevelId .. ", nScore = " .. nScore)
 	end
-	printLog("RequestCookieLevelResult - ActivityId = " .. self.nActId .. ", nLevelId = " .. nLevelId .. ", nScore = " .. nScore .. ", nBoxCount = " .. nBoxCount .. ", nCookieCount = " .. nCookieCount .. ", nGoodCount = " .. nGoodCount .. ", nPerfectCount = " .. nPerfectCount .. ", nExcellentCount = " .. nExcellentCount .. ", nMissCount = " .. nMissCount)
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_cookie_settle_req, {
 		ActivityId = self.nActId,
 		LevelId = nLevelId,

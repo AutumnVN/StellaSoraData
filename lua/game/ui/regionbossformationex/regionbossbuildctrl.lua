@@ -134,7 +134,7 @@ function RegionBossBuildCtrl:RefreshList()
 			end
 			judgeBuildCanUse(v)
 		end
-	elseif self.nType == AllEnum.RegionBossFormationType.JointDrill then
+	elseif self.nType == AllEnum.RegionBossFormationType.JointDrill or self.nType == AllEnum.RegionBossFormationType.JointDrill_2 then
 		for _, data in ipairs(self.tbUsedBuildList) do
 			for k, v in pairs(self.tbCurShow) do
 				if data.BuildId == v.nBuildId then
@@ -328,7 +328,9 @@ function RegionBossBuildCtrl:OnBtnClickGrid(nIdx, itemCtrl)
 	elseif self.nType == AllEnum.RegionBossFormationType.WeeklyCopies then
 		PlayerData.RogueBoss:SetSelBuildId(self.tbCurShow[nIdx].nBuildId)
 	elseif self.nType == AllEnum.RegionBossFormationType.JointDrill then
-		PlayerData.JointDrill:SetSelBuildId(self.tbCurShow[nIdx].nBuildId)
+		PlayerData.JointDrill_1:SetSelBuildId(self.tbCurShow[nIdx].nBuildId)
+	elseif self.nType == AllEnum.RegionBossFormationType.JointDrill_2 then
+		PlayerData.JointDrill_2:SetSelBuildId(self.tbCurShow[nIdx].nBuildId)
 	elseif self.nType == AllEnum.RegionBossFormationType.ActivityLevels then
 		local nActId = PlayerData.Activity:GetActivityLevelActId()
 		local activityLevelsData = PlayerData.Activity:GetActivityDataById(nActId)
@@ -396,7 +398,9 @@ function RegionBossBuildCtrl:OnEnable()
 	if self.nType == AllEnum.RegionBossFormationType.Vampire then
 		self.nIdx = tbParam[3]
 	elseif self.nType == AllEnum.RegionBossFormationType.JointDrill then
-		self.tbUsedBuildList = PlayerData.JointDrill:GetJointDrillBuildList()
+		self.tbUsedBuildList = PlayerData.JointDrill_1:GetJointDrillBuildList()
+	elseif self.nType == AllEnum.RegionBossFormationType.JointDrill_2 then
+		self.tbUsedBuildList = PlayerData.JointDrill_2:GetJointDrillBuildList()
 	end
 	if tbParam[4] ~= nil then
 		self.Other = tbParam[4]
@@ -415,7 +419,7 @@ function RegionBossBuildCtrl:OnEnable()
 					end
 				end
 			end
-		elseif self.nType == AllEnum.RegionBossFormationType.JointDrill then
+		elseif self.nType == AllEnum.RegionBossFormationType.JointDrill or self.nType == AllEnum.RegionBossFormationType.JointDrill_2 then
 			for _, v in ipairs(self.tbUsedBuildList) do
 				for _, char in ipairs(v.Chars) do
 					if table.indexof(self.tbSelChar, char.CharId) == 0 then

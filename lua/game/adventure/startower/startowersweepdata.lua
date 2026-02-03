@@ -820,7 +820,7 @@ function StarTowerSweepData:HandleNpc(nNpcId, nNpcUid)
 		local nBoardNpcId = ConfigTable.GetData("NPCConfig", nNpcId).NPCId
 		local nSkinId = PlayerData.Board:GetNPCUsingSkinId(nBoardNpcId)
 		local nCoin = self._mapItem[AllEnum.CoinItemId.FixedRogCurrency] or 0
-		EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 0, 0, {}, nSkinId, 1, {}, {}, nTalkId, 0, true, true, nCoin, self.nTowerId, self._mapNote)
+		EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 0, 0, {}, nSkinId, 1, {}, {}, nTalkId, 0, true, true, nCoin, self.nTowerId, self._mapNote, self.tbDisc)
 		return
 	elseif mapNpcCfgData.type == GameEnum.npcNewType.Event then
 		self:OpenNpcOptionPanel(nCaseId, nNpcId)
@@ -1224,7 +1224,7 @@ function StarTowerSweepData:OpenNpcOptionPanel(nCaseId, nNpcConfigId)
 			nTalkId = 0
 		end
 		local nCoin = self._mapItem[AllEnum.CoinItemId.FixedRogCurrency] or 0
-		EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 0, 0, {}, nSkinId, 1, {}, {}, nTalkId, 0, true, true, nCoin, self.nTowerId, self._mapNote)
+		EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 0, 0, {}, nSkinId, 1, {}, {}, nTalkId, 0, true, true, nCoin, self.nTowerId, self._mapNote, self.tbDisc)
 		return
 	end
 	local tbOption = mapCase.Options
@@ -1319,7 +1319,7 @@ function StarTowerSweepData:OpenNpcOptionPanel(nCaseId, nNpcConfigId)
 	end
 	mapCase.bFirst = false
 	local nCoin = self._mapItem[AllEnum.CoinItemId.FixedRogCurrency] or 0
-	EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 1, nEventId, tbOption, nSkinId, callback, tbUnabledOption, nTableEvtId, nTalkId, mapCase.nActionId, false, true, nCoin, self.nTowerId, self._mapNote)
+	EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 1, nEventId, tbOption, nSkinId, callback, tbUnabledOption, nTableEvtId, nTalkId, mapCase.nActionId, false, true, nCoin, self.nTowerId, self._mapNote, self.tbDisc)
 end
 function StarTowerSweepData:HandleRecover(nCaseId, nNpcConfigId)
 	if self.mapCases[self.EnumCase.RecoveryHP] == nil then
@@ -1369,7 +1369,7 @@ function StarTowerSweepData:HandleNpcRecover(nCaseId, nNpcConfigId)
 			nTalkId = 0
 		end
 		local nCoin = self._mapItem[AllEnum.CoinItemId.FixedRogCurrency] or 0
-		EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 0, 0, {}, nSkinId, 1, {}, {}, nTalkId, 0, true, true, nCoin, self.nTowerId, self._mapNote)
+		EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 0, 0, {}, nSkinId, 1, {}, {}, nTalkId, 0, true, true, nCoin, self.nTowerId, self._mapNote, self.tbDisc)
 		return
 	end
 	local nHp = 0
@@ -1412,7 +1412,7 @@ function StarTowerSweepData:HandleNpcDangerRoom(nCaseId, nNpcConfigId)
 		nTalkId = 0
 	end
 	local nCoin = self._mapItem[AllEnum.CoinItemId.FixedRogCurrency] or 0
-	EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 2, nCaseId, {}, nSkinId, callback, {}, 0, nTalkId, 0, false, true, nCoin, self.nTowerId, self._mapNote)
+	EventManager.Hit(EventId.OpenPanel, PanelId.NpcOptionPanel, 2, nCaseId, {}, nSkinId, callback, {}, 0, nTalkId, 0, false, true, nCoin, self.nTowerId, self._mapNote, self.tbDisc)
 end
 function StarTowerSweepData:HandlePopupDisc(mapData)
 	local callback = function()

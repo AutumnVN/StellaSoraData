@@ -78,6 +78,7 @@ function StoryChapterCtrl:Awake()
 		self.bHasAchievementData = true
 	end
 	PlayerData.Achievement:SendAchievementInfoReq(callback)
+	self.tbPlayedUnlockEffectChapter = {}
 end
 function StoryChapterCtrl:FadeIn()
 	EventManager.Hit(EventId.SetTransition)
@@ -102,6 +103,7 @@ function StoryChapterCtrl:OnEnable()
 	self.bInitLoop = false
 	self:RefreshPersonality()
 	self._mapNode.animActor2D:Play("Actor2D_PNG_right_in")
+	self.nCompletedChapter = -1
 end
 function StoryChapterCtrl:OnDisable()
 end

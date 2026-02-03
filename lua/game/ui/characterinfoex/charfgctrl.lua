@@ -10,11 +10,19 @@ local MoveBarPos = {
 local PanelToTab = {
 	[PanelId.CharInfo] = 1,
 	[PanelId.CharSkill] = 2,
-	[PanelId.CharEquipment] = 3,
-	[PanelId.CharPotential] = 4,
+	[PanelId.CharEquipment] = 4,
+	[PanelId.CharPotential] = 3,
 	[PanelId.CharTalent] = 5,
 	[PanelId.CharacterRelation] = 6,
 	[PanelId.CharUpPanel] = 1
+}
+local TabTextKey = {
+	"CharacterInfo_Tab1",
+	"CharacterInfo_Tab2",
+	"CharacterInfo_Tab4",
+	"CharacterInfo_Tab3",
+	"CharacterInfo_Tab5",
+	"CharacterInfo_Tab6"
 }
 CharFgCtrl._mapNodeConfig = {
 	TopBar = {
@@ -22,7 +30,6 @@ CharFgCtrl._mapNodeConfig = {
 		sCtrlName = "Game.UI.TopBarEx.TopBarCtrl"
 	},
 	goBack = {},
-	goResBarAnimRoot = {},
 	btnTab = {
 		nCount = 6,
 		sComponentName = "UIButton",
@@ -60,8 +67,8 @@ function CharFgCtrl:InitTab()
 	self.nTab = PanelToTab[self._panel.nPanelId]
 	self._mapNode.imgMoveBar.localPosition = Vector3(MoveBarPos[self.nTab], 4.5, 0)
 	for i = 1, 6 do
-		NovaAPI.SetTMPText(self._mapNode.txtTabOn[i], ConfigTable.GetUIText("CharacterInfo_Tab" .. i))
-		NovaAPI.SetTMPText(self._mapNode.txtTabOff[i], ConfigTable.GetUIText("CharacterInfo_Tab" .. i))
+		NovaAPI.SetTMPText(self._mapNode.txtTabOn[i], ConfigTable.GetUIText(TabTextKey[i]))
+		NovaAPI.SetTMPText(self._mapNode.txtTabOff[i], ConfigTable.GetUIText(TabTextKey[i]))
 		self._mapNode.imgOn[i]:SetActive(PanelToTab[self._panel.nPanelId] == i)
 		self._mapNode.txtTabOn[i].gameObject:SetActive(PanelToTab[self._panel.nPanelId] == i)
 		self._mapNode.layoutOff[i].gameObject:SetActive(PanelToTab[self._panel.nPanelId] ~= i)
@@ -109,7 +116,7 @@ function CharFgCtrl:RefreshTopBar()
 		end
 	end
 	if self._panel.bSecondPanel then
-		self:OnEvent_ChangeTopBar(false, true)
+		self:OnEvent_ChangeTopBar(false)
 	end
 end
 function CharFgCtrl:Awake()
@@ -147,9 +154,8 @@ function CharFgCtrl:OnEvent_ChangeTab(bOpen)
 		self._mapNode.aniSafeRoot:Play("CharFgPanel_out")
 	end
 end
-function CharFgCtrl:OnEvent_ChangeTopBar(bShowBack, bShowRes)
+function CharFgCtrl:OnEvent_ChangeTopBar(bShowBack)
 	self._mapNode.goBack:SetActive(bShowBack)
-	self._mapNode.goResBarAnimRoot:SetActive(bShowRes)
 end
 function CharFgCtrl:OnBtnClick_Tab(btn, nIndex)
 	if self.nTab == nIndex then

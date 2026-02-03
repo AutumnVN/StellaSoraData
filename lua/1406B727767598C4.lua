@@ -263,7 +263,12 @@ function ReceivePropsNPCCtrl:RefreshNPC2D(mapData)
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		if bUseL2D then
-			Actor2DManager.SetBoardNPC2D(PanelId.ReceivePropsNPC, self._mapNode.rawImgActor2D, self.nNpcId, nil, nil, 2)
+			local param
+			if self.nNpcId == 713503 then
+				BubbleVoiceManager.MarkPlaySpAnim(true)
+				param = "HideBgIn_ReceivePropsNPC_Panel"
+			end
+			Actor2DManager.SetBoardNPC2D(PanelId.ReceivePropsNPC, self._mapNode.rawImgActor2D, self.nNpcId, nil, param, 2)
 		else
 			Actor2DManager.SetBoardNPC2D_PNG(self._mapNode.trActor2D_PNG, PanelId.ReceivePropsNPC, self.nNpcId)
 		end
@@ -331,6 +336,9 @@ function ReceivePropsNPCCtrl:OnDisable()
 	BubbleVoiceManager.StopBubbleAnim()
 	PlayerVoiceData:ClearTimer()
 	PlayerVoiceData:StopCharVoice()
+	if self.nNpcId == 713503 then
+		BubbleVoiceManager.MarkPlaySpAnim(false)
+	end
 end
 function ReceivePropsNPCCtrl:OnDestroy()
 end

@@ -38,7 +38,7 @@ end
 function StoryCollectionActCtrl:StartActTimer()
 	local startTime = self.AdConfig.StartTime
 	local nStartTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(startTime)
-	local nEndTime = self.actData:GetActCloseTime()
+	local nEndTime = self.actData:GetActEndTime()
 	local refreshTime = function()
 		local nCurTime = ClientManager.serverTimeStamp
 		local nRemainTime = 0
@@ -97,7 +97,7 @@ function StoryCollectionActCtrl:GetTimeStr(nRemainTime)
 	return sTimeStr
 end
 function StoryCollectionActCtrl:OnBtnClick_Go()
-	local nEndTime = self.actData:GetActCloseTime()
+	local nEndTime = self.actData:GetActEndTime()
 	local nCurTime = ClientManager.serverTimeStamp
 	if nEndTime < nCurTime then
 		return

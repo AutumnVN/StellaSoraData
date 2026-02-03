@@ -10,12 +10,6 @@ function AdvertiseActData:InitConfig()
 end
 function AdvertiseActData:RefreshInfinityTowerActData(msgData)
 end
-function AdvertiseActData:GetActOpenTime()
-	return self.nOpenTime
-end
-function AdvertiseActData:GetActCloseTime()
-	return self.nEndTime
-end
 function AdvertiseActData:GetActSortId()
 	if self.bIsMove and self:isFinishAllTasks() then
 		return 9999
@@ -24,11 +18,6 @@ function AdvertiseActData:GetActSortId()
 	end
 end
 function AdvertiseActData:isFinishAllTasks()
-	local nTotalCount, nReceivedCount = PlayerData.TutorialData:GetProgress()
-	local bHasReceiveAllGroup = PlayerData.Quest:CheckTourGroupReward(PlayerData.Quest:GetMaxTourGroupOrderIndex())
-	if bHasReceiveAllGroup and nTotalCount == nReceivedCount then
-		return true
-	end
 	return false
 end
 return AdvertiseActData

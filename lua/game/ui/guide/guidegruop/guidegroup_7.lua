@@ -1,6 +1,7 @@
 local GuideGroup_7 = class("GuideGroup_7")
 local mapEventConfig = {
-	OnEvent_PanelOnEnableById = "OnEvent_PanelOnEnableById"
+	OnEvent_PanelOnEnableById = "OnEvent_PanelOnEnableById",
+	Guide_LevelMenuOpen = "OnEvent_GuideLevelMenuOpen"
 }
 local groupId = 7
 local totalStep = 6
@@ -74,8 +75,6 @@ function GuideGroup_7:Step_2()
 	}
 	self.parent:ActiveHide(true)
 	current = 2
-	self.openPanelId = PanelId.LevelMenu
-	self.waitAnimTime = 0.5
 end
 function GuideGroup_7:Step_3()
 	self.msg = {
@@ -179,6 +178,15 @@ function GuideGroup_7:FinishCurrentStep()
 	if self.openPanelId == nil and self.waitAnimTime ~= 0 then
 		local wait = function()
 			coroutine.yield(CS.UnityEngine.WaitForSeconds(self.waitAnimTime + 0.2))
+			self.parent:PlayTypeMask(self.msg)
+		end
+		cs_coroutine.start(wait)
+	end
+end
+function GuideGroup_7:OnEvent_GuideLevelMenuOpen()
+	if current == 2 then
+		local wait = function()
+			coroutine.yield(CS.UnityEngine.WaitForSeconds(0.7))
 			self.parent:PlayTypeMask(self.msg)
 		end
 		cs_coroutine.start(wait)

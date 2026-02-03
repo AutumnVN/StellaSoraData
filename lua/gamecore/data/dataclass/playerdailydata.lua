@@ -4,17 +4,24 @@ local ClientManager = CS.ClientManager.Instance
 local _bManual = false
 local _nDailyCheckInIndex = 0
 local templateDailyCheckInData
+local _tbMonthlyCardData = {}
 local ProcessMonthlyCard = function(mapMsgData)
+	local mapNext = {}
 	local mapReward = PlayerData.Item:ProcessRewardChangeInfo(mapMsgData.Change)
-	local nEndTime = mapMsgData.EndTime
-	local nId = mapMsgData.Id
 	local mapNext = {
 		mapReward = mapReward,
-		nEndTime = nEndTime,
+		nEndTime = mapMsgData.EndTime,
 		nRemaining = mapMsgData.Remaining,
-		nId = nId
+		nId = mapMsgData.Id
 	}
+	table.insert(_tbMonthlyCardData, mapNext)
 	PopUpManager.PopUpEnQueue(GameEnum.PopUpSeqType.MonthlyCard, mapNext)
+end
+local GetTempMonthlyCardData = function()
+	return _tbMonthlyCardData
+end
+local ClearTempMonthlyCardData = function()
+	_tbMonthlyCardData = {}
 end
 local CacheDailyCheckIn = function(nIndex)
 	if nIndex == nil then
@@ -136,6 +143,8 @@ local PlayerDailyData = {
 	CacheDailyData = CacheDailyData,
 	ProcessMonthlyCard = ProcessMonthlyCard,
 	ProcessDailyCheckIn = ProcessDailyCheckIn,
-	CheckDailyCheckIn = CheckDailyCheckIn
+	CheckDailyCheckIn = CheckDailyCheckIn,
+	GetTempMonthlyCardData = GetTempMonthlyCardData,
+	ClearTempMonthlyCardData = ClearTempMonthlyCardData
 }
 return PlayerDailyData

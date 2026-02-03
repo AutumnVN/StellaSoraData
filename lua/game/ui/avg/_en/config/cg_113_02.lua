@@ -5,7 +5,7 @@ return {
 			"ep_mainline_001",
 			"Act Two ",
 			" Spice Reveals All (Part II) ",
-			" Just as the truth of the case comes to light\226\128\166 a new request suddenly appears?! The first step to cracking the case: retrace Xuan Shis' movements!",
+			" Just as the truth of the case comes to light\226\128\166 a new request suddenly appears?! The first step to cracking the case: retrace Xuan Shi's movements!",
 			0
 		}
 	},

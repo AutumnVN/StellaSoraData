@@ -30,34 +30,38 @@ ScoreBossPauseCtrl._mapNodeConfig = {
 	},
 	btnGiveUp = {
 		sComponentName = "NaviButton",
-		callback = "OnBtnClick_GiveUp",
-		sAction = "Giveup"
+		callback = "OnBtnClick_GiveUp"
 	},
 	btnBack = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Close",
 		sAction = "Back"
 	},
+	btnAgain = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Restart",
+		sAction = "ScoreBossRetry"
+	},
 	btnSettings = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Settings"
-	},
-	btnPopSkill = {
-		sComponentName = "NaviButton",
-		callback = "OnBtnClick_Skill"
 	},
 	ActionBar = {
 		sCtrlName = "Game.UI.ActionBar.ActionBarCtrl"
 	},
 	txtGiveUp = {
-		nCount = 2,
 		sComponentName = "TMP_Text",
-		sLanguageId = "Pause_Btn_EndBattle"
+		sLanguageId = "StarTowerMap_Btn_GiveUp"
 	},
 	txtBack = {
 		nCount = 2,
 		sComponentName = "TMP_Text",
 		sLanguageId = "Pause_Btn_ContinueBattle"
+	},
+	txtAgain = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "ScoreBoss_RestartBattle"
 	},
 	txtBtnSkill = {
 		sComponentName = "TMP_Text",
@@ -114,16 +118,18 @@ ScoreBossPauseCtrl._mapNodeConfig = {
 ScoreBossPauseCtrl._mapEventConfig = {
 	ScoreBoss_Gameplay_Time = "OnEvent_Time",
 	OpenScoreBossPause = "Pause",
-	GamepadUIReopen = "OnEvent_Reopen"
+	GamepadUIReopen = "OnEvent_Reopen",
+	ScoreBoss_Settlement_Ready = "SettlementReady"
 }
 function ScoreBossPauseCtrl:Awake()
 	self._mapNode.safeAreaRoot:SetActive(false)
 	self.tbGamepadUINode = self:GetGamepadUINode()
 	NovaAPI.SetTMPText(self._mapNode.txtTime, string.format("%02d:%02d", 3, 0))
+	self.isSettlementReady = false
 	local tbConfig = {
 		{
-			sAction = "Skill",
-			sLang = "StarTowerMap_Btn_Skill"
+			sAction = "Giveup",
+			sLang = "StarTowerMap_Btn_GiveUp"
 		},
 		{
 			sAction = "Settings",
@@ -196,6 +202,31 @@ function ScoreBossPauseCtrl:OnBtnClick_GiveUp(btn)
 	}
 	EventManager.Hit(EventId.OpenMessageBox, msg)
 end
+function ScoreBossPauseCtrl:OnBtnClick_Restart(btn)
+	if self.isSettlementReady then
+		local sTip = ConfigTable.GetUIText("ScoreBoss_Settlement_Ready")
+		EventManager.Hit(EventId.OpenMessageBox, sTip)
+		return
+	end
+	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+	if nCurTime > PlayerData.ScoreBoss.EndTime then
+		local sTip = ConfigTable.GetUIText("ScoreBoss_Settlement_Tips")
+		EventManager.Hit(EventId.OpenMessageBox, sTip)
+		return
+	end
+	local confirmCallback = function()
+		self:PlayCloseAni(false)
+		self._mapNode.imgBlocker:SetActive(true)
+		PlayerData.ScoreBoss:SendEnterLvAgain()
+	end
+	local msg = {
+		nType = AllEnum.MessageBox.Confirm,
+		sContent = ConfigTable.GetUIText("ScoreBoss_RestartBattle_Tips"),
+		callbackConfirm = confirmCallback,
+		bBlur = false
+	}
+	EventManager.Hit(EventId.OpenMessageBox, msg)
+end
 function ScoreBossPauseCtrl:OnBtnClick_Close(btn)
 	self:PlayCloseAni(false)
 end
@@ -229,5 +260,8 @@ function ScoreBossPauseCtrl:OnPanelClose(_, bGiveUp)
 	if bGiveUp then
 		EventManager.Hit(EventId.AbandonBattle)
 	end
+end
+function ScoreBossPauseCtrl:SettlementReady()
+	self.isSettlementReady = true
 end
 return ScoreBossPauseCtrl

@@ -167,7 +167,12 @@ function BdConvertData:CheckBuildData(mapData, nCondId)
 			local mainCharId = mapData.tbChar[1].nTid
 			local charCfg = ConfigTable.GetData("Character", mainCharId)
 			if charCfg ~= nil then
-				bResult = charCfg.EET == condiCfg.CondParams[1]
+				for _, value in ipairs(condiCfg.CondParams) do
+					if charCfg.EET == value then
+						bResult = true
+						break
+					end
+				end
 			end
 		end
 	elseif nBdRequest == GameEnum.BdRequest.BdCharElementNum then
@@ -192,15 +197,42 @@ function BdConvertData:CheckBuildData(mapData, nCondId)
 			end
 			bResult = nCount >= condiCfg.CondParams[1]
 		end
-	elseif nBdRequest == GameEnum.BdRequest.BdActivateSkillLevelNum and mapData.tbSecondarySkill ~= nil then
-		local nCount = 0
-		for _, skillId in ipairs(mapData.tbSecondarySkill) do
-			local skillCfg = ConfigTable.GetData("SecondarySkill", skillId)
-			if skillCfg ~= nil and skillCfg.Level >= condiCfg.CondParams[2] then
-				nCount = nCount + 1
+	elseif nBdRequest == GameEnum.BdRequest.BdActivateSkillLevelNum then
+		if mapData.tbSecondarySkill ~= nil then
+			local nCount = 0
+			for _, skillId in ipairs(mapData.tbSecondarySkill) do
+				local skillCfg = ConfigTable.GetData("SecondarySkill", skillId)
+				if skillCfg ~= nil and skillCfg.Level >= condiCfg.CondParams[2] then
+					nCount = nCount + 1
+				end
+			end
+			bResult = nCount >= condiCfg.CondParams[1]
+		end
+	elseif nBdRequest == GameEnum.BdRequest.BdAllCharElement and mapData.tbChar ~= nil then
+		local bSameEET = true
+		local nTeampEET
+		for _, charData in ipairs(mapData.tbChar) do
+			local charCfg = ConfigTable.GetData("Character", charData.nTid)
+			if charCfg ~= nil then
+				if nTeampEET == nil then
+					nTeampEET = charCfg.EET
+				end
+				if nTeampEET ~= charCfg.EET then
+					bSameEET = false
+					break
+				end
 			end
 		end
-		bResult = nCount >= condiCfg.CondParams[1]
+		if not bSameEET then
+			bResult = false
+		else
+			for _, value in ipairs(condiCfg.CondParams) do
+				if nTeampEET == value then
+					bResult = true
+					break
+				end
+			end
+		end
 	end
 	return bResult
 end

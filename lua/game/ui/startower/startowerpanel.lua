@@ -117,6 +117,22 @@ function StarTowerPanel:Awake()
 	table.sort(self.tbShowNote, function(a, b)
 		return a < b
 	end)
+	self.mapNoteNeed = {}
+	for nIndex, nDiscId in ipairs(self.tbDisc) do
+		if 3 < nIndex then
+			break
+		end
+		local mapDiscData = self.mapDiscData[nDiscId]
+		if mapDiscData ~= nil then
+			local tbNeedNote = mapDiscData.tbSkillNeedNote
+			for _, mapNeedNote in ipairs(tbNeedNote) do
+				if self.mapNoteNeed[mapNeedNote.nId] == nil then
+					self.mapNoteNeed[mapNeedNote.nId] = 0
+				end
+				self.mapNoteNeed[mapNeedNote.nId] = self.mapNoteNeed[mapNeedNote.nId] + mapNeedNote.nCount
+			end
+		end
+	end
 	GamepadUIManager.EnterAdventure()
 	GamepadUIManager.EnableGamepadUI("BattleMenu", {})
 end

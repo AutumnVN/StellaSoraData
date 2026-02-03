@@ -51,12 +51,17 @@ function PlayerStorySetData:CacheStorySetData(netMsg)
 					if 0 < table.indexof(data.RewardedIds, v.nId) then
 						v.nStatus = AllEnum.StorySetStatus.Received
 					end
+					local mapCfg = ConfigTable.GetData("StorySetChapter", data.ChapterId)
 					RedDotManager.SetValid(RedDotDefine.Story_Set_Section, {
+						mapCfg.TabId,
 						data.ChapterId,
 						v.nId
 					}, v.nStatus == AllEnum.StorySetStatus.UnLock and bShow)
 				end
-				local chapterHasRedDot = RedDotManager.GetValid(RedDotDefine.Story_Set_Chapter, data.ChapterId)
+				local chapterHasRedDot = RedDotManager.GetValid(RedDotDefine.Story_Set_Chapter, {
+					data.TadId,
+					data.ChapterId
+				})
 				if chapterHasRedDot == true then
 					if nChapterId < 0 then
 						nChapterId = data.ChapterId
@@ -81,6 +86,7 @@ function PlayerStorySetData:UnlockNewChapter(nId)
 			if k == 1 then
 				v.nStatus = AllEnum.StorySetStatus.UnLock
 				RedDotManager.SetValid(RedDotDefine.Story_Set_Section, {
+					mapCfg.TabId,
 					nId,
 					v.nId
 				}, bShow)
@@ -89,22 +95,49 @@ function PlayerStorySetData:UnlockNewChapter(nId)
 		end
 	end
 end
-function PlayerStorySetData:GetAllChapterList()
+function PlayerStorySetData:GetAllChapterList(nType, bOnlyShowUnRead)
 	local tbChapter = {}
+	local tabCfg = ConfigTable.GetData("StorySetTab", nType)
 	for nId, v in pairs(self.tbChapter) do
 		local mapCfg = ConfigTable.GetData("StorySetChapter", nId)
-		if mapCfg ~= nil and mapCfg.IsShow then
-			table.insert(tbChapter, {
-				nId = nId,
-				tbSectionList = v.tbSectionList,
-				bUnlock = v.bUnlock
-			})
+		if mapCfg ~= nil and mapCfg.IsShow and (mapCfg.TabId == nType or tabCfg.IsAll) then
+			local bShow = true
+			if bOnlyShowUnRead == true then
+				local chapterHasRedDot = RedDotManager.GetValid(RedDotDefine.Story_Set_Chapter, {
+					mapCfg.TabId,
+					mapCfg.Id
+				})
+				if chapterHasRedDot ~= true then
+					bShow = false
+				end
+			end
+			if bShow == true then
+				table.insert(tbChapter, {
+					nId = nId,
+					tbSectionList = v.tbSectionList,
+					bUnlock = v.bUnlock
+				})
+			end
 		end
 	end
 	table.sort(tbChapter, function(a, b)
 		return a.nId < b.nId
 	end)
 	return tbChapter
+end
+function PlayerStorySetData:GetAllTabList()
+	local tbTabData = {}
+	local foreachFunc = function(mapData)
+		if mapData.IsShow == true then
+			local openTime = mapData.OpenTime ~= "" and CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapData.OpenTime) or 0
+			local curTime = CS.ClientManager.Instance.serverTimeStamp
+			if openTime <= curTime then
+				table.insert(tbTabData, mapData)
+			end
+		end
+	end
+	ForEachTableLine(ConfigTable.Get("StorySetTab"), foreachFunc)
+	return tbTabData
 end
 function PlayerStorySetData:TryOpenStorySetPanel(callback)
 	if not self.bGetData then
@@ -118,6 +151,24 @@ function PlayerStorySetData:SetRecentChapterId(chapterId)
 end
 function PlayerStorySetData:GetRecentChapterId()
 	return self.nRecentChapterId
+end
+function PlayerStorySetData:IsChapterAllRead(nChapterId)
+	if self.tbChapter[nChapterId] == nil then
+		return false
+	end
+	local chapter = self.tbChapter[nChapterId]
+	if not chapter.bUnlock then
+		return false
+	end
+	if chapter.tbSectionList == nil or #chapter.tbSectionList == 0 then
+		return false
+	end
+	for _, section in ipairs(chapter.tbSectionList) do
+		if section.nStatus ~= AllEnum.StorySetStatus.Received then
+			return false
+		end
+	end
+	return true
 end
 function PlayerStorySetData:SendGetStorySetData(callback)
 	local func_cb = function(_, netMsg)
@@ -140,7 +191,12 @@ function PlayerStorySetData:ReceiveStorySetReward(nChapterId, nSectionId, callba
 			end
 			if nIndex ~= 0 then
 				self.tbChapter[nChapterId].tbSectionList[nIndex].nStatus = AllEnum.StorySetStatus.Received
-				RedDotManager.SetValid(RedDotDefine.Story_Set_Section, {nChapterId, nSectionId}, false)
+				local mapCfg = ConfigTable.GetData("StorySetChapter", nChapterId)
+				RedDotManager.SetValid(RedDotDefine.Story_Set_Section, {
+					mapCfg.TabId,
+					nChapterId,
+					nSectionId
+				}, false)
 				nIndex = nIndex + 1
 			end
 			if nIndex <= #self.tbChapter[nChapterId].tbSectionList then
@@ -151,7 +207,12 @@ function PlayerStorySetData:ReceiveStorySetReward(nChapterId, nSectionId, callba
 					bShow = mapCfg.IsShow
 				end
 				local nId = self.tbChapter[nChapterId].tbSectionList[nIndex].nId
-				RedDotManager.SetValid(RedDotDefine.Story_Set_Section, {nChapterId, nId}, bShow)
+				local mapCfg = ConfigTable.GetData("StorySetChapter", nChapterId)
+				RedDotManager.SetValid(RedDotDefine.Story_Set_Section, {
+					mapCfg.TabId,
+					nChapterId,
+					nId
+				}, bShow)
 			end
 		end
 		if callback ~= nil then

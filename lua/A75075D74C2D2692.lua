@@ -66,7 +66,6 @@ function ActivityBreakOutCtrl:InitActData(actData)
 	self:RefreshDate()
 	self:RefreshTimeout()
 	self:RefreshReward()
-	self:RefreshTaskData()
 end
 function ActivityBreakOutCtrl:UnInit()
 	self:UnbindCtrl()
@@ -130,12 +129,16 @@ function ActivityBreakOutCtrl:RefreshTimeout()
 end
 function ActivityBreakOutCtrl:RefreshDate()
 	local nOpenMonth, nOpenDay, nEndMonth, nEndDay, nOpenYear, nEndYear = self.actData:GetActGroupDate()
-	local strOpenDay = string.format("%02d", nOpenDay)
-	local strEndDay = string.format("%02d", nEndDay)
+	local strOpenDay = string.format("%d", nOpenDay)
+	local strEndDay = string.format("%d", nEndDay)
 	local dateStr = string.format("%s/%s/%s ~ %s/%s/%s", nOpenYear, nOpenMonth, strOpenDay, nEndYear, nEndMonth, strEndDay)
 	NovaAPI.SetTMPText(self._mapNode.txtDate, dateStr)
 end
 function ActivityBreakOutCtrl:RefreshTaskData()
+	local sortFunc = function(a, b)
+		return a.Index < b.Index
+	end
+	table.sort(self.actData.tbAllActivity, sortFunc)
 	self.nActTaskId = self.actData.tbAllActivity[1].ActivityId
 	local ActivityTaskData = PlayerData.Activity:GetActivityDataById(self.nActTaskId)
 	local nDone, nTotal = 0, 0
@@ -145,9 +148,6 @@ function ActivityBreakOutCtrl:RefreshTaskData()
 	local progress = string.format("%d/%d", nDone, nTotal)
 	local rt = self._mapNode.imgProgressBg:GetComponent("RectTransform")
 	local nWidth = nDone / nTotal * rt.rect.width
-	if 0 < nWidth and nWidth < 309 then
-		nWidth = 309
-	end
 	self._mapNode.imgFill:GetComponent("RectTransform").sizeDelta = Vector2(nWidth, rt.rect.height)
 	NovaAPI.SetTMPText(self._mapNode.txtProgress, progress)
 end
@@ -180,11 +180,8 @@ end
 function ActivityBreakOutCtrl:OnBtnClick_Go()
 	local actGroupCfg = self.actData:GetActGroupCfgData()
 	if actGroupCfg ~= nil then
-		local callback = function()
-			EventManager.Hit(EventId.OpenPanel, PanelId.BreakOutThemePanel, actGroupCfg.Id)
-		end
+		EventManager.Hit(EventId.OpenPanel, PanelId.BreakOutThemePanel, actGroupCfg.Id)
 	end
-	EventManager.Hit(EventId.OpenPanel, PanelId.BreakOutThemePanel, actGroupCfg.Id)
 end
 function ActivityBreakOutCtrl:OnBtnClick_GoTaskPanel()
 	EventManager.Hit(EventId.OpenPanel, PanelId.Task_30101, self.nActTaskId)

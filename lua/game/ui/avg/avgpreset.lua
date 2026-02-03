@@ -100,6 +100,9 @@ local AvgPreset = {
 		"mood_3",
 		"mood_4",
 		"mood_5",
+		"north_street_city_daylight",
+		"north_street_grey_night",
+		"north_street_grey_night_nolight",
 		"philae_room_daylight",
 		"philae_room_dusk",
 		"philae_street_grey_daylight",
@@ -256,6 +259,7 @@ local AvgPreset = {
 		"story_event_03_002",
 		"story_event_03_003",
 		"story_event_03_004",
+		"story_event_04_004",
 		"story_main_00_001",
 		"story_main_00_002",
 		"story_main_00_003_FP",
@@ -449,7 +453,9 @@ local AvgPreset = {
 		"story_tales_05_001",
 		"story_tales_06_001",
 		"story_tales_07_001",
-		"story_tales_08_001"
+		"story_tales_08_001",
+		"story_tales_09_001",
+		"story_tales_10_001"
 	},
 	FgResName = {
 		"circle_light",
@@ -1722,9 +1728,13 @@ local AvgPreset = {
 		"i",
 		"j",
 		"k",
-		"l"
+		"l",
+		"aa",
+		"ab"
 	},
 	CharPose_1 = {
+		"ac",
+		"ad",
 		"p",
 		"q",
 		"r",

@@ -35,6 +35,10 @@ function BreakOut_30101Data:GetActivityDataByIndex(nIndex)
 		end
 	end
 end
+function BreakOut_30101Data:IsActCloseTime()
+	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+	return nCurTime > self.nEndTime
+end
 function BreakOut_30101Data:PlayCG()
 	self:SendMsg_CG_READ(self.nCGActivityId)
 end

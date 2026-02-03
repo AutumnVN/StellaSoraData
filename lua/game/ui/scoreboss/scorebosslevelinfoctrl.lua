@@ -29,13 +29,18 @@ ScoreBossLevelInfoCtrl._mapEventConfig = {
 	ScoreBoss_Gameplay_Time = "OnEvent_Time",
 	ScoreBoss_Score_Change = "OnEvent_ScoreChange",
 	ScoreBoss_Score_SkillChange = "OnEvent_SkillScoreChange",
-	InputEnable = "OnEvent_InputEnable"
+	InputEnable = "OnEvent_InputEnable",
+	ScoreBoss_Restart_Again = "InitMsg"
 }
 function ScoreBossLevelInfoCtrl:Awake()
+	self:InitMsg()
+end
+function ScoreBossLevelInfoCtrl:InitMsg()
 	self.isPlaySkillAni = false
 	self.curTotal = 0
 	self.maxStarCount = #PlayerData.ScoreBoss.tabScoreNeed
 	NovaAPI.SetTMPText(self._mapNode.texStarCount, self.curTotal)
+	NovaAPI.SetTMPColor(self._mapNode.TMPChallengeTime, colorWhite)
 	local bossLevelData = ConfigTable.GetData("ScoreBossLevel", PlayerData.ScoreBoss.entryLevelId)
 	self.getControl = ConfigTable.GetData("ScoreBossGetControl", bossLevelData.NonDamageScoreGet)
 	self.OnceControlScore = self.getControl.OnceScore

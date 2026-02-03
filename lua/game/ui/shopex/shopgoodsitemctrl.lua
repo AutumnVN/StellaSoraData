@@ -20,10 +20,7 @@ ShopGoodsItemCtrl._mapNodeConfig = {
 	txtPrice = {sComponentName = "TMP_Text"},
 	imgMask = {},
 	goRestock = {},
-	txtRestock = {
-		sComponentName = "TMP_Text",
-		sLanguageId = "Shop_Restock"
-	},
+	txtRestock = {sComponentName = "TMP_Text"},
 	goCondition = {},
 	txtCondition = {sComponentName = "TMP_Text"}
 }
@@ -42,9 +39,23 @@ function ShopGoodsItemCtrl:RefreshInfo(mapData)
 		self._mapNode.imgElement.gameObject:SetActive(true)
 		local mapDiscCfgData = ConfigTable.GetData("Disc", mapData.nItemId)
 		self:SetAtlasSprite(self._mapNode.imgElement, "12_rare", AllEnum.Star_Element[mapDiscCfgData.EET].icon)
+		local bMax = false
+		local mapDisc = PlayerData.Disc:GetDiscById(mapData.nItemId)
+		if mapDisc then
+			local _, nCount = PlayerData.Disc:GetBreakLimitMat(mapData.nItemId)
+			if nCount + mapDisc.nStar >= mapDisc.nMaxStar then
+				bMax = true
+			end
+		end
+		if bMax then
+			NovaAPI.SetTMPText(self._mapNode.txtRestock, ConfigTable.GetUIText("Mall_Package_SoldOut"))
+		else
+			NovaAPI.SetTMPText(self._mapNode.txtRestock, ConfigTable.GetUIText("Shop_Restock"))
+		end
 	else
 		self:SetPngSprite(self._mapNode.imgIcon, mapCfg.Icon)
 		self._mapNode.imgElement.gameObject:SetActive(false)
+		NovaAPI.SetTMPText(self._mapNode.txtRestock, ConfigTable.GetUIText("Shop_Restock"))
 	end
 	local sPath = AllEnum.FrameType_New.ShopGoods .. AllEnum.FrameColor_New[mapCfg.Rarity]
 	self:SetAtlasSprite(self._mapNode.imgRare, "12_rare", sPath)

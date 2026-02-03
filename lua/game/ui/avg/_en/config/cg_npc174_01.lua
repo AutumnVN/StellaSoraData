@@ -4,7 +4,7 @@ return {
 		param = {
 			"ep_mainline_001",
 			"Act One",
-			"The Demon\226\128\153s Challenge",
+			"The Demon's Challenge",
 			"That demon stepped out of the white room, ready to put you to a special test.",
 			0
 		}

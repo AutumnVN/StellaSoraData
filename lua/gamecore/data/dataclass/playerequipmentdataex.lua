@@ -7,6 +7,7 @@ function PlayerEquipmentData:Init()
 	self.tbCharEquipment = {}
 	self.bRollWarning = true
 	self:ProcessTableData()
+	self.isTestPresetTeam = false
 end
 function PlayerEquipmentData:ProcessTableData()
 	self.nCharGemPresetNum = ConfigTable.GetConfigNumber("CharGemPresetNum")
@@ -232,6 +233,28 @@ function PlayerEquipmentData:GetRollWarning()
 end
 function PlayerEquipmentData:SetRollWarning(bAble)
 	self.bRollWarning = bAble
+end
+function PlayerEquipmentData:CacheEquipmentSelect(nSlotId, nGemIndex)
+	self.mapSelect = {nSlotId = nSlotId, nGemIndex = nGemIndex}
+end
+function PlayerEquipmentData:GetEquipmentSelect()
+	if self.mapSelect == nil then
+		return false
+	end
+	local mapSelect = clone(self.mapSelect)
+	self.mapSelect = nil
+	return mapSelect
+end
+function PlayerEquipmentData:CheckAlterHighQualityAffix(tbAlterAffix, tbLockId)
+	for _, v in ipairs(tbAlterAffix) do
+		if v ~= 0 and table.indexof(tbLockId, v) == 0 then
+			local mapCfg = ConfigTable.GetData("CharGemAttrValue", v)
+			if mapCfg and mapCfg.Rare then
+				return true
+			end
+		end
+	end
+	return false
 end
 function PlayerEquipmentData:UpdateRedDot()
 end

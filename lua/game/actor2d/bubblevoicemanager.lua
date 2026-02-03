@@ -42,6 +42,7 @@ local sLanFolder = GetLanguageSurfixByIndex(nCurTxtLanIndex)
 local sPath_BubbleData = ""
 local sPath_BubbleOffset = ""
 local sPath_VoResLen = ""
+local sSpAnimSurfix = ""
 local InUnityEditor = NovaAPI.IsEditorPlatform()
 local bLoaded = false
 local nSpeed = 1
@@ -50,7 +51,7 @@ local LoadAll = function()
 		sPath_BubbleData = NovaAPI.ApplicationDataPath .. "/../../GameDataTables/text_data/bubble/" .. sLanFolder .. "/BubbleData.json"
 		sPath_BubbleOffset = NovaAPI.ApplicationDataPath .. "/../../GameDataTables/text_data/bubble/BubbleOffset.json"
 		sPath_VoResLen = NovaAPI.ApplicationDataPath .. "/../../GameDataTables/text_data/bubble/VoResLen.json"
-	elseif RUNNING_BBV_EDITOR == true then
+	elseif RUNNING_BBV_EDITOR == true or AVG_EDITOR == true then
 		sPath_BubbleData = NovaAPI.StreamingAssetsPath .. "/../../../" .. sLanFolder .. "/BBV/BubbleData.json"
 		sPath_BubbleOffset = NovaAPI.StreamingAssetsPath .. "/../../../_cn/BBV/BubbleOffset.json"
 		sPath_VoResLen = NovaAPI.StreamingAssetsPath .. "/../../../_cn/BBV/VoResLen.json"
@@ -273,6 +274,7 @@ local function SetBubble()
 			NovaAPI.SetTMPText(TMP, sText)
 			anim:Play("bb_in", -1, 0)
 			if sAnim ~= "" then
+				sAnim = sAnim .. sSpAnimSurfix
 				if RUNNING_BBV_EDITOR == true then
 					Actor2DManager.PlayL2DAnim_InBBVEditor(sAnim)
 				elseif trL2D ~= nil and trL2D:IsNull() == false then
@@ -368,10 +370,10 @@ function BubbleVoiceManager.StopBubbleAnim(bNoAnim)
 	end
 	TMP = nil
 	if trL2D ~= nil and trL2D:IsNull() == false then
-		Actor2DManager.PlayL2DAnim(trL2D, "idle", true, true)
+		Actor2DManager.PlayL2DAnim(trL2D, "idle" .. sSpAnimSurfix, true, true)
 		trL2D = nil
 	else
-		Actor2DManager.PlayAnim("idle", true, nCharIdx)
+		Actor2DManager.PlayAnim("idle" .. sSpAnimSurfix, true, nCharIdx)
 	end
 end
 function BubbleVoiceManager.PauseBubbleAnim()
@@ -538,6 +540,7 @@ local function SetBubble_EX()
 			NovaAPI.SetTMPText(TMP_EX, sText)
 			anim_EX:Play("bb_in", -1, 0)
 			if sAnim ~= "" then
+				sAnim = sAnim .. sSpAnimSurfix
 				if RUNNING_BBV_EDITOR == true then
 					Actor2DManager.PlayL2DAnim_InBBVEditor(sAnim)
 				else
@@ -589,7 +592,14 @@ function BubbleVoiceManager.StopBubbleAnim_EX(bNoAnim)
 		timer_EX = nil
 	end
 	TMP_EX = nil
-	Actor2DManager.PlayAnim("idle", true, 2)
+	Actor2DManager.PlayAnim("idle" .. sSpAnimSurfix, true, 2)
+end
+function BubbleVoiceManager.MarkPlaySpAnim(bUseSpAnim)
+	if bUseSpAnim == true then
+		sSpAnimSurfix = "_sp"
+	else
+		sSpAnimSurfix = ""
+	end
 end
 local WriteToJsonFile = function(sPath, sJsonText)
 	local fs = CS.System.IO.FileStream(sPath, CS.System.IO.FileMode.Create)

@@ -6,6 +6,14 @@ EquipmentRollPanel._tbDefine = {
 	}
 }
 function EquipmentRollPanel:Awake()
+	local tbParam = self:GetPanelParam()
+	if type(tbParam) == "table" then
+		self.nCharId = tbParam[1]
+		self.nSlotId = tbParam[2]
+		self.nSelectGemIndex = tbParam[3]
+		self.nEquipedGemIndex = tbParam[4]
+		PlayerData.Equipment:CacheEquipmentSelect(self.nSlotId, self.nSelectGemIndex)
+	end
 end
 function EquipmentRollPanel:OnEnable()
 end

@@ -16,16 +16,25 @@ DepotDiscSubSkillItem._mapNodeConfig = {
 	canvasChoose = {sNodeName = "imgChoose", sComponentName = "Canvas"},
 	goNoteList = {},
 	goNote = {nCount = 3, sComponentName = "Image"},
-	txtHas = {nCount = 3, sComponentName = "TMP_Text"}
+	txtHas = {nCount = 3, sComponentName = "TMP_Text"},
+	imgLock = {},
+	txtLockTip = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "StarTower_Build_DiscSkill_NotActivated"
+	},
+	rtEmpty = {}
 }
 DepotDiscSubSkillItem._mapEventConfig = {
 	SelectDepotDiscSkill = "OnEvent_SelectDepotDiscSkill"
 }
 function DepotDiscSubSkillItem:SetItem(nSkillId, nDiscId, mapNote, nOrderInLayer)
 	if nSkillId == nil then
+		self._mapNode.rtEmpty:SetActive(true)
 		self._mapNode.btnItem.gameObject:SetActive(false)
 		return
 	end
+	self._mapNode.rtEmpty:SetActive(false)
+	self._mapNode.imgLock:SetActive(false)
 	self._mapNode.btnItem.gameObject:SetActive(true)
 	self.nSkillId = nSkillId
 	self.nDiscId = nDiscId
@@ -41,8 +50,9 @@ function DepotDiscSubSkillItem:SetItem(nSkillId, nDiscId, mapNote, nOrderInLayer
 	NovaAPI.SetTMPText(self._mapNode.txtLevel, ConfigTable.GetUIText("Skill_Level") .. subSkillCfg.Level)
 	local bAvtive = self:CheckSkillActive(subSkillCfg, mapNote)
 	if not bAvtive then
-		NovaAPI.SetTMPText(self._mapNode.txtLevel, ConfigTable.GetUIText("StarTower_Depot_DiscSkill_NotActivated"))
+		self._mapNode.imgLock:SetActive(true)
 	end
+	self._mapNode.txtLevel.gameObject:SetActive(bAvtive)
 	local nNoteIndex = 1
 	local bMax = maxLevel <= subSkillCfg.Level
 	if not bMax then
@@ -64,12 +74,12 @@ function DepotDiscSubSkillItem:SetItem(nSkillId, nDiscId, mapNote, nOrderInLayer
 				self:SetPngSprite(self._mapNode.goNote[nNoteIndex], noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
 				local sHasStr = ""
 				if nNoteMax <= nNoteHas then
-					sHasStr = "<color=#0ABEC5>" .. nNoteHas .. "</color>"
+					sHasStr = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_3"), nNoteHas, nNoteMax)
 				else
-					sHasStr = "<color=#5E89B4>" .. nNoteHas .. "</color>"
+					sHasStr = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_2"), nNoteHas, nNoteMax)
 					bMax = false
 				end
-				NovaAPI.SetTMPText(self._mapNode.txtHas[nNoteIndex], sHasStr .. "<color=#264278>/" .. nNoteMax .. "</color>")
+				NovaAPI.SetTMPText(self._mapNode.txtHas[nNoteIndex], sHasStr)
 			end
 			nNoteIndex = nNoteIndex + 1
 		end

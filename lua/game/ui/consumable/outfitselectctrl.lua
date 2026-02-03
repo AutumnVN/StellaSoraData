@@ -199,7 +199,7 @@ function OutfitSelectCtrl:CloseAnim()
 end
 function OutfitSelectCtrl:OnGridRefresh(goGrid, gridIndex)
 	if self._mapItemCtrl[goGrid] == nil then
-		local mapCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TemplateEx.TemplateDiscItemCtrl")
+		local mapCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TemplateEx.TemplateDiscPreviewItemCtrl")
 		self._mapItemCtrl[goGrid] = mapCtrl
 	end
 	local nIdx = gridIndex
@@ -213,8 +213,7 @@ function OutfitSelectCtrl:OnGridRefresh(goGrid, gridIndex)
 	if not mapItemCfgData then
 		return
 	end
-	local nMaxStar = PlayerData.Disc:GetDiscMaxStar(mapItemCfgData.Rarity)
-	self._mapItemCtrl[goGrid]:Refresh(nItemTid, 0, nMaxStar, self._tbItem[nIdx].nLevel, self._tbItem[nIdx].tbShowNote)
+	self._mapItemCtrl[goGrid]:Refresh(nItemTid, self._tbItem[nIdx].nLevel)
 	self._mapItemCtrl[goGrid]:SetSelect(nIdx == self.nCurSelectItem)
 end
 function OutfitSelectCtrl:OnGridBtnClick(goGrid, gridIndex)

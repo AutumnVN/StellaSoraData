@@ -63,10 +63,16 @@ function DepotDiscSkillCtrl:RefreshDiscSkill(mapNote, tbActiveSecondaryIds)
 	for nIdx, nNoteId in ipairs(self._panel.tbShowNote) do
 		if nIdx <= #self._mapNode.imgNote then
 			self._mapNode.imgNote[nIdx].gameObject:SetActive(true)
-			local nNoteId = tonumber(nNoteId)
+			nNoteId = tonumber(nNoteId)
 			local nNoteCount = mapNote[nNoteId] == nil and 0 or mapNote[nNoteId]
 			local noteCfg = ConfigTable.GetData("SubNoteSkill", nNoteId)
-			self:SetPngSprite(self._mapNode.imgNote[nIdx], noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+			local nNoteNeed = self._panel.mapNoteNeed[nNoteId]
+			if nNoteNeed ~= nil and 0 < nNoteNeed then
+				sIconPath = noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.S_Light
+			else
+				sIconPath = noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small
+			end
+			self:SetPngSprite(self._mapNode.imgNote[nIdx], sIconPath)
 			NovaAPI.SetTMPText(self._mapNode.txtNoteCount[nIdx], nNoteCount)
 		end
 	end

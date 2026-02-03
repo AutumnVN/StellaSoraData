@@ -613,6 +613,31 @@ function StarTowerBookData:SendReceivePotentialRewardMsg(nCharId, callback)
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.star_tower_book_potential_reward_receive_req, {Value = nCharId}, nil, sucCall)
 end
+function StarTowerBookData:SendReceiveAllPotentialRewardMsg(callback)
+	local sucCall = function(_, mapMsgData)
+		for _, v in ipairs(mapMsgData.ReceivedIds) do
+			local mapCfg = ConfigTable.GetData("StarTowerBookPotentialReward", v)
+			if mapCfg ~= nil and self.mapPotentialQuest[mapCfg.CharId] ~= nil then
+				self.mapPotentialQuest[mapCfg.CharId][v].Status = AllEnum.BookQuestStatus.Received
+			end
+		end
+		local tbCharHave = PlayerData.Char:GetCharIdList()
+		for k, v in pairs(tbCharHave) do
+			local nCharId = v.nId
+			local mapCharCfg = ConfigTable.GetData_Character(nCharId)
+			if mapCharCfg ~= nil and mapCharCfg.Available then
+				RedDotManager.SetValid(RedDotDefine.StarTowerBook_Potential_Reward, {
+					mapCharCfg.EET,
+					nCharId
+				}, false)
+				RedDotManager.SetValid(RedDotDefine.StarTowerBook_Potential_Reward, {0, nCharId}, false)
+			end
+		end
+		EventManager.Hit("ReceivePotentialBookReward")
+		UTILS.OpenReceiveByChangeInfo(mapMsgData.Change, callback)
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.star_tower_book_potential_reward_receive_req, {Value = 0}, nil, sucCall)
+end
 function StarTowerBookData:SendGetFateCardBookMsg(callback)
 	local sucCall = function(_, mapMsgData)
 		self.bFateCardInit = true
@@ -656,6 +681,25 @@ function StarTowerBookData:SendReceiveFateCardRewardMsg(nBundleId, nQuestId, cal
 		CardBundleId = nBundleId,
 		QuestId = nQuestId or 0
 	}
+	HttpNetHandler.SendMsg(NetMsgId.Id.tower_book_fate_card_reward_receive_req, msgData, nil, sucCall)
+end
+function StarTowerBookData:SendReceiveFateCardAllRewardMsg(callback)
+	local sucCall = function(_, mapMsgData)
+		local tbFateCardBundleList = PlayerData.StarTowerBook:GetAllFateCardBundle()
+		for nBundleId, _ in pairs(tbFateCardBundleList) do
+			if self.mapFateCardQuest[nBundleId] ~= nil then
+				for nId, v in pairs(self.mapFateCardQuest[nBundleId]) do
+					if v.Status == AllEnum.BookQuestStatus.Complete then
+						self.mapFateCardQuest[nBundleId][nId].Status = AllEnum.BookQuestStatus.Received
+					end
+				end
+			end
+			RedDotManager.SetValid(RedDotDefine.StarTowerBook_FateCard_Reward, nBundleId, false)
+		end
+		EventManager.Hit("ReceiveFateCardBookReward")
+		UTILS.OpenReceiveByChangeInfo(mapMsgData, callback)
+	end
+	local msgData = {CardBundleId = 0, QuestId = 0}
 	HttpNetHandler.SendMsg(NetMsgId.Id.tower_book_fate_card_reward_receive_req, msgData, nil, sucCall)
 end
 function StarTowerBookData:OnEvent_UpdateWorldClass()

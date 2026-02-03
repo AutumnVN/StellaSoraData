@@ -327,7 +327,12 @@ function StarTowerFastBattleCtrl:RefreshNoteCount()
 		if nNoteId ~= nil then
 			local noteCfg = ConfigTable.GetData("SubNoteSkill", nNoteId)
 			if nil ~= noteCfg then
-				self:SetPngSprite(self._mapNode.imgNote[i], noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+				local sIconPath = noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small
+				local nNoteNeed = self._panel.mapNoteNeed[noteCfg.Id]
+				if nNoteNeed ~= nil and 0 < nNoteNeed then
+					sIconPath = noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.S_Light
+				end
+				self:SetPngSprite(self._mapNode.imgNote[i], sIconPath)
 				NovaAPI.SetTMPText(self._mapNode.textNote[i], LevelData._mapNote[nNoteId] or 0)
 				self._mapNode.imgNote[i].gameObject:SetActive(true)
 				goLastNoteObj = self._mapNode.imgNote[i].gameObject

@@ -401,6 +401,14 @@ local ResetRenderer = function(tbRenderer)
 	UnInit_RT(tbRenderer)
 	if tbRenderer.trL2DIns ~= nil then
 		SetL2DInsParent(tbRenderer.trL2DIns, trL2DInsRoot)
+		local trBg = tbRenderer.trL2DIns:Find("root/----bg----")
+		if trBg ~= nil and trBg:IsNull() == false then
+			trBg.localScale = Vector3.one
+		end
+		local trBgEft = tbRenderer.trL2DIns:Find("root/----bg_effect----")
+		if trBgEft ~= nil and trBgEft:IsNull() == false then
+			trBgEft.localScale = Vector3.one
+		end
 		tbRenderer.trL2DIns = nil
 	end
 	tbRenderer.sL2D = nil
@@ -533,22 +541,7 @@ local GetActor2DParams = function(nPanelId, nCharId, nSkinId, param, nSpecifyTyp
 end
 local GetFace = function(nSkinId, nPanelId, param)
 	local sFace, sFieldName
-	if param ~= nil and (nPanelId == PanelId.BattleResult or nPanelId == PanelId.RoguelikeResult or nPanelId == PanelId.RogueBossResult or nPanelId == PanelId.StarTowerResult) then
-		if param == true then
-			sFieldName = "BattelWin"
-		else
-			sFieldName = "BattleLose"
-		end
-	end
-	local mapData = ConfigTable.GetData("CharacterSkinPanelFace", nSkinId)
-	if mapData ~= nil then
-		if nPanelId == PanelId.MainView then
-			sFace = mapData.MainView
-		elseif nPanelId == PanelId.CharInfo then
-			sFace = mapData.CharInfo
-		elseif nPanelId == PanelId.BattleResult or nPanelId == PanelId.RoguelikeResult or nPanelId == PanelId.RogueBossResult or nPanelId == PanelId.StarTowerResult then
-			sFace = mapData[sFieldName]
-		end
+	if param ~= nil then
 	end
 	if sFace == "" or sFace == nil then
 		sFace = "002"
@@ -1273,6 +1266,24 @@ function Actor2DManager.SetBoardNPC2D(nPanelId, rawImg, nCharId, nSkinId, param,
 	local tbRenderer = GetRenderer(sAssetPath, false, nIndex)
 	if bL == true then
 		SetL2D(sAssetPath, sOffset, rawImg, nPanelId, nOffsetDataPanelId, nT, bF, sBg, tbRenderer)
+		if tbRenderer.trL2DIns ~= nil and tbRenderer.trL2DIns:IsNull() == false then
+			local trBg = tbRenderer.trL2DIns:Find("root/----bg----")
+			if trBg ~= nil and trBg:IsNull() == false then
+				if param == "HideBgIn_ReceivePropsNPC_Panel" then
+					trBg.localScale = Vector3.zero
+				else
+					trBg.localScale = Vector3.one
+				end
+			end
+			local trBgEft = tbRenderer.trL2DIns:Find("root/----bg_effect----")
+			if trBgEft ~= nil and trBgEft:IsNull() == false then
+				if param == "HideBgIn_ReceivePropsNPC_Panel" then
+					trBgEft.localScale = Vector3.zero
+				else
+					trBgEft.localScale = Vector3.one
+				end
+			end
+		end
 	else
 		sFace = GetFace(nSkinId, nPanelId, param)
 		SetPortrait(sAssetPath, sFace, sOffset, rawImg, nPanelId, nOffsetDataPanelId, nT, bF, sBg, tbRenderer)
@@ -1294,7 +1305,11 @@ function Actor2DManager.SetBoardNPC2D(nPanelId, rawImg, nCharId, nSkinId, param,
 	if tbRenderer == nil then
 		printError("\230\156\170\230\137\190\229\136\176 Renderer")
 	end
-	Actor2DManager.PlayL2DAnim(tbRenderer.trL2DIns, "idle", true, true)
+	local sIdleAnim = "idle"
+	if param == "HideBgIn_ReceivePropsNPC_Panel" then
+		sIdleAnim = sIdleAnim .. "_sp"
+	end
+	Actor2DManager.PlayL2DAnim(tbRenderer.trL2DIns, sIdleAnim, true, true)
 end
 function Actor2DManager.UnsetBoardNPC2D(nIndex)
 	if nIndex == nil then

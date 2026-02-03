@@ -185,7 +185,12 @@ function GachaShowCtrl:ShowResults(tbItems, mapTrans)
 		self.bShowPreview = false
 		self._mapNode.rtPreviewShow:SetActive(false)
 		NovaAPI.SetCanvasGroupAlpha(self._mapNode.rtTitle, 1)
-		self:ShowItem(self.tbItems[self.curIdx])
+		if self.bJumpAll then
+			self.curIdx = 0
+			self:OnBtnClick_JumpAll()
+		else
+			self:ShowItem(self.tbItems[self.curIdx])
+		end
 	end
 	local ShowPreview = function()
 		self:ShowPreview()
@@ -466,10 +471,9 @@ function GachaShowCtrl:OnBtnClick_JumpAll()
 	if self.bBlockJump then
 		return
 	end
-	if self.bShowPreview then
-		if self.showPreviewTimer ~= nil then
-			self.showPreviewTimer:Cancel(true)
-		end
+	if self.bShowPreview and self.showPreviewTimer ~= nil then
+		self.bJumpAll = true
+		self.showPreviewTimer:Cancel(true)
 		return
 	end
 	print("Jump all")

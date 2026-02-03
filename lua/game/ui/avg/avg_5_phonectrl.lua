@@ -168,6 +168,7 @@ function Avg_5_PhoneCtrl:Awake()
 	self._mapNode.goTempLeftHead.gameObject:SetActive(false)
 	self._mapNode.goTempRightHead.gameObject:SetActive(false)
 	self._mapNode.goFixedHead.gameObject:SetActive(false)
+	self.sTxtLan = self._panel.sTxtLan or Settings.sCurrentTxtLanguage
 end
 function Avg_5_PhoneCtrl:OnEnable()
 	self:AddGamepadUINode()
@@ -605,15 +606,8 @@ function Avg_5_PhoneCtrl:OnRefreshCommonGrid(goGrid, nDataIndex)
 			if nDataIndex == #self.tbMsgData[self.curContactsId] and not self.RecordMsg then
 				bHeadImgVisible = true
 				if self.bOnInitEx == true and 1 < nDataIndex and self:IsSameMsgSender(nDataIndex) and self.bRevertHistoryMsg ~= true then
-					if self.bIsFullPage == true then
-						bHeadImgVisible = false
-						bHeadImgAnim = true
-						self.nHeadAnimEndPosY = self._mapNode.goFixedHead.position.y
-					else
-						bHeadImgVisible = false
-						bHeadImgAnim = true
-						self.nHeadAnimEndPosY = rtImgHeadBg.transform.position.y
-					end
+					bHeadImgVisible = false
+					bHeadImgAnim = true
 				end
 			elseif not self:IsSameMsgSender(nDataIndex + 1) or self:GetMsgDataByDataIndex(nDataIndex + 1)[1] == AllEnum.PhoneMsgType.SystemMsg then
 				bHeadImgVisible = true
@@ -654,6 +648,11 @@ function Avg_5_PhoneCtrl:OnRefreshCommonGrid(goGrid, nDataIndex)
 				if self.trTempHeadImg and trPreHead then
 					local imgTempHeadBg = self.trTempHeadImg.transform:Find("imgHeadBg")
 					imgTempHeadBg.transform.position = trPreHead.position
+				end
+				if self.bIsFullPage == true then
+					self.nHeadAnimEndPosY = self._mapNode.goFixedHead.position.y
+				else
+					self.nHeadAnimEndPosY = rtImgHeadBg.transform.position.y
 				end
 			end
 			return rtGo, rtMsg.transform, go:GetComponent("CanvasGroup"), rtImgHeadBg, bHeadImgAnim
@@ -1031,7 +1030,7 @@ function Avg_5_PhoneCtrl:SetPhoneMsg(tbParam, bWaitRefresh, nProcess)
 	sAvgCharId = AdjustMainRoleAvgCharId(sAvgCharId)
 	local sMsgContent = tbParam[3]
 	if nMsgType == 0 or nMsgType == 1 or nMsgType == 2 or nMsgType == 5 then
-		sMsgContent = ProcAvgTextContentFallback(self._panel.sTxtLan, self._panel.sVoLan, self._panel.bIsPlayerMale, tbParam[3], tbParam[7], tbParam[8], tbParam[9])
+		sMsgContent = ProcAvgTextContentFallback(self.sTxtLan, self._panel.sVoLan, self._panel.bIsPlayerMale, tbParam[3], tbParam[7], tbParam[8], tbParam[9])
 		sMsgContent = ProcAvgTextContent(sMsgContent, self._panel.nCurLanguageIdx)
 	end
 	local nImgType = tonumber(tbParam[4])

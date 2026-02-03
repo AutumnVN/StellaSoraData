@@ -15,7 +15,8 @@ DiscSkillItemCtrl._mapNodeConfig = {
 		sNodeName = "goSkillNote",
 		sComponentName = "Animator"
 	},
-	txtNoteCount = {nCount = 3, sComponentName = "TMP_Text"}
+	txtNoteCount = {nCount = 3, sComponentName = "TMP_Text"},
+	imgArrowSkillNote = {nCount = 3, sComponentName = "Image"}
 }
 DiscSkillItemCtrl._mapEventConfig = {}
 DiscSkillItemCtrl._mapRedDotConfig = {}
@@ -61,15 +62,14 @@ function DiscSkillItemCtrl:SetSkillItem(nSkillId, tbChangeNote, tbNoteList, bAct
 			if mapNoteCfg ~= nil then
 				self:SetPngSprite(self._mapNode.goSkillNote[nIndex], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
 				self:SetPngSprite(self._mapNode.imgSkillNote[nIndex], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+				self._mapNode.imgArrowSkillNote[nIndex].gameObject:SetActive(tbChangeNote[nNoteId] ~= nil)
 				local sLevelStr = "StarTower_Depot_Note_Change_1"
 				self.tbPlayAnim[nIndex] = tbChangeNote[nNoteId] ~= nil
 				local nCurCount = tbNoteList[nNoteId] or 0
-				if tbChangeNote[nNoteId] ~= nil then
-					if nNoteCount > nCurCount then
-						sLevelStr = "StarTower_Depot_Note_Change_2"
-					else
-						sLevelStr = "StarTower_Depot_Note_Change_3"
-					end
+				if nNoteCount > nCurCount then
+					sLevelStr = "StarTower_Depot_Note_Change_2"
+				else
+					sLevelStr = "StarTower_Depot_Note_Change_3"
 				end
 				NovaAPI.SetTMPText(self._mapNode.txtNoteCount[nIndex], orderedFormat(ConfigTable.GetUIText(sLevelStr), nCurCount, nNoteCount))
 			end

@@ -98,6 +98,7 @@ function CharFavourLevelUpCtrl:Awake()
 	self._mapNode.goLevelUp.gameObject:SetActive(false)
 	self._mapNode.goNormal.gameObject:SetActive(false)
 	self._mapNode.rectPreProgress.sizeDelta = Vector2(0, self._mapNode.rectPreProgress.sizeDelta.y)
+	self.nAffinityMaxEffectLevel = tonumber(ConfigTable.GetConfigValue("AffinityMaxEffectLevel"))
 end
 function CharFavourLevelUpCtrl:OnEnable()
 	self._mapNode.got_fullscreen_blur_black:SetActive(true)
@@ -330,6 +331,14 @@ function CharFavourLevelUpCtrl:RefreshAllDataList()
 		end
 		return a.nId < b.nId
 	end)
+	if self.lastFavourLevel >= self.nAffinityMaxEffectLevel then
+		table.insert(self.tbDescList, 1, {
+			nId = 0,
+			nIndex = 0,
+			sFront = ConfigTable.GetUIText("Affinity_Title"),
+			sAfter = ConfigTable.GetUIText("Affinity_Title_LevelUp")
+		})
+	end
 	for k, v in ipairs(self.tbDescList) do
 		table.insert(self.tbAllList, {
 			rewardType = "Desc",

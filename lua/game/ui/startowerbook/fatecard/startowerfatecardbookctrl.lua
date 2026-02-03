@@ -95,7 +95,15 @@ StarTowerFateCardBookCtrl._mapNodeConfig = {
 		sLanguageId = "StarTower_Book_FateCard_Unlock_Tip"
 	},
 	txtUnlockTip = {sComponentName = "TMP_Text"},
-	redDotReward = {}
+	redDotReward = {},
+	btnReceiveAllFateCard = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_ReceiveAllFateCard"
+	},
+	TMPReceiveAllFateCardTitle = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Quest_Btn_ReceiveAll"
+	}
 }
 StarTowerFateCardBookCtrl._mapEventConfig = {
 	ReceiveFateCardBookReward = "OnEvent_ReceiveFateCardBookReward"
@@ -127,6 +135,7 @@ function StarTowerFateCardBookCtrl:Init()
 	self.nCurPage = 0
 	self.nCurCardId = 0
 	self:RefreshBundleList()
+	self:RefreshReceiveAllBtn()
 	self._mapNode.btnToggleStarTower:SetText(ConfigTable.GetUIText("LevelMenu_Startower"))
 	self._mapNode.btnToggleSurvivor:SetText(ConfigTable.GetUIText("LevelMenu_Vampire"))
 end
@@ -139,6 +148,7 @@ function StarTowerFateCardBookCtrl:Back()
 		self._mapNode.goCardDetail.gameObject:SetActive(false)
 		self._mapNode.goCardTip.gameObject:SetActive(false)
 		self._mapNode.goBlur.gameObject:SetActive(false)
+		self:RefreshReceiveAllBtn()
 	else
 		EventManager.Hit("ChangeStarTowerBookPanel", AllEnum.StarTowerBookPanelType.Main)
 	end
@@ -192,6 +202,7 @@ function StarTowerFateCardBookCtrl:SelectBundle(bKeepPos, bSetScrollPos)
 	self:RefreshPageList()
 	self:RefreshLeftPage()
 	self:RefreshRightPage()
+	self._mapNode.btnReceiveAllFateCard.gameObject:SetActive(false)
 	for k, v in ipairs(self._mapNode.imgDotBg) do
 		v.gameObject:SetActive(k <= self.nAllPage and 1 < self.nAllPage)
 	end
@@ -316,6 +327,17 @@ function StarTowerFateCardBookCtrl:OnBundleGridClick(goGrid, nIndex)
 		self.nBundleId = mapBundle.nBundleId
 		self.nSelectIndex = nIndex + 1
 		self:SelectBundle(false, true)
+	end
+end
+function StarTowerFateCardBookCtrl:RefreshReceiveAllBtn()
+	self._mapNode.btnReceiveAllFateCard.gameObject:SetActive(false)
+	for k, v in pairs(self.mapBundleList) do
+		local nBundleId = k
+		local bBundleCanReceive = RedDotManager.GetValid(RedDotDefine.StarTowerBook_FateCard_Reward, nBundleId)
+		if bBundleCanReceive and not self.bFateCardList then
+			self._mapNode.btnReceiveAllFateCard.gameObject:SetActive(true)
+			break
+		end
 	end
 end
 function StarTowerFateCardBookCtrl:Awake()
@@ -448,9 +470,13 @@ function StarTowerFateCardBookCtrl:OnBtnClick_CardTypeSurvivor()
 	self._mapNode.btnToggleStarTower:SetDefault(false)
 	self._mapNode.btnToggleSurvivor:SetDefault(true)
 end
+function StarTowerFateCardBookCtrl:OnBtnClick_ReceiveAllFateCard()
+	PlayerData.StarTowerBook:SendReceiveFateCardAllRewardMsg()
+end
 function StarTowerFateCardBookCtrl:OnEvent_ReceiveFateCardBookReward()
 	local bCanReceive = RedDotManager.GetValid(RedDotDefine.StarTowerBook_FateCard_Reward, self.nBundleId)
 	self._mapNode.btnReward.gameObject:SetActive(not bCanReceive)
 	self._mapNode.btnReceiveReward.gameObject:SetActive(bCanReceive)
+	self:RefreshReceiveAllBtn()
 end
 return StarTowerFateCardBookCtrl

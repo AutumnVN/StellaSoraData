@@ -9,7 +9,7 @@ JointDrillBattlePanel._tbDefine = {
 	},
 	{
 		sPrefabPath = "JointDrillBattle/JointDrillMenu.prefab",
-		sCtrlName = "Game.UI.JointDrill.JointDrillMenuCtrl"
+		sCtrlName = "Game.UI.JointDrill.Battle.JointDrillMenuCtrl"
 	},
 	{
 		sPrefabPath = "Battle/AdventureMainUI/AdventureMainUI.prefab",
@@ -33,11 +33,11 @@ JointDrillBattlePanel._tbDefine = {
 	},
 	{
 		sPrefabPath = "JointDrillBattle/JointDrillBossTime.prefab",
-		sCtrlName = "Game.UI.JointDrill.JintDrillTimeCtrl"
+		sCtrlName = "Game.UI.JointDrill.Battle.JointDrillTimeCtrl"
 	},
 	{
 		sPrefabPath = "JointDrillBattle/JointDrillPausePanel.prefab",
-		sCtrlName = "Game.UI.JointDrill.JointDrillPauseCtrl"
+		sCtrlName = "Game.UI.JointDrill.Battle.JointDrillPauseCtrl"
 	}
 }
 function JointDrillBattlePanel:Awake()
@@ -48,6 +48,8 @@ function JointDrillBattlePanel:Awake()
 	GamepadUIManager.EnableGamepadUI("BattleMenu", {})
 	self.tbTeam = self._tbParam[1]
 	self.nLevelId = self._tbParam[2]
+	self.nTotalTime = self._tbParam[3]
+	self.nType = self._tbParam[4]
 	self.mapCharData = {}
 	for _, nCharId in ipairs(self.tbTeam) do
 		self.mapCharData[nCharId] = clone(PlayerData.Char:GetCharDataByTid(nCharId))

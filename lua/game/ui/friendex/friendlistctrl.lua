@@ -93,7 +93,7 @@ function FriendListCtrl:RefreshList()
 			self.tbGridCtrl[nInstanceId] = nil
 		end
 		self.tbFriendList = PlayerData.Friend:GetFriendListData()
-		self._mapNode.srFriendList:Init(nFriendNum, self, self.OnGridRefresh)
+		self._mapNode.srFriendList:Init(nFriendNum, self, self.OnGridRefresh, nil, true)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtFriendCount, nFriendNum .. "/" .. ConfigTable.GetConfigNumber("FriendMax"))
 end

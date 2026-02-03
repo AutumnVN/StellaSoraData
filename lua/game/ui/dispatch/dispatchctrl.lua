@@ -137,6 +137,11 @@ DispatchCtrl._mapEventConfig = {
 	DispatchAvgEnd = "OnEvent_DispatchAvgEnd",
 	Dispatch_OneClickSelection = "OnEvent_OneClickSelect"
 }
+local QualityColor = {
+	[1] = Color(0.8117647058823529, 0.8352941176470589, 0.8588235294117647),
+	[2] = Color(0.803921568627451, 0.8549019607843137, 0.788235294117647),
+	[3] = Color(0.7450980392156863, 0.8549019607843137, 0.9137254901960784)
+}
 function DispatchCtrl:Awake()
 	self:InitData()
 	NovaAPI.SetImageSpriteAsset(self._mapNode.bg, self:GetPngSprite("Image/UIBG/bg_agent"))
@@ -308,6 +313,9 @@ function DispatchCtrl:RefreshDispatchGrid(goGrid, index)
 	local goLock = animRoot:Find("goGridInfo/goLock").gameObject
 	local goLockUnSelect = animRoot:Find("goGridInfo/goLockUnSelect").gameObject
 	local imgBg = animRoot:Find("imgBg").gameObject
+	local imgQuality = animRoot:Find("imgQuality"):GetComponent("Image")
+	imgQuality.color = QualityColor[dispatchData.Quality]
+	imgQuality.gameObject:SetActive(dispatchData.Id ~= self.curChoseDispatchId)
 	local goExigency = animRoot:Find("imgExigency")
 	local gridRedDot = animRoot:Find("gridRedDot")
 	local txtDone = goDone.transform:Find("txtDone"):GetComponent("TMP_Text")
@@ -455,7 +463,7 @@ function DispatchCtrl:RefreshCharGrid(goGrid, gridIndex)
 	local mapCharData = PlayerData.Char:GetCharDataByTid(self.tbCharList[index].Id)
 	local nCharSkinId = mapCharData.nSkinId
 	local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-	self:SetPngSprite(imgItemIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
+	self:SetPngSprite(imgItemIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
 	local nRarity = mapChar.Grade
 	local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[nRarity == GameEnum.characterGrade.R and GameEnum.characterGrade.SR or nRarity]
 	self:SetAtlasSprite(imgItemRare, "12_rare", sFrame, true)
@@ -652,7 +660,7 @@ function DispatchCtrl:RefreshBuildGrid(goGrid, gridIndex)
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 		local mapCharCfg = ConfigTable.GetData_Character(nCharTid)
 		local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-		self:SetPngSprite(imgCharIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
+		self:SetPngSprite(imgCharIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
 		self:SetAtlasSprite(imgCharFrame, "12_rare", sFrame)
 		local mapCharDescCfg = ConfigTable.GetData("CharacterDes", nCharTid)
 		for j = 1, 3 do
@@ -785,10 +793,12 @@ function DispatchCtrl:OnClickDispatchItem(grid)
 				local imgBg = v.transform:Find("btnGrid/AnimRoot/imgBg")
 				local txtTitleSelect = v.transform:Find("btnGrid/AnimRoot/goGridInfo/txtTitleSelect")
 				local txtTitleUnSelect = v.transform:Find("btnGrid/AnimRoot/goGridInfo/txtTitleUnSelect")
+				local imgQuality = v.transform:Find("btnGrid/AnimRoot/imgQuality"):GetComponent("Image")
 				goImgSelect.gameObject:SetActive(false)
 				imgBg.gameObject:SetActive(true)
 				txtTitleSelect.gameObject:SetActive(false)
 				txtTitleUnSelect.gameObject:SetActive(true)
+				imgQuality.gameObject:SetActive(true)
 				local bUnlock = PlayerData.Dispatch.CheckDispatchItemUnlock(self.curChoseDispatchId)
 				if not bUnlock then
 					local goLock = v.transform:Find("btnGrid/AnimRoot/goGridInfo/goLock")
@@ -807,6 +817,8 @@ function DispatchCtrl:OnClickDispatchItem(grid)
 	local imgBg = grid.transform:Find("btnGrid/AnimRoot/imgBg")
 	local txtTitleSelect = grid.transform:Find("btnGrid/AnimRoot/goGridInfo/txtTitleSelect")
 	local txtTitleUnSelect = grid.transform:Find("btnGrid/AnimRoot/goGridInfo/txtTitleUnSelect")
+	local imgQuality = grid.transform:Find("btnGrid/AnimRoot/imgQuality")
+	imgQuality.gameObject:SetActive(false)
 	goImgSelect.gameObject:SetActive(true)
 	imgBg.gameObject:SetActive(false)
 	txtTitleSelect.gameObject:SetActive(true)

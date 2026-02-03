@@ -13,20 +13,28 @@ BBVEditorCtrl._mapNodeConfig = {
 	},
 	dd_Language_Vo = {
 		sComponentName = "Dropdown",
-		callback = "OnEvent_SwitchVoLan"
+		callback = "OnDD_SwitchVoLan"
 	},
 	dd_Language_Txt = {
 		sComponentName = "Dropdown",
-		callback = "OnEvent_SwitchTxtLan"
+		callback = "OnDD_SwitchTxtLan"
 	},
 	btn_SaveSplitContent = {},
-	btn_UseCn_Time_Anim = {
+	btn_UseCn_Time = {
 		sComponentName = "Button",
-		callback = "OnBtn_ReuseCnTimeAnim"
+		callback = "OnBtn_ReuseCnTime"
 	},
-	btn_UseJp_Time_Anim = {
+	btn_UseCn_Anim = {
 		sComponentName = "Button",
-		callback = "OnBtn_ReuseJpTimeAnim"
+		callback = "OnBtn_ReuseCnAnim"
+	},
+	btn_UseJp_Time = {
+		sComponentName = "Button",
+		callback = "OnBtn_ReuseJpTime"
+	},
+	btn_UseJp_Anim = {
+		sComponentName = "Button",
+		callback = "OnBtn_ReuseJpAnim"
 	},
 	btn_SaveByDefault = {
 		sComponentName = "Button",
@@ -109,7 +117,6 @@ function BBVEditorCtrl:OnEnable()
 		NovaAPI.SetToggleInteractable(self._mapNode.tog_CnM, false)
 		NovaAPI.SetToggleInteractable(self._mapNode.tog_JpM, false)
 		for i = 1, 4 do
-			self._mapNode.CnFAnim[i].gameObject:SetActive(true)
 			self._mapNode.JpFAnim[i].gameObject:SetActive(false)
 		end
 	else
@@ -176,8 +183,10 @@ function BBVEditorCtrl:OnEnable()
 	self:InitL2DAnimDD()
 	BubbleVoiceManager.Init(true)
 	local bReuseFunc = Settings.sCurrentTxtLanguage ~= AllEnum.Language.CN and Settings.sCurrentTxtLanguage ~= AllEnum.Language.JP
-	self._mapNode.btn_UseCn_Time_Anim.gameObject:SetActive(bReuseFunc)
-	self._mapNode.btn_UseJp_Time_Anim.gameObject:SetActive(bReuseFunc)
+	self._mapNode.btn_UseCn_Time.gameObject:SetActive(bReuseFunc)
+	self._mapNode.btn_UseCn_Anim.gameObject:SetActive(bReuseFunc)
+	self._mapNode.btn_UseJp_Time.gameObject:SetActive(bReuseFunc)
+	self._mapNode.btn_UseJp_Anim.gameObject:SetActive(bReuseFunc)
 	BubbleVoiceManager.SetSpeed(1)
 end
 function BBVEditorCtrl:OnDisable()
@@ -222,7 +231,7 @@ end
 function BBVEditorCtrl:OnBtn_Back()
 	EventManager.Hit(EventId.ClosePanel, PanelId.BBVEditor)
 end
-function BBVEditorCtrl:OnEvent_SwitchVoLan(dd)
+function BBVEditorCtrl:OnDD_SwitchVoLan(dd)
 	local nIndex = NovaAPI.GetDropDownValue(dd)
 	local sVoLan = AllEnum.LanguageInfo[nIndex + 1][1]
 	if sVoLan ~= AllEnum.Language.CN and sVoLan ~= AllEnum.Language.JP then
@@ -241,50 +250,43 @@ function BBVEditorCtrl:OnEvent_SwitchVoLan(dd)
 	Settings.sCurrentVoLanguage = sVoLan
 	NovaAPI.SetTMPText(self._mapNode.tmp_CurVosResLen, tostring(BubbleVoiceManager.GetVoResLen(self.sVoResName)))
 end
-function BBVEditorCtrl:OnEvent_SwitchTxtLan(dd)
+function BBVEditorCtrl:OnDD_SwitchTxtLan(dd)
 	local nLanIdx = NovaAPI.GetDropDownValue(dd) + 1
 	local sLan = GetLanguageByIndex(nLanIdx)
 	NovaAPI.SetCur_TextLanguage(sLan)
 	Settings.sCurrentTxtLanguage = sLan
 	PanelManager.OnConfirmBackToLogIn()
 end
-function BBVEditorCtrl:_ReuseData(_sLan, _sKey)
-	local data = BubbleVoiceManager.GetReuseData(_sLan)
-	if data == nil then
+function BBVEditorCtrl:_ReuseData(_sLan, _sDataType)
+	local mapReuseData = BubbleVoiceManager.GetReuseData(_sLan)
+	if mapReuseData == nil then
 		return
 	end
-	local tbFallbackTime = {
-		0,
-		0,
-		0,
-		0
-	}
-	local nCount = #self.tbCheckOrder
-	for i = nCount, 1, -1 do
-		local sKey = self.tbCheckOrder[i]
-		local bTimeFB = false
-		for ii = 1, 4 do
-			local nTime = data.time[sKey][ii]
-			bTimeFB = nTime <= 0
-			if bTimeFB == false then
-				tbFallbackTime[ii] = nTime
-			end
-			local _nTime = tbFallbackTime[ii]
-			NovaAPI.SetInputFieldText(self.mapTime[sKey][ii], bTimeFB == true and "" or tostring(nTime))
-			NovaAPI.SetText(self.mapTimeFallback[sKey][ii], bTimeFB == true and tostring(_nTime) or "")
-			if sKey == "female_jp" then
-				local nDDIndex = table.indexof(self.tbAnimName, data.anim[_sKey][ii]) - 1
-				NovaAPI.SetDropDownValue(self.mapAnim[sKey][ii], nDDIndex)
-			end
+	mapReuseData = mapReuseData[_sDataType]
+	local _sKey = _sLan == AllEnum.Language.CN and "female_cn" or "female_jp"
+	local tbReuseData = mapReuseData[_sKey]
+	for i = 1, 4 do
+		if _sDataType == "time" then
+			NovaAPI.SetInputFieldText(self.mapTime[_sKey][i], tostring(tbReuseData[i]))
+			NovaAPI.SetText(self.mapTimeFallback[_sKey][i], "")
+		elseif _sDataType == "anim" then
+			local nDDIndex = table.indexof(self.tbAnimName, tbReuseData[i]) - 1
+			NovaAPI.SetDropDownValue(self.mapAnim[_sKey][i], nDDIndex)
 		end
 	end
 	self._mapNode.btn_SaveSplitContent:SetActive(true)
 end
-function BBVEditorCtrl:OnBtn_ReuseCnTimeAnim()
-	self:_ReuseData(AllEnum.Language.CN, "female_cn")
+function BBVEditorCtrl:OnBtn_ReuseCnTime()
+	self:_ReuseData(AllEnum.Language.CN, "time")
 end
-function BBVEditorCtrl:OnBtn_ReuseJpTimeAnim()
-	self:_ReuseData(AllEnum.Language.JP, "female_jp")
+function BBVEditorCtrl:OnBtn_ReuseCnAnim()
+	self:_ReuseData(AllEnum.Language.CN, "anim")
+end
+function BBVEditorCtrl:OnBtn_ReuseJpTime()
+	self:_ReuseData(AllEnum.Language.JP, "time")
+end
+function BBVEditorCtrl:OnBtn_ReuseJpAnim()
+	self:_ReuseData(AllEnum.Language.JP, "anim")
 end
 function BBVEditorCtrl:OnBtn_SaveNewDataByDefault()
 	local sCurVoResName = self.sVoResName
@@ -345,7 +347,7 @@ function BBVEditorCtrl:onEvent_SetTextTime(sVoResName)
 			NovaAPI.SetText(self.mapTextFallback[sKey][ii], bTextFB == true and _sText or "")
 			NovaAPI.SetInputFieldText(self.mapTime[sKey][ii], bTimeFB == true and "" or tostring(nTime))
 			NovaAPI.SetText(self.mapTimeFallback[sKey][ii], bTimeFB == true and tostring(_nTime) or "")
-			if i == nCount then
+			if sKey == "female_jp" or sKey == "female_cn" then
 				local nDDIndex = table.indexof(self.tbAnimName, self.mapAllData.anim[sKey][ii]) - 1
 				NovaAPI.SetDropDownValue(self.mapAnim[sKey][ii], nDDIndex)
 			end
@@ -381,7 +383,7 @@ function BBVEditorCtrl:onEvent_SaveTextTime()
 				end
 				self.mapAllData.text[sKey][ii] = bTextFB == true and "" or sText
 				self.mapAllData.time[sKey][ii] = bTimeFB == true and 0 or tonumber(sTime)
-				if i == nCount then
+				if sKey == "female_jp" or sKey == "female_cn" then
 					local nDDIndex = NovaAPI.GetDropDownValue(self.mapAnim[sKey][ii]) + 1
 					self.mapAllData.anim[sKey][ii] = self.tbAnimName[nDDIndex]
 				end

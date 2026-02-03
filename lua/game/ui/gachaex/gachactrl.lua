@@ -144,6 +144,7 @@ GachaCtrl._mapEventConfig = {
 	GachaNewbieReplaceRecordOver = "OnEvent_GachaNewbieReplaceRecordOver",
 	GachaNewbieObtainRecordOver = "OnEvent_GachaNewbieObtainRecordOver",
 	GachaProcessStart = "OnEvent_GachaProcessStart",
+	OnBtnClickGachaCoverEntranceGo = "OnEvent_GachaCoverEntranceGo",
 	[EventId.UIHomeConfirm] = "OnEvent_Home",
 	[EventId.UIBackConfirm] = "OnEvent_Back"
 }
@@ -513,20 +514,16 @@ function GachaCtrl:GachaOneExchangeCoin(mapGacha)
 			isSelectAgain = isSelect
 		end
 		local cancelCallback = function()
-			EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 		end
 		local msg = {
 			nType = AllEnum.MessageBox.Confirm,
 			sContent = sTip,
 			callbackConfirmAfterClose = func_confirm,
 			callbackCancel = cancelCallback,
-			callbackAgain = againKey ~= nil and againCallback or nil
+			callbackAgain = againKey ~= nil and againCallback or nil,
+			bBlur = false
 		}
 		EventManager.Hit(EventId.OpenMessageBox, msg)
-		EventManager.Hit("TopRes", true, self.nTopBarId, {
-			AllEnum.CoinItemId.Jade,
-			AllEnum.CoinItemId.STONE
-		})
 	end
 	local GachaCallback = function(mapData)
 		self:GetGachaItem(mapData, mapGacha.StorageId)
@@ -549,7 +546,6 @@ function GachaCtrl:GachaOneExchangeCoin(mapGacha)
 	elseif 0 < mapGachaStorage.CostId then
 		local nCostCount = PlayerData.Item:GetItemCountByID(mapGachaStorage.CostId)
 		local confirmCallback = function()
-			EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 			if nCostCount >= mapGachaStorage.CostQty * (mapGachaStorage.DefaultQty - nDefaultCount) then
 				PlayerData.Gacha:SendGachaReq(self.curPoolId, 1, GachaCallback)
 			elseif mapGachaStorage.CostId == AllEnum.CoinItemId.Jade then
@@ -560,7 +556,6 @@ function GachaCtrl:GachaOneExchangeCoin(mapGacha)
 				local mapJadeCfgData = ConfigTable.GetData_Item(AllEnum.CoinItemId.Jade)
 				local sTips1 = orderedFormat(ConfigTable.GetUIText("Recruit_ExchangeGemZero"), mapJadeCfgData.Id, nNeedCount, mapCostCfgData.Id)
 				local confirmCallbackStone = function()
-					EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 					local nCurStoneCount = PlayerData.Item:GetItemCountByID(AllEnum.CoinItemId.STONE)
 					nCurStoneCount = nCurStoneCount + PlayerData.Item:GetItemCountByID(AllEnum.CoinItemId.FREESTONE)
 					if nCurStoneCount >= nNeedCount then
@@ -568,7 +563,6 @@ function GachaCtrl:GachaOneExchangeCoin(mapGacha)
 					else
 						local sTips2 = orderedFormat(ConfigTable.GetUIText("Recruit_Charge") or "", mapCostCfgData.Id)
 						local confirmCallbackExchange = function()
-							EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 							EventManager.Hit(EventId.OpenPanel, PanelId.Mall, AllEnum.MallToggle.Gem)
 						end
 						ConfirmPanel(sTips2, confirmCallbackExchange)
@@ -629,20 +623,16 @@ function GachaCtrl:GachaTenExchangeCoin(mapGacha)
 			isSelectAgain = isSelect
 		end
 		local cancelCallback = function()
-			EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 		end
 		local msg = {
 			nType = AllEnum.MessageBox.Confirm,
 			sContent = sTip,
 			callbackConfirmAfterClose = func_confirm,
 			callbackCancel = cancelCallback,
-			callbackAgain = againKey ~= nil and againCallback or nil
+			callbackAgain = againKey ~= nil and againCallback or nil,
+			bBlur = false
 		}
 		EventManager.Hit(EventId.OpenMessageBox, msg)
-		EventManager.Hit("TopRes", true, self.nTopBarId, {
-			AllEnum.CoinItemId.Jade,
-			AllEnum.CoinItemId.STONE
-		})
 	end
 	local bGetFirstTenReward = PlayerData.Gacha:GetRecvFirstTenReward(self.curPoolId)
 	local GachaCallback = function(mapData)
@@ -674,7 +664,6 @@ function GachaCtrl:GachaTenExchangeCoin(mapGacha)
 	elseif 0 < mapGachaStorage.CostId then
 		local nCostCount = PlayerData.Item:GetItemCountByID(mapGachaStorage.CostId)
 		local confirmCallback = function()
-			EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 			if nCostCount >= mapGachaStorage.CostQty * (mapGachaStorage.DefaultQty * (10 - nSpecificGachaCount) - nDefaultCount) then
 				PlayerData.Gacha:SendGachaReq(self.curPoolId, 2, GachaCallback)
 			elseif mapGachaStorage.CostId == AllEnum.CoinItemId.Jade then
@@ -685,7 +674,6 @@ function GachaCtrl:GachaTenExchangeCoin(mapGacha)
 				local mapJadeCfgData = ConfigTable.GetData_Item(AllEnum.CoinItemId.Jade)
 				local sTips1 = orderedFormat(ConfigTable.GetUIText("Recruit_ExchangeGemZero"), mapJadeCfgData.Id, nNeedCount, mapCostCfgData.Id)
 				local confirmCallbackStone = function()
-					EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 					local nCurStoneCount = PlayerData.Item:GetItemCountByID(AllEnum.CoinItemId.STONE)
 					nCurStoneCount = nCurStoneCount + PlayerData.Item:GetItemCountByID(AllEnum.CoinItemId.FREESTONE)
 					if nCurStoneCount >= nNeedCount then
@@ -693,7 +681,6 @@ function GachaCtrl:GachaTenExchangeCoin(mapGacha)
 					else
 						local sTips2 = orderedFormat(ConfigTable.GetUIText("Recruit_Charge") or "", mapCostCfgData.Id)
 						local confirmCallbackExchange = function()
-							EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 							EventManager.Hit(EventId.OpenPanel, PanelId.Mall, AllEnum.MallToggle.Gem)
 						end
 						ConfirmPanel(sTips2, confirmCallbackExchange)
@@ -842,7 +829,6 @@ function GachaCtrl:OnBtnClick_Ten()
 	end
 	local specialGachaHint = function(Tid1, Tid2, nCount1, nCount2, againKey)
 		local confirmCallback = function()
-			EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 			PlayerData.Gacha:SendGachaReq(self.curPoolId, 2, GachaCallback)
 		end
 		if againKey ~= nil then
@@ -879,7 +865,6 @@ function GachaCtrl:OnBtnClick_Ten()
 			isSelectAgain = isSelect
 		end
 		local cancelCallback = function()
-			EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 		end
 		local sTips = orderedFormat(ConfigTable.GetUIText("Recruit_ComboDrawTicket"), nCount1, Tid1, nCount2, Tid2)
 		local msg = {
@@ -887,10 +872,10 @@ function GachaCtrl:OnBtnClick_Ten()
 			sContent = sTips,
 			callbackConfirmAfterClose = func_confirm,
 			callbackCancel = cancelCallback,
-			callbackAgain = againKey ~= nil and againCallback or nil
+			callbackAgain = againKey ~= nil and againCallback or nil,
+			bBlur = false
 		}
 		EventManager.Hit(EventId.OpenMessageBox, msg)
-		EventManager.Hit("TopRes", true, self.nTopBarId, {Tid1, Tid2})
 	end
 	if 10 <= nSpecialCount then
 		PlayerData.Gacha:SendGachaReq(self.curPoolId, 2, GachaCallback)
@@ -1383,6 +1368,31 @@ function GachaCtrl:OnEvent_GachaNewbieObtainRecordOver(changes, items, tbNew)
 	self:RefreshCover()
 	self._mapNode.GachaShow:ShowResults(tbReward, tbGiveItems)
 	PlayerData.SideBanner:TryOpenSideBanner()
+end
+function GachaCtrl:OnEvent_GachaCoverEntranceGo()
+	if self.bGachaProcess then
+		return
+	end
+	local gachaData = ConfigTable.GetData("Gacha", self.curPoolId)
+	if gachaData ~= nil then
+		local nTrailId = gachaData.TrailId
+		if 0 < nTrailId then
+			do
+				local callback = function()
+					local mapTrialCfgData = ConfigTable.GetData("TrialControl", gachaData.TrailId)
+					if mapTrialCfgData ~= nil then
+						local nIdx = table.indexof(mapTrialCfgData.Gachas, self.curPoolId)
+						if 0 < nIdx then
+							PlayerData.Trial:SetTrialAct(nTrailId)
+							PlayerData.Trial:SetSelectTrialGroup(mapTrialCfgData.GroupIds[nIdx])
+							EventManager.Hit(EventId.OpenPanel, PanelId.TrialLevelSelect)
+						end
+					end
+				end
+				PlayerData.Activity:SendActivityDetailMsg(callback)
+			end
+		end
+	end
 end
 function GachaCtrl:OnBtnClick_NewBieJump()
 	if self.bGachaProcess then

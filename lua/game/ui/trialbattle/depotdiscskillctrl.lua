@@ -41,8 +41,7 @@ DepotDiscSkillCtrl._mapNodeConfig = {
 	goHarmonyGrid = {
 		sComponentName = "RectTransform"
 	},
-	HarmonySkillDepotItem = {},
-	subSkillEmpty = {}
+	HarmonySkillDepotItem = {}
 }
 DepotDiscSkillCtrl._mapEventConfig = {
 	SelectDepotDiscSkill = "OnEvent_SelectDepotDiscSkill"
@@ -67,7 +66,12 @@ function DepotDiscSkillCtrl:RefreshDiscSkill(mapNote)
 			local nNoteId = tonumber(k)
 			local nNoteCount = tonumber(v)
 			local noteCfg = ConfigTable.GetData("SubNoteSkill", nNoteId)
-			self:SetPngSprite(self._mapNode.imgNote[nNoteIdx], noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+			if self._panel.mapNoteNeed[nNoteId] ~= nil and self._panel.mapNoteNeed[nNoteId] > 0 then
+				sIconPath = noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.S_Light
+			else
+				sIconPath = noteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small
+			end
+			self:SetPngSprite(self._mapNode.imgNote[nNoteIdx], sIconPath)
 			NovaAPI.SetTMPText(self._mapNode.txtNoteCount[nNoteIdx], nNoteCount)
 			nNoteIdx = nNoteIdx + 1
 		end
@@ -98,13 +102,15 @@ function DepotDiscSkillCtrl:RefreshDiscSkill(mapNote)
 			end
 		end
 	end
-	if nSubSkillCount - 1 < 6 then
-		for i = 1, 7 - nSubSkillCount do
-			if not self.tbEmpty[i] then
-				local itemObj = instantiate(self._mapNode.subSkillEmpty, self._mapNode.goHarmonyGrid)
+	if #self.tbHarmonySkillDepotItemCtrl < 6 then
+		for i = #self.tbHarmonySkillDepotItemCtrl + 1, 6 do
+			if nil == self.tbHarmonySkillDepotItemCtrl[i] then
+				local itemObj = instantiate(self._mapNode.HarmonySkillDepotItem, self._mapNode.goHarmonyGrid)
 				itemObj.gameObject:SetActive(true)
-				self.tbEmpty[i] = true
+				local itemCtrl = self:BindCtrlByNode(itemObj, "Game.UI.StarTower.Depot.DepotDiscSubSkillItemCtrl")
+				table.insert(self.tbHarmonySkillDepotItemCtrl, itemCtrl)
 			end
+			self.tbHarmonySkillDepotItemCtrl[i]:SetItem(nil)
 		end
 	end
 	if PlayerData.Guide:GetGuideState() then

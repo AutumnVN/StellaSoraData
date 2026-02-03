@@ -95,7 +95,12 @@ function DiscSkillActiveCtrl:InitNoteSkillList()
 		if self._panel.tbShowNote[k] ~= nil then
 			local mapNoteCfg = ConfigTable.GetData("SubNoteSkill", self._panel.tbShowNote[k])
 			if nil ~= mapNoteCfg then
-				self:SetPngSprite(v, mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+				local sIconPath = mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small
+				local nNoteNeed = self._panel.mapNoteNeed[mapNoteCfg.Id]
+				if nNoteNeed ~= nil and 0 < nNoteNeed then
+					sIconPath = mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.S_Light
+				end
+				self:SetPngSprite(v, sIconPath)
 			end
 		end
 	end

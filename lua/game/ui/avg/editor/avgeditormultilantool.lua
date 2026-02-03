@@ -433,9 +433,16 @@ function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLu
 						if type(tbData.reuseL2DPose) == "string" then
 							sToString = sToString .. ",reuseL2DPose=\"" .. tbData.reuseL2DPose .. "\""
 						end
+						if type(tbData.ver) == "string" then
+							sToString = sToString .. ",ver=\"" .. tbData.ver .. "\""
+						end
 						sToString = sToString .. "},"
 					elseif sLuaFileName == "AvgContacts" then
-						sToString = "    {id=" .. tbData.id .. ",icon=\"" .. tbData.icon .. "\",name=\"" .. Avg_ProcEnquotes(tbData.name) .. "\",landmark=\"" .. Avg_ProcEnquotes(tbData.landmark) .. "\",signature=\"" .. Avg_ProcEnquotes(tbData.signature) .. "\"},"
+						sToString = "    {id=" .. tbData.id .. ",icon=\"" .. tbData.icon .. "\",name=\"" .. Avg_ProcEnquotes(tbData.name) .. "\",landmark=\"" .. Avg_ProcEnquotes(tbData.landmark) .. "\",signature=\"" .. Avg_ProcEnquotes(tbData.signature) .. "\""
+						if type(tbData.ver) == "string" then
+							sToString = sToString .. ",ver=\"" .. tbData.ver .. "\""
+						end
+						sToString = sToString .. "},"
 					end
 					table.insert(tbLineData, sToString)
 				end
@@ -1438,7 +1445,7 @@ function AvgEditorMultiLanTool:_Import_Text(tbTranslatedData, tbLuaData)
 			local bExist, sCharName = self:_GetAvgCharName(sAvgCharId)
 			if bExist == false then
 				v.param[2] = rowData[1]
-				if v.param[2] == nil or v.param[2] == "" then
+				if ENABLE_NAME_CHECK == true and (v.param[2] == nil or v.param[2] == "") then
 					return nil
 				end
 			end
@@ -1657,16 +1664,14 @@ function AvgEditorMultiLanTool:_Export_AvgContacts(tbLuaData)
 	}
 	for i, v in ipairs(tbLuaData) do
 		local name = v.name
-		if name ~= "==PLAYER_NAME==" then
-			table.insert(tbExportData, {
-				"\227\128\144id:" .. tostring(v.id) .. "\227\128\145" .. name,
-				"",
-				self:_ProcText(v.landmark, true),
-				"",
-				self:_ProcText(v.signature, true),
-				""
-			})
-		end
+		table.insert(tbExportData, {
+			"\227\128\144id:" .. tostring(v.id) .. "\227\128\145" .. name,
+			"",
+			self:_ProcText(v.landmark, true),
+			"",
+			self:_ProcText(v.signature, true),
+			""
+		})
 	end
 	return tbExportData
 end
@@ -1700,12 +1705,10 @@ function AvgEditorMultiLanTool:_Import_AvgContacts(tbTranslatedData, tbLuaData)
 	end
 	for i, v in ipairs(tbLuaData) do
 		local name = v.name
-		if name ~= "==PLAYER_NAME==" then
-			local rowData = func_GetTranslatedData()
-			v.name = rowData[1]
-			v.landmark = self:_ProcText(rowData[3], false)
-			v.signature = self:_ProcText(rowData[5], false)
-		end
+		local rowData = func_GetTranslatedData()
+		v.name = rowData[1]
+		v.landmark = self:_ProcText(rowData[3], false)
+		v.signature = self:_ProcText(rowData[5], false)
 	end
 	return tbLuaData
 end

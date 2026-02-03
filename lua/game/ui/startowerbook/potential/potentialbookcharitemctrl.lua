@@ -38,8 +38,10 @@ function PotentialBookCharItemCtrl:InitItem(nCharId)
 			NovaAPI.SetTMPText(self._mapNode.txtName, sName)
 			local nSkinId = mapCharCfg.DefaultSkinId
 			local mapSkin = ConfigTable.GetData_CharacterSkin(nSkinId)
-			self:SetPngSprite(self._mapNode.imgChar, mapSkin.Icon .. AllEnum.CharHeadIconSurfix.GC)
-			self:SetPngSprite(self._mapNode.imgLockMask, mapSkin.Icon .. AllEnum.CharHeadIconSurfix.GC)
+			if mapSkin ~= nil then
+				self:SetPngSprite(self._mapNode.imgChar, mapSkin.Icon .. AllEnum.CharHeadIconSurfix.GC)
+				self:SetPngSprite(self._mapNode.imgLockMask, mapSkin.Icon .. AllEnum.CharHeadIconSurfix.GC)
+			end
 			self:RefreshCount()
 		end
 	end

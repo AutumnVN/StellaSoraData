@@ -239,6 +239,13 @@ return {
 		signature = "In my super-productive, main-character work era. Do not disturb."
 	},
 	{
+		id = 159,
+		icon = "Icon/Head/head_15901_S",
+		name = "Springseek Coronis",
+		landmark = "\"That\" Clinic in Philae",
+		signature = "Out on vacation."
+	},
+	{
 		id = 999,
 		icon = "Icon/Head/head_group_S",
 		name = "WORK NEVER ENDS",
@@ -276,49 +283,49 @@ return {
 	{
 		id = 994,
 		icon = "Icon/Head/head_group_S",
-		name = "",
+		name = "Goodwind Homecare \226\128\147 Philae's First Squad",
 		landmark = "",
 		signature = "With tea, we greet; with blade, we stand."
 	},
 	{
 		id = 993,
 		icon = "Icon/Head/head_group_S",
-		name = "",
+		name = "Petal Bloom Revival Meeting",
 		landmark = "",
 		signature = "Beat the monsters, complete the quests!"
 	},
 	{
 		id = 992,
 		icon = "Icon/Head/head_group_S",
-		name = "",
+		name = "Daily Delivery Check",
 		landmark = "",
 		signature = "Don't forget to sign the delivery receipt!"
 	},
 	{
 		id = 991,
 		icon = "Icon/Head/head_group_S",
-		name = "",
+		name = "Countryside Sherlock",
 		landmark = "",
 		signature = ""
 	},
 	{
 		id = 990,
 		icon = "Icon/Head/head_group_S",
-		name = "",
+		name = "Anonymous",
 		landmark = "",
 		signature = ""
 	},
 	{
 		id = 9152,
 		icon = "Icon/Head/head_npc15201_S",
-		name = "",
+		name = "Bastelina",
 		landmark = "Emor, Soul Shop Flagship",
 		signature = "My promotion to full-time is underway!"
 	},
 	{
 		id = 9999,
 		icon = "Icon/Head/head_npc99901_S",
-		name = "",
+		name = "Vita",
 		landmark = "File not found. The specified search pattern yielded no results.",
 		signature = "Pieces reset. Resources allocated. Process initiated."
 	}

@@ -16,6 +16,7 @@ HudMainCtrl._mapEventConfig = {
 	HudHeal = "OnEvent_HudHealed",
 	HudDefence = "OnEvent_HudDefenced",
 	HudDotDamage = "OnEvent_HudDotDamage",
+	HudBreakScore = "OnEvent_HudBreakOutScore",
 	ADVENTURE_LEVEL_END = "OnEvent_LevelEnd",
 	NPCShow = "OnEvent_NPCShow",
 	TriggerElementMark = "OnEvent_HudMark",
@@ -55,6 +56,7 @@ function HudMainCtrl:OnEnable()
 	self.healHudPrefab = self:LoadAsset("UI/HUD/HealHUDNumber_UI.prefab")
 	self.wordHudPrefab = self:LoadAsset("UI/HUD/WordHud_UI.prefab")
 	self.npcHudPrefab = self:LoadAsset("UI/HUD/NpcHud.prefab")
+	self.breakOutHudPrefab = self:LoadAsset("UI/HUD/BreakOutHUDNumber_UI.prefab")
 	self.critDamageHudPrefab_Vampire = self:LoadAsset("UI/HUD/CritDamageHUDNumber_UI_Vampire.prefab")
 	self.minDamageHUDNumber_Vampire = self:LoadAsset("UI/HUD/MinDamageHUDNumber_UI_Vampire.prefab")
 	self.damageHudPrefab_Vampire = self:LoadAsset("UI/HUD/DamageHUDNumber_UI_Vampire.prefab")
@@ -79,6 +81,7 @@ function HudMainCtrl:OnDisable()
 	self.healHudPrefab = nil
 	self.wordHudPrefab = nil
 	self.npcHudPrefab = nil
+	self.breakOutHudPrefab = nil
 	self.critDamageHudPrefab_Vampire = nil
 	self.minDamageHUDNumber_Vampire = nil
 	self.damageHudPrefab_Vampire = nil
@@ -298,6 +301,15 @@ function HudMainCtrl:OnEvent_HudHealed(id, value)
 	local hud = self:SpawnPrefabInstance(self.healHudPrefab, "Game.UI.Hud.HudNumberCtrl", "HUD", self._mapNode.DamageNumberRoot)
 	self.hudId = self.hudId + 1
 	AdventureModuleHelper.SetHudValue(hud.gameObject, id, self.hudId, value, true, nil, 0, false, false)
+	self.numberHuds[self.hudId] = hud
+	hud.gameObject.transform:SetAsLastSibling()
+end
+function HudMainCtrl:OnEvent_HudBreakOutScore(id, value)
+	local nWordType = 1
+	local hud = self:SpawnPrefabInstance(self.breakOutHudPrefab, "Game.UI.Hud.HudNumberCtrl", "HUD", self._mapNode.DamageWordRoot)
+	self.hudId = self.hudId + 1
+	local Value = string.format("+%s", value)
+	AdventureModuleHelper.SetHudStringValue(hud.gameObject, id, self.hudId, Value, nWordType, false)
 	self.numberHuds[self.hudId] = hud
 	hud.gameObject.transform:SetAsLastSibling()
 end

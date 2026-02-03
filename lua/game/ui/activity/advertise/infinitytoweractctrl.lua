@@ -93,7 +93,7 @@ function InfinityTowerActCtrl:StartActTimer()
 		self.timer = nil
 	end
 	local nStartTime = self.actData:GetActOpenTime()
-	local nEndTime = self.actData:GetActCloseTime()
+	local nEndTime = self.actData:GetActEndTime()
 	self.isTimeVisible = self._mapNode.imgActTimeBg.gameObject.activeSelf
 	local refreshTime = function()
 		local nCurTime = ClientManager.serverTimeStamp
@@ -134,7 +134,7 @@ function InfinityTowerActCtrl:OnBtnClick_Detail()
 	EventManager.Hit(EventId.OpenMessageBox, msg)
 end
 function InfinityTowerActCtrl:OnBtnClick_Go()
-	local nEndTime = self.actData:GetActCloseTime()
+	local nEndTime = self.actData:GetActEndTime()
 	local nCurTime = ClientManager.serverTimeStamp
 	if nEndTime < nCurTime then
 		return

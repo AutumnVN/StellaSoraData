@@ -16,6 +16,12 @@ BossPanelCtrl._mapNodeConfig = {
 		nCount = 3,
 		sNodeName = "goMultipleBoss",
 		sCtrlName = "Game.UI.Battle.BossHUDCtrl"
+	},
+	goJointDrillBoss_2 = {},
+	goJointDrillBossCtrl = {
+		nCount = 2,
+		sNodeName = "goJointDrillBoss_2_",
+		sCtrlName = "Game.UI.Battle.BossHUDCtrl"
 	}
 }
 BossPanelCtrl._mapEventConfig = {
@@ -70,6 +76,7 @@ function BossPanelCtrl:RefreshBossPanel(bRefresh)
 		if self.nBloodType == AllEnum.BossBloodType.Single then
 			self._mapNode.singleBoss.gameObject:SetActive(true)
 			self._mapNode.goMultipleBoss.gameObject:SetActive(false)
+			self._mapNode.goJointDrillBoss_2.gameObject:SetActive(false)
 			local mapData = self.tbBoss[1]
 			self:SetBossHUD(mapData, self._mapNode.singleBoss, bRefresh)
 			self.tbBoss[1].bInit = false
@@ -77,7 +84,20 @@ function BossPanelCtrl:RefreshBossPanel(bRefresh)
 		elseif self.nBloodType == AllEnum.BossBloodType.Multiple then
 			self._mapNode.singleBoss.gameObject:SetActive(false)
 			self._mapNode.goMultipleBoss.gameObject:SetActive(true)
+			self._mapNode.goJointDrillBoss_2.gameObject:SetActive(false)
 			for i, v in ipairs(self._mapNode.goBossCtrl) do
+				v.gameObject:SetActive(self.tbBoss[i] ~= nil)
+				if self.tbBoss[i] ~= nil then
+					self:SetBossHUD(self.tbBoss[i], v, bRefresh)
+					self.tbBoss[i].bInit = false
+					EventManager.Hit("ShowBossHUD", self.tbBoss[i].nBossId, self.tbBoss[i].nType, true, self.tbBoss[i].nDataId, self.nBloodType)
+				end
+			end
+		elseif self.nBloodType == AllEnum.BossBloodType.JointDrill_Mode_2 then
+			self._mapNode.singleBoss.gameObject:SetActive(false)
+			self._mapNode.goMultipleBoss.gameObject:SetActive(false)
+			self._mapNode.goJointDrillBoss_2.gameObject:SetActive(true)
+			for i, v in ipairs(self._mapNode.goJointDrillBossCtrl) do
 				v.gameObject:SetActive(self.tbBoss[i] ~= nil)
 				if self.tbBoss[i] ~= nil then
 					self:SetBossHUD(self.tbBoss[i], v, bRefresh)
@@ -112,6 +132,9 @@ function BossPanelCtrl:RefreshBossPanel(bRefresh)
 		end
 	else
 		self.nBloodType = AllEnum.BossBloodType.Multiple
+		if self._panel.nType ~= nil and self._panel.nType == GameEnum.JointDrillMode.JointDrill_Mode_2 and #self.tbBoss == 2 then
+			self.nBloodType = AllEnum.BossBloodType.JointDrill_Mode_2
+		end
 		if self.nLastBossCount == 3 and #self.tbBoss == 2 then
 			local nAnimLen = NovaAPI.GetAnimClipLength(self._mapNode.animBoss, {
 				"MultipleBoss_out"

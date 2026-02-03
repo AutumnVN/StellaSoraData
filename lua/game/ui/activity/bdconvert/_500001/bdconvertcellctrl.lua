@@ -133,9 +133,6 @@ function BdConvertCellCtrl:SetData(actId, optionId)
 	end
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-		CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.bg_reward)
-		CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.Content)
-		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		local curHeight = self._mapNode.Content.sizeDelta.y
 		local rectTransform = self.gameObject:GetComponent("RectTransform")
 		rectTransform.sizeDelta = Vector2(rectTransform.sizeDelta.x, rectTransform.sizeDelta.y + curHeight - minHeight)

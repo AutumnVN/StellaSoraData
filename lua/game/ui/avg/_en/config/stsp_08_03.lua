@@ -4,7 +4,7 @@ return {
 		param = {
 			"ep_mainline_001",
 			"Act Three",
-			"Captive of Truth",
+			"Captive of Truth (Part III)",
 			"In order to make one final contribution to scientific research, Coronis swallows the poison.",
 			0
 		}

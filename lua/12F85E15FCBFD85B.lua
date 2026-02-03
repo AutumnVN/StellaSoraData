@@ -80,7 +80,7 @@ function MainLineStoryActCtrl:RefreshAct()
 	self.refreshTimer = self:AddTimer(0, 1, refresh, true, true, true)
 end
 function MainLineStoryActCtrl:OnBtnClick_Go()
-	local nEndTime = self.actData:GetActCloseTime()
+	local nEndTime = self.actData:GetActEndTime()
 	local nCurTime = ClientManager.serverTimeStamp
 	if nEndTime < nCurTime then
 		return

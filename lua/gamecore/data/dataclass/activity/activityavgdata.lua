@@ -618,19 +618,6 @@ end
 function ActivityAvgData:GetCachedBuildId()
 	return self.selBuildId
 end
-function ActivityAvgData:ParseConfig()
-	self.tbFirstNode = {}
-	local foreachActivityAvgLevel = function(mapData)
-		if self.tbActivityAvgList[mapData.ActivityId] == nil then
-			self.tbActivityAvgList[mapData.ActivityId] = {}
-		end
-		if mapData.PreLevelId == 0 then
-			self.tbFirstNode[mapData.ActivityId] = mapData.Id
-		end
-		table.insert(self.tbActivityAvgList[mapData.ActivityId], mapData.Id)
-	end
-	ForEachTableLine(ConfigTable.Get("ActivityAvgLevel"), foreachActivityAvgLevel)
-end
 function ActivityAvgData:CacheActivityAvgData(msgData)
 	if self.tbActAvgList[msgData.Id] == nil then
 		self.tbActAvgList[msgData.Id] = {}
@@ -646,30 +633,78 @@ function ActivityAvgData:RefreshActivityAvgData(nActId, msgData)
 	self:RefreshAvgRedDot()
 end
 function ActivityAvgData:GetStoryIdListByActivityId(activityId)
-	if self.tbActivityAvgList[activityId] == nil then
-		return {}
-	end
-	local list = self:SortStoryList(activityId)
-	return list
-end
-function ActivityAvgData:SortStoryList(activityId)
-	local list = self.tbActivityAvgList[activityId]
-	if self.tbFirstNode[activityId] == nil then
-		return list
-	end
-	local sortedList = {}
-	table.insert(sortedList, self.tbFirstNode[activityId])
-	for i = 2, #list do
-		for _, storyId in ipairs(list) do
-			local cfg = ConfigTable.GetData("ActivityAvgLevel", storyId)
-			if cfg.PreLevelId == sortedList[i - 1] then
-				table.insert(sortedList, storyId)
-				break
-			end
+	local chapterId
+	local foreachStoryChapter = function(mapData)
+		if mapData.ActivityId == activityId then
+			chapterId = mapData.Id
 		end
 	end
-	self.tbActivityAvgList[activityId] = sortedList
-	self.tbFirstNode[activityId] = nil
+	ForEachTableLine(ConfigTable.Get("ActivityStoryChapter"), foreachStoryChapter)
+	local list = self:SortStoryList(chapterId)
+	return list, chapterId
+end
+function ActivityAvgData:SortStoryList(chapterId)
+	local list = self.CFG_ChapterStoryNumIds[chapterId]
+	local sortedList = {}
+	if list == nil or #list == 0 then
+		return sortedList
+	end
+	local storyIdToConfig = {}
+	local storyIdToNumId = {}
+	for _, numId in ipairs(list) do
+		local config = ConfigTable.GetData("ActivityStory", numId)
+		if config then
+			storyIdToConfig[config.StoryId] = config
+			storyIdToNumId[config.StoryId] = numId
+		end
+	end
+	local currentStoryId
+	for storyId, config in pairs(storyIdToConfig) do
+		if type(config.ParentStoryId) == "table" then
+			if #config.ParentStoryId == 0 or config.ParentStoryId[1] == "" then
+				currentStoryId = storyId
+				table.insert(sortedList, storyIdToNumId[storyId])
+				break
+			end
+		elseif config.ParentStoryId == "" then
+			currentStoryId = storyId
+			table.insert(sortedList, storyIdToNumId[storyId])
+			break
+		end
+	end
+	if currentStoryId == nil then
+		return sortedList
+	end
+	local visited = {}
+	visited[currentStoryId] = true
+	while #sortedList < #list do
+		local found = false
+		for storyId, config in pairs(storyIdToConfig) do
+			if not visited[storyId] then
+				local hasParent = false
+				if type(config.ParentStoryId) == "table" then
+					for _, parentId in ipairs(config.ParentStoryId) do
+						if parentId == currentStoryId then
+							hasParent = true
+							break
+						end
+					end
+				elseif config.ParentStoryId == currentStoryId then
+					hasParent = true
+				end
+				if hasParent then
+					table.insert(sortedList, storyIdToNumId[storyId])
+					visited[storyId] = true
+					currentStoryId = storyId
+					found = true
+					break
+				end
+			end
+		end
+		if not found then
+			break
+		end
+	end
 	return sortedList
 end
 function ActivityAvgData:IsActivityAvgReaded(activityId, storyId)
@@ -760,9 +795,6 @@ function ActivityAvgData:RefreshAvgRedDot()
 				}, bNew)
 			end
 		end
-	end
-	for nActGroupId, bRedDot in pairs(tbActGroupRedDot) do
-		RedDotManager.SetValid(RedDotDefine.Activity_GroupNew, {nActGroupId}, bRedDot)
 	end
 	EventManager.Hit("RefreshActivityGroupRedDot")
 end

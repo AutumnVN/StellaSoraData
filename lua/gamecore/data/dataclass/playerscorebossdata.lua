@@ -205,24 +205,23 @@ function PlayerScoreBossData:SendEnterScoreBossApplyReq(nLevelId, nBuildId)
 	HttpNetHandler.SendMsg(NetMsgId.Id.score_boss_apply_req, msg, nil, msgCallback)
 end
 function PlayerScoreBossData:EnterScoreBossInstance(nLevelId, nBuildId)
-	if self.curLevel ~= nil then
-		printError("\229\189\147\229\137\141\229\133\179\229\141\161level\228\184\141\228\184\186\231\169\1861")
-		return
-	end
 	self._EntryTime = CS.ClientManager.Instance.serverTimeStampWithTimeZone
 	self.entryLevelId = nLevelId
 	self.entryBuild = nBuildId
-	local luaClass = require("Game.Adventure.ScoreBoss.ScoreBossLevel")
-	if luaClass == nil then
-		return
+	if self.curLevel == nil then
+		local luaClass = require("Game.Adventure.ScoreBoss.ScoreBossLevel")
+		if luaClass == nil then
+			return
+		end
+		self.curLevel = luaClass
 	end
-	self.curLevel = luaClass
-	if type(self.curLevel.BindEvent) == "function" then
+	if type(self.curLevel.BindEvent) == "function" and not self.isGoAgain then
 		self.curLevel:BindEvent()
 	end
 	if type(self.curLevel.Init) == "function" then
-		self.curLevel:Init(self, nLevelId, nBuildId)
+		self.curLevel:Init(self, nLevelId, nBuildId, self.isGoAgain)
 	end
+	self.isGoAgain = false
 end
 function PlayerScoreBossData:EnterScoreBossInstanceEditor(nLevelId, tbChar, tbDisc, tbNote)
 	if self.curLevel ~= nil then
@@ -529,6 +528,31 @@ function PlayerScoreBossData:SendScoreBossStarRewardReceiveReq(cb, star)
 		self:RefreshRedMsg()
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.score_boss_star_reward_receive_req, msg, nil, msgCallback)
+end
+function PlayerScoreBossData:SendEnterLvAgain()
+	self.isGoAgain = true
+	NovaAPI.StopRecord()
+	CS.AdventureModuleHelper.LevelStateChanged(false)
+	EventManager.Hit("BattleRestart")
+end
+function PlayerScoreBossData:EntryLvAgain()
+	if self.isGoAgain then
+		CS.AdventureModuleHelper.ClearCharacterDamageRecord(false)
+		self.CurHPLvScore = 0
+		self.HPLvScore = 0
+		self.CurHPDamage = 0
+		self.BehaviorScore = 0
+		self.BehaviorScoreCount = 0
+		local curTimeStamp = CS.ClientManager.Instance.serverTimeStampWithTimeZone
+		local sKey = LocalData.GetPlayerLocalData("ScoreBossRecordKey")
+		if sKey ~= nil and sKey ~= "" then
+			NovaAPI.DeleteRecFile(sKey)
+		end
+		sKey = tostring(curTimeStamp)
+		LocalData.SetPlayerLocalData("ScoreBossRecordKey", sKey)
+		EventManager.Hit("ScoreBoss_Restart_Again")
+		self:EnterScoreBossInstance(self.entryLevelId, self.entryBuild)
+	end
 end
 function PlayerScoreBossData:SendScoreBossApplyReq(cb)
 	self:InitRankData()

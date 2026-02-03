@@ -1,4 +1,5 @@
 local LevelSelectCtrl = class("LevelSelectCtrl", BaseCtrl)
+local BreakOutData_00 = require("GameCore.Data.DataClass.Activity.BreakOutData_00")
 local DifficultyState = {
 	"Entry",
 	"Newbie",
@@ -38,26 +39,37 @@ LevelSelectCtrl._mapNodeConfig = {
 }
 LevelSelectCtrl._mapEventConfig = {
 	DragLevelList = "OnDrag_ActBanner",
-	BreakOutLevelCell_OnSelected = "OnEvent_LevelSelected"
+	BreakOutLevelCell_OnSelected = "OnEvent_LevelSelected",
+	SetSelectedTab = "SetSelectedTab"
 }
 LevelSelectCtrl._mapRedDotConfig = {}
 function LevelSelectCtrl:Awake()
+	self.bIsActEnd = false
 	local param = self:GetPanelParam()
 	if type(param) == "table" then
 		self.nActId = param[1]
 	end
 	self.BreakOut_30101Data = PlayerData.Activity:GetActivityGroupDataById(self.nActId)
+	if self.BreakOut_30101Data == nil then
+		printError("\230\180\187\229\138\168\231\187\132 id:" .. self.nActId .. " \230\149\176\230\141\174\228\184\186\231\169\186")
+		return
+	end
 	local nIndex = AllEnum.ActivityThemeFuncIndex.Level
 	local actData = self.BreakOut_30101Data:GetActivityDataByIndex(nIndex)
 	self.nActId = actData.ActivityId
 	self.BreakOutData = PlayerData.Activity:GetActivityDataById(self.nActId)
-	self.nSelectedTabIndex = self.BreakOutData:GetCurrentSelectedTabIndex()
-	self.tbInitPos = {}
-	for _, v in ipairs(self._mapNode.Grids) do
-		self.nGridsWidth = v.sizeDelta.x
-		table.insert(self.tbInitPos, v.anchoredPosition)
+	if self.BreakOutData == nil then
+		self.BreakOutData_00 = BreakOutData_00.new()
+		printError("\230\180\187\229\138\168 id:" .. self.nActId .. " \230\149\176\230\141\174\228\184\186\231\169\186\239\188\140\229\188\128\229\167\139\229\136\157\229\167\139\229\140\150\230\156\172\229\156\176\229\164\135\231\148\168\230\149\176\230\141\174")
+		local tableData = {}
+		local ForeachActivity = function(mapData)
+			if self.nActId == mapData.ActivityId then
+				table.insert(tableData, mapData.Id)
+			end
+		end
+		ForEachTableLine(ConfigTable.Get("BreakOutLevel"), ForeachActivity)
+		self.BreakOutData_00:RefreshBreakOutData(tableData)
 	end
-	self.bCanClick = true
 end
 function LevelSelectCtrl:OnDisable()
 	for index, objCtrl in pairs(self.tbGridCtrl) do
@@ -70,9 +82,24 @@ function LevelSelectCtrl:OnDisable()
 	}
 end
 function LevelSelectCtrl:OnEnable()
+	if self.BreakOutData == nil then
+		printError("\230\180\187\229\138\168 id:" .. self.nActId .. " \230\149\176\230\141\174\228\184\186\231\169\186\239\188\140\230\151\160\230\179\149\232\174\176\229\189\149\229\189\147\229\137\141\231\154\132\233\154\190\229\186\166\231\138\182\230\128\129\233\187\152\232\174\164\229\174\154\228\189\141\229\136\157\229\167\139\233\154\190\229\186\166")
+	else
+		local param = self:GetPanelParam()
+		if type(param) == "table" then
+			self.nSelectedTabIndex = param[2] == nil and self.BreakOutData:GetCurrentSelectedTabIndex() or param[2]
+		end
+	end
+	self.tbInitPos = {}
+	for _, v in ipairs(self._mapNode.Grids) do
+		self.nGridsWidth = v.sizeDelta.x
+		table.insert(self.tbInitPos, v.anchoredPosition)
+	end
+	self.bCanClick = true
 	if self.nSelectedTabIndex == nil then
 		self.nSelectedTabIndex = 1
 	end
+	self.bIsActEnd = self.BreakOut_30101Data:IsActCloseTime()
 	self:Init()
 end
 function LevelSelectCtrl:Init()
@@ -92,18 +119,18 @@ function LevelSelectCtrl:RefreshLevel(tbCurLevelList, index)
 	end
 	for i = 1, #tbCurLevelList do
 		if index == 1 then
-			self:OnRefreshLevelGrid(i, tbCurLevelList[i].Id)
+			self:OnRefreshLevelGrid(i, tbCurLevelList[i].Id, self.bIsActEnd)
 		end
 		if index == 2 then
-			self:OnRefreshLevelGrid(i + 2, tbCurLevelList[i].Id)
+			self:OnRefreshLevelGrid(i + 2, tbCurLevelList[i].Id, self.bIsActEnd)
 		end
 		if index == 3 then
-			self:OnRefreshLevelGrid(i + 4, tbCurLevelList[i].Id)
+			self:OnRefreshLevelGrid(i + 4, tbCurLevelList[i].Id, self.bIsActEnd)
 		end
 	end
 end
-function LevelSelectCtrl:OnRefreshLevelGrid(gridIndex, goLevelId)
-	self._mapNode.goGrid_[gridIndex]:SetData(self.nActId, goLevelId)
+function LevelSelectCtrl:OnRefreshLevelGrid(gridIndex, goLevelId, bIsActEnd)
+	self._mapNode.goGrid_[gridIndex]:SetData(self.nActId, goLevelId, bIsActEnd)
 end
 function LevelSelectCtrl:OnBtnClick_Left()
 	if not self.bCanClick then
@@ -136,6 +163,11 @@ function LevelSelectCtrl:RefreshTabIcon()
 	self:RefreshTabRedIcon()
 end
 function LevelSelectCtrl:RefreshTabRedIcon()
+	if self.BreakOutData == nil then
+		self._mapNode.img_RightIcon:SetActive(false)
+		self._mapNode.img_LeftIcon:SetActive(false)
+		return
+	end
 	local nMinLevelId = self.BreakOutData:GetUnFinishEasyLevel()
 	if nMinLevelId == nil or not self.BreakOutData:IsLevelTimeUnlocked(nMinLevelId) then
 		self._mapNode.img_RightIcon:SetActive(false)
@@ -155,7 +187,12 @@ function LevelSelectCtrl:RefreshTabRedIcon()
 	end
 end
 function LevelSelectCtrl:RefreshDotsIcon()
-	local nMaxNum = self.BreakOutData:GetBreakoutLevelTypeNum()
+	local nMaxNum = 4
+	if self.BreakOutData == nil then
+		nMaxNum = self.BreakOutData_00:GetBreakoutLevelTypeNum()
+	else
+		nMaxNum = self.BreakOutData:GetBreakoutLevelTypeNum()
+	end
 	for i = 1, nMaxNum do
 		if nil ~= self._mapNode.imgPointBg[i] then
 			self._mapNode.imgPointBg[i].transform:Find("imgPoint").gameObject:SetActive(false)
@@ -181,9 +218,16 @@ function LevelSelectCtrl:SetBanner()
 	end
 end
 function LevelSelectCtrl:AddGrids()
-	local nAllLevelType = self.BreakOutData:GetBreakoutLevelTypeNum()
-	for i = 1, nAllLevelType do
-		table.insert(self.tbGridsList, self.BreakOutData:GetLevelsByTab(i))
+	if self.BreakOutData == nil then
+		local nAllLevelType = self.BreakOutData_00:GetBreakoutLevelTypeNum()
+		for i = 1, nAllLevelType do
+			table.insert(self.tbGridsList, self.BreakOutData_00:GetLevelsByTab(i))
+		end
+	else
+		local nAllLevelType = self.BreakOutData:GetBreakoutLevelTypeNum()
+		for i = 1, nAllLevelType do
+			table.insert(self.tbGridsList, self.BreakOutData:GetLevelsByTab(i))
+		end
 	end
 end
 function LevelSelectCtrl:RefreshGrids()
@@ -209,6 +253,13 @@ function LevelSelectCtrl:OnDrag_ActBanner(mDrag)
 			return
 		end
 		self.nBannerDragPosX = self.nBannerDragPosX + mDrag.EventData.delta.x
+		if math.abs(self.nBannerDragPosX) >= self.nGridsWidth then
+			if self.nBannerDragPosX > 0 then
+				self.nBannerDragPosX = self.nGridsWidth
+			else
+				self.nBannerDragPosX = -self.nGridsWidth
+			end
+		end
 		for k, v in ipairs(self._mapNode.Grids) do
 			v.anchoredPosition = Vector2(self.tbInitPos[k].x + self.nBannerDragPosX, self.tbInitPos[k].y)
 		end
@@ -223,7 +274,7 @@ function LevelSelectCtrl:OnDrag_ActBanner(mDrag)
 		end
 		local tweener
 		for k, v in ipairs(self._mapNode.Grids) do
-			tweener = v:DOAnchorPosX(self.tbInitPos[k].x + nPos, 0.5):SetUpdate(true)
+			tweener = v:DOAnchorPosX(self.tbInitPos[k].x + nPos, 0.2):SetUpdate(true)
 		end
 		local _cb = function()
 			for k, v in ipairs(self._mapNode.Grids) do
@@ -241,9 +292,9 @@ function LevelSelectCtrl:RemoveGridsToLeft()
 	end
 	for k, v in ipairs(self._mapNode.Grids) do
 		if k == #self._mapNode.Grids then
-			v:DOAnchorPosX(self.tbInitPos[k].x - self.nGridsWidth, 0.5):SetUpdate(true):OnComplete(onCompleteCb)
+			v:DOAnchorPosX(self.tbInitPos[k].x - self.nGridsWidth, 0.2):SetUpdate(true):OnComplete(onCompleteCb)
 		else
-			v:DOAnchorPosX(self.tbInitPos[k].x - self.nGridsWidth, 0.5):SetUpdate(true)
+			v:DOAnchorPosX(self.tbInitPos[k].x - self.nGridsWidth, 0.2):SetUpdate(true)
 		end
 	end
 end
@@ -253,9 +304,9 @@ function LevelSelectCtrl:RemoveGridsToRight()
 	end
 	for k, v in ipairs(self._mapNode.Grids) do
 		if k == #self._mapNode.Grids then
-			v:DOAnchorPosX(self.tbInitPos[k].x + self.nGridsWidth, 0.5):SetUpdate(true):OnComplete(onCompleteCb)
+			v:DOAnchorPosX(self.tbInitPos[k].x + self.nGridsWidth, 0.2):SetUpdate(true):OnComplete(onCompleteCb)
 		else
-			v:DOAnchorPosX(self.tbInitPos[k].x + self.nGridsWidth, 0.5):SetUpdate(true)
+			v:DOAnchorPosX(self.tbInitPos[k].x + self.nGridsWidth, 0.2):SetUpdate(true)
 		end
 	end
 end
@@ -274,5 +325,8 @@ function LevelSelectCtrl:CanOnDrag(nMove_x)
 		return false
 	end
 	return true
+end
+function LevelSelectCtrl:SetSelectedTab(nSelectedTab)
+	self._panel._tbParam[2] = nSelectedTab
 end
 return LevelSelectCtrl

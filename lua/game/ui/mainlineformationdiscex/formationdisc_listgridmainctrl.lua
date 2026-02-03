@@ -8,7 +8,6 @@ FormationDisc_ListGridMainCtrl._mapNodeConfig = {
 	txtLv = {sComponentName = "TMP_Text", sLanguageId = "Lv"},
 	goNote = {nCount = 6, sComponentName = "Image"},
 	imgDiscStar = {sComponentName = "Image"},
-	goNoteActive = {nCount = 6, sComponentName = "Image"},
 	TMPNoteCount = {nCount = 6, sComponentName = "TMP_Text"},
 	TMPHintMain = {
 		sComponentName = "TMP_Text",
@@ -67,12 +66,6 @@ function FormationDisc_ListGridMainCtrl:Refresh(mapDisc, mapNote, nIdx, bSubUse)
 				local nNoteCount = mapDisc.tbSkillNeedNote[i].nCount
 				NovaAPI.SetTMPText(self._mapNode.TMPNoteCount[i], nNoteCount)
 				self:SetPngSprite(self._mapNode.goNote[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
-				self:SetPngSprite(self._mapNode.goNoteActive[i], mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small .. "_Light")
-				if mapNote[nNoteId] ~= nil and nNoteCount <= mapNote[nNoteId] then
-					self._mapNode.goNoteActive[i].gameObject:SetActive(true)
-				else
-					self._mapNode.goNoteActive[i].gameObject:SetActive(false)
-				end
 			end
 		end
 	end

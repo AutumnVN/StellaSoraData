@@ -294,7 +294,12 @@ function PhoneDatingCtrl:OnRelease()
 end
 function PhoneDatingCtrl:OnBtnClick_CharDetail()
 	if nil ~= self.nCharId then
-		EventManager.Hit(EventId.OpenPanel, PanelId.CharBgPanel, PanelId.CharacterRelation, self.nCharId)
+		if PanelManager.CheckPanelOpen(PanelId.CharBgPanel) then
+			EventManager.Hit(EventId.ClosePanel, PanelId.Phone)
+			EventManager.Hit(EventId.CharBgRefresh, PanelId.CharacterRelation, self.nCharId)
+		else
+			EventManager.Hit(EventId.OpenPanel, PanelId.CharBgPanel, PanelId.CharacterRelation, self.nCharId)
+		end
 	end
 end
 function PhoneDatingCtrl:OnBtnClick_StartDating()

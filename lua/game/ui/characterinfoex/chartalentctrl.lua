@@ -343,7 +343,7 @@ function CharTalentCtrl:OnBtnClick_UIShow(btn)
 	if self.bUIVisible == false then
 		self.bUIVisible = true
 		self:SetBtnUIShowHide()
-		EventManager.Hit("ChangeCharTopBar", true, false)
+		EventManager.Hit("ChangeCharTopBar", true)
 		EventManager.Hit("ChangeCharFgTab", true)
 		self._mapNode.anim:Play("CharTalent_Root_show")
 		EventManager.Hit(EventId.TemporaryBlockInput, 1)
@@ -353,7 +353,7 @@ function CharTalentCtrl:OnBtnClick_UIHide(btn)
 	if self.bUIVisible == true then
 		self.bUIVisible = false
 		self:SetBtnUIShowHide()
-		EventManager.Hit("ChangeCharTopBar", false, false)
+		EventManager.Hit("ChangeCharTopBar", false)
 		EventManager.Hit("ChangeCharFgTab", false)
 		self._mapNode.anim:Play("CharTalent_Root_hide")
 		EventManager.Hit(EventId.TemporaryBlockInput, 1)
@@ -374,7 +374,7 @@ function CharTalentCtrl:OnBtnClick_Key(btn, nIndex)
 	self.nCurGroupIndex = nIndex
 	self:SetDetail()
 	EventManager.Hit("ChangeCharFgTab", false)
-	EventManager.Hit("ChangeCharTopBar", false, false)
+	EventManager.Hit("ChangeCharTopBar", false)
 	self._mapNode.anim:Play("CharTalent_Root_o2d")
 end
 function CharTalentCtrl:SetDetail(nUIState)
@@ -465,7 +465,7 @@ function CharTalentCtrl:PlaySwitchGroupPrevNxtAnim()
 end
 function CharTalentCtrl:OnBtnClick_Back(btn)
 	EventManager.Hit("ChangeCharFgTab", true)
-	EventManager.Hit("ChangeCharTopBar", true, false)
+	EventManager.Hit("ChangeCharTopBar", true)
 	self._mapNode.anim:Play("CharTalent_Root_d2o")
 end
 function CharTalentCtrl:OnBtnClick_Home(btn)

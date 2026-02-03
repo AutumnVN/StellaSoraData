@@ -12,9 +12,10 @@ local mapEventConfig = {
 	ScoreBoss_BehaviorScore = "OnEvent_ControlScore",
 	ScoreBossSettleSuccess = "OnEvent_ScoreBossSettleSuccess",
 	ScoreBossSettleGiveUp = "OnEvent_ScoreBossSettleGiveUp",
-	Upload_Dodge_Event = "OnEvent_UploadDodgeEvent"
+	Upload_Dodge_Event = "OnEvent_UploadDodgeEvent",
+	ADVENTURE_LEVEL_UNLOAD_COMPLETE = "OnEvent_UnloadComplete"
 }
-function ScoreBossLevel:Init(parent, nLevelId, nBuildId)
+function ScoreBossLevel:Init(parent, nLevelId, nBuildId, isAgain)
 	self.isSettlement = false
 	self.parent = parent
 	self.LevelId = nLevelId
@@ -67,7 +68,11 @@ function ScoreBossLevel:Init(parent, nLevelId, nBuildId)
 		CS.AdventureModuleHelper.EnterScoreBossFloor(self.LevelId, self.tbCharId)
 		local sKey = LocalData.GetPlayerLocalData("ScoreBossRecordKey")
 		safe_call_cs_func(CS.AdventureModuleHelper.SetDamageRecordId, sKey)
-		NovaAPI.EnterModule("AdventureModuleScene", true, 17)
+		if not isAgain then
+			NovaAPI.EnterModule("AdventureModuleScene", true, 17)
+		else
+			self:OnEvent_AdventureModuleEnter()
+		end
 	end
 	PlayerData.Build:GetBuildDetailData(GetBuildCallback, nBuildId)
 end
@@ -280,5 +285,8 @@ function ScoreBossLevel:OnEvent_UploadDodgeEvent(padMode)
 		tostring(CS.ClientManager.Instance.serverTimeStamp)
 	})
 	NovaAPI.UserEventUpload("use_dodge_key", tab)
+end
+function ScoreBossLevel:OnEvent_UnloadComplete()
+	self.parent:EntryLvAgain()
 end
 return ScoreBossLevel

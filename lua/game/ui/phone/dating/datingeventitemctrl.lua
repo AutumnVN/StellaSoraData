@@ -55,7 +55,8 @@ function DatingEventItemCtrl:InitItem(data)
 	NovaAPI.SetTMPText(self._mapNode.txtFavorCount, "+" .. data.nAffinity)
 	local charCfg = ConfigTable.GetData_Character(self._panel.nCharId)
 	if charCfg ~= nil then
-		local sDesc = string.gsub(data.sDesc, replace_str, charCfg.Name)
+		local sCharName = self:_temp_proc_name(charCfg.Name)
+		local sDesc = string.gsub(data.sDesc, replace_str, sCharName)
 		local mapKrTag = ConfigTable.GetData("DatingCharTag", self._panel.nCharId)
 		if mapKrTag ~= nil and mapKrTag.KrTag ~= nil then
 			local tbKr = AllEnum.DatingKrTags[mapKrTag.KrTag]
@@ -78,6 +79,11 @@ function DatingEventItemCtrl:InitItem(data)
 	LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.rtTxtHeight)
 	local nH = self._mapNode.rtTxtHeight.rect.height
 	self._mapNode.rtGoTxtHeight.sizeDelta = Vector2(self._mapNode.rtGoTxtHeight.sizeDelta.x, nH)
+end
+function DatingEventItemCtrl:_temp_proc_name(sName)
+	local _sName = string.gsub(sName, "\239\188\136.-\239\188\137", "")
+	_sName = string.gsub(_sName, "%(.-%)", "")
+	return _sName
 end
 function DatingEventItemCtrl:StartEvent(nSpeed, bAuto)
 	self.nCurTime = 0

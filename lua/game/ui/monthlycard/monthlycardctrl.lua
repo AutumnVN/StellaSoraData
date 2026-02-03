@@ -29,7 +29,26 @@ MonthlyCardCtrl._mapNodeConfig = {
 MonthlyCardCtrl._mapEventConfig = {}
 function MonthlyCardCtrl:Refresh()
 	EventManager.Hit(EventId.TemporaryBlockInput, BoxBornTime + InTime)
-	NovaAPI.SetTMPText(self._mapNode.txtTime, orderedFormat(ConfigTable.GetUIText("MonthlyCard_RemainDay"), self.nRemaining))
+	local tbStr = {}
+	for i = 1, 2 do
+		if self.tbMonthlyCard[i] ~= nil then
+			ForEachTableLine(DataTable.MallMonthlyCard, function(mapData)
+				if mapData.MonthlyCardId == self.tbMonthlyCard[i].nId then
+					local str = mapData.Name2 .. orderedFormat(ConfigTable.GetUIText("MonthlyCard_RemainDay"), self.tbMonthlyCard[i].nRemaining)
+					table.insert(tbStr, str)
+				end
+			end)
+		end
+	end
+	local sStr = ""
+	for i, v in ipairs(tbStr) do
+		if i == #tbStr then
+			sStr = sStr .. v
+		else
+			sStr = sStr .. v .. "\n"
+		end
+	end
+	NovaAPI.SetTMPText(self._mapNode.txtTime, sStr)
 	self._mapNode.txtTime.gameObject:SetActive(false)
 	self._mapNode.txtClick.gameObject:SetActive(false)
 	self._mapNode.imgTitle.gameObject:SetActive(false)
@@ -58,9 +77,42 @@ end
 function MonthlyCardCtrl:Awake()
 	local tbParam = self:GetPanelParam()
 	if type(tbParam) == "table" then
-		self.mapReward = tbParam[1].mapReward
-		self.nRemaining = tbParam[1].nRemaining
 		self.callback = tbParam[2]
+	end
+	self.tbMonthlyCard = {}
+	local tbTempMonthlyCard = {}
+	tbTempMonthlyCard = PlayerData.Daily.GetTempMonthlyCardData() or {}
+	for i, v in ipairs(tbTempMonthlyCard) do
+		table.insert(self.tbMonthlyCard, v)
+	end
+	PlayerData.Daily.ClearTempMonthlyCardData()
+	self.mapReward = {
+		tbDst = {},
+		tbReward = {},
+		tbSpReward = {},
+		tbSrc = {}
+	}
+	for _, v in ipairs(self.tbMonthlyCard) do
+		if v.mapReward.tbDst ~= nil then
+			for _, v in ipairs(v.mapReward.tbDst) do
+				table.insert(self.mapReward.tbDst, v)
+			end
+		end
+		if v.mapReward.tbReward ~= nil then
+			for _, v in ipairs(v.mapReward.tbReward) do
+				table.insert(self.mapReward.tbReward, v)
+			end
+		end
+		if v.mapReward.tbSpReward ~= nil then
+			for _, v in ipairs(v.mapReward.tbSpReward) do
+				table.insert(self.mapReward.tbSpReward, v)
+			end
+		end
+		if v.mapReward.tbSrc ~= nil then
+			for _, v in ipairs(v.mapReward.tbSrc) do
+				table.insert(self.mapReward.tbSrc, v)
+			end
+		end
 	end
 end
 function MonthlyCardCtrl:OnEnable()

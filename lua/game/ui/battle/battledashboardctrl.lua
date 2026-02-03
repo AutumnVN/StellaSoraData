@@ -693,7 +693,7 @@ function BattleDashboardCtrl:OnEvent_SyncSkillBtnToLua(arrayData, bLocking, bBeg
 end
 function BattleDashboardCtrl:OnEvent_SkillEnableByActionKey(nActionId, bEnable)
 	local data = self.tbDefine_SkillBtn[nActionId]
-	data.skillBtnCtrl:SetBtnEnable(bEnable)
+	data.skillBtnCtrl:SetForbidden(bEnable == false)
 end
 function BattleDashboardCtrl:OnEvent_Support1SkillEnableByActionKey(nActionId, bEnable)
 	if nActionId == 2 then

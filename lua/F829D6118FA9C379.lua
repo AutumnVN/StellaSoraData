@@ -164,11 +164,11 @@ function ActivityShopCtrl:PlayEnterVoice()
 	local bFirst = self._panel.actShopData:GetShopFirstIn()
 	local sTimeVoice = PlayerData.Voice:GetNPCGreetTimeVoiceKey()
 	if bFirst then
-		PlayerData.Voice:PlayCharVoice(sTimeVoice, self.nNpcId)
+		PlayerData.Voice:PlayCharVoice(sTimeVoice, self.nNpcId, nil, true)
 	else
 		local nIndex = math.random(1, 2)
 		local sVoice = nIndex == 1 and sTimeVoice or "greet_npc"
-		PlayerData.Voice:PlayCharVoice(sVoice, self.nNpcId)
+		PlayerData.Voice:PlayCharVoice(sVoice, self.nNpcId, nil, true)
 	end
 end
 function ActivityShopCtrl:PlayBuyVoice(bLimit)
@@ -178,10 +178,10 @@ function ActivityShopCtrl:PlayBuyVoice(bLimit)
 	else
 		sVoice = "thank_npc"
 	end
-	PlayerData.Voice:PlayCharVoice(sVoice, self.nNpcId)
+	PlayerData.Voice:PlayCharVoice(sVoice, self.nNpcId, nil, true)
 end
 function ActivityShopCtrl:PlaySwitchTogVoice()
-	PlayerData.Voice:PlayCharVoice("Tab", self.nNpcId)
+	PlayerData.Voice:PlayCharVoice("Tab", self.nNpcId, nil, true)
 end
 function ActivityShopCtrl:RefreshNPCId()
 	local mapCfg = ConfigTable.GetData("ActivityShopControl", self._panel.nActId)

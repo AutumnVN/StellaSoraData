@@ -8,16 +8,31 @@ ExeEditorCtrl._mapNodeConfig = {
 		sComponentName = "Button",
 		callback = "onBtn_BubbleVoiceEditor"
 	},
+	tog_CanEdit = {
+		sComponentName = "Toggle",
+		callback = "OnTog_CanEdit"
+	},
 	btn_TEST = {sComponentName = "Button", callback = "onBtn_TEST"}
 }
 ExeEditorCtrl._mapEventConfig = {}
+function ExeEditorCtrl:OnEnable()
+	self.bCanEdit = Settings.sCurrentTxtLanguage == AllEnum.Language.CN or Settings.sCurrentTxtLanguage == AllEnum.Language.JP
+	NovaAPI.SetToggleIsOn(self._mapNode.tog_CanEdit, self.bCanEdit)
+end
 function ExeEditorCtrl:onBtn_AvgEditor()
 	require("Game.UI.Avg.Editor.main")
+	CAN_EDIT = self.bCanEdit
 	EventManager.Hit(EventId.OpenPanel, PanelId.AvgEditor)
 end
 function ExeEditorCtrl:onBtn_BubbleVoiceEditor()
 	require("Game.Actor2D.Editor_BBV.main")
 	EventManager.Hit(EventId.OpenPanel, PanelId.BBVEditor)
+end
+function ExeEditorCtrl:OnTog_CanEdit()
+	local bCan = NovaAPI.GetToggleIsOn(self._mapNode.tog_CanEdit) == true
+	if bCan ~= self.bCanEdit then
+		self.bCanEdit = bCan
+	end
 end
 function ExeEditorCtrl:onBtn_TEST()
 end

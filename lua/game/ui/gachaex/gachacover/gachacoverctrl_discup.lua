@@ -15,7 +15,14 @@ GachaCoverCtrl_DiscUp._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_ShowDiscUpMainDetail"
 	},
-	imgOutfit = {sComponentName = "Image", nCount = 3}
+	imgOutfit = {sComponentName = "Image", nCount = 3},
+	iconProprety = {sComponentName = "Image"},
+	TMPNpcName = {sComponentName = "TMP_Text"},
+	TMPRateUp = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Gacha_Cover_DiscUpTitle"
+	},
+	imgFes = {}
 }
 GachaCoverCtrl_DiscUp._mapEventConfig = {}
 function GachaCoverCtrl_DiscUp:Awake()
@@ -101,6 +108,7 @@ function GachaCoverCtrl_DiscUp:SetCover(nId)
 	local nAupMissing = PlayerData.Gacha:GetAupMissTimesById(nId)
 	local mapGachaData = ConfigTable.GetData("Gacha", nId)
 	if mapGachaData ~= nil then
+		self._mapNode.imgFes:SetActive(mapGachaData.GachaType == 8 or mapGachaData.GachaType == 9)
 		local nStorage = mapGachaData.StorageId
 		local mapStorage = ConfigTable.GetData("GachaStorage", nStorage)
 		if mapStorage ~= nil then
@@ -159,6 +167,9 @@ function GachaCoverCtrl_DiscUp:SetCover(nId)
 				self:SetAtlasSprite(imgProperty, "12_rare", sName)
 				local imgStar = self._mapNode.imgOutfit[2].transform:Find("imgRare"):GetComponent("Image")
 				self:SetSprite_FrameColor(imgStar, 1, AllEnum.FrameType_New.Text)
+				local sTitle = orderedFormat(ConfigTable.GetUIText("Gacha_Cover_UpItemTitle") or "", cfgDataItem.Title)
+				NovaAPI.SetTMPText(self._mapNode.TMPNpcName, sTitle)
+				self:SetAtlasSprite(self._mapNode.iconProprety, "12_rare", AllEnum.Star_Element[cfgDataDisc.EET].icon)
 			end
 		end
 		if self.tbSubDiscId[1] ~= nil then

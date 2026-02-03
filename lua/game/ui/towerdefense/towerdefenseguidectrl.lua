@@ -1,5 +1,4 @@
 local TowerDefenseGuideCtrl = class("TowerDefenseGuideCtrl", BaseCtrl)
-local iconPath = "UI/Play_TowerDefence/SpriteAtlas/Sprite/"
 TowerDefenseGuideCtrl._mapNodeConfig = {
 	anim = {sNodeName = "Root", sComponentName = "Animator"},
 	txt_Guide_window = {
@@ -116,12 +115,12 @@ function TowerDefenseGuideCtrl:CreateChar()
 			local icon = go.transform:Find("btn_grid/AnimRoot/img_icon/icon_char"):GetComponent("Image")
 			local lock = go.transform:Find("btn_grid/AnimRoot/img_icon/bg_Lock")
 			local txt_name = go.transform:Find("btn_grid/AnimRoot/img_icon/txt_name"):GetComponent("TMP_Text")
-			local img_new = go.transform:Find("btn_grid/AnimRoot/img_icon/img_New"):GetComponent("Image")
-			if guide_config.iconPath == "" then
-				img_new.gameObject:SetActive(false)
+			local txt_new = go.transform:Find("btn_grid/AnimRoot/img_icon/txt_new"):GetComponent("TMP_Text")
+			if guide_config.Str == "" then
+				txt_new.gameObject:SetActive(false)
 			else
-				img_new.gameObject:SetActive(true)
-				self:SetPngSprite(img_new, iconPath .. guide_config.iconPath)
+				txt_new.gameObject:SetActive(true)
+				NovaAPI.SetTMPText(txt_new, guide_config.Str)
 			end
 			local bUnLock = true
 			if guide_config ~= nil then
@@ -166,12 +165,12 @@ function TowerDefenseGuideCtrl:CreateItem()
 			local icon = go.transform:Find("btn_grid/AnimRoot/img_icon"):GetComponent("Image")
 			local lock = go.transform:Find("btn_grid/AnimRoot/bg_Lock")
 			local txt_lock = go.transform:Find("btn_grid/AnimRoot/txt_lock"):GetComponent("TMP_Text")
-			local img_new = go.transform:Find("btn_grid/AnimRoot/img_New"):GetComponent("Image")
-			if guide_config.iconPath == "" then
-				img_new.gameObject:SetActive(false)
+			local txt_new = go.transform:Find("btn_grid/AnimRoot/txt_new"):GetComponent("TMP_Text")
+			if guide_config.Str == "" then
+				txt_new.gameObject:SetActive(false)
 			else
-				img_new.gameObject:SetActive(true)
-				self:SetPngSprite(img_new, iconPath .. guide_config.iconPath)
+				txt_new.gameObject:SetActive(true)
+				NovaAPI.SetTMPText(txt_new, guide_config.Str)
 			end
 			local bUnLock = true
 			if guide_config ~= nil then

@@ -36,45 +36,67 @@ local GetPanelName = function(nPanelId)
 		end
 	end
 end
-local AddTbGoSnapShot = function(nPanelId, goIns)
+local AddTbGoSnapShot = function(panel, goIns)
 	if Settings.bDestroyHistoryUIInstance then
 		if tbGoSnapShot == nil then
 			tbGoSnapShot = {}
 		end
 		if goIns ~= nil then
-			tbGoSnapShot[nPanelId] = {goIns = goIns, bMove = false}
+			local nInstanceId = goIns:GetInstanceID()
+			panel._nGoBlurInsId = nInstanceId
+			if tbGoSnapShot[panel._nPanelId] == nil then
+				tbGoSnapShot[panel._nPanelId] = {}
+			end
+			tbGoSnapShot[panel._nPanelId][nInstanceId] = {goIns = goIns, bMove = false}
 		end
 	end
 end
-local MoveSnapShot = function(nPanelId)
-	if Settings.bDestroyHistoryUIInstance and tbGoSnapShot[nPanelId] ~= nil then
-		tbGoSnapShot[nPanelId].bMove = true
-		tbGoSnapShot[nPanelId].goIns.gameObject.transform:SetParent(trSnapshotParent)
+local MoveSnapShot = function(panel)
+	if panel == nil then
+		return
+	end
+	local nPanelId = panel._nPanelId
+	local goInsId = panel._nGoBlurInsId
+	if Settings.bDestroyHistoryUIInstance and tbGoSnapShot[nPanelId] ~= nil and tbGoSnapShot[nPanelId][goInsId] ~= nil then
+		tbGoSnapShot[nPanelId][goInsId].bMove = true
+		tbGoSnapShot[nPanelId][goInsId].goIns.gameObject.transform:SetParent(trSnapshotParent)
 	end
 end
-local GetSnapShot = function(nPanelId)
-	if Settings.bDestroyHistoryUIInstance and tbGoSnapShot[nPanelId] ~= nil then
-		tbGoSnapShot[nPanelId].bMove = false
-		tbGoSnapShot[nPanelId].goIns.gameObject:SetActive(true)
-		return tbGoSnapShot[nPanelId].goIns
+local GetSnapShot = function(panel)
+	if panel == nil then
+		return
+	end
+	local nPanelId = panel._nPanelId
+	local goInsId = panel._nGoBlurInsId
+	if Settings.bDestroyHistoryUIInstance and tbGoSnapShot[nPanelId] ~= nil and tbGoSnapShot[nPanelId][goInsId] ~= nil then
+		tbGoSnapShot[nPanelId][goInsId].bMove = false
+		tbGoSnapShot[nPanelId][goInsId].goIns.gameObject:SetActive(true)
+		return tbGoSnapShot[nPanelId][goInsId].goIns
 	end
 end
 local HideMoveSnapshot = function()
 	if Settings.bDestroyHistoryUIInstance and tbGoSnapShot ~= nil then
 		for _, v in pairs(tbGoSnapShot) do
-			if v.bMove and v.goIns ~= nil then
-				v.goIns.gameObject:SetActive(false)
+			for insId, data in pairs(v) do
+				if data.bMove and data.goIns ~= nil then
+					data.goIns.gameObject:SetActive(false)
+				end
 			end
 		end
 	end
 end
-local RemoveTbSnapShot = function(nPanelId)
-	if Settings.bDestroyHistoryUIInstance and tbGoSnapShot[nPanelId] ~= nil then
-		local goIns = tbGoSnapShot[nPanelId].goIns
+local RemoveTbSnapShot = function(panel)
+	if panel == nil then
+		return
+	end
+	local nPanelId = panel._nPanelId
+	local goInsId = panel._nGoBlurInsId
+	if Settings.bDestroyHistoryUIInstance and tbGoSnapShot[nPanelId] ~= nil and tbGoSnapShot[nPanelId][goInsId] ~= nil then
+		local goIns = tbGoSnapShot[nPanelId][goInsId].goIns
 		if goIns ~= nil then
 			destroy(goIns)
 		end
-		tbGoSnapShot[nPanelId] = nil
+		tbGoSnapShot[nPanelId][goInsId] = nil
 	end
 end
 local CheckThresholdCount = function()
@@ -98,7 +120,7 @@ local CheckThresholdCount = function()
 		if nDelCount == nCurCount - nThresholdHistoryPanelCount then
 			for i = nDelCount, 1, -1 do
 				local nPanelIndex = tbNeedRemovePanelIndex[i]
-				RemoveTbSnapShot(tbBackHistory[nPanelIndex]._nPanelId)
+				RemoveTbSnapShot(tbBackHistory[nPanelIndex])
 				tbBackHistory[nPanelIndex]:_Exit()
 				tbBackHistory[nPanelIndex]:_Destroy()
 				table.remove(tbBackHistory, nPanelIndex)
@@ -119,7 +141,7 @@ local DoBackToTarget = function(nTargetIndex)
 			nCount = #tbBackHistory
 			for i = nCount, nTargetIndex + 1, -1 do
 				local objPanel = tbBackHistory[i]
-				RemoveTbSnapShot(objPanel._nPanelId)
+				RemoveTbSnapShot(objPanel)
 				objPanel:_PreExit()
 				objPanel:_Exit()
 				objPanel:_Destroy()
@@ -129,7 +151,7 @@ local DoBackToTarget = function(nTargetIndex)
 			if type(objBackPanel.Awake) == "function" then
 				objBackPanel:Awake()
 			end
-			local goSnapshot = GetSnapShot(objBackPanel._nPanelId)
+			local goSnapshot = GetSnapShot(objBackPanel)
 			objBackPanel:_PreEnter(nil, goSnapshot)
 			objCurPanel:_Exit()
 			objBackPanel:_Enter()
@@ -153,7 +175,7 @@ local CloseCurPanel = function()
 			end
 			nLastIndex = #tbBackHistory
 			local objBackPanel = tbBackHistory[nLastIndex]
-			local goSnapshot = GetSnapShot(objBackPanel._nPanelId)
+			local goSnapshot = GetSnapShot(objBackPanel)
 			objBackPanel:_PreEnter(nil, goSnapshot)
 			objCurPanel:_Exit()
 			objBackPanel:_Enter()
@@ -162,7 +184,7 @@ local CloseCurPanel = function()
 			objCurPanel:_AfterEnter()
 			printLog("[\231\149\140\233\157\162\229\136\135\230\141\162] \229\183\178\229\174\140\230\136\144\239\188\154\229\133\179\233\151\173\229\189\147\229\137\141\229\185\182\230\137\147\229\188\128\229\142\134\229\143\178\233\152\159\229\136\151\231\154\132\230\156\128\229\144\142\228\184\128\228\184\170\239\188\140 \229\189\147\229\137\141\230\137\147\229\188\128\231\154\132\231\149\140\233\157\162\239\188\154" .. GetPanelName(objCurPanel._nPanelId))
 		end
-		RemoveTbSnapShot(objCurPanel._nPanelId)
+		RemoveTbSnapShot(objCurPanel)
 		objCurPanel:_PreExit(func_DoBack, true)
 	end
 end
@@ -177,7 +199,7 @@ local ClosePanel = function(nPanelId)
 				if objPanel._nPanelId == nPanelId then
 					table.remove(tbBackHistory, i)
 					objPanel:_Destroy()
-					RemoveTbSnapShot(objPanel._nPanelId)
+					RemoveTbSnapShot(objPanel)
 					objPanel = nil
 					printLog("[\231\149\140\233\157\162\229\136\135\230\141\162] \228\187\133\229\133\179\233\151\173\230\140\135\229\174\154\231\154\132\231\149\140\233\157\162\239\188\154" .. GetPanelName(nPanelId))
 					break
@@ -201,7 +223,7 @@ local OnClosePanel = function(listener, nPanelId)
 					v:_Exit()
 					v:_Destroy()
 					table.remove(tbDisposablePanel, i)
-					RemoveTbSnapShot(v._nPanelId)
+					RemoveTbSnapShot(v)
 					bIsMainPanel = false
 					printLog("[\231\149\140\233\157\162\229\136\135\230\141\162] \229\133\179\233\151\173\228\186\134\233\157\158\228\184\187 Panel \231\149\140\233\157\162\239\188\154" .. GetPanelName(nPanelId))
 					break
@@ -242,7 +264,7 @@ local ExitCurrent = function()
 end
 local PreEnterNext = function()
 	local goSnapshot = TakeSnapshot(objNextPanel._nSnapshotPrePanel)
-	AddTbGoSnapShot(objNextPanel._nPanelId, goSnapshot)
+	AddTbGoSnapShot(objNextPanel, goSnapshot)
 	cs_coroutine.start(function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		objNextPanel:_PreEnter(ExitCurrent, goSnapshot)
@@ -253,7 +275,7 @@ local PreExitCurrent = function()
 	if objCurPanel == nil then
 		PreEnterNext()
 	else
-		MoveSnapShot(objCurPanel._nPanelId)
+		MoveSnapShot(objCurPanel)
 		objCurPanel:_PreExit(PreEnterNext, true)
 	end
 end
@@ -293,7 +315,7 @@ local OnOpenPanel = function(listener, nPanelId, ...)
 				_bHasOpenTips = UTILS.CheckIsTipsPanel(v._nPanelId)
 			end
 			if v._nPanelId == nPanelId then
-				MoveSnapShot(v._nPanelId)
+				MoveSnapShot(v)
 				objTempPanel:_PreExit()
 				objTempPanel:_Exit()
 				objTempPanel:_Destroy()
@@ -374,6 +396,7 @@ local AddEventCallback = function()
 	EventManager.Add("OnSdkLogout", PanelManager, PanelManager.OnConfirmBackToLogIn)
 	EventManager.Add(EventId.MarkFullRectWH, PanelManager, OnMarkCurCanvasFullRectWH)
 	EventManager.Add("ClearRequiredLua", PanelManager, OnClearRequiredLua)
+	EventManager.Add("Test_SwitchAllUI", PanelManager, PanelManager.SwitchAllUI)
 end
 local InitGuidePanel = function()
 	if AVG_EDITOR == true then
@@ -443,7 +466,6 @@ function PanelManager.Init()
 		func_CacheRootTransform(AllEnum.SortingLayerName.HUD, "---- HUD ----")
 		func_CacheRootTransform(AllEnum.SortingLayerName.UI, "---- UI ----")
 		func_CacheRootTransform(AllEnum.SortingLayerName.UI_Top, "---- UI TOP ----")
-		func_CacheRootTransform(AllEnum.SortingLayerName.UI_Video, "---- UI Video ----")
 		func_CacheRootTransform(AllEnum.SortingLayerName.Overlay, "---- UI OVERLAY ----")
 		trSnapshotParent = mapUIRootTransform[0]:Find("---- UI ----/Snapshot")
 		tbTemplateSnapshot = {}
@@ -501,7 +523,7 @@ function PanelManager.OnConfirmBackToLogIn()
 		objPanel:_Exit()
 		objPanel:_Destroy()
 		table.remove(tbBackHistory, i)
-		RemoveTbSnapShot(objPanel._nPanelId)
+		RemoveTbSnapShot(objPanel)
 		if objCurPanel ~= nil and objCurPanel == objPanel then
 			objCurPanel = nil
 		end
@@ -702,6 +724,27 @@ function PanelManager.SwitchSkillBtn()
 		trMainRole.localScale = Vector3.one
 		trSkillHint.localScale = Vector3.one
 	end
+end
+local bAllUIVisible = true
+function PanelManager.SwitchAllUI()
+	if bAllUIVisible == true then
+		bAllUIVisible = false
+	else
+		bAllUIVisible = true
+	end
+	local SetVisible = function(trRoot)
+		local n = trRoot.childCount - 1
+		for i = 0, n do
+			local canvas = trRoot:GetChild(i):GetComponent("Canvas")
+			if canvas ~= nil and canvas:IsNull() == false then
+				canvas.enabled = bAllUIVisible
+			end
+		end
+	end
+	SetVisible(mapUIRootTransform[AllEnum.SortingLayerName.HUD])
+	SetVisible(mapUIRootTransform[AllEnum.SortingLayerName.UI])
+	SetVisible(mapUIRootTransform[AllEnum.SortingLayerName.UI_Top])
+	SetVisible(mapUIRootTransform[AllEnum.SortingLayerName.Overlay])
 end
 function PanelManager.CloseAllDisposablePanel()
 	if type(tbDisposablePanel) == "table" then

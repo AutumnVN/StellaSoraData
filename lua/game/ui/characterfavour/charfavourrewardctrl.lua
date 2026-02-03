@@ -61,6 +61,7 @@ function CharFavourRewardCtrl:Awake()
 		self:GetEffectDescId(GameEnum.effectAttributeType.MAXHP, GameEnum.parameterType.BASE_VALUE),
 		self:GetEffectDescId(GameEnum.effectAttributeType.ATK, GameEnum.parameterType.BASE_VALUE)
 	}
+	self.nAffinityMaxEffectLevel = tonumber(ConfigTable.GetConfigValue("AffinityMaxEffectLevel"))
 end
 function CharFavourRewardCtrl:OnEnable()
 	self._mapNode.anigoRewardRoot:Play("t_window_04_t_in")
@@ -249,7 +250,7 @@ function CharFavourRewardCtrl:OnRefreshNextLevelAttributeList()
 		count = count + 1
 	end
 	local nextLevelData = self:GetTargetLevelData(self.curAffinityData.AffinityLevel + 1, self.curAffinityData.TemplateId)
-	if nextLevelData ~= nil then
+	if nextLevelData ~= nil and self.curAffinityData.AffinityLevel < self.nAffinityMaxEffectLevel then
 		local effectData = self:GetEffectDataSubValue(self.curAffinityData.Effect, nextLevelData.Effect)
 		if effectData ~= nil then
 			for i = 1, #effectData do

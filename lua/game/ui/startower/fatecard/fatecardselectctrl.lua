@@ -335,8 +335,10 @@ end
 function FateCardSelectCtrl:OnBtnClick_Confirm()
 	if nil ~= self.callback then
 		local completeFunc = function(nEventId, tbFateCard, tbNewIds, mapRoll, nCoin, bReward)
+			EventManager.Hit(EventId.BlockInput, false)
 			self:SelectComplete(nEventId, tbFateCard, tbNewIds, mapRoll, nCoin, bReward)
 		end
+		EventManager.Hit(EventId.BlockInput, true)
 		self.callback(self.nSelectIdx, self.nEventId, completeFunc)
 	end
 end
@@ -349,8 +351,10 @@ function FateCardSelectCtrl:OnBtnClick_Roll()
 		return
 	end
 	local completeFunc = function(nEventId, tbFateCard, tbNewIds, mapRoll, nCoin, bReward)
+		EventManager.Hit(EventId.BlockInput, false)
 		self:Refresh(nEventId, tbFateCard, tbNewIds, mapRoll, nCoin, bReward, true)
 	end
+	EventManager.Hit(EventId.BlockInput, true)
 	self.callback(self.nSelectIdx, self.nEventId, completeFunc, true)
 end
 function FateCardSelectCtrl:OnBtnClick_Abandon()

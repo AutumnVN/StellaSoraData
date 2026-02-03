@@ -96,6 +96,8 @@ local player_data_succeed_ack = function(mapMsgData)
 	PlayerData.Avg:CacheAvgData(mapMsgData.Story)
 	PlayerData.StarTower:CacheStarTowerTicket(mapMsgData.TowerTicket)
 	PlayerData.Shop:CacheDailyShopReward(mapMsgData.DailyShopRewardStatus)
+	PlayerData.Mall:CacheDailyMallReward(mapMsgData.DailyMallRewardStatus)
+	PlayerData.Mall:CacheMallPackageList(mapMsgData.MallPackageList)
 	PlayerData.Dating:CacheDatingCharIds(mapMsgData.DatingCharIds)
 	PlayerData.VampireSurvivor:CacheLevelData(mapMsgData.VampireSurvivorRecord)
 	PlayerData.SkillInstance:CacheSkillInstanceLevel(mapMsgData.SkillInstances)
@@ -105,6 +107,7 @@ local player_data_succeed_ack = function(mapMsgData)
 	PlayerData.Activity:CacheActivityGroupData()
 	PlayerData.PopUp:RefreshPopUp()
 	PlayerData.TutorialData:CacheTutorialData(mapMsgData.TutorialLevels)
+	PlayerData.Story:CacheLastStory(mapMsgData.LastRead)
 	PlayerData.Char:UpdateAllCharRecordInfoRedDot()
 	if CS.SDKManager.Instance:IsSDKInit() then
 		CS.SDKManager.Instance:RoleInfoUpload(tostring(PlayerData.Base._nPlayerId), PlayerData.Base._sPlayerNickName, mapMsgData.ServerTs)
@@ -511,6 +514,7 @@ local daily_instance_raid_succeed_ack = function(mapMsgData)
 end
 local mall_package_state_notify = function(mapMsgData)
 	RedDotManager.SetValid(RedDotDefine.Mall_Free, nil, mapMsgData.New)
+	EventManager.Hit("Mall_Refresh_Reddot")
 end
 local quest_state_notify = function(mapMessageData)
 	PlayerData.Quest:UpdateServerQuestRedDot(mapMessageData)
@@ -1168,6 +1172,8 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.vampire_survivor_new_season_notify] = HttpNetHandlerPlus.vampire_survivor_new_season_notify,
 		[NetMsgId.Id.item_expired_change_notify] = HttpNetHandlerPlus.item_expired_change_notify,
 		[NetMsgId.Id.assist_add_build_notify] = HttpNetHandlerPlus.assist_add_build_notify,
+		[NetMsgId.Id.clear_story_set_notify] = HttpNetHandlerPlus.clear_story_set_notify,
+		[NetMsgId.Id.unlock_activity_story_notify] = HttpNetHandlerPlus.unlock_activity_story_notify,
 		[NetMsgId.Id.st_skip_floor_notify] = st_skip_floor_notify,
 		[NetMsgId.Id.st_add_team_exp_notify] = st_add_team_exp_notify,
 		[NetMsgId.Id.st_add_new_case_notify] = st_add_new_case_notify,
@@ -1217,7 +1223,6 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.activity_mining_enter_layer_notify] = HttpNetHandlerPlus.activity_mining_enter_layer_notify,
 		[NetMsgId.Id.score_boss_star_reward_receive_succeed_ack] = score_boss_star_reward_receive_succeed_ack,
 		[NetMsgId.Id.activity_cookie_settle_succeed_ack] = HttpNetHandlerPlus.activity_cookie_settle_succeed_ack,
-		[NetMsgId.Id.activity_trekker_versus_reward_receive_succeed_ack] = HttpNetHandlerPlus.activity_trekker_versus_reward_receive_succeed_ack,
 		[NetMsgId.Id.redeem_code_succeed_ack] = redeem_code_succeed_ack,
 		[NetMsgId.Id.redeem_code_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.notice_change_notify] = notice_change_notify,
@@ -1234,6 +1239,14 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.activity_joint_drill_refresh_ticket_notify] = activity_joint_drill_refresh_ticket_notify,
 		[NetMsgId.Id.joint_drill_sync_failed_ack] = HttpNetHandlerPlus.joint_drill_sync_failed_ack,
 		[NetMsgId.Id.joint_drill_give_up_failed_ack] = HttpNetHandlerPlus.joint_drill_give_up_failed_ack,
+		[NetMsgId.Id.joint_drill_2_apply_succeed_ack] = HttpNetHandlerPlus.joint_drill_2_apply_succeed_ack,
+		[NetMsgId.Id.joint_drill_2_apply_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.joint_drill_2_settle_succeed_ack] = HttpNetHandlerPlus.joint_drill_2_settle_succeed_ack,
+		[NetMsgId.Id.joint_drill_2_settle_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.joint_drill_2_game_over_succeed_ack] = HttpNetHandlerPlus.joint_drill_2_game_over_succeed_ack,
+		[NetMsgId.Id.joint_drill_2_game_over_failed_ack] = HttpNetHandlerPlus.joint_drill_2_game_over_failed_ack,
+		[NetMsgId.Id.joint_drill_2_sync_failed_ack] = HttpNetHandlerPlus.joint_drill_2_sync_failed_ack,
+		[NetMsgId.Id.joint_drill_2_give_up_failed_ack] = HttpNetHandlerPlus.joint_drill_2_give_up_failed_ack,
 		[NetMsgId.Id.activity_tower_defense_story_reward_receive_succeed_ack] = activity_tower_defense_story_reward_receive_succeed_ack,
 		[NetMsgId.Id.activity_tower_defense_story_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.activity_tower_defense_quest_reward_receive_succeed_ack] = activity_tower_defense_quest_reward_receive_succeed_ack,
@@ -1259,7 +1272,18 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.build_convert_submit_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.build_convert_group_reward_receive_succeed_ack] = HttpNetHandlerPlus.build_convert_group_reward_receive_succeed_ack,
 		[NetMsgId.Id.build_convert_group_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
-		[NetMsgId.Id.activity_story_settle_succeed_ack] = HttpNetHandlerPlus.activity_story_settle_succeed_ack
+		[NetMsgId.Id.activity_story_settle_succeed_ack] = HttpNetHandlerPlus.activity_story_settle_succeed_ack,
+		[NetMsgId.Id.milkout_settle_succeed_ack] = HttpNetHandlerPlus.milkout_settle_succeed_ack,
+		[NetMsgId.Id.milkout_settle_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.milkout_character_unlock_notify] = HttpNetHandlerPlus.milkout_character_unlock_notify,
+		[NetMsgId.Id.clear_all_activity_breakout_levels_notify] = HttpNetHandlerPlus.clear_all_activity_breakout_levels_notify,
+		[NetMsgId.Id.daily_mall_reward_receive_succeed_ack] = HttpNetHandlerPlus.daily_mall_reward_receive_succeed_ack,
+		[NetMsgId.Id.daily_mall_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.activity_throw_gift_settle_succeed_ack] = HttpNetHandlerPlus.activity_throw_gift_settle_succeed_ack,
+		[NetMsgId.Id.activity_penguin_card_level_settle_succeed_ack] = HttpNetHandlerPlus.activity_penguin_card_level_settle_succeed_ack,
+		[NetMsgId.Id.activity_penguin_card_level_settle_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.activity_penguin_card_quest_reward_receive_succeed_ack] = HttpNetHandlerPlus.activity_penguin_card_quest_reward_receive_succeed_ack,
+		[NetMsgId.Id.activity_penguin_card_quest_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE
 	}
 end
 function HttpNetHandler.Init()

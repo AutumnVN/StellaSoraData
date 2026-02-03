@@ -98,7 +98,7 @@ function StarTowerBuildBriefItem:RefreshGrid(mapData, nPanelState, bSelectDelete
 	end
 	self._mapNode.btnExport.gameObject:SetActive(false)
 	EventManager.Hit("BuildItemExport", self._mapNode.btnExport, self._mapData.nBuildId)
-	if self._nType and self._nType == AllEnum.RegionBossFormationType.InfinityTower or self._nType == AllEnum.RegionBossFormationType.Vampire or self._nType == AllEnum.RegionBossFormationType.JointDrill then
+	if self._nType and self._nType == AllEnum.RegionBossFormationType.InfinityTower or self._nType == AllEnum.RegionBossFormationType.Vampire or self._nType == AllEnum.RegionBossFormationType.JointDrill or self._nType == AllEnum.RegionBossFormationType.JointDrill_2 then
 		local sScore = "Icon/BuildRank/BuildRank_" .. self._mapData.mapRank.Id
 		self:SetPngSprite(self._mapNode.imgRareScoreMask, sScore)
 		local bShowUnavailable = false
@@ -187,7 +187,7 @@ function StarTowerBuildBriefItem:OnBtnClick_Grid(btn)
 				EventManager.Hit(EventId.OpenMessageBox, strTips)
 				return
 			end
-		elseif self._nType == AllEnum.RegionBossFormationType.JointDrill and (self._mapData.bCharUsed or self._mapData.bBuildUsed) then
+		elseif (self._nType == AllEnum.RegionBossFormationType.JointDrill or self._nType == AllEnum.RegionBossFormationType.JointDrill_2) and (self._mapData.bCharUsed or self._mapData.bBuildUsed) then
 			local sKey = "JointDrill_Build_NotMeetingCond"
 			local strTips = ConfigTable.GetUIText(sKey)
 			EventManager.Hit(EventId.OpenMessageBox, strTips)

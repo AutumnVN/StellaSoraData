@@ -3426,7 +3426,7 @@ return {
 			"",
 			false,
 			"",
-			"Phew, made it. Thanks for the help.==W==Oh, right! As a thank-you for letting me kidnap you\226\128\148wanna take a nap too, intern?",
+			"Phew, made it. Thanks for the help.==W== Oh, right! As a thank-you for letting me kidnap you\226\128\148wanna take a nap too, intern?",
 			""
 		}
 	},

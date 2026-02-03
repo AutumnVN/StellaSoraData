@@ -7,6 +7,8 @@ ActivityShopGoodsItemCtrl._mapNodeConfig = {
 	txtLeftTime = {sComponentName = "TMP_Text"},
 	txtName = {sComponentName = "TMP_Text"},
 	imgIcon = {sComponentName = "Image"},
+	imgElement = {sComponentName = "Image"},
+	imgExpire = {sComponentName = "Image"},
 	txtCount = {sComponentName = "TMP_Text"},
 	imgCoin = {sComponentName = "Image"},
 	txtPrice = {sComponentName = "TMP_Text"},
@@ -39,12 +41,17 @@ function ActivityShopGoodsItemCtrl:RefreshInfo()
 	NovaAPI.SetTMPText(self._mapNode.txtName, self.mapGoodsCfg.Name)
 	if mapItemCfg.Type == GameEnum.itemType.Disc then
 		self:SetPngSprite(self._mapNode.imgIcon, mapItemCfg.Icon .. AllEnum.OutfitIconSurfix.Item)
+		self._mapNode.imgElement.gameObject:SetActive(true)
+		local mapDiscCfgData = ConfigTable.GetData("Disc", self.mapGoodsCfg.ItemId)
+		self:SetAtlasSprite(self._mapNode.imgElement, "12_rare", AllEnum.Star_Element[mapDiscCfgData.EET].icon)
 	else
 		self:SetPngSprite(self._mapNode.imgIcon, mapItemCfg.Icon)
+		self._mapNode.imgElement.gameObject:SetActive(false)
 	end
+	self._mapNode.imgExpire.gameObject:SetActive(mapItemCfg.ExpireType > 0)
 	local sPath = "db_arkanoid_shop_" .. AllEnum.FrameColor_New[mapItemCfg.Rarity]
 	self:SetActivityAtlasSprite_New(self._mapNode.imgRare, "30101/SpriteAtlas_3010103", sPath)
-	local bLimit = self.mapData.nMaximumLimit > 0
+	local bLimit = 0 < self.mapData.nMaximumLimit
 	if bLimit then
 		NovaAPI.SetTMPText(self._mapNode.txtLeft, orderedFormat(ConfigTable.GetUIText("Shop_Left"), self.mapData.nMaximumLimit - self.mapData.nBoughtCount))
 	else

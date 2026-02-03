@@ -51,7 +51,8 @@ StarTowerRoomInfo._mapEventConfig = {
 	StarTowerShowReward = "OnEvent_StarTowerShowReward",
 	ShowShopStrengthFx = "OnEvent_ShowShopStrengthFx",
 	ShowNPCAffinity = "OnEvent_AffinityTips",
-	ShowDiscLoseTips = "OnEvent_DiscLoseTips"
+	ShowDiscLoseTips = "OnEvent_DiscLoseTips",
+	PlayEnterShopRoomCharVoice = "PlayEnterRoomCharVoice"
 }
 function StarTowerRoomInfo:GetTeamNeedExpByLevel(nGroupId, nLevel)
 	local bMaxLevel = false
@@ -225,20 +226,36 @@ function StarTowerRoomInfo:PlayEnterRoomCharVoice(nLevel, nRoomType)
 		end)
 		sVoiceKey = tbSortPool[1].sKey
 	elseif nRoomType == GameEnum.starTowerRoomType.ShopRoom then
+		math.randomseed(os.time())
 		local bRes = 1 < math.random(1, 2)
 		if bRes then
-			local mapData = PlayerData.Char:GetCharAffinityData(9133)
-			if mapData ~= nil then
-				local nAffLevel = mapData.Level
-				local tbPoolNpc = {}
-				for i = 3, 1, -1 do
-					local tbFavorability = ConfigTable.GetConfigArray("NpcFavorabilityRange" .. i)
-					if tbFavorability ~= nil and nAffLevel <= tbFavorability[2] and nAffLevel >= tbFavorability[1] then
-						table.insert(tbPoolNpc, "event_lv" .. i)
+			local tbLines = ConfigTable.GetData("NPCConfig", 9133).Lines
+			local nAffinity = PlayerData.StarTower:GetNpcAffinityData(9133).nTotalExp
+			local tbChat = {}
+			if nAffinity ~= nil then
+				local fcTalk = function(mapTalkCfg)
+					local sVoice = mapTalkCfg.Voice
+					if #mapTalkCfg.Affinity == 2 and string.find(sVoice, "vo_npc133_event_lv") ~= nil and nAffinity >= mapTalkCfg.Affinity[1] and nAffinity <= mapTalkCfg.Affinity[2] then
+						table.insert(tbChat, mapTalkCfg.Id)
 					end
 				end
-				if 0 < #tbPoolNpc then
-					PlayerData.Voice:PlayCharVoice(tbPoolNpc[math.random(1, #tbPoolNpc)], 9133)
+				ForEachTableLine(DataTable.StarTowerTalk, fcTalk)
+			end
+			if #tbChat < 1 then
+				table.insert(tbChat, tbLines[1])
+			end
+			local nCount = #tbChat
+			local nTalkId = tbChat[1]
+			if 1 < nCount then
+				nTalkId = tbChat[math.random(1, #tbChat)]
+			end
+			if nTalkId == nil then
+				nTalkId = 0
+			end
+			if 0 < nTalkId then
+				mapTalkData = ConfigTable.GetData("StarTowerTalk", nTalkId)
+				if mapTalkData ~= nil then
+					CS.WwiseAudioManager.Instance:WwiseVoice_PlayInAVG(mapTalkData.Voice)
 					return
 				end
 			end
@@ -324,10 +341,12 @@ function StarTowerRoomInfo:OnEvent_ShowLevelTitle(nLevel, nTotalLevel, nRoomType
 		end, true, true, true)
 	end
 	self:AddTimer(1, 0.5, delayShowTitle, true, true, true)
-	local nVoiceDelay = ConfigTable.GetConfigNumber("StarTowerPlayerVoiceDelay")
-	self:AddTimer(1, nVoiceDelay, function()
-		self:PlayEnterRoomCharVoice(nLevel, nRoomType)
-	end, true, true, true)
+	if nRoomType ~= GameEnum.starTowerRoomType.ShopRoom then
+		local nVoiceDelay = ConfigTable.GetConfigNumber("StarTowerPlayerVoiceDelay")
+		self:AddTimer(1, nVoiceDelay, function()
+			self:PlayEnterRoomCharVoice(nLevel, nRoomType)
+		end, true, true, true)
+	end
 end
 function StarTowerRoomInfo:OnEvent_IconSuccessAni(rtTransform, callback)
 	self._mapNode.IconSuccess.gameObject:SetActive(true)

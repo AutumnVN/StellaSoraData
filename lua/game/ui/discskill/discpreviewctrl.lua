@@ -200,7 +200,7 @@ function DiscPreviewCtrl:Refresh()
 end
 function DiscPreviewCtrl:OnGridRefresh(goGrid, gridIndex)
 	if self.tbGridCtrl[goGrid] == nil then
-		local mapCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TemplateEx.TemplateDiscItemCtrl")
+		local mapCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TemplateEx.TemplateDiscPreviewItemCtrl")
 		self.tbGridCtrl[goGrid] = mapCtrl
 	end
 	local nIdx = gridIndex
@@ -214,8 +214,7 @@ function DiscPreviewCtrl:OnGridRefresh(goGrid, gridIndex)
 	if not mapItemCfgData then
 		return
 	end
-	local nMaxStar = PlayerData.Disc:GetDiscMaxStar(mapItemCfgData.Rarity)
-	self.tbGridCtrl[goGrid]:Refresh(nItemTid, 0, nMaxStar, self.tbDisc[nIdx].nLevel, self.tbDisc[nIdx].tbShowNote)
+	self.tbGridCtrl[goGrid]:Refresh(nItemTid, self.tbDisc[nIdx].nLevel)
 	self.tbGridCtrl[goGrid]:SetSelect(nIdx == self.nCurSelectItem)
 end
 function DiscPreviewCtrl:OnGridBtnClick(goGrid, gridIndex)

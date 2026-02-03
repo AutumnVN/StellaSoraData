@@ -124,6 +124,9 @@ end
 function ActivityDataBase:GetActivityRedDot()
 	return self.bRedDot
 end
+function ActivityDataBase:GetActOpenTime()
+	return self.nOpenTime
+end
 function ActivityDataBase:GetActEndTime()
 	return self.nEndTime
 end

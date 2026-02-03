@@ -293,6 +293,10 @@ function MallSkinPreviewCtrl:LoadCharacter()
 			self.nModelDragRot = v.transform.localEulerAngles.y
 			self.curShowModel = v
 			self:WaitReadyClipFinish()
+			NovaAPI.BindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, 0, v.gameObject)
+			if CS.FrameworkMiscUtils.VersionCompare(CS.ClientManager.Instance:GetClientVersion(), "1.4.0", 2) == 1 then
+				GameUIUtils.SetCustomModelMaterialVariant(v.gameObject, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
+			end
 		else
 			v.gameObject:SetActive(false)
 		end
@@ -301,13 +305,12 @@ function MallSkinPreviewCtrl:LoadCharacter()
 		local mapSkin = ConfigTable.GetData_CharacterSkin(self.nSkinId)
 		local sFullPath = string.format("%s.prefab", mapSkin.Model_Show)
 		local LoadModelCallback = function(obj)
-			local idx = 1
-			NovaAPI.UnbindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, idx - 1)
 			local go = instantiate(obj, self.rtSceneOriginPos)
 			self.tbModelList[self.nSkinId] = go
 			self.curShowModel = go
 			self:WaitReadyClipFinish()
-			NovaAPI.BindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, idx - 1, go)
+			NovaAPI.BindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, 0, go)
+			GameUIUtils.SetCustomModelMaterialVariant(go, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
 			if self.rtSceneOriginPos ~= nil then
 				go.transform.position = self.rtSceneOriginPos.position
 				go.transform.localEulerAngles = Vector3(0, 180, 0)
@@ -317,7 +320,6 @@ function MallSkinPreviewCtrl:LoadCharacter()
 				if animator ~= nil and animator:IsNull() == false then
 					animator:SetBool("standby", true)
 				end
-				GameUIUtils.SetCustomModelMaterialVariant(go, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
 				local wait = function()
 					coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 					go.transform.localScale = Vector3.one * (mapSkin.ModelShowScale / 10000)

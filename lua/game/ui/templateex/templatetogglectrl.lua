@@ -56,4 +56,10 @@ function TemplateToggleCtrl:SetTrigger(bOn)
 		self._mapNode.AnimSwitch:SetTrigger("tOff")
 	end
 end
+function TemplateToggleCtrl:ResetTrigger()
+	if self._mapNode.AnimSwitch.enabled == false then
+		self._mapNode.AnimSwitch.enabled = true
+	end
+	self._mapNode.AnimSwitch:ResetTrigger("tOff")
+end
 return TemplateToggleCtrl

@@ -11,6 +11,7 @@ function BasePanel:ctor(nIndex, nPanelId, tbParam)
 	self._nPanelId = nPanelId
 	self._bIsActive = false
 	self._tbParam = tbParam
+	self._nGoBlurInsId = nil
 	if self._nFADEINTYPE == nil then
 		self._nFADEINTYPE = 1
 	end

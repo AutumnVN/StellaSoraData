@@ -46,7 +46,12 @@ function StorySetSectionItemCtrl:RefreshItem(data)
 			end
 		end
 	end
-	RedDotManager.RegisterNode(RedDotDefine.Story_Set_Section, {nChapterId, nId}, self._mapNode.goRedDot, nil, nil, true)
+	local mapChapterCfg = ConfigTable.GetData("StorySetChapter", nChapterId)
+	RedDotManager.RegisterNode(RedDotDefine.Story_Set_Section, {
+		mapChapterCfg.TabId,
+		nChapterId,
+		nId
+	}, self._mapNode.goRedDot, nil, nil, true)
 end
 function StorySetSectionItemCtrl:Awake()
 end

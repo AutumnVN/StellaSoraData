@@ -425,7 +425,7 @@ function TowerDefenseLevelDetailCtrl:OnBtnClick_Go()
 			sContentSub = orderedFormat(ConfigTable.GetUIText("TowerDef_SkipSubTips"), self.levelConfig.LevelName),
 			sConfirm = ConfigTable.GetUIText("TowerDef_Skip_Go"),
 			sCancel = ConfigTable.GetUIText("TowerDef_Skip"),
-			callbackConfirm = ConfirmCallback,
+			callbackConfirmAfterClose = ConfirmCallback,
 			callbackCancel = CancelCallback,
 			bCloseNoHandler = true
 		}

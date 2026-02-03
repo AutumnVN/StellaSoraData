@@ -3,13 +3,6 @@ local JumpUtil = require("Game.Common.Utils.JumpUtil")
 local PlayerActivityData = PlayerData.Activity
 local TabType = GameEnum.ActivityTaskTabType
 local ItemType = GameEnum.itemType
-local tbTabNameUITextId = {
-	[TabType.Tab1] = "Quest_Normal",
-	[TabType.Tab2] = "Quest_Story",
-	[TabType.Tab3] = "Quest_Challenge",
-	[TabType.Tab4] = "Quest_Play",
-	[TabType.Tab5] = "Quest_Active"
-}
 BreakOutTaskCtrl._mapNodeConfig = {
 	TopBarPanel = {
 		sNodeName = "TopBarPanel",
@@ -234,12 +227,12 @@ function BreakOutTaskCtrl:RefreshScaleOnClick_State(tr, nIndex, mapCfgData_Activ
 	if self.nCurGroupIndex == nIndex then
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOn, 1)
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOff, 0)
-		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_on/tmpTabName_on"):GetComponent("TMP_Text"), ConfigTable.GetUIText(tbTabNameUITextId[mapCfgData_ActivityTaskGroup.TaskTabType]))
+		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_on/tmpTabName_on"):GetComponent("TMP_Text"), mapCfgData_ActivityTaskGroup.TabText)
 		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_on/tmpTabProgress_on"):GetComponent("TMP_Text"), sProgress)
 	else
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOn, 0)
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOff, 1)
-		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_off/tmpTabName_off"):GetComponent("TMP_Text"), ConfigTable.GetUIText(tbTabNameUITextId[mapCfgData_ActivityTaskGroup.TaskTabType]))
+		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_off/tmpTabName_off"):GetComponent("TMP_Text"), mapCfgData_ActivityTaskGroup.TabText)
 		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_off/tmpTabProgress_off"):GetComponent("TMP_Text"), sProgress)
 	end
 end
@@ -274,12 +267,12 @@ function BreakOutTaskCtrl:onGridRefresh_Task(go)
 	if 0 < nWidth and nWidth < 40 then
 		nWidth = 40
 	end
-	tr:Find("imgProgessBar"):GetComponent("RectTransform").sizeDelta = Vector2(nWidth, rt.rect.height)
+	tr:Find("imgProgessBar"):GetComponent("RectTransform").sizeDelta = Vector2(nWidth, tr:Find("imgProgessBar"):GetComponent("RectTransform").rect.height)
 	NovaAPI.SetTMPText(tr:Find("tmpTaskDesc"):GetComponent("TMP_Text"), mapTask.sDesc)
 	NovaAPI.SetTMPText(tr:Find("tmpTaskProgress"):GetComponent("TMP_Text"), string.format("%s/%s", tostring(nCur), tostring(nMax)))
 	local nCount = #mapTask.tbTaskRewardId
 	for i = 1, 2 do
-		local _tr = tr:Find("goTaskReward" .. tostring(i))
+		local _tr = tr:Find("TaskRewards/goTaskReward" .. tostring(i))
 		if i <= nCount then
 			_tr.localScale = Vector3.one
 			local nId = mapTask.tbTaskRewardId[i]
@@ -294,6 +287,7 @@ function BreakOutTaskCtrl:onGridRefresh_Task(go)
 			_tr:Find("scale_on_click/goTimeLimit").localScale = 0 < mapCfgData_Item.ExpireType and Vector3.one or Vector3.zero
 		else
 			_tr.localScale = Vector3.zero
+			_tr.gameObject:SetActive(false)
 		end
 	end
 	tr:Find("tmpUndone").localScale = mapTask.nStatus == AllEnum.ActQuestStatus.UnComplete and 0 >= mapTask.nJumpTo and Vector3.one or Vector3.zero

@@ -4,7 +4,7 @@ return {
 		param = {
 			"ep_mainline_001",
 			"Act One",
-			"Captive of Truth",
+			"Captive of Truth (Part I)",
 			"In the gloomy dungeon of Dusk Arbiter, Coronis receives a visit from a friend. Yet this friend has come for more than just a simple reunion.",
 			0
 		}

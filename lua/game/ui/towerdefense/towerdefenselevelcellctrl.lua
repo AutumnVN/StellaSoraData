@@ -43,6 +43,10 @@ function TowerDefenseLevelCellCtrl:SetData(nActId, levelData)
 			self._mapNode.Star[i]:SetActive(false)
 		end
 	end
+	local nStar = self.levelData.nStar
+	if nStar % 10 == 1 then
+	else
+	end
 	self._mapNode.img_lock.gameObject:SetActive(not bIsUnlock)
 	RedDotManager.RegisterNode(RedDotDefine.Activity_TowerDefense_Level, {
 		self.levelConfig.LevelPage,

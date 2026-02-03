@@ -698,7 +698,8 @@ AllEnum.MallToggle = {
 	Package = 2,
 	Gem = 3,
 	Shop = 4,
-	Skin = 5
+	Skin = 5,
+	Recommend = 6
 }
 AllEnum.AvgBubbleShowType = {Avg = 1, Voice = 2}
 AllEnum.SkillTypeShow = {
@@ -1082,7 +1083,13 @@ AllEnum.Star_Tag = {
 	[804] = {sLanguage = 804},
 	[805] = {sLanguage = 805},
 	[806] = {sLanguage = 806},
-	[807] = {sLanguage = 807}
+	[807] = {sLanguage = 807},
+	[808] = {sLanguage = 808},
+	[809] = {sLanguage = 809},
+	[810] = {sLanguage = 810},
+	[811] = {sLanguage = 811},
+	[818] = {sLanguage = 818},
+	[823] = {sLanguage = 823}
 }
 AllEnum.Equip_Rarity = {
 	[GameEnum.itemRarity.R] = {},
@@ -1310,7 +1317,8 @@ AllEnum.RegionBossFormationType = {
 	WeeklyCopies = 10,
 	JointDrill = 11,
 	ActivityLevels = 12,
-	ActivityStory = 13
+	ActivityStory = 13,
+	JointDrill_2 = 14
 }
 AllEnum.EnergyPanelType = {
 	Main = 1,
@@ -1403,7 +1411,11 @@ AllEnum.PhoneTogType = {
 	Gift = 3
 }
 AllEnum.ReceivePropsTitle = {Common = 1, Dating = 2}
-AllEnum.DiscSkillIconSurfix = {Small = "_S", Corner = "_jb"}
+AllEnum.DiscSkillIconSurfix = {
+	Small = "_S",
+	Corner = "_jb",
+	S_Light = "_S_Light"
+}
 AllEnum.QuestPanelTab = {
 	GuideQuest = 1,
 	DailyQuest = 2,
@@ -1480,12 +1492,22 @@ AllEnum.DiscBgSurfix = {
 	Image = "_B",
 	Card = "_G"
 }
-AllEnum.BossBloodType = {Single = 1, Multiple = 2}
+AllEnum.BossBloodType = {
+	Single = 1,
+	Multiple = 2,
+	JointDrill_Mode_2 = 3
+}
 AllEnum.JointDrillResultType = {
 	Success = 1,
 	BattleEnd = 2,
 	Retreat = 3,
 	ChallengeEnd = 4
+}
+AllEnum.JointDrillLevelStartType = {
+	Start = 1,
+	Continue = 2,
+	ChangeLevel = 3,
+	Restart = 4
 }
 AllEnum.ActivityMainType = {Activity = 1, ActivityGroup = 2}
 AllEnum.TutorialLevelLockType = {
@@ -1543,5 +1565,10 @@ AllEnum.HandBookTab = {
 	Skin = 1,
 	Disc = 2,
 	MainScreenCG = 3
+}
+AllEnum.PenguinCardSuitSprite = {
+	[GameEnum.PenguinBaseCardSuit.Blue] = "icon_PengCard_Water",
+	[GameEnum.PenguinBaseCardSuit.Red] = "icon_PengCard_Fire",
+	[GameEnum.PenguinBaseCardSuit.Green] = "icon_PengCard_Wind"
 }
 return AllEnum

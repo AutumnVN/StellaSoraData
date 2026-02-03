@@ -636,7 +636,7 @@ return {
 			"",
 			false,
 			"",
-			"Ugh, I'm wiped out, Iris!==W==Let's grab a drink, the peach one looks good.",
+			"Ugh, I'm wiped out, Iris!==W== Let's grab a drink, the peach one looks good.",
 			""
 		}
 	},
@@ -1210,7 +1210,7 @@ return {
 			"",
 			false,
 			"",
-			"Come on, don't they always say, \"when it's time to buy, you should just buy?\"",
+			"Come on, don't they always say, \"when it's time to buy, you should just buy\"?",
 			""
 		}
 	},

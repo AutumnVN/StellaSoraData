@@ -1,4 +1,7 @@
 require("GameCore.GameCore")
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
+local ResTypeAny = GameResourceLoader.ResType.Any
+local typeof = typeof
 NovaAPI.EnterModule("LoginModuleScene", true)
 if NovaAPI.IsEditorPlatform() then
 	local forEachLine_Story = function(mapLineData)

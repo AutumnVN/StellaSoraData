@@ -112,8 +112,8 @@ function ActivityDreamCtrl:RefreshTimeout()
 end
 function ActivityDreamCtrl:RefreshDate()
 	local nOpenMonth, nOpenDay, nEndMonth, nEndDay, nOpenYear, nEndYear = self.actData:GetActGroupDate()
-	local strOpenDay = string.format("%02d", nOpenDay)
-	local strEndDay = string.format("%02d", nEndDay)
+	local strOpenDay = string.format("%d", nOpenDay)
+	local strEndDay = string.format("%d", nEndDay)
 	local dateStr = string.format("%s/%s/%s ~ %s/%s/%s", nOpenYear, nOpenMonth, strOpenDay, nEndYear, nEndMonth, strEndDay)
 	NovaAPI.SetTMPText(self._mapNode.txtDate, dateStr)
 end

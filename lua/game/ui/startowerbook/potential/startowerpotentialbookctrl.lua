@@ -115,7 +115,15 @@ StarTowerPotentialBookCtrl._mapNodeConfig = {
 	},
 	imgSwitchOn = {},
 	imgSwitchOff = {},
-	redDotReward = {}
+	redDotReward = {},
+	btnReceiveAllPotential = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_ReceiveAllPotential"
+	},
+	TMPReceiveAllPotentialTitle = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Quest_Btn_ReceiveAll"
+	}
 }
 StarTowerPotentialBookCtrl._mapEventConfig = {
 	PotentialBookDataChange = "OnEvent_PotentialBookDataChange",
@@ -146,6 +154,7 @@ function StarTowerPotentialBookCtrl:Init()
 	self._mapNode.goPotentialList.gameObject:SetActive(false)
 	self._mapNode.goPotentialDetail.gameObject:SetActive(false)
 	self._mapNode.goBlur.gameObject:SetActive(false)
+	self:RefreshReceiveAllBtn()
 	self.mapPotentialBrief = PlayerData.StarTowerBook:GetCharPotentialBriefBook()
 	self:RefreshTab()
 	for k, v in ipairs(self._mapNode.tab) do
@@ -176,6 +185,7 @@ function StarTowerPotentialBookCtrl:Back()
 		self._mapNode.goPotentialDetail.gameObject:SetActive(false)
 		self._mapNode.goBlur.gameObject:SetActive(false)
 		self.bPotentialList = false
+		self:RefreshReceiveAllBtn()
 	else
 		EventManager.Hit("ChangeStarTowerBookPanel", AllEnum.StarTowerBookPanelType.Main)
 	end
@@ -288,6 +298,7 @@ function StarTowerPotentialBookCtrl:InitPotentialList()
 	self._mapNode.goPotentialList.gameObject:SetActive(true)
 	self._mapNode.goPotentialDetail.gameObject:SetActive(false)
 	self._mapNode.goBlur.gameObject:SetActive(false)
+	self._mapNode.btnReceiveAllPotential.gameObject:SetActive(false)
 	local mapCharCfg = ConfigTable.GetData_Character(self.nCharId)
 	if mapCharCfg ~= nil then
 		NovaAPI.SetTMPText(self._mapNode.txtCharName, mapCharCfg.Name)
@@ -388,6 +399,22 @@ end
 function StarTowerPotentialBookCtrl:SetSimpleState()
 	self._mapNode.imgSwitchOff.gameObject:SetActive(not self.bSimple)
 	self._mapNode.imgSwitchOn.gameObject:SetActive(self.bSimple)
+end
+function StarTowerPotentialBookCtrl:RefreshReceiveAllBtn()
+	self._mapNode.btnReceiveAllPotential.gameObject:SetActive(false)
+	local tbCharHave = PlayerData.Char:GetCharIdList()
+	for _, v in ipairs(tbCharHave) do
+		local nCharID = v.nId
+		local mapCharCfg = ConfigTable.GetData_Character(nCharID)
+		local bCanReceive = RedDotManager.GetValid(RedDotDefine.StarTowerBook_Potential_Reward, {
+			mapCharCfg.EET,
+			nCharID
+		})
+		if bCanReceive and not self.bPotentialList then
+			self._mapNode.btnReceiveAllPotential.gameObject:SetActive(true)
+			break
+		end
+	end
 end
 function StarTowerPotentialBookCtrl:Awake()
 	self.animRoot = self.gameObject:GetComponent("Animator")
@@ -510,6 +537,9 @@ function StarTowerPotentialBookCtrl:OnBtnClick_ChangeDesc()
 	self:SetSimpleState()
 	self._mapNode.potentialDetail:ChangeDesc(self.bSimple)
 end
+function StarTowerPotentialBookCtrl:OnBtnClick_ReceiveAllPotential()
+	PlayerData.StarTowerBook:SendReceiveAllPotentialRewardMsg()
+end
 function StarTowerPotentialBookCtrl:OnEvent_PotentialBookDataChange()
 	for _, v in pairs(self.mapCharGrids) do
 		v:RefreshCount()
@@ -529,5 +559,6 @@ function StarTowerPotentialBookCtrl:OnEvent_ReceivePotentialBookReward()
 		self._mapNode.btnReward.gameObject:SetActive(not bCanReceive)
 		self._mapNode.btnReceiveReward.gameObject:SetActive(bCanReceive)
 	end
+	self:RefreshReceiveAllBtn()
 end
 return StarTowerPotentialBookCtrl

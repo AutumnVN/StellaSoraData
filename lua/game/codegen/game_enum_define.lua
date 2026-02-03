@@ -94,6 +94,8 @@ GameEnum.roguelikeLevelStyle = {
 	TravelBoss_WuYu = 204,
 	JointDrill_01_JYMY = 251,
 	JointDrill_02_SZ = 252,
+	JointDrill_02_SZ_Red = 253,
+	JointDrill_02_SZ_Blue = 254,
 	VampireSurvivor_01 = 301,
 	VampireSurvivor_02 = 302,
 	VampireSurvivor_03 = 303,
@@ -106,7 +108,10 @@ GameEnum.roguelikeLevelStyle = {
 	StoryActivity_4_BOSS02 = 418,
 	StoryActivity_5 = 421,
 	StoryActivity_6 = 426,
+	StoryActivity_6_night = 427,
+	StoryActivity_6_BOSS01 = 428,
 	StoryActivity_7 = 431,
+	StoryActivity_7_Tow = 432,
 	StoryActivity_8 = 436,
 	StoryActivity_9 = 441,
 	Training = 901
@@ -235,7 +240,8 @@ GameEnum.dynamicLevelType = {
 	TowerDefense = 2,
 	Trial = 3,
 	Tutorial = 4,
-	JointDrill_2 = 5
+	JointDrill_2 = 5,
+	BattlePresetTeamEditor = 6
 }
 GameEnum.mainLineType = {Mainline = 1, Branchline = 2}
 GameEnum.hurtFlashTintType = {
@@ -663,6 +669,43 @@ GameEnum.achievementCond = {
 }
 GameEnum.activityAcceptCond = {WorldClassSpecific = 71}
 GameEnum.activityBreakoutCharUnlockCond = {ActivityBreakoutWinSpecificLevel = 117}
+GameEnum.activityQuestCompleteCond = {
+	ItemsAdd = 48,
+	ItemsDeplete = 49,
+	StoryClear = 63,
+	WorldClassSpecific = 71,
+	ActivityCookieLevelAccPackage = 96,
+	ActivityCookieLevelScore = 97,
+	ActivityCookieTypeAccPackage = 98,
+	ActivityCookieTypeAccPackCookie = 99,
+	ActivityCookieTypeAccRhythm = 100,
+	ActivityCookieTypeChallenge = 101,
+	ActivityScore = 107,
+	ActivityTypeAvgReadWithSpecificIdAndLevelId = 108,
+	ActivityTypeLevelPassedWithSpecificIdAndLevelId = 109,
+	ActivityTypeLevel3StarPassedWithSpecificIdAndLevelId = 110,
+	ActivityTypeLevelStarWithSpecificIdAndLevelTypeTotal = 111,
+	ActivityTypeLevelPassedWithSpecificIdAndLevelIdAndSpecificPositionAndCharElem = 112,
+	ActivityTypeLevelPassedSpecificIdTotal = 113,
+	ActivityStoryReadStory = 124,
+	ActivityBreakoutWinWithinSeconds = 125,
+	ActivityBreakoutWinRemainHP = 126,
+	ActivityBreakoutAccDefeatMonster = 127,
+	ActivityBreakoutAccBreakout = 128,
+	ActivityBreakoutAccDropCollect = 129,
+	ActivityBreakoutAccSpecificDropCollect = 130,
+	ActivityBreakoutAccCharBattleTimes = 131,
+	ActivityBreakoutWinAllSpecificTypeLevels = 132,
+	ActivityPenguinCardLevelPassedScore = 133,
+	ActivityPenguinCardLevelPassedWithStar = 134,
+	ActivityThrowGiftAccHitGift = 135,
+	ActivityThrowGiftAccScore = 136,
+	ActivityThrowGiftAccThrowGift = 137,
+	ActivityThrowGiftAccUseItem = 138,
+	ActivityThrowGiftLevelHitGift = 139,
+	ActivityThrowGiftLevelScore = 140,
+	ActivityThrowGiftLevelThrowGift = 141
+}
 GameEnum.chatCond = {
 	CharacterAcquire = 5,
 	CharacterSpecific = 10,
@@ -1738,7 +1781,9 @@ GameEnum.activityType = {
 	BDConvert = 14,
 	Breakout = 15,
 	TrekkerVersus = 16,
-	Story = 17
+	Story = 17,
+	PenguinCard = 18,
+	ThrowGift = 19
 }
 GameEnum.activityOpenType = {
 	None = 0,
@@ -2223,7 +2268,8 @@ GameEnum.miningSupportEffect = {
 	Char134 = 10,
 	Char156 = 11,
 	Npc132 = 12,
-	Max = 13
+	ProbRefundConsumeOnEmptyDigDestroy = 13,
+	Max = 14
 }
 GameEnum.scoreBossBehavior = {
 	TriggerEarthTag = 1,
@@ -2398,7 +2444,9 @@ GameEnum.activityThemeType = {
 	Dream_10102 = 3,
 	BreakOut_30101 = 4,
 	Christmas_20101 = 5,
-	Miracle_10103 = 5
+	Miracle_10103 = 6,
+	Spring_10104 = 7,
+	WinterNight_10105 = 8
 }
 GameEnum.ActivityLevelType = {
 	Explore = 1,
@@ -2432,7 +2480,8 @@ GameEnum.PopRefreshType = {
 GameEnum.PopJumpType = {
 	None = 1,
 	ActivityJump = 2,
-	NormalJump = 3
+	NormalJump = 3,
+	JumpToUrl = 4
 }
 GameEnum.PopUpOpenType = {
 	None = 0,
@@ -2527,7 +2576,8 @@ GameEnum.BdRequest = {
 	BdMainCharElementNum = 6,
 	BdCharElementNum = 7,
 	BdCharJobNum = 8,
-	BdActivateSkillLevelNum = 9
+	BdActivateSkillLevelNum = 9,
+	BdAllCharElement = 10
 }
 GameEnum.ActivityBreakoutLevelType = {
 	Entry = 1,
@@ -2536,4 +2586,85 @@ GameEnum.ActivityBreakoutLevelType = {
 	Expert = 4
 }
 GameEnum.JointDrillMode = {JointDrill_Mode_1 = 1, JointDrill_Mode_2 = 2}
+GameEnum.PenguinBaseCardSuit = {
+	Red = 1,
+	Blue = 2,
+	Green = 3,
+	All = 4,
+	Empty = 5
+}
+GameEnum.PenguinCardTriggerPhase = {
+	Dealing = 1,
+	Flip = 2,
+	Settlement = 3
+}
+GameEnum.PenguinCardTriggerType = {
+	None = 1,
+	SuitCards = 2,
+	SuitCount = 3,
+	HandRankSuitCount = 4,
+	BaseCardId = 5
+}
+GameEnum.PenguinCardTriggerLimit = {
+	None = 1,
+	Round = 2,
+	Turn = 3,
+	Game = 4
+}
+GameEnum.PenguinCardEffectType = {
+	ReplaceBaseCard = 1,
+	AddBaseCardWeight = 2,
+	IncreaseBasicChips = 3,
+	IncreaseMultiplier = 4,
+	MultiMultiplier = 5
+}
+GameEnum.ThrowGiftSpawnPointType = {
+	None = 0,
+	Type1 = 1,
+	Type2 = 2
+}
+GameEnum.ThrowGiftSpawnCond = {
+	Partial = 1,
+	All = 2,
+	Random = 3
+}
+GameEnum.SpecialObstacleType = {Score = 1, Obstacle = 2}
+GameEnum.MallPackageRarity = {
+	White = 1,
+	Green = 2,
+	Gold = 3,
+	Pink = 4
+}
+GameEnum.MallAdvRecommendItemType = {
+	None = 0,
+	MonthlyCard = 1,
+	BattlePass = 2,
+	Package = 3,
+	Skin = 4
+}
+GameEnum.StoryPreviewType = {
+	None = 0,
+	MainlineStory = 1,
+	StorySet = 2,
+	ActivityStory = 3
+}
+GameEnum.ThrowGiftDifficulty = {
+	Easy = 1,
+	Normal = 2,
+	Speed = 3,
+	Blind = 4
+}
+GameEnum.ThrowGiftLevelCond = {
+	ThrowCount = 1,
+	HitCount = 2,
+	Score = 3,
+	ThrowCountAfterTime = 4,
+	HitCountAfterTime = 5,
+	ScoreAfterTime = 6
+}
+GameEnum.AgentQuality = {
+	Quality1 = 1,
+	Quality2 = 2,
+	Quality3 = 3
+}
 return GameEnum

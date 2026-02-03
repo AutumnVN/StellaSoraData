@@ -273,8 +273,8 @@ function JumpUtil.JumpTo(jumpId, ...)
 		local tbCharInfoPanelId = {
 			[1] = PanelId.CharInfo,
 			[2] = PanelId.CharSkill,
-			[3] = PanelId.CharEquipment,
-			[4] = PanelId.CharPotential,
+			[3] = PanelId.CharPotential,
+			[4] = PanelId.CharEquipment,
 			[5] = PanelId.CharTalent,
 			[6] = PanelId.CharacterRelation
 		}

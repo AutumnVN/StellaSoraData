@@ -19,8 +19,12 @@ local BdConvertData = require("GameCore.Data.DataClass.Activity.BdConvertData")
 local BreakOut_30101Data = require("GameCore.Data.DataClass.Activity.BreakOut_30101Data")
 local BreakOutData = require("GameCore.Data.DataClass.Activity.BreakOutData")
 local TrekkerVersusData = require("GameCore.Data.DataClass.Activity.TrekkerVersusData")
+local ThrowGiftData = require("GameCore.Data.DataClass.Activity.ThrowGiftData")
 local Christmas_20101Data = require("GameCore.Data.DataClass.Activity.Christmas_20101Data")
 local Miracle_10103Data = require("GameCore.Data.DataClass.Activity.Miracle_10103Data")
+local SpringFestival_10104Data = require("GameCore.Data.DataClass.Activity.SpringFestival_10104Data")
+local WinterNight_10105Data = require("GameCore.Data.DataClass.Activity.WinterNight_10105Data")
+local PenguinCardActData = require("GameCore.Data.DataClass.Activity.PenguinCardActData")
 function PlayerActivityData:Init()
 	self.bCacheActData = false
 	self.tbAllActivity = {}
@@ -122,9 +126,13 @@ function PlayerActivityData:CacheAllActivityData(mapNetMsg)
 				elseif actCfg.ActivityType == GameEnum.activityType.BDConvert then
 					self:RefreshBdConvertData(nActId, v.BdConvert)
 				elseif actCfg.ActivityType == GameEnum.activityType.Breakout then
-					self:RefreshBreakOutData(nActId, v.Breakout)
+					self:RefreshBreakOutData(nActId, v.Milkout)
 				elseif actCfg.ActivityType == GameEnum.activityType.TrekkerVersus then
 					self:RefreshTrekkerVersusData(nActId, v.TrekkerVersus)
+				elseif actCfg.ActivityType == GameEnum.activityType.ThrowGift then
+					self:RefreshThrowGiftData(nActId, v.ThrowGift)
+				elseif actCfg.ActivityType == GameEnum.activityType.PenguinCard then
+					self:RefreshPenguinCardActData(nActId, v.PenguinCard)
 				end
 			end
 		end
@@ -215,6 +223,10 @@ function PlayerActivityData:CreateActivityIns(actData)
 		actIns = BreakOutData.new(actData)
 	elseif actCfg.ActivityType == GameEnum.activityType.TrekkerVersus then
 		actIns = TrekkerVersusData.new(actData)
+	elseif actCfg.ActivityType == GameEnum.activityType.ThrowGift then
+		actIns = ThrowGiftData.new(actData)
+	elseif actCfg.ActivityType == GameEnum.activityType.PenguinCard then
+		actIns = PenguinCardActData.new(actData)
 	end
 	if actIns ~= nil then
 		self.tbAllActivity[actData.Id] = actIns
@@ -308,6 +320,10 @@ function PlayerActivityData:CreateActivityGroupIns(actData)
 			actIns = Christmas_20101Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Miracle_10103 then
 			actIns = Miracle_10103Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Spring_10104 then
+			actIns = SpringFestival_10104Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.WinterNight_10105 then
+			actIns = WinterNight_10105Data.new(actData)
 		end
 		self.tbAllActivityGroup[actData.Id] = actIns
 		PlayerData.ActivityAvg:RefreshAvgRedDot()
@@ -359,7 +375,10 @@ function PlayerActivityData:GetMainviewShowActivityGroup()
 	local tbShowList = {}
 	for _, actGroupData in pairs(self.tbAllActivityGroup) do
 		if actGroupData:CheckActGroupShow() and actGroupData:IsUnlockShow() then
-			table.insert(tbShowList, actGroupData)
+			local actGroupCfg = actGroupData:GetActGroupCfgData()
+			if actGroupCfg ~= nil and actGroupCfg.EnterRes ~= nil and actGroupCfg.EnterRes ~= "" then
+				table.insert(tbShowList, actGroupData)
+			end
 		end
 	end
 	table.sort(tbShowList, function(a, b)
@@ -413,7 +432,7 @@ function PlayerActivityData:RefreshSingleQuest(questData)
 			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 		end
 	elseif actCfg.ActivityType == GameEnum.activityType.JointDrill then
-		PlayerData.JointDrill:RefreshQuestData(questData)
+		self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 	elseif actCfg.ActivityType == GameEnum.activityType.Task then
 		self.tbAllActivity[questData.ActivityId]:RefreshSingleQuest(questData)
 		EventManager.Hit("RefreshActivityTask")
@@ -425,7 +444,15 @@ function PlayerActivityData:RefreshSingleQuest(questData)
 		if nil ~= self.tbAllActivity[questData.ActivityId] then
 			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 		end
-	elseif actCfg.ActivityType == GameEnum.activityType.TrekkerVersus and nil ~= self.tbAllActivity[questData.ActivityId] then
+	elseif actCfg.ActivityType == GameEnum.activityType.TrekkerVersus then
+		if nil ~= self.tbAllActivity[questData.ActivityId] then
+			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
+		end
+	elseif actCfg.ActivityType == GameEnum.activityType.ThrowGift then
+		if nil ~= self.tbAllActivity[questData.ActivityId] then
+			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
+		end
+	elseif actCfg.ActivityType == GameEnum.activityType.PenguinCard and nil ~= self.tbAllActivity[questData.ActivityId] then
 		self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 	end
 end
@@ -518,6 +545,16 @@ end
 function PlayerActivityData:RefreshTrekkerVersusData(nActId, msgData)
 	if nil ~= self.tbAllActivity[nActId] then
 		self.tbAllActivity[nActId]:RefreshTrekkerVersusData(nActId, msgData)
+	end
+end
+function PlayerActivityData:RefreshThrowGiftData(nActId, msgData)
+	if nil ~= self.tbAllActivity[nActId] then
+		self.tbAllActivity[nActId]:RefreshThrowGiftData(nActId, msgData)
+	end
+end
+function PlayerActivityData:RefreshPenguinCardActData(nActId, msgData)
+	if nil ~= self.tbAllActivity[nActId] then
+		self.tbAllActivity[nActId]:RefreshPenguinCardActData(msgData)
 	end
 end
 function PlayerActivityData:RefreshActivityLevelGameActData(nActId, msgData)

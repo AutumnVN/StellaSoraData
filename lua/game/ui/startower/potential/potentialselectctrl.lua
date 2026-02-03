@@ -477,11 +477,13 @@ end
 function PotentialSelectCtrl:OnBtnClick_Confirm()
 	if self.nSelectIdx ~= 0 and self.callback ~= nil then
 		local completeFunc = function(nEventId, tbPotential, mapPotential, nType, nLevel, tbNewIds, mapRoll, nCoin, tbLuckyIds, tbRecommend)
+			EventManager.Hit(EventId.BlockInput, false)
 			self:SelectComplete(nEventId, tbPotential, mapPotential, nType, nLevel, tbNewIds, mapRoll, nCoin, tbLuckyIds, tbRecommend)
 			if self.nPanelType == 2 then
 				PlayerData.Voice:PlayCharVoice("thankLvup", 9133, nil, true)
 			end
 		end
+		EventManager.Hit(EventId.BlockInput, true)
 		self.callback(self.nSelectIdx, self.nEventId, completeFunc)
 	end
 end
@@ -494,8 +496,10 @@ function PotentialSelectCtrl:OnBtnClick_Roll()
 		return
 	end
 	local completeFunc = function(nEventId, tbPotential, mapPotential, nType, nLevel, tbNewIds, mapRoll, nCoin, tbLuckyIds, tbRecommend)
+		EventManager.Hit(EventId.BlockInput, false)
 		self:Refresh(nEventId, tbPotential, mapPotential, nType, nLevel, tbNewIds, mapRoll, nCoin, tbLuckyIds, true, tbRecommend)
 	end
+	EventManager.Hit(EventId.BlockInput, true)
 	self.callback(self.nSelectIdx, self.nEventId, completeFunc, true)
 end
 function PotentialSelectCtrl:OnBtnSelect_PotentialItem(btn, nIndex)

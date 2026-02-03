@@ -380,7 +380,7 @@ function PlayerItemData:AutoFillMat(tbNeedItem)
 		local mapItemCfgDataA = ConfigTable.GetData_Item(a.nId)
 		local mapItemCfgDataB = ConfigTable.GetData_Item(b.nId)
 		if mapItemCfgDataA and mapItemCfgDataB and mapItemCfgDataA.Rarity ~= mapItemCfgDataB.Rarity then
-			return mapItemCfgDataA.Rarity < mapItemCfgDataB.Rarity
+			return mapItemCfgDataA.Rarity > mapItemCfgDataB.Rarity
 		end
 		return a.nId < b.nId
 	end

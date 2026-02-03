@@ -91,7 +91,19 @@ NpcOptionCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_NoteDetail"
 	},
-	imgNote = {sComponentName = "Image", nCount = 9}
+	imgNote = {sComponentName = "Image", nCount = 9},
+	imgOutfitSkillBg = {},
+	TMPOutfitSkillInfoTitle = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "STShop_OutfitSkillInfoTitle"
+	},
+	lstOutfitSkillInfo = {
+		sComponentName = "LoopScrollView"
+	},
+	animOutfitSkillBg = {
+		sNodeName = "imgOutfitSkillBg",
+		sComponentName = "Animator"
+	}
 }
 NpcOptionCtrl._mapEventConfig = {
 	RefreshStarTowerCoin = "OnEvent_SetCoin",
@@ -113,6 +125,7 @@ end
 function NpcOptionCtrl:OnEnable()
 	self.bShowNote = false
 	self._mapNode.goAllNoteList.gameObject:SetActive(false)
+	self._mapNode.imgOutfitSkillBg:SetActive(false)
 	self.nSelectIdx = 0
 	self.nNoteEventId = 0
 	self._mapNode.rtPanel.transform.localPosition = self.PanelOffset
@@ -142,6 +155,7 @@ function NpcOptionCtrl:OnEnable()
 		self.nCoin = tbParams[12]
 		self.nStarTowerId = tbParams[13]
 		self.tbNote = tbParams[14]
+		self.tbDisc = tbParams[15]
 		NovaAPI.SetTMPText(self._mapNode.txtCoinCount, self:ThousandsNumber(self.nCoin))
 		self._mapNode.imgMask.gameObject:SetActive(false)
 		self._mapNode.goContent.gameObject:SetActive(false)
@@ -446,30 +460,139 @@ end
 function NpcOptionCtrl:RefreshNoteList()
 	self.bShowNote = true
 	self._mapNode.goAllNoteList:SetActive(true)
-	local tbShowNote = {}
+	self.tbShowNote = {}
 	local mapCfg = ConfigTable.GetData("StarTower", self.nStarTowerId)
 	if mapCfg ~= nil then
 		local nDropGroup = mapCfg.SubNoteSkillDropGroupId
 		local tbNoteDrop = CacheTable.GetData("_SubNoteSkillDropGroup", nDropGroup)
 		if tbNoteDrop ~= nil then
 			for _, v in ipairs(tbNoteDrop) do
-				table.insert(tbShowNote, v.SubNoteSkillId)
+				table.insert(self.tbShowNote, v.SubNoteSkillId)
 			end
 		end
 	end
-	table.sort(tbShowNote, function(a, b)
+	table.sort(self.tbShowNote, function(a, b)
 		return a < b
 	end)
+	self.mapNoteNeed = {}
+	if self.tbDisc ~= nil then
+		for nIndex, nDiscId in ipairs(self.tbDisc) do
+			if 3 < nIndex then
+				break
+			end
+			local mapDiscData = PlayerData.Disc:GetDiscById(nDiscId)
+			if mapDiscData ~= nil then
+				local tbNeedNote = mapDiscData.tbSkillNeedNote
+				for _, mapNeedNote in ipairs(tbNeedNote) do
+					if self.mapNoteNeed[mapNeedNote.nId] == nil then
+						self.mapNoteNeed[mapNeedNote.nId] = 0
+					end
+					self.mapNoteNeed[mapNeedNote.nId] = self.mapNoteNeed[mapNeedNote.nId] + mapNeedNote.nCount
+				end
+			end
+		end
+	end
 	for k, v in ipairs(self._mapNode.imgNote) do
-		local nNoteId = tbShowNote[k]
+		local nNoteId = self.tbShowNote[k]
 		v.gameObject:SetActive(nNoteId ~= nil)
 		if nNoteId ~= nil then
 			local mapNoteCfg = ConfigTable.GetData("SubNoteSkill", nNoteId)
 			if nil ~= mapNoteCfg then
-				self:SetPngSprite(v, mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+				local sIconPath = mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small
+				local nNoteNeed = self.mapNoteNeed[nNoteId]
+				if nNoteNeed ~= nil and 0 < nNoteNeed then
+					sIconPath = mapNoteCfg.Icon .. AllEnum.DiscSkillIconSurfix.S_Light
+				end
+				self:SetPngSprite(v, sIconPath)
 			end
 			local tmpCount = v.gameObject.transform:Find("txtNoteCount"):GetComponent("TMP_Text")
 			NovaAPI.SetTMPText(tmpCount, self.tbNote[nNoteId] or 0)
+		end
+	end
+	local tbOutFitId = {}
+	for i = 1, 3 do
+		if self.tbDisc[i] ~= nil then
+			table.insert(tbOutFitId, self.tbDisc[i])
+		end
+	end
+	self.tbShowInfo = {}
+	local mapSkillId = {}
+	for _, nNoteId in pairs(self.tbShowNote) do
+		local tbSkill = PlayerData.Disc:GetDiscSkillByNoteCurrentLevel(tbOutFitId, self.tbNote, nNoteId)
+		if tbSkill ~= nil then
+			for k, mapData in pairs(tbSkill) do
+				if mapSkillId[mapData.nId] ~= true then
+					local mapSkillCfg = ConfigTable.GetData("SecondarySkill", mapData.nId)
+					if mapSkillCfg ~= nil then
+						local tbGroup = CacheTable.GetData("_SecondarySkill", mapSkillCfg.GroupId)
+						local nMaxLevel = tbGroup ~= nil and #tbGroup or 1
+						local nCurrentLevel = mapSkillCfg.Level or 1
+						if nMaxLevel > nCurrentLevel then
+							local tbNoteInfo = {}
+							for nTid, nCount in pairs(mapData.tbNote) do
+								table.insert(tbNoteInfo, {nTid, nCount})
+							end
+							table.insert(self.tbShowInfo, {
+								nId = mapData.nId,
+								tbNote = tbNoteInfo
+							})
+							mapSkillId[mapData.nId] = true
+						end
+					end
+				end
+			end
+		end
+	end
+	if 0 < #self.tbShowInfo then
+		self._mapNode.imgOutfitSkillBg:SetActive(true)
+		self._mapNode.lstOutfitSkillInfo:Init(#self.tbShowInfo, self, self.OnDiscSkillInfoGridRefresh)
+	else
+		self._mapNode.imgOutfitSkillBg:SetActive(false)
+	end
+end
+function NpcOptionCtrl:OnDiscSkillInfoGridRefresh(goGrid, nIdx)
+	local mapSkill = self.tbShowInfo[nIdx + 1]
+	local tbNoteCount = {}
+	local tbimgIconCount = {}
+	local TMPSkillTitle = goGrid.transform:Find("btnGrid/AnimRoot/TMPSkillTitle"):GetComponent("TMP_Text")
+	local imgIcon = goGrid.transform:Find("btnGrid/AnimRoot/imgIconBg/imgIcon"):GetComponent("Image")
+	local imgIconBg = goGrid.transform:Find("btnGrid/AnimRoot/imgIconBg"):GetComponent("Image")
+	tbNoteCount[1] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount1"):GetComponent("TMP_Text")
+	tbNoteCount[2] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount2"):GetComponent("TMP_Text")
+	tbNoteCount[3] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount3"):GetComponent("TMP_Text")
+	tbimgIconCount[1] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount1/imgIconCount1"):GetComponent("Image")
+	tbimgIconCount[2] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount2/imgIconCount2"):GetComponent("Image")
+	tbimgIconCount[3] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount3/imgIconCount3"):GetComponent("Image")
+	local mapSkillCfg = ConfigTable.GetData("SecondarySkill", mapSkill.nId)
+	if mapSkillCfg == nil then
+		goGrid:SetActive(false)
+		return
+	else
+		goGrid:SetActive(true)
+	end
+	NovaAPI.SetTMPText(TMPSkillTitle, mapSkillCfg.Name)
+	self:SetPngSprite(imgIcon, mapSkillCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
+	self:SetPngSprite(imgIconBg, mapSkillCfg.IconBg .. AllEnum.DiscSkillIconSurfix.Small)
+	for i = 1, 3 do
+		if mapSkill.tbNote[i] ~= nil then
+			tbNoteCount[i].gameObject:SetActive(true)
+			tbimgIconCount[i].gameObject:SetActive(true)
+			local mapNote = ConfigTable.GetData("SubNoteSkill", mapSkill.tbNote[i][1])
+			if mapNote ~= nil then
+				local sNoteIconPath = mapNote.Icon .. AllEnum.DiscSkillIconSurfix.Small
+				self:SetPngSprite(tbimgIconCount[i], sNoteIconPath)
+			end
+			local nCurCount = self.tbNote[mapSkill.tbNote[i][1]] == nil and 0 or self.tbNote[mapSkill.tbNote[i][1]]
+			local sCount = ""
+			if nCurCount >= mapSkill.tbNote[i][2] then
+				sCount = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_4"), nCurCount, mapSkill.tbNote[i][2])
+			else
+				sCount = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_5"), nCurCount, mapSkill.tbNote[i][2])
+			end
+			NovaAPI.SetTMPText(tbNoteCount[i], sCount)
+		else
+			tbNoteCount[i].gameObject:SetActive(false)
+			tbimgIconCount[i].gameObject:SetActive(false)
 		end
 	end
 end
@@ -495,6 +618,7 @@ function NpcOptionCtrl:ClosePanel(bOnlyTalk, nSelectIdx, nEventId)
 		end
 		EventManager.Hit(EventId.ClosePanel, PanelId.NpcOptionPanel)
 	end
+	self._mapNode.animOutfitSkillBg:Play("imgOutfitSkillBg_out")
 	if bOnlyTalk then
 		self._mapNode.ainPanel:Play("NpcOptionTalk_out")
 		EventManager.Hit(EventId.TemporaryBlockInput, 0.4, callback)
@@ -516,6 +640,7 @@ function NpcOptionCtrl:OnBtn_Close()
 		end
 		EventManager.Hit(EventId.ClosePanel, PanelId.NpcOptionPanel)
 	end
+	self._mapNode.animOutfitSkillBg:Play("imgOutfitSkillBg_out")
 	if self.nType == 1 then
 		self._mapNode.ainPanel:Play("NpcOptionSelect_out")
 	else

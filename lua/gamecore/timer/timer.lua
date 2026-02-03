@@ -15,6 +15,7 @@ function Timer:ctor(mapParam)
 	self._bDestroyWhenComplete = mapParam.bDestroyWhenComplete
 	self._nCurCount = 0
 	self._nTargetCount = mapParam.nTargetCount
+	self._nDelTime = 0
 	self._nElapsed = 0
 	self._nInterval = mapParam.nInterval
 	self._nScaleType = mapParam.nScaleType
@@ -26,12 +27,17 @@ function Timer:ctor(mapParam)
 	self._nRange = 0
 	self._bDebugWatch = false
 end
-function Timer:_Run(nCurTS)
-	if type(self._nInterval) ~= "number" or self._nInterval <= 0 or self._callback == nil then
+function Timer:_Run(nCurTS, nDelTime)
+	if type(self._nInterval) ~= "number" or self._callback == nil then
 		self:Cancel(false)
 		return
 	end
 	if self._status ~= TimerStatus.Running then
+		return
+	end
+	self._nDelTime = nDelTime
+	if self._nInterval <= 0 then
+		self:_DoCallback()
 		return
 	end
 	self._nElapsed = self._nElapsed + (nCurTS - self._nTS)
@@ -218,6 +224,9 @@ function Timer:SetSpeed(rate)
 end
 function Timer:IsUnused()
 	return self._status == TimerStatus.Destroy
+end
+function Timer:GetDelTime()
+	return self._nDelTime
 end
 function Timer:PrintSelf()
 	local tb = {

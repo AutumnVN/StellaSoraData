@@ -27,6 +27,12 @@ function StorySetChapterItemCtrl:PlayAnim(bIn)
 	self._mapNode.animRoot:Play(sAnimName)
 	return nAnimLen
 end
+function StorySetChapterItemCtrl:PlayOutAnim()
+	local sAnimName = "StorySetPanel_chapter_out2"
+	local nAnimLen = NovaAPI.GetAnimClipLength(self._mapNode.animRoot, {sAnimName})
+	self._mapNode.animRoot:Play(sAnimName)
+	return nAnimLen
+end
 function StorySetChapterItemCtrl:RefreshItem(data)
 	self.bUnlock = true
 	local bEmpty = false
@@ -93,10 +99,16 @@ function StorySetChapterItemCtrl:RefreshItem(data)
 				NovaAPI.SetTMPText(self._mapNode.txtChapterName, mapCfg.Name)
 			end
 			local bHighLight = mapCfg.IsHighLight
-			bHighLight = bHighLight and RedDotManager.GetValid(RedDotDefine.Story_Set_Chapter, data.nId)
+			bHighLight = bHighLight and RedDotManager.GetValid(RedDotDefine.Story_Set_Chapter, {
+				mapCfg.TabId,
+				data.nId
+			})
 			self._mapNode.goHighLight.gameObject:SetActive(bHighLight)
 		end
-		RedDotManager.RegisterNode(RedDotDefine.Story_Set_Chapter, data.nId, self._mapNode.goRedDot, nil, nil, true)
+		RedDotManager.RegisterNode(RedDotDefine.Story_Set_Chapter, {
+			mapCfg.TabId,
+			data.nId
+		}, self._mapNode.goRedDot, nil, nil, true)
 	end
 	self._mapNode.goEmpty.gameObject:SetActive(bEmpty)
 	self._mapNode.goItem.gameObject:SetActive(not bEmpty)

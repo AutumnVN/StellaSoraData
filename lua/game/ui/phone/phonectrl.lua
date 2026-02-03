@@ -379,6 +379,13 @@ function PhoneCtrl:RefreshCharList(bMax)
 		self._mapNode.giftListLSV:Init(#self.mapCharList, self, self.OnGiftGridRefresh, self.OnGiftGridBtnClick, bKeepPos)
 	end
 	self._mapNode.goGift:Refresh(self._panel.nSelectCharId)
+	if self.bSetGridPos ~= nil and self.bSetGridPos then
+		local wait = function()
+			coroutine.yield(CS.UnityEngine.WaitForSeconds(0.5))
+			self:SetGiftScrollGridPos()
+		end
+		cs_coroutine.start(wait)
+	end
 end
 function PhoneCtrl:OnGiftGridRefresh(goGrid, gridIndex)
 	local nIndex = gridIndex + 1
@@ -444,6 +451,11 @@ function PhoneCtrl:RefreshDatingCharList()
 	local bKeepPos = self.nSelectIndex ~= 1
 	self._mapNode.datingListLSV:Init(#self.mapCharList, self, self.OnDatingGridRefresh, self.OnDatingGridBtnClick, bKeepPos)
 	self._mapNode.goDating:Refresh(self._panel.nSelectCharId)
+end
+function PhoneCtrl:SetGiftScrollGridPos()
+	if self.nSelectIndex ~= nil then
+		self._mapNode.giftListLSV:SetScrollGridPos(self.nSelectIndex - 1, 0.5)
+	end
 end
 function PhoneCtrl:OnDatingGridRefresh(goGrid, gridIndex)
 	local nIndex = gridIndex + 1
@@ -511,6 +523,10 @@ function PhoneCtrl:Awake()
 	local tbParam = self:GetPanelParam()
 	if nil ~= tbParam and nil ~= tbParam[1] then
 		self._panel.nCurTog = tbParam[1]
+		if nil ~= tbParam[2] then
+			self._panel.nSelectCharId = tbParam[2]
+		end
+		self.bSetGridPos = tbParam[3]
 	end
 end
 function PhoneCtrl:OnEnable()

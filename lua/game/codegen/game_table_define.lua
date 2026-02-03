@@ -33,6 +33,18 @@ GameTableDefine.CommonTable = {
 			"Desc"
 		}
 	},
+	ActivityPenguinCardLevel = {
+		Key = true,
+		Lang = {"Name"}
+	},
+	ActivityPenguinCardQuest = {
+		Key = true,
+		Lang = {"Desc"}
+	},
+	ActivityPenguinCardQuestGroup = {
+		Key = true,
+		Lang = {"GroupName"}
+	},
 	ActivityShop = {
 		Key = true,
 		Lang = {"Name"}
@@ -55,7 +67,10 @@ GameTableDefine.CommonTable = {
 		Lang = {"Title", "Desc"}
 	},
 	ActivityTaskControl = {},
-	ActivityTaskGroup = {Key = true},
+	ActivityTaskGroup = {
+		Key = true,
+		Lang = {"TabText"}
+	},
 	AdControl = {Key = true},
 	AddBuffAction = {Key = true},
 	AffinityGift = {Key = true},
@@ -148,9 +163,13 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Name"}
 	},
+	BreakOutControl = {Key = true},
 	BreakOutEnemySpr = {Key = true},
 	BreakOutFloor = {Key = true},
-	BreakOutLevel = {Key = true},
+	BreakOutLevel = {
+		Key = true,
+		Lang = {"Name", "Desc"}
+	},
 	Buff = {Key = true},
 	BuffEffect = {Key = true},
 	BuffValue = {Key = true},
@@ -210,6 +229,7 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Name", "Desc"}
 	},
+	CharacterSkinOverlap = {Key = true},
 	CharacterSkinPanelFace = {Key = true},
 	CharacterSkinTheme = {
 		Key = true,
@@ -545,7 +565,7 @@ GameTableDefine.CommonTable = {
 	JointDrill_2_FloorChange = {Key = true},
 	JointDrill_2_Level = {
 		Key = true,
-		Lang = {"SubName"}
+		Lang = {"SubName", "LevelName"}
 	},
 	JointDrill_2_MonsterGroup = {Key = true},
 	JumpTo = {
@@ -589,13 +609,18 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Name", "Desc"}
 	},
+	MallAdvRecommend = {Key = true},
 	MallGem = {
 		Key = true,
 		Lang = {"Name", "Desc"}
 	},
 	MallMonthlyCard = {
 		Key = true,
-		Lang = {"Name"}
+		Lang = {
+			"Name",
+			"Desc",
+			"Name2"
+		}
 	},
 	MallPackage = {
 		Key = true,
@@ -606,6 +631,10 @@ GameTableDefine.CommonTable = {
 		}
 	},
 	MallPackagePage = {
+		Key = true,
+		Lang = {"Name"}
+	},
+	MallRecommendGroup = {
 		Key = true,
 		Lang = {"Name"}
 	},
@@ -690,6 +719,27 @@ GameTableDefine.CommonTable = {
 			"Tips"
 		}
 	},
+	PenguinBaseCard = {
+		Key = true,
+		Lang = {"Title"}
+	},
+	PenguinBaseCardPool = {Key = true},
+	PenguinCard = {
+		Key = true,
+		Lang = {"Title", "Desc"}
+	},
+	PenguinCardControl = {
+		Key = true,
+		Lang = {"DesText"}
+	},
+	PenguinCardCost = {Key = true},
+	PenguinCardFixedTurn = {Key = true},
+	PenguinCardFloor = {Key = true},
+	PenguinCardHandRank = {
+		Key = true,
+		Lang = {"Title", "Desc"}
+	},
+	PenguinCardWeight = {Key = true},
 	PeriodicQuest = {
 		Key = true,
 		Lang = {"Title"}
@@ -933,6 +983,10 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Name"}
 	},
+	StoryPreview = {
+		Key = true,
+		Lang = {"Title"}
+	},
 	StoryRolePersonality = {
 		Key = true,
 		Lang = {
@@ -960,6 +1014,10 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Title", "Desc"}
 	},
+	StorySetTab = {
+		Key = true,
+		Lang = {"TabName"}
+	},
 	SubNoteSkill = {
 		Key = true,
 		Lang = {
@@ -981,6 +1039,22 @@ GameTableDefine.CommonTable = {
 	TestCharacterAtt = {Key = true},
 	TestCharacterList = {Key = true},
 	TestTeamData = {Key = true},
+	ThrowGiftFloor = {Key = true},
+	ThrowGiftItem = {
+		Key = true,
+		Lang = {"Name", "Desc"}
+	},
+	ThrowGiftItemPool = {Key = true},
+	ThrowGiftLevel = {
+		Key = true,
+		Lang = {
+			"DifficultyName",
+			"LevelName",
+			"ThrowGiftLevelCondDesc"
+		}
+	},
+	ThrowGiftSpawnPoints = {Key = true},
+	ThrowGiftSpecialObstacle = {Key = true},
 	Title = {
 		Key = true,
 		Lang = {"Desc"}

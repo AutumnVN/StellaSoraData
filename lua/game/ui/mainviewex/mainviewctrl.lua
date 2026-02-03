@@ -84,11 +84,6 @@ MainViewCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Friend"
 	},
-	btnActivityTask = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_ActivityTask"
-	},
-	imgActivityTask = {sComponentName = "Image"},
 	btnActivity = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Activity"
@@ -227,21 +222,14 @@ MainViewCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "MainView_Shop"
 	},
-	btnJointDrillFast = {
+	btnActivityFast = {
+		nCount = 3,
 		sComponentName = "UIButton",
-		callback = "OnBtnClick_JointDrillFast"
+		callback = "OnBtnClick_ActivityFast"
 	},
-	imgJointDrillFastBg = {sComponentName = "Image"},
-	btnTowerDefenseFast = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_TowerDefenseFast"
-	},
-	imgTowerDefenseFastBg = {sComponentName = "Image"},
-	btnTrekkerVersusFast = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_TrekkerVersusFast"
-	},
-	imgTrekkerVersusFastBg = {sComponentName = "Image"},
+	imgActivityFastBg = {nCount = 3, sComponentName = "Image"},
+	goActivityFastRedDot = {nCount = 3},
+	goActivityFastRedDotNew = {nCount = 3},
 	btnRecruit = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Recruit"
@@ -306,6 +294,7 @@ MainViewCtrl._mapNodeConfig = {
 	redDotBattlePass = {},
 	redDotNotice = {},
 	redDotMall = {},
+	redDotMallNew = {},
 	redDotMenu = {},
 	redDotTask = {},
 	redDotQuestNewbie = {},
@@ -327,7 +316,6 @@ MainViewCtrl._mapNodeConfig = {
 	goRedDotDispatch = {},
 	activityRedDot_ = {nCount = 3},
 	activityRedDotNew_ = {nCount = 3},
-	goTrekkerVersusFastRedDot = {},
 	LockQuestNewbie = {},
 	LockTask = {},
 	LockRecruit = {},
@@ -365,7 +353,6 @@ MainViewCtrl._mapRedDotConfig = {
 	[RedDotDefine.Notice] = {
 		sNodeName = "redDotNotice"
 	},
-	[RedDotDefine.Mall] = {sNodeName = "redDotMall"},
 	[RedDotDefine.Menu] = {sNodeName = "redDotMenu"},
 	[RedDotDefine.Task] = {sNodeName = "redDotTask"},
 	[RedDotDefine.TaskNewbie] = {
@@ -393,9 +380,6 @@ MainViewCtrl._mapRedDotConfig = {
 	[RedDotDefine.Map] = {sNodeName = "redDotMap"},
 	[RedDotDefine.Map_MainLine] = {
 		sNodeName = "redDotMainline"
-	},
-	[RedDotDefine.TrekkerVersusQuest] = {
-		sNodeName = "goTrekkerVersusFastRedDot"
 	}
 }
 local view_state = {
@@ -424,21 +408,30 @@ function MainViewCtrl:RefreshShow()
 	self:RefreshNewbieQuestState()
 	self:RefreshComFuncState()
 	self:RefreshLeftActivityList()
-	self:RefreshActivityTask()
 	PlayerData.Activity:RefreshActivityRedDot()
 	PlayerData.Dispatch:CheckReddot()
 	PlayerData.Achievement:CheckReddot()
 	self:SetBanner()
 	PlayerData.SideBanner:TryOpenSideBanner()
-	self._mapNode.btnJointDrillFast.gameObject:SetActive(false)
-	self._mapNode.btnTrekkerVersusFast.gameObject:SetActive(false)
-	self._mapNode.btnTowerDefenseFast.gameObject:SetActive(false)
 	local RefreshFastBtn = function()
-		self:RefreshJointDrillFast()
-		self:RefreshTrekkerVersusFast()
-		self:RefreshTowerDefenseFast()
+		self:RefreshActivityFastEntrance()
 	end
 	PlayerData.Activity:SendActivityDetailMsg(RefreshFastBtn)
+	self:RefreshRedDot()
+end
+function MainViewCtrl:RefreshRedDot()
+	local bMall = RedDotManager.GetValid(RedDotDefine.Mall)
+	if bMall then
+		self._mapNode.redDotMall:SetActive(true)
+	else
+		self._mapNode.redDotMall:SetActive(false)
+	end
+	local bMallNew = RedDotManager.GetValid(RedDotDefine.Mall_New)
+	if bMallNew then
+		self._mapNode.redDotMallNew:SetActive(bMallNew and not bMall)
+	else
+		self._mapNode.redDotMallNew:SetActive(false)
+	end
 end
 function MainViewCtrl:RefreshPlayerInfo()
 	local sName = PlayerData.Base:GetPlayerNickName()
@@ -611,6 +604,7 @@ function MainViewCtrl:PlayMainViewOpenVoice()
 	end
 end
 function MainViewCtrl:SetBanner()
+	self.bannerRefreshTimer = nil
 	self.tbBannerList = {}
 	self:AddActivityBanner()
 	self:AddOtherBanner()
@@ -646,6 +640,9 @@ function MainViewCtrl:AddActivityBanner()
 	end
 end
 function MainViewCtrl:AddOtherBanner()
+	local nNextOpenTime = 0
+	local nNextCloseTime = 0
+	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
 	local forEachMap = function(mapLineData)
 		if mapLineData.BannerType == GameEnum.bannerType.OpenFunc then
 			local funcNum = tonumber(mapLineData.Param1)
@@ -678,7 +675,7 @@ function MainViewCtrl:AddOtherBanner()
 			if not NovaAPI.IsReviewServerEnv() then
 				local clientPublishRegion = CS.ClientConfig.ClientPublishRegion
 				local channelName = CS.ClientConfig.ClientPublishChannelName
-				if SDKManager:IsSDKInit() and clientPublishRegion == CS.ClientPublishRegion.CN and (channelName == "Official" or channelName == "TEST_1" or channelName == "Taptap") then
+				if SDKManager:IsSDKInit() and clientPublishRegion == CS.ClientPublishRegion.CN and (channelName == "Official" or channelName == "TEST_1" or channelName == "Taptap" or channelName == "TEST_2") then
 					table.insert(self.tbBannerList, {
 						nType = GameEnum.bannerType.Payment,
 						sBanner = mapLineData.bannerName
@@ -686,18 +683,21 @@ function MainViewCtrl:AddOtherBanner()
 				end
 			end
 		elseif mapLineData.BannerType == GameEnum.bannerType.Mall or mapLineData.BannerType == GameEnum.bannerType.MallSkin then
-			local curTime = CS.ClientManager.Instance.serverTimeStamp
 			local nOpenTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param1)
 			local nCloseTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param2)
-			if curTime >= nOpenTime and curTime <= nCloseTime then
+			if nOpenTime <= nCurTime and nCloseTime >= nCurTime then
 				table.insert(self.tbBannerList, {
 					nType = mapLineData.BannerType,
 					sBanner = mapLineData.bannerName,
 					sParam = mapLineData.Param3
 				})
+				if nCloseTime < nNextCloseTime or nNextCloseTime == 0 then
+					nNextCloseTime = nCloseTime
+				end
+			elseif nOpenTime > nCurTime and (nOpenTime < nNextOpenTime or nNextOpenTime == 0) then
+				nNextOpenTime = nOpenTime
 			end
 		elseif mapLineData.BannerType == GameEnum.bannerType.TimeLimit_Func then
-			local curTime = CS.ClientManager.Instance.serverTimeStamp
 			local nOpenTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param1)
 			local nCloseTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param2)
 			local nJumpToId = tonumber(mapLineData.Param3)
@@ -706,19 +706,23 @@ function MainViewCtrl:AddOtherBanner()
 				return
 			end
 			local bUnlock = PlayerData.Base:CheckFunctionUnlock(nFuncType, false)
-			if bUnlock and curTime >= nOpenTime and curTime <= nCloseTime then
+			if bUnlock and nOpenTime <= nCurTime and nCloseTime >= nCurTime then
 				table.insert(self.tbBannerList, {
 					nType = GameEnum.bannerType.TimeLimit_Func,
 					sBanner = mapLineData.bannerName,
 					nJumpTo = nJumpToId,
 					nFuncType = nFuncType
 				})
+				if nCloseTime < nNextCloseTime or nNextCloseTime == 0 then
+					nNextCloseTime = nCloseTime
+				end
+			elseif nOpenTime > nCurTime and (nOpenTime < nNextOpenTime or nNextOpenTime == 0) then
+				nNextOpenTime = nOpenTime
 			end
 		elseif mapLineData.BannerType == GameEnum.bannerType.JumpToUrl then
 			if NovaAPI.IsReviewServerEnv() and mapLineData.Param6 == "1" then
 				return
 			end
-			local curTime = CS.ClientManager.Instance.serverTimeStamp
 			local sUrl = mapLineData.Param3
 			if sUrl == nil or sUrl == "" then
 				return
@@ -752,7 +756,7 @@ function MainViewCtrl:AddOtherBanner()
 			else
 				local nOpenTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param1)
 				local nCloseTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param2)
-				if curTime >= nOpenTime and curTime <= nCloseTime then
+				if nOpenTime <= nCurTime and nCloseTime >= nCurTime then
 					if sPlatform == "" then
 						table.insert(self.tbBannerList, {
 							nType = GameEnum.bannerType.JumpToUrl,
@@ -775,11 +779,20 @@ function MainViewCtrl:AddOtherBanner()
 							})
 						end
 					end
+					if nCloseTime < nNextCloseTime or nNextCloseTime == 0 then
+						nNextCloseTime = nCloseTime
+					end
+				elseif nOpenTime > nCurTime and (nOpenTime < nNextOpenTime or nNextOpenTime == 0) then
+					nNextOpenTime = nOpenTime
 				end
 			end
 		end
 	end
 	ForEachTableLine(DataTable.Banner, forEachMap)
+	local nRefreshTime = math.min(math.max(nNextOpenTime, 0), math.max(nNextCloseTime, 0))
+	if 0 < nRefreshTime and nCurTime < nRefreshTime then
+		self.bannerRefreshTimer = self:AddTimer(1, nRefreshTime - nCurTime, "SetBanner", true, true, true)
+	end
 end
 function MainViewCtrl:AddGachaBanner()
 	local tbOpenedPool = PlayerData.Gacha:GetOpenedPool()
@@ -888,13 +901,17 @@ function MainViewCtrl:SaveCharacterIndex()
 	LocalData.SetPlayerLocalData("MainMenuUICharIndex", self.nCurCharIdx)
 end
 function MainViewCtrl:ResetTimer()
-	if nil ~= self.actBannerTimer then
+	if self.actBannerTimer ~= nil then
 		self.actBannerTimer:Cancel(false)
 		self.actBannerTimer = nil
 	end
-	if nil ~= self.actBannerRefreshTimer then
+	if self.actBannerRefreshTimer ~= nil then
 		self.actBannerRefreshTimer:Cancel(false)
 		self.actBannerRefreshTimer = nil
+	end
+	if self.bannerRefreshTimer ~= nil then
+		self.bannerRefreshTimer:Cancel(false)
+		self.bannerRefreshTimer = nil
 	end
 end
 function MainViewCtrl:PlayViewAnim(sTriggerName)
@@ -1010,11 +1027,11 @@ function MainViewCtrl:RefreshLeftActivityList()
 				local endEnterTime = actGroupData:GetActGroupEnterEndTime()
 				local curTime = CS.ClientManager.Instance.serverTimeStamp
 				endEnterTime = endEnterTime - curTime
-				local strEndTime = self:RefreshTimeout(endEnterTime)
+				local strEndTime = self:RefreshExchangeTimeout(endEnterTime)
 				NovaAPI.SetTMPText(txtEnd, strEndTime)
 				showData.countDownEnterTimer = self:AddTimer(0, 1, function()
 					if 0 < endEnterTime then
-						local strTime = self:RefreshTimeout(endEnterTime)
+						local strTime = self:RefreshExchangeTimeout(endEnterTime)
 						NovaAPI.SetTMPText(txtEnd, strTime)
 						endEnterTime = endEnterTime - 1
 					else
@@ -1044,100 +1061,59 @@ function MainViewCtrl:RefreshLeftActivityList()
 		end
 	end
 end
-function MainViewCtrl:RefreshJointDrillFast()
-	self._mapNode.btnJointDrillFast.gameObject:SetActive(false)
-	local callback = function()
-		self.jointDrillActData = nil
-		local tbActList = PlayerData.Activity:GetActivityList()
-		for nId, v in pairs(tbActList) do
+function MainViewCtrl:RefreshActivityFastEntrance()
+	for k, v in ipairs(self._mapNode.btnActivityFast) do
+		v.gameObject:SetActive(false)
+		if self._mapNode.goActivityFastRedDot[k] ~= nil then
+			self._mapNode.goActivityFastRedDot[k].gameObject:SetActive(false)
+		end
+		if self._mapNode.goActivityFastRedDotNew[k] ~= nil then
+			self._mapNode.goActivityFastRedDotNew[k].gameObject:SetActive(false)
+		end
+	end
+	self.tbActivityFast = {}
+	local tbActList = PlayerData.Activity:GetActivityList()
+	for nId, v in pairs(tbActList) do
+		if v:CheckActShow() then
 			local nActType = v:GetActType()
+			local actCfg = v:GetActCfgData()
+			local bShow = actCfg ~= nil and actCfg.EnterRes ~= nil and actCfg.EnterRes ~= ""
 			if nActType == GameEnum.activityType.JointDrill then
-				self.jointDrillActData = v
-				break
+				local nChallengeStartTime = v:GetChallengeStartTime()
+				local nChallengeEndTime = v:GetChallengeEndTime()
+				local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+				bShow = bShow and nChallengeStartTime <= nCurTime and nChallengeEndTime > nCurTime
+			elseif nActType == GameEnum.activityType.TrekkerVersus then
+				local nChallengeStartTime = v:GetChallengeStartTime()
+				local nChallengeEndTime = v:GetChallengeEndTime()
+				local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+				bShow = bShow and nChallengeStartTime <= nCurTime and nChallengeEndTime > nCurTime
+			elseif nActType == GameEnum.activityType.Breakout and actCfg.MidGroupId ~= 0 then
+				bShow = bShow and PlayerData.Activity:GetActivityGroupDataById(actCfg.MidGroupId) ~= nil
 			end
-		end
-		if self.jointDrillActData ~= nil then
-			local bShow = self.jointDrillActData:CheckActShow()
-			local mapCfg = self.jointDrillActData:GetJointDrillActCfg()
-			if mapCfg ~= nil then
-				self:SetPngSprite(self._mapNode.imgJointDrillFastBg, mapCfg.FastEntranceIcon)
-			end
-			local nChallengeStartTime = self.jointDrillActData:GetChallengeStartTime()
-			local nChallengeEndTime = self.jointDrillActData:GetChallengeEndTime()
-			local nCurTime = CS.ClientManager.Instance.serverTimeStamp
-			if nChallengeStartTime <= nCurTime and nChallengeEndTime > nCurTime and bShow then
-				self._mapNode.btnJointDrillFast.gameObject:SetActive(true)
+			if bShow then
+				table.insert(self.tbActivityFast, v)
 			end
 		end
 	end
-	PlayerData.Activity:SendActivityDetailMsg(callback)
-end
-function MainViewCtrl:RefreshTowerDefenseFast()
-	self._mapNode.btnTowerDefenseFast.gameObject:SetActive(false)
-	local callback = function()
-		self.towerDefenseActData = nil
-		local tbActList = PlayerData.Activity:GetActivityList()
-		for nId, v in pairs(tbActList) do
-			local nActType = v:GetActType()
-			if nActType == GameEnum.activityType.TowerDefense then
-				self.towerDefenseActData = v
-				break
-			end
+	table.sort(self.tbActivityFast, function(a, b)
+		if a.nOpenTime == b.nOpenTime then
+			return a:GetActSortId() > b:GetActSortId()
 		end
-		if self.towerDefenseActData ~= nil then
-			local bShow = self.towerDefenseActData:CheckActShow()
-			local mapCfg = self.towerDefenseActData:GetActConfig()
-			if mapCfg ~= nil and mapCfg.FastEntranceIcon ~= "" then
-				self:SetPngSprite(self._mapNode.imgTowerDefenseFastBg, mapCfg.FastEntranceIcon)
-			end
-			self._mapNode.btnTowerDefenseFast.gameObject:SetActive(bShow)
-		end
-	end
-	PlayerData.Activity:SendActivityDetailMsg(callback)
-end
-function MainViewCtrl:RefreshTrekkerVersusFast()
-	self._mapNode.btnTrekkerVersusFast.gameObject:SetActive(false)
-	local callback = function()
-		self.trekkerVersusData = nil
-		local tbActList = PlayerData.Activity:GetActivityList()
-		for nId, v in pairs(tbActList) do
+		return a.nOpenTime > b.nOpenTime
+	end)
+	for k, v in ipairs(self.tbActivityFast) do
+		if self._mapNode.btnActivityFast[k] ~= nil then
+			self._mapNode.btnActivityFast[k].gameObject:SetActive(true)
+			local actCfg = v:GetActCfgData()
+			self:SetPngSprite(self._mapNode.imgActivityFastBg[k], actCfg.EnterRes)
 			local nActType = v:GetActType()
 			if nActType == GameEnum.activityType.TrekkerVersus then
-				self.trekkerVersusData = v
-				break
+				RedDotManager.RegisterNode(RedDotDefine.TrekkerVersusQuest, nil, self._mapNode.goActivityFastRedDot[k], nil, nil, true)
 			end
-		end
-		if self.trekkerVersusData ~= nil then
-			local bShow = self.trekkerVersusData:CheckActShow()
-			local mapCfg = self.trekkerVersusData:GetTrekkerVersusCfgData()
-			if mapCfg ~= nil then
-				self:SetPngSprite(self._mapNode.imgTrekkerVersusFastBg, mapCfg.FastEntranceIcon)
+			if nActType == GameEnum.activityType.Breakout then
+				RedDotManager.RegisterNode(RedDotDefine.Activity_GroupNew, actCfg.MidGroupId, self._mapNode.goActivityFastRedDotNew[k], nil, nil, true)
 			end
-			local nChallengeStartTime = self.trekkerVersusData:GetChallengeStartTime()
-			local nChallengeEndTime = self.trekkerVersusData:GetChallengeEndTime()
-			local nCurTime = CS.ClientManager.Instance.serverTimeStamp
-			if nChallengeStartTime <= nCurTime and nChallengeEndTime > nCurTime and bShow then
-				self._mapNode.btnTrekkerVersusFast.gameObject:SetActive(true)
-			end
-		end
-	end
-	PlayerData.Activity:SendActivityDetailMsg(callback)
-end
-function MainViewCtrl:RefreshActivityTask()
-	self.actActivityTaskData = nil
-	local tbActList = PlayerData.Activity:GetSortedActList()
-	for _, v in ipairs(tbActList) do
-		local nActType = v:GetActType()
-		if nActType == GameEnum.activityType.Task then
-			self.actActivityTaskData = v
-			break
-		end
-	end
-	self._mapNode.btnActivityTask.gameObject:SetActive(self.actActivityTaskData ~= nil)
-	if self.actActivityTaskData ~= nil then
-		local actCfg = CacheTable.GetData("_ActivityTaskControl", self.actActivityTaskData:GetActId())
-		if actCfg ~= nil then
-			self:SetPngSprite(self._mapNode.imgActivityTask, "Icon/Banner/" .. actCfg.FastEntranceIcon)
 		end
 	end
 end
@@ -1172,6 +1148,23 @@ function MainViewCtrl:RefreshTimeout(remainTime)
 		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Day") or "", day, hour)
 	end
 	return sTimeStr
+end
+function MainViewCtrl:RefreshExchangeTimeout(remainTime)
+	local sTimeStr = ""
+	if remainTime <= 60 then
+		local sec = math.floor(remainTime)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Sec") or "", sec)
+	elseif 60 < remainTime and remainTime <= 3600 then
+		local min = math.floor(remainTime / 60)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_OnlyMin") or "", min)
+	elseif 3600 < remainTime and remainTime <= 86400 then
+		local hour = math.floor(remainTime / 3600)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_OnlyHour") or "", hour)
+	elseif 86400 < remainTime then
+		local day = math.floor(remainTime / 86400)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_OnlyDay") or "", day)
+	end
+	return ConfigTable.GetUIText("Activity_End_Exchange") .. " " .. sTimeStr
 end
 function MainViewCtrl:FadeIn(bPlayFadeIn)
 	if self.nViewState ~= view_state.init then
@@ -1318,20 +1311,70 @@ function MainViewCtrl:OnBtnClick_ActivityPrepare(btn, index)
 		PlayerData.Activity:SendActivityDetailMsg()
 		if cfg.TransitionId ~= nil and cfg.TransitionId > 0 then
 			local callback = function()
-				EventManager.Hit(EventId.OpenPanel, cfg.PanelId, cfg.Id)
+				EventManager.Hit(EventId.OpenPanel, cfg.PanelId, cfg.Id, true)
 			end
 			self:PlayTransition(cfg.TransitionId, callback)
 		else
-			EventManager.Hit(EventId.OpenPanel, cfg.PanelId, cfg.Id)
+			EventManager.Hit(EventId.OpenPanel, cfg.PanelId, cfg.Id, true)
 		end
 	end
 end
-function MainViewCtrl:OnBtnClick_ActivityTask()
-	if self.actActivityTaskData ~= nil then
-		local callback = function()
-			PlayerData.Activity:OpenActivityPanel(self.actActivityTaskData:GetActId())
+function MainViewCtrl:OnBtnClick_ActivityFast(btn, nIndex)
+	if self.tbActivityFast[nIndex] == nil then
+		return
+	end
+	local actDataIns = self.tbActivityFast[nIndex]
+	local nActType = actDataIns:GetActType()
+	if not actDataIns:CheckActivityOpen() then
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_Invalid_Tip_3"))
+		self:RefreshActivityFastEntrance()
+		return
+	end
+	local actCfg = actDataIns:GetActCfgData()
+	if actCfg.MidGroupId ~= 0 then
+		local groupCfg = ConfigTable.GetData("ActivityGroup", actCfg.MidGroupId)
+		if groupCfg ~= nil then
+			if groupCfg.TransitionId ~= nil and 0 < groupCfg.TransitionId then
+				local callback = function()
+					EventManager.Hit(EventId.OpenPanel, groupCfg.PanelId, groupCfg.Id)
+				end
+				self:PlayTransition(groupCfg.TransitionId, callback)
+			else
+				EventManager.Hit(EventId.OpenPanel, groupCfg.PanelId, groupCfg.Id)
+			end
 		end
-		PlayerData.Base:CheckFunctionBtn(GameEnum.OpenFuncType.Activity, callback)
+	else
+		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+		if nActType == GameEnum.activityType.JointDrill then
+			local bPlayCond = actDataIns:CheckActJumpCond(true)
+			if not bPlayCond then
+				return
+			end
+			local nType = actDataIns:GetJointDrillType()
+			if nType == GameEnum.JointDrillMode.JointDrill_Mode_1 then
+				EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_1, actDataIns:GetActId())
+			elseif nType == GameEnum.JointDrillMode.JointDrill_Mode_2 then
+				EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_2, actDataIns:GetActId())
+			end
+		elseif nActType == GameEnum.activityType.TrekkerVersus then
+			local nChallengeEndTime = actDataIns:GetChallengeEndTime()
+			if nCurTime > nChallengeEndTime then
+				EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_Invalid_Tip_3"))
+				self:RefreshActivityFastEntrance()
+				return
+			end
+			local func = function()
+				EventManager.Hit(EventId.OpenPanel, PanelId.TrekkerVersus, actDataIns:GetActId())
+			end
+			EventManager.Hit(EventId.SetTransition, 30, func)
+		elseif nActType == GameEnum.activityType.TowerDefense then
+			EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseSelectPanel, actDataIns:GetActId())
+		else
+			local callback = function()
+				PlayerData.Activity:OpenActivityPanel(actDataIns:GetActId())
+			end
+			PlayerData.Base:CheckFunctionBtn(GameEnum.OpenFuncType.Activity, callback)
+		end
 	end
 end
 function MainViewCtrl:OnBtnClick_Phone()
@@ -1436,8 +1479,8 @@ function MainViewCtrl:OnBtnClick_btnActBanner()
 	elseif bannerData.nType == GameEnum.bannerType.Payment then
 		local clientPublishRegion = CS.ClientConfig.ClientPublishRegion
 		local channelName = CS.ClientConfig.ClientPublishChannelName
-		if SDKManager:IsSDKInit() and clientPublishRegion == CS.ClientPublishRegion.CN and (channelName == "Official" or channelName == "TEST_1" or channelName == "Taptap") then
-			SDKManager:ShowWebView(false, "", "https://payment.yostar.cn/", 1, 0, true)
+		if SDKManager:IsSDKInit() and clientPublishRegion == CS.ClientPublishRegion.CN and (channelName == "Official" or channelName == "TEST_1" or channelName == "Taptap" or channelName == "TEST_2") then
+			SDKManager:ShowWebView(false, "", "https://payment.yostar.cn/", 1, 1, false, "CN-PAYMENT")
 		else
 			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Function_NotAvailable"))
 		end
@@ -1672,49 +1715,6 @@ function MainViewCtrl:OnBtnClick_GoToStarTower()
 end
 function MainViewCtrl:OnBtnClick_GotoMainlineStory()
 	EventManager.Hit(EventId.OpenPanel, PanelId.MainlineEx, self.nRecentChapterId, PanelId.MainView)
-end
-function MainViewCtrl:OnBtnClick_JointDrillFast()
-	if self.jointDrillActData ~= nil then
-		local bPlayCond = self.jointDrillActData:CheckActJumpCond(true)
-		if not bPlayCond then
-			return
-		end
-		local nActEndTime = self.jointDrillActData:GetActCloseTime()
-		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
-		if nActEndTime < nCurTime then
-			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_Invalid_Tip_3"))
-			self._mapNode.btnJointDrillFast.gameObject:SetActive(false)
-			return
-		end
-		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect, self.jointDrillActData.nActId)
-	end
-end
-function MainViewCtrl:OnBtnClick_TrekkerVersusFast()
-	if self.trekkerVersusData ~= nil then
-		local nActEndTime = self.trekkerVersusData:GetChallengeEndTime()
-		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
-		if nActEndTime < nCurTime then
-			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_Invalid_Tip_3"))
-			self._mapNode.btnTrekkerVersusFast.gameObject:SetActive(false)
-			return
-		end
-		local func = function()
-			EventManager.Hit(EventId.OpenPanel, PanelId.TrekkerVersus, self.trekkerVersusData.nActId)
-		end
-		EventManager.Hit(EventId.SetTransition, 30, func)
-	end
-end
-function MainViewCtrl:OnBtnClick_TowerDefenseFast()
-	if self.towerDefenseActData ~= nil then
-		local nActEndTime = self.towerDefenseActData:GetActEndTime()
-		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
-		if nActEndTime < nCurTime then
-			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_Invalid_Tip_3"))
-			self._mapNode.btnTowerDefenseFast.gameObject:SetActive(false)
-			return
-		end
-		EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseSelectPanel, self.towerDefenseActData.nActId)
-	end
 end
 function MainViewCtrl:OnDragStart_Actor(mDrag)
 	if mDrag.DragEventType == AllEnum.UIDragType.DragStart then

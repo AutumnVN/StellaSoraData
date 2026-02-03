@@ -5,7 +5,7 @@ local BubbleVoiceManager = require("Game.Actor2D.BubbleVoiceManager")
 local LocalSettingData = require("GameCore.Data.LocalSettingData")
 local totalNodeLength = 800
 local totalHeight = 20
-local totalProLength = 659
+local totalProLength = 948
 local totalProHeight = 22
 local bgPath = "Image/UIBG/bg_bossrush"
 local NpcId = 9159
@@ -58,12 +58,11 @@ ScoreBossSelectCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnClickStar"
 	},
-	texBtnStar = {
-		sComponentName = "TMP_Text",
-		sLanguageId = "ScoreBoss_Cur_Star"
-	},
-	texBtnStarCount = {sComponentName = "TMP_Text"},
 	redStar = {},
+	txtBtnReward = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "JointDrill_Btn_Reward"
+	},
 	SCBossInfo = {},
 	card = {},
 	btnGo = {
@@ -140,6 +139,10 @@ ScoreBossSelectCtrl._mapNodeConfig = {
 	},
 	goRewardView = {},
 	t_window_04 = {},
+	animRewardWindow = {
+		sNodeName = "t_window_04",
+		sComponentName = "Animator"
+	},
 	txt_Reward_Title = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "ScoreBoss_Reward_Title"
@@ -148,11 +151,11 @@ ScoreBossSelectCtrl._mapNodeConfig = {
 		sComponentName = "LoopScrollView"
 	},
 	btnCloseReward = {
-		sComponentName = "UIButton",
+		sComponentName = "NaviButton",
 		callback = "CloseRewardView"
 	},
 	RewardMaskClose = {
-		sComponentName = "UIButton",
+		sComponentName = "NaviButton",
 		callback = "CloseRewardView"
 	},
 	texRewardStarTotal = {
@@ -167,6 +170,31 @@ ScoreBossSelectCtrl._mapNodeConfig = {
 	btnRewardOneKey = {
 		sComponentName = "UIButton",
 		callback = "OnClickRewardOneKey"
+	},
+	svRankingReward = {
+		sComponentName = "LoopScrollView"
+	},
+	rtStarReward = {},
+	rtRankingReward = {},
+	btnRewardTabOn = {nCount = 2},
+	btnRewardTabOff = {
+		nCount = 2,
+		sComponentName = "UIButton",
+		callback = "OnBtn_RewardTab"
+	},
+	txtRewardTabLeft = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "ScoreBoss_Star_Reward"
+	},
+	txtRewardTabRight = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "StarTower_Ranking_Reward"
+	},
+	txtRefreshTimeReward = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "STRanking_Refresh_Tips"
 	}
 }
 ScoreBossSelectCtrl._mapEventConfig = {
@@ -187,6 +215,7 @@ function ScoreBossSelectCtrl:OnEnable()
 	end
 	self.isPlayNPCVoice = false
 	self:RefreshNPC2D()
+	self._mapRewardGrid = {}
 end
 function ScoreBossSelectCtrl:OnEvent_GetScoreBossInfoReq()
 	self:OnInitPanelInfo()
@@ -205,7 +234,6 @@ function ScoreBossSelectCtrl:OnInitPanelInfo()
 		self:OnRefreshGrid(objItem, openLevelGroup[i], i)
 	end
 	self:SetTimes()
-	self:SetRewardStar()
 	if self.pageType == nil or self.pageType == 1 then
 		self._mapNode.SCBossList:SetActive(true)
 		self._mapNode.SCBossInfo:SetActive(false)
@@ -223,9 +251,6 @@ function ScoreBossSelectCtrl:FadeIn()
 	if self.pageType == nil or self.pageType == 1 then
 		EventManager.Hit(EventId.SetTransition)
 	end
-end
-function ScoreBossSelectCtrl:SetRewardStar()
-	self._mapNode.texBtnStarCount.text = PlayerData.ScoreBoss.Star .. "/" .. PlayerData.ScoreBoss.maxStarNeed
 end
 function ScoreBossSelectCtrl:SetTimes()
 	self.nRemainTime = PlayerData.ScoreBoss.EndTime == 0 and 0 or PlayerData.ScoreBoss.EndTime - CS.ClientManager.Instance.serverTimeStamp
@@ -284,6 +309,10 @@ function ScoreBossSelectCtrl:RefreshTime()
 	end
 end
 function ScoreBossSelectCtrl:OnDisable()
+	for go, mapCtrl in pairs(self._mapRewardGrid) do
+		self:UnbindCtrlByNode(mapCtrl)
+	end
+	self._mapRewardGrid = {}
 	Actor2DManager.UnsetBoardNPC2D()
 	PlayerData.Voice:ClearTimer()
 	BubbleVoiceManager.StopBubbleAnim()
@@ -467,14 +496,55 @@ function ScoreBossSelectCtrl:OnClickStar()
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		self._mapNode.t_window_04:SetActive(true)
-		self._mapNode.RewardSc:SetAnim(0.1)
-		self._mapNode.RewardSc:Init(#PlayerData.ScoreBoss.tabScoreBossReward, self, self.RefreshRewardGrid)
+		self._mapNode.animRewardWindow:Play("t_window_04_t_in")
+		if self._mapNode.RewardSc.gameObject.activeInHierarchy then
+			self._mapNode.RewardSc:SetAnim(0.1)
+		end
+		PlayerData.ScoreBoss:SendScoreBossApplyReq(function()
+			self._mapRewardGrid = {}
+			self._mapNode.RewardSc:Init(#PlayerData.ScoreBoss.tabScoreBossReward, self, self.RefreshRewardGrid)
+			self.mapSelfRankingData = PlayerData.ScoreBoss:GetRankSelfMsg()
+			self._mapNode.svRankingReward:Init(PlayerData.ScoreBoss.maxRankCount, self, self.OnGridRankingRewardRefresh)
+			self:InitRewardTab()
+		end)
 	end
 	cs_coroutine.start(wait)
 end
+function ScoreBossSelectCtrl:OnGridRankingRewardRefresh(grid)
+	if self._mapRewardGrid[grid] == nil then
+		local mapCtrl = self:BindCtrlByNode(grid, "Game.UI.ScoreBoss.ScoreBossRanking.ScoreBossRewardGridCtrl")
+		self._mapRewardGrid[grid] = mapCtrl
+	end
+	local nIdx = tonumber(grid.name)
+	if nIdx == nil then
+		return
+	end
+	nIdx = nIdx + 1
+	local rankPlayerCount = 0
+	local nSelfIdx = -1.0
+	if self.mapSelfRankingData ~= nil then
+		rankPlayerCount = PlayerData.ScoreBoss:GetRankPlayerCount()
+		if 0 < rankPlayerCount and rankPlayerCount <= 100 then
+			nSelfIdx = self.mapSelfRankingData.Rank / 100
+		elseif 100 < rankPlayerCount then
+			nSelfIdx = self.mapSelfRankingData.Rank / rankPlayerCount
+		end
+		nSelfIdx = nSelfIdx * 10000
+	end
+	self._mapRewardGrid[grid]:Refresh(nIdx, nSelfIdx)
+end
+function ScoreBossSelectCtrl:InitRewardTab()
+	self:OnBtn_RewardTab(nil, -1)
+end
 function ScoreBossSelectCtrl:CloseRewardView()
-	self._mapNode.t_window_04:SetActive(false)
-	self._mapNode.goRewardView:SetActive(false)
+	local nAnimLength = NovaAPI.GetAnimClipLength(self._mapNode.animRewardWindow, {
+		"t_window_04_t_out"
+	})
+	self._mapNode.animRewardWindow:Play("t_window_04_t_out")
+	self:AddTimer(1, nAnimLength, function()
+		self._mapNode.t_window_04:SetActive(false)
+		self._mapNode.goRewardView:SetActive(false)
+	end, true, true, true)
 end
 function ScoreBossSelectCtrl:RefreshRewardGrid(goGrid, gridIndex)
 	local texTitle = goGrid.transform:Find("AnimRoot/texTitle"):GetComponent("TMP_Text")
@@ -604,7 +674,6 @@ function ScoreBossSelectCtrl:OnEvent_Back(nPanelId)
 			EventManager.Hit(EventId.SetTransition)
 			self._mapNode.SCBossList:SetActive(true)
 			self._mapNode.SCBossInfo:SetActive(false)
-			self:SetRewardStar()
 			self:SetBgActive(1)
 			for i, v in pairs(self.tabGridAni) do
 				v.gameObject:SetActive(true)
@@ -677,6 +746,21 @@ function ScoreBossSelectCtrl:PlayGreetVoice()
 end
 function ScoreBossSelectCtrl:OnBtnClick_Actor()
 	PlayerData.Voice:PlayBoardNPCClickVoice(NpcId)
+end
+function ScoreBossSelectCtrl:OnBtn_RewardTab(btn, idx)
+	if self.nRewardTabIdx == idx then
+		return
+	end
+	if idx == -1 then
+		idx = 1
+	end
+	self.nRewardTabIdx = idx
+	for i = 1, #self._mapNode.btnRewardTabOn do
+		self._mapNode.btnRewardTabOn[i].gameObject:SetActive(i == idx)
+		self._mapNode.btnRewardTabOff[i].gameObject:SetActive(i ~= idx)
+	end
+	self._mapNode.rtStarReward:SetActive(idx == 1)
+	self._mapNode.rtRankingReward:SetActive(idx == 2)
 end
 function ScoreBossSelectCtrl:OnEvent_ShowBubbleVoiceText(nNpcId, nId)
 	if nNpcId ~= NpcId then

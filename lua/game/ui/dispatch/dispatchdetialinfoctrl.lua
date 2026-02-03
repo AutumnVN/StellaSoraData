@@ -137,9 +137,22 @@ DispatchDetialInfoCtrl._mapNodeConfig = {
 	goCantAgentRoot = {},
 	txtLockInfo = {sComponentName = "TMP_Text"},
 	goBtnRoot = {},
-	imgGroupBG = {}
+	imgGroupBG = {},
+	imgBg_3 = {sNodeName = "imgBg_3", sComponentName = "Image"},
+	imgBg_3_dot = {
+		sNodeName = "imgBg_3_dot",
+		sComponentName = "Image"
+	}
 }
 DispatchDetialInfoCtrl._mapEventConfig = {}
+local QualityColor = {
+	[1] = Color(0.8117647058823529, 0.8352941176470589, 0.8588235294117647),
+	[2] = Color(0.803921568627451, 0.8549019607843137, 0.788235294117647),
+	[3] = Color(0.7450980392156863, 0.8549019607843137, 0.9137254901960784),
+	[4] = Color(0.4117647058823529, 0.5294117647058824, 0.6470588235294118),
+	[5] = Color(0.4235294117647059, 0.6235294117647059, 0.3607843137254902),
+	[6] = Color(0.4588235294117647, 0.5529411764705883, 0.596078431372549)
+}
 function DispatchDetialInfoCtrl:Awake()
 	self.tbRewardItemGrid = {}
 	self.tbItemCtrl = {}
@@ -211,6 +224,9 @@ function DispatchDetialInfoCtrl:Refresh(dispatchId)
 	self:RefreshDispatchState(state)
 	self:OnRefreshReward()
 	NovaAPI.SetToggleIsOn(self._mapNode.togTime[self.selectTogIndex], true)
+	if self.lastSelectTogIndex ~= nil then
+		NovaAPI.SetToggleIsOn(self._mapNode.togTime[self.selectTogIndex], false)
+	end
 	if dispatchingData ~= nil and dispatchingData.State == AllEnum.DispatchState.Accepting then
 		self.curDisptachTime = dispatchingData.Data.StartTime + dispatchingData.Data.ProcessTime * 60 - CS.ClientManager.Instance.serverTimeStamp
 		self.curDisptachingData = dispatchingData
@@ -227,6 +243,8 @@ function DispatchDetialInfoCtrl:Refresh(dispatchId)
 		NovaAPI.SetTMPText(self._mapNode.txtCurRequireTime, ConfigTable.GetUIText("Quest_Complete"))
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtConsignor, ConfigTable.GetUIText("Agent_Consignor_Title") .. self.curDispatchData.Consignor)
+	self._mapNode.imgBg_3.color = QualityColor[self.curDispatchData.Quality]
+	self._mapNode.imgBg_3_dot.color = QualityColor[self.curDispatchData.Quality + 3]
 end
 function DispatchDetialInfoCtrl:RefreshCharList(Data, bAccepting)
 	self.TagList = {}
@@ -244,7 +262,7 @@ function DispatchDetialInfoCtrl:RefreshCharList(Data, bAccepting)
 				local nCharSkinId = mapCharData.nSkinId
 				local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 				local imgHeadIcon = self._mapNode.charHead[i].transform:Find("imgIconBg/imgItemIcon"):GetComponent("Image")
-				self:SetPngSprite(imgHeadIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
+				self:SetPngSprite(imgHeadIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
 				local imgItemRare = self._mapNode.charHead[i].transform:Find("imgItemRare"):GetComponent("Image")
 				local nRarity = mapChar.Grade
 				local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[nRarity == GameEnum.characterGrade.R and GameEnum.characterGrade.SR or nRarity]
@@ -319,7 +337,7 @@ function DispatchDetialInfoCtrl:RefreshBuildInfo(buildData)
 		local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 		local mapCharCfg = ConfigTable.GetData_Character(nCharTid)
 		local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
-		self:SetPngSprite(imgCharIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
+		self:SetPngSprite(imgCharIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
 		self:SetAtlasSprite(imgCharFrame, "12_rare", sFrame)
 		local mapCharDescCfg = ConfigTable.GetData("CharacterDes", nCharTid)
 		for i = 1, #mapCharDescCfg.Tag do
@@ -408,6 +426,9 @@ function DispatchDetialInfoCtrl:OnRefreshReward()
 		if agentData ~= nil then
 			for i = 1, 4 do
 				if agentData.Data.ProcessTime == self.curDispatchData["Time" .. i] then
+					if self.selectTogIndex ~= i then
+						self.lastSelectTogIndex = self.selectTogIndex
+					end
 					self.selectTogIndex = i
 					break
 				end
@@ -617,6 +638,9 @@ function DispatchDetialInfoCtrl:OnBtnClick_OneClickSelection()
 end
 function DispatchDetialInfoCtrl:OnTog_ChoseTime(tog, nIndex, bIsOn)
 	if bIsOn then
+		if self.selectTogIndex ~= nIndex then
+			self.lastSelectTogIndex = self.selectTogIndex
+		end
 		self.selectTogIndex = nIndex
 		self:OnRefreshReward()
 	end

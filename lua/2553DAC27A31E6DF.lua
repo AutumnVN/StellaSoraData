@@ -114,7 +114,6 @@ function BdConvertContentCtrl:UpdateOptionList()
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		NovaAPI.SetCanvasGroupAlpha(self._mapNode.ListCanvasGroup, 1)
 		CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.ListContent)
 	end

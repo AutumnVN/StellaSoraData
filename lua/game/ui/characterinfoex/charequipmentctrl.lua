@@ -127,7 +127,19 @@ function CharEquipmentCtrl:OnEnable()
 			})
 			local ani = function()
 				if not PlayerData.Guide:CheckInGuideGroup(50) then
-					EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentInfo, self.nCharId, self.tbSlot[nIndex].nSlotId, self.tbSlot[nIndex].nGemIndex)
+					local mapSelect = PlayerData.Equipment:GetEquipmentSelect()
+					if mapSelect then
+						local nEquipIndex = 0
+						for _, v in ipairs(self.tbSlot) do
+							if v.nSlotId == mapSelect.nSlotId then
+								nEquipIndex = v.nGemIndex
+								break
+							end
+						end
+						EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentInfo, self.nCharId, mapSelect.nSlotId, nEquipIndex, mapSelect.nGemIndex)
+					else
+						EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentInfo, self.nCharId, self.tbSlot[nIndex].nSlotId, self.tbSlot[nIndex].nGemIndex)
+					end
 				end
 			end
 			self:AddTimer(1, nAnimTime, ani, true, true, true)
@@ -177,6 +189,14 @@ function CharEquipmentCtrl:OnEvent_PresetSelect(nValue)
 	local nIndex = nValue + 1
 	local nSelect = PlayerData.Equipment:GetSelectPreset(self.nCharId)
 	if nSelect == nIndex then
+		return
+	end
+	if NovaAPI.IsEditorPlatform() and PlayerData.Equipment.isTestPresetTeam then
+		PlayerData.Equipment.tbCharSelectPreset[self.nCharId] = nIndex
+		self:RefreshPresetSlot()
+		if self.nLastIndex and self.nLastIndex > 0 and nil ~= self._mapNode.goEquipmentSlotItem[self.nLastIndex] then
+			self._mapNode.goEquipmentSlotItem[self.nLastIndex]:SetChooseState(true)
+		end
 		return
 	end
 	local callback = function()

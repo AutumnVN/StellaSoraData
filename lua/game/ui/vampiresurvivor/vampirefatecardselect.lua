@@ -309,6 +309,11 @@ function VampireFateCardSelect:SelectComplete(nEventId, tbFateCard, mapRoll, nCo
 					local endPos = self._mapNode.depotPoint.transform.position
 					local wait = function()
 						WwiseAudioMgr:PlaySound("ui_roguelike_card_flyby")
+						if bEx then
+							self._mapNode.animCtrl:Play("VampireFateCard_out1")
+						else
+							self._mapNode.animCtrl:Play("VampireFateCard_out2")
+						end
 						local totalMoveTime = 0.3
 						local moveTime = 0
 						local normalizedTime = 0
@@ -324,7 +329,6 @@ function VampireFateCardSelect:SelectComplete(nEventId, tbFateCard, mapRoll, nCo
 							coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 						end
 						fx.gameObject:SetActive(false)
-						coroutine.yield(CS.UnityEngine.WaitForSecondsRealtime(0.5))
 						EventManager.Hit(EventId.BlockInput, false)
 						self:HidePanel()
 						fxRoot.transform.position = beginPos
@@ -342,14 +346,16 @@ function VampireFateCardSelect:SelectComplete(nEventId, tbFateCard, mapRoll, nCo
 			end
 		end
 		if not bSelect then
-			local nAnimLen = 1
-			self:AddTimer(1, nAnimLen, function()
-				EventManager.Hit(EventId.BlockInput, false)
-				self:HidePanel()
-				if nil ~= self.callback then
-					self.callback(-1, nEventId)
-				end
-			end, true, true, true, nil)
+			do
+				local nAnimLen = 1
+				self:AddTimer(1, nAnimLen, function()
+					EventManager.Hit(EventId.BlockInput, false)
+					self:HidePanel()
+					if nil ~= self.callback then
+						self.callback(-1, nEventId)
+					end
+				end, true, true, true, nil)
+			end
 		end
 	else
 		self:Refresh(nEventId, tbFateCard, mapRoll, nCoin, bReward)
@@ -446,6 +452,7 @@ function VampireFateCardSelect:OnBtnClick_Confirm()
 	if nil ~= self.callback then
 		self.bProcessing = true
 		local completeFunc = function(nEventId, tbFateCard, mapRoll, nCoin, bReward, mapCurFateCard)
+			EventManager.Hit(EventId.BlockInput, false)
 			self.tbCount = {
 				0,
 				0,
@@ -477,6 +484,7 @@ function VampireFateCardSelect:OnBtnClick_Confirm()
 			self:SelectComplete(nEventId, tbFateCard, mapRoll, nCoin, bReward)
 			self.bProcessing = false
 		end
+		EventManager.Hit(EventId.BlockInput, true)
 		self.callback(self.nSelectIdx, self.nEventId, completeFunc, false, self.bReward)
 	end
 end
@@ -489,6 +497,7 @@ function VampireFateCardSelect:OnBtnClick_Roll()
 	end
 	self.bProcessing = true
 	local completeFunc = function(nEventId, tbFateCard, mapRoll, nCoin, bReward, mapCurFateCard)
+		EventManager.Hit(EventId.BlockInput, false)
 		self.tbCount = {
 			0,
 			0,
@@ -519,6 +528,7 @@ function VampireFateCardSelect:OnBtnClick_Roll()
 		self:Refresh(nEventId, tbFateCard, mapRoll, nCoin, bReward, true)
 		self.bProcessing = false
 	end
+	EventManager.Hit(EventId.BlockInput, true)
 	self.callback(self.nSelectIdx, self.nEventId, completeFunc, true)
 end
 function VampireFateCardSelect:OnBtnClick_Abandon()
@@ -779,7 +789,6 @@ function VampireFateCardSelect:OnEvent_Reopen(sName)
 end
 function VampireFateCardSelect:OnEvent_VampireRewardChestFailed()
 	EventManager.Hit(EventId.BlockInput, false)
-	self.bProcessing = false
 	CS.GameCameraStackManager.Instance:OpenMainCamera()
 	self:HidePanel()
 	if nil ~= self.callback then
@@ -788,7 +797,6 @@ function VampireFateCardSelect:OnEvent_VampireRewardChestFailed()
 end
 function VampireFateCardSelect:OnEvent_VampireLevelRewardFailed()
 	EventManager.Hit(EventId.BlockInput, false)
-	self.bProcessing = false
 	CS.GameCameraStackManager.Instance:OpenMainCamera()
 	self:HidePanel()
 	if nil ~= self.callback then

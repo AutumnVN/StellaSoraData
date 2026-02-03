@@ -15,6 +15,22 @@ function TrialDepotPanel:Awake()
 	self.mapPotential = self._tbParam[6]
 	self.mapNote = self._tbParam[7]
 	self.bBattle = self._tbParam[8]
+	self.mapNoteNeed = {}
+	for nIndex, nDiscId in ipairs(self.tbDisc) do
+		if 3 < nIndex then
+			break
+		end
+		local mapDiscData = self.mapDiscData[nDiscId]
+		if mapDiscData ~= nil then
+			local tbNeedNote = mapDiscData.tbSkillNeedNote
+			for _, mapNeedNote in ipairs(tbNeedNote) do
+				if self.mapNoteNeed[mapNeedNote.nId] == nil then
+					self.mapNoteNeed[mapNeedNote.nId] = 0
+				end
+				self.mapNoteNeed[mapNeedNote.nId] = self.mapNoteNeed[mapNeedNote.nId] + mapNeedNote.nCount
+			end
+		end
+	end
 end
 function TrialDepotPanel:OnEnable()
 end
