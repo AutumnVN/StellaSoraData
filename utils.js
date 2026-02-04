@@ -765,9 +765,9 @@ function formatEffectType(id, type, paramType) {
 function formatAddAttrType(type, paramType, element) {
     const attrTypeStr = ATTR_TYPE[type];
     const paramTypeStr = PARAM_TYPE[paramType];
-    const elementStr = element ? ` (${LANG_UITEXT[`UIText.T_Element_Attr_${element}.1`]})` : '';
+    const elementStr = element ? `(${LANG_UITEXT[`UIText.T_Element_Attr_${element}.1`]}) ` : '';
 
-    let result = `${attrTypeStr} (${paramTypeStr})${elementStr}`;
+    let result = `${elementStr}${attrTypeStr} (${paramTypeStr})`;
 
     return result;
 }
