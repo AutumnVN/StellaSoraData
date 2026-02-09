@@ -2025,7 +2025,7 @@ return {
 			"",
 			false,
 			"",
-			"If you feel bad for me, how about a little scoop?==RT==Maybe spill some tea about the Boss? You're buddies with him, aren't ya? If you feel bad for me, how about a little scoop?==RT==Maybe spill some tea about the Boss? You're buddies with her, aren't ya?",
+			"If you feel bad for me, how about a little scoop? Maybe spill some tea about the Boss? You're buddies with ==SEX4==, aren't ya?",
 			""
 		}
 	},

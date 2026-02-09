@@ -250,6 +250,7 @@ function BreakOutPlayCtrl:OnEvent_Exit()
 	local confirmCallback = function()
 		EventManager.Hit("Close_BattlePause")
 		EventManager.Hit("BreakOut_Complete", true)
+		EventManager.Hit("SetBreakOutPlaySkill_Visible", false)
 		NovaAPI.SetCanvasGroupAlpha(self.Canvas, 0)
 		local requestCb = function(mapChangeInfo)
 			local cb = function()
@@ -277,7 +278,7 @@ function BreakOutPlayCtrl:OnEvent_Exit()
 	local msg = {
 		nType = AllEnum.MessageBox.Confirm,
 		sContent = sTip,
-		callbackConfirm = confirmCallback
+		callbackConfirmAfterClose = confirmCallback
 	}
 	EventManager.Hit(EventId.OpenMessageBox, msg)
 end

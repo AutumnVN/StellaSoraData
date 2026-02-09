@@ -886,8 +886,7 @@ function DispatchCtrl:OnBtnClick_OneClickSelection()
 			end
 		end
 	end
-	self.findcombinationCount = 0
-	local result = self:find_min_roles(tbCharTagList, data.Tags, data.ExtraTags)
+	local result = self:find_min_roles_greedy(tbCharTagList, data.Tags, data.ExtraTags)
 	if result then
 		if self.bOpenBuild then
 		else
@@ -921,61 +920,40 @@ function DispatchCtrl:can_meet_requirements(role_tags, requirements)
 	end
 	return true
 end
-function DispatchCtrl:find_min_roles(roles, normal_req, extra_req)
-	local selected_roles = {}
-	local cachedIds = {}
-	for _, role in ipairs(roles) do
-		if self:can_meet_requirements(role.tags, normal_req) then
-			cachedIds[role.id] = true
-			table.insert(selected_roles, role)
+function DispatchCtrl:calculate_role_score(role_tags, normal_req, extra_req)
+	local score = 0
+	local tag_count = {}
+	for _, tag in ipairs(role_tags) do
+		tag_count[tag] = (tag_count[tag] or 0) + 1
+	end
+	for _, req in ipairs(normal_req) do
+		if tag_count[req] and 0 < tag_count[req] then
+			score = score + 10
+			tag_count[req] = tag_count[req] - 1
 		end
 	end
-	local bHasNormalReqRole = 0 < #selected_roles
-	if #selected_roles == 0 then
-		selected_roles = roles
-	else
-		for _, role in ipairs(roles) do
-			if self:can_meet_requirements(role.tags, extra_req) and cachedIds[role.id] == nil then
-				table.insert(selected_roles, role)
-				cachedIds[role.id] = true
-			end
+	for _, req in ipairs(extra_req) do
+		if tag_count[req] and 0 < tag_count[req] then
+			score = score + 3
+			tag_count[req] = tag_count[req] - 1
 		end
 	end
-	for i = 1, #selected_roles do
-		local found_combination, combination = self:find_combination(selected_roles, {}, normal_req, extra_req, 1, i)
-		if found_combination and #combination <= 3 then
-			return combination
-		end
-	end
-	for i = 1, #selected_roles do
-		local found_combination, combination = self:find_combination(selected_roles, {}, normal_req, {}, 1, i)
-		if found_combination then
-			return combination
-		end
-	end
-	return nil
+	return score
 end
-function DispatchCtrl:find_combination(roles, selected, normal_req, extra_req, start_index, max_depth)
-	self.findcombinationCount = self.findcombinationCount + 1
-	if self.findcombinationCount >= 999999 then
-		return false
+function DispatchCtrl:count_remaining_requirements(selected_tags, requirements)
+	local tag_count = {}
+	for _, tag in ipairs(selected_tags) do
+		tag_count[tag] = (tag_count[tag] or 0) + 1
 	end
-	if max_depth == 0 then
-		if self:can_meet_requirements(self:concat_tags(selected), normal_req) and self:can_meet_requirements(self:concat_tags(selected), extra_req) then
-			return true, selected
+	local remaining = {}
+	for _, req in ipairs(requirements) do
+		if not tag_count[req] or tag_count[req] <= 0 then
+			table.insert(remaining, req)
 		else
-			return false
+			tag_count[req] = tag_count[req] - 1
 		end
 	end
-	for i = start_index, #roles do
-		table.insert(selected, roles[i])
-		local found, combination = self:find_combination(roles, selected, normal_req, extra_req, i + 1, max_depth - 1)
-		if found then
-			return true, combination
-		end
-		table.remove(selected)
-	end
-	return false
+	return remaining
 end
 function DispatchCtrl:concat_tags(selected_roles)
 	local combined_tags = {}
@@ -985,6 +963,136 @@ function DispatchCtrl:concat_tags(selected_roles)
 		end
 	end
 	return combined_tags
+end
+function DispatchCtrl:find_min_roles_greedy(roles, normal_req, extra_req)
+	if #roles == 0 then
+		return nil
+	end
+	for target_count = 1, 3 do
+		local result = self:greedy_select_roles_with_limit(roles, normal_req, extra_req, true, target_count)
+		if result then
+			return result
+		end
+	end
+	for target_count = 1, 3 do
+		local result = self:greedy_select_roles_with_limit(roles, normal_req, {}, false, target_count)
+		if result then
+			return result
+		end
+	end
+	return nil
+end
+function DispatchCtrl:greedy_select_roles_with_limit(roles, normal_req, extra_req, check_both, max_count)
+	if #normal_req == 0 and #extra_req == 0 then
+		return {}
+	end
+	local scored_roles = {}
+	for _, role in ipairs(roles) do
+		local score = self:calculate_role_score(role.tags, normal_req, extra_req)
+		if 0 < score then
+			table.insert(scored_roles, {role = role, score = score})
+		end
+	end
+	if #scored_roles == 0 then
+		return nil
+	end
+	table.sort(scored_roles, function(a, b)
+		return a.score > b.score
+	end)
+	return self:try_combinations_greedy(scored_roles, normal_req, extra_req, check_both, max_count)
+end
+function DispatchCtrl:try_combinations_greedy(scored_roles, normal_req, extra_req, check_both, target_count)
+	local max_attempts = math.min(100, #scored_roles * target_count)
+	local attempt_count = 0
+	local selected = {}
+	local selected_tags = {}
+	for _, scored_role in ipairs(scored_roles) do
+		if target_count <= #selected then
+			break
+		end
+		attempt_count = attempt_count + 1
+		if max_attempts < attempt_count then
+			break
+		end
+		local remaining_normal = self:count_remaining_requirements(selected_tags, normal_req)
+		local remaining_extra = self:count_remaining_requirements(selected_tags, extra_req)
+		if #remaining_normal == 0 and #remaining_extra == 0 then
+			break
+		end
+		local can_help = DispatchCtrl.role_can_help(scored_role.role.tags, remaining_normal, remaining_extra)
+		if can_help then
+			table.insert(selected, scored_role.role)
+			for _, tag in ipairs(scored_role.role.tags) do
+				table.insert(selected_tags, tag)
+			end
+		end
+	end
+	if #selected == target_count then
+		if check_both then
+			if self:can_meet_requirements(selected_tags, normal_req) and self:can_meet_requirements(selected_tags, extra_req) then
+				return selected
+			end
+		elseif self:can_meet_requirements(selected_tags, normal_req) then
+			return selected
+		end
+	end
+	if target_count <= 2 and target_count <= #scored_roles then
+		for start_idx = 1, math.min(5, #scored_roles - target_count + 1) do
+			attempt_count = attempt_count + 1
+			if max_attempts < attempt_count then
+				break
+			end
+			local test_selected = {}
+			local test_tags = {}
+			table.insert(test_selected, scored_roles[start_idx].role)
+			for _, tag in ipairs(scored_roles[start_idx].role.tags) do
+				table.insert(test_tags, tag)
+			end
+			for i = 1, #scored_roles do
+				if target_count <= #test_selected then
+					break
+				end
+				if i ~= start_idx then
+					local remaining_normal = self:count_remaining_requirements(test_tags, normal_req)
+					local remaining_extra = self:count_remaining_requirements(test_tags, extra_req)
+					if #remaining_normal == 0 and #remaining_extra == 0 then
+						break
+					end
+					if DispatchCtrl.role_can_help(scored_roles[i].role.tags, remaining_normal, remaining_extra) then
+						table.insert(test_selected, scored_roles[i].role)
+						for _, tag in ipairs(scored_roles[i].role.tags) do
+							table.insert(test_tags, tag)
+						end
+					end
+				end
+			end
+			if #test_selected == target_count then
+				if check_both then
+					if self:can_meet_requirements(test_tags, normal_req) and self:can_meet_requirements(test_tags, extra_req) then
+						return test_selected
+					end
+				elseif self:can_meet_requirements(test_tags, normal_req) then
+					return test_selected
+				end
+			end
+		end
+	end
+	return nil
+end
+function DispatchCtrl.role_can_help(role_tags, remaining_normal, remaining_extra)
+	for _, tag in ipairs(role_tags) do
+		for _, req in ipairs(remaining_normal) do
+			if tag == req then
+				return true
+			end
+		end
+		for _, req in ipairs(remaining_extra) do
+			if tag == req then
+				return true
+			end
+		end
+	end
+	return false
 end
 function DispatchCtrl:OnEvent_OpenBuildList(dispatchId)
 	self.bOpenBuild = true

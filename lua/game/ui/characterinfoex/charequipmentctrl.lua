@@ -128,11 +128,12 @@ function CharEquipmentCtrl:OnEnable()
 			local ani = function()
 				if not PlayerData.Guide:CheckInGuideGroup(50) then
 					local mapSelect = PlayerData.Equipment:GetEquipmentSelect()
-					if mapSelect then
+					if mapSelect and mapSelect.nCharId == self.nCharId then
 						local nEquipIndex = 0
-						for _, v in ipairs(self.tbSlot) do
+						for k, v in ipairs(self.tbSlot) do
 							if v.nSlotId == mapSelect.nSlotId then
 								nEquipIndex = v.nGemIndex
+								self.nLastIndex = k
 								break
 							end
 						end
@@ -151,6 +152,7 @@ function CharEquipmentCtrl:OnEnable()
 	end
 end
 function CharEquipmentCtrl:OnDestroy()
+	PlayerData.Equipment:GetEquipmentSelect()
 	self.nLastIndex = 0
 end
 function CharEquipmentCtrl:OnBtnClick_EquipmentSlot(_, nIndex)

@@ -1318,6 +1318,7 @@ function PlayerStarTowerData:ChangeNpcAffinity(mapInfo)
 	self:UpdateNpcAffinityRedDot()
 end
 function PlayerStarTowerData:UpdateNpcAffinityRedDot()
+	RedDotManager.SetValid(RedDotDefine.StarTowerBook_Affinity_Reward, "server", false)
 	local forEachNpc = function(mapData)
 		RedDotManager.SetValid(RedDotDefine.StarTowerBook_Affinity_Reward, mapData.Id, false)
 	end

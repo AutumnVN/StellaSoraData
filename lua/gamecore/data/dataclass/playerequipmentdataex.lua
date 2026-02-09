@@ -234,8 +234,12 @@ end
 function PlayerEquipmentData:SetRollWarning(bAble)
 	self.bRollWarning = bAble
 end
-function PlayerEquipmentData:CacheEquipmentSelect(nSlotId, nGemIndex)
-	self.mapSelect = {nSlotId = nSlotId, nGemIndex = nGemIndex}
+function PlayerEquipmentData:CacheEquipmentSelect(nSlotId, nGemIndex, nCharId)
+	self.mapSelect = {
+		nSlotId = nSlotId,
+		nGemIndex = nGemIndex,
+		nCharId = nCharId
+	}
 end
 function PlayerEquipmentData:GetEquipmentSelect()
 	if self.mapSelect == nil then

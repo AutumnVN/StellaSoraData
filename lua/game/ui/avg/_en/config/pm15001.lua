@@ -1323,7 +1323,7 @@ return {
 			"",
 			false,
 			"",
-			"Not everyone can just work whenever they feel like it!",
+			"Not everyone can just slack off whenever they feel like it!",
 			""
 		}
 	},

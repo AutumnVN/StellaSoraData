@@ -49,7 +49,7 @@ function BreakOutLevelCellCtrl:SetData(nActId, nLevelId, bIsActEnd)
 	end
 	self.LevelId = nLevelId
 	self.BreakOutData = PlayerData.Activity:GetActivityDataById(nActId)
-	if self.BreakOutData == nil then
+	if self.BreakOutData == nil or self.BreakOutData ~= nil and self.BreakOutData:GetLevelData() == nil then
 		printError("\230\180\187\229\138\168 id:" .. self.ActId .. " \230\149\176\230\141\174\228\184\186\231\169\186 \231\148\168\230\156\172\229\156\176\228\184\180\230\151\182\230\149\176\230\141\174\229\136\157\229\167\139\229\140\150")
 		self:InitErrorSate()
 		self.levelData = ConfigTable.GetData("BreakOutLevel", self.LevelId)
@@ -154,7 +154,7 @@ function BreakOutLevelCellCtrl:RefreshLevelFinishState()
 	self._mapNode.img_FinishIcon.gameObject:SetActive(self.BreakOutData:IsLevelComplete(self.LevelId))
 end
 function BreakOutLevelCellCtrl:OnBtnClick_SelectLevel()
-	if self.BreakOutData == nil then
+	if self.BreakOutData == nil or self.BreakOutData ~= nil and self.BreakOutData:GetLevelData() == nil then
 		return
 	end
 	local bTimeUnlock, bPreComplete = self.BreakOutData:IsLevelUnlocked(self.LevelId)

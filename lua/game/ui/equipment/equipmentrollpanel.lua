@@ -12,7 +12,7 @@ function EquipmentRollPanel:Awake()
 		self.nSlotId = tbParam[2]
 		self.nSelectGemIndex = tbParam[3]
 		self.nEquipedGemIndex = tbParam[4]
-		PlayerData.Equipment:CacheEquipmentSelect(self.nSlotId, self.nSelectGemIndex)
+		PlayerData.Equipment:CacheEquipmentSelect(self.nSlotId, self.nSelectGemIndex, self.nCharId)
 	end
 end
 function EquipmentRollPanel:OnEnable()

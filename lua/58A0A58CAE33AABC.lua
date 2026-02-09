@@ -13,8 +13,9 @@ local mapToggle = {
 }
 local colorSelect = Color(1.0, 0.9882352941176471, 0.9568627450980393, 1)
 local colorUnSelect = Color(0.4, 0.13333333333333333, 0.15294117647058825, 1)
-local colorSelectLock = Color(0.7137254901960784, 0.6431372549019608, 0.5411764705882353, 1)
+local colorSelectLock = Color(0.9529411764705882, 0.8588235294117647, 0.7294117647058823, 1)
 local colorUnSelectLock = Color(0.4, 0.13333333333333333, 0.15294117647058825, 1)
+local colorSelectLockMask = Color(0.7137254901960784, 0.6431372549019608, 0.5411764705882353, 1)
 local colorUnSelectLockMask = Color(0.2980392156862745, 0.09803921568627451, 0.11372549019607843, 1)
 local timeUnLockColor = "fff7ca"
 local colorConditionsUnLock = Color(1, 1, 1, 1)
@@ -337,6 +338,8 @@ function ActivityLevelsSelectCtrl:RefreshTogType(nType)
 end
 function ActivityLevelsSelectCtrl:RefreshTogList(nType, nDifficulty)
 	local tabLevelInfo, tabLevelInfoDifficulty
+	local isOpenAdventure = self.activityLevelsData:GetLevelDayOpen(GameEnum.ActivityLevelType.Adventure, self.firstAdventureLevel)
+	local isOpenHard = self.activityLevelsData:GetLevelDayOpen(GameEnum.ActivityLevelType.HARD, self.firstHardLevel)
 	if nType == GameEnum.ActivityLevelType.Explore then
 		tabLevelInfo = self.activityLevelsData.levelTabExplore
 		tabLevelInfoDifficulty = self.activityLevelsData.levelTabExploreDifficulty
@@ -344,20 +347,50 @@ function ActivityLevelsSelectCtrl:RefreshTogList(nType, nDifficulty)
 		NovaAPI.SetImageColor(tmpImageAdventure, colorUnSelectLockMask)
 		local tmpImageHard = self._mapNode.lockHard.gameObject.transform:Find("Image"):GetComponent("Image")
 		NovaAPI.SetImageColor(tmpImageHard, colorUnSelectLockMask)
+		if not isOpenAdventure then
+			local tmpLockAdventure = self._mapNode.lockAdventure.gameObject:GetComponent("Image")
+			self:SetActivityAtlasSprite_New(tmpLockAdventure, "10104/SpriteAtlas_1010401", "tab_spring_1")
+			tmpLockAdventure:SetNativeSize()
+		end
+		if not isOpenHard then
+			local tmpLockHard = self._mapNode.lockHard.gameObject:GetComponent("Image")
+			self:SetActivityAtlasSprite_New(tmpLockHard, "10104/SpriteAtlas_1010401", "tab_spring_1")
+			tmpLockHard:SetNativeSize()
+		end
 	elseif nType == GameEnum.ActivityLevelType.Adventure then
 		tabLevelInfo = self.activityLevelsData.levelTabAdventure
 		tabLevelInfoDifficulty = self.activityLevelsData.levelTabAdventureDifficulty
 		local tmpImageAdventure = self._mapNode.lockAdventure.gameObject.transform:Find("Image"):GetComponent("Image")
-		NovaAPI.SetImageColor(tmpImageAdventure, colorSelectLock)
+		NovaAPI.SetImageColor(tmpImageAdventure, colorSelectLockMask)
 		local tmpImageHard = self._mapNode.lockHard.gameObject.transform:Find("Image"):GetComponent("Image")
 		NovaAPI.SetImageColor(tmpImageHard, colorUnSelectLockMask)
+		if not isOpenAdventure then
+			local tmpLockAdventure = self._mapNode.lockAdventure.gameObject:GetComponent("Image")
+			self:SetActivityAtlasSprite_New(tmpLockAdventure, "10104/SpriteAtlas_1010401", "tab_spring_1_slc")
+			tmpLockAdventure:SetNativeSize()
+		end
+		if not isOpenHard then
+			local tmpLockHard = self._mapNode.lockHard.gameObject:GetComponent("Image")
+			self:SetActivityAtlasSprite_New(tmpLockHard, "10104/SpriteAtlas_1010401", "tab_spring_1")
+			tmpLockHard:SetNativeSize()
+		end
 	else
 		tabLevelInfo = self.activityLevelsData.levelTabHard
 		tabLevelInfoDifficulty = self.activityLevelsData.levelTabHardDifficulty
 		local tmpImageAdventure = self._mapNode.lockAdventure.gameObject.transform:Find("Image"):GetComponent("Image")
 		NovaAPI.SetImageColor(tmpImageAdventure, colorUnSelectLockMask)
 		local tmpImageHard = self._mapNode.lockHard.gameObject.transform:Find("Image"):GetComponent("Image")
-		NovaAPI.SetImageColor(tmpImageHard, colorSelectLock)
+		NovaAPI.SetImageColor(tmpImageHard, colorSelectLockMask)
+		if not isOpenAdventure then
+			local tmpLockAdventure = self._mapNode.lockAdventure.gameObject:GetComponent("Image")
+			self:SetActivityAtlasSprite_New(tmpLockAdventure, "10104/SpriteAtlas_1010401", "tab_spring_1")
+			tmpLockAdventure:SetNativeSize()
+		end
+		if not isOpenHard then
+			local tmpLockHard = self._mapNode.lockHard.gameObject:GetComponent("Image")
+			self:SetActivityAtlasSprite_New(tmpLockHard, "10104/SpriteAtlas_1010401", "tab_spring_1_slc")
+			tmpLockHard:SetNativeSize()
+		end
 	end
 	for i = 1, 10 do
 		self._mapNode.tog[i].gameObject:SetActive(i <= #tabLevelInfoDifficulty)
@@ -475,10 +508,16 @@ function ActivityLevelsSelectCtrl:OnBtnClick_Tog(btn)
 		for idx, value in pairs(mapToggle) do
 			if value == self.curSelectHard then
 				self._mapNode.togCtrl[idx]:SetDefaultActivity(false, colorSelect, colorUnSelect)
+				local tmpImage = self._mapNode.togCtrl[idx].gameObject.transform:Find("AnimRoot/AnimSwitch/rtLockInfo/imgLockMask"):GetComponent("Image")
+				self:SetActivityAtlasSprite_New(tmpImage, "10104/SpriteAtlas_1010401", "btn_spring_3")
+				tmpImage:SetNativeSize()
 				break
 			end
 		end
 		self._mapNode.togCtrl[togIdx]:SetDefaultActivity(true, colorSelect, colorUnSelect)
+		local tmpImageSelect = self._mapNode.togCtrl[togIdx].gameObject.transform:Find("AnimRoot/AnimSwitch/rtLockInfo/imgLockMask"):GetComponent("Image")
+		self:SetActivityAtlasSprite_New(tmpImageSelect, "10104/SpriteAtlas_1010401", "btn_spring_4")
+		tmpImageSelect:SetNativeSize()
 		self.SelectTogPreLvLock = self._mapNode.togCtrl[togIdx].gameObject.transform:Find("AnimRoot/AnimSwitch/rtLockPreLv/rtLockPreLvSelect"):GetComponent("Image")
 		NovaAPI.SetImageColor(self.SelectTogPreLvLock, colorSelectLock)
 		self:RefreshInstanceInfo(self.nLevelType, nHard, nil, false)
@@ -505,6 +544,13 @@ function ActivityLevelsSelectCtrl:RefreshInstanceInfo(nType, nHard, bLocation, b
 	if bSetTog then
 		for i = 1, 10 do
 			self._mapNode.togCtrl[i]:SetDefaultActivity(i == nHard, colorSelect, colorUnSelect)
+			local tmpImageSelect = self._mapNode.togCtrl[i].gameObject.transform:Find("AnimRoot/AnimSwitch/rtLockInfo/imgLockMask"):GetComponent("Image")
+			if i == nHard then
+				self:SetActivityAtlasSprite_New(tmpImageSelect, "10104/SpriteAtlas_1010401", "btn_spring_4")
+			else
+				self:SetActivityAtlasSprite_New(tmpImageSelect, "10104/SpriteAtlas_1010401", "btn_spring_3")
+			end
+			tmpImageSelect:SetNativeSize()
 		end
 	end
 	self.curSelectHard = nHard
@@ -646,7 +692,7 @@ function ActivityLevelsSelectCtrl:RefreshInstanceInfo(nType, nHard, bLocation, b
 			local objTog = self._mapNode.tog[nHard].gameObject
 			local rtLockInfo = objTog.transform:Find("AnimRoot/AnimSwitch/rtLockInfo").gameObject
 			self.tmpLockInfoDay = rtLockInfo.gameObject.transform:Find("rtLockInfoDay"):GetComponent("Image")
-			NovaAPI.SetImageColor(self.tmpLockInfoDay, colorSelectLock)
+			NovaAPI.SetImageColor(self.tmpLockInfoDay, colorSelectLockMask)
 		end
 	end
 	for i = 1, #self.tabRewardList do

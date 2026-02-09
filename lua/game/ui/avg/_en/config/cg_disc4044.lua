@@ -5573,7 +5573,7 @@ return {
 			"none",
 			"OutQuad",
 			1.0,
-			false,
+			true,
 			0
 		}
 	},
@@ -5836,8 +5836,8 @@ return {
 			nil,
 			nil,
 			"none",
-			"OutQuad",
-			12.0,
+			"Linear",
+			8.0,
 			false,
 			0
 		}
@@ -5858,12 +5858,12 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {0.5}
+		param = {1.5}
 	},
 	{cmd = "SetGoOn"},
 	{
 		cmd = "Wait",
-		param = {0.5}
+		param = {1.5}
 	},
 	{
 		cmd = "SetTalk",
@@ -5881,7 +5881,7 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {0.5}
+		param = {1.5}
 	},
 	{
 		cmd = "SetTalk",
@@ -5899,7 +5899,7 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {0.5}
+		param = {1.5}
 	},
 	{
 		cmd = "SetTalk",
@@ -5917,7 +5917,7 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {0.5}
+		param = {1.5}
 	},
 	{
 		cmd = "SetChoiceBegin",

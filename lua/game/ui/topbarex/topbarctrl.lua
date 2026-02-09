@@ -118,7 +118,8 @@ local mapConfig = {
 	[PanelId.StorySet] = {bEvent = true},
 	[PanelId.BdConvertPanel] = {bEvent = true},
 	[PanelId.GachaSpin] = {bEvent = true},
-	[PanelId.JointDrillLevelSelect_2] = {bEvent = true}
+	[PanelId.JointDrillLevelSelect_2] = {bEvent = true},
+	[PanelId.EquipmentRoll] = {bEvent = true}
 }
 function TopBarCtrl:CreateCoin(tbCoin, bHideCoinAdd)
 	self.mapCoinIndex, self.mapItemIndex = nil, nil

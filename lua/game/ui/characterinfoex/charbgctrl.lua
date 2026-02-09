@@ -125,6 +125,8 @@ function CharBgCtrl:SetCharacterPng(nSkinId, nType)
 	if bSetSuccess and self.lasttrPanelOffsetL2DPos ~= nil then
 		self._mapNode.trPanelOffsetL2D:DOLocalMoveX(self.lasttrPanelOffsetL2DPos, 0):SetUpdate(true)
 	end
+	local skinCfgData = ConfigTable.GetData_CharacterSkin(nSkinId)
+	NovaAPI.SetSpriteRendererSprite(self._mapNode.bgRight, self:LoadAsset(skinCfgData.Bg .. ".png", typeof(Sprite)))
 end
 function CharBgCtrl:SetCharacterL2D(nSkinId, nType)
 	if nil ~= self.tbRenderer then

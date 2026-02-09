@@ -142,7 +142,10 @@ EquipmentRollCtrl._mapNodeConfig = {
 	},
 	FX = {sNodeName = "--FX--"}
 }
-EquipmentRollCtrl._mapEventConfig = {}
+EquipmentRollCtrl._mapEventConfig = {
+	[EventId.UIBackConfirm] = "OnEvent_Back",
+	[EventId.UIHomeConfirm] = "OnEvent_BackHome"
+}
 function EquipmentRollCtrl:Refresh()
 	self:RefreshPresetData()
 	self:RefreshPresetSlot()
@@ -522,7 +525,7 @@ function EquipmentRollCtrl:OnBtnClick_EquipmentSlot(_, nIndex)
 	self._panel.nSlotId = self.tbSlot[nIndex].nSlotId
 	self._panel.nEquipedGemIndex = self.tbSlot[nIndex].nGemIndex
 	self._panel.nSelectGemIndex = self.tbSlot[nIndex].nGemIndex == 0 and 1 or self.tbSlot[nIndex].nGemIndex
-	PlayerData.Equipment:CacheEquipmentSelect(self._panel.nSlotId, self._panel.nSelectGemIndex)
+	PlayerData.Equipment:CacheEquipmentSelect(self._panel.nSlotId, self._panel.nSelectGemIndex, self._panel.nCharId)
 	for i = 1, 3 do
 		self._mapNode.imgChoose[i].gameObject:SetActive(self._panel.nSlotId == self.tbSlot[i].nSlotId)
 	end
@@ -554,7 +557,7 @@ function EquipmentRollCtrl:OnBtnClick_Tab(btn, nIndex)
 	self.nSubSelectIndex = 2
 	self._mapNode.aniIconMask:Play(sAnimName)
 	self._panel.nSelectGemIndex = nIndex
-	PlayerData.Equipment:CacheEquipmentSelect(self._panel.nSlotId, self._panel.nSelectGemIndex)
+	PlayerData.Equipment:CacheEquipmentSelect(self._panel.nSlotId, self._panel.nSelectGemIndex, self._panel.nCharId)
 	self:RefreshIndexGem()
 	self.animator:Play("EquipmentSelectPanel_in", 0, 0)
 	local callback = function()
@@ -573,7 +576,7 @@ function EquipmentRollCtrl:OnBtnClick_Active()
 	end
 	local callback = function(nNewIndex)
 		self._panel.nSelectGemIndex = nNewIndex
-		PlayerData.Equipment:CacheEquipmentSelect(self._panel.nSlotId, self._panel.nSelectGemIndex)
+		PlayerData.Equipment:CacheEquipmentSelect(self._panel.nSlotId, self._panel.nSelectGemIndex, self._panel.nCharId)
 		self:RefreshTab()
 		self:RefreshIndexGem(true)
 	end
@@ -598,5 +601,18 @@ function EquipmentRollCtrl:OnBtnClick_Equip()
 		self:RefreshIndexGem()
 	end
 	PlayerData.Equipment:SendCharGemEquipGemReq(self._panel.nCharId, self._panel.nSlotId, self._panel.nSelectGemIndex, nSelectPreset, callback)
+end
+function EquipmentRollCtrl:OnEvent_Back(nPanelId)
+	if self._panel._nPanelId ~= nPanelId then
+		return
+	end
+	EventManager.Hit(EventId.CloesCurPanel)
+end
+function EquipmentRollCtrl:OnEvent_BackHome(nPanelId)
+	if self._panel._nPanelId ~= nPanelId then
+		return
+	end
+	PlayerData.Equipment:GetEquipmentSelect()
+	PanelManager.Home()
 end
 return EquipmentRollCtrl

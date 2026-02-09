@@ -267,6 +267,9 @@ function StorySetCtrl:OnRefreshTabGrid(goGrid, gridIndex)
 	txtOff.gameObject:SetActive(nIndex ~= self.nCurrentTabIndex)
 	local tabLine = root.transform:Find("tabLine").gameObject
 	tabLine:SetActive(nIndex < #self.tbTabData)
+	if self.nCurrentTabIndex == nIndex then
+		self.goCurrentTabGrid = goGrid
+	end
 	local redDot = root:Find("RedDot").gameObject
 	RedDotManager.RegisterNode(RedDotDefine.Story_Set_Tab, cfg.Id, redDot, nil, nil, true)
 end
@@ -276,27 +279,42 @@ function StorySetCtrl:OnTabGridClick(goGrid, gridIndex)
 		return
 	end
 	self.nCurrentTabIndex = nIndex
+	local root = goGrid.transform:Find("btnGrid/AnimRoot")
+	local imgOn = root:Find("imgOn"):GetComponent("Image")
+	imgOn.gameObject:SetActive(true)
+	local txtOn = root:Find("txtOn"):GetComponent("TMP_Text")
+	local txtOff = root:Find("txtOff"):GetComponent("TMP_Text")
+	txtOn.gameObject:SetActive(true)
+	txtOff.gameObject:SetActive(false)
+	if self.goCurrentTabGrid ~= nil then
+		local lastRoot = self.goCurrentTabGrid.transform:Find("btnGrid/AnimRoot")
+		local lastImgOn = lastRoot:Find("imgOn"):GetComponent("Image")
+		lastImgOn.gameObject:SetActive(false)
+		local lastTxtOn = lastRoot:Find("txtOn"):GetComponent("TMP_Text")
+		local lastTxtOff = lastRoot:Find("txtOff"):GetComponent("TMP_Text")
+		lastTxtOn.gameObject:SetActive(false)
+		lastTxtOff.gameObject:SetActive(true)
+	end
+	self.goCurrentTabGrid = goGrid
 	local nAnimLen = 0
 	for _, v in pairs(self.tbChapterGrid) do
 		nAnimLen = v:PlayOutAnim()
 	end
 	if 0 < nAnimLen then
 		self:AddTimer(1, nAnimLen, function()
-			self:RefreshTab()
-			self.tbChapter = PlayerData.StorySet:GetAllChapterList(self.nCurrentTabIndex, self.bOnlyShowUnRead)
+			self:UpdateChapterList()
 			self:RefreshChapter()
 		end, true, true, true)
 		EventManager.Hit(EventId.TemporaryBlockInput, nAnimLen)
 	else
-		self:RefreshTab()
-		self.tbChapter = PlayerData.StorySet:GetAllChapterList(self.nCurrentTabIndex, self.bOnlyShowUnRead)
+		self:UpdateChapterList()
 		self:RefreshChapter()
 	end
 end
 function StorySetCtrl:ShowGetReward()
 	if self.bGetReward and self.tbReward ~= nil and self.bTransitionEnd then
 		UTILS.OpenReceiveByChangeInfo(self.tbReward, function()
-			self.tbChapter = PlayerData.StorySet:GetAllChapterList(self.nCurrentTabIndex, self.bOnlyShowUnRead)
+			self:UpdateChapterList()
 			if self.nPanelType == panelType_Section then
 				self:RefreshSection()
 			end
@@ -307,6 +325,14 @@ function StorySetCtrl:ShowGetReward()
 	end
 end
 function StorySetCtrl:FilterSectionList()
+end
+function StorySetCtrl:UpdateChapterList()
+	if self.tbTabData == nil then
+		self.tbChapter = PlayerData.StorySet:GetAllChapterList(self.nCurrentTabIndex, self.bOnlyShowUnRead)
+	else
+		local cfg = self.tbTabData[self.nCurrentTabIndex]
+		self.tbChapter = PlayerData.StorySet:GetAllChapterList(cfg.Id, self.bOnlyShowUnRead)
+	end
 end
 function StorySetCtrl:Awake()
 	self.nSelectIndex = 0
@@ -324,7 +350,7 @@ end
 function StorySetCtrl:OnEnable()
 	self.tbChapterGrid = {}
 	self.tbSectionGrid = {}
-	self.tbChapter = PlayerData.StorySet:GetAllChapterList(self.nCurrentTabIndex, self.bOnlyShowUnRead)
+	self:UpdateChapterList()
 	self.animRoot = self.gameObject:GetComponent("Animator")
 	if self.nChapterId > 0 then
 		for k, v in ipairs(self.tbChapter) do
@@ -389,7 +415,7 @@ function StorySetCtrl:OnEvent_StorySetChapterRefresh()
 	end
 	self.bSendMsg = true
 	local serverCallback = function()
-		self.tbChapter = PlayerData.StorySet:GetAllChapterList(self.nCurrentTabIndex, self.bOnlyShowUnRead)
+		self:UpdateChapterList()
 		self.bSendMsg = false
 		if self.nPanelType == panelType_chapter then
 			self:RefreshChapter()
@@ -400,7 +426,7 @@ end
 function StorySetCtrl:OnClick_ShowUnRead()
 	self._mapNode.imgShowUnReadOn.gameObject:SetActive(not self.bOnlyShowUnRead)
 	self.bOnlyShowUnRead = not self.bOnlyShowUnRead
-	self.tbChapter = PlayerData.StorySet:GetAllChapterList(self.nCurrentTabIndex, self.bOnlyShowUnRead)
+	self:UpdateChapterList()
 	self:RefreshChapter()
 end
 return StorySetCtrl

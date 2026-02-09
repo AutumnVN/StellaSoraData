@@ -1205,7 +1205,7 @@ function CookieBoardCtrl:LevelEnd()
 		self._mapNode.btnConfirmScore.gameObject:SetActive(true)
 		self._mapNode.btnShortcutConfirmScore.gameObject:SetActive(true)
 	end
-	EventManager.Hit("Cookie_Game_Complete", self.nLevelId, self.nScore, self.nCompBoxCount, self.nCompCookieCount, self.nGoodCount, self.nPerfectCount, self.nCriticalPerfectCount, self.nMissCount, callback)
+	EventManager.Hit("Cookie_Game_Complete", self.nLevelId, self.nScore, self.nCompBoxCount, self.nCompCookieCount, self.nGoodCount, self.nPerfectCount, self.nCriticalPerfectCount, self.nMissCount, self.nActId, callback)
 	EventManager.Hit(EventId.TemporaryBlockInput, 2)
 	cs_coroutine.start(wait)
 end

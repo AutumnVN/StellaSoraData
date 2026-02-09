@@ -255,6 +255,7 @@ function EquipmentInfoCtrl:Awake()
 		if self.nSelectGemIndex == nil then
 			self.nSelectGemIndex = self.nEquipedGemIndex == 0 and 1 or self.nEquipedGemIndex
 		end
+		PlayerData.Equipment:CacheEquipmentSelect(self.nSlotId, self.nSelectGemIndex, self.nCharId)
 	end
 end
 function EquipmentInfoCtrl:OnEnable()
@@ -280,6 +281,7 @@ function EquipmentInfoCtrl:OnBtnClick_Next()
 	else
 		self.nSelectGemIndex = self.nSelectGemIndex + 1
 	end
+	PlayerData.Equipment:CacheEquipmentSelect(self.nSlotId, self.nSelectGemIndex, self.nCharId)
 	self.nSubSelectIndex = 2
 	self._mapNode.aniIconMask:Play("IconMaskSwitch_R")
 	self:RefreshSelectPoint(nBefore, self.nSelectGemIndex)
@@ -303,6 +305,7 @@ function EquipmentInfoCtrl:OnBtnClick_Pre()
 	else
 		self.nSelectGemIndex = self.nSelectGemIndex - 1
 	end
+	PlayerData.Equipment:CacheEquipmentSelect(self.nSlotId, self.nSelectGemIndex, self.nCharId)
 	self.nSubSelectIndex = 2
 	self._mapNode.aniIconMask:Play("IconMaskSwitch_L")
 	self:RefreshSelectPoint(nBefore, self.nSelectGemIndex)
@@ -365,6 +368,7 @@ function EquipmentInfoCtrl:OnBtnClick_Active()
 	local callback = function(nNewIndex)
 		self:RefreshPoint()
 		self.nSelectGemIndex = nNewIndex
+		PlayerData.Equipment:CacheEquipmentSelect(self.nSlotId, self.nSelectGemIndex, self.nCharId)
 		self:Refresh(true)
 	end
 	PlayerData.Equipment:SendCharGemGenerateReq(self.nCharId, self.nSlotId, callback)

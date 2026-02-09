@@ -2808,7 +2808,7 @@ return {
 			"",
 			false,
 			"",
-			"Don't tell anyone about this, or my mage will be completely ruined!",
+			"Don't tell anyone about this, or my image will be completely ruined!",
 			""
 		}
 	},

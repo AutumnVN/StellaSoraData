@@ -5949,7 +5949,7 @@ return {
 			"",
 			false,
 			"",
-			"I-I see...==W====RT==Personally, if I can eat well and be full, any approach is fine...",
+			"I-I see...==W==Honestly, my biggest wish is just for everyone to have enough to eat. But if the ingredients could be fresher too, I guess that really would make people even happier...",
 			""
 		}
 	},

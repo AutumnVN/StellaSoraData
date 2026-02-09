@@ -58,7 +58,7 @@ function LevelSelectCtrl:Awake()
 	local actData = self.BreakOut_30101Data:GetActivityDataByIndex(nIndex)
 	self.nActId = actData.ActivityId
 	self.BreakOutData = PlayerData.Activity:GetActivityDataById(self.nActId)
-	if self.BreakOutData == nil then
+	if self.BreakOutData == nil or self.BreakOutData ~= nil and self.BreakOutData:GetLevelData() == nil then
 		self.BreakOutData_00 = BreakOutData_00.new()
 		printError("\230\180\187\229\138\168 id:" .. self.nActId .. " \230\149\176\230\141\174\228\184\186\231\169\186\239\188\140\229\188\128\229\167\139\229\136\157\229\167\139\229\140\150\230\156\172\229\156\176\229\164\135\231\148\168\230\149\176\230\141\174")
 		local tableData = {}
@@ -82,7 +82,7 @@ function LevelSelectCtrl:OnDisable()
 	}
 end
 function LevelSelectCtrl:OnEnable()
-	if self.BreakOutData == nil then
+	if self.BreakOutData == nil or self.BreakOutData ~= nil and self.BreakOutData:GetLevelData() == nil then
 		printError("\230\180\187\229\138\168 id:" .. self.nActId .. " \230\149\176\230\141\174\228\184\186\231\169\186\239\188\140\230\151\160\230\179\149\232\174\176\229\189\149\229\189\147\229\137\141\231\154\132\233\154\190\229\186\166\231\138\182\230\128\129\233\187\152\232\174\164\229\174\154\228\189\141\229\136\157\229\167\139\233\154\190\229\186\166")
 	else
 		local param = self:GetPanelParam()
@@ -163,7 +163,7 @@ function LevelSelectCtrl:RefreshTabIcon()
 	self:RefreshTabRedIcon()
 end
 function LevelSelectCtrl:RefreshTabRedIcon()
-	if self.BreakOutData == nil then
+	if self.BreakOutData == nil or self.BreakOutData ~= nil and self.BreakOutData:GetLevelData() == nil then
 		self._mapNode.img_RightIcon:SetActive(false)
 		self._mapNode.img_LeftIcon:SetActive(false)
 		return
@@ -188,7 +188,7 @@ function LevelSelectCtrl:RefreshTabRedIcon()
 end
 function LevelSelectCtrl:RefreshDotsIcon()
 	local nMaxNum = 4
-	if self.BreakOutData == nil then
+	if self.BreakOutData == nil or self.BreakOutData ~= nil and self.BreakOutData:GetLevelData() == nil then
 		nMaxNum = self.BreakOutData_00:GetBreakoutLevelTypeNum()
 	else
 		nMaxNum = self.BreakOutData:GetBreakoutLevelTypeNum()
@@ -218,7 +218,7 @@ function LevelSelectCtrl:SetBanner()
 	end
 end
 function LevelSelectCtrl:AddGrids()
-	if self.BreakOutData == nil then
+	if self.BreakOutData == nil or self.BreakOutData ~= nil and self.BreakOutData:GetLevelData() == nil then
 		local nAllLevelType = self.BreakOutData_00:GetBreakoutLevelTypeNum()
 		for i = 1, nAllLevelType do
 			table.insert(self.tbGridsList, self.BreakOutData_00:GetLevelsByTab(i))

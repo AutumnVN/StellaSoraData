@@ -144,7 +144,6 @@ function CharacterInfoCtrl:RefreshShow()
 	self:CalculateCharacterInfo()
 	self:RefreshCharacterInfo()
 	self:RefreshProperty()
-	self:RefreshActor2D()
 end
 function CharacterInfoCtrl:CalculateCharacterInfo()
 	self:CalculateProperty()
@@ -308,6 +307,7 @@ function CharacterInfoCtrl:OnBtnClick_Left()
 	self.characterId = self.characterIdList[self.curCharacterIndex]
 	self.configData = ConfigTable.GetData_Character(self.characterId)
 	self:RefreshShow()
+	self:RefreshActor2D()
 end
 function CharacterInfoCtrl:OnBtnClick_Right()
 	if #self.characterIdList <= 1 then
@@ -320,6 +320,7 @@ function CharacterInfoCtrl:OnBtnClick_Right()
 	self.characterId = self.characterIdList[self.curCharacterIndex]
 	self.configData = ConfigTable.GetData_Character(self.characterId)
 	self:RefreshShow()
+	self:RefreshActor2D()
 end
 function CharacterInfoCtrl:OnBtnClick_Property()
 	local attrList = self.attrData:GetAttrList()
