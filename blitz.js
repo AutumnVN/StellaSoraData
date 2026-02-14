@@ -23,33 +23,32 @@ for (const id in SCOREBOSSLEVEL) {
     const scoreBossLevel = SCOREBOSSLEVEL[id];
     const scoreGetSwitch = SCOREGETSWITCH[`${scoreBossLevel.ScoreGetSwitchGroup}001`];
     const monster = MONSTER[scoreBossLevel.MonsterId];
-    if (!monster) continue;
-    const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster.FAId].MonsterManual];
-    const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
-    const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[0];
+    const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster?.FAId]?.MonsterManual];
+    const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[(monster?.Templete || scoreBossLevel.MonsterId)];
+    const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust?.TemplateId)?.[0];
     const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === +`100${fixIdStat(id)}`);
 
     blitz[id] = {
-        name: LANG_MONSTERMANUAL[monsterManual.Name],
+        name: LANG_MONSTERMANUAL[monsterManual?.Name] || `${scoreBossLevel.MonsterId}`,
         icon: scoreBossLevel.Episode.split('/').pop(),
-        type: MONSTER_EPIC_TYPE[monster.EpicLv],
+        type: MONSTER_EPIC_TYPE[monster?.EpicLv],
         mechanic: [
             {
-                name: LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].Name],
+                name: LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet]?.Name],
                 desc: getScoreBossGetControlDesc(scoreBossLevel.NonDamageScoreGet),
-                icon: SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet].IconSource.split('/').pop(),
+                icon: SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet]?.IconSource?.split('/')?.pop(),
             },
             {
-                name: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].Name],
+                name: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility]?.Name],
                 desc: getScoreBossAbilityDesc(scoreBossLevel.ScoreBossAbility),
-                icon: SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility].IconSource.split('/').pop(),
+                icon: SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility]?.IconSource?.split('/')?.pop(),
                 effectType: getBlitzEffectType(id),
                 buffIcon: getBlitzBuffIcon(id),
             }
         ],
-        weakTo: monsterValueTemplateAdjust.WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
-        resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${monsterValueTemplateAdjust.EET}.1`],
-        stat: monsterValueTemplateModify.map((modify, index) => {
+        weakTo: monsterValueTemplateAdjust?.WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
+        resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${monsterValueTemplateAdjust?.EET}.1`] || 'None',
+        stat: monsterValueTemplate && monsterValueTemplateAdjust && monsterValueTemplateModify.map((modify, index) => {
             const cumulativeHpFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.HpFix || 0), 0);
             const cumulativeAtkFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.AtkFix || 0), 0);
             const cumulativeDefFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.DefFix || 0), 0);
@@ -98,7 +97,7 @@ for (const id in SCOREBOSSLEVEL) {
 writeFileSync('./blitz.json', JSON.stringify(blitz, null, 4));
 
 function getScoreBossGetControlDesc(id) {
-    let result = LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[id].Desc];
+    let result = LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[id]?.Desc];
     const params = collectParamsFrom(SCOREBOSSGETCONTROL[id]);
     const resolvedParams = resolveParam(params);
 
@@ -112,7 +111,7 @@ function getScoreBossGetControlDesc(id) {
 }
 
 function getScoreBossAbilityDesc(id) {
-    let result = LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[id].Desc];
+    let result = LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[id]?.Desc];
     const params = collectParamsFrom(SCOREBOSSABILITY[id]);
     const resolvedParams = resolveParam(params);
 
@@ -168,5 +167,7 @@ function fixIdStat(id) {
     else if (id === '3') return '2';
     else if (id === '8') return '7';
     else if (id === '9') return '7';
+    else if (id === '10') return '8';
+    else if (id === '11') return '8';
     else return id;
 }
