@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, resolveParamsTooltips, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber, CHARACTER_ATTACK_TYPE, CHARACTER_SEARCH_TARGET_TYPE, MOVEMENT_TYPE, BULLET_TYPE } = require('./utils');
+const { collectParamsFrom, resolveParam, resolveParamsTooltips, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber, CHARACTER_ATTACK_TYPE, BULLET_TYPE } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -588,22 +588,10 @@ function getStats(charId) {
 function getFixedStats(charId) {
     const char = CHARACTER[charId];
     return {
-        'Attack Type': CHARACTER_ATTACK_TYPE[char.CharacterAttackType],
-        'Search Target Type': CHARACTER_SEARCH_TARGET_TYPE[char.SearchTargetType],
-        'Bullet Type': BULLET_TYPE[char.BulletType],
+        'Bullet Type': char.BulletType && BULLET_TYPE[char.BulletType],
         'Ammo': char.Ammo,
-        'Attack Speed': char.AtkSpd / 10000 + '%',
-        'Movement Type': MOVEMENT_TYPE[char.MovType],
         'Walk Speed': char.WalkSpd / 10000,
         'Run Speed': char.RunSpd / 10000,
-        'SpRun(?) Speed': char.SpRunSpd / 10000,
-        'Trans(?) Speed': char.TransSpd / 10000,
-        'Movement Acceleration': char.MovAcc / 10000,
-        'Walk To Run Duration': char.WalkToRunDuration && char.WalkToRunDuration / 10000,
-        'Dodge To Run Acceleration': char.DodgeToRunAccelerationOrNot,
-        'Vision Degree': char.VisionDeg / 10000,
-        'Rotation Speed': char.RotSpd / 10000,
-        'Rotation Acceleration': char.RotAcc / 10000,
     };
 }
 
