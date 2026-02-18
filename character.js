@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, resolveParamsTooltips, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber } = require('./utils');
+const { collectParamsFrom, resolveParam, resolveParamsTooltips, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber, CHARACTER_ATTACK_TYPE, CHARACTER_SEARCH_TARGET_TYPE, MOVEMENT_TYPE, BULLET_TYPE } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -45,7 +45,7 @@ for (const id in CHARACTER) {
         star: CHARACTER[id].Grade === 1 ? 5 : 4,
         element: LANG_UITEXT[`UIText.T_Element_Attr_${CHARACTER[id].EET}.1`],
         class: LANG_UITEXT[`UIText.Char_JobClass_${CHARACTER[id].Class}.1`],
-        attackType: CHARACTER[id].CharacterAttackType === 1 ? 'Melee' : 'Ranged',
+        attackType: CHARACTER_ATTACK_TYPE[CHARACTER[id].CharacterAttackType],
         style: LANG_CHARACTERTAG[`CharacterTag.${CHARACTERDES[id].Tag[1]}.1`],
         force: LANG_FORCE[`Force.${CHARACTERDES[id].Force}.1`],
         tag: CHARACTERDES[id].Tag.map(tagId => LANG_CHARACTERTAG[`CharacterTag.${tagId}.1`]),
@@ -55,6 +55,7 @@ for (const id in CHARACTER) {
         loveGift: getGifts(CHARACTERDES[id].PreferTags),
         hateGift: getGifts(CHARACTERDES[id].HateTags),
         date: getDates(id),
+        fixedStat: getFixedStats(id),
         normalAtk: {
             id: CHARACTER[id].NormalAtkId,
             name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
@@ -572,16 +573,38 @@ function getStats(charId) {
         .map(key => {
             const attr = ATTRIBUTE[key];
             return {
-                lv: attr.lvl,
-                hp: attr.Hp,
-                atk: attr.Atk,
-                def: attr.Def,
-                critRate: attr.CritRate / 100 + '%',
-                critDmg: attr.CritPower / 100 + '%',
-                resilienceBreakEfficiency: attr.ToughnessDamageAdjust / 100 + '%',
-                vul: attr.Suppress ? attr.Suppress / 100 + '%' : '0%',
+                'Level': attr.lvl,
+                'HP': attr.Hp,
+                'ATK': attr.Atk,
+                'DEF': attr.Def,
+                'Crit Rate': attr.CritRate / 100 + '%',
+                'Crit DMG': attr.CritPower / 100 + '%',
+                'Resilience Break Efficiency': attr.ToughnessDamageAdjust / 100 + '%',
+                'VUL Exploit': attr.Suppress ? attr.Suppress / 100 + '%' : '0%',
             };
         });
+}
+
+function getFixedStats(charId) {
+    const char = CHARACTER[charId];
+    return {
+        'Attack Type': CHARACTER_ATTACK_TYPE[char.CharacterAttackType],
+        'Search Target Type': CHARACTER_SEARCH_TARGET_TYPE[char.SearchTargetType],
+        'Bullet Type': BULLET_TYPE[char.BulletType],
+        'Ammo': char.Ammo,
+        'Attack Speed': char.AtkSpd / 10000 + '%',
+        'Movement Type': MOVEMENT_TYPE[char.MovType],
+        'Walk Speed': char.WalkSpd / 10000,
+        'Run Speed': char.RunSpd / 10000,
+        'SpRun(?) Speed': char.SpRunSpd / 10000,
+        'Trans(?) Speed': char.TransSpd / 10000,
+        'Movement Acceleration': char.MovAcc / 10000,
+        'Walk To Run Duration': char.WalkToRunDuration && char.WalkToRunDuration / 10000,
+        'Dodge To Run Acceleration': char.DodgeToRunAccelerationOrNot,
+        'Vision Degree': char.VisionDeg / 10000,
+        'Rotation Speed': char.RotSpd / 10000,
+        'Rotation Acceleration': char.RotAcc / 10000,
+    };
 }
 
 function getGifts(tagIds) {

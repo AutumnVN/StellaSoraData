@@ -426,6 +426,30 @@ const STATE_TYPE = {
     41: 'MAX'
 };
 
+const CHARACTER_ATTACK_TYPE = {
+    1: 'Melee',
+    2: 'Ranged',
+};
+
+const CHARACTER_SEARCH_TARGET_TYPE = {
+    1: 'Melee',
+    2: 'Ranged',
+};
+
+const MOVEMENT_TYPE = {
+    1: 'Static',
+    2: 'Walk',
+    3: 'Fly',
+};
+
+const BULLET_TYPE = {
+    1: 'Pistol',
+    2: 'Rifle',
+    3: 'Shotgun',
+    4: 'FireShotgun',
+    5: 'EnergyGun',
+};
+
 function collectParamsFrom(obj) {
     if (!obj) return [];
 
@@ -873,4 +897,8 @@ module.exports = {
     LOGIC_TYPE,
     SKILL_SLOT_TYPE,
     MONSTER_EPIC_TYPE,
+    CHARACTER_ATTACK_TYPE,
+    CHARACTER_SEARCH_TARGET_TYPE,
+    MOVEMENT_TYPE,
+    BULLET_TYPE,
 };
