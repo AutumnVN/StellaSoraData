@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber } = require('./utils');
+const { collectParamsFrom, resolveParam, resolveParamsTooltips, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -67,6 +67,7 @@ for (const id in CHARACTER) {
             effectData: getSkillEffectData(CHARACTER[id].NormalAtkId),
             buffIcon: getSkillBuffIcons(CHARACTER[id].NormalAtkId),
             params: getSkillParams(CHARACTER[id].NormalAtkId),
+            paramsTooltips: getSkillParamsTooltips(CHARACTER[id].NormalAtkId),
             icon: SKILL[CHARACTER[id].NormalAtkId].Icon.split('/').pop(),
         },
         skill: {
@@ -82,6 +83,7 @@ for (const id in CHARACTER) {
             effectData: getSkillEffectData(CHARACTER[id].SkillId),
             buffIcon: getSkillBuffIcons(CHARACTER[id].SkillId),
             params: getSkillParams(CHARACTER[id].SkillId),
+            paramsTooltips: getSkillParamsTooltips(CHARACTER[id].SkillId),
             icon: SKILL[CHARACTER[id].SkillId].Icon.split('/').pop(),
         },
         supportSkill: {
@@ -96,6 +98,7 @@ for (const id in CHARACTER) {
             effectData: getSkillEffectData(CHARACTER[id].AssistSkillId),
             buffIcon: getSkillBuffIcons(CHARACTER[id].AssistSkillId),
             params: getSkillParams(CHARACTER[id].AssistSkillId),
+            paramsTooltips: getSkillParamsTooltips(CHARACTER[id].AssistSkillId),
             icon: SKILL[CHARACTER[id].AssistSkillId].Icon.split('/').pop(),
         },
         ultimate: {
@@ -111,6 +114,7 @@ for (const id in CHARACTER) {
             effectData: getSkillEffectData(CHARACTER[id].UltimateId),
             buffIcon: getSkillBuffIcons(CHARACTER[id].UltimateId),
             params: getSkillParams(CHARACTER[id].UltimateId),
+            paramsTooltips: getSkillParamsTooltips(CHARACTER[id].UltimateId),
             icon: SKILL[CHARACTER[id].UltimateId].Icon.split('/').pop(),
         },
         special: getSpecialSkills(id),
@@ -136,6 +140,11 @@ writeFileSync('./unreleased.json', JSON.stringify(unreleased, null, 4));
 function getSkillParams(skillId) {
     const params = collectParamsFrom(SKILL[skillId]);
     return resolveParam(params);
+}
+
+function getSkillParamsTooltips(skillId) {
+    const params = collectParamsFrom(SKILL[skillId]);
+    return resolveParamsTooltips(params);
 }
 
 function getSkillDamageTypes(skillId) {
@@ -316,7 +325,9 @@ function getPotentials(charId) {
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            paramsTooltips: getPotentialParamsTooltips(id),
             hiddenParams: getPotentialHiddenParams(id),
+            hiddenParamsTooltips: getPotentialHiddenParamsTooltips(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -332,7 +343,9 @@ function getPotentials(charId) {
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            paramsTooltips: getPotentialParamsTooltips(id),
             hiddenParams: getPotentialHiddenParams(id),
+            hiddenParamsTooltips: getPotentialHiddenParamsTooltips(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -348,7 +361,9 @@ function getPotentials(charId) {
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            paramsTooltips: getPotentialParamsTooltips(id),
             hiddenParams: getPotentialHiddenParams(id),
+            hiddenParamsTooltips: getPotentialHiddenParamsTooltips(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -364,7 +379,9 @@ function getPotentials(charId) {
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            paramsTooltips: getPotentialParamsTooltips(id),
             hiddenParams: getPotentialHiddenParams(id),
+            hiddenParamsTooltips: getPotentialHiddenParamsTooltips(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -380,7 +397,9 @@ function getPotentials(charId) {
             effectData: getPotentialEffectData(id),
             buffIcon: getPotentialBuffIcons(id),
             params: getPotentialParams(id),
+            paramsTooltips: getPotentialParamsTooltips(id),
             hiddenParams: getPotentialHiddenParams(id),
+            hiddenParamsTooltips: getPotentialHiddenParamsTooltips(id),
             icon: ITEM[id].Icon.split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
@@ -393,9 +412,19 @@ function getPotentialParams(potId) {
     return resolveParam(params);
 }
 
+function getPotentialParamsTooltips(potId) {
+    const params = collectParamsFrom(POTENTIAL[potId]);
+    return resolveParamsTooltips(params);
+}
+
 function getPotentialHiddenParams(potId) {
     const params = collectPotentialHiddenParamsFrom(POTENTIAL[potId]).params;
     return resolveParam(params);
+}
+
+function getPotentialHiddenParamsTooltips(potId) {
+    const params = collectPotentialHiddenParamsFrom(POTENTIAL[potId]).params;
+    return resolveParamsTooltips(params);
 }
 
 function getPotentialDamageTypes(potId) {
@@ -580,11 +609,12 @@ function getTalents(charId) {
                 boost: talentIds.map(talentId => ({
                     name: LANG_TALENT[TALENT[talentId].Title],
                     desc: LANG_TALENT[TALENT[talentId].Desc] + collectUnusedParamsFrom(TALENT[talentId], LANG_TALENT),
-                    params: getTalentParams(talentId),
                     effectType: getTalentEffectTypes(talentId),
                     addAttrType: getTalentAddAttrTypes(talentId),
                     effectData: getTalentEffectData(talentId),
                     buffIcon: getTalentBuffIcons(talentId),
+                    params: getTalentParams(talentId),
+                    paramsTooltips: getTalentParamsTooltips(talentId),
                 })),
             };
         });
@@ -593,6 +623,11 @@ function getTalents(charId) {
 function getTalentParams(talentId) {
     const params = collectParamsFrom(TALENT[talentId]);
     return resolveParam(params);
+}
+
+function getTalentParamsTooltips(talentId) {
+    const params = collectParamsFrom(TALENT[talentId]);
+    return resolveParamsTooltips(params);
 }
 
 function getTalentEffectTypes(talentId) {

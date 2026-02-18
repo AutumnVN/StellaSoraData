@@ -2,6 +2,7 @@ const CHARACTER = require('./EN/bin/Character.json');
 const HITDAMAGE = require('./EN/bin/HitDamage.json');
 const EFFECT = require('./EN/bin/Effect.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
+const BUFF = require('./EN/bin/Buff.json');
 const BUFFVALUE = require('./EN/bin/BuffValue.json');
 const ONCEADDITTIONALATTRIBUTEVALUE = require('./EN/bin/OnceAdditionalAttributeValue.json');
 const SCRIPTPARAMETERVALUE = require('./EN/bin/ScriptParameterValue.json');
@@ -688,6 +689,82 @@ function resolveParam(params) {
     });
 }
 
+function resolveParamsTooltips(params) {
+    return params.map(param => ({
+        damageType: getDamageTypeFromOneParam(param),
+        effectType: getEffectTypeFromOneParam(param),
+        addAttrType: getAddAttrTypeFromOneParam(param),
+        buffIcon: getBuffIconFromOneParam(param)
+    }));
+}
+
+function getDamageTypeFromOneParam(param) {
+    if (!param.startsWith('HitDamage')) return;
+
+    const p = param.split(',');
+    if (!HITDAMAGE[p[2]]) return;
+
+    const type = HITDAMAGE[p[2]].DamageType;
+    const energyCharge = HITDAMAGE[p[2]].EnergyCharge;
+    const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
+    const levelData = HITDAMAGE[p[2]].LevelData;
+    const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
+    const energy = energyCharge && `${iHateFloatingPointNumber(energyCharge, '/', 10000)}e`
+    const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
+    const combined = [energy, from, scaleWith].filter(v => v).join(', ');
+
+    return `${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''}`;
+}
+
+function getEffectTypeFromOneParam(param) {
+    if (!param.startsWith('Effect')) return;
+
+    const p = param.split(',');
+    let effectId = +p[2];
+    if (!EFFECTVALUE[effectId]) effectId += 10;
+    if (!EFFECTVALUE[effectId]) return;
+
+    let type = EFFECTVALUE[effectId].EffectTypeFirstSubtype;
+    if (!type) type = EFFECTVALUE[EFFECTVALUE[effectId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+    const paramType = EFFECTVALUE[effectId].EffectTypeSecondSubtype;
+
+    return formatEffectType(effectId, type, paramType);
+}
+
+function getAddAttrTypeFromOneParam(param) {
+    if (!param.startsWith('OnceAdditionalAttribute')) return;
+
+    let addAttrId = +param.split(',')[2];
+    if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) addAttrId += 10;
+    if (!ONCEADDITTIONALATTRIBUTEVALUE[addAttrId]) return;
+
+    const element = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ElementType1;
+    const type = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType1;
+    const paramType = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType1;
+    const element2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ElementType2;
+    const type2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].AttributeType2;
+    const paramType2 = ONCEADDITTIONALATTRIBUTEVALUE[addAttrId].ParameterType2;
+
+    let result = formatAddAttrType(type, paramType, element);
+    if (type2 && paramType2) result += `, ${formatAddAttrType(type2, paramType2, element2)}`;
+
+    return result;
+}
+
+function getBuffIconFromOneParam(param) {
+    if (!(param.startsWith('Buff') || param.startsWith('Effect') || param.startsWith('OnceAdditionalAttribute'))) return;
+
+    const p = param.split(',');
+
+    let buffId = +p[2];
+    if (!BUFF[buffId]) buffId += 10;
+    if (!BUFF[buffId]) return;
+
+    const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
+
+    return icon;
+}
+
 function getEffectData(effectId) {
     const effect = EFFECT[effectId];
     if (!effect) return;
@@ -778,6 +855,7 @@ module.exports = {
     collectPotentialHiddenParamsFrom,
     iHateFloatingPointNumber,
     resolveParam,
+    resolveParamsTooltips,
     getEffectData,
     formatEffectType,
     formatAddAttrType,
