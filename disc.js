@@ -1,6 +1,7 @@
 const { writeFileSync } = require('fs');
 const { ATTR_TYPE, EFFECT_TYPE, collectParamsFrom, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType } = require('./utils');
 const DISC = require('./EN/bin/Disc.json');
+const DISCIP = require('./EN/bin/DiscIP.json');
 const DISCTAG = require('./EN/bin/DiscTag.json');
 const DISCPROMOTE = require('./EN/bin/DiscPromote.json');
 const ITEM = require('./EN/bin/Item.json');
@@ -20,6 +21,7 @@ const LANG_DISCTAG = require('./EN/language/en_US/DiscTag.json');
 const LANG_MAINSKILL = require('./EN/language/en_US/MainSkill.json');
 const LANG_SECONDARYSKILL = require('./EN/language/en_US/SecondarySkill.json');
 const LANG_SUBNOTESKILL = require('./EN/language/en_US/SubNoteSkill.json');
+const characterId = require('./characterid.json');
 
 const disc = {};
 
@@ -32,6 +34,7 @@ for (const id in DISC) {
         star: ITEM[id].Rarity === 1 ? 5 : ITEM[id].Rarity === 2 ? 4 : 3,
         element: LANG_UITEXT[`UIText.T_Element_Attr_${DISC[id].EET}.1`],
         tag: DISC[id].Tags?.map(tagId => LANG_DISCTAG[DISCTAG[tagId].Title]) || [],
+        char: DISCIP[id].CharId?.map(charId => characterId[charId]) || [],
         mainSkill: getMainSkill(DISC[id].MainSkillGroupId),
         secondarySkill1: getSeconarySkill(DISC[id].SecondarySkillGroupId1),
         secondarySkill2: getSeconarySkill(DISC[id].SecondarySkillGroupId2),
