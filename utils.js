@@ -131,12 +131,6 @@ const PARAM_TYPE = {
     1: 'base',
     2: '%',
     3: 'abs',
-    4: 'set max %*',
-    5: 'set max abs*',
-    6: '%*',
-    7: 'abs*',
-    8: 'set %*',
-    9: 'set abs*'
 };
 
 const DAMAGE_TYPE = {
@@ -819,7 +813,8 @@ function formatEffectType(id, type, paramType) {
     const effectRate = EFFECTVALUE[id].EffectRate;
     const effectTypeStr = EFFECT_TYPE[EFFECTVALUE[id].EffectType];
     const attrTypeStr = ATTR_TYPE[type];
-    const paramTypeStr = PARAM_TYPE[paramType];
+    const paramTypeStr = effectTypeStr !== 'ELEMENTTYPE_ATTR_FIX' ? ` (${PARAM_TYPE[paramType]})` : '';
+    const elementStr = effectTypeStr === 'ELEMENTTYPE_ATTR_FIX' ? `(${LANG_UITEXT[`UIText.T_Element_Attr_${paramType}.1`]}) ` : '';
 
     result += effectTypeStr.replace('ATTR_FIX', '');
 
@@ -827,6 +822,8 @@ function formatEffectType(id, type, paramType) {
         if (effectTypeStr !== 'ATTR_FIX') {
             result += ':';
         }
+
+        result += elementStr;
 
         if (effectTypeStr === 'SPECIAL_ATTR_FIX') {
             result += `${SPECIAL_ATTR_TYPE[type]}`;
@@ -841,7 +838,7 @@ function formatEffectType(id, type, paramType) {
         }
 
         if (effectTypeStr.includes('ATTR_FIX')) {
-            result += ` (${paramTypeStr})`;
+            result += paramTypeStr;
         }
     }
 

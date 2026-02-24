@@ -23498,7 +23498,7 @@
             "effectType": [
                 "Umbra DMG (base)",
                 "Minion DMG (base)",
-                "ELEMENTTYPE_:Minion DMG Taken (%*)"
+                "ELEMENTTYPE_:(undefined) Minion DMG Taken"
             ],
             "addAttrType": [],
             "effectData": [],
@@ -30214,8 +30214,8 @@
             "name": "Chronicles of Spring",
             "desc": "The main Ventus Trekker gains 1 stack of Drifting Snow for 10s after casting a skill, stacking up to 3 times.\u000bWhen the main Ventus Trekker deals Auto Attack DMG, 1/2/3 stacks of Drifting Snow inflict the following effect on the target: increases Ventus Auto Attack DMG taken by <color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color> for 10s.\u000bWhen the main Ventus Trekker deals Skill DMG, 1/2/3 stacks of Drifting Snow inflict the following effect on the target: increases Ventus Skill DMG taken by <color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color> for 10s.",
             "effectType": [
-                "ELEMENTTYPE_:Auto Attack DMG Taken (set max %*)",
-                "ELEMENTTYPE_:Skill DMG Taken (set max %*)"
+                "ELEMENTTYPE_:(undefined) Auto Attack DMG Taken",
+                "ELEMENTTYPE_:(undefined) Skill DMG Taken"
             ],
             "addAttrType": [],
             "effectData": [],
@@ -44845,7 +44845,7 @@
             "desc": "Increases Skill DMG of Support Terra Trekkers by <color=#ec6d21>{1}</color>.\u000bWhen a Versatile Terra Trekker deals Skill DMG, inflicts Spring Blossom on the target: increases Terra Skill DMG taken by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
                 "Skill DMG (base)",
-                "ELEMENTTYPE_:Skill DMG Taken (abs)"
+                "ELEMENTTYPE_:(undefined) Skill DMG Taken"
             ],
             "addAttrType": [],
             "effectData": [
@@ -46072,7 +46072,7 @@
             "name": "Kingdom of Fries",
             "desc": "Hymn grants extra effects: Increases the Ignis Skill DMG Taken by <color=#ec6d21>{1}</color>.\u000bWhen ##Ode#6002# is converted in to Hymn, increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{2}</color> for {3}s, up to {4} stacks.",
             "effectType": [
-                "ELEMENTTYPE_:Skill DMG Taken (%)",
+                "ELEMENTTYPE_:(undefined) Skill DMG Taken",
                 "Skill DMG (base)"
             ],
             "addAttrType": [],
