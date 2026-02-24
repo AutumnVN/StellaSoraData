@@ -55,7 +55,7 @@ for (const drillId in JOINTDRILLCONTROL) {
             ];
 
             return {
-                name: LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
+                name: level.LevelName ? LANG_JOINTDRILL_2_LEVEL[level.LevelName].split('/')[1] : LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
                 stat: level.BossId.map((bossId) => {
                     const monster = MONSTER[bossId];
                     const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
