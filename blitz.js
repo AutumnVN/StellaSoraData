@@ -26,7 +26,7 @@ for (const id in SCOREBOSSLEVEL) {
     const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster?.FAId]?.MonsterManual];
     const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[(monster?.Templete || scoreBossLevel.MonsterId)];
     const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust?.TemplateId)?.[0];
-    const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === +`${1000 + fixIdStat(id)}`);
+    const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === +(scoreBossLevel.MonsterId.toString().slice(2, 6)));
 
     blitz[id] = {
         name: LANG_MONSTERMANUAL[monsterManual?.Name] || `${scoreBossLevel.MonsterId}`,
@@ -42,8 +42,6 @@ for (const id in SCOREBOSSLEVEL) {
                 name: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility]?.Name],
                 desc: getScoreBossAbilityDesc(scoreBossLevel.ScoreBossAbility),
                 icon: SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility]?.IconSource?.split('/')?.pop(),
-                effectType: getBlitzEffectType(id),
-                buffIcon: getBlitzBuffIcon(id),
             }
         ],
         weakTo: monsterValueTemplateAdjust?.WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
@@ -122,49 +120,4 @@ function getScoreBossAbilityDesc(id) {
     });
 
     return result;
-}
-
-function getBlitzEffectType(id) {
-    const effectIds = Object.keys(EFFECTVALUE).filter(effectId => effectId.startsWith(`63100${fixIdEffect(id)}`));
-    const effectTypes = [];
-
-    for (const effectId of effectIds) {
-        let type = EFFECTVALUE[effectId].EffectTypeFirstSubtype;
-        if (!type) type = EFFECTVALUE[EFFECTVALUE[effectId].EffectTypeParam1]?.EffectTypeFirstSubtype;
-        const paramType = EFFECTVALUE[effectId].EffectTypeSecondSubtype;
-
-        effectTypes.push(formatEffectType(effectId, type, paramType));
-    }
-
-    return [...new Set(effectTypes)];
-}
-
-function getBlitzBuffIcon(id) {
-    const buffIds = Object.keys(BUFF).filter(buffId => buffId.startsWith(`63100${fixIdEffect(id)}`));
-    const buffIcons = [];
-
-    for (const buffId of buffIds) {
-        const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
-
-        buffIcons.push(icon);
-    }
-
-    return [...new Set(buffIcons)];
-}
-
-function fixIdEffect(id) {
-    if (id === '2') return 3;
-    else if (id === '3') return 2;
-    else if (id === '11') return 10;
-    else return +id;
-}
-
-function fixIdStat(id) {
-    if (id === '2') return 3;
-    else if (id === '3') return 2;
-    else if (id === '8') return 7;
-    else if (id === '9') return 7;
-    else if (id === '10') return 9;
-    else if (id === '11') return 10;
-    else return +id;
 }

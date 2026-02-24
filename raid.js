@@ -2,6 +2,7 @@ const { writeFileSync } = require('fs');
 const JOINTDRILLAFFIX = require('./EN/bin/JointDrillAffix.json');
 const JOINTDRILLCONTROL = require('./EN/bin/JointDrillControl.json');
 const JOINTDRILLLEVEL = require('./EN/bin/JointDrillLevel.json');
+const JOINTDRILL_2_LEVEL = require('./EN/bin/JointDrill_2_Level.json');
 const MONSTER = require('./EN/bin/Monster.json');
 const MONSTERMANUAL = require('./EN/bin/MonsterManual.json');
 const MONSTERSKIN = require('./EN/bin/MonsterSkin.json');
@@ -9,6 +10,7 @@ const MONSTERVALUETEMPLETE = require('./EN/bin/MonsterValueTemplete.json');
 const MONSTERVALUETEMPLETEADJUST = require('./EN/bin/MonsterValueTempleteAdjust.json');
 const LANG_JOINTDRILLAFFIX = require('./EN/language/en_US/JointDrillAffix.json');
 const LANG_JOINTDRILLLEVEL = require('./EN/language/en_US/JointDrillLevel.json');
+const LANG_JOINTDRILL_2_LEVEL = require('./EN/language/en_US/JointDrill_2_Level.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_MONSTERMANUAL = require('./EN/language/en_US/MonsterManual.json');
 const { MONSTER_EPIC_TYPE } = require('./utils');
@@ -17,28 +19,26 @@ const raid = {};
 
 for (const drillId in JOINTDRILLCONTROL) {
     const drillLevelGroupId = JOINTDRILLCONTROL[drillId].DrillLevelGroupId;
-    const drillLevels = Object.values(JOINTDRILLLEVEL).filter(level => level.DrillLevelGroupId === drillLevelGroupId);
-    if (!drillLevels.length) continue;
+    const drillLevels = [...Object.values(JOINTDRILLLEVEL), ...Object.values(JOINTDRILL_2_LEVEL)].filter(level => level.DrillLevelGroupId === drillLevelGroupId);
+    drillLevels.forEach(level => typeof level.BossId === 'number' && (level.BossId = [level.BossId]));
 
     raid[drillLevelGroupId] = {
-        name: `[${LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Name]}] ${LANG_JOINTDRILLLEVEL[drillLevels[0].SubName]}`,
-        icon: MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId].FAId].MonsterManual].Icon.split('/').pop(),
-        type: MONSTER_EPIC_TYPE[MONSTER[drillLevels[0].BossId].EpicLv],
+        name: `[${LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId[0]].FAId].MonsterManual].Name]}] ${LANG_JOINTDRILLLEVEL[drillLevels[0].SubName] || LANG_JOINTDRILL_2_LEVEL[drillLevels[0].SubName]}`,
+        icon: MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId[0]].FAId].MonsterManual].Icon.split('/').pop(),
+        type: MONSTER_EPIC_TYPE[MONSTER[drillLevels[0].BossId[0]].EpicLv],
         mechanic: drillLevels[0].BossAffix.map(affixId => ({
             name: LANG_JOINTDRILLAFFIX[JOINTDRILLAFFIX[affixId].Name],
             desc: LANG_JOINTDRILLAFFIX[JOINTDRILLAFFIX[affixId].Desc],
             icon: JOINTDRILLAFFIX[affixId].Icon.split('/').pop(),
         })),
-        // weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[0].BossId].Templete].WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
-        // resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[0].BossId].Templete].EET}.1`],
-        weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId].Templete].WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
-        resistTo: (MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId].Templete].ResistEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'])[0],
+        weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
+        resistTo: (MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].ResistEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'])[0],
         diff: drillLevels.map((level, index) => {
-            const monster1 = MONSTER[level.BossId];
+            const monster1 = MONSTER[level.BossId[0]];
             const monster1ValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster1.Templete];
             const monster1ValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monster1ValueTemplateAdjust.TemplateId)[index];
 
-            const monster2 = MONSTER[level.BossId + 1];
+            const monster2 = MONSTER[level.BossId[0] + 1];
             const monster2ValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster2.Templete];
             const monster2ValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monster2ValueTemplateAdjust.TemplateId)[index];
 
@@ -79,7 +79,7 @@ for (const drillId in JOINTDRILLCONTROL) {
                     'Lux RES': monsterValueTemplateAdjust.LERFix,
                     'Umbra RES': monsterValueTemplateAdjust.DERFix,
                 })),
-                bookStat: getBookStat(drillLevels[drillLevels.length - 1].BossId, index),
+                bookStat: getBookStat(drillLevels[drillLevels.length - 1].BossId[0], index),
             }
         }),
     };
