@@ -1,21 +1,27 @@
 local PenguinCardFlipCtrl = class("PenguinCardFlipCtrl", BaseCtrl)
 local WwiseManger = CS.WwiseAudioManager.Instance
 local LoopType = CS.DG.Tweening.LoopType
-local _, BtnOn = ColorUtility.TryParseHtmlString("#CC8E2B")
-local _, BtnOff = ColorUtility.TryParseHtmlString("#796443")
+local ScaleUpTime = 0.3
+local ScaleDownTime = 0.12
+local _, BtnOn = ColorUtility.TryParseHtmlString("#b48339")
+local _, BtnOff = ColorUtility.TryParseHtmlString("#3E3C5B")
 PenguinCardFlipCtrl._mapNodeConfig = {
-	goHandRankOff = {},
+	aniHandRankBg = {
+		sNodeName = "imgHandRankBg",
+		sComponentName = "Animator"
+	},
 	txtFlipTip = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "PenguinCard_FlipAllCardTip"
 	},
-	goHandRankOn = {},
 	txtHandRank = {sComponentName = "TMP_Text"},
 	imgSuitCount = {nCount = 6, sComponentName = "Image"},
 	btnHandRank = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_HandRank"
 	},
+	imgRoundTitleBg = {},
+	txtRoundTip = {sComponentName = "TMP_Text"},
 	btnShow = {
 		nCount = 5,
 		sComponentName = "UIButton",
@@ -32,6 +38,7 @@ PenguinCardFlipCtrl._mapNodeConfig = {
 		callback = "OnBtnClick_NextRound"
 	},
 	txtBtnNextRound = {sComponentName = "TMP_Text"},
+	goNextRoundOn = {},
 	btnShowAll = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_ShowAll"
@@ -40,6 +47,7 @@ PenguinCardFlipCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "PenguinCard_Btn_FlipAll"
 	},
+	goShowAllOn = {},
 	btnAuto = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Auto"
@@ -82,49 +90,91 @@ PenguinCardFlipCtrl._mapNodeConfig = {
 	trRoundScoreRatio = {
 		sNodeName = "txtRoundScoreRatio",
 		sComponentName = "Transform"
+	},
+	aniRoundScoreBaseBg = {
+		sNodeName = "imgRoundScoreBaseBg",
+		sComponentName = "Animator"
+	},
+	aniRoundScoreRatioBg = {
+		sNodeName = "imgRoundScoreRatioBg",
+		sComponentName = "Animator"
 	}
 }
 PenguinCardFlipCtrl._mapEventConfig = {
 	PenguinCard_ChangeRoundScore = "OnEvent_ChangeRoundScore",
 	PenguinCard_ReplaceBaseCard = "OnEvent_ReplaceBaseCard",
-	PenguinCard_ShowBaseCard = "OnEvent_ShowBaseCard"
+	PenguinCard_ShowBaseCard = "OnEvent_ShowBaseCard",
+	PenguinCard_Pause = "OnEvent_Pause",
+	PenguinCard_Resume = "OnEvent_Resume",
+	PenguinCard_QuitScoreAni = "QuitScoreAni"
 }
 function PenguinCardFlipCtrl:Refresh_Dealing()
 	self._mapNode.imgNextRound:SetActive(false)
 	self._mapNode.btnNextRound.gameObject:SetActive(false)
-	self._mapNode.btnShowAll.gameObject:SetActive(false)
+	self._mapNode.imgRoundTitleBg:SetActive(false)
+	self._mapNode.goNextRoundOn:SetActive(false)
+	self._mapNode.btnShowAll.gameObject:SetActive(true)
+	self._mapNode.btnShowAll.interactable = false
+	self._mapNode.goShowAllOn:SetActive(false)
 	self:RefreshRoundScore()
-	self._mapNode.goHandRankOff:SetActive(true)
-	self._mapNode.goHandRankOn:SetActive(false)
+	self._mapNode.aniRoundScoreBaseBg.gameObject:SetActive(false)
+	self._mapNode.aniRoundScoreBaseBg.gameObject:SetActive(true)
+	self._mapNode.aniRoundScoreRatioBg.gameObject:SetActive(false)
+	self._mapNode.aniRoundScoreRatioBg.gameObject:SetActive(true)
+	self._mapNode.aniHandRankBg:Play("PengUinCard_HandRank_Off", 1, 0)
 	for i = 1, 5 do
 		self._mapNode.btnShow[i].interactable = true
 		self._mapNode.PenguinBaseCard[i]:Refresh(self._panel.mapLevel.tbBaseCardId[i])
+		self._mapNode.PenguinBaseCard[i]:PlayInAni()
 	end
+	if self._panel.mapLevel.nCurRound == 1 then
+		self.animator:Play("PengUinCard_Flip_in", 0, 0)
+		local nAnimTime = NovaAPI.GetAnimClipLength(self.animator, {
+			"PengUinCard_Flip_in"
+		})
+		EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
+	else
+		self.animator:Play("PengUinCard_Flip_Card_in", 0, 0)
+		local nAnimTime = NovaAPI.GetAnimClipLength(self.animator, {
+			"PengUinCard_Flip_Card_in"
+		})
+		EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
+	end
+	WwiseManger:PostEvent("Mode_Card_nextround")
 end
 function PenguinCardFlipCtrl:Refresh_Flip()
-	self._mapNode.btnShowAll.gameObject:SetActive(true)
+	self._mapNode.btnShowAll.interactable = true
+	self:StartShowAllOn()
+	self.mapHandRankScore = {}
 end
 function PenguinCardFlipCtrl:Refresh_Settlement()
 	if self._panel.mapLevel.nRoundLimit > self._panel.mapLevel.nCurRound then
 		self._mapNode.imgNextRound:SetActive(true)
 	end
 	self._mapNode.btnNextRound.gameObject:SetActive(true)
+	self._mapNode.btnNextRound.interactable = false
+	self:AddTimer(1, 2 / self._panel.mapLevel.nSpeed, function()
+		self._mapNode.btnNextRound.interactable = true
+	end, true, true, true)
 	self._mapNode.btnShowAll.gameObject:SetActive(false)
+	self._mapNode.goShowAllOn:SetActive(false)
 	self:RefreshRoundCount()
-	self._mapNode.goHandRankOff:SetActive(false)
-	self._mapNode.goHandRankOn:SetActive(true)
+	self._mapNode.aniHandRankBg:Play("PengUinCard_HandRank_On", 0, 0)
 	self:RefreshHandRank()
 	for i = 1, 5 do
 		self._mapNode.PenguinBaseCard[i]:PlayTriggerAni()
 		self._mapNode.btnShow[i].interactable = false
 	end
+	self:PlayScoreAni()
 end
 function PenguinCardFlipCtrl:RefreshRoundCount()
 	NovaAPI.SetTMPText(self._mapNode.txtRound, orderedFormat(ConfigTable.GetUIText("PenguinCard_LeftRound"), self._panel.mapLevel.nRoundLimit - self._panel.mapLevel.nCurRound))
 	if self._panel.mapLevel.nRoundLimit == self._panel.mapLevel.nCurRound then
 		NovaAPI.SetTMPText(self._mapNode.txtBtnNextRound, ConfigTable.GetUIText("PenguinCard_Btn_EndTurn"))
+		NovaAPI.SetTMPText(self._mapNode.txtRoundTip, ConfigTable.GetUIText("PenguinCard_EndTurnTip"))
 	else
 		NovaAPI.SetTMPText(self._mapNode.txtBtnNextRound, ConfigTable.GetUIText("PenguinCard_Btn_NextRound"))
+		NovaAPI.SetTMPText(self._mapNode.txtRoundTip, ConfigTable.GetUIText("PenguinCard_NextRoundTip"))
 	end
 end
 function PenguinCardFlipCtrl:RefreshHandRank()
@@ -144,7 +194,8 @@ end
 function PenguinCardFlipCtrl:RefreshRoundScore()
 	NovaAPI.SetTMPText(self._mapNode.txtRoundScore, self:ThousandsNumber(clearFloat(self._panel.mapLevel.nRoundScore)))
 	NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(clearFloat(self._panel.mapLevel.nRoundValue)))
-	NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, string.format("%.1f", self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio))
+	local nRatio = self._panel.mapLevel.nRoundMultiRatio > 0 and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
+	NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, string.format("%.1f", nRatio))
 end
 function PenguinCardFlipCtrl:RefreshButton()
 	self:RefreshAuto()
@@ -170,18 +221,185 @@ function PenguinCardFlipCtrl:RefreshSpeed()
 	NovaAPI.SetTMPColor(self._mapNode.txtBtnSpeed, bFast and BtnOn or BtnOff)
 	NovaAPI.SetTMPText(self._mapNode.txtBtnSpeed, "<size=32>\195\151</size>" .. self._panel.mapLevel.nSpeed)
 end
-function PenguinCardFlipCtrl:NextRound()
+function PenguinCardFlipCtrl:StartShowAllOn()
+	self:StopShowAllOn()
+	if self._mapNode.goShowAllOn.activeSelf == true then
+		return
+	end
+	self.timerNextRoundOn = self:AddTimer(1, 3, function()
+		self._mapNode.goShowAllOn:SetActive(true)
+	end, true, true, true)
+end
+function PenguinCardFlipCtrl:StopShowAllOn()
+	if self.timerNextRoundOn then
+		self.timerNextRoundOn:Cancel()
+		self.timerNextRoundOn = nil
+	end
+end
+function PenguinCardFlipCtrl:PlayRoundAni()
 	for i = 1, 5 do
 		self._mapNode.PenguinBaseCard[i]:PlayHideAni()
 	end
-	self:AddTimer(1, 0.567, function()
-		self._panel.mapLevel:SwitchGameState()
-	end, true, true, true)
-	EventManager.Hit(EventId.TemporaryBlockInput, 0.567)
+	self.animator:Play("PengUinCard_Flip_Card_out", 0, 0)
+	self._mapNode.aniHandRankBg:Play("PengUinCard_HandRank_Off", 0, 0)
+	self:QuitScoreAni()
 end
-function PenguinCardFlipCtrl:NextTurn()
+function PenguinCardFlipCtrl:QuitScoreAni()
+	if self.sequence then
+		self.sequence:Kill()
+		self.sequence = nil
+		WwiseManger:PostEvent("Mode_Card_stop")
+		if not self.bEndScore and self._panel.mapLevel.nRoundMultiRatio and self._panel.mapLevel.nRoundRatio and self._panel.mapLevel.nRoundValue and self._panel.mapLevel.nRoundScore then
+			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(math.floor(self._panel.mapLevel.nRoundValue)))
+			local nRatio = self._panel.mapLevel.nRoundMultiRatio > 0 and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
+			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, string.format("%.1f", nRatio))
+			NovaAPI.SetTMPText(self._mapNode.txtRoundScore, self:ThousandsNumber(math.floor(self._panel.mapLevel.nRoundScore)))
+		end
+	end
+	if self.timerNextRoundOn then
+		self.timerNextRoundOn:Cancel()
+		self.timerNextRoundOn = nil
+	end
+end
+function PenguinCardFlipCtrl:PlayScoreAni()
+	self:QuitScoreAni()
+	local bFire = self._panel.mapLevel.nRoundValue >= self.nFireScore
+	local nTextTime = bFire and 0.6 / self._panel.mapLevel.nSpeed or 0.4 / self._panel.mapLevel.nSpeed
+	self.bEndScore = false
+	self.sequence = DOTween.Sequence()
+	if self.mapHandRankScore and self.mapHandRankScore.nBeforeValue ~= self.mapHandRankScore.nAfterValue then
+		local tw1 = DOTween.To(function()
+			return self.mapHandRankScore.nBeforeValue
+		end, function(v)
+			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(math.floor(v)))
+		end, self.mapHandRankScore.nAfterValue, nTextTime)
+		local tw2 = self._mapNode.trRoundScoreBase:DOScale(1.2, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart)
+		local tw3 = self._mapNode.trRoundScoreBase:DOScale(1, ScaleDownTime / self._panel.mapLevel.nSpeed):SetEase(Ease.InQuad)
+		if bFire then
+			self.sequence:AppendCallback(function()
+				self:PlayFireAni()
+			end)
+		end
+		self.sequence:AppendCallback(function()
+			WwiseManger:PostEvent("Mode_Card_integral")
+		end)
+		self.sequence:Append(tw2)
+		self.sequence:Join(tw1)
+		self.sequence:AppendInterval(ScaleUpTime / self._panel.mapLevel.nSpeed)
+		self.sequence:Append(tw3)
+	end
+	if self.mapHandRankScore and self.mapHandRankScore.nBeforeRatio ~= self.mapHandRankScore.nAfterRatio then
+		local tw1 = DOTween.To(function()
+			return self.mapHandRankScore.nBeforeRatio
+		end, function(v)
+			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, string.format("%.1f", v))
+		end, self.mapHandRankScore.nAfterRatio, nTextTime)
+		local tw2 = self._mapNode.trRoundScoreRatio:DOScale(1.2, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart)
+		local tw3 = self._mapNode.trRoundScoreRatio:DOScale(1, ScaleDownTime / self._panel.mapLevel.nSpeed):SetEase(Ease.InQuad)
+		if bFire then
+			self.sequence:AppendCallback(function()
+				self:PlayFireAni()
+			end)
+		end
+		self.sequence:AppendCallback(function()
+			WwiseManger:PostEvent("Mode_Card_integral")
+		end)
+		self.sequence:Append(tw2)
+		self.sequence:Join(tw1)
+		self.sequence:AppendInterval(ScaleUpTime / self._panel.mapLevel.nSpeed)
+		self.sequence:Append(tw3)
+	end
+	self.sequence:AppendCallback(function()
+		EventManager.Hit("PenguinCardWaitPlay")
+	end)
+	if self.mapHandRankScore and self.mapHandRankScore.nAfterValue ~= self._panel.mapLevel.nRoundValue then
+		local tw1 = DOTween.To(function()
+			return self.mapHandRankScore.nAfterValue
+		end, function(v)
+			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(math.floor(v)))
+		end, self._panel.mapLevel.nRoundValue, nTextTime)
+		local tw2 = self._mapNode.trRoundScoreBase:DOScale(1.2, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart)
+		local tw3 = self._mapNode.trRoundScoreBase:DOScale(1, ScaleDownTime / self._panel.mapLevel.nSpeed):SetEase(Ease.InQuad)
+		if bFire then
+			self.sequence:AppendCallback(function()
+				self:PlayFireAni()
+			end)
+		end
+		self.sequence:AppendCallback(function()
+			WwiseManger:PostEvent("Mode_Card_integral")
+		end)
+		self.sequence:Append(tw2)
+		self.sequence:Join(tw1)
+		self.sequence:AppendInterval(ScaleUpTime / self._panel.mapLevel.nSpeed)
+		self.sequence:Append(tw3)
+	end
+	local nRatio = self._panel.mapLevel.nRoundMultiRatio > 0 and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
+	if self.mapHandRankScore and self.mapHandRankScore.nAfterRatio ~= nRatio then
+		local tw1 = DOTween.To(function()
+			return self.mapHandRankScore.nAfterRatio
+		end, function(v)
+			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, string.format("%.1f", v))
+		end, nRatio, nTextTime)
+		local tw2 = self._mapNode.trRoundScoreRatio:DOScale(1.2, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart)
+		local tw3 = self._mapNode.trRoundScoreRatio:DOScale(1, ScaleDownTime / self._panel.mapLevel.nSpeed):SetEase(Ease.InQuad)
+		if bFire then
+			self.sequence:AppendCallback(function()
+				self:PlayFireAni()
+			end)
+		end
+		self.sequence:AppendCallback(function()
+			WwiseManger:PostEvent("Mode_Card_integral")
+		end)
+		self.sequence:Append(tw2)
+		self.sequence:Join(tw1)
+		self.sequence:AppendInterval(ScaleUpTime / self._panel.mapLevel.nSpeed)
+		self.sequence:Append(tw3)
+	end
+	local callback = dotween_callback_handler(self, function()
+		WwiseManger:PostEvent("Mode_Card_coin_stop")
+	end)
+	local tw1 = DOTween.To(function()
+		return 0
+	end, function(v)
+		NovaAPI.SetTMPText(self._mapNode.txtRoundScore, self:ThousandsNumber(math.floor(v)))
+	end, self._panel.mapLevel.nRoundScore, nTextTime):OnComplete(callback)
+	local tw2 = self._mapNode.trRoundScore:DOScale(1.1, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart)
+	local tw3 = self._mapNode.trRoundScore:DOScale(1, ScaleDownTime / self._panel.mapLevel.nSpeed):SetEase(Ease.InQuad)
+	self.sequence:AppendCallback(function()
+		WwiseManger:PostEvent("Mode_Card_coin")
+	end)
+	self.sequence:Append(tw2)
+	self.sequence:Join(tw1)
+	self.sequence:AppendInterval(ScaleUpTime / self._panel.mapLevel.nSpeed)
+	self.sequence:Append(tw3)
+	self.sequence:AppendCallback(function()
+		self._mapNode.imgRoundTitleBg:SetActive(true)
+	end)
+	self.sequence:SetUpdate(true)
+	local reset = dotween_callback_handler(self, function()
+		self.bEndScore = true
+		self.timerNextRoundOn = self:AddTimer(1, 3, function()
+			self._mapNode.goNextRoundOn:SetActive(true)
+		end, true, true, true)
+	end)
+	self.sequence:OnComplete(reset)
+end
+function PenguinCardFlipCtrl:PlayOutAni()
+	for i = 1, 5 do
+		self._mapNode.PenguinBaseCard[i]:PlayHideAni()
+	end
+	self.animator:Play("PengUinCard_Flip_out", 0, 0)
+	self:QuitScoreAni()
+end
+function PenguinCardFlipCtrl:PlayFireAni()
+	self._mapNode.aniRoundScoreBaseBg:Play("PengUinCard_Flip_Score_Hot_01")
+	self._mapNode.aniRoundScoreBaseBg.speed = self._panel.mapLevel.nSpeed
+	self._mapNode.aniRoundScoreRatioBg:Play("PengUinCard_Flip_Score_Hot_02")
+	self._mapNode.aniRoundScoreRatioBg.speed = self._panel.mapLevel.nSpeed
 end
 function PenguinCardFlipCtrl:Awake()
+	self.animator = self.gameObject:GetComponent("Animator")
+	self.nFireScore = ConfigTable.GetConfigNumber("PenguinCardFeverScore")
 end
 function PenguinCardFlipCtrl:OnEnable()
 end
@@ -197,13 +415,15 @@ function PenguinCardFlipCtrl:OnBtnClick_ShowAll(btn)
 	self._panel.mapLevel:ShowBaseCard()
 end
 function PenguinCardFlipCtrl:OnBtnClick_NextRound(btn)
+	self._panel.mapLevel:StopAuto()
+	self:QuitScoreAni()
 	if self._panel.mapLevel.nRoundLimit == self._panel.mapLevel.nCurRound and self._panel.mapLevel.nCurTurn < self._panel.mapLevel.nMaxTurn then
 		local callback = function()
 			self._panel.mapLevel:SwitchGameState()
 		end
 		EventManager.Hit("PenguinCard_OpenLog", self._panel.mapLevel.nCurTurn, false, callback)
 	else
-		self:NextRound()
+		self._panel.mapLevel:SwitchGameState()
 	end
 end
 function PenguinCardFlipCtrl:OnBtnClick_Auto(btn)
@@ -221,42 +441,52 @@ function PenguinCardFlipCtrl:OnBtnClick_Speed(btn)
 	self._panel.mapLevel:SetAutoSpeed(nSpeed)
 	self:RefreshSpeed()
 end
-function PenguinCardFlipCtrl:OnEvent_ChangeRoundScore(nBeforeValue, nBeforeRatio, nBeforeScore)
+function PenguinCardFlipCtrl:OnEvent_ChangeRoundScore(nBeforeValue, nBeforeRatio, nBeforeScore, bFromHandRank)
+	if bFromHandRank then
+		self.mapHandRankScore = {
+			nBeforeValue = nBeforeValue,
+			nAfterValue = self._panel.mapLevel.nRoundValue,
+			nBeforeRatio = nBeforeRatio,
+			nAfterRatio = self._panel.mapLevel.nRoundMultiRatio > 0 and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
+		}
+		return
+	end
+	if self._panel.mapLevel.nGameState == 4 then
+		return
+	end
+	local bFire = self._panel.mapLevel.nRoundValue >= self.nFireScore
+	if bFire then
+		self:PlayFireAni()
+	end
+	local nTextTime = bFire and 0.6 / self._panel.mapLevel.nSpeed or 0.4 / self._panel.mapLevel.nSpeed
 	if nBeforeValue ~= self._panel.mapLevel.nRoundValue then
+		WwiseManger:PostEvent("Mode_Card_integral")
 		DOTween.To(function()
 			return nBeforeValue
 		end, function(v)
 			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(math.floor(v)))
-		end, self._panel.mapLevel.nRoundValue, 1)
+		end, self._panel.mapLevel.nRoundValue, nTextTime)
 		local callback = dotween_callback_handler(self, function()
-			self._mapNode.trRoundScoreBase:DOScale(1, 0.1)
+			self._mapNode.trRoundScoreBase:DOScale(1, ScaleDownTime / self._panel.mapLevel.nSpeed):SetEase(Ease.InQuad):SetUpdate(true)
 		end)
-		self._mapNode.trRoundScoreBase:DOScale(2, 0.2):SetUpdate(true):OnComplete(callback)
+		self._mapNode.trRoundScoreBase:DOScale(1.2, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart):SetUpdate(true):OnComplete(callback)
 	end
-	if nBeforeRatio ~= self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio then
+	local nRatio = 0 < self._panel.mapLevel.nRoundMultiRatio and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
+	if nBeforeRatio ~= nRatio then
+		WwiseManger:PostEvent("Mode_Card_integral")
 		DOTween.To(function()
 			return nBeforeRatio
 		end, function(v)
 			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, string.format("%.1f", v))
-		end, self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio, 1)
+		end, nRatio, nTextTime)
 		local callback = dotween_callback_handler(self, function()
-			self._mapNode.trRoundScoreRatio:DOScale(1, 0.1)
+			self._mapNode.trRoundScoreRatio:DOScale(1, ScaleDownTime / self._panel.mapLevel.nSpeed):SetEase(Ease.InQuad):SetUpdate(true)
 		end)
-		self._mapNode.trRoundScoreRatio:DOScale(2, 0.2):SetUpdate(true):OnComplete(callback)
-	end
-	if nBeforeScore ~= self._panel.mapLevel.nRoundScore then
-		DOTween.To(function()
-			return nBeforeScore
-		end, function(v)
-			NovaAPI.SetTMPText(self._mapNode.txtRoundScore, self:ThousandsNumber(math.floor(v)))
-		end, self._panel.mapLevel.nRoundScore, 1)
-		local callback = dotween_callback_handler(self, function()
-			self._mapNode.trRoundScore:DOScale(1, 0.1)
-		end)
-		self._mapNode.trRoundScore:DOScale(2, 0.2):SetUpdate(true):OnComplete(callback)
+		self._mapNode.trRoundScoreRatio:DOScale(1.2, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart):SetUpdate(true):OnComplete(callback)
 	end
 end
 function PenguinCardFlipCtrl:OnEvent_ShowBaseCard(nIndex)
+	self:StartShowAllOn()
 	if nIndex == nil then
 		for i = 1, 5 do
 			self._mapNode.PenguinBaseCard[i]:PlayFlipAni()
@@ -271,5 +501,16 @@ function PenguinCardFlipCtrl:OnEvent_ReplaceBaseCard(nIndex)
 	self._mapNode.PenguinBaseCard[nIndex]:Refresh(self._panel.mapLevel.tbBaseCardId[nIndex], true)
 	self._mapNode.PenguinBaseCard[nIndex]:PlayReplaceAni()
 	self._mapNode.btnShow[nIndex].interactable = false
+end
+function PenguinCardFlipCtrl:OnEvent_Pause()
+	if self.sequence then
+		self.sequence:Pause()
+		WwiseManger:PostEvent("Mode_Card_stop")
+	end
+end
+function PenguinCardFlipCtrl:OnEvent_Resume()
+	if self.sequence then
+		self.sequence:Play()
+	end
 end
 return PenguinCardFlipCtrl

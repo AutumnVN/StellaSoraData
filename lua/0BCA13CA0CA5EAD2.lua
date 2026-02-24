@@ -2,6 +2,7 @@ local BaseCtrl = require("GameCore.UI.BaseCtrl")
 local WinterNightThemeCtrl = class("WinterNightThemeCtrl", BaseCtrl)
 local ClientManager = CS.ClientManager.Instance
 local TimerManager = require("GameCore.Timer.TimerManager")
+local LocalData = require("GameCore.Data.LocalData")
 WinterNightThemeCtrl._mapNodeConfig = {
 	btnEntrance_ = {
 		nCount = 5,
@@ -19,12 +20,12 @@ WinterNightThemeCtrl._mapNodeConfig = {
 	imgMiniGame = {sComponentName = "Image"},
 	txtMiniGame = {
 		sComponentName = "TMP_Text",
-		sLanguageId = "Activity_Mini_Game_Cookie"
+		sLanguageId = "Activity_MiniGame_ThrowGifts"
 	},
 	imgMiniGameEnd = {},
 	txtMiniGameEnd = {
 		sComponentName = "TMP_Text",
-		sLanguageId = "Activity_Mini_Game_Cookie"
+		sLanguageId = "Activity_MiniGame_ThrowGifts"
 	},
 	txtMiniGame_End = {},
 	txtTask = {
@@ -35,6 +36,14 @@ WinterNightThemeCtrl._mapNodeConfig = {
 	imgTaskActivityTime = {},
 	txtTaskActivityTime = {sComponentName = "TMP_Text"},
 	imgStory = {sComponentName = "Image"},
+	txtStory = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Activity_Story"
+	},
+	txtStory_End = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Activity_Story"
+	},
 	goStoryEnd = {},
 	txtStoryEnd = {
 		sComponentName = "TMP_Text",
@@ -59,6 +68,14 @@ WinterNightThemeCtrl._mapNodeConfig = {
 	imgShopActivityTime = {},
 	txtShopActivityTime = {sComponentName = "TMP_Text"},
 	imgLevel = {sComponentName = "Image"},
+	txtLevel = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Activity_Level"
+	},
+	txtLevel_End = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Activity_Level"
+	},
 	goLevelEnd = {},
 	txtLevelEnd = {
 		sComponentName = "TMP_Text",
@@ -99,12 +116,12 @@ WinterNightThemeCtrl._mapNodeConfig = {
 	txtShop_End = {},
 	txtTaskProgressEnd = {sComponentName = "TMP_Text"},
 	dbTaskEnd = {},
+	miniGameRedDot = {},
 	redDotEntrance2 = {},
 	storyRedDot = {},
 	reddotLevel = {},
 	goMiniGameEnd = {},
-	imgStoryEnd = {},
-	txtStory_End = {}
+	imgStoryEnd = {}
 }
 WinterNightThemeCtrl._mapEventConfig = {}
 local ActivityState = {
@@ -121,15 +138,27 @@ function WinterNightThemeCtrl:Awake()
 	if self.WinterNightData ~= nil then
 		self.ActivityGroupCfg = self.WinterNightData.actGroupConfig
 	end
+	for k, v in pairs(self._mapNode.btnEntrance_) do
+		v.interactable = false
+	end
 end
 function WinterNightThemeCtrl:FadeIn()
 	EventManager.Hit(EventId.SetTransition)
+	local sAnimName = "WinterNightPanel_in_02"
 	if self.animRoot ~= nil then
-		self.animRoot:Play("WinterNightPanel_in_02", 0, 0)
+		self.animRoot = self.gameObject:GetComponent("Animator")
+		sAnimName = "WinterNightPanel_in_02"
 	else
 		self.animRoot = self.gameObject:GetComponent("Animator")
-		self.animRoot:Play("WinterNightPanel_in_01", 0, 0)
+		sAnimName = "WinterNightPanel_in_01"
 	end
+	self.animRoot:Play(sAnimName, 0, 0)
+	local nAnimLength = NovaAPI.GetAnimClipLength(self.animRoot, {sAnimName})
+	self:AddTimer(1, nAnimLength, function()
+		for k, v in pairs(self._mapNode.btnEntrance_) do
+			v.interactable = true
+		end
+	end, true, true, true)
 end
 function WinterNightThemeCtrl:OnEnable()
 	self:RefreshPanel()
@@ -158,6 +187,9 @@ function WinterNightThemeCtrl:OnEnable()
 				self.nActId,
 				nActId
 			}, self._mapNode.storyRedDot)
+		elseif i == AllEnum.ActivityThemeFuncIndex.MiniGame then
+			local nActId = actData.ActivityId
+			RedDotManager.RegisterNode(RedDotDefine.Activity_ThrowGift_New, {nActId}, self._mapNode.miniGameRedDot)
 		end
 	end
 end
@@ -387,6 +419,11 @@ function WinterNightThemeCtrl:RefreshMiniGameButtonState(actData)
 		self._mapNode.txtMiniGame_End:SetActive(state == ActivityState.Closed)
 		self._mapNode.txtMiniGameEnd.gameObject:SetActive(state == ActivityState.Closed)
 		self._mapNode.goMiniGameEnd.gameObject:SetActive(state == ActivityState.Closed)
+		if state ~= ActivityState.Open then
+			RedDotManager.SetValid(RedDotDefine.Activity_ThrowGift_New, {
+				actData.ActivityId
+			}, false)
+		end
 		self.tbActState[activityId] = state
 	end
 end
@@ -450,7 +487,7 @@ function WinterNightThemeCtrl:RefreshStoryButtonState(actData)
 		self._mapNode.imgStoryActivityUnlockTime:SetActive(state == ActivityState.NotOpen)
 		self._mapNode.goStoryEnd:SetActive(state == ActivityState.Closed)
 		self._mapNode.imgStoryEnd:SetActive(state == ActivityState.Closed)
-		self._mapNode.txtStory_End:SetActive(state == ActivityState.Closed)
+		self._mapNode.txtStory_End.gameObject:SetActive(state == ActivityState.Closed)
 		self.tbActState[activityId] = state
 	end
 end
@@ -479,6 +516,7 @@ function WinterNightThemeCtrl:RefreshLevelButtonState(actData)
 		self._mapNode.imgLevelActivityUnlockTime:SetActive(state == ActivityState.NotOpen)
 		self._mapNode.imgLevelEnd:SetActive(state == ActivityState.Closed)
 		self._mapNode.goLevelEnd:SetActive(state == ActivityState.Closed)
+		self._mapNode.txtLevel_End.gameObject:SetActive(state == ActivityState.Closed)
 		self.tbActState[activityId] = state
 	end
 end
@@ -553,11 +591,14 @@ function WinterNightThemeCtrl:OnBtn_ClickActivityEntrance(btn, nIndex)
 	end
 	if actData.PanelId ~= nil and ActivityState.Open == state then
 		if nIndex == AllEnum.ActivityThemeFuncIndex.MiniGame then
-			local nRandom = math.random(31, 32)
+			LocalData.SetPlayerLocalData("Activity_ThrowGift_New", true)
+			RedDotManager.SetValid(RedDotDefine.Activity_ThrowGift_New, {
+				actData.ActivityId
+			}, false)
 			local func = function()
 				EventManager.Hit(EventId.OpenPanel, actData.PanelId, actData.ActivityId, self.nActId)
 			end
-			EventManager.Hit(EventId.SetTransition, nRandom, func)
+			EventManager.Hit(EventId.SetTransition, 37, func)
 		else
 			EventManager.Hit(EventId.OpenPanel, actData.PanelId, actData.ActivityId)
 		end

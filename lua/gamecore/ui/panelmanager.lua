@@ -216,14 +216,16 @@ local OnClosePanel = function(listener, nPanelId)
 	if type(nPanelId) == "number" then
 		local bIsMainPanel = true
 		if type(tbDisposablePanel) == "table" then
-			for i, v in ipairs(tbDisposablePanel) do
-				if v._nPanelId == nPanelId then
+			local nCount = #tbDisposablePanel
+			for i = nCount, 1, -1 do
+				local objPanel = tbDisposablePanel[i]
+				if objPanel._nPanelId == nPanelId then
 					EventManager.Hit("Guide_CloseDisposablePanel", nPanelId)
-					v:_PreExit()
-					v:_Exit()
-					v:_Destroy()
+					objPanel:_PreExit()
+					objPanel:_Exit()
+					objPanel:_Destroy()
 					table.remove(tbDisposablePanel, i)
-					RemoveTbSnapShot(v)
+					RemoveTbSnapShot(objPanel)
 					bIsMainPanel = false
 					printLog("[\231\149\140\233\157\162\229\136\135\230\141\162] \229\133\179\233\151\173\228\186\134\233\157\158\228\184\187 Panel \231\149\140\233\157\162\239\188\154" .. GetPanelName(nPanelId))
 					break
@@ -314,13 +316,13 @@ local OnOpenPanel = function(listener, nPanelId, ...)
 			if _bHasOpenTips == false then
 				_bHasOpenTips = UTILS.CheckIsTipsPanel(v._nPanelId)
 			end
-			if v._nPanelId == nPanelId then
+			if v._nPanelId == nPanelId and nPanelId ~= PanelId.ReceivePropsTips then
 				MoveSnapShot(v)
 				objTempPanel:_PreExit()
 				objTempPanel:_Exit()
 				objTempPanel:_Destroy()
 				objTempPanel = nil
-				printLog("[\231\149\140\233\157\162\229\136\135\230\141\162] \230\137\147\229\188\128\233\157\158\228\184\187 Panel\239\188\154" .. GetPanelName(nPanelId) .. " \229\164\177\232\180\165\239\188\140\228\184\141\232\131\189\233\135\141\229\164\141\230\137\147\229\188\128\227\128\130")
+				printError("[\231\149\140\233\157\162\229\136\135\230\141\162] \230\137\147\229\188\128\233\157\158\228\184\187 Panel\239\188\154" .. GetPanelName(nPanelId) .. " \229\164\177\232\180\165\239\188\140\228\184\141\232\131\189\233\135\141\229\164\141\230\137\147\229\188\128\227\128\130")
 				return
 			end
 		end
@@ -545,14 +547,6 @@ function PanelManager.GetCurPanelId()
 		return objCurPanel._nPanelId
 	end
 	return 0
-end
-function PanelManager.GetDisposablePanelState(nPanelId)
-	for i, v in ipairs(tbDisposablePanel) do
-		if v._nPanelId == nPanelId then
-			return true
-		end
-	end
-	return false
 end
 function PanelManager.CheckPanelOpen(nPanelId)
 	if type(tbBackHistory) == "table" then

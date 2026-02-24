@@ -99,6 +99,7 @@ function CharacterPlotCtrl:RefreshPlotItem(go)
 	if data.PicSource ~= "" then
 		self:SetPngSprite(imgLevel, data.PicSource)
 	end
+	btnSelect.onClick:RemoveAllListeners()
 	btnSelect.onClick:AddListener(function()
 		self.curSelectIndex = index
 		self:OnBtnClick_Select()

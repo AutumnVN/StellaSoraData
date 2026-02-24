@@ -77,7 +77,7 @@ function PenguinCardLevelGridCtrl:RefreshLock(nLevelId)
 		local sTip = ConfigTable.GetUIText("PenguinCard_Level_LockLevel")
 		NovaAPI.SetTMPText(self._mapNode.txtLock, sTip)
 		self.bLock = true
-		self.sLockTip = sTip
+		self.sLockTip = ConfigTable.GetUIText("PenguinCard_Level_LockLevelTips")
 		return
 	end
 	self._mapNode.goMask:SetActive(false)
@@ -122,14 +122,24 @@ function PenguinCardLevelGridCtrl:EnterLevel()
 	if not bOpen then
 		EventManager.Hit(EventId.OpenMessageBox, {
 			nType = AllEnum.MessageBox.Alert,
-			sContent = ConfigTable.GetUIText("Activity_Invalid_Tip_3")
+			sContent = ConfigTable.GetUIText("Activity_Invalid_Tip_3"),
+			callbackConfirm = function()
+				PanelManager.Home()
+			end,
+			callbackCancel = function()
+				PanelManager.Home()
+			end
 		})
+		return
 	end
 	if self.bLock then
 		EventManager.Hit(EventId.OpenMessageBox, self.sLockTip)
 		return
 	end
-	self.actData:EnterLevel(self.nLevelId)
+	local callback = function()
+		self.actData:EnterLevel(self.nLevelId)
+	end
+	EventManager.Hit("PenguinCard_EnterLevel", callback)
 end
 function PenguinCardLevelGridCtrl:Awake()
 end
@@ -138,9 +148,7 @@ end
 function PenguinCardLevelGridCtrl:OnDisable()
 end
 function PenguinCardLevelGridCtrl:OnBtnClick_Level()
-	local callback = function()
-		self:EnterLevel()
-	end
-	EventManager.Hit("PenguinCard_ClickLevel", self.gameObject, callback)
+	self:EnterLevel()
+	EventManager.Hit("PenguinCard_ClickLevel", self.gameObject)
 end
 return PenguinCardLevelGridCtrl

@@ -190,6 +190,7 @@ function DictionaryEntryCtrl:Awake()
 	if type(tbParam) == "table" then
 		self.nEntryId = tbParam[1]
 		self.bGuide = tbParam[2]
+		self.callback = tbParam[3]
 	end
 	self.tbGamepadUINode = self:GetGamepadUINode()
 	local bGamepad = GamepadUIManager.GetInputState()
@@ -210,6 +211,9 @@ function DictionaryEntryCtrl:OnEnable()
 	end
 end
 function DictionaryEntryCtrl:OnDisable()
+	if not ModuleManager.GetIsAdventure() then
+		Time.timeScale = 1
+	end
 	EventManager.Hit("CloseDictionaryEntry")
 	if GamepadUIManager.GetInputState() then
 		GamepadUIManager.DisableGamepadUI("DictionaryEntryCtrl")
@@ -222,6 +226,9 @@ function DictionaryEntryCtrl:OnBtnClick_Close()
 	self._mapNode.aniBlur:SetTrigger("tOut")
 	self:AddTimer(1, 0.3, function()
 		self:Resume()
+		if self.callback ~= nil and type(self.callback) == "function" then
+			self.callback()
+		end
 		EventManager.Hit(EventId.ClosePanel, PanelId.DictionaryEntry)
 	end, true, true, true)
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)

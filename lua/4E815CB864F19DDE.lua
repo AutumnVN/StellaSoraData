@@ -1,8 +1,11 @@
 local ThrowGiftItemSelectGridCtrl = class("ThrowGiftItemSelectGridCtrl", BaseCtrl)
 ThrowGiftItemSelectGridCtrl._mapNodeConfig = {
-	txtBtnConfirm = {sComponentName = "TMP_Text"},
+	txtBtnConfirm = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "ThrowGift_GetCard"
+	},
 	btnConfirm = {
-		sComponentName = "UIButton",
+		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Confirm"
 	},
 	imgBgSelect = {},
@@ -25,6 +28,7 @@ end
 function ThrowGiftItemSelectGridCtrl:OnEnable()
 	self.Idx = 0
 	self.animator = self.gameObject:GetComponent("Animator")
+	self._mapNode.btnConfirm.interactable = false
 end
 function ThrowGiftItemSelectGridCtrl:OnDisable()
 end
@@ -43,12 +47,15 @@ function ThrowGiftItemSelectGridCtrl:Refresh(nItemId)
 	NovaAPI.SetTMPText(self._mapNode.TMPItemName, mapItemCfgData.Name)
 	NovaAPI.SetTMPText(self._mapNode.TMPItemDesc, mapItemCfgData.Desc)
 	self:SetPngSprite(self._mapNode.imgItemIcon, mapItemCfgData.Icon)
+	self._mapNode.btnConfirm.interactable = false
 end
 function ThrowGiftItemSelectGridCtrl:SetSelect(bSelect)
 	if bSelect then
 		self._mapNode.AnimRoot:Play("btnItemSelect_in")
+		self._mapNode.btnConfirm.interactable = true
 	else
 		self._mapNode.AnimRoot:Play("btnItemSelect_out")
+		self._mapNode.btnConfirm.interactable = false
 	end
 	self._mapNode.imgBgSelect:SetActive(bSelect)
 end

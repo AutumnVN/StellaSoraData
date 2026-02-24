@@ -38,7 +38,8 @@ local sActTypePath = {
 	[GameEnum.activityType.TowerDefense] = "TowerDefense",
 	[GameEnum.activityType.JointDrill] = "JointDrill",
 	[GameEnum.activityType.Advertise] = "Advertise",
-	[GameEnum.activityType.Task] = "ActivityTask"
+	[GameEnum.activityType.Task] = "ActivityTask",
+	[GameEnum.activityType.PenguinCard] = "PenguinCard"
 }
 function ActivityListCtrl:InitActivityList(nCurActId)
 	local tbActList = PlayerData.Activity:GetSortedActList()
@@ -352,6 +353,26 @@ function ActivityListCtrl:AddBdConvertActivityCtrl(actData)
 	actCtrl.gameObject:SetActive(true)
 	actCtrl:InitActData(actData)
 end
+function ActivityListCtrl:AddPenguinCardActivityCtrl(actData)
+	local actCtrl = self.tbActCtrlObj[actData:GetActId()]
+	if nil == actCtrl then
+		local mapActCfg = ConfigTable.GetData("PenguinCardControl", actData:GetActId())
+		if not mapActCfg then
+			return
+		end
+		local sFolder = sActTypePath[GameEnum.activityType.PenguinCard]
+		if sFolder == nil then
+			return
+		end
+		local sPrefabPath = string.format(sEntranceFolder, mapActCfg.UIAssets)
+		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.rtContent)
+		local sCtrlPath = string.format("Game.UI.Activity.%s.%s", sFolder, mapActCfg.CtrlName)
+		actCtrl = self:BindCtrlByNode(goObj, sCtrlPath)
+		self.tbActCtrlObj[actData:GetActId()] = actCtrl
+	end
+	actCtrl.gameObject:SetActive(true)
+	actCtrl:InitActData(actData)
+end
 function ActivityListCtrl:RefreshSelectActivity(bResetDay)
 	for _, v in pairs(self.tbActCtrlObj) do
 		v.gameObject:SetActive(false)
@@ -384,6 +405,8 @@ function ActivityListCtrl:RefreshSelectActivity(bResetDay)
 			self:AddActivityTaskActCtrl(actData.actData)
 		elseif actType == GameEnum.activityType.BDConvert then
 			self:AddBdConvertActivityCtrl(actData.actData)
+		elseif actType == GameEnum.activityType.PenguinCard then
+			self:AddPenguinCardActivityCtrl(actData.actData)
 		end
 	elseif actData.nType == AllEnum.ActivityMainType.ActivityGroup then
 		self.nSelectActId = actData.actData:GetActGroupId()

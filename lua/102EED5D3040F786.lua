@@ -6,7 +6,10 @@ local tbColor = {
 	"#d255ed"
 }
 ThrowGiftLevelInfoGridCtrl._mapNodeConfig = {
-	TMPScoreTitle = {sComponentName = "TMP_Text"},
+	TMPScoreTitle = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Activity_ThrowGifts_BestScore"
+	},
 	TMPUnlock = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "ThrowGift_LevelInfo_Unlock"
@@ -35,7 +38,8 @@ ThrowGiftLevelInfoGridCtrl._mapNodeConfig = {
 	imgDifficutly = {
 		sNodeName = "rtDifficutly",
 		sComponentName = "Image"
-	}
+	},
+	imgNew = {}
 }
 ThrowGiftLevelInfoGridCtrl._mapEventConfig = {}
 ThrowGiftLevelInfoGridCtrl._mapRedDotConfig = {}
@@ -53,8 +57,9 @@ function ThrowGiftLevelInfoGridCtrl:OnDestroy()
 end
 function ThrowGiftLevelInfoGridCtrl:OnRelease()
 end
-function ThrowGiftLevelInfoGridCtrl:Refresh(nLevelId, bUnlock, nMaxScore, bPass)
+function ThrowGiftLevelInfoGridCtrl:Refresh(nLevelId, bUnlock, nMaxScore, bPass, bShowRedDot, nOpenTime)
 	self.nLevelId = nLevelId
+	self.nOpenTime = nOpenTime
 	local mapLevelCfgData = ConfigTable.GetData("ThrowGiftLevel", nLevelId)
 	if mapLevelCfgData == nil then
 		self.gameObject:SetActive(false)
@@ -91,11 +96,12 @@ function ThrowGiftLevelInfoGridCtrl:Refresh(nLevelId, bUnlock, nMaxScore, bPass)
 	else
 		self._mapNode.rtItemReward[2].gameObject:SetActive(false)
 	end
+	self._mapNode.imgNew:SetActive(bShowRedDot)
 end
 function ThrowGiftLevelInfoGridCtrl:OnBtnClick_Go()
 	EventManager.Hit("ThrowGiftStartBtnClick")
 	local callback = function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.ThrowGiftLevelPanel, self.nLevelId)
+		EventManager.Hit(EventId.OpenPanel, PanelId.ThrowGiftLevelPanel, self.nLevelId, self.nOpenTime)
 	end
 	EventManager.Hit(EventId.SetTransition, 37, callback)
 end

@@ -4,7 +4,7 @@ ThrowGiftPauseCtrl._mapNodeConfig = {
 	blur = {},
 	txt_title = {
 		sComponentName = "TMP_Text",
-		sLanguageId = "TowerDef_Text_Pause"
+		sLanguageId = "Activity_ThrowGifts_Text_Pause"
 	},
 	txt_exit = {
 		nCount = 2,
@@ -35,6 +35,16 @@ ThrowGiftPauseCtrl._mapNodeConfig = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Continue",
 		sAction = "Back"
+	},
+	txt_dic = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "Tutorial_DicTitle"
+	},
+	btn_dic = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Dic",
+		sAction = "Depot"
 	}
 }
 ThrowGiftPauseCtrl._mapEventConfig = {}
@@ -42,8 +52,10 @@ ThrowGiftPauseCtrl._mapRedDotConfig = {}
 function ThrowGiftPauseCtrl:Awake()
 	self.tbGamepadUINode = self:GetGamepadUINode()
 end
-function ThrowGiftPauseCtrl:Open()
+function ThrowGiftPauseCtrl:Open(DictionaryID)
 	self.gameObject:SetActive(true)
+	self.DictionaryID = DictionaryID
+	self._mapNode.btn_dic.gameObject:SetActive(self.DictionaryID > 0)
 	GamepadUIManager.EnableGamepadUI("ThrowGiftPauseCtrl", self.tbGamepadUINode)
 end
 function ThrowGiftPauseCtrl:Close()
@@ -58,5 +70,10 @@ function ThrowGiftPauseCtrl:OnBtnClick_Restart()
 end
 function ThrowGiftPauseCtrl:OnBtnClick_Continue()
 	EventManager.Hit("ThrowGift_Continue_OnClick")
+end
+function ThrowGiftPauseCtrl:OnBtnClick_Dic()
+	if self.DictionaryID > 0 then
+		EventManager.Hit(EventId.OpenPanel, PanelId.DictionaryEntry, self.DictionaryID, true)
+	end
 end
 return ThrowGiftPauseCtrl

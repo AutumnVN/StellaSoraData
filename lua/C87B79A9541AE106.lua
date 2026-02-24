@@ -99,6 +99,7 @@ function WinterNightStoryCtrl:OnRefreshGrid(grid, index)
 	local imgStory = RootNode:Find("imgStory"):GetComponent("Image")
 	local goNotOpen = RootNode:Find("goNotOpen").gameObject
 	local txtLevel = RootNode:Find("txtLevel"):GetComponent("TMP_Text")
+	local txtLevelLock = goNotOpen.transform:Find("txtLevelLock"):GetComponent("TMP_Text")
 	local imgStoryTitleBg = RootNode:Find("imgStoryTitleBg")
 	local imgBattleTitleBg = RootNode:Find("imgBattleTitleBg")
 	local RedDot = RootNode:Find("RedDot").gameObject
@@ -123,14 +124,22 @@ function WinterNightStoryCtrl:OnRefreshGrid(grid, index)
 	self:SetPngSprite(imgStory, string.format("Icon/ActivityStory/ep_event04_%02d", nIndex))
 	NovaAPI.SetTMPText(txtTitle, avgcfg.Title)
 	NovaAPI.SetTMPText(txtLevel, avgcfg.Index)
+	NovaAPI.SetTMPText(txtLevelLock, avgcfg.Index)
 	txtTitle.gameObject:SetActive(isUnlock and bOpen)
 	goImgTime.gameObject:SetActive(not bOpen)
-	goComplete.gameObject:SetActive(isUnlock and isReaded)
-	goLock.gameObject:SetActive(not isUnlock)
+	goComplete.gameObject:SetActive(isUnlock and isReaded and bOpen)
+	goLock.gameObject:SetActive(not isUnlock and bOpen)
 	goNotOpen.gameObject:SetActive(not bOpen)
 	imgBattleTitleBg.gameObject:SetActive(avgcfg.IsBattle and isUnlock and bOpen)
 	imgStoryTitleBg.gameObject:SetActive(not avgcfg.IsBattle and isUnlock and bOpen)
 	imgBg2.gameObject:SetActive(self.curIndex == gridIndex and isUnlock and bOpen)
+	if avgcfg.IsBattle == true then
+		local txtPlot = imgBattleTitleBg:Find("txtPlot"):GetComponent("TMP_Text")
+		NovaAPI.SetTMPText(txtPlot, ConfigTable.GetUIText("SelectTeam_StartBattle"))
+	else
+		local txtPlot = imgStoryTitleBg:Find("txtPlot"):GetComponent("TMP_Text")
+		NovaAPI.SetTMPText(txtPlot, ConfigTable.GetUIText("TowerDef_Story"))
+	end
 	if not bOpen then
 		local strTime = self:GetRemainTimeStr(nOpenTime, avgcfg.DayOpen)
 		if self.tbGridTimer[goInstanceID] ~= nil then
@@ -259,13 +268,13 @@ function WinterNightStoryCtrl:GetRemainTimeStr(nOpenTime, openDay)
 	local min = math.floor((nRemainTime - hour * 3600) / 60)
 	local sec = nRemainTime - hour * 3600 - min * 60
 	if 0 < day then
-		timeStr = orderedFormat(ConfigTable.GetUIText("ActivityLevels_Lock_Day_Color_Common"), "f3772c", day)
+		timeStr = orderedFormat(ConfigTable.GetUIText("ActivityLevels_Lock_Day_Color_Common"), "08d3d4", day)
 	elseif 0 < hour then
-		timeStr = orderedFormat(ConfigTable.GetUIText("ActivityLevels_Lock_Hour_Color_Common"), "f3772c", hour)
+		timeStr = orderedFormat(ConfigTable.GetUIText("ActivityLevels_Lock_Hour_Color_Common"), "08d3d4", hour)
 	elseif 0 < min then
-		timeStr = orderedFormat(ConfigTable.GetUIText("ActivityLevels_Lock_Min_Color_Common"), "f3772c", min)
+		timeStr = orderedFormat(ConfigTable.GetUIText("ActivityLevels_Lock_Min_Color_Common"), "08d3d4", min)
 	elseif 0 < sec then
-		timeStr = orderedFormat(ConfigTable.GetUIText("ActivityLevels_Lock_Sec_Color_Common"), "f3772c", sec)
+		timeStr = orderedFormat(ConfigTable.GetUIText("ActivityLevels_Lock_Sec_Color_Common"), "08d3d4", sec)
 	end
 	return timeStr, 0 < nRemainTime
 end

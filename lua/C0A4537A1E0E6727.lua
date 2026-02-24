@@ -43,24 +43,29 @@ function GuideGroup_303:Clear()
 end
 function GuideGroup_303:Step_1()
 	self.msg = {
-		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Prepare---/--Info--/imgScoreBg",
-		Deviation = {-170, -30},
-		Size = {350, 140},
-		Head = "Icon/Head/head_11101",
-		Desc = "Guide_4_1",
+		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Prepare---/--Info--/fxRotation/imgScoreBg/Image",
+		Deviation = {100, -30},
+		Size = {380, 160},
+		Head = "Icon/Head/head_917301",
+		Desc = "Guide_303_1",
 		DescDeviation = {-700, -240},
 		Type = GameEnum.guidetype.Introductory
 	}
 	self.parent:ActiveHide(true)
 	current = 1
-	self.parent:PlayTypeMask(self.msg)
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForSeconds(1))
+		self.parent:PlayTypeMask(self.msg)
+	end
+	cs_coroutine.start(wait)
 end
 function GuideGroup_303:Step_2()
 	self.msg = {
 		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Prepare---/--Info--/imgTurnBg",
 		Deviation = {0, 0},
-		Head = "Icon/Head/head_11101",
-		Desc = "Guide_4_1",
+		Size = {660, 110},
+		Head = "Icon/Head/head_917301",
+		Desc = "Guide_303_2",
 		DescDeviation = {0, -230},
 		Type = GameEnum.guidetype.Introductory
 	}
@@ -71,10 +76,11 @@ end
 function GuideGroup_303:Step_3()
 	self.msg = {
 		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Prepare---/--Upgrade--",
-		Deviation = {0, 0},
-		Head = "Icon/Head/head_11101",
-		Desc = "Guide_4_1",
-		DescDeviation = {700, -350},
+		Deviation = {0, 55},
+		Size = {420, 420},
+		Head = "Icon/Head/head_917401",
+		Desc = "Guide_303_3",
+		DescDeviation = {800, -250},
 		Type = GameEnum.guidetype.Introductory
 	}
 	self.parent:ActiveHide(true)

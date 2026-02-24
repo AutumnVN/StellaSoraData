@@ -1,22 +1,28 @@
 local ThrowGiftItemUseBtnCtrl = class("ThrowGiftItemUseBtnCtrl", BaseCtrl)
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 ThrowGiftItemUseBtnCtrl._mapNodeConfig = {
 	txtBtn = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "ThrowGift_UseItem"
 	},
 	btnUseItem1 = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_Confirm"
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Confirm",
+		sAction = "ThrowGiftItemConfirm"
 	},
 	btnItem1 = {
-		sComponentName = "UIButton",
+		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Item"
 	},
 	imgBgItemInuse = {sComponentName = "Image"},
 	imgItemIconEmpty = {},
 	imgItemIcon1 = {sComponentName = "Image"},
-	rtParent = {sComponentName = "Animator"}
+	rtParent = {sComponentName = "Animator"},
+	cgParent = {
+		sNodeName = "rtParent",
+		sComponentName = "CanvasGroup"
+	}
 }
 ThrowGiftItemUseBtnCtrl._mapEventConfig = {}
 ThrowGiftItemUseBtnCtrl._mapRedDotConfig = {}
@@ -28,6 +34,7 @@ end
 function ThrowGiftItemUseBtnCtrl:FadeOut()
 end
 function ThrowGiftItemUseBtnCtrl:OnEnable()
+	self._mapNode.btnUseItem1.interactable = false
 end
 function ThrowGiftItemUseBtnCtrl:OnDisable()
 end
@@ -53,8 +60,10 @@ function ThrowGiftItemUseBtnCtrl:SetItem(nId)
 	if nId == 0 then
 		self._mapNode.imgItemIcon1.gameObject:SetActive(false)
 		self._mapNode.imgItemIconEmpty.gameObject:SetActive(true)
+		NovaAPI.SetCanvasGroupAlpha(self._mapNode.cgParent, 0.5)
 		return
 	end
+	NovaAPI.SetCanvasGroupAlpha(self._mapNode.cgParent, 1)
 	self._mapNode.imgItemIcon1.gameObject:SetActive(true)
 	self._mapNode.imgItemIconEmpty.gameObject:SetActive(false)
 	local mapItemCfgData = ConfigTable.GetData("ThrowGiftItem", nId)
@@ -68,11 +77,19 @@ end
 function ThrowGiftItemUseBtnCtrl:PlayAnim(nType)
 	if nType == 1 then
 		self._mapNode.rtParent:Play("rtParent_in")
+		self._mapNode.btnUseItem1.interactable = true
 	elseif nType == 2 then
 		self._mapNode.rtParent:Play("rtParent_out")
+		self._mapNode.btnUseItem1.interactable = false
 	else
 		self._mapNode.rtParent:Play("rtParent_switch")
+		self._mapNode.btnUseItem1.interactable = false
 	end
 	self._mapNode.imgBgItemInuse.gameObject:SetActive(nType == 1)
+end
+function ThrowGiftItemUseBtnCtrl:SetAction(nIdx)
+	self._mapNodeConfig.btnItem1.sAction = "ThrowGiftItem" .. nIdx
+	self.tbGamepadUINode = self:GetGamepadUINode()
+	GamepadUIManager.AddGamepadUINode("ThrowGiftPanel", self.tbGamepadUINode)
 end
 return ThrowGiftItemUseBtnCtrl

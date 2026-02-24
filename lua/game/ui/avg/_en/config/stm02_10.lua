@@ -8487,7 +8487,7 @@ return {
 			"",
 			false,
 			"",
-			"Oh! Minova, I've got it! A brilliant idea==W== to take that big guy down!",
+			"Oh! Minova, I've got it! A brilliant idea to take that big guy down!",
 			""
 		}
 	},

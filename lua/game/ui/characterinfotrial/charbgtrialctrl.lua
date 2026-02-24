@@ -116,6 +116,11 @@ function CharBgTrialCtrl:GetName(sPortrait, sFace)
 end
 function CharBgTrialCtrl:SetCharacterPng(nSkinId, nType)
 	local bSetSuccess, nT, nAnimLength, tbRenderer = Actor2DManager.SetActor2DWithRender(self._panel.nPanelId, self._mapNode.imgBgRT, self.nCharId, nSkinId, nil, self._mapNode.actor2dNode)
+	if bSetSuccess and self.lasttrPanelOffsetL2DPos ~= nil then
+		self._mapNode.trPanelOffsetL2D:DOLocalMoveX(self.lasttrPanelOffsetL2DPos, 0):SetUpdate(true)
+	end
+	local skinCfgData = ConfigTable.GetData_CharacterSkin(nSkinId)
+	NovaAPI.SetSpriteRendererSprite(self._mapNode.bgRight, self:LoadAsset(skinCfgData.Bg .. ".png", typeof(Sprite)))
 end
 function CharBgTrialCtrl:SetCharacterL2D(nSkinId, nType)
 	if nil ~= self.tbRenderer then
@@ -260,13 +265,18 @@ function CharBgTrialCtrl:OnEvent_PanelSwitch(nClosePanelId, nOpenPanelId)
 		end
 		local tbCfg = self._panel:GetPanelAnimCfg(nClosePanelId, nOpenPanelId)
 		if nil ~= tbCfg then
-			local bgTweener, l2dTweener
-			bgTweener = self._mapNode.rtBgRoot:DOLocalMoveX(panelAnimCfg.bgPosX, nBgTime):SetUpdate(true)
-			l2dTweener = self._mapNode.trPanelOffsetL2D:DOLocalMoveX(panelAnimCfg.L2DPosX, nL2dTime):SetUpdate(true)
+			if self.bgTweener ~= nil then
+				self.bgTweener:Kill()
+			end
+			if self.l2dTweener ~= nil then
+				self.l2dTweener:Kill()
+			end
+			self.bgTweener = self._mapNode.rtBgRoot:DOLocalMoveX(panelAnimCfg.bgPosX, nBgTime):SetUpdate(true)
+			self.l2dTweener = self._mapNode.trPanelOffsetL2D:DOLocalMoveX(panelAnimCfg.L2DPosX, nL2dTime):SetUpdate(true)
 			self.lasttrPanelOffsetL2DPos = panelAnimCfg.L2DPosX
 			if nil ~= tbCfg.bgEaseType then
-				bgTweener:SetEase(tbCfg.bgEaseType)
-				l2dTweener:SetEase(tbCfg.bgEaseType)
+				self.bgTweener:SetEase(tbCfg.bgEaseType)
+				self.l2dTweener:SetEase(tbCfg.bgEaseType)
 			end
 		end
 	end

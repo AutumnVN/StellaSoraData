@@ -40,8 +40,6 @@ function ActivityLevelsLvCtrl:InitData(parent, nType, activityData, data, isOpen
 		self._mapNode.rtLockPreLv:SetActive(false)
 		local day = activityData:GetUnLockDay(nType, data.baseData.Id)
 		if day == 0 then
-			self._mapNode.lock:SetActive(false)
-			self._mapNode.attaCount:SetActive(true)
 			local timerCount = function()
 				local hour, min, sec = parent.activityLevelsData:GetUnLockHour(nType, data.baseData.Id)
 				if 0 < hour then
@@ -57,8 +55,6 @@ function ActivityLevelsLvCtrl:InitData(parent, nType, activityData, data, isOpen
 				timerCount()
 			end, true, true, false)
 		else
-			self._mapNode.lock:SetActive(false)
-			self._mapNode.attaCount:SetActive(true)
 			NovaAPI.SetTMPText(self._mapNode.txtLockCondition, orderedFormat(ConfigTable.GetUIText("ActivityLevels_Lock_Day_Color_Common"), "08d3d4", day))
 		end
 	end

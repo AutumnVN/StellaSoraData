@@ -123,6 +123,7 @@ ActivityLevelsSelectCtrl._mapNodeConfig = {
 	imgBuild = {sComponentName = "Image"},
 	TMPName = {sComponentName = "TMP_Text"},
 	TMPLevel = {sComponentName = "TMP_Text"},
+	detailDescSc = {sComponentName = "Transform"},
 	detailDesc = {sComponentName = "TMP_Text"},
 	btnEnemyInfo = {
 		sComponentName = "UIButton",
@@ -156,6 +157,10 @@ ActivityLevelsSelectCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnClickBtnGo"
 	},
+	txtBtnGoRaidUnlock = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Maninline_Btn_Go"
+	},
 	txtBtnGo = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Maninline_Btn_Go"
@@ -185,6 +190,7 @@ ActivityLevelsSelectCtrl._mapEventConfig = {
 ActivityLevelsSelectCtrl._mapRedDotConfig = {}
 function ActivityLevelsSelectCtrl:Awake()
 	self.lvListMsgView = self._mapNode.rtToggles.transform:Find("Viewport").gameObject
+	self.detailDescContent = self._mapNode.detailDescSc:Find("Viewport/Content").transform
 	self.curRequireEnergy = 0
 	local param = self:GetPanelParam()
 	if type(param) == "table" then
@@ -277,7 +283,7 @@ function ActivityLevelsSelectCtrl:RefreshTogTypeCount()
 			break
 		end
 	end
-	objAdventureCert:SetActive(false)
+	objAdventureCert:SetActive(true)
 	for i, v in pairs(self.activityLevelsData.levelTabAdventure) do
 		if v.Star < 3 then
 			objAdventureCert:SetActive(false)
@@ -532,6 +538,7 @@ function ActivityLevelsSelectCtrl:RefreshInstanceInfo(nType, nHard, isInit)
 	end
 	NovaAPI.SetTMPText(self._mapNode.TMPLevel, strTitle)
 	NovaAPI.SetTMPText(self._mapNode.detailDesc, self.selectLevelData.baseData.Desc)
+	self.detailDescContent:DOLocalMoveY(0, 0)
 	self.curStar = self.selectLevelData.Star
 	local tbCond = {
 		self.selectLevelData.baseData.OneStarDesc,

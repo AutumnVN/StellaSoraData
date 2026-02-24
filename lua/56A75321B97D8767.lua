@@ -3,6 +3,7 @@ local rootPath = "UI_Activity/%s.prefab"
 local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
 local ResTypeAny = GameResourceLoader.ResType.Any
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 ThrowGiftCtrl._mapNodeConfig = {
 	TMPLevelScoreTitle = {
 		sComponentName = "TMP_Text",
@@ -17,15 +18,27 @@ ThrowGiftCtrl._mapNodeConfig = {
 	},
 	rtLevelRoot = {sComponentName = "Transform"},
 	btnPause = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_Pause"
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Pause",
+		sAction = "Map"
 	},
 	TMPLevelTime = {sComponentName = "TMP_Text"},
 	TMPLevelScore = {sComponentName = "TMP_Text"},
 	TMPTarget = {sComponentName = "TMP_Text"},
 	imgItemDescBg = {sComponentName = "Animator"},
+	TMPLevelTimeAdd = {sComponentName = "Animator"},
 	TMPItemDescBottom = {sComponentName = "TMP_Text"},
 	imgTimeBg = {},
+	btnRight = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_btnRight",
+		sAction = "ThrowGiftChangeViewLeft"
+	},
+	btnLeft = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_btnLeft",
+		sAction = "ThrowGiftChangeViewRight"
+	},
 	rtItemSelect = {
 		sCtrlName = "Game.UI.Activity.ThrowGifts.ItemSelect.ThrowGiftItemSelectCtrl"
 	},
@@ -38,15 +51,23 @@ ThrowGiftCtrl._mapNodeConfig = {
 		sComponentName = "Animator"
 	},
 	TMPTargetHint = {sComponentName = "TMP_Text"},
-	TMPTitleTargetHint = {sComponentName = "TMP_Text"},
+	TMPTitleTargetHint = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Activity_ThrowGifts_WinCond"
+	},
 	rtBuff = {nCount = 4},
+	rtBuffAnim = {
+		nCount = 4,
+		sNodeName = "rtBuff",
+		sComponentName = "Animator"
+	},
 	TMPBuffTime = {nCount = 4, sComponentName = "TMP_Text"},
 	rtColorAnim = {sComponentName = "Animator"},
 	FX_Star = {},
 	FX_Snow = {}
 }
 ThrowGiftCtrl._mapEventConfig = {
-	ThrowGift_Exit_OnClick = "OnEvent_ThrowGift_Exit",
+	ThrowGift_Exit_OnClick = "OnEvent_ThrowGift_Giveup",
 	ThrowGift_Restart_OnClick = "OnEvent_ThrowGift_Restart",
 	ThrowGift_Continue_OnClick = "OnEvent_ThrowGift_Continue",
 	ThrowGiftSettle_Exit = "OnEvent_ThrowGift_Exit",
@@ -58,17 +79,27 @@ ThrowGiftCtrl._mapEventConfig = {
 ThrowGiftCtrl._mapRedDotConfig = {}
 function ThrowGiftCtrl:Awake()
 	self.nCurTime = 0
+	self._mapNode.rtItem[1]:SetAction(1)
+	self._mapNode.rtItem[2]:SetAction(2)
+	self.tbGamepadUINode = self:GetGamepadUINode()
+	GamepadUIManager.AddGamepadUINode("ThrowGiftPanel", self.tbGamepadUINode)
 end
 function ThrowGiftCtrl:FadeIn()
 end
 function ThrowGiftCtrl:FadeOut()
 end
 function ThrowGiftCtrl:OnEnable()
+	self:SetViewBtn(0)
+	self._mapNode.rtItemSelect.gameObject:SetActive(false)
+	self._mapNode.imgItemDescBg.gameObject:SetActive(false)
+	self._mapNode.rtSettle.gameObject:SetActive(false)
 	self.nCurItem = {0, 0}
+	self.tbItemIdx = {0, 0}
 	self.nCurSelectItemIdx = 0
 	local param = self:GetPanelParam()
 	if type(param) == "table" then
 		self.nLevelId = param[1]
+		self.nOpenTime = param[2]
 	end
 	local mapLevelCfgData = ConfigTable.GetData("ThrowGiftLevel", self.nLevelId)
 	if mapLevelCfgData == nil then
@@ -85,8 +116,8 @@ function ThrowGiftCtrl:OnEnable()
 	self.mapRecordItemData = {}
 	if self.actData ~= nil then
 		local mapCachedData = self.actData:GetActivityData()
-		self.mapRecordLevelData = mapCachedData.tbLevels
-		self.mapRecordItemData = mapCachedData.tbItems
+		self.mapRecordLevelData = mapCachedData.mapLevels
+		self.mapRecordItemData = mapCachedData.mapItems
 	end
 	local sPath = string.format(rootPath, self.mapFloorCfgData.SceneName)
 	local goLevelPerfab = GameResourceLoader.LoadAsset(ResTypeAny, Settings.AB_ROOT_PATH .. sPath, typeof(Object))
@@ -114,6 +145,8 @@ function ThrowGiftCtrl:OnEnable()
 	self._mapNode.rtBuff[2]:SetActive(false)
 	self._mapNode.rtBuff[3]:SetActive(false)
 	self._mapNode.rtBuff[4]:SetActive(false)
+	self._mapNode.TMPLevelTimeAdd.gameObject:SetActive(false)
+	self:SetFx({})
 	EventManager.Hit(EventId.SetTransition)
 	local waitTransion = function()
 		self._mapNode.rtTargetHint:SetActive(true)
@@ -145,14 +178,28 @@ end
 function ThrowGiftCtrl:SetScore(nScore)
 	NovaAPI.SetTMPText(self._mapNode.TMPLevelScore, tostring(nScore))
 end
+function ThrowGiftCtrl:AddTimeAnim()
+	if self.AddTimeAnimTimer ~= nil then
+		return
+	end
+	local callback = function()
+		self._mapNode.TMPLevelTimeAdd.gameObject:SetActive(false)
+		self.AddTimeAnimTimer = nil
+	end
+	self._mapNode.TMPLevelTimeAdd.gameObject:SetActive(true)
+	self._mapNode.TMPLevelTimeAdd:Play("TMPLevelTimeAdd_in")
+	self.AddTimeAnimTimer = self:AddTimer(1, 1, callback, true, true, true)
+end
 function ThrowGiftCtrl:SetTime(nTime)
 	if math.floor(nTime) ~= self.nCurTime then
 		self.nCurTime = math.floor(nTime)
-		NovaAPI.SetTMPText(self._mapNode.TMPLevelTime, tostring(self.nCurTime))
+		local m = math.floor(self.nCurTime / 60)
+		local s = math.floor(self.nCurTime % 60)
+		NovaAPI.SetTMPText(self._mapNode.TMPLevelTime, string.format("%d:%02d", m, s))
 	end
 end
 function ThrowGiftCtrl:SetTarget(nCur)
-	NovaAPI.SetTMPText(self._mapNode.TMPTarget, string.format(self.mapLevelCfgData.ThrowGiftLevelCondDesc .. "(%d/%d)", nCur, self.mapLevelCfgData.throwGiftLevelParams))
+	NovaAPI.SetTMPText(self._mapNode.TMPTarget, string.format(self.mapLevelCfgData.ThrowGiftLevelCondDesc .. " (<color=#08d3d4>%d</color>/%d)", nCur, self.mapLevelCfgData.throwGiftLevelParams))
 end
 function ThrowGiftCtrl:OpenItemSelect(tbItem, selectCallback)
 	local pos = 1
@@ -160,26 +207,27 @@ function ThrowGiftCtrl:OpenItemSelect(tbItem, selectCallback)
 		pos = 1
 	elseif self.nCurItem[2] == 0 or self.nCurItem[2] == nil then
 		pos = 2
-	else
-		pos = 1
+	elseif self.tbItemIdx[1] > self.tbItemIdx[2] then
+		pos = 2
 	end
 	local callback = function(nIdx)
 		if selectCallback ~= nil and type(selectCallback) == "function" then
 			selectCallback(nIdx)
 		end
 		self.nCurItem[pos] = tbItem[nIdx]
+		self.tbItemIdx[pos] = math.max(self.tbItemIdx[1], self.tbItemIdx[2]) + 1
 		self._mapNode.rtItem[pos]:SetItem(tbItem[nIdx])
 		self._mapNode.rtItem[pos]:PlayAnim(3)
 	end
 	self._mapNode.rtItemSelect:OpenPanel(tbItem, callback, pos)
 end
-function ThrowGiftCtrl:OpenSettle(bWin, nScore, nGift)
+function ThrowGiftCtrl:OpenSettle(bWin, nScore, nGift, nPenguin, bShowPenguin, changeInfo)
 	self.mapRecordLevelData = {}
 	self.mapRecordItemData = {}
 	if self.actData ~= nil then
 		local mapCachedData = self.actData:GetActivityData()
-		self.mapRecordLevelData = mapCachedData.tbLevels
-		self.mapRecordItemData = mapCachedData.tbItems
+		self.mapRecordLevelData = mapCachedData.mapLevels
+		self.mapRecordItemData = mapCachedData.mapItems
 	end
 	local bShowNextLevel = false
 	local nNextLevelId = self.nLevelId + 1
@@ -187,7 +235,7 @@ function ThrowGiftCtrl:OpenSettle(bWin, nScore, nGift)
 	if mapNextCfgData ~= nil then
 		bShowNextLevel = self:GetLevelUnlock(nNextLevelId)
 	end
-	self._mapNode.rtSettle:ShowSettle(bWin, nScore, nGift, bShowNextLevel)
+	self._mapNode.rtSettle:ShowSettle(bWin, nScore, nGift, nPenguin, bShowPenguin, bShowNextLevel, changeInfo, self.nLevelId)
 end
 function ThrowGiftCtrl:SetFx(mapState)
 	local bShowSnow = mapState[103] ~= nil
@@ -204,12 +252,15 @@ function ThrowGiftCtrl:SetFx(mapState)
 	end
 end
 function ThrowGiftCtrl:ChangeLevel(nLevelId)
+	self.levelCtrl:Pause(true)
+	self:LevelEnd()
 	local callback = function()
 		self.levelCtrl:ClearTrackLine()
 		local goLevelBefore = self.levelCtrl.gameObject
 		self:UnbindCtrlByNode(self.levelCtrl)
 		destroy(goLevelBefore)
 		self.nCurItem = {0, 0}
+		self.tbItemIdx = {0, 0}
 		self.nCurSelectItemIdx = 0
 		self.nLevelId = nLevelId
 		local mapLevelCfgData = ConfigTable.GetData("ThrowGiftLevel", self.nLevelId)
@@ -227,8 +278,8 @@ function ThrowGiftCtrl:ChangeLevel(nLevelId)
 		self.mapRecordItemData = {}
 		if self.actData ~= nil then
 			local mapCachedData = self.actData:GetActivityData()
-			self.mapRecordLevelData = mapCachedData.tbLevels
-			self.mapRecordItemData = mapCachedData.tbItems
+			self.mapRecordLevelData = mapCachedData.mapLevels
+			self.mapRecordItemData = mapCachedData.mapItems
 		end
 		local sPath = string.format(rootPath, self.mapFloorCfgData.SceneName)
 		local goLevelPerfab = GameResourceLoader.LoadAsset(ResTypeAny, Settings.AB_ROOT_PATH .. sPath, typeof(Object))
@@ -256,6 +307,8 @@ function ThrowGiftCtrl:ChangeLevel(nLevelId)
 		self._mapNode.rtBuff[2]:SetActive(false)
 		self._mapNode.rtBuff[3]:SetActive(false)
 		self._mapNode.rtBuff[4]:SetActive(false)
+		self._mapNode.TMPLevelTimeAdd.gameObject:SetActive(false)
+		self:SetFx({})
 		self:SetTarget(0, self.mapLevelCfgData.throwGiftLevelParams)
 		local waitTransion = function()
 			self._mapNode.rtTargetHint:SetActive(true)
@@ -285,6 +338,14 @@ function ThrowGiftCtrl:GetLevelUnlock(nLevelId)
 	if mapLevelCfgData == nil then
 		return false
 	end
+	if mapLevelCfgData.DayOpen ~= 0 and mapLevelCfgData.DayOpen ~= nil and self.nOpenTime ~= 0 then
+		local nServerTimeStamp = CS.ClientManager.Instance.serverTimeStamp
+		local openTime = CS.ClientManager.Instance:GetNextRefreshTime(self.nOpenTime) - 86400
+		local remainTime = openTime + mapLevelCfgData.DayOpen * 86400 - nServerTimeStamp
+		if 0 < remainTime then
+			return false
+		end
+	end
 	if mapLevelCfgData.PreLevelId ~= 0 then
 		return self.mapRecordLevelData[mapLevelCfgData.PreLevelId] ~= nil and self.mapRecordLevelData[mapLevelCfgData.PreLevelId].FirstComplete
 	else
@@ -294,12 +355,16 @@ end
 function ThrowGiftCtrl:SetBuffShow(nBuffId, bShow)
 	if nBuffId == 102 then
 		self._mapNode.rtBuff[1]:SetActive(bShow)
+		self._mapNode.rtBuffAnim[1]:Play("rtBuff_in")
 	elseif nBuffId == 103 then
 		self._mapNode.rtBuff[2]:SetActive(bShow)
+		self._mapNode.rtBuffAnim[2]:Play("rtBuff_in")
 	elseif nBuffId == 104 then
 		self._mapNode.rtBuff[3]:SetActive(bShow)
+		self._mapNode.rtBuffAnim[3]:Play("rtBuff_in")
 	elseif nBuffId == 105 then
 		self._mapNode.rtBuff[4]:SetActive(bShow)
+		self._mapNode.rtBuffAnim[4]:Play("rtBuff_in")
 	end
 end
 function ThrowGiftCtrl:SetBuffTime(nBuffId, nTime)
@@ -319,18 +384,34 @@ function ThrowGiftCtrl:SetBuffTime(nBuffId, nTime)
 		NovaAPI.SetTMPText(self._mapNode.TMPBuffTime[4], formatTime(nTime))
 	end
 end
+function ThrowGiftCtrl:SetViewBtn(nType)
+	self._mapNode.btnRight.gameObject:SetActive(nType == 1)
+	self._mapNode.btnLeft.gameObject:SetActive(nType == 2)
+end
+function ThrowGiftCtrl:LevelEnd()
+	self:SetViewBtn(0)
+	self._mapNode.rtItemSelect.gameObject:SetActive(false)
+	self._mapNode.imgItemDescBg.gameObject:SetActive(false)
+	self._mapNode.rtSettle.gameObject:SetActive(false)
+end
 function ThrowGiftCtrl:OnEvent_ThrowGift_Exit()
 	if self.levelCtrl ~= nil then
 		self.levelCtrl:Pause(false)
-		self._mapNode.PausePanel.gameObject:SetActive(false)
+		self._mapNode.PausePanel:Close()
 	end
 	WwiseAudioMgr:PostEvent("Mode_Present_all_stop")
 	EventManager.Hit(EventId.ClosePanel, PanelId.ThrowGiftLevelPanel)
 end
+function ThrowGiftCtrl:OnEvent_ThrowGift_Giveup()
+	if self.levelCtrl ~= nil then
+		self.levelCtrl:LevelEnd(false)
+		self._mapNode.PausePanel:Close()
+	end
+end
 function ThrowGiftCtrl:OnEvent_ThrowGift_Restart()
 	if self.levelCtrl ~= nil then
 		self.levelCtrl:Pause(false)
-		self._mapNode.PausePanel.gameObject:SetActive(false)
+		self._mapNode.PausePanel:Close()
 	end
 	WwiseAudioMgr:PostEvent("Mode_Present_all_stop")
 	self:ChangeLevel(self.nLevelId)
@@ -338,7 +419,7 @@ end
 function ThrowGiftCtrl:OnEvent_ThrowGift_Continue()
 	if self.levelCtrl ~= nil then
 		self.levelCtrl:Pause(false)
-		self._mapNode.PausePanel.gameObject:SetActive(false)
+		self._mapNode.PausePanel:Close()
 	end
 end
 function ThrowGiftCtrl:OnEvent_ThrowGiftItemUseBtn(nIdx, nItemId)
@@ -388,9 +469,19 @@ function ThrowGiftCtrl:OnEvent_ThrowGift_NextLevel()
 	end
 end
 function ThrowGiftCtrl:OnBtnClick_Pause()
-	if self.levelCtrl ~= nil then
+	if self.levelCtrl ~= nil and not self.levelCtrl.bProcessing then
 		self.levelCtrl:Pause(true)
-		self._mapNode.PausePanel.gameObject:SetActive(true)
+		self._mapNode.PausePanel:Open(self.mapFloorCfgData.DictionaryID)
+	end
+end
+function ThrowGiftCtrl:OnBtnClick_btnRight()
+	if self.levelCtrl ~= nil then
+		self.levelCtrl:ChangeView(true)
+	end
+end
+function ThrowGiftCtrl:OnBtnClick_btnLeft()
+	if self.levelCtrl ~= nil then
+		self.levelCtrl:ChangeView(false)
 	end
 end
 return ThrowGiftCtrl

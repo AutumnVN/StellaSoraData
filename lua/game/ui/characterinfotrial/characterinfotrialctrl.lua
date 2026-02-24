@@ -109,7 +109,6 @@ function CharacterInfoTrialCtrl:RefreshShow()
 	self:CalculateCharacterInfo()
 	self:RefreshCharacterInfo()
 	self:RefreshProperty()
-	self:RefreshActor2D()
 end
 function CharacterInfoTrialCtrl:CalculateCharacterInfo()
 	self:CalculateProperty()

@@ -4,25 +4,23 @@ PenguinCardActCtrl._mapNodeConfig = {
 	svItem = {
 		sComponentName = "LoopScrollView"
 	},
-	txt_time = {sComponentName = "TMP_Text"},
-	txt_des = {
+	txtTime = {sComponentName = "TMP_Text"},
+	txtBtnDetail = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Activity_Btn_Detail"
 	},
-	btn_des = {
+	btnDetail = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Detail"
 	},
-	txt_go = {
+	txtBtnGo = {
 		sComponentName = "TMP_Text",
-		sLanguageId = "Activity_TowerAllOpen_Go"
+		sLanguageId = "PenguinCard_Activity_Goto"
 	},
-	btn_go = {
+	btnGo = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Go"
 	},
-	go_nextLevel = {},
-	txt_nextLevelTime = {sComponentName = "TMP_Text"},
 	txtRewardTitle = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "MessageBox_Reward"
@@ -34,7 +32,7 @@ function PenguinCardActCtrl:Awake()
 end
 function PenguinCardActCtrl:RefreshRemainTime()
 	if self.actData.actCfg.EndType == GameEnum.activityEndType.NoLimit then
-		self._mapNode.txt_time.transform.parent.gameObject:SetActive(false)
+		self._mapNode.txtTime.transform.parent.gameObject:SetActive(false)
 	else
 		local endTime = self.actData:GetActEndTime()
 		local curTime = CS.ClientManager.Instance.serverTimeStamp
@@ -51,17 +49,7 @@ function PenguinCardActCtrl:RefreshRemainTime()
 			})
 		end
 		local sTimeStr = self:GetTimeText(remainTime)
-		NovaAPI.SetTMPText(self._mapNode.txt_time, orderedFormat(ConfigTable.GetUIText("PerActivity_Remain_Time") or "", sTimeStr))
-	end
-	local nextLevelTime = self.actData:GetNextLevelUnlockTime()
-	if nextLevelTime == 0 then
-		self._mapNode.go_nextLevel:SetActive(false)
-	else
-		self._mapNode.go_nextLevel:SetActive(true)
-		local curTime = CS.ClientManager.Instance.serverTimeStamp
-		local nextLevelRemainTime = nextLevelTime - curTime
-		local sNextLevelTime = self:GetTimeText(nextLevelRemainTime)
-		NovaAPI.SetTMPText(self._mapNode.txt_nextLevelTime, orderedFormat(ConfigTable.GetUIText("TowerDef_LevelPreTime") or "", sNextLevelTime))
+		NovaAPI.SetTMPText(self._mapNode.txtTime, orderedFormat(ConfigTable.GetUIText("PerActivity_Remain_Time") or "", sTimeStr))
 	end
 end
 function PenguinCardActCtrl:GetTimeText(remainTime)
@@ -107,7 +95,7 @@ end
 function PenguinCardActCtrl:OnGridBtnClick(go, nIndex)
 	local nDataIndex = nIndex + 1
 	local itemId = self.tbReward[nDataIndex]
-	UTILS.ClickItemGridWithTips(itemId, go.transform:Find("btnGrid"), true, false, false)
+	UTILS.ClickItemGridWithTips(itemId, go.transform:Find("btnGrid"), true, true, false)
 end
 function PenguinCardActCtrl:InitActData(actData)
 	self.actData = actData

@@ -323,6 +323,12 @@ return {
 		name_bg_color = "#0ABEC5"
 	},
 	{
+		id = "avg2_951",
+		name = "Entity of Prosperity (Fire)",
+		name_bg_color = "#0ABEC5",
+		ver = "1.7.0"
+	},
+	{
 		id = "avg2_952",
 		name = "Lucky",
 		name_bg_color = "#0ABEC5",
@@ -1000,6 +1006,18 @@ return {
 	},
 	{
 		id = "avg3_207",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.8.0"
+	},
+	{
+		id = "avg3_208",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.8.0"
+	},
+	{
+		id = "avg3_209",
 		name = "***",
 		name_bg_color = "#0ABEC5",
 		ver = "1.8.0"
@@ -2487,45 +2505,69 @@ return {
 	},
 	{
 		id = "avg3_1274",
-		name = "",
+		name = "Loong Resident A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_143"
 	},
 	{
 		id = "avg3_1275",
-		name = "",
+		name = "Lucky Rubbi",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_981"
 	},
 	{
 		id = "avg3_1276",
-		name = "",
+		name = "Lucky Rubbi",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_981"
 	},
 	{
 		id = "avg3_1277",
-		name = "",
+		name = "Lucky Rubbi",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_981"
 	},
 	{
 		id = "avg3_1278",
-		name = "",
+		name = "Steam Pot Hammer A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_974"
 	},
 	{
 		id = "avg3_1279",
-		name = "",
+		name = "Steam Pot Hammer B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_974"
 	},
 	{
 		id = "avg3_1280",
-		name = "",
+		name = "Steam Pot Hammer C",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_974"
+	},
+	{
+		id = "avg3_1281",
+		name = "Crispy Hooves A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_954"
+	},
+	{
+		id = "avg3_1282",
+		name = "Crispy Hooves B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_954"
+	},
+	{
+		id = "avg3_1283",
+		name = "Wraith B",
+		name_bg_color = "#5e6cb5",
+		reuse = "avg1_143"
+	},
+	{
+		id = "avg3_1284",
+		name = "Wraith C",
+		name_bg_color = "#5e6cb5",
+		reuse = "avg1_143"
 	},
 	{
 		id = "avg4_100",

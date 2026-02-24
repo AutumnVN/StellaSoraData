@@ -137,5 +137,167 @@ return {
 			""
 		}
 	},
+	{
+		cmd = "SetGroupId",
+		param = {"14301"}
+	},
+	{
+		cmd = "SetCharL2D",
+		param = {
+			"avg1_143",
+			3,
+			"none",
+			"",
+			0
+		}
+	},
+	{
+		cmd = "SetCharL2D",
+		param = {
+			"avg1_143",
+			0,
+			"avg_emoji_shy",
+			"",
+			0
+		}
+	},
+	{
+		cmd = "SetCharL2D",
+		param = {
+			"avg1_143",
+			0,
+			"none",
+			"presents_a",
+			0
+		}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			0,
+			"avg1_143",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"Mission accomplished... But I'm overheating again.",
+			""
+		}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			0,
+			"avg1_143",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"Can I take these layers off now...?",
+			""
+		}
+	},
+	{
+		cmd = "SetCharL2D",
+		param = {
+			"avg1_143",
+			0,
+			"avg_emoji_question",
+			"",
+			0
+		}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			0,
+			"avg1_143",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"... Huh? I can't?",
+			""
+		}
+	},
+	{
+		cmd = "SetGroupId",
+		param = {"14302"}
+	},
+	{
+		cmd = "SetCharL2D",
+		param = {
+			"avg1_143",
+			3,
+			"none",
+			"",
+			0
+		}
+	},
+	{
+		cmd = "SetCharL2D",
+		param = {
+			"avg1_143",
+			0,
+			"avg_emoji_happy",
+			"",
+			0
+		}
+	},
+	{
+		cmd = "SetCharL2D",
+		param = {
+			"avg1_143",
+			0,
+			"none",
+			"present_a",
+			0
+		}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			0,
+			"avg1_143",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"Mission accomplished.",
+			""
+		}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			0,
+			"avg1_143",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"The weapon field tests went smoothly, too.",
+			""
+		}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			0,
+			"avg1_143",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"Count me in for the next mission.",
+			""
+		}
+	},
 	{cmd = "End"}
 }

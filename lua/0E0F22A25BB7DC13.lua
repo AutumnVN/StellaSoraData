@@ -250,7 +250,7 @@ function PenguinCardActData:SendActivityPenguinCardSettleReq(nLevelId, nStar, nS
 	local msgData = {
 		LevelId = nLevelId,
 		Star = nStar,
-		Score = nScore
+		Score = math.floor(nScore)
 	}
 	local successCallback = function(_, mapMainData)
 		if not self.mapLevelData[nLevelId] or self.mapLevelData[nLevelId] and nScore > self.mapLevelData[nLevelId].nScore then
@@ -293,10 +293,7 @@ function PenguinCardActData:SendActivityPenguinCardQuestReceiveReq(nQuestId, nGr
 				max(v)
 			end
 		end
-		UTILS.OpenReceiveByChangeInfo(mapMainData)
-		if callback then
-			callback(mapMainData)
-		end
+		UTILS.OpenReceiveByChangeInfo(mapMainData, callback)
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_penguin_card_quest_reward_receive_req, msgData, nil, successCallback)
 end

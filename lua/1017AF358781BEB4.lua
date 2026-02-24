@@ -49,9 +49,9 @@ function GuideGroup_301:Step_1()
 	self.msg = {
 		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Prepare---/--Card--",
 		Deviation = {0, 0},
-		Head = "Icon/Head/head_11101",
-		Desc = "Guide_4_1",
-		DescDeviation = {0, -350},
+		Head = "Icon/Head/head_917401",
+		Desc = "Guide_301_1",
+		DescDeviation = {0, -400},
 		HandDeviation = {0, -250},
 		Type = GameEnum.guidetype.ForcedClick
 	}
@@ -62,10 +62,11 @@ end
 function GuideGroup_301:Step_2()
 	self.msg = {
 		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Slot---/--Card--",
-		Deviation = {0, 0},
-		Head = "Icon/Head/head_11101",
-		Desc = "Guide_4_1",
-		DescDeviation = {0, 330},
+		Size = {1350, 330},
+		Deviation = {0, -30},
+		Head = "Icon/Head/head_917301",
+		Desc = "Guide_301_2",
+		DescDeviation = {0, 260},
 		Type = GameEnum.guidetype.Introductory
 	}
 	self.parent:ActiveHide(true)
@@ -74,11 +75,11 @@ function GuideGroup_301:Step_2()
 end
 function GuideGroup_301:Step_3()
 	self.msg = {
-		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Prepare---/btnStartTurn",
+		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Prepare---/btnStartTurn/AnimRoot/Image",
 		Deviation = {0, 0},
-		Head = "Icon/Head/head_11101",
-		Desc = "Guide_4_1",
-		DescDeviation = {-740, 50},
+		Head = "Icon/Head/head_917301",
+		Desc = "Guide_301_3",
+		DescDeviation = {-740, 80},
 		Type = GameEnum.guidetype.Introductory
 	}
 	self.parent:ActiveHide(true)

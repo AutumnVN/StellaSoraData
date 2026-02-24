@@ -47,10 +47,11 @@ end
 function GuideGroup_302:Step_1()
 	self.msg = {
 		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Flip---/--Card--",
+		Size = {1150, 330},
 		Deviation = {0, 0},
-		Head = "Icon/Head/head_11101",
-		Desc = "Guide_4_1",
-		DescDeviation = {0, -350},
+		Head = "Icon/Head/head_917401",
+		Desc = "Guide_302_1",
+		DescDeviation = {0, -320},
 		Type = GameEnum.guidetype.Introductory
 	}
 	self.parent:ActiveHide(true)
@@ -60,23 +61,25 @@ end
 function GuideGroup_302:Step_2()
 	self.msg = {
 		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Flip---/--Info--/Image",
+		Size = {1050, 180},
 		Deviation = {0, 0},
-		Head = "Icon/Head/head_11101",
-		Desc = "Guide_4_1",
-		DescDeviation = {0, 330},
+		Head = "Icon/Head/head_917401",
+		Desc = "Guide_302_2",
+		DescDeviation = {0, -250},
 		Type = GameEnum.guidetype.Introductory
 	}
 	self.parent:ActiveHide(true)
 	current = 2
-	self.parent:PlayTypeMask(self.msg)
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForSeconds(1))
+		self.parent:PlayTypeMask(self.msg)
+	end
+	cs_coroutine.start(wait)
 end
 function GuideGroup_302:Step_3()
 	self.msg = {
-		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Flip---/--Button--/btnShowAll",
+		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Flip---/--Button--/btnShowAll/AnimRoot/Image",
 		Deviation = {0, 0},
-		Head = "Icon/Head/head_11101",
-		Desc = "Guide_4_1",
-		DescDeviation = {-740, 50},
 		Type = GameEnum.guidetype.Introductory
 	}
 	self.parent:ActiveHide(true)

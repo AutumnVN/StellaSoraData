@@ -244,6 +244,10 @@ function TDPauseCtrl:OnEvent_Reopen(sName)
 	if sName ~= "TDPauseCtrl" then
 		return
 	end
+	local nUIType = GamepadUIManager.GetCurUIType()
+	if nUIType == AllEnum.GamepadUIType.Other then
+		return
+	end
 	self._mapNode.ActionBar.gameObject:SetActive(true)
 end
 return TDPauseCtrl

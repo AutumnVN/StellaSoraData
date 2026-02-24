@@ -41,8 +41,14 @@ function PenguinCardLogCtrl:Open(nTurn, bAll, callback)
 	self.nMax = self._panel.mapLevel.nCurTurn
 	self.nTurn = nTurn
 	self.callback = callback
-	self._mapNode.btnRight.gameObject:SetActive(bAll)
-	self._mapNode.btnLeft.gameObject:SetActive(bAll)
+	if self._panel.mapLevel.mapLog[self.nMax] == nil then
+		self.nMax = self.nMax - 1
+		if self.nTurn > self.nMax then
+			self.nTurn = self.nMax
+		end
+	end
+	self._mapNode.btnRight.gameObject:SetActive(bAll and self.nMax > 1)
+	self._mapNode.btnLeft.gameObject:SetActive(bAll and self.nMax > 1)
 	self:PlayInAni()
 	self:Refresh()
 end
@@ -54,6 +60,7 @@ function PenguinCardLogCtrl:Refresh()
 	local nCount = #self.tbRound
 	self._mapNode.sv.gameObject:SetActive(0 < nCount)
 	if 0 < nCount then
+		self._mapNode.sv:SetAnim(0.08)
 		self._mapNode.sv:Init(nCount, self, self.OnGridRefresh)
 	end
 end
@@ -81,26 +88,25 @@ end
 function PenguinCardLogCtrl:PlayInAni()
 	self.gameObject:SetActive(true)
 	self._mapNode.blur:SetActive(true)
-	local wait = function()
-		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-		self._mapNode.window:SetActive(true)
-	end
-	cs_coroutine.start(wait)
+	self._mapNode.window:SetActive(true)
+	WwiseManger:PostEvent("Mode_Card_sum")
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
 end
 function PenguinCardLogCtrl:Close()
+	self.animator:Play("PengUinCard_Log_out")
 	self._mapNode.aniBlur:SetTrigger("tOut")
-	self:AddTimer(1, 0.2, function()
+	self:AddTimer(1, 0.333, function()
 		self._mapNode.window:SetActive(false)
 		self.gameObject:SetActive(false)
 		if self.callback then
 			self.callback()
 		end
 	end, true, true, true)
-	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
+	EventManager.Hit(EventId.TemporaryBlockInput, 0.333)
 end
 function PenguinCardLogCtrl:Awake()
 	self._mapNode.window:SetActive(false)
+	self.animator = self.gameObject:GetComponent("Animator")
 end
 function PenguinCardLogCtrl:OnEnable()
 end

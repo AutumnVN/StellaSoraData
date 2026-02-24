@@ -174,7 +174,9 @@ function PenguinCard:Trigger(nTriggerPhase, mapTriggerSource, callback)
 		self.nTriggerCount = self.nTriggerCount + 1
 	end
 	if callback then
-		printLog("\228\188\129\233\185\133\231\137\140\232\167\166\229\143\145\239\188\154" .. "  " .. self.sName .. "  " .. self.sDesc)
+		if NovaAPI.IsEditorPlatform() then
+			printLog("\228\188\129\233\185\133\231\137\140\232\167\166\229\143\145\239\188\154" .. "  " .. self.sName .. "  " .. self.sDesc)
+		end
 		callback(self.nEffectType, self.tbEffectParam)
 	end
 	EventManager.Hit("PenguinCardTriggered", self.nSlotIndex)

@@ -72,7 +72,7 @@ function PenguinCardPauseCtrl:Refresh()
 	for i, v in ipairs(self._panel.mapLevel.tbStarScore) do
 		self._mapNode.imgStarOff[i]:SetActive(v > self._panel.mapLevel.nScore)
 		self._mapNode.imgStarOn[i]:SetActive(v <= self._panel.mapLevel.nScore)
-		NovaAPI.SetTMPText(self._mapNode.txtTarget[i], orderedFormat(ConfigTable.GetUIText("PenguinCard_Pause_StarDesc"), v))
+		NovaAPI.SetTMPText(self._mapNode.txtTarget[i], orderedFormat(ConfigTable.GetUIText("PenguinCard_Pause_StarDesc"), self:ThousandsNumber(v)))
 	end
 end
 function PenguinCardPauseCtrl:PlayInAni()
@@ -109,13 +109,13 @@ end
 function PenguinCardPauseCtrl:OnBtnClick_Giveup()
 	self:Close()
 	self:AddTimer(1, 0.2, function()
-		self._panel.mapLevel:GiveupGame()
+		self._panel.mapLevel:CompleteGame()
 	end, true, true, true)
 end
 function PenguinCardPauseCtrl:OnBtnClick_Restart()
 	self:Close()
 	self:AddTimer(1, 0.2, function()
-		self._panel.mapLevel:StartGame()
+		self._panel.mapLevel:RestartGame()
 	end, true, true, true)
 end
 return PenguinCardPauseCtrl

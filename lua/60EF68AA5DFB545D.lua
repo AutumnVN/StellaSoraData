@@ -43,7 +43,7 @@ function GuideGroup_304:Clear()
 end
 function GuideGroup_304:Step_1()
 	current = 1
-	local nEntryId = 100201
+	local nEntryId = 400501
 	EventManager.Hit(EventId.OpenPanel, PanelId.DictionaryEntry, nEntryId)
 	self.parent:FinishCurrentStep()
 end

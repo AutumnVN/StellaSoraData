@@ -1913,7 +1913,7 @@ return {
 			"",
 			false,
 			"",
-			"I'm lying. I'm so hungry I could pass out! Damn it, can't run anymore...==W== My vision's ... getting blurry...",
+			"I'm lying. I'm so hungry I could pass out! Damn it, can't run anymore... My vision's ... getting blurry...",
 			""
 		}
 	},

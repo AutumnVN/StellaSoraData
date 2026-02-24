@@ -1,4 +1,5 @@
 local PenguinCardSelectCtrl = class("PenguinCardSelectCtrl", BaseCtrl)
+local WwiseManger = CS.WwiseAudioManager.Instance
 PenguinCardSelectCtrl._mapNodeConfig = {
 	TopBar = {
 		sNodeName = "TopBarPanel",
@@ -23,7 +24,8 @@ PenguinCardSelectCtrl._mapNodeConfig = {
 	goNormalLevel = {}
 }
 PenguinCardSelectCtrl._mapEventConfig = {
-	PenguinCard_ClickLevel = "OnEvent_Click"
+	PenguinCard_ClickLevel = "OnEvent_Click",
+	PenguinCard_EnterLevel = "OnEvent_Enter"
 }
 PenguinCardSelectCtrl._mapRedDotConfig = {
 	[RedDotDefine.Activity_PenguinCard_AllQuest] = {
@@ -44,18 +46,18 @@ function PenguinCardSelectCtrl:Refresh()
 			end
 		end
 	end
-	if self._panel.nPos then
-		NovaAPI.SetHorizontalNormalizedPosition(self._mapNode.sv, self._panel.nPos)
-	elseif self.goFirstLock then
-		local wait = function()
-			coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+		if self._panel.nPos then
+			NovaAPI.SetHorizontalNormalizedPosition(self._mapNode.sv, self._panel.nPos)
+		elseif self.goFirstLock ~= nil then
 			self._mapNode.sc:ScrollToClick(self.goFirstLock, 0.01)
 			self.goFirstLock = nil
+		else
+			NovaAPI.SetHorizontalNormalizedPosition(self._mapNode.sv, 1)
 		end
-		cs_coroutine.start(wait)
-	else
-		NovaAPI.SetHorizontalNormalizedPosition(self._mapNode.sv, 1)
 	end
+	cs_coroutine.start(wait)
 	EventManager.Hit("Guide_PassiveCheck_Msg", "Guide_PenguinCard_304")
 end
 function PenguinCardSelectCtrl:RefreshHard(nIndex, nLevelId)
@@ -105,9 +107,14 @@ end
 function PenguinCardSelectCtrl:OnBtnClick_Quest()
 	EventManager.Hit(EventId.OpenPanel, PanelId.PenguinCardQuest, self.nActId)
 end
-function PenguinCardSelectCtrl:OnEvent_Click(go, callback)
-	self:AddTimer(1, 0.1, callback, true, true, true)
-	EventManager.Hit(EventId.TemporaryBlockInput, 0.1)
+function PenguinCardSelectCtrl:OnEvent_Click(go)
 	self._mapNode.sc:ScrollToClick(go)
+end
+function PenguinCardSelectCtrl:OnEvent_Enter(callback)
+	local ani = self.gameObject:GetComponent("Animator")
+	ani:Play("PenguinCardSelect_out")
+	WwiseManger:PostEvent("Mode_Card_level")
+	self:AddTimer(1, 0.5, callback, true, true, true)
+	EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
 end
 return PenguinCardSelectCtrl

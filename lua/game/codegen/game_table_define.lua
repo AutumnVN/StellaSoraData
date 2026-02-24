@@ -734,7 +734,10 @@ GameTableDefine.CommonTable = {
 	},
 	PenguinCardCost = {Key = true},
 	PenguinCardFixedTurn = {Key = true},
-	PenguinCardFloor = {Key = true},
+	PenguinCardFloor = {
+		Key = true,
+		Lang = {"Floortips"}
+	},
 	PenguinCardHandRank = {
 		Key = true,
 		Lang = {"Title", "Desc"}
@@ -1040,6 +1043,7 @@ GameTableDefine.CommonTable = {
 	TestCharacterList = {Key = true},
 	TestTeamData = {Key = true},
 	ThrowGiftFloor = {Key = true},
+	ThrowGiftGuideLine = {Key = true},
 	ThrowGiftItem = {
 		Key = true,
 		Lang = {"Name", "Desc"}

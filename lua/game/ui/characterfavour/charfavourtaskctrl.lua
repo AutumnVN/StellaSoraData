@@ -51,8 +51,7 @@ CharFavourTaskCtrl._mapNodeConfig = {
 	imgCharIcon = {sComponentName = "Image"}
 }
 CharFavourTaskCtrl._mapEventConfig = {
-	[EventId.AffinityQuestReceived] = "OnEvent_AffinityQuestReceived",
-	[EventId.AffinityChange] = "OnEvent_AffinityChange"
+	[EventId.AffinityQuestReceived] = "OnEvent_AffinityQuestReceived"
 }
 function CharFavourTaskCtrl:Awake()
 	local tbParam = self:GetPanelParam()
@@ -162,10 +161,5 @@ function CharFavourTaskCtrl:OnCloseAnimFinish()
 end
 function CharFavourTaskCtrl:OnEvent_AffinityQuestReceived()
 	self:OnRefreshTaskList()
-end
-function CharFavourTaskCtrl:OnEvent_AffinityChange(charId, curLevel, lastFavourLevel, curExp, lastExp)
-	if lastFavourLevel < curLevel then
-		EventManager.Hit(EventId.OpenPanel, PanelId.CharFavourLevelUp, charId, curLevel, lastFavourLevel, curExp, lastExp)
-	end
 end
 return CharFavourTaskCtrl

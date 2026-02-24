@@ -344,6 +344,11 @@ function JointDrillLevelData_2:OnEvent_BossDeath(nBattleLv, nTotalTime, nDamageV
 	function self.recordCallback(sRecord)
 		local syncCallback = function()
 			PanelManager.InputEnable()
+			local wait = function()
+				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+				EventManager.Hit(EventId.BattleDashboardVisible, false)
+			end
+			cs_coroutine.start(wait)
 		end
 		self.parent:JointDrillSync(self.nCurLevel, nTotalTime, self.nDamageValue, sRecord, syncCallback)
 	end

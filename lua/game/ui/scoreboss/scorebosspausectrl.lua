@@ -242,6 +242,10 @@ function ScoreBossPauseCtrl:OnEvent_Reopen(sName)
 	if sName ~= "ScoreBossPauseCtrl" then
 		return
 	end
+	local nUIType = GamepadUIManager.GetCurUIType()
+	if nUIType == AllEnum.GamepadUIType.Other then
+		return
+	end
 	self._mapNode.ActionBar.gameObject:SetActive(true)
 end
 function ScoreBossPauseCtrl:PlayCloseAni(bGiveUp)

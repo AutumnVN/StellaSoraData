@@ -2233,6 +2233,36 @@ return {
 		param = {0.8}
 	},
 	{
+		cmd = "CtrlChar",
+		param = {
+			"avg1_150",
+			"b",
+			"010",
+			"none",
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			"none",
+			"none",
+			"Linear",
+			0,
+			nil,
+			false,
+			0.5,
+			false,
+			nil
+		}
+	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "Wait",
+		param = {0.5}
+	},
+	{
 		cmd = "SetChar",
 		param = {
 			0,

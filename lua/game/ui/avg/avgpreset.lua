@@ -33,6 +33,7 @@ local AvgPreset = {
 		"city_park_night_winter",
 		"city_prison",
 		"city_room_inside_daylight",
+		"city_room_inside_daylight_winter",
 		"city_room_inside_night_winter",
 		"city_room_inside_xmas",
 		"city_street_daylight",
@@ -259,6 +260,12 @@ local AvgPreset = {
 		"story_event_03_002",
 		"story_event_03_003",
 		"story_event_03_004",
+		"story_event_04_001_a",
+		"story_event_04_001_b",
+		"story_event_04_001_c",
+		"story_event_04_002",
+		"story_event_04_003_a",
+		"story_event_04_003_b",
 		"story_event_04_004",
 		"story_main_00_001",
 		"story_main_00_002",
@@ -455,7 +462,10 @@ local AvgPreset = {
 		"story_tales_07_001",
 		"story_tales_08_001",
 		"story_tales_09_001",
-		"story_tales_10_001"
+		"story_tales_10_001",
+		"story_tales_11_001_a",
+		"story_tales_11_001_b",
+		"story_tales_12_001"
 	},
 	FgResName = {
 		"circle_light",
@@ -5175,6 +5185,38 @@ local AvgPreset = {
 		},
 		{
 			"fx_avg_snowstorm_lp",
+			""
+		},
+		{
+			"fx_avg_summon_plane",
+			""
+		},
+		{
+			"fx_avg_wind_attack_2",
+			""
+		},
+		{
+			"fx_avg_summon_lp",
+			""
+		},
+		{
+			"fx_avg_summon_appear",
+			""
+		},
+		{
+			"fx_avg_summon_disappear",
+			""
+		},
+		{
+			"fx_avg_sunlight_flip",
+			""
+		},
+		{
+			"fx_avg_goldenlight_continued",
+			""
+		},
+		{
+			"fx_avg_goldenlight_diffusion",
 			""
 		},
 		{

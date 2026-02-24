@@ -1,4 +1,5 @@
 local PenguinCardHandRankCtrl = class("PenguinCardHandRankCtrl", BaseCtrl)
+local ConfigData = require("GameCore.Data.ConfigData")
 PenguinCardHandRankCtrl._mapNodeConfig = {
 	blur = {
 		sNodeName = "t_fullscreen_blur_blue"
@@ -65,7 +66,7 @@ function PenguinCardHandRankCtrl:OnGridRefresh(goGrid, gridIndex)
 		NovaAPI.SetTMPText(txtName, mapCfg.Title)
 		NovaAPI.SetTMPText(txtDesc, mapCfg.Desc)
 		NovaAPI.SetTMPText(txtScoreBase, self:ThousandsNumber(mapCfg.Value))
-		NovaAPI.SetTMPText(txtScoreRatio, string.format("%.1f", mapCfg.Ratio + 1))
+		NovaAPI.SetTMPText(txtScoreRatio, string.format("%.1f", mapCfg.Ratio * ConfigData.IntFloatPrecision + 1))
 	end
 end
 function PenguinCardHandRankCtrl:PlayInAni()

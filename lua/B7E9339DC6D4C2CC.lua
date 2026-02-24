@@ -18,6 +18,10 @@ ThrowGiftItemDicCtrl._mapNodeConfig = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_CloseDesc"
 	},
+	txtTips2 = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Tips_Continue"
+	},
 	rtCardInfo = {},
 	rtCardInfoAnim = {sNodeName = "rtCardInfo", sComponentName = "Animator"},
 	AnimRootItemInfo = {sComponentName = "Animator"},
@@ -34,6 +38,17 @@ end
 function ThrowGiftItemDicCtrl:FadeOut()
 end
 function ThrowGiftItemDicCtrl:OnEnable()
+	self.nActivityId = 0
+	local param = self:GetPanelParam()
+	if type(param) == "table" then
+		self.nActivityId = param[1]
+	end
+	self.actData = PlayerData.Activity:GetActivityDataById(self.nActivityId)
+	self.mapRecordItemData = {}
+	if self.actData ~= nil then
+		local mapCachedData = self.actData:GetActivityData()
+		self.mapRecordItemData = mapCachedData.mapItems
+	end
 	self.tbItem = {}
 	local forEachItem = function(mapData)
 		table.insert(self.tbItem, mapData)
@@ -46,7 +61,7 @@ function ThrowGiftItemDicCtrl:OnEnable()
 	for i = 1, 8 do
 		if self.tbItem[i] ~= nil then
 			self._mapNode.btnItem[i].gameObject:SetActive(true)
-			self._mapNode.btnItemCtrl[i]:SetItem(self.tbItem[i].Id)
+			self._mapNode.btnItemCtrl[i]:SetItem(self.tbItem[i].Id, self.mapRecordItemData[self.tbItem[i].Id] ~= nil and 0 < self.mapRecordItemData[self.tbItem[i].Id])
 		else
 			self._mapNode.btnItem[i].gameObject:SetActive(false)
 		end
@@ -66,10 +81,12 @@ function ThrowGiftItemDicCtrl:OnBtnClick_Item(btn, nIdx)
 	if mapConfig == nil then
 		return
 	end
-	NovaAPI.SetTMPText(self._mapNode.TMPItemNameInfo, mapConfig.Name)
-	NovaAPI.SetTMPText(self._mapNode.TMPItemDescInfo, mapConfig.Desc)
-	self:SetPngSprite(self._mapNode.imgItemIconInfo, mapConfig.Icon)
-	self._mapNode.rtCardInfo:SetActive(true)
+	if self.mapRecordItemData[mapConfig.Id] ~= nil and self.mapRecordItemData[mapConfig.Id] > 0 then
+		NovaAPI.SetTMPText(self._mapNode.TMPItemNameInfo, mapConfig.Name)
+		NovaAPI.SetTMPText(self._mapNode.TMPItemDescInfo, mapConfig.Desc)
+		self:SetPngSprite(self._mapNode.imgItemIconInfo, mapConfig.Icon)
+		self._mapNode.rtCardInfo:SetActive(true)
+	end
 end
 function ThrowGiftItemDicCtrl:OnBtnClick_CloseDesc(btn)
 	self._mapNode.rtCardInfoAnim:Play("rtCardInfo_out")

@@ -187,7 +187,8 @@ return {
 		icon = "Icon/Head/head_14301_S",
 		name = "Wraith",
 		landmark = "Arcade",
-		signature = "Too cool to chat"
+		signature = "Too cool to chat",
+		ver = "1.7.0"
 	},
 	{
 		id = 144,

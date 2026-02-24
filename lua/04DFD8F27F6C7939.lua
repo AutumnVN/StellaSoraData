@@ -835,7 +835,9 @@ function JointDrillLevelSelectCtrl:OnBtnClick_FastBattle()
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("JointDrill_Tickets_NotEnough"))
 		return
 	end
-	EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRaid_2, self.nSelectLevelId)
+	PlayerData.JointDrill_2:SendJointDrillRankMsg(function()
+		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRaid_2, self.nSelectLevelId)
+	end)
 end
 function JointDrillLevelSelectCtrl:OnEvent_RefreshJointDrillLevel()
 	self:Refresh()

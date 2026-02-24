@@ -216,6 +216,10 @@ function MainBattlePauseCtrl:OnEvent_Reopen(sName)
 	if sName ~= "MainBattlePauseCtrl" then
 		return
 	end
+	local nUIType = GamepadUIManager.GetCurUIType()
+	if nUIType == AllEnum.GamepadUIType.Other then
+		return
+	end
 	self._mapNode.ActionBar.gameObject:SetActive(true)
 end
 return MainBattlePauseCtrl

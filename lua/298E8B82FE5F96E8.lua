@@ -176,30 +176,49 @@ function PenguinCardResultCtrl:PlayInAni()
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		self._mapNode.goResult:SetActive(true)
+		if self.bWin then
+			self.animator:Play("PengUinCard_Result_Win_in")
+			WwiseManger:PostEvent("Mode_Card_victory")
+		else
+			self.animator:Play("PengUinCard_Result_Finish_in")
+			WwiseManger:PostEvent("Mode_Card_compelete")
+		end
 	end
 	cs_coroutine.start(wait)
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
 end
 function PenguinCardResultCtrl:Close()
+	if self.bWin then
+		self.animator:Play("PengUinCard_Result_Win_out")
+	else
+		self.animator:Play("PengUinCard_Result_Finish_out")
+	end
 	self._mapNode.aniBlur:SetTrigger("tOut")
-	self:AddTimer(1, 0.2, function()
+	self:AddTimer(1, 0.333, function()
 		self._mapNode.goResult:SetActive(false)
 		self.gameObject:SetActive(false)
+		local callback = function(bClose)
+			WwiseManger:PostEvent("Mode_Card_stop")
+			if bClose then
+				PanelManager.Home()
+			else
+				EventManager.Hit(EventId.ClosePanel, PanelId.PenguinCard)
+			end
+		end
+		self._panel.mapLevel:QuitGame(callback)
 	end, true, true, true)
-	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
+	EventManager.Hit(EventId.TemporaryBlockInput, 0.333)
 end
 function PenguinCardResultCtrl:Awake()
 	self._mapNode.goResult:SetActive(false)
+	self.animator = self.gameObject:GetComponent("Animator")
 end
 function PenguinCardResultCtrl:OnEnable()
 end
 function PenguinCardResultCtrl:OnDisable()
 end
 function PenguinCardResultCtrl:OnBtnClick_Close()
-	local callback = function()
-		EventManager.Hit(EventId.ClosePanel, PanelId.PenguinCard)
-	end
-	self._panel.mapLevel:QuitGame(callback)
+	self:Close()
 end
 function PenguinCardResultCtrl:OnBtnClick_Log()
 	EventManager.Hit("PenguinCard_OpenLog", self._panel.mapLevel.nCurTurn, true)
