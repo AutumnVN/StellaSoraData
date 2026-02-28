@@ -686,6 +686,9 @@ function JointDrillLevelSelectCtrl:OnEnable()
 	self:Refresh()
 	self:StartTicketsRefreshTimer()
 	self:RefreshAvgInfo()
+	if self.nActStatus == AllEnum.JointDrillActStatus.Start then
+		PlayerData.JointDrill_2:SendJointDrillRankMsg()
+	end
 end
 function JointDrillLevelSelectCtrl:OnDisable()
 	if self.ticketRefreshTimer ~= nil then

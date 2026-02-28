@@ -173,7 +173,10 @@ function HudMainCtrl:OnEvent_ShowBossHUD(bossId, nType, showed, nDataId, nBloodT
 	self:MonsterAdvShowChanged(bossId, showed, nType, nDataId, true)
 end
 function HudMainCtrl:OnEvent_MonsterHUDChange(id, nType, showed, nDataId)
-	if nType == GameEnum.monsterBloodType.BOSSRUSH or nType == GameEnum.monsterBloodType.JOINTDRILLBOSS then
+	if nType == GameEnum.monsterBloodType.BOSSRUSH then
+		return
+	end
+	if nType == GameEnum.monsterBloodType.JOINTDRILLBOSS and (self.jointDrillType == nil or self.jointDrillType == GameEnum.JointDrillMode.JointDrill_Mode_1) then
 		return
 	end
 	if nType == GameEnum.monsterBloodType.SIMPLE or nType == GameEnum.monsterBloodType.SIMPLE2 then

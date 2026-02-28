@@ -4,7 +4,7 @@ return {
 		param = {
 			"ep_mainline_001",
 			"Act Three",
-			"Slipped into Sunlight (Part III)",
+			"Slipping into Sunlight (Part III)",
 			"Post Haste is a whole\226\128\148whether joy or toil, it only gains meaning when shared together.",
 			0
 		}

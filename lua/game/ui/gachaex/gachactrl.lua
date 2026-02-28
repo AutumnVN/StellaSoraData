@@ -996,8 +996,13 @@ function GachaCtrl:GetGachaItem(mapData, nStorageId, bGetFirstTenReward)
 			exItem = tbGiveItems
 		})
 		local mapItem = ConfigTable.GetData_Item(v.Card.Tid)
-		if mapItem ~= nil and rare > mapItem.Rarity then
-			rare = mapItem.Rarity
+		if mapItem ~= nil then
+			if rare > mapItem.Rarity then
+				rare = mapItem.Rarity
+			end
+			if mapItem.Stype == GameEnum.itemStype.Char then
+				PlayerData.Talent:UpdateCharTalentRedDot(v.Card.Tid)
+			end
 		end
 		if v.Rewards ~= nil and #v.Rewards > 0 then
 			for _, mapItem in ipairs(v.Rewards) do

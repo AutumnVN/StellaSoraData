@@ -1484,7 +1484,7 @@ return {
 		cmd = "SetTalk",
 		param = {
 			0,
-			"Anxious Server",
+			"Hasty Server",
 			"",
 			0,
 			"",

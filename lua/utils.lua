@@ -599,6 +599,19 @@ function AddKrParticle(str, nParticleIdx)
 	end
 	return str
 end
+function ParseLanguageParam(sParam)
+	local param, lang, num = sParam:match("^(.-)_([a-zA-Z]+)(%d+)$")
+	if not param then
+		return sParam, nil, nil
+	end
+	return param, lang, tonumber(num)
+end
+function LanguagePost(sLang, nIdx, sStr)
+	if sLang == "kr" and nIdx ~= nil then
+		return AddKrParticle(sStr, nIdx)
+	end
+	return sStr
+end
 local DecodeChangeInfo = function(mapChangeInfo)
 	local mapDecodedChangeInfo = {}
 	if type(mapChangeInfo) ~= "table" then
@@ -1235,19 +1248,6 @@ local ParseDesc = function(mapDescConfig, nCompareLevelType, nCompareLevel, bSim
 			sDesc = ""
 		end
 		return sDesc
-	end
-	local ParseLanguageParam = function(sParam)
-		local param, lang, num = sParam:match("^(.-)_([a-zA-Z]+)(%d+)$")
-		if not param then
-			return sParam, nil, nil
-		end
-		return param, lang, tonumber(num)
-	end
-	local LanguagePost = function(sLang, nIdx, sStr)
-		if sLang == "kr" and nIdx ~= nil then
-			return AddKrParticle(sStr, nIdx)
-		end
-		return sStr
 	end
 	local mapWord = {}
 	for word in string.gmatch(linkStr, "&.-&") do
@@ -2091,5 +2091,8 @@ _G.UTILS = {
 	GetBBSUrl = GetBBSUrl,
 	GetToolBoxUrl = GetToolBoxUrl,
 	GetExchangeCodeUrl = GetExchangeCodeUrl,
-	CheckChannelList_Notice = CheckChannelList_Notice
+	CheckChannelList_Notice = CheckChannelList_Notice,
+	AddKrParticle = AddKrParticle,
+	LanguagePost = LanguagePost,
+	ParseLanguageParam = ParseLanguageParam
 }

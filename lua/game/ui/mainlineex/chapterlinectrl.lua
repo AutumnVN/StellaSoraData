@@ -50,7 +50,7 @@ function ChapterLineCtrl:Awake()
 	self:Refresh()
 	self:AddTimer(1, 0.5, function()
 		if self.bNeedPlayUnlockAnim or self.bNeedPlayBranchAnim then
-			if self.bNeedPlayBranchAnim then
+			if self.bNeedPlayBranchAnim and self.tbNeedPlayUnlockAnimGird[1] ~= nil then
 				self.curShouldPlayDepth = self.tbNeedPlayUnlockAnimGird[1].depth
 			end
 			self:DoPlayUnlockAnim(self.curShouldPlayDepth)
@@ -704,7 +704,7 @@ function ChapterLineCtrl:OnClickGrid(avgId)
 end
 function ChapterLineCtrl:OnEvent_Story_RewardClosed()
 	if self.bNeedPlayUnlockAnim or self.bNeedPlayBranchAnim then
-		if self.bNeedPlayBranchAnim then
+		if self.bNeedPlayBranchAnim and self.tbNeedPlayUnlockAnimGird[1] ~= nil then
 			self.curShouldPlayDepth = self.tbNeedPlayUnlockAnimGird[1].depth
 		end
 		self:DoPlayUnlockAnim(self.curShouldPlayDepth)
@@ -712,7 +712,7 @@ function ChapterLineCtrl:OnEvent_Story_RewardClosed()
 end
 function ChapterLineCtrl:OnEvent_Story_Done(bHasReward)
 	if not bHasReward and (self.bNeedPlayUnlockAnim or self.bNeedPlayBranchAnim) then
-		if self.bNeedPlayBranchAnim then
+		if self.bNeedPlayBranchAnim and self.tbNeedPlayUnlockAnimGird[1] ~= nil then
 			self.curShouldPlayDepth = self.tbNeedPlayUnlockAnimGird[1].depth
 		end
 		self:AddTimer(1, 1.5, function()

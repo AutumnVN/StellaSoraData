@@ -125,6 +125,11 @@ function PenguinCard:SetDesc(mapCfg)
 		end
 	end
 	local result = string.gsub(mapCfg.Desc, "%b{}", function(token)
+		local content = string.match(token, "^{(.-)}$")
+		local sParameterKey, lang, langIdx = ParseLanguageParam(content)
+		if lang ~= nil then
+			token = string.format("{%s}", sParameterKey)
+		end
 		if token == "{TriggerProbability}" then
 			return mapCfg.TriggerProbability
 		elseif token == "{TriggerLimitParam}" then
@@ -133,12 +138,16 @@ function PenguinCard:SetDesc(mapCfg)
 		local trigIdx = string.match(token, "^{TriggerParam_(%d+)}$")
 		if trigIdx then
 			local idx = tonumber(trigIdx)
-			return ParseTriggerParam(decodeJson(mapCfg.TriggerParam), idx)
+			local str = ParseTriggerParam(decodeJson(mapCfg.TriggerParam), idx)
+			str = LanguagePost(lang, langIdx, str)
+			return str
 		end
 		local effectIdx = string.match(token, "^{EffectParam_(%d+)}$")
 		if effectIdx then
 			local idx = tonumber(effectIdx)
-			return ParseEffectParam(decodeJson(mapCfg.EffectParam), idx)
+			local str = ParseEffectParam(decodeJson(mapCfg.EffectParam), idx)
+			str = LanguagePost(lang, langIdx, str)
+			return str
 		end
 		return token
 	end)

@@ -212,7 +212,7 @@ function ThrowGiftLevelSelectCtrl:RefreshLevelInfoGrid()
 		local bPass = self.mapRecordLevelData[nLevelId] ~= nil and self.mapRecordLevelData[nLevelId].FirstComplete or false
 		local bShowRedDot = false
 		if self.actData ~= nil then
-			self.actData:GetLevelNewState(nLevelId)
+			bShowRedDot = self.actData:GetLevelNewState(nLevelId)
 			if bShowRedDot then
 				self.actData:SetLevelNew(nLevelId)
 			end

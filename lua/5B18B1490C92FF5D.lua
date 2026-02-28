@@ -213,9 +213,9 @@ function SpringFestivalThemeCtrl:OnDisable()
 		TimerManager.Remove(self.taskRemainTimer)
 		self.taskRemainTimer = nil
 	end
-	if nil ~= self.eatingAnimationTimer then
-		TimerManager.Remove(self.eatingAnimationTimer)
-		self.eatingAnimationTimer = nil
+	if nil ~= self.updateTimer then
+		self.updateTimer:Cancel()
+		self.updateTimer = nil
 	end
 end
 function SpringFestivalThemeCtrl:RefreshPanel()
@@ -595,30 +595,51 @@ function SpringFestivalThemeCtrl:StartEatingAnimation()
 	self._mapNode.Eat_01:SetActive(false)
 	self._mapNode.Eat_02:SetActive(false)
 	self._mapNode.Eat_03:SetActive(false)
-	self:PlayRandomEatingAnimation()
-	self.eatingAnimationTimer = self:AddTimer(0, 4, function()
-		self:PlayRandomEatingAnimation()
-	end, true, true, false)
+	self.nEatingElapsed = 0
+	self.nEatingDelay = 0
+	self.nEatShowElapsed = nil
+	self.selectedEat = nil
+	if self.updateTimer ~= nil then
+		self.updateTimer:Cancel()
+		self.updateTimer = nil
+	end
+	self.updateTimer = self:AddTimer(0, 0, "OnUpdate", true, true, true)
 end
 function SpringFestivalThemeCtrl:PlayRandomEatingAnimation()
 	self._mapNode.Eat_01:SetActive(false)
 	self._mapNode.Eat_02:SetActive(false)
 	self._mapNode.Eat_03:SetActive(false)
 	local randomValue = math.random(1, 100)
-	local selectedEat
 	if randomValue <= 50 then
-		selectedEat = self._mapNode.Eat_03
+		self.selectedEat = self._mapNode.Eat_03
 	elseif randomValue <= 85 then
-		selectedEat = self._mapNode.Eat_02
+		self.selectedEat = self._mapNode.Eat_02
 	else
-		selectedEat = self._mapNode.Eat_01
+		self.selectedEat = self._mapNode.Eat_01
 	end
-	self._mapNode.Chensha_Expression_02:SetActive(selectedEat ~= self._mapNode.Eat_01)
-	self._mapNode.Chensha_Expression_01:SetActive(selectedEat == self._mapNode.Eat_01)
-	if selectedEat then
-		self:AddTimer(1, 0.13, function()
-			selectedEat:SetActive(true)
-		end, true, true, true)
+	self._mapNode.Chensha_Expression_02:SetActive(self.selectedEat ~= self._mapNode.Eat_01)
+	self._mapNode.Chensha_Expression_01:SetActive(self.selectedEat == self._mapNode.Eat_01)
+	self.nEatShowElapsed = 0
+end
+function SpringFestivalThemeCtrl:OnUpdate()
+	if self.updateTimer == nil then
+		return
+	end
+	local nDeltaTime = self.updateTimer:GetDelTime()
+	if self.nEatShowElapsed ~= nil then
+		self.nEatShowElapsed = self.nEatShowElapsed + nDeltaTime
+		if self.nEatShowElapsed >= 0.13 then
+			if self.selectedEat ~= nil then
+				self.selectedEat:SetActive(true)
+			end
+			self.nEatShowElapsed = nil
+		end
+	end
+	self.nEatingElapsed = self.nEatingElapsed + nDeltaTime
+	if self.nEatingElapsed >= self.nEatingDelay then
+		self.nEatingElapsed = 0
+		self.nEatingDelay = 4
+		self:PlayRandomEatingAnimation()
 	end
 end
 return SpringFestivalThemeCtrl

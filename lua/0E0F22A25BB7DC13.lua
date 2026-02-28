@@ -82,18 +82,16 @@ function PenguinCardActData:CreateQuest(mapQuestData)
 	elseif mapQuestData.Status == 2 then
 		tbQuestData.nStatus = AllEnum.ActQuestStatus.Received
 	end
+	if tbQuestData.nStatus == AllEnum.ActQuestStatus.Received then
+		tbQuestData.nCur = tbQuestData.nMax
+	end
 	return tbQuestData
 end
 function PenguinCardActData:GetQuestMaxProgress(nId)
 	local nMax = 0
 	local mapCfg = ConfigTable.GetData("ActivityPenguinCardQuest", nId)
-	if mapCfg then
-		if mapCfg.FinishType == GameEnum.activityQuestCompleteCond.ActivityPenguinCardLevelPassedScore then
-			nMax = 1
-		elseif mapCfg.FinishType == GameEnum.activityQuestCompleteCond.ActivityPenguinCardLevelPassedWithStar then
-			local tbParam = decodeJson(mapCfg.FinishParams)
-			nMax = tbParam[2]
-		end
+	if mapCfg and (mapCfg.FinishType == GameEnum.activityQuestCompleteCond.ActivityPenguinCardLevelPassedScore or mapCfg.FinishType == GameEnum.activityQuestCompleteCond.ActivityPenguinCardLevelPassedWithStar) then
+		nMax = 1
 	end
 	return nMax
 end

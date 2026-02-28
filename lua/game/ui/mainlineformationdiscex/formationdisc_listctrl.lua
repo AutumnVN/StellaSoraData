@@ -565,19 +565,16 @@ function FormationDisc_ListCtrl:PlayDiscBGM(nDiscId, tbMain, tbSub)
 		if mapDiscCfg ~= nil then
 			tbCharInDisc = mapDiscCfg.CharId
 		end
-		local nRandomCharId = self.tbCharId[math.random(1, #self.tbCharId)]
 		local bInTeam = false
-		for _, v in ipairs(tbCharInDisc) do
-			if nRandomCharId == v then
+		for _, v in ipairs(self.tbCharId) do
+			if table.indexof(tbCharInDisc, v) > 0 then
 				bInTeam = true
-				break
+				sVoiceKey = "uniMusic"
+				return v
 			end
 		end
-		if not bInTeam then
-			sVoiceKey = "music"
-		else
-			sVoiceKey = "uniMusic"
-		end
+		local nRandomCharId = self.tbCharId[math.random(1, #self.tbCharId)]
+		sVoiceKey = "music"
 		return nRandomCharId
 	end
 	if nDiscId == nil then

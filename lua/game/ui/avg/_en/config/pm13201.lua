@@ -1927,7 +1927,7 @@ return {
 			"",
 			false,
 			"",
-			"The movie portrayals of each side are way more impressive than their counterparts in reality, but it makes for a very exciting film",
+			"The Stella Drama portrayals of each side are way more impressive than their counterparts in reality, but it makes for a very exciting Drama",
 			""
 		}
 	},

@@ -3879,7 +3879,7 @@ return {
 			"",
 			false,
 			"",
-			"A Stellaroid?! Does that mean the Trekker who called us is already...",
+			"Stellaroids?! Does that mean the Trekker who called us is already...",
 			""
 		}
 	},
@@ -10557,7 +10557,7 @@ return {
 			"music_avg_volume100_3s",
 			0,
 			"m13",
-			"1000ms",
+			"2000ms",
 			0.0,
 			false
 		}
@@ -10740,6 +10740,10 @@ return {
 		}
 	},
 	{
+		cmd = "Wait",
+		param = {0.6}
+	},
+	{
 		cmd = "SetTrans",
 		param = {
 			1,
@@ -10748,8 +10752,8 @@ return {
 			"Linear",
 			false,
 			false,
-			0.1,
-			true,
+			0.5,
+			false,
 			"default"
 		}
 	},

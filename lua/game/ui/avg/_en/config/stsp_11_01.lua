@@ -4,8 +4,8 @@ return {
 		param = {
 			"ep_mainline_001",
 			"Act One",
-			"Slipped into Sunlight (Part I)",
-			"Dona, who has always championed teamwork, has been avoiding everyone lately and acting on her own. Could it be that the Post Haste is facing a crisis too dangerous to speak of?!",
+			"Slipping into Sunlight (Part I)",
+			"Donna, who has always championed teamwork, has been avoiding everyone lately and acting on her own. Could it be that the Post Haste is facing a crisis too dangerous to speak of?!",
 			0
 		}
 	},

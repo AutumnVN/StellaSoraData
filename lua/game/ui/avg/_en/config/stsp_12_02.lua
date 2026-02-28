@@ -4407,7 +4407,7 @@ return {
 			"",
 			false,
 			"",
-			"Boss, rumor has it Arbiter food is spelled. Eat it and you end up spilling your guts. That's how they interrogate people!",
+			"Boss\226\128\166 Don't eat Arbiter food.",
 			""
 		}
 	},
@@ -4420,8 +4420,8 @@ return {
 		param = {
 			1,
 			0,
-			"025",
-			"none",
+			"007",
+			"avg_emoji_symbol",
 			"none",
 			"z",
 			0.0,
@@ -4439,7 +4439,7 @@ return {
 			"",
 			false,
 			"",
-			"What's the play? She's offering it right to my face. If I refuse, is she gonna turn hostile?",
+			"Eh? I-Is it dangerous?!",
 			""
 		}
 	},
@@ -4496,7 +4496,7 @@ return {
 			"",
 			false,
 			"",
-			"If it comes to that... We will buy you time to escape.",
+			"I will protect you.",
 			""
 		}
 	},
@@ -4528,7 +4528,7 @@ return {
 			"",
 			false,
 			"",
-			"Too dangerous. Wait,==W== she doesn't know I'm immune to magic. I'll take the first bite.",
+			"That's not good...==W== Wait, she doesn't know I'm immune to magic. I'll take the first bite.",
 			""
 		}
 	},
@@ -11638,7 +11638,7 @@ return {
 			"",
 			false,
 			"",
-			"Always charging the front line... Another good boy. Heresy Score: zero.",
+			"Always charging the front line... Another good kid. Heresy Score: zero.",
 			""
 		}
 	},

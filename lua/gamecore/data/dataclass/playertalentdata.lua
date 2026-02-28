@@ -424,7 +424,7 @@ end
 function PlayerTalentData:UpdateCharTalentRedDotByItem(mapChange)
 	for _, v in ipairs(mapChange) do
 		local charId = self.FragmentsToChar[v.Tid]
-		if charId and v.Qty > 0 then
+		if charId then
 			self:UpdateCharTalentRedDot(charId)
 		end
 	end
