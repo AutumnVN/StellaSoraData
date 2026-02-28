@@ -4,7 +4,7 @@ Datamined data for the game `Stella Sora`, updates automatically
 # Important Notice
 Due to the extreme situation in my country, I will not be able to keep my PC running nor maintain my bot.
 Therefore, my bot will be shut down temporarily until it is safe enough to come back home. 
-Therefore, StellaSoraData might not update in the next couple of days/weeks.
+That means StellaSoraData might not update in the next couple of days/weeks.
 Once the situation is over, I will remove this section of readme.
 Apologies for any inconvenience. 
 
