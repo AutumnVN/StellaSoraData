@@ -20125,7 +20125,7 @@
             },
             {
                 "name": "Baron Stance",
-                "desc": "The boss alternates between Warrior and Honeypot forms, switching every <color=#ec6d21>30</color>s and clearing all its debuffs (Resilience Break does not count toward the timer).\nIn Warrior form, Count of the Duloos takes <color=#ec6d21>50%</color> decreased Ultimate DMG and <color=#ec6d21>50%</color> increased Auto Attack DMG.\nIn Honeypot form, Count of the Duloos takes <color=#ec6d21>50%</color> decreased Mark DMG and <color=#ec6d21>50%</color> increased Skill DMG.",
+                "desc": "The boss alternates between Warrior and Honeypot forms, switching every <color=#ec6d21>30</color>s and clearing all its debuffs (Resilience Break does not count toward the timer).\nIn Warrior form, Count of the Duloos's Ultimate DMG Taken decraeses additionally by <color=#ec6d21>30%</color>, and Auto Attack DMG Taken increases additionally by <color=#ec6d21>65%</color>.\nIn Honeypot form, Count of the Duloos's Mark DMG Taken decerases additionally by <color=#ec6d21>30%</color>, and Skill DMG Taken increases additionally by <color=#ec6d21>65%</color>.",
                 "icon": "Icon_Bossrush_DaGuanZi_003"
             }
         ],
@@ -22649,7 +22649,7 @@
             },
             {
                 "name": "Aqua Ring",
-                "desc": "While the boss possesses Water Ring, its DMG is increased by <color=#ec6d21>30%</color>, and it deals AoE DMG every 5s.\nDealing <color=#ec6d21>10</color> instances of DMG to the boss within 5s disables Water Ring for <color=#ec6d21>20</color>s. During this period:\nDealing <color=#ec6d21>20</color> instances of Support DMG to the boss within 5s increases the Auto Attack DMG the boss takes by<color=#ec6d21>100%</color>.\nDealing <color=#ec6d21>10</color> instances of Main Trekker DMG within 5s increases the Skill DMG the boss takes from Support Trekkers by <color=#ec6d21>50%</color>.",
+                "desc": "While the boss possesses Water Ring, its DMG is increased by <color=#ec6d21>30%</color>, and it deals AoE DMG every 5s.\nDealing <color=#ec6d21>10</color> instances of DMG to the boss within 5s disables Water Ring for <color=#ec6d21>20</color>s. When Water Ring is disabled:\nDealing <color=#ec6d21>20</color> instances of Support DMG to the boss within 5s increases the Auto Attack DMG the boss takes by<color=#ec6d21>45%</color>.\nDealing <color=#ec6d21>10</color> instances of Main Trekker DMG within 5s increases the Skill DMG the boss takes from Support Trekkers by <color=#ec6d21>45%</color>.",
                 "icon": "Icon_Bossrush_Teshujizhi_004"
             }
         ],
