@@ -35,56 +35,39 @@ for (const drillId in JOINTDRILLCONTROL) {
         weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
         resistTo: (MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].ResistEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'])[0],
         diff: drillLevels.map((level, index) => {
-            const monster1 = MONSTER[level.BossId[0]];
-            const monster1ValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster1.Templete];
-            const monster1ValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monster1ValueTemplateAdjust.TemplateId)[index];
-
-            const monster2 = MONSTER[level.BossId[0] + 1];
-            const monster2ValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster2.Templete];
-            const monster2ValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monster2ValueTemplateAdjust.TemplateId)[index];
-
-            const monsterObjects = [
-                {
-                    monsterValueTemplateAdjust: monster1ValueTemplateAdjust,
-                    monsterValueTemplate: monster1ValueTemplate,
-                },
-                {
-                    monsterValueTemplateAdjust: monster2ValueTemplateAdjust,
-                    monsterValueTemplate: monster2ValueTemplate,
-                }
-            ];
-
             return {
                 name: level.LevelName ? LANG_JOINTDRILL_2_LEVEL[level.LevelName].split('/')[1] : LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
                 stat: level.BossId.map((bossId) => {
-                    const monster = MONSTER[bossId];
-                    const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
-                    const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[index];
+                    return [bossId, bossId + 1].map(bossId => {
+                        const monster = MONSTER[bossId];
+                        const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
+                        const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[index];
 
-                    return {
-                        'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
-                        'HP Bar': level.HpBarNum,
-                        'Max Score': level.LevelScore + level.TimeScore + level.BaseHpScore,
-                        'Score': `${level.LevelScore} + (${level.TimeScore} - time_in_seconds * ${level.ScorePerSec}) + ${level.BaseHpScore}`,
-                        'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0)) + (monsterValueTemplateAdjust.AtkFix || 0)),
-                        'DEF': monsterValueTemplate.Def,
-                        'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
-                        'Attack Speed': monsterValueTemplate.AtkSpd / 100 + '%',
-                        'Aqua DMG': monsterValueTemplate.WEE / 100 + '%',
-                        'Ignis DMG': monsterValueTemplate.FEE / 100 + '%',
-                        'Terra DMG': monsterValueTemplate.SEE / 100 + '%',
-                        'Ventus DMG': monsterValueTemplate.AEE / 100 + '%',
-                        'Lux DMG': monsterValueTemplate.LEE / 100 + '%',
-                        'Umbra DMG': monsterValueTemplate.DEE / 100 + '%',
-                        'Mark DMG Taken': monsterValueTemplate.RCDMARKDMG / 100 + '%',
-                        'Resilience': Math.floor(monsterValueTemplate.Toughness * (1 + (monsterValueTemplateAdjust.ToughnessRatio / 10000 || 0)) + (monsterValueTemplateAdjust.ToughnessFix || 0)),
-                        'Aqua RES': monsterValueTemplateAdjust.WERFix,
-                        'Ignis RES': monsterValueTemplateAdjust.FERFix,
-                        'Terra RES': monsterValueTemplateAdjust.SERFix,
-                        'Ventus RES': monsterValueTemplateAdjust.AERFix,
-                        'Lux RES': monsterValueTemplateAdjust.LERFix,
-                        'Umbra RES': monsterValueTemplateAdjust.DERFix,
-                    };
+                        return {
+                            'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
+                            'HP Bar': level.HpBarNum,
+                            'Max Score': level.LevelScore + level.TimeScore + level.BaseHpScore,
+                            'Score': `${level.LevelScore} + (${level.TimeScore} - time_in_seconds * ${level.ScorePerSec}) + ${level.BaseHpScore}`,
+                            'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0)) + (monsterValueTemplateAdjust.AtkFix || 0)),
+                            'DEF': monsterValueTemplate.Def,
+                            'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
+                            'Attack Speed': monsterValueTemplate.AtkSpd / 100 + '%',
+                            'Aqua DMG': monsterValueTemplate.WEE / 100 + '%',
+                            'Ignis DMG': monsterValueTemplate.FEE / 100 + '%',
+                            'Terra DMG': monsterValueTemplate.SEE / 100 + '%',
+                            'Ventus DMG': monsterValueTemplate.AEE / 100 + '%',
+                            'Lux DMG': monsterValueTemplate.LEE / 100 + '%',
+                            'Umbra DMG': monsterValueTemplate.DEE / 100 + '%',
+                            'Mark DMG Taken': monsterValueTemplate.RCDMARKDMG / 100 + '%',
+                            'Resilience': Math.floor(monsterValueTemplate.Toughness * (1 + (monsterValueTemplateAdjust.ToughnessRatio / 10000 || 0)) + (monsterValueTemplateAdjust.ToughnessFix || 0)) || undefined,
+                            'Aqua RES': monsterValueTemplateAdjust.WERFix,
+                            'Ignis RES': monsterValueTemplateAdjust.FERFix,
+                            'Terra RES': monsterValueTemplateAdjust.SERFix,
+                            'Ventus RES': monsterValueTemplateAdjust.AERFix,
+                            'Lux RES': monsterValueTemplateAdjust.LERFix,
+                            'Umbra RES': monsterValueTemplateAdjust.DERFix,
+                        };
+                    });
                 }),
                 bookStat: getBookStat(drillLevels[drillLevels.length - 1].BossId[0], index),
             }
