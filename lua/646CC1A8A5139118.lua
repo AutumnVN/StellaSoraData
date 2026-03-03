@@ -348,6 +348,7 @@ function PenguinCardPrepareCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
 	self:RefreshAddRoundCost()
 	self:RefreshAddSlotCost()
 	self:RefreshAddRollCost()
+	self:RefreshRollCost()
 	if nBefore < self._panel.mapLevel.nScore and self._panel.mapLevel.nGameState == 1 then
 		WwiseManger:PostEvent("Mode_Card_coin")
 	end
