@@ -128,7 +128,7 @@ for (const id in CHARACTER) {
 
     if (char.name === '???') char.name = `${id} ${characterId[id] || ''}`;
 
-    if (LANG_CHARACTER[CHARACTER[id].Name] === '???' && (getUpgrades(id).length === 0 || getSkillUpgrades(id).length === 0)) {
+    if (LANG_CHARACTER[CHARACTER[id].Name] === '???') {
         unreleased[id] = char;
     } else {
         character[id] = char;
