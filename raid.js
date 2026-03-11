@@ -38,12 +38,13 @@ for (const drillId in JOINTDRILLCONTROL) {
             return {
                 name: level.LevelName ? LANG_JOINTDRILL_2_LEVEL[level.LevelName].split('/')[1] : LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
                 stat: level.BossId.map((bossId) => {
-                    return [bossId, bossId + 1].map(bossId => {
+                    return [bossId, bossId + 1].filter(bossId => MONSTER[bossId].EpicLv === 8).map(bossId => {
                         const monster = MONSTER[bossId];
                         const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
                         const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[index];
 
                         return {
+                            'Type': MONSTER_EPIC_TYPE[monster.EpicLv],
                             'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
                             'HP Bar': level.HpBarNum,
                             'Max Score': level.LevelScore + level.TimeScore + level.BaseHpScore,
@@ -98,6 +99,7 @@ function getBookStat(lastDiffBossId, index) {
     const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[index];
 
     return {
+        'Type': MONSTER_EPIC_TYPE[monster.EpicLv],
         'HP': Math.floor(monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (monsterValueTemplateAdjust.HpFix || 0)),
         'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0)) + (monsterValueTemplateAdjust.AtkFix || 0)),
         'DEF': monsterValueTemplate.Def,
