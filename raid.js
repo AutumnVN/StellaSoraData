@@ -36,7 +36,7 @@ for (const drillId in JOINTDRILLCONTROL) {
         resistTo: (MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].ResistEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'])[0],
         diff: drillLevels.map((level, index) => {
             return {
-                name: level.LevelName ? LANG_JOINTDRILL_2_LEVEL[level.LevelName].split('/')[1] : LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
+                name: /*level.LevelName ? LANG_JOINTDRILL_2_LEVEL[level.LevelName].split('/')[1] :*/ LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
                 stat: level.BossId.map((bossId) => {
                     return [bossId, bossId + 1].filter(bossId => MONSTER[bossId].EpicLv === 8).map(bossId => {
                         const monster = MONSTER[bossId];
