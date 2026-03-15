@@ -27,6 +27,13 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git remote add upstream https://github.com/Hiro420/StellaSoraData
         git fetch upstream
+        EN_COMMIT=$(git log upstream/main --grep='EN' -i -n 1 --pretty=format:'%H' || true)
+        if [ -n "$EN_COMMIT" ]; then
+          if git merge-base --is-ancestor "$EN_COMMIT" HEAD; then
+            echo "Local already contains upstream EN commit $EN_COMMIT, skipping merge"
+            exit 0
+          fi
+        fi
         git merge --allow-unrelated-histories -X theirs --no-edit upstream/main
         node characterid.js
         node character.js
