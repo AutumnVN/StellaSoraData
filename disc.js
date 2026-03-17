@@ -30,7 +30,7 @@ for (const id in DISC) {
 
     disc[id] = {
         id: +id,
-        name: LANG_ITEM[ITEM[id].Title],
+        name: LANG_ITEM[ITEM[id].Title] || `${id}`,
         star: ITEM[id].Rarity === 1 ? 5 : ITEM[id].Rarity === 2 ? 4 : 3,
         element: LANG_UITEXT[`UIText.T_Element_Attr_${DISC[id].EET}.1`],
         tag: DISC[id].Tags?.map(tagId => LANG_DISCTAG[DISCTAG[tagId].Title]) || [],
