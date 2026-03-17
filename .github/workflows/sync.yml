@@ -21,37 +21,43 @@ jobs:
       with:
         node-version: 24
 
-    - run: |
+    - name: Sync
+      run: |
         git config --global pull.rebase false
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git remote add upstream https://github.com/Hiro420/StellaSoraData
+        git remote add upstream https://github.com/Hiro420/StellaSoraData || true
+
         git fetch upstream
         EN_COMMIT=$(git log upstream/main --grep='EN' -i -n 1 --pretty=format:'%H' || true)
+        echo "EN_COMMIT=${EN_COMMIT:-<none>}"
         if [ -n "$EN_COMMIT" ]; then
           if git merge-base --is-ancestor "$EN_COMMIT" HEAD; then
             echo "Local already contains upstream EN commit $EN_COMMIT, skipping merge"
             exit 0
           fi
         fi
-        git merge --allow-unrelated-histories -X theirs --no-edit upstream/main
-        node characterid.js
-        node character.js
-        node disc.js
-        node gacha.js
-        node item.js
-        node raid.js
-        node blitz.js
-        node ground.js
-        node word.js
-        node ascension.js
-        node arena.js
-        # node emblem.js
+
+        git merge --allow-unrelated-histories -X theirs --no-edit upstream/main || true
+        echo "Merge HEAD: $(git rev-parse HEAD)"
+
+        SCRIPTS=(arena.js ascension.js blitz.js character.js characterid.js disc.js gacha.js ground.js item.js raid.js word.js)
+        for script in "${SCRIPTS[@]}"; do
+          echo "Running $script"
+          node "$script"
+        done
+
         git add .
         if git diff --cached --quiet; then
+          echo "No changes to commit"
           exit 0
         fi
         git commit -m 'sync' || true
-        git push origin main
-        curl -d "" "${{secrets.DEPLOY_HOOK_URL}}"
+        git push origin main || echo "Push failed"
+
+        if [ -n "${{ secrets.DEPLOY_HOOK_URL }}" ]; then
+          curl -s -o /dev/null -w "%{http_code}" -d "" "${{ secrets.DEPLOY_HOOK_URL }}" || echo "Deploy hook failed"
+        else
+          echo "No deploy hook URL configured"
+        fi
 
