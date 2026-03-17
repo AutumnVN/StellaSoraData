@@ -46,6 +46,7 @@ for (const id in SCOREBOSSLEVEL) {
         ],
         weakTo: monsterValueTemplateAdjust?.WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
         resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${monsterValueTemplateAdjust?.EET}.1`] || 'None',
+        damagePerScore: scoreGetSwitch.SwitchRate,
         stat: monsterValueTemplate && monsterValueTemplateAdjust && monsterValueTemplateModify.map((modify, index) => {
             const cumulativeHpFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (+curr.HpFix || 0), 0);
             const cumulativeAtkFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (+curr.AtkFix || 0), 0);
@@ -68,7 +69,6 @@ for (const id in SCOREBOSSLEVEL) {
                 'HP': Math.floor((monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (cumulativeHpFix || 0) + (monsterValueTemplateAdjust.HpFix || 0))),
                 'Cumulative HP': cumulativeHp(index),
                 'Estimated Score Damage': [Math.floor(cumulativeHp(index - 1) / scoreGetSwitch.SwitchRate), Math.floor(cumulativeHp(index) / scoreGetSwitch.SwitchRate)].map(value => value.toLocaleString()).join(' - '),
-                'Damage Per Score': scoreGetSwitch.SwitchRate,
                 'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0)) + (cumulativeAtkFix || 0) + (monsterValueTemplateAdjust.AtkFix || 0)),
                 'DEF': Math.floor(monsterValueTemplate.Def * (1 + (monsterValueTemplateAdjust.DefRatio || 0)) + (cumulativeDefFix || 0) + (monsterValueTemplateAdjust.DefFix || 0)),
                 'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
