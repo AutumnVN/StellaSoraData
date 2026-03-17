@@ -300,6 +300,14 @@
         "type": "Char",
         "rarity": "SR"
     },
+    "130": {
+        "id": 130,
+        "name": "Donna",
+        "desc": "Proof of invitation to add Donna to your squad",
+        "literary": "Time may erase the inscribed marks, but the love and blessings that remain silently shield and guide her on her journey.",
+        "type": "Char",
+        "rarity": "SSR"
+    },
     "132": {
         "id": 132,
         "name": "Minova",
@@ -623,6 +631,14 @@
         "literary": "On the day the maiden left, the earthy aroma after a light drizzle lingered vividly in her memory.\u000bShe made a mark on the map, anticipating the wonderful surprises she would bring back upon her return.",
         "type": "CharShard",
         "rarity": "SR"
+    },
+    "1300": {
+        "id": 1300,
+        "name": "Donna's Soul Key",
+        "desc": "Activates Trekker Talents.",
+        "literary": "Time may erase the inscribed marks, but the love and blessings that remain silently shield and guide her on her journey.",
+        "type": "CharShard",
+        "rarity": "SSR"
     },
     "1320": {
         "id": 1320,
@@ -984,6 +1000,18 @@
         "type": "CharacterSkin",
         "rarity": "SR"
     },
+    "13001": {
+        "id": 13001,
+        "name": "Donna: Default",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "13002": {
+        "id": 13002,
+        "name": "Donna: Awakened",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
     "13201": {
         "id": 13201,
         "name": "Minova: Default",
@@ -1013,6 +1041,14 @@
     "13302": {
         "id": 13302,
         "name": "Nazuka: Awakened",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "13303": {
+        "id": 13303,
+        "name": "A Dip of Fresh Summer",
+        "desc": "Certificate that unlocks Nazuka's exclusive appearance \"A Dip of Fresh Summer\"!",
+        "literary": "A light breeze, as flowers bloom in the summer air. A gentle touch, like the hand that held the pinwheel with yours.",
         "type": "CharacterSkin",
         "rarity": "SSR"
     },
@@ -2162,6 +2198,14 @@
         "type": "Item",
         "rarity": "SR"
     },
+    "73108": {
+        "id": 73108,
+        "name": "Azure Feather",
+        "desc": "Currency earned via active participation in the To My Dearest You event. Can be used to redeem items in the Event Shop.",
+        "literary": "A gleaming feather that belongs to none other than the fabled \"mail-stealing monster\"...",
+        "type": "Item",
+        "rarity": "SR"
+    },
     "73201": {
         "id": 73201,
         "name": "Banner of Clearance",
@@ -2593,6 +2637,20 @@
         "type": "Item",
         "rarity": "R"
     },
+    "101015": {
+        "id": 101015,
+        "name": "Royal Grant Bonus Item",
+        "desc": "Includes the bonus items corresponding to the purchase of the current Royal Startup Grant.",
+        "type": "Item",
+        "rarity": "R"
+    },
+    "101016": {
+        "id": 101016,
+        "name": "Upgrade Grant Differential Item",
+        "desc": "Includes the bonus items corresponding to the purchase of the current Royal Startup Grant.",
+        "type": "Item",
+        "rarity": "R"
+    },
     "111001": {
         "id": 111001,
         "name": "Novice Tyrant",
@@ -2675,8 +2733,8 @@
     },
     "112110": {
         "id": 112110,
-        "name": "Charming CEO",
-        "desc": "Unlocks the honorary title \"Charming CEO\".",
+        "name": "Founding Partner",
+        "desc": "Unlocks the Honor Title: Founding Partner.",
         "literary": "Proof of friendship with Firenze!",
         "type": "Honor",
         "rarity": "SSR"
@@ -2774,6 +2832,14 @@
         "name": "Bond-aid Pals",
         "desc": "Unlocks the Honor Title: Bond-aid Pals.",
         "literary": "Proof of friendship with Teresa!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "112130": {
+        "id": 112130,
+        "name": "High-Energy Hype",
+        "desc": "Unlocks the honorary title \"High-Energy Hype\".",
+        "literary": "!NONEED!",
         "type": "Honor",
         "rarity": "SSR"
     },
@@ -2977,6 +3043,78 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "115008": {
+        "id": 115008,
+        "name": "Season 8 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 8 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 8!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "115009": {
+        "id": 115009,
+        "name": "Season 9 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 9 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 9!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "115010": {
+        "id": 115010,
+        "name": "Season 10 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 10 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 10!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "115011": {
+        "id": 115011,
+        "name": "Season 11 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 11 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 11!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "115012": {
+        "id": 115012,
+        "name": "Season 12 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 12 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 12!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "115013": {
+        "id": 115013,
+        "name": "Season 13 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 13 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 13!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "115014": {
+        "id": 115014,
+        "name": "Season 14 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 14 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 14!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "115015": {
+        "id": 115015,
+        "name": "Season 15 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 15 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 15!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "115016": {
+        "id": 115016,
+        "name": "Season 16 Survival Champ",
+        "desc": "Unlocks the Honor Title: Season 16 Survival Champ.",
+        "literary": "The proof of holding the line in Cataclysm Survivor Season 16!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "116001": {
         "id": 116001,
         "name": "Daring Adventure! The Ghost Ship Haunts the Deep",
@@ -3030,6 +3168,14 @@
         "name": "Winter Requiem and the Trigger of Dawn",
         "desc": "Unlocks the Honor Title: Winter Requiem and the Trigger of Dawn.",
         "literary": "Proof of a great success in the event: Winter Requiem and the Trigger of Dawn!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "116008": {
+        "id": 116008,
+        "name": "To My Dearest You",
+        "desc": "Unlocks the Honor Title: To My Dearest You.",
+        "literary": "Proof of a great success in the event: To My Dearest You!",
         "type": "Honor",
         "rarity": "SSR"
     },
@@ -3273,6 +3419,14 @@
         "type": "Item",
         "rarity": "R"
     },
+    "120004": {
+        "id": 120004,
+        "name": "Courier Treasure Shovel",
+        "desc": "<To My Dearest You>Exclusive Event Item",
+        "literary": "A treasure shovel said to bring good fortune. Unfortunately, it's not very durable.",
+        "type": "Item",
+        "rarity": "R"
+    },
     "130001": {
         "id": 130001,
         "name": "Best Wishes",
@@ -3310,6 +3464,14 @@
         "name": "School Days",
         "desc": "Unlocks the Avatar: School Days",
         "literary": "Time flies, yet I still remember how you looked when we first met.",
+        "type": "PlayHead",
+        "rarity": "SR"
+    },
+    "130006": {
+        "id": 130006,
+        "name": "Berry Unsettled",
+        "desc": "Unlocks the Avatar: Berry Unsettled",
+        "literary": "So... This is the legendary \"glasses disguise\"?",
         "type": "PlayHead",
         "rarity": "SR"
     },
@@ -3776,6 +3938,13 @@
         "type": "Disc",
         "rarity": "SSR"
     },
+    "214008": {
+        "id": 214008,
+        "name": "Soaring Blue",
+        "literary": "Why chase that distant rainbow on the horizon,\nwhen you can hold these colorful balloons right here?\nSoaring through clear skies on the roller coaster ride.\nListen!\nThe echoes of pure joy just made their way to you!",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
     "214009": {
         "id": 214009,
         "name": "New Star Prelude",
@@ -4007,10 +4176,17 @@
         "type": "Disc",
         "rarity": "SSR"
     },
+    "214047": {
+        "id": 214047,
+        "name": "Delivered by the Breeze",
+        "literary": "Sharpen the crease, press firm the wax,\u000bLonging turns to ink upon the page.\u000bA sudden gust sweeps the words away,\u000bLeaving a thousand thoughts ... lighter than the air.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
     "214048": {
         "id": 214048,
         "name": "Snowy Night Surprise",
-        "literary": "The winter wind carries prayers from afar\nThe messenger arrives with blessings and gifts\nStepping into view as the midnight bells ring\nThis Snowish Festival gift is for you, who never lost your childish wonder",
+        "literary": "The winter wind carries prayers from afar\u000bThe messenger arrives with blessings and gifts\nStepping into view as the midnight bells ring\u000bThis Snowish Festival gift is for you, who never lost your childish wonder",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -4390,6 +4566,14 @@
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
+    "224008": {
+        "id": 224008,
+        "name": "Soaring Blue Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "Why chase that distant rainbow on the horizon,\u000bwhen you can hold these colorful balloons right in your hand?\u000bSoaring through clear skies on the roller coaster ride.\u000bListen!\u000bThe echoes of pure joy just made their way to you!",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
     "224009": {
         "id": 224009,
         "name": "New Star Prelude Melody",
@@ -4651,6 +4835,14 @@
         "name": "The Break of Frost Melody",
         "desc": "Material required for the Crescendo of specific Discs.",
         "literary": "Think of it as nothing more than a marvelous Stella Drama.\nWhen we return our present, our trusted friends are still here with us.\nLeave the dark Monolith behind. The winter night will pass.\nAnd look: spring's warm sunlight will shine once more upon this city that once thrived.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224047": {
+        "id": 224047,
+        "name": "Delivered by the Breeze Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "Sharpen the crease, press firm the wax,\u000bLonging turns to ink upon the page.\u000bA sudden gust sweeps the words away,\u000bLeaving a thousand thoughts ... lighter than the air.",
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
@@ -7446,6 +7638,180 @@
         "type": "Potential",
         "rarity": "SR"
     },
+    "513001": {
+        "id": 513001,
+        "name": "Condensation Orbs",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513002": {
+        "id": 513002,
+        "name": "Azure Night",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513003": {
+        "id": 513003,
+        "name": "Precision Marketing",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513004": {
+        "id": 513004,
+        "name": "Bubble Finale",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513005": {
+        "id": 513005,
+        "name": "Tidal Echo",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513006": {
+        "id": 513006,
+        "name": "Piercing Arrow Rain",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513007": {
+        "id": 513007,
+        "name": "Rime Shatterer",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513008": {
+        "id": 513008,
+        "name": "Surging Tide",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513009": {
+        "id": 513009,
+        "name": "Cloud Piercer",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513010": {
+        "id": 513010,
+        "name": "Hazy Curtain",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513011": {
+        "id": 513011,
+        "name": "Lingering Noise",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513012": {
+        "id": 513012,
+        "name": "Serene Sea Trance",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513013": {
+        "id": 513013,
+        "name": "Tidal Mark Resonance",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513021": {
+        "id": 513021,
+        "name": "Unleashed Arrow",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513022": {
+        "id": 513022,
+        "name": "Arrowfall Reckoning",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513023": {
+        "id": 513023,
+        "name": "Wave-Chasing String",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513024": {
+        "id": 513024,
+        "name": "Stray Arrow",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513025": {
+        "id": 513025,
+        "name": "Arrow Pursuit",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513026": {
+        "id": 513026,
+        "name": "Frostbitten Arrow",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513027": {
+        "id": 513027,
+        "name": "Dead Shot",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513028": {
+        "id": 513028,
+        "name": "Coast Crusher",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513029": {
+        "id": 513029,
+        "name": "Aquatic Assault",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513030": {
+        "id": 513030,
+        "name": "Chilling Onslaught",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513031": {
+        "id": 513031,
+        "name": "Messenger Arrow",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513032": {
+        "id": 513032,
+        "name": "Wave Resonance",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513033": {
+        "id": 513033,
+        "name": "Water Ripple",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513041": {
+        "id": 513041,
+        "name": "Rushing Tide",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513042": {
+        "id": 513042,
+        "name": "Corrosive Torrent",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513043": {
+        "id": 513043,
+        "name": "Freezing Stasis",
+        "type": "Potential",
+        "rarity": "SR"
+    },
     "513201": {
         "id": 513201,
         "name": "Ultimatum",
@@ -9362,7 +9728,7 @@
     },
     "515501": {
         "id": 515501,
-        "name": "Phantom Step Rediance",
+        "name": "Phantom Step Radiance",
         "type": "SpecificPotential",
         "rarity": "SSR"
     },

@@ -2,19 +2,7 @@
     "9": {
         "name": "DEF PEN",
         "desc": "Target DEF ignored when dealing DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -23,19 +11,7 @@
     "17": {
         "name": "Aqua DMG",
         "desc": "Additional DMG multiplier when dealing Aqua DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -44,19 +20,7 @@
     "18": {
         "name": "Ignis DMG",
         "desc": "Additional DMG multiplier when dealing Ignis DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -65,19 +29,7 @@
     "19": {
         "name": "Terra DMG",
         "desc": "Additional DMG multiplier when dealing Terra DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -86,19 +38,7 @@
     "20": {
         "name": "Ventus DMG",
         "desc": "Additional DMG multiplier when dealing Ventus DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -107,19 +47,7 @@
     "21": {
         "name": "Lux DMG",
         "desc": "Additional DMG multiplier when dealing Lux DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -128,19 +56,7 @@
     "22": {
         "name": "Umbra DMG",
         "desc": "Additional DMG multiplier when dealing Umbra DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -149,19 +65,7 @@
     "45": {
         "name": "Max Energy",
         "desc": "When reaching the Energy limit, the Trekker Ultimate becomes available",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -170,19 +74,7 @@
     "66": {
         "name": "VUL Exploit Multiplier",
         "desc": "Additional DMG multiplier against targets with negative Elemental RES.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -191,18 +83,9 @@
     "1001": {
         "name": "Shock",
         "desc": "Receive additional DMG when attacked",
-        "icon": "",
         "params": [
             "4/4/5/5/7/7/8/8/9",
-            "0.001%/0.0016%/0.0022%/0.0028%/0.0034%/0.004%/0.0046%/0.0052%/0.0058%",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "0.001%/0.0016%/0.0022%/0.0028%/0.0034%/0.004%/0.0046%/0.0052%/0.0058%"
         ],
         "effectType": [
             "Skill DMG (base)"
@@ -214,18 +97,8 @@
     "1002": {
         "name": "Freeze",
         "desc": "Frozen and incapacitated. Unable to take action.",
-        "icon": "",
         "params": [
-            "9%/14.4%/19.8%/25.2%/30.6%/36%/41.4%/46.8%/52.2%",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "9%/14.4%/19.8%/25.2%/30.6%/36%/41.4%/46.8%/52.2%"
         ],
         "effectType": [
             "ATK (%)"
@@ -239,23 +112,12 @@
     "1003": {
         "name": "Slow",
         "desc": "Reduce Movement SPD",
-        "icon": "",
         "params": [
-            "0.57%",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "19%/31%/42%/54%/65%/77%/88%/100%/111%"
         ],
         "effectType": [],
         "addAttrType": [
-            "undefined (undefined)",
-            "ATK (undefined)"
+            "Skill DMG (base)"
         ],
         "effectData": [],
         "buffIcons": []
@@ -263,18 +125,8 @@
     "1004": {
         "name": "Stun",
         "desc": "Unable to take any actions",
-        "icon": "",
         "params": [
-            "8/11/14/17/19/22/25/28/31",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "8/11/14/17/19/22/25/28/31"
         ],
         "effectType": [],
         "addAttrType": [],
@@ -284,18 +136,8 @@
     "1005": {
         "name": "Burn",
         "desc": "Continuously take Ignis DMG",
-        "icon": "",
         "params": [
-            "7/9/12/14/16/19/21/23/25",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "7/9/12/14/16/19/21/23/25"
         ],
         "effectType": [],
         "addAttrType": [],
@@ -305,19 +147,7 @@
     "1006": {
         "name": "Resilience Break",
         "desc": "When Resilience decreases to 0, Superarmor effect is removed",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -326,18 +156,8 @@
     "1007": {
         "name": "Arctic",
         "desc": "Reduce Aqua Res by 10",
-        "icon": "",
         "params": [
-            "22%/35%/48%/61%/74%/87%/101%/114%/127%",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "22%/35%/48%/61%/74%/87%/101%/114%/127%"
         ],
         "effectType": [
             "ATK (%)"
@@ -351,19 +171,7 @@
     "1008": {
         "name": "Bind",
         "desc": "Unable to move but can cast skills",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -372,19 +180,7 @@
     "1009": {
         "name": "Damp",
         "desc": "Reduce Movement SPD by 30%",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -393,19 +189,7 @@
     "1010": {
         "name": "Lucent Mark",
         "desc": "Lux Mark. Reduce the target's Lux Res by 23",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -414,19 +198,7 @@
     "1011": {
         "name": "Blind",
         "desc": "Unable to attack and wander aimlessly. Effect breaks when taking DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -435,19 +207,7 @@
     "1012": {
         "name": "Incineration Mark",
         "desc": "Ignis Mark. Reduce the target's Ignis Res by 23",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -456,19 +216,7 @@
     "1013": {
         "name": "Combustion",
         "desc": "Deal Ignis DMG to all targets within the area",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -477,19 +225,7 @@
     "1014": {
         "name": "Ventus Mark: Breeze",
         "desc": "A special status applied to the target by some Ventus Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ventus Trekkers. When triggered, removes the status and activates special effects.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -499,18 +235,7 @@
         "name": "Lux Mark",
         "desc": "The generic name for all Lux Marks.\u000bWhen triggered by specific Lux Trekkers' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Light1_small",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -520,18 +245,7 @@
         "name": "Ignis Mark",
         "desc": "The generic name for all Ignis Marks.\u000bWhen triggered by specific Ignis Trekkers' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Fire1_small",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -541,18 +255,7 @@
         "name": "Ventus Mark",
         "desc": "The generic name for all Ventus Marks.\u000bWhen triggered by specific Ventus Trekkers' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Wind1_small",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -562,18 +265,7 @@
         "name": "Aqua Mark",
         "desc": "The generic name for all Aqua Marks.\u000bWhen triggered by specific Aqua Trekkers' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Water1_small",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -583,18 +275,7 @@
         "name": "Umbra Mark",
         "desc": "The generic name for all Umbra Marks.\u000bWhen triggered by specific Umbra Trekkers' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Dark1_small",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -604,18 +285,7 @@
         "name": "Terra Mark",
         "desc": "The generic name for all Terra Marks.\u000bWhen triggered by specific Terra Trekkers' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Earth1_small",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -624,19 +294,7 @@
     "1021": {
         "name": "Lightning Array",
         "desc": "Light Orbs orbit the Trekker, dealing Lux DMG when colliding with a target. There can be a maximum of 3 Light Orbs at a time, lasts 3s",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -645,19 +303,7 @@
     "1022": {
         "name": "Chain of Radiance",
         "desc": "Chains of Light will ricochet at a maximum of 2 times by default. Damage is reduced by 10% after each ricochet",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -666,19 +312,7 @@
     "1023": {
         "name": "Light of Thunder",
         "desc": "Light of Thunder deals are of effect Lux DMG to targets within the area with an increased base Crit Rate of 12%",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -687,19 +321,7 @@
     "1024": {
         "name": "Wind Shear",
         "desc": "Wind Shear will automatically track and ricochet between targets at a maximum of 3 times by default",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -708,19 +330,7 @@
     "1025": {
         "name": "Aqua-Etch",
         "desc": "Aqua Mark, reduce target Movement SPD by 5%, up to 10 stacks",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -729,19 +339,7 @@
     "1026": {
         "name": "Ventus-Press",
         "desc": "Ventus Mark, reduce target ATK SPD by 20%",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -750,18 +348,11 @@
     "1027": {
         "name": "Chill",
         "desc": "Reduces Movement SPD by <color=#fb8037>25%</color> for <color=#fb8037>&Param2&</color>s, up to <color=#fb8037>&Param3&</color> stacks.\u000bAt <color=#fb8037>&Param3&</color> stacks, it converts into Freeze for <color=#fb8037>&Param4&</color>s.",
-        "icon": "",
         "params": [
             "-25%",
             10,
             3,
-            3,
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            3
         ],
         "effectType": [
             "Movement Speed (%)"
@@ -776,19 +367,7 @@
     "1028": {
         "name": "Burn",
         "desc": "Burn deals 5% ATK + 20 as Ignis DMG to the target every second for 5s",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -797,19 +376,7 @@
     "1029": {
         "name": "Melt Armor",
         "desc": "Increase target DMG received by 40% for 5s",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -818,19 +385,7 @@
     "1030": {
         "name": "Lightning Spirit",
         "desc": "Each Electric Soul increases the Trekker's damage by 5%. When reaching 3 Electric Souls, Electric Soul will be activated and will automatically seek out enemies, dealing area of effect Lux DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -839,19 +394,7 @@
     "1031": {
         "name": "Unstable Flowery Cloud",
         "desc": "Determined after throwing Unstable Flowery Cloud:\nNormal: Explode 1 time\nSuccess: Explode 2 times\nGreat Success: Explode 3 times",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -860,19 +403,7 @@
     "1032": {
         "name": "Ring of Fog",
         "desc": "Summon Dew to accumulate Ring of Fog\nFor every 3 Dew summons, expand 1 stack of Ring of Fog, up to 3 stacks\nDeal 30% ATK as Aqua DMG to targets within Ring of Fog every 2s\nIf less than 3 Dews are casted within 10s, remove 1 stack of Ring of Fog",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -881,19 +412,7 @@
     "1033": {
         "name": "Wind Realm",
         "desc": "Firing Wind Shots can accumulate 15 Ventus Energy\nAccumulate 60 Ventus Energy to expand 1 stack of Wind Zone, up to 3 stacks\nEach stack of Wind Zone increases Ventus DMG received by the target by 5%\nIf less than 3 Wind Shots are fired within 10s, remove 1 stack of Wind Zone",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -902,19 +421,7 @@
     "1034": {
         "name": "Ignis Vulnerable",
         "desc": "Increase Ignis DMG taken",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -923,19 +430,7 @@
     "1035": {
         "name": "Lux Vulnerable",
         "desc": "Increase Lux DMG received",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -944,19 +439,7 @@
     "1036": {
         "name": "Ventus Vulnerable",
         "desc": "Increase Ventus DMG received",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -965,19 +448,7 @@
     "1037": {
         "name": "Aqua Vulnerable",
         "desc": "Increase Aqua DMG received",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -986,19 +457,7 @@
     "1038": {
         "name": "Terra Vulnerable",
         "desc": "Increase Terra DMG received",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1007,19 +466,7 @@
     "1039": {
         "name": "Umbra Vulnerable",
         "desc": "Increase Umbra DMG received",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1028,19 +475,7 @@
     "1040": {
         "name": "Light Explosion",
         "desc": "Light Orbs detonate and disappear, dealing single-target Lux DMG",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1049,19 +484,7 @@
     "1041": {
         "name": "Mark of Kamaitachi",
         "desc": "Increase Kamatachi damage to the marked target by for 5s, up to 10 stacks.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1070,19 +493,7 @@
     "1042": {
         "name": "Mark of Great Kamaitachi",
         "desc": "Increase Kamatachi damage and Crit Rate to the marked target for 30s. Cannot stack with Mark of Kamaitachi",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1091,19 +502,7 @@
     "1043": {
         "name": "Protection of Ranged Evasion",
         "desc": "When receiving ranged damage, remove Protection of Ranged Evasion and Evade the damage",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1112,19 +511,7 @@
     "1044": {
         "name": "Electric Soul Vulnerable",
         "desc": "Increase damage received from Electric Soul",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1133,19 +520,7 @@
     "1045": {
         "name": "Paralyze",
         "desc": "Abnormal behavior that causes periodic convulsion",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1154,19 +529,7 @@
     "1046": {
         "name": "Dive Shark Vulnerable",
         "desc": "Increase damage received from Dive Shark",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1175,19 +538,7 @@
     "1047": {
         "name": "Dive Shark Waters",
         "desc": "A dangerous area that continues to summon Dive Sharks",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1196,19 +547,7 @@
     "1048": {
         "name": "Mark of Dive Shark Prey",
         "desc": "Periodically summons 1 Dive Shark to attack the marked target",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1217,19 +556,7 @@
     "1049": {
         "name": "Dr. Cloud",
         "desc": "In this state, increase Trekker ATK and all Unstable Flowery Cloud the Trekker throws is guaranteed to be Great Success",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1238,19 +565,7 @@
     "1050": {
         "name": "Flowery Cloud",
         "desc": "Includes Unstable Flowery Cloud and Stable Flowery Cloud",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1259,19 +574,7 @@
     "1051": {
         "name": "Runic Ice",
         "desc": "Each Runic Ice increases Trekker Aqua DMG and weakens target hit with Dew, reducing the target's damage",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1280,19 +583,7 @@
     "1052": {
         "name": "Heart",
         "desc": "Each stack of Heart increases 15 DEF for 5s, up to 10 stacks",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1301,19 +592,7 @@
     "1053": {
         "name": "Sword Aura",
         "desc": "Noya fires sword auras that penetrate enemies, dealing area of effect DMG.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1322,19 +601,7 @@
     "1054": {
         "name": "Multi Sword Aura",
         "desc": "Create a sword aura sphere at the enemy's position, dealing multi-hit area of effect DMG.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1343,19 +610,7 @@
     "2007": {
         "name": "Shatter",
         "desc": "When a specific DMG type hits a Frozen normal target, it immediately kills the target.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1366,16 +621,7 @@
         "desc": "A special status applied to the target by some Aqua Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Aqua Trekkers. When triggered, deals AoE DMG and applies Chill.",
         "icon": "Icon_ElementTag_Water1_small",
         "params": [
-            10,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            10
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1389,16 +635,7 @@
         "desc": "A special status applied to the target by some Ignis Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ignis Trekkers. When triggered, deals large AoE DMG.",
         "icon": "Icon_ElementTag_Fire1_small",
         "params": [
-            10,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            10
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1410,18 +647,9 @@
     "2014": {
         "name": "Berserk",
         "desc": "Freesia enters a frenzied state, increase ATK by <color=#fb8037>&Param1&</color>. Auto Attack changes.",
-        "icon": "",
         "params": [
             "46%",
-            "Freesia",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Freesia"
         ],
         "effectType": [
             "ATK (%)"
@@ -1435,18 +663,8 @@
     "2015": {
         "name": "Agile",
         "desc": "&Param1& more agile, enhancing her Auto Attacks and allowing her to shoot while moving.",
-        "icon": "",
         "params": [
-            "Donna",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "Donna"
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1458,16 +676,7 @@
         "desc": "A special status applied to the target by some Lux Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Lux Trekkers. When triggered, deals DMG.",
         "icon": "Icon_ElementTag_Light1_small",
         "params": [
-            15,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            15
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1480,18 +689,7 @@
         "name": "Ventus Mark: Breeze",
         "desc": "A special status applied to the target by some Ventus Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ventus Trekkers. When triggered, removes the status and activates special effects.",
         "icon": "Icon_ElementTag_Wind1_small",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1501,18 +699,7 @@
         "name": "Umbra Mark: Gloom",
         "desc": "A special status applied to the target by some Umbra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Umbra Trekkers. When triggered, removes the status and activates special effects.",
         "icon": "Icon_ElementTag_Dark1_small",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1521,18 +708,8 @@
     "2019": {
         "name": "Scorched Butterfly",
         "desc": "Can apply Ignis Mark: Sacred Flame. Cannot apply Butterfly Mark.",
-        "icon": "",
         "params": [
-            "11.47%/12.6%/13.8%/17.2%/18.4%/19.5%/21.8%/23%/24.1%/26.4%/27.5%/28.7%/29.8%",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "11.47%/12.6%/13.8%/17.2%/18.4%/19.5%/21.8%/23%/24.1%/26.4%/27.5%/28.7%/29.8%"
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1542,19 +719,7 @@
     "2020": {
         "name": "Dark Shackles",
         "desc": "After some Umbra Trekkers trigger Umbra Mark, deal damage and trigger Dark Shackles, binding weaker enemies in place.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1563,18 +728,9 @@
     "2021": {
         "name": "Butterfly Mark",
         "desc": "Each stack of Butterfly Mark increases the target's &Param1& by &Param2&, up to 3 stacks, for 6s.",
-        "icon": "",
         "params": [
             "Ignis DMG Taken",
-            "3.5%",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "3.5%"
         ],
         "effectType": [
             "Ignis DMG Taken (base)"
@@ -1586,18 +742,8 @@
     "2022": {
         "name": "Stream",
         "desc": "A special status applied to the target by some Aqua Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Aqua Trekkers. When triggered, deals AoE DMG and applies Chill.",
-        "icon": "",
         "params": [
-            10,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            10
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1609,18 +755,8 @@
     "2023": {
         "name": "Sacred Flame",
         "desc": "A special status applied to the target by some Ignis Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ignis Trekkers. When triggered, deals large AoE DMG.",
-        "icon": "",
         "params": [
-            10,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            10
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1632,18 +768,8 @@
     "2024": {
         "name": "Radiance",
         "desc": "A special status applied to the target by some Lux Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Lux Trekkers. When triggered, deals DMG.",
-        "icon": "",
         "params": [
-            15,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            15
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1655,19 +781,7 @@
     "2025": {
         "name": "Breeze",
         "desc": "A special status applied to the target by some Ventus Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ventus Trekkers. When triggered, removes the status and activates special effects.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1676,19 +790,7 @@
     "2026": {
         "name": "Dark Shadow",
         "desc": "A special status applied to the target by some Umbra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Umbra Trekkers. When triggered, removes the status and activates special effects.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1697,18 +799,9 @@
     "2027": {
         "name": "Ignite",
         "desc": "Chixia's flames ignite the Ink applied on the target, dealing DMG pers for &Param2&s. Her flames deal Ignis DMG equal to &Param1& of ATK in total.",
-        "icon": "",
         "params": [
             "28%/36%/45%/53%/61%/70%/78%/86%/95%",
-            8,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            8
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1720,19 +813,7 @@
     "2028": {
         "name": "Dark Burn",
         "desc": "After some Umbra Trekkers trigger the Umbra Mark, deal damage and trigger Dark Burn, dealing DOT.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1742,18 +823,7 @@
         "name": "Terra Mark: Earth Vein",
         "desc": "A special status applied to the target by some Terra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Terra Trekkers. When triggered, removes the status and activates special effects.",
         "icon": "Icon_ElementTag_Earth1_small",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1762,19 +832,7 @@
     "2030": {
         "name": "Earth Vein",
         "desc": "A special status applied to the target by some Terra Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Terra Trekkers. When triggered, removes the status and activates special effects.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1783,18 +841,10 @@
     "4002": {
         "name": "Shadow Clone",
         "desc": "Shadow Clone is &Param1&'s minion and has 100% of &Param1&'s ATK. It is immune to DMG and lasts for &Param2&s. Up to &Param3& Shadow Clones can exist at the same time.",
-        "icon": "",
         "params": [
             "Firenze",
             5,
-            2,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            2
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1804,18 +854,8 @@
     "4003": {
         "name": "Wind Chant",
         "desc": "Can stack up to &Param1& times. When Wind Chant is at max stacks, Nazuka consumes all stacks of Wind Chant upon casting her next Skill and enters Wind Roar.",
-        "icon": "",
         "params": [
-            20,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            20
         ],
         "effectType": [],
         "addAttrType": [],
@@ -1825,19 +865,7 @@
     "4004": {
         "name": "Flower Formation",
         "desc": "Up to 3 Flower Formations can be present at the same time. Flower Formations of Bouquet Blast (Support Skill) can deal DMG to the same target no more than once per second.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1846,19 +874,7 @@
     "4501": {
         "name": "Fear",
         "desc": "The target flees and cannot attack.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1867,19 +883,7 @@
     "4502": {
         "name": "Allure",
         "desc": "The target remains too close to the caster. Cannot attack.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
@@ -1888,19 +892,7 @@
     "6002": {
         "name": "Ode",
         "desc": "When a target inflicted with Ode takes minion DMG, Ode is converted into Hymn.\u000bEach Ignis Trekker can only inflict 1 stack of Ode, and this Ode can only be converted into Hymn by Minion DMG dealt by that Trekker's minion.",
-        "icon": "",
-        "params": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
+        "params": [],
         "effectType": [],
         "addAttrType": [],
         "effectData": [],
