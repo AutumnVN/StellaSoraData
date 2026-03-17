@@ -3453,12 +3453,8 @@
                     "id": 511404,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (21.63e, from Skill, scale with Skill) (hidden)",
-                        "Skill (24.87e, from Skill, scale with Skill) (hidden)",
-                        "Skill (27.17e, from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -3471,22 +3467,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "519.46%/571.41%/623.36%/675.31%/727.26%/779.21%/831.16%/883.11%/935.06%/987.01%/1038.96%/1090.91%/1142.86%",
-                        "293.7%/323.1%/352.5%/381.9%/411.3%/440.7%/470.1%/499.5%/528.9%/558.3%/587.7%/617.1%/646.5%",
-                        "584.46%/642.91%/701.36%/759.81%/818.26%/876.71%/935.16%/993.61%/1052.06%/1110.51%/1168.96%/1227.41%/1285.86%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (21.63e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (24.87e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (27.17e, from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11401_Potential_04",
                     "rarity": "core"
                 }
@@ -3598,10 +3580,8 @@
                     "id": 511410,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill) \u000bHiddenParam4: &HiddenParam4& (HitDamage,Skill) \u000bHiddenParam5: &HiddenParam5& (HitDamage,Ultimate)",
+                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Ultimate)",
                     "damageType": [
-                        "Skill (21.63e, from Skill, scale with Skill) (hidden)",
-                        "Skill (24.4e, from Skill, scale with Skill) (hidden)",
                         "Skill (from Skill, scale with Skill) (hidden)",
                         "Ultimate (from Ultimate, scale with Ultimate) (hidden)"
                     ],
@@ -3622,22 +3602,10 @@
                         {}
                     ],
                     "hiddenParams": [
-                        "239.8%/263.8%/287.8%/311.8%/335.8%/359.8%/383.8%/407.8%/431.8%/455.8%/479.8%/503.8%/527.8%",
-                        "293.7%/323.1%/352.5%/381.9%/411.3%/440.7%/470.1%/499.5%/528.9%/558.3%/587.7%/617.1%/646.5%",
-                        "293.7%/323.1%/352.5%/381.9%/411.3%/440.7%/470.1%/499.5%/528.9%/558.3%/587.7%/617.1%/646.5%",
                         "62.2%/68.42%/74.64%/80.86%/87.08%/93.3%/99.52%/105.74%/111.96%/118.18%/124.4%/130.62%/136.84%",
                         "87.45%/102.44%/117.43%/132.42%/147.41%/162.4%/177.39%/192.38%"
                     ],
                     "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (21.63e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (24.4e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (24.4e, from Skill, scale with Skill)"
-                        },
                         {
                             "damageType": "Skill (from Skill, scale with Skill)"
                         },
@@ -3751,10 +3719,8 @@
                     "id": 511441,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Ultimate)",
-                    "damageType": [
-                        "Ultimate (from Ultimate, scale with Ultimate) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -3767,14 +3733,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "87.45%/102.44%/117.43%/132.42%/147.41%/162.4%/177.39%/192.38%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11401_Potential_41",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -3833,10 +3793,8 @@
                     "id": 511421,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -3849,14 +3807,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "62.2%/68.42%/74.64%/80.86%/87.08%/93.3%/99.52%/105.74%/111.96%/118.18%/124.4%/130.62%/136.84%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11401_Potential_21",
                     "rarity": "core"
                 },
@@ -3864,10 +3816,8 @@
                     "id": 511422,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -3882,18 +3832,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "62.2%/68.42%/74.64%/80.86%/87.08%/93.3%/99.52%/105.74%/111.96%/118.18%/124.4%/130.62%/136.84%",
-                        "62.2%/68.42%/74.64%/80.86%/87.08%/93.3%/99.52%/105.74%/111.96%/118.18%/124.4%/130.62%/136.84%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11401_Potential_22",
                     "rarity": "core"
                 },
@@ -3953,10 +3893,8 @@
                     "id": 511425,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -3969,14 +3907,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "149.28%/164.21%/179.14%/194.07%/209%/223.93%/238.86%/253.79%/268.72%/283.65%/298.58%/313.51%/328.44%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11401_Potential_21",
                     "corner": "Diamond",
                     "rarity": "rare"
@@ -4033,10 +3965,8 @@
                     "id": 511428,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -4051,14 +3981,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "149.28%/164.21%/179.14%/194.07%/209%/223.93%/238.86%/253.79%/268.72%/283.65%/298.58%/313.51%/328.44%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11401_Potential_23",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -6323,12 +6247,8 @@
                     "id": 511510,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Auto Attack) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Auto Attack) \u000bHiddenParam4: &HiddenParam4& (HitDamage,Auto Attack) \u000bHiddenParam5: &HiddenParam5& (HitDamage,Auto Attack) \u000bHiddenParam6: &HiddenParam6& (HitDamage,Auto Attack) \u000bHiddenParam7: &HiddenParam7& (HitDamage,Auto Attack) \u000bHiddenParam8: &HiddenParam8& (HitDamage,Skill) \u000bHiddenParam9: &HiddenParam9& (HitDamage,Skill) \u000bHiddenParam10: &HiddenParam10& (HitDamage,Skill)",
-                    "damageType": [
-                        "Auto Attack (2.08e, from Normal attack, scale with Normal attack) (hidden)",
-                        "Auto Attack (0.5e, from Normal attack, scale with Normal attack) (hidden)",
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???\u000bParam1: &Param1& (Effect,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
                     "effectType": [
                         "ATK (%)"
                     ],
@@ -6359,50 +6279,8 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         }
                     ],
-                    "hiddenParams": [
-                        "26%/29%/32%/34%/37%/40%/42%/45%/48%/50%/53%/56%/58%",
-                        "26%/29%/32%/34%/37%/40%/42%/45%/48%/50%/53%/56%/58%",
-                        "26%/29%/32%/34%/37%/40%/42%/45%/48%/50%/53%/56%/58%",
-                        "26%/29%/32%/34%/37%/40%/42%/45%/48%/50%/53%/56%/58%",
-                        "12.7%/14%/15.3%/16.5%/17.8%/19.1%/20.3%/21.6%/22.9%/24.1%/25.4%/26.7%/28%",
-                        "12.7%/14%/15.3%/16.5%/17.8%/19.1%/20.3%/21.6%/22.9%/24.1%/25.4%/26.7%/28%",
-                        "12.7%/14%/15.3%/16.5%/17.8%/19.1%/20.3%/21.6%/22.9%/24.1%/25.4%/26.7%/28%",
-                        "44%/49%/53%/57%/62%/66%/71%/75%/79%/83.8%/88.21%/92.62%/97.03%",
-                        "44%/49%/53%/57%/62%/66%/71%/75%/79%/83.8%/88.21%/92.62%/97.03%",
-                        "44%/49%/53%/57%/62%/66%/71%/75%/79%/84%/88%/93%/97%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack (2.08e, from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (2.08e, from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (2.08e, from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (2.08e, from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (0.5e, from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (0.5e, from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (0.5e, from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11501_Potential_04",
                     "corner": "Round",
                     "rarity": "common"
@@ -6606,11 +6484,8 @@
                     "id": 511522,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
-                    "damageType": [
-                        "Auto Attack (from Normal attack, scale with Normal attack) (hidden)",
-                        "Skill (from Skill) (hidden)"
-                    ],
+                    "desc": "???\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [
                         "Auto Attack Damage (base)"
@@ -6627,18 +6502,8 @@
                             "addAttrType": "Auto Attack Damage (base)"
                         }
                     ],
-                    "hiddenParams": [
-                        "18.9%/20.7%/22.6%/24.5%/26.4%/28.3%/30.2%/32.1%/34%/35.9%/37.8%/39.6%/41.5%",
-                        "13.6%/15%/16.4%/17.7%/19.1%/20.4%/21.8%/23.2%/24.5%/25.9%/27.2%/28.6%/30%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Skill (from Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11501_Potential_22",
                     "rarity": "core"
                 },
@@ -9982,24 +9847,16 @@
                     "id": 514001,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "11.1%/12.2%/13.3%/16.7%/17.8%/18.9%/21.1%/22.2%/23.3%/25.5%/26.7%/27.8%/28.9%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14001_Potential_01",
                     "rarity": "core"
                 },
@@ -10007,24 +9864,16 @@
                     "id": 514002,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "38%/41%/45%/57%/60%/64%/72%/75%/79%/87%/90%/94%/98%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14001_Potential_02",
                     "rarity": "core"
                 },
@@ -10032,24 +9881,16 @@
                     "id": 514003,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "44%/48%/52%/66%/70%/74%/83%/87%/92%/101%/105%/109%/114%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14001_Potential_03",
                     "rarity": "core"
                 },
@@ -10148,24 +9989,16 @@
                     "id": 514009,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "50%/55%/60%/75%/80%/85%/95%/100%/105%/115%/120%/125%/130%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "Common_Potential_10",
                     "corner": "Triangle",
                     "rarity": "common"
@@ -10174,24 +10007,16 @@
                     "id": 514011,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "9.9%/13.2%/16.5%/19.7%/23%/26.3%/29.6%/32.9%/36.2%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "Common_Potential_2",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -10218,10 +10043,8 @@
                     "id": 514010,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill) \u000bHiddenParam4: &HiddenParam4& (HitDamage,Skill) \u000bHiddenParam5: &HiddenParam5& (HitDamage,Skill) \u000bHiddenParam6: &HiddenParam6& (HitDamage,Ultimate)",
+                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Ultimate)",
                     "damageType": [
-                        "Skill (10.17e, from Skill, scale with Skill) (hidden)",
-                        "Skill (9.66e, from Skill, scale with Skill) (hidden)",
                         "Skill (from Skill, scale with Skill) (hidden)",
                         "Skill (from Skill) (hidden)",
                         "Ultimate (10.17e, from Ultimate) (hidden)"
@@ -10233,23 +10056,11 @@
                     "params": [],
                     "paramsTooltips": [],
                     "hiddenParams": [
-                        "150%/165%/180%/225%/240%/255%/285%/300%/315%/345%/360%/375%/390%",
-                        "150%/165%/180%/225%/240%/255%/285%/300%/315%/345%/360%/375%/390%",
-                        "28.3%/31.1%/34%/42.5%/45.3%/48.1%/53.8%/56.6%/59.4%/65.1%/67.9%/70.8%/73.6%",
                         "11.1%/12.2%/13.3%/16.7%/17.8%/18.9%/21.1%/22.2%/23.3%/25.5%/26.7%/27.8%/28.9%",
                         "9.9%/13.2%/16.5%/19.7%/23%/26.3%/29.6%/32.9%/36.2%",
                         "150%/165%/180%/225%/240%/255%/285%/300%/315%/345%/360%/375%/390%"
                     ],
                     "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (10.17e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (10.17e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (9.66e, from Skill, scale with Skill)"
-                        },
                         {
                             "damageType": "Skill (from Skill, scale with Skill)"
                         },
@@ -10288,24 +10099,16 @@
                     "id": 514041,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Ultimate)",
-                    "damageType": [
-                        "Ultimate (10.17e, from Ultimate) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "150%/165%/180%/225%/240%/255%/285%/300%/315%/345%/360%/375%/390%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Ultimate (10.17e, from Ultimate)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14001_Potential_41",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -10314,24 +10117,16 @@
                     "id": 514042,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Ultimate)",
-                    "damageType": [
-                        "Ultimate (10.17e, from Ultimate) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "150%/165%/180%/225%/240%/255%/285%/300%/315%/345%/360%/375%/390%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Ultimate (10.17e, from Ultimate)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14001_Potential_41",
                     "corner": "Triangle",
                     "rarity": "common"
@@ -10377,29 +10172,16 @@
                     "id": 514022,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (10.17e, from Skill, scale with Skill) (hidden)",
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "150%/165%/180%/225%/240%/255%/285%/300%/315%/345%/360%/375%/390%",
-                        "85%/94%/102%/128%/136%/145%/162%/170%/179%/196%/204%/213%/221%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (10.17e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14001_Potential_22",
                     "rarity": "core"
                 },
@@ -10407,24 +10189,16 @@
                     "id": 514023,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (10.17e, from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "150%/165%/180%/225%/240%/255%/285%/300%/315%/345%/360%/375%/390%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (10.17e, from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14001_Potential_23",
                     "rarity": "core"
                 },
@@ -10432,24 +10206,16 @@
                     "id": 514024,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (10.17e, from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "150%/165%/180%/225%/240%/255%/285%/300%/315%/345%/360%/375%/390%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (10.17e, from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14001_Potential_24",
                     "rarity": "core"
                 }
@@ -10459,24 +10225,16 @@
                     "id": 514025,
                     "name": "???",
                     "briefDesc": "???",
-                    "desc": "???\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (10.17e, from Skill) (hidden)"
-                    ],
+                    "desc": "???",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "150%/165%/180%/225%/240%/255%/285%/300%/315%/345%/360%/375%/390%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (10.17e, from Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14001_Potential_22",
                     "corner": "Diamond",
                     "rarity": "common"

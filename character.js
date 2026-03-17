@@ -37,6 +37,12 @@ const characterId = require('./characterid.json');
 const character = {};
 const unreleased = {};
 
+Object.keys(POTENTIAL['513332']).forEach(key => {
+    if (key.startsWith('Param')) {
+        POTENTIAL['513332'][key] = POTENTIAL['513332'][key].replace(/^Effect,/, 'OnceAdditionalAttribute,').replace(/EffectTypeFirstSubtype,/, 'AttributeType1,').replace(/EffectTypeParam1/, 'Value1');
+    }
+});
+
 for (const id in CHARACTER) {
     const char = {
         id: +id,

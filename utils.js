@@ -480,7 +480,7 @@ function collectPotentialHiddenParamsFrom(obj) {
     const potId = obj.Id % 100;
 
     const stringifiedPotential = JSON.stringify(POTENTIAL);
-    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => resolveParam([`HitDamage,DamageNum,${id}`])[0] && `HitDamage,DamageNum,${id}` !== resolveParam([`HitDamage,DamageNum,${id}`])[0]).filter(id => id.length === 9 && id.startsWith(charId) && id.slice(4, 7).includes(potId.toString().padStart(2, '0')) && !stringifiedPotential.includes(`DamageNum,${id}`));
+    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => resolveParam([`HitDamage,DamageNum,${id}`])[0] && `HitDamage,DamageNum,${id}` !== resolveParam([`HitDamage,DamageNum,${id}`])[0]).filter(id => id.length === 9 && id.startsWith(charId) && id.slice(5, 7).includes(potId.toString().padStart(2, '0')) && !stringifiedPotential.includes(`DamageNum,${id}`));
 
     return {
         desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage,${DAMAGE_TYPE[HITDAMAGE[id].DamageType]})`).join(' '),
