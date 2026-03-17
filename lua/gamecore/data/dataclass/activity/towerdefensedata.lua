@@ -23,7 +23,7 @@ end
 function TowerDefenseData:UpdateStatus()
 	for _, levelData in pairs(self.allLevelData) do
 		local levelConfig = ConfigTable.GetData("TowerDefenseLevel", levelData.nLevelId)
-		if levelConfig ~= nil and self:IsLevelUnlock(levelData.nLevelId) then
+		if levelConfig ~= nil and self:IsLevelUnlock(levelData.nLevelId) and self:IsPreLevelPass(levelData.nLevelId) then
 			RedDotManager.SetValid(RedDotDefine.Activity_TowerDefense_Level, {
 				levelConfig.LevelPage,
 				levelData.nLevelId
@@ -143,11 +143,18 @@ function TowerDefenseData:UpdateLevelData(levelData)
 	if levelConfig == nil then
 		return
 	end
-	if self:GetPlayState() and self:IsLevelUnlock(levelData.Id) then
+	if self:GetPlayState() and self:IsLevelUnlock(levelData.Id) and self:IsPreLevelPass(levelData.Id) then
 		RedDotManager.SetValid(RedDotDefine.Activity_TowerDefense_Level, {
 			levelConfig.LevelPage,
 			levelData.Id
 		}, self:GetlevelIsNew(levelData.Id))
+	end
+	local nextLevelId = self:GetNextLevelId(levelData.Id)
+	if nextLevelId ~= 0 and self:GetPlayState() and self:IsLevelUnlock(nextLevelId) and self:IsPreLevelPass(nextLevelId) then
+		RedDotManager.SetValid(RedDotDefine.Activity_TowerDefense_Level, {
+			levelConfig.LevelPage,
+			nextLevelId
+		}, self:GetlevelIsNew(nextLevelId))
 	end
 	EventManager.Hit("TowerDefenseLevelUpdate")
 end
@@ -207,6 +214,16 @@ function TowerDefenseData:IsPreLevelPass(levelId)
 	end
 	return bResult
 end
+function TowerDefenseData:GetNextLevelId(levelId)
+	local nextLevelId = 0
+	local foreachTable = function(data)
+		if data.PreLevel == levelId then
+			nextLevelId = data.Id
+		end
+	end
+	ForEachTableLine(DataTable.TowerDefenseLevel, foreachTable)
+	return nextLevelId
+end
 function TowerDefenseData:GetlevelIsNew(levelId)
 	local bResult = false
 	local levelData = self:GetLevelData(levelId)
@@ -233,10 +250,7 @@ end
 function TowerDefenseData:RefreshRedDotbyTab(nTabIndex)
 	for levelId, _ in pairs(self.allLevelData) do
 		local levelConfig = ConfigTable.GetData("TowerDefenseLevel", levelId)
-		if levelConfig == nil then
-			return
-		end
-		if levelConfig.LevelPage == nTabIndex and table.indexof(self.cacheEnterLevelList, levelId) == 0 then
+		if levelConfig ~= nil and self:IsLevelUnlock(levelId) and levelConfig.LevelPage == nTabIndex and table.indexof(self.cacheEnterLevelList, levelId) == 0 then
 			table.insert(self.cacheEnterLevelList, levelId)
 			RedDotManager.SetValid(RedDotDefine.Activity_TowerDefense_Level, {
 				levelConfig.LevelPage,
@@ -619,9 +633,9 @@ function TowerDefenseData:SkipLevel(levelId, characterList, itemId, cb)
 	}
 	local callback = function()
 		self:CreateTempData(levelId, true)
-		local mapMsg = {LevelId = levelId, Star = 3}
+		local mapMsg = {LevelId = levelId, Star = 13}
 		HttpNetHandler.SendMsg(NetMsgId.Id.activity_tower_defense_level_settle_req, mapMsg, nil, function(_, mapMsgData)
-			self:UpdateLevelData({Id = levelId, Star = 3})
+			self:UpdateLevelData({Id = levelId, Star = 13})
 			local mapReward = PlayerData.Item:ProcessRewardChangeInfo(mapMsgData)
 			local tbItem = {}
 			for _, v in ipairs(mapReward.tbReward) do

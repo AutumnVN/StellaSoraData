@@ -17,7 +17,16 @@ function PlayerCharSkinData:UpdateSkinData(skinId, handbookId, unlock)
 		local skinData = SkinData.new(skinId, handbookId, unlock)
 		self.tbSkinDataList[skinId] = skinData
 	else
+		local nLastState = self.tbSkinDataList[skinId].nUnlock
 		self.tbSkinDataList[skinId]:UpdateUnlockState(unlock)
+		if nLastState ~= unlock then
+			local mapSkinCfg = ConfigTable.GetData("CharacterSkin", skinId)
+			if mapSkinCfg == nil then
+				return
+			end
+			PlayerData.Char:UpdateCharSkinVoiceReddot(false, mapSkinCfg.CharId, skinId)
+			PlayerData.Char:UpdateCharPlotReddot(mapSkinCfg.CharId)
+		end
 	end
 end
 function PlayerCharSkinData:GetSkinListByCharacterId(charId)

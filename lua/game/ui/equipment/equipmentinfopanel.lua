@@ -1,21 +1,21 @@
-local EquipmentSelectPanel = class("EquipmentSelectPanel", BasePanel)
-EquipmentSelectPanel._bIsMainPanel = false
-EquipmentSelectPanel._tbDefine = {
+local EquipmentInfoPanel = class("EquipmentInfoPanel", BasePanel)
+EquipmentInfoPanel._bIsMainPanel = false
+EquipmentInfoPanel._tbDefine = {
 	{
 		sPrefabPath = "Equipment/EquipmentInfoPanel.prefab",
 		sCtrlName = "Game.UI.Equipment.EquipmentInfoCtrl"
 	}
 }
-function EquipmentSelectPanel:Awake()
+function EquipmentInfoPanel:Awake()
 end
-function EquipmentSelectPanel:OnEnable()
+function EquipmentInfoPanel:OnEnable()
 end
-function EquipmentSelectPanel:OnAfterEnter()
+function EquipmentInfoPanel:OnAfterEnter()
 end
-function EquipmentSelectPanel:OnDisable()
+function EquipmentInfoPanel:OnDisable()
 end
-function EquipmentSelectPanel:OnDestroy()
+function EquipmentInfoPanel:OnDestroy()
 end
-function EquipmentSelectPanel:OnRelease()
+function EquipmentInfoPanel:OnRelease()
 end
-return EquipmentSelectPanel
+return EquipmentInfoPanel

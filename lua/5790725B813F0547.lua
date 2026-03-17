@@ -282,7 +282,7 @@ function MiningGameCtrl:OnBtnClick_OpenTask()
 		local taskActId = actGroupData:GetActivityDataByIndex(AllEnum.ActivityThemeFuncIndex.Task).ActivityId
 		local taskActData = PlayerData.Activity:GetActivityDataById(taskActId)
 		if taskActData ~= nil and taskActData:CheckActivityOpen() then
-			EventManager.Hit(EventId.OpenPanel, PanelId.Task_10103, taskActId, GameEnum.ActivityTaskTabType.Tab4)
+			EventManager.Hit(EventId.OpenPanel, PanelId.Task_10106, taskActId, GameEnum.ActivityTaskTabType.Tab4)
 			return
 		end
 		RedDotManager.UnRegisterNode(RedDotDefine.Activity_Group_Task, taskActId, self._mapNode.reward_reddot)

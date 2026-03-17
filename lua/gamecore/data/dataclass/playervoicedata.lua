@@ -28,7 +28,6 @@ local charFavorLevelUnlockVoice = {
 	{nLevel = 25, sUnlockVoiceKey = "afflv3"},
 	{nLevel = 30, sUnlockVoiceKey = "afflv4"}
 }
-local voiceRandomSkinLimit = {"posterchat"}
 function PlayerVoiceData:Init()
 	self.bFirstEnterGame = true
 	self.bNpc = false
@@ -104,7 +103,7 @@ function PlayerVoiceData:PlayCharVoice(voiceKey, nCharId, nSkinId, bNpc)
 		else
 			nSkinId = 0
 		end
-		local nVoiceId = WwiseAudioMgr:WwiseVoice_Play(nCharId, tbVoiceKey, nil, nSkinId)
+		local nVoiceId = WwiseAudioMgr:WwiseVoice_Play(nCharId, tbVoiceKey, nil, nSkinId, tbVoiceKey)
 		if nil ~= nVoiceId and nVoiceId ~= 0 then
 			self.nCurVoiceId = nVoiceId
 		end
@@ -167,6 +166,26 @@ end
 local getBoardClickFreeTime = function(bNpc)
 	return bNpc and npc_board_click_free_time or board_click_free_time
 end
+function PlayerVoiceData:GetCurBoardCharIdAndSkinId()
+	local curBoardCharId, curSkinId = 0, 0
+	local curBoardData = PlayerData.Board:GetCurBoardData()
+	if curBoardData ~= nil and curBoardData:GetType() == GameEnum.handbookType.SKIN then
+		curBoardCharId = curBoardData:GetCharId()
+		curSkinId = curBoardData:GetSkinId()
+		local curActor2DType = Actor2DManager.GetCurrentActor2DType()
+		local mapCharCfg = ConfigTable.GetData_Character(curBoardCharId)
+		if mapCharCfg ~= nil and mapCharCfg.DefaultSkinId ~= curSkinId and curActor2DType == TF then
+			local mapSkinCfg1 = ConfigTable.GetData("CharacterSkin", mapCharCfg.DefaultSkinId)
+			if mapSkinCfg1 ~= nil then
+				local mapSkinCfg2 = ConfigTable.GetData("CharacterSkin", curSkinId)
+				if mapSkinCfg2 ~= nil and mapSkinCfg2.CharacterCG == mapSkinCfg1.CharacterCG then
+					curSkinId = mapCharCfg.DefaultSkinId
+				end
+			end
+		end
+	end
+	return curBoardCharId, curSkinId
+end
 function PlayerVoiceData:StartBoardFreeTimer(nNpcId, nSkinId)
 	if nNpcId ~= nil or self.bNpc then
 		self.bNpc = true
@@ -220,12 +239,12 @@ function PlayerVoiceData:ResetBoardPlayTimer()
 	self.boardPlayTimer = nil
 	self.nVoiceDuration = 0
 end
-function PlayerVoiceData:PlayBoardSelectVoice(nCharId)
+function PlayerVoiceData:PlayBoardSelectVoice(nCharId, nSkinId)
 	local sVoiceKey = "greet"
-	self:PlayCharVoice(sVoiceKey, nCharId)
+	self:PlayCharVoice(sVoiceKey, nCharId, nSkinId)
 end
 function PlayerVoiceData:PlayMainViewOpenVoice()
-	local curBoardCharId = PlayerData.Board:GetCurBoardCharID()
+	local curBoardCharId, curSkinId = self:GetCurBoardCharIdAndSkinId()
 	self:CheckHoliday()
 	local bPlayFirst = false
 	local tbVoiceKey = {}
@@ -256,7 +275,7 @@ function PlayerVoiceData:PlayMainViewOpenVoice()
 		if self:CheckBirthday() then
 			table.insert(tbVoiceKey, "birth")
 		end
-		self:PlayCharVoice(tbVoiceKey, curBoardCharId)
+		self:PlayCharVoice(tbVoiceKey, curBoardCharId, curSkinId)
 	end
 end
 function PlayerVoiceData:CheckContinuousClick()
@@ -282,7 +301,7 @@ function PlayerVoiceData:PlayBoardClickVoice()
 		self.boardClickTimer = TimerManager.Add(0, 0.1, self, self.CheckContinuousClick, true, true, false)
 	end
 	self.nContinuousClickCount = self.nContinuousClickCount + 1
-	local curBoardCharId = PlayerData.Board:GetCurBoardCharID()
+	local curBoardCharId, curSkinId = self:GetCurBoardCharIdAndSkinId()
 	if nil ~= curBoardCharId then
 		local tbVoiceKey = {}
 		if self.nContinuousClickCount > getBoardClickMaxCount(self.bNpc) then
@@ -314,7 +333,7 @@ function PlayerVoiceData:PlayBoardClickVoice()
 		if self:CheckBirthday() then
 			table.insert(tbVoiceKey, "birth")
 		end
-		local nVoiceId = self:PlayCharVoice(tbVoiceKey, curBoardCharId)
+		local nVoiceId = self:PlayCharVoice(tbVoiceKey, curBoardCharId, curSkinId)
 		if nil ~= nVoiceId and 0 ~= nVoiceId then
 			PlayerData.Quest:SendClientEvent(GameEnum.questCompleteCondClient.InteractL2D)
 		end
@@ -341,29 +360,31 @@ function PlayerVoiceData:PlayBoardNPCClickVoice(nNpcId, nSkinId)
 	end
 end
 function PlayerVoiceData:PlayBoardFreeVoice()
-	local curBoardCharId, sVoiceKey
+	local curBoardCharId, curSkinId, sVoiceKey
 	if not self.bNpc then
-		curBoardCharId = PlayerData.Board:GetCurBoardCharID()
+		curBoardCharId, curSkinId = self:GetCurBoardCharIdAndSkinId()
 		sVoiceKey = "hang"
 	else
 		curBoardCharId = self.nNpcId
+		curSkinId = self.nNPCSkinId
 		sVoiceKey = "hang_npc"
 	end
 	if nil ~= curBoardCharId then
-		self:PlayCharVoice(sVoiceKey, curBoardCharId, self.nNPCSkinId, self.bNpc)
+		self:PlayCharVoice(sVoiceKey, curBoardCharId, curSkinId, self.bNpc)
 	end
 end
 function PlayerVoiceData:PlayBoardFreeLongTimeVoice()
-	local curBoardCharId, sVoiceKey
+	local curBoardCharId, curSkinId, sVoiceKey
 	if not self.bNpc then
-		curBoardCharId = PlayerData.Board:GetCurBoardCharID()
+		curBoardCharId, curSkinId = self:GetCurBoardCharIdAndSkinId()
 		sVoiceKey = "exhang"
 	else
 		curBoardCharId = self.nNpcId
+		curSkinId = self.nNPCSkinId
 		sVoiceKey = "exhang_npc"
 	end
 	if nil ~= curBoardCharId then
-		self:PlayCharVoice(sVoiceKey, curBoardCharId, self.nNPCSkinId, self.bNpc)
+		self:PlayCharVoice(sVoiceKey, curBoardCharId, curSkinId, self.bNpc)
 	end
 end
 function PlayerVoiceData:GetNPCGreetTimeVoiceKey()

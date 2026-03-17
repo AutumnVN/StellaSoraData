@@ -195,7 +195,7 @@ function PenguinCardFlipCtrl:RefreshRoundScore()
 	NovaAPI.SetTMPText(self._mapNode.txtRoundScore, self:ThousandsNumber(clearFloat(self._panel.mapLevel.nRoundScore)))
 	NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(clearFloat(self._panel.mapLevel.nRoundValue)))
 	local nRatio = self._panel.mapLevel.nRoundMultiRatio > 0 and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
-	NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, string.format("%.1f", nRatio))
+	NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, math.floor(nRatio * 10 + 0.5 + 1.0E-9) / 10)
 end
 function PenguinCardFlipCtrl:RefreshButton()
 	self:RefreshAuto()

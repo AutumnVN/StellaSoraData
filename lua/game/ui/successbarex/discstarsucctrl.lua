@@ -52,6 +52,12 @@ function DiscStarSucCtrl:RefreshContent()
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtName, string.format("\227\128\140%s\227\128\141", sName))
 	NovaAPI.SetTMPText(self._mapNode.txtDesc, sDesc)
+	self._mapNode.txtDesc.gameObject:SetActive(false)
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+		self._mapNode.txtDesc.gameObject:SetActive(true)
+	end
+	cs_coroutine.start(wait)
 	table.insert(self.tbAni, ani2)
 end
 function DiscStarSucCtrl:Awake()

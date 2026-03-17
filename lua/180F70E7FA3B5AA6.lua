@@ -27,19 +27,19 @@ end
 function TrekkerVersusData:RefreshTrekkerVersusData(nActId, msgData)
 	self:Init()
 	self.nActId = nActId
+	self.nDayNum = msgData.DayNum
+	self.nFanLevel = msgData.Level
+	self.nFanExp = msgData.Exp
+	self.nIdleRewardStartTime = msgData.Show.IdleTime
+	self.tbIdleReward = msgData.Show.IdleValues
+	self.nSelfHotValue = msgData.Show.SelfHotValue
+	self.nRivalHotValue = msgData.Show.RivalHotValue
+	self.tbHotValueRewardIds = msgData.HotValueRewardIds
+	self.tbDuelRewardIds = msgData.DuelRewardIds
+	self.tbDuelHistory = msgData.HistoryResult
 	self.nLastBuildId = msgData.BuildId
 	self.nCachedBuildId = msgData.BuildId
-	self.tbRecordAffix = msgData.Show.AffixIds
-	self.tbRecordChar = msgData.Show.CharIds
-	self.nRecordBuildLevel = msgData.Show.BuildScore
-	local nRecordLevel = 0
-	for _, nAffixId in ipairs(self.tbRecordAffix) do
-		local mapAffixCfgData = ConfigTable.GetData("TravelerDuelChallengeAffix", nAffixId)
-		if mapAffixCfgData ~= nil then
-			nRecordLevel = nRecordLevel + mapAffixCfgData.Difficulty
-		end
-	end
-	self.nRecord = nRecordLevel
+	self.nRecord = msgData.Show.Difficulty
 	for _, mapQuest in ipairs(msgData.Quests) do
 		self.mapQuests[mapQuest.Id] = mapQuest
 	end
@@ -98,6 +98,40 @@ function TrekkerVersusData:GetAllQuestData()
 	end
 	table.sort(ret, sort)
 	return ret
+end
+function TrekkerVersusData:GetCurStreamerDuelData()
+	local mapStreamerDuelCfgData = self:GetTrekkerVersusCfgData()
+	local mapDuelData
+	local foreachDuel = function(mapData)
+		if mapData.GroupId == mapStreamerDuelCfgData.TargetGroupId and mapData.DayNum == self.nDayNum then
+			mapDuelData = mapData
+		end
+	end
+	ForEachTableLine(DataTable.TravelerDuelTarget, foreachDuel)
+	return mapDuelData
+end
+function TrekkerVersusData:GetCurHeatValue()
+	local mapHeatData = {
+		nSelfHotValue = self.nSelfHotValue or 0,
+		nRivalHotValue = self.nRivalHotValue or 0
+	}
+	return mapHeatData
+end
+function TrekkerVersusData:GetCurDayNum()
+	return self.nDayNum
+end
+function TrekkerVersusData:GetCurFanData()
+	local mapFanData = {
+		nFanLevel = self.nFanLevel or 0,
+		nFanExp = self.nFanExp or 0
+	}
+	return mapFanData
+end
+function TrekkerVersusData:GetDuelHistory()
+	return self.tbDuelHistory
+end
+function TrekkerVersusData:GetIdleReward()
+	return self.tbIdleReward
 end
 function TrekkerVersusData:SetCachedBuildId(nBuildId)
 	self.nCachedBuildId = nBuildId
@@ -178,6 +212,76 @@ function TrekkerVersusData:SettleBattle(bSuccess, nLevelId, nTime, tbAffix, nBui
 		}
 	}
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_settle_req, msg, nil, callback)
+end
+function TrekkerVersusData:RequestIdleRefresh()
+	local msg = {
+		Value = self.nActId
+	}
+	local callback = function(_, msgData)
+		if msgData ~= nil then
+			self.nIdleRewardStartTime = msgData.IdleTime
+			self.nDifficult = msgData.Difficulty
+			self.tbIdleReward = msgData.IdleValues
+			self.nSelfHotValue = msgData.SelfHotValue
+			self.nRivalHotValue = msgData.RivalHotValue
+		end
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_idle_refresh_req, msg, nil, callback)
+end
+function TrekkerVersusData:RequestIdleRewardReceive(callback)
+	local msg = {
+		Value = self.nActId
+	}
+	local cb = function(_, msgData)
+		if msgData ~= nil then
+			if msgData.Change ~= nil then
+				HttpNetHandler.ProcChangeInfo(msgData.Change)
+				UTILS.OpenReceiveByDisplayItem(msgData.AwardItems, msgData.ChangeInfo)
+			end
+			self.nIdleRewardStartTime = msgData.IdleTime
+			if callback ~= nil then
+				callback(msgData)
+			end
+		end
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_idle_reward_receive_req, msg, nil, cb)
+end
+function TrekkerVersusData:RequestSendStreamerGift(tbGift, callback)
+	local msg = {
+		ActivityId = self.nActId,
+		Items = tbGift
+	}
+	local cb = function(_, msgData)
+		if msgData ~= nil then
+			local nPrevFanLevel = self.nFanLevel
+			local nPrevFanExp = self.nFanExp
+			self.nFanLevel = msgData.Level
+			self.nFanExp = msgData.Exp
+			self.nSelfHotValue = msgData.Show.SelfHotValue
+			self.nRivalHotValue = msgData.Show.RivalHotValue
+			if msgData.Change ~= nil then
+				HttpNetHandler.ProcChangeInfo(msgData.Change)
+				UTILS.OpenReceiveByDisplayItem(msgData.AwardItems, msgData.ChangeInfo)
+			end
+			if callback ~= nil then
+				callback(msgData, nPrevFanLevel, nPrevFanExp)
+			end
+		end
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_rank_boost_req, msg, nil, cb)
+end
+function TrekkerVersusData:RequestReceiveScheduleReward(nScheduleType)
+	local msg = {
+		ActivityId = self.nActId,
+		ScheduleType = nScheduleType
+	}
+	local callback = function(_, msgData)
+		if msgData ~= nil and msgData.Change ~= nil then
+			HttpNetHandler.ProcChangeInfo(msgData.Change)
+			UTILS.OpenReceiveByDisplayItem(msgData.AwardItems, msgData.ChangeInfo)
+		end
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_schedule_reward_receive_req, msg, nil, callback)
 end
 function TrekkerVersusData:CheckBattleSuccess()
 	local retResult = self.nSuccessBattle

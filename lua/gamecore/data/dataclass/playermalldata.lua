@@ -812,7 +812,6 @@ function PlayerMallData:SendMallPackageOrderReq(sId, callback)
 			UTILS.OpenReceiveByChangeInfo(mapData.Change)
 			local bMoney = false
 			EventManager.Hit("MallOrderClear", bMoney)
-			WwiseAudioMgr:SetState("system", "shop_purchased")
 		end
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.mall_package_order_req, mapMsg, nil, successCallback)
@@ -832,7 +831,6 @@ function PlayerMallData:SendMallShopOrderReq(sId, nCount)
 		UTILS.OpenReceiveByChangeInfo(mapData)
 		local bMoney = false
 		EventManager.Hit("MallOrderClear", bMoney)
-		WwiseAudioMgr:SetState("system", "shop_purchased")
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.mall_shop_order_req, mapMsg, nil, successCallback)
 end

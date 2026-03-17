@@ -110,6 +110,9 @@ function MallCtrl:SwitchTog()
 	elseif self._panel.nCurTog == AllEnum.MallToggle.Skin then
 		self._mapNode.Skin:ResetTab()
 		self._mapNode.Skin:Refresh(true)
+		self._mapNode.TopBar:CreateCoin({
+			AllEnum.CoinItemId.FREESTONE
+		})
 	elseif self._panel.nCurTog == AllEnum.MallToggle.Recommend then
 		self._mapNode.Recommend:Refresh()
 		self._mapNode.TopBar:CreateCoin({

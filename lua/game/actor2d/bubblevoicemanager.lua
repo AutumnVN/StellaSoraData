@@ -710,12 +710,29 @@ end
 function BubbleVoiceManager.DoSaveData(_mapData)
 	if type(sEditingVoResName) == "string" and sEditingVoResName ~= "" then
 		map_BubbleData[sEditingVoResName] = _mapData
-		for k, v in pairs(map_BubbleData) do
-			for kk, vv in pairs(v.text) do
-				for i, sContent in ipairs(vv) do
-					sContent = string.gsub(sContent, "\r==RT==", "==RT==")
-					sContent = string.gsub(sContent, "\r", "==RT==")
-					vv[i] = sContent
+		for sVoResName, mapVoData in pairs(map_BubbleData) do
+			for sKey, mapData in pairs(mapVoData) do
+				for sSubKey, arrData in pairs(mapData) do
+					local bIsEmpty = true
+					for i, v in ipairs(arrData) do
+						if type(v) == "string" then
+							if sKey == "text" and v ~= "" then
+								v = string.gsub(v, "\r==RT==", "==RT==")
+								v = string.gsub(v, "\r", "==RT==")
+								arrData[i] = v
+							end
+							if v ~= "" then
+								bIsEmpty = false
+								break
+							end
+						elseif type(v) == "number" and v ~= 0 then
+							bIsEmpty = false
+							break
+						end
+					end
+					if bIsEmpty == true then
+						map_BubbleData[sVoResName][sKey][sSubKey] = nil
+					end
 				end
 			end
 		end
@@ -800,8 +817,40 @@ function BubbleVoiceManager.CheckTime(sVoResName)
 	if mapTimeData == nil then
 		return false
 	end
-	if mapTimeData.female_cn[1] <= 0 and 0 >= mapTimeData.male_cn[1] then
+	if mapTimeData.female_cn == nil then
+		mapTimeData.female_cn = {
+			0,
+			0,
+			0,
+			0
+		}
+	end
+	if mapTimeData.male_cn == nil then
+		mapTimeData.male_cn = {
+			0,
+			0,
+			0,
+			0
+		}
+	end
+	if 0 >= mapTimeData.female_cn[1] and 0 >= mapTimeData.male_cn[1] then
 		return false
+	end
+	if mapTimeData.female_jp == nil then
+		mapTimeData.female_jp = {
+			0,
+			0,
+			0,
+			0
+		}
+	end
+	if mapTimeData.male_jp == nil then
+		mapTimeData.male_jp = {
+			0,
+			0,
+			0,
+			0
+		}
 	end
 	if 0 >= mapTimeData.female_jp[1] and 0 >= mapTimeData.male_jp[1] then
 		return false

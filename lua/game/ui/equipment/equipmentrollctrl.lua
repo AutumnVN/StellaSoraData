@@ -142,10 +142,7 @@ EquipmentRollCtrl._mapNodeConfig = {
 	},
 	FX = {sNodeName = "--FX--"}
 }
-EquipmentRollCtrl._mapEventConfig = {
-	[EventId.UIBackConfirm] = "OnEvent_Back",
-	[EventId.UIHomeConfirm] = "OnEvent_BackHome"
-}
+EquipmentRollCtrl._mapEventConfig = {}
 function EquipmentRollCtrl:Refresh()
 	self:RefreshPresetData()
 	self:RefreshPresetSlot()
@@ -460,7 +457,9 @@ function EquipmentRollCtrl:OnBtnClick_Roll(btn)
 		end
 		if not bEnough then
 			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Equipment_MatNotEnough_Roll"))
-			self._mapNode.TopBar:OnBtnClick_CoinFirstTips(self._mapNode.goCoinOther)
+			if nHasRefresh < self.mapSlotCfg.RefreshCostQty then
+				self._mapNode.TopBar:OnBtnClick_CoinFirstTips(self._mapNode.goCoinOther)
+			end
 			return
 		end
 		local callback = function()
@@ -601,18 +600,5 @@ function EquipmentRollCtrl:OnBtnClick_Equip()
 		self:RefreshIndexGem()
 	end
 	PlayerData.Equipment:SendCharGemEquipGemReq(self._panel.nCharId, self._panel.nSlotId, self._panel.nSelectGemIndex, nSelectPreset, callback)
-end
-function EquipmentRollCtrl:OnEvent_Back(nPanelId)
-	if self._panel._nPanelId ~= nPanelId then
-		return
-	end
-	EventManager.Hit(EventId.CloesCurPanel)
-end
-function EquipmentRollCtrl:OnEvent_BackHome(nPanelId)
-	if self._panel._nPanelId ~= nPanelId then
-		return
-	end
-	PlayerData.Equipment:GetEquipmentSelect()
-	PanelManager.Home()
 end
 return EquipmentRollCtrl

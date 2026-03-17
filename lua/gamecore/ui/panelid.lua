@@ -323,6 +323,11 @@ local PanelId = {
 	WinterNightStory = 406,
 	Shop_10105 = 407,
 	Task_10105 = 408,
-	ActivityLevelsSelectPanel_10105 = 409
+	ActivityLevelsSelectPanel_10105 = 409,
+	ActivityLevelsSelectPanel_10106 = 410,
+	Shop_10106 = 411,
+	Task_10106 = 412,
+	PostalThemePanel = 413,
+	PostalStory = 414
 }
 return PanelId

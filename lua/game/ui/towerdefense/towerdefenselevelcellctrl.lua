@@ -5,6 +5,11 @@ TowerDefenseLevelCellCtrl._mapNodeConfig = {
 	goStar = {},
 	Star = {nCount = 3},
 	reddotNew = {},
+	go_Perfect = {},
+	txt_Perfect = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "TowerDef_Perfect"
+	},
 	goTips = {},
 	txt_Time = {sComponentName = "TMP_Text"},
 	btn_Level = {
@@ -35,7 +40,8 @@ function TowerDefenseLevelCellCtrl:SetData(nActId, levelData)
 	NovaAPI.SetTMPText(self._mapNode.txt_Name, self.levelConfig.LevelName)
 	self:TowerDefenseLevelUpdateTips()
 	local bIsUnlock = self.actData:IsLevelUnlock(self.levelData.nLevelId)
-	self._mapNode.goStar:SetActive(bIsUnlock)
+	local bPreLevelPass = self.actData:IsPreLevelPass(self.levelData.nLevelId)
+	self._mapNode.goStar:SetActive(bIsUnlock and bPreLevelPass)
 	for i = 1, #self._mapNode.Star do
 		if i <= self.levelData.nStar then
 			self._mapNode.Star[i]:SetActive(true)
@@ -44,10 +50,12 @@ function TowerDefenseLevelCellCtrl:SetData(nActId, levelData)
 		end
 	end
 	local nStar = self.levelData.nStar
-	if nStar % 10 == 1 then
+	if nStar // 10 == 1 then
+		self._mapNode.go_Perfect:SetActive(true)
 	else
+		self._mapNode.go_Perfect:SetActive(false)
 	end
-	self._mapNode.img_lock.gameObject:SetActive(not bIsUnlock)
+	self._mapNode.img_lock.gameObject:SetActive(not bIsUnlock or not bPreLevelPass)
 	RedDotManager.RegisterNode(RedDotDefine.Activity_TowerDefense_Level, {
 		self.levelConfig.LevelPage,
 		self.levelData.nLevelId
@@ -59,7 +67,13 @@ function TowerDefenseLevelCellCtrl:TowerDefenseLevelUpdateTips()
 	end
 	local curTime = CS.ClientManager.Instance.serverTimeStamp
 	if curTime >= self.actData:GetLevelStartTime(self.levelData.nLevelId) then
-		self._mapNode.goTips:SetActive(false)
+		local bPreLevelPass = self.actData:IsPreLevelPass(self.levelData.nLevelId)
+		if bPreLevelPass then
+			self._mapNode.goTips:SetActive(false)
+		else
+			self._mapNode.goTips:SetActive(true)
+			NovaAPI.SetTMPText(self._mapNode.txt_Time, ConfigTable.GetUIText("TowerDef_PreLevelNotPass"))
+		end
 	else
 		self._mapNode.goTips:SetActive(true)
 		local remainTime = self.actData:GetLevelStartTime(self.levelData.nLevelId) - curTime

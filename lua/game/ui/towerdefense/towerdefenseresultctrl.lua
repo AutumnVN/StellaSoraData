@@ -7,6 +7,11 @@ TowerDefenseResultCtrl._mapNodeConfig = {
 	},
 	imgBlurredBg = {},
 	SuccessRoot = {},
+	go_Perfect = {},
+	txt_Perfect = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "TowerDef_Perfect"
+	},
 	txt_level = {sComponentName = "TMP_Text"},
 	db_target = {nCount = 3},
 	Mask = {
@@ -29,6 +34,7 @@ function TowerDefenseResultCtrl:Awake()
 		self.tbTarget = param[3]
 		self.callback = param[4]
 		self.msgData = param[5]
+		self.nStar = param[6] or 0
 	end
 	self._mapNode.SuccessRoot:SetActive(self.bResult)
 	self._mapNode.FailRoot:SetActive(not self.bResult)
@@ -52,7 +58,8 @@ function TowerDefenseResultCtrl:SetContent()
 			NovaAPI.SetTMPText(txt_target:GetComponent("TMP_Text"), self.tbTarget[i].sTargetDes)
 			target:SetActive(true)
 		end
-		self:AddTimer(1, 0.5, function()
+		self._mapNode.go_Perfect:SetActive(self.nStar // 10 == 1)
+		self:AddTimer(1, 0.9, function()
 			local mapReward = PlayerData.Item:ProcessRewardChangeInfo(self.msgData)
 			local tbItem = {}
 			for _, v in ipairs(mapReward.tbReward) do

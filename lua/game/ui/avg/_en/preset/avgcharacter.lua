@@ -323,6 +323,18 @@ return {
 		name_bg_color = "#0ABEC5"
 	},
 	{
+		id = "avg2_949",
+		name = "Breezy Owl",
+		name_bg_color = "#0ABEC5",
+		ver = "1.8.0"
+	},
+	{
+		id = "avg2_950",
+		name = "Gale Owl",
+		name_bg_color = "#0ABEC5",
+		ver = "1.8.0"
+	},
+	{
 		id = "avg2_951",
 		name = "Entity of Prosperity (Fire)",
 		name_bg_color = "#0ABEC5",
@@ -1006,26 +1018,32 @@ return {
 	},
 	{
 		id = "avg3_207",
-		name = "***",
+		name = "Myrsha",
 		name_bg_color = "#0ABEC5",
 		ver = "1.8.0"
 	},
 	{
 		id = "avg3_208",
-		name = "***",
+		name = "Desert Scorpion Female Grunt",
 		name_bg_color = "#0ABEC5",
 		ver = "1.8.0"
 	},
 	{
 		id = "avg3_209",
-		name = "***",
+		name = "Desert Scorpion Male Grunt",
 		name_bg_color = "#0ABEC5",
 		ver = "1.8.0"
 	},
 	{
 		id = "avg3_210",
-		name = "***",
+		name = "Hasana",
 		name_bg_color = "#e4a47a",
+		ver = "1.8.0"
+	},
+	{
+		id = "avg3_211",
+		name = "Treasure Hunter Leader",
+		name_bg_color = "#0ABEC5",
 		ver = "1.8.0"
 	},
 	{

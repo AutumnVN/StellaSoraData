@@ -55,10 +55,20 @@ function StarTowerBookData:InitConfig()
 		self.mapPotentialQuest[line.CharId][line.Id].Status = AllEnum.BookQuestStatus.UnComplete
 		local nAllProgress = 0
 		local nParam = 0
+		local sDesc = ""
 		if line.Cond == GameEnum.towerBookPotentialCond.TowerBookCharPotentialQuantity then
 			local params = decodeJson(line.Params)
 			nParam = tonumber(params[1])
 			nAllProgress = tonumber(params[2])
+			local mapCharCfg = ConfigTable.GetData_Character(nParam)
+			if mapCharCfg ~= nil and self.mapPotentialBookBrief[nParam] ~= nil then
+				local nAllCount = self.mapPotentialBookBrief[nParam].AllCount
+				if nAllProgress == nAllCount then
+					sDesc = orderedFormat(ConfigTable.GetUIText("StarTower_Book_Potential_Quest_Desc_2"), mapCharCfg.Name)
+				else
+					sDesc = orderedFormat(ConfigTable.GetUIText("StarTower_Book_Potential_Quest_Desc_1"), mapCharCfg.Name, nAllProgress)
+				end
+			end
 		end
 		self.mapPotentialQuest[line.CharId][line.Id].Cond = line.Cond
 		self.mapPotentialQuest[line.CharId][line.Id].Param = nParam
@@ -69,7 +79,7 @@ function StarTowerBookData:InitConfig()
 			RewardCount = line.ItemQty
 		}
 		self.mapPotentialQuest[line.CharId][line.Id].Reward = tbReward
-		self.mapPotentialQuest[line.CharId][line.Id].Desc = UTILS.ParseParamDesc(line.Desc, line)
+		self.mapPotentialQuest[line.CharId][line.Id].Desc = sDesc
 	end
 	ForEachTableLine(ConfigTable.Get("StarTowerBookPotentialReward"), foreachPotentialRewardTableLine)
 	local foreachFateCardTableLine = function(line)

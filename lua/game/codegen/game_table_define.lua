@@ -900,10 +900,7 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Desc"}
 	},
-	StarTowerBookPotentialReward = {
-		Key = true,
-		Lang = {"Desc"}
-	},
+	StarTowerBookPotentialReward = {Key = true},
 	StarTowerBuild = {Key = true},
 	StarTowerBuildRank = {Key = true},
 	StarTowerCombatEvent = {Key = true},

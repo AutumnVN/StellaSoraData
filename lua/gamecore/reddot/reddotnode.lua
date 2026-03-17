@@ -143,30 +143,30 @@ end
 function RedDotNode:CheckLeafNode()
 	return nil == self.tbChildNodeList or #self.tbChildNodeList == 0
 end
-function RedDotNode:PrintRedDot(bParent, bLeaf)
+function RedDotNode:PrintRedDot(bLeaf, tbNode)
 	if self.sNodeKey == "Root" then
 		return
 	end
-	local sObj = ""
+	table.insert(tbNode, self)
+	if bLeaf and nil ~= self.tbChildNodeList then
+		for _, v in ipairs(self.tbChildNodeList) do
+			v:PrintRedDot(true, tbNode)
+		end
+	end
+end
+function RedDotNode:GetParentKey(tbKey)
+	if self.parentNode ~= nil and self.parentNode.sNodeKey ~= "Root" then
+		table.insert(tbKey, self.parentNode.sNodeKey)
+		self.parentNode:GetParentKey(tbKey)
+	end
+end
+function RedDotNode:GetBindObjCount()
 	local nCount = 0
 	if self.tbObjNode ~= nil then
-		for nInsId, v in pairs(self.tbObjNode) do
+		for _, v in pairs(self.tbObjNode) do
 			nCount = nCount + 1
-			sObj = sObj .. string.format("%s | %s", nInsId, v.gameObject:GetInstanceID())
-			sObj = sObj .. "\n"
-		end
-		local sLog = string.format("<color=red>[RedDot]</color> \232\138\130\231\130\185key %s|\231\186\162\231\130\185state %s|\231\187\145\229\174\154gameObject\230\149\176\233\135\143 %s\n", self.sNodeKey, self.nRedDotCount, nCount)
-		sLog = sLog .. sObj
-		traceback(sLog)
-	end
-	if bParent then
-		if nil ~= self.parentNode then
-			self.parentNode:PrintRedDot(true)
-		end
-	elseif bLeaf and nil ~= self.tbChildNodeList then
-		for _, v in ipairs(self.tbChildNodeList) do
-			v:PrintRedDot(nil, true)
 		end
 	end
+	return nCount
 end
 return RedDotNode

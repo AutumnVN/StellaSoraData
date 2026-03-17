@@ -58,7 +58,11 @@ function BattlePassPopupSkinCtrl:ShowPanel(mapBattlePassCfg)
 	local sOpenTime = os.date("%Y.%m.%d", nOpenTime)
 	local sCloseTime = os.date("%Y.%m.%d", nCloseTime)
 	NovaAPI.SetTMPText(self._mapNode.TMPSeasonTIme_popup, string.format("%s-%s", sOpenTime, sCloseTime))
-	self:SetPngSprite(self._mapNode.imgBattlePassLogo, "Icon/ArtText/CharSkin_ArtText_" .. mapBattlePassCfg.Cover)
+	if mapBattlePassCfg.ID >= 6 then
+		self:SetPngSprite(self._mapNode.imgBattlePassLogo, "Icon/ArtText/CharSkin_ArtText_" .. mapBattlePassCfg.Cover .. "_lang")
+	else
+		self:SetPngSprite(self._mapNode.imgBattlePassLogo, "Icon/ArtText/CharSkin_ArtText_" .. mapBattlePassCfg.Cover)
+	end
 	NovaAPI.SetImageNativeSize(self._mapNode.imgBattlePassLogo)
 end
 function BattlePassPopupSkinCtrl:OnBtnClick_Close()

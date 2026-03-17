@@ -263,34 +263,41 @@ function CharacterRecordCtrl:OnRefreshVoice()
 	elseif self.InitState[RecordTogType.Voice] == 1 then
 		return
 	end
-	self.DailyVoiceData = {}
-	self.BattleVoiceData = {}
+	local tbSortedVoiceData = {}
 	local tbVoiceGirdHeight = {}
+	self.tbVoiceData = {}
 	local foreachLineCharVoice = function(mapData)
 		if mapData.CharacterId == self.curCharId then
-			if mapData.ArchVoiceType == GameEnum.ArchVoiceType.DailyVoice then
-				table.insert(self.DailyVoiceData, mapData)
+			if mapData.ArchVoiceType == GameEnum.ArchVoiceType.SkinVoice then
+				local nSkinId = mapData.UnlockSkinId
+				if PlayerData.CharSkin:CheckSkinUnlock(nSkinId) then
+					table.insert(tbSortedVoiceData, mapData)
+				end
 			else
-				table.insert(self.BattleVoiceData, mapData)
+				table.insert(tbSortedVoiceData, mapData)
 			end
-			tbVoiceGirdHeight[#tbVoiceGirdHeight + 1] = VoiceGridSize.Voice
 		end
 	end
 	ForEachTableLine(DataTable.CharacterArchiveVoice, foreachLineCharVoice)
-	if #self.DailyVoiceData > 0 then
-		tbVoiceGirdHeight[1] = VoiceGridSize.Title
+	table.sort(tbSortedVoiceData, function(a, b)
+		if a.ArchVoiceType == b.ArchVoiceType then
+			return a.Sort < b.Sort
+		end
+		return a.ArchVoiceType < b.ArchVoiceType
+	end)
+	local nLastType = 0
+	for k, v in ipairs(tbSortedVoiceData) do
+		if nLastType ~= v.ArchVoiceType then
+			nLastType = v.ArchVoiceType
+			table.insert(self.tbVoiceData, {
+				bTitle = true,
+				nType = v.ArchVoiceType
+			})
+			tbVoiceGirdHeight[#tbVoiceGirdHeight + 1] = VoiceGridSize.Title
+		end
+		table.insert(self.tbVoiceData, {bTitle = false, mapData = v})
 		tbVoiceGirdHeight[#tbVoiceGirdHeight + 1] = VoiceGridSize.Voice
 	end
-	if 0 < #self.BattleVoiceData then
-		tbVoiceGirdHeight[#tbVoiceGirdHeight - #self.BattleVoiceData + 1] = VoiceGridSize.Title
-		tbVoiceGirdHeight[#tbVoiceGirdHeight + 1] = VoiceGridSize.Voice
-	end
-	table.sort(self.DailyVoiceData, function(a, b)
-		return a.Sort < b.Sort
-	end)
-	table.sort(self.BattleVoiceData, function(a, b)
-		return a.Sort < b.Sort
-	end)
 	if 0 < #tbVoiceGirdHeight then
 		self._mapNode.loopscVoice.gameObject:SetActive(true)
 		self._mapNode.loopscVoice:InitEx(tbVoiceGirdHeight, self, self.RefreshVoiceGrid)
@@ -305,14 +312,17 @@ function CharacterRecordCtrl:RefreshVoiceGrid(go, index)
 	local voiceRoot = trans:Find("VoiceRoot")
 	local redDot = trans:Find("RedDot")
 	LayoutRebuilder.ForceRebuildLayoutImmediate(trans)
-	if index == 1 or index - 2 == #self.DailyVoiceData then
+	local voiceData = self.tbVoiceData[index]
+	if voiceData.bTitle then
 		titleRoot.gameObject:SetActive(true)
 		voiceRoot.gameObject:SetActive(false)
 		local voiceTitle = titleRoot:Find("t_common_04/imgBg/txtTitle"):GetComponent("TMP_Text")
-		if index == 1 then
+		if voiceData.nType == GameEnum.ArchVoiceType.DailyVoice then
 			NovaAPI.SetTMPText(voiceTitle, ConfigTable.GetUIText("Daily_Voice"))
-		else
+		elseif voiceData.nType == GameEnum.ArchVoiceType.BattlceVoice then
 			NovaAPI.SetTMPText(voiceTitle, ConfigTable.GetUIText("Battle_Voice"))
+		elseif voiceData.nType == GameEnum.ArchVoiceType.SkinVoice then
+			NovaAPI.SetTMPText(voiceTitle, ConfigTable.GetUIText("Skin_Voice"))
 		end
 		redDot.gameObject:SetActive(false)
 	else
@@ -320,12 +330,7 @@ function CharacterRecordCtrl:RefreshVoiceGrid(go, index)
 		voiceRoot.gameObject:SetActive(true)
 		local goUnlock = voiceRoot:Find("Unlock")
 		local goLock = voiceRoot:Find("Lock")
-		local data = {}
-		if index > 1 + #self.DailyVoiceData then
-			data = self.BattleVoiceData[index - 2 - #self.DailyVoiceData]
-		else
-			data = self.DailyVoiceData[index - 1]
-		end
+		local data = voiceData.mapData
 		local bLock, lockTxt = self:IsVoiceLock(data)
 		goUnlock.gameObject:SetActive(not bLock)
 		goLock.gameObject:SetActive(bLock)
@@ -345,7 +350,15 @@ function CharacterRecordCtrl:RefreshVoiceGrid(go, index)
 			NovaAPI.SetTMPText(txtVoiceLockCondition, lockTxt)
 		else
 			local txtVoiceTitle = goUnlock:Find("VoiceTitle"):GetComponent("TMP_Text")
-			NovaAPI.SetTMPText(txtVoiceTitle, data.Title)
+			if data.ArchVoiceType == GameEnum.ArchVoiceType.SkinVoice then
+				local nSkinId = data.UnlockSkinId
+				local mapSkinCfg = ConfigTable.GetData("CharacterSkin", nSkinId)
+				if mapSkinCfg ~= nil then
+					NovaAPI.SetTMPText(txtVoiceTitle, orderedFormat(data.Title, mapSkinCfg.Name))
+				end
+			else
+				NovaAPI.SetTMPText(txtVoiceTitle, data.Title)
+			end
 			btnPlay.onClick:AddListener(function()
 				RedDotManager.SetValid(RedDotDefine.Role_Record_Voice_Item, {
 					self.curCharId,

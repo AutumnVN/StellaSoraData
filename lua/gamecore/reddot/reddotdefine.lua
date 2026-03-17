@@ -109,6 +109,7 @@ local RedDotDefine = {
 	Activity_New = "Activity_New",
 	Activity_New_Tab = "Activity_New_Tab.<param>",
 	Activity_GroupNew = "Activity_Group_New.<param>",
+	Activity_GroupNew_MiniGame = "Activity_Group_New.<param>.MiniGame",
 	Activity_BreakOut_DifficultyTap_Level = "Activity_Group_New.<param>.BreakOutLevel.<param>",
 	Activity_ThrowGift_New = "Activity_ThrowGift_New.<param>",
 	Activity_ThrowGift_NewLevel = "Activity_ThrowGift_New.<param>.Level.<param>",

@@ -47,11 +47,11 @@ SettingsGamepadCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Action_Move"
 	},
-	txtPS_Share = {sComponentName = "TMP_Text", sLanguageId = "Action_Map"},
-	txtPS_Options = {
+	txtPS_Share = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Action_Depot"
 	},
+	txtPS_Options = {sComponentName = "TMP_Text", sLanguageId = "Action_Map"},
 	txtPS_AutoBattle = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Action_AutoBattle"

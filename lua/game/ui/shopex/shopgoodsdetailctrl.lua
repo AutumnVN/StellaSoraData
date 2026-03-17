@@ -7,6 +7,9 @@ ShopGoodsDetailCtrl._mapNodeConfig = {
 	goItem = {
 		sCtrlName = "Game.UI.TemplateEx.TemplateItemCtrl"
 	},
+	goDiscStar = {
+		sCtrlName = "Game.UI.TemplateEx.TemplateStarCtrl"
+	},
 	btnDetail = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Detail"
@@ -66,9 +69,17 @@ function ShopGoodsDetailCtrl:Refresh(mapData, nShopId)
 end
 function ShopGoodsDetailCtrl:RefreshInfo(mapData)
 	local mapCfg = ConfigTable.GetData_Item(mapData.nItemId)
+	if not mapCfg then
+		return
+	end
 	NovaAPI.SetTMPText(self._mapNode.txtName, mapData.sName)
 	self._mapNode.goItem:SetItem(mapData.nItemId, nil, mapData.nItemQuantity, nil, nil, nil, nil, true)
-	if mapCfg and (mapCfg.Type == GameEnum.itemType.Disc or mapCfg.Type == GameEnum.itemType.Char or mapCfg.Type == GameEnum.itemType.CharacterSkin) then
+	self._mapNode.goDiscStar.gameObject:SetActive(mapCfg.Type == GameEnum.itemType.Disc)
+	if mapCfg.Type == GameEnum.itemType.Disc then
+		local nStar = 6 - mapCfg.Rarity
+		self._mapNode.goDiscStar:SetStar(nStar, nStar)
+	end
+	if mapCfg.Type == GameEnum.itemType.Disc or mapCfg.Type == GameEnum.itemType.Char or mapCfg.Type == GameEnum.itemType.CharacterSkin then
 		self._mapNode.txtHas.gameObject:SetActive(false)
 	else
 		self._mapNode.txtHas.gameObject:SetActive(true)

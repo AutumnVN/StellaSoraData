@@ -24,6 +24,7 @@ function TowerDefenseHUDCtrl:Awake()
 	self.dotDamageHudPrefab = self:LoadAsset("UI/HUD/DotDamageHUDNumber_UI.prefab")
 	self.damageHudPrefab = self:LoadAsset("UI/Play_TowerDefence/HUD/DamageHUDNumber_UI.prefab")
 	self.minDamageHUDNumber = self:LoadAsset("UI/HUD/MinDamageHUDNumber_UI.prefab")
+	self.wordHudPrefab = self:LoadAsset("UI/HUD/WordHud_UI.prefab")
 	self.monsterHuds = {}
 	self.playerHuds = {}
 	self.numberHuds = {}
@@ -37,6 +38,7 @@ function TowerDefenseHUDCtrl:OnDestroy()
 	self.dotDamageHudPrefab = nil
 	self.damageHudPrefab = nil
 	self.minDamageHUDNumber = nil
+	self.wordHudPrefab = nil
 	for key, value in pairs(self.monsterHuds) do
 		self:DespawnPrefabInstance(value, "HUD")
 	end

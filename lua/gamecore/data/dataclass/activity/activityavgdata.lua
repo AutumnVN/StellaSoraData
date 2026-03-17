@@ -658,51 +658,60 @@ function ActivityAvgData:SortStoryList(chapterId)
 			storyIdToNumId[config.StoryId] = numId
 		end
 	end
-	local currentStoryId
+	local parentToChildren = {}
+	local rootChildren = {}
 	for storyId, config in pairs(storyIdToConfig) do
-		if type(config.ParentStoryId) == "table" then
-			if #config.ParentStoryId == 0 or config.ParentStoryId[1] == "" then
-				currentStoryId = storyId
-				table.insert(sortedList, storyIdToNumId[storyId])
-				break
+		local parentIds = config.ParentStoryId
+		local bIsRoot = false
+		if type(parentIds) == "table" then
+			bIsRoot = #parentIds == 0 or parentIds[1] == ""
+		elseif type(parentIds) == "string" then
+			bIsRoot = parentIds == ""
+		end
+		if bIsRoot then
+			table.insert(rootChildren, storyId)
+		else
+			local tbParents = type(parentIds) == "table" and parentIds or {parentIds}
+			for _, parentId in ipairs(tbParents) do
+				if parentId ~= "" then
+					if parentToChildren[parentId] == nil then
+						parentToChildren[parentId] = {}
+					end
+					table.insert(parentToChildren[parentId], storyId)
+				end
 			end
-		elseif config.ParentStoryId == "" then
-			currentStoryId = storyId
-			table.insert(sortedList, storyIdToNumId[storyId])
-			break
 		end
 	end
-	if currentStoryId == nil then
-		return sortedList
+	local sortByNumId = function(children)
+		table.sort(children, function(a, b)
+			return storyIdToNumId[a] < storyIdToNumId[b]
+		end)
+	end
+	sortByNumId(rootChildren)
+	for _, children in pairs(parentToChildren) do
+		sortByNumId(children)
 	end
 	local visited = {}
-	visited[currentStoryId] = true
-	while #sortedList < #list do
-		local found = false
-		for storyId, config in pairs(storyIdToConfig) do
-			if not visited[storyId] then
-				local hasParent = false
-				if type(config.ParentStoryId) == "table" then
-					for _, parentId in ipairs(config.ParentStoryId) do
-						if parentId == currentStoryId then
-							hasParent = true
-							break
-						end
-					end
-				elseif config.ParentStoryId == currentStoryId then
-					hasParent = true
-				end
-				if hasParent then
-					table.insert(sortedList, storyIdToNumId[storyId])
-					visited[storyId] = true
-					currentStoryId = storyId
-					found = true
-					break
+	local queue = {}
+	for _, storyId in ipairs(rootChildren) do
+		if not visited[storyId] then
+			visited[storyId] = true
+			table.insert(queue, storyId)
+		end
+	end
+	local head = 1
+	while head <= #queue do
+		local storyId = queue[head]
+		head = head + 1
+		table.insert(sortedList, storyIdToNumId[storyId])
+		local children = parentToChildren[storyId]
+		if children ~= nil then
+			for _, childId in ipairs(children) do
+				if not visited[childId] then
+					visited[childId] = true
+					table.insert(queue, childId)
 				end
 			end
-		end
-		if not found then
-			break
 		end
 	end
 	return sortedList

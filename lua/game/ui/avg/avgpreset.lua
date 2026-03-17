@@ -9,6 +9,10 @@ local AvgPreset = {
 		"beach_shipwreck_night",
 		"beach_wasteland_daylight",
 		"beach_wasteland_night",
+		"beilin_house",
+		"beilin_house_dusk",
+		"beilin_street",
+		"beilin_street_dusk",
 		"BG_Black",
 		"bg_temporary",
 		"bossroom_inside",
@@ -90,6 +94,7 @@ local AvgPreset = {
 		"hotel_daylight",
 		"hotel_guest_room",
 		"hotel_guest_room_night",
+		"hotel_roof",
 		"hotel_senior_office",
 		"hotpot_inside",
 		"hotpot_inside_night",
@@ -267,6 +272,10 @@ local AvgPreset = {
 		"story_event_04_003_a",
 		"story_event_04_003_b",
 		"story_event_04_004",
+		"story_event_05_001",
+		"story_event_05_002_a",
+		"story_event_05_002_b",
+		"story_event_05_003",
 		"story_main_00_001",
 		"story_main_00_002",
 		"story_main_00_003_FP",
@@ -465,7 +474,8 @@ local AvgPreset = {
 		"story_tales_10_001",
 		"story_tales_11_001_a",
 		"story_tales_11_001_b",
-		"story_tales_12_001"
+		"story_tales_12_001",
+		"story_tales_13_001"
 	},
 	FgResName = {
 		"circle_light",
@@ -476,15 +486,19 @@ local AvgPreset = {
 		"story_main_01_035",
 		"story_main_01_036",
 		"story_main_01_037",
-		"story_main_03_005_c",
 		"story_main_02_020",
-		"story_main_02_021"
+		"story_main_02_021",
+		"story_main_03_005_c",
+		"story_tales_13_001_a",
+		"story_tales_13_001_b",
+		"story_tales_13_001_c"
 	},
 	DiscResName = {
 		"4004_B",
 		"4005_B",
 		"4006_B",
 		"4007_B",
+		"4008_B",
 		"4026_B",
 		"4027_B",
 		"4028_B",
@@ -4567,6 +4581,126 @@ local AvgPreset = {
 				},
 				false
 			}
+		},
+		{
+			"manbu_loop",
+			{
+				{
+					{
+						0,
+						5,
+						0
+					},
+					{
+						0,
+						0.5,
+						0
+					},
+					{
+						0,
+						1,
+						0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				{
+					{
+						0,
+						0,
+						0
+					},
+					{
+						0,
+						0,
+						0
+					},
+					{
+						0,
+						0,
+						0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				true
+			}
+		},
+		{
+			"xuanyun",
+			{
+				{
+					{
+						0,
+						0,
+						0
+					},
+					{
+						0,
+						0,
+						0
+					},
+					{
+						0,
+						0,
+						0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				{
+					{
+						0,
+						0,
+						3
+					},
+					{
+						0,
+						0,
+						1
+					},
+					{
+						0,
+						0,
+						3
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				false
+			}
 		}
 	},
 	CharEnter = {
@@ -5217,6 +5351,10 @@ local AvgPreset = {
 		},
 		{
 			"fx_avg_goldenlight_diffusion",
+			""
+		},
+		{
+			"fx_avg_rain_sky",
 			""
 		},
 		{

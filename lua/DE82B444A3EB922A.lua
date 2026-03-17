@@ -661,7 +661,11 @@ function PenguinLevel:ChangeRoundScore(nAddValue, nAddRatio, nAddMultiRatio, bFr
 	self.nRoundValue = self.nRoundValue + nAddValue
 	self.nRoundMultiRatio = self.nRoundMultiRatio + nAddMultiRatio
 	self.nRoundRatio = self.nRoundRatio + nAddRatio
-	self.nRoundScore = self.nRoundMultiRatio > 0 and self.nRoundValue * self.nRoundRatio * self.nRoundMultiRatio or self.nRoundValue * self.nRoundRatio
+	local nBeforeAllRatio = 0 < nBeforeMultiRatio and nBeforeMultiRatio * nBeforeRatio or nBeforeRatio
+	local nAfterAllRatio = self.nRoundMultiRatio > 0 and self.nRoundRatio * self.nRoundMultiRatio or self.nRoundRatio
+	nBeforeAllRatio = math.floor(nBeforeAllRatio * 10 + 0.5 + 1.0E-9) / 10
+	nAfterAllRatio = math.floor(nAfterAllRatio * 10 + 0.5 + 1.0E-9) / 10
+	self.nRoundScore = self.nRoundValue * nAfterAllRatio
 	local nAddScore = self.nRoundScore - nBeforeScore
 	self.nTurnScore = self.nTurnScore + nAddScore
 	if self.nTurnScore > self.nBestTurnScore then
@@ -670,8 +674,6 @@ function PenguinLevel:ChangeRoundScore(nAddValue, nAddRatio, nAddMultiRatio, bFr
 	if self.nRoundScore > self.nBestRoundScore then
 		self.nBestRoundScore = self.nRoundScore
 	end
-	local nBeforeAllRatio = 0 < nBeforeMultiRatio and nBeforeMultiRatio * nBeforeRatio or nBeforeRatio
-	local nAfterAllRatio = self.nRoundMultiRatio > 0 and self.nRoundRatio * self.nRoundMultiRatio or self.nRoundRatio
 	EventManager.Hit("PenguinCard_ChangeRoundScore", nBeforeBase, nBeforeAllRatio, nBeforeScore, bFromHandRank)
 	if NovaAPI.IsEditorPlatform() then
 		printLog("\232\189\174\231\167\175\229\136\134\229\143\152\229\140\150\239\188\154" .. nAddScore .. "  (" .. nBeforeScore .. " -> " .. self.nRoundScore .. ")")

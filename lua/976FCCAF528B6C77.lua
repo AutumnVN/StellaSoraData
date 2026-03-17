@@ -152,7 +152,7 @@ function ActivitySpringFestivalCtrl:OnBtnClick_Go()
 	if actGroupCfg ~= nil and actGroupCfg ~= nil then
 		if actGroupCfg.TransitionId ~= nil and actGroupCfg.TransitionId > 0 then
 			local callback = function()
-				EventManager.Hit(EventId.OpenPanel, PanelId.SpringFestivalThemePanel, actGroupCfg.Id, tue)
+				EventManager.Hit(EventId.OpenPanel, PanelId.SpringFestivalThemePanel, actGroupCfg.Id, true)
 			end
 			EventManager.Hit(EventId.SetTransition, actGroupCfg.TransitionId, callback)
 		else

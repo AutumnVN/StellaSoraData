@@ -58,7 +58,7 @@ end
 function JointDrillBattlePanel:OnEnable()
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-		EventManager.Hit(EventId.OpenPanel, PanelId.Hud, self.nType)
+		EventManager.Hit(EventId.OpenPanel, PanelId.Hud, false, false, self.nType)
 		EventManager.Hit(EventId.ClosePanel, PanelId.MainlineFormation)
 		EventManager.Hit(EventId.ClosePanel, PanelId.RegionBossFormation)
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())

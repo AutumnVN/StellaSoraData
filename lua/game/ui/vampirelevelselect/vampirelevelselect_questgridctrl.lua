@@ -54,7 +54,7 @@ function VampireLevelSelect_questGridCtrl:Refresh(mapQuestData, nGroupId)
 		local nCount = mapQuestCfgData[sFieldName2]
 		if 0 < nItemTid then
 			self._mapNode.btnItem[i].gameObject:SetActive(true)
-			self._mapNode.item[i]:SetItem(nItemTid, nil, nCount, nil, false, nil, nil, true)
+			self._mapNode.item[i]:SetItem(nItemTid, nil, nCount, nil, mapQuestData.nStatus == 2, nil, nil, true)
 		else
 			self._mapNode.btnItem[i].gameObject:SetActive(false)
 		end

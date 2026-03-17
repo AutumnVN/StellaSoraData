@@ -119,16 +119,15 @@ function CharEquipmentCtrl:OnEnable()
 		self._mapNode.safeAreaRoot.gameObject:SetActive(true)
 		CS.WwiseAudioManager.Instance:PostEvent("ui_charInfo_equipment_open")
 		self:OnRefreshPanel()
-		if self.nLastIndex and self.tbSlot and self.nLastIndex > 0 and self.tbSlot[self.nLastIndex].bUnlock then
-			bHasLastIndex = true
-			local nIndex = self.nLastIndex
-			local nAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.animRoot, {
-				"CharEquipmentPanel_in"
-			})
-			local ani = function()
-				if not PlayerData.Guide:CheckInGuideGroup(50) then
-					local mapSelect = PlayerData.Equipment:GetEquipmentSelect()
-					if mapSelect and mapSelect.nCharId == self.nCharId then
+		if self.nLastIndex and self.tbSlot and self.nLastIndex > 0 and self.tbSlot[self.nLastIndex].bUnlock and not PlayerData.Guide:CheckInGuideGroup(50) then
+			local mapSelect = PlayerData.Equipment:GetEquipmentSelect()
+			if mapSelect and mapSelect.nCharId == self.nCharId then
+				bHasLastIndex = true
+				do
+					local nAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.animRoot, {
+						"CharEquipmentPanel_in"
+					})
+					local ani = function()
 						local nEquipIndex = 0
 						for k, v in ipairs(self.tbSlot) do
 							if v.nSlotId == mapSelect.nSlotId then
@@ -138,13 +137,11 @@ function CharEquipmentCtrl:OnEnable()
 							end
 						end
 						EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentInfo, self.nCharId, mapSelect.nSlotId, nEquipIndex, mapSelect.nGemIndex)
-					else
-						EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentInfo, self.nCharId, self.tbSlot[nIndex].nSlotId, self.tbSlot[nIndex].nGemIndex)
 					end
+					self:AddTimer(1, nAnimTime, ani, true, true, true)
+					EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
 				end
 			end
-			self:AddTimer(1, nAnimTime, ani, true, true, true)
-			EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
 		end
 	end
 	if not bHasLastIndex then

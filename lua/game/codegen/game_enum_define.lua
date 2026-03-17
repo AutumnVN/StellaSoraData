@@ -1002,7 +1002,11 @@ GameEnum.towerGrowthEffect = {
 	EnterTowerGetRunes = 28,
 	GetExtraRuneLevel = 29,
 	PotentialMaxLvUp = 30,
-	RandomExtraEvent = 31
+	RandomExtraEvent = 31,
+	RemoveDropAssistantRunes = 32,
+	ExtraGetPotentialLvUp = 33,
+	StrengthenPotentialLvUp = 34,
+	StrengthStrengthMachine = 35
 }
 GameEnum.vampireTalentEffect = {
 	ClientEffect = 0,
@@ -1844,7 +1848,8 @@ GameEnum.ArchType = {
 GameEnum.ArchVoiceType = {
 	None = 0,
 	DailyVoice = 1,
-	BattlceVoice = 2
+	BattlceVoice = 2,
+	SkinVoice = 3
 }
 GameEnum.AmmoType = {
 	Main = 0,
@@ -2446,7 +2451,8 @@ GameEnum.activityThemeType = {
 	Christmas_20101 = 5,
 	Miracle_10103 = 6,
 	Spring_10104 = 7,
-	WinterNight_10105 = 8
+	WinterNight_10105 = 8,
+	Postal_10106 = 9
 }
 GameEnum.ActivityLevelType = {
 	Explore = 1,
@@ -2667,4 +2673,10 @@ GameEnum.AgentQuality = {
 	Quality2 = 2,
 	Quality3 = 3
 }
+GameEnum.TravelerDuelHotValueItemType = {
+	TypeA = 1,
+	TypeB = 2,
+	TypeC = 3
+}
+GameEnum.CharPlotType = {CharPlot = 1, SkinPlot = 2}
 return GameEnum

@@ -65,6 +65,7 @@ function HudMainCtrl:OnEnable()
 	local tbParam = self:GetPanelParam()
 	self.isVampireInstance = tbParam[1] or false
 	local bNotAdventureEnter = tbParam[2]
+	self.jointDrillType = tbParam[3]
 	if not bNotAdventureEnter then
 		self._mapNode.BattleTarget.gameObject:SetActive(true)
 	end

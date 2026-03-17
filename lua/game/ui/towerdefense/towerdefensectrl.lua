@@ -341,9 +341,11 @@ function TowerDefenseCtrl:SetSlowSpeed(bSlowSpeed)
 	self.bSlowSpeedUp = bSlowSpeed
 	if self.bSlowSpeedUp then
 		CS.AdventureModuleHelper.TowerDefense_SetTimeScale(10)
+		NovaAPI.DispatchEventWithData("TOWERDEFENSE_TIMESCALE_CHANGED", nil, {1})
 		WwiseAudioMgr:PostEvent("mode_TD_slowDown_setState")
 	else
 		self:SetTimeScale(self.bSpeedUp)
+		NovaAPI.DispatchEventWithData("TOWERDEFENSE_TIMESCALE_CHANGED", nil, {0})
 	end
 end
 function TowerDefenseCtrl:SetCardParent(go_card, go_parent, bDoMove, bIsActive)
@@ -470,8 +472,8 @@ function TowerDefenseCtrl:RefreshBackupCard()
 		self:HideBackupCard(i)
 	end
 	if 3 < #self.tbCharacterId then
-		for i = 3, #self.tbCharacterId do
-			self:ShowBackupCard(i, self.tbCharacterId[i])
+		for i = 4, #self.tbCharacterId do
+			self:ShowBackupCard(i - 3, self.tbCharacterId[i])
 		end
 	end
 end
@@ -938,7 +940,7 @@ function TowerDefenseCtrl:OnEvent_FinishGame(bResult)
 				bResult = result
 			})
 		end
-		EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, bResult, sLevelName, tbTarget, cb, msgData)
+		EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, bResult, sLevelName, tbTarget, cb, msgData, star)
 	end
 	self.TowerDefenseData:RequestFinishLevel(self.nLevelId, bResult, self.nCurHp, requestCb)
 	if bResult then
@@ -1072,7 +1074,7 @@ function TowerDefenseCtrl:OnEvent_Exit()
 					bResult = false
 				})
 			end
-			EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, false, sLevelName, tbTarget, cb, nil)
+			EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, false, sLevelName, tbTarget, cb, nil, 0)
 		end
 		self.TowerDefenseData:RequestFinishLevel(self.nLevelId, false, 0, requestCb)
 	end
@@ -1225,7 +1227,7 @@ function TowerDefenseCtrl:OnEvent_ActivityTowerDefenseLevelSettleFailed()
 				bResult = false
 			})
 		end
-		EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, false, sLevelName, tbTarget, cb, msgData)
+		EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, false, sLevelName, tbTarget, cb, msgData, 0)
 	end
 	self.TowerDefenseData:RequestFinishLevelFailed(self.nLevelId, 0, requestCb)
 end

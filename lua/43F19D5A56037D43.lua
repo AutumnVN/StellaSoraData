@@ -194,6 +194,7 @@ function ActivityShopCtrl:RefreshNPCId()
 end
 function ActivityShopCtrl:FadeIn(bPlayFadeIn)
 	self._mapNode.aniRoot:Play("ShopPanel_in")
+	EventManager.Hit(EventId.SetTransition)
 end
 function ActivityShopCtrl:Awake()
 	self.nCurTog = nil

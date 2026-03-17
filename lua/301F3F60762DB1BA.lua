@@ -88,7 +88,6 @@ function BreakOutPlayCtrl:Awake()
 	self.LevelData = self.BreakOutData:GetDetailLevelDataById(self.nLevelId)
 	self.FloorData = self.BreakOutData:GetDetailFloorDataById(self.nLevelId)
 	self.nDicId = self.FloorData.DictionaryID
-	self.InitialHeart = self.FloorData.Heart
 	self.bHasDic = self.BreakOutData.BreakOutLevelData:GetFloorHasDic(self.FloorData.Id)
 	self.tbGamepadUINode = self:GetGamepadUINode()
 	GamepadUIManager.EnableGamepadUI("BreakOutPlayCtrl", {})
@@ -97,7 +96,6 @@ end
 function BreakOutPlayCtrl:OnEnable()
 	self:InitState()
 	self.nEndTime = 0.0
-	self.nRemainHp = self.InitialHeart
 	self.AllHeart = 10
 	self.bInLockState = false
 	self.Canvas = self.gameObject:GetComponent("CanvasGroup")
@@ -123,6 +121,8 @@ function BreakOutPlayCtrl:InitState()
 	for i = self.MaxHeartNumber + 1, #self._mapNode.heartItem do
 		self._mapNode.heartItem[i]:SetActive(false)
 	end
+	self.InitialHeart = self.FloorData.Heart
+	self.nRemainHp = self.InitialHeart
 	self.nTargetScore = self.FloorData.Score
 	self.nCurrentScore = 0
 	self.nKillMonster = 0

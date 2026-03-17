@@ -1,9 +1,7 @@
 local JointDrillLevelData_2 = class("JointDrillLevelData_2")
-local FP = CS.TrueSync.FP
-local PB = require("pb")
 local AdventureModuleHelper = CS.AdventureModuleHelper
-local TimerManager = require("GameCore.Timer.TimerManager")
 local LocalData = require("GameCore.Data.LocalData")
+local ModuleManager = require("GameCore.Module.ModuleManager")
 local mapEventConfig = {
 	LoadLevelRefresh = "OnEvent_LoadLevelRefresh",
 	AdventureModuleEnter = "OnEvent_AdventureModuleEnter",
@@ -322,7 +320,7 @@ function JointDrillLevelData_2:OnEvent_MonsterSpawn(nBossId, nCfgId, nIndex, nHp
 		self.initRecord = sRecord
 	end
 	NovaAPI.DispatchEventWithData("JointDrill_CacheTempData_Start", nil, {
-		true,
+		false,
 		true,
 		true,
 		false,
@@ -376,6 +374,11 @@ function JointDrillLevelData_2:OnEvent_BattleLvsToggle()
 	EventManager.Hit("ResetBossHUD")
 end
 function JointDrillLevelData_2:OnEvent_UnloadComplete()
+	if self.bInErrorResult then
+		NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
+		self.bInErrorResult = false
+		return
+	end
 	if self.bInResult == true then
 		return
 	end
@@ -452,7 +455,11 @@ function JointDrillLevelData_2:OnEvent_JointDrillChallengeFinishError()
 		if self.parent:CheckJointDrillInBattle() then
 			self.parent:JointDrillGameOver(nil, true)
 		else
-			self:JointDrillFail(AllEnum.JointDrillResultType.ChallengeEnd, nil, self.nCurLevel)
+			local bInAdventure = ModuleManager.GetIsAdventure()
+			if bInAdventure then
+				self.bInErrorResult = true
+				AdventureModuleHelper.LevelStateChanged(true, 0, true)
+			end
 			local wait = function()
 				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 				self.parent:SetResetLevelSelect(true)

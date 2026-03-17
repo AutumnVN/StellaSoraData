@@ -13,6 +13,9 @@ ShopGoodsItemCtrl._mapNodeConfig = {
 	txtName = {sComponentName = "TMP_Text"},
 	imgIcon = {sComponentName = "Image"},
 	imgElement = {sComponentName = "Image"},
+	goStar = {
+		sCtrlName = "Game.UI.TemplateEx.TemplateStarCtrl"
+	},
 	txtCount = {sComponentName = "TMP_Text"},
 	imgCoin = {sComponentName = "Image"},
 	goOrigin = {},
@@ -33,12 +36,20 @@ function ShopGoodsItemCtrl:Refresh(mapData)
 end
 function ShopGoodsItemCtrl:RefreshInfo(mapData)
 	local mapCfg = ConfigTable.GetData_Item(mapData.nItemId)
+	if not mapCfg then
+		return
+	end
 	NovaAPI.SetTMPText(self._mapNode.txtName, mapData.sName)
 	if mapCfg.Type == GameEnum.itemType.Disc then
 		self:SetPngSprite(self._mapNode.imgIcon, mapCfg.Icon .. AllEnum.OutfitIconSurfix.Item)
 		self._mapNode.imgElement.gameObject:SetActive(true)
+		self._mapNode.goStar.gameObject:SetActive(true)
 		local mapDiscCfgData = ConfigTable.GetData("Disc", mapData.nItemId)
-		self:SetAtlasSprite(self._mapNode.imgElement, "12_rare", AllEnum.Star_Element[mapDiscCfgData.EET].icon)
+		if mapDiscCfgData then
+			self:SetAtlasSprite(self._mapNode.imgElement, "12_rare", AllEnum.Star_Element[mapDiscCfgData.EET].icon)
+		end
+		local nStar = 6 - mapCfg.Rarity
+		self._mapNode.goStar:SetStar(nStar, nStar)
 		local bMax = false
 		local mapDisc = PlayerData.Disc:GetDiscById(mapData.nItemId)
 		if mapDisc then
@@ -55,6 +66,7 @@ function ShopGoodsItemCtrl:RefreshInfo(mapData)
 	else
 		self:SetPngSprite(self._mapNode.imgIcon, mapCfg.Icon)
 		self._mapNode.imgElement.gameObject:SetActive(false)
+		self._mapNode.goStar.gameObject:SetActive(false)
 		NovaAPI.SetTMPText(self._mapNode.txtRestock, ConfigTable.GetUIText("Shop_Restock"))
 	end
 	local sPath = AllEnum.FrameType_New.ShopGoods .. AllEnum.FrameColor_New[mapCfg.Rarity]

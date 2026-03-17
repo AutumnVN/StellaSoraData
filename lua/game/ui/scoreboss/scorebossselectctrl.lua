@@ -82,6 +82,7 @@ ScoreBossSelectCtrl._mapNodeConfig = {
 		sLanguageId = "ScoreBoss_Settlement_Btn"
 	},
 	info_ImgBoss = {sComponentName = "Image"},
+	info_ImgBoss_extra = {sComponentName = "Image"},
 	imgLevelInfo = {sComponentName = "Image"},
 	info_BossName = {sComponentName = "TMP_Text"},
 	rtElements = {sComponentName = "Transform"},
@@ -377,6 +378,12 @@ function ScoreBossSelectCtrl:SetBossInfo(levelId, isPlayAin)
 	local Adjust = ConfigTable.GetData("MonsterValueTempleteAdjust", mData.Templete)
 	NovaAPI.SetTMPText(self._mapNode.info_BossName, mManual.Name)
 	self:SetPngSprite(self._mapNode.info_ImgBoss, bossLevelData.Image)
+	if bossLevelData.ExtraImage ~= nil and bossLevelData.ExtraImage ~= "" then
+		self:SetPngSprite(self._mapNode.info_ImgBoss_extra, bossLevelData.ExtraImage)
+		self._mapNode.info_ImgBoss_extra.gameObject:SetActive(true)
+	else
+		self._mapNode.info_ImgBoss_extra.gameObject:SetActive(false)
+	end
 	self:SetPngSprite(self._mapNode.imgLevelInfo, bossLevelData.Episode)
 	self:SetPngSprite(self._mapNode.InfoBg, bossLevelData.BG)
 	for i = 1, self._mapNode.rtElements.childCount do
@@ -471,7 +478,11 @@ function ScoreBossSelectCtrl:SetBossInfo(levelId, isPlayAin)
 		end
 	end
 	if isPlayAin then
-		self.infoAni:Play("ScoreBossSelect_Info_in")
+		if bossLevelData.ExtraImageAni ~= nil and bossLevelData.ExtraImageAni ~= "" then
+			self.infoAni:Play(bossLevelData.ExtraImageAni)
+		else
+			self.infoAni:Play("ScoreBossSelect_Info_in")
+		end
 		EventManager.Hit(EventId.TemporaryBlockInput, 1.5)
 		self:AddTimer(1, 1.667, function()
 			self._mapNode.SCBossList:SetActive(false)

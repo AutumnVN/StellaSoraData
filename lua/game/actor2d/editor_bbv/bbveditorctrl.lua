@@ -323,6 +323,23 @@ function BBVEditorCtrl:onEvent_SetTextTime(sVoResName)
 		self.mapAllData.text[sKey][1] = NovaAPI.GetInputFieldText(self._mapNode.ipt_SrcContent)
 		self.mapAllData.time[sKey][1] = BubbleVoiceManager.GetVoResLen(sVoResName)
 	end
+	for _, mapData in pairs(self.mapAllData) do
+		for i, sKey in ipairs(self.tbCheckOrder) do
+			if mapData[sKey] == nil then
+				self.mapAllData[_][sKey] = _ == "time" and {
+					0,
+					0,
+					0,
+					0
+				} or {
+					"",
+					"",
+					"",
+					""
+				}
+			end
+		end
+	end
 	for i = nCount, 1, -1 do
 		local sKey = self.tbCheckOrder[i]
 		local bTextFB = false

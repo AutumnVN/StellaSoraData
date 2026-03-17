@@ -80,6 +80,7 @@ function CharPlotCtrl:Awake()
 	self.plotData = tbParam[1]
 	self.tbReward = tbParam[2]
 	self.curSelectIndex = tbParam[3]
+	self.curPlotIndex = tbParam[4]
 end
 function CharPlotCtrl:OnEnable()
 	self._mapNode.got_fullscreen_blur_blue:SetActive(true)
@@ -89,7 +90,17 @@ function CharPlotCtrl:OnEnable()
 	local rewardData = self.tbReward[self.curSelectIndex]
 	NovaAPI.SetTMPText(self._mapNode.txtmainLineAvgLvName, data.Name)
 	NovaAPI.SetTMPText(self._mapNode.txtmainLineAvgLvDes, data.Desc)
-	NovaAPI.SetTMPText(self._mapNode.txtmainLineAvgLvNum, orderedFormat(ConfigTable.GetUIText("Plot_Index"), self.curSelectIndex))
+	if data.PlotType == GameEnum.CharPlotType.CharPlot then
+		NovaAPI.SetTMPText(self._mapNode.txtmainLineAvgLvNum, orderedFormat(ConfigTable.GetUIText("Plot_Index"), self.curPlotIndex))
+	elseif data.PlotType == GameEnum.CharPlotType.SkinPlot then
+		local nSkinId = data.UnlockSkinId
+		local mapSkinCfg = ConfigTable.GetData("CharacterSkin", nSkinId)
+		if mapSkinCfg ~= nil then
+			NovaAPI.SetTMPText(self._mapNode.txtmainLineAvgLvNum, orderedFormat(ConfigTable.GetUIText("Skin_Plot_Index"), mapSkinCfg.Name, self.curPlotIndex))
+		else
+			NovaAPI.SetTMPText(self._mapNode.txtmainLineAvgLvNum, orderedFormat(ConfigTable.GetUIText("Plot_Index"), self.curPlotIndex))
+		end
+	end
 	self:SetPngSprite(self._mapNode.imgAVGLevelIcon, data.PicSource)
 	self._mapNode.tcAvgItem1:SetItem(rewardData.nId, nil, nil, nil, rewardData.bReceive, not rewardData.bReceive)
 end

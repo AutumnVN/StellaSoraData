@@ -81,7 +81,11 @@ function BattlePassPremiumBuyCtrl:OpenPanel(nCurType, nSeasonId, nVersion)
 	self.sComplementaryProductId = mapBattlePassCfgData.ComplementaryProductId
 	NovaAPI.SetTMPText(self._mapNode.txtBtnbtnBuyPremium, tostring(mapBattlePassCfgData.PremiumShowPrice))
 	local nSPremiumPrice = nCurType == 0 and mapBattlePassCfgData.LuxuryPrice or mapBattlePassCfgData.ComplementaryPrice
-	self:SetPngSprite(self._mapNode.imgBattlePassLogo, "Icon/ArtText/CharSkin_ArtText_" .. mapBattlePassCfgData.Cover)
+	if self.nSeasonId >= 6 then
+		self:SetPngSprite(self._mapNode.imgBattlePassLogo, "Icon/ArtText/CharSkin_ArtText_" .. mapBattlePassCfgData.Cover .. "_lang")
+	else
+		self:SetPngSprite(self._mapNode.imgBattlePassLogo, "Icon/ArtText/CharSkin_ArtText_" .. mapBattlePassCfgData.Cover)
+	end
 	NovaAPI.SetImageNativeSize(self._mapNode.imgBattlePassLogo)
 	local sSPremiumPrice = nCurType == 0 and mapBattlePassCfgData.LuxuryShowPrice or mapBattlePassCfgData.ComplementaryShowPrice
 	NovaAPI.SetTMPText(self._mapNode.txtBtnbtnBuySPremium, tostring(sSPremiumPrice))

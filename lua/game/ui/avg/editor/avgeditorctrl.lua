@@ -283,10 +283,6 @@ function AvgEditorCtrl:Awake()
 	self.tbFxName = nil
 	self:PrepareConstCmdParamOptions()
 	VISUALIZED_EDIT_CMD = false
-	local _goLogView = GameObject.Find("==== UI ROOT ====/---- UI OVERLAY ----/_InGameLogView")
-	if _goLogView ~= nil and _goLogView:IsNull() == false then
-		_goLogView:SetActive(true)
-	end
 	self._mapNode.btnAutoAdjustData.gameObject:SetActive(ADJUST == true)
 end
 function AvgEditorCtrl:OnEnable()

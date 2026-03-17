@@ -237,27 +237,28 @@ function VampireLevelSelect_levelSelectCtrl:NewSeason()
 	NovaAPI.SetTMPText(self._mapNode.TMPWeekScore, string.formatnumberthousands(PlayerData.VampireSurvivor:GetCurScore()))
 end
 function VampireLevelSelect_levelSelectCtrl:CheckHardUnlock(nHard)
+	local bUnLock, param1, param2
 	if nHard == 1 then
 		for _, mapData in ipairs(self.tbNormalLevel) do
-			local bUnLock, _, _ = PlayerData.VampireSurvivor:CheckLevelUnlock(mapData.Id)
+			bUnLock, param1, param2 = PlayerData.VampireSurvivor:CheckLevelUnlock(mapData.Id)
 			if bUnLock then
-				return true
+				return true, 0, 0
 			end
 		end
 	elseif nHard == 2 then
 		for _, mapData in ipairs(self.tbHardLevel) do
-			local bUnLock, _, _ = PlayerData.VampireSurvivor:CheckLevelUnlock(mapData.Id)
+			bUnLock, param1, param2 = PlayerData.VampireSurvivor:CheckLevelUnlock(mapData.Id)
 			if bUnLock then
-				return true
+				return true, 0, 0
 			end
 		end
 	elseif self.mapSeasonLevel ~= nil then
-		local bUnLock, _, _ = PlayerData.VampireSurvivor:CheckLevelUnlock(self.mapSeasonLevel.Id)
+		bUnLock, param1, param2 = PlayerData.VampireSurvivor:CheckLevelUnlock(self.mapSeasonLevel.Id)
 		if bUnLock then
-			return true
+			return true, 0, 0
 		end
 	end
-	return false
+	return false, param1, param2
 end
 function VampireLevelSelect_levelSelectCtrl:OnGridRefresh(goGrid, gridIndex)
 	if self.mapGrid[goGrid] == nil then
@@ -323,7 +324,8 @@ end
 function VampireLevelSelect_levelSelectCtrl:OnRelease()
 end
 function VampireLevelSelect_levelSelectCtrl:OnBtnClick_Tog(btn, nIdx)
-	if not self:CheckHardUnlock(nIdx) then
+	local bUnLock, param1, param2 = self:CheckHardUnlock(nIdx)
+	if not bUnLock then
 		local sTip = ConfigTable.GetUIText("Vampire_Unlock")
 		if nIdx == 2 then
 			sTip = ConfigTable.GetUIText("Vampire_UnlockTipNormal")
@@ -331,8 +333,9 @@ function VampireLevelSelect_levelSelectCtrl:OnBtnClick_Tog(btn, nIdx)
 			local nCurSeasonId = PlayerData.VampireSurvivor:GetCurSeason()
 			if nCurSeasonId == nil or nCurSeasonId == 0 then
 				sTip = ConfigTable.GetUIText("Vampire_NotOpenHint")
-			else
-				sTip = ConfigTable.GetUIText("Vampire_UnlockTipHard")
+			elseif param1 ~= nil and 0 < param1 then
+				local sKey = "VampireTalent_LockCond" .. param1
+				sTip = orderedFormat(ConfigTable.GetUIText(sKey), param2)
 			end
 		end
 		EventManager.Hit(EventId.OpenMessageBox, sTip)

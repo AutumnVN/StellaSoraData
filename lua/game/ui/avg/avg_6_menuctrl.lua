@@ -158,7 +158,7 @@ function Avg_6_MenuCtrl:Awake()
 	self:SetAutoLineWrap(true)
 	self.tbSpeed = {
 		1,
-		8,
+		4,
 		16
 	}
 	if AVG_EDITOR == true then

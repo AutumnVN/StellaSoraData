@@ -131,19 +131,6 @@ function RedDotManager.RefreshRedDotShow(sKey, param)
 		end
 	end
 end
-function RedDotManager.PrintRedDot(sKey, param, bParent, bLeaf)
-	if not DEBUG_OPEN then
-		return
-	end
-	local bCheck, sNodeKey = RedDotManager.GetNodeKey(sKey, param)
-	if not bCheck then
-		return
-	end
-	local node = RedDotManager.GetNode(sNodeKey)
-	if nil ~= node then
-		node:PrintRedDot(bParent, bLeaf)
-	end
-end
 function RedDotManager.GetNodeKey(sKey, param)
 	local sNodeKey = ""
 	local bCheck = true
@@ -206,5 +193,41 @@ function RedDotManager.ParseKey(sNodeKey)
 	end
 	mapKeyList[sNodeKey] = tbKeyList
 	return tbKeyList
+end
+function RedDotManager.OpenGMDebug(bOpen)
+	DEBUG_OPEN = bOpen
+end
+function RedDotManager.PrintRedDot(sKey, param, bLeaf)
+	if not DEBUG_OPEN then
+		return
+	end
+	local tbNode = {}
+	local bCheck, sNodeKey = RedDotManager.GetNodeKey(sKey, param)
+	if not bCheck then
+		return
+	end
+	local node = RedDotManager.GetNode(sNodeKey)
+	if nil ~= node then
+		node:PrintRedDot(bLeaf, tbNode)
+	end
+	if tbNode ~= nil and #tbNode ~= 0 then
+		for k, v in ipairs(tbNode) do
+			local tbKey = {}
+			table.insert(tbKey, v.sNodeKey)
+			if bLeaf then
+				v:GetParentKey(tbKey)
+			end
+			local sKey = ""
+			for i = #tbKey, 1, -1 do
+				if i == #tbKey then
+					sKey = tbKey[i]
+				else
+					sKey = sKey .. "->" .. tbKey[i]
+				end
+			end
+			local bindObjCount = v:GetBindObjCount()
+			printError(string.format("[RedDot] key = %s, redDotCount = %s, bindObjCount = %s", sKey, v.nRedDotCount, bindObjCount))
+		end
+	end
 end
 return RedDotManager

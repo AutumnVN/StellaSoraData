@@ -132,7 +132,6 @@ function WinterNightStoryCtrl:OnRefreshGrid(grid, index)
 	goNotOpen.gameObject:SetActive(not bOpen)
 	imgBattleTitleBg.gameObject:SetActive(avgcfg.IsBattle and isUnlock and bOpen)
 	imgStoryTitleBg.gameObject:SetActive(not avgcfg.IsBattle and isUnlock and bOpen)
-	imgBg2.gameObject:SetActive(self.curIndex == gridIndex and isUnlock and bOpen)
 	if avgcfg.IsBattle == true then
 		local txtPlot = imgBattleTitleBg:Find("txtPlot"):GetComponent("TMP_Text")
 		NovaAPI.SetTMPText(txtPlot, ConfigTable.GetUIText("SelectTeam_StartBattle"))
@@ -140,6 +139,7 @@ function WinterNightStoryCtrl:OnRefreshGrid(grid, index)
 		local txtPlot = imgStoryTitleBg:Find("txtPlot"):GetComponent("TMP_Text")
 		NovaAPI.SetTMPText(txtPlot, ConfigTable.GetUIText("TowerDef_Story"))
 	end
+	imgBg2.gameObject:SetActive(self.curIndex == gridIndex and isUnlock and bOpen)
 	if not bOpen then
 		local strTime = self:GetRemainTimeStr(nOpenTime, avgcfg.DayOpen)
 		if self.tbGridTimer[goInstanceID] ~= nil then

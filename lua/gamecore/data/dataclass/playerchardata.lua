@@ -681,6 +681,9 @@ function PlayerCharData:GetCharPlotDataById(charId)
 	return CacheTable.GetData("_Plot", charId)
 end
 function PlayerCharData:IsPlotUnlock(plotId, charId)
+	if not self:CheckCharUnlock(charId) then
+		return true, ""
+	end
 	local data = ConfigTable.GetData("Plot", plotId)
 	local bLock = false
 	local locktxt = ""
@@ -711,7 +714,12 @@ function PlayerCharData:IsPlotUnlock(plotId, charId)
 		end
 	end
 	if not bLock then
-		bLock = data.UnlockAffinityLevel > self:GetCharAffinityData(charId).Level
+		local mapAffinityData = self:GetCharAffinityData(charId)
+		if mapAffinityData ~= nil then
+			bLock = data.UnlockAffinityLevel > mapAffinityData.Level
+		else
+			bLock = true
+		end
 		if bLock then
 			locktxt = orderedFormat(ConfigTable.GetUIText("Affinity_UnLock_Level") or "", data.UnlockAffinityLevel)
 		end
@@ -720,18 +728,46 @@ function PlayerCharData:IsPlotUnlock(plotId, charId)
 		bLock = not self:IsCharPlotFinish(charId, data.PrePlot)
 		if bLock then
 			local nIndex = 0
+			local nType = data.PlotType
+			local nParam = 0
+			if nType == GameEnum.CharPlotType.SkinPlot then
+				nParam = data.UnlockSkinId
+			end
 			local plotData = self:GetCharPlotDataById(charId)
 			table.sort(plotData, function(a, b)
-				return a.Id < b.Id
+				if a.PlotType == b.PlotType then
+					return a.Id < b.Id
+				end
+				return a.PlotType < b.PlotType
 			end)
+			local nCurIndex = 0
 			for k, v in ipairs(plotData) do
+				if v.PlotType == nType then
+					if v.PlotType == GameEnum.CharPlotType.SkinPlot then
+						if v.UnlockSkinId == nParam then
+							nCurIndex = nCurIndex + 1
+						end
+					else
+						nCurIndex = nCurIndex + 1
+					end
+				end
 				if v.Id == data.PrePlot then
-					nIndex = k
+					nIndex = nCurIndex
 					break
 				end
 			end
-			locktxt = orderedFormat(ConfigTable.GetUIText("Affinity_UnLock_PrePlot") or "", nIndex)
+			if nType == GameEnum.CharPlotType.CharPlot then
+				locktxt = orderedFormat(ConfigTable.GetUIText("Affinity_UnLock_PrePlot") or "", nIndex)
+			elseif nType == GameEnum.CharPlotType.SkinPlot then
+				local mapSkinCfg = ConfigTable.GetData("CharacterSkin", nParam)
+				if mapSkinCfg ~= nil then
+					locktxt = orderedFormat(ConfigTable.GetUIText("Affinity_UnLock_PrePlot_Skin") or "", mapSkinCfg.Name, nIndex)
+				end
+			end
 		end
+	end
+	if not bLock and data.UnlockSkinId ~= nil and data.UnlockSkinId ~= 0 then
+		bLock = not PlayerData.CharSkin:CheckSkinUnlock(data.UnlockSkinId)
 	end
 	return bLock, locktxt
 end
@@ -1960,6 +1996,30 @@ function PlayerCharData:UpdateCharVoiceReddot(nCharId, bReset, lastLevel, curLev
 					}, true)
 				end
 				if nPlotId ~= nil and nPlotId == mapData.UnlockPlot then
+					RedDotManager.SetValid(RedDotDefine.Role_Record_Voice_Item, {
+						nCharId,
+						mapData.Id
+					}, true)
+				end
+			end
+		end
+	end
+	ForEachTableLine(DataTable.CharacterArchiveVoice, foreachCharacterArchiveVoice)
+end
+function PlayerCharData:UpdateCharSkinVoiceReddot(bReset, nCharId, nSkinId)
+	local mapData = self:GetCharAffinityData(nCharId)
+	local curLevel = mapData ~= nil and mapData.Level or 0
+	local foreachCharacterArchiveVoice = function(mapData)
+		if mapData.CharacterId == nCharId and mapData.ArchVoiceType == GameEnum.ArchVoiceType.SkinVoice and mapData.UnlockSkinId == nSkinId then
+			if bReset then
+				RedDotManager.SetValid(RedDotDefine.Role_Record_Voice_Item, {
+					nCharId,
+					mapData.Id
+				}, false)
+			else
+				local bAffinityLevel = mapData.UnlockAffinityLevel > 0 and mapData.UnlockAffinityLevel <= curLevel or mapData.UnlockAffinityLevel == 0
+				local bPlot = 0 < mapData.UnlockPlot and mapData.UnlockAffinityLevel <= curLevel or mapData.UnlockPlot == 0
+				if bAffinityLevel and bPlot then
 					RedDotManager.SetValid(RedDotDefine.Role_Record_Voice_Item, {
 						nCharId,
 						mapData.Id

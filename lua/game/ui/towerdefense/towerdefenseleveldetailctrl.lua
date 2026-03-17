@@ -76,6 +76,18 @@ TowerDefenseLevelDetailCtrl._mapNodeConfig = {
 	teamCtrl = {
 		sNodeName = "TowerDefenseTeamPanel",
 		sCtrlName = "Game.UI.TowerDefense.TowerDefenseTeamCtrl"
+	},
+	btn_mapInfo = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_MiniMap"
+	},
+	txt_mapInfo = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "TowerDef_MapInfo"
+	},
+	miniMapCtrl = {
+		sNodeName = "TowerdefenseMiniMapPanel",
+		sCtrlName = "Game.UI.TowerDefense.TowerDefenseMiniMapCtrl"
 	}
 }
 TowerDefenseLevelDetailCtrl._mapEventConfig = {
@@ -94,6 +106,7 @@ function TowerDefenseLevelDetailCtrl:Awake()
 	self.bInEditorPanel = false
 	self.TowerDefenseData = PlayerData.Activity:GetActivityDataById(self.nActId)
 	self._mapNode.teamCtrl.gameObject:SetActive(false)
+	self._mapNode.miniMapCtrl:Close()
 	self:UpdateData()
 end
 function TowerDefenseLevelDetailCtrl:OnEnable()
@@ -106,6 +119,7 @@ function TowerDefenseLevelDetailCtrl:UpdateData()
 	self:UpdateQuestInfo()
 	self:UpdateItem()
 	self:InitTeamData()
+	self._mapNode.miniMapCtrl:SetData(self.levelConfig.FloorId)
 end
 function TowerDefenseLevelDetailCtrl:UpdateQuestInfo()
 	local levelData = self.TowerDefenseData:GetLevelData(self.nLevelId)
@@ -476,5 +490,8 @@ function TowerDefenseLevelDetailCtrl:OnEvent_Go()
 		self._mapNode.TopBar.gameObject:SetActive(true)
 	end
 	self:GoToPlay(cb)
+end
+function TowerDefenseLevelDetailCtrl:OnBtnClick_MiniMap()
+	self._mapNode.miniMapCtrl:Open()
 end
 return TowerDefenseLevelDetailCtrl

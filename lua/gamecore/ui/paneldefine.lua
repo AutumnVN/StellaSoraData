@@ -307,7 +307,12 @@ local PanelDefine = {
 	[PanelId.WinterNightStory] = "Game.UI.ActivityTheme.10105.Story.WinterNightStoryPanel",
 	[PanelId.Task_10105] = "Game.UI.ActivityTheme.10105.Task.WinterNightTaskPanel",
 	[PanelId.Shop_10105] = "Game.UI.ActivityTheme.10105.Shop.ActivityShopPanel",
-	[PanelId.ActivityLevelsSelectPanel_10105] = "Game.UI.ActivityTheme.10105.ActivityLevels.ActivityLevelsSelectPanel"
+	[PanelId.Shop_10106] = "Game.UI.ActivityTheme.10106.Shop.ActivityShopPanel",
+	[PanelId.ActivityLevelsSelectPanel_10105] = "Game.UI.ActivityTheme.10105.ActivityLevels.ActivityLevelsSelectPanel",
+	[PanelId.ActivityLevelsSelectPanel_10106] = "Game.UI.ActivityTheme.10106.ActivityLevels.ActivityLevelsSelectPanel",
+	[PanelId.Task_10106] = "Game.UI.ActivityTheme.10106.Task.PostalTaskPanel",
+	[PanelId.PostalThemePanel] = "Game.UI.ActivityTheme.10106.PostalThemePanel",
+	[PanelId.PostalStory] = "Game.UI.ActivityTheme.10106.Story.PostalStoryPanel"
 }
 if NovaAPI.GetClientChannel() == AllEnum.ChannelName.BanShu then
 end

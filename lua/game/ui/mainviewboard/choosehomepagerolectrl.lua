@@ -222,7 +222,7 @@ function ChooseHomePageRoleCtrl:RefreshSelectInfo()
 				self.tbTmpSelectCGType[charId] = AllEnum.Actor2DType.Normal
 			end
 			self:SetBtnChangeState()
-			PlayerVoiceData:PlayBoardSelectVoice(charId)
+			PlayerVoiceData:PlayBoardSelectVoice(charId, skinId)
 			self.nLastSelectCharId = charId
 		end
 	elseif self.nSelectType == AllEnum.HandBookTab.Disc then
