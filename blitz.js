@@ -21,6 +21,8 @@ const { MONSTER_EPIC_TYPE, formatEffectType, collectParamsFrom, resolveParam } =
 const blitz = {};
 
 for (const id in SCOREBOSSLEVEL) {
+    if (id === '1') continue;
+
     const scoreBossLevel = SCOREBOSSLEVEL[id];
     const scoreGetSwitch = SCOREGETSWITCH[`${scoreBossLevel.ScoreGetSwitchGroup}001`];
     const monster = MONSTER[scoreBossLevel.MonsterId];
@@ -44,6 +46,8 @@ for (const id in SCOREBOSSLEVEL) {
                 name: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility]?.Name],
                 desc: getScoreBossAbilityDesc(scoreBossLevel.ScoreBossAbility),
                 icon: SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility]?.IconSource?.split('/')?.pop(),
+                effectType: getBlitzEffectType(scoreBossLevel.MonsterId),
+                buffIcon: getBlitzBuffIcon(scoreBossLevel.MonsterId),
             }
         ],
         weakTo: monsterValueTemplateAdjust?.WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
@@ -122,4 +126,36 @@ function getScoreBossAbilityDesc(id) {
     });
 
     return result;
+}
+
+function getBlitzEffectType(monsterId) {
+    const effectIds = Object.keys(EFFECTVALUE).filter(effectId => filterBuff(effectId, monsterId));
+    const effectTypes = [];
+
+    for (const effectId of effectIds) {
+        let type = EFFECTVALUE[effectId].EffectTypeFirstSubtype;
+        if (!type) type = EFFECTVALUE[EFFECTVALUE[effectId].EffectTypeParam1]?.EffectTypeFirstSubtype;
+        const paramType = EFFECTVALUE[effectId].EffectTypeSecondSubtype;
+
+        effectTypes.push(formatEffectType(effectId, type, paramType));
+    }
+
+    return [...new Set(effectTypes)];
+}
+
+function getBlitzBuffIcon(monsterId) {
+    const buffIds = Object.keys(BUFF).filter(buffId => filterBuff(buffId, monsterId));
+    const buffIcons = [];
+
+    for (const buffId of buffIds) {
+        const icon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon'
+
+        buffIcons.push(icon);
+    }
+
+    return [...new Set(buffIcons)];
+}
+
+function filterBuff(buffId, monsterId) {
+    return buffId.startsWith(monsterId) || (monsterId === 6310100 && buffId.startsWith('63100100'))
 }
