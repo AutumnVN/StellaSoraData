@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v5
+      with:
+        fetch-depth: 0
 
     - uses: actions/setup-node@v6
       with:
@@ -29,13 +31,17 @@ jobs:
         git remote add upstream https://github.com/Hiro420/StellaSoraData || true
 
         git fetch upstream
+        git fetch --all --prune
+        echo "Looking up latest EN commit on upstream/main..."
         EN_COMMIT=$(git log upstream/main --grep='EN' -i -n 1 --pretty=format:'%H' || true)
         echo "EN_COMMIT=${EN_COMMIT:-<none>}"
         if [ -n "$EN_COMMIT" ]; then
           if git merge-base --is-ancestor "$EN_COMMIT" HEAD; then
-            echo "Local already contains upstream EN commit $EN_COMMIT, skipping merge"
+            echo "Local already contains upstream EN commit $EN_COMMIT, skipping sync"
             exit 0
           fi
+        else
+          echo "No EN commit found on upstream/main; continuing sync"
         fi
 
         git merge --allow-unrelated-histories -X theirs --no-edit upstream/main || true
