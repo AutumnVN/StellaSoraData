@@ -463,7 +463,7 @@ function collectParamsFrom(obj) {
 function collectUnusedParamsFrom(obj, lang) {
     if (!obj) return [];
 
-    const desc = lang[obj.Desc];
+    const desc = lang[obj.Desc] || '';
 
     const paramKeys = Object.keys(obj).filter(k => k.match(/^param\d+$/i)).filter(k => !desc.includes(`&${k}&`)).filter(k => Object.values(obj).filter(v => v === obj[k]).length === 1).filter(k => obj[k] !== resolveParam([obj[k]])[0]);
 
