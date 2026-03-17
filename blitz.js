@@ -30,7 +30,7 @@ for (const id in SCOREBOSSLEVEL) {
 
     blitz[id] = {
         name: LANG_MONSTERMANUAL[monsterManual?.Name] || `${scoreBossLevel.MonsterId}`,
-        icon: scoreBossLevel.Episode.split('/').pop(),
+        icon: scoreBossLevel.Image.split('/').pop(),
         type: MONSTER_EPIC_TYPE[monster?.EpicLv],
         mechanic: [
             {
@@ -47,16 +47,16 @@ for (const id in SCOREBOSSLEVEL) {
         weakTo: monsterValueTemplateAdjust?.WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
         resistTo: LANG_UITEXT[`UIText.T_Element_Attr_${monsterValueTemplateAdjust?.EET}.1`] || 'None',
         stat: monsterValueTemplate && monsterValueTemplateAdjust && monsterValueTemplateModify.map((modify, index) => {
-            const cumulativeHpFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.HpFix || 0), 0);
-            const cumulativeAtkFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.AtkFix || 0), 0);
-            const cumulativeDefFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.DefFix || 0), 0);
-            const cumulativeToughnessFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (curr.ToughnessFix || 0), 0);
+            const cumulativeHpFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (+curr.HpFix || 0), 0);
+            const cumulativeAtkFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (+curr.AtkFix || 0), 0);
+            const cumulativeDefFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (+curr.DefFix || 0), 0);
+            const cumulativeToughnessFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (+curr.ToughnessFix || 0), 0);
 
             function cumulativeHp(index) {
                 let index2 = 0;
                 let totalHp = 0;
                 while (index2 <= index) {
-                    const cumulativeHpFixOfThisIndex = monsterValueTemplateModify.slice(0, index2 + 1).reduce((sum, curr) => sum + (curr.HpFix || 0), 0);
+                    const cumulativeHpFixOfThisIndex = monsterValueTemplateModify.slice(0, index2 + 1).reduce((sum, curr) => sum + (+curr.HpFix || 0), 0);
                     totalHp += Math.floor((monsterValueTemplate.Hp * (1 + (monsterValueTemplateAdjust.HpRatio / 10000 || 0)) + (cumulativeHpFixOfThisIndex || 0) + (monsterValueTemplateAdjust.HpFix || 0)));
                     index2++;
                 }
