@@ -8,6 +8,7 @@ const MONSTERMANUAL = require('./EN/bin/MonsterManual.json');
 const MONSTERSKIN = require('./EN/bin/MonsterSkin.json');
 const MONSTERVALUETEMPLETE = require('./EN/bin/MonsterValueTemplete.json');
 const MONSTERVALUETEMPLETEADJUST = require('./EN/bin/MonsterValueTempleteAdjust.json');
+const MONSTERATTRIBUTECONTACT = require('./EN/bin/MonsterAttributeContact.json');
 const MONSTERVALUETEMPLETEMODIFY = require('./EN/bin/MonsterValueTempleteModify.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
 const BUFF = require('./EN/bin/Buff.json');
@@ -26,7 +27,8 @@ for (const id in SCOREBOSSLEVEL) {
     const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster?.FAId]?.MonsterManual];
     const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[(monster?.Templete || scoreBossLevel.MonsterId)];
     const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust?.TemplateId)?.[0];
-    const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === +(scoreBossLevel.MonsterId.toString().slice(2, 6)));
+    const monsterAttributeContact = MONSTERATTRIBUTECONTACT[scoreBossLevel.MonsterId];
+    const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === monsterAttributeContact?.GroupId);
 
     blitz[id] = {
         name: LANG_MONSTERMANUAL[monsterManual?.Name] || `${scoreBossLevel.MonsterId}`,
