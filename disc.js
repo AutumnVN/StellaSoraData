@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { ATTR_TYPE, EFFECT_TYPE, collectParamsFrom, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType } = require('./utils');
+const { ATTR_TYPE, EFFECT_TYPE, collectParamsFrom, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, collectUnusedDiscParamsFrom } = require('./utils');
 const DISC = require('./EN/bin/Disc.json');
 const DISCIP = require('./EN/bin/DiscIP.json');
 const DISCTAG = require('./EN/bin/DiscTag.json');
@@ -54,7 +54,7 @@ function getMainSkill(id) {
     return {
         id: +id,
         name: LANG_MAINSKILL[MAINSKILL[key].Name],
-        desc: LANG_MAINSKILL[MAINSKILL[key].Desc],
+        desc: LANG_MAINSKILL[MAINSKILL[key].Desc] + collectUnusedDiscParamsFrom(MAINSKILL[key], LANG_MAINSKILL),
         effectType: getMainSkillEffectTypes(id),
         addAttrType: getMainSkillAddAttrType(id),
         effectData: getMainSkillEffectData(id),
@@ -166,7 +166,7 @@ function getSeconarySkill(id) {
     return {
         id: +id,
         name: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Name],
-        desc: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Desc],
+        desc: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Desc] + collectUnusedDiscParamsFrom(SECONDARYSKILL[key], LANG_SECONDARYSKILL),
         effectType: getSeconarySkillEffectTypes(id),
         addAttrType: getSeconarySkillAddAttrType(id),
         effectData: getSeconarySkillEffectData(id),

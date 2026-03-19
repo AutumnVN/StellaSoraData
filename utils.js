@@ -462,19 +462,19 @@ function collectParamsFrom(obj) {
 }
 
 function collectUnusedParamsFrom(obj, lang) {
-    if (!obj) return [];
+    if (!obj) return '';
 
     const desc = lang[obj.Desc] || '';
 
     const paramKeys = Object.keys(obj).filter(k => k.match(/^param\d+$/i)).filter(k => !desc.includes(`&${k}&`)).filter(k => Object.values(obj).filter(v => v === obj[k]).length === 1).filter(k => obj[k] !== resolveParam([obj[k]])[0]);
 
-    if (paramKeys.length === 0) return [];
+    if (paramKeys.length === 0) return '';
 
     return paramKeys.map(k => `\u000b${k}: &${k}& (${obj[k].split(',')[0]}${obj[k].split(',')[3] ? `,${obj[k].split(',')[3]}` : ''}${obj[k].split(',')[0] === 'HitDamage' ? `,${DAMAGE_TYPE[HITDAMAGE[obj[k].split(',')[2]].DamageType]}` : ''})`).join(' ');
 }
 
 function collectPotentialHiddenParamsFrom(obj) {
-    if (!obj) return [];
+    if (!obj) return '';
 
     const charId = obj.CharId;
     const potId = obj.Id % 100;
@@ -486,6 +486,21 @@ function collectPotentialHiddenParamsFrom(obj) {
         desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage,${DAMAGE_TYPE[HITDAMAGE[id].DamageType]})`).join(' '),
         params: hiddenHitDamageIds.map(id => `HitDamage,DamageNum,${id}`)
     };
+}
+
+function collectUnusedDiscParamsFrom(obj, lang) {
+    if (!obj) return '';
+
+    const desc = lang[obj.Desc] || '';
+
+    const paramKeys = Object.keys(obj).filter(k => k.match(/^param\d+$/i));
+    if (paramKeys.length === 0) return '';
+
+    return paramKeys.map(k => {
+        const index = k.match(/\d+$/)[0];
+        if (desc.includes(`{${index}}`)) return '';
+        return `\u000b${k}: {${index}}`;
+    }).filter(Boolean).join(' ');
 }
 
 function iHateFloatingPointNumber(a, op, b) {
@@ -864,6 +879,7 @@ module.exports = {
     collectParamsFrom,
     collectUnusedParamsFrom,
     collectPotentialHiddenParamsFrom,
+    collectUnusedDiscParamsFrom,
     iHateFloatingPointNumber,
     resolveParam,
     resolveParamsTooltips,
