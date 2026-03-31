@@ -24222,54 +24222,6 @@
             }
         ]
     },
-    "12": {
-        "name": "Refrigerator Hermit Draklisk",
-        "icon": "boss_Tachie_13",
-        "type": "Sentinel",
-        "mechanic": [
-            {
-                "name": "Rippling Flash",
-                "desc": "Gain <color=#ec6d21>675</color> Technique Score each time you avoid taking DMG from a boss's melee skill. Can be triggered up to <color=#ec6d21>8</color> times, for a total of <color=#ec6d21>5400</color> points.",
-                "icon": "Icon_Bossrush_HaSaNa_002"
-            },
-            {
-                "name": "Resonance of Power",
-                "desc": "For every <color=#ec6d21>1</color> skill cast by the Main Trekker, all Support Trekkers' Skill DMG is intensified by <color=#ec6d21>40%</color> for <color=#ec6d21>9</color>s.\nFor every <color=#ec6d21>50</color> times Support Trekkers deal DMG, the Main Trekker's Skill DMG is intensified by <color=#ec6d21>40%</color> for <color=#ec6d21>12</color>s.\nRe-triggering refreshes the duration; effects do not stack.",
-                "icon": "Icon_Bossrush_Teshujizhi_011",
-                "effectType": [],
-                "buffIcon": []
-            }
-        ],
-        "weakTo": [
-            "None"
-        ],
-        "resistTo": "None",
-        "damagePerScore": 10000
-    },
-    "13": {
-        "name": "Refrigerator Hermit Draklisk",
-        "icon": "challenge_boss_01",
-        "type": "Overlord",
-        "mechanic": [
-            {
-                "name": "Bounty: Armor Break",
-                "desc": "Each Resilience Break inflicted on the boss by friendly units grants <color=#ec6d21>400</color> Technique Score, up to <color=#ec6d21>5</color> times, totaling <color=#ec6d21>2000</color> points.",
-                "icon": "Icon_Bossrush_Tongyongdefen_003"
-            },
-            {
-                "name": "!NONEED!",
-                "desc": "None",
-                "icon": "Icon_Bossrush_Teshujizhi_001",
-                "effectType": [],
-                "buffIcon": []
-            }
-        ],
-        "weakTo": [
-            "None"
-        ],
-        "resistTo": "None",
-        "damagePerScore": 10000
-    },
     "14": {
         "name": "Hazana",
         "icon": "boss_Tachie_13",

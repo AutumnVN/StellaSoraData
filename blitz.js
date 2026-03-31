@@ -21,9 +21,9 @@ const { MONSTER_EPIC_TYPE, formatEffectType, collectParamsFrom, resolveParam } =
 const blitz = {};
 
 for (const id in SCOREBOSSLEVEL) {
-    if (id === '1') continue;
-
     const scoreBossLevel = SCOREBOSSLEVEL[id];
+    if (!scoreBossLevel.SummonLevelUp) continue;
+
     const scoreGetSwitch = SCOREGETSWITCH[`${scoreBossLevel.ScoreGetSwitchGroup}001`];
     const monster = MONSTER[scoreBossLevel.MonsterId];
     const monsterManual = MONSTERMANUAL[MONSTERSKIN[monster?.FAId]?.MonsterManual];
