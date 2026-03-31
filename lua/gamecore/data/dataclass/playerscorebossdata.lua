@@ -530,6 +530,9 @@ function PlayerScoreBossData:SendScoreBossStarRewardReceiveReq(cb, star)
 	HttpNetHandler.SendMsg(NetMsgId.Id.score_boss_star_reward_receive_req, msg, nil, msgCallback)
 end
 function PlayerScoreBossData:SendEnterLvAgain()
+	if self.curLevel ~= nil then
+		self.curLevel.isCanPause = false
+	end
 	self.isGoAgain = true
 	NovaAPI.StopRecord()
 	CS.AdventureModuleHelper.LevelStateChanged(false)

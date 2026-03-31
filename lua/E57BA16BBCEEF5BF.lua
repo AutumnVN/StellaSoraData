@@ -117,6 +117,7 @@ function PostalStoryCtrl:RefreshGridInfo(grid, gridIndex, bBranch, nBranchIndex)
 	local txtTime = goImgTime:Find("txtTime"):GetComponent("TMP_Text")
 	local txtTitle = bBranch and RootNode:Find("tmpGroupDone"):GetComponent("TMP_Text") or grid.transform:Find("btnGridText/scale_on_click/tmpGroupDone"):GetComponent("TMP_Text")
 	local txtComplete = goComplete.transform:Find("imgBg/txtComplete"):GetComponent("TMP_Text")
+	local btnGridText = grid.transform:Find("btnGridText").gameObject
 	NovaAPI.SetTMPText(txtComplete, ConfigTable.GetUIText("RoguelikeBuild_Manage_FilterPass"))
 	local isUnlock, tbResult = ActivityAvgData:IsUnlock(avgcfg.ConditionId)
 	local isReaded = ActivityAvgData:IsStoryReaded(storyId)
@@ -132,7 +133,11 @@ function PostalStoryCtrl:RefreshGridInfo(grid, gridIndex, bBranch, nBranchIndex)
 	local bShowImgStory = not bBranch or not not isUnlock
 	imgStory.gameObject:SetActive(bShowImgStory)
 	if bShowImgStory then
-		self:SetPngSprite(imgStory, string.format("Icon/ActivityStory/ep_event05_%02d", nIndex) .. branchSuffix)
+		if bOpen then
+			self:SetPngSprite(imgStory, string.format("Icon/ActivityStory/ep_event05_%02d", nIndex) .. branchSuffix)
+		else
+			self:SetPngSprite(imgStory, string.format("Icon/ActivityStory/ep_event05_00"))
+		end
 	end
 	NovaAPI.SetTMPText(txtTitle, avgcfg.Title)
 	NovaAPI.SetTMPText(txtLevel, avgcfg.Index)
@@ -145,6 +150,7 @@ function PostalStoryCtrl:RefreshGridInfo(grid, gridIndex, bBranch, nBranchIndex)
 	goNotOpen.gameObject:SetActive(not bOpen or bBranch and not isUnlock)
 	imgBattleTitleBg.gameObject:SetActive(avgcfg.IsBattle and isUnlock and bOpen)
 	imgStoryTitleBg.gameObject:SetActive(not avgcfg.IsBattle and isUnlock and bOpen)
+	btnGridText.gameObject:SetActive(bOpen)
 	if avgcfg.IsBattle == true then
 		local txtPlot = imgBattleTitleBg:Find("txtPlot"):GetComponent("TMP_Text")
 		NovaAPI.SetTMPText(txtPlot, ConfigTable.GetUIText("SelectTeam_StartBattle"))

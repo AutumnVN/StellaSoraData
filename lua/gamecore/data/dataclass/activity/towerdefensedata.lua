@@ -150,11 +150,17 @@ function TowerDefenseData:UpdateLevelData(levelData)
 		}, self:GetlevelIsNew(levelData.Id))
 	end
 	local nextLevelId = self:GetNextLevelId(levelData.Id)
-	if nextLevelId ~= 0 and self:GetPlayState() and self:IsLevelUnlock(nextLevelId) and self:IsPreLevelPass(nextLevelId) then
-		RedDotManager.SetValid(RedDotDefine.Activity_TowerDefense_Level, {
-			levelConfig.LevelPage,
-			nextLevelId
-		}, self:GetlevelIsNew(nextLevelId))
+	if nextLevelId ~= 0 then
+		local nextLevelConfig = ConfigTable.GetData("TowerDefenseLevel", nextLevelId)
+		if nextLevelConfig == nil then
+			return
+		end
+		if self:GetPlayState() and self:IsLevelUnlock(nextLevelId) and self:IsPreLevelPass(nextLevelId) then
+			RedDotManager.SetValid(RedDotDefine.Activity_TowerDefense_Level, {
+				nextLevelConfig.LevelPage,
+				nextLevelId
+			}, self:GetlevelIsNew(nextLevelId))
+		end
 	end
 	EventManager.Hit("TowerDefenseLevelUpdate")
 end
@@ -480,7 +486,7 @@ function TowerDefenseData:RefreshRedDot()
 	end
 	local bReddot = false
 	for _, levelData in pairs(self.allLevelData) do
-		if self:IsLevelUnlock(levelData.nLevelId) then
+		if self:IsLevelUnlock(levelData.nLevelId) and self:IsPreLevelPass(levelData.nLevelId) then
 			bReddot = bReddot or self:GetlevelIsNew(levelData.nLevelId)
 			if bReddot then
 				RedDotManager.SetValid(RedDotDefine.Activity_Tab, self.nActId, bReddot)

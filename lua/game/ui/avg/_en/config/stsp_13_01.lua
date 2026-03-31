@@ -1737,45 +1737,6 @@ return {
 		param = {
 			"avg1_137",
 			"b",
-			"003",
-			"avg_emoji_star",
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			"none",
-			"none",
-			"Linear",
-			0,
-			nil,
-			false,
-			0.5,
-			false,
-			nil
-		}
-	},
-	{
-		cmd = "SetTalk",
-		param = {
-			0,
-			"avg1_137",
-			"",
-			0,
-			"",
-			false,
-			"",
-			"They say these are quite effective against monsters.",
-			""
-		}
-	},
-	{
-		cmd = "CtrlChar",
-		param = {
-			"avg1_137",
-			"b",
 			"007",
 			"none",
 			nil,
@@ -2272,14 +2233,14 @@ return {
 			"OutSine",
 			false,
 			false,
-			0.5,
+			1.0,
 			true,
 			"AvgStageEffect_clockwise"
 		}
 	},
 	{
 		cmd = "Wait",
-		param = {0.5}
+		param = {1.0}
 	},
 	{
 		cmd = "SetBGM",
@@ -3660,7 +3621,7 @@ return {
 			"",
 			false,
 			"",
-			"Hiring a maid to focus... We live in different worlds...==W==Hm? What's that sound?",
+			"Hiring a maid to focus... We live in different worlds...==W== Hm? What's that sound?",
 			""
 		}
 	},
@@ -7191,7 +7152,7 @@ return {
 			"",
 			false,
 			"",
-			"Yeah, you bet! Boys, Plan B!",
+			"Yeah, you bet! Girls, Plan B!",
 			""
 		}
 	},
@@ -7898,7 +7859,7 @@ return {
 		cmd = "SetTalk",
 		param = {
 			0,
-			"Trekkers Outside",
+			"Trekker Outside",
 			"",
 			1,
 			"",
@@ -7946,7 +7907,7 @@ return {
 		cmd = "SetTalk",
 		param = {
 			0,
-			"Trekkers Outside",
+			"Trekker Outside",
 			"",
 			0,
 			"",

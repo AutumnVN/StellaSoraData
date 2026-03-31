@@ -180,10 +180,12 @@ function TowerDefenseLevelDetailCtrl:UpdateItem()
 	for i = 1, 4 do
 		if i > #self.tbReward then
 			self._mapNode.item[i].gameObject:SetActive(false)
+			self._mapNode.ItemBtn[i].interactable = false
 		else
 			local levelData = self.TowerDefenseData:GetLevelData(self.nLevelId)
 			self._mapNode.item[i]:SetItem(self.tbReward[i].nId, nil, self.tbReward[i].nCount, nil, 0 < levelData.nStar, true)
 			self._mapNode.item[i].gameObject:SetActive(true)
+			self._mapNode.ItemBtn[i].interactable = true
 		end
 	end
 end
@@ -229,6 +231,7 @@ function TowerDefenseLevelDetailCtrl:UpdateCharacter()
 		go_add.gameObject:SetActive(false)
 		go_none.gameObject:SetActive(false)
 		go_icon.gameObject:SetActive(false)
+		btn_add.interactable = false
 		if teamCharacterCount == 0 then
 			if i > #self.tbCharGuideId then
 				go_none.gameObject:SetActive(true)
@@ -248,6 +251,7 @@ function TowerDefenseLevelDetailCtrl:UpdateCharacter()
 				go_none.gameObject:SetActive(true)
 			elseif i > #self.tbCharGuideId then
 				go_add.gameObject:SetActive(true)
+				btn_add.interactable = true
 				btn_add.onClick:RemoveAllListeners()
 				btn_add.onClick:AddListener(function()
 					self:OnBtnClick_EditorTeam()
@@ -261,6 +265,7 @@ function TowerDefenseLevelDetailCtrl:UpdateCharacter()
 					NovaAPI.SetTMPText(txt_name, characterConfig.Name)
 				end
 				go_icon.gameObject:SetActive(true)
+				btn_add.interactable = true
 				btn_add.onClick:RemoveAllListeners()
 				btn_add.onClick:AddListener(function()
 					self:OnBtnClick_EditorTeam()
@@ -390,10 +395,14 @@ end
 function TowerDefenseLevelDetailCtrl:EnterTeamEditorPanel()
 	self._mapNode.teamCtrl.gameObject:SetActive(true)
 	self.bInEditorPanel = true
+	self._mapNode.btn_Team.interactable = false
+	self._mapNode.btn_go1.interactable = false
 end
 function TowerDefenseLevelDetailCtrl:CloseTeamEditorPanel()
 	self._mapNode.teamCtrl.gameObject:SetActive(false)
 	self.bInEditorPanel = false
+	self._mapNode.btn_Team.interactable = true
+	self._mapNode.btn_go1.interactable = true
 end
 function TowerDefenseLevelDetailCtrl:OnBtnClick_MonsterInfo()
 	EventManager.Hit("OpenTowerDefenseMonsterInfo", self.levelConfig.Id)

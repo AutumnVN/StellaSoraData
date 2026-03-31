@@ -582,6 +582,7 @@ function TowerDefenseCtrl:OnPointerDown_CharacterCard(go, nIndex)
 	end
 	self.goPointChar = go.gameObject
 	self:HideFuncIcon()
+	self:SetSlowSpeed(false)
 end
 function TowerDefenseCtrl:OnPointerDown_Item(go)
 	if self.bPointItem and self.CardDragType == CardDragType.Pointer then
@@ -594,6 +595,7 @@ function TowerDefenseCtrl:OnPointerDown_Item(go)
 	end
 	self.bPointItem = true
 	self:HideFuncIcon()
+	self:SetSlowSpeed(false)
 end
 function TowerDefenseCtrl:OnEvent_HoldCard(pos)
 	if self.CardDragType ~= CardDragType.Pointer then

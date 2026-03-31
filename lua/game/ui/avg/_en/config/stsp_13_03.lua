@@ -3666,7 +3666,7 @@ return {
 			"",
 			false,
 			"",
-			"Oh crap! It's a bomb...",
+			"Oh crap! It's gonna explode...",
 			""
 		}
 	},
@@ -9294,7 +9294,7 @@ return {
 			"",
 			false,
 			"",
-			"Sniff... I...Mentor, I... I really don't want to give up!",
+			"Sniff... I\226\128\166 Mentor, I... I really don't want to give up!",
 			""
 		}
 	},

@@ -217,6 +217,18 @@ function ScoreBossSelectCtrl:OnEnable()
 	self.isPlayNPCVoice = false
 	self:RefreshNPC2D()
 	self._mapRewardGrid = {}
+	if self.ChooseLevelId ~= nil then
+		self:SetBossInfo(self.ChooseLevelId, false)
+		self:PlayBossOpenAni(self.ChooseLevelId)
+	end
+end
+function ScoreBossSelectCtrl:PlayBossOpenAni(nLevelId)
+	local bossLevelData = ConfigTable.GetData("ScoreBossLevel", nLevelId)
+	local sOpenAniName = "ScoreBossSelect_Info_open"
+	if bossLevelData.ExtraImageAni ~= nil and bossLevelData.ExtraImageAni ~= "" then
+		sOpenAniName = string.gsub(bossLevelData.ExtraImageAni, "_in", "_open", 1)
+	end
+	self.infoAni:Play(sOpenAniName)
 end
 function ScoreBossSelectCtrl:OnEvent_GetScoreBossInfoReq()
 	self:OnInitPanelInfo()
