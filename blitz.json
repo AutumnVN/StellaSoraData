@@ -21804,7 +21804,6 @@
                 "desc": "While the boss possesses Water Ring, its DMG is increased by <color=#ec6d21>30%</color>, and it deals AoE DMG every 5s.\nDealing <color=#ec6d21>10</color> instances of DMG to the boss within 5s disables Water Ring for <color=#ec6d21>20</color>s. When Water Ring is disabled:\nDealing <color=#ec6d21>20</color> instances of Support DMG to the boss within 5s increases the Auto Attack DMG the boss takes by<color=#ec6d21>45%</color>.\nDealing <color=#ec6d21>10</color> instances of Main Trekker DMG within 5s increases the Skill DMG the boss takes from Support Trekkers by <color=#ec6d21>45%</color>.",
                 "icon": "Icon_Bossrush_Teshujizhi_004",
                 "effectType": [
-                    "Auto Attack DMG Taken (base)",
                     "Skill DMG Taken (base)",
                     "Final DMG (base)"
                 ],
@@ -24236,7 +24235,9 @@
                 "name": "Resonance of Power",
                 "desc": "For every <color=#ec6d21>1</color> skill cast by the Main Trekker, all Support Trekkers' Skill DMG is intensified by <color=#ec6d21>40%</color> for <color=#ec6d21>9</color>s.\nFor every <color=#ec6d21>50</color> times Support Trekkers deal DMG, the Main Trekker's Skill DMG is intensified by <color=#ec6d21>40%</color> for <color=#ec6d21>12</color>s.\nRe-triggering refreshes the duration; effects do not stack.",
                 "icon": "Icon_Bossrush_Teshujizhi_011",
-                "effectType": [],
+                "effectType": [
+                    "Skill DMG (%)"
+                ],
                 "buffIcon": []
             }
         ],

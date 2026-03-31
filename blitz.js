@@ -157,5 +157,5 @@ function getBlitzBuffIcon(monsterId) {
 }
 
 function filterBuff(buffId, monsterId) {
-    return buffId.startsWith(monsterId) || (monsterId === 6310100 && buffId.startsWith('63100100'))
+    return buffId.startsWith(monsterId) || (monsterId === 6310100 && [631010001, 631010002, 631001003].includes(+buffId)) || (monsterId === 6310130 && [631011011, 631011021].includes(+buffId));
 }
