@@ -28,12 +28,12 @@ jobs:
         git config --global pull.rebase false
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git remote add upstream https://github.com/Hiro420/StellaSoraData || true
+        git remote add upstream https://github.com/Hiro420/StellaSoraData
 
         git fetch upstream
         git fetch --all --prune
         echo "Looking up latest EN commit on upstream/main..."
-        EN_COMMIT=$(git log upstream/main --grep='EN' -i -n 1 --pretty=format:'%H' || true)
+        EN_COMMIT=$(git log upstream/main --grep='EN' -i -n 1 --pretty=format:'%H')
         echo "EN_COMMIT=${EN_COMMIT:-<none>}"
         if [ -n "$EN_COMMIT" ]; then
           if git merge-base --is-ancestor "$EN_COMMIT" HEAD; then
@@ -44,7 +44,7 @@ jobs:
           echo "No EN commit found on upstream/main; continuing sync"
         fi
 
-        git merge --allow-unrelated-histories -X theirs --no-edit upstream/main || true
+        git merge --allow-unrelated-histories -X theirs --no-edit upstream/main
         echo "Merge HEAD: $(git rev-parse HEAD)"
 
         SCRIPTS=(arena.js ascension.js blitz.js character.js characterid.js disc.js gacha.js ground.js item.js raid.js word.js)
@@ -58,11 +58,11 @@ jobs:
           echo "No changes to commit"
           exit 0
         fi
-        git commit -m 'sync' || true
-        git push origin main || echo "Push failed"
+        git commit -m 'sync'
+        git push origin main
 
         if [ -n "${{ secrets.DEPLOY_HOOK_URL }}" ]; then
-          curl -s -o /dev/null -w "%{http_code}" -d "" "${{ secrets.DEPLOY_HOOK_URL }}" || echo "Deploy hook failed"
+          curl -s -o /dev/null -w "%{http_code}" -d "" "${{ secrets.DEPLOY_HOOK_URL }}"
         else
           echo "No deploy hook URL configured"
         fi
