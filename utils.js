@@ -474,13 +474,35 @@ function collectUnusedParamsFrom(obj, lang) {
 }
 
 function collectPotentialHiddenParamsFrom(obj) {
-    if (!obj) return '';
+    if (!obj) return { desc: '', params: [] };
 
     const charId = obj.CharId;
     const potId = obj.Id % 100;
 
+    if (![125].includes(charId)) return { desc: '', params: [] };
+
+    const slice57Group = [107, 113, 125, 132, 144, 150, 155];
+
     const stringifiedPotential = JSON.stringify(POTENTIAL);
-    const hiddenHitDamageIds = Object.keys(HITDAMAGE).filter(id => !collectParamsFrom(obj).some(param => param.includes(id))).filter(id => resolveParam([`HitDamage,DamageNum,${id}`])[0] && `HitDamage,DamageNum,${id}` !== resolveParam([`HitDamage,DamageNum,${id}`])[0]).filter(id => id.length === 9 && id.startsWith(charId) && id.slice(5, 7).includes(potId.toString().padStart(2, '0')) && !stringifiedPotential.includes(`DamageNum,${id}`));
+    const params = collectParamsFrom(obj);
+    const target = String(potId).padStart(2, '0');
+
+    const hiddenHitDamageIds = [];
+    for (const id of Object.keys(HITDAMAGE)) {
+        if (!id.startsWith(charId)) continue;
+        if (stringifiedPotential.includes(`DamageNum,${id}`)) continue;
+
+        const slice = !slice57Group.includes(charId) ? id.slice(4, 6) : id.slice(5, 7);
+        if (slice !== target) continue;
+
+        if (params.some(param => param.includes(id))) continue;
+
+        const resolved = resolveParam([`HitDamage,DamageNum,${id}`])[0];
+        if (!resolved) continue;
+        if (`HitDamage,DamageNum,${id}` === resolved) continue;
+
+        hiddenHitDamageIds.push(id);
+    }
 
     return {
         desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage,${DAMAGE_TYPE[HITDAMAGE[id].DamageType]})`).join(' '),

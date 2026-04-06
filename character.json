@@ -955,12 +955,8 @@
                     "id": 510330,
                     "name": "Sky Splitter",
                     "briefDesc": "When Amber hits a target with ##Ignis Mark: Sacred Flame#2013#, increases her &Param3&.",
-                    "desc": "Each time Amber hits a target with ##Ignis Mark: Sacred Flame#2013#, increases her &Param3& by <color=#ec6d21>&Param1&</color>, stacking up to &Param2& times.\u000bThis effect can only be triggered once every 2s. Resets after casting her Ultimate.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill) \u000bHiddenParam4: &HiddenParam4& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (0.71e, from Skill, scale with Skill) (hidden)",
-                        "Skill (2.89e, from Skill, scale with Skill) (hidden)",
-                        "Skill (5.78e, from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "Each time Amber hits a target with ##Ignis Mark: Sacred Flame#2013#, increases her &Param3& by <color=#ec6d21>&Param1&</color>, stacking up to &Param2& times.\u000bThis effect can only be triggered once every 2s. Resets after casting her Ultimate.",
+                    "damageType": [],
                     "effectType": [
                         "Ultimate DMG (base)"
                     ],
@@ -987,26 +983,8 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         }
                     ],
-                    "hiddenParams": [
-                        "9.9%/10.9%/11.8%/14.8%/15.8%/16.8%/18.8%/19.7%/20.7%/22.7%/23.7%/24.7%/25.7%",
-                        "54%/14.2%/15.5%/19.4%/20.7%/22%/24.6%/25.9%/27.2%/29.7%/31%/32.3%/33.6%",
-                        "7.4%/8.1%/8.9%/11.1%/11.8%/12.6%/14%/14.8%/15.5%/17%/17.7%/18.5%/19.2%",
-                        "46%/51%/55%/69%/73%/78%/87%/92%/96%/106%/110%/115%/119%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (0.71e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (0.71e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (2.89e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (5.78e, from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "10301_Potential_24",
                     "corner": "Round",
                     "rarity": "common"
@@ -4261,10 +4239,8 @@
                     "id": 510724,
                     "name": "Mystery of Gyration",
                     "briefDesc": "Tilia can throw more Aegis of Light.",
-                    "desc": "When casting &Param1& (Support Skill), Tilia throws Aegis of Light at up to <color=#0abec5>5</color> targets simultaneously.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "When casting &Param1& (Support Skill), Tilia throws Aegis of Light at up to <color=#0abec5>5</color> targets simultaneously.",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -4275,14 +4251,8 @@
                     "paramsTooltips": [
                         {}
                     ],
-                    "hiddenParams": [
-                        "56.7%/62.4%/68%/85.1%/90.7%/96.4%/107.7%/113.4%/119.1%/130.4%/136.1%/141.8%/147.4%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "10701_Potential_24",
                     "rarity": "core"
                 }
@@ -17227,11 +17197,10 @@
                     "id": 511201,
                     "name": "Slash: Dual Strike!",
                     "briefDesc": "Adds Dragon Slash as the second phase of the Main Skill.",
-                    "desc": "Adds Dragon Slash as the second phase of the Main Skill, dealing <color=#0abec5>&Param1& of ATK x3</color>/<color=#0abec5>&Param2& of ATK</color> as Ventus Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
+                    "desc": "Adds Dragon Slash as the second phase of the Main Skill, dealing <color=#0abec5>&Param1& of ATK x3</color>/<color=#0abec5>&Param2& of ATK</color> as Ventus Skill DMG.",
                     "damageType": [
                         "Skill (1.21e, from Skill, scale with Skill)",
-                        "Skill (7.25e, from Skill, scale with Skill)",
-                        "Skill (from Skill, scale with Skill) (hidden)"
+                        "Skill (7.25e, from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -17249,14 +17218,8 @@
                             "damageType": "Skill (7.25e, from Skill, scale with Skill)"
                         }
                     ],
-                    "hiddenParams": [
-                        "38.1%/41.91%/45.72%/49.53%/53.34%/57.15%/60.96%/64.77%/68.58%/72.39%/76.2%/80.01%/83.82%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11201_Potential_01",
                     "rarity": "core"
                 },
@@ -20964,10 +20927,8 @@
                     "id": 511341,
                     "name": "Intonation",
                     "briefDesc": "When casting the Ultimate, increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.",
-                    "desc": "When casting Flood Mantra (Ultimate), increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& by <color=#ec6d21>&Param1&</color> to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Ultimate)",
-                    "damageType": [
-                        "Ultimate (from Ultimate, scale with Ultimate) (hidden)"
-                    ],
+                    "desc": "When casting Flood Mantra (Ultimate), increases the sweeping strike's Attack Range. Also increases Shimiao's &Param2& by <color=#ec6d21>&Param1&</color> to targets with ##Aqua Mark: Torrent#2008#/##Chill#1027#/##Frozen#1002#.",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [
                         "Ultimate DMG (base)"
@@ -20986,14 +20947,8 @@
                             "addAttrType": "Ultimate DMG (base)"
                         }
                     ],
-                    "hiddenParams": [
-                        "145%/160%/174%/218%/232%/247%/276%/290%/305%/334%/348%/363%/377%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "11301_Potential_41",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -37431,10 +37386,8 @@
                     "id": 512010,
                     "name": "Counterstrike Tutorial",
                     "briefDesc": "Canace will launch the final strike of her Auto Attack right after dodging, and this strike's &Param1& is increased.",
-                    "desc": "Canace will launch the final strike of her Auto Attack right after dodging, and this strike's &Param1& is increased by <color=#ec6d21>&Param2&</color>. This effect can only be triggered once every &Param3&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (0.55e, from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "Canace will launch the final strike of her Auto Attack right after dodging, and this strike's &Param1& is increased by <color=#ec6d21>&Param2&</color>. This effect can only be triggered once every &Param3&s.",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [
                         "Auto Attack Damage (base)"
@@ -37455,14 +37408,8 @@
                         },
                         {}
                     ],
-                    "hiddenParams": [
-                        "16.8%/18.5%/20.2%/25.2%/26.9%/28.6%/32%/33.6%/35.3%/38.7%/40.4%/42%/43.7%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (0.55e, from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "12001_Potential_04",
                     "corner": "Round",
                     "rarity": "common"
@@ -57943,12 +57890,10 @@
                     "id": 513202,
                     "name": "Clan Clash Artistry",
                     "briefDesc": "When &Param1& triggers a ##Lux Mark#1015#, enhances Two Base Hit.",
-                    "desc": "When &Param1& (Main Skill) triggers a ##Lux Mark#1015#, enhances Two Base Hit, increasing its DMG by <color=#0abec5>&Param2&</color> and reducing its Attack Interval by <color=#0abec5>30%</color>.\u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
+                    "desc": "When &Param1& (Main Skill) triggers a ##Lux Mark#1015#, enhances Two Base Hit, increasing its DMG by <color=#0abec5>&Param2&</color> and reducing its Attack Interval by <color=#0abec5>30%</color>.\u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (6.77e, from Skill, scale with Skill)",
-                        "Skill (13.54e, from Skill, scale with Skill)",
-                        "Skill (1.99e, from Skill, scale with Skill) (hidden)",
-                        "Skill (4.52e, from Skill, scale with Skill) (hidden)"
+                        "Skill (13.54e, from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -57974,18 +57919,8 @@
                             "damageType": "Skill (13.54e, from Skill, scale with Skill)"
                         }
                     ],
-                    "hiddenParams": [
-                        "11.8%/13.5%/15.3%/20.6%/22.3%/23.9%/27.2%/28.6%/30%/32.9%/35.2%/37.6%/39.9%",
-                        "31%/36%/40%/54%/59%/63%/72%/76%/79%/87%/93%/99%/105%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (1.99e, from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (4.52e, from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "13201_Potential_02",
                     "rarity": "core"
                 },
@@ -57993,10 +57928,8 @@
                     "id": 513203,
                     "name": "Board Tricks",
                     "briefDesc": "Increases Skill DMG. When triggering a mark, increases the Skill DMG taken by the target.",
-                    "desc": "Increases the damage of &Param1& (Main Skill) by <color=#0abec5>&Param2&</color>. \u000bWhen ##Lux Mark#1015# is triggered, increases the Skill DMG taken by the target by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (11.7e, from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "Increases the damage of &Param1& (Main Skill) by <color=#0abec5>&Param2&</color>. \u000bWhen ##Lux Mark#1015# is triggered, increases the Skill DMG taken by the target by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype)",
+                    "damageType": [],
                     "effectType": [
                         "Skill DMG Taken (base)"
                     ],
@@ -58032,14 +57965,8 @@
                             "buffIcon": "Icon_CommonBuff_DefenseDown"
                         }
                     ],
-                    "hiddenParams": [
-                        "58%/66%/75%/101%/109%/117%/133%/140%/147%/161%/172%/184%/195%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (11.7e, from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "13201_Potential_03",
                     "rarity": "core"
                 },
@@ -72125,10 +72052,8 @@
                     "id": 514130,
                     "name": "Ink Sigil: Raid",
                     "briefDesc": "Increases the DMG dealt by Chixia's minions to close-by targets.",
-                    "desc": "Increases the Minion DMG dealt by Chixia's minions to close-by targets by <color=#ec6d21>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion)",
-                    "damageType": [
-                        "Minion (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "Increases the Minion DMG dealt by Chixia's minions to close-by targets by <color=#ec6d21>&Param1&</color>.",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [
                         "Minion DMG (base)"
@@ -72143,14 +72068,8 @@
                             "addAttrType": "Minion DMG (base)"
                         }
                     ],
-                    "hiddenParams": [
-                        "57%/66%/74%/100%/108%/116%/132%/139%/146%/160%/171%/183%/194%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Minion (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14101_Potential_23",
                     "corner": "Round",
                     "rarity": "common"
@@ -81421,10 +81340,9 @@
                     "id": 514401,
                     "name": "Serpent's Glide",
                     "briefDesc": "After Chitose casts the Main Skill, her Auto Attack will summon a Coiling Serpent, and her resistance to interruption is increased.",
-                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Coiling Serpent, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Auto Attack DMG. Can trigger ##Aqua Mark#1018#. Also, Chitose's resistance to interruption is increased for &Param9&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
+                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Coiling Serpent, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Aqua Auto Attack DMG. Can trigger ##Aqua Mark#1018#. Also, Chitose's resistance to interruption is increased for &Param9&s.",
                     "damageType": [
-                        "Auto Attack (from Normal attack, scale with Normal attack)",
-                        "Auto Attack (from Normal attack, scale with Normal attack) (hidden)"
+                        "Auto Attack (from Normal attack, scale with Normal attack)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -81458,14 +81376,8 @@
                             "buffIcon": "No Icon"
                         }
                     ],
-                    "hiddenParams": [
-                        "15.2%/17.5%/19.7%/26.6%/28.7%/30.8%/35.1%/36.9%/38.7%/42.3%/45.4%/48.4%/51.4%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14401_Potential_01",
                     "rarity": "core"
                 },
@@ -81473,10 +81385,8 @@
                     "id": 514402,
                     "name": "Mirror Blade",
                     "briefDesc": "After Chitose casts the Main Skill, her Auto Attack will summon a Mirror Image that performs Auto Attacks, and her resistance to interruption is increased.",
-                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Mirror Image that has <color=#0abec5>60%</color> of Chitose's ATK and performs Auto Attacks. Also, Chitose's resistance to interruption is increased for &Param1&s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Auto Attack) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Auto Attack) \u000bHiddenParam4: &HiddenParam4& (HitDamage,Auto Attack) \u000bHiddenParam5: &HiddenParam5& (HitDamage,Auto Attack) \u000bHiddenParam6: &HiddenParam6& (HitDamage,Auto Attack) \u000bHiddenParam7: &HiddenParam7& (HitDamage,Auto Attack) \u000bHiddenParam8: &HiddenParam8& (HitDamage,Auto Attack) \u000bHiddenParam9: &HiddenParam9& (HitDamage,Auto Attack)",
-                    "damageType": [
-                        "Auto Attack (from Normal attack, scale with Normal attack) (hidden)"
-                    ],
+                    "desc": "After Chitose casts Torrent Flash (Main Skill), her Auto Attack will summon a Mirror Image that has <color=#0abec5>60%</color> of Chitose's ATK and performs Auto Attacks. Also, Chitose's resistance to interruption is increased for &Param1&s.",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -81491,46 +81401,8 @@
                             "buffIcon": "No Icon"
                         }
                     ],
-                    "hiddenParams": [
-                        "9.2%/10.6%/11.9%/16.1%/17.3%/18.6%/21.2%/22.3%/23.4%/25.6%/27.4%/29.3%/31.1%",
-                        "13.3%/15.3%/17.3%/23.3%/25.2%/27%/30.8%/32.4%/34%/37.2%/39.8%/42.5%/45.1%",
-                        "11.3%/12.9%/14.6%/19.7%/21.3%/22.9%/26%/27.4%/28.7%/31.4%/33.7%/35.9%/38.2%",
-                        "9.4%/10.8%/12.2%/16.4%/17.7%/19%/21.7%/22.8%/23.9%/26.1%/28%/29.9%/31.8%",
-                        "10.1%/11.6%/13.2%/17.7%/19.1%/20.5%/23.4%/24.6%/25.8%/28.2%/30.2%/32.3%/34.3%",
-                        "57%/66%/75%/100%/108%/117%/133%/139%/146%/160%/172%/183%/195%",
-                        "31%/35%/40%/54%/58%/62%/71%/75%/78%/86%/92%/98%/104%",
-                        "26.2%/30%/34%/46%/50%/53%/61%/64%/67%/73%/78%/84%/89%",
-                        "20.2%/23.3%/26.3%/35.4%/38.2%/41%/46.7%/49.1%/51.6%/56.4%/60.5%/64.5%/68.5%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        },
-                        {
-                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14401_Potential_02",
                     "rarity": "core"
                 },
@@ -81563,32 +81435,16 @@
                     "id": 514404,
                     "name": "Against the Flow",
                     "briefDesc": "Reduces Main Skill Cooldown. When casting Torrent Flash, summons a Mirror Image.",
-                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "Reduces the cooldown of Torrent Flash (Main Skill) by <color=#0abec5>50%</color>. \u000bWhen casting Torrent Flash, summons a Mirror Image that has <color=#0abec5>50%</color> of Chitose's ATK. The Mirror Image can cast Skills and trigger ##Aqua Mark#1018#.",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [
-                        "109%/126%/142%/191%/206%/222%/252%/265%/279%/305%/327%/349%/370%",
-                        "128%/147%/166%/223%/241%/259%/295%/310%/326%/356%/382%/407%/433%",
-                        "98%/113%/127%/171%/185%/199%/226%/238%/250%/273%/293%/312%/332%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        },
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "14401_Potential_04",
                     "rarity": "core"
                 }
@@ -91487,10 +91343,9 @@
                     "id": 515002,
                     "name": "Arc Chain Laser",
                     "briefDesc": "The laser inflicts Shock on targets. When attacking Shocked targets, deals additional DMG.",
-                    "desc": "The laser inflicts Shock on targets for 10s. When dealing damage to Shocked targets, deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG. With the 20th hit, deals <color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG and removes Shock.\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
+                    "desc": "The laser inflicts Shock on targets for 10s. When dealing damage to Shocked targets, deals an additional <color=#0abec5>&Param2& of ATK</color> as Lux Skill DMG. With the 20th hit, deals <color=#0abec5>&Param3& of ATK</color> as AoE Lux Skill DMG and removes Shock.\u000bParam1: &Param1& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill, scale with Skill)",
-                        "Skill (from Skill, scale with Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -91510,14 +91365,8 @@
                             "damageType": "Skill (from Skill, scale with Skill)"
                         }
                     ],
-                    "hiddenParams": [
-                        "37.4%/41.2%/44.9%/56.1%/59.9%/63.6%/71.1%/74.9%/78.6%/86.1%/89.8%/93.6%/97.3%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "15001_Potential_02",
                     "rarity": "core"
                 },
@@ -94776,10 +94625,9 @@
                     "id": 515501,
                     "name": "Phantom Step Radiance",
                     "briefDesc": "When dealing Auto Attack DMG, Snow Rabbit inflicts Electro Music that deals additional DMG upon reaching the max stack limit.",
-                    "desc": "When Snow Rabbit deals Auto Attack DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
+                    "desc": "When Snow Rabbit deals Auto Attack DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Skill (from Skill, scale with Skill)",
-                        "Auto Attack (hidden)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -94811,14 +94659,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "110%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "15501_Potential_01",
                     "rarity": "core"
                 },
@@ -94826,10 +94668,9 @@
                     "id": 515502,
                     "name": "Rimecrystal Edge",
                     "briefDesc": "The Main Skill summons a Snow Rabbit that inflicts Electro Music when dealing Skill DMG, dealing additional DMG upon reaching the max stack limit.",
-                    "desc": "&Param10& (Main Skill) summons a Snow Rabbit, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG upon entering combat.\u000bEvery time Snow Rabbit deals Skill DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param2&</color> of ATK as Lux Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
+                    "desc": "&Param10& (Main Skill) summons a Snow Rabbit, dealing <color=#0abec5>&Param1&</color> of ATK as Lux Skill DMG upon entering combat.\u000bEvery time Snow Rabbit deals Skill DMG, it inflicts Electro Music, stacking up to <color=#0abec5>20</color> times.\u000bUpon reaching the max stack limit, Electro Music's stacks are removed, dealing <color=#0abec5>&Param2&</color> of ATK as Lux Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill, scale with Skill)",
-                        "Auto Attack (hidden)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -94863,14 +94704,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "220%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "15501_Potential_02",
                     "rarity": "core"
                 },
@@ -94878,10 +94713,9 @@
                     "id": 515503,
                     "name": "Moonlight Overflow",
                     "briefDesc": "Night Rabbit fires tracking bullets at nearby targets during Auto Attacks. When the tracking bullets deal DMG, Night Rabbit gains Moongaze, increasing its DMG.",
-                    "desc": "During Auto Attacks, Night Rabbit locks up to <color=#0abec5>4</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
+                    "desc": "During Auto Attacks, Night Rabbit locks up to <color=#0abec5>4</color> targets and fires a tracking bullet at each, each dealing <color=#0abec5>&Param1&</color> of ATK as AoE Lux DMG.\u000bWhen the tracking bullets deal DMG, Night Rabbit Gains 1 stack of Moongaze. Each stack of Moongaze increases Night Rabbit's &Param5& by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, stacking up to <color=#0abec5>&Param4&</color> times.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [
-                        "Auto Attack (from Skill, scale with Skill)",
-                        "Auto Attack (hidden)"
+                        "Auto Attack (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -94927,14 +94761,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "55%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "15501_Potential_03",
                     "rarity": "core"
                 },
@@ -95001,10 +94829,8 @@
                     "id": 515505,
                     "name": "Glacial Dash",
                     "briefDesc": "Increases Snow Rabbit's Auto Attack DMG. Bullets from Auto Attacks can pierce through targets.",
-                    "desc": "Increases Snow Rabbit's Auto Attack DMG by <color=#ec6d21>&Param1&</color>. Bullets from Auto Attacks can pierce through targets.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
-                    "damageType": [
-                        "Auto Attack (hidden)"
-                    ],
+                    "desc": "Increases Snow Rabbit's Auto Attack DMG by <color=#ec6d21>&Param1&</color>. Bullets from Auto Attacks can pierce through targets.\u000bParam10: &Param10& (Skill,Title)",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [
                         "Auto Attack Damage (base)"
@@ -95037,14 +94863,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "95%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "15501_Potential_01",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -95053,10 +94873,8 @@
                     "id": 515506,
                     "name": "Subzero Dominion",
                     "briefDesc": "The Main Skill summons more Snow Rabbits.\u000bWhile the Main Skill is active, increases all Snow Rabbits' &Param2&.",
-                    "desc": "&Param10& (Main Skill) summons 1 additional Snow Rabbit.\u000bWhile the Main Skill is active, increases all Snow Rabbits' &Param2& by <color=#ec6d21>&Param1&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
-                    "damageType": [
-                        "Auto Attack (hidden)"
-                    ],
+                    "desc": "&Param10& (Main Skill) summons 1 additional Snow Rabbit.\u000bWhile the Main Skill is active, increases all Snow Rabbits' &Param2& by <color=#ec6d21>&Param1&</color>.",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [
                         "Lux DMG (base)"
@@ -95091,14 +94909,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "105%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "15501_Potential_02",
                     "corner": "Triangle",
                     "rarity": "rare"
@@ -95161,10 +94973,8 @@
                     "id": 515508,
                     "name": "Final Crescent",
                     "briefDesc": "Based on the number of targets hit by Night Rabbit's Auto Attack, increases the DMG of its next Auto Attack.",
-                    "desc": "During Auto Attacks, every time Night Rabbit deals DMG to a different target, increases the DMG of its next Auto Attack by <color=#ec6d21>&Param1&</color>, stacking up to &Param2& times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
-                    "damageType": [
-                        "Auto Attack (hidden)"
-                    ],
+                    "desc": "During Auto Attacks, every time Night Rabbit deals DMG to a different target, increases the DMG of its next Auto Attack by <color=#ec6d21>&Param1&</color>, stacking up to &Param2& times.\u000bParam10: &Param10& (Skill,Title)",
+                    "damageType": [],
                     "effectType": [],
                     "addAttrType": [
                         "Auto Attack Damage (base)"
@@ -95197,14 +95007,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "230%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "15501_Potential_03",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -96031,10 +95835,8 @@
                     "id": 515531,
                     "name": "Tidal Charge",
                     "briefDesc": "Every time Shia kills a target, increases her &Param4&.",
-                    "desc": "Every time Shia kills a target, increases her &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s, stacking up to &Param3& times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
-                    "damageType": [
-                        "Auto Attack (hidden)"
-                    ],
+                    "desc": "Every time Shia kills a target, increases her &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s, stacking up to &Param3& times.\u000bParam10: &Param10& (Skill,Title)",
+                    "damageType": [],
                     "effectType": [
                         "ATK (%)"
                     ],
@@ -96077,14 +95879,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "50%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "Common_Potential_11",
                     "corner": "Diamond",
                     "rarity": "common"
@@ -96093,10 +95889,8 @@
                     "id": 515532,
                     "name": "Counter Current",
                     "briefDesc": "Every time Shia triggers ##Lux Mark#1015#, increases her &Param4&.",
-                    "desc": "Every time Shia triggers ##Lux Mark#1015#, increases her &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s, stacking up to &Param3& times.\u000bParam10: &Param10& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack)",
-                    "damageType": [
-                        "Auto Attack (hidden)"
-                    ],
+                    "desc": "Every time Shia triggers ##Lux Mark#1015#, increases her &Param4& by <color=#ec6d21>&Param1&</color> for &Param2&s, stacking up to &Param3& times.\u000bParam10: &Param10& (Skill,Title)",
+                    "damageType": [],
                     "effectType": [
                         "ATK (%)"
                     ],
@@ -96139,14 +95933,8 @@
                         {},
                         {}
                     ],
-                    "hiddenParams": [
-                        "50%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "Common_Potential_11",
                     "corner": "Triangle",
                     "rarity": "common"
@@ -106060,10 +105848,9 @@
                     "id": 515921,
                     "name": "Essence Extraction",
                     "briefDesc": "For a short duration after casting Instant Blossom (Support Skill), increases Rose Vials' &Param2&.\u000bWhen a Rose Vial expires, it deals additional DMG.",
-                    "desc": "Within 3.5s after casting Instant Blossom (Support Skill), increases Rose Vials' &Param2& by <color=#0abec5>&Param3&</color>.\u000bWhen a Rose Vial expires, it deals an additional <color=#0abec5>&Param1&</color> of Springseek Coronis's ATK as AoE Terra Skill DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
+                    "desc": "Within 3.5s after casting Instant Blossom (Support Skill), increases Rose Vials' &Param2& by <color=#0abec5>&Param3&</color>.\u000bWhen a Rose Vial expires, it deals an additional <color=#0abec5>&Param1&</color> of Springseek Coronis's ATK as AoE Terra Skill DMG.",
                     "damageType": [
-                        "Skill (from Skill, scale with Skill)",
-                        "Skill (from Skill, scale with Skill) (hidden)"
+                        "Skill (from Skill, scale with Skill)"
                     ],
                     "effectType": [],
                     "addAttrType": [
@@ -106091,14 +105878,8 @@
                             "buffIcon": "No Icon"
                         }
                     ],
-                    "hiddenParams": [
-                        "24.8%/28.5%/32.2%/43.4%/46.8%/50.3%/57.2%/60.2%/63.2%/69.1%/74.1%/79%/84%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "15901_Potential_21",
                     "rarity": "core"
                 },
@@ -106347,10 +106128,8 @@
                     "id": 515931,
                     "name": "Herbal Tempering",
                     "briefDesc": "Increases the &Param1& of Springseek Coronis.",
-                    "desc": "Increases the &Param1& of Springseek Coronis by <color=#ec6d21>&Param2&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill)",
-                    "damageType": [
-                        "Skill (from Skill, scale with Skill) (hidden)"
-                    ],
+                    "desc": "Increases the &Param1& of Springseek Coronis by <color=#ec6d21>&Param2&</color>.",
+                    "damageType": [],
                     "effectType": [
                         "ATK (%)"
                     ],
@@ -106369,14 +106148,8 @@
                             "effectType": "ATK (%)"
                         }
                     ],
-                    "hiddenParams": [
-                        "1%/1%/1%/1%/1%/1%/1%/1%/1%/1%/1%/1%/1%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Skill (from Skill, scale with Skill)"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "Common_Potential_11",
                     "corner": "Diamond",
                     "rarity": "common"
