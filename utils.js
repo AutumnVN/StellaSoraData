@@ -488,6 +488,7 @@ function collectPotentialHiddenParamsFrom(obj, allSkillParams) {
 
     const hiddenHitDamageIds = [];
     for (const id of Object.keys(HITDAMAGE)) {
+        if (['134506002'].includes(id)) continue;
         if (id.length !== 9) continue;
         if (!id.startsWith(charId)) continue;
         if (['01', '02', '03', '04'].includes(target) && !['1', '2', '4'].includes(id.slice(3, 4))) continue;

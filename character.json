@@ -64813,10 +64813,9 @@
                     "id": 513406,
                     "name": "Thunder Punch",
                     "briefDesc": "The third strike of Fiery Punches deals additional DMG.",
-                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack,134506002)",
+                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.",
                     "damageType": [
-                        "Auto Attack (2.84e)",
-                        "Auto Attack (hidden)"
+                        "Auto Attack (2.84e)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -64830,14 +64829,8 @@
                             "damageType": "Auto Attack (2.84e)"
                         }
                     ],
-                    "hiddenParams": [
-                        "127%/204%/280%/356%/432%/509%/585%/661%/738%"
-                    ],
-                    "hiddenParamsTooltips": [
-                        {
-                            "damageType": "Auto Attack"
-                        }
-                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
                     "icon": "13401_Potential_02",
                     "corner": "Triangle",
                     "rarity": "rare"
