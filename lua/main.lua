@@ -17,4 +17,4 @@ if NovaAPI.IsEditorPlatform() then
 	end
 	ForEachTableLine(DataTable.Story, forEachLine_Story)
 end
-CS.GameCameraStackManager.Instance.autoVerticalToHorizontalFieldOfViewAspect = 1.44
+CS.GameCameraStackManager.Instance.autoVerticalToHorizontalFieldOfViewAspect = 1.53

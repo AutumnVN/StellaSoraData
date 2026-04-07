@@ -26,10 +26,14 @@ LoginRewardItemCtrl._mapNodeConfig = {
 }
 LoginRewardItemCtrl._mapEventConfig = {}
 LoginRewardItemCtrl._mapRedDotConfig = {}
-function LoginRewardItemCtrl:SetRewardItem(nDay, mapReward, bFinalDay, bNextDay)
+function LoginRewardItemCtrl:SetRewardItem(nDay, mapReward, bFinalDay, bNextDay, sNumName)
 	self.mapReward = mapReward
 	for _, v in ipairs(self._mapNode.imgDay) do
-		self:SetAtlasSprite(v, "05_number", "zs_activity_02_num_" .. nDay)
+		if sNumName then
+			self:SetAtlasSprite(v, "05_number", sNumName .. nDay)
+		else
+			self:SetAtlasSprite(v, "05_number", "zs_activity_02_num_" .. nDay)
+		end
 	end
 	self:SetPngSprite(self._mapNode.imgIcon, mapReward.RewardIcon or "")
 	NovaAPI.SetTMPText(self._mapNode.txtItemCount, orderedFormat(ConfigTable.GetUIText("LoginReward_Reward_Count"), mapReward.RewardCount))

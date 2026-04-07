@@ -730,13 +730,15 @@ function MainViewCtrl:AddOtherBanner()
 			local sPlatform = mapLineData.Param4
 			local sOption = mapLineData.Param5
 			local curPlatform = CS.ClientManager.Instance.Platform
+			local bUseOpenUrl = mapLineData.Param7 == "1"
 			if mapLineData.Param1 == "" then
 				if sPlatform == "" then
 					table.insert(self.tbBannerList, {
 						nType = GameEnum.bannerType.JumpToUrl,
 						sBanner = mapLineData.bannerName,
 						sUrl = sUrl,
-						bInside = true
+						bInside = true,
+						bUseOpenUrl = bUseOpenUrl
 					})
 				else
 					local tbPlatformList = string.split(sPlatform, ",")
@@ -749,7 +751,8 @@ function MainViewCtrl:AddOtherBanner()
 							nType = GameEnum.bannerType.JumpToUrl,
 							sBanner = mapLineData.bannerName,
 							sUrl = sUrl,
-							bInside = bInside
+							bInside = bInside,
+							bUseOpenUrl = bUseOpenUrl
 						})
 					end
 				end
@@ -762,7 +765,8 @@ function MainViewCtrl:AddOtherBanner()
 							nType = GameEnum.bannerType.JumpToUrl,
 							sBanner = mapLineData.bannerName,
 							sUrl = sUrl,
-							bInside = true
+							bInside = true,
+							bUseOpenUrl = bUseOpenUrl
 						})
 					else
 						local tbPlatformList = string.split(sPlatform, ",")
@@ -775,7 +779,8 @@ function MainViewCtrl:AddOtherBanner()
 								nType = GameEnum.bannerType.JumpToUrl,
 								sBanner = mapLineData.bannerName,
 								sUrl = sUrl,
-								bInside = bInside
+								bInside = bInside,
+								bUseOpenUrl = bUseOpenUrl
 							})
 						end
 					end
@@ -1515,7 +1520,10 @@ function MainViewCtrl:OnBtnClick_btnActBanner()
 	elseif bannerData.nType == GameEnum.bannerType.JumpToUrl then
 		local sUrl = bannerData.sUrl
 		local bInside = bannerData.bInside
-		if SDKManager:IsSDKInit() then
+		local bUseOpenUrl = bannerData.bUseOpenUrl
+		if bUseOpenUrl then
+			NovaAPI.OpenURL(sUrl)
+		elseif SDKManager:IsSDKInit() then
 			if bInside then
 				SDKManager:ShowWebView(false, "", sUrl, 1, 0, true)
 			else
