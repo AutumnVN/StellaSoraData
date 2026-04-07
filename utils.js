@@ -473,39 +473,45 @@ function collectUnusedParamsFrom(obj, lang) {
     return paramKeys.map(k => `\u000b${k}: &${k}& (${obj[k].split(',')[0]}${obj[k].split(',')[3] ? `,${obj[k].split(',')[3]}` : ''}${obj[k].split(',')[0] === 'HitDamage' ? `,${DAMAGE_TYPE[HITDAMAGE[obj[k].split(',')[2]].DamageType]}` : ''})`).join(' ');
 }
 
-function collectPotentialHiddenParamsFrom(obj) {
+function collectPotentialHiddenParamsFrom(obj, allSkillParams) {
     if (!obj) return { desc: '', params: [] };
 
     const charId = obj.CharId;
     const potId = obj.Id % 100;
 
-    if (![125].includes(charId)) return { desc: '', params: [] };
+    const slice58Group = [107, 112, 113, 125, 132, 144, 150, 155];
 
-    const slice57Group = [107, 113, 125, 132, 144, 150, 155];
-
+    const stringifiedSkill = JSON.stringify(SKILL);
     const stringifiedPotential = JSON.stringify(POTENTIAL);
     const params = collectParamsFrom(obj);
     const target = String(potId).padStart(2, '0');
 
     const hiddenHitDamageIds = [];
     for (const id of Object.keys(HITDAMAGE)) {
+        if (id.length !== 9) continue;
         if (!id.startsWith(charId)) continue;
+        if (['01', '02', '03', '04'].includes(target) && !['1', '2', '4'].includes(id.slice(3, 4))) continue;
+        if (['21', '22', '23', '24'].includes(target) && !['1', '3', '4'].includes(id.slice(3, 4))) continue;
+        if (!['01', '02', '03', '04', '21', '22', '23', '24'].includes(target) && !['5'].includes(id.slice(3, 4))) continue;
+        if (stringifiedSkill.includes(`DamageNum,${id}`)) continue;
         if (stringifiedPotential.includes(`DamageNum,${id}`)) continue;
 
-        const slice = !slice57Group.includes(charId) ? id.slice(4, 6) : id.slice(5, 7);
-        if (slice !== target) continue;
+        const slice = !slice58Group.includes(charId) ? id.slice(4, 7) : id.slice(5, 8);
+        if (slice !== `${target}0`) continue;
 
         if (params.some(param => param.includes(id))) continue;
 
         const resolved = resolveParam([`HitDamage,DamageNum,${id}`])[0];
         if (!resolved) continue;
         if (`HitDamage,DamageNum,${id}` === resolved) continue;
+        if ([... new Set(resolved.split('/').map(r => r.trim()))].length < 9) continue;
+        if (allSkillParams.includes(resolved)) continue;
 
         hiddenHitDamageIds.push(id);
     }
 
     return {
-        desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage,${DAMAGE_TYPE[HITDAMAGE[id].DamageType]})`).join(' '),
+        desc: hiddenHitDamageIds.map((id, index) => `\u000bHiddenParam${index + 1}: &HiddenParam${index + 1}& (HitDamage,${DAMAGE_TYPE[HITDAMAGE[id].DamageType]},${id})`).join(' '),
         params: hiddenHitDamageIds.map(id => `HitDamage,DamageNum,${id}`)
     };
 }

@@ -4239,8 +4239,10 @@
                     "id": 510724,
                     "name": "Mystery of Gyration",
                     "briefDesc": "Tilia can throw more Aegis of Light.",
-                    "desc": "When casting &Param1& (Support Skill), Tilia throws Aegis of Light at up to <color=#0abec5>5</color> targets simultaneously.",
-                    "damageType": [],
+                    "desc": "When casting &Param1& (Support Skill), Tilia throws Aegis of Light at up to <color=#0abec5>5</color> targets simultaneously.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,107322401)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -4251,8 +4253,14 @@
                     "paramsTooltips": [
                         {}
                     ],
-                    "hiddenParams": [],
-                    "hiddenParamsTooltips": [],
+                    "hiddenParams": [
+                        "56.7%/62.4%/68%/85.1%/90.7%/96.4%/107.7%/113.4%/119.1%/130.4%/136.1%/141.8%/147.4%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
                     "icon": "10701_Potential_24",
                     "rarity": "core"
                 }
@@ -44543,7 +44551,7 @@
                     "id": 512523,
                     "name": "Localized Snowfall",
                     "briefDesc": "After Freesia casts the Support Skill while in ##Berserk#2014#, there is a chance to summon an Ice Flower with an Auto Attack.",
-                    "desc": "After Freesia casts &Param10& (Support Skill) while in ##Berserk#2014#, there is a <color=#0abec5>30%</color> chance to summon one Ice Flower with an Auto Attack within <color=#0abec5>&Param1&</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill)",
+                    "desc": "After Freesia casts &Param10& (Support Skill) while in ##Berserk#2014#, there is a <color=#0abec5>30%</color> chance to summon one Ice Flower with an Auto Attack within <color=#0abec5>&Param1&</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,125322301) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill,125322302)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill) (hidden)"
                     ],
@@ -64805,9 +64813,10 @@
                     "id": 513406,
                     "name": "Thunder Punch",
                     "briefDesc": "The third strike of Fiery Punches deals additional DMG.",
-                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.",
+                    "desc": "The third strike of Fiery Punches deals an additional <color=#ec6d21>&Param1& of ATK</color> as AoE Ignis Auto Attack DMG.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Auto Attack,134506002)",
                     "damageType": [
-                        "Auto Attack (2.84e)"
+                        "Auto Attack (2.84e)",
+                        "Auto Attack (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -64821,8 +64830,14 @@
                             "damageType": "Auto Attack (2.84e)"
                         }
                     ],
-                    "hiddenParams": [],
-                    "hiddenParamsTooltips": [],
+                    "hiddenParams": [
+                        "127%/204%/280%/356%/432%/509%/585%/661%/738%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Auto Attack"
+                        }
+                    ],
                     "icon": "13401_Potential_02",
                     "corner": "Triangle",
                     "rarity": "rare"
@@ -102446,8 +102461,10 @@
                     "id": 515822,
                     "name": "Special Ammo",
                     "briefDesc": "Increases the Skill DMG and Attack Range of Gift Box Shells.\u000bIf the squad is Ignis-Trekker only, when Gift Box Shells deal DMG to the target, increases the Skill DMG Taken of the target.",
-                    "desc": "Increases the Attack Range of Gift Box Shells by <color=#0abec5>50%</color> and Skill DMG by <color=#0abec5>&Param5&</color>.\u000bIf the squad is Ignis-Trekker only, when Gift Box Shells deal DMG to the target, increases the target's Skill DMG Taken by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, up to <color=#0abec5>&Param4&</color> stacks.\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype)",
-                    "damageType": [],
+                    "desc": "Increases the Attack Range of Gift Box Shells by <color=#0abec5>50%</color> and Skill DMG by <color=#0abec5>&Param5&</color>.\u000bIf the squad is Ignis-Trekker only, when Gift Box Shells deal DMG to the target, increases the target's Skill DMG Taken by <color=#0abec5>&Param2&</color> for <color=#0abec5>&Param3&</color>s, up to <color=#0abec5>&Param4&</color> stacks.\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,158322003)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill) (hidden)"
+                    ],
                     "effectType": [
                         "ELEMENTTYPE_:(Ignis) Skill DMG Taken"
                     ],
@@ -102485,8 +102502,14 @@
                             "buffIcon": "Icon_CommonBuff_DefenseDown"
                         }
                     ],
-                    "hiddenParams": [],
-                    "hiddenParamsTooltips": [],
+                    "hiddenParams": [
+                        "37%/42%/48%/64%/69%/75%/85%/89%/94%/103%/106%/110%/114%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
                     "icon": "15801_Potential_22",
                     "rarity": "core"
                 },

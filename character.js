@@ -33,6 +33,7 @@ const LANG_FORCE = require('./EN/language/en_US/Force.json');
 const LANG_CHARACTERDES = require('./EN/language/en_US/CharacterDes.json');
 const LANG_CHARACTERARCHIVEBASEINFO = require('./EN/language/en_US/CharacterArchiveBaseInfo.json');
 const characterId = require('./characterid.json');
+const { get } = require('http');
 
 const character = {};
 const unreleased = {};
@@ -320,12 +321,14 @@ function getPotentials(charId) {
     const pot = CHARPOTENTIAL[charId];
     if (!pot || !pot.MasterSpecificPotentialIds) return {};
 
+    const allSkillParams = [...getSkillParams(CHARACTER[charId].NormalAtkId), ...getSkillParams(CHARACTER[charId].SkillId), ...getSkillParams(CHARACTER[charId].AssistSkillId), ...getSkillParams(CHARACTER[charId].UltimateId)].filter(p => p);
+
     return {
         mainCore: pot.MasterSpecificPotentialIds.map(id => ({
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -343,7 +346,7 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -361,7 +364,7 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -379,7 +382,7 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -397,7 +400,7 @@ function getPotentials(charId) {
             id,
             name: LANG_ITEM[ITEM[id].Title],
             briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
-            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id]).desc,
+            desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -425,20 +428,23 @@ function getPotentialParamsTooltips(potId) {
 }
 
 function getPotentialHiddenParams(potId) {
-    const params = collectPotentialHiddenParamsFrom(POTENTIAL[potId]).params;
+    const allSkillParams = [...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].NormalAtkId), ...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].SkillId), ...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].AssistSkillId), ...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].UltimateId)].filter(p => p);
+    const params = collectPotentialHiddenParamsFrom(POTENTIAL[potId], allSkillParams).params;
     return resolveParam(params);
 }
 
 function getPotentialHiddenParamsTooltips(potId) {
-    const params = collectPotentialHiddenParamsFrom(POTENTIAL[potId]).params;
+    const allSkillParams = [...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].NormalAtkId), ...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].SkillId), ...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].AssistSkillId), ...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].UltimateId)].filter(p => p);
+    const params = collectPotentialHiddenParamsFrom(POTENTIAL[potId], allSkillParams).params;
     return resolveParamsTooltips(params);
 }
 
 function getPotentialDamageTypes(potId) {
     const damageTypes = [];
 
+    const allSkillParams = [...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].NormalAtkId), ...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].SkillId), ...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].AssistSkillId), ...getSkillParams(CHARACTER[POTENTIAL[potId].CharId].UltimateId)].filter(p => p);
     const params = collectParamsFrom(POTENTIAL[potId]).filter(p => p && p.startsWith('HitDamage'));
-    const hiddenParams = collectPotentialHiddenParamsFrom(POTENTIAL[potId]).params.filter(p => p && p.startsWith('HitDamage'));
+    const hiddenParams = collectPotentialHiddenParamsFrom(POTENTIAL[potId], allSkillParams).params.filter(p => p && p.startsWith('HitDamage'));
 
     for (const param of params) {
         const p = param.split(',');
