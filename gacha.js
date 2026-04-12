@@ -18,6 +18,7 @@ for (const id in GACHA) {
         id: +id,
         type: GACHA[id].StorageId === 1 ? 'character' : 'disc',
         name: LANG_GACHA[GACHA[id].Name],
+        icon: GACHA[id].Icon.split('/').pop(),
         rateUp5Star: getGachaPkg(GACHA[id].ATypeUpPkg),
         rateUp4Star: getGachaPkg(GACHA[id].BTypeUpPkg),
         startTime: GACHA[id].StartTime,
