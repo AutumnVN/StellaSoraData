@@ -571,14 +571,14 @@ function resolveParam(params) {
             switch (p[0]) {
                 case 'Effect':
                 case 'EffectValue':
-                    if (!EFFECTVALUE[p[2]]) return param;
-                    value = EFFECTVALUE[p[2]][p[3]];
+                    if (!EFFECTVALUE[p[2]] && !EFFECT[p[2]]) return param;
+                    value = EFFECTVALUE[p[2]][p[3]] || EFFECT[p[2]][p[3]];
                     break;
 
                 case 'Buff':
                 case 'BuffValue':
-                    if (!BUFFVALUE[p[2]]) return param;
-                    value = BUFFVALUE[p[2]][p[3]];
+                    if (!BUFFVALUE[p[2]] && !BUFF[p[2]]) return param;
+                    value = BUFFVALUE[p[2]][p[3]] || BUFF[p[2]][p[3]];
                     break;
 
                 case 'OnceAdditionalAttribute':

@@ -107,7 +107,7 @@ function getScoreBossGetControlDesc(id) {
 
     resolvedParams.forEach((paramSet, index) => {
         const splitted = paramSet.toString().split('/');
-        const paramValue = splitted.length === 13 ? splitted[skillLevel2 - 1] : splitted.length === 9 ? splitted[potentialLevel - 1] : splitted[0];
+        const paramValue = splitted[0];
         result = result.replaceAll(`&Param${index + 1}&`, paramValue);
     });
 
@@ -121,7 +121,7 @@ function getScoreBossAbilityDesc(id) {
 
     resolvedParams.forEach((paramSet, index) => {
         const splitted = paramSet.toString().split('/');
-        const paramValue = splitted.length === 13 ? splitted[skillLevel2 - 1] : splitted.length === 9 ? splitted[potentialLevel - 1] : splitted[0];
+        const paramValue = splitted[0];
         result = result.replaceAll(`&Param${index + 1}&`, paramValue);
     });
 

@@ -1,8 +1,269 @@
 {
     "200100": {
+        "activityId": 600001,
         "name": "[Maid For You] Nanoha???",
         "icon": "monsterhead_70022HuaYuan_Wind_L",
         "type": "Overlord",
+        "mechanic": [
+            [
+                {
+                    "name": "Sunflower Ties",
+                    "desc": "Sunflower Dance enhanced: The shuriken Nanoha hurls is attached to a string. After a brief delay, she pulls the player toward her.",
+                    "diff": 10,
+                    "icon": "duelaffix_70022021"
+                }
+            ],
+            [
+                {
+                    "name": "Shrouded Moon: Meteor",
+                    "desc": "Shrouded Moon enhanced: When Nanoha dashes, generates shurikens randomly on the battlefield.",
+                    "diff": 10,
+                    "icon": "duelaffix_70022071"
+                },
+                {
+                    "name": "Shrouded Moon: Gale",
+                    "desc": "Shrouded Moon enhanced: When Nanoha dashes, continuously summons clones to launch coordinated attacks.",
+                    "diff": 10,
+                    "icon": "duelaffix_70022061"
+                }
+            ],
+            [
+                {
+                    "name": "Entwined Gale",
+                    "desc": "Scattered Gale enhanced: The kunai Nanoha throws is attached to a string. Nanoha retracts the kunai thrown.",
+                    "diff": 10,
+                    "icon": "duelaffix_70022031"
+                }
+            ],
+            [
+                {
+                    "name": "Shadow Dance: Leaf Storm",
+                    "desc": "Shadow Dance: Leaf Barrier enhanced: Nanoha's clones will dash like her in Shrouded Moon, dealing DMG along their paths.",
+                    "diff": 10,
+                    "icon": "duelaffix_70022091"
+                }
+            ],
+            [
+                {
+                    "name": "Shadow Dance: Dream Wanderer",
+                    "desc": "Shadow Dance: Wither enhanced: Nanoha summons more clones to launch coordinated attacks.",
+                    "diff": 10,
+                    "icon": "duelaffix_70022101"
+                }
+            ],
+            [
+                {
+                    "name": "DMG Increase: Lesser",
+                    "desc": "Increases all enemy DMG dealt by <color=#ec6d21>10%</color>",
+                    "diff": 3,
+                    "icon": "duelaffix_101"
+                },
+                {
+                    "name": "DMG Increase: Medium",
+                    "desc": "Increases all enemy DMG dealt by <color=#ec6d21>20%</color>",
+                    "diff": 5,
+                    "icon": "duelaffix_102"
+                },
+                {
+                    "name": "DMG Increase: Greater",
+                    "desc": "Increases all enemy DMG dealt by <color=#ec6d21>40%</color>",
+                    "diff": 8,
+                    "icon": "duelaffix_103"
+                }
+            ],
+            [
+                {
+                    "name": "Weaken: Lesser",
+                    "desc": "Reduces friendly units' DMG dealt by <color=#ec6d21>-10%</color>",
+                    "diff": 3,
+                    "icon": "duelaffix_20301"
+                },
+                {
+                    "name": "Weaken: Medium",
+                    "desc": "Reduces friendly units' DMG dealt by <color=#ec6d21>-20%</color>",
+                    "diff": 5,
+                    "icon": "duelaffix_20302"
+                },
+                {
+                    "name": "Weaken: Greater",
+                    "desc": "Reduces friendly units' DMG dealt by <color=#ec6d21>-40%</color>",
+                    "diff": 8,
+                    "icon": "duelaffix_20303"
+                }
+            ],
+            [
+                {
+                    "name": "Blood Thirst",
+                    "desc": "Reduces the Main Trekker's Max HP by <color=#ec6d21>-50%</color>; restores <color=#ec6d21>0.5%</color> of Max HP each time DMG is dealt to the target",
+                    "diff": 5,
+                    "icon": "duelaffix_1001"
+                }
+            ],
+            [
+                {
+                    "name": "Ultimate Degen",
+                    "desc": "Each time an Ultimate is cast, the main Trekker loses <color=#ec6d21>3%</color> of current HP",
+                    "diff": 3,
+                    "icon": "duelaffix_1501"
+                },
+                {
+                    "name": "Ultimate Degen: Greater",
+                    "desc": "Each time an Ultimate is cast, the main Trekker loses <color=#ec6d21>10%</color> of current HP",
+                    "diff": 8,
+                    "icon": "duelaffix_1502"
+                }
+            ],
+            [
+                {
+                    "name": "Protection of Wind",
+                    "desc": "The enemy gains high DMG RES for <color=#ec6d21>2</color>s every <color=#ec6d21>15</color>s",
+                    "diff": 3,
+                    "icon": "duelaffix_401"
+                }
+            ],
+            [
+                {
+                    "name": "Crippling Blow",
+                    "desc": "Increases Dodge Cooldown by <color=#ec6d21>3</color>s",
+                    "diff": 5,
+                    "icon": "duelaffix_501"
+                }
+            ],
+            [
+                {
+                    "name": "Dodge Debuff",
+                    "desc": "When dodging, reduces the squad's DMG dealt by <color=#ec6d21>-5%</color> for <color=#ec6d21>4</color>s, up to <color=#ec6d21>3</color> stacks",
+                    "diff": 5,
+                    "icon": "duelaffix_601"
+                }
+            ],
+            [
+                {
+                    "name": "Mark Fade",
+                    "desc": "Reduces the squad's Mark DMG by <color=#ec6d21>-80%</color> and increases Ultimate DMG by <color=#ec6d21>15%</color>",
+                    "diff": 3,
+                    "icon": "duelaffix_701"
+                },
+                {
+                    "name": "Auto Attack Nerf",
+                    "desc": "Reduces the squad's Auto Attack DMG by <color=#ec6d21>-80%</color> and increases Skill DMG by <color=#ec6d21>15%</color>",
+                    "diff": 3,
+                    "icon": "duelaffix_702"
+                },
+                {
+                    "name": "Skill Nerf",
+                    "desc": "Reduces the squad's Skill DMG by <color=#ec6d21>-80%</color> and increases Minion DMG by <color=#ec6d21>15%</color>",
+                    "diff": 3,
+                    "icon": "duelaffix_703"
+                }
+            ],
+            [
+                {
+                    "name": "Skill Vulnerability",
+                    "desc": "After the Main Trekker casts a skill, increases DMG Taken by the Main Trekker by <color=#ec6d21>4%</color> for <color=#ec6d21>12</color>s, up to <color=#ec6d21>5</color> stacks",
+                    "diff": 5,
+                    "icon": "duelaffix_801"
+                }
+            ],
+            [
+                {
+                    "name": "Main Trekker Delay",
+                    "desc": "Increases the Main Trekker's Skill DMG by <color=#ec6d21>10%</color> and Cooldown by <color=#ec6d21>25%</color>",
+                    "diff": 3,
+                    "icon": "duelaffix_901"
+                },
+                {
+                    "name": "Main Trekker Delay: Greater",
+                    "desc": "Increases the Main Trekker's Skill DMG by <color=#ec6d21>20%</color> and Cooldown by <color=#ec6d21>50%</color>",
+                    "diff": 8,
+                    "icon": "duelaffix_902"
+                }
+            ],
+            [
+                {
+                    "name": "Crit Rate Adjustment",
+                    "desc": "The squad gains an extra <color=#ec6d21>15%</color> Crit Rate, but Crit DMG is reduced by <color=#ec6d21>-30%</color>",
+                    "diff": 5,
+                    "icon": "duelaffix_1201"
+                }
+            ],
+            [
+                {
+                    "name": "Support Degen",
+                    "desc": "Support Trekkers lose <color=#ec6d21>-20</color> Ultimate Energy when casting a skill",
+                    "diff": 3,
+                    "icon": "duelaffix_1301"
+                },
+                {
+                    "name": "Support Degen: Greater",
+                    "desc": "Support Trekkers lose <color=#ec6d21>-50</color> Ultimate Energy when casting a skill",
+                    "diff": 8,
+                    "icon": "duelaffix_1302"
+                }
+            ],
+            [
+                {
+                    "name": "Battle Enraged: Lesser",
+                    "desc": "For every <color=#ec6d21>18</color>s in combat, increases enemy ATK by <color=#ec6d21>1%</color>, stacks infinitely",
+                    "diff": 3,
+                    "icon": "duelaffix_1601"
+                },
+                {
+                    "name": "Battle Enraged: Medium",
+                    "desc": "For every <color=#ec6d21>16</color>s in combat, increases enemy ATK by <color=#ec6d21>3%</color>, stacks infinitely",
+                    "diff": 5,
+                    "icon": "duelaffix_1602"
+                },
+                {
+                    "name": "Battle Enraged: Greater",
+                    "desc": "For every <color=#ec6d21>15</color>s in combat, increases enemy ATK by <color=#ec6d21>5%</color>, stacks infinitely",
+                    "diff": 8,
+                    "icon": "duelaffix_1603"
+                }
+            ],
+            [
+                {
+                    "name": "Charge & Ultimate",
+                    "desc": "Reduces the squad's Charge Efficiency by <color=#ec6d21>-30%</color> but increases Ultimate DMG by <color=#ec6d21>30%</color>",
+                    "diff": 5,
+                    "icon": "duelaffix_1401"
+                }
+            ],
+            [
+                {
+                    "name": "Life Drain",
+                    "desc": "Nanoha recovers <color=#ec6d21>5%</color> of Max HP when hitting the Main Trekker. Can only be triggered once every <color=#ec6d21>20</color>s",
+                    "diff": 3,
+                    "icon": "duelaffix_1101"
+                },
+                {
+                    "name": "Life Drain: Greater",
+                    "desc": "Nanoha recovers <color=#ec6d21>10%</color> of Max HP when hitting the Main Trekker. Can only be triggered once every <color=#ec6d21>10</color>s",
+                    "diff": 8,
+                    "icon": "duelaffix_1102"
+                }
+            ],
+            [
+                {
+                    "name": "Shield: Lesser",
+                    "desc": "The enemy gains a shield equal to <color=#ec6d21>5%</color> of Max HP. Enemy with a shield is immune to Resilience Break",
+                    "diff": 3,
+                    "icon": "duelaffix_301"
+                },
+                {
+                    "name": "Shield: Medium",
+                    "desc": "The enemy gains a shield equal to <color=#ec6d21>20%</color> of Max HP. Enemy with a shield is immune to Resilience Break",
+                    "diff": 5,
+                    "icon": "duelaffix_302"
+                },
+                {
+                    "name": "Shield: Greater",
+                    "desc": "The enemy gains a shield equal to <color=#ec6d21>50%</color> of Max HP. Enemy with a shield is immune to Resilience Break",
+                    "diff": 8,
+                    "icon": "duelaffix_303"
+                }
+            ]
+        ],
         "weakTo": [
             "Ignis"
         ],
