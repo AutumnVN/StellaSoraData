@@ -38,14 +38,13 @@ jobs:
         if [ -n "$EN_COMMIT" ]; then
           if git merge-base --is-ancestor "$EN_COMMIT" HEAD; then
             echo "Local already contains upstream EN commit $EN_COMMIT, skipping sync"
-            exit 0
           fi
         else
           echo "No EN commit found on upstream/main; continuing sync"
+          git merge --allow-unrelated-histories -X theirs --no-edit upstream/main
+          echo "Merge HEAD: $(git rev-parse HEAD)"
         fi
 
-        git merge --allow-unrelated-histories -X theirs --no-edit upstream/main
-        echo "Merge HEAD: $(git rev-parse HEAD)"
 
         SCRIPTS=(arena.js ascension.js blitz.js character.js characterid.js disc.js gacha.js ground.js item.js raid.js word.js)
         for script in "${SCRIPTS[@]}"; do
