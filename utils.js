@@ -551,6 +551,11 @@ function iHateFloatingPointNumber(a, op, b) {
     }
 }
 
+function clearFloat(a) {
+    if (!isFinite(a)) return a;
+    return parseFloat((+a).toFixed(10));
+}
+
 function resolveParam(params) {
     return params.map(param => {
         const p = param.split(',');
@@ -620,6 +625,8 @@ function resolveParam(params) {
 
             if (value === undefined || value === null) return param;
 
+            value = clearFloat(value);
+
             switch (p[4]) {
                 case 'HdPct':
                     return iHateFloatingPointNumber(value, '*', 100) + '%';
@@ -685,9 +692,11 @@ function resolveParam(params) {
             for (; ; currentId += 10) {
                 if (!source || !source[currentId]) break;
 
-                const value = source[currentId][p[3]];
+                let value = source[currentId][p[3]];
 
                 if (value === undefined || value === null) break;
+
+                value = clearFloat(value);
 
                 switch (p[4]) {
                     case 'HdPct':
