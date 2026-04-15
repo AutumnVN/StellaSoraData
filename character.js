@@ -32,8 +32,46 @@ const LANG_DATINGBRANCH = require('./EN/language/en_US/DatingBranch.json');
 const LANG_FORCE = require('./EN/language/en_US/Force.json');
 const LANG_CHARACTERDES = require('./EN/language/en_US/CharacterDes.json');
 const LANG_CHARACTERARCHIVEBASEINFO = require('./EN/language/en_US/CharacterArchiveBaseInfo.json');
+const CN_CHARACTER = require('./CN/language/zh_CN/Character.json');
+const CN_CHARACTERTAG = require('./CN/language/zh_CN/CharacterTag.json');
+const CN_SKILL = require('./CN/language/zh_CN/Skill.json');
+const CN_UITEXT = require('./CN/language/zh_CN/UIText.json');
+const CN_ITEM = require('./CN/language/zh_CN/Item.json');
+const CN_POTENTIAL = require('./CN/language/zh_CN/Potential.json');
+const CN_TALENT = require('./CN/language/zh_CN/Talent.json');
+const CN_TALENTGROUP = require('./CN/language/zh_CN/TalentGroup.json');
+const CN_DATINGCHARACTEREVENT = require('./CN/language/zh_CN/DatingCharacterEvent.json');
+const CN_DATINGBRANCH = require('./CN/language/zh_CN/DatingBranch.json');
+const CN_FORCE = require('./CN/language/zh_CN/Force.json');
+const CN_CHARACTERDES = require('./CN/language/zh_CN/CharacterDes.json');
+const CN_CHARACTERARCHIVEBASEINFO = require('./CN/language/zh_CN/CharacterArchiveBaseInfo.json');
+const JP_CHARACTER = require('./JP/language/ja_JP/Character.json');
+const JP_CHARACTERTAG = require('./JP/language/ja_JP/CharacterTag.json');
+const JP_SKILL = require('./JP/language/ja_JP/Skill.json');
+const JP_UITEXT = require('./JP/language/ja_JP/UIText.json');
+const JP_ITEM = require('./JP/language/ja_JP/Item.json');
+const JP_POTENTIAL = require('./JP/language/ja_JP/Potential.json');
+const JP_TALENT = require('./JP/language/ja_JP/Talent.json');
+const JP_TALENTGROUP = require('./JP/language/ja_JP/TalentGroup.json');
+const JP_DATINGCHARACTEREVENT = require('./JP/language/ja_JP/DatingCharacterEvent.json');
+const JP_DATINGBRANCH = require('./JP/language/ja_JP/DatingBranch.json');
+const JP_FORCE = require('./JP/language/ja_JP/Force.json');
+const JP_CHARACTERDES = require('./JP/language/ja_JP/CharacterDes.json');
+const JP_CHARACTERARCHIVEBASEINFO = require('./JP/language/ja_JP/CharacterArchiveBaseInfo.json');
+const KR_CHARACTER = require('./KR/language/ko_KR/Character.json');
+const KR_CHARACTERTAG = require('./KR/language/ko_KR/CharacterTag.json');
+const KR_SKILL = require('./KR/language/ko_KR/Skill.json');
+const KR_UITEXT = require('./KR/language/ko_KR/UIText.json');
+const KR_ITEM = require('./KR/language/ko_KR/Item.json');
+const KR_POTENTIAL = require('./KR/language/ko_KR/Potential.json');
+const KR_TALENT = require('./KR/language/ko_KR/Talent.json');
+const KR_TALENTGROUP = require('./KR/language/ko_KR/TalentGroup.json');
+const KR_DATINGCHARACTEREVENT = require('./KR/language/ko_KR/DatingCharacterEvent.json');
+const KR_DATINGBRANCH = require('./KR/language/ko_KR/DatingBranch.json');
+const KR_FORCE = require('./KR/language/ko_KR/Force.json');
+const KR_CHARACTERDES = require('./KR/language/ko_KR/CharacterDes.json');
+const KR_CHARACTERARCHIVEBASEINFO = require('./KR/language/ko_KR/CharacterArchiveBaseInfo.json');
 const characterId = require('./characterid.json');
-const { get } = require('http');
 
 const character = {};
 const unreleased = {};
@@ -48,7 +86,6 @@ for (const id in CHARACTER) {
     const char = {
         id: +id,
         name: LANG_CHARACTER[CHARACTER[id].Name],
-        desc: LANG_CHARACTERDES[CHARACTERDES[id].CharDes],
         star: CHARACTER[id].Grade === 1 ? 5 : 4,
         element: LANG_UITEXT[`UIText.T_Element_Attr_${CHARACTER[id].EET}.1`],
         class: LANG_UITEXT[`UIText.Char_JobClass_${CHARACTER[id].Class}.1`],
@@ -66,9 +103,14 @@ for (const id in CHARACTER) {
         normalAtk: {
             id: CHARACTER[id].NormalAtkId,
             name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
+            nameCN: CN_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
+            nameJP: JP_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
+            nameKR: KR_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
             energyLimit: SKILL[CHARACTER[id].NormalAtkId].GetEnergyLimit / 10000,
-            briefDesc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].NormalAtkId], LANG_SKILL),
+            descCN: CN_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].NormalAtkId], CN_SKILL),
+            descJP: JP_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].NormalAtkId], JP_SKILL),
+            descKR: KR_SKILL[SKILL[CHARACTER[id].NormalAtkId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].NormalAtkId], KR_SKILL),
             damageType: getSkillDamageTypes(CHARACTER[id].NormalAtkId),
             effectType: getSkillEffectTypes(CHARACTER[id].NormalAtkId),
             addAttrType: getSkillAddAttrTypes(CHARACTER[id].NormalAtkId),
@@ -81,10 +123,15 @@ for (const id in CHARACTER) {
         skill: {
             id: CHARACTER[id].SkillId,
             name: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Title],
+            nameCN: CN_SKILL[SKILL[CHARACTER[id].SkillId].Title],
+            nameJP: JP_SKILL[SKILL[CHARACTER[id].SkillId].Title],
+            nameKR: KR_SKILL[SKILL[CHARACTER[id].SkillId].Title],
             cooldown: SKILL[CHARACTER[id].SkillId].SkillCD / 10000 + 's',
             energyLimit: SKILL[CHARACTER[id].SkillId].GetEnergyLimit / 10000,
-            briefDesc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].SkillId], LANG_SKILL),
+            descCN: CN_SKILL[SKILL[CHARACTER[id].SkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].SkillId], CN_SKILL),
+            descJP: JP_SKILL[SKILL[CHARACTER[id].SkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].SkillId], JP_SKILL),
+            descKR: KR_SKILL[SKILL[CHARACTER[id].SkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].SkillId], KR_SKILL),
             damageType: getSkillDamageTypes(CHARACTER[id].SkillId),
             effectType: getSkillEffectTypes(CHARACTER[id].SkillId),
             addAttrType: getSkillAddAttrTypes(CHARACTER[id].SkillId),
@@ -97,9 +144,14 @@ for (const id in CHARACTER) {
         supportSkill: {
             id: CHARACTER[id].AssistSkillId,
             name: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
+            nameCN: CN_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
+            nameJP: JP_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
+            nameKR: KR_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
             cooldown: SKILL[CHARACTER[id].AssistSkillId].SkillCD / 10000 + 's',
-            briefDesc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].AssistSkillId], LANG_SKILL),
+            descCN: CN_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].AssistSkillId], CN_SKILL),
+            descJP: JP_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].AssistSkillId], JP_SKILL),
+            descKR: KR_SKILL[SKILL[CHARACTER[id].AssistSkillId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].AssistSkillId], KR_SKILL),
             damageType: getSkillDamageTypes(CHARACTER[id].AssistSkillId),
             effectType: getSkillEffectTypes(CHARACTER[id].AssistSkillId),
             addAttrType: getSkillAddAttrTypes(CHARACTER[id].AssistSkillId),
@@ -112,10 +164,15 @@ for (const id in CHARACTER) {
         ultimate: {
             id: CHARACTER[id].UltimateId,
             name: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
+            nameCN: CN_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
+            nameJP: JP_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
+            nameKR: KR_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
             cooldown: SKILL[CHARACTER[id].UltimateId].SkillCD / 10000 + 's',
             energy: SKILL[CHARACTER[id].UltimateId].UltraEnergy / 10000,
-            briefDesc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].BriefDesc],
             desc: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].UltimateId], LANG_SKILL),
+            descCN: CN_SKILL[SKILL[CHARACTER[id].UltimateId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].UltimateId], CN_SKILL),
+            descJP: JP_SKILL[SKILL[CHARACTER[id].UltimateId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].UltimateId], JP_SKILL),
+            descKR: KR_SKILL[SKILL[CHARACTER[id].UltimateId].Desc] + collectUnusedParamsFrom(SKILL[CHARACTER[id].UltimateId], KR_SKILL),
             damageType: getSkillDamageTypes(CHARACTER[id].UltimateId),
             effectType: getSkillEffectTypes(CHARACTER[id].UltimateId),
             addAttrType: getSkillAddAttrTypes(CHARACTER[id].UltimateId),
@@ -327,8 +384,13 @@ function getPotentials(charId) {
         mainCore: pot.MasterSpecificPotentialIds.map(id => ({
             id,
             name: LANG_ITEM[ITEM[id].Title],
-            briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
+            nameCN: CN_ITEM[ITEM[id].Title],
+            nameJP: JP_ITEM[ITEM[id].Title],
+            nameKR: KR_ITEM[ITEM[id].Title],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descCN: CN_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], CN_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descJP: JP_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], JP_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descKR: KR_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], KR_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -345,8 +407,13 @@ function getPotentials(charId) {
         mainNormal: pot.MasterNormalPotentialIds.map(id => ({
             id,
             name: LANG_ITEM[ITEM[id].Title],
-            briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
+            nameCN: CN_ITEM[ITEM[id].Title],
+            nameJP: JP_ITEM[ITEM[id].Title],
+            nameKR: KR_ITEM[ITEM[id].Title],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descCN: CN_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], CN_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descJP: JP_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], JP_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descKR: KR_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], KR_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -363,8 +430,13 @@ function getPotentials(charId) {
         common: pot.CommonPotentialIds.map(id => ({
             id,
             name: LANG_ITEM[ITEM[id].Title],
-            briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
+            nameCN: CN_ITEM[ITEM[id].Title],
+            nameJP: JP_ITEM[ITEM[id].Title],
+            nameKR: KR_ITEM[ITEM[id].Title],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descCN: CN_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], CN_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descJP: JP_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], JP_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descKR: KR_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], KR_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -381,8 +453,13 @@ function getPotentials(charId) {
         supportCore: pot.AssistSpecificPotentialIds.map(id => ({
             id,
             name: LANG_ITEM[ITEM[id].Title],
-            briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
+            nameCN: CN_ITEM[ITEM[id].Title],
+            nameJP: JP_ITEM[ITEM[id].Title],
+            nameKR: KR_ITEM[ITEM[id].Title],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descCN: CN_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], CN_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descJP: JP_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], JP_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descKR: KR_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], KR_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
@@ -399,8 +476,13 @@ function getPotentials(charId) {
         supportNormal: pot.AssistNormalPotentialIds.map(id => ({
             id,
             name: LANG_ITEM[ITEM[id].Title],
-            briefDesc: LANG_POTENTIAL[POTENTIAL[id].BriefDesc],
+            nameCN: CN_ITEM[ITEM[id].Title],
+            nameJP: JP_ITEM[ITEM[id].Title],
+            nameKR: KR_ITEM[ITEM[id].Title],
             desc: LANG_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], LANG_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descCN: CN_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], CN_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descJP: JP_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], JP_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
+            descKR: KR_POTENTIAL[POTENTIAL[id].Desc] + collectUnusedParamsFrom(POTENTIAL[id], KR_POTENTIAL) + collectPotentialHiddenParamsFrom(POTENTIAL[id], allSkillParams).desc,
             damageType: getPotentialDamageTypes(id),
             effectType: getPotentialEffectTypes(id),
             addAttrType: getPotentialAddAttrTypes(id),
