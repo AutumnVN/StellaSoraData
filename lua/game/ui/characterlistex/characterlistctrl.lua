@@ -21,6 +21,24 @@ CharacterListCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Order"
 	},
+	btnFavoriteOrder = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_InFavoriteOrder"
+	},
+	InFavoriteOrder = {
+		sNodeName = "InFavoriteOrder",
+		sComponentName = "CanvasGroup"
+	},
+	txtOffLabel = {
+		sNodeName = "OffLabel",
+		sComponentName = "TMP_Text",
+		sLanguageId = "CharacterList_Common"
+	},
+	txtInLabel = {
+		sNodeName = "InLabel",
+		sComponentName = "TMP_Text",
+		sLanguageId = "CharacterList_Common"
+	},
 	imgFilterChoose = {},
 	aniPanel = {
 		sNodeName = "----SafeAreaRoot----",
@@ -45,6 +63,7 @@ function CharacterListCtrl:Refresh()
 	self:SortChar()
 	self:FilterChar()
 	self:RefreshOrderState()
+	self:RefreshFavoriteTopState()
 	local nCurCount = #self.tbSortedChar
 	if 0 < nCurCount then
 		self._mapNode.imgEmpty:SetActive(false)
@@ -100,7 +119,7 @@ function CharacterListCtrl:SortChar()
 	self.tbSortedChar = {}
 	UTILS.SortByPriority(self.tbAllChar, {
 		AllEnum.CharSortField[self.tbSortCfg.nSortType]
-	}, PlayerData.Char:GetCharSortField(), self.tbSortCfg.bOrder)
+	}, PlayerData.Char:GetCharSortField(), self.tbSortCfg.bOrder, self.bInFavorite)
 	UTILS.SortByPriority(self.tbUnlockableChar, {
 		AllEnum.CharSortField[self.tbSortCfg.nSortType]
 	}, PlayerData.Char:GetCharSortField(), self.tbSortCfg.bOrder)
@@ -182,6 +201,13 @@ function CharacterListCtrl:RefreshOrderState()
 	self._mapNode.imgArrowDownEnable:SetActive(not self.tbSortCfg.bOrder)
 	self._mapNode.imgArrowDownDisable:SetActive(self.tbSortCfg.bOrder)
 end
+function CharacterListCtrl:RefreshFavoriteTopState()
+	if self.bInFavorite then
+		NovaAPI.SetCanvasGroupAlpha(self._mapNode.InFavoriteOrder, 1)
+	else
+		NovaAPI.SetCanvasGroupAlpha(self._mapNode.InFavoriteOrder, 0)
+	end
+end
 function CharacterListCtrl:FadeIn(bPlayFadeIn)
 	if self._panel._nFadeInType == 1 then
 		EventManager.Hit(EventId.SetTransition)
@@ -206,6 +232,7 @@ function CharacterListCtrl:OnEnable()
 		end
 	end
 	self._mapNode.goSortDropdown:SetList(PlayerData.Char:GetCharSortNameTextCfg(), curSortIdx - 1)
+	self.bInFavorite = true
 	self.tbAllChar = {}
 	local ownedChar = PlayerData.Char:GetDataForCharList()
 	local fragmentsChar = PlayerData.Item:GetCharFragmentsData()
@@ -277,6 +304,17 @@ function CharacterListCtrl:OnBtnClick_Filter()
 		AllEnum.ChooseOption.Char_TacticalStyle
 	}
 	EventManager.Hit(EventId.OpenPanel, PanelId.FilterPopupPanel, tbOption)
+end
+function CharacterListCtrl:OnBtnClick_InFavoriteOrder()
+	self.bInFavorite = not self.bInFavorite
+	local sTip = ""
+	if self.bInFavorite then
+		sTip = ConfigTable.GetUIText("OpenCharacterCommonTop_Tip")
+	else
+		sTip = ConfigTable.GetUIText("CloseCharacterCommonTop_Tip")
+	end
+	EventManager.Hit(EventId.OpenMessageBox, sTip)
+	self:Refresh()
 end
 function CharacterListCtrl:OnEvent_PositionCharPos(_tmpChar)
 	for i, v in pairs(self.tbSortedChar) do

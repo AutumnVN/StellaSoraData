@@ -93,7 +93,7 @@ function FriendHonorTitleCtrl:Open()
 	self.tbCurHonorTitle = {}
 	self.tbAllHonorData = {}
 	self.tbGoChosenState = {}
-	local ownHonorData = PlayerData.Base:GetPlayerHonorTitleList() or {}
+	self.ownHonorData = PlayerData.Base:GetPlayerHonorTitleList() or {}
 	local curHononData = PlayerData.Base:GetPlayerHonorTitle() or {}
 	for k, v in ipairs(curHononData) do
 		table.insert(self.tbCurHonorTitle, v.Id)
@@ -101,7 +101,14 @@ function FriendHonorTitleCtrl:Open()
 	local allData = ConfigTable.Get("Honor")
 	local groupData = {}
 	local foreachHonor = function(mapData)
-		if mapData.IsUnlock == true or ownHonorData ~= nil and table.indexof(ownHonorData, mapData.Id) > 0 then
+		local bHas = false
+		for k, v in pairs(self.ownHonorData) do
+			if v.Id == mapData.Id then
+				bHas = true
+				break
+			end
+		end
+		if mapData.IsUnlock == true or self.ownHonorData ~= nil and bHas then
 			if mapData.Type == GameEnum.honorType.Group then
 				if groupData[mapData.Params[1]] == nil then
 					groupData[mapData.Params[1]] = {}
@@ -137,6 +144,13 @@ function FriendHonorTitleCtrl:RefreshHonorTitle()
 			if honorData.Type == GameEnum.honorType.Character then
 				local affinityData = PlayerData.Char:GetCharAffinityData(honorData.Params[1])
 				level = affinityData.Level
+			elseif honorData.Type == GameEnum.honorType.Levels then
+				for k, v in pairs(self.ownHonorData) do
+					if v.Id == honorData.Id then
+						level = v.Lv or 1
+						break
+					end
+				end
 			end
 			self._mapNode.goCurHonorTitle[i]:SetHonotTitle(honorData.Id, i == 1, level)
 		end
@@ -239,6 +253,13 @@ function FriendHonorTitleCtrl:OnGridRefresh(goGrid, gridIndex)
 	if honorData.Type == GameEnum.honorType.Character then
 		local affinityData = PlayerData.Char:GetCharAffinityData(honorData.Params[1])
 		level = affinityData ~= nil and affinityData.Level or 1
+	elseif honorData.Type == GameEnum.honorType.Levels then
+		for k, v in pairs(self.ownHonorData) do
+			if v.Id == honorData.Id then
+				level = v.Lv or 1
+				break
+			end
+		end
 	end
 	ctrl:SetHonotTitle(honorData.Id, true, level)
 	self:SetPngSprite(imgHonorTitleEquipBg, honorData.MainRes)

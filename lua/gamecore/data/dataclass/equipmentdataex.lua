@@ -16,7 +16,9 @@ function EquipmentData:Clear()
 	self.nRefreshId = nil
 	self.bLock = nil
 	self.tbAffix = nil
+	self.tbUpgradeCount = nil
 	self.tbAlterAffix = nil
+	self.tbAlterUpgradeCount = nil
 	self.tbPotentialAffix = nil
 	self.tbSkillAffix = nil
 	self.tbRandomAttr = nil
@@ -44,51 +46,72 @@ function EquipmentData:ParseConfigData(equipmentCfg)
 end
 function EquipmentData:ParseServerData(mapEquipment)
 	self.bLock = mapEquipment.Lock
-	self:UpdateAffix(mapEquipment.Attributes)
-	self:UpdateAlterAffix(mapEquipment.AlterAttributes)
+	self:UpdateAffix(mapEquipment.Attributes, mapEquipment.OverlockCount)
+	self:UpdateAlterAffix(mapEquipment.AlterAttributes, mapEquipment.AlterOverlockCount)
 end
-function EquipmentData:UpdateAffix(tbAttributes)
+function EquipmentData:UpdateAffix(tbAttributes, tbCount)
 	self.tbAffix = tbAttributes
-	self:UpdateRandomAttr(self.tbAffix)
+	self.tbUpgradeCount = tbCount
+	self:UpdateRandomAttr(self.tbAffix, self.tbUpgradeCount)
 end
-function EquipmentData:UpdateAlterAffix(tbAttributes)
+function EquipmentData:UpdateAlterAffix(tbAttributes, tbCount)
 	self.tbAlterAffix = tbAttributes
+	self.tbAlterUpgradeCount = tbCount
 end
 function EquipmentData:ReplaceRandomAttr()
 	if not self.tbAlterAffix or next(self.tbAlterAffix) == nil then
+		return
+	end
+	if not self.tbAlterUpgradeCount or next(self.tbAlterUpgradeCount) == nil then
 		return
 	end
 	self.tbAffix = clone(self.tbAlterAffix)
 	for k, _ in ipairs(self.tbAlterAffix) do
 		self.tbAlterAffix[k] = 0
 	end
-	self:UpdateRandomAttr(self.tbAffix)
+	self.tbUpgradeCount = clone(self.tbAlterUpgradeCount)
+	for k, _ in ipairs(self.tbAlterUpgradeCount) do
+		self.tbAlterUpgradeCount[k] = 0
+	end
+	self:UpdateRandomAttr(self.tbAffix, self.tbUpgradeCount)
 end
-function EquipmentData:UpdateRandomAttr(mapAttrs)
+function EquipmentData:UpdateRandomAttr(mapAttrs, tbCount)
 	self.tbPotentialAffix = {}
 	self.tbSkillAffix = {}
 	self.tbRandomAttr = {}
 	self.tbEffect = {}
-	for _, v in ipairs(mapAttrs) do
+	local add = function(mapCfg, nAttrId)
+		if not mapCfg then
+			return
+		end
+		if mapCfg.AttrType == GameEnum.CharGemEffectType.Potential then
+			table.insert(self.tbPotentialAffix, mapCfg)
+		elseif mapCfg.AttrType == GameEnum.CharGemEffectType.SkillLevel then
+			table.insert(self.tbSkillAffix, mapCfg)
+		elseif mapCfg.AttrType == GameEnum.effectType.ATTR_FIX or mapCfg.AttrType == GameEnum.effectType.PLAYER_ATTR_FIX then
+			if mapCfg.AttrTypeSecondSubtype == GameEnum.parameterType.BASE_VALUE then
+				local value = tonumber(mapCfg.Value) or 0
+				local mapData = {
+					AttrId = nAttrId,
+					Value = value,
+					CfgValue = value / ConfigData.IntFloatPrecision
+				}
+				table.insert(self.tbRandomAttr, mapData)
+			else
+				table.insert(self.tbEffect, mapCfg.EffectId)
+			end
+		end
+	end
+	for k, v in ipairs(mapAttrs) do
 		if 0 < v then
 			local mapCfg = ConfigTable.GetData("CharGemAttrValue", v)
 			if mapCfg then
-				if mapCfg.AttrType == GameEnum.CharGemEffectType.Potential then
-					table.insert(self.tbPotentialAffix, mapCfg)
-				elseif mapCfg.AttrType == GameEnum.CharGemEffectType.SkillLevel then
-					table.insert(self.tbSkillAffix, mapCfg)
-				elseif mapCfg.AttrType == GameEnum.effectType.ATTR_FIX or mapCfg.AttrType == GameEnum.effectType.PLAYER_ATTR_FIX then
-					if mapCfg.AttrTypeSecondSubtype == GameEnum.parameterType.BASE_VALUE then
-						local value = tonumber(mapCfg.Value) or 0
-						local mapData = {
-							AttrId = v,
-							Value = value,
-							CfgValue = value / ConfigData.IntFloatPrecision
-						}
-						table.insert(self.tbRandomAttr, mapData)
-					else
-						table.insert(self.tbEffect, mapCfg.EffectId)
-					end
+				if tbCount and 0 < tbCount[k] then
+					local nId = mapCfg.TypeId * 100 + tbCount[k] + mapCfg.Level
+					local mapAfterCfg = ConfigTable.GetData("CharGemAttrValue", nId)
+					add(mapAfterCfg, nId)
+				else
+					add(mapCfg, v)
 				end
 			end
 		end
@@ -134,6 +157,41 @@ function EquipmentData:CheckAlterEmpty()
 		if v == 0 then
 			return true
 		end
+	end
+	return false
+end
+function EquipmentData:GetUpgradeCount()
+	local nAll = 0
+	if self.tbUpgradeCount then
+		for _, v in ipairs(self.tbUpgradeCount) do
+			nAll = nAll + v
+		end
+	end
+	return nAll
+end
+function EquipmentData:ChangeUpgradeCount(nAttrIndex, nChange)
+	if self.tbAlterUpgradeCount[nAttrIndex] == self.tbUpgradeCount[nAttrIndex] and self.tbAlterAffix[nAttrIndex] == self.tbAffix[nAttrIndex] then
+		self.tbAlterUpgradeCount[nAttrIndex] = self.tbAlterUpgradeCount[nAttrIndex] + nChange
+	end
+	self.tbUpgradeCount[nAttrIndex] = self.tbUpgradeCount[nAttrIndex] + nChange
+end
+function EquipmentData:CheckUpgradeAble()
+	local nAll = self:GetUpgradeCount()
+	local nLimit = ConfigTable.GetConfigNumber("CharGemOverlockCount")
+	return nAll < nLimit
+end
+function EquipmentData:CheckUpgradeAlterSame(nAttrIndex)
+	if not self.tbAlterAffix or next(self.tbAlterAffix) == nil then
+		return true
+	end
+	if not self.tbAlterUpgradeCount or next(self.tbAlterUpgradeCount) == nil then
+		return true
+	end
+	if self.tbAlterAffix[nAttrIndex] == 0 then
+		return true
+	end
+	if self.tbAlterUpgradeCount[nAttrIndex] == self.tbUpgradeCount[nAttrIndex] and self.tbAlterAffix[nAttrIndex] == self.tbAffix[nAttrIndex] then
+		return true
 	end
 	return false
 end

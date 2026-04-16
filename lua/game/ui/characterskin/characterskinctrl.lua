@@ -252,9 +252,7 @@ function CharacterSkinCtrl:LoadCharacter()
 			self.curShowModel = v
 			self:WaitReadyClipFinish()
 			NovaAPI.BindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, 0, v.gameObject)
-			if CS.FrameworkMiscUtils.VersionCompare(CS.ClientManager.Instance:GetClientVersion(), "1.4.0", 2) == 1 then
-				GameUIUtils.SetCustomModelMaterialVariant(v.gameObject, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
-			end
+			GameUIUtils.SetCustomModelMaterialVariant(v.gameObject, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
 		else
 			v.gameObject:SetActive(false)
 		end
@@ -270,6 +268,7 @@ function CharacterSkinCtrl:LoadCharacter()
 			NovaAPI.BindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, 0, go)
 			GameUIUtils.SetCustomModelMaterialVariant(go, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
 			if self.rtSceneOriginPos ~= nil then
+				NovaAPI.ChangeAnimatorDefaultState(go.transform)
 				go.transform.position = self.rtSceneOriginPos.position
 				go.transform.localEulerAngles = Vector3(0, 180, 0)
 				self.nModelDragRot = go.transform.localEulerAngles.y

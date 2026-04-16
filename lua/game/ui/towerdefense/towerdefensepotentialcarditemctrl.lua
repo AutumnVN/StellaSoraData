@@ -44,7 +44,9 @@ TowerDefensePotentialCardItemCtrl._mapNodeConfig = {
 	SR = {},
 	SSR = {},
 	BgEffect = {},
-	ArrowEffect = {}
+	ArrowEffect = {},
+	imgPreselection = {},
+	goNew = {}
 }
 TowerDefensePotentialCardItemCtrl._mapEventConfig = {}
 TowerDefensePotentialCardItemCtrl._mapRedDotConfig = {}
@@ -107,6 +109,10 @@ end
 function TowerDefensePotentialCardItemCtrl:PlayAnim(sAnimName)
 	self._mapNode.animCtrl:Play(sAnimName)
 	self._mapNode.BgEffect:SetActive(self.bLucky and sAnimName == "tc_newperk_card_in")
+end
+function TowerDefensePotentialCardItemCtrl:Awake()
+	self._mapNode.goNew.gameObject:SetActive(false)
+	self._mapNode.imgPreselection:SetActive(false)
 end
 function TowerDefensePotentialCardItemCtrl:OnEnable()
 end

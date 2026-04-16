@@ -112,6 +112,17 @@ function SkillTipsCtrl:OnEnable()
 		self:ShowMonsterSkill()
 	elseif self.mapData.bJointDrill then
 		self:ShowJointDrillBossSkill()
+	elseif self.mapData.bCharSkillEnergyEff then
+		if self.rtTarget ~= nil then
+			local vX = NovaAPI.GetViewPointX(self.rtTarget.gameObject)
+			if 0.5 < vX then
+				self._mapNode.imgWordTipBg.transform.localPosition = Vector3(-self._mapNode.imgWordTipBg.transform.localPosition.x, self._mapNode.imgWordTipBg.transform.localPosition.y, self._mapNode.imgWordTipBg.transform.localPosition.z)
+			end
+		end
+		self:ShowCharSkillEnergyEff()
+		self._mapNode.btnCloseWordTip.gameObject:SetActive(false)
+		self._mapNode.rtContent.gameObject:SetActive(false)
+		return
 	else
 		self:ShowCharacterSkill()
 	end
@@ -350,6 +361,59 @@ function SkillTipsCtrl:ShowJointDrillBossSkill()
 	self._mapNode.imgCDInfoBg:SetActive(false)
 	self._mapNode.imgEnergyInfoBg:SetActive(false)
 	self._mapNode.rtSkillInfo:SetActive(false)
+end
+function SkillTipsCtrl:ShowCharSkillEnergyEff()
+	local mapCharacter = ConfigTable.GetData("Character", self.mapData.nCharId)
+	if mapCharacter == nil then
+		EventManager.Hit(EventId.CloesCurPanel)
+		return
+	end
+	self._mapNode.btnCloseWordTip.gameObject:SetActive(true)
+	self._mapNode.imgWordTipBg:SetActive(true)
+	NovaAPI.SetTMPSourceText(self._mapNode.TMPWordTipsTitle, ConfigTable.GetUIText("CharRechargeSpeed_EnergyEff"))
+	local tbLines = {}
+	table.insert(tbLines, ConfigTable.GetUIText("CharRechargeSpeed_EnergyEffDesc"))
+	if mapCharacter.ChargingRate ~= 0 then
+		local rateText = self:GetCharRechargeTypeText(mapCharacter.ChargingRate)
+		if rateText and rateText ~= "" then
+			local prefix = ConfigTable.GetUIText("CharRechargeSpeed_ChargingRate")
+			table.insert(tbLines, string.format("%s%s", prefix, rateText))
+		end
+	end
+	if mapCharacter.EnergyConsume then
+		local consumeText = self:GetEnergyCostTypeText(mapCharacter.EnergyConsume)
+		if consumeText and consumeText ~= "" then
+			local prefix = ConfigTable.GetUIText("CharRechargeSpeed_EnergyConsume")
+			table.insert(tbLines, string.format("%s%s", prefix, consumeText))
+		end
+	end
+	if self._mapNode.TMPWordDesc then
+		if 0 < #tbLines then
+			local finalDesc = table.concat(tbLines, "\n")
+			NovaAPI.SetTMPText(self._mapNode.TMPWordDesc, finalDesc)
+			self._mapNode.TMPWordDesc.gameObject:SetActive(true)
+		else
+			self._mapNode.TMPWordDesc.gameObject:SetActive(false)
+		end
+	end
+end
+function SkillTipsCtrl:GetCharRechargeTypeText(EnumType)
+	local tbEnumMap = {
+		[GameEnum.CharRechargeSpeed.SupHigh] = ConfigTable.GetUIText("CharRechargeSpeed_SupHigh"),
+		[GameEnum.CharRechargeSpeed.High] = ConfigTable.GetUIText("CharRechargeSpeed_High"),
+		[GameEnum.CharRechargeSpeed.Mid] = ConfigTable.GetUIText("CharRechargeSpeed_Mid"),
+		[GameEnum.CharRechargeSpeed.Low] = ConfigTable.GetUIText("CharRechargeSpeed_Low")
+	}
+	return tbEnumMap[EnumType] or ""
+end
+function SkillTipsCtrl:GetEnergyCostTypeText(EnumType)
+	local tbEnumMap = {
+		[GameEnum.CharEnergyCostSpeed.SupHigh] = ConfigTable.GetUIText("CharEnergyCostSpeed_SupHigh"),
+		[GameEnum.CharEnergyCostSpeed.High] = ConfigTable.GetUIText("CharEnergyCostSpeed_High"),
+		[GameEnum.CharEnergyCostSpeed.Mid] = ConfigTable.GetUIText("CharEnergyCostSpeed_Mid"),
+		[GameEnum.CharEnergyCostSpeed.Low] = ConfigTable.GetUIText("CharEnergyCostSpeed_Low")
+	}
+	return tbEnumMap[EnumType] or ""
 end
 function SkillTipsCtrl:OnBtnClick_Word(link, _, sWordId)
 	local nWordId = tonumber(sWordId)

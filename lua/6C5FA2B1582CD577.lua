@@ -79,7 +79,10 @@ JointDrillRankingCtrl._mapNodeConfig = {
 		callback = "OnBtnClick_CloseReward"
 	}
 }
-JointDrillRankingCtrl._mapEventConfig = {}
+JointDrillRankingCtrl._mapEventConfig = {
+	ShowTeamDetail = "OnEvent_ShowTeamDetail",
+	OpenRankBuildDetail = "OnEvent_OpenRankBuildDetail"
+}
 JointDrillRankingCtrl._mapRedDotConfig = {}
 function JointDrillRankingCtrl:SetEndTime()
 	local actData = PlayerData.Activity:GetActivityDataById(self.nActId)
@@ -129,8 +132,19 @@ function JointDrillRankingCtrl:RefreshRankList()
 	else
 		self._mapNode.goLoading.gameObject:SetActive(false)
 		self._mapNode.goMainContent.gameObject:SetActive(true)
-		self._mapNode.svRankingInfo:SetAnim(0.1)
+		if self._panel.mapRankDetail == nil then
+			self._mapNode.svRankingInfo:SetAnim(0.1)
+		end
 		self._mapNode.svRankingInfo:Init(#self.mapRankList, self, self.RefreshRankGrid)
+		if self._panel.mapRankDetail ~= nil then
+			self._mapNode.svRankingInfo:SetScrollPos(self._panel.nGridPos)
+			self:AddTimer(1, 0.4, function()
+				EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRankDetail_1, self._panel.mapRankDetail)
+				self._panel.mapRankDetail = nil
+				self._panel.nGridPos = 0
+			end, true, true, true)
+			EventManager.Hit(EventId.TemporaryBlockInput, 0.4)
+		end
 	end
 end
 function JointDrillRankingCtrl:RefreshSelfRank()
@@ -199,5 +213,12 @@ function JointDrillRankingCtrl:OnBtnClick_CloseReward()
 	end
 	self:AddTimer(1, 0.2, close, true, true, true)
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
+end
+function JointDrillRankingCtrl:OnEvent_ShowTeamDetail(rankData)
+	self.mapRankDetail = rankData
+end
+function JointDrillRankingCtrl:OnEvent_OpenRankBuildDetail()
+	self._panel.mapRankDetail = self.mapRankDetail
+	self._panel.nGridPos = self._mapNode.svRankingInfo:GetScrollPos()
 end
 return JointDrillRankingCtrl

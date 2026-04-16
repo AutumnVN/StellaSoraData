@@ -39,6 +39,7 @@ function PlayerQuestData:Init()
 	self.nCurTourGroupOrderIndex = 0
 	self.nMaxTourGroupOrderIndex = 0
 	self.nMaxTeamFormationGroupIdx = 0
+	self.nMaxTeamFormationGroupIdxInAttr = {}
 	self.tbTourGuideGroup = {}
 	self.tbTourGuide = {}
 	self.tbTeamFormation = {}
@@ -92,6 +93,10 @@ function PlayerQuestData:InitConfig()
 	end
 	ForEachTableLine(DataTable.WeeklyQuestActive, foreachWeeklyActive)
 	local foreachTeamFormationGroup = function(mapData)
+		if self.nMaxTeamFormationGroupIdxInAttr[mapData.AttributeId] == nil then
+			self.nMaxTeamFormationGroupIdxInAttr[mapData.AttributeId] = 0
+		end
+		self.nMaxTeamFormationGroupIdxInAttr[mapData.AttributeId] = self.nMaxTeamFormationGroupIdxInAttr[mapData.AttributeId] + 1
 		table.insert(self.tbTeamFormationGroup, mapData)
 	end
 	ForEachTableLine(DataTable.AssistQuestGroup, foreachTeamFormationGroup)
@@ -240,6 +245,17 @@ function PlayerQuestData:GetStarTowerBookQuestData()
 	end
 	return self._mapQuest[12]
 end
+function PlayerQuestData:GetOngoingAttributeId()
+	local nLastestAttributeId = 0
+	for k, v in pairs(self.tbTeamFormationAttr) do
+		local bComplete = self:CheckTeamFormationAttributeCompleted(v.Id)
+		if not bComplete then
+			nLastestAttributeId = v.Id
+			break
+		end
+	end
+	return nLastestAttributeId
+end
 function PlayerQuestData:GetAttributeIdByGroupId(nGroupId)
 	for nGroupIdx, mapGroup in pairs(self.tbTeamFormationGroup) do
 		if mapGroup.Id == nGroupId then
@@ -278,9 +294,16 @@ function PlayerQuestData:GetCurTeamFormationQuestGroup(nAttributeId)
 		end
 		return mapFirstGroup.Id
 	end
-	local nCurIndex = math.min(self.tbCurTeamFormationGroupIndex[nAttributeId] + 1, self.nMaxTeamFormationGroupIdx)
-	local mapCurGroup = self.tbTeamFormationGroup[nCurIndex]
-	return mapCurGroup.Id
+	local nCurIndex = math.min(self.tbCurTeamFormationGroupIndex[nAttributeId] + 1, self.nMaxTeamFormationGroupIdxInAttr[nAttributeId])
+	local nCurAttriCount = 0
+	for i = 1, #self.tbTeamFormationGroup do
+		if self.tbTeamFormationGroup[i].AttributeId == nAttributeId then
+			nCurAttriCount = nCurAttriCount + 1
+			if nCurAttriCount == nCurIndex then
+				return self.tbTeamFormationGroup[i].Id
+			end
+		end
+	end
 end
 function PlayerQuestData:GetTeamFormationQuestData()
 	if self._mapQuest[QuestType.Assist] == nil then
@@ -301,12 +324,36 @@ function PlayerQuestData:GetTeamFormationGroupById(nGroupId)
 	end
 	return tbGroupData
 end
-function PlayerQuestData:CheckTeamFormationAttributeCompleted(nAttrId)
-	local tbGroups = {}
-	local bCompleted = true
+function PlayerQuestData:GetTeamFormationGroupStartIndex(nAttrId)
+	local nStartIndex = 0
 	for nGroupIndex, mapGroup in pairs(self.tbTeamFormationGroup) do
 		if mapGroup.AttributeId == nAttrId then
-			local bGroupCompleted = self:CheckTeamFormationGroupReward(nAttrId, nGroupIndex)
+			nStartIndex = nGroupIndex
+			break
+		end
+	end
+	return nStartIndex
+end
+function PlayerQuestData:GetTeamFormationGroupEndIndex(nAttrId)
+	local nEndIndex = 0
+	local nLastestGroupId = self:GetCurTeamFormationQuestGroup(nAttrId)
+	for nGroupIndex, mapGroup in pairs(self.tbTeamFormationGroup) do
+		if mapGroup.AttributeId == nAttrId and mapGroup.Id == nLastestGroupId then
+			nEndIndex = nGroupIndex
+		end
+	end
+	return nEndIndex
+end
+function PlayerQuestData:CheckTeamFormationAttributeCompleted(nAttrId)
+	local bCompleted = true
+	local tbIndexInAttr = {}
+	for nGroupIndex, mapGroup in pairs(self.tbTeamFormationGroup) do
+		if mapGroup.AttributeId == nAttrId then
+			if tbIndexInAttr[nAttrId] == nil then
+				tbIndexInAttr[nAttrId] = 0
+			end
+			tbIndexInAttr[nAttrId] = tbIndexInAttr[nAttrId] + 1
+			local bGroupCompleted = self:CheckTeamFormationGroupReward(nAttrId, tbIndexInAttr[nAttrId])
 			bCompleted = bCompleted and bGroupCompleted
 			if bCompleted == false then
 				return false
@@ -336,9 +383,11 @@ function PlayerQuestData:CheckTeamFormationAttributeUnlocked(nAttrId)
 		return true
 	end
 	local bCompleted = true
+	local nGroupIdxInAttr = 0
 	for nGroupIndex, mapGroup in pairs(self.tbTeamFormationGroup) do
 		if mapGroup.AttributeId == mapAttr.Pre then
-			local bGroupCompleted = self:CheckTeamFormationGroupReward(nAttrId, nGroupIndex)
+			nGroupIdxInAttr = nGroupIdxInAttr + 1
+			local bGroupCompleted = self:CheckTeamFormationGroupReward(mapAttr.Pre, nGroupIdxInAttr)
 			bCompleted = bCompleted and bGroupCompleted
 			if bCompleted == false then
 				return false
@@ -350,10 +399,15 @@ end
 function PlayerQuestData:GetTeamFormationAttributeProgress(nAttrId)
 	local nTotalCount = 0
 	local nReceivedCount = 0
+	local tbIndexInAttr = {}
 	for nGroupIndex, mapGroup in pairs(self.tbTeamFormationGroup) do
 		if mapGroup.AttributeId == nAttrId then
+			if tbIndexInAttr[nAttrId] == nil then
+				tbIndexInAttr[nAttrId] = 0
+			end
+			tbIndexInAttr[nAttrId] = tbIndexInAttr[nAttrId] + 1
 			nTotalCount = nTotalCount + 1
-			local bGroupCompleted = self:CheckTeamFormationGroupReward(nAttrId, nGroupIndex)
+			local bGroupCompleted = self:CheckTeamFormationGroupReward(nAttrId, tbIndexInAttr[nAttrId])
 			if bGroupCompleted then
 				nReceivedCount = nReceivedCount + 1
 			end
@@ -1222,12 +1276,20 @@ end
 function PlayerQuestData:UpdateTeamFormationRedDot()
 	local bCanReceive = false
 	local bAllReceive = true
-	local nAttr = 0
-	for k, v in pairs(table) do
-		nAttr = nAttr + 1
-		local bComp = self:CheckTeamFormationAttributeCompleted(nAttr)
+	local nAttr = 1
+	local nFinish = 0
+	local foreachAttri = function(mapData)
+		nFinish = nFinish + 1
+	end
+	ForEachTableLine(DataTable.AssistAttribute, foreachAttri)
+	for i = 1, nFinish do
+		local bComp = self:CheckTeamFormationAttributeCompleted(nFinish)
 		if not bComp then
+			nAttr = nFinish
 			break
+		end
+		if i == nFinish then
+			nAttr = nFinish
 		end
 	end
 	local nCurGroupId = self:GetCurTeamFormationQuestGroup(nAttr)

@@ -292,7 +292,9 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 		if bUnlock then
 			bHasUnlockBranch = true
 		end
-		table.insert(self.tbLockedBranchGrid, avgId)
+		if table.indexof(self.tbLockedBranchGrid, avgId) <= 0 then
+			table.insert(self.tbLockedBranchGrid, avgId)
+		end
 		if bUnlock and table.indexof(self.tbLockedBranchGrid, avgId) > 0 then
 			table.removebyvalue(self.tbLockedBranchGrid, avgId)
 		end
@@ -350,6 +352,13 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 		index = index + 1
 	end
 	root.gameObject:SetActive(bHasUnlockBranch)
+	if bHasUnlockBranch then
+		if not isNeedPlayUnlockAnim then
+			self:PlayUnlockAnim(root, "BranchRoot_loop" .. #self.tbBranch[avgId])
+		else
+			self:PlayUnlockAnim(root, "BranchRoot_Empty")
+		end
+	end
 end
 function ChapterLineCtrl:RefreshTimeStamp(goTimeStamp, index)
 	local timeStampName
@@ -528,11 +537,7 @@ function ChapterLineCtrl:PlayNormalNodeUnlockAnim(nodeInfo, depth)
 	end, true, true, true)
 end
 function ChapterLineCtrl:PlayBranchNodeUnlockAnim(nodeInfo, depth)
-	if nodeInfo.totalCount > 1 then
-		self:PlayUnlockAnim(nodeInfo.grid, "BranchRoot_in3")
-	else
-		self:PlayUnlockAnim(nodeInfo.grid, "BranchRoot_in" .. nodeInfo.index)
-	end
+	self:PlayUnlockAnim(nodeInfo.grid, "BranchRoot_in" .. nodeInfo.totalCount)
 	WwiseAudioMgr:PostEvent("ui_mainline_newending")
 	local storyConfig = AvgData:GetStoryCfgData(nodeInfo.avgId)
 	LocalData.SetPlayerLocalData("MainlineUnlock_" .. storyConfig.Id, 1)

@@ -25,6 +25,7 @@ function PlayerStateData:CacheStateData(mapMsgData)
 		RedDotManager.SetValid(RedDotDefine.StarTowerBook_Affinity_Reward, "server", mapMsgData.NpcAffinityReward)
 		PlayerData.Quest:UpdateServerQuestRedDot(mapMsgData.TravelerDuelQuest)
 		PlayerData.Quest:UpdateServerQuestRedDot(mapMsgData.TravelerDuelChallengeQuest)
+		self.nLastReceiveIdleRewardTime = mapMsgData.TravelerDuelIdleReward or CS.ClientManager.Instance.serverTimeStamp
 		PlayerData.InfinityTower:UpdateBountyRewardState(mapMsgData.InfinityTower)
 		PlayerData.StarTowerBook:UpdateServerRedDot(mapMsgData.StarTowerBook)
 		PlayerData.ScoreBoss:UpdateRedDot(mapMsgData.ScoreBoss)
@@ -333,6 +334,33 @@ function PlayerStateData:RefreshCharAdvanceRewardRedDot()
 				RedDotManager.SetValid(RedDotDefine.Role_AdvanceReward, {charId, i}, bReceive)
 			end
 		end
+	end
+end
+function PlayerStateData:RefreshTrekkerVersusIdleRewardRedDot(nNewTime)
+	local nActId = 0
+	local foreachActData = function(mapData)
+		if mapData.ActivityType == GameEnum.activityType.TrekkerVersus then
+			nActId = mapData.Id > nActId and mapData.Id or nActId
+		end
+	end
+	ForEachTableLine(DataTable.Activity, foreachActData)
+	local actData = PlayerData.Activity:GetActivityDataById(nActId)
+	local bRedDotOn = false
+	if actData ~= nil then
+		local tbIdleReward = actData:GetIdleReward()
+		if tbIdleReward ~= nil and 0 < #tbIdleReward then
+			if nNewTime ~= nil then
+				self.nLastReceiveIdleRewardTime = nNewTime
+			end
+			local nElapsedTime = CS.ClientManager.Instance.serverTimeStamp - self.nLastReceiveIdleRewardTime
+			if nElapsedTime >= 3600 * ConfigTable.GetConfigNumber("TrekkerVersusIdleRewardRedDotTime") then
+				bRedDotOn = true
+			end
+		end
+	end
+	local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(nActId)
+	if bInActGroup then
+		RedDotManager.SetValid(RedDotDefine.TrekkerVersusIdleReward, {nActGroupId, nActId}, bRedDotOn)
 	end
 end
 return PlayerStateData

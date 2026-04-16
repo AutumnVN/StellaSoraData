@@ -20,6 +20,7 @@ StarTowerBuildBriefCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_OpenFilter"
 	},
+	imgFilterChoose = {},
 	btn_DeleteBuild = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_SelectDelete"
@@ -134,7 +135,9 @@ StarTowerBuildBriefCtrl._mapNodeConfig = {
 		sComponentName = "Animator"
 	}
 }
-StarTowerBuildBriefCtrl._mapEventConfig = {}
+StarTowerBuildBriefCtrl._mapEventConfig = {
+	[EventId.FilterConfirm] = "OnEvent_RefreshByFilter"
+}
 local SortType = {Time = 1, Score = 2}
 local SortOrder = {Descending = true, Ascending = false}
 local PanelState = {
@@ -153,6 +156,8 @@ local FilterGradeIdx = {
 	btn_FilterGradeC = 0
 }
 function StarTowerBuildBriefCtrl:RefreshList()
+	local isDirty = PlayerData.Filter:IsDirty(AllEnum.OptionType.Char)
+	self._mapNode.imgFilterChoose:SetActive(isDirty)
 	if #self._tbAllBuild == 0 then
 		self._mapNode.ExistContent:SetActive(false)
 		self._mapNode.EmptyContent:SetActive(true)
@@ -198,7 +203,11 @@ function StarTowerBuildBriefCtrl:FilterAndSortBuildData()
 		if self.FilterPass ~= self.FilterUnpass and (not (not self.FilterPass or mapBuild.bPass) or self.FilterUnpass and mapBuild.bPass) then
 			return
 		end
-		table.insert(ret, mapBuild)
+		local nCharId = mapBuild.tbChar[1].nTid
+		local isFilter = PlayerData.Filter:CheckFilterByChar(nCharId)
+		if isFilter then
+			table.insert(ret, mapBuild)
+		end
 	end
 	for _, mapBuild in ipairs(self._tbAllBuild) do
 		filterBuild(mapBuild)
@@ -473,6 +482,10 @@ function StarTowerBuildBriefCtrl:Awake()
 	self.nSortype = SortType.Score
 	self.nSortOrder = SortOrder.Descending
 	self.nPanelState = PanelState.Normal
+	self.mapCacheFilter = {}
+	self.tbOption = {
+		AllEnum.ChooseOption.Char_Element
+	}
 	self:InitSort()
 	self.mapListItemCtrl = {}
 	self.tbCoinRate = ConfigTable.GetConfigArray("StarTowerBuildTransformParas")
@@ -485,6 +498,14 @@ function StarTowerBuildBriefCtrl:Awake()
 	self._mapNode.DD_selectDelect:SetList(tbLanguageId, 3)
 end
 function StarTowerBuildBriefCtrl:OnEnable()
+	if next(self.mapCacheFilter) ~= nil then
+		for fKey, data in pairs(self.mapCacheFilter) do
+			for sKey, value in pairs(data) do
+				PlayerData.Filter:SetCacheFilterByKey(fKey, sKey, value)
+			end
+		end
+		PlayerData.Filter:SyncFilterByCache()
+	end
 	local GetDataCallback = function(tbBuildData, mapAllBuild)
 		self._mapAllBuild = mapAllBuild
 		self._tbAllBuild = tbBuildData
@@ -502,6 +523,19 @@ function StarTowerBuildBriefCtrl:OnDisable()
 		self.mapListItemCtrl[nInstanceId] = nil
 	end
 	self.mapListItemCtrl = {}
+	self.mapCacheFilter = {}
+	for _, fKey in ipairs(self.tbOption) do
+		if self.mapCacheFilter[fKey] == nil then
+			self.mapCacheFilter[fKey] = {}
+		end
+		local data = PlayerData.Filter:GetCacheFilter(fKey)
+		if data ~= nil then
+			for sKey, value in pairs(data) do
+				self.mapCacheFilter[fKey][sKey] = value
+			end
+		end
+	end
+	PlayerData.Filter:Reset(self.tbOption)
 end
 function StarTowerBuildBriefCtrl:OnDestroy()
 end
@@ -642,6 +676,7 @@ function StarTowerBuildBriefCtrl:OnBtnClick_OpenDeleteHint(btn)
 	self:OpenConfirmHint()
 end
 function StarTowerBuildBriefCtrl:OnBtnClick_OpenFilter(btn)
+	EventManager.Hit(EventId.OpenPanel, PanelId.FilterPopupPanel, self.tbOption)
 end
 function StarTowerBuildBriefCtrl:OnBtnClick_Result1(btn)
 	local mapData = {
@@ -650,5 +685,30 @@ function StarTowerBuildBriefCtrl:OnBtnClick_Result1(btn)
 		bShowJumpto = false
 	}
 	EventManager.Hit(EventId.OpenPanel, PanelId.ItemTips, btn.transform, mapData)
+end
+function StarTowerBuildBriefCtrl:OnEvent_RefreshByFilter()
+	local bChange = false
+	local tbTemp = clone(self.mapCacheFilter)
+	self.mapCacheFilter = {}
+	for _, fKey in ipairs(self.tbOption) do
+		if self.mapCacheFilter[fKey] == nil then
+			self.mapCacheFilter[fKey] = {}
+		end
+		local data = PlayerData.Filter:GetCacheFilter(fKey)
+		if data ~= nil then
+			if tbTemp[fKey] == nil then
+				bChange = true
+			end
+			for sKey, value in pairs(data) do
+				if not bChange and (tbTemp[fKey][sKey] == nil or tbTemp[fKey][sKey] ~= value) then
+					bChange = true
+				end
+				self.mapCacheFilter[fKey][sKey] = value
+			end
+		end
+	end
+	if bChange then
+		self:RefreshList()
+	end
 end
 return StarTowerBuildBriefCtrl

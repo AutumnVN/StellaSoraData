@@ -172,7 +172,7 @@ function JointDrillResultCtrl:OpenReward()
 		self:ClosePanel()
 	end
 	local callback = function()
-		if self.nResultType == AllEnum.JointDrillResultType.Success or self.nResultType == AllEnum.JointDrillResultType.ChallengeEnd and self.mapScore ~= nil and next(self.mapScore) ~= nil then
+		if (self.nResultType == AllEnum.JointDrillResultType.Success or self.nResultType == AllEnum.JointDrillResultType.ChallengeEnd) and self.mapScore ~= nil and next(self.mapScore) ~= nil then
 			EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRankUp_1, self.nOld, self.nNew, self.mapScore, self.nResultType, closeCallback)
 		else
 			closeCallback()

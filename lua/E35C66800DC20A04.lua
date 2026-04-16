@@ -195,39 +195,44 @@ end
 function JointDrillLevelData_2:CheckJointDrillGameOver()
 	local nChallengeCount = self.parent:GetJointDrillBattleCount()
 	local nAllChallengeCount = self.parent:GetMaxChallengeCount(self.nLevelId)
-	if nChallengeCount >= nAllChallengeCount then
-		local callback = function(netMsg)
-			self:JointDrillFail(AllEnum.JointDrillResultType.ChallengeEnd, netMsg, self.nCurLevel)
-		end
-		self.parent:JointDrillGameOver(callback)
-	else
-		function self.recordCallback(sRecord)
+	function self.recordCallback(sRecord)
+		if nChallengeCount >= nAllChallengeCount then
+			local syncCallback = function()
+				local callback = function(netMsg)
+					self:JointDrillFail(AllEnum.JointDrillResultType.ChallengeEnd, netMsg, self.nCurLevel)
+				end
+				self.parent:JointDrillGameOver(callback)
+			end
+			self.parent:JointDrillSync(self.nCurLevel, self.nGameTime, self.nDamageValue, "", syncCallback)
+		else
 			local callback = function(netMsg)
 				self:JointDrillFail(AllEnum.JointDrillResultType.BattleEnd, netMsg, self.nCurLevel)
 			end
 			self.parent:JointDrillGiveUp(self.nCurLevel, self.nGameTime, self.nDamageValue, sRecord, callback)
 		end
-		NovaAPI.DispatchEventWithData("JointDrill_CacheTempData_Start", nil, {
-			false,
-			true,
-			true,
-			false,
-			0,
-			0
-		})
 	end
+	NovaAPI.DispatchEventWithData("JointDrill_CacheTempData_Start", nil, {
+		false,
+		true,
+		true,
+		false,
+		0,
+		0
+	})
 end
 function JointDrillLevelData_2:JointDrillFail(nResultType, netMsg, nLevel)
 	local bossInfo = {}
 	local mapAllBossInfo = self.parent:GetBossInfo()
 	local mapCurBossInfo = mapAllBossInfo[nLevel]
-	for nIndex, v in ipairs(mapCurBossInfo) do
-		if v.nBossCfgId ~= 0 then
-			table.insert(bossInfo, {
-				nBossId = v.nBossCfgId,
-				nHp = v.nHp,
-				nHpMax = v.nHpMax
-			})
+	if mapCurBossInfo ~= nil then
+		for nIndex, v in ipairs(mapCurBossInfo) do
+			if v.nBossCfgId ~= 0 then
+				table.insert(bossInfo, {
+					nBossId = v.nBossCfgId,
+					nHp = v.nHp,
+					nHpMax = v.nHpMax
+				})
+			end
 		end
 	end
 	local bSimulate = self.parent:GetBattleSimulate()

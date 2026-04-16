@@ -55,7 +55,8 @@ end
 function PenguinCardLogCtrl:Refresh()
 	local mapTurn = self._panel.mapLevel.mapLog[self.nTurn]
 	NovaAPI.SetTMPText(self._mapNode.txtTurn, orderedFormat(ConfigTable.GetUIText("PenguinCard_Log_TurnCount"), self.nTurn))
-	NovaAPI.SetTMPText(self._mapNode.txtTurnScore, self:ThousandsNumber(clearFloat(mapTurn.nTurnScore)))
+	local nTurnScore = math.floor(mapTurn.nTurnScore + 0.5 + 1.0E-9)
+	NovaAPI.SetTMPText(self._mapNode.txtTurnScore, self:ThousandsNumber(nTurnScore))
 	self.tbRound = mapTurn.tbRound
 	local nCount = #self.tbRound
 	self._mapNode.sv.gameObject:SetActive(0 < nCount)
@@ -74,7 +75,8 @@ function PenguinCardLogCtrl:OnGridRefresh(goGrid, gridIndex)
 	if mapCfg then
 		NovaAPI.SetTMPText(txtHandRank, mapCfg.Title)
 	end
-	NovaAPI.SetTMPText(txtRoundScore, self:ThousandsNumber(clearFloat(mapRound.nRoundScore)))
+	local nRoundScore = math.floor(mapRound.nRoundScore + 0.5 + 1.0E-9)
+	NovaAPI.SetTMPText(txtRoundScore, self:ThousandsNumber(nRoundScore))
 	local nAll = #mapRound.tbHandRank
 	for i = 1, 6 do
 		local imgSuit = rtGrid.transform:Find("goSuit/imgSuitCount" .. i):GetComponent("Image")

@@ -8,7 +8,7 @@ ActivityMiningCtrl._mapNodeConfig = {
 		callback = "OnBtnClick_Go"
 	}
 }
-function ActivityMiningCtrl:OnDestory(...)
+function ActivityMiningCtrl:OnDestroy(...)
 	self:UnInit()
 end
 function ActivityMiningCtrl:InitActData(actData)

@@ -41,7 +41,25 @@ FormationCharListCtrl._mapNodeConfig = {
 	imgArrowUpEnable = {},
 	imgArrowUpDisable = {},
 	imgArrowDownEnable = {},
-	imgArrowDownDisable = {}
+	imgArrowDownDisable = {},
+	btnFavoriteOrder = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_InFavoriteOrder"
+	},
+	InFavoriteOrder = {
+		sNodeName = "InFavoriteOrder",
+		sComponentName = "CanvasGroup"
+	},
+	txtOffLabel = {
+		sNodeName = "OffLabel",
+		sComponentName = "TMP_Text",
+		sLanguageId = "CharacterList_Common"
+	},
+	txtInLabel = {
+		sNodeName = "InLabel",
+		sComponentName = "TMP_Text",
+		sLanguageId = "CharacterList_Common"
+	}
 }
 FormationCharListCtrl._mapEventConfig = {
 	[EventId.FilterConfirm] = "RefreshByFilter",
@@ -61,6 +79,8 @@ function FormationCharListCtrl:OnEnable()
 	local isDirty = PlayerData.Filter:IsDirty(AllEnum.OptionType.Char)
 	self._mapNode.imgFilterChoose:SetActive(isDirty)
 	self.bOpen = false
+	self.bInFavorite = true
+	self:RefreshFavoriteTopState()
 end
 function FormationCharListCtrl:OnDisable()
 	self:CloseList()
@@ -105,6 +125,7 @@ function FormationCharListCtrl:Refresh()
 	self:FilterChar()
 	self:SortChar()
 	self:RefreshOrderState()
+	self:RefreshFavoriteTopState()
 	local nCurCount = #self.tbSortedChar
 	if 0 < nCurCount then
 		self._mapNode.labEmpty.gameObject:SetActive(false)
@@ -224,13 +245,14 @@ function FormationCharListCtrl:SyncFormation()
 	if not bChange then
 		return
 	end
-	PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, self.curChar, tbDiscId)
+	local nPreselectionId = PlayerData.Team:GetTeamPreselectionId(self._panel.nTeamIndex)
+	PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, self.curChar, tbDiscId, nPreselectionId)
 end
 function FormationCharListCtrl:SortChar()
 	local tbCharId = {}
 	UTILS.SortByPriority(self.tbSortedChar, {
 		AllEnum.CharSortField[self.tbSortCfg.nSortType]
-	}, PlayerData.Char:GetCharSortField(), self.tbSortCfg.bOrder)
+	}, PlayerData.Char:GetCharSortField(), self.tbSortCfg.bOrder, self.bInFavorite)
 	self.tbSortedChar = self:MoveElementsToFront(self.tbSortedChar, self.curChar)
 	for _, mapCharId in ipairs(self.tbSortedChar) do
 		table.insert(tbCharId, mapCharId.nId)
@@ -391,5 +413,23 @@ function FormationCharListCtrl:OnEvent_PositionCharPos(_tmpChar)
 			break
 		end
 	end
+end
+function FormationCharListCtrl:RefreshFavoriteTopState()
+	if self.bInFavorite then
+		NovaAPI.SetCanvasGroupAlpha(self._mapNode.InFavoriteOrder, 1)
+	else
+		NovaAPI.SetCanvasGroupAlpha(self._mapNode.InFavoriteOrder, 0)
+	end
+end
+function FormationCharListCtrl:OnBtnClick_InFavoriteOrder(btn)
+	self.bInFavorite = not self.bInFavorite
+	local sTip = ""
+	if self.bInFavorite then
+		sTip = ConfigTable.GetUIText("OpenCharacterCommonTop_Tip")
+	else
+		sTip = ConfigTable.GetUIText("CloseCharacterCommonTop_Tip")
+	end
+	EventManager.Hit(EventId.OpenMessageBox, sTip)
+	self:Refresh()
 end
 return FormationCharListCtrl

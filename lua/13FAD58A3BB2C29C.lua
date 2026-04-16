@@ -27,11 +27,7 @@ PenguinCardSelectCtrl._mapEventConfig = {
 	PenguinCard_ClickLevel = "OnEvent_Click",
 	PenguinCard_EnterLevel = "OnEvent_Enter"
 }
-PenguinCardSelectCtrl._mapRedDotConfig = {
-	[RedDotDefine.Activity_PenguinCard_AllQuest] = {
-		sNodeName = "reddotQuest"
-	}
-}
+PenguinCardSelectCtrl._mapRedDotConfig = {}
 function PenguinCardSelectCtrl:Refresh()
 	self.goFirstLock = nil
 	self.tbLevel = self.actData:GetLevelList()
@@ -92,6 +88,27 @@ function PenguinCardSelectCtrl:Awake()
 end
 function PenguinCardSelectCtrl:OnEnable()
 	self:Refresh()
+	local mapActivityData = ConfigTable.GetData("Activity", self.nActId)
+	if mapActivityData ~= nil then
+		local nGroupId = mapActivityData.MidGroupId
+		local mapGroupData = PlayerData.Activity:GetActivityGroupDataById(nGroupId)
+		if mapGroupData ~= nil then
+			local actData = mapGroupData:GetActivityDataByIndex(AllEnum.ActivityThemeFuncIndex.Task)
+			if actData ~= nil then
+				RedDotManager.RegisterNode(RedDotDefine.Activity_Group_Task_Group, {
+					nGroupId,
+					actData.ActivityId,
+					mapActivityData.MiniGameRedDot
+				}, self._mapNode.reddotQuest)
+			else
+				self._mapNode.reddotQuest:SetActive(false)
+			end
+		else
+			self._mapNode.reddotQuest:SetActive(false)
+		end
+	else
+		self._mapNode.reddotQuest:SetActive(false)
+	end
 end
 function PenguinCardSelectCtrl:OnDisable()
 	for k, v in pairs(self.tbGridCtrl) do
@@ -105,7 +122,17 @@ end
 function PenguinCardSelectCtrl:OnDestroy()
 end
 function PenguinCardSelectCtrl:OnBtnClick_Quest()
-	EventManager.Hit(EventId.OpenPanel, PanelId.PenguinCardQuest, self.nActId)
+	local mapActivityData = ConfigTable.GetData("Activity", self.nActId)
+	if mapActivityData ~= nil then
+		local nGroupId = mapActivityData.MidGroupId
+		local mapGroupData = PlayerData.Activity:GetActivityGroupDataById(nGroupId)
+		if mapGroupData ~= nil then
+			local actData = mapGroupData:GetActivityDataByIndex(AllEnum.ActivityThemeFuncIndex.Task)
+			if actData ~= nil then
+				EventManager.Hit(EventId.OpenPanel, PanelId.Task_20102, actData.ActivityId, 5)
+			end
+		end
+	end
 end
 function PenguinCardSelectCtrl:OnEvent_Click(go)
 	self._mapNode.sc:ScrollToClick(go)

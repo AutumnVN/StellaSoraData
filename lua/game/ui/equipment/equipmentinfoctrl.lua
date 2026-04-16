@@ -1,5 +1,6 @@
 local EquipmentInfoCtrl = class("EquipmentInfoCtrl", BaseCtrl)
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
 EquipmentInfoCtrl._mapNodeConfig = {
 	blur = {
 		sNodeName = "t_fullscreen_blur_blue"
@@ -37,15 +38,26 @@ EquipmentInfoCtrl._mapNodeConfig = {
 		callback = "OnBtnClick_PreLock"
 	},
 	txtEquipmentName = {nCount = 2, sComponentName = "TMP_Text"},
+	imgEquipmentUp = {nCount = 2},
 	goPoint = {},
 	trPoint = {sComponentName = "Transform"},
-	imgIcon = {nCount = 2, sComponentName = "Image"},
+	imgIcon = {nCount = 2, sComponentName = "Transform"},
 	txtEquiped = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Equipment_Equipped"
 	},
 	imgEquiped = {},
+	txtLockSwitch = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Equipment_Roll_LockRoll"
+	},
+	btnSwitch = {
+		nCount = 2,
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Switch"
+	},
 	aniIconMask = {sNodeName = "IconMask", sComponentName = "Animator"},
+	goSwitch = {},
 	Info = {sNodeName = "--Info--"},
 	aniInfo = {sNodeName = "--Info--", sComponentName = "Animator"},
 	goProperty = {
@@ -64,6 +76,10 @@ EquipmentInfoCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Unload"
 	},
+	btnUpgrade = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Upgrade"
+	},
 	txtBtnEquip = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Equipment_Btn_Equip"
@@ -75,6 +91,10 @@ EquipmentInfoCtrl._mapNodeConfig = {
 	txtBtnUnload = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Equipment_Btn_Unload"
+	},
+	txtBtnUpgrade = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Equipment_Btn_Upgrade"
 	},
 	Active = {sNodeName = "--Active--"},
 	txtTitleMat = {
@@ -115,8 +135,17 @@ function EquipmentInfoCtrl:Init()
 	self.mapGemCfg = ConfigTable.GetData("CharGem", nGemId)
 	self.mapSlotCfg = ConfigTable.GetData("CharGemSlotControl", self.nSlotId)
 	self.nSubSelectIndex = 1
+	self.tbEquipmentIcon = {}
 	for i = 1, 2 do
-		self:SetPngSprite(self._mapNode.imgIcon[i], self.mapGemCfg.Icon)
+		local equipPrefab
+		local sPrefab = self.mapGemCfg.Icon .. ".prefab"
+		if GameResourceLoader.ExistsAsset(Settings.AB_ROOT_PATH .. sPrefab) == true then
+			equipPrefab = self:LoadAsset(sPrefab)
+		end
+		if equipPrefab then
+			delChildren(self._mapNode.imgIcon[i])
+			self.tbEquipmentIcon[i] = instantiate(equipPrefab, self._mapNode.imgIcon[i])
+		end
 	end
 	self.tbPoint = {}
 	delChildren(self._mapNode.trPoint)
@@ -184,6 +213,14 @@ function EquipmentInfoCtrl:RefreshTop()
 	local sSuf = orderedFormat(ConfigTable.GetUIText("Equipment_NameIndexSuffix"), sRoman)
 	NovaAPI.SetTMPText(self._mapNode.txtEquipmentName[self.nSubSelectIndex], self.mapGemCfg.Title .. sSuf)
 	self._mapNode.imgEquiped:SetActive(self.nEquipedGemIndex == self.nSelectGemIndex)
+	local tbEquipment = PlayerData.Equipment:GetEquipmentBySlot(self.nCharId, self.nSlotId)
+	local mapEquipment = tbEquipment[self.nSelectGemIndex]
+	local bUpgrade = mapEquipment and mapEquipment:GetUpgradeCount() > 0
+	self._mapNode.imgEquipmentUp[self.nSubSelectIndex]:SetActive(bUpgrade)
+	if self.tbEquipmentIcon[self.nSubSelectIndex] then
+		self.tbEquipmentIcon[self.nSubSelectIndex].transform:Find("goFx").gameObject:SetActive(bUpgrade)
+	end
+	self:RefreshLock()
 end
 function EquipmentInfoCtrl:RefreshInfo(mapEquipment)
 	NovaAPI.SetTMPText(self._mapNode.txtWindowTitle, ConfigTable.GetUIText("Equipment_Title_Info"))
@@ -195,7 +232,7 @@ function EquipmentInfoCtrl:RefreshInfo(mapEquipment)
 		NovaAPI.SetTMPText(self._mapNode.txtBtnEquip, ConfigTable.GetUIText("Equipment_Btn_Replace"))
 	end
 	for i = 1, 4 do
-		self._mapNode.goProperty[i]:SetProperty(mapEquipment.tbAffix[i], self.nCharId)
+		self._mapNode.goProperty[i]:SetProperty(mapEquipment.tbAffix[i], self.nCharId, false, mapEquipment.tbUpgradeCount[i])
 	end
 end
 function EquipmentInfoCtrl:RefreshActive()
@@ -228,6 +265,16 @@ function EquipmentInfoCtrl:RefreshSelectPoint(nBefore, nAfter)
 	local goCur = self.tbPoint[nAfter]
 	goCur.transform:Find("imgPointOn").gameObject:SetActive(true)
 	goCur.transform:Find("imgPointOff").gameObject:SetActive(false)
+end
+function EquipmentInfoCtrl:RefreshLock()
+	local tbEquipment = PlayerData.Equipment:GetEquipmentBySlot(self.nCharId, self.nSlotId)
+	local mapEquipment = tbEquipment[self.nSelectGemIndex]
+	local bEmpty = mapEquipment == nil
+	self._mapNode.goSwitch:SetActive(not bEmpty)
+	if not bEmpty then
+		self._mapNode.btnSwitch[1].gameObject:SetActive(not mapEquipment.bLock)
+		self._mapNode.btnSwitch[2].gameObject:SetActive(mapEquipment.bLock)
+	end
 end
 function EquipmentInfoCtrl:PlayInAni()
 	self._mapNode.window:SetActive(true)
@@ -347,6 +394,22 @@ function EquipmentInfoCtrl:OnBtnClick_Unload()
 	end
 	PlayerData.Equipment:SendCharGemEquipGemReq(self.nCharId, self.nSlotId, 0, nSelectPreset, callback)
 end
+function EquipmentInfoCtrl:OnBtnClick_Upgrade()
+	local tbEquipment = PlayerData.Equipment:GetEquipmentBySlot(self.nCharId, self.nSlotId)
+	local mapEquipment = tbEquipment[self.nSelectGemIndex]
+	if mapEquipment and mapEquipment.bLock then
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Equipment_UpgradeAfterUnlock"))
+		return
+	end
+	self._mapNode.aniWindow:Play("t_window_04_t_out")
+	self._mapNode.aniBlur:SetTrigger("tOut")
+	self:AddTimer(1, 0.2, function()
+		PlayerData.Equipment:GetEquipmentSelect()
+		EventManager.Hit(EventId.ClosePanel, PanelId.EquipmentInfo)
+		EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentUpgrade, self.nCharId, self.nSlotId, self.nSelectGemIndex)
+	end, true, true, true)
+	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
+end
 function EquipmentInfoCtrl:OnBtnClick_MatTip(btn)
 	if self.mapGemCfg.GenerateCostTid > 0 then
 		local mapData = {
@@ -372,5 +435,12 @@ function EquipmentInfoCtrl:OnBtnClick_Active()
 		self:Refresh(true)
 	end
 	PlayerData.Equipment:SendCharGemGenerateReq(self.nCharId, self.nSlotId, callback)
+end
+function EquipmentInfoCtrl:OnBtnClick_Switch(btn, nIndex)
+	local bLock = nIndex == 1
+	local callback = function()
+		self:RefreshLock()
+	end
+	PlayerData.Equipment:SendCharGemUpdateGemLockStatusReq(self.nCharId, self.nSlotId, self.nSelectGemIndex, bLock, callback)
 end
 return EquipmentInfoCtrl

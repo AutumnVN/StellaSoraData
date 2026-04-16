@@ -20,7 +20,8 @@ function PlayerTeamData:CacheFormationInfo(mapData)
 					0,
 					0,
 					0
-				}
+				},
+				nPreselectionId = 0
 			}
 		end
 	end
@@ -42,7 +43,8 @@ function PlayerTeamData:CacheFormationInfo(mapData)
 						0,
 						0,
 						0
-					}
+					},
+					nPreselectionId = 0
 				}
 			end
 			for nIndex, nCharId in ipairs(v.CharIds) do
@@ -51,19 +53,21 @@ function PlayerTeamData:CacheFormationInfo(mapData)
 			for nIndex, nDiscId in ipairs(v.DiscIds) do
 				mapTeamData.tbTeamDiscId[nIndex] = nDiscId
 			end
+			mapTeamData.nPreselectionId = v.PreselectionId
 		end
 	end
 	if mapData.Record ~= nil then
 		PlayerData.StarTower:CacheFormationInfo(mapData.Record)
 	end
 end
-function PlayerTeamData:UpdateFormationInfo(nTeamId, tbCharIds, tbDiscIds, callback)
+function PlayerTeamData:UpdateFormationInfo(nTeamId, tbCharIds, tbDiscIds, nPreselectionId, callback)
 	local PlayerFormationReq = {}
 	PlayerFormationReq.Formation = {}
 	PlayerFormationReq.Formation.Number = nTeamId
 	PlayerFormationReq.Formation.Captain = 1
 	PlayerFormationReq.Formation.CharIds = tbCharIds
 	PlayerFormationReq.Formation.DiscIds = tbDiscIds
+	PlayerFormationReq.Formation.PreselectionId = nPreselectionId
 	local Callback = function()
 		if self._tbTeam == nil then
 			self._tbTeam = {}
@@ -78,11 +82,15 @@ function PlayerTeamData:UpdateFormationInfo(nTeamId, tbCharIds, tbDiscIds, callb
 				mapTeamData.tbTeamDiscId[nIndex] = nDiscId
 			end
 		end
+		mapTeamData.nPreselectionId = nPreselectionId
 		if callback ~= nil and type(callback) == "function" then
 			callback()
 		end
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.player_formation_req, PlayerFormationReq, nil, Callback)
+end
+function PlayerTeamData:GetAllTeamData()
+	return self._tbTeam
 end
 function PlayerTeamData:GetTeamData(nTeamId)
 	if self._tbTeam == nil then
@@ -133,6 +141,17 @@ function PlayerTeamData:GetTeamCharId(nTeamId)
 		end
 	end
 	return tbCharId
+end
+function PlayerTeamData:GetTeamPreselectionId(nTeamId)
+	if self._tbTeam == nil then
+		return 0
+	end
+	local mapTeamData = self._tbTeam[nTeamId]
+	if mapTeamData ~= nil then
+		return mapTeamData.nPreselectionId
+	else
+		return 0
+	end
 end
 function PlayerTeamData:CheckTeamValid(nTeamId)
 	if self._tbTeam == nil then

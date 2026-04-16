@@ -4,3 +4,4 @@ TRANSLATE_SIGNAL = false
 DEL_RT_SIGNAL = true
 ADJUST = false
 ENABLE_NAME_CHECK = true
+ENABLE_W_CHECK = true

@@ -1,18 +1,22 @@
 local PenguinCardPrepareCtrl = class("PenguinCardPrepareCtrl", BaseCtrl)
+local PenguinCardUtils = require("Game.UI.Play_PenguinCard.PenguinCardUtils")
 local WwiseManger = CS.WwiseAudioManager.Instance
 local _, Black = ColorUtility.TryParseHtmlString("#3E3C5B")
 local _, Red = ColorUtility.TryParseHtmlString("#ef3d5c")
+local _, Green = ColorUtility.TryParseHtmlString("#649c57")
 local _, LineOff = ColorUtility.TryParseHtmlString("#8C8296")
 local _, LineOn = ColorUtility.TryParseHtmlString("#756980")
 local StarPos1 = 144
 local StarPos2 = 218
 local StarPos3 = 277
+local QuestPos = 172
 PenguinCardPrepareCtrl._mapNodeConfig = {
 	txtAddMax = {
 		nCount = 3,
 		sComponentName = "TMP_Text",
 		sLanguageId = "PenguinCard_AddBtnMax"
 	},
+	imgDiscount = {nCount = 3},
 	btnAddRound = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_AddRound"
@@ -88,7 +92,21 @@ PenguinCardPrepareCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "PenguinCard_WinTip"
 	},
-	aniWin = {sNodeName = "--Info--", sComponentName = "Animator"}
+	aniWin = {sNodeName = "--Info--", sComponentName = "Animator"},
+	imgHpOnBg = {},
+	imgHpOffBg = {},
+	txtMenuHp = {sComponentName = "TMP_Text"},
+	imgQuestOnBg = {},
+	imgQuestOffBg = {},
+	imgQuestIcon = {sComponentName = "Image"},
+	imgQuestComplete = {},
+	imgQuestProgress = {
+		sComponentName = "RectTransform"
+	},
+	aniQuestOnBg = {
+		sNodeName = "imgQuestOnBg",
+		sComponentName = "Animator"
+	}
 }
 PenguinCardPrepareCtrl._mapEventConfig = {
 	PenguinCard_AddRound = "OnEvent_AddRound",
@@ -97,7 +115,10 @@ PenguinCardPrepareCtrl._mapEventConfig = {
 	PenguinCard_ChangeScore = "OnEvent_ChangeScore",
 	PenguinCard_RollPenguinCard = "OnEvent_RollPenguinCard",
 	PenguinCard_SelectPenguinCard = "OnEvent_SelectPenguinCard",
-	PenguinCard_SalePenguinCard = "OnEvent_SalePenguinCard"
+	PenguinCard_SalePenguinCard = "OnEvent_SalePenguinCard",
+	PenguinCard_ChangeHp = "OnEvent_ChangeHp",
+	PenguinCard_ChangeQuestProcess = "OnEvent_ChangeQuestProcess",
+	PenguinCard_SelectQuest = "OnEvent_SelectQuest"
 }
 function PenguinCardPrepareCtrl:Refresh()
 	self:RefreshAddRound()
@@ -107,11 +128,13 @@ function PenguinCardPrepareCtrl:Refresh()
 	self:RefreshLeftTurn()
 	self:RefreshRoll()
 	self:RefreshWin()
+	self:RefreshQuest()
 end
 function PenguinCardPrepareCtrl:RefreshAddRound()
 	local bMax = self._panel.mapLevel.nRoundLimit >= self._panel.mapLevel.nMaxRound
 	self._mapNode.goAddRoundOn:SetActive(not bMax)
 	self._mapNode.goAddRoundOff:SetActive(bMax)
+	self._mapNode.imgDiscount[1]:SetActive(false)
 	if not bMax then
 		self:RefreshAddRoundCost()
 	end
@@ -120,14 +143,23 @@ function PenguinCardPrepareCtrl:RefreshAddRoundCost()
 	if self._panel.mapLevel.nRoundLimit >= self._panel.mapLevel.nMaxRound then
 		return
 	end
-	local nCost = self._panel.mapLevel.tbRoundUpgradeCost[self._panel.mapLevel.nRoundLimit + 1]
+	local nCost = self._panel.mapLevel.tbRoundUpgradeCost[self._panel.mapLevel.nRoundLimit + 1] * self._panel.mapLevel.nUpgradeDiscount
+	nCost = math.ceil(nCost)
 	NovaAPI.SetTMPText(self._mapNode.txtAddRoundCost, self:ThousandsNumber(nCost))
-	NovaAPI.SetTMPColor(self._mapNode.txtAddRoundCost, nCost > self._panel.mapLevel.nScore and Red_Unable or Black)
+	if nCost > self._panel.mapLevel.nScore then
+		NovaAPI.SetTMPColor(self._mapNode.txtAddRoundCost, Red_Unable)
+	elseif 1 > self._panel.mapLevel.nUpgradeDiscount then
+		NovaAPI.SetTMPColor(self._mapNode.txtAddRoundCost, Green)
+		self._mapNode.imgDiscount[1]:SetActive(true)
+	else
+		NovaAPI.SetTMPColor(self._mapNode.txtAddRoundCost, Black)
+	end
 end
 function PenguinCardPrepareCtrl:RefreshAddSlot()
 	local bMax = self._panel.mapLevel.nSlotCount >= self._panel.mapLevel.nMaxSlot
 	self._mapNode.goAddSlotOn:SetActive(not bMax)
 	self._mapNode.goAddSlotOff:SetActive(bMax)
+	self._mapNode.imgDiscount[2]:SetActive(false)
 	if not bMax then
 		self:RefreshAddSlotCost()
 	end
@@ -136,14 +168,23 @@ function PenguinCardPrepareCtrl:RefreshAddSlotCost()
 	if self._panel.mapLevel.nSlotCount >= self._panel.mapLevel.nMaxSlot then
 		return
 	end
-	local nCost = self._panel.mapLevel.tbSlotUpgradeCost[self._panel.mapLevel.nSlotCount + 1]
+	local nCost = self._panel.mapLevel.tbSlotUpgradeCost[self._panel.mapLevel.nSlotCount + 1] * self._panel.mapLevel.nUpgradeDiscount
+	nCost = math.ceil(nCost)
 	NovaAPI.SetTMPText(self._mapNode.txtAddSlotCost, self:ThousandsNumber(nCost))
-	NovaAPI.SetTMPColor(self._mapNode.txtAddSlotCost, nCost > self._panel.mapLevel.nScore and Red_Unable or Black)
+	if nCost > self._panel.mapLevel.nScore then
+		NovaAPI.SetTMPColor(self._mapNode.txtAddSlotCost, Red_Unable)
+	elseif 1 > self._panel.mapLevel.nUpgradeDiscount then
+		NovaAPI.SetTMPColor(self._mapNode.txtAddSlotCost, Green)
+		self._mapNode.imgDiscount[2]:SetActive(true)
+	else
+		NovaAPI.SetTMPColor(self._mapNode.txtAddSlotCost, Black)
+	end
 end
 function PenguinCardPrepareCtrl:RefreshAddRoll()
 	local bMax = self._panel.mapLevel.nBuyLimit >= self._panel.mapLevel.nMaxBuyLimit
 	self._mapNode.goAddRollOn:SetActive(not bMax)
 	self._mapNode.goAddRollOff:SetActive(bMax)
+	self._mapNode.imgDiscount[3]:SetActive(false)
 	if not bMax then
 		self:RefreshAddRollCost()
 	end
@@ -152,12 +193,21 @@ function PenguinCardPrepareCtrl:RefreshAddRollCost()
 	if self._panel.mapLevel.nBuyLimit >= self._panel.mapLevel.nMaxBuyLimit then
 		return
 	end
-	local nCost = self._panel.mapLevel.tbBuyLimitUpgradeCost[self._panel.mapLevel.nBuyLimit + 1]
+	local nCost = self._panel.mapLevel.tbBuyLimitUpgradeCost[self._panel.mapLevel.nBuyLimit + 1] * self._panel.mapLevel.nUpgradeDiscount
+	nCost = math.ceil(nCost)
 	NovaAPI.SetTMPText(self._mapNode.txtAddRollCost, self:ThousandsNumber(nCost))
-	NovaAPI.SetTMPColor(self._mapNode.txtAddRollCost, nCost > self._panel.mapLevel.nScore and Red_Unable or Black)
+	if nCost > self._panel.mapLevel.nScore then
+		NovaAPI.SetTMPColor(self._mapNode.txtAddRollCost, Red_Unable)
+	elseif 1 > self._panel.mapLevel.nUpgradeDiscount then
+		NovaAPI.SetTMPColor(self._mapNode.txtAddRollCost, Green)
+		self._mapNode.imgDiscount[3]:SetActive(true)
+	else
+		NovaAPI.SetTMPColor(self._mapNode.txtAddRollCost, Black)
+	end
 end
 function PenguinCardPrepareCtrl:RefreshScore()
-	NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(clearFloat(self._panel.mapLevel.nScore)))
+	local nScore = math.floor(self._panel.mapLevel.nScore + 0.5 + 1.0E-9)
+	NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	if self._panel.mapLevel.tbStarScore[3] > 0 then
 		local nStar = self._panel.mapLevel:GetStar()
 		local nPos = self:GetStarPos(nStar, self._panel.mapLevel.nScore)
@@ -212,6 +262,34 @@ function PenguinCardPrepareCtrl:RefreshLeftTurn()
 	local nLeft = self._panel.mapLevel.nMaxTurn - self._panel.mapLevel.nCurTurn + 1
 	NovaAPI.SetTMPText(self._mapNode.txtLeftTurn, orderedFormat(ConfigTable.GetUIText("PenguinCard_LeftTurn"), nLeft))
 end
+function PenguinCardPrepareCtrl:RefreshQuest()
+	if self._panel.mapLevel.nQuestTurn < 0 then
+		self._mapNode.imgQuestOnBg:SetActive(false)
+		self._mapNode.imgQuestOffBg:SetActive(true)
+		self._mapNode.imgHpOnBg:SetActive(false)
+		self._mapNode.imgHpOffBg:SetActive(true)
+	else
+		self._mapNode.imgHpOnBg:SetActive(true)
+		self._mapNode.imgHpOffBg:SetActive(false)
+		self._mapNode.imgQuestOnBg:SetActive(self._panel.mapLevel.mapQuest ~= nil)
+		self._mapNode.imgQuestOffBg:SetActive(self._panel.mapLevel.mapQuest == nil)
+		NovaAPI.SetTMPText(self._mapNode.txtMenuHp, self._panel.mapLevel.nHp)
+		if self._panel.mapLevel.mapQuest ~= nil then
+			if self._panel.mapLevel.mapQuest.nLevel == 1 then
+				self:SetSprite(self._mapNode.imgQuestIcon, "UI/Play_PenguinCard/SpriteAtlas/Sprite/zs_penguincard_task_01")
+			elseif self._panel.mapLevel.mapQuest.nLevel == 2 then
+				self:SetSprite(self._mapNode.imgQuestIcon, "UI/Play_PenguinCard/SpriteAtlas/Sprite/zs_penguincard_task_02")
+			end
+			self._mapNode.imgQuestComplete:SetActive(self._panel.mapLevel.mapQuest:CheckComplete())
+			local nP = self._panel.mapLevel.mapQuest.nAimCount / self._panel.mapLevel.mapQuest.nMaxAim
+			if 1 < nP then
+				nP = 1
+			end
+			local nPos = nP * QuestPos
+			self._mapNode.imgQuestProgress.sizeDelta = Vector2(nPos, 24)
+		end
+	end
+end
 function PenguinCardPrepareCtrl:RefreshRoll(bRoll)
 	self:RefreshRollCard(bRoll)
 	self:RefreshRollDesc()
@@ -264,9 +342,9 @@ function PenguinCardPrepareCtrl:RefreshWin()
 		self._mapNode.btnWin.gameObject:SetActive(false)
 		self._mapNode.txtWinTip.gameObject:SetActive(false)
 		self:AddTimer(1, 0.7, function()
-			self._mapNode.btnWin.gameObject:SetActive(true)
+			self._mapNode.btnWin.gameObject:SetActive(self._panel.mapLevel.bShowWin)
 			self._mapNode.txtWinTip.gameObject:SetActive(true)
-			self._mapNode.btnWin.interactable = true
+			self._mapNode.btnWin.interactable = self._panel.mapLevel.bShowWin
 			self._mapNode.imgStarOff[3]:SetActive(false)
 			self._mapNode.imgStarOn[3]:SetActive(true)
 			self._mapNode.aniWin:Play("PengUinCard_Prepare_Info_Win")
@@ -274,11 +352,11 @@ function PenguinCardPrepareCtrl:RefreshWin()
 		end, true, true, true)
 		EventManager.Hit(EventId.TemporaryBlockInput, 0.7)
 	else
-		self._mapNode.btnWin.gameObject:SetActive(nStar == 3)
-		self._mapNode.txtWinTip.gameObject:SetActive(nStar == 3)
-		self._mapNode.btnWin.interactable = nStar == 3
+		self._mapNode.btnWin.gameObject:SetActive(0 < nStar and self._panel.mapLevel.bShowWin)
+		self._mapNode.txtWinTip.gameObject:SetActive(0 < nStar)
+		self._mapNode.btnWin.interactable = 0 < nStar and self._panel.mapLevel.bShowWin
 	end
-	NovaAPI.SetTMPText(self._mapNode.txtBtnStartTurn, nStar == 3 and ConfigTable.GetUIText("PenguinCard_Btn_ContinueTurn") or ConfigTable.GetUIText("PenguinCard_Btn_NextTurn"))
+	NovaAPI.SetTMPText(self._mapNode.txtBtnStartTurn, 0 < nStar and ConfigTable.GetUIText("PenguinCard_Btn_ContinueTurn") or ConfigTable.GetUIText("PenguinCard_Btn_NextTurn"))
 end
 function PenguinCardPrepareCtrl:PlayOutAni()
 	self.animator:Play("PengUinCard_Prepare_out", 0, 0)
@@ -333,15 +411,21 @@ function PenguinCardPrepareCtrl:OnBtnClick_StartTurn(btn)
 end
 function PenguinCardPrepareCtrl:OnEvent_AddRoll()
 	self:RefreshAddRoll()
+	self:RefreshAddSlot()
+	self:RefreshAddRound()
 	self:RefreshRollDesc()
 	self:RefreshRollCost()
 	local ani = self._mapNode.trBtnRoll:Find("AnimRoot"):GetComponent("Animator")
 	ani:Play("PengUinCard_Prepare_Roll_Add", 0, 0)
 end
 function PenguinCardPrepareCtrl:OnEvent_AddSlot()
+	self:RefreshAddRoll()
 	self:RefreshAddSlot()
+	self:RefreshAddRound()
 end
 function PenguinCardPrepareCtrl:OnEvent_AddRound()
+	self:RefreshAddRoll()
+	self:RefreshAddSlot()
 	self:RefreshAddRound()
 end
 function PenguinCardPrepareCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
@@ -349,18 +433,19 @@ function PenguinCardPrepareCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
 	self:RefreshAddSlotCost()
 	self:RefreshAddRollCost()
 	self:RefreshRollCost()
-	if nBefore < self._panel.mapLevel.nScore and self._panel.mapLevel.nGameState == 1 then
+	if nBefore < self._panel.mapLevel.nScore and self._panel.mapLevel.nGameState == PenguinCardUtils.GameState.Prepare then
 		WwiseManger:PostEvent("Mode_Card_coin")
 	end
 	local callback = dotween_callback_handler(self, function()
-		if nBefore < self._panel.mapLevel.nScore and self._panel.mapLevel.nGameState == 1 then
+		if nBefore < self._panel.mapLevel.nScore and self._panel.mapLevel.nGameState == PenguinCardUtils.GameState.Prepare then
 			WwiseManger:PostEvent("Mode_Card_coin_stop")
 		end
 	end)
 	DOTween.To(function()
 		return nBefore
 	end, function(v)
-		NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(math.floor(v)))
+		local nScore = math.floor(v + 0.5 + 1.0E-9)
+		NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	end, self._panel.mapLevel.nScore, 0.5):OnComplete(callback)
 	if self._panel.mapLevel.tbStarScore[3] > 0 then
 		local nPos = self:GetStarPos(nStar, self._panel.mapLevel.nScore)
@@ -373,8 +458,8 @@ function PenguinCardPrepareCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
 			NovaAPI.SetImageColor(self._mapNode.imgLine[i], v > self._panel.mapLevel.nScore and LineOff or LineOn)
 		end
 	end
-	if self._panel.mapLevel.nGameState == 1 then
-		if nBeforeStar == 3 and nStar < 3 then
+	if self._panel.mapLevel.nGameState == PenguinCardUtils.GameState.Prepare then
+		if 0 < nBeforeStar and nStar == 0 then
 			self._mapNode.btnWin.interactable = false
 			self._mapNode.aniWin:Play("PengUinCard_Prepare_Info_Nowin")
 			WwiseManger:PostEvent("Mode_Card_level_wingo")
@@ -382,14 +467,14 @@ function PenguinCardPrepareCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
 				self._mapNode.btnWin.gameObject:SetActive(false)
 				self._mapNode.txtWinTip.gameObject:SetActive(false)
 			end, true, true, true)
-		elseif nBeforeStar < 3 and nStar == 3 then
-			self._mapNode.btnWin.gameObject:SetActive(true)
+		elseif nBeforeStar == 0 and 0 < nStar then
+			self._mapNode.btnWin.gameObject:SetActive(self._panel.mapLevel.bShowWin)
 			self._mapNode.txtWinTip.gameObject:SetActive(true)
 			self._mapNode.btnWin.interactable = false
 			self._mapNode.aniWin:Play("PengUinCard_Prepare_Info_Win")
 			WwiseManger:PostEvent("Mode_Card_level_win")
 			self:AddTimer(1, 1, function()
-				self._mapNode.btnWin.interactable = true
+				self._mapNode.btnWin.interactable = self._panel.mapLevel.bShowWin
 			end, true, true, true)
 		end
 	end
@@ -412,5 +497,24 @@ function PenguinCardPrepareCtrl:OnEvent_SalePenguinCard(_, nGroupId)
 			self._mapNode.PenguinCardItem[i]:RefreshUpgrade(nGroupId)
 		end
 	end
+end
+function PenguinCardPrepareCtrl:OnEvent_ChangeHp(nChange)
+	NovaAPI.SetTMPText(self._mapNode.txtMenuHp, self._panel.mapLevel.nHp)
+end
+function PenguinCardPrepareCtrl:OnEvent_ChangeQuestProcess(nChange)
+	local bComplete = self._panel.mapLevel.mapQuest:CheckComplete()
+	if bComplete and self._mapNode.imgQuestOnBg.activeInHierarchy == true and self._mapNode.imgQuestComplete.activeSelf == false then
+		self._mapNode.aniQuestOnBg:Play("PengUinCard_Prepare_Info_QuestComplete", 0, 0)
+	end
+	self._mapNode.imgQuestComplete:SetActive(bComplete)
+	local nP = self._panel.mapLevel.mapQuest.nAimCount / self._panel.mapLevel.mapQuest.nMaxAim
+	if 1 < nP then
+		nP = 1
+	end
+	local nPos = nP * QuestPos
+	self._mapNode.imgQuestProgress:DOSizeDelta(Vector2(nPos, 24), 0.5):SetEase(Ease.OutQuad)
+end
+function PenguinCardPrepareCtrl:OnEvent_SelectQuest()
+	self:RefreshQuest()
 end
 return PenguinCardPrepareCtrl

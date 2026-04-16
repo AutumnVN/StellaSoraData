@@ -219,6 +219,12 @@ return {
 		name_bg_color = "#555559"
 	},
 	{
+		id = "avg1_140",
+		name = "***",
+		name_bg_color = "#91aca8",
+		ver = "1.11.0"
+	},
+	{
 		id = "avg1_141",
 		name = "Chixia",
 		name_bg_color = "#d75d5e"
@@ -308,6 +314,12 @@ return {
 		ver = "1.6.0"
 	},
 	{
+		id = "avg1_164",
+		name = "Shuo",
+		name_bg_color = "#5a91ca",
+		ver = "1.9.0"
+	},
+	{
 		id = "avg2_001",
 		name = "Shrubshrew Thug",
 		name_bg_color = "#0ABEC5"
@@ -321,6 +333,12 @@ return {
 		id = "avg2_003",
 		name = "Shrubshrew Grenadier",
 		name_bg_color = "#0ABEC5"
+	},
+	{
+		id = "avg2_946",
+		name = "Opera Ghost",
+		name_bg_color = "#0ABEC5",
+		ver = "1.9.0"
 	},
 	{
 		id = "avg2_949",
@@ -641,7 +659,7 @@ return {
 	},
 	{
 		id = "avg3_124",
-		name = "Kieb",
+		name = "Erinis",
 		name_bg_color = "#0ABEC5"
 	},
 	{
@@ -1019,7 +1037,7 @@ return {
 	{
 		id = "avg3_207",
 		name = "Myrsha",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#9c8183",
 		ver = "1.8.0"
 	},
 	{
@@ -1036,15 +1054,39 @@ return {
 	},
 	{
 		id = "avg3_210",
-		name = "Hasana",
+		name = "Hazana",
 		name_bg_color = "#e4a47a",
 		ver = "1.8.0"
 	},
 	{
 		id = "avg3_211",
 		name = "Treasure Hunter Leader",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#a78c86",
 		ver = "1.8.0"
+	},
+	{
+		id = "avg3_213",
+		name = "Witch",
+		name_bg_color = "#0ABEC5",
+		ver = "1.9.0"
+	},
+	{
+		id = "avg3_214",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.10.0"
+	},
+	{
+		id = "avg3_215",
+		name = "Matilda",
+		name_bg_color = "#0ABEC5",
+		ver = "1.9.0"
+	},
+	{
+		id = "avg3_220",
+		name = "Mercurio",
+		name_bg_color = "#0ABEC5",
+		ver = "1.9.0"
 	},
 	{
 		id = "avg3_873",
@@ -2588,6 +2630,48 @@ return {
 		reuse = "avg1_143"
 	},
 	{
+		id = "avg3_1285",
+		name = "Otoha B",
+		name_bg_color = "#90a1c6",
+		reuse = "avg1_145"
+	},
+	{
+		id = "avg3_1286",
+		name = "Otoha C",
+		name_bg_color = "#90a1c6",
+		reuse = "avg1_145"
+	},
+	{
+		id = "avg3_1287",
+		name = "Desert Scorpion F A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1288",
+		name = "Desert Scorpion M A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1289",
+		name = "Caramel A",
+		name_bg_color = "#f0d2a1",
+		reuse = "avg1_147"
+	},
+	{
+		id = "avg3_1290",
+		name = "General Witch A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_213"
+	},
+	{
+		id = "avg3_1291",
+		name = "General Witch B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_213"
+	},
+	{
 		id = "avg4_100",
 		name = "Laru Bright Ver",
 		name_bg_color = "#0ABEC5"
@@ -2600,6 +2684,11 @@ return {
 	{
 		id = "avg4_102",
 		name = "Mysterious Figure",
+		name_bg_color = "#0ABEC5"
+	},
+	{
+		id = "avg4_103",
+		name = "Firefly Bright",
 		name_bg_color = "#0ABEC5"
 	},
 	{

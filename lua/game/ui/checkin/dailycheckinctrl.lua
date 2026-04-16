@@ -98,7 +98,7 @@ end
 function DailyCheckInCtrl:RefreshSelect()
 	local mapItem = self.tbList[self.nSelect]
 	local mapCfg = ConfigTable.GetData_Item(mapItem.ItemId)
-	self._mapNode.goCurItem:SetItem(mapItem.ItemId, mapCfg.nRarity, mapItem.ItemQty, nil, nil, nil, nil, true)
+	self._mapNode.goCurItem:SetItem(mapItem.ItemId, nil, mapItem.ItemQty, nil, nil, nil, nil, true)
 	NovaAPI.SetTMPText(self._mapNode.txtRewardName, mapCfg.Title)
 end
 function DailyCheckInCtrl:PlayReceiveAni()

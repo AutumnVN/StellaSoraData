@@ -43,11 +43,13 @@ PotentialCardItemCtrl._mapNodeConfig = {
 	},
 	animCtrl = {sComponentName = "Animator", sNodeName = "AnimRoot"},
 	imgReommend = {},
-	imgNew = {},
+	goNew = {},
 	txtNew = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "StarTower_Book_New_Text"
 	},
+	imgPreselection = {},
+	txtPreselection = {sComponentName = "TMP_Text"},
 	N = {},
 	SR = {},
 	SSR = {},
@@ -68,7 +70,7 @@ function PotentialCardItemCtrl:SetPotentialItem(nTid, nLevel, nNextLevel, bSimpl
 	self.nShowType = nShowType or AllEnum.PotentialCardType.CharInfo
 	self.nPotentialAddLevel = nPotentialAddLevel or 0
 	self.bLucky = bLucky
-	self._mapNode.imgNew.gameObject:SetActive(bNew)
+	self._mapNode.goNew.gameObject:SetActive(bNew)
 	self._mapNode.ArrowEffect:SetActive(self.bLucky)
 	local itemCfg = ConfigTable.GetData_Item(nTid)
 	if nil == itemCfg then
@@ -91,6 +93,7 @@ function PotentialCardItemCtrl:SetPotentialItem(nTid, nLevel, nNextLevel, bSimpl
 	else
 		self:SetSpecialCard(itemCfg, potentialCfg, bShowChar)
 	end
+	self.bSpecial = bSpecial
 	self:ChangeDesc(bSimpleDesc)
 	self:ChangeWordRaycast(false)
 	return bSpecial
@@ -219,7 +222,19 @@ function PotentialCardItemCtrl:ChangeWordRaycast(bEnable)
 	NovaAPI.SetTMPRaycastTarget(self._mapNode.txtDesc, bEnable)
 	NovaAPI.SetTMPRaycastTarget(self._mapNode.txtSpDesc, bEnable)
 end
-function PotentialCardItemCtrl:SetRecommend(bEnable)
-	self._mapNode.imgReommend:SetActive(bEnable)
+function PotentialCardItemCtrl:SetRecommend(bEnable, nLevel)
+	self._mapNode.imgReommend:SetActive(bEnable and nLevel == nil)
+	local bShow = bEnable and nLevel ~= nil
+	if self.nNextLevel ~= self.nLevel or not true then
+		bShow = bShow and bShow
+	end
+	self._mapNode.imgPreselection:SetActive(bShow)
+	if nLevel ~= nil then
+		if self.bSpecial then
+			NovaAPI.SetTMPText(self._mapNode.txtPreselection, ConfigTable.GetUIText("Potential_Preselection_Recommend"))
+		else
+			NovaAPI.SetTMPText(self._mapNode.txtPreselection, orderedFormat(ConfigTable.GetUIText("Potential_Preselection_Recommend_Level"), nLevel))
+		end
+	end
 end
 return PotentialCardItemCtrl

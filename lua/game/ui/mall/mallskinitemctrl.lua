@@ -24,8 +24,10 @@ MallSkinItemCtrl._mapNodeConfig = {
 	goSaleRate = {
 		sComponentName = "RectTransform"
 	},
+	fxSaleRate = {sNodeName = "goSaleRate", sComponentName = "UIShiny"},
 	txtSaleRate = {sComponentName = "TMP_Text"},
 	imgMask = {},
+	imgSaleMask = {},
 	reddotPkg = {},
 	imgRoleBg = {},
 	txtRoleName = {sComponentName = "TMP_Text"},

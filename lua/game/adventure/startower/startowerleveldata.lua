@@ -294,6 +294,12 @@ function StarTowerLevelData:Init(mapMeta, mapRoom, mapBag, lastId)
 		}
 	}
 	self.nRoomType = mapRoom.Data.RoomType == nil and -1 or mapRoom.Data.RoomType
+	local mapStarTower = ConfigTable.GetData("StarTower", self.nTowerId)
+	if mapStarTower then
+		local nTeamIndex = PlayerData.StarTower:GetGroupFormation(mapStarTower.GroupId)
+		local nPreselectionId = PlayerData.Team:GetTeamPreselectionId(nTeamIndex)
+		self.mapPreselectionData = PlayerData.PotentialPreselection:GetPreselectionById(nPreselectionId)
+	end
 	self.cachedClientData = mapMeta.ClientData
 	self.mapCharacterTempData = DecodeTempDataJson(mapMeta.ClientData)
 	self.mapEffectTriggerCount = {}
@@ -961,7 +967,9 @@ function StarTowerLevelData:BuildCharacterData(tbCharacterData, tbDiscData)
 					local mapEquipmentInfo = {
 						Lock = false,
 						Attributes = starTowerEquipment.Attributes,
-						AlterAttributes = {}
+						AlterAttributes = {},
+						OverlockCount = starTowerEquipment.OverlockCount,
+						AlterOverlockCount = {}
 					}
 					local equipmentData = EquipmentData.new(mapEquipmentInfo, mapChar.Id, nGemId)
 					table.insert(tbEquipment, equipmentData)
@@ -2430,6 +2438,33 @@ function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
 	for _, mapData in ipairs(tbPotentialData) do
 		table.insert(tbPotential, mapData.Id)
 	end
+	if self.mapPreselectionData ~= nil then
+		local tbRecommend = {}
+		for k, v in ipairs(self.mapPreselectionData.tbCharPotential) do
+			if k == 1 then
+				if self.tbTeam[k] == v.nCharId then
+					for _, potential in ipairs(v.tbPotential) do
+						if table.indexof(tbPotential, potential.nId) > 0 then
+							table.insert(tbRecommend, {
+								nId = potential.nId,
+								nLevel = potential.nLevel
+							})
+						end
+					end
+				end
+			elseif 1 < table.indexof(self.tbTeam, v.nCharId) then
+				for _, potential in ipairs(v.tbPotential) do
+					if table.indexof(tbPotential, potential.nId) > 0 then
+						table.insert(tbRecommend, {
+							nId = potential.nId,
+							nLevel = potential.nLevel
+						})
+					end
+				end
+			end
+		end
+		return tbRecommend
+	end
 	local ret = {}
 	local curRarity = 999
 	for _, nPotentialId in ipairs(tbPotential) do
@@ -2442,9 +2477,9 @@ function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
 			if curRarity > nRarity then
 				ret = {}
 				curRarity = nRarity
-				table.insert(ret, nPotentialId)
+				table.insert(ret, {nId = nPotentialId})
 			elseif nRarity == curRarity then
-				table.insert(ret, nPotentialId)
+				table.insert(ret, {nId = nPotentialId})
 			end
 		end
 	end
@@ -2463,7 +2498,8 @@ function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
 		end
 		return ret
 	end
-	for _, nPotentialId in ipairs(ret) do
+	for _, v in ipairs(ret) do
+		local nPotentialId = v.nId
 		local potentialCfg = ConfigTable.GetData("Potential", nPotentialId)
 		if potentialCfg ~= nil then
 			local nCharId = potentialCfg.CharId
@@ -2471,14 +2507,14 @@ function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
 			if nCurCount < 0 then
 				nCurCharId = nCharId
 				nCurCount = nCount
-				table.insert(ret1, nPotentialId)
+				table.insert(ret1, {nId = nPotentialId})
 			elseif nCharId ~= nCurCharId and nCount < nCurCount then
 				ret1 = {}
 				nCurCharId = nCharId
 				nCurCount = nCount
-				table.insert(ret1, nPotentialId)
+				table.insert(ret1, {nId = nPotentialId})
 			else
-				table.insert(ret1, nPotentialId)
+				table.insert(ret1, {nId = nPotentialId})
 			end
 		end
 	end
@@ -2514,34 +2550,35 @@ function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
 		end
 		return ret, retBuild
 	end
-	for _, nPotentialId in ipairs(ret1) do
+	for _, v in ipairs(ret1) do
+		local nPotentialId = v.nId
 		local nCount, nBuild = GetPotentialBuildCount(nPotentialId)
 		if nCurBuildCount < 0 and nBuild ~= 0 then
-			table.insert(ret2, nPotentialId)
+			table.insert(ret2, {nId = nPotentialId})
 			nCurBuildCount = nCount
 			bHasBuild = nBuild ~= GameEnum.potentialBuild.PotentialBuildCommon
 		elseif bHasBuild then
 			if nBuild ~= GameEnum.potentialBuild.PotentialBuildCommon then
 				if nCount == nCurBuildCount then
-					table.insert(ret2, nPotentialId)
+					table.insert(ret2, {nId = nPotentialId})
 				elseif nCount > nCurBuildCount then
 					ret2 = {}
-					table.insert(ret2, nPotentialId)
+					table.insert(ret2, {nId = nPotentialId})
 					nCurBuildCount = nCount
 					bHasBuild = nBuild ~= GameEnum.potentialBuild.PotentialBuildCommon
 				end
 			end
 		elseif nBuild == GameEnum.potentialBuild.PotentialBuildCommon then
 			if nCount == nCurBuildCount then
-				table.insert(ret2, nPotentialId)
+				table.insert(ret2, {nId = nPotentialId})
 			elseif nCount > nCurBuildCount then
 				ret2 = {}
-				table.insert(ret2, nPotentialId)
+				table.insert(ret2, {nId = nPotentialId})
 				nCurBuildCount = nCount
 			end
 		else
 			ret2 = {}
-			table.insert(ret2, nPotentialId)
+			table.insert(ret2, {nId = nPotentialId})
 			nCurBuildCount = nCount
 			bHasBuild = true
 		end
@@ -2554,7 +2591,8 @@ function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
 	end
 	local ret3 = {}
 	local curLessPotential = -1
-	for _, nPotentialId in ipairs(ret2) do
+	for _, v in ipairs(ret2) do
+		local nPotentialId = v.nId
 		local potentialCfg = ConfigTable.GetData("Potential", nPotentialId)
 		if potentialCfg ~= nil then
 			local nCharId = potentialCfg.CharId
@@ -2563,13 +2601,13 @@ function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
 				nCurCount = self._mapPotential[nCharId][nPotentialId]
 			end
 			if curLessPotential < 0 then
-				table.insert(ret3, nPotentialId)
+				table.insert(ret3, {nId = nPotentialId})
 				curLessPotential = nCurCount
 			elseif nCurCount == curLessPotential then
-				table.insert(ret3, nPotentialId)
+				table.insert(ret3, {nId = nPotentialId})
 			elseif nCurCount < curLessPotential then
 				ret3 = {}
-				table.insert(ret3, nPotentialId)
+				table.insert(ret3, {nId = nPotentialId})
 				curLessPotential = nCurCount
 			end
 		end

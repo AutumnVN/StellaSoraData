@@ -324,7 +324,9 @@ function NewTutorialsActCtrl:RefreshTeamFormation()
 	local nReceivedCount, nTotalCount = 0, 0
 	for i = 1, nAttrQuestCount do
 		local bComplete = PlayerData.Quest:CheckTeamFormationAttributeCompleted(i)
-		nReceivedCount, nTotalCount = PlayerData.Quest:GetTeamFormationAttributeProgress(i)
+		local nThisReceivedCount, nThisTotalCount = PlayerData.Quest:GetTeamFormationAttributeProgress(i)
+		nReceivedCount = nReceivedCount + nThisReceivedCount
+		nTotalCount = nTotalCount + nThisTotalCount
 	end
 	if nTotalCount == nReceivedCount then
 		self._mapNode.btn_GoTeamFormationPanel.gameObject:SetActive(false)

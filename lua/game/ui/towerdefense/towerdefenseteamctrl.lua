@@ -90,6 +90,21 @@ function TowerDefenseTeamCtrl:SetData(nActId, nLevelId, tbChracter, nItemId)
 		end
 	end
 	ForEachTableLine(DataTable.TowerDefenseGuide, forEachFunction)
+	local sortFunction = function(a, b)
+		local config_a = ConfigTable.GetData("TowerDefenseGuide", a)
+		local config_b = ConfigTable.GetData("TowerDefenseGuide", b)
+		local bUnlock_a = self.TowerDefenseData:IsLevelUnlock(config_a.LevelId) and self.TowerDefenseData:IsPreLevelPass(config_a.LevelId)
+		local bUnlock_b = self.TowerDefenseData:IsLevelUnlock(config_b.LevelId) and self.TowerDefenseData:IsPreLevelPass(config_b.LevelId)
+		if bUnlock_a and not bUnlock_b then
+			return true
+		elseif bUnlock_b and not bUnlock_a then
+			return false
+		else
+			return a < b
+		end
+	end
+	table.sort(self.tbCharGuideIds, sortFunction)
+	table.sort(self.tbItemIds, sortFunction)
 	self:CreateChar()
 	self:CreateItem()
 end

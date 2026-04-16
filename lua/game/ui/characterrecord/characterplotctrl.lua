@@ -46,6 +46,7 @@ function CharacterPlotCtrl:RefreshPlotList(nCharId)
 	self.tbPlotData = {}
 	local tbGirdHeight = {}
 	local nLastType = 0
+	local nLastSkinId = 0
 	local nPlotTypeCount = 0
 	local nIndex = 0
 	for _, v in ipairs(tbPlot) do
@@ -63,6 +64,10 @@ function CharacterPlotCtrl:RefreshPlotList(nCharId)
 					bTitle = true,
 					nType = v.PlotType
 				})
+			end
+			if nLastSkinId ~= v.UnlockSkinId then
+				nLastSkinId = v.UnlockSkinId
+				nIndex = 0
 			end
 			nIndex = nIndex + 1
 			table.insert(tbTempPlot, {

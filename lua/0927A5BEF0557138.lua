@@ -7,6 +7,8 @@ JointDrillRankingPanel._tbDefine = {
 	}
 }
 function JointDrillRankingPanel:Awake()
+	self.mapRankDetail = nil
+	self.nGridPos = 0
 end
 function JointDrillRankingPanel:OnEnable()
 end

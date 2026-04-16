@@ -54,7 +54,7 @@ function PenguinCardLevelGridCtrl:Refresh(nLevelId, mapLevel)
 		self._mapNode.goStarOff[i]:SetActive(i > mapLevel.nStar)
 	end
 	self:RefreshLock(nLevelId)
-	self._mapNode.imgComplete:SetActive(mapLevel.nStar == 3)
+	self._mapNode.imgComplete:SetActive(mapLevel.nStar > 0)
 end
 function PenguinCardLevelGridCtrl:GetLock()
 	return self.bLock

@@ -107,7 +107,7 @@ function GuideGroup_4:Step_3()
 			0,
 			0,
 			0
-		}, tmpDisc)
+		}, tmpDisc, 0)
 	end
 	self.parent:ActiveHide(true)
 	current = 3
@@ -245,7 +245,7 @@ function GuideGroup_4:Step_12()
 			0,
 			0,
 			0
-		})
+		}, 0)
 	end
 	self.msg = {
 		BindIcon = "MainlineFormationScenePanel/----SafeAreaRoot----/btnStartBattle",

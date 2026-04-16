@@ -44,6 +44,10 @@ function GuideGroup_5:Clear()
 	self.runGuide = false
 	self:UnBindEvent()
 	self.parent = nil
+	if self.stepTimer then
+		TimerManager.Remove(self.stepTimer)
+		self.stepTimer = nil
+	end
 end
 function GuideGroup_5:Step_1()
 	self.msg = {
@@ -57,8 +61,9 @@ function GuideGroup_5:Step_1()
 	current = 1
 	local run = function()
 		self.parent:PlayTypeMask(self.msg)
+		self.stepTimer = nil
 	end
-	TimerManager.Add(1, 0.4, nil, run, true, true, true, nil)
+	self.stepTimer = TimerManager.Add(1, 0.4, nil, run, true, true, true, nil)
 end
 function GuideGroup_5:Step_2()
 	self.msg = {

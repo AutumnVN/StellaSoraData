@@ -59,7 +59,7 @@ function BdConvertQuestCtrl:OnEnable()
 	self._mapNode.animator:Play("t_window_04_t_in")
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
 end
-function BdConvertQuestCtrl:OnDestory()
+function BdConvertQuestCtrl:OnDestroy()
 	if self.tbItemCtrl ~= nil then
 		for _, ctrl in pairs(self.tbItemCtrl) do
 			self:UnbindCtrlByNode(ctrl)

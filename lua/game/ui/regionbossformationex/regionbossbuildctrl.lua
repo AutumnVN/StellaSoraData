@@ -23,6 +23,7 @@ RegionBossBuildCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_OpenFilter"
 	},
+	imgFilterChoose = {},
 	txt_srot_timeTitle = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "RoguelikeBuild_Manage_SortTime"
@@ -51,7 +52,8 @@ RegionBossBuildCtrl._mapNodeConfig = {
 }
 RegionBossBuildCtrl._mapEventConfig = {
 	[EventId.UIHomeConfirm] = "OnEvent_BackHome",
-	[EventId.UIBackConfirm] = "OnEvent_Back"
+	[EventId.UIBackConfirm] = "OnEvent_Back",
+	[EventId.FilterConfirm] = "OnEvent_RefreshByFilter"
 }
 local SortType = {Time = 1, Score = 2}
 local SortOrder = {Descending = true, Ascending = false}
@@ -79,6 +81,8 @@ function RegionBossBuildCtrl:RefreshList()
 	else
 		self._mapNode.ExistContent:SetActive(true)
 	end
+	local isDirty = PlayerData.Filter:IsDirty(AllEnum.OptionType.Char)
+	self._mapNode.imgFilterChoose:SetActive(isDirty)
 	self.tbCurShow = self:FilterAndSortBuildData()
 	if self.nType == AllEnum.RegionBossFormationType.InfinityTower then
 		for i, v in pairs(self.tbCurShow) do
@@ -190,7 +194,11 @@ function RegionBossBuildCtrl:FilterAndSortBuildData()
 		if self.FilterPass ~= self.FilterUnpass and (not (not self.FilterPass or mapBuild.bPass) or self.FilterUnpass and mapBuild.bPass) then
 			return
 		end
-		table.insert(ret, mapBuild)
+		local nCharId = mapBuild.tbChar[1].nTid
+		local isFilter = PlayerData.Filter:CheckFilterByChar(nCharId)
+		if isFilter then
+			table.insert(ret, mapBuild)
+		end
 	end
 	for _, mapBuild in ipairs(self._tbAllBuild) do
 		filterBuild(mapBuild)
@@ -382,6 +390,10 @@ function RegionBossBuildCtrl:Awake()
 	self.nSortype = SortType.Score
 	self.nSortOrder = SortOrder.Descending
 	self.nPanelState = PanelState.Normal
+	self.mapCacheFilter = {}
+	self.tbOption = {
+		AllEnum.ChooseOption.Char_Element
+	}
 	self:InitSort()
 	self.mapListItemCtrl = {}
 	self.tbCoinRate = ConfigTable.GetConfigArray("StarTowerBuildTransformParas")
@@ -404,6 +416,14 @@ function RegionBossBuildCtrl:OnEnable()
 	end
 	if tbParam[4] ~= nil then
 		self.Other = tbParam[4]
+	end
+	if next(self.mapCacheFilter) ~= nil then
+		for fKey, data in pairs(self.mapCacheFilter) do
+			for sKey, value in pairs(data) do
+				PlayerData.Filter:SetCacheFilterByKey(fKey, sKey, value)
+			end
+		end
+		PlayerData.Filter:SyncFilterByCache()
 	end
 	local GetDataCallback = function(tbBuildData, mapAllBuild)
 		self._mapAllBuild = mapAllBuild
@@ -443,6 +463,19 @@ function RegionBossBuildCtrl:OnDisable()
 		self.mapListItemCtrl[nInstanceId] = nil
 	end
 	self.mapListItemCtrl = {}
+	self.mapCacheFilter = {}
+	for _, fKey in ipairs(self.tbOption) do
+		if self.mapCacheFilter[fKey] == nil then
+			self.mapCacheFilter[fKey] = {}
+		end
+		local data = PlayerData.Filter:GetCacheFilter(fKey)
+		if data ~= nil then
+			for sKey, value in pairs(data) do
+				self.mapCacheFilter[fKey][sKey] = value
+			end
+		end
+	end
+	PlayerData.Filter:Reset(self.tbOption)
 end
 function RegionBossBuildCtrl:OnDestroy()
 end
@@ -491,6 +524,7 @@ function RegionBossBuildCtrl:OnBtnClick_SortScore(btn)
 	self:RefreshList()
 end
 function RegionBossBuildCtrl:OnBtnClick_OpenFilter(btn)
+	EventManager.Hit(EventId.OpenPanel, PanelId.FilterPopupPanel, self.tbOption)
 end
 function RegionBossBuildCtrl:OnBtnClick_Preview()
 	EventManager.Hit(EventId.OpenPanel, PanelId.BuildAttrPreview)
@@ -509,5 +543,30 @@ function RegionBossBuildCtrl:OnEvent_Back(nPanelId)
 		return
 	end
 	EventManager.Hit(EventId.ClosePanel, PanelId.RogueBossBuildBrief)
+end
+function RegionBossBuildCtrl:OnEvent_RefreshByFilter()
+	local bChange = false
+	local tbTemp = clone(self.mapCacheFilter)
+	self.mapCacheFilter = {}
+	for _, fKey in ipairs(self.tbOption) do
+		if self.mapCacheFilter[fKey] == nil then
+			self.mapCacheFilter[fKey] = {}
+		end
+		local data = PlayerData.Filter:GetCacheFilter(fKey)
+		if data ~= nil then
+			if tbTemp[fKey] == nil then
+				bChange = true
+			end
+			for sKey, value in pairs(data) do
+				if not bChange and (tbTemp[fKey][sKey] == nil or tbTemp[fKey][sKey] ~= value) then
+					bChange = true
+				end
+				self.mapCacheFilter[fKey][sKey] = value
+			end
+		end
+	end
+	if bChange then
+		self:RefreshList()
+	end
 end
 return RegionBossBuildCtrl

@@ -397,7 +397,8 @@ function MainlineFormationDiscCtrl:UploadFormation(tbMainDisc, tbSubDisc, callba
 		self.tbMainDisc = clone(tbMainDisc)
 		self.tbSubDisc = clone(tbSubDisc)
 	end
-	PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, tbTeamMemberId, tbDisc, Callback)
+	local nPreselectionId = PlayerData.Team:GetTeamPreselectionId(self._panel.nTeamIndex)
+	PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, tbTeamMemberId, tbDisc, nPreselectionId, Callback)
 end
 function MainlineFormationDiscCtrl:OnBtnClick_SwitchMain()
 	self._mapNode.discListRoot:OnBtnClick_Switch1()

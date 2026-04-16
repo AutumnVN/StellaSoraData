@@ -1,9 +1,5 @@
 local PenguinCard = class("PenguinCard")
-local SuitName = {
-	[GameEnum.PenguinBaseCardSuit.Blue] = "<sprite name=\"icon_PengCard_Water_small\">",
-	[GameEnum.PenguinBaseCardSuit.Red] = "<sprite name=\"icon_PengCard_Fire_small\">",
-	[GameEnum.PenguinBaseCardSuit.Green] = "<sprite name=\"icon_PengCard_Wind_small\">"
-}
+local PenguinCardUtils = require("Game.UI.Play_PenguinCard.PenguinCardUtils")
 function PenguinCard:ctor(nId)
 	self:Clear()
 	self:Init(nId)
@@ -12,8 +8,12 @@ function PenguinCard:Upgrade(nAddLevel)
 	local nAfter = self.nLevel + nAddLevel
 	nAfter = nAfter > self.nMaxLevel and self.nMaxLevel or nAfter
 	local nId = self:GetIdByLevel(self.nGroupId, nAfter)
+	local nCacheGrowthLayer = 0
+	if self.nGrowthType ~= GameEnum.PenguinCardGrowthType.None and not self.bUpgradeResetGrowth then
+		nCacheGrowthLayer = self.nGrowthLayer
+	end
 	self:Clear()
-	self:Init(nId)
+	self:Init(nId, nCacheGrowthLayer)
 end
 function PenguinCard:Clear()
 	self.nId = nil
@@ -33,11 +33,18 @@ function PenguinCard:Clear()
 	self.nTriggerLimitParam = nil
 	self.nEffectType = nil
 	self.tbEffectParam = nil
-	self.sDesc = nil
+	self.nGrowthType = nil
+	self.bUpgradeResetGrowth = nil
+	self.nGrowthTriggerPhase = nil
+	self.nGrowthTriggerType = nil
+	self.tbGrowthTriggerParam = nil
+	self.tbGrowthEffectParam = nil
 	self.nTriggerCount = nil
+	self.nGrowthLayer = nil
 end
-function PenguinCard:Init(nId)
+function PenguinCard:Init(nId, nGrowthLayer)
 	self.nId = nId
+	self.nGrowthLayer = nGrowthLayer or 0
 	self:ParseConfigData(nId)
 end
 function PenguinCard:ParseConfigData(nId)
@@ -60,98 +67,27 @@ function PenguinCard:ParseConfigData(nId)
 	self.nTriggerLimitParam = mapCfg.TriggerLimitParam
 	self.nEffectType = mapCfg.EffectType
 	self.tbEffectParam = decodeJson(mapCfg.EffectParam)
-	self.sDesc = self:SetDesc(mapCfg)
+	self.nGrowthType = mapCfg.GrowthType
+	self.bUpgradeResetGrowth = mapCfg.UpgradeResetGrowth
+	self.nGrowthTriggerPhase = mapCfg.GrowthTriggerPhase
+	self.nGrowthTriggerType = mapCfg.GrowthTriggerType
+	self.tbGrowthTriggerParam = decodeJson(mapCfg.GrowthTriggerParam)
+	self.tbGrowthEffectParam = decodeJson(mapCfg.GrowthEffectParam)
 end
 function PenguinCard:SetSlotIndex(nSlotIndex)
 	self.nSlotIndex = nSlotIndex
 end
-function PenguinCard:SetDesc(mapCfg)
-	local ParseTriggerParam = function(tbParam, nIndex)
-		if self.nTriggerType == GameEnum.PenguinCardTriggerType.SuitCards then
-			local nSuit = tbParam[nIndex]
-			return SuitName[nSuit]
-		elseif self.nTriggerType == GameEnum.PenguinCardTriggerType.BaseCardId then
-			local nBaseCardId = tbParam[nIndex]
-			local mapBase = ConfigTable.GetData("PenguinBaseCard", nBaseCardId)
-			if mapBase then
-				return mapBase.Title
-			end
-		elseif self.nTriggerType == GameEnum.PenguinCardTriggerType.SuitCount or self.nTriggerType == GameEnum.PenguinCardTriggerType.HandRankSuitCount then
-			local mapSuit = {}
-			for k, v in pairs(tbParam) do
-				local nSuit = tonumber(k)
-				if nSuit then
-					mapSuit[nSuit] = v
-				end
-			end
-			local i = 1
-			for nSuit, v in ipairsSorted(mapSuit) do
-				if i == nIndex then
-					local sName = ""
-					for _ = 1, v do
-						sName = sName .. SuitName[nSuit]
-					end
-					return sName
-				end
-				i = i + 1
-			end
-		end
+function PenguinCard:GetDesc()
+	local mapCfg = ConfigTable.GetData("PenguinCard", self.nId)
+	if nil == mapCfg then
+		return ""
 	end
-	local ParseEffectParam = function(tbParam, nIndex)
-		if self.nEffectType == GameEnum.PenguinCardEffectType.AddBaseCardWeight then
-			local tbId = {}
-			for k, _ in pairs(tbParam) do
-				local nId = tonumber(k)
-				if nId then
-					table.insert(tbId, nId)
-				end
-			end
-			table.sort(tbId, function(a, b)
-				return a < b
-			end)
-			local nBaseCardId = tbId[nIndex]
-			local mapBase = ConfigTable.GetData("PenguinBaseCard", nBaseCardId)
-			if mapBase then
-				return mapBase.Title
-			end
-		elseif self.nEffectType == GameEnum.PenguinCardEffectType.ReplaceBaseCard then
-			local nBaseCardId = tbParam[nIndex]
-			local mapBase = ConfigTable.GetData("PenguinBaseCard", nBaseCardId)
-			if mapBase then
-				return mapBase.Title
-			end
-		elseif self.nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips or self.nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier or self.nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier then
-			return tbParam[nIndex]
-		end
-	end
-	local result = string.gsub(mapCfg.Desc, "%b{}", function(token)
-		local content = string.match(token, "^{(.-)}$")
-		local sParameterKey, lang, langIdx = ParseLanguageParam(content)
-		if lang ~= nil then
-			token = string.format("{%s}", sParameterKey)
-		end
-		if token == "{TriggerProbability}" then
-			return mapCfg.TriggerProbability
-		elseif token == "{TriggerLimitParam}" then
-			return mapCfg.TriggerLimitParam
-		end
-		local trigIdx = string.match(token, "^{TriggerParam_(%d+)}$")
-		if trigIdx then
-			local idx = tonumber(trigIdx)
-			local str = ParseTriggerParam(decodeJson(mapCfg.TriggerParam), idx)
-			str = LanguagePost(lang, langIdx, str)
-			return str
-		end
-		local effectIdx = string.match(token, "^{EffectParam_(%d+)}$")
-		if effectIdx then
-			local idx = tonumber(effectIdx)
-			local str = ParseEffectParam(decodeJson(mapCfg.EffectParam), idx)
-			str = LanguagePost(lang, langIdx, str)
-			return str
-		end
-		return token
-	end)
-	return result
+	return PenguinCardUtils.SetEffectDesc(mapCfg, self.nGrowthLayer)
+end
+function PenguinCard:ResetAllTrigger()
+	self:ResetGameTrigger()
+	self:ResetRoundTrigger()
+	self:ResetTurnTrigger()
 end
 function PenguinCard:ResetGameTrigger()
 	if self.nTriggerLimit == GameEnum.PenguinCardTriggerLimit.Game then
@@ -167,6 +103,9 @@ function PenguinCard:ResetTurnTrigger()
 	if self.nTriggerLimit == GameEnum.PenguinCardTriggerLimit.Turn then
 		self.nTriggerCount = 0
 	end
+	if self.nGrowthType == GameEnum.PenguinCardGrowthType.CurTurn then
+		self.nGrowthLayer = 0
+	end
 end
 function PenguinCard:Trigger(nTriggerPhase, mapTriggerSource, callback)
 	if self.nTriggerLimit ~= GameEnum.PenguinCardTriggerLimit.None and self.nTriggerCount >= self.nTriggerLimitParam then
@@ -175,8 +114,24 @@ function PenguinCard:Trigger(nTriggerPhase, mapTriggerSource, callback)
 	if nTriggerPhase ~= self.nTriggerPhase then
 		return
 	end
-	local bAble = self:CheckTriggerAble(mapTriggerSource)
+	local bAble = PenguinCardUtils.CheckTriggerAble(self.nTriggerType, self.tbTriggerParam, self.nTriggerProbability, mapTriggerSource)
 	if not bAble then
+		return
+	end
+	local mapEffectValue
+	if self.nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips or self.nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier or self.nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier or self.nEffectType == GameEnum.PenguinCardEffectType.UpgradeDiscount or self.nEffectType == GameEnum.PenguinCardEffectType.AddRound or self.nEffectType == GameEnum.PenguinCardEffectType.UpgradeRebate then
+		if self.nGrowthType == GameEnum.PenguinCardGrowthType.None then
+			mapEffectValue = self.tbEffectParam[1]
+		else
+			mapEffectValue = self.tbEffectParam[1] + self.nGrowthLayer * self.tbGrowthEffectParam[1]
+			if mapEffectValue < 0 then
+				mapEffectValue = 0
+			end
+		end
+	else
+		mapEffectValue = self.tbEffectParam
+	end
+	if type(mapEffectValue) == "number" and mapEffectValue == 0 then
 		return
 	end
 	if self.nTriggerLimit ~= GameEnum.PenguinCardTriggerLimit.None then
@@ -184,50 +139,29 @@ function PenguinCard:Trigger(nTriggerPhase, mapTriggerSource, callback)
 	end
 	if callback then
 		if NovaAPI.IsEditorPlatform() then
-			printLog("\228\188\129\233\185\133\231\137\140\232\167\166\229\143\145\239\188\154" .. "  " .. self.sName .. "  " .. self.sDesc)
+			printLog("\228\188\129\233\185\133\231\137\140\232\167\166\229\143\145\239\188\154" .. "  " .. self.sName .. "  " .. self:GetDesc())
 		end
-		callback(self.nEffectType, self.tbEffectParam)
+		callback(self.nEffectType, mapEffectValue)
 	end
 	EventManager.Hit("PenguinCardTriggered", self.nSlotIndex)
 end
-function PenguinCard:CheckTriggerAble(mapTriggerSource)
-	local bAble = false
-	if self.nTriggerType == GameEnum.PenguinCardTriggerType.None then
-		bAble = true
-	elseif mapTriggerSource then
-		if self.nTriggerType == GameEnum.PenguinCardTriggerType.SuitCards and mapTriggerSource.SuitCards then
-			local nAimCount = #self.tbTriggerParam
-			local nHasCount = 0
-			for _, nAimSuit in ipairs(self.tbTriggerParam) do
-				for _, nHasSuit in ipairs(mapTriggerSource.SuitCards) do
-					if nAimSuit == nHasSuit then
-						nHasCount = nHasCount + 1
-					end
-				end
-			end
-			if nAimCount <= nHasCount then
-				bAble = true
-			end
-		elseif self.nTriggerType == GameEnum.PenguinCardTriggerType.SuitCount and mapTriggerSource.SuitCount then
-			for k, nAimCount in pairs(self.tbTriggerParam) do
-				if not mapTriggerSource.SuitCount[tonumber(k)] or nAimCount > mapTriggerSource.SuitCount[tonumber(k)] then
-					return false
-				end
-			end
-			bAble = true
-		elseif self.nTriggerType == GameEnum.PenguinCardTriggerType.HandRankSuitCount and mapTriggerSource.HandRankSuitCount then
-			for k, nAimCount in pairs(self.tbTriggerParam) do
-				if not mapTriggerSource.HandRankSuitCount[tonumber(k)] or nAimCount > mapTriggerSource.HandRankSuitCount[tonumber(k)] then
-					return false
-				end
-			end
-			bAble = true
-		elseif self.nTriggerType == GameEnum.PenguinCardTriggerType.BaseCardId and mapTriggerSource.BaseCard then
-			bAble = mapTriggerSource.BaseCard.nId == self.tbTriggerParam[1]
-		end
+function PenguinCard:Growth(nTriggerPhase, mapTriggerSource)
+	if self.nGrowthType == GameEnum.PenguinCardGrowthType.None then
+		return
 	end
-	local randomValue = math.random(0, 100)
-	return bAble and randomValue <= self.nTriggerProbability
+	if nTriggerPhase ~= self.nGrowthTriggerPhase then
+		return
+	end
+	local nAdd = PenguinCardUtils.CheckGrowthLayer(self.nGrowthTriggerType, self.tbGrowthTriggerParam, mapTriggerSource)
+	if nAdd == 0 then
+		return
+	end
+	if self.nGrowthTriggerType == GameEnum.PenguinCardGrowthTriggerType.LevelCount then
+		self.nGrowthLayer = nAdd
+	else
+		self.nGrowthLayer = self.nGrowthLayer + nAdd
+	end
+	EventManager.Hit("PenguinCardGrowth", self.nSlotIndex)
 end
 function PenguinCard:GetIdByLevel(nGroupId, nLevel)
 	return nGroupId * 100 + nLevel

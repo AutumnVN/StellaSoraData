@@ -245,10 +245,10 @@ function PlayerVoiceData:PlayBoardSelectVoice(nCharId, nSkinId)
 end
 function PlayerVoiceData:PlayMainViewOpenVoice()
 	local curBoardCharId, curSkinId = self:GetCurBoardCharIdAndSkinId()
-	self:CheckHoliday()
 	local bPlayFirst = false
 	local tbVoiceKey = {}
-	if nil ~= curBoardCharId then
+	if curBoardCharId ~= nil and curBoardCharId ~= 0 then
+		self:CheckHoliday()
 		local nServerTimeStamp = ClientManager.serverTimeStamp
 		local nHour = tonumber(os.date("%H", nServerTimeStamp))
 		local getIndex = function(nHour)
@@ -267,7 +267,7 @@ function PlayerVoiceData:PlayMainViewOpenVoice()
 		else
 			tbVoiceKey = {sKey, "greet"}
 		end
-		if #self.tbHolidayVoiceKey > 0 then
+		if 0 < #self.tbHolidayVoiceKey then
 			for _, v in ipairs(self.tbHolidayVoiceKey) do
 				table.insert(tbVoiceKey, v)
 			end
@@ -302,7 +302,7 @@ function PlayerVoiceData:PlayBoardClickVoice()
 	end
 	self.nContinuousClickCount = self.nContinuousClickCount + 1
 	local curBoardCharId, curSkinId = self:GetCurBoardCharIdAndSkinId()
-	if nil ~= curBoardCharId then
+	if curBoardCharId ~= nil and curBoardCharId ~= 0 then
 		local tbVoiceKey = {}
 		if self.nContinuousClickCount > getBoardClickMaxCount(self.bNpc) then
 			table.insert(tbVoiceKey, "hfc")
@@ -369,7 +369,7 @@ function PlayerVoiceData:PlayBoardFreeVoice()
 		curSkinId = self.nNPCSkinId
 		sVoiceKey = "hang_npc"
 	end
-	if nil ~= curBoardCharId then
+	if curBoardCharId ~= nil and curBoardCharId ~= 0 then
 		self:PlayCharVoice(sVoiceKey, curBoardCharId, curSkinId, self.bNpc)
 	end
 end
@@ -383,7 +383,7 @@ function PlayerVoiceData:PlayBoardFreeLongTimeVoice()
 		curSkinId = self.nNPCSkinId
 		sVoiceKey = "exhang_npc"
 	end
-	if nil ~= curBoardCharId then
+	if curBoardCharId ~= nil and curBoardCharId ~= 0 then
 		self:PlayCharVoice(sVoiceKey, curBoardCharId, curSkinId, self.bNpc)
 	end
 end

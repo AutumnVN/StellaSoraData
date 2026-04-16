@@ -1,6 +1,7 @@
 local DepotCharInfoCtrl = class("DepotCharInfoCtrl", BaseCtrl)
 local AdventureModuleHelper = CS.AdventureModuleHelper
 local CharacterAttrData = require("GameCore.Data.DataClass.CharacterAttrData")
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
 DepotCharInfoCtrl._mapNodeConfig = {
 	goProperty = {
 		nCount = 5,
@@ -48,7 +49,7 @@ DepotCharInfoCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Equipment"
 	},
-	imgEquipment = {nCount = 3, sComponentName = "Image"},
+	imgEquipment = {nCount = 3, sComponentName = "Transform"},
 	goEquipment = {nCount = 3},
 	txtEquipmentLock = {nCount = 3, sComponentName = "TMP_Text"}
 }
@@ -165,7 +166,17 @@ function DepotCharInfoCtrl:RefreshEquipment()
 			local nGemId = PlayerData.Equipment:GetGemIdBySlot(self.nCharId, mapSlot.nSlotId)
 			local mapGemCfg = ConfigTable.GetData("CharGem", nGemId)
 			if mapGemCfg then
-				self:SetPngSprite(self._mapNode.imgEquipment[i], mapGemCfg.Icon)
+				delChildren(self._mapNode.imgEquipment[i])
+				local equipPrefab
+				local sPrefab = mapGemCfg.Icon .. ".prefab"
+				if GameResourceLoader.ExistsAsset(Settings.AB_ROOT_PATH .. sPrefab) == true then
+					equipPrefab = self:LoadAsset(sPrefab)
+				end
+				if equipPrefab then
+					local goEquip = instantiate(equipPrefab, self._mapNode.imgEquipment[i])
+					local mapEquipment = PlayerData.Equipment:GetEquipmentByGemIndex(self.nCharId, mapSlot.nSlotId, mapSlot.nGemIndex)
+					goEquip.transform:Find("goFx").gameObject:SetActive(mapEquipment and 0 < mapEquipment:GetUpgradeCount())
+				end
 			end
 		end
 	end

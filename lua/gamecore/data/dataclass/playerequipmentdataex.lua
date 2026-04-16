@@ -6,6 +6,7 @@ function PlayerEquipmentData:Init()
 	self.tbCharSelectPreset = {}
 	self.tbCharEquipment = {}
 	self.bRollWarning = true
+	self.bRollUpgradeWarning = true
 	self:ProcessTableData()
 	self.isTestPresetTeam = false
 end
@@ -234,6 +235,12 @@ end
 function PlayerEquipmentData:SetRollWarning(bAble)
 	self.bRollWarning = bAble
 end
+function PlayerEquipmentData:GetRollUpgradeWarning()
+	return self.bRollUpgradeWarning
+end
+function PlayerEquipmentData:SetRollUpgradeWarning(bAble)
+	self.bRollUpgradeWarning = bAble
+end
 function PlayerEquipmentData:CacheEquipmentSelect(nSlotId, nGemIndex, nCharId)
 	self.mapSelect = {
 		nSlotId = nSlotId,
@@ -248,6 +255,22 @@ function PlayerEquipmentData:GetEquipmentSelect()
 	local mapSelect = clone(self.mapSelect)
 	self.mapSelect = nil
 	return mapSelect
+end
+function PlayerEquipmentData:CacheEquipmentUpgrade(nSlotId, nGemIndex, nCharId, nSelectUpgradeIndex)
+	self.mapUpgrade = {
+		nSlotId = nSlotId,
+		nGemIndex = nGemIndex,
+		nCharId = nCharId,
+		nSelectUpgradeIndex = nSelectUpgradeIndex
+	}
+end
+function PlayerEquipmentData:GetEquipmentUpgrade()
+	if self.mapUpgrade == nil then
+		return false
+	end
+	local mapUpgrade = clone(self.mapUpgrade)
+	self.mapUpgrade = nil
+	return mapUpgrade
 end
 function PlayerEquipmentData:CheckAlterHighQualityAffix(tbAlterAffix, tbLockId)
 	for _, v in ipairs(tbAlterAffix) do
@@ -341,7 +364,7 @@ function PlayerEquipmentData:SendCharGemRefreshReq(nCharId, nSlotId, nGemIndex, 
 		LockAttrs = tbLockAttrs
 	}
 	local successCallback = function(_, mapMainData)
-		self.tbCharEquipment[nCharId][nSlotId][nGemIndex]:UpdateAlterAffix(mapMainData.Attributes)
+		self.tbCharEquipment[nCharId][nSlotId][nGemIndex]:UpdateAlterAffix(mapMainData.Attributes, mapMainData.OverlockCount)
 		if callback then
 			callback()
 		end
@@ -360,6 +383,42 @@ function PlayerEquipmentData:SendCharGemGenerateReq(nCharId, nSlotId, callback)
 		end
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.char_gem_generate_req, msgData, nil, successCallback)
+end
+function PlayerEquipmentData:SendCharGemOverlockReq(nCharId, nSlotId, nGemIndex, nAttrIndex, callback)
+	local msgData = {
+		CharId = nCharId,
+		SlotId = nSlotId,
+		GemIndex = nGemIndex - 1,
+		AttrIndex = nAttrIndex - 1
+	}
+	local successCallback = function(_, mapMainData)
+		local mapEquip = self.tbCharEquipment[nCharId][nSlotId][nGemIndex]
+		mapEquip:ChangeUpgradeCount(nAttrIndex, 1)
+		mapEquip:UpdateRandomAttr(mapEquip.tbAffix, mapEquip.tbUpgradeCount)
+		EventManager.Hit("EquipmentSlotChanged")
+		if callback then
+			callback()
+		end
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.char_gem_overlock_req, msgData, nil, successCallback)
+end
+function PlayerEquipmentData:SendCharGemOverlockRevertReq(nCharId, nSlotId, nGemIndex, nAttrIndex, callback)
+	local msgData = {
+		CharId = nCharId,
+		SlotId = nSlotId,
+		GemIndex = nGemIndex - 1,
+		AttrIndex = nAttrIndex - 1
+	}
+	local successCallback = function(_, mapMainData)
+		local mapEquip = self.tbCharEquipment[nCharId][nSlotId][nGemIndex]
+		mapEquip:ChangeUpgradeCount(nAttrIndex, -1)
+		mapEquip:UpdateRandomAttr(mapEquip.tbAffix, mapEquip.tbUpgradeCount)
+		EventManager.Hit("EquipmentSlotChanged")
+		if callback then
+			callback()
+		end
+	end
+	HttpNetHandler.SendMsg(NetMsgId.Id.char_gem_overlock_revert_req, msgData, nil, successCallback)
 end
 function PlayerEquipmentData:CacheEquipmentDataForChar(mapMsgData)
 	if self.tbCharPreset == nil then

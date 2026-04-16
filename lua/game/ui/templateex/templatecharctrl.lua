@@ -20,7 +20,8 @@ TemplateCharCtrl._mapNodeConfig = {
 	imgSkill = {nCount = 4, sComponentName = "Image"},
 	txtSkill = {nCount = 4, sComponentName = "TMP_Text"},
 	imgAffinity = {sComponentName = "Image"},
-	txtAffinity = {sComponentName = "TMP_Text"}
+	txtAffinity = {sComponentName = "TMP_Text"},
+	imgFavorite = {}
 }
 TemplateCharCtrl._mapEventConfig = {}
 function TemplateCharCtrl:SetChar(nCharId, bShowRedDot, bLocked, nTrialId, nSortType)
@@ -48,6 +49,7 @@ function TemplateCharCtrl:SetChar(nCharId, bShowRedDot, bLocked, nTrialId, nSort
 	if mapCharSkin == nil then
 		return
 	end
+	self:RefreshCharaIsFavorite()
 	self:SetPngSprite(self._mapNode.imgHead, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XL)
 	local nRarity = mapChar.Grade
 	self:SetSprite_FrameColor(self._mapNode.imgRareFrame, nRarity == GameEnum.characterGrade.R and GameEnum.characterGrade.SR or nRarity, AllEnum.FrameType_New.CharFrame, true)
@@ -138,6 +140,12 @@ function TemplateCharCtrl:SetSpecificChar(nCharId, nLv, nSkinId)
 end
 function TemplateCharCtrl:SetSelect(bSelect)
 	self._mapNode.imgSelected:SetActive(bSelect)
+end
+function TemplateCharCtrl:RefreshCharaIsFavorite()
+	local bIsFavorite = PlayerData.Char:GetCharFavoriteState(self.nCharId)
+	if bIsFavorite ~= nil then
+		self._mapNode.imgFavorite:SetActive(bIsFavorite)
+	end
 end
 function TemplateCharCtrl:RegisterRedDot()
 	RedDotManager.RegisterNode(RedDotDefine.Role_Item, self.nCharId, self._mapNode.redDotChar)

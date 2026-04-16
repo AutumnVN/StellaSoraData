@@ -514,7 +514,9 @@ function DispatchDetialInfoCtrl:RefreshDispatchState(state)
 	self._mapNode.btnOneClick.gameObject:SetActive(self.curState == AllEnum.DispatchState.CanAccept)
 	self._mapNode.btnRecallDispatch.gameObject:SetActive(self.curState == AllEnum.DispatchState.Accepting)
 	self._mapNode.btnReceive.gameObject:SetActive(self.curState == AllEnum.DispatchState.Complete)
+	self.bIgnoreTog = true
 	self._mapNode.goDispatchTimeGroup:SetActive(self.curState == AllEnum.DispatchState.CanAccept and not bShowCantAccpet)
+	self.bIgnoreTog = false
 	self._mapNode.goCurRequireTime.gameObject:SetActive(self.curState == AllEnum.DispatchState.Accepting and not bShowCantAccpet)
 	self._mapNode.goRequireDone.gameObject:SetActive(self.curState == AllEnum.DispatchState.Complete and not bShowCantAccpet)
 	if bShowCantAccpet then
@@ -637,6 +639,9 @@ function DispatchDetialInfoCtrl:OnBtnClick_OneClickSelection()
 	EventManager.Hit("Dispatch_OneClickSelection", self.curDispatchData.MemberType == GameEnum.AgentMemberType.BuildType)
 end
 function DispatchDetialInfoCtrl:OnTog_ChoseTime(tog, nIndex, bIsOn)
+	if self.bIgnoreTog then
+		return
+	end
 	if bIsOn then
 		if self.selectTogIndex ~= nIndex then
 			self.lastSelectTogIndex = self.selectTogIndex

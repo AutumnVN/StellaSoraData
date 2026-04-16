@@ -1396,9 +1396,15 @@ function StarTowerPrologueLevel:CacheTempData()
 			self.mapCharacterTempData.ammoInfo[charTid].nAmmo1 = tbAmmo[0]
 			self.mapCharacterTempData.ammoInfo[charTid].nAmmo2 = tbAmmo[1]
 			self.mapCharacterTempData.ammoInfo[charTid].nAmmo3 = tbAmmo[2]
-			self.mapCharacterTempData.ammoInfo[charTid].nAmmoMax1 = tbAmmo[3]
-			self.mapCharacterTempData.ammoInfo[charTid].nAmmoMax2 = tbAmmo[4]
-			self.mapCharacterTempData.ammoInfo[charTid].nAmmoMax3 = tbAmmo[5]
+			if tbAmmo.Length >= 6 then
+				self.mapCharacterTempData.ammoInfo[charTid].nAmmoMax1 = tbAmmo[3]
+				self.mapCharacterTempData.ammoInfo[charTid].nAmmoMax2 = tbAmmo[4]
+				self.mapCharacterTempData.ammoInfo[charTid].nAmmoMax3 = tbAmmo[5]
+			else
+				self.mapCharacterTempData.ammoInfo[charTid].nAmmoMax1 = 0
+				self.mapCharacterTempData.ammoInfo[charTid].nAmmoMax2 = 0
+				self.mapCharacterTempData.ammoInfo[charTid].nAmmoMax3 = 0
+			end
 		end
 	end
 end
@@ -1696,9 +1702,9 @@ function StarTowerPrologueLevel:GetRecommondPotential(tbPotentialData)
 			if curRarity > nRarity then
 				ret = {}
 				curRarity = nRarity
-				table.insert(ret, nPotentialId)
+				table.insert(ret, {nId = nPotentialId})
 			elseif nRarity == curRarity then
-				table.insert(ret, nPotentialId)
+				table.insert(ret, {nId = nPotentialId})
 			end
 		end
 	end
@@ -1717,7 +1723,8 @@ function StarTowerPrologueLevel:GetRecommondPotential(tbPotentialData)
 		end
 		return ret
 	end
-	for _, nPotentialId in ipairs(ret) do
+	for _, v in ipairs(ret) do
+		local nPotentialId = v.nId
 		local potentialCfg = ConfigTable.GetData("Potential", nPotentialId)
 		if potentialCfg ~= nil then
 			local nCharId = potentialCfg.CharId
@@ -1725,14 +1732,14 @@ function StarTowerPrologueLevel:GetRecommondPotential(tbPotentialData)
 			if nCurCount < 0 then
 				nCurCharId = nCharId
 				nCurCount = nCount
-				table.insert(ret1, nPotentialId)
+				table.insert(ret1, {nId = nPotentialId})
 			elseif nCharId ~= nCurCharId and nCount < nCurCount then
 				ret1 = {}
 				nCurCharId = nCharId
 				nCurCount = nCount
-				table.insert(ret1, nPotentialId)
+				table.insert(ret1, {nId = nPotentialId})
 			else
-				table.insert(ret1, nPotentialId)
+				table.insert(ret1, {nId = nPotentialId})
 			end
 		end
 	end
@@ -1755,16 +1762,17 @@ function StarTowerPrologueLevel:GetRecommondPotential(tbPotentialData)
 		end
 		return ret
 	end
-	for _, nPotentialId in ipairs(ret1) do
+	for _, v in ipairs(ret1) do
+		local nPotentialId = v.nId
 		local nCount = GetPotentialBuildCount(nPotentialId)
 		if nCurBuildCount < 0 then
-			table.insert(ret2, nPotentialId)
+			table.insert(ret2, {nId = nPotentialId})
 			nCurBuildCount = nCount
 		elseif nCount == nCurBuildCount then
-			table.insert(ret2, nPotentialId)
+			table.insert(ret2, {nId = nPotentialId})
 		elseif nCount < nCurBuildCount then
 			ret2 = {}
-			table.insert(ret2, nPotentialId)
+			table.insert(ret2, {nId = nPotentialId})
 			nCurBuildCount = nCount
 		end
 	end
@@ -1773,7 +1781,8 @@ function StarTowerPrologueLevel:GetRecommondPotential(tbPotentialData)
 	end
 	local ret3 = {}
 	local curLessPotential = -1
-	for _, nPotentialId in ipairs(ret2) do
+	for _, v in ipairs(ret2) do
+		local nPotentialId = v.nId
 		local potentialCfg = ConfigTable.GetData("Potential", nPotentialId)
 		if potentialCfg ~= nil then
 			local nCharId = potentialCfg.CharId
@@ -1782,13 +1791,13 @@ function StarTowerPrologueLevel:GetRecommondPotential(tbPotentialData)
 				nCurCount = self._mapPotential[nCharId][nPotentialId]
 			end
 			if curLessPotential < 0 then
-				table.insert(ret3, nPotentialId)
+				table.insert(ret3, {nId = nPotentialId})
 				curLessPotential = nCurCount
 			elseif nCurCount == curLessPotential then
-				table.insert(ret3, nPotentialId)
+				table.insert(ret3, {nId = nPotentialId})
 			elseif nCurCount < curLessPotential then
 				ret3 = {}
-				table.insert(ret3, nPotentialId)
+				table.insert(ret3, {nId = nPotentialId})
 				curLessPotential = nCurCount
 			end
 		end

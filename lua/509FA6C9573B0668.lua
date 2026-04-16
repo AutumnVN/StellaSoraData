@@ -50,12 +50,7 @@ ThrowGiftsLevelCtrl._mapNodeConfig = {
 	imgInfinite = {},
 	penguinRoot = {},
 	rtTemplateGuideTrack = {},
-	rtDebug = {},
-	DebugDot = {
-		sComponentName = "RectTransform",
-		sNodeName = "imgDebugPoint_",
-		nCount = 8
-	}
+	rtDebug = {}
 }
 ThrowGiftsLevelCtrl._mapEventConfig = {}
 ThrowGiftsLevelCtrl._mapRedDotConfig = {}
@@ -205,7 +200,7 @@ function ThrowGiftsLevelCtrl:SetLevel(parent, nLevelId, mapActData)
 		if goObstacle ~= nil then
 			local rtObstacle = goObstacle:GetComponent("RectTransform")
 			if rtObstacle ~= nil then
-				local tbBounds = self:GetLocalSpaceRect(rtObstacle)
+				local tbBounds = self:GetLocalSpaceRect(rtObstacle, rtObstacle.parent)
 				table.insert(self.tbObstacle, tbBounds)
 				print(tbBounds[1] .. " " .. tbBounds[2] .. " " .. tbBounds[3] .. " " .. tbBounds[4] .. " ")
 			end
@@ -226,7 +221,7 @@ function ThrowGiftsLevelCtrl:SetLevel(parent, nLevelId, mapActData)
 					if mapExObstacleCfgData ~= nil then
 						local nInstanceId = rtObstacle.gameObject:GetInstanceID()
 						self.mapExObstacleOrigin[nInstanceId] = {}
-						local tbBounds = self:GetLocalSpaceRect(rtObstacle)
+						local tbBounds = self:GetLocalSpaceRect(rtObstacle, rtObstacle.parent)
 						self.mapExObstacleOrigin[nInstanceId].tbBounds = tbBounds
 						self.mapExObstacleOrigin[nInstanceId].mapConfig = mapExObstacleCfgData
 						self.mapExObstacleOrigin[nInstanceId].gameObject = rtObstacle.gameObject
@@ -286,7 +281,7 @@ function ThrowGiftsLevelCtrl:SetLevel(parent, nLevelId, mapActData)
 		end
 	end
 end
-function ThrowGiftsLevelCtrl:FlyOver(nDelayTime, HitGoalId)
+function ThrowGiftsLevelCtrl:FlyOver(nDelayTime, tbHitGoalId)
 	self.nLevelType = 0
 	self.bProcessing = true
 	local waitAnim = function()
@@ -378,10 +373,12 @@ function ThrowGiftsLevelCtrl:FlyOver(nDelayTime, HitGoalId)
 			return
 		end
 		local bNeedProcessingItem = false
-		if HitGoalId ~= nil then
-			local mapSpawnPointData = self.mapGoal[HitGoalId]
-			if mapSpawnPointData ~= nil and #mapSpawnPointData.tbOrginPool > 0 then
-				do
+		if tbHitGoalId ~= nil and 0 < #tbHitGoalId then
+			local tbItemsRandom = {}
+			local tbSpawnPointData = {}
+			for _, HitGoalId in ipairs(tbHitGoalId) do
+				local mapSpawnPointData = self.mapGoal[HitGoalId]
+				if mapSpawnPointData ~= nil and 0 < #mapSpawnPointData.tbOrginPool then
 					local tbCurPool = {}
 					if mapSpawnPointData.mapConfig.PoolType then
 						for _, mapItemData in ipairs(mapSpawnPointData.tbOrginPool) do
@@ -420,15 +417,27 @@ function ThrowGiftsLevelCtrl:FlyOver(nDelayTime, HitGoalId)
 						end
 						table.remove(tbCurPool, selected)
 					end
-					local callback = function(nIdx)
+					if 0 < #tbItems then
+						table.insert(tbItemsRandom, tbItems)
+						table.insert(tbSpawnPointData, mapSpawnPointData)
+					end
+				end
+			end
+			if 0 < #tbItemsRandom then
+				do
+					local callback = function(tbIdx)
 						self:Pause(false)
 						self.bProcessing = false
-						if mapSpawnPointData.mapConfig.PoolType then
-							table.insert(mapSpawnPointData.tbExtractedItems, tbItems[nIdx])
+						for i = 1, #tbItemsRandom do
+							local nIdx = tbIdx[i]
+							local mapSpawnPointData = tbSpawnPointData[i]
+							if mapSpawnPointData ~= nil and mapSpawnPointData.mapConfig.PoolType then
+								table.insert(mapSpawnPointData.tbExtractedItems, tbItemsRandom[i][nIdx])
+							end
 						end
 					end
 					bNeedProcessingItem = true
-					self.parent:OpenItemSelect(tbItems, callback)
+					self.parent:OpenItemSelect(tbItemsRandom, callback)
 					self:Pause(true)
 				end
 			end
@@ -439,7 +448,7 @@ function ThrowGiftsLevelCtrl:FlyOver(nDelayTime, HitGoalId)
 		local rtScenePos = self._mapNode.rtScene.anchoredPosition
 		self._mapNode.rtScene.anchoredPosition = Vector2(0, rtScenePos.y)
 		for nInstanceId, mapConfig in pairs(self.mapExObstacleOrigin) do
-			if mapConfig.mapConfig.Reset and 1 > table.indexof(self.tbExObstacleCur, nInstanceId) then
+			if mapConfig.mapConfig.Reset and table.indexof(self.tbExObstacleCur, nInstanceId) < 1 then
 				table.insert(self.tbExObstacleCur, nInstanceId)
 				mapConfig.gameObject:SetActive(true)
 			end
@@ -659,47 +668,171 @@ function ThrowGiftsLevelCtrl:ChangeView(bShow)
 		end)
 	end
 end
-function ThrowGiftsLevelCtrl:CheckAABB(bounds1, bounds2)
-	return bounds1[2] >= bounds2[1] and bounds1[1] <= bounds2[2] and bounds1[4] >= bounds2[3] and bounds1[3] <= bounds2[4]
-end
-function ThrowGiftsLevelCtrl:CheckAABBGoal(bounds1, goalPos, tbOffsets, bGoal)
-	if self.bDebugMode then
-		if bGoal then
-			self._mapNode.DebugDot[1].anchoredPosition = Vector2(tbOffsets[1] + goalPos.x, tbOffsets[3] + goalPos.y)
-			self._mapNode.DebugDot[2].anchoredPosition = Vector2(tbOffsets[2] + goalPos.x, tbOffsets[3] + goalPos.y)
-			self._mapNode.DebugDot[3].anchoredPosition = Vector2(tbOffsets[1] + goalPos.x, tbOffsets[4] + goalPos.y)
-			self._mapNode.DebugDot[4].anchoredPosition = Vector2(tbOffsets[2] + goalPos.x, tbOffsets[4] + goalPos.y)
-		else
-			self._mapNode.DebugDot[5].anchoredPosition = Vector2(tbOffsets[1] + goalPos.x, tbOffsets[3] + goalPos.y)
-			self._mapNode.DebugDot[6].anchoredPosition = Vector2(tbOffsets[2] + goalPos.x, tbOffsets[3] + goalPos.y)
-			self._mapNode.DebugDot[7].anchoredPosition = Vector2(tbOffsets[1] + goalPos.x, tbOffsets[4] + goalPos.y)
-			self._mapNode.DebugDot[8].anchoredPosition = Vector2(tbOffsets[2] + goalPos.x, tbOffsets[4] + goalPos.y)
-		end
+function ThrowGiftsLevelCtrl:CheckCollision(bounds1, bounds2, OffsetX1, OffsetY1, OffsetX2, OffsetY2)
+	local bHit = false
+	local bestNX, bestNY, minDepth = 0, 0, 0
+	bHit = bounds1[2] + OffsetX1 >= bounds2[1] + OffsetX2 and bounds1[1] + OffsetX1 <= bounds2[2] + OffsetX2 and bounds1[4] + OffsetY1 >= bounds2[3] + OffsetY2 and bounds1[3] + OffsetY1 <= bounds2[4] + OffsetY2
+	if bHit then
+		print("Check SAT")
+		bHit, bestNX, bestNY, minDepth = self:CheckSAT(bounds1, bounds2, OffsetX1, OffsetY1, OffsetX2, OffsetY2)
 	end
-	return bounds1[2] >= tbOffsets[1] + goalPos.x and bounds1[1] <= tbOffsets[2] + goalPos.x and bounds1[4] >= tbOffsets[3] + goalPos.y and bounds1[3] <= tbOffsets[4] + goalPos.y
+	return bHit, bestNX, bestNY, minDepth
 end
-function ThrowGiftsLevelCtrl:GetLocalSpaceRect(rectTransform)
-	if rectTransform == nil then
-		return {
-			0,
-			0,
-			0,
-			0
-		}
+function ThrowGiftsLevelCtrl.SATGetAxes(corners)
+	local ex1 = corners[2].x - corners[1].x
+	local ey1 = corners[2].y - corners[1].y
+	local len1 = math.sqrt(ex1 * ex1 + ey1 * ey1)
+	local ex2 = corners[3].x - corners[2].x
+	local ey2 = corners[3].y - corners[2].y
+	local len2 = math.sqrt(ex2 * ex2 + ey2 * ey2)
+	local ax1, ay1, ax2, ay2 = 0, 1, 1, 0
+	if 1.0E-5 < len1 then
+		ax1 = -ey1 / len1
+		ay1 = ex1 / len1
 	end
-	local pivotX = rectTransform.pivot.x
-	local pivotY = rectTransform.pivot.y
-	local width = rectTransform.rect.width
-	local height = rectTransform.rect.height
-	local xMin = -pivotX * width + rectTransform.anchoredPosition.x
-	local xMax = (1 - pivotX) * width + rectTransform.anchoredPosition.x
-	local yMin = -pivotY * height + rectTransform.anchoredPosition.y
-	local yMax = (1 - pivotY) * height + rectTransform.anchoredPosition.y
+	if 1.0E-5 < len2 then
+		ax2 = -ey2 / len2
+		ay2 = ex2 / len2
+	end
+	return ax1, ay1, ax2, ay2
+end
+function ThrowGiftsLevelCtrl.SATProject(corner1, corner2, corner3, corner4, offsetX, offsetY, axisX, axisY)
+	local v = (corner1.x + offsetX) * axisX + (corner1.y + offsetY) * axisY
+	local pMin, pMax = v, v
+	v = (corner2.x + offsetX) * axisX + (corner2.y + offsetY) * axisY
+	if pMin > v then
+		pMin = v
+	end
+	if pMax < v then
+		pMax = v
+	end
+	v = (corner3.x + offsetX) * axisX + (corner3.y + offsetY) * axisY
+	if pMin > v then
+		pMin = v
+	end
+	if pMax < v then
+		pMax = v
+	end
+	v = (corner4.x + offsetX) * axisX + (corner4.y + offsetY) * axisY
+	if pMin > v then
+		pMin = v
+	end
+	if pMax < v then
+		pMax = v
+	end
+	return pMin, pMax
+end
+function ThrowGiftsLevelCtrl:CheckSAT(tbBounds1, tbBounds2, OffsetX1, OffsetY1, OffsetX2, OffsetY2)
+	local minDepth = math.huge
+	local bestNX, bestNY = 0, 0
+	local ax1, ay1, ax2, ay2 = tbBounds1[9], tbBounds1[10], tbBounds1[11], tbBounds1[12]
+	local ax3, ay3, ax4, ay4 = tbBounds2[9], tbBounds2[10], tbBounds2[11], tbBounds2[12]
+	local cornersA1, cornersB1, cornersC1, cornersD1 = tbBounds1[5], tbBounds1[6], tbBounds1[7], tbBounds1[8]
+	local cornersA2, cornersB2, cornersC2, cornersD2 = tbBounds2[5], tbBounds2[6], tbBounds2[7], tbBounds2[8]
+	local min1, max1 = 0, 0
+	local min2, max2 = 0, 0
+	local overlap = 0
+	min1, max1 = self.SATProject(cornersA1, cornersB1, cornersC1, cornersD1, OffsetX1, OffsetY1, ax1, ay1)
+	min2, max2 = self.SATProject(cornersA2, cornersB2, cornersC2, cornersD2, OffsetX2, OffsetY2, ax1, ay1)
+	if min2 >= max1 or min1 >= max2 then
+		return false, 0, 0, 0
+	end
+	overlap = math.min(max1, max2) - math.max(min1, min2)
+	if minDepth > overlap then
+		minDepth = overlap
+		bestNX = ax1
+		bestNY = ay1
+	end
+	min1, max1 = self.SATProject(cornersA1, cornersB1, cornersC1, cornersD1, OffsetX1, OffsetY1, ax2, ay2)
+	min2, max2 = self.SATProject(cornersA2, cornersB2, cornersC2, cornersD2, OffsetX2, OffsetY2, ax2, ay2)
+	if min2 >= max1 or min1 >= max2 then
+		return false, 0, 0, 0
+	end
+	overlap = math.min(max1, max2) - math.max(min1, min2)
+	if minDepth > overlap then
+		minDepth = overlap
+		bestNX = ax2
+		bestNY = ay2
+	end
+	min1, max1 = self.SATProject(cornersA1, cornersB1, cornersC1, cornersD1, OffsetX1, OffsetY1, ax3, ay3)
+	min2, max2 = self.SATProject(cornersA2, cornersB2, cornersC2, cornersD2, OffsetX2, OffsetY2, ax3, ay3)
+	if min2 >= max1 or min1 >= max2 then
+		return false, 0, 0, 0
+	end
+	overlap = math.min(max1, max2) - math.max(min1, min2)
+	if minDepth > overlap then
+		minDepth = overlap
+		bestNX = ax3
+		bestNY = ay3
+	end
+	min1, max1 = self.SATProject(cornersA1, cornersB1, cornersC1, cornersD1, OffsetX1, OffsetY1, ax4, ay4)
+	min2, max2 = self.SATProject(cornersA2, cornersB2, cornersC2, cornersD2, OffsetX2, OffsetY2, ax4, ay4)
+	if min2 >= max1 or min1 >= max2 then
+		return false, 0, 0, 0
+	end
+	overlap = math.min(max1, max2) - math.max(min1, min2)
+	if minDepth > overlap then
+		minDepth = overlap
+		bestNX = ax4
+		bestNY = ay4
+	end
+	local c1x = (cornersA1.x + OffsetX1 + cornersB1.x + OffsetX1 + cornersC1.x + OffsetX1 + cornersD1.x + OffsetX1) * 0.25
+	local c1y = (cornersA1.y + OffsetY1 + cornersB1.y + OffsetY1 + cornersC1.y + OffsetY1 + cornersD1.y + OffsetY1) * 0.25
+	local c2x = (cornersA2.x + OffsetX2 + cornersB2.x + OffsetX2 + cornersC2.x + OffsetX2 + cornersD2.x + OffsetX2) * 0.25
+	local c2y = (cornersA2.y + OffsetY2 + cornersB2.y + OffsetY2 + cornersC2.y + OffsetY2 + cornersD2.y + OffsetY2) * 0.25
+	if (c1x - c2x) * bestNX + (c1y - c2y) * bestNY < 0 then
+		bestNX = -bestNX
+		bestNY = -bestNY
+	end
+	return true, bestNX, bestNY, minDepth
+end
+function ThrowGiftsLevelCtrl.ReflectVelocity(vx, vy, nx, ny, restitution)
+	restitution = restitution or 1.0
+	local dot = vx * nx + vy * ny
+	if 0 <= dot then
+		return vx, vy
+	end
+	local scale = (1.0 + restitution) * dot
+	return vx - scale * nx, vy - scale * ny
+end
+function ThrowGiftsLevelCtrl:GetLocalSpaceRect(rectTransform, parent)
+	local corners = CS.System.Array.CreateInstance(typeof(Vector3), 4)
+	rectTransform:GetLocalCorners(corners)
+	local c0 = corners[0]
+	local c1 = corners[1]
+	local c2 = corners[2]
+	local c3 = corners[3]
+	local p0 = parent:InverseTransformPoint(rectTransform:TransformPoint(c0))
+	local p1 = parent:InverseTransformPoint(rectTransform:TransformPoint(c1))
+	local p2 = parent:InverseTransformPoint(rectTransform:TransformPoint(c2))
+	local p3 = parent:InverseTransformPoint(rectTransform:TransformPoint(c3))
+	local p0x, p0y = p0.x, p0.y
+	local p1x, p1y = p1.x, p1.y
+	local p2x, p2y = p2.x, p2.y
+	local p3x, p3y = p3.x, p3.y
+	local xMin = math.min(p0x, p1x, p2x, p3x)
+	local xMax = math.max(p0x, p1x, p2x, p3x)
+	local yMin = math.min(p0y, p1y, p2y, p3y)
+	local yMax = math.max(p0y, p1y, p2y, p3y)
+	local ax1, ay1, ax2, ay2 = self.SATGetAxes({
+		p0,
+		p1,
+		p2,
+		p3
+	})
 	return {
 		xMin,
 		xMax,
 		yMin,
-		yMax
+		yMax,
+		p0,
+		p1,
+		p2,
+		p3,
+		ax1,
+		ay1,
+		ax2,
+		ay2
 	}
 end
 function ThrowGiftsLevelCtrl:OnUpdate()
@@ -813,7 +946,8 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 					nAfterY = nYMin
 					mapConfig.VyDir = -mapConfig.VyDir
 				end
-				mapAciveGoal.rtGoal.anchoredPosition = Vector2(nAfterX, nAfterY)
+				mapAciveGoal.OffsetX = nAfterX - rtSpawnPoint.anchoredPosition.x
+				mapAciveGoal.OffsetY = nAfterY - rtSpawnPoint.anchoredPosition.y
 			end
 		end
 	end
@@ -823,20 +957,62 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 	if self.curGiftPenguin == nil then
 		return
 	end
-	local nCurPosX, nCurPosY, curGiftPenguinBounds
+	local nCurPosX, nCurPosY
 	if self.curGiftPenguin.nSpecialType == 106 then
-		nCurPosX, nCurPosY, curGiftPenguinBounds = self:NavigationPenguinUpdate(nDeltaTime)
+		nCurPosX, nCurPosY = self:NavigationPenguinUpdate(nDeltaTime)
 	elseif self.curGiftPenguin.nSpecialType == 107 then
-		nCurPosX, nCurPosY, curGiftPenguinBounds = self:HelmetPenguinUpdate(nDeltaTime)
+		nCurPosX, nCurPosY = self:HelmetPenguinUpdate(nDeltaTime)
 	elseif self.curGiftPenguin.nSpecialType == 108 then
-		nCurPosX, nCurPosY, curGiftPenguinBounds = self:AntennaPenguinUpdate(nDeltaTime)
+		nCurPosX, nCurPosY = self:AntennaPenguinUpdate(nDeltaTime)
+	elseif self.curGiftPenguin.nSpecialType == 110 then
+		nCurPosX, nCurPosY = self:SplitPenguinUpdate(nDeltaTime)
 	else
-		nCurPosX, nCurPosY, curGiftPenguinBounds = self:NormalPenguinUpdate(nDeltaTime)
+		nCurPosX, nCurPosY = self:NormalPenguinUpdate(nDeltaTime)
 	end
 	if not self.bFlying then
 		self:FlyOver(0.5)
 		return
 	end
+	local tbHitGoalId = {}
+	if self.curGiftPenguin.nSpecialType == 110 and self.curGiftPenguin.bSplit then
+		local tbCurHit = self:SplitPenguinGoalCheck()
+		if 0 < #tbCurHit then
+			for _, tbResult in ipairs(tbCurHit) do
+				self:HitGoal(tbResult[2], tbResult[1])
+			end
+			if not self.bFlying then
+				self.curGiftPenguin = nil
+				for _, tbResult in ipairs(tbCurHit) do
+					table.insert(tbHitGoalId, tbResult[1])
+				end
+			end
+		end
+	else
+		local hitGoalId, hitPos = self:NormalGoalCheck(nCurPosX, nCurPosY)
+		if 0 < hitGoalId then
+			self:HitGoal(hitPos, hitGoalId)
+			table.insert(tbHitGoalId, hitGoalId)
+		end
+	end
+	if not self.bFlying then
+		self:FlyOver(0.5, tbHitGoalId)
+		return
+	end
+	local rtScenePos = self._mapNode.rtScene.anchoredPosition
+	local curPosXInScreen = self.sceneSize[1] * 0.5 + nCurPosX + rtScenePos.x
+	if curPosXInScreen > self.viewSize[1] / 2 then
+		local sumX = curPosXInScreen - self.viewSize[1] / 2
+		local nFinX = rtScenePos.x - sumX
+		local maxScenePosX = (1 - self.scenePivot[1]) * self.sceneSize[1]
+		if nFinX <= -math.abs(maxScenePosX) then
+			nFinX = -math.abs(maxScenePosX)
+		end
+		self._mapNode.rtScene.anchoredPosition = Vector2(nFinX, rtScenePos.y)
+	end
+end
+function ThrowGiftsLevelCtrl:NormalGoalCheck(nCurPosX, nCurPosY)
+	local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
+	local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
 	if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind and self.nFlyingTime - self._mapNode.rtBlindLevelTrack.nPrevTimer >= self.nLinePointInterval * 2 then
 		self._mapNode.rtBlindLevelTrack.nPrevTimer = self.nFlyingTime
 		self._mapNode.rtBlindLevelTrack:AddDot(Vector2(nCurPosX, nCurPosY))
@@ -845,9 +1021,9 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 	local hitPos
 	for nId, mapAciveGoal in pairs(self.activeGoal) do
 		local GoalParentPos = mapAciveGoal.rtGoal.anchoredPosition
-		local bHitGoal = self:CheckAABBGoal(curGiftPenguinBounds, GoalParentPos, mapAciveGoal.tbOffsetHitArea, true)
+		local bHitGoal = self:CheckCollision(self.curGiftPenguin.tbBounds, mapAciveGoal.tbBoundsHitArea, nSumX, nSumY, mapAciveGoal.OffsetX, mapAciveGoal.OffsetY)
 		if bHitGoal then
-			local curVy = self.curGiftPenguin.nStartVelocityY - self.nFlyingTime * self.nAG
+			local curVy = self.curGiftPenguin.nVelocityY
 			if 0 < curVy and self.curGiftPenguin.nSpecialType ~= 106 and self.curGiftPenguin.nSpecialType ~= 107 then
 				print("hit goal edge")
 				self:DestroyPenguin()
@@ -865,7 +1041,7 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 			end
 		end
 		if self.curGiftPenguin.nSpecialType ~= 107 then
-			local bHitObstacle = self:CheckAABBGoal(curGiftPenguinBounds, GoalParentPos, mapAciveGoal.tbOffsetObstacle)
+			local bHitObstacle = self:CheckCollision(self.curGiftPenguin.tbBounds, mapAciveGoal.tbBoundsObstacle, nSumX, nSumY, mapAciveGoal.OffsetX, mapAciveGoal.OffsetY)
 			if bHitObstacle then
 				self:DestroyPenguin()
 				self.bFlying = false
@@ -873,13 +1049,69 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 			end
 		end
 	end
-	if 0 < hitGoalId then
-		self:HitGoal(hitPos, hitGoalId)
-		self:FlyOver(0.5, hitGoalId)
-		return
+	return hitGoalId, hitPos
+end
+function ThrowGiftsLevelCtrl:SplitPenguinGoalCheck()
+	local bHasSubPenguin = false
+	local tbCurHit = {}
+	for _, mapSubPenguin in ipairs(self.curGiftPenguin.tbSubPenguin) do
+		if mapSubPenguin.bFlying then
+			local hitGoalId = 0
+			local hitPos
+			local nSumX = mapSubPenguin.curPosX - mapSubPenguin.mapStartPos.x
+			local nSumY = mapSubPenguin.curPosY - mapSubPenguin.mapStartPos.y
+			for nId, mapAciveGoal in pairs(self.activeGoal) do
+				local bHitGoal = self:CheckCollision(mapSubPenguin.tbBounds, mapAciveGoal.tbBoundsHitArea, nSumX, nSumY, mapAciveGoal.OffsetX, mapAciveGoal.OffsetY)
+				if bHitGoal then
+					print("hit goal\239\188\129")
+					hitPos = Vector2(mapSubPenguin.curPosX, mapSubPenguin.curPosY)
+					destroy(mapSubPenguin.goGiftPenguin.gameObject)
+					mapSubPenguin.goGiftPenguin = nil
+					hitGoalId = nId
+					mapSubPenguin.bFlying = false
+					table.insert(tbCurHit, {hitGoalId, hitPos})
+					table.insert(self.curGiftPenguin.tbCacheSubPenguinGoal, {hitPos, hitGoalId})
+					break
+				end
+				local bHitObstacle = self:CheckCollision(mapSubPenguin.tbBounds, mapAciveGoal.tbBoundsObstacle, nSumX, nSumY, mapAciveGoal.OffsetX, mapAciveGoal.OffsetY)
+				if bHitObstacle then
+					self:DestroySubPenguin(mapSubPenguin)
+					mapSubPenguin.bFlying = false
+					break
+				end
+				if mapSubPenguin.bFlying then
+					bHasSubPenguin = true
+				end
+			end
+		end
+	end
+	self.bFlying = bHasSubPenguin
+	return tbCurHit
+end
+function ThrowGiftsLevelCtrl:NormalPenguinUpdate(nDeltaTime)
+	self.nFlyingTime = self.nFlyingTime + nDeltaTime
+	local nCurPosX = self.curGiftPenguin.curPosX + nDeltaTime * self.curGiftPenguin.nVelocityX
+	local nCurPosY = self.curGiftPenguin.curPosY + nDeltaTime * self.curGiftPenguin.nVelocityY - 0.5 * self.nAG * nDeltaTime * nDeltaTime
+	self.curGiftPenguin.nVelocityY = self.curGiftPenguin.nVelocityY - self.nAG * nDeltaTime
+	self.curGiftPenguin.curPosX = nCurPosX
+	self.curGiftPenguin.curPosY = nCurPosY
+	self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
+	local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
+	local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
+	local curVy = self.curGiftPenguin.nVelocityY
+	if self.curGiftPenguin.rtImgRoot ~= nil then
+		local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nVelocityX))
+		self.curGiftPenguin.rtImgRoot.localEulerAngles = Vector3(0, 0, nFlyAngle)
+	end
+	for _, tbBounds in ipairs(self.tbObstacle) do
+		local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, tbBounds, nSumX, nSumY, 0, 0)
+		if bHit then
+			self:DestroyPenguin()
+			self.bFlying = false
+			break
+		end
 	end
 	if not self.bFlying then
-		self:FlyOver(0.5)
 		return
 	end
 	if nCurPosX > 0.5 * self.sceneSize[1] or nCurPosX < -0.5 * self.sceneSize[1] or nCurPosY > 0.5 * self.sceneSize[2] or nCurPosY < -0.5 * self.sceneSize[2] then
@@ -888,51 +1120,20 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 		self.bFlying = false
 	end
 	if not self.bFlying then
-		self:FlyOver(0.5)
-		return
-	end
-	local rtScenePos = self._mapNode.rtScene.anchoredPosition
-	local curPosXInScreen = self.sceneSize[1] * 0.5 + nCurPosX + rtScenePos.x
-	if curPosXInScreen > self.viewSize[1] / 2 then
-		local sumX = curPosXInScreen - self.viewSize[1] / 2
-		local nFinX = rtScenePos.x - sumX
-		local maxScenePosX = (1 - self.scenePivot[1]) * self.sceneSize[1]
-		if nFinX <= -math.abs(maxScenePosX) then
-			nFinX = -math.abs(maxScenePosX)
-		end
-		self._mapNode.rtScene.anchoredPosition = Vector2(nFinX, rtScenePos.y)
-	end
-end
-function ThrowGiftsLevelCtrl:NormalPenguinUpdate(nDeltaTime)
-	self.nFlyingTime = self.nFlyingTime + nDeltaTime
-	local nCurPosX = self.curGiftPenguin.mapStartPos.x + self.nFlyingTime * self.curGiftPenguin.nStartVelocityX
-	local nCurPosY = self.curGiftPenguin.mapStartPos.y + self.nFlyingTime * self.curGiftPenguin.nStartVelocityY - 0.5 * self.nAG * self.nFlyingTime * self.nFlyingTime
-	self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
-	local curGiftPenguinBounds = self:GetLocalSpaceRect(self.curGiftPenguin.goGiftPenguin)
-	local curVy = self.curGiftPenguin.nStartVelocityY - self.nAG * self.nFlyingTime
-	if self.curGiftPenguin.rtImgRoot ~= nil then
-		local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nStartVelocityX))
-		self.curGiftPenguin.rtImgRoot.localEulerAngles = Vector3(0, 0, nFlyAngle)
-	end
-	for _, tbBounds in ipairs(self.tbObstacle) do
-		local bHit = self:CheckAABB(curGiftPenguinBounds, tbBounds)
-		if bHit then
-			self:DestroyPenguin()
-			self.bFlying = false
-			break
-		end
-	end
-	if not self.bFlying then
 		return
 	end
 	local tbHittedObs = {}
 	for _, nSpecialId in ipairs(self.tbExObstacleCur) do
 		local mapConfig = self.mapExObstacleOrigin[nSpecialId]
 		if mapConfig ~= nil then
-			local bHit = self:CheckAABB(curGiftPenguinBounds, mapConfig.tbBounds)
+			local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, mapConfig.tbBounds, nSumX, nSumY, 0, 0)
 			if bHit then
-				self.bFlying = self:HitSpecialObstacle(nSpecialId)
-				table.insert(tbHittedObs, nSpecialId)
+				local nType, Param, bRemove
+				self.bFlying, nType, Param, bRemove = self:HitSpecialObstacle(nSpecialId)
+				self:SpecialObstacleFunc(self.curGiftPenguin, nDeltaTime, nType, Param)
+				if bRemove then
+					table.insert(tbHittedObs, nSpecialId)
+				end
 				if not self.bFlying then
 					self:DestroyPenguin()
 					break
@@ -943,14 +1144,95 @@ function ThrowGiftsLevelCtrl:NormalPenguinUpdate(nDeltaTime)
 	for _, nId in ipairs(tbHittedObs) do
 		table.removebyvalue(self.tbExObstacleCur, nId, true)
 	end
-	return nCurPosX, nCurPosY, curGiftPenguinBounds
+	return nCurPosX, nCurPosY
+end
+function ThrowGiftsLevelCtrl:BouncePenguinUpdate(nDeltaTime)
+	self.nFlyingTime = self.nFlyingTime + nDeltaTime
+	local nCurPosX = self.curGiftPenguin.curPosX + nDeltaTime * self.curGiftPenguin.nVelocityX
+	local nCurPosY = self.curGiftPenguin.curPosY + nDeltaTime * self.curGiftPenguin.nVelocityY - 0.5 * self.nAG * nDeltaTime * nDeltaTime
+	self.curGiftPenguin.nVelocityY = self.curGiftPenguin.nVelocityY - self.nAG * nDeltaTime
+	self.curGiftPenguin.curPosX = nCurPosX
+	self.curGiftPenguin.curPosY = nCurPosY
+	local curVy = self.curGiftPenguin.nVelocityY
+	self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
+	local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
+	local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
+	if self.curGiftPenguin.rtImgRoot ~= nil then
+		local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nVelocityX))
+		self.curGiftPenguin.rtImgRoot.localEulerAngles = Vector3(0, 0, nFlyAngle)
+	end
+	for _, tbBounds in ipairs(self.tbObstacle) do
+		local bHit, bestNX, bestNY, minDepth = self:CheckCollision(self.curGiftPenguin.tbBounds, tbBounds, nSumX, nSumY, 0, 0)
+		if bHit then
+			if self.curGiftPenguin.nHitCount < 3 then
+				self.curGiftPenguin.nHitCount = self.curGiftPenguin.nHitCount + 1
+				nCurPosX = nCurPosX + bestNX * minDepth
+				nCurPosY = nCurPosY + bestNY * minDepth
+				nSumX = nSumX + bestNX * minDepth
+				nSumY = nSumY + bestNY * minDepth
+				self.curGiftPenguin.curPosX = nCurPosX
+				self.curGiftPenguin.curPosY = nCurPosY
+				self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
+				self.curGiftPenguin.mapStartPos = self.curGiftPenguin.goGiftPenguin.anchoredPosition
+				local vxAfter, vyAfter = self.ReflectVelocity(self.curGiftPenguin.nVelocityX, curVy, bestNX, bestNY, 1)
+				self.curGiftPenguin.nHitTime = self.nFlyingTime
+				self.curGiftPenguin.nVelocityX = vxAfter
+				self.curGiftPenguin.nVelocityY = vyAfter
+				self.curGiftPenguin.tbBounds = self:GetLocalSpaceRect(self.curGiftPenguin.goGiftPenguin, self.curGiftPenguin.goGiftPenguin.parent)
+				break
+			else
+				self:DestroyPenguin()
+				self.bFlying = false
+				break
+			end
+		end
+	end
+	if not self.bFlying then
+		return
+	end
+	if nCurPosX > 0.5 * self.sceneSize[1] or nCurPosX < -0.5 * self.sceneSize[1] or nCurPosY > 0.5 * self.sceneSize[2] or nCurPosY < -0.5 * self.sceneSize[2] then
+		print("hit border")
+		self:DestroyPenguin()
+		self.bFlying = false
+	end
+	if not self.bFlying then
+		return
+	end
+	local tbHittedObs = {}
+	for _, nSpecialId in ipairs(self.tbExObstacleCur) do
+		local mapConfig = self.mapExObstacleOrigin[nSpecialId]
+		if mapConfig ~= nil then
+			local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, mapConfig.tbBounds, nSumX, nSumY, 0, 0)
+			if bHit then
+				local nType, Param, bRemove
+				self.bFlying, nType, Param, bRemove = self:HitSpecialObstacle(nSpecialId)
+				self:SpecialObstacleFunc(self.curGiftPenguin, nDeltaTime, nType, Param)
+				if bRemove then
+					table.insert(tbHittedObs, nSpecialId)
+				end
+				if not self.bFlying then
+					self:DestroyPenguin()
+					break
+				end
+			end
+		end
+	end
+	for _, nId in ipairs(tbHittedObs) do
+		table.removebyvalue(self.tbExObstacleCur, nId, true)
+	end
+	return nCurPosX, nCurPosY
 end
 function ThrowGiftsLevelCtrl:AntennaPenguinUpdate(nDeltaTime)
 	self.nFlyingTime = self.nFlyingTime + nDeltaTime
-	local nCurPosX = self.curGiftPenguin.mapStartPos.x + self.nFlyingTime * self.curGiftPenguin.nStartVelocityX
-	local nCurPosY = self.curGiftPenguin.mapStartPos.y + self.nFlyingTime * self.curGiftPenguin.nStartVelocityY - 0.5 * self.nAG * self.nFlyingTime * self.nFlyingTime
+	local nCurPosX = self.curGiftPenguin.curPosX + nDeltaTime * self.curGiftPenguin.nVelocityX
+	local nCurPosY = self.curGiftPenguin.curPosY + nDeltaTime * self.curGiftPenguin.nVelocityY - 0.5 * self.nAG * nDeltaTime * nDeltaTime
+	self.curGiftPenguin.nVelocityY = self.curGiftPenguin.nVelocityY - self.nAG * nDeltaTime
+	self.curGiftPenguin.curPosX = nCurPosX
+	self.curGiftPenguin.curPosY = nCurPosY
+	local curVy = self.curGiftPenguin.nVelocityY
 	self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
-	local curGiftPenguinBounds = self:GetLocalSpaceRect(self.curGiftPenguin.goGiftPenguin)
+	local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
+	local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
 	if self.tbItemTrackCtrl[self.curGiftPenguin.nTrackIdx] ~= nil then
 		local mapTrackCtrl = self.tbItemTrackCtrl[self.curGiftPenguin.nTrackIdx]
 		if self.nFlyingTime - mapTrackCtrl.nPrevTimer >= self.nLinePointInterval * 2 then
@@ -958,13 +1240,12 @@ function ThrowGiftsLevelCtrl:AntennaPenguinUpdate(nDeltaTime)
 			mapTrackCtrl:AddDot(Vector2(nCurPosX, nCurPosY))
 		end
 	end
-	local curVy = self.curGiftPenguin.nStartVelocityY - self.nAG * self.nFlyingTime
 	if self.curGiftPenguin.rtImgRoot ~= nil then
-		local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nStartVelocityX))
+		local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nVelocityX))
 		self.curGiftPenguin.rtImgRoot.localEulerAngles = Vector3(0, 0, nFlyAngle)
 	end
 	for _, tbBounds in ipairs(self.tbObstacle) do
-		local bHit = self:CheckAABB(curGiftPenguinBounds, tbBounds)
+		local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, tbBounds, nSumX, nSumY, 0, 0)
 		if bHit then
 			self:DestroyPenguin()
 			self.bFlying = false
@@ -974,14 +1255,26 @@ function ThrowGiftsLevelCtrl:AntennaPenguinUpdate(nDeltaTime)
 	if not self.bFlying then
 		return
 	end
+	if nCurPosX > 0.5 * self.sceneSize[1] or nCurPosX < -0.5 * self.sceneSize[1] or nCurPosY > 0.5 * self.sceneSize[2] or nCurPosY < -0.5 * self.sceneSize[2] then
+		print("hit border")
+		self:DestroyPenguin()
+		self.bFlying = false
+	end
+	if not self.bFlying then
+		return
+	end
 	local tbHittedObs = {}
 	for _, nSpecialId in ipairs(self.tbExObstacleCur) do
 		local mapConfig = self.mapExObstacleOrigin[nSpecialId]
 		if mapConfig ~= nil then
-			local bHit = self:CheckAABB(curGiftPenguinBounds, mapConfig.tbBounds)
+			local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, mapConfig.tbBounds, nSumX, nSumY, 0, 0)
 			if bHit then
-				self.bFlying = self:HitSpecialObstacle(nSpecialId)
-				table.insert(tbHittedObs, nSpecialId)
+				local nType, Param, bRemove
+				self.bFlying, nType, Param, bRemove = self:HitSpecialObstacle(nSpecialId)
+				self:SpecialObstacleFunc(self.curGiftPenguin, nDeltaTime, nType, Param)
+				if bRemove then
+					table.insert(tbHittedObs, nSpecialId)
+				end
 				if not self.bFlying then
 					self:DestroyPenguin()
 					break
@@ -992,60 +1285,72 @@ function ThrowGiftsLevelCtrl:AntennaPenguinUpdate(nDeltaTime)
 	for _, nId in ipairs(tbHittedObs) do
 		table.removebyvalue(self.tbExObstacleCur, nId, true)
 	end
-	return nCurPosX, nCurPosY, curGiftPenguinBounds
+	return nCurPosX, nCurPosY
 end
 function ThrowGiftsLevelCtrl:HelmetPenguinUpdate(nDeltaTime)
 	self.nFlyingTime = self.nFlyingTime + nDeltaTime
-	local nCurPosX = self.curGiftPenguin.mapStartPos.x + self.nFlyingTime * self.curGiftPenguin.nStartVelocityX
-	local nCurPosY = self.curGiftPenguin.mapStartPos.y + self.nFlyingTime * self.curGiftPenguin.nStartVelocityY - 0.5 * self.nAG * self.nFlyingTime * self.nFlyingTime
+	local nCurPosX = self.curGiftPenguin.curPosX + nDeltaTime * self.curGiftPenguin.nVelocityX
+	local nCurPosY = self.curGiftPenguin.curPosY + nDeltaTime * self.curGiftPenguin.nVelocityY - 0.5 * self.nAG * nDeltaTime * nDeltaTime
+	self.curGiftPenguin.nVelocityY = self.curGiftPenguin.nVelocityY - self.nAG * nDeltaTime
+	self.curGiftPenguin.curPosX = nCurPosX
+	self.curGiftPenguin.curPosY = nCurPosY
+	local curVy = self.curGiftPenguin.nVelocityY
 	self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
-	local curGiftPenguinBounds = self:GetLocalSpaceRect(self.curGiftPenguin.goGiftPenguin)
-	local curVy = self.curGiftPenguin.nStartVelocityY - self.nAG * self.nFlyingTime
+	local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
+	local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
 	if self.curGiftPenguin.rtImgRoot ~= nil then
-		local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nStartVelocityX))
+		local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nVelocityX))
 		self.curGiftPenguin.rtImgRoot.localEulerAngles = Vector3(0, 0, nFlyAngle)
+	end
+	if nCurPosX > 0.5 * self.sceneSize[1] or nCurPosX < -0.5 * self.sceneSize[1] or nCurPosY > 0.5 * self.sceneSize[2] or nCurPosY < -0.5 * self.sceneSize[2] then
+		print("hit border")
+		self:DestroyPenguin()
+		self.bFlying = false
+	end
+	if not self.bFlying then
+		return
 	end
 	local tbHittedObs = {}
 	for _, nSpecialId in ipairs(self.tbExObstacleCur) do
 		local mapConfig = self.mapExObstacleOrigin[nSpecialId]
 		if mapConfig ~= nil then
-			local bHit = self:CheckAABB(curGiftPenguinBounds, mapConfig.tbBounds)
+			local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, mapConfig.tbBounds, nSumX, nSumY, 0, 0)
 			if bHit then
-				self:HitSpecialObstacle(nSpecialId)
-				table.insert(tbHittedObs, nSpecialId)
+				local bFlying, nType, Param, bRemove
+				bFlying, nType, Param, bRemove = self:HitSpecialObstacle(nSpecialId)
+				self:SpecialObstacleFunc(self.curGiftPenguin, nDeltaTime, nType, Param)
+				if bRemove then
+					table.insert(tbHittedObs, nSpecialId)
+				end
 			end
 		end
 	end
 	for _, nId in ipairs(tbHittedObs) do
 		table.removebyvalue(self.tbExObstacleCur, nId, true)
 	end
-	return nCurPosX, nCurPosY, curGiftPenguinBounds
+	return nCurPosX, nCurPosY
 end
 function ThrowGiftsLevelCtrl:NavigationPenguinUpdate(nDeltaTime)
 	local checkGetGoal = function(nCurPosX, nCurPosY)
 		for nId, mapAciveGoal in pairs(self.activeGoal) do
-			local nGoalPosX = mapAciveGoal.rtGoal.anchoredPosition.x
-			local nGoalPosY = mapAciveGoal.rtGoal.anchoredPosition.y
-			if nCurPosX >= mapAciveGoal.tbOffsetHitArea[1] + nGoalPosX and nCurPosX <= mapAciveGoal.tbOffsetHitArea[2] + nGoalPosX and nCurPosY >= nGoalPosY then
+			if nCurPosX >= mapAciveGoal.tbBoundsHitArea[1] and nCurPosX <= mapAciveGoal.tbBoundsHitArea[2] and nCurPosY >= mapAciveGoal.tbBoundsHitArea[4] then
 				return mapAciveGoal.rtGoal
 			end
 		end
 		return nil
 	end
 	self.nFlyingTime = self.nFlyingTime + nDeltaTime
-	local t_stop = self.curGiftPenguin.nStartVelocityY / self.nAG
-	if t_stop < 0 then
-		t_stop = 0
-	end
+	self.curGiftPenguin.nVelocityY = math.max(0, self.curGiftPenguin.nVelocityY - self.nAG * nDeltaTime)
 	local nCurPosY = 0
 	local nCurPosX = 0
 	if self.curGiftPenguin.targetGoal == nil then
-		if t_stop >= self.nFlyingTime then
-			nCurPosY = self.curGiftPenguin.mapStartPos.y + self.nFlyingTime * self.curGiftPenguin.nStartVelocityY - 0.5 * self.nAG * self.nFlyingTime * self.nFlyingTime
-			nCurPosX = self.curGiftPenguin.mapStartPos.x + self.nFlyingTime * self.curGiftPenguin.nStartVelocityX
+		if self.curGiftPenguin.nVelocityY > 0 then
+			nCurPosX = self.curGiftPenguin.curPosX + nDeltaTime * self.curGiftPenguin.nVelocityX
+			nCurPosY = self.curGiftPenguin.curPosY + nDeltaTime * self.curGiftPenguin.nVelocityY - 0.5 * self.nAG * nDeltaTime * nDeltaTime
 		else
-			nCurPosY = self.curGiftPenguin.mapStartPos.y + t_stop * self.curGiftPenguin.nStartVelocityY - 0.5 * self.nAG * t_stop * t_stop
-			nCurPosX = self.curGiftPenguin.mapStartPos.x + t_stop * self.curGiftPenguin.nStartVelocityX + (self.nFlyingTime - t_stop) * math.max(self.maxVelocity * 0.2, self.curGiftPenguin.nStartVelocityX)
+			nCurPosY = self.curGiftPenguin.curPosY
+			nCurPosX = self.curGiftPenguin.curPosX + nDeltaTime * self.curGiftPenguin.nVelocityX
+			self.curGiftPenguin.nVelocityY = 0
 		end
 		local checkGoal = checkGetGoal(nCurPosX, nCurPosY)
 		if checkGoal ~= nil then
@@ -1053,24 +1358,21 @@ function ThrowGiftsLevelCtrl:NavigationPenguinUpdate(nDeltaTime)
 			self.curGiftPenguin.nGetTargetTime = self.nFlyingTime
 		end
 	else
-		if t_stop >= self.curGiftPenguin.nGetTargetTime then
-			nCurPosY = self.curGiftPenguin.mapStartPos.y + self.curGiftPenguin.nGetTargetTime * self.curGiftPenguin.nStartVelocityY - 0.5 * self.nAG * self.curGiftPenguin.nGetTargetTime * self.curGiftPenguin.nGetTargetTime
-		else
-			nCurPosY = self.curGiftPenguin.mapStartPos.y + t_stop * self.curGiftPenguin.nStartVelocityY - 0.5 * self.nAG * t_stop * t_stop
-		end
-		local nSumTime = self.nFlyingTime - self.curGiftPenguin.nGetTargetTime
-		nCurPosY = nCurPosY - nSumTime * self.nNavigationPenguinSpeed
+		nCurPosY = self.curGiftPenguin.curPosY - nDeltaTime * self.nNavigationPenguinSpeed
 		local nTargetX = self.curGiftPenguin.targetGoal.anchoredPosition.x
 		nCurPosX = self.curGiftPenguin.goGiftPenguin.anchoredPosition.x
-		local sumMove = (nTargetX - nCurPosX) / 0.1 * nDeltaTime
+		local sumMove = math.min(self.maxVelocity, (nTargetX - nCurPosX) / 0.1) * nDeltaTime
 		nCurPosX = sumMove + nCurPosX
 	end
+	self.curGiftPenguin.curPosX = nCurPosX
+	self.curGiftPenguin.curPosY = nCurPosY
 	self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
-	local curGiftPenguinBounds = self:GetLocalSpaceRect(self.curGiftPenguin.goGiftPenguin)
-	local curVy = math.max(self.curGiftPenguin.nStartVelocityY - self.nAG * self.nFlyingTime, 0)
+	local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
+	local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
+	local curVy = self.curGiftPenguin.nVelocityY
 	if self.curGiftPenguin.rtImgRoot ~= nil then
 		if self.curGiftPenguin.targetGoal == nil then
-			local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nStartVelocityX))
+			local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nVelocityX))
 			self.curGiftPenguin.rtImgRoot.localEulerAngles = Vector3(0, 0, nFlyAngle)
 		else
 			local nCurAngle = self.curGiftPenguin.rtImgRoot.localEulerAngles.z
@@ -1080,7 +1382,7 @@ function ThrowGiftsLevelCtrl:NavigationPenguinUpdate(nDeltaTime)
 		end
 	end
 	for _, tbBounds in ipairs(self.tbObstacle) do
-		local bHit = self:CheckAABB(curGiftPenguinBounds, tbBounds)
+		local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, tbBounds, nSumX, nSumY, 0, 0)
 		if bHit then
 			print("hit Obstacle")
 			self:DestroyPenguin()
@@ -1092,14 +1394,26 @@ function ThrowGiftsLevelCtrl:NavigationPenguinUpdate(nDeltaTime)
 	if not self.bFlying then
 		return
 	end
+	if nCurPosX > 0.5 * self.sceneSize[1] or nCurPosX < -0.5 * self.sceneSize[1] or nCurPosY > 0.5 * self.sceneSize[2] or nCurPosY < -0.5 * self.sceneSize[2] then
+		print("hit border")
+		self:DestroyPenguin()
+		self.bFlying = false
+	end
+	if not self.bFlying then
+		return
+	end
 	local tbHittedObs = {}
 	for _, nSpecialId in ipairs(self.tbExObstacleCur) do
 		local mapConfig = self.mapExObstacleOrigin[nSpecialId]
 		if mapConfig ~= nil then
-			local bHit = self:CheckAABB(curGiftPenguinBounds, mapConfig.tbBounds)
+			local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, mapConfig.tbBounds, nSumX, nSumY, 0, 0)
 			if bHit then
-				self.bFlying = self:HitSpecialObstacle(nSpecialId)
-				table.insert(tbHittedObs, nSpecialId)
+				local nType, Param, bRemove
+				self.bFlying, nType, Param, bRemove = self:HitSpecialObstacle(nSpecialId)
+				self:SpecialObstacleFunc(self.curGiftPenguin, nDeltaTime, nType, Param)
+				if bRemove then
+					table.insert(tbHittedObs, nSpecialId)
+				end
 				if not self.bFlying then
 					self:DestroyPenguin()
 					break
@@ -1110,7 +1424,190 @@ function ThrowGiftsLevelCtrl:NavigationPenguinUpdate(nDeltaTime)
 	for _, nId in ipairs(tbHittedObs) do
 		table.removebyvalue(self.tbExObstacleCur, nId, true)
 	end
-	return nCurPosX, nCurPosY, curGiftPenguinBounds
+	return nCurPosX, nCurPosY
+end
+function ThrowGiftsLevelCtrl:SplitPenguinUpdate(nDeltaTime)
+	local nCurPosX, nCurPosY = 0, 0
+	local Split = function(mapPenguin, nAngle, nVelocity, initPos)
+		mapPenguin.bSplit = true
+		local goPenguin = instantiate(self._mapNode.templateBullet, self._mapNode.rtPenguinRoot)
+		local rtPenguin = goPenguin:GetComponent("RectTransform")
+		local goImgRoot = rtPenguin:Find("imgRoot")
+		local imgFx = goImgRoot:Find("imgFx")
+		local rtRed = goImgRoot:Find("penguin_red")
+		local rtYellow = goImgRoot:Find("penguin_yellow")
+		local rtGreen = goImgRoot:Find("penguin_green")
+		local rtGoggles = goImgRoot:Find("penguin_goggles")
+		local rtAntenna = goImgRoot:Find("penguin_antenna")
+		local rtHelmet = goImgRoot:Find("penguin_helmet")
+		local rtImgRoot
+		if goImgRoot ~= nil then
+			rtImgRoot = goImgRoot:GetComponent("RectTransform")
+		end
+		rtPenguin.anchoredPosition = initPos
+		rtRed.gameObject:SetActive(mapPenguin.nType == 2)
+		rtYellow.gameObject:SetActive(mapPenguin.nType == 3)
+		rtGreen.gameObject:SetActive(mapPenguin.nType == 1)
+		rtGoggles.gameObject:SetActive(false)
+		rtAntenna.gameObject:SetActive(false)
+		rtHelmet.gameObject:SetActive(false)
+		imgFx.gameObject:SetActive(self.mapCurActiveState[105] ~= nil)
+		rtPenguin.anchoredPosition = initPos
+		goPenguin:SetActive(true)
+		if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind then
+			self._mapNode.rtBlindLevelTrack:Reset()
+		end
+		local mapGiftPenguin = {
+			goGiftPenguin = rtPenguin,
+			nState = 0,
+			nType = mapPenguin.nType,
+			nStartAngle = nAngle,
+			nVelocityX = nVelocity * math.cos(math.rad(nAngle)),
+			nVelocityY = nVelocity * math.sin(math.rad(nAngle)),
+			mapStartPos = initPos,
+			rtImgRoot = rtImgRoot,
+			tbBounds = self:GetLocalSpaceRect(rtPenguin, rtPenguin.parent),
+			curPosX = initPos.x,
+			curPosY = initPos.y,
+			bFlying = true,
+			nHitTime = 0
+		}
+		return mapGiftPenguin
+	end
+	if self.curGiftPenguin.bSplit then
+		local bHasSubPenguin = false
+		for _, mapSubPenguin in ipairs(self.curGiftPenguin.tbSubPenguin) do
+			if mapSubPenguin.bFlying then
+				self.nFlyingTime = self.nFlyingTime + nDeltaTime
+				nCurPosX = mapSubPenguin.curPosX + nDeltaTime * mapSubPenguin.nVelocityX
+				nCurPosY = mapSubPenguin.curPosY + nDeltaTime * mapSubPenguin.nVelocityY - 0.5 * self.nAG * nDeltaTime * nDeltaTime
+				mapSubPenguin.nVelocityY = mapSubPenguin.nVelocityY - self.nAG * nDeltaTime
+				mapSubPenguin.curPosX = nCurPosX
+				mapSubPenguin.curPosY = nCurPosY
+				mapSubPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
+				local nSumX = nCurPosX - mapSubPenguin.mapStartPos.x
+				local nSumY = nCurPosY - mapSubPenguin.mapStartPos.y
+				local curVy = mapSubPenguin.nVelocityY
+				if mapSubPenguin.rtImgRoot ~= nil then
+					local nFlyAngle = math.deg(math.atan(curVy, mapSubPenguin.nVelocityX))
+					mapSubPenguin.rtImgRoot.localEulerAngles = Vector3(0, 0, nFlyAngle)
+				end
+				for _, tbBounds in ipairs(self.tbObstacle) do
+					local bHit = self:CheckCollision(mapSubPenguin.tbBounds, tbBounds, nSumX, nSumY, 0, 0)
+					if bHit then
+						print("hit Obstacle")
+						self:DestroySubPenguin(mapSubPenguin)
+						mapSubPenguin.bFlying = false
+						break
+					end
+				end
+				if mapSubPenguin.bFlying and (nCurPosX > 0.5 * self.sceneSize[1] or nCurPosX < -0.5 * self.sceneSize[1] or nCurPosY > 0.5 * self.sceneSize[2] or nCurPosY < -0.5 * self.sceneSize[2]) then
+					print("hit border")
+					self:DestroySubPenguin(mapSubPenguin)
+					mapSubPenguin.bFlying = false
+				end
+				if mapSubPenguin.bFlying then
+					local tbHittedObs = {}
+					for _, nSpecialId in ipairs(self.tbExObstacleCur) do
+						local mapConfig = self.mapExObstacleOrigin[nSpecialId]
+						if mapConfig ~= nil then
+							local bHit = self:CheckCollision(mapSubPenguin.tbBounds, mapConfig.tbBounds, nSumX, nSumY, 0, 0)
+							if bHit then
+								local nType, Param, bRemove
+								mapSubPenguin.bFlying, nType, Param, bRemove = self:HitSpecialObstacle(nSpecialId)
+								self:SpecialObstacleFunc(mapSubPenguin, nDeltaTime, nType, Param)
+								if bRemove then
+									table.insert(tbHittedObs, nSpecialId)
+								end
+								if not mapSubPenguin.bFlying then
+									self:DestroySubPenguin(mapSubPenguin)
+									break
+								end
+							end
+						end
+					end
+					for _, nId in ipairs(tbHittedObs) do
+						table.removebyvalue(self.tbExObstacleCur, nId, true)
+					end
+				end
+				if mapSubPenguin.bFlying then
+					bHasSubPenguin = true
+				end
+			end
+		end
+		self.bFlying = bHasSubPenguin
+		if not self.bFlying then
+			self.curGiftPenguin = nil
+		end
+	else
+		self.nFlyingTime = self.nFlyingTime + nDeltaTime
+		nCurPosX = self.curGiftPenguin.curPosX + nDeltaTime * self.curGiftPenguin.nVelocityX
+		nCurPosY = self.curGiftPenguin.curPosY + nDeltaTime * self.curGiftPenguin.nVelocityY - 0.5 * self.nAG * nDeltaTime * nDeltaTime
+		self.curGiftPenguin.nVelocityY = self.curGiftPenguin.nVelocityY - self.nAG * nDeltaTime
+		self.curGiftPenguin.curPosX = nCurPosX
+		self.curGiftPenguin.curPosY = nCurPosY
+		self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
+		local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
+		local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
+		local curVy = self.curGiftPenguin.nVelocityY
+		if self.curGiftPenguin.rtImgRoot ~= nil then
+			local nFlyAngle = math.deg(math.atan(curVy, self.curGiftPenguin.nVelocityX))
+			self.curGiftPenguin.rtImgRoot.localEulerAngles = Vector3(0, 0, nFlyAngle)
+		end
+		for _, tbBounds in ipairs(self.tbObstacle) do
+			local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, tbBounds, nSumX, nSumY, 0, 0)
+			if bHit then
+				self:DestroyPenguin()
+				self.bFlying = false
+				break
+			end
+		end
+		if not self.bFlying then
+			return
+		end
+		if nCurPosX > 0.5 * self.sceneSize[1] or nCurPosX < -0.5 * self.sceneSize[1] or nCurPosY > 0.5 * self.sceneSize[2] or nCurPosY < -0.5 * self.sceneSize[2] then
+			print("hit border")
+			self:DestroyPenguin()
+			self.bFlying = false
+		end
+		if not self.bFlying then
+			return
+		end
+		local tbHittedObs = {}
+		for _, nSpecialId in ipairs(self.tbExObstacleCur) do
+			local mapConfig = self.mapExObstacleOrigin[nSpecialId]
+			if mapConfig ~= nil then
+				local bHit = self:CheckCollision(self.curGiftPenguin.tbBounds, mapConfig.tbBounds, nSumX, nSumY, 0, 0)
+				if bHit then
+					local nType, Param, bRemove
+					self.bFlying, nType, Param, bRemove = self:HitSpecialObstacle(nSpecialId)
+					self:SpecialObstacleFunc(self.curGiftPenguin, nDeltaTime, nType, Param)
+					if bRemove then
+						table.insert(tbHittedObs, nSpecialId)
+					end
+					if not self.bFlying then
+						self:DestroyPenguin()
+						break
+					end
+				end
+			end
+		end
+		for _, nId in ipairs(tbHittedObs) do
+			table.removebyvalue(self.tbExObstacleCur, nId, true)
+		end
+		if self.bFlying and curVy <= 0 then
+			self.curGiftPenguin.bSplit = true
+			local initPos = self.curGiftPenguin.goGiftPenguin.anchoredPosition
+			local nCurVelocity = math.sqrt(self.curGiftPenguin.nVelocityY * self.curGiftPenguin.nVelocityY + self.curGiftPenguin.nVelocityX * self.curGiftPenguin.nVelocityX)
+			local nFlyAngle = math.deg(math.atan(self.curGiftPenguin.nVelocityY, self.curGiftPenguin.nVelocityX))
+			for i = -1, 1 do
+				local mapSubPenguin = Split(self.curGiftPenguin, nFlyAngle + 20 * i, nCurVelocity, initPos)
+				table.insert(self.curGiftPenguin.tbSubPenguin, mapSubPenguin)
+			end
+			self:DestroySubPenguin(self.curGiftPenguin)
+		end
+	end
+	return nCurPosX, nCurPosY
 end
 function ThrowGiftsLevelCtrl:SetBeginningAngle(nAngle, nVelocity)
 	local fixedAngle = nAngle == 0 and 0 or nAngle - 90
@@ -1185,19 +1682,59 @@ function ThrowGiftsLevelCtrl:SetBeginningLine(nAngle, nVelocity)
 end
 function ThrowGiftsLevelCtrl:HitSpecialObstacle(nSpecialId)
 	local mapOriginConfig = self.mapExObstacleOrigin[nSpecialId]
+	local nType = 0
+	local Param = {}
 	if mapOriginConfig ~= nil then
-		mapOriginConfig.gameObject:SetActive(false)
 		if mapOriginConfig.mapConfig.Type == GameEnum.SpecialObstacleType.Obstacle then
-			return false
+			mapOriginConfig.gameObject:SetActive(false)
+			return false, nType, Param, true
 		elseif mapOriginConfig.mapConfig.Type == GameEnum.SpecialObstacleType.Score then
+			mapOriginConfig.gameObject:SetActive(false)
 			local nScore = mapOriginConfig.mapConfig.Param[1]
 			if nScore ~= nil then
 				self:AddScore(nScore)
 			end
-			return true
+			return true, nType, Param, true
+		elseif mapOriginConfig.mapConfig.Type == GameEnum.SpecialObstacleType.WindForce then
+			nType = 1
+			Param.WindForce = mapOriginConfig.mapConfig.Param[1] * 10
+			return true, nType, Param, false
+		elseif mapOriginConfig.mapConfig.Type == GameEnum.SpecialObstacleType.Portal then
+			nType = 2
+			Param.Exit = mapOriginConfig.mapConfig.Param[1]
+			return true, nType, Param, false
 		end
 	end
-	return true
+	return true, nType, Param, true
+end
+function ThrowGiftsLevelCtrl:SpecialObstacleFunc(mapPenguin, nDeltaTime, nType, Param)
+	if nType == nil or Param == nil then
+		return
+	end
+	if nType == 1 then
+		mapPenguin.nVelocityX = mapPenguin.nVelocityX - Param.WindForce * nDeltaTime
+	elseif nType == 2 then
+		local nExitId = Param.Exit
+		local mapExitConfig
+		for nInstanceId, mapObstacle in pairs(self.mapExObstacleOrigin) do
+			if mapObstacle.mapConfig.Id == nExitId then
+				mapExitConfig = mapObstacle
+				break
+			end
+		end
+		if mapExitConfig ~= nil then
+			local rtExit = mapExitConfig.gameObject:GetComponent("RectTransform")
+			local nCurVelocity = math.sqrt(mapPenguin.nVelocityY * mapPenguin.nVelocityY + mapPenguin.nVelocityX * mapPenguin.nVelocityX)
+			local nFlyAngle = rtExit.localEulerAngles.z
+			mapPenguin.goGiftPenguin.anchoredPosition = rtExit.anchoredPosition
+			mapPenguin.nVelocityX = nCurVelocity * math.cos(math.rad(nFlyAngle))
+			mapPenguin.nVelocityY = nCurVelocity * math.sin(math.rad(nFlyAngle))
+			mapPenguin.tbBounds = self:GetLocalSpaceRect(mapPenguin.goGiftPenguin.transform, mapPenguin.goGiftPenguin.transform.parent)
+			mapPenguin.curPosX = rtExit.anchoredPosition.x
+			mapPenguin.curPosY = rtExit.anchoredPosition.y
+			mapPenguin.mapStartPos = rtExit.anchoredPosition
+		end
+	end
 end
 function ThrowGiftsLevelCtrl:AddScore(nScore)
 	self.nLevelScore = self.nLevelScore + nScore
@@ -1251,6 +1788,8 @@ function ThrowGiftsLevelCtrl:CreateGoal(nSpawnPointId, mapConfig)
 			self.activeGoal[nSpawnPointId].rtObstacle = nil
 			self.activeGoal[nSpawnPointId].nType = 0
 			self.activeGoal[nSpawnPointId].TMPScore = nil
+			self.activeGoal[nSpawnPointId].OffsetX = 0
+			self.activeGoal[nSpawnPointId].OffsetY = 0
 		end
 		self.activeGoal[nSpawnPointId] = {}
 		local rtGoal = goGoal:GetComponent("RectTransform")
@@ -1270,26 +1809,10 @@ function ThrowGiftsLevelCtrl:CreateGoal(nSpawnPointId, mapConfig)
 		self.activeGoal[nSpawnPointId].nType = nType
 		local rtCompHitArea = rtHitArea:GetComponent("RectTransform")
 		local rtCompObstacle = rtObstacle:GetComponent("RectTransform")
-		local xMinOffsetrtHitArea = rtCompHitArea.anchoredPosition.x - rtCompHitArea.pivot.x * rtCompHitArea.rect.width
-		local xMaxOffsetrtHitArea = rtCompHitArea.anchoredPosition.x + (1 - rtCompHitArea.pivot.x) * rtCompHitArea.rect.width
-		local yMinOffsetrtHitArea = rtCompHitArea.anchoredPosition.y - rtCompHitArea.pivot.y * rtCompHitArea.rect.height
-		local yMaxOffsetrtHitArea = rtCompHitArea.anchoredPosition.y + (1 - rtCompHitArea.pivot.y) * rtCompHitArea.rect.height
-		self.activeGoal[nSpawnPointId].tbOffsetHitArea = {
-			xMinOffsetrtHitArea,
-			xMaxOffsetrtHitArea,
-			yMinOffsetrtHitArea,
-			yMaxOffsetrtHitArea
-		}
-		local xMinOffsetObstacle = rtCompObstacle.anchoredPosition.x - rtCompObstacle.pivot.x * rtCompObstacle.rect.width
-		local xMaxOffsetObstacle = rtCompObstacle.anchoredPosition.x + (1 - rtCompObstacle.pivot.x) * rtCompObstacle.rect.width
-		local yMinOffsetObstacle = rtCompObstacle.anchoredPosition.y - rtCompObstacle.pivot.y * rtCompObstacle.rect.height
-		local yMaxOffsetObstacle = rtCompObstacle.anchoredPosition.y + (1 - rtCompObstacle.pivot.y) * rtCompObstacle.rect.height
-		self.activeGoal[nSpawnPointId].tbOffsetObstacle = {
-			xMinOffsetObstacle,
-			xMaxOffsetObstacle,
-			yMinOffsetObstacle,
-			yMaxOffsetObstacle
-		}
+		self.activeGoal[nSpawnPointId].tbBoundsHitArea = self:GetLocalSpaceRect(rtCompHitArea, rtGoal.parent)
+		self.activeGoal[nSpawnPointId].tbBoundsObstacle = self:GetLocalSpaceRect(rtCompObstacle, rtGoal.parent)
+		self.activeGoal[nSpawnPointId].OffsetX = 0
+		self.activeGoal[nSpawnPointId].OffsetY = 0
 		local TMPNode
 		local rtTMPScore = rtGoal:Find("AnimRoot/TMPLevelScoreAdd")
 		if rtTMPScore ~= nil then
@@ -1332,13 +1855,21 @@ function ThrowGiftsLevelCtrl:CreateThrowPenguin(nAngle, nVelocity, initPos, nTyp
 		nSpecialType = nSpecialType,
 		nType = nType,
 		nStartAngle = nAngle,
-		nStartVelocityX = nVelocity * math.cos(math.rad(nAngle)),
-		nStartVelocityY = nVelocity * math.sin(math.rad(nAngle)),
+		nVelocityX = nVelocity * math.cos(math.rad(nAngle)),
+		nVelocityY = nVelocity * math.sin(math.rad(nAngle)),
 		mapStartPos = initPos,
 		rtImgRoot = rtImgRoot,
+		tbBounds = self:GetLocalSpaceRect(rtPenguin, rtPenguin.parent),
+		curPosX = initPos.x,
+		curPosY = initPos.y,
 		targetGoal = nil,
 		nGetTargetTime = 0,
-		nTrackIdx = 0
+		nTrackIdx = 0,
+		nHitCount = 0,
+		tbSubPenguin = {},
+		bSplit = false,
+		tbCacheSubPenguinGoal = {},
+		nHitTime = 0
 	}
 	if nSpecialType == 108 then
 		local rtTrack = instantiate(self._mapNode.rtTemplateTrack, self._mapNode.rtScene)
@@ -1442,6 +1973,23 @@ function ThrowGiftsLevelCtrl:DestroyPenguin()
 	local wait = function()
 		destroy(tempPenguin.gameObject)
 	end
+	local imgRoot = tempPenguin:Find("imgRoot")
+	local imgSmoke = tempPenguin:Find("imgSmoke")
+	if imgRoot == nil or imgSmoke == nil then
+		wait()
+		return
+	end
+	imgRoot.gameObject:SetActive(false)
+	imgSmoke.gameObject:SetActive(true)
+	self:AddTimer(1, 0.5, wait, true, true, true)
+end
+function ThrowGiftsLevelCtrl:DestroySubPenguin(mapSubPenguin)
+	WwiseAudioMgr:PostEvent("Mode_Present_out")
+	local tempPenguin = mapSubPenguin.goGiftPenguin.gameObject.transform
+	local wait = function()
+		destroy(tempPenguin.gameObject)
+	end
+	mapSubPenguin.goGiftPenguin = nil
 	local imgRoot = tempPenguin:Find("imgRoot")
 	local imgSmoke = tempPenguin:Find("imgSmoke")
 	if imgRoot == nil or imgSmoke == nil then

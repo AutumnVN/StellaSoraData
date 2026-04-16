@@ -134,23 +134,6 @@ function ActivityBreakOutCtrl:RefreshDate()
 	local dateStr = string.format("%s/%s/%s ~ %s/%s/%s", nOpenYear, nOpenMonth, strOpenDay, nEndYear, nEndMonth, strEndDay)
 	NovaAPI.SetTMPText(self._mapNode.txtDate, dateStr)
 end
-function ActivityBreakOutCtrl:RefreshTaskData()
-	local sortFunc = function(a, b)
-		return a.Index < b.Index
-	end
-	table.sort(self.actData.tbAllActivity, sortFunc)
-	self.nActTaskId = self.actData.tbAllActivity[1].ActivityId
-	local ActivityTaskData = PlayerData.Activity:GetActivityDataById(self.nActTaskId)
-	local nDone, nTotal = 0, 0
-	if ActivityTaskData ~= nil then
-		nDone, nTotal = ActivityTaskData:CalcTotalProgress()
-	end
-	local progress = string.format("%d/%d", nDone, nTotal)
-	local rt = self._mapNode.imgProgressBg:GetComponent("RectTransform")
-	local nWidth = nDone / nTotal * rt.rect.width
-	self._mapNode.imgFill:GetComponent("RectTransform").sizeDelta = Vector2(nWidth, rt.rect.height)
-	NovaAPI.SetTMPText(self._mapNode.txtProgress, progress)
-end
 function ActivityBreakOutCtrl:RefreshReward()
 	local actGroupCfg = self.actData:GetActGroupCfgData()
 	local rewardData = actGroupCfg.RewardsShow

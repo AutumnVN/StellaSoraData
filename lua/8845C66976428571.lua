@@ -5,10 +5,6 @@ JointDrillLevelSelectCtrl._mapNodeConfig = {
 	TopBarPanel = {
 		sCtrlName = "Game.UI.TopBarEx.TopBarCtrl"
 	},
-	animRoot = {
-		sNodeName = "----SafeAreaRoot----",
-		sComponentName = "Animator"
-	},
 	imgBg = {sComponentName = "Image"},
 	goMain = {sNodeName = "---Main---"},
 	btnAvg = {
@@ -35,7 +31,6 @@ JointDrillLevelSelectCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "JointDrill_Btn_Shop"
 	},
-	redDotQuest = {},
 	btnRank = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Rank"
@@ -44,10 +39,7 @@ JointDrillLevelSelectCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "JointDrill_Btn_Rank"
 	},
-	btnShop = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_Shop"
-	},
+	redDotQuest = {},
 	goActTime = {},
 	txtActTimeCn = {sComponentName = "TMP_Text"},
 	txtActTime = {sComponentName = "TMP_Text"},
@@ -218,7 +210,7 @@ JointDrillLevelSelectCtrl._mapNodeConfig = {
 	goAvgRoot = {
 		sNodeName = "goMainLineAvgRoot"
 	},
-	animWindow = {sNodeName = "rtWindow", sComponentName = "Animator"},
+	animWindowAVG = {sNodeName = "rtWindow", sComponentName = "Animator"},
 	txtAvgTitle = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "JointDrill_AVG_Title"
@@ -298,7 +290,7 @@ end
 function JointDrillLevelSelectCtrl:RefreshLevelList()
 	self._mapNode.goMain.gameObject:SetActive(true)
 	self._mapNode.goLevelInfo.gameObject:SetActive(false)
-	self._mapNode.animRoot:Play("JointDrill_Main_in", 0, 0)
+	self.animRoot:Play("JointDrill_Main_in", 0, 0)
 	local nLocationIndex = 0
 	if self.bInBattle or self.nActStatus == AllEnum.JointDrillActStatus.Start then
 		self._mapNode.goLevelList.gameObject:SetActive(true)
@@ -366,7 +358,7 @@ function JointDrillLevelSelectCtrl:RefreshLevelInfo()
 	self._mapNode.goLevelInfo.gameObject:SetActive(true)
 	self._mapNode.goInBattle.gameObject:SetActive(self.bInBattle)
 	self._mapNode.goNormal.gameObject:SetActive(not self.bInBattle)
-	self._mapNode.animRoot:Play("JointDrill_LevelInfo_in", 0, 0)
+	self.animRoot:Play("JointDrill_LevelInfo_in", 0, 0)
 	if self.bInBattle then
 		self._mapNode.animatorContinue:Play("JointDrill_Btn_Continue", 0, 0)
 		self._mapNode.animatorCancel:Play("JointDrill_Btn_Cancel", 0, 0)
@@ -569,6 +561,7 @@ function JointDrillLevelSelectCtrl:Awake()
 	end
 end
 function JointDrillLevelSelectCtrl:OnEnable()
+	self.animRoot = self.gameObject:GetComponent("Animator")
 	local bReset = PlayerData.JointDrill_1:GetResetLevelSelect()
 	if bReset then
 		self.nPanelType = panelType_main
@@ -603,6 +596,9 @@ function JointDrillLevelSelectCtrl:OnEnable()
 	self:Refresh()
 	self:StartTicketsRefreshTimer()
 	self:RefreshAvgInfo()
+	if self.nActStatus == AllEnum.JointDrillActStatus.Start then
+		PlayerData.JointDrill_1:SendJointDrillRankMsg()
+	end
 end
 function JointDrillLevelSelectCtrl:OnDisable()
 	if self.ticketRefreshTimer ~= nil then
@@ -752,7 +748,9 @@ function JointDrillLevelSelectCtrl:OnBtnClick_FastBattle()
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("JointDrill_Tickets_NotEnough"))
 		return
 	end
-	EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRaid_1, self.nSelectLevelId)
+	PlayerData.JointDrill_1:SendJointDrillRankMsg(function()
+		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRaid_1, self.nSelectLevelId)
+	end)
 end
 function JointDrillLevelSelectCtrl:OnEvent_RefreshJointDrillLevel()
 	self:Refresh()
@@ -773,10 +771,10 @@ function JointDrillLevelSelectCtrl:OnEvent_SelectJointDrillLevel(nLevelId)
 			end
 			return
 		end
-		local nAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.animRoot, {
+		local nAnimTime = NovaAPI.GetAnimClipLength(self.animRoot, {
 			"JointDrill_Main_out"
 		})
-		self._mapNode.animRoot:Play("JointDrill_Main_out")
+		self.animRoot:Play("JointDrill_Main_out")
 		self._mapNode.goSmoke.gameObject:SetActive(false)
 		self._mapNode.goSmoke.gameObject:SetActive(true)
 		self:AddTimer(1, nAnimTime, function()
@@ -820,14 +818,14 @@ function JointDrillLevelSelectCtrl:OnBtnClick_Reward(btn, nIndex)
 	end
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_CloseAvgWindow()
-	self._mapNode.animWindow:Play("t_window_04_t_out")
+	self._mapNode.animWindowAVG:Play("t_window_04_t_out")
 	local closeWindow = function()
 		self._mapNode.goAvgWindow.gameObject:SetActive(false)
 	end
 	self:AddTimer(1, 0.3, closeWindow, true, true, true, false)
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_CancelAvgWindow()
-	self._mapNode.animWindow:Play("t_window_04_t_out")
+	self._mapNode.animWindowAVG:Play("t_window_04_t_out")
 	local closeWindow = function()
 		self._mapNode.goAvgWindow.gameObject:SetActive(false)
 	end
@@ -838,10 +836,10 @@ function JointDrillLevelSelectCtrl:OnBtnClick_StartAvg()
 end
 function JointDrillLevelSelectCtrl:OnEvent_Back()
 	if self.nPanelType == panelType_levelInfo then
-		local nAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.animRoot, {
+		local nAnimTime = NovaAPI.GetAnimClipLength(self.animRoot, {
 			"JointDrill_LevelInfo_out"
 		})
-		self._mapNode.animRoot:Play("JointDrill_LevelInfo_out")
+		self.animRoot:Play("JointDrill_LevelInfo_out")
 		self._mapNode.goSmoke.gameObject:SetActive(false)
 		self._mapNode.goSmoke.gameObject:SetActive(true)
 		self:AddTimer(1, nAnimTime, function()

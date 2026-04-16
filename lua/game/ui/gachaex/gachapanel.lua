@@ -1,4 +1,5 @@
 local GachaPanel = class("GachaPanel", BasePanel)
+local Actor2DManager = require("Game.Actor2D.Actor2DManager")
 GachaPanel._tbDefine = {
 	{
 		sPrefabPath = "GachaEx/GachaPanel.prefab",
@@ -8,8 +9,10 @@ GachaPanel._tbDefine = {
 function GachaPanel:Awake()
 end
 function GachaPanel:OnEnable()
+	Actor2DManager.ForceUseL2D(true)
 end
 function GachaPanel:OnDisable()
+	Actor2DManager.ForceUseL2D(false)
 end
 function GachaPanel:OnDestroy()
 end

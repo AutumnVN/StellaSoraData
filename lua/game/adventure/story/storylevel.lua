@@ -36,8 +36,13 @@ function StoryLevel:Init(parent, nLevelId, nBuildId, bActivityStory)
 				table.insert(self.tbDiscId, nDiscId)
 			end
 		end
-		PlayerData.nCurGameType = AllEnum.WorldMapNodeType.Mainline
-		CS.AdventureModuleHelper.EnterMainlineMap(mapStory.FloorId[1], self.tbCharId, {})
+		if bActivityStory then
+			PlayerData.nCurGameType = AllEnum.WorldMapNodeType.ActivityStory
+			CS.AdventureModuleHelper.EnterActivityStoryLevelsInstance(mapStory.FloorId[1], self.tbCharId)
+		else
+			PlayerData.nCurGameType = AllEnum.WorldMapNodeType.Mainline
+			CS.AdventureModuleHelper.EnterMainlineMap(mapStory.FloorId[1], self.tbCharId, {})
+		end
 		NovaAPI.EnterModule("AdventureModuleScene", true, 17)
 	end
 	if self.bTrialLevel then
@@ -178,7 +183,7 @@ function StoryLevel:PlaySuccessPerform(FadeTime, mapChangeInfo, sVideoName)
 			local storyCfg = self.bActivityStory == true and ConfigTable.GetData("ActivityStory", self.nLevelId) or ConfigTable.GetData_Story(self.nLevelId)
 			local nFloorCount = #storyCfg.FloorId
 			local nMapId = storyCfg.FloorId[nFloorCount]
-			local nType = ConfigTable.GetData("MainlineFloor", nMapId).Theme
+			local nType = self.bActivityStory == true and ConfigTable.GetData("ActivityLevelsFloor", nMapId).Theme or ConfigTable.GetData("MainlineFloor", nMapId).Theme
 			local sName = ConfigTable.GetData("EndSceneType", nType).EndSceneName
 			EventManager.Add("SettlementPerformLoadFinish", self, openBattleResultPanel)
 			local tbSkin = {}
@@ -271,7 +276,11 @@ function StoryLevel:ChangeFloor()
 		self:SetCharStatus()
 	end
 	EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelUnloadCallback)
-	CS.AdventureModuleHelper.EnterMainlineMap(mapStory.FloorId[self.curFloorIdx], self.tbCharId, {})
+	if self.bActivityStory then
+		CS.AdventureModuleHelper.EnterActivityStoryLevelsInstance(mapStory.FloorId[self.curFloorIdx], self.tbCharId)
+	else
+		CS.AdventureModuleHelper.EnterMainlineMap(mapStory.FloorId[self.curFloorIdx], self.tbCharId, {})
+	end
 	CS.AdventureModuleHelper.LevelStateChanged(false)
 	self.bSettle = false
 end

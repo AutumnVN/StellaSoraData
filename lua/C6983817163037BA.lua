@@ -25,7 +25,10 @@ TrekkerVersusGiftQuestGridCtrl._mapNodeConfig = {
 	},
 	maskComplete = {},
 	imgComplete = {},
-	btnReceive = {sComponentName = "UIButton"},
+	btnReceive = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Receive"
+	},
 	btnJump = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_JumpTo"
@@ -47,7 +50,8 @@ function TrekkerVersusGiftQuestGridCtrl:OnDestroy()
 end
 function TrekkerVersusGiftQuestGridCtrl:OnRelease()
 end
-function TrekkerVersusGiftQuestGridCtrl:Refresh(mapQuestData)
+function TrekkerVersusGiftQuestGridCtrl:Refresh(mapQuestData, actData)
+	self._mapActData = actData
 	local mapQuestCfgData = ConfigTable.GetData("TravelerDuelChallengeQuest", mapQuestData.Id)
 	if mapQuestCfgData == nil then
 		return
@@ -81,5 +85,8 @@ function TrekkerVersusGiftQuestGridCtrl:OnBtnClick_Item(btn, nIdx)
 end
 function TrekkerVersusGiftQuestGridCtrl:OnBtnClick_JumpTo(btn)
 	EventManager.Hit("TrekkerVersusAffixJump", self.cfgData.AffixJumpTo)
+end
+function TrekkerVersusGiftQuestGridCtrl:OnBtnClick_Receive()
+	self._mapActData:ReceiveQuestReward()
 end
 return TrekkerVersusGiftQuestGridCtrl

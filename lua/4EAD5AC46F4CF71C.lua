@@ -146,7 +146,6 @@ function BreakOutSkillBtnCtrl:RefreshSkillBtn(nCurSkillEnergy, nMaxSkillEnergy, 
 	local ChargePercent = nCurSkillEnergy / nMaxSkillEnergy
 	local bCanUse = false
 	bCanUse = nMaxSkillEnergy <= nCurSkillEnergy and nCurCDTime <= 0
-	self._mapNode.TMP_Charge.gameObject:SetActive(false)
 	self._mapNode.TMP_Charge.gameObject:SetActive(self.bShowSection)
 	local sAnimName, sFxSoundName
 	if self.bCanUse == true then

@@ -84,7 +84,7 @@ function QuestNewbieCtrl:InitMoveBarPos()
 		local tab = self._mapNode.trTabOn:Find("tab" .. i)
 		if tab.gameObject.activeSelf then
 			local pos = tab.localPosition.x
-			table.insert(MoveBarPos, pos)
+			MoveBarPos[i] = pos
 		end
 	end
 end

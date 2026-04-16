@@ -294,9 +294,7 @@ function MallSkinPreviewCtrl:LoadCharacter()
 			self.curShowModel = v
 			self:WaitReadyClipFinish()
 			NovaAPI.BindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, 0, v.gameObject)
-			if CS.FrameworkMiscUtils.VersionCompare(CS.ClientManager.Instance:GetClientVersion(), "1.4.0", 2) == 1 then
-				GameUIUtils.SetCustomModelMaterialVariant(v.gameObject, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
-			end
+			GameUIUtils.SetCustomModelMaterialVariant(v.gameObject, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
 		else
 			v.gameObject:SetActive(false)
 		end

@@ -10,7 +10,7 @@ QuestNewbieTeamCtrl._mapNodeConfig = {
 }
 QuestNewbieTeamCtrl._mapEventConfig = {}
 QuestNewbieTeamCtrl._mapRedDotConfig = {}
-function QuestNewbieTeamCtrl:Init(mapData)
+function QuestNewbieTeamCtrl:Init(mapData, mapPrevData)
 	if mapData == nil then
 		return
 	end
@@ -30,8 +30,8 @@ function QuestNewbieTeamCtrl:Init(mapData)
 	local sTip = ""
 	if bFinished then
 		sTip = ConfigTable.GetUIText("Quest_Complete")
-	else
-		sTip = ConfigTable.GetUIText("StarTower_Book_Lock")
+	elseif mapPrevData ~= nil then
+		sTip = orderedFormat(ConfigTable.GetUIText("FormationQuest_UnLock"), ConfigTable.GetUIText("T_Element_Attr_" .. mapPrevData.EET))
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtLock, sTip)
 end

@@ -110,7 +110,7 @@ function GuideGroup_19:Step_4()
 		Type = GameEnum.guidetype.Introductory
 	}
 	self.parent:ActiveHide(true)
-	self.openPanelId = 121
+	self.openPanelId = PanelId.SkillInstanceLevelSelect
 	current = 4
 	self.waitAnimTime = 0.3
 end

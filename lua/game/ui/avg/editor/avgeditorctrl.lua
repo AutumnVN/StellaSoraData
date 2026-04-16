@@ -460,7 +460,8 @@ function AvgEditorCtrl:PrepareConstCmdParamOptions()
 				"SetBubbleUIType",
 				"SetHeartBeat",
 				"SetPP",
-				"SetPPGlobal"
+				"SetPPGlobal",
+				"SetCameraAperture"
 			}
 		},
 		{

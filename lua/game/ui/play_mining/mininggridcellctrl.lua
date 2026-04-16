@@ -48,7 +48,7 @@ function MiningGridCellCtrl:Awake(...)
 		v.gameObject:SetActive(false)
 	end
 end
-function MiningGridCellCtrl:OnDestory()
+function MiningGridCellCtrl:OnDestroy()
 	self:ClearButtonListener()
 	self:ClearTimer()
 end

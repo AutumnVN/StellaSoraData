@@ -10,23 +10,29 @@ HonorTitleCtrl._mapNodeConfig = {
 }
 HonorTitleCtrl._mapEventConfig = {}
 local HonorTitleStarPath = {
-	"zs_honor_level_0",
-	"zs_honor_level_2",
-	"zs_honor_level_1",
-	"zs_honor_level_4",
-	"zs_honor_level_3"
+	[1] = "zs_honor_level_0",
+	[2] = "zs_honor_level_2",
+	[3] = "zs_honor_level_1",
+	[4] = "zs_honor_level_4",
+	[5] = "zs_honor_level_3",
+	[99] = "zs_honor_level_100"
 }
 function HonorTitleCtrl:SetHonotTitle(honorTitleId, bBig, affinity_lv)
 	local honorData = ConfigTable.GetData("Honor", honorTitleId)
 	self:SetPngSprite(self._mapNode.imgHonorTitle, bBig and honorData.MainRes or honorData.SubRes)
 	NovaAPI.SetImageNativeSize(self._mapNode.imgHonorTitle)
-	if honorData.Type ~= GameEnum.honorType.Character then
+	if honorData.Type ~= GameEnum.honorType.Character and honorData.Type ~= GameEnum.honorType.Levels then
 		self._mapNode.goStarBig:SetActive(false)
 		self._mapNode.goStarSmall:SetActive(false)
 		return
 	end
 	local maxLevel = 1
 	self.tbHonorTitle, maxLevel = PlayerData.Char:GetCharHonorTitleData(honorData.Params[1])
+	if honorData.Type == GameEnum.honorType.Character then
+		self.tbHonorTitle, maxLevel = PlayerData.Char:GetCharHonorTitleData(honorData.Params[1])
+	elseif honorData.Type == GameEnum.honorType.Levels then
+		self.tbHonorTitle, maxLevel = PlayerData.Base:GetLevelHonorTitleData(honorTitleId)
+	end
 	if self.tbHonorTitle == nil then
 		return
 	end

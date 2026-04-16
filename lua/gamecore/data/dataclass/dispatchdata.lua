@@ -1,4 +1,6 @@
 local dailycheckinctrl = require("Game.UI.CheckIn.DailyCheckInCtrl")
+local NotificationManager = require("GameCore.Module.NotificationManager")
+local LocalSettingData = require("GameCore.Data.LocalSettingData")
 local DispatchData = class("DispatchData")
 local tbAllDispatchData = {}
 local tbWeeklyDispatchDataIds = {}
@@ -8,6 +10,8 @@ local bReqApplyAgent = false
 local OnEvent_NewDay = function()
 	tbCompletedDailyDispatchIds = {}
 	EventManager.Hit("UpdateDispatchData")
+end
+local OnEvent_SettingsNotificationClose = function()
 end
 local Init = function()
 	EventManager.Add(EventId.IsNewDay, DispatchData, OnEvent_NewDay)
@@ -23,6 +27,7 @@ local CacheDispatchData = function(data)
 		local state = AllEnum.DispatchState.Accepting
 		if v.ProcessTime * 60 + v.StartTime <= CS.ClientManager.Instance.serverTimeStamp then
 			state = AllEnum.DispatchState.Complete
+		else
 		end
 		tbAllDispatchData[v.Id] = {Data = v, State = state}
 	end

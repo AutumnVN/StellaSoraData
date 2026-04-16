@@ -15,7 +15,6 @@ end
 function DatingPanel:OnDisable()
 end
 function DatingPanel:OnDestroy()
-	GameResourceLoader.Unload("ImageAvg")
 end
 function DatingPanel:OnRelease()
 end

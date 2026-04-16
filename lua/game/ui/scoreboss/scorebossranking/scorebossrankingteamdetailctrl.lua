@@ -50,7 +50,12 @@ ScoreBossRankingTeamDetailCtrl._mapNodeConfig = {
 		sLanguageId = "ScoreBossRankingHighScore"
 	},
 	txtHighScoreNum = {sComponentName = "TMP_Text"},
-	imgTeamBG = {nCount = 2}
+	imgTeamBG = {nCount = 2},
+	btnPotentialDetail = {
+		nCount = 2,
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_PotentialDetail"
+	}
 }
 function ScoreBossRankingTeamDetailCtrl:OnEnable()
 end
@@ -73,6 +78,7 @@ function ScoreBossRankingTeamDetailCtrl:Refresh(mapRanking)
 			mapRanking.Teams[2] = tbTempTeams
 		end
 	end
+	self.mapRanking = mapRanking
 	if mapRanking.Teams ~= nil and mapRanking.Teams[1] ~= nil then
 		if mapRanking.Teams[1].LevelId ~= nil and mapRanking.Teams[1].LevelId > 0 then
 			local bossLevelData = ConfigTable.GetData("ScoreBossLevel", mapRanking.Teams[1].LevelId)
@@ -157,5 +163,17 @@ function ScoreBossRankingTeamDetailCtrl:OnBtnClick_Close()
 		self.gameObject:SetActive(false)
 	end
 	self:AddTimer(1, 0.2, close, true, true, true)
+end
+function ScoreBossRankingTeamDetailCtrl:OnBtnClick_PotentialDetail(btn, nIndex)
+	if self.mapRanking ~= nil and self.mapRanking.Teams ~= nil and self.mapRanking.Teams[nIndex] ~= nil then
+		local mapRanking = self.mapRanking.Teams[nIndex]
+		if mapRanking.Discs == nil or #mapRanking.Discs == 0 then
+			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Rank_Build_Detail_Unavailable"))
+			return
+		end
+		self.gameObject:SetActive(false)
+		EventManager.Hit("OpenRankBuildDetail")
+		EventManager.Hit(EventId.OpenPanel, PanelId.RankBuildDetail, mapRanking)
+	end
 end
 return ScoreBossRankingTeamDetailCtrl

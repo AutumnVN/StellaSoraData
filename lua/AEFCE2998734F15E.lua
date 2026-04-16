@@ -1,4 +1,5 @@
 local PenguinCardInfoCtrl = class("PenguinCardInfoCtrl", BaseCtrl)
+local PenguinCardUtils = require("Game.UI.Play_PenguinCard.PenguinCardUtils")
 local _, NotMaxLevel = ColorUtility.TryParseHtmlString("#FFF7EA")
 local _, MaxLevel = ColorUtility.TryParseHtmlString("#ffe075")
 PenguinCardInfoCtrl._mapNodeConfig = {
@@ -15,6 +16,7 @@ PenguinCardInfoCtrl._mapNodeConfig = {
 	txtName = {sComponentName = "TMP_Text"},
 	imgUp = {},
 	txtDesc = {sComponentName = "TMP_Text"},
+	srDesc = {sComponentName = "ScrollRect"},
 	aniInfo = {sNodeName = "goInfo", sComponentName = "Animator"},
 	btnRight = {
 		sComponentName = "UIButton",
@@ -45,7 +47,7 @@ PenguinCardInfoCtrl._mapNodeConfig = {
 PenguinCardInfoCtrl._mapEventConfig = {
 	PenguinCard_OpenInfo = "Open",
 	PenguinCard_SelectPenguinCard = "OnEvent_Select",
-	PenguinCard_SalePenguinCard = "Close"
+	PenguinCard_SalePenguinCard = "OnEvent_Sale"
 }
 function PenguinCardInfoCtrl:Open(mapCard, nSelectIndex)
 	self._panel.mapLevel:Pause()
@@ -69,7 +71,7 @@ function PenguinCardInfoCtrl:Open(mapCard, nSelectIndex)
 		local nMax = #self.tbHasIndex
 		self._mapNode.btnRight.gameObject:SetActive(1 < nMax)
 		self._mapNode.btnLeft.gameObject:SetActive(1 < nMax)
-		self._mapNode.btnSale.gameObject:SetActive(self._panel.mapLevel.nGameState == 1)
+		self._mapNode.btnSale.gameObject:SetActive(self._panel.mapLevel.nGameState == PenguinCardUtils.GameState.Prepare)
 		self._mapNode.btnSelect.gameObject:SetActive(false)
 		self._mapNode.imgUp:SetActive(false)
 	end
@@ -92,7 +94,12 @@ function PenguinCardInfoCtrl:Refresh()
 			local nId = mapUpgradeCard:GetIdByLevel(mapUpgradeCard.nGroupId, nAfter)
 			local mapCfg = ConfigTable.GetData("PenguinCard", nId)
 			if mapCfg then
-				local sDesc = mapUpgradeCard:SetDesc(mapCfg)
+				local sDesc = ""
+				if mapCfg.UpgradeResetGrowth then
+					sDesc = PenguinCardUtils.SetEffectDesc(mapCfg)
+				else
+					sDesc = PenguinCardUtils.SetEffectDesc(mapCfg, mapUpgradeCard.nGrowthLayer)
+				end
 				NovaAPI.SetTMPText(self._mapNode.txtDesc, sDesc)
 			end
 			NovaAPI.SetTMPText(self._mapNode.txtBtnSelect, ConfigTable.GetUIText("PenguinCard_Btn_Upgrade"))
@@ -100,14 +107,15 @@ function PenguinCardInfoCtrl:Refresh()
 			self._mapNode.imgUp:SetActive(false)
 			NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), self.mapCard.nLevel))
 			NovaAPI.SetTMPColor(self._mapNode.txtLevel, self.mapCard.nLevel == self.mapCard.nMaxLevel and MaxLevel or NotMaxLevel)
-			NovaAPI.SetTMPText(self._mapNode.txtDesc, self.mapCard.sDesc)
+			NovaAPI.SetTMPText(self._mapNode.txtDesc, self.mapCard:GetDesc())
 			NovaAPI.SetTMPText(self._mapNode.txtBtnSelect, ConfigTable.GetUIText("PenguinCard_Btn_Select"))
 		end
 	else
 		NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), self.mapCard.nLevel))
 		NovaAPI.SetTMPColor(self._mapNode.txtLevel, self.mapCard.nLevel == self.mapCard.nMaxLevel and MaxLevel or NotMaxLevel)
-		NovaAPI.SetTMPText(self._mapNode.txtDesc, self.mapCard.sDesc)
+		NovaAPI.SetTMPText(self._mapNode.txtDesc, self.mapCard:GetDesc())
 	end
+	NovaAPI.SetVerticalNormalizedPosition(self._mapNode.srDesc, 1)
 end
 function PenguinCardInfoCtrl:PlayInAni()
 	self.gameObject:SetActive(true)

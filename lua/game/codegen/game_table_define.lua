@@ -486,6 +486,33 @@ GameTableDefine.CommonTable = {
 	GMOrder = {},
 	GMSuperman = {Key = true},
 	GMTeam = {Key = true},
+	GoldenSpyBuffCard = {
+		Key = true,
+		Lang = {"Name", "Desc"}
+	},
+	GoldenSpyBuffCardPool = {Key = true},
+	GoldenSpyConfig = {Key = true},
+	GoldenSpyControl = {Key = true},
+	GoldenSpyExtraScore = {Key = true},
+	GoldenSpyFloor = {Key = true},
+	GoldenSpyItem = {
+		Key = true,
+		Lang = {"Name"}
+	},
+	GoldenSpyLevel = {
+		Key = true,
+		Lang = {
+			"LevelName",
+			"WinCondDesc",
+			"LevelDesc"
+		}
+	},
+	GoldenSpyLevelGroup = {
+		Key = true,
+		Lang = {"GroupName"}
+	},
+	GoldenSpyObstacle = {Key = true},
+	GoldenSpySkill = {Key = true},
 	Guide = {Key = true},
 	GuideGroup = {Key = true},
 	Handbook = {Key = true},
@@ -495,6 +522,7 @@ GameTableDefine.CommonTable = {
 		Lang = {"Name"}
 	},
 	HonorCharacter = {Key = true},
+	HonorLevel = {Key = true},
 	HtmlConfig = {Key = true},
 	InfinityTower = {
 		Key = true,
@@ -686,6 +714,10 @@ GameTableDefine.CommonTable = {
 	MonsterValueTempleteAdjust = {Key = true},
 	MonsterValueTempleteModify = {Key = true},
 	MonthlyCard = {Key = true},
+	NotificationConfig = {
+		Key = true,
+		Lang = {"Title", "Content"}
+	},
 	NPCAffinityGroup = {
 		Key = true,
 		Lang = {
@@ -728,6 +760,11 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Title", "Desc"}
 	},
+	PenguinCardBuff = {
+		Key = true,
+		Lang = {"Title", "Desc"}
+	},
+	PenguinCardBuffWeight = {Key = true},
 	PenguinCardControl = {
 		Key = true,
 		Lang = {"DesText"}
@@ -742,6 +779,11 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Title", "Desc"}
 	},
+	PenguinCardQuest = {
+		Key = true,
+		Lang = {"Desc"}
+	},
+	PenguinCardQuestWeight = {Key = true},
 	PenguinCardWeight = {Key = true},
 	PeriodicQuest = {
 		Key = true,
@@ -1134,7 +1176,15 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Title"}
 	},
+	TravelerDuelFansLevel = {Key = true},
 	TravelerDuelFloor = {Key = true},
+	TravelerDuelHotValueItem = {Key = true},
+	TravelerDuelHotValueRewards = {Key = true},
+	TravelerDuelIdleRewards = {},
+	TravelerDuelTarget = {
+		Key = true,
+		Lang = {"RivalName"}
+	},
 	TrialBuild = {
 		Key = true,
 		Lang = {"Name"}

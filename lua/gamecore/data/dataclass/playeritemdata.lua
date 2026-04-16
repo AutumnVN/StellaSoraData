@@ -294,7 +294,13 @@ function PlayerItemData:GetItemCountByID(Tid)
 	end
 	if itemCfgData.Type == GameEnum.itemType.Honor then
 		local tbHonor = PlayerData.Base:GetPlayerHonorTitleList()
-		local bHas = 0 < table.indexof(tbHonor, Tid)
+		local bHas = false
+		for k, v in pairs(tbHonor) do
+			if v.Id == Tid then
+				bHas = true
+				break
+			end
+		end
 		return bHas and 1 or 0
 	end
 	if self._mapItem[Tid] ~= nil then

@@ -2,7 +2,6 @@ local BreakOutData_00 = class("BreakOutData_00")
 function BreakOutData_00:AddListeners()
 end
 function BreakOutData_00:RefreshBreakOutData(tableData)
-	self.nActId = actId
 	self.ActEnd = true
 	if tableData ~= nil then
 		self:CacheAllLevelData(tableData)

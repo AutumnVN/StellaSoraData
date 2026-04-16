@@ -69,7 +69,7 @@ function GuideGroup_21:Step_1()
 			0,
 			0,
 			0
-		}, Callback)
+		}, 0, Callback)
 	end
 	self.msg = {
 		BindIcon = "MainlineFormationDiscPanelEx/----SafeAreaRoot----/rtSelect/rtCur",

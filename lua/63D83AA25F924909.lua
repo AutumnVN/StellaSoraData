@@ -130,12 +130,10 @@ function TDBattleResultCtrl:OnEnable()
 	self.bAnimEnd = false
 	local tbParam = self:GetPanelParam()
 	self.nResultState = 0
-	if #tbParam == 2 and tbParam[1] == false then
+	if tbParam[1] == false then
 		self.nResultState = 3
 	elseif tbParam[1] then
 		self.nResultState = 1
-	elseif #tbParam == 3 and tbParam[1] == false then
-		self.nResultState = 2
 	end
 	local tbStar = tbParam[2]
 	local GenerRewardItems = tbParam[3]
@@ -183,7 +181,7 @@ function TDBattleResultCtrl:OnEnable()
 		if self.nResultState == 1 then
 			sTravelerDuelLevelName = self.mapTravelerDuelLevel.Name
 		else
-			sTravelerDuelLevelName = self.mapTravelerDuelLevel.Name .. orderedFormat(ConfigTable.GetUIText("TD_BattleResultDifficulty"), nHard)
+			sTravelerDuelLevelName = self.mapTravelerDuelLevel.Name .. "<space=9>" .. orderedFormat(ConfigTable.GetUIText("TD_BattleResultDifficulty"), nHard)
 		end
 	end
 	local nStar = 0
@@ -241,10 +239,6 @@ function TDBattleResultCtrl:OnEnable()
 		table.insert(tbRoleId, 112)
 	end
 	self.tbRoleList = tbRoleId
-	if bPureAvg then
-		self._mapNode.trActor2D_PNG.gameObject:SetActive(false)
-	else
-	end
 	self._mapNode.imgHardTitleBg:SetActive(true)
 	self._mapNode.imgHardScoreTitleBg:SetActive(false)
 	self._mapNode.imgTimeScoreTitleBg:SetActive(false)
@@ -292,7 +286,7 @@ function TDBattleResultCtrl:OnEnable()
 			self:OpenReward()
 		end
 	end
-	cs_coroutine.start(wait)
+	self._coroutine = cs_coroutine.start(wait)
 	nAnimTime = nAnimTime + 1.5
 	self:AddTimer(1, nAnimTime, "PlayAnim", true, true, true)
 	EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
@@ -303,6 +297,18 @@ function TDBattleResultCtrl:OnEnable()
 	self.bProcessingClose = false
 end
 function TDBattleResultCtrl:OnDisable()
+	if self._sequence ~= nil then
+		self._sequence:Kill()
+		self._sequence = nil
+	end
+	if self._coroutine ~= nil then
+		cs_coroutine.stop(self._coroutine)
+		self._coroutine = nil
+	end
+	if self._coroutineOpen ~= nil then
+		cs_coroutine.stop(self._coroutineOpen)
+		self._coroutineOpen = nil
+	end
 	PlayerData.Voice:StopCharVoice()
 end
 function TDBattleResultCtrl:SetAffixIcon(trIcon, nAffixId)
@@ -331,9 +337,9 @@ function TDBattleResultCtrl:RefreshWorldClass(nExp)
 	local nWorldClass = PlayerData.Base:GetWorldClass()
 	local nCurExp = PlayerData.Base:GetWorldExp()
 	local mapCfg = ConfigTable.GetData("WorldClass", nWorldClass + 1, true)
-	local nFullExp = 0
+	local nFullExp = 1
 	if mapCfg then
-		nFullExp = mapCfg.Exp
+		nFullExp = mapCfg.Exp or 1
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtRank, nWorldClass)
 	NovaAPI.SetTMPText(self._mapNode.txtWorldExp, nCurExp .. "/" .. nFullExp)
@@ -341,7 +347,6 @@ function TDBattleResultCtrl:RefreshWorldClass(nExp)
 	NovaAPI.SetImageFillAmount(self._mapNode.imgExp, 1 < nfillAmount and 1 or nfillAmount)
 	self._mapNode.imgExpBg.gameObject:SetActive(0 < nExp)
 	NovaAPI.SetTMPText(self._mapNode.txtGetWorldExp, "+" .. nExp)
-	self._mapNode.goRankArrow.gameObject:SetActive(0 < nExp)
 	self._mapNode.goRankArrow.gameObject:SetActive(false)
 end
 function TDBattleResultCtrl:ClosePanel()
@@ -354,23 +359,24 @@ function TDBattleResultCtrl:ClosePanel()
 	end
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.Mask, 0)
 	self._mapNode.Mask.gameObject:SetActive(true)
-	local sequence = DOTween.Sequence()
-	sequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
-	sequence:AppendCallback(function()
-		if self.bSuccess then
+	self._sequence = DOTween.Sequence()
+	self._sequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
+	self._sequence:AppendCallback(dotween_callback_handler(self, self.OnFadeComplete))
+	self._sequence:SetUpdate(true)
+end
+function TDBattleResultCtrl:OnFadeComplete()
+	if self.bSuccess then
+		NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
+		self._mapNode.imgBlurredBg:SetActive(false)
+	else
+		local function levelEndCallback()
+			EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
 			NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 			self._mapNode.imgBlurredBg:SetActive(false)
-		else
-			local function levelEndCallback()
-				EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
-				NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
-				self._mapNode.imgBlurredBg:SetActive(false)
-			end
-			EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
-			CS.AdventureModuleHelper.LevelStateChanged(true, 0, true)
 		end
-	end)
-	sequence:SetUpdate(true)
+		EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
+		CS.AdventureModuleHelper.LevelStateChanged(true, 0, true)
+	end
 end
 function TDBattleResultCtrl:RefreshGacha()
 	local sIconPath = "UI/big_sprites/"
@@ -403,7 +409,7 @@ function TDBattleResultCtrl:OpenReward()
 			end
 			UTILS.OpenReceiveByDisplayItem(self.mapReward, self.mapChangeInfo, callback)
 		end
-		cs_coroutine.start(wait)
+		self._coroutineOpen = cs_coroutine.start(wait)
 	else
 		self:ClosePanel()
 	end

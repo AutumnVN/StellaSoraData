@@ -3,7 +3,7 @@ TDBattleResultPanel._bAddToBackHistory = false
 TDBattleResultPanel._tbDefine = {
 	{
 		sPrefabPath = "BattleResult/TravelerDuelBattleResultPanel.prefab",
-		sCtrlName = "Game.UI.TrekkerVersus.TDBattleResultCtrl"
+		sCtrlName = "Game.UI.TrekkerVersus_600002.TDBattleResultCtrl"
 	}
 }
 function TDBattleResultPanel:Awake()

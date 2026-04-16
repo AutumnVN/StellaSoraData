@@ -198,6 +198,14 @@ return {
 		signature = "A blade knows no hesitation."
 	},
 	{
+		id = 145,
+		icon = "Icon/Head/head_14501_S",
+		name = "Otoha",
+		landmark = "Everywhere",
+		signature = "This account has been suspended for violating the rules.",
+		ver = "1.9.0"
+	},
+	{
 		id = 147,
 		icon = "Icon/Head/head_14701_S",
 		name = "Caramel",
@@ -247,6 +255,13 @@ return {
 		signature = "Out on vacation."
 	},
 	{
+		id = 3136,
+		icon = "Icon/Head/head_npc13601_S",
+		name = "Ruby",
+		landmark = "United Harvest (Philae)",
+		signature = "Bold in heart, brave in spirit!"
+	},
+	{
 		id = 999,
 		icon = "Icon/Head/head_group_S",
 		name = "WORK NEVER ENDS",
@@ -277,7 +292,7 @@ return {
 	{
 		id = 995,
 		icon = "Icon/Head/head_anonymity_S",
-		name = "",
+		name = "Anonymous",
 		landmark = "",
 		signature = ""
 	},

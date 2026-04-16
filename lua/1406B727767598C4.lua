@@ -91,7 +91,8 @@ ReceivePropsNPCCtrl._mapNodeConfig = {
 ReceivePropsNPCCtrl._mapEventConfig = {
 	[EventId.ShowBubbleVoiceText] = "OnEvent_ShowBubbleVoiceText",
 	[EventId.UIBackConfirm] = "OnEvent_UIBack",
-	[EventId.UIHomeConfirm] = "OnEvent_Home"
+	[EventId.UIHomeConfirm] = "OnEvent_Home",
+	[EventId.ClosePanel] = "OnEvent_ClosePanel"
 }
 function ReceivePropsNPCCtrl:RefreshList()
 	if self.nRewardCount <= 4 then
@@ -406,6 +407,12 @@ end
 function ReceivePropsNPCCtrl:OnEvent_Home(nPanelId)
 	if PanelId.DiscSample ~= nPanelId or PanelId.CharBgTrialPanel ~= nPanelId then
 		PlayerVoiceData:StartBoardFreeTimer(self.nNpcId)
+	end
+end
+function ReceivePropsNPCCtrl:OnEvent_ClosePanel(nPanelId)
+	if nPanelId == PanelId.DiscSample then
+		self.bPlayVoice = false
+		self:PlayVoice()
 	end
 end
 return ReceivePropsNPCCtrl

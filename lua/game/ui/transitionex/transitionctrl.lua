@@ -294,8 +294,8 @@ function TransitionCtrl:Set_17(goStyle, nParam)
 	self:SetPngSprite(img_manga:GetComponent("Image"), mangaConfig.Source)
 end
 function TransitionCtrl:Set_18(goStyle, nParam)
-	local img_manga = goStyle.transform:Fing("img_manga")
-	local txt_title = goStyle.transform:Fing("img_titleBg/txt_title")
+	local img_manga = goStyle.transform:Find("img_manga")
+	local txt_title = goStyle.transform:Find("img_titleBg/txt_title")
 	local mangaConfig = self:RandomMangaConfig()
 	if mangaConfig == nil then
 		return
@@ -310,10 +310,7 @@ function TransitionCtrl:Set_22(goStyle, nParam)
 		img.gameObject:SetActive(false)
 		table.insert(tbImage, img)
 	end
-	self.nStarTowerImgIndex = self.nStarTowerImgIndex + 1
-	if 3 < self.nStarTowerImgIndex then
-		self.nStarTowerImgIndex = self.nStarTowerImgIndex % 3
-	end
+	self.nStarTowerImgIndex = self.nStarTowerImgIndex % 3 + 1
 	local showImage = tbImage[self.nStarTowerImgIndex]
 	showImage.gameObject:SetActive(true)
 end

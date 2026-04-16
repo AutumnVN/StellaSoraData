@@ -969,6 +969,18 @@ end
 function CmdInfo.ParseParam_SetBubbleUIType(ctrl, tr, tbParam)
 	tbParam[1] = ctrl:GetDDIndex(tr, "dd_UIType") + 1
 end
+function CmdInfo.VisualizedCmd_SetCameraAperture(ctrl, tr, param)
+	if param == nil then
+		return {false}
+	end
+	ctrl:SetTog(tr, "tog_Visible", param[1])
+end
+function CmdInfo.TbDataToCfgStr_SetCameraAperture(ctrl, tbParam)
+	return string.format("  {cmd=\"SetCameraAperture\",param={%s}},", tostring(tbParam[1]))
+end
+function CmdInfo.ParseParam_SetCameraAperture(ctrl, tr, tbParam)
+	tbParam[1] = ctrl:GetTog(tr, "tog_Visible")
+end
 function CmdInfo.VisualizedCmd_SetPhone(ctrl, tr, param)
 	if param == nil then
 		return {0, 1}

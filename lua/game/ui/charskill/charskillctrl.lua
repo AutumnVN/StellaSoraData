@@ -161,6 +161,10 @@ CharSkillCtrl._mapNodeConfig = {
 	btnSwitch2_off = {
 		sComponentName = "UIButton",
 		callback = "OnEvent_SetSimpleDesc"
+	},
+	btEnergyEff = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_ShowEnergyEff"
 	}
 }
 CharSkillCtrl._mapEventConfig = {
@@ -482,5 +486,14 @@ end
 function CharSkillCtrl:OnEvent_SetDesc()
 	PlayerCharData:SetCharPanelSkillDescType(false)
 	self:SetUpgrade()
+end
+function CharSkillCtrl:OnBtnClick_ShowEnergyEff(btn)
+	if self.nCharId ~= nil then
+		local mapData = {
+			nCharId = self.nCharId,
+			bCharSkillEnergyEff = true
+		}
+		EventManager.Hit(EventId.OpenPanel, PanelId.SkillTips, btn.transform, mapData)
+	end
 end
 return CharSkillCtrl

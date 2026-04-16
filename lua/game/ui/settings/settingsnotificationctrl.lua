@@ -34,12 +34,18 @@ function SettingsNotificationCtrl:Quit()
 	end
 end
 function SettingsNotificationCtrl:LoadSetting()
+	self.energy = self._panel:LoadLocalData("Energy")
 	self._mapNode.Energy:Init(function()
-	end, true)
+		self.energy = not self.energy
+	end, self.energy)
+	self.dispatch = self._panel:LoadLocalData("Dispatch")
 	self._mapNode.Dispatch:Init(function()
-	end, true)
+		self.dispatch = not self.dispatch
+	end, self.dispatch)
 end
 function SettingsNotificationCtrl:SaveSetting()
+	self._panel:SaveLocalData("Energy", self.energy)
+	self._panel:SaveLocalData("Dispatch", self.dispatch)
 end
 function SettingsNotificationCtrl:Awake()
 	self.bInit = false
@@ -52,6 +58,7 @@ function SettingsNotificationCtrl:OnDisable()
 		return
 	end
 	self:SaveSetting()
+	EventManager.Hit(EventId.SettingsNotificationClose)
 end
 function SettingsNotificationCtrl:OnDestroy()
 end

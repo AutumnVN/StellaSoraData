@@ -57,7 +57,7 @@ function GuideGroup_42:Step_1()
 	self.parent:ActiveHide(true)
 	current = 1
 	local wait = function()
-		coroutine.yield(CS.UnityEngine.WaitForSeconds(0.2))
+		coroutine.yield(CS.UnityEngine.WaitForSeconds(0.5))
 		self.parent:PlayTypeMask(self.msg)
 	end
 	cs_coroutine.start(wait)

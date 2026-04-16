@@ -68,7 +68,7 @@ function RedDotManager.OnEvent_UnRegisterRedDot(_, sKey, paramJson, objGo)
 		param = tbParam
 	elseif tbParam.sParam == "empty" then
 		param = nil
-	elseif tbParam.sParam ~= nil then
+	else
 		param = tbParam.sParam
 	end
 	local bCheck, sNodeKey = RedDotManager.GetNodeKey(sKey, param)
@@ -217,16 +217,16 @@ function RedDotManager.PrintRedDot(sKey, param, bLeaf)
 			if bLeaf then
 				v:GetParentKey(tbKey)
 			end
-			local sKey = ""
+			local sCurKey = ""
 			for i = #tbKey, 1, -1 do
 				if i == #tbKey then
-					sKey = tbKey[i]
+					sCurKey = tbKey[i]
 				else
-					sKey = sKey .. "->" .. tbKey[i]
+					sCurKey = sCurKey .. "->" .. tbKey[i]
 				end
 			end
 			local bindObjCount = v:GetBindObjCount()
-			printError(string.format("[RedDot] key = %s, redDotCount = %s, bindObjCount = %s", sKey, v.nRedDotCount, bindObjCount))
+			printError(string.format("[RedDot] key = %s, redDotCount = %s, bindObjCount = %s", sCurKey, v.nRedDotCount, bindObjCount))
 		end
 	end
 end

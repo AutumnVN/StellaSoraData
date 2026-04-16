@@ -415,6 +415,7 @@ function MainViewCtrl:RefreshShow()
 	PlayerData.SideBanner:TryOpenSideBanner()
 	local RefreshFastBtn = function()
 		self:RefreshActivityFastEntrance()
+		self:RefreshLeftActivityList()
 	end
 	PlayerData.Activity:SendActivityDetailMsg(RefreshFastBtn)
 	self:RefreshRedDot()
@@ -791,6 +792,35 @@ function MainViewCtrl:AddOtherBanner()
 					nNextOpenTime = nOpenTime
 				end
 			end
+		elseif mapLineData.BannerType == GameEnum.bannerType.SeaPayment and not NovaAPI.IsReviewServerEnv() then
+			local sUrl = mapLineData.Param3
+			if sUrl == nil or sUrl == "" then
+				return
+			end
+			local nOpenTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param1)
+			local nCloseTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param2)
+			if nOpenTime <= nCurTime and nCloseTime >= nCurTime then
+				local sPlatform = mapLineData.Param4
+				local sOption = mapLineData.Param5
+				local curPlatform = CS.ClientManager.Instance.Platform
+				local tbPlatformList = string.split(sPlatform, ",")
+				local tbOptionList = string.split(sOption, ",")
+				local nIndex = table.indexof(tbPlatformList, curPlatform)
+				local sPid = mapLineData.Param6
+				if nIndex ~= nil then
+					local sOptionType = tbOptionList[nIndex]
+					local bInside = sOptionType == "0"
+					if SDKManager:IsSDKInit() then
+						table.insert(self.tbBannerList, {
+							nType = GameEnum.bannerType.SeaPayment,
+							sBanner = mapLineData.bannerName,
+							sUrl = sUrl,
+							bInside = bInside,
+							sPid = sPid
+						})
+					end
+				end
+			end
 		end
 	end
 	ForEachTableLine(DataTable.Banner, forEachMap)
@@ -976,7 +1006,7 @@ function MainViewCtrl:RefreshLeftActivityList()
 					RedDotManager.UnRegisterNode(RedDotDefine.Activity_Group, {
 						actData.actGroupData:GetActGroupId()
 					}, self._mapNode.activityRedDot_[index])
-					RedDotManager.UnRegisterNode(RedDotDefine.Activity_Group, {
+					RedDotManager.UnRegisterNode(RedDotDefine.Activity_GroupNew, {
 						actData.actGroupData:GetActGroupId()
 					}, self._mapNode.activityRedDotNew_[index])
 				end
@@ -1114,7 +1144,11 @@ function MainViewCtrl:RefreshActivityFastEntrance()
 			self:SetPngSprite(self._mapNode.imgActivityFastBg[k], actCfg.EnterRes)
 			local nActType = v:GetActType()
 			if nActType == GameEnum.activityType.TrekkerVersus then
-				RedDotManager.RegisterNode(RedDotDefine.TrekkerVersusQuest, nil, self._mapNode.goActivityFastRedDot[k], nil, nil, true)
+				local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(v:GetActId())
+				RedDotManager.RegisterNode(RedDotDefine.TrekkerVersus, {
+					nActGroupId,
+					v:GetActId()
+				}, self._mapNode.goActivityFastRedDot[k], nil, nil, true)
 			end
 			if nActType == GameEnum.activityType.Breakout then
 				RedDotManager.RegisterNode(RedDotDefine.Activity_GroupNew, actCfg.MidGroupId, self._mapNode.goActivityFastRedDotNew[k], nil, nil, true)
@@ -1266,6 +1300,7 @@ function MainViewCtrl:OnEnable()
 	end
 	local bHasBattlePass = PlayerData.BattlePass:GetHasBattlePass()
 	self._mapNode.btnBattlePass.gameObject.transform.localScale = bHasBattlePass and Vector3.one or Vector3.zero
+	PlayerData.PotentialPreselection:SendGetPreselectionList()
 end
 function MainViewCtrl:OnDisable()
 	EventManager.Remove("OnEscCallback", self, self.OnEvent_OnEscCallback)
@@ -1531,6 +1566,17 @@ function MainViewCtrl:OnBtnClick_btnActBanner()
 			end
 		else
 			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Function_NotAvailable"))
+		end
+	elseif bannerData.nType == GameEnum.bannerType.SeaPayment then
+		local sUrl = bannerData.sUrl
+		local bInside = bannerData.bInside
+		local sPid = bannerData.sPid
+		if SDKManager:IsSDKInit() then
+			if bInside then
+				SDKManager:ShowWebView(false, "", sUrl, 1, 0, false, sPid)
+			else
+				SDKManager:ShowWebView(false, "", sUrl, 1, 1, false, sPid)
+			end
 		end
 	end
 end

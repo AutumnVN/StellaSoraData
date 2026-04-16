@@ -66,7 +66,7 @@ function GuideGroup_52:Step_2()
 		BindIcon = "QuestNewbiePanel/----SafeAreaRoot----/rtTeamFormation/goTeamSelect/goFixTeams/btnTeam1",
 		Deviation = {0, 2},
 		Desc = "Guide_52_2",
-		DescDeviation = {-500, -400},
+		DescDeviation = {780, -350},
 		HandDeviation = {0, -320},
 		Type = GameEnum.guidetype.ForcedClick
 	}

@@ -107,31 +107,21 @@ function StoryChapterCtrl:OnEnable()
 end
 function StoryChapterCtrl:OnDisable()
 end
-function StoryChapterCtrl:RefreshChapterList(grid, index)
-	index = index + 1
+function StoryChapterCtrl:RefreshChapterGrid(grid, index)
 	local chapterData = self.tbAllChapter[index]
-	if chapterData == nil then
-		return
-	end
-	local trans = grid.transform:Find("btn/AnimRoot")
+	local trans = grid.transform:Find("AnimRoot")
 	local imgBg = trans:Find("imgBg"):GetComponent("Image")
-	local txtIndex = trans:Find("txtIndex"):GetComponent("TMP_Text")
+	if chapterData.Type == GameEnum.chapterType.Mainline then
+		local txtIndex = trans:Find("txtIndex"):GetComponent("TMP_Text")
+		NovaAPI.SetTMPText(txtIndex, chapterData.Index)
+	end
 	local txtChapterIndex = trans:Find("imgTitle1/txtChapterIndex"):GetComponent("TMP_Text")
 	local goUnlock = trans:Find("goUnlock")
 	local goLock = trans:Find("goLock")
 	local txtTitle = goUnlock:Find("txtTitle"):GetComponent("TMP_Text")
 	local txtIndexTitle = goUnlock:Find("txtIndexTitle"):GetComponent("TMP_Text")
 	local aniTrans = trans:GetComponent("Animator")
-	local ChapterRedDot = trans:Find("ChapterRedDot")
 	local goFXChapterList = trans:Find("FXChapterList")
-	local nInstanceID = grid:GetInstanceID()
-	if not self.tbGridCtrl[nInstanceID] then
-		self.tbGridCtrl[nInstanceID] = {
-			Id = chapterData.Id,
-			aniTrans = aniTrans
-		}
-	end
-	RedDotManager.RegisterNode(RedDotDefine.Map_MainLine_Chapter, chapterData.Id, ChapterRedDot, nil, nil, true)
 	if self.bInitLoop and self.nCompletedChapter < 0 and self.nRecentChapterId <= 3 then
 		if index <= 5 then
 			if index == 1 then
@@ -147,7 +137,6 @@ function StoryChapterCtrl:RefreshChapterList(grid, index)
 	else
 		aniTrans:Play("StoryChapter_chapter_defaut")
 	end
-	NovaAPI.SetTMPText(txtIndex, chapterData.Index)
 	NovaAPI.SetTMPText(txtChapterIndex, chapterData.Name)
 	self:SetPngSprite(imgBg, chapterData.ChapterIcon)
 	local isUnlock, lockText = PlayerData.Avg:IsStoryChapterUnlock(chapterData.Id)
@@ -170,7 +159,7 @@ function StoryChapterCtrl:RefreshChapterList(grid, index)
 		local txtLock = goLock:Find("txtLock"):GetComponent("TMP_Text")
 		NovaAPI.SetTMPText(txtLock, lockText)
 	end
-	local btn = grid.transform:Find("btn"):GetComponent("UIButton")
+	local btn = grid.transform:GetComponent("UIButton")
 	btn.onClick:RemoveAllListeners()
 	btn.onClick:AddListener(function()
 		if isUnlock then
@@ -181,6 +170,33 @@ function StoryChapterCtrl:RefreshChapterList(grid, index)
 			EventManager.Hit(EventId.OpenMessageBox, lockText)
 		end
 	end)
+end
+function StoryChapterCtrl:RefreshChapterList(grid, index)
+	index = index + 1
+	local chapterData = self.tbAllChapter[index]
+	if chapterData == nil then
+		return
+	end
+	local chapterType = chapterData.Type
+	local gridTrans = grid.transform
+	local mainlineTrans = gridTrans:Find("btn")
+	local branchlineTrans = gridTrans:Find("Branch")
+	if chapterType == GameEnum.chapterType.Mainline then
+		gridTrans = mainlineTrans
+	elseif chapterType == GameEnum.chapterType.Branchline then
+		gridTrans = branchlineTrans
+	end
+	mainlineTrans.gameObject:SetActive(chapterType == GameEnum.chapterType.Mainline)
+	branchlineTrans.gameObject:SetActive(chapterType == GameEnum.chapterType.Branchline)
+	self:RefreshChapterGrid(gridTrans, index)
+	local ChapterRedDot = gridTrans:Find("AnimRoot/ChapterRedDot")
+	local aniTrans = gridTrans:Find("AnimRoot"):GetComponent("Animator")
+	local nInstanceID = grid:GetInstanceID()
+	self.tbGridCtrl[nInstanceID] = {
+		Id = chapterData.Id,
+		aniTrans = aniTrans
+	}
+	RedDotManager.RegisterNode(RedDotDefine.Map_MainLine_Chapter, chapterData.Id, ChapterRedDot, nil, nil, true)
 end
 function StoryChapterCtrl:RefreshPersonality()
 	local tbPersonality, sTitle = PlayerData.Avg:CalcPersonality(1)
@@ -221,13 +237,21 @@ end
 function StoryChapterCtrl:OnBtn_ClickChapterGrid(index, grid)
 	EventManager.Hit(EventId.TemporaryBlockInput, 1)
 	for k, v in pairs(self.tbGridCtrl) do
-		if k ~= grid:GetInstanceID() then
+		if v.Id ~= index then
 			v.aniTrans:Play("StoryChapter_chapter_unsetout")
 		end
 	end
 	local time = self:PlayAnimOut()
 	self:AddTimer(1, time, function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.MainlineEx, index, PanelId.StoryChapter)
+		local chapterData = self.tbAllChapter[index]
+		if chapterData == nil then
+			return
+		end
+		if chapterData.Type == GameEnum.chapterType.Mainline then
+			EventManager.Hit(EventId.OpenPanel, PanelId.MainlineEx, index, PanelId.StoryChapter)
+		elseif chapterData.Type == GameEnum.chapterType.Branchline then
+			EventManager.Hit(EventId.OpenPanel, chapterData.StoryPanelId, index)
+		end
 	end, true, true, true)
 end
 function StoryChapterCtrl:OnBtn_ClickChangeInfo()

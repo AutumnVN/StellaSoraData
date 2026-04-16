@@ -183,7 +183,7 @@ function Timer:GetRemainInterval()
 		return 0
 	end
 end
-function Timer:GetRenmainTime()
+function Timer:GetRemainTime()
 	local nTotalTime = self._nTargetCount * self._nInterval
 	local nPassedTime = self._nInterval * self._nCurCount + self._nElapsed
 	if self._status == TimerStatus.Running then

@@ -47,13 +47,7 @@ function ThrowGiftItemSelectCtrl:OnDestroy()
 end
 function ThrowGiftItemSelectCtrl:OnRelease()
 end
-function ThrowGiftItemSelectCtrl:OpenPanel(tbItem, callback, curIdx)
-	GamepadUIManager.EnableGamepadUI("ThrowGiftItemSelectCtrl", self.tbGamepadUINode)
-	self.curPosIdx = curIdx
-	self.gameObject:SetActive(true)
-	self.callback = callback
-	self.bSelected = false
-	self.curIdx = 0
+function ThrowGiftItemSelectCtrl:Refresh(tbItem)
 	self._mapNode.btnItemSelectCtrl[1]:Refresh(tbItem[1])
 	self._mapNode.btnItemSelectCtrl[2]:Refresh(tbItem[2])
 	self._mapNode.btnItemSelectCtrl[1]:SetSelect(false)
@@ -66,6 +60,18 @@ function ThrowGiftItemSelectCtrl:OpenPanel(tbItem, callback, curIdx)
 	self._mapNode.btnItemSelectCtrl[2].gameObject:SetActive(true)
 	WwiseAudioMgr:PostEvent("Mode_Present_intensify")
 	self:ResetSelect(self._mapNode.btnItemSelect)
+end
+function ThrowGiftItemSelectCtrl:OpenPanel(tbItem, callback, curIdx)
+	GamepadUIManager.EnableGamepadUI("ThrowGiftItemSelectCtrl", self.tbGamepadUINode)
+	self.curPosIdx = curIdx
+	self.gameObject:SetActive(true)
+	self.callback = callback
+	self.bSelected = false
+	self.curIdx = 0
+	self.tbItems = tbItem
+	self.nCurItemsIdx = 1
+	self.tbResultIdx = {}
+	self:Refresh(self.tbItems[self.nCurItemsIdx])
 end
 function ThrowGiftItemSelectCtrl:ResetSelect(tbUI)
 	self.curIdx = 0
@@ -109,34 +115,48 @@ function ThrowGiftItemSelectCtrl:OnEvent_ThrowGiftItemSelectConfirmClick()
 	end
 	self.bSelected = true
 	self._mapNode.btnItemSelectCtrl[self.curIdx]:PlaySelectAnim()
-	WwiseAudioMgr:PostEvent("Mode_Present_intensify_ok")
-	local endPos = self._mapNode.rtPos[self.curPosIdx].transform.position
-	local beginPos = self._mapNode.btnItemSelectCtrl[self.curIdx].gameObject.transform.position
-	local controlPos = Vector3(3, 5, 0)
-	for i = 1, 2 do
-		self._mapNode.btnItemSelectCtrl[i].gameObject:SetActive(i == self.curIdx)
-	end
-	local wait = function()
-		local totalMoveTime = 0.3
-		local moveTime = 0
-		local normalizedTime = 0
-		while normalizedTime < 1 do
-			moveTime = moveTime + CS.UnityEngine.Time.unscaledDeltaTime
-			normalizedTime = moveTime / totalMoveTime
-			normalizedTime = normalizedTime <= 1 and normalizedTime or 1
-			local x, y, z = UTILS.GetBezierPointByT(beginPos, controlPos, endPos, normalizedTime)
-			local angleZ = -180 * normalizedTime
-			self._mapNode.btnItemSelectCtrl[self.curIdx].gameObject.transform.localEulerAngles = Vector3(0, 0, angleZ)
-			self._mapNode.btnItemSelectCtrl[self.curIdx].gameObject.transform.position = Vector3(x, y, z)
-			coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+	table.insert(self.tbResultIdx, self.curIdx)
+	if self.nCurItemsIdx < #self.tbItems then
+		self.nCurItemsIdx = self.nCurItemsIdx + 1
+		self:Refresh(self.tbItems[self.nCurItemsIdx])
+	else
+		WwiseAudioMgr:PostEvent("Mode_Present_intensify_ok")
+		local endPos = self._mapNode.rtPos[self.curPosIdx].transform.position
+		local beginPos = self._mapNode.btnItemSelectCtrl[self.curIdx].gameObject.transform.position
+		local controlPos = Vector3(3, 5, 0)
+		for i = 1, 2 do
+			self._mapNode.btnItemSelectCtrl[i].gameObject:SetActive(i == self.curIdx)
 		end
-		if self.callback ~= nil and type(self.callback) == "function" then
-			self.callback(self.curIdx)
+		local wait = function()
+			local totalMoveTime = 0.3
+			local moveTime = 0
+			local normalizedTime = 0
+			while normalizedTime < 1 do
+				moveTime = moveTime + CS.UnityEngine.Time.unscaledDeltaTime
+				normalizedTime = moveTime / totalMoveTime
+				normalizedTime = normalizedTime <= 1 and normalizedTime or 1
+				local x, y, z = UTILS.GetBezierPointByT(beginPos, controlPos, endPos, normalizedTime)
+				local angleZ = -180 * normalizedTime
+				self._mapNode.btnItemSelectCtrl[self.curIdx].gameObject.transform.localEulerAngles = Vector3(0, 0, angleZ)
+				self._mapNode.btnItemSelectCtrl[self.curIdx].gameObject.transform.position = Vector3(x, y, z)
+				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+			end
+			if self.callback ~= nil and type(self.callback) == "function" then
+				self.callback(self.tbResultIdx)
+			end
+			self.gameObject:SetActive(false)
+			GamepadUIManager.DisableGamepadUI("ThrowGiftItemSelectCtrl")
 		end
-		self.gameObject:SetActive(false)
-		GamepadUIManager.DisableGamepadUI("ThrowGiftItemSelectCtrl")
+		if #self.tbResultIdx <= 1 then
+			cs_coroutine.start(wait)
+		else
+			if self.callback ~= nil and type(self.callback) == "function" then
+				self.callback(self.tbResultIdx)
+			end
+			self.gameObject:SetActive(false)
+			GamepadUIManager.DisableGamepadUI("ThrowGiftItemSelectCtrl")
+		end
 	end
-	cs_coroutine.start(wait)
 end
 function ThrowGiftItemSelectCtrl:OnEvent_GamepadUIChange(sName, nBeforeType, nAfterType)
 	if sName ~= "ThrowGiftItemSelectCtrl" then

@@ -1,6 +1,8 @@
 local PlayerBaseData = class("PlayerBaseData")
 local TimerManager = require("GameCore.Timer.TimerManager")
 local AvgManager = require("GameCore.Module.AvgManager")
+local NotificationManager = require("GameCore.Module.NotificationManager")
+local LocalSettingData = require("GameCore.Data.LocalSettingData")
 local TimerScaleType = require("GameCore.Timer.TimerScaleType")
 local ModuleManager = require("GameCore.Module.ModuleManager")
 local localdata = require("GameCore.Data.LocalData")
@@ -127,6 +129,14 @@ function PlayerBaseData:ProcessTableData()
 	end
 	ForEachTableLine(ConfigTable.Get("DemonAdvance"), foreachTable)
 	CacheTable.Set("_DemonAdvance", _tbDemonAdvance)
+	self.tbHonorLevelTitle = {}
+	local foreachHonorLevel = function(mapData)
+		if self.tbHonorLevelTitle[mapData.GroupId] == nil then
+			self.tbHonorLevelTitle[mapData.GroupId] = {}
+		end
+		table.insert(self.tbHonorLevelTitle[mapData.GroupId], mapData)
+	end
+	ForEachTableLine(ConfigTable.Get("HonorLevel"), foreachHonorLevel)
 end
 function PlayerBaseData:CacheAccInfo(mapData)
 	if mapData ~= nil then
@@ -196,6 +206,19 @@ function PlayerBaseData:CacheHonorTitleInfo(mapData)
 	end
 end
 function PlayerBaseData:CacheHonorTitleList(mapData)
+	if not mapData then
+		return
+	end
+	if not self._tbHonorTitleList then
+		self._tbHonorTitleList = {}
+	end
+	for _, v in pairs(mapData) do
+		local data = {Id = v}
+		table.insert(self._tbHonorTitleList, data)
+	end
+	self:RefreshHonorTitleRedDot()
+end
+function PlayerBaseData:CacheHonorTitleListActivity(mapData)
 	if not mapData then
 		return
 	end
@@ -417,7 +440,11 @@ function PlayerBaseData:ChangeHonorTitle(mapData)
 	local newData = {}
 	local delData = {}
 	for _, v in pairs(mapData) do
-		table.insert(self._tbHonorTitleList, v.NewId)
+		local data = {
+			Lv = v.Level,
+			Id = v.NewId
+		}
+		table.insert(self._tbHonorTitleList, data)
 		local honorData = ConfigTable.GetData("Honor", v.NewId)
 		if honorData.TabType == GameEnum.honorTabType.Achieve then
 			local foreachHonor = function(mapData)
@@ -1175,6 +1202,18 @@ function PlayerBaseData:CheckNewFuncUnlockFixedRoguelike(nFRId)
 	end
 	ForEachTableLine(DataTable.OpenFunc, ForEachOpenFunc)
 end
+function PlayerBaseData:GetLevelHonorTitleData(nGroupId)
+	local tbHonorTitle = {}
+	local maxLevel = 0
+	if self.tbHonorLevelTitle[nGroupId] == nil then
+		return nil, maxLevel
+	end
+	for _, v in pairs(self.tbHonorLevelTitle[nGroupId]) do
+		tbHonorTitle[v.Level] = v
+		maxLevel = math.max(maxLevel, v.Level)
+	end
+	return tbHonorTitle, maxLevel
+end
 function PlayerBaseData:OnEvent_TransAnimInClear()
 	self.bInLoading = true
 end
@@ -1262,5 +1301,7 @@ function PlayerBaseData:OnCS2LuaEvent_AppFocus(bFocus)
 		self.nLastEnergyBattery = self._nCurEnergyBattery
 		printLog("Lua PlayerBaseData OnCS2LuaEvent_AppFocus, Lose APP Focus, nCachedTime: " .. tostring(self.nCachedTime) .. ", nRequestEnergyLimitTime: " .. tostring(self.nRequestEnergyLimitTime) .. ", nLastEnergy: " .. tostring(self.nLastEnergy) .. ", nLastEnergyBattery: " .. tostring(self.nLastEnergyBattery))
 	end
+end
+function PlayerBaseData:OnEvent_SettingsNotificationClose()
 end
 return PlayerBaseData

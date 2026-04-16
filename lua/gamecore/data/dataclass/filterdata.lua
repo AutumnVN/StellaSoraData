@@ -229,6 +229,11 @@ function FilterData:GetCacheFilterByKey(fKey, sKey)
 	end
 	return self:GetFilterByKey(fKey, sKey), false
 end
+function FilterData:GetCacheFilter(fKey)
+	if nil ~= self.tbCacheFilter[fKey] then
+		return self.tbCacheFilter[fKey]
+	end
+end
 function FilterData:CacheCharSort(nType, bOrder)
 	self.nFormationCharSrotType = nType
 	self.bFormationCharOrder = bOrder

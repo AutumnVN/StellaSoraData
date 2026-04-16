@@ -25,7 +25,10 @@ TrekkerVersusQuestGridCtrl._mapNodeConfig = {
 	},
 	maskComplete = {},
 	imgComplete = {},
-	btnReceive = {sComponentName = "UIButton"},
+	btnReceive = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Receive"
+	},
 	btnJump = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_JumpTo"
@@ -47,23 +50,33 @@ function TrekkerVersusQuestGridCtrl:OnDestroy()
 end
 function TrekkerVersusQuestGridCtrl:OnRelease()
 end
-function TrekkerVersusQuestGridCtrl:Refresh(mapQuestData)
-	local mapQuestCfgData = ConfigTable.GetData("TravelerDuelChallengeQuest", mapQuestData.Id)
-	if mapQuestCfgData == nil then
-		return
+function TrekkerVersusQuestGridCtrl:Refresh(mapQuestData, actData)
+	self._mapActData = actData
+	self.mapQuestData = mapQuestData
+	local sHeatReachText = ConfigTable.GetUIText("TD_DuelHeatReach")
+	NovaAPI.SetTMPText(self._mapNode.TMPDesc, sHeatReachText .. "<space=9>" .. mapQuestData.TargetValue)
+	local nStatus = 0
+	local nCurHeat = self._mapActData:GetCurHeatValue().nSelfHotValue
+	if nCurHeat >= mapQuestData.TargetValue then
+		nStatus = 1
 	end
-	self.cfgData = mapQuestCfgData
-	NovaAPI.SetTMPText(self._mapNode.TMPDesc, mapQuestCfgData.Title)
-	self._mapNode.btnReceive.gameObject:SetActive(mapQuestData.Status == 1)
-	self._mapNode.btnJump.gameObject:SetActive(mapQuestData.Status == 0 and 0 < #self.cfgData.AffixJumpTo)
-	self._mapNode.TMPIncomplete.gameObject:SetActive(mapQuestData.Status == 0)
-	self._mapNode.imgComplete:SetActive(mapQuestData.Status == 2)
-	self._mapNode.maskComplete:SetActive(mapQuestData.Status == 2)
+	local tbHeatRewardIds = self._mapActData:GetHotValueRewardTable()
+	for k, v in pairs(tbHeatRewardIds) do
+		if v == mapQuestData.Id then
+			nStatus = 2
+			break
+		end
+	end
+	self._mapNode.btnReceive.gameObject:SetActive(nStatus == 1)
+	self._mapNode.btnJump.gameObject:SetActive(nStatus == 0)
+	self._mapNode.TMPIncomplete.gameObject:SetActive(nStatus == 0)
+	self._mapNode.imgComplete:SetActive(nStatus == 2)
+	self._mapNode.maskComplete:SetActive(nStatus == 2)
 	for i = 1, 3 do
-		local sFieldName1 = "AwardItemTid" .. i
-		local sFieldName2 = "AwardItemNum" .. i
-		local nItemTid = mapQuestCfgData[sFieldName1]
-		local nCount = mapQuestCfgData[sFieldName2]
+		local sFieldName1 = "ItemId" .. i
+		local sFieldName2 = "ItemQty" .. i
+		local nItemTid = mapQuestData[sFieldName1]
+		local nCount = mapQuestData[sFieldName2]
 		if 0 < nItemTid then
 			self._mapNode.btnItem[i].gameObject:SetActive(true)
 			self._mapNode.item[i]:SetItem(nItemTid, nil, nCount, nil, mapQuestData.Status == 2, nil, nil, true)
@@ -73,13 +86,16 @@ function TrekkerVersusQuestGridCtrl:Refresh(mapQuestData)
 	end
 end
 function TrekkerVersusQuestGridCtrl:OnBtnClick_Item(btn, nIdx)
-	local sFieldName1 = "AwardItemTid" .. nIdx
-	local sFieldName2 = "AwardItemNum" .. nIdx
-	local nItemTid = self.cfgData[sFieldName1]
-	local nCount = self.cfgData[sFieldName2]
+	local sFieldName1 = "ItemId" .. nIdx
+	local sFieldName2 = "ItemQty" .. nIdx
+	local nItemTid = self.mapQuestData[sFieldName1]
+	local nCount = self.mapQuestData[sFieldName2]
 	UTILS.ClickItemGridWithTips(nItemTid, btn.transform, true, true, false)
 end
 function TrekkerVersusQuestGridCtrl:OnBtnClick_JumpTo(btn)
-	EventManager.Hit("TrekkerVersusAffixJump", self.cfgData.AffixJumpTo)
+	EventManager.Hit("TrekkerVersusHeatQuestJump", 1)
+end
+function TrekkerVersusQuestGridCtrl:OnBtnClick_Receive()
+	EventManager.Hit("TrekkerVersusReceiveHeatQuest", 1)
 end
 return TrekkerVersusQuestGridCtrl

@@ -142,7 +142,7 @@ function HudMainCtrl:MonsterShowChanged(id, showed, nType, nDataId)
 		self.monsterHuds[id] = nil
 	end
 end
-function HudMainCtrl:MonsterAdvShowChanged(id, showed, nType, nDataId, bMultipleBoss)
+function HudMainCtrl:MonsterAdvShowChanged(id, showed, nType, nDataId)
 	local monsterHud = self.monsterAdvHuds[id]
 	local isPlayerSummoner = nType == GameEnum.monsterBloodType.PLAYERSUMMON
 	if showed then
@@ -158,7 +158,7 @@ function HudMainCtrl:MonsterAdvShowChanged(id, showed, nType, nDataId, bMultiple
 			monsterHud.gameObject.transform.localScale = Vector3.one
 		end
 		if monsterHud ~= nil then
-			monsterHud:SetMonsterId(id, nDataId, nType, bMultipleBoss)
+			monsterHud:SetMonsterId(id, nDataId, nType)
 			local height = AdventureModuleHelper.GetEntityMonsterBarHeight(id)
 			local offset = Vector3(0, height, 0)
 			AdventureModuleHelper.SetHudFollowTarget(id, monsterHud.gameObject, offset, true)
@@ -171,7 +171,7 @@ end
 function HudMainCtrl:OnEvent_ShowBossHUD(bossId, nType, showed, nDataId, nBloodType)
 	self.nBloodType = nBloodType
 	showed = showed and self.tbBossBloodState[bossId] == true
-	self:MonsterAdvShowChanged(bossId, showed, nType, nDataId, true)
+	self:MonsterAdvShowChanged(bossId, showed, nType, nDataId)
 end
 function HudMainCtrl:OnEvent_MonsterHUDChange(id, nType, showed, nDataId)
 	if nType == GameEnum.monsterBloodType.BOSSRUSH then

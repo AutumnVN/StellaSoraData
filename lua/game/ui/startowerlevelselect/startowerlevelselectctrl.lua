@@ -7,7 +7,8 @@ local mapToggle = {
 	[4] = GameEnum.diffculty.Diffculty_4,
 	[5] = GameEnum.diffculty.Diffculty_5,
 	[6] = GameEnum.diffculty.Diffculty_6,
-	[7] = GameEnum.diffculty.Diffculty_7
+	[7] = GameEnum.diffculty.Diffculty_7,
+	[8] = GameEnum.diffculty.Diffculty_8
 }
 StarTowerLevelSelectCtrl._mapNodeConfig = {
 	bgLevelInfo = {sNodeName = "----Bg----"},
@@ -16,6 +17,14 @@ StarTowerLevelSelectCtrl._mapNodeConfig = {
 	btnGo = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Go"
+	},
+	btnResearch = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Research"
+	},
+	txtBtnResearch = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "StarTower_ResearchPreview"
 	},
 	goBtnCoin = {},
 	imgCoinIcon = {sComponentName = "Image"},
@@ -38,20 +47,20 @@ StarTowerLevelSelectCtrl._mapNodeConfig = {
 	},
 	tog = {
 		sComponentName = "UIButton",
-		nCount = 7,
+		nCount = 8,
 		callback = "OnBtnClick_Tog"
 	},
 	imgLockMask = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_TogTips",
-		nCount = 7
+		nCount = 8
 	},
-	rt_LockMsg = {nCount = 7},
-	txtLockCondition = {sComponentName = "TMP_Text", nCount = 7},
+	rt_LockMsg = {nCount = 8},
+	txtLockCondition = {sComponentName = "TMP_Text", nCount = 8},
 	togCtrl = {
 		sNodeName = "tog",
 		sCtrlName = "Game.UI.TemplateEx.TemplateToggleCtrl",
-		nCount = 7
+		nCount = 8
 	},
 	TopBarPanel = {
 		sCtrlName = "Game.UI.TopBarEx.TopBarCtrl"
@@ -100,6 +109,7 @@ StarTowerLevelSelectCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_SweepTickets"
 	},
+	rt_Toggle = {sComponentName = "ScrollRect"},
 	rt_ToggleContent = {
 		sComponentName = "RectTransform"
 	},
@@ -133,6 +143,9 @@ StarTowerLevelSelectCtrl._mapNodeConfig = {
 	TMPFirstPassHint = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "StarTower_FirstPassHint"
+	},
+	StarTowerGrowthPreviewWindow = {
+		sCtrlName = "Game.UI.StarTowerGrowth.StarTowerGrowthPreviewWindowCtrl"
 	}
 }
 StarTowerLevelSelectCtrl._mapEventConfig = {
@@ -159,6 +172,11 @@ function StarTowerLevelSelectCtrl:OnEnable()
 		self.bJumpto = tbParam[3]
 		self.nJumptoHard = tbParam[1] == nil and 0 or tbParam[1]
 		self.nJumptoGroup = tbParam[2] == nil and 0 or tbParam[2]
+	end
+	if self.nJumptoHard >= 8 then
+		NovaAPI.SetVerticalNormalizedPosition(self._mapNode.rt_Toggle, 0)
+	else
+		NovaAPI.SetVerticalNormalizedPosition(self._mapNode.rt_Toggle, 1)
 	end
 	self._mapNode.rt_StarTowerSelect:SetActive(true)
 	self._mapNode.rt_StarTowerInfo:SetActive(false)
@@ -419,11 +437,13 @@ function StarTowerLevelSelectCtrl:RefreshStarTowerInfo(nGroupId, nHard, bSetTog)
 		end
 		self._mapNode.ListConditions:SetActive(true)
 		self._mapNode.btnLock.gameObject:SetActive(true)
+		self._mapNode.btnResearch.gameObject:SetActive(false)
 		self._mapNode.btnGo.gameObject:SetActive(false)
 		self._mapNode.btnSweep.gameObject:SetActive(false)
 	else
 		self._mapNode.ListConditions:SetActive(false)
 		self._mapNode.btnLock.gameObject:SetActive(false)
+		self._mapNode.btnResearch.gameObject:SetActive(true)
 		self._mapNode.btnGo.gameObject:SetActive(true)
 		self._mapNode.btnSweep.gameObject:SetActive(true)
 	end
@@ -614,5 +634,10 @@ function StarTowerLevelSelectCtrl:OnBtnClick_SweepTickets(btn)
 		bShowJumpto = false
 	}
 	EventManager.Hit(EventId.OpenPanel, PanelId.ItemTips, btn.transform, mapData)
+end
+function StarTowerLevelSelectCtrl:OnBtnClick_Research(btn)
+	local nDifficulty = mapToggle[self.curStarTowerHard]
+	local nMaxDifficulty = PlayerData.StarTower:GetGlobalMaxDifficult()
+	self._mapNode.StarTowerGrowthPreviewWindow:OpenPanel(nDifficulty, nMaxDifficulty)
 end
 return StarTowerLevelSelectCtrl

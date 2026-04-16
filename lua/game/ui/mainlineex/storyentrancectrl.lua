@@ -189,7 +189,7 @@ function StoryEntranceCtrl:RefreshMainlineQuickEntranceState()
 	local storyConfig = ConfigTable.GetData_Story(curStoryId)
 	local title = chapterConfig.Name .. " " .. storyConfig.Index
 	NovaAPI.SetTMPText(self._mapNode.txtMainlineChapter, title)
-	self:SetPngSprite(self._mapNode.imgMainlinceChapterBg, "UI/big_sprites/banner_avg_chapter" .. curChapter)
+	self:SetPngSprite(self._mapNode.imgMainlinceChapterBg, chapterConfig.BannerIcon)
 	self.curChapter = curChapter
 	self.curStoryId = curStoryId
 end
@@ -279,7 +279,12 @@ function StoryEntranceCtrl:OnBtn_ClickMainlineQuickEntrance()
 	if not isUnlock then
 		EventManager.Hit(EventId.OpenMessageBox, lockText)
 	else
-		EventManager.Hit(EventId.OpenPanel, PanelId.MainlineEx, self.curChapter)
+		local chapterData = ConfigTable.GetData("StoryChapter", self.curChapter, "")
+		if chapterData.Type == GameEnum.chapterType.Mainline then
+			EventManager.Hit(EventId.OpenPanel, PanelId.MainlineEx, self.curChapter)
+		else
+			EventManager.Hit(EventId.OpenPanel, chapterData.StoryPanelId, self.curChapter)
+		end
 	end
 end
 function StoryEntranceCtrl:OnBtn_ClickRecentStoryQuickEntrance()
@@ -303,7 +308,12 @@ function StoryEntranceCtrl:OnBtn_ClickActivityQuickEntrance()
 		local chapterId = previewConfig.StoryId
 		local isUnlock = AvgData:IsStoryChapterUnlock(chapterId)
 		if isUnlock then
-			EventManager.Hit(EventId.OpenPanel, PanelId.MainlineEx, chapterId)
+			local chapterData = ConfigTable.GetData("StoryChapter", chapterId, "")
+			if chapterData.Type == GameEnum.chapterType.Mainline then
+				EventManager.Hit(EventId.OpenPanel, PanelId.MainlineEx, chapterId)
+			else
+				EventManager.Hit(EventId.OpenPanel, chapterData.StoryPanelId, chapterId)
+			end
 		else
 			EventManager.Hit(EventId.OpenPanel, PanelId.StoryChapter)
 		end

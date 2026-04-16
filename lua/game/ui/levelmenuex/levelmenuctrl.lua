@@ -61,6 +61,14 @@ LevelMenuCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "MainView_Build"
 	},
+	btnPreselection = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Preselection"
+	},
+	txtPreselection = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "MainView_Preselection"
+	},
 	btnResource = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Resource"
@@ -165,7 +173,17 @@ LevelMenuCtrl._mapNodeConfig = {
 		sComponentName = "Animator"
 	},
 	ts_StarTower = {},
-	ts_Resource = {}
+	ts_Resource = {},
+	activityList = {
+		sNodeName = "---Activity---"
+	},
+	btnActivityEntrance = {
+		nCount = 3,
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_ActivityEntrance"
+	},
+	activityRedDot_ = {nCount = 3},
+	activityRedDotNew_ = {nCount = 3}
 }
 LevelMenuCtrl._mapEventConfig = {
 	[EventId.UpdateEnergy] = "OnEvent_UpdateEnergy",
@@ -193,6 +211,11 @@ local sumHeight = 563
 local phone_page_main = 1
 local phone_page_starTower = 2
 local phone_page_resource = 3
+local showActType = {
+	Group = 1,
+	TrekkerVersus = 2,
+	JointDrill = 3
+}
 function LevelMenuCtrl:RefreshResourceIcon()
 	for k, v in ipairs(self._mapNode["imgResourceIcon" .. self.nCurResIconIndex .. "_"]) do
 		if self.tbResourceIcon[k] ~= nil then
@@ -255,6 +278,213 @@ function LevelMenuCtrl:SelectResourceItem(nType)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtResourceName, sName)
 	NovaAPI.SetTMPText(self._mapNode.txtResourceDesc, sDesc)
+end
+function LevelMenuCtrl:RefreshActivityList()
+	if self.tbActivityShowList ~= nil then
+		for index, v in ipairs(self.tbActivityShowList) do
+			if v.countDownTimer ~= nil then
+				v.countDownTimer:Cancel()
+				if v.bRegisterNode then
+					if v.nType == showActType.Group and v.data.actGroupData ~= nil then
+						RedDotManager.UnRegisterNode(RedDotDefine.Activity_Group, {
+							v.data.actGroupData:GetActGroupId()
+						}, self._mapNode.activityRedDot_[index])
+						RedDotManager.UnRegisterNode(RedDotDefine.Activity_Group, {
+							v.data.actGroupData:GetActGroupId()
+						}, self._mapNode.activityRedDotNew_[index])
+					elseif v.nType == showActType.TrekkerVersus then
+						RedDotManager.UnRegisterNode(RedDotDefine.TrekkerVersus, {
+							v.data:GetActId()
+						}, self._mapNode.activityRedDot_[index])
+					end
+				end
+			end
+			if v.countDownEnterTimer ~= nil then
+				v.countDownEnterTimer:Cancel()
+			end
+		end
+	end
+	self.tbActivityShowList = {}
+	local tbActGroupList = PlayerData.Activity:GetMainviewShowActivityGroup()
+	for _, v in ipairs(tbActGroupList) do
+		table.insert(self.tbActivityShowList, {
+			nType = showActType.Group,
+			data = v
+		})
+	end
+	local tbActList = PlayerData.Activity:GetActivityList()
+	for nId, v in pairs(tbActList) do
+		if v:CheckActShow() then
+			local nActType = v:GetActType()
+			local actCfg = v:GetActCfgData()
+			local bShow = actCfg ~= nil and actCfg.EnterRes ~= nil and actCfg.EnterRes ~= ""
+			if nActType == GameEnum.activityType.JointDrill then
+				local nChallengeStartTime = v:GetChallengeStartTime()
+				local nChallengeEndTime = v:GetChallengeEndTime()
+				local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+				if bShow and nChallengeStartTime <= nCurTime and nChallengeEndTime > nCurTime then
+					table.insert(self.tbActivityShowList, {
+						nType = showActType.JointDrill,
+						data = v
+					})
+				end
+			elseif nActType == GameEnum.activityType.TrekkerVersus then
+				local nChallengeStartTime = v:GetChallengeStartTime()
+				local nChallengeEndTime = v:GetChallengeEndTime()
+				local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+				if bShow and nChallengeStartTime <= nCurTime and nChallengeEndTime > nCurTime then
+					table.insert(self.tbActivityShowList, {
+						nType = showActType.TrekkerVersus,
+						data = v
+					})
+				end
+			end
+		end
+	end
+	table.sort(self.tbActivityShowList, function(a, b)
+		return a.nType < b.nType
+	end)
+	for i = 1, 3 do
+		do
+			local btnTrans = self._mapNode.btnActivityEntrance[i].gameObject.transform
+			btnTrans.gameObject:SetActive(self.tbActivityShowList[i] ~= nil)
+			if self.tbActivityShowList[i] ~= nil then
+				do
+					local imgEnd = btnTrans:Find("AnimRoot/imgEnd")
+					local txtEnd = btnTrans:Find("AnimRoot/imgEnd/txtEnd"):GetComponent("TMP_Text")
+					local imgActivityTime = btnTrans.transform:Find("AnimRoot/imgActivityTime")
+					local imgOpenBg = btnTrans:Find("AnimRoot/imgBg"):GetComponent("Image")
+					local imgMaskBg = btnTrans:Find("AnimRoot/imgBgMask"):GetComponent("Image")
+					local txtActRemainTime = btnTrans:Find("AnimRoot/imgActivityTime/txtActivityTime"):GetComponent("TMP_Text")
+					imgMaskBg.gameObject:SetActive(false)
+					if self.tbActivityShowList[i].nType == showActType.Group then
+						local actGroupData = self.tbActivityShowList[i].data
+						local actGroupCfg = actGroupData:GetActGroupCfgData()
+						local bOpened = actGroupData:CheckActivityGroupOpen()
+						local isUnlock, txtLock = actGroupData:IsUnlock()
+						local remainTime = actGroupData:GetActGroupRemainTime()
+						local bShowCountDown = 0 < remainTime and remainTime <= 259200
+						self:SetPngSprite(imgOpenBg, actGroupCfg.EnterRes)
+						self:SetPngSprite(imgMaskBg, actGroupCfg.EnterRes)
+						if bOpened and bShowCountDown then
+							local strTime = self:RefreshTimeout(remainTime)
+							NovaAPI.SetTMPText(txtActRemainTime, strTime)
+							self.tbActivityShowList[i].countDownTimer = self:AddTimer(0, 1, function()
+								if 0 < remainTime then
+									local strTime = self:RefreshTimeout(remainTime)
+									NovaAPI.SetTMPText(txtActRemainTime, strTime)
+									remainTime = remainTime - 1
+								else
+									self.tbActivityShowList[i].countDownTimer:Cancel()
+									imgEnd.gameObject:SetActive(true)
+									imgActivityTime.gameObject:SetActive(false)
+								end
+							end, true, true, true)
+						end
+						local endEnterTime = actGroupData:GetActGroupEnterEndTime()
+						local curTime = CS.ClientManager.Instance.serverTimeStamp
+						endEnterTime = endEnterTime - curTime
+						local strEndTime = self:RefreshExchangeTimeout(endEnterTime)
+						NovaAPI.SetTMPText(txtEnd, strEndTime)
+						self.tbActivityShowList[i].countDownEnterTimer = self:AddTimer(0, 1, function()
+							if 0 < endEnterTime then
+								local strTime = self:RefreshExchangeTimeout(endEnterTime)
+								NovaAPI.SetTMPText(txtEnd, strTime)
+								endEnterTime = endEnterTime - 1
+							else
+								self.tbActivityShowList[i].countDownEnterTimer:Cancel()
+								btnTrans.gameObject:SetActive(false)
+							end
+						end, true, true, true)
+						imgEnd.gameObject:SetActive(not bOpened)
+						imgActivityTime.gameObject:SetActive(bOpened and bShowCountDown)
+						imgMaskBg.gameObject:SetActive(not isUnlock)
+						if isUnlock then
+							self.tbActivityShowList[i].bRegisterNode = true
+							do
+								local HasRedDot = RedDotManager.GetValid(RedDotDefine.Activity_Group, {
+									actGroupData:GetActGroupId()
+								})
+								local HasNew = RedDotManager.GetValid(RedDotDefine.Activity_GroupNew, {
+									actGroupData:GetActGroupId()
+								})
+								self._mapNode.activityRedDot_[i].gameObject:SetActive(HasRedDot)
+								self._mapNode.activityRedDotNew_[i].gameObject:SetActive(HasNew and not HasRedDot)
+							end
+						end
+					elseif self.tbActivityShowList[i].nType == showActType.TrekkerVersus then
+						local actData = self.tbActivityShowList[i].data
+						local actCfg = actData:GetActCfgData()
+						self:SetPngSprite(imgOpenBg, actCfg.EnterRes)
+						imgEnd.gameObject:SetActive(false)
+						imgActivityTime.gameObject:SetActive(false)
+						local nActId = actData:GetActId()
+						local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(nActId)
+						RedDotManager.RegisterNode(RedDotDefine.TrekkerVersus, {nActGroupId, nActId}, self._mapNode.activityRedDot_[i], nil, nil, true)
+						self._mapNode.activityRedDotNew_[i].gameObject:SetActive(false)
+					elseif self.tbActivityShowList[i].nType == showActType.JointDrill then
+						do
+							local actCfg = self.tbActivityShowList[i].data:GetActCfgData()
+							self:SetPngSprite(imgOpenBg, actCfg.EnterRes)
+							imgEnd.gameObject:SetActive(false)
+							imgActivityTime.gameObject:SetActive(false)
+							self._mapNode.activityRedDot_[i].gameObject:SetActive(false)
+							self._mapNode.activityRedDotNew_[i].gameObject:SetActive(false)
+						end
+					end
+				end
+			end
+		end
+	end
+end
+function LevelMenuCtrl:RefreshTimeout(remainTime)
+	local sTimeStr = ""
+	if remainTime <= 60 then
+		local sec = math.floor(remainTime)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Sec") or "", sec)
+	elseif 60 < remainTime and remainTime <= 3600 then
+		local min = math.floor(remainTime / 60)
+		local sec = math.floor(remainTime - min * 60)
+		if sec == 0 then
+			min = min - 1
+			sec = 60
+		end
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Min") or "", min, sec)
+	elseif 3600 < remainTime and remainTime <= 86400 then
+		local hour = math.floor(remainTime / 3600)
+		local min = math.floor((remainTime - hour * 3600) / 60)
+		if min == 0 then
+			hour = hour - 1
+			min = 60
+		end
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Hour") or "", hour, min)
+	elseif 86400 < remainTime then
+		local day = math.floor(remainTime / 86400)
+		local hour = math.floor((remainTime - day * 86400) / 3600)
+		if hour == 0 then
+			day = day - 1
+			hour = 24
+		end
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Day") or "", day, hour)
+	end
+	return sTimeStr
+end
+function LevelMenuCtrl:RefreshExchangeTimeout(remainTime)
+	local sTimeStr = ""
+	if remainTime <= 60 then
+		local sec = math.floor(remainTime)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Sec") or "", sec)
+	elseif 60 < remainTime and remainTime <= 3600 then
+		local min = math.floor(remainTime / 60)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_OnlyMin") or "", min)
+	elseif 3600 < remainTime and remainTime <= 86400 then
+		local hour = math.floor(remainTime / 3600)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_OnlyHour") or "", hour)
+	elseif 86400 < remainTime then
+		local day = math.floor(remainTime / 86400)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_OnlyDay") or "", day)
+	end
+	return ConfigTable.GetUIText("Activity_End_Exchange") .. " " .. sTimeStr
 end
 function LevelMenuCtrl:InitBoardActor()
 	local curBoardData = PlayerBoardData:GetCurBoardData()
@@ -439,6 +669,7 @@ function LevelMenuCtrl:OnEnable()
 		self:UpdateStartTowerHint()
 		self:StartPhoneTimer()
 		self:RefreshFuncOpen()
+		self:RefreshActivityList()
 		self.nCurResIconIndex = 1
 		self:RefreshResourceIcon()
 		for k, v in ipairs(self._mapNode.imgResourceIcon1_) do
@@ -545,6 +776,12 @@ function LevelMenuCtrl:OnBtnClick_Build(btn)
 	end
 	EventManager.Hit(EventId.SetTransition, 2, func)
 end
+function LevelMenuCtrl:OnBtnClick_Preselection()
+	local func = function()
+		EventManager.Hit(EventId.OpenPanel, PanelId.PotentialPreselectionList)
+	end
+	EventManager.Hit(EventId.SetTransition, 2, func)
+end
 function LevelMenuCtrl:OnBtnClick_Resource(btn)
 	CS.WwiseAudioManager.Instance:PlaySound("ui_level_select")
 	local nAnimLen = NovaAPI.GetAnimClipLength(self._mapNode.panelAnimator, {
@@ -578,6 +815,67 @@ function LevelMenuCtrl:OnBtnClick_ResourceGoto()
 		EventManager.Hit(EventId.OpenPanel, PanelId.DailyInstanceLevelSelect)
 	elseif self.nSelectResourceType == GameEnum.OpenFuncType.CharGemInstance then
 		EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentInstanceLevelSelect)
+	end
+end
+function LevelMenuCtrl:OnBtnClick_ActivityEntrance(btn, nIndex)
+	local mapData = self.tbActivityShowList[nIndex]
+	if mapData ~= nil then
+		if mapData.nType == showActType.Group then
+			local actGroupData = mapData.data
+			if actGroupData == nil then
+				return
+			end
+			local isUnlock, txtUnlock = actGroupData:IsUnlock()
+			if not isUnlock then
+				EventManager.Hit(EventId.OpenMessageBox, txtUnlock)
+				return
+			end
+			local cfg = actGroupData:GetActGroupCfgData()
+			if cfg ~= nil then
+				PlayerData.Activity:SendActivityDetailMsg()
+				if cfg.TransitionId ~= nil and cfg.TransitionId > 0 then
+					local callback = function()
+						EventManager.Hit(EventId.OpenPanel, cfg.PanelId, cfg.Id, true)
+					end
+					EventManager.Hit(EventId.SetTransition, cfg.TransitionId, callback)
+				else
+					EventManager.Hit(EventId.OpenPanel, cfg.PanelId, cfg.Id, true)
+				end
+			end
+		else
+			local actData = mapData.data
+			if not actData:CheckActivityOpen() then
+				EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_Invalid_Tip_3"))
+				self:RefreshActivityList()
+				return
+			end
+			if mapData.nType == showActType.TrekkerVersus then
+				local nChallengeEndTime = actData:GetChallengeEndTime()
+				local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+				if nChallengeEndTime < nCurTime then
+					EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_Invalid_Tip_3"))
+					self:RefreshActivityFastEntrance()
+					return
+				end
+				local func = function()
+					EventManager.Hit(EventId.OpenPanel, PanelId.TrekkerVersus, actData:GetActId())
+				end
+				EventManager.Hit(EventId.SetTransition, 30, func)
+			elseif mapData.nType == showActType.JointDrill then
+				do
+					local bPlayCond = actData:CheckActJumpCond(true)
+					if not bPlayCond then
+						return
+					end
+					local nType = actData:GetJointDrillType()
+					if nType == GameEnum.JointDrillMode.JointDrill_Mode_1 then
+						EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_1, actData:GetActId())
+					elseif nType == GameEnum.JointDrillMode.JointDrill_Mode_2 then
+						EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_2, actData:GetActId())
+					end
+				end
+			end
+		end
 	end
 end
 function LevelMenuCtrl:OnBtnClick_ScoreBoss(btn)
@@ -656,7 +954,7 @@ function LevelMenuCtrl:OnBtnClick_Infinity()
 end
 function LevelMenuCtrl:OnBtnClick_Close(btn)
 	if self._panel.panelType == phone_page_starTower or self._panel.panelType == phone_page_resource then
-		if self.nInitType ~= nil and (self.nInitType == phone_page_starTower or self.nInitType == phone_page_starTower) then
+		if self.nInitType ~= nil and (self.nInitType == phone_page_starTower or self.nInitType == phone_page_resource) then
 			EventManager.Hit(EventId.ClosePanel, PanelId.LevelMenu)
 		else
 			local nAnimLen = NovaAPI.GetAnimClipLength(self._mapNode.panelAnimator, {

@@ -226,20 +226,7 @@ function BreakOutPlayCtrl:OnEvent_FinishGame(nResult)
 		end
 		self:OpenBreakOutResultPanel(bResult, cb, mapChangeInfo)
 	end
-	local UseTime = self.FloorData.Time - self.nEndTime
-	local arrayData = {
-		ActivityId = self.nActId,
-		LevelId = self.nLevelId,
-		Seconds = UseTime,
-		MonsterDefeatCount = self.nKillMonster,
-		Win = bResult,
-		CharId = self.nCharacterNid,
-		Count = self.nBreakBricks,
-		RemainHP = self.nRemainHp,
-		Score = self.nCurrentScore,
-		DropCollect = self.tbDropCollect
-	}
-	self.BreakOutData:RequestFinishLevel(arrayData, requestCb)
+	self.BreakOutData:RequestFinishLevel(self:BuildFinishData(bResult), requestCb)
 	EventManager.Hit("Close_BattlePause")
 end
 function BreakOutPlayCtrl:OnEvent_Exit()
@@ -259,20 +246,7 @@ function BreakOutPlayCtrl:OnEvent_Exit()
 			end
 			self:OpenBreakOutResultPanel(false, cb, mapChangeInfo)
 		end
-		local UseTime = self.FloorData.Time - self.nEndTime
-		local arrayData = {
-			ActivityId = self.nActId,
-			LevelId = self.nLevelId,
-			Seconds = UseTime,
-			MonsterDefeatCount = self.nKillMonster,
-			Win = false,
-			CharId = self.nCharacterNid,
-			Count = self.nBreakBricks,
-			RemainHP = self.nRemainHp,
-			Score = self.nCurrentScore,
-			DropCollect = self.tbDropCollect
-		}
-		self.BreakOutData:RequestFinishLevel(arrayData, requestCb)
+		self.BreakOutData:RequestFinishLevel(self:BuildFinishData(false), requestCb)
 	end
 	local sTip = ConfigTable.GetUIText("TowerDef_Exit_Confirm")
 	local msg = {
@@ -347,5 +321,19 @@ function BreakOutPlayCtrl:OnBtnClick_OpenDic()
 	end
 	self:PauseLogic()
 	EventManager.Hit(EventId.OpenPanel, PanelId.DictionaryEntry, self.nDicId, true)
+end
+function BreakOutPlayCtrl:BuildFinishData(bWin)
+	return {
+		ActivityId = self.nActId,
+		LevelId = self.nLevelId,
+		Seconds = self.FloorData.Time - self.nEndTime,
+		MonsterDefeatCount = self.nKillMonster,
+		Win = bWin,
+		CharId = self.nCharacterNid,
+		Count = self.nBreakBricks,
+		RemainHP = self.nRemainHp,
+		Score = self.nCurrentScore,
+		DropCollect = self.tbDropCollect
+	}
 end
 return BreakOutPlayCtrl

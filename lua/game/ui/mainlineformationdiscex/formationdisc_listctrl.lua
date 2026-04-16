@@ -255,7 +255,8 @@ function FormationDisc_ListCtrl:SyncFormation()
 	if not bChange then
 		return
 	end
-	PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, tbTeamMemberId, tbDisc)
+	local nPreselectionId = PlayerData.Team:GetTeamPreselectionId(self._panel.nTeamIndex)
+	PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, tbTeamMemberId, tbDisc, nPreselectionId)
 end
 function FormationDisc_ListCtrl:RefreshOrderState()
 	self._mapNode.imgArrowUpEnable:SetActive(self.tbSortCfg.bOrder)

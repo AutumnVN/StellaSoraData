@@ -165,7 +165,8 @@ BossHUDCtrl._mapNodeConfig = {
 }
 BossHUDCtrl._mapEventConfig = {
 	AllHudShow = "OnEvent_HudShow",
-	BattleRestart = "OnEvent_Deaded"
+	BattleRestart = "OnEvent_Deaded",
+	JointDrillReset = "OnEvent_JointDrillReset"
 }
 BossHUDCtrl._mapRedDotConfig = {}
 local multipleBossIcon = {
@@ -426,6 +427,16 @@ function BossHUDCtrl:OnEvent_Deaded()
 	else
 		self:CloseUI()
 		NovaAPI.SetCanvasGroupAlpha(self.rootCanvasGroup, 0)
+	end
+end
+function BossHUDCtrl:OnEvent_JointDrillReset()
+	if self.bossType == GameEnum.monsterBloodType.JOINTDRILLBOSS then
+		self.JointDrillEnergyStage = jointDrillEnergyStage.None
+		local anim = self._mapNode.jointDrill_BossEnergy:GetComponent("Animator")
+		if anim == nil then
+			return
+		end
+		anim:Play("Empty")
 	end
 end
 function BossHUDCtrl:AddEntityEvent()
@@ -741,6 +752,11 @@ function BossHUDCtrl:OnEvent_RefreshBossEnergyValueHUD(isSave)
 	if not isSave then
 		NovaAPI.SetImageFillAmount(self._mapNode.jointDrill_BossEnergyValue, 0)
 		self.JointDrillEnergyStage = jointDrillEnergyStage.None
+		local anim = self._mapNode.jointDrill_BossEnergy:GetComponent("Animator")
+		if anim == nil then
+			return
+		end
+		anim:Play("Empty")
 	end
 end
 function BossHUDCtrl:SetJointDrillBossHPValue()

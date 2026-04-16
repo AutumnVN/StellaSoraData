@@ -317,19 +317,19 @@ function MallRecommendCtrl:GetTimeText(remainTime)
 	local sTimeStr = ""
 	if remainTime <= 60 then
 		local sec = math.floor(remainTime)
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Sec") or "", sec)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Mall_Remain_Time_Sec") or "", sec)
 	elseif 60 < remainTime and remainTime <= 3600 then
 		local min = math.floor(remainTime / 60)
 		local sec = math.floor(remainTime - min * 60)
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Min") or "", min, sec)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Mall_Remain_Time_Min") or "", min, sec)
 	elseif 3600 < remainTime and remainTime <= 86400 then
 		local hour = math.floor(remainTime / 3600)
 		local min = math.floor((remainTime - hour * 3600) / 60)
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Hour") or "", hour, min)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Mall_Remain_Time_Hour") or "", hour, min)
 	elseif 86400 < remainTime then
 		local day = math.floor(remainTime / 86400)
 		local hour = math.floor((remainTime - day * 86400) / 3600)
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Day") or "", day, hour)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Mall_Remain_Time_Day") or "", day, hour)
 	end
 	sTimeStr = sTimeStr .. ConfigTable.GetUIText("Mall_Package_Delist") or ""
 	return sTimeStr

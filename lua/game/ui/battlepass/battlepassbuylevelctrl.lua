@@ -205,7 +205,6 @@ function BattlePassBuyLevelCtrl:BuyOrExchangeCoin()
 		local nNeedCount = self.curCost - nDefaultCount
 		local sTips1 = orderedFormat(ConfigTable.GetUIText("Recruit_ExchangeGemZero") or "", mapJadeCfgData.Id, nNeedCount, mapCostCfgData.Id)
 		local confirmCallbackStone = function()
-			EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 			local nCurStoneCount = PlayerData.Item:GetItemCountByID(AllEnum.CoinItemId.STONE)
 			nCurStoneCount = nCurStoneCount + PlayerData.Item:GetItemCountByID(AllEnum.CoinItemId.FREESTONE)
 			if nCurStoneCount >= nNeedCount then
@@ -221,7 +220,6 @@ function BattlePassBuyLevelCtrl:BuyOrExchangeCoin()
 			else
 				local sTips2 = orderedFormat(ConfigTable.GetUIText("Recruit_Charge") or "", mapCostCfgData.Id)
 				local confirmCallbackExchange = function()
-					EventManager.Hit("TopRes", false, self.nTopBarId, self.tbCurTabCoin)
 					EventManager.Hit(EventId.OpenPanel, PanelId.Mall, AllEnum.MallToggle.Gem)
 				end
 				ConfirmPanel(sTips2, confirmCallbackExchange)

@@ -1,4 +1,4 @@
-local BreakOutPlayPanel = class("TowerDefensePanel", BasePanel)
+local BreakOutPlayPanel = class("BreakOutPlayPanel", BasePanel)
 BreakOutPlayPanel._bIsMainPanel = true
 BreakOutPlayPanel._sSortingLayerName = AllEnum.SortingLayerName.UI
 local GamepadUIManager = require("GameCore.Module.GamepadUIManager")

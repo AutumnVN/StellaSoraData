@@ -30,11 +30,7 @@ FormationQuestGridCtrl._mapNodeConfig = {
 	imgRewardEmpty = {nCount = 2},
 	imgReceived = {},
 	imgCompleteMask = {},
-	btnItem = {
-		sComponentName = "UIButton",
-		nCount = 2,
-		callback = "OnBtnClick_Reward"
-	}
+	btnItem = {sComponentName = "UIButton", nCount = 2}
 }
 FormationQuestGridCtrl._mapEventConfig = {}
 function FormationQuestGridCtrl:Refresh(mapGuideQuest)
@@ -68,7 +64,8 @@ function FormationQuestGridCtrl:Refresh(mapGuideQuest)
 	else
 		NovaAPI.SetTMPText(self._mapNode.txtProgress, ConfigTable.GetUIText("Quest_Complete"))
 	end
-	self._mapNode.rtProgressFill.sizeDelta = Vector2(mapGuideQuest.nCurProgress / mapGuideQuest.nGoal * totalLength, totalHeight)
+	local nRatio = 0 < mapGuideQuest.nGoal and mapGuideQuest.nCurProgress / mapGuideQuest.nGoal or 1
+	self._mapNode.rtProgressFill.sizeDelta = Vector2(nRatio * totalLength, totalHeight)
 	self._mapNode.imgReceived:SetActive(mapGuideQuest.nStatus == 2)
 	self._mapNode.imgCompleteMask:SetActive(mapGuideQuest.nStatus == 2)
 	self._mapNode.txtUnComplete.gameObject:SetActive(mapGuideQuest.nStatus == 0 and mapGuideQuestCfgData.JumpTo == 0)
@@ -82,6 +79,12 @@ function FormationQuestGridCtrl:Refresh(mapGuideQuest)
 	self._mapNode.btnJump.onClick:AddListener(function()
 		self:OnBtnClick_JumpTo()
 	end)
+	for k, v in pairs(self._mapNode.btnItem) do
+		v.onClick:RemoveAllListeners()
+		v.onClick:AddListener(function()
+			self:OnBtnClick_Reward(v, k)
+		end)
+	end
 end
 function FormationQuestGridCtrl:ShowItemDetail(id, rtIcon)
 	UTILS.ClickItemGridWithTips(id, rtIcon.transform, true, true, false)

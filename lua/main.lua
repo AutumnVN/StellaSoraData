@@ -2,6 +2,8 @@ require("GameCore.GameCore")
 local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
 local ResTypeAny = GameResourceLoader.ResType.Any
 local typeof = typeof
+local ClientManager = CS.ClientManager
+local FrameworkMiscUtils = CS.FrameworkMiscUtils
 NovaAPI.EnterModule("LoginModuleScene", true)
 if NovaAPI.IsEditorPlatform() then
 	local forEachLine_Story = function(mapLineData)
@@ -17,4 +19,3 @@ if NovaAPI.IsEditorPlatform() then
 	end
 	ForEachTableLine(DataTable.Story, forEachLine_Story)
 end
-CS.GameCameraStackManager.Instance.autoVerticalToHorizontalFieldOfViewAspect = 1.53

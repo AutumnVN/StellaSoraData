@@ -133,7 +133,7 @@ function MiningGameCtrl:OnDisable(...)
 	end
 	self.gridListCtrl = nil
 end
-function MiningGameCtrl:OnDestory()
+function MiningGameCtrl:OnDestroy()
 	if PlayerData.Activity:IsActivityInActivityGroup(self.nActId) then
 		local actGroupId = ConfigTable.GetData("Activity", self.nActId).MidGroupId
 		local actGroupData = PlayerData.Activity:GetActivityGroupDataById(actGroupId)

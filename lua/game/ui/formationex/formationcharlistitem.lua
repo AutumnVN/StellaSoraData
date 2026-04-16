@@ -86,6 +86,9 @@ function FormationCharListItem:OnBtnClick_Mask(btn)
 	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Formation_Selected"))
 end
 function FormationCharListItem:OnBtnClick_Detail(btn)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	if PlayerData.Guide:GetGuideState() then
 		return
 	end

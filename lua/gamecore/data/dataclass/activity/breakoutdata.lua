@@ -37,33 +37,30 @@ function BreakOutData:RefreshBreakOutData(actId, msgData)
 end
 function BreakOutData:CacheAllCharacterData(UnLockedCharacterData)
 	self.tbUnLockedCharacterDataList = {}
+	self.tbUnLockedCharacterDataMap = {}
 	for _, v in pairs(UnLockedCharacterData) do
 		local CharacterData = {
 			nId = v.Id,
 			nBattleTimes = v.BattleTimes
 		}
 		table.insert(self.tbUnLockedCharacterDataList, CharacterData)
+		self.tbUnLockedCharacterDataMap[v.Id] = CharacterData
 	end
 end
 function BreakOutData:CacheIsUnlocked(CharacterNid)
-	for _, v in pairs(self.tbUnLockedCharacterDataList) do
-		if v.nId == CharacterNid then
-			return true
-		end
+	if self.tbUnLockedCharacterDataMap[CharacterNid] then
+		return true
 	end
 	return false
 end
 function BreakOutData:GetDataFromBreakOutCharacter(CharacterNid)
-	for _, v in pairs(self.tbUnLockedCharacterDataList) do
-		if v.nId == CharacterNid then
-			return ConfigTable.GetData("BreakOutCharacter", CharacterNid)
-		end
+	if self.tbUnLockedCharacterDataMap[CharacterNid] then
+		return ConfigTable.GetData("BreakOutCharacter", CharacterNid)
 	end
 	return nil
 end
 function BreakOutData:GetSkillData(CharacterNid)
-	local tbCharacterData
-	self:GetDataFromBreakOutCharacter(CharacterNid)
+	local tbCharacterData = self:GetDataFromBreakOutCharacter(CharacterNid)
 	if tbCharacterData == nil then
 		return nil
 	else
@@ -71,23 +68,25 @@ function BreakOutData:GetSkillData(CharacterNid)
 	end
 end
 function BreakOutData:GetBattleCount(CharacterNid)
-	for _, v in pairs(self.tbUnLockedCharacterDataList) do
-		if v.nId == CharacterNid then
-			return v.nBattleTimes
-		end
+	if self.tbUnLockedCharacterDataMap[CharacterNid] ~= nil then
+		return self.tbUnLockedCharacterDataMap[CharacterNid].nBattleTimes
+	else
+		return 0
 	end
-	return 0
 end
 function BreakOutData:CacheAllLevelData(levelListData)
 	self.tbLevelDataList = {}
+	self.tbLevelDataMap = {}
 	for _, v in pairs(levelListData) do
+		local config = ConfigTable.GetData("BreakOutLevel", v.Id)
 		local levelData = {
 			nId = v.Id,
 			bFirstComplete = v.FirstComplete,
-			nDifficultyType = ConfigTable.GetData("BreakOutLevel", v.Id).Type,
-			nPreLevelId = ConfigTable.GetData("BreakOutLevel", v.Id).PreLevelId
+			nDifficultyType = config.Type,
+			nPreLevelId = config.PreLevelId
 		}
 		table.insert(self.tbLevelDataList, levelData)
+		self.tbLevelDataMap[v.Id] = levelData
 	end
 end
 function BreakOutData:IsAllLevelComplete()
@@ -102,14 +101,12 @@ function BreakOutData:GetLevelData()
 	return self.tbLevelDataList
 end
 function BreakOutData:GetLevelDataById(nId)
-	local levelData
-	for _, v in pairs(self.tbLevelDataList) do
-		if v.nId == nId then
-			levelData = v
-			break
-		end
+	if self.tbLevelDataMap[nId] ~= nil then
+		return self.tbLevelDataMap[nId]
+	else
+		printLog(nId .. ":Id\228\184\141\229\173\152\229\156\168\229\175\185\229\186\148\229\133\179\229\141\161\230\149\176\230\141\174")
+		return nil
 	end
-	return levelData
 end
 function BreakOutData:UpdateLevelData(levelData)
 	for _, v in pairs(self.tbLevelDataList) do
@@ -126,34 +123,23 @@ function BreakOutData:UpdateLevelData(levelData)
 	end
 end
 function BreakOutData:UpdateCharacterData(CharacterData)
-	for _, v in pairs(self.tbUnLockedCharacterDataList) do
-		if v.nId == CharacterData.CharacterNid then
-			v.nBattleTimes = v.nBattleTimes + 1
-			EventManager.Hit("RefreshCharacterBattleTimes")
-			break
-		end
+	if self.tbUnLockedCharacterDataMap[CharacterData.CharacterNid] ~= nil then
+		self.tbUnLockedCharacterDataMap[CharacterData.CharacterNid].nBattleTimes = self.tbUnLockedCharacterDataMap[CharacterData.CharacterNid].nBattleTimes + 1
+		EventManager.Hit("RefreshCharacterBattleTimes")
 	end
 end
 function BreakOutData:GetDetailLevelDataById(nId)
-	local levelData
-	for _, v in pairs(self.tbLevelDataList) do
-		if v.nId == nId then
-			levelData = ConfigTable.GetData("BreakOutLevel", nId)
-			break
-		end
+	if self.tbLevelDataMap[nId] then
+		return ConfigTable.GetData("BreakOutLevel", nId)
 	end
-	return levelData
+	return nil
 end
 function BreakOutData:GetDetailFloorDataById(nId)
-	local FloorData
-	for _, v in pairs(self.tbLevelDataList) do
-		if v.nId == nId then
-			nFloorId = ConfigTable.GetData("BreakOutLevel", nId).FloorId
-			FloorData = ConfigTable.GetData("BreakOutFloor", nFloorId)
-			break
-		end
+	if self.tbLevelDataMap[nId] then
+		local nFloorId = ConfigTable.GetData("BreakOutLevel", nId).FloorId
+		return ConfigTable.GetData("BreakOutFloor", nFloorId)
 	end
-	return FloorData
+	return nil
 end
 function BreakOutData:GetLevelsByTab(nTabIndex)
 	local levelData = {}
@@ -162,12 +148,9 @@ function BreakOutData:GetLevelsByTab(nTabIndex)
 			table.insert(levelData, ConfigTable.GetData("BreakOutLevel", v.nId))
 		end
 	end
-	local sortFunc = function(a, b)
-		local aConfig = ConfigTable.GetData("BreakOutLevel", a.Id)
-		local bConfig = ConfigTable.GetData("BreakOutLevel", b.Id)
-		return aConfig.Difficulty < bConfig.Difficulty
-	end
-	table.sort(levelData, sortFunc)
+	table.sort(levelData, function(a, b)
+		return a.Difficulty < b.Difficulty
+	end)
 	return levelData
 end
 function BreakOutData:GetBreakoutLevelTypeNum()
@@ -291,7 +274,12 @@ function BreakOutData:GetLevelStartTime(nLevelId)
 	return remainTime
 end
 function BreakOutData:IsPreLevelComplete(nLevelId)
-	local nPreLevelId = ConfigTable.GetData("BreakOutLevel", nLevelId).PreLevelId
+	local tbLevelData = ConfigTable.GetData("BreakOutLevel", nLevelId)
+	if tbLevelData == nil then
+		printLog(nLevelId .. ":Id\228\184\141\229\173\152\229\156\168\229\175\185\229\186\148\229\133\179\229\141\161\230\149\176\230\141\174")
+		return false
+	end
+	local nPreLevelId = tbLevelData.PreLevelId
 	if nPreLevelId == 0 then
 		return true
 	end
@@ -302,6 +290,9 @@ function BreakOutData:IsLevelComplete(nLevelId)
 		return true
 	end
 	local nLevelData = self:GetLevelDataById(nLevelId)
+	if nLevelData == nil then
+		return false
+	end
 	return nLevelData.bFirstComplete
 end
 function BreakOutData:GetUnFinishEasyLevel()
@@ -361,7 +352,7 @@ end
 function BreakOutData:RefreshCharacterData(charId)
 	local bIsLock = true
 	for _, v in pairs(self.tbUnLockedCharacterDataList) do
-		if v.Id == charId then
+		if v.nId == charId then
 			bIsLock = false
 			break
 		end
@@ -369,6 +360,7 @@ function BreakOutData:RefreshCharacterData(charId)
 	if bIsLock then
 		local CharacterData = {nId = charId, nBattleTimes = 0}
 		table.insert(self.tbUnLockedCharacterDataList, CharacterData)
+		self.tbUnLockedCharacterDataMap[charId] = CharacterData
 	end
 end
 function BreakOutData:OnEvent_GMClearAllLevels(mapMsgData)

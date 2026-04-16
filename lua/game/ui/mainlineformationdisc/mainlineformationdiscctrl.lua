@@ -416,9 +416,9 @@ function MainlineFormationDiscCtrl:OnBtnClick_Start()
 		end
 	end
 	if self._panel.bSweep then
-		PlayerData.StarTower:EnterTowerFastBattle(self._panel.curRoguelikeId, self._panel.nTeamIndex)
+		PlayerData.StarTower:EnterTowerFastBattle(self._panel.curRoguelikeId, self._panel.nTeamIndex, self._panel.nPreselectionId)
 	else
-		PlayerData.StarTower:EnterTower(self._panel.curRoguelikeId, self._panel.nTeamIndex, self.selectDiscIdList)
+		PlayerData.StarTower:EnterTower(self._panel.curRoguelikeId, self._panel.nTeamIndex, self.selectDiscIdList, self._panel.nPreselectionId)
 	end
 end
 function MainlineFormationDiscCtrl:OnBtnClick_Filter(btn)
@@ -597,14 +597,15 @@ function MainlineFormationDiscCtrl:CacheTeamInfo()
 	if isSave then
 		local _, tbTeamMemberId = PlayerData.Team:GetTeamData(self._panel.nTeamIndex)
 		local Callback = function()
+			local nPreselectionId = PlayerData.Team:GetTeamPreselectionId(self._panel.nTeamIndex)
 			if isEmpty then
 				PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, 1, tbTeamMemberId, {
 					0,
 					0,
 					0
-				})
+				}, nPreselectionId)
 			else
-				PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, 1, tbTeamMemberId, self.selectDiscIdList)
+				PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, 1, tbTeamMemberId, self.selectDiscIdList, nPreselectionId)
 			end
 		end
 		local PlayerFormationReq = {}

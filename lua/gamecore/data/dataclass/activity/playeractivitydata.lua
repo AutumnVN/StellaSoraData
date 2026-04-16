@@ -26,6 +26,8 @@ local SpringFestival_10104Data = require("GameCore.Data.DataClass.Activity.Sprin
 local WinterNight_10105Data = require("GameCore.Data.DataClass.Activity.WinterNight_10105Data")
 local Postal_10106Data = require("GameCore.Data.DataClass.Activity.Postal_10106Data")
 local PenguinCardActData = require("GameCore.Data.DataClass.Activity.PenguinCardActData")
+local GoldenSpyData = require("GameCore.Data.DataClass.Activity.GoldenSpyData")
+local Solodance_20102Data = require("GameCore.Data.DataClass.Activity.Solodance_20102Data")
 function PlayerActivityData:Init()
 	self.bCacheActData = false
 	self.tbAllActivity = {}
@@ -134,6 +136,8 @@ function PlayerActivityData:CacheAllActivityData(mapNetMsg)
 					self:RefreshThrowGiftData(nActId, v.ThrowGift)
 				elseif actCfg.ActivityType == GameEnum.activityType.PenguinCard then
 					self:RefreshPenguinCardActData(nActId, v.PenguinCard)
+				elseif actCfg.ActivityType == GameEnum.activityType.GoldenSpy then
+					self:RefreshGoldenSpyActData(nActId, v.GDS)
 				end
 			end
 		end
@@ -228,6 +232,8 @@ function PlayerActivityData:CreateActivityIns(actData)
 		actIns = ThrowGiftData.new(actData)
 	elseif actCfg.ActivityType == GameEnum.activityType.PenguinCard then
 		actIns = PenguinCardActData.new(actData)
+	elseif actCfg.ActivityType == GameEnum.activityType.GoldenSpy then
+		actIns = GoldenSpyData.new(actData)
 	end
 	if actIns ~= nil then
 		self.tbAllActivity[actData.Id] = actIns
@@ -327,6 +333,8 @@ function PlayerActivityData:CreateActivityGroupIns(actData)
 			actIns = WinterNight_10105Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Postal_10106 then
 			actIns = Postal_10106Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.SoloDance_20102 then
+			actIns = Solodance_20102Data.new(actData)
 		end
 		self.tbAllActivityGroup[actData.Id] = actIns
 		PlayerData.ActivityAvg:RefreshAvgRedDot()
@@ -558,6 +566,11 @@ end
 function PlayerActivityData:RefreshPenguinCardActData(nActId, msgData)
 	if nil ~= self.tbAllActivity[nActId] then
 		self.tbAllActivity[nActId]:RefreshPenguinCardActData(msgData)
+	end
+end
+function PlayerActivityData:RefreshGoldenSpyActData(nActId, msgData)
+	if nil ~= self.tbAllActivity[nActId] then
+		self.tbAllActivity[nActId]:RefreshGoldenSpyActData(nActId, msgData)
 	end
 end
 function PlayerActivityData:RefreshActivityLevelGameActData(nActId, msgData)

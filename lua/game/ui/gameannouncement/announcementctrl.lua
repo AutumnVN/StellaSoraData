@@ -130,6 +130,7 @@ function AnnouncementCtrl:InitTitle()
 			NovaAPI.SetTMPText(txtTitle:GetComponent("TMP_Text"), ConfigTable.GetUIText(titleText[nType]))
 			local btn = go_btn:GetComponent("UIButton")
 			local nIndex = i
+			btn.onClick:RemoveAllListeners()
 			btn.onClick:AddListener(function()
 				self:SelectedGrid(nIndex, 1)
 			end)

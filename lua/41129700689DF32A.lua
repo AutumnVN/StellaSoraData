@@ -114,12 +114,10 @@ function PenguinCardItemCtrl:PlayTriggerAni()
 		self:PlayEffectAni()
 		return
 	end
-	if not self.bTriggerCd then
-		self.bTriggerCd = true
-		self:AddTimer(1, 1.433, function()
-			self.bTriggerCd = false
-		end, true, true, true)
-	end
+	self.bTriggerCd = true
+	self:AddTimer(1, 1.433, function()
+		self.bTriggerCd = false
+	end, true, true, true)
 	self._mapNode.AnimRoot:Play("PengUinCard_Bd_Open", 0, 0)
 	self._mapNode.AnimRoot.speed = self._panel.mapLevel.nSpeed
 	WwiseManger:PostEvent("Mode_Card_cast")
@@ -132,13 +130,25 @@ function PenguinCardItemCtrl:PlayEffectAni()
 	end
 	local sDesc = ""
 	if self.mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips then
-		self.nEffectCount = self.nEffectCount + self.mapCard.tbEffectParam[1]
+		local nValue = self.mapCard.tbEffectParam[1]
+		if self.mapCard.nGrowthType ~= GameEnum.PenguinCardGrowthType.None then
+			nValue = nValue + self.mapCard.nGrowthLayer * self.mapCard.tbGrowthEffectParam[1]
+		end
+		self.nEffectCount = self.nEffectCount + nValue
 		sDesc = orderedFormat(ConfigTable.GetUIText("PenguinCard_Trigger_AddScore"), self.nEffectCount)
 	elseif self.mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier then
-		self.nEffectCount = self.nEffectCount + self.mapCard.tbEffectParam[1]
+		local nValue = self.mapCard.tbEffectParam[1]
+		if self.mapCard.nGrowthType ~= GameEnum.PenguinCardGrowthType.None then
+			nValue = nValue + self.mapCard.nGrowthLayer * self.mapCard.tbGrowthEffectParam[1]
+		end
+		self.nEffectCount = self.nEffectCount + nValue
 		sDesc = orderedFormat(ConfigTable.GetUIText("PenguinCard_Trigger_AddRatio"), self.nEffectCount)
 	elseif self.mapCard.nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier then
-		self.nEffectCount = self.nEffectCount + self.mapCard.tbEffectParam[1]
+		local nValue = self.mapCard.tbEffectParam[1]
+		if self.mapCard.nGrowthType ~= GameEnum.PenguinCardGrowthType.None then
+			nValue = nValue + self.mapCard.nGrowthLayer * self.mapCard.tbGrowthEffectParam[1]
+		end
+		self.nEffectCount = self.nEffectCount + nValue
 		sDesc = orderedFormat(ConfigTable.GetUIText("PenguinCard_Trigger_MultiRatio"), self.nEffectCount)
 	end
 	self._mapNode.goTrigger:SetActive(sDesc ~= "")

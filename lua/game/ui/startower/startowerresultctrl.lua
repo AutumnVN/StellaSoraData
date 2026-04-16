@@ -146,7 +146,7 @@ function StarTowerResultCtrl:Refresh(teamMemberid, mapResult)
 	if self.bSweep then
 		self._mapNode.imgSweepResultTitle.gameObject:SetActive(self.bSuccess)
 		if self.bSuccess then
-			self:SetAtlasSprite(self._mapNode.imgSweepResult, "05_language", "zs_battle_result_2")
+			self:SetAtlasSprite(self._mapNode.imgSweepResult, "05_language", "zs_result_win_2")
 			self._mapNode.UIParticle_Sweep:SetActive(true)
 			WwiseAudioMgr:SetState("system", "victory2")
 		else

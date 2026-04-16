@@ -72,6 +72,7 @@ function TravelerDuelRankingGrid:Refresh(mapRanking)
 		local sTitle = orderedFormat(ConfigTable.GetUIText("FriendPanel_PlayerTitle") or "", ConfigTable.GetData("Title", mapRanking.TitlePrefix).Desc, ConfigTable.GetData("Title", mapRanking.TitleSuffix).Desc)
 		NovaAPI.SetTMPText(self._mapNode.TMPPlayerTitle, sTitle)
 	end
+	local tbOwnHonorData = PlayerData.Base:GetPlayerHonorTitleList() or {}
 	local mapCfg = ConfigTable.GetData("PlayerHead", mapRanking.HeadIcon)
 	self:SetPngSprite(self._mapNode.imgHead, mapCfg.Icon)
 	for i = 1, 3 do
@@ -91,6 +92,13 @@ function TravelerDuelRankingGrid:Refresh(mapRanking)
 			if honorData.Type == GameEnum.honorType.Character then
 				local affinityData = PlayerData.Char:GetCharAffinityData(honorData.Params[1])
 				level = affinityData.Level
+			elseif honorData.Type == GameEnum.honorType.Levels then
+				for k, v in pairs(tbOwnHonorData) do
+					if v.Id == honorData.Id then
+						level = v.Lv or 1
+						break
+					end
+				end
 			end
 			self._mapNode.goHonorTitle[i]:SetHonotTitle(honorData.Id, i == 1, level)
 		end

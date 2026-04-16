@@ -155,6 +155,7 @@ function FriendInfoCtrl:RefreshActor()
 end
 function FriendInfoCtrl:RefreshHonorTitle()
 	local tbCurHonorTitle = PlayerData.Base:GetPlayerHonorTitle()
+	local tbOwnHonorData = PlayerData.Base:GetPlayerHonorTitleList() or {}
 	for i = 1, 3 do
 		if tbCurHonorTitle[i] ~= nil and tbCurHonorTitle[i].Id ~= 0 and tbCurHonorTitle[i] ~= nil then
 			local honorData = ConfigTable.GetData("Honor", tbCurHonorTitle[i].Id)
@@ -165,6 +166,13 @@ function FriendInfoCtrl:RefreshHonorTitle()
 					level = affinityData.Level
 				else
 					printError("\228\184\141\229\173\152\229\156\168\232\167\146\232\137\178" .. honorData.Params[1])
+				end
+			elseif honorData.Type == GameEnum.honorType.Levels then
+				for k, v in pairs(tbOwnHonorData) do
+					if v.Id == honorData.Id then
+						level = v.Lv or 1
+						break
+					end
 				end
 			end
 			self._mapNode.goHonorTitle[i]:SetHonotTitle(honorData.Id, i == 1, level)

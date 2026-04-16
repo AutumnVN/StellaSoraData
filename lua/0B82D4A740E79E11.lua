@@ -91,7 +91,8 @@ JointDrillPauseCtrl._mapNodeConfig = {
 }
 JointDrillPauseCtrl._mapEventConfig = {
 	OpenJointDrillPause = "OnEvent_OpenJointDrillPause",
-	RefreshChallengeTime = "OnEvent_RefreshChallengeTime"
+	RefreshChallengeTime = "OnEvent_RefreshChallengeTime",
+	CloseJointDrillPause = "OnEvent_CloseJointDrillPause"
 }
 JointDrillPauseCtrl._mapRedDotConfig = {}
 function JointDrillPauseCtrl:PlayInAni()
@@ -114,11 +115,11 @@ function JointDrillPauseCtrl:RefreshChallengeTime()
 		NovaAPI.SetTMPText(self._mapNode.txtChallengeTime, string.format("%02d:%02d", nMin, nSec))
 		return nTime
 	end
-	local nTime = refreshTime()
-	if 0 < nTime then
+	self.nRemainTime = refreshTime()
+	if self.nRemainTime > 0 then
 		self.challengeTimer = self:AddTimer(0, 1, function()
-			local nTime = refreshTime()
-			if nTime <= 0 then
+			self.nRemainTime = refreshTime()
+			if self.nRemainTime <= 0 then
 				self.challengeTimer:Cancel()
 				self.challengeTimer = nil
 			end
@@ -144,6 +145,9 @@ function JointDrillPauseCtrl:Refresh(nTime)
 	NovaAPI.SetTMPText(self._mapNode.txtBattleTime, string.format("%02d:%02d:%03d", nMin, nSec, nMs))
 end
 function JointDrillPauseCtrl:PlayCloseAni(callback)
+	if self._mapNode == nil then
+		return
+	end
 	self._mapNode.aniWindow:Play("t_window_04_t_out")
 	self._mapNode.aniBlur:SetTrigger("tOut")
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
@@ -179,6 +183,7 @@ function JointDrillPauseCtrl:Awake()
 end
 function JointDrillPauseCtrl:OnEnable()
 	self.nOpenTime = 0
+	self.nRemainTime = 0
 	if self._panel.nType ~= nil then
 		if self._panel.nType == GameEnum.JointDrillMode.JointDrill_Mode_1 then
 			self.nOpenTime = PlayerData.JointDrill_1:GetJointDrillStartTime()
@@ -290,5 +295,11 @@ function JointDrillPauseCtrl:OnEvent_RefreshChallengeTime(nTime)
 	local nMin = math.floor(nTime / 60)
 	local nSec = math.fmod(nTime, 60)
 	NovaAPI.SetTMPText(self._mapNode.txtChallengeTime, string.format("%02d:%02d", nMin, nSec))
+end
+function JointDrillPauseCtrl:OnEvent_CloseJointDrillPause()
+	if self._mapNode == nil or not self.bShow then
+		return
+	end
+	self:OnPanelClose()
 end
 return JointDrillPauseCtrl

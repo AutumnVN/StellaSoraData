@@ -127,14 +127,16 @@ function StarTowerBuildContentCtrl:InitPotential()
 	self._mapNode.goPotentialList.gameObject:SetActive(not bEmpty)
 end
 function StarTowerBuildContentCtrl:InitDisc()
-	local mapTowerCfg = ConfigTable.GetData("StarTower", self.mapBuild.nTowerId)
 	local tbNote = {}
-	if mapTowerCfg ~= nil then
-		local nDropGroup = mapTowerCfg.SubNoteSkillDropGroupId
-		local tbNoteDrop = CacheTable.GetData("_SubNoteSkillDropGroup", nDropGroup)
-		if tbNoteDrop ~= nil then
-			for _, v in ipairs(tbNoteDrop) do
-				table.insert(tbNote, v.SubNoteSkillId)
+	if self.mapBuild.nTowerId ~= nil then
+		local mapTowerCfg = ConfigTable.GetData("StarTower", self.mapBuild.nTowerId)
+		if mapTowerCfg ~= nil then
+			local nDropGroup = mapTowerCfg.SubNoteSkillDropGroupId
+			local tbNoteDrop = CacheTable.GetData("_SubNoteSkillDropGroup", nDropGroup)
+			if tbNoteDrop ~= nil then
+				for _, v in ipairs(tbNoteDrop) do
+					table.insert(tbNote, v.SubNoteSkillId)
+				end
 			end
 		end
 	end
@@ -169,6 +171,9 @@ function StarTowerBuildContentCtrl:InitDisc()
 			local mapDisc = PlayerData.Disc:GetDiscById(nId)
 			if mapDisc == nil then
 				mapDisc = PlayerData.Disc:GetTrialDiscById(nId)
+			end
+			if mapDisc == nil then
+				mapDisc = PlayerData.Disc:GetRankDetailDisc(nId)
 			end
 			if mapDisc ~= nil then
 				local tbSubSkill = mapDisc:GetAllSubSkill(self.mapBuild.tbNotes)

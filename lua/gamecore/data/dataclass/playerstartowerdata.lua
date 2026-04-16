@@ -547,6 +547,17 @@ function PlayerStarTowerData:GetMaxDifficult(nGroupId)
 	end
 	return ret
 end
+function PlayerStarTowerData:GetGlobalMaxDifficult()
+	local ret = 1
+	local foreachStarTower = function(mapData)
+		local nTempRet = self:GetMaxDifficult(mapData.Id)
+		if nTempRet > ret then
+			ret = nTempRet
+		end
+	end
+	ForEachTableLine(DataTable.StarTowerGroup, foreachStarTower)
+	return ret
+end
 function PlayerStarTowerData:GetMaxPassedDifficult(nGroupId)
 	local ret = 0
 	local mapGroup = CacheTable.GetData("_StarTower", nGroupId)

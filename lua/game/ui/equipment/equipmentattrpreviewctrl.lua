@@ -76,7 +76,7 @@ function EquipmentAttrPreviewCtrl:RefreshByEquipment()
 		for i = 1, 4 do
 			local goAttr = goItemObj.transform:Find("rtBg/goProperty" .. i).gameObject
 			local ctrlAttr = self:BindCtrlByNode(goAttr, "Game.UI.TemplateEx.TemplateRandomPropertyCtrl")
-			ctrlAttr:SetProperty(v.tbAffix[i], self.nCharId)
+			ctrlAttr:SetProperty(v.tbAffix[i], self.nCharId, false, v.tbUpgradeCount[i])
 		end
 	end
 	self.bInitedByEquipment = true
@@ -90,8 +90,13 @@ function EquipmentAttrPreviewCtrl:RefreshByAll()
 	end
 	local tbAllAffix = {}
 	for _, v in ipairs(self.tbEquipment) do
-		for _, nId in ipairs(v.tbAffix) do
-			table.insert(tbAllAffix, nId)
+		for k, nId in ipairs(v.tbAffix) do
+			local nAddId = nId
+			local mapCfg = ConfigTable.GetData("CharGemAttrValue", nId)
+			if v.tbUpgradeCount[k] > 0 and mapCfg then
+				nAddId = mapCfg.TypeId * 100 + v.tbUpgradeCount[k] + mapCfg.Level
+			end
+			table.insert(tbAllAffix, nAddId)
 		end
 	end
 	local mapAttr_ATTR_FIX = {}
@@ -162,10 +167,10 @@ function EquipmentAttrPreviewCtrl:RefreshByAll()
 	local create = function(mapAttributeDesc, nValue, nTag)
 		local goItemObj = instantiate(self._mapNode.goPropertyP, self._mapNode.rtAll)
 		goItemObj:SetActive(true)
-		local txtTag = goItemObj.transform:Find("txtTag"):GetComponent("TMP_Text")
-		local txtProperty = goItemObj.transform:Find("txtProperty"):GetComponent("TMP_Text")
-		local txtPropertyValue = goItemObj.transform:Find("txtPropertyValue"):GetComponent("TMP_Text")
-		local link = goItemObj.transform:Find("txtProperty"):GetComponent("TMPHyperLink")
+		local txtTag = goItemObj.transform:Find("AnimRoot/txtTag"):GetComponent("TMP_Text")
+		local txtProperty = goItemObj.transform:Find("AnimRoot/txtProperty"):GetComponent("TMP_Text")
+		local txtPropertyValue = goItemObj.transform:Find("AnimRoot/txtPropertyValue"):GetComponent("TMP_Text")
+		local link = goItemObj.transform:Find("AnimRoot/txtProperty"):GetComponent("TMPHyperLink")
 		NovaAPI.SetTMPText(txtTag, ConfigTable.GetUIText("Equipment_AttrTag_" .. nTag))
 		local sValue = ""
 		sValue = self:_TransValueFormat(nValue, mapAttributeDesc.isPercent, mapAttributeDesc.Format, nTag ~= GameEnum.CharGemAttrTag.ATTR)

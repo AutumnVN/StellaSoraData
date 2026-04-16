@@ -207,7 +207,6 @@ function BattlePassCtrl:Refresh()
 	end
 	local sTimeStr = PlayerData.BattlePass:GetRefreshTime()
 	NovaAPI.SetTMPText(self._mapNode.TMPSeasonTImeTitle, orderedFormat(ConfigTable.GetUIText("BattlePass_RemainTimeTitle") or "", sTimeStr))
-	local mapBattlePassCfgData = ConfigTable.GetData("BattlePass", self.mapBattlePassInfo.nSeasonId)
 	if mapBattlePassCfgData ~= nil then
 		local nPackageId = mapBattlePassCfgData.OutfitPackageShowItem
 		local mapItemCfgData = ConfigTable.GetData_Item(nPackageId)
@@ -390,7 +389,6 @@ function BattlePassCtrl:OnEvent_BattlePassQuestReceive()
 	end
 	local callback = function(mapData)
 		self.mapBattlePassInfo = mapData
-		self.mapBattlePassInfo = mapData
 		local afterLevel = self.mapBattlePassInfo.nLevel
 		local afterExp = self.mapBattlePassInfo.nExp
 		local mapAfter = {
@@ -552,9 +550,6 @@ function BattlePassCtrl:OnEvent_BattlePassBuyLevel()
 		nMaxLevel = -1,
 		nMaxExp = 0
 	}
-	if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) == nil then
-		mapBefore.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
-	end
 	local callback = function(mapData)
 		self.mapBattlePassInfo = mapData
 		local afterLevel = self.mapBattlePassInfo.nLevel
@@ -624,7 +619,7 @@ function BattlePassCtrl:OnEvent_BattlePassPremiumSuccess()
 		if self._panel.bOpenPremium then
 			self.tbShowRewardIdx = {}
 			if beforeLevel ~= self.mapBattlePassInfo.nLevel then
-				for i = beforeLevel, self.mapBattlePassInfo.nLevel do
+				for i = beforeLevel + 1, self.mapBattlePassInfo.nLevel do
 					if #self.tbShowRewardIdx < 5 then
 						table.insert(self.tbShowRewardIdx, i)
 					end

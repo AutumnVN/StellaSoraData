@@ -91,6 +91,14 @@ CharacterInfoCtrl._mapNodeConfig = {
 		sComponentName = "Button",
 		callback = "OnBtnClick_CloseWordTip"
 	},
+	btnSetFavorite = {
+		sComponentName = "Button",
+		callback = "OnBtnClick_btnSetFavorite"
+	},
+	favorite_on = {
+		sNodeName = "Favorite_on",
+		sComponentName = "CanvasGroup"
+	},
 	imgWordTipBg = {},
 	TMPWordDesc = {sComponentName = "TMP_Text"},
 	TMPWordTipsTitle = {sComponentName = "TMP_Text"},
@@ -202,6 +210,7 @@ function CharacterInfoCtrl:RefreshCharacterInfo()
 	self:SetAtlasSprite(self._mapNode.imgElementIcon, "12_rare", sName)
 	NovaAPI.SetTMPColor(self._mapNode.txtElement, AllEnum.ElementColor[self.configData.EET])
 	NovaAPI.SetTMPText(self._mapNode.txtElement, ConfigTable.GetUIText("T_Element_Attr_" .. self.configData.EET))
+	self:RefreshFavoriteState()
 end
 function CharacterInfoCtrl:RefreshProperty()
 	local attrList = self.attrData:GetAttrList()
@@ -364,6 +373,31 @@ function CharacterInfoCtrl:OnBtnClick_CloseWordTip()
 end
 function CharacterInfoCtrl:OnBtnClick_Development()
 	EventManager.Hit(EventId.CharRelatePanelOpen, PanelId.CharUpPanel, self._panel.nCharId)
+end
+function CharacterInfoCtrl:OnBtnClick_btnSetFavorite()
+	local bOnFavorite = PlayerData.Char:GetCharFavoriteState(self.characterId)
+	bOnFavorite = not bOnFavorite
+	local func_callback = function()
+		PlayerData.Char:SetCharFavoriteState(self.characterId, bOnFavorite)
+		if bOnFavorite then
+			sTip = ConfigTable.GetUIText("SetCharacterCommon_Tip")
+			EventManager.Hit(EventId.OpenMessageBox, sTip)
+			EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
+		end
+		self:RefreshFavoriteState()
+	end
+	local msgSend = {
+		Value = self.characterId
+	}
+	HttpNetHandler.SendMsg(NetMsgId.Id.char_favorite_set_req, msgSend, nil, func_callback)
+end
+function CharacterInfoCtrl:RefreshFavoriteState()
+	local bOnFavorite = PlayerData.Char:GetCharFavoriteState(self.characterId)
+	if bOnFavorite then
+		NovaAPI.SetCanvasGroupAlpha(self._mapNode.favorite_on, 1)
+	else
+		NovaAPI.SetCanvasGroupAlpha(self._mapNode.favorite_on, 0)
+	end
 end
 function CharacterInfoCtrl:OnEvent_RefreshPanel()
 	if self._panel.nPanelId ~= PanelId.CharInfo then

@@ -301,7 +301,7 @@ function ChristmasThemeCtrl:RefreshButtonState()
 			self:RefreshShopButtonState(actData)
 		elseif i == AllEnum.ActivityThemeFuncIndex.Story then
 			self:RefreshStoryButtonState(actData)
-		elseif i == AllEnum.ActivityThemeFuncIndex.Other then
+		elseif i == AllEnum.ActivityThemeFuncIndex.TrekkerVersus then
 			self:RefreshOtherButtonState(actData)
 		end
 	end
@@ -575,7 +575,7 @@ function ChristmasThemeCtrl:OnBtn_ClickActivityEntrance(btn, nIndex)
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_End_Notice"))
 		return
 	elseif state == ActivityState.NotOpen then
-		if nIndex == AllEnum.ActivityThemeFuncIndex.Other then
+		if nIndex == AllEnum.ActivityThemeFuncIndex.TrekkerVersus then
 			local activityId = actData.ActivityId
 			local activityData = ConfigTable.GetData("Activity", activityId)
 			if activityData ~= nil then

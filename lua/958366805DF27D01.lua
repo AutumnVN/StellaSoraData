@@ -183,6 +183,7 @@ function JointDrillRankItemCtrl:OnBtnClick_TeamDetail()
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("JointDrill_Rank_Detail_Empty"))
 		return
 	end
+	EventManager.Hit("ShowTeamDetail", self.mapRankData)
 	EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRankDetail_2, self.mapRankData)
 end
 return JointDrillRankItemCtrl

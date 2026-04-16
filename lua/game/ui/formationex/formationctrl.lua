@@ -77,7 +77,23 @@ FormationCtrl._mapNodeConfig = {
 	rtThemePrevRoot = {},
 	rtSlectedChar = {
 		sComponentName = "RectTransform"
-	}
+	},
+	goPreselection = {},
+	btnPreselection = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Preselection"
+	},
+	txtBtnPreselection = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Build_Preselection_Btn"
+	},
+	imgPreSelected = {sComponentName = "Button"},
+	txtPreSelect = {sComponentName = "TMP_Text"},
+	btnPreDetail = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_PreDetail"
+	},
+	imgBgDetail = {}
 }
 FormationCtrl._mapEventConfig = {
 	[EventId.FormationLoadModel] = "OnEvent_LoadModel",
@@ -94,6 +110,7 @@ function FormationCtrl:Refresh(nDirection)
 	local _, tbTeamMemberId
 	if not self.bTrialLevel then
 		_, tbTeamMemberId = PlayerData.Team:GetTeamData(self._panel.nTeamIndex)
+		self.nPreselectionId = PlayerData.Team:GetTeamPreselectionId(self._panel.nTeamIndex)
 		self.curTeam = {}
 		for _, value in ipairs(tbTeamMemberId) do
 			table.insert(self.curTeam, value)
@@ -105,6 +122,7 @@ function FormationCtrl:Refresh(nDirection)
 		self.curTeam = mapMainline.TrialCharacter
 	end
 	self:RefreshChar(nDirection)
+	self:RefreshPreselection()
 end
 function FormationCtrl:RefreshPoint(nIndex)
 	for i = 1, 6 do
@@ -184,6 +202,22 @@ function FormationCtrl:EnterMainline()
 end
 function FormationCtrl:EnterStarTower()
 	local nTeamIdx = self._panel.nTeamIndex
+	local EnterDiscSelect = function()
+		local teamIDs = {}
+		local _, tbTeamMemberId = PlayerData.Team:GetTeamData(nTeamIdx)
+		for i = 1, #tbTeamMemberId do
+			if tbTeamMemberId[i] ~= nil and 0 < tbTeamMemberId[i] then
+				table.insert(teamIDs, tbTeamMemberId[i])
+			end
+		end
+		if #teamIDs == 3 then
+			EventManager.Hit(EventId.OpenPanel, PanelId.MainlineFormationDisc, self.curRoguelikeId, self._panel.nTeamIndex, self.bSweep, self.nPreselectionId)
+			self:SetLocalData()
+		else
+			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("FRFORMATION_01"))
+			self._mapNode.btnStartBattle.enabled = true
+		end
+	end
 	local CheckBuildCountCallBack = function(nBuildCount)
 		local nMaxBuildCount = ConfigTable.GetConfigNumber("StarTowerBuildNumberMax")
 		if nBuildCount >= nMaxBuildCount then
@@ -192,7 +226,7 @@ function FormationCtrl:EnterStarTower()
 				self._mapNode.btnStartBattle.enabled = true
 			end
 			local cancelCallback = function()
-				EventManager.Hit(EventId.OpenPanel, PanelId.MainlineFormationDisc, self.curRoguelikeId, self._panel.nTeamIndex, self.bSweep)
+				EnterDiscSelect()
 			end
 			local msg = {
 				nType = AllEnum.MessageBox.Confirm,
@@ -205,29 +239,52 @@ function FormationCtrl:EnterStarTower()
 			EventManager.Hit(EventId.OpenMessageBox, msg)
 			return
 		else
-			local teamIDs = {}
-			local _, tbTeamMemberId = PlayerData.Team:GetTeamData(nTeamIdx)
-			for i = 1, #tbTeamMemberId do
-				if tbTeamMemberId[i] ~= nil and 0 < tbTeamMemberId[i] then
-					table.insert(teamIDs, tbTeamMemberId[i])
-				end
-			end
-			if #teamIDs == 3 then
-				EventManager.Hit(EventId.OpenPanel, PanelId.MainlineFormationDisc, self.curRoguelikeId, self._panel.nTeamIndex, self.bSweep)
-				self:SetLocalData()
-			else
-				EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("FRFORMATION_01"))
-				self._mapNode.btnStartBattle.enabled = true
-			end
+			EnterDiscSelect()
 		end
 	end
 	PlayerData.Build:GetBuildCount(CheckBuildCountCallBack)
 end
+function FormationCtrl:RefreshPreselection()
+	local callback = function()
+		if self.nPreselectionId == 0 then
+			NovaAPI.SetTMPText(self._mapNode.txtPreSelect, ConfigTable.GetUIText("Build_Preselection_Empty"))
+			self._mapNode.imgPreSelected.interactable = true
+			self._mapNode.imgBgDetail.gameObject:SetActive(false)
+		else
+			self._mapNode.imgBgDetail.gameObject:SetActive(true)
+			local bDiff = false
+			local mapPreselection = PlayerData.PotentialPreselection:GetPreselectionById(self.nPreselectionId)
+			if mapPreselection ~= nil then
+				for k, v in ipairs(mapPreselection.tbCharPotential) do
+					if k == 1 then
+						if v.nCharId ~= self.curTeam[1] then
+							bDiff = true
+							break
+						end
+					elseif table.indexof(self.curTeam, v.nCharId) == 0 then
+						bDiff = true
+						break
+					end
+				end
+			end
+			if bDiff then
+				NovaAPI.SetTMPText(self._mapNode.txtPreSelect, ConfigTable.GetUIText("Build_Preselection_CharDiff"))
+				self._mapNode.imgPreSelected.interactable = false
+			else
+				NovaAPI.SetTMPText(self._mapNode.txtPreSelect, ConfigTable.GetUIText("Build_Preselection_Selected"))
+				self._mapNode.imgPreSelected.interactable = true
+			end
+		end
+	end
+	PlayerData.PotentialPreselection:SendGetPreselectionList(callback)
+end
 function FormationCtrl:Awake()
 	self.isOpenTeamMember = false
 	self:CheckBannedChar(true)
+	self._panel.nLoadProcess = 0
 end
 function FormationCtrl:OnEnable()
+	self.nPreselectionId = 0
 	local mapSelectedMainlineId = PlayerData.Mainline._nSelectId
 	self._mapNode.goLoadMask:SetActive(true)
 	self._Animator = self.gameObject:GetComponent("Animator")
@@ -240,7 +297,7 @@ function FormationCtrl:OnEnable()
 	if self.nFRType == AllEnum.FormationEnterType.MainLine then
 		local mapMainline = ConfigTable.GetData_Mainline(mapSelectedMainlineId)
 		local tbTeamMemberId, nCaptain
-		if mapMainline.TrialCharacter ~= nil and #mapMainline.TrialCharacter > 0 then
+		if mapMainline.TrialCharacter ~= nil and 0 < #mapMainline.TrialCharacter then
 			tbTeamMemberId = mapMainline.TrialCharacter
 			self.mapTrialChar = PlayerData.Char:CreateTrialChar(tbTeamMemberId)
 			self.bTrialLevel = true
@@ -267,6 +324,7 @@ function FormationCtrl:OnEnable()
 	self._mapNode.btnFastFormation.gameObject:SetActive(not self.bTrialLevel)
 	self._mapNode.rt_TeamName.gameObject:SetActive(not self.bTrialLevel)
 	self._mapNode.TMPHintTrial.gameObject:SetActive(self.bTrialLevel)
+	self._mapNode.goPreselection.gameObject:SetActive(not self.bTrialLevel)
 	self._mapNode.t_arrow_01:SetActive(not self.bTrialLevel)
 	local sSceneName = self.nFRType ~= AllEnum.FormationEnterType.MainLine and ConfigTable.GetConfigValue("SelectRole_Rogue") or ConfigTable.GetConfigValue("SelectRole_Main")
 	self.mapCurModel = {}
@@ -357,6 +415,7 @@ function FormationCtrl:LoadCharacter(nCharId, bOpen)
 		if self._mapNode == nil then
 			return
 		end
+		self._panel.nLoadProcess = self._panel.nLoadProcess - 1
 		local idx = table.indexof(self.curTeam, nCharId)
 		if 0 < idx then
 			if self.mapCurModel[idx] ~= nil then
@@ -365,6 +424,7 @@ function FormationCtrl:LoadCharacter(nCharId, bOpen)
 				self.mapCurModel[idx] = nil
 			end
 			local go = instantiate(obj, self.rtSceneOriginPos)
+			NovaAPI.ChangeAnimatorDefaultState(go.transform)
 			self.mapCurModel[idx] = {nCharId = nCharId, model = go}
 			NovaAPI.BindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, idx - 1, go)
 			if self.rtSceneOriginPos ~= nil then
@@ -385,6 +445,7 @@ function FormationCtrl:LoadCharacter(nCharId, bOpen)
 			end
 		end
 	end
+	self._panel.nLoadProcess = self._panel.nLoadProcess + 1
 	self:LoadAssetAsync(sFullPath, typeof(GameObject), LoadModelCallback)
 end
 function FormationCtrl:SetModelPos(nCharId, objModel, nPos)
@@ -727,7 +788,8 @@ function FormationCtrl:OnBtnClick_FastFormation(btn)
 				end
 			end
 			local tmpDisc = PlayerData.Team:GetTeamDiscData(self._panel.nTeamIndex)
-			PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, self.curTeam, tmpDisc, Callback)
+			local nPreselectionId = PlayerData.Team:GetTeamPreselectionId(self._panel.nTeamIndex)
+			PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, self.curTeam, tmpDisc, nPreselectionId, Callback)
 		end
 	end
 	local cancelCallback = function()
@@ -755,6 +817,9 @@ function FormationCtrl:SetLocalData()
 	LocalData.SetPlayerLocalData("SavedTeamIdx", self._panel.nTeamIndex)
 end
 function FormationCtrl:OnBtnClick_Start(btn)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	self._mapNode.btnStartBattle.enabled = false
 	if self.nFRType == AllEnum.FormationEnterType.MainLine then
 		self:EnterMainline()
@@ -765,10 +830,27 @@ function FormationCtrl:OnBtnClick_Start(btn)
 	end
 	NovaAPI.SetEntryLevelFade(true)
 end
+function FormationCtrl:OnBtnClick_Preselection()
+	PlayerData.PotentialPreselection:SendGetPreselectionList(function()
+		EventManager.Hit(EventId.OpenPanel, PanelId.PotentialPreselectionList, self.curTeam, self._panel.nTeamIndex)
+	end)
+end
+function FormationCtrl:OnBtnClick_PreDetail()
+	if self.nPreselectionId == 0 then
+		return
+	end
+	PlayerData.PotentialPreselection:SendGetPreselectionList(function()
+		local mapData = PlayerData.PotentialPreselection:GetPreselectionById(self.nPreselectionId)
+		EventManager.Hit(EventId.OpenPanel, PanelId.PotentialPreselectionEdit, AllEnum.PreselectionPanelType.Preview, mapData, self.curTeam, self._panel.nTeamIndex)
+	end)
+end
 function FormationCtrl:OnEvent_LoadModel(bLoadFinish)
 	self._mapNode.Mask:SetActive(not bLoadFinish)
 end
 function FormationCtrl:OnEvent_Back(nPanelId)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	if self._panel._nPanelId ~= nPanelId then
 		return
 	end
@@ -785,6 +867,10 @@ function FormationCtrl:OnEvent_Back(nPanelId)
 	end
 end
 function FormationCtrl:OnEvent_BackHome(nPanelId)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		print(self._panel.nLoadProcess)
+		return
+	end
 	if self._panel._nPanelId ~= nPanelId then
 		return
 	end
@@ -800,6 +886,7 @@ function FormationCtrl:OnEvent_OpenSelectTeamMemberList(nIdx)
 	self._mapNode.btnFastFormation.gameObject:SetActive(false)
 	self._mapNode.btnStartBattle.transform.localScale = Vector3.zero
 	self._mapNode.t_arrow_01.gameObject:SetActive(false)
+	self._mapNode.goPreselection.gameObject:SetActive(false)
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.rt_TeamNameAlpha, 0)
 	self._mapNode.CharList:ShowList(self.curTeam, true)
 	self._panel.bList = true
@@ -816,7 +903,8 @@ function FormationCtrl:OnEvent_CloseList(bConfirm, tbList)
 		self.curTeam = tbList
 		if self:CheckFormationChanged() then
 			local tmpDisc = PlayerData.Team:GetTeamDiscData(self._panel.nTeamIndex)
-			PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, self.curTeam, tmpDisc, Callback)
+			local nPreselectionId = PlayerData.Team:GetTeamPreselectionId(self._panel.nTeamIndex)
+			PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, self.curTeam, tmpDisc, nPreselectionId, Callback)
 		end
 	else
 		self:Refresh()
@@ -825,6 +913,7 @@ function FormationCtrl:OnEvent_CloseList(bConfirm, tbList)
 		self._mapNode.btnFastFormation.gameObject:SetActive(true)
 		self._mapNode.btnStartBattle.transform.localScale = Vector3.one
 		self._mapNode.t_arrow_01.gameObject:SetActive(true)
+		self._mapNode.goPreselection.gameObject:SetActive(true)
 		NovaAPI.SetCanvasGroupAlpha(self._mapNode.rt_TeamNameAlpha, 1)
 		self._mapNode.CharList:CloseList()
 	end
@@ -841,6 +930,7 @@ end
 function FormationCtrl:OnEvent_ChangeTeamModel(tbList)
 	self.curTeam = tbList
 	self:RefreshChar()
+	self:RefreshPreselection()
 end
 function FormationCtrl:OnEvent_OpenSwapChar(nIdx)
 	local callback = function(nSwapIdx)
@@ -865,7 +955,8 @@ function FormationCtrl:OnEvent_OpenSwapChar(nIdx)
 		end
 		if self:CheckFormationChanged() then
 			local tmpDisc = PlayerData.Team:GetTeamDiscData(self._panel.nTeamIndex)
-			PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, self.curTeam, tmpDisc, Callback)
+			local nPreselectionId = PlayerData.Team:GetTeamPreselectionId(self._panel.nTeamIndex)
+			PlayerData.Team:UpdateFormationInfo(self._panel.nTeamIndex, self.curTeam, tmpDisc, nPreselectionId, Callback)
 		end
 	end
 	local nCurSelectChar = self.curTeam[nIdx]

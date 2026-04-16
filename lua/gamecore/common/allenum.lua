@@ -474,7 +474,9 @@ AllEnum.WorldMapNodeType = {
 	ScoreBoss = 12,
 	SkillInstance = 13,
 	Trial = 14,
-	JointDrill = 15
+	JointDrill = 15,
+	ActivityLevels = 16,
+	ActivityStory = 17
 }
 AllEnum.FrameColor_New = {
 	[0] = "0",
@@ -1529,7 +1531,8 @@ AllEnum.ActivityThemeFuncIndex = {
 	Story = 3,
 	Shop = 4,
 	Level = 5,
-	Other = 6
+	FateCard = 6,
+	TrekkerVersus = 7
 }
 AllEnum.CgSurfix = {Main = "_M", Image = ""}
 AllEnum.Cg2DType = {Base = 1, L2D = 2}
@@ -1570,5 +1573,20 @@ AllEnum.PenguinCardSuitSprite = {
 	[GameEnum.PenguinBaseCardSuit.Blue] = "icon_PengCard_Water",
 	[GameEnum.PenguinBaseCardSuit.Red] = "icon_PengCard_Fire",
 	[GameEnum.PenguinBaseCardSuit.Green] = "icon_PengCard_Wind"
+}
+AllEnum.GoldenSpyHitAreaType = {Circle = 1, Rectangle = 2}
+AllEnum.TrekkerVersusDuelSelfInfo = {
+	NameKey = "TD_SelfName",
+	Icon = "UI_Activity/_600002/head_172_duel"
+}
+AllEnum.PreselectionPanelType = {
+	Create = 1,
+	Preview = 2,
+	Edit = 3
+}
+AllEnum.GoldenSpyBuffType = {
+	ActiveBuff = 1,
+	DelayBuff = 2,
+	UnactiveBuff = 3
 }
 return AllEnum

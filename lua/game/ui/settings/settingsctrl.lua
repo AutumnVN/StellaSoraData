@@ -109,6 +109,7 @@ function SettingsCtrl:InitPageState()
 	end
 	local bMobile = NovaAPI.IsMobilePlatform()
 	self._mapNode.btnPage[7].gameObject:SetActive(not bMobile)
+	self._mapNode.btnPage[6].gameObject:SetActive(false)
 	if bMobile then
 		local bAble = false
 		self._mapNode.btnPage[8].gameObject:SetActive(bAble)

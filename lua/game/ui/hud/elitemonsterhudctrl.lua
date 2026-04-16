@@ -128,7 +128,8 @@ EliteMonsterHudCtrl._mapNodeConfig = {
 EliteMonsterHudCtrl._mapEventConfig = {}
 local multipleBossIcon = {
 	[GameEnum.monsterBloodType.BOSS] = "icon_story_boss1",
-	[GameEnum.monsterBloodType.MINIBOSS] = "icon_story_boss2"
+	[GameEnum.monsterBloodType.MINIBOSS] = "icon_story_boss2",
+	[GameEnum.monsterBloodType.JOINTDRILLBOSS] = "icon_story_boss1"
 }
 function EliteMonsterHudCtrl:PlayTweenHp(hp, hpMax)
 	local nWidth = 1 <= hp / hpMax and BarWidth or hp / hpMax * BarWidth
@@ -296,7 +297,7 @@ function EliteMonsterHudCtrl:OnDisable()
 end
 function EliteMonsterHudCtrl:OnDestroy()
 end
-function EliteMonsterHudCtrl:SetMonsterId(monsterId, nDataId, nType, bMultipleBoss)
+function EliteMonsterHudCtrl:SetMonsterId(monsterId, nDataId, nType)
 	if self.monsterId == monsterId then
 		return
 	end
@@ -306,8 +307,9 @@ function EliteMonsterHudCtrl:SetMonsterId(monsterId, nDataId, nType, bMultipleBo
 		return
 	end
 	self.monsterId = monsterId
-	self._mapNode.imgBossIcon.gameObject:SetActive(bMultipleBoss)
-	if bMultipleBoss then
+	local bShowBossIcon = nType == GameEnum.monsterBloodType.BOSS or nType == GameEnum.monsterBloodType.MINIBOSS or nType == GameEnum.monsterBloodType.JOINTDRILLBOSS
+	self._mapNode.imgBossIcon.gameObject:SetActive(bShowBossIcon)
+	if bShowBossIcon then
 		local sIcon = multipleBossIcon[nType]
 		self:SetAtlasSprite(self._mapNode.imgBossIcon, "15_battle", sIcon)
 		NovaAPI.SetImageNativeSize(self._mapNode.imgBossIcon)

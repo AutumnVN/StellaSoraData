@@ -132,6 +132,7 @@ function TrialFormationCtrl:LoadCharacter(nCharId, bOpen)
 	end
 	local sFullPath = string.format("%s.prefab", mapSkin.Model_Show)
 	local LoadModelCallback = function(obj)
+		self._panel.nLoadProcess = self._panel.nLoadProcess - 1
 		if self._mapNode == nil then
 			return
 		end
@@ -163,6 +164,7 @@ function TrialFormationCtrl:LoadCharacter(nCharId, bOpen)
 			end
 		end
 	end
+	self._panel.nLoadProcess = self._panel.nLoadProcess + 1
 	self:LoadAssetAsync(sFullPath, typeof(GameObject), LoadModelCallback)
 end
 function TrialFormationCtrl:LoadScene()
@@ -203,8 +205,10 @@ function TrialFormationCtrl:LoadScene()
 	CS.MainMenuModuleHelper.GetActiveScene(sSceneName, callbak)
 end
 function TrialFormationCtrl:Awake()
+	self._panel.nLoadProcess = 0
 end
 function TrialFormationCtrl:OnEnable()
+	self._panel.nLoadProcess = 0
 	local tbParam = self:GetPanelParam()
 	if type(tbParam) == "table" then
 		self.nFloorId = tbParam[1]
@@ -236,6 +240,9 @@ end
 function TrialFormationCtrl:OnDestroy()
 end
 function TrialFormationCtrl:OnBtnClick_Info(btn)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	local tbDisc = {}
 	for _, v in ipairs(self.tbDiscId) do
 		local mapCfg = ConfigTable.GetData("TrialDisc", v)
@@ -246,6 +253,9 @@ function TrialFormationCtrl:OnBtnClick_Info(btn)
 	EventManager.Hit(EventId.OpenPanel, PanelId.TrialDepot, self.tbCharId, tbDisc, self.mapCharData, self.mapDiscData, self.mapTalentAddLevel, self.tbDepotPotential, self.mapBuildData.tbNotes)
 end
 function TrialFormationCtrl:OnBtnClick_Start(btn)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	self._mapNode.btnStartBattle.enabled = false
 	PlayerData.Trial:EnterTrial(self.nFloorId)
 	NovaAPI.SetEntryLevelFade(true)
@@ -254,6 +264,9 @@ function TrialFormationCtrl:OnEvent_LoadModel(bLoadFinish)
 	self._mapNode.Mask:SetActive(not bLoadFinish)
 end
 function TrialFormationCtrl:OnEvent_Back(nPanelId)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	if self._panel._nPanelId ~= nPanelId then
 		return
 	end
@@ -262,6 +275,9 @@ function TrialFormationCtrl:OnEvent_Back(nPanelId)
 	PlayerData.Build:DeleteTrialBuild()
 end
 function TrialFormationCtrl:OnEvent_BackHome(nPanelId)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	if self._panel._nPanelId ~= nPanelId then
 		return
 	end

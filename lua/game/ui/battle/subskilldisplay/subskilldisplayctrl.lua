@@ -177,10 +177,6 @@ function SubSkillDisplayCtrl:SetLocalData()
 	return 1
 end
 function SubSkillDisplayCtrl:CheckForcePlay()
-	local bUseLive2D = LocalSettingData.mapData.UseLive2D
-	if not bUseLive2D then
-		return false
-	end
 	local tbDynamic = {
 		[GameEnum.dynamicLevelType.Trial] = true
 	}

@@ -7,6 +7,14 @@ local LayoutRebuilder = CS.UnityEngine.UI.LayoutRebuilder
 local AUTO_PLAY_WAITING_DEFAULT = 3
 local AUTO_PLAY_WAITING_VOICE = 0.1
 Avg_4_TalkCtrl._mapNodeConfig = {
+	trCameraAperture = {
+		sNodeName = "CameraAperture",
+		sComponentName = "Transform"
+	},
+	cg_CameraAperture = {
+		sNodeName = "====CameraAperture====",
+		sComponentName = "CanvasGroup"
+	},
 	btnClickToGoOn = {
 		sComponentName = "Button",
 		callback = "OnBtnClick_GoOn"
@@ -274,7 +282,8 @@ Avg_4_TalkCtrl._mapEventConfig = {
 	[EventId.AvgVoiceDuration] = "OnEvent_AvgVoiceDuration",
 	[EventId.AvgSpeedUp] = "OnEvent_AvgSpeedUp",
 	GamepadUIChange = "OnEvent_GamepadUIChange",
-	GamepadUIReopen = "OnEvent_Reopen"
+	GamepadUIReopen = "OnEvent_Reopen",
+	AVG_SetCameraAperture = "OnEvent_AVG_SetCameraAperture"
 }
 function Avg_4_TalkCtrl:Awake()
 	self.rootCanvasGroup = self.gameObject:GetComponent("CanvasGroup")
@@ -503,7 +512,7 @@ function Avg_4_TalkCtrl:OnEvent_AvgSetAutoPlay(bAuto, bByInit)
 	end
 end
 function Avg_4_TalkCtrl:OnEvent_AvgShowHideTalkUI(bVisible)
-	NovaAPI.SetCanvasGroupAlpha(self.rootCanvasGroup, bVisible == true and 1 or 0)
+	NovaAPI.SetCanvasGroupAlpha(self.rootCanvasGroup, bVisible == true and 1 or 1.0E-4)
 	NovaAPI.SetCanvasGroupInteractable(self.rootCanvasGroup, bVisible == true)
 	NovaAPI.SetCanvasGroupBlocksRaycasts(self.rootCanvasGroup, bVisible == true)
 	NovaAPI.SetButtonInteractable(self._mapNode.btnClickToGoOn, bVisible == true)
@@ -1278,6 +1287,28 @@ function Avg_4_TalkCtrl:SetMainRoleTalk(tbParam)
 		return nDuration
 	else
 		return 0
+	end
+end
+function Avg_4_TalkCtrl:SetCameraAperture(tbParam)
+	local bVisible = tbParam[1]
+	if bVisible == true then
+		self._mapNode.trCameraAperture.localScale = Vector3.one
+	else
+		self._mapNode.trCameraAperture.localScale = Vector3.zero
+	end
+	return 0
+end
+function Avg_4_TalkCtrl:OnEvent_AVG_SetCameraAperture(nCloseOpen, nDuration, bWait)
+	local nTarget = 0
+	if nCloseOpen == 0 then
+		nTarget = 0
+	else
+		nTarget = 1
+	end
+	if bWait == true and 0 < nDuration then
+		NovaAPI.SetCanvasGroupDoFade(self._mapNode.cg_CameraAperture, nTarget, nDuration, true)
+	else
+		NovaAPI.SetCanvasGroupAlpha(self._mapNode.cg_CameraAperture, nTarget)
 	end
 end
 function Avg_4_TalkCtrl:RestoreAll(bActive, tbHistoryData)

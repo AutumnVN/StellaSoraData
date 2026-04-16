@@ -27,6 +27,10 @@ MallRecommendItemCtrl._mapNodeConfig = {
 	},
 	sale = {},
 	txt_sale = {sComponentName = "TMP_Text"},
+	txt_sale_1 = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Mall_Package_Recommend"
+	},
 	txt_Time = {sComponentName = "TMP_Text"},
 	itemPrice = {},
 	icon_res = {sComponentName = "Image"},
@@ -67,10 +71,15 @@ function MallRecommendItemCtrl:Refresh(groupConfig, sPackageId)
 	self:SetPngSprite(self._mapNode.bg, "UI/big_sprites/" .. dbResName[mapCfg.Rarity])
 	self:SetPngSprite(self._mapNode.icon, mapCfg.Icon)
 	NovaAPI.SetTMPText(self._mapNode.txt_name, mapCfg.Name)
+	self._mapNode.txt_sale_1.gameObject:SetActive(false)
 	if mapCfg.SaleRate > 0 then
 		self._mapNode.sale:SetActive(true)
 		self._mapNode.txt_sale.gameObject:SetActive(true)
 		NovaAPI.SetTMPText(self._mapNode.txt_sale, string.format("%s%%", mapCfg.SaleRate))
+	elseif mapCfg.SaleRate == -1 then
+		self._mapNode.sale:SetActive(true)
+		self._mapNode.txt_sale_1.gameObject:SetActive(true)
+		self._mapNode.txt_sale.gameObject:SetActive(false)
 	else
 		self._mapNode.sale:SetActive(false)
 		self._mapNode.txt_sale.gameObject:SetActive(false)

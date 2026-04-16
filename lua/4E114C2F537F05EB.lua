@@ -113,12 +113,15 @@ local statusOrder = {
 }
 function QuestNewbieFormationCtrl:Refresh(bClick)
 	self:InitData()
+	local nLastestAttributeId = PlayerData.Quest:GetOngoingAttributeId()
 	local nTeamSelected = tonumber(LocalData.GetPlayerLocalData("TeamFormationQuestSelected"))
-	if nTeamSelected ~= nil and PlayerData.Quest:CheckTeamFormationAttributeCompleted(nTeamSelected) then
-		if bClick ~= true then
+	if not bClick and nTeamSelected ~= nil then
+		if nLastestAttributeId ~= 0 then
+			nTeamSelected = nLastestAttributeId
+			LocalData.SetPlayerLocalData("TeamFormationQuestSelected", nLastestAttributeId)
+		else
 			nTeamSelected = nil
 		end
-		LocalData.SetPlayerLocalData("TeamFormationQuestSelected", nil)
 	end
 	if nTeamSelected ~= nil and PlayerData.Quest:CheckTeamFormationAttributeUnlocked(nTeamSelected) == true then
 		self.nCurGroup = PlayerData.Quest:GetCurTeamFormationQuestGroup(nTeamSelected)
@@ -148,7 +151,11 @@ function QuestNewbieFormationCtrl:RefreshTeamSelect()
 				local mapData = ConfigTable.GetData("AssistAttribute", i)
 				self._mapNode.ctrlTeam[i].gameObject:SetActive(mapData ~= nil)
 				if mapData ~= nil then
-					self._mapNode.ctrlTeam[i]:Init(mapData)
+					local mapPrevData
+					if 1 < i then
+						mapPrevData = ConfigTable.GetData("AssistAttribute", i - 1)
+					end
+					self._mapNode.ctrlTeam[i]:Init(mapData, mapPrevData)
 				end
 			end
 		end
@@ -169,15 +176,28 @@ end
 function QuestNewbieFormationCtrl:OnGridRefresh(goGrid, gridIndex)
 	local nIndex = gridIndex + 1
 	local mapData = self.tbAttr[nIndex]
-	local nInstanceId = goGrid:GetInstanceID()
-	if not self.tbAttrGridCtrl[nInstanceId] then
-		self.tbAttrGridCtrl[nInstanceId] = self:BindCtrlByNode(goGrid, "Game.UI.QuestNewbie.TeamFormation.QuestNewbieTeamCtrl")
+	local prevMapData
+	if 1 < nIndex then
+		prevMapData = self.tbAttr[nIndex - 1]
 	end
-	self.tbAttrGridCtrl[nInstanceId]:Init(mapData)
+	local nInstanceId = goGrid:GetInstanceID()
+	if self.tbAttrGridCtrl[nInstanceId] ~= nil then
+		self:UnbindCtrlByNode(self.tbAttrGridCtrl[nInstanceId])
+		self.tbAttrGridCtrl[nInstanceId] = nil
+	end
+	self.tbAttrGridCtrl[nInstanceId] = self:BindCtrlByNode(goGrid, "Game.UI.QuestNewbie.TeamFormation.QuestNewbieTeamCtrl")
+	self.tbAttrGridCtrl[nInstanceId]:Init(mapData, prevMapData)
 end
 function QuestNewbieFormationCtrl:OnGridBtnClick(goGrid, gridIndex)
+	if self.tbAttr == nil then
+		return
+	end
 	local nIndex = gridIndex + 1
 	local nInstanceId = goGrid:GetInstanceID()
+	if PlayerData.Quest:CheckTeamFormationAttributeUnlocked(nIndex) == false and 1 < nIndex then
+		EventManager.Hit(EventId.OpenMessageBox, orderedFormat(ConfigTable.GetUIText("FormationQuest_UnLock"), ConfigTable.GetUIText("T_Element_Attr_" .. self.tbAttr[nIndex - 1].EET)))
+		return
+	end
 	LocalData.SetPlayerLocalData("TeamFormationQuestSelected", tostring(nIndex))
 	PlayerData.Quest:UpdateTeamFormationRedDot()
 	self.nCurGroup = PlayerData.Quest:GetCurTeamFormationQuestGroup(nIndex)
@@ -185,6 +205,10 @@ function QuestNewbieFormationCtrl:OnGridBtnClick(goGrid, gridIndex)
 end
 function QuestNewbieFormationCtrl:OnBtnClick_TeamFormation(btn, nTeamIndex)
 	if nTeamIndex == nil then
+		return
+	end
+	if PlayerData.Quest:CheckTeamFormationAttributeUnlocked(nTeamIndex) == false and 1 < nTeamIndex then
+		EventManager.Hit(EventId.OpenMessageBox, orderedFormat(ConfigTable.GetUIText("FormationQuest_UnLock"), ConfigTable.GetUIText("T_Element_Attr_" .. self.tbAttr[nTeamIndex - 1].EET)))
 		return
 	end
 	LocalData.SetPlayerLocalData("TeamFormationQuestSelected", tostring(nTeamIndex))
@@ -277,12 +301,18 @@ function QuestNewbieFormationCtrl:RefreshShow(nCurGroup)
 	self.curShowGroup = nCurGroup
 	self.nCurShowGroupIdxInAttr = PlayerData.Quest:GetTeamFormationGroupIndexInAttribute(nCurGroup)
 	self.nAttributeIdx = PlayerData.Quest:GetAttributeIdByGroupId(nCurGroup)
+	self.nCurAttrQuestGroupStartIdx = PlayerData.Quest:GetTeamFormationGroupStartIndex(self.nAttributeIdx)
+	self.nCurAttrQuestGroupEndIdx = PlayerData.Quest:GetTeamFormationGroupEndIndex(self.nAttributeIdx)
 	local curGroupId = PlayerData.Quest:GetCurTeamFormationQuestGroup(self.nAttributeIdx)
 	local curGroupIdxInAttr = PlayerData.Quest:GetTeamFormationGroupIndexInAttribute(curGroupId)
 	local curShowGroupIdx = 0
+	local curShowGroupInAttri = 0
 	for idx, mapGroupData in ipairs(self.tbAllGroup) do
 		if self.curShowGroup == mapGroupData.Id then
 			curShowGroupIdx = idx
+			if mapGroupData.AttributeId == self.nAttributeIdx then
+				curShowGroupInAttri = curShowGroupInAttri + 1
+			end
 		end
 	end
 	local questGroupCfg = self.tbAllGroup[curShowGroupIdx]
@@ -299,7 +329,7 @@ function QuestNewbieFormationCtrl:RefreshShow(nCurGroup)
 		NovaAPI.SetTMPText(self._mapNode.txtChapter, string.format("%02d", self.nCurShowGroupIdxInAttr))
 	end
 	local nStartIdx = 1
-	if questGroupCfg.ShowBuildId ~= 0 then
+	if questGroupCfg ~= nil and questGroupCfg.ShowBuildId ~= 0 then
 		nStartIdx = 2
 		self._mapNode.rewardItem[1].gameObject:SetActive(true)
 		self._mapNode.imgEmpty[1].gameObject:SetActive(false)
@@ -335,8 +365,8 @@ function QuestNewbieFormationCtrl:RefreshShow(nCurGroup)
 	self._mapNode.txtActComplete.gameObject:SetActive(bGroupReceived)
 	self._mapNode.btnFastReceive.gameObject:SetActive(bFastReceive)
 	self._mapNode.btnFastReceiveGray.gameObject:SetActive(not bFastReceive)
-	self._mapNode.BtnLeft.gameObject:SetActive(1 < curShowGroupIdx)
-	self._mapNode.BtnRight.gameObject:SetActive(curGroupIdxInAttr > curShowGroupIdx)
+	self._mapNode.BtnLeft.gameObject:SetActive(curShowGroupIdx > self.nCurAttrQuestGroupStartIdx)
+	self._mapNode.BtnRight.gameObject:SetActive(curShowGroupIdx < self.nCurAttrQuestGroupEndIdx)
 	if self.nCurPage == 1 then
 		self.nCurPage = 2
 	else
@@ -355,9 +385,11 @@ function QuestNewbieFormationCtrl:RefreshShow(nCurGroup)
 end
 function QuestNewbieFormationCtrl:OnQuestGridRefresh(goGrid, gridIndex)
 	local nInstanceId = goGrid:GetInstanceID()
-	if self.mapQuestsGrids[nInstanceId] == nil then
-		self.mapQuestsGrids[nInstanceId] = self:BindCtrlByNode(goGrid, "Game.UI.QuestNewbie.TeamFormation.FormationQuestGridCtrl")
+	if self.mapQuestsGrids[nInstanceId] ~= nil then
+		self:UnbindCtrlByNode(self.mapQuestsGrids[nInstanceId])
+		self.mapQuestsGrids[nInstanceId] = nil
 	end
+	self.mapQuestsGrids[nInstanceId] = self:BindCtrlByNode(goGrid, "Game.UI.QuestNewbie.TeamFormation.FormationQuestGridCtrl")
 	local nIdx = gridIndex + 1
 	self.mapQuestsGrids[nInstanceId]:Refresh(self.mapCurPageQuest[nIdx])
 end
@@ -465,6 +497,9 @@ function QuestNewbieFormationCtrl:OnBtnClick_ReceiveChapter()
 		end
 	end
 	local questGroupCfg = self.tbAllGroup[curShowGroupIdx]
+	if questGroupCfg == nil then
+		return
+	end
 	local bDropBuild = questGroupCfg.ShowBuildId ~= nil and 0 < questGroupCfg.ShowBuildId
 	if bDropBuild then
 		local CheckBuildCountCallBack = function(nBuildCount)
@@ -497,9 +532,14 @@ function QuestNewbieFormationCtrl:OnBtnClick_FastReceive()
 			curShowGroupIdx = idx
 		end
 	end
-	PlayerData.Quest:ReceiveTeamFormationReward(0, self.tbAllGroup[curShowGroupIdx].Id, nil)
+	local nId = 0
+	if self.tbAllGroup[curShowGroupIdx] ~= nil then
+		nId = self.tbAllGroup[curShowGroupIdx].Id
+	end
+	PlayerData.Quest:ReceiveTeamFormationReward(0, nId, nil)
 end
 function QuestNewbieFormationCtrl:OnBtnClick_FastReceiveGray()
+	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Affinity_Reward_Tips"))
 end
 function QuestNewbieFormationCtrl:OnBtnClick_RewardItem(btn, nIndex)
 	local nTid = 0
@@ -510,7 +550,7 @@ function QuestNewbieFormationCtrl:OnBtnClick_RewardItem(btn, nIndex)
 		end
 	end
 	local questGroupCfg = self.tbAllGroup[curShowGroupIdx]
-	if questGroupCfg.ShowBuildId ~= 0 then
+	if questGroupCfg ~= nil and questGroupCfg.ShowBuildId ~= 0 then
 		if 1 < nIndex then
 			nIndex = nIndex - 1
 			nTid = self.tbChapterReward[nIndex].nTid
@@ -543,6 +583,7 @@ function QuestNewbieFormationCtrl:OnEvent_UpdateTeamFormationGroup(bAttributeCom
 		self.nCurGroup = nNextGroup
 	end
 	self._mapNode.goQuestList:SetActive(true)
+	self.mapAllTeamFormationQuestStatus = PlayerData.Quest:GetTeamFormationQuestData()
 	self:RefreshQuestList(self.mapAllTeamFormationQuest[self.nCurGroup], self.nCurGroup)
 end
 function QuestNewbieFormationCtrl:OnEvent_Guide_GetNewQuestTaskIndex(nTaskIndex)
@@ -553,7 +594,8 @@ function QuestNewbieFormationCtrl:OnEvent_Guide_GetNewQuestTaskIndex(nTaskIndex)
 			break
 		end
 	end
-	self._mapNode.formationQuestLSV:SetScrollGridPos(nIndex - 1, 0)
+	local nPos = 1 < nIndex and nIndex - 1 or 0
+	self._mapNode.formationQuestLSV:SetScrollGridPos(nPos, 0)
 	local listInUse = self._mapNode.formationQuestLSV:GetInUseGridIndex()
 	local nPosInScreen = 0
 	for i = 0, listInUse.Count - 1 do

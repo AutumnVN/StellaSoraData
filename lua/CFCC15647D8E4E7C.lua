@@ -1,10 +1,4 @@
-local BreakOutLevelCellCtrl = class("TowerDefenseLevelCellCtrl", BaseCtrl)
-local DifficultyState = {
-	"Entry",
-	"Newbie",
-	"Advanced",
-	"Expert"
-}
+local BreakOutLevelCellCtrl = class("BreakOutLevelCellCtrl", BaseCtrl)
 BreakOutLevelCellCtrl._mapNodeConfig = {
 	txt_Name = {sComponentName = "TMP_Text"},
 	img_FinishIcon = {

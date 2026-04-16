@@ -1,4 +1,5 @@
 local EquipmentSlotItemCtrl = class("EquipmentSlotItemCtrl", BaseCtrl)
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
 EquipmentSlotItemCtrl._mapNodeConfig = {
 	goEmpty = {},
 	imgAbleBg = {sComponentName = "Image"},
@@ -11,7 +12,7 @@ EquipmentSlotItemCtrl._mapNodeConfig = {
 	imgLockType = {sComponentName = "Image"},
 	imgChoose = {},
 	goEquip = {},
-	imgEquipmentIcon = {sComponentName = "Image"}
+	imgEquipmentIcon = {sComponentName = "Transform"}
 }
 EquipmentSlotItemCtrl._mapEventConfig = {}
 EquipmentSlotItemCtrl._mapRedDotConfig = {}
@@ -32,7 +33,21 @@ function EquipmentSlotItemCtrl:Init(mapSlot, nCharId)
 		self:SetPngSprite(self._mapNode.imgLockType, mapGemCfg.IconBg)
 		NovaAPI.SetTMPText(self._mapNode.txtLockDesc, orderedFormat(ConfigTable.GetUIText("Equipment_SlotActiveLevel"), mapSlot.nLevel))
 	elseif bUnlock and not bEmpty then
-		self:SetPngSprite(self._mapNode.imgEquipmentIcon, mapGemCfg.Icon)
+		local mapEquipment = PlayerData.Equipment:GetEquipmentByGemIndex(nCharId, mapSlot.nSlotId, mapSlot.nGemIndex)
+		local bUpgrade = 0 < mapEquipment:GetUpgradeCount()
+		if not self.goEquipment then
+			local equipPrefab
+			local sPrefab = mapEquipment.sIcon .. ".prefab"
+			if GameResourceLoader.ExistsAsset(Settings.AB_ROOT_PATH .. sPrefab) == true then
+				equipPrefab = self:LoadAsset(sPrefab)
+			end
+			if equipPrefab then
+				self.goEquipment = instantiate(equipPrefab, self._mapNode.imgEquipmentIcon)
+			end
+		end
+		if self.goEquipment then
+			self.goEquipment.transform:Find("goFx").gameObject:SetActive(bUpgrade)
+		end
 	end
 	if mapSlot.nSlotId == 1 and bEmpty and bUnlock then
 		local mapSlotCfg = ConfigTable.GetData("CharGemSlotControl", mapSlot.nSlotId)
@@ -53,5 +68,10 @@ function EquipmentSlotItemCtrl:PlayAnim()
 end
 function EquipmentSlotItemCtrl:Awake()
 	self.animRoot = self.gameObject:GetComponent("Animator")
+	self.goEquipment = nil
+end
+function EquipmentSlotItemCtrl:Disable()
+	delChildren(self._mapNode.imgEquipmentIcon)
+	self.goEquipment = nil
 end
 return EquipmentSlotItemCtrl

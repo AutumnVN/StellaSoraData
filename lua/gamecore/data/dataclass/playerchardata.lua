@@ -254,7 +254,8 @@ function PlayerCharData:CreateNewChar(msgData)
 		nAffinityExp = msgData.AffinityExp,
 		nAffinityLevel = msgData.AffinityLevel,
 		tbAffinityQuests = msgData.AffinityQuests,
-		tbArchiveRewardIds = msgData.ArchiveRewardIds or {}
+		tbArchiveRewardIds = msgData.ArchiveRewardIds or {},
+		bIsFavorite = msgData.IsFavorite
 	}
 	if msgData.DatingEventIds ~= nil and msgData.DatingEventRewardIds ~= nil then
 		PlayerData.Dating:RefreshLimitedEventList(nCharId, msgData.DatingEventIds, msgData.DatingEventRewardIds)
@@ -1251,6 +1252,7 @@ function PlayerCharData:GetDataForCharList()
 			mapChar[nCharId].CreateTime = data.nCreateTime
 			mapChar[nCharId].Advance = self:GetCharAdvance(nCharId)
 			mapChar[nCharId].Favorability = self:GetCharAffinityData(nCharId).Level
+			mapChar[nCharId].IsFavorite = self:GetCharFavoriteState(nCharId)
 		else
 			printError(nCharId .. "\232\167\146\232\137\178\230\149\176\230\141\174\228\184\141\229\173\152\229\156\168")
 		end
@@ -1270,6 +1272,7 @@ function PlayerCharData:GetCharDataById(nCharId)
 		tbCharData.CreateTime = self._mapChar[nCharId].nCreateTime
 		tbCharData.Advance = self:GetCharAdvance(nCharId)
 		tbCharData.Favorability = self:GetCharAffinityData(nCharId).Level
+		tbCharData.IsFavorite = self:GetCharFavoriteState(nCharId)
 	end
 	return tbCharData
 end
@@ -1361,6 +1364,21 @@ function PlayerCharData:SetCharSkinId(nCharId, nSkinId)
 		mapCharInfo.nSkinId = ConfigTable.GetData_Character(nCharId).DefaultSkinId
 	end
 	EventManager.Hit(EventId.CharacterSkinChange, nCharId, nSkinId)
+end
+function PlayerCharData:SetCharFavoriteState(nCharId, bOnFavorite)
+	local mapChar = self._mapChar[nCharId]
+	if mapChar == nil then
+		printError("\230\178\161\230\156\137\232\175\165\232\167\146\232\137\178\230\149\176\230\141\174" .. nCharId)
+	end
+	self._mapChar[nCharId].bIsFavorite = bOnFavorite
+end
+function PlayerCharData:GetCharFavoriteState(nCharId)
+	local mapChar = self._mapChar[nCharId]
+	if mapChar == nil then
+		printError("\230\178\161\230\156\137\232\175\165\232\167\146\232\137\178\230\149\176\230\141\174" .. nCharId)
+		return false
+	end
+	return mapChar.bIsFavorite
 end
 function PlayerCharData:CalcAffinityEffect(nCharId)
 	local tbEfts = PlayerData.Char:GetCharAffinityEffects(nCharId)
@@ -2047,7 +2065,11 @@ function PlayerCharData:UpdateCharPlotReddot(nCharId)
 	end
 end
 function PlayerCharData:UpdateCharArchiveRewardRedDot(nCharId)
-	local nCurFavorLevel = self:GetCharAffinityData(nCharId).Level
+	local affinityData = self:GetCharAffinityData(nCharId)
+	if affinityData == nil then
+		return
+	end
+	local nCurFavorLevel = affinityData.Level
 	local foreachCharacterArchive = function(mapData)
 		if mapData.CharacterId == nCharId then
 			local bReward = false

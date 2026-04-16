@@ -28,7 +28,7 @@ function MiningStoryCellCtrl:SetData(storyId, nIndex, bIsLock, bIsRead)
 	self.nStoryId = storyId
 	self.config = ConfigTable.GetData("MiningStoryConfig", storyId)
 	self._mapNode.go_LockMask:SetActive(bIsLock)
-	self._mapNode.txt_Lock.gameObjct:SetActive(bIsLock)
+	self._mapNode.txt_Lock.gameObject:SetActive(bIsLock)
 	if bIsLock then
 		NovaAPI.SetTMPText(self._mapNode.txt_Lock, string.format(ConfigTable.GetUIText("Plot_Index"), self.config.UnlockLayer))
 	else

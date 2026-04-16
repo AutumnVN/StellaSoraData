@@ -197,6 +197,7 @@ function RegionBossFormationCtrl:LoadCharacter(nCharId, idx)
 		if self._mapNode == nil then
 			return
 		end
+		self._panel.nLoadProcess = self._panel.nLoadProcess - 1
 		if 0 < idx then
 			if self.mapCurModel[idx] ~= nil then
 				NovaAPI.UnbindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, idx - 1)
@@ -222,6 +223,7 @@ function RegionBossFormationCtrl:LoadCharacter(nCharId, idx)
 			end
 		end
 	end
+	self._panel.nLoadProcess = self._panel.nLoadProcess + 1
 	self:LoadAssetAsync(sFullPath, typeof(GameObject), LoadModelCallback)
 end
 function RegionBossFormationCtrl:SetModelPos(nCharId, objModel, nPos)
@@ -432,8 +434,10 @@ function RegionBossFormationCtrl:SwitchStoryType(bTrial)
 	end
 end
 function RegionBossFormationCtrl:Awake()
+	self._panel.nLoadProcess = 0
 end
 function RegionBossFormationCtrl:OnEnable()
+	self._panel.nLoadProcess = 0
 	self.bStartBattle = false
 	local tbParam = self:GetPanelParam()
 	self.nType = tbParam[1]
@@ -692,12 +696,21 @@ end
 function RegionBossFormationCtrl:OnDestroy()
 end
 function RegionBossFormationCtrl:OnBtnClick_AddBuild()
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	EventManager.Hit(EventId.OpenPanel, PanelId.RogueBossBuildBrief, self.nType, self.selLvId, 1, self.Other)
 end
 function RegionBossFormationCtrl:OnBtnClick_ChangeTeam()
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	EventManager.Hit(EventId.OpenPanel, PanelId.RogueBossBuildBrief, self.nType, self.selLvId, 1, self.Other)
 end
 function RegionBossFormationCtrl:OnBtnClick_TeamDetails()
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	local callback = function(mapData)
 		EventManager.Hit(EventId.OpenPanel, PanelId.StarTowerBuildDetail, mapData)
 	end
@@ -740,6 +753,9 @@ function RegionBossFormationCtrl:OnBtnClick_StorySwitch()
 	self:Refresh()
 end
 function RegionBossFormationCtrl:OnBtnClick_Start(btn)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	if self.bStartBattle == true then
 		return
 	end
@@ -786,6 +802,9 @@ function RegionBossFormationCtrl:OnBtnClick_Start(btn)
 	NovaAPI.SetEntryLevelFade(true)
 end
 function RegionBossFormationCtrl:OnEvent_Back(nPanelId)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	if self._panel._nPanelId ~= nPanelId then
 		return
 	end
@@ -799,6 +818,9 @@ function RegionBossFormationCtrl:OnEvent_Back(nPanelId)
 	EventManager.Hit(EventId.SetTransition, 5, OpenCallback)
 end
 function RegionBossFormationCtrl:OnEvent_BackHome(nPanelId)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	if self._panel._nPanelId ~= nPanelId then
 		return
 	end

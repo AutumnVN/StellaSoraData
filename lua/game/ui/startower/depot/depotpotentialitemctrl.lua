@@ -75,6 +75,12 @@ function DepotPotentialItemCtrl:SetSpecialPotential(itemCfg, potentialCfg)
 	NovaAPI.SetTMPText(self._mapNode.txtSpName, itemCfg.Title)
 	self:SetPngSprite(self._mapNode.imgSpIcon, itemCfg.Icon .. AllEnum.PotentialIconSurfix.A)
 end
+function DepotPotentialItemCtrl:RefreshPreselectionLevel(nLevel)
+	self.nLevel = nLevel
+	self._mapNode.imgLock.gameObject:SetActive(nLevel <= 0)
+	self._mapNode.imgMask.gameObject:SetActive(nLevel <= 0)
+	NovaAPI.SetTMPText(self._mapNode.txtLevelValue, self.nLevel)
+end
 function DepotPotentialItemCtrl:OnBtnClick_Item()
 	EventManager.Hit("SelectDepotPotential", self.nPotentialId, self.nLevel, self.nPotentialAdd, self._mapNode.btnItem)
 end

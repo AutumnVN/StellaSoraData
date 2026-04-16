@@ -224,6 +224,10 @@ function PenguinCardActData:RefreshLevelRedDot()
 		local bSkip = table.indexof(self.tbSkipNewLevel, nId) > 0
 		if bSkip then
 			RedDotManager.SetValid(RedDotDefine.Activity_PenguinCard_Level, {nId}, false)
+			local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(self.nActId)
+			if bInActGroup then
+				RedDotManager.SetValid(RedDotDefine.Activity_Group_PenguinCard_Level, {nActGroupId, nId}, false)
+			end
 		else
 			local bLock = self:CheckLevelLock(nId)
 			local bHasScore = self.mapLevelData[nId] and 0 < self.mapLevelData[nId].nScore
@@ -234,10 +238,18 @@ function PenguinCardActData:RefreshLevelRedDot()
 			RedDotManager.SetValid(RedDotDefine.Activity_PenguinCard_Level, {nId}, bNew)
 		end
 	end
+	local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(self.nActId)
+	if bInActGroup then
+		RedDotManager.SetValid(RedDotDefine.Activity_Group_PenguinCard_Level, {nActGroupId}, #self.tbNewLevel > 0)
+	end
 end
 function PenguinCardActData:SkipLevelRedDot()
 	for _, nId in ipairs(self.tbNewLevel) do
 		RedDotManager.SetValid(RedDotDefine.Activity_PenguinCard_Level, {nId}, false)
+		local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(self.nActId)
+		if bInActGroup then
+			RedDotManager.SetValid(RedDotDefine.Activity_Group_PenguinCard_Level, {nActGroupId}, false)
+		end
 		if table.indexof(self.tbSkipNewLevel, nId) == 0 then
 			table.insert(self.tbSkipNewLevel, nId)
 		end

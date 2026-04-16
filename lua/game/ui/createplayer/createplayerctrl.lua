@@ -154,6 +154,7 @@ function CreatePlayerCtrl:Awake()
 	self.sex = 0
 	self.selected = false
 	self.state = 0
+	self:timerCallback_HideConfirmName()
 end
 function CreatePlayerCtrl:OnEnable()
 	EventManager.Add("OnEscCallback", self, self.OnEvent_OnEscCallback)

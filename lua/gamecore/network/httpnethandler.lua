@@ -31,17 +31,6 @@ local MakeNetMsgIdMap = function()
 		end
 	end
 end
-local ProcChangeInfo = function(mapDecodedChangeInfo)
-	PlayerData.Coin:ChangeCoin(mapDecodedChangeInfo["proto.Res"])
-	PlayerData.Item:ChangeItem(mapDecodedChangeInfo["proto.Item"])
-	PlayerData.Char:GetNewChar(mapDecodedChangeInfo["proto.Char"])
-	PlayerData.Base:ChangeEnergy(mapDecodedChangeInfo["proto.Energy"])
-	PlayerData.Base:ChangeWorldClass(mapDecodedChangeInfo["proto.WorldClass"])
-	PlayerData.Base:ChangeTitle(mapDecodedChangeInfo["proto.Title"])
-	PlayerData.Disc:CreateNewDisc(mapDecodedChangeInfo["proto.Disc"])
-	PlayerData.Base:ChangeHonorTitle(mapDecodedChangeInfo["proto.Honor"])
-	PlayerData.HeadData:ChangePlayerHead(mapDecodedChangeInfo["proto.HeadIcon"])
-end
 local NOTHING_NEED_TO_BE_DONE = function(mapData)
 end
 local ike_succeed_ack = function(mapData)
@@ -66,6 +55,7 @@ local player_data_succeed_ack = function(mapMsgData)
 	PlayerData.Base:CacheTitleInfo(mapMsgData.Titles)
 	PlayerData.Base:CacheHonorTitleInfo(mapMsgData.Honors)
 	PlayerData.Base:CacheHonorTitleList(mapMsgData.HonorList)
+	PlayerData.Base:CacheHonorTitleListActivity(mapMsgData.ActivityHonors)
 	PlayerData.Base:CacheWorldClassInfo(mapMsgData.WorldClass)
 	PlayerData.Base:CacheSendGiftCount(mapMsgData.SendGiftCnt)
 	PlayerData.Base:CacheRenameTime(mapMsgData.NicknameResetTime)
@@ -124,12 +114,12 @@ local player_board_set_failed_ack = function(mapMsgData)
 end
 local player_world_class_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Base:PlayerWorldClassRewardReceiveSuc(mapMsgData)
 end
 local player_world_class_advance_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Base:PlayerWorldClassAdvanceSuc(mapMsgData)
 end
 local world_class_reward_state_notify = function(mapMsgData)
@@ -137,31 +127,31 @@ local world_class_reward_state_notify = function(mapMsgData)
 end
 local energy_buy_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Base:RefreshEnergyBuyCount(mapMsgData.Count)
 end
 local item_use_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local item_product_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local item_quick_growth_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local fragments_convert_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local player_ping_succeed_ack = function(mapMsgData)
 	NovaAPI.MarkServerTimeStamp(mapMsgData.ServerTs)
 end
 local story_settle_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local gacha_spin_succeed_ack = function(mapMsgData)
 	local CheckNew = function(nTid)
@@ -179,22 +169,15 @@ local gacha_spin_succeed_ack = function(mapMsgData)
 			return false
 		end
 	end
-	local tbReward = {}
 	local tbItemId = {}
 	for _, v in ipairs(mapMsgData.Cards) do
 		local bNewHandBood = CheckNew(v.Card.Tid)
 		local bNew = bNewHandBood and table.indexof(tbItemId, v.Card.Tid) < 1
 		table.insert(tbItemId, v.Card.Tid)
-		table.insert(tbReward, {
-			id = v.Card.Tid,
-			count = v.Card.Qty,
-			rewardItem = v.Rewards,
-			bNew = bNew
-		})
 		v.Card.bNew = bNew
 	end
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Item:CacheFragmentsOverflow(nil, mapMsgData.Change)
 end
 local mail_list_succeed_ack = function(mapMsgData)
@@ -205,45 +188,45 @@ local mail_read_succeed_ack = function(mapMsgData)
 end
 local mail_recv_succeed_ack = function(mapMsgData)
 	local mapDecodeInfo = UTILS.DecodeChangeInfo(mapMsgData.Items)
-	ProcChangeInfo(mapDecodeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodeInfo)
 end
 local mail_remove_succeed_ack = function(mapMsgData)
 	PlayerData.Mail:RemoveMail(mapMsgData)
 end
 local dictionary_reward_receive_succeed_ack = function(mapMsgData)
 	local tbDecodeChange = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(tbDecodeChange)
+	HttpNetHandler.ProcChangeInfo(tbDecodeChange)
 end
 local char_gem_instance_settle_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local char_gem_instance_sweep_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local skill_instance_sweep_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local activity_detail_succeed_ack = function(mapMsgData)
 	PlayerData.Activity:CacheAllActivityData(mapMsgData)
 end
 local activity_periodic_reward_receive_succeed_ack = function(mapMsgData)
 	local tbDecodeChange = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(tbDecodeChange)
+	HttpNetHandler.ProcChangeInfo(tbDecodeChange)
 end
 local activity_periodic_final_reward_receive_succeed_ack = function(mapMsgData)
 	local tbDecodeChange = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(tbDecodeChange)
+	HttpNetHandler.ProcChangeInfo(tbDecodeChange)
 end
 local activity_login_reward_receive_succeed_ack = function(mapMsgData)
 	local tbDecodeChange = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(tbDecodeChange)
+	HttpNetHandler.ProcChangeInfo(tbDecodeChange)
 end
 local activity_trial_reward_receive_succeed_ack = function(mapMsgData)
 	local tbDecodeChange = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(tbDecodeChange)
+	HttpNetHandler.ProcChangeInfo(tbDecodeChange)
 end
 local phone_contacts_info_succeed_ack = function(mapMsgData)
 	PlayerData.Phone:CacheAddressBookData(mapMsgData.List)
@@ -254,25 +237,25 @@ end
 local star_tower_build_delete_succeed_ack = function(mapMsgData)
 	local tbDecodeChange = UTILS.DecodeChangeInfo(mapMsgData.Change)
 	PlayerData.StarTower:AddStarTowerTicket(mapMsgData.Ticket)
-	ProcChangeInfo(tbDecodeChange)
+	HttpNetHandler.ProcChangeInfo(tbDecodeChange)
 end
 local quest_reward_recv_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local star_tower_build_whether_save_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
 	PlayerData.StarTower:AddStarTowerTicket(mapMsgData.Ticket)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local star_tower_give_up_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local star_tower_interact_succeed_ack = function(mapMsgData)
 	if mapMsgData.Settle then
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Settle.Change)
-		ProcChangeInfo(mapDecodedChangeInfo)
+		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	end
 end
 local star_tower_apply_failed_ack = function()
@@ -280,43 +263,43 @@ local star_tower_apply_failed_ack = function()
 end
 local tower_growth_node_unlock_succeed_ack = function(mapMsgData)
 	local tbDecodeChange = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(tbDecodeChange)
+	HttpNetHandler.ProcChangeInfo(tbDecodeChange)
 end
 local tower_growth_group_node_unlock_succeed_ack = function(mapMsgData)
 	local tbDecodeChange = UTILS.DecodeChangeInfo(mapMsgData.ChangeInfo)
-	ProcChangeInfo(tbDecodeChange)
+	HttpNetHandler.ProcChangeInfo(tbDecodeChange)
 end
 local quest_tower_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local npc_affinity_plot_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local npc_affinity_plot_reward_receive_failed_ack = function(mapMsgData)
 	EventManager.Hit(EventId.ClosePanel, PanelId.PureAvgStory)
 end
 local friend_receive_energy_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local resident_shop_purchase_succeed_ack = function(mapMsgData)
 	if not mapMsgData.IsRefresh then
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-		ProcChangeInfo(mapDecodedChangeInfo)
+		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	end
 end
 local daily_shop_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local char_advance_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local achievement_reward_receive_succeed_ack = function(mapMsgData)
-	ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
+	HttpNetHandler.ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
 end
 local achievement_change_notify = function(mapMsgData)
 	PlayerData.Achievement:ChangeAchievementData(mapMsgData)
@@ -327,14 +310,14 @@ end
 local monthly_card_rewards_notify = function(mapMsgData)
 	if mapMsgData.Switch then
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-		ProcChangeInfo(mapDecodedChangeInfo)
+		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	end
 	PlayerData.Daily.ProcessMonthlyCard(mapMsgData)
 end
 local signin_reward_change_notify = function(mapMsgData)
 	if mapMsgData.Switch then
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-		ProcChangeInfo(mapDecodedChangeInfo)
+		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	end
 	PlayerData.Daily.ProcessDailyCheckIn(mapMsgData)
 end
@@ -346,63 +329,63 @@ local battle_pass_quest_reward_receive_succeed_ack = function(mapMsgData)
 end
 local battle_pass_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local battle_pass_level_buy_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local battle_pass_order_collect_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.CollectResp.Items)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local mall_order_collect_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Items)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local mall_package_order_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local mall_shop_order_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local gem_convert_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local talent_unlock_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local talent_reset_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local talent_node_reset_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local talent_group_unlock_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local disc_strengthen_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local disc_promote_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local disc_limit_break_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local disc_read_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local mail_state_notify = function(mapMsgData)
 	PlayerData.Mail:UpdateMailList(mapMsgData)
@@ -424,7 +407,7 @@ local character_skin_change_notify = function(mapMsgData)
 	PlayerData.Char:SetCharSkinId(mapMsgData.CharId, mapMsgData.SkinId)
 end
 local world_class_change_notify = function(mapMsgData)
-	ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData.Change))
+	HttpNetHandler.ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData.Change))
 end
 local world_class_number_notify = function(mapMsgData)
 	PlayerData.State:CacheWorldClassRewardStateInBoard(mapMsgData.RewardsFlag)
@@ -446,7 +429,7 @@ local char_advance_reward_state_notify = function(mapMsgData)
 	PlayerData.State:CacheCharactersAdRewards_Notify(mapMsgData)
 end
 local items_change_notify = function(mapMsgData)
-	ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
+	HttpNetHandler.ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
 end
 local friend_state_notify = function(mapMsgData)
 	PlayerData.Friend:UpdateFriendState(mapMsgData)
@@ -462,16 +445,16 @@ local region_boss_level_apply_succeed_ack = function(mapMsgData)
 end
 local region_boss_level_settle_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.RogueBoss:RegionBossLevelSettleSuccess(mapMsgData)
 end
 local region_boss_level_sweep_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local skill_instance_apply_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local week_boss_apply_succeed_ack = function(mapMsgData)
 	print("week succeed")
@@ -482,7 +465,7 @@ local week_boss_apply_failed_ack = function(mapMsgData)
 end
 local week_boss_settle_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.RogueBoss:WeeklyCopiesLevelSettleReqSuccess(mapMsgData)
 end
 local week_boss_settle_failed_ack = function(mapMsgData)
@@ -491,7 +474,7 @@ end
 local week_boss_refresh_ticket_notify = function(mapMsgData)
 	print("week settle reset")
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local handbook_change_notify = function(mapMsgData)
 	PlayerData.Handbook:UpdateHandbookData(mapMsgData)
@@ -506,11 +489,11 @@ local char_up_change_notify = function(mapMsgData)
 end
 local daily_instance_settle_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local daily_instance_raid_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local mall_package_state_notify = function(mapMsgData)
 	RedDotManager.SetValid(RedDotDefine.Mall_Free, nil, mapMsgData.New)
@@ -524,12 +507,12 @@ local dictionary_change_notify = function(mapMsgData)
 end
 local clear_all_traveler_due_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.TravelerDuel:CacheTravelerDuelLevelData(mapMsgData)
 end
 local clear_all_region_boss_level_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.RogueBoss:CacheRogueBossData(mapMsgData.RegionBossLevels)
 end
 local clear_all_week_boss_notify = function(mapMsgData)
@@ -540,7 +523,7 @@ local st_clear_all_star_tower_notify = function(mapMsgData)
 end
 local clear_all_daily_instance_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.DailyInstance:CacheDailyInstanceLevel(mapMsgData.DailyInstances)
 end
 local clear_all_char_gem_instance_notify = function(mapMsgData)
@@ -554,7 +537,7 @@ local st_export_build_notify = function(mapMsgData)
 end
 local char_affinity_final_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Char:ChangeCharAffinityValue(mapMsgData.Info)
 end
 local char_affinity_reward_state_notify = function(mapMsgData)
@@ -579,32 +562,32 @@ local phone_chat_change_notify = function(mapMsgData)
 end
 local character_fragments_overflow_change_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Item:CacheFragmentsOverflow(mapMsgData)
 end
 local infinity_tower_settle_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local infinity_tower_daily_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local infinity_tower_plot_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local disc_reset_notify = function(mapMsgData)
 	PlayerData.Disc:UpdateDiscData(mapMsgData.Id, mapMsgData)
 end
 local story_complete_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Avg:CacheAvgData(mapMsgData)
 end
 local clear_all_story_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Avg:CacheAvgData(mapMsgData)
 end
 local activity_login_rewards_notify = function(mapMsgData)
@@ -615,15 +598,15 @@ local star_tower_book_potential_notify = function(mapMsgData)
 end
 local star_tower_book_event_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local tower_book_fate_card_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local star_tower_book_potential_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local star_tower_book_event_notify = function(mapMsgData)
 end
@@ -636,7 +619,7 @@ local tower_book_fate_card_reward_notify = function(mapMsgData)
 end
 local region_boss_level_challenge_ticket_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	EventManager.Hit("region_boss_ticket_notify", AllEnum.CoinItemId.RogueHardCoreTick)
 end
 local honor_change_notify = function(mapMsgData)
@@ -715,7 +698,7 @@ local vampire_survivor_reward_select_failed_ack = function()
 	EventManager.Hit("VampireLevelRewardFailed")
 end
 local vampire_survivor_quest_reward_receive_succeed_ack = function(mapMsgData)
-	ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
+	HttpNetHandler.ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
 end
 local char_affinity_quest_reward_receive_succeed_ack = function(mapMsgData)
 	if mapMsgData.Info ~= nil and mapMsgData.Info.Rewards ~= nil then
@@ -733,16 +716,16 @@ local char_affinity_quest_reward_receive_succeed_ack = function(mapMsgData)
 	PlayerData.Char:ChangeCharAffinityValue(mapMsgData.Info)
 end
 local char_affinity_gift_send_succeed_ack = function(mapMsgData)
-	ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData.Change))
+	HttpNetHandler.ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData.Change))
 	PlayerData.Base:RefreshSendGiftCount(mapMsgData.SendGiftCnt)
 	PlayerData.Char:ChangeCharAffinityValue(mapMsgData.Info)
 end
 local char_recruitment_succeed_ack = function(mapMsgData)
-	ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
+	HttpNetHandler.ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
 end
 local agent_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local agent_new_notify = function(mapMsgData)
 	PlayerData.Dispatch.RefreshWeeklyDispatchs(mapMsgData.Ids)
@@ -752,94 +735,94 @@ local agent_apply_failed_ack = function(mapMsgData)
 end
 local char_dating_landmark_select_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Char:ChangeCharAffinityValue(mapMsgData.Info)
 end
 local char_dating_event_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local char_dating_gift_send_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Char:ChangeCharAffinityValue(mapMsgData.Info)
 end
 local char_archive_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local activity_mining_daily_reward_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	EventManager.Hit("Mining_Daily_Reward", mapMsgData)
 end
 local activity_mining_supplement_reward_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	EventManager.Hit("Mining_Supplement_Reward", mapMsgData)
 end
 local activity_mining_quest_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.ChangeInfo)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local activity_mining_story_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local activity_mining_dig_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.ChangeInfo)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	EventManager.Hit("Mining_UpdateRigResult", mapMsgData)
 end
 local activity_mining_energy_convert_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local score_boss_star_reward_receive_succeed_ack = function(mapMsgData)
-	ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
+	HttpNetHandler.ProcChangeInfo(UTILS.DecodeChangeInfo(mapMsgData))
 end
 local redeem_code_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local notice_change_notify = function(mapMsgData)
 	EventManager.Hit("NoticeChangeNotify", mapMsgData)
 end
 local joint_drill_apply_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local joint_drill_sweep_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local joint_drill_settle_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local joint_drill_game_over_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local joint_drill_quest_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local activity_joint_drill_refresh_ticket_notify = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local activity_tower_defense_story_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local activity_tower_defense_quest_reward_receive_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local activity_tower_defense_level_settle_succeed_ack = function(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	ProcChangeInfo(mapDecodedChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local force_update_notify = function(mapMsgData)
 	local clientVer = NovaAPI.GetResVersion()
@@ -904,6 +887,8 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.char_advance_reward_receive_succeed_ack] = char_advance_reward_receive_succeed_ack,
 		[NetMsgId.Id.char_skin_set_succeed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.char_skin_set_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.char_favorite_set_succeed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.char_favorite_set_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.gacha_spin_succeed_ack] = gacha_spin_succeed_ack,
 		[NetMsgId.Id.gacha_spin_failed_ack] = HttpNetHandlerPlus.gacha_spin_failed_ack,
 		[NetMsgId.Id.gacha_spin_sync_ack] = HttpNetHandlerPlus.gacha_spin_sync_ack,
@@ -934,6 +919,7 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.char_gem_use_preset_succeed_ack] = HttpNetHandlerPlus.char_gem_use_preset_succeed_ack,
 		[NetMsgId.Id.char_gem_rename_preset_succeed_ack] = HttpNetHandlerPlus.char_gem_rename_preset_succeed_ack,
 		[NetMsgId.Id.char_gem_equip_gem_succeed_ack] = HttpNetHandlerPlus.char_gem_equip_gem_succeed_ack,
+		[NetMsgId.Id.char_gem_overlock_succeed_ack] = HttpNetHandlerPlus.char_gem_overlock_succeed_ack,
 		[NetMsgId.Id.char_gems_import_notify] = HttpNetHandlerPlus.char_gems_import_notify,
 		[NetMsgId.Id.char_gems_export_notify] = HttpNetHandlerPlus.char_gems_export_notify,
 		[NetMsgId.Id.star_tower_build_brief_list_get_succeed_ack] = NOTHING_NEED_TO_BE_DONE,
@@ -1283,14 +1269,17 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.activity_penguin_card_level_settle_succeed_ack] = HttpNetHandlerPlus.activity_penguin_card_level_settle_succeed_ack,
 		[NetMsgId.Id.activity_penguin_card_level_settle_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.activity_penguin_card_quest_reward_receive_succeed_ack] = HttpNetHandlerPlus.activity_penguin_card_quest_reward_receive_succeed_ack,
-		[NetMsgId.Id.activity_penguin_card_quest_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE
+		[NetMsgId.Id.activity_penguin_card_quest_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.activity_gds_settle_succeed_ack] = HttpNetHandlerPlus.activity_gds_settle_succeed_ack,
+		[NetMsgId.Id.activity_gds_settle_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.clear_all_activity_golden_spy_levels_notify] = HttpNetHandlerPlus.clear_all_activity_golden_spy_levels_notify
 	}
 end
 function HttpNetHandler.Init()
 	local pbSchema = NovaAPI.LoadLuaBytes("GameCore/Network/proto.pb")
 	assert(PB.load(pbSchema))
 	BindProcessFunction()
-	NetMsgIdMap = MakeNetMsgIdMap()
+	MakeNetMsgIdMap()
 	EventManager.Add("CS2LuaEvent_OnApplicationFocus", HttpNetHandler, HttpNetHandler.OnCS2LuaEvent_AppFocus)
 end
 function HttpNetHandler.SendMsg(nNetMsgId, mapMessageData, sUrl, callback)

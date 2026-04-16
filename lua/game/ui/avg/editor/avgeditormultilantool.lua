@@ -1,16 +1,22 @@
 local CS_SYS = CS.System
 local CS_SYS_IO = CS_SYS.IO
 local AvgEditorMultiLanTool = class("AvgEditorMultiLanTool", BaseCtrl)
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
+local ResType = GameResourceLoader.ResType
+local LocalData = require("GameCore.Data.LocalData")
 AvgEditorMultiLanTool._mapNodeConfig = {
+	dd_SwitchMode = {
+		sComponentName = "Dropdown",
+		callback = "OnDD_SwitchMode"
+	},
 	btn_Refresh = {
 		sComponentName = "Button",
 		callback = "OnBtn_Refresh"
 	},
-	dd_MultiLanFrom = {
-		sComponentName = "Dropdown",
-		callback = "OnDD_LanFrom"
+	tog_SortByMergeTime = {
+		sComponentName = "Toggle",
+		callback = "OnToggle_SortByMergeTime"
 	},
-	dd_MultiLanTo = {sComponentName = "Dropdown", callback = "OnDD_LanTo"},
 	btn_SellectAll = {
 		sComponentName = "Button",
 		callback = "OnBtn_SelectAll_InCurLuaGroup"
@@ -19,20 +25,32 @@ AvgEditorMultiLanTool._mapNodeConfig = {
 		sComponentName = "Button",
 		callback = "OnBtn_SellectNone_InCurLuaGroup"
 	},
-	tog_SortByMergeTime = {
-		sComponentName = "Toggle",
-		callback = "OnToggle_SortByMergeTime"
-	},
 	input_Search = {
 		sComponentName = "InputField",
 		callback = "OnInput_Search"
 	},
-	toggles = {sComponentName = "Transform"},
-	tbTog = {
-		nCount = 9,
-		sNodeName = "tog_",
+	tog_EnableCheck_Name = {
 		sComponentName = "Toggle",
-		callback = "onToggle_LuaGroup"
+		callback = "OnToggle_EnableCheck_Name"
+	},
+	tog_EnableCheck_W = {
+		sComponentName = "Toggle",
+		callback = "OnToggle_EnableCheck_W"
+	},
+	trMode_1 = {sNodeName = "--Mode_1--", sComponentName = "Transform"},
+	btn_ProcMultiLanguage = {
+		sComponentName = "Button",
+		callback = "OnBtnClick_ProcMultiLanguage"
+	},
+	dd_MultiLanFrom = {
+		sComponentName = "Dropdown",
+		callback = "OnDD_LanFrom"
+	},
+	dd_MultiLanTo = {sComponentName = "Dropdown", callback = "OnDD_LanTo"},
+	trMode_2 = {sNodeName = "--Mode_2--", sComponentName = "Transform"},
+	btn_CheckW = {
+		sComponentName = "Button",
+		callback = "OnBtnClick_CheckW"
 	},
 	lsv_multi_lan = {
 		sComponentName = "LoopScrollView"
@@ -41,17 +59,28 @@ AvgEditorMultiLanTool._mapNodeConfig = {
 		sNodeName = "lsv_multi_lan",
 		sComponentName = "CanvasGroup"
 	},
-	btn_ProcMultiLanguage = {
-		sComponentName = "Button",
-		callback = "OnBtnClick_ProcMultiLanguage"
-	},
 	procContent = {sComponentName = "Transform"},
+	toggles = {sComponentName = "Transform"},
+	tbTog = {
+		nCount = 9,
+		sNodeName = "tog_",
+		sComponentName = "Toggle",
+		callback = "onToggle_LuaGroup"
+	},
 	goProcResult = {},
 	txtProcResult = {sComponentName = "Text"}
 }
 AvgEditorMultiLanTool._mapEventConfig = {}
 function AvgEditorMultiLanTool:Awake()
-	self:SetLSV_Visible(false)
+	self.tbMode = {
+		self._mapNode.trMode_1,
+		self._mapNode.trMode_2
+	}
+	self:OnDD_SwitchMode()
+	ENABLE_NAME_CHECK = self:GetLocalData("AvgEditorMultiLanTool", "EnableCheckName") == true
+	ENABLE_W_CHECK = self:GetLocalData("AvgEditorMultiLanTool", "EnableCheckW") == true
+	NovaAPI.SetToggleIsOn(self._mapNode.tog_EnableCheck_Name, ENABLE_NAME_CHECK)
+	NovaAPI.SetToggleIsOn(self._mapNode.tog_EnableCheck_W, ENABLE_W_CHECK)
 	local ListString = CS_SYS.Collections.Generic.List(CS_SYS.String)
 	local listLanguage = ListString()
 	for i, v in ipairs(AllEnum.LanguageInfo) do
@@ -67,17 +96,33 @@ function AvgEditorMultiLanTool:Awake()
 	NovaAPI.SetDropDownValue(self._mapNode.dd_MultiLanTo, self.nToLanIdx - 1)
 	self.bSortByTime = false
 end
+function AvgEditorMultiLanTool:GetLocalData(sMainKey, sSubKey)
+	return LocalData.GetLocalData(sMainKey, sSubKey)
+end
+function AvgEditorMultiLanTool:SetLocalData(sMainKey, sSubKey, value)
+	LocalData.SetLocalData(sMainKey, sSubKey, value)
+end
+function AvgEditorMultiLanTool:OnDD_SwitchMode()
+	self:SetLSV_Visible(false)
+	self.nCurMode = NovaAPI.GetDropDownValue(self._mapNode.dd_SwitchMode) + 1
+	for i, v in ipairs(self.tbMode) do
+		v.localScale = i == self.nCurMode and Vector3.one or Vector3.zero
+	end
+end
 function AvgEditorMultiLanTool:OnBtn_Refresh(sSearchKeyWord)
-	if self.nFromLanIdx == self.nToLanIdx then
+	local nLanIdx = self.nFromLanIdx
+	if self.nCurMode == 2 then
+		nLanIdx = self.nToLanIdx
+	elseif self.nFromLanIdx == self.nToLanIdx then
 		EventManager.Hit(EventId.OpenMessageBox, {
 			nType = AllEnum.MessageBox.Alert,
 			sContent = "\226\128\156\228\187\142\226\128\157\228\184\142\226\128\156\232\135\179\226\128\157\231\154\132\232\175\173\232\168\128\228\184\141\232\131\189\228\184\128\230\160\183\227\128\130"
 		})
 		return
 	end
-	local sRequireRoot = GetAvgLuaRequireRoot(self.nFromLanIdx)
+	local sRequireRoot = GetAvgLuaRequireRoot(nLanIdx)
 	local sWriteFileRoot = NovaAPI.ApplicationDataPath .. "/../Lua/"
-	if NovaAPI.IsRuntimeWindowsPlayer() == true then
+	if AVG_EDITOR == true and NovaAPI.IsRuntimeWindowsPlayer() == true then
 		sWriteFileRoot = NovaAPI.StreamingAssetsPath .. "/Lua/"
 	end
 	sWriteFileRoot = sWriteFileRoot .. sRequireRoot
@@ -109,7 +154,7 @@ function AvgEditorMultiLanTool:OnBtn_Refresh(sSearchKeyWord)
 				})
 			end
 		end
-		if sAdd ~= nil then
+		if type(sAdd) == "string" and sAdd ~= "" then
 			local files = CS_SYS_IO.Directory.GetFiles(sAdd, sPattern, CS_SYS_IO.SearchOption.TopDirectoryOnly)
 			local nFileCount = files.Length - 1
 			for i = 0, nFileCount do
@@ -147,7 +192,7 @@ function AvgEditorMultiLanTool:OnBtn_Refresh(sSearchKeyWord)
 		return tbFileName
 	end
 	self.tbLuaFileName = {}
-	self.tbLuaFileName[1] = func_CollectLuaFileName(sRootConfig, "*.lua", sRootPreset)
+	self.tbLuaFileName[1] = func_CollectLuaFileName(sRootConfig, "*.lua", self.nCurMode == 2 and "" or sRootPreset)
 	self.tbLuaFileName[2] = func_CollectLuaFileName(sRootConfig, "BB*.lua")
 	self.tbLuaFileName[3] = func_CollectLuaFileName(sRootConfig, "BT*.lua")
 	self.tbLuaFileName[4] = func_CollectLuaFileName(sRootConfig, "CG*.lua")
@@ -155,19 +200,15 @@ function AvgEditorMultiLanTool:OnBtn_Refresh(sSearchKeyWord)
 	self.tbLuaFileName[6] = func_CollectLuaFileName(sRootConfig, "GD*.lua")
 	self.tbLuaFileName[7] = func_CollectLuaFileName(sRootConfig, "PM*.lua")
 	self.tbLuaFileName[8] = func_CollectLuaFileName(sRootConfig, "ST*.lua")
-	self.tbLuaFileName[9] = func_CollectLuaFileName(sRootPreset, "*.lua")
+	self.tbLuaFileName[9] = self.nCurMode == 2 and {} or func_CollectLuaFileName(sRootPreset, "*.lua")
 	self.nCurTogIdx = 1
 	NovaAPI.SetToggleIsOn(self._mapNode.tbTog[self.nCurTogIdx], true)
 	self:InitLSV()
 	self:SetLSV_Visible(true)
 end
-function AvgEditorMultiLanTool:OnDD_LanFrom()
-	self:SetLSV_Visible(false)
-	self.nFromLanIdx = NovaAPI.GetDropDownValue(self._mapNode.dd_MultiLanFrom) + 1
-end
-function AvgEditorMultiLanTool:OnDD_LanTo()
-	self:SetLSV_Visible(false)
-	self.nToLanIdx = NovaAPI.GetDropDownValue(self._mapNode.dd_MultiLanTo) + 1
+function AvgEditorMultiLanTool:OnToggle_SortByMergeTime()
+	self.bSortByTime = NovaAPI.GetToggleIsOn(self._mapNode.tog_SortByMergeTime)
+	self:OnBtn_Refresh()
 end
 function AvgEditorMultiLanTool:OnBtn_SelectAll_InCurLuaGroup()
 	local tbNames = {}
@@ -205,86 +246,32 @@ function AvgEditorMultiLanTool:OnBtn_SellectNone_InCurLuaGroup()
 	end
 	self._mapNode.lsv_multi_lan:ForceRefresh()
 end
-function AvgEditorMultiLanTool:OnToggle_SortByMergeTime()
-	self.bSortByTime = NovaAPI.GetToggleIsOn(self._mapNode.tog_SortByMergeTime)
-	self:OnBtn_Refresh()
-end
 function AvgEditorMultiLanTool:OnInput_Search()
 	local sSearchKeyWord = NovaAPI.GetInputFieldText(self._mapNode.input_Search)
 	self._mapNode.toggles.localScale = sSearchKeyWord == "" and Vector3.one or Vector3.zero
 	self:OnBtn_Refresh(sSearchKeyWord)
 end
-function AvgEditorMultiLanTool:onToggle_LuaGroup(toggle, nIndex, bIsOn)
-	if bIsOn == false then
-		return
-	end
-	if nIndex == self.nCurTogIdx then
-		return
-	end
-	self.nCurTogIdx = nIndex
-	self:InitLSV()
-end
-function AvgEditorMultiLanTool:SetLSV_Visible(bVisible)
-	NovaAPI.SetCanvasGroupAlpha(self._mapNode.cgLSV, bVisible == true and 1 or 0)
-	NovaAPI.SetCanvasGroupInteractable(self._mapNode.cgLSV, bVisible == true)
-	NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.cgLSV, bVisible == true)
-	NovaAPI.SetButtonInteractable(self._mapNode.btn_ProcMultiLanguage, bVisible == true)
-end
-function AvgEditorMultiLanTool:InitLSV()
-	local nCount = 0
-	if self.nCurTogIdx == 1 then
-		local nTogCount = #self.tbLuaFileName
-		for i = 2, nTogCount do
-			nCount = nCount + #self.tbLuaFileName[i]
-		end
-		if nCount ~= #self.tbLuaFileName[1] then
-			printError("\230\188\148\229\135\186\233\133\141\231\189\174\230\150\135\228\187\182\230\149\176\233\135\143\231\187\159\232\174\161\230\156\137\232\175\175\239\188\129")
-			nCount = 0
-		end
-	else
-		nCount = #self.tbLuaFileName[self.nCurTogIdx]
-	end
-	if 0 < nCount then
-		self._mapNode.lsv_multi_lan:Init(nCount, self, self.OnRefreshGrid, self.OnGridBtnClick)
-		self._mapNode.lsv_multi_lan:ForceRefresh()
-	else
-		delChildren(self._mapNode.procContent)
+function AvgEditorMultiLanTool:OnToggle_EnableCheck_Name()
+	local bCur = NovaAPI.GetToggleIsOn(self._mapNode.tog_EnableCheck_Name) == true
+	if bCur ~= ENABLE_NAME_CHECK then
+		ENABLE_NAME_CHECK = bCur
+		self:SetLocalData("AvgEditorMultiLanTool", "EnableCheckName", ENABLE_NAME_CHECK)
 	end
 end
-function AvgEditorMultiLanTool:OnRefreshGrid(go)
-	local nIndex = tonumber(go.name) + 1
-	local tbGridData = self:GetGridData(nIndex)
-	if tbGridData == nil then
-		return
-	end
-	NovaAPI.SetImageColor(go:GetComponent("Image"), tbGridData.bSelected == true and Color.green or Color.white)
-	NovaAPI.SetText(go.transform:GetChild(0):GetComponent("Text"), tbGridData.sName)
-end
-function AvgEditorMultiLanTool:OnGridBtnClick(go)
-	local nIndex = tonumber(go.name) + 1
-	local tbGridData = self:GetGridData(nIndex)
-	if tbGridData == nil then
-		return
-	end
-	tbGridData.bSelected = not tbGridData.bSelected
-	NovaAPI.SetImageColor(go:GetComponent("Image"), tbGridData.bSelected == true and Color.green or Color.white)
-	local sName = tbGridData.sName
-	local bSelected = tbGridData.bSelected
-	local nFrom = self.nCurTogIdx == 1 and 2 or 1
-	local nTo = self.nCurTogIdx == 1 and #self.tbLuaFileName or 1
-	for i = nFrom, nTo do
-		local tb = self.tbLuaFileName[i]
-		for ii, vv in ipairs(tb) do
-			if vv.sName == sName then
-				vv.bSelected = bSelected
-				break
-			end
-		end
+function AvgEditorMultiLanTool:OnToggle_EnableCheck_W()
+	local bCur = NovaAPI.GetToggleIsOn(self._mapNode.tog_EnableCheck_W) == true
+	if bCur ~= ENABLE_W_CHECK then
+		ENABLE_W_CHECK = bCur
+		self:SetLocalData("AvgEditorMultiLanTool", "EnableCheckW", ENABLE_W_CHECK)
 	end
 end
-function AvgEditorMultiLanTool:GetGridData(nIndex)
-	local tb = self.tbLuaFileName[self.nCurTogIdx]
-	return tb[nIndex]
+function AvgEditorMultiLanTool:OnDD_LanFrom()
+	self:SetLSV_Visible(false)
+	self.nFromLanIdx = NovaAPI.GetDropDownValue(self._mapNode.dd_MultiLanFrom) + 1
+end
+function AvgEditorMultiLanTool:OnDD_LanTo()
+	self:SetLSV_Visible(false)
+	self.nToLanIdx = NovaAPI.GetDropDownValue(self._mapNode.dd_MultiLanTo) + 1
 end
 function AvgEditorMultiLanTool:OnBtnClick_ProcMultiLanguage()
 	local tbSelected = {}
@@ -307,7 +294,7 @@ function AvgEditorMultiLanTool:OnBtnClick_ProcMultiLanguage()
 	local nLanguageIndex_To = self.nToLanIdx
 	local sRequireRoot = GetAvgLuaRequireRoot(nLanguageIndex_From)
 	local sWriteFileRoot = NovaAPI.ApplicationDataPath .. "/../Lua/"
-	if NovaAPI.IsRuntimeWindowsPlayer() == true then
+	if AVG_EDITOR == true and NovaAPI.IsRuntimeWindowsPlayer() == true then
 		sWriteFileRoot = NovaAPI.StreamingAssetsPath .. "/Lua/"
 	end
 	local sWriteTo = sWriteFileRoot .. GetAvgLuaRequireRoot(nLanguageIndex_To)
@@ -326,7 +313,10 @@ function AvgEditorMultiLanTool:OnBtnClick_ProcMultiLanguage()
 		end
 		local sRequireFrom = sRequireRoot .. sLuaFolder .. sLuaFileName
 		local tbLuaData = require(sRequireFrom)
-		sProcLog = sProcLog .. self:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLuaData, sWriteTo)
+		sProcLog = sProcLog .. self:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLuaData, sWriteTo) .. [[
+
+
+]]
 		tbLuaData = nil
 		package.loaded[sRequireFrom] = nil
 	end
@@ -350,6 +340,7 @@ function AvgEditorMultiLanTool:OnBtnClick_ProcMultiLanguage()
 	fs:Close()
 	NovaAPI.SetText(self._mapNode.txtProcResult, sCurLog)
 	self._mapNode.goProcResult:SetActive(true)
+	GameResourceLoader.UnloadAsset(PanelId.AvgEditorMultiLanTool)
 end
 function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLuaData, sWriteTo)
 	local sExcelPath_1 = sWriteTo .. "Excel_1_ToBeTranslate/" .. sLuaFileName .. ".xlsx"
@@ -363,19 +354,19 @@ function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLu
 	NovaAPI.WriteDataToExcel(tbExportData, sExcelPath_1, true)
 	if CS_SYS_IO.File.Exists(sExcelPath_2) == true then
 		CS_SYS_IO.File.Delete(sExcelPath_1)
-		return sLuaFileName .. " \230\173\163\229\156\168\231\191\187\232\175\145\228\184\173\233\156\128\231\168\141\229\144\142\229\164\132\231\144\134\227\128\130\n"
+		return sLuaFileName .. " \230\173\163\229\156\168\231\191\187\232\175\145\228\184\173\233\156\128\231\168\141\229\144\142\229\164\132\231\144\134\227\128\130"
 	end
 	if CS_SYS_IO.File.Exists(sExcelPath_3) ~= true then
-		return sLuaFileName .. " \233\156\128\232\166\129\231\191\187\232\175\145\227\128\130\n"
+		return sLuaFileName .. " \233\156\128\232\166\129\231\191\187\232\175\145\227\128\130"
 	end
 	local tbTranslatedData = NovaAPI.ReadDataFromExcel(sExcelPath_3)
 	local func_Compare = self["_Compare_" .. sLuaFileName]
 	if func_Compare == nil then
 		func_Compare = self._Compare_Text
 	end
-	local bSame, tbOverwriteTranslatedData = func_Compare(self, tbTranslatedData, tbExportData)
+	local bSame, tbOverwriteTranslatedData, sDiff = func_Compare(self, tbTranslatedData, tbExportData)
 	if bSame == false then
-		return sLuaFileName .. " <color=red>\230\150\135\230\156\172\230\156\137\229\143\152\229\138\168\239\188\140\233\156\128\232\166\129\230\155\180\230\150\176\229\183\178\231\191\187\232\175\145\229\174\140\231\154\132 excel \230\149\176\230\141\174\227\128\130</color>\n"
+		return sLuaFileName .. " <color=red>\230\150\135\230\156\172\230\156\137\229\143\152\229\138\168\239\188\140\233\156\128\232\166\129\230\155\180\230\150\176\229\183\178\231\191\187\232\175\145\229\174\140\231\154\132 excel \230\149\176\230\141\174\227\128\130</color>" .. "\n" .. (sDiff or "")
 	else
 		if tbOverwriteTranslatedData ~= nil then
 			NovaAPI.WriteDataToExcel(tbOverwriteTranslatedData, sExcelPath_3)
@@ -387,9 +378,10 @@ function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLu
 		end
 		tbLuaData = func_Import(self, tbTranslatedData, tbLuaData)
 		if tbLuaData == nil then
-			return sLuaFileName .. " <color=red>\231\148\177\228\186\142\232\183\175\228\186\186\232\167\146\232\137\178\229\144\141\230\156\170\231\191\187\232\175\145\239\188\140\232\183\179\232\191\135\229\164\132\231\144\134\227\128\130</color>\n"
+			return sLuaFileName .. " <color=red>\231\148\177\228\186\142\232\183\175\228\186\186\232\167\146\232\137\178\229\144\141\230\156\170\231\191\187\232\175\145\239\188\140\232\183\179\232\191\135\229\164\132\231\144\134\227\128\130</color>"
 		end
 		local sWriteLuaPath = sWriteTo .. sLuaFolder .. sLuaFileName .. ".lua"
+		local sCheckWaitSignalLog = ""
 		if sLuaFolder == "Preset/" then
 			local tbLineData = {}
 			table.insert(tbLineData, "return {")
@@ -450,9 +442,12 @@ function AvgEditorMultiLanTool:_ProcSingleLuaFile(sLuaFolder, sLuaFileName, tbLu
 			table.insert(tbLineData, "}")
 			EventManager.Hit("AvgMultiLanTool_DO_SAVE_LUA_FILE", sWriteLuaPath, tbLineData)
 		else
+			if ENABLE_W_CHECK == true then
+				sCheckWaitSignalLog = self:CheckWaitSignal(tbLuaData, self.nToLanIdx)
+			end
 			EventManager.Hit("AvgMultiLanTool_SAVE_AVG_CONFIG", tbLuaData, sWriteLuaPath)
 		end
-		return sLuaFileName .. " <color=green>\229\183\178\229\174\140\230\136\144\230\156\172\229\156\176\229\140\150\239\188\140\229\186\148\228\184\142 excel \228\184\128\232\181\183\230\143\144\228\186\164\232\135\179P4\227\128\130</color>\n"
+		return sLuaFileName .. " <color=green>\229\183\178\229\174\140\230\136\144\230\156\172\229\156\176\229\140\150\239\188\140\229\186\148\228\184\142 excel \228\184\128\232\181\183\230\143\144\228\186\164\232\135\179P4\227\128\130</color>" .. sCheckWaitSignalLog
 	end
 end
 function AvgEditorMultiLanTool:_GetAvgCharName(sAvgCharId)
@@ -1386,7 +1381,8 @@ function AvgEditorMultiLanTool:_Compare_Text(tbTranslatedData, tbExportData)
 	end
 	local nRowCountT = tbTranslatedData.Length
 	if nRowCountT ~= #tbExportData then
-		return false
+		local log = string.format("\229\183\178\231\191\187\232\175\145\231\154\132 excel \232\161\140\230\149\176(%s) \228\184\142 \231\142\176\229\175\188\229\135\186\231\154\132 excel \232\161\140\230\149\176(%s) \228\184\141\228\184\128\232\135\180\227\128\130", tostring(nRowCountT), tostring(#tbExportData))
+		return false, nil, log
 	end
 	nRowCountT = nRowCountT - 1
 	local tbOverwrite = {}
@@ -1413,12 +1409,14 @@ function AvgEditorMultiLanTool:_Compare_Text(tbTranslatedData, tbExportData)
 					local tbTranslated = string.split(sTranslated, "\227\128\145")
 					local tbExport = string.split(sExport, "\227\128\145")
 					if #tbTranslated == 2 and #tbExport == 2 and tbTranslated[2] ~= tbExport[2] then
-						return false
+						local log = string.format("\229\183\178\231\191\187\232\175\145\231\154\132\228\184\173\230\150\135\230\150\135\230\156\172\239\188\154%s\n\231\142\176\229\175\188\229\135\186\231\154\132\228\184\173\230\150\135\230\150\135\230\156\172\239\188\154%s", tbTranslated[2], tbExport[2])
+						return false, nil, log
 					end
 					tbOverwrite[i + 1][j] = sExport
 				end
 			elseif sTranslated ~= sExport then
-				return false
+				local log = string.format("\229\183\178\231\191\187\232\175\145\231\154\132\228\184\173\230\150\135\230\150\135\230\156\172\239\188\154%s\n\231\142\176\229\175\188\229\135\186\231\154\132\228\184\173\230\150\135\230\150\135\230\156\172\239\188\154%s", sTranslated, sExport)
+				return false, nil, log
 			end
 		end
 	end
@@ -1808,5 +1806,289 @@ function AvgEditorMultiLanTool:_Import_AvgUIText(tbTranslatedData, tbLuaData)
 		end
 	end
 	return tbLuaData
+end
+function AvgEditorMultiLanTool:OnBtnClick_CheckW()
+	local tbSelected = {}
+	local nTogCount = #self.tbLuaFileName
+	for i = 2, nTogCount do
+		for ii, vv in ipairs(self.tbLuaFileName[i]) do
+			if vv.bSelected == true then
+				table.insert(tbSelected, vv.sName)
+			end
+		end
+	end
+	if #tbSelected <= 0 then
+		EventManager.Hit(EventId.OpenMessageBox, {
+			nType = AllEnum.MessageBox.Alert,
+			sContent = "\230\156\170\233\128\137\228\184\173\228\187\187\228\189\149\233\156\128\230\160\161\233\170\140\231\154\132\230\150\135\228\187\182\227\128\130"
+		})
+		return
+	end
+	local nCheckLanIdx = self.nToLanIdx
+	local sRequireRoot = GetAvgLuaRequireRoot(nCheckLanIdx)
+	local sWriteFileRoot = NovaAPI.ApplicationDataPath .. "/../Lua/"
+	if AVG_EDITOR == true and NovaAPI.IsRuntimeWindowsPlayer() == true then
+		sWriteFileRoot = NovaAPI.StreamingAssetsPath .. "/Lua/"
+	end
+	local sWriteTo = sWriteFileRoot .. sRequireRoot
+	sRequireRoot = sRequireRoot .. "Config/"
+	local sCheckLog = ""
+	for i, sLuaFileName in ipairs(tbSelected) do
+		local sRequire = sRequireRoot .. sLuaFileName
+		local tbLuaData = require(sRequire)
+		sCheckLog = sCheckLog .. sLuaFileName .. self:CheckWaitSignal(tbLuaData, nCheckLanIdx) .. [[
+
+
+]]
+		tbLuaData = nil
+		package.loaded[sRequire] = nil
+	end
+	local sCheckLogPath = sWriteTo .. "/check_log.txt"
+	local fs
+	if CS_SYS_IO.File.Exists(sCheckLogPath) == false then
+		fs = CS_SYS_IO.FileStream(sCheckLogPath, CS_SYS_IO.FileMode.CreateNew)
+	else
+		fs = CS_SYS_IO.FileStream(sCheckLogPath, CS_SYS_IO.FileMode.Append)
+	end
+	local sw = CS_SYS_IO.StreamWriter(fs, CS_SYS.Text.UTF8Encoding(false))
+	local timeString = os.date("%Y-%m-%d %H:%M:%S")
+	local sLogTitle = string.format("----------\227\128\144\230\156\172\229\156\176\229\140\150\229\164\132\231\144\134\230\151\165\229\191\151\227\128\145\230\150\135\230\156\172\232\175\173\232\168\128:%s date:%s----------\n", AllEnum.LanguageInfo[nCheckLanIdx][2], timeString)
+	local sCurLog = sLogTitle .. sCheckLog
+	sw:Write(sCurLog)
+	sw:Close()
+	fs:Close()
+	NovaAPI.SetText(self._mapNode.txtProcResult, sCurLog)
+	self._mapNode.goProcResult:SetActive(true)
+	GameResourceLoader.UnloadAsset(PanelId.AvgEditorMultiLanTool)
+end
+function AvgEditorMultiLanTool:CheckWaitSignal(tbLuaData, nTxtLanIdx)
+	if type(nTxtLanIdx) ~= "number" then
+		nTxtLanIdx = 1
+	end
+	local nCheckId, nSetGoOnCount, nNextEventCountCn, nNextEventCountJp, goL2D, sAnim, nCn, nJp = 0, 0, 0, 0, nil, "", 0, 0
+	local func_CheckCountInContent = function(sContent, nBackup)
+		local _, nCount = "", 0
+		if type(sContent) == "string" and sContent ~= "" then
+			_, nCount = string.gsub(sContent, "==W==", "")
+		else
+			nCount = nBackup
+		end
+		return nCount
+	end
+	local sReturn = ""
+	for i, v in ipairs(tbLuaData) do
+		local sCmdName = v.cmd
+		local tbParam = v.param
+		if sCmdName == "SetTalk" then
+			if goL2D == nil then
+				if nSetGoOnCount ~= 0 then
+					local sErr = "\229\164\154"
+					if 0 < nSetGoOnCount then
+						sErr = "\229\176\145"
+					end
+					sReturn = sReturn .. string.format("\n\230\160\161\233\170\140\229\164\177\232\180\165id%d \226\128\156\231\187\173\230\146\173\226\128\157\230\140\135\228\187\164 %s \233\133\141\228\186\134 %d \228\184\170", nCheckId, sErr, math.abs(nSetGoOnCount))
+					nSetGoOnCount = 0
+				end
+				nCheckId = i
+			end
+			local nCountCnF, nCountCnM, nCountJpF, nCountJpM = 0, 0, 0, 0
+			nCountCnF = func_CheckCountInContent(tbParam[3], 0)
+			nCountCnM = func_CheckCountInContent(tbParam[7], nCountCnF)
+			nCountJpF = func_CheckCountInContent(tbParam[8], 0)
+			nCountJpM = func_CheckCountInContent(tbParam[9], nCountJpF)
+			if 1 < nTxtLanIdx then
+				if tbParam[3] == "" then
+					nCountCnF = nCountJpF
+				end
+				if tbParam[7] == "" then
+					nCountCnM = nCountCnF
+				end
+			else
+				if tbParam[8] == "" then
+					nCountJpF = nCountCnF
+				end
+				if tbParam[9] == "" then
+					nCountJpM = nCountJpF
+				end
+			end
+			if goL2D == nil then
+				if nCountCnF == nCountCnM and nCountJpF == nCountJpM and nCountCnF == nCountJpF then
+					nSetGoOnCount = nCountCnF
+				else
+					local sErr_Cn, sErr_Jp, sErr = "", "", ""
+					if nCountCnF ~= nCountCnM then
+						sErr_Cn = string.format("\228\184\173\233\133\141\231\148\183%d \229\165\179%d \230\150\135\230\156\172\233\135\140\230\149\176\233\135\143\228\184\141\228\184\128\232\135\180", nCountCnM, nCountCnF)
+					end
+					if nCountJpF ~= nCountJpM then
+						sErr_Jp = string.format("\230\151\165\233\133\141\231\148\183%d \229\165\179%d \230\150\135\230\156\172\233\135\140\230\149\176\233\135\143\228\184\141\228\184\128\232\135\180", nCountJpM, nCountJpF)
+					end
+					if nCountCnF ~= nCountJpF then
+						sErr = string.format("\228\184\173%d \230\151\165%d \233\133\141\231\154\132(\229\165\179)\230\150\135\230\156\172\233\135\140\230\149\176\233\135\143\228\184\141\228\184\128\232\135\180", nCountCnF, nCountJpF)
+					end
+					sReturn = sReturn .. string.format("\n\230\160\161\233\170\140\229\164\177\232\180\165id%d %s %s %s", i, sErr_Cn, sErr_Jp, sErr)
+				end
+			elseif nCountCnF == nCountCnM and nCountJpF == nCountJpM then
+				nNextEventCountCn = nNextEventCountCn - nCountCnF
+				nNextEventCountJp = nNextEventCountJp - nCountJpF
+			else
+				local sErr_Cn, sErr_Jp = "", ""
+				if nCountCnF ~= nCountCnM then
+					sErr_Cn = string.format("\228\184\173\233\133\141\231\148\183%d \229\165\179%d \230\150\135\230\156\172\233\135\140\230\149\176\233\135\143\228\184\141\228\184\128\232\135\180", nCountCnM, nCountCnF)
+				end
+				if nCountJpF ~= nCountJpM then
+					sErr_Jp = string.format("\230\151\165\233\133\141\231\148\183%d \229\165\179%d \230\150\135\230\156\172\233\135\140\230\149\176\233\135\143\228\184\141\228\184\128\232\135\180", nCountJpM, nCountJpF)
+				end
+				sReturn = sReturn .. string.format("\n\230\160\161\233\170\140\229\164\177\232\180\165id%d %s %s", i, sErr_Cn, sErr_Jp)
+			end
+		elseif sCmdName == "SetGoOn" then
+			if goL2D == nil then
+				nSetGoOnCount = nSetGoOnCount - 1
+			end
+		elseif sCmdName == "SetL2D" then
+			if tbParam[1] == 0 then
+				if nSetGoOnCount ~= 0 then
+					local sErr = "\229\164\154"
+					if 0 < nSetGoOnCount then
+						sErr = "\229\176\145"
+					end
+					sReturn = sReturn .. string.format("\n\230\160\161\233\170\140\229\164\177\232\180\165id%d \226\128\156\231\187\173\230\146\173\226\128\157\230\140\135\228\187\164 %s \233\133\141\228\186\134 %d \228\184\170", nCheckId, sErr, math.abs(nSetGoOnCount))
+					nSetGoOnCount = 0
+				end
+				local sAvgCharId = tbParam[2]
+				local sPose = tbParam[3]
+				local sFullPath = Settings.AB_ROOT_PATH .. string.format("Actor2D/CharacterAvg/%s/%s_%s.prefab", sAvgCharId, sAvgCharId, sPose)
+				goL2D = GameResourceLoader.LoadAsset(ResType.Any, sFullPath, typeof(Object), "UI", PanelId.AvgEditorMultiLanTool)
+			else
+				if nNextEventCountCn ~= 0 or nNextEventCountJp ~= 0 then
+					local sErr_Cn, sErr_Jp = "", ""
+					if nNextEventCountCn ~= 0 then
+						local sErr = "\229\164\154"
+						if 0 < nNextEventCountCn then
+							sErr = "\229\176\145"
+						end
+						sErr_Cn = string.format("\228\184\173\233\133\141\230\150\135\230\156\172\233\135\140 %s \233\133\141\228\186\134 %d \228\184\170", sErr, math.abs(nNextEventCountCn))
+						nNextEventCountCn = 0
+					end
+					if nNextEventCountJp ~= 0 then
+						local sErr = "\229\164\154"
+						if 0 < nNextEventCountJp then
+							sErr = "\229\176\145"
+						end
+						sErr_Jp = string.format("\230\151\165\233\133\141\230\150\135\230\156\172\233\135\140 %s \233\133\141\228\186\134 %d \228\184\170", sErr, math.abs(nNextEventCountJp))
+						nNextEventCountJp = 0
+					end
+					sReturn = sReturn .. string.format("\n\230\160\161\233\170\140\229\164\177\232\180\165id%d \228\184\142\229\138\168\231\148\187%s\228\184\173\231\154\132\230\137\147\231\130\185\230\149\176\233\135\143 cn%d jp%d \228\184\141\228\184\128\232\135\180 %s %s", nCheckId, sAnim, nCn, nJp, sErr_Cn, sErr_Jp)
+				end
+				goL2D = nil
+				sAnim = ""
+				nCn = 0
+				nJp = 0
+			end
+		elseif sCmdName == "CtrlL2D" and goL2D ~= nil then
+			if nNextEventCountCn ~= 0 or nNextEventCountJp ~= 0 then
+				local sErr_Cn, sErr_Jp = "", ""
+				if nNextEventCountCn ~= 0 then
+					local sErr = "\229\164\154"
+					if 0 < nNextEventCountCn then
+						sErr = "\229\176\145"
+					end
+					sErr_Cn = string.format("\228\184\173\233\133\141\230\150\135\230\156\172\233\135\140 %s \233\133\141\228\186\134 %d \228\184\170", sErr, math.abs(nNextEventCountCn))
+					nNextEventCountCn = 0
+				end
+				if nNextEventCountJp ~= 0 then
+					local sErr = "\229\164\154"
+					if 0 < nNextEventCountJp then
+						sErr = "\229\176\145"
+					end
+					sErr_Jp = string.format("\230\151\165\233\133\141\230\150\135\230\156\172\233\135\140 %s \233\133\141\228\186\134 %d \228\184\170", sErr, math.abs(nNextEventCountJp))
+					nNextEventCountJp = 0
+				end
+				sReturn = sReturn .. string.format("\n\230\160\161\233\170\140\229\164\177\232\180\165id:%d \228\184\142\229\138\168\231\148\187%s\228\184\173\231\154\132\230\137\147\231\130\185\230\149\176\233\135\143 cn%d jp%d \228\184\141\228\184\128\232\135\180 %s %s", nCheckId, sAnim, nCn, nJp, sErr_Cn, sErr_Jp)
+			end
+			nCheckId = i
+			sAnim = tbParam[3]
+			nNextEventCountCn = NovaAPI.CheckL2DAnimEventCount(goL2D, tbParam[3] .. "_cn")
+			nNextEventCountJp = NovaAPI.CheckL2DAnimEventCount(goL2D, tbParam[3] .. "_jp")
+			nCn = nNextEventCountCn
+			nJp = nNextEventCountJp
+		end
+	end
+	if sReturn == "" then
+		sReturn = "\n\230\160\161\233\170\140\233\128\154\232\191\135"
+	end
+	return sReturn
+end
+function AvgEditorMultiLanTool:InitLSV()
+	local nCount = 0
+	if self.nCurTogIdx == 1 then
+		local nTogCount = #self.tbLuaFileName
+		for i = 2, nTogCount do
+			nCount = nCount + #self.tbLuaFileName[i]
+		end
+		if nCount ~= #self.tbLuaFileName[1] then
+			printError("\230\188\148\229\135\186\233\133\141\231\189\174\230\150\135\228\187\182\230\149\176\233\135\143\231\187\159\232\174\161\230\156\137\232\175\175\239\188\129")
+			nCount = 0
+		end
+	else
+		nCount = #self.tbLuaFileName[self.nCurTogIdx]
+	end
+	if 0 < nCount then
+		self._mapNode.lsv_multi_lan:Init(nCount, self, self.OnRefreshGrid, self.OnGridBtnClick)
+		self._mapNode.lsv_multi_lan:ForceRefresh()
+	else
+		delChildren(self._mapNode.procContent)
+	end
+end
+function AvgEditorMultiLanTool:OnRefreshGrid(go)
+	local nIndex = tonumber(go.name) + 1
+	local tbGridData = self:GetGridData(nIndex)
+	if tbGridData == nil then
+		return
+	end
+	NovaAPI.SetImageColor(go:GetComponent("Image"), tbGridData.bSelected == true and Color.green or Color.white)
+	NovaAPI.SetText(go.transform:GetChild(0):GetComponent("Text"), tbGridData.sName)
+end
+function AvgEditorMultiLanTool:OnGridBtnClick(go)
+	local nIndex = tonumber(go.name) + 1
+	local tbGridData = self:GetGridData(nIndex)
+	if tbGridData == nil then
+		return
+	end
+	tbGridData.bSelected = not tbGridData.bSelected
+	NovaAPI.SetImageColor(go:GetComponent("Image"), tbGridData.bSelected == true and Color.green or Color.white)
+	local sName = tbGridData.sName
+	local bSelected = tbGridData.bSelected
+	local nFrom = self.nCurTogIdx == 1 and 2 or 1
+	local nTo = self.nCurTogIdx == 1 and #self.tbLuaFileName or 1
+	for i = nFrom, nTo do
+		local tb = self.tbLuaFileName[i]
+		for ii, vv in ipairs(tb) do
+			if vv.sName == sName then
+				vv.bSelected = bSelected
+				break
+			end
+		end
+	end
+end
+function AvgEditorMultiLanTool:GetGridData(nIndex)
+	local tb = self.tbLuaFileName[self.nCurTogIdx]
+	return tb[nIndex]
+end
+function AvgEditorMultiLanTool:SetLSV_Visible(bVisible)
+	NovaAPI.SetCanvasGroupAlpha(self._mapNode.cgLSV, bVisible == true and 1 or 0)
+	NovaAPI.SetCanvasGroupInteractable(self._mapNode.cgLSV, bVisible == true)
+	NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.cgLSV, bVisible == true)
+	NovaAPI.SetButtonInteractable(self._mapNode.btn_ProcMultiLanguage, bVisible == true)
+	NovaAPI.SetButtonInteractable(self._mapNode.btn_CheckW, bVisible == true)
+end
+function AvgEditorMultiLanTool:onToggle_LuaGroup(toggle, nIndex, bIsOn)
+	if bIsOn == false then
+		return
+	end
+	if nIndex == self.nCurTogIdx then
+		return
+	end
+	self.nCurTogIdx = nIndex
+	self:InitLSV()
 end
 return AvgEditorMultiLanTool

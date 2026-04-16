@@ -160,9 +160,15 @@ function EventManager.Remove(nEventId, listener, callback)
 	end
 end
 function EventManager.RemoveAll(nEventId)
-	mapEvent[nEventId] = nil
-	mapTempAdd[nEventId] = nil
-	mapTempRemove[nEventId] = nil
+	if type(mapEvent) == "table" then
+		mapEvent[nEventId] = nil
+	end
+	if type(mapTempAdd) == "table" then
+		mapTempAdd[nEventId] = nil
+	end
+	if type(mapTempRemove) == "table" then
+		mapTempRemove[nEventId] = nil
+	end
 end
 function EventManager.Hit(nEventId, ...)
 	if mapEvent == nil or mapOnHitEventId == nil then
@@ -190,6 +196,8 @@ function EventManager.Hit(nEventId, ...)
 		mapOnHitEventId[nEventId] = nil
 		ProcAdd(nEventId)
 		ProcRemove(nEventId)
+	elseif mapOnHitEventId[nEventId] ~= nil then
+		printWarn("\229\156\168\229\144\140\228\184\128\229\184\167\233\135\140\239\188\140\228\184\141\229\186\148\233\135\141\229\164\141\232\167\166\229\143\145\229\144\140\228\184\128\228\186\139\228\187\182\239\188\140EvendId:" .. tostring(nEventId))
 	end
 end
 local mapEntityEvent, mapTempEntityEventAdd, mapTempEntityEventRemove, mapOnHitEntityEventId

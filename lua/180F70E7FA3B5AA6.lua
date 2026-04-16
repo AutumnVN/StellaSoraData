@@ -13,6 +13,10 @@ function TrekkerVersusData:Init()
 	self.bFirstIn = true
 	self.nSuccessBattle = 0
 	self.nLastBattleHard = 0
+	self.nTimerIdleRefresh = 0
+	self.bFirstBattlePlayed = false
+	EventManager.Add("TrekkerVersusReceiveHeatQuest", self, self.RequestReceiveScheduleReward)
+	EventManager.Add("TrekkerVersusFanGiftDataRefresh", self, self.OnEvent_TrekkerVersusFanGiftDataRefresh)
 end
 function TrekkerVersusData:GetActivityData()
 	return {
@@ -31,19 +35,28 @@ function TrekkerVersusData:RefreshTrekkerVersusData(nActId, msgData)
 	self.nFanLevel = msgData.Level
 	self.nFanExp = msgData.Exp
 	self.nIdleRewardStartTime = msgData.Show.IdleTime
-	self.tbIdleReward = msgData.Show.IdleValues
+	self.tbIdleReward = msgData.Show.IdleValues or {}
 	self.nSelfHotValue = msgData.Show.SelfHotValue
 	self.nRivalHotValue = msgData.Show.RivalHotValue
-	self.tbHotValueRewardIds = msgData.HotValueRewardIds
+	self.tbHotValueRewardIds = msgData.HotValueRewardIds or {}
 	self.tbDuelRewardIds = msgData.DuelRewardIds
-	self.tbDuelHistory = msgData.HistoryResult
+	self.tbDuelHistory = msgData.Results
+	self.bFirstBattlePlayed = self.nIdleRewardStartTime ~= nil and self.nIdleRewardStartTime > 0
 	self.nLastBuildId = msgData.BuildId
 	self.nCachedBuildId = msgData.BuildId
-	self.nRecord = msgData.Show.Difficulty
+	self.nRecord = msgData.Show.Difficult or 0
+	self.nRivalCount = 0
+	local foreachRival = function(mapData)
+		if mapData.GroupId == self.nActId then
+			self.nRivalCount = self.nRivalCount + 1
+		end
+	end
+	ForEachTableLine(DataTable.TravelerDuelTarget, foreachRival)
 	for _, mapQuest in ipairs(msgData.Quests) do
 		self.mapQuests[mapQuest.Id] = mapQuest
 	end
 	self:RefreshQusetRedDot()
+	PlayerData.State:RefreshTrekkerVersusIdleRewardRedDot()
 end
 function TrekkerVersusData:EnterTrekkerVersus(nLevelId, nBuildId, tbAffix)
 	local callback = function()
@@ -65,11 +78,7 @@ function TrekkerVersusData:GetTravelerDuelAffixUnlock(nAffixId)
 	if mapAffixCfgData.UnlockDurationTime > 0 and curTimeStamp < _fixedTimeStamp then
 		local sCond = ""
 		local sumTime = _fixedTimeStamp - curTimeStamp
-		if 86400 < sumTime then
-			sCond = orderedFormat(ConfigTable.GetUIText("TDQuest_Day"), math.floor(sumTime / 86400))
-		else
-			sCond = ConfigTable.GetUIText("TDQuest_LessThenDay")
-		end
+		sCond = orderedFormat(ConfigTable.GetUIText("TDQuest_Day"), math.ceil(sumTime / 86400))
 		return false, 4, sCond
 	end
 	if 0 < mapAffixCfgData.UnlockDifficulty and self.nRecord < mapAffixCfgData.UnlockDifficulty then
@@ -99,18 +108,38 @@ function TrekkerVersusData:GetAllQuestData()
 	table.sort(ret, sort)
 	return ret
 end
+function TrekkerVersusData:CheckBattlePlayed()
+	return self.bFirstBattlePlayed
+end
 function TrekkerVersusData:GetCurStreamerDuelData()
 	local mapStreamerDuelCfgData = self:GetTrekkerVersusCfgData()
 	local mapDuelData
+	local nMaxDay = 1
+	local mapLastData
 	local foreachDuel = function(mapData)
+		if mapData.DayNum >= nMaxDay then
+			nMaxDay = mapData.DayNum
+			mapLastData = mapData
+		end
 		if mapData.GroupId == mapStreamerDuelCfgData.TargetGroupId and mapData.DayNum == self.nDayNum then
 			mapDuelData = mapData
 		end
 	end
 	ForEachTableLine(DataTable.TravelerDuelTarget, foreachDuel)
+	if mapDuelData == nil then
+		mapDuelData = mapLastData
+	end
 	return mapDuelData
 end
 function TrekkerVersusData:GetCurHeatValue()
+	local nLastDuelResultHeatValue = 0
+	if self.tbDuelHistory ~= nil and 0 < #self.tbDuelHistory then
+		nLastDuelResultHeatValue = self.tbDuelHistory[#self.tbDuelHistory].SelfHotValue or 0
+	end
+	if nLastDuelResultHeatValue > self.nSelfHotValue then
+		self.nSelfHotValue = nLastDuelResultHeatValue
+		self.nRivalHotValue = self.tbDuelHistory[#self.tbDuelHistory].RivalHotValue or 0
+	end
 	local mapHeatData = {
 		nSelfHotValue = self.nSelfHotValue or 0,
 		nRivalHotValue = self.nRivalHotValue or 0
@@ -128,10 +157,52 @@ function TrekkerVersusData:GetCurFanData()
 	return mapFanData
 end
 function TrekkerVersusData:GetDuelHistory()
+	table.sort(self.tbDuelHistory, function(a, b)
+		return a.SelfHotValue > b.SelfHotValue
+	end)
 	return self.tbDuelHistory
 end
 function TrekkerVersusData:GetIdleReward()
-	return self.tbIdleReward
+	local tbIdleReward = {}
+	local bAllZero = true
+	local foreachIdleReward = function(mapData)
+		for k, v in pairs(self.tbIdleReward) do
+			if v.TypeId == mapData.HotValueItemType then
+				local nCount = math.floor(v.Value / mapData.CumulativeValue)
+				if 1 <= nCount then
+					bAllZero = false
+				end
+				table.insert(tbIdleReward, {
+					Tid = mapData.Id,
+					Qty = nCount
+				})
+				break
+			end
+		end
+	end
+	ForEachTableLine(DataTable.TravelerDuelHotValueItem, foreachIdleReward)
+	if bAllZero then
+		tbIdleReward = {}
+	end
+	return tbIdleReward
+end
+function TrekkerVersusData:GetIdleValue()
+	return self.tbIdleReward or 0
+end
+function TrekkerVersusData:GetRecordLevel()
+	return self.nRecord or 0
+end
+function TrekkerVersusData:GetIdleRewardStartTime()
+	return self.nIdleRewardStartTime
+end
+function TrekkerVersusData:GetRivalCount()
+	return self.nRivalCount or 0
+end
+function TrekkerVersusData:GetHotValueRewardTable()
+	return self.tbHotValueRewardIds
+end
+function TrekkerVersusData:GetDuelRewardTable()
+	return self.tbDuelRewardIds
 end
 function TrekkerVersusData:SetCachedBuildId(nBuildId)
 	self.nCachedBuildId = nBuildId
@@ -163,7 +234,7 @@ function TrekkerVersusData:EnterGame(nLevel, nBuildId, tbAffixes)
 	end
 end
 function TrekkerVersusData:SettleBattle(bSuccess, nLevelId, nTime, tbAffix, nBuildId, msgCallback)
-	local callback = function()
+	local callback = function(_, msgData)
 		local bNewRecord = false
 		if bSuccess then
 			local nRecordLevel = 0
@@ -188,6 +259,7 @@ function TrekkerVersusData:SettleBattle(bSuccess, nLevelId, nTime, tbAffix, nBui
 			end
 			self.nSuccessBattle = 1
 			self.nLastBattleHard = nRecordLevel
+			self.bFirstBattlePlayed = true
 		else
 			self.nSuccessBattle = -1
 			local nRecordLevel = 0
@@ -198,6 +270,10 @@ function TrekkerVersusData:SettleBattle(bSuccess, nLevelId, nTime, tbAffix, nBui
 				end
 			end
 			self.nLastBattleHard = nRecordLevel
+		end
+		if msgData ~= nil and msgData.Show ~= nil then
+			self.nIdleRewardStartTime = msgData.Show.IdleTime
+			self.tbIdleReward = msgData.Show.IdleValues
 		end
 		if msgCallback ~= nil then
 			msgCallback(bNewRecord)
@@ -213,20 +289,47 @@ function TrekkerVersusData:SettleBattle(bSuccess, nLevelId, nTime, tbAffix, nBui
 	}
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_settle_req, msg, nil, callback)
 end
-function TrekkerVersusData:RequestIdleRefresh()
-	local msg = {
-		Value = self.nActId
-	}
-	local callback = function(_, msgData)
+function TrekkerVersusData:RequestIdleRefresh(callback)
+	local nElapsedTime = CS.ClientManager.Instance.serverTimeStamp - self.nTimerIdleRefresh
+	if nElapsedTime < 60 then
+		if callback ~= nil then
+			callback()
+		end
+		return
+	end
+	self.nTimerIdleRefresh = CS.ClientManager.Instance.serverTimeStamp
+	local cb = function(_, msgData)
 		if msgData ~= nil then
-			self.nIdleRewardStartTime = msgData.IdleTime
 			self.nDifficult = msgData.Difficulty
 			self.tbIdleReward = msgData.IdleValues
 			self.nSelfHotValue = msgData.SelfHotValue
 			self.nRivalHotValue = msgData.RivalHotValue
+			local bRedDotOn = false
+			if self.tbIdleReward ~= nil and #self.tbIdleReward > 0 then
+				local nPassedTime = CS.ClientManager.Instance.serverTimeStamp - self.nIdleRewardStartTime
+				if nPassedTime >= 3600 * ConfigTable.GetConfigNumber("TrekkerVersusIdleRewardRedDotTime") then
+					bRedDotOn = true
+				end
+			end
+			local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(self.nActId)
+			if bInActGroup then
+				RedDotManager.SetValid(RedDotDefine.TrekkerVersusIdleReward, {
+					nActGroupId,
+					self.nActId
+				}, bRedDotOn)
+			end
+			PlayerData.State:RefreshTrekkerVersusIdleRewardRedDot(self.nIdleRewardStartTime)
+			self:RefreshQusetRedDot()
+			local mapHeatData = self:GetCurHeatValue()
+			EventManager.Hit("UpdateTrekkerVersusHotValue", mapHeatData.nSelfHotValue, mapHeatData.nRivalHotValue)
+			if callback ~= nil then
+				callback(msgData)
+			end
 		end
 	end
-	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_idle_refresh_req, msg, nil, callback)
+	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_idle_refresh_req, {
+		Value = self.nActId
+	}, nil, cb)
 end
 function TrekkerVersusData:RequestIdleRewardReceive(callback)
 	local msg = {
@@ -235,10 +338,16 @@ function TrekkerVersusData:RequestIdleRewardReceive(callback)
 	local cb = function(_, msgData)
 		if msgData ~= nil then
 			if msgData.Change ~= nil then
-				HttpNetHandler.ProcChangeInfo(msgData.Change)
+				local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(msgData.Change)
+				HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 				UTILS.OpenReceiveByDisplayItem(msgData.AwardItems, msgData.ChangeInfo)
 			end
 			self.nIdleRewardStartTime = msgData.IdleTime
+			for k, v in pairs(self.tbIdleReward) do
+				v.Value = 0
+			end
+			PlayerData.State:RefreshTrekkerVersusIdleRewardRedDot(self.nIdleRewardStartTime)
+			self:RefreshQusetRedDot()
 			if callback ~= nil then
 				callback(msgData)
 			end
@@ -246,7 +355,7 @@ function TrekkerVersusData:RequestIdleRewardReceive(callback)
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_idle_reward_receive_req, msg, nil, cb)
 end
-function TrekkerVersusData:RequestSendStreamerGift(tbGift, callback)
+function TrekkerVersusData:RequestSendStreamerGift(tbGift, nAddHotValue, callback)
 	local msg = {
 		ActivityId = self.nActId,
 		Items = tbGift
@@ -257,12 +366,20 @@ function TrekkerVersusData:RequestSendStreamerGift(tbGift, callback)
 			local nPrevFanExp = self.nFanExp
 			self.nFanLevel = msgData.Level
 			self.nFanExp = msgData.Exp
-			self.nSelfHotValue = msgData.Show.SelfHotValue
-			self.nRivalHotValue = msgData.Show.RivalHotValue
-			if msgData.Change ~= nil then
-				HttpNetHandler.ProcChangeInfo(msgData.Change)
-				UTILS.OpenReceiveByDisplayItem(msgData.AwardItems, msgData.ChangeInfo)
+			local nNowTime = CS.ClientManager.Instance.serverTimeStamp
+			if msgData.SelfHotValue > self.nSelfHotValue then
+				self.nSelfHotValue = msgData.SelfHotValue
+			elseif nNowTime < self:GetChallengeEndTime() then
+				self.nSelfHotValue = self.nSelfHotValue + nAddHotValue
 			end
+			self.nRivalHotValue = msgData.RivalHotValue
+			local mapHeatData = self:GetCurHeatValue()
+			EventManager.Hit("UpdateTrekkerVersusHotValue", mapHeatData.nSelfHotValue, mapHeatData.nRivalHotValue)
+			if msgData.Change ~= nil then
+				local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(msgData.Change)
+				HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+			end
+			self:RefreshQusetRedDot()
 			if callback ~= nil then
 				callback(msgData, nPrevFanLevel, nPrevFanExp)
 			end
@@ -276,9 +393,30 @@ function TrekkerVersusData:RequestReceiveScheduleReward(nScheduleType)
 		ScheduleType = nScheduleType
 	}
 	local callback = function(_, msgData)
-		if msgData ~= nil and msgData.Change ~= nil then
-			HttpNetHandler.ProcChangeInfo(msgData.Change)
-			UTILS.OpenReceiveByDisplayItem(msgData.AwardItems, msgData.ChangeInfo)
+		if msgData ~= nil then
+			if msgData.Change ~= nil then
+				local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(msgData.Change)
+				HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+				UTILS.OpenReceiveByDisplayItem(msgData.AwardItems, msgData.ChangeInfo)
+			end
+			if nScheduleType == 1 then
+				local foreachHeatQuest = function(mapQuestData)
+					if mapQuestData.TargetValue <= self.nSelfHotValue and table.indexof(self.tbHotValueRewardIds, mapQuestData.Id) <= 0 then
+						table.insert(self.tbHotValueRewardIds, mapQuestData.Id)
+					end
+				end
+				ForEachTableLine(DataTable.TravelerDuelHotValueRewards, foreachHeatQuest)
+				self:RefreshQusetRedDot()
+				EventManager.Hit("TrekkerVersusHeatQuestRefresh")
+			elseif nScheduleType == 2 then
+				for _, v in pairs(self.tbDuelHistory) do
+					if table.indexof(self.tbDuelRewardIds, v.TargetId) <= 0 then
+						table.insert(self.tbDuelRewardIds, v.TargetId)
+					end
+				end
+				self:RefreshQusetRedDot()
+				EventManager.Hit("TrekkerVersusDuelQuestRefresh")
+			end
 		end
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_schedule_reward_receive_req, msg, nil, callback)
@@ -309,8 +447,10 @@ function TrekkerVersusData:ReceiveQuestReward(callback)
 		end
 	end
 	local msgCallback = function(_, msgData)
-		if callback ~= nil then
-			callback(msgData)
+		if msgData.Change ~= nil then
+			local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(msgData.Change)
+			HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+			UTILS.OpenReceiveByDisplayItem(msgData.AwardItems, msgData.ChangeInfo)
 		end
 		for _, mapQuest in pairs(self.mapQuests) do
 			if mapQuest.Status == 1 then
@@ -318,6 +458,10 @@ function TrekkerVersusData:ReceiveQuestReward(callback)
 			end
 		end
 		self:RefreshQusetRedDot()
+		EventManager.Hit("TrekkerVersusQuestRefresh")
+		if callback ~= nil then
+			callback(msgData)
+		end
 	end
 	if bReceive then
 		local msg = {
@@ -347,16 +491,60 @@ function TrekkerVersusData:GetChallengeEndTime()
 	end
 	return self.nEndTime
 end
+function TrekkerVersusData:IsOpenStreamerDuel(nStartTime)
+	local nowTime = CS.ClientManager.Instance.serverTimeStamp
+	local nEndTime = CS.ClientManager.Instance:GetNextRefreshTime(nStartTime) + 86400 * (self.nRivalCount - 1)
+	return nStartTime < nowTime and nowTime < nEndTime
+end
 function TrekkerVersusData:RefreshQusetRedDot()
-	local bVisible = false
+	local bGiftQuestVisible = false
+	local bBattleQuestVisible = false
 	for _, mapQuest in pairs(self.mapQuests) do
 		if mapQuest.Status == 1 then
-			bVisible = true
-			break
+			local mapQuestData = ConfigTable.GetData("TravelerDuelChallengeQuest", mapQuest.Id)
+			if mapQuestData.CompleteCond == GameEnum.questCompleteCond.TrekkerVersusFansWithSpecificLevel then
+				bGiftQuestVisible = true
+			else
+				bBattleQuestVisible = true
+			end
 		end
 	end
-	RedDotManager.SetValid(RedDotDefine.TrekkerVersusQuest, nil, bVisible)
-	RedDotManager.SetValid(RedDotDefine.TrekkerVersusQuest_1, nil, bVisible)
+	local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(self.nActId)
+	if bInActGroup then
+		RedDotManager.SetValid(RedDotDefine.TrekkerVersusGiftQuest, {
+			nActGroupId,
+			self.nActId
+		}, bGiftQuestVisible)
+		RedDotManager.SetValid(RedDotDefine.TrekkerVersusBattleQuest, {
+			nActGroupId,
+			self.nActId
+		}, bBattleQuestVisible)
+	end
+	local bStreamerDuelOpen = self:IsOpenStreamerDuel(self:GetChallengeStartTime())
+	local nPassedDuelCount = bStreamerDuelOpen and self.nDayNum - 1 or self.nRivalCount
+	if self.nDayNum == 0 then
+		nPassedDuelCount = self.nRivalCount
+	end
+	local nReceivedDuelReward = #self.tbDuelRewardIds
+	if bInActGroup then
+		RedDotManager.SetValid(RedDotDefine.TrekkerVersusDuelQuest, {
+			nActGroupId,
+			self.nActId
+		}, nPassedDuelCount > nReceivedDuelReward)
+	end
+	local bHeatQuestVisible = false
+	local foreachHeatReward = function(mapData)
+		if mapData.TargetValue <= self.nSelfHotValue and table.indexof(self.tbHotValueRewardIds, mapData.Id) <= 0 then
+			bHeatQuestVisible = true
+		end
+	end
+	ForEachTableLine(DataTable.TravelerDuelHotValueRewards, foreachHeatReward)
+	if bInActGroup then
+		RedDotManager.SetValid(RedDotDefine.TrekkerVersusHeatQuest, {
+			nActGroupId,
+			self.nActId
+		}, bHeatQuestVisible)
+	end
 end
 function TrekkerVersusData:GetFirstIn()
 	local bFirst = self.bFirstIn
@@ -364,5 +552,13 @@ function TrekkerVersusData:GetFirstIn()
 		self.bFirstIn = false
 	end
 	return bFirst
+end
+function TrekkerVersusData:OnEvent_TrekkerVersusFanGiftDataRefresh(nActId, nFanLevel, nExp)
+	if nActId ~= self.nActId then
+		return
+	end
+	self.nFanLevel = nFanLevel
+	self.nFanExp = nExp
+	EventManager.Hit("TrekkerVersusFanGiftShowRefresh")
 end
 return TrekkerVersusData

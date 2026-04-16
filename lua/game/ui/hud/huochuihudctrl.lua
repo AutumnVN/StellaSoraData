@@ -81,8 +81,9 @@ end
 function HuoChuiHudCtrl:OnDisable()
 	EventManager.RemoveEntityEvent("Dead", self.monsterId, self, self.OnEvent_Deaded)
 	EventManager.RemoveEntityEvent("ClearSlef", self.monsterId, self, self.OnEvent_Deaded)
-	EventManager.RemoveEntityEvent("ValueChange", self.monsterId, self, self.OnEvent_ValueChange)
-	EventManager.RemoveEntityEvent("StateChange", self.monsterId, self, self.OnEvent_StageChange)
+	EventManager.RemoveEntityEvent("HotValueChange", self.monsterId, self, self.OnEvent_ValueChange)
+	EventManager.RemoveEntityEvent("HotStateChange", self.monsterId, self, self.OnEvent_StageChange)
+	self.monsterId = nil
 end
 function HuoChuiHudCtrl:ChangeState1()
 	self._mapNode.goState33:SetActive(false)
@@ -105,6 +106,11 @@ function HuoChuiHudCtrl:ChangeStateHot()
 	self._mapNode.goHotState:SetActive(true)
 end
 function HuoChuiHudCtrl:OnDestroy()
+	EventManager.RemoveEntityEvent("Dead", self.monsterId, self, self.OnEvent_Deaded)
+	EventManager.RemoveEntityEvent("ClearSlef", self.monsterId, self, self.OnEvent_Deaded)
+	EventManager.RemoveEntityEvent("HotValueChange", self.monsterId, self, self.OnEvent_ValueChange)
+	EventManager.RemoveEntityEvent("HotStateChange", self.monsterId, self, self.OnEvent_StageChange)
+	self.monsterId = nil
 end
 function HuoChuiHudCtrl:OnRelease()
 end
@@ -129,12 +135,12 @@ function HuoChuiHudCtrl:SetState(nBeforeValue, nCurValue)
 	end
 end
 function HuoChuiHudCtrl:OnEvent_Deaded()
-	self.monsterId = nil
 	self.gameObject:SetActive(false)
 	EventManager.RemoveEntityEvent("Dead", self.monsterId, self, self.OnEvent_Deaded)
 	EventManager.RemoveEntityEvent("ClearSlef", self.monsterId, self, self.OnEvent_Deaded)
-	EventManager.RemoveEntityEvent("ValueChange", self.monsterId, self, self.OnEvent_ValueChange)
-	EventManager.RemoveEntityEvent("StateChange", self.monsterId, self, self.OnEvent_StageChange)
+	EventManager.RemoveEntityEvent("HotValueChange", self.monsterId, self, self.OnEvent_ValueChange)
+	EventManager.RemoveEntityEvent("HotStateChange", self.monsterId, self, self.OnEvent_StageChange)
+	self.monsterId = nil
 end
 function HuoChuiHudCtrl:OnEvent_ValueChange(nValue)
 	local nBeforValue = self.nHotValue

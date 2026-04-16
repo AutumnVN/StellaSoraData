@@ -15,7 +15,8 @@ JointDrillBattleMenuCtrl._mapEventConfig = {
 	InputEnable = "OnEvent_InputEnable",
 	LoadLevelRefresh = "OnEvent_LoadLevelRefresh",
 	JointDrill_StopTime = "OnEvent_JointDrill_StopTime",
-	JointDrill_ShowPauseBnt_Editor = "OnEvent_ShowPauseBntEditor"
+	JointDrill_ShowPauseBnt_Editor = "OnEvent_ShowPauseBntEditor",
+	JointDrill_Level_TimeOut = "OnEvent_LevelTimeOut"
 }
 function JointDrillBattleMenuCtrl:OnEnable()
 	self._mapNode.BtnBg.gameObject:SetActive(false)
@@ -36,6 +37,9 @@ function JointDrillBattleMenuCtrl:OnEvent_LoadLevelRefresh()
 	self._mapNode.BtnBg.gameObject:SetActive(true)
 end
 function JointDrillBattleMenuCtrl:OnEvent_JointDrill_StopTime()
+	self._mapNode.BtnBg.gameObject:SetActive(false)
+end
+function JointDrillBattleMenuCtrl:OnEvent_LevelTimeOut()
 	self._mapNode.BtnBg.gameObject:SetActive(false)
 end
 function JointDrillBattleMenuCtrl:OnEvent_ShowPauseBntEditor()

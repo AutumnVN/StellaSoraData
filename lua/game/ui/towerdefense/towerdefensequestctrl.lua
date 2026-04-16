@@ -75,7 +75,7 @@ function TowerDefenseQuestCtrl:OnDisable()
 	end
 	self.tbQuestGridCtrl = {}
 end
-function TowerDefenseQuestCtrl:OnDestory()
+function TowerDefenseQuestCtrl:OnDestroy()
 end
 function TowerDefenseQuestCtrl:PlayAnim_In()
 	self._mapNode.animator:Play("t_window_04_t_in")

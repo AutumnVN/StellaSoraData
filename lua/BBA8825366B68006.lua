@@ -11,6 +11,7 @@ local mapEventConfig = {
 	SetPlayFinishState = "SetPlayFinishState"
 }
 function BreakOutLevelData:InitData(nLevelId, nCharacterNid, nActId)
+	self:UnBindEvent()
 	self.nLevelId = nLevelId
 	self.tbSkillData = {}
 	self.cacheHasDicList = {}
@@ -18,9 +19,8 @@ function BreakOutLevelData:InitData(nLevelId, nCharacterNid, nActId)
 	self.nCharacterNid = nCharacterNid
 	self.bRestart = false
 	self:BindEvent()
-	self.tbDropCollect = {}
 	self.FloorId = ConfigTable.GetData("BreakOutLevel", nLevelId).FloorId
-	self.bIsEnd = true
+	self.bShouldExit = true
 	self.bIsFinishGame = false
 	local sJson = LocalData.GetPlayerLocalData("BreakOutFloorDicId")
 	local tb = decodeJson(sJson)
@@ -35,6 +35,7 @@ function BreakOutLevelData:RefreshCharSkillCd(nCharacterId, nCD)
 	self.tbCharacterData[nCharacterId].nCD = nCD
 end
 function BreakOutLevelData:GetCurrentFloorDrops(FloorData)
+	self.tbDropCollect = {}
 	if FloorData == nil then
 		return
 	end
@@ -77,7 +78,7 @@ function BreakOutLevelData:UnBindEvent()
 	end
 end
 function BreakOutLevelData:OnEvent_UnloadComplete()
-	if not self.bIsEnd then
+	if not self.bShouldExit then
 		local tempData = {
 			curChar = self.nCharacterNid,
 			nLevelId = self.nLevelId,
@@ -86,17 +87,17 @@ function BreakOutLevelData:OnEvent_UnloadComplete()
 		}
 		EventManager.Hit("BreakOutRestart")
 		EventManager.Hit("Event_ReStartBreakOut", tempData)
-		self.bIsEnd = true
+		self.bShouldExit = true
 	else
 		NovaAPI.EnterModule("MainMenuModuleScene", true)
 		self:UnBindEvent()
 	end
 end
 function BreakOutLevelData:SetBreakOut_Complete(bIsEnd)
-	self.bIsEnd = bIsEnd
+	self.bShouldExit = bIsEnd
 end
 function BreakOutLevelData:GetIsBreakOut_Complete()
-	return self.bIsEnd
+	return self.bShouldExit
 end
 function BreakOutLevelData:SetPlayFinishState(bIsFinishGame)
 	self.bIsFinishGame = bIsFinishGame

@@ -84,8 +84,7 @@ function JointDrillLevelData_1:Init(parent, nLevelId, nBuildId, nCurLevel, nLeve
 			tostring(self.bChangeLevel),
 			tostring(self.nGameTime)
 		}
-		self.bRestart = false
-		if not self.bChangeLevel then
+		if not self.bChangeLevel and not self.bRestart then
 			AdventureModuleHelper.EnterDynamic(self.nLevelId, self.tbCharId, GameEnum.dynamicLevelType.JointDrill, mapParams)
 			NovaAPI.EnterModule("AdventureModuleScene", true, 17)
 		else
@@ -161,7 +160,6 @@ function JointDrillLevelData_1:CacheTempData(bCharacter, bBoss, bChangeTeam, bCh
 	self.mapTempData.mapCharacterTempData = {}
 	self.mapTempData.mapBossTempData = {}
 	if bCharacter then
-		local id = AdventureModuleHelper.GetCurrentActivePlayer()
 		self.mapTempData.mapCharacterTempData.hpInfo = {}
 		self.mapTempData.mapCharacterTempData.skillInfo = {}
 		self.mapTempData.mapCharacterTempData.effectInfo = {}
@@ -170,7 +168,7 @@ function JointDrillLevelData_1:CacheTempData(bCharacter, bBoss, bChangeTeam, bCh
 		self.mapTempData.mapCharacterTempData.ammoInfo = {}
 		self.mapTempData.mapCharacterTempData.sommonInfo = AdventureModuleHelper.GetSummonMonsterInfos()
 		self.mapActorInfo = self:GetActorHp()
-		self.mapTempData.mapCharacterTempData.hpInfo = self:GetActorHp()
+		self.mapTempData.mapCharacterTempData.hpInfo = self.mapActorInfo
 		local playerids = AdventureModuleHelper.GetCurrentGroupPlayers()
 		local Count = playerids.Count - 1
 		for i = 0, Count do
@@ -437,10 +435,19 @@ function JointDrillLevelData_1:CheckJointDrillGameOver()
 	local nChallengeCount = self.parent:GetJointDrillBattleCount()
 	local nAllChallengeCount = self.parent:GetMaxChallengeCount(self.nLevelId)
 	if nChallengeCount >= nAllChallengeCount then
-		local callback = function(netMsg)
-			self:JointDrillFail(AllEnum.JointDrillResultType.ChallengeEnd, netMsg)
+		local nHp, nHpMax = 0, 0
+		local data, nDataLength = self:CacheTempData(false, true, true)
+		if self.mapTempData ~= nil and self.mapTempData.mapBossTempData ~= nil then
+			nHp = self.mapTempData.mapBossTempData.nHp
+			nHpMax = self.mapTempData.mapBossTempData.nHpMax
 		end
-		self.parent:JointDrillGameOver(callback)
+		local syncCallback = function()
+			local callback = function(netMsg)
+				self:JointDrillFail(AllEnum.JointDrillResultType.ChallengeEnd, netMsg)
+			end
+			self.parent:JointDrillGameOver(callback)
+		end
+		self.parent:JointDrillSync(self.nCurLevel, self.nGameTime, self.nDamageValue, nHp, nHpMax, data, syncCallback)
 	else
 		local bBossFloor = self.mapFloor.FloorType == GameEnum.JointDrillFloorType.Boss
 		local data, nDataLength = self:CacheTempData(false, bBossFloor, true, false, true)
@@ -538,7 +545,7 @@ function JointDrillLevelData_1:OnEvent_MonsterSpawn(nBossId)
 	if self.bChangeLevel then
 		return
 	end
-	local data, nDataLength = self:CacheTempData(true, bBoss, true)
+	local data, nDataLength = self:CacheTempData(false, bBoss, true)
 	local nHp, nHpMax = 1, 1
 	if self.mapTempData ~= nil and self.mapTempData.mapBossTempData ~= nil then
 		nHp = self.mapTempData.mapBossTempData.nHp
@@ -551,6 +558,8 @@ function JointDrillLevelData_1:OnEvent_BattleLvsToggle(nBattleLv, nTotalTime, nD
 	if nBattleLv < self.nCurLevel then
 		return
 	end
+	self.bChangeLevel = true
+	self.bRestart = false
 	nTotalTime = math.min(self.mapLevel.BattleTime * 1000, self:GetSyncGameTime(nTotalTime))
 	self.nCurLevel = nBattleLv + 1
 	self.nDamageValue = self.nDamageValue + nDamageValue
@@ -563,6 +572,7 @@ function JointDrillLevelData_1:OnEvent_BattleLvsToggle(nBattleLv, nTotalTime, nD
 	local func = function()
 		local syncCallback = function()
 			PanelManager.InputEnable()
+			EventManager.Hit("CloseJointDrillPause")
 			local wait = function()
 				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 				AdventureModuleHelper.LevelStateChanged(false)
@@ -607,6 +617,7 @@ function JointDrillLevelData_1:OnEvent_GiveUpBattle()
 end
 function JointDrillLevelData_1:OnEvent_RestartJointDrill()
 	self.bRestart = true
+	self.bChangeLevel = false
 	self.parent:SetGameTime(0)
 	AdventureModuleHelper.ClearCharacterDamageRecord(true)
 	local sRecord = self.parent:EncodeTempDataJson(self.mapInitTempData)
@@ -614,6 +625,7 @@ function JointDrillLevelData_1:OnEvent_RestartJointDrill()
 	self.parent:SetRecorderExcludeIds(true)
 	AdventureModuleHelper.LevelStateChanged(false)
 	EventManager.Hit("ResetBossHUD")
+	EventManager.Hit("JointDrillReset")
 end
 function JointDrillLevelData_1:OnEvent_RetreatJointDrill()
 	local callback = function()
@@ -650,11 +662,20 @@ function JointDrillLevelData_1:JointDrillTimeOut()
 	end
 	self.bInResult = true
 	NovaAPI.DispatchEventWithData("JointDrill_Level_TimeOut")
-	local callback = function(netMsg)
-		self:JointDrillFail(AllEnum.JointDrillResultType.ChallengeEnd, netMsg)
+	local nHp, nHpMax = 0, 0
+	local data, nDataLength = self:CacheTempData(false, true, true)
+	if self.mapTempData ~= nil and self.mapTempData.mapBossTempData ~= nil then
+		nHp = self.mapTempData.mapBossTempData.nHp
+		nHpMax = self.mapTempData.mapBossTempData.nHpMax
 	end
-	self.parent:AddJointDrillTeam(self.mapBuildData, self.nGameTime, self.nDamageValue)
-	self.parent:JointDrillGameOver(callback)
+	local syncCallback = function()
+		local callback = function(netMsg)
+			self:JointDrillFail(AllEnum.JointDrillResultType.ChallengeEnd, netMsg)
+		end
+		self.parent:AddJointDrillTeam(self.mapBuildData, self.nGameTime, self.nDamageValue)
+		self.parent:JointDrillGameOver(callback)
+	end
+	self.parent:JointDrillSync(self.nCurLevel, self.nGameTime, self.nDamageValue, nHp, nHpMax, data, syncCallback)
 end
 function JointDrillLevelData_1:OnEvent_CharDamageValue(charDamageValue)
 	for nCharId, nValue in pairs(charDamageValue) do

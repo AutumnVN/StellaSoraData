@@ -37,11 +37,11 @@ end
 function TutorialLevelCtrl:OnDisable()
 	self:UnBind()
 end
-function TutorialLevelCtrl:OnDestory()
+function TutorialLevelCtrl:OnDestroy()
 	self:UnBind()
 end
 function TutorialLevelCtrl:UnBind()
-	if self.itemCtrl ~= nil and self.itemCtrl ~= {} then
+	if self.itemCtrl ~= nil then
 		for _, ctrl in pairs(self.itemCtrl) do
 			self:UnbindCtrlByNode(ctrl)
 		end

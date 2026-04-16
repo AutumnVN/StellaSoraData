@@ -167,9 +167,6 @@ function BreakOutLevelDetailCtr:OnEnable()
 	self.bOpenTransition = false
 end
 function BreakOutLevelDetailCtr:OnDisable()
-	if self._panel.bList then
-		self._mapNode.CharList:SyncFormation()
-	end
 	local sSceneName = ConfigTable.GetData("BreakOutControl", self.nActId).SceneName
 	local callback1 = function()
 		EventManager.Hit(EventId.SetTransition)
@@ -310,7 +307,7 @@ function BreakOutLevelDetailCtr:LoadCharacter(nCharId, nCharNid, bOpen)
 		return
 	end
 	local CharacterSkinOverlapData = ConfigTable.GetData("CharacterSkinOverlap", mapSkin.CharId)
-	if not mapSkin then
+	if not CharacterSkinOverlapData then
 		printLog("CharacterSkinOverlap" .. nCharId)
 		return
 	end

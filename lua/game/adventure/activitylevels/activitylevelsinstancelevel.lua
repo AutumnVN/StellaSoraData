@@ -3,18 +3,23 @@ local Actor2DManager = require("Game.Actor2D.Actor2DManager")
 local AdventureModuleHelper = CS.AdventureModuleHelper
 local TimerManager = require("GameCore.Timer.TimerManager")
 local mapEventConfig = {
+	LevelStateChanged = "OnEvent_SendMsgFinishBattle",
 	LoadLevelRefresh = "OnEvent_LoadLevelRefresh",
 	[EventId.AbandonBattle] = "OnEvent_AbandonBattle",
 	AdventureModuleEnter = "OnEvent_AdventureModuleEnter",
 	BattlePause = "OnEvent_Pause",
 	ActivityInstance_Result = "LevelResultChange",
-	ActivityLevelSettle_Failed = "OnEvent_ActivityLevelSettleFailed"
+	ActivityLevelSettle_Failed = "OnEvent_ActivityLevelSettleFailed",
+	ActivityLevels_Instance_Gameplay_Time = "OnEvent_ActivityLevels_Time"
 }
 function ActivityLevelsInstanceLevel:Init(parent, nActivityId, nLevelId, nBuildId)
 	self.parent = parent
 	self.nLevelId = nLevelId
 	self.nActivityId = nActivityId
 	self.isSettlement = false
+	self.nBuildId = nBuildId
+	self.curFloorIdx = 1
+	self.levelTotalTime = 0
 	local GetBuildCallback = function(mapBuildData)
 		self.mapBuildData = mapBuildData
 		self.tbCharId = {}
@@ -32,8 +37,12 @@ function ActivityLevelsInstanceLevel:Init(parent, nActivityId, nLevelId, nBuildI
 			local stActorInfo = self:CalCharFixedEffect(nTid, idx == 1, self.tbDiscId)
 			self.mapActorInfo[nTid] = stActorInfo
 		end
-		PlayerData.nCurGameType = AllEnum.WorldMapNodeType.EquipmentInstance
-		CS.AdventureModuleHelper.EnterActivityLevelsInstance(nLevelId, self.tbCharId)
+		PlayerData.nCurGameType = AllEnum.WorldMapNodeType.ActivityLevels
+		local mapParams = {
+			tostring(self.curFloorIdx),
+			tostring(self.levelTotalTime)
+		}
+		CS.AdventureModuleHelper.EnterActivityLevelsInstance(nLevelId, self.tbCharId, mapParams)
 		NovaAPI.EnterModule("AdventureModuleScene", true, 17)
 	end
 	PlayerData.Build:GetBuildDetailData(GetBuildCallback, nBuildId)
@@ -42,7 +51,7 @@ function ActivityLevelsInstanceLevel:OnEvent_LoadLevelRefresh()
 	local mapAllEft, mapDiscEft, mapNoteEffect, tbNoteInfo = PlayerData.Build:GetBuildAllEft(self.mapBuildData.nBuildId)
 	safe_call_cs_func(CS.AdventureModuleHelper.SetNoteInfo, tbNoteInfo)
 	self.mapEftData = UTILS.AddBuildEffect(mapAllEft, mapDiscEft, mapNoteEffect)
-	EventManager.Hit("OpenActivityLevelsInstanceRoomInfo", self.nLevelId)
+	EventManager.Hit("OpenActivityLevelsInstanceRoomInfo", self.nLevelId, self.levelTotalTime)
 end
 function ActivityLevelsInstanceLevel:OnEvent_LevelResult(tbStar, bAbandon)
 end
@@ -57,6 +66,40 @@ function ActivityLevelsInstanceLevel:OnEvent_AdventureModuleEnter()
 	for idx, nCharId in ipairs(self.tbCharId) do
 		local stActorInfo = self:CalCharFixedEffect(nCharId, idx == 1, self.tbDiscId)
 		safe_call_cs_func(CS.AdventureModuleHelper.SetActorAttribute, nCharId, stActorInfo)
+	end
+end
+function ActivityLevelsInstanceLevel:OnEvent_SendMsgFinishBattle()
+	local mapCfg = ConfigTable.GetData("ActivityLevelsLevel", self.nLevelId)
+	if self.curFloorIdx < #mapCfg.FloorId then
+		local GetBuildCallback = function(mapBuildData)
+			self.curFloorIdx = self.curFloorIdx + 1
+			self.mapBuildData = mapBuildData
+			self.tbCharId = {}
+			for _, mapChar in ipairs(self.mapBuildData.tbChar) do
+				table.insert(self.tbCharId, mapChar.nTid)
+			end
+			self.tbDiscId = {}
+			for _, nDiscId in ipairs(self.mapBuildData.tbDisc) do
+				if 0 < nDiscId then
+					table.insert(self.tbDiscId, nDiscId)
+				end
+			end
+			self.mapActorInfo = {}
+			for idx, nTid in ipairs(self.tbCharId) do
+				local stActorInfo = self:CalCharFixedEffect(nTid, idx == 1, self.tbDiscId)
+				self.mapActorInfo[nTid] = stActorInfo
+			end
+			PlayerData.nCurGameType = AllEnum.WorldMapNodeType.ActivityLevels
+			local mapParams = {
+				tostring(self.curFloorIdx),
+				tostring(self.levelTotalTime)
+			}
+			CS.AdventureModuleHelper.EnterActivityLevelsInstance(self.nLevelId, self.tbCharId, mapParams)
+			CS.AdventureModuleHelper.LevelStateChanged(false)
+			self:OnEvent_AdventureModuleEnter()
+		end
+		PlayerData.Build:GetBuildDetailData(GetBuildCallback, self.nBuildId)
+		return
 	end
 end
 function ActivityLevelsInstanceLevel:LevelResultChange(isWin, totalTime)
@@ -121,7 +164,9 @@ function ActivityLevelsInstanceLevel:PlaySuccessPerform(FixedRewardItems, FirstR
 	local tbChar = self.tbCharId
 	local function levelEndCallback()
 		EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
-		local nType = ConfigTable.GetData("ActivityLevelsFloor", ConfigTable.GetData("ActivityLevelsLevel", self.nLevelId).FloorId).Theme
+		local tabFloor = ConfigTable.GetData("ActivityLevelsLevel", self.nLevelId).FloorId
+		local tabFloorCount = #tabFloor
+		local nType = ConfigTable.GetData("ActivityLevelsFloor", tabFloor[tabFloorCount]).Theme
 		local sName = ConfigTable.GetData("EndSceneType", nType).EndSceneName
 		local tbSkin = {}
 		for _, nCharId in ipairs(tbChar) do
@@ -203,5 +248,8 @@ function ActivityLevelsInstanceLevel:SetDiscInfo()
 end
 function ActivityLevelsInstanceLevel:OnEvent_Pause()
 	EventManager.Hit("OpenActivityLevelsInstancePause", self.nActivityId, self.nLevelId, self.tbCharId)
+end
+function ActivityLevelsInstanceLevel:OnEvent_ActivityLevels_Time(nTime)
+	self.levelTotalTime = nTime
 end
 return ActivityLevelsInstanceLevel

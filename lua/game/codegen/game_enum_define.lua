@@ -70,6 +70,9 @@ GameEnum.roguelikeLevelStyle = {
 	Forest_Main_2_5 = 17,
 	Main_5_1 = 18,
 	Main_6_2 = 19,
+	Main_7_1 = 20,
+	Main_7_2 = 21,
+	Main_8_1 = 22,
 	Roguelike_non = 101,
 	Roguelike_miniboss = 102,
 	Roguelike_shilaimu = 103,
@@ -88,6 +91,7 @@ GameEnum.roguelikeLevelStyle = {
 	DailyInstance_02 = 116,
 	DailyInstance_03 = 117,
 	Boss_TuRen = 118,
+	Boss_PX = 119,
 	TravelBoss_Maoyan = 201,
 	TravelBoss_Huayuan = 202,
 	TravelBoss_Huochui = 203,
@@ -114,6 +118,11 @@ GameEnum.roguelikeLevelStyle = {
 	StoryActivity_7_Tow = 432,
 	StoryActivity_8 = 436,
 	StoryActivity_9 = 441,
+	StoryActivity_10 = 446,
+	StoryActivity_11 = 451,
+	StoryActivity_12 = 456,
+	StoryActivity_13 = 461,
+	StoryActivity_14 = 466,
 	Training = 901
 }
 GameEnum.roguelikeFloorFunction = {
@@ -132,7 +141,14 @@ GameEnum.effectiveGoals = {
 	ASSISTANT_PLAYER = 7,
 	TEAM_SUMMONED = 8,
 	FULL_TEAM_AND_SUMMONED = 9,
-	ONESELF_AND_SUMMONED = 10
+	ONESELF_AND_SUMMONED = 10,
+	FRIEND_FACTION = 11,
+	FRIEND_AND_ENEMY_FACTION = 12,
+	FROM_ACTOR_SUMMONED = 13,
+	TEAMMATE_SUMMONED = 14,
+	ENEMY_SUMMONED = 15,
+	FRIEND_AND_ENEMY_SUMMONED = 16,
+	TEAMMATE_AND_SUMMONED = 17
 }
 GameEnum.screen = {
 	NONE = 0,
@@ -233,7 +249,8 @@ GameEnum.worldLevelType = {
 	ActivityLevels = 20,
 	BrickBreaker = 21,
 	TowerDefense = 22,
-	Tutorial = 23
+	Tutorial = 23,
+	ActivityStory = 24
 }
 GameEnum.dynamicLevelType = {
 	JointDrill = 1,
@@ -501,7 +518,8 @@ GameEnum.itemType = {
 	MonthlyCard = 11,
 	Title = 12,
 	Honor = 13,
-	HeadItem = 14
+	HeadItem = 14,
+	LevelHonor = 15
 }
 GameEnum.expireType = {
 	ExpireMin = 1,
@@ -591,9 +609,6 @@ GameEnum.achievementCond = {
 	SkinAcquire = 61,
 	StageClearSpecificStars = 62,
 	StoryClear = 63,
-	TravelerDuelChallengeSpecificBoosLevelWithDifficultyAndTotal = 64,
-	TravelerDuelChallengeClearSpecificBossLevelAndAffix = 67,
-	TravelerDuelClearSpecificBossTotal = 69,
 	WorldClassSpecific = 71,
 	RegionBossClearSpecificTypeWithTotal = 72,
 	CharactersWithSpecificDatingCount = 73,
@@ -704,7 +719,16 @@ GameEnum.activityQuestCompleteCond = {
 	ActivityThrowGiftAccUseItem = 138,
 	ActivityThrowGiftLevelHitGift = 139,
 	ActivityThrowGiftLevelScore = 140,
-	ActivityThrowGiftLevelThrowGift = 141
+	ActivityThrowGiftLevelThrowGift = 141,
+	ActivityGoldenSpyAccPickItem = 142,
+	ActivityGoldenSpyAccMaxScore = 143,
+	ActivityGoldenSpyPassFloorInSpecifiedLevel = 144,
+	ActivityGoldenSpyAccGroupMaxScore = 145,
+	ActivityGoldenSpyGetScoreInSpecifiedLevel = 146,
+	ActivityGoldenSpyAccCompleteTask = 147,
+	ActivityGoldenSpyAccUseSkill = 148,
+	ActivityPenguinCardClearScore = 149,
+	ActivityPenguinCardClearStar = 150
 }
 GameEnum.chatCond = {
 	CharacterAcquire = 5,
@@ -809,9 +833,10 @@ GameEnum.questCompleteCond = {
 	SkillsWithSpecificQuantityAndLevel = 60,
 	StageClearSpecificStars = 62,
 	StoryClear = 63,
-	TravelerDuelChallengeSpecificBoosLevelWithDifficultyAndTotal = 64,
-	TravelerDuelChallengeClearSpecificBossLevelAndAffix = 67,
-	TravelerDuelClearSpecificBossTotal = 69,
+	TrekkerVersusClearCount = 64,
+	TrekkerVersusClearWithSpecificAffix = 65,
+	TrekkerVersusClearWithSpecificDifficultyAndTotal = 66,
+	TrekkerVersusFansWithSpecificLevel = 67,
 	WorldClassSpecific = 71,
 	RegionBossClearSpecificTypeWithTotal = 72,
 	CharactersWithSpecificDatingCount = 73,
@@ -956,7 +981,8 @@ GameEnum.vampireSurvivorCond = {
 GameEnum.honorType = {
 	Normal = 1,
 	Character = 2,
-	Group = 3
+	Group = 3,
+	Levels = 4
 }
 GameEnum.headType = {
 	HeroineAvatar = 1,
@@ -1190,7 +1216,8 @@ GameEnum.effectAttributeType = {
 	SUMMON_SUPPRESS = 93,
 	PROJECTILE_SUPPRESS = 94,
 	OTHER_SUPPRESS = 95,
-	MAX = 96
+	ENV_AMEND = 96,
+	MAX = 97
 }
 GameEnum.attributeFinialLimitType = {
 	FINAL_ELEMENTTYPE_DAMAGETYPE_DMG = 1,
@@ -1295,7 +1322,8 @@ GameEnum.takeEffect = {
 	WEAKELEMENTTYPE = 50,
 	CERTAIN_MARK_TYPE = 51,
 	BE_MIANCONTROL = 52,
-	BE_ASSISTANT = 53
+	BE_ASSISTANT = 53,
+	CERTAIN_DAMAGETYPE = 54
 }
 GameEnum.effectType = {
 	STATE_CAHNGE = 1,
@@ -1343,7 +1371,17 @@ GameEnum.effectType = {
 	STATE_AMOUNT = 50,
 	DROP_ITEM_PICKUP_RANGE_FIX = 51,
 	ELEMENTTYPE_ATTR_FIX = 52,
-	DAMAGETYPE_ATTR_FIX = 53
+	DAMAGETYPE_ATTR_FIX = 53,
+	HITTED_ADDITIONAL_ELEMENTTYPE_ATTR_FIX = 54,
+	HITTED_ADDITIONAL_DAMAGETYPE_ATTR_FIX = 55,
+	ELEMENTTYPE_ATTR_PERCENT_FIX = 56,
+	DAMAGETYPE_ATTR_PERCENT_FIX = 57,
+	HITTED_ADDITIONAL_ELEMENTTYPE_ATTR_PERCENT_FIX = 58,
+	HITTED_ADDITIONAL_DAMAGETYPE_ATTR_PERCENT_FIX = 59,
+	ELEMENTTYPE_ATTR_ASSIGNMENT = 60,
+	DAMAGETYPE_ATTR_ASSIGNMENT = 61,
+	ELEMENTTYPE_ATTR_PERCENT_ASSIGNMENT = 62,
+	DAMAGETYPE_ATTR_PERCENT_ASSIGNMENT = 63
 }
 GameEnum.stateAttributeType = {
 	NONE = 0,
@@ -1421,6 +1459,7 @@ GameEnum.itemStype = {
 	TalentStrengthen = 9,
 	DiscStrengthen = 12,
 	DiscPromote = 13,
+	LevelHonor = 15,
 	TreasureBox = 17,
 	GearTreasureBox = 18,
 	SubNoteSkill = 19,
@@ -1787,7 +1826,8 @@ GameEnum.activityType = {
 	TrekkerVersus = 16,
 	Story = 17,
 	PenguinCard = 18,
-	ThrowGift = 19
+	ThrowGift = 19,
+	GoldenSpy = 20
 }
 GameEnum.activityOpenType = {
 	None = 0,
@@ -1931,7 +1971,10 @@ GameEnum.BrickDropType = {
 	BrickExpCoin = 3,
 	BrickHp = 4,
 	BrickPaddle = 5,
-	BrickBoom = 6
+	BrickBoom = 6,
+	BrickBoomBall = 7,
+	BrickInv = 8,
+	BrickSplit = 9
 }
 GameEnum.starTowerRoomType = {
 	BattleRoom = 0,
@@ -2300,7 +2343,11 @@ GameEnum.scoreBossBehavior = {
 	TriggerFengNiaoBeatFlowerWhenUltraSkill = 21,
 	TriggerFengNiaoFlowerMissPlayer = 22,
 	TriggerTaiDengMissPlayer = 23,
-	TriggerTaiDengKill = 24
+	TriggerTaiDengKill = 24,
+	TriggerCommon1 = 25,
+	TriggerCommon2 = 26,
+	TriggerCommon3 = 27,
+	TriggerCommon4 = 28
 }
 GameEnum.scoreBossType = {WildCard = 1}
 GameEnum.JointDrillBattleLvsToggle = {HpLessThan = 1}
@@ -2322,7 +2369,8 @@ GameEnum.bannerType = {
 	MallSkin = 6,
 	Payment = 7,
 	TimeLimit_Func = 8,
-	JumpToUrl = 9
+	JumpToUrl = 9,
+	SeaPayment = 10
 }
 GameEnum.FrozenTimeHighlightUnit = {Self = 1, SelfAndTarget = 2}
 GameEnum.TowerDefGuideType = {Character = 1, Item = 2}
@@ -2452,7 +2500,8 @@ GameEnum.activityThemeType = {
 	Miracle_10103 = 6,
 	Spring_10104 = 7,
 	WinterNight_10105 = 8,
-	Postal_10106 = 9
+	Postal_10106 = 9,
+	SoloDance_20102 = 10
 }
 GameEnum.ActivityLevelType = {
 	Explore = 1,
@@ -2602,14 +2651,28 @@ GameEnum.PenguinBaseCardSuit = {
 GameEnum.PenguinCardTriggerPhase = {
 	Dealing = 1,
 	Flip = 2,
-	Settlement = 3
+	Settlement = 3,
+	Prepare = 4,
+	BeforeUpgrade = 5,
+	AfterUpgrade = 6,
+	FatalDamage = 7,
+	PenguinCardChange = 8,
+	FlipEnd = 9
 }
 GameEnum.PenguinCardTriggerType = {
 	None = 1,
 	SuitCards = 2,
 	SuitCount = 3,
 	HandRankSuitCount = 4,
-	BaseCardId = 5
+	BaseCardId = 5,
+	RepeatHandRank = 6,
+	HandRank = 7
+}
+GameEnum.PenguinCardGrowthTriggerType = {
+	None = 1,
+	SuitCountInCard = 2,
+	LevelCount = 3,
+	HandRank = 4
 }
 GameEnum.PenguinCardTriggerLimit = {
 	None = 1,
@@ -2617,12 +2680,31 @@ GameEnum.PenguinCardTriggerLimit = {
 	Turn = 3,
 	Game = 4
 }
+GameEnum.PenguinCardGrowthType = {
+	None = 1,
+	FullGame = 2,
+	CurTurn = 3
+}
 GameEnum.PenguinCardEffectType = {
 	ReplaceBaseCard = 1,
 	AddBaseCardWeight = 2,
 	IncreaseBasicChips = 3,
 	IncreaseMultiplier = 4,
-	MultiMultiplier = 5
+	MultiMultiplier = 5,
+	UpgradeDiscount = 6,
+	AddRound = 7,
+	BlockFatalDamage = 8,
+	UpgradeRebate = 9
+}
+GameEnum.PenguinCardQuestType = {
+	Score = 1,
+	SuitCount = 2,
+	HandRank = 3
+}
+GameEnum.PenguinCardBuffDuration = {
+	FullGame = 1,
+	Count = 2,
+	Turn = 3
 }
 GameEnum.ThrowGiftSpawnPointType = {
 	None = 0,
@@ -2634,7 +2716,13 @@ GameEnum.ThrowGiftSpawnCond = {
 	All = 2,
 	Random = 3
 }
-GameEnum.SpecialObstacleType = {Score = 1, Obstacle = 2}
+GameEnum.SpecialObstacleType = {
+	Score = 1,
+	Obstacle = 2,
+	WindForce = 3,
+	Portal = 4,
+	PortalExit = 5
+}
 GameEnum.MallPackageRarity = {
 	White = 1,
 	Green = 2,
@@ -2679,4 +2767,53 @@ GameEnum.TravelerDuelHotValueItemType = {
 	TypeC = 3
 }
 GameEnum.CharPlotType = {CharPlot = 1, SkinPlot = 2}
+GameEnum.GoldenSpyLevelType = {
+	Normal = 1,
+	Quest = 2,
+	Random = 3
+}
+GameEnum.GoldenSpyBuffEffect = {
+	AddScore = 1,
+	AddTaskWeight = 2,
+	AddExScoreFactor = 3,
+	ReduceItemWeight = 4,
+	AddSkillUseCount = 5,
+	SpeedUpHook = 6,
+	AddHookRadius = 7,
+	AddHookK = 8,
+	AddTimeInFloor = 9,
+	LabelAddPercentage = 10
+}
+GameEnum.GoldenSpyBuffQty = {}
+GameEnum.GoldenSpyBuffType = {
+	TemporaryBuff = 1,
+	DelayBuff = 2,
+	PermanentBuff = 3,
+	SkillCountBuff = 4
+}
+GameEnum.GoldenSpyItem = {
+	FileBag = 1,
+	Furniture = 2,
+	Gem = 3,
+	IntelligenceScroll = 4,
+	ChipDevice = 5,
+	SafeBox = 6,
+	Patrol = 7,
+	Companion = 8,
+	Boom = 9,
+	BuffItem = 10
+}
+GameEnum.GoldenSpyObstacle = {Laser = 1}
+GameEnum.CharRechargeSpeed = {
+	SupHigh = 1,
+	High = 2,
+	Mid = 3,
+	Low = 4
+}
+GameEnum.CharEnergyCostSpeed = {
+	SupHigh = 1,
+	High = 2,
+	Mid = 3,
+	Low = 4
+}
 return GameEnum

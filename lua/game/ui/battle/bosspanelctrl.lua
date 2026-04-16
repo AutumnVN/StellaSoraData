@@ -63,12 +63,12 @@ function BossPanelCtrl:RefreshBossPanel(bRefresh)
 	if self.bInit then
 		self.bInit = false
 		NovaAPI.SetComponentEnable(self._mapNode.BossCanvas, true)
-		self.bossHUDAnimTweener = Sequence()
-		self.bossHUDAnimTweener:Append(self._mapNode.BossCanvasGroup:DOFade(1, 0.5))
-		self.bossHUDAnimTweener:SetUpdate(true)
-		self.bossHUDAnimTweener:OnComplete(function()
-			self.bossHUDAnimTweener:Kill()
-			self.bossHUDAnimTweener = nil
+		self.bossHUDOpenAnimTweener = Sequence()
+		self.bossHUDOpenAnimTweener:Append(self._mapNode.BossCanvasGroup:DOFade(1, 0.5))
+		self.bossHUDOpenAnimTweener:SetUpdate(true)
+		self.bossHUDOpenAnimTweener:OnComplete(function()
+			self.bossHUDOpenAnimTweener:Kill()
+			self.bossHUDOpenAnimTweener = nil
 		end)
 	end
 	self.nBloodType = 0
@@ -154,14 +154,14 @@ function BossPanelCtrl:RefreshBossPanel(bRefresh)
 end
 function BossPanelCtrl:CloseUI()
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.BossCanvasGroup, 1)
-	self.bossHUDAnimTweener = Sequence()
-	self.bossHUDAnimTweener:Append(self._mapNode.BossCanvasGroup.DOFade(0, 0.5))
-	self.bossHUDAnimTweener:OnComplete(function()
+	self.bossHUDCloseAnimTweener = Sequence()
+	self.bossHUDCloseAnimTweener:Append(self._mapNode.BossCanvasGroup:DOFade(0, 0.5))
+	self.bossHUDCloseAnimTweener:OnComplete(function()
 		self._mapNode.BossCanvas.enabled = false
-		self.bossHUDAnimTweener:Kill()
-		self.bossHUDAnimTweener = nil
+		self.bossHUDCloseAnimTweener:Kill()
+		self.bossHUDCloseAnimTweener = nil
 	end)
-	self.bossHUDAnimTweener:SetUpdate(true)
+	self.bossHUDCloseAnimTweener:SetUpdate(true)
 	self.tbBoss = {}
 	self.tbBossCtrl = {}
 end
@@ -256,11 +256,19 @@ function BossPanelCtrl:OnEvent_MonsterBossDead(nBossId)
 end
 function BossPanelCtrl:OnEvent_InputEnable(bEnable)
 	self.bInputEnable = bEnable
-	if self.bossHUDAnimTweener ~= nil then
-		if not bEnable then
-			self.bossHUDAnimTweener:Pause()
-		else
-			self.bossHUDAnimTweener:Play()
+	if bEnable then
+		if self.bossHUDCloseAnimTweener ~= nil then
+			self.bossHUDCloseAnimTweener:Pause()
+		end
+		if self.bossHUDOpenAnimTweener ~= nil then
+			self.bossHUDOpenAnimTweener:Play()
+		end
+	else
+		if self.bossHUDOpenAnimTweener ~= nil then
+			self.bossHUDOpenAnimTweener:Pause()
+		end
+		if self.bossHUDCloseAnimTweener ~= nil then
+			self.bossHUDCloseAnimTweener:Play()
 		end
 	end
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.BossCanvasGroup, bEnable == true and 1 or 0)

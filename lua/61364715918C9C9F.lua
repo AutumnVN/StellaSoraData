@@ -48,6 +48,7 @@ function LoginSpRewardItemCtrl:SetRewardItem(nDay, mapReward, bEnableSelect, bNe
 	self._mapNode.goReceived.gameObject:SetActive(mapReward.Status == 2)
 	self._mapNode.imgNextReceive.gameObject:SetActive(bNextDay)
 	self._mapNode.goParticle.gameObject:SetActive(mapReward.DisRare and mapReward.Status ~= 2)
+	self:SetItemFxSate(mapReward.DisRare and mapReward.Status ~= 2)
 	self._mapNode.imgPlay.gameObject:SetActive(mapReward.Status == 2 and bEnableSelect)
 	self:SetSelect(false)
 	self.tbRewardList = {}
@@ -88,5 +89,13 @@ function LoginSpRewardItemCtrl:OnBtnClick_Item(btn, index)
 		UTILS.ClickItemGridWithTips(self.tbRewardList[index].nTid, btn.transform, true, true, false)
 	end
 	EventManager.Hit("ClickLoginRewardTips", callback, self.nDay)
+end
+function LoginSpRewardItemCtrl:SetItemFxSate(bShowFx)
+	local FX = self.gameObject.transform:Find("FX")
+	if FX then
+		FX.gameObject:SetActive(bShowFx)
+	else
+		return
+	end
 end
 return LoginSpRewardItemCtrl

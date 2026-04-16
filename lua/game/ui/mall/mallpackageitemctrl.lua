@@ -24,8 +24,10 @@ MallPackageItemCtrl._mapNodeConfig = {
 	goSaleRate = {
 		sComponentName = "RectTransform"
 	},
+	fxSaleRate = {sNodeName = "goSaleRate", sComponentName = "UIShiny"},
 	txtSaleRate = {sComponentName = "TMP_Text"},
 	imgMask = {},
+	imgSaleMask = {},
 	reddotPkg = {},
 	reddotNew = {}
 }
@@ -100,7 +102,10 @@ end
 function MallPackageItemCtrl:RefreshCond(mapCfg, mapData)
 	local tbCond = decodeJson(mapCfg.OrderCondParams)
 	local bPurchaseAble = PlayerData.Shop:CheckShopCond(mapCfg.OrderCondType, tbCond)
-	self._mapNode.imgMask:SetActive(mapData.nCurStock == 0 or not bPurchaseAble)
+	local bShowMask = mapData.nCurStock == 0 or not bPurchaseAble
+	self._mapNode.imgMask:SetActive(bShowMask)
+	self._mapNode.imgSaleMask:SetActive(bShowMask)
+	NovaAPI.SetComponentEnable(self._mapNode.fxSaleRate, not bShowMask)
 	self._mapNode.goCondition:SetActive(not bPurchaseAble)
 	self._mapNode.goSoldOut:SetActive(mapData.nCurStock == 0)
 	if not bPurchaseAble then

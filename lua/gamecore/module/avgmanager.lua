@@ -95,11 +95,6 @@ local OnEvent_AvgSTEnd = function(_)
 			objAvgPanel = nil
 			NovaAPI.SetScreenSleepTimeout(false)
 		end
-		if AVG_EDITOR ~= true then
-			GameResourceLoader.Unload("UI", "ui_avg")
-		end
-		GameResourceLoader.Unload("ImageAvg")
-		GameResourceLoader.Unload("Actor2DAvg")
 		bInAvg = false
 	end
 	local func_OnEvent_TransAnimInClear = function()

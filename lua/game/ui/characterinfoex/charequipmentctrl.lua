@@ -100,6 +100,9 @@ function CharEquipmentCtrl:RefreshPresetSlot()
 	for k, v in ipairs(self._mapNode.goEquipmentSlotItem) do
 		v:Init(self.tbSlot[k], self.nCharId)
 	end
+	if self._mapNode.goEquipmentSlotItem[self.nLastIndex] then
+		self._mapNode.goEquipmentSlotItem[self.nLastIndex]:SetChooseState(true)
+	end
 end
 function CharEquipmentCtrl:PlaySwitchAnim(nClosePanelId, nOpenPanelId)
 	if nClosePanelId == PanelId.CharEquipment then
@@ -121,22 +124,51 @@ function CharEquipmentCtrl:OnEnable()
 		self:OnRefreshPanel()
 		if self.nLastIndex and self.tbSlot and self.nLastIndex > 0 and self.tbSlot[self.nLastIndex].bUnlock and not PlayerData.Guide:CheckInGuideGroup(50) then
 			local mapSelect = PlayerData.Equipment:GetEquipmentSelect()
+			local mapUpgrade = PlayerData.Equipment:GetEquipmentUpgrade()
 			if mapSelect and mapSelect.nCharId == self.nCharId then
+				if self._mapNode.goEquipmentSlotItem[self.nLastIndex] then
+					self._mapNode.goEquipmentSlotItem[self.nLastIndex]:SetChooseState(false)
+				end
 				bHasLastIndex = true
+				local nEquipIndex = 0
+				for k, v in ipairs(self.tbSlot) do
+					if v.nSlotId == mapSelect.nSlotId then
+						nEquipIndex = v.nGemIndex
+						self.nLastIndex = k
+						break
+					end
+				end
+				if self._mapNode.goEquipmentSlotItem[self.nLastIndex] then
+					self._mapNode.goEquipmentSlotItem[self.nLastIndex]:SetChooseState(true)
+				end
+				local nAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.animRoot, {
+					"CharEquipmentPanel_in"
+				})
+				local ani = function()
+					EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentInfo, self.nCharId, mapSelect.nSlotId, nEquipIndex, mapSelect.nGemIndex)
+				end
+				self:AddTimer(1, nAnimTime, ani, true, true, true)
+				EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
+			elseif mapUpgrade and mapUpgrade.nCharId == self.nCharId then
+				if self._mapNode.goEquipmentSlotItem[self.nLastIndex] then
+					self._mapNode.goEquipmentSlotItem[self.nLastIndex]:SetChooseState(false)
+				end
+				bHasLastIndex = true
+				for k, v in ipairs(self.tbSlot) do
+					if v.nSlotId == mapUpgrade.nSlotId then
+						self.nLastIndex = k
+						break
+					end
+				end
+				if self._mapNode.goEquipmentSlotItem[self.nLastIndex] then
+					self._mapNode.goEquipmentSlotItem[self.nLastIndex]:SetChooseState(true)
+				end
 				do
 					local nAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.animRoot, {
 						"CharEquipmentPanel_in"
 					})
 					local ani = function()
-						local nEquipIndex = 0
-						for k, v in ipairs(self.tbSlot) do
-							if v.nSlotId == mapSelect.nSlotId then
-								nEquipIndex = v.nGemIndex
-								self.nLastIndex = k
-								break
-							end
-						end
-						EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentInfo, self.nCharId, mapSelect.nSlotId, nEquipIndex, mapSelect.nGemIndex)
+						EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentUpgrade, self.nCharId, mapUpgrade.nSlotId, mapUpgrade.nGemIndex, mapUpgrade.nSelectUpgradeIndex)
 					end
 					self:AddTimer(1, nAnimTime, ani, true, true, true)
 					EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
@@ -150,6 +182,7 @@ function CharEquipmentCtrl:OnEnable()
 end
 function CharEquipmentCtrl:OnDestroy()
 	PlayerData.Equipment:GetEquipmentSelect()
+	PlayerData.Equipment:GetEquipmentUpgrade()
 	self.nLastIndex = 0
 end
 function CharEquipmentCtrl:OnBtnClick_EquipmentSlot(_, nIndex)
@@ -216,6 +249,7 @@ function CharEquipmentCtrl:OnEvent_RefreshPanel()
 	if self._panel.nPanelId ~= PanelId.CharEquipment then
 		return
 	end
+	self.nLastIndex = 0
 	self:OnRefreshPanel()
 end
 return CharEquipmentCtrl

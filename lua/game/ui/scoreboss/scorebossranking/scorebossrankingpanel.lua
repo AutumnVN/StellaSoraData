@@ -6,6 +6,8 @@ ScoreBossRankingPanel._tbDefine = {
 	}
 }
 function ScoreBossRankingPanel:Awake()
+	self.mapRankDetail = nil
+	self.nGridPos = 0
 end
 function ScoreBossRankingPanel:OnEnable()
 end

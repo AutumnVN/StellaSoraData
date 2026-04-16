@@ -365,7 +365,7 @@ function DiscMusicCtrl:OnBtnClick_ResetMusic()
 		EventManager.Hit(EventId.OpenMessageBox, {
 			nType = AllEnum.MessageBox.Tips,
 			bPositive = true,
-			sContent = EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Disc_ResetMusicSuc"))
+			sContent = ConfigTable.GetUIText("Disc_ResetMusicSuc")
 		})
 		self._mapNode.btnSetMusic.gameObject:SetActive(true)
 		self._mapNode.goSetMusic.gameObject:SetActive(false)
@@ -379,7 +379,7 @@ function DiscMusicCtrl:OnBtnClick_SetMusic()
 		EventManager.Hit(EventId.OpenMessageBox, {
 			nType = AllEnum.MessageBox.Tips,
 			bPositive = true,
-			sContent = EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Disc_SetMusicSuc"))
+			sContent = ConfigTable.GetUIText("Disc_SetMusicSuc")
 		})
 	end
 	PlayerData.Disc:SendPlayerMusicSetReq(self._panel.nId, callback)

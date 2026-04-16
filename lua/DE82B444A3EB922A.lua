@@ -1,16 +1,11 @@
 local PenguinLevel = class("PenguinLevel")
 local PenguinCard = require("Game.UI.Play_PenguinCard.PenguinCard")
+local PenguinCardBuff = require("Game.UI.Play_PenguinCard.PenguinCardBuff")
+local PenguinCardQuest = require("Game.UI.Play_PenguinCard.PenguinCardQuest")
 local TimerManager = require("GameCore.Timer.TimerManager")
 local LocalData = require("GameCore.Data.LocalData")
 local ConfigData = require("GameCore.Data.ConfigData")
-local GameState = {
-	Start = 0,
-	Prepare = 1,
-	Dealing = 2,
-	Flip = 3,
-	Settlement = 4,
-	Complete = 5
-}
+local PenguinCardUtils = require("Game.UI.Play_PenguinCard.PenguinCardUtils")
 function PenguinLevel:Init(nFloorId, nLevelId, nActId, tbStarScore)
 	self.nFloorId = nFloorId
 	self.tbStarScore = tbStarScore or {
@@ -71,6 +66,9 @@ function PenguinLevel:ParseLevelData(nFloorId)
 	self.nRoundLimit = mapLevelCfg.InitialRound
 	self.nFixedTurnGroupId = mapLevelCfg.FixedTurn
 	self.sLevelDesc = mapLevelCfg.Floortips
+	self.bShowWin = mapLevelCfg.ShowWin
+	self.nQuestTurn = mapLevelCfg.QuestTurn
+	self.nQuestGroup = mapLevelCfg.QuestGroup
 	self.nBuyLimit = mapLevelCfg.InitialBuyLimit
 	self.nWeightGroupId = mapLevelCfg.WeightGroup
 	local mapPoolCfg = ConfigTable.GetData("PenguinBaseCardPool", mapLevelCfg.PoolId)
@@ -86,6 +84,19 @@ function PenguinLevel:ClearLevelData()
 	self.nGameState = nil
 	self.nCurTurn = 0
 	self.nCurRound = 0
+	self.nHp = 3
+	if self.tbBuffPool == nil then
+		self.tbBuffPool = {}
+	end
+	if self.tbBuff == nil then
+		self.tbBuff = {}
+	elseif next(self.tbBuff) ~= nil then
+		local nCount = #self.tbBuff
+		for i = nCount, 1, -1 do
+			self:RecycleBuff(self.tbBuff[i])
+			table.remove(self.tbBuff, i)
+		end
+	end
 	if self.tbPenguinCardPool == nil then
 		self.tbPenguinCardPool = {}
 	end
@@ -103,6 +114,10 @@ function PenguinLevel:ClearLevelData()
 			end
 		end
 	end
+	if self.tbQuestPool == nil then
+		self.tbQuestPool = {}
+	end
+	self.mapQuest = nil
 	self.mapLog = {}
 	self.nTotalRound = 0
 	self.nBestTurnScore = 0
@@ -118,11 +133,11 @@ function PenguinLevel:StartGame()
 	self:SwitchGameState()
 end
 function PenguinLevel:CompleteGame()
-	local nNextState = GameState.Complete
+	local nNextState = PenguinCardUtils.GameState.Complete
 	self:SwitchNextGameState(nNextState, {bManual = true})
 end
 function PenguinLevel:RestartGame()
-	local nNextState = GameState.Start
+	local nNextState = PenguinCardUtils.GameState.Start
 	local nWaitTime = self:QuitGameState(nNextState)
 	if nWaitTime == 0 then
 		self:StartGame()
@@ -141,7 +156,8 @@ function PenguinLevel:QuitGame(callback)
 			local bOpen = actData:CheckActivityOpen()
 			if bOpen then
 				bAct = true
-				actData:SendActivityPenguinCardSettleReq(self.nLevelId, self.nStar, self.nScore, callback)
+				local nScore = math.floor(self.nScore + 0.5 + 1.0E-9)
+				actData:SendActivityPenguinCardSettleReq(self.nLevelId, self.nStar, nScore, callback)
 			else
 				EventManager.Hit(EventId.OpenMessageBox, {
 					nType = AllEnum.MessageBox.Alert,
@@ -161,57 +177,75 @@ function PenguinLevel:SwitchGameState()
 	self:SwitchNextGameState(nNextState)
 end
 function PenguinLevel:RunGameState(mapParam)
-	if self.nGameState == GameState.Start then
+	if self.nGameState == PenguinCardUtils.GameState.Start then
 		self:RunState_Start()
-	elseif self.nGameState == GameState.Prepare then
+	elseif self.nGameState == PenguinCardUtils.GameState.Prepare then
 		self:RunState_Prepare()
-	elseif self.nGameState == GameState.Dealing then
+	elseif self.nGameState == PenguinCardUtils.GameState.Dealing then
 		self:RunState_Dealing()
-	elseif self.nGameState == GameState.Flip then
+	elseif self.nGameState == PenguinCardUtils.GameState.Flip then
 		self:RunState_Flip()
-	elseif self.nGameState == GameState.Settlement then
+	elseif self.nGameState == PenguinCardUtils.GameState.Settlement then
 		self:RunState_Settlement()
-	elseif self.nGameState == GameState.Complete then
+	elseif self.nGameState == PenguinCardUtils.GameState.Complete then
 		self:RunState_Complete(mapParam)
+	elseif self.nGameState == PenguinCardUtils.GameState.Quest then
+		self:RunState_Quest()
 	end
 end
 function PenguinLevel:QuitGameState(nNextState)
 	local nWaitTime = 0
-	if self.nGameState == GameState.Start then
+	if self.nGameState == PenguinCardUtils.GameState.Start then
 		nWaitTime = self:QuitState_Start()
-	elseif self.nGameState == GameState.Prepare then
+	elseif self.nGameState == PenguinCardUtils.GameState.Prepare then
 		nWaitTime = self:QuitState_Prepare(nNextState)
-	elseif self.nGameState == GameState.Dealing then
+	elseif self.nGameState == PenguinCardUtils.GameState.Dealing then
 		nWaitTime = self:QuitState_Dealing(nNextState)
-	elseif self.nGameState == GameState.Flip then
+	elseif self.nGameState == PenguinCardUtils.GameState.Flip then
 		nWaitTime = self:QuitState_Flip(nNextState)
-	elseif self.nGameState == GameState.Settlement then
+	elseif self.nGameState == PenguinCardUtils.GameState.Settlement then
 		nWaitTime = self:QuitState_Settlement(nNextState)
-	elseif self.nGameState == GameState.Complete then
+	elseif self.nGameState == PenguinCardUtils.GameState.Complete then
 		nWaitTime = self:QuitState_Complete()
+	elseif self.nGameState == PenguinCardUtils.GameState.Quest then
+		nWaitTime = self:QuitState_Quest(nNextState)
 	end
 	return nWaitTime
 end
 function PenguinLevel:CheckNextGameState()
 	if self.nGameState == nil then
-		return GameState.Start
-	elseif self.nGameState == GameState.Start then
-		return GameState.Prepare
-	elseif self.nGameState == GameState.Prepare then
-		return GameState.Dealing
-	elseif self.nGameState == GameState.Dealing then
-		return GameState.Flip
-	elseif self.nGameState == GameState.Flip then
-		return GameState.Settlement
-	elseif self.nGameState == GameState.Settlement then
-		if self.nCurRound >= self.nRoundLimit then
-			if self.nCurTurn >= self.nMaxTurn then
-				return GameState.Complete
-			else
-				return GameState.Prepare
-			end
+		return PenguinCardUtils.GameState.Start
+	elseif self.nGameState == PenguinCardUtils.GameState.Start then
+		if self.nQuestTurn >= 0 and self.nCurTurn >= self.nQuestTurn then
+			return PenguinCardUtils.GameState.Quest
 		else
-			return GameState.Dealing
+			return PenguinCardUtils.GameState.Prepare
+		end
+	elseif self.nGameState == PenguinCardUtils.GameState.Prepare then
+		return PenguinCardUtils.GameState.Dealing
+	elseif self.nGameState == PenguinCardUtils.GameState.Dealing then
+		return PenguinCardUtils.GameState.Flip
+	elseif self.nGameState == PenguinCardUtils.GameState.Flip then
+		return PenguinCardUtils.GameState.Settlement
+	elseif self.nGameState == PenguinCardUtils.GameState.Settlement then
+		if self.nCurRound < self:GetRoundLimitInTurn() then
+			return PenguinCardUtils.GameState.Dealing
+		end
+		if self.nCurTurn >= self.nMaxTurn then
+			return PenguinCardUtils.GameState.Complete
+		end
+		if self.mapQuest ~= nil then
+			return PenguinCardUtils.GameState.Quest
+		elseif self.nQuestTurn >= 0 and self.nCurTurn >= self.nQuestTurn then
+			return PenguinCardUtils.GameState.Quest
+		else
+			return PenguinCardUtils.GameState.Prepare
+		end
+	elseif self.nGameState == PenguinCardUtils.GameState.Quest then
+		if self.nCurTurn >= self.nMaxTurn or 0 >= self.nHp then
+			return PenguinCardUtils.GameState.Complete
+		else
+			return PenguinCardUtils.GameState.Prepare
 		end
 	end
 end
@@ -230,28 +264,200 @@ function PenguinLevel:SwitchNextGameState(nNextState, mapParam)
 end
 function PenguinLevel:RunState_Start()
 	EventManager.Hit("PenguinCard_RunState_Start")
-	self:SwitchGameState()
 end
 function PenguinLevel:QuitState_Start()
 	EventManager.Hit("PenguinCard_QuitState_Start")
-	return 0
+	local nWaitTime = 0.167
+	return nWaitTime
+end
+function PenguinLevel:RunState_Quest()
+	self.tbSelectableQuest = {}
+	self.bSkipQuestShow = false
+	self.mapQuestForShow = nil
+	if self.mapQuest ~= nil then
+		self.mapQuestForShow = clone(self.mapQuest)
+		local bComplete = self.mapQuest:CheckComplete()
+		if bComplete then
+			self:CompleteQuest()
+			self:RollQuest()
+		else
+			local bExpired = self.mapQuest:CheckExpired()
+			if bExpired then
+				self:ChangeHp(-1)
+				if self.nHp > 0 then
+					self:RollQuest()
+				end
+			else
+				self.bSkipQuestShow = true
+			end
+		end
+	else
+		self:RollQuest()
+		if next(self.tbSelectableQuest) == nil then
+			self.bSkipQuestShow = true
+		end
+	end
+	EventManager.Hit("PenguinCard_RunState_Quest", self.bSkipQuestShow)
+	if self.bSkipQuestShow then
+		self:SwitchGameState()
+	end
+end
+function PenguinLevel:QuitState_Quest(nNextState)
+	self.tbSelectableQuest = {}
+	self.bSkipQuestShow = false
+	self.mapQuestForShow = nil
+	EventManager.Hit("PenguinCard_QuitState_Quest", nNextState)
+	local nWaitTime = 0
+	if nNextState == PenguinCardUtils.GameState.Start then
+		nWaitTime = 0.6
+	elseif nNextState == PenguinCardUtils.GameState.Prepare then
+		nWaitTime = 0.57
+	elseif nNextState == PenguinCardUtils.GameState.Complete then
+		nWaitTime = 0.6
+	end
+	return nWaitTime
+end
+function PenguinLevel:RollQuest()
+	local tbId = self:GetRollQuestResult()
+	self:ClearSelectableQuest()
+	for _, nId in ipairs(tbId) do
+		local mapCard = self:CreateQuest(nId)
+		table.insert(self.tbSelectableQuest, mapCard)
+	end
+	self.mapQuest = nil
+end
+function PenguinLevel:GetRollQuestResult()
+	local mapWeightCfg = ConfigTable.GetData("PenguinCardQuestWeight", self.nQuestGroup * 100 + self.nCurTurn)
+	if not mapWeightCfg then
+		EventManager.Hit(EventId.OpenMessageBox, {
+			nType = AllEnum.MessageBox.Tips,
+			sSound = "Mode_Card_refresh_falied",
+			sContent = ConfigTable.GetUIText("PenguinCard_Error_EmptyQuest")
+		})
+		return {}
+	end
+	local tbId = PenguinCardUtils.WeightedRandom(mapWeightCfg.QuestList, mapWeightCfg.Weight, 3)
+	return tbId
+end
+function PenguinLevel:ClearSelectableQuest()
+	if next(self.tbSelectableQuest) ~= nil then
+		for i = #self.tbSelectableQuest, 1, -1 do
+			local mapCard = table.remove(self.tbSelectableQuest, i)
+			self:RecycleQuest(mapCard)
+		end
+	end
+end
+function PenguinLevel:SelectQuest(nIndex)
+	self.mapQuest = nil
+	self.mapQuest = self.tbSelectableQuest[nIndex]
+	table.remove(self.tbSelectableQuest, nIndex)
+	self:ClearSelectableQuest()
+	EventManager.Hit("PenguinCard_SelectQuest")
+	if NovaAPI.IsEditorPlatform() then
+		printLog("\233\162\134\229\143\150\228\187\187\229\138\161\239\188\154" .. "  " .. self.mapQuest.nId)
+	end
+end
+function PenguinLevel:CompleteQuest()
+	local mapData = self:CreateBuff(self.mapQuest.nBuffId)
+	mapData:ResetAllTrigger()
+	self:AddBuff(mapData, true)
+end
+function PenguinLevel:ChangeHp(nChange)
+	self.nHp = self.nHp + nChange
+	if NovaAPI.IsEditorPlatform() then
+		printLog("Hp\229\143\152\229\140\150\239\188\154" .. "  " .. nChange .. "  \229\189\147\229\137\141\239\188\154" .. self.nHp)
+	end
+	EventManager.Hit("PenguinCard_ChangeHp", nChange)
+	if self.nHp <= 0 then
+		self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.FatalDamage, {nHpChange = nChange})
+	end
+end
+function PenguinLevel:AddBuff(mapBuff, bWaitShow)
+	if mapBuff.bOnly then
+		local nBuffCount = #self.tbBuff
+		for i = nBuffCount, 1, -1 do
+			if mapBuff.nId == self.tbBuff[i].nId then
+				self:DeleteBuff(i)
+			end
+		end
+		table.insert(self.tbBuff, mapBuff)
+		EventManager.Hit("PenguinCard_AddBuff", mapBuff, bWaitShow)
+	else
+		local nHasKey = 0
+		for k, v in pairs(self.tbBuff) do
+			if v.nId == mapBuff.nId then
+				nHasKey = k
+				break
+			end
+		end
+		if 0 < nHasKey then
+			self.tbBuff[nHasKey]:AddGrowthLayer()
+		else
+			table.insert(self.tbBuff, mapBuff)
+			EventManager.Hit("PenguinCard_AddBuff", mapBuff, bWaitShow)
+		end
+	end
+	if NovaAPI.IsEditorPlatform() then
+		printLog("\232\142\183\229\190\151buff\239\188\154" .. "  " .. mapBuff.nId)
+	end
+end
+function PenguinLevel:DeleteBuff(i, nDelayTime)
+	self:RecycleBuff(self.tbBuff[i])
+	table.remove(self.tbBuff, i)
+	EventManager.Hit("PenguinCard_DeleteBuff", i, nDelayTime)
+end
+function PenguinLevel:RecycleBuff(mapBuff)
+	mapBuff:Clear()
+	table.insert(self.tbBuffPool, mapBuff)
+end
+function PenguinLevel:CreateBuff(nId)
+	local mapBuff
+	if next(self.tbBuffPool) == nil then
+		mapBuff = PenguinCardBuff.new(nId)
+	else
+		mapBuff = table.remove(self.tbBuffPool, 1)
+		mapBuff:Init(nId)
+	end
+	return mapBuff
+end
+function PenguinLevel:RecycleQuest(mapQuest)
+	mapQuest:Clear()
+	table.insert(self.tbQuestPool, mapQuest)
+end
+function PenguinLevel:CreateQuest(nId)
+	local mapQuest
+	if next(self.tbQuestPool) == nil then
+		mapQuest = PenguinCardQuest.new(nId)
+	else
+		mapQuest = table.remove(self.tbQuestPool, 1)
+		mapQuest:Init(nId)
+	end
+	return mapQuest
 end
 function PenguinLevel:RunState_Prepare()
 	self.nCurTurn = self.nCurTurn + 1
 	self.nCurRound = 0
 	self.nTurnBuyCount = 0
 	self.nTurnScore = 0
+	self.tbHandRankCount = {}
 	self.tbSelectablePenguinCard = {}
 	self.bSelectedPenguinCard = false
-	self:FreeRollPenguinCard()
-	EventManager.Hit("PenguinCard_RunState_Prepare")
-end
-function PenguinLevel:QuitState_Prepare(nNextState)
+	self.nUpgradeDiscount = 1
+	self.nTempAddRound = 0
+	for _, v in ipairs(self.tbBuff) do
+		v:ResetTurnTrigger()
+	end
 	for _, v in ipairs(self.tbPenguinCard) do
 		if v ~= 0 then
 			v:ResetTurnTrigger()
 		end
 	end
+	self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.Prepare)
+	self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.BeforeUpgrade)
+	self:FreeRollPenguinCard()
+	EventManager.Hit("PenguinCard_RunState_Prepare")
+end
+function PenguinLevel:QuitState_Prepare(nNextState)
 	self:ClearSelectablePenguinCard()
 	self.nTurnBuyCount = 0
 	self.tbSelectablePenguinCard = {}
@@ -259,14 +465,17 @@ function PenguinLevel:QuitState_Prepare(nNextState)
 	self.bPreTurnWin = false
 	EventManager.Hit("PenguinCard_QuitState_Prepare", nNextState)
 	local nWaitTime = 0
-	if nNextState == GameState.Start then
+	if nNextState == PenguinCardUtils.GameState.Start then
 		nWaitTime = 0.6
-	elseif nNextState == GameState.Dealing then
+	elseif nNextState == PenguinCardUtils.GameState.Dealing then
 		nWaitTime = 0.45
-	elseif nNextState == GameState.Complete then
+	elseif nNextState == PenguinCardUtils.GameState.Complete then
 		nWaitTime = 0.6
 	end
 	return nWaitTime
+end
+function PenguinLevel:GetRoundLimitInTurn()
+	return self.nRoundLimit + self.nTempAddRound
 end
 function PenguinLevel:AddRound()
 	if self.nRoundLimit == self.nMaxRound then
@@ -277,7 +486,7 @@ function PenguinLevel:AddRound()
 		})
 		return
 	end
-	local nCost = self.tbRoundUpgradeCost[self.nRoundLimit + 1]
+	local nCost = self.tbRoundUpgradeCost[self.nRoundLimit + 1] * self.nUpgradeDiscount
 	if nCost > self.nScore then
 		EventManager.Hit(EventId.OpenMessageBox, {
 			nType = AllEnum.MessageBox.Tips,
@@ -293,6 +502,7 @@ function PenguinLevel:AddRound()
 		sSound = "Mode_Card_buy",
 		sContent = orderedFormat(ConfigTable.GetUIText("PenguinCard_AddRoundSuccess"), self.nRoundLimit)
 	})
+	self:AfterUpgrade(nCost)
 	EventManager.Hit("PenguinCard_AddRound")
 end
 function PenguinLevel:AddSlot()
@@ -304,7 +514,7 @@ function PenguinLevel:AddSlot()
 		})
 		return
 	end
-	local nCost = self.tbSlotUpgradeCost[self.nSlotCount + 1]
+	local nCost = self.tbSlotUpgradeCost[self.nSlotCount + 1] * self.nUpgradeDiscount
 	if nCost > self.nScore then
 		EventManager.Hit(EventId.OpenMessageBox, {
 			nType = AllEnum.MessageBox.Tips,
@@ -320,6 +530,7 @@ function PenguinLevel:AddSlot()
 		sSound = "Mode_Card_buy",
 		sContent = orderedFormat(ConfigTable.GetUIText("PenguinCard_AddSlotSuccess"), self.nSlotCount)
 	})
+	self:AfterUpgrade(nCost)
 	EventManager.Hit("PenguinCard_AddSlot")
 end
 function PenguinLevel:AddRoll()
@@ -331,7 +542,7 @@ function PenguinLevel:AddRoll()
 		})
 		return
 	end
-	local nCost = self.tbBuyLimitUpgradeCost[self.nBuyLimit + 1]
+	local nCost = self.tbBuyLimitUpgradeCost[self.nBuyLimit + 1] * self.nUpgradeDiscount
 	if nCost > self.nScore then
 		EventManager.Hit(EventId.OpenMessageBox, {
 			nType = AllEnum.MessageBox.Tips,
@@ -347,7 +558,13 @@ function PenguinLevel:AddRoll()
 		sSound = "Mode_Card_buy",
 		sContent = orderedFormat(ConfigTable.GetUIText("PenguinCard_AddRollSuccess"), self.nBuyLimit)
 	})
+	self:AfterUpgrade(nCost)
 	EventManager.Hit("PenguinCard_AddRoll")
+end
+function PenguinLevel:AfterUpgrade(nUpgradeCost)
+	self.nUpgradeDiscount = 1
+	self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.AfterUpgrade, {nUpgradeCost = nUpgradeCost})
+	self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.BeforeUpgrade)
 end
 function PenguinLevel:FreeRollPenguinCard()
 	local tbId = self:GetRollPenguinCardResult()
@@ -418,10 +635,20 @@ function PenguinLevel:SelectPenguinCard(nIndex)
 		self.tbPenguinCard[nAimIndex] = mapCard
 	end
 	self.tbPenguinCard[nAimIndex]:SetSlotIndex(nAimIndex)
-	self.tbPenguinCard[nAimIndex]:ResetGameTrigger()
+	self.tbPenguinCard[nAimIndex]:ResetAllTrigger()
 	self.bSelectedPenguinCard = true
 	self.nGetPenguinCardCount = self.nGetPenguinCardCount + 1
+	self:AfterChangePenguinCard()
 	EventManager.Hit("PenguinCard_SelectPenguinCard", nAimIndex, bUpgrade)
+end
+function PenguinLevel:AfterChangePenguinCard()
+	local nAllLevel = 0
+	for _, v in ipairs(self.tbPenguinCard) do
+		if v ~= 0 then
+			nAllLevel = nAllLevel + v.nLevel
+		end
+	end
+	self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.PenguinCardChange, {PenguinCardLevel = nAllLevel})
 end
 function PenguinLevel:CheckUpgradePenguinCard(mapSelectCard)
 	local bUpgrade = false
@@ -448,6 +675,7 @@ function PenguinLevel:SalePenguinCard(nIndex)
 	local nGroupId = mapCard.nGroupId
 	self:RecyclePenguinCard(mapCard)
 	self.tbPenguinCard[nIndex] = 0
+	self:AfterChangePenguinCard()
 	EventManager.Hit("PenguinCard_SalePenguinCard", nIndex, nGroupId)
 end
 function PenguinLevel:GetRollPenguinCardCost()
@@ -487,7 +715,7 @@ function PenguinLevel:GetRollPenguinCardResult()
 		return {}
 	end
 	local tbMaxGroupId = self:GetMaxLevelPenguinCard()
-	local tbId = self:WeightedRandom(mapWeightCfg.CardList, mapWeightCfg.Weight, 3, tbMaxGroupId)
+	local tbId = PenguinCardUtils.WeightedRandom(mapWeightCfg.CardList, mapWeightCfg.Weight, 3, tbMaxGroupId)
 	return tbId
 end
 function PenguinLevel:GetMaxLevelPenguinCard()
@@ -524,13 +752,16 @@ function PenguinLevel:RunState_Dealing()
 	self.nRoundRatio = 1
 	self.nRoundMultiRatio = 0
 	self.mapCalBaseCardPool = clone(self.mapBaseCardPool)
+	for _, v in ipairs(self.tbBuff) do
+		v:ResetRoundTrigger()
+	end
 	for _, v in ipairs(self.tbPenguinCard) do
 		if v ~= 0 then
 			v:ResetRoundTrigger()
 		end
 	end
-	self:TriggerPenguinCard(GameEnum.PenguinCardTriggerPhase.Dealing)
-	self.tbBaseCardId = self:WeightedRandom(self.mapCalBaseCardPool.tbId, self.mapCalBaseCardPool.tbWeight, self.nBaseCardCount, {}, true)
+	self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.Dealing)
+	self.tbBaseCardId = PenguinCardUtils.WeightedRandom(self.mapCalBaseCardPool.tbId, self.mapCalBaseCardPool.tbWeight, self.nBaseCardCount, {}, true)
 	if 0 < self.nFixedTurnGroupId then
 		local nFixedId = self.nFixedTurnGroupId * 10000 + self.nCurTurn * 100 + self.nCurRound
 		local mapFixedCfg = ConfigTable.GetData("PenguinCardFixedTurn", nFixedId, true)
@@ -548,14 +779,20 @@ end
 function PenguinLevel:QuitState_Dealing(nNextState)
 	EventManager.Hit("PenguinCard_QuitState_Dealing", nNextState)
 	local nWaitTime = 0
-	if nNextState == GameState.Start then
+	if nNextState == PenguinCardUtils.GameState.Start then
 		nWaitTime = 0.6
-	elseif nNextState == GameState.Flip then
+	elseif nNextState == PenguinCardUtils.GameState.Flip then
 		nWaitTime = 0.85
-	elseif nNextState == GameState.Complete then
+	elseif nNextState == PenguinCardUtils.GameState.Complete then
 		nWaitTime = 0.6
 	end
 	return nWaitTime
+end
+function PenguinLevel:ChangeBaseCardWeight(tbChangeWeight)
+	for k, v in pairs(tbChangeWeight) do
+		local nIndex = table.indexof(self.mapCalBaseCardPool.tbId, tonumber(k))
+		self.mapCalBaseCardPool.tbWeight[nIndex] = self.mapCalBaseCardPool.tbWeight[nIndex] + v
+	end
 end
 function PenguinLevel:RunState_Flip()
 	EventManager.Hit("PenguinCard_RunState_Flip")
@@ -565,11 +802,11 @@ function PenguinLevel:QuitState_Flip(nNextState)
 	self:StopAuto()
 	EventManager.Hit("PenguinCard_QuitState_Flip", nNextState)
 	local nWaitTime = 0
-	if nNextState == GameState.Start then
+	if nNextState == PenguinCardUtils.GameState.Start then
 		nWaitTime = 0.6
-	elseif nNextState == GameState.Settlement then
+	elseif nNextState == PenguinCardUtils.GameState.Settlement then
 		nWaitTime = 1
-	elseif nNextState == GameState.Complete then
+	elseif nNextState == PenguinCardUtils.GameState.Complete then
 		nWaitTime = 0.6
 	end
 	return nWaitTime
@@ -599,11 +836,26 @@ function PenguinLevel:ShowBaseCard(nIndex)
 				if 0 < mapCfg.SuitCount2 then
 					SuitCount[mapCfg.Suit2] = mapCfg.SuitCount2
 				end
-				self:TriggerPenguinCard(GameEnum.PenguinCardTriggerPhase.Flip, {
+				self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.Flip, {
 					SuitCards = SuitCards,
 					SuitCount = SuitCount,
 					BaseCard = {nId = nId, nIndex = i}
 				})
+			end
+			local mapAfterCfg = ConfigTable.GetData("PenguinBaseCard", self.tbBaseCardId[i])
+			if mapAfterCfg then
+				self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.FlipEnd, {
+					BaseCard = {
+						nId = self.tbBaseCardId[i],
+						nIndex = i
+					}
+				})
+				if self.mapQuest ~= nil then
+					self.mapQuest:AddProgress(GameEnum.PenguinCardQuestType.SuitCount, {
+						nId = mapAfterCfg.Suit1,
+						nCount = mapAfterCfg.SuitCount1
+					})
+				end
 			end
 		end
 	end
@@ -648,7 +900,17 @@ function PenguinLevel:CheckHandRank()
 		end
 		if nAble == nType then
 			self.nHandRankId = v.Id
+			if not self.tbHandRankCount[self.nHandRankId] then
+				self.tbHandRankCount[self.nHandRankId] = 0
+			end
+			self.tbHandRankCount[self.nHandRankId] = self.tbHandRankCount[self.nHandRankId] + 1
 			self:ChangeRoundScore(v.Value, v.Ratio, 0, true)
+			if self.mapQuest ~= nil then
+				self.mapQuest:AddProgress(GameEnum.PenguinCardQuestType.HandRank, {
+					nId = self.nHandRankId,
+					nCount = 1
+				})
+			end
 			break
 		end
 	end
@@ -659,12 +921,17 @@ function PenguinLevel:ChangeRoundScore(nAddValue, nAddRatio, nAddMultiRatio, bFr
 	local nBeforeMultiRatio = self.nRoundMultiRatio
 	local nBeforeRatio = self.nRoundRatio
 	self.nRoundValue = self.nRoundValue + nAddValue
-	self.nRoundMultiRatio = self.nRoundMultiRatio + nAddMultiRatio
+	if 0 < nAddMultiRatio then
+		if self.nRoundMultiRatio == 0 then
+			self.nRoundMultiRatio = 1
+		end
+		self.nRoundMultiRatio = self.nRoundMultiRatio + (nAddMultiRatio - 1)
+	end
 	self.nRoundRatio = self.nRoundRatio + nAddRatio
 	local nBeforeAllRatio = 0 < nBeforeMultiRatio and nBeforeMultiRatio * nBeforeRatio or nBeforeRatio
 	local nAfterAllRatio = self.nRoundMultiRatio > 0 and self.nRoundRatio * self.nRoundMultiRatio or self.nRoundRatio
-	nBeforeAllRatio = math.floor(nBeforeAllRatio * 10 + 0.5 + 1.0E-9) / 10
-	nAfterAllRatio = math.floor(nAfterAllRatio * 10 + 0.5 + 1.0E-9) / 10
+	nBeforeAllRatio = math.floor(nBeforeAllRatio * 100 + 0.5 + 1.0E-9) / 100
+	nAfterAllRatio = math.floor(nAfterAllRatio * 100 + 0.5 + 1.0E-9) / 100
 	self.nRoundScore = self.nRoundValue * nAfterAllRatio
 	local nAddScore = self.nRoundScore - nBeforeScore
 	self.nTurnScore = self.nTurnScore + nAddScore
@@ -690,6 +957,20 @@ function PenguinLevel:GetShowedCardCount()
 	end
 	return nShowed
 end
+function PenguinLevel:ReplaceBaseCard(nIndex, nBeforeId, nAfterId)
+	local mapBeforeCfg = ConfigTable.GetData("PenguinBaseCard", nBeforeId)
+	local mapAfterCfg = ConfigTable.GetData("PenguinBaseCard", nAfterId)
+	if not mapBeforeCfg or not mapAfterCfg then
+		return
+	end
+	self.mapAllSuit[mapBeforeCfg.Suit1] = self.mapAllSuit[mapBeforeCfg.Suit1] - mapBeforeCfg.SuitCount1
+	if not self.mapAllSuit[mapAfterCfg.Suit1] then
+		self.mapAllSuit[mapAfterCfg.Suit1] = 0
+	end
+	self.mapAllSuit[mapAfterCfg.Suit1] = self.mapAllSuit[mapAfterCfg.Suit1] + mapAfterCfg.SuitCount1
+	self.tbBaseCardId[nIndex] = nAfterId
+	EventManager.Hit("PenguinCard_ReplaceBaseCard", nIndex)
+end
 function PenguinLevel:RunState_Settlement()
 	if not self.mapHandRankHistory[self.nHandRankId] then
 		self.mapHandRankHistory[self.nHandRankId] = 0
@@ -706,9 +987,11 @@ function PenguinLevel:RunState_Settlement()
 		end
 		self.mapSuitHistory[v] = self.mapSuitHistory[v] + 1
 	end
-	self:TriggerPenguinCard(GameEnum.PenguinCardTriggerPhase.Settlement, {
+	self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.Settlement, {
 		HandRankSuitCount = HandRankSuitCount,
-		SuitCount = self.mapAllSuit
+		SuitCount = self.mapAllSuit,
+		HandRank = self.nHandRankId,
+		HandRankCount = self.tbHandRankCount
 	})
 	self:AddLog()
 	EventManager.Hit("PenguinCard_RunState_Settlement")
@@ -717,6 +1000,14 @@ end
 function PenguinLevel:QuitState_Settlement(nNextState)
 	self:StopAuto()
 	self:ChangeScore(self.nRoundScore)
+	if self.mapQuest ~= nil then
+		self.mapQuest:AddProgress(GameEnum.PenguinCardQuestType.Score, {
+			nCount = self.nRoundScore
+		})
+	end
+	if self:GetRoundLimitInTurn() == self.nCurRound then
+		self:EndTurn()
+	end
 	self.tbHandRank = {}
 	self.nHandRankId = 0
 	self.mapAllSuit = {}
@@ -727,16 +1018,28 @@ function PenguinLevel:QuitState_Settlement(nNextState)
 	self.mapCalBaseCardPool = {}
 	EventManager.Hit("PenguinCard_QuitState_Settlement", nNextState)
 	local nWaitTime = 0
-	if nNextState == GameState.Start then
+	if nNextState == PenguinCardUtils.GameState.Start then
 		nWaitTime = 0.6
-	elseif nNextState == GameState.Dealing then
+	elseif nNextState == PenguinCardUtils.GameState.Dealing then
 		nWaitTime = 0.57
-	elseif nNextState == GameState.Prepare then
+	elseif nNextState == PenguinCardUtils.GameState.Prepare then
 		nWaitTime = 0.57
-	elseif nNextState == GameState.Complete then
+	elseif nNextState == PenguinCardUtils.GameState.Complete then
 		nWaitTime = 0.6
 	end
 	return nWaitTime
+end
+function PenguinLevel:EndTurn()
+	local nBuffCount = #self.tbBuff
+	for i = nBuffCount, 1, -1 do
+		local bAble = self.tbBuff[i]:AddDuration_Turn()
+		if not bAble then
+			self:DeleteBuff(i)
+		end
+	end
+	if self.mapQuest ~= nil then
+		self.mapQuest:AddTurnCount()
+	end
 end
 function PenguinLevel:AddLog()
 	if not self.mapLog[self.nCurTurn] then
@@ -874,7 +1177,7 @@ function PenguinLevel:PlayAuto(bClick)
 	if not self.bAuto or self.bPause then
 		return
 	end
-	if self.nGameState == GameState.Flip then
+	if self.nGameState == PenguinCardUtils.GameState.Flip then
 		self.sequence = DOTween.Sequence()
 		for j = 1, self.nBaseCardCount do
 			if self.tbShowedCard[j] == false then
@@ -885,7 +1188,7 @@ function PenguinLevel:PlayAuto(bClick)
 			end
 		end
 		self.sequence:SetUpdate(true)
-	elseif self.nGameState == GameState.Settlement then
+	elseif self.nGameState == PenguinCardUtils.GameState.Settlement then
 		local bKeep = not PlayerData.Guide:CheckGuideFinishById(302)
 		if EditorSettings and EditorSettings.bJumpGuide then
 			bKeep = false
@@ -899,7 +1202,7 @@ function PenguinLevel:PlayAuto(bClick)
 		end
 		self.sequence:AppendCallback(function()
 			EventManager.Hit("PenguinCard_QuitScoreAni")
-			if self.nRoundLimit == self.nCurRound and self.nCurTurn < self.nMaxTurn then
+			if self:GetRoundLimitInTurn() == self.nCurRound and self.nCurTurn < self.nMaxTurn then
 				local callback = function()
 					self:SwitchGameState()
 				end
@@ -948,7 +1251,7 @@ function PenguinLevel:ChangeScore(nChange)
 			nStar = i
 		end
 	end
-	if nBeforeStar < 3 and nStar == 3 and self.nGameState == GameState.Settlement then
+	if nBeforeStar == 0 and nStar == 1 and self.nGameState == PenguinCardUtils.GameState.Settlement then
 		self.bPreTurnWin = true
 	end
 	EventManager.Hit("PenguinCard_ChangeScore", nBefore, nBeforeStar, nStar)
@@ -965,72 +1268,6 @@ function PenguinLevel:GetStar()
 	end
 	return nStar
 end
-function PenguinLevel:WeightedRandom(tbId, tbWeight, n, tbExcludeGroupId, bDuplicate)
-	if #tbId ~= #tbWeight then
-		printError("tbId \229\146\140 tbWeight \233\149\191\229\186\166\229\191\133\233\161\187\231\155\184\229\144\140")
-	end
-	tbExcludeGroupId = tbExcludeGroupId or {}
-	local tbExcludeSet = {}
-	for _, v in ipairs(tbExcludeGroupId) do
-		tbExcludeSet[v] = true
-	end
-	local tbCandidates = {}
-	for i = 1, #tbId do
-		local id = tbId[i]
-		local w = tbWeight[i]
-		if next(tbExcludeSet) == nil then
-			table.insert(tbCandidates, {id = id, weight = w})
-		else
-			local mapCfg = ConfigTable.GetData("PenguinCard", id)
-			if mapCfg and not tbExcludeSet[mapCfg.GroupId] then
-				table.insert(tbCandidates, {id = id, weight = w})
-			end
-		end
-	end
-	if #tbCandidates == 0 then
-		return {}
-	end
-	local result = {}
-	if bDuplicate then
-		local totalWeight = 0
-		for _, item in ipairs(tbCandidates) do
-			totalWeight = totalWeight + item.weight
-		end
-		for _ = 1, n do
-			local r = math.random() * totalWeight
-			local cum = 0
-			for _, item in ipairs(tbCandidates) do
-				cum = cum + item.weight
-				if r < cum then
-					table.insert(result, item.id)
-					break
-				end
-			end
-		end
-	else
-		local actualN = math.min(n, #tbCandidates)
-		for _ = 1, actualN do
-			local totalWeight = 0
-			for _, item in ipairs(tbCandidates) do
-				totalWeight = totalWeight + item.weight
-			end
-			if totalWeight <= 0 then
-				break
-			end
-			local r = math.random() * totalWeight
-			local cum = 0
-			for i, item in ipairs(tbCandidates) do
-				cum = cum + item.weight
-				if r < cum then
-					table.insert(result, item.id)
-					table.remove(tbCandidates, i)
-					break
-				end
-			end
-		end
-	end
-	return result
-end
 function PenguinLevel:SetWarning(bAble)
 	self.bWarning = bAble
 end
@@ -1043,41 +1280,47 @@ function PenguinLevel:GetOwnPenguinCardCount()
 	end
 	return nCount
 end
-function PenguinLevel:TriggerPenguinCard(nTriggerPhase, mapTriggerSource)
-	local callback = function(nEffectType, tbEffectParam)
-		if nEffectType == GameEnum.PenguinCardEffectType.AddBaseCardWeight then
-			for k, v in pairs(tbEffectParam) do
-				local nIndex = table.indexof(self.mapCalBaseCardPool.tbId, tonumber(k))
-				self.mapCalBaseCardPool.tbWeight[nIndex] = self.mapCalBaseCardPool.tbWeight[nIndex] + v
+function PenguinLevel:ExecuteEffect(nEffectType, mapEffectValue, mapTriggerSource)
+	if nEffectType == GameEnum.PenguinCardEffectType.AddBaseCardWeight then
+		self:ChangeBaseCardWeight(mapEffectValue)
+	elseif nEffectType == GameEnum.PenguinCardEffectType.ReplaceBaseCard then
+		self:ReplaceBaseCard(mapTriggerSource.BaseCard.nIndex, mapTriggerSource.BaseCard.nId, mapEffectValue[1])
+	elseif nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips then
+		self:ChangeRoundScore(mapEffectValue, 0, 0)
+	elseif nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier then
+		self:ChangeRoundScore(0, mapEffectValue, 0)
+	elseif nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier then
+		self:ChangeRoundScore(0, 0, mapEffectValue)
+	elseif nEffectType == GameEnum.PenguinCardEffectType.UpgradeDiscount then
+		self.nUpgradeDiscount = mapEffectValue / 100
+	elseif nEffectType == GameEnum.PenguinCardEffectType.AddRound then
+		self.nTempAddRound = self.nTempAddRound + mapEffectValue
+	elseif nEffectType == GameEnum.PenguinCardEffectType.BlockFatalDamage then
+		self:ChangeHp(-1 * mapTriggerSource.nHpChange)
+		EventManager.Hit("PenguinCard_BlockFatalDamage")
+	elseif nEffectType == GameEnum.PenguinCardEffectType.UpgradeRebate then
+		self:ChangeScore(mapTriggerSource.nUpgradeCost * mapEffectValue / 100)
+	end
+end
+function PenguinLevel:TriggerEffect(nTriggerPhase, mapTriggerSource)
+	local callback = function(nEffectType, mapEffectValue)
+		self:ExecuteEffect(nEffectType, mapEffectValue, mapTriggerSource)
+	end
+	local nBuffCount = #self.tbBuff
+	for i = nBuffCount, 1, -1 do
+		local bTriggered = self.tbBuff[i]:Trigger(nTriggerPhase, mapTriggerSource, callback)
+		if bTriggered then
+			local bAble = self.tbBuff[i]:AddDuration_Count()
+			if not bAble then
+				local nDelayTime = self.tbBuff[i]:GetDelayTime()
+				self:DeleteBuff(i, nDelayTime)
 			end
-		elseif nEffectType == GameEnum.PenguinCardEffectType.ReplaceBaseCard then
-			local nAfterId = tbEffectParam[1]
-			local nBeforeId = mapTriggerSource.BaseCard.nId
-			local nIndex = mapTriggerSource.BaseCard.nIndex
-			local mapBeforeCfg = ConfigTable.GetData("PenguinBaseCard", nBeforeId)
-			if mapBeforeCfg then
-				self.mapAllSuit[mapBeforeCfg.Suit1] = self.mapAllSuit[mapBeforeCfg.Suit1] - mapBeforeCfg.SuitCount1
-			end
-			self.tbBaseCardId[nIndex] = nAfterId
-			local mapAfterCfg = ConfigTable.GetData("PenguinBaseCard", nAfterId)
-			if mapAfterCfg then
-				if not self.mapAllSuit[mapAfterCfg.Suit1] then
-					self.mapAllSuit[mapAfterCfg.Suit1] = 0
-				end
-				self.mapAllSuit[mapAfterCfg.Suit1] = self.mapAllSuit[mapAfterCfg.Suit1] + mapAfterCfg.SuitCount1
-			end
-			EventManager.Hit("PenguinCard_ReplaceBaseCard", nIndex)
-		elseif nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips then
-			self:ChangeRoundScore(tbEffectParam[1], 0, 0)
-		elseif nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier then
-			self:ChangeRoundScore(0, tbEffectParam[1], 0)
-		elseif nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier then
-			self:ChangeRoundScore(0, 0, tbEffectParam[1])
 		end
 	end
 	for _, v in ipairs(self.tbPenguinCard) do
 		if v ~= 0 then
 			v:Trigger(nTriggerPhase, mapTriggerSource, callback)
+			v:Growth(nTriggerPhase, mapTriggerSource)
 		end
 	end
 end

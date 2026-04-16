@@ -71,6 +71,9 @@ function PreviewLevel:PlaySuccessPerform()
 		elseif self.nLevelType == GameEnum.worldLevelType.DailyInstance then
 			local nType = ConfigTable.GetData("DailyInstanceFloor", self.nLevelId).Theme
 			sName = ConfigTable.GetData("EndSceneType", nType).EndSceneName
+		elseif self.nLevelType == GameEnum.worldLevelType.ActivityStory then
+			local nType = ConfigTable.GetData("ActivityLevelsFloor", self.nLevelId).Theme
+			sName = ConfigTable.GetData("EndSceneType", nType).EndSceneName
 		else
 			local nType = ConfigTable.GetData("StarTowerMap", self.nLevelId).Theme
 			sName = ConfigTable.GetData("EndSceneType", nType).EndSceneName

@@ -50,12 +50,17 @@ local LoadBattleData = function()
 		LocalSettingData.mapData.BattleHUD = LoadLocalData("BattleHUD", AllEnum.BattleHudType.Sector)
 	end
 end
+local LoadNotificationData = function()
+	LocalSettingData.mapData.Energy = LoadLocalData("Energy", true)
+	LocalSettingData.mapData.Dispatch = LoadLocalData("Dispatch", true)
+end
 function LocalSettingData.Init()
 	LocalSettingData.mapData = {}
 	LocalSettingData.mapData.UseLive2D = LoadLocalData("UseLive2D", true)
 	LoadSoundData()
 	LoadBattleData()
 	InitCurSignInData()
+	LoadNotificationData()
 end
 function LocalSettingData.GetLocalSettingData(subKey)
 	return LocalSettingData.mapData[subKey]

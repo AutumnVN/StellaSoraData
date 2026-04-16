@@ -2,11 +2,12 @@ local KeyNodeListCtrl = class("KeyNodeListCtrl", BaseCtrl)
 local _, ReadyColor = ColorUtility.TryParseHtmlString("#f1f4f6")
 local _, LockColor = ColorUtility.TryParseHtmlString("#657eae")
 KeyNodeListCtrl._mapNodeConfig = {
-	goLine = {nCount = 4},
+	goLine = {nCount = 5},
 	line1_ = {nCount = 2, sComponentName = "Image"},
 	line2_ = {nCount = 2, sComponentName = "Image"},
 	line3_1 = {sComponentName = "Image"},
 	line4_1 = {sComponentName = "Image"},
+	line5_1 = {sComponentName = "Image"},
 	KeyNode = {
 		nCount = 2,
 		sCtrlName = "Game.UI.StarTowerGrowth.KeyNodeCtrl"
@@ -49,9 +50,11 @@ function KeyNodeListCtrl:Refresh(nCloumn, tbNodes, tbId, mapNext)
 			nLineType = nCount + 2
 		elseif #mapNext.tbId == 3 then
 			nLineType = nCount
+		elseif nCount == 1 and #mapNext.tbId == 1 then
+			nLineType = 5
 		end
 	end
-	for i = 1, 4 do
+	for i = 1, 5 do
 		self._mapNode.goLine[i]:SetActive(nLineType == i)
 	end
 	if nLineType == 1 then
@@ -75,6 +78,9 @@ function KeyNodeListCtrl:Refresh(nCloumn, tbNodes, tbId, mapNext)
 		elseif nLineType == 4 then
 			NovaAPI.SetImageColor(self._mapNode.line4_1, color)
 		end
+	elseif nLineType == 5 then
+		local color = tbNodes[tbId[1]].bActive and ReadyColor or LockColor
+		NovaAPI.SetImageColor(self._mapNode.line5_1, color)
 	end
 end
 function KeyNodeListCtrl:GetType()

@@ -44,7 +44,8 @@ ScoreBossRankingCtrl._mapNodeConfig = {
 ScoreBossRankingCtrl._mapEventConfig = {
 	ShowTeamDetail = "OnEvent_ShowTeamDetail",
 	[EventId.UIHomeConfirm] = "OnEvent_Home",
-	[EventId.UIBackConfirm] = "OnEvent_Back"
+	[EventId.UIBackConfirm] = "OnEvent_Back",
+	OpenRankBuildDetail = "OnEvent_OpenRankBuildDetail"
 }
 function ScoreBossRankingCtrl:Awake()
 	self._mapRankingGrid = {}
@@ -96,11 +97,23 @@ function ScoreBossRankingCtrl:OpenPanel()
 	if 0 < rankTable then
 		self._mapNode.svRankingInfo.gameObject:SetActive(true)
 		self._mapNode.svRankingInfo:Init(rankTable, self, self.OnGridRankingRefresh)
-		self:PlayGridItemAnim()
+		if self._panel.mapRankDetail ~= nil then
+			self._mapNode.svRankingInfo:SetScrollPos(self._panel.nGridPos)
+		else
+			self:PlayGridItemAnim()
+		end
 	else
 		self._mapNode.svRankingInfo.gameObject:SetActive(false)
 	end
 	self._mapNode.goTeamDetail.gameObject:SetActive(false)
+	if self._panel.mapRankDetail ~= nil then
+		self:AddTimer(1, 0.4, function()
+			EventManager.Hit("ShowTeamDetail", self._panel.mapRankDetail)
+			self._panel.mapRankDetail = nil
+			self._panel.nGridPos = 0
+		end, true, true, true)
+		EventManager.Hit(EventId.TemporaryBlockInput, 0.4)
+	end
 	local endTime = PlayerData.ScoreBoss.EndTime + ConfigTable.GetConfigNumber("SeasonEndThreshold")
 	local sTime = os.date("%m/%d %H:%M", endTime)
 	local sEndTimeTitle = ConfigTable.GetUIText("ScoreBossRankingEndTime")
@@ -163,6 +176,7 @@ function ScoreBossRankingCtrl:PlayGridItemAnim()
 	end, true, true, true)
 end
 function ScoreBossRankingCtrl:OnEvent_ShowTeamDetail(mapRanking)
+	self.mapRankDetail = mapRanking
 	self._mapNode.goTeamDetail.gameObject:SetActive(true)
 	self._mapNode.goTeamDetail:Refresh(mapRanking)
 end
@@ -174,5 +188,9 @@ function ScoreBossRankingCtrl:OnEvent_Home(nPanelId)
 		return
 	end
 	PanelManager.Home()
+end
+function ScoreBossRankingCtrl:OnEvent_OpenRankBuildDetail()
+	self._panel.mapRankDetail = self.mapRankDetail
+	self._panel.nGridPos = self._mapNode.svRankingInfo:GetScrollPos()
 end
 return ScoreBossRankingCtrl

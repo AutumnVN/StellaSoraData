@@ -107,11 +107,12 @@ function PenguinCardResultCtrl:RefreshState()
 	self._mapNode.goBgOff:SetActive(not self.bWin)
 	self._mapNode.goTitleOn:SetActive(self.bWin)
 	self._mapNode.goTitleOff:SetActive(not self.bWin)
-	self._mapNode.txtNeedCount.gameObject:SetActive(self._panel.mapLevel.nStar < 3)
-	if self._panel.mapLevel.nStar < 3 then
-		local nMax = self._panel.mapLevel.tbStarScore[self._panel.mapLevel.nStar + 1]
+	self._mapNode.txtNeedCount.gameObject:SetActive(not self.bWin)
+	if not self.bWin then
+		local nMax = self._panel.mapLevel.tbStarScore[1]
 		local nNeed = nMax - self._panel.mapLevel.nScore
-		NovaAPI.SetTMPText(self._mapNode.txtNeedCount, orderedFormat(ConfigTable.GetUIText("PenguinCard_Result_NeedScore"), self:ThousandsNumber(clearFloat(nNeed))))
+		nNeed = math.floor(nNeed + 0.5 + 1.0E-9)
+		NovaAPI.SetTMPText(self._mapNode.txtNeedCount, orderedFormat(ConfigTable.GetUIText("PenguinCard_Result_NeedScore"), self:ThousandsNumber(nNeed)))
 	end
 end
 function PenguinCardResultCtrl:RefreshTitle()
@@ -119,7 +120,8 @@ function PenguinCardResultCtrl:RefreshTitle()
 		self._mapNode.imgStarOff[i]:SetActive(i > self._panel.mapLevel.nStar)
 		self._mapNode.imgStarOn[i]:SetActive(i <= self._panel.mapLevel.nStar)
 	end
-	NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(clearFloat(self._panel.mapLevel.nScore)))
+	local nScore = math.floor(self._panel.mapLevel.nScore + 0.5 + 1.0E-9)
+	NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 end
 function PenguinCardResultCtrl:RefreshCard()
 	local nCount = self._panel.mapLevel:GetOwnPenguinCardCount()
@@ -137,8 +139,10 @@ end
 function PenguinCardResultCtrl:RefreshStatistics()
 	NovaAPI.SetTMPText(self._mapNode.txtTotalTurn, self._panel.mapLevel.nCurTurn)
 	NovaAPI.SetTMPText(self._mapNode.txtTotalRound, self._panel.mapLevel.nTotalRound)
-	NovaAPI.SetTMPText(self._mapNode.txtBestTurn, self:ThousandsNumber(clearFloat(self._panel.mapLevel.nBestTurnScore)))
-	NovaAPI.SetTMPText(self._mapNode.txtBestRound, self:ThousandsNumber(clearFloat(self._panel.mapLevel.nBestRoundScore)))
+	local nBestTurnScore = math.floor(self._panel.mapLevel.nBestTurnScore + 0.5 + 1.0E-9)
+	local nBestRoundScore = math.floor(self._panel.mapLevel.nBestRoundScore + 0.5 + 1.0E-9)
+	NovaAPI.SetTMPText(self._mapNode.txtBestTurn, self:ThousandsNumber(nBestTurnScore))
+	NovaAPI.SetTMPText(self._mapNode.txtBestRound, self:ThousandsNumber(nBestRoundScore))
 	local nHandRankId, nHandRankCount = self._panel.mapLevel:GetMostHandRank()
 	if 0 < nHandRankId then
 		local mapHandRankCfg = ConfigTable.GetData("PenguinCardHandRank", nHandRankId)

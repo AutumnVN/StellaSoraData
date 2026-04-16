@@ -91,10 +91,14 @@ local AvgPreset = {
 		"hotel_banquet_hall_night",
 		"hotel_corridor_daylight",
 		"hotel_corridor_night",
+		"hotel_corridor_night_broken",
 		"hotel_daylight",
 		"hotel_guest_room",
+		"hotel_guest_room_a",
+		"hotel_guest_room_a_night",
 		"hotel_guest_room_night",
 		"hotel_roof",
+		"hotel_roof_broken",
 		"hotel_senior_office",
 		"hotpot_inside",
 		"hotpot_inside_night",
@@ -142,6 +146,7 @@ local AvgPreset = {
 		"street_stall_near",
 		"tanikaze_court_daylight",
 		"tanikaze_court_night_snow",
+		"tanikaze_inside_daylight",
 		"tanikaze_outside",
 		"theater_inside_a",
 		"theater_inside_b",
@@ -160,6 +165,7 @@ local AvgPreset = {
 		"tower_rest",
 		"tower_supermarket",
 		"tower_wind_light",
+		"tower_wishbox_room",
 		"travellers_home_inside",
 		"travellers_home_inside_dusk",
 		"travellers_home_inside_night",
@@ -217,6 +223,7 @@ local AvgPreset = {
 		"uniseed_office_night",
 		"uniseed_production",
 		"uniseed_production_night",
+		"uniseed_senate",
 		"uniseed_shop",
 		"uniseed_warehouse",
 		"uniseed_warehouse_daylight",
@@ -240,6 +247,8 @@ local AvgPreset = {
 		"wog_academy_classroom",
 		"wog_academy_corridor",
 		"wog_academy_office",
+		"wog_lab",
+		"wog_meetingroom",
 		"wog_office",
 		"wog_passage",
 		"wog_store_inside",
@@ -276,6 +285,20 @@ local AvgPreset = {
 		"story_event_05_002_a",
 		"story_event_05_002_b",
 		"story_event_05_003",
+		"story_event_06_001",
+		"story_event_06_002",
+		"story_event_06_003_FP",
+		"story_event_06_003_MP",
+		"story_event_06_004",
+		"story_event_06_005_a",
+		"story_event_06_005_b",
+		"story_event_06_005_c",
+		"story_event_06_005_d",
+		"story_event_06_005_e",
+		"story_event_06_005_f",
+		"story_event_06_006",
+		"story_event_06_007_a",
+		"story_event_06_007_b",
 		"story_main_00_001",
 		"story_main_00_002",
 		"story_main_00_003_FP",
@@ -444,6 +467,20 @@ local AvgPreset = {
 		"story_main_06_027",
 		"story_main_06_028",
 		"story_main_06_029",
+		"story_main_07_001",
+		"story_main_07_002",
+		"story_main_07_003",
+		"story_main_07_004",
+		"story_main_07_005_FP",
+		"story_main_07_005_MP",
+		"story_main_07_006",
+		"story_main_07_007",
+		"story_main_07_007_a",
+		"story_main_07_007_b",
+		"story_main_07_008",
+		"story_main_07_009",
+		"story_main_07_010",
+		"story_main_07_011",
 		"story_main_be_01_001_FP",
 		"story_main_be_01_001_MP",
 		"story_main_be_01_002",
@@ -475,7 +512,9 @@ local AvgPreset = {
 		"story_tales_11_001_a",
 		"story_tales_11_001_b",
 		"story_tales_12_001",
-		"story_tales_13_001"
+		"story_tales_13_001",
+		"story_tales_14_001",
+		"story_tales_14_001_a"
 	},
 	FgResName = {
 		"circle_light",
@@ -489,6 +528,7 @@ local AvgPreset = {
 		"story_main_02_020",
 		"story_main_02_021",
 		"story_main_03_005_c",
+		"story_main_07_007_c",
 		"story_tales_13_001_a",
 		"story_tales_13_001_b",
 		"story_tales_13_001_c"
@@ -509,7 +549,9 @@ local AvgPreset = {
 		"4017_B",
 		"4044_B",
 		"4016_B",
-		"4048_B"
+		"4048_B",
+		"4045_B",
+		"4051_B"
 	},
 	BgEffectResName = {
 		"0",
@@ -1700,6 +1742,126 @@ local AvgPreset = {
 					}
 				},
 				false
+			}
+		},
+		{
+			"JingTouYaoHuang",
+			{
+				{
+					{
+						10,
+						5,
+						0
+					},
+					{
+						4,
+						2,
+						0
+					},
+					{
+						2,
+						2,
+						0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				{
+					{
+						0,
+						0,
+						0
+					},
+					{
+						0,
+						0,
+						0
+					},
+					{
+						0,
+						0,
+						0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				true
+			}
+		},
+		{
+			"XiaoLP",
+			{
+				{
+					{
+						0.0,
+						10.0,
+						0.0
+					},
+					{
+						0.1,
+						0.1,
+						0.0
+					},
+					{
+						5.0,
+						5.0,
+						0.0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				{
+					{
+						0.0,
+						0.0,
+						0.0
+					},
+					{
+						0.1,
+						0.1,
+						0.1
+					},
+					{
+						5.0,
+						5.0,
+						5.0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				true
 			}
 		}
 	},
@@ -5355,6 +5517,14 @@ local AvgPreset = {
 		},
 		{
 			"fx_avg_rain_sky",
+			""
+		},
+		{
+			"fx_avg_wisteria_right",
+			""
+		},
+		{
+			"fx_avg_wisteria_left",
 			""
 		},
 		{

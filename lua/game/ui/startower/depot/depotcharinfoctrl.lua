@@ -1,6 +1,7 @@
 local DepotCharInfoCtrl = class("DepotCharInfoCtrl", BaseCtrl)
 local AdventureModuleHelper = CS.AdventureModuleHelper
 local CharacterAttrData = require("GameCore.Data.DataClass.CharacterAttrData")
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
 DepotCharInfoCtrl._mapNodeConfig = {
 	goProperty = {
 		nCount = 5,
@@ -48,7 +49,7 @@ DepotCharInfoCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Equipment"
 	},
-	imgEquipment = {nCount = 3, sComponentName = "Image"},
+	imgEquipment = {nCount = 3, sComponentName = "Transform"},
 	goEquipment = {nCount = 3},
 	txtEquipmentLock = {nCount = 3, sComponentName = "TMP_Text"}
 }
@@ -213,7 +214,16 @@ function DepotCharInfoCtrl:RefreshEquipment(mapChar)
 				NovaAPI.SetTMPText(self._mapNode.txtEquipmentLock[i], ConfigTable.GetUIText("CharEquipment_UnEquip"))
 			end
 		else
-			self:SetPngSprite(self._mapNode.imgEquipment[i], mapEquipment.sIcon)
+			delChildren(self._mapNode.imgEquipment[i])
+			local equipPrefab
+			local sPrefab = mapEquipment.sIcon .. ".prefab"
+			if GameResourceLoader.ExistsAsset(Settings.AB_ROOT_PATH .. sPrefab) == true then
+				equipPrefab = self:LoadAsset(sPrefab)
+			end
+			if equipPrefab then
+				local goEquip = instantiate(equipPrefab, self._mapNode.imgEquipment[i])
+				goEquip.transform:Find("goFx").gameObject:SetActive(mapEquipment:GetUpgradeCount() > 0)
+			end
 		end
 	end
 end

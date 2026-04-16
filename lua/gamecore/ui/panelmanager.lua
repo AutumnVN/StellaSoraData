@@ -445,11 +445,11 @@ local ResetTouchEffect = function()
 	local sPathFormat = Settings.AB_ROOT_PATH .. "UI/CommonEx/TouchEffect/%s.prefab"
 	local sValue_Main = ConfigTable.GetConfigValue("TouchEffect_Main")
 	if type(sValue_Main) == "string" and sValue_Main ~= "" then
-		objMain = GameResourceLoader.LoadAsset(ResType.Any, string.format(sPathFormat, sValue_Main), typeof(GameObject), "UI")
+		objMain = GameResourceLoader.LoadAsset(ResType.Any, string.format(sPathFormat, sValue_Main), typeof(GameObject))
 	end
 	local sValue_Slide = ConfigTable.GetConfigValue("TouchEffect_Slide")
 	if type(sValue_Slide) == "string" and sValue_Main ~= "" then
-		objSlide = GameResourceLoader.LoadAsset(ResType.Any, string.format(sPathFormat, sValue_Slide), typeof(GameObject), "UI")
+		objSlide = GameResourceLoader.LoadAsset(ResType.Any, string.format(sPathFormat, sValue_Slide), typeof(GameObject))
 	end
 	if objMain ~= nil or objSlide ~= nil then
 		local trNode = mapUIRootTransform[AllEnum.SortingLayerName.Overlay]

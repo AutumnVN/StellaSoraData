@@ -74,6 +74,9 @@ function FormationCharInfoCtrl:OnBtnClick_Detail(btn)
 	if self.tbTeamId == nil then
 		return
 	end
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	if not self.bTrialLevel then
 		EventManager.Hit(EventId.OpenPanel, PanelId.CharBgPanel, PanelId.CharInfo, self.nCharId, self.tbTeamId, false)
 	end

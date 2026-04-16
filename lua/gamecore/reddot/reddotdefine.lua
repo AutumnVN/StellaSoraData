@@ -97,6 +97,8 @@ local RedDotDefine = {
 	Activity_PenguinCard_QuestGroup = "Activity.PenguinCard.Quest.<param>",
 	Activity_PenguinCard_Quest = "Activity.PenguinCard.Quest.<param>.<param>",
 	Activity_PenguinCard_Level = "Activity.PenguinCard.Level.<param>",
+	Activity_Group_PenguinCard_Level = "Activity_Group_New.<param>.PenguinCard",
+	Activity_Group_TrekkerVersus = "Activity.Group.<param>.TrekkerVersus",
 	ActivityLevel = "Activity_Group_New.<param>.ActivityLevel",
 	ActivityLevel_Explore = "Activity_Group_New.<param>.ActivityLevel.Explore",
 	ActivityLevel_Explore_Level = "Activity_Group_New.<param>.ActivityLevel.Explore.<param>",
@@ -175,6 +177,14 @@ local RedDotDefine = {
 	VampireTalent = "VampireTalent",
 	JointDrillQuest = "JointDrillQuest",
 	TrekkerVersusQuest = "TrekkerVersusQuest",
-	TrekkerVersusQuest_1 = "TrekkerVersusQuest_1"
+	TrekkerVersus = "Activity.Group.<param>.TrekkerVersus.<param>",
+	TrekkerVersusQuest_1 = "Activity.Group.<param>.TrekkerVersus.<param>.Quest",
+	TrekkerVersusIdleReward = "Activity.Group.<param>.TrekkerVersus.<param>.IdleReward",
+	TrekkerVersusHeatQuest = "Activity.Group.<param>.TrekkerVersus.<param>.Quest.HeatQuest",
+	TrekkerVersusDuelQuest = "Activity.Group.<param>.TrekkerVersus.<param>.Quest.DuelQuest",
+	TrekkerVersusGiftQuest = "Activity.Group.<param>.TrekkerVersus.<param>.Quest.GiftQuest",
+	TrekkerVersusBattleQuest = "Activity.Group.<param>.TrekkerVersus.<param>.Quest.BattleQuest",
+	Activity_GoldenSpy = "Activity_Group_New.<param>.GoldenSpy",
+	Activity_GoldenSpy_Group = "Activity_Group_New.<param>.GoldenSpy.Group.<param>"
 }
 return RedDotDefine

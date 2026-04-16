@@ -88,6 +88,10 @@ end
 function TravelerDuelChallengeInfoCtrl:OnEnable()
 end
 function TravelerDuelChallengeInfoCtrl:OnDisable()
+	if self._coroutineScroll ~= nil then
+		cs_coroutine.stop(self._coroutineScroll)
+		self._coroutineScroll = nil
+	end
 	self:ClearListGrids()
 end
 function TravelerDuelChallengeInfoCtrl:OnDestroy()
@@ -148,7 +152,7 @@ function TravelerDuelChallengeInfoCtrl:InitCachedSelectedGridState()
 end
 function TravelerDuelChallengeInfoCtrl:OnGridRefresh(goGrid, gridIndex)
 	if self.mapAffixGrid[goGrid] == nil then
-		self.mapAffixGrid[goGrid] = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus.TravelerDuelChallengeAffixGrid")
+		self.mapAffixGrid[goGrid] = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus_600002.TravelerDuelChallengeAffixGrid")
 	end
 	local nIdx = gridIndex + 1
 	local tbData = self.tbAllAffix[nIdx]
@@ -219,7 +223,7 @@ function TravelerDuelChallengeInfoCtrl:RefreshGridSelectState(goGrid, affixId, b
 								coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 								self._mapNode.srAffixList:ScrollToClick(grid)
 							end
-							cs_coroutine.start(wait)
+							self._coroutineScroll = cs_coroutine.start(wait)
 						end
 					else
 						selNode.gameObject:SetActive(false)
@@ -245,7 +249,7 @@ function TravelerDuelChallengeInfoCtrl:GetGridByDataID(dataID)
 end
 function TravelerDuelChallengeInfoCtrl:OnBtnClickGrid(goGrid, gridIndex)
 	if self.mapAffixGrid[goGrid] == nil then
-		self.mapAffixGrid[goGrid] = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus.TravelerDuelChallengeAffixGrid")
+		self.mapAffixGrid[goGrid] = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus_600002.TravelerDuelChallengeAffixGrid")
 	end
 	if not self.mapAffixGrid[goGrid].bUnlock then
 		EventManager.Hit(EventId.OpenMessageBox, orderedFormat(ConfigTable.GetUIText("TD_AffixCondTips" .. self.mapAffixGrid[goGrid].nType), self.mapAffixGrid[goGrid].nCond))
@@ -334,7 +338,7 @@ function TravelerDuelChallengeInfoCtrl:ClearListGrids()
 	end
 	self.tbAffixGrid = {}
 	if self.mapAffixGrid ~= nil then
-		for go, mapCtrl in ipairs(self.mapAffixGrid) do
+		for go, mapCtrl in pairs(self.mapAffixGrid) do
 			self:UnbindCtrlByNode(mapCtrl)
 		end
 	end

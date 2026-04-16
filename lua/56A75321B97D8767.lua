@@ -201,7 +201,7 @@ end
 function ThrowGiftCtrl:SetTarget(nCur)
 	NovaAPI.SetTMPText(self._mapNode.TMPTarget, string.format(self.mapLevelCfgData.ThrowGiftLevelCondDesc .. " (<color=#08d3d4>%d</color>/%d)", nCur, self.mapLevelCfgData.throwGiftLevelParams))
 end
-function ThrowGiftCtrl:OpenItemSelect(tbItem, selectCallback)
+function ThrowGiftCtrl:OpenItemSelect(tbItems, selectCallback)
 	local pos = 1
 	if self.nCurItem[1] == 0 or self.nCurItem[1] == nil then
 		pos = 1
@@ -210,14 +210,23 @@ function ThrowGiftCtrl:OpenItemSelect(tbItem, selectCallback)
 	elseif self.tbItemIdx[1] > self.tbItemIdx[2] then
 		pos = 2
 	end
-	local callback = function(nIdx)
+	local callback = function(tbIdx)
 		if selectCallback ~= nil and type(selectCallback) == "function" then
-			selectCallback(nIdx)
+			selectCallback(tbIdx)
 		end
-		self.nCurItem[pos] = tbItem[nIdx]
-		self.tbItemIdx[pos] = math.max(self.tbItemIdx[1], self.tbItemIdx[2]) + 1
-		self._mapNode.rtItem[pos]:SetItem(tbItem[nIdx])
-		self._mapNode.rtItem[pos]:PlayAnim(3)
+		if #tbItems <= 1 then
+			self.nCurItem[pos] = tbItems[1][tbIdx[1]]
+			self.tbItemIdx[pos] = math.max(self.tbItemIdx[1], self.tbItemIdx[2]) + 1
+			self._mapNode.rtItem[pos]:SetItem(tbItems[1][tbIdx[1]])
+			self._mapNode.rtItem[pos]:PlayAnim(3)
+		else
+			self.tbItemIdx[1] = self.tbItemIdx[1] + 1
+			self.tbItemIdx[2] = self.tbItemIdx[2] + 1
+			self._mapNode.rtItem[1]:SetItem(tbItems[1][tbIdx[1]])
+			self._mapNode.rtItem[1]:PlayAnim(3)
+			self._mapNode.rtItem[2]:SetItem(tbItems[2][tbIdx[2]])
+			self._mapNode.rtItem[2]:PlayAnim(3)
+		end
 	end
 	self._mapNode.rtItemSelect:OpenPanel(tbItem, callback, pos)
 end

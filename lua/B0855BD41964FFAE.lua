@@ -1,11 +1,5 @@
 local TrekkerVersusQuestCtrl = class("TrekkerVersusQuestCtrl", BaseCtrl)
 TrekkerVersusQuestCtrl._mapNodeConfig = {
-	snapshot = {},
-	snapshotBtn = {
-		sNodeName = "snapshot",
-		sComponentName = "Button",
-		callback = "ClosePanel"
-	},
 	btn_Close = {sComponentName = "Button", callback = "ClosePanel"},
 	btnClose_quest = {sComponentName = "UIButton", callback = "ClosePanel"},
 	aniWindow = {sNodeName = "rtWindow", sComponentName = "Animator"},
@@ -18,12 +12,12 @@ TrekkerVersusQuestCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Receive"
 	},
-	txtWindowTitle = {
+	txtWindowTitleQuest = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "TD_QusetTitle"
 	},
 	btnRewardTab = {
-		nCount = 3,
+		nCount = 4,
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_RewardTab"
 	},
@@ -42,6 +36,11 @@ TrekkerVersusQuestCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "TD_GiftQuestTab"
 	},
+	txtTabBattle = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "TD_BattleQuestTab"
+	},
 	rtHeatQuest = {},
 	lsvHeatQuest = {
 		sComponentName = "LoopScrollView"
@@ -52,6 +51,8 @@ TrekkerVersusQuestCtrl._mapNodeConfig = {
 	},
 	txtCurHeatNum = {sComponentName = "TMP_Text"},
 	rtDuelHistory = {},
+	rtListHasCurDuel = {},
+	rtListNoCurDuel = {},
 	txtDuelHistoryTitle = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "TD_DuelHistoryTitle"
@@ -59,54 +60,177 @@ TrekkerVersusQuestCtrl._mapNodeConfig = {
 	lsvDuelHistory = {
 		sComponentName = "LoopScrollView"
 	},
+	lsvDuelHistoryNoCurDuel = {
+		sComponentName = "LoopScrollView"
+	},
+	goHasCurDuel = {},
 	goGridMain = {
 		sCtrlName = "Game.UI.TrekkerVersus_600002.TrekkerVersusDuelHistoryGridCtrl"
+	},
+	txtNoDuelHistory = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "TD_NoDuelHistory"
+	},
+	btnDuelHistoryReceiveAll = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_DuelHistoryReceiveAll"
+	},
+	TMPDuelHistoryReceiveAll = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Quest_Btn_ReceiveAll"
 	},
 	rtGiftQuest = {},
 	lsvGiftQuest = {
 		sComponentName = "LoopScrollView"
-	}
+	},
+	rtBattleQuest = {},
+	lsvBattleQuest = {
+		sComponentName = "LoopScrollView"
+	},
+	txtGetHighestReward = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "TD_GetHighestReward"
+	},
+	btnReceiveAllQuest = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_ReceiveAll"
+	},
+	TMPReceiveAllQuest = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Quest_Btn_ReceiveAll"
+	},
+	goRedDotRewardTab1 = {},
+	goRedDotRewardTab2 = {},
+	goRedDotRewardTab3 = {},
+	goRedDotRewardTab4 = {}
 }
 TrekkerVersusQuestCtrl._mapEventConfig = {
-	TrekkerVersusAffixJump = "OnEvent_TrekkerVersusAffixJump"
+	TrekkerVersusAffixJump = "OnEvent_TrekkerVersusAffixJump",
+	TrekkerVersusHeatQuestRefresh = "OnEvent_TrekkerVersusHeatQuestRefresh",
+	UpdateTrekkerVersusHotValue = "OnEvent_UpdateTrekkerVersusHotValue",
+	TrekkerVersusQuestRefresh = "OnEvent_TrekkerVersusQuestRefresh"
 }
 TrekkerVersusQuestCtrl._mapRedDotConfig = {}
 function TrekkerVersusQuestCtrl:RefreshHeatQuestTab()
+	if self.tbHeatQuest == nil then
+		self.tbHeatQuest = {}
+		local foreachQuestData = function(mapQuestData)
+			table.insert(self.tbHeatQuest, mapQuestData)
+		end
+		ForEachTableLine(DataTable.TravelerDuelHotValueRewards, foreachQuestData)
+	end
+	local mapHotValue = self._mapActData:GetCurHeatValue()
+	local nSelfHotValue = mapHotValue.nSelfHotValue
+	NovaAPI.SetTMPText(self._mapNode.txtCurHeatNum, nSelfHotValue)
+	local tbHotValueRewardIds = self._mapActData:GetHotValueRewardTable() or {}
+	table.sort(self.tbHeatQuest, function(a, b)
+		local aStatus = 2
+		local bStatus = 2
+		if a.TargetValue <= nSelfHotValue then
+			if table.indexof(tbHotValueRewardIds, a.Id) <= 0 then
+				aStatus = 1
+			else
+				aStatus = 3
+			end
+		end
+		if b.TargetValue <= nSelfHotValue then
+			if table.indexof(tbHotValueRewardIds, b.Id) <= 0 then
+				bStatus = 1
+			else
+				bStatus = 3
+			end
+		end
+		if aStatus ~= bStatus then
+			return aStatus < bStatus
+		else
+			return a.Id < b.Id
+		end
+	end)
 	self._mapNode.lsvHeatQuest:SetAnim(0.05)
-	self._mapNode.lsvHeatQuest:Init(#self._tbAllQuestData, self, self.OnGridRefresh, self.OnBtnClickGrid)
-	NovaAPI.SetText(self._mapNode.txtCurHeatTitle, self._mapActData:GetCurHeatValue().nSelfHotValue)
+	self._mapNode.lsvHeatQuest:Init(#self.tbHeatQuest, self, self.OnGridRefresh)
 end
 function TrekkerVersusQuestCtrl:RefreshDuelHistoryTab()
 	self._mapNode.lsvDuelHistory:SetAnim(0.05)
 	local mapCurDuelData = self._mapActData:GetCurHeatValue()
+	self._mapNode.rtListHasCurDuel:SetActive(self.bOpen)
+	self._mapNode.rtListNoCurDuel:SetActive(not self.bOpen)
+	self._mapNode.goGridMain.gameObject:SetActive(self.bOpen)
+	self._mapNode.goHasCurDuel:SetActive(self.bOpen)
+	if self.bOpen == false then
+		self._mapNode.lsvDuelHistoryNoCurDuel:Init(#self.tbDuelHistory, self, self.OnDuelHistoryGridRefresh)
+		return
+	end
+	local nCurDay = self._mapActData:GetCurDayNum()
+	local foreachDuelHistory = function(mapDuelHistoryData)
+		if mapDuelHistoryData.DayNum == nCurDay then
+			self.nCurDuelId = mapDuelHistoryData.Id
+		end
+	end
+	ForEachTableLine(DataTable.TravelerDuelTarget, foreachDuelHistory)
 	local mapInfo = {
+		TargetId = self.nCurDuelId,
 		SelfHotValue = mapCurDuelData.nSelfHotValue,
 		RivalHotValue = mapCurDuelData.nRivalHotValue
 	}
-	self._mapNode.goGridMain:Refresh(mapInfo, self._mapActData:GetCurDayNum(), true)
+	self._mapNode.goGridMain:Refresh(mapInfo, true, self._mapActData)
 	self._mapNode.lsvDuelHistory:Init(#self.tbDuelHistory, self, self.OnDuelHistoryGridRefresh)
+	self._mapNode.lsvDuelHistory.gameObject:SetActive(#self.tbDuelHistory > 0)
+	self._mapNode.txtNoDuelHistory.gameObject:SetActive(#self.tbDuelHistory <= 0)
 end
 function TrekkerVersusQuestCtrl:OnDuelHistoryGridRefresh(goGrid, nIdx)
 	local nIndex = nIdx + 1
-	if self._mapGridCtrl[goGrid] == nil then
-		local gridCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus_600002.TrekkerVersusDuelHistoryGridCtrl")
-		self._mapGridCtrl[goGrid] = gridCtrl
+	if self._mapGridCtrl[goGrid] ~= nil then
+		self:UnbindCtrlByNode(self._mapGridCtrl[goGrid])
+		self._mapGridCtrl[goGrid] = nil
 	end
+	local gridCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus_600002.TrekkerVersusDuelHistoryGridCtrl")
+	self._mapGridCtrl[goGrid] = gridCtrl
 	local mapDuelHistoryData = self.tbDuelHistory[nIndex]
-	self._mapGridCtrl[goGrid]:Refresh(mapDuelHistoryData, nIndex, false)
+	self._mapGridCtrl[goGrid]:Refresh(mapDuelHistoryData, false, self._mapActData)
 end
 function TrekkerVersusQuestCtrl:RefreshGiftQuestTab()
 	self._mapNode.lsvGiftQuest:SetAnim(0.05)
-	self._mapNode.lsvGiftQuest:Init(#self._tbAllQuestData, self, self.OnGiftQuestGridRefresh, self.OnBtnClickGrid)
+	self._mapNode.lsvGiftQuest:Init(#self.tbGiftQuest, self, self.OnGiftQuestGridRefresh)
 end
 function TrekkerVersusQuestCtrl:OnGiftQuestGridRefresh(goGrid, nIdx)
 	local nIndex = nIdx + 1
-	if self._mapGridCtrl[goGrid] == nil then
-		local gridCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus_600002.TrekkerVersusGiftQuestGridCtrl")
-		self._mapGridCtrl[goGrid] = gridCtrl
+	if self._mapGridCtrl[goGrid] ~= nil then
+		self:UnbindCtrlByNode(self._mapGridCtrl[goGrid])
+		self._mapGridCtrl[goGrid] = nil
 	end
-	local mapGiftQuestData = self._tbAllQuestData[nIndex]
-	self._mapGridCtrl[goGrid]:Refresh(mapGiftQuestData)
+	local gridCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus_600002.TrekkerVersusGiftQuestGridCtrl")
+	self._mapGridCtrl[goGrid] = gridCtrl
+	local mapGiftQuestData = self.tbGiftQuest[nIndex]
+	self._mapGridCtrl[goGrid]:Refresh(mapGiftQuestData, self._mapActData)
+end
+function TrekkerVersusQuestCtrl:RefreshBattleQuestTab()
+	self._mapNode.lsvBattleQuest:SetAnim(0.05)
+	self._mapNode.lsvBattleQuest:Init(#self.tbBattleQuest, self, self.OnBattleQuestGridRefresh)
+end
+function TrekkerVersusQuestCtrl:OnBattleQuestGridRefresh(goGrid, nIdx)
+	local nIndex = nIdx + 1
+	if self._mapGridCtrl[goGrid] ~= nil then
+		self:UnbindCtrlByNode(self._mapGridCtrl[goGrid])
+		self._mapGridCtrl[goGrid] = nil
+	end
+	local gridCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus_600002.TrekkerVersusGiftQuestGridCtrl")
+	self._mapGridCtrl[goGrid] = gridCtrl
+	local mapBattleQuestData = self.tbBattleQuest[nIndex]
+	self._mapGridCtrl[goGrid]:Refresh(mapBattleQuestData, self._mapActData)
+end
+function TrekkerVersusQuestCtrl:GetBattleGiftQuestTable()
+	self.tbBattleQuest = {}
+	self.tbGiftQuest = {}
+	for k, mapQuestData in pairs(self._tbAllQuestData) do
+		local mapQuestCfgData = ConfigTable.GetData("TravelerDuelChallengeQuest", mapQuestData.Id)
+		if mapQuestCfgData ~= nil then
+			if mapQuestCfgData.CompleteCond ~= GameEnum.questCompleteCond.TrekkerVersusFansWithSpecificLevel then
+				table.insert(self.tbBattleQuest, mapQuestData)
+			else
+				table.insert(self.tbGiftQuest, mapQuestData)
+			end
+		end
+	end
 end
 function TrekkerVersusQuestCtrl:Awake()
 	self._mapGridCtrl = {}
@@ -120,6 +244,11 @@ function TrekkerVersusQuestCtrl:OnEnable()
 	self._mapNode.rtWindow.gameObject:SetActive(false)
 end
 function TrekkerVersusQuestCtrl:OnDisable()
+	if self._coroutineOpen ~= nil then
+		cs_coroutine.stop(self._coroutineOpen)
+		self._coroutineOpen = nil
+	end
+	self:UnbindAllGrids()
 end
 function TrekkerVersusQuestCtrl:OnDestroy()
 end
@@ -131,7 +260,6 @@ function TrekkerVersusQuestCtrl:ClosePanel()
 	self:AddTimer(1, 0.3, function()
 		self.gameObject:SetActive(false)
 		self._mapNode.rtWindow.gameObject:SetActive(false)
-		self:UnbindAllGrids()
 	end, true, true, true, nil)
 end
 function TrekkerVersusQuestCtrl:UnbindAllGrids()
@@ -140,29 +268,54 @@ function TrekkerVersusQuestCtrl:UnbindAllGrids()
 	end
 	self._mapGridCtrl = {}
 end
-function TrekkerVersusQuestCtrl:OpenPanel(mapActData)
+function TrekkerVersusQuestCtrl:OpenPanel(mapActData, nTab, bOpen, nActId)
 	self.gameObject:SetActive(true)
 	self._mapActData = mapActData
+	self.bOpen = bOpen
 	self._tbAllQuestData = self._mapActData:GetAllQuestData()
+	if self._tbAllQuestData ~= nil then
+		self:GetBattleGiftQuestTable()
+	end
 	self.tbDuelHistory = self._mapActData:GetDuelHistory()
+	if self.tbDuelHistory == nil then
+		self.tbDuelHistory = {}
+	end
+	local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(nActId)
+	if bInActGroup then
+		RedDotManager.RegisterNode(RedDotDefine.TrekkerVersusHeatQuest, {nActGroupId, nActId}, self._mapNode.goRedDotRewardTab1)
+		RedDotManager.RegisterNode(RedDotDefine.TrekkerVersusDuelQuest, {nActGroupId, nActId}, self._mapNode.goRedDotRewardTab2)
+		RedDotManager.RegisterNode(RedDotDefine.TrekkerVersusGiftQuest, {nActGroupId, nActId}, self._mapNode.goRedDotRewardTab3)
+		RedDotManager.RegisterNode(RedDotDefine.TrekkerVersusBattleQuest, {nActGroupId, nActId}, self._mapNode.goRedDotRewardTab4)
+	end
 	local wait = function()
-		NovaAPI.UIEffectSnapShotCapture(self._mapNode.snapshot)
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		self._mapNode.rtWindow.gameObject:SetActive(true)
 		self._mapNode.aniWindow:Play("t_window_04_t_in")
-		self:OnBtnClick_RewardTab(nil, 1)
+		self:OnBtnClick_RewardTab(nil, nTab)
+		if nTab == self.nRewardTabIndex then
+			if nTab == 1 then
+				self:RefreshHeatQuestTab()
+			elseif nTab == 2 then
+				self:RefreshDuelHistoryTab()
+			elseif nTab == 3 then
+				self:RefreshGiftQuestTab()
+			elseif nTab == 4 then
+				self:RefreshBattleQuestTab()
+			end
+		end
 	end
-	cs_coroutine.start(wait)
+	self._coroutineOpen = cs_coroutine.start(wait)
 end
 function TrekkerVersusQuestCtrl:OnGridRefresh(goGrid, nIdx)
-	local nIdx = nIdx + 1
-	if self._mapGridCtrl[goGrid] == nil then
-		local gridCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus.TrekkerVersusQuestGridCtrl")
-		self._mapGridCtrl[goGrid] = gridCtrl
+	local nIndex = nIdx + 1
+	if self._mapGridCtrl[goGrid] ~= nil then
+		self:UnbindCtrlByNode(self._mapGridCtrl[goGrid])
+		self._mapGridCtrl[goGrid] = nil
 	end
-	local mapQuestData
-	mapQuestData = self._tbAllQuestData[nIdx]
-	self._mapGridCtrl[goGrid]:Refresh(mapQuestData)
+	local gridCtrl = self:BindCtrlByNode(goGrid, "Game.UI.TrekkerVersus_600002.TrekkerVersusQuestGridCtrl")
+	self._mapGridCtrl[goGrid] = gridCtrl
+	local mapQuestData = self.tbHeatQuest[nIndex]
+	self._mapGridCtrl[goGrid]:Refresh(mapQuestData, self._mapActData)
 end
 function TrekkerVersusQuestCtrl:OnBtnClick_RewardTab(btn, index)
 	if self.nRewardTabIndex == index then
@@ -170,41 +323,101 @@ function TrekkerVersusQuestCtrl:OnBtnClick_RewardTab(btn, index)
 	end
 	self.nRewardTabIndex = index
 	for i = 1, #self._mapNode.btnRewardTab do
-		local objBtn = self._mapNode.btnRewardTab[i]
-		local imgOn = objBtn.transform:Find("imgTabOnBg")
-		local imgOff = objBtn.transform:Find("imgTabOffBg")
-		imgOn:SetActive(i == index)
-		imgOff:SetActive(i ~= index)
+		local objAnimRoot = self._mapNode.btnRewardTab[i].transform:Find("AnimRoot")
+		local imgOn = objAnimRoot:Find("imgTabOnBg")
+		local imgOff = objAnimRoot:Find("imgTabOffBg")
+		imgOn.gameObject:SetActive(i == index)
+		imgOff.gameObject:SetActive(i ~= index)
 	end
 	self._mapNode.rtHeatQuest:SetActive(index == 1)
 	self._mapNode.rtDuelHistory:SetActive(index == 2)
 	self._mapNode.rtGiftQuest:SetActive(index == 3)
+	self._mapNode.rtBattleQuest:SetActive(index == 4)
+	self._mapNode.btnReceiveAllQuest.gameObject:SetActive(index == 3 or index == 4)
 	if index == 1 then
 		self:RefreshHeatQuestTab()
 	elseif index == 2 then
 		self:RefreshDuelHistoryTab()
 	elseif index == 3 then
 		self:RefreshGiftQuestTab()
+	elseif index == 4 then
+		self:RefreshBattleQuestTab()
 	end
-end
-function TrekkerVersusQuestCtrl:OnBtnClickGrid()
-	self:OnBtnClick_Receive()
 end
 function TrekkerVersusQuestCtrl:OnBtnClick_Receive()
-	local refershList = function()
-		self._tbAllQuestData = self._mapActData:GetAllQuestData()
-		self:UnbindAllGrids()
-		self._mapNode.lsvQuest:SetAnim(0.05)
-		self._mapNode.lsvQuest:Init(#self._tbAllQuestData, self, self.OnGridRefresh, self.OnBtnClickGrid)
+	local mapCurHotValue = self._mapActData:GetCurHeatValue()
+	local nCurSelfHotValue = mapCurHotValue.nSelfHotValue
+	local tbHotValueRewardIds = self._mapActData:GetHotValueRewardTable()
+	local bHeatQuestVisible = false
+	local foreachHeatReward = function(mapData)
+		if mapData.TargetValue <= nCurSelfHotValue and table.indexof(tbHotValueRewardIds, mapData.Id) <= 0 then
+			bHeatQuestVisible = true
+		end
 	end
-	local callback = function(msgData)
-		UTILS.OpenReceiveByChangeInfo(msgData.Change, function()
-			refershList()
-		end)
+	ForEachTableLine(DataTable.TravelerDuelHotValueRewards, foreachHeatReward)
+	if bHeatQuestVisible then
+		EventManager.Hit("TrekkerVersusReceiveHeatQuest", 1)
+	else
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Quest_ReceiveNone"))
 	end
-	self._mapActData:ReceiveQuestReward(callback)
+end
+function TrekkerVersusQuestCtrl:OnBtnClick_DuelHistoryReceiveAll()
+	local nChallengeStartTime = self._mapActData:GetChallengeStartTime()
+	local bStreamerDuelOpen = self._mapActData:IsOpenStreamerDuel(nChallengeStartTime)
+	local nRivalCount = self._mapActData:GetRivalCount()
+	local nDayNum = self._mapActData:GetCurDayNum()
+	local nPassedDuelCount = bStreamerDuelOpen and nDayNum - 1 or nRivalCount
+	if nDayNum == 0 then
+		nPassedDuelCount = nRivalCount
+	end
+	local nReceivedDuelReward = #self._mapActData:GetDuelRewardTable()
+	local bCanReceive = nPassedDuelCount > nReceivedDuelReward
+	if bCanReceive then
+		EventManager.Hit("TrekkerVersusReceiveHeatQuest", 2)
+	else
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Quest_ReceiveNone"))
+	end
+end
+function TrekkerVersusQuestCtrl:OnBtnClick_ReceiveAll()
+	local bCanReceive = false
+	for k, v in pairs(self._tbAllQuestData) do
+		if v.Status == 1 then
+			bCanReceive = true
+			break
+		end
+	end
+	if bCanReceive then
+		self._mapActData:ReceiveQuestReward()
+	else
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Quest_ReceiveNone"))
+	end
 end
 function TrekkerVersusQuestCtrl:OnEvent_TrekkerVersusAffixJump()
 	self:ClosePanel()
+end
+function TrekkerVersusQuestCtrl:OnEvent_TrekkerVersusHeatQuestRefresh()
+	if self._mapActData == nil then
+		return
+	end
+	self:RefreshHeatQuestTab()
+end
+function TrekkerVersusQuestCtrl:OnEvent_UpdateTrekkerVersusHotValue(nSelfHotValue, nRivalHotValue)
+	if self._mapActData == nil then
+		return
+	end
+	NovaAPI.SetTMPText(self._mapNode.txtCurHeatNum, nSelfHotValue)
+	local mapInfo = {
+		TargetId = self.nCurDuelId,
+		SelfHotValue = nSelfHotValue,
+		RivalHotValue = nRivalHotValue
+	}
+	self._mapNode.goGridMain:Refresh(mapInfo, true, self._mapActData)
+	self:RefreshHeatQuestTab()
+end
+function TrekkerVersusQuestCtrl:OnEvent_TrekkerVersusQuestRefresh()
+	self._tbAllQuestData = self._mapActData:GetAllQuestData()
+	self:GetBattleGiftQuestTable()
+	self:RefreshGiftQuestTab()
+	self:RefreshBattleQuestTab()
 end
 return TrekkerVersusQuestCtrl

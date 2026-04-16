@@ -177,25 +177,6 @@ function DepotCharInfoCtrl:RefreshInfo()
 		self._mapNode.rtInfo:Refresh(mapChar, mapCfg)
 	end
 end
-function DepotCharInfoCtrl:RefreshEquipment(mapChar)
-	self.tbEquipment = clone(mapChar.tbEquipment)
-	local tbSlot = PlayerData.Equipment:GetSlotCfgWithIndex()
-	for i, v in ipairs(tbSlot) do
-		local mapEquipment = mapChar.tbEquipmentSlot[v.nSlotId]
-		local bEmpty = mapEquipment == nil
-		self._mapNode.imgEquipment[i].gameObject:SetActive(not bEmpty)
-		self._mapNode.goEquipment[i].gameObject:SetActive(bEmpty)
-		if bEmpty then
-			if mapChar.nLevel < v.nLevel then
-				NovaAPI.SetTMPText(self._mapNode.txtEquipmentLock[i], orderedFormat(ConfigTable.GetUIText("Equipment_SlotActiveLevel"), v.nLevel))
-			else
-				NovaAPI.SetTMPText(self._mapNode.txtEquipmentLock[i], ConfigTable.GetUIText("CharEquipment_UnEquip"))
-			end
-		else
-			self:SetPngSprite(self._mapNode.imgEquipment[i], mapEquipment.sIcon)
-		end
-	end
-end
 function DepotCharInfoCtrl:Clear()
 end
 function DepotCharInfoCtrl:Awake()

@@ -33,7 +33,7 @@ local SKILL_SHOOT = 1
 local SKILL_ULTRA = 4
 BreakOutPlaySkillCtrl._mapEventConfig = {
 	LoadLevelRefresh = "OnEvent_LoadLevelRefresh",
-	PlayerAdventureActorCastSkill = "OnEvent_UseSkillSucc",
+	PlayerAdventureActorCastSkill = "OnEvent_UseSkillSuc",
 	ButtonStateChange = "OnEvent_BtnStateChange",
 	SetVariableJoystickMode = "OnEvent_SetVariableJoystickMode",
 	BrickActorEnergy = "OnEvent_RefreshSkillState",
@@ -63,7 +63,12 @@ function BreakOutPlaySkillCtrl:Awake()
 			nHoldThreshold = 0.1
 		}
 	}
-	if self.bIsRegister == nil or not self.bIsRegister and NovaAPI.IsMobilePlatform() or NovaAPI.IsEditorPlatform() then
+	self.nCurPlayerId = nil
+	self.skillTipTime = 0
+	self.dodgeTipTime = 0
+end
+function BreakOutPlaySkillCtrl:OnEnable()
+	if NovaAPI.IsMobilePlatform() or NovaAPI.IsEditorPlatform() then
 		self._mapNode.goJoystick:SetActive(true)
 		NovaAPI.RegisterVirtualJoystick("Horizontal", "Vertical", self._mapNode.goJoystick)
 	else
@@ -72,35 +77,23 @@ function BreakOutPlaySkillCtrl:Awake()
 	local nW = math.floor(Settings.CURRENT_CANVAS_FULL_RECT_WIDTH)
 	local nH = math.floor(Settings.CURRENT_CANVAS_FULL_RECT_HEIGHT)
 	self._mapNode.rtJoystick.sizeDelta = Vector2(nW / 2, nH * 2 / 3)
-	if self.bIsRegister == nil or not self.bIsRegister then
-		for nIndex, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
-			NovaAPI.RegisterRealButton(v.sName, v.nHoldThreshold)
-			local go = v.BreakOutSkillBtnCtrl ~= nil and v.BreakOutSkillBtnCtrl.gameObject or v.goBtn
-			NovaAPI.RegisterVirtualButton(v.sName, go)
-			NovaAPI.SetButtonExHoldThreshold(go, v.nHoldThreshold)
-		end
+	for _, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
+		NovaAPI.RegisterRealButton(v.sName, v.nHoldThreshold)
+		local go = v.BreakOutSkillBtnCtrl ~= nil and v.BreakOutSkillBtnCtrl.gameObject or v.goBtn
+		NovaAPI.RegisterVirtualButton(v.sName, go)
+		NovaAPI.SetButtonExHoldThreshold(go, v.nHoldThreshold)
 	end
-	self.nCurPlayerId = nil
-	if self.bIsRegister == nil or not self.bIsRegister then
-		self:SetKeyLayout()
-		self:SetActionBind()
-	end
-	self.skillTipTime = 0
-	self.dodgeTipTime = 0
-	self.bIsRegister = true
-end
-function BreakOutPlaySkillCtrl:OnEnable()
+	self:SetKeyLayout()
+	self:SetActionBind()
 	self:Refresh()
 	self:OnEvent_BreakOutPlaySkillVisible(false)
 end
 function BreakOutPlaySkillCtrl:OnDisable()
 	NovaAPI.UnRegisterVirtualJoystick("Horizontal", "Vertical")
-	for nIndex, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
+	for _, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
 		NovaAPI.UnRegisterRealButton(v.sName)
 		NovaAPI.UnRegisterVirtualButton(v.sName)
 	end
-	self.tbDefine_BreakOutPlayBtn = nil
-	self.bIsRegister = false
 end
 function BreakOutPlaySkillCtrl:SetKeyLayout()
 	self:SetKeyPos(self._mapNode.break_Skill.gameObject:GetComponent("RectTransform"), self._mapNode.Skill_Pos)
@@ -121,8 +114,8 @@ function BreakOutPlaySkillCtrl:OnEvent_LoadLevelRefresh()
 	end
 	cs_coroutine.start(wait)
 end
-function BreakOutPlaySkillCtrl:OnEvent_UseSkillSucc(nCharId, nSkillId)
-	for i, v in ipairs(self.tbDefine_SkillBtn) do
+function BreakOutPlaySkillCtrl:OnEvent_UseSkillSuc(nCharId, nSkillId)
+	for i, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
 		if v.nCharId == nCharId and v.nSkillId == nSkillId and v.BreakOutSkillBtnCtrl ~= nil then
 			v.BreakOutSkillBtnCtrl:SetMainAlpha(false)
 		end
@@ -180,16 +173,6 @@ function BreakOutPlaySkillCtrl:OnEvent_ClearState()
 		breakOutSkillBtnCtrl:RefreshSkillBtn(0.0, nMaxSkillEnergy, 0.0, nTotalCDTime)
 	end
 end
-function BreakOutPlaySkillCtrl:OnEvent_BtnStateChandge(sBtnName, nBtnState)
-	local func_CheckBtnState = function(tb)
-		for i, v in ipairs(tb) do
-			if v.sName == sBtnName and v.BreakOutSkillBtnCtrl ~= nil then
-				v.BreakOutSkillBtnCtrl:BtnStateChange(nBtnState)
-			end
-		end
-	end
-	func_CheckBtnState(self.tbDefine_SkillBtn)
-end
 function BreakOutPlaySkillCtrl:SetActionBind()
 	local set = function(config)
 		local bHas, tbControl = InputManagerIns:GetInputActionConfig(config.sName)
@@ -219,24 +202,6 @@ end
 function BreakOutPlaySkillCtrl:EnableBtnControl()
 	for index, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
 		NovaAPI.SetRealButtonActive(v.sName, true)
-	end
-end
-function BreakOutPlaySkillCtrl:OnEvent_ExecuteRealButton(key)
-	if key == "A" then
-		local bEnable = NovaAPI.IsInputEnabled()
-		if bEnable == false then
-			return
-		end
-		if self.tbDefine_SkillBtn and self.tbDefine_SkillBtn[1].BreakOutSkillBtnCtrl.bInCD == false then
-			local nUIType = GamepadUIManager.GetCurUIType()
-			if nUIType == AllEnum.GamepadUIType.Keyboard then
-				EventManager.Hit("Upload_Dodge_Event", "Keyboard")
-			elseif nUIType == AllEnum.GamepadUIType.Mouse then
-				EventManager.Hit("Upload_Dodge_Event", "Mouse")
-			else
-				EventManager.Hit("Upload_Dodge_Event", "Other")
-			end
-		end
 	end
 end
 function BreakOutPlaySkillCtrl:OnEvent_SetVariableJoystickMode()

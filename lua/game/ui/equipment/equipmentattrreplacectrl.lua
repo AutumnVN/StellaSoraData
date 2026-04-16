@@ -70,8 +70,8 @@ end
 function EquipmentAttrReplaceCtrl:Refresh(sName)
 	NovaAPI.SetTMPText(self._mapNode.txtReplaceName, sName)
 	for i = 1, 4 do
-		self._mapNode.goPropertyBefore[i]:SetProperty(self.mapEquipment.tbAffix[i], self.nCharId)
-		self._mapNode.goPropertyAfter[i]:SetProperty(self.mapEquipment.tbAlterAffix[i], self.nCharId)
+		self._mapNode.goPropertyBefore[i]:SetProperty(self.mapEquipment.tbAffix[i], self.nCharId, false, self.mapEquipment.tbUpgradeCount[i])
+		self._mapNode.goPropertyAfter[i]:SetProperty(self.mapEquipment.tbAlterAffix[i], self.nCharId, false, self.mapEquipment.tbAlterUpgradeCount[i])
 	end
 end
 function EquipmentAttrReplaceCtrl:PlayInAni()
@@ -102,12 +102,37 @@ function EquipmentAttrReplaceCtrl:OnBtnClick_Close()
 	self:PlayOutAni()
 end
 function EquipmentAttrReplaceCtrl:OnBtnClick_Replace()
-	local callback = function()
-		self:PlayOutAni()
-		if self.callback then
-			self.callback()
+	local replace = function()
+		local callback = function()
+			self:PlayOutAni()
+			if self.callback then
+				self.callback()
+			end
+		end
+		PlayerData.Equipment:SendCharGemReplaceAttributeReq(self.nCharId, self.nSlotId, self.nSelectGemIndex, callback)
+	end
+	local nAll = 0
+	if self.mapEquipment.tbUpgradeCount then
+		for _, v in ipairs(self.mapEquipment.tbUpgradeCount) do
+			nAll = nAll + v
 		end
 	end
-	PlayerData.Equipment:SendCharGemReplaceAttributeReq(self.nCharId, self.nSlotId, self.nSelectGemIndex, callback)
+	local nAlterAll = 0
+	if self.mapEquipment.tbAlterUpgradeCount then
+		for _, v in ipairs(self.mapEquipment.tbAlterUpgradeCount) do
+			nAlterAll = nAlterAll + v
+		end
+	end
+	if nAlterAll == nAll then
+		replace()
+	else
+		local msg = {
+			nType = AllEnum.MessageBox.Confirm,
+			sContent = ConfigTable.GetUIText("Equipment_ReplaceWarning_HasUpgrade"),
+			callbackConfirmAfterClose = replace,
+			bBlur = false
+		}
+		EventManager.Hit(EventId.OpenMessageBox, msg)
+	end
 end
 return EquipmentAttrReplaceCtrl

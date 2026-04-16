@@ -80,7 +80,6 @@ function BattlePassPremiumBuyCtrl:OpenPanel(nCurType, nSeasonId, nVersion)
 	self.sLuxuryProductId = mapBattlePassCfgData.LuxuryProductId
 	self.sComplementaryProductId = mapBattlePassCfgData.ComplementaryProductId
 	NovaAPI.SetTMPText(self._mapNode.txtBtnbtnBuyPremium, tostring(mapBattlePassCfgData.PremiumShowPrice))
-	local nSPremiumPrice = nCurType == 0 and mapBattlePassCfgData.LuxuryPrice or mapBattlePassCfgData.ComplementaryPrice
 	if self.nSeasonId >= 6 then
 		self:SetPngSprite(self._mapNode.imgBattlePassLogo, "Icon/ArtText/CharSkin_ArtText_" .. mapBattlePassCfgData.Cover .. "_lang")
 	else

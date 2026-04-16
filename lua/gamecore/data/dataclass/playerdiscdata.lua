@@ -841,8 +841,9 @@ function PlayerDiscData:GetTrialDiscById(nId)
 	if not nId then
 		return
 	end
-	if self._mapTrialDisc[nId] == nil then
+	if self._mapTrialDisc == nil or self._mapTrialDisc[nId] == nil then
 		printLog(string.format("\232\175\165\230\152\159\231\155\152\228\184\141\229\173\152\229\156\168\230\136\150\230\150\176\232\142\183\229\190\151, \229\148\175\228\184\128Id: %d", nId))
+		return
 	end
 	return self._mapTrialDisc[nId]
 end
@@ -905,6 +906,24 @@ function PlayerDiscData:CalcTrialInfoInBuild(nTrialId, tbSecondarySkill)
 	discInfo.skillInfos = tbSkillInfo
 	discInfo.discLevel = discData.nLevel
 	return discInfo
+end
+function PlayerDiscData:GetRankDetailDisc(nId)
+	if not nId then
+		return
+	end
+	if not nId then
+		printError("GenerateLocalDiscData Failed!")
+		return
+	end
+	local mapDisc = {}
+	mapDisc.Id = nId
+	mapDisc.Exp = 0
+	mapDisc.Level = 1
+	mapDisc.Phase = 0
+	mapDisc.Star = 0
+	mapDisc.Read = false
+	local discData = DiscData.new(mapDisc)
+	return discData
 end
 local tbSortNameTextCfg = {
 	"CharList_Sort_Toggle_Level",

@@ -1,5 +1,6 @@
 local EquipmentRollCtrl = class("EquipmentRollCtrl", BaseCtrl)
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
 EquipmentRollCtrl._mapNodeConfig = {
 	TopBar = {
 		sNodeName = "TopBarPanel",
@@ -15,7 +16,7 @@ EquipmentRollCtrl._mapNodeConfig = {
 	txtLockDesc = {nCount = 3, sComponentName = "TMP_Text"},
 	imgLockType = {nCount = 3, sComponentName = "Image"},
 	imgChoose = {nCount = 3},
-	imgSlotIcon = {nCount = 3, sComponentName = "Image"},
+	imgSlotIcon = {nCount = 3, sComponentName = "Transform"},
 	imgCharHead = {sComponentName = "Image"},
 	tab = {
 		nCount = 4,
@@ -37,8 +38,9 @@ EquipmentRollCtrl._mapNodeConfig = {
 		sNodeName = "imgTabMask",
 		sComponentName = "RectTransform"
 	},
-	imgEquipmentIcon = {nCount = 2, sComponentName = "Image"},
+	imgEquipmentIcon = {nCount = 2, sComponentName = "Transform"},
 	txtEquipmentName = {nCount = 2, sComponentName = "TMP_Text"},
+	imgEquipmentUp = {nCount = 2},
 	txtEquipmentDesc = {sComponentName = "TMP_Text"},
 	ScrollView = {sComponentName = "ScrollRect"},
 	txtLockSwitch = {
@@ -149,14 +151,18 @@ function EquipmentRollCtrl:Refresh()
 	self:RefreshSlot()
 end
 function EquipmentRollCtrl:RefreshSlot()
+	for i = 1, 2 do
+		delChildren(self._mapNode.imgEquipmentIcon[i])
+	end
+	self.tbEquipmentIcon = {}
 	self:RefreshSlotData()
 	self:RefreshTab()
 	self:RefreshIndexGem()
 end
 function EquipmentRollCtrl:RefreshIndexGem(bAfterActive)
 	self:RefreshSelectData()
-	self:RefreshEquipmentTop()
 	self:RefreshEquipmentInfo()
+	self:RefreshEquipmentTop()
 	self:RefreshEquipmentState(bAfterActive)
 	self:RefreshAttr()
 	self:RefreshAlterAttr()
@@ -181,7 +187,16 @@ function EquipmentRollCtrl:RefreshPresetSlot()
 				self:SetPngSprite(self._mapNode.imgLockType[i], mapGemCfg.IconBg)
 				NovaAPI.SetTMPText(self._mapNode.txtLockDesc[i], orderedFormat(ConfigTable.GetUIText("Equipment_SlotActiveLevel"), mapSlot.nLevel))
 			else
-				self:SetPngSprite(self._mapNode.imgSlotIcon[i], mapGemCfg.Icon)
+				delChildren(self._mapNode.imgSlotIcon[i])
+				local equipPrefab
+				local sPrefab = mapGemCfg.Icon .. ".prefab"
+				if GameResourceLoader.ExistsAsset(Settings.AB_ROOT_PATH .. sPrefab) == true then
+					equipPrefab = self:LoadAsset(sPrefab)
+				end
+				if equipPrefab then
+					local goEquip = instantiate(equipPrefab, self._mapNode.imgSlotIcon[i])
+					goEquip.transform:Find("goFx").gameObject:SetActive(false)
+				end
 			end
 		end
 	end
@@ -256,10 +271,24 @@ function EquipmentRollCtrl:RefreshEquipmentTop()
 	local sRoman = ConfigTable.GetUIText("RomanNumeral_" .. self._panel.nSelectGemIndex)
 	local sSuf = orderedFormat(ConfigTable.GetUIText("Equipment_NameIndexSuffix"), sRoman)
 	NovaAPI.SetTMPText(self._mapNode.txtEquipmentName[self.nSubSelectIndex], self.mapGemCfg.Title .. sSuf)
+	local bUpgrade = self.mapEquipment and self.mapEquipment:GetUpgradeCount() > 0
+	self._mapNode.imgEquipmentUp[self.nSubSelectIndex]:SetActive(bUpgrade)
+	if self.tbEquipmentIcon[self.nSubSelectIndex] then
+		self.tbEquipmentIcon[self.nSubSelectIndex].transform:Find("goFx").gameObject:SetActive(bUpgrade)
+	end
 end
 function EquipmentRollCtrl:RefreshEquipmentInfo()
 	for i = 1, 2 do
-		self:SetPngSprite(self._mapNode.imgEquipmentIcon[i], self.mapGemCfg.Icon)
+		if self.tbEquipmentIcon[i] == nil then
+			local equipPrefab
+			local sPrefab = self.mapGemCfg.Icon .. ".prefab"
+			if GameResourceLoader.ExistsAsset(Settings.AB_ROOT_PATH .. sPrefab) == true then
+				equipPrefab = self:LoadAsset(sPrefab)
+			end
+			if equipPrefab then
+				self.tbEquipmentIcon[i] = instantiate(equipPrefab, self._mapNode.imgEquipmentIcon[i])
+			end
+		end
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtEquipmentDesc, self.mapGemCfg.Desc)
 	NovaAPI.SetVerticalNormalizedPosition(self._mapNode.ScrollView, 1)
@@ -310,7 +339,7 @@ function EquipmentRollCtrl:RefreshAttr()
 		return
 	end
 	for i = 1, 4 do
-		self._mapNode.goProperty[i]:SetProperty(self.mapEquipment.tbAffix[i], self._panel.nCharId)
+		self._mapNode.goProperty[i]:SetProperty(self.mapEquipment.tbAffix[i], self._panel.nCharId, false, self.mapEquipment.tbUpgradeCount[i])
 		self:RefreshAttrLock(i)
 	end
 end
@@ -328,7 +357,7 @@ function EquipmentRollCtrl:RefreshAlterAttr(bRoll)
 	self._mapNode.goAlter.gameObject:SetActive(not bEmpty)
 	if not bEmpty then
 		for i = 1, 4 do
-			self._mapNode.goPropertyAlter[i]:SetProperty(self.mapEquipment.tbAlterAffix[i], self._panel.nCharId, self.tbLockAttr[i])
+			self._mapNode.goPropertyAlter[i]:SetProperty(self.mapEquipment.tbAlterAffix[i], self._panel.nCharId, self.tbLockAttr[i], self.mapEquipment.tbAlterUpgradeCount[i])
 		end
 	end
 end
@@ -438,79 +467,112 @@ function EquipmentRollCtrl:OnBtnClick_Roll(btn)
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Equipment_Roll_EquipmentLock"))
 		return
 	end
+	local bHasUpgrade = false
+	for k, v in pairs(self.mapEquipment.tbUpgradeCount) do
+		if 0 < v and not self.tbLockAttr[k] then
+			bHasUpgrade = true
+			break
+		end
+	end
 	local tbLockAttrId = {}
 	for k, v in pairs(self.tbLockAttr) do
 		if v == true then
 			table.insert(tbLockAttrId, self.mapEquipment.tbAffix[k])
 		end
 	end
-	local roll = function()
-		local bEnough = false
-		local nHasRefresh = PlayerData.Item:GetItemCountByID(self.mapGemCfg.RefreshCostTid)
-		local nLockAttr = self:GetAttrLockCount()
-		local bUseLock = 0 < nLockAttr
-		if bUseLock then
-			local nHasLock = PlayerData.Item:GetItemCountByID(self.mapSlotCfg.LockItemTid)
-			bEnough = nHasLock >= self.mapSlotCfg.LockItemQty * nLockAttr and nHasRefresh >= self.mapSlotCfg.RefreshCostQty
-		else
-			bEnough = nHasRefresh >= self.mapSlotCfg.RefreshCostQty
-		end
-		if not bEnough then
-			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Equipment_MatNotEnough_Roll"))
-			if nHasRefresh < self.mapSlotCfg.RefreshCostQty then
-				self._mapNode.TopBar:OnBtnClick_CoinFirstTips(self._mapNode.goCoinOther)
-			end
-			return
-		end
-		local callback = function()
-			self:RefreshAlterAttr(true)
-			self:RefreshCoin()
-			self:RefreshConfirm()
-			WwiseAudioMgr:PostEvent("ui_charInfo_equipment_reforge_ani")
-		end
-		PlayerData.Equipment:SendCharGemRefreshReq(self._panel.nCharId, self._panel.nSlotId, self._panel.nSelectGemIndex, tbLockAttrId, callback)
+	local bEnough = false
+	local nHasRefresh = PlayerData.Item:GetItemCountByID(self.mapGemCfg.RefreshCostTid)
+	local nLockAttr = self:GetAttrLockCount()
+	local bUseLock = 0 < nLockAttr
+	if bUseLock then
+		local nHasLock = PlayerData.Item:GetItemCountByID(self.mapSlotCfg.LockItemTid)
+		bEnough = nHasLock >= self.mapSlotCfg.LockItemQty * nLockAttr and nHasRefresh >= self.mapSlotCfg.RefreshCostQty
+	else
+		bEnough = nHasRefresh >= self.mapSlotCfg.RefreshCostQty
 	end
-	local warning = function()
+	if not bEnough then
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Equipment_MatNotEnough_Roll"))
+		if nHasRefresh < self.mapSlotCfg.RefreshCostQty then
+			self._mapNode.TopBar:OnBtnClick_CoinFirstTips(self._mapNode.goCoinOther)
+		end
+		return
+	end
+	local step1 = function(next)
 		local isSelectAgain = false
 		local confirmCallback = function()
-			PlayerData.Equipment:SetRollWarning(not isSelectAgain)
-			roll()
+			PlayerData.Equipment:SetRollUpgradeWarning(not isSelectAgain)
+			next()
 		end
 		local againCallback = function(isSelect)
 			isSelectAgain = isSelect
 		end
 		local msg = {
 			nType = AllEnum.MessageBox.Confirm,
-			sContent = ConfigTable.GetUIText("Equipment_RollWarning_HighQuality"),
+			sContent = ConfigTable.GetUIText("Equipment_RollWarning_HasUpgrade"),
 			callbackConfirm = confirmCallback,
 			callbackAgain = againCallback,
 			sAgain = ConfigTable.GetUIText("MessageBox_LoginWarning")
 		}
 		EventManager.Hit(EventId.OpenMessageBox, msg)
 	end
-	local bWarn = PlayerData.Equipment:GetRollWarning()
-	if self.mapEquipment.tbAlterAffix and bWarn then
-		local nRareCount = self:GetRareCount(self.mapEquipment.tbAffix)
-		local nAlterRareCount = self:GetRareCount(self.mapEquipment.tbAlterAffix)
-		local bLock = false
-		for k, v in pairs(self.tbLockAttr) do
-			if v == true then
-				bLock = true
-				break
+	local step2 = function()
+		local roll = function()
+			local callback = function()
+				self:RefreshAlterAttr(true)
+				self:RefreshCoin()
+				self:RefreshConfirm()
+				WwiseAudioMgr:PostEvent("ui_charInfo_equipment_reforge_ani")
 			end
+			PlayerData.Equipment:SendCharGemRefreshReq(self._panel.nCharId, self._panel.nSlotId, self._panel.nSelectGemIndex, tbLockAttrId, callback)
 		end
-		local bHasHQ = PlayerData.Equipment:CheckAlterHighQualityAffix(self.mapEquipment.tbAlterAffix, tbLockAttrId)
-		if not bLock and nAlterRareCount >= ConfigTable.GetConfigNumber("CharGemHighQualityNum") then
-			warning()
-		elseif bLock and nRareCount < nAlterRareCount then
-			warning()
-		elseif bHasHQ then
-			warning()
+		local warning = function()
+			local isSelectAgain = false
+			local confirmCallback = function()
+				PlayerData.Equipment:SetRollWarning(not isSelectAgain)
+				roll()
+			end
+			local againCallback = function(isSelect)
+				isSelectAgain = isSelect
+			end
+			local msg = {
+				nType = AllEnum.MessageBox.Confirm,
+				sContent = ConfigTable.GetUIText("Equipment_RollWarning_HighQuality"),
+				callbackConfirm = confirmCallback,
+				callbackAgain = againCallback,
+				sAgain = ConfigTable.GetUIText("MessageBox_LoginWarning")
+			}
+			EventManager.Hit(EventId.OpenMessageBox, msg)
+		end
+		local bWarn = PlayerData.Equipment:GetRollWarning()
+		if self.mapEquipment.tbAlterAffix and bWarn then
+			local nRareCount = self:GetRareCount(self.mapEquipment.tbAffix)
+			local nAlterRareCount = self:GetRareCount(self.mapEquipment.tbAlterAffix)
+			local bLock = false
+			for k, v in pairs(self.tbLockAttr) do
+				if v == true then
+					bLock = true
+					break
+				end
+			end
+			local bHasHQ = PlayerData.Equipment:CheckAlterHighQualityAffix(self.mapEquipment.tbAlterAffix, tbLockAttrId)
+			if not bLock and nAlterRareCount >= ConfigTable.GetConfigNumber("CharGemHighQualityNum") then
+				warning()
+			elseif bLock and nRareCount < nAlterRareCount then
+				warning()
+			elseif bHasHQ then
+				warning()
+			else
+				roll()
+			end
 		else
 			roll()
 		end
+	end
+	local bWarn = PlayerData.Equipment:GetRollUpgradeWarning()
+	if bHasUpgrade and bWarn then
+		step1(step2)
 	else
-		roll()
+		step2()
 	end
 end
 function EquipmentRollCtrl:OnBtnClick_EquipmentSlot(_, nIndex)

@@ -157,6 +157,7 @@ function Avg_3_TransitionCtrl:SetTrans(tbParam)
 	local nDuration = tbParam[7]
 	local bWait = tbParam[8]
 	local sKeyName = tbParam[9]
+	local nDurationForCameraAperture = nDuration
 	local nColorRGB = 0
 	if nStyle == 1 then
 		nColorRGB = 1
@@ -259,6 +260,7 @@ function Avg_3_TransitionCtrl:SetTrans(tbParam)
 	if bClearAllTalk == true then
 		EventManager.Hit(EventId.AvgClearTalk)
 	end
+	EventManager.Hit("AVG_SetCameraAperture", nCloseOpen, nDurationForCameraAperture, bWait)
 	if bWait == true and 0 < nDuration then
 		return nDuration
 	else

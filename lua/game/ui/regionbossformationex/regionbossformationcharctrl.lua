@@ -90,6 +90,9 @@ function RegionBossFormationCharCtrl:OnBtnClick_Select(btn)
 	EventManager.Hit(EventId.OpenMessageBox, sTip)
 end
 function RegionBossFormationCharCtrl:OnBtnClick_Detail(btn)
+	if self._panel.nLoadProcess ~= nil and self._panel.nLoadProcess > 1 then
+		return
+	end
 	if self.tbTeamId ~= nil then
 		EventManager.Hit(EventId.OpenPanel, PanelId.CharBgPanel, PanelId.CharInfo, self.nCharId, self.tbTeamId, false)
 	end

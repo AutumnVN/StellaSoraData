@@ -1786,11 +1786,41 @@ local compare_roles = function(a, b, sort_priority, bOrder)
 	end
 	return false
 end
-local SortByPriority = function(items, selected_fields, default_priority, bOrder)
+local compare_roles_SetFavoriteTop = function(a, b, sort_priority, bOrder)
+	local a_isFavorite = a.IsFavorite or false
+	local b_isFavorite = b.IsFavorite or false
+	if a_isFavorite ~= b_isFavorite then
+		return a_isFavorite and not b_isFavorite
+	end
+	for i, field in ipairs(sort_priority) do
+		local va, vb = a[field], b[field]
+		if va ~= nil and vb ~= nil and va ~= vb then
+			if field == "Rare" or field == "nRarity" then
+				if i == 1 and bOrder then
+					return va > vb
+				else
+					return va < vb
+				end
+			elseif i == 1 and bOrder or field == "EET" or field == "nEET" then
+				return va < vb
+			else
+				return va > vb
+			end
+		end
+	end
+	return false
+end
+local SortByPriority = function(items, selected_fields, default_priority, bOrder, bSetFavoriteTop)
 	local sort_priority = build_priority(selected_fields, default_priority)
-	table.sort(items, function(a, b)
-		return compare_roles(a, b, sort_priority, bOrder)
-	end)
+	if bSetFavoriteTop then
+		table.sort(items, function(a, b)
+			return compare_roles_SetFavoriteTop(a, b, sort_priority, bOrder)
+		end)
+	else
+		table.sort(items, function(a, b)
+			return compare_roles(a, b, sort_priority, bOrder)
+		end)
+	end
 end
 local GetDayRefreshTimeOffset = function()
 	local nNewDayTime = ConfigTable.GetConfigNumber("DailyRefreshOffsetHour") or 5

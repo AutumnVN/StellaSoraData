@@ -2,7 +2,6 @@ local GuideGroup_11 = class("GuideGroup_11")
 local mapEventConfig = {
 	Positioning_StarTower_Grid = "OnEvent_PositioningStarTowerGrid",
 	Guide_InitStarTowerFinish = "OnEvent_Guide_InitStarTowerFinish",
-	Guide_StarTowerPlayIn = "Guide_InitStarTowerFinish",
 	Guide_LevelMenuOpen = "OnEvent_GuideLevelMenuOpen"
 }
 local groupId = 11

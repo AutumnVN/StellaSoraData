@@ -310,7 +310,7 @@ function BreakOutThemeCtrl:RefreshTaskButtonState(actData)
 		end
 		local progress = string.format("%d/%d", nDone, nTotal)
 		local rt = self._mapNode.imgProgressBg:GetComponent("RectTransform")
-		local nWidth = nDone / nTotal * rt.rect.width
+		local nWidth = 0 < nTotal and nDone / nTotal * rt.rect.width or 0
 		self._mapNode.imgFill:GetComponent("RectTransform").sizeDelta = Vector2(nWidth, rt.rect.height)
 		NovaAPI.SetTMPText(self._mapNode.txtProgress, progress)
 	end
@@ -348,7 +348,7 @@ function BreakOutThemeCtrl:RefreshActivityData()
 	if self.bRequiredActData then
 		return
 	end
-	self:AddTimer(1, 3, self.RequireActiviyData, true, true, true)
+	self:AddTimer(1, 3, self.RequireActivityData, true, true, true)
 end
 function BreakOutThemeCtrl:OnBtn_ClickActivityEntrance(btn, nIndex)
 	local actData

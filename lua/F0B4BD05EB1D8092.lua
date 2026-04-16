@@ -18,6 +18,10 @@ JointDrillTeamItemCtrl._mapNodeConfig = {
 		nCount = 2,
 		sComponentName = "TMP_Text",
 		sLanguageId = "Build_Sub"
+	},
+	btnDetail = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Detail"
 	}
 }
 JointDrillTeamItemCtrl._mapEventConfig = {}
@@ -36,6 +40,7 @@ function JointDrillTeamItemCtrl:GetBuildRank(nScore)
 	return curIdx
 end
 function JointDrillTeamItemCtrl:RefreshItem(mapTeam, nIndex)
+	self.mapTeam = mapTeam
 	local sIndex = ConfigTable.GetUIText("JointDrill_Battle_Time_" .. nIndex)
 	NovaAPI.SetTMPText(self._mapNode.txtTeam, orderedFormat(ConfigTable.GetUIText("JointDrill_Rank_Build_Count"), sIndex))
 	for i = 1, 3 do
@@ -53,6 +58,19 @@ function JointDrillTeamItemCtrl:RefreshItem(mapTeam, nIndex)
 	end
 	local nScore = self:GetBuildRank(mapTeam.BuildScore)
 	self:SetPngSprite(self._mapNode.imgScoreIcon, "Icon/BuildRank/BuildRank_" .. nScore)
+end
+function JointDrillTeamItemCtrl:OnBtnClick_Detail()
+	if self.mapTeam.Discs == nil or #self.mapTeam.Discs == 0 then
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Rank_Build_Detail_Unavailable"))
+		return
+	end
+	EventManager.Hit("OpenRankBuildDetail")
+	EventManager.Hit(EventId.OpenPanel, PanelId.RankBuildDetail, self.mapTeam)
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+		EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillRankDetail_2)
+	end
+	cs_coroutine.start(wait)
 end
 function JointDrillTeamItemCtrl:Awake()
 end

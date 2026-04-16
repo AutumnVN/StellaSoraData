@@ -1,4 +1,5 @@
 local CharBgTrialPanel = class("CharBgTrialPanel", BasePanel)
+local Actor2DManager = require("Game.Actor2D.Actor2DManager")
 CharBgTrialPanel._bIsMainPanel = false
 CharBgTrialPanel._sSortingLayerName = AllEnum.SortingLayerName.UI_Top
 CharBgTrialPanel._tbDefine = {
@@ -138,10 +139,14 @@ function CharBgTrialPanel:Awake()
 		end
 	end
 	table.insert(self.panelStack, self.nPanelId)
+	Actor2DManager.ForceUseL2D(false)
 end
 function CharBgTrialPanel:OnEnable()
 end
 function CharBgTrialPanel:OnDisable()
+	if PanelManager.CheckPanelOpen(PanelId.GachaSpin) then
+		Actor2DManager.ForceUseL2D(true)
+	end
 end
 function CharBgTrialPanel:OnEvent_CharRelatePanelOpen(nPanelId, ncharId, tbCharList, param1)
 	self.nClosePanelId = self.nPanelId

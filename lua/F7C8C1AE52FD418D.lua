@@ -73,7 +73,7 @@ function PenguinCardQuestCtrl:OnDisable()
 	end
 	self.tbQuestGridCtrl = {}
 end
-function PenguinCardQuestCtrl:OnDestory()
+function PenguinCardQuestCtrl:OnDestroy()
 end
 function PenguinCardQuestCtrl:PlayAnim_In()
 	self._mapNode.animator:Play("t_window_04_t_in")

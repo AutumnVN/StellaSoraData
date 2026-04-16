@@ -133,7 +133,12 @@ function ActivityListCtrl:OnGridBtnClick(goGrid, gridIndex)
 		return
 	end
 	local actData = self.tbActList[nIndex].actData
-	local bOpen = self.tbActList[nIndex].nType == AllEnum.ActivityMainType.Activity and actData:CheckActivityOpen() or actData:CheckActGroupShow()
+	local bOpen = false
+	if actData == nil then
+		printError("\230\180\187\229\138\168\229\136\151\232\161\168\228\184\173\232\175\165\230\180\187\229\138\168\230\149\176\230\141\174\228\184\186\231\169\186")
+	elseif self.tbActList[nIndex].nType == AllEnum.ActivityMainType.Activity and actData:CheckActivityOpen() or self.tbActList[nIndex].nType == AllEnum.ActivityMainType.ActivityGroup and actData:CheckActGroupShow() then
+		bOpen = true
+	end
 	if not bOpen then
 		EventManager.Hit(EventId.OpenMessageBox, {
 			nType = AllEnum.MessageBox.Tips,

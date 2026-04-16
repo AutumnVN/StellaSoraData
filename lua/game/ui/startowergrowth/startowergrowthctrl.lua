@@ -58,6 +58,17 @@ StarTowerGrowthCtrl._mapNodeConfig = {
 	txtBtnActiveAll = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "STGrowth_Btn_ActiveAll"
+	},
+	txtResearchPreview = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "StarTower_ResearchPreview"
+	},
+	btnResearchPreview = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_ResearchPreview"
+	},
+	StarTowerGrowthPreviewWindow = {
+		sCtrlName = "Game.UI.StarTowerGrowth.StarTowerGrowthPreviewWindowCtrl"
 	}
 }
 StarTowerGrowthCtrl._mapEventConfig = {
@@ -287,12 +298,14 @@ function StarTowerGrowthCtrl:CloseInfo(callback)
 	end, true, true, true)
 	self._mapNode.btnQuest.gameObject:SetActive(true)
 	self._mapNode.btnActiveAll.gameObject:SetActive(true)
+	self._mapNode.btnResearchPreview.gameObject:SetActive(true)
 end
 function StarTowerGrowthCtrl:OpenInfo()
 	self._mapNode.Info.gameObject:SetActive(true)
 	self._mapNode.animInfo:Play("StarTowerGrowth_Info_in")
 	self._mapNode.btnQuest.gameObject:SetActive(false)
 	self._mapNode.btnActiveAll.gameObject:SetActive(false)
+	self._mapNode.btnResearchPreview.gameObject:SetActive(false)
 end
 function StarTowerGrowthCtrl:ClearCtrl()
 	for k, v in pairs(self.tbHideKeyNodeList) do
@@ -401,6 +414,11 @@ function StarTowerGrowthCtrl:OnBtnClick_ActiveAll(btn)
 	else
 		active()
 	end
+end
+function StarTowerGrowthCtrl:OnBtnClick_ResearchPreview()
+	local nDifficulty = PlayerData.StarTower:GetGlobalMaxDifficult()
+	local nMaxDifficulty = nDifficulty
+	self._mapNode.StarTowerGrowthPreviewWindow:OpenPanel(nDifficulty, nMaxDifficulty)
 end
 function StarTowerGrowthCtrl:OnEvent_Unlock()
 	self:RefreshData()

@@ -174,6 +174,7 @@ local EventId = {
 	DispatchRefreshPanel = 506,
 	SettingsBattleClose = 510,
 	CharTalentUIVisible = 511,
+	SettingsNotificationClose = 512,
 	GMToolShow = 998,
 	GMToolClose = 998.1,
 	GMToolClosePanel = 998.2,

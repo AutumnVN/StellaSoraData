@@ -17,6 +17,10 @@ function HttpNetHandlerPlus.char_gem_rename_preset_succeed_ack(mapMsgData)
 end
 function HttpNetHandlerPlus.char_gem_equip_gem_succeed_ack(mapMsgData)
 end
+function HttpNetHandlerPlus.char_gem_overlock_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
 function HttpNetHandlerPlus.char_gems_import_notify(mapMsgData)
 	PlayerData.Equipment:CacheEquipmentDataForChar(mapMsgData)
 end
@@ -259,5 +263,13 @@ end
 function HttpNetHandlerPlus.activity_penguin_card_quest_reward_receive_succeed_ack(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
+function HttpNetHandlerPlus.activity_gds_settle_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+	UTILS.OpenReceiveByChangeInfo(mapMsgData)
+end
+function HttpNetHandlerPlus.clear_all_activity_golden_spy_levels_notify(mapMsgData)
+	EventManager.Hit("ClearAllGoldenSpyLevels", mapMsgData)
 end
 return HttpNetHandlerPlus

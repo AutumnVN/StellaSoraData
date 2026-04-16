@@ -50,9 +50,9 @@ function ActivityLevelsInstanceRoomInfo:OnDestroy()
 end
 function ActivityLevelsInstanceRoomInfo:OnRelease()
 end
-function ActivityLevelsInstanceRoomInfo:OnEvent_OpenUI(nLevelId)
+function ActivityLevelsInstanceRoomInfo:OnEvent_OpenUI(nLevelId, totalT)
 	self._mapNode.BossChallenge.gameObject:SetActive(true)
-	self:StartEvent(1, nLevelId)
+	self:StartEvent(1, nLevelId, totalT)
 end
 function ActivityLevelsInstanceRoomInfo:OnEvent_CloseUI()
 	self:LevelEnd()
@@ -68,7 +68,7 @@ end
 function ActivityLevelsInstanceRoomInfo:OnEvent_BattleEnd()
 	self.bBattleEnd = true
 end
-function ActivityLevelsInstanceRoomInfo:StartEvent(nWaitTime, nLevelId)
+function ActivityLevelsInstanceRoomInfo:StartEvent(nWaitTime, nLevelId, totalT)
 	self.mapLevelCfgData = ConfigTable.GetData("ActivityLevelsLevel", nLevelId)
 	self.tbTime = {
 		self.mapLevelCfgData.ThreeStarCondition[1],
@@ -81,7 +81,7 @@ function ActivityLevelsInstanceRoomInfo:StartEvent(nWaitTime, nLevelId)
 	self._mapNode.rtnfo:SetActive(false)
 	self._mapNode.rtChallengeTime:SetActive(false)
 	self._mapNode.TMPDesc.gameObject:SetActive(false)
-	self:SetTime(self.totalTime)
+	self:SetTime(self.totalTime - totalT)
 	NovaAPI.SetTMPColor(self._mapNode.TMPChallengeTime, colorWhite)
 	local nStateDesc = 3 - #self.tbTime > 0 and 3 - #self.tbTime or 1
 	if nStateDesc < 3 then

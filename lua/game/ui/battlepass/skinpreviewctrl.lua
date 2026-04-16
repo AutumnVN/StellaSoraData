@@ -263,9 +263,7 @@ function SkinPreviewCtrl:LoadCharacter()
 			self.curShowModel = v
 			self:WaitReadyClipFinish()
 			NovaAPI.BindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, 0, v.gameObject)
-			if CS.FrameworkMiscUtils.VersionCompare(CS.ClientManager.Instance:GetClientVersion(), "1.4.0", 2) == 1 then
-				GameUIUtils.SetCustomModelMaterialVariant(v.gameObject, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
-			end
+			GameUIUtils.SetCustomModelMaterialVariant(v.gameObject, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
 		else
 			v.gameObject:SetActive(false)
 		end
@@ -368,9 +366,11 @@ function SkinPreviewCtrl:OnEnable()
 	if tbSkinList ~= nil and 0 < #tbSkinList then
 		self.nSkinId = tbSkinList[1]
 	end
-	for _, v in ipairs(tbSkinList) do
-		local skinData = SkinData.new(v, 0, false)
-		table.insert(self.tbSkinList, {nId = v, skinData = skinData})
+	if tbSkinList ~= nil then
+		for _, v in ipairs(tbSkinList) do
+			local skinData = SkinData.new(v, 0, false)
+			table.insert(self.tbSkinList, {nId = v, skinData = skinData})
+		end
 	end
 	self._mapNode.eventSkinZoom:SetZoomLock(true)
 	self._mapNode.eventSkinZoom:SetZoomLimitValue(tonumber(self.tbZoomRange[1]), tonumber(self.tbZoomRange[2]))

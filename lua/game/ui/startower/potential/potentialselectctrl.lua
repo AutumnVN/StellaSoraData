@@ -204,11 +204,15 @@ end
 function PotentialSelectCtrl:RefreshPotentialList(tbPotential, mapPotential, tbNewIds, tbLuckyIds, bAfterRoll, tbRecommendParam)
 	local tbRecommend = {}
 	if 0 < #tbRecommendParam then
-		table.insert(tbRecommend, tbRecommendParam[1])
+		if tbRecommendParam[1].nLevel == nil then
+			table.insert(tbRecommend, tbRecommendParam[1])
+		else
+			tbRecommend = clone(tbRecommendParam)
+		end
 	end
 	self.bSpecialPotential = false
 	self.tbPotential = {}
-	self.nRecommendIdx = 1
+	self.nRecommendIdx = 0
 	for _, v in ipairs(tbPotential) do
 		local bNew, bLucky = false, false
 		local nCurLevel = mapPotential[v.Id]
@@ -258,9 +262,16 @@ function PotentialSelectCtrl:RefreshPotentialList(tbPotential, mapPotential, tbN
 				local nPotentialAddLv = self._panel.mapPotentialAddLevel[nCharId][nTid] or 0
 				local data = self.tbPotential[k]
 				local bSpecial = v:SetPotentialItem(nTid, data.nLevel, data.nNextLevel, self.bSimple, true, nPotentialAddLv, AllEnum.PotentialCardType.StarTower, data.bNew, data.bLucky)
-				local bRec = 0 < table.indexof(tbRecommend, nTid)
-				v:SetRecommend(bRec)
-				if bRec then
+				local bRec = false
+				v:SetRecommend(false)
+				for _, data in ipairs(tbRecommend) do
+					if data.nId == nTid then
+						bRec = true
+						v:SetRecommend(true, data.nLevel)
+						break
+					end
+				end
+				if bRec and self.nRecommendIdx == 0 then
 					self.nRecommendIdx = k
 				end
 				v:ChangeWordRaycast(false)
@@ -270,6 +281,7 @@ function PotentialSelectCtrl:RefreshPotentialList(tbPotential, mapPotential, tbN
 			end
 		end
 	end
+	self.nRecommendIdx = math.max(self.nRecommendIdx, 1)
 	self:ResetSelect(tbBtnObj)
 	local nCardAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.potentialCard[1].animCtrl, {
 		"tc_newperk_card_in"
@@ -651,8 +663,7 @@ function PotentialSelectCtrl:OnEvent_SetCoin(nCount)
 end
 function PotentialSelectCtrl:ResetSelect(tbUI)
 	self.nSelectIdx = 0
-	local nRecommendedIdx = 0
-	self.bRecommended = nRecommendedIdx ~= 0
+	self.bRecommended = self.nRecommendIdx ~= 0
 	GamepadUIManager.SetNavigation(tbUI)
 	local nCardAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.potentialCard[1].animCtrl, {
 		"tc_newperk_card_in"
@@ -664,7 +675,7 @@ function PotentialSelectCtrl:ResetSelect(tbUI)
 	nAnimTime = nAnimTime + 0.4
 	self:AddTimer(1, nAnimTime, function()
 		if self.nSelectIdx == 0 then
-			local nSelect = nRecommendedIdx == 0 and 1 or nRecommendedIdx
+			local nSelect = self.nRecommendIdx == 0 and 1 or self.nRecommendIdx
 			GamepadUIManager.ClearSelectedUI()
 			GamepadUIManager.SetSelectedUI(self._mapNode.btnPotential[nSelect].gameObject)
 			if GamepadUIManager.GetCurUIType() == AllEnum.GamepadUIType.Mouse then
