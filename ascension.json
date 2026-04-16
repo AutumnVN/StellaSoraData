@@ -2558,6 +2558,375 @@
                         }
                     }
                 ]
+            },
+            {
+                "name": "[undefined] Difficulty 8",
+                "icon": "roguelike_001_04",
+                "diff": 8,
+                "weakTo": [
+                    "Lux",
+                    "Terra"
+                ],
+                "resistTo": [
+                    "Aqua",
+                    "Umbra"
+                ],
+                "monster": [
+                    {
+                        "name": "Abyssal Sea Sovereign",
+                        "icon": "monsterhead_50501ShaSha_WaterDark_L",
+                        "type": "Overlord",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Aqua",
+                        "stat": {
+                            "HP": 2094964,
+                            "ATK": 7099,
+                            "DEF": 500,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Resilience": 1256979,
+                            "Aqua RES": 2000,
+                            "Ignis RES": 750,
+                            "Terra RES": 250,
+                            "Ventus RES": 750,
+                            "Lux RES": 250,
+                            "Umbra RES": 750
+                        }
+                    },
+                    {
+                        "name": "King Glopo Ⅲ",
+                        "icon": "monsterhead_50081DaShiLaiMu_Water_L",
+                        "type": "Overlord",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Aqua",
+                        "stat": {
+                            "HP": 2618706,
+                            "ATK": 6212,
+                            "DEF": 500,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Resilience": 1571224,
+                            "Aqua RES": 2000,
+                            "Ignis RES": 750,
+                            "Terra RES": 250,
+                            "Ventus RES": 750,
+                            "Lux RES": 250,
+                            "Umbra RES": 750
+                        }
+                    },
+                    {
+                        "name": "Grotesque Dancer",
+                        "icon": "monsterhead_50521TiaoWuJi_Dark_L",
+                        "type": "Overlord",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Umbra",
+                        "stat": {
+                            "HP": 1964029,
+                            "ATK": 6044,
+                            "DEF": 500,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Resilience": 1178418,
+                            "Aqua RES": 750,
+                            "Ignis RES": 750,
+                            "Terra RES": 250,
+                            "Ventus RES": 750,
+                            "Lux RES": 250,
+                            "Umbra RES": 2000
+                        }
+                    },
+                    {
+                        "name": "Glopo: Torrent",
+                        "icon": "monsterhead_50061XiaoShiLaiMu_Water_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Aqua",
+                        "stat": {
+                            "HP": 64180,
+                            "ATK": 2015,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 2000,
+                            "Ignis RES": 570,
+                            "Terra RES": 160,
+                            "Ventus RES": 570,
+                            "Lux RES": 160,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Whirling Great Glopo: Torrent",
+                        "icon": "monsterhead_50131ShiLaiMuDui_Water_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Aqua",
+                        "stat": {
+                            "HP": 256724,
+                            "ATK": 4030,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 2000,
+                            "Ignis RES": 570,
+                            "Terra RES": 160,
+                            "Ventus RES": 570,
+                            "Lux RES": 160,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Nightmare Executioner: Shadow",
+                        "icon": "monsterhead_50161BianSuCiKe_Dark_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Umbra",
+                        "stat": {
+                            "HP": 209182,
+                            "ATK": 4835,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 570,
+                            "Terra RES": 160,
+                            "Ventus RES": 570,
+                            "Lux RES": 160,
+                            "Umbra RES": 2000
+                        }
+                    },
+                    {
+                        "name": "Magishark: Torrent",
+                        "icon": "monsterhead_50020ShaYuFaShi_Water_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Aqua",
+                        "stat": {
+                            "HP": 190166,
+                            "ATK": 4835,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 2000,
+                            "Ignis RES": 570,
+                            "Terra RES": 160,
+                            "Ventus RES": 570,
+                            "Lux RES": 160,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Gloomfiend: Shadow",
+                        "icon": "monsterhead_50101YinYing_Dark_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Umbra",
+                        "stat": {
+                            "HP": 228199,
+                            "ATK": 4835,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 570,
+                            "Terra RES": 160,
+                            "Ventus RES": 570,
+                            "Lux RES": 160,
+                            "Umbra RES": 2000
+                        }
+                    },
+                    {
+                        "name": "Glopo: Torrent",
+                        "icon": "monsterhead_50061XiaoShiLaiMu_Water_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Aqua",
+                        "stat": {
+                            "HP": 26742,
+                            "ATK": 1007,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 2000,
+                            "Ignis RES": 570,
+                            "Terra RES": 160,
+                            "Ventus RES": 570,
+                            "Lux RES": 160,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Whimagus: Torrent",
+                        "icon": "monsterhead_50041XiaoFa_Water_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Aqua",
+                        "stat": {
+                            "HP": 35656,
+                            "ATK": 2821,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 2000,
+                            "Ignis RES": 570,
+                            "Terra RES": 160,
+                            "Ventus RES": 570,
+                            "Lux RES": 160,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Projectile Striker: Torrent",
+                        "icon": "monsterhead_50051DanZhuTouShou_Water_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Aqua",
+                        "stat": {
+                            "HP": 35656,
+                            "ATK": 2821,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 2000,
+                            "Ignis RES": 570,
+                            "Terra RES": 160,
+                            "Ventus RES": 570,
+                            "Lux RES": 160,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Jumping Sharky: Torrent",
+                        "icon": "monsterhead_50151PoShuiGuai_Water_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Terra",
+                            "Lux"
+                        ],
+                        "resistTo": "Aqua",
+                        "stat": {
+                            "HP": 58832,
+                            "ATK": 2015,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 2000,
+                            "Ignis RES": 570,
+                            "Terra RES": 160,
+                            "Ventus RES": 570,
+                            "Lux RES": 160,
+                            "Umbra RES": 570
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -5120,6 +5489,375 @@
                         }
                     }
                 ]
+            },
+            {
+                "name": "[undefined] Difficulty 8",
+                "icon": "roguelike_002_04",
+                "diff": 8,
+                "weakTo": [
+                    "Aqua",
+                    "Ventus"
+                ],
+                "resistTo": [
+                    "Terra",
+                    "Ignis"
+                ],
+                "monster": [
+                    {
+                        "name": "Rotting Silencer",
+                        "icon": "monsterhead_50511TaLou_Fire_L",
+                        "type": "Overlord",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Ignis",
+                        "stat": {
+                            "HP": 6634054,
+                            "ATK": 6716,
+                            "DEF": 500,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Resilience": 3980432,
+                            "Aqua RES": 250,
+                            "Ignis RES": 2000,
+                            "Terra RES": 750,
+                            "Ventus RES": 250,
+                            "Lux RES": 750,
+                            "Umbra RES": 750
+                        }
+                    },
+                    {
+                        "name": "Flavor Dread",
+                        "icon": "monsterhead_50541ChuShi_Fire_L",
+                        "type": "Overlord",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Ignis",
+                        "stat": {
+                            "HP": 4975540,
+                            "ATK": 7099,
+                            "DEF": 500,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Resilience": 2985324,
+                            "Aqua RES": 250,
+                            "Ignis RES": 2000,
+                            "Terra RES": 750,
+                            "Ventus RES": 250,
+                            "Lux RES": 750,
+                            "Umbra RES": 750
+                        }
+                    },
+                    {
+                        "name": "Count of the Duloos",
+                        "icon": "monsterhead_50531DaGuanZi_Earth_L",
+                        "type": "Overlord",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Terra",
+                        "stat": {
+                            "HP": 5307243,
+                            "ATK": 6044,
+                            "DEF": 500,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Resilience": 3184345,
+                            "Aqua RES": 250,
+                            "Ignis RES": 750,
+                            "Terra RES": 2000,
+                            "Ventus RES": 250,
+                            "Lux RES": 750,
+                            "Umbra RES": 750
+                        }
+                    },
+                    {
+                        "name": "Furnace Executioner: Heat",
+                        "icon": "monsterhead_50141TaLu_Fire_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Ignis",
+                        "stat": {
+                            "HP": 209182,
+                            "ATK": 4835,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 160,
+                            "Ignis RES": 2000,
+                            "Terra RES": 570,
+                            "Ventus RES": 160,
+                            "Lux RES": 570,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Spear-Wielding Attendant: Heat",
+                        "icon": "monsterhead_50201WeiBing_Fire_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Ignis",
+                        "stat": {
+                            "HP": 192543,
+                            "ATK": 4030,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 160,
+                            "Ignis RES": 2000,
+                            "Terra RES": 570,
+                            "Ventus RES": 160,
+                            "Lux RES": 570,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Gauntlet of Rage: Heat",
+                        "icon": "monsterhead_13061XiaoGaoDa_Fire_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Ignis",
+                        "stat": {
+                            "HP": 235330,
+                            "ATK": 4030,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 160,
+                            "Ignis RES": 2000,
+                            "Terra RES": 570,
+                            "Ventus RES": 160,
+                            "Lux RES": 570,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Crispy Hooves: Heat",
+                        "icon": "monsterhead_50551CanCha_Fire_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Ignis",
+                        "stat": {
+                            "HP": 228199,
+                            "ATK": 4835,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 160,
+                            "Ignis RES": 2000,
+                            "Terra RES": 570,
+                            "Ventus RES": 160,
+                            "Lux RES": 570,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Whimagus: Heat",
+                        "icon": "monsterhead_50041XiaoFa_Fire_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Ignis",
+                        "stat": {
+                            "HP": 35656,
+                            "ATK": 2821,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 160,
+                            "Ignis RES": 2000,
+                            "Terra RES": 570,
+                            "Ventus RES": 160,
+                            "Lux RES": 570,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Projectile Striker: Heat",
+                        "icon": "monsterhead_50051DanZhuTouShou_Fire_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Ignis",
+                        "stat": {
+                            "HP": 35656,
+                            "ATK": 2821,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 160,
+                            "Ignis RES": 2000,
+                            "Terra RES": 570,
+                            "Ventus RES": 160,
+                            "Lux RES": 570,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Cursipot: Rock",
+                        "icon": "monsterhead_50091GuanZi_Earth_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Terra",
+                        "stat": {
+                            "HP": 26742,
+                            "ATK": 1007,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 160,
+                            "Ignis RES": 570,
+                            "Terra RES": 2000,
+                            "Ventus RES": 160,
+                            "Lux RES": 570,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Grumblegeist: Rock",
+                        "icon": "monsterhead_50191ZhongGuanZi_Earth_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Terra",
+                        "stat": {
+                            "HP": 64180,
+                            "ATK": 2015,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 160,
+                            "Ignis RES": 570,
+                            "Terra RES": 2000,
+                            "Ventus RES": 160,
+                            "Lux RES": 570,
+                            "Umbra RES": 570
+                        }
+                    },
+                    {
+                        "name": "Grumpy Caltrop: Rock",
+                        "icon": "monsterhead_50561CanDao_Earth_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Aqua",
+                            "Ventus"
+                        ],
+                        "resistTo": "Terra",
+                        "stat": {
+                            "HP": 46352,
+                            "ATK": 2821,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 160,
+                            "Ignis RES": 570,
+                            "Terra RES": 2000,
+                            "Ventus RES": 160,
+                            "Lux RES": 570,
+                            "Umbra RES": 570
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -7664,6 +8402,375 @@
                         "stat": {
                             "HP": 41974,
                             "ATK": 1602,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 160,
+                            "Terra RES": 570,
+                            "Ventus RES": 570,
+                            "Lux RES": 2000,
+                            "Umbra RES": 160
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "[undefined] Difficulty 8",
+                "icon": "roguelike_003_04",
+                "diff": 8,
+                "weakTo": [
+                    "Ignis",
+                    "Umbra"
+                ],
+                "resistTo": [
+                    "Ventus",
+                    "Lux"
+                ],
+                "monster": [
+                    {
+                        "name": "Lady Dust",
+                        "icon": "monsterhead_50571FengShanJi_Wind_L",
+                        "type": "Overlord",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Ventus",
+                        "stat": {
+                            "HP": 16759716,
+                            "ATK": 5641,
+                            "DEF": 500,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Resilience": 10055830,
+                            "Aqua RES": 750,
+                            "Ignis RES": 250,
+                            "Terra RES": 750,
+                            "Ventus RES": 2000,
+                            "Lux RES": 750,
+                            "Umbra RES": 250
+                        }
+                    },
+                    {
+                        "name": "Forbidden Beauty",
+                        "icon": "monsterhead_50601JinDuanLiRong_Wind_L",
+                        "type": "Overlord",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Ventus",
+                        "stat": {
+                            "HP": 13407772,
+                            "ATK": 7253,
+                            "DEF": 500,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Resilience": 8044664,
+                            "Aqua RES": 750,
+                            "Ignis RES": 250,
+                            "Terra RES": 750,
+                            "Ventus RES": 2000,
+                            "Lux RES": 750,
+                            "Umbra RES": 250
+                        }
+                    },
+                    {
+                        "name": "Evernight Emberflies",
+                        "icon": "monsterhead_50581DuoBiTaiDeng_Light_L",
+                        "type": "Overlord",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Lux",
+                        "stat": {
+                            "HP": 16759716,
+                            "ATK": 7253,
+                            "DEF": 500,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Resilience": 10055830,
+                            "Aqua RES": 750,
+                            "Ignis RES": 250,
+                            "Terra RES": 750,
+                            "Ventus RES": 750,
+                            "Lux RES": 2000,
+                            "Umbra RES": 250
+                        }
+                    },
+                    {
+                        "name": "Assistant Sweeper: Gust",
+                        "icon": "monsterhead_50241ShiZiDao_Wind_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Ventus",
+                        "stat": {
+                            "HP": 235330,
+                            "ATK": 4030,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 160,
+                            "Terra RES": 570,
+                            "Ventus RES": 2000,
+                            "Lux RES": 570,
+                            "Umbra RES": 160
+                        }
+                    },
+                    {
+                        "name": "Whirling Crawler: Radiance",
+                        "icon": "monsterhead_50281LeiSheZhu_Light_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Lux",
+                        "stat": {
+                            "HP": 171149,
+                            "ATK": 4835,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 160,
+                            "Terra RES": 570,
+                            "Ventus RES": 570,
+                            "Lux RES": 2000,
+                            "Umbra RES": 160
+                        }
+                    },
+                    {
+                        "name": "Fiery Gaze Swordsman: Radiance",
+                        "icon": "monsterhead_50211TanZhaoDeng_Light_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Lux",
+                        "stat": {
+                            "HP": 213937,
+                            "ATK": 4030,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 160,
+                            "Terra RES": 570,
+                            "Ventus RES": 570,
+                            "Lux RES": 2000,
+                            "Umbra RES": 160
+                        }
+                    },
+                    {
+                        "name": "Bursting Incense: Gust",
+                        "icon": "monsterhead_50271FengMeiGuai_Wind_L",
+                        "type": "Elite",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Ventus",
+                        "stat": {
+                            "HP": 190166,
+                            "ATK": 4835,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 160,
+                            "Terra RES": 570,
+                            "Ventus RES": 2000,
+                            "Lux RES": 570,
+                            "Umbra RES": 160
+                        }
+                    },
+                    {
+                        "name": "Whimagus: Gust",
+                        "icon": "monsterhead_50041XiaoFa_Wind_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Ventus",
+                        "stat": {
+                            "HP": 35656,
+                            "ATK": 2821,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 160,
+                            "Terra RES": 570,
+                            "Ventus RES": 2000,
+                            "Lux RES": 570,
+                            "Umbra RES": 160
+                        }
+                    },
+                    {
+                        "name": "Projectile Striker: Gust",
+                        "icon": "monsterhead_50051DanZhuTouShou_Wind_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Ventus",
+                        "stat": {
+                            "HP": 35656,
+                            "ATK": 2821,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 160,
+                            "Terra RES": 570,
+                            "Ventus RES": 2000,
+                            "Lux RES": 570,
+                            "Umbra RES": 160
+                        }
+                    },
+                    {
+                        "name": "Gleeful Jar Spirit: Gust",
+                        "icon": "monsterhead_50261FengLing_Wind_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Ventus",
+                        "stat": {
+                            "HP": 46352,
+                            "ATK": 2821,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 160,
+                            "Terra RES": 570,
+                            "Ventus RES": 2000,
+                            "Lux RES": 570,
+                            "Umbra RES": 160
+                        }
+                    },
+                    {
+                        "name": "Bouncing Fairy Light: Radiance",
+                        "icon": "monsterhead_50221DengPao_Light_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Lux",
+                        "stat": {
+                            "HP": 26742,
+                            "ATK": 1007,
+                            "Hit Rate": "100%",
+                            "Attack Speed": "100%",
+                            "Aqua DMG": "100%",
+                            "Ignis DMG": "100%",
+                            "Terra DMG": "100%",
+                            "Ventus DMG": "100%",
+                            "Lux DMG": "100%",
+                            "Umbra DMG": "100%",
+                            "Mark DMG Taken": "100%",
+                            "Aqua RES": 570,
+                            "Ignis RES": 160,
+                            "Terra RES": 570,
+                            "Ventus RES": 570,
+                            "Lux RES": 2000,
+                            "Umbra RES": 160
+                        }
+                    },
+                    {
+                        "name": "Master Digger: Radiance",
+                        "icon": "monsterhead_50231JiXieBi_Light_L",
+                        "type": "Normal",
+                        "weakTo": [
+                            "Ignis",
+                            "Umbra"
+                        ],
+                        "resistTo": "Lux",
+                        "stat": {
+                            "HP": 64180,
+                            "ATK": 2015,
                             "Hit Rate": "100%",
                             "Attack Speed": "100%",
                             "Aqua DMG": "100%",
