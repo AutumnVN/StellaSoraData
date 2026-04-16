@@ -100,7 +100,7 @@ for (const id in CHARACTER) {
         hateGift: getGifts(CHARACTERDES[id].HateTags),
         date: getDates(id),
         fixedStat: getFixedStats(id),
-        normalAtk: {
+        normalAtk: !SKILL[CHARACTER[id].NormalAtkId] ? undefined : {
             id: CHARACTER[id].NormalAtkId,
             name: LANG_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
             nameCN: CN_SKILL[SKILL[CHARACTER[id].NormalAtkId].Title],
@@ -120,7 +120,7 @@ for (const id in CHARACTER) {
             paramsTooltips: getSkillParamsTooltips(CHARACTER[id].NormalAtkId),
             icon: SKILL[CHARACTER[id].NormalAtkId].Icon.split('/').pop(),
         },
-        skill: {
+        skill: !SKILL[CHARACTER[id].SkillId] ? undefined : {
             id: CHARACTER[id].SkillId,
             name: LANG_SKILL[SKILL[CHARACTER[id].SkillId].Title],
             nameCN: CN_SKILL[SKILL[CHARACTER[id].SkillId].Title],
@@ -141,7 +141,7 @@ for (const id in CHARACTER) {
             paramsTooltips: getSkillParamsTooltips(CHARACTER[id].SkillId),
             icon: SKILL[CHARACTER[id].SkillId].Icon.split('/').pop(),
         },
-        supportSkill: {
+        supportSkill: !SKILL[CHARACTER[id].AssistSkillId] ? undefined : {
             id: CHARACTER[id].AssistSkillId,
             name: LANG_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
             nameCN: CN_SKILL[SKILL[CHARACTER[id].AssistSkillId].Title],
@@ -161,7 +161,7 @@ for (const id in CHARACTER) {
             paramsTooltips: getSkillParamsTooltips(CHARACTER[id].AssistSkillId),
             icon: SKILL[CHARACTER[id].AssistSkillId].Icon.split('/').pop(),
         },
-        ultimate: {
+        ultimate: !SKILL[CHARACTER[id].UltimateId] ? undefined : {
             id: CHARACTER[id].UltimateId,
             name: LANG_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
             nameCN: CN_SKILL[SKILL[CHARACTER[id].UltimateId].Title],
