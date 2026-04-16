@@ -93,6 +93,7 @@ for (const id in SCOREBOSSLEVEL) {
                 'Ventus RES': monsterValueTemplateAdjust.AERFix,
                 'Lux RES': monsterValueTemplateAdjust.LERFix,
                 'Umbra RES': monsterValueTemplateAdjust.DERFix,
+                'ENV_AMEND': monsterValueTemplateModify[index].ENVAMENDFix,
             }
         })
     }

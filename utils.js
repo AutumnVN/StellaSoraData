@@ -113,6 +113,7 @@ const ATTR_TYPE = {
     93: 'SUMMON_SUPPRESS',
     94: 'PROJECTILE_SUPPRESS',
     95: 'OTHER_SUPPRESS',
+    96: 'ENV_AMEND',
 };
 
 const SPECIAL_ATTR_TYPE = {
