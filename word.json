@@ -72,6 +72,8 @@
         "buffIcons": []
     },
     "46": {
+        "name": "Charge Efficiency (Support)",
+        "desc": "The Main Trekker provides Energy for Support Trekkers by default. Support Trekkers' Energy gained = Main Trekker's Energy gained × Support Charge Efficiency.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -354,7 +356,7 @@
     },
     "1027": {
         "name": "Chill",
-        "desc": "Reduces Movement SPD by <color=#fb8037>25%</color> for <color=#fb8037>&Param2&</color>s, up to <color=#fb8037>&Param3&</color> stacks.\u000bAt <color=#fb8037>&Param3&</color> stacks, it converts into Freeze for <color=#fb8037>&Param4&</color>s.",
+        "desc": "Reduces Movement SPD by 25% for &Param2&s, up to &Param3& stacks.\u000bAt &Param3& stacks, converts into Freeze for &Param4&s.",
         "params": [
             "-25%",
             10,
@@ -625,7 +627,7 @@
     },
     "2008": {
         "name": "Aqua Mark: Torrent",
-        "desc": "A special status applied to the target by some Aqua Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Aqua Trekkers. When triggered, deals AoE DMG and applies Chill.",
+        "desc": "A special status applied by some Aqua characters to the target for 10 sec.\u000bWhen triggered by specific Aqua characters' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Water1_small",
         "params": [
             10
@@ -639,7 +641,7 @@
     },
     "2013": {
         "name": "Ignis Mark: Sacred Flame",
-        "desc": "A special status applied to the target by some Ignis Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Ignis Trekkers. When triggered, deals large AoE DMG.",
+        "desc": "Some Ignis characters apply a special status to the target for 10 sec.\u000bWhen triggered by specific Ignis characters' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Fire1_small",
         "params": [
             10
@@ -680,7 +682,7 @@
     },
     "2016": {
         "name": "Lux Mark: Radiance",
-        "desc": "A special status applied to the target by some Lux Trekkers, lasting for 10s.\u000bCan be triggered by the attacks of specific Lux Trekkers. When triggered, deals DMG.",
+        "desc": "Some Lux characters apply a special status to the target for 10 sec.\u000bWhen triggered by specific Lux characters' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Light1_small",
         "params": [
             15
@@ -846,6 +848,8 @@
         "buffIcons": []
     },
     "3002": {
+        "name": "Dark Shackles",
+        "desc": "Binds weaker enemies in place for &Param1&s.",
         "params": [
             5
         ],
@@ -890,6 +894,8 @@
         "buffIcons": []
     },
     "4005": {
+        "name": "Dark Burn",
+        "desc": "Deals DMG to the target every 0.5s for &Param1&s, dealing &Param2& of Firenze's ATK as Umbra Mark DMG in total.",
         "params": [
             5,
             "4.1%/5.3%/6.6%/7.8%/9%/10.3%/11.5%/12.7%/14%"
@@ -901,21 +907,9 @@
             "No Icon"
         ]
     },
-    "4006": {
-        "params": [
-            "Aqua DMG",
-            "38%/60%/83%/105%/128%/150%/150%/150%/150%"
-        ],
-        "effectType": [],
-        "addAttrType": [
-            "Aqua DMG (base)"
-        ],
-        "effectData": [],
-        "buffIcons": [
-            "Icon_Buff_14401_514405"
-        ]
-    },
     "4007": {
+        "name": "Pumpka Phantom",
+        "desc": "Pumpka Phantom inherits 25% of Mistique's Base Max HP and 100% of her ATK, lasting for 15s. Up to 4 can exist at the same time.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -923,6 +917,8 @@
         "buffIcons": []
     },
     "4008": {
+        "name": "Lanterna Phantom",
+        "desc": "Lanterna Phantom inherits 3% of Mistique's Base Max HP and 100% of her ATK, lasting for 8s.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -930,6 +926,8 @@
         "buffIcons": []
     },
     "4009": {
+        "name": "Dark Burn",
+        "desc": "Deals DMG to the target every 0.5s for &Param1&s, dealing &Param2& of Mistique's ATK as Umbra Mark DMG in total.",
         "params": [
             5,
             "1.4%/1.7%/2.1%/2.4%/2.7%/3.1%/3.4%/3.7%/4.1%"
@@ -942,6 +940,8 @@
         ]
     },
     "4010": {
+        "name": "Dark Burn",
+        "desc": "Deals DMG to the target every 0.5s for &Param1&s, dealing &Param2& of Caramel's ATK as Umbra Mark DMG in total.",
         "params": [
             5,
             "1.4%/1.7%/2.1%/2.4%/2.7%/3.1%/3.4%/3.7%/4.1%"
@@ -953,25 +953,9 @@
             "No Icon"
         ]
     },
-    "4011": {
-        "params": [
-            "9.2%/11.1%/12.9%/14.7%/16.6%/18.4%/20.3%/22.1%/23.9%"
-        ],
-        "effectType": [],
-        "addAttrType": [],
-        "effectData": [],
-        "buffIcons": []
-    },
-    "4012": {
-        "params": [
-            "8.5%/11%/13.5%/16.1%/18.6%/21.1%/23.7%/26.2%/28.7%"
-        ],
-        "effectType": [],
-        "addAttrType": [],
-        "effectData": [],
-        "buffIcons": []
-    },
     "4013": {
+        "name": "Bubble",
+        "desc": "Bubble inherits 100% of Ann's ATK for 15s, during which it is immune to DMG.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -979,6 +963,8 @@
         "buffIcons": []
     },
     "4014": {
+        "name": "Nether Energy",
+        "desc": "Lasts for 15s, stacking up to 4 times.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -986,6 +972,8 @@
         "buffIcons": []
     },
     "4015": {
+        "name": "Popularity",
+        "desc": "Lasts for 8s, stacking up to 5 times.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -993,6 +981,8 @@
         "buffIcons": []
     },
     "4016": {
+        "name": "Demonic Boombox",
+        "desc": "Demonic Boombox inherits 100% of Caramel's ATK for 15s, during which it is immune to DMG. Only 1 can exist at the same time.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -1000,6 +990,8 @@
         "buffIcons": []
     },
     "4017": {
+        "name": "Advertising Doll",
+        "desc": "Advertising Doll inherits 100% of Donna's Base Max HP and 100% of her ATK for 12s.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -1007,6 +999,8 @@
         "buffIcons": []
     },
     "4018": {
+        "name": "Crimson Dragon",
+        "desc": "Crimson Dragon inherits 100% of Chixia's ATK for 8s, during which it is immune to DMG.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -1014,6 +1008,8 @@
         "buffIcons": []
     },
     "4019": {
+        "name": "Tiger of the East",
+        "desc": "Tiger of the East inherits 100% of Chixia's ATK for 15s, during which it is immune to DMG.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -1021,6 +1017,8 @@
         "buffIcons": []
     },
     "4020": {
+        "name": "Colonel Walnut",
+        "desc": "Colonel Walnut, summoned by Snowish Laru as the Main Trekker, inherits 100% of Snowish Laru's ATK and is immune to DMG permanently.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -1028,6 +1026,8 @@
         "buffIcons": []
     },
     "4021": {
+        "name": "General Curly",
+        "desc": "General Curly, summoned by Snowish Laru as the Main Trekker, inherits 100% of Snowish Laru's ATK and is immune to DMG permanently.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -1035,6 +1035,8 @@
         "buffIcons": []
     },
     "4022": {
+        "name": "Clockwork Queen",
+        "desc": "Clockwork Queen inherits 100% of Snowish Laru's ATK for 12s, during which it is immune to DMG. Only 1 can exist at the same time.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -1042,6 +1044,8 @@
         "buffIcons": []
     },
     "4023": {
+        "name": "Colonel Walnut",
+        "desc": "Colonel Walnut, summoned by Snowish Laru as the Support Trekker, inherits 100% of Snowish Laru's ATK for 10s, during which it is immune to DMG. Up to 4 can exist at the same time.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -1049,6 +1053,8 @@
         "buffIcons": []
     },
     "4024": {
+        "name": "General Curly",
+        "desc": "General Curly, combined by Colonel Walnuts, inherits 100% of Snowish Laru's ATK for 10s, during which it is immune to DMG. Only 1 can exist at the same time.",
         "params": [],
         "effectType": [],
         "addAttrType": [],

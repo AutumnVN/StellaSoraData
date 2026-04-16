@@ -8682,7 +8682,7 @@
         "secondarySkill1": {
             "id": 30031,
             "name": "Lingering Heatwave",
-            "desc": "When any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When any Trekker triggers ##Ignis Mark#1016#, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -9814,7 +9814,7 @@
         "secondarySkill1": {
             "id": 30051,
             "name": "Shining Burst",
-            "desc": "When any Trekker triggers ##Lux Mark#1015#, increases Lux squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When any Trekker triggers ##Lux Mark#1015#, increases the ATK of Lux Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -10946,7 +10946,7 @@
         "secondarySkill1": {
             "id": 30071,
             "name": "Evening Breeze",
-            "desc": "When any Trekker triggers ##Ventus Mark#1017#, increases Ventus squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When any Trekker triggers ##Ventus Mark#1017#, increases the ATK of Ventus Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -12078,7 +12078,7 @@
         "secondarySkill1": {
             "id": 30091,
             "name": "Silken Raindrops",
-            "desc": "When any Trekker triggers ##Aqua Mark#1018#, increases Aqua squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When any Trekker triggers ##Aqua Mark#1018#, increases the ATK of Aqua Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -13212,7 +13212,7 @@
         "secondarySkill1": {
             "id": 30111,
             "name": "Dancing Shadows",
-            "desc": "When any Trekker triggers ##Umbra Mark#1019#, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When any Trekker triggers ##Umbra Mark#1019#, increases the ATK of Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -14346,7 +14346,7 @@
         "secondarySkill1": {
             "id": 30131,
             "name": "Snuggle Up",
-            "desc": "When any Trekker triggers ##Terra Mark#1020#, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When any Trekker triggers ##Terra Mark#1020#, increases the ATK of Terra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -15480,7 +15480,7 @@
         "secondarySkill1": {
             "id": 30151,
             "name": "Caressing Breeze",
-            "desc": "When the main Ventus Trekker is hit, increases the squad's Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Ventus Main Trekker is hit, increases all friendly units' Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Ventus DMG",
                 "Ventus DMG (base)"
@@ -16050,7 +16050,7 @@
         "secondarySkill1": {
             "id": 30161,
             "name": "Thorning Rose",
-            "desc": "When the main Ignis Trekker is hit, increases the squad's Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Ignis Main Trekker is hit, increases all friendly units' Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Ignis DMG",
                 "Ignis DMG (base)"
@@ -16618,7 +16618,7 @@
         "secondarySkill1": {
             "id": 30171,
             "name": "Spinning Light",
-            "desc": "When the main Lux Trekker is hit, increases the squad's Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Lux Main Trekker is hit, increases all friendly units' Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Lux DMG",
                 "Lux DMG (base)"
@@ -17188,7 +17188,7 @@
         "secondarySkill1": {
             "id": 30181,
             "name": "Chilling Coolness",
-            "desc": "When the main Aqua Trekker is hit, increases the squad's Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Aqua Main Trekker is hit, increases all friendly units' Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Aqua DMG",
                 "Aqua DMG (base)"
@@ -17756,7 +17756,7 @@
         "secondarySkill1": {
             "id": 30191,
             "name": "Fleeting Dreams",
-            "desc": "When the main Umbra Trekker is hit, increases the squad's Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Umbra Main Trekker is hit, increases all friendly units' Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Umbra DMG",
                 "Umbra DMG (base)"
@@ -18324,7 +18324,7 @@
         "secondarySkill1": {
             "id": 30201,
             "name": "Startling Moment",
-            "desc": "When the main Terra Trekker is hit, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Terra Main Trekker is hit, increases all friendly units' Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Terra DMG",
                 "Terra DMG (base)"
@@ -18889,7 +18889,7 @@
         "secondarySkill1": {
             "id": 30211,
             "name": "Squall",
-            "desc": "When any Ventus Trekker casts an Ultimate, increases Ventus squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Ventus Trekker casts an Ultimate, increases the ATK of Ventus Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -19454,7 +19454,7 @@
         "secondarySkill1": {
             "id": 30221,
             "name": "Surge of Flame",
-            "desc": "When any Ignis Trekker casts an Ultimate, increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Ignis Trekker casts an Ultimate, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -20019,7 +20019,7 @@
         "secondarySkill1": {
             "id": 30231,
             "name": "Holy Glow",
-            "desc": "When any Lux Trekker casts an Ultimate, increases Lux squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Lux Trekker casts an Ultimate, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -20584,7 +20584,7 @@
         "secondarySkill1": {
             "id": 30241,
             "name": "Sweet Creek",
-            "desc": "When any Aqua Trekker casts an Ultimate, increases Aqua squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Aqua Trekker casts an Ultimate, increases the ATK of Aqua Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -21149,7 +21149,7 @@
         "secondarySkill1": {
             "id": 30251,
             "name": "Phantom Realm",
-            "desc": "When any Umbra Trekker casts an Ultimate, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Umbra Trekker casts an Ultimate, increases the ATK of Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -21714,7 +21714,7 @@
         "secondarySkill1": {
             "id": 30261,
             "name": "Livestream Prep",
-            "desc": "When any Terra Trekker casts an Ultimate, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Terra Trekker casts an Ultimate, increases the ATK of Terra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -22265,7 +22265,7 @@
         "mainSkill": {
             "id": 4001,
             "name": "Meowing Cat God",
-            "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ignis Trekker casts a skill, increases the ATK of Ignis Trekkers in the squad by {2} for {3}s. The main Ignis Trekker gains Blazing Armor: reduces DMG taken by {4} for {5}s.",
+            "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ignis Trekker casts a skill, increases the ATK of Ignis Trekkers in the squad and their Minions by {2} for {3}s. The main Ignis Trekker gains Blazing Armor: Reduces DMG taken by {4} for {5}s.",
             "effectType": [
                 "Ignis DMG (base)",
                 "ADDBUFF:ATK",
@@ -22331,7 +22331,7 @@
         "secondarySkill2": {
             "id": 40012,
             "name": "Destructive Aura",
-            "desc": "When the target is killed, if the main Trekker is inflicted with Blazing Armor, increases Ignis squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When the target is killed, if the Main Trekker has Blazing Armor, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -22943,7 +22943,7 @@
         "secondarySkill2": {
             "id": 40022,
             "name": "Fragrance of Heart",
-            "desc": "When any Ventus Trekker kills a target inflicted with Laceration, increases the squad's Ventus DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Ventus Trekker kills a target inflicted with Laceration, increases all friendly units' Ventus DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:Ventus DMG",
                 "Ventus DMG (base)"
@@ -24733,7 +24733,7 @@
         "secondarySkill1": {
             "id": 40061,
             "name": "Spectral Fragrance",
-            "desc": "When any Umbra Trekker casts a Support Skill, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.\u000bFor every minion summoned by an Umbra squadmate, increases the DMG of all allied Umbra minions on the battlefield by <color=#ec6d21>{3}</color> for {4}s, stacking up to {5} times.",
+            "desc": "When any Umbra Trekker casts a Support Skill, increases the ATK of Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.\u000bFor every Minion summoned by an Umbra Trekker in the squad, increases the DMG of all allied Umbra Minions on the battlefield by <color=#ec6d21>{3}</color> for {4}s, stacking up to {5} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)",
@@ -25357,7 +25357,7 @@
         "secondarySkill1": {
             "id": 40071,
             "name": "Decisive Strike",
-            "desc": "When a Lux main Trekker hits a target, increases all Lux squadmates' ATK by <color=#ec6d21>{1}</color> for {3}s.\u000bWhen any Lux Trekker hits a stunned target, increases this effect by an additional <color=#ec6d21>{2}</color> for {4}s.",
+            "desc": "When a Lux Main Trekker hits a target, increases the ATK of Lux Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {3}s.\u000bWhen any Lux Trekker hits a stunned target, increases this effect by an additional <color=#ec6d21>{2}</color> for {4}s.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -25952,7 +25952,7 @@
         "mainSkill": {
             "id": 4008,
             "name": "Soaring Blue",
-            "desc": "When an Aqua Versatile Trekker deals Skill DMG, inflicts 1 stack of Bright Tide on the target for {1}s, stacking up to {2} times.\u000bAt {3} stacks, increases the Aqua Auto Attack DMG the target takes by <color=#ec6d21>{4}</color>.\u000bAt {5} stacks, increases the Aqua Skill DMG the target takes by <color=#ec6d21>{6}</color> additionally.",
+            "desc": "When an Aqua Versatile Trekker deals Skill DMG, inflicts 1 stack of Bright Tide on the target for {1}s, stacking up to {2} times.\u000bBright Tide: At {3} stacks, increases Aqua Auto Attack DMG Taken by <color=#ec6d21>{4}</color>.\u000bAt {5} stacks, increases Aqua Skill DMG Taken by an additional <color=#ec6d21>{6}</color>.",
             "effectType": [],
             "addAttrType": [
                 "Auto Attack DMG Taken (base)",
@@ -26569,7 +26569,7 @@
         "secondarySkill1": {
             "id": 40091,
             "name": "Starlit Winds",
-            "desc": "When the main Ventus Trekker gains a shield, increases the squad's Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Ventus Main Trekker gains a shield, increases all friendly units' Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Ventus DMG",
                 "Ventus DMG (base)"
@@ -27174,7 +27174,7 @@
         "secondarySkill1": {
             "id": 40101,
             "name": "Light of Mercy",
-            "desc": "When the main Lux Trekker gains a shield, increases the squad's Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Lux Main Trekker gains a shield, increases all friendly units' Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Lux DMG",
                 "Lux DMG (base)"
@@ -27784,7 +27784,7 @@
         "secondarySkill1": {
             "id": 40111,
             "name": "Frosted Blossom",
-            "desc": "When the main Aqua Trekker gains a shield, increases the squad's Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Aqua Main Trekker gains a shield, increases all friendly units' Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Aqua DMG",
                 "Aqua DMG (base)"
@@ -28396,7 +28396,7 @@
         "secondarySkill1": {
             "id": 40121,
             "name": "Dark Reckoning",
-            "desc": "When the main Umbra Trekker gains a shield, increases the squad's Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Umbra Main Trekker gains a shield, increases all friendly units' Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Umbra DMG",
                 "Umbra DMG (base)"
@@ -29006,7 +29006,7 @@
         "secondarySkill1": {
             "id": 40131,
             "name": "Raging Wildfire",
-            "desc": "When the main Ignis Trekker gains a shield, increases the squad's Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Ignis Main Trekker gains a shield, increases all friendly units' Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Ignis DMG",
                 "Ignis DMG (base)"
@@ -29611,7 +29611,7 @@
         "secondarySkill1": {
             "id": 40141,
             "name": "Fruity & Fragrant",
-            "desc": "When the main Terra Trekker gains a shield, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "desc": "When the Terra Main Trekker gains a shield, increases all friendly units' Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
             "effectType": [
                 "ADDBUFF:Terra DMG",
                 "Terra DMG (base)"
@@ -30811,7 +30811,7 @@
         "mainSkill": {
             "id": 4016,
             "name": "Chronicles of Spring",
-            "desc": "The main Ventus Trekker gains 1 stack of Drifting Snow for 10s after casting a skill, stacking up to 3 times.\u000bWhen the main Ventus Trekker deals Auto Attack DMG, 1/2/3 stacks of Drifting Snow inflict the following effect on the target: increases Ventus Auto Attack DMG taken by <color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color> for 10s.\u000bWhen the main Ventus Trekker deals Skill DMG, 1/2/3 stacks of Drifting Snow inflict the following effect on the target: increases Ventus Skill DMG taken by <color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color> for 10s.",
+            "desc": "When the Ventus Main Trekker gains 1 stack of Drifting Snow for 10s after casting a skill, stacking up to 3 times.\u000bWhen the Ventus Main Trekker deals Auto Attack DMG, 1/2/3 stacks of Drifting Snow inflict the following on the target: increases Ventus Auto Attack DMG taken by <color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color> for 10s.\u000bWhen the Ventus Main Trekker deals Skill DMG, 1/2/3 stacks of Drifting Snow inflict the following on the target: increases Ventus Skill DMG taken by <color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color> for 10s.",
             "effectType": [
                 "ELEMENTTYPE_:(Ventus) Auto Attack DMG Taken",
                 "ELEMENTTYPE_:(Ventus) Skill DMG Taken"
@@ -32081,7 +32081,7 @@
         "secondarySkill2": {
             "id": 40182,
             "name": "Lasting Trends",
-            "desc": "For each target killed, increases Ventus squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "For each target killed, increases the ATK of Ventus Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -33910,7 +33910,7 @@
         "secondarySkill2": {
             "id": 40212,
             "name": "Moment of Unity",
-            "desc": "Increases Aqua Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
+            "desc": "Increases the Auto Attack DMG and Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Skill DMG (base)"
@@ -35118,7 +35118,7 @@
         "secondarySkill2": {
             "id": 40232,
             "name": "Hit and Run",
-            "desc": "Increases Terra Trekkers' Skill and Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
+            "desc": "Increases the Skill DMG and Ultimate DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "Skill DMG (base)",
@@ -35693,7 +35693,7 @@
         "secondarySkill1": {
             "id": 40241,
             "name": "Graceful Dive",
-            "desc": "Increases the Ultimate DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ventus Mark#1017#, increases Ventus squadmates' ATK by <color=#ec6d21>{2}</color> for {3}s.",
+            "desc": "Increases the Ultimate DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ventus Mark#1017#, increases the ATK of Ventus Trekkers in the squad and their Minions by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "ADDBUFF:ATK",
@@ -36282,7 +36282,7 @@
         "mainSkill": {
             "id": 4026,
             "name": "Sword Against Stream",
-            "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Aqua Mark#1018#, increases the squad's Aqua DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Aqua Mark#1018#, increases all friendly units' Aqua DMG by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
                 "Aqua DMG (base)",
                 "ADDBUFF:Aqua DMG"
@@ -38174,7 +38174,7 @@
         "secondarySkill2": {
             "id": 40302,
             "name": "Relaxing Tea",
-            "desc": "When any Lux Trekker kills a target inflicted with Shock, increases the squad's Lux DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Lux Trekker kills a target inflicted with Shock, increases all friendly units' Lux DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:Lux DMG",
                 "Lux DMG (base)"
@@ -38749,7 +38749,7 @@
         "secondarySkill1": {
             "id": 40311,
             "name": "Surging Slash",
-            "desc": "If the main Trekker is inflicted with Bless, increases the squad's Aqua DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
+            "desc": "If the Main Trekker has Bless, increases all friendly units' Aqua DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "ADDBUFF:Aqua DMG",
                 "HITTED_ADDITIONAL_:Aqua DMG (base)"
@@ -38791,7 +38791,7 @@
         "secondarySkill2": {
             "id": 40312,
             "name": "Preferred Enemy",
-            "desc": "When the target is killed, if the main Trekker is inflicted with Bless, increases Aqua squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When the target is killed, if the Main Trekker has Bless, increases the ATK of Aqua Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -39406,7 +39406,7 @@
         "secondarySkill2": {
             "id": 40322,
             "name": "News Spree",
-            "desc": "When any Umbra Trekker kills a target inflicted with Corrosion, increases the squad's Umbra DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Umbra Trekker kills a target inflicted with Corrosion, increases all friendly units' Umbra DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:Umbra DMG",
                 "Umbra DMG (base)"
@@ -39983,7 +39983,7 @@
         "secondarySkill1": {
             "id": 40331,
             "name": "Truth Digger",
-            "desc": "If the main Trekker is inflicted with Boulder, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color>.",
+            "desc": "If the Main Trekker is inflicted with Boulder, increases the ATK of Terra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color>.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -40637,7 +40637,7 @@
         "secondarySkill2": {
             "id": 40362,
             "name": "Prison of Passion",
-            "desc": "When any Trekker triggers ##Terra Mark#1020#, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When any Trekker triggers ##Terra Mark#1020#, increases the ATK of Terra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -43036,7 +43036,7 @@
         "secondarySkill1": {
             "id": 40401,
             "name": "Passion of the Captain",
-            "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Trekker deals Skill DMG, increases Ignis Trekkers' ATK by <color=#ec6d21>{2}</color> for {3}s.",
+            "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Trekker deals Skill DMG, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{2}</color> for {3}s.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:ATK",
@@ -46036,7 +46036,7 @@
     },
     "214045": {
         "id": 214045,
-        "name": "214045",
+        "name": "Petals of Blooming Mirage",
         "star": 5,
         "element": "Umbra",
         "tag": [
@@ -46049,8 +46049,8 @@
         ],
         "mainSkill": {
             "id": 4045,
-            "name": "???",
-            "desc": "???\u000bParam1: {1} \u000bParam2: {2} \u000bParam3: {3} \u000bParam4: {4}",
+            "name": "Petals of Blooming Mirage",
+            "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen an Umbra Versatile Trekker deals Skill DMG, inflicts 1 stack of Dark Sakura on the target for {2}s, stacking up to {3} times. Dark Sakura: At max stacks, increases Umbra Skill DMG Taken by <color=#ec6d21>{4}</color>.",
             "effectType": [
                 "Umbra DMG (base)"
             ],
@@ -46065,8 +46065,8 @@
         },
         "secondarySkill1": {
             "id": 40451,
-            "name": "???",
-            "desc": "???\u000bParam1: {1} \u000bParam2: {2}",
+            "name": "Fading Petals",
+            "desc": "Increases Umbra Versatile Trekkers' Crit DMG by <color=#ec6d21>{1}</color>.\u000bDark Sakura gains an additional effect: Each stack increases the Umbra Ultimate DMG Taken by the target by <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "Crit DMG (base)",
                 "ELEMENTTYPE_:(Umbra) Ultimate DMG Taken"
@@ -46104,8 +46104,8 @@
         },
         "secondarySkill2": {
             "id": 40452,
-            "name": "???",
-            "desc": "???\u000bParam1: {1} \u000bParam2: {2} \u000bParam3: {3} \u000bParam4: {4} \u000bParam5: {5}",
+            "name": "Lunar Mirage",
+            "desc": "When an Umbra Versatile Trekker deals Ultimate DMG to a target with max stacks of Dark Sakura, the Main Umbra Trekker gains Flower Feast for {1}s.\u000bWhen the Main Umbra Trekker with Flower Feast triggers a mark that inflicts ##Dark Burn#2028#, increases own Skill Crit Rate by <color=#ec6d21>{2}</color> for {3}s.\u000bWhen the Main Umbra Trekker with Flower Feast triggers a mark to activate the effects of ##Dark Shackles#2020#, increases own Auto Attack Crit DMG by <color=#ec6d21>{4}</color> for {5}s.",
             "effectType": [
                 "Skill Crit Rate (base)",
                 "Skill Crit DMG (base)"
@@ -46654,7 +46654,7 @@
         "mainSkill": {
             "id": 4046,
             "name": "Dawn After Winter",
-            "desc": "When the main Ventus Trekker deals Ultimate DMG, they gain 1 stack of Bitter Cold: increases Auto Attack and Skill DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "desc": "When the Ventus Main Trekker deals Ultimate DMG, they gain 1 stack of Bitter Cold: increases Auto Attack and Skill DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Skill DMG (base)"
@@ -47258,7 +47258,7 @@
         "mainSkill": {
             "id": 4047,
             "name": "Delivered by the Breeze",
-            "desc": "When an Aqua Versatile Trekker deals Skill DMG, the main Aqua Trekker gains 1 stack of Thought Ripple for {1}s, stacking up to {2} times.\u000bAt {3} stacks, increases the Aqua DMG dealt by all friendly units by <color=#ec6d21>{4}</color>.\u000bAt {5} stacks, increases the Skill DMG dealt by Aqua Trekkers in the squad by <color=#ec6d21>{6}</color> additionally.",
+            "desc": "When an Aqua Versatile Trekker deals Skill DMG, the Aqua Main Trekker gains 1 stack of Thought Ripple for {1}s, stacking up to {2} times.\u000bAt {3} stacks, increases the Aqua DMG dealt by all friendly units by <color=#ec6d21>{4}</color>.\u000bAt {5} stacks, increases the Skill DMG dealt by Aqua Trekkers in the squad by an additional <color=#ec6d21>{6}</color>.",
             "effectType": [],
             "addAttrType": [
                 "Aqua DMG (base)",
@@ -47857,7 +47857,7 @@
         "mainSkill": {
             "id": 4048,
             "name": "Snowy Night Surprise",
-            "desc": "Increases Ignis DMG of the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ignis Trekker deals Skill DMG, inflicts ##Ode#6002#, lasting {2}s.\u000bOde can be converted into Hymn.\u000bHymn: Increase Ignis DMG taken by <color=#ec6d21>{3}</color> for {4}s, up to {5} stacks.",
+            "desc": "Increases Ignis DMG of the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ignis Trekker deals Skill DMG, inflicts ##Ode#6002#, lasting {2}s.\u000bOde can be converted into Hymn.\u000bHymn: Increase Ignis DMG Taken by <color=#ec6d21>{3}</color> for {4}s, stacking up to {5} times.",
             "effectType": [
                 "Ignis DMG (base)",
                 "Ignis DMG Taken (base)"
@@ -47874,7 +47874,7 @@
         "secondarySkill1": {
             "id": 40481,
             "name": "Kingdom of Fries",
-            "desc": "Hymn grants extra effects: Increases the Ignis Skill DMG Taken by <color=#ec6d21>{1}</color>.\u000bWhen ##Ode#6002# is converted in to Hymn, increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{2}</color> for {3}s, up to {4} stacks.",
+            "desc": "Hymn grants extra effects: Increases the Ignis Skill DMG Taken by <color=#ec6d21>{1}</color>.\u000bWhen ##Ode#6002# is converted to Hymn, increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
             "effectType": [
                 "ELEMENTTYPE_:(Ignis) Skill DMG Taken",
                 "Skill DMG (base)"
@@ -48450,7 +48450,7 @@
     },
     "214049": {
         "id": 214049,
-        "name": "214049",
+        "name": "Traces of Starlight",
         "star": 5,
         "element": "None",
         "tag": [
@@ -48461,8 +48461,8 @@
         "char": [],
         "mainSkill": {
             "id": 4049,
-            "name": "???",
-            "desc": "???\u000bParam1: {1} \u000bParam2: {2} \u000bParam3: {3}",
+            "name": "Traces of Starlight",
+            "desc": "When the main Trekker's HP drops below 10%, instantly gains a shield equal to <color=#ec6d21>{1}</color> of Max HP for {2}s. This effect can only be triggered once every {3}s.",
             "effectType": [],
             "addAttrType": [],
             "effectData": [],
@@ -48473,8 +48473,8 @@
         },
         "secondarySkill1": {
             "id": 40491,
-            "name": "???",
-            "desc": "???\u000bParam1: {1} \u000bParam2: {2}",
+            "name": "Starlight Journey",
+            "desc": "Increases the squad's ATK by <color=#ec6d21>{1}</color>.\u000bParam2: {2}",
             "effectType": [
                 "ATK (%)"
             ],
@@ -48509,8 +48509,8 @@
         },
         "secondarySkill2": {
             "id": 40492,
-            "name": "???",
-            "desc": "???\u000bParam1: {1} \u000bParam2: {2}",
+            "name": "Memory Resonance",
+            "desc": "Increases the squad's Elemental DMG by <color=#ec6d21>{1}</color>.\u000bParam2: {2}",
             "effectType": [
                 "Aqua DMG (base)",
                 "Ignis DMG (base)",
@@ -49047,7 +49047,7 @@
     },
     "214050": {
         "id": 214050,
-        "name": "214050",
+        "name": "Phantom of the Banquet",
         "star": 5,
         "element": "Umbra",
         "tag": [
@@ -49060,8 +49060,8 @@
         ],
         "mainSkill": {
             "id": 4050,
-            "name": "???",
-            "desc": "???\u000bParam1: {1} \u000bParam2: {2} \u000bParam3: {3} \u000bParam4: {4}",
+            "name": "Phantom of the Banquet",
+            "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen an Umbra Versatile Trekker deals Skill DMG, the Umbra Main Trekker gains 1 stack of Blossom Glow for {2}s, stacking up to {3} times. At max stacks, increases the Skill DMG dealt by Umbra Trekkers in the squad by <color=#ec6d21>{4}</color>.",
             "effectType": [
                 "Umbra DMG (base)"
             ],
@@ -49076,8 +49076,8 @@
         },
         "secondarySkill1": {
             "id": 40501,
-            "name": "???",
-            "desc": "???\u000bParam1: {1} \u000bParam2: {2}",
+            "name": "Umbral Harmony",
+            "desc": "Increases Umbra Versatile Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bBlossom Glow gains an additional effect: Each stack increases own Skill DMG and Ultimate DMG by <color=#ec6d21>{2}</color>.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "Skill DMG (base)"
@@ -49115,8 +49115,8 @@
         },
         "secondarySkill2": {
             "id": 40502,
-            "name": "???",
-            "desc": "???\u000bParam1: {1} \u000bParam2: {2} \u000bParam3: {3} \u000bParam4: {4}",
+            "name": "A Toast Behind the Scenes",
+            "desc": "When the Main Umbra Trekker with max stacks of Blossom Glow triggers a mark that activates the effects of ##Dark Burn#2028#, increases own Skill DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen the Main Umbra Trekker with max stacks of Blossom Glow triggers a mark that inflicts ##Dark Shackles#2020#, increases own Auto Attack DMG by <color=#ec6d21>{3}</color> for {4}s.",
             "effectType": [
                 "Skill DMG (base)",
                 "Auto Attack Damage (base)"
@@ -49645,606 +49645,6 @@
             {
                 "Duloos Soul Remnant": 126,
                 "Duloos Essence": 66,
-                "Dorra": 1513800
-            }
-        ]
-    },
-    "214051": {
-        "id": 214051,
-        "name": "214051",
-        "star": 5,
-        "element": "Lux",
-        "tag": [
-            "Auto Attack",
-            "VUL",
-            "Crit DMG"
-        ],
-        "char": [],
-        "mainSkill": {
-            "id": 4051,
-            "desc": "undefined\u000bParam1: {1} \u000bParam2: {2} \u000bParam3: {3} \u000bParam4: {4} \u000bParam5: {5}",
-            "effectType": [
-                "Auto Attack Damage (base)",
-                "ELEMENTTYPE_:(Lux) Auto Attack DMG Taken"
-            ],
-            "addAttrType": [],
-            "effectData": [],
-            "buffIcon": [
-                "No Icon"
-            ],
-            "params": "7%,6,10,10%,10/8.4%,6,10,12%,10/9.8%,6,10,14%,10/11.2%,6,10,16%,10/12.6%,6,10,18%,10/14%,6,10,20%,10",
-            "icon": "DiscSkill_214051",
-            "iconBg": "db_DiscSkill_3"
-        },
-        "secondarySkill1": {
-            "id": 40511,
-            "desc": "undefined\u000bParam1: {1} \u000bParam2: {2}",
-            "effectType": [
-                "Lux DMG (base)",
-                "Normal Attack Crit DMG (base)"
-            ],
-            "addAttrType": [],
-            "effectData": [],
-            "buffIcon": [
-                "No Icon"
-            ],
-            "params": "4%,2.4%/8%,3%/12%,3.6%/16%,4.2%/20%,4.8%",
-            "requirements": [
-                {
-                    "Melody of Ultimate": 10,
-                    "Melody of Lux": 10
-                },
-                {
-                    "Melody of Ultimate": 25,
-                    "Melody of Lux": 25
-                },
-                {
-                    "Melody of Ultimate": 40,
-                    "Melody of Lux": 40
-                },
-                {
-                    "Melody of Ultimate": 55,
-                    "Melody of Lux": 55
-                },
-                {
-                    "Melody of Ultimate": 70,
-                    "Melody of Lux": 70
-                }
-            ],
-            "icon": "DiscSkill_3",
-            "iconBg": "db_DiscSkill_3"
-        },
-        "secondarySkill2": {
-            "id": 40512,
-            "desc": "undefined\u000bParam1: {1} \u000bParam2: {2} \u000bParam3: {3} \u000bParam4: {4}",
-            "effectType": [
-                "Skill Crit DMG (base)",
-                "Normal Attack Crit DMG (base)"
-            ],
-            "addAttrType": [],
-            "effectData": [],
-            "buffIcon": [
-                "No Icon"
-            ],
-            "params": "15%,5,15%,5/20%,5,20%,5/25%,5,25%,5/30%,5,30%,5/35%,5,35%,5",
-            "requirements": [
-                {
-                    "Melody of Luck": 15,
-                    "Melody of Ultimate": 15,
-                    "Melody of Lux": 15
-                },
-                {
-                    "Melody of Luck": 30,
-                    "Melody of Ultimate": 30,
-                    "Melody of Lux": 30
-                },
-                {
-                    "Melody of Luck": 45,
-                    "Melody of Ultimate": 45,
-                    "Melody of Lux": 45
-                },
-                {
-                    "Melody of Luck": 60,
-                    "Melody of Ultimate": 60,
-                    "Melody of Lux": 60
-                },
-                {
-                    "Melody of Luck": 75,
-                    "Melody of Ultimate": 75,
-                    "Melody of Lux": 75
-                }
-            ],
-            "icon": "DiscSkill_3",
-            "iconBg": "db_DiscSkill_3"
-        },
-        "supportNote": [
-            {
-                "Melody of Luck": 2,
-                "Melody of Skill": 4
-            },
-            {
-                "Melody of Luck": 2,
-                "Melody of Skill": 5
-            },
-            {
-                "Melody of Luck": 2,
-                "Melody of Skill": 6
-            },
-            {
-                "Melody of Luck": 3,
-                "Melody of Skill": 6
-            },
-            {
-                "Melody of Luck": 3,
-                "Melody of Skill": 7
-            },
-            {
-                "Melody of Luck": 3,
-                "Melody of Skill": 8
-            },
-            {
-                "Melody of Luck": 4,
-                "Melody of Skill": 8
-            },
-            {
-                "Melody of Luck": 4,
-                "Melody of Skill": 9
-            },
-            {
-                "Melody of Luck": 4,
-                "Melody of Skill": 10
-            }
-        ],
-        "stat": [
-            {
-                "ATK": 15,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 20,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 24,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 29,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 33,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 38,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 42,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 47,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 51,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 56,
-                "Lux DMG": "2%"
-            },
-            {
-                "ATK": 67,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 71,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 76,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 80,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 85,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 89,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 94,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 98,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 103,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 107,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 112,
-                "Lux DMG": "3%"
-            },
-            {
-                "ATK": 134,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 138,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 143,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 147,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 152,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 156,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 161,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 165,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 170,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 174,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 179,
-                "Lux DMG": "5%"
-            },
-            {
-                "ATK": 215,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 219,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 224,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 228,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 233,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 237,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 242,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 246,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 251,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 255,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 260,
-                "Lux DMG": "7%"
-            },
-            {
-                "ATK": 312,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 316,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 321,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 325,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 330,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 334,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 339,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 343,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 348,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 352,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 357,
-                "Lux DMG": "8%"
-            },
-            {
-                "ATK": 428,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 433,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 437,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 442,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 446,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 451,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 455,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 460,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 464,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 469,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 473,
-                "Lux DMG": "10%"
-            },
-            {
-                "ATK": 568,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 572,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 577,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 581,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 586,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 590,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 595,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 599,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 604,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 608,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 613,
-                "Lux DMG": "12%"
-            },
-            {
-                "ATK": 735,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 740,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 744,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 749,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 753,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 758,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 762,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 767,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 771,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 776,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 780,
-                "Lux DMG": "13%"
-            },
-            {
-                "ATK": 936,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 941,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 945,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 950,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 954,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 959,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 963,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 968,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 972,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 977,
-                "Lux DMG": "15%"
-            },
-            {
-                "ATK": 981,
-                "Lux DMG": "15%"
-            }
-        ],
-        "dupe": [
-            {
-                "ATK": 130
-            },
-            {
-                "ATK": 260
-            },
-            {
-                "ATK": 390
-            },
-            {
-                "ATK": 520
-            },
-            {
-                "ATK": 650
-            }
-        ],
-        "upgrade": [
-            {
-                "Faint Light Breath": 6,
-                "Dorra": 10700
-            },
-            {
-                "Faint Light Breath": 6,
-                "Emberflies Soul": 13,
-                "Dorra": 26700
-            },
-            {
-                "Faint Light Breath": 13,
-                "Emberflies Soul": 20,
-                "Dorra": 59900
-            },
-            {
-                "Faint Light Breath": 20,
-                "Emberflies Soul": 33,
-                "Dorra": 89900
-            },
-            {
-                "Faint Light Breath": 26,
-                "Emberflies Soul": 53,
-                "Dorra": 197200
-            },
-            {
-                "Faint Light Breath": 40,
-                "Emberflies Soul": 73,
-                "Evernight Essence": 26,
-                "Dorra": 393700
-            },
-            {
-                "Emberflies Soul": 100,
-                "Evernight Essence": 40,
-                "Dorra": 756300
-            },
-            {
-                "Emberflies Soul": 126,
-                "Evernight Essence": 66,
                 "Dorra": 1513800
             }
         ]
