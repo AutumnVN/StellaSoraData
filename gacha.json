@@ -296,6 +296,32 @@
         "startTime": "2025-10-20T04:00:00+08:00",
         "endTime": "2025-11-11T03:59:59+08:00"
     },
+    "10145": {
+        "id": 10145,
+        "type": "character",
+        "icon": "tab_gacha_10145_lang",
+        "rateUp5Star": [
+            {
+                "id": 145,
+                "name": "???",
+                "element": "Umbra"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 142,
+                "name": "Cosette",
+                "element": "Umbra"
+            },
+            {
+                "id": 150,
+                "name": "Laru",
+                "element": "Lux"
+            }
+        ],
+        "startTime": "2026-04-16T12:00:00+08:00",
+        "endTime": "2026-05-08T10:59:59+08:00"
+    },
     "10149": {
         "id": 10149,
         "type": "character",
@@ -430,6 +456,32 @@
         ],
         "startTime": "2026-02-03T12:00:00+08:00",
         "endTime": "2026-02-24T10:59:59+08:00"
+    },
+    "11144": {
+        "id": 11144,
+        "type": "character",
+        "icon": "tab_gacha_11144_lang",
+        "rateUp5Star": [
+            {
+                "id": 144,
+                "name": "Chitose",
+                "element": "Aqua"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 117,
+                "name": "Jinglin",
+                "element": "Lux"
+            },
+            {
+                "id": 127,
+                "name": "Teresa",
+                "element": "Aqua"
+            }
+        ],
+        "startTime": "2026-04-30T12:00:00+08:00",
+        "endTime": "2026-05-19T03:59:59+08:00"
     },
     "20110": {
         "id": 20110,
@@ -728,6 +780,31 @@
         "startTime": "2025-10-20T04:00:00+08:00",
         "endTime": "2025-11-11T03:59:59+08:00"
     },
+    "20145": {
+        "id": 20145,
+        "type": "disc",
+        "icon": "tab_gacha_20145_lang",
+        "rateUp5Star": [
+            {
+                "id": 214045,
+                "element": "Umbra"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 213012,
+                "name": "Starry Night Ode",
+                "element": "Umbra"
+            },
+            {
+                "id": 213005,
+                "name": "★Bam Bam Girl★",
+                "element": "Lux"
+            }
+        ],
+        "startTime": "2026-04-16T12:00:00+08:00",
+        "endTime": "2026-05-08T10:59:59+08:00"
+    },
     "20149": {
         "id": 20149,
         "type": "disc",
@@ -862,5 +939,31 @@
         ],
         "startTime": "2026-02-03T12:00:00+08:00",
         "endTime": "2026-02-24T10:59:59+08:00"
+    },
+    "21144": {
+        "id": 21144,
+        "type": "disc",
+        "icon": "tab_gacha_21144_lang",
+        "rateUp5Star": [
+            {
+                "id": 214026,
+                "name": "Sword Against Stream",
+                "element": "Aqua"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 213009,
+                "name": "Rainy Tune",
+                "element": "Aqua"
+            },
+            {
+                "id": 213005,
+                "name": "★Bam Bam Girl★",
+                "element": "Lux"
+            }
+        ],
+        "startTime": "2026-04-30T12:00:00+08:00",
+        "endTime": "2026-05-19T03:59:59+08:00"
     }
 }
