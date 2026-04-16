@@ -35,12 +35,14 @@ jobs:
         echo "Looking up latest EN commit on upstream/main..."
         EN_COMMIT=$(git log upstream/main --grep='EN' -i -n 1 --pretty=format:'%H')
         echo "EN_COMMIT=${EN_COMMIT:-<none>}"
-        if [ -n "$EN_COMMIT" ]; then
-          if git merge-base --is-ancestor "$EN_COMMIT" HEAD; then
-            echo "Local already contains upstream EN commit $EN_COMMIT, skipping sync"
-          fi
+        if [ -n "$EN_COMMIT" ] && git merge-base --is-ancestor "$EN_COMMIT" HEAD; then
+          echo "Local already contains upstream EN commit $EN_COMMIT, skipping merge"
         else
-          echo "No EN commit found on upstream/main; continuing sync"
+          if [ -n "$EN_COMMIT" ]; then
+            echo "EN commit $EN_COMMIT not present locally; merging upstream/main"
+          else
+            echo "No EN commit found on upstream/main; continuing sync"
+          fi
           git merge --allow-unrelated-histories -X theirs --no-edit upstream/main
           echo "Merge HEAD: $(git rev-parse HEAD)"
         fi
