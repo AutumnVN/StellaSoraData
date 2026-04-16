@@ -48,7 +48,7 @@ jobs:
         fi
 
 
-        SCRIPTS=(arena.js ascension.js blitz.js character.js characterid.js disc.js gacha.js ground.js item.js raid.js word.js)
+        SCRIPTS=(arena.js ascension.js blitz.js character.js characterid.js disc.js duel.js gacha.js ground.js item.js raid.js word.js)
         for script in "${SCRIPTS[@]}"; do
           echo "Running $script"
           node "$script"
