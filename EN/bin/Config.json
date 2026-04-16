@@ -61,7 +61,7 @@
   },
   "StarTowerBuildNumberMax": {
     "Id": "StarTowerBuildNumberMax",
-    "Value": "50"
+    "Value": "100"
   },
   "StarTowerBuildAutoLockScore": {
     "Id": "StarTowerBuildAutoLockScore",
@@ -227,6 +227,10 @@
     "Id": "Activity_Banner_Interval_Time",
     "Value": "3"
   },
+  "TrekkerVersusAddHotValueRangePreMinute": {
+    "Id": "TrekkerVersusAddHotValueRangePreMinute",
+    "Value": "1000,3000"
+  },
   "Cookie_ErrorTime": {
     "Id": "Cookie_ErrorTime",
     "Value": "0.8"
@@ -269,15 +273,15 @@
   },
   "PenguinCardRoundUpgradeCost": {
     "Id": "PenguinCardRoundUpgradeCost",
-    "Value": "0,300,3000,5000,30000"
+    "Value": "0,500,3000,20000,50000"
   },
   "PenguinCardSlotUpgradeCost": {
     "Id": "PenguinCardSlotUpgradeCost",
-    "Value": "0,0,0,2000,20000,50000"
+    "Value": "0,0,0,1000,2000,10000"
   },
   "PenguinCardBuyLimitUpgradeCost": {
     "Id": "PenguinCardBuyLimitUpgradeCost",
-    "Value": "0,100,800,2000,3000"
+    "Value": "0,100,800,1500,5000"
   },
   "PenguinCardFeverScore": {
     "Id": "PenguinCardFeverScore",
@@ -413,19 +417,19 @@
   },
   "TimeZone": {
     "Id": "TimeZone",
-    "Value": "-7"
+    "Value": "8"
   },
   "DailyRefreshOffsetHour": {
     "Id": "DailyRefreshOffsetHour",
-    "Value": "13"
+    "Value": "4"
   },
   "EnableExchange": {
     "Id": "EnableExchange",
-    "Value": "android_official,ios_official,pc_official,pc_exp,android_test_1,ios_test_1,pc_test_1"
+    "Value": "android_official,ios_official,pc_official,pc_taptap,android_bilibili,pc_bilibili,android_pre_bilibili,pc_pre_bilibili,android_exp,pc_exp,android_test_1,pc_test_1,android_none,pc_none"
   },
   "LampNoticeScrollSpeed": {
     "Id": "LampNoticeScrollSpeed",
-    "Value": "100"
+    "Value": "200"
   },
   "PotentialShowDetail": {
     "Id": "PotentialShowDetail",
@@ -820,6 +824,26 @@
   "RedDot": {
     "Id": "RedDot"
   },
+  "TrekkerVersusInitHotValue": {
+    "Id": "TrekkerVersusInitHotValue",
+    "Value": "100000"
+  },
+  "PotentialPreselectionMaxCount": {
+    "Id": "PotentialPreselectionMaxCount",
+    "Value": "50"
+  },
+  "PotentialPreselectionMaxLevel": {
+    "Id": "PotentialPreselectionMaxLevel",
+    "Value": "6"
+  },
+  "TrekkerVersusIdleRewardRedDotTime": {
+    "Id": "TrekkerVersusIdleRewardRedDotTime",
+    "Value": "12"
+  },
+  "TrekkerVersusIdleRewardMaxTime": {
+    "Id": "TrekkerVersusIdleRewardMaxTime",
+    "Value": "48"
+  },
   "TravelerDuel_BottomBanner": {
     "Id": "TravelerDuel_BottomBanner",
     "Value": "banner_l_7"
@@ -846,6 +870,10 @@
   },
   "CharGemHighQualityNum": {
     "Id": "CharGemHighQualityNum",
+    "Value": "2"
+  },
+  "CharGemOverlockCount": {
+    "Id": "CharGemOverlockCount",
     "Value": "2"
   },
   "NickNameResetTimeLimit": {
