@@ -13,7 +13,13 @@
         "mainSkill": {
             "id": 1001,
             "name": "Fortissimo: Main Theme",
+            "nameCN": "强音·主调",
+            "nameJP": "フォルティシモ",
+            "nameKR": "포르테·멜로디",
             "desc": "Increases the main Trekker's ATK by <color=#ec6d21>{1}</color>.",
+            "descCN": "主控角色攻击力提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "메인 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "ATK (%)"
             ],
@@ -523,7 +529,13 @@
         "mainSkill": {
             "id": 1002,
             "name": "Fortissimo: Harmony",
+            "nameCN": "强音·和声",
+            "nameJP": "フォルテ･コード",
+            "nameKR": "포르테·하모니",
             "desc": "Increases the support Trekker's ATK by <color=#ec6d21>{1}</color>.",
+            "descCN": "援护角色攻击力提升<color=#ec6d21>{1}</color>。",
+            "descJP": "支援巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "지원 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "ATK (%)"
             ],
@@ -1033,7 +1045,13 @@
         "mainSkill": {
             "id": 1003,
             "name": "Cadence: Main Theme",
+            "nameCN": "律动·主调",
+            "nameJP": "ジョコーソ",
+            "nameKR": "리듬·멜로디",
             "desc": "Increases the main Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "主控角色技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "메인 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)"
             ],
@@ -1543,7 +1561,13 @@
         "mainSkill": {
             "id": 1004,
             "name": "Cadence: Harmony",
+            "nameCN": "律动·和声",
+            "nameJP": "ジョコーソ･コード",
+            "nameKR": "리듬·하모니",
             "desc": "Increases the support Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "援护角色技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "支援巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "지원 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)"
             ],
@@ -2053,7 +2077,13 @@
         "mainSkill": {
             "id": 1005,
             "name": "Crescendo: Main Theme",
+            "nameCN": "高潮·主调",
+            "nameJP": "クレッシェンド",
+            "nameKR": "클라이막스·멜로디",
             "desc": "Increases the main Trekker's Ultimate DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "主控角色绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "메인 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Ultimate DMG (base)"
             ],
@@ -2563,7 +2593,13 @@
         "mainSkill": {
             "id": 1006,
             "name": "Crescendo: Harmony",
+            "nameCN": "高潮·和声",
+            "nameJP": "クレッシェンド･コード",
+            "nameKR": "클라이막스·하모니",
             "desc": "Increases the support Trekker's Ultimate DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "援护角色绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "支援巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "지원 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Ultimate DMG (base)"
             ],
@@ -3073,7 +3109,13 @@
         "mainSkill": {
             "id": 1007,
             "name": "Harmonics: Main Theme",
+            "nameCN": "谐奏·主调",
+            "nameJP": "エネルジコ",
+            "nameKR": "화음·멜로디",
             "desc": "Increases the main Trekker's Skill DMG and Ultimate DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "主控角色技能和绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者のスキルダメージと必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "메인 캐릭터의 스킬과 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "Ultimate DMG (base)"
@@ -3584,7 +3626,13 @@
         "mainSkill": {
             "id": 1008,
             "name": "Harmonics: Harmony",
+            "nameCN": "谐奏·和声",
+            "nameJP": "エネルジコ･コード",
+            "nameKR": "화음·하모니",
             "desc": "Increases the support Trekker's Skill DMG and Ultimate DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "援护角色技能和绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "支援巡遊者のスキルダメージと必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "지원 캐릭터의 스킬과 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "Ultimate DMG (base)"
@@ -4093,7 +4141,13 @@
         "mainSkill": {
             "id": 2001,
             "name": "Feasts and Revelry",
+            "nameCN": "盛宴欢愉",
+            "nameJP": "グランドフェスタ",
+            "nameKR": "성찬의 환희",
             "desc": "Increases the main Trekker's Auto Attack DMG and Skill DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "主控角色普攻和技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者の通常攻撃ダメージとスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "메인 캐릭터의 일반 공격과 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Skill DMG (base)"
@@ -4602,7 +4656,13 @@
         "mainSkill": {
             "id": 2002,
             "name": "Cry of the Valor",
+            "nameCN": "喧哗勇力",
+            "nameJP": "ランブルフォース",
+            "nameKR": "소란의 용기",
             "desc": "Increases the main Trekker's ATK by <color=#ec6d21>{1}</color>.",
+            "descCN": "主控角色攻击力提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "메인 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "ATK (%)"
             ],
@@ -5110,7 +5170,13 @@
         "mainSkill": {
             "id": 2003,
             "name": "In Ecstasy",
+            "nameCN": "极乐忘我",
+            "nameJP": "ヘブンリーブリス",
+            "nameKR": "무아지경",
             "desc": "Increases the main Trekker's Auto Attack DMG and Ultimate DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "主控角色普攻和绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者の通常攻撃ダメージと必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "메인 캐릭터의 일반 공격 피해와 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Ultimate DMG (base)"
@@ -5621,7 +5687,13 @@
         "mainSkill": {
             "id": 2005,
             "name": "Passion Ablaze",
+            "nameCN": "情热如火",
+            "nameJP": "ブレイジングハート",
+            "nameKR": "불 같은 열정",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "全队火系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム全体の火属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 전체의 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Ignis DMG (base)"
             ],
@@ -6129,7 +6201,13 @@
         "mainSkill": {
             "id": 2006,
             "name": "Radiant Omen",
+            "nameCN": "光启吉兆",
+            "nameJP": "ブレッシングレイ",
+            "nameKR": "빛의 길조",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "全队光系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 전체의 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Lux DMG (base)"
             ],
@@ -6635,7 +6713,13 @@
         "mainSkill": {
             "id": 2007,
             "name": "Rise with Zephyr",
+            "nameCN": "乘风而起",
+            "nameJP": "スカイライザー",
+            "nameKR": "바람을 타고 비상",
             "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "全队风系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム全体の風属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 전체의 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Ventus DMG (base)"
             ],
@@ -7141,7 +7225,13 @@
         "mainSkill": {
             "id": 2008,
             "name": "Bubbling Torrent",
+            "nameCN": "涌水泡沫",
+            "nameJP": "オーバーフロー",
+            "nameKR": "솟구치는 물거품",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "全队水系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム全体の水属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 전체의 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Aqua DMG (base)"
             ],
@@ -7647,7 +7737,13 @@
         "mainSkill": {
             "id": 2009,
             "name": "Echoes of Eclipse",
+            "nameCN": "黯灭余音",
+            "nameJP": "ロストレクイエム",
+            "nameKR": "검은 소멸의 잔음",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "全队暗系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム全体の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 전체의 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Umbra DMG (base)"
             ],
@@ -8153,7 +8249,13 @@
         "mainSkill": {
             "id": 2010,
             "name": "Will of Steel",
+            "nameCN": "坚韧意志",
+            "nameJP": "巌の意志",
+            "nameKR": "강인한 의지",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "全队地系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム全体の地属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 전체의 땅 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Terra DMG (base)"
             ],
@@ -8661,7 +8763,13 @@
         "mainSkill": {
             "id": 3003,
             "name": "Rock Party",
+            "nameCN": "摇滚派对",
+            "nameJP": "ヒートソウル",
+            "nameKR": "로큰롤 파티",
             "desc": "Increases the ATK of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Trekker casts a skill, increases Ignis Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中火系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意火系角色施放技能时，队伍中火系角色绝招伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の火属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の火属性巡遊者のスキル発動時から{3}秒間、チーム内の火属性巡遊者の必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 불 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b불 속성 캐릭터가 스킬을 시전하면 팀 내 불 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "ATK (%)",
                 "ADDBUFF:Ultimate DMG",
@@ -8682,7 +8790,13 @@
         "secondarySkill1": {
             "id": 30031,
             "name": "Lingering Heatwave",
+            "nameCN": "热浪余温",
+            "nameJP": "熱狂的ステージ",
+            "nameKR": "남은 온기",
             "desc": "When any Trekker triggers ##Ignis Mark#1016#, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意角色触发##火系印记#1016#时，队伍中火系角色及其仆从提升<color=#ec6d21>{1}</color>攻击力，持续{2}秒。",
+            "descJP": "チーム内の巡遊者が##火属性の印#1016#を発動させた時から{2}秒間、チーム内の火属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "임의의 캐릭터가 ##불 속성 표식#1016#을 발동하면 팀 내 불 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -9229,7 +9343,13 @@
         "mainSkill": {
             "id": 3004,
             "name": "Ardent Twin Moons",
+            "nameCN": "热情双月",
+            "nameJP": "ルナティックパッション",
+            "nameKR": "뜨거운 트윈 문",
             "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Ignis Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
+            "descCN": "队伍中火系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意火系角色造成技能伤害时，如果主控角色生命高于{2}，本次伤害提升<color=#ec6d21>{3}</color>。",
+            "descJP": "チーム内の火属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の火属性巡遊者のスキルダメージを敵に与える時、主力巡遊者のHPが{2}を超えている場合、そのダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "팀 내 불 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b불 속성 캐릭터가 스킬 피해를 입히고 메인 캐릭터의 HP가 {2}보다 높으면 이번 피해가 <color=#ec6d21>{3}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
@@ -9247,7 +9367,13 @@
         "secondarySkill1": {
             "id": 30041,
             "name": "Twin Moons' Waltz",
+            "nameCN": "双月共舞",
+            "nameJP": "予告状",
+            "nameKR": "두 달의 춤사위",
             "desc": "When a support Ignis Trekker is on the battlefield, increases the main Ignis Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "火系援护角色在场时，火系主控角色造成的技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "火属性の支援巡遊者がフィールドにいる時、火属性の主力巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "불 속성 지원 캐릭터가 필드에 있으면, 불 속성 메인 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -9793,7 +9919,13 @@
         "mainSkill": {
             "id": 3005,
             "name": "Glimmer Bubbles",
+            "nameCN": "嘭嘭光芒",
+            "nameJP": "ポンポンスパーク",
+            "nameKR": "펑펑 광채",
             "desc": "Increases the ATK of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen a Lux Trekker casts a skill, increases Lux Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中光系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意光系角色施放技能时，队伍中光系角色绝招伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の光属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の光属性巡遊者のスキル発動時から{3}秒間、チーム内の光属性巡遊者の必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 빛 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 캐릭터가 스킬을 시전하면 팀 내 빛 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "ATK (%)",
                 "ADDBUFF:Ultimate DMG",
@@ -9814,7 +9946,13 @@
         "secondarySkill1": {
             "id": 30051,
             "name": "Shining Burst",
+            "nameCN": "嘭嘭闪耀",
+            "nameJP": "ポンポンシャイン",
+            "nameKR": "펑펑 반짝임",
             "desc": "When any Trekker triggers ##Lux Mark#1015#, increases the ATK of Lux Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意角色触发##光系印记#1015#时，队伍中光系角色及其仆从提升<color=#ec6d21>{1}</color>攻击力，持续{2}秒。",
+            "descJP": "チーム内の巡遊者が##光属性の印#1015#を発動させた時から{2}秒間、チーム内の光属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "임의의 캐릭터가 ##빛 속성 표식#1015#을 발동할 시, 팀 내 빛 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -10363,7 +10501,13 @@
         "mainSkill": {
             "id": 3006,
             "name": "Light Lullaby",
+            "nameCN": "安眠之光",
+            "nameJP": "スイートドリーム",
+            "nameKR": "숙면의 빛",
             "desc": "Increases the Skill DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Lux Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
+            "descCN": "队伍中光系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意光系角色造成技能伤害时，如果主控角色生命高于{2}，本次伤害提升<color=#ec6d21>{3}</color>。",
+            "descJP": "チーム内の光属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の光属性巡遊者のスキルダメージを敵に与える時、主力巡遊者のHPが{2}を超えている場合、そのダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "팀 내 빛 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 캐릭터가 스킬 피해를 입히고 메인 캐릭터의 HP가 {2}보다 높으면 이번 피해가 <color=#ec6d21>{3}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
@@ -10381,7 +10525,13 @@
         "secondarySkill1": {
             "id": 30061,
             "name": "Tranquil Light",
+            "nameCN": "静谧之光",
+            "nameJP": "ヒールグロウ",
+            "nameKR": "고요함의 빛",
             "desc": "When a support Lux Trekker is on the battlefield, increases the main Lux Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
+            "descCN": "光系援护角色在场时，光系主控角色造成的技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "光属性の支援巡遊者がフィールドにいる時、光属性の主力巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "빛 속성 지원 캐릭터가 필드에 있으면, 빛 속성 메인 캐릭터가 입히는 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -10925,7 +11075,13 @@
         "mainSkill": {
             "id": 3007,
             "name": "Emerald Dreamscape",
+            "nameCN": "翠色梦彩",
+            "nameJP": "夢のまにまに",
+            "nameKR": "취옥색 꿈결",
             "desc": "Increases the ATK of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen a Ventus Trekker casts a skill, increases Ventus Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中风系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意风系角色施放技能时，队伍中风系角色绝招伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の風属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の風属性巡遊者のスキル発動時から{3}秒間、チーム内の風属性巡遊者の必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 바람 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b바람 속성 캐릭터가 스킬을 시전하면 팀 내 바람 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "ATK (%)",
                 "ADDBUFF:Ultimate DMG",
@@ -10946,7 +11102,13 @@
         "secondarySkill1": {
             "id": 30071,
             "name": "Evening Breeze",
+            "nameCN": "微风入夜",
+            "nameJP": "頬を撫でる夜風",
+            "nameKR": "밤으로 스미는 바람",
             "desc": "When any Trekker triggers ##Ventus Mark#1017#, increases the ATK of Ventus Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意角色触发##风系印记#1017#时，队伍中风系角色及其仆从提升<color=#ec6d21>{1}</color>攻击力，持续{2}秒。",
+            "descJP": "チーム内の巡遊者が##風属性の印#1017#を発動させた時から{2}秒間、チーム内の風属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "임의의 캐릭터가 ##바람 속성 표식#1017#을 발동할 시, 팀 내 바람 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -11495,7 +11657,13 @@
         "mainSkill": {
             "id": 3008,
             "name": "Tailwind Journey",
+            "nameCN": "顺风旅程",
+            "nameJP": "風とともに",
+            "nameKR": "순풍의 여정",
             "desc": "Increases the Skill DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Ventus Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
+            "descCN": "队伍中风系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意风系角色造成技能伤害时，如果主控角色生命高于{2}，本次伤害提升<color=#ec6d21>{3}</color>。",
+            "descJP": "チーム内の風属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の風属性巡遊者のスキルダメージを敵に与える時、主力巡遊者のHPが{2}を超えている場合、そのダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "팀 내 바람 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b바람 속성 캐릭터가 스킬 피해를 입히고 메인 캐릭터의 HP가 {2}보다 높으면 이번 피해가 <color=#ec6d21>{3}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
@@ -11513,7 +11681,13 @@
         "secondarySkill1": {
             "id": 30081,
             "name": "Companion's Bond",
+            "nameCN": "同旅之绊",
+            "nameJP": "旅は道連れ",
+            "nameKR": "동행의 인연",
             "desc": "When a support Ventus Trekker is on the battlefield, increases the main Ventus Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
+            "descCN": "风系援护角色在场时，风系主控角色造成的技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "風属性の支援巡遊者がフィールドにいる時、風属性の主力巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "바람 속성 지원 캐릭터가 필드에 있으면, 바람 속성 메인 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -12057,7 +12231,13 @@
         "mainSkill": {
             "id": 3009,
             "name": "Dreamlike Illusion",
+            "nameCN": "梦幻泡影",
+            "nameJP": "スパークルレイン",
+            "nameKR": "몽환의 거품",
             "desc": "Increases the ATK of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Aqua Trekker casts a skill, increases Aqua Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中水系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意水系角色施放技能时，队伍中水系角色绝招伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の水属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の水属性巡遊者のスキル発動時から{3}秒間、チーム内の水属性巡遊者の必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 물 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b물 속성 캐릭터가 스킬을 시전하면 팀 내 물 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "ATK (%)",
                 "ADDBUFF:Ultimate DMG",
@@ -12078,7 +12258,13 @@
         "secondarySkill1": {
             "id": 30091,
             "name": "Silken Raindrops",
+            "nameCN": "细雨如丝",
+            "nameJP": "花を濡らす雫",
+            "nameKR": "얇은 빗줄기",
             "desc": "When any Trekker triggers ##Aqua Mark#1018#, increases the ATK of Aqua Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意角色触发##水系印记#1018#时，队伍中水系角色及其仆从提升<color=#ec6d21>{1}</color>攻击力，持续{2}秒。",
+            "descJP": "チーム内の巡遊者が##水属性の印#1018#を発動させた時から{2}秒間、チーム内の水属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "임의의 캐릭터가 ##물 속성 표식#1018#을 발동할 시, 팀 내 물 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -12627,7 +12813,13 @@
         "mainSkill": {
             "id": 3010,
             "name": "Aromatic Steam",
+            "nameCN": "蒸汽清香",
+            "nameJP": "ヴェイパーブレス",
+            "nameKR": "훈연의 향기",
             "desc": "Increases the Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2}, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
+            "descCN": "队伍中水系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意水系角色造成技能伤害时，如果主控角色生命高于{2}，本次伤害提升<color=#ec6d21>{3}</color>。",
+            "descJP": "チーム内の水属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の水属性巡遊者のスキルダメージを敵に与える時、主力巡遊者のHPが{2}を超えている場合、そのダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "팀 내 물 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b물 속성 캐릭터가 스킬 피해를 입히고 메인 캐릭터의 HP가 {2}보다 높으면 이번 피해가 <color=#ec6d21>{3}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
@@ -12645,7 +12837,13 @@
         "secondarySkill1": {
             "id": 30101,
             "name": "Shroud of Mist",
+            "nameCN": "仙风暖雾",
+            "nameJP": "こっちにおいでよ",
+            "nameKR": "신선한 바람",
             "desc": "When a support Aqua Trekker is on the battlefield, increases the main Aqua Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
+            "descCN": "水系援护角色在场时，水系主控角色造成的技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "水属性の支援巡遊者がフィールドにいる時、水属性の主力巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "물 속성 지원 캐릭터가 필드에 있으면, 물 속성 메인 캐릭터가 입히는 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -13191,7 +13389,13 @@
         "mainSkill": {
             "id": 3011,
             "name": "Nocturne Beat",
+            "nameCN": "暗夜节拍",
+            "nameJP": "ダークナイトビート",
+            "nameKR": "어둠의 리듬",
             "desc": "Increases the ATK of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Umbra Trekker casts a skill, increases Umbra Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中暗系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意暗系角色施放技能时，队伍中暗系角色绝招伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の闇属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の闇属性巡遊者のスキル発動時から{3}秒間、チーム内の闇属性巡遊者の必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 어둠 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 캐릭터가 스킬을 시전하면 팀 내 어둠 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "ATK (%)",
                 "ADDBUFF:Ultimate DMG",
@@ -13212,7 +13416,13 @@
         "secondarySkill1": {
             "id": 30111,
             "name": "Dancing Shadows",
+            "nameCN": "随拍起舞",
+            "nameJP": "リズミカルステップ",
+            "nameKR": "리듬의 몸짓",
             "desc": "When any Trekker triggers ##Umbra Mark#1019#, increases the ATK of Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意角色触发##暗系印记#1019#时，队伍中暗系角色及其仆从提升<color=#ec6d21>{1}</color>攻击力，持续{2}秒。",
+            "descJP": "チーム内の巡遊者が##闇属性の印#1019#を発動させた時から{2}秒間、チーム内の闇属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "어둠 속성 캐릭터가 ##어둠 속성 표식#1019#을 발동할 시, 어둠 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -13761,7 +13971,13 @@
         "mainSkill": {
             "id": 3012,
             "name": "Starry Reverie",
+            "nameCN": "星空畅想",
+            "nameJP": "スターリービジョン",
+            "nameKR": "별하늘의 상상",
             "desc": "Increases the Skill DMG of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Umbra Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
+            "descCN": "队伍中暗系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意暗系角色造成技能伤害时，如果主控角色生命高于{2}，本次伤害提升<color=#ec6d21>{3}</color>。",
+            "descJP": "チーム内の闇属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の闇属性巡遊者のスキルダメージを敵に与える時、主力巡遊者のHPが{2}を超えている場合、そのダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "팀 내 어둠 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 캐릭터가 스킬 피해를 입히고 메인 캐릭터의 HP가 {2}보다 높으면 이번 피해가 <color=#ec6d21>{3}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
@@ -13779,7 +13995,13 @@
         "secondarySkill1": {
             "id": 30121,
             "name": "Moonlit Taps",
+            "nameCN": "月下踢踏",
+            "nameJP": "月下の迷い子",
+            "nameKR": "달 아래의 발길",
             "desc": "When a support Umbra Trekker is on the battlefield, increases the main Umbra Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
+            "descCN": "暗系援护角色在场时，暗系主控角色造成的技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "闇属性の支援巡遊者がフィールドにいる時、闇属性の主力巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "어둠 속성 지원 캐릭터가 필드에 있으면, 어둠 속성 메인 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -14325,7 +14547,13 @@
         "mainSkill": {
             "id": 3013,
             "name": "Dappled Shade",
+            "nameCN": "树影斑驳",
+            "nameJP": "茜色の絨毯",
+            "nameKR": "숲그늘의 잔영",
             "desc": "Increases the ATK of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen a Terra Trekker casts a skill, increases Terra Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中地系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意地系角色施放技能时，队伍中地系角色绝招伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の地属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の地属性巡遊者のスキル発動時から{3}秒間、チーム内の地属性巡遊者の必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 땅 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b땅 속성 캐릭터가 스킬을 시전하면 팀 내 땅 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "ATK (%)",
                 "ADDBUFF:Ultimate DMG",
@@ -14346,7 +14574,13 @@
         "secondarySkill1": {
             "id": 30131,
             "name": "Snuggle Up",
+            "nameCN": "暖心依偎",
+            "nameJP": "そこにある温もり",
+            "nameKR": "따스한 의지",
             "desc": "When any Trekker triggers ##Terra Mark#1020#, increases the ATK of Terra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意角色触发##地系印记#1020#时，队伍中地系角色及其仆从提升<color=#ec6d21>{1}</color>攻击力，持续{2}秒。",
+            "descJP": "チーム内の巡遊者が##地属性の印#1020#を発動させた時から{2}秒間、チーム内の地属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "임의의 캐릭터가 ##땅 속성 표식#1020#을 발동할 시, 팀 내 땅 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -14895,7 +15129,13 @@
         "mainSkill": {
             "id": 3014,
             "name": "Forged to Perfection",
+            "nameCN": "千锤百炼",
+            "nameJP": "鍛造の極み",
+            "nameKR": "천 번의 담금질",
             "desc": "Increases the Skill DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bIf the main Trekker's HP is above {2} when any Terra Trekker deals Skill DMG, increases the DMG of this hit by <color=#ec6d21>{3}</color>.",
+            "descCN": "队伍中地系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意地系角色造成技能伤害时，如果主控角色生命高于{2}，本次伤害提升<color=#ec6d21>{3}</color>。",
+            "descJP": "チーム内の地属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の地属性巡遊者のスキルダメージを敵に与える時、主力巡遊者のHPが{2}を超えている場合、そのダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "팀 내 땅 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b땅 속성 캐릭터가 스킬 피해를 입히고 메인 캐릭터의 HP가 {2}보다 높으면 이번 피해가 <color=#ec6d21>{3}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
@@ -14913,7 +15153,13 @@
         "secondarySkill1": {
             "id": 30141,
             "name": "Engine Lubrication",
+            "nameCN": "引擎润滑",
+            "nameJP": "メンテはバッチリ",
+            "nameKR": "엔진 윤활",
             "desc": "When a support Terra Trekker is on the battlefield, increases the main Terra Trekker's Skill DMG dealt by <color=#ec6d21>{1}</color>.",
+            "descCN": "地系援护角色在场时，地系主控角色造成的技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "地属性の支援巡遊者がフィールドにいる時、地属性の主力巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "땅 속성 지원 캐릭터가 필드에 있으면, 땅 속성 메인 캐릭터가 입히는 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -15460,7 +15706,13 @@
         "mainSkill": {
             "id": 3015,
             "name": "Lingering Fragrance",
+            "nameCN": "花香依旧",
+            "nameJP": "ブルームメモリー",
+            "nameKR": "영원한 꽃향기",
             "desc": "Increases the Skill DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中风系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色施放绝招时，该效果将会额外提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の風属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者の必殺技発動時から{3}秒間、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 바람 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의 캐릭터가 필살기를 시전하면 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:Skill DMG"
@@ -15480,7 +15732,13 @@
         "secondarySkill1": {
             "id": 30151,
             "name": "Caressing Breeze",
+            "nameCN": "拂面轻风",
+            "nameJP": "そよ風の便り",
+            "nameKR": "뺨을 스치는 미풍",
             "desc": "When the Ventus Main Trekker is hit, increases all friendly units' Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "风系主控角色被命中时，己方风系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "風属性の主力巡遊者が攻撃を受けた時から{2}秒間、味方の風属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "바람 속성의 메인 캐릭터가 피격되면 전체 아군의 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Ventus DMG",
                 "Ventus DMG (base)"
@@ -16030,7 +16288,13 @@
         "mainSkill": {
             "id": 3016,
             "name": "Fury in Bloom",
+            "nameCN": "盛怒绽放",
+            "nameJP": "紅焔の花",
+            "nameKR": "분노의 만개",
             "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中火系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色施放绝招时，该效果将会额外提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の火属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者の必殺技発動時から{3}秒間、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 불 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의 캐릭터가 필살기를 시전하면 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:Skill DMG"
@@ -16050,7 +16314,13 @@
         "secondarySkill1": {
             "id": 30161,
             "name": "Thorning Rose",
+            "nameCN": "蔷薇棘刺",
+            "nameJP": "深紅に染まる花びら",
+            "nameKR": "장미의 가시",
             "desc": "When the Ignis Main Trekker is hit, increases all friendly units' Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "火系主控角色被命中时，己方火系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "火属性の主力巡遊者が攻撃を受けた時から{2}秒間、味方の火属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "불 속성 메인 캐릭터가 피격되면 전체 아군의 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Ignis DMG",
                 "Ignis DMG (base)"
@@ -16598,7 +16868,13 @@
         "mainSkill": {
             "id": 3017,
             "name": "Twirl of Light",
+            "nameCN": "转转光芒",
+            "nameJP": "ぐるぐるキラット",
+            "nameKR": "빙빙 광채",
             "desc": "Increases the Skill DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中光系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色施放绝招时，该效果将会额外提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の光属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者の必殺技発動時から{3}秒間、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 빛 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의 캐릭터가 필살기를 시전하면 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:Skill DMG"
@@ -16618,7 +16894,13 @@
         "secondarySkill1": {
             "id": 30171,
             "name": "Spinning Light",
+            "nameCN": "转转闪耀",
+            "nameJP": "ぐるぐるピカピカ",
+            "nameKR": "빙빙 섬광",
             "desc": "When the Lux Main Trekker is hit, increases all friendly units' Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "光系主控角色被命中时，己方光系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "光属性の主力巡遊者が攻撃を受けた時から{2}秒間、味方の光属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "빛 속성 메인 캐릭터가 피격되면 전체 아군의 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Lux DMG",
                 "Lux DMG (base)"
@@ -17168,7 +17450,13 @@
         "mainSkill": {
             "id": 3018,
             "name": "Fizz and Pop",
+            "nameCN": "劲爽开盖",
+            "nameJP": "プルタブオープン",
+            "nameKR": "경쾌한 개봉",
             "desc": "Increases the Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中水系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色施放绝招时，该效果将会额外提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の水属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者の必殺技発動時から{3}秒間、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 물 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의 캐릭터가 필살기를 시전하면 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:Skill DMG"
@@ -17188,7 +17476,13 @@
         "secondarySkill1": {
             "id": 30181,
             "name": "Chilling Coolness",
+            "nameCN": "透心凉意",
+            "nameJP": "最初のひと口",
+            "nameKR": "마음 관통의 한기",
             "desc": "When the Aqua Main Trekker is hit, increases all friendly units' Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "水系主控角色被命中时，己方水系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "水属性の主力巡遊者が攻撃を受けた時から{2}秒間、味方の水属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "물 속성 메인 캐릭터가 피격되면 전체 아군의 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Aqua DMG",
                 "Aqua DMG (base)"
@@ -17736,7 +18030,13 @@
         "mainSkill": {
             "id": 3019,
             "name": "Ephemeral Shadowfall",
+            "nameCN": "浮影落尘",
+            "nameJP": "逆巻く影",
+            "nameKR": "그림자와 먼지",
             "desc": "Increases the Skill DMG of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中暗系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色施放绝招时，该效果将会额外提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の闇属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者の必殺技発動時から{3}秒間、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 어둠 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의 캐릭터가 필살기를 시전하면 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:Skill DMG"
@@ -17756,7 +18056,13 @@
         "secondarySkill1": {
             "id": 30191,
             "name": "Fleeting Dreams",
+            "nameCN": "浮梦轻散",
+            "nameJP": "朽ちゆく夢",
+            "nameKR": "떠도는 꿈",
             "desc": "When the Umbra Main Trekker is hit, increases all friendly units' Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "暗系主控角色被命中时，己方暗系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "闇属性の主力巡遊者が攻撃を受けた時から{2}秒間、味方の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "어둠 속성 메인 캐릭터가 피격되면 전체 아군의 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Umbra DMG",
                 "Umbra DMG (base)"
@@ -18304,7 +18610,13 @@
         "mainSkill": {
             "id": 3020,
             "name": "Kitschphobia",
+            "nameCN": "刻奇恐惧",
+            "nameJP": "迫りくる恐怖",
+            "nameKR": "기괴한 공포",
             "desc": "Increases the Skill DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker casts an Ultimate, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中地系角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色施放绝招时，该效果将会额外提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の地属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者の必殺技発動時から{3}秒間、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 땅 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의 캐릭터가 필살기를 시전하면 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:Skill DMG"
@@ -18324,7 +18636,13 @@
         "secondarySkill1": {
             "id": 30201,
             "name": "Startling Moment",
+            "nameCN": "惊吓时刻",
+            "nameJP": "どっきりタイム",
+            "nameKR": "놀람의 순간",
             "desc": "When the Terra Main Trekker is hit, increases all friendly units' Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "地系主控角色被命中时，己方地系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "地属性の主力巡遊者が攻撃を受けた時から{2}秒間、味方の地属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "땅 속성 메인 캐릭터가 피격되면 전체 아군의 땅 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Terra DMG",
                 "Terra DMG (base)"
@@ -18871,7 +19189,13 @@
         "mainSkill": {
             "id": 3021,
             "name": "A Refraction of Mirage",
+            "nameCN": "魅镜闪烁",
+            "nameJP": "すべてを見通す鏡",
+            "nameKR": "빛나는 매혹의 거울",
             "desc": "Increases the Ultimate DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Ventus Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
+            "descCN": "队伍中风系角色的绝招伤害提升<color=#ec6d21>{1}</color>。\u000b战斗开始时，队伍中风系角色回复<color=#ec6d21>{2}</color>点能量。",
+            "descJP": "チーム内の風属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b戦闘開始時、チーム内の風属性巡遊者はSPを<color=#ec6d21>{2}</color>獲得する。",
+            "descKR": "팀 내 바람 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b전투 시작 시 팀 내 바람 속성 캐릭터가 SP <color=#ec6d21>{2}</color>포인트를 회복한다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "SPECIAL_:ENERGY (abs)"
@@ -18889,7 +19213,13 @@
         "secondarySkill1": {
             "id": 30211,
             "name": "Squall",
+            "nameCN": "骤风",
+            "nameJP": "天つ風",
+            "nameKR": "질풍",
             "desc": "When any Ventus Trekker casts an Ultimate, increases the ATK of Ventus Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意风系角色施放绝招时，队伍中风系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の風属性巡遊者の必殺技発動時から{2}秒間、チーム内の風属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "바람 속성 캐릭터가 필살기를 시전하면 팀 내 바람 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -19436,7 +19766,13 @@
         "mainSkill": {
             "id": 3022,
             "name": "Benediction Under Lantern",
+            "nameCN": "提灯祝祷",
+            "nameJP": "虚実をあばく灯火",
+            "nameKR": "등불 기원",
             "desc": "Increases the Ultimate DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Ignis Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
+            "descCN": "队伍中火系角色的绝招伤害提升<color=#ec6d21>{1}</color>。\u000b战斗开始时，队伍中火系角色回复<color=#ec6d21>{2}</color>点能量。",
+            "descJP": "チーム内の火属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b戦闘開始時、チーム内の火属性巡遊者はSPを<color=#ec6d21>{2}</color>獲得する。",
+            "descKR": "팀 내 불 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b전투 시작 시 팀 내 불 속성 캐릭터가 SP <color=#ec6d21>{2}</color>포인트를 회복한다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "SPECIAL_:ENERGY (abs)"
@@ -19454,7 +19790,13 @@
         "secondarySkill1": {
             "id": 30221,
             "name": "Surge of Flame",
+            "nameCN": "举火",
+            "nameJP": "潰えぬ蛍火",
+            "nameKR": "횃불",
             "desc": "When any Ignis Trekker casts an Ultimate, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意火系角色施放绝招时，队伍中火系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の火属性巡遊者の必殺技発動時から{2}秒間、チーム内の火属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "불 속성 캐릭터가 필살기를 시전하면 팀 내 불 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -20001,7 +20343,13 @@
         "mainSkill": {
             "id": 3023,
             "name": "Angel's Prayer",
+            "nameCN": "天使祈愿",
+            "nameJP": "儚き願い",
+            "nameKR": "천사의 기도",
             "desc": "Increases the Ultimate DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Lux Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
+            "descCN": "队伍中光系角色的绝招伤害提升<color=#ec6d21>{1}</color>。\u000b战斗开始时，队伍中光系角色回复<color=#ec6d21>{2}</color>点能量。",
+            "descJP": "チーム内の光属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b戦闘開始時、チーム内の光属性巡遊者はSPを<color=#ec6d21>{2}</color>獲得する。",
+            "descKR": "팀 내 빛 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b전투 시작 시 팀 내 빛 속성 캐릭터가 SP <color=#ec6d21>{2}</color>포인트를 회복한다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "SPECIAL_:ENERGY (abs)"
@@ -20019,7 +20367,13 @@
         "secondarySkill1": {
             "id": 30231,
             "name": "Holy Glow",
+            "nameCN": "圣光",
+            "nameJP": "眩い聖光",
+            "nameKR": "성스러운 빛",
             "desc": "When any Lux Trekker casts an Ultimate, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意光系角色施放绝招时，队伍中光系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の光属性巡遊者の必殺技発動時から{2}秒間、チーム内の光属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "빛 속성 캐릭터가 필살기를 시전하면 팀 내 빛 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -20566,7 +20920,13 @@
         "mainSkill": {
             "id": 3024,
             "name": "Call of Holiday",
+            "nameCN": "假日呼唤",
+            "nameJP": "リラックスタイム",
+            "nameKR": "휴일의 부름",
             "desc": "Increases the Ultimate DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Aqua Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
+            "descCN": "队伍中水系角色的绝招伤害提升<color=#ec6d21>{1}</color>。\u000b战斗开始时，队伍中水系角色回复<color=#ec6d21>{2}</color>点能量。",
+            "descJP": "チーム内の水属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b戦闘開始時、チーム内の水属性巡遊者はSPを<color=#ec6d21>{2}</color>獲得する。",
+            "descKR": "팀 내 물 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b전투 시작 시 팀 내 물 속성 캐릭터가 SP <color=#ec6d21>{2}</color>포인트를 회복한다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "SPECIAL_:ENERGY (abs)"
@@ -20584,7 +20944,13 @@
         "secondarySkill1": {
             "id": 30241,
             "name": "Sweet Creek",
+            "nameCN": "甘露",
+            "nameJP": "水分補給",
+            "nameKR": "감로",
             "desc": "When any Aqua Trekker casts an Ultimate, increases the ATK of Aqua Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意水系角色施放绝招时，队伍中水系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の水属性巡遊者の必殺技発動時から{2}秒間、チーム内の水属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "물 속성 캐릭터가 필살기를 시전하면 팀 내 물 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -21131,7 +21497,13 @@
         "mainSkill": {
             "id": 3025,
             "name": "Forbidden Nectar",
+            "nameCN": "诱惑之蜜",
+            "nameJP": "エンチャントハニー",
+            "nameKR": "유혹의 꿀",
             "desc": "Increases the Ultimate DMG of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Umbra Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
+            "descCN": "队伍中暗系角色的绝招伤害提升<color=#ec6d21>{1}</color>。\u000b战斗开始时，队伍中暗系角色回复<color=#ec6d21>{2}</color>点能量。",
+            "descJP": "チーム内の闇属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b戦闘開始時、チーム内の闇属性巡遊者はSPを<color=#ec6d21>{2}</color>獲得する。",
+            "descKR": "팀 내 어둠 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b전투 시작 시 팀 내 어둠 속성 캐릭터가 SP <color=#ec6d21>{2}</color>포인트를 회복한다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "SPECIAL_:ENERGY (abs)"
@@ -21149,7 +21521,13 @@
         "secondarySkill1": {
             "id": 30251,
             "name": "Phantom Realm",
+            "nameCN": "魔境",
+            "nameJP": "這い寄る誘惑",
+            "nameKR": "마경",
             "desc": "When any Umbra Trekker casts an Ultimate, increases the ATK of Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意暗系角色施放绝招时，队伍中暗系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の闇属性巡遊者の必殺技発動時から{2}秒間、チーム内の闇属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "어둠 속성 캐릭터가 필살기를 시전하면 팀 내 어둠 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -21696,7 +22074,13 @@
         "mainSkill": {
             "id": 3026,
             "name": "Business Tips",
+            "nameCN": "营业技巧",
+            "nameJP": "営業スマイル",
+            "nameKR": "영업 기술",
             "desc": "Increases the Ultimate DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAt the start of battle, Terra Trekkers in the squad restore <color=#ec6d21>{2}</color> Energy.",
+            "descCN": "队伍中地系角色的绝招伤害提升<color=#ec6d21>{1}</color>。\u000b战斗开始时，队伍中地系角色回复<color=#ec6d21>{2}</color>点能量。",
+            "descJP": "チーム内の地属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b戦闘開始時、チーム内の地属性巡遊者はSPを<color=#ec6d21>{2}</color>獲得する。",
+            "descKR": "팀 내 땅 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b전투 시작 시 팀 내 땅 속성 캐릭터가 SP <color=#ec6d21>{2}</color>포인트를 회복한다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "SPECIAL_:ENERGY (abs)"
@@ -21714,7 +22098,13 @@
         "secondarySkill1": {
             "id": 30261,
             "name": "Livestream Prep",
+            "nameCN": "开播准备",
+            "nameJP": "配信準備",
+            "nameKR": "방송 준비",
             "desc": "When any Terra Trekker casts an Ultimate, increases the ATK of Terra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意地系角色施放绝招时，队伍中地系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の地属性巡遊者の必殺技発動時から{2}秒間、チーム内の地属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "땅 속성 캐릭터가 필살기를 시전하면 팀 내 땅 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -22265,7 +22655,13 @@
         "mainSkill": {
             "id": 4001,
             "name": "Meowing Cat God",
+            "nameCN": "猫神降歌",
+            "nameJP": "在りし日の記憶",
+            "nameKR": "고양이 신 레퀴엠",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ignis Trekker casts a skill, increases the ATK of Ignis Trekkers in the squad and their Minions by {2} for {3}s. The main Ignis Trekker gains Blazing Armor: Reduces DMG taken by {4} for {5}s.",
+            "descCN": "全队火系伤害提升<color=#ec6d21>{1}</color>。\u000b火系主控角色施放技能时，队伍中火系角色及其仆从攻击力提升{2}，持续{3}秒，同时火系主控角色获得「炎铠」：受到伤害降低{4}，持续{5}秒。",
+            "descJP": "チーム全体の火属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b火属性の主力巡遊者のスキル発動後の{3}秒間、チーム内の火属性巡遊者およびその従者は攻撃力が{2}上昇する。さらに、火属性の主力巡遊者は炎の鎧を獲得し、{5}秒間、被ダメージが{4}減少する。",
+            "descKR": "팀 전체 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b불 속성 메인 캐릭터가 스킬을 시전하면 팀 내 불 속성 캐릭터 및 그 소환물의 공격력이 {2} 증가한다. {3}초간 지속된다. 또한 불 속성 메인 캐릭터가 「불꽃 갑옷」을 획득해 받는 피해가 {4} 감소하여 {5}초간 지속된다.",
             "effectType": [
                 "Ignis DMG (base)",
                 "ADDBUFF:ATK",
@@ -22289,7 +22685,13 @@
         "secondarySkill1": {
             "id": 40011,
             "name": "Cat God's Penalty",
+            "nameCN": "猫神制裁",
+            "nameJP": "ネコ神の審判",
+            "nameKR": "고양이 신의 징계",
             "desc": "If the main Trekker is inflicted with Blazing Armor, increases Ignis squadmates' Ultimate DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
+            "descCN": "如果主控角色附带「炎铠」，队伍中火系角色对精英及以上目标造成的绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者が炎の鎧を保持している場合、チーム内の火属性巡遊者の、エリート以上の敵への必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "메인 캐릭터가 「불꽃 갑옷」을 보유한 경우, 팀 내 불 속성 캐릭터가 정예 이상 목표에게 입히는 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "ADDBUFF:Ultimate DMG",
                 "HITTED_ADDITIONAL_:Ultimate DMG (base)"
@@ -22331,7 +22733,13 @@
         "secondarySkill2": {
             "id": 40012,
             "name": "Destructive Aura",
+            "nameCN": "破灭的魔光",
+            "nameJP": "破滅への魔光",
+            "nameKR": "파멸의 마광",
             "desc": "When the target is killed, if the Main Trekker has Blazing Armor, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "目标被消灭时，如果主控角色附带「炎铠」，队伍中火系角色及其仆从提升<color=#ec6d21>{1}</color>攻击力，持续{2}秒，可叠加{3}层。",
+            "descJP": "敵を撃破時、主力巡遊者が炎の鎧を保持している場合、{2}秒間、チーム内の火属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "목표가 처치될 때 메인 캐릭터가 「불꽃 갑옷」을 보유한 경우, 팀 내 불 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -22882,7 +23290,13 @@
         "mainSkill": {
             "id": 4002,
             "name": "Sky, Flowers, Poem",
+            "nameCN": "空与花与诗",
+            "nameJP": "空と花の詩",
+            "nameKR": "하늘, 꽃 그리고 시",
             "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Ventus Trekker deals non-Auto Attack DMG to a target, there is a {2} chance to inflict Laceration: increases Ventus DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Ventus Trekker from targets inflicted with Laceration by {5}.",
+            "descCN": "全队风系伤害提升<color=#ec6d21>{1}</color>。\u000b任意风系角色对目标造成非普攻伤害时，有{2}的概率附加「割裂」：受到风系伤害提升{3}，持续{4}秒。\u000b风系主控角色受到附带「割裂」目标的伤害降低{5}。",
+            "descJP": "チーム全体の風属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の風属性巡遊者が通常攻撃ダメージ以外のダメージを敵に与えた時、{2}の確率で{4}秒間、その敵に裂傷を付与し、風属性被ダメージを{3}増加させる。\u000b風属性の主力巡遊者は、裂傷が付与されている敵からの被ダメージが{5}減少する。",
+            "descKR": "팀 전체 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b바람 속성 캐릭터가 목표에게 일반 공격이 아닌 피해를 입히면 {2} 확률로 「분열」을 부여해, 받는 바람 속성 피해가 {3} 증가한다. {4}초간 지속된다. \u000b바람 속성 메인 캐릭터가 「분열」을 보유한 목표로부터 받는 피해가 {5} 감소한다.",
             "effectType": [
                 "Ventus DMG (base)",
                 "ADDBUFF:Ventus DMG Taken @ 35%",
@@ -22905,7 +23319,13 @@
         "secondarySkill1": {
             "id": 40021,
             "name": "Snowpetal Storm",
+            "nameCN": "风花雪月",
+            "nameJP": "風花雪月",
+            "nameKR": "바람꽃 설월",
             "desc": "Increases Ventus Trekkers' Ultimate DMG dealt to targets inflicted with Laceration by <color=#ec6d21>{1}</color>.",
+            "descCN": "队伍中风系角色对附带「割裂」的目标造成绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム内の風属性巡遊者の、裂傷が付与されている敵への必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 내 바람 속성 캐릭터가 「분열」을 보유한 목표에게 입히는 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Ultimate DMG (base)"
             ],
@@ -22943,7 +23363,13 @@
         "secondarySkill2": {
             "id": 40022,
             "name": "Fragrance of Heart",
+            "nameCN": "怀心的芬芳",
+            "nameJP": "色褪せぬ香り",
+            "nameKR": "품속의 향기",
             "desc": "When any Ventus Trekker kills a target inflicted with Laceration, increases all friendly units' Ventus DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意风系角色消灭附带「割裂」的目标时，己方风系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の風属性巡遊者が、裂傷が付与されている敵を撃破時から{2}秒間、味方の風属性ダメージが<color=#ec6d21>{1}</color>増加する。この効果は{3}回重複できる。",
+            "descKR": "바람 속성 캐릭터가 「분열」을 보유한 목표를 처치하면 전체 아군의 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:Ventus DMG",
                 "Ventus DMG (base)"
@@ -23494,7 +23920,13 @@
         "mainSkill": {
             "id": 4004,
             "name": "Wisteria Dream",
+            "nameCN": "仙踪良梦",
+            "nameJP": "ミルク色の夢",
+            "nameKR": "요정들의 꿈",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker summons a Minion, the main Umbra Trekker gains 1 stack of Reverence for {2}s, stacking up to {3} times. When the main Umbra Trekker summons a Minion, every stack of Reverence increases the Minion's DMG by <color=#ec6d21>{4}</color> for {5}s.\u000bWhen the main Umbra Trekker has Reverence, the Umbra Minion inflicts the following effects on the target when dealing DMG: increases Umbra Minion DMG taken by <color=#ec6d21>{6}</color> for {7}s.",
+            "descCN": "全队暗系伤害提升<color=#ec6d21>{1}</color>。\u000b任意暗系角色召唤仆从时，暗系主控角色获得1层「敬畏」，持续{2}秒，可叠加{3}层。暗系主控角色召唤仆从时，每层「敬畏」使该仆从的仆从伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。\u000b暗系主控角色拥有「敬畏」时，暗系仆从造成伤害时为目标附加：受到暗系仆从伤害提升<color=#ec6d21>{6}</color>，持续{7}秒。",
+            "descJP": "チーム全体の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が従者を召喚時、{2}秒間、闇属性の主力巡遊者は敬畏を1獲得する。この効果は{3}回まで重複できる。闇属性の主力巡遊者が従者を召喚時、{5}秒間、敬畏1ごとにその従者の従者ダメージが<color=#ec6d21>{4}</color>増加する。\u000b闇属性の主力巡遊者が敬畏を保有している時、闇属性の従者がダメージを与えた時、{7}秒間、敵に闇属性の従者から受けるダメージが<color=#ec6d21>{6}</color>増加する効果を付与する。",
+            "descKR": "팀 전체 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 캐릭터가 소환물을 소환하면, 어둠 속성 메인 캐릭터가 「경외」를 1스택 획득한다. {2}초간 지속되며, 최대 {3}스택 중첩된다. 어둠 속성 메인 캐릭터가 소환물 소환 시, 「경외」 스택마다 해당 소환물의 소환물 피해가 <color=#ec6d21>{4}</color> 증가하며, {5}초간 지속된다. \u000b어둠 속성 메인 캐릭터가 「경외」 보유 시, 어둠 속성 소환물이 피해를 입히면 목표가 받는 어둠 속성 소환물 피해가 <color=#ec6d21>{6}</color> 증가한다. {7}초간 지속된다.",
             "effectType": [
                 "Umbra DMG (base)",
                 "Minion DMG (base)",
@@ -23513,7 +23945,13 @@
         "secondarySkill1": {
             "id": 40041,
             "name": "Graceful Essence",
+            "nameCN": "淑慧本色",
+            "nameJP": "淑女の本懐",
+            "nameKR": "지혜 본색",
             "desc": "When the main Umbra Trekker has Reverence, increases the Ultimate DMG of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.",
+            "descCN": "暗系主控角色拥有「敬畏」时，队伍中暗系角色的绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "闇属性の主力巡遊者が敬畏を保有している時、チーム内の闇属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "어둠 속성 메인 캐릭터가 「경외」 보유 시, 팀 내 어둠 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Ultimate DMG (base)"
             ],
@@ -23551,7 +23989,13 @@
         "secondarySkill2": {
             "id": 40042,
             "name": "Graceful Poise",
+            "nameCN": "优雅舞姿",
+            "nameJP": "秘密のお茶会",
+            "nameKR": "우아한 춤사위",
             "desc": "Reverence gains an additional effect: Each stack increases the main Umbra Trekker's Skill DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "「敬畏」获得额外效果：每层使暗系主控角色的技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "敬畏は追加効果を得る。敬畏1ごとに、闇属性の主力巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "「경외」가 추가 효과를 획득하여, 스택마다 어둠 속성 메인 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)"
             ],
@@ -24101,7 +24545,13 @@
         "mainSkill": {
             "id": 4005,
             "name": "Sunlit Blossom",
+            "nameCN": "晴之花",
+            "nameJP": "晴天の彩花",
+            "nameKR": "맑은 하늘의 꽃",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bIncreases the Aqua DMG dealt by Aqua Trekkers in the squad to targets inflicted with ##Chill#1027# or ##Frozen#1002# by an additional <color=#ec6d21>{2}</color>.",
+            "descCN": "全队水系伤害提升<color=#ec6d21>{1}</color>。\u000b队伍中水系角色对附带##寒冷#1027#或##冰冻#1002#的目标造成水系伤害额外提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム全体の水属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の水属性巡遊者の、##寒冷#1027#、または##氷結#1002#が付与されている敵への水属性ダメージは、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체의 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b팀 내 물 속성 캐릭터가 ##한랭#1027# 또는 ##빙결#1002#을 보유한 목표에게 입히는 물 속성 피해가 <color=#ec6d21>{2}</color> 추가로 증가한다.",
             "effectType": [
                 "Aqua DMG (base)",
                 "HITTED_ADDITIONAL_:Aqua DMG (base)"
@@ -24118,7 +24568,13 @@
         "secondarySkill1": {
             "id": 40051,
             "name": "Tears of Joy",
+            "nameCN": "笑颜与泪光",
+            "nameJP": "笑顔と涙",
+            "nameKR": "웃음과 눈물",
             "desc": "When any Aqua Trekker casts an Ultimate, increases Aqua Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意水系角色施放绝招时，队伍中水系角色普攻伤害和技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "チーム内の水属性巡遊者の必殺技発動時から{2}秒間、チーム内の水属性巡遊者の通常攻撃ダメージとスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "물 속성 캐릭터가 필살기를 시전하면 팀 내 물 속성 캐릭터의 일반 공격 피해와 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Auto Attack Damage",
                 "Auto Attack Damage (base)",
@@ -24161,7 +24617,13 @@
         "secondarySkill2": {
             "id": 40052,
             "name": "Bygone Echoes",
+            "nameCN": "彷若昨日",
+            "nameJP": "あの頃みたいに",
+            "nameKR": "어제처럼",
             "desc": "Increases Aqua Trekkers' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Aqua Trekker deals Skill DMG, if a support Aqua Trekker is on the battlefield, increases the DMG of this hit by <color=#ec6d21>{2}</color>.",
+            "descCN": "队伍中水系角色技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意水系角色造成技能伤害时，如果水系援护角色在场，本次伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の水属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の水属性巡遊者が敵にスキルダメージを与える時、水属性の支援巡遊者がフィールドにいる場合、そのダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 물 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b물 속성 캐릭터가 스킬 피해를 입히고 물 속성 지원 캐릭터가 필드에 있으면 이번 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
@@ -24713,7 +25175,13 @@
         "mainSkill": {
             "id": 4006,
             "name": "Witch's Swing",
+            "nameCN": "魔女的秋千",
+            "nameJP": "魔女の秘薬",
+            "nameKR": "마녀의 그네",
             "desc": "Increases all friendly units' Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker casts a Support Skill, increases the effect by an additional <color=#ec6d21>{2}</color> for {3} sec.",
+            "descCN": "己方暗系伤害提升<color=#ec6d21>{1}</color>。\u000b任意暗系角色施放援护技时，该效果额外提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "味方の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の闇属性巡遊者の支援スキル発動時から{3}秒間、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "전체 아군의 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 캐릭터가 지원 스킬을 시전하면 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Umbra DMG (base)",
                 "ADDBUFF:Umbra DMG"
@@ -24733,7 +25201,13 @@
         "secondarySkill1": {
             "id": 40061,
             "name": "Spectral Fragrance",
+            "nameCN": "鬼魅香氛",
+            "nameJP": "小悪魔スマイル",
+            "nameKR": "오묘한 향기",
             "desc": "When any Umbra Trekker casts a Support Skill, increases the ATK of Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s.\u000bFor every Minion summoned by an Umbra Trekker in the squad, increases the DMG of all allied Umbra Minions on the battlefield by <color=#ec6d21>{3}</color> for {4}s, stacking up to {5} times.",
+            "descCN": "任意暗系角色施放援护技时，队伍中暗系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b队伍中暗系角色每召唤1个仆从，队伍中在场的暗系仆从伤害提升<color=#ec6d21>{3}</color>，持续{4}秒，可叠加{5}层。",
+            "descJP": "チーム内の闇属性巡遊者の支援スキル発動時から{2}秒間、チーム内の闇属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の闇属性巡遊者が従者を1体召喚するごとに、{4}秒間、フィールドにいる味方の闇属性従者の従者ダメージが<color=#ec6d21>{3}</color>増加する。この効果は{5}回重複できる。",
+            "descKR": "어둠 속성 캐릭터가 지원 스킬을 시전하면 팀 내 어둠 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b팀 내 어둠 속성 캐릭터가 소환물을 1개 소환할 때마다 필드에 있는 팀 내 어둠 속성 소환물 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속되며, 최대 {5}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)",
@@ -24777,7 +25251,13 @@
         "secondarySkill2": {
             "id": 40062,
             "name": "Dark Trace",
+            "nameCN": "雁过留痕",
+            "nameJP": "権謀術数",
+            "nameKR": "기러기의 흔적",
             "desc": "Increases Umbra Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Umbra Mark#1019#, increases this effect by an additional <color=#ec6d21>{2}</color> and the DMG of all allied Umbra minions on the battlefield by an additional <color=#ec6d21>{3}</color> for {4}s.",
+            "descCN": "队伍中暗系角色绝招伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色触发##暗系印记#1019#时，该效果额外提升<color=#ec6d21>{2}</color>，同时队伍中在场的暗系仆从伤害额外提升<color=#ec6d21>{3}</color>，持续{4}秒。",
+            "descJP": "チーム内の闇属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が##闇属性の印#1019#を発動させた時から{4}秒間、追加で<color=#ec6d21>{2}</color>増加する。さらに、フィールドにいる味方の闇属性従者の従者ダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "팀 내 어둠 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의 캐릭터가 ##어둠 속성 표식#1019#을 발동하면, 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. 또한 필드에 있는 팀 내 어둠 속성 소환물 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속된다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "ADDBUFF:Ultimate DMG",
@@ -25332,7 +25812,13 @@
         "mainSkill": {
             "id": 4007,
             "name": "Midnight Mayhem",
+            "nameCN": "午夜，堕天使",
+            "nameJP": "真夜中の堕天使",
+            "nameKR": "자정의 타락 천사",
             "desc": "Increases the Skill DMG & Ultimate DMG of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Lux Mark#1015#, increases the main Lux Trekker' Auto Attack & Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中光系角色的技能伤害和绝招伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色触发##光系印记#1015#时，光系主控角色普攻和绝招伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の光属性巡遊者のスキルダメージと必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が##光属性の印#1015#を発動させた時から{3}秒間、光属性の主力巡遊者の通常攻撃ダメージと必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 빛 속성 캐릭터의 스킬 피해와 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의의 캐릭터가 ##빛 속성 표식#1015#을 발동하면 빛 속성 메인 캐릭터의 일반 공격과 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "Ultimate DMG (base)",
@@ -25357,7 +25843,13 @@
         "secondarySkill1": {
             "id": 40071,
             "name": "Decisive Strike",
+            "nameCN": "决胜击打",
+            "nameJP": "勝負を決める一振り",
+            "nameKR": "승부의 일격",
             "desc": "When a Lux Main Trekker hits a target, increases the ATK of Lux Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {3}s.\u000bWhen any Lux Trekker hits a stunned target, increases this effect by an additional <color=#ec6d21>{2}</color> for {4}s.",
+            "descCN": "光系主控角色技能命中时，队伍中光系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{3}秒。\u000b任意光系角色命中眩晕目标时，该效果额外提升<color=#ec6d21>{2}</color>，持续{4}秒。",
+            "descJP": "光属性の主力巡遊者のスキルが敵に命中時から{3}秒間、チーム内の光属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の光属性巡遊者の攻撃がスタン状態の敵に命中時から{4}秒間、追加で<color=#ec6d21>{2}</color>上昇する。",
+            "descKR": "빛 속성 메인 캐릭터의 스킬이 명중하면, 팀 내 빛 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {3}초간 지속된다. \u000b빛 속성 캐릭터가 기절 상태의 목표를 명중하면, 해당 효과가 <color=#ec6d21>{2}</color> 추가로 증가한다. {4}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -25399,7 +25891,13 @@
         "secondarySkill2": {
             "id": 40072,
             "name": "Reach of Radiance",
+            "nameCN": "辉光所及处",
+            "nameJP": "光さす場所",
+            "nameKR": "빛이 닿는 곳",
             "desc": "When a Lux Support Skill hits a target, increases the Lux DMG taken by the target by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "光系援护技能命中目标时，该目标受到光系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "光属性の支援スキルが敵に命中時から{2}秒間、その敵の光属性被ダメージを<color=#ec6d21>{1}</color>増加させる。",
+            "descKR": "빛 속성 지원 스킬이 목표를 명중하면 해당 목표가 받는 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Lux DMG Taken",
                 "Lux DMG Taken (base)"
@@ -25952,7 +26450,13 @@
         "mainSkill": {
             "id": 4008,
             "name": "Soaring Blue",
+            "nameCN": "飞越青空",
+            "nameJP": "青空を越えて",
+            "nameKR": "푸른 하늘 너머로",
             "desc": "When an Aqua Versatile Trekker deals Skill DMG, inflicts 1 stack of Bright Tide on the target for {1}s, stacking up to {2} times.\u000bBright Tide: At {3} stacks, increases Aqua Auto Attack DMG Taken by <color=#ec6d21>{4}</color>.\u000bAt {5} stacks, increases Aqua Skill DMG Taken by an additional <color=#ec6d21>{6}</color>.",
+            "descCN": "水系均衡角色造成技能伤害时，为目标附加1层「晴浪」，持续{1}秒，可叠加{2}层。\u000b「晴浪」层数达到{3}层时，使目标受到水系普攻伤害提升<color=#ec6d21>{4}</color>；\u000b「晴浪」层数达到{5}层时，额外使目标受到水系技能伤害提升<color=#ec6d21>{6}</color>。",
+            "descJP": "水属性のバランサー巡遊者がスキルダメージを与えた時、{1}秒間、その敵にドキドキ風船を1付与する。この効果は{2}回重複できる。\u000bドキドキ風船が{3}に達すると、敵の水属性の通常攻撃被ダメージが<color=#ec6d21>{4}</color>増加する。\u000bドキドキ風船が{5}に達すると、さらに敵の水属性のスキル被ダメージが<color=#ec6d21>{6}</color>増加する。",
+            "descKR": "물 속성 밸런스 캐릭터가 스킬 피해를 입히면, 목표에게 「윤슬」을 1스택 부여한다. {1}초간 지속되며, 최대 {2}스택 중첩된다. \u000b「윤슬」이 {3}스택 중첩되면, 목표가 받는 물 속성 일반 공격 피해가 <color=#ec6d21>{4}</color> 증가한다. \u000b「윤슬」이 {5}스택 중첩되면, 목표가 받는 물 속성 스킬 피해가 <color=#ec6d21>{6}</color> 추가로 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Auto Attack DMG Taken (base)",
@@ -25967,7 +26471,13 @@
         "secondarySkill1": {
             "id": 40081,
             "name": "Balloon of Joy",
+            "nameCN": "幸福气球",
+            "nameJP": "サプライズバルーン",
+            "nameKR": "행운의 풍선",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bIf a target is inflicted with Bright Tide, each stack increases the Crit DMG dealt by the main Aqua Trekker to the target by <color=#ec6d21>{2}</color>.",
+            "descCN": "全队水系伤害提升<color=#ec6d21>{1}</color>。\u000b如果目标附带「晴浪」，每层「晴浪」使水系主控角色对其造成的暴击伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム全体の水属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b敵にドキドキ風船が付与されている時、ドキドキ風船1につき、水属性の主力巡遊者がその敵に与える会心ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b목표가 「윤슬」을 보유한 경우, 「윤슬」 1스택마다 물 속성 메인 캐릭터가 목표에게 입히는 치명타 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Aqua DMG (base)"
             ],
@@ -26005,7 +26515,13 @@
         "secondarySkill2": {
             "id": 40082,
             "name": "Horn of Departure",
+            "nameCN": "启航笛音",
+            "nameJP": "絶叫コースター",
+            "nameKR": "출항의 기적",
             "desc": "If a target is inflicted with Bright Tide, each stack increases the Skill DMG dealt by Aqua Trekkers to the target by <color=#ec6d21>{1}</color>.",
+            "descCN": "如果目标附带的「晴浪」，每层「晴浪」使水系角色对其造成的技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "敵にドキドキ風船が付与されている時、ドキドキ風船1につき、水属性巡遊者がその敵に与えるスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "목표가 「윤슬」을 보유한 경우, 「윤슬」 1스택마다 물 속성 캐릭터가 목표에게 입히는 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Skill DMG (base)"
@@ -26551,7 +27067,13 @@
         "mainSkill": {
             "id": 4009,
             "name": "New Star Prelude",
+            "nameCN": "“空白”的序章",
+            "nameJP": "『空白』の序章",
+            "nameKR": "‘공백’의 프롤로그",
             "desc": "Increases the ATK of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, the main Ventus Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
+            "descCN": "队伍中风系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b战斗开始后，风系主控角色获得最大生命{2}的护盾，持续{3}秒，该效果每{4}秒最多触发1次。",
+            "descJP": "チーム内の風属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000b戦闘開始後、風属性の主力巡遊者は、{3}秒間持続する最大HPの{2}分のシールドを獲得する。この効果は{4}秒ごとに1回まで発動する。",
+            "descKR": "팀 내 바람 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b전투 시작 후, 바람 속성 메인 캐릭터가 최대 HP의 {2}에 해당하는 보호막을 획득한다. {3}초간 지속되며, 해당 효과는 {4}초마다 최대 1회 발동한다.",
             "effectType": [
                 "ATK (%)",
                 "ADD_SHIELD"
@@ -26569,7 +27091,13 @@
         "secondarySkill1": {
             "id": 40091,
             "name": "Starlit Winds",
+            "nameCN": "星途启程",
+            "nameJP": "星を目指して",
+            "nameKR": "별의 여정",
             "desc": "When the Ventus Main Trekker gains a shield, increases all friendly units' Ventus DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "风系主控角色获得护盾时，己方风系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "風属性の主力巡遊者がシールド獲得時から{2}秒間、味方の風属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "바람 속성 메인 캐릭터가 보호막을 획득하면 전체 아군의 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Ventus DMG",
                 "Ventus DMG (base)"
@@ -26610,7 +27138,13 @@
         "secondarySkill2": {
             "id": 40092,
             "name": "Windswept Prayer",
+            "nameCN": "乘风的祈愿",
+            "nameJP": "願いを風に乗せて",
+            "nameKR": "바람을 탄 기도",
             "desc": "When any Ventus Trekker deals Skill DMG, if the main Ventus Trekker has a shield, increases the DMG of this hit by <color=#ec6d21>{1}</color>.",
+            "descCN": "任意风系角色造成技能伤害时，如果风系主控角色拥有护盾，本次伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム内の風属性巡遊者のスキルダメージを敵に与える時、風属性の主力巡遊者がシールドを保持している場合、そのダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "바람 속성 캐릭터가 스킬 피해를 입히고 바람 속성 메인 캐릭터가 보호막을 보유한 경우, 이번 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -27156,7 +27690,13 @@
         "mainSkill": {
             "id": 4010,
             "name": "Prayer Beneath Light",
+            "nameCN": "沐光祷告",
+            "nameJP": "清浄なる祈り",
+            "nameKR": "깨끗한 기도",
             "desc": "Increases the ATK of Lux Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen the main Lux Trekker is hit, gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
+            "descCN": "队伍中光系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b光系主控角色被命中时，获得最大生命{2}的护盾，持续{3}秒，该效果每{4}秒最多触发1次。",
+            "descJP": "チーム内の光属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000b光属性の主力巡遊者は攻撃を受けた時、{3}秒間持続する最大HPの{2}分のシールドを獲得する。この効果は{4}秒ごとに1回まで発動する。",
+            "descKR": "팀 내 빛 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 메인 캐릭터가 피격되면 최대 HP의 {2}에 해당하는 보호막을 획득한다. {3}초간 지속되며, 해당 효과는 {4}초마다 최대 1회 발동한다.",
             "effectType": [
                 "ATK (%)",
                 "ADD_SHIELD"
@@ -27174,7 +27714,13 @@
         "secondarySkill1": {
             "id": 40101,
             "name": "Light of Mercy",
+            "nameCN": "慈悲满溢",
+            "nameJP": "万物に捧ぐ慈愛",
+            "nameKR": "넘치는 자비",
             "desc": "When the Lux Main Trekker gains a shield, increases all friendly units' Lux DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "光系主控角色获得护盾时，己方光系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "光属性の主力巡遊者がシールド獲得時から{2}秒間、味方の光属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "빛 속성 메인 캐릭터가 보호막을 획득하면 전체 아군의 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Lux DMG",
                 "Lux DMG (base)"
@@ -27215,7 +27761,13 @@
         "secondarySkill2": {
             "id": 40102,
             "name": "Divine Protection",
+            "nameCN": "圣光加护",
+            "nameJP": "凛光の加護",
+            "nameKR": "성스러운 빛의 가호",
             "desc": "When any Lux Trekker casts a skill, if the main Trekker has a shield, increases Lux squadmates' Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意光系角色施放技能时，如果主控角色拥有护盾，队伍中光系角色的技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "チーム内の光属性巡遊者のスキル発動時、主力巡遊者がシールドを保持している場合、{2}秒間、チーム内の光属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "빛 속성 캐릭터가 스킬을 시전할 때 메인 캐릭터가 보호막을 보유한 경우, 팀 내 빛 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Skill DMG",
                 "Skill DMG (base)"
@@ -27766,7 +28318,13 @@
         "mainSkill": {
             "id": 4011,
             "name": "Summer Afternoon Rain",
+            "nameCN": "夏日午后的雨",
+            "nameJP": "昼下がりの雨",
+            "nameKR": "여름날 오후의 비",
             "desc": "Increases the ATK of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Aqua Trekker casts an Ultimate, the main Aqua Trekker gains a shield equal to {2} of Max HP for {3}s.",
+            "descCN": "队伍中水系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意水系角色施放绝招时，水系主控角色获得最大生命{2}的护盾，持续{3}秒。",
+            "descJP": "チーム内の水属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の水属性巡遊者の必殺技発動時、水属性の主力巡遊者は、{3}秒間持続する最大HPの{2}分のシールドを獲得する。",
+            "descKR": "팀 내 물 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b물 속성 캐릭터가 필살기를 시전하면 물 속성 메인 캐릭터가 최대 HP의 {2}에 해당하는 보호막을 획득한다. {3}초간 지속된다.",
             "effectType": [
                 "ATK (%)",
                 "ADD_SHIELD"
@@ -27784,7 +28342,13 @@
         "secondarySkill1": {
             "id": 40111,
             "name": "Frosted Blossom",
+            "nameCN": "绽放的冰花",
+            "nameJP": "花開く氷蕾",
+            "nameKR": "만개한 얼음꽃",
             "desc": "When the Aqua Main Trekker gains a shield, increases all friendly units' Aqua DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "水系主控角色获得护盾时，己方水系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "水属性の主力巡遊者がシールド獲得時から{2}秒間、味方の水属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "물 속성 메인 캐릭터가 보호막을 획득하면 전체 아군의 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Aqua DMG",
                 "Aqua DMG (base)"
@@ -27825,7 +28389,13 @@
         "secondarySkill2": {
             "id": 40112,
             "name": "Dancing Waters",
+            "nameCN": "水舞蹈",
+            "nameJP": "水鏡の像花",
+            "nameKR": "물의 스텝",
             "desc": "When any Aqua Trekker deals Skill DMG, if the main Aqua Trekker has a shield, increases the DMG of this hit by <color=#ec6d21>{1}</color>.\u000bIncreases the main Aqua Trekker's Aqua DMG dealt to elite or higher-tier targets by <color=#ec6d21>{2}</color>.",
+            "descCN": "任意水系角色造成技能伤害时，如果水系主控角色拥有护盾，本次伤害提升<color=#ec6d21>{1}</color>。\u000b水系主控角色对精英及以上目标造成水系伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の水属性巡遊者のスキルダメージを敵に与える時、水属性の主力巡遊者がシールドを保持している場合、そのダメージが<color=#ec6d21>{1}</color>増加する。\u000b水属性の主力巡遊者の、エリート以上の敵への水属性ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "물 속성 캐릭터가 스킬 피해를 입히고 물 속성 메인 캐릭터가 보호막을 보유한 경우, 이번 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b물 속성 메인 캐릭터가 정예 이상 목표에게 입히는 물 속성 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)",
                 "HITTED_ADDITIONAL_:Aqua DMG (base)"
@@ -28377,7 +28947,13 @@
         "mainSkill": {
             "id": 4012,
             "name": "Those with Ambition",
+            "nameCN": "狼贪虎视",
+            "nameJP": "見据える先に",
+            "nameKR": "야심에 찬 시선",
             "desc": "Increases the ATK of Umbra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any support Umbra Trekker or Umbra minion inflicts ##Umbra Mark#1019#, the main Umbra Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
+            "descCN": "队伍中暗系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意暗系援护角色或仆从附加##暗系印记#1019#时，暗系主控角色获得最大生命{2}的护盾，持续{3}秒，该效果每{4}秒最多触发1次。",
+            "descJP": "チーム内の闇属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の闇属性の支援巡遊者か従者が##闇属性の印#1019#を付与した時、闇属性の主力巡遊者は、{3}秒間持続する最大HPの{2}分のシールドを獲得する。この効果は{4}秒ごとに1回まで発動する。",
+            "descKR": "팀 내 어둠 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 지원 캐릭터 또는 소환물이 ##어둠 속성 표식#1019#을 부여하면 어둠 속성 메인 캐릭터가 최대 HP의 {2}에 해당하는 보호막을 획득한다. {3}초간 지속된다. 해당 효과는 {4}초마다 최대 1회 발동한다.",
             "effectType": [
                 "ATK (%)",
                 "ADD_SHIELD"
@@ -28396,7 +28972,13 @@
         "secondarySkill1": {
             "id": 40121,
             "name": "Dark Reckoning",
+            "nameCN": "逐利的暗涌",
+            "nameJP": "欲望の坩堝",
+            "nameKR": "이익을 좇는 암류",
             "desc": "When the Umbra Main Trekker gains a shield, increases all friendly units' Umbra DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "暗系主控角色获得护盾时，己方暗系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "闇属性の主力巡遊者がシールド獲得時から{2}秒間、味方の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "어둠 속성 메인 캐릭터가 보호막을 획득하면 전체 아군의 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Umbra DMG",
                 "Umbra DMG (base)"
@@ -28437,7 +29019,13 @@
         "secondarySkill2": {
             "id": 40122,
             "name": "Greedy Pursuit",
+            "nameCN": "贪婪的追猎",
+            "nameJP": "覇道邁進",
+            "nameKR": "탐욕의 추격",
             "desc": "When any Trekker triggers ##Umbra Mark#1019#, if the main Trekker has a shield, increases Umbra squadmates' Skill and Ultimate DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意角色触发##暗系印记#1019#时，如果主控角色拥有护盾，队伍中暗系角色技能和绝招伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "チーム内の巡遊者が##闇属性の印#1019#を発動させた時、主力巡遊者がシールドを保持している場合、{2}秒間、チーム内の闇属性巡遊者のスキルダメージと必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "임의의 캐릭터가 ##어둠 속성 표식#1019#을 발동할 때 메인 캐릭터가 보호막을 보유한 경우, 팀 내 어둠 속성 캐릭터의 스킬과 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Skill DMG",
                 "Skill DMG (base)",
@@ -28988,7 +29576,13 @@
         "mainSkill": {
             "id": 4013,
             "name": "Voyage Blueprint",
+            "nameCN": "远航蓝图",
+            "nameJP": "白紙の航海図",
+            "nameKR": "항해의 청사진",
             "desc": "Increases the ATK of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ignis Trekker casts a skill, the main Ignis Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
+            "descCN": "队伍中火系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意火系角色施放技能时，火系主控角色获得最大生命{2}的护盾，持续{3}秒，该效果每{4}秒最多触发1次。",
+            "descJP": "チーム内の火属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の火属性巡遊者のスキル発動時、火属性の主力巡遊者は、{3}秒間持続する最大HPの{2}分のシールドを獲得する。この効果は{4}秒ごとに1回まで発動する。",
+            "descKR": "팀 내 불 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b불 속성 캐릭터가 스킬을 시전하면 불 속성 메인 캐릭터가 최대 HP의 {2}에 해당하는 보호막을 획득한다. {3}초간 지속되며, 해당 효과는 {4}초마다 최대 1회 발동한다.",
             "effectType": [
                 "ATK (%)",
                 "ADD_SHIELD"
@@ -29006,7 +29600,13 @@
         "secondarySkill1": {
             "id": 40131,
             "name": "Raging Wildfire",
+            "nameCN": "燎原的烈火",
+            "nameJP": "沸き立つ探究心",
+            "nameKR": "들판을 태우는 열화",
             "desc": "When the Ignis Main Trekker gains a shield, increases all friendly units' Ignis DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "火系主控角色获得护盾时，己方火系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "火属性の主力巡遊者がシールド獲得時から{2}秒間、味方の火属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "불 속성 메인 캐릭터가 보호막을 획득하면 전체 아군의 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Ignis DMG",
                 "Ignis DMG (base)"
@@ -29047,7 +29647,13 @@
         "secondarySkill2": {
             "id": 40132,
             "name": "Epic Adventure",
+            "nameCN": "极致的冒险",
+            "nameJP": "あくなき好奇心",
+            "nameKR": "극한의 모험",
             "desc": "When the main Ignis Trekker deals Skill DMG, if her HP is above {1}, increases the DMG of this hit by <color=#ec6d21>{2}</color>.",
+            "descCN": "火系主控角色造成技能伤害时，如果自身生命高于{1}，本次伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "火属性の主力巡遊者のスキルダメージを敵に与える時、自身のHPが{1}を超えている場合、そのダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "불 속성 메인 캐릭터가 스킬 피해를 입히고 자신의 HP가 {1} 이상이면 이번 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -29593,7 +30199,13 @@
         "mainSkill": {
             "id": 4014,
             "name": "Sweet Times",
+            "nameCN": "甜言蜜果",
+            "nameJP": "甘く咲く時間",
+            "nameKR": "달콤한 말의 열매",
             "desc": "Increases the ATK of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Terra Mark#1020#, the main Terra Trekker gains a shield equal to {2} of Max HP for {3}s. This effect can only be triggered once every {4}s.",
+            "descCN": "队伍中地系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意角色触发##地系印记#1020#时，地系主控角色获得最大生命{2}的护盾，持续{3}秒，该效果每{4}秒最多触发1次。",
+            "descJP": "チーム内の地属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の巡遊者が##地属性の印#1020#を発動させた時、地属性の主力巡遊者は、{3}秒間持続する最大HPの{2}分のシールドを獲得する。この効果は{4}秒ごとに1回まで発動する。",
+            "descKR": "팀 내 땅 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b땅 속성 캐릭터가 ##땅 속성 표식#1020#을 발동하면 땅 속성 메인 캐릭터가 최대 HP의 {2}에 해당하는 보호막을 획득한다. {3}초간 지속되며, 해당 효과는 {4}초마다 최대 1회 발동한다.",
             "effectType": [
                 "ATK (%)",
                 "ADD_SHIELD"
@@ -29611,7 +30223,13 @@
         "secondarySkill1": {
             "id": 40141,
             "name": "Fruity & Fragrant",
+            "nameCN": "果语花香",
+            "nameJP": "森の恵",
+            "nameKR": "과일 꽃향기",
             "desc": "When the Terra Main Trekker gains a shield, increases all friendly units' Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "地系主控角色获得护盾时，己方地系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "地属性の主力巡遊者がシールド獲得時から{2}秒間、味方の地属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "땅 속성 메인 캐릭터가 보호막을 획득하면 전체 아군의 땅 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Terra DMG",
                 "Terra DMG (base)"
@@ -29652,7 +30270,13 @@
         "secondarySkill2": {
             "id": 40142,
             "name": "Juicy & Healthy",
+            "nameCN": "营养多汁又健康",
+            "nameJP": "しあわせな時間",
+            "nameKR": "영양 가득 웰빙",
             "desc": "When any Terra Trekker casts an Ultimate, if the main Trekker has a shield, increases Terra squadmates' Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意地系角色施放绝招时，如果主控角色拥有护盾，队伍中地系角色的技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "チーム内の地属性巡遊者の必殺技発動時、主力巡遊者がシールドを保持している場合、{2}秒間、チーム内の地属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "땅 속성 캐릭터가 필살기를 시전할 때 메인 캐릭터가 보호막을 보유한 경우, 팀 내 땅 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Skill DMG",
                 "Skill DMG (base)"
@@ -30203,7 +30827,13 @@
         "mainSkill": {
             "id": 4015,
             "name": "Deer's Song",
+            "nameCN": "鹿鸣",
+            "nameJP": "鹿の声",
+            "nameKR": "사슴의 울음",
             "desc": "Increases the Skill DMG of Ventus Support Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ventus Support Trekker deals Skill DMG, inflicts Flowing Fragrance on the target, up to {2} stacks.\nWhen any Ventus Support Trekker deals Skill DMG to a target with max stacks of Flowing Fragrance, removes all stacks and inflicts the following effects on the target: Increases the Skill DMG Taken by the target by <color=#ec6d21>{3}</color> for {4}s, up to {5} stacks.",
+            "descCN": "队伍中风系援护角色技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意风系援护角色造成技能伤害时，为目标附加「流芳」，可叠加{2}层。任意风系援护角色对附带满层「流芳」的目标造成技能伤害时，移除全部「流芳」，为该目标附加效果：受到风系技能伤害提升<color=#ec6d21>{3}</color>，持续{4}秒，可叠加{5}层。",
+            "descJP": "チーム内の風属性の支援巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の風属性の支援巡遊者がスキルダメージを与えた時、その敵に残り香を付与する。残り香は{2}回重複できる。チーム内の風属性の支援巡遊者が、上限に達した残り香が付与されている敵にスキルダメージを与えた時、残り香をリセットし、{4}秒間、その敵の風属性のスキル被ダメージを<color=#ec6d21>{3}</color>増加させる。この効果は{5}回重複できる。",
+            "descKR": "팀 내 바람 속성 지원 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b바람 속성 지원 캐릭터가 스킬 피해를 입히면 목표에게 「향기」를 부여한다. 최대 {2}스택 중첩된다. 바람 속성 지원 캐릭터가 최대 스택의 「향기」를 보유한 목표에게 스킬 피해를 입히면 모든 「향기」를 제거하고, 해당 목표가 받는 바람 속성 스킬 피해가 <color=#ec6d21>{3}</color> 증가하는 효과를 부여한다. {4}초간 지속되며, 최대 {5}스택 중첩된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "Skill DMG Taken (base)"
@@ -30223,7 +30853,13 @@
         "secondarySkill1": {
             "id": 40151,
             "name": "Dreamflow Breeze",
+            "nameCN": "流淌于梦的清风",
+            "nameJP": "夢見心地のそよ風",
+            "nameKR": "꿈을 스치는 산들바람",
             "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Ventus Trekker casts a Skill, increases their Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "全队风系伤害提升<color=#ec6d21>{1}</color>。\u000b任意风系角色施放技能时，该角色技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム全体の風属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の風属性巡遊者のスキル発動時から{3}秒間、その巡遊者のスキルダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b바람 속성 캐릭터가 스킬을 시전하면 해당 캐릭터의 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Ventus DMG (base)",
                 "ADDBUFF:Skill DMG",
@@ -30265,7 +30901,13 @@
         "secondarySkill2": {
             "id": 40152,
             "name": "Scattered Fragrance",
+            "nameCN": "散落的芳香",
+            "nameJP": "香り立つ新緑",
+            "nameKR": "흩날린 향기",
             "desc": "When the Ventus Main Trekker deals DMG to a target inflicted with Flowing Fragrance, increases the Ventus DMG of this hit by <color=#ec6d21>{1}</color>.",
+            "descCN": "风系主控角色对附带「流芳」的目标造成伤害时，本次风系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "風属性の主力巡遊者は残り香が付与されている敵にダメージを与えた時、その風属性ダメージは<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "바람 속성 메인 캐릭터가 「향기」를 보유한 목표에게 피해를 입히면 이번 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Ventus DMG (base)"
@@ -30811,7 +31453,13 @@
         "mainSkill": {
             "id": 4016,
             "name": "Chronicles of Spring",
+            "nameCN": "春日纪事",
+            "nameJP": "桜花爛漫",
+            "nameKR": "봄날의 기록",
             "desc": "When the Ventus Main Trekker gains 1 stack of Drifting Snow for 10s after casting a skill, stacking up to 3 times.\u000bWhen the Ventus Main Trekker deals Auto Attack DMG, 1/2/3 stacks of Drifting Snow inflict the following on the target: increases Ventus Auto Attack DMG taken by <color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color> for 10s.\u000bWhen the Ventus Main Trekker deals Skill DMG, 1/2/3 stacks of Drifting Snow inflict the following on the target: increases Ventus Skill DMG taken by <color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color> for 10s.",
+            "descCN": "风系主控角色施放技能时，自身获得1层「浮雪」，持续10秒，可叠加3层。\u000b风系主控角色造成普攻伤害时，1/2/3层「浮雪」对目标附加：受到风系普攻伤害提升<color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>，持续10秒。\u000b风系主控角色造成技能伤害时，1/2/3层「浮雪」对目标附加：受到风系技能伤害提升<color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color>，持续10秒。",
+            "descJP": "風属性の主力巡遊者がスキルを発動時、自身は10秒間、細雪を1獲得する。この効果は3回まで重複できる。\u000b風属性の主力巡遊者が通常攻撃ダメージを与えた時、付与されている細雪の数1/2/3に応じて敵に以下の効果を付与する：10秒間、風属性の通常攻撃被ダメージがそれぞれ<color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>増加する。\u000b風属性の主力巡遊者がスキルダメージを与えた時、付与されている細雪の数1/2/3に応じて敵に以下の効果を付与する：10秒間、風属性のスキル被ダメージがそれぞれ<color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color>増加する。",
+            "descKR": "바람 속성 메인 캐릭터가 스킬을 시전하면, 자신이 「설무」 1스택을 획득한다. 10초간 지속되며, 최대 3스택 중첩된다.\u000b바람 속성 메인 캐릭터가 일반 공격 피해를 입히면, 1/2/3스택의 「설무」가 목표에게, 받는 바람 속성 일반 공격 피해가 <color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color> 증가하는 효과를 부여한다. 10초간 지속된다.\u000b바람 속성 메인 캐릭터가 스킬 피해를 입히면, 1/2/3스택의 「설무」가 목표에게, 받는 바람 속성 스킬 피해가 <color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color> 증가하는 효과를 부여한다. 10초간 지속된다.",
             "effectType": [
                 "ELEMENTTYPE_:(Ventus) Auto Attack DMG Taken",
                 "ELEMENTTYPE_:(Ventus) Skill DMG Taken"
@@ -30828,7 +31476,13 @@
         "secondarySkill1": {
             "id": 40161,
             "name": "Vernal Zephyr",
+            "nameCN": "暖风融雪",
+            "nameJP": "春一番",
+            "nameKR": "눈을 녹이는 봄바람",
             "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bDrifting Snow gains an additional effect: Each stack increases own Auto Attack Crit DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "全队风系伤害提升<color=#ec6d21>{1}</color>。\u000b「浮雪」获得额外效果：每层使自身普攻暴击伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム全体の風属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b細雪に追加効果が付与される：細雪1ごとに、自身の通常攻撃の会心ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「설무」가 추가 효과를 획득해, 스택마다 자신의 일반 공격 치명타 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Ventus DMG (base)",
                 "Normal Attack Crit DMG (base)"
@@ -30867,7 +31521,13 @@
         "secondarySkill2": {
             "id": 40162,
             "name": "Vitalizing Rain",
+            "nameCN": "细雨润物",
+            "nameJP": "花吹雪",
+            "nameKR": "만물을 적시는 가랑비",
             "desc": "Drifting Snow gains an additional effect: Each stack increases own Skill DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "「浮雪」获得额外效果：每层使自身技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "細雪に追加効果が付与される：細雪1ごとに、自身のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "「설무」가 추가 효과를 획득해, 스택마다 자신의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)"
             ],
@@ -31415,7 +32075,13 @@
         "mainSkill": {
             "id": 4017,
             "name": "Fireworks",
+            "nameCN": "花火",
+            "nameJP": "ハナビ",
+            "nameKR": "불꽃",
             "desc": "The main Ignis Trekker gains {1} stacks of Explosive Flame after casting a skill. Each stack increases Auto Attack DMG by <color=#ec6d21>{2}</color>, stacking up to {3} times. Each ammo used by the main Ignis Trekker grants one additional stack.\u000bWhen Explosive Flame is at max stacks, increases the main Ignis Trekker's Ignis Auto Attack DMG to targets by <color=#ec6d21>{4}</color> for {5}s. All Explosive Flame stacks are removed after {6}s.",
+            "descCN": "火系主控角色施放技能后，获得{1}层「爆焰」：每层使普攻伤害提升<color=#ec6d21>{2}</color>，可叠加{3}层。火系主控角色每消耗1枚弹药，额外获得1层。\u000b「爆焰」满层时，火系主控角色的普攻伤害对目标附加：受到火系普攻伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。{6}秒后清空全部「爆焰」。",
+            "descJP": "火属性の主力巡遊者のスキル発動後、爆炎を{1}獲得する。火属性の主力巡遊者が弾丸を1発消費するたびに、爆炎を追加で1獲得する。爆炎1につき、通常攻撃ダメージが<color=#ec6d21>{2}</color>増加する。爆炎は{3}回重複できる。\u000b爆炎が上限に達した時、火属性の主力巡遊者の通常攻撃ダメージは{5}秒間、敵の火属性の通常攻撃被ダメージを<color=#ec6d21>{4}</color>増加させる。爆炎が上限に達した{6}秒後、すべての爆炎がリセットされる。",
+            "descKR": "불 속성 메인 캐릭터가 스킬을 시전한 후, 「폭염」 {1} 스택을 획득한다. 1스택마다 일반 공격 피해가 <color=#ec6d21>{2}</color> 증가하고, 최대 {3}스택 중첩된다. 불 속성 메인 캐릭터가 탄약을 1개 소모할 때마다 1스택을 추가로 획득한다. \u000b「폭염」이 최고 스택이 되면, 불 속성 메인 캐릭터의 일반 공격 피해로 목표가 받는 불 속성 일반 공격 피해가 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다. {6}초 후 모든 「폭염」이 제거된다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Auto Attack DMG Taken (base)"
@@ -31435,7 +32101,13 @@
         "secondarySkill1": {
             "id": 40171,
             "name": "Warmth in the Arms",
+            "nameCN": "拥入怀抱的暖意",
+            "nameJP": "受け継がれる熱意",
+            "nameKR": "품 안의 온기",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "全队火系伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色触发##火系印记#1016#时，队伍中火系角色技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム全体の火属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が##火属性の印#1016#を発動させた時から{3}秒間、チーム内の火属性巡遊者のスキルダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의의 캐릭터가 ##불 속성 표식#1016#을 발동하면 팀 내 불 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Ignis DMG (base)",
                 "ADDBUFF:Skill DMG",
@@ -31477,7 +32149,13 @@
         "secondarySkill2": {
             "id": 40172,
             "name": "Fervent Flames",
+            "nameCN": "洋溢的焰火",
+            "nameJP": "猛る炎",
+            "nameKR": "이글거리는 불꽃",
             "desc": "Each stack of Explosive Flame additionally grants: Skill DMG +<color=#ec6d21>{1}</color>.",
+            "descCN": "每层「爆焰」额外获得：技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "爆炎1ごとに、スキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "「폭염」 스택마다, 스킬 피해가 추가로 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)"
             ],
@@ -32025,7 +32703,13 @@
         "mainSkill": {
             "id": 4018,
             "name": "Lemon & Black Tea",
+            "nameCN": "冰柠与红茶",
+            "nameJP": "レモネードと紅茶",
+            "nameKR": "레모네이드와 홍차",
             "desc": "Increases the squad's Ventus DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
+            "descCN": "全队风系伤害提升<color=#ec6d21>{1}</color>。\u000b每拥有1张命运卡片，该效果额外提升{2}，可叠加{3}层。",
+            "descJP": "チーム全体の風属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b所持している運命カード1枚ごとに、追加で{2}増加する。この効果は{3}回重複できる。",
+            "descKR": "팀 전체의 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b보유한 운명 카드 1장마다 해당 효과가 {2} 추가로 증가하고, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "Ventus DMG (base)"
             ],
@@ -32041,7 +32725,13 @@
         "secondarySkill1": {
             "id": 40181,
             "name": "Subtle Influence",
+            "nameCN": "潜移默化",
+            "nameJP": "秘めたる心",
+            "nameKR": "자연스러운 변화",
             "desc": "Increases Ventus Trekkers' Ventus DMG dealt to targets with Ventus VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ventus Trekker by {2}.",
+            "descCN": "队伍中风系角色对风系弱点目标造成风系伤害提升<color=#ec6d21>{1}</color>。\u000b风系主控角色受到伤害降低{2}。",
+            "descJP": "チーム内の風属性巡遊者の、風属性が弱点の敵への風属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b風属性の主力巡遊者の被ダメージが{2}減少する。",
+            "descKR": "팀 내 바람 속성 캐릭터가 바람 속성이 약점인 목표에게 입히는 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b바람 속성 메인 캐릭터가 받는 피해가 {2} 감소한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Ventus DMG (base)",
                 "Final DMG Taken (base)"
@@ -32081,7 +32771,13 @@
         "secondarySkill2": {
             "id": 40182,
             "name": "Lasting Trends",
+            "nameCN": "绵远流长",
+            "nameJP": "どこふく風",
+            "nameKR": "끝없는 흐름",
             "desc": "For each target killed, increases the ATK of Ventus Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "每消灭1个目标，队伍中风系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "敵を1体撃破するごとに、{2}秒間、チーム内の風属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "목표를 1명 처치할 때마다 팀 내 바람 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -32632,7 +33328,13 @@
         "mainSkill": {
             "id": 4019,
             "name": "One Shot, One Down",
+            "nameCN": "一发破的",
+            "nameJP": "一撃必中",
+            "nameKR": "원샷원킬",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
+            "descCN": "全队火系伤害提升<color=#ec6d21>{1}</color>。\u000b每拥有1张命运卡片，该效果额外提升{2}，可叠加{3}层。",
+            "descJP": "チーム全体の火属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b所持している運命カード1枚ごとに、追加で{2}増加する。この効果は{3}回重複できる。",
+            "descKR": "팀 전체의 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b보유한 운명 카드 1장마다 해당 효과가 {2} 추가로 증가하고, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "Ignis DMG (base)"
             ],
@@ -32648,7 +33350,13 @@
         "secondarySkill1": {
             "id": 40191,
             "name": "Windbreaking Shots",
+            "nameCN": "破风铳弹",
+            "nameJP": "凶弾の射手",
+            "nameKR": "바람을 가르는 탄환",
             "desc": "Increases Ignis Trekkers' Ignis DMG dealt to targets with Ignis VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Ignis Trekker by {2}.",
+            "descCN": "队伍中火系角色对火系弱点目标造成火系伤害提升<color=#ec6d21>{1}</color>。\u000b火系主控角色受到伤害降低{2}。",
+            "descJP": "チーム内の火属性巡遊者の、火属性が弱点の敵への火属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b火属性の主力巡遊者の被ダメージが{2}減少する。",
+            "descKR": "팀 내 불 속성 캐릭터가 불 속성이 약점인 목표에게 입히는 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b불 속성 메인 캐릭터가 받는 피해가 {2} 감소한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Ignis DMG (base)",
                 "Final DMG Taken (base)"
@@ -32688,7 +33396,13 @@
         "secondarySkill2": {
             "id": 40192,
             "name": "Battle Rhapsody",
+            "nameCN": "热斗激奏",
+            "nameJP": "鉛玉の雨",
+            "nameKR": "결투의 폭주곡",
             "desc": "Increases Ignis Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, increases this effect by an additional {3} every {2}s, stacking up to {4} times.",
+            "descCN": "队伍中火系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b战斗开始后，该效果每{2}秒额外提升{3}，可叠加{4}层。",
+            "descJP": "チーム内の火属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000b戦闘開始後、{2}秒経過するごとに、追加で{3}上昇する。この効果は{4}回重複できる。",
+            "descKR": "팀 내 불 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b전투 시작 후, 해당 효과는 {2}초마다 추가로 {3} 증가한다. 최대 {4}스택 중첩된다.",
             "effectType": [
                 "ATK (%)",
                 "ADDBUFF",
@@ -33242,7 +33956,13 @@
         "mainSkill": {
             "id": 4020,
             "name": "Sparkling Moment",
+            "nameCN": "闪光之时",
+            "nameJP": "かけがえのない時間",
+            "nameKR": "반짝이는 순간",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
+            "descCN": "全队光系伤害提升<color=#ec6d21>{1}</color>。\u000b每拥有1张命运卡片，该效果额外提升{2}，可叠加{3}层。",
+            "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b所持している運命カード1枚ごとに、追加で{2}増加する。この効果は{3}回重複できる。",
+            "descKR": "팀 전체의 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b보유한 운명 카드 1장마다 해당 효과가 {2} 추가로 증가하고, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "Lux DMG (base)"
             ],
@@ -33258,7 +33978,13 @@
         "secondarySkill1": {
             "id": 40201,
             "name": "Flashing Memories",
+            "nameCN": "回忆的碎闪",
+            "nameJP": "ありふれた特別な時間",
+            "nameKR": "기억의 파편",
             "desc": "Increases Lux Trekkers' Lux DMG dealt to targets with Lux VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Lux Trekker by {2}.",
+            "descCN": "队伍中光系角色对光系弱点目标造成光系伤害提升<color=#ec6d21>{1}</color>。\u000b光系主控角色受到伤害降低{2}。",
+            "descJP": "チーム内の光属性巡遊者の、光属性が弱点の敵への光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b光属性の主力巡遊者の被ダメージが{2}減少する。",
+            "descKR": "팀 내 빛 속성 캐릭터가 빛 속성이 약점인 목표에게 입히는 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 메인 캐릭터가 받는 피해가 {2} 감소한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Lux DMG (base)",
                 "Final DMG Taken (base)"
@@ -33298,7 +34024,13 @@
         "secondarySkill2": {
             "id": 40202,
             "name": "Radiant Bonds",
+            "nameCN": "友情的闪光",
+            "nameJP": "友情物語",
+            "nameKR": "우정의 섬광",
             "desc": "Increases Lux Trekkers' Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts an Ultimate, increases this effect by an additional {2}, stacking up to {3} times.",
+            "descCN": "队伍中光系角色普攻和技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意光系角色施放绝招时，该效果额外提升{2}，可叠加{3}层。",
+            "descJP": "チーム内の光属性巡遊者の通常攻撃ダメージとスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の光属性巡遊者の必殺技発動時、追加で{2}増加する。この効果は{3}回重複できる。",
+            "descKR": "팀 내 빛 속성 캐릭터의 일반 공격과 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 캐릭터가 필살기를 시전하면 해당 효과가 {2} 추가로 증가한다. 최대 {3}스택 중첩된다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Skill DMG (base)",
@@ -33852,7 +34584,13 @@
         "mainSkill": {
             "id": 4021,
             "name": "United by Fate",
+            "nameCN": "因缘而聚",
+            "nameJP": "一期一会",
+            "nameKR": "인연의 만남",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
+            "descCN": "全队水系伤害提升<color=#ec6d21>{1}</color>。\u000b每拥有1张命运卡片，该效果额外提升{2}，可叠加{3}层。",
+            "descJP": "チーム全体の水属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b所持している運命カード1枚ごとに、追加で{2}増加する。この効果は{3}回重複できる。",
+            "descKR": "팀 전체의 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b보유한 운명 카드 1장마다 해당 효과가 {2} 추가로 증가하고, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "Aqua DMG (base)"
             ],
@@ -33868,7 +34606,13 @@
         "secondarySkill1": {
             "id": 40211,
             "name": "Unbreakable Trio",
+            "nameCN": "坚固的三角",
+            "nameJP": "ワンフォーオール",
+            "nameKR": "튼튼한 삼각형",
             "desc": "Increases Aqua Trekkers' Aqua DMG dealt to targets with Aqua VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Aqua Trekker by {2}.",
+            "descCN": "队伍中水系角色对水系弱点目标造成水系伤害提升<color=#ec6d21>{1}</color>。\u000b水系主控角色受到伤害降低{2}。",
+            "descJP": "チーム内の水属性巡遊者の、水属性が弱点の敵への水属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b水属性の主力巡遊者の被ダメージが{2}減少する。",
+            "descKR": "팀 내 물 속성 캐릭터가 물 속성이 약점인 목표에게 입히는 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b물 속성 메인 캐릭터가 받는 피해가 {2} 감소한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Aqua DMG (base)",
                 "Final DMG Taken (base)"
@@ -33910,7 +34654,13 @@
         "secondarySkill2": {
             "id": 40212,
             "name": "Moment of Unity",
+            "nameCN": "同心的瞬间",
+            "nameJP": "オールフォーワン",
+            "nameKR": "동심의 순간",
             "desc": "Increases the Auto Attack DMG and Skill DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
+            "descCN": "队伍中水系角色普攻和技能伤害提升<color=#ec6d21>{1}</color>。\u000b每消灭{2}个目标，该效果额外提升{3}，可叠加{4}层。",
+            "descJP": "チーム内の水属性巡遊者の通常攻撃ダメージとスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000b敵を{2}体撃破するごとに、追加で{3}増加する。この効果は{4}回重複できる。",
+            "descKR": "팀 내 물 속성 캐릭터의 일반 공격과 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b목표를 {2}명 처치할 때마다 해당 효과가 {3} 추가로 증가한다. 최대 {4}스택 중첩된다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Skill DMG (base)"
@@ -34461,7 +35211,13 @@
         "mainSkill": {
             "id": 4022,
             "name": "The Meow",
+            "nameCN": "午夜喵铃",
+            "nameJP": "真夜中の鈴",
+            "nameKR": "한밤의 고양이 방울",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
+            "descCN": "全队暗系伤害提升<color=#ec6d21>{1}</color>。\u000b每拥有1张命运卡片，该效果额外提升{2}，可叠加{3}层。",
+            "descJP": "チーム全体の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b所持している運命カード1枚ごとに、追加で{2}増加する。この効果は{3}回重複できる。",
+            "descKR": "팀 전체의 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b보유한 운명 카드 1장마다 해당 효과가 {2} 추가로 증가하고, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "Umbra DMG (base)"
             ],
@@ -34477,7 +35233,13 @@
         "secondarySkill1": {
             "id": 40221,
             "name": "Moment of Terror",
+            "nameCN": "战栗之刻",
+            "nameJP": "戦慄の訪問者",
+            "nameKR": "전율의 순간",
             "desc": "Increases Umbra Trekkers' Umbra DMG dealt to targets with Umbra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Umbra Trekker by {2}.",
+            "descCN": "队伍中暗系角色对暗系弱点目标造成暗系伤害提升<color=#ec6d21>{1}</color>。\u000b暗系主控角色受到伤害降低{2}。",
+            "descJP": "チーム内の闇属性巡遊者の、闇属性が弱点の敵への闇属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b闇属性の主力巡遊者の被ダメージが{2}減少する。",
+            "descKR": "팀 내 어둠 속성 캐릭터가 어둠 속성이 약점인 목표에게 입히는 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 메인 캐릭터가 받는 피해가 {2} 감소한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Umbra DMG (base)",
                 "Final DMG Taken (base)"
@@ -34517,7 +35279,13 @@
         "secondarySkill2": {
             "id": 40222,
             "name": "Humble Courage",
+            "nameCN": "平凡之勇",
+            "nameJP": "静かな足音",
+            "nameKR": "평범한 용기",
             "desc": "Increases Umbra Trekkers' Skill and Ultimate DMG dealt to normal targets by <color=#ec6d21>{1}</color>.\u000bAfter the battle begins, for {2} normal targets killed in total, increases Umbra Trekkers' Skill and Ultimate DMG dealt to elite or higher-tier targets by {3}.",
+            "descCN": "队伍中暗系角色对普通目标造成技能和绝招伤害提升<color=#ec6d21>{1}</color>。\u000b战斗开始后，累计消灭{2}个普通目标，队伍中暗系角色对精英及以上目标造成技能和绝招伤害提升{3}。",
+            "descJP": "チーム内の闇属性巡遊者の、ノーマル敵へのスキルダメージと必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b戦闘開始後、敵を{2}体撃破すると、チーム内の闇属性巡遊者の、エリート以上の敵へのスキルダメージと必殺技ダメージが{3}増加する。",
+            "descKR": "팀 내 어둠 속성 캐릭터가 일반 목표에게 입히는 스킬과 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b전투 시작 후, 일반 목표를 {2}명 처치하면 팀 내 어둠 속성 캐릭터가 정예 이상 목표에게 입히는 스킬과 필살기 피해가 {3} 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Skill DMG (base)",
@@ -35062,7 +35830,13 @@
         "mainSkill": {
             "id": 4023,
             "name": "Colors Pierce the Grey",
+            "nameCN": "涂鸦彩虹",
+            "nameJP": "虹を描こう",
+            "nameKR": "그래피티 무지개",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bFor every Destiny Card owned, increases the effect by an additional {2}, stacking up to {3} times.",
+            "descCN": "全队地系伤害提升<color=#ec6d21>{1}</color>。\u000b每拥有1张命运卡片，该效果额外提升{2}，可叠加{3}层。",
+            "descJP": "チーム全体の地属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b所持している運命カード1枚ごとに、追加で{2}増加する。この効果は{3}回重複できる。",
+            "descKR": "팀 전체의 땅 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b보유한 운명 카드 1장마다 해당 효과가 {2} 추가로 증가하고, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "Terra DMG (base)"
             ],
@@ -35078,7 +35852,13 @@
         "secondarySkill1": {
             "id": 40231,
             "name": "Street Spirit",
+            "nameCN": "街头精神",
+            "nameJP": "アウトローのこだわり",
+            "nameKR": "스트릿 스피릿",
             "desc": "Increases Terra Trekkers' Terra DMG dealt to targets with Terra VUL by <color=#ec6d21>{1}</color>.\u000bReduces the DMG taken by the main Terra Trekker by {2}.",
+            "descCN": "队伍中地系角色对地系弱点目标造成地系伤害提升<color=#ec6d21>{1}</color>。\u000b地系主控角色受到伤害降低{2}。",
+            "descJP": "チーム内の地属性巡遊者の、地属性が弱点の敵への地属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b地属性の主力巡遊者の被ダメージが{2}減少する。",
+            "descKR": "팀 내 땅 속성 캐릭터가 땅 속성이 약점인 목표에게 입히는 땅 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b땅 속성 메인 캐릭터가 받는 피해가 {2} 감소한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Terra DMG (base)",
                 "Aqua DMG Taken (base)"
@@ -35118,7 +35898,13 @@
         "secondarySkill2": {
             "id": 40232,
             "name": "Hit and Run",
+            "nameCN": "干完这票就跑",
+            "nameJP": "青空に描くアーチスト",
+            "nameKR": "끝나면 도망가자",
             "desc": "Increases the Skill DMG and Ultimate DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bFor every {2} targets killed, increases this effect by an additional {3}, stacking up to {4} times.",
+            "descCN": "队伍中地系角色技能和绝招伤害提升<color=#ec6d21>{1}</color>。\u000b每消灭{2}个目标，该效果额外提升{3}，可叠加{4}层。",
+            "descJP": "チーム内の地属性巡遊者のスキルダメージと必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b敵を{2}体撃破するごとに、追加で{3}増加する。この効果は{4}回重複できる。",
+            "descKR": "팀 내 땅 속성 캐릭터의 스킬과 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b목표를 {2}명 처치할 때마다 해당 효과가 추가로 {3} 증가한다. 최대 {4}스택 중첩된다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "Skill DMG (base)",
@@ -35674,7 +36460,13 @@
         "mainSkill": {
             "id": 4024,
             "name": "One, Two, Three, Jump!",
+            "nameCN": "一二三，跳！",
+            "nameJP": "地底の彼方へ！",
+            "nameKR": "하나, 둘, 셋, 점프!",
             "desc": "When any Ventus Trekker deals Ultimate DMG, increases the Skill DMG of the Ventus Trekkers in the squad by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意风系角色造成绝招伤害时，队伍中风系角色技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "チーム内の風属性巡遊者が必殺技ダメージを与えた時から{2}秒間、チーム内の風属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "바람 속성 캐릭터가 필살기 피해를 입히면, 팀 내 바람 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:Skill DMG",
                 "Skill DMG (base)"
@@ -35693,7 +36485,13 @@
         "secondarySkill1": {
             "id": 40241,
             "name": "Graceful Dive",
+            "nameCN": "潇洒速降",
+            "nameJP": "軽やかな着地術",
+            "nameKR": "경쾌한 낙하",
             "desc": "Increases the Ultimate DMG of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ventus Mark#1017#, increases the ATK of Ventus Trekkers in the squad and their Minions by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中风系角色绝招伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色触发##风系印记#1017#时，队伍中风系角色及其仆从攻击力提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の風属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が##風属性の印#1017#を発動させた時から{3}秒間、チーム内の風属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{2}</color>上昇する。",
+            "descKR": "팀 내 바람 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b캐릭터가 ##바람 속성 표식#1017#을 발동하면 팀 내 바람 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "ADDBUFF:ATK",
@@ -35736,7 +36534,13 @@
         "secondarySkill2": {
             "id": 40242,
             "name": "Team Spirit",
+            "nameCN": "合作精神",
+            "nameJP": "ファイト！協力！",
+            "nameKR": "팀워크 정신",
             "desc": "When any Support Ventus Trekker inflicts Marks, increases this Trekker's Skill DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意风系援护角色附加印记时，该角色造成的技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "チーム内の風属性の支援巡遊者が印を付与した時から{2}秒間、その巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "바람 속성 지원 캐릭터가 표식을 부여하면 해당 캐릭터가 입히는 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [],
             "addAttrType": [
                 "Skill DMG (base)"
@@ -36282,7 +37086,13 @@
         "mainSkill": {
             "id": 4026,
             "name": "Sword Against Stream",
+            "nameCN": "潋滟故池水",
+            "nameJP": "古池の水音",
+            "nameKR": "반짝이는 옛 연못",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Aqua Mark#1018#, increases all friendly units' Aqua DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "全队水系伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色触发##水系印记#1018#时，己方水系伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム全体の水属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が##水属性の印#1018#を発動させた時から{3}秒間、味方の水属性ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의의 캐릭터가 ##물 속성 표식#1018#을 발동하면 전체 아군의 물 속성 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Aqua DMG (base)",
                 "ADDBUFF:Aqua DMG"
@@ -36301,7 +37111,13 @@
         "secondarySkill1": {
             "id": 40261,
             "name": "Splashing Moves",
+            "nameCN": "泷舞溅跃",
+            "nameJP": "火照りを冷ます飛沫",
+            "nameKR": "넘실대는 물보라",
             "desc": "After the main Aqua Trekker deals DMG {1} times in total, increases Aqua squadmates' ATK by <color=#ec6d21>{2}</color> for {3}s. This effect can only be triggered once every {4}s.",
+            "descCN": "水系主控角色累计造成{1}次伤害后，队伍中水系角色攻击力提升<color=#ec6d21>{2}</color>，持续{3}秒，该效果每{4}秒最多触发1次。",
+            "descJP": "水属性の主力巡遊者のダメージを累計で{1}回与えた後の{3}秒間、チーム内の水属性巡遊者の攻撃力が<color=#ec6d21>{2}</color>上昇する。この効果は{4}秒ごとに1回まで発動する。",
+            "descKR": "물 속성 메인 캐릭터가 피해를 {1}회 입히면 팀 내 물 속성 캐릭터의 공격력이 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속되며, 해당 효과는 {4}초마다 최대 1회 발동한다.",
             "effectType": [
                 "ATK (%)"
             ],
@@ -36341,7 +37157,13 @@
         "secondarySkill2": {
             "id": 40262,
             "name": "Water Mirror",
+            "nameCN": "明镜才可止水",
+            "nameJP": "山紫水明",
+            "nameKR": "맑은 거울, 고요한 물결",
             "desc": "Increases Aqua Trekkers' Skill DMG dealt to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
+            "descCN": "队伍中水系角色对精英及以上目标造成的技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム内の水属性巡遊者の、エリート以上の敵へのスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 내 물 속성 캐릭터가 정예 이상 목표에게 입히는 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -36889,7 +37711,13 @@
         "mainSkill": {
             "id": 4027,
             "name": "Mystic Brushstrokes",
+            "nameCN": "龙飞凤舞",
+            "nameJP": "自由自在",
+            "nameKR": "용과 봉황",
             "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ignis Mark#1016#, increases Ignis squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "全队火系伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色触发##火系印记#1016#时，队伍中火系角色技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム全体の火属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が##火属性の印#1016#を発動させた時から{3}秒間、チーム内の火属性巡遊者のスキルダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의의 캐릭터가 ##불 속성 표식#1016#을 발동하면 팀 내 불 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Ignis DMG (base)",
                 "ADDBUFF:Skill DMG",
@@ -36910,7 +37738,13 @@
         "secondarySkill1": {
             "id": 40271,
             "name": "Wild Brushstrokes",
+            "nameCN": "泼墨狂草",
+            "nameJP": "墨乱狂走",
+            "nameKR": "거친 먹빛",
             "desc": "Increases Ignis Trekkers' Skill DMG by <color=#ec6d21>{1}</color>. When the target is inflicted with ##Burn#2027#, increases by an additional <color=#ec6d21>{2}</color>.",
+            "descCN": "队伍中火系角色技能伤害提升<color=#ec6d21>{1}</color>，对附带##燃烧#2027#的目标额外提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の火属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。##燃焼#2027#が付与されている敵へは、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 불 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. ##인화#2027#를 보유한 목표에게 <color=#ec6d21>{2}</color> 추가로 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
@@ -36950,7 +37784,13 @@
         "secondarySkill2": {
             "id": 40272,
             "name": "Power Unleashed",
+            "nameCN": "龙腾虎跃",
+            "nameJP": "飛龍天舞",
+            "nameKR": "용호질주",
             "desc": "When any Ignis Trekker casts a Support Skill, increases the ATK of the main Ignis Trekker and minions by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意火系角色施放援护技时，火系主控角色和仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "チーム内の火属性巡遊者が支援スキル発動時から{2}秒間、火属性の主力巡遊者と従者の攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "불 속성 캐릭터가 지원 스킬을 시전하면 불 속성 메인 캐릭터와 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -37502,7 +38342,13 @@
         "mainSkill": {
             "id": 4028,
             "name": "Daylight Garden",
+            "nameCN": "白日花园",
+            "nameJP": "白日の花園",
+            "nameKR": "대낮의 화원",
             "desc": "Increases the Auto Attack DMG & Skill DMG of the main Ventus Trekker by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Ventus Mark#1017#, increases the main Ventus Trekker's Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "风系主控角色普攻和技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色触发##风系印记#1017#时，主控角色风系伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "風属性の主力巡遊者の通常攻撃ダメージとスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が##風属性の印#1017#を発動させた時から{3}秒間、主力巡遊者の風属性ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "바람 속성 메인 캐릭터의 일반 공격과 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의의 캐릭터가 ##바람 속성 표식#1017#을 발동하면 메인 캐릭터의 바람 속성 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Skill DMG (base)",
@@ -37524,7 +38370,13 @@
         "secondarySkill1": {
             "id": 40281,
             "name": "Fragrant Illusion",
+            "nameCN": "芬芳幻象",
+            "nameJP": "香しき面影",
+            "nameKR": "향기의 환영",
             "desc": "Increases Ventus Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Ventus Trekker deals Ultimate DMG, increases her Ventus DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中风系角色绝招伤害提升<color=#ec6d21>{1}</color>。\u000b风系主控角色造成绝招伤害时，自身风系伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の風属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b風属性の主力巡遊者が必殺技ダメージを与えた時から{3}秒間、自身の風属性ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 바람 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b바람 속성 메인 캐릭터가 필살기 피해를 입히면 자신의 바람 속성 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "ADDBUFF:Ventus DMG",
@@ -37567,7 +38419,13 @@
         "secondarySkill2": {
             "id": 40282,
             "name": "Swaying Petals",
+            "nameCN": "花间疏影",
+            "nameJP": "花影の狭間で",
+            "nameKR": "꽃 사이 그림자",
             "desc": "After the main Ventus Trekker deals DMG to the same target {1} times, increases the Ventus DMG the target takes by <color=#ec6d21>{2}</color> for {3}s. This effect can only be triggered once every {4}s for the same target.",
+            "descCN": "风系主控角色对同一目标造成{1}次伤害后，该目标受到风系伤害提升<color=#ec6d21>{2}</color>，持续{3}秒，同一目标每{4}秒最多触发1次。",
+            "descJP": "風属性の主力巡遊者が同一の敵に{1}回ダメージを与えた後の{3}秒間、その敵の風属性被ダメージを<color=#ec6d21>{2}</color>増加させる。この効果は同一の敵に対して、{4}秒ごとに1回まで発動する。",
+            "descKR": "바람 속성 메인 캐릭터가 동일한 목표에게 피해를 {1}회 입히면 해당 목표가 받는 바람 속성 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속되며, 동일 목표는 {4}초마다 최대 1회 발동한다.",
             "effectType": [
                 "Ventus DMG Taken (base)"
             ],
@@ -38113,7 +38971,13 @@
         "mainSkill": {
             "id": 4030,
             "name": "A Moment in the Afternoon",
+            "nameCN": "午后间隙",
+            "nameJP": "穴あきおサボり",
+            "nameKR": "오후의 틈새",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker deals non-Auto Attack DMG to a target, there is a {2} chance to inflict Shock: increases Lux DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Lux Trekker from targets inflicted with Shock by {5}.",
+            "descCN": "全队光系伤害提升<color=#ec6d21>{1}</color>。\u000b任意光系角色对目标造成非普攻伤害时，{2}概率附加「静电」：受到光系伤害提升{3}，持续{4}秒。\u000b光系主控角色受到附带「静电」目标的伤害降低{5}。",
+            "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の光属性巡遊者が通常攻撃ダメージ以外のダメージを敵に与えた時、{2}の確率で{4}秒間、その敵に静電気を付与し、光属性被ダメージを{3}増加させる。\u000b光属性の主力巡遊者は、静電気が付与されている敵からの被ダメージが{5}減少する。",
+            "descKR": "팀 전체 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 캐릭터가 목표에게 일반 공격이 아닌 피해를 입히면 {2} 확률로 「정전」을 부여해, 받는 빛 속성 피해가 {3} 증가한다. {4}초간 지속된다. \u000b빛 속성 메인 캐릭터가 「정전」을 보유한 목표로부터 받는 피해가 {5} 감소한다.",
             "effectType": [
                 "Lux DMG (base)",
                 "ADDBUFF:Lux DMG Taken @ 35%",
@@ -38136,7 +39000,13 @@
         "secondarySkill1": {
             "id": 40301,
             "name": "Falling Gleam",
+            "nameCN": "微光洒落",
+            "nameJP": "差し込む光",
+            "nameKR": "은은한 미광",
             "desc": "Increases Lux Trekkers' Skill DMG dealt to targets inflicted with Shock by <color=#ec6d21>{1}</color>.",
+            "descCN": "队伍中光系角色对附带「静电」的目标造成技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム内の光属性巡遊者の、静電気が付与されている敵へのスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 내 빛 속성 캐릭터가 「정전」을 보유한 목표에게 입히는 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
             ],
@@ -38174,7 +39044,13 @@
         "secondarySkill2": {
             "id": 40302,
             "name": "Relaxing Tea",
+            "nameCN": "惬意的红茶",
+            "nameJP": "安らぎの紅茶",
+            "nameKR": "편안한 홍차",
             "desc": "When any Lux Trekker kills a target inflicted with Shock, increases all friendly units' Lux DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意光系角色消灭附带「静电」的目标时，己方光系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の光属性巡遊者が、静電気が付与されている敵を撃破時から{2}秒間、味方の光属性ダメージが<color=#ec6d21>{1}</color>増加する。この効果は{3}回重複できる",
+            "descKR": "빛 속성 캐릭터가 「정전」을 보유한 목표를 처치하면 전체 아군의 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:Lux DMG",
                 "Lux DMG (base)"
@@ -38725,7 +39601,13 @@
         "mainSkill": {
             "id": 4031,
             "name": "The Clash of Blade and Axe",
+            "nameCN": "刀与斧的铮鸣",
+            "nameJP": "強者を求めて",
+            "nameKR": "검과 도끼의 울음",
             "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Aqua Trekker casts a skill, increases the Skill DMG of Aqua Trekkers in the squad by {2} for {3}s. The main Aqua Trekker gains Bless: reduces DMG taken by {4} for {5}s.",
+            "descCN": "全队水系伤害提升<color=#ec6d21>{1}</color>。\u000b水系主控角色施放技能时，队伍中水系角色技能伤害提升{2}，持续{3}秒，同时水系主控角色获得「碧佑」：受到伤害降低{4}，持续{5}秒。",
+            "descJP": "チーム全体の水属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b水属性の主力巡遊者のスキル発動時から{3}秒間、チーム内の水属性巡遊者のスキルダメージが{2}増加する。さらに、水属性の主力巡遊者は蒼の加護を獲得し、{5}秒間、被ダメージが{4}減少する。",
+            "descKR": "팀 전체 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b물 속성 메인 캐릭터가 스킬을 시전하면 팀 내 물 속성 캐릭터의 스킬 피해가 {2} 증가한다. {3}초간 지속된다. 또한 물 속성 메인 캐릭터가 「푸른 은총」을 획득해 받는 피해가 {4} 감소하며 {5}초간 지속된다.",
             "effectType": [
                 "Aqua DMG (base)",
                 "ADDBUFF:Skill DMG",
@@ -38749,7 +39631,13 @@
         "secondarySkill1": {
             "id": 40311,
             "name": "Surging Slash",
+            "nameCN": "刃击水涌",
+            "nameJP": "ほとばしる水刃",
+            "nameKR": "물결 칼날",
             "desc": "If the Main Trekker has Bless, increases all friendly units' Aqua DMG to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
+            "descCN": "如果主控角色附带「碧佑」，己方对精英及以上目标造成水系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者に蒼の加護が付与されている時、味方はエリート以上の敵への水属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "메인 캐릭터가 「푸른 은총」을 보유한 경우, 전체 아군이 정예 이상 목표에게 입히는 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "ADDBUFF:Aqua DMG",
                 "HITTED_ADDITIONAL_:Aqua DMG (base)"
@@ -38791,7 +39679,13 @@
         "secondarySkill2": {
             "id": 40312,
             "name": "Preferred Enemy",
+            "nameCN": "中意的劲敌",
+            "nameJP": "好敵手",
+            "nameKR": "마음 속 숙적",
             "desc": "When the target is killed, if the Main Trekker has Bless, increases the ATK of Aqua Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "目标被消灭时，如果主控角色附带「碧佑」，队伍中水系角色及其仆从提升<color=#ec6d21>{1}</color>攻击力，持续{2}秒，可叠加{3}层。",
+            "descJP": "敵を撃破時、主力巡遊者に蒼の加護が付与されている場合、{2}秒間、チーム内の水属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "목표가 처치될 때 메인 캐릭터가 「푸른 은총」을 보유한 경우, 팀 내 물 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -39344,7 +40238,13 @@
         "mainSkill": {
             "id": 4032,
             "name": "Dream Factory of ☆Truth",
+            "nameCN": "真相☆梦工厂",
+            "nameJP": "真理の大釜",
+            "nameKR": "진실☆꿈 공장",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Umbra Trekker deal non-Auto Attack DMG to a target, there is a {2} chance to inflict Corrosion: increases Umbra DMG taken by {3} for {4}s.\u000bReduces the DMG taken by the main Umbra Trekker from targets inflicted with Corrosion by {5}.",
+            "descCN": "全队暗系伤害提升<color=#ec6d21>{1}</color>。\u000b任意暗系角色对目标造成非普攻伤害时，有{2}的概率附加「腐蚀」：受到暗系伤害提升{3}，持续{4}秒。\u000b暗系主控角色受到附带「腐蚀」目标的伤害降低{5}。",
+            "descJP": "チーム全体の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の闇属性巡遊者が通常攻撃ダメージ以外のダメージを敵に与えた時、{2}の確率で{4}秒間、その敵に腐食を付与し、闇属性被ダメージを{3}増加させる。\u000b闇属性の主力巡遊者は、腐食が付与されている敵からの被ダメージが{5}減少する。",
+            "descKR": "팀 전체 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 캐릭터가 목표에게 일반 공격이 아닌 피해를 입히면 {2} 확률로 「부식」을 부여해, 받는 어둠 속성 피해가 {3} 증가한다. {4}초간 지속된다. \u000b어둠 속성 메인 캐릭터가 「부식」을 보유한 목표로부터 받는 피해가 {5} 감소한다.",
             "effectType": [
                 "Umbra DMG (base)",
                 "ADDBUFF:Umbra DMG Taken @ 35%",
@@ -39368,7 +40268,13 @@
         "secondarySkill1": {
             "id": 40321,
             "name": "Veiled Negative",
+            "nameCN": "神秘负片",
+            "nameJP": "お宝ショット★",
+            "nameKR": "미스터리 필름",
             "desc": "When inflicting Corrosion on a target, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "对目标附加「腐蚀」时，队伍中暗系角色攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "敵に腐食を付与時から{2}秒間、チーム内の闇属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "목표에게 「부식」을 부여하면 팀 내 어둠 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. 2초간 지속된다.\u000bParam2: {2}",
             "effectType": [
                 "ATK (%)"
             ],
@@ -39406,7 +40312,13 @@
         "secondarySkill2": {
             "id": 40322,
             "name": "News Spree",
+            "nameCN": "新闻大生产",
+            "nameJP": "そのネタいただき★",
+            "nameKR": "뉴스 대량 생산",
             "desc": "When any Umbra Trekker kills a target inflicted with Corrosion, increases all friendly units' Umbra DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意暗系角色消灭附带「腐蚀」的目标时，己方暗系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の闇属性巡遊者が、腐食が付与されている敵を撃破時から{2}秒間、味方の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。この効果は{3}回重複できる。",
+            "descKR": "어둠 속성 캐릭터가 「부식」을 보유한 목표를 처치하면 전체 아군의 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:Umbra DMG",
                 "Umbra DMG (base)"
@@ -39957,7 +40869,13 @@
         "mainSkill": {
             "id": 4033,
             "name": "Dancing with the Bones",
+            "nameCN": "与骨共舞",
+            "nameJP": "メメント×モリ",
+            "nameKR": "해골과의 춤사위",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Terra Trekker's HP is above {2} when any Terra Trekker deals Skill DMG, increases the DMG of this hit by {3}. The main Terra Trekker gains Boulder: reduces DMG taken by {4}.",
+            "descCN": "全队地系伤害提升<color=#ec6d21>{1}</color>。\u000b任意地系角色造成技能伤害时，如果地系主控角色生命高于{2}，本次伤害提升{3}，同时地系主控角色获得「磐石」：受到伤害降低{4}。",
+            "descJP": "チーム全体の地属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の地属性巡遊者のスキルダメージを敵に与える時、地属性の主力巡遊者のHPが{2}を超えている場合、そのダメージが{3}増加する。さらに、地属性の主力巡遊者は盤石を獲得し、被ダメージが{4}減少する。",
+            "descKR": "팀 전체 땅 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b땅 속성 캐릭터가 스킬 피해를 입히고 땅 속성 메인 캐릭터의 HP가 {2}보다 높으면 이번 피해가 {3} 증가한다. 또한 땅 속성 메인 캐릭터가 「반석」을 획득해 받는 피해가 {4} 감소한다.",
             "effectType": [
                 "Terra DMG (base)",
                 "ADDBUFF:Skill DMG",
@@ -39983,7 +40901,13 @@
         "secondarySkill1": {
             "id": 40331,
             "name": "Truth Digger",
+            "nameCN": "挖掘真理",
+            "nameJP": "埋葬された真理",
+            "nameKR": "진리 발굴",
             "desc": "If the Main Trekker is inflicted with Boulder, increases the ATK of Terra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color>.",
+            "descCN": "如果主控角色附带「磐石」，队伍中地系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>。",
+            "descJP": "主力巡遊者に盤石が付与されている時、チーム内の地属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する｡",
+            "descKR": "메인 캐릭터가 「반석」을 보유한 경우, 팀 내 땅 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -40024,7 +40948,13 @@
         "secondarySkill2": {
             "id": 40332,
             "name": "Buried Past",
+            "nameCN": "埋葬过去",
+            "nameJP": "過去の遺物",
+            "nameKR": "묻혀진 과거",
             "desc": "When the target is killed, if the main Trekker is inflicted with Boulder, increases Terra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "目标被消灭时，如果主控角色附带「磐石」，队伍中地系角色提升<color=#ec6d21>{1}</color>技能伤害，持续{2}秒，可叠加{3}层。",
+            "descJP": "敵を撃破時、主力巡遊者に盤石が付与されている場合、{2}秒間、チーム内の地属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。この効果は{3}回重複できる。",
+            "descKR": "목표가 처치될 때 메인 캐릭터가 「반석」을 보유한 경우, 팀 내 땅 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:Skill DMG",
                 "Skill DMG (base)"
@@ -40575,7 +41505,13 @@
         "mainSkill": {
             "id": 4036,
             "name": "The Lost Pilgrim",
+            "nameCN": "迷途的朝圣者",
+            "nameJP": "痛みは救済",
+            "nameKR": "길 잃은 순례자",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers ##Terra Mark#1020#, increases the main Terra Trekker's Skill & Auto Attack DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "全队地系伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色触发##地系印记#1020#时，地系主控角色技能和普攻伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム全体の地属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が##地属性の印#1020#を発動させた時から{3}秒間、地属性の主力巡遊者の通常攻撃ダメージとスキルダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체의 땅 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b임의의 캐릭터가 ##땅 속성 표식#1020#을 발동하면, 땅 속성 메인 캐릭터의 스킬과 일반 공격 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Terra DMG (base)",
                 "ADDBUFF:Skill DMG",
@@ -40597,7 +41533,13 @@
         "secondarySkill1": {
             "id": 40361,
             "name": "Iron Love Embrace",
+            "nameCN": "铁与爱的怀抱",
+            "nameJP": "鉄の香り漂う愛情",
+            "nameKR": "철과 사랑의 포옹",
             "desc": "Increases Terra Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bWhen any Terra Trekker deals Skill DMG, if a support Terra Trekker is on the battlefield, increases the Skill DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "队伍中地系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b任意地系角色造成技能伤害时，如果地系援护角色在场，本次技能提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の地属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の地属性巡遊者がスキルダメージを敵に与える時、地属性の支援巡遊者がフィールドにいる場合、そのスキルダメージが追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 땅 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b땅 속성 캐릭터가 스킬 피해를 입힐 때 땅 속성 지원 캐릭터가 필드에 있으면 이번 스킬의 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "ATK (%)",
                 "HITTED_ADDITIONAL_:Skill DMG (base)"
@@ -40637,7 +41579,13 @@
         "secondarySkill2": {
             "id": 40362,
             "name": "Prison of Passion",
+            "nameCN": "私情满溢的禁锢",
+            "nameJP": "堕落の鎖",
+            "nameKR": "감정에 휘둘린 속박",
             "desc": "When any Trekker triggers ##Terra Mark#1020#, increases the ATK of Terra Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "任意角色触发##地系印记#1020#时，队伍中地系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "チーム内の巡遊者が##地属性の印#1020#を発動させた時から{2}秒間、チーム内の地属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回重複できる。",
+            "descKR": "임의의 캐릭터가 ##땅 속성 표식#1020#을 발동할 시, 팀 내 땅 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -41188,7 +42136,13 @@
         "mainSkill": {
             "id": 4037,
             "name": "Claw the Claw",
+            "nameCN": "抓住传说",
+            "nameJP": "伝説のアラシ",
+            "nameKR": "전설을 잡아라",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bWhen a target's ##Terra Mark#1020# is triggered, the target takes <color=#ec6d21>{2}</color> more Terra DMG for {3}s.",
+            "descCN": "全队地系伤害提升<color=#ec6d21>{1}</color>。\u000b目标附带的##地系印记#1020#被任意角色触发时，该目标受到地系伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム全体の地属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の巡遊者が##地属性の印#1020#を発動させた時から{3}秒間、その敵の地属性被ダメージを<color=#ec6d21>{2}</color>増加させる。",
+            "descKR": "팀 전체의 땅 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b목표가 보유한 ##땅 속성 표식#1020#이 임의의 캐릭터에 의해 발동되면 해당 목표가 받는 땅 속성 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Terra DMG (base)",
                 "ADDBUFF:Terra DMG Taken",
@@ -41208,7 +42162,13 @@
         "secondarySkill1": {
             "id": 40371,
             "name": "Lucky Clip",
+            "nameCN": "幸运的抓夹",
+            "nameJP": "幸運を掴め",
+            "nameKR": "행운의 집게",
             "desc": "When any Terra Trekker restores HP, increases the squad's Terra DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意地系角色恢复生命时，全队地系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "チーム内の地属性巡遊者のHPが回復した時から{2}秒間、チーム全体の地属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "땅 속성 캐릭터가 HP를 회복하면 팀 전체의 땅 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "Terra DMG (base)"
             ],
@@ -41246,7 +42206,13 @@
         "secondarySkill2": {
             "id": 40372,
             "name": "Record Breaker",
+            "nameCN": "突破最高记录",
+            "nameJP": "自分との戦い",
+            "nameKR": "최고 기록 돌파",
             "desc": "When a support Trekker deals Skill DMG, increases Terra squadmates' Skill DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "援护角色造成技能伤害时，队伍中地系角色技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "支援巡遊者のスキルダメージを与えた時から{2}秒間、チーム内の地属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。この効果は{3}回重複できる。",
+            "descKR": "지원 캐릭터가 스킬 피해를 입히면 팀 내 땅 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "ADDBUFF:Skill DMG",
                 "Skill DMG (base)"
@@ -41797,7 +42763,13 @@
         "mainSkill": {
             "id": 4038,
             "name": "Ripples of Nostalgia",
+            "nameCN": "波光漫游",
+            "nameJP": "波にゆられて",
+            "nameKR": "파도빛 유랑",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Lux Trekkers deals Ultimate DMG to a target, the target takes <color=#ec6d21>{2}</color> more Lux DMG for {3}s, stacking up to {4} times.",
+            "descCN": "全队光系伤害提升<color=#ec6d21>{1}</color>。\u000b光系主控角色对目标造成绝招伤害时，该目标受到光系伤害提升<color=#ec6d21>{2}</color>，持续{3}秒，可叠加{4}层。",
+            "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b光属性の主力巡遊者の必殺技ダメージを敵に与えた時から{3}秒間、その敵の光属性被ダメージを<color=#ec6d21>{2}</color>増加させる。この効果は{4}回重複できる。",
+            "descKR": "팀 전체의 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 메인 캐릭터가 목표에게 필살기 피해를 입히면 해당 목표가 받는 빛 속성 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속되며, 최대 {4}스택 중첩된다.",
             "effectType": [
                 "Lux DMG (base)",
                 "ADDBUFF:Lux DMG Taken",
@@ -41817,7 +42789,13 @@
         "secondarySkill1": {
             "id": 40381,
             "name": "Dance of Shimmers",
+            "nameCN": "粼粼共舞",
+            "nameJP": "ゆらめくプリズム",
+            "nameKR": "파문의 춤사위",
             "desc": "Increases the main Lux Trekker's Auto Attack and Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen the main Lux Trekker deals Skill DMG, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "光系主控角色普攻和技能伤害提升<color=#ec6d21>{1}</color>。\u000b光系主控角色造成技能伤害时，该效果额外提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "光属性の主力巡遊者の通常攻撃ダメージとスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000b光属性の主力巡遊者がスキルダメージを与えた時から{3}秒間、追加で<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "빛 속성 메인 캐릭터의 일반 공격과 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 메인 캐릭터가 스킬 피해를 입히면 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Skill DMG (base)",
@@ -41861,7 +42839,13 @@
         "secondarySkill2": {
             "id": 40382,
             "name": "Gleaming Steps",
+            "nameCN": "临光微步",
+            "nameJP": "照らす光のカーテン",
+            "nameKR": "빛의 발걸음",
             "desc": "After the main Lux Trekker deals Skill DMG {1} times in total, increases the squad's Lux DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "光系主控角色累计造成{1}次技能伤害后，全队光系伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "光属性の主力巡遊者のスキルダメージを累計で{1}回与えた後の{3}秒間、チーム全体の光属性ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "빛 속성 메인 캐릭터가 스킬 피해를 {1}회 입히면 팀 전체의 빛 속성 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Lux DMG (base)"
             ],
@@ -42407,7 +43391,13 @@
         "mainSkill": {
             "id": 4039,
             "name": "Summer Sanctuary",
+            "nameCN": "夏日栖息地",
+            "nameJP": "夕涼み",
+            "nameKR": "여름 서식지",
             "desc": "Increases the main Lux Trekker's Auto Attack & Skill DMG by <color=#ec6d21>{1}</color>.\u000bIf any Trekker triggers ##Lux Mark#1015# while the main Lux Trekker's Ultimate is active, increases the squad's Lux DMG by <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
+            "descCN": "光系主控角色普攻和技能伤害提升<color=#ec6d21>{1}</color>。\u000b光系主控角色绝招持续期间，如果任意角色触发##光系印记#1015#，全队光系伤害提升<color=#ec6d21>{2}</color>，持续{3}秒，可叠加{4}层。",
+            "descJP": "光属性の主力巡遊者の通常攻撃ダメージとスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000b光属性の主力巡遊者の必殺技持続中、チーム内の巡遊者が##光属性の印#1015#を発動させた場合、{3}秒間、チーム全体の光属性ダメージが<color=#ec6d21>{2}</color>増加する。この効果は{4}回重複できる。",
+            "descKR": "빛 속성 메인 캐릭터의 일반 공격과 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 메인 캐릭터의 필살기 지속 시간 동안 임의의 캐릭터가 ##빛 속성 표식#1015#을 발동하면 팀 전체의 빛 속성 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속되며, 최대 {4}스택 중첩된다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Skill DMG (base)",
@@ -42427,7 +43417,13 @@
         "secondarySkill1": {
             "id": 40391,
             "name": "Azure Horizon",
+            "nameCN": "一望无际的晴空",
+            "nameJP": "メルヘンなサンセット",
+            "nameKR": "광활한 푸른 하늘",
             "desc": "Increases Lux squadmates' Skill DMG by <color=#ec6d21>{1}</color>.\u000bWhen any Lux Trekker casts a skill, increases this effect by an additional <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
+            "descCN": "队伍中光系角色技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意光系角色施放技能时，该效果额外提升<color=#ec6d21>{2}</color>，持续{3}秒，可叠加{4}层。",
+            "descJP": "チーム内の光属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の光属性巡遊者のスキル発動時から{3}秒間、追加で<color=#ec6d21>{2}</color>増加する。この効果は{4}回重複できる。",
+            "descKR": "팀 내 빛 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b빛 속성 캐릭터가 스킬을 시전하면 해당 효과가 <color=#ec6d21>{2}</color> 추가로 증가한다. {3}초간 지속되며, 최대 {4}스택 중첩된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:Skill DMG"
@@ -42469,7 +43465,13 @@
         "secondarySkill2": {
             "id": 40392,
             "name": "Infinite Sunshine",
+            "nameCN": "漫无止境的阳光",
+            "nameJP": "昼と夜の交わる時間",
+            "nameKR": "끝없는 햇빛",
             "desc": "When any Lux Trekker deals Skill DMG, the main Lux Trekker gains 1 stack of Diffraction, stacking up to {1} times.\u000bWhen the main Lux Trekker casts a skill, increases Lux squadmates' Skill DMG by the number of Diffraction stacks x<color=#ec6d21>{2}</color> for {3}s, and removes all the Diffraction stacks.",
+            "descCN": "任意光系角色造成技能伤害时，光系主控角色获得1层「衍射」，可叠加{1}层。\u000b光系主控角色施放技能时，队伍中光系角色提升基于「衍射」层数*<color=#ec6d21>{2}</color>的技能伤害，持续{3}秒，同时清空「衍射」层数。",
+            "descJP": "チーム内の光属性巡遊者のスキルダメージを与えた時、光属性の主力巡遊者は回折を1獲得する。回折は{1}まで保持できる。\u000b光属性の主力巡遊者のスキル発動時、回折の数がリセットされ、{3}秒間、チーム内の光属性巡遊者のスキルダメージが回折の数*<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "빛 속성 캐릭터가 스킬 피해를 입히면 빛 속성 메인 캐릭터가 「회절」 1스택을 획득하며, 최대 {1}스택 중첩된다. \u000b빛 속성 메인 캐릭터가 스킬을 시전하면 팀 내 빛 속성 캐릭터의 스킬 피해가 「회절」 중첩 스택×<color=#ec6d21>{2}</color>만큼 증가한다. {3}초간 지속되며, 종료 후 「회절」의 중첩 스택이 제거된다.",
             "effectType": [
                 "Skill DMG (base)"
             ],
@@ -43018,7 +44020,13 @@
         "mainSkill": {
             "id": 4040,
             "name": "Fist of Courage",
+            "nameCN": "勇气之拳",
+            "nameJP": "迷いを断つ拳",
+            "nameKR": "용기의 주먹",
             "desc": "The main Ignis Trekker gains 1 stack of Courage when dealing Ultimate DMG, increasing Ultimate DMG by <color=#ec6d21>{1}</color> for {3}s, stacking up to {2} times.",
+            "descCN": "火系主控角色造成绝招伤害时获得1层「勇气」：绝招伤害提升<color=#ec6d21>{1}</color>，持续{3}秒，可叠加{2}层。",
+            "descJP": "火属性の主力巡遊者の必殺技ダメージを与えた時、勇気を1獲得する。勇気1につき、必殺技ダメージが<color=#ec6d21>{1}</color>増加し、{3}秒間持続する。勇気は{2}回重複できる。",
+            "descKR": "불 속성 메인 캐릭터가 필살기 피해를 입히면 「용기」 1스택을 획득해, 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. {3}초간 지속되며 최대 {2}스택 중첩된다.",
             "effectType": [
                 "Ultimate DMG (base)"
             ],
@@ -43036,7 +44044,13 @@
         "secondarySkill1": {
             "id": 40401,
             "name": "Passion of the Captain",
+            "nameCN": "名为团长的热情",
+            "nameJP": "燃え上がる情熱",
+            "nameKR": "단장이라는 열정",
             "desc": "Increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Trekker deals Skill DMG, increases the ATK of Ignis Trekkers in the squad and their Minions by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中火系角色技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意火系角色造成技能伤害时，队伍中火系角色及其仆从攻击力提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の火属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の火属性巡遊者がスキルダメージを与えた時から{3}秒間、チーム内の火属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{2}</color>上昇する。",
+            "descKR": "팀 내 불 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b불 속성 캐릭터가 스킬 피해를 입히면, 팀 내 불 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "ADDBUFF:ATK",
@@ -43079,7 +44093,13 @@
         "secondarySkill2": {
             "id": 40402,
             "name": "Inspiration of Courage",
+            "nameCN": "勇气之鼓舞",
+            "nameJP": "勇気を力に",
+            "nameKR": "용기의 격려",
             "desc": "When the duration of Courage ends, each stack of Courage increases the main Ignis Trekker's Auto Attack DMG by <color=#ec6d21>{1}</color> and grants {2} DEF for {3}s.",
+            "descCN": "「勇气」持续时间结束时，每层「勇气」使火系主控角色普攻伤害提升<color=#ec6d21>{1}</color>，同时获得{2}点防御力，持续{3}秒。",
+            "descJP": "勇気の持続時間終了時から{3}秒間、終了した勇気1につき、火属性の主力巡遊者の通常攻撃ダメージが<color=#ec6d21>{1}</color>増加し、防御力が{2}上昇する。",
+            "descKR": "「용기」 지속 기간 종료 시, 「용기」 1스택마다 불 속성 메인 캐릭터의 일반 공격 피해가 <color=#ec6d21>{1}</color> 증가하고, 방어력을 {2} 획득한다. {3}초간 지속된다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "DEF (base)"
@@ -43626,7 +44646,13 @@
         "mainSkill": {
             "id": 4041,
             "name": "A Gift for the Journey",
+            "nameCN": "启程的礼物",
+            "nameJP": "ジングルラール",
+            "nameKR": "여정의 선물",
             "desc": "Increases the ATK of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen an Ignis Support Trekker's minion is present, increases Minion DMG dealt by Ignis Trekkers' minions in the squad by <color=#ec6d21>{2}</color>.",
+            "descCN": "队伍中火系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b火系援护角色的仆从在场时，队伍中火系角色召唤的仆从造成的仆从伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の火属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000b火属性の支援巡遊者の従者がフィールド上にいる時、チーム内の火属性巡遊者が召喚した従者の与える従者ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 불 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다.\u000b불 속성 지원 캐릭터의 소환물이 필드에 존재할 경우 팀 내 불 속성 캐릭터가 소환한 소환물의 소환물 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "ATK (%)",
                 "Minion DMG (base)"
@@ -43645,7 +44671,13 @@
         "secondarySkill1": {
             "id": 40411,
             "name": "Salutes Boomed",
+            "nameCN": "礼炮齐鸣",
+            "nameJP": "寒さをぶっ飛ばせ",
+            "nameKR": "예포 발사",
             "desc": "Increases the Main Ignis Trekker's Skill DMG by <color=#ec6d21>{1}</color>.\u000bIncreases Support Ignis Trekkers' Minion DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "火系主控角色的技能伤害提升<color=#ec6d21>{1}</color>。\u000b火系援护角色的仆从伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "火属性巡遊者のスキルダメージが<color=#ec6d21>{1}</color>上昇する。\u000b火属性の支援巡遊者の従者ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "불 속성 메인 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.\u000b불 속성 지원 캐릭터의 소환물 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Skill DMG (base)",
                 "Minion DMG (base)"
@@ -43685,7 +44717,13 @@
         "secondarySkill2": {
             "id": 40412,
             "name": "Holy Night Revelry",
+            "nameCN": "圣夜舞乐",
+            "nameJP": "鈴の音を響かせて",
+            "nameKR": "이브의 파티타임",
             "desc": "When at least two Ignis Trekker's minions are present, increases the Ultimate DMG of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.",
+            "descCN": "至少2只火系角色的仆从在场时，队伍中火系角色造成的绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "火属性巡遊者の従者が2体以上フィールド上にいる時、チーム内の火属性巡遊者が与える必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "불 속성 캐릭터의 소환물이 2마리 이상 필드에 존재할 경우, 팀 내 불 속성 캐릭터가 입히는 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Ultimate DMG (base)"
             ],
@@ -44231,7 +45269,13 @@
         "mainSkill": {
             "id": 4042,
             "name": "Wine Warm, Lamps Alight",
+            "nameCN": "酒暖灯明时",
+            "nameJP": "友と囲む新春の灯火",
+            "nameKR": "술 익는 밤의 등불",
             "desc": "Increases the Ultimate DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>. When a Versatile Terra Trekker deals Skill DMG, increases the effect by an additional <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中地系角色绝招伤害提升<color=#ec6d21>{1}</color>。地系均衡角色造成技能伤害时，该效果额外提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の地属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。地属性のバランサー巡遊者がスキルダメージを与えた時から{3}秒間、この効果はさらに<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 땅 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. 땅 속성 밸런스 캐릭터가 스킬 피해를 입히면, 해당 효과가 추가로 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Ultimate DMG (base)"
             ],
@@ -44249,7 +45293,13 @@
         "secondarySkill1": {
             "id": 40421,
             "name": "Eternal Pulse",
+            "nameCN": "温润绵长",
+            "nameJP": "まろやかな余韻",
+            "nameKR": "부드럽고 따스한 여운",
             "desc": "Increases Terra Versatile Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bIncreases the main Terra Trekker's Auto Attack DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "地系均衡角色攻击力提升<color=#ec6d21>{1}</color>。\u000b地系主控角色的普攻伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "地属性のバランサー巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000b地属性の主力巡遊者の通常攻撃ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "땅 속성 밸런스 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b땅 속성 메인 캐릭터의 일반 공격 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "ATK (%)",
                 "Auto Attack Damage (base)"
@@ -44290,7 +45340,13 @@
         "secondarySkill2": {
             "id": 40422,
             "name": "Bright Refrain",
+            "nameCN": "爽洌回甘",
+            "nameJP": "キレのある後味",
+            "nameKR": "청량하고 달콤한 끝맛",
             "desc": "After the main Terra Trekker deals DMG {1} times, increases own ATK by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "地系主控角色累计造成{1}次伤害后，自身攻击力提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "地属性の主力巡遊者が累計{1}回ダメージを与えた時、{3}秒間、自身の攻撃力が<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "땅 속성 메인 캐릭터가 피해를 누적 {1}회 입힌 후, 자신의 공격력이 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "ATK (%)"
             ],
@@ -44838,7 +45894,13 @@
         "mainSkill": {
             "id": 4043,
             "name": "The Bud of Change",
+            "nameCN": "革新的萌芽",
+            "nameJP": "革命の萌芽",
+            "nameKR": "혁신의 씨앗",
             "desc": "Increases DMG of Umbra Trekkers' Minions by <color=#ec6d21>{1}</color>.\u000bWhen the main Umbra Trekker summons a Minion, increases the Minion's DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "队伍中暗系角色的仆从伤害提升<color=#ec6d21>{1}</color>。\u000b暗系主控角色召唤仆从时，该仆从的仆从伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の闇属性巡遊者の従者ダメージが<color=#ec6d21>{1}</color>増加する。\u000b闇属性の主力巡遊者が従者を召喚時、{3}秒間、その従者の従者ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 어둠 속성 캐릭터의 소환물 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 메인 캐릭터가 소환물 소환 시, 해당 소환물의 소환물 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Minion DMG (base)"
             ],
@@ -44856,7 +45918,13 @@
         "secondarySkill1": {
             "id": 40431,
             "name": "Shadow Mastermind",
+            "nameCN": "幕后统御",
+            "nameJP": "躍動する影",
+            "nameKR": "배후의 지배자",
             "desc": "When any Umbra Trekker triggers a Mark that inflicts ##Dark Burn#2028#, increases their minions' Minion DMG by <color=#ec6d21>{1}</color> for {2}s.",
+            "descCN": "任意暗系角色触发印记对目标造成##暗灼#2028#效果时，其在场仆从的仆从伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。",
+            "descJP": "チーム内の闇属性巡遊者が印を発動させ、敵に##暗灼#2028#を与えた時、{2}秒間、発動させた闇属性巡遊者のフィールドにいる従者の従者ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "어둠 속성 캐릭터가 표식을 발동해 목표에게 ##어둠 작열#2028# 효과를 입히면, 필드에 있는 소환물의 소환물 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "Minion DMG (base)"
             ],
@@ -44894,7 +45962,13 @@
         "secondarySkill2": {
             "id": 40432,
             "name": "Growing Ambition",
+            "nameCN": "野心蔓延",
+            "nameJP": "夜を彩る星々",
+            "nameKR": "넘치는 야망",
             "desc": "Increases the Skill DMG dealt to targets inflicted with ##Dark Burn#2028# by the main Umbra Trekker by <color=#ec6d21>{1}</color>.\u000bIncreases the Minion DMG dealt to targets inflicted with ##Dark Burn#2028# by the main Umbra Trekker's minions by <color=#ec6d21>{2}</color>.",
+            "descCN": "暗系主控角色对附带##暗灼#2028#效果的目标造成的技能伤害提升<color=#ec6d21>{1}</color>。\u000b暗系主控角色的仆从对附带##暗灼#2028#效果的目标造成的仆从伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "闇属性の主力巡遊者は、##暗灼#2028#が付与されている敵に与えるスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000b闇属性の主力巡遊者の従者は、##暗灼#2028#が付与されている敵に与える従者ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "어둠 속성 메인 캐릭터가 ##어둠 작열#2028# 효과를 보유한 목표에게 입히는 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 메인 캐릭터의 소환물이 ##어둠 작열#2028# 효과를 보유한 목표에게 입히는 소환물 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Skill DMG (base)",
@@ -45441,7 +46515,13 @@
         "mainSkill": {
             "id": 4044,
             "name": "Veiled Dawn of Spring",
+            "nameCN": "罗帷春染岁朝新",
+            "nameJP": "帳の内の秘め事",
+            "nameKR": "봄빛 드리운 새 아침",
             "desc": "Increases Skill DMG of Support Terra Trekkers by <color=#ec6d21>{1}</color>.\u000bWhen a Versatile Terra Trekker deals Skill DMG, inflicts Spring Blossom on the target: increases Terra Skill DMG taken by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "地系援护角色技能伤害提升<color=#ec6d21>{1}</color>。\u000b地系均衡角色造成技能伤害时，为目标附加「春华」：受到地系技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "地属性の支援巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000b地属性のバランサー巡遊者がスキルダメージを与えた時、敵に春華を付与する。春華：{3}秒間、地属性のスキル被ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "땅 속성 지원 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b땅 속성 밸런스 캐릭터가 스킬 피해를 입히면, 목표에게 「봄빛」을 부여하여, 받는 땅 속성 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "ELEMENTTYPE_:(Terra) Skill DMG Taken"
@@ -45460,7 +46540,13 @@
         "secondarySkill1": {
             "id": 40441,
             "name": "The Sovereign Elixir",
+            "nameCN": "此谓灵丹妙药",
+            "nameJP": "妙薬の効能",
+            "nameKR": "신묘한 영약",
             "desc": "Increases Terra Versatile Trekkers' Skill Crit DMG by <color=#ec6d21>{1}</color>.\u000bIncreases the main Terra Trekker's Skill DMG to targets inflicted with Spring Blossom by <color=#ec6d21>{2}</color>.",
+            "descCN": "地系均衡角色技能暴击伤害提升<color=#ec6d21>{1}</color>。\u000b地系主控角色对附带「春华」的目标造成的技能伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "地属性のバランサー巡遊者のスキル会心ダメージが<color=#ec6d21>{1}</color>増加する。\u000b地属性の主力巡遊者は春華が付与された敵に与えるスキルダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "땅 속성 밸런스 캐릭터의 스킬 치명타 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b땅 속성 메인 캐릭터가 「봄빛」을 보유한 목표에게 입히는 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Skill Crit DMG (base)"
             ],
@@ -45500,7 +46586,13 @@
         "secondarySkill2": {
             "id": 40442,
             "name": "Blossom's Requiring",
+            "nameCN": "春华亦需滋养",
+            "nameJP": "好奇心の誘惑",
+            "nameKR": "봄빛 아래 보살핌",
             "desc": "After the main Terra Trekker deals DMG to targets inflicted with Spring Blossom {1} times, increases Terra squadmates' Skill DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "地系主控角色对附带「春华」的目标累计造成{1}次技能伤害后，队伍中地系角色造成的技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "地属性の主力巡遊者が春華が付与された敵に累計{1}回スキルダメージを与えた時から{3}秒間、チーム内の地属性巡遊者のスキルダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "땅 속성 메인 캐릭터가 「봄빛」을 보유한 목표에게 스킬 피해를 누적 {1}회 입힌 후, 팀 내 땅 속성 캐릭터가 입히는 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)"
             ],
@@ -46050,7 +47142,13 @@
         "mainSkill": {
             "id": 4045,
             "name": "Petals of Blooming Mirage",
+            "nameCN": "繁花幻梦",
+            "nameJP": "千変万花",
+            "nameKR": "꽃밭의 환영",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen an Umbra Versatile Trekker deals Skill DMG, inflicts 1 stack of Dark Sakura on the target for {2}s, stacking up to {3} times. Dark Sakura: At max stacks, increases Umbra Skill DMG Taken by <color=#ec6d21>{4}</color>.",
+            "descCN": "全队暗系伤害提升<color=#ec6d21>{1}</color>。\u000b暗系均衡角色造成技能伤害时，为目标附加1层「暗樱」，持续{2}秒，可叠加{3}层。「暗樱」满层时，使目标受到暗系技能伤害提升<color=#ec6d21>{4}</color>。",
+            "descJP": "チーム全体の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b闇属性のバランサー巡遊者がスキルダメージを与えた時、{2}秒間、対象に夜桜を1付与する。この効果は{3}回まで重複できる。夜桜が上限に達した時、敵の闇属性のスキル被ダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "팀 전체의 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 밸런스 캐릭터가 스킬 피해를 입히면, 목표에게 「밤벚꽃」을 1스택 부여한다. {2}초간 지속되며, 최대 {3}스택 중첩된다. 「밤벚꽃」이 최대 스택이 되면, 목표가 받는 어둠 속성 스킬 피해가 <color=#ec6d21>{4}</color> 증가한다.",
             "effectType": [
                 "Umbra DMG (base)"
             ],
@@ -46066,7 +47164,13 @@
         "secondarySkill1": {
             "id": 40451,
             "name": "Fading Petals",
+            "nameCN": "落瓣烟消",
+            "nameJP": "花の嵐",
+            "nameKR": "지는 꽃과 사라지는 연기",
             "desc": "Increases Umbra Versatile Trekkers' Crit DMG by <color=#ec6d21>{1}</color>.\u000bDark Sakura gains an additional effect: Each stack increases the Umbra Ultimate DMG Taken by the target by <color=#ec6d21>{2}</color>.",
+            "descCN": "暗系均衡角色暴击伤害提升<color=#ec6d21>{1}</color>。\u000b「暗樱」获得额外效果：每层使目标受到暗系绝招伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "闇属性のバランサー巡遊者の会心ダメージが<color=#ec6d21>{1}</color>増加する。\u000b夜桜に追加効果が付与される：夜桜1ごとに、敵の闇属性の必殺技被ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "어둠 속성 밸런스 캐릭터의 치명타 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「밤벚꽃」이 추가 효과를 획득해, 1스택마다 목표가 받는 어둠 속성 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Crit DMG (base)",
                 "ELEMENTTYPE_:(Umbra) Ultimate DMG Taken"
@@ -46105,7 +47209,13 @@
         "secondarySkill2": {
             "id": 40452,
             "name": "Lunar Mirage",
+            "nameCN": "浮月蜃景",
+            "nameJP": "戦場の花",
+            "nameKR": "떠오르는 달의 신기루",
             "desc": "When an Umbra Versatile Trekker deals Ultimate DMG to a target with max stacks of Dark Sakura, the Main Umbra Trekker gains Flower Feast for {1}s.\u000bWhen the Main Umbra Trekker with Flower Feast triggers a mark that inflicts ##Dark Burn#2028#, increases own Skill Crit Rate by <color=#ec6d21>{2}</color> for {3}s.\u000bWhen the Main Umbra Trekker with Flower Feast triggers a mark to activate the effects of ##Dark Shackles#2020#, increases own Auto Attack Crit DMG by <color=#ec6d21>{4}</color> for {5}s.",
+            "descCN": "暗系均衡角色对附带满层「暗樱」的目标造成绝招伤害时，暗系主控角色获得「花筵」，持续{1}秒。\u000b附带「花筵」的暗系主控角色触发印记造成##暗灼#2028#效果时，自身技能暴击率提升<color=#ec6d21>{2}</color>，持续{3}秒。\u000b附带「花筵」的暗系主控角色触发印记造成##暗锁#2020#效果时，自身技能暴击伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。",
+            "descJP": "闇属性のバランサー巡遊者が、上限に達した夜桜を付与された敵に必殺技ダメージを与えた時、{1}秒間、闇属性の主力巡遊者は花宴を獲得する。\u000b花宴が付与されている闇属性の主力巡遊者が印を発動させ、敵に##暗灼#2028#を与えた時、{3}秒間、自身のスキル会心率が<color=#ec6d21>{2}</color>上昇する。\u000b花宴が付与されている闇属性の主力巡遊者が印を発動させ、敵に##暗鎖#2020#を与えた時、{5}秒間、自身のスキル会心ダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "어둠 속성 밸런스 캐릭터가 최대 스택의 「밤벚꽃」을 보유한 목표에게 필살기 피해를 입히면, 어둠 속성 메인 캐릭터가 「꽃의 연회」를 획득한다. {1}초간 지속된다. \u000b「꽃의 연회」를 보유한 어둠 속성 메인 캐릭터가 표식을 발동해 ##어둠 작열#2028# 효과를 입히면, 자신의 스킬 치명타율이 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다. \u000b「꽃의 연회」를 보유한 어둠 속성 메인 캐릭터가 표식을 발동해 ##어둠 사슬#2020# 효과를 입히면 자신의 스킬 치명타 피해가 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
             "effectType": [
                 "Skill Crit Rate (base)",
                 "Skill Crit DMG (base)"
@@ -46654,7 +47764,13 @@
         "mainSkill": {
             "id": 4046,
             "name": "Dawn After Winter",
+            "nameCN": "冬夜后的黎明",
+            "nameJP": "雪解け告げる黎明",
+            "nameKR": "겨울밤 끝의 여명",
             "desc": "When the Ventus Main Trekker deals Ultimate DMG, they gain 1 stack of Bitter Cold: increases Auto Attack and Skill DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.",
+            "descCN": "风系主控角色造成绝招伤害时，自身获得1层「凌寒」：普攻和技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。",
+            "descJP": "風属性の主力巡遊者が必殺技ダメージを与えた時、自身は凍風を1獲得する。\u000b凍風：{2}秒間、自身の通常攻撃ダメージとスキルダメージが<color=#ec6d21>{1}</color>増加する。この効果は{3}回まで重複できる。",
+            "descKR": "바람 속성 메인 캐릭터가 필살기 피해를 입히면, 자신이 「한기 돌파」 1스택을 획득하여, 일반 공격과 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.",
             "effectType": [
                 "Auto Attack Damage (base)",
                 "Skill DMG (base)"
@@ -46669,7 +47785,13 @@
         "secondarySkill1": {
             "id": 40461,
             "name": "Weightless Tread",
+            "nameCN": "踏雪无痕",
+            "nameJP": "ホワイトアウト",
+            "nameKR": "흔적 없는 발걸음",
             "desc": "Increases the Ultimate DMG of the main Ventus Trekker by <color=#ec6d21>{1}</color>.\u000bBitter Cold gains an additional effect: Each stack increases own ATK by <color=#ec6d21>{2}</color>.",
+            "descCN": "风系主控角色绝招伤害提升<color=#ec6d21>{1}</color>。\u000b「凌寒」获得额外效果：每层使自身攻击力提升<color=#ec6d21>{2}</color>。",
+            "descJP": "風属性の主力巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b凍風に追加効果が付与される：凍風1ごとに、自身の攻撃力が<color=#ec6d21>{2}</color>上昇する。",
+            "descKR": "바람 속성 메인 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「한기 돌파」가 추가 효과를 획득해, 스택마다 자신의 공격력이 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "ATK (%)"
@@ -46710,7 +47832,13 @@
         "secondarySkill2": {
             "id": 40462,
             "name": "Silent Descent",
+            "nameCN": "夜雪无声",
+            "nameJP": "アイスバーン",
+            "nameKR": "고요한 눈 오는 밤",
             "desc": "Bitter Cold gains an additional effect: Each stack increases own Ventus DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "「凌寒」获得额外效果：每层使自身风系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "凍風に追加効果が付与される：凍風1ごとに、自身の風属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "「한기 돌파」가 추가 효과를 획득해, 스택마다 자신의 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Ventus DMG (base)"
             ],
@@ -47258,7 +48386,13 @@
         "mainSkill": {
             "id": 4047,
             "name": "Delivered by the Breeze",
+            "nameCN": "信笺乘风而去",
+            "nameJP": "風に舞う想い",
+            "nameKR": "편지는 바람을 타고",
             "desc": "When an Aqua Versatile Trekker deals Skill DMG, the Aqua Main Trekker gains 1 stack of Thought Ripple for {1}s, stacking up to {2} times.\u000bAt {3} stacks, increases the Aqua DMG dealt by all friendly units by <color=#ec6d21>{4}</color>.\u000bAt {5} stacks, increases the Skill DMG dealt by Aqua Trekkers in the squad by an additional <color=#ec6d21>{6}</color>.",
+            "descCN": "水系均衡角色造成技能伤害时，水系主控角色获得1层「思涟」，持续{1}秒，可叠加{2}层。\u000b「思涟」层数达到{3}层时，己方造成的水系伤害提升<color=#ec6d21>{4}</color>；\u000b「思涟」层数达到{5}层时，额外使队伍中水系角色造成的技能伤害提升<color=#ec6d21>{6}</color>。",
+            "descJP": "水属性のバランサー巡遊者がスキルダメージを与えた時、{1}秒間、水属性の主力巡遊者は紙片のエールを1獲得する。この効果は{2}回重複できる。\u000b紙片のエールが{3}に達すると、味方が与える水属性ダメージが<color=#ec6d21>{4}</color>増加する。\u000b紙片のエールが{5}に達すると、さらにチーム内の水属性巡遊者が与えるスキルダメージが<color=#ec6d21>{6}</color>増加する。",
+            "descKR": "물 속성 밸런스 캐릭터가 스킬 피해를 입히면, 물 속성 메인 캐릭터가 「사색의 물결」을 1스택 획득한다. {1}초간 지속되며, 최대 {2}스택 중첩된다. \u000b「사색의 물결」이 {3}스택 중첩되면, 전체 아군이 입히는 물 속성 피해가 <color=#ec6d21>{4}</color> 증가한다. \u000b「사색의 물결」이 {5}스택 중첩되면, 팀 내 물 속성 캐릭터가 입히는 스킬 피해가 <color=#ec6d21>{6}</color> 추가로 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Aqua DMG (base)",
@@ -47273,7 +48407,13 @@
         "secondarySkill1": {
             "id": 40471,
             "name": "Words into Longing",
+            "nameCN": "词句融为思念",
+            "nameJP": "言の葉、想いに溶けて",
+            "nameKR": "그리움의 시",
             "desc": "Increases the ATK of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bThought Ripple gains an additional effect: Each stack increases own Auto Attack DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "队伍中水系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b「思涟」获得额外效果：每层使自身造成的普攻伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の水属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000b紙片のエールに追加効果が付与される：紙片のエール1ごとに、自身が与える通常攻撃ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 물 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b「사색의 물결」이 추가 효과를 획득해, 1스택마다 자신이 입히는 일반 공격 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "ATK (%)"
             ],
@@ -47313,7 +48453,13 @@
         "secondarySkill2": {
             "id": 40472,
             "name": "Words of Endless Devotion",
+            "nameCN": "字字皆是长情",
+            "nameJP": "文字に秘めた想い",
+            "nameKR": "글에 맺힌 진심",
             "desc": "Thought Ripple gains an additional effect: Each stack increases own Ultimate DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "「思涟」获得额外效果：每层使自身造成的绝招伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "紙片のエールに追加効果が付与される：紙片のエール1ごとに、自身が与える必殺技ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "「사색의 물결」이 추가 효과를 획득해, 스택마다 자신이 입히는 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Ultimate DMG (base)"
@@ -47857,7 +49003,13 @@
         "mainSkill": {
             "id": 4048,
             "name": "Snowy Night Surprise",
+            "nameCN": "雪夜惊喜",
+            "nameJP": "メリーサプライズ",
+            "nameKR": "메리 서프라이즈",
             "desc": "Increases Ignis DMG of the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Ignis Trekker deals Skill DMG, inflicts ##Ode#6002#, lasting {2}s.\u000bOde can be converted into Hymn.\u000bHymn: Increase Ignis DMG Taken by <color=#ec6d21>{3}</color> for {4}s, stacking up to {5} times.",
+            "descCN": "全队火系伤害提升<color=#ec6d21>{1}</color>。\u000b任意火系角色造成技能伤害时，为目标附加##「颂歌」#6002#，持续{2}秒。\u000b「颂歌」可被转化为「赞美诗」。\u000b「赞美诗」：受到火系伤害提升<color=#ec6d21>{3}</color>，持续{4}秒，可叠加{5}层。",
+            "descJP": "チーム全体の火属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の火属性巡遊者がスキルダメージを与えた時から{2}秒間、敵に##賛歌#6002#を付与する。\u000b賛歌は讃美歌に変化する場合がある。\u000b讃美歌：{4}秒間、火属性被ダメージが<color=#ec6d21>{3}</color>増加する。この効果は{5}回まで重複できる。",
+            "descKR": "팀 전체의 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.\u000b불 속성 캐릭터가 스킬 피해를 입힐 시 목표에게 ##「캐럴」#6002#을 부여하며 {2}초간 지속된다.\u000b「캐럴」은 「찬송가」로 전환할 수 있다.\u000b「찬송가」: 받는 불 속성 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속되며, {5}스택 중첩된다.",
             "effectType": [
                 "Ignis DMG (base)",
                 "Ignis DMG Taken (base)"
@@ -47874,7 +49026,13 @@
         "secondarySkill1": {
             "id": 40481,
             "name": "Kingdom of Fries",
+            "nameCN": "薯条国度",
+            "nameJP": "ポテトキングダム",
+            "nameKR": "감튀 나라",
             "desc": "Hymn grants extra effects: Increases the Ignis Skill DMG Taken by <color=#ec6d21>{1}</color>.\u000bWhen ##Ode#6002# is converted to Hymn, increases the Skill DMG of Ignis Trekkers in the squad by <color=#ec6d21>{2}</color> for {3}s, stacking up to {4} times.",
+            "descCN": "「赞美诗」获得额外效果：受到火系技能伤害提升<color=#ec6d21>{1}</color>。\u000b##「颂歌」#6002#被转化为「赞美诗」时，队伍中火系角色技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒，可叠加{4}层。",
+            "descJP": "讃美歌に追加効果が付与される：受ける火属性スキルダメージが<color=#ec6d21>{1}</color>増加する。\u000b##賛歌#6002#が讃美歌に変化した時から{3}秒間、チーム内の火属性巡遊者のスキルダメージが<color=#ec6d21>{2}</color>増加する。この効果は{4}回まで重複できる。",
+            "descKR": "「찬송가」가 추가 효과를 획득하여, 받는 불 속성 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.\u000b##「캐럴」#6002#이 「찬송가」로 전환될 시, 팀 내 불 속성 캐릭터의 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속되며, {4}스택 중첩된다.",
             "effectType": [
                 "ELEMENTTYPE_:(Ignis) Skill DMG Taken",
                 "Skill DMG (base)"
@@ -47914,7 +49072,13 @@
         "secondarySkill2": {
             "id": 40482,
             "name": "Crispy Crunch",
+            "nameCN": "香脆欢愉",
+            "nameJP": "聖なる夜に",
+            "nameKR": "해피 크리스피",
             "desc": "##Ode#6002# grants extra effects: Reduces enemy ATK by <color=#ec6d21>{1}</color>.\u000bIgnis Trekkers in the squad deal increased Ultimate DMG to targets inflicted with Ode by <color=#ec6d21>{2}</color>.",
+            "descCN": "##「颂歌」#6002#获得额外效果：降低敌人攻击力<color=#ec6d21>{1}</color>。\u000b队伍中火系角色对附带「颂歌」的目标造成的绝招伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "##賛歌#6002#に追加効果が付与される：敵の攻撃力を<color=#ec6d21>{1}</color>低下させる。\u000bチーム内の火属性巡遊者が賛歌が付与された敵に与える必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "##「캐럴」#6002#이 추가 효과를 획득하여, 적의 공격력이 <color=#ec6d21>{1}</color> 감소한다.\u000b팀 내 불 속성 캐릭터가 「캐럴」을 보유한 목표에게 입히는 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "ATK (%)"
             ],
@@ -48462,7 +49626,13 @@
         "mainSkill": {
             "id": 4049,
             "name": "Traces of Starlight",
+            "nameCN": "星光的印记",
+            "nameJP": "星光の道標",
+            "nameKR": "Memory of Stella",
             "desc": "When the main Trekker's HP drops below 10%, instantly gains a shield equal to <color=#ec6d21>{1}</color> of Max HP for {2}s. This effect can only be triggered once every {3}s.",
+            "descCN": "主控角色生命低于10%时，立即获得最大生命<color=#ec6d21>{1}</color>的护盾，持续{2}秒，该效果每{3}秒最多触发1次。",
+            "descJP": "主力巡遊者のHPが10%未満の時、{2}秒間持続する最大HPの<color=#ec6d21>{1}</color>分のシールドを即座に獲得する。この効果は{3}秒ごとに1回発動できる。",
+            "descKR": "메인 캐릭터의 HP가 10% 미만일 때, 최대 HP <color=#ec6d21>{1}</color>의 보호막을 즉시 획득한다. {2}초간 지속되며, 해당 효과는 {3}초마다 최대 1회 발동한다.",
             "effectType": [],
             "addAttrType": [],
             "effectData": [],
@@ -48474,7 +49644,13 @@
         "secondarySkill1": {
             "id": 40491,
             "name": "Starlight Journey",
+            "nameCN": "踏上星途",
+            "nameJP": "星の旅路",
+            "nameKR": "별의 여정",
             "desc": "Increases the squad's ATK by <color=#ec6d21>{1}</color>.\u000bParam2: {2}",
+            "descCN": "全队攻击力提升<color=#ec6d21>{1}</color>。\u000bParam2: {2}",
+            "descJP": "チーム全体の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bParam2: {2}",
+            "descKR": "팀 전체의 공격력이 <color=#ec6d21>{1}</color> 증가한다.\u000bParam2: {2}",
             "effectType": [
                 "ATK (%)"
             ],
@@ -48510,7 +49686,13 @@
         "secondarySkill2": {
             "id": 40492,
             "name": "Memory Resonance",
+            "nameCN": "记忆共鸣",
+            "nameJP": "記憶の共鳴",
+            "nameKR": "기억 공명",
             "desc": "Increases the squad's Elemental DMG by <color=#ec6d21>{1}</color>.\u000bParam2: {2}",
+            "descCN": "全队全元素伤害提升<color=#ec6d21>{1}</color>。\u000bParam2: {2}",
+            "descJP": "チーム全体の全ての属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam2: {2}",
+            "descKR": "팀 전체의 모든 원소 피해가 <color=#ec6d21>{1}</color> 증가한다.\u000bParam2: {2}",
             "effectType": [
                 "Aqua DMG (base)",
                 "Ignis DMG (base)",
@@ -49061,7 +50243,13 @@
         "mainSkill": {
             "id": 4050,
             "name": "Phantom of the Banquet",
+            "nameCN": "夜宴谜影",
+            "nameJP": "夜宴に踊る影",
+            "nameKR": "연회장의 그림자",
             "desc": "Increases the squad's Umbra DMG by <color=#ec6d21>{1}</color>.\u000bWhen an Umbra Versatile Trekker deals Skill DMG, the Umbra Main Trekker gains 1 stack of Blossom Glow for {2}s, stacking up to {3} times. At max stacks, increases the Skill DMG dealt by Umbra Trekkers in the squad by <color=#ec6d21>{4}</color>.",
+            "descCN": "全队暗系伤害提升<color=#ec6d21>{1}</color>。\u000b暗系均衡角色造成伤害时，暗系主控角色获得1层「花霞」，持续{2}秒，可叠加{3}层。「花霞」满层时，队伍中暗系角色造成的技能伤害提升<color=#ec6d21>{4}</color>。",
+            "descJP": "チーム全体の闇属性ダメージが<color=#ec6d21>{1}</color>増加する。闇属性のバランサー巡遊者がダメージを与えた時、{2}秒間、闇属性の主力巡遊者は花霞を1獲得する。この効果は{3}回まで重複できる。花霞が上限に達すると、チーム内の闇属性巡遊者が与えるスキルダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "팀 전체의 어둠 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 밸런스 캐릭터가 피해를 입히면, 어둠 속성 메인 캐릭터가 「꽃안개」를 1스택 획득한다. {2}초간 지속되며, 최대 {3}스택 중첩된다. 「꽃안개」가 최대 스택이 되면, 팀 내 어둠 속성 캐릭터가 입히는 스킬 피해가 <color=#ec6d21>{4}</color> 증가한다.",
             "effectType": [
                 "Umbra DMG (base)"
             ],
@@ -49077,7 +50265,13 @@
         "secondarySkill1": {
             "id": 40501,
             "name": "Umbral Harmony",
+            "nameCN": "黯影同律",
+            "nameJP": "宴の秘め事",
+            "nameKR": "그림자의 공명",
             "desc": "Increases Umbra Versatile Trekkers' Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bBlossom Glow gains an additional effect: Each stack increases own Skill DMG and Ultimate DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "暗系均衡角色绝招伤害提升<color=#ec6d21>{1}</color>。\u000b「花霞」获得额外效果：每层使自身技能和绝招伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "闇属性のバランサー巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b花霞に追加効果が付与される：花霞1ごとに、自身のスキルおよび必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "어둠 속성 밸런스 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「꽃안개」가 추가 효과를 획득해, 1스택마다 자신의 스킬과 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "Skill DMG (base)"
@@ -49116,7 +50310,13 @@
         "secondarySkill2": {
             "id": 40502,
             "name": "A Toast Behind the Scenes",
+            "nameCN": "幕后祝酒",
+            "nameJP": "黒幕の祝杯",
+            "nameKR": "무대 뒤 축배",
             "desc": "When the Main Umbra Trekker with max stacks of Blossom Glow triggers a mark that activates the effects of ##Dark Burn#2028#, increases own Skill DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen the Main Umbra Trekker with max stacks of Blossom Glow triggers a mark that inflicts ##Dark Shackles#2020#, increases own Auto Attack DMG by <color=#ec6d21>{3}</color> for {4}s.",
+            "descCN": "附带满层「花霞」的暗系主控角色触发印记造成##暗灼#2028#效果时，自身技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b附带满层「花霞」的暗系主控角色触发印记造成##暗锁#2020#效果时，自身普攻伤害提升<color=#ec6d21>{3}</color>，持续{4}秒。",
+            "descJP": "付与された花霞が上限に達した闇属性の主力巡遊者が、印を発動させ、敵に##暗灼#2028#を与えた時、{2}秒間、自身のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000b付与された花霞が上限に達した闇属性の主力巡遊者が、印を発動させ、敵に##暗鎖#2020#効果を与えた時、{4}秒間、自身の通常攻撃ダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "최대 스택의 「꽃안개」를 보유한 어둠 속성 메인 캐릭터가 표식을 발동해 ##어둠 작열#2028# 효과를 입히면, 자신의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b최대 스택의 「꽃안개」를 보유한 어둠 속성 메인 캐릭터가 표식을 발동해 ##어둠 사슬#2020# 효과를 입히면, 자신의 일반 공격 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속된다.",
             "effectType": [
                 "Skill DMG (base)",
                 "Auto Attack Damage (base)"

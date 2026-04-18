@@ -21,6 +21,24 @@ const LANG_DISCTAG = require('./EN/language/en_US/DiscTag.json');
 const LANG_MAINSKILL = require('./EN/language/en_US/MainSkill.json');
 const LANG_SECONDARYSKILL = require('./EN/language/en_US/SecondarySkill.json');
 const LANG_SUBNOTESKILL = require('./EN/language/en_US/SubNoteSkill.json');
+const CN_ITEM = require('./CN/language/zh_CN/Item.json');
+const CN_UITEXT = require('./CN/language/zh_CN/UIText.json');
+const CN_DISCTAG = require('./CN/language/zh_CN/DiscTag.json');
+const CN_MAINSKILL = require('./CN/language/zh_CN/MainSkill.json');
+const CN_SECONDARYSKILL = require('./CN/language/zh_CN/SecondarySkill.json');
+const CN_SUBNOTESKILL = require('./CN/language/zh_CN/SubNoteSkill.json');
+const JP_ITEM = require('./JP/language/ja_JP/Item.json');
+const JP_UITEXT = require('./JP/language/ja_JP/UIText.json');
+const JP_DISCTAG = require('./JP/language/ja_JP/DiscTag.json');
+const JP_MAINSKILL = require('./JP/language/ja_JP/MainSkill.json');
+const JP_SECONDARYSKILL = require('./JP/language/ja_JP/SecondarySkill.json');
+const JP_SUBNOTESKILL = require('./JP/language/ja_JP/SubNoteSkill.json');
+const KR_ITEM = require('./KR/language/ko_KR/Item.json');
+const KR_UITEXT = require('./KR/language/ko_KR/UIText.json');
+const KR_DISCTAG = require('./KR/language/ko_KR/DiscTag.json');
+const KR_MAINSKILL = require('./KR/language/ko_KR/MainSkill.json');
+const KR_SECONDARYSKILL = require('./KR/language/ko_KR/SecondarySkill.json');
+const KR_SUBNOTESKILL = require('./KR/language/ko_KR/SubNoteSkill.json');
 const characterId = require('./characterid.json');
 
 const disc = {};
@@ -54,7 +72,13 @@ function getMainSkill(id) {
     return {
         id: +id,
         name: LANG_MAINSKILL[MAINSKILL[key].Name],
+        nameCN: CN_MAINSKILL[MAINSKILL[key].Name],
+        nameJP: JP_MAINSKILL[MAINSKILL[key].Name],
+        nameKR: KR_MAINSKILL[MAINSKILL[key].Name],
         desc: LANG_MAINSKILL[MAINSKILL[key].Desc] + collectUnusedDiscParamsFrom(MAINSKILL[key], LANG_MAINSKILL),
+        descCN: CN_MAINSKILL[MAINSKILL[key].Desc] + collectUnusedDiscParamsFrom(MAINSKILL[key], CN_MAINSKILL),
+        descJP: JP_MAINSKILL[MAINSKILL[key].Desc] + collectUnusedDiscParamsFrom(MAINSKILL[key], JP_MAINSKILL),
+        descKR: KR_MAINSKILL[MAINSKILL[key].Desc] + collectUnusedDiscParamsFrom(MAINSKILL[key], KR_MAINSKILL),
         effectType: getMainSkillEffectTypes(id),
         addAttrType: getMainSkillAddAttrType(id),
         effectData: getMainSkillEffectData(id),
@@ -166,7 +190,13 @@ function getSeconarySkill(id) {
     return {
         id: +id,
         name: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Name],
+        nameCN: CN_SECONDARYSKILL[SECONDARYSKILL[key].Name],
+        nameJP: JP_SECONDARYSKILL[SECONDARYSKILL[key].Name],
+        nameKR: KR_SECONDARYSKILL[SECONDARYSKILL[key].Name],
         desc: LANG_SECONDARYSKILL[SECONDARYSKILL[key].Desc] + collectUnusedDiscParamsFrom(SECONDARYSKILL[key], LANG_SECONDARYSKILL),
+        descCN: CN_SECONDARYSKILL[SECONDARYSKILL[key].Desc] + collectUnusedDiscParamsFrom(SECONDARYSKILL[key], CN_SECONDARYSKILL),
+        descJP: JP_SECONDARYSKILL[SECONDARYSKILL[key].Desc] + collectUnusedDiscParamsFrom(SECONDARYSKILL[key], JP_SECONDARYSKILL),
+        descKR: KR_SECONDARYSKILL[SECONDARYSKILL[key].Desc] + collectUnusedDiscParamsFrom(SECONDARYSKILL[key], KR_SECONDARYSKILL),
         effectType: getSeconarySkillEffectTypes(id),
         addAttrType: getSeconarySkillAddAttrType(id),
         effectData: getSeconarySkillEffectData(id),
