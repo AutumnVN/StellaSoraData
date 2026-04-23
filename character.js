@@ -713,7 +713,13 @@ function getTalents(charId) {
                 name: LANG_TALENTGROUP[TALENTGROUP[groupId].Title],
                 boost: talentIds.map(talentId => ({
                     name: LANG_TALENT[TALENT[talentId].Title],
+                    nameCN: CN_TALENT[TALENT[talentId].Title],
+                    nameJP: JP_TALENT[TALENT[talentId].Title],
+                    nameKR: KR_TALENT[TALENT[talentId].Title],
                     desc: LANG_TALENT[TALENT[talentId].Desc] + collectUnusedParamsFrom(TALENT[talentId], LANG_TALENT),
+                    descCN: CN_TALENT[TALENT[talentId].Desc] + collectUnusedParamsFrom(TALENT[talentId], CN_TALENT),
+                    descJP: JP_TALENT[TALENT[talentId].Desc] + collectUnusedParamsFrom(TALENT[talentId], JP_TALENT),
+                    descKR: KR_TALENT[TALENT[talentId].Desc] + collectUnusedParamsFrom(TALENT[talentId], KR_TALENT),
                     effectType: getTalentEffectTypes(talentId),
                     addAttrType: getTalentAddAttrTypes(talentId),
                     effectData: getTalentEffectData(talentId),
