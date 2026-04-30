@@ -183,7 +183,7 @@ return {
 			"",
 			false,
 			"",
-			"Is this ...==W== a calling card?==W== \"The Pure White Piece\"...==W== Is it the Seal of Grace Imperium?",
+			"Is this ...==W== a calling card?==W== \"The Pure White Piece\"...==W== Is it the Seal of Grace?",
 			""
 		}
 	},

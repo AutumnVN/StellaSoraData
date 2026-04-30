@@ -5533,8 +5533,8 @@ return {
 		}
 	},
 	{
-		cmd = "SetPPGlobal",
-		param = {1}
+		cmd = "SetPP",
+		param = {4, 1}
 	},
 	{
 		cmd = "SetAudio",
@@ -7635,7 +7635,7 @@ return {
 			nil,
 			0.0,
 			0.0,
-			1.1,
+			1.5,
 			nil,
 			nil,
 			nil,
@@ -11969,6 +11969,10 @@ return {
 			true,
 			"default"
 		}
+	},
+	{
+		cmd = "SetPP",
+		param = {4, 0}
 	},
 	{cmd = "End"}
 }

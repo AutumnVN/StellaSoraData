@@ -44,9 +44,9 @@ StarTowerFastBattleCtrl._mapNodeConfig = {
 	imgFloorNum = {
 		sNodeName = "imgFloorNum_",
 		sComponentName = "Image",
-		nCount = 2
+		nCount = 4
 	},
-	imgFloorIcon = {sComponentName = "Image"},
+	imgFloorIcon = {sComponentName = "Image", nCount = 2},
 	Tips = {
 		sCtrlName = "Game.UI.StarTower.DiscTips.StarTowerTipsCtrl"
 	},
@@ -271,18 +271,24 @@ function StarTowerFastBattleCtrl:RefreshThemeFlag(nTime)
 end
 function StarTowerFastBattleCtrl:RefreshRoomIcon()
 	local nRoomType = self._panel.LevelData.nRoomType
-	self:SetAtlasSprite(self._mapNode.imgFloorIcon, "11_ico", AllEnum.StarTowerRoomName[nRoomType].SweepIcon)
+	for _, v in ipairs(self._mapNode.imgFloorIcon) do
+		self:SetAtlasSprite(v, "11_ico", AllEnum.StarTowerRoomName[nRoomType].SweepIcon)
+	end
 	if nRoomType == GameEnum.starTowerRoomType.HorrorRoom then
 		self._mapNode.imgRed:SetActive(true)
 		local _, color = ColorUtility.TryParseHtmlString("#FF2B53")
-		NovaAPI.SetImageColor(self._mapNode.imgFloorNum[1], color)
-		NovaAPI.SetImageColor(self._mapNode.imgFloorNum[2], color)
+		for _, v in ipairs(self._mapNode.imgFloorNum) do
+			NovaAPI.SetImageColor(v, color)
+		end
 	else
 		self._mapNode.imgRed:SetActive(false)
 		local _, color = ColorUtility.TryParseHtmlString("#08D3D4")
 		NovaAPI.SetImageColor(self._mapNode.imgSkillTypeBg, color)
 		NovaAPI.SetImageColor(self._mapNode.imgFloorNum[1], color)
 		NovaAPI.SetImageColor(self._mapNode.imgFloorNum[2], color)
+		local _, color2 = ColorUtility.TryParseHtmlString("#4CFEFF")
+		NovaAPI.SetImageColor(self._mapNode.imgFloorNum[3], color2)
+		NovaAPI.SetImageColor(self._mapNode.imgFloorNum[4], color2)
 	end
 end
 function StarTowerFastBattleCtrl:RefreshRoomBg()
@@ -296,9 +302,13 @@ function StarTowerFastBattleCtrl:RefreshRoomFloor()
 	local nFloorNum = self._panel.LevelData.nCurLevel
 	self:SetAtlasSprite(self._mapNode.imgFloorNum[1], "05_number", "zs_fastBattle_floor_" .. nFloorNum % 10)
 	NovaAPI.SetImageNativeSize(self._mapNode.imgFloorNum[1])
+	self:SetAtlasSprite(self._mapNode.imgFloorNum[3], "05_number", "zs_fastBattle_floor_" .. nFloorNum % 10)
+	NovaAPI.SetImageNativeSize(self._mapNode.imgFloorNum[3])
 	nFloorNum = math.floor(nFloorNum / 10)
 	self:SetAtlasSprite(self._mapNode.imgFloorNum[2], "05_number", "zs_fastBattle_floor_" .. nFloorNum % 10)
 	NovaAPI.SetImageNativeSize(self._mapNode.imgFloorNum[2])
+	self:SetAtlasSprite(self._mapNode.imgFloorNum[4], "05_number", "zs_fastBattle_floor_" .. nFloorNum % 10)
+	NovaAPI.SetImageNativeSize(self._mapNode.imgFloorNum[4])
 end
 function StarTowerFastBattleCtrl:RefreshBuildScore()
 	local nLastScore = tonumber(NovaAPI.GetTMPText(self._mapNode.textBulidScoreNum))

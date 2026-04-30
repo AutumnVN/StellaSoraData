@@ -15,6 +15,7 @@ function FilterData:Init()
 	self.bFormationCharOrder = false
 	self.nFormationDiscSrotType = AllEnum.SortType.Level
 	self.bFormationDiscOrder = false
+	self.tbCacheOptionData = {}
 end
 function FilterData:Reset(tbOption)
 	if tbOption == nil then
@@ -57,6 +58,16 @@ function FilterData:IsDirty(optionType)
 	end
 	return false
 end
+function FilterData:IsDirtyByOption(tbOption)
+	for _, fKey in ipairs(tbOption) do
+		for _, result in pairs(self.tbFilter[fKey]) do
+			if result == true then
+				return true
+			end
+		end
+	end
+	return false
+end
 function FilterData:_IsDirty(fKey)
 	for _, result in pairs(self.tbFilter[fKey]) do
 		if result == true then
@@ -77,6 +88,30 @@ function FilterData:CheckFilterByChar(charId)
 	isFilter = isFilter and self:_GetFilterByKey(AllEnum.ChooseOption.Char_PowerStyle, charData.Class)
 	isFilter = isFilter and self:_GetFilterByKey(AllEnum.ChooseOption.Char_TacticalStyle, mapCharDescCfg.Tag[2])
 	isFilter = isFilter and self:_GetFilterByKey(AllEnum.ChooseOption.Char_AffiliatedForces, mapCharDescCfg.Tag[3])
+	return isFilter
+end
+function FilterData:CheckFilterByCharAndOption(charId, tbOption)
+	local charData = ConfigTable.GetData_Character(charId)
+	local mapCharDescCfg = ConfigTable.GetData("CharacterDes", charId)
+	local isFilter = true
+	if mapCharDescCfg == nil or charData == nil then
+		return isFilter
+	end
+	if table.indexof(tbOption, AllEnum.ChooseOption.Char_Element) > 0 then
+		isFilter = self:_GetFilterByKey(AllEnum.ChooseOption.Char_Element, charData.EET)
+	end
+	if 0 < table.indexof(tbOption, AllEnum.ChooseOption.Char_Rarity) and isFilter then
+		isFilter = self:_GetFilterByKey(AllEnum.ChooseOption.Char_Rarity, charData.Grade)
+	end
+	if 0 < table.indexof(tbOption, AllEnum.ChooseOption.Char_PowerStyle) and isFilter then
+		isFilter = self:_GetFilterByKey(AllEnum.ChooseOption.Char_PowerStyle, charData.Class)
+	end
+	if 0 < table.indexof(tbOption, AllEnum.ChooseOption.Char_TacticalStyle) and isFilter then
+		isFilter = self:_GetFilterByKey(AllEnum.ChooseOption.Char_TacticalStyle, mapCharDescCfg.Tag[2])
+	end
+	if 0 < table.indexof(tbOption, AllEnum.ChooseOption.Char_AffiliatedForces) and isFilter then
+		isFilter = self:_GetFilterByKey(AllEnum.ChooseOption.Char_AffiliatedForces, mapCharDescCfg.Tag[3])
+	end
 	return isFilter
 end
 function FilterData:CheckFilterByDisc(discId)
@@ -209,6 +244,20 @@ function FilterData:_GetFilterByKey(fKey, sKey)
 end
 function FilterData:GetFilterByKey(fKey, sKey)
 	return self.tbFilter[fKey][sKey]
+end
+function FilterData:CacheFilterByOption(tbOption)
+	self.tbCacheOptionData = {}
+	for fKey, v in ipairs(self.tbFilter) do
+		if table.indexof(tbOption, fKey) > 0 then
+			self.tbCacheOptionData[fKey] = clone(v)
+		end
+	end
+end
+function FilterData:ResetCacheFilter()
+	for fKey, v in pairs(self.tbCacheOptionData) do
+		self.tbFilter[fKey] = v
+	end
+	self.tbCacheOptionData = {}
 end
 function FilterData:SetCacheFilterByKey(fKey, sKey, flag)
 	if self.tbCacheFilter[fKey] == nil then

@@ -93,7 +93,7 @@ function PotentialPreselectionCtrl:RefreshList()
 		self.tbPreselectionList = self.tbAllPreselectionList
 	end
 	NovaAPI.SetTMPText(self._mapNode.txt_BuildCount, string.format("%d/%d", #self.tbAllPreselectionList, self.nAllBuildCount))
-	local isDirty = PlayerData.Filter:IsDirty(AllEnum.OptionType.Char)
+	local isDirty = PlayerData.Filter:IsDirtyByOption(self._panel.tbOption)
 	self._mapNode.imgFilterChoose:SetActive(isDirty)
 	local bEmpty = #self.tbAllPreselectionList == 0
 	self._mapNode.EmptyContent.gameObject:SetActive(bEmpty)
@@ -175,14 +175,10 @@ function PotentialPreselectionCtrl:FadeIn()
 	end
 end
 function PotentialPreselectionCtrl:Awake()
-	self.mapCacheFilter = {}
-	self.tbOption = {
-		AllEnum.ChooseOption.Char_Element
-	}
 end
 function PotentialPreselectionCtrl:OnEnable()
-	if next(self.mapCacheFilter) ~= nil then
-		for fKey, data in pairs(self.mapCacheFilter) do
+	if next(self._panel.mapCacheFilter) ~= nil then
+		for fKey, data in pairs(self._panel.mapCacheFilter) do
 			for sKey, value in pairs(data) do
 				PlayerData.Filter:SetCacheFilterByKey(fKey, sKey, value)
 			end
@@ -210,19 +206,19 @@ function PotentialPreselectionCtrl:OnDisable()
 		self.mapGridCtrl[nInstanceId] = nil
 	end
 	self.mapGridCtrl = {}
-	self.mapCacheFilter = {}
-	for _, fKey in ipairs(self.tbOption) do
-		if self.mapCacheFilter[fKey] == nil then
-			self.mapCacheFilter[fKey] = {}
+	self._panel.mapCacheFilter = {}
+	for _, fKey in ipairs(self._panel.tbOption) do
+		if self._panel.mapCacheFilter[fKey] == nil then
+			self._panel.mapCacheFilter[fKey] = {}
 		end
 		local data = PlayerData.Filter:GetCacheFilter(fKey)
 		if data ~= nil then
 			for sKey, value in pairs(data) do
-				self.mapCacheFilter[fKey][sKey] = value
+				self._panel.mapCacheFilter[fKey][sKey] = value
 			end
 		end
 	end
-	PlayerData.Filter:Reset(self.tbOption)
+	PlayerData.Filter:Reset(self._panel.tbOption)
 end
 function PotentialPreselectionCtrl:OnDestroy()
 end
@@ -253,7 +249,7 @@ function PotentialPreselectionCtrl:OnBtnClick_SortTime()
 	self:RefreshList()
 end
 function PotentialPreselectionCtrl:OnBtnClick_Filter()
-	EventManager.Hit(EventId.OpenPanel, PanelId.FilterPopupPanel, self.tbOption)
+	EventManager.Hit(EventId.OpenPanel, PanelId.FilterPopupPanel, self._panel.tbOption)
 end
 function PotentialPreselectionCtrl:OnBtnClick_Create()
 	if #self.tbAllPreselectionList >= self.nAllBuildCount then
@@ -268,12 +264,12 @@ function PotentialPreselectionCtrl:OnBtnClick_CloseDelete()
 	self:RefreshPanel()
 end
 function PotentialPreselectionCtrl:OnEvent_RefreshByFilter()
-	self.mapCacheFilter = {}
+	self._panel.mapCacheFilter = {}
 	self.tbPreselectionList = {}
 	for _, v in pairs(self.tbAllPreselectionList) do
 		local mapMainChar = v.tbCharPotential[1]
 		local nCharId = mapMainChar.nCharId
-		local isFilter = PlayerData.Filter:CheckFilterByChar(nCharId)
+		local isFilter = PlayerData.Filter:CheckFilterByCharAndOption(nCharId, self._panel.tbOption)
 		if isFilter then
 			table.insert(self.tbPreselectionList, v)
 		end

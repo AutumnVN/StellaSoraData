@@ -148,15 +148,18 @@ function ScoreBossLevel:OnEvent_HpChanged(hp, hpMax)
 	if self.isSettlement then
 		return
 	end
-	self.BossMaxHp = hpMax
 	if self.isDontChangeHp then
 		return
 	end
 	if self.BossCurLvMinHp == -1 then
 		self.BossCurLvMinHp = hp
 		self.parent:DamageToScore(hpMax - hp, self.SwitchRate, self.BattleLv)
+		return
 	end
-	if hp < self.BossCurLvMinHp then
+	if hp > self.BossCurLvMinHp then
+		self.BossCurLvMinHp = hp
+	end
+	if hp <= self.BossCurLvMinHp then
 		self.BossCurLvMinHp = hp
 		self.parent:DamageToScore(hpMax - hp, self.SwitchRate, self.BattleLv)
 	end
@@ -178,9 +181,11 @@ function ScoreBossLevel:OnEvent_BossRushMonsterLevelChanged(oldLevel, battleLeve
 		end
 	end
 	self.parent:HPLevelChanged()
+	self.isDontChangeHp = false
 end
 function ScoreBossLevel:OnEvent_BossRushMonsterBattleAttrChanged()
-	self.isDontChangeHp = false
+	local healthInfo = CS.AdventureModuleHelper.GetEntityHealthInfo(self.BossId)
+	self.BossMaxHp = healthInfo ~= nil and healthInfo.hpMax or 0
 end
 function ScoreBossLevel:ScoreBossResultTime(nTime)
 	self.nTime = nTime

@@ -243,6 +243,10 @@ function SolodanceThemeCtrl:OnEnable()
 	end
 end
 function SolodanceThemeCtrl:OnDisable()
+	if nil ~= self.showRemainTimer then
+		TimerManager.Remove(self.showRemainTimer)
+		self.showRemainTimer = nil
+	end
 	if nil ~= self.minigameRemainTimer then
 		TimerManager.Remove(self.minigameRemainTimer)
 		self.minigameRemainTimer = nil
@@ -276,6 +280,7 @@ function SolodanceThemeCtrl:OnDisable()
 		self.tbLive2D[k] = nil
 	end
 	self.bFromEntrance = false
+	self:ClearPanelParam()
 end
 function SolodanceThemeCtrl:RefreshPanel()
 	if self.SolodanceData == nil or self.ActivityGroupCfg == nil then

@@ -116,10 +116,12 @@ function PlayerPotentialPreselectionData:UnPackPotentialData(b64Str)
 	if not b64Str or type(b64Str) ~= "string" or b64Str == "" then
 		return
 	end
-	b64Str = b64Str:gsub("%s+", "")
+	if string.match(b64Str, "[^A-Za-z0-9+/=]") then
+		printError("\229\140\133\229\144\171\233\157\158base64\229\173\151\231\172\166")
+		return
+	end
 	b64Str = b64Str:gsub("-", "+")
 	b64Str = b64Str:gsub("_", "/")
-	b64Str = b64Str:gsub("[^A-Za-z0-9+/=]", "")
 	local len = #b64Str
 	if len % 4 ~= 0 then
 		b64Str = b64Str .. string.rep("=", 4 - len % 4)
@@ -173,12 +175,19 @@ function PlayerPotentialPreselectionData:UnPackPotentialData(b64Str)
 		})
 	end
 	local nMaxLevel = ConfigTable.GetConfigNumber("PotentialPreselectionMaxLevel")
-	local unpack_potential = function(tbPotential, tbAll, bSpecial)
+	local unpack_potential = function(tbPotential, tbAll, bSpecial, nSpecialCount)
 		for _, nId in ipairs(tbAll) do
 			if bSpecial then
 				local flag = read_bits(1)
 				if flag == 1 then
 					table.insert(tbPotential, {Id = nId, Level = 1})
+					if nSpecialCount then
+						nSpecialCount = nSpecialCount + 1
+						if 2 < nSpecialCount then
+							printError("\231\137\185\230\174\138\230\189\156\232\131\189\230\149\176\233\135\143\232\182\133\232\191\1352")
+							return false
+						end
+					end
 				end
 			else
 				local nLevel = read_bits(3)
@@ -195,14 +204,15 @@ function PlayerPotentialPreselectionData:UnPackPotentialData(b64Str)
 	end
 	for k, v in ipairs(tbCharPotential) do
 		if v.CharId > 0 then
+			local nSpecialCount = 0
 			local potentialCfg = ConfigTable.GetData("CharPotential", v.CharId)
 			if potentialCfg then
 				local bAvailable = true
 				if k == 1 then
-					bAvailable = bAvailable and unpack_potential(v.Potentials, potentialCfg.MasterSpecificPotentialIds, true)
+					bAvailable = bAvailable and unpack_potential(v.Potentials, potentialCfg.MasterSpecificPotentialIds, true, nSpecialCount)
 					bAvailable = bAvailable and unpack_potential(v.Potentials, potentialCfg.MasterNormalPotentialIds, false)
 				else
-					bAvailable = bAvailable and unpack_potential(v.Potentials, potentialCfg.AssistSpecificPotentialIds, true)
+					bAvailable = bAvailable and unpack_potential(v.Potentials, potentialCfg.AssistSpecificPotentialIds, true, nSpecialCount)
 					bAvailable = bAvailable and unpack_potential(v.Potentials, potentialCfg.AssistNormalPotentialIds, false)
 				end
 				bAvailable = bAvailable and unpack_potential(v.Potentials, potentialCfg.CommonPotentialIds, false)

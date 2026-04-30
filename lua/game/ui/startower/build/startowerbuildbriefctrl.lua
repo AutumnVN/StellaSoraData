@@ -156,7 +156,7 @@ local FilterGradeIdx = {
 	btn_FilterGradeC = 0
 }
 function StarTowerBuildBriefCtrl:RefreshList()
-	local isDirty = PlayerData.Filter:IsDirty(AllEnum.OptionType.Char)
+	local isDirty = PlayerData.Filter:IsDirtyByOption(self._panel.tbOption)
 	self._mapNode.imgFilterChoose:SetActive(isDirty)
 	if #self._tbAllBuild == 0 then
 		self._mapNode.ExistContent:SetActive(false)
@@ -204,7 +204,7 @@ function StarTowerBuildBriefCtrl:FilterAndSortBuildData()
 			return
 		end
 		local nCharId = mapBuild.tbChar[1].nTid
-		local isFilter = PlayerData.Filter:CheckFilterByChar(nCharId)
+		local isFilter = PlayerData.Filter:CheckFilterByCharAndOption(nCharId, self._panel.tbOption)
 		if isFilter then
 			table.insert(ret, mapBuild)
 		end
@@ -482,10 +482,6 @@ function StarTowerBuildBriefCtrl:Awake()
 	self.nSortype = SortType.Score
 	self.nSortOrder = SortOrder.Descending
 	self.nPanelState = PanelState.Normal
-	self.mapCacheFilter = {}
-	self.tbOption = {
-		AllEnum.ChooseOption.Char_Element
-	}
 	self:InitSort()
 	self.mapListItemCtrl = {}
 	self.tbCoinRate = ConfigTable.GetConfigArray("StarTowerBuildTransformParas")
@@ -498,8 +494,8 @@ function StarTowerBuildBriefCtrl:Awake()
 	self._mapNode.DD_selectDelect:SetList(tbLanguageId, 3)
 end
 function StarTowerBuildBriefCtrl:OnEnable()
-	if next(self.mapCacheFilter) ~= nil then
-		for fKey, data in pairs(self.mapCacheFilter) do
+	if next(self._panel.mapCacheFilter) ~= nil then
+		for fKey, data in pairs(self._panel.mapCacheFilter) do
 			for sKey, value in pairs(data) do
 				PlayerData.Filter:SetCacheFilterByKey(fKey, sKey, value)
 			end
@@ -523,19 +519,19 @@ function StarTowerBuildBriefCtrl:OnDisable()
 		self.mapListItemCtrl[nInstanceId] = nil
 	end
 	self.mapListItemCtrl = {}
-	self.mapCacheFilter = {}
-	for _, fKey in ipairs(self.tbOption) do
-		if self.mapCacheFilter[fKey] == nil then
-			self.mapCacheFilter[fKey] = {}
+	self._panel.mapCacheFilter = {}
+	for _, fKey in ipairs(self._panel.tbOption) do
+		if self._panel.mapCacheFilter[fKey] == nil then
+			self._panel.mapCacheFilter[fKey] = {}
 		end
 		local data = PlayerData.Filter:GetCacheFilter(fKey)
 		if data ~= nil then
 			for sKey, value in pairs(data) do
-				self.mapCacheFilter[fKey][sKey] = value
+				self._panel.mapCacheFilter[fKey][sKey] = value
 			end
 		end
 	end
-	PlayerData.Filter:Reset(self.tbOption)
+	PlayerData.Filter:Reset(self._panel.tbOption)
 end
 function StarTowerBuildBriefCtrl:OnDestroy()
 end
@@ -676,7 +672,7 @@ function StarTowerBuildBriefCtrl:OnBtnClick_OpenDeleteHint(btn)
 	self:OpenConfirmHint()
 end
 function StarTowerBuildBriefCtrl:OnBtnClick_OpenFilter(btn)
-	EventManager.Hit(EventId.OpenPanel, PanelId.FilterPopupPanel, self.tbOption)
+	EventManager.Hit(EventId.OpenPanel, PanelId.FilterPopupPanel, self._panel.tbOption)
 end
 function StarTowerBuildBriefCtrl:OnBtnClick_Result1(btn)
 	local mapData = {
@@ -688,11 +684,11 @@ function StarTowerBuildBriefCtrl:OnBtnClick_Result1(btn)
 end
 function StarTowerBuildBriefCtrl:OnEvent_RefreshByFilter()
 	local bChange = false
-	local tbTemp = clone(self.mapCacheFilter)
-	self.mapCacheFilter = {}
-	for _, fKey in ipairs(self.tbOption) do
-		if self.mapCacheFilter[fKey] == nil then
-			self.mapCacheFilter[fKey] = {}
+	local tbTemp = clone(self._panel.mapCacheFilter)
+	self._panel.mapCacheFilter = {}
+	for _, fKey in ipairs(self._panel.tbOption) do
+		if self._panel.mapCacheFilter[fKey] == nil then
+			self._panel.mapCacheFilter[fKey] = {}
 		end
 		local data = PlayerData.Filter:GetCacheFilter(fKey)
 		if data ~= nil then
@@ -703,7 +699,7 @@ function StarTowerBuildBriefCtrl:OnEvent_RefreshByFilter()
 				if not bChange and (tbTemp[fKey][sKey] == nil or tbTemp[fKey][sKey] ~= value) then
 					bChange = true
 				end
-				self.mapCacheFilter[fKey][sKey] = value
+				self._panel.mapCacheFilter[fKey][sKey] = value
 			end
 		end
 	end

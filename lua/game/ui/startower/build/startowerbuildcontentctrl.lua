@@ -120,7 +120,7 @@ function StarTowerBuildContentCtrl:InitPotential()
 		v.gameObject:SetActive(0 < nCount)
 		if 0 < nCount then
 			bEmpty = false
-			v:Init(tbChar[k].nTid, tbChar[k].nPotentialCount, tbPotential[tbChar[k].nTid], self._mapNode.PotentialDepotItem, k == 1)
+			v:Init(tbChar[k].nTid, tbChar[k].nPotentialCount, tbPotential[tbChar[k].nTid], self._mapNode.PotentialDepotItem, k == 1, self.mapBuild.bRankPreview)
 		end
 	end
 	self._mapNode.goEmptyPotential.gameObject:SetActive(bEmpty)

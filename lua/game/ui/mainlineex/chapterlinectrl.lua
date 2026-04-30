@@ -2,6 +2,8 @@ local LocalData = require("GameCore.Data.LocalData")
 local ChapterLineCtrl = class("ChapterLineCtrl", BaseCtrl)
 local AvgData = PlayerData.Avg
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local RectTransformUtility = CS.UnityEngine.RectTransformUtility
+local GameCameraStackManager = CS.GameCameraStackManager
 ChapterLineCtrl._mapNodeConfig = {
 	tranContent = {
 		sNodeName = "Content",
@@ -45,6 +47,7 @@ function ChapterLineCtrl:Awake()
 	self.tbBranchGrid = {}
 	self.tbLockedBranchGrid = {}
 	self.bFocusNotReadNode = true
+	self.Rect = self._mapNode.tranContent:GetComponent("RectTransform")
 	self:CacheCurChapterConfig()
 	self:CacheChapterBranchNode()
 	self:Refresh()
@@ -152,6 +155,12 @@ function ChapterLineCtrl:Refresh()
 		self._mapNode.scrollRect.horizontalNormalizedPosition = (self.curTimeStamp - 1) * 250
 	end, true, true, true)
 	CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.tranContent)
+	for k, v in ipairs(self.tbGridList) do
+		self:RecordGridBorderPos(v.grid)
+	end
+	for k, v in ipairs(self.tbGridList) do
+		self:CheckLineReasonable(v.grid)
+	end
 	if 0 > self.curTimeStamp - 1 then
 		self._mapNode.imgMask.gameObject:SetActive(false)
 	else
@@ -272,6 +281,22 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 		self:OnClickGrid(avgId)
 	end)
 end
+function ChapterLineCtrl:RecordGridBorderPos(goGrid)
+	local avgId = goGrid.name
+	if self.tbGridBorderPos == nil then
+		self.tbGridBorderPos = {}
+	end
+	local uiCamera = GameCameraStackManager.Instance.uiCamera
+	local imgLeftPoint_1 = goGrid:Find("imgLeftPoint_1"):GetComponent("RectTransform")
+	local imgRightPoint_1 = goGrid:Find("imgRightPoint_1"):GetComponent("RectTransform")
+	local leftScreenPos = imgLeftPoint_1 and RectTransformUtility.WorldToScreenPoint(uiCamera, imgLeftPoint_1.position) or nil
+	local rightScreenPos = imgRightPoint_1 and RectTransformUtility.WorldToScreenPoint(uiCamera, imgRightPoint_1.position) or nil
+	self.tbGridBorderPos[avgId] = {
+		left = leftScreenPos,
+		right = rightScreenPos,
+		grid = goGrid
+	}
+end
 function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockAnim)
 	local branchIds = {}
 	local forEachLine_Story = function(mapLineData)
@@ -386,6 +411,59 @@ function ChapterLineCtrl:RefreshTimeStamp(goTimeStamp, index)
 	NovaAPI.SetTMPText(txtTimeTitle, timeStampName)
 	local txtTimeTitle = tranTimeStamp:Find("imgBg/txtTimeTitle"):GetComponent("TMP_Text")
 	NovaAPI.SetTMPText(txtTimeTitle, timeStampName)
+end
+function ChapterLineCtrl:CheckLineReasonable(grid)
+	local avgId = grid.name
+	local storyConfig = AvgData:GetStoryCfgData(avgId)
+	local goLeftBorder = grid:Find("goLeftBorder")
+	local uiCamera = GameCameraStackManager.Instance.uiCamera
+	if grid.gameObject.activeInHierarchy == false then
+		return
+	end
+	if self.tbShortenedLines == nil then
+		self.tbShortenedLines = {}
+	end
+	for i = 1, goLeftBorder.childCount do
+		local line = goLeftBorder:GetChild(i - 1)
+		local lineRect = line:GetComponent("RectTransform")
+		for index = 1, #storyConfig.ParentStoryId do
+			local parentAvgId = storyConfig.ParentStoryId[index]
+			local curBorderPos = self.tbGridBorderPos and self.tbGridBorderPos[avgId]
+			local parentBorderPos = self.tbGridBorderPos and self.tbGridBorderPos[parentAvgId]
+			if parentBorderPos.grid ~= nil and parentBorderPos.grid.gameObject.activeInHierarchy ~= false and curBorderPos ~= nil and curBorderPos.left ~= nil and parentBorderPos ~= nil and parentBorderPos.right ~= nil then
+				local isHitA, worldPosA = RectTransformUtility.ScreenPointToWorldPointInRectangle(grid, parentBorderPos.right, uiCamera)
+				local isHitB, worldPosB = RectTransformUtility.ScreenPointToWorldPointInRectangle(grid, curBorderPos.left, uiCamera)
+				local localPosA = grid:InverseTransformPoint(worldPosA)
+				local localPosB = grid:InverseTransformPoint(worldPosB)
+				local dir = parentBorderPos.right - curBorderPos.left
+				local expectedAngle = math.deg(math.atan(dir.y, dir.x))
+				local lineAngle = lineRect.eulerAngles.z
+				local angleDiff = ((expectedAngle - lineAngle) % 180 + 180) % 180
+				if 90 < angleDiff then
+					angleDiff = 180 - angleDiff
+				end
+				if not (5 < angleDiff) then
+					local screenDist = (localPosA - localPosB).magnitude
+					local lineWidthScreen = lineRect.sizeDelta.x
+					local newSizeDelta = screenDist
+					if not (math.abs(screenDist - lineWidthScreen) <= 18) then
+						if screenDist > lineWidthScreen then
+							lineRect.sizeDelta = Vector2(newSizeDelta, lineRect.sizeDelta.y)
+							print("\230\139\137\228\188\184\231\186\191\230\174\181", grid.name, "\229\142\159\229\174\189\229\186\166", lineWidthScreen, "\230\150\176\229\174\189\229\186\166", newSizeDelta)
+							print("\231\130\185A\229\177\143\229\185\149\229\157\144\230\160\135", parentBorderPos.right, "\231\130\185B\229\177\143\229\185\149\229\157\144\230\160\135", curBorderPos.left)
+						elseif screenDist < lineWidthScreen then
+							lineRect.sizeDelta = Vector2(newSizeDelta, lineRect.sizeDelta.y)
+							self.tbShortenedLines[avgId] = {
+								lineIndex = i,
+								parentAvgId = parentAvgId,
+								originalWidth = newSizeDelta
+							}
+						end
+					end
+				end
+			end
+		end
+	end
 end
 function ChapterLineCtrl:RefreshUnlockAnimList()
 	self.tbNeedPlayUnlockAnimGird = {}

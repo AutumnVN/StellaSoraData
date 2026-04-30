@@ -576,7 +576,7 @@ return {
 			"",
 			false,
 			"",
-			"Wait, hold on! We still have this\226\128\148==W==The shop's crown jewel, our Super Deluxe Repair Kit!",
+			"Wait, hold on! We still have this\226\128\148==W== The shop's crown jewel, our Super Deluxe Repair Kit!",
 			""
 		}
 	},
@@ -1244,7 +1244,7 @@ return {
 			"",
 			false,
 			"",
-			"If I'm not mistaken, you require that wrench to service a car, correct?",
+			"If I'm not mistaken, you require that wrench to service a car Artifact, correct?",
 			""
 		}
 	},
@@ -3433,7 +3433,7 @@ return {
 			"",
 			false,
 			"",
-			"So he was just trying to unload dead stock on me...==W== Calling it his \"crown jewel.\" Slick sales talk.",
+			"So she was just trying to unload dead stock on me...==W== Calling it her \"crown jewel.\" Slick sales talk.",
 			""
 		}
 	},

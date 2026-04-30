@@ -47,7 +47,7 @@ function PotentialListItemCtrl:GetAllPotentialCount(nCharId, bMain)
 	end
 	return nAllCount
 end
-function PotentialListItemCtrl:Init(nCharId, nCount, tbPotential, goPotential, bMain)
+function PotentialListItemCtrl:Init(nCharId, nCount, tbPotential, goPotential, bMain, bRankPreview)
 	self.nCharId = nCharId
 	local charCfg = ConfigTable.GetData_Character(nCharId)
 	local nCharSkinId = PlayerData.Char:GetCharSkinId(nCharId)
@@ -61,7 +61,10 @@ function PotentialListItemCtrl:Init(nCharId, nCount, tbPotential, goPotential, b
 	local nHasAdd = 0
 	local tbPotentialAdd = PlayerData.Char:GetCharEnhancedPotential(nCharId)
 	for _, v in ipairs(tbPotential) do
-		local nAddCount = tbPotentialAdd[v.nPotentialId] and tbPotentialAdd[v.nPotentialId] or 0
+		local nAddCount = 0
+		if not bRankPreview then
+			nAddCount = tbPotentialAdd[v.nPotentialId] and tbPotentialAdd[v.nPotentialId] or 0
+		end
 		if v.nLevel == 0 then
 			nAddCount = 0
 		end

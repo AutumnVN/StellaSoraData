@@ -3830,7 +3830,7 @@ return {
 			"",
 			false,
 			"",
-			"Ah, thanks...==B====RT== I was dreaming...?",
+			"Ah, thanks...==B== I was dreaming...?",
 			""
 		}
 	},
@@ -3980,7 +3980,7 @@ return {
 			"",
 			false,
 			"",
-			"I see...==W====RT== Phew... thank goodness it was a dream. I can finally say whatever I want again.",
+			"I see...==W== Phew... thank goodness it was a dream. I can finally say whatever I want again.",
 			""
 		}
 	},
@@ -10001,7 +10001,7 @@ return {
 		cmd = "SetTalk",
 		param = {
 			0,
-			"avg3_999",
+			"avg1_143",
 			"",
 			0,
 			"",
@@ -10044,7 +10044,7 @@ return {
 		cmd = "SetTalk",
 		param = {
 			0,
-			"avg3_999",
+			"avg1_143",
 			"",
 			0,
 			"",
@@ -10209,7 +10209,7 @@ return {
 		cmd = "SetTalk",
 		param = {
 			0,
-			"avg3_999",
+			"avg1_143",
 			"",
 			0,
 			"",

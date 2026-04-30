@@ -1283,13 +1283,13 @@ function PlayerQuestData:UpdateTeamFormationRedDot()
 	end
 	ForEachTableLine(DataTable.AssistAttribute, foreachAttri)
 	for i = 1, nFinish do
-		local bComp = self:CheckTeamFormationAttributeCompleted(nFinish)
+		local bComp = self:CheckTeamFormationAttributeCompleted(i)
 		if not bComp then
-			nAttr = nFinish
+			nAttr = i
 			break
 		end
 		if i == nFinish then
-			nAttr = nFinish
+			nAttr = i
 		end
 	end
 	local nCurGroupId = self:GetCurTeamFormationQuestGroup(nAttr)

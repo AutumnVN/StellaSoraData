@@ -81,7 +81,7 @@ function RegionBossBuildCtrl:RefreshList()
 	else
 		self._mapNode.ExistContent:SetActive(true)
 	end
-	local isDirty = PlayerData.Filter:IsDirty(AllEnum.OptionType.Char)
+	local isDirty = PlayerData.Filter:IsDirtyByOption(self._panel.tbOption)
 	self._mapNode.imgFilterChoose:SetActive(isDirty)
 	self.tbCurShow = self:FilterAndSortBuildData()
 	if self.nType == AllEnum.RegionBossFormationType.InfinityTower then
@@ -195,7 +195,7 @@ function RegionBossBuildCtrl:FilterAndSortBuildData()
 			return
 		end
 		local nCharId = mapBuild.tbChar[1].nTid
-		local isFilter = PlayerData.Filter:CheckFilterByChar(nCharId)
+		local isFilter = PlayerData.Filter:CheckFilterByCharAndOption(nCharId, self._panel.tbOption)
 		if isFilter then
 			table.insert(ret, mapBuild)
 		end
@@ -390,10 +390,6 @@ function RegionBossBuildCtrl:Awake()
 	self.nSortype = SortType.Score
 	self.nSortOrder = SortOrder.Descending
 	self.nPanelState = PanelState.Normal
-	self.mapCacheFilter = {}
-	self.tbOption = {
-		AllEnum.ChooseOption.Char_Element
-	}
 	self:InitSort()
 	self.mapListItemCtrl = {}
 	self.tbCoinRate = ConfigTable.GetConfigArray("StarTowerBuildTransformParas")
@@ -417,8 +413,8 @@ function RegionBossBuildCtrl:OnEnable()
 	if tbParam[4] ~= nil then
 		self.Other = tbParam[4]
 	end
-	if next(self.mapCacheFilter) ~= nil then
-		for fKey, data in pairs(self.mapCacheFilter) do
+	if next(self._panel.mapCacheFilter) ~= nil then
+		for fKey, data in pairs(self._panel.mapCacheFilter) do
 			for sKey, value in pairs(data) do
 				PlayerData.Filter:SetCacheFilterByKey(fKey, sKey, value)
 			end
@@ -463,19 +459,19 @@ function RegionBossBuildCtrl:OnDisable()
 		self.mapListItemCtrl[nInstanceId] = nil
 	end
 	self.mapListItemCtrl = {}
-	self.mapCacheFilter = {}
-	for _, fKey in ipairs(self.tbOption) do
-		if self.mapCacheFilter[fKey] == nil then
-			self.mapCacheFilter[fKey] = {}
+	self._panel.mapCacheFilter = {}
+	for _, fKey in ipairs(self._panel.tbOption) do
+		if self._panel.mapCacheFilter[fKey] == nil then
+			self._panel.mapCacheFilter[fKey] = {}
 		end
 		local data = PlayerData.Filter:GetCacheFilter(fKey)
 		if data ~= nil then
 			for sKey, value in pairs(data) do
-				self.mapCacheFilter[fKey][sKey] = value
+				self._panel.mapCacheFilter[fKey][sKey] = value
 			end
 		end
 	end
-	PlayerData.Filter:Reset(self.tbOption)
+	PlayerData.Filter:Reset(self._panel.tbOption)
 end
 function RegionBossBuildCtrl:OnDestroy()
 end
@@ -524,7 +520,7 @@ function RegionBossBuildCtrl:OnBtnClick_SortScore(btn)
 	self:RefreshList()
 end
 function RegionBossBuildCtrl:OnBtnClick_OpenFilter(btn)
-	EventManager.Hit(EventId.OpenPanel, PanelId.FilterPopupPanel, self.tbOption)
+	EventManager.Hit(EventId.OpenPanel, PanelId.FilterPopupPanel, self._panel.tbOption)
 end
 function RegionBossBuildCtrl:OnBtnClick_Preview()
 	EventManager.Hit(EventId.OpenPanel, PanelId.BuildAttrPreview)
@@ -546,11 +542,11 @@ function RegionBossBuildCtrl:OnEvent_Back(nPanelId)
 end
 function RegionBossBuildCtrl:OnEvent_RefreshByFilter()
 	local bChange = false
-	local tbTemp = clone(self.mapCacheFilter)
-	self.mapCacheFilter = {}
-	for _, fKey in ipairs(self.tbOption) do
-		if self.mapCacheFilter[fKey] == nil then
-			self.mapCacheFilter[fKey] = {}
+	local tbTemp = clone(self._panel.mapCacheFilter)
+	self._panel.mapCacheFilter = {}
+	for _, fKey in ipairs(self._panel.tbOption) do
+		if self._panel.mapCacheFilter[fKey] == nil then
+			self._panel.mapCacheFilter[fKey] = {}
 		end
 		local data = PlayerData.Filter:GetCacheFilter(fKey)
 		if data ~= nil then
@@ -561,7 +557,7 @@ function RegionBossBuildCtrl:OnEvent_RefreshByFilter()
 				if not bChange and (tbTemp[fKey][sKey] == nil or tbTemp[fKey][sKey] ~= value) then
 					bChange = true
 				end
-				self.mapCacheFilter[fKey][sKey] = value
+				self._panel.mapCacheFilter[fKey][sKey] = value
 			end
 		end
 	end

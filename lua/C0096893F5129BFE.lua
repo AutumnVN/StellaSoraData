@@ -300,7 +300,7 @@ function MainlineEx_SolodanceStoryCtrl:GetLockTxt(tbResult)
 					for k, v in pairs(tbStoryIds) do
 						if v == false then
 							local storyData = ConfigTable.GetData_Story(AvgData.CFG_Story[k])
-							lockTxt = orderedFormat(ConfigTable.GetUIText("Story_UnlockPreId") or "", storyData.Title)
+							lockTxt = orderedFormat(ConfigTable.GetUIText("Activity_Story_UnlockPreId") or "", storyData.Title)
 							break
 						end
 					end
@@ -313,7 +313,7 @@ function MainlineEx_SolodanceStoryCtrl:GetLockTxt(tbResult)
 					for k, v in pairs(tbStoryIds) do
 						if v == false then
 							local storyData = ConfigTable.GetData_Story(AvgData.CFG_Story[k])
-							lockTxt = orderedFormat(ConfigTable.GetUIText("Story_UnlockPreId") or "", storyData.Title)
+							lockTxt = orderedFormat(ConfigTable.GetUIText("Activity_Story_UnlockPreId") or "", storyData.Title)
 							break
 						end
 					end

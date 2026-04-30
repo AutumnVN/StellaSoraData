@@ -436,6 +436,9 @@ end
 function BaseCtrl:GetPanelParam()
 	return self._panel:GetPanelParam()
 end
+function BaseCtrl:ClearPanelParam()
+	self._panel:ClearPanelParam()
+end
 local bActive_AutoFit = true
 function BaseCtrl:GetAtlasSprite(sAtlasPath, sSpriteName)
 	if string.find(sAtlasPath, "/CommonEx/") ~= nil or string.find(sAtlasPath, "/Common/") ~= nil then

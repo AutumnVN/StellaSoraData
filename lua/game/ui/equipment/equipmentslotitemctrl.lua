@@ -24,6 +24,7 @@ function EquipmentSlotItemCtrl:Init(mapSlot, nCharId)
 	self._mapNode.imgAbleBg.gameObject:SetActive(bEmpty and bUnlock)
 	self._mapNode.imgLockBg.gameObject:SetActive(not bUnlock)
 	self._mapNode.goEquip.gameObject:SetActive(not bEmpty and bUnlock)
+	self:ClearEquipment()
 	local nGemId = PlayerData.Equipment:GetGemIdBySlot(nCharId, mapSlot.nSlotId)
 	local mapGemCfg = ConfigTable.GetData("CharGem", nGemId)
 	if not mapGemCfg then
@@ -61,6 +62,10 @@ end
 function EquipmentSlotItemCtrl:SetChooseState(bChoose)
 	self._mapNode.imgChoose.gameObject:SetActive(bChoose)
 end
+function EquipmentSlotItemCtrl:ClearEquipment()
+	delChildren(self._mapNode.imgEquipmentIcon)
+	self.goEquipment = nil
+end
 function EquipmentSlotItemCtrl:PlayAnim()
 	local sAnimName = ""
 	sAnimName = "imgEquipmentIcon_in"
@@ -70,8 +75,7 @@ function EquipmentSlotItemCtrl:Awake()
 	self.animRoot = self.gameObject:GetComponent("Animator")
 	self.goEquipment = nil
 end
-function EquipmentSlotItemCtrl:Disable()
-	delChildren(self._mapNode.imgEquipmentIcon)
-	self.goEquipment = nil
+function EquipmentSlotItemCtrl:OnDisable()
+	self:ClearEquipment()
 end
 return EquipmentSlotItemCtrl

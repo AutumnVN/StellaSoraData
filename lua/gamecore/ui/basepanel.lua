@@ -298,4 +298,7 @@ function BasePanel:GetPanelParam()
 		return nil
 	end
 end
+function BasePanel:ClearPanelParam()
+	self._tbParam = nil
+end
 return BasePanel

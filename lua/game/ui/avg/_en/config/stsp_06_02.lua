@@ -2409,7 +2409,7 @@ return {
 			"",
 			false,
 			"",
-			"A tall, broad-shouldered man came charging on a two-wheeler motorbike, radiating aggression.",
+			"A tall, broad-shouldered man came charging on a two-wheeler bike Artifact, radiating aggression.",
 			""
 		}
 	},

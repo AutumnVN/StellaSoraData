@@ -9,7 +9,8 @@ ImportPreselectionCtrl._mapNodeConfig = {
 		sLanguageId = "Potential_Preselection_Import_Input"
 	},
 	input = {
-		sComponentName = "TMP_InputField"
+		sComponentName = "TMP_InputField",
+		callback = "OnValueChanged_Import"
 	},
 	btnClose = {sComponentName = "UIButton", callback = "ClosePanel"},
 	btnClose1 = {sComponentName = "UIButton", callback = "ClosePanel"},
@@ -54,6 +55,15 @@ end
 function ImportPreselectionCtrl:OnDisable()
 end
 function ImportPreselectionCtrl:OnDestroy()
+end
+function ImportPreselectionCtrl:OnValueChanged_Import(_, sContent)
+	if sContent == nil or sContent == "" then
+		return
+	end
+	local sFiltered = string.gsub(sContent, "[^A-Za-z0-9+/=]", "")
+	if sFiltered ~= sContent then
+		NovaAPI.SetTMPInputFieldText(self._mapNode.input, sFiltered)
+	end
 end
 function ImportPreselectionCtrl:OnBtnClick_Confirm(btn)
 	local sCode = NovaAPI.GetTMPInputFieldText(self._mapNode.input)
