@@ -25236,13 +25236,10 @@
                 "desc": "For every <color=#ec6d21>1</color> skill cast by the Main Trekker, all Support Trekkers' Skill DMG is intensified by <color=#ec6d21>40%</color> for <color=#ec6d21>9</color>s.\nFor every <color=#ec6d21>50</color> times Support Trekkers deal DMG, the Main Trekker's Skill DMG is intensified by <color=#ec6d21>40%</color> for <color=#ec6d21>12</color>s.\nRe-triggering refreshes the duration; effects do not stack.",
                 "icon": "Icon_Bossrush_Teshujizhi_011",
                 "effectType": [
-                    "Skill DMG (%)",
-                    "Final DMG (%)",
-                    "Final DMG Taken (base)"
+                    "Skill DMG (%)"
                 ],
                 "buffIcon": [
-                    "No Icon",
-                    "Icon_CommonBuff_SkillDamageDown"
+                    "No Icon"
                 ]
             }
         ],
@@ -30303,11 +30300,12 @@
                 "desc": "When the boss has Thunderbolt, its DMG is increased by <color=#ec6d21>30%</color> and deals additional DMG in a small area 4 times every 3s.\nDealing Mark DMG <color=#ec6d21>3</color> times to the boss within <color=#ec6d21>5</color>s disables Thunderbolt for 15s, and intensifies the Skill DMG the boss takes by <color=#ec6d21>40%</color> for the duration.",
                 "icon": "Icon_Bossrush_Teshujizhi_008",
                 "effectType": [
-                    "Skill DMG (%)",
-                    "Auto Attack Damage (%)"
+                    "Final DMG (%)",
+                    "Final DMG Taken (base)"
                 ],
                 "buffIcon": [
-                    "Icon_CommonBuff_SkillDamageUp"
+                    "No Icon",
+                    "Icon_CommonBuff_SkillDamageDown"
                 ]
             }
         ],
@@ -32834,8 +32832,13 @@
                 "name": "Meticulously Crafted",
                 "desc": "For every <color=#ec6d21>1</color>s a Support Trekker remains on the battlefield, applies 1 stack of Build-Up to themselves and the Main Trekker. \nEach stack of Build-Up provides <color=#ec6d21>2%</color> of Skill DMG intensity and <color=#ec6d21>2%</color> Auto Attack DMG intensity, stacking up to <color=#ec6d21>10</color> times. Each stack lasts for <color=#ec6d21>8</color>s, and every stack gained resets this duration.\nTwo Support Trekkers can each apply Build-Up to the Main Trekker; the stack limit and effects are calculated separately and can exist simultaneously.",
                 "icon": "Icon_Bossrush_Teshujizhi_014",
-                "effectType": [],
-                "buffIcon": []
+                "effectType": [
+                    "Skill DMG (%)",
+                    "Auto Attack Damage (%)"
+                ],
+                "buffIcon": [
+                    "Icon_CommonBuff_SkillDamageUp"
+                ]
             }
         ],
         "weakTo": [
