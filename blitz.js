@@ -159,5 +159,9 @@ function getBlitzBuffIcon(monsterId) {
 }
 
 function filterBuff(buffId, monsterId) {
-    return buffId.startsWith(monsterId) || (monsterId === 6310100 && [631010001, 631010002, 631001003].includes(+buffId)) || (monsterId === 6310130 && [631011011, 631011021, 631011010, 631011020].includes(+buffId));
+    if (monsterId === 6310100) return [631010001, 631010002, 631001003].includes(+buffId);
+    if (monsterId === 6310130) return [631011011, 631011021, 631011010, 631011020].includes(+buffId);
+    if (monsterId === 6310140) return [631013001, 631013002].includes(+buffId);
+    if (monsterId === 6310150) return [631014001, 631014011, 631014002, 631014022].includes(+buffId);
+    return buffId.startsWith(monsterId);
 }
