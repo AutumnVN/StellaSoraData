@@ -417,19 +417,19 @@
   },
   "TimeZone": {
     "Id": "TimeZone",
-    "Value": "8"
+    "Value": "-7"
   },
   "DailyRefreshOffsetHour": {
     "Id": "DailyRefreshOffsetHour",
-    "Value": "4"
+    "Value": "13"
   },
   "EnableExchange": {
     "Id": "EnableExchange",
-    "Value": "android_official,ios_official,pc_official,pc_taptap,android_bilibili,pc_bilibili,android_pre_bilibili,pc_pre_bilibili,android_exp,pc_exp,android_test_1,pc_test_1,android_none,pc_none"
+    "Value": "android_official,ios_official,pc_official,pc_exp,android_test_1,ios_test_1,pc_test_1"
   },
   "LampNoticeScrollSpeed": {
     "Id": "LampNoticeScrollSpeed",
-    "Value": "200"
+    "Value": "100"
   },
   "PotentialShowDetail": {
     "Id": "PotentialShowDetail",
@@ -816,13 +816,16 @@
     "Value": "201002"
   },
   "TouchEffect_Main": {
-    "Id": "TouchEffect_Main"
+    "Id": "TouchEffect_Main",
+    "Value": ""
   },
   "TouchEffect_Slide": {
-    "Id": "TouchEffect_Slide"
+    "Id": "TouchEffect_Slide",
+    "Value": ""
   },
   "RedDot": {
-    "Id": "RedDot"
+    "Id": "RedDot",
+    "Value": ""
   },
   "TrekkerVersusInitHotValue": {
     "Id": "TrekkerVersusInitHotValue",

@@ -10,6 +10,7 @@
     "PoolId": 1,
     "QuestTurn": 2,
     "QuestGroup": 120,
+    "FixedTurn": 0,
     "Floortips": "PenguinCardFloor.101.1",
     "ShowWin": true
   },
@@ -24,6 +25,7 @@
     "PoolId": 2,
     "QuestTurn": 2,
     "QuestGroup": 120,
+    "FixedTurn": 0,
     "Floortips": "PenguinCardFloor.102.1",
     "ShowWin": true
   },
@@ -38,6 +40,7 @@
     "PoolId": 3,
     "QuestTurn": 2,
     "QuestGroup": 120,
+    "FixedTurn": 0,
     "Floortips": "PenguinCardFloor.103.1",
     "ShowWin": true
   },
@@ -52,6 +55,7 @@
     "PoolId": 4,
     "QuestTurn": 2,
     "QuestGroup": 120,
+    "FixedTurn": 0,
     "Floortips": "PenguinCardFloor.104.1",
     "ShowWin": true
   },
@@ -66,7 +70,9 @@
     "PoolId": 1,
     "QuestTurn": 1,
     "QuestGroup": 120,
-    "Floortips": "PenguinCardFloor.105.1"
+    "FixedTurn": 0,
+    "Floortips": "PenguinCardFloor.105.1",
+    "ShowWin": false
   },
   "201": {
     "Id": 201,
@@ -94,6 +100,7 @@
     "PoolId": 1,
     "QuestTurn": 1,
     "QuestGroup": 91,
+    "FixedTurn": 0,
     "Floortips": "PenguinCardFloor.202.1",
     "ShowWin": true
   },
@@ -108,6 +115,7 @@
     "PoolId": 2,
     "QuestTurn": 1,
     "QuestGroup": 92,
+    "FixedTurn": 0,
     "Floortips": "PenguinCardFloor.203.1",
     "ShowWin": true
   },
@@ -122,6 +130,8 @@
     "PoolId": 1,
     "QuestTurn": 1,
     "QuestGroup": 101,
-    "Floortips": "PenguinCardFloor.204.1"
+    "FixedTurn": 0,
+    "Floortips": "PenguinCardFloor.204.1",
+    "ShowWin": false
   }
 }

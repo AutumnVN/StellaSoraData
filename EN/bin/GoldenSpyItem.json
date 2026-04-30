@@ -7,7 +7,7 @@
     "Score": 10,
     "IconPath": "icon_goldenspy_1101",
     "PrefabName": "1101",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
@@ -23,7 +23,7 @@
     "Score": 30,
     "IconPath": "icon_goldenspy_1102",
     "PrefabName": "1102",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
@@ -39,7 +39,7 @@
     "Score": 50,
     "IconPath": "icon_goldenspy_1103",
     "PrefabName": "1103",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
@@ -55,7 +55,7 @@
     "Score": 60,
     "IconPath": "icon_goldenspy_1104",
     "PrefabName": "1104",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
@@ -71,7 +71,7 @@
     "Score": 100,
     "IconPath": "icon_goldenspy_1105",
     "PrefabName": "1105",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
@@ -87,7 +87,7 @@
     "Score": 150,
     "IconPath": "icon_goldenspy_1106",
     "PrefabName": "1106",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
@@ -103,7 +103,7 @@
     "Score": 300,
     "IconPath": "icon_goldenspy_1107",
     "PrefabName": "1107",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
@@ -119,7 +119,7 @@
     "Score": 200,
     "IconPath": "icon_goldenspy_1108",
     "PrefabName": "1108",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
@@ -135,7 +135,7 @@
     "Score": 500,
     "IconPath": "icon_goldenspy_1109",
     "PrefabName": "1109",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
@@ -147,29 +147,39 @@
     "Id": 1201,
     "Name": "GoldenSpyItem.1201.1",
     "ItemType": 6,
+    "Weight": 0,
+    "Score": 0,
     "IconPath": "icon_goldenspy_1201",
     "PrefabName": "1201",
-    "luaCtrl": "GoldenSpySafeBoxItem",
+    "LuaCtrl": "GoldenSpySafeBoxItem",
     "Params": [
       20,
       30,
       50,
       200
-    ]
+    ],
+    "ShowValue": false,
+    "IsTask": false,
+    "NeedShowFlash": false
   },
   "1202": {
     "Id": 1202,
     "Name": "GoldenSpyItem.1202.1",
     "ItemType": 6,
+    "Weight": 0,
+    "Score": 0,
     "IconPath": "icon_goldenspy_1202",
     "PrefabName": "1202",
-    "luaCtrl": "GoldenSpySafeBoxItem",
+    "LuaCtrl": "GoldenSpySafeBoxItem",
     "Params": [
       30,
       40,
       150,
       400
-    ]
+    ],
+    "ShowValue": false,
+    "IsTask": false,
+    "NeedShowFlash": false
   },
   "1203": {
     "Id": 1203,
@@ -179,13 +189,16 @@
     "Score": 50,
     "IconPath": "icon_goldenspy_1203",
     "PrefabName": "1203",
-    "luaCtrl": "GoldenSpyPatrolItem",
+    "LuaCtrl": "GoldenSpyPatrolItem",
     "Params": [
       120,
       5,
       40,
       90
-    ]
+    ],
+    "ShowValue": false,
+    "IsTask": false,
+    "NeedShowFlash": false
   },
   "1204": {
     "Id": 1204,
@@ -195,24 +208,31 @@
     "Score": 50,
     "IconPath": "icon_goldenspy_1204",
     "PrefabName": "1204",
-    "luaCtrl": "GoldenSpyCompanionItem",
+    "LuaCtrl": "GoldenSpyCompanionItem",
     "Params": [
       120,
       45,
       90
     ],
-    "ShowValue": true
+    "ShowValue": true,
+    "IsTask": false,
+    "NeedShowFlash": false
   },
   "1205": {
     "Id": 1205,
     "Name": "GoldenSpyItem.1205.1",
     "ItemType": 9,
+    "Weight": 0,
+    "Score": 0,
     "IconPath": "icon_goldenspy_1205",
     "PrefabName": "1205",
-    "luaCtrl": "GoldenSpyBoomItem",
+    "LuaCtrl": "GoldenSpyBoomItem",
     "Params": [
       310
-    ]
+    ],
+    "ShowValue": false,
+    "IsTask": false,
+    "NeedShowFlash": false
   },
   "1301": {
     "Id": 1301,
@@ -222,11 +242,13 @@
     "Score": 100,
     "IconPath": "icon_goldenspy_1301",
     "PrefabName": "1301",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
-    "ShowValue": true
+    "ShowValue": true,
+    "IsTask": false,
+    "NeedShowFlash": false
   },
   "1311": {
     "Id": 1311,
@@ -236,11 +258,13 @@
     "Score": 100,
     "IconPath": "icon_goldenspy_1301",
     "PrefabName": "1311",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
-    "ShowValue": true
+    "ShowValue": true,
+    "IsTask": false,
+    "NeedShowFlash": false
   },
   "1312": {
     "Id": 1312,
@@ -250,11 +274,13 @@
     "Score": 100,
     "IconPath": "icon_goldenspy_1301",
     "PrefabName": "1312",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       0
     ],
-    "ShowValue": true
+    "ShowValue": true,
+    "IsTask": false,
+    "NeedShowFlash": false
   },
   "1313": {
     "Id": 1313,
@@ -264,10 +290,12 @@
     "Score": 100,
     "IconPath": "icon_goldenspy_1301",
     "PrefabName": "1313",
-    "luaCtrl": "GoldenSpyNormalItem",
+    "LuaCtrl": "GoldenSpyNormalItem",
     "Params": [
       1313
     ],
-    "ShowValue": true
+    "ShowValue": true,
+    "IsTask": false,
+    "NeedShowFlash": false
   }
 }

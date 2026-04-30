@@ -8,8 +8,14 @@
     "CostQty": 300,
     "OncePreferred": "[{\"503\":1}]",
     "TenTimesPreferred": "[{\"503\":10}]",
+    "GiveItems": "",
     "ATypeGroup": 101,
+    "ATypeUpProb": 0,
+    "ATypeUpShowProb": 0,
+    "AUpGuaranteeTimes": 0,
     "BTypeProb": 800,
+    "BTypeUpProb": 0,
+    "BTypeUpShowProb": 0,
     "BTypeGuaranteeProb": 5000
   },
   "4": {
@@ -21,8 +27,14 @@
     "CostQty": 1,
     "OncePreferred": "[{\"603\":300}]",
     "TenTimesPreferred": "[{\"603\":3000}]",
+    "GiveItems": "",
     "ATypeGroup": 102,
+    "ATypeUpProb": 0,
+    "ATypeUpShowProb": 0,
+    "AUpGuaranteeTimes": 0,
     "BTypeProb": 800,
+    "BTypeUpProb": 0,
+    "BTypeUpShowProb": 0,
     "BTypeGuaranteeProb": 10000
   },
   "1": {
@@ -53,6 +65,7 @@
     "CostQty": 1,
     "OncePreferred": "[{\"602\":300}]",
     "TenTimesPreferred": "[{\"602\":3000}]",
+    "GiveItems": "",
     "ATypeGroup": 102,
     "ATypeUpProb": 7500,
     "ATypeUpShowProb": 75,
@@ -67,11 +80,18 @@
     "Name": "GachaStorage.BeginnerCardPool.1",
     "DefaultId": 503,
     "DefaultQty": 1,
+    "CostId": 0,
+    "CostQty": 0,
     "OncePreferred": "[{\"503\":1}]",
     "TenTimesPreferred": "[{\"503\":10}]",
+    "GiveItems": "",
     "ATypeGroup": 101,
+    "ATypeUpProb": 0,
+    "ATypeUpShowProb": 0,
     "AUpGuaranteeTimes": 30,
     "BTypeProb": 800,
+    "BTypeUpProb": 0,
+    "BTypeUpShowProb": 0,
     "BTypeGuaranteeProb": 10000
   }
 }

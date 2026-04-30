@@ -1,70 +1,90 @@
 {
   "1000": {
     "Id": 1000,
+    "AffinityLevel_": 0,
+    "NeedExp": 0,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1000.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
-    "AffinityLevelStage": 1
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
+    "Effect": [],
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "1001": {
     "Id": 1001,
-    "AffinityLevel": 1,
+    "AffinityLevel_": 1,
     "NeedExp": 100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1001.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980001,
       99980101
     ],
-    "AffinityLevelStage": 1
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "1002": {
     "Id": 1002,
-    "AffinityLevel": 2,
+    "AffinityLevel_": 2,
     "NeedExp": 200,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1002.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980002,
       99980102
     ],
-    "AffinityLevelStage": 1
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "1003": {
     "Id": 1003,
-    "AffinityLevel": 3,
+    "AffinityLevel_": 3,
     "NeedExp": 300,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1003.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980003,
       99980103
     ],
-    "AffinityLevelStage": 1
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "1004": {
     "Id": 1004,
-    "AffinityLevel": 4,
+    "AffinityLevel_": 4,
     "NeedExp": 500,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1004.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980004,
       99980104
     ],
-    "AffinityLevelStage": 1
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "1005": {
     "Id": 1005,
-    "AffinityLevel": 5,
+    "AffinityLevel_": 5,
     "NeedExp": 900,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1005.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980004,
       99980104,
@@ -75,67 +95,81 @@
   },
   "1006": {
     "Id": 1006,
-    "AffinityLevel": 6,
+    "AffinityLevel_": 6,
     "NeedExp": 1000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1006.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980006,
       99980106,
       99980201
     ],
-    "AffinityLevelStage": 2
+    "AffinityLevelStage": 2,
+    "IsKeyAffinityLevel": false
   },
   "1007": {
     "Id": 1007,
-    "AffinityLevel": 7,
+    "AffinityLevel_": 7,
     "NeedExp": 1000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1007.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980007,
       99980107,
       99980201
     ],
-    "AffinityLevelStage": 2
+    "AffinityLevelStage": 2,
+    "IsKeyAffinityLevel": false
   },
   "1008": {
     "Id": 1008,
-    "AffinityLevel": 8,
+    "AffinityLevel_": 8,
     "NeedExp": 1000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1008.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980008,
       99980108,
       99980201
     ],
-    "AffinityLevelStage": 2
+    "AffinityLevelStage": 2,
+    "IsKeyAffinityLevel": false
   },
   "1009": {
     "Id": 1009,
-    "AffinityLevel": 9,
+    "AffinityLevel_": 9,
     "NeedExp": 1000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1009.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980009,
       99980109,
       99980201
     ],
-    "AffinityLevelStage": 2
+    "AffinityLevelStage": 2,
+    "IsKeyAffinityLevel": false
   },
   "1010": {
     "Id": 1010,
-    "AffinityLevel": 10,
+    "AffinityLevel_": 10,
     "NeedExp": 1000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1010.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980009,
       99980109,
@@ -146,67 +180,81 @@
   },
   "1011": {
     "Id": 1011,
-    "AffinityLevel": 11,
+    "AffinityLevel_": 11,
     "NeedExp": 2000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1011.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980011,
       99980111,
       99980202
     ],
-    "AffinityLevelStage": 3
+    "AffinityLevelStage": 3,
+    "IsKeyAffinityLevel": false
   },
   "1012": {
     "Id": 1012,
-    "AffinityLevel": 12,
+    "AffinityLevel_": 12,
     "NeedExp": 2000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1012.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980012,
       99980112,
       99980202
     ],
-    "AffinityLevelStage": 3
+    "AffinityLevelStage": 3,
+    "IsKeyAffinityLevel": false
   },
   "1013": {
     "Id": 1013,
-    "AffinityLevel": 13,
+    "AffinityLevel_": 13,
     "NeedExp": 2000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1013.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980013,
       99980113,
       99980202
     ],
-    "AffinityLevelStage": 3
+    "AffinityLevelStage": 3,
+    "IsKeyAffinityLevel": false
   },
   "1014": {
     "Id": 1014,
-    "AffinityLevel": 14,
+    "AffinityLevel_": 14,
     "NeedExp": 2000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1014.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980014,
       99980114,
       99980202
     ],
-    "AffinityLevelStage": 3
+    "AffinityLevelStage": 3,
+    "IsKeyAffinityLevel": false
   },
   "1015": {
     "Id": 1015,
-    "AffinityLevel": 15,
+    "AffinityLevel_": 15,
     "NeedExp": 2000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1015.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980014,
       99980114,
@@ -217,67 +265,81 @@
   },
   "1016": {
     "Id": 1016,
-    "AffinityLevel": 16,
+    "AffinityLevel_": 16,
     "NeedExp": 4000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1016.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980016,
       99980116,
       99980203
     ],
-    "AffinityLevelStage": 4
+    "AffinityLevelStage": 4,
+    "IsKeyAffinityLevel": false
   },
   "1017": {
     "Id": 1017,
-    "AffinityLevel": 17,
+    "AffinityLevel_": 17,
     "NeedExp": 4000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1017.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980017,
       99980117,
       99980203
     ],
-    "AffinityLevelStage": 4
+    "AffinityLevelStage": 4,
+    "IsKeyAffinityLevel": false
   },
   "1018": {
     "Id": 1018,
-    "AffinityLevel": 18,
+    "AffinityLevel_": 18,
     "NeedExp": 4000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1018.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980018,
       99980118,
       99980203
     ],
-    "AffinityLevelStage": 4
+    "AffinityLevelStage": 4,
+    "IsKeyAffinityLevel": false
   },
   "1019": {
     "Id": 1019,
-    "AffinityLevel": 19,
+    "AffinityLevel_": 19,
     "NeedExp": 4000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1019.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980019,
       99980119,
       99980203
     ],
-    "AffinityLevelStage": 4
+    "AffinityLevelStage": 4,
+    "IsKeyAffinityLevel": false
   },
   "1020": {
     "Id": 1020,
-    "AffinityLevel": 20,
+    "AffinityLevel_": 20,
     "NeedExp": 4000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1020.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980019,
       99980119,
@@ -288,67 +350,81 @@
   },
   "1021": {
     "Id": 1021,
-    "AffinityLevel": 21,
+    "AffinityLevel_": 21,
     "NeedExp": 8000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1021.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980021,
       99980121,
       99980204
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1022": {
     "Id": 1022,
-    "AffinityLevel": 22,
+    "AffinityLevel_": 22,
     "NeedExp": 8000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1022.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980022,
       99980122,
       99980204
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1023": {
     "Id": 1023,
-    "AffinityLevel": 23,
+    "AffinityLevel_": 23,
     "NeedExp": 8000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1023.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980023,
       99980123,
       99980204
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1024": {
     "Id": 1024,
-    "AffinityLevel": 24,
+    "AffinityLevel_": 24,
     "NeedExp": 8000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1024.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980024,
       99980124,
       99980204
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1025": {
     "Id": 1025,
-    "AffinityLevel": 25,
+    "AffinityLevel_": 25,
     "NeedExp": 8000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1025.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980024,
       99980124,
@@ -359,67 +435,81 @@
   },
   "1026": {
     "Id": 1026,
-    "AffinityLevel": 26,
+    "AffinityLevel_": 26,
     "NeedExp": 16000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1026.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980026,
       99980126,
       99980205
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1027": {
     "Id": 1027,
-    "AffinityLevel": 27,
+    "AffinityLevel_": 27,
     "NeedExp": 16000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1027.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980027,
       99980127,
       99980205
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1028": {
     "Id": 1028,
-    "AffinityLevel": 28,
+    "AffinityLevel_": 28,
     "NeedExp": 16000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1028.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980028,
       99980128,
       99980205
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1029": {
     "Id": 1029,
-    "AffinityLevel": 29,
+    "AffinityLevel_": 29,
     "NeedExp": 16000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1029.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980029,
       99980129,
       99980205
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1030": {
     "Id": 1030,
-    "AffinityLevel": 30,
+    "AffinityLevel_": 30,
     "NeedExp": 16000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1030.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980029,
       99980129,
@@ -430,588 +520,719 @@
   },
   "1031": {
     "Id": 1031,
-    "AffinityLevel": 31,
+    "AffinityLevel_": 31,
     "NeedExp": 19200,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1031.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980031,
       99980131,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1032": {
     "Id": 1032,
-    "AffinityLevel": 32,
+    "AffinityLevel_": 32,
     "NeedExp": 19200,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1032.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980032,
       99980132,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1033": {
     "Id": 1033,
-    "AffinityLevel": 33,
+    "AffinityLevel_": 33,
     "NeedExp": 19200,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1033.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980033,
       99980133,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1034": {
     "Id": 1034,
-    "AffinityLevel": 34,
+    "AffinityLevel_": 34,
     "NeedExp": 19200,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1034.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980034,
       99980134,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1035": {
     "Id": 1035,
-    "AffinityLevel": 35,
+    "AffinityLevel_": 35,
     "NeedExp": 19200,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1035.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980035,
       99980135,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1036": {
     "Id": 1036,
-    "AffinityLevel": 36,
+    "AffinityLevel_": 36,
     "NeedExp": 23000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1036.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980036,
       99980136,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1037": {
     "Id": 1037,
-    "AffinityLevel": 37,
+    "AffinityLevel_": 37,
     "NeedExp": 23000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1037.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980037,
       99980137,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1038": {
     "Id": 1038,
-    "AffinityLevel": 38,
+    "AffinityLevel_": 38,
     "NeedExp": 23000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1038.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980038,
       99980138,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1039": {
     "Id": 1039,
-    "AffinityLevel": 39,
+    "AffinityLevel_": 39,
     "NeedExp": 23000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1039.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980039,
       99980139,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1040": {
     "Id": 1040,
-    "AffinityLevel": 40,
+    "AffinityLevel_": 40,
     "NeedExp": 23000,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1040.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980040,
       99980140,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1041": {
     "Id": 1041,
-    "AffinityLevel": 41,
+    "AffinityLevel_": 41,
     "NeedExp": 27600,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1041.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980041,
       99980141,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1042": {
     "Id": 1042,
-    "AffinityLevel": 42,
+    "AffinityLevel_": 42,
     "NeedExp": 27600,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1042.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980042,
       99980142,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1043": {
     "Id": 1043,
-    "AffinityLevel": 43,
+    "AffinityLevel_": 43,
     "NeedExp": 27600,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1043.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980043,
       99980143,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1044": {
     "Id": 1044,
-    "AffinityLevel": 44,
+    "AffinityLevel_": 44,
     "NeedExp": 27600,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1044.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980044,
       99980144,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1045": {
     "Id": 1045,
-    "AffinityLevel": 45,
+    "AffinityLevel_": 45,
     "NeedExp": 27600,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1045.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980045,
       99980145,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1046": {
     "Id": 1046,
-    "AffinityLevel": 46,
+    "AffinityLevel_": 46,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1046.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980046,
       99980146,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1047": {
     "Id": 1047,
-    "AffinityLevel": 47,
+    "AffinityLevel_": 47,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1047.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980047,
       99980147,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1048": {
     "Id": 1048,
-    "AffinityLevel": 48,
+    "AffinityLevel_": 48,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1048.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980048,
       99980148,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1049": {
     "Id": 1049,
-    "AffinityLevel": 49,
+    "AffinityLevel_": 49,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1049.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980049,
       99980149,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1050": {
     "Id": 1050,
-    "AffinityLevel": 50,
+    "AffinityLevel_": 50,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1050.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1051": {
     "Id": 1051,
-    "AffinityLevel": 51,
+    "AffinityLevel_": 51,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1051.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1052": {
     "Id": 1052,
-    "AffinityLevel": 52,
+    "AffinityLevel_": 52,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1052.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1053": {
     "Id": 1053,
-    "AffinityLevel": 53,
+    "AffinityLevel_": 53,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1053.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1054": {
     "Id": 1054,
-    "AffinityLevel": 54,
+    "AffinityLevel_": 54,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1054.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1055": {
     "Id": 1055,
-    "AffinityLevel": 55,
+    "AffinityLevel_": 55,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1055.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1056": {
     "Id": 1056,
-    "AffinityLevel": 56,
+    "AffinityLevel_": 56,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1056.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1057": {
     "Id": 1057,
-    "AffinityLevel": 57,
+    "AffinityLevel_": 57,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1057.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1058": {
     "Id": 1058,
-    "AffinityLevel": 58,
+    "AffinityLevel_": 58,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1058.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1059": {
     "Id": 1059,
-    "AffinityLevel": 59,
+    "AffinityLevel_": 59,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1059.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1060": {
     "Id": 1060,
-    "AffinityLevel": 60,
+    "AffinityLevel_": 60,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1060.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1061": {
     "Id": 1061,
-    "AffinityLevel": 61,
+    "AffinityLevel_": 61,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1061.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1062": {
     "Id": 1062,
-    "AffinityLevel": 62,
+    "AffinityLevel_": 62,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1062.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1063": {
     "Id": 1063,
-    "AffinityLevel": 63,
+    "AffinityLevel_": 63,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1063.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1064": {
     "Id": 1064,
-    "AffinityLevel": 64,
+    "AffinityLevel_": 64,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1064.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1065": {
     "Id": 1065,
-    "AffinityLevel": 65,
+    "AffinityLevel_": 65,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1065.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1066": {
     "Id": 1066,
-    "AffinityLevel": 66,
+    "AffinityLevel_": 66,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1066.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "1067": {
     "Id": 1067,
-    "AffinityLevel": 67,
+    "AffinityLevel_": 67,
     "NeedExp": 33100,
     "TemplateId": 1,
     "AffinityLevelName": "AffinityLevel.1067.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99980050,
       99980150,
       99980206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2000": {
     "Id": 2000,
+    "AffinityLevel_": 0,
+    "NeedExp": 0,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2000.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
-    "AffinityLevelStage": 1
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
+    "Effect": [],
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "2001": {
     "Id": 2001,
-    "AffinityLevel": 1,
+    "AffinityLevel_": 1,
     "NeedExp": 100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2001.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880001,
       99880101
     ],
-    "AffinityLevelStage": 1
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "2002": {
     "Id": 2002,
-    "AffinityLevel": 2,
+    "AffinityLevel_": 2,
     "NeedExp": 200,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2002.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880002,
       99880102
     ],
-    "AffinityLevelStage": 1
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "2003": {
     "Id": 2003,
-    "AffinityLevel": 3,
+    "AffinityLevel_": 3,
     "NeedExp": 300,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2003.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880003,
       99880103
     ],
-    "AffinityLevelStage": 1
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "2004": {
     "Id": 2004,
-    "AffinityLevel": 4,
+    "AffinityLevel_": 4,
     "NeedExp": 500,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2004.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_01",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880004,
       99880104
     ],
-    "AffinityLevelStage": 1
+    "AffinityLevelStage": 1,
+    "IsKeyAffinityLevel": false
   },
   "2005": {
     "Id": 2005,
-    "AffinityLevel": 5,
+    "AffinityLevel_": 5,
     "NeedExp": 900,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2005.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880004,
       99880104,
@@ -1022,67 +1243,81 @@
   },
   "2006": {
     "Id": 2006,
-    "AffinityLevel": 6,
+    "AffinityLevel_": 6,
     "NeedExp": 1000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2006.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880006,
       99880106,
       99880201
     ],
-    "AffinityLevelStage": 2
+    "AffinityLevelStage": 2,
+    "IsKeyAffinityLevel": false
   },
   "2007": {
     "Id": 2007,
-    "AffinityLevel": 7,
+    "AffinityLevel_": 7,
     "NeedExp": 1000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2007.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880007,
       99880107,
       99880201
     ],
-    "AffinityLevelStage": 2
+    "AffinityLevelStage": 2,
+    "IsKeyAffinityLevel": false
   },
   "2008": {
     "Id": 2008,
-    "AffinityLevel": 8,
+    "AffinityLevel_": 8,
     "NeedExp": 1000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2008.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880008,
       99880108,
       99880201
     ],
-    "AffinityLevelStage": 2
+    "AffinityLevelStage": 2,
+    "IsKeyAffinityLevel": false
   },
   "2009": {
     "Id": 2009,
-    "AffinityLevel": 9,
+    "AffinityLevel_": 9,
     "NeedExp": 1000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2009.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_02",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880009,
       99880109,
       99880201
     ],
-    "AffinityLevelStage": 2
+    "AffinityLevelStage": 2,
+    "IsKeyAffinityLevel": false
   },
   "2010": {
     "Id": 2010,
-    "AffinityLevel": 10,
+    "AffinityLevel_": 10,
     "NeedExp": 1000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2010.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880009,
       99880109,
@@ -1093,67 +1328,81 @@
   },
   "2011": {
     "Id": 2011,
-    "AffinityLevel": 11,
+    "AffinityLevel_": 11,
     "NeedExp": 2000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2011.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880011,
       99880111,
       99880202
     ],
-    "AffinityLevelStage": 3
+    "AffinityLevelStage": 3,
+    "IsKeyAffinityLevel": false
   },
   "2012": {
     "Id": 2012,
-    "AffinityLevel": 12,
+    "AffinityLevel_": 12,
     "NeedExp": 2000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2012.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880012,
       99880112,
       99880202
     ],
-    "AffinityLevelStage": 3
+    "AffinityLevelStage": 3,
+    "IsKeyAffinityLevel": false
   },
   "2013": {
     "Id": 2013,
-    "AffinityLevel": 13,
+    "AffinityLevel_": 13,
     "NeedExp": 2000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2013.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880013,
       99880113,
       99880202
     ],
-    "AffinityLevelStage": 3
+    "AffinityLevelStage": 3,
+    "IsKeyAffinityLevel": false
   },
   "2014": {
     "Id": 2014,
-    "AffinityLevel": 14,
+    "AffinityLevel_": 14,
     "NeedExp": 2000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2014.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_03",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880014,
       99880114,
       99880202
     ],
-    "AffinityLevelStage": 3
+    "AffinityLevelStage": 3,
+    "IsKeyAffinityLevel": false
   },
   "2015": {
     "Id": 2015,
-    "AffinityLevel": 15,
+    "AffinityLevel_": 15,
     "NeedExp": 2000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2015.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880014,
       99880114,
@@ -1164,67 +1413,81 @@
   },
   "2016": {
     "Id": 2016,
-    "AffinityLevel": 16,
+    "AffinityLevel_": 16,
     "NeedExp": 4000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2016.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880016,
       99880116,
       99880203
     ],
-    "AffinityLevelStage": 4
+    "AffinityLevelStage": 4,
+    "IsKeyAffinityLevel": false
   },
   "2017": {
     "Id": 2017,
-    "AffinityLevel": 17,
+    "AffinityLevel_": 17,
     "NeedExp": 4000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2017.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880017,
       99880117,
       99880203
     ],
-    "AffinityLevelStage": 4
+    "AffinityLevelStage": 4,
+    "IsKeyAffinityLevel": false
   },
   "2018": {
     "Id": 2018,
-    "AffinityLevel": 18,
+    "AffinityLevel_": 18,
     "NeedExp": 4000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2018.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880018,
       99880118,
       99880203
     ],
-    "AffinityLevelStage": 4
+    "AffinityLevelStage": 4,
+    "IsKeyAffinityLevel": false
   },
   "2019": {
     "Id": 2019,
-    "AffinityLevel": 19,
+    "AffinityLevel_": 19,
     "NeedExp": 4000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2019.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_04",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880019,
       99880119,
       99880203
     ],
-    "AffinityLevelStage": 4
+    "AffinityLevelStage": 4,
+    "IsKeyAffinityLevel": false
   },
   "2020": {
     "Id": 2020,
-    "AffinityLevel": 20,
+    "AffinityLevel_": 20,
     "NeedExp": 4000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2020.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880019,
       99880119,
@@ -1235,67 +1498,81 @@
   },
   "2021": {
     "Id": 2021,
-    "AffinityLevel": 21,
+    "AffinityLevel_": 21,
     "NeedExp": 8000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2021.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880021,
       99880121,
       99880204
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2022": {
     "Id": 2022,
-    "AffinityLevel": 22,
+    "AffinityLevel_": 22,
     "NeedExp": 8000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2022.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880022,
       99880122,
       99880204
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2023": {
     "Id": 2023,
-    "AffinityLevel": 23,
+    "AffinityLevel_": 23,
     "NeedExp": 8000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2023.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880023,
       99880123,
       99880204
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2024": {
     "Id": 2024,
-    "AffinityLevel": 24,
+    "AffinityLevel_": 24,
     "NeedExp": 8000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2024.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880024,
       99880124,
       99880204
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2025": {
     "Id": 2025,
-    "AffinityLevel": 25,
+    "AffinityLevel_": 25,
     "NeedExp": 8000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2025.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880024,
       99880124,
@@ -1306,67 +1583,81 @@
   },
   "2026": {
     "Id": 2026,
-    "AffinityLevel": 26,
+    "AffinityLevel_": 26,
     "NeedExp": 16000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2026.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880026,
       99880126,
       99880205
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2027": {
     "Id": 2027,
-    "AffinityLevel": 27,
+    "AffinityLevel_": 27,
     "NeedExp": 16000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2027.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880027,
       99880127,
       99880205
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2028": {
     "Id": 2028,
-    "AffinityLevel": 28,
+    "AffinityLevel_": 28,
     "NeedExp": 16000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2028.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880028,
       99880128,
       99880205
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2029": {
     "Id": 2029,
-    "AffinityLevel": 29,
+    "AffinityLevel_": 29,
     "NeedExp": 16000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2029.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880029,
       99880129,
       99880205
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2030": {
     "Id": 2030,
-    "AffinityLevel": 30,
+    "AffinityLevel_": 30,
     "NeedExp": 16000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2030.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880029,
       99880129,
@@ -1377,520 +1668,631 @@
   },
   "2031": {
     "Id": 2031,
-    "AffinityLevel": 31,
+    "AffinityLevel_": 31,
     "NeedExp": 19200,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2031.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880031,
       99880131,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2032": {
     "Id": 2032,
-    "AffinityLevel": 32,
+    "AffinityLevel_": 32,
     "NeedExp": 19200,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2032.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880032,
       99880132,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2033": {
     "Id": 2033,
-    "AffinityLevel": 33,
+    "AffinityLevel_": 33,
     "NeedExp": 19200,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2033.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880033,
       99880133,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2034": {
     "Id": 2034,
-    "AffinityLevel": 34,
+    "AffinityLevel_": 34,
     "NeedExp": 19200,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2034.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880034,
       99880134,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2035": {
     "Id": 2035,
-    "AffinityLevel": 35,
+    "AffinityLevel_": 35,
     "NeedExp": 19200,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2035.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880035,
       99880135,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2036": {
     "Id": 2036,
-    "AffinityLevel": 36,
+    "AffinityLevel_": 36,
     "NeedExp": 23000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2036.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880036,
       99880136,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2037": {
     "Id": 2037,
-    "AffinityLevel": 37,
+    "AffinityLevel_": 37,
     "NeedExp": 23000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2037.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880037,
       99880137,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2038": {
     "Id": 2038,
-    "AffinityLevel": 38,
+    "AffinityLevel_": 38,
     "NeedExp": 23000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2038.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880038,
       99880138,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2039": {
     "Id": 2039,
-    "AffinityLevel": 39,
+    "AffinityLevel_": 39,
     "NeedExp": 23000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2039.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880039,
       99880139,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2040": {
     "Id": 2040,
-    "AffinityLevel": 40,
+    "AffinityLevel_": 40,
     "NeedExp": 23000,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2040.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880040,
       99880140,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2041": {
     "Id": 2041,
-    "AffinityLevel": 41,
+    "AffinityLevel_": 41,
     "NeedExp": 27600,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2041.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880041,
       99880141,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2042": {
     "Id": 2042,
-    "AffinityLevel": 42,
+    "AffinityLevel_": 42,
     "NeedExp": 27600,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2042.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880042,
       99880142,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2043": {
     "Id": 2043,
-    "AffinityLevel": 43,
+    "AffinityLevel_": 43,
     "NeedExp": 27600,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2043.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880043,
       99880143,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2044": {
     "Id": 2044,
-    "AffinityLevel": 44,
+    "AffinityLevel_": 44,
     "NeedExp": 27600,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2044.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880044,
       99880144,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2045": {
     "Id": 2045,
-    "AffinityLevel": 45,
+    "AffinityLevel_": 45,
     "NeedExp": 27600,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2045.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880045,
       99880145,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2046": {
     "Id": 2046,
-    "AffinityLevel": 46,
+    "AffinityLevel_": 46,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2046.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880046,
       99880146,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2047": {
     "Id": 2047,
-    "AffinityLevel": 47,
+    "AffinityLevel_": 47,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2047.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880047,
       99880147,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2048": {
     "Id": 2048,
-    "AffinityLevel": 48,
+    "AffinityLevel_": 48,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2048.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880048,
       99880148,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2049": {
     "Id": 2049,
-    "AffinityLevel": 49,
+    "AffinityLevel_": 49,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2049.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880049,
       99880149,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2050": {
     "Id": 2050,
-    "AffinityLevel": 50,
+    "AffinityLevel_": 50,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2050.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2051": {
     "Id": 2051,
-    "AffinityLevel": 51,
+    "AffinityLevel_": 51,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2051.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2052": {
     "Id": 2052,
-    "AffinityLevel": 52,
+    "AffinityLevel_": 52,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2052.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2053": {
     "Id": 2053,
-    "AffinityLevel": 53,
+    "AffinityLevel_": 53,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2053.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2054": {
     "Id": 2054,
-    "AffinityLevel": 54,
+    "AffinityLevel_": 54,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2054.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2055": {
     "Id": 2055,
-    "AffinityLevel": 55,
+    "AffinityLevel_": 55,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2055.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2056": {
     "Id": 2056,
-    "AffinityLevel": 56,
+    "AffinityLevel_": 56,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2056.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2057": {
     "Id": 2057,
-    "AffinityLevel": 57,
+    "AffinityLevel_": 57,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2057.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2058": {
     "Id": 2058,
-    "AffinityLevel": 58,
+    "AffinityLevel_": 58,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2058.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2059": {
     "Id": 2059,
-    "AffinityLevel": 59,
+    "AffinityLevel_": 59,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2059.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2060": {
     "Id": 2060,
-    "AffinityLevel": 60,
+    "AffinityLevel_": 60,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2060.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2061": {
     "Id": 2061,
-    "AffinityLevel": 61,
+    "AffinityLevel_": 61,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2061.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2062": {
     "Id": 2062,
-    "AffinityLevel": 62,
+    "AffinityLevel_": 62,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2062.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2063": {
     "Id": 2063,
-    "AffinityLevel": 63,
+    "AffinityLevel_": 63,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2063.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2064": {
     "Id": 2064,
-    "AffinityLevel": 64,
+    "AffinityLevel_": 64,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2064.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2065": {
     "Id": 2065,
-    "AffinityLevel": 65,
+    "AffinityLevel_": 65,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2065.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2066": {
     "Id": 2066,
-    "AffinityLevel": 66,
+    "AffinityLevel_": 66,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2066.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   },
   "2067": {
     "Id": 2067,
-    "AffinityLevel": 67,
+    "AffinityLevel_": 67,
     "NeedExp": 33100,
     "TemplateId": 2,
     "AffinityLevelName": "AffinityLevel.2067.1",
     "AffinityLevelIcon": "Icon/ZZZOther/zs_affinity_05",
+    "AffinityLevelRewardIcon": "",
+    "AffinityLevelRewardLockIcon": "",
     "Effect": [
       99880050,
       99880150,
       99880206
     ],
-    "AffinityLevelStage": 5
+    "AffinityLevelStage": 5,
+    "IsKeyAffinityLevel": false
   }
 }

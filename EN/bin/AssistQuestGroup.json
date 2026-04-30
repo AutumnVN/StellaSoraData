@@ -2,6 +2,8 @@
   "1001": {
     "Id": 1001,
     "AttributeId": 1,
+    "PreGroup": 0,
+    "ShowBuildId": 0,
     "Item1": 2,
     "Qty1": 600,
     "Item2": 503,
@@ -17,6 +19,7 @@
     "Id": 1002,
     "AttributeId": 1,
     "PreGroup": 1001,
+    "ShowBuildId": 0,
     "Item1": 2,
     "Qty1": 600,
     "Item2": 503,
@@ -32,6 +35,7 @@
     "Id": 1003,
     "AttributeId": 1,
     "PreGroup": 1002,
+    "ShowBuildId": 0,
     "Item1": 2,
     "Qty1": 600,
     "Item2": 503,
@@ -47,6 +51,7 @@
     "Id": 1004,
     "AttributeId": 1,
     "PreGroup": 1003,
+    "ShowBuildId": 0,
     "Item1": 2,
     "Qty1": 600,
     "Item2": 503,
@@ -70,11 +75,15 @@
     "Item3": 82001,
     "Qty3": 300,
     "Item4": 1,
-    "Qty4": 900000
+    "Qty4": 900000,
+    "Item5": 0,
+    "Qty5": 0
   },
   "2001": {
     "Id": 2001,
     "AttributeId": 2,
+    "PreGroup": 0,
+    "ShowBuildId": 0,
     "Item1": 2,
     "Qty1": 600,
     "Item2": 503,
@@ -90,6 +99,7 @@
     "Id": 2002,
     "AttributeId": 2,
     "PreGroup": 2001,
+    "ShowBuildId": 0,
     "Item1": 2,
     "Qty1": 600,
     "Item2": 503,
@@ -105,6 +115,7 @@
     "Id": 2003,
     "AttributeId": 2,
     "PreGroup": 2002,
+    "ShowBuildId": 0,
     "Item1": 2,
     "Qty1": 600,
     "Item2": 503,
@@ -120,6 +131,7 @@
     "Id": 2004,
     "AttributeId": 2,
     "PreGroup": 2003,
+    "ShowBuildId": 0,
     "Item1": 2,
     "Qty1": 600,
     "Item2": 503,
@@ -143,6 +155,8 @@
     "Item3": 82001,
     "Qty3": 300,
     "Item4": 1,
-    "Qty4": 900000
+    "Qty4": 900000,
+    "Item5": 0,
+    "Qty5": 0
   }
 }

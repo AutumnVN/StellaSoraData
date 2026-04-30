@@ -2,7 +2,9 @@
   "10001": {
     "Id": 10001,
     "LimitTimeWeight": true,
-    "LimitKilledWeight": true
+    "LimitKilledWeight": true,
+    "GoblinWeight": false,
+    "ContinuousKillingWeight": false
   },
   "10002": {
     "Id": 10002,
@@ -13,11 +15,14 @@
   },
   "10003": {
     "Id": 10003,
+    "LimitTimeWeight": false,
     "LimitKilledWeight": true,
-    "GoblinWeight": true
+    "GoblinWeight": true,
+    "ContinuousKillingWeight": false
   },
   "10004": {
     "Id": 10004,
+    "LimitTimeWeight": false,
     "LimitKilledWeight": true,
     "GoblinWeight": true,
     "ContinuousKillingWeight": true

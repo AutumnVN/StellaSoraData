@@ -5,7 +5,8 @@
     "Param": [
       13001
     ],
-    "Desc": "JumpTo.1.1"
+    "Desc": "JumpTo.1.1",
+    "Icon": ""
   },
   "2": {
     "Id": 2,
@@ -13,7 +14,8 @@
     "Param": [
       14101
     ],
-    "Desc": "JumpTo.2.1"
+    "Desc": "JumpTo.2.1",
+    "Icon": ""
   },
   "3": {
     "Id": 3,
@@ -36,24 +38,28 @@
   "6": {
     "Id": 6,
     "Type": 8,
+    "Param": [],
     "Desc": "JumpTo.6.1",
     "Icon": "Icon/JumpTo/btn_icon_system_Event"
   },
   "7": {
     "Id": 7,
     "Type": 9,
+    "Param": [],
     "Desc": "JumpTo.7.1",
     "Icon": "Icon/JumpTo/btn_icon_system_RegionBoss"
   },
   "8": {
     "Id": 8,
     "Type": 8,
+    "Param": [],
     "Desc": "JumpTo.8.1",
     "Icon": "Icon/JumpTo/btn_icon_system_ResidentShop"
   },
   "10": {
     "Id": 10,
     "Type": 8,
+    "Param": [],
     "Desc": "JumpTo.10.1",
     "Icon": "Icon/JumpTo/btn_main_system_recruit"
   },
@@ -149,11 +155,17 @@
   },
   "23": {
     "Id": 23,
-    "Desc": "JumpTo.23.1"
+    "Type": 0,
+    "Param": [],
+    "Desc": "JumpTo.23.1",
+    "Icon": ""
   },
   "24": {
     "Id": 24,
-    "Desc": "JumpTo.24.1"
+    "Type": 0,
+    "Param": [],
+    "Desc": "JumpTo.24.1",
+    "Icon": ""
   },
   "25": {
     "Id": 25,
@@ -434,12 +446,14 @@
   "55": {
     "Id": 55,
     "Type": 14,
+    "Param": [],
     "Desc": "JumpTo.55.1",
     "Icon": "Icon/JumpTo/btn_icon_system_TravelerDuel"
   },
   "552": {
     "Id": 552,
     "Type": 14,
+    "Param": [],
     "Desc": "JumpTo.552.1",
     "Icon": "Icon/JumpTo/btn_icon_system_TravelerDuel"
   },
@@ -500,6 +514,7 @@
   "62": {
     "Id": 62,
     "Type": 31,
+    "Param": [],
     "Desc": "JumpTo.62.1",
     "Icon": "Icon/JumpTo/btn_icon_system_MallGem"
   },

@@ -8,13 +8,16 @@
     "EnterEndTime": "2025-11-18T04:00:00+08:00",
     "EnterRes": "Icon/Banner/banner_swimsuit_m",
     "PanelId": 149,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "3",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"MiniGame\":[400000,1,110],\"Task\":[1010003,2,171],\"AVG\":[1010002,3,163],\"Store\":[1010004,4,172],\"Level\":[1010001,5,157]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "Swim",
     "CtrlName": "ActivitySwimCtrl",
     "RewardsShow": [
@@ -37,6 +40,7 @@
       1
     ],
     "DesText": "ActivityGroup.10100.1",
+    "BannerRes": "",
     "TabBgRes": "Icon/Banner/tab_activity_swimsuit",
     "TransitionId": 26
   },
@@ -49,13 +53,16 @@
     "EnterEndTime": "2025-12-09T11:00:00+08:00",
     "EnterRes": "Icon/Banner/banner_chap3activity",
     "PanelId": 187,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "3",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"MiniGame\":[400001,1,131],\"Task\":[1010103,2,351],\"Store\":[1010104,4,189],\"Level\":[1010101,5,186]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "10101",
     "CtrlName": "ActivityOurRegimentCtrl",
     "RewardsShow": [
@@ -78,7 +85,9 @@
       1
     ],
     "DesText": "ActivityGroup.10101.1",
-    "TabBgRes": "Icon/Banner/tab_activity_chap3activity"
+    "BannerRes": "",
+    "TabBgRes": "Icon/Banner/tab_activity_chap3activity",
+    "TransitionId": 0
   },
   "10102": {
     "Id": 10102,
@@ -89,13 +98,16 @@
     "EnterEndTime": "2025-12-30T04:00:00+08:00",
     "EnterRes": "Icon/Banner/banner_dream_m",
     "PanelId": 194,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "3",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"MiniGame\":[400002,1,352],\"Task\":[1010203,2,193],\"Store\":[1010204,4,191],\"Level\":[1010201,5,188]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "10102",
     "CtrlName": "ActivityDreamCtrl",
     "RewardsShow": [
@@ -118,7 +130,9 @@
       1
     ],
     "DesText": "ActivityGroup.10102.1",
-    "TabBgRes": "Icon/Banner/tab_activity_dream"
+    "BannerRes": "",
+    "TabBgRes": "Icon/Banner/tab_activity_dream",
+    "TransitionId": 0
   },
   "20101": {
     "Id": 20101,
@@ -129,13 +143,16 @@
     "EnterEndTime": "2026-01-13T10:59:59+08:00",
     "EnterRes": "Icon/Banner/banner_christmas_m",
     "PanelId": 371,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "3",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"MiniGame\":[400004,1,384],\"Task\":[2010103,2,381],\"AVG\":[2010102,3,382],\"Store\":[2010104,4,379],\"Level\":[2010101,5,369],\"OtherEnter1\":[600001,6,68]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "20101",
     "CtrlName": "ActivityChristmasCtrl",
     "RewardsShow": [
@@ -158,7 +175,9 @@
       1
     ],
     "DesText": "ActivityGroup.20101.1",
-    "TabBgRes": "Icon/Banner/tab_activity_christmas"
+    "BannerRes": "",
+    "TabBgRes": "Icon/Banner/tab_activity_christmas",
+    "TransitionId": 0
   },
   "10103": {
     "Id": 10103,
@@ -169,13 +188,16 @@
     "EnterEndTime": "2026-02-03T10:59:59+08:00",
     "EnterRes": "Icon/Banner/banner_chap6activity",
     "PanelId": 385,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "3",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"MiniGame\":[400003,1,367],\"Task\":[1010303,2,375],\"Store\":[1010304,4,373],\"Level\":[1010301,5,376]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "10103",
     "CtrlName": "ActivityMiracleCtrl",
     "RewardsShow": [
@@ -198,7 +220,9 @@
       1
     ],
     "DesText": "ActivityGroup.10103.1",
-    "TabBgRes": "Icon/Banner/tab_activity_chap6activity"
+    "BannerRes": "",
+    "TabBgRes": "Icon/Banner/tab_activity_chap6activity",
+    "TransitionId": 0
   },
   "10104": {
     "Id": 10104,
@@ -209,13 +233,16 @@
     "EnterEndTime": "2026-02-24T10:59:59+08:00",
     "EnterRes": "Icon/Banner/banner_Spring_m",
     "PanelId": 400,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "3",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"MiniGame\":[400006,1,399],\"Task\":[1010403,2,397],\"AVG\":[1010402,3,401],\"Store\":[1010404,4,396],\"Level\":[1010401,5,395]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "10104",
     "CtrlName": "ActivitySpringFestivalCtrl",
     "RewardsShow": [
@@ -238,6 +265,7 @@
       1
     ],
     "DesText": "ActivityGroup.10104.1",
+    "BannerRes": "",
     "TabBgRes": "Icon/Banner/tab_activity_Spring",
     "TransitionId": 38
   },
@@ -248,14 +276,18 @@
     "StartTime": "2026-02-17T12:00:00+08:00",
     "EndTime": "2026-02-24T10:59:59+08:00",
     "EnterEndTime": "2026-02-27T03:59:59+08:00",
+    "EnterRes": "",
     "PanelId": 360,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "5",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"Task\":[3010102,2,361],\"Store\":[3010103,4,358],\"Level\":[3010101,5,0]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "30101",
     "CtrlName": "ActivityBreakOutCtrl",
     "RewardsShow": [
@@ -268,7 +300,9 @@
       1
     ],
     "DesText": "ActivityGroup.30101.1",
-    "TabBgRes": "Icon/Banner/tab_activity_marble"
+    "BannerRes": "",
+    "TabBgRes": "Icon/Banner/tab_activity_marble",
+    "TransitionId": 0
   },
   "10105": {
     "Id": 10105,
@@ -279,13 +313,16 @@
     "EnterEndTime": "2026-03-17T10:59:59+08:00",
     "EnterRes": "Icon/Banner/banner_winternight_m",
     "PanelId": 405,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "3",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"MiniGame\":[400005,1,386],\"Task\":[1010503,2,408],\"AVG\":[1010502,3,406],\"Store\":[1010504,4,407],\"Level\":[1010501,5,409]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "10105",
     "CtrlName": "ActivityWinterNightCtrl",
     "RewardsShow": [
@@ -308,6 +345,7 @@
       1
     ],
     "DesText": "ActivityGroup.10105.1",
+    "BannerRes": "",
     "TabBgRes": "Icon/Banner/tab_activity_winternight",
     "TransitionId": 39
   },
@@ -320,13 +358,16 @@
     "EnterEndTime": "2026-04-07T10:59:59+08:00",
     "EnterRes": "Icon/Banner/banner_postal_m_lang",
     "PanelId": 413,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "3",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"MiniGame\":[400007,1,402],\"Task\":[1010603,2,412],\"AVG\":[1010602,3,414],\"Store\":[1010604,4,411],\"Level\":[1010601,5,410]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "10106",
     "CtrlName": "ActivityPostalCtrl",
     "RewardsShow": [
@@ -349,6 +390,7 @@
       1
     ],
     "DesText": "ActivityGroup.10106.1",
+    "BannerRes": "",
     "TabBgRes": "Icon/Banner/tab_activity_postal_lang",
     "TransitionId": 40
   },
@@ -361,13 +403,16 @@
     "EnterEndTime": "2026-05-08T10:59:59+08:00",
     "EnterRes": "Icon/Banner/banner_solodance_m_lang",
     "PanelId": 430,
+    "Prologue": [],
     "PreLimit": 1,
     "LimitParam": "3",
     "StartCondType": 71,
     "StartCondParams": [
       5
     ],
+    "CG": "",
     "Enter": "{\"MiniGame\":[400008,1,417],\"Task\":[2010203,2,426],\"Store\":[2010204,4,427],\"Level\":[2010201,5,425],\"OtherEnter1\":[800002,6,228],\"OtherEnter2\":[600002,7,68]}",
+    "MultipleEnter": "",
     "UIAssetsPrefab": "20102",
     "CtrlName": "ActivitySoloDanceCtrl",
     "RewardsShow": [
@@ -391,6 +436,8 @@
       1
     ],
     "DesText": "ActivityGroup.20102.1",
-    "TabBgRes": "Icon/Banner/tab_activity_solodance_lang"
+    "BannerRes": "",
+    "TabBgRes": "Icon/Banner/tab_activity_solodance_lang",
+    "TransitionId": 0
   }
 }

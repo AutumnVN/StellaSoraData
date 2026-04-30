@@ -6,7 +6,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1000201": {
     "Id": 1000201,
@@ -15,7 +17,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1000301": {
     "Id": 1000301,
@@ -24,7 +28,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 3
+    "MonsterLv": 3,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1000401": {
     "Id": 1000401,
@@ -33,7 +39,9 @@
     "Theme": 7,
     "BGM": "forest_avg_stop_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop_avg_none",
-    "MonsterLv": 4
+    "MonsterLv": 4,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1000501": {
     "Id": 1000501,
@@ -42,7 +50,9 @@
     "Theme": 7,
     "BGM": "forest_combatBoss_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1000601": {
     "Id": 1000601,
@@ -51,7 +61,9 @@
     "Theme": 7,
     "BGM": "forestRuins_explore_setState",
     "LeaveTriggerEvent": "amb_forestRuins_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1000701": {
     "Id": 1000701,
@@ -60,7 +72,9 @@
     "Theme": 7,
     "BGM": "forestRuins_explore_setState",
     "LeaveTriggerEvent": "amb_forestRuins_all_stop",
-    "MonsterLv": 7
+    "MonsterLv": 7,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1000801": {
     "Id": 1000801,
@@ -69,7 +83,9 @@
     "Theme": 7,
     "BGM": "forestRuins_explore_setState",
     "LeaveTriggerEvent": "amb_forestRuins_all_stop",
-    "MonsterLv": 8
+    "MonsterLv": 8,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1000901": {
     "Id": 1000901,
@@ -78,46 +94,64 @@
     "Theme": 7,
     "BGM": "forestRuins_combatBoss_setState",
     "LeaveTriggerEvent": "amb_forestRuins_all_stop",
-    "MonsterLv": 9
+    "MonsterLv": 9,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1100102": {
     "Id": 1100102,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_1",
     "ConfigPrefabName": "Countryside_Main_1",
     "Theme": 1,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 10
+    "MonsterLv": 10,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1100202": {
     "Id": 1100202,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_2",
     "ConfigPrefabName": "Countryside_Main_2",
     "Theme": 1,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 10
+    "MonsterLv": 10,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1100302": {
     "Id": 1100302,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_3",
     "ConfigPrefabName": "Countryside_Main_3",
     "Theme": 1,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 10
+    "MonsterLv": 10,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1100401": {
     "Id": 1100401,
     "SceneName": "Levels/Main/ForestRuins/Forest_Ruins_Main_2_4",
     "ConfigPrefabName": "Countryside_Main_4",
     "Theme": 7,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_forestRuins_all_stop",
-    "MonsterLv": 10
+    "MonsterLv": 10,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1200102": {
     "Id": 1200102,
     "SceneName": "Levels/Main/Desert/Desert_Main_0_5",
     "ConfigPrefabName": "Desert_Main_0_5",
     "Theme": 7,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300102": {
     "Id": 1300102,
@@ -126,7 +160,9 @@
     "Theme": 3,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300202": {
     "Id": 1300202,
@@ -135,7 +171,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300301": {
     "Id": 1300301,
@@ -144,7 +182,9 @@
     "Theme": 4,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300405": {
     "Id": 1300405,
@@ -153,7 +193,9 @@
     "Theme": 6,
     "BGM": "waterBridge_explore_setState",
     "LeaveTriggerEvent": "amb_waterBridge_all_stop",
-    "MonsterLv": 12
+    "MonsterLv": 12,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300511": {
     "Id": 1300511,
@@ -162,7 +204,9 @@
     "Theme": 105,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 12
+    "MonsterLv": 12,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300512": {
     "Id": 1300512,
@@ -171,7 +215,9 @@
     "Theme": 105,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 12
+    "MonsterLv": 12,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300513": {
     "Id": 1300513,
@@ -180,7 +226,9 @@
     "Theme": 105,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 12
+    "MonsterLv": 12,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300514": {
     "Id": 1300514,
@@ -189,7 +237,9 @@
     "Theme": 105,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 12
+    "MonsterLv": 12,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300515": {
     "Id": 1300515,
@@ -198,7 +248,9 @@
     "Theme": 105,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 12
+    "MonsterLv": 12,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300516": {
     "Id": 1300516,
@@ -207,7 +259,9 @@
     "Theme": 105,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 12
+    "MonsterLv": 12,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300517": {
     "Id": 1300517,
@@ -216,7 +270,9 @@
     "Theme": 105,
     "BGM": "monster_mon50521_setState",
     "LeaveTriggerEvent": "monster_mon50521_exitState",
-    "MonsterLv": 12
+    "MonsterLv": 12,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300518": {
     "Id": 1300518,
@@ -225,7 +281,9 @@
     "Theme": 7,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 12
+    "MonsterLv": 12,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300601": {
     "Id": 1300601,
@@ -234,7 +292,9 @@
     "Theme": 6,
     "BGM": "waterBridge_explore_setState",
     "LeaveTriggerEvent": "amb_waterBridge_all_stop",
-    "MonsterLv": 16
+    "MonsterLv": 16,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300701": {
     "Id": 1300701,
@@ -243,7 +303,9 @@
     "Theme": 6,
     "BGM": "waterBridge_explore_setState",
     "LeaveTriggerEvent": "amb_waterBridge_all_stop",
-    "MonsterLv": 16
+    "MonsterLv": 16,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400103": {
     "Id": 1400103,
@@ -252,7 +314,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 16
+    "MonsterLv": 16,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400202": {
     "Id": 1400202,
@@ -261,7 +325,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 16
+    "MonsterLv": 16,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400301": {
     "Id": 1400301,
@@ -270,7 +336,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 24
+    "MonsterLv": 24,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400402": {
     "Id": 1400402,
@@ -279,7 +347,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 24
+    "MonsterLv": 24,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400501": {
     "Id": 1400501,
@@ -288,7 +358,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 24
+    "MonsterLv": 24,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400602": {
     "Id": 1400602,
@@ -297,7 +369,9 @@
     "Theme": 10,
     "BGM": "DarkForest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 30
+    "MonsterLv": 30,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1010101": {
     "Id": 1010101,
@@ -306,7 +380,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1010201": {
     "Id": 1010201,
@@ -315,7 +391,9 @@
     "Theme": 4,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1020101": {
     "Id": 1020101,
@@ -324,7 +402,9 @@
     "Theme": 5,
     "BGM": "waterBridge_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1020201": {
     "Id": 1020201,
@@ -333,7 +413,9 @@
     "Theme": 6,
     "BGM": "waterBridge_explore_setState",
     "LeaveTriggerEvent": "amb_waterBridge_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1020301": {
     "Id": 1020301,
@@ -342,7 +424,9 @@
     "Theme": 3,
     "BGM": "waterBridge_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1030101": {
     "Id": 1030101,
@@ -351,7 +435,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 3
+    "MonsterLv": 3,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1030201": {
     "Id": 1030201,
@@ -360,7 +446,9 @@
     "Theme": 9,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 3
+    "MonsterLv": 3,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1040101": {
     "Id": 1040101,
@@ -369,7 +457,9 @@
     "Theme": 17,
     "BGM": "DarkForest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 4
+    "MonsterLv": 4,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1040201": {
     "Id": 1040201,
@@ -378,7 +468,9 @@
     "Theme": 10,
     "BGM": "DarkForest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 4
+    "MonsterLv": 4,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1050101": {
     "Id": 1050101,
@@ -387,7 +479,9 @@
     "Theme": 18,
     "BGM": "roguelike_combatNomal_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1050102": {
     "Id": 1050102,
@@ -396,7 +490,9 @@
     "Theme": 18,
     "BGM": "roguelike_combatNomal_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1050103": {
     "Id": 1050103,
@@ -405,7 +501,9 @@
     "Theme": 18,
     "BGM": "roguelike_combatNomal_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1050201": {
     "Id": 1050201,
@@ -414,7 +512,9 @@
     "Theme": 13,
     "BGM": "company_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1050301": {
     "Id": 1050301,
@@ -423,7 +523,9 @@
     "Theme": 12,
     "BGM": "fengNiao_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1060101": {
     "Id": 1060101,
@@ -432,7 +534,9 @@
     "Theme": 11,
     "BGM": "garden_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1060201": {
     "Id": 1060201,
@@ -441,7 +545,9 @@
     "Theme": 19,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1060301": {
     "Id": 1060301,
@@ -450,7 +556,9 @@
     "Theme": 14,
     "BGM": "fengCao_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1060401": {
     "Id": 1060401,
@@ -459,7 +567,9 @@
     "Theme": 441,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1060501": {
     "Id": 1060501,
@@ -469,7 +579,8 @@
     "BGM": "amb_coast_combatBoss_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
     "MonsterLv": 6,
-    "IntroCutscene": "fx_m30931_base_born"
+    "IntroCutscene": "fx_m30931_base_born",
+    "LevelScript": ""
   },
   "1070101": {
     "Id": 1070101,
@@ -478,7 +589,9 @@
     "Theme": 20,
     "BGM": "company_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1070201": {
     "Id": 1070201,
@@ -487,7 +600,9 @@
     "Theme": 21,
     "BGM": "company_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1070301": {
     "Id": 1070301,
@@ -497,7 +612,8 @@
     "BGM": "roguelike_combatMedusa_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
     "MonsterLv": 6,
-    "IntroCutscene": "fx_m70001_base_boss_bron_tl"
+    "IntroCutscene": "fx_m70001_base_boss_bron_tl",
+    "LevelScript": ""
   },
   "1070302": {
     "Id": 1070302,
@@ -507,7 +623,8 @@
     "BGM": "roguelike_combatMedusa2_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
     "MonsterLv": 6,
-    "IntroCutscene": "fx_m70001_base_boss_change_tl"
+    "IntroCutscene": "fx_m70001_base_boss_change_tl",
+    "LevelScript": ""
   },
   "1060505": {
     "Id": 1060505,
@@ -516,7 +633,9 @@
     "Theme": 436,
     "BGM": "amb_Duona_combatNormal_setState",
     "LeaveTriggerEvent": "amb_Duona_all_stop",
-    "MonsterLv": 7
+    "MonsterLv": 7,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1060506": {
     "Id": 1060506,
@@ -525,42 +644,64 @@
     "Theme": 436,
     "BGM": "amb_Duona_combatBoss_setState",
     "LeaveTriggerEvent": "amb_Duona_all_stop",
-    "MonsterLv": 7
+    "MonsterLv": 7,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1100101": {
     "Id": 1100101,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_1_Prototype",
+    "ConfigPrefabName": "",
     "Theme": 1,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1100201": {
     "Id": 1100201,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_2_Prototype",
+    "ConfigPrefabName": "",
     "Theme": 1,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1100301": {
     "Id": 1100301,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_3_1_Prototype",
+    "ConfigPrefabName": "",
     "Theme": 1,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1100501": {
     "Id": 1100501,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_5_Prototype",
+    "ConfigPrefabName": "",
     "Theme": 1,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1100601": {
     "Id": 1100601,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_6_Prototype",
+    "ConfigPrefabName": "",
     "Theme": 1,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300101": {
     "Id": 1300101,
@@ -569,7 +710,9 @@
     "Theme": 3,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300103": {
     "Id": 1300103,
@@ -578,7 +721,9 @@
     "Theme": 3,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300104": {
     "Id": 1300104,
@@ -587,7 +732,9 @@
     "Theme": 3,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300201": {
     "Id": 1300201,
@@ -596,7 +743,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300203": {
     "Id": 1300203,
@@ -605,7 +754,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300204": {
     "Id": 1300204,
@@ -614,7 +765,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300302": {
     "Id": 1300302,
@@ -623,7 +776,9 @@
     "Theme": 4,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300401": {
     "Id": 1300401,
@@ -632,7 +787,9 @@
     "Theme": 6,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300402": {
     "Id": 1300402,
@@ -641,7 +798,9 @@
     "Theme": 6,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300403": {
     "Id": 1300403,
@@ -650,7 +809,9 @@
     "Theme": 6,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300404": {
     "Id": 1300404,
@@ -659,7 +820,9 @@
     "Theme": 6,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300406": {
     "Id": 1300406,
@@ -668,7 +831,9 @@
     "Theme": 6,
     "BGM": "waterBridge_explore_setState",
     "LeaveTriggerEvent": "amb_waterBridge_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300501": {
     "Id": 1300501,
@@ -677,7 +842,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300502": {
     "Id": 1300502,
@@ -686,7 +853,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1300121": {
     "Id": 1300121,
@@ -695,7 +864,9 @@
     "Theme": 3,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 6
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400101": {
     "Id": 1400101,
@@ -704,7 +875,9 @@
     "Theme": 7,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400102": {
     "Id": 1400102,
@@ -713,7 +886,9 @@
     "Theme": 7,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400201": {
     "Id": 1400201,
@@ -722,7 +897,9 @@
     "Theme": 7,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400203": {
     "Id": 1400203,
@@ -731,7 +908,9 @@
     "Theme": 7,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400401": {
     "Id": 1400401,
@@ -740,7 +919,9 @@
     "Theme": 7,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400502": {
     "Id": 1400502,
@@ -749,7 +930,9 @@
     "Theme": 7,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1400601": {
     "Id": 1400601,
@@ -758,7 +941,9 @@
     "Theme": 7,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1060102": {
     "Id": 1060102,
@@ -767,7 +952,9 @@
     "Theme": 13,
     "BGM": "DarkForest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1070102": {
     "Id": 1070102,
@@ -776,7 +963,9 @@
     "Theme": 5,
     "BGM": "waterBridge_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1070202": {
     "Id": 1070202,
@@ -785,7 +974,9 @@
     "Theme": 13,
     "BGM": "company_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "1070103": {
     "Id": 1070103,
@@ -794,16 +985,20 @@
     "Theme": 4,
     "BGM": "company_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "6001101": {
     "Id": 6001101,
     "SceneName": "Levels/StoryActivity/StoryActivity_9/StoryActivity_9_Boss_HaSaNa",
     "ConfigPrefabName": "Bossrush_HaSaNa",
     "Theme": 1,
+    "BGM": "",
     "LeaveTriggerEvent": "amb_countryside_all_stop",
     "MonsterLv": 1,
-    "IntroCutscene": "fx_m30931_base_born"
+    "IntroCutscene": "fx_m30931_base_born",
+    "LevelScript": ""
   },
   "6001102": {
     "Id": 6001102,
@@ -812,7 +1007,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "6001103": {
     "Id": 6001103,
@@ -821,7 +1018,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "6001104": {
     "Id": 6001104,
@@ -830,7 +1029,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "6002101": {
     "Id": 6002101,
@@ -839,7 +1040,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "6003101": {
     "Id": 6003101,
@@ -848,7 +1051,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "6004101": {
     "Id": 6004101,
@@ -857,7 +1062,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "6005101": {
     "Id": 6005101,
@@ -866,7 +1073,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "6006101": {
     "Id": 6006101,
@@ -875,7 +1084,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "6007101": {
     "Id": 6007101,
@@ -884,55 +1095,97 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "7001001": {
     "Id": 7001001,
     "SceneName": "Levels/TravelerDuel/TravelerDuel_01/TravelerDuel_01_MaoYan",
     "ConfigPrefabName": "TravelerDuel_01_MaoYan",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "7001002": {
     "Id": 7001002,
     "SceneName": "Levels/TravelerDuel/TravelerDuel_01/TravelerDuel_01_MaoYan",
     "ConfigPrefabName": "TravelersDuel_Boss_MaoYan_Test02",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "7001003": {
     "Id": 7001003,
     "SceneName": "Levels/TravelerDuel/TravelerDuel_01/TravelerDuel_01_MaoYan",
     "ConfigPrefabName": "TravelersDuel_Boss_MaoYan_Test03",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "7001004": {
     "Id": 7001004,
     "SceneName": "Levels/TravelerDuel/TravelerDuel_01/TravelerDuel_01_MaoYan",
     "ConfigPrefabName": "TravelerDuel_01_MaoYan_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "7001011": {
     "Id": 7001011,
     "SceneName": "Levels/TravelerDuel/TravelerDuel_03/TravelerDuel_03_HuaYuan",
     "ConfigPrefabName": "TravelerDuel_03_HuaYuan",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "7001012": {
     "Id": 7001012,
     "SceneName": "Levels/TravelerDuel/TravelerDuel_03/TravelerDuel_03_HuaYuan",
     "ConfigPrefabName": "TravelerDuel_03_HuaYuan_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "7001021": {
     "Id": 7001021,
     "SceneName": "Levels/TravelerDuel/TravelerDuel_04/TravelerDuel_04_Huochui",
     "ConfigPrefabName": "TravelerDuel_04_Huochui",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "7001051": {
     "Id": 7001051,
     "SceneName": "Levels/TravelerDuel/TravelerDuel_05/TravelerDuel_05_WuYu",
     "ConfigPrefabName": "TravelerDuel_05_WuYu",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001001": {
     "Id": 8001001,
@@ -941,7 +1194,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001002": {
     "Id": 8001002,
@@ -950,7 +1205,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001003": {
     "Id": 8001003,
@@ -959,7 +1216,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001004": {
     "Id": 8001004,
@@ -968,7 +1227,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001005": {
     "Id": 8001005,
@@ -977,7 +1238,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001006": {
     "Id": 8001006,
@@ -986,7 +1249,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001007": {
     "Id": 8001007,
@@ -995,7 +1260,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001008": {
     "Id": 8001008,
@@ -1004,7 +1271,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001009": {
     "Id": 8001009,
@@ -1013,7 +1282,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001010": {
     "Id": 8001010,
@@ -1022,7 +1293,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001011": {
     "Id": 8001011,
@@ -1031,7 +1304,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001012": {
     "Id": 8001012,
@@ -1040,7 +1315,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001013": {
     "Id": 8001013,
@@ -1049,7 +1326,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001014": {
     "Id": 8001014,
@@ -1058,7 +1337,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "8001015": {
     "Id": 8001015,
@@ -1067,7 +1348,9 @@
     "Theme": 6,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999777": {
     "Id": 9999777,
@@ -1076,7 +1359,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999711": {
     "Id": 9999711,
@@ -1085,7 +1370,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999712": {
     "Id": 9999712,
@@ -1094,7 +1381,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999721": {
     "Id": 9999721,
@@ -1103,7 +1392,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999731": {
     "Id": 9999731,
@@ -1112,7 +1403,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999732": {
     "Id": 9999732,
@@ -1121,7 +1414,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999741": {
     "Id": 9999741,
@@ -1130,7 +1425,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999799": {
     "Id": 9999799,
@@ -1139,7 +1436,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999798": {
     "Id": 9999798,
@@ -1148,7 +1447,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999797": {
     "Id": 9999797,
@@ -1157,7 +1458,9 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999781": {
     "Id": 9999781,
@@ -1166,7 +1469,9 @@
     "Theme": 18,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999782": {
     "Id": 9999782,
@@ -1175,7 +1480,9 @@
     "Theme": 18,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999783": {
     "Id": 9999783,
@@ -1184,7 +1491,9 @@
     "Theme": 18,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999784": {
     "Id": 9999784,
@@ -1193,7 +1502,9 @@
     "Theme": 13,
     "BGM": "company_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 5
+    "MonsterLv": 5,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999785": {
     "Id": 9999785,
@@ -1202,171 +1513,273 @@
     "Theme": 12,
     "BGM": "fengNiao_explore_setState",
     "LeaveTriggerEvent": "amb_company_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999101": {
     "Id": 9999101,
     "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_Battle_010_A_01",
     "ConfigPrefabName": "Roguelike_Battle_010_A_01",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999894": {
     "Id": 9999894,
     "SceneName": "Levels/Roguelike/Roguelike_3/Roguelike_3_Boss_002",
     "ConfigPrefabName": "Roguelike_3_Boss_Talou",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999010": {
     "Id": 9999010,
     "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_Battle_002_A_04",
     "ConfigPrefabName": "Roguelike_Battle_002_A_04",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999011": {
     "Id": 9999011,
     "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_Battle_002_A_04_Mir",
     "ConfigPrefabName": "Roguelike_Battle_002_A_04_Mir",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999020": {
     "Id": 9999020,
     "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_Battle_002_B_04",
     "ConfigPrefabName": "Roguelike_Battle_002_B_04",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999021": {
     "Id": 9999021,
     "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_Battle_002_B_04_Mir",
     "ConfigPrefabName": "Roguelike_Battle_002_B_04_Mir",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999030": {
     "Id": 9999030,
     "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_Cattle_002_C_04",
     "ConfigPrefabName": "Roguelike_Battle_002_C_04",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999031": {
     "Id": 9999031,
     "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_Cattle_002_C_04_Mir",
     "ConfigPrefabName": "Roguelike_Battle_002_C_04_Mir",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999040": {
     "Id": 9999040,
     "SceneName": "Levels/Roguelike/Roguelike_4/Roguelike_4_Boss_003",
     "ConfigPrefabName": "Roguelike_4_Boss_JinDuanLiRong",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999041": {
     "Id": 9999041,
     "SceneName": "Levels/Roguelike/Roguelike_4/Roguelike_4_Boss_002",
     "ConfigPrefabName": "Roguelike_4_Boss_TaiDeng_Lv1",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999042": {
     "Id": 9999042,
     "SceneName": "Levels/Roguelike/Roguelike_4/Roguelike_4_Boss_001",
     "ConfigPrefabName": "Roguelike_4_Boss_FengShanJi",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999043": {
     "Id": 9999043,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_004_FengMeiGuai",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999044": {
     "Id": 9999044,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_004_BingXiangGuai",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999045": {
     "Id": 9999045,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_004_BingXiangGuai_LD",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999900": {
-    "Id": 9999900
+    "Id": 9999900,
+    "SceneName": "",
+    "ConfigPrefabName": "",
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 0,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999901": {
     "Id": 9999901,
     "SceneName": "Levels/Main/Test/BattleTestBed",
     "ConfigPrefabName": "BattleTestBed",
     "Theme": 3,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999902": {
     "Id": 9999902,
     "SceneName": "Levels/Test/BattleTest_01",
     "ConfigPrefabName": "BattleTest_01",
     "Theme": 2,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999903": {
     "Id": 9999903,
     "SceneName": "Levels/Test/BattleTest_02",
     "ConfigPrefabName": "BattleTest_02",
     "Theme": 7,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999904": {
     "Id": 9999904,
     "SceneName": "Levels/Test/BattleTest_03",
     "ConfigPrefabName": "BattleTest_03",
     "Theme": 7,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999905": {
     "Id": 9999905,
     "SceneName": "Levels/Main/Test/BattleTestBed",
     "ConfigPrefabName": "BattleTestBedComboClip",
     "Theme": 3,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999906": {
     "Id": 9999906,
     "SceneName": "Levels/Test/BattleTest_04",
     "ConfigPrefabName": "BattleTest_04",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999907": {
     "Id": 9999907,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_003",
     "ConfigPrefabName": "Roguelike_MiniBoss_003_TiaoWuJi_E",
     "Theme": 7,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999908": {
     "Id": 9999908,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_ShuangShaYuFaShi",
     "Theme": 7,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999909": {
     "Id": 9999909,
     "SceneName": "Levels/Test/Gear_Test_Level",
     "ConfigPrefabName": "Gear_Test_Level",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999910": {
     "Id": 9999910,
@@ -1375,48 +1788,75 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999911": {
     "Id": 9999911,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Battle_011",
     "ConfigPrefabName": "Daily_Weapon_2",
     "Theme": 7,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999912": {
     "Id": 9999912,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Battle_011",
     "ConfigPrefabName": "Daily_Weapon_3",
     "Theme": 7,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999913": {
     "Id": 9999913,
     "SceneName": "Levels/Test/BattleTest_05",
     "ConfigPrefabName": "BattleTest_05",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999914": {
     "Id": 9999914,
     "SceneName": "Levels/Test/Trap_Test_Level",
     "ConfigPrefabName": "Trap_Test_Level",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999915": {
     "Id": 9999915,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_001",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_001_DaShiLaiMu_test",
-    "MonsterLv": 2
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999916": {
     "Id": 9999916,
     "SceneName": "Levels/Test/BattleTest_01",
     "ConfigPrefabName": "test_Audio_Bug",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999917": {
     "Id": 9999917,
@@ -1425,186 +1865,284 @@
     "Theme": 6,
     "BGM": "waterBridge_explore_setState",
     "LeaveTriggerEvent": "amb_waterBridge_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999920": {
     "Id": 9999920,
     "SceneName": "Levels/Main/Forest/Forest_Main_1_3",
     "ConfigPrefabName": "Daily_LvRen_1",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999921": {
     "Id": 9999921,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Entrance_001",
     "ConfigPrefabName": "Template_Roguelike_2_Entrance_001",
+    "Theme": 0,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999922": {
     "Id": 9999922,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Rest_001",
     "ConfigPrefabName": "Template_Roguelike_2_Rest_001",
+    "Theme": 0,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999923": {
     "Id": 9999923,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Shop_001",
     "ConfigPrefabName": "Template_Roguelike_2_Shop_001",
+    "Theme": 0,
     "BGM": "roguelike_shop_SetState",
     "LeaveTriggerEvent": "amb_roguelike_shop_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999924": {
     "Id": 9999924,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Reward_001",
     "ConfigPrefabName": "Roguelike_2_Reward_001",
+    "Theme": 0,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999925": {
     "Id": 9999925,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Reward_001",
     "ConfigPrefabName": "Roguelike_2_Quest_001",
+    "Theme": 0,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999926": {
     "Id": 9999926,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Reward_001",
     "ConfigPrefabName": "Roguelike_2_Upgrade_001",
+    "Theme": 0,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999927": {
     "Id": 9999927,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Reward_001",
     "ConfigPrefabName": "Roguelike_2_Gamble_001",
+    "Theme": 0,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999928": {
     "Id": 9999928,
     "SceneName": "Levels/Test/BackYard_01",
     "ConfigPrefabName": "BackYard_01",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999929": {
     "Id": 9999929,
     "SceneName": "Levels/Main/Forest/Forest_Main_1_3",
     "ConfigPrefabName": "Daily_LvRen_1",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999930": {
     "Id": 9999930,
     "SceneName": "Levels/Main/Forest/Forest_Main_1_3",
     "ConfigPrefabName": "Daily_LvRen_2",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999931": {
     "Id": 9999931,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_2",
     "ConfigPrefabName": "Daily_6_1",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999932": {
     "Id": 9999932,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_2",
     "ConfigPrefabName": "Daily_7_1",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999933": {
     "Id": 9999933,
     "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_2",
     "ConfigPrefabName": "Daily_7_2",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999934": {
     "Id": 9999934,
     "SceneName": "Levels/Main/Forest/Forest02",
     "ConfigPrefabName": "Daily_LvRen_1",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999935": {
     "Id": 9999935,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Entrance_002",
     "ConfigPrefabName": "Template_Roguelike_2_Entrance_002",
+    "Theme": 0,
     "BGM": "roguelike_explore_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999936": {
     "Id": 9999936,
     "SceneName": "Levels/Test/BattleTest_06",
     "ConfigPrefabName": "BattleTest_06",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999937": {
     "Id": 9999937,
     "SceneName": "Levels/VampireSurvivor/VampireSurvivor_Scene_01a",
     "ConfigPrefabName": "VampireSurvivor_01a",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999938": {
     "Id": 9999938,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "Monster_Video_Level",
-    "MonsterLv": 6
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 6,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999939": {
     "Id": 9999939,
     "SceneName": "Levels/TrainingLevels/TrainingLevels_01/TrainingLevels_01",
     "ConfigPrefabName": "CharacterShow",
-    "MonsterLv": 2
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999940": {
     "Id": 9999940,
     "SceneName": "Levels/StoryActivity/BreakOut_Test_01",
     "ConfigPrefabName": "StrikeBall_Test",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999941": {
     "Id": 9999941,
     "SceneName": "Levels/Main/Test/InfinityTower_Common_Test",
     "ConfigPrefabName": "MonsterAutoTest",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999942": {
     "Id": 9999942,
     "SceneName": "Levels/TrainingLevels/TrainingLevels_01/TrainingLevels_01",
     "ConfigPrefabName": "TutorialLevel",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999943": {
     "Id": 9999943,
     "SceneName": "Levels/StoryActivity/StoryActivity_1/StoryActivity_1_001_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_001_A_N5_Mir",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999944": {
     "Id": 9999944,
     "SceneName": "Levels/Main/Coast/Coast_Main_7_1",
     "ConfigPrefabName": "StoryActivity_HaiTu_N8",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999945": {
     "Id": 9999945,
@@ -1613,7 +2151,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999946": {
     "Id": 9999946,
@@ -1622,7 +2162,9 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9999947": {
     "Id": 9999947,
@@ -1631,50 +2173,86 @@
     "Theme": 2,
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
-    "MonsterLv": 2
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910011": {
     "Id": 9910011,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_003",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_003_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910012": {
     "Id": 9910012,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_002",
     "ConfigPrefabName": "Roguelike_Boss_ShaSha_Lv1",
     "Theme": 2,
-    "MonsterLv": 2
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910013": {
     "Id": 9910013,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_001",
     "ConfigPrefabName": "Roguelike_MiniBoss_001_DaShiLaiMu_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910014": {
     "Id": 9910014,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_FanRongZhiShiTi_Fire_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910015": {
     "Id": 9910015,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_003",
     "ConfigPrefabName": "Roguelike_2_Boss_003_CanChaMiniboss_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910016": {
     "Id": 9910016,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_001",
     "ConfigPrefabName": "Roguelike_Boss_XiaoGaoDa_Lv1",
-    "MonsterLv": 2
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910017": {
     "Id": 9910017,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_001",
     "ConfigPrefabName": "Roguelike_Boss_XiaoGaoDa_Lv2",
-    "MonsterLv": 2
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 2,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910018": {
     "Id": 9910018,
@@ -1683,958 +2261,1724 @@
     "Theme": 7,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910019": {
     "Id": 9910019,
     "SceneName": "Levels/Roguelike/Roguelike_3/Roguelike_3_Boss_001",
     "ConfigPrefabName": "Roguelike_3_Boss_DaGuanZi_Lv3",
+    "Theme": 0,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910020": {
     "Id": 9910020,
     "SceneName": "Levels/Main/Company/Company_Main_6_2",
     "ConfigPrefabName": "RegionBoss_FengCao_6_2_Challenge",
+    "Theme": 0,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910021": {
     "Id": 9910021,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "Roguelike_MiniBoss_LeiSheZhu_Test",
+    "Theme": 0,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910022": {
     "Id": 9910022,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_001",
     "ConfigPrefabName": "Roguelike_VeryHardRoom_YinYing_Test",
+    "Theme": 0,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910023": {
     "Id": 9910023,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_004_FengMeiGuai_Test",
     "Theme": 7,
-    "MonsterLv": 1
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910024": {
     "Id": 9910024,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_003",
     "ConfigPrefabName": "Roguelike_2_Boss_003_MoDaMiniboss_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910025": {
     "Id": 9910025,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "Roguelike_MiniBoss_DaWuGui_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9910026": {
     "Id": 9910026,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "Roguelike_MiniBoss_ChuanSongGuai_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920011": {
     "Id": 9920011,
     "SceneName": "Levels/Main/Forest_New/Forest_Main_2_6",
     "ConfigPrefabName": "WeekBoss_BanShenShu_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920012": {
     "Id": 9920012,
     "SceneName": "Levels/Main/Forest_New/Forest_Main_2_6",
     "ConfigPrefabName": "WeekBoss_BanShenShu_Lv2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920013": {
     "Id": 9920013,
     "SceneName": "Levels/Main/Forest_New/Forest_Main_2_6",
     "ConfigPrefabName": "WeekBoss_BanShenShu_Lv3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920021": {
     "Id": 9920021,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_001",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_001_DaShiLaiMu_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920022": {
     "Id": 9920022,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_001",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_001_DaShiLaiMu_Lv2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920023": {
     "Id": 9920023,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_001",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_001_DaShiLaiMu_Lv3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920031": {
     "Id": 9920031,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_003",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_003_TiaoWuJi_E",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920032": {
     "Id": 9920032,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_003",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_003_TiaoWuJi_N",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920033": {
     "Id": 9920033,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_003",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_003_TiaoWuJi_H",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920041": {
     "Id": 9920041,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_XingXing_nothing",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920042": {
     "Id": 9920042,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_XingXing_dark",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920043": {
     "Id": 9920043,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_XingXing_earth",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920044": {
     "Id": 9920044,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_XingXing_wind",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920045": {
     "Id": 9920045,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_XingXing_fire",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920046": {
     "Id": 9920046,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_XingXing_light",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920047": {
     "Id": 9920047,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_XingXing_water",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920051": {
     "Id": 9920051,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_003",
     "ConfigPrefabName": "Roguelike_2_Boss_003_CanChaMiniboss_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920052": {
     "Id": 9920052,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_005",
     "ConfigPrefabName": "Roguelike_2_Boss_003_CanChaMiniboss_Lv2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920061": {
     "Id": 9920061,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_ShuangShaYuFaShi_Easy",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920062": {
     "Id": 9920062,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_ShuangShaYuFaShi_Hard",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920063": {
     "Id": 9920063,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_MiniBoss_004_ShuangShaYuFaShi_Mobs",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920071": {
     "Id": 9920071,
     "SceneName": "Levels/Roguelike/Roguelike_4/Roguelike_4_Boss_003",
     "ConfigPrefabName": "Roguelike_4_Boss_JinDuanLiRong_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920072": {
     "Id": 9920072,
     "SceneName": "Levels/Roguelike/Roguelike_4/Roguelike_4_Boss_003",
     "ConfigPrefabName": "Roguelike_4_Boss_JinDuanLiRong_Lv2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920073": {
     "Id": 9920073,
     "SceneName": "Levels/Roguelike/Roguelike_4/Roguelike_4_Boss_003",
     "ConfigPrefabName": "Roguelike_4_Boss_JinDuanLiRong_Lv3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920074": {
     "Id": 9920074,
     "SceneName": "Levels/Roguelike/Roguelike_4/Roguelike_4_Boss_003",
     "ConfigPrefabName": "Roguelike_4_Boss_JinDuanLiRong_ScoreBoss",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920081": {
     "Id": 9920081,
     "SceneName": "Levels/Main/Coast/Coast_Main_7_1",
     "ConfigPrefabName": "WeekBoss_GuLuHaiTu_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920082": {
     "Id": 9920082,
     "SceneName": "Levels/Main/Coast/Coast_Main_7_1",
     "ConfigPrefabName": "WeekBoss_GuLuHaiTu_Lv2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920083": {
     "Id": 9920083,
     "SceneName": "Levels/Main/Coast/Coast_Main_7_1",
     "ConfigPrefabName": "WeekBoss_GuLuHaiTu_Lv3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920084": {
     "Id": 9920084,
     "SceneName": "Levels/Main/Coast/Coast_Main_7_1",
     "ConfigPrefabName": "WanderActionTest",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920091": {
     "Id": 9920091,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_004",
     "ConfigPrefabName": "Roguelike_2_MiniBoss_004_FengMeiGuai_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920101": {
     "Id": 9920101,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "Roguelike_MiniBoss_LeiSheZhu_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920102": {
     "Id": 9920102,
     "SceneName": "Levels/JointDrill/JointDrill_01/JointDrill_01_JuYuanMeiYing",
     "ConfigPrefabName": "JuYuanMeiYing_Stage1_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920103": {
     "Id": 9920103,
     "SceneName": "Levels/JointDrill/JointDrill_01/JointDrill_01_JuYuanMeiYing01",
     "ConfigPrefabName": "JuYuanMeiYing_Stage2_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920111": {
     "Id": 9920111,
     "SceneName": "Levels/Main/Company/Company_Main_6_2",
     "ConfigPrefabName": "RegionBoss_FengCao_6_2_Easy",
+    "Theme": 0,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920112": {
     "Id": 9920112,
     "SceneName": "Levels/Main/Company/Company_Main_6_2",
     "ConfigPrefabName": "RegionBoss_FengCao_6_2_Hard",
+    "Theme": 0,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920113": {
     "Id": 9920113,
     "SceneName": "Levels/Main/Company/Company_Main_6_2",
     "ConfigPrefabName": "RegionBoss_FengCao_BossRush",
+    "Theme": 0,
     "BGM": "forest_explore_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920114": {
     "Id": 9920114,
     "SceneName": "Levels/JointDrill/JointDrill_03/JointDrill_03_Prototype",
     "ConfigPrefabName": "JointDrill_03",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920115": {
     "Id": 9920115,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01",
     "ConfigPrefabName": "StoryActivity_016_A_N1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920116": {
     "Id": 9920116,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_013_A_01",
     "ConfigPrefabName": "StoryActivity_013_A_N2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920117": {
     "Id": 9920117,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_001_A_01",
     "ConfigPrefabName": "StoryActivity_001_A_N3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920118": {
     "Id": 9920118,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_006_A_01",
     "ConfigPrefabName": "StoryActivity_006_A_N4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920119": {
     "Id": 9920119,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_013_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_013_A_Mir_N5",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920120": {
     "Id": 9920120,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_001_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_001_A_Mir_N6",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920121": {
     "Id": 9920121,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_006_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_006_A_Mir_N7",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920122": {
     "Id": 9920122,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_016_A_Mir_N8",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920123": {
     "Id": 9920123,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_001_A_01",
     "ConfigPrefabName": "StoryActivity_001_A_H1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920124": {
     "Id": 9920124,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_013_A_01",
     "ConfigPrefabName": "StoryActivity_013_A_H2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920125": {
     "Id": 9920125,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_006_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_006_A_Mir_H3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920126": {
     "Id": 9920126,
     "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_016_A_Mir_H4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920127": {
     "Id": 9920127,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_013_A_01",
     "ConfigPrefabName": "StoryActivity_013_A_N1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920128": {
     "Id": 9920128,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_011_A_01",
     "ConfigPrefabName": "StoryActivity_011_A_N2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920129": {
     "Id": 9920129,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_014_A_01",
     "ConfigPrefabName": "StoryActivity_014_A_N3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920130": {
     "Id": 9920130,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_Boss_MaoDa_A_01",
     "ConfigPrefabName": "StoryActivity_MaoDa_N4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920131": {
     "Id": 9920131,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_011_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_011_A_N5_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920132": {
     "Id": 9920132,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_014_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_014_A_N6_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920133": {
     "Id": 9920133,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_013_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_013_A_N7_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920134": {
     "Id": 9920134,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_Boss_MaoDa_A_01",
     "ConfigPrefabName": "StoryActivity_MaoDa_N8",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920135": {
     "Id": 9920135,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_014_A_01",
     "ConfigPrefabName": "StoryActivity_014_A_H1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920136": {
     "Id": 9920136,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_005_B_01",
     "ConfigPrefabName": "StoryActivity_005_B_H2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920137": {
     "Id": 9920137,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_013_A_01",
     "ConfigPrefabName": "StoryActivity_013_A_H3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920138": {
     "Id": 9920138,
     "SceneName": "Levels/StoryActivity/StoryActivity_3/StoryActivity_3_Boss_MaoDa_A_01",
     "ConfigPrefabName": "StoryActivity_MaoDa_H4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920139": {
     "Id": 9920139,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "MiniBoss_ChunJieLieQuan_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920140": {
     "Id": 9920140,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "MiniBoss_ChunJieLieQuan_Test2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920141": {
     "Id": 9920141,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_014_A_01",
     "ConfigPrefabName": "StoryActivity_4_014_A_N1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920142": {
     "Id": 9920142,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_007_A_01",
     "ConfigPrefabName": "StoryActivity_4_007_A_N2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920143": {
     "Id": 9920143,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_003_A_01",
     "ConfigPrefabName": "StoryActivity_4_003_A_N3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920144": {
     "Id": 9920144,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_Boss_QiE",
     "ConfigPrefabName": "MiniBoss_30271ShengDanQieChe_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920145": {
     "Id": 9920145,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_015_A_01",
     "ConfigPrefabName": "StoryActivity_4_015_A_N5",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920146": {
     "Id": 9920146,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_010_B_01",
     "ConfigPrefabName": "StoryActivity_4_010_B_N6",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920147": {
     "Id": 9920147,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_007_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_4_007_A_Mir_N7",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920148": {
     "Id": 9920148,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_Boss_TaLou",
     "ConfigPrefabName": "StoryActivity_TaLou_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920149": {
     "Id": 9920149,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_014_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_4_014_A_Mir_H1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920150": {
     "Id": 9920150,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_Boss_QiE",
     "ConfigPrefabName": "MiniBoss_30271ShengDanQieChe_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920151": {
     "Id": 9920151,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_003_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_4_003_A_Mir_H3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920152": {
     "Id": 9920152,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_Boss_TaLou",
     "ConfigPrefabName": "StoryActivity_TaLou_Lv2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920153": {
     "Id": 9920153,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_015_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_4_015_A_Mir_C1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920154": {
     "Id": 9920154,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_010_B_01_Mir",
     "ConfigPrefabName": "StoryActivity_4_010_B_Mir_C2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920155": {
     "Id": 9920155,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_Boss_QiE",
     "ConfigPrefabName": "MiniBoss_30271ShengDanQieChe_Lv2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920156": {
     "Id": 9920156,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_Boss_TaLou",
     "ConfigPrefabName": "StoryActivity_TaLou_Lv3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920157": {
     "Id": 9920157,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_Boss_QiE",
     "ConfigPrefabName": "MiniBoss_30271ShengDanQieChe_Test1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920158": {
     "Id": 9920158,
     "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_Boss_QiE",
     "ConfigPrefabName": "MiniBoss_30271ShengDanQieChe_Test2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920159": {
     "Id": 9920159,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_015_A_02",
     "ConfigPrefabName": "StoryActivity_015_A_N1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920160": {
     "Id": 9920160,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_008_A_02",
     "ConfigPrefabName": "StoryActivity_008_A_N2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920161": {
     "Id": 9920161,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_006_B_02",
     "ConfigPrefabName": "StoryActivity_006_B_N3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920162": {
     "Id": 9920162,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_011_B_01",
     "ConfigPrefabName": "StoryActivity_011_B_N4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920163": {
     "Id": 9920163,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_008_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_008_A_N5_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920164": {
     "Id": 9920164,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_006_B_01_Mir",
     "ConfigPrefabName": "StoryActivity_006_B_N6_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920165": {
     "Id": 9920165,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_015_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_015_A_N7_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920166": {
     "Id": 9920166,
     "SceneName": "Levels/Main/Company/Company_Main_6_2",
     "ConfigPrefabName": "StoryActivity_Chuansong_N8",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920167": {
     "Id": 9920167,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_015_A_02_Mir",
     "ConfigPrefabName": "StoryActivity_015_A_H1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920168": {
     "Id": 9920168,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_011_B_01_Mir",
     "ConfigPrefabName": "StoryActivity_011_B_H2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920169": {
     "Id": 9920169,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_008_A_01",
     "ConfigPrefabName": "StoryActivity_008_A_H3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920170": {
     "Id": 9920170,
     "SceneName": "Levels/Main/Company/Company_Main_6_2",
     "ConfigPrefabName": "StoryActivity_Chuansong_H4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920171": {
     "Id": 9920171,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "SpringFestival_Monster_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920172": {
     "Id": 9920172,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "MiniBoss_BingXiangGuai_Test_Lv1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920173": {
     "Id": 9920173,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "MiniBoss_BingXiangGuai_Test_Lv2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920174": {
     "Id": 9920174,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_009_A_01",
     "ConfigPrefabName": "StoryActivity_6_009_A_N1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920175": {
     "Id": 9920175,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_008_B_01",
     "ConfigPrefabName": "StoryActivity_6_008_B_N2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920176": {
     "Id": 9920176,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_004_A_01",
     "ConfigPrefabName": "StoryActivity_6_004_A_N3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920177": {
     "Id": 9920177,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_016_A_01",
     "ConfigPrefabName": "StoryActivity_6_016_A_N4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920178": {
     "Id": 9920178,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_008_B_01_Mir",
     "ConfigPrefabName": "StoryActivity_6_008_B_Mir_N5",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920179": {
     "Id": 9920179,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_004_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_6_004_A_Mir_N6",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920180": {
     "Id": 9920180,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_009_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_6_009_A_Mir_N7",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920181": {
     "Id": 9920181,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_Boss_A",
     "ConfigPrefabName": "StoryActivity_6_Boss_A_N8",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920182": {
     "Id": 9920182,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_009_A_01",
     "ConfigPrefabName": "StoryActivity_6_009_A_H1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920183": {
     "Id": 9920183,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_008_B_01",
     "ConfigPrefabName": "StoryActivity_6_008_B_H2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920184": {
     "Id": 9920184,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_004_A_01",
     "ConfigPrefabName": "StoryActivity_6_004_A_H3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920185": {
     "Id": 9920185,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_016_A_01",
     "ConfigPrefabName": "StoryActivity_6_016_A_H4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920186": {
     "Id": 9920186,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_008_B_01_Mir",
     "ConfigPrefabName": "StoryActivity_6_008_B_Mir_H5",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920187": {
     "Id": 9920187,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_004_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_6_004_A_Mir_H6",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920188": {
     "Id": 9920188,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_009_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_6_009_A_Mir_H7",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920189": {
     "Id": 9920189,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_Boss_A",
     "ConfigPrefabName": "StoryActivity_6_Boss_A_H8",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920190": {
     "Id": 9920190,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_004_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_6_004_A_Mir_C1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920191": {
     "Id": 9920191,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_016_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_6_016_A_Mir_C2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920192": {
     "Id": 9920192,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_009_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_6_009_A_Mir_C3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920193": {
     "Id": 9920193,
     "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_Boss_A",
     "ConfigPrefabName": "StoryActivity_6_Boss_A_C4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920194": {
     "Id": 9920194,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_015_A_02_Mir",
     "ConfigPrefabName": "StoryActivity_015_A_C1_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920195": {
     "Id": 9920195,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_011_B_01_Mir",
     "ConfigPrefabName": "StoryActivity_011_B_C2_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920196": {
     "Id": 9920196,
     "SceneName": "Levels/StoryActivity/StoryActivity_5/StoryActivity_5_008_A_01",
     "ConfigPrefabName": "StoryActivity_008_A_C3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920197": {
     "Id": 9920197,
     "SceneName": "Levels/Main/Company/Company_Main_6_2",
     "ConfigPrefabName": "StoryActivity_Chuansong_C4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920198": {
     "Id": 9920198,
     "SceneName": "Levels/StoryActivity/StoryActivity_7/StoryActivity_7_Boss_A_01",
     "ConfigPrefabName": "StoryActivity_7_Boss_N8",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920199": {
     "Id": 9920199,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "MiniBoss_XuKongXingZhe_fire_Test",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920200": {
     "Id": 9920200,
     "SceneName": "Levels/StoryActivity/StoryActivity_7/StoryActivity_7_013_A_01",
     "ConfigPrefabName": "StoryActivity_7_013_N1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920201": {
     "Id": 9920201,
     "SceneName": "Levels/StoryActivity/StoryActivity_7/StoryActivity_7_006_A_02_Mir",
     "ConfigPrefabName": "StoryActivity_7_006_N2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920202": {
     "Id": 9920202,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_Boss_A",
     "ConfigPrefabName": "StoryActivity_8_Boss_N8",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920203": {
     "Id": 9920203,
     "SceneName": "Levels/StoryActivity/StoryActivity_9/StoryActivity_9_MiniBoss_HaSaNa",
     "ConfigPrefabName": "StoryActivity_9_MiniBoss_N5",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920204": {
     "Id": 9920204,
     "SceneName": "Levels/StoryActivity/StoryActivity_9/StoryActivity_9_MiniBoss_HaSaNa",
     "ConfigPrefabName": "StoryActivity_9_MiniBoss_C2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920205": {
     "Id": 9920205,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_007_A_01",
     "ConfigPrefabName": "StoryActivity_8_007_N1",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920206": {
     "Id": 9920206,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_010_B_01",
     "ConfigPrefabName": "StoryActivity_8_010_N2",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920207": {
     "Id": 9920207,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_015_A_01",
     "ConfigPrefabName": "StoryActivity_8_015_N3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920208": {
     "Id": 9920208,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_003_A_01",
     "ConfigPrefabName": "StoryActivity_8_003_N4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920209": {
     "Id": 9920209,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_007_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_8_007_N5_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920210": {
     "Id": 9920210,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_015_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_8_015_N6_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920211": {
     "Id": 9920211,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_010_B_01_Mir",
     "ConfigPrefabName": "StoryActivity_8_010_N7_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920212": {
     "Id": 9920212,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_Boss_A",
     "ConfigPrefabName": "StoryActivity_8_Boss_N8",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920213": {
     "Id": 9920213,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_003_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_8_003_H1_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920214": {
     "Id": 9920214,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_015_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_8_015_H2_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920215": {
     "Id": 9920215,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_007_A_01",
     "ConfigPrefabName": "StoryActivity_8_007_H3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920216": {
     "Id": 9920216,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_010_B_01",
     "ConfigPrefabName": "StoryActivity_8_010_H4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920217": {
     "Id": 9920217,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_015_A_01",
     "ConfigPrefabName": "StoryActivity_8_015_H5",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920218": {
     "Id": 9920218,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_003_A_01",
     "ConfigPrefabName": "StoryActivity_8_003_H6",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920219": {
     "Id": 9920219,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_007_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_8_007_H7_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920220": {
     "Id": 9920220,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_Boss_A",
     "ConfigPrefabName": "StoryActivity_8_Boss_H8",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920221": {
     "Id": 9920221,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_003_A_01_Mir",
     "ConfigPrefabName": "StoryActivity_8_003_C1_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920222": {
     "Id": 9920222,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_010_B_01_Mir",
     "ConfigPrefabName": "StoryActivity_8_010_C2_Mir",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920223": {
     "Id": 9920223,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_007_A_01",
     "ConfigPrefabName": "StoryActivity_8_007_C3",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920224": {
     "Id": 9920224,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_Boss_A",
     "ConfigPrefabName": "StoryActivity_8_Boss_C4",
-    "MonsterLv": 1
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920225": {
     "Id": 9920225,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
     "ConfigPrefabName": "MiniBoss_XuKongXingZhe_fire_And_DaWuGui_Test",
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
     "MonsterLv": 1,
+    "IntroCutscene": "",
     "LevelScript": "AIScript.LevelAndGroupController.Level.DaWuGuiLevelController_Lv1"
   },
   "9920226": {
@@ -2644,7 +3988,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920227": {
     "Id": 9920227,
@@ -2653,7 +3999,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920228": {
     "Id": 9920228,
@@ -2662,7 +4010,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920229": {
     "Id": 9920229,
@@ -2671,7 +4021,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920230": {
     "Id": 9920230,
@@ -2680,7 +4032,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatBoss_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920231": {
     "Id": 9920231,
@@ -2689,7 +4043,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920232": {
     "Id": 9920232,
@@ -2698,7 +4054,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920233": {
     "Id": 9920233,
@@ -2707,7 +4065,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatBoss_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920234": {
     "Id": 9920234,
@@ -2716,7 +4076,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920235": {
     "Id": 9920235,
@@ -2725,7 +4087,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920236": {
     "Id": 9920236,
@@ -2734,7 +4098,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920237": {
     "Id": 9920237,
@@ -2743,7 +4109,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920238": {
     "Id": 9920238,
@@ -2752,7 +4120,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920239": {
     "Id": 9920239,
@@ -2761,7 +4131,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920240": {
     "Id": 9920240,
@@ -2770,7 +4142,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920241": {
     "Id": 9920241,
@@ -2779,7 +4153,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920242": {
     "Id": 9920242,
@@ -2788,7 +4164,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatBoss_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920243": {
     "Id": 9920243,
@@ -2797,7 +4175,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920244": {
     "Id": 9920244,
@@ -2806,7 +4186,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920245": {
     "Id": 9920245,
@@ -2815,7 +4197,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatBoss_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920246": {
     "Id": 9920246,
@@ -2824,7 +4208,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920247": {
     "Id": 9920247,
@@ -2833,7 +4219,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatBoss_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920248": {
     "Id": 9920248,
@@ -2842,7 +4230,9 @@
     "Theme": 436,
     "BGM": "amb_coast_combatNormal_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   },
   "9920249": {
     "Id": 9920249,
@@ -2851,6 +4241,8 @@
     "Theme": 436,
     "BGM": "amb_coast_combatBoss_setState",
     "LeaveTriggerEvent": "amb_coast_all_stop",
-    "MonsterLv": 1
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": ""
   }
 }

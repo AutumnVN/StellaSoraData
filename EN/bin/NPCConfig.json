@@ -1,7 +1,7 @@
 {
   "3": {
     "Id": 3,
-    "type": 1,
+    "Type": 1,
     "HintIcon": "icon_vestige_shop",
     "Name": "NPCConfig.3.1",
     "Desc": "NPCConfig.3.2",
@@ -27,23 +27,31 @@
       913329,
       913330
     ],
+    "Chat": [],
+    "ChatProp": 0,
     "ChatTime": 10,
-    "NPCId": 9133
+    "NPCId": 9133,
+    "AffinityValue": ""
   },
   "4": {
     "Id": 4,
-    "type": 2,
+    "Type": 2,
     "HintIcon": "icon_vestige_upgrade",
     "Name": "NPCConfig.4.1",
     "Desc": "NPCConfig.4.2",
     "Literary": "NPCConfig.4.3",
     "RefreshPoint": 2,
+    "FirstLines": [],
+    "Lines": [],
+    "Chat": [],
+    "ChatProp": 0,
     "ChatTime": 10,
-    "NPCId": 93004
+    "NPCId": 93004,
+    "AffinityValue": ""
   },
   "5": {
     "Id": 5,
-    "type": 3,
+    "Type": 3,
     "HintIcon": "icon_vestige_heal",
     "Name": "NPCConfig.5.1",
     "Desc": "NPCConfig.5.2",
@@ -69,12 +77,15 @@
       917229,
       917230
     ],
+    "Chat": [],
+    "ChatProp": 0,
     "ChatTime": 10,
-    "NPCId": 917203
+    "NPCId": 917203,
+    "AffinityValue": ""
   },
   "9": {
     "Id": 9,
-    "type": 1,
+    "Type": 1,
     "HintIcon": "icon_vestige_shop",
     "Name": "NPCConfig.9.1",
     "Desc": "NPCConfig.9.2",
@@ -100,12 +111,15 @@
       913329,
       913330
     ],
+    "Chat": [],
+    "ChatProp": 0,
     "ChatTime": 10,
-    "NPCId": 913303
+    "NPCId": 913303,
+    "AffinityValue": ""
   },
   "9133": {
     "Id": 9133,
-    "type": 5,
+    "Type": 5,
     "HintIcon": "icon_vestige_even",
     "Name": "NPCConfig.9133.1",
     "Desc": "NPCConfig.9133.2",
@@ -145,13 +159,15 @@
       913329,
       913330
     ],
+    "Chat": [],
+    "ChatProp": 0,
     "ChatTime": 10,
     "NPCId": 913302,
     "AffinityValue": "{\"9133\":100}"
   },
   "9172": {
     "Id": 9172,
-    "type": 5,
+    "Type": 5,
     "HintIcon": "icon_vestige_even",
     "Name": "NPCConfig.9172.1",
     "Desc": "NPCConfig.9172.2",
@@ -191,13 +207,15 @@
       917229,
       917230
     ],
+    "Chat": [],
+    "ChatProp": 0,
     "ChatTime": 10,
     "NPCId": 917201,
     "AffinityValue": "{\"9172\":100}"
   },
   "9173": {
     "Id": 9173,
-    "type": 5,
+    "Type": 5,
     "HintIcon": "icon_vestige_even",
     "Name": "NPCConfig.9173.1",
     "Desc": "NPCConfig.9173.2",
@@ -237,13 +255,15 @@
       917329,
       917330
     ],
+    "Chat": [],
+    "ChatProp": 0,
     "ChatTime": 10,
     "NPCId": 917301,
     "AffinityValue": "{\"9173\":100}"
   },
   "9174": {
     "Id": 9174,
-    "type": 5,
+    "Type": 5,
     "HintIcon": "icon_vestige_even",
     "Name": "NPCConfig.9174.1",
     "Desc": "NPCConfig.9174.2",
@@ -283,13 +303,15 @@
       917429,
       917430
     ],
+    "Chat": [],
+    "ChatProp": 0,
     "ChatTime": 10,
     "NPCId": 917401,
     "AffinityValue": "{\"9174\":100}"
   },
   "173174": {
     "Id": 173174,
-    "type": 5,
+    "Type": 5,
     "HintIcon": "icon_vestige_even",
     "Name": "NPCConfig.173174.1",
     "Desc": "NPCConfig.173174.2",
@@ -329,6 +351,8 @@
       917429,
       917430
     ],
+    "Chat": [],
+    "ChatProp": 0,
     "ChatTime": 10,
     "NPCId": 173174,
     "AffinityValue": "{\"9173\":50,\"9174\":50}"

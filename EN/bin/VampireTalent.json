@@ -3,10 +3,15 @@
     "Id": 1,
     "Name": "VampireTalent.1.1",
     "DescTag": 94,
+    "Param": 0,
+    "Prev": [],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 1,
+    "Params": "",
     "Point": 10,
-    "Icon": "Icon/Talent/keytalent_107_5"
+    "Icon": "Icon/Talent/keytalent_107_5",
+    "EffectId": 0
   },
   "2": {
     "Id": 2,
@@ -16,11 +21,13 @@
     "Prev": [
       1
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 7,
     "Params": "[5,50,50,5]",
     "Point": 10,
-    "Icon": "Icon/Potential/15601_Potential_23_A"
+    "Icon": "Icon/Potential/15601_Potential_23_A",
+    "EffectId": 0
   },
   "3": {
     "Id": 3,
@@ -30,24 +37,30 @@
     "Prev": [
       1
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 7,
     "Params": "[6,50,50,8]",
     "Point": 10,
-    "Icon": "Icon/Potential/Common_Potential_22_A"
+    "Icon": "Icon/Potential/Common_Potential_22_A",
+    "EffectId": 0
   },
   "4": {
     "Id": 4,
     "Name": "VampireTalent.4.1",
     "DescTag": 95,
+    "Param": 0,
     "Prev": [
       2,
       3
     ],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 4,
+    "Params": "",
     "Point": 10,
-    "Icon": "Icon/Skill/13201_Ultra"
+    "Icon": "Icon/Skill/13201_Ultra",
+    "EffectId": 0
   },
   "5": {
     "Id": 5,
@@ -57,7 +70,10 @@
     "Prev": [
       4
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 10,
     "Icon": "Icon/Potential/Common_Potential_01_A",
     "EffectId": 2003
@@ -70,7 +86,10 @@
     "Prev": [
       4
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 10,
     "Icon": "Icon/Potential/Common_Potential_7_A",
     "EffectId": 2103
@@ -83,11 +102,13 @@
     "Prev": [
       5
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 7,
     "Params": "[7,50,50,5]",
     "Point": 10,
-    "Icon": "Icon/Potential/Common_Potential_14_A"
+    "Icon": "Icon/Potential/Common_Potential_14_A",
+    "EffectId": 0
   },
   "8": {
     "Id": 8,
@@ -98,10 +119,12 @@
       6
     ],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 5,
     "Params": "[3]",
     "Point": 10,
-    "Icon": "Icon/Skill/12001_Normal"
+    "Icon": "Icon/Skill/12001_Normal",
+    "EffectId": 0
   },
   "9": {
     "Id": 9,
@@ -113,10 +136,12 @@
       8
     ],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 3,
     "Params": "[1]",
     "Point": 20,
-    "Icon": "Icon/Potential/Common_Potential_5_A"
+    "Icon": "Icon/Potential/Common_Potential_5_A",
+    "EffectId": 0
   },
   "10": {
     "Id": 10,
@@ -126,11 +151,13 @@
     "Prev": [
       9
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 8,
     "Params": "[5,100,100,5]",
     "Point": 10,
-    "Icon": "Icon/Potential/15601_Potential_23_A"
+    "Icon": "Icon/Potential/15601_Potential_23_A",
+    "EffectId": 0
   },
   "11": {
     "Id": 11,
@@ -140,7 +167,10 @@
     "Prev": [
       9
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 10,
     "Icon": "Icon/Potential/Common_Potential_01_A",
     "EffectId": 2005
@@ -153,7 +183,10 @@
     "Prev": [
       9
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 10,
     "Icon": "Icon/Potential/Common_Potential_8_A",
     "EffectId": 2203
@@ -169,10 +202,12 @@
       12
     ],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 3,
     "Params": "[2]",
     "Point": 20,
-    "Icon": "Icon/Potential/Common_Potential_5_A"
+    "Icon": "Icon/Potential/Common_Potential_5_A",
+    "EffectId": 0
   },
   "14": {
     "Id": 14,
@@ -183,10 +218,12 @@
       13
     ],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 6,
     "Params": "[5]",
     "Point": 10,
-    "Icon": "Icon/Potential/Common_Potential_11_A"
+    "Icon": "Icon/Potential/Common_Potential_11_A",
+    "EffectId": 0
   },
   "15": {
     "Id": 15,
@@ -196,7 +233,10 @@
     "Prev": [
       13
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 10,
     "Icon": "Icon/Potential/Common_Potential_7_A",
     "EffectId": 2105
@@ -210,10 +250,12 @@
       14
     ],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 6,
     "Params": "[5]",
     "Point": 10,
-    "Icon": "Icon/Potential/Common_Potential_11_A"
+    "Icon": "Icon/Potential/Common_Potential_11_A",
+    "EffectId": 0
   },
   "17": {
     "Id": 17,
@@ -224,10 +266,12 @@
       15
     ],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 5,
     "Params": "[3]",
     "Point": 10,
-    "Icon": "Icon/Skill/12001_Normal"
+    "Icon": "Icon/Skill/12001_Normal",
+    "EffectId": 0
   },
   "18": {
     "Id": 18,
@@ -239,10 +283,12 @@
       17
     ],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 3,
     "Params": "[2]",
     "Point": 30,
-    "Icon": "Icon/Potential/Common_Potential_5_A"
+    "Icon": "Icon/Potential/Common_Potential_5_A",
+    "EffectId": 0
   },
   "19": {
     "Id": 19,
@@ -252,11 +298,13 @@
     "Prev": [
       18
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 8,
     "Params": "[5,200,200,5]",
     "Point": 20,
-    "Icon": "Icon/Potential/15601_Potential_23_A"
+    "Icon": "Icon/Potential/15601_Potential_23_A",
+    "EffectId": 0
   },
   "20": {
     "Id": 20,
@@ -266,11 +314,13 @@
     "Prev": [
       18
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 8,
     "Params": "[6,100,100,8]",
     "Point": 20,
-    "Icon": "Icon/Potential/Common_Potential_22_A"
+    "Icon": "Icon/Potential/Common_Potential_22_A",
+    "EffectId": 0
   },
   "21": {
     "Id": 21,
@@ -280,7 +330,10 @@
     "Prev": [
       19
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 20,
     "Icon": "Icon/Potential/Common_Potential_01_A",
     "EffectId": 2003
@@ -293,7 +346,10 @@
     "Prev": [
       20
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 20,
     "Icon": "Icon/Potential/Common_Potential_7_A",
     "EffectId": 2103
@@ -307,11 +363,13 @@
       21,
       22
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 7,
     "Params": "[4,50,50,3]",
     "Point": 30,
-    "Icon": "Icon/Potential/Common_Potential_18_A"
+    "Icon": "Icon/Potential/Common_Potential_18_A",
+    "EffectId": 0
   },
   "24": {
     "Id": 24,
@@ -321,11 +379,13 @@
     "Prev": [
       23
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 8,
     "Params": "[7,100,100,5]",
     "Point": 20,
-    "Icon": "Icon/Potential/Common_Potential_14_A"
+    "Icon": "Icon/Potential/Common_Potential_14_A",
+    "EffectId": 0
   },
   "25": {
     "Id": 25,
@@ -335,7 +395,10 @@
     "Prev": [
       23
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 20,
     "Icon": "Icon/Potential/Common_Potential_8_A",
     "EffectId": 2203
@@ -348,7 +411,10 @@
     "Prev": [
       24
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 20,
     "Icon": "Icon/Potential/Common_Potential_01_A",
     "EffectId": 2004
@@ -361,7 +427,10 @@
     "Prev": [
       25
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 20,
     "Icon": "Icon/Potential/Common_Potential_7_A",
     "EffectId": 2104
@@ -375,11 +444,13 @@
       26,
       27
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 7,
     "Params": "[3,50,50,3]",
     "Point": 30,
-    "Icon": "Icon/Potential/Common_Potential_23_A"
+    "Icon": "Icon/Potential/Common_Potential_23_A",
+    "EffectId": 0
   },
   "29": {
     "Id": 29,
@@ -389,7 +460,10 @@
     "Prev": [
       28
     ],
+    "IsServer": false,
     "IsClient": true,
+    "Effect": 0,
+    "Params": "",
     "Point": 20,
     "Icon": "Icon/Potential/Common_Potential_8_A",
     "EffectId": 2204
@@ -403,10 +477,12 @@
       28
     ],
     "IsServer": true,
+    "IsClient": false,
     "Effect": 6,
     "Params": "[5]",
     "Point": 20,
-    "Icon": "Icon/Potential/Common_Potential_11_A"
+    "Icon": "Icon/Potential/Common_Potential_11_A",
+    "EffectId": 0
   },
   "31": {
     "Id": 31,
@@ -416,11 +492,13 @@
     "Prev": [
       29
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 8,
     "Params": "[6,200,200,8]",
     "Point": 20,
-    "Icon": "Icon/Potential/Common_Potential_22_A"
+    "Icon": "Icon/Potential/Common_Potential_22_A",
+    "EffectId": 0
   },
   "32": {
     "Id": 32,
@@ -430,10 +508,12 @@
     "Prev": [
       30
     ],
+    "IsServer": false,
     "IsClient": true,
     "Effect": 8,
     "Params": "[7,200,200,5]",
     "Point": 20,
-    "Icon": "Icon/Potential/Common_Potential_14_A"
+    "Icon": "Icon/Potential/Common_Potential_14_A",
+    "EffectId": 0
   }
 }

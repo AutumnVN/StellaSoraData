@@ -2,7 +2,9 @@
   "1": {
     "Id": 1,
     "Lower": 10000,
-    "Upper": 100000000
+    "Upper": 100000000,
+    "IsLimited": false,
+    "IsPlayer": false
   },
   "2": {
     "Id": 2,
@@ -13,19 +15,28 @@
   },
   "3": {
     "Id": 3,
+    "Lower": 0,
     "Upper": 10000,
-    "IsLimited": true
+    "IsLimited": true,
+    "IsPlayer": false
   },
   "4": {
     "Id": 4,
-    "Upper": 10000
+    "Lower": 0,
+    "Upper": 10000,
+    "IsLimited": false,
+    "IsPlayer": false
   },
   "5": {
     "Id": 5,
-    "Upper": 100000
+    "Lower": 0,
+    "Upper": 100000,
+    "IsLimited": false,
+    "IsPlayer": false
   },
   "6": {
     "Id": 6,
+    "Lower": 0,
     "Upper": 6000000,
     "IsLimited": true,
     "IsPlayer": true
