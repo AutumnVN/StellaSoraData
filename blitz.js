@@ -16,7 +16,7 @@ const LANG_SCOREBOSSGETCONTROL = require('./EN/language/en_US/ScoreBossGetContro
 const LANG_SCOREBOSSABILITY = require('./EN/language/en_US/ScoreBossAbility.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_MONSTERMANUAL = require('./EN/language/en_US/MonsterManual.json');
-const { MONSTER_EPIC_TYPE, formatEffectType, collectParamsFrom, resolveParam } = require('./utils');
+const { MONSTER_EPIC_TYPE, formatEffectType, collectParamsFrom, resolveParam, iHateFloatingPointNumber } = require('./utils');
 
 const blitz = {};
 
@@ -58,6 +58,7 @@ for (const id in SCOREBOSSLEVEL) {
             const cumulativeAtkFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (+curr.AtkFix || 0), 0);
             const cumulativeDefFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (+curr.DefFix || 0), 0);
             const cumulativeToughnessFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => sum + (+curr.ToughnessFix || 0), 0);
+            const cumulativeEnvAmendFix = monsterValueTemplateModify.slice(0, index + 1).reduce((sum, curr) => iHateFloatingPointNumber(sum, '+', (+curr.ENVAMENDFix || 0)), 0);
 
             function cumulativeHp(index) {
                 let index2 = 0;
@@ -77,6 +78,7 @@ for (const id in SCOREBOSSLEVEL) {
                 'Estimated Score Damage': [Math.floor(cumulativeHp(index - 1) / scoreGetSwitch.SwitchRate), Math.floor(cumulativeHp(index) / scoreGetSwitch.SwitchRate)].map(value => value.toLocaleString()).join(' - '),
                 'ATK': Math.floor(monsterValueTemplate.Atk * (1 + (monsterValueTemplateAdjust.AtkRatio / 10000 || 0)) + (cumulativeAtkFix || 0) + (monsterValueTemplateAdjust.AtkFix || 0)),
                 'DEF': Math.floor(monsterValueTemplate.Def * (1 + (monsterValueTemplateAdjust.DefRatio || 0)) + (cumulativeDefFix || 0) + (monsterValueTemplateAdjust.DefFix || 0)),
+                'ENV_AMEND (new dmg taken multiplier yostar just made up)': iHateFloatingPointNumber(iHateFloatingPointNumber(1, '+', (cumulativeEnvAmendFix || 0)), '*', 100) + '%',
                 'Hit Rate': monsterValueTemplate.HitRate / 100 + '%',
                 'Attack Speed': monsterValueTemplate.AtkSpd / 100 + '%',
                 'Aqua DMG': monsterValueTemplate.WEE / 100 + '%',
@@ -93,7 +95,6 @@ for (const id in SCOREBOSSLEVEL) {
                 'Ventus RES': monsterValueTemplateAdjust.AERFix,
                 'Lux RES': monsterValueTemplateAdjust.LERFix,
                 'Umbra RES': monsterValueTemplateAdjust.DERFix,
-                'ENV_AMEND': monsterValueTemplateModify[index].ENVAMENDFix,
             }
         })
     }
