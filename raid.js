@@ -32,11 +32,11 @@ for (const drillId in JOINTDRILLCONTROL) {
             desc: LANG_JOINTDRILLAFFIX[JOINTDRILLAFFIX[affixId].Desc],
             icon: JOINTDRILLAFFIX[affixId].Icon.split('/').pop(),
         })),
-        weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].WeakEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'],
-        resistTo: (MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].ResistEET?.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) || ['None'])[0],
+        weakTo: MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].WeakEET?.length ? MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].WeakEET.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) : ['None'],
+        resistTo: (MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].ResistEET?.length ? MONSTERVALUETEMPLETEADJUST[MONSTER[drillLevels[drillLevels.length - 1].BossId[0]].Templete].ResistEET.map(type => LANG_UITEXT[`UIText.T_Element_Attr_${type}.1`]) : ['None'])[0],
         diff: drillLevels.map((level, index) => {
             return {
-                name: /*level.LevelName ? LANG_JOINTDRILL_2_LEVEL[level.LevelName].split('/')[1] :*/ LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
+                name: LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
                 stat: level.BossId.map((bossId) => {
                     return [bossId, bossId + 1].filter(bossId => MONSTER[bossId].EpicLv === 8).map(bossId => {
                         const monster = MONSTER[bossId];
@@ -82,7 +82,7 @@ function getBookStartId(lastDiffBossId) {
     for (let i = lastDiffBossId + 2; i < lastDiffBossId + 2 + 10; i++) {
         const monster = MONSTER[i];
 
-        if (monster && monster.Name === '左壹白书') {
+        if (monster && monster.EpicLv === 4) {
             return i;
         }
     }
