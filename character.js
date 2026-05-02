@@ -682,10 +682,11 @@ function getStats(charId) {
 function getFixedStats(charId) {
     const char = CHARACTER[charId];
     return {
-        'Bullet Type': char.BulletType && BULLET_TYPE[char.BulletType],
-        'Ammo': char.Ammo,
+        'Attack Range': char.VisionAttackRng / 10000,
         'Walk Speed': char.WalkSpd / 10000,
         'Run Speed': char.RunSpd / 10000,
+        'Bullet Type': char.BulletType && BULLET_TYPE[char.BulletType],
+        'Ammo': char.Ammo,
     };
 }
 
