@@ -467,7 +467,13 @@ function collectUnusedParamsFrom(obj, lang) {
 
     const desc = lang[obj.Desc] || '';
 
-    const paramKeys = Object.keys(obj).filter(k => k.match(/^param\d+$/i)).filter(k => !desc.includes(`&${k}&`)).filter(k => Object.values(obj).filter(v => v === obj[k]).length === 1).filter(k => obj[k] !== resolveParam([obj[k]])[0]);
+    const paramKeys = Object.keys(obj).filter(k =>
+        k.match(/^param\d+$/i)
+        && obj[k]
+        && !desc.includes(`&${k}&`)
+        && Object.values(obj).filter(v => v === obj[k]).length === 1
+        && obj[k] !== resolveParam([obj[k]])[0]
+    );
 
     if (paramKeys.length === 0) return '';
 
@@ -523,7 +529,14 @@ function collectUnusedDiscParamsFrom(obj, lang) {
 
     const desc = lang[obj.Desc] || '';
 
-    const paramKeys = Object.keys(obj).filter(k => k.match(/^param\d+$/i));
+    const paramKeys = Object.keys(obj).filter(k =>
+        k.match(/^param\d+$/i)
+        && obj[k]
+        && !desc.includes(`{${k.match(/\d+$/)[0]}}`)
+        && Object.values(obj).filter(v => v === obj[k]).length === 1
+        && obj[k] !== resolveParam([obj[k]])[0]
+    );
+
     if (paramKeys.length === 0) return '';
 
     return paramKeys.map(k => {

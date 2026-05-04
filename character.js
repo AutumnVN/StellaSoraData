@@ -685,8 +685,8 @@ function getFixedStats(charId) {
         'Attack Range': char.VisionAttackRng / 10000,
         'Walk Speed': char.WalkSpd / 10000,
         'Run Speed': char.RunSpd / 10000,
-        'Bullet Type': char.BulletType && BULLET_TYPE[char.BulletType],
-        'Ammo': char.Ammo,
+        'Bullet Type': char.BulletType ? BULLET_TYPE[char.BulletType] : undefined,
+        'Ammo': char.Ammo ? char.Ammo : undefined,
     };
 }
 
