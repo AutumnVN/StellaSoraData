@@ -298,29 +298,34 @@ function ChapterLineCtrl:RecordGridBorderPos(goGrid)
 	}
 end
 function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockAnim)
-	local branchIds = {}
-	local forEachLine_Story = function(mapLineData)
-		for k, v in pairs(mapLineData.ParentStoryId) do
-			if v == avgId and mapLineData.IsBranch == true then
-				table.insert(branchIds, mapLineData.StoryId)
-			end
+	local nUnlockBranchCount = 0
+	table.sort(self.tbBranch[avgId], function(a, b)
+		local aUnlock = AvgData:IsUnlock(a.ConditionId, a.StoryId)
+		local bUnlock = AvgData:IsUnlock(b.ConditionId, b.StoryId)
+		if aUnlock ~= bUnlock then
+			return aUnlock
+		end
+		return a.StoryId < b.StoryId
+	end)
+	for k, v in ipairs(self.tbBranch[avgId]) do
+		if AvgData:IsUnlock(v.ConditionId, v.StoryId) then
+			nUnlockBranchCount = nUnlockBranchCount + 1
 		end
 	end
-	ForEachTableLine(DataTable.Story, forEachLine_Story)
 	local index = 1
 	local bHasUnlockBranch = false
 	for k, v in ipairs(self.tbBranch[avgId]) do
 		local bUnlock = AvgData:IsUnlock(v.ConditionId, v.StoryId)
 		local bReaded = AvgData:IsStoryReaded(v.Id)
 		local branchGrid = root:Find("BranchGrid_" .. k)
-		local storyConfig = AvgData:GetStoryCfgData(branchIds[index])
+		local storyConfig = AvgData:GetStoryCfgData(v.StoryId)
 		if bUnlock then
 			bHasUnlockBranch = true
 		end
-		if table.indexof(self.tbLockedBranchGrid, avgId) <= 0 then
+		if 0 >= table.indexof(self.tbLockedBranchGrid, avgId) then
 			table.insert(self.tbLockedBranchGrid, avgId)
 		end
-		if bUnlock and table.indexof(self.tbLockedBranchGrid, avgId) > 0 then
+		if bUnlock and 0 < table.indexof(self.tbLockedBranchGrid, avgId) then
 			table.removebyvalue(self.tbLockedBranchGrid, avgId)
 		end
 		if isNeedPlayUnlockAnim and bUnlock then
@@ -332,7 +337,7 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 				avgId = storyConfig.StoryId,
 				depth = depth,
 				index = index,
-				totalCount = #self.tbBranch[avgId]
+				totalCount = nUnlockBranchCount
 			})
 		end
 		if branchGrid ~= nil then

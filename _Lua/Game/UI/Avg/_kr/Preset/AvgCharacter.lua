@@ -114,7 +114,8 @@ return {
 	{
 		id = "avg1_115",
 		name = "호타루",
-		name_bg_color = "#5e76ac"
+		name_bg_color = "#5e76ac",
+		reuseL2DPose = "g"
 	},
 	{
 		id = "avg1_116",
@@ -315,6 +316,12 @@ return {
 		ver = "1.6.0"
 	},
 	{
+		id = "avg1_163",
+		name = "그레이스혼",
+		name_bg_color = "#6690de",
+		ver = "1.9.2"
+	},
+	{
 		id = "avg1_164",
 		name = "사쿠",
 		name_bg_color = "#5a91ca",
@@ -334,6 +341,18 @@ return {
 		id = "avg2_003",
 		name = "우드모트 척탄병",
 		name_bg_color = "#0ABEC5"
+	},
+	{
+		id = "avg2_943",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.10.0"
+	},
+	{
+		id = "avg2_945",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg2_946",
@@ -1032,7 +1051,7 @@ return {
 	},
 	{
 		id = "avg3_206",
-		name = "루나르",
+		name = "유안",
 		name_bg_color = "#394444"
 	},
 	{
@@ -1066,6 +1085,12 @@ return {
 		ver = "1.8.0"
 	},
 	{
+		id = "avg3_212",
+		name = "***",
+		name_bg_color = "#cd5d4b",
+		ver = "1.11.0"
+	},
+	{
 		id = "avg3_213",
 		name = "평범한 마녀",
 		name_bg_color = "#0ABEC5",
@@ -1080,14 +1105,26 @@ return {
 	{
 		id = "avg3_215",
 		name = "마틸다",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#fced8a",
 		ver = "1.9.0"
 	},
 	{
 		id = "avg3_220",
 		name = "메르쿠리아",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#9787b1",
 		ver = "1.9.0"
+	},
+	{
+		id = "avg3_221",
+		name = "***",
+		name_bg_color = "#789eba",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_222",
+		name = "***",
+		name_bg_color = "#a5cdc3",
+		ver = "1.11.0"
 	},
 	{
 		id = "avg3_873",
@@ -1617,7 +1654,7 @@ return {
 	},
 	{
 		id = "avg3_978",
-		name = "감격한 여행가",
+		name = "흥분한 여행가",
 		name_bg_color = "#0ABEC5"
 	},
 	{
@@ -2671,6 +2708,18 @@ return {
 		name = "평범한 마녀B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_213"
+	},
+	{
+		id = "avg3_1292",
+		name = "호타루A",
+		name_bg_color = "#5e76ac",
+		reuse = "avg1_115"
+	},
+	{
+		id = "avg3_1293",
+		name = "사쿠A",
+		name_bg_color = "#5a91ca",
+		reuse = "avg1_164"
 	},
 	{
 		id = "avg4_100",

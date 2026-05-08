@@ -114,7 +114,8 @@ return {
 	{
 		id = "avg1_115",
 		name = "火垂",
-		name_bg_color = "#5e76ac"
+		name_bg_color = "#5e76ac",
+		reuseL2DPose = "g"
 	},
 	{
 		id = "avg1_116",
@@ -316,9 +317,9 @@ return {
 	},
 	{
 		id = "avg1_163",
-		name = "***",
+		name = "格蕾霍恩",
 		name_bg_color = "#6690de",
-		ver = "1.11.0"
+		ver = "1.9.2"
 	},
 	{
 		id = "avg1_164",
@@ -346,6 +347,12 @@ return {
 		name = "***",
 		name_bg_color = "#0ABEC5",
 		ver = "1.10.0"
+	},
+	{
+		id = "avg2_945",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg2_946",
@@ -1078,6 +1085,12 @@ return {
 		ver = "1.8.0"
 	},
 	{
+		id = "avg3_212",
+		name = "***",
+		name_bg_color = "#cd5d4b",
+		ver = "1.11.0"
+	},
+	{
 		id = "avg3_213",
 		name = "通用魔女",
 		name_bg_color = "#0ABEC5",
@@ -1104,13 +1117,13 @@ return {
 	{
 		id = "avg3_221",
 		name = "***",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#789eba",
 		ver = "1.11.0"
 	},
 	{
 		id = "avg3_222",
 		name = "***",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#a5cdc3",
 		ver = "1.11.0"
 	},
 	{

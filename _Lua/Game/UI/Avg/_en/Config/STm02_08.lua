@@ -7305,7 +7305,7 @@ return {
 			"",
 			false,
 			"",
-			"From Cangwu==W== way out east==W== to Solfeng==W== in the west,==W== everyone's gonna know who you are!",
+			"From Cangwu==W== way out east==W== to Matsukawa==W== in the west,==W== everyone's gonna know who you are!",
 			""
 		}
 	},

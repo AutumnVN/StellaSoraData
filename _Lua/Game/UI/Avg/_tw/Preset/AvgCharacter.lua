@@ -114,7 +114,8 @@ return {
 	{
 		id = "avg1_115",
 		name = "火垂",
-		name_bg_color = "#5e76ac"
+		name_bg_color = "#5e76ac",
+		reuseL2DPose = "g"
 	},
 	{
 		id = "avg1_116",
@@ -151,7 +152,8 @@ return {
 	{
 		id = "avg1_125",
 		name = "蒼蘭",
-		name_bg_color = "#90abe1"
+		name_bg_color = "#90abe1",
+		reuseL2DPose = "c"
 	},
 	{
 		id = "avg1_126",
@@ -314,6 +316,12 @@ return {
 		ver = "1.6.0"
 	},
 	{
+		id = "avg1_163",
+		name = "格蕾霍恩",
+		name_bg_color = "#6690de",
+		ver = "1.9.2"
+	},
+	{
 		id = "avg1_164",
 		name = "朔",
 		name_bg_color = "#5a91ca",
@@ -333,6 +341,18 @@ return {
 		id = "avg2_003",
 		name = "樹樹鼠·擲彈兵",
 		name_bg_color = "#0ABEC5"
+	},
+	{
+		id = "avg2_943",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.10.0"
+	},
+	{
+		id = "avg2_945",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg2_946",
@@ -659,7 +679,7 @@ return {
 	},
 	{
 		id = "avg3_124",
-		name = "千蓓",
+		name = "千語",
 		name_bg_color = "#0ABEC5"
 	},
 	{
@@ -1042,13 +1062,13 @@ return {
 	},
 	{
 		id = "avg3_208",
-		name = "沙蝎雜兵（女）",
+		name = "沙蠍雜兵（女）",
 		name_bg_color = "#0ABEC5",
 		ver = "1.8.0"
 	},
 	{
 		id = "avg3_209",
-		name = "沙蝎雜兵（男）",
+		name = "沙蠍雜兵（男）",
 		name_bg_color = "#0ABEC5",
 		ver = "1.8.0"
 	},
@@ -1065,6 +1085,12 @@ return {
 		ver = "1.8.0"
 	},
 	{
+		id = "avg3_212",
+		name = "***",
+		name_bg_color = "#cd5d4b",
+		ver = "1.11.0"
+	},
+	{
 		id = "avg3_213",
 		name = "通用魔女",
 		name_bg_color = "#0ABEC5",
@@ -1079,14 +1105,26 @@ return {
 	{
 		id = "avg3_215",
 		name = "瑪蒂爾達",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#fced8a",
 		ver = "1.9.0"
 	},
 	{
 		id = "avg3_220",
 		name = "梅爾庫莉婭",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#9787b1",
 		ver = "1.9.0"
+	},
+	{
+		id = "avg3_221",
+		name = "***",
+		name_bg_color = "#789eba",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_222",
+		name = "***",
+		name_bg_color = "#a5cdc3",
+		ver = "1.11.0"
 	},
 	{
 		id = "avg3_873",
@@ -2589,19 +2627,19 @@ return {
 	},
 	{
 		id = "avg3_1278",
-		name = "汽鍋鐵錘",
+		name = "汽鍋鐵錘A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_974"
 	},
 	{
 		id = "avg3_1279",
-		name = "汽鍋鐵錘",
+		name = "汽鍋鐵錘B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_974"
 	},
 	{
 		id = "avg3_1280",
-		name = "汽鍋鐵錘",
+		name = "汽鍋鐵錘C",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_974"
 	},
@@ -2643,13 +2681,13 @@ return {
 	},
 	{
 		id = "avg3_1287",
-		name = "沙蝎雜兵（女）A",
+		name = "沙蠍雜兵（女）A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_208"
 	},
 	{
 		id = "avg3_1288",
-		name = "沙蝎雜兵（男）A",
+		name = "沙蠍雜兵（男）A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_209"
 	},
@@ -2670,6 +2708,18 @@ return {
 		name = "通用魔女B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_213"
+	},
+	{
+		id = "avg3_1292",
+		name = "火垂A",
+		name_bg_color = "#5e76ac",
+		reuse = "avg1_115"
+	},
+	{
+		id = "avg3_1293",
+		name = "朔A",
+		name_bg_color = "#5a91ca",
+		reuse = "avg1_164"
 	},
 	{
 		id = "avg4_100",
