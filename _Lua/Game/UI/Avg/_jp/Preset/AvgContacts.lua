@@ -134,6 +134,13 @@ return {
 		signature = "大切な気持ちを運びます"
 	},
 	{
+		id = 131,
+		icon = "Icon/Head/head_13101_S",
+		name = "ブロッチ",
+		landmark = "ブロッチの屋台",
+		signature = "閉店セールやってます"
+	},
+	{
 		id = 132,
 		icon = "Icon/Head/head_13201_S",
 		name = "ミネルバ",
@@ -167,6 +174,14 @@ return {
 		name = "ニュクス",
 		landmark = "フィーリエ-メイスト通り10号",
 		signature = "休養中、復職時期は未定"
+	},
+	{
+		id = 140,
+		icon = "Icon/Head/head_14001_S",
+		name = "***",
+		landmark = "必要なときは連絡してください",
+		signature = "迷惑な人は即ブロックしちゃうから",
+		ver = "1.11.0"
 	},
 	{
 		id = 141,
