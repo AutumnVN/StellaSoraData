@@ -162,6 +162,7 @@ local AvgPreset = {
 		"tower_inside_arcade",
 		"tower_intel",
 		"tower_phoenix_bossroom",
+		"tower_planetarium",
 		"tower_rest",
 		"tower_supermarket",
 		"tower_wind_light",
@@ -299,6 +300,14 @@ local AvgPreset = {
 		"story_event_06_006",
 		"story_event_06_007_a",
 		"story_event_06_007_b",
+		"story_event_07_001",
+		"story_event_07_002_FP",
+		"story_event_07_002_MP",
+		"story_event_07_003",
+		"story_event_08_001",
+		"story_event_08_001_a",
+		"story_event_08_002",
+		"story_event_08_003",
 		"story_main_00_001",
 		"story_main_00_002",
 		"story_main_00_003_FP",
@@ -377,6 +386,7 @@ local AvgPreset = {
 		"story_main_02_017",
 		"story_main_02_018",
 		"story_main_02_019",
+		"story_main_02_022",
 		"story_main_03_001_a",
 		"story_main_03_001_b",
 		"story_main_03_003",
@@ -480,6 +490,8 @@ local AvgPreset = {
 		"story_main_07_008",
 		"story_main_07_009",
 		"story_main_07_010",
+		"story_main_07_010_a",
+		"story_main_07_010_b",
 		"story_main_07_011",
 		"story_main_be_01_001_FP",
 		"story_main_be_01_001_MP",
@@ -514,7 +526,8 @@ local AvgPreset = {
 		"story_tales_12_001",
 		"story_tales_13_001",
 		"story_tales_14_001",
-		"story_tales_14_001_a"
+		"story_tales_14_001_a",
+		"story_tales_15_001"
 	},
 	FgResName = {
 		"circle_light",
@@ -551,7 +564,9 @@ local AvgPreset = {
 		"4016_B",
 		"4048_B",
 		"4045_B",
-		"4051_B"
+		"4051_B",
+		"4054_B",
+		"4029_B"
 	},
 	BgEffectResName = {
 		"0",
@@ -1849,6 +1864,126 @@ local AvgPreset = {
 						5.0,
 						5.0,
 						5.0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				true
+			}
+		},
+		{
+			"hengboLP",
+			{
+				{
+					{
+						20,
+						5,
+						0
+					},
+					{
+						2,
+						0.2,
+						0.0
+					},
+					{
+						5,
+						0,
+						0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				{
+					{
+						0,
+						0,
+						0
+					},
+					{
+						0.2,
+						0.2,
+						0.2
+					},
+					{
+						0,
+						0,
+						0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				true
+			}
+		},
+		{
+			"wind",
+			{
+				{
+					{
+						40,
+						20,
+						0
+					},
+					{
+						4.0,
+						2.0,
+						0.0
+					},
+					{
+						2.0,
+						2.0,
+						0.0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						1,
+						1,
+						1
+					}
+				},
+				{
+					{
+						0,
+						0,
+						0
+					},
+					{
+						0.0,
+						0.0,
+						0.0
+					},
+					{
+						0.0,
+						0.0,
+						0.0
 					},
 					{
 						1,
@@ -5093,6 +5228,30 @@ local AvgPreset = {
 		{
 			"3s 调至 100%",
 			"music_avg_volume100_3s"
+		},
+		{
+			"0s 调至 50%",
+			"music_avg_volume50_0s"
+		},
+		{
+			"1s 调至 50%",
+			"music_avg_volume50_1s"
+		},
+		{
+			"3s 调至 50%",
+			"music_avg_volume50_3s"
+		},
+		{
+			"0s 调至 75%",
+			"music_avg_volume75_0s"
+		},
+		{
+			"1s 调至 75%",
+			"music_avg_volume75_1s"
+		},
+		{
+			"3s 调至 75%",
+			"music_avg_volume75_3s"
 		}
 	},
 	FxResName = {

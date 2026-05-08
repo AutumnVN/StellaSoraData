@@ -474,17 +474,20 @@ function AvgPanel:RequireAndPreProcAvgConfig(sAvgConfigPath, sHead, _sGroupId)
 				local sGroupId = v.param[1]
 				if tbIfUnlock[sGroupId] == nil then
 					tbIfUnlock[sGroupId] = {
-						nEndCmdId = 0,
+						nStartCmdId = 0,
 						nElseCmdId = 0,
+						nEndCmdId = 0,
 						bSucc = false
 					}
 				end
+				tbIfUnlock[sGroupId].nStartCmdId = i
 			elseif v.cmd == "IfUnlockElse" then
 				local sGroupId = v.param[1]
 				if tbIfUnlock[sGroupId] == nil then
 					tbIfUnlock[sGroupId] = {
-						nEndCmdId = 0,
+						nStartCmdId = 0,
 						nElseCmdId = 0,
+						nEndCmdId = 0,
 						bSucc = false
 					}
 				end
@@ -493,8 +496,9 @@ function AvgPanel:RequireAndPreProcAvgConfig(sAvgConfigPath, sHead, _sGroupId)
 				local sGroupId = v.param[1]
 				if tbIfUnlock[sGroupId] == nil then
 					tbIfUnlock[sGroupId] = {
-						nEndCmdId = 0,
+						nStartCmdId = 0,
 						nElseCmdId = 0,
+						nEndCmdId = 0,
 						bSucc = false
 					}
 				end
@@ -658,8 +662,12 @@ end
 function AvgPanel:OnEvent_AvgSkip()
 	local nJumpTo
 	local mapConfig = self.tbAvgCfg[self.END_CMD_ID - 1]
-	if mapConfig ~= nil and mapConfig.cmd == "JUMP_AVG_ID" then
-		nJumpTo = self.END_CMD_ID - 1
+	if mapConfig ~= nil then
+		if mapConfig.cmd == "JUMP_AVG_ID" then
+			nJumpTo = self.END_CMD_ID - 1
+		elseif mapConfig.cmd == "IfUnlockEnd" then
+			nJumpTo = self:ParseEndJump(mapConfig)
+		end
 	end
 	if nJumpTo ~= nil then
 		self.nJumpTarget = nJumpTo
@@ -1116,6 +1124,29 @@ function AvgPanel:JUMP_AVG_ID(tbParam)
 	printLog("Jump to AvgId:" .. sAvgId)
 	self.nJumpTarget = nCmdId
 	return 0
+end
+function AvgPanel:ParseEndJump(mapConfig)
+	local sGroupId = mapConfig.param[1]
+	local mapUnlock = self.tbIfUnlockTarget[self.sAvgId][sGroupId]
+	local mapConfig_IfUnlock = self.tbAvgCfg[mapUnlock.nStartCmdId]
+	if mapConfig_IfUnlock ~= nil and mapConfig_IfUnlock.param ~= nil and mapConfig_IfUnlock.cmd == "IfUnlock" then
+		local nCheckCmdId_From, nCheckCmdId_To
+		local sConditionId = mapConfig_IfUnlock.param[2]
+		if AvgData:IsUnlock(sConditionId) then
+			nCheckCmdId_From = mapUnlock.nStartCmdId
+			nCheckCmdId_To = mapUnlock.nElseCmdId
+		else
+			nCheckCmdId_From = mapUnlock.nElseCmdId
+			nCheckCmdId_To = mapUnlock.nEndCmdId
+		end
+		for i = nCheckCmdId_From, nCheckCmdId_To do
+			local mapConfig = self.tbAvgCfg[i]
+			if mapConfig ~= nil and mapConfig.cmd == "JUMP_AVG_ID" then
+				return i
+			end
+		end
+	end
+	return nil
 end
 function AvgPanel:EnableGamepad()
 	self.bHasOtherGamepadUI = GamepadUIManager.GetInputState()

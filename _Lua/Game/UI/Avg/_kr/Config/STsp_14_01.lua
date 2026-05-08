@@ -3872,7 +3872,7 @@ return {
 			true,
 			true,
 			0.6,
-			false,
+			true,
 			"fade"
 		}
 	},
