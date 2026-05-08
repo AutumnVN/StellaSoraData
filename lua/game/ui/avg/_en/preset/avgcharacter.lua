@@ -114,7 +114,8 @@ return {
 	{
 		id = "avg1_115",
 		name = "Firefly",
-		name_bg_color = "#5e76ac"
+		name_bg_color = "#5e76ac",
+		reuseL2DPose = "g"
 	},
 	{
 		id = "avg1_116",
@@ -151,7 +152,8 @@ return {
 	{
 		id = "avg1_125",
 		name = "Freesia",
-		name_bg_color = "#90abe1"
+		name_bg_color = "#90abe1",
+		reuseL2DPose = "c"
 	},
 	{
 		id = "avg1_126",
@@ -314,6 +316,12 @@ return {
 		ver = "1.6.0"
 	},
 	{
+		id = "avg1_163",
+		name = "Greyhorn",
+		name_bg_color = "#6690de",
+		ver = "1.9.2"
+	},
+	{
 		id = "avg1_164",
 		name = "Shuo",
 		name_bg_color = "#5a91ca",
@@ -333,6 +341,18 @@ return {
 		id = "avg2_003",
 		name = "Shrubshrew Grenadier",
 		name_bg_color = "#0ABEC5"
+	},
+	{
+		id = "avg2_943",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.10.0"
+	},
+	{
+		id = "avg2_945",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg2_946",
@@ -689,7 +709,7 @@ return {
 	},
 	{
 		id = "avg3_130",
-		name = "Imperial Guard Qianyu",
+		name = "Imperial Guard Erinis",
 		name_bg_color = "#0ABEC5"
 	},
 	{
@@ -1065,6 +1085,12 @@ return {
 		ver = "1.8.0"
 	},
 	{
+		id = "avg3_212",
+		name = "***",
+		name_bg_color = "#cd5d4b",
+		ver = "1.11.0"
+	},
+	{
 		id = "avg3_213",
 		name = "Witch",
 		name_bg_color = "#0ABEC5",
@@ -1079,14 +1105,26 @@ return {
 	{
 		id = "avg3_215",
 		name = "Matilda",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#fced8a",
 		ver = "1.9.0"
 	},
 	{
 		id = "avg3_220",
 		name = "Mercurio",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#9787b1",
 		ver = "1.9.0"
+	},
+	{
+		id = "avg3_221",
+		name = "***",
+		name_bg_color = "#789eba",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_222",
+		name = "***",
+		name_bg_color = "#a5cdc3",
+		ver = "1.11.0"
 	},
 	{
 		id = "avg3_873",
@@ -2670,6 +2708,18 @@ return {
 		name = "General Witch B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_213"
+	},
+	{
+		id = "avg3_1292",
+		name = "Firefly A",
+		name_bg_color = "#5e76ac",
+		reuse = "avg1_115"
+	},
+	{
+		id = "avg3_1293",
+		name = "Shuo A",
+		name_bg_color = "#5a91ca",
+		reuse = "avg1_164"
 	},
 	{
 		id = "avg4_100",
