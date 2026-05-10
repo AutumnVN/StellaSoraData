@@ -13917,7 +13917,7 @@ return {
 		cmd = "JUMP_AVG_ID",
 		param = {
 			"STm07_05_b",
-			1122,
+			1126,
 			"C"
 		}
 	},
