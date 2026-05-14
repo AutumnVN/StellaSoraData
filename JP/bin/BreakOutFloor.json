@@ -17,9 +17,15 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -35,7 +41,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 400401
@@ -58,13 +67,19 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
       0,
       2,
       8,
       2,
+      0,
+      0,
+      0,
       0,
       0,
       0
@@ -76,7 +91,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 400402
@@ -99,7 +117,10 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
       0,
@@ -108,7 +129,10 @@
       2,
       0,
       0,
-      2
+      2,
+      0,
+      0,
+      0
     ],
     "DropParam": [
       0,
@@ -117,7 +141,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 400403
@@ -140,7 +167,10 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
       2,
@@ -149,7 +179,10 @@
       2,
       0,
       0,
-      2
+      2,
+      0,
+      0,
+      0
     ],
     "DropParam": [
       0,
@@ -158,7 +191,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 0
@@ -181,7 +217,10 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
       2,
@@ -190,6 +229,9 @@
       0,
       2,
       2,
+      0,
+      0,
+      0,
       0
     ],
     "DropParam": [
@@ -199,7 +241,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 0
@@ -222,7 +267,10 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
       2,
@@ -231,6 +279,9 @@
       0,
       2,
       2,
+      0,
+      0,
+      0,
       0
     ],
     "DropParam": [
@@ -240,7 +291,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 400404
@@ -263,7 +317,10 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
       1,
@@ -272,7 +329,10 @@
       2,
       0,
       1,
-      1
+      1,
+      0,
+      0,
+      0
     ],
     "DropParam": [
       0,
@@ -281,7 +341,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 0
@@ -304,7 +367,10 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
       2,
@@ -313,7 +379,10 @@
       2,
       0,
       1,
-      1
+      1,
+      0,
+      0,
+      0
     ],
     "DropParam": [
       0,
@@ -322,7 +391,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 0
@@ -339,16 +411,22 @@
     "Heart": 8,
     "Score": 1000,
     "Drops": [
-      131,
+      115,
       113,
       116,
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
-      8,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -359,19 +437,72 @@
     "DropParam": [
       0,
       50,
-      10,
+      20,
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
-    "DictionaryID": 0
+    "DictionaryID": 400401
   },
   "82012": {
     "Id": 82012,
     "SceneName": "Levels/BreakOut/BreakOut_2_2",
     "ConfigPrefabName": "BreakOut_2_2",
+    "Theme": 2,
+    "BGM": "breakout_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop",
+    "MonsterLv": 1,
+    "Time": 120,
+    "Heart": 8,
+    "Score": 1200,
+    "Drops": [
+      115,
+      113,
+      116,
+      114,
+      118,
+      121,
+      117,
+      129,
+      131,
+      130
+    ],
+    "Counts": [
+      0,
+      2,
+      6,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "DropParam": [
+      0,
+      50,
+      20,
+      1,
+      1,
+      2,
+      1,
+      6,
+      1,
+      8
+    ],
+    "IntroCutscene": "EnterCamera_BreakOut",
+    "DictionaryID": 400402
+  },
+  "82013": {
+    "Id": 82013,
+    "SceneName": "Levels/BreakOut/BreakOut_2_3",
+    "ConfigPrefabName": "BreakOut_2_3",
     "Theme": 2,
     "BGM": "breakout_combatNormal_setState",
     "LeaveTriggerEvent": "amb_endlessTower_all_stop",
@@ -386,12 +517,18 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
       0,
       2,
-      8,
+      6,
+      2,
+      0,
+      0,
       2,
       0,
       0,
@@ -404,51 +541,13 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
-    "DictionaryID": 0
-  },
-  "82013": {
-    "Id": 82013,
-    "SceneName": "Levels/BreakOut/BreakOut_2_3",
-    "ConfigPrefabName": "BreakOut_2_3",
-    "Theme": 2,
-    "BGM": "breakout_combatNormal_setState",
-    "LeaveTriggerEvent": "amb_endlessTower_all_stop",
-    "MonsterLv": 1,
-    "Time": 120,
-    "Heart": 8,
-    "Score": 1100,
-    "Drops": [
-      115,
-      113,
-      116,
-      114,
-      118,
-      121,
-      117
-    ],
-    "Counts": [
-      0,
-      2,
-      8,
-      2,
-      0,
-      0,
-      2
-    ],
-    "DropParam": [
-      0,
-      50,
-      20,
-      1,
-      1,
-      2,
-      1
-    ],
-    "IntroCutscene": "EnterCamera_BreakOut",
-    "DictionaryID": 0
+    "DictionaryID": 400403
   },
   "82014": {
     "Id": 82014,
@@ -460,7 +559,7 @@
     "MonsterLv": 1,
     "Time": 120,
     "Heart": 8,
-    "Score": 1100,
+    "Score": 1000,
     "Drops": [
       115,
       113,
@@ -468,16 +567,22 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
+      0,
       2,
-      2,
-      8,
+      6,
       2,
       0,
       0,
-      2
+      2,
+      2,
+      0,
+      0
     ],
     "DropParam": [
       0,
@@ -486,7 +591,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 0
@@ -501,7 +609,7 @@
     "MonsterLv": 1,
     "Time": 120,
     "Heart": 6,
-    "Score": 1800,
+    "Score": 1400,
     "Drops": [
       115,
       113,
@@ -509,16 +617,22 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
+      1,
       2,
+      6,
       2,
-      8,
+      0,
       0,
       2,
-      2,
-      0
+      1,
+      0,
+      1
     ],
     "DropParam": [
       0,
@@ -527,7 +641,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 0
@@ -542,7 +659,7 @@
     "MonsterLv": 1,
     "Time": 120,
     "Heart": 6,
-    "Score": 1900,
+    "Score": 1550,
     "Drops": [
       115,
       113,
@@ -550,16 +667,22 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
+      1,
       2,
+      6,
       2,
-      8,
+      0,
       0,
       2,
-      2,
-      0
+      1,
+      1,
+      1
     ],
     "DropParam": [
       0,
@@ -568,10 +691,13 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
-    "DictionaryID": 0
+    "DictionaryID": 400404
   },
   "82017": {
     "Id": 82017,
@@ -583,7 +709,7 @@
     "MonsterLv": 1,
     "Time": 120,
     "Heart": 6,
-    "Score": 2100,
+    "Score": 1600,
     "Drops": [
       115,
       113,
@@ -591,14 +717,20 @@
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
       1,
       2,
-      10,
-      2,
+      6,
       0,
+      0,
+      0,
+      2,
+      1,
       1,
       1
     ],
@@ -609,7 +741,10 @@
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 0
@@ -624,33 +759,42 @@
     "MonsterLv": 1,
     "Time": 120,
     "Heart": 8,
-    "Score": 2500,
+    "Score": 2600,
     "Drops": [
-      130,
+      115,
       113,
       116,
       114,
       118,
       121,
-      117
+      117,
+      129,
+      131,
+      130
     ],
     "Counts": [
-      8,
+      1,
+      2,
+      6,
       0,
       0,
       0,
-      0,
-      0,
-      0
+      1,
+      1,
+      1,
+      1
     ],
     "DropParam": [
-      20,
+      0,
       50,
       20,
       1,
       1,
       2,
-      1
+      1,
+      6,
+      1,
+      8
     ],
     "IntroCutscene": "EnterCamera_BreakOut",
     "DictionaryID": 0

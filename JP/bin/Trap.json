@@ -2634,6 +2634,45 @@
     "RotSpd": 0,
     "MoveSpd": 0
   },
+  "50913002": {
+    "Id": 50913002,
+    "Name": "",
+    "FCId": 5091302,
+    "Model": "Actor/Monster/99034BombTrap/99034BombTrap_Actor",
+    "ModelScale": 10000,
+    "BuffFXScale": 10000,
+    "ColliderScale": 10000,
+    "AttributeId": "1300101",
+    "Templete": 9100000,
+    "BuffIds": [
+      990010050,
+      990010100,
+      990010040
+    ],
+    "TurnOffBuffIds": [],
+    "TurnOnBuffIds": [],
+    "InterruptSkill": true,
+    "SubType": 2,
+    "Faction": 4,
+    "Filter": [
+      2
+    ],
+    "IgnoreCollision": true,
+    "ActiveEff": "",
+    "ShapeType": 1,
+    "Width": 0.0,
+    "Length": 0.0,
+    "Radius": 99.0,
+    "InnerRadius": 0.0,
+    "Angle": 0.0,
+    "Offset": [],
+    "Rotation": 0.0,
+    "IsMove": false,
+    "IsBlock": false,
+    "MovAcc": 0,
+    "RotSpd": 0,
+    "MoveSpd": 0
+  },
   "50914001": {
     "Id": 50914001,
     "Name": "",
