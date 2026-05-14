@@ -17667,7 +17667,7 @@ return {
 			"",
 			false,
 			"",
-			"Alright.==W==Let's go to the very top.",
+			"Alright.==W== Let's go to the very top.",
 			""
 		}
 	},

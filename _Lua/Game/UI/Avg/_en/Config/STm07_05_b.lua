@@ -2410,33 +2410,26 @@ return {
 	},
 	{cmd = "SetGoOn"},
 	{
-		cmd = "CtrlChar",
-		param = {
-			"avg3_124",
-			"a",
-			"012",
-			"none",
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			"none",
-			"none",
-			"Linear",
-			0,
-			nil,
-			false,
-			1.0,
-			false,
-			nil
-		}
-	},
-	{
 		cmd = "Wait",
 		param = {0.5}
+	},
+	{
+		cmd = "CtrlStage",
+		param = {
+			0,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			1.0,
+			nil,
+			"none",
+			"OutQuint",
+			1.0,
+			false
+		}
 	},
 	{
 		cmd = "CtrlStage",
@@ -2449,66 +2442,6 @@ return {
 			nil,
 			nil,
 			0.3,
-			nil,
-			"none",
-			"OutQuint",
-			1.0,
-			false
-		}
-	},
-	{
-		cmd = "SetMainRoleTalk",
-		param = {
-			1,
-			0,
-			"009",
-			"none",
-			"none",
-			"y",
-			0.0,
-			false,
-			"avg3_100"
-		}
-	},
-	{
-		cmd = "SetTalk",
-		param = {
-			2,
-			"avg3_100",
-			"",
-			0,
-			"",
-			false,
-			"",
-			"15 percent...==W== That's 6 billion Dorra a year in interest. That's not a heavy burden—==W==that's crippling...",
-			""
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {0.5}
-	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "Wait",
-		param = {0.5}
-	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "Wait",
-		param = {0.5}
-	},
-	{
-		cmd = "CtrlStage",
-		param = {
-			0,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			1.0,
 			nil,
 			"none",
 			"OutQuint",
@@ -2547,11 +2480,11 @@ return {
 			0,
 			"avg3_124",
 			"",
-			1,
+			0,
 			"",
 			false,
 			"",
-			"... The rumors about your efficiency were true.==W== Alright.==W== Last month,==W== a company took out a ten-billion emergency loan at a 15 percent annual rate.",
+			"... The rumors about your efficiency were true. Alright.==W== Last month,==W== a company took out a ten-billion emergency loan at a 15 percent annual rate.",
 			""
 		}
 	},
@@ -2580,11 +2513,6 @@ return {
 			nil
 		}
 	},
-	{
-		cmd = "Wait",
-		param = {0.3}
-	},
-	{cmd = "SetGoOn"},
 	{
 		cmd = "Wait",
 		param = {0.8}
@@ -2629,6 +2557,106 @@ return {
 		param = {0.5}
 	},
 	{cmd = "SetGoOn"},
+	{
+		cmd = "Wait",
+		param = {0.5}
+	},
+	{
+		cmd = "CtrlStage",
+		param = {
+			0,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			0.3,
+			nil,
+			"none",
+			"OutQuint",
+			1.0,
+			false
+		}
+	},
+	{
+		cmd = "SetAudio",
+		param = {
+			0,
+			"se_227",
+			0.0,
+			false
+		}
+	},
+	{
+		cmd = "SetMainRoleTalk",
+		param = {
+			1,
+			0,
+			"009",
+			"none",
+			"none",
+			"y",
+			0.0,
+			false,
+			"avg3_100"
+		}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			2,
+			"avg3_100",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"15 percent...==W== That's 6 billion Dorra a year in interest. That's not a heavy burden—that's crippling...",
+			""
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {0.8}
+	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "SetMainRoleTalk",
+		param = {
+			3,
+			0,
+			nil,
+			"close",
+			"none",
+			"y",
+			0.0,
+			false,
+			"avg3_100"
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {0.5}
+	},
+	{
+		cmd = "CtrlStage",
+		param = {
+			0,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			1.0,
+			nil,
+			"none",
+			"OutQuint",
+			1.0,
+			false
+		}
+	},
 	{
 		cmd = "CtrlChar",
 		param = {
@@ -9194,7 +9222,7 @@ return {
 			"",
 			false,
 			"",
-			"Two years ago, to win the Philae Monolith bid, I secured a 40-billion-Dorra loan from Deepsea Finance using my two Seals of Grace as collateral.",
+			"Two years ago, to win the Philae Monolith bid,==RT==I secured a 40-billion-Dorra loan from Deepsea Finance==RT==using my two Seals of Grace as collateral.",
 			""
 		}
 	},
@@ -9383,7 +9411,7 @@ return {
 			"",
 			false,
 			"",
-			"Later, thanks to Firenze and her security team locking down Omnisky Aegis early,==RT==New Star Guild and I scaled the Monolith and made our wish.",
+			"Later, thanks to Firenze and her security team locking down Omnisky Aegis==RT==early, New Star Guild and I scaled the Monolith and made our wish.",
 			""
 		}
 	},
@@ -9541,7 +9569,7 @@ return {
 			"",
 			false,
 			"",
-			"If it hadn't been Iris who knew Artifacts inside and out, we never would've figured out that prompt.==RT==We largely owed our victory to her.",
+			"If it hadn't been Iris who knew Artifacts inside and out, we never would've==RT==figured out that prompt. We largely owed our victory to her.",
 			""
 		}
 	},
@@ -10910,7 +10938,7 @@ return {
 			"",
 			false,
 			"",
-			"The endless conflict between headquarters and regional branches caused grain production to plummet across Nova.",
+			"The endless conflict between headquarters and regional branches==RT==caused grain production to plummet across Nova.",
 			""
 		}
 	},
@@ -10928,7 +10956,7 @@ return {
 			"",
 			false,
 			"",
-			"We stayed out of it and maintained the peace in Philae, but the war drove our agricultural costs through the roof.",
+			"We stayed out of it and maintained the peace in Philae,==RT==but the war drove our agricultural costs through the roof.",
 			""
 		}
 	},
@@ -11115,7 +11143,7 @@ return {
 			"",
 			false,
 			"",
-			"Meanwhile, our Deepsea Finance contract capped our sale prices at the ten-year market average.==RT==The more we sold, the more we lost. Ruin was closing in.",
+			"Meanwhile, our Deepsea Finance contract capped our sale prices==RT==at the ten-year market average. The more we sold, the more we lost.==RT==Ruin was closing in.",
 			""
 		}
 	},
@@ -11323,7 +11351,7 @@ return {
 			"",
 			false,
 			"",
-			"With Deepsea Finance holding my Seals, Vita lost its ability to copy memories for the Monolith and make cross-city calls.",
+			"With Deepsea Finance holding my Seals, Vita lost its ability==RT==to copy memories for the Monolith and make cross-city calls.",
 			""
 		}
 	},
@@ -11341,7 +11369,7 @@ return {
 			"",
 			false,
 			"",
-			"So, I stayed to run the company.==RT==New Star Guild made Philae their base and continued chasing leads on the orphanage.",
+			"So, I stayed to run the company. New Star Guild made Philae their base==RT==and continued chasing leads on the orphanage.",
 			""
 		}
 	},

@@ -5,7 +5,7 @@ return {
 			"ep_mainline_001",
 			"Act Seven ",
 			"Blades Reunited",
-			"You and Chitose finally cross paths again. She catches you up on her life and the fruits of her training. Before you even set foot outside, Chitose casually snuffs out an Omnisky Aegis plot without breaking a sweat…",
+			"You and Chitose cross paths again. She catches you up on her life and her training. Before you set foot to make the wish, Chitose casually snuffs out an Omnisky Aegis plot without breaking a sweat…",
 			0
 		}
 	},
@@ -1144,7 +1144,7 @@ return {
 			"",
 			false,
 			"",
-			"I follow her gaze and spot a hairline fracture running straight through==RT==a massive boulder out in the river.",
+			"I follow her gaze and spot a hairline fracture running straight==RT==through a massive boulder out in the river.",
 			""
 		}
 	},
@@ -4268,7 +4268,7 @@ return {
 			"",
 			false,
 			"",
-			"After introducing Chitose to Firenze and Nyx,==RT==we headed back to the hotel to prep for the Monolith. But...",
+			"After introducing Chitose to Firenze and Nyx, we headed back==RT==to the hotel to prep for the Monolith. But...",
 			""
 		}
 	},

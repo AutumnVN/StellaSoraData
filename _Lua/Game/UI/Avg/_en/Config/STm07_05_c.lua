@@ -6429,7 +6429,135 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {2.0}
+		param = {1.5}
+	},
+	{
+		cmd = "SetBg",
+		param = {
+			0,
+			"guard_outside_daylight",
+			"0",
+			"OutQuad",
+			2.0,
+			false,
+			"default",
+			0
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			0,
+			"0",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"The Imperial Guard follows suit.==W== The Philae Monolith bidding ends before the second technical review even begins.==W== As the sole candidate, United Harvest Philae wins.",
+			""
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1}
+	},
+	{
+		cmd = "SetBg",
+		param = {
+			0,
+			"hotel_roof",
+			"0",
+			"OutQuad",
+			1.5,
+			false,
+			"fade",
+			0
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1}
+	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "SetAudio",
+		param = {
+			0,
+			"se_264",
+			0.0,
+			false
+		}
+	},
+	{
+		cmd = "SetBg",
+		param = {
+			4,
+			"story_main_05_002",
+			"0",
+			"Linear",
+			0.0,
+			true,
+			"default",
+			0
+		}
+	},
+	{
+		cmd = "SetStage",
+		param = {
+			3,
+			4,
+			"InQuart",
+			1.0,
+			false
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {0.7}
+	},
+	{
+		cmd = "SetAudio",
+		param = {
+			0,
+			"se_084",
+			0.0,
+			false
+		}
+	},
+	{
+		cmd = "SetFx",
+		param = {
+			0,
+			"fx_avg_congr",
+			0,
+			2,
+			nil,
+			nil,
+			nil,
+			0.0,
+			false,
+			false
+		}
+	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "SetStage",
+		param = {
+			3,
+			3,
+			"OutQuad",
+			0.5,
+			true
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1.5}
 	},
 	{
 		cmd = "SetTalk",
@@ -6444,10 +6572,6 @@ return {
 			"After that, we enjoy a peaceful stretch.==W== I stay in Philae to help Firenze build the company. The New Star Guild and Petal Bloom keep trekking,==W== bouncing from Monolith to Monolith.",
 			""
 		}
-	},
-	{
-		cmd = "Wait",
-		param = {1.0}
 	},
 	{
 		cmd = "SetBg",
@@ -6504,7 +6628,7 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {1.5}
+		param = {2.0}
 	},
 	{cmd = "SetGoOn"},
 	{
@@ -6548,173 +6672,15 @@ return {
 		cmd = "Wait",
 		param = {1.0}
 	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "Wait",
-		param = {2.5}
-	},
-	{
-		cmd = "SetBg",
-		param = {
-			0,
-			"guard_outside_daylight",
-			"0",
-			"Linear",
-			1.5,
-			false,
-			"default",
-			0
-		}
-	},
-	{
-		cmd = "CtrlBg",
-		param = {
-			0,
-			nil,
-			nil,
-			nil,
-			nil,
-			1.2,
-			nil,
-			nil,
-			nil,
-			nil,
-			"none",
-			"Linear",
-			0.0,
-			true,
-			0
-		}
-	},
-	{
-		cmd = "CtrlBg",
-		param = {
-			0,
-			nil,
-			nil,
-			nil,
-			nil,
-			1.05,
-			nil,
-			nil,
-			nil,
-			nil,
-			"none",
-			"Linear",
-			10.0,
-			false,
-			0
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {2.0}
-	},
-	{
-		cmd = "SetTalk",
-		param = {
-			0,
-			"0",
-			"",
-			0,
-			"",
-			false,
-			"",
-			"The Imperial Guard follows suit.==W== The Philae Monolith bidding ends before the second technical review even begins.==W== As the sole candidate, United Harvest Philae wins.",
-			""
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {1.0}
-	},
-	{
-		cmd = "SetBg",
-		param = {
-			0,
-			"hotel_roof",
-			"0",
-			"OutQuad",
-			1.5,
-			false,
-			"fade",
-			0
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {1.0}
-	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "SetAudio",
-		param = {
-			0,
-			"se_264",
-			0.0,
-			false
-		}
-	},
-	{
-		cmd = "SetBg",
-		param = {
-			4,
-			"story_main_05_002",
-			"0",
-			"Linear",
-			0.0,
-			true,
-			"default",
-			0
-		}
-	},
-	{
-		cmd = "SetStage",
-		param = {
-			3,
-			4,
-			"InQuart",
-			1.0,
-			false
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {0.7}
-	},
-	{
-		cmd = "SetAudio",
-		param = {
-			0,
-			"se_084",
-			0.0,
-			false
-		}
-	},
 	{
 		cmd = "SetBGM",
 		param = {
 			1,
-			"music_avg_volume35_1s",
+			"music_avg_volume100_0s",
 			0,
 			"",
 			"4000ms",
 			0.0,
-			false
-		}
-	},
-	{
-		cmd = "SetFx",
-		param = {
-			0,
-			"fx_avg_congr",
-			0,
-			2,
-			nil,
-			nil,
-			nil,
-			0.0,
-			false,
 			false
 		}
 	},
@@ -6735,16 +6701,6 @@ return {
 			1,
 			true,
 			"default"
-		}
-	},
-	{
-		cmd = "SetStage",
-		param = {
-			3,
-			5,
-			"Linear",
-			0.5,
-			true
 		}
 	},
 	{
@@ -8691,7 +8647,7 @@ return {
 			"",
 			false,
 			"",
-			"==SEX1== went without oxygen for too long. The brain damage is irreversible.==W== ==SEX1=='s alive, but ... there's no telling if she will ever wake up.",
+			"==SEX1== went without oxygen for too long. The brain damage is irreversible.==W== ==SEX1=='s alive, but ... there's no telling if ==SEX== will ever wake up.",
 			""
 		}
 	},
