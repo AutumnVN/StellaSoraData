@@ -23904,6 +23904,630 @@
             }
         ]
     },
+    "214003": {
+        "id": 214003,
+        "name": "Seed Alike",
+        "star": 5,
+        "element": "Lux",
+        "tag": [
+            "ATK",
+            "Auto Attack",
+            "Element"
+        ],
+        "char": [
+            "Firefly"
+        ],
+        "mainSkill": {
+            "id": 4003,
+            "name": "Seed Alike",
+            "nameCN": "???",
+            "nameJP": "???",
+            "nameKR": "???",
+            "desc": "Lux Versatile Trekkers gain 1 stack of Light Particle per second on the battlefield: Each stack increases their ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.\u000bWhen Light Particle is at max stacks, the Lux Main Trekker gains Wings of Light: Increases Auto Attack DMG by <color=#ec6d21>{4}</color> for {5}s.",
+            "descCN": "???",
+            "descJP": "???",
+            "descKR": "???",
+            "effectType": [
+                "ATK (%)",
+                "Auto Attack Damage (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214003",
+                "Icon_CommonBuff_AttackUp"
+            ],
+            "params": "1%,20,10,6%,10/1.2%,20,10,7.2%,10/1.4%,20,10,8.4%,10/1.6%,20,10,9.6%,10/1.8%,20,10,10.8%,10/2%,20,10,12%,10",
+            "icon": "DiscSkill_214003",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "secondarySkill1": {
+            "id": 40031,
+            "name": "Destiny Unleashed",
+            "nameCN": "???",
+            "nameJP": "???",
+            "nameKR": "???",
+            "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bLight Particle gains an additional effect: Each stack increases own Skill DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "???",
+            "descJP": "???",
+            "descKR": "???",
+            "effectType": [
+                "Lux DMG (base)",
+                "Skill DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "1%,0.4%/2%,0.8%/3%,1.2%/4%,1.6%/5%,2%",
+            "requirements": [
+                {
+                    "Melody of Skill": 10,
+                    "Melody of Ultimate": 10
+                },
+                {
+                    "Melody of Skill": 25,
+                    "Melody of Ultimate": 25
+                },
+                {
+                    "Melody of Skill": 40,
+                    "Melody of Ultimate": 40
+                },
+                {
+                    "Melody of Skill": 55,
+                    "Melody of Ultimate": 55
+                },
+                {
+                    "Melody of Skill": 70,
+                    "Melody of Ultimate": 70
+                }
+            ],
+            "icon": "DiscSkill_1",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "secondarySkill2": {
+            "id": 40032,
+            "name": "Free Will",
+            "nameCN": "???",
+            "nameJP": "???",
+            "nameKR": "???",
+            "desc": "When the Lux Main Trekker with Wings of Light triggers a mark that inflicts ##Thunderbolt#4027#, increases own Ultimate DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen the Lux Main Trekker with Wings of Light triggers a mark that inflicts ##Lucent#4028#, increases own Skill DMG by <color=#ec6d21>{3}</color> for {4}s.",
+            "descCN": "???",
+            "descJP": "???",
+            "descKR": "???",
+            "effectType": [
+                "Ultimate DMG (base)",
+                "Skill DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "7%,5,7%,5/14%,5,14%,5/21%,5,21%,5/28%,5,28%,5/35%,5,35%,5",
+            "requirements": [
+                {
+                    "Melody of Focus": 15,
+                    "Melody of Skill": 15,
+                    "Melody of Lux": 15
+                },
+                {
+                    "Melody of Focus": 30,
+                    "Melody of Skill": 30,
+                    "Melody of Lux": 30
+                },
+                {
+                    "Melody of Focus": 45,
+                    "Melody of Skill": 45,
+                    "Melody of Lux": 45
+                },
+                {
+                    "Melody of Focus": 60,
+                    "Melody of Skill": 60,
+                    "Melody of Lux": 60
+                },
+                {
+                    "Melody of Focus": 75,
+                    "Melody of Skill": 75,
+                    "Melody of Lux": 75
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "supportNote": [
+            {
+                "Melody of Focus": 3,
+                "Melody of Ultimate": 3
+            },
+            {
+                "Melody of Focus": 3,
+                "Melody of Ultimate": 4
+            },
+            {
+                "Melody of Focus": 4,
+                "Melody of Ultimate": 4
+            },
+            {
+                "Melody of Focus": 4,
+                "Melody of Ultimate": 5
+            },
+            {
+                "Melody of Focus": 5,
+                "Melody of Ultimate": 5
+            },
+            {
+                "Melody of Focus": 5,
+                "Melody of Ultimate": 6
+            },
+            {
+                "Melody of Focus": 6,
+                "Melody of Ultimate": 6
+            },
+            {
+                "Melody of Focus": 6,
+                "Melody of Ultimate": 7
+            },
+            {
+                "Melody of Focus": 7,
+                "Melody of Ultimate": 7
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 14,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 18,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 22,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 26,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 30,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 34,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 46,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 50,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 60,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 64,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 68,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 72,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 77,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 80,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 85,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 88,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 93,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 96,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 101,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 121,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 124,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 129,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 132,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 137,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 140,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 145,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 149,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 153,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 157,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 161,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 194,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 197,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 202,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 205,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 210,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 213,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 218,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 221,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 226,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 230,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 234,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 281,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 284,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 289,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 293,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 297,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 301,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 305,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 309,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 313,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 317,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 321,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 385,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 390,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 393,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 398,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 401,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 406,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 410,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 414,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 418,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 422,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 426,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 511,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 515,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 519,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 523,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 527,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 531,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 536,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 539,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 544,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 547,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 552,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 662,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 666,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 670,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 674,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 678,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 682,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 686,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 690,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 694,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 698,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 702,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 842,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 847,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 851,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 855,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 859,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 863,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 867,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 871,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 875,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 879,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 883,
+                "Lux DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Duloos Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Duloos Breath": 6,
+                "Duloos Soul Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Duloos Breath": 13,
+                "Duloos Soul Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Duloos Breath": 20,
+                "Duloos Soul Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Duloos Breath": 26,
+                "Duloos Soul Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Duloos Breath": 40,
+                "Duloos Soul Remnant": 73,
+                "Duloos Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Duloos Soul Remnant": 100,
+                "Duloos Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Duloos Soul Remnant": 126,
+                "Duloos Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
     "214004": {
         "id": 214004,
         "name": "Wisteria Dream",
@@ -50845,6 +51469,630 @@
             {
                 "Duloos Soul Remnant": 126,
                 "Duloos Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214051": {
+        "id": 214051,
+        "name": "Stellar Destination",
+        "star": 5,
+        "element": "Lux",
+        "tag": [
+            "Element",
+            "VUL",
+            "Crit DMG"
+        ],
+        "char": [
+            "Firefly"
+        ],
+        "mainSkill": {
+            "id": 4051,
+            "name": "Stellar Destination",
+            "nameCN": "???",
+            "nameJP": "???",
+            "nameKR": "???",
+            "desc": "Lux Versatile Trekkers gain 1 stack of Sync Rate per second on the battlefield: Each stack increases their Lux DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.\u000bWhen Sync Rate is at max stacks, dealing DMG additionally inflicts Hostile Reaction on the target: Increases the Lux Auto ATK DMG the target takes by <color=#ec6d21>{4}</color> for {5}s.",
+            "descCN": "???",
+            "descJP": "???",
+            "descKR": "???",
+            "effectType": [
+                "Lux DMG (base)",
+                "ELEMENTTYPE_:(Lux) Auto Attack DMG Taken"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214051A",
+                "Icon_DiscBuff_214051"
+            ],
+            "params": "3%,8,10,10%,10/3.6%,8,10,12%,10/4.2%,8,10,14%,10/4.8%,8,10,16%,10/5.4%,8,10,18%,10/6%,8,10,20%,10",
+            "icon": "DiscSkill_214051",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "secondarySkill1": {
+            "id": 40511,
+            "name": "Start Conversation",
+            "nameCN": "???",
+            "nameJP": "???",
+            "nameKR": "???",
+            "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bSync Rate gains an additional effect: Each stack increases own Crit DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "???",
+            "descJP": "???",
+            "descKR": "???",
+            "effectType": [
+                "Lux DMG (base)",
+                "Crit DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "4%,2%/8%,2.5%/12%,3%/16%,3.5%/20%,4%",
+            "requirements": [
+                {
+                    "Melody of Ultimate": 10,
+                    "Melody of Lux": 10
+                },
+                {
+                    "Melody of Ultimate": 25,
+                    "Melody of Lux": 25
+                },
+                {
+                    "Melody of Ultimate": 40,
+                    "Melody of Lux": 40
+                },
+                {
+                    "Melody of Ultimate": 55,
+                    "Melody of Lux": 55
+                },
+                {
+                    "Melody of Ultimate": 70,
+                    "Melody of Lux": 70
+                }
+            ],
+            "icon": "DiscSkill_3",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "secondarySkill2": {
+            "id": 40512,
+            "name": "Mutual Understanding",
+            "nameCN": "???",
+            "nameJP": "???",
+            "nameKR": "???",
+            "desc": "When the Lux Main Trekker triggers a mark on a target with Hostile Reaction and inflicts ##Thunderbolt#4027#, increases own Ultimate Crit DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen the Lux Main Trekker triggers a mark on a target with Hostile Reaction and inflicts ##Lucent#4028#, increases own Skill Crit DMG by <color=#ec6d21>{3}</color> for {4}s.",
+            "descCN": "???",
+            "descJP": "???",
+            "descKR": "???",
+            "effectType": [
+                "Ultimate Crit DMG (base)",
+                "Skill Crit DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "15%,5,15%,5/20%,5,20%,5/25%,5,25%,5/30%,5,30%,5/35%,5,35%,5",
+            "requirements": [
+                {
+                    "Melody of Luck": 15,
+                    "Melody of Ultimate": 15,
+                    "Melody of Lux": 15
+                },
+                {
+                    "Melody of Luck": 30,
+                    "Melody of Ultimate": 30,
+                    "Melody of Lux": 30
+                },
+                {
+                    "Melody of Luck": 45,
+                    "Melody of Ultimate": 45,
+                    "Melody of Lux": 45
+                },
+                {
+                    "Melody of Luck": 60,
+                    "Melody of Ultimate": 60,
+                    "Melody of Lux": 60
+                },
+                {
+                    "Melody of Luck": 75,
+                    "Melody of Ultimate": 75,
+                    "Melody of Lux": 75
+                }
+            ],
+            "icon": "DiscSkill_3",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "supportNote": [
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 7
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 9
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 10
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 15,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 20,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 24,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 29,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 33,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 47,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 51,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 56,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 67,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 71,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 76,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 80,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 85,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 89,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 94,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 98,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 103,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 107,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 112,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 134,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 138,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 143,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 147,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 152,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 156,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 161,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 165,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 170,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 174,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 179,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 215,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 219,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 224,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 228,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 233,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 237,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 242,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 246,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 251,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 255,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 260,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 312,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 316,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 321,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 325,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 330,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 334,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 339,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 343,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 348,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 352,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 357,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 428,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 433,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 437,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 442,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 446,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 451,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 455,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 460,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 464,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 469,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 473,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 568,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 572,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 577,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 581,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 586,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 590,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 595,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 599,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 604,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 608,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 613,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 735,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 740,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 744,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 749,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 753,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 758,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 762,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 767,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 771,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 776,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 780,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 936,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 941,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 945,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 950,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 954,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 959,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 963,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 968,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 972,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 977,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 981,
+                "Lux DMG": "15%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Light Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Faint Light Breath": 6,
+                "Emberflies Soul": 13,
+                "Dorra": 26700
+            },
+            {
+                "Faint Light Breath": 13,
+                "Emberflies Soul": 20,
+                "Dorra": 59900
+            },
+            {
+                "Faint Light Breath": 20,
+                "Emberflies Soul": 33,
+                "Dorra": 89900
+            },
+            {
+                "Faint Light Breath": 26,
+                "Emberflies Soul": 53,
+                "Dorra": 197200
+            },
+            {
+                "Faint Light Breath": 40,
+                "Emberflies Soul": 73,
+                "Evernight Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Emberflies Soul": 100,
+                "Evernight Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Emberflies Soul": 126,
+                "Evernight Essence": 66,
                 "Dorra": 1513800
             }
         ]
