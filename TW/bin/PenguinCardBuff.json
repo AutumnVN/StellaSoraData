@@ -106,5 +106,23 @@
     "Duration": 2,
     "DurationParam": 1,
     "Icon": "icon_buff_05"
+  },
+  "601": {
+    "Id": 601,
+    "Title": "PenguinCardBuff.601.1",
+    "Desc": "PenguinCardBuff.601.2",
+    "ForcedReplacement": true,
+    "TriggerPhase": 4,
+    "TriggerType": 1,
+    "TriggerParam": "",
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "TriggerLimitParam": 0,
+    "EffectType": 10,
+    "EffectParam": "[1]",
+    "GrowthEffectParam": "",
+    "Duration": 3,
+    "DurationParam": 2,
+    "Icon": "icon_buff_05"
   }
 }
