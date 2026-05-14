@@ -18,8 +18,11 @@ function BattleResultMaskCtrl:OnDestroy()
 end
 function BattleResultMaskCtrl:OnEvent_LoadFinish()
 	self._mapNode.animRoot:Play("BattleResultMaskPanel_victory_out")
+	local nAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.animRoot, {
+		"BattleResultMaskPanel_victory_out"
+	})
 	local wait = function()
-		coroutine.yield(CS.UnityEngine.WaitForSeconds(0.5))
+		coroutine.yield(CS.UnityEngine.WaitForSeconds(nAnimTime))
 		EventManager.Hit(EventId.ClosePanel, PanelId.BattleResultMask)
 		EventManager.Hit("OpenBattleResultPanel")
 	end

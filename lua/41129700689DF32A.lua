@@ -2,11 +2,14 @@ local PenguinCardItemCtrl = class("PenguinCardItemCtrl", BaseCtrl)
 local WwiseManger = CS.WwiseAudioManager.Instance
 local _, NotMaxLevel = ColorUtility.TryParseHtmlString("#FFF7EA")
 local _, MaxLevel = ColorUtility.TryParseHtmlString("#ffe075")
+local _, NotMaxLevel_Gray = ColorUtility.TryParseHtmlString("#D1C8D0")
+local _, MaxLevel_Gray = ColorUtility.TryParseHtmlString("#a78f70")
 PenguinCardItemCtrl._mapNodeConfig = {
 	AnimRoot = {sComponentName = "Animator"},
 	imgBg = {},
 	imgIcon = {sComponentName = "Image"},
 	txtLevel = {sComponentName = "TMP_Text"},
+	txtDisableLevel = {sComponentName = "TMP_Text"},
 	txtName = {sComponentName = "TMP_Text"},
 	imgUp = {},
 	txtTrigger = {nCount = 2, sComponentName = "TMP_Text"},
@@ -16,6 +19,8 @@ PenguinCardItemCtrl._mapNodeConfig = {
 		sComponentName = "Animator"
 	},
 	goTrigger = {},
+	goDisable = {},
+	imgHighLight = {},
 	btnOpenInfo = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_OpenInfo"
@@ -23,7 +28,8 @@ PenguinCardItemCtrl._mapNodeConfig = {
 }
 PenguinCardItemCtrl._mapEventConfig = {
 	PenguinCardTriggered = "OnEvent_Triggered",
-	PenguinCardWaitPlay = "OnEvent_WaitPlay"
+	PenguinCardWaitPlay = "OnEvent_WaitPlay",
+	PenguinCardGrowth = "OnEvent_Growth"
 }
 function PenguinCardItemCtrl:Refresh_Select(mapCard, nSelectIndex, bRoll)
 	self.mapCard = mapCard
@@ -33,6 +39,11 @@ function PenguinCardItemCtrl:Refresh_Select(mapCard, nSelectIndex, bRoll)
 	self._mapNode.imgBg:SetActive(bRoll)
 	self._mapNode.imgIcon.gameObject:SetActive(true)
 	self._mapNode.goTrigger:SetActive(false)
+	self._mapNode.goDisable:SetActive(false)
+	self._mapNode.imgHighLight:SetActive(false)
+	if mapCard.bHighLight then
+		self._mapNode.imgHighLight:SetActive(true)
+	end
 	self:SetSprite(self._mapNode.imgIcon, "UI/Play_PenguinCard/SpriteAtlas/Sprite/" .. mapCard.sIcon)
 	NovaAPI.SetTMPText(self._mapNode.txtName, mapCard.sName)
 	local bUpgrade = self._panel.mapLevel:CheckUpgradePenguinCard(mapCard)
@@ -43,17 +54,25 @@ function PenguinCardItemCtrl:Refresh_Slot(mapCard)
 	self.mapCard = mapCard
 	self.nEffectCount = 0
 	self.bWaitPlay = false
-	self._mapNode.txtLevel.gameObject:SetActive(true)
+	local bAble = self.mapCard:GetActiveState()
+	self._mapNode.txtLevel.gameObject:SetActive(bAble)
 	self._mapNode.txtName.gameObject:SetActive(false)
 	self._mapNode.imgBg:SetActive(false)
 	self._mapNode.imgUp:SetActive(false)
 	self._mapNode.goTrigger:SetActive(false)
+	self._mapNode.goDisable:SetActive(not bAble)
+	self._mapNode.imgHighLight:SetActive(false)
 	self:SetSprite(self._mapNode.imgIcon, "UI/Play_PenguinCard/SpriteAtlas/Sprite/" .. mapCard.sIcon)
-	NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), mapCard.nLevel))
 	if mapCard.nLevel == mapCard.nMaxLevel then
 		NovaAPI.SetTMPColor(self._mapNode.txtLevel, MaxLevel)
+		NovaAPI.SetTMPColor(self._mapNode.txtDisableLevel, MaxLevel_Gray)
+		NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevelMax"), mapCard.nLevel))
+		NovaAPI.SetTMPText(self._mapNode.txtDisableLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevelMax"), mapCard.nLevel))
 	else
 		NovaAPI.SetTMPColor(self._mapNode.txtLevel, NotMaxLevel)
+		NovaAPI.SetTMPColor(self._mapNode.txtDisableLevel, MaxLevel_Gray)
+		NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), mapCard.nLevel))
+		NovaAPI.SetTMPText(self._mapNode.txtDisableLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), mapCard.nLevel))
 	end
 end
 function PenguinCardItemCtrl:RefreshUpgrade(nGroupId)
@@ -64,6 +83,7 @@ end
 function PenguinCardItemCtrl:PlayFlipAni()
 	self._mapNode.imgBg:SetActive(true)
 	self._mapNode.txtName.gameObject:SetActive(false)
+	self._mapNode.imgHighLight:SetActive(false)
 	self._mapNode.AnimRoot:Play("PengUinCard_Bd_Shopturn", 0, 0)
 	local nAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.AnimRoot, {
 		"PengUinCard_Bd_Shopturn"
@@ -187,6 +207,14 @@ function PenguinCardItemCtrl:OnEvent_Triggered(nSlotIndex)
 		return
 	end
 	self:PlayTriggerAni()
+end
+function PenguinCardItemCtrl:OnEvent_Growth(nSlotIndex)
+	if not (self.mapCard and self.mapCard ~= 0 and self.mapCard.nSlotIndex) or nSlotIndex ~= self.mapCard.nSlotIndex then
+		return
+	end
+	local bAble = self.mapCard:GetActiveState()
+	self._mapNode.goDisable:SetActive(not bAble)
+	self._mapNode.txtLevel.gameObject:SetActive(bAble)
 end
 function PenguinCardItemCtrl:OnEvent_WaitPlay()
 	if self.bWaitPlay == true then

@@ -1,6 +1,5 @@
 local SkillInstanceResultCtrl = class("SkillInstanceResultCtrl", BaseCtrl)
 local WwiseManger = CS.WwiseAudioManager.Instance
-local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 SkillInstanceResultCtrl._mapNodeConfig = {
 	imgBlurredBg = {},
 	goComplete = {sComponentName = "GameObject"},
@@ -91,6 +90,11 @@ local starGachaCfg = {
 		animName = "BattleResultgoGacha_ssr"
 	}
 }
+local resultType = {
+	None = 0,
+	Victory = 1,
+	Defeat = 2
+}
 function SkillInstanceResultCtrl:Awake()
 	self.canvas = self.gameObject:GetComponent("Canvas")
 	EventManager.Hit(EventId.AvgBubbleShutDown)
@@ -99,13 +103,11 @@ function SkillInstanceResultCtrl:Awake()
 end
 function SkillInstanceResultCtrl:OnEnable()
 	local tbParam = self:GetPanelParam()
-	local nResultState = 0
-	if #tbParam == 2 and tbParam[1] == false then
-		nResultState = 3
-	elseif tbParam[1] then
-		nResultState = 1
-	elseif #tbParam == 3 and tbParam[1] == false then
-		nResultState = 2
+	local nResultState = resultType.None
+	if tbParam[1] then
+		nResultState = resultType.Victory
+	else
+		nResultState = resultType.Defeat
 	end
 	local tbStar = tbParam[2]
 	local GenerRewardItems = tbParam[3]
@@ -124,9 +126,13 @@ function SkillInstanceResultCtrl:OnEnable()
 		self._mapNode.btnDamageResult[i].gameObject:SetActive(self.tbCharDamage ~= nil and 0 < #self.tbCharDamage)
 	end
 	self.mapSkillInstance = ConfigTable.GetData("SkillInstance", nSkillInstanceId)
-	local sSkillInstanceName = ""
 	if self.mapSkillInstance ~= nil then
-		sSkillInstanceName = self.mapSkillInstance.Name
+		local sSkillInstanceName = self.mapSkillInstance.Name
+		for _, v in ipairs(self._mapNode.txtMainlineName) do
+			local sName = orderedFormat(ConfigTable.GetUIText("Dungeon_Difficulty") or "", sSkillInstanceName, ConfigTable.GetUIText("Diffculty_" .. self.mapSkillInstance.Difficulty) or "")
+			NovaAPI.SetTMPText(v, sName)
+		end
+		self:RefreshTarget(tbStar)
 	end
 	local nStar = 0
 	for i = 0, 2 do
@@ -152,19 +158,14 @@ function SkillInstanceResultCtrl:OnEnable()
 		v.rewardType = AllEnum.RewardType.Extra
 		table.insert(self.mapReward, v)
 	end
-	for _, v in ipairs(self._mapNode.txtMainlineName) do
-		local sName = orderedFormat(ConfigTable.GetUIText("Dungeon_Difficulty") or "", sSkillInstanceName, ConfigTable.GetUIText("Diffculty_" .. self.mapSkillInstance.Difficulty) or "")
-		NovaAPI.SetTMPText(v, sName)
-	end
 	self:RefreshWorldClass(nExp)
-	self:RefreshTarget(tbStar)
 	local nCurTeam = 5
 	if PlayerData.nCurGameType == AllEnum.WorldMapNodeType.Mainline then
 		nCurTeam = PlayerData.Mainline.nCurTeamIndex
 	end
-	local tbTeamMemberId, nCaptain
+	local tbTeamMemberId
 	if tbChar == nil then
-		nCaptain, tbTeamMemberId = PlayerData.Team:GetTeamData(nCurTeam)
+		_, tbTeamMemberId = PlayerData.Team:GetTeamData(nCurTeam)
 	else
 		tbTeamMemberId = tbChar
 	end
@@ -177,17 +178,13 @@ function SkillInstanceResultCtrl:OnEnable()
 	if #tbRoleId == 0 then
 		table.insert(tbRoleId, 112)
 	end
-	if bPureAvg then
-		self._mapNode.trActor2D_PNG.gameObject:SetActive(false)
-	else
-	end
 	WwiseManger:PostEvent("ui_loading_combatSFX_mute", nil, false)
 	WwiseManger:PostEvent("char_common_all_pause")
 	WwiseManger:PostEvent("mon_common_all_pause")
 	WwiseManger:SetState("level", "None")
 	WwiseManger:SetState("combat", "None")
 	local nAnimTime
-	if nResultState == 1 then
+	if nResultState == resultType.Victory then
 		self._mapNode.goRoot.gameObject:SetActive(true)
 		self._mapNode.goFailed:SetActive(false)
 		self._mapNode.imgBlurredBg.gameObject:SetActive(false)
@@ -223,12 +220,18 @@ function SkillInstanceResultCtrl:OnEnable()
 	nAnimTime = nAnimTime + 1.5
 	EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
 	self:AddTimer(1, nAnimTime, "PlayAnim", true, true, true)
-	PlayerData.Voice:PlayBattleResultVoice(tbRoleId, nResultState == 1)
+	PlayerData.Voice:PlayBattleResultVoice(tbRoleId, nResultState == resultType.Victory)
 	self.bProcessingClose = false
 end
 function SkillInstanceResultCtrl:OnDisable()
 	PlayerData.SkillInstance:SetSettlementState(false)
 	PlayerData.Voice:StopCharVoice()
+	if self.closeSequence then
+		self.closeSequence:Kill()
+	end
+	if self.bAddLevelEndEvent then
+		EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, self.levelEndCallback)
+	end
 end
 function SkillInstanceResultCtrl:PlayAnim()
 	PlayerData.SideBanner:TryOpenSideBanner()
@@ -276,15 +279,15 @@ function SkillInstanceResultCtrl:RefreshWorldClass(nExp)
 	end
 end
 function SkillInstanceResultCtrl:RefreshTarget(tbStar)
+	local tbCond = {}
+	table.insert(tbCond, decodeJson(self.mapSkillInstance.OneStarCondition))
+	table.insert(tbCond, decodeJson(self.mapSkillInstance.TwoStarCondition))
+	table.insert(tbCond, decodeJson(self.mapSkillInstance.ThreeStarCondition))
 	for i = 1, 3 do
 		local tr = self._mapNode.getStar[i]
 		local star = tr:Find("star"):GetComponent("Transform")
 		local starPass = star:Find("starPass")
 		local txtCondition = tr:Find("texCondition"):GetComponent("TMP_Text")
-		local tbCond = {}
-		table.insert(tbCond, decodeJson(self.mapSkillInstance.OneStarCondition))
-		table.insert(tbCond, decodeJson(self.mapSkillInstance.TwoStarCondition))
-		table.insert(tbCond, decodeJson(self.mapSkillInstance.ThreeStarCondition))
 		local cond = tbCond[i]
 		if cond ~= nil then
 			local _floorData = ConfigTable.GetData("SkillInstanceFloor", self.mapSkillInstance.FloorId)
@@ -314,23 +317,26 @@ function SkillInstanceResultCtrl:ClosePanel()
 		NovaAPI.SetCanvasGroupAlpha(self._mapNode.Mask, 0)
 		self._mapNode.Mask.gameObject:SetActive(true)
 		EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
-		local sequence = DOTween.Sequence()
-		sequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
-		sequence:AppendCallback(function()
+		self.closeSequence = DOTween.Sequence()
+		self.closeSequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
+		self.closeSequence:AppendCallback(function()
 			if self.bSuccess then
-				NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 				self._mapNode.imgBlurredBg:SetActive(false)
+				NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 			else
-				local function levelEndCallback()
-					EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
-					NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
+				function self.levelEndCallback()
+					self.bAddLevelEndEvent = false
+					EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, self.levelEndCallback)
 					self._mapNode.imgBlurredBg:SetActive(false)
+					NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 				end
-				EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
+				self.bAddLevelEndEvent = true
+				EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, self.levelEndCallback)
 				CS.AdventureModuleHelper.LevelStateChanged(true, 0, true)
 			end
+			self.closeSequence = nil
 		end)
-		sequence:SetUpdate(true)
+		self.closeSequence:SetUpdate(true)
 	end
 end
 function SkillInstanceResultCtrl:RefreshGacha()

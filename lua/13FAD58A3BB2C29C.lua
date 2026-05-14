@@ -27,7 +27,11 @@ PenguinCardSelectCtrl._mapEventConfig = {
 	PenguinCard_ClickLevel = "OnEvent_Click",
 	PenguinCard_EnterLevel = "OnEvent_Enter"
 }
-PenguinCardSelectCtrl._mapRedDotConfig = {}
+PenguinCardSelectCtrl._mapRedDotConfig = {
+	[RedDotDefine.Activity_PenguinCard_AllQuest] = {
+		sNodeName = "reddotQuest"
+	}
+}
 function PenguinCardSelectCtrl:Refresh()
 	self.goFirstLock = nil
 	self.tbLevel = self.actData:GetLevelList()
@@ -122,17 +126,7 @@ end
 function PenguinCardSelectCtrl:OnDestroy()
 end
 function PenguinCardSelectCtrl:OnBtnClick_Quest()
-	local mapActivityData = ConfigTable.GetData("Activity", self.nActId)
-	if mapActivityData ~= nil then
-		local nGroupId = mapActivityData.MidGroupId
-		local mapGroupData = PlayerData.Activity:GetActivityGroupDataById(nGroupId)
-		if mapGroupData ~= nil then
-			local actData = mapGroupData:GetActivityDataByIndex(AllEnum.ActivityThemeFuncIndex.Task)
-			if actData ~= nil then
-				EventManager.Hit(EventId.OpenPanel, PanelId.Task_20102, actData.ActivityId, 5)
-			end
-		end
-	end
+	EventManager.Hit(EventId.OpenPanel, PanelId.PenguinCardQuest, self.nActId)
 end
 function PenguinCardSelectCtrl:OnEvent_Click(go)
 	self._mapNode.sc:ScrollToClick(go)

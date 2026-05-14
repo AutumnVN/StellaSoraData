@@ -242,6 +242,7 @@ function GoldenSpyFloorCtrl:Shoot(nSpeed, nRadius, nFactor, onRetractComplete, o
 end
 function GoldenSpyFloorCtrl:RemoveItem(itemCtrl)
 	local bDelSuccess = false
+	local itemId = itemCtrl:GetItemCfg().Id
 	for i = #self.tbItem, 1, -1 do
 		if self.tbItem[i].Ctrl == itemCtrl then
 			table.insert(self.tbNeedRemoveItem, self.tbItem[i])
@@ -251,7 +252,7 @@ function GoldenSpyFloorCtrl:RemoveItem(itemCtrl)
 		end
 	end
 	if bDelSuccess then
-		self.levelCtrl.GoldenSpyFloorData:DeleteItem(itemCtrl:GetItemCfg().Id)
+		self.levelCtrl.GoldenSpyFloorData:DeleteItem(itemId)
 	end
 end
 function GoldenSpyFloorCtrl:DropItem()

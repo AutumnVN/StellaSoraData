@@ -25,6 +25,8 @@ function PenguinCard:Clear()
 	self.nLevel = nil
 	self.nMaxLevel = nil
 	self.nSoldPrice = nil
+	self.nTendencyGroup = nil
+	self.nTendencyScore = nil
 	self.nTriggerPhase = nil
 	self.nTriggerType = nil
 	self.tbTriggerParam = nil
@@ -41,6 +43,7 @@ function PenguinCard:Clear()
 	self.tbGrowthEffectParam = nil
 	self.nTriggerCount = nil
 	self.nGrowthLayer = nil
+	self.bHighLight = nil
 end
 function PenguinCard:Init(nId, nGrowthLayer)
 	self.nId = nId
@@ -59,6 +62,8 @@ function PenguinCard:ParseConfigData(nId)
 	self.nLevel = mapCfg.Level
 	self.nMaxLevel = mapCfg.MaxLevel
 	self.nSoldPrice = mapCfg.SoldPrice
+	self.nTendencyGroup = mapCfg.TendencyGroup
+	self.nTendencyScore = mapCfg.TendencyScore
 	self.nTriggerPhase = mapCfg.TriggerPhase
 	self.nTriggerType = mapCfg.TriggerType
 	self.tbTriggerParam = decodeJson(mapCfg.TriggerParam)
@@ -77,12 +82,24 @@ end
 function PenguinCard:SetSlotIndex(nSlotIndex)
 	self.nSlotIndex = nSlotIndex
 end
+function PenguinCard:SetHighLight(bHighLight)
+	self.bHighLight = bHighLight
+end
 function PenguinCard:GetDesc()
 	local mapCfg = ConfigTable.GetData("PenguinCard", self.nId)
 	if nil == mapCfg then
 		return ""
 	end
 	return PenguinCardUtils.SetEffectDesc(mapCfg, self.nGrowthLayer)
+end
+function PenguinCard:GetActiveState()
+	if self.nGrowthType == GameEnum.PenguinCardGrowthType.FullGame and self.tbGrowthEffectParam[1] < 0 then
+		local nEffectValue = self.tbEffectParam[1] + self.nGrowthLayer * self.tbGrowthEffectParam[1]
+		if nEffectValue <= 0 then
+			return false
+		end
+	end
+	return true
 end
 function PenguinCard:ResetAllTrigger()
 	self:ResetGameTrigger()

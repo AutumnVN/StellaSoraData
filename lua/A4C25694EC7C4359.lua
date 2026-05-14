@@ -1,4 +1,5 @@
 local JointDrillTeamItemCtrl = class("JointDrillTeamItemCtrl", BaseCtrl)
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillTeamItemCtrl._mapNodeConfig = {
 	goCharItem = {nCount = 3},
 	imgItemIcon = {nCount = 3, sComponentName = "Image"},
@@ -68,7 +69,7 @@ function JointDrillTeamItemCtrl:OnBtnClick_Detail()
 	EventManager.Hit(EventId.OpenPanel, PanelId.RankBuildDetail, self.mapTeam)
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-		EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillRankDetail_1)
+		EventManager.Hit(EventId.ClosePanel, JointDrillContext.GetPanelId(PlayerData.JointDrill_1.nActId, "RankDetail"))
 	end
 	cs_coroutine.start(wait)
 end

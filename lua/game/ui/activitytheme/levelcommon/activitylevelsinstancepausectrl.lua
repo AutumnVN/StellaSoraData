@@ -33,12 +33,14 @@ ActivityLevelsInstancePauseCtrl._mapNodeConfig = {
 	btnGiveUp = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_GiveUp",
-		sAction = "Giveup"
+		sAction = "Giveup",
+		sActionIconType = "Dark"
 	},
 	btnBack = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Close",
-		sAction = "Back"
+		sAction = "Back",
+		sActionIconType = "Dark"
 	},
 	btnSettings = {
 		sComponentName = "NaviButton",

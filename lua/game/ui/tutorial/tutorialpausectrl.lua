@@ -21,7 +21,8 @@ TutorialPauseCtrl._mapNodeConfig = {
 	btnContinue = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Continue",
-		sAction = "Back"
+		sAction = "Back",
+		sActionIconType = "Dark"
 	},
 	txtContinue = {
 		nCount = 2,
@@ -31,7 +32,8 @@ TutorialPauseCtrl._mapNodeConfig = {
 	btnExit = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Exit",
-		sAction = "Giveup"
+		sAction = "Giveup",
+		sActionIconType = "Dark"
 	},
 	txtExit = {
 		nCount = 2,

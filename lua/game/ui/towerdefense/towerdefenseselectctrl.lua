@@ -237,7 +237,7 @@ function TowerDefenseSelectCtrl:OnBtnClick_LevelTab1()
 	end
 	self.scrollPos = 1
 	self._panel.nlevelId = 0
-	self.scrollType = self.scrollPos
+	self.scrollType = scrollType.pos
 	self.TowerDefenseData:RefreshRedDotbyTab(self._panel.nSelectedTabIndex)
 	self._panel.nSelectedTabIndex = 1
 	self:SetTabUI()
@@ -249,7 +249,7 @@ function TowerDefenseSelectCtrl:OnBtnClick_LevelTab2()
 	end
 	self.scrollPos = 1
 	self._panel.nlevelId = 0
-	self.scrollType = self.scrollPos
+	self.scrollType = scrollType.pos
 	self.TowerDefenseData:RefreshRedDotbyTab(self._panel.nSelectedTabIndex)
 	self._panel.nSelectedTabIndex = 2
 	self:SetTabUI()

@@ -12,14 +12,27 @@ MessageBoxCommonCtrl._mapNodeConfig = {
 	txtContentMain = {sComponentName = "TMP_Text"},
 	txtContentSub = {sComponentName = "TMP_Text"},
 	btnClose = {sComponentName = "UIButton"},
-	btnCancel = {sComponentName = "NaviButton", sAction = "Back"},
-	btnCancel2 = {sComponentName = "NaviButton", sAction = "Giveup"},
+	btnCancel = {
+		sComponentName = "NaviButton",
+		sAction = "Back",
+		sActionIconType = "Dark"
+	},
+	btnCancel2 = {
+		sComponentName = "NaviButton",
+		sAction = "Giveup",
+		sActionIconType = "Dark"
+	},
 	btnConfirm = {
 		nCount = 2,
 		sComponentName = "NaviButton",
-		sAction = "Confirm"
+		sAction = "Confirm",
+		sActionIconType = "Dark"
 	},
-	btnConfirmDisable = {sComponentName = "NaviButton", sAction = "Confirm"},
+	btnConfirmDisable = {
+		sComponentName = "NaviButton",
+		sAction = "Confirm",
+		sActionIconType = "Dark"
+	},
 	txtBtnCancel = {
 		nCount = 2,
 		sComponentName = "TMP_Text",

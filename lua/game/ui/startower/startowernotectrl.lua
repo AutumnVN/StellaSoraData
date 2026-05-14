@@ -40,7 +40,7 @@ function StarTowerNoteCtrl:OnEvent_RefreshNoteCount(mapNote, mapChange, mapChang
 			local nLastCount = self.mapNoteCount[k] or 0
 			if v > nLastCount then
 				local bLucky = false
-				if mapChange ~= nil and 0 < mapChange[k].LuckyLevel then
+				if mapChange ~= nil and mapChange[k] ~= nil and 0 < mapChange[k].LuckyLevel then
 					bLucky = true
 				end
 				bChange = true

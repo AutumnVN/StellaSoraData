@@ -49,11 +49,12 @@ function TrekkerVersusDuelHistoryGridCtrl:OnDestroy()
 end
 function TrekkerVersusDuelHistoryGridCtrl:OnRelease()
 end
-function TrekkerVersusDuelHistoryGridCtrl:Refresh(mapDuelHistoryData, bMain, mapActData)
+function TrekkerVersusDuelHistoryGridCtrl:Refresh(mapDuelHistoryData, bMain, mapActData, nActId)
 	self._mapNode.imgWin:SetActive(not bMain)
 	self._mapNode.imgDuelEnd:SetActive(not bMain)
 	self._mapNode.txtDuelOnGoing.gameObject:SetActive(bMain)
 	self.bMain = bMain
+	self.nActId = nActId
 	self.mapDuelHistoryData = mapDuelHistoryData
 	self.mapActData = mapActData
 	self.bReceived = not bMain
@@ -101,11 +102,11 @@ function TrekkerVersusDuelHistoryGridCtrl:OnBtnClick_JumpTo(btn)
 	EventManager.Hit("TrekkerVersusAffixJump", self.cfgData.AffixJumpTo)
 end
 function TrekkerVersusDuelHistoryGridCtrl:OnBtnClick_Receive(btn)
-	EventManager.Hit("TrekkerVersusReceiveHeatQuest", 2)
+	EventManager.Hit("TrekkerVersusReceiveHeatQuest", self.nActId, 2)
 end
 function TrekkerVersusDuelHistoryGridCtrl:OnEvent_TrekkerVersusDuelQuestRefresh()
 	if self.mapActData ~= nil and self.bMain == false then
-		self:Refresh(self.mapDuelHistoryData, self.bMain, self.mapActData)
+		self:Refresh(self.mapDuelHistoryData, self.bMain, self.mapActData, self.nActId)
 	end
 end
 return TrekkerVersusDuelHistoryGridCtrl

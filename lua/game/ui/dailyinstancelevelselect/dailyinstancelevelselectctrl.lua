@@ -253,7 +253,7 @@ function DailyInstanceLevelSelectCtrl:RefreshGrid(goGrid, gridIndex)
 	self.mapLevelGrid[goGrid]:Refresh(nType)
 end
 function DailyInstanceLevelSelectCtrl:UnbindAllGrids()
-	for go, mapCtrl in ipairs(self.mapLevelGrid) do
+	for go, mapCtrl in pairs(self.mapLevelGrid) do
 		self:UnbindCtrlByNode(mapCtrl)
 	end
 	self.mapLevelGrid = {}
@@ -326,10 +326,10 @@ function DailyInstanceLevelSelectCtrl:RefreshDailyInstanceInfo(nType, nHard, bLo
 	self.curSelectHard = nHard
 	self._panel._tbParam[1] = self.curSelectHard
 	local mapDailyInstanceData = self.mapAllDailyInstance[nHard]
-	self.DailyInstance = mapDailyInstanceData.Id
 	if mapDailyInstanceData == nil then
 		return
 	end
+	self.DailyInstance = mapDailyInstanceData.Id
 	NovaAPI.SetTMPText(self._mapNode.TMPInstanceName, mapDailyInstanceData.Name)
 	NovaAPI.SetTMPText(self._mapNode.TMPInstanceDesc, mapDailyInstanceData.Desc)
 	self:SetPngSprite(self._mapNode.imgLevelImg, mapDailyInstanceData.Icon)
@@ -546,7 +546,6 @@ function DailyInstanceLevelSelectCtrl:OnEvent_UpdateWorldClass()
 end
 function DailyInstanceLevelSelectCtrl:OnEvent_UpdateEnergy()
 	local nHas = PlayerData.Base:GetCurEnergy()
-	self.curRequireEnergy = self.curRequireEnergy
 	NovaAPI.SetTMPColor(self._mapNode.txtTicketsCount, nHas.nEnergy < self.curRequireEnergy and Red_Unable or Blue_Normal)
 end
 return DailyInstanceLevelSelectCtrl

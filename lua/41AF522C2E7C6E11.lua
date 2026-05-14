@@ -56,7 +56,11 @@ function JointDrillLevelItemCtrl:SetItem(mapLevelCfg)
 			end
 		end
 		NovaAPI.SetTMPText(self._mapNode.txtBossHp, string.format("%s/%s", self:ThousandsNumber(nHp), self:ThousandsNumber(nHpMax)))
-		NovaAPI.SetImageFillAmount(self._mapNode.imgBossHp, nHp / nHpMax)
+		if 0 < nHpMax then
+			NovaAPI.SetImageFillAmount(self._mapNode.imgBossHp, nHp / nHpMax)
+		else
+			NovaAPI.SetImageFillAmount(self._mapNode.imgBossHp, 0)
+		end
 		local bSimulate = PlayerData.JointDrill_2:GetBattleSimulate()
 		self._mapNode.imgSimulate.gameObject:SetActive(bSimulate)
 		local nStartTime = PlayerData.JointDrill_2:GetJointDrillStartTime()
@@ -111,6 +115,10 @@ end
 function JointDrillLevelItemCtrl:OnEnable()
 end
 function JointDrillLevelItemCtrl:OnDisable()
+	if self.timeTimer ~= nil then
+		self.timeTimer:Cancel()
+		self.timeTimer = nil
+	end
 end
 function JointDrillLevelItemCtrl:OnDestroy()
 end

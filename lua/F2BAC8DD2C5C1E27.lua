@@ -116,7 +116,7 @@ function PenguinCardBuff:Trigger(nTriggerPhase, mapTriggerSource, callback)
 		return false
 	end
 	local mapEffectValue
-	if self.nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips or self.nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier or self.nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier or self.nEffectType == GameEnum.PenguinCardEffectType.UpgradeDiscount or self.nEffectType == GameEnum.PenguinCardEffectType.AddRound or self.nEffectType == GameEnum.PenguinCardEffectType.UpgradeRebate then
+	if self.nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips or self.nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier or self.nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier or self.nEffectType == GameEnum.PenguinCardEffectType.UpgradeDiscount or self.nEffectType == GameEnum.PenguinCardEffectType.AddRound or self.nEffectType == GameEnum.PenguinCardEffectType.AddCardRollCount or self.nEffectType == GameEnum.PenguinCardEffectType.UpgradeRebate then
 		if self.bOnly == true then
 			mapEffectValue = self.tbEffectParam[1]
 		else
@@ -126,7 +126,7 @@ function PenguinCardBuff:Trigger(nTriggerPhase, mapTriggerSource, callback)
 		mapEffectValue = self.tbEffectParam
 	end
 	if type(mapEffectValue) == "number" and mapEffectValue == 0 then
-		return
+		return false
 	end
 	if self.nTriggerLimit ~= GameEnum.PenguinCardTriggerLimit.None then
 		self.nTriggerCount = self.nTriggerCount + 1

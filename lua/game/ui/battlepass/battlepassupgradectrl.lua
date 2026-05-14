@@ -20,6 +20,9 @@ BattlePassUpgradeCtrl._mapNodeConfig = {
 }
 BattlePassUpgradeCtrl._mapEventConfig = {}
 function BattlePassUpgradeCtrl:SetOldWorldClass()
+	if self.mapBattlePassClass == nil then
+		return
+	end
 	local nOldBattlePassClass = self.mapBattlePassClass.nOldLevel
 	local nOldBattlePassExp = self.mapBattlePassClass.nOldExp
 	local mapOldCfg = ConfigTable.GetData("BattlePassLevel", nOldBattlePassClass + 1)

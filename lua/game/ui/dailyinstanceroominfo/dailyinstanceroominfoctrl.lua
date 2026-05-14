@@ -79,8 +79,6 @@ function DailyInstanceRoomInfoCtrl:OnEvent_OpenUI(nFloorId, nLevelId)
 	cs_coroutine.start(wait)
 end
 function DailyInstanceRoomInfoCtrl:OnEvent_CloseUI()
-	self._mapNode.Shelock:LevelEnd()
-	self._mapNode.Slime:LevelEnd()
 	self._mapNode.BossChallenge:LevelEnd()
 end
 function DailyInstanceRoomInfoCtrl:OnEvent_InputEnable(bEnable)

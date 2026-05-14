@@ -3,9 +3,10 @@ local WwiseAudioMgr = CS.WwiseAudioManager.Instance
 local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 BreakOutResultCtrl._mapNodeConfig = {
 	imgBlurredBg = {},
-	ButtonClose = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_Close"
+	BtnShortcutClose = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Close",
+		sAction = "Back"
 	},
 	FailRoot = {},
 	LeveName_Fail = {},
@@ -15,7 +16,8 @@ BreakOutResultCtrl._mapNodeConfig = {
 		sNodeName = "btn_Exit",
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Close",
-		sAction = "Giveup"
+		sAction = "Giveup",
+		sActionIconType = "Dark"
 	},
 	txt_Exit = {
 		nCount = 2,
@@ -26,7 +28,8 @@ BreakOutResultCtrl._mapNodeConfig = {
 		sNodeName = "btn_Restart",
 		sComponentName = "NaviButton",
 		callback = "BreakOut_Button_Restart",
-		sAction = "Retry"
+		sAction = "Retry",
+		sActionIconType = "Dark"
 	},
 	txt_Restart = {
 		nCount = 2,
@@ -35,6 +38,28 @@ BreakOutResultCtrl._mapNodeConfig = {
 	},
 	safeAreaRoot = {
 		sNodeName = "----SafeAreaRoot----"
+	},
+	txtTips = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Tips_Continue"
+	},
+	txtTips1 = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Tips_Continue"
+	},
+	txtTips2 = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Tips_Continue"
+	},
+	txtClickPre = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "StarTower_Click_Pre"
+	},
+	txtClickSuf = {
+		nCount = 2,
+		sComponentName = "TMP_Text",
+		sLanguageId = "StarTower_Click_Suf"
 	}
 }
 BreakOutResultCtrl._mapEventConfig = {OpenBreakOutResultPanel = "Open", CloseBreakOutResultPanel = "Close"}
@@ -43,6 +68,10 @@ function BreakOutResultCtrl:Awake()
 	self._mapNode.safeAreaRoot:SetActive(false)
 	self._mapNode.imgBlurredBg.gameObject:SetActive(false)
 	self.tbGamepadUINode = self:GetGamepadUINode()
+	self._mapNode.BtnShortcutClose.gameObject:SetActive(GamepadUIManager.GetInputState())
+	self._mapNode.txtTips1.gameObject:SetActive(not GamepadUIManager.GetInputState())
+end
+function BreakOutResultCtrl:OnEnable()
 end
 function BreakOutResultCtrl:SetContent()
 	EventManager.Hit(EventId.TemporaryBlockInput, 1)
@@ -53,7 +82,7 @@ function BreakOutResultCtrl:SetContent()
 		self:AddTimer(1, 1, function()
 			local mapReward = PlayerData.Item:ProcessRewardChangeInfo(self.mapChangeInfo)
 			local tbItem = {}
-			for _, v in ipairs(mapReward.tbReward) do
+			for _, v in pairs(mapReward.tbReward) do
 				local item = {
 					Tid = v.id,
 					Qty = v.count,
@@ -69,7 +98,7 @@ function BreakOutResultCtrl:SetContent()
 		NovaAPI.SetTMPText(sTitle, self.sLevelName)
 	end
 end
-function BreakOutResultCtrl:OnBtnClick_Close()
+function BreakOutResultCtrl:OnBtnClick_Close(btn)
 	if self.bProcessingClose then
 		return
 	end
@@ -95,8 +124,9 @@ function BreakOutResultCtrl:BreakOut_Button_Restart()
 	EventManager.Hit("ResetBossHUD")
 end
 function BreakOutResultCtrl:Open(bResult, sLevelName, callback, mapChangeInfo)
+	EventManager.Hit("Event_SetPopPlayTips", false)
+	GamepadUIManager.EnableGamepadUI("BreakOutResultCtrl", self.tbGamepadUINode)
 	PanelManager.InputDisable()
-	GamepadUIManager.AddGamepadUINode("BreakOutPlayCtrl", self.tbGamepadUINode)
 	EventManager.Hit("SetBreakOutPlaySkill_Visible", false)
 	EventManager.Hit("OnEvent_ClearState")
 	self.bResult = bResult
@@ -105,7 +135,7 @@ function BreakOutResultCtrl:Open(bResult, sLevelName, callback, mapChangeInfo)
 	self.mapChangeInfo = mapChangeInfo
 	self._mapNode.SucceedRoot:SetActive(self.bResult)
 	self._mapNode.FailRoot:SetActive(not self.bResult)
-	self._mapNode.ButtonClose.gameObject:SetActive(self.bResult)
+	self._mapNode.BtnShortcutClose.gameObject:SetActive(self.bResult)
 	self:SetContent()
 	self.bProcessingClose = false
 	local wait = function()
@@ -117,6 +147,7 @@ function BreakOutResultCtrl:Open(bResult, sLevelName, callback, mapChangeInfo)
 end
 function BreakOutResultCtrl:Close()
 	self._mapNode.safeAreaRoot:SetActive(false)
+	EventManager.Hit("Event_SetPopPlayTips", true)
 	PanelManager.InputEnable()
 	self._mapNode.imgBlurredBg.gameObject:SetActive(false)
 	GamepadUIManager.DisableGamepadUI("BreakOutResultCtrl")

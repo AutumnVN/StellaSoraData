@@ -77,6 +77,8 @@ function GiftCharItemCtrl:RefreshGiftLevel()
 	else
 		NovaAPI.SetTMPText(self._mapNode.txtProgress, string.format("%d/%d", curFavourExp, data.NeedExp))
 	end
+	local nCurLevel = curFavourLevel >= maxAffinityLevel and maxAffinityLevel or curFavourLevel
+	data = CacheTable.GetData("_AffinityLevel", templateId)[nCurLevel]
 	self:SetPngSprite(self._mapNode.imgAffinityLv, data.AffinityLevelIcon .. "_s")
 	self._mapNode.rectProgress.gameObject:SetActive(0 < curFavourExp or curFavourLevel >= maxAffinityLevel)
 end

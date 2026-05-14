@@ -105,7 +105,7 @@ function TowerDefenseLevelTipsCtrl:ShowCharTips(charData)
 	end
 	obj:SetActive(true)
 	animator:Play("TowerDefenseMonsterTipsPanel_in")
-	self.timer = self:AddTimer(1, 5, close, true, true, true)
+	self:AddTimer(1, 5, close, true, true, true)
 end
 function TowerDefenseLevelTipsCtrl:ShowMonsterTips(monsterData)
 	local config = ConfigTable.GetData("TowerDefenseMonster", monsterData.nId)
@@ -147,7 +147,7 @@ function TowerDefenseLevelTipsCtrl:ShowMonsterTips(monsterData)
 	end
 	obj:SetActive(true)
 	animator:Play("TowerDefenseMonsterTipsPanel_in")
-	self.timer = self:AddTimer(1, 5, close, true, true, true)
+	self:AddTimer(1, 5, close, true, true, true)
 end
 function TowerDefenseLevelTipsCtrl:MoveOtherUI()
 	if #self.tbMoveTweer > 0 then

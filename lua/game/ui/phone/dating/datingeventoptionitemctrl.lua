@@ -84,9 +84,18 @@ function DatingEventOptionItemCtrl:SkipTimer()
 	self:SelectDefault()
 end
 function DatingEventOptionItemCtrl:Awake()
+end
+function DatingEventOptionItemCtrl:OnEnable()
 	self.bSelected = false
 	self.animator = self.gameObject:GetComponent("Animator")
 end
 function DatingEventOptionItemCtrl:OnDisable()
+	if self.tbBtnCtrl ~= nil then
+		for k, v in pairs(self.tbBtnCtrl) do
+			v.onClick:RemoveAllListeners()
+			v = nil
+		end
+		self.tbBtnCtrl = nil
+	end
 end
 return DatingEventOptionItemCtrl

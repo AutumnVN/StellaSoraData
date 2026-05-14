@@ -58,13 +58,20 @@ function TrekkerVersusData:RefreshTrekkerVersusData(nActId, msgData)
 	self:RefreshQusetRedDot()
 	PlayerData.State:RefreshTrekkerVersusIdleRewardRedDot()
 end
-function TrekkerVersusData:EnterTrekkerVersus(nLevelId, nBuildId, tbAffix)
+function TrekkerVersusData:EnterTrekkerVersus(nActId, nLevelId, nBuildId, tbAffix)
+	if nActId == nil or nActId == 0 then
+		nActId = self.nActId
+	end
+	if nActId == 0 then
+		printWarn("TrekkerVersusData:EnterTrekkerVersus nActId is 0, skip")
+		return
+	end
 	local callback = function()
 		self:SetCachedBuildId(nBuildId)
 		self:EnterGame(nLevelId, nBuildId, tbAffix)
 	end
 	local msg = {
-		ActivityId = self.nActId,
+		ActivityId = nActId,
 		LevelId = nLevelId,
 		BuildId = nBuildId,
 		AffixIds = tbAffix
@@ -289,7 +296,14 @@ function TrekkerVersusData:SettleBattle(bSuccess, nLevelId, nTime, tbAffix, nBui
 	}
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_settle_req, msg, nil, callback)
 end
-function TrekkerVersusData:RequestIdleRefresh(callback)
+function TrekkerVersusData:RequestIdleRefresh(nActId, callback)
+	if nActId == nil or nActId == 0 then
+		nActId = self.nActId
+	end
+	if nActId == 0 then
+		printWarn("TrekkerVersusData:RequestIdleRefresh nActId is 0, skip")
+		return
+	end
 	local nElapsedTime = CS.ClientManager.Instance.serverTimeStamp - self.nTimerIdleRefresh
 	if nElapsedTime < 60 then
 		if callback ~= nil then
@@ -327,14 +341,17 @@ function TrekkerVersusData:RequestIdleRefresh(callback)
 			end
 		end
 	end
-	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_idle_refresh_req, {
-		Value = self.nActId
-	}, nil, cb)
+	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_idle_refresh_req, {Value = nActId}, nil, cb)
 end
-function TrekkerVersusData:RequestIdleRewardReceive(callback)
-	local msg = {
-		Value = self.nActId
-	}
+function TrekkerVersusData:RequestIdleRewardReceive(nActId, callback)
+	if nActId == nil or nActId == 0 then
+		nActId = self.nActId
+	end
+	if nActId == 0 then
+		printWarn("TrekkerVersusData:RequestIdleRewardReceive nActId is 0, skip")
+		return
+	end
+	local msg = {Value = nActId}
 	local cb = function(_, msgData)
 		if msgData ~= nil then
 			if msgData.Change ~= nil then
@@ -355,11 +372,15 @@ function TrekkerVersusData:RequestIdleRewardReceive(callback)
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_idle_reward_receive_req, msg, nil, cb)
 end
-function TrekkerVersusData:RequestSendStreamerGift(tbGift, nAddHotValue, callback)
-	local msg = {
-		ActivityId = self.nActId,
-		Items = tbGift
-	}
+function TrekkerVersusData:RequestSendStreamerGift(nActId, tbGift, nAddHotValue, callback)
+	if nActId == nil or nActId == 0 then
+		nActId = self.nActId
+	end
+	if nActId == 0 then
+		printWarn("TrekkerVersusData:RequestSendStreamerGift nActId is 0, skip")
+		return
+	end
+	local msg = {ActivityId = nActId, Items = tbGift}
 	local cb = function(_, msgData)
 		if msgData ~= nil then
 			local nPrevFanLevel = self.nFanLevel
@@ -387,11 +408,15 @@ function TrekkerVersusData:RequestSendStreamerGift(tbGift, nAddHotValue, callbac
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_rank_boost_req, msg, nil, cb)
 end
-function TrekkerVersusData:RequestReceiveScheduleReward(nScheduleType)
-	local msg = {
-		ActivityId = self.nActId,
-		ScheduleType = nScheduleType
-	}
+function TrekkerVersusData:RequestReceiveScheduleReward(nActId, nScheduleType)
+	if nActId == nil or nActId == 0 then
+		nActId = self.nActId
+	end
+	if nActId == 0 then
+		printWarn("TrekkerVersusData:RequestReceiveScheduleReward nActId is 0, skip")
+		return
+	end
+	local msg = {ActivityId = nActId, ScheduleType = nScheduleType}
 	local callback = function(_, msgData)
 		if msgData ~= nil then
 			if msgData.Change ~= nil then
@@ -438,7 +463,14 @@ function TrekkerVersusData:RefreshQuestData(questData)
 	self.mapQuests[questData.Id] = questData
 	self:RefreshQusetRedDot()
 end
-function TrekkerVersusData:ReceiveQuestReward(callback)
+function TrekkerVersusData:ReceiveQuestReward(nActId, callback)
+	if nActId == nil or nActId == 0 then
+		nActId = self.nActId
+	end
+	if nActId == 0 then
+		printWarn("TrekkerVersusData:ReceiveQuestReward nActId is 0, skip")
+		return
+	end
 	local bReceive = false
 	for _, mapQuest in pairs(self.mapQuests) do
 		if mapQuest.Status == 1 then
@@ -464,9 +496,7 @@ function TrekkerVersusData:ReceiveQuestReward(callback)
 		end
 	end
 	if bReceive then
-		local msg = {
-			Value = self.nActId
-		}
+		local msg = {Value = nActId}
 		HttpNetHandler.SendMsg(NetMsgId.Id.activity_trekker_versus_reward_receive_req, msg, nil, msgCallback)
 	else
 		local sTip = ConfigTable.GetUIText("Quest_ReceiveNone")

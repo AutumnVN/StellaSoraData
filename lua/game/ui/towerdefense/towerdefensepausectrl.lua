@@ -24,17 +24,20 @@ TowerDefensePauseCtrl._mapNodeConfig = {
 	btn_exit = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Exit",
-		sAction = "Giveup"
+		sAction = "Giveup",
+		sActionIconType = "Dark"
 	},
 	btn_restart = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Restart",
-		sAction = "Retry"
+		sAction = "Retry",
+		sActionIconType = "Dark"
 	},
 	btn_continue = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Continue",
-		sAction = "Back"
+		sAction = "Back",
+		sActionIconType = "Dark"
 	}
 }
 TowerDefensePauseCtrl._mapEventConfig = {}

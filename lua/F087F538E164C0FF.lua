@@ -1,4 +1,5 @@
 local JointDrillRankUpCtrl = class("JointDrillRankUpCtrl", BaseCtrl)
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillRankUpCtrl._mapNodeConfig = {
 	imgBlurredBg = {},
 	safeAreaRoot = {
@@ -100,6 +101,6 @@ function JointDrillRankUpCtrl:OnDestroy()
 	end
 end
 function JointDrillRankUpCtrl:OnBtnClick_Close()
-	EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillRankUp_1)
+	EventManager.Hit(EventId.ClosePanel, JointDrillContext.GetPanelId(PlayerData.JointDrill_1.nActId, "RankUp"))
 end
 return JointDrillRankUpCtrl

@@ -162,6 +162,10 @@ function TowerDefenseTeamCtrl:CreateItem()
 		end
 	end
 end
+function TowerDefenseTeamCtrl:UpdateSelectedChar(tbCharGuideIds)
+	self.tbSelectedCharGuideIds = tbCharGuideIds
+	EventManager.Hit("TowerDefense_CharUpdate", self.tbSelectedCharGuideIds)
+end
 function TowerDefenseTeamCtrl:OnCharacterGridBtnClick(nIndex)
 	local charIndex = table.indexof(self.tbSelectedCharGuideIds, self.tbCharGuideIds[nIndex])
 	if 0 < charIndex then
@@ -183,7 +187,7 @@ function TowerDefenseTeamCtrl:OnItemGridBtnClick(goGrid, nIndex)
 		go_selectMask.gameObject:SetActive(false)
 		self.nSelectedItemId = 0
 		EventManager.Hit("TowerDefense_ItemUpdate", self.nSelectedItemId)
-	elseif self.nSelectedItemId ~= nil or self.nSelectedItemId ~= 0 then
+	elseif self.nSelectedItemId ~= nil and self.nSelectedItemId ~= 0 then
 		local selected = goGrid.transform:Find("btn_grid/AnimRoot/go_select")
 		selected.gameObject:SetActive(true)
 		local go_selectMask = goGrid.transform:Find("btn_grid/AnimRoot/go_selectMask")

@@ -176,7 +176,7 @@ function SkillInstanceShelockHpBar:OnGridRefresh(goGrid, gridIndex)
 	local nBuffId = self.buffList[index].nId
 	local config = ConfigTable.GetData_Buff(nBuffId)
 	local nBuffNum = self.buffList[index].nNum
-	local nLeftTime = self.buffList[index].bnLeftTime
+	local nLeftTime = self.buffList[index].nLeftTime
 	NovaAPI.SetTMPText(txtCount, nBuffNum)
 end
 function SkillInstanceShelockHpBar:PlayTweenHp(hp, hpMax)
@@ -410,10 +410,7 @@ function SkillInstanceShelockHpBar:OnEvent_ToughnessShowStateChanged(bShow)
 	end
 end
 function SkillInstanceShelockHpBar:OnEvent_Deaded()
-	local wait = function()
-		self:CloseUI()
-	end
-	self:AddTimer(1, 1.6, self, wait, true, true, nil, nil)
+	self:AddTimer(1, 1.6, "CloseUI", true, true, nil, nil)
 end
 function SkillInstanceShelockHpBar:OpenUI(bossId, nDataId, parent)
 	self.bossId = bossId
@@ -546,7 +543,7 @@ end
 function SkillInstanceShelockHpBar:CloseUI()
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.BossCanvasGroup, 1)
 	self.bossHUDAnimTweener = Sequence()
-	self.bossHUDAnimTweener:Append(self._mapNode.BossCanvasGroup.DOFade(0, 0.5))
+	self.bossHUDAnimTweener:Append(self._mapNode.BossCanvasGroup:DOFade(0, 0.5))
 	self.bossHUDAnimTweener:OnComplete(function()
 		NovaAPI.SetComponentEnable(self._mapNode.BossCanvas, false)
 	end)

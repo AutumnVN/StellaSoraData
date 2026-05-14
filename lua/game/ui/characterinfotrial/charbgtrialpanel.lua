@@ -63,8 +63,7 @@ local char_panel_show_cfg = {
 	}
 }
 local char_sub_panel = {
-	[PanelId.CharUpPanel] = true,
-	[PanelId.CharFavourGift] = true
+	[PanelId.CharUpPanel] = true
 }
 local panel_switch_anim_cfg = {
 	[PanelId.CharInfoTrial] = {

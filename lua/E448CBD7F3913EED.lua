@@ -76,10 +76,11 @@ function LevelSelectCtrl:OnDisable()
 		self:UnbindCtrlByNode(objCtrl)
 		self.tbGridCtrl[index] = nil
 	end
-	self.tbGridCtrl = {
-		{},
-		{}
-	}
+	self.tbGridCtrl = {}
+	if self.tweener ~= nil then
+		self.tweener:Kill()
+		self.tweener = nil
+	end
 end
 function LevelSelectCtrl:OnEnable()
 	if self.BreakOutData == nil or self.BreakOutData ~= nil and self.BreakOutData:GetLevelData() == nil then
@@ -267,14 +268,13 @@ function LevelSelectCtrl:OnDrag_ActBanner(mDrag)
 		local nPos = 0
 		if self.nBannerDragPosX > 0 then
 			nPos = self.nGridsWidth
-			self.nTypeIdx = 0 >= self.nTypeIdx - 1 and #self.tbGridsList or self.nTypeIdx - 1
+			self.nTypeIdx = math.max(self.nTypeIdx - 1, 1)
 		elseif self.nBannerDragPosX < 0 then
 			nPos = -self.nGridsWidth
-			self.nTypeIdx = self.nTypeIdx + 1 > #self.tbGridsList and 1 or self.nTypeIdx + 1
+			self.nTypeIdx = math.min(self.nTypeIdx + 1, #self.tbGridsList)
 		end
-		local tweener
 		for k, v in ipairs(self._mapNode.Grids) do
-			tweener = v:DOAnchorPosX(self.tbInitPos[k].x + nPos, 0.2):SetUpdate(true)
+			self.tweener = v:DOAnchorPosX(self.tbInitPos[k].x + nPos, 0.2):SetUpdate(true)
 		end
 		local _cb = function()
 			for k, v in ipairs(self._mapNode.Grids) do
@@ -282,7 +282,7 @@ function LevelSelectCtrl:OnDrag_ActBanner(mDrag)
 			end
 			self:RefreshGrids()
 		end
-		tweener.onComplete = dotween_callback_handler(self, _cb)
+		self.tweener.onComplete = dotween_callback_handler(self, _cb)
 		self.nBannerDragPosX = 0
 	end
 end

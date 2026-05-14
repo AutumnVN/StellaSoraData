@@ -102,7 +102,6 @@ local mapConfig = {
 	[PanelId.EquipmentInstanceLevelSelect] = {bEvent = true},
 	[PanelId.StarTowerLevelSelect] = {bEvent = true},
 	[PanelId.CharUpPanel] = {bEvent = true},
-	[PanelId.CharFavourGift] = {bEvent = true},
 	[PanelId.MainlineEx] = {bEvent = true},
 	[PanelId.StarTowerBook] = {bEvent = true},
 	[PanelId.StoryChapter] = {bEvent = true},
@@ -112,15 +111,16 @@ local mapConfig = {
 	[PanelId.SkillInstanceLevelSelect] = {bEvent = true},
 	[PanelId.TrialFormation] = {bEvent = true},
 	[PanelId.TrialDepot] = {bEvent = true},
-	[PanelId.JointDrillLevelSelect_1] = {bEvent = true},
+	[PanelId.JointDrillLevelSelect_510001] = {bEvent = true},
 	[PanelId.TowerDefenseCharacterDetailPanel] = {bEvent = true},
 	[PanelId.MallSkinPreview] = {bEvent = true},
 	[PanelId.StorySet] = {bEvent = true},
 	[PanelId.BdConvertPanel] = {bEvent = true},
 	[PanelId.GachaSpin] = {bEvent = true},
-	[PanelId.JointDrillLevelSelect_2] = {bEvent = true},
+	[PanelId.JointDrillLevelSelect_510003] = {bEvent = true},
 	[PanelId.PotentialPreselectionEdit] = {bEvent = true},
-	[PanelId.GoldenSpyLevelSelectPanel] = {bEvent = true}
+	[PanelId.GoldenSpyLevelSelectPanel] = {bEvent = true},
+	[PanelId.JointDrillLevelSelect_510005] = {bEvent = true}
 }
 function TopBarCtrl:CreateCoin(tbCoin, bHideCoinAdd)
 	self.mapCoinIndex, self.mapItemIndex = nil, nil

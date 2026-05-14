@@ -41,6 +41,7 @@ function ChapterLineCtrl:Awake()
 	local tbParam = self:GetPanelParam()
 	self.curChapter = tbParam[1]
 	self.curTimeStamp = 0
+	self.curNodeDepth = 1
 	self.tbImgFocusNode = {}
 	self.tbLockedPlayedAnim = {}
 	self.lineAnimTime = 0.14
@@ -148,11 +149,14 @@ function ChapterLineCtrl:Refresh()
 	for k, v in ipairs(self.tbGridList) do
 		self:RefreshGrid(v.grid, v.depth)
 	end
+	local isComplete = self:IsAllStoryCompleted()
+	self.curTimeStamp = isComplete and self.curTimeStamp or self.maxUnlockDepth
 	for i = 1, #self.tbTimeStampList do
 		self:RefreshTimeStamp(self.tbTimeStampList[i], i)
 	end
 	self:AddTimer(1, 0.1, function()
-		self._mapNode.scrollRect.horizontalNormalizedPosition = (self.curTimeStamp - 1) * 250
+		local posX = self.curNodeDepth <= 4 and 0 or (self.curNodeDepth - 1) * -512
+		self._mapNode.tranContent.anchoredPosition = Vector2(posX, 0)
 	end, true, true, true)
 	CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.tranContent)
 	for k, v in ipairs(self.tbGridList) do
@@ -161,11 +165,11 @@ function ChapterLineCtrl:Refresh()
 	for k, v in ipairs(self.tbGridList) do
 		self:CheckLineReasonable(v.grid)
 	end
-	if 0 > self.curTimeStamp - 1 then
+	if self.curTimeStamp - 1 < 0 then
 		self._mapNode.imgMask.gameObject:SetActive(false)
 	else
 		self._mapNode.imgMask.gameObject:SetActive(true)
-		local node = self._mapNode.tranContent:Find(tostring(self.curTimeStamp))
+		local node = self._mapNode.tranContent:Find(tostring(self.curNodeDepth))
 		local layout = self._mapNode.tranContent:GetComponent("HorizontalLayoutGroup")
 		local pos = node.localPosition.x - layout.padding.left
 		self._mapNode.imgMask.anchoredPosition = Vector2(pos, -6)
@@ -241,6 +245,7 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 				end
 			end
 			self.curTimeStamp = nodeTimeStampIndex
+			self.curNodeDepth = nodeTimeStampIndex
 		end
 		if self.tbImgFocusNode[self.curTimeStamp] == nil then
 			self.tbImgFocusNode[self.curTimeStamp] = {}
@@ -314,6 +319,7 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 	end
 	local index = 1
 	local bHasUnlockBranch = false
+	local bHasUnReadBranch = false
 	for k, v in ipairs(self.tbBranch[avgId]) do
 		local bUnlock = AvgData:IsUnlock(v.ConditionId, v.StoryId)
 		local bReaded = AvgData:IsStoryReaded(v.Id)
@@ -321,6 +327,12 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 		local storyConfig = AvgData:GetStoryCfgData(v.StoryId)
 		if bUnlock then
 			bHasUnlockBranch = true
+		end
+		if bUnlock and not bReaded then
+			local hasPlay = LocalData.GetPlayerLocalData("MainlineUnlock_" .. storyConfig.Id)
+			if hasPlay == nil or tonumber(hasPlay) == 0 then
+				bHasUnReadBranch = true
+			end
 		end
 		if 0 >= table.indexof(self.tbLockedBranchGrid, avgId) then
 			table.insert(self.tbLockedBranchGrid, avgId)
@@ -383,8 +395,8 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 	end
 	root.gameObject:SetActive(bHasUnlockBranch)
 	if bHasUnlockBranch then
-		if not isNeedPlayUnlockAnim then
-			self:PlayUnlockAnim(root, "BranchRoot_loop" .. #self.tbBranch[avgId])
+		if not isNeedPlayUnlockAnim or not bHasUnReadBranch then
+			self:PlayUnlockAnim(root, "BranchRoot_loop" .. nUnlockBranchCount)
 		else
 			self:PlayUnlockAnim(root, "BranchRoot_Empty")
 		end

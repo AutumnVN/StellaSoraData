@@ -4,7 +4,7 @@ BreakOutLevelDetailPanel._sUIResRootPath = "UI_Activity/"
 BreakOutLevelDetailPanel._tbDefine = {
 	{
 		sPrefabPath = "30101/Play/BreakOutLevelDetailPanel.prefab",
-		sCtrlName = "Game.UI.Play_BreakOut_30101.BreakOutLevelDetailCtr"
+		sCtrlName = "Game.UI.Play_BreakOut_30101.BreakOutLevelDetailCtrl"
 	}
 }
 function BreakOutLevelDetailPanel:Awake()

@@ -210,7 +210,7 @@ function PhoneCtrl:PlayTogAnim()
 	elseif self._panel.nCurTog == tog_Dating then
 		sAnim = "PhonePanel_goDating_in"
 	end
-	local nAnimeLen = NovaAPI.GetAnimClipLength(self._mapNode.animContent, {"sAnim"})
+	local nAnimeLen = NovaAPI.GetAnimClipLength(self._mapNode.animContent, {sAnim})
 	self._mapNode.animContent:Play(sAnim)
 	return nAnimeLen
 end
@@ -230,7 +230,7 @@ function PhoneCtrl:RefreshTogInfo(bResetChar)
 		end
 		NovaAPI.SetTMPText(self._mapNode.txtPhoneTitle, ConfigTable.GetUIText("Phone_Tog_Chat"))
 		self.tbAddressBookList = PlayerData.Phone:GetAddressBookList()
-		self:RefreshAddressBookList(false)
+		self:RefreshAddressBookList(false, false)
 		self:RefreshSelectChat()
 		for _, v in pairs(self.tbAddressGridCtrl) do
 			v:RefreshRedDotShow()
@@ -280,7 +280,7 @@ function PhoneCtrl:ChangeTog(bInit)
 	self._mapNode.togGift:SetDefault(self._panel.nCurTog == tog_Gift)
 	self._mapNode.togDating:SetDefault(self._panel.nCurTog == tog_Dating)
 end
-function PhoneCtrl:RefreshAddressBookList(bSetTop)
+function PhoneCtrl:RefreshAddressBookList(bSetTop, bTrackPos)
 	for nInstanceId, objCtrl in pairs(self.tbAddressGridCtrl) do
 		self:UnbindCtrlByNode(objCtrl)
 		self.tbAddressGridCtrl[nInstanceId] = nil
@@ -299,6 +299,9 @@ function PhoneCtrl:RefreshAddressBookList(bSetTop)
 	end
 	local bKeepPos = self.nSelectIndex ~= 1 or bSetTop
 	self._mapNode.addressBookListLSV:Init(#self.tbAddressBookList, self, self.OnAddressGridRefresh, self.OnAddressGridBtnClick, bKeepPos)
+	if bTrackPos then
+		self._mapNode.addressBookListLSV:SetScrollGridPos(self.nSelectIndex - 1, 0.5)
+	end
 end
 function PhoneCtrl:RefreshSelectChat()
 	local mapAddressData = self.tbAddressBookList[self.nSelectIndex]
@@ -362,7 +365,7 @@ function PhoneCtrl:RefreshCharList(bMax)
 		end
 		return a.affinityData.Level > b.affinityData.Level
 	end)
-	if self._panel.nSelectCharId == nil then
+	if self._panel.nSelectCharId == nil and #self.mapCharList > 0 then
 		self._panel.nSelectCharId = self.mapCharList[1].nCharId
 	end
 	for k, v in ipairs(self.mapCharList) do
@@ -440,7 +443,7 @@ function PhoneCtrl:RefreshDatingCharList()
 		self:UnbindCtrlByNode(objCtrl)
 		self.tbDatingGridCtrl[nInstanceId] = nil
 	end
-	if self._panel.nSelectCharId == nil then
+	if self._panel.nSelectCharId == nil and #self.mapCharList > 0 then
 		self._panel.nSelectCharId = self.mapCharList[1].nCharId
 	end
 	for k, v in ipairs(self.mapCharList) do
@@ -623,6 +626,9 @@ function PhoneCtrl:OnEvent_RefreshPhoneAddress(nChatId, bRefreshContent)
 	if bRefreshContent == true then
 		self._mapNode.goChat:RefreshChatContent(nChatId, true)
 	end
+	if self.nSelectIndex == nil then
+		return
+	end
 	local goSelect = self._mapNode.trAddressLSV:Find("Viewport/Content/" .. self.nSelectIndex - 1)
 	if goSelect then
 		self.tbAddressGridCtrl[goSelect.gameObject:GetInstanceID()]:RefreshChatContent(nChatId)
@@ -651,8 +657,7 @@ function PhoneCtrl:OnEvent_NewChatTrigger(nAddressId, nChatId)
 	end
 	self.nSelectAddressId = nAddressId
 	self.tbAddressBookList = tbNewAddress
-	self.nSelectAddressId = nAddressId
-	self:RefreshAddressBookList(false)
+	self:RefreshAddressBookList(false, true)
 	self._mapNode.goChat:SetChatContent(newAddressData, nChatId)
 	self:OnEvent_RefreshPhoneAddress(nChatId, false)
 	WwiseAudioMgr:PostEvent("ui_cellphone_message_pop")
@@ -680,9 +685,9 @@ end
 function PhoneCtrl:OnEvent_ChangePhoneListTopStatus(nAddressId, bTop)
 	PlayerData.Phone:SetPhoneTopStatus(nAddressId, bTop)
 	self.tbAddressBookList = PlayerData.Phone:GetAddressBookList()
-	self:RefreshAddressBookList(true)
+	self:RefreshAddressBookList(true, false)
 	for nIdx, v in ipairs(self.tbAddressBookList) do
-		if v.nAddressId == nAddressId then
+		if v.nAddressId == nAddressId and bTop == true then
 			self._mapNode.addressBookListLSV:SetScrollGridPos(nIdx - 1, 0.5)
 			return
 		end

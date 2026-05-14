@@ -35,12 +35,14 @@ ScoreBossPauseCtrl._mapNodeConfig = {
 	btnBack = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Close",
-		sAction = "Back"
+		sAction = "Back",
+		sActionIconType = "Dark"
 	},
 	btnAgain = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Restart",
-		sAction = "ScoreBossRetry"
+		sAction = "ScoreBossRetry",
+		sActionIconType = "Dark"
 	},
 	btnSettings = {
 		sComponentName = "NaviButton",
@@ -137,6 +139,8 @@ function ScoreBossPauseCtrl:Awake()
 		}
 	}
 	self._mapNode.ActionBar:InitActionBar(tbConfig)
+end
+function ScoreBossPauseCtrl:OnDisable()
 end
 function ScoreBossPauseCtrl:Pause(nLevelId, tbCharId)
 	self.tbChar = tbCharId

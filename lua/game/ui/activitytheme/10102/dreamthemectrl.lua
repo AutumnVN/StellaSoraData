@@ -197,10 +197,10 @@ end
 function DreamThemeCtrl:RefreshTime()
 	local bOpen = self.DreamThemeData:CheckActivityGroupOpen()
 	if bOpen then
-		self:RefreshRemainTime(self.DreamThemeData:GetActGroupEndTime(), self._mapNode.txtActivityTime)
+		RefreshRemainTime(self.DreamThemeData:GetActGroupEndTime(), self._mapNode.txtActivityTime)
 		if nil == self.remainTimer then
 			self.remainTimer = self:AddTimer(0, 1, function()
-				local remainTime = self:RefreshRemainTime(self.DreamThemeData:GetActGroupEndTime(), self._mapNode.txtActivityTime)
+				local remainTime = RefreshRemainTime(self.DreamThemeData:GetActGroupEndTime(), self._mapNode.txtActivityTime)
 				if remainTime <= 0 then
 					TimerManager.Remove(self.remainTimer)
 					self.remainTimer = nil
@@ -215,41 +215,6 @@ function DreamThemeCtrl:RefreshTime()
 	local strEndDay = string.format("%d", nEndDay)
 	local dateStr = string.format("%s/%s/%s ~ %s/%s/%s", nOpenYear, nOpenMonth, strOpenDay, nEndYear, nEndMonth, strEndDay)
 	NovaAPI.SetTMPText(self._mapNode.txtActivityDate, dateStr)
-end
-function DreamThemeCtrl:RefreshRemainTime(endTime, txtComp)
-	local curTime = ClientManager.serverTimeStamp
-	local remainTime = endTime - curTime
-	local sTimeStr = ""
-	if remainTime <= 60 then
-		local sec = math.floor(remainTime)
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Sec") or "", sec)
-	elseif 60 < remainTime and remainTime <= 3600 then
-		local min = math.floor(remainTime / 60)
-		local sec = math.floor(remainTime - min * 60)
-		if sec == 0 then
-			min = min - 1
-			sec = 60
-		end
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Min") or "", min, sec)
-	elseif 3600 < remainTime and remainTime <= 86400 then
-		local hour = math.floor(remainTime / 3600)
-		local min = math.floor((remainTime - hour * 3600) / 60)
-		if min == 0 then
-			hour = hour - 1
-			min = 60
-		end
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Hour") or "", hour, min)
-	elseif 86400 < remainTime then
-		local day = math.floor(remainTime / 86400)
-		local hour = math.floor((remainTime - day * 86400) / 3600)
-		if hour == 0 then
-			day = day - 1
-			hour = 24
-		end
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Day") or "", day, hour)
-	end
-	NovaAPI.SetTMPText(txtComp, sTimeStr)
-	return remainTime
 end
 function DreamThemeCtrl:RefreshRemainOpenTime(openTime)
 	local curTime = ClientManager.serverTimeStamp
@@ -326,7 +291,7 @@ function DreamThemeCtrl:RefreshButtonTimer(actData, timer, txtTrans, imgTrans, r
 						end
 					else
 						imgTrans:SetActive(false)
-						TimerManager.Remove(timer)
+						TimerManager.Remove(countDowmTimer)
 						countDowmTimer = nil
 						self.tbActState[activityId] = ActivityState.Open
 						refreshFunc(actData)
@@ -345,12 +310,12 @@ function DreamThemeCtrl:RefreshButtonTimer(actData, timer, txtTrans, imgTrans, r
 					bShowCountDown = endTime - curTime <= 259200
 				end
 				if timer == nil and bShowCountDown then
-					self:RefreshRemainTime(endTime, txtTrans)
+					RefreshRemainTime(endTime, txtTrans)
 					do
 						local fcTimer = function()
-							local remainTime = self:RefreshRemainTime(endTime, txtTrans)
+							local remainTime = RefreshRemainTime(endTime, txtTrans)
 							if remainTime <= 0 then
-								TimerManager.Remove(timer)
+								TimerManager.Remove(countDowmTimer)
 								countDowmTimer = nil
 								refreshFunc(actData)
 							end

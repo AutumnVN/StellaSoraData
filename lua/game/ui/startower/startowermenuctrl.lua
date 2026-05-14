@@ -113,9 +113,7 @@ function StarTowerMenuCtrl:OnEvent_SetCoin(nCount)
 end
 function StarTowerMenuCtrl:OnEvent_SetBuildLevel(nScore)
 	local GetAnimName = function(nRank)
-		if nRank <= 5 then
-			return "BuildScore_Green"
-		elseif nRank <= 10 then
+		if nRank <= 10 then
 			return "BuildScore_Green"
 		elseif nRank <= 20 then
 			return "BuildScore_Blue"
@@ -124,6 +122,7 @@ function StarTowerMenuCtrl:OnEvent_SetBuildLevel(nScore)
 		elseif nRank <= 40 then
 			return "BuildScore_RainBow"
 		end
+		return "BuildScore_Green"
 	end
 	if not self.bOpen then
 		return

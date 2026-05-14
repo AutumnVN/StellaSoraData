@@ -8,7 +8,8 @@ TutorialMenuCtrl._mapNodeConfig = {
 	btn_card = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_OpenCard",
-		sAction = "Depot"
+		sAction = "Depot",
+		sActionIconType = "Dark"
 	},
 	txt_dic = {
 		nCount = 2,

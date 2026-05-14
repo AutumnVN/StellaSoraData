@@ -101,7 +101,7 @@ function TrekkerVersusQuestCtrl:OnBtnClick_Receive()
 			refershList()
 		end)
 	end
-	self._mapActData:ReceiveQuestReward(callback)
+	self._mapActData:ReceiveQuestReward(self.nActId, callback)
 end
 function TrekkerVersusQuestCtrl:OnEvent_TrekkerVersusAffixJump()
 	self:ClosePanel()

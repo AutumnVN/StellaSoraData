@@ -47,7 +47,8 @@ JointDrillPauseCtrl._mapNodeConfig = {
 	btnRestart = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Restart",
-		sAction = "Retry"
+		sAction = "Retry",
+		sActionIconType = "Dark"
 	},
 	txtBtnRestart = {
 		nCount = 2,
@@ -65,7 +66,8 @@ JointDrillPauseCtrl._mapNodeConfig = {
 	btnBack = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Back",
-		sAction = "Back"
+		sAction = "Back",
+		sActionIconType = "Dark"
 	},
 	txtBtnBack = {
 		nCount = 2,

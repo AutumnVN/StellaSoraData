@@ -88,6 +88,8 @@ local HonorTitleType = {
 	Affinity = 3,
 	Activity = 4
 }
+local L2_LV = 21
+local L3_LV = 41
 function FriendHonorTitleCtrl:Open()
 	self:PlayInAni()
 	self.tbCurHonorTitle = {}
@@ -261,16 +263,27 @@ function FriendHonorTitleCtrl:OnGridRefresh(goGrid, gridIndex)
 			end
 		end
 	end
-	ctrl:SetHonotTitle(honorData.Id, true, level)
-	self:SetPngSprite(imgHonorTitleEquipBg, honorData.MainRes)
+	local bgPath = ctrl:SetHonotTitle(honorData.Id, true, level)
+	self:SetPngSprite(imgHonorTitleEquipBg, bgPath ~= "" and bgPath or honorData.MainRes)
+	if bgPath ~= "" then
+		NovaAPI.SetImageNativeSize(imgHonorTitleEquipBg)
+	end
 	local spritePath = ""
 	if honorData.BGType == GameEnum.HonorTitleBgType.Ellipse then
-		spritePath = "db_choose_common_5"
+		if level ~= nil and level >= L2_LV and level < L3_LV then
+			spritePath = "db_choose_common_7"
+		elseif level ~= nil and level >= L3_LV then
+			spritePath = "db_choose_common_8"
+		else
+			spritePath = "db_choose_common_5"
+		end
 	elseif honorData.BGType == GameEnum.HonorTitleBgType.Parallelogram then
 		spritePath = "db_choose_common_6"
 	end
 	self:SetAtlasSprite(imgHonorTitleChooseBg, "08_db", spritePath)
 	self:SetAtlasSprite(imgHonorTitleChooseBg1, "08_db", spritePath)
+	NovaAPI.SetImageNativeSize(imgHonorTitleChooseBg)
+	NovaAPI.SetImageNativeSize(imgHonorTitleChooseBg1)
 	local bCurChosen = self.tbCurHonorTitle[self.nSelectedIndex] == honorData.Id
 	goChosenState.gameObject:SetActive(bCurChosen)
 	imgHonorTitleChooseBg.gameObject:SetActive(bCurChosen)

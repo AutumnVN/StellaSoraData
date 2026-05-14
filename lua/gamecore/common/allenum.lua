@@ -1554,9 +1554,9 @@ AllEnum.LevelMenuResourceList = {
 	[4] = GameEnum.OpenFuncType.CharGemInstance
 }
 AllEnum.CookieModeIcon = {
-	[GameEnum.CookiePackModel.CookiePackNormalModel] = "UI/Play_Cookie/SpriteAtlas/Sprite/zs_activity_cookie_s_01",
-	[GameEnum.CookiePackModel.CookiePackPathsModel] = "UI/Play_Cookie/SpriteAtlas/Sprite/zs_activity_cookie_s_02",
-	[GameEnum.CookiePackModel.CookiePackRhythmlModel] = "UI/Play_Cookie/SpriteAtlas/Sprite/zs_activity_cookie_s_03"
+	[GameEnum.CookiePackModel.CookiePackNormalModel] = "/SpriteAtlas/Sprite/zs_activity_cookie_s_01",
+	[GameEnum.CookiePackModel.CookiePackPathsModel] = "/SpriteAtlas/Sprite/zs_activity_cookie_s_02",
+	[GameEnum.CookiePackModel.CookiePackRhythmlModel] = "/SpriteAtlas/Sprite/zs_activity_cookie_s_03"
 }
 AllEnum.TransitionStatus = {
 	IsPlayingInAnim = 1,
@@ -1589,4 +1589,5 @@ AllEnum.GoldenSpyBuffType = {
 	DelayBuff = 2,
 	UnactiveBuff = 3
 }
+AllEnum.GamepadIconSuffix = {Light = "", Dark = "_2"}
 return AllEnum

@@ -145,7 +145,7 @@ function ActivityOurRegimentCtrl:BtnRewardGridClick(goGrid, gridIndex)
 end
 function ActivityOurRegimentCtrl:OnBtnClick_Go()
 	local actGroupCfg = self.actData:GetActGroupCfgData()
-	if actGroupCfg ~= nil and actGroupCfg ~= nil then
+	if actGroupCfg ~= nil then
 		if actGroupCfg.TransitionId ~= nil and actGroupCfg.TransitionId > 0 then
 			local callback = function()
 				EventManager.Hit(EventId.OpenPanel, PanelId.OurRegimentThemePanel, actGroupCfg.Id)

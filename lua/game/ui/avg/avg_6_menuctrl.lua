@@ -627,12 +627,14 @@ function Avg_6_MenuCtrl:InitActionBarConfig()
 		[1] = {
 			mapNode = self._mapNode.btnCancel,
 			sComponentName = "NaviButton",
-			sAction = "Back"
+			sAction = "Back",
+			sActionIconType = "Dark"
 		},
 		[2] = {
 			mapNode = self._mapNode.btnConfirm1,
 			sComponentName = "NaviButton",
-			sAction = "Confirm"
+			sAction = "Confirm",
+			sActionIconType = "Dark"
 		}
 	}
 	self.tbOnActionBarConfig = {}

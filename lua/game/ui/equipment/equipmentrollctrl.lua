@@ -635,13 +635,12 @@ function EquipmentRollCtrl:OnBtnClick_Active()
 		self._mapNode.TopBar:OnBtnClick_CoinFirstTips(self._mapNode.goCoinOther)
 		return
 	end
-	local callback = function(nNewIndex)
-		self._panel.nSelectGemIndex = nNewIndex
+	local callback = function()
 		PlayerData.Equipment:CacheEquipmentSelect(self._panel.nSlotId, self._panel.nSelectGemIndex, self._panel.nCharId)
 		self:RefreshTab()
 		self:RefreshIndexGem(true)
 	end
-	PlayerData.Equipment:SendCharGemGenerateReq(self._panel.nCharId, self._panel.nSlotId, callback)
+	PlayerData.Equipment:SendCharGemGenerateReq(self._panel.nCharId, self._panel.nSlotId, self._panel.nSelectGemIndex, callback)
 end
 function EquipmentRollCtrl:OnBtnClick_Unload()
 	local nSelectPreset = PlayerData.Equipment:GetSelectPreset(self._panel.nCharId)

@@ -60,7 +60,7 @@ function BreakOutLevelCellCtrl:RefreshLevelState()
 	self._mapNode.obj_TipEndMask.gameObject:SetActive(false)
 	self._mapNode.img_FinishIcon.gameObject:SetActive(false)
 	self._mapNode.redDotNew:SetActive(false)
-	self.bIsTimeOpen = self:RefreshLevelTime(self.LevelId)
+	self.bIsTimeOpen = self:RefreshLevelTime()
 	if self.bIsTimeOpen == nil or not self.bIsTimeOpen then
 		return
 	end

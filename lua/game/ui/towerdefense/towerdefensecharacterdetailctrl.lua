@@ -1,5 +1,5 @@
 local TowerDefenseCharacterDetailCtrl = class("TowerDefenseCharacterDetailCtrl", BaseCtrl)
-local SelectedColor = Color(0.9803921568627451, 0.9803921568627451, 10.0)
+local SelectedColor = Color(0.9803921568627451, 0.9803921568627451, 0.9803921568627451)
 local NormalColor = Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764)
 local AdventureModuleHelper = CS.AdventureModuleHelper
 local GamepadUIManager = require("GameCore.Module.GamepadUIManager")

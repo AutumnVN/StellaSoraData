@@ -151,6 +151,10 @@ function ThrowGiftLevelSelectCtrl:OnEnable()
 	end
 end
 function ThrowGiftLevelSelectCtrl:OnDisable()
+	if self._switchAnimTimer ~= nil then
+		self._switchAnimTimer:Cancel()
+		self._switchAnimTimer = nil
+	end
 end
 function ThrowGiftLevelSelectCtrl:OnDestroy()
 end
@@ -199,7 +203,7 @@ function ThrowGiftLevelSelectCtrl:RefreshLevelInfoGrid()
 		tbNewLevel = self.actData:GetNewLevels()
 	end
 	for _, nLevelId in ipairs(tbNewLevel) do
-		if nLevelId > tbCurGroup[2].Id then
+		if tbCurGroup[2] ~= nil and nLevelId > tbCurGroup[2].Id then
 			bShowBottomNew = true
 			break
 		end
@@ -271,6 +275,9 @@ function ThrowGiftLevelSelectCtrl:GetLevelPass(nLevelId)
 	return false
 end
 function ThrowGiftLevelSelectCtrl:GetLevelUnlock(nLevelId)
+	if self.actData == nil then
+		return true
+	end
 	local mapLevelCfgData = ConfigTable.GetData("ThrowGiftLevel", nLevelId)
 	if mapLevelCfgData == nil then
 		return false, 0
@@ -431,7 +438,7 @@ function ThrowGiftLevelSelectCtrl:OnBtnClick_Target()
 		if mapGroupData ~= nil then
 			local actData = mapGroupData:GetActivityDataByIndex(AllEnum.ActivityThemeFuncIndex.Task)
 			if actData ~= nil then
-				EventManager.Hit(EventId.OpenPanel, PanelId.Task_10105, actData.ActivityId, 4)
+				EventManager.Hit(EventId.OpenPanel, self._panel.nQuestPanelId, actData.ActivityId, 4)
 			end
 		end
 	end

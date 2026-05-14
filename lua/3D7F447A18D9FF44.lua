@@ -24,17 +24,20 @@ ThrowGiftPauseCtrl._mapNodeConfig = {
 	btn_exit = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Exit",
-		sAction = "Giveup"
+		sAction = "Giveup",
+		sActionIconType = "Dark"
 	},
 	btn_restart = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Restart",
-		sAction = "Retry"
+		sAction = "Retry",
+		sActionIconType = "Dark"
 	},
 	btn_continue = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Continue",
-		sAction = "Back"
+		sAction = "Back",
+		sActionIconType = "Dark"
 	},
 	txt_dic = {
 		nCount = 2,
@@ -44,7 +47,8 @@ ThrowGiftPauseCtrl._mapNodeConfig = {
 	btn_dic = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Dic",
-		sAction = "Depot"
+		sAction = "Depot",
+		sActionIconType = "Dark"
 	}
 }
 ThrowGiftPauseCtrl._mapEventConfig = {}

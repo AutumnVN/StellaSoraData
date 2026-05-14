@@ -10,6 +10,7 @@ local bar_item_maxX = 215
 local Time = CS.UnityEngine.Time
 local cardAnimCD = 0.1
 local ItemType = {
+	None = 0,
 	CD = 1,
 	Count = 2,
 	Charge = 3,
@@ -49,7 +50,8 @@ TowerDefenseCtrl._mapNodeConfig = {
 	btn_dic = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_OpenDic",
-		sAction = "Depot"
+		sAction = "Depot",
+		sActionIconType = "Dark"
 	},
 	txt_dic = {
 		nCount = 2,
@@ -620,7 +622,7 @@ function TowerDefenseCtrl:OnEvent_HoldCard(pos)
 		return
 	end
 	if self.nDragType == DragType.Item and self.bPointItem then
-		if self.ItemType == ItemType.Count or self.ItemType == ItemType.CD_And_Count and self.nItemCount == 0 then
+		if (self.ItemType == ItemType.Count or self.ItemType == ItemType.CD_And_Count) and self.nItemCount == 0 then
 			return
 		end
 		self:SetDragState(DragType.Item)
@@ -716,7 +718,7 @@ function TowerDefenseCtrl:OnDrag_CharacterCard(mDrag)
 	end
 end
 function TowerDefenseCtrl:OnDrag_Item(mDrag)
-	if self.ItemType == ItemType.Count or self.ItemType == ItemType.CD_And_Count and self.nItemCount == 0 then
+	if (self.ItemType == ItemType.Count or self.ItemType == ItemType.CD_And_Count) and self.nItemCount == 0 then
 		return
 	end
 	if self.CardDragType == CardDragType.Pointer then
@@ -751,7 +753,8 @@ function TowerDefenseCtrl:CharacterLevelUp(characterId)
 	if config == nil then
 		return
 	end
-	if config.PointNeeded[oldLevel] > self.point then
+	local nPointNeeded = config.PointNeeded[oldLevel]
+	if nPointNeeded == nil or nPointNeeded > self.point then
 		return
 	end
 	self.TowerDefenseData.TowerDefenseLevelData:CharacterLevelUp(characterId)
@@ -1185,7 +1188,7 @@ function TowerDefenseCtrl:OnEvent_ShowPointUI(bIsShow)
 	self._mapNode.go_characterFunc:SetLevelBtnState(bIsShow)
 end
 function TowerDefenseCtrl:OnEvent_ShowTips(tipsId, Time)
-	EventManager.Hit("BattlePopupTips", tipsId, Time:AsFloat() or 0, true)
+	EventManager.Hit("BattlePopupTips", tipsId, Time or 0, true)
 end
 function TowerDefenseCtrl:OnEvent_OpenDic(dicId)
 	if self.bHasDic then

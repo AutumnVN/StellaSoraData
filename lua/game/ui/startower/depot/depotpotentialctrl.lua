@@ -111,7 +111,7 @@ function DepotPotentialCtrl:RefreshPotential(mapAllPotential, mapPotential)
 				end
 				return a.nUnlock > b.nUnlock
 			end)
-			if self.nSelectId == nil then
+			if self.nSelectId == nil and 0 < #tbSortList and #tbSortList[1] > 0 then
 				self.nSelectId = tbSortList[1][1].nId
 			end
 			table.insert(self.mapAllPotential, {

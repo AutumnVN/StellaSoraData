@@ -406,6 +406,9 @@ function TutorialPotentialSelectCtrl:OnEvent_GamepadUIChange(sName, nBeforeType,
 	if sName ~= "TutorialPotentialSelectCtrl" then
 		return
 	end
+	if self.nSelectIdx == 0 then
+		return
+	end
 	if nBeforeType == AllEnum.GamepadUIType.Other or nBeforeType == AllEnum.GamepadUIType.Mouse then
 		GamepadUIManager.ClearSelectedUI()
 		GamepadUIManager.SetSelectedUI(self._mapNode.btnPotential[self.nSelectIdx].gameObject)

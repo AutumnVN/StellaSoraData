@@ -1,4 +1,5 @@
 local JointDrillRankItemCtrl = class("JointDrillRankItemCtrl", BaseCtrl)
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillRankItemCtrl._mapNodeConfig = {
 	btnTeamDetail = {
 		sComponentName = "UIButton",
@@ -103,8 +104,10 @@ function JointDrillRankItemCtrl:RefreshHonorTitle(tbHonors)
 	for k, v in pairs(tbHonors) do
 		if v ~= nil and v.Id > 0 then
 			local honorData = ConfigTable.GetData("Honor", v.Id)
-			self._mapNode.goHonorTitle[k]:SetHonotTitle(honorData.Id, k == 1, v.AffinityLV)
-			self._mapNode.goHonorTitle[k].gameObject:SetActive(true)
+			self._mapNode.goHonorTitle[k].gameObject:SetActive(honorData ~= nil)
+			if honorData ~= nil then
+				self._mapNode.goHonorTitle[k]:SetHonotTitle(honorData.Id, k == 1, v.AffinityLV)
+			end
 		end
 	end
 end
@@ -133,7 +136,9 @@ function JointDrillRankItemCtrl:RefreshBuild(mapBuildList)
 			NovaAPI.SetTMPText(self._mapNode.txtRank[i], mapBuild.Chars[i].Level)
 			local nCharSkinId = mapChar.DefaultSkinId
 			local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-			self:SetPngSprite(self._mapNode.imgItemIcon[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+			if mapCharSkin ~= nil then
+				self:SetPngSprite(self._mapNode.imgItemIcon[i], mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
+			end
 			local nRarity = mapChar.Grade
 			local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[nRarity]
 			self:SetAtlasSprite(self._mapNode.imgItemRare[i], "12_rare", sFrame, true)
@@ -184,6 +189,6 @@ function JointDrillRankItemCtrl:OnBtnClick_TeamDetail()
 		return
 	end
 	EventManager.Hit("ShowTeamDetail", self.mapRankData)
-	EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRankDetail_2, self.mapRankData)
+	EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(PlayerData.JointDrill_2.nActId, "RankDetail"), self.mapRankData)
 end
 return JointDrillRankItemCtrl

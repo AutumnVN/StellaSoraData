@@ -555,6 +555,21 @@ function AvgData:CalcPersonality(nId)
 	}
 	local tbPersonality = self.mapPersonality
 	local tbPersonalityFactor = self.mapPersonalityFactor
+	local personality, personalityFactor = PlayerData.ActivityAvg:GetTouchMainlinePersonalityData()
+	if personality ~= nil then
+		for sAvgId, v in pairs(personality) do
+			if tbPersonality[sAvgId] == nil then
+				tbPersonality[sAvgId] = v
+			end
+		end
+	end
+	if personalityFactor ~= nil then
+		for sAvgId, v in pairs(personalityFactor) do
+			if tbPersonalityFactor[sAvgId] == nil then
+				tbPersonalityFactor[sAvgId] = v
+			end
+		end
+	end
 	local nFactor = 1
 	for sAvgId, v in pairs(tbPersonality) do
 		for nGroupId, vv in pairs(v) do
@@ -692,7 +707,8 @@ function AvgData:IsStoryChapterUnlock(nChapterId)
 	for __, nPrevId in ipairs(tbPrevId) do
 		if not self:IsStoryReaded(self.CFG_Story[nPrevId]) then
 			local cfgData = ConfigTable.GetData_Story(self.CFG_Story[nPrevId])
-			return false, orderedFormat(ConfigTable.GetUIText("Story_UnlockPreId") or "", cfgData.Title)
+			local chapterConfig = ConfigTable.GetData("StoryChapter", cfgData.Chapter)
+			return false, orderedFormat(ConfigTable.GetUIText("Story_UnlockPreId") or "", chapterConfig.Name)
 		end
 	end
 	return true
@@ -1196,5 +1212,8 @@ function AvgData:CacheEvData()
 		end
 	end
 	ForEachTableLine(DataTable.Story, forEachLine_Story)
+end
+function AvgData:GetPersonalityData()
+	return self.mapPersonality, self.mapPersonalityFactor
 end
 return AvgData

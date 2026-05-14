@@ -106,6 +106,7 @@ function MainlineExCtrl:Awake()
 	self.curChapter = tbParam[1]
 	self.fromPanel = tbParam[2] ~= nil and tbParam[2] or 0
 	self._mapNode.btnClue.gameObject:SetActive(false)
+	self.canvase = self.gameObject:GetComponent("Canvas")
 end
 function MainlineExCtrl:OnEnable()
 	self:RefreshPanel()
@@ -129,7 +130,7 @@ function MainlineExCtrl:RefreshPanel()
 end
 function MainlineExCtrl:RefreshChapterLine()
 	if self.curChapterCtrl ~= nil then
-		self.curChapterCtrl:Refresh()
+		self.curChapterCtrl:Refresh(self.canvase)
 		return
 	end
 	if self.curChapterObj ~= nil then
@@ -142,6 +143,7 @@ function MainlineExCtrl:RefreshChapterLine()
 	if goObj ~= nil then
 		self.curChapterObj = goObj
 		self.curChapterCtrl = self:BindCtrlByNode(goObj, "Game.UI.MainlineEx.ChapterLineCtrl")
+		self.curChapterCtrl:Refresh(self.canvase)
 	end
 end
 function MainlineExCtrl:RefreshPersonality()

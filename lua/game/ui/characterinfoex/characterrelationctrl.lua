@@ -93,6 +93,5 @@ function CharacterRelationCtrl:PlaySwitchAnim(nClosePanelId, nOpenPanelId)
 end
 function CharacterRelationCtrl:ResetData()
 	self._mapNode.favourPanel:ResetData()
-	self._mapNode.favourPanel:ResetData()
 end
 return CharacterRelationCtrl

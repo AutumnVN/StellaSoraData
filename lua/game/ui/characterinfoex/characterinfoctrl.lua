@@ -380,7 +380,7 @@ function CharacterInfoCtrl:OnBtnClick_btnSetFavorite()
 	local func_callback = function()
 		PlayerData.Char:SetCharFavoriteState(self.characterId, bOnFavorite)
 		if bOnFavorite then
-			sTip = ConfigTable.GetUIText("SetCharacterCommon_Tip")
+			local sTip = ConfigTable.GetUIText("SetCharacterCommon_Tip")
 			EventManager.Hit(EventId.OpenMessageBox, sTip)
 			EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
 		end

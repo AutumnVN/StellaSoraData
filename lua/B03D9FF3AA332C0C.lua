@@ -132,41 +132,31 @@ function BreakOutPlaySkillCtrl:OnEvent_BtnStateChange(sBtnName, nBtnState)
 	func_CheckBtnState(self.tbDefine_BreakOutPlayBtn)
 end
 function BreakOutPlaySkillCtrl:Refresh()
-	for index, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
+	for _, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
 		if v.BreakOutSkillBtnCtrl ~= nil then
 			v.nCharId = self.nCurCharId
 			local tCharacterData = self.BreakOutData:GetDataFromBreakOutCharacter(self.nCurCharId)
 			if tCharacterData == nil then
+				printError("\232\167\146\232\137\178ID:" .. self.nCurCharId .. "\229\156\168\232\161\168\228\184\173\228\184\141\229\173\152\229\156\168\230\149\176\230\141\174\228\191\161\230\129\175")
 				return
 			end
 			v.nSkillId = tCharacterData.SkillId
 			local EET = tCharacterData.EET
 			local skillData = ConfigTable.GetData("Skill", v.nSkillId)
 			if skillData ~= nil then
-				v.BreakOutSkillBtnCtrl:InitSkillBtn(EET, skillData.Icon, v.nSkillId, v.btnTyp)
+				v.BreakOutSkillBtnCtrl:InitSkillBtn(EET, skillData.Icon, v.nSkillId, v.btnTyp, self.nCurCharId, self.BreakOutData.BreakOutLevelData)
 			end
 		end
-	end
-end
-function BreakOutPlaySkillCtrl:OnEvent_RefreshSkillState(CharacterId, SkillId, nCurSkillEnergy, nMaxSkillEnergy, nCurCDTime)
-	local breakOutSkillBtnCtrl = self.tbDefine_BreakOutPlayBtn[2].BreakOutSkillBtnCtrl
-	if CharacterId ~= self.nCurCharId then
-		return
-	end
-	local tCharacterData = self.BreakOutData:GetDataFromBreakOutCharacter(CharacterId)
-	if tCharacterData == nil then
-		return
-	end
-	local skillData = ConfigTable.GetData("Skill", SkillId)
-	local nTotalCDTime = skillData.SkillCD
-	if breakOutSkillBtnCtrl ~= nil then
-		breakOutSkillBtnCtrl:RefreshSkillBtn(nCurSkillEnergy, nMaxSkillEnergy, nCurCDTime, nTotalCDTime)
 	end
 end
 function BreakOutPlaySkillCtrl:OnEvent_ClearState()
 	local breakOutSkillBtnCtrl = self.tbDefine_BreakOutPlayBtn[2].BreakOutSkillBtnCtrl
 	if breakOutSkillBtnCtrl ~= nil then
 		local tCharacterData = self.BreakOutData:GetDataFromBreakOutCharacter(self.nCurCharId)
+		if tCharacterData == nil then
+			printError("\232\167\146\232\137\178ID:" .. self.nCurCharId .. "\229\156\168\232\161\168\228\184\173\228\184\141\229\173\152\229\156\168\230\149\176\230\141\174\228\191\161\230\129\175")
+			return
+		end
 		local nMaxSkillEnergy = tCharacterData.MP
 		local skillData = ConfigTable.GetData("Skill", tCharacterData.SkillId)
 		local nTotalCDTime = skillData.SkillCD
@@ -199,8 +189,24 @@ end
 function BreakOutPlaySkillCtrl:OnEvent_RefreshShootState(bEnableShoot)
 	self.tbDefine_BreakOutPlayBtn[1].BreakOutSkillBtnCtrl:SetMainAlpha(bEnableShoot)
 end
+function BreakOutPlaySkillCtrl:OnEvent_RefreshSkillState(CharacterId, SkillId, nCurSkillEnergy, nMaxSkillEnergy, nCurCDTime)
+	local breakOutSkillBtnCtrl = self.tbDefine_BreakOutPlayBtn[2].BreakOutSkillBtnCtrl
+	if CharacterId ~= self.nCurCharId then
+		return
+	end
+	local tCharacterData = self.BreakOutData:GetDataFromBreakOutCharacter(CharacterId)
+	if tCharacterData == nil then
+		printError("\232\167\146\232\137\178ID:" .. CharacterId .. "\229\156\168\232\161\168\228\184\173\228\184\141\229\173\152\229\156\168\230\149\176\230\141\174\228\191\161\230\129\175")
+		return
+	end
+	local skillData = ConfigTable.GetData("Skill", SkillId)
+	local nTotalCDTime = skillData.SkillCD
+	if breakOutSkillBtnCtrl ~= nil then
+		breakOutSkillBtnCtrl:RefreshSkillBtn(nCurSkillEnergy, nMaxSkillEnergy, nCurCDTime, nTotalCDTime)
+	end
+end
 function BreakOutPlaySkillCtrl:EnableBtnControl()
-	for index, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
+	for _, v in ipairs(self.tbDefine_BreakOutPlayBtn) do
 		NovaAPI.SetRealButtonActive(v.sName, true)
 	end
 end

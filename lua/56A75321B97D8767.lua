@@ -82,7 +82,7 @@ function ThrowGiftCtrl:Awake()
 	self._mapNode.rtItem[1]:SetAction(1)
 	self._mapNode.rtItem[2]:SetAction(2)
 	self.tbGamepadUINode = self:GetGamepadUINode()
-	GamepadUIManager.AddGamepadUINode("ThrowGiftPanel", self.tbGamepadUINode)
+	GamepadUIManager.AddGamepadUINode(self._panel.sGamepadPanelName, self.tbGamepadUINode)
 end
 function ThrowGiftCtrl:FadeIn()
 end
@@ -167,7 +167,7 @@ function ThrowGiftCtrl:OnEnable()
 		self:AddTimer(1, 1.7, waitAnim, true, true, true)
 	end
 	self:AddTimer(1, 1.3, waitTransion, true, true, true)
-	self:SetTarget(0, self.mapLevelCfgData.throwGiftLevelParams)
+	self:SetTarget(0)
 end
 function ThrowGiftCtrl:OnDisable()
 end
@@ -228,7 +228,7 @@ function ThrowGiftCtrl:OpenItemSelect(tbItems, selectCallback)
 			self._mapNode.rtItem[2]:PlayAnim(3)
 		end
 	end
-	self._mapNode.rtItemSelect:OpenPanel(tbItem, callback, pos)
+	self._mapNode.rtItemSelect:OpenPanel(tbItems, callback, pos)
 end
 function ThrowGiftCtrl:OpenSettle(bWin, nScore, nGift, nPenguin, bShowPenguin, changeInfo)
 	self.mapRecordLevelData = {}
@@ -240,7 +240,7 @@ function ThrowGiftCtrl:OpenSettle(bWin, nScore, nGift, nPenguin, bShowPenguin, c
 	end
 	local bShowNextLevel = false
 	local nNextLevelId = self.nLevelId + 1
-	local mapNextCfgData = ConfigTable.GetData("ThrowGiftLevel", self.nLevelId, false)
+	local mapNextCfgData = ConfigTable.GetData("ThrowGiftLevel", nNextLevelId, false)
 	if mapNextCfgData ~= nil then
 		bShowNextLevel = self:GetLevelUnlock(nNextLevelId)
 	end
@@ -340,9 +340,12 @@ function ThrowGiftCtrl:ChangeLevel(nLevelId)
 		self:AddTimer(1, 1.3, waitTransion, true, true, true)
 		EventManager.Hit(EventId.SetTransition)
 	end
-	EventManager.Hit(EventId.SetTransition, 37, callback)
+	EventManager.Hit(EventId.SetTransition, self._panel.nTransition, callback)
 end
 function ThrowGiftCtrl:GetLevelUnlock(nLevelId)
+	if self.actData == nil then
+		return true
+	end
 	local mapLevelCfgData = ConfigTable.GetData("ThrowGiftLevel", nLevelId)
 	if mapLevelCfgData == nil then
 		return false
@@ -409,7 +412,7 @@ function ThrowGiftCtrl:OnEvent_ThrowGift_Exit()
 		self._mapNode.PausePanel:Close()
 	end
 	WwiseAudioMgr:PostEvent("Mode_Present_all_stop")
-	EventManager.Hit(EventId.ClosePanel, PanelId.ThrowGiftLevelPanel)
+	EventManager.Hit(EventId.ClosePanel, self._panel.nLevelPanelId)
 end
 function ThrowGiftCtrl:OnEvent_ThrowGift_Giveup()
 	if self.levelCtrl ~= nil then
@@ -468,7 +471,7 @@ end
 function ThrowGiftCtrl:OnEvent_ThrowGift_NextLevel()
 	local bShowNextLevel = false
 	local nNextLevelId = self.nLevelId + 1
-	local mapNextCfgData = ConfigTable.GetData("ThrowGiftLevel", self.nLevelId, false)
+	local mapNextCfgData = ConfigTable.GetData("ThrowGiftLevel", nNextLevelId, false)
 	if mapNextCfgData ~= nil then
 		bShowNextLevel = self:GetLevelUnlock(nNextLevelId)
 	end

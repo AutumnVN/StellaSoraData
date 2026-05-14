@@ -478,6 +478,8 @@ function MainlineFormationDiscCtrl:OnEvent_DiscFormationSwitchCur(nType)
 		self._mapNode.rtSubDiscSelect.gameObject.transform:SetParent(self._mapNode.rtBack.transform)
 		self._mapNode.rtMainDisc:SetTitle(true)
 		self._mapNode.rtSubDiscSelect:SetTitle(false)
+		self._mapNode.btnFastSwitchMain.gameObject:SetActive(false)
+		self._mapNode.btnFastSwitchSub.gameObject:SetActive(true)
 	else
 		self._mapNode.imgMaskMain:SetActive(true)
 		self._mapNode.imgMaskSub:SetActive(false)
@@ -485,6 +487,8 @@ function MainlineFormationDiscCtrl:OnEvent_DiscFormationSwitchCur(nType)
 		self._mapNode.rtMainDisc.gameObject.transform:SetParent(self._mapNode.rtBack.transform)
 		self._mapNode.rtMainDisc:SetTitle(false)
 		self._mapNode.rtSubDiscSelect:SetTitle(true)
+		self._mapNode.btnFastSwitchMain.gameObject:SetActive(true)
+		self._mapNode.btnFastSwitchSub.gameObject:SetActive(false)
 	end
 end
 function MainlineFormationDiscCtrl:OnEvent_OpenList(nType)

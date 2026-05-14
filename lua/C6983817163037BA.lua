@@ -50,8 +50,9 @@ function TrekkerVersusGiftQuestGridCtrl:OnDestroy()
 end
 function TrekkerVersusGiftQuestGridCtrl:OnRelease()
 end
-function TrekkerVersusGiftQuestGridCtrl:Refresh(mapQuestData, actData)
+function TrekkerVersusGiftQuestGridCtrl:Refresh(mapQuestData, actData, nActId)
 	self._mapActData = actData
+	self.nActId = nActId
 	local mapQuestCfgData = ConfigTable.GetData("TravelerDuelChallengeQuest", mapQuestData.Id)
 	if mapQuestCfgData == nil then
 		return
@@ -87,6 +88,6 @@ function TrekkerVersusGiftQuestGridCtrl:OnBtnClick_JumpTo(btn)
 	EventManager.Hit("TrekkerVersusAffixJump", self.cfgData.AffixJumpTo)
 end
 function TrekkerVersusGiftQuestGridCtrl:OnBtnClick_Receive()
-	self._mapActData:ReceiveQuestReward()
+	self._mapActData:ReceiveQuestReward(self.nActId)
 end
 return TrekkerVersusGiftQuestGridCtrl

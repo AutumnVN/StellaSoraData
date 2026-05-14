@@ -1,6 +1,5 @@
 local DailyInstanceResultCtrl = class("DailyInstanceResultCtrl", BaseCtrl)
 local WwiseManger = CS.WwiseAudioManager.Instance
-local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 DailyInstanceResultCtrl._mapNodeConfig = {
 	imgBlurredBg = {},
 	goComplete = {sComponentName = "GameObject"},
@@ -76,6 +75,11 @@ DailyInstanceResultCtrl._mapNodeConfig = {
 	}
 }
 DailyInstanceResultCtrl._mapEventConfig = {}
+local resultType = {
+	None = 0,
+	Victory = 1,
+	Defeat = 2
+}
 local starGachaCfg = {
 	[1] = {
 		iconPath = "icon_roguegacha_03%s",
@@ -98,13 +102,11 @@ function DailyInstanceResultCtrl:Awake()
 end
 function DailyInstanceResultCtrl:OnEnable()
 	local tbParam = self:GetPanelParam()
-	local nResultState = 0
-	if #tbParam == 2 and tbParam[1] == false then
-		nResultState = 3
-	elseif tbParam[1] then
-		nResultState = 1
-	elseif #tbParam == 3 and tbParam[1] == false then
-		nResultState = 2
+	local nResultState = resultType.None
+	if tbParam[1] then
+		nResultState = resultType.Victory
+	else
+		nResultState = resultType.Defeat
 	end
 	local tbStar = tbParam[2]
 	local GenerRewardItems = tbParam[3]
@@ -122,9 +124,13 @@ function DailyInstanceResultCtrl:OnEnable()
 		self._mapNode.btnDamageResult[i].gameObject:SetActive(self.tbCharDamage ~= nil and 0 < #self.tbCharDamage)
 	end
 	self.mapDailyInstance = ConfigTable.GetData("DailyInstance", nDailyInstanceId)
-	local sDailyInstanceName = ""
 	if self.mapDailyInstance ~= nil then
-		sDailyInstanceName = self.mapDailyInstance.Name
+		local sDailyInstanceName = self.mapDailyInstance.Name
+		for _, v in ipairs(self._mapNode.txtMainlineName) do
+			local sName = orderedFormat(ConfigTable.GetUIText("Dungeon_Difficulty") or "", sDailyInstanceName, ConfigTable.GetUIText("Diffculty_" .. self.mapDailyInstance.Difficulty) or "")
+			NovaAPI.SetTMPText(v, sName)
+		end
+		self:RefreshTarget(tbStar)
 	end
 	local nStar = 0
 	for i = 0, 2 do
@@ -146,19 +152,14 @@ function DailyInstanceResultCtrl:OnEnable()
 		v.rewardType = AllEnum.RewardType.Three
 		table.insert(self.mapReward, v)
 	end
-	for _, v in ipairs(self._mapNode.txtMainlineName) do
-		local sName = orderedFormat(ConfigTable.GetUIText("Dungeon_Difficulty") or "", sDailyInstanceName, ConfigTable.GetUIText("Diffculty_" .. self.mapDailyInstance.Difficulty) or "")
-		NovaAPI.SetTMPText(v, sName)
-	end
 	self:RefreshWorldClass(nExp)
-	self:RefreshTarget(tbStar)
 	local nCurTeam = 5
 	if PlayerData.nCurGameType == AllEnum.WorldMapNodeType.Mainline then
 		nCurTeam = PlayerData.Mainline.nCurTeamIndex
 	end
-	local tbTeamMemberId, nCaptain
+	local tbTeamMemberId
 	if tbChar == nil then
-		nCaptain, tbTeamMemberId = PlayerData.Team:GetTeamData(nCurTeam)
+		_, tbTeamMemberId = PlayerData.Team:GetTeamData(nCurTeam)
 	else
 		tbTeamMemberId = tbChar
 	end
@@ -171,22 +172,18 @@ function DailyInstanceResultCtrl:OnEnable()
 	if #tbRoleId == 0 then
 		table.insert(tbRoleId, 112)
 	end
-	if bPureAvg then
-		self._mapNode.trActor2D_PNG.gameObject:SetActive(false)
-	else
-	end
 	WwiseManger:PostEvent("ui_loading_combatSFX_mute", nil, false)
 	WwiseManger:PostEvent("char_common_all_pause")
 	WwiseManger:PostEvent("mon_common_all_pause")
 	WwiseManger:SetState("level", "None")
 	WwiseManger:SetState("combat", "None")
 	local nAnimTime
-	if nResultState == 1 then
+	if nResultState == resultType.Victory then
 		self._mapNode.goRoot.gameObject:SetActive(true)
 		self._mapNode.goFailed:SetActive(false)
 		self._mapNode.imgBlurredBg.gameObject:SetActive(false)
 		self._mapNode.goComplete:SetActive(true)
-		CS.WwiseAudioManager.Instance:PlaySound("ui_roguelike_victory")
+		WwiseManger:PlaySound("ui_roguelike_victory")
 		WwiseManger:SetState("system", "victory")
 		nAnimTime = 4
 	else
@@ -217,11 +214,17 @@ function DailyInstanceResultCtrl:OnEnable()
 	nAnimTime = nAnimTime + 1.5
 	EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
 	self:AddTimer(1, nAnimTime, "PlayAnim", true, true, true)
-	PlayerData.Voice:PlayBattleResultVoice(tbRoleId, nResultState == 1)
+	PlayerData.Voice:PlayBattleResultVoice(tbRoleId, nResultState == resultType.Victory)
 end
 function DailyInstanceResultCtrl:OnDisable()
 	PlayerData.DailyInstance:SetSettlementState(false)
 	PlayerData.Voice:StopCharVoice()
+	if self.closeSequence then
+		self.closeSequence:Kill()
+	end
+	if self.bAddLevelEndEvent then
+		EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, self.levelEndCallback)
+	end
 end
 function DailyInstanceResultCtrl:PlayAnim()
 	PlayerData.SideBanner:TryOpenSideBanner()
@@ -300,23 +303,26 @@ function DailyInstanceResultCtrl:ClosePanel()
 		NovaAPI.SetCanvasGroupAlpha(self._mapNode.Mask, 0)
 		self._mapNode.Mask.gameObject:SetActive(true)
 		EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
-		local sequence = DOTween.Sequence()
-		sequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
-		sequence:AppendCallback(function()
+		self.closeSequence = DOTween.Sequence()
+		self.closeSequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
+		self.closeSequence:AppendCallback(function()
 			if self.bSuccess then
-				NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 				self._mapNode.imgBlurredBg:SetActive(false)
+				NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 			else
-				local function levelEndCallback()
-					EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
-					NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
+				function self.levelEndCallback()
+					self.bAddLevelEndEvent = false
+					EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, self.levelEndCallback)
 					self._mapNode.imgBlurredBg:SetActive(false)
+					NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 				end
-				EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
+				self.bAddLevelEndEvent = true
+				EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, self.levelEndCallback)
 				CS.AdventureModuleHelper.LevelStateChanged(true, 0, true)
 			end
+			self.closeSequence = nil
 		end)
-		sequence:SetUpdate(true)
+		self.closeSequence:SetUpdate(true)
 	end
 end
 function DailyInstanceResultCtrl:RefreshGacha()

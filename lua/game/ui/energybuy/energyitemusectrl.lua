@@ -202,7 +202,7 @@ function EnergyItemUseCtrl:OnBtnClick_Confirm()
 	for i = 1, self.nUseCount do
 		nMaxCount = i
 		nCurEnergy = nCurEnergy + self.mapItemData.nEnergyValue
-		if nCurEnergy > self._panel.nMaxEnergy then
+		if nCurEnergy >= self._panel.nMaxEnergy then
 			break
 		end
 	end

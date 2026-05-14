@@ -42,10 +42,7 @@ CookieGameCtrl._mapNodeConfig = {
 	},
 	imgModeIcon = {sComponentName = "Image"},
 	txtLevelTitle = {sComponentName = "TMP_Text"},
-	txtLevelTitleNM = {
-		sComponentName = "TMP_Text",
-		sLanguageId = "Cookie_Act_NightmareMode_Title"
-	},
+	txtLevelTitleNM = {sComponentName = "TMP_Text"},
 	txtLevelDesc = {sComponentName = "TMP_Text"},
 	txtLevelDescNM = {sComponentName = "TMP_Text"},
 	txtLabelLevelGoal = {
@@ -120,7 +117,17 @@ function CookieGameCtrl:Refresh()
 	self:RefreshLevelData()
 	self:RefreshLevelInfoPage(self.nCurSelectLevelIndex)
 	self:RefreshQuestInfo()
-	NovaAPI.SetImageFillAmount(self._mapNode.imgFill, self.nCompletedMiniGameQuest / self.nTotalMiniGameQuest or 1)
+	local nPercent = self.nCompletedMiniGameQuest / self.nTotalMiniGameQuest or 1
+	if 1 <= nPercent then
+		nPercent = 1
+	elseif nPercent <= 0 then
+		nPercent = 0
+	elseif nPercent < 0.08333333333333333 then
+		nPercent = 0.08333333333333333
+	end
+	local v2Size = self._mapNode.imgFill.rectTransform.sizeDelta
+	v2Size.x = 302 * nPercent
+	self._mapNode.imgFill.rectTransform.sizeDelta = v2Size
 	NovaAPI.SetTMPText(self._mapNode.txtProgress, string.format("%d/%d", self.nCompletedMiniGameQuest, self.nTotalMiniGameQuest))
 end
 function CookieGameCtrl:RefreshQuestInfo()
@@ -137,6 +144,17 @@ function CookieGameCtrl:RefreshQuestInfo()
 	if self.tbQuestGroupId == 0 then
 		return
 	end
+	local func_Parse_ActivityTask = function(mapData)
+		if mapData.ActivityTaskGroupId == self.tbQuestGroupId then
+			self.nTotalMiniGameQuest = self.nTotalMiniGameQuest + 1
+			local _nTaskId = mapData.Id
+			local taskData = PlayerData.Activity:GetActivityDataById(nQuestActId).mapActivityTaskDatas[_nTaskId]
+			if taskData ~= nil and taskData.nStatus == AllEnum.ActQuestStatus.Received then
+				self.nCompletedMiniGameQuest = self.nCompletedMiniGameQuest + 1
+			end
+		end
+	end
+	ForEachTableLine(DataTable.ActivityTask, func_Parse_ActivityTask)
 end
 function CookieGameCtrl:RefreshLevelInfoPage(nIndex)
 	local levelData
@@ -168,6 +186,7 @@ function CookieGameCtrl:RefreshLevelInfoPage(nIndex)
 		self._mapNode.goDailyModeInfo:SetActive(false)
 		self._mapNode.goNightmareModeInfo:SetActive(true)
 		if levelData ~= nil then
+			NovaAPI.SetTMPText(self._mapNode.txtLevelTitleNM, levelData.Name)
 			NovaAPI.SetTMPText(self._mapNode.txtLevelDescNM, levelData.PackContent)
 			local bNewDay = self.cookieData:GetNMHighScoreToday()
 			self._mapNode.imgNew:SetActive(bNewDay)
@@ -183,7 +202,8 @@ function CookieGameCtrl:RefreshLevelInfoPage(nIndex)
 	self._mapNode.svLevel:SetScrollGridPos(nIndex - 1, 0, 1)
 	self._mapNode.goDailyModeInfo:SetActive(true)
 	self._mapNode.goNightmareModeInfo:SetActive(false)
-	self:SetPngSprite(self._mapNode.imgModeIcon, AllEnum.CookieModeIcon[levelData.PackModel] or AllEnum.CookieModeIcon[1])
+	local sIconPath = "UI_Activity/_" .. tostring(self.nActId)
+	self:SetPngSprite(self._mapNode.imgModeIcon, sIconPath .. AllEnum.CookieModeIcon[levelData.PackModel] or sIconPath .. AllEnum.CookieModeIcon[1])
 	NovaAPI.SetTMPText(self._mapNode.txtLevelTitle, levelData.Name)
 	NovaAPI.SetTMPText(self._mapNode.txtLevelDesc, levelData.PackContent)
 	local sGoal = ConfigTable.GetUIText("Cookie_Act_Level_Goal_Desc") or ""
@@ -297,7 +317,7 @@ function CookieGameCtrl:OnGridBtnClick(go, nIndex)
 end
 function CookieGameCtrl:GetLastesetLevelId()
 	local tbLevelInfo = self.cookieData:GetLevelData()
-	for k, v in pairs(tbLevelInfo) do
+	for k, v in ipairs(tbLevelInfo) do
 		if v.bFirstComplete == false then
 			return k
 		end
@@ -339,26 +359,31 @@ function CookieGameCtrl:Awake()
 	self._mapNode.goNightmareOff:SetActive(true)
 	self._mapNode.btnDaily.gameObject:SetActive(false)
 	self._mapNode.btnNightmare.gameObject:SetActive(true)
+	self.tbLevelGridCtrl = {}
 end
 function CookieGameCtrl:OnEnable()
 	EventManager.Hit(EventId.SetTransition)
 	self:Refresh()
 	local nQuestActId = tonumber(tostring(self.nMainActId) .. "03")
-	RedDotManager.RegisterNode(RedDotDefine.Activity_Group_Task, {
+	local nQuestGroupId = 1080304
+	RedDotManager.RegisterNode(RedDotDefine.Activity_Group_Task_Group, {
 		self.nMainActId,
-		nQuestActId
+		nQuestActId,
+		nQuestGroupId
 	}, self._mapNode.redDotQuest)
 end
 function CookieGameCtrl:OnDisable()
-	for k, v in pairs(self.tbLevelGridCtrl) do
-		self:UnbindCtrlByNode(v)
-		self.tbLevelGridCtrl[k] = nil
+	if self.tbLevelGridCtrl ~= nil then
+		for k, v in pairs(self.tbLevelGridCtrl) do
+			self:UnbindCtrlByNode(v)
+			self.tbLevelGridCtrl[k] = nil
+		end
 	end
 end
-function CookieGameCtrl:OnDestroy(...)
-end
 function CookieGameCtrl:OnBtnClick_Enter()
-	local levelData = self.nSelectedMode == GameEnum.CookiePackModel.CookiePackNormalModel and self.tbLevelData[self.nCurSelectLevelIndex] or self.tbComplexLevelData[1]
+	local mapNormalModeData = self.nCurSelectLevelIndex ~= nil and self.tbLevelData[self.nCurSelectLevelIndex] or nil
+	local mapComplexModeData = self.tbComplexLevelData[1] ~= nil and self.tbComplexLevelData[1] or nil
+	local levelData = self.nSelectedMode == GameEnum.CookiePackModel.CookiePackNormalModel and mapNormalModeData or mapComplexModeData
 	if levelData == nil then
 		return
 	end
@@ -371,9 +396,9 @@ function CookieGameCtrl:OnBtnClick_Enter()
 	end
 	local nScoreNeedToPass = levelData.FirstCompletionScore
 	local openPanel = function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.CookieBoardPanel, self.nLevelId, bRhythmlMode, bPipeLineMode, levelData.CountDownLimit, self.nActId, nScoreNeedToPass or 0)
+		EventManager.Hit(EventId.OpenPanel, PanelId.CookieBoardPanel_400010, self.nLevelId, bRhythmlMode, bPipeLineMode, levelData.CountDownLimit, self.nActId, nScoreNeedToPass or 0)
 	end
-	local nRandom = math.random(28, 29)
+	local nRandom = math.random(46, 47)
 	EventManager.Hit(EventId.SetTransition, nRandom, openPanel)
 end
 function CookieGameCtrl:OnBtnClick_Gray()

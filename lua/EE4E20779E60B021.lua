@@ -50,7 +50,8 @@ function TrekkerVersusQuestGridCtrl:OnDestroy()
 end
 function TrekkerVersusQuestGridCtrl:OnRelease()
 end
-function TrekkerVersusQuestGridCtrl:Refresh(mapQuestData, actData)
+function TrekkerVersusQuestGridCtrl:Refresh(mapQuestData, actData, nActId)
+	self.nActId = nActId
 	self._mapActData = actData
 	self.mapQuestData = mapQuestData
 	local sHeatReachText = ConfigTable.GetUIText("TD_DuelHeatReach")
@@ -96,6 +97,6 @@ function TrekkerVersusQuestGridCtrl:OnBtnClick_JumpTo(btn)
 	EventManager.Hit("TrekkerVersusHeatQuestJump", 1)
 end
 function TrekkerVersusQuestGridCtrl:OnBtnClick_Receive()
-	EventManager.Hit("TrekkerVersusReceiveHeatQuest", 1)
+	EventManager.Hit("TrekkerVersusReceiveHeatQuest", self.nActId, 1)
 end
 return TrekkerVersusQuestGridCtrl

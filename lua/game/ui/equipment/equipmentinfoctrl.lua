@@ -404,7 +404,7 @@ function EquipmentInfoCtrl:OnBtnClick_Upgrade()
 	self._mapNode.aniWindow:Play("t_window_04_t_out")
 	self._mapNode.aniBlur:SetTrigger("tOut")
 	self:AddTimer(1, 0.2, function()
-		PlayerData.Equipment:GetEquipmentSelect()
+		PlayerData.Equipment:ClearEquipmentSelect()
 		EventManager.Hit(EventId.ClosePanel, PanelId.EquipmentInfo)
 		EventManager.Hit(EventId.OpenPanel, PanelId.EquipmentUpgrade, self.nCharId, self.nSlotId, self.nSelectGemIndex)
 	end, true, true, true)
@@ -428,13 +428,12 @@ function EquipmentInfoCtrl:OnBtnClick_Active()
 		self:OnBtnClick_MatTip(self._mapNode.btnAdd)
 		return
 	end
-	local callback = function(nNewIndex)
+	local callback = function()
 		self:RefreshPoint()
-		self.nSelectGemIndex = nNewIndex
 		PlayerData.Equipment:CacheEquipmentSelect(self.nSlotId, self.nSelectGemIndex, self.nCharId)
 		self:Refresh(true)
 	end
-	PlayerData.Equipment:SendCharGemGenerateReq(self.nCharId, self.nSlotId, callback)
+	PlayerData.Equipment:SendCharGemGenerateReq(self.nCharId, self.nSlotId, self.nSelectGemIndex, callback)
 end
 function EquipmentInfoCtrl:OnBtnClick_Switch(btn, nIndex)
 	local bLock = nIndex == 1

@@ -344,7 +344,7 @@ return {
 	},
 	{
 		id = "avg2_943",
-		name = "***",
+		name = "Forbidden Beauty",
 		name_bg_color = "#0ABEC5",
 		ver = "1.10.0"
 	},
@@ -1098,7 +1098,7 @@ return {
 	},
 	{
 		id = "avg3_214",
-		name = "***",
+		name = "Eye of Grace Researcher",
 		name_bg_color = "#0ABEC5",
 		ver = "1.10.0"
 	},

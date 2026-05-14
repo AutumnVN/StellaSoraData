@@ -52,7 +52,7 @@ function BattlePassRewardCtrl:Refresh(tbReward, bPremium, nBattlePassLevel)
 	self.tbFocus = {}
 	self.curFocus = 0
 	self.bAllReceive = false
-	for idx, mapReward in pairs(tbReward) do
+	for idx, mapReward in ipairs(tbReward) do
 		if mapReward.bFocus then
 			table.insert(self.tbFocus, idx)
 		end
@@ -125,7 +125,7 @@ function BattlePassRewardCtrl:OnGridRefresh(goGrid, gridIndex)
 		end
 		local nIdxPrev = #self.tbFocus
 		if self.tbFocus[nIdxPrev] ~= self.curFocus then
-			local rewardDataPrev = self.tbReward[nIdxPrev]
+			local rewardDataPrev = self.tbReward[self.tbFocus[nIdxPrev]]
 			if rewardDataPrev ~= nil then
 				self._mapNode.imgPrevReward:Refresh(rewardDataPrev, self.bPremium, self.nBattlePassLevel)
 				self.curFocus = self.tbFocus[nIdxPrev]

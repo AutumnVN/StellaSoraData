@@ -166,12 +166,12 @@ function BattlePassQuestCtrl:PlayListInAnim()
 end
 function BattlePassQuestCtrl:OnGridRefreshDaily(goGrid, gridIndex)
 	if self.mapQuestsGrids[goGrid] == nil then
-		self.mapQuestsGrids[goGrid] = self:BindCtrlByNode(goGrid, "Game.UI.BattlePass.BattlePassQusetGridCtrl")
+		self.mapQuestsGrids[goGrid] = self:BindCtrlByNode(goGrid, "Game.UI.BattlePass.BattlePassQuestGridCtrl")
 	end
 	local nIdx = gridIndex + 1
 	local mapQuestData = self.tbDaily[nIdx]
 	if mapQuestData == nil then
-		printError("GuideQuestData missing" .. nIdx)
+		printError("BattlePassQuest missing" .. nIdx)
 		self.mapQuestsGrids[goGrid]:Refresh(nil, nil)
 		return
 	end
@@ -180,12 +180,12 @@ function BattlePassQuestCtrl:OnGridRefreshDaily(goGrid, gridIndex)
 end
 function BattlePassQuestCtrl:OnGridRefreshWeekly(goGrid, gridIndex)
 	if self.mapQuestsGrids[goGrid] == nil then
-		self.mapQuestsGrids[goGrid] = self:BindCtrlByNode(goGrid, "Game.UI.BattlePass.BattlePassQusetGridCtrl")
+		self.mapQuestsGrids[goGrid] = self:BindCtrlByNode(goGrid, "Game.UI.BattlePass.BattlePassQuestGridCtrl")
 	end
 	local nIdx = gridIndex + 1
 	local mapQuestData = self.tbWeekly[nIdx]
 	if mapQuestData == nil then
-		printError("GuideQuestData missing" .. nIdx)
+		printError("BattlePassQuest missing" .. nIdx)
 		self.mapQuestsGrids[goGrid]:Refresh(nil, nil)
 		return
 	end
@@ -228,27 +228,7 @@ function BattlePassQuestCtrl:OnEvent_QuestReceive(mapData)
 			bHasComplete = true
 		end
 	end
-	local mapWeeklyQuestData = self.tbWeekly[1]
-	if mapWeeklyQuestData ~= nil then
-		local nBattlePassEndTS = PlayerData.BattlePass.nDeadlineTS
-		if nBattlePassEndTS < 1 then
-			nBattlePassEndTS = mapWeeklyQuestData.nExpire
-		end
-		local curTime = CS.ClientManager.Instance.serverTimeStamp
-		local sumTime = math.min(mapWeeklyQuestData.nExpire, nBattlePassEndTS) - curTime
-		local nDay = math.floor(sumTime / 86400)
-		local nHour = math.floor((sumTime - nDay * 86400) / 3600)
-		local nHourReal = (sumTime - nDay * 86400) / 3600
-		if 0 < nDay then
-			self._mapNode.togWeek:SetText(orderedFormat(ConfigTable.GetUIText("BattlePassQusetWeekly"), nDay, nHour))
-		elseif 1 < nHourReal then
-			self._mapNode.togWeek:SetText(orderedFormat(ConfigTable.GetUIText("BattlePassQusetWeeklyHour"), nHour))
-		else
-			self._mapNode.togWeek:SetText(ConfigTable.GetUIText("Depot_LeftTime_LessThenHour"))
-		end
-	else
-		self._mapNode.togWeek.gameObject:SetActive(false)
-	end
+	self:SetWeeklyTogText()
 	table.sort(self.tbDaily, sort)
 	table.sort(self.tbWeekly, sort)
 	self.enableQuest = not bMaxLevel and not bFullExp
@@ -297,7 +277,7 @@ function BattlePassQuestCtrl:SetWeeklyTogText()
 			nBattlePassEndTS = mapWeeklyQuestData.nExpire
 		end
 		local curTime = CS.ClientManager.Instance.serverTimeStamp
-		local sumTime = math.min(mapWeeklyQuestData.nExpire, nBattlePassEndTS) - curTime
+		local sumTime = math.max(0, math.min(mapWeeklyQuestData.nExpire, nBattlePassEndTS) - curTime)
 		local nDay = math.floor(sumTime / 86400)
 		local nHour = math.floor((sumTime - nDay * 86400) / 3600)
 		local nHourReal = (sumTime - nDay * 86400) / 3600

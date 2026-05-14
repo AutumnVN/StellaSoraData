@@ -1,33 +1,33 @@
-local ThrowGiftLevelTrackLineCtrl = class("ThrowGiftLevelTrackLineCtrl", BaseCtrl)
+local ThrowGiftLevelGuideTrackLineCtrl = class("ThrowGiftLevelGuideTrackLineCtrl", BaseCtrl)
 local nHeight = 210
 local ConfigData = require("GameCore.Data.ConfigData")
-ThrowGiftLevelTrackLineCtrl._mapNodeConfig = {
+ThrowGiftLevelGuideTrackLineCtrl._mapNodeConfig = {
 	TemplateDot = {},
 	rtPool = {sComponentName = "Transform"}
 }
-ThrowGiftLevelTrackLineCtrl._mapEventConfig = {}
-ThrowGiftLevelTrackLineCtrl._mapRedDotConfig = {}
-function ThrowGiftLevelTrackLineCtrl:Awake()
+ThrowGiftLevelGuideTrackLineCtrl._mapEventConfig = {}
+ThrowGiftLevelGuideTrackLineCtrl._mapRedDotConfig = {}
+function ThrowGiftLevelGuideTrackLineCtrl:Awake()
 	self.tbCurDot = {}
 	self.tbPool = {}
 	self.nPrevTimer = 0
 	self.bActive = false
 end
-function ThrowGiftLevelTrackLineCtrl:FadeIn()
+function ThrowGiftLevelGuideTrackLineCtrl:FadeIn()
 end
-function ThrowGiftLevelTrackLineCtrl:FadeOut()
+function ThrowGiftLevelGuideTrackLineCtrl:FadeOut()
 end
-function ThrowGiftLevelTrackLineCtrl:OnEnable()
+function ThrowGiftLevelGuideTrackLineCtrl:OnEnable()
 	self._mapNode.TemplateDot:SetActive(false)
 end
-function ThrowGiftLevelTrackLineCtrl:OnDisable()
+function ThrowGiftLevelGuideTrackLineCtrl:OnDisable()
 	self:DestroyAll()
 end
-function ThrowGiftLevelTrackLineCtrl:OnDestroy()
+function ThrowGiftLevelGuideTrackLineCtrl:OnDestroy()
 end
-function ThrowGiftLevelTrackLineCtrl:OnRelease()
+function ThrowGiftLevelGuideTrackLineCtrl:OnRelease()
 end
-function ThrowGiftLevelTrackLineCtrl:DestroyAll()
+function ThrowGiftLevelGuideTrackLineCtrl:DestroyAll()
 	for _, tbDot in ipairs(self.tbCurDot) do
 		destroy(tbDot[1].gameObject)
 	end
@@ -37,7 +37,7 @@ function ThrowGiftLevelTrackLineCtrl:DestroyAll()
 	self.tbCurDot = {}
 	self.tbPool = {}
 end
-function ThrowGiftLevelTrackLineCtrl:Reset()
+function ThrowGiftLevelGuideTrackLineCtrl:Reset()
 	for _, tbDot in ipairs(self.tbCurDot) do
 		table.insert(self.tbPool, tbDot[1])
 		tbDot[1]:SetParent(self._mapNode.rtPool)
@@ -45,7 +45,7 @@ function ThrowGiftLevelTrackLineCtrl:Reset()
 	self.tbCurDot = {}
 	self.nPrevTimer = 0
 end
-function ThrowGiftLevelTrackLineCtrl:GetDot()
+function ThrowGiftLevelGuideTrackLineCtrl:GetDot()
 	if #self.tbPool > 0 then
 		local rtDot = table.remove(self.tbPool)
 		rtDot:SetParent(self.gameObject.transform)
@@ -60,12 +60,12 @@ function ThrowGiftLevelTrackLineCtrl:GetDot()
 	table.insert(self.tbCurDot, {rtDot, goOn})
 	return rtDot
 end
-function ThrowGiftLevelTrackLineCtrl:AddDot(v2Pos, nAngle)
+function ThrowGiftLevelGuideTrackLineCtrl:AddDot(v2Pos, nAngle)
 	local rtDot = self:GetDot()
 	rtDot.anchoredPosition = v2Pos
 	rtDot.localEulerAngles = Vector3(0, 0, nAngle - 90)
 end
-function ThrowGiftLevelTrackLineCtrl:SetLineActive(nAngle, nSpeed)
+function ThrowGiftLevelGuideTrackLineCtrl:SetLineActive(nAngle, nSpeed)
 	local nConfigAngle = self.mapData.Angle
 	local nConfigSpeed = self.mapData.Speed
 	local nSpeedRangeMax = nConfigSpeed + self.mapData.SpeedThreshold
@@ -80,7 +80,7 @@ function ThrowGiftLevelTrackLineCtrl:SetLineActive(nAngle, nSpeed)
 		end
 	end
 end
-function ThrowGiftLevelTrackLineCtrl:InitLine(mapData, v2Pos, nAG, nMaxSpeed)
+function ThrowGiftLevelGuideTrackLineCtrl:InitLine(mapData, v2Pos, nAG, nMaxSpeed)
 	if mapData == nil then
 		return
 	end
@@ -104,4 +104,4 @@ function ThrowGiftLevelTrackLineCtrl:InitLine(mapData, v2Pos, nAG, nMaxSpeed)
 		self:AddDot(Vector2(nBenginingX + dotx, nBenginingY + dotY), nFlyAngle)
 	end
 end
-return ThrowGiftLevelTrackLineCtrl
+return ThrowGiftLevelGuideTrackLineCtrl

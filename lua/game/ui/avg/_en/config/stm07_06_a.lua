@@ -9367,7 +9367,7 @@ return {
 			"vo_STm07_06_002",
 			false,
 			"",
-			"Please keep my ==SEX11== safe and grant ==SEX4== good health.==RT==May ==SEX4== journey be smooth and grant ==SEX4== lasting blessings.",
+			"Please keep my ==SEX11== safe and grant ==SEX4== good health.==RT==May ==SEX3== journey be smooth and grant ==SEX4== lasting blessings.",
 			""
 		}
 	},

@@ -99,6 +99,9 @@ function DatingLandmarkCtrl:OnBtnClick_Goto(btn, nIndex)
 	end
 	self.nLandmarkId = self.tbLandmark[nIndex].Id
 	PlayerData.Dating:SendDatingLandmarkSelectMsg(self.nCharId, self.nLandmarkId, callback)
+	for k, v in pairs(self._mapNode.btnGoto) do
+		v.interactable = false
+	end
 end
 function DatingLandmarkCtrl:OnBtnClick_Back()
 	EventManager.Hit(EventId.ClosePanel, PanelId.DatingLandmark)

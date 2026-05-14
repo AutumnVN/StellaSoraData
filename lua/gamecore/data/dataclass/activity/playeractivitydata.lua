@@ -25,9 +25,12 @@ local Miracle_10103Data = require("GameCore.Data.DataClass.Activity.Miracle_1010
 local SpringFestival_10104Data = require("GameCore.Data.DataClass.Activity.SpringFestival_10104Data")
 local WinterNight_10105Data = require("GameCore.Data.DataClass.Activity.WinterNight_10105Data")
 local Postal_10106Data = require("GameCore.Data.DataClass.Activity.Postal_10106Data")
+local Viewfinder_10107Data = require("GameCore.Data.DataClass.Activity.Viewfinder_10107Data")
+local Tech_10108Data = require("GameCore.Data.DataClass.Activity.Tech_10108Data")
 local PenguinCardActData = require("GameCore.Data.DataClass.Activity.PenguinCardActData")
 local GoldenSpyData = require("GameCore.Data.DataClass.Activity.GoldenSpyData")
 local Solodance_20102Data = require("GameCore.Data.DataClass.Activity.Solodance_20102Data")
+local SwimTheme_11100Data = require("GameCore.Data.DataClass.Activity.SwimTheme_11100Data")
 function PlayerActivityData:Init()
 	self.bCacheActData = false
 	self.tbAllActivity = {}
@@ -321,7 +324,7 @@ function PlayerActivityData:CreateActivityGroupIns(actData)
 			actIns = OurRegiment_10101Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Dream_10102 then
 			actIns = Dream_10102Data.new(actData)
-		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.BreakOut_30101 then
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.BreakOut_30101 or actCfg.ActivityThemeType == GameEnum.activityThemeType.BreakOut_30102 then
 			actIns = BreakOut_30101Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Christmas_20101 then
 			actIns = Christmas_20101Data.new(actData)
@@ -335,6 +338,12 @@ function PlayerActivityData:CreateActivityGroupIns(actData)
 			actIns = Postal_10106Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.SoloDance_20102 then
 			actIns = Solodance_20102Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Viewfinder_10107 then
+			actIns = Viewfinder_10107Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Swim_11100 then
+			actIns = SwimTheme_11100Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Tech_10108 then
+			actIns = Tech_10108Data.new(actData)
 		end
 		self.tbAllActivityGroup[actData.Id] = actIns
 		PlayerData.ActivityAvg:RefreshAvgRedDot()

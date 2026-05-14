@@ -216,7 +216,6 @@ end
 local mapCharEmoji = {}
 local tbCharEmoji = {}
 local nLayerIndex = 0
-local timerEmoji
 local LoadPresetEmoji = function()
 	local sPath = "Game.UI.Avg.AvgPreset"
 	local AvgPreset = require(sPath)
@@ -232,6 +231,9 @@ local LoadPresetEmoji = function()
 	nLayerIndex = CS.UnityEngine.LayerMask.NameToLayer("Cam_Layer_4")
 end
 function DatingCtrl:SetEmoji(sEmoji)
+	if sEmoji == nil or sEmoji == "" then
+		return
+	end
 	local mapCharCfg = ConfigTable.GetData_Character(self._panel.nCharId)
 	if mapCharCfg == nil then
 		return
@@ -247,8 +249,8 @@ function DatingCtrl:SetEmoji(sEmoji)
 	local s, x, y = objOffset:GetEmojiData(self:GetOffsetPanelId(), indexOfPose(sPose), table.indexof(tbCharEmoji, sEmoji), nX, nY)
 	local v3OffsetPos = Vector3(x, y, 0)
 	local v3OffsetScale = Vector3(s, math.abs(s), 1)
-	if timerEmoji ~= nil then
-		timerEmoji:Cancel(true)
+	if self.timerEmoji ~= nil then
+		self.timerEmoji:Cancel(true)
 	end
 	local sEmojiFullPath = string.format("UI/Avg/AnimEmoji/%s.prefab", sEmoji)
 	local goEmojiIns = self:CreatePrefabInstance(sEmojiFullPath, self._mapNode.trEmoji)
@@ -263,9 +265,9 @@ function DatingCtrl:SetEmoji(sEmoji)
 	if sEmojiSoundName ~= nil then
 		CS.WwiseAudioManager.Instance:PlaySound(sEmojiSoundName)
 	end
-	timerEmoji = TimerManager.Add(1, 3, Actor2DManager, function()
+	self.timerEmoji = TimerManager.Add(1, 3, Actor2DManager, function()
 		destroy(goEmojiIns)
-		timerEmoji = nil
+		self.timerEmoji = nil
 	end, true, true, true, nil)
 end
 function DatingCtrl:SetBubble(sContent, nDuration)
@@ -613,7 +615,7 @@ function DatingCtrl:OnEvent_DatingOptionSelected(nOptionIndex)
 			if nBranchBId ~= 0 then
 				table.insert(tbNewEvents, {
 					nId = nBranchBId,
-					nType = GameEnum.DatingEventType.BranchA
+					nType = GameEnum.DatingEventType.BranchB
 				})
 			end
 			self.tbBranchOptionIds = msgData.BranchBOptionIds

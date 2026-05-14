@@ -14,9 +14,11 @@ local mapToggle = {
 }
 local colorSelect = Color(1.0, 0.9882352941176471, 0.9568627450980393, 1)
 local colorUnSelect = Color(0.4, 0.13333333333333333, 0.15294117647058825, 1)
-local colorSelectLock = Color(0.9529411764705882, 0.8588235294117647, 0.7215686274509804, 1)
-local colorUnSelectLock = Color(0.4, 0.13333333333333333, 0.15294117647058825, 1)
+local colorSelectLock = Color(0.11764705882352941, 0.12549019607843137, 0.17254901960784313, 1)
+local colorUnSelectLock = Color(0.4823529411764706, 0.5333333333333333, 0.6509803921568628, 1)
 local timeUnLockColor = "fff7ca"
+local colorLockSelectImage = Color(0.4823529411764706, 0.5333333333333333, 0.6509803921568628, 1)
+local colorLockUnSelectImage = Color(0.11764705882352941, 0.12549019607843137, 0.17254901960784313, 1)
 local colorConditionsUnLock = Color(0.5607843137254902, 0.6666666666666666, 0.8745098039215686, 1)
 local colorConditionsLock = Color(1.0, 0.996078431372549, 0.9450980392156862, 1)
 local lvIndexTitle = "{0}-{1}"
@@ -174,6 +176,15 @@ ActivityLevelsSelectCtrl._mapNodeConfig = {
 	ListConditionsObj = {
 		sNodeName = "Conditions_",
 		nCount = 2
+	},
+	rtBossCanvas = {sNodeName = "rtBoss", sComponentName = "Canvas"},
+	topBarCanvas = {
+		sNodeName = "TopBarPanel",
+		sComponentName = "Canvas"
+	},
+	goEnemyInfoCanvas = {
+		sNodeName = "goEnemyInfo",
+		sComponentName = "Canvas"
 	}
 }
 ActivityLevelsSelectCtrl._mapEventConfig = {
@@ -210,6 +221,12 @@ function ActivityLevelsSelectCtrl:OnEnable()
 		self._mapNode.rtTogglesTmp.localPosition = self._mapNode.rt_ToggleTrans.localPosition
 	end
 	self._mapNode.rtToggles.onValueChanged:AddListener(self.onScrollValueChanged)
+	NovaAPI.SetCanvasSortingName(self._mapNode.rtBossCanvas, AllEnum.SortingLayerName.UI)
+	NovaAPI.SetCanvasSortingOrder(self._mapNode.rtBossCanvas, self._nSortingOrder + 2)
+	NovaAPI.SetCanvasSortingName(self._mapNode.topBarCanvas, AllEnum.SortingLayerName.UI)
+	NovaAPI.SetCanvasSortingOrder(self._mapNode.topBarCanvas, self._nSortingOrder + 3)
+	NovaAPI.SetCanvasSortingName(self._mapNode.goEnemyInfoCanvas, AllEnum.SortingLayerName.UI)
+	NovaAPI.SetCanvasSortingOrder(self._mapNode.goEnemyInfoCanvas, self._nSortingOrder + 4)
 end
 function ActivityLevelsSelectCtrl:OnDisable()
 	self.timeTab = {}
@@ -244,7 +261,7 @@ end
 function ActivityLevelsSelectCtrl:RefreshTogTypeCount()
 	self._mapNode.togTypeExploreCtrl:SetText(ConfigTable.GetUIText("ActivityLevels_Explore"))
 	self._mapNode.togTypeAdventureCtrl:SetText(ConfigTable.GetUIText("ActivityLevels_Adventure"))
-	self._mapNode.togTypeHardCtrl:SetText(ConfigTable.GetUIText("ActivityLevels_HardCommon"))
+	self._mapNode.togTypeHardCtrl:SetText(ConfigTable.GetUIText("ActivityLevels_Hard"))
 	self._mapNode.togTypeExploreCtrl:SetDefaultActivity(self.nLevelType == GameEnum.ActivityLevelType.Explore)
 	self._mapNode.togTypeAdventureCtrl:SetDefaultActivity(self.nLevelType == GameEnum.ActivityLevelType.Adventure)
 	self._mapNode.togTypeHardCtrl:SetDefaultActivity(self.nLevelType == GameEnum.ActivityLevelType.HARD)
@@ -367,15 +384,33 @@ function ActivityLevelsSelectCtrl:RefreshTogList(nType, nDifficulty)
 	self.SelectObj = nil
 	local tabLevelInfo, tabLevelInfoDifficulty
 	self.currentTypeLvCount = 0
+	local isOpenAdventure = self.activityLevelsData:GetLevelDayOpen(GameEnum.ActivityLevelType.Adventure, self.firstAdventureLevel)
+	local isOpenHard = self.activityLevelsData:GetLevelDayOpen(GameEnum.ActivityLevelType.HARD, self.firstHardLevel)
+	local tmpImageAdventure = self._mapNode.lockAdventure.gameObject.transform:Find("Image"):GetComponent("Image")
+	local tmpImageHard = self._mapNode.lockHard.gameObject.transform:Find("Image"):GetComponent("Image")
 	if nType == GameEnum.ActivityLevelType.Explore then
 		tabLevelInfo = self.activityLevelsData.levelTabExplore
 		tabLevelInfoDifficulty = self.activityLevelsData.levelTabExploreDifficulty
+		NovaAPI.SetImageColor(tmpImageAdventure, colorLockUnSelectImage)
+		NovaAPI.SetImageColor(tmpImageHard, colorLockUnSelectImage)
 	elseif nType == GameEnum.ActivityLevelType.Adventure then
 		tabLevelInfo = self.activityLevelsData.levelTabAdventure
 		tabLevelInfoDifficulty = self.activityLevelsData.levelTabAdventureDifficulty
+		if isOpenAdventure then
+			NovaAPI.SetImageColor(tmpImageAdventure, colorLockUnSelectImage)
+		else
+			NovaAPI.SetImageColor(tmpImageAdventure, colorLockSelectImage)
+		end
+		NovaAPI.SetImageColor(tmpImageHard, colorLockUnSelectImage)
 	else
 		tabLevelInfo = self.activityLevelsData.levelTabHard
 		tabLevelInfoDifficulty = self.activityLevelsData.levelTabHardDifficulty
+		NovaAPI.SetImageColor(tmpImageAdventure, colorLockUnSelectImage)
+		if isOpenHard then
+			NovaAPI.SetImageColor(tmpImageHard, colorLockUnSelectImage)
+		else
+			NovaAPI.SetImageColor(tmpImageHard, colorLockSelectImage)
+		end
 	end
 	self.currentTypeLvCount = #tabLevelInfoDifficulty
 	self._mapNode.rtToggles.gameObject:SetActive(true)
@@ -409,10 +444,12 @@ function ActivityLevelsSelectCtrl:RefreshTogList(nType, nDifficulty)
 					local wait = function()
 						LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.rt_ToggleTrans.gameObject:GetComponent("RectTransform"))
 						coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-						if i <= 3 then
+						if i < 3 then
 							self._mapNode.rt_ToggleTrans.localPosition = Vector3(0, self._mapNode.rt_ToggleTrans.localPosition.y, 0)
+						elseif 10 < i then
+							self._mapNode.rt_ToggleTrans.localPosition = Vector3(-4030, self._mapNode.rt_ToggleTrans.localPosition.y, 0)
 						else
-							self._mapNode.rt_ToggleTrans.localPosition = Vector3(-400, self._mapNode.rt_ToggleTrans.localPosition.y, 0)
+							self._mapNode.rt_ToggleTrans.localPosition = Vector3(-450 * (i - 2), self._mapNode.rt_ToggleTrans.localPosition.y, 0)
 						end
 					end
 					cs_coroutine.start(wait)
@@ -734,5 +771,6 @@ end
 function ActivityLevelsSelectCtrl:OnEvent_UpdateEnergy()
 	local nHas = PlayerData.Base:GetCurEnergy()
 	NovaAPI.SetTMPColor(self._mapNode.txtTicketsCount, nHas.nEnergy < self.curRequireEnergy and Red_Unable or Blue_Normal)
+	NovaAPI.SetTMPColor(self._mapNode.txtTicketsCountRaidUnlock, nHas.nEnergy < self.curRequireEnergy and Red_Unable or Blue_Normal)
 end
 return ActivityLevelsSelectCtrl

@@ -46,7 +46,7 @@ PenguinCardConfirmCtrl._mapNodeConfig = {
 	againSelect = {},
 	texAgainTip = {
 		sComponentName = "TMP_Text",
-		sLanguageId = "PenguinCard_SkipTips"
+		sLanguageId = "MessageBox_TodayWarning"
 	},
 	goAgain = {}
 }

@@ -9,7 +9,8 @@ CookieLevelGridCtrl._mapNodeConfig = {
 	btnGrid = {sComponentName = "UIButton"}
 }
 function CookieLevelGridCtrl:Init(mapData, levelData, bTimeUnlock, bPreLevelUnlock, nIndex)
-	self:SetPngSprite(self._mapNode.imgIcon, AllEnum.CookieModeIcon[mapData.PackModel] or AllEnum.CookieModeIcon[1])
+	local sIconPath = "UI_Activity/_" .. tostring(mapData.ActivityId or 0)
+	self:SetPngSprite(self._mapNode.imgIcon, sIconPath .. AllEnum.CookieModeIcon[mapData.PackModel] or AllEnum.CookieModeIcon[1])
 	NovaAPI.SetTMPText(self._mapNode.txtLevelNumber, nIndex)
 	self._mapNode.imgChoose:SetActive(false)
 	self._mapNode.imgLock:SetActive(not bTimeUnlock)

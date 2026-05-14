@@ -306,12 +306,12 @@ function GoldenSpyLevelData:AddBuff(nBuffId)
 	elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
 		buffEntity.bActive = true
 		if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddSkillUseCount then
-			self.tbSkillData[buffCfg.Params[1]] = self.tbSkillData[buffCfg.Params[1]] + buffCfg.Params[2]
+			self.tbSkillData[buffCfg.Params[1]] = (self.tbSkillData[buffCfg.Params[1]] or 0) + buffCfg.Params[2]
 			EventManager.Hit("GoldenSpy_UpdateSkillCount", buffCfg.Params[1], self.tbSkillData[buffCfg.Params[1]])
 		end
 	end
 	table.insert(self.tbBuff, buffEntity)
-	if self.taskData ~= nil and self.taskData.nScore > 0 and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddExScoreFactor then
+	if self.taskData ~= nil and 0 < self.taskData.nScore and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddExScoreFactor then
 		if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
 			if buffEntity.bActive and 0 < table.indexof(buffEntity.tbActiveFloor, self.nCurFloor) then
 				self.taskData.nScore = self.taskData.nScore * (1 + buffCfg.Params[1] / 100.0)

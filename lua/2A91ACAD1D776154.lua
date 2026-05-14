@@ -90,6 +90,6 @@ end
 function ThrowGiftItemUseBtnCtrl:SetAction(nIdx)
 	self._mapNodeConfig.btnItem1.sAction = "ThrowGiftItem" .. nIdx
 	self.tbGamepadUINode = self:GetGamepadUINode()
-	GamepadUIManager.AddGamepadUINode("ThrowGiftPanel", self.tbGamepadUINode)
+	GamepadUIManager.AddGamepadUINode(self._panel.sGamepadPanelName, self.tbGamepadUINode)
 end
 return ThrowGiftItemUseBtnCtrl

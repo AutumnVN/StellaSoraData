@@ -51,7 +51,8 @@ LoginSpRewardCtrl_Lsv._mapNodeConfig = {
 LoginSpRewardCtrl_Lsv._mapEventConfig = {
 	ClickLoginRewardTips = "OnEvent_ClickLoginRewardTips",
 	[EventId.ShowBubbleVoiceText] = "OnEvent_ShowBubbleVoiceText",
-	ActivityListChangeTab = "OnEvent_ActivityListChangeTab"
+	ActivityListChangeTab = "OnEvent_ActivityListChangeTab",
+	[EventId.ClosePanel] = "OnEvent_ClosePanel"
 }
 function LoginSpRewardCtrl_Lsv:RefreshRemainTime()
 	local endTime = self.actData:GetActEndTime()
@@ -304,6 +305,12 @@ function LoginSpRewardCtrl_Lsv:OnEvent_ActivityListChangeTab(nId)
 		BubbleVoiceManager.StopBubbleAnim()
 		PlayerVoiceData:ClearTimer()
 		PlayerVoiceData:StopCharVoice()
+	end
+end
+function LoginSpRewardCtrl_Lsv:OnEvent_ClosePanel(nPanelId)
+	if nPanelId == PanelId.DiscSample then
+		self.bPlayVoice = false
+		self:PlayVoice()
 	end
 end
 return LoginSpRewardCtrl_Lsv

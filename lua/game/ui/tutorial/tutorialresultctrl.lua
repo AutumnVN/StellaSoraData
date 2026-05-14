@@ -220,7 +220,9 @@ function TutorialResultCtrl:OnBtnClick_Close()
 	self:Close()
 end
 function TutorialResultCtrl:OnBtnClick_GoNext()
+	self:Close()
 end
 function TutorialResultCtrl:OnBtnClick_Retry()
+	self:Close()
 end
 return TutorialResultCtrl

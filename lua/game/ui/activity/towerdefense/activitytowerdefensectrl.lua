@@ -135,7 +135,7 @@ end
 function ActivityTowerDefenseCtrl:OnGridBtnClick(go, nIndex)
 	local nDataIndex = nIndex + 1
 	local itemId = self.tbReward[nDataIndex]
-	UTILS.ClickItemGridWithTips(itemId, go.transform:Find("btnGrid"), true, false, false)
+	UTILS.ClickItemGridWithTips(itemId, go.transform:Find("btnGrid"), true, true, false)
 end
 function ActivityTowerDefenseCtrl:InitQuest()
 	local allCount = self.actData:GetAllQuestCount()

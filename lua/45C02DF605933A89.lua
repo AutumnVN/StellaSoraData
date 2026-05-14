@@ -2,6 +2,7 @@ local JointDrillResultCtrl = class("JointDrillResultCtrl", BaseCtrl)
 local WwiseManger = CS.WwiseAudioManager.Instance
 local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 local ModuleManager = require("GameCore.Module.ModuleManager")
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillResultCtrl._mapNodeConfig = {
 	imgBlurredBg = {},
 	goBg = {},
@@ -173,7 +174,7 @@ function JointDrillResultCtrl:OpenReward()
 	end
 	local callback = function()
 		if (self.nResultType == AllEnum.JointDrillResultType.Success or self.nResultType == AllEnum.JointDrillResultType.ChallengeEnd) and self.mapScore ~= nil and next(self.mapScore) ~= nil then
-			EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRankUp_1, self.nOld, self.nNew, self.mapScore, self.nResultType, closeCallback)
+			EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(PlayerData.JointDrill_1.nActId, "RankUp"), self.nOld, self.nNew, self.mapScore, self.nResultType, closeCallback)
 		else
 			closeCallback()
 		end

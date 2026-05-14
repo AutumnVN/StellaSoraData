@@ -168,16 +168,20 @@ function PhoneChatCtrl:RefreshContent()
 	end
 end
 function PhoneChatCtrl:CheckNextMessage(nCurProcess, index)
-	local data = self.chatData.avgMsg[nCurProcess + index]
-	if data == nil then
-		return
-	end
-	local state = self._mapNode.goPhone:GetNextDataState(data)
-	if state < 0 then
-		self._mapNode.goPhone:ShowNextInputingPhoneMsg(state)
-	elseif state == 0 then
-		index = index + 1
-		self:CheckNextMessage(nCurProcess, index)
+	while true do
+		local data = self.chatData.avgMsg[nCurProcess + index]
+		if data == nil then
+			return
+		end
+		local state = self._mapNode.goPhone:GetNextDataState(data)
+		if state < 0 then
+			self._mapNode.goPhone:ShowNextInputingPhoneMsg(state)
+			return
+		elseif state == 0 then
+			index = index + 1
+		else
+			return
+		end
 	end
 end
 function PhoneChatCtrl:RevertHistoryList()
@@ -329,6 +333,9 @@ function PhoneChatCtrl:OnEvent_ReceiveChatReward()
 	end
 end
 function PhoneChatCtrl:OnEvent_AvgShowNextPhoneMessage()
+	if self.chatData == nil then
+		return
+	end
 	if self.chatData.nStatus ~= AllEnum.PhoneChatState.Complete then
 		self.nChatProcess = self.nChatProcess + 1
 		self:RefreshContent()
@@ -337,6 +344,9 @@ function PhoneChatCtrl:OnEvent_AvgShowNextPhoneMessage()
 	end
 end
 function PhoneChatCtrl:OnEvent_AvgSelectPhoneMsgChoice(groupID, choiceIndex)
+	if self.nSelectChatId == nil then
+		return
+	end
 	local nEndCmdId = PlayerData.Phone:SetPhoneMsgChoiceJumpTo(self.nSelectChatId, groupID, choiceIndex)
 	local nStartCmdId = PlayerData.Phone:GetAvgStartCmdId(self.nSelectChatId)
 	self.nChatProcess = nEndCmdId - nStartCmdId + 1
@@ -346,6 +356,9 @@ function PhoneChatCtrl:OnEvent_AvgSelectPhoneMsgChoice(groupID, choiceIndex)
 	self:CheckChatComplete()
 end
 function PhoneChatCtrl:OnEvent_AvgSetToPhoneMsgChoiceEnd(groupID, bAuto)
+	if self.nSelectChatId == nil then
+		return
+	end
 	local nEndCmdId = PlayerData.Phone:SetPhoneMsgChoiceEnd(self.nSelectChatId, groupID)
 	local nStartCmdId = PlayerData.Phone:GetAvgStartCmdId(self.nSelectChatId)
 	self.nChatProcess = nEndCmdId - nStartCmdId

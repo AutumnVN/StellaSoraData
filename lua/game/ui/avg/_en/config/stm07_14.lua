@@ -2955,7 +2955,7 @@ return {
 			"",
 			false,
 			"",
-			"The new rate from headquarters is ...==W==<color=#bd3059> 4.2 million Dorra</color> each.",
+			"The new rate from headquarters is ...==W==<color=#bd3059> 4.1 million Dorra</color> each.",
 			""
 		}
 	},

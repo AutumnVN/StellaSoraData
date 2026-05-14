@@ -1,4 +1,5 @@
 local JointDrillQuestCtrl = class("JointDrillQuestCtrl", BaseCtrl)
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillQuestCtrl._mapNodeConfig = {
 	goBlur = {
 		sNodeName = "t_fullscreen_blur_01"
@@ -138,7 +139,7 @@ function JointDrillQuestCtrl:PlayCloseAni(callback)
 	self:AddTimer(1, 0.2, "OnPanelClose", true, true, true, callback)
 end
 function JointDrillQuestCtrl:OnPanelClose(_, callback)
-	EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillQuest_1)
+	EventManager.Hit(EventId.ClosePanel, JointDrillContext.GetPanelId(self.nActId, "Quest"))
 	if callback then
 		callback()
 	end
@@ -147,6 +148,7 @@ function JointDrillQuestCtrl:Awake()
 	self.nActId = 0
 	self.mapQuestGrid = {}
 	self.mapRankingGrid = {}
+	self.tbQuests = {}
 end
 function JointDrillQuestCtrl:OnEnable()
 	local tbParam = self:GetPanelParam()

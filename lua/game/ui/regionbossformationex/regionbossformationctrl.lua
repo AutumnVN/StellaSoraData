@@ -345,7 +345,7 @@ function RegionBossFormationCtrl:OpenTravelerDuel()
 			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_End_Notice"))
 			return
 		end
-		activityLevelsData:EnterTrekkerVersus(self.selLvId, self.mbuildId, self.Other[2])
+		activityLevelsData:EnterTrekkerVersus(self.Other[1], self.selLvId, self.mbuildId, self.Other[2])
 	end
 end
 function RegionBossFormationCtrl:OpenInfinityTower()

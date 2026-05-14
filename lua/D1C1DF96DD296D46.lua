@@ -169,6 +169,15 @@ function PenguinCardUtils.SetEffectDesc(mapCfg, nGrowthLayer)
 			if mapBase then
 				return mapBase.Title
 			end
+		elseif nEffectType == GameEnum.PenguinCardEffectType.RollSpecificCard then
+			local nCardId = tbParam[nIndex]
+			if nCardId == nil then
+				return sError
+			end
+			local mapCard = ConfigTable.GetData("PenguinCard", nCardId)
+			if mapCard then
+				return mapCard.Title
+			end
 		elseif nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips or nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier or nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier or nEffectType == GameEnum.PenguinCardEffectType.UpgradeDiscount or nEffectType == GameEnum.PenguinCardEffectType.AddRound or nEffectType == GameEnum.PenguinCardEffectType.BlockFatalDamage or nEffectType == GameEnum.PenguinCardEffectType.UpgradeRebate then
 			if tbParam[nIndex] == nil then
 				return sError

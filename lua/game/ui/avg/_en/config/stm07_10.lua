@@ -3243,7 +3243,7 @@ return {
 			"",
 			false,
 			"",
-			"That was close... Didn't expect to run into ==SEX4== here.==W== I drew my sword on ==SEX4== before. Sure, I didn't know who ==SEX== were, but I was still the one out of line.",
+			"That was close... Didn't expect to run into ==SEX4== here.==W== I threw a spear at ==SEX4== before. Sure, I didn't know who ==SEX== was, but I was still the one out of line.",
 			""
 		}
 	},
@@ -3316,7 +3316,7 @@ return {
 			"",
 			false,
 			"",
-			"Big shots like that hold grudges. We might only be on Creta Trading's payroll, but that won't stop them from holding it against us.",
+			"Big shots like that hold grudges. We might've only been on Creta Trading's payroll, but that won't stop them from holding it against us.",
 			""
 		}
 	},

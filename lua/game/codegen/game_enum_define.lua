@@ -548,6 +548,23 @@ GameEnum.questType = {
 	Achieve = 6
 }
 GameEnum.fateCardActiveAction = {RoomExit = 0, BattleEnd = 1}
+GameEnum.instanceType = {
+	None = 0,
+	Story = 1,
+	StarTower = 2,
+	VampireSurvivor = 3,
+	RegionBoss = 4,
+	DailyInstance = 5,
+	WeekBoss = 6,
+	SkillInstance = 7,
+	CharGemInstance = 8,
+	TravelerDue = 9
+}
+GameEnum.activityDoubleRewardType = {
+	None = 0,
+	Double = 1,
+	Triple = 2
+}
 GameEnum.achievementCond = {
 	AchievementSpecific = 1,
 	AchievementTotal = 2,
@@ -1827,7 +1844,8 @@ GameEnum.activityType = {
 	Story = 17,
 	PenguinCard = 18,
 	ThrowGift = 19,
-	GoldenSpy = 20
+	GoldenSpy = 20,
+	Double = 21
 }
 GameEnum.activityOpenType = {
 	None = 0,
@@ -2501,7 +2519,11 @@ GameEnum.activityThemeType = {
 	Spring_10104 = 7,
 	WinterNight_10105 = 8,
 	Postal_10106 = 9,
-	SoloDance_20102 = 10
+	SoloDance_20102 = 10,
+	Viewfinder_10107 = 11,
+	BreakOut_30102 = 12,
+	Swim_11100 = 13,
+	Tech_10108 = 14
 }
 GameEnum.ActivityLevelType = {
 	Explore = 1,
@@ -2657,7 +2679,8 @@ GameEnum.PenguinCardTriggerPhase = {
 	AfterUpgrade = 6,
 	FatalDamage = 7,
 	PenguinCardChange = 8,
-	FlipEnd = 9
+	FlipEnd = 9,
+	ManualRoll = 10
 }
 GameEnum.PenguinCardTriggerType = {
 	None = 1,
@@ -2694,7 +2717,9 @@ GameEnum.PenguinCardEffectType = {
 	UpgradeDiscount = 6,
 	AddRound = 7,
 	BlockFatalDamage = 8,
-	UpgradeRebate = 9
+	UpgradeRebate = 9,
+	AddCardRollCount = 10,
+	RollSpecificCard = 11
 }
 GameEnum.PenguinCardQuestType = {
 	Score = 1,

@@ -657,7 +657,7 @@ end
 function NpcOptionCtrl:OnBtnClick_Select(btn)
 	local nIdx = table.indexof(self._mapNode.btnChoose, btn)
 	if table.indexof(self.bUnabledIdx, nIdx - 1) > 0 then
-		EventManager.Hit(EventId.OpenMessageBox, "\228\184\141\229\143\175\233\128\137\233\128\137\233\161\185")
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("StarTower_NPCOption_IllegalOption"))
 		return
 	end
 	self:ClosePanel(false, nIdx, self.nEventId)

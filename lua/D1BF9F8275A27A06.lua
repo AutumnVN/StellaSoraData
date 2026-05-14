@@ -458,7 +458,7 @@ function PenguinCardFlipCtrl:PlayFireAni()
 end
 function PenguinCardFlipCtrl:Awake()
 	self.animator = self.gameObject:GetComponent("Animator")
-	self.nFireScore = ConfigTable.GetConfigNumber("PenguinCardFeverScore")
+	self.nFireScore = ConfigTable.GetConfigNumber("PenguinCardFeverScore") or 0
 end
 function PenguinCardFlipCtrl:OnEnable()
 end

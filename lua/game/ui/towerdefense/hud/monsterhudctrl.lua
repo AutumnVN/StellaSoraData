@@ -78,7 +78,7 @@ function MonsterHudCtrl:ResetHit()
 	self.nBeforeHpMax = 0
 end
 function MonsterHudCtrl:SetMonsterId(nEntityId)
-	if self.nEntityId ~= nil or self.nEntityId ~= 0 then
+	if self.nEntityId ~= nil and self.nEntityId ~= 0 then
 		EventManager.RemoveEntityEvent("HpChanged", self.nEntityId, self, self.OnEvent_HpChanged)
 	end
 	self.nEntityId = nEntityId

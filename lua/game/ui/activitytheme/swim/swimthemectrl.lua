@@ -200,10 +200,10 @@ end
 function SwimThemeCtrl:RefreshTime()
 	local bOpen = self.SwimThemeData:CheckActivityGroupOpen()
 	if bOpen then
-		self:RefreshRemainTime(self.SwimThemeData:GetActGroupEndTime(), self._mapNode.txtActivityTime)
+		RefreshRemainTime(self.SwimThemeData:GetActGroupEndTime(), self._mapNode.txtActivityTime)
 		if nil == self.remainTimer then
 			self.remainTimer = self:AddTimer(0, 1, function()
-				local remainTime = self:RefreshRemainTime(self.SwimThemeData:GetActGroupEndTime(), self._mapNode.txtActivityTime)
+				local remainTime = RefreshRemainTime(self.SwimThemeData:GetActGroupEndTime(), self._mapNode.txtActivityTime)
 				if remainTime <= 0 then
 					TimerManager.Remove(self.remainTimer)
 					self.remainTimer = nil
@@ -218,41 +218,6 @@ function SwimThemeCtrl:RefreshTime()
 	local strEndDay = string.format("%d", nEndDay)
 	local dateStr = string.format("%s/%s/%s ~ %s/%s/%s", nOpenYear, nOpenMonth, strOpenDay, nEndYear, nEndMonth, strEndDay)
 	NovaAPI.SetTMPText(self._mapNode.txtActivityDate, dateStr)
-end
-function SwimThemeCtrl:RefreshRemainTime(endTime, txtComp)
-	local curTime = ClientManager.serverTimeStamp
-	local remainTime = endTime - curTime
-	local sTimeStr = ""
-	if remainTime <= 60 then
-		local sec = math.floor(remainTime)
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Sec") or "", sec)
-	elseif 60 < remainTime and remainTime <= 3600 then
-		local min = math.floor(remainTime / 60)
-		local sec = math.floor(remainTime - min * 60)
-		if sec == 0 then
-			min = min - 1
-			sec = 60
-		end
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Min") or "", min, sec)
-	elseif 3600 < remainTime and remainTime <= 86400 then
-		local hour = math.floor(remainTime / 3600)
-		local min = math.floor((remainTime - hour * 3600) / 60)
-		if min == 0 then
-			hour = hour - 1
-			min = 60
-		end
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Hour") or "", hour, min)
-	elseif 86400 < remainTime then
-		local day = math.floor(remainTime / 86400)
-		local hour = math.floor((remainTime - day * 86400) / 3600)
-		if hour == 0 then
-			day = day - 1
-			hour = 24
-		end
-		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Day") or "", day, hour)
-	end
-	NovaAPI.SetTMPText(txtComp, sTimeStr)
-	return remainTime
 end
 function SwimThemeCtrl:RefreshRemainOpenTime(openTime)
 	local curTime = ClientManager.serverTimeStamp
@@ -345,9 +310,9 @@ function SwimThemeCtrl:RefreshMiniGameButtonState(actData)
 				bShowCountDown = endTime - curTime <= 259200
 			end
 			if nil == self.minigameRemainTimer and bShowCountDown then
-				self:RefreshRemainTime(endTime, self._mapNode.txtMiniGameActivityTime)
+				RefreshRemainTime(endTime, self._mapNode.txtMiniGameActivityTime)
 				self.minigameRemainTimer = self:AddTimer(0, 1, function()
-					local remainTime = self:RefreshRemainTime(endTime, self._mapNode.txtMiniGameActivityTime)
+					local remainTime = RefreshRemainTime(endTime, self._mapNode.txtMiniGameActivityTime)
 					if remainTime <= 0 then
 						TimerManager.Remove(self.minigameRemainTimer)
 						self.minigameRemainTimer = nil
@@ -422,9 +387,9 @@ function SwimThemeCtrl:RefreshTaskButtonState(actData)
 			end
 		elseif state == ActivityState.Open and nil == self.taskRemainTimer and activityData.StartTime ~= "" and activityData.EndTime ~= "" and bShowCountDown then
 			local endTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(activityData.EndTime)
-			self:RefreshRemainTime(endTime, self._mapNode.txtTaskActivityTime)
+			RefreshRemainTime(endTime, self._mapNode.txtTaskActivityTime)
 			self.taskRemainTimer = self:AddTimer(0, 1, function()
-				local remainTime = self:RefreshRemainTime(endTime, self._mapNode.txtTaskActivityTime)
+				local remainTime = RefreshRemainTime(endTime, self._mapNode.txtTaskActivityTime)
 				if remainTime <= 0 then
 					TimerManager.Remove(self.taskRemainTimer)
 					self.taskRemainTimer = nil
@@ -510,9 +475,9 @@ function SwimThemeCtrl:RefreshStoryButtonState(actData)
 		elseif state == ActivityState.Open then
 			if nil == self.avgRemainTimer and activityData.StartTime ~= "" and activityData.EndTime ~= "" and bShowCountDown then
 				local endTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(activityData.EndTime)
-				self:RefreshRemainTime(endTime, self._mapNode.txtStoryActivityTime)
+				RefreshRemainTime(endTime, self._mapNode.txtStoryActivityTime)
 				self.avgRemainTimer = self:AddTimer(0, 1, function()
-					local remainTime = self:RefreshRemainTime(endTime, self._mapNode.txtStoryActivityTime)
+					local remainTime = RefreshRemainTime(endTime, self._mapNode.txtStoryActivityTime)
 					if remainTime <= 0 then
 						TimerManager.Remove(self.avgRemainTimer)
 						self.avgRemainTimer = nil
@@ -592,9 +557,9 @@ function SwimThemeCtrl:RefreshLevelButtonState(actData)
 		elseif state == ActivityState.Open then
 			if nil == self.levelRemainTimer and activityData.StartTime ~= "" and activityData.EndTime ~= "" and bShowCountDown then
 				local endTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(activityData.EndTime)
-				self:RefreshRemainTime(endTime, self._mapNode.txtLevelActivityTime)
+				RefreshRemainTime(endTime, self._mapNode.txtLevelActivityTime)
 				self.levelRemainTimer = self:AddTimer(0, 1, function()
-					local remainTime = self:RefreshRemainTime(endTime, self._mapNode.txtLevelActivityTime)
+					local remainTime = RefreshRemainTime(endTime, self._mapNode.txtLevelActivityTime)
 					if remainTime <= 0 then
 						TimerManager.Remove(self.levelRemainTimer)
 						self.levelRemainTimer = nil
@@ -675,9 +640,9 @@ function SwimThemeCtrl:RefreshShopButtonState(actData)
 			end
 		elseif state == ActivityState.Open and nil == self.shopRemainTimer and activityData.StartTime ~= "" and activityData.EndTime ~= "" and bShowCountDown then
 			local endTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(activityData.EndTime)
-			self:RefreshRemainTime(endTime, self._mapNode.txtShopActivityTime)
+			RefreshRemainTime(endTime, self._mapNode.txtShopActivityTime)
 			self.shopRemainTimer = self:AddTimer(0, 1, function()
-				local remainTime = self:RefreshRemainTime(endTime, self._mapNode.txtShopActivityTime)
+				local remainTime = RefreshRemainTime(endTime, self._mapNode.txtShopActivityTime)
 				if remainTime <= 0 then
 					TimerManager.Remove(self.shopRemainTimer)
 					self.shopRemainTimer = nil

@@ -26,21 +26,25 @@ end
 function ScoreBossRewardGridCtrl:OnRelease()
 end
 function ScoreBossRewardGridCtrl:Refresh(nIdx, nSelfIdx)
-	local mapRewardCfgData = {}
+	if self.mapRewardCfgData == nil then
+		self.mapRewardCfgData = {}
+	end
 	local nControlId = PlayerData.ScoreBoss.ControlId or 1
 	local foreachItem = function(mapData)
 		if mapData.SeasonId == nControlId then
-			table.insert(mapRewardCfgData, mapData)
+			table.insert(self.mapRewardCfgData, mapData)
 		end
 	end
-	ForEachTableLine(ConfigTable.Get("ScoreBossRank"), foreachItem)
-	if mapRewardCfgData == nil or mapRewardCfgData[nIdx] == nil then
+	if #self.mapRewardCfgData == 0 then
+		ForEachTableLine(ConfigTable.Get("ScoreBossRank"), foreachItem)
+	end
+	if self.mapRewardCfgData[nIdx] == nil then
 		return
 	end
-	local nRankingHigher = mapRewardCfgData[nIdx].RankLower
+	local nRankingHigher = self.mapRewardCfgData[nIdx].RankLower
 	local nRankLower = 0
-	if nIdx ~= 1 and mapRewardCfgData[nIdx - 1] ~= nil then
-		nRankLower = mapRewardCfgData[nIdx - 1].RankLower
+	if nIdx ~= 1 and self.mapRewardCfgData[nIdx - 1] ~= nil then
+		nRankLower = self.mapRewardCfgData[nIdx - 1].RankLower
 	end
 	self._mapNode.imgBg1:SetActive(nSelfIdx <= nRankingHigher and nSelfIdx > nRankLower)
 	self._mapNode.imgBg2:SetActive(nSelfIdx > nRankingHigher or nSelfIdx <= nRankLower)
@@ -51,14 +55,12 @@ function ScoreBossRewardGridCtrl:Refresh(nIdx, nSelfIdx)
 	else
 		NovaAPI.SetTMPText(self._mapNode.TMPRanking, orderedFormat(ConfigTable.GetUIText("ScoreBoss_Rank_Lv"), math.floor(nRankLower / 100), math.floor(nRankingHigher / 100)))
 	end
-	local indexBorder = PlayerData.ScoreBoss:GetRankBorderCount(nIdx)
-	NovaAPI.SetTMPText(self._mapNode.TMPRankingCount, orderedFormat(ConfigTable.GetUIText("ScoreBoss_RankBorderScore"), indexBorder))
 	for i = 1, 3 do
-		if mapRewardCfgData[nIdx]["AwardItemTid" .. i] ~= nil and 0 < mapRewardCfgData[nIdx]["AwardItemNum" .. i] then
-			self._mapNode.tcItem[i]:SetItem(mapRewardCfgData[nIdx]["AwardItemTid" .. i], nil, mapRewardCfgData[nIdx]["AwardItemNum" .. i], nil, false, false, false, true, false, false)
+		if self.mapRewardCfgData[nIdx]["AwardItemTid" .. i] ~= nil and 0 < self.mapRewardCfgData[nIdx]["AwardItemNum" .. i] then
+			self._mapNode.tcItem[i]:SetItem(self.mapRewardCfgData[nIdx]["AwardItemTid" .. i], nil, self.mapRewardCfgData[nIdx]["AwardItemNum" .. i], nil, false, false, false, true, false, false)
 			self._mapNode.btnItem[i].onClick:RemoveAllListeners()
 			self._mapNode.btnItem[i].onClick:AddListener(function()
-				self:OnBtn_ClickItem(self._mapNode.btnItem[i], mapRewardCfgData[nIdx]["AwardItemTid" .. i])
+				self:OnBtn_ClickItem(self._mapNode.btnItem[i], self.mapRewardCfgData[nIdx]["AwardItemTid" .. i])
 			end)
 		else
 			self._mapNode.btnItem[i].gameObject:SetActive(false)
