@@ -47,7 +47,7 @@ function TemplateTips:OnEnable()
 			nContentHeight = self.minTipHeight
 		end
 		self._mapNode.imgTipsBg.sizeDelta = Vector2(self._mapNode.imgTipsBg.sizeDelta.x, nContentHeight)
-		self:SetTipsPosition(self.rtTarget, self._mapNdoe.rtContent)
+		self:SetTipsPosition(self.rtTarget, self._mapNode.rtContent)
 	end
 	cs_coroutine.start(wait)
 end

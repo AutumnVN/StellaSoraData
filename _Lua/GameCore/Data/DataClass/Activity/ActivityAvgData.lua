@@ -197,6 +197,19 @@ function ActivityAvgData:CacheAvgData(StoryInfo)
 				self.mapPersonalityFactor[sAvgId][StoryChoice.Group] = func_Parse(StoryChoice.Value, 3)
 			end
 		end
+		local chapterCfgData = ConfigTable.GetData("ActivityStoryChapter", mapCfgDataStory.ChapterId)
+		if chapterCfgData ~= nil and chapterCfgData.IsPersonalityTouchMainline then
+			if self.tbTouchMainlinePersonality == nil then
+				self.tbTouchMainlinePersonality = {}
+			end
+			local value = self.mapPersonality[mapCfgDataStory.AvgLuaName]
+			self.tbTouchMainlinePersonality[mapCfgDataStory.AvgLuaName] = value
+			if self.tbTouchMainlinePersonalityFactor == nil then
+				self.tbTouchMainlinePersonalityFactor = {}
+			end
+			local factor = self.mapPersonalityFactor[mapCfgDataStory.AvgLuaName]
+			self.tbTouchMainlinePersonalityFactor[mapCfgDataStory.AvgLuaName] = factor
+		end
 	end
 	self.mapRecentStoryId = decodeJson(LocalData.GetPlayerLocalData("ActivityRecentStoryId")) or {}
 	self:RefreshAvgRedDot()
@@ -485,7 +498,7 @@ function ActivityAvgData:MarkChoosedPersonality(sAvgId, nGroupId, nIndex, nFacto
 	nCurCnt = nCurCnt + 1
 	self.mapTempPersonalityCnt[sAvgId][nGroupId][nIndex] = nCurCnt
 end
-function ActivityAvgData:CalcPersonality(nId)
+function ActivityAvgData:CalcPersonality(nId, nChapterId, bTouchMainline)
 	local cfgData_SRP = ConfigTable.GetData("StoryRolePersonality", nId)
 	local tbPersonalityBaseNum = cfgData_SRP.BaseValue
 	local nTotalCount = tbPersonalityBaseNum[1] + tbPersonalityBaseNum[2] + tbPersonalityBaseNum[3]
@@ -506,8 +519,39 @@ function ActivityAvgData:CalcPersonality(nId)
 			nPercent = 0
 		}
 	}
-	local tbPersonality = self.mapPersonality
-	local tbPersonalityFactor = self.mapPersonalityFactor
+	local tbPersonality = {}
+	local tbPersonalityFactor = {}
+	if nChapterId ~= nil then
+		for sAvgId, v in pairs(self.mapPersonality) do
+			local cfgData = self:GetStoryCfgData(sAvgId)
+			if cfgData ~= nil and cfgData.ChapterId == nChapterId then
+				tbPersonality[sAvgId] = v
+				if self.mapPersonalityFactor[sAvgId] ~= nil then
+					tbPersonalityFactor[sAvgId] = self.mapPersonalityFactor[sAvgId]
+				end
+			end
+		end
+	else
+		tbPersonality = self.mapPersonality
+		tbPersonalityFactor = self.mapPersonalityFactor
+	end
+	if bTouchMainline == true then
+		local mainlinePersonality, mainlinePersonalityFactor = PlayerData.Avg:GetPersonalityData()
+		if mainlinePersonality ~= nil then
+			for sAvgId, v in pairs(mainlinePersonality) do
+				if tbPersonality[sAvgId] == nil then
+					tbPersonality[sAvgId] = v
+				end
+			end
+		end
+		if mainlinePersonalityFactor ~= nil then
+			for sAvgId, v in pairs(mainlinePersonalityFactor) do
+				if tbPersonalityFactor[sAvgId] == nil then
+					tbPersonalityFactor[sAvgId] = v
+				end
+			end
+		end
+	end
 	local nFactor = 1
 	for sAvgId, v in pairs(tbPersonality) do
 		for nGroupId, vv in pairs(v) do
@@ -1076,6 +1120,12 @@ function ActivityAvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 		self.mapTempPersonalityCnt = {}
 		func_overwrite(self.mapTempPersonalityFactor, self.mapPersonalityFactor)
 		self.mapTempPersonalityFactor = {}
+		for avgId, v in pairs(self.mapPersonality) do
+			self.tbTouchMainlinePersonality[avgId] = v
+		end
+		for avgId, v in pairs(self.mapPersonalityFactor) do
+			self.tbTouchMainlinePersonalityFactor[avgId] = v
+		end
 		if callBack ~= nil then
 			callBack(mapChangeInfo)
 		end
@@ -1115,6 +1165,7 @@ function ActivityAvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 			TimerManager.Add(1, nDelayTime, self, delayOpen, true, true, true)
 		end
 		EventManager.Hit("Story_Done", bHasReward)
+		self:RefreshAvgRedDot()
 		printLog("通关结算完成")
 	end
 	printLog("发送通关消息")
@@ -1190,5 +1241,8 @@ function ActivityAvgData:IsActivityStory(nStoryId)
 end
 function ActivityAvgData:OnEvent_UpdateWorldClass()
 	self:RefreshAvgRedDot()
+end
+function ActivityAvgData:GetTouchMainlinePersonalityData()
+	return self.tbTouchMainlinePersonality, self.tbTouchMainlinePersonalityFactor
 end
 return ActivityAvgData

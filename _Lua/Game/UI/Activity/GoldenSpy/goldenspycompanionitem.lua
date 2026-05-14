@@ -376,10 +376,11 @@ function GoldenSpyCompanionItem:_CheckVision()
 	local tbRemoveItems = {}
 	for _, item in ipairs(tempItems) do
 		if item.Ctrl ~= self then
+			local removeItem
 			local hitArea = item.Ctrl:GetHitArea()
 			if hitArea and self:_HitAreaInSector(hitArea, vx, vy, forwardAngle, halfAngle, radius) then
 				if item.Ctrl == self.floorCtrl.catchedItem then
-					goto lbl_228
+					goto lbl_229
 				end
 				if item.Ctrl:GetItemCfg().ItemType == GameEnum.GoldenSpyItem.Boom then
 					item.Ctrl:Boom(nil)
@@ -423,7 +424,7 @@ function GoldenSpyCompanionItem:_CheckVision()
 			end
 			tbRemoveItems = {}
 		end
-		::lbl_228::
+		::lbl_229::
 	end
 end
 function GoldenSpyCompanionItem:_StartVisionCheck()

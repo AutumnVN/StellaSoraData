@@ -784,6 +784,7 @@ GameTableDefine.CommonTable = {
 		Lang = {"Desc"}
 	},
 	PenguinCardQuestWeight = {Key = true},
+	PenguinCardTendency = {Key = true},
 	PenguinCardWeight = {Key = true},
 	PeriodicQuest = {
 		Key = true,

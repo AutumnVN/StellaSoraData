@@ -16411,7 +16411,7 @@ return {
 		param = {
 			3,
 			"0",
-			"                                                                                                      <size=52>菲莱的涟漪<color=#08d3d4></size>  <size=57>完</color></size>",
+			"<align=right><margin-right=6em><size=52>菲莱的涟漪<color=#08d3d4></size>  <size=57>完</color></size></margin></align>",
 			0,
 			"",
 			false,

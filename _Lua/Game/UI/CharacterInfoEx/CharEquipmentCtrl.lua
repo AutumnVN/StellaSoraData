@@ -181,8 +181,8 @@ function CharEquipmentCtrl:OnEnable()
 	end
 end
 function CharEquipmentCtrl:OnDestroy()
-	PlayerData.Equipment:GetEquipmentSelect()
-	PlayerData.Equipment:GetEquipmentUpgrade()
+	PlayerData.Equipment:ClearEquipmentSelect()
+	PlayerData.Equipment:ClearEquipmentUpgrade()
 	self.nLastIndex = 0
 end
 function CharEquipmentCtrl:OnBtnClick_EquipmentSlot(_, nIndex)

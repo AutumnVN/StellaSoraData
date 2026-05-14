@@ -51,6 +51,7 @@ function ScoreBossRankingCtrl:Awake()
 	self._mapRankingGrid = {}
 end
 function ScoreBossRankingCtrl:OnDisable()
+	EventManager.Hit(EventId.BlockInput, false)
 	for go, mapCtrl in pairs(self._mapRankingGrid) do
 		self:UnbindCtrlByNode(mapCtrl)
 	end
@@ -76,6 +77,10 @@ function ScoreBossRankingCtrl:OnEnable()
 				NovaAPI.SetTMPText(self._mapNode.txtLoading, ConfigTable.GetUIText("STRanking_Empty"))
 			end
 		end)
+		if self.timerRefreshRanking ~= nil then
+			self.timerRefreshRanking:Cancel()
+			self.timerRefreshRanking = nil
+		end
 		self.timerRefreshRanking = self:AddTimer(0, 600, function()
 			PlayerData.ScoreBoss:SendScoreBossApplyReq(function()
 				local rankPlayerCount = PlayerData.ScoreBoss:GetRankPlayerCount()
@@ -147,14 +152,16 @@ function ScoreBossRankingCtrl:PlayGridItemAnim()
 	end
 	for k, v in ipairs(self.tbGridInUse) do
 		local goGrid = sv.transform:Find("Viewport/Content/" .. v)
-		local animRoot = goGrid:GetComponent("Animator")
-		if animRoot ~= nil then
-			animRoot.gameObject:SetActive(false)
-		end
-		if k == 1 and animRoot ~= nil then
-			animRoot.gameObject:SetActive(true)
-			nItemAnimLen = NovaAPI.GetAnimClipLength(animRoot, {sAnim})
-			animRoot:Play(sAnim, 0, 0)
+		if goGrid ~= nil then
+			local animRoot = goGrid:GetComponent("Animator")
+			if animRoot ~= nil then
+				animRoot.gameObject:SetActive(false)
+			end
+			if k == 1 and animRoot ~= nil then
+				animRoot.gameObject:SetActive(true)
+				nItemAnimLen = NovaAPI.GetAnimClipLength(animRoot, {sAnim})
+				animRoot:Play(sAnim, 0, 0)
+			end
 		end
 	end
 	local nCurIndex = 1
@@ -170,8 +177,10 @@ function ScoreBossRankingCtrl:PlayGridItemAnim()
 		local goGrid = sv.transform:Find("Viewport/Content/" .. self.tbGridInUse[nCurIndex])
 		if goGrid ~= nil then
 			local animRoot = goGrid:GetComponent("Animator")
-			animRoot.gameObject:SetActive(true)
-			animRoot:Play(sAnim, 0, 0)
+			if animRoot ~= nil then
+				animRoot.gameObject:SetActive(true)
+				animRoot:Play(sAnim, 0, 0)
+			end
 		end
 	end, true, true, true)
 end

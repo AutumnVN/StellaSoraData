@@ -41,6 +41,7 @@ function JointDrillRankRewardItemCtrl:RefreshItem(nIndex, nSelfRankSection)
 	self.tbReward = {}
 	for i = 1, 3 do
 		if mapCfg["AwardItemTid" .. i] ~= nil and mapCfg["AwardItemTid" .. i] ~= 0 then
+			self._mapNode.btnItem[i].gameObject:SetActive(true)
 			local nTid = mapCfg["AwardItemTid" .. i]
 			local nCount = mapCfg["AwardItemNum" .. i]
 			table.insert(self.tbReward, {nTid = nTid, nCount = nCount})

@@ -6429,7 +6429,24 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {2.0}
+		param = {1.5}
+	},
+	{
+		cmd = "SetBg",
+		param = {
+			0,
+			"guard_outside_daylight",
+			"0",
+			"OutQuad",
+			2.0,
+			false,
+			"default",
+			0
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1}
 	},
 	{
 		cmd = "SetTalk",
@@ -6447,7 +6464,114 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {1.0}
+		param = {1}
+	},
+	{
+		cmd = "SetBg",
+		param = {
+			0,
+			"hotel_roof",
+			"0",
+			"OutQuad",
+			1.5,
+			false,
+			"fade",
+			0
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1}
+	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "SetAudio",
+		param = {
+			0,
+			"se_264",
+			0.0,
+			false
+		}
+	},
+	{
+		cmd = "SetBg",
+		param = {
+			4,
+			"story_main_05_002",
+			"0",
+			"Linear",
+			0.0,
+			true,
+			"default",
+			0
+		}
+	},
+	{
+		cmd = "SetStage",
+		param = {
+			3,
+			4,
+			"InQuart",
+			1.0,
+			false
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {0.7}
+	},
+	{
+		cmd = "SetAudio",
+		param = {
+			0,
+			"se_084",
+			0.0,
+			false
+		}
+	},
+	{
+		cmd = "SetFx",
+		param = {
+			0,
+			"fx_avg_congr",
+			0,
+			2,
+			nil,
+			nil,
+			nil,
+			0.0,
+			false,
+			false
+		}
+	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "SetStage",
+		param = {
+			3,
+			3,
+			"OutQuad",
+			0.5,
+			true
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1.5}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			0,
+			"0",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"그 후, 우리는 한동안 평화로운 시간을 보냈다.==W== 나는 필리에에 머물며 피렌을 도와 필리에 컴퍼니를 세웠고,==W== 공백 여단과 하나사키 여단은 여전히 여행가의 업무를 하며 바쁘게 여러 별의 탑을 오갔다.",
+			""
+		}
 	},
 	{
 		cmd = "SetBg",
@@ -6504,7 +6628,7 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {1.5}
+		param = {2.0}
 	},
 	{cmd = "SetGoOn"},
 	{
@@ -6548,173 +6672,15 @@ return {
 		cmd = "Wait",
 		param = {1.0}
 	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "Wait",
-		param = {2.5}
-	},
-	{
-		cmd = "SetBg",
-		param = {
-			0,
-			"guard_outside_daylight",
-			"0",
-			"Linear",
-			1.5,
-			false,
-			"default",
-			0
-		}
-	},
-	{
-		cmd = "CtrlBg",
-		param = {
-			0,
-			nil,
-			nil,
-			nil,
-			nil,
-			1.2,
-			nil,
-			nil,
-			nil,
-			nil,
-			"none",
-			"Linear",
-			0.0,
-			true,
-			0
-		}
-	},
-	{
-		cmd = "CtrlBg",
-		param = {
-			0,
-			nil,
-			nil,
-			nil,
-			nil,
-			1.05,
-			nil,
-			nil,
-			nil,
-			nil,
-			"none",
-			"Linear",
-			10.0,
-			false,
-			0
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {2.0}
-	},
-	{
-		cmd = "SetTalk",
-		param = {
-			0,
-			"0",
-			"",
-			0,
-			"",
-			false,
-			"",
-			"그 후, 우리는 한동안 평화로운 시간을 보냈다.==W== 나는 필리에에 머물며 피렌을 도와 필리에 컴퍼니를 세웠고,==W== 공백 여단과 하나사키 여단은 여전히 여행가의 업무를 하며 바쁘게 여러 별의 탑을 오갔다.",
-			""
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {1.0}
-	},
-	{
-		cmd = "SetBg",
-		param = {
-			0,
-			"hotel_roof",
-			"0",
-			"OutQuad",
-			1.5,
-			false,
-			"fade",
-			0
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {1.0}
-	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "SetAudio",
-		param = {
-			0,
-			"se_264",
-			0.0,
-			false
-		}
-	},
-	{
-		cmd = "SetBg",
-		param = {
-			4,
-			"story_main_05_002",
-			"0",
-			"Linear",
-			0.0,
-			true,
-			"default",
-			0
-		}
-	},
-	{
-		cmd = "SetStage",
-		param = {
-			3,
-			4,
-			"InQuart",
-			1.0,
-			false
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {0.7}
-	},
-	{
-		cmd = "SetAudio",
-		param = {
-			0,
-			"se_084",
-			0.0,
-			false
-		}
-	},
 	{
 		cmd = "SetBGM",
 		param = {
 			1,
-			"music_avg_volume35_1s",
+			"music_avg_volume100_0s",
 			0,
 			"",
 			"4000ms",
 			0.0,
-			false
-		}
-	},
-	{
-		cmd = "SetFx",
-		param = {
-			0,
-			"fx_avg_congr",
-			0,
-			2,
-			nil,
-			nil,
-			nil,
-			0.0,
-			false,
 			false
 		}
 	},
@@ -6735,16 +6701,6 @@ return {
 			1,
 			true,
 			"default"
-		}
-	},
-	{
-		cmd = "SetStage",
-		param = {
-			3,
-			5,
-			"Linear",
-			0.5,
-			true
 		}
 	},
 	{

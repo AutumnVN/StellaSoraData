@@ -58,13 +58,17 @@ function PenguinCardQuestCellCtrl:Refresh(nActId, mapQuest)
 		return
 	end
 	NovaAPI.SetTMPText(self._mapNode.TMPTitle, mapCfg.Desc)
-	self._mapNode.imgBarFill.sizeDelta = Vector2(mapQuest.nCur / mapQuest.nMax * 508, 27)
+	if mapQuest.nMax > 0 then
+		self._mapNode.imgBarFill.sizeDelta = Vector2(mapQuest.nCur / mapQuest.nMax * 508, 27)
+	else
+		self._mapNode.imgBarFill.sizeDelta = Vector2(508, 27)
+	end
 	NovaAPI.SetTMPText(self._mapNode.txt_process, mapQuest.nCur .. "/" .. mapQuest.nMax)
 	self._mapNode.imgComplete:SetActive(self.mapQuest.nStatus == AllEnum.ActQuestStatus.Received)
 	self._mapNode.imgCompleteMask:SetActive(self.mapQuest.nStatus == AllEnum.ActQuestStatus.Received)
 	self._mapNode.go_UnComplete:SetActive(self.mapQuest.nStatus == AllEnum.ActQuestStatus.UnComplete)
 	self._mapNode.btnReceive.gameObject:SetActive(self.mapQuest.nStatus == AllEnum.ActQuestStatus.Complete)
-	if mapCfg.Item1 > 0 then
+	if 0 < mapCfg.Item1 then
 		self._mapNode.btnReward.gameObject:SetActive(true)
 		self._mapNode.rtReward:SetItem(mapCfg.Item1, nil, mapCfg.Qty1, nil, self.mapQuest.nStatus == AllEnum.ActQuestStatus.Received)
 	else

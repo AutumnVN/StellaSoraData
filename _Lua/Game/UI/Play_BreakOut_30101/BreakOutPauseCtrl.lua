@@ -24,17 +24,20 @@ BreakOutPauseCtrl._mapNodeConfig = {
 	btn_exit = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Exit",
-		sAction = "Giveup"
+		sAction = "Giveup",
+		sActionIconType = "Dark"
 	},
 	btn_restart = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Restart",
-		sAction = "Retry"
+		sAction = "Retry",
+		sActionIconType = "Dark"
 	},
 	btn_continue = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Continue",
-		sAction = "Back"
+		sAction = "Back",
+		sActionIconType = "Dark"
 	},
 	safeAreaRoot = {
 		sNodeName = "----SafeAreaRoot----"
@@ -53,6 +56,7 @@ function BreakOutPauseCtrl:Open()
 	end
 	self._mapNode.safeAreaRoot:SetActive(true)
 	self.bInOpen = true
+	EventManager.Hit("Event_SetPopPlayTips", false)
 	PanelManager.InputDisable()
 	EventManager.Hit("SetBreakOutPlaySkill_Visible", false)
 	GamepadUIManager.EnableGamepadUI("BreakOutPauseCtrl", self.tbGamepadUINode)
@@ -63,6 +67,7 @@ function BreakOutPauseCtrl:Close()
 	end
 	self.bInOpen = false
 	GamepadUIManager.DisableGamepadUI("BreakOutPauseCtrl")
+	EventManager.Hit("Event_SetPopPlayTips", true)
 	self._mapNode.safeAreaRoot:SetActive(false)
 	PanelManager.InputEnable()
 	EventManager.Hit("SetBreakOutPlaySkill_Visible", true)

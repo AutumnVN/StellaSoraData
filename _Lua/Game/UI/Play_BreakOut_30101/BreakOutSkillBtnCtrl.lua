@@ -78,7 +78,8 @@ BreakOutSkillBtnCtrl._mapNodeConfig = {
 }
 BreakOutSkillBtnCtrl._mapEventConfig = {
 	Open_Ultra_Special_FX = "OpenUltraSpecialFX",
-	[EventId.SettingsBattleClose] = "OnEvent_ChangeKeyLayout"
+	[EventId.SettingsBattleClose] = "OnEvent_ChangeKeyLayout",
+	Brick_ShootButtonState = "OnEvent_GetShootState"
 }
 function BreakOutSkillBtnCtrl:Awake()
 	self.BTN = self.gameObject:GetComponent("ButtonEx")
@@ -103,11 +104,13 @@ function BreakOutSkillBtnCtrl:Awake()
 	self.skillId = nil
 	self:SetEmptySkillBtn()
 end
-function BreakOutSkillBtnCtrl:InitSkillBtn(EET, icon, skillId, actionId)
+function BreakOutSkillBtnCtrl:InitSkillBtn(EET, icon, skillId, actionId, charId, breakOutLevelData)
 	self:SetMainAlpha(actionId ~= SKILL_ULTRA)
 	self.EET = EET
 	self.ActionId = actionId
 	self.skillId = skillId
+	self.nCurCharId = charId
+	self.BreakOutLevelData = breakOutLevelData
 	self.bShowSection = false
 	self._mapNode.TMP_Charge.gameObject:SetActive(false)
 	if 0 < EET then
@@ -143,7 +146,7 @@ function BreakOutSkillBtnCtrl:RefreshSkillBtn(nCurSkillEnergy, nMaxSkillEnergy, 
 		return
 	end
 	local bBeginResume = false
-	local ChargePercent = nCurSkillEnergy / nMaxSkillEnergy
+	local ChargePercent = 0 < nMaxSkillEnergy and nCurSkillEnergy / nMaxSkillEnergy or 0
 	local bCanUse = false
 	bCanUse = nMaxSkillEnergy <= nCurSkillEnergy and nCurCDTime <= 0
 	self._mapNode.TMP_Charge.gameObject:SetActive(self.bShowSection)
@@ -163,14 +166,14 @@ function BreakOutSkillBtnCtrl:RefreshSkillBtn(nCurSkillEnergy, nMaxSkillEnergy, 
 		else
 		end
 	end
-	if sAnimName ~= nil and sAnimName ~= nil then
+	if sAnimName ~= nil then
 		self:PlayAnimFX(sAnimName)
 	end
 	if sFxSoundName ~= nil and self.gameObject.activeInHierarchy == true and 0 < NovaAPI.GetCanvasGroupAlpha(self.parentCanvasGroup) then
 		WwiseAudioMgr:PlaySound(sFxSoundName)
 	end
 	self.bCanUse = bCanUse
-	local CDPercent = nCurCDTime / nTotalCDTime
+	local CDPercent = 0 < nTotalCDTime and nCurCDTime / nTotalCDTime or 0
 	self.nCDPercent = CDPercent
 	self:SetMainAlpha(bCanUse)
 	self:SetQTE(nCurSkillEnergy, nMaxSkillEnergy)
@@ -201,12 +204,12 @@ end
 function BreakOutSkillBtnCtrl:PlayAnimFX(sAnimName)
 	self.AnimFX:Play(sAnimName)
 end
-function BreakOutSkillBtnCtrl:SetCD(totalCDTime, curCDTime, bBeginResume)
+function BreakOutSkillBtnCtrl:SetCD(totalCDTime, curCDTime)
 	if self.ActionId == SKILL_SHOOT then
 		self._mapNode.TMP_CD.transform.localScale = Vector3.zero
 		return
 	end
-	local percent = curCDTime / totalCDTime
+	local percent = 0 < totalCDTime and curCDTime / totalCDTime or 0
 	self.bInCD = 0 < percent
 	self._mapNode.transformCD.localScale = self.bInCD == true and Vector3.one or Vector3.zero
 	self._mapNode.transformXcd.localScale = self.bInCD == true and Vector3.one or Vector3.zero
@@ -256,6 +259,10 @@ function BreakOutSkillBtnCtrl:GetSupSkillForbidden()
 	return self._mapNode.transformX.localScale == Vector3.one
 end
 function BreakOutSkillBtnCtrl:BtnStateChange(nState)
+	if self.BreakOutLevelData:GetPopPlayTips() and not self:GetCanUseSkill() and self.ActionId ~= SKILL_SHOOT and self.bCanUse then
+		local sTip = ConfigTable.GetUIText("BreakOut_Play_Tips")
+		EventManager.Hit(EventId.OpenMessageBox, sTip)
+	end
 	if nState == BTN_STATE.Cancel then
 		NovaAPI.SetComponentEnable(self._mapNode.imgPressed, false)
 		NovaAPI.SetComponentEnable(self._mapNode.imgXtips, false)
@@ -307,5 +314,12 @@ end
 function BreakOutSkillBtnCtrl:OnEvent_ChangeKeyLayout()
 	self:SetActionLayout()
 	self:SetCDTextSize()
+end
+function BreakOutSkillBtnCtrl:GetCanUseSkill()
+	local bUseSkill = self.nCurCharId == 14501 and self.bEnableShoot
+	return not bUseSkill
+end
+function BreakOutSkillBtnCtrl:OnEvent_GetShootState(bEnableShoot)
+	self.bEnableShoot = bEnableShoot
 end
 return BreakOutSkillBtnCtrl

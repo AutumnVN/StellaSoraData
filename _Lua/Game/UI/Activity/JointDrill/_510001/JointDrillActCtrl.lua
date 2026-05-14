@@ -140,7 +140,7 @@ function JointDrillActCtrl:OnBtnClick_Start()
 		return
 	end
 	EventManager.Hit("PlayJointDrillActAnim", "JointDrill_Act_01_out", function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_1, self.actData.nActId)
+		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_510001, self.actData.nActId)
 	end)
 end
 function JointDrillActCtrl:OnBtnClick_Detail()

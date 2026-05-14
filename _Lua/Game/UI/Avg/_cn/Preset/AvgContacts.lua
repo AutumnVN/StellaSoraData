@@ -53,8 +53,8 @@ return {
 		id = 114,
 		icon = "Icon/Head/head_11401_S",
 		name = "猫眼",
-		landmark = "米拉什凤尾猫小巷十四栋顶层",
-		signature = "接音乐格斗弹幕游戏代打"
+		landmark = "米拉什尤里卡水吧",
+		signature = "猫眼大人是最强大的！"
 	},
 	{
 		id = 115,
@@ -134,6 +134,13 @@ return {
 		signature = "真诚！"
 	},
 	{
+		id = 131,
+		icon = "Icon/Head/head_13101_S",
+		name = "布洛可",
+		landmark = "布洛可的移动小摊",
+		signature = "跟上我，花钱像呼吸一样简单"
+	},
+	{
 		id = 132,
 		icon = "Icon/Head/head_13201_S",
 		name = "密涅瓦",
@@ -167,6 +174,14 @@ return {
 		name = "星雁",
 		landmark = "菲莱城梅斯特大街十号",
 		signature = "休假中，返岗时间未定"
+	},
+	{
+		id = 140,
+		icon = "Icon/Head/head_14001_S",
+		name = "***",
+		landmark = "移动中，请联系本人",
+		signature = "无事勿扰",
+		ver = "1.11.0"
 	},
 	{
 		id = 141,

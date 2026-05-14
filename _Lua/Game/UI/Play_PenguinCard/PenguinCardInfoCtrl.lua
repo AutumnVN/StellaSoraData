@@ -89,7 +89,7 @@ function PenguinCardInfoCtrl:Refresh()
 			local mapUpgradeCard = self._panel.mapLevel.tbPenguinCard[nAimIndex]
 			local nAfter = mapUpgradeCard.nLevel + mapSelectCard.nLevel
 			nAfter = nAfter > mapUpgradeCard.nMaxLevel and mapUpgradeCard.nMaxLevel or nAfter
-			NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), nAfter))
+			NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText(nAfter == mapUpgradeCard.nMaxLevel and "PenguinCard_CardLevelMax" or "PenguinCard_CardLevel"), nAfter))
 			NovaAPI.SetTMPColor(self._mapNode.txtLevel, nAfter == mapUpgradeCard.nMaxLevel and MaxLevel or NotMaxLevel)
 			local nId = mapUpgradeCard:GetIdByLevel(mapUpgradeCard.nGroupId, nAfter)
 			local mapCfg = ConfigTable.GetData("PenguinCard", nId)
@@ -105,13 +105,13 @@ function PenguinCardInfoCtrl:Refresh()
 			NovaAPI.SetTMPText(self._mapNode.txtBtnSelect, ConfigTable.GetUIText("PenguinCard_Btn_Upgrade"))
 		else
 			self._mapNode.imgUp:SetActive(false)
-			NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), self.mapCard.nLevel))
+			NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText(self.mapCard.nLevel == self.mapCard.nMaxLevel and "PenguinCard_CardLevelMax" or "PenguinCard_CardLevel"), self.mapCard.nLevel))
 			NovaAPI.SetTMPColor(self._mapNode.txtLevel, self.mapCard.nLevel == self.mapCard.nMaxLevel and MaxLevel or NotMaxLevel)
 			NovaAPI.SetTMPText(self._mapNode.txtDesc, self.mapCard:GetDesc())
 			NovaAPI.SetTMPText(self._mapNode.txtBtnSelect, ConfigTable.GetUIText("PenguinCard_Btn_Select"))
 		end
 	else
-		NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), self.mapCard.nLevel))
+		NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText(self.mapCard.nLevel == self.mapCard.nMaxLevel and "PenguinCard_CardLevelMax" or "PenguinCard_CardLevel"), self.mapCard.nLevel))
 		NovaAPI.SetTMPColor(self._mapNode.txtLevel, self.mapCard.nLevel == self.mapCard.nMaxLevel and MaxLevel or NotMaxLevel)
 		NovaAPI.SetTMPText(self._mapNode.txtDesc, self.mapCard:GetDesc())
 	end
@@ -182,6 +182,9 @@ function PenguinCardInfoCtrl:OnBtnClick_Right()
 			else
 				nIndex = 1
 			end
+			if self._panel.mapLevel.tbPenguinCard[self.tbHasIndex[nIndex]] == 0 then
+				return
+			end
 			self.mapCard = self._panel.mapLevel.tbPenguinCard[self.tbHasIndex[nIndex]]
 			self:Refresh()
 		end
@@ -219,6 +222,9 @@ function PenguinCardInfoCtrl:OnBtnClick_Left()
 				nIndex = nIndex - 1
 			else
 				nIndex = nMax
+			end
+			if self._panel.mapLevel.tbPenguinCard[self.tbHasIndex[nIndex]] == 0 then
+				return
 			end
 			self.mapCard = self._panel.mapLevel.tbPenguinCard[self.tbHasIndex[nIndex]]
 			self:Refresh()

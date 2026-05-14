@@ -3,9 +3,6 @@ local PlayerCharData = PlayerData.Char
 local PlayerCharSkinData = PlayerData.CharSkin
 local Actor2DManager = require("Game.Actor2D.Actor2DManager")
 local tableInsert = table.insert
-local GameCameraStackManager = CS.GameCameraStackManager
-local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
-local ResType = GameResourceLoader.ResType
 local Animator = CS.UnityEngine.Animator
 local typeof = typeof
 CharacterSkinCtrl._mapNodeConfig = {
@@ -201,6 +198,10 @@ end
 function CharacterSkinCtrl:RefreshFullScene(bFullScene)
 	self._mapNode.goPreview.gameObject:SetActive(not bFullScene)
 	self._mapNode.TopBar.gameObject:SetActive(not bFullScene)
+	if bFullScene and self.timerFullScene ~= nil then
+		self.timerFullScene:Cancel()
+		self.timerFullScene = nil
+	end
 	if not bFullScene and self.timerFullScene == nil then
 		self.timerFullScene = self:AddTimer(1, 5, function()
 			self._mapNode.TopBar.gameObject:SetActive(false)
@@ -215,14 +216,10 @@ function CharacterSkinCtrl:OnGridRefresh(goGrid, gridIndex)
 		self.tbGridCtrl[nInstanceId] = self:BindCtrlByNode(goGrid, "Game.UI.TemplateEx.TemplateSkinCtrl")
 	end
 	self.tbGridCtrl[nInstanceId]:SetSkinData(self.tbSortSkinList[nIndex])
-	if self.nSelectIndex == nil then
-		local usingSkinId = PlayerCharData:GetCharUsedSkinId(self.nCharId)
-		if usingSkinId == self.tbSortSkinList[nIndex]:GetId() then
-			self.nSelectIndex = nIndex
-		end
-	end
-	if nIndex == self.nSelectIndex then
+	if self.nSelectIndex == nIndex then
 		self.tbGridCtrl[nInstanceId]:SetSelect(true)
+	else
+		self.tbGridCtrl[nInstanceId]:SetSelect(false)
 	end
 end
 function CharacterSkinCtrl:OnGridBtnClick(goGrid, gridIndex)
@@ -261,28 +258,29 @@ function CharacterSkinCtrl:LoadCharacter()
 		local mapSkin = ConfigTable.GetData_CharacterSkin(self.nSkinId)
 		local sFullPath = string.format("%s.prefab", mapSkin.Model_Show)
 		local LoadModelCallback = function(obj)
+			if self.rtSceneOriginPos == nil then
+				return
+			end
 			local go = instantiate(obj, self.rtSceneOriginPos)
 			self.tbModelList[self.nSkinId] = go
 			self.curShowModel = go
 			self:WaitReadyClipFinish()
 			NovaAPI.BindUIParallaxStageCameraControllerModel(self._mapNode.UIParallax3DStage, 0, go)
 			GameUIUtils.SetCustomModelMaterialVariant(go, CS.CustomModelMaterialVariantComponent.VariantNames.FormationView)
-			if self.rtSceneOriginPos ~= nil then
-				NovaAPI.ChangeAnimatorDefaultState(go.transform)
-				go.transform.position = self.rtSceneOriginPos.position
-				go.transform.localEulerAngles = Vector3(0, 180, 0)
-				self.nModelDragRot = go.transform.localEulerAngles.y
-				go.transform.localScale = Vector3.zero
-				local animator = go:GetComponent(typeof(Animator))
-				if animator ~= nil and animator:IsNull() == false then
-					animator:SetBool("standby", true)
-				end
-				local wait = function()
-					coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-					go.transform.localScale = Vector3.one * (mapSkin.ModelShowScale / 10000)
-				end
-				cs_coroutine.start(wait)
+			NovaAPI.ChangeAnimatorDefaultState(go.transform)
+			go.transform.position = self.rtSceneOriginPos.position
+			go.transform.localEulerAngles = Vector3(0, 180, 0)
+			self.nModelDragRot = go.transform.localEulerAngles.y
+			go.transform.localScale = Vector3.zero
+			local animator = go:GetComponent(typeof(Animator))
+			if animator ~= nil and animator:IsNull() == false then
+				animator:SetBool("standby", true)
 			end
+			local wait = function()
+				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+				go.transform.localScale = Vector3.one * (mapSkin.ModelShowScale / 10000)
+			end
+			cs_coroutine.start(wait)
 			EventManager.Hit(EventId.BlockInput, false)
 		end
 		self:LoadAssetAsync(sFullPath, typeof(GameObject), LoadModelCallback)
@@ -360,8 +358,17 @@ function CharacterSkinCtrl:OnEnable()
 		self:UnbindCtrlByNode(objCtrl)
 		self.tbGridCtrl[insId] = nil
 	end
+	for nIndex = 1, #self.tbSortSkinList do
+		local usingSkinId = PlayerCharData:GetCharUsedSkinId(self.nCharId)
+		if usingSkinId == self.tbSortSkinList[nIndex]:GetId() then
+			self.nSelectIndex = nIndex
+			break
+		end
+	end
+	if self.nSelectIndex == nil then
+		self.nSelectIndex = 1
+	end
 	self._mapNode.sv:Init(#self.tbSortSkinList, self, self.OnGridRefresh, self.OnGridBtnClick)
-	self._mapNode.sv:SetScrollGridPos(self.nSelectIndex - 1, 0)
 	self._mapNode.goPreview.gameObject:SetActive(true)
 	self._mapNode.btnSkin.gameObject:SetActive(false)
 	self._mapNode.go3D.gameObject:SetActive(self.nShowMode == show_mode_3d)
@@ -380,6 +387,7 @@ function CharacterSkinCtrl:OnEnable()
 			self._mapNode.UIParallax3DStage.gameObject:SetActive(false)
 		end
 		self.gameObject:SetActive(true)
+		self._mapNode.sv:SetScrollGridPos(self.nSelectIndex - 1, 0, 0)
 		self:RefreshSelectSkinInfo()
 		EventManager.Hit(EventId.SetTransition)
 	end

@@ -401,6 +401,10 @@ function DatingGiftCtrl:OnBtnClick_Present()
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Gift_Send_Item_Empty"))
 		return
 	end
+	if self.tbChooseItem == nil or next(self.tbChooseItem) == nil then
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Gift_Send_Not_Select"))
+		return
+	end
 	local tbItems = {}
 	local tbSendItems = {}
 	for nIndex, v in pairs(self.tbChooseItem) do

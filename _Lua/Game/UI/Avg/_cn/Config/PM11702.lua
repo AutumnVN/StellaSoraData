@@ -559,8 +559,8 @@ return {
 	{
 		cmd = "SetPhoneMsg",
 		param = {
-			1,
-			"avg3_100",
+			0,
+			"avg1_117",
 			"今天妈妈检查功课",
 			"0",
 			"",

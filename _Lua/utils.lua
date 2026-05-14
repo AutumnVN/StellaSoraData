@@ -612,6 +612,41 @@ function LanguagePost(sLang, nIdx, sStr)
 	end
 	return sStr
 end
+function RefreshRemainTime(endTime, txtComp)
+	local curTime = CS.ClientManager.Instance.serverTimeStamp
+	local remainTime = endTime - curTime
+	local sTimeStr = ""
+	if remainTime <= 60 then
+		local sec = math.floor(remainTime)
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Sec") or "", sec)
+	elseif 60 < remainTime and remainTime <= 3600 then
+		local min = math.floor(remainTime / 60)
+		local sec = math.floor(remainTime - min * 60)
+		if sec == 0 then
+			min = min - 1
+			sec = 60
+		end
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Min") or "", min, sec)
+	elseif 3600 < remainTime and remainTime <= 86400 then
+		local hour = math.floor(remainTime / 3600)
+		local min = math.floor((remainTime - hour * 3600) / 60)
+		if min == 0 then
+			hour = hour - 1
+			min = 60
+		end
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Hour") or "", hour, min)
+	elseif 86400 < remainTime then
+		local day = math.floor(remainTime / 86400)
+		local hour = math.floor((remainTime - day * 86400) / 3600)
+		if hour == 0 then
+			day = day - 1
+			hour = 24
+		end
+		sTimeStr = orderedFormat(ConfigTable.GetUIText("Activity_Remain_Time_Day") or "", day, hour)
+	end
+	NovaAPI.SetTMPText(txtComp, sTimeStr)
+	return remainTime
+end
 local DecodeChangeInfo = function(mapChangeInfo)
 	local mapDecodedChangeInfo = {}
 	if type(mapChangeInfo) ~= "table" then
@@ -1050,6 +1085,30 @@ local ParseDesc = function(mapDescConfig, nCompareLevelType, nCompareLevel, bSim
 	end
 	local ConfigData = require("GameCore.Data.ConfigData")
 	local str = bSimple and mapDescConfig.BriefDesc or mapDescConfig.Desc
+	local GetValueKey = function(nDataId, nType, nValueLevel)
+		return nDataId + nValueLevel * 10
+	end
+	local TryAddMaxMark = function(mapValueTable, levelTypeData, nLevel, nId, sParameter)
+		if levelTypeData == GameEnum.levelTypeData.Exclusive then
+			local sMark = ConfigTable.GetUIText("Potential_ValueMax_HInt")
+			local nValue1 = GetValueKey(nId, levelTypeData, 1)
+			local nValue9 = GetValueKey(nId, levelTypeData, 9)
+			local nValue = GetValueKey(nId, levelTypeData, nLevel)
+			local mapValueData = mapValueTable[nValue]
+			local mapValueData1 = mapValueTable[nValue1]
+			local mapValueData9 = mapValueTable[nValue9]
+			if mapValueData == nil or mapValueData1 == nil or mapValueData9 == nil then
+				return
+			end
+			local sValue = mapValueData[sParameter]
+			local sValue1 = mapValueData1[sParameter]
+			local sValue9 = mapValueData9[sParameter]
+			if sValue ~= sValue1 and sValue == sValue9 then
+				return sMark
+			end
+		end
+		return
+	end
 	local SubDescLink = function(originStr, mapParam)
 		if originStr == nil or originStr == "" then
 			return ""
@@ -1173,9 +1232,6 @@ local ParseDesc = function(mapDescConfig, nCompareLevelType, nCompareLevel, bSim
 		end
 	end
 	local ParseLevelUpDesc = function(sTable, nId, nLevel, sParameter, sShowType, sEnumType)
-		local GetValueKey = function(nDataId, nType, nValueLevel)
-			return nDataId + nValueLevel * 10
-		end
 		local sDesc, sErrorInfo
 		local mapCfgData = DataTable[sTable]
 		if mapCfgData ~= nil then
@@ -1189,9 +1245,12 @@ local ParseDesc = function(mapDescConfig, nCompareLevelType, nCompareLevel, bSim
 					if mapValueData ~= nil then
 						local sValue = mapValueData[sParameter]
 						if sValue ~= nil then
+							local sMark = TryAddMaxMark(mapValueCfgData, mapData.levelTypeData, nLevel, nId, sParameter)
 							sDesc = FormatValueShow(sValue, sShowType, sEnumType)
 							if sDesc == nil then
 								sErrorInfo = string.format("<color=#BD3059>%s表中该ValueId配置的数据解析失败:%s</color>", sValueTable, nValueId)
+							elseif sMark ~= nil then
+								sDesc = sDesc .. sMark
 							end
 						else
 							sErrorInfo = string.format("<color=#BD3059>%s表中没有该字段:%s</color>", sValueTable, sParameter)
@@ -2124,5 +2183,6 @@ _G.UTILS = {
 	CheckChannelList_Notice = CheckChannelList_Notice,
 	AddKrParticle = AddKrParticle,
 	LanguagePost = LanguagePost,
-	ParseLanguageParam = ParseLanguageParam
+	ParseLanguageParam = ParseLanguageParam,
+	RefreshRemainTime = RefreshRemainTime
 }

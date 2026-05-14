@@ -37,6 +37,10 @@ CookieBoardCtrl._mapNodeConfig = {
 	},
 	goResult = {},
 	animResult = {sNodeName = "goResult", sComponentName = "Animator"},
+	animCookiePlate = {
+		sNodeName = "imgCookiePlate",
+		sComponentName = "Animator"
+	},
 	goCookieGridList = {
 		sComponentName = "RectTransform"
 	},
@@ -55,12 +59,17 @@ CookieBoardCtrl._mapNodeConfig = {
 	btnB = {
 		sComponentName = "NaviButton",
 		callback = "OnBtn_B",
-		sAction = "CookieUp"
+		sAction = "CookieDown"
 	},
 	btnC = {
 		sComponentName = "NaviButton",
 		callback = "OnBtn_C",
 		sAction = "CookieRight"
+	},
+	btnD = {
+		sComponentName = "NaviButton",
+		callback = "OnBtn_D",
+		sAction = "CookieUp"
 	},
 	btnStart = {
 		sNodeName = "txtStart",
@@ -81,10 +90,6 @@ CookieBoardCtrl._mapNodeConfig = {
 		sLanguageId = "Cookie_Act_Rhythm_Tip"
 	},
 	goHitEffect = {},
-	animCriticalPerfectEff = {
-		sNodeName = "imgCriticalPerfectEff",
-		sComponentName = "Animator"
-	},
 	animPerfectEff = {
 		sNodeName = "imgPerfectEff",
 		sComponentName = "Animator"
@@ -132,8 +137,14 @@ CookieBoardCtrl._mapNodeConfig = {
 		sLanguageId = "StarTower_Click_Suf"
 	},
 	goRhythmDots = {},
+	imgHeartMissEff = {},
 	imgDotInner = {nCount = 4},
 	imgLight = {nCount = 4},
+	animLightBg = {
+		nCount = 4,
+		sNodeName = "imgLightBg",
+		sComponentName = "Animator"
+	},
 	animRoot = {
 		sNodeName = "----SafeAreaRoot----",
 		sComponentName = "Animator"
@@ -173,7 +184,6 @@ function CookieBoardCtrl:GameInit()
 	self.nWaitingNextBeat = 0
 	self.nCurrGridIndex = 1
 	self.nCurrBoardIndex = 1
-	self.nCurrLevelConfigIdx = 1
 	self.nCurrGird = {1, 1}
 	self.nScore = 0
 	self.nCompBoxCount = 0
@@ -182,8 +192,6 @@ function CookieBoardCtrl:GameInit()
 	self.bAllPerfect = true
 	self.bPressed = false
 	self.nCurHealth = 0
-	self:UpdateActiveButtons()
-	self:ApplyButtonActivation()
 	if self.nPackModel == GameEnum.CookiePackModel.CookiePackPathsModel or self.nPackModel == GameEnum.CookiePackModel.CookiePackComplexModel then
 		self.nPathGroupId = self.tbFloor[self.nCurrLevelConfigIdx].PackagePathsGroupId
 	end
@@ -209,45 +217,56 @@ function CookieBoardCtrl:GameInit()
 	self:RefreshNextBoards()
 end
 function CookieBoardCtrl:UpdateActiveButtons()
-	local tbButtonsConfig = self.tbFloor[self.nCurrLevelConfigIdx].Buttons
+	local nPreCookieType = self.tbActiveCookieTypes
+	local tbButtonsConfig = self.tbFloor[self.nCurrLevelConfigIdx].CookieTypeNum
 	self.tbActiveCookieTypes = {}
-	self.tbActiveButtonNames = {}
 	if tbButtonsConfig == nil or #tbButtonsConfig == 0 then
 		self.tbActiveCookieTypes = {
 			1,
 			2,
-			3
-		}
-		self.tbActiveButtonNames = {
-			"A",
-			"B",
-			"C"
+			3,
+			4
 		}
 	else
 		for _, nCookieType in ipairs(tbButtonsConfig) do
 			table.insert(self.tbActiveCookieTypes, nCookieType)
-			if nCookieType == 1 then
-				table.insert(self.tbActiveButtonNames, "A")
-			elseif nCookieType == 2 then
-				table.insert(self.tbActiveButtonNames, "B")
-			elseif nCookieType == 3 then
-				table.insert(self.tbActiveButtonNames, "C")
+		end
+	end
+	local bSwitchPlate = false
+	if #nPreCookieType ~= 0 and #nPreCookieType ~= #self.tbActiveCookieTypes then
+		bSwitchPlate = true
+	else
+		for k, v in pairs(nPreCookieType) do
+			if v ~= self.tbActiveCookieTypes[k] then
+				bSwitchPlate = true
+				break
 			end
 		end
 	end
+	if bSwitchPlate then
+		CS.WwiseAudioManager.Instance:PlaySound("mode_cookie2_drawer")
+		self._mapNode.animCookiePlate:Play("CookieBoard_CookiePlate_out", 0, 0)
+		local nAnimLength = NovaAPI.GetAnimClipLength(self._mapNode.animCookiePlate, {
+			"CookieBoard_CookiePlate_out"
+		})
+		self:AddTimer(1, nAnimLength, function()
+			self._mapNode.animCookiePlate:Play("CookieBoard_CookiePlate_in", 0, 0)
+		end, true, true, true)
+	end
 end
 function CookieBoardCtrl:ApplyButtonActivation()
-	local IsButtonActive = function(sButtonName)
-		for _, name in ipairs(self.tbActiveButtonNames) do
-			if name == sButtonName then
+	local IsButtonActive = function(nCookieType)
+		for _, nActiveCookieType in ipairs(self.tbActiveCookieTypes) do
+			if nActiveCookieType == nCookieType then
 				return true
 			end
 		end
 		return false
 	end
-	self._mapNode.btnA.gameObject:SetActive(IsButtonActive("A"))
-	self._mapNode.btnB.gameObject:SetActive(IsButtonActive("B"))
-	self._mapNode.btnC.gameObject:SetActive(IsButtonActive("C"))
+	self._mapNode.btnA.gameObject:SetActive(IsButtonActive(1))
+	self._mapNode.btnB.gameObject:SetActive(IsButtonActive(2))
+	self._mapNode.btnC.gameObject:SetActive(IsButtonActive(3))
+	self._mapNode.btnD.gameObject:SetActive(IsButtonActive(4))
 end
 function CookieBoardCtrl:RoundStart()
 	if nil ~= self.CookieGameBoard then
@@ -257,8 +276,17 @@ function CookieBoardCtrl:RoundStart()
 	if nil ~= self.CookieGameBoard then
 		self.CookieGameBoard:SetActive(true)
 		self.goCookieGridList = self.CookieGameBoard.transform:Find("goCookieGridList")
+		if self.goCookieGridList ~= nil then
+			self.goCookieGridList.gameObject:SetActive(true)
+		end
 		self.trBoardersVertical = self.CookieGameBoard.transform:Find("goBoardersVertical").transform
+		if self.trBoardersVertical ~= nil then
+			self.trBoardersVertical.gameObject:SetActive(true)
+		end
 		self.trBoardersHorizontal = self.CookieGameBoard.transform:Find("goBoardersHorizontal").transform
+		if self.trBoardersHorizontal ~= nil then
+			self.trBoardersHorizontal.gameObject:SetActive(true)
+		end
 	end
 	for i = 1, #self._mapNode.imgDotInner do
 		local imgDot = self._mapNode.imgDotInner[i]
@@ -492,7 +520,7 @@ function CookieBoardCtrl:SelectionForward()
 	self.nCurrGridIndex = self.nCurrGridIndex + 1
 	if self.nCurrGridIndex > #self.tbPath then
 		self.nCompBoxCount = self.nCompBoxCount + 1
-		self:CalculateScore()
+		self:CalculateScore(false)
 		self.nCurrGridIndex = 1
 		self.nCurrGird = {1, 1}
 		self.nextCtrl = nil
@@ -505,7 +533,7 @@ function CookieBoardCtrl:SelectionForward()
 		return
 	end
 	self.nCurrGird = self.tbPath[self.nCurrGridIndex]
-	nTbIndex = (self.nCurrGird[1] - 1) * self.nBoardSize + self.nCurrGird[2]
+	local nTbIndex = (self.nCurrGird[1] - 1) * self.nBoardSize + self.nCurrGird[2]
 	local nextCtrl = self.tbGridCtrl[nTbIndex]
 	if nil ~= nextCtrl then
 		nextCtrl:SetSelect(true)
@@ -529,8 +557,9 @@ function CookieBoardCtrl:NextBox()
 		"CookieBoard_next"
 	})
 	self:AddTimer(1, nAnimLength, function()
-		self:RefreshNextBoards()
 		self:RoundStart()
+		self:RefreshNextBoards()
+		self._mapNode.animRoot:Play("Empty", 0, 0)
 	end, true, true, true)
 	if self.bRhythmMode then
 		local nBeat = self.nBeatInterval or 0
@@ -538,6 +567,7 @@ function CookieBoardCtrl:NextBox()
 			nAnimLength = math.ceil(nAnimLength / nBeat) * nBeat
 		end
 	end
+	CS.WwiseAudioManager.Instance:PlaySound("mode_cookie1_move")
 	self._mapNode.animRoot:Play("CookieBoard_next", 0, 0)
 	if self.timerNextBox ~= nil then
 		self.timerNextBox:Cancel()
@@ -581,8 +611,8 @@ function CookieBoardCtrl:NextBox()
 	end, true, true, true)
 end
 function CookieBoardCtrl:GetSwitchBoxSoundEvent()
-	local nBPM = self.tbFloor[self.nCurrLevelConfigIdx].RhythmlTime
-	if nBPM ~= nil and nBPM <= 0 then
+	local nBPM = self.tbFloor[self.nCurrLevelConfigIdx].RhythmlTime or 0
+	if nBPM <= 0 then
 		return "mode_freeTempo_setState"
 	end
 	local sEvent = "mode_" .. nBPM .. "Tempo_setState"
@@ -596,15 +626,21 @@ function CookieBoardCtrl:GetRhythmSwitchSoundEvent()
 	local sEvent = "mode_cookie_1_pre_" .. tostring(nBPM)
 	return sEvent
 end
+local tbCookiePutinSound = {
+	[3] = "mode_cookie4_putin_sanjiao",
+	[4] = "mode_cookie4_putin_jingzi",
+	[2] = "mode_cookie4_putin_banshou",
+	[1] = "mode_cookie4_putin_gear"
+}
 function CookieBoardCtrl:FillCurrentGrid(nInputCookie)
 	local nTbIndex = (self.nCurrGird[1] - 1) * self.nBoardSize + self.nCurrGird[2]
 	local nCurrShape = self.tbGridCtrl[nTbIndex]:GetGirdShape()
 	self.bCurrNoteClicked = true
 	if nCurrShape == nInputCookie then
+		CS.WwiseAudioManager.Instance:PlaySound(tbCookiePutinSound[nInputCookie])
 		if self.bRhythmMode then
 			self:NoteCheck()
 		else
-			CS.WwiseAudioManager.Instance:PlaySound("mode_cookie1_putin")
 			self:FillSuccess()
 		end
 	else
@@ -614,7 +650,7 @@ function CookieBoardCtrl:FillCurrentGrid(nInputCookie)
 end
 function CookieBoardCtrl:FillSuccess()
 	self.nCompCookieCount = self.nCompCookieCount + 1
-	self:CalculateScore()
+	self:CalculateScore(true)
 	NovaAPI.SetTMPText(self._mapNode.txtCookieCountNumNM, self.nCompCookieCount)
 	NovaAPI.SetTMPText(self._mapNode.txtCookieCountNumNormal, self.nCompCookieCount)
 	NovaAPI.CtrlDotweenAnimation(self._mapNode.txtCookieCountNumNM.gameObject, 2)
@@ -657,13 +693,24 @@ function CookieBoardCtrl:FillFail(objCtrl)
 	else
 		EventManager.Hit(EventId.TemporaryBlockInput, nBlockTime)
 	end
-	self:CalculateScore()
+	self:CalculateScore(false)
 end
 function CookieBoardCtrl:LoseHeart()
 	self.nCurHealth = self.nCurHealth + 1
 	self._mapNode.animHeart[self.nCurHealth]:Play("CookieBoard_Heart_Lose")
 	if self.nCurHealth >= 5 then
-		self:LevelEnd()
+		for k, v in pairs(self._mapNode.animHeart) do
+			local trChild = v.transform:Find("imgHeartFill1")
+			if trChild ~= nil then
+				trChild.gameObject:SetActive(false)
+			end
+		end
+		self:PauseGameCtrl()
+		local wait = function()
+			coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+			self:LevelEnd()
+		end
+		cs_coroutine.start(wait)
 		return
 	end
 end
@@ -690,7 +737,9 @@ function CookieBoardCtrl:GenerateBoard(bFixedPath)
 				end
 			end
 			local nRandomIdx = math.random(1, #tbRandom)
-			while tbRandom[nRandomIdx] == self.nLastPath do
+			local nRetryCount = 0
+			while tbRandom[nRandomIdx] == self.nLastPath and nRetryCount < 10 do
+				nRetryCount = nRetryCount + 1
 				nRandomIdx = math.random(1, #tbRandom)
 			end
 			self.nLastPath = tbRandom[nRandomIdx]
@@ -733,7 +782,9 @@ function CookieBoardCtrl:GenerateBoard(bFixedPath)
 		local nActiveCookieCount = #self.tbActiveCookieTypes
 		local nRandomIndex = math.random(1, nActiveCookieCount)
 		local nCur = self.tbActiveCookieTypes[nRandomIndex]
-		while nCur == tbPrev[1] and tbPrev[1] == tbPrev[2] and 1 < nActiveCookieCount do
+		local nRetryCount = 0
+		while nCur == tbPrev[1] and tbPrev[1] == tbPrev[2] and 1 < nActiveCookieCount and nRetryCount < 10 do
+			nRetryCount = nRetryCount + 1
 			nRandomIndex = math.random(1, nActiveCookieCount)
 			nCur = self.tbActiveCookieTypes[nRandomIndex]
 		end
@@ -746,40 +797,40 @@ end
 function CookieBoardCtrl:ResetEff()
 	self._mapNode.animPerfectEff.transform:SetParent(self._mapNode.goHitEffect.transform, false)
 	self._mapNode.animExcellentEff.transform:SetParent(self._mapNode.goHitEffect.transform, false)
-	self._mapNode.animCriticalPerfectEff.transform:SetParent(self._mapNode.goHitEffect.transform, false)
 	self._mapNode.animMissEff.transform:SetParent(self._mapNode.goHitEffect.transform, false)
 	self._mapNode.animPerfectEff.gameObject:SetActive(false)
 	self._mapNode.animExcellentEff.gameObject:SetActive(false)
-	self._mapNode.animCriticalPerfectEff.gameObject:SetActive(false)
 	self._mapNode.animMissEff.gameObject:SetActive(false)
 end
 function CookieBoardCtrl:SetButtonsActive(bActive)
-	if self.tbActiveButtonNames then
-		for _, sButtonName in ipairs(self.tbActiveButtonNames) do
-			if sButtonName == "A" then
-				self._mapNode.btnA.interactable = bActive
-			elseif sButtonName == "B" then
-				self._mapNode.btnB.interactable = bActive
-			elseif sButtonName == "C" then
-				self._mapNode.btnC.interactable = bActive
-			end
-		end
-	end
+	self._mapNode.btnA.interactable = bActive
+	self._mapNode.btnB.interactable = bActive
+	self._mapNode.btnC.interactable = bActive
+	self._mapNode.btnD.interactable = bActive
 end
-function CookieBoardCtrl:CalculateScore()
+function CookieBoardCtrl:CalculateScore(bPlayAnim)
 	local nScore = (self.nCompBoxCount * 10 + self.nCompCookieCount + (self.nPerfectCount - self.nMissCount) * 3 + (self.nCriticalPerfectCount * self.nCriticalPerfectFactorA + self.nPerfectCount * self.nPerfectFactorA + self.nGoodCount * self.nGoodFactorA)) * (1 + (self.nCriticalPerfectCount * self.nCriticalPerfectFactorB + self.nPerfectCount * self.nPerfectFactorB + self.nGoodCount * self.nGoodFactorB))
 	if nScore < 0 then
 		nScore = 0
 	end
 	self.nScore = math.ceil(nScore)
-	self._mapNode.animScoreCalculator:Play("CookieBoard_ScoreCalculator_up", 0, 0)
+	if bPlayAnim then
+		if self.nHitType == GameEnum.CookieRhythmlResult.Excellent then
+			self._mapNode.animScoreCalculator:Play("CookieBoard_Score_CriticalPerfect", 0, 0)
+		else
+			self._mapNode.animScoreCalculator:Play("CookieBoard_ScoreCalculator_up", 0, 0)
+		end
+	end
+	self.nHitType = GameEnum.CookieRhythmlResult.Miss
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		NovaAPI.SetTMPText(self._mapNode.txtScoreCalculator, self.nScore)
 		local nScorePercentage = self.nScore / (self.nPassScore > 0 and self.nPassScore or 1)
 		if 1 < nScorePercentage then
 			nScorePercentage = 1
-			self._mapNode.animScoreCalculatorFiller:Play("CookieBoard_Bar_Full", 0, 0)
+			if bPlayAnim then
+				self._mapNode.animScoreCalculatorFiller:Play("CookieBoard_Bar_Full", 0, 0)
+			end
 		end
 		local nFillerSize = nScorePercentage * nFillerMaxSize
 		if nFillerSize < nFillerMinSize and 0 < nFillerSize then
@@ -866,6 +917,7 @@ function CookieBoardCtrl:SetEnvironmentBeat(bPlay)
 		self.animBtnA:SetFloat("PlaySpeed", 0)
 		self.animBtnB:SetFloat("PlaySpeed", 0)
 		self.animBtnC:SetFloat("PlaySpeed", 0)
+		self.animBtnD:SetFloat("PlaySpeed", 0)
 		self._mapNode.animTime:SetFloat("PlaySpeed", 0)
 		return
 	end
@@ -876,16 +928,19 @@ function CookieBoardCtrl:SetEnvironmentBeat(bPlay)
 	self.animBtnA:SetFloat("PlaySpeed", nPlaySpeed)
 	self.animBtnB:SetFloat("PlaySpeed", nPlaySpeed)
 	self.animBtnC:SetFloat("PlaySpeed", nPlaySpeed)
+	self.animBtnD:SetFloat("PlaySpeed", nPlaySpeed)
 	self._mapNode.animTime:SetFloat("PlaySpeed", nPlaySpeed)
 end
 function CookieBoardCtrl:NoteCheck()
+	if self.nFixedTimer < self.nBeatInterval - self.nHitThreshold then
+		return
+	end
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
 	local nNextRes = self.timerBeat:GetRemainInterval()
 	local nRes = self.nBeatInterval - nNextRes
 	if math.abs(nNextRes) < math.abs(nRes) then
 		nRes = nNextRes
 	end
-	printLog("判定：当前音符时间差为 " .. nRes .. "\n节拍器时间：" .. self.nBeatsTimer .. "\n时钟时间：" .. self.nFixedTimer)
 	if nRes > self.nHitThreshold or nRes < -self.nHitThreshold then
 		return
 	end
@@ -900,7 +955,6 @@ function CookieBoardCtrl:NoteCheck()
 		self:NoteMiss()
 		self:PlayHitEffect(GameEnum.CookieRhythmlResult.Miss)
 		CS.WwiseAudioManager.Instance:PlaySound("mode_cookie1_wrong")
-		printLog("判定：Miss 没有FC了")
 		return
 	end
 	CS.WwiseAudioManager.Instance:PlaySound("mode_cookie1_test")
@@ -908,7 +962,6 @@ function CookieBoardCtrl:NoteCheck()
 	self:FillSuccess()
 end
 function CookieBoardCtrl:NotePerfect()
-	printLog("判定：Perfect Critical")
 	self.nHitType = GameEnum.CookieRhythmlResult.Perfect
 	self.nPerfectTemp = self.nPerfectTemp + 1
 	self.nPerfectCount = self.nPerfectCount + 1
@@ -917,17 +970,19 @@ function CookieBoardCtrl:NotePerfect()
 	NovaAPI.SetTMPText(self._mapNode.txtAddTime, "+0.3s")
 	self._mapNode.animTime:Play("CookieBoard_AddTime_in", 0, 0)
 	self:RefreshCountDownTimer()
-	if self.nPerfectTemp == 3 then
-		self.nPerfectTemp = 0
+	if self.nPerfectTemp >= 3 then
 		self.nCriticalPerfectCount = self.nCriticalPerfectCount + 1
 		self.nHitType = GameEnum.CookieRhythmlResult.Excellent
-		CS.WwiseAudioManager.Instance:PlaySound("mode_cookie1_perfect_ex")
+		if self.nPerfectTemp == 3 then
+			CS.WwiseAudioManager.Instance:PlaySound("mode_cookie1_perfect_ex_first")
+		elseif self.nPerfectTemp > 3 then
+			CS.WwiseAudioManager.Instance:PlaySound("mode_cookie1_perfect_ex")
+		end
 	else
 		CS.WwiseAudioManager.Instance:PlaySound("mode_cookie1_perfect")
 	end
 end
 function CookieBoardCtrl:NoteGood()
-	printLog("判定：Good 你有一个好")
 	self.nHitType = GameEnum.CookieRhythmlResult.Good
 	self.nGoodCount = self.nGoodCount + 1
 	self.nPerfectTemp = 0
@@ -939,9 +994,10 @@ function CookieBoardCtrl:NoteMiss()
 	self.nMissCount = self.nMissCount + 1
 	self.nPerfectTemp = 0
 	self.nPerfectCombo = 0
-	self:CalculateScore()
+	self:CalculateScore(false)
 	self.bFullCombo = false
 	self.bAllPerfect = false
+	self.nHitType = GameEnum.CookieRhythmlResult.Miss
 	if self.bPipelineMode and self.bRhythmMode then
 		self:LoseHeart()
 	end
@@ -977,14 +1033,7 @@ end
 function CookieBoardCtrl:PlayHitEffect(nHitType)
 	self:ResetEff()
 	local nAnimLength = 0.75
-	if nHitType == GameEnum.CookieRhythmlResult.Excellent then
-		self._mapNode.animCriticalPerfectEff.gameObject:SetActive(true)
-		self._mapNode.animCriticalPerfectEff.transform:SetParent(self.nextCtrl.gameObject.transform, false)
-		nAnimLength = NovaAPI.GetAnimClipLength(self._mapNode.animCriticalPerfectEff, {
-			"CookieBoard_HitEffect_Criticalperfect"
-		})
-		self._mapNode.animCriticalPerfectEff:Play("CookieBoard_HitEffect_Criticalperfect", 0, 0)
-	elseif nHitType == GameEnum.CookieRhythmlResult.Perfect then
+	if nHitType == GameEnum.CookieRhythmlResult.Perfect or nHitType == GameEnum.CookieRhythmlResult.Excellent then
 		NovaAPI.SetTMPText(self._mapNode.txtPerfectCombo, string.format("x%d", self.nPerfectCombo))
 		self._mapNode.txtPerfectCombo.gameObject:SetActive(self.nPerfectCombo >= 2)
 		self._mapNode.animPerfectEff.gameObject:SetActive(true)
@@ -1004,9 +1053,9 @@ function CookieBoardCtrl:PlayHitEffect(nHitType)
 		self._mapNode.animMissEff.gameObject:SetActive(true)
 		self._mapNode.animMissEff.transform:SetParent(self.nextCtrl.gameObject.transform, false)
 		nAnimLength = NovaAPI.GetAnimClipLength(self._mapNode.animMissEff, {
-			"CookieBoard_HitEffect_mistake"
+			"CookieBoard_HitEffect_miss"
 		})
-		self._mapNode.animMissEff:Play("CookieBoard_HitEffect_mistake", 0, 0)
+		self._mapNode.animMissEff:Play("CookieBoard_HitEffect_miss", 0, 0)
 	end
 	if self.timerEff ~= nil then
 		self.timerEff:Cancel()
@@ -1026,10 +1075,42 @@ function CookieBoardCtrl:StartBeatLightLoop(nInterval, endCallback)
 			imgDot.gameObject:SetActive(false)
 		end
 	end
-	local bBeatPlayed = false
-	local sEvent = self:GetRhythmSwitchSoundEvent()
+	for i = 1, #self._mapNode.animLightBg do
+		local currLight = self._mapNode.animLightBg[i]
+		if currLight ~= nil then
+			local goHalo = currLight.gameObject.transform:Find("imgHalo_01")
+			if goHalo ~= nil then
+				goHalo.gameObject:SetActive(false)
+			end
+		end
+	end
 	self.nBeatLightIndex = nil
 	self.nBeatLightCount = 0
+	local nHaloCount = 1
+	local beatHaloLoop = function()
+		local currLight = self._mapNode.animLightBg[nHaloCount]
+		if currLight ~= nil then
+			local goHalo = currLight.gameObject.transform:Find("imgHalo_01")
+			if goHalo ~= nil then
+				goHalo.gameObject:SetActive(true)
+			end
+			local nAnimTime = NovaAPI.GetAnimClipLength(currLight, {
+				"CookieBoard_RhythmStar_Tips"
+			})
+			currLight:SetFloat("PlaySpeed", math.floor(nAnimTime / self.nHitThreshold * 100) / 100)
+			currLight:Play("CookieBoard_RhythmStar_Tips", 0, 0)
+		elseif self.timerBeatHalo ~= nil then
+			self.timerBeatHalo:Cancel()
+			self.timerBeatHalo = nil
+		end
+		nHaloCount = nHaloCount + 1
+	end
+	self:AddTimer(1, nInterval - self.nHitThreshold, function()
+		beatHaloLoop()
+		self.timerBeatHalo = self:AddTimer(0, nInterval, beatHaloLoop, true, true, true)
+	end, true, true, true)
+	local bBeatPlayed = false
+	local sEvent = self:GetRhythmSwitchSoundEvent()
 	self.timerBeatLight = self:AddTimer(0, nInterval, function()
 		self:BeatLightLoop(true)
 		if bBeatPlayed == false then
@@ -1091,7 +1172,7 @@ function CookieBoardCtrl:LevelEnd()
 	self.bGameStarted = false
 	self:SetButtonsActive(false)
 	NovaAPI.SetTMPText(self._mapNode.txtTimer, "00:00")
-	self:CalculateScore()
+	self:CalculateScore(false)
 	self._mapNode.goResult:SetActive(true)
 	self._mapNode.goBlurRes:SetActive(true)
 	local bNewRecord = false
@@ -1109,21 +1190,21 @@ function CookieBoardCtrl:LevelEnd()
 	end
 	self:SetEnvironmentBeat(false)
 	CS.WwiseAudioManager.Instance:PlaySound("mode_cookie1_complete")
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+		self.goScoreBoard.gameObject:SetActive(true)
+		self.goScoreBoard:Init(self.nPackModel, self.nScore, self.nCompCookieCount, self.nCompBoxCount, self.nCriticalPerfectCount, self.nPerfectCount, self.nGoodCount, self.nMissCount, bNewRecord, self.bFullCombo, self.bAllPerfect, self.nActId)
+		self._mapNode.animResult:Play(tbResultAnim[self.nPackModel], 0, 0)
+	end
 	local callback = function()
 		if bNewRecord and self.bRhythmMode and self.bPipelineMode then
 			cookieData:SetNMHighScoreDay()
 		end
-	end
-	EventManager.Hit("Cookie_Game_Complete", self.nLevelId, self.nScore, self.nCompBoxCount, self.nCompCookieCount, self.nGoodCount, self.nPerfectCount, self.nCriticalPerfectCount, self.nMissCount, callback)
-	EventManager.Hit(EventId.TemporaryBlockInput, 2)
-	local wait = function()
-		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		self._mapNode.btnConfirmScore.gameObject:SetActive(true)
 		self._mapNode.btnShortcutConfirmScore.gameObject:SetActive(true)
-		self.goScoreBoard.gameObject:SetActive(true)
-		self.goScoreBoard:Init(self.nPackModel, self.nScore, self.nCompCookieCount, self.nCompBoxCount, self.nCriticalPerfectCount, self.nPerfectCount, self.nGoodCount, self.nMissCount, bNewRecord, self.bFullCombo, self.bAllPerfect)
-		self._mapNode.animResult:Play(tbResultAnim[self.nPackModel], 0, 0)
 	end
+	EventManager.Hit("Cookie_Game_Complete", self.nLevelId, self.nScore, self.nCompBoxCount, self.nCompCookieCount, self.nGoodCount, self.nPerfectCount, self.nCriticalPerfectCount, self.nMissCount, self.nActId, callback)
+	EventManager.Hit(EventId.TemporaryBlockInput, 2)
 	cs_coroutine.start(wait)
 end
 function CookieBoardCtrl:ResumeTrigger()
@@ -1169,9 +1250,18 @@ function CookieBoardCtrl:OnBtn_C()
 	self.animBtnC:Play("CookieBoard_Platebtn_Hit", 0, 0)
 	self:FillCurrentGrid(3)
 end
+function CookieBoardCtrl:OnBtn_D()
+	if self.bPaused or self.bPressed then
+		return
+	end
+	self.bPressed = true
+	self.animBtnD:Play("CookieBoard_Platebtn_Hit", 0, 0)
+	self:FillCurrentGrid(4)
+end
 function CookieBoardCtrl:OnBtn_ConfirmGameOver()
 	local closePanel = function()
-		EventManager.Hit(EventId.ClosePanel, PanelId.CookieBoardPanel)
+		CS.WwiseAudioManager.Instance:PostEvent("mode_cookie_1_stop")
+		EventManager.Hit(EventId.ClosePanel, PanelId.CookieBoardPanel_400010)
 	end
 	local rewardChangeInfo = self.cookieData:GetLevelReward()
 	if rewardChangeInfo ~= nil and #rewardChangeInfo.Props > 0 then
@@ -1193,14 +1283,14 @@ function CookieBoardCtrl:OnBtn_ConfirmGameOver()
 			end
 			if tbRewardData ~= nil and 0 < #tbRewardData then
 				UTILS.OpenReceiveByDisplayItem(tbRewardData or {}, rewardChangeInfo, function()
-					local nRandom = math.random(28, 29)
+					local nRandom = math.random(46, 47)
 					EventManager.Hit(EventId.SetTransition, nRandom, closePanel)
 				end)
 				return
 			end
 		end
 	end
-	local nRandom = math.random(28, 29)
+	local nRandom = math.random(46, 47)
 	EventManager.Hit(EventId.SetTransition, nRandom, closePanel)
 end
 function CookieBoardCtrl:OnEvent_Time()
@@ -1217,7 +1307,6 @@ function CookieBoardCtrl:OnEvent_Time()
 		local nNoteMissTime = self.nBeatsTimer + self.nHitThreshold
 		if nNoteMissTime < self.nFixedTimer and self.bMissSwitch then
 			if not self.bCurrNoteClicked then
-				printLog("判定：Miss，无操作导致的")
 				self:NoteMiss()
 				self:PlayHitEffect(GameEnum.CookieRhythmlResult.Miss)
 			end
@@ -1307,7 +1396,9 @@ function CookieBoardCtrl:OnBtn_Back()
 	end
 	self:PauseGameCtrl()
 	local confirmCallback = function()
-		self:OnBtn_ConfirmGameOver()
+		self.bAllPerfect = false
+		self.bFullCombo = false
+		self:LevelEnd()
 	end
 	local cancelCallback = function()
 		self:ResumeGameCtrl()
@@ -1363,7 +1454,6 @@ function CookieBoardCtrl:Awake()
 	self.nLastPath = 0
 	self.timerRound = nil
 	self.timerPause = nil
-	self.bPasued = true
 	self.nCurrGird = {1, 1}
 	self.tbGridCtrl = {}
 	self.nOverridePathId = 0
@@ -1411,6 +1501,7 @@ function CookieBoardCtrl:OnEnable()
 	self._mapNode.btnBackReal.gameObject:SetActive(not self.bGameStarted)
 	self._mapNode.btnPauseReal.gameObject:SetActive(self.bGameStarted)
 	self._mapNode.goRhythmDots:SetActive(false)
+	self._mapNode.imgHeartMissEff:SetActive(self.bRhythmMode and self.bPipelineMode)
 	self._mapNode.imgScoreNMBg:SetActive(self.bRhythmMode and self.bPipelineMode)
 	self._mapNode.imgScoreNormalBg:SetActive(not self.bRhythmMode or not self.bPipelineMode)
 	self._mapNode.imgScoreCalculatorFiller.sizeDelta = Vector2(0, self._mapNode.imgScoreCalculatorFiller.sizeDelta.y)
@@ -1421,17 +1512,20 @@ function CookieBoardCtrl:OnEnable()
 	self.animBtnA = self._mapNode.btnA.transform:Find("AnimRoot"):GetComponent("Animator")
 	self.animBtnB = self._mapNode.btnB.transform:Find("AnimRoot"):GetComponent("Animator")
 	self.animBtnC = self._mapNode.btnC.transform:Find("AnimRoot"):GetComponent("Animator")
+	self.animBtnD = self._mapNode.btnD.transform:Find("AnimRoot"):GetComponent("Animator")
 	self:SetEnvironmentBeat(false)
 	self:ResetEff()
 	NovaAPI.SetCanvasSortingName(self._mapNode.animPerfectEff:GetComponent(typeof(CS.UnityEngine.Canvas)), AllEnum.SortingLayerName.UI)
 	NovaAPI.SetCanvasSortingName(self._mapNode.animExcellentEff:GetComponent(typeof(CS.UnityEngine.Canvas)), AllEnum.SortingLayerName.UI)
-	NovaAPI.SetCanvasSortingName(self._mapNode.animCriticalPerfectEff:GetComponent(typeof(CS.UnityEngine.Canvas)), AllEnum.SortingLayerName.UI)
 	NovaAPI.SetCanvasSortingName(self._mapNode.animMissEff:GetComponent(typeof(CS.UnityEngine.Canvas)), AllEnum.SortingLayerName.UI)
 	local nSortingOrder = self._panel._nIndex * 100 + 99
 	NovaAPI.SetCanvasSortingOrder(self._mapNode.animPerfectEff:GetComponent(typeof(CS.UnityEngine.Canvas)), nSortingOrder)
 	NovaAPI.SetCanvasSortingOrder(self._mapNode.animExcellentEff:GetComponent(typeof(CS.UnityEngine.Canvas)), nSortingOrder)
-	NovaAPI.SetCanvasSortingOrder(self._mapNode.animCriticalPerfectEff:GetComponent(typeof(CS.UnityEngine.Canvas)), nSortingOrder)
 	NovaAPI.SetCanvasSortingOrder(self._mapNode.animMissEff:GetComponent(typeof(CS.UnityEngine.Canvas)), nSortingOrder)
+	self.nCurrLevelConfigIdx = 1
+	self.tbActiveCookieTypes = {}
+	self:UpdateActiveButtons()
+	self:ApplyButtonActivation()
 	self.nBoardSize = self.tbFloor[1].Size
 	self.CookieGameBoard = self.nBoardSize == 3 and self._mapNode.CookieGameBoard3x3 or self._mapNode.CookieGameBoard4x4
 	if nil ~= self.CookieGameBoard then
@@ -1462,6 +1556,18 @@ function CookieBoardCtrl:OnDisable()
 	end
 	if self.timerNextBox ~= nil then
 		self.timerNextBox:Cancel()
+	end
+	if self.timerBeat ~= nil then
+		self.timerBeat:Cancel()
+	end
+	if self.timerNextBox ~= nil then
+		self.timerNextBox:Cancel()
+	end
+	if self.timerBeatLight ~= nil then
+		self.timerBeatLight:Cancel()
+	end
+	if self.timerBeatHalo ~= nil then
+		self.timerBeatHalo:Cancel()
 	end
 end
 return CookieBoardCtrl

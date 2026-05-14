@@ -13190,7 +13190,7 @@ return {
 			"",
 			false,
 			"",
-			"She is the woman who overthrows Darcia and the Senate to claim United Harvest Philae. I expect nothing less.",
+			"She is the woman who overthrew Darcia and the Senate to claim United Harvest Philae. I expect nothing less.",
 			""
 		}
 	},

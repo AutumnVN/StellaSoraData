@@ -2,6 +2,8 @@ local ThrowGiftsLevelCtrl = class("ThrowGiftsLevelCtrl", BaseCtrl)
 local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
 local ResTypeAny = GameResourceLoader.ResType.Any
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local nMarkWidth = 36
+local nMarkHeight = 56
 ThrowGiftsLevelCtrl._mapNodeConfig = {
 	Scene = {sComponentName = "Transform"},
 	rtScene = {
@@ -50,11 +52,14 @@ ThrowGiftsLevelCtrl._mapNodeConfig = {
 	imgInfinite = {},
 	penguinRoot = {},
 	rtTemplateGuideTrack = {},
+	goBeginningMark = {},
+	rtBeginningMark = {
+		sComponentName = "RectTransform"
+	},
 	rtDebug = {}
 }
 ThrowGiftsLevelCtrl._mapEventConfig = {}
 ThrowGiftsLevelCtrl._mapRedDotConfig = {}
-local rootPath = "UI_Activity/_400005/GoalPerfab/Goal%s.prefab"
 function ThrowGiftsLevelCtrl:Awake()
 	self.bDebugMode = false
 	self.curGiftPenguin = nil
@@ -71,6 +76,7 @@ function ThrowGiftsLevelCtrl:Awake()
 	self.curPenguinType = 1
 	self.nNextPenguinType = 1
 	self.curPenguinSpecialType = 0
+	self.defaultPenguinSpecialType = 0
 	self.nLevelTime = -1
 	self.nLevelScore = 0
 	self.nTotalThrowGiftCount = 0
@@ -115,12 +121,22 @@ end
 function ThrowGiftsLevelCtrl:FadeOut()
 end
 function ThrowGiftsLevelCtrl:OnEnable()
+	self.rootPath = self._panel._rootPath
 	EventManager.Hit("ThrowGiftSetSpeacialFunc", self)
 	self._mapNode.BeginningPenguinRoot.gameObject:SetActive(false)
 	self._mapNode.penguinRoot:SetActive(false)
 	self._mapNode.rtBottleAnim:Play("rtBottle_Empty")
+	self._mapNode.goBeginningMark:SetActive(false)
 end
 function ThrowGiftsLevelCtrl:OnDisable()
+	if self.beginningTweener ~= nil then
+		self.beginningTweener:Kill()
+		self.beginningTweener = nil
+	end
+	if self.mapUpdateTimer ~= nil then
+		self.mapUpdateTimer:Cancel()
+		self.mapUpdateTimer = nil
+	end
 	self:ClearTrackLine()
 	if self.tbGuideTrackCtrl ~= nil and #self.tbGuideTrackCtrl ~= 0 then
 		self:ClearGuideLine()
@@ -160,11 +176,12 @@ function ThrowGiftsLevelCtrl:SetLevel(parent, nLevelId, mapActData)
 	if mapFloorCfgData == nil then
 		return
 	end
+	self.defaultPenguinSpecialType = self.mapLevelCfgData.DefaultPenguinItemId
 	self.maxVelocity = mapFloorCfgData.SpeedMax
 	self.minVelovity = mapFloorCfgData.SpeedMin
 	self.nAngleMin = mapFloorCfgData.AngelMin
 	self.nAG = mapFloorCfgData.Gravity
-	if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind then
+	if self.mapLevelCfgData.FlightPath == true then
 		self._mapNode.rtBlindLevelTrack.gameObject:SetActive(true)
 	end
 	self.mapFloorCfgData = mapFloorCfgData
@@ -194,8 +211,8 @@ function ThrowGiftsLevelCtrl:SetLevel(parent, nLevelId, mapActData)
 		}
 	end
 	self._mapNode.rtDebug:SetActive(self.bDebugMode)
-	local nChildCount = self._mapNode.rtObstacleRoot.childCount
-	for i = 0, nChildCount - 1 do
+	local nStaticChildCount = self._mapNode.rtObstacleRoot.childCount
+	for i = 0, nStaticChildCount - 1 do
 		local goObstacle = self._mapNode.rtObstacleRoot:GetChild(i)
 		if goObstacle ~= nil then
 			local rtObstacle = goObstacle:GetComponent("RectTransform")
@@ -206,8 +223,8 @@ function ThrowGiftsLevelCtrl:SetLevel(parent, nLevelId, mapActData)
 			end
 		end
 	end
-	local nChildCount = self._mapNode.rtSpecialObstacleRoot.childCount
-	for i = 0, nChildCount - 1 do
+	local nSpecialChildCount = self._mapNode.rtSpecialObstacleRoot.childCount
+	for i = 0, nSpecialChildCount - 1 do
 		local goObstacle = self._mapNode.rtSpecialObstacleRoot:GetChild(i)
 		if goObstacle ~= nil then
 			local rtObstacle = goObstacle:GetComponent("RectTransform")
@@ -333,12 +350,14 @@ function ThrowGiftsLevelCtrl:FlyOver(nDelayTime, tbHitGoalId)
 				self._mapNode.rtBottleAnim:Play("rtBottle_in")
 				self._mapNode.BeginningPenguinRoot:Play("penguinRoot_jump")
 				WwiseAudioMgr:PostEvent("Mode_Present_shylock_jump")
-				self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.curPenguinType, self.curPenguinSpecialType)
-				self:SetPenguinType(self._mapNode.rtBottle:Find("AnimRoot/penguinRoot"), self.curPenguinType, self.curPenguinSpecialType)
+				local nSpecialType = self.curPenguinSpecialType == 0 and self.defaultPenguinSpecialType or self.curPenguinSpecialType
+				self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.curPenguinType, nSpecialType)
+				self:SetPenguinType(self._mapNode.rtBottle:Find("AnimRoot/penguinRoot"), self.curPenguinType, nSpecialType)
 				self:SetBeginningAngle(0, 0)
 				local wait = function()
 					self._mapNode.imgBeginningHint:SetActive(true)
-					self:SetPenguinType(self._mapNode.rtPenguinBeginningHint, self.curPenguinType, self.curPenguinSpecialType)
+					local nCurSpecialType = self.curPenguinSpecialType == 0 and self.defaultPenguinSpecialType or self.curPenguinSpecialType
+					self:SetPenguinType(self._mapNode.rtPenguinBeginningHint, self.curPenguinType, nCurSpecialType)
 					if self.nTotalPenguinCount ~= 0 then
 						self._mapNode.BeginningPenguinRoot.gameObject:SetActive(true)
 						self._mapNode.BeginningPenguinRoot:Play("penguinRoot_in")
@@ -353,14 +372,14 @@ function ThrowGiftsLevelCtrl:FlyOver(nDelayTime, tbHitGoalId)
 						else
 							self.nNextPenguinType = self.mapFloorCfgData.InitialGiftSort[self.curPenguinIdx]
 						end
-						self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.nNextPenguinType, 0)
+						self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.nNextPenguinType, self.defaultPenguinSpecialType)
 					else
 						self._mapNode.BeginningPenguinRoot.gameObject:SetActive(false)
 					end
 				end
 				local waitAnimEnd = function()
 					self.nLevelType = 1
-					if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind then
+					if self.mapLevelCfgData.SwitchArrow == true then
 						self.parent:SetViewBtn(1)
 					end
 				end
@@ -505,12 +524,16 @@ function ThrowGiftsLevelCtrl:ActiveItem(nItemId)
 			self.parent:AddTimeAnim()
 			WwiseAudioMgr:PostEvent("Mode_Present_prop_overtime")
 		end
-	elseif 106 <= nItemId and nItemId <= 108 then
+	elseif 106 <= nItemId and nItemId <= 110 then
 		self.curPenguinSpecialType = nItemId
 		self._mapNode.rtPenguinBeginningHintAnim:Play("imgBeginningHint_in")
-		if not self.bFlying and self.nLevelType == 1 or self.nLevelType == 3 then
+		if not self.bFlying and (self.nLevelType == 1 or self.nLevelType == 3) then
 			if nItemId == 108 then
 				WwiseAudioMgr:PostEvent("Mode_Present_prop_anteena")
+			elseif nItemId == 109 then
+				WwiseAudioMgr:PostEvent("Mode_Present_prop_spring")
+			elseif nItemId == 110 then
+				WwiseAudioMgr:PostEvent("Mode_Present_prop_magic")
 			else
 				WwiseAudioMgr:PostEvent("Mode_Present_prop_gear")
 			end
@@ -518,15 +541,26 @@ function ThrowGiftsLevelCtrl:ActiveItem(nItemId)
 			self:SetPenguinType(self._mapNode.rtPenguinBeginningHint, self.curPenguinType, nItemId)
 			self._mapNode.rtBottleAnim:Play("rtBottle_switch")
 			self._mapNode.rtPenguinBeginningHintAnim:Play("imgBeginningHint_in")
+		else
+			self:SetPenguinType(self._mapNode.rtPenguinBeginningHint, self.curPenguinType, nItemId)
+			self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.curPenguinType, nItemId)
+			self:SetPenguinType(self._mapNode.rtBottle:Find("AnimRoot/penguinRoot"), self.curPenguinType, nItemId)
 		end
 	else
 		self.mapCurActiveState[nItemId] = 16
 		self.parent:SetFx(self.mapCurActiveState)
 		if nItemId == 105 then
 			WwiseAudioMgr:PostEvent("Mode_Present_prop_power")
-			self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.nNextPenguinType, 0)
-			self:SetPenguinType(self._mapNode.rtBottle:Find("AnimRoot/penguinRoot"), self.curPenguinType, self.curPenguinSpecialType)
-			self:SetPenguinType(self._mapNode.rtPenguinBeginningHint, self.curPenguinType, self.curPenguinSpecialType)
+			local nSpecialType = self.curPenguinSpecialType == 0 and self.defaultPenguinSpecialType or self.curPenguinSpecialType
+			if not self.bFlying and (self.nLevelType == 1 or self.nLevelType == 3) then
+				self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.nNextPenguinType, self.defaultPenguinSpecialType)
+				self:SetPenguinType(self._mapNode.rtBottle:Find("AnimRoot/penguinRoot"), self.curPenguinType, nSpecialType)
+				self:SetPenguinType(self._mapNode.rtPenguinBeginningHint, self.curPenguinType, nSpecialType)
+			else
+				self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.nNextPenguinType, nSpecialType)
+				self:SetPenguinType(self._mapNode.rtBottle:Find("AnimRoot/penguinRoot"), self.curPenguinType, nSpecialType)
+				self:SetPenguinType(self._mapNode.rtPenguinBeginningHint, self.curPenguinType, nSpecialType)
+			end
 		elseif nItemId == 102 then
 			self._mapNode.imgInfinite:SetActive(true)
 			WwiseAudioMgr:PostEvent("Mode_Present_prop_infinite")
@@ -568,8 +602,9 @@ function ThrowGiftsLevelCtrl:LevelStart()
 			self._mapNode.rtBottleAnim:Play("rtBottle_in")
 			self._mapNode.BeginningPenguinRoot:Play("penguinRoot_jump")
 			WwiseAudioMgr:PostEvent("Mode_Present_shylock_jump")
-			self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.curPenguinType, self.curPenguinSpecialType)
-			self:SetPenguinType(self._mapNode.rtBottle:Find("AnimRoot/penguinRoot"), self.curPenguinType, self.curPenguinSpecialType)
+			local nSpecialType = self.curPenguinSpecialType == 0 and self.defaultPenguinSpecialType or self.curPenguinSpecialType
+			self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.curPenguinType, nSpecialType)
+			self:SetPenguinType(self._mapNode.rtBottle:Find("AnimRoot/penguinRoot"), self.curPenguinType, nSpecialType)
 			self:SetBeginningAngle(0, 0)
 			local wait = function()
 				if self.nTotalPenguinCount ~= 0 then
@@ -586,14 +621,14 @@ function ThrowGiftsLevelCtrl:LevelStart()
 					else
 						self.nNextPenguinType = self.mapFloorCfgData.InitialGiftSort[self.curPenguinIdx]
 					end
-					self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.nNextPenguinType, 0)
+					self:SetPenguinType(self._mapNode.BeginningPenguinRoot.transform, self.nNextPenguinType, nSpecialType)
 				else
 					self._mapNode.BeginningPenguinRoot.gameObject:SetActive(false)
 				end
 				self._mapNode.imgBeginningHint:SetActive(true)
-				self:SetPenguinType(self._mapNode.rtPenguinBeginningHint, self.curPenguinType, self.curPenguinSpecialType)
+				self:SetPenguinType(self._mapNode.rtPenguinBeginningHint, self.curPenguinType, nSpecialType)
 				self.nLevelType = 1
-				if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind then
+				if self.mapLevelCfgData.SwitchArrow == true then
 					self.parent:SetViewBtn(1)
 				end
 			end
@@ -614,7 +649,7 @@ function ThrowGiftsLevelCtrl:LevelStart()
 			GuideCallback()
 		end
 	end
-	if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind then
+	if self.mapLevelCfgData.SwitchArrow == true then
 		self.nLevelType = 3
 		local maxScenePosX = -math.abs((1 - self.scenePivot[1]) * self.sceneSize[1])
 		self.beginningTweener = DOTween.To(function()
@@ -661,7 +696,7 @@ function ThrowGiftsLevelCtrl:ChangeView(bShow)
 			local rtScenePos = self._mapNode.rtScene.anchoredPosition
 			self._mapNode.rtScene.anchoredPosition = Vector2(posX, rtScenePos.y)
 		end, 3, 0.5):OnComplete(function()
-			if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind then
+			if self.mapLevelCfgData.SwitchArrow == true then
 				self.parent:SetViewBtn(1)
 			end
 			self.nLevelType = 1
@@ -946,8 +981,9 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 					nAfterY = nYMin
 					mapConfig.VyDir = -mapConfig.VyDir
 				end
-				mapAciveGoal.OffsetX = nAfterX - rtSpawnPoint.anchoredPosition.x
-				mapAciveGoal.OffsetY = nAfterY - rtSpawnPoint.anchoredPosition.y
+				mapAciveGoal.OffsetX = nAfterX - mapAciveGoal.initialPosX
+				mapAciveGoal.OffsetY = nAfterY - mapAciveGoal.initialPosY
+				mapAciveGoal.rtGoal.anchoredPosition = Vector2(nAfterX, nAfterY)
 			end
 		end
 	end
@@ -957,20 +993,29 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 	if self.curGiftPenguin == nil then
 		return
 	end
-	local nCurPosX, nCurPosY
+	local nCurPosX, nCurPosY, tbCachedGoalId
 	if self.curGiftPenguin.nSpecialType == 106 then
 		nCurPosX, nCurPosY = self:NavigationPenguinUpdate(nDeltaTime)
 	elseif self.curGiftPenguin.nSpecialType == 107 then
 		nCurPosX, nCurPosY = self:HelmetPenguinUpdate(nDeltaTime)
 	elseif self.curGiftPenguin.nSpecialType == 108 then
 		nCurPosX, nCurPosY = self:AntennaPenguinUpdate(nDeltaTime)
+	elseif self.curGiftPenguin.nSpecialType == 109 then
+		nCurPosX, nCurPosY = self:BouncePenguinUpdate(nDeltaTime)
 	elseif self.curGiftPenguin.nSpecialType == 110 then
-		nCurPosX, nCurPosY = self:SplitPenguinUpdate(nDeltaTime)
+		nCurPosX, nCurPosY, tbCachedGoalId = self:SplitPenguinUpdate(nDeltaTime)
 	else
 		nCurPosX, nCurPosY = self:NormalPenguinUpdate(nDeltaTime)
 	end
 	if not self.bFlying then
-		self:FlyOver(0.5)
+		local tbHitGoalId = {}
+		if tbCachedGoalId ~= nil and 0 < #tbCachedGoalId then
+			for _, tbResult in ipairs(tbCachedGoalId) do
+				self:HitGoal(tbResult[2], tbResult[1])
+				table.insert(tbHitGoalId, tbResult[1])
+			end
+		end
+		self:FlyOver(0.5, tbHitGoalId)
 		return
 	end
 	local tbHitGoalId = {}
@@ -986,6 +1031,12 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 					table.insert(tbHitGoalId, tbResult[1])
 				end
 			end
+		end
+	elseif self.curGiftPenguin.nSpecialType == 109 then
+		local hitGoalId, hitPos = self:BouncePenguinGoalCheck(nCurPosX, nCurPosY)
+		if 0 < hitGoalId then
+			self:HitGoal(hitPos, hitGoalId)
+			table.insert(tbHitGoalId, hitGoalId)
 		end
 	else
 		local hitGoalId, hitPos = self:NormalGoalCheck(nCurPosX, nCurPosY)
@@ -1013,7 +1064,7 @@ end
 function ThrowGiftsLevelCtrl:NormalGoalCheck(nCurPosX, nCurPosY)
 	local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
 	local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
-	if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind and self.nFlyingTime - self._mapNode.rtBlindLevelTrack.nPrevTimer >= self.nLinePointInterval * 2 then
+	if self.mapLevelCfgData.FlightPath == true and self.nFlyingTime - self._mapNode.rtBlindLevelTrack.nPrevTimer >= self.nLinePointInterval * 2 then
 		self._mapNode.rtBlindLevelTrack.nPrevTimer = self.nFlyingTime
 		self._mapNode.rtBlindLevelTrack:AddDot(Vector2(nCurPosX, nCurPosY))
 	end
@@ -1052,7 +1103,6 @@ function ThrowGiftsLevelCtrl:NormalGoalCheck(nCurPosX, nCurPosY)
 	return hitGoalId, hitPos
 end
 function ThrowGiftsLevelCtrl:SplitPenguinGoalCheck()
-	local bHasSubPenguin = false
 	local tbCurHit = {}
 	for _, mapSubPenguin in ipairs(self.curGiftPenguin.tbSubPenguin) do
 		if mapSubPenguin.bFlying then
@@ -1070,7 +1120,7 @@ function ThrowGiftsLevelCtrl:SplitPenguinGoalCheck()
 					hitGoalId = nId
 					mapSubPenguin.bFlying = false
 					table.insert(tbCurHit, {hitGoalId, hitPos})
-					table.insert(self.curGiftPenguin.tbCacheSubPenguinGoal, {hitPos, hitGoalId})
+					table.insert(self.curGiftPenguin.tbCacheSubPenguinGoal, {hitGoalId, hitPos})
 					break
 				end
 				local bHitObstacle = self:CheckCollision(mapSubPenguin.tbBounds, mapAciveGoal.tbBoundsObstacle, nSumX, nSumY, mapAciveGoal.OffsetX, mapAciveGoal.OffsetY)
@@ -1079,14 +1129,102 @@ function ThrowGiftsLevelCtrl:SplitPenguinGoalCheck()
 					mapSubPenguin.bFlying = false
 					break
 				end
-				if mapSubPenguin.bFlying then
-					bHasSubPenguin = true
-				end
 			end
 		end
 	end
+	if self.mapLevelCfgData.FlightPath == true and self.nFlyingTime - self._mapNode.rtBlindLevelTrack.nPrevTimer >= self.nLinePointInterval * 2 then
+		self._mapNode.rtBlindLevelTrack.nPrevTimer = self.nFlyingTime
+		for _, mapSubPenguin in ipairs(self.curGiftPenguin.tbSubPenguin) do
+			if mapSubPenguin.bFlying then
+				self._mapNode.rtBlindLevelTrack:AddDot(Vector2(mapSubPenguin.curPosX, mapSubPenguin.curPosY))
+			end
+		end
+	end
+	local bHasSubPenguin = false
+	for _, mapSubPenguin in ipairs(self.curGiftPenguin.tbSubPenguin) do
+		if mapSubPenguin.bFlying then
+			bHasSubPenguin = true
+		end
+	end
 	self.bFlying = bHasSubPenguin
+	if not self.bFlying then
+		self.curGiftPenguin = nil
+	end
 	return tbCurHit
+end
+function ThrowGiftsLevelCtrl:BouncePenguinGoalCheck(nCurPosX, nCurPosY)
+	local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
+	local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
+	if self.mapLevelCfgData.FlightPath == true and self.nFlyingTime - self._mapNode.rtBlindLevelTrack.nPrevTimer >= self.nLinePointInterval * 2 then
+		self._mapNode.rtBlindLevelTrack.nPrevTimer = self.nFlyingTime
+		self._mapNode.rtBlindLevelTrack:AddDot(Vector2(nCurPosX, nCurPosY))
+	end
+	local hitGoalId = 0
+	local hitPos
+	local curVy = self.curGiftPenguin.nVelocityY
+	for nId, mapAciveGoal in pairs(self.activeGoal) do
+		local GoalParentPos = mapAciveGoal.rtGoal.anchoredPosition
+		local bHitGoal, bestNX, bestNY, minDepth = self:CheckCollision(self.curGiftPenguin.tbBounds, mapAciveGoal.tbBoundsHitArea, nSumX, nSumY, mapAciveGoal.OffsetX, mapAciveGoal.OffsetY)
+		if bHitGoal then
+			if 0 < curVy then
+				if self.curGiftPenguin.nHitCount < 3 then
+					WwiseAudioMgr:PostEvent("Mode_Present_spring")
+					self.curGiftPenguin.nHitCount = self.curGiftPenguin.nHitCount + 1
+					nCurPosX = nCurPosX + bestNX * minDepth
+					nCurPosY = nCurPosY + bestNY * minDepth
+					nSumX = nSumX + bestNX * minDepth
+					nSumY = nSumY + bestNY * minDepth
+					self.curGiftPenguin.curPosX = nCurPosX
+					self.curGiftPenguin.curPosY = nCurPosY
+					self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
+					self.curGiftPenguin.mapStartPos = self.curGiftPenguin.goGiftPenguin.anchoredPosition
+					local vxAfter, vyAfter = self.ReflectVelocity(self.curGiftPenguin.nVelocityX, curVy, bestNX, bestNY, 1)
+					self.curGiftPenguin.nHitTime = self.nFlyingTime
+					self.curGiftPenguin.nVelocityX = vxAfter
+					self.curGiftPenguin.nVelocityY = vyAfter
+					self.curGiftPenguin.tbBounds = self:GetLocalSpaceRect(self.curGiftPenguin.goGiftPenguin, self.curGiftPenguin.goGiftPenguin.parent)
+					break
+				else
+					self:DestroyPenguin()
+					self.bFlying = false
+					break
+				end
+			else
+				print("hit goal！")
+				hitPos = Vector2(nCurPosX, nCurPosY)
+				destroy(self.curGiftPenguin.goGiftPenguin.gameObject)
+				hitGoalId = nId
+				self.curGiftPenguin = nil
+				self.bFlying = false
+				break
+			end
+		end
+		local bHitObstacle, bestNXObstacle, bestNYObstacle, minDepthObstacle = self:CheckCollision(self.curGiftPenguin.tbBounds, mapAciveGoal.tbBoundsObstacle, nSumX, nSumY, mapAciveGoal.OffsetX, mapAciveGoal.OffsetY)
+		if bHitObstacle then
+			if self.curGiftPenguin.nHitCount < 3 then
+				self.curGiftPenguin.nHitCount = self.curGiftPenguin.nHitCount + 1
+				nCurPosX = nCurPosX + bestNXObstacle * minDepthObstacle
+				nCurPosY = nCurPosY + bestNYObstacle * minDepthObstacle
+				nSumX = nSumX + bestNXObstacle * minDepthObstacle
+				nSumY = nSumY + bestNYObstacle * minDepthObstacle
+				self.curGiftPenguin.curPosX = nCurPosX
+				self.curGiftPenguin.curPosY = nCurPosY
+				self.curGiftPenguin.goGiftPenguin.anchoredPosition = Vector2(nCurPosX, nCurPosY)
+				self.curGiftPenguin.mapStartPos = self.curGiftPenguin.goGiftPenguin.anchoredPosition
+				local vxAfter, vyAfter = self.ReflectVelocity(self.curGiftPenguin.nVelocityX, curVy, bestNXObstacle, bestNYObstacle, 1)
+				self.curGiftPenguin.nHitTime = self.nFlyingTime
+				self.curGiftPenguin.nVelocityX = vxAfter
+				self.curGiftPenguin.nVelocityY = vyAfter
+				self.curGiftPenguin.tbBounds = self:GetLocalSpaceRect(self.curGiftPenguin.goGiftPenguin, self.curGiftPenguin.goGiftPenguin.parent)
+				break
+			else
+				self:DestroyPenguin()
+				self.bFlying = false
+				break
+			end
+		end
+	end
+	return hitGoalId, hitPos
 end
 function ThrowGiftsLevelCtrl:NormalPenguinUpdate(nDeltaTime)
 	self.nFlyingTime = self.nFlyingTime + nDeltaTime
@@ -1165,6 +1303,7 @@ function ThrowGiftsLevelCtrl:BouncePenguinUpdate(nDeltaTime)
 		local bHit, bestNX, bestNY, minDepth = self:CheckCollision(self.curGiftPenguin.tbBounds, tbBounds, nSumX, nSumY, 0, 0)
 		if bHit then
 			if self.curGiftPenguin.nHitCount < 3 then
+				WwiseAudioMgr:PostEvent("Mode_Present_spring")
 				self.curGiftPenguin.nHitCount = self.curGiftPenguin.nHitCount + 1
 				nCurPosX = nCurPosX + bestNX * minDepth
 				nCurPosY = nCurPosY + bestNY * minDepth
@@ -1349,7 +1488,8 @@ function ThrowGiftsLevelCtrl:NavigationPenguinUpdate(nDeltaTime)
 			nCurPosY = self.curGiftPenguin.curPosY + nDeltaTime * self.curGiftPenguin.nVelocityY - 0.5 * self.nAG * nDeltaTime * nDeltaTime
 		else
 			nCurPosY = self.curGiftPenguin.curPosY
-			nCurPosX = self.curGiftPenguin.curPosX + nDeltaTime * self.curGiftPenguin.nVelocityX
+			local nVelocityX = self.curGiftPenguin.nVelocityX < 600 and 600 or self.curGiftPenguin.nVelocityX
+			nCurPosX = self.curGiftPenguin.curPosX + nDeltaTime * nVelocityX
 			self.curGiftPenguin.nVelocityY = 0
 		end
 		local checkGoal = checkGetGoal(nCurPosX, nCurPosY)
@@ -1428,6 +1568,7 @@ function ThrowGiftsLevelCtrl:NavigationPenguinUpdate(nDeltaTime)
 end
 function ThrowGiftsLevelCtrl:SplitPenguinUpdate(nDeltaTime)
 	local nCurPosX, nCurPosY = 0, 0
+	local tbCachedGoalId = {}
 	local Split = function(mapPenguin, nAngle, nVelocity, initPos)
 		mapPenguin.bSplit = true
 		local goPenguin = instantiate(self._mapNode.templateBullet, self._mapNode.rtPenguinRoot)
@@ -1454,9 +1595,6 @@ function ThrowGiftsLevelCtrl:SplitPenguinUpdate(nDeltaTime)
 		imgFx.gameObject:SetActive(self.mapCurActiveState[105] ~= nil)
 		rtPenguin.anchoredPosition = initPos
 		goPenguin:SetActive(true)
-		if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind then
-			self._mapNode.rtBlindLevelTrack:Reset()
-		end
 		local mapGiftPenguin = {
 			goGiftPenguin = rtPenguin,
 			nState = 0,
@@ -1476,9 +1614,9 @@ function ThrowGiftsLevelCtrl:SplitPenguinUpdate(nDeltaTime)
 	end
 	if self.curGiftPenguin.bSplit then
 		local bHasSubPenguin = false
+		self.nFlyingTime = self.nFlyingTime + nDeltaTime
 		for _, mapSubPenguin in ipairs(self.curGiftPenguin.tbSubPenguin) do
 			if mapSubPenguin.bFlying then
-				self.nFlyingTime = self.nFlyingTime + nDeltaTime
 				nCurPosX = mapSubPenguin.curPosX + nDeltaTime * mapSubPenguin.nVelocityX
 				nCurPosY = mapSubPenguin.curPosY + nDeltaTime * mapSubPenguin.nVelocityY - 0.5 * self.nAG * nDeltaTime * nDeltaTime
 				mapSubPenguin.nVelocityY = mapSubPenguin.nVelocityY - self.nAG * nDeltaTime
@@ -1537,6 +1675,7 @@ function ThrowGiftsLevelCtrl:SplitPenguinUpdate(nDeltaTime)
 		end
 		self.bFlying = bHasSubPenguin
 		if not self.bFlying then
+			tbCachedGoalId = clone(self.curGiftPenguin.tbCacheSubPenguinGoal)
 			self.curGiftPenguin = nil
 		end
 	else
@@ -1563,7 +1702,7 @@ function ThrowGiftsLevelCtrl:SplitPenguinUpdate(nDeltaTime)
 			end
 		end
 		if not self.bFlying then
-			return
+			return 0, 0, tbCachedGoalId
 		end
 		if nCurPosX > 0.5 * self.sceneSize[1] or nCurPosX < -0.5 * self.sceneSize[1] or nCurPosY > 0.5 * self.sceneSize[2] or nCurPosY < -0.5 * self.sceneSize[2] then
 			print("hit border")
@@ -1571,7 +1710,7 @@ function ThrowGiftsLevelCtrl:SplitPenguinUpdate(nDeltaTime)
 			self.bFlying = false
 		end
 		if not self.bFlying then
-			return
+			return 0, 0, {}
 		end
 		local tbHittedObs = {}
 		for _, nSpecialId in ipairs(self.tbExObstacleCur) do
@@ -1604,16 +1743,20 @@ function ThrowGiftsLevelCtrl:SplitPenguinUpdate(nDeltaTime)
 				local mapSubPenguin = Split(self.curGiftPenguin, nFlyAngle + 20 * i, nCurVelocity, initPos)
 				table.insert(self.curGiftPenguin.tbSubPenguin, mapSubPenguin)
 			end
-			self:DestroySubPenguin(self.curGiftPenguin)
+			WwiseAudioMgr:PostEvent("Mode_Present_split")
+			self:DestroySubPenguin(self.curGiftPenguin, true)
 		end
 	end
-	return nCurPosX, nCurPosY
+	return nCurPosX, nCurPosY, tbCachedGoalId
 end
 function ThrowGiftsLevelCtrl:SetBeginningAngle(nAngle, nVelocity)
 	local fixedAngle = nAngle == 0 and 0 or nAngle - 90
 	self._mapNode.rtBottle.localEulerAngles = Vector3(0, 0, fixedAngle)
+	self._mapNode.goBeginningMark.transform.localEulerAngles = Vector3(0, 0, fixedAngle)
 	local sumScale = nVelocity / self.maxVelocity * 0.2
+	local sumHeight = nVelocity / self.maxVelocity * 3
 	self._mapNode.rtBottle.localScale = Vector3(1 + sumScale, 1 - sumScale, 1)
+	self._mapNode.rtBeginningMark.sizeDelta = Vector2(nMarkWidth, nMarkHeight * (1 + sumHeight))
 end
 function ThrowGiftsLevelCtrl:SetBeginningLine(nAngle, nVelocity)
 	if self.curPenguinSpecialType == 106 then
@@ -1698,6 +1841,7 @@ function ThrowGiftsLevelCtrl:HitSpecialObstacle(nSpecialId)
 		elseif mapOriginConfig.mapConfig.Type == GameEnum.SpecialObstacleType.WindForce then
 			nType = 1
 			Param.WindForce = mapOriginConfig.mapConfig.Param[1] * 10
+			Param.nAngle = mapOriginConfig.gameObject.transform.localEulerAngles.z
 			return true, nType, Param, false
 		elseif mapOriginConfig.mapConfig.Type == GameEnum.SpecialObstacleType.Portal then
 			nType = 2
@@ -1712,8 +1856,13 @@ function ThrowGiftsLevelCtrl:SpecialObstacleFunc(mapPenguin, nDeltaTime, nType, 
 		return
 	end
 	if nType == 1 then
-		mapPenguin.nVelocityX = mapPenguin.nVelocityX - Param.WindForce * nDeltaTime
+		local nAcceleration = Param.WindForce * nDeltaTime
+		local nAccelerationX = nAcceleration * math.cos(math.rad(Param.nAngle))
+		local nAccelerationY = nAcceleration * math.sin(math.rad(Param.nAngle))
+		mapPenguin.nVelocityX = mapPenguin.nVelocityX + nAccelerationX
+		mapPenguin.nVelocityY = mapPenguin.nVelocityY + nAccelerationY
 	elseif nType == 2 then
+		WwiseAudioMgr:PostEvent("Mode_Present_portals")
 		local nExitId = Param.Exit
 		local mapExitConfig
 		for nInstanceId, mapObstacle in pairs(self.mapExObstacleOrigin) do
@@ -1753,6 +1902,8 @@ function ThrowGiftsLevelCtrl:SetPenguinType(rtPenguinRoot, nType, nSpecialType)
 	local rtGoggles = rtPenguinRoot:Find("penguin_goggles")
 	local rtAntenna = rtPenguinRoot:Find("penguin_antenna")
 	local rtHelmet = rtPenguinRoot:Find("penguin_helmet")
+	local rtSplit = rtPenguinRoot:Find("Penguin_split")
+	local rtSpring = rtPenguinRoot:Find("Penguin_spring")
 	local imgFx = rtPenguinRoot:Find("imgFx")
 	rtRed.gameObject:SetActive(nType == 2)
 	rtYellow.gameObject:SetActive(nType == 3)
@@ -1760,9 +1911,16 @@ function ThrowGiftsLevelCtrl:SetPenguinType(rtPenguinRoot, nType, nSpecialType)
 	rtGoggles.gameObject:SetActive(nSpecialType == 106)
 	rtAntenna.gameObject:SetActive(nSpecialType == 108)
 	rtHelmet.gameObject:SetActive(nSpecialType == 107)
+	if rtSplit ~= nil then
+		rtSplit.gameObject:SetActive(nSpecialType == 110)
+		rtSpring.gameObject:SetActive(nSpecialType == 109)
+	end
 	imgFx.gameObject:SetActive(self.mapCurActiveState[105] ~= nil)
 end
 function ThrowGiftsLevelCtrl:CreateGoal(nSpawnPointId, mapConfig)
+	if self.activeGoal[nSpawnPointId] ~= nil then
+		return
+	end
 	local pointOriginPosX = mapConfig.rtPoint.anchoredPosition.x
 	local pointOriginPosY = mapConfig.rtPoint.anchoredPosition.y
 	local randomX = math.random(-mapConfig.mapConfig.SpawnRangeTypeX, mapConfig.mapConfig.SpawnRangeTypeX)
@@ -1777,20 +1935,10 @@ function ThrowGiftsLevelCtrl:CreateGoal(nSpawnPointId, mapConfig)
 		nType = mapConfig.mapConfig.GoalType[mapConfig.nCurGoalIdx]
 		mapConfig.nCurGoalIdx = mapConfig.nCurGoalIdx + 1
 	end
-	local sPath = string.format(rootPath, nType)
+	local sPath = string.format(self.rootPath, nType)
 	local goGoalPerfab = GameResourceLoader.LoadAsset(ResTypeAny, Settings.AB_ROOT_PATH .. sPath, typeof(Object))
 	if goGoalPerfab ~= nil then
 		local goGoal = instantiate(goGoalPerfab, self._mapNode.rtGoalRoot)
-		if self.activeGoal[nSpawnPointId] ~= nil then
-			destroy(self.activeGoal[nSpawnPointId].rtGoal.gameObject)
-			self.activeGoal[nSpawnPointId].rtGoal = nil
-			self.activeGoal[nSpawnPointId].rtHitArea = nil
-			self.activeGoal[nSpawnPointId].rtObstacle = nil
-			self.activeGoal[nSpawnPointId].nType = 0
-			self.activeGoal[nSpawnPointId].TMPScore = nil
-			self.activeGoal[nSpawnPointId].OffsetX = 0
-			self.activeGoal[nSpawnPointId].OffsetY = 0
-		end
 		self.activeGoal[nSpawnPointId] = {}
 		local rtGoal = goGoal:GetComponent("RectTransform")
 		rtGoal.anchoredPosition = Vector2(pointOriginPosX + randomX, pointOriginPosY + randomY)
@@ -1813,6 +1961,8 @@ function ThrowGiftsLevelCtrl:CreateGoal(nSpawnPointId, mapConfig)
 		self.activeGoal[nSpawnPointId].tbBoundsObstacle = self:GetLocalSpaceRect(rtCompObstacle, rtGoal.parent)
 		self.activeGoal[nSpawnPointId].OffsetX = 0
 		self.activeGoal[nSpawnPointId].OffsetY = 0
+		self.activeGoal[nSpawnPointId].initialPosX = pointOriginPosX + randomX
+		self.activeGoal[nSpawnPointId].initialPosY = pointOriginPosY + randomY
 		local TMPNode
 		local rtTMPScore = rtGoal:Find("AnimRoot/TMPLevelScoreAdd")
 		if rtTMPScore ~= nil then
@@ -1833,6 +1983,8 @@ function ThrowGiftsLevelCtrl:CreateThrowPenguin(nAngle, nVelocity, initPos, nTyp
 	local rtGoggles = goImgRoot:Find("penguin_goggles")
 	local rtAntenna = goImgRoot:Find("penguin_antenna")
 	local rtHelmet = goImgRoot:Find("penguin_helmet")
+	local rtSplit = goImgRoot:Find("Penguin_split")
+	local rtSpring = goImgRoot:Find("Penguin_spring")
 	local rtImgRoot
 	if goImgRoot ~= nil then
 		rtImgRoot = goImgRoot:GetComponent("RectTransform")
@@ -1843,10 +1995,12 @@ function ThrowGiftsLevelCtrl:CreateThrowPenguin(nAngle, nVelocity, initPos, nTyp
 	rtGoggles.gameObject:SetActive(nSpecialType == 106)
 	rtAntenna.gameObject:SetActive(nSpecialType == 108)
 	rtHelmet.gameObject:SetActive(nSpecialType == 107)
+	rtSplit.gameObject:SetActive(nSpecialType == 110)
+	rtSpring.gameObject:SetActive(nSpecialType == 109)
 	imgFx.gameObject:SetActive(self.mapCurActiveState[105] ~= nil)
 	rtPenguin.anchoredPosition = initPos
 	goPenguin:SetActive(true)
-	if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind then
+	if self.mapLevelCfgData.FlightPath == true then
 		self._mapNode.rtBlindLevelTrack:Reset()
 	end
 	local mapGiftPenguin = {
@@ -1983,8 +2137,10 @@ function ThrowGiftsLevelCtrl:DestroyPenguin()
 	imgSmoke.gameObject:SetActive(true)
 	self:AddTimer(1, 0.5, wait, true, true, true)
 end
-function ThrowGiftsLevelCtrl:DestroySubPenguin(mapSubPenguin)
-	WwiseAudioMgr:PostEvent("Mode_Present_out")
+function ThrowGiftsLevelCtrl:DestroySubPenguin(mapSubPenguin, bMainPenguin)
+	if bMainPenguin ~= true then
+		WwiseAudioMgr:PostEvent("Mode_Present_out")
+	end
 	local tempPenguin = mapSubPenguin.goGiftPenguin.gameObject.transform
 	local wait = function()
 		destroy(tempPenguin.gameObject)
@@ -2035,6 +2191,7 @@ function ThrowGiftsLevelCtrl:OnDrag_Beginning(mDrag)
 			nVelocity = self.minVelovity
 		end
 		self.nCurVelocity = nVelocity
+		self._mapNode.goBeginningMark:SetActive(true)
 		self:SetBeginningAngle(nAngle, nVelocity)
 		self:SetBeginningLine(nAngle, nVelocity)
 		WwiseAudioMgr:PostEvent("Mode_Present_pre_lp")
@@ -2074,11 +2231,13 @@ function ThrowGiftsLevelCtrl:OnDrag_Beginning(mDrag)
 			end
 		end
 	elseif mDrag.DragEventType == AllEnum.UIDragType.DragEnd then
+		WwiseAudioMgr:PostEvent("Mode_Present_pre_lp_stop")
+		self._mapNode.goBeginningMark:SetActive(false)
 		if self.curDragBeginPos == nil then
 			return
 		end
 		if self.nCurVelocity == 0 then
-			if self.mapLevelCfgData.Difficulty == GameEnum.ThrowGiftDifficulty.Blind then
+			if self.mapLevelCfgData.SwitchArrow == true then
 				self.parent:SetViewBtn(1)
 			end
 			self.curDragBeginPos = nil
@@ -2095,13 +2254,13 @@ function ThrowGiftsLevelCtrl:OnDrag_Beginning(mDrag)
 		self.nCurAngle = 0
 		self.nCurVelocity = 0
 		self._mapNode.rtBottleAnim:Play("rtBottle_out")
-		WwiseAudioMgr:PostEvent("Mode_Present_pre_lp_stop")
 		WwiseAudioMgr:PostEvent("Mode_Present_fire")
 		local wait = function()
 			local worldPos = self._mapNode.rtBeginningPos:TransformPoint(Vector3.zero)
 			local sumPos = self._mapNode.rtBeginning:InverseTransformPoint(worldPos)
 			local beginningPos = self._mapNode.rtBeginning.anchoredPosition
-			local mapGiftPenguin = self:CreateThrowPenguin(nStartAngle, nStartVelocity, Vector2(beginningPos.x + sumPos.x, beginningPos.y + sumPos.y), self.curPenguinType, self.curPenguinSpecialType)
+			local nSpecialType = self.curPenguinSpecialType == 0 and self.defaultPenguinSpecialType or self.curPenguinSpecialType
+			local mapGiftPenguin = self:CreateThrowPenguin(nStartAngle, nStartVelocity, Vector2(beginningPos.x + sumPos.x, beginningPos.y + sumPos.y), self.curPenguinType, nSpecialType)
 			self.curPenguinSpecialType = 0
 			self.curGiftPenguin = mapGiftPenguin
 			if 0 < self.nTotalPenguinCount and self.mapCurActiveState[102] == nil then

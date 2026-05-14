@@ -1,6 +1,5 @@
 local BattleResultCtrl = class("BattleResultCtrl", BaseCtrl)
 local WwiseManger = CS.WwiseAudioManager.Instance
-local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 BattleResultCtrl._mapNodeConfig = {
 	imgBlurredBg = {},
 	goComplete = {sComponentName = "GameObject"},
@@ -70,6 +69,11 @@ BattleResultCtrl._mapNodeConfig = {
 	}
 }
 BattleResultCtrl._mapEventConfig = {}
+local resultType = {
+	None = 0,
+	Victory = 1,
+	Defeat = 2
+}
 function BattleResultCtrl:Awake()
 	EventManager.Hit(EventId.AvgBubbleShutDown)
 	NovaAPI.SetComponentEnableByName(self.gameObject, "Canvas", false)
@@ -78,13 +82,11 @@ function BattleResultCtrl:Awake()
 end
 function BattleResultCtrl:OnEnable()
 	local tbParam = self:GetPanelParam()
-	local nResultState = 0
-	if #tbParam == 2 and tbParam[1] == false then
-		nResultState = 3
-	elseif tbParam[1] then
-		nResultState = 1
-	elseif #tbParam == 3 and tbParam[1] == false then
-		nResultState = 2
+	local nResultState = resultType.None
+	if tbParam[1] then
+		nResultState = resultType.Victory
+	else
+		nResultState = resultType.Defeat
 	end
 	local nStar = tbParam[2]
 	local GenerRewardItems = tbParam[3]
@@ -129,9 +131,9 @@ function BattleResultCtrl:OnEnable()
 	if PlayerData.nCurGameType == AllEnum.WorldMapNodeType.Mainline then
 		nCurTeam = PlayerData.Mainline.nCurTeamIndex
 	end
-	local tbTeamMemberId, nCaptain
+	local tbTeamMemberId
 	if tbChar == nil then
-		nCaptain, tbTeamMemberId = PlayerData.Team:GetTeamData(nCurTeam)
+		_, tbTeamMemberId = PlayerData.Team:GetTeamData(nCurTeam)
 	else
 		tbTeamMemberId = tbChar
 	end
@@ -144,17 +146,13 @@ function BattleResultCtrl:OnEnable()
 	if #tbRoleId == 0 then
 		table.insert(tbRoleId, 112)
 	end
-	if bPureAvg then
-		self._mapNode.trActor2D_PNG.gameObject:SetActive(false)
-	else
-	end
 	WwiseManger:PostEvent("ui_loading_combatSFX_mute", nil, false)
 	WwiseManger:PostEvent("char_common_all_pause")
 	WwiseManger:PostEvent("mon_common_all_pause")
 	WwiseManger:SetState("level", "None")
 	WwiseManger:SetState("combat", "None")
 	local nAnimTime
-	if nResultState == 1 then
+	if nResultState == resultType.Victory then
 		WwiseManger:PlaySound("ui_roguelike_victory")
 		WwiseManger:SetState("system", "victory")
 		self._mapNode.goRoot.gameObject:SetActive(true)
@@ -187,11 +185,17 @@ function BattleResultCtrl:OnEnable()
 	nAnimTime = nAnimTime + 1.5
 	self:AddTimer(1, nAnimTime, "PlayAnim", true, true, true)
 	EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
-	PlayerData.Voice:PlayBattleResultVoice(tbRoleId, nResultState == 1)
+	PlayerData.Voice:PlayBattleResultVoice(tbRoleId, nResultState == resultType.Victory)
 	self.bProcessingClose = false
 end
 function BattleResultCtrl:OnDisable()
 	PlayerData.Voice:StopCharVoice()
+	if self.closeSequence then
+		self.closeSequence:Kill()
+	end
+	if self.bAddLevelEndEvent then
+		EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, self.levelEndCallback)
+	end
 end
 function BattleResultCtrl:PlayAnim()
 	PlayerData.SideBanner:TryOpenSideBanner()
@@ -262,23 +266,26 @@ function BattleResultCtrl:ClosePanel()
 		NovaAPI.SetCanvasGroupAlpha(self._mapNode.Mask, 0)
 		self._mapNode.Mask.gameObject:SetActive(true)
 		EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
-		local sequence = DOTween.Sequence()
-		sequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
-		sequence:AppendCallback(function()
+		self.closeSequence = DOTween.Sequence()
+		self.closeSequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
+		self.closeSequence:AppendCallback(function()
 			if self.bSuccess then
-				NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 				self._mapNode.imgBlurredBg:SetActive(false)
+				NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 			else
-				local function levelEndCallback()
-					EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
-					NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
+				function self.levelEndCallback()
+					self.bAddLevelEndEvent = false
+					EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, self.levelEndCallback)
 					self._mapNode.imgBlurredBg:SetActive(false)
+					NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 				end
-				EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
+				self.bAddLevelEndEvent = true
+				EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, self.levelEndCallback)
 				CS.AdventureModuleHelper.LevelStateChanged(true, 0, true)
 			end
+			self.closeSequence = nil
 		end)
-		sequence:SetUpdate(true)
+		self.closeSequence:SetUpdate(true)
 	end
 end
 function BattleResultCtrl:OnBtnClick_Close(btn)

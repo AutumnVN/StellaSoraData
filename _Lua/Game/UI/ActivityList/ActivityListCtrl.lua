@@ -49,7 +49,7 @@ function ActivityListCtrl:InitActivityList(nCurActId)
 		self:UnbindCtrlByNode(objCtrl)
 		self.tbGridCtrl[nInstanceId] = nil
 	end
-	for k, v in pairs(tbActList) do
+	for k, v in ipairs(tbActList) do
 		if not v.actCfg.HideFromActivityList then
 			table.insert(self.tbActList, {
 				nType = AllEnum.ActivityMainType.Activity,
@@ -57,7 +57,7 @@ function ActivityListCtrl:InitActivityList(nCurActId)
 			})
 		end
 	end
-	for k, v in pairs(tbActGroupList) do
+	for k, v in ipairs(tbActGroupList) do
 		table.insert(self.tbActList, {
 			nType = AllEnum.ActivityMainType.ActivityGroup,
 			actData = v
@@ -234,7 +234,13 @@ function ActivityListCtrl:AddCookieActivityCtrl(actData)
 	local actCtrl = self.tbActCtrlObj[actData:GetActId()]
 	if nil == actCtrl then
 		local mapActCfg = actData:GetCookieControlCfg()
+		if mapActCfg == nil then
+			return
+		end
 		local sFolder = sActTypePath[GameEnum.activityType.Cookie]
+		if sFolder == nil then
+			return
+		end
 		local sPrefabPath = string.format(sEntranceFolder_old, sFolder, mapActCfg.UIAssets)
 		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.rtContent)
 		local sCtrlPath = string.format("Game.UI.Activity.%s.%s", sFolder, mapActCfg.CtrlName)
@@ -345,10 +351,6 @@ function ActivityListCtrl:AddBdConvertActivityCtrl(actData)
 	local actCtrl = self.tbActCtrlObj[actData:GetActId()]
 	if nil == actCtrl then
 		local BdConvertActCfg = actData:GetActConfig()
-		local sFolder = "_" .. actData:GetActId()
-		if sFolder == nil then
-			return
-		end
 		local sPrefabPath = string.format(sEntranceFolder, BdConvertActCfg.UIAssets)
 		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.rtContent)
 		local sCtrlPath = string.format("Game.UI.Activity.%s.%s", "BdConvert", BdConvertActCfg.CtrlName)

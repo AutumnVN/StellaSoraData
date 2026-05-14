@@ -142,6 +142,9 @@ function BattlePassCtrl:OnEnable()
 	NovaAPI.SetImageColor(self._mapNode.imgProgressBarFillHighLight, Color(1, 1, 1, 0))
 	self._mapNode.panelRoot.gameObject:SetActive(false)
 	local callback = function(mapData)
+		if self.gameObject == nil then
+			return
+		end
 		self.mapBattlePassInfo = mapData
 		self._mapNode.panelRoot.gameObject:SetActive(true)
 		local bHasComplete, nQuestIdx = self:Refresh()
@@ -203,7 +206,7 @@ function BattlePassCtrl:Refresh()
 	local mapBattlePassCfgData = ConfigTable.GetData("BattlePass", self.mapBattlePassInfo.nSeasonId)
 	if mapBattlePassCfgData == nil then
 		printError("BattlePassCfgData missing:" .. self.mapBattlePassInfo.nSeasonId)
-		return
+		return false, 0
 	end
 	local sTimeStr = PlayerData.BattlePass:GetRefreshTime()
 	NovaAPI.SetTMPText(self._mapNode.TMPSeasonTImeTitle, orderedFormat(ConfigTable.GetUIText("BattlePass_RemainTimeTitle") or "", sTimeStr))
@@ -211,7 +214,7 @@ function BattlePassCtrl:Refresh()
 		local nPackageId = mapBattlePassCfgData.OutfitPackageShowItem
 		local mapItemCfgData = ConfigTable.GetData_Item(nPackageId)
 		if not mapItemCfgData then
-			return
+			return false, 0
 		end
 		local mapItemUseCfg = decodeJson(mapItemCfgData.UseArgs)
 		for sTid, nCount in pairs(mapItemUseCfg) do
@@ -382,7 +385,7 @@ function BattlePassCtrl:OnEvent_BattlePassQuestReceive()
 		nLevel = beforeLevel,
 		nExp = beforeExp,
 		nMaxLevel = -1,
-		nMaxExp = 0
+		nMaxExp = 1
 	}
 	if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) ~= nil then
 		mapBefore.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
@@ -548,9 +551,12 @@ function BattlePassCtrl:OnEvent_BattlePassBuyLevel()
 		nLevel = beforeLevel,
 		nExp = beforeExp,
 		nMaxLevel = -1,
-		nMaxExp = 0
+		nMaxExp = 1
 	}
 	local callback = function(mapData)
+		if not self or not self.gameObject then
+			return
+		end
 		self.mapBattlePassInfo = mapData
 		local afterLevel = self.mapBattlePassInfo.nLevel
 		local afterExp = self.mapBattlePassInfo.nExp
@@ -558,10 +564,11 @@ function BattlePassCtrl:OnEvent_BattlePassBuyLevel()
 			nLevel = afterLevel,
 			nExp = afterExp,
 			nMaxLevel = -1,
-			nMaxExp = 0
+			nMaxExp = 1
 		}
 		if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) ~= nil then
 			mapAfter.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
+			mapBefore.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
 		else
 			mapAfter.nExp = 1
 			mapAfter.nMaxExp = 1

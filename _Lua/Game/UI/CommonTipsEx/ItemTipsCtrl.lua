@@ -245,18 +245,23 @@ function ItemTipsCtrl:OnEnable()
 		self._mapNode.srDesc.sizeDelta = Vector2(self._mapNode.srDesc.sizeDelta.x, nContentHeight)
 		local titleTra = self._mapNode.TMPItemTitle:GetComponent("RectTransform")
 		local nTitleHeight = titleHeight
+		local nDescOffset = 0
 		if titleTra.sizeDelta.y < 75 then
-			local itemCountTra = self._mapNode.TMPItemCount:GetComponent("RectTransform")
-			itemCountTra.anchoredPosition = Vector2(itemCountTra.anchoredPosition.x, itemCountTra.anchoredPosition.y + MoveUpHeight)
-			local exIdTra = self._mapNode.exId:GetComponent("RectTransform")
-			exIdTra.anchoredPosition = Vector2(exIdTra.anchoredPosition.x, exIdTra.anchoredPosition.y + MoveUpHeight)
-			if self.mapData.bShowDepot and not mapItemCfgData.DisHaving then
-				self._mapNode.srDesc.anchoredPosition = Vector2(self._mapNode.srDesc.anchoredPosition.x, self._mapNode.srDesc.anchoredPosition.y + MoveUpHeight)
-				nTitleHeight = nTitleHeight - MoveUpHeight
-			else
-				self._mapNode.srDesc.anchoredPosition = Vector2(self._mapNode.srDesc.anchoredPosition.x, self._mapNode.srDesc.anchoredPosition.y + MoveUpHeight * 2)
-				nTitleHeight = nTitleHeight - MoveUpHeight * 2
-			end
+			nTitleHeight = titleHeight
+		else
+			nTitleHeight = titleHeight * 1.25
+			nDescOffset = MoveUpHeight
+		end
+		local itemCountTra = self._mapNode.TMPItemCount:GetComponent("RectTransform")
+		itemCountTra.anchoredPosition = Vector2(itemCountTra.anchoredPosition.x, itemCountTra.anchoredPosition.y + MoveUpHeight - nDescOffset)
+		local exIdTra = self._mapNode.exId:GetComponent("RectTransform")
+		exIdTra.anchoredPosition = Vector2(exIdTra.anchoredPosition.x, exIdTra.anchoredPosition.y + MoveUpHeight)
+		if self.mapData.bShowDepot and not mapItemCfgData.DisHaving then
+			self._mapNode.srDesc.anchoredPosition = Vector2(self._mapNode.srDesc.anchoredPosition.x, self._mapNode.srDesc.anchoredPosition.y + MoveUpHeight - nDescOffset)
+			nTitleHeight = nTitleHeight - MoveUpHeight
+		else
+			self._mapNode.srDesc.anchoredPosition = Vector2(self._mapNode.srDesc.anchoredPosition.x, self._mapNode.srDesc.anchoredPosition.y + MoveUpHeight * 2 - nDescOffset)
+			nTitleHeight = nTitleHeight - MoveUpHeight * 2
 		end
 		self._mapNode.imgTipsBg.sizeDelta = Vector2(self._mapNode.imgTipsBg.sizeDelta.x, nContentHeight + nTitleHeight)
 		self:SetTipsPosition(self.rtTarget, self._mapNode.rtContent, self._mapNode.safeAreaRoot)

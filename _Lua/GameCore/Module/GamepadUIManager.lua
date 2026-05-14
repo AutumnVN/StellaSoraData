@@ -10,7 +10,7 @@ local mapMouseConfig = {}
 local bEnableInput = false
 local bBlockUI = false
 local bFirstInputEnable = false
-local SetGamepadIcon = function(img, sAction)
+local SetGamepadIcon = function(img, sAction, sIconType)
 	local sIcon
 	if nCurUIType == AllEnum.GamepadUIType.PS then
 		sIcon = ConfigTable.GetField("GamepadAction", sAction, "PlayStationIcon")
@@ -24,7 +24,11 @@ local SetGamepadIcon = function(img, sAction)
 		return
 	end
 	img.gameObject:SetActive(true)
-	sIcon = sRootPath .. sIcon .. ".png"
+	if sIconType == nil then
+		sIconType = "Light"
+	end
+	local sSuffix = AllEnum.GamepadIconSuffix[sIconType]
+	sIcon = sRootPath .. sIcon .. sSuffix .. ".png"
 	NovaAPI.SetImageSprite(img, sIcon)
 	NovaAPI.SetImageNativeSize(img)
 end
@@ -61,7 +65,7 @@ local RefreshCurTypeUINode = function(v)
 				if nCurUIType ~= AllEnum.GamepadUIType.Other then
 					local icon = General:Find("imgAction")
 					if icon then
-						SetGamepadIcon(icon:GetComponent("Image"), v.sAction)
+						SetGamepadIcon(icon:GetComponent("Image"), v.sAction, v.sActionIconType)
 					end
 				end
 			elseif not General and Xbox and PS and Keyboard then
@@ -78,7 +82,7 @@ local RefreshCurTypeUINode = function(v)
 					icon = Keyboard:Find("imgAction")
 				end
 				if icon then
-					SetGamepadIcon(icon:GetComponent("Image"), v.sAction)
+					SetGamepadIcon(icon:GetComponent("Image"), v.sAction, v.sActionIconType)
 				end
 			end
 		end
@@ -92,7 +96,7 @@ local RefreshCurTypeUINode = function(v)
 			if icon then
 				icon.gameObject:SetActive(nCurUIType ~= AllEnum.GamepadUIType.Other)
 				if nCurUIType ~= AllEnum.GamepadUIType.Other then
-					SetGamepadIcon(icon:GetComponent("Image"), v.sAction)
+					SetGamepadIcon(icon:GetComponent("Image"), v.sAction, v.sActionIconType)
 				end
 			end
 		end

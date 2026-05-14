@@ -76,7 +76,7 @@ function StarTowerGrowthPreviewWindowCtrl:RefreshEffectDetail()
 		if tbNodes ~= nil then
 			for k, v in pairs(tbNodes) do
 				local mapNodeData = ConfigTable.GetData("StarTowerGrowthNode", v.nId)
-				if mapNodeData ~= nil and v.bActive and mapNodeData.Clientlvl <= self.curSelectDiff then
+				if mapNodeData ~= nil and v.bActive and mapNodeData.Clientlvl <= self.curSelectDiff and mapNodeData.EffectClient ~= nil and mapNodeData.Priority ~= nil then
 					if self.tbCurNodes[mapNodeData.EffectClient] == nil then
 						self.tbCurNodes[mapNodeData.EffectClient] = mapNodeData
 					elseif mapNodeData.Priority > self.tbCurNodes[mapNodeData.EffectClient].Priority then

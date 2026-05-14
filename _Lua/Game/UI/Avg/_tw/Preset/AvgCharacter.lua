@@ -344,7 +344,7 @@ return {
 	},
 	{
 		id = "avg2_943",
-		name = "***",
+		name = "禁斷麗容",
 		name_bg_color = "#0ABEC5",
 		ver = "1.10.0"
 	},
@@ -1098,7 +1098,7 @@ return {
 	},
 	{
 		id = "avg3_214",
-		name = "***",
+		name = "星輝之眼研究員（女）",
 		name_bg_color = "#0ABEC5",
 		ver = "1.10.0"
 	},

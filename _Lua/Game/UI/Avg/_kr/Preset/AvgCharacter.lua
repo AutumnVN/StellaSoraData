@@ -344,7 +344,7 @@ return {
 	},
 	{
 		id = "avg2_943",
-		name = "***",
+		name = "미의 거장",
 		name_bg_color = "#0ABEC5",
 		ver = "1.10.0"
 	},
@@ -1098,7 +1098,7 @@ return {
 	},
 	{
 		id = "avg3_214",
-		name = "***",
+		name = "성휘회 연구원(여)",
 		name_bg_color = "#0ABEC5",
 		ver = "1.10.0"
 	},

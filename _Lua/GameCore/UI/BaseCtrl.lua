@@ -887,7 +887,8 @@ function BaseCtrl:GetGamepadUINode()
 						table.insert(tbNode, {
 							mapNode = mapNode,
 							sComponentName = sComponentName,
-							sAction = mapConfig.sAction
+							sAction = mapConfig.sAction,
+							sActionIconType = mapConfig.sActionIconType
 						})
 					end
 				end
@@ -897,7 +898,8 @@ function BaseCtrl:GetGamepadUINode()
 					table.insert(tbNode, {
 						mapNode = mapNode,
 						sComponentName = sComponentName,
-						sAction = mapConfig.sAction
+						sAction = mapConfig.sAction,
+						sActionIconType = mapConfig.sActionIconType
 					})
 				end
 			end

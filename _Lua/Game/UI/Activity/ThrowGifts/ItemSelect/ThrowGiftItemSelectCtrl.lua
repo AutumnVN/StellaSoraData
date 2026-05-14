@@ -27,6 +27,7 @@ end
 function ThrowGiftItemSelectCtrl:FadeOut()
 end
 function ThrowGiftItemSelectCtrl:OnEnable()
+	self.animator = self.gameObject:GetComponent("Animator")
 	self.bSelected = false
 	self.curIdx = 0
 	self.tbOriginPos = {}
@@ -48,10 +49,9 @@ end
 function ThrowGiftItemSelectCtrl:OnRelease()
 end
 function ThrowGiftItemSelectCtrl:Refresh(tbItem)
+	self.animator:Play("rtItemSelect_in")
 	self._mapNode.btnItemSelectCtrl[1]:Refresh(tbItem[1])
 	self._mapNode.btnItemSelectCtrl[2]:Refresh(tbItem[2])
-	self._mapNode.btnItemSelectCtrl[1]:SetSelect(false)
-	self._mapNode.btnItemSelectCtrl[2]:SetSelect(false)
 	self._mapNode.btnItemSelectCtrl[1].gameObject.transform.position = self.tbOriginPos[1]
 	self._mapNode.btnItemSelectCtrl[2].gameObject.transform.position = self.tbOriginPos[2]
 	self._mapNode.btnItemSelectCtrl[1].gameObject.transform.localEulerAngles = Vector3(0, 0, 0)
@@ -82,9 +82,9 @@ function ThrowGiftItemSelectCtrl:ResetSelect(tbUI)
 			local nSelect = 1
 			GamepadUIManager.ClearSelectedUI()
 			GamepadUIManager.SetSelectedUI(self._mapNode.btnItemSelect[nSelect].gameObject)
-			if GamepadUIManager.GetCurUIType() == AllEnum.GamepadUIType.Mouse then
-				self:OnBtnClick_Item(self._mapNode.btnItemSelect[nSelect].gameObject, nSelect)
-			end
+			self.curIdx = nSelect
+			self._mapNode.btnItemSelectCtrl[nSelect]:SetSelect(true)
+			self._mapNode.btnItemSelectCtrl[nSelect == 2 and 1 or 2]:SetDefault()
 		end
 	end, true, true, true)
 end
@@ -114,12 +114,16 @@ function ThrowGiftItemSelectCtrl:OnEvent_ThrowGiftItemSelectConfirmClick()
 		return
 	end
 	self.bSelected = true
-	self._mapNode.btnItemSelectCtrl[self.curIdx]:PlaySelectAnim()
 	table.insert(self.tbResultIdx, self.curIdx)
 	if self.nCurItemsIdx < #self.tbItems then
+		self._mapNode.btnItemSelectCtrl[1]:SetDefault()
+		self._mapNode.btnItemSelectCtrl[2]:SetDefault()
 		self.nCurItemsIdx = self.nCurItemsIdx + 1
+		self.curIdx = 0
 		self:Refresh(self.tbItems[self.nCurItemsIdx])
+		self.bSelected = false
 	else
+		self._mapNode.btnItemSelectCtrl[self.curIdx]:PlaySelectAnim()
 		WwiseAudioMgr:PostEvent("Mode_Present_intensify_ok")
 		local endPos = self._mapNode.rtPos[self.curPosIdx].transform.position
 		local beginPos = self._mapNode.btnItemSelectCtrl[self.curIdx].gameObject.transform.position
@@ -140,6 +144,9 @@ function ThrowGiftItemSelectCtrl:OnEvent_ThrowGiftItemSelectConfirmClick()
 				self._mapNode.btnItemSelectCtrl[self.curIdx].gameObject.transform.localEulerAngles = Vector3(0, 0, angleZ)
 				self._mapNode.btnItemSelectCtrl[self.curIdx].gameObject.transform.position = Vector3(x, y, z)
 				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+				if self == nil or self.gameObject == nil or not self.gameObject then
+					return
+				end
 			end
 			if self.callback ~= nil and type(self.callback) == "function" then
 				self.callback(self.tbResultIdx)

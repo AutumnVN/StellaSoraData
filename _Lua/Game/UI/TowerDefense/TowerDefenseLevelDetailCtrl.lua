@@ -67,7 +67,12 @@ TowerDefenseLevelDetailCtrl._mapNodeConfig = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_EditorTeam"
 	},
-	team_character = {nCount = 6},
+	team_character = {
+		nCount = 6,
+		sCtrlName = "Game.UI.TowerDefense.TowerDefenseSelectedCharCtrl"
+	},
+	goDragMin = {sComponentName = "Transform"},
+	goDragMax = {sComponentName = "Transform"},
 	special_item = {},
 	animator = {
 		sNodeName = "----SafeAreaRoot_Detail---",
@@ -94,7 +99,11 @@ TowerDefenseLevelDetailCtrl._mapEventConfig = {
 	TowerDefense_CharUpdate = "OnEvent_UpdateCharData",
 	TowerDefense_ItemUpdate = "OnEvent_UpdateItemData",
 	TowerDefenseTeamPanelConfirm = "OnEvent_Go",
-	TowerDefenseTeamPanelClose = "OnEvent_UpdateTeamEditorPanelClose"
+	TowerDefenseTeamPanelClose = "OnEvent_UpdateTeamEditorPanelClose",
+	TowerDefense_EditorTeam = "OnEvent_OpenTeamEditorPanel",
+	TowerDefenseItemDragStart = "OnEvent_TowerDefenseItemDragStart",
+	TowerDefenseItemDragEnd = "OnEvent_TowerDefenseItemDragEnd",
+	TowerDefenseItemDragging = "OnEvent_TowerDefenseItemDragging"
 }
 TowerDefenseLevelDetailCtrl._mapRedDotConfig = {}
 function TowerDefenseLevelDetailCtrl:Awake()
@@ -107,9 +116,13 @@ function TowerDefenseLevelDetailCtrl:Awake()
 	self.TowerDefenseData = PlayerData.Activity:GetActivityDataById(self.nActId)
 	self._mapNode.teamCtrl.gameObject:SetActive(false)
 	self._mapNode.miniMapCtrl:Close()
-	self:UpdateData()
+	self:InitGuide()
 end
 function TowerDefenseLevelDetailCtrl:OnEnable()
+	for k, v in ipairs(self._mapNode.team_character) do
+		v:InitSortingOrder(self._nSortingOrder, self._mapNode.goDragMin, self._mapNode.goDragMax)
+	end
+	self:UpdateData()
 	self:UpdateQuestInfo()
 	self:UpdateItem()
 end
@@ -120,6 +133,20 @@ function TowerDefenseLevelDetailCtrl:UpdateData()
 	self:UpdateItem()
 	self:InitTeamData()
 	self._mapNode.miniMapCtrl:SetData(self.levelConfig.FloorId)
+end
+function TowerDefenseLevelDetailCtrl:InitGuide()
+	local levelConfig = ConfigTable.GetData("TowerDefenseLevel", self.nLevelId)
+	if levelConfig == nil then
+		return
+	end
+	local floorConfig = ConfigTable.GetData("TowerDefenseFloor", levelConfig.FloorId)
+	if floorConfig == nil then
+		return
+	end
+	if floorConfig.MemberNum == 0 then
+		return
+	end
+	EventManager.Hit("Guide_PassiveCheck_Msg", "Guide_TowerDefense_401")
 end
 function TowerDefenseLevelDetailCtrl:UpdateQuestInfo()
 	local levelData = self.TowerDefenseData:GetLevelData(self.nLevelId)
@@ -199,6 +226,7 @@ function TowerDefenseLevelDetailCtrl:InitTeamData()
 		end
 		self.nItemGuideId = tempTeamData.itemGuideId
 	end
+	self:InitDragOrderList()
 	self:UpdateCharacter()
 	self:UpdateSpecialItem_V1()
 	local floorConfig = ConfigTable.GetData("TowerDefenseFloor", self.levelConfig.FloorId)
@@ -223,53 +251,21 @@ function TowerDefenseLevelDetailCtrl:UpdateCharacter()
 		ForEachTableLine(DataTable.TowerDefenseGuide, foreach)
 	end
 	for i = 1, 6 do
-		local go_add = self._mapNode.team_character[i].transform:Find("img_add")
-		local btn_add = self._mapNode.team_character[i]:GetComponent("UIButton")
-		local go_none = self._mapNode.team_character[i].transform:Find("img_none")
-		local go_icon = self._mapNode.team_character[i].transform:Find("img_icon")
-		local txt_name = self._mapNode.team_character[i].transform:Find("img_icon/txt_name"):GetComponent("TMP_Text")
-		go_add.gameObject:SetActive(false)
-		go_none.gameObject:SetActive(false)
-		go_icon.gameObject:SetActive(false)
-		btn_add.interactable = false
 		if teamCharacterCount == 0 then
 			if i > #self.tbCharGuideId then
-				go_none.gameObject:SetActive(true)
+				self._mapNode.team_character[i]:SetData(-1, false, i)
 			else
-				local guideConfig = ConfigTable.GetData("TowerDefenseGuide", self.tbCharGuideId[i])
-				local characterConfig = ConfigTable.GetData("TowerDefenseCharacter", guideConfig.ObjectId)
-				if characterConfig ~= nil then
-					local icon_char = go_icon.transform:Find("icon_char")
-					self:SetPngSprite(icon_char:GetComponent("Image"), characterConfig.Icon .. AllEnum.CharHeadIconSurfix.QM)
-					NovaAPI.SetTMPText(txt_name, characterConfig.Name)
-				end
-				go_icon.gameObject:SetActive(true)
+				self._mapNode.team_character[i]:SetData(self.tbCharGuideId[i], false, i)
 			end
 			NovaAPI.SetTMPText(self._mapNode.txt_charCount, string.format("<color=#ffde6a>%d</color>/%d", #self.tbCharGuideId, #self.tbCharGuideId))
+			self:InitDragOrderList()
 		else
 			if teamCharacterCount < i then
-				go_none.gameObject:SetActive(true)
+				self._mapNode.team_character[i]:SetData(-1, false, i)
 			elseif i > #self.tbCharGuideId then
-				go_add.gameObject:SetActive(true)
-				btn_add.interactable = true
-				btn_add.onClick:RemoveAllListeners()
-				btn_add.onClick:AddListener(function()
-					self:OnBtnClick_EditorTeam()
-				end)
+				self._mapNode.team_character[i]:SetData(0, true, i)
 			else
-				local guideConfig = ConfigTable.GetData("TowerDefenseGuide", self.tbCharGuideId[i])
-				local characterConfig = ConfigTable.GetData("TowerDefenseCharacter", guideConfig.ObjectId)
-				if characterConfig ~= nil then
-					local icon_char = go_icon.transform:Find("icon_char")
-					self:SetPngSprite(icon_char:GetComponent("Image"), characterConfig.Icon .. AllEnum.CharHeadIconSurfix.QM)
-					NovaAPI.SetTMPText(txt_name, characterConfig.Name)
-				end
-				go_icon.gameObject:SetActive(true)
-				btn_add.interactable = true
-				btn_add.onClick:RemoveAllListeners()
-				btn_add.onClick:AddListener(function()
-					self:OnBtnClick_EditorTeam()
-				end)
+				self._mapNode.team_character[i]:SetData(self.tbCharGuideId[i], true, i)
 			end
 			NovaAPI.SetTMPText(self._mapNode.txt_charCount, string.format("<color=#ffde6a>%d</color>/%d", #self.tbCharGuideId, teamCharacterCount))
 		end
@@ -404,6 +400,15 @@ function TowerDefenseLevelDetailCtrl:CloseTeamEditorPanel()
 	self._mapNode.btn_Team.interactable = true
 	self._mapNode.btn_go1.interactable = true
 end
+function TowerDefenseLevelDetailCtrl:InitDragOrderList()
+	self.tbDragOrderList = {}
+	for k, v in ipairs(self.tbCharGuideId) do
+		self.tbDragOrderList[k] = {}
+		self.tbDragOrderList[k].nSortIndex = k
+		self.tbDragOrderList[k].nId = v
+		self.tbDragOrderList[k].itemCtrl = self._mapNode.team_character[k]
+	end
+end
 function TowerDefenseLevelDetailCtrl:OnBtnClick_MonsterInfo()
 	EventManager.Hit("OpenTowerDefenseMonsterInfo", self.levelConfig.Id)
 end
@@ -472,6 +477,7 @@ function TowerDefenseLevelDetailCtrl:OnBtnClick_Close()
 end
 function TowerDefenseLevelDetailCtrl:OnEvent_UpdateCharData(tbCharGuideId)
 	self.tbCharGuideId = tbCharGuideId
+	self:InitDragOrderList()
 	self:UpdateCharacter()
 end
 function TowerDefenseLevelDetailCtrl:OnEvent_UpdateItemData(nItemGuideId)
@@ -502,5 +508,55 @@ function TowerDefenseLevelDetailCtrl:OnEvent_Go()
 end
 function TowerDefenseLevelDetailCtrl:OnBtnClick_MiniMap()
 	self._mapNode.miniMapCtrl:Open()
+end
+function TowerDefenseLevelDetailCtrl:OnEvent_OpenTeamEditorPanel()
+	self:OnBtnClick_EditorTeam()
+end
+function TowerDefenseLevelDetailCtrl:OnEvent_TowerDefenseItemDragStart(objInsId)
+end
+function TowerDefenseLevelDetailCtrl:OnEvent_TowerDefenseItemDragEnd()
+	self.tbCharGuideId = {}
+	for _, v in ipairs(self.tbDragOrderList) do
+		table.insert(self.tbCharGuideId, v.nId)
+	end
+	self:InitDragOrderList()
+	self:UpdateCharacter()
+	if self.bInEditorPanel then
+		self._mapNode.teamCtrl:UpdateSelectedChar(self.tbCharGuideId)
+	end
+end
+function TowerDefenseLevelDetailCtrl:OnEvent_TowerDefenseItemDragging(nDragInsId, nPointerInsId)
+	self.nExchangeIdx1 = nil
+	self.nExchangeIdx2 = nil
+	for k, v in ipairs(self.tbDragOrderList) do
+		local nInsId = v.itemCtrl:GetItemBtnInstanceId()
+		if nInsId == nDragInsId then
+			self.nExchangeIdx1 = k
+		end
+		if nInsId == nPointerInsId then
+			self.nExchangeIdx2 = k
+		end
+	end
+	if nil ~= self.nExchangeIdx1 and nil ~= self.nExchangeIdx2 and self.nExchangeIdx1 ~= self.nExchangeIdx2 then
+		self.tbDragOrderList[self.nExchangeIdx1].nSortIndex = self.nExchangeIdx2
+		if self.nExchangeIdx1 > self.nExchangeIdx2 then
+			for i = self.nExchangeIdx2, self.nExchangeIdx1 - 1 do
+				local nCurSort = self.tbDragOrderList[i].nSortIndex + 1
+				nCurSort = nCurSort > #self.tbCharGuideId and #self.tbCharGuideId or nCurSort
+				self.tbDragOrderList[i].nSortIndex = nCurSort
+				self.tbDragOrderList[i].itemCtrl:PlayItemMoveAnim(nCurSort)
+			end
+		elseif self.nExchangeIdx1 < self.nExchangeIdx2 then
+			for i = self.nExchangeIdx1 + 1, self.nExchangeIdx2 do
+				local nCurSort = self.tbDragOrderList[i].nSortIndex - 1
+				nCurSort = nCurSort <= 0 and 1 or nCurSort
+				self.tbDragOrderList[i].nSortIndex = nCurSort
+				self.tbDragOrderList[i].itemCtrl:PlayItemMoveAnim(nCurSort)
+			end
+		end
+		table.sort(self.tbDragOrderList, function(a, b)
+			return a.nSortIndex < b.nSortIndex
+		end)
+	end
 end
 return TowerDefenseLevelDetailCtrl

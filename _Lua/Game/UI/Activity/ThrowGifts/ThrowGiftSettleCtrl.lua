@@ -1,13 +1,18 @@
 local ThrowGiftSettleCtrl = class("ThrowGiftSettleCtrl", BaseCtrl)
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
 ThrowGiftSettleCtrl._mapNodeConfig = {
 	btnConfirm1 = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_Confirm1"
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Confirm1",
+		sAction = "ThrowGiftSettleConfirm1",
+		sActionIconType = "Dark"
 	},
 	btnConfirm2 = {
-		sComponentName = "UIButton",
-		callback = "OnBtnClick_Confirm2"
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Confirm2",
+		sAction = "ThrowGiftSettleConfirm2",
+		sActionIconType = "Dark"
 	},
 	txtBtnClose = {
 		sComponentName = "TMP_Text",
@@ -42,6 +47,8 @@ ThrowGiftSettleCtrl._mapNodeConfig = {
 ThrowGiftSettleCtrl._mapEventConfig = {}
 ThrowGiftSettleCtrl._mapRedDotConfig = {}
 function ThrowGiftSettleCtrl:Awake()
+	self.tbGamepadUINode = self:GetGamepadUINode()
+	GamepadUIManager.AddGamepadUINode("ThrowGiftSettle", self.tbGamepadUINode)
 end
 function ThrowGiftSettleCtrl:FadeIn()
 end
@@ -59,6 +66,7 @@ function ThrowGiftSettleCtrl:OnRelease()
 end
 function ThrowGiftSettleCtrl:ShowSettle(bWin, nScore, nGift, nPenguin, bShowPenguin, bNextUnlock, changeInfo, nLevelId)
 	self.bWin = bWin
+	GamepadUIManager.EnableGamepadUI("ThrowGiftSettle", self.tbGamepadUINode)
 	NovaAPI.SetTMPText(self._mapNode.txtBtnConfirm, self.bWin and ConfigTable.GetUIText("ThrowGift_Settle_NextLevel") or ConfigTable.GetUIText("ThrowGift_Settle_Restart"))
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
@@ -89,6 +97,9 @@ function ThrowGiftSettleCtrl:ShowSettle(bWin, nScore, nGift, nPenguin, bShowPeng
 	end
 	EventManager.Hit(EventId.TemporaryBlockInput, nAnimLength)
 	local timerCb = function()
+		if self == nil or not self.gameObject then
+			return
+		end
 		if changeInfo ~= nil and #changeInfo.Props > 0 then
 			local mapLevelData = ConfigTable.GetData("ThrowGiftLevel", nLevelId)
 			local i = 1
@@ -107,10 +118,12 @@ function ThrowGiftSettleCtrl:ShowSettle(bWin, nScore, nGift, nPenguin, bShowPeng
 end
 function ThrowGiftSettleCtrl:OnBtnClick_Confirm1()
 	self.gameObject:SetActive(false)
+	GamepadUIManager.DisableGamepadUI("ThrowGiftSettle")
 	EventManager.Hit("ThrowGiftSettle_Exit")
 end
 function ThrowGiftSettleCtrl:OnBtnClick_Confirm2()
 	self.gameObject:SetActive(false)
+	GamepadUIManager.DisableGamepadUI("ThrowGiftSettle")
 	if self.bWin then
 		EventManager.Hit("ThrowGiftSettle_NextLevel")
 	else

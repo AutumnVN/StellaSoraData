@@ -77,6 +77,7 @@ StarTowerGrowthCtrl._mapEventConfig = {
 	SetGrowthKeyNodeEye = "OnEvent_Eye",
 	GuideSelectNote = "OnEvent_GuideSelectNote"
 }
+local GUIDE_CHECK_NODE_ID = 10301
 function StarTowerGrowthCtrl:InitData()
 	self.nSelectGroupIndex = nil
 	self.nSelectGroupId = nil
@@ -197,8 +198,8 @@ function StarTowerGrowthCtrl:RefreshNode()
 	end
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForSeconds(0.1))
-		local tmpData = PlayerData.StarTower:GetGrowthNode(10301)
-		if tmpData.bActive then
+		local tmpData = PlayerData.StarTower:GetGrowthNode(GUIDE_CHECK_NODE_ID)
+		if tmpData ~= nil and tmpData.bActive then
 			EventManager.Hit("Guide_PassiveCheck_Msg", "Guide_StarTowerGrowthIdActive")
 		end
 	end
@@ -229,10 +230,16 @@ function StarTowerGrowthCtrl:ClearNodeContent()
 end
 function StarTowerGrowthCtrl:RefreshTip()
 	local mapGroup = self.tbGroup[self.nSelectGroupIndex]
+	if mapGroup == nil then
+		return
+	end
 	self._mapNode.goTip:SetActive(mapGroup.bLock)
 	if mapGroup.bLock then
 		local nCurWorldClass = PlayerData.Base:GetWorldClass()
 		local mapPreGroup = self.tbGroup[mapGroup.nPreGroup]
+		if mapPreGroup == nil then
+			mapPreGroup = {nAllNodeCount = 0, nActiveNodeCount = 0}
+		end
 		local bPreLock = mapPreGroup.nAllNodeCount > mapPreGroup.nActiveNodeCount
 		local bWorldClassLock = nCurWorldClass < mapGroup.nWorldClass
 		local sTips = ""
@@ -425,6 +432,9 @@ function StarTowerGrowthCtrl:OnEvent_Unlock()
 	self:RefreshTopBar()
 	local tbNodes = PlayerData.StarTower:GetGrowthNodesByGroup(self.nSelectGroupId)
 	local tbCurNodeMap = self.tbNodeMap[self.nSelectGroupId]
+	if self.nSelectCloumn == nil then
+		return
+	end
 	self:RefreshNodeCloumn(self.nSelectCloumn, tbNodes, tbCurNodeMap)
 	self:RefreshNodeCloumn(self.nSelectCloumn + 1, tbNodes, tbCurNodeMap)
 	local callback = function()
@@ -437,8 +447,8 @@ function StarTowerGrowthCtrl:OnEvent_Unlock()
 	self.tbNodeList[self.nSelectCloumn]:PlayActiveAnim(self.nSelectNodeId, callback)
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForSeconds(0.1))
-		local tmpData = PlayerData.StarTower:GetGrowthNode(10301)
-		if tmpData.bActive then
+		local tmpData = PlayerData.StarTower:GetGrowthNode(GUIDE_CHECK_NODE_ID)
+		if tmpData ~= nil and tmpData.bActive then
 			EventManager.Hit("Guide_PassiveCheck_Msg", "Guide_StarTowerGrowthIdActive")
 		end
 	end

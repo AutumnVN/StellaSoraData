@@ -96,6 +96,9 @@ function TutorialInfoCtrl:UpdateTarget(nQuestId, nTargetId, nCur, nMax)
 	nCur = nCur:AsInt()
 	nMax = nMax:AsInt()
 	local bComplete = nCur >= nMax
+	if not self.tbTargetProcess[nQuestId] or not self.tbTargetProcess[nQuestId][nTargetId] then
+		return
+	end
 	self.tbTargetProcess[nQuestId][nTargetId].nCur = nCur
 	self.tbTargetProcess[nQuestId][nTargetId].nMax = nMax
 	if bComplete then

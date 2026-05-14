@@ -4,11 +4,10 @@ local BreakOutLevelData = class("BreakOutLevelData")
 local mapEventConfig = {
 	LoadLevelRefresh = "OnEvent_LoadLevelRefresh",
 	AdventureModuleEnter = "OnEvent_AdventureModuleEnter",
-	BattlePause = "OnEvent_Pause",
 	ADVENTURE_LEVEL_UNLOAD_COMPLETE = "OnEvent_UnloadComplete",
-	InputEnable = "OnEvent_InputEnable",
 	BreakOut_Complete = "SetBreakOut_Complete",
-	SetPlayFinishState = "SetPlayFinishState"
+	SetPlayFinishState = "SetPlayFinishState",
+	Event_SetPopPlayTips = "Event_SetPopPlayTips"
 }
 function BreakOutLevelData:InitData(nLevelId, nCharacterNid, nActId)
 	self:UnBindEvent()
@@ -22,6 +21,7 @@ function BreakOutLevelData:InitData(nLevelId, nCharacterNid, nActId)
 	self.FloorId = ConfigTable.GetData("BreakOutLevel", nLevelId).FloorId
 	self.bShouldExit = true
 	self.bIsFinishGame = false
+	self.bCanPopTip = true
 	local sJson = LocalData.GetPlayerLocalData("BreakOutFloorDicId")
 	local tb = decodeJson(sJson)
 	if type(tb) == "table" then
@@ -106,7 +106,7 @@ function BreakOutLevelData:GetIsFinishGame()
 	return self.bIsFinishGame
 end
 function BreakOutLevelData:OnEvent_AdventureModuleEnter()
-	EventManager.Hit(EventId.OpenPanel, PanelId.BreakOutPlayPanel, self.nActId, self.nLevelId, self.nCharacterNid)
+	EventManager.Hit(EventId.OpenPanel, PanelId.BreakOutPlayPanelS2, self.nActId, self.nLevelId, self.nCharacterNid)
 end
 function BreakOutLevelData:GetFloorHasDic(nFloorId)
 	local bResult = true
@@ -124,5 +124,11 @@ function BreakOutLevelData:OnEvent_SetFloorHasDic(nFloorId)
 		end
 		LocalData.SetPlayerLocalData("BreakOutFloorDicId", RapidJson.encode(tbLocalSave))
 	end
+end
+function BreakOutLevelData:Event_SetPopPlayTips(bCanPop)
+	self.bCanPopTip = bCanPop
+end
+function BreakOutLevelData:GetPopPlayTips()
+	return self.bCanPopTip
 end
 return BreakOutLevelData

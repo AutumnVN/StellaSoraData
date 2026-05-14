@@ -178,7 +178,7 @@ function CharFavourLevelUpCtrl:Refresh()
 	local nAniTime = 0.2
 	if self.curFavourLevel - self.lastFavourLevel < 6 then
 		nAniTime = 0.2
-	elseif self.curFavourLevel - self.lastFavourLevel >= 6 then
+	else
 		nAniTime = 0.1
 	end
 	local nBeforeMaxExp = CacheTable.GetData("_AffinityLevel", templateId)[nMaxAffinityLevel < self.lastFavourLevel + 1 and nMaxAffinityLevel or self.lastFavourLevel + 1].NeedExp
@@ -191,7 +191,7 @@ function CharFavourLevelUpCtrl:Refresh()
 	local nAllTime = 0
 	local sequence = DOTween.Sequence()
 	for i = self.lastFavourLevel, self.curFavourLevel - 1 do
-		local nTime = i == 1 and nBeforeToMaxTime or nAniTime
+		local nTime = i == self.lastFavourLevel and nBeforeToMaxTime or nAniTime
 		nAllTime = nAllTime + nTime
 		sequence:AppendCallback(function()
 			WwiseAudioMgr:PlaySound("ui_common_levelUp")
@@ -331,7 +331,7 @@ function CharFavourLevelUpCtrl:RefreshAllDataList()
 		end
 		return a.nId < b.nId
 	end)
-	if self.lastFavourLevel >= self.nAffinityMaxEffectLevel then
+	if self.lastFavourLevel >= self.nAffinityMaxEffectLevel and #self.tbDescList == 0 then
 		table.insert(self.tbDescList, 1, {
 			nId = 0,
 			nIndex = 0,

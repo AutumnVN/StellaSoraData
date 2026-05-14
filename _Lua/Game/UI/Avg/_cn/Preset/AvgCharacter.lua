@@ -178,7 +178,7 @@ return {
 	{
 		id = "avg1_131",
 		name = "布洛可",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#fff1c0"
 	},
 	{
 		id = "avg1_132",
@@ -344,7 +344,7 @@ return {
 	},
 	{
 		id = "avg2_943",
-		name = "***",
+		name = "禁断丽容",
 		name_bg_color = "#0ABEC5",
 		ver = "1.10.0"
 	},
@@ -922,7 +922,7 @@ return {
 	{
 		id = "avg3_179",
 		name = "米夏",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#8695b8"
 	},
 	{
 		id = "avg3_180",
@@ -942,12 +942,12 @@ return {
 	{
 		id = "avg3_183",
 		name = "约瑟夫",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#97b8a0"
 	},
 	{
 		id = "avg3_184",
 		name = "灰夫人",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#b2cdc9"
 	},
 	{
 		id = "avg3_185",
@@ -1098,7 +1098,7 @@ return {
 	},
 	{
 		id = "avg3_214",
-		name = "***",
+		name = "星辉之眼研究员（女）",
 		name_bg_color = "#0ABEC5",
 		ver = "1.10.0"
 	},
@@ -2720,6 +2720,42 @@ return {
 		name = "朔A",
 		name_bg_color = "#5a91ca",
 		reuse = "avg1_164"
+	},
+	{
+		id = "avg3_1294",
+		name = "沙蝎杂兵（女）B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1295",
+		name = "沙蝎杂兵（女）C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1296",
+		name = "沙蝎杂兵（女）D",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1297",
+		name = "沙蝎杂兵（男）B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1298",
+		name = "沙蝎杂兵（男）C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1299",
+		name = "沙蝎杂兵（男）D",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
 	},
 	{
 		id = "avg4_100",

@@ -1,5 +1,6 @@
 local JointDrillRankingCtrl = class("JointDrillRankingCtrl", BaseCtrl)
 local ClientManager = CS.ClientManager.Instance
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillRankingCtrl._mapNodeConfig = {
 	TopBar = {
 		sNodeName = "TopBarPanel",
@@ -139,7 +140,7 @@ function JointDrillRankingCtrl:RefreshRankList()
 		if self._panel.mapRankDetail ~= nil then
 			self._mapNode.svRankingInfo:SetScrollPos(self._panel.nGridPos)
 			self:AddTimer(1, 0.4, function()
-				EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRankDetail_1, self._panel.mapRankDetail)
+				EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "RankDetail"), self._panel.mapRankDetail)
 				self._panel.mapRankDetail = nil
 				self._panel.nGridPos = 0
 			end, true, true, true)

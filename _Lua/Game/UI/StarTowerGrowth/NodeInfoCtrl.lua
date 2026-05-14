@@ -43,6 +43,9 @@ NodeInfoCtrl._mapNodeConfig = {
 }
 NodeInfoCtrl._mapEventConfig = {}
 function NodeInfoCtrl:Refresh(mapNode)
+	if mapNode == nil then
+		return
+	end
 	local mapCfg = ConfigTable.GetData("StarTowerGrowthNode", mapNode.nId)
 	if not mapCfg then
 		return
@@ -105,7 +108,9 @@ function NodeInfoCtrl:OnBtnClick_Active(btn)
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("STGrowth_NoMat"))
 		return
 	end
+	self._mapNode.btnActiveNode.interactable = false
 	local callback = function()
+		self._mapNode.btnActiveNode.interactable = true
 		self._mapNode.btnActiveNode.gameObject:SetActive(false)
 		self._mapNode.txtActived.gameObject:SetActive(true)
 		self._mapNode.matList:SetActive(false)

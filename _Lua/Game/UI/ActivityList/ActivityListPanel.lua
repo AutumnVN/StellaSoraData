@@ -6,7 +6,6 @@ ActivityListPanel._tbDefine = {
 	}
 }
 function ActivityListPanel:Awake()
-	self.nSelectGroup = nil
 end
 function ActivityListPanel:OnEnable()
 end
@@ -15,7 +14,6 @@ end
 function ActivityListPanel:OnDisable()
 end
 function ActivityListPanel:OnDestroy()
-	self.nSelectGroup = nil
 end
 function ActivityListPanel:OnRelease()
 end

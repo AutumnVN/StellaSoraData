@@ -1,7 +1,6 @@
 local LoginRewardPopUpCtrl_01 = class("LoginRewardPopUpCtrl_01", BaseCtrl)
 local ClientManager = CS.ClientManager.Instance
 LoginRewardPopUpCtrl_01._mapNodeConfig = {
-	imgActivity = {sComponentName = "Image"},
 	goActTime = {},
 	txtActivityTime = {sComponentName = "TMP_Text"},
 	btnActivity = {

@@ -7,6 +7,9 @@ ThrowGiftLevelSelectPanel._tbDefine = {
 	}
 }
 function ThrowGiftLevelSelectPanel:Awake()
+	self.nTransition = 37
+	self.nLevelPanelId = PanelId.ThrowGiftLevelPanel
+	self.nQuestPanelId = PanelId.Task_10105
 end
 function ThrowGiftLevelSelectPanel:OnEnable()
 end

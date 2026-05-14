@@ -85,33 +85,18 @@ function PlayerMailData:UpdateMailList(mapMsgData)
 	EventManager.Hit("GetAllMailList")
 end
 function PlayerMailData:ReceiveMailItem(mapData)
-	local tabItem = {}
-	local tmpTab = {}
 	if type(mapData.Ids) == "table" then
 		for i = 1, #mapData.Ids do
 			if self._mapMail[mapData.Ids[i]] ~= nil then
 				self._mapMail[mapData.Ids[i]].Read = true
 				self._mapMail[mapData.Ids[i]].Recv = true
-				if self._mapMail[mapData.Ids[i]].Attachments and #self._mapMail[mapData.Ids[i]].Attachments > 0 then
-					for k, v in pairs(self._mapMail[mapData.Ids[i]].Attachments) do
-						local itemCfg = ConfigTable.GetData("Item", v.Tid)
-						if itemCfg ~= nil and itemCfg.Type ~= GameEnum.itemType.CharacterSkin then
-							if tmpTab[v.Tid] == nil then
-								tmpTab[v.Tid] = v.Qty
-							else
-								tmpTab[v.Tid] = tmpTab[v.Tid] + v.Qty
-							end
-						end
-					end
-				end
 			end
 		end
-		for i, v in pairs(tmpTab) do
-			table.insert(tabItem, {Tid = i, Qty = v})
-		end
-		UTILS.OpenReceiveByDisplayItem(tabItem, mapData.Items, function()
+		UTILS.OpenReceiveByChangeInfo(mapData.Items, function()
 			PlayerData.Base:TryOpenWorldClassUpgrade()
 		end)
+		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapData.Items)
+		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	end
 	self:RunCallBack()
 	self:UpdateMailUnReceiveRedDot()

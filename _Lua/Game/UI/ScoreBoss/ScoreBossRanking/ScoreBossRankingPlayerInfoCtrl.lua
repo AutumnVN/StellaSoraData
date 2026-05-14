@@ -35,16 +35,16 @@ function ScoreBossRankingPlayerInfoCtrl:Refresh(mapSelfRanking)
 	self.gameObject:SetActive(true)
 	NovaAPI.SetTMPText(self._mapNode.TMPPlayerName, PlayerData.Base:GetPlayerNickName())
 	NovaAPI.SetTMPText(self._mapNode.TMPPlayerLevel, tostring(PlayerData.Base:GetWorldClass()))
-	local nPre, nSuf = PlayerData.Base:GetPlayerTitle()
-	if nPre == 0 or nSuf == 0 then
-		NovaAPI.SetTMPText(self._mapNode.TMPPlayerTitle, "")
-		return
-	end
-	local sTitle = orderedFormat(ConfigTable.GetUIText("FriendPanel_PlayerTitle") or "", ConfigTable.GetData("Title", nPre).Desc, ConfigTable.GetData("Title", nSuf).Desc)
-	NovaAPI.SetTMPText(self._mapNode.TMPPlayerTitle, sTitle)
 	local nHeadId = PlayerData.Base:GetPlayerHeadId()
 	local mapCfg = ConfigTable.GetData("PlayerHead", nHeadId)
 	self:SetPngSprite(self._mapNode.imgHead, mapCfg.Icon)
+	local nPre, nSuf = PlayerData.Base:GetPlayerTitle()
+	if nPre ~= 0 and nSuf ~= 0 then
+		local sTitle = orderedFormat(ConfigTable.GetUIText("FriendPanel_PlayerTitle") or "", ConfigTable.GetData("Title", nPre).Desc, ConfigTable.GetData("Title", nSuf).Desc)
+		NovaAPI.SetTMPText(self._mapNode.TMPPlayerTitle, sTitle)
+	else
+		NovaAPI.SetTMPText(self._mapNode.TMPPlayerTitle, "")
+	end
 	if mapSelfRanking == nil then
 		self._mapNode.rtEmpty:SetActive(true)
 		self._mapNode.rtRankingInfo:SetActive(false)

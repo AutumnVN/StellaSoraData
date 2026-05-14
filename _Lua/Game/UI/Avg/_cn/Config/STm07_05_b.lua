@@ -2410,33 +2410,26 @@ return {
 	},
 	{cmd = "SetGoOn"},
 	{
-		cmd = "CtrlChar",
-		param = {
-			"avg3_124",
-			"a",
-			"012",
-			"none",
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			"none",
-			"none",
-			"Linear",
-			0,
-			nil,
-			false,
-			1.0,
-			false,
-			nil
-		}
-	},
-	{
 		cmd = "Wait",
 		param = {0.5}
+	},
+	{
+		cmd = "CtrlStage",
+		param = {
+			0,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			1.0,
+			nil,
+			"none",
+			"OutQuint",
+			1.0,
+			false
+		}
 	},
 	{
 		cmd = "CtrlStage",
@@ -2449,66 +2442,6 @@ return {
 			nil,
 			nil,
 			0.3,
-			nil,
-			"none",
-			"OutQuint",
-			1.0,
-			false
-		}
-	},
-	{
-		cmd = "SetMainRoleTalk",
-		param = {
-			1,
-			0,
-			"009",
-			"none",
-			"none",
-			"y",
-			0.0,
-			false,
-			"avg3_100"
-		}
-	},
-	{
-		cmd = "SetTalk",
-		param = {
-			2,
-			"avg3_100",
-			"百分之十五的年利率……==W==一年的利息就有六十亿朵拉，这已经不仅仅是偿还压力大的问题了…==W==…",
-			0,
-			"",
-			false,
-			"",
-			"",
-			""
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {0.5}
-	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "Wait",
-		param = {0.5}
-	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "Wait",
-		param = {0.5}
-	},
-	{
-		cmd = "CtrlStage",
-		param = {
-			0,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			nil,
-			1.0,
 			nil,
 			"none",
 			"OutQuint",
@@ -2546,8 +2479,8 @@ return {
 		param = {
 			0,
 			"avg3_124",
-			"……果然如传闻中一样雷厉风行呢。==W==好吧。==W==上个月，==W==有家公司紧急贷款了一百亿，那笔贷款的年利率是百分之十五。",
-			1,
+			"……果然如传闻中一样雷厉风行呢。好吧。==W==上个月，==W==有家公司紧急贷款了一百亿，那笔贷款的年利率是百分之十五。",
+			0,
 			"",
 			false,
 			"",
@@ -2580,11 +2513,6 @@ return {
 			nil
 		}
 	},
-	{
-		cmd = "Wait",
-		param = {0.3}
-	},
-	{cmd = "SetGoOn"},
 	{
 		cmd = "Wait",
 		param = {0.8}
@@ -2629,6 +2557,106 @@ return {
 		param = {0.5}
 	},
 	{cmd = "SetGoOn"},
+	{
+		cmd = "Wait",
+		param = {0.5}
+	},
+	{
+		cmd = "CtrlStage",
+		param = {
+			0,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			0.3,
+			nil,
+			"none",
+			"OutQuint",
+			1.0,
+			false
+		}
+	},
+	{
+		cmd = "SetAudio",
+		param = {
+			0,
+			"se_227",
+			0.0,
+			false
+		}
+	},
+	{
+		cmd = "SetMainRoleTalk",
+		param = {
+			1,
+			0,
+			"009",
+			"none",
+			"none",
+			"y",
+			0.0,
+			false,
+			"avg3_100"
+		}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			2,
+			"avg3_100",
+			"百分之十五的年利率……==W==一年的利息就有六十亿朵拉，这已经不仅仅是偿还压力大的问题了……",
+			0,
+			"",
+			false,
+			"",
+			"",
+			""
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {0.8}
+	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "SetMainRoleTalk",
+		param = {
+			3,
+			0,
+			nil,
+			"close",
+			"none",
+			"y",
+			0.0,
+			false,
+			"avg3_100"
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {0.5}
+	},
+	{
+		cmd = "CtrlStage",
+		param = {
+			0,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			nil,
+			1.0,
+			nil,
+			"none",
+			"OutQuint",
+			1.0,
+			false
+		}
+	},
 	{
 		cmd = "CtrlChar",
 		param = {

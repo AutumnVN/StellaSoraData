@@ -295,14 +295,13 @@ function CharAdvancePreviewInfoCtrl:RefreshRewardInfo()
 	self._mapNode.txtWaitPicked.gameObject:SetActive(self.playerCharData.nAdvance < self.curSelectAdvance)
 	if #self.AdvanceRewardData > 0 then
 		table.sort(self.AdvanceRewardData, function(a, b)
-			if not a and not b then
-				if AllEnum.FrameColor_New[ConfigTable.GetData_Item(a.id).Rarity] > AllEnum.FrameColor_New[ConfigTable.GetData_Item(b.id).Rarity] then
-					return true
-				elseif AllEnum.FrameColor_New[ConfigTable.GetData_Item(a.id).Rarity] == AllEnum.FrameColor_New[ConfigTable.GetData_Item(b.id).Rarity] then
+			if a and b then
+				local nRarityA = ConfigTable.GetData_Item(a.id) ~= nil and ConfigTable.GetData_Item(a.id).Rarity or 0
+				local nRarityB = ConfigTable.GetData_Item(b.id) ~= nil and ConfigTable.GetData_Item(b.id).Rarity or 0
+				if nRarityA == nRarityB then
 					return a.tid < b.tid
-				else
-					return false
 				end
+				return nRarityA < nRarityB
 			end
 			return true
 		end)
@@ -339,6 +338,9 @@ function CharAdvancePreviewInfoCtrl:OnEvent_RefreshAdInfo(nSelectAdvance)
 	NovaAPI.SetTMPText(self._mapNode.txtNeedLv, orderedFormat(ConfigTable.GetUIText("Advance_Need_Level"), self.curGradeLevelArr[nSelectAdvance]))
 	local AdvanceUpId = 100 * self.charId + nSelectAdvance
 	self.AdvanceUpData = ConfigTable.GetData("CharacterAdvance", AdvanceUpId)
+	if self.AdvanceUpData == nil then
+		return
+	end
 	self.curSelectAdvance = nSelectAdvance
 	self:RefreshAdvanceBuffs()
 	self:RefreshPreAdvanceMaterials()

@@ -256,6 +256,9 @@ function PlayerEquipmentData:GetEquipmentSelect()
 	self.mapSelect = nil
 	return mapSelect
 end
+function PlayerEquipmentData:ClearEquipmentSelect()
+	self.mapSelect = nil
+end
 function PlayerEquipmentData:CacheEquipmentUpgrade(nSlotId, nGemIndex, nCharId, nSelectUpgradeIndex)
 	self.mapUpgrade = {
 		nSlotId = nSlotId,
@@ -272,6 +275,9 @@ function PlayerEquipmentData:GetEquipmentUpgrade()
 	self.mapUpgrade = nil
 	return mapUpgrade
 end
+function PlayerEquipmentData:ClearEquipmentUpgrade()
+	self.mapUpgrade = nil
+end
 function PlayerEquipmentData:CheckAlterHighQualityAffix(tbAlterAffix, tbLockId)
 	for _, v in ipairs(tbAlterAffix) do
 		if v ~= 0 and table.indexof(tbLockId, v) == 0 then
@@ -286,6 +292,13 @@ end
 function PlayerEquipmentData:UpdateRedDot()
 end
 function PlayerEquipmentData:SendCharGemEquipGemReq(nCharId, nSlotId, nGemIndex, nPresetId, callback)
+	if 0 < nGemIndex then
+		local mapEquipment = self.tbCharEquipment[nCharId][nSlotId][nGemIndex]
+		if mapEquipment == nil then
+			printError("纹章不存在")
+			return
+		end
+	end
 	local msgData = {
 		CharId = nCharId,
 		SlotId = nSlotId,
@@ -315,6 +328,11 @@ function PlayerEquipmentData:SendCharGemRenamePresetReq(nCharId, nPresetId, sNew
 	HttpNetHandler.SendMsg(NetMsgId.Id.char_gem_rename_preset_req, msgData, nil, successCallback)
 end
 function PlayerEquipmentData:SendCharGemReplaceAttributeReq(nCharId, nSlotId, nGemIndex, callback)
+	local mapEquipment = self.tbCharEquipment[nCharId][nSlotId][nGemIndex]
+	if mapEquipment == nil then
+		printError("纹章不存在")
+		return
+	end
 	local msgData = {
 		CharId = nCharId,
 		SlotId = nSlotId,
@@ -329,6 +347,11 @@ function PlayerEquipmentData:SendCharGemReplaceAttributeReq(nCharId, nSlotId, nG
 	HttpNetHandler.SendMsg(NetMsgId.Id.char_gem_replace_attribute_req, msgData, nil, successCallback)
 end
 function PlayerEquipmentData:SendCharGemUpdateGemLockStatusReq(nCharId, nSlotId, nGemIndex, bLock, callback)
+	local mapEquipment = self.tbCharEquipment[nCharId][nSlotId][nGemIndex]
+	if mapEquipment == nil then
+		printError("纹章不存在")
+		return
+	end
 	local msgData = {
 		CharId = nCharId,
 		SlotId = nSlotId,
@@ -357,6 +380,11 @@ function PlayerEquipmentData:SendCharGemUsePresetReq(nCharId, nPresetId, callbac
 	HttpNetHandler.SendMsg(NetMsgId.Id.char_gem_use_preset_req, msgData, nil, successCallback)
 end
 function PlayerEquipmentData:SendCharGemRefreshReq(nCharId, nSlotId, nGemIndex, tbLockAttrs, callback)
+	local mapEquipment = self.tbCharEquipment[nCharId][nSlotId][nGemIndex]
+	if mapEquipment == nil then
+		printError("纹章不存在")
+		return
+	end
 	local msgData = {
 		CharId = nCharId,
 		SlotId = nSlotId,
@@ -371,20 +399,27 @@ function PlayerEquipmentData:SendCharGemRefreshReq(nCharId, nSlotId, nGemIndex, 
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.char_gem_refresh_req, msgData, nil, successCallback)
 end
-function PlayerEquipmentData:SendCharGemGenerateReq(nCharId, nSlotId, callback)
+function PlayerEquipmentData:SendCharGemGenerateReq(nCharId, nSlotId, nGemIndex, callback)
+	if self.tbCharEquipment[nCharId][nSlotId][nGemIndex] ~= nil then
+		printError("当前纹章已存在")
+	end
 	local msgData = {CharId = nCharId, SlotId = nSlotId}
 	local successCallback = function(_, mapMainData)
 		local nGemId = self:GetGemIdBySlot(nCharId, nSlotId)
 		local equipmentData = EquipmentData.new(mapMainData.CharGem, nCharId, nGemId)
-		table.insert(self.tbCharEquipment[nCharId][nSlotId], equipmentData)
-		local nNewIndex = #self.tbCharEquipment[nCharId][nSlotId]
+		self.tbCharEquipment[nCharId][nSlotId][nGemIndex] = equipmentData
 		if callback then
-			callback(nNewIndex)
+			callback()
 		end
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.char_gem_generate_req, msgData, nil, successCallback)
 end
 function PlayerEquipmentData:SendCharGemOverlockReq(nCharId, nSlotId, nGemIndex, nAttrIndex, callback)
+	local mapEquipment = self.tbCharEquipment[nCharId][nSlotId][nGemIndex]
+	if mapEquipment == nil then
+		printError("纹章不存在")
+		return
+	end
 	local msgData = {
 		CharId = nCharId,
 		SlotId = nSlotId,
@@ -403,6 +438,11 @@ function PlayerEquipmentData:SendCharGemOverlockReq(nCharId, nSlotId, nGemIndex,
 	HttpNetHandler.SendMsg(NetMsgId.Id.char_gem_overlock_req, msgData, nil, successCallback)
 end
 function PlayerEquipmentData:SendCharGemOverlockRevertReq(nCharId, nSlotId, nGemIndex, nAttrIndex, callback)
+	local mapEquipment = self.tbCharEquipment[nCharId][nSlotId][nGemIndex]
+	if mapEquipment == nil then
+		printError("纹章不存在")
+		return
+	end
 	local msgData = {
 		CharId = nCharId,
 		SlotId = nSlotId,

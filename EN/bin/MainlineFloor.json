@@ -4244,5 +4244,16 @@
     "MonsterLv": 1,
     "IntroCutscene": "",
     "LevelScript": ""
+  },
+  "9920250": {
+    "Id": 9920250,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_005",
+    "ConfigPrefabName": "MiniBoss_FanRongLieQuan_Test",
+    "Theme": 0,
+    "BGM": "",
+    "LeaveTriggerEvent": "",
+    "MonsterLv": 1,
+    "IntroCutscene": "",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.FanRongDarkAndLieQuanDarkLevelController"
   }
 }

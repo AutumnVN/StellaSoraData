@@ -576,7 +576,7 @@ function StarTowerRoomInfo:OnEvent_StarTowerShopInteract(mapNoteChange)
 		if mapChangeInfo.Qty < 0 then
 			table.insert(tbNoteReduceTips, {
 				nNoteId = nNoteId,
-				nNoteId = mapChangeInfo.Qty,
+				nNoteQty = mapChangeInfo.Qty,
 				nTipType = AllEnum.StarTowerTipsType.NoteTip
 			})
 		elseif mapChangeInfo.Qty > 0 then

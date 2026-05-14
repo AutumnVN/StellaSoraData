@@ -1,4 +1,5 @@
 local JointDrillRaidCtrl = class("JointDrillRaidCtrl", BaseCtrl)
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillRaidCtrl._mapNodeConfig = {
 	goBlur = {
 		sNodeName = "t_fullscreen_blur_blue"
@@ -112,7 +113,7 @@ function JointDrillRaidCtrl:PlayOutAni()
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
 end
 function JointDrillRaidCtrl:Close()
-	EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillRaid_2)
+	EventManager.Hit(EventId.ClosePanel, JointDrillContext.GetPanelId(PlayerData.JointDrill_2.nActId, "Raid"))
 end
 function JointDrillRaidCtrl:Awake()
 end

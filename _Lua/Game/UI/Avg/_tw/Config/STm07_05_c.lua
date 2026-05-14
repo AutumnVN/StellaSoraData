@@ -6429,7 +6429,135 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {2.0}
+		param = {1.5}
+	},
+	{
+		cmd = "SetBg",
+		param = {
+			0,
+			"guard_outside_daylight",
+			"0",
+			"OutQuad",
+			2.0,
+			false,
+			"default",
+			0
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1}
+	},
+	{
+		cmd = "SetTalk",
+		param = {
+			0,
+			"0",
+			"",
+			0,
+			"",
+			false,
+			"",
+			"聽聞天穹保險退出後，帝國衛隊也立刻宣布退出。==W==第二輪的技術審查還沒開始，菲萊城邦星塔的招標就結束了。==W==作為唯一投標者的菲萊公司成功中標。",
+			""
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1}
+	},
+	{
+		cmd = "SetBg",
+		param = {
+			0,
+			"hotel_roof",
+			"0",
+			"OutQuad",
+			1.5,
+			false,
+			"fade",
+			0
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1}
+	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "SetAudio",
+		param = {
+			0,
+			"se_264",
+			0.0,
+			false
+		}
+	},
+	{
+		cmd = "SetBg",
+		param = {
+			4,
+			"story_main_05_002",
+			"0",
+			"Linear",
+			0.0,
+			true,
+			"default",
+			0
+		}
+	},
+	{
+		cmd = "SetStage",
+		param = {
+			3,
+			4,
+			"InQuart",
+			1.0,
+			false
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {0.7}
+	},
+	{
+		cmd = "SetAudio",
+		param = {
+			0,
+			"se_084",
+			0.0,
+			false
+		}
+	},
+	{
+		cmd = "SetFx",
+		param = {
+			0,
+			"fx_avg_congr",
+			0,
+			2,
+			nil,
+			nil,
+			nil,
+			0.0,
+			false,
+			false
+		}
+	},
+	{cmd = "SetGoOn"},
+	{
+		cmd = "SetStage",
+		param = {
+			3,
+			3,
+			"OutQuad",
+			0.5,
+			true
+		}
+	},
+	{
+		cmd = "Wait",
+		param = {1.5}
 	},
 	{
 		cmd = "SetTalk",
@@ -6444,10 +6572,6 @@ return {
 			"之後，我們度過了一段平靜的時光。==W==我留在菲萊幫助翡冷翠管理菲萊公司，空白旅團和花令旅團則依舊做著旅人的工作，==W==忙碌地在一座座不同的星塔之間四處奔波。",
 			""
 		}
-	},
-	{
-		cmd = "Wait",
-		param = {1.0}
 	},
 	{
 		cmd = "SetBg",
@@ -6504,7 +6628,7 @@ return {
 	},
 	{
 		cmd = "Wait",
-		param = {1.5}
+		param = {2.0}
 	},
 	{cmd = "SetGoOn"},
 	{
@@ -6548,173 +6672,15 @@ return {
 		cmd = "Wait",
 		param = {1.0}
 	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "Wait",
-		param = {2.5}
-	},
-	{
-		cmd = "SetBg",
-		param = {
-			0,
-			"guard_outside_daylight",
-			"0",
-			"Linear",
-			1.5,
-			false,
-			"default",
-			0
-		}
-	},
-	{
-		cmd = "CtrlBg",
-		param = {
-			0,
-			nil,
-			nil,
-			nil,
-			nil,
-			1.2,
-			nil,
-			nil,
-			nil,
-			nil,
-			"none",
-			"Linear",
-			0.0,
-			true,
-			0
-		}
-	},
-	{
-		cmd = "CtrlBg",
-		param = {
-			0,
-			nil,
-			nil,
-			nil,
-			nil,
-			1.05,
-			nil,
-			nil,
-			nil,
-			nil,
-			"none",
-			"Linear",
-			10.0,
-			false,
-			0
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {2.0}
-	},
-	{
-		cmd = "SetTalk",
-		param = {
-			0,
-			"0",
-			"",
-			0,
-			"",
-			false,
-			"",
-			"聽聞天穹保險退出後，帝國衛隊也立刻宣布退出。==W==第二輪的技術審查還沒開始，菲萊城邦星塔的招標就結束了。==W==作為唯一投標者的菲萊公司成功中標。",
-			""
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {1.0}
-	},
-	{
-		cmd = "SetBg",
-		param = {
-			0,
-			"hotel_roof",
-			"0",
-			"OutQuad",
-			1.5,
-			false,
-			"fade",
-			0
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {1.0}
-	},
-	{cmd = "SetGoOn"},
-	{
-		cmd = "SetAudio",
-		param = {
-			0,
-			"se_264",
-			0.0,
-			false
-		}
-	},
-	{
-		cmd = "SetBg",
-		param = {
-			4,
-			"story_main_05_002",
-			"0",
-			"Linear",
-			0.0,
-			true,
-			"default",
-			0
-		}
-	},
-	{
-		cmd = "SetStage",
-		param = {
-			3,
-			4,
-			"InQuart",
-			1.0,
-			false
-		}
-	},
-	{
-		cmd = "Wait",
-		param = {0.7}
-	},
-	{
-		cmd = "SetAudio",
-		param = {
-			0,
-			"se_084",
-			0.0,
-			false
-		}
-	},
 	{
 		cmd = "SetBGM",
 		param = {
 			1,
-			"music_avg_volume35_1s",
+			"music_avg_volume100_0s",
 			0,
 			"",
 			"4000ms",
 			0.0,
-			false
-		}
-	},
-	{
-		cmd = "SetFx",
-		param = {
-			0,
-			"fx_avg_congr",
-			0,
-			2,
-			nil,
-			nil,
-			nil,
-			0.0,
-			false,
 			false
 		}
 	},
@@ -6735,16 +6701,6 @@ return {
 			1,
 			true,
 			"default"
-		}
-	},
-	{
-		cmd = "SetStage",
-		param = {
-			3,
-			5,
-			"Linear",
-			0.5,
-			true
 		}
 	},
 	{

@@ -4,6 +4,7 @@ local TimerManager = require("GameCore.Timer.TimerManager")
 local LocalData = require("GameCore.Data.LocalData")
 local ClientManager = CS.ClientManager.Instance
 local ListInt = CS.System.Collections.Generic.List(CS.System.Int32)
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 function PlayerJointDrillData_1:Init()
 	self.bInit = false
 end
@@ -407,7 +408,7 @@ function PlayerJointDrillData_1:JointDrillGameOver(callback, bSettle, bEditor)
 			if not self.bSimulate then
 				self.nTotalScore = self.nTotalScore + netMsg.FightScore + netMsg.HpScore + netMsg.DifficultyScore
 			end
-			EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillBuildList_1)
+			EventManager.Hit(EventId.ClosePanel, JointDrillContext.GetPanelId(self.nActId, "BuildList"))
 			self.bResetLevelSelect = true
 			if callback ~= nil then
 				callback(netMsg)
@@ -433,7 +434,7 @@ function PlayerJointDrillData_1:JointDrillGameOver(callback, bSettle, bEditor)
 					nOld = netMsg.Old
 					nNew = netMsg.New
 				end
-				EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillResult_1, nResultType, self.nCurLevel, 0, self.nCurLevelId, self.mapBossInfo, mapScore, mapItems, mapChange, nOld, nNew, self.bSimulate, #self.tbTeams)
+				EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "Result"), nResultType, self.nCurLevel, 0, self.nCurLevelId, self.mapBossInfo, mapScore, mapItems, mapChange, nOld, nNew, self.bSimulate, #self.tbTeams)
 			end
 			self:EventUpload(4, 0)
 			self:ChallengeEnd()
@@ -449,7 +450,7 @@ function PlayerJointDrillData_1:JointDrillGameOver(callback, bSettle, bEditor)
 			local mapScore = {}
 			local mapChange, mapItems = {}, {}
 			local nOld, nNew = 0, 0
-			EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillResult_1, nResultType, self.nCurLevel, 0, self.nCurLevelId, self.mapBossInfo, mapScore, mapItems, mapChange, nOld, nNew, self.bSimulate, #self.tbTeams)
+			EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "Result"), nResultType, self.nCurLevel, 0, self.nCurLevelId, self.mapBossInfo, mapScore, mapItems, mapChange, nOld, nNew, self.bSimulate, #self.tbTeams)
 		end
 		self:ChallengeEnd()
 	end
@@ -519,7 +520,7 @@ function PlayerJointDrillData_1:JointDrillSettle(mapBuild, nTime, nDamage, callb
 				self.nTotalScore = self.nTotalScore + nScore
 				self.actDataIns:PassedLevel(self.nCurLevelId, nScore)
 			end
-			EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillBuildList_1)
+			EventManager.Hit(EventId.ClosePanel, JointDrillContext.GetPanelId(self.nActId, "BuildList"))
 			self.bResetLevelSelect = true
 			if callback ~= nil then
 				callback(netMsg)
@@ -850,7 +851,7 @@ function PlayerJointDrillData_1:SendJointDrillSweepMsg(nLevelId, nCount, callbac
 				UTILS.OpenReceiveByDisplayItem(tbShowItem, netMsg.Change, callback)
 			end
 		end
-		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRankUp_1, nRank, nRank, mapScore, AllEnum.JointDrillResultType.ChallengeEnd, panelCallback)
+		EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "RankUp"), nRank, nRank, mapScore, AllEnum.JointDrillResultType.ChallengeEnd, panelCallback)
 		self.nTotalScore = netMsg.Score
 		self:EventUpload(5)
 	end

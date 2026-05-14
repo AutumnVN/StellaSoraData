@@ -67,7 +67,7 @@ function ScoreBossResultCtrl:SetMsg()
 	NovaAPI.SetTMPText(self._mapNode.texTotalScore, FormatWithCommas(self.totalScore))
 	NovaAPI.SetTMPText(self._mapNode.texDamageScore, PlayerData.ScoreBoss:GetDamageScore())
 	local bScore, bScoreCount = PlayerData.ScoreBoss:GetBehaviorScore()
-	local bossLevelData = ConfigTable.GetData("ScoreBossLevel", PlayerData.ScoreBoss.entryLevelId)
+	bossLevelData = ConfigTable.GetData("ScoreBossLevel", PlayerData.ScoreBoss.entryLevelId)
 	local getControl = ConfigTable.GetData("ScoreBossGetControl", bossLevelData.NonDamageScoreGet)
 	NovaAPI.SetTMPText(self._mapNode.texSkillScore, getControl.OnceScore .. "x" .. bScoreCount)
 end

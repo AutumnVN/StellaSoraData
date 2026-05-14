@@ -8,7 +8,7 @@ local DifficultyState = {
 	"Expert"
 }
 local colorWhite = Color(1, 1, 1, 1)
-local colorRed = Color(0.8470588235294118, 0.3137254901960784, 0.32941176470588235)
+local colorRed = Color(0.8470588235294118, 0.3137254901960784, 0.32941176470588235, 1)
 BreakOutPlayCtrl._mapNodeConfig = {
 	btn_pause = {
 		sComponentName = "NaviButton",
@@ -50,7 +50,8 @@ BreakOutPlayCtrl._mapNodeConfig = {
 	btn_dic = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_OpenDic",
-		sAction = "Depot"
+		sAction = "Depot",
+		sActionIconType = "Dark"
 	},
 	txt_dic = {
 		nCount = 2,
@@ -90,7 +91,7 @@ function BreakOutPlayCtrl:Awake()
 	self.nDicId = self.FloorData.DictionaryID
 	self.bHasDic = self.BreakOutData.BreakOutLevelData:GetFloorHasDic(self.FloorData.Id)
 	self.tbGamepadUINode = self:GetGamepadUINode()
-	GamepadUIManager.EnableGamepadUI("BreakOutPlayCtrl", {})
+	GamepadUIManager.EnableGamepadUI("BreakOutPlayCtrl", self.tbGamepadUINode)
 	self._mapNode.btn_dic.gameObject:SetActive(self.nDicId ~= 0)
 end
 function BreakOutPlayCtrl:OnEnable()
@@ -133,9 +134,11 @@ function BreakOutPlayCtrl:InitState()
 	self:SetCurrentTime(self.FloorData.Time)
 end
 function BreakOutPlayCtrl:ResumeLogic()
+	EventManager.Hit("Event_SetPopPlayTips", true)
 	PanelManager.InputEnable()
 end
 function BreakOutPlayCtrl:PauseLogic()
+	EventManager.Hit("Event_SetPopPlayTips", false)
 	PanelManager.InputDisable()
 end
 function BreakOutPlayCtrl:SetCurrentTime(nTime)
@@ -164,18 +167,19 @@ function BreakOutPlayCtrl:OnEvent_HPChange(curValue)
 			curValue = self.InitialHeart
 		end
 	end
-	self.nRemainHp = curValue
 	for i = 1, curValue do
 		local RedHeart = self._mapNode.heartItem[i].transform:Find("RedHeart")
 		self._mapNode.heartEffItem[i]:SetActive(false)
 		RedHeart.gameObject:SetActive(true)
 	end
-	for i = curValue + 1, self.MaxHeartNumber do
+	local nPrevHp = self.nRemainHp
+	for i = curValue + 1, nPrevHp do
 		local RedHeart = self._mapNode.heartItem[i].transform:Find("RedHeart")
 		self._mapNode.heartEffItem[i]:SetActive(true)
 		RedHeart.gameObject:SetActive(false)
 		WwiseAudioMgr:PostEvent("mode_breakout_ui_dropHeart")
 	end
+	self.nRemainHp = curValue
 end
 function BreakOutPlayCtrl:OnEvent_Time(nTime)
 	self:SetCurrentTime(nTime)
@@ -216,12 +220,11 @@ function BreakOutPlayCtrl:OnEvent_FinishGame(nResult)
 	if self.bInLockState then
 		return
 	end
-	NovaAPI.SetCanvasGroupAlpha(self.Canvas, 0)
-	local bResult = nResult == GameEnum.levelState.Success and true or false
+	local bResult = nResult == GameEnum.levelState.Success
 	EventManager.Hit("BreakOut_Complete", true)
 	local requestCb = function(mapChangeInfo)
+		NovaAPI.SetCanvasGroupAlpha(self.Canvas, 0)
 		local cb = function()
-			self:PauseLogic()
 			self:ResumeLogic()
 		end
 		self:OpenBreakOutResultPanel(bResult, cb, mapChangeInfo)
@@ -238,10 +241,9 @@ function BreakOutPlayCtrl:OnEvent_Exit()
 		EventManager.Hit("Close_BattlePause")
 		EventManager.Hit("BreakOut_Complete", true)
 		EventManager.Hit("SetBreakOutPlaySkill_Visible", false)
-		NovaAPI.SetCanvasGroupAlpha(self.Canvas, 0)
 		local requestCb = function(mapChangeInfo)
+			NovaAPI.SetCanvasGroupAlpha(self.Canvas, 0)
 			local cb = function()
-				self:PauseLogic()
 				self:ResumeLogic()
 			end
 			self:OpenBreakOutResultPanel(false, cb, mapChangeInfo)

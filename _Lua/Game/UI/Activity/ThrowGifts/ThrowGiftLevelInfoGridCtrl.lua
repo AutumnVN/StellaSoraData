@@ -29,6 +29,11 @@ ThrowGiftLevelInfoGridCtrl._mapNodeConfig = {
 		nCount = 2,
 		sCtrlName = "Game.UI.TemplateEx.TemplateItemCtrl"
 	},
+	btnReward = {
+		nCount = 2,
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Reward"
+	},
 	btnGo = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Go"
@@ -101,8 +106,20 @@ end
 function ThrowGiftLevelInfoGridCtrl:OnBtnClick_Go()
 	EventManager.Hit("ThrowGiftStartBtnClick")
 	local callback = function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.ThrowGiftLevelPanel, self.nLevelId, self.nOpenTime)
+		EventManager.Hit(EventId.OpenPanel, self._panel.nLevelPanelId, self.nLevelId, self.nOpenTime)
 	end
-	EventManager.Hit(EventId.SetTransition, 37, callback)
+	EventManager.Hit(EventId.SetTransition, self._panel.nTransition, callback)
+end
+function ThrowGiftLevelInfoGridCtrl:OnBtnClick_Reward(goBtn, nIdx)
+	local mapLevelCfgData = ConfigTable.GetData("ThrowGiftLevel", self.nLevelId)
+	if mapLevelCfgData == nil then
+		return
+	end
+	local nItemId = nIdx == 1 and mapLevelCfgData.FirstCompleteReward1Tid or mapLevelCfgData.FirstCompleteReward2Tid
+	local rtItem = nIdx == 1 and self._mapNode.rtItemReward[1].gameObject.transform or self._mapNode.rtItemReward[2].gameObject.transform
+	if nItemId == 0 then
+		return
+	end
+	UTILS.ClickItemGridWithTips(nItemId, rtItem, true, true, false)
 end
 return ThrowGiftLevelInfoGridCtrl

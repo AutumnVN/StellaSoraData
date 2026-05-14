@@ -104,6 +104,10 @@ end
 function JointDrillLevelItemCtrl:OnEnable()
 end
 function JointDrillLevelItemCtrl:OnDisable()
+	if self.timeTimer ~= nil then
+		self.timeTimer:Cancel()
+		self.timeTimer = nil
+	end
 end
 function JointDrillLevelItemCtrl:OnDestroy()
 end

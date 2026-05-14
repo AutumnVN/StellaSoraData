@@ -3,7 +3,7 @@ ActivityShopPanel._sUIResRootPath = "UI_Activity/"
 ActivityShopPanel._tbDefine = {
 	{
 		sPrefabPath = "30101/Shop/ActivityShopPanel.prefab",
-		sCtrlName = "Game.UI.ActivityTheme.30101.Shop.ActivityShopCtrl"
+		sCtrlName = "Game.UI.ActivityTheme.ShopCommon.ActivityShopCtrl"
 	}
 }
 function ActivityShopPanel:Awake()

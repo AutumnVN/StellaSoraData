@@ -2,6 +2,7 @@ local JointDrillLevelData_2 = class("JointDrillLevelData_2")
 local AdventureModuleHelper = CS.AdventureModuleHelper
 local LocalData = require("GameCore.Data.LocalData")
 local ModuleManager = require("GameCore.Module.ModuleManager")
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 local mapEventConfig = {
 	LoadLevelRefresh = "OnEvent_LoadLevelRefresh",
 	AdventureModuleEnter = "OnEvent_AdventureModuleEnter",
@@ -185,7 +186,7 @@ function JointDrillLevelData_2:JointDrillSuccess(netMsg)
 		}
 		local bSimulate = self.parent:GetBattleSimulate()
 		local nBattleCount = self.parent:GetJointDrillBattleCount()
-		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillResult_2, nResultType, self.nCurLevel, 0, self.nLevelId, {}, mapScore, netMsg.Items or {}, netMsg.Change or {}, netMsg.Old, netMsg.New, bSimulate, nBattleCount, self.tbCharDamage)
+		EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.parent.nActId, "Result"), nResultType, self.nCurLevel, 0, self.nLevelId, {}, mapScore, netMsg.Items or {}, netMsg.Change or {}, netMsg.Old, netMsg.New, bSimulate, nBattleCount, self.tbCharDamage)
 		self.parent:ChallengeEnd()
 	end
 	EventManager.Add("SettlementPerformLoadFinish", self, openBattleResultPanel)
@@ -261,7 +262,7 @@ function JointDrillLevelData_2:JointDrillFail(nResultType, netMsg, nLevel)
 		mapReward = netMsg.Items or {}
 		mapChange = netMsg.Change or {}
 	end
-	EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillResult_2, nResultType, self.nCurLevel, self.nGameTime, self.nLevelId, bossInfo, mapScore, mapReward, mapChange, nOld, nNew, bSimulate, nBattleCount, self.tbCharDamage)
+	EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.parent.nActId, "Result"), nResultType, self.nCurLevel, self.nGameTime, self.nLevelId, bossInfo, mapScore, mapReward, mapChange, nOld, nNew, bSimulate, nBattleCount, self.tbCharDamage)
 	self.parent:LevelEnd(nResultType)
 end
 function JointDrillLevelData_2:JointDrillTimeOut()
@@ -468,7 +469,7 @@ function JointDrillLevelData_2:OnEvent_JointDrillChallengeFinishError()
 			local wait = function()
 				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 				self.parent:SetResetLevelSelect(true)
-				EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillBuildList_2)
+				EventManager.Hit(EventId.ClosePanel, JointDrillContext.GetPanelId(self.parent.nActId, "BuildList"))
 			end
 			cs_coroutine.start(wait)
 			self.parent:ChallengeEnd()

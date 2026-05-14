@@ -35,37 +35,37 @@ function ActivityPopUpCtrl:ShowPopUp()
 	self.popUpIndex = self.popUpIndex + 1
 	self.nCurActId = table.remove(self.tbPopUpAct, 1)
 	local popUpCfg = PlayerData.PopUp:GetPopUpConfigData(self.nCurActId)
-	self.curType = popUpCfg.PopUpType
-	if popUpCfg ~= nil then
-		if self.tbPopUpCtrlObj ~= nil then
-			if self.tbPopUpCtrlObj.go ~= nil then
-				destroy(self.tbPopUpCtrlObj.go)
-			end
-			if self.tbPopUpCtrlObj.ctrl ~= nil then
-				self:UnbindCtrlByNode(self.tbPopUpCtrlObj.ctrl)
-			end
-			self.tbPopUpCtrlObj = {}
-		end
-		local sPrefabPath = string.format("%s.prefab", popUpCfg.PopUpRes)
-		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.PopUpRoot)
-		local ctrlName = popUpCfg.ScriptName
-		local sCtrlPath = string.format("Game.UI.%s", ctrlName)
-		local popupCtrl = self:BindCtrlByNode(goObj, sCtrlPath)
-		local callback = function()
-			self:OnBtnClick_Close()
-		end
-		popupCtrl:ShowPopUp(self.nCurActId, callback, self.popUpIndex)
-		self.tbPopUpCtrlObj = {go = goObj, ctrl = popupCtrl}
-		local saveTime = CS.ClientManager.Instance.serverTimeStamp
-		if popUpCfg ~= nil then
-			if popUpCfg.PopRefreshType == GameEnum.PopRefreshType.WeeklyFirst then
-				saveTime = GetNextWeekRefreshTime()
-			end
-			LocalData.SetPlayerLocalData("Act_PopUp" .. self.nCurActId, saveTime)
-			self._mapNode.btnGoto.gameObject:SetActive(popUpCfg.PopJumpType ~= GameEnum.PopJumpType.None)
-			PlayerData.PopUp:ReleaseCachedPopUpData(popUpCfg.Id)
-		end
+	if popUpCfg == nil then
+		self:ShowPopUp()
+		return
 	end
+	self.curType = popUpCfg.PopUpType
+	if self.tbPopUpCtrlObj ~= nil then
+		if self.tbPopUpCtrlObj.go ~= nil then
+			destroy(self.tbPopUpCtrlObj.go)
+		end
+		if self.tbPopUpCtrlObj.ctrl ~= nil then
+			self:UnbindCtrlByNode(self.tbPopUpCtrlObj.ctrl)
+		end
+		self.tbPopUpCtrlObj = {}
+	end
+	local sPrefabPath = string.format("%s.prefab", popUpCfg.PopUpRes)
+	local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.PopUpRoot)
+	local ctrlName = popUpCfg.ScriptName
+	local sCtrlPath = string.format("Game.UI.%s", ctrlName)
+	local popupCtrl = self:BindCtrlByNode(goObj, sCtrlPath)
+	local callback = function()
+		self:OnBtnClick_Close()
+	end
+	popupCtrl:ShowPopUp(self.nCurActId, callback, self.popUpIndex)
+	self.tbPopUpCtrlObj = {go = goObj, ctrl = popupCtrl}
+	local saveTime = CS.ClientManager.Instance.serverTimeStamp
+	if popUpCfg.PopRefreshType == GameEnum.PopRefreshType.WeeklyFirst then
+		saveTime = GetNextWeekRefreshTime()
+	end
+	LocalData.SetPlayerLocalData("Act_PopUp" .. self.nCurActId, saveTime)
+	self._mapNode.btnGoto.gameObject:SetActive(popUpCfg.PopJumpType ~= GameEnum.PopJumpType.None)
+	PlayerData.PopUp:ReleaseCachedPopUpData(popUpCfg.Id)
 end
 function ActivityPopUpCtrl:IsPopUpType()
 	return self.curType == GameEnum.PopUpType.ActivityGroup or self.curType == GameEnum.PopUpType.Activity or self.curType == GameEnum.PopUpType.OwnPopUP
@@ -85,7 +85,7 @@ function ActivityPopUpCtrl:OnEnable()
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForSeconds(0.1))
 		self._mapNode.PopUpRoot.gameObject:SetActive(self:IsPopUpType())
-		if self.tbPopUpCtrlObj.ctrl ~= nil and self.tbPopUpCtrlObj.ctrl.PlayOpenAnim ~= nil then
+		if self.tbPopUpCtrlObj ~= nil and self.tbPopUpCtrlObj.ctrl ~= nil and self.tbPopUpCtrlObj.ctrl.PlayOpenAnim ~= nil then
 			self.tbPopUpCtrlObj.ctrl:PlayOpenAnim()
 		end
 	end

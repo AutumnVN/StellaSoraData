@@ -176,7 +176,7 @@ function DailyInstanceShelockHpBar:OnGridRefresh(goGrid, gridIndex)
 	local nBuffId = self.buffList[index].nId
 	local config = ConfigTable.GetData_Buff(nBuffId)
 	local nBuffNum = self.buffList[index].nNum
-	local nLeftTime = self.buffList[index].bnLeftTime
+	local nLeftTime = self.buffList[index].nLeftTime
 	NovaAPI.SetTMPText(txtCount, nBuffNum)
 end
 function DailyInstanceShelockHpBar:PlayTweenHp(hp, hpMax)
@@ -346,7 +346,7 @@ function DailyInstanceShelockHpBar:SetHp(hp, hpMax, bChange)
 	if self.bossId == 0 then
 		return
 	end
-	local nBeforePersent = self.nBeforeHp / self.nBeforeHpMax
+	local nBeforePersent = 0 < self.nBeforeHpMax and self.nBeforeHp / self.nBeforeHpMax or 0
 	if hpMax <= 0 then
 		self._mapNode.rtHpFillDelay.sizeDelta = Vector2(0, BarHeight)
 		self._mapNode.rtHpFill.sizeDelta = Vector2(0, BarHeight)
@@ -410,10 +410,7 @@ function DailyInstanceShelockHpBar:OnEvent_ToughnessShowStateChanged(bShow)
 	end
 end
 function DailyInstanceShelockHpBar:OnEvent_Deaded()
-	local wait = function()
-		self:CloseUI()
-	end
-	self:AddTimer(1, 1.6, self, wait, true, true, nil, nil)
+	self:AddTimer(1, 1.6, "CloseUI", true, true, nil, nil)
 end
 function DailyInstanceShelockHpBar:OpenUI(bossId, nDataId, parent)
 	self.bossId = bossId
@@ -546,7 +543,7 @@ end
 function DailyInstanceShelockHpBar:CloseUI()
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.BossCanvasGroup, 1)
 	self.bossHUDAnimTweener = Sequence()
-	self.bossHUDAnimTweener:Append(self._mapNode.BossCanvasGroup.DOFade(0, 0.5))
+	self.bossHUDAnimTweener:Append(self._mapNode.BossCanvasGroup:DOFade(0, 0.5))
 	self.bossHUDAnimTweener:OnComplete(function()
 		NovaAPI.SetComponentEnable(self._mapNode.BossCanvas, false)
 	end)

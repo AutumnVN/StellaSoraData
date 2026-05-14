@@ -59,7 +59,7 @@ function BattleDamageCtrl:RefreshDamageList()
 			local nCharSkinId = mapDamage.nSkinId or PlayerData.Char:GetCharSkinId(mapDamage.nCharId)
 			local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
 			local mapCharCfg = ConfigTable.GetData_Character(mapDamage.nCharId)
-			if mapCharSkin ~= nil and mapCharSkin ~= nil then
+			if mapCharSkin ~= nil and mapCharCfg ~= nil then
 				local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapCharCfg.Grade]
 				self:SetPngSprite(imgItemIcon, mapCharSkin.Icon .. AllEnum.CharHeadIconSurfix.XXL)
 				self:SetAtlasSprite(imgItemRare, "12_rare", sFrame)
@@ -71,8 +71,8 @@ function BattleDamageCtrl:RefreshDamageList()
 			local nWidth = rtBarBg.sizeDelta.x
 			local nHeight = rtBarBg.sizeDelta.y
 			local v2Target = Vector2(nWidth * nPercent, nHeight)
-			local tweener = rtBar:DOSizeDelta(v2Target, 0.5):SetUpdate(true)
-			local twTxt = DOTween.To(function()
+			self.barTweener = rtBar:DOSizeDelta(v2Target, 0.5):SetUpdate(true)
+			self.txtTweener = DOTween.To(function()
 				return 0
 			end, function(value)
 				NovaAPI.SetTMPText(txtDamagePercent, string.format("%.1f%%", value))
@@ -114,12 +114,16 @@ function BattleDamageCtrl:OnEnable()
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
 end
 function BattleDamageCtrl:OnDisable()
+	if self.barTweener then
+		self.barTweener:Kill()
+	end
+	if self.txtTweener then
+		self.txtTweener:Kill()
+	end
 end
 function BattleDamageCtrl:OnDestroy()
 end
 function BattleDamageCtrl:OnBtnClick_Close()
 	self:PlayCloseAnim()
-end
-function BattleDamageCtrl:OnEvent_AAA()
 end
 return BattleDamageCtrl

@@ -121,6 +121,7 @@ function TowerDefenseLevelCellCtrl:OnBtnClick_SelectLevel()
 	end
 	if not self.actData:IsPreLevelPass(self.levelData.nLevelId) then
 		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("TowerDef_NeedPassPreLevel"))
+		return
 	end
 	EventManager.Hit("TowerDefenseLevelCell_OnSelected", self.levelData.nLevelId)
 end

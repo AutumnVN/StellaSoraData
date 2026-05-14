@@ -6804,7 +6804,7 @@ return {
 			"",
 			false,
 			"",
-			"Step outside the Monolith, we hand the Artifact to Mistique,==RT==who is waiting outside, yawning.",
+			"Stepping outside the Monolith, we hand the Artifact to Mistique,==RT==who is waiting outside, yawning.",
 			""
 		}
 	},
@@ -7891,7 +7891,7 @@ return {
 			"",
 			false,
 			"",
-			"Mm...==W== Yeah...==W== This means I have time to forge blade with my ==SEX11==.",
+			"Mm...==W== Yeah...==W== This means I have time to forge a blade with my ==SEX11==.",
 			""
 		}
 	},

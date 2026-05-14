@@ -657,7 +657,7 @@ end
 function NpcOptionCtrl:OnBtnClick_Select(btn)
 	local nIdx = table.indexof(self._mapNode.btnChoose, btn)
 	if table.indexof(self.bUnabledIdx, nIdx - 1) > 0 then
-		EventManager.Hit(EventId.OpenMessageBox, "不可选选项")
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("StarTower_NPCOption_IllegalOption"))
 		return
 	end
 	self:ClosePanel(false, nIdx, self.nEventId)
