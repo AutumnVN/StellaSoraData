@@ -1,21 +1,21 @@
-local BattlePassBuyLevelItemGridCtrl = class("BattlePassBuyLevelItemGridCtrl", BaseCtrl)
-BattlePassBuyLevelItemGridCtrl._mapNodeConfig = {
+local BattlePassBuyPremiumItemGridCtrl = class("BattlePassBuyPremiumItemGridCtrl", BaseCtrl)
+BattlePassBuyPremiumItemGridCtrl._mapNodeConfig = {
 	tcItem = {
 		sCtrlName = "Game.UI.TemplateEx.TemplateItemCtrl"
 	},
 	btnGrid = {sComponentName = "UIButton"},
 	TMPDesc = {sComponentName = "TMP_Text"}
 }
-BattlePassBuyLevelItemGridCtrl._mapEventConfig = {}
-BattlePassBuyLevelItemGridCtrl._mapRedDotConfig = {}
-function BattlePassBuyLevelItemGridCtrl:OnEnable()
+BattlePassBuyPremiumItemGridCtrl._mapEventConfig = {}
+BattlePassBuyPremiumItemGridCtrl._mapRedDotConfig = {}
+function BattlePassBuyPremiumItemGridCtrl:OnEnable()
 	local rtShow = self.gameObject.transform:Find("btnGrid/AnimRoot/rtTopInfo")
 	if rtShow ~= nil then
 		local tmpHint = rtShow:Find("TMPRewardHintSPremium")
 		NovaAPI.SetTMPText(tmpHint:GetComponent("TMP_Text"), ConfigTable.GetUIText("BattlePassRewardPremiumTopGridHint"))
 	end
 end
-function BattlePassBuyLevelItemGridCtrl:Refresh(nTid)
+function BattlePassBuyPremiumItemGridCtrl:Refresh(nTid)
 	local rtShow = self.gameObject.transform:Find("btnGrid/AnimRoot/rtTopInfo")
 	if nTid == nil then
 		self._mapNode.TMPDesc.gameObject:SetActive(false)
@@ -39,4 +39,4 @@ function BattlePassBuyLevelItemGridCtrl:Refresh(nTid)
 	NovaAPI.SetTMPText(self._mapNode.TMPDesc, mapItemCfgData.Title)
 	self._mapNode.tcItem:SetItem(nTid, nil, nil, nil, false, false, false, true, false)
 end
-return BattlePassBuyLevelItemGridCtrl
+return BattlePassBuyPremiumItemGridCtrl

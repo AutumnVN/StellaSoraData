@@ -8,6 +8,10 @@ ThrowGiftPanel._tbDefine = {
 	}
 }
 function ThrowGiftPanel:Awake()
+	self.nLevelPanelId = PanelId.ThrowGiftLevelPanel
+	self.sGamepadPanelName = "ThrowGiftPanel"
+	self.nTransition = 37
+	self._rootPath = "UI_Activity/_400005/GoalPerfab/Goal%s.prefab"
 	GamepadUIManager.EnterAdventure(true)
 	GamepadUIManager.EnableGamepadUI("ThrowGiftPanel", {}, nil, true)
 end

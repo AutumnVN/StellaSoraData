@@ -97,8 +97,13 @@ function StarTowerMapCtrl:Refresh(tbStageInfo, nCurLayer, nStarTowerId, bHorrorR
 	else
 		self._mapNode.Title.gameObject:SetActive(true)
 		local mapStarTower = ConfigTable.GetData("StarTower", nStarTowerId)
-		NovaAPI.SetTMPText(self._mapNode.txtTitle, mapStarTower.Name)
-		NovaAPI.SetTMPText(self._mapNode.txtdifficulty, ConfigTable.GetUIText("Diffculty_" .. tostring(mapStarTower.Difficulty)))
+		if mapStarTower ~= nil then
+			NovaAPI.SetTMPText(self._mapNode.txtTitle, mapStarTower.Name)
+			NovaAPI.SetTMPText(self._mapNode.txtdifficulty, ConfigTable.GetUIText("Diffculty_" .. tostring(mapStarTower.Difficulty)))
+		else
+			NovaAPI.SetTMPText(self._mapNode.txtTitle, "")
+			NovaAPI.SetTMPText(self._mapNode.txtdifficulty, "")
+		end
 	end
 	self.tbStageInfo = tbStageInfo
 	self.curLayer = nCurLayer

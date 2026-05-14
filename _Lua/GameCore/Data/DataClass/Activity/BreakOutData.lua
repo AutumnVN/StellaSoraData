@@ -209,12 +209,14 @@ function BreakOutData:RefreshRedDot()
 end
 function BreakOutData:IsActTimeEnd()
 	local isEnd = false
-	local LevelEndTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(ConfigTable.GetConfigValue("BreakOut_LevelClosed"))
-	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
-	if LevelEndTime ~= nil then
-		return LevelEndTime < nCurTime
-	else
-		printError("config 表：" .. "BreakOut_LevelClosed" .. " Value数据为空")
+	if self.nActId then
+		local LevelEndTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(ConfigTable.GetData("Activity", self.nActId).EndTime)
+		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+		if LevelEndTime ~= nil then
+			return LevelEndTime < nCurTime
+		else
+			printError("config 表：" .. "BreakOut_LevelClosed" .. " Value数据为空")
+		end
 	end
 	return isEnd
 end
@@ -311,6 +313,10 @@ function BreakOutData:RequestFinishLevel(arrayData, cb)
 		CharacterNid = arrayData.CharId
 	})
 	EventManager.Hit("SetPlayFinishState", true)
+	if self:IsActivityClosed() then
+		self:ShowActivityClosedAlert()
+		return
+	end
 	if not arrayData.Win then
 		local mapMsg = arrayData
 		local failCallback = function()
@@ -318,7 +324,7 @@ function BreakOutData:RequestFinishLevel(arrayData, cb)
 				cb()
 			end
 		end
-		EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanel)
+		EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanelS2)
 		HttpNetHandler.SendMsg(NetMsgId.Id.milkout_settle_req, mapMsg, nil, failCallback)
 		return
 	end
@@ -331,7 +337,7 @@ function BreakOutData:RequestFinishLevel(arrayData, cb)
 			FirstComplete = arrayData.Win
 		})
 	end
-	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanel)
+	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanelS2)
 	HttpNetHandler.SendMsg(NetMsgId.Id.milkout_settle_req, mapMsg, nil, successCallback)
 end
 function BreakOutData:CreateTempData(nLevelId, bResult)
@@ -367,5 +373,25 @@ function BreakOutData:OnEvent_GMClearAllLevels(mapMsgData)
 	if mapMsgData ~= nil then
 		self:CacheAllLevelData(mapMsgData.Levels)
 	end
+end
+function BreakOutData:IsActivityClosed()
+	if self == nil or self.CheckActivityOpen == nil then
+		return false
+	end
+	return not self:CheckActivityOpen()
+end
+function BreakOutData:ShowActivityClosedAlert()
+	local msg = {
+		nType = AllEnum.MessageBox.Alert,
+		sContent = ConfigTable.GetUIText("Activity_End_Notice"),
+		callbackConfirm = function()
+			self:ForceExitOnFinishFail()
+		end
+	}
+	EventManager.Hit(EventId.OpenMessageBox, msg)
+end
+function BreakOutData:ForceExitOnFinishFail()
+	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutPlayPanelS2)
+	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanelS2)
 end
 return BreakOutData

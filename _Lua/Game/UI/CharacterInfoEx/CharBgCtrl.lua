@@ -69,12 +69,7 @@ CharBgCtrl._mapEventConfig = {
 function CharBgCtrl:CreateRT()
 end
 function CharBgCtrl:ReleaseRT()
-	self._mapNode.trCamera.targetTexture = nil
 	NovaAPI.SetTexture(self._mapNode.imgBgRT, nil)
-	if self.rtPanel ~= nil then
-		GameUIUtils.ReleaseRenderTexture(self.rtPanel)
-		self.rtPanel = nil
-	end
 end
 function CharBgCtrl:GetOffsetData(sOffset)
 	local objOffset
@@ -268,10 +263,12 @@ function CharBgCtrl:OnDrag_Character(mDrag)
 		self.nDragStartPosX = mDrag.EventData.position.x
 	elseif mDrag.DragEventType == AllEnum.UIDragType.DragEnd then
 		local dragEndPosX = mDrag.EventData.position.x
-		if dragEndPosX - self.nDragStartPosX > self.nDragThreshold then
-			self:OnEvent_SwitchCurChar(true)
-		elseif dragEndPosX - self.nDragStartPosX < -self.nDragThreshold then
-			self:OnEvent_SwitchCurChar(false)
+		if self.nDragStartPosX ~= nil then
+			if dragEndPosX - self.nDragStartPosX > self.nDragThreshold then
+				self:OnEvent_SwitchCurChar(true)
+			elseif dragEndPosX - self.nDragStartPosX < -self.nDragThreshold then
+				self:OnEvent_SwitchCurChar(false)
+			end
 		end
 	end
 end

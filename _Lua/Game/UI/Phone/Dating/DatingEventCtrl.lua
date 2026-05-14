@@ -116,8 +116,8 @@ function DatingEventCtrl:SetEventList(tbEvent, tbEventId)
 	self._mapNode.goEventEndItem.gameObject:SetActive(false)
 	self._mapNode.imgSpeed1.gameObject:SetActive(not self.bSpeed)
 	self._mapNode.imgSpeed2.gameObject:SetActive(self.bSpeed)
-	self._mapNode.imgSpeed1.gameObject:SetActive(not self.bAuto)
-	self._mapNode.imgSpeed2.gameObject:SetActive(self.bAuto)
+	self._mapNode.imgAutoPlay1.gameObject:SetActive(not self.bAuto)
+	self._mapNode.imgAutoPlay2.gameObject:SetActive(self.bAuto)
 	self.nCurIndex = 1
 	if self.nEventId == nil then
 		self.nEventId = 1

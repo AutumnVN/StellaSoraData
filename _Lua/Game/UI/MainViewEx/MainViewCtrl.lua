@@ -10,6 +10,7 @@ local ConfigData = require("GameCore.Data.ConfigData")
 local JumpUtil = require("Game.Common.Utils.JumpUtil")
 local Event = require("GameCore.Event.Event")
 local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 local ResType = GameResourceLoader.ResType
 local LayoutRebuilder = CS.UnityEngine.UI.LayoutRebuilder
 local LimitWidth = 323
@@ -1390,12 +1391,8 @@ function MainViewCtrl:OnBtnClick_ActivityFast(btn, nIndex)
 			if not bPlayCond then
 				return
 			end
-			local nType = actDataIns:GetJointDrillType()
-			if nType == GameEnum.JointDrillMode.JointDrill_Mode_1 then
-				EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_1, actDataIns:GetActId())
-			elseif nType == GameEnum.JointDrillMode.JointDrill_Mode_2 then
-				EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_2, actDataIns:GetActId())
-			end
+			local nActId = actDataIns:GetActId()
+			EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(nActId, "LevelSelect"), nActId)
 		elseif nActType == GameEnum.activityType.TrekkerVersus then
 			local nChallengeEndTime = actDataIns:GetChallengeEndTime()
 			if nCurTime > nChallengeEndTime then

@@ -90,18 +90,10 @@ local char_panel_show_cfg = {
 		bgPosX = -60,
 		L2DPosX = -3,
 		weaponPosX = 28
-	},
-	[PanelId.CharFavourGift] = {
-		bShowTopBar = true,
-		type = AllEnum.CharBgPanelShowType.L2D,
-		bgPosX = -60,
-		L2DPosX = -3,
-		weaponPosX = 28
 	}
 }
 local char_sub_panel = {
-	[PanelId.CharUpPanel] = true,
-	[PanelId.CharFavourGift] = true
+	[PanelId.CharUpPanel] = true
 }
 local panel_switch_anim_cfg = {
 	[PanelId.CharUpPanel] = {
@@ -220,12 +212,12 @@ function CharBgPanel:OnEnable()
 end
 function CharBgPanel:OnDisable()
 end
-function CharBgPanel:OnEvent_CharRelatePanelOpen(nPanelId, ncharId, tbCharList, param1)
+function CharBgPanel:OnEvent_CharRelatePanelOpen(nPanelId, nCharId, tbCharList, param1)
 	self.nClosePanelId = self.nPanelId
 	self.nPanelId = nPanelId
 	self.bSecondPanel = false
-	if nil ~= ncharId then
-		self.ncharId = ncharId
+	if nil ~= nCharId then
+		self.nCharId = nCharId
 	end
 	if nil ~= tbCharList then
 		self.tbCharList = tbCharList

@@ -180,8 +180,6 @@ function ReceiveSpecialRewardCtrl:ShowCharSkin(nSkinId, bGetNew)
 	local mapSkinData = ConfigTable.GetData_CharacterSkin(nSkinId)
 	self.nCharId = mapSkinData.CharId
 	NovaAPI.SetSpriteRendererSprite(self._mapNode.BgRare1, self:LoadPngGacha(mapSkinData.Bg))
-	local sPath = string.format("Actor2D/Character/%d/atlas_png/a/%d_001.png", nSkinId, nSkinId)
-	NovaAPI.SetSpriteRendererSprite(self._mapNode.PNG, self:LoadAsset(sPath, typeof(Sprite)))
 	if mapSkinData.L2D ~= nil and mapSkinData.L2D ~= "" then
 		local bSetSuccess, nT, nAnimLength, tbRenderer = Actor2DManager.SetActor2DWithRender(PanelId.ReceiveSpecialReward, self._mapNode.rImgL2D, self.nCharId, nSkinId, nil, self._mapNode.actor2dNode)
 		self.goL2D = tbRenderer
@@ -257,6 +255,7 @@ function ReceiveSpecialRewardCtrl:ShowCharCG()
 	self._mapNode.btnJumpAll.gameObject:SetActive(false)
 	self._mapNode.btnSkipAnim.gameObject:SetActive(true)
 	local curReward = self.tbRewardList[1]
+	self.nCharId = curReward.nCharId
 	local sAssetPath = ""
 	local mapCfg = ConfigTable.GetData("CharacterCG", curReward.nId)
 	if nil == mapCfg then
@@ -276,14 +275,16 @@ function ReceiveSpecialRewardCtrl:ShowCharCG()
 	end
 	local nDuration = 0
 	local nId = PlayerData.Voice:PlayCharVoice(cgVoiceKey, curReward.nCharId)
-	local mapVoiceCfg = ConfigTable.GetData("VoDirectory", nId)
-	if mapVoiceCfg ~= nil then
-		local dataText = BubbleVoiceManager.GetBubbleText(mapVoiceCfg.voResource)
-		if dataText ~= nil then
-			local sContent = dataText[1] .. dataText[2] .. dataText[3] .. dataText[4]
-			sContent = string.gsub(sContent, "==RT==", "\n")
-			sContent = string.gsub(sContent, "==PLAYER_NAME==", PlayerData.Base:GetPlayerNickName())
-			NovaAPI.SetTMPText(self._mapNode.TMP_CGWord, sContent)
+	if nId ~= 0 then
+		local mapVoiceCfg = ConfigTable.GetData("VoDirectory", nId)
+		if mapVoiceCfg ~= nil then
+			local dataText = BubbleVoiceManager.GetBubbleText(mapVoiceCfg.voResource)
+			if dataText ~= nil then
+				local sContent = dataText[1] .. dataText[2] .. dataText[3] .. dataText[4]
+				sContent = string.gsub(sContent, "==RT==", "\n")
+				sContent = string.gsub(sContent, "==PLAYER_NAME==", PlayerData.Base:GetPlayerNickName())
+				NovaAPI.SetTMPText(self._mapNode.TMP_CGWord, sContent)
+			end
 		end
 	end
 	if nDuration <= 0 then
@@ -383,13 +384,11 @@ function ReceiveSpecialRewardCtrl:ShowSSRAnimEnd(_, voice)
 	if self.bNew then
 		self:AddTimer(1, 0.4, function()
 			WwiseAudioMgr:PlaySound("ui_recuit_gacha_new")
-			print("ui_recuit_gacha_new")
 		end, true, true, true)
 	end
 	self.timerStep = self:AddTimer(1, animTime, "ShowTitleAnimEnd", true, true, true)
 end
 function ReceiveSpecialRewardCtrl:ShowCGEnd()
-	print("ShowCGEnd")
 	self:ShowCGTitle()
 	self._mapNode.goInfoContent:SetActive(false)
 	self._mapNode.goCGInfoContent:SetActive(true)
@@ -399,7 +398,6 @@ function ReceiveSpecialRewardCtrl:ShowCGEnd()
 	if self.bNew then
 		self:AddTimer(1, 0.4, function()
 			WwiseAudioMgr:PlaySound("ui_recuit_gacha_new")
-			print("ui_recuit_gacha_new")
 		end, true, true, true)
 	end
 	self.timerStep = self:AddTimer(1, animTime, "ShowTitleAnimEnd", true, true, true)
@@ -446,12 +444,7 @@ function ReceiveSpecialRewardCtrl:OnEnable()
 	end
 end
 function ReceiveSpecialRewardCtrl:OnDisable()
-	self._mapNode.OffScreen2DCamera.targetTexture = nil
 	NovaAPI.SetTexture(self._mapNode.rImgL2D, nil)
-	if self.rtCharL2d ~= nil then
-		GameUIUtils.ReleaseRenderTexture(self.rtCharL2d)
-		self.rtCharL2d = nil
-	end
 	if self.goL2D ~= nil then
 		Actor2DManager.UnSetActor2DWithRender(self.goL2D)
 		self.goL2D = nil

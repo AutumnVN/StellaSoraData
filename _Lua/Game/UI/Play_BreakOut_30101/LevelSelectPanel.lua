@@ -4,7 +4,7 @@ LevelSelectPanel._sSortingLayerName = AllEnum.SortingLayerName.UI
 LevelSelectPanel._tbDefine = {
 	{
 		sPrefabPath = "30101/Play/BreakOutLevelSelectPanel.prefab",
-		sCtrlName = "Game.UI.Play_BreakOut_30101.BreakOutLevelDetailCtr"
+		sCtrlName = "Game.UI.Play_BreakOut_30101.LevelSelectCtrl"
 	}
 }
 function LevelSelectPanel:Awake()

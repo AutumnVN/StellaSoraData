@@ -110,9 +110,12 @@ local AvgPreset = {
 		"mood_3",
 		"mood_4",
 		"mood_5",
+		"neo_grace_tent",
+		"neo_grace_tent_destroyed",
 		"north_street_city_daylight",
 		"north_street_grey_night",
 		"north_street_grey_night_nolight",
+		"philae_market_daylight",
 		"philae_room_daylight",
 		"philae_room_dusk",
 		"philae_street_grey_daylight",
@@ -254,7 +257,9 @@ local AvgPreset = {
 		"wog_passage",
 		"wog_store_inside",
 		"wog_store_outside",
-		"wog_temple"
+		"wog_temple",
+		"workshop_lab_dusk",
+		"workshop_lab_night"
 	},
 	CgResName = {
 		"story_character_141",
@@ -387,6 +392,7 @@ local AvgPreset = {
 		"story_main_02_018",
 		"story_main_02_019",
 		"story_main_02_022",
+		"story_main_02_023",
 		"story_main_03_001_a",
 		"story_main_03_001_b",
 		"story_main_03_003",
@@ -5688,6 +5694,18 @@ local AvgPreset = {
 		},
 		{
 			"fx_avg_unsheathe",
+			""
+		},
+		{
+			"fx_avg_spatial_blade",
+			""
+		},
+		{
+			"fx_avg_hotaru_laser",
+			""
+		},
+		{
+			"fx_avg_powerup_loop",
 			""
 		},
 		{

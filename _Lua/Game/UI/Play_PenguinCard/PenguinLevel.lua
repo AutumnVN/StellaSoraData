@@ -15,7 +15,6 @@ function PenguinLevel:Init(nFloorId, nLevelId, nActId, tbStarScore)
 	}
 	self.nLevelId = nLevelId
 	self.nActId = nActId
-	self.bWarning = true
 	self:ParseConfigData()
 	self:ParseLocalData()
 	EventManager.Hit(EventId.OpenPanel, PanelId.PenguinCard, self)
@@ -29,6 +28,7 @@ function PenguinLevel:ParseConfigData()
 	self.tbSlotUpgradeCost = ConfigTable.GetConfigNumberArray("PenguinCardSlotUpgradeCost")
 	self.tbBuyLimitUpgradeCost = ConfigTable.GetConfigNumberArray("PenguinCardBuyLimitUpgradeCost")
 	self.nFireScore = ConfigTable.GetConfigNumber("PenguinCardFeverScore")
+	self.nPenguinCardRollCount = ConfigTable.GetConfigNumber("PenguinCardRollCount")
 	self.mapBuyCost = {}
 	local func_ForEach_Line = function(mapData)
 		self.mapBuyCost[mapData.Count] = {
@@ -47,6 +47,17 @@ function PenguinLevel:ParseConfigData()
 		}
 	end
 	ForEachTableLine(DataTable.PenguinCardHandRank, func_ForEach_Rank)
+	self.mapTendencyScore = {}
+	local func_ForEach_Tendency = function(mapData)
+		if not self.mapTendencyScore[mapData.GroupId] then
+			self.mapTendencyScore[mapData.GroupId] = {}
+		end
+		table.insert(self.mapTendencyScore[mapData.GroupId], mapData.Score)
+	end
+	ForEachTableLine(DataTable.PenguinCardTendency, func_ForEach_Tendency)
+	for _, v in pairs(self.mapTendencyScore) do
+		table.sort(v)
+	end
 end
 function PenguinLevel:ParseLocalData()
 	local bAuto = LocalData.GetPlayerLocalData("PenguinCardAuto")
@@ -444,6 +455,7 @@ function PenguinLevel:RunState_Prepare()
 	self.bSelectedPenguinCard = false
 	self.nUpgradeDiscount = 1
 	self.nTempAddRound = 0
+	self.nTempAddRollCount = 0
 	for _, v in ipairs(self.tbBuff) do
 		v:ResetTurnTrigger()
 	end
@@ -618,6 +630,7 @@ function PenguinLevel:RollPenguinCard()
 		table.insert(self.tbSelectablePenguinCard, mapCard)
 	end
 	self.bSelectedPenguinCard = false
+	self:TriggerEffect(GameEnum.PenguinCardTriggerPhase.ManualRoll)
 	EventManager.Hit("PenguinCard_RollPenguinCard")
 end
 function PenguinLevel:SelectPenguinCard(nIndex)
@@ -714,9 +727,62 @@ function PenguinLevel:GetRollPenguinCardResult()
 	if not mapWeightCfg then
 		return {}
 	end
+	local tbWeight = clone(mapWeightCfg.Weight)
+	self:AddPenguinCardWeightByTendency(tbWeight, mapWeightCfg.CardList)
 	local tbMaxGroupId = self:GetMaxLevelPenguinCard()
-	local tbId = PenguinCardUtils.WeightedRandom(mapWeightCfg.CardList, mapWeightCfg.Weight, 3, tbMaxGroupId)
+	local nRoll = self.nPenguinCardRollCount + self.nTempAddRollCount
+	local tbId = PenguinCardUtils.WeightedRandom(mapWeightCfg.CardList, tbWeight, nRoll, tbMaxGroupId)
 	return tbId
+end
+function PenguinLevel:AddPenguinCardWeightByTendency(tbWeight, tbCardList)
+	local tbCardAdd = {}
+	local tbTendencyId = self:GetRollPenguinCardTendency()
+	for _, nTendencyId in pairs(tbTendencyId) do
+		local mapTendencyCfg = ConfigTable.GetData("PenguinCardTendency", nTendencyId)
+		if mapTendencyCfg then
+			local mapAddWeight = {}
+			for i, v in ipairs(mapTendencyCfg.CardGroup) do
+				mapAddWeight[v] = mapTendencyCfg.AddWeight[i]
+			end
+			for i, v in ipairs(tbCardList) do
+				local mapCardCfg = ConfigTable.GetData("PenguinCard", v)
+				if mapCardCfg and mapAddWeight[mapCardCfg.GroupId] then
+					tbWeight[i] = tbWeight[i] + mapAddWeight[mapCardCfg.GroupId]
+					if not tbCardAdd[v] then
+						tbCardAdd[v] = 0
+					end
+					tbCardAdd[v] = tbCardAdd[v] + mapAddWeight[mapCardCfg.GroupId]
+				end
+			end
+		end
+	end
+	return tbCardAdd
+end
+function PenguinLevel:GetRollPenguinCardTendency()
+	local mapTendency = {}
+	for _, v in ipairs(self.tbPenguinCard) do
+		if v ~= 0 and 0 < v.nTendencyGroup then
+			if not mapTendency[v.nTendencyGroup] then
+				mapTendency[v.nTendencyGroup] = 0
+			end
+			mapTendency[v.nTendencyGroup] = mapTendency[v.nTendencyGroup] + v.nTendencyScore
+		end
+	end
+	local tbTendencyId = {}
+	for nGroup, nScore in pairs(mapTendency) do
+		local tbScore = self.mapTendencyScore[nGroup]
+		local nLevel = 0
+		for k, v in ipairs(tbScore) do
+			if v <= nScore then
+				nLevel = k
+			end
+		end
+		if 0 < nLevel then
+			local nTendencyId = nGroup * 100 + nLevel
+			table.insert(tbTendencyId, nTendencyId)
+		end
+	end
+	return tbTendencyId
 end
 function PenguinLevel:GetMaxLevelPenguinCard()
 	local tbGroupId = {}
@@ -726,6 +792,44 @@ function PenguinLevel:GetMaxLevelPenguinCard()
 		end
 	end
 	return tbGroupId
+end
+function PenguinLevel:ChangeSpecificCard(tbAimId)
+	if next(self.tbSelectablePenguinCard) == nil then
+		return
+	end
+	local tbMaxGroupId = self:GetMaxLevelPenguinCard()
+	for i = #tbAimId, 1, -1 do
+		local mapCardCfg = ConfigTable.GetData("PenguinCard", tbAimId[i])
+		if mapCardCfg and table.indexof(tbMaxGroupId, mapCardCfg.GroupId) > 0 then
+			table.remove(tbAimId, i)
+		end
+	end
+	if next(tbAimId) == nil then
+		return
+	end
+	local nHasIndex = 0
+	for i, v in ipairs(self.tbSelectablePenguinCard) do
+		if 0 < table.indexof(tbAimId, v.nId) then
+			nHasIndex = i
+			v:SetHighLight(true)
+			break
+		end
+	end
+	if nHasIndex == 0 then
+		local nAimId = tbAimId[math.random(#tbAimId)]
+		local tbAimIndex = {}
+		for i, v in ipairs(self.tbSelectablePenguinCard) do
+			if not v.bHighLight then
+				table.insert(tbAimIndex, i)
+			end
+		end
+		if next(tbAimIndex) == nil then
+			return
+		end
+		local nAimIndex = tbAimIndex[math.random(#tbAimIndex)]
+		self.tbSelectablePenguinCard[nAimIndex]:Init(nAimId)
+		self.tbSelectablePenguinCard[nAimIndex]:SetHighLight(true)
+	end
 end
 function PenguinLevel:RecyclePenguinCard(mapCard)
 	mapCard:Clear()
@@ -1268,9 +1372,6 @@ function PenguinLevel:GetStar()
 	end
 	return nStar
 end
-function PenguinLevel:SetWarning(bAble)
-	self.bWarning = bAble
-end
 function PenguinLevel:GetOwnPenguinCardCount()
 	local nCount = 0
 	for i = 1, 6 do
@@ -1295,11 +1396,15 @@ function PenguinLevel:ExecuteEffect(nEffectType, mapEffectValue, mapTriggerSourc
 		self.nUpgradeDiscount = mapEffectValue / 100
 	elseif nEffectType == GameEnum.PenguinCardEffectType.AddRound then
 		self.nTempAddRound = self.nTempAddRound + mapEffectValue
+	elseif nEffectType == GameEnum.PenguinCardEffectType.AddCardRollCount then
+		self.nTempAddRollCount = self.nTempAddRollCount + mapEffectValue
 	elseif nEffectType == GameEnum.PenguinCardEffectType.BlockFatalDamage then
 		self:ChangeHp(-1 * mapTriggerSource.nHpChange)
 		EventManager.Hit("PenguinCard_BlockFatalDamage")
 	elseif nEffectType == GameEnum.PenguinCardEffectType.UpgradeRebate then
 		self:ChangeScore(mapTriggerSource.nUpgradeCost * mapEffectValue / 100)
+	elseif nEffectType == GameEnum.PenguinCardEffectType.RollSpecificCard then
+		self:ChangeSpecificCard(mapEffectValue)
 	end
 end
 function PenguinLevel:TriggerEffect(nTriggerPhase, mapTriggerSource)

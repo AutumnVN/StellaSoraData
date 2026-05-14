@@ -33,17 +33,20 @@ TrialPauseCtrl._mapNodeConfig = {
 	btnGiveUp = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_GiveUp",
-		sAction = "Giveup"
+		sAction = "Giveup",
+		sActionIconType = "Dark"
 	},
 	btnBack = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Close",
-		sAction = "Back"
+		sAction = "Back",
+		sActionIconType = "Dark"
 	},
 	btnPopSkill = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Skill",
-		sAction = "Skill"
+		sAction = "Skill",
+		sActionIconType = "Dark"
 	},
 	ActionBar = {
 		sCtrlName = "Game.UI.ActionBar.ActionBarCtrl"

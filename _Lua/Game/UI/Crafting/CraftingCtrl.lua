@@ -115,8 +115,9 @@ function CraftingCtrl:OnEnable()
 end
 function CraftingCtrl:OnDisable()
 	for _, v in ipairs(self.tbTogCtrl) do
-		destroy(v.ctrl.gameObject)
+		local obj = v.ctrl.gameObject
 		self:UnbindCtrlByNode(v.ctrl)
+		destroy(obj)
 	end
 	self.tbTogCtrl = {}
 	EventManager.Hit(EventId.ClosePanel, PanelId.CraftingTip)

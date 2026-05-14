@@ -116,6 +116,10 @@ function CharAdvanceCtrl:InitData(nCharId, mapCurLevel, nMaxAdvance)
 			if nCurWorldClass < self.nNeedWorldClass then
 				NovaAPI.SetTMPText(self._mapNode.txtAdvanceTips, orderedFormat(ConfigTable.GetUIText("Char_Advance_WorldClass_Limit"), self.nNeedWorldClass))
 			end
+		else
+			self._mapNode.btnAdvance.gameObject:SetActive(false)
+			self._mapNode.btnAutoFill.gameObject:SetActive(false)
+			self._mapNode.txtAdvanceTips.gameObject:SetActive(false)
 		end
 	end
 end

@@ -10,6 +10,8 @@ local StarPos1 = 144
 local StarPos2 = 218
 local StarPos3 = 277
 local QuestPos = 172
+local newDayTime = UTILS.GetDayRefreshTimeOffset()
+local LocalData = require("GameCore.Data.LocalData")
 PenguinCardPrepareCtrl._mapNodeConfig = {
 	txtAddMax = {
 		nCount = 3,
@@ -62,7 +64,7 @@ PenguinCardPrepareCtrl._mapNodeConfig = {
 	txtLevelDesc = {sComponentName = "TMP_Text"},
 	txtSelectTip = {sComponentName = "TMP_Text"},
 	PenguinCardItem = {
-		nCount = 3,
+		nCount = 4,
 		sCtrlName = "Game.UI.Play_PenguinCard.PenguinCardItemCtrl"
 	},
 	btnRoll = {
@@ -297,7 +299,7 @@ function PenguinCardPrepareCtrl:RefreshRoll(bRoll)
 end
 function PenguinCardPrepareCtrl:RefreshRollCard(bRoll)
 	local nMax = #self._panel.mapLevel.tbSelectablePenguinCard
-	for i = 1, 3 do
+	for i = 1, 4 do
 		self._mapNode.PenguinCardItem[i].gameObject:SetActive(i <= nMax)
 		if i <= nMax then
 			self._mapNode.PenguinCardItem[i]:Refresh_Select(self._panel.mapLevel.tbSelectablePenguinCard[i], i, bRoll)
@@ -360,7 +362,7 @@ function PenguinCardPrepareCtrl:RefreshWin()
 end
 function PenguinCardPrepareCtrl:PlayOutAni()
 	self.animator:Play("PengUinCard_Prepare_out", 0, 0)
-	for i = 1, 3 do
+	for i = 1, 4 do
 		if self._mapNode.PenguinCardItem[i].gameObject.activeSelf == true then
 			self._mapNode.PenguinCardItem[i]:PlayHideAni()
 		end
@@ -389,11 +391,29 @@ function PenguinCardPrepareCtrl:OnBtnClick_Win(btn)
 	self._panel.mapLevel:CompleteGame()
 end
 function PenguinCardPrepareCtrl:OnBtnClick_StartTurn(btn)
-	local bWarn = self._panel.mapLevel.bWarning
-	if not self._panel.mapLevel.bSelectedPenguinCard and bWarn then
+	local TipsTime = LocalData.GetPlayerLocalData("PenguinCardSelectTips")
+	local _tipDay = 0
+	if TipsTime ~= nil then
+		_tipDay = tonumber(TipsTime)
+	end
+	local curTimeStamp = CS.ClientManager.Instance.serverTimeStampWithTimeZone
+	local fixedTimeStamp = curTimeStamp + newDayTime * 3600
+	local nYear = tonumber(os.date("!%Y", fixedTimeStamp))
+	local nMonth = tonumber(os.date("!%m", fixedTimeStamp))
+	local nDay = tonumber(os.date("!%d", fixedTimeStamp))
+	local nowD = nYear * 366 + nMonth * 31 + nDay
+	if not self._panel.mapLevel.bSelectedPenguinCard and nowD ~= _tipDay then
 		local isSelectAgain = false
 		local confirmCallback = function()
-			self._panel.mapLevel:SetWarning(not isSelectAgain)
+			if isSelectAgain then
+				local _curTimeStamp = CS.ClientManager.Instance.serverTimeStampWithTimeZone
+				local _fixedTimeStamp = _curTimeStamp + newDayTime * 3600
+				local _nYear = tonumber(os.date("!%Y", _fixedTimeStamp))
+				local _nMonth = tonumber(os.date("!%m", _fixedTimeStamp))
+				local _nDay = tonumber(os.date("!%d", _fixedTimeStamp))
+				local _nowD = _nYear * 366 + _nMonth * 31 + _nDay
+				LocalData.SetPlayerLocalData("PenguinCardSelectTips", tostring(_nowD))
+			end
 			self._panel.mapLevel:SwitchGameState()
 		end
 		local againCallback = function(isSelect)
@@ -492,7 +512,7 @@ function PenguinCardPrepareCtrl:OnEvent_SelectPenguinCard()
 	self:RefreshRollDesc()
 end
 function PenguinCardPrepareCtrl:OnEvent_SalePenguinCard(_, nGroupId)
-	for i = 1, 3 do
+	for i = 1, 4 do
 		if self._mapNode.PenguinCardItem[i].gameObject.activeSelf == true then
 			self._mapNode.PenguinCardItem[i]:RefreshUpgrade(nGroupId)
 		end

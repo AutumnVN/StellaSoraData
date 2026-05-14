@@ -37,7 +37,7 @@ end
 function ThrowGiftItemSelectGridCtrl:OnRelease()
 end
 function ThrowGiftItemSelectGridCtrl:Refresh(nItemId)
-	self._mapNode.AnimRoot:Play("New State")
+	self:SetDefault()
 	local mapItemCfgData = ConfigTable.GetData("ThrowGiftItem", nItemId)
 	if mapItemCfgData == nil then
 		self.gameObject:SetActive(false)
@@ -58,6 +58,11 @@ function ThrowGiftItemSelectGridCtrl:SetSelect(bSelect)
 		self._mapNode.btnConfirm.interactable = false
 	end
 	self._mapNode.imgBgSelect:SetActive(bSelect)
+end
+function ThrowGiftItemSelectGridCtrl:SetDefault()
+	self._mapNode.AnimRoot:Play("default")
+	self._mapNode.btnConfirm.interactable = false
+	self._mapNode.imgBgSelect:SetActive(false)
 end
 function ThrowGiftItemSelectGridCtrl:PlaySelectAnim()
 	self.animator:Play("btnItemSelectCard_out")

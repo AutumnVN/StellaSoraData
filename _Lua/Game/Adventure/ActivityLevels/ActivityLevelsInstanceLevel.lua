@@ -69,6 +69,9 @@ function ActivityLevelsInstanceLevel:OnEvent_AdventureModuleEnter()
 	end
 end
 function ActivityLevelsInstanceLevel:OnEvent_SendMsgFinishBattle()
+	if self.isSettlement then
+		return
+	end
 	local mapCfg = ConfigTable.GetData("ActivityLevelsLevel", self.nLevelId)
 	if self.curFloorIdx < #mapCfg.FloorId then
 		local GetBuildCallback = function(mapBuildData)
@@ -90,13 +93,17 @@ function ActivityLevelsInstanceLevel:OnEvent_SendMsgFinishBattle()
 				self.mapActorInfo[nTid] = stActorInfo
 			end
 			PlayerData.nCurGameType = AllEnum.WorldMapNodeType.ActivityLevels
+			local function levelEndCallback()
+				EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
+				self:OnEvent_AdventureModuleEnter()
+			end
+			EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
 			local mapParams = {
 				tostring(self.curFloorIdx),
 				tostring(self.levelTotalTime)
 			}
 			CS.AdventureModuleHelper.EnterActivityLevelsInstance(self.nLevelId, self.tbCharId, mapParams)
 			CS.AdventureModuleHelper.LevelStateChanged(false)
-			self:OnEvent_AdventureModuleEnter()
 		end
 		PlayerData.Build:GetBuildDetailData(GetBuildCallback, self.nBuildId)
 		return

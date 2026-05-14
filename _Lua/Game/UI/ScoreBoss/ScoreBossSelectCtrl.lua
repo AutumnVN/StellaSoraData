@@ -114,6 +114,7 @@ ScoreBossSelectCtrl._mapNodeConfig = {
 	},
 	info_texDamageScoreCount = {sComponentName = "TMP_Text"},
 	info_texSkillScoreCount = {sComponentName = "TMP_Text"},
+	skillInfoRect = {sComponentName = "ScrollRect"},
 	skillInfoIcon2 = {sComponentName = "Image"},
 	skillInfoName2 = {sComponentName = "TMP_Text"},
 	skillInfoDes2 = {sComponentName = "TMP_Text"},
@@ -288,32 +289,20 @@ function ScoreBossSelectCtrl:RefreshTime()
 	self.nRemainTime = self.nRemainTime - 1
 	if self.nRemainTime > 0 then
 		local sTime = ""
-		if self.nRemainTime <= 60 then
+		if self.nRemainTime < 60 then
 			local sec = math.floor(self.nRemainTime)
 			sTime = orderedFormat(ConfigTable.GetUIText("Shop_NextRefresh_Sec"), sec)
-		elseif self.nRemainTime > 60 and self.nRemainTime <= 3600 then
+		elseif self.nRemainTime >= 60 and self.nRemainTime < 3600 then
 			local min = math.floor(self.nRemainTime / 60)
-			local sec = math.floor(self.nRemainTime - min * 60)
-			if sec == 0 then
-				min = min - 1
-				sec = 60
-			end
+			local sec = self.nRemainTime % 60
 			sTime = orderedFormat(ConfigTable.GetUIText("Shop_NextRefresh_Min"), min, sec)
-		elseif self.nRemainTime > 3600 and self.nRemainTime <= 86400 then
+		elseif self.nRemainTime >= 3600 and self.nRemainTime < 86400 then
 			local hour = math.floor(self.nRemainTime / 3600)
-			local min = math.floor((self.nRemainTime - hour * 3600) / 60)
-			if min == 0 then
-				hour = hour - 1
-				min = 60
-			end
+			local min = math.floor(self.nRemainTime % 3600 / 60)
 			sTime = orderedFormat(ConfigTable.GetUIText("Shop_NextRefresh_Hour"), hour, min)
-		elseif self.nRemainTime > 86400 then
+		elseif self.nRemainTime >= 86400 then
 			local day = math.floor(self.nRemainTime / 86400)
-			local hour = math.floor((self.nRemainTime - day * 86400) / 3600)
-			if hour == 0 then
-				day = day - 1
-				hour = 24
-			end
+			local hour = math.floor(self.nRemainTime % 86400 / 3600)
 			sTime = orderedFormat(ConfigTable.GetUIText("Shop_NextRefresh_Day"), day, hour)
 		end
 		NovaAPI.SetTMPText(self._mapNode.texRefreshTime, sTime)
@@ -382,6 +371,7 @@ function ScoreBossSelectCtrl:OnRefreshGrid(goGrid, levelId, index)
 	end)
 end
 function ScoreBossSelectCtrl:SetBossInfo(levelId, isPlayAin)
+	NovaAPI.SetVerticalNormalizedPosition(self._mapNode.skillInfoRect, 1)
 	local bossLevelData = ConfigTable.GetData("ScoreBossLevel", levelId)
 	local getControlData = ConfigTable.GetData("ScoreBossGetControl", bossLevelData.NonDamageScoreGet)
 	local mData = ConfigTable.GetData("Monster", bossLevelData.MonsterId)
@@ -437,7 +427,9 @@ function ScoreBossSelectCtrl:SetBossInfo(levelId, isPlayAin)
 				tmpPre = tmpPre + 0.125
 			else
 				local tmpScore = _Score - tmpLastScore
-				tmpPre = tmpPre + tmpScore / (v - tmpLastScore) * 0.125
+				if 0 < v - tmpLastScore then
+					tmpPre = tmpPre + tmpScore / (v - tmpLastScore) * 0.125
+				end
 				isThanMaxNeed = false
 			end
 		end

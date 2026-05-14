@@ -74,14 +74,15 @@ function CookieQuestCtrl:Refresh()
 		self.tbQuestData = self.tbNightmareQuestData
 	end
 	table.sort(self.tbQuestData, function(a, b)
-		local statusA, statusB
+		local statusA = 0
+		local statusB = 0
 		if self.tbQuestStatus ~= nil then
 			for k, v in pairs(self.tbQuestStatus) do
 				if v.nId == a.Id then
-					statusA = v.nStatus
+					statusA = v.nStatus or 0
 				end
 				if v.nId == b.Id then
-					statusB = v.nStatus
+					statusB = v.nStatus or 0
 				end
 				if statusA ~= nil and statusB ~= nil then
 					break

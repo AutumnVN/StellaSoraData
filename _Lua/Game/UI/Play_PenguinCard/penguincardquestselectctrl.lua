@@ -11,6 +11,11 @@ PenguinCardQuestSelectCtrl._mapNodeConfig = {
 		sNodeName = "t_fullscreen_blur_blue",
 		sComponentName = "Animator"
 	},
+	btnCloseBg = {
+		sNodeName = "snapshot",
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Back"
+	},
 	Select = {sNodeName = "--Select--"},
 	txtQuestTitle = {
 		sComponentName = "TMP_Text",
@@ -74,6 +79,7 @@ function PenguinCardQuestSelectCtrl:Open(bCur)
 	NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	self.bCur = bCur
 	self:PlayInAni()
+	NovaAPI.SetButtonInteractable(self._mapNode.btnCloseBg, self.bCur)
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		self._mapNode.goInfo:SetActive(true)

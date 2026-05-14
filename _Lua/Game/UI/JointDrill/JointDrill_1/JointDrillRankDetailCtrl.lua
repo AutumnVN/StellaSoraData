@@ -1,4 +1,5 @@
 local JointDrillRankDetailCtrl = class("JointDrillRankDetailCtrl", BaseCtrl)
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillRankDetailCtrl._mapNodeConfig = {
 	goBlurBg = {
 		sNodeName = "t_fullscreen_blur_blue"
@@ -54,7 +55,7 @@ function JointDrillRankDetailCtrl:RefreshRankData(mapRank)
 	self:RefreshTeamList()
 end
 function JointDrillRankDetailCtrl:RefreshTeamList()
-	for _, v in ipairs(self.tbTeamGridCtrl) do
+	for _, v in pairs(self.tbTeamGridCtrl) do
 		self:UnbindCtrlByNode(v)
 	end
 	self.tbTeamGridCtrl = {}
@@ -62,10 +63,11 @@ function JointDrillRankDetailCtrl:RefreshTeamList()
 end
 function JointDrillRankDetailCtrl:RefreshGrid(goGrid, goGridIndex)
 	local nIndex = goGridIndex + 1
-	local itemCtrl = self:BindCtrlByNode(goGrid, "Game.UI.JointDrill.JointDrill_1.JointDrillTeamItemCtrl")
+	if self.tbTeamGridCtrl[goGrid] == nil then
+		self.tbTeamGridCtrl[goGrid] = self:BindCtrlByNode(goGrid, "Game.UI.JointDrill.JointDrill_1.JointDrillTeamItemCtrl")
+	end
 	local mapTeam = self.tbTeams[nIndex]
-	itemCtrl:RefreshItem(mapTeam, nIndex)
-	self.tbTeamGridCtrl[nIndex] = itemCtrl
+	self.tbTeamGridCtrl[goGrid]:RefreshItem(mapTeam, nIndex)
 end
 function JointDrillRankDetailCtrl:Awake()
 end
@@ -87,7 +89,7 @@ function JointDrillRankDetailCtrl:OnEnable()
 	cs_coroutine.start(wait)
 end
 function JointDrillRankDetailCtrl:OnDisable()
-	for _, v in ipairs(self.tbTeamGridCtrl) do
+	for _, v in pairs(self.tbTeamGridCtrl) do
 		local obj = v.gameObject
 		self:UnbindCtrlByNode(v)
 		destroy(obj)
@@ -102,7 +104,7 @@ function JointDrillRankDetailCtrl:OnBtnClick_Close()
 	self._mapNode.animWindow:Play("t_window_04_t_out")
 	self._mapNode.goBlurBg:SetActive(false)
 	local callback = function()
-		EventManager.Hit(EventId.ClosePanel, PanelId.JointDrillRankDetail_1)
+		EventManager.Hit(EventId.ClosePanel, JointDrillContext.GetPanelId(PlayerData.JointDrill_1.nActId, "RankDetail"))
 	end
 	self:AddTimer(1, 0.3, callback, true, true, true)
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)

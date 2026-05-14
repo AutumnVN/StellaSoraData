@@ -43,7 +43,7 @@ function GoldenSpySafeBoxItem:OnSkill_Boom(callback)
 	if callback then
 		callback()
 	end
-	if self.gameObject ~= nil then
+	if self.gameObject then
 		self.gameObject:SetActive(false)
 	end
 end

@@ -3,13 +3,6 @@ local JumpUtil = require("Game.Common.Utils.JumpUtil")
 local PlayerActivityData = PlayerData.Activity
 local TabType = GameEnum.ActivityTaskTabType
 local ItemType = GameEnum.itemType
-local tbTabNameUITextId = {
-	[TabType.Tab1] = "Quest_Normal",
-	[TabType.Tab2] = "Quest_Story",
-	[TabType.Tab3] = "Quest_Challenge",
-	[TabType.Tab4] = "Quest_Play",
-	[TabType.Tab5] = "Quest_Active"
-}
 local tbImgDbType = {SizeDelta = 1, FillAmount = 2}
 TaskCommonCtrl_01._mapNodeConfig = {
 	TopBarPanel = {
@@ -69,7 +62,7 @@ function TaskCommonCtrl_01:OnEnable()
 	local tbParam = self:GetPanelParam()
 	self.nActivityId = type(tbParam) == "table" and tbParam[1] or nil
 	self.nCurGroupIndex = tbParam[2] or 1
-	self.imgDbType = tbParam[3]
+	self.imgDbType = tbParam[3] or tbImgDbType.SizeDelta
 	if type(self.nActivityId) ~= "number" then
 		self.nActivityId = nil
 	end
@@ -82,6 +75,8 @@ function TaskCommonCtrl_01:FadeIn()
 	EventManager.Hit(EventId.SetTransition)
 end
 function TaskCommonCtrl_01:BuildData(nActivityId)
+	self.tbData = {}
+	self.tbGroupId = {}
 	if self.tbData == nil then
 		self.tbData = {}
 	end
@@ -250,12 +245,12 @@ function TaskCommonCtrl_01:RefreshScaleOnClick_State(tr, nIndex, mapCfgData_Acti
 	if self.nCurGroupIndex == nIndex then
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOn, 1)
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOff, 0)
-		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_on/tmpTabName_on"):GetComponent("TMP_Text"), ConfigTable.GetUIText(tbTabNameUITextId[mapCfgData_ActivityTaskGroup.TaskTabType]))
+		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_on/tmpTabName_on"):GetComponent("TMP_Text"), mapCfgData_ActivityTaskGroup.TabText)
 		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_on/tmpTabProgress_on"):GetComponent("TMP_Text"), sProgress)
 	else
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOn, 0)
 		NovaAPI.SetCanvasGroupAlpha(canvasGroupOff, 1)
-		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_off/tmpTabName_off"):GetComponent("TMP_Text"), ConfigTable.GetUIText(tbTabNameUITextId[mapCfgData_ActivityTaskGroup.TaskTabType]))
+		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_off/tmpTabName_off"):GetComponent("TMP_Text"), mapCfgData_ActivityTaskGroup.TabText)
 		NovaAPI.SetTMPText(tr:Find("scale_on_click/imgDb_off/tmpTabProgress_off"):GetComponent("TMP_Text"), sProgress)
 	end
 end
@@ -286,14 +281,14 @@ function TaskCommonCtrl_01:onGridRefresh_Task(go)
 			_tr.localScale = Vector3.one
 			local nId = mapTask.tbTaskRewardId[i]
 			local mapCfgData_Item = ConfigTable.GetData("Item", nId)
-			self:SetSprite_FrameColor(_tr:Find("scale_on_click/imgRare").gameObject:GetComponent("Image"), mapCfgData_Item.Rarity, AllEnum.FrameType_New.Item, false)
-			self:SetPngSprite(_tr:Find("scale_on_click/imgIcon").gameObject:GetComponent("Image"), mapCfgData_Item.Icon)
-			_tr:Find("scale_on_click/goReceived").localScale = mapTask.nStatus == AllEnum.ActQuestStatus.Received and Vector3.one or Vector3.zero
-			local nNum = mapTask.tbTaskRewardNum[i]
+			self:SetSprite_FrameColor(_tr:Find("Size/scale_on_click/imgRare").gameObject:GetComponent("Image"), mapCfgData_Item.Rarity, AllEnum.FrameType_New.Item, false)
+			self:SetPngSprite(_tr:Find("Size/scale_on_click/imgIcon").gameObject:GetComponent("Image"), mapCfgData_Item.Icon)
+			_tr:Find("Size/scale_on_click/goReceived").localScale = mapTask.nStatus == AllEnum.ActQuestStatus.Received and Vector3.one or Vector3.zero
+			local nNum = self:SetBigNum(mapTask.tbTaskRewardNum[i])
 			local sNum = mapCfgData_Item.Type ~= ItemType.Char and mapCfgData_Item.Type ~= ItemType.Disc and "×" .. tostring(nNum) or ""
-			NovaAPI.SetTMPText(_tr:Find("scale_on_click/tmpCount").gameObject:GetComponent("TMP_Text"), sNum)
+			NovaAPI.SetTMPText(_tr:Find("Size/scale_on_click/tmpCount").gameObject:GetComponent("TMP_Text"), sNum)
 			_tr:GetChild(0).name = tostring(nId)
-			_tr:Find("scale_on_click/goTimeLimit").localScale = 0 < mapCfgData_Item.ExpireType and Vector3.one or Vector3.zero
+			_tr:Find("Size/scale_on_click/goTimeLimit").localScale = 0 < mapCfgData_Item.ExpireType and Vector3.one or Vector3.zero
 		else
 			_tr.localScale = Vector3.zero
 		end
@@ -326,7 +321,7 @@ function TaskCommonCtrl_01:onEvent_ClickTaskDone(goBtn)
 end
 function TaskCommonCtrl_01:onEvent_ClickTaskJump(goBtn)
 	local nJumpId = tonumber(goBtn.transform:GetChild(0).name)
-	if 0 < nJumpId then
+	if nJumpId ~= nil and 0 < nJumpId then
 		JumpUtil.JumpTo(nJumpId)
 	end
 end
@@ -340,7 +335,7 @@ function TaskCommonCtrl_01:refresh_Group()
 	local nTotal = #tbTaskData
 	local bDone = nOK == nTotal
 	local mapCfgData_ActivityTaskGroup = ConfigTable.GetData("ActivityTaskGroup", nGroupId)
-	NovaAPI.SetTMPText(self._mapNode.tmpGroupName, ConfigTable.GetUIText(tbTabNameUITextId[mapCfgData_ActivityTaskGroup.TaskTabType]))
+	NovaAPI.SetTMPText(self._mapNode.tmpGroupName, mapCfgData_ActivityTaskGroup.TabText)
 	NovaAPI.SetTMPText(self._mapNode.tmpGroupProgress, string.format("%s/%s", tostring(nDone), tostring(nTotal)))
 	self._mapNode.tmpGroupUndone.transform.localScale = bDone == true and Vector3.zero or Vector3.one
 	self._mapNode.btnGroupDone.transform.localScale = bDone == true and self.bGot == false and Vector3.one or Vector3.zero
@@ -356,7 +351,7 @@ function TaskCommonCtrl_01:onGridRefresh_GroupRewardItem(go)
 	self:SetSprite_FrameColor(tr:Find("scale_on_click/imgRare").gameObject:GetComponent("Image"), mapCfgData_Item.Rarity, AllEnum.FrameType_New.Item, false)
 	self:SetPngSprite(tr:Find("scale_on_click/imgIcon").gameObject:GetComponent("Image"), mapCfgData_Item.Icon)
 	tr:Find("scale_on_click/goReceived").localScale = self.bGot == true and Vector3.one or Vector3.zero
-	local nNum = self.tbCurGroupRewardNum[nIndex]
+	local nNum = self:SetBigNum(self.tbCurGroupRewardNum[nIndex])
 	local sNum = mapCfgData_Item.Type ~= ItemType.Char and mapCfgData_Item.Type ~= ItemType.Disc and "×" .. tostring(nNum) or ""
 	NovaAPI.SetTMPText(tr:Find("scale_on_click/tmpCount").gameObject:GetComponent("TMP_Text"), sNum)
 	tr:Find("scale_on_click/goTimeLimit").localScale = mapCfgData_Item.ExpireType > 0 and Vector3.one or Vector3.zero
@@ -411,5 +406,14 @@ function TaskCommonCtrl_01:SetImgBar_FillAmount(mapTask, tr)
 	NovaAPI.SetImageFillAmount(imgProgessBar, nCur / nMax)
 	NovaAPI.SetTMPText(tr:Find("tmpTaskDesc"):GetComponent("TMP_Text"), mapTask.sDesc)
 	NovaAPI.SetTMPText(tr:Find("tmpTaskProgress"):GetComponent("TMP_Text"), string.format("%s/%s", tostring(nCur), tostring(nMax)))
+end
+function TaskCommonCtrl_01:SetBigNum(number)
+	local nNum = number
+	if 999999 < nNum then
+		local nFloor = math.floor(nNum / 100)
+		local nK = string.format("%.0f", nFloor / 10)
+		nNum = nK .. "k"
+	end
+	return nNum
 end
 return TaskCommonCtrl_01

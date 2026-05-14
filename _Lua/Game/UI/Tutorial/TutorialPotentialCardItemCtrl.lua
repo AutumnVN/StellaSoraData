@@ -67,7 +67,7 @@ function TutorialPotentialCardItemCtrl:SetPotentialItem(nTid, bSimpleDesc, bShow
 	self.nPotentialAddLevel = nPotentialAddLevel or 0
 	self.nShowType = nShowType or AllEnum.PotentialCardType.CharInfo
 	self._mapNode.imgNew.gameObject:SetActive(false)
-	self._mapNode.ArrowEffect:SetActive(self.bLucky)
+	self._mapNode.ArrowEffect:SetActive(false)
 	local itemCfg = ConfigTable.GetData_Item(nTid)
 	if nil == itemCfg then
 		printError(string.format("获取道具表配置失败！！！id = [%s])", nTid))
@@ -158,7 +158,7 @@ function TutorialPotentialCardItemCtrl:CloseBgEffect()
 end
 function TutorialPotentialCardItemCtrl:PlayAnim(sAnimName)
 	self._mapNode.animCtrl:Play(sAnimName)
-	self._mapNode.BgEffect:SetActive(self.bLucky and sAnimName == "tc_newperk_card_in")
+	self._mapNode.BgEffect:SetActive(false)
 end
 function TutorialPotentialCardItemCtrl:OnEnable()
 end

@@ -908,7 +908,6 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.mail_list_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.mail_read_succeed_ack] = mail_read_succeed_ack,
 		[NetMsgId.Id.mail_read_failed_ack] = NOTHING_NEED_TO_BE_DONE,
-		[NetMsgId.Id.mail_recv_succeed_ack] = mail_recv_succeed_ack,
 		[NetMsgId.Id.mail_recv_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.mail_remove_succeed_ack] = mail_remove_succeed_ack,
 		[NetMsgId.Id.mail_remove_failed_ack] = NOTHING_NEED_TO_BE_DONE,

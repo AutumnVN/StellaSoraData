@@ -1,6 +1,7 @@
 local JointDrillLevelSelectCtrl = class("JointDrillLevelSelectCtrl", BaseCtrl)
 local LocalData = require("GameCore.Data.LocalData")
 local ClientManager = CS.ClientManager.Instance
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillLevelSelectCtrl._mapNodeConfig = {
 	TopBarPanel = {
 		sCtrlName = "Game.UI.TopBarEx.TopBarCtrl"
@@ -580,7 +581,7 @@ function JointDrillLevelSelectCtrl:OnEnable()
 		self.nActId = tbParam[1]
 		self.actDataIns = PlayerData.Activity:GetActivityDataById(self.nActId)
 		local mapCfg = ConfigTable.GetData("JointDrillControl", self.nActId)
-		if mapCfg == nil then
+		if mapCfg == nil or self.actDataIns == nil then
 			return
 		end
 		self.nGroupId = mapCfg.DrillLevelGroupId
@@ -589,6 +590,9 @@ function JointDrillLevelSelectCtrl:OnEnable()
 	local callback = function()
 	end
 	PlayerData.Build:GetAllBuildBriefData(callback)
+	if self.actDataIns == nil then
+		return
+	end
 	self.nActStatus = self.actDataIns:GetActStatus()
 	self._mapNode.goSmoke.gameObject:SetActive(false)
 	self._mapNode.goSmoke.gameObject:SetActive(true)
@@ -622,7 +626,7 @@ function JointDrillLevelSelectCtrl:OnBtnClick_Avg()
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_Quest()
 	PlayerData.JointDrill_1:SendJointDrillRankMsg(function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillQuest_1, self.nActId)
+		EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "Quest"), self.nActId)
 	end)
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_Shop()
@@ -630,7 +634,7 @@ function JointDrillLevelSelectCtrl:OnBtnClick_Shop()
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_Rank()
 	PlayerData.JointDrill_1:SendJointDrillRankMsg(function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRanking_1, self.nActId)
+		EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "Ranking"), self.nActId)
 	end)
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_Tickets()
@@ -670,7 +674,7 @@ function JointDrillLevelSelectCtrl:OnBtnClick_Start()
 		return
 	end
 	local callback = function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillBuildList_1, self.nSelectLevelId, false)
+		EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "BuildList"), self.nSelectLevelId, false)
 	end
 	callback()
 end
@@ -692,7 +696,7 @@ function JointDrillLevelSelectCtrl:OnBtnClick_Continue()
 		return
 	end
 	local bSimulate = PlayerData.JointDrill_1:GetBattleSimulate()
-	EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillBuildList_1, self.nSelectLevelId, bSimulate)
+	EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "BuildList"), self.nSelectLevelId, bSimulate)
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_Simulation()
 	local bInChallengeTime = PlayerData.JointDrill_1:CheckActChallengeTime()
@@ -706,7 +710,7 @@ function JointDrillLevelSelectCtrl:OnBtnClick_Simulation()
 		printError("LevelId 错误")
 		return
 	end
-	EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillBuildList_1, self.nSelectLevelId, true)
+	EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "BuildList"), self.nSelectLevelId, true)
 end
 function JointDrillLevelSelectCtrl:OnBtnClick_Cancel()
 	local sTip = ConfigTable.GetUIText("JointDrill_Give_Up_Tip")
@@ -749,7 +753,7 @@ function JointDrillLevelSelectCtrl:OnBtnClick_FastBattle()
 		return
 	end
 	PlayerData.JointDrill_1:SendJointDrillRankMsg(function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillRaid_1, self.nSelectLevelId)
+		EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(self.nActId, "Raid"), self.nSelectLevelId)
 	end)
 end
 function JointDrillLevelSelectCtrl:OnEvent_RefreshJointDrillLevel()

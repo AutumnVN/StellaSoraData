@@ -1,5 +1,6 @@
 local JointDrillBuildListCtrl = class("JointDrillBuildListCtrl", BaseCtrl)
 local ClientManager = CS.ClientManager.Instance
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 JointDrillBuildListCtrl._mapNodeConfig = {
 	TopBarPanel = {
 		sCtrlName = "Game.UI.TopBarEx.TopBarCtrl"
@@ -60,10 +61,10 @@ function JointDrillBuildListCtrl:GetJointDrillPlayerData()
 	return PlayerData.JointDrill_1
 end
 function JointDrillBuildListCtrl:GetJointDrillBuildListPanelId()
-	return PanelId.JointDrillBuildList_1
+	return JointDrillContext.GetPanelId(self:GetJointDrillPlayerData().nActId, "BuildList")
 end
 function JointDrillBuildListCtrl:GetJointDrillLevelSelectPanelId()
-	return PanelId.JointDrillLevelSelect_1
+	return JointDrillContext.GetPanelId(self:GetJointDrillPlayerData().nActId, "LevelSelect")
 end
 function JointDrillBuildListCtrl:GetRegionBossFormationType()
 	return AllEnum.RegionBossFormationType.JointDrill
@@ -165,7 +166,7 @@ function JointDrillBuildListCtrl:OnEnable()
 	self._mapNode.goChallengeTime.gameObject:SetActive(self.bInBattle)
 end
 function JointDrillBuildListCtrl:OnDisable()
-	for _, v in ipairs(self.tbBuildItemCtrl) do
+	for _, v in pairs(self.tbBuildItemCtrl) do
 		local obj = v.gameObject
 		self:UnbindCtrlByNode(v)
 		destroy(obj)

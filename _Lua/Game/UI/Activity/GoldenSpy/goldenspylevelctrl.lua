@@ -581,6 +581,7 @@ function GoldenSpyLevelCtrl:ShowBuffSelect(tbBuff, callback)
 	local tbShowItem = {}
 	local tbItems = self.GoldenSpyFloorData:GetItems()
 	local tbHasBuff = self.GoldenSpyLevelData:GetBuffData()
+	local curFloor = self.GoldenSpyLevelData:GetCurFloor()
 	for _, v in pairs(tbItems) do
 		local itemCfg = ConfigTable.GetData("GoldenSpyItem", v.itemId)
 		if itemCfg ~= nil and itemCfg.ShowValue ~= false then
@@ -686,7 +687,7 @@ function GoldenSpyLevelCtrl:SubTime(nTime)
 	if not self.bChangeTime then
 		self._mapNode.imgWarning.gameObject:SetActive(true)
 		self.bChangeTime = true
-		local subtimeTimer = self:AddTimer(1, 0.8, function()
+		local subtimeTimer = self:AddTimer(1, 0.4, function()
 			self._mapNode.imgWarning.gameObject:SetActive(false)
 			self.bChangeTime = false
 		end, true, true, true)
@@ -1075,8 +1076,8 @@ function GoldenSpyLevelCtrl:OnBtnClick_Frozen()
 	end, true, true, true)
 	table.insert(self.tbTimer, timer)
 	local img_frozenCD = self._mapNode.img_frozenCD
-	img_frozenCD.gameObject:SetActive(true)
 	img_frozenCD.fillAmount = 1
+	img_frozenCD.gameObject:SetActive(true)
 	self.FrozenTweener = DOTween.To(function()
 		return img_frozenCD.fillAmount
 	end, function(value)
@@ -1090,28 +1091,14 @@ function GoldenSpyLevelCtrl:OnBtnClick_ToolBox()
 	local tbShowItem = {}
 	local tbItems = self.GoldenSpyFloorData:GetItems()
 	local tbHasBuff = self.GoldenSpyLevelData:GetBuffData()
-	local curFloor = self.GoldenSpyLevelData:GetCurFloor()
 	for _, v in pairs(tbItems) do
 		local itemCfg = ConfigTable.GetData("GoldenSpyItem", v.itemId)
 		if itemCfg ~= nil and itemCfg.ShowValue ~= false then
 			local nScore = itemCfg.Score
 			for _, n in ipairs(tbHasBuff) do
 				local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", n.buffId)
-				if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore then
-					if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-						if n.bActive and table.indexof(n.tbActiveFloor, curFloor) > 0 and buffCfg.Params[1] == itemCfg.ItemType then
-							nScore = nScore + buffCfg.Params[2]
-						end
-					elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-						if n.bActive and table.indexof(n.tbActiveFloor, curFloor) > 0 and buffCfg.Params[1] == itemCfg.ItemType then
-							nScore = nScore + buffCfg.Params[2]
-						end
-					elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-						if n.bActive and buffCfg.Params[1] == itemCfg.ItemType then
-							nScore = nScore + buffCfg.Params[2]
-						end
-					elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-					end
+				if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == itemCfg.ItemType then
+					nScore = nScore + buffCfg.Params[2]
 				end
 			end
 			local itemData = {

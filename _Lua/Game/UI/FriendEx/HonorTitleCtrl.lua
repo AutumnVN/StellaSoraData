@@ -6,7 +6,11 @@ HonorTitleCtrl._mapNodeConfig = {
 	imgStarSmall = {nCount = 5, sComponentName = "Image"},
 	goStarBig = {},
 	goStarSmall = {},
-	Reddot = {}
+	Reddot = {},
+	goHeartNumSmall = {},
+	goHeartNumBig = {},
+	txtLevelSmall = {sComponentName = "TMP_Text"},
+	txtLevelBig = {sComponentName = "TMP_Text"}
 }
 HonorTitleCtrl._mapEventConfig = {}
 local HonorTitleStarPath = {
@@ -15,8 +19,10 @@ local HonorTitleStarPath = {
 	[3] = "zs_honor_level_1",
 	[4] = "zs_honor_level_4",
 	[5] = "zs_honor_level_3",
+	[6] = "zs_honor_level_5",
 	[99] = "zs_honor_level_100"
 }
+local MAX_AFFINITY_LV = 99
 function HonorTitleCtrl:SetHonotTitle(honorTitleId, bBig, affinity_lv)
 	local honorData = ConfigTable.GetData("Honor", honorTitleId)
 	self:SetPngSprite(self._mapNode.imgHonorTitle, bBig and honorData.MainRes or honorData.SubRes)
@@ -24,6 +30,8 @@ function HonorTitleCtrl:SetHonotTitle(honorTitleId, bBig, affinity_lv)
 	if honorData.Type ~= GameEnum.honorType.Character and honorData.Type ~= GameEnum.honorType.Levels then
 		self._mapNode.goStarBig:SetActive(false)
 		self._mapNode.goStarSmall:SetActive(false)
+		self._mapNode.goHeartNumSmall:SetActive(false)
+		self._mapNode.goHeartNumBig:SetActive(false)
 		return
 	end
 	local maxLevel = 1
@@ -46,11 +54,17 @@ function HonorTitleCtrl:SetHonotTitle(honorTitleId, bBig, affinity_lv)
 	if self.curData == nil then
 		self._mapNode.goStarBig:SetActive(false)
 		self._mapNode.goStarSmall:SetActive(false)
+		self._mapNode.goHeartNumSmall:SetActive(false)
+		self._mapNode.goHeartNumBig:SetActive(false)
 		return
 	end
-	self:SetPngSprite(self._mapNode.imgHonorTitle, bBig and self.curData.BigBgPath or self.curData.SmallBgPath)
-	self._mapNode.goStarBig:SetActive(bBig)
-	self._mapNode.goStarSmall:SetActive(not bBig)
+	local spritePath = bBig and self.curData.BigBgPath or self.curData.SmallBgPath
+	self:SetPngSprite(self._mapNode.imgHonorTitle, spritePath)
+	local bTriggerHeartNum = level ~= nil and level >= MAX_AFFINITY_LV
+	self._mapNode.goStarBig:SetActive(bBig and not bTriggerHeartNum)
+	self._mapNode.goStarSmall:SetActive(not bBig and not bTriggerHeartNum)
+	self._mapNode.goHeartNumSmall:SetActive(not bBig and bTriggerHeartNum)
+	self._mapNode.goHeartNumBig:SetActive(bBig and bTriggerHeartNum)
 	for i = 1, 5 do
 		if self.curData.StarGroup[i] ~= nil then
 			if bBig then
@@ -65,6 +79,9 @@ function HonorTitleCtrl:SetHonotTitle(honorTitleId, bBig, affinity_lv)
 			self._mapNode.imgStarSmall[i].gameObject:SetActive(self.curData.StarGroup[i] ~= nil)
 		end
 	end
+	NovaAPI.SetTMPText(self._mapNode.txtLevelBig, self.curData.Level)
+	NovaAPI.SetTMPText(self._mapNode.txtLevelSmall, self.curData.Level)
+	return spritePath
 end
 function HonorTitleCtrl:RegisterRedDot(honorTitleId)
 	self.honorId = honorTitleId

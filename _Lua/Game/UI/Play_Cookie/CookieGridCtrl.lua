@@ -7,17 +7,19 @@ CookieGridCtrl._mapNodeConfig = {
 	imgHeart = {}
 }
 local CookieShapeEnum = {
-	Sera = 1,
-	Kohaku = 2,
-	Ayame = 3
+	Gear = 1,
+	Wrench = 2,
+	Ruler = 3,
+	Lens = 4
 }
 local IconPathDefault = {
-	[CookieShapeEnum.Sera] = "UI/Play_Cookie/SpriteAtlas/Sprite/zs_cookie_01",
-	[CookieShapeEnum.Kohaku] = "UI/Play_Cookie/SpriteAtlas/Sprite/zs_cookie_02",
-	[CookieShapeEnum.Ayame] = "UI/Play_Cookie/SpriteAtlas/Sprite/zs_cookie_03"
+	[CookieShapeEnum.Gear] = "UI_Activity/_400010/SpriteAtlas/Sprite/zs_cookie_01",
+	[CookieShapeEnum.Lens] = "UI_Activity/_400010/SpriteAtlas/Sprite/zs_cookie_04",
+	[CookieShapeEnum.Ruler] = "UI_Activity/_400010/SpriteAtlas/Sprite/zs_cookie_03",
+	[CookieShapeEnum.Wrench] = "UI_Activity/_400010/SpriteAtlas/Sprite/zs_cookie_02"
 }
 local nPerfectTiming = 0.33
-local colorPerfect = Color(255, 77, 203, 255)
+local colorPerfect = Color(1.0, 0.302, 0.796, 1.0)
 function CookieGridCtrl:Init(nShape, nGreatTime, nPerfectTime)
 	self.animator = self.gameObject:GetComponent("Animator")
 	self.nShape = nShape

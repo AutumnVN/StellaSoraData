@@ -507,7 +507,7 @@ function TrekkerVersusCtrl:OnEnable()
 	end
 	local mapHeatValue = self._ActData:GetCurHeatValue()
 	NovaAPI.SetTMPText(self._mapNode.txtHeatIndicatorNum, mapHeatValue.nSelfHotValue)
-	self._ActData:RequestIdleRefresh(function()
+	self._ActData:RequestIdleRefresh(self._nActId, function()
 		self:RefreshIdleReward()
 		self:RefreshHeatValue()
 		self:OnBtnClick_StreamerInfoTab(nil, 1)
@@ -520,7 +520,7 @@ function TrekkerVersusCtrl:OnEnable()
 			self.timerRefreshIdleReward = nil
 		end
 		self.timerRefreshIdleReward = self:AddTimer(0, 60, function()
-			self._ActData:RequestIdleRefresh(function(msgData)
+			self._ActData:RequestIdleRefresh(self._nActId, function(msgData)
 				self:RefreshIdleReward()
 				self:RefreshHeatValue()
 				self:RefreshStreamerInfo()
@@ -1093,14 +1093,14 @@ function TrekkerVersusCtrl:OnEvent_Back(nPanelId)
 				self.timerRefreshIdleReward = nil
 			end
 			self.timerRefreshIdleReward = self:AddTimer(0, 60, function()
-				self._ActData:RequestIdleRefresh(function(msgData)
+				self._ActData:RequestIdleRefresh(self._nActId, function(msgData)
 					self:RefreshIdleReward()
 					self:RefreshHeatValue()
 					self:RefreshStreamerInfo()
 				end)
 			end, true, true, true)
 		end
-		self._ActData:RequestIdleRefresh(function()
+		self._ActData:RequestIdleRefresh(self._nActId, function()
 			self:RefreshIdleReward()
 			self:RefreshHeatValue()
 			self:RefreshStreamerInfo()
@@ -1423,7 +1423,7 @@ function TrekkerVersusCtrl:OnBtnClick_SendGift(btn)
 		self:PlaySendGiftEffect(tbUsedFanGift)
 		self:RefreshFanGift()
 	end
-	self._ActData:RequestSendStreamerGift(tbSendData, self.nAddHotValue, reqCallback)
+	self._ActData:RequestSendStreamerGift(self._nActId, tbSendData, self.nAddHotValue, reqCallback)
 end
 function TrekkerVersusCtrl:OnBtnClick_ReceiveTimeReward(btn)
 	local cb = function(msgData)
@@ -1432,7 +1432,7 @@ function TrekkerVersusCtrl:OnBtnClick_ReceiveTimeReward(btn)
 		self:RefreshStreamerInfo()
 		self:RefreshHeatValue()
 	end
-	self._ActData:RequestIdleRewardReceive(cb)
+	self._ActData:RequestIdleRewardReceive(self._nActId, cb)
 end
 function TrekkerVersusCtrl:OnBtnClick_TimeReward(btn, idx)
 	if idx == 3 then

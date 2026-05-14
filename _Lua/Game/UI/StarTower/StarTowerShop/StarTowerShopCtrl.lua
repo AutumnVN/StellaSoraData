@@ -453,7 +453,8 @@ function StarTowerShopCtrl:Awake()
 		[2] = {
 			mapNode = self._mapNode.ButtonConfirm,
 			sComponentName = "NaviButton",
-			sAction = "Confirm"
+			sAction = "Confirm",
+			sActionIconType = "Dark"
 		},
 		[3] = {
 			mapNode = self._mapNode.sv,

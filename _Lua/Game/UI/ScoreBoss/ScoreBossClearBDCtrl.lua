@@ -29,7 +29,8 @@ ScoreBossClearBDCtrl._mapNodeConfig = {
 	btnCancel = {
 		sComponentName = "NaviButton",
 		callback = "OnClickCancel",
-		sAction = "Giveup"
+		sAction = "Giveup",
+		sActionIconType = "Dark"
 	},
 	txtBtnCancel = {
 		nCount = 2,
@@ -39,7 +40,8 @@ ScoreBossClearBDCtrl._mapNodeConfig = {
 	btnConfirm1 = {
 		sComponentName = "NaviButton",
 		callback = "OnClickConfirm",
-		sAction = "Confirm"
+		sAction = "Confirm",
+		sActionIconType = "Dark"
 	},
 	txtConfirm1_ = {
 		nCount = 2,
@@ -118,12 +120,18 @@ function ScoreBossClearBDCtrl:RefreshLevelMsg()
 			local imgItemRare = char:Find("t_char_head/imgItemRare"):GetComponent("Image")
 			local mapChar = ConfigTable.GetData_Character(tmpCharId[j])
 			local mapCharData = PlayerData.Char:GetCharDataByTid(tmpCharId[j])
-			local nCharSkinId = mapCharData.nSkinId
-			local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
-			self:SetPngSprite(imgItemIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
-			local nRarity = mapChar.Grade
-			local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapChar.Grade]
-			self:SetAtlasSprite(imgItemRare, "12_rare", sFrame, true)
+			if mapCharData ~= nil then
+				local nCharSkinId = mapCharData.nSkinId
+				local mapCharSkin = ConfigTable.GetData_CharacterSkin(nCharSkinId)
+				if mapCharSkin ~= nil then
+					self:SetPngSprite(imgItemIcon, mapCharSkin.Icon, AllEnum.CharHeadIconSurfix.XXL)
+				end
+			end
+			if mapChar ~= nil then
+				local nRarity = mapChar.Grade
+				local sFrame = AllEnum.FrameType_New.BoardFrame .. AllEnum.BoardFrameColor[mapChar.Grade]
+				self:SetAtlasSprite(imgItemRare, "12_rare", sFrame, true)
+			end
 			local charLeader = char:Find("charLeader")
 			local charSub = char:Find("charSub")
 			local txtLeader = charLeader:Find("imgLeader/txtLeader"):GetComponent("TMP_Text")

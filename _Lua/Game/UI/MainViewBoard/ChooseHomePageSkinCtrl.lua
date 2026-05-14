@@ -106,12 +106,10 @@ function ChooseHomePageSkinCtrl:OnGridRefresh(goGrid, gridIndex)
 	end
 	self.tbGridCtrl[nInstanceId]:SetSkinData(self.tbSortSkinList[nIndex], false)
 	self.tbGridCtrl[nInstanceId]:RefreshChoseSkin(self.nUsingSkinId)
-	if self.nSelectIndex == nil and self.nUsingSkinId == self.tbSortSkinList[nIndex]:GetId() then
-		self.nSelectIndex = nIndex
-	end
-	if nIndex == self.nSelectIndex then
+	if self.nSelectIndex == nIndex then
 		self.tbGridCtrl[nInstanceId]:SetSelect(true)
-		self:RefreshSelectSkinInfo()
+	else
+		self.tbGridCtrl[nInstanceId]:SetSelect(false)
 	end
 end
 function ChooseHomePageSkinCtrl:OnGridBtnClick(goGrid, gridIndex)
@@ -123,7 +121,7 @@ function ChooseHomePageSkinCtrl:OnGridBtnClick(goGrid, gridIndex)
 	end
 	self.tbGridCtrl[nInstanceId]:SetSelect(true)
 	self.nSelectIndex = nIndex
-	self._mapNode.sv:SetScrollGridPos(nIndex - 1, 0.1, 0)
+	self._mapNode.sv:SetScrollGridPos(nIndex - 1, 0, 0)
 	self:RefreshSelectSkinInfo()
 end
 function ChooseHomePageSkinCtrl:ClosePanel()
@@ -155,8 +153,22 @@ function ChooseHomePageSkinCtrl:OnEnable()
 	self.tbGridCtrl = {}
 	self.tbSkinList = PlayerCharSkinData:GetSkinListByCharacterId(self.nCharId)
 	self:SortSkinList()
+	for nIndex = 1, #self.tbSortSkinList do
+		if self.nUsingSkinId == self.tbSortSkinList[nIndex]:GetId() then
+			self.nSelectIndex = nIndex
+			break
+		end
+	end
+	if self.nSelectIndex == nil then
+		self.nSelectIndex = 1
+	end
 	self._mapNode.sv:Init(#self.tbSortSkinList, self, self.OnGridRefresh, self.OnGridBtnClick)
-	self._mapNode.sv:SetScrollGridPos(self.nSelectIndex - 1, 0)
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+		self._mapNode.sv:SetScrollGridPos(self.nSelectIndex - 1, 0, 0)
+		self:RefreshSelectSkinInfo()
+	end
+	cs_coroutine.start(wait)
 end
 function ChooseHomePageSkinCtrl:FadeOut()
 	local nAnimTime = NovaAPI.GetAnimClipLength(self._mapNode.animRoot, {
