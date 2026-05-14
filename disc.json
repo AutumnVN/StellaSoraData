@@ -23904,6 +23904,630 @@
             }
         ]
     },
+    "214003": {
+        "id": 214003,
+        "name": "Seed Alike",
+        "star": 5,
+        "element": "Lux",
+        "tag": [
+            "ATK",
+            "Auto Attack",
+            "Element"
+        ],
+        "char": [
+            "Firefly"
+        ],
+        "mainSkill": {
+            "id": 4003,
+            "name": "Seed Alike",
+            "nameCN": "你与我相似",
+            "nameJP": "似たもの同士",
+            "nameKR": "날 닮은 너",
+            "desc": "Lux Versatile Trekkers gain 1 stack of Light Particle per second on the battlefield: Each stack increases their ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.\u000bWhen Light Particle is at max stacks, the Lux Main Trekker gains Wings of Light: Increases Auto Attack DMG by <color=#ec6d21>{4}</color> for {5}s.",
+            "descCN": "光系均衡角色每在场1秒获得1层「光粒子」：每层使自身攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。\u000b自身「光粒子」层数满层时，光系主控角色额外获得「光之翼」：普攻伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。",
+            "descJP": "光属性のバランサー巡遊者がフィールドにいる間、1秒ごとに光粒を1獲得する。光粒1につき{2}秒間、自身の攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回まで重複できる。\u000b自身の光粒が上限に達した時、光属性の主力巡遊者は追加で光の翼を獲得し、{5}秒間、通常攻撃ダメージが<color=#ec6d21>{4}</color>上昇する。",
+            "descKR": "빛 속성 밸런스 캐릭터가 필드에 1초 머무를 때마다 「빛의 입자」 1스택을 획득해, 스택마다 자신의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다. \u000b자신의 「빛의 입자」가 최대 스택을 달성하면, 빛 속성 메인 캐릭터가 추가로 「빛의 날개」를 획득해, 일반 공격 피해가 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
+            "effectType": [
+                "ATK (%)",
+                "Auto Attack Damage (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214003",
+                "Icon_CommonBuff_AttackUp"
+            ],
+            "params": "1%,20,10,6%,10/1.2%,20,10,7.2%,10/1.4%,20,10,8.4%,10/1.6%,20,10,9.6%,10/1.8%,20,10,10.8%,10/2%,20,10,12%,10",
+            "icon": "DiscSkill_214003",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "secondarySkill1": {
+            "id": 40031,
+            "name": "Destiny Unleashed",
+            "nameCN": "命运爆发",
+            "nameJP": "フォトンバースト",
+            "nameKR": "운명의 폭발",
+            "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bLight Particle gains an additional effect: Each stack increases own Skill DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "全队光系伤害提升<color=#ec6d21>{1}</color>。\u000b「光粒子」获得额外效果：每层使自身技能伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b光粒に追加効果が付与される：光粒1につき、自身のスキルダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「빛의 입자」가 추가 효과를 획득해, 스택마다 자신의 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다.",
+            "effectType": [
+                "Lux DMG (base)",
+                "Skill DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "1%,0.4%/2%,0.8%/3%,1.2%/4%,1.6%/5%,2%",
+            "requirements": [
+                {
+                    "Melody of Skill": 10,
+                    "Melody of Ultimate": 10
+                },
+                {
+                    "Melody of Skill": 25,
+                    "Melody of Ultimate": 25
+                },
+                {
+                    "Melody of Skill": 40,
+                    "Melody of Ultimate": 40
+                },
+                {
+                    "Melody of Skill": 55,
+                    "Melody of Ultimate": 55
+                },
+                {
+                    "Melody of Skill": 70,
+                    "Melody of Ultimate": 70
+                }
+            ],
+            "icon": "DiscSkill_1",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "secondarySkill2": {
+            "id": 40032,
+            "name": "Free Will",
+            "nameCN": "自由意志",
+            "nameJP": "ビッグバン",
+            "nameKR": "자유의지",
+            "desc": "When the Lux Main Trekker with Wings of Light triggers a mark that inflicts ##Thunderbolt#4027#, increases own Ultimate DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen the Lux Main Trekker with Wings of Light triggers a mark that inflicts ##Lucent#4028#, increases own Skill DMG by <color=#ec6d21>{3}</color> for {4}s.",
+            "descCN": "附带「光之翼」的光系主控角色触发印记造成##落雷#4027#效果时，自身绝招伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b附带「光之翼」的光系主控角色触发印记造成##光耀#4028#效果时，自身技能伤害提升<color=#ec6d21>{3}</color>，持续{4}秒。",
+            "descJP": "光の翼が付与されている光属性の主力巡遊者は、印を発動させて##落雷#4027#を発生させた時、{2}秒間、自身の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b光の翼が付与されている光属性の主力巡遊者は、印を発動させて##光耀#4028#を発生させた時、{4}秒間、自身のスキルダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "「빛의 날개」를 보유한 빛 속성 메인 캐릭터가 표식을 발동해 ##낙뢰#4027# 효과를 입히면, 자신의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b「빛의 날개」를 보유한 빛 속성 메인 캐릭터가 표식을 발동해 ##광휘#4028# 효과를 입히면, 자신의 스킬 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속된다.",
+            "effectType": [
+                "Ultimate DMG (base)",
+                "Skill DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "7%,5,7%,5/14%,5,14%,5/21%,5,21%,5/28%,5,28%,5/35%,5,35%,5",
+            "requirements": [
+                {
+                    "Melody of Focus": 15,
+                    "Melody of Skill": 15,
+                    "Melody of Lux": 15
+                },
+                {
+                    "Melody of Focus": 30,
+                    "Melody of Skill": 30,
+                    "Melody of Lux": 30
+                },
+                {
+                    "Melody of Focus": 45,
+                    "Melody of Skill": 45,
+                    "Melody of Lux": 45
+                },
+                {
+                    "Melody of Focus": 60,
+                    "Melody of Skill": 60,
+                    "Melody of Lux": 60
+                },
+                {
+                    "Melody of Focus": 75,
+                    "Melody of Skill": 75,
+                    "Melody of Lux": 75
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "supportNote": [
+            {
+                "Melody of Focus": 3,
+                "Melody of Ultimate": 3
+            },
+            {
+                "Melody of Focus": 3,
+                "Melody of Ultimate": 4
+            },
+            {
+                "Melody of Focus": 4,
+                "Melody of Ultimate": 4
+            },
+            {
+                "Melody of Focus": 4,
+                "Melody of Ultimate": 5
+            },
+            {
+                "Melody of Focus": 5,
+                "Melody of Ultimate": 5
+            },
+            {
+                "Melody of Focus": 5,
+                "Melody of Ultimate": 6
+            },
+            {
+                "Melody of Focus": 6,
+                "Melody of Ultimate": 6
+            },
+            {
+                "Melody of Focus": 6,
+                "Melody of Ultimate": 7
+            },
+            {
+                "Melody of Focus": 7,
+                "Melody of Ultimate": 7
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 14,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 18,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 22,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 26,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 30,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 34,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 46,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 50,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 60,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 64,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 68,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 72,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 77,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 80,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 85,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 88,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 93,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 96,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 101,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 121,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 124,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 129,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 132,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 137,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 140,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 145,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 149,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 153,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 157,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 161,
+                "Lux DMG": "4%"
+            },
+            {
+                "ATK": 194,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 197,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 202,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 205,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 210,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 213,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 218,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 221,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 226,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 230,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 234,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 281,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 284,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 289,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 293,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 297,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 301,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 305,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 309,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 313,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 317,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 321,
+                "Lux DMG": "6%"
+            },
+            {
+                "ATK": 385,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 390,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 393,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 398,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 401,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 406,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 410,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 414,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 418,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 422,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 426,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 511,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 515,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 519,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 523,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 527,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 531,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 536,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 539,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 544,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 547,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 552,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 662,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 666,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 670,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 674,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 678,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 682,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 686,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 690,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 694,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 698,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 702,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 842,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 847,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 851,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 855,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 859,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 863,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 867,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 871,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 875,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 879,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 883,
+                "Lux DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Duloos Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Duloos Breath": 6,
+                "Duloos Soul Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Duloos Breath": 13,
+                "Duloos Soul Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Duloos Breath": 20,
+                "Duloos Soul Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Duloos Breath": 26,
+                "Duloos Soul Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Duloos Breath": 40,
+                "Duloos Soul Remnant": 73,
+                "Duloos Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Duloos Soul Remnant": 100,
+                "Duloos Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Duloos Soul Remnant": 126,
+                "Duloos Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
     "214004": {
         "id": 214004,
         "name": "Wisteria Dream",
@@ -43470,7 +44094,7 @@
             "nameKR": "끝없는 햇빛",
             "desc": "When any Lux Trekker deals Skill DMG, the main Lux Trekker gains 1 stack of Diffraction, stacking up to {1} times.\u000bWhen the main Lux Trekker casts a skill, increases Lux squadmates' Skill DMG by the number of Diffraction stacks x<color=#ec6d21>{2}</color> for {3}s, and removes all the Diffraction stacks.",
             "descCN": "任意光系角色造成技能伤害时，光系主控角色获得1层「衍射」，可叠加{1}层。\u000b光系主控角色施放技能时，队伍中光系角色提升基于「衍射」层数*<color=#ec6d21>{2}</color>的技能伤害，持续{3}秒，同时清空「衍射」层数。",
-            "descJP": "チーム内の光属性巡遊者のスキルダメージを与えた時、光属性の主力巡遊者は回折を1獲得する。回折は{1}まで保持できる。\u000b光属性の主力巡遊者のスキル発動時、回折の数がリセットされ、{3}秒間、チーム内の光属性巡遊者のスキルダメージが回折の数*<color=#ec6d21>{2}</color>増加する。",
+            "descJP": "チーム内の光属性巡遊者のスキルダメージを与えた時、光属性の主力巡遊者は回折を1獲得する。回折は{1}まで保持できる。\u000b光属性の主力巡遊者のスキル発動時、回折の数がリセットされ、{3}秒間、チーム内の光属性巡遊者のスキルダメージが回折の数x<color=#ec6d21>{2}</color>増加する。",
             "descKR": "빛 속성 캐릭터가 스킬 피해를 입히면 빛 속성 메인 캐릭터가 「회절」 1스택을 획득하며, 최대 {1}스택 중첩된다. \u000b빛 속성 메인 캐릭터가 스킬을 시전하면 팀 내 빛 속성 캐릭터의 스킬 피해가 「회절」 중첩 스택×<color=#ec6d21>{2}</color>만큼 증가한다. {3}초간 지속되며, 종료 후 「회절」의 중첩 스택이 제거된다.",
             "effectType": [
                 "Skill DMG (base)"
@@ -50845,6 +51469,630 @@
             {
                 "Duloos Soul Remnant": 126,
                 "Duloos Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214051": {
+        "id": 214051,
+        "name": "Stellar Destination",
+        "star": 5,
+        "element": "Lux",
+        "tag": [
+            "Element",
+            "VUL",
+            "Crit DMG"
+        ],
+        "char": [
+            "Firefly"
+        ],
+        "mainSkill": {
+            "id": 4051,
+            "name": "Stellar Destination",
+            "nameCN": "星之所向",
+            "nameJP": "惹かれ合う星",
+            "nameKR": "별이 향하는 곳",
+            "desc": "Lux Versatile Trekkers gain 1 stack of Sync Rate per second on the battlefield: Each stack increases their Lux DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.\u000bWhen Sync Rate is at max stacks, dealing DMG additionally inflicts Hostile Reaction on the target: Increases the Lux Auto ATK DMG the target takes by <color=#ec6d21>{4}</color> for {5}s.",
+            "descCN": "光系均衡角色每在场1秒获得1层「同步率」：每层使自身光系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。\u000b自身「同步率」层数满层时，造成伤害额外为目标附加「敌对反应」：受到光系普攻伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。",
+            "descJP": "光属性のバランサー巡遊者がフィールドにいる間、1秒ごとに親和力を1獲得する。親和力1につき、{2}秒間、自身の光属性ダメージが<color=#ec6d21>{1}</color>増加する。この効果は{3}回まで重複できる。\u000b自身の親和力が上限に達した時、ダメージを与えると追加で敵に斥力を付与する。斥力状態の敵は、{5}秒間、光属性の通常攻撃被ダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "빛 속성 밸런스 캐릭터가 필드에 1초 머무를 때마다 「싱크로율」 1스택을 획득해, 스택마다 자신의 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다. \u000b자신의 「싱크로율」이 최대 스택을 달성하면, 피해를 입힐 때 목표에게 「적대 반응」을 추가로 부여해, 받는 빛 속성 일반 공격 피해가 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
+            "effectType": [
+                "Lux DMG (base)",
+                "ELEMENTTYPE_:(Lux) Auto Attack DMG Taken"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214051A",
+                "Icon_DiscBuff_214051"
+            ],
+            "params": "3%,8,10,10%,10/3.6%,8,10,12%,10/4.2%,8,10,14%,10/4.8%,8,10,16%,10/5.4%,8,10,18%,10/6%,8,10,20%,10",
+            "icon": "DiscSkill_214051",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "secondarySkill1": {
+            "id": 40511,
+            "name": "Start Conversation",
+            "nameCN": "开始「对话」",
+            "nameJP": "星空のロマン",
+            "nameKR": "「대화」 시작",
+            "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bSync Rate gains an additional effect: Each stack increases own Crit DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "全队光系伤害提升<color=#ec6d21>{1}</color>。\u000b「同步率」获得额外效果：每层使自身暴击伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b親和力に追加効果が付与される：親和力1につき、自身の会心ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「싱크로율」이 추가 효과를 획득해, 스택마다 자신의 치명타 피해가 <color=#ec6d21>{2}</color> 증가한다.",
+            "effectType": [
+                "Lux DMG (base)",
+                "Crit DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "4%,2%/8%,2.5%/12%,3%/16%,3.5%/20%,4%",
+            "requirements": [
+                {
+                    "Melody of Ultimate": 10,
+                    "Melody of Lux": 10
+                },
+                {
+                    "Melody of Ultimate": 25,
+                    "Melody of Lux": 25
+                },
+                {
+                    "Melody of Ultimate": 40,
+                    "Melody of Lux": 40
+                },
+                {
+                    "Melody of Ultimate": 55,
+                    "Melody of Lux": 55
+                },
+                {
+                    "Melody of Ultimate": 70,
+                    "Melody of Lux": 70
+                }
+            ],
+            "icon": "DiscSkill_3",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "secondarySkill2": {
+            "id": 40512,
+            "name": "Mutual Understanding",
+            "nameCN": "彼此理解",
+            "nameJP": "一条の光",
+            "nameKR": "서로의 이해",
+            "desc": "When the Lux Main Trekker triggers a mark on a target with Hostile Reaction and inflicts ##Thunderbolt#4027#, increases own Ultimate Crit DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen the Lux Main Trekker triggers a mark on a target with Hostile Reaction and inflicts ##Lucent#4028#, increases own Skill Crit DMG by <color=#ec6d21>{3}</color> for {4}s.",
+            "descCN": "光系主控角色对附带「敌对反应」的目标触发印记造成##落雷#4027#效果时，自身绝招暴击伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b光系主控角色对附带「敌对反应」的目标触发印记造成##光耀#4028#效果时，自身技能暴击伤害提升<color=#ec6d21>{3}</color>，持续{4}秒。",
+            "descJP": "光属性の主力巡遊者が斥力状態の敵に印を発動させ、##落雷#4027#を発生させた時、{2}秒間、自身の必殺技会心ダメージが<color=#ec6d21>{1}</color>増加する。\u000b光属性の主力巡遊者が斥力状態の敵に印を発動させ、##光耀#4028#を発生させた時、{4}秒間、自身のスキル会心ダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "빛 속성 메인 캐릭터가 「적대 반응」을 보유한 목표에게 표식을 발동해 ##낙뢰#4027# 효과를 입히면, 자신의 필살기 치명타 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b빛 속성 메인 캐릭터가 「적대 반응」을 보유한 목표에게 표식을 발동해 ##광휘#4028# 효과를 입히면, 자신의 스킬 치명타 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속된다.",
+            "effectType": [
+                "Ultimate Crit DMG (base)",
+                "Skill Crit DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "15%,5,15%,5/20%,5,20%,5/25%,5,25%,5/30%,5,30%,5/35%,5,35%,5",
+            "requirements": [
+                {
+                    "Melody of Luck": 15,
+                    "Melody of Ultimate": 15,
+                    "Melody of Lux": 15
+                },
+                {
+                    "Melody of Luck": 30,
+                    "Melody of Ultimate": 30,
+                    "Melody of Lux": 30
+                },
+                {
+                    "Melody of Luck": 45,
+                    "Melody of Ultimate": 45,
+                    "Melody of Lux": 45
+                },
+                {
+                    "Melody of Luck": 60,
+                    "Melody of Ultimate": 60,
+                    "Melody of Lux": 60
+                },
+                {
+                    "Melody of Luck": 75,
+                    "Melody of Ultimate": 75,
+                    "Melody of Lux": 75
+                }
+            ],
+            "icon": "DiscSkill_3",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "supportNote": [
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 7
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Skill": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 9
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Skill": 10
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 15,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 20,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 24,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 29,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 33,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 47,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 51,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 56,
+                "Lux DMG": "2%"
+            },
+            {
+                "ATK": 67,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 71,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 76,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 80,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 85,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 89,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 94,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 98,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 103,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 107,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 112,
+                "Lux DMG": "3%"
+            },
+            {
+                "ATK": 134,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 138,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 143,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 147,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 152,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 156,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 161,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 165,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 170,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 174,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 179,
+                "Lux DMG": "5%"
+            },
+            {
+                "ATK": 215,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 219,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 224,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 228,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 233,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 237,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 242,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 246,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 251,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 255,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 260,
+                "Lux DMG": "7%"
+            },
+            {
+                "ATK": 312,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 316,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 321,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 325,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 330,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 334,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 339,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 343,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 348,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 352,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 357,
+                "Lux DMG": "8%"
+            },
+            {
+                "ATK": 428,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 433,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 437,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 442,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 446,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 451,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 455,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 460,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 464,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 469,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 473,
+                "Lux DMG": "10%"
+            },
+            {
+                "ATK": 568,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 572,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 577,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 581,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 586,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 590,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 595,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 599,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 604,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 608,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 613,
+                "Lux DMG": "12%"
+            },
+            {
+                "ATK": 735,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 740,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 744,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 749,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 753,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 758,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 762,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 767,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 771,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 776,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 780,
+                "Lux DMG": "13%"
+            },
+            {
+                "ATK": 936,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 941,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 945,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 950,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 954,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 959,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 963,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 968,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 972,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 977,
+                "Lux DMG": "15%"
+            },
+            {
+                "ATK": 981,
+                "Lux DMG": "15%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Light Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Faint Light Breath": 6,
+                "Emberflies Soul": 13,
+                "Dorra": 26700
+            },
+            {
+                "Faint Light Breath": 13,
+                "Emberflies Soul": 20,
+                "Dorra": 59900
+            },
+            {
+                "Faint Light Breath": 20,
+                "Emberflies Soul": 33,
+                "Dorra": 89900
+            },
+            {
+                "Faint Light Breath": 26,
+                "Emberflies Soul": 53,
+                "Dorra": 197200
+            },
+            {
+                "Faint Light Breath": 40,
+                "Emberflies Soul": 73,
+                "Evernight Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Emberflies Soul": 100,
+                "Evernight Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Emberflies Soul": 126,
+                "Evernight Essence": 66,
                 "Dorra": 1513800
             }
         ]

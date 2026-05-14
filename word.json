@@ -743,7 +743,7 @@
     },
     "2016": {
         "name": "Lux Mark: Radiance",
-        "desc": "Some Lux characters apply a special status to the target for 10 sec.\u000bWhen triggered by specific Lux characters' attacks, the status is removed, and a special effect is activated.",
+        "desc": "Some Lux Trekkers apply a special status to the target for 10 sec.\u000bWhen triggered by specific Lux Trekkers' attacks, the status is removed, and a special effect is activated.",
         "icon": "Icon_ElementTag_Light1_small",
         "params": [
             15
@@ -1137,6 +1137,115 @@
     "4024": {
         "name": "General Curly",
         "desc": "General Curly, combined by Colonel Walnuts, inherits 100% of Snowish Laru's ATK for 10s, during which it is immune to DMG. Only 1 can exist at the same time.",
+        "icon": "",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4025": {
+        "name": "Conflagration",
+        "desc": "When certain Ignis Trekkers trigger a Mark, they deal DMG in a large area.",
+        "icon": "",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4026": {
+        "name": "Incineration",
+        "desc": "When certain Ignis Trekkers trigger a Mark, they deal DMG in a small area.",
+        "icon": "",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4027": {
+        "name": "Thunderbolt",
+        "desc": "When certain Lux Trekkers trigger a Mark, they deal DMG in a small area.",
+        "icon": "",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4028": {
+        "name": "Lucent",
+        "desc": "When certain Lux Trekkers trigger a Mark, they deal AoE DMG and inflict Glimmer.",
+        "icon": "",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4029": {
+        "name": "Glimmer",
+        "desc": "Increases the targets' &Param1& by &Param2& for &Param3&s, stacking up to &Param4& times.",
+        "icon": "",
+        "params": [
+            "Lux DMG Taken",
+            "0.5%",
+            6,
+            3
+        ],
+        "effectType": [
+            "Lux DMG Taken (base)"
+        ],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": [
+            "Icon_CommonBuff_DefenseDown"
+        ]
+    },
+    "4030": {
+        "name": "Artillery Form",
+        "desc": "The ranged attack form Firefly enters after casting the Main Skill. Uses floating cannons to strike targets for a period of time.",
+        "icon": "",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4031": {
+        "name": "Sword Form",
+        "desc": "The melee attack form Firefly enters after casting the Support Skill. Wields a giant sword and launches flying blades to strike targets for a period of time.",
+        "icon": "",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4032": {
+        "name": "Avalanche",
+        "desc": "Firefly's personal combat unit, which remains in standby mode while following Firefly. When required, it transforms into various combat forms to attack Firefly's targets.",
+        "icon": "",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4033": {
+        "name": "???",
+        "desc": "???",
+        "icon": "",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4034": {
+        "name": "???",
+        "desc": "???",
         "icon": "",
         "params": [],
         "effectType": [],

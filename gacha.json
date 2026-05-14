@@ -26,6 +26,33 @@
         "startTime": "2026-01-13T12:00:00+08:00",
         "endTime": "2026-02-03T10:59:59+08:00"
     },
+    "10115": {
+        "id": 10115,
+        "type": "character",
+        "name": "Stardust Rising in the Light",
+        "icon": "tab_gacha_10115_lang",
+        "rateUp5Star": [
+            {
+                "id": 115,
+                "name": "Firefly",
+                "element": "Lux"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 107,
+                "name": "Tilia",
+                "element": "Lux"
+            },
+            {
+                "id": 116,
+                "name": "Ridge",
+                "element": "Terra"
+            }
+        ],
+        "startTime": "2026-05-14T12:00:00+08:00",
+        "endTime": "2026-06-02T10:59:59+08:00"
+    },
     "10119": {
         "id": 10119,
         "type": "character",
@@ -485,6 +512,33 @@
         "startTime": "2026-04-30T12:00:00+08:00",
         "endTime": "2026-05-19T03:59:59+08:00"
     },
+    "11155": {
+        "id": 11155,
+        "type": "character",
+        "name": "Tide to the Full Moon",
+        "icon": "tab_gacha_11155_lang",
+        "rateUp5Star": [
+            {
+                "id": 155,
+                "name": "Shia",
+                "element": "Lux"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 107,
+                "name": "Tilia",
+                "element": "Lux"
+            },
+            {
+                "id": 108,
+                "name": "Kasimira",
+                "element": "Ignis"
+            }
+        ],
+        "startTime": "2026-05-26T12:00:00+08:00",
+        "endTime": "2026-06-16T03:59:59+08:00"
+    },
     "20110": {
         "id": 20110,
         "type": "disc",
@@ -511,6 +565,33 @@
         ],
         "startTime": "2026-01-13T12:00:00+08:00",
         "endTime": "2026-02-03T10:59:59+08:00"
+    },
+    "20115": {
+        "id": 20115,
+        "type": "disc",
+        "name": "If Only I Could Touch the Stars",
+        "icon": "tab_gacha_20115_lang",
+        "rateUp5Star": [
+            {
+                "id": 214051,
+                "name": "Stellar Destination",
+                "element": "Lux"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 213006,
+                "name": "Good Night",
+                "element": "Lux"
+            },
+            {
+                "id": 213014,
+                "name": "The Knight's Smith",
+                "element": "Terra"
+            }
+        ],
+        "startTime": "2026-05-14T12:00:00+08:00",
+        "endTime": "2026-06-02T10:59:59+08:00"
     },
     "20119": {
         "id": 20119,
@@ -970,5 +1051,32 @@
         ],
         "startTime": "2026-04-30T12:00:00+08:00",
         "endTime": "2026-05-19T03:59:59+08:00"
+    },
+    "21155": {
+        "id": 21155,
+        "type": "disc",
+        "name": "Ocean Meets the Sky",
+        "icon": "tab_gacha_21155_lang",
+        "rateUp5Star": [
+            {
+                "id": 214038,
+                "name": "Ripples of Nostalgia",
+                "element": "Lux"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 213004,
+                "name": "Twin Moon Mischief",
+                "element": "Ignis"
+            },
+            {
+                "id": 213006,
+                "name": "Good Night",
+                "element": "Lux"
+            }
+        ],
+        "startTime": "2026-05-26T12:00:00+08:00",
+        "endTime": "2026-06-16T03:59:59+08:00"
     }
 }
