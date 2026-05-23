@@ -486,7 +486,7 @@ function collectPotentialHiddenParamsFrom(obj, allSkillParams) {
     const charId = obj.CharId;
     const potId = obj.Id % 100;
 
-    const slice58Group = [107, 112, 113, 125, 132, 144, 150, 155];
+    const slice58Group = [107, 112, 113, 125, 144, 150, 155];
 
     const stringifiedSkill = JSON.stringify(SKILL);
     const stringifiedPotential = JSON.stringify(POTENTIAL);
@@ -495,11 +495,11 @@ function collectPotentialHiddenParamsFrom(obj, allSkillParams) {
 
     const hiddenHitDamageIds = [];
     for (const id of Object.keys(HITDAMAGE)) {
-        if (['134506002'].includes(id)) continue;
+        if (['103522002', '134506002'].includes(id)) continue;
         if (id.length !== 9) continue;
         if (!id.startsWith(charId)) continue;
-        if (['01', '02', '03', '04'].includes(target) && !['1', '2', '4'].includes(id.slice(3, 4))) continue;
-        if (['21', '22', '23', '24'].includes(target) && !['1', '3', '4'].includes(id.slice(3, 4))) continue;
+        if (['01', '02', '03', '04'].includes(target) && !['1', '2', '4', '5'].includes(id.slice(3, 4))) continue;
+        if (['21', '22', '23', '24'].includes(target) && !['1', '3', '4', '5'].includes(id.slice(3, 4))) continue;
         if (!['01', '02', '03', '04', '21', '22', '23', '24'].includes(target) && !['5'].includes(id.slice(3, 4))) continue;
         if (stringifiedSkill.includes(`DamageNum,${id}`)) continue;
         if (stringifiedPotential.includes(`DamageNum,${id}`)) continue;

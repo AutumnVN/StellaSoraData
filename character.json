@@ -46457,19 +46457,27 @@
                     "nameCN": "众星拥戴",
                     "nameJP": "生徒の支持",
                     "nameKR": "별빛의 가호",
-                    "desc": "Summons <color=#0abec5>3</color> additional Flying Leaves.",
-                    "descCN": "额外生成<color=#0abec5>3</color>个「飞叶」。",
-                    "descJP": "追加で<color=#0abec5>3</color>つの飛葉を生成するようになる。",
-                    "descKR": "「흩날리는 잎사귀」 <color=#0abec5>3</color>개를 추가로 생성한다.",
-                    "damageType": [],
+                    "desc": "Summons <color=#0abec5>3</color> additional Flying Leaves.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,120501001)",
+                    "descCN": "额外生成<color=#0abec5>3</color>个「飞叶」。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,120501001)",
+                    "descJP": "追加で<color=#0abec5>3</color>つの飛葉を生成するようになる。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,120501001)",
+                    "descKR": "「흩날리는 잎사귀」 <color=#0abec5>3</color>개를 추가로 생성한다.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,120501001)",
+                    "damageType": [
+                        "Skill (0.55e, from Skill, scale with Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [],
                     "paramsTooltips": [],
-                    "hiddenParams": [],
-                    "hiddenParamsTooltips": [],
+                    "hiddenParams": [
+                        "16.8%/18.5%/20.2%/25.2%/26.9%/28.6%/32%/33.6%/35.3%/38.7%/40.4%/42%/43.7%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Skill (0.55e, from Skill, scale with Skill)"
+                        }
+                    ],
                     "icon": "12001_Potential_01",
                     "rarity": "core"
                 },
@@ -70982,11 +70990,13 @@
                     "nameCN": "闪耀爆裂",
                     "nameJP": "閃光爆裂",
                     "nameKR": "섬광 폭발",
-                    "desc": "Increases the Attack Range of Astral Hex by <color=#0abec5>50%</color> and its Skill DMG by <color=#0abec5>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
-                    "descCN": "「星芒」伤害范围提升<color=#0abec5>50%</color>，造成的技能伤害提升<color=#0abec5>&Param2&</color>。\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
-                    "descJP": "星芒の与えるスキルダメージが<color=#0abec5>&Param2&</color>増加し、ダメージ範囲が<color=#0abec5>50%</color>拡大する。\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
-                    "descKR": "「성망」의 피해 범위가 <color=#0abec5>50%</color> 증가하고, 입히는 스킬 피해가 <color=#0abec5>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
-                    "damageType": [],
+                    "desc": "Increases the Attack Range of Astral Hex by <color=#0abec5>50%</color> and its Skill DMG by <color=#0abec5>&Param2&</color>.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,132522001)",
+                    "descCN": "「星芒」伤害范围提升<color=#0abec5>50%</color>，造成的技能伤害提升<color=#0abec5>&Param2&</color>。\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,132522001)",
+                    "descJP": "星芒の与えるスキルダメージが<color=#0abec5>&Param2&</color>増加し、ダメージ範囲が<color=#0abec5>50%</color>拡大する。\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,132522001)",
+                    "descKR": "「성망」의 피해 범위가 <color=#0abec5>50%</color> 증가하고, 입히는 스킬 피해가 <color=#0abec5>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,132522001)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [
                         "Skill DMG (base)"
@@ -71007,8 +71017,14 @@
                             "addAttrType": "Skill DMG (base)"
                         }
                     ],
-                    "hiddenParams": [],
-                    "hiddenParamsTooltips": [],
+                    "hiddenParams": [
+                        "185%/213%/240%/323%/349%/375%/427%/449%/471%/516%/553%/590%/626%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
                     "icon": "13201_Potential_22",
                     "rarity": "core"
                 },
@@ -71122,11 +71138,13 @@
                     "nameCN": "完封欲望",
                     "nameJP": "完封欲求",
                     "nameKR": "욕망의 봉쇄",
-                    "desc": "When the main Trekker deals damage to a target inflicted with Astral Hex, deals an additional <color=#ec6d21>&Param1& of Minova's ATK</color> as Lux Skill DMG. This effect can only be triggered once per second.",
-                    "descCN": "主控角色对附带「星芒」的目标造成伤害时，附加密涅瓦攻击力<color=#ec6d21>&Param1&</color>的光系技能伤害。该效果每秒最多触发1次。",
-                    "descJP": "主力巡遊者が、星芒が付与されている敵にダメージを与えた時、ミネルバの攻撃力の<color=#ec6d21>&Param1&</color>の光属性のスキルダメージを追加で与えるようになる。この効果は1秒ごとに1回まで発動する。",
-                    "descKR": "메인 캐릭터가 「성망」을 보유한 목표에게 피해를 입힐 시 미네르바 공격력 <color=#ec6d21>&Param1&</color>의 빛 속성 스킬 피해를 추가로 입힌다. 해당 효과는 1초마다 최대 1회 발동한다.",
-                    "damageType": [],
+                    "desc": "When the main Trekker deals damage to a target inflicted with Astral Hex, deals an additional <color=#ec6d21>&Param1& of Minova's ATK</color> as Lux Skill DMG. This effect can only be triggered once per second.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,132526001)",
+                    "descCN": "主控角色对附带「星芒」的目标造成伤害时，附加密涅瓦攻击力<color=#ec6d21>&Param1&</color>的光系技能伤害。该效果每秒最多触发1次。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,132526001)",
+                    "descJP": "主力巡遊者が、星芒が付与されている敵にダメージを与えた時、ミネルバの攻撃力の<color=#ec6d21>&Param1&</color>の光属性のスキルダメージを追加で与えるようになる。この効果は1秒ごとに1回まで発動する。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,132526001)",
+                    "descKR": "메인 캐릭터가 「성망」을 보유한 목표에게 피해를 입힐 시 미네르바 공격력 <color=#ec6d21>&Param1&</color>의 빛 속성 스킬 피해를 추가로 입힌다. 해당 효과는 1초마다 최대 1회 발동한다.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,132526001)",
+                    "damageType": [
+                        "Skill (from Skill) (hidden)"
+                    ],
                     "effectType": [],
                     "addAttrType": [],
                     "effectData": [],
@@ -71137,8 +71155,14 @@
                     "paramsTooltips": [
                         {}
                     ],
-                    "hiddenParams": [],
-                    "hiddenParamsTooltips": [],
+                    "hiddenParams": [
+                        "51%/82%/112%/143%/174%/204%/235%/265%/296%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill)"
+                        }
+                    ],
                     "icon": "13201_Potential_22",
                     "corner": "Triangle",
                     "rarity": "rare"
@@ -86342,12 +86366,13 @@
                     "nameCN": "符启·寅虎",
                     "nameJP": "護符・虎の巻",
                     "nameKR": "부적·인호",
-                    "desc": "##Crimson Dragon#4018# enhances into ##Tiger of the East#4019#. Increases ##Tiger of the East#4019#'s Minion DMG by <color=#0abec5>&Param1&</color> every 2s.\u000b##Tiger of the East#4019# deals <color=#0abec5>&Param2&</color>, <color=#0abec5>&Param3&</color>, and <color=#0abec5>&Param4& x2</color> of ATK as AoE Ignis Minion DMG and inflicts ##Ignis Mark: Sacred Flame#2013#.",
-                    "descCN": "##「赤龙」#4018#强化为##「寅虎」#4019#，并每2秒使##「寅虎」#4019#的仆从伤害提升<color=#0abec5>&Param1&</color>。\u000b##「寅虎」#4019#造成攻击力<color=#0abec5>&Param2&</color>、<color=#0abec5>&Param3&</color>、<color=#0abec5>&Param4&x2</color>的范围火系仆从伤害，并附加##火系印记：圣焰#2013#。",
-                    "descJP": "##赤龍#4018#が強化され、##猛虎#4019#になる。2秒ごとに従者ダメージが<color=#0abec5>&Param1&</color>増加する。##猛虎#4019#は15秒間持続し、範囲内に攻撃力の<color=#0abec5>&Param2&</color>、<color=#0abec5>&Param3&</color>、<color=#0abec5>&Param4&x2</color>の火属性の従者ダメージを与え、##火属性の印：聖炎#2013#を付与する。",
-                    "descKR": "##「붉은 용」#4018#이 ##「인호」#4019#로 강화되고, 2초마다 ##「인호」#4019#의 소환물 피해가 <color=#0abec5>&Param1&</color> 증가한다. \u000b##「인호」#4019#가 공격력 <color=#0abec5>&Param2&</color>, <color=#0abec5>&Param3&</color>, <color=#0abec5>&Param4&x2</color>의 불 속성 범위 소환물 피해를 입히고, ##불 속성 표식: 성염#2013#을 부여한다.",
+                    "desc": "##Crimson Dragon#4018# enhances into ##Tiger of the East#4019#. Increases ##Tiger of the East#4019#'s Minion DMG by <color=#0abec5>&Param1&</color> every 2s.\u000b##Tiger of the East#4019# deals <color=#0abec5>&Param2&</color>, <color=#0abec5>&Param3&</color>, and <color=#0abec5>&Param4& x2</color> of ATK as AoE Ignis Minion DMG and inflicts ##Ignis Mark: Sacred Flame#2013#.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion,141523001)",
+                    "descCN": "##「赤龙」#4018#强化为##「寅虎」#4019#，并每2秒使##「寅虎」#4019#的仆从伤害提升<color=#0abec5>&Param1&</color>。\u000b##「寅虎」#4019#造成攻击力<color=#0abec5>&Param2&</color>、<color=#0abec5>&Param3&</color>、<color=#0abec5>&Param4&x2</color>的范围火系仆从伤害，并附加##火系印记：圣焰#2013#。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion,141523001)",
+                    "descJP": "##赤龍#4018#が強化され、##猛虎#4019#になる。2秒ごとに従者ダメージが<color=#0abec5>&Param1&</color>増加する。##猛虎#4019#は15秒間持続し、範囲内に攻撃力の<color=#0abec5>&Param2&</color>、<color=#0abec5>&Param3&</color>、<color=#0abec5>&Param4&x2</color>の火属性の従者ダメージを与え、##火属性の印：聖炎#2013#を付与する。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion,141523001)",
+                    "descKR": "##「붉은 용」#4018#이 ##「인호」#4019#로 강화되고, 2초마다 ##「인호」#4019#의 소환물 피해가 <color=#0abec5>&Param1&</color> 증가한다. \u000b##「인호」#4019#가 공격력 <color=#0abec5>&Param2&</color>, <color=#0abec5>&Param3&</color>, <color=#0abec5>&Param4&x2</color>의 불 속성 범위 소환물 피해를 입히고, ##불 속성 표식: 성염#2013#을 부여한다.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion,141523001)",
                     "damageType": [
-                        "Minion (from Skill, scale with Skill)"
+                        "Minion (from Skill, scale with Skill)",
+                        "Minion (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [
                         "Minion DMG (base)"
@@ -86378,8 +86403,14 @@
                             "damageType": "Minion (from Skill, scale with Skill)"
                         }
                     ],
-                    "hiddenParams": [],
-                    "hiddenParamsTooltips": [],
+                    "hiddenParams": [
+                        "57%/66%/74%/100%/108%/116%/132%/139%/146%/160%/171%/183%/194%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Minion (from Skill, scale with Skill)"
+                        }
+                    ],
                     "icon": "14101_Potential_23",
                     "rarity": "core"
                 },
@@ -86389,12 +86420,13 @@
                     "nameCN": "寅虎·炽鳞",
                     "nameJP": "豪虎・灼燐",
                     "nameKR": "인호·화염 비늘",
-                    "desc": "The first minion summoned by &Param2& (Support Skill) is inflicted with Blazing Barrier, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Minion DMG to nearby targets every <color=#0abec5>0.5</color>s.",
-                    "descCN": "援护技「&Param2&」召唤的首个仆从附带「炽火结界」，每<color=#0abec5>0.5</color>秒对周围目标造成攻击力<color=#0abec5>&Param1&</color>的范围火系仆从伤害。",
-                    "descJP": "チーシアの支援スキルで召喚した最初の従者は烈焔の結界を保持し、<color=#0abec5>0.5</color>秒ごとに、周囲に攻撃力の<color=#0abec5>&Param1&</color>の火属性の従者ダメージを与えるようになる。\u000bParam2: &Param2& (Skill,Title)",
-                    "descKR": "지원 스킬 「&Param2&」이 소환한 첫 소환물이 「화염 결계」를 동반하여, <color=#0abec5>0.5</color>초마다 주변 목표에게 공격력 <color=#0abec5>&Param1&</color>의 불 속성 범위 소환물 피해를 입힌다.",
+                    "desc": "The first minion summoned by &Param2& (Support Skill) is inflicted with Blazing Barrier, dealing <color=#0abec5>&Param1& of ATK</color> as AoE Ignis Minion DMG to nearby targets every <color=#0abec5>0.5</color>s.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion,141524002)",
+                    "descCN": "援护技「&Param2&」召唤的首个仆从附带「炽火结界」，每<color=#0abec5>0.5</color>秒对周围目标造成攻击力<color=#0abec5>&Param1&</color>的范围火系仆从伤害。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion,141524002)",
+                    "descJP": "チーシアの支援スキルで召喚した最初の従者は烈焔の結界を保持し、<color=#0abec5>0.5</color>秒ごとに、周囲に攻撃力の<color=#0abec5>&Param1&</color>の火属性の従者ダメージを与えるようになる。\u000bParam2: &Param2& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion,141524002)",
+                    "descKR": "지원 스킬 「&Param2&」이 소환한 첫 소환물이 「화염 결계」를 동반하여, <color=#0abec5>0.5</color>초마다 주변 목표에게 공격력 <color=#0abec5>&Param1&</color>의 불 속성 범위 소환물 피해를 입힌다.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Minion,141524002)",
                     "damageType": [
-                        "Minion (from Skill, scale with Skill)"
+                        "Minion (from Skill, scale with Skill)",
+                        "Minion (from Skill, scale with Skill) (hidden)"
                     ],
                     "effectType": [],
                     "addAttrType": [],
@@ -86410,8 +86442,14 @@
                         },
                         {}
                     ],
-                    "hiddenParams": [],
-                    "hiddenParamsTooltips": [],
+                    "hiddenParams": [
+                        "8.3%/9.5%/10.8%/14.5%/15.7%/16.8%/19.1%/20.1%/21.1%/23.1%/24.8%/26.4%/28.1%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Minion (from Skill, scale with Skill)"
+                        }
+                    ],
                     "icon": "14101_Potential_24",
                     "rarity": "core"
                 }
