@@ -23920,13 +23920,13 @@
         "mainSkill": {
             "id": 4003,
             "name": "Seed Alike",
-            "nameCN": "???",
-            "nameJP": "???",
-            "nameKR": "???",
+            "nameCN": "你与我相似",
+            "nameJP": "似たもの同士",
+            "nameKR": "날 닮은 너",
             "desc": "Lux Versatile Trekkers gain 1 stack of Light Particle per second on the battlefield: Each stack increases their ATK by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.\u000bWhen Light Particle is at max stacks, the Lux Main Trekker gains Wings of Light: Increases Auto Attack DMG by <color=#ec6d21>{4}</color> for {5}s.",
-            "descCN": "???",
-            "descJP": "???",
-            "descKR": "???",
+            "descCN": "光系均衡角色每在场1秒获得1层「光粒子」：每层使自身攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。\u000b自身「光粒子」层数满层时，光系主控角色额外获得「光之翼」：普攻伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。",
+            "descJP": "光属性のバランサー巡遊者がフィールドにいる間、1秒ごとに光粒を1獲得する。光粒1につき{2}秒間、自身の攻撃力が<color=#ec6d21>{1}</color>上昇する。この効果は{3}回まで重複できる。\u000b自身の光粒が上限に達した時、光属性の主力巡遊者は追加で光の翼を獲得し、{5}秒間、通常攻撃ダメージが<color=#ec6d21>{4}</color>上昇する。",
+            "descKR": "빛 속성 밸런스 캐릭터가 필드에 1초 머무를 때마다 「빛의 입자」 1스택을 획득해, 스택마다 자신의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다. \u000b자신의 「빛의 입자」가 최대 스택을 달성하면, 빛 속성 메인 캐릭터가 추가로 「빛의 날개」를 획득해, 일반 공격 피해가 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
             "effectType": [
                 "ATK (%)",
                 "Auto Attack Damage (base)"
@@ -23944,13 +23944,13 @@
         "secondarySkill1": {
             "id": 40031,
             "name": "Destiny Unleashed",
-            "nameCN": "???",
-            "nameJP": "???",
-            "nameKR": "???",
+            "nameCN": "命运爆发",
+            "nameJP": "フォトンバースト",
+            "nameKR": "운명의 폭발",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bLight Particle gains an additional effect: Each stack increases own Skill DMG by <color=#ec6d21>{2}</color>.",
-            "descCN": "???",
-            "descJP": "???",
-            "descKR": "???",
+            "descCN": "全队光系伤害提升<color=#ec6d21>{1}</color>。\u000b「光粒子」获得额外效果：每层使自身技能伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b光粒に追加効果が付与される：光粒1につき、自身のスキルダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「빛의 입자」가 추가 효과를 획득해, 스택마다 자신의 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Lux DMG (base)",
                 "Skill DMG (base)"
@@ -23989,13 +23989,13 @@
         "secondarySkill2": {
             "id": 40032,
             "name": "Free Will",
-            "nameCN": "???",
-            "nameJP": "???",
-            "nameKR": "???",
+            "nameCN": "自由意志",
+            "nameJP": "ビッグバン",
+            "nameKR": "자유의지",
             "desc": "When the Lux Main Trekker with Wings of Light triggers a mark that inflicts ##Thunderbolt#4027#, increases own Ultimate DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen the Lux Main Trekker with Wings of Light triggers a mark that inflicts ##Lucent#4028#, increases own Skill DMG by <color=#ec6d21>{3}</color> for {4}s.",
-            "descCN": "???",
-            "descJP": "???",
-            "descKR": "???",
+            "descCN": "附带「光之翼」的光系主控角色触发印记造成##落雷#4027#效果时，自身绝招伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b附带「光之翼」的光系主控角色触发印记造成##光耀#4028#效果时，自身技能伤害提升<color=#ec6d21>{3}</color>，持续{4}秒。",
+            "descJP": "光の翼が付与されている光属性の主力巡遊者は、印を発動させて##落雷#4027#を発生させた時、{2}秒間、自身の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b光の翼が付与されている光属性の主力巡遊者は、印を発動させて##光耀#4028#を発生させた時、{4}秒間、自身のスキルダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "「빛의 날개」를 보유한 빛 속성 메인 캐릭터가 표식을 발동해 ##낙뢰#4027# 효과를 입히면, 자신의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b「빛의 날개」를 보유한 빛 속성 메인 캐릭터가 표식을 발동해 ##광휘#4028# 효과를 입히면, 자신의 스킬 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속된다.",
             "effectType": [
                 "Ultimate DMG (base)",
                 "Skill DMG (base)"
@@ -44094,7 +44094,7 @@
             "nameKR": "끝없는 햇빛",
             "desc": "When any Lux Trekker deals Skill DMG, the main Lux Trekker gains 1 stack of Diffraction, stacking up to {1} times.\u000bWhen the main Lux Trekker casts a skill, increases Lux squadmates' Skill DMG by the number of Diffraction stacks x<color=#ec6d21>{2}</color> for {3}s, and removes all the Diffraction stacks.",
             "descCN": "任意光系角色造成技能伤害时，光系主控角色获得1层「衍射」，可叠加{1}层。\u000b光系主控角色施放技能时，队伍中光系角色提升基于「衍射」层数*<color=#ec6d21>{2}</color>的技能伤害，持续{3}秒，同时清空「衍射」层数。",
-            "descJP": "チーム内の光属性巡遊者のスキルダメージを与えた時、光属性の主力巡遊者は回折を1獲得する。回折は{1}まで保持できる。\u000b光属性の主力巡遊者のスキル発動時、回折の数がリセットされ、{3}秒間、チーム内の光属性巡遊者のスキルダメージが回折の数*<color=#ec6d21>{2}</color>増加する。",
+            "descJP": "チーム内の光属性巡遊者のスキルダメージを与えた時、光属性の主力巡遊者は回折を1獲得する。回折は{1}まで保持できる。\u000b光属性の主力巡遊者のスキル発動時、回折の数がリセットされ、{3}秒間、チーム内の光属性巡遊者のスキルダメージが回折の数x<color=#ec6d21>{2}</color>増加する。",
             "descKR": "빛 속성 캐릭터가 스킬 피해를 입히면 빛 속성 메인 캐릭터가 「회절」 1스택을 획득하며, 최대 {1}스택 중첩된다. \u000b빛 속성 메인 캐릭터가 스킬을 시전하면 팀 내 빛 속성 캐릭터의 스킬 피해가 「회절」 중첩 스택×<color=#ec6d21>{2}</color>만큼 증가한다. {3}초간 지속되며, 종료 후 「회절」의 중첩 스택이 제거된다.",
             "effectType": [
                 "Skill DMG (base)"
@@ -51489,13 +51489,13 @@
         "mainSkill": {
             "id": 4051,
             "name": "Stellar Destination",
-            "nameCN": "???",
-            "nameJP": "???",
-            "nameKR": "???",
+            "nameCN": "星之所向",
+            "nameJP": "惹かれ合う星",
+            "nameKR": "별이 향하는 곳",
             "desc": "Lux Versatile Trekkers gain 1 stack of Sync Rate per second on the battlefield: Each stack increases their Lux DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.\u000bWhen Sync Rate is at max stacks, dealing DMG additionally inflicts Hostile Reaction on the target: Increases the Lux Auto ATK DMG the target takes by <color=#ec6d21>{4}</color> for {5}s.",
-            "descCN": "???",
-            "descJP": "???",
-            "descKR": "???",
+            "descCN": "光系均衡角色每在场1秒获得1层「同步率」：每层使自身光系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。\u000b自身「同步率」层数满层时，造成伤害额外为目标附加「敌对反应」：受到光系普攻伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。",
+            "descJP": "光属性のバランサー巡遊者がフィールドにいる間、1秒ごとに親和力を1獲得する。親和力1につき、{2}秒間、自身の光属性ダメージが<color=#ec6d21>{1}</color>増加する。この効果は{3}回まで重複できる。\u000b自身の親和力が上限に達した時、ダメージを与えると追加で敵に斥力を付与する。斥力状態の敵は、{5}秒間、光属性の通常攻撃被ダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "빛 속성 밸런스 캐릭터가 필드에 1초 머무를 때마다 「싱크로율」 1스택을 획득해, 스택마다 자신의 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다. \u000b자신의 「싱크로율」이 최대 스택을 달성하면, 피해를 입힐 때 목표에게 「적대 반응」을 추가로 부여해, 받는 빛 속성 일반 공격 피해가 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
             "effectType": [
                 "Lux DMG (base)",
                 "ELEMENTTYPE_:(Lux) Auto Attack DMG Taken"
@@ -51513,13 +51513,13 @@
         "secondarySkill1": {
             "id": 40511,
             "name": "Start Conversation",
-            "nameCN": "???",
-            "nameJP": "???",
-            "nameKR": "???",
+            "nameCN": "开始「对话」",
+            "nameJP": "星空のロマン",
+            "nameKR": "「대화」 시작",
             "desc": "Increases the squad's Lux DMG by <color=#ec6d21>{1}</color>.\u000bSync Rate gains an additional effect: Each stack increases own Crit DMG by <color=#ec6d21>{2}</color>.",
-            "descCN": "???",
-            "descJP": "???",
-            "descKR": "???",
+            "descCN": "全队光系伤害提升<color=#ec6d21>{1}</color>。\u000b「同步率」获得额外效果：每层使自身暴击伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b親和力に追加効果が付与される：親和力1につき、自身の会心ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「싱크로율」이 추가 효과를 획득해, 스택마다 자신의 치명타 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "Lux DMG (base)",
                 "Crit DMG (base)"
@@ -51558,13 +51558,13 @@
         "secondarySkill2": {
             "id": 40512,
             "name": "Mutual Understanding",
-            "nameCN": "???",
-            "nameJP": "???",
-            "nameKR": "???",
+            "nameCN": "彼此理解",
+            "nameJP": "一条の光",
+            "nameKR": "서로의 이해",
             "desc": "When the Lux Main Trekker triggers a mark on a target with Hostile Reaction and inflicts ##Thunderbolt#4027#, increases own Ultimate Crit DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen the Lux Main Trekker triggers a mark on a target with Hostile Reaction and inflicts ##Lucent#4028#, increases own Skill Crit DMG by <color=#ec6d21>{3}</color> for {4}s.",
-            "descCN": "???",
-            "descJP": "???",
-            "descKR": "???",
+            "descCN": "光系主控角色对附带「敌对反应」的目标触发印记造成##落雷#4027#效果时，自身绝招暴击伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b光系主控角色对附带「敌对反应」的目标触发印记造成##光耀#4028#效果时，自身技能暴击伤害提升<color=#ec6d21>{3}</color>，持续{4}秒。",
+            "descJP": "光属性の主力巡遊者が斥力状態の敵に印を発動させ、##落雷#4027#を発生させた時、{2}秒間、自身の必殺技会心ダメージが<color=#ec6d21>{1}</color>増加する。\u000b光属性の主力巡遊者が斥力状態の敵に印を発動させ、##光耀#4028#を発生させた時、{4}秒間、自身のスキル会心ダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "빛 속성 메인 캐릭터가 「적대 반응」을 보유한 목표에게 표식을 발동해 ##낙뢰#4027# 효과를 입히면, 자신의 필살기 치명타 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b빛 속성 메인 캐릭터가 「적대 반응」을 보유한 목표에게 표식을 발동해 ##광휘#4028# 효과를 입히면, 자신의 스킬 치명타 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속된다.",
             "effectType": [
                 "Ultimate Crit DMG (base)",
                 "Skill Crit DMG (base)"
