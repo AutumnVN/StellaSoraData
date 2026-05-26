@@ -63,6 +63,7 @@ BreakOutPlayCtrl._mapEventConfig = {
 	BrickBreaker_Time = "OnEvent_Time",
 	BrickBreaker_Life = "OnEvent_HPChange",
 	BrickBreaker_Scrole = "OnEvent_ScoreChange",
+	BrickBreaker_GameEnd_Pre = "OnEvent_GameEnd_Pre",
 	BrickBreaker_GameEnd = "OnEvent_FinishGame",
 	Brick_Monster = "OnEvent_KillMonster",
 	Brick_Wall = "OnEvent_BreakBricks",
@@ -129,6 +130,7 @@ function BreakOutPlayCtrl:InitState()
 	self.nKillMonster = 0
 	self.nBreakBricks = 0
 	self.tbDropCollect = self.BreakOutData.BreakOutLevelData:GetCurrentFloorDrops(self.FloorData)
+	self.IsGameEnd = false
 	NovaAPI.SetTMPText(self._mapNode.txt_TargetScore, "/" .. self.nTargetScore)
 	NovaAPI.SetTMPText(self._mapNode.txt_CurrentScore, self.nCurrentScore)
 	self:SetCurrentTime(self.FloorData.Time)
@@ -208,16 +210,23 @@ function BreakOutPlayCtrl:OnEvent_DropCollect(id)
 	end
 end
 function BreakOutPlayCtrl:OnEvent_InputEnable(bEnable)
-	self._mapNode.btn_pause.interactable = bEnable == true
+	self:ActiveBtnPause(bEnable)
 end
 function BreakOutPlayCtrl:OnBtnClick_Pause()
 	EventManager.Hit("Open_BattlePause")
+end
+function BreakOutPlayCtrl:OnEvent_GameEnd_Pre(nResult)
+	self.IsGameEnd = true
+	self:ActiveBtnPause(not self.IsGameEnd)
 end
 function BreakOutPlayCtrl:OnEvent_FinishGame(nResult)
 	if not self.BreakOutData.BreakOutLevelData:GetIsBreakOut_Complete() or self.BreakOutData.BreakOutLevelData:GetIsFinishGame() then
 		return
 	end
 	if self.bInLockState then
+		return
+	end
+	if not self.IsGameEnd then
 		return
 	end
 	local bResult = nResult == GameEnum.levelState.Success
@@ -238,6 +247,7 @@ function BreakOutPlayCtrl:OnEvent_Exit()
 		self.bInLockState = false
 	end
 	local confirmCallback = function()
+		self.IsGameEnd = true
 		EventManager.Hit("Close_BattlePause")
 		EventManager.Hit("BreakOut_Complete", true)
 		EventManager.Hit("SetBreakOutPlaySkill_Visible", false)
@@ -265,6 +275,9 @@ function BreakOutPlayCtrl:OpenBreakOutResultPanel(Result, cb, mapChangeInfo)
 	EventManager.Hit("OpenBreakOutResultPanel", Result, sLevelName, cb, mapChangeInfo)
 end
 function BreakOutPlayCtrl:OnEvent_Restart()
+	if self.IsGameEnd then
+		return
+	end
 	if self.bInLockState then
 		self.bInLockState = false
 		NovaAPI.DispatchEventWithData("TGM_SET_BRICKER", nil, {2, 0})
@@ -337,5 +350,8 @@ function BreakOutPlayCtrl:BuildFinishData(bWin)
 		Score = self.nCurrentScore,
 		DropCollect = self.tbDropCollect
 	}
+end
+function BreakOutPlayCtrl:ActiveBtnPause(bEnable)
+	self._mapNode.btn_pause.interactable = bEnable
 end
 return BreakOutPlayCtrl
