@@ -1,5 +1,6 @@
 {
     "2": {
+        "id": 6310030,
         "name": "Lithe Beauty",
         "icon": "boss_Tachie_05",
         "type": "Blitz",
@@ -2431,6 +2432,7 @@
         ]
     },
     "3": {
+        "id": 6310020,
         "name": "Flavor Dread",
         "icon": "boss_Tachie_07",
         "type": "Blitz",
@@ -4963,6 +4965,7 @@
         ]
     },
     "4": {
+        "id": 6310050,
         "name": "Forbidden Beauty",
         "icon": "boss_Tachie_09",
         "type": "Blitz",
@@ -7495,6 +7498,7 @@
         ]
     },
     "5": {
+        "id": 6310040,
         "name": "Abyssal Sea Sovereign",
         "icon": "boss_Tachie_08",
         "type": "Blitz",
@@ -10028,6 +10032,7 @@
         ]
     },
     "6": {
+        "id": 6310110,
         "name": "Lady Dust",
         "icon": "boss_Tachie_10",
         "type": "Blitz",
@@ -12559,6 +12564,7 @@
         ]
     },
     "7": {
+        "id": 6310060,
         "name": "Evernight Emberflies",
         "icon": "boss_Tachie_11",
         "type": "Blitz",
@@ -15091,6 +15097,7 @@
         ]
     },
     "8": {
+        "id": 6310080,
         "name": "Flavor Dread",
         "icon": "boss_Tachie_07",
         "type": "Blitz",
@@ -17624,6 +17631,7 @@
         ]
     },
     "9": {
+        "id": 6310070,
         "name": "Blade of Jade",
         "icon": "boss_Tachie_04",
         "type": "Blitz",
@@ -20157,6 +20165,7 @@
         ]
     },
     "10": {
+        "id": 6310090,
         "name": "Count of the Duloos",
         "icon": "boss_Tachie_12",
         "type": "Blitz",
@@ -22690,6 +22699,7 @@
         ]
     },
     "11": {
+        "id": 6310100,
         "name": "Abyssal Sea Sovereign",
         "icon": "boss_Tachie_08",
         "type": "Blitz",
@@ -25222,6 +25232,7 @@
         ]
     },
     "14": {
+        "id": 6310130,
         "name": "Hazana",
         "icon": "boss_Tachie_13",
         "type": "Blitz",
@@ -27753,6 +27764,7 @@
         ]
     },
     "15": {
+        "id": 6310120,
         "name": "Lithe Beauty",
         "icon": "boss_Tachie_05",
         "type": "Blitz",
@@ -30286,6 +30298,7 @@
         ]
     },
     "16": {
+        "id": 6310140,
         "name": "Evernight Emberflies",
         "icon": "boss_Tachie_11",
         "type": "Blitz",
@@ -32819,6 +32832,7 @@
         ]
     },
     "17": {
+        "id": 6310150,
         "name": "Forbidden Beauty",
         "icon": "boss_Tachie_09",
         "type": "Blitz",
@@ -35351,6 +35365,7 @@
         ]
     },
     "18": {
+        "id": 6310160,
         "name": "Count of the Duloos",
         "icon": "boss_Tachie_12",
         "type": "Blitz",
@@ -35365,10 +35380,12 @@
                 "desc": "Count of the Duloos starts with 1 stack of Resistance and gains an additional stack every 5s. Each stack of Resistance reduces his DMG Taken by <color=#ec6d21>8%</color>, stacking up to <color=#ec6d21>10</color> times.\nWhen the Main Trekker triggers a Mark, 1 stack of Resistance is removed from Count of the Duloos, and all Support Trekkers on the battlefield gain 1 stack of Amplification. Each stack increases DMG by <color=#ec6d21>15%</color>, stacking up to <color=#ec6d21>5</color> times, lasting 20s.",
                 "icon": "Icon_Bossrush_DaGuanZi_002",
                 "effectType": [
-                    "Skill DMG (%)"
+                    "Final DMG Taken (base)",
+                    "Final DMG (%)"
                 ],
                 "buffIcon": [
-                    "No Icon"
+                    "Icon_CommonBuff_DefenseUp",
+                    "Icon_CommonBuff_AttackUp"
                 ]
             }
         ],
@@ -37882,6 +37899,7 @@
         ]
     },
     "19": {
+        "id": 6310170,
         "name": "Lady Dust",
         "icon": "boss_Tachie_10",
         "type": "Blitz",
@@ -37895,8 +37913,12 @@
                 "name": "Stormy Zeal",
                 "desc": "Every <color=#ec6d21>3</color> Wind Puff minions destroyed grants [Inspiration], granting the entire squad <color=#ec6d21>40%</color> Skill Damage Power for <color=#ec6d21>10</color>s.\nWhenever the Main Trekker uses a skill, the remaining duration of [Inspiration] is extended by <color=#ec6d21>5</color>s (up to a max of <color=#ec6d21>20</color>s).",
                 "icon": "Icon_Bossrush_Teshujizhi_015",
-                "effectType": [],
-                "buffIcon": []
+                "effectType": [
+                    "Skill DMG (%)"
+                ],
+                "buffIcon": [
+                    "No Icon"
+                ]
             }
         ],
         "weakTo": [
