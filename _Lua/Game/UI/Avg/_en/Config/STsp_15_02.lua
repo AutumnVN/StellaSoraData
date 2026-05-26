@@ -1750,7 +1750,7 @@ return {
 			"",
 			false,
 			"",
-			"<size=80%>I.... I'm Vollara.</size>",
+			"<size=80%>I… I'm Vollara.</size>",
 			""
 		}
 	},
@@ -5444,7 +5444,7 @@ return {
 			"",
 			false,
 			"",
-			"O mighty God of Grace, please hear our prayer...Please grant me...",
+			"O mighty God of Grace, please hear our prayer… Please grant me...",
 			""
 		}
 	},

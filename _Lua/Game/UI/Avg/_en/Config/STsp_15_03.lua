@@ -641,7 +641,7 @@ return {
 			"",
 			false,
 			"",
-			"After lunch, we're going straight into Tilia and Minova's scene together.==W== Everyone get ready. Let's try to nail it in one take.",
+			"After lunch, we're going straight into Tilia and Minova's scene together.==W== Everyone, get ready. Let's try to nail it in one take.",
 			""
 		}
 	},
@@ -2728,7 +2728,7 @@ return {
 			"",
 			false,
 			"",
-			"Huff...huff... The reinforcements just keep coming...",
+			"Huff… Huff… The reinforcements just keep coming…",
 			""
 		}
 	},
@@ -9093,7 +9093,7 @@ return {
 			"",
 			false,
 			"",
-			"...Unforgivable.",
+			"… Unforgivable.",
 			""
 		}
 	},
@@ -9170,7 +9170,7 @@ return {
 			"",
 			false,
 			"",
-			"... Huh?",
+			"… Huh?",
 			""
 		}
 	},
@@ -9231,7 +9231,7 @@ return {
 			"",
 			false,
 			"",
-			" ==RT== ==RT== ==RT== ==RT== ==RT==<color=#bd3059>Unforgivable unforgivable unforgivable unforgivable unforgivable unforgivable unforgivable unforgivable unforgivable unforgivable unforgivable unforgivable...</color>",
+			" ==RT== ==RT== ==RT== ==RT== ==RT==<color=#bd3059>Unforgivable unforgivable unforgivable==RT==unforgivable unforgivable unforgivable==RT==unforgivable unforgivable unforgivable==RT==unforgivable unforgivable unforgivable...</color>",
 			""
 		}
 	},
@@ -12037,7 +12037,7 @@ return {
 			"",
 			false,
 			"",
-			"O-oh. is that so...?==W== I should be the one thanking you.==W== Well, I've dropped off the gift, so I should get going.",
+			"O-oh, is that so...?==W== I should be the one thanking you.==W== Well, I've dropped off the gift, so I should get going.",
 			""
 		}
 	},
