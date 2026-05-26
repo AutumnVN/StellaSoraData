@@ -17,7 +17,11 @@ ChapterLineCtrl._mapNodeConfig = {
 		sNodeName = "ImgMask",
 		sComponentName = "RectTransform"
 	},
-	goImgMaskRoot = {}
+	goImgMaskRoot = {},
+	layoutContent = {
+		sNodeName = "Content",
+		sComponentName = "HorizontalLayoutGroup"
+	}
 }
 ChapterLineCtrl._mapEventConfig = {
 	Story_RewardClosed = "OnEvent_Story_RewardClosed",
@@ -145,17 +149,21 @@ function ChapterLineCtrl:Refresh()
 	table.sort(self.tbGridList, function(a, b)
 		return a.depth < b.depth
 	end)
+	self:RefreshCurNodeDepthByNewUnlock()
 	self:RefreshUnlockAnimList()
+	self.tbBranchOverflowDepths = {}
+	self.maxLockRootDepth = 0
 	for k, v in ipairs(self.tbGridList) do
 		self:RefreshGrid(v.grid, v.depth)
 	end
+	self:ApplyLayoutContentRightPadding()
 	local isComplete = self:IsAllStoryCompleted()
 	self.curTimeStamp = isComplete and self.curTimeStamp or self.maxUnlockDepth
 	for i = 1, #self.tbTimeStampList do
 		self:RefreshTimeStamp(self.tbTimeStampList[i], i)
 	end
 	self:AddTimer(1, 0.1, function()
-		local posX = self.curNodeDepth <= 4 and 0 or (self.curNodeDepth - 1) * -512
+		local posX = self.curNodeDepth < 4 and 0 or (self.curNodeDepth - 1) * -512
 		self._mapNode.tranContent.anchoredPosition = Vector2(posX, 0)
 	end, true, true, true)
 	CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.tranContent)
@@ -204,7 +212,8 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 		end
 	end
 	local bPlayedLockAnim = table.indexof(self.tbLockedPlayedAnim, avgId) > 0
-	goGrid.gameObject:SetActive((not bAllLock or not allParentDepthLock) and not bNeedPlayUnlockAnim or bPlayedLockAnim)
+	local bShowGrid = (not bAllLock or not allParentDepthLock) and not bNeedPlayUnlockAnim or bPlayedLockAnim
+	goGrid.gameObject:SetActive(bShowGrid)
 	local bReaded = AvgData:IsStoryReaded(storyConfig.Id)
 	local btnEnter = goGrid:Find("btnEnter"):GetComponent("UIButton")
 	local NormalRoot = btnEnter.transform:Find("AnimRoot/NormalRoot")
@@ -217,7 +226,17 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 	local txtUnlock = LockRoot:Find("txtUnlock"):GetComponent("TMP_Text")
 	local cgComp = storyConfig.IsBattle and NormalRoot:GetComponent("CanvasGroup") or BattleRoot:GetComponent("CanvasGroup")
 	NovaAPI.SetCanvasGroupAlpha(cgComp, bUnlock and 1 or 0.5)
-	LockRoot.gameObject:SetActive(not bUnlock or bPlayedLockAnim)
+	local bShowLockRoot = not bUnlock or bPlayedLockAnim
+	LockRoot.gameObject:SetActive(bShowLockRoot)
+	if bShowLockRoot and gridDepth > (self.maxLockRootDepth or 0) then
+		if bShowGrid then
+			if self.tbDepthLockCount[gridDepth].Node.gameObject.activeInHierarchy then
+				self.maxLockRootDepth = gridDepth
+			end
+		elseif bNeedPlayUnlockAnim then
+			self.maxLockRootDepth = gridDepth
+		end
+	end
 	imgClue.gameObject:SetActive(storyConfig.HasEvidence and bUnlock and not bReaded)
 	local bShowLineContinue = not bUnlock and gridDepth > self.maxUnlockDepth
 	lineContinue.gameObject:SetActive(bShowLineContinue)
@@ -236,7 +255,7 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 			end
 		end
 	end
-	if bFocus then
+	if bUnlock then
 		local nodeTimeStampIndex = tonumber(goGrid.transform.parent.parent.name)
 		if nodeTimeStampIndex > self.curTimeStamp then
 			if self.tbImgFocusNode[self.curTimeStamp] ~= nil then
@@ -245,7 +264,6 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 				end
 			end
 			self.curTimeStamp = nodeTimeStampIndex
-			self.curNodeDepth = nodeTimeStampIndex
 		end
 		if self.tbImgFocusNode[self.curTimeStamp] == nil then
 			self.tbImgFocusNode[self.curTimeStamp] = {}
@@ -401,6 +419,29 @@ function ChapterLineCtrl:RefreshBranchGrid(root, avgId, depth, isNeedPlayUnlockA
 			self:PlayUnlockAnim(root, "BranchRoot_Empty")
 		end
 	end
+	if 2 < nUnlockBranchCount then
+		if self.tbBranchOverflowDepths == nil then
+			self.tbBranchOverflowDepths = {}
+		end
+		table.insert(self.tbBranchOverflowDepths, depth)
+	end
+end
+function ChapterLineCtrl:ApplyLayoutContentRightPadding()
+	local maxLockDepth = self.maxLockRootDepth or 0
+	local bWide = false
+	local tbOverflow = self.tbBranchOverflowDepths or {}
+	for _, branchDepth in ipairs(tbOverflow) do
+		if branchDepth >= maxLockDepth then
+			bWide = true
+			break
+		end
+	end
+	local targetRight = bWide and 400 or 200
+	local layoutContent = self._mapNode.layoutContent
+	if layoutContent.padding.right ~= targetRight then
+		local padding = layoutContent.padding
+		NovaAPI.SetLayoutGroupPadding(layoutContent.gameObject, padding.left, targetRight, padding.top, padding.bottom)
+	end
 end
 function ChapterLineCtrl:RefreshTimeStamp(goTimeStamp, index)
 	local timeStampName
@@ -481,6 +522,60 @@ function ChapterLineCtrl:CheckLineReasonable(grid)
 			end
 		end
 	end
+end
+function ChapterLineCtrl:RefreshCurNodeDepthByNewUnlock()
+	local tbGridList = self.tbGridList or {}
+	local snapshotKey = "MainlineUnlockSnapshot_" .. tostring(self.curChapter)
+	local depthKey = "MainlineCurNodeDepth_" .. tostring(self.curChapter)
+	local prevUnlockSet = {}
+	local snapshotRaw = LocalData.GetPlayerLocalData(snapshotKey)
+	if type(snapshotRaw) == "string" and snapshotRaw ~= "" then
+		for storyId in string.gmatch(snapshotRaw, "([^,]+)") do
+			prevUnlockSet[storyId] = true
+		end
+	end
+	local deepestDepth
+	local curUnlockIds = {}
+	local parentDepthMap = {}
+	for _, v in ipairs(tbGridList) do
+		parentDepthMap[v.avgId] = v.depth
+		local storyConfig = AvgData:GetStoryCfgData(v.avgId)
+		if storyConfig ~= nil then
+			local bUnlock = AvgData:IsUnlock(storyConfig.ConditionId, storyConfig.StoryId)
+			if bUnlock then
+				local storyIdKey = tostring(storyConfig.Id)
+				table.insert(curUnlockIds, storyIdKey)
+				if not prevUnlockSet[storyIdKey] and (deepestDepth == nil or deepestDepth < v.depth) then
+					deepestDepth = v.depth
+				end
+			end
+		end
+	end
+	local tbBranch = self.tbBranch or {}
+	for parentAvgId, branchList in pairs(tbBranch) do
+		local parentDepth = parentDepthMap[parentAvgId]
+		for _, branchData in ipairs(branchList) do
+			local bUnlock = AvgData:IsUnlock(branchData.ConditionId, branchData.StoryId)
+			if bUnlock then
+				local branchIdKey = tostring(branchData.Id)
+				table.insert(curUnlockIds, branchIdKey)
+				if not prevUnlockSet[branchIdKey] and parentDepth ~= nil and (deepestDepth == nil or deepestDepth < parentDepth) then
+					deepestDepth = parentDepth
+				end
+			end
+		end
+	end
+	if deepestDepth ~= nil then
+		self.curNodeDepth = deepestDepth
+		LocalData.SetPlayerLocalData(depthKey, deepestDepth)
+	else
+		local savedDepth = LocalData.GetPlayerLocalData(depthKey)
+		local nSavedDepth = tonumber(savedDepth)
+		if nSavedDepth ~= nil and 0 < nSavedDepth then
+			self.curNodeDepth = nSavedDepth
+		end
+	end
+	LocalData.SetPlayerLocalData(snapshotKey, table.concat(curUnlockIds, ","))
 end
 function ChapterLineCtrl:RefreshUnlockAnimList()
 	self.tbNeedPlayUnlockAnimGird = {}

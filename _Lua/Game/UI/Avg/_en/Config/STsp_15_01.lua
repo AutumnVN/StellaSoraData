@@ -3424,7 +3424,7 @@ return {
 			"",
 			false,
 			"",
-			"Hmph...==W== He's gotten really comfortable ordering people around. Being in the Imperial Guard really gets into people's heads, huh?",
+			"Hmph...==W== She's gotten really comfortable ordering people around. Being in the Imperial Guard really gets into people's heads, huh?",
 			""
 		}
 	},
@@ -3789,7 +3789,7 @@ return {
 			"",
 			false,
 			"",
-			"So the problem is the outfit, right?==W== I get what he means, but what exactly counts as heroine energy?==W== Hmmm...",
+			"So the problem is the outfit, right?==W== I get what she means, but what exactly counts as heroine energy?==W== Hmmm...",
 			""
 		}
 	},
@@ -4861,7 +4861,7 @@ return {
 			"",
 			false,
 			"",
-			"Fashion magazines.==W== The director told me to prepare an outfit that feels more like a heroine, didn't he? So I figured I'd flip through some and see if I get any inspiration.",
+			"Fashion magazines.==W== The director told me to prepare an outfit that feels more like a heroine, didn't she? So I figured I'd flip through some and see if I get any inspiration.",
 			""
 		}
 	},
@@ -7234,7 +7234,7 @@ return {
 			"",
 			false,
 			"",
-			"What?==W== That's ....==W== <i>Goodbye, My Landmine Childhood Friend</i>?! Why is it here?!",
+			"What?==W== That's ...==W== <i>Goodbye, My Landmine Childhood Friend</i>?! Why is it here?!",
 			""
 		}
 	},

@@ -2807,7 +2807,7 @@ return {
 		cmd = "SetTalk",
 		param = {
 			9,
-			"avg3_214",
+			"星輝会研究員",
 			"",
 			0,
 			"",
