@@ -467,13 +467,16 @@ function collectUnusedParamsFrom(obj, lang) {
 
     const desc = lang[obj.Desc] || '';
 
-    const paramKeys = Object.keys(obj).filter(k =>
-        k.match(/^param\d+$/i)
-        && obj[k]
-        && !desc.includes(`&${k}&`)
-        && Object.values(obj).filter(v => v === obj[k]).length === 1
-        && obj[k] !== resolveParam([obj[k]])[0]
-    );
+    const paramKeys = Object.keys(obj).filter(k => {
+        if (!k.match(/^param\d+$/i)) return false;
+        if (!obj[k]) return false;
+        if (desc.includes(`&${k}&`)) return false;
+        if (Object.values(obj).filter(v => v === obj[k]).length !== 1) return false;
+        const resolved = resolveParam([obj[k]])[0];
+        if (!resolved || resolved === '0%') return false;
+        if (obj[k] === resolved) return false;
+        return true;
+    });
 
     if (paramKeys.length === 0) return '';
 
@@ -529,13 +532,33 @@ function collectUnusedDiscParamsFrom(obj, lang) {
 
     const desc = lang[obj.Desc] || '';
 
-    const paramKeys = Object.keys(obj).filter(k =>
-        k.match(/^param\d+$/i)
-        && obj[k]
-        && !desc.includes(`{${k.match(/\d+$/)[0]}}`)
-        && Object.values(obj).filter(v => v === obj[k]).length === 1
-        && obj[k] !== resolveParam([obj[k]])[0]
-    );
+    const paramKeys = Object.keys(obj).filter(k => {
+        if (!k.match(/^param\d+$/i)) return false;
+        if (!obj[k]) return false;
+        const index = k.match(/\d+$/)[0];
+        if (desc.includes(`{${index}}`)) return false;
+        if (Object.values(obj).filter(v => v === obj[k]).length !== 1) return false;
+
+        const resolved = resolveParam([obj[k]])[0];
+        if (!resolved) return false;
+
+        const isZeroLike = (r) => {
+            try {
+                return String(r).split('/').map(s => s.trim()).every(p => {
+                    const clean = p.replace(/%$/, '');
+                    const n = parseFloat(clean);
+                    return !isNaN(n) && n === 0;
+                });
+            } catch (e) {
+                return false;
+            }
+        };
+
+        if (isZeroLike(resolved)) return false;
+        if (obj[k] === resolved) return false;
+
+        return true;
+    });
 
     if (paramKeys.length === 0) return '';
 
