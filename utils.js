@@ -467,13 +467,16 @@ function collectUnusedParamsFrom(obj, lang) {
 
     const desc = lang[obj.Desc] || '';
 
-    const paramKeys = Object.keys(obj).filter(k =>
-        k.match(/^param\d+$/i)
-        && obj[k]
-        && !desc.includes(`&${k}&`)
-        && Object.values(obj).filter(v => v === obj[k]).length === 1
-        && obj[k] !== resolveParam([obj[k]])[0]
-    );
+    const paramKeys = Object.keys(obj).filter(k => {
+        if (!k.match(/^param\d+$/i)) return false;
+        if (!obj[k]) return false;
+        if (desc.includes(`&${k}&`)) return false;
+        if (Object.values(obj).filter(v => v === obj[k]).length !== 1) return false;
+        const resolved = resolveParam([obj[k]])[0];
+        if (!resolved || resolved === '0%') return false;
+        if (obj[k] === resolved) return false;
+        return true;
+    });
 
     if (paramKeys.length === 0) return '';
 
