@@ -745,7 +745,8 @@ GameEnum.activityQuestCompleteCond = {
 	ActivityGoldenSpyAccCompleteTask = 147,
 	ActivityGoldenSpyAccUseSkill = 148,
 	ActivityPenguinCardClearScore = 149,
-	ActivityPenguinCardClearStar = 150
+	ActivityPenguinCardClearStar = 150,
+	ActivityPenguinCardTotalScore = 151
 }
 GameEnum.chatCond = {
 	CharacterAcquire = 5,
@@ -1845,7 +1846,8 @@ GameEnum.activityType = {
 	PenguinCard = 18,
 	ThrowGift = 19,
 	GoldenSpy = 20,
-	Double = 21
+	Double = 21,
+	HistoryStory = 22
 }
 GameEnum.activityOpenType = {
 	None = 0,

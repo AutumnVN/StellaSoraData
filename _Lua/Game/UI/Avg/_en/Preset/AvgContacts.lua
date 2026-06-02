@@ -134,6 +134,13 @@ return {
 		signature = "Keeping it real!"
 	},
 	{
+		id = 131,
+		icon = "Icon/Head/head_13101_S",
+		name = "Bloc",
+		landmark = "Bloc's Traveling Stall",
+		signature = "Keep up! Spending money is light work"
+	},
+	{
 		id = 132,
 		icon = "Icon/Head/head_13201_S",
 		name = "Minova",
@@ -167,6 +174,14 @@ return {
 		name = "Nyx",
 		landmark = "No. 10, Meister Street, Philae",
 		signature = "On leave. Return date TBD."
+	},
+	{
+		id = 140,
+		icon = "Icon/Head/head_14001_S",
+		name = "Sparkla",
+		landmark = "On the move. Contact me in person.",
+		signature = "Do not disturb unless necessary.",
+		ver = "1.11.0"
 	},
 	{
 		id = 141,
@@ -330,6 +345,13 @@ return {
 		name = "Anonymous",
 		landmark = "",
 		signature = ""
+	},
+	{
+		id = 989,
+		icon = "Icon/Head/head_group_S",
+		name = "Anti-Ghosting Squad",
+		landmark = "",
+		signature = "If you block us, don't leave the chat. If you leave, don't block."
 	},
 	{
 		id = 9152,

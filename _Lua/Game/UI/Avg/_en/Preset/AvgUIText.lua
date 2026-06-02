@@ -28,6 +28,7 @@ return {
 		["==SEX19=="] = {"maid", "butler"},
 		["==SEX1=="] = {"She", "He"},
 		["==SEX20=="] = {"shirt", "undershirt"},
+		["==SEX21=="] = {"lady", "gentleman"},
 		["==SEX2=="] = {"Her", "His"},
 		["==SEX3=="] = {"her", "his"},
 		["==SEX4=="] = {"her", "him"},

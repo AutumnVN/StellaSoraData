@@ -621,6 +621,10 @@ function PlayerBaseData:OnNextDayRefresh()
 		end
 		self:OnNewDay()
 		EventManager.Hit(EventId.IsNewDay)
+		local bInMainView = PanelManager.GetCurPanelId() == PanelId.MainView
+		if not bInMainView then
+			PopUpManager.ResetInterruptPopUp()
+		end
 		local bInAdventure = ModuleManager.GetIsAdventure()
 		local bInStarTowerSweep = not bInAdventure and (PlayerData.State:GetStarTowerSweepState() or PanelManager.GetCurPanelId() == PanelId.StarTowerResult or PanelManager.GetCurPanelId() == PanelId.StarTowerBuildSave)
 		local bInAvg = AvgManager.CheckInAvg()

@@ -134,6 +134,13 @@ return {
 		signature = "真誠！"
 	},
 	{
+		id = 131,
+		icon = "Icon/Head/head_13101_S",
+		name = "布洛可",
+		landmark = "布洛可的移動小攤",
+		signature = "跟上我，花錢像呼吸一樣簡單"
+	},
+	{
 		id = 132,
 		icon = "Icon/Head/head_13201_S",
 		name = "密涅瓦",
@@ -167,6 +174,14 @@ return {
 		name = "星雁",
 		landmark = "菲萊城梅斯特大街十號",
 		signature = "休假中，歸期未定"
+	},
+	{
+		id = 140,
+		icon = "Icon/Head/head_14001_S",
+		name = "斯帕克拉",
+		landmark = "移動中，請聯絡本人",
+		signature = "無事請勿打擾",
+		ver = "1.11.0"
 	},
 	{
 		id = 141,
@@ -330,6 +345,13 @@ return {
 		name = "匿名",
 		landmark = "",
 		signature = ""
+	},
+	{
+		id = 989,
+		icon = "Icon/Head/head_group_S",
+		name = "防失聯小組",
+		landmark = "",
+		signature = "封鎖不退群，退群不封鎖"
 	},
 	{
 		id = 9152,

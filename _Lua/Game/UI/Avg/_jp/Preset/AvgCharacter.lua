@@ -178,7 +178,7 @@ return {
 	{
 		id = "avg1_131",
 		name = "ブロッチ",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#fff1c0"
 	},
 	{
 		id = "avg1_132",
@@ -222,7 +222,7 @@ return {
 	},
 	{
 		id = "avg1_140",
-		name = "***",
+		name = "スパクル",
 		name_bg_color = "#91aca8",
 		ver = "1.11.0"
 	},
@@ -922,7 +922,7 @@ return {
 	{
 		id = "avg3_179",
 		name = "ミューシャ",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#8695b8"
 	},
 	{
 		id = "avg3_180",
@@ -942,12 +942,12 @@ return {
 	{
 		id = "avg3_183",
 		name = "ヨセフ",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#97b8a0"
 	},
 	{
 		id = "avg3_184",
 		name = "マダムガイスト",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#b2cdc9"
 	},
 	{
 		id = "avg3_185",
@@ -1086,7 +1086,7 @@ return {
 	},
 	{
 		id = "avg3_212",
-		name = "***",
+		name = "レオ",
 		name_bg_color = "#cd5d4b",
 		ver = "1.11.0"
 	},
@@ -1116,13 +1116,13 @@ return {
 	},
 	{
 		id = "avg3_221",
-		name = "***",
+		name = "ラボラビ",
 		name_bg_color = "#789eba",
 		ver = "1.11.0"
 	},
 	{
 		id = "avg3_222",
-		name = "***",
+		name = "机械小狗",
 		name_bg_color = "#a5cdc3",
 		ver = "1.11.0"
 	},
@@ -2681,13 +2681,13 @@ return {
 	},
 	{
 		id = "avg3_1287",
-		name = "デザートゲイル女性一般兵",
+		name = "デザートゲイル女性一般兵A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_208"
 	},
 	{
 		id = "avg3_1288",
-		name = "デザートゲイル男性一般兵",
+		name = "デザートゲイル男性一般兵A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_209"
 	},
@@ -2720,6 +2720,76 @@ return {
 		name = "朔A",
 		name_bg_color = "#5a91ca",
 		reuse = "avg1_164"
+	},
+	{
+		id = "avg3_1294",
+		name = "デザートゲイル女性一般兵B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1295",
+		name = "デザートゲイル女性一般兵C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1296",
+		name = "デザートゲイル女性一般兵D",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1297",
+		name = "デザートゲイル男性一般兵B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1298",
+		name = "デザートゲイル男性一般兵C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1299",
+		name = "デザートゲイル男性一般兵D",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1300",
+		name = "柔光工匠A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_143",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1301",
+		name = "柔光工匠B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_144",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1302",
+		name = "柔光工匠C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_141",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1303",
+		name = "格蕾霍恩A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg1_163",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1304",
+		name = "シャトンA",
+		name_bg_color = "#8e65ad",
+		reuse = "avg1_114"
 	},
 	{
 		id = "avg4_100",

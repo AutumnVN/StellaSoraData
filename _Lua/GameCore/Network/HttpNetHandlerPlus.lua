@@ -78,6 +78,10 @@ function HttpNetHandlerPlus.activity_story_reward_receive_succeed_ack(mapMsgData
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
+function HttpNetHandlerPlus.activity_history_story_settle_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
 function HttpNetHandlerPlus.activity_task_reward_receive_succeed_ack(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)

@@ -75,7 +75,7 @@ PenguinCardQuestSelectCtrl._mapEventConfig = {
 }
 function PenguinCardQuestSelectCtrl:Open(bCur)
 	self._panel.mapLevel:Pause()
-	local nScore = math.floor(self._panel.mapLevel.nScore + 0.5 + 1.0E-9)
+	local nScore = math.floor(self._panel.mapLevel.nScore)
 	NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	self.bCur = bCur
 	self:PlayInAni()
@@ -386,7 +386,7 @@ function PenguinCardQuestSelectCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nS
 	DOTween.To(function()
 		return nBefore
 	end, function(v)
-		local nScore = math.floor(v + 0.5 + 1.0E-9)
+		local nScore = math.floor(v)
 		NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	end, self._panel.mapLevel.nScore, 0.5):OnComplete(callback)
 end

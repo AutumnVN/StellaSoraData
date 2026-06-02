@@ -525,11 +525,15 @@ function PhoneCtrl:Awake()
 	self.nLastTog = nil
 	local tbParam = self:GetPanelParam()
 	if nil ~= tbParam and nil ~= tbParam[1] then
-		self._panel.nCurTog = tbParam[1]
-		if nil ~= tbParam[2] then
+		if self._panel.nCurTog == nil then
+			self._panel.nCurTog = tbParam[1]
+		end
+		if nil ~= tbParam[2] and self._panel.nSelectCharId == nil then
 			self._panel.nSelectCharId = tbParam[2]
 		end
-		self.bSetGridPos = tbParam[3]
+		if self._panel.nSelectCharId == nil then
+			self.bSetGridPos = tbParam[3]
+		end
 	end
 end
 function PhoneCtrl:OnEnable()

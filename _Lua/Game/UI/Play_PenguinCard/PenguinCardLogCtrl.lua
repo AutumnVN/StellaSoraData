@@ -55,7 +55,7 @@ end
 function PenguinCardLogCtrl:Refresh()
 	local mapTurn = self._panel.mapLevel.mapLog[self.nTurn]
 	NovaAPI.SetTMPText(self._mapNode.txtTurn, orderedFormat(ConfigTable.GetUIText("PenguinCard_Log_TurnCount"), self.nTurn))
-	local nTurnScore = math.floor(mapTurn.nTurnScore + 0.5 + 1.0E-9)
+	local nTurnScore = math.floor(mapTurn.nTurnScore)
 	NovaAPI.SetTMPText(self._mapNode.txtTurnScore, self:ThousandsNumber(nTurnScore))
 	self.tbRound = mapTurn.tbRound
 	local nCount = #self.tbRound
@@ -75,7 +75,7 @@ function PenguinCardLogCtrl:OnGridRefresh(goGrid, gridIndex)
 	if mapCfg then
 		NovaAPI.SetTMPText(txtHandRank, mapCfg.Title)
 	end
-	local nRoundScore = math.floor(mapRound.nRoundScore + 0.5 + 1.0E-9)
+	local nRoundScore = math.floor(mapRound.nRoundScore)
 	NovaAPI.SetTMPText(txtRoundScore, self:ThousandsNumber(nRoundScore))
 	local nAll = #mapRound.tbHandRank
 	for i = 1, 6 do

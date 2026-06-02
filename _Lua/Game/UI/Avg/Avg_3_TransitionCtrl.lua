@@ -20,9 +20,9 @@ Avg_3_TransitionCtrl._mapNodeConfig = {
 		sNodeName = "imgCurtain",
 		sComponentName = "UIEffectAndTransition"
 	},
-	tbStyle = {nCount = 3, sNodeName = "style_"},
+	tbStyle = {nCount = 6, sNodeName = "style_"},
 	tbAnim = {
-		nCount = 3,
+		nCount = 6,
 		sNodeName = "style_",
 		sComponentName = "Animator"
 	},
@@ -243,6 +243,18 @@ function Avg_3_TransitionCtrl:SetTrans(tbParam)
 			[3] = {
 				[0] = 1.167,
 				[1] = 0.8
+			},
+			[4] = {
+				[0] = 0.267,
+				[1] = 0.4
+			},
+			[5] = {
+				[0] = 0.767,
+				[1] = 0.7
+			},
+			[6] = {
+				[0] = 0.4,
+				[1] = 0.5
 			}
 		}
 		if nCloseOpen ~= 0 then

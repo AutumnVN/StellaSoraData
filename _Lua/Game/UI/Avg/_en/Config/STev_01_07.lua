@@ -5655,7 +5655,7 @@ return {
 			"",
 			false,
 			"",
-			" S-Sorry, boss! I was just bringing you a late-night snack ... and forgot to knock...",
+			"S-Sorry, boss! I was just bringing you a late-night snack ... and forgot to knock...",
 			""
 		}
 	},

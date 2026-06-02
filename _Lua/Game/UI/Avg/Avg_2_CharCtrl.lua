@@ -154,13 +154,13 @@ function Avg_2_CharCtrl:ClearCharData(timer, data, bForceClear)
 	data.sprBlack.gameObject:SetActive(false)
 	data.bInUse = false
 	data.trRoot.gameObject:SetActive(false)
+	NovaAPI.SetTexture(data.rawImage, nil)
+	data.camera.targetTexture = nil
+	if data.renderTexture ~= nil then
+		GameUIUtils.ReleaseRenderTexture(data.renderTexture)
+		data.renderTexture = nil
+	end
 	if bForceClear == true then
-		NovaAPI.SetTexture(data.rawImage, nil)
-		data.camera.targetTexture = nil
-		if data.renderTexture ~= nil then
-			GameUIUtils.ReleaseRenderTexture(data.renderTexture)
-			data.renderTexture = nil
-		end
 		data.trRoot = nil
 		data.rtChar = nil
 		data.eftShake = nil

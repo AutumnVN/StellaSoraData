@@ -19112,7 +19112,7 @@
   "3110101": {
     "Id": 3110101,
     "ComboGroupPath": "Monster/31101GeLeiHuoEn/Combo/ComboGroup",
-    "SpawnShowSkillId": 3110103,
+    "SpawnShowSkillId": 3110102,
     "IdleShowSkillId": 0,
     "DieSkillId": 9999990,
     "ActionAIPath": "AIScript.Monster._31101GeLeiHuoEn.Action_Lv1",
@@ -19129,7 +19129,7 @@
   "3110102": {
     "Id": 3110102,
     "ComboGroupPath": "Monster/31101GeLeiHuoEn/Combo/ComboGroup",
-    "SpawnShowSkillId": 3110103,
+    "SpawnShowSkillId": 3110102,
     "IdleShowSkillId": 0,
     "DieSkillId": 0,
     "ActionAIPath": "AIScript.Monster._31101GeLeiHuoEn.Action_Lv2",
@@ -19146,7 +19146,7 @@
   "3110201": {
     "Id": 3110201,
     "ComboGroupPath": "Monster/31102LieQuan/Combo/ComboGroup",
-    "SpawnShowSkillId": 3110206,
+    "SpawnShowSkillId": 3110205,
     "IdleShowSkillId": 0,
     "DieSkillId": 9999990,
     "ActionAIPath": "",
@@ -19165,7 +19165,7 @@
   "3110202": {
     "Id": 3110202,
     "ComboGroupPath": "Monster/31102LieQuan/Combo/ComboGroup",
-    "SpawnShowSkillId": 3110206,
+    "SpawnShowSkillId": 3110205,
     "IdleShowSkillId": 0,
     "DieSkillId": 0,
     "ActionAIPath": "",
@@ -19184,7 +19184,7 @@
   "3110203": {
     "Id": 3110203,
     "ComboGroupPath": "Monster/31102LieQuan/Combo/ComboGroup",
-    "SpawnShowSkillId": 3110206,
+    "SpawnShowSkillId": 3110205,
     "IdleShowSkillId": 0,
     "DieSkillId": 0,
     "ActionAIPath": "",
@@ -19203,31 +19203,12 @@
   "3110204": {
     "Id": 3110204,
     "ComboGroupPath": "Monster/31102LieQuan/Combo/ComboGroup",
-    "SpawnShowSkillId": 3110206,
+    "SpawnShowSkillId": 3110205,
     "IdleShowSkillId": 0,
     "DieSkillId": 9999990,
     "ActionAIPath": "",
     "ActionBranchIds": [
       311020130
-    ],
-    "ThinkInterval": 2000,
-    "IdleAIPath": "",
-    "SpawnAIPath": "",
-    "ParallelAIPath": "",
-    "CheckAchievement": false,
-    "WanderRange": 0,
-    "WanderInterval": 0,
-    "WanderRate": 0
-  },
-  "3110205": {
-    "Id": 3110205,
-    "ComboGroupPath": "Monster/31102LieQuan/Combo/ComboGroup",
-    "SpawnShowSkillId": 3110206,
-    "IdleShowSkillId": 0,
-    "DieSkillId": 0,
-    "ActionAIPath": "",
-    "ActionBranchIds": [
-      311020140
     ],
     "ThinkInterval": 2000,
     "IdleAIPath": "",

@@ -147,6 +147,8 @@ function StarTowerDepotCtrl:Awake()
 	self.tbCharPotential = {}
 	self._mapNode.goRoot:SetActive(false)
 	self.tbGamepadUINode = self:GetGamepadUINode()
+	self._mapNode.Potential:ShieldPreselectionAnimator(false)
+	self._mapNode.Potential:ShieldSpecialPontential(true)
 end
 function StarTowerDepotCtrl:FadeOut()
 end

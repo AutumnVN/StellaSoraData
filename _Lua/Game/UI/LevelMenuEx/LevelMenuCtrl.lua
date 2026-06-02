@@ -1,5 +1,6 @@
 local LevelMenuCtrl = class("LevelMenuCtrl", BaseCtrl)
 local Actor2DManager = require("Game.Actor2D.Actor2DManager")
+local JointDrillContext = require("Game.UI.JointDrill.JointDrillContext")
 local PlayerBoardData = PlayerData.Board
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
 local LayoutRebuilder = CS.UnityEngine.UI.LayoutRebuilder
@@ -867,12 +868,8 @@ function LevelMenuCtrl:OnBtnClick_ActivityEntrance(btn, nIndex)
 					if not bPlayCond then
 						return
 					end
-					local nType = actData:GetJointDrillType()
-					if nType == GameEnum.JointDrillMode.JointDrill_Mode_1 then
-						EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_1, actData:GetActId())
-					elseif nType == GameEnum.JointDrillMode.JointDrill_Mode_2 then
-						EventManager.Hit(EventId.OpenPanel, PanelId.JointDrillLevelSelect_2, actData:GetActId())
-					end
+					local nActId = actData.nActId
+					EventManager.Hit(EventId.OpenPanel, JointDrillContext.GetPanelId(nActId, "LevelSelect"), nActId)
 				end
 			end
 		end

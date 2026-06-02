@@ -49,7 +49,12 @@ PotentialCardItemCtrl._mapNodeConfig = {
 		sLanguageId = "StarTower_Book_New_Text"
 	},
 	imgPreselection = {},
+	imgPreselectionAnmator = {
+		sComponentName = "Animator",
+		sNodeName = "imgPreselection"
+	},
 	txtPreselection = {sComponentName = "TMP_Text"},
+	imgFlag = {},
 	N = {},
 	SR = {},
 	SSR = {},
@@ -183,6 +188,12 @@ function PotentialCardItemCtrl:PlayAnim(sAnimName)
 	self._mapNode.animCtrl:Play(sAnimName)
 	self._mapNode.BgEffect:SetActive(self.bLucky and sAnimName == "tc_newperk_card_in")
 end
+function PotentialCardItemCtrl:Awake()
+	if self.shieldPreselectionAnimator == nil then
+		self.shieldPreselectionAnimator = true
+	end
+	self._mapNode.imgPreselectionAnmator.enabled = self.shieldPreselectionAnimator
+end
 function PotentialCardItemCtrl:OnEnable()
 end
 function PotentialCardItemCtrl:OnDisable()
@@ -223,18 +234,47 @@ function PotentialCardItemCtrl:ChangeWordRaycast(bEnable)
 	NovaAPI.SetTMPRaycastTarget(self._mapNode.txtSpDesc, bEnable)
 end
 function PotentialCardItemCtrl:SetRecommend(bEnable, nLevel)
-	self._mapNode.imgReommend:SetActive(bEnable and nLevel == nil)
 	local bShow = bEnable and nLevel ~= nil
 	if self.nNextLevel ~= self.nLevel or not true then
 		bShow = bShow and bShow
 	end
+	self._mapNode.imgReommend:SetActive(bEnable and nLevel == nil)
+	self:DoSetRecommend(bShow, nLevel)
+end
+function PotentialCardItemCtrl:DoSetRecommend(bShow, nLevel)
 	self._mapNode.imgPreselection:SetActive(bShow)
+	if not bShow then
+		return
+	end
 	if nLevel ~= nil then
 		if self.bSpecial then
+			if self.shieldSpecialPontential then
+				self._mapNode.imgFlag.gameObject:SetActive(false)
+			else
+				self._mapNode.imgFlag.gameObject:SetActive(true)
+			end
 			NovaAPI.SetTMPText(self._mapNode.txtPreselection, ConfigTable.GetUIText("Potential_Preselection_Recommend"))
 		else
+			self._mapNode.imgFlag.gameObject:SetActive(true)
 			NovaAPI.SetTMPText(self._mapNode.txtPreselection, orderedFormat(ConfigTable.GetUIText("Potential_Preselection_Recommend_Level"), nLevel))
 		end
 	end
+end
+function PotentialCardItemCtrl:ShieldPreselectionAnimator(state)
+	self.shieldPreselectionAnimator = state
+	if self._mapNode.imgPreselectionAnmator then
+		self._mapNode.imgPreselectionAnmator.enabled = state
+	end
+end
+function PotentialCardItemCtrl:ShieldSpecialPontential(state)
+	self.shieldSpecialPontential = state
+end
+function PotentialCardItemCtrl:OnSwitchPotentialRecommendChange(isshow)
+	self._mapNode.imgPreselection:SetActive(isshow)
+	self._mapNode.imgReommend:SetActive(false)
+end
+function PotentialCardItemCtrl:OnSetPotentialRecommend(isshow, nLevel)
+	self._mapNode.imgReommend:SetActive(false)
+	self:DoSetRecommend(isshow, nLevel)
 end
 return PotentialCardItemCtrl

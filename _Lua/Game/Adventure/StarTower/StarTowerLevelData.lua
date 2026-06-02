@@ -10,6 +10,7 @@ local ModuleManager = require("GameCore.Module.ModuleManager")
 local SDKManager = CS.SDKManager.Instance
 local AttrConfig = require("GameCore.Common.AttrConfig")
 local Actor2DManager = require("Game.Actor2D.Actor2DManager")
+local LocalData = require("GameCore.Data.LocalData")
 local mapProcCtrl = {
 	[GameEnum.starTowerRoomType.BattleRoom] = "BattleRoom",
 	[GameEnum.starTowerRoomType.EliteBattleRoom] = "BattleRoom",
@@ -2433,13 +2434,28 @@ function StarTowerLevelData:ReBattle()
 	NovaAPI.DispatchEventWithData("Level_Restart", nil, {})
 	safe_call_cs_func(CS.AdventureModuleHelper.LevelStateChanged, false)
 end
-function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
-	local tbPotential = {}
-	for _, mapData in ipairs(tbPotentialData) do
-		table.insert(tbPotential, mapData.Id)
+function StarTowerLevelData:IsPreselectionData()
+	return self.mapPreselectionData ~= nil
+end
+function StarTowerLevelData:GetPotenRecommendStatus()
+	local bPotentialRecommend = false
+	local ispreSelect = PlayerData.StarTower:IsPreselectionData()
+	if not ispreSelect then
+		return bPotentialRecommend, ispreSelect
 	end
+	local bPotentialRecommend = true
+	local bPa = LocalData.GetPlayerLocalData("PotentialAllSwitchRecomm")
+	if nil ~= bPa then
+		bPotentialRecommend = bPa
+	else
+		local nState = ConfigTable.GetConfigNumber("PotentialAllSwitchRecomm")
+		bPotentialRecommend = nState == 1
+	end
+	return bPotentialRecommend, true
+end
+function StarTowerLevelData:GetRecommendList(tbPotential)
+	local tbRecommend = {}
 	if self.mapPreselectionData ~= nil then
-		local tbRecommend = {}
 		for k, v in ipairs(self.mapPreselectionData.tbCharPotential) do
 			if k == 1 then
 				if self.tbTeam[k] == v.nCharId then
@@ -2463,6 +2479,16 @@ function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
 				end
 			end
 		end
+	end
+	return tbRecommend
+end
+function StarTowerLevelData:GetRecommondPotential(tbPotentialData)
+	local tbPotential = {}
+	for _, mapData in ipairs(tbPotentialData) do
+		table.insert(tbPotential, mapData.Id)
+	end
+	if self.mapPreselectionData ~= nil then
+		local tbRecommend = self:GetRecommendList(tbPotential)
 		return tbRecommend
 	end
 	local ret = {}

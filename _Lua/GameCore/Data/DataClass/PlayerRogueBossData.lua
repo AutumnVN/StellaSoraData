@@ -315,6 +315,9 @@ function PlayerRogueBossData:CacheWeeklyCopiesData(tbData)
 	if self.CacheWeeklyCopiesMsg == nil then
 		self.CacheWeeklyCopiesMsg = {}
 	end
+	if self.CacheWeeklyLastBuildInfo == nil then
+		self.CacheWeeklyLastBuildInfo = {}
+	end
 	if tbData then
 		for i, v in pairs(tbData) do
 			if self.CacheWeeklyCopiesMsg[v.Id] ~= nil then
@@ -333,11 +336,15 @@ function PlayerRogueBossData:CacheWeeklyCopiesData(tbData)
 				tab.First = v.First
 				self.CacheWeeklyCopiesMsg[v.Id] = tab
 			end
+			self.CacheWeeklyLastBuildInfo[v.Id] = v.BuildId
 		end
 	end
 end
 function PlayerRogueBossData:GetCacheWeeklyBossMsg(id)
 	return self.CacheWeeklyCopiesMsg[id] or nil
+end
+function PlayerRogueBossData:GetCacheWeeklyBuildID(id)
+	return self.CacheWeeklyLastBuildInfo[id] or nil
 end
 function PlayerRogueBossData:CacheWeeklyThroughTime(time)
 	self.weekBossThroughTime = time

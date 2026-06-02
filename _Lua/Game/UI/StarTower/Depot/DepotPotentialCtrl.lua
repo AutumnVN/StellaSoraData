@@ -50,6 +50,16 @@ DepotPotentialCtrl._mapNodeConfig = {
 	btnSwitch_off = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_SetSimpleDes"
+	},
+	goRecomSwitchFull = {},
+	btnSwitchRecom = {
+		nCount = 2,
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_SwitchRecom"
+	},
+	txtRecomm = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Potential_Recommend_Show"
 	}
 }
 DepotPotentialCtrl._mapEventConfig = {
@@ -129,6 +139,18 @@ function DepotPotentialCtrl:RefreshPotential(mapAllPotential, mapPotential)
 	end
 	cs_coroutine.start(wait)
 	self:InitSwitch()
+	self:OnRefreshPotenRecommend()
+end
+function DepotPotentialCtrl:OnSwitchPotentialRecommendChange()
+	self._mapNode.btnSwitchRecom[1].gameObject:SetActive(self.bPotentialRecommend)
+	self._mapNode.btnSwitchRecom[2].gameObject:SetActive(not self.bPotentialRecommend)
+	for k, v in ipairs(self._mapNode.PotentialList) do
+		v:OnSwitchPotentialRecommendChange(self.bPotentialRecommend)
+	end
+	self._mapNode.PotentialCard:OnSwitchPotentialRecommendChange(self.bPotentialRecommend)
+	if self.bPotentialRecommend and self.nSelectId then
+		self:OnSetPotentialRecommend(self.nSelectId)
+	end
 end
 function DepotPotentialCtrl:SwitchPotentialAll()
 	self._mapNode.btnSwitchFull[1].gameObject:SetActive(not self.bPotentialAll)
@@ -195,6 +217,23 @@ function DepotPotentialCtrl:Awake()
 	self._mapNode.PotentialDepotItem.gameObject:SetActive(false)
 	self._mapNode.PotentialCard.gameObject:SetActive(false)
 end
+function DepotPotentialCtrl:GetPotenRecommendStatus()
+	return PlayerData.StarTower:GetPotenRecommendStatus(self._panel.nStarTowerId)
+end
+function DepotPotentialCtrl:OnRefreshPotenRecommend()
+	self.bPotentialRecommend, self.ispreSelect = self:GetPotenRecommendStatus()
+	if not self.ispreSelect then
+		self._mapNode.goRecomSwitchFull.gameObject:SetActive(false)
+		return
+	end
+	self._mapNode.goRecomSwitchFull.gameObject:SetActive(true)
+	self._mapNode.btnSwitchRecom[1].gameObject:SetActive(self.bPotentialRecommend)
+	self._mapNode.btnSwitchRecom[2].gameObject:SetActive(not self.bPotentialRecommend)
+	self:RefreshRecommendPotentialList()
+	if self.nSelectId then
+		self:OnSetPotentialRecommend(self.nSelectId)
+	end
+end
 function DepotPotentialCtrl:OnEnable()
 end
 function DepotPotentialCtrl:OnDisable()
@@ -220,6 +259,36 @@ function DepotPotentialCtrl:OnBtnClick_SwitchFull()
 	LocalData.SetPlayerLocalData("PotentialAllSwitch", self.bPotentialAll)
 	self:SwitchPotentialAll()
 end
+function DepotPotentialCtrl:OnBtnClick_SwitchRecom()
+	self.bPotentialRecommend = not self.bPotentialRecommend
+	LocalData.SetPlayerLocalData("PotentialAllSwitchRecomm", self.bPotentialRecommend)
+	self:OnSwitchPotentialRecommendChange()
+end
+function DepotPotentialCtrl:RefreshRecommendPotentialList()
+	local nTowerId = self._panel.nStarTowerId
+	local ispreSelect = PlayerData.StarTower:IsPreselectionData(nTowerId)
+	if not ispreSelect then
+		return
+	end
+	local bPa = LocalData.GetPlayerLocalData("PotentialAllSwitchRecomm")
+	if bPa == false then
+		return
+	end
+	local potemtilalList = {}
+	for _, v in ipairs(self.mapAllPotential) do
+		local tbPotential = v.tbPotential
+		for _, tb in pairs(tbPotential) do
+			table.insert(potemtilalList, tb.nId)
+		end
+	end
+	self.recommendList = PlayerData.StarTower:GetRecommendList(nTowerId, self._panel.tbTeam, potemtilalList)
+end
+function DepotPotentialCtrl:ShieldPreselectionAnimator(state)
+	self._mapNode.PotentialCard:ShieldPreselectionAnimator(state)
+end
+function DepotPotentialCtrl:ShieldSpecialPontential(state)
+	self._mapNode.PotentialCard:ShieldSpecialPontential(state)
+end
 function DepotPotentialCtrl:OnEvent_SelectDepotPotential(nPotentialId)
 	self._mapNode.PotentialCard.gameObject:SetActive(true)
 	local nLevel = 0
@@ -235,6 +304,29 @@ function DepotPotentialCtrl:OnEvent_SelectDepotPotential(nPotentialId)
 		local bSimple = PlayerData.StarTower:GetPotentialDescSimple()
 		self._mapNode.PotentialCard:SetPotentialItem(nPotentialId, nLevel, nil, bSimple, nil, nPotentialAddLv, AllEnum.PotentialCardType.StarTower)
 		self._mapNode.PotentialCard:ChangeWordRaycast(true)
+		self:OnSetPotentialRecommend(nPotentialId)
 	end
+end
+function DepotPotentialCtrl:OnSetPotentialRecommend(nPotentialId)
+	local nLevel = self:GetRecommendPotentialLevel(nPotentialId)
+	local status = false
+	if self.bPotentialRecommend and -1 < nLevel then
+		status = true
+	end
+	self._mapNode.PotentialCard:OnSetPotentialRecommend(status, nLevel)
+end
+function DepotPotentialCtrl:GetRecommendPotentialLevel(nId)
+	if not self.recommendList then
+		self:RefreshRecommendPotentialList()
+	end
+	if not self.recommendList then
+		return -1
+	end
+	for _, tb in ipairs(self.recommendList) do
+		if tb.nId == nId then
+			return tb.nLevel
+		end
+	end
+	return -1
 end
 return DepotPotentialCtrl

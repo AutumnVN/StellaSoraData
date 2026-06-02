@@ -355,6 +355,29 @@ function DatingCtrl:LoadEventConfig(tbEventId)
 	end
 	return tbTempEvent
 end
+function DatingCtrl:_TweenAffinityValue(nDelta)
+	if type(nDelta) ~= "number" or nDelta == 0 then
+		return
+	end
+	local nFrom = self.nTotalValue
+	self.nTotalValue = self.nTotalValue + nDelta
+	local nTo = self.nTotalValue
+	if self._twAffinity ~= nil then
+		self._twAffinity:Kill(true)
+		self._twAffinity = nil
+	end
+	local nDisplay = nFrom
+	self._twAffinity = DOTween.To(function()
+		return nDisplay
+	end, function(v)
+		nDisplay = v
+		NovaAPI.SetTMPText(self._mapNode.txtAffinityValue, self:ThousandsNumber(math.floor(v)))
+	end, nTo, 0.5)
+	self._twAffinity.onComplete = dotween_callback_handler(self, function()
+		NovaAPI.SetTMPText(self._mapNode.txtAffinityValue, self:ThousandsNumber(nTo))
+		self._twAffinity = nil
+	end)
+end
 function DatingCtrl:ClosePanel()
 	local func = function()
 		EventManager.Hit(EventId.ClosePanel, PanelId.Dating)
@@ -444,6 +467,10 @@ function DatingCtrl:OnDisable()
 	if self.goL2D ~= nil and self.goL2D.tbRenderer ~= nil then
 		Actor2DManager.UnSetActor2DWithRender(self.goL2D.tbRenderer)
 	end
+	if self._twAffinity ~= nil then
+		self._twAffinity:Kill()
+		self._twAffinity = nil
+	end
 end
 function DatingCtrl:OnDestroy()
 end
@@ -465,15 +492,7 @@ function DatingCtrl:OnEvent_DatingEventAction(nCurIndex, sResponse, nAffinity)
 			self:SetEmoji(cfgData.BubbleEmoji)
 			self:SetBubble(cfgData.Words)
 		end
-		local twValue = DOTween.To(function()
-			return self.nTotalValue
-		end, function(v)
-			NovaAPI.SetTMPText(self._mapNode.txtAffinityValue, self:ThousandsNumber(math.floor(v)))
-		end, self.nTotalValue + nAffinity, 0.5)
-		local _cb = function()
-			self.nTotalValue = self.nTotalValue + nAffinity
-		end
-		twValue.onComplete = dotween_callback_handler(self, _cb)
+		self:_TweenAffinityValue(nAffinity)
 	end
 end
 function DatingCtrl:OnEvent_DatingSendGift()
@@ -497,15 +516,7 @@ function DatingCtrl:OnEvent_DatingEventFinish()
 			nAddValue = nAddValue + self.tbAllEvent[i].nAffinity
 		end
 	end
-	local twValue = DOTween.To(function()
-		return self.nTotalValue
-	end, function(v)
-		NovaAPI.SetTMPText(self._mapNode.txtAffinityValue, self:ThousandsNumber(math.floor(v)))
-	end, self.nTotalValue + nAddValue, 0.5)
-	local _cb = function()
-		self.nTotalValue = self.nTotalValue + nAddValue
-	end
-	twValue.onComplete = dotween_callback_handler(self, _cb)
+	self:_TweenAffinityValue(nAddValue)
 	self.nCurIndex = #self.tbAllEvent
 end
 function DatingCtrl:OnEvent_DatingSendGiftFinish(sVoiceKey, msgData)

@@ -121,7 +121,7 @@ function PostalStoryCtrl:RefreshGridInfo(grid, gridIndex, bBranch, nBranchIndex)
 	NovaAPI.SetTMPText(txtComplete, ConfigTable.GetUIText("RoguelikeBuild_Manage_FilterPass"))
 	local isUnlock, tbResult = ActivityAvgData:IsUnlock(avgcfg.ConditionId)
 	local isReaded = ActivityAvgData:IsStoryReaded(storyId)
-	local bOpen, nOpenTime = ActivityAvgData:IsOpen(avgcfg.StoryId)
+	local bOpen, nOpenTime = ActivityAvgData:IsOpen(avgcfg.StoryId, self.nActId)
 	local nIndex = 0
 	if isUnlock then
 		nIndex = bBranch and BRANCH_GRID_INDEX or gridIndex

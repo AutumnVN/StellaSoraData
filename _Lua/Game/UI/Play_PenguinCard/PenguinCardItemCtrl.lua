@@ -70,7 +70,7 @@ function PenguinCardItemCtrl:Refresh_Slot(mapCard)
 		NovaAPI.SetTMPText(self._mapNode.txtDisableLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevelMax"), mapCard.nLevel))
 	else
 		NovaAPI.SetTMPColor(self._mapNode.txtLevel, NotMaxLevel)
-		NovaAPI.SetTMPColor(self._mapNode.txtDisableLevel, MaxLevel_Gray)
+		NovaAPI.SetTMPColor(self._mapNode.txtDisableLevel, NotMaxLevel_Gray)
 		NovaAPI.SetTMPText(self._mapNode.txtLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), mapCard.nLevel))
 		NovaAPI.SetTMPText(self._mapNode.txtDisableLevel, orderedFormat(ConfigTable.GetUIText("PenguinCard_CardLevel"), mapCard.nLevel))
 	end
