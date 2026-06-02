@@ -2341,7 +2341,7 @@ return {
 			"",
 			false,
 			"",
-			"She always admired Granny, hoping to grow into a seafaring Trekker as strong and capable as she was.==W== I’m worried… What if the truth wasn’t what Granny told us...",
+			"She always admired Granny, hoping to grow into a seafaring Trekker as strong and capable as she was.==W== I'm worried… What if the truth wasn't what Granny told us...",
 			""
 		}
 	},
@@ -3983,7 +3983,7 @@ return {
 			"",
 			false,
 			"",
-			"Ugh... Since when did Shia left...",
+			"Ugh... Since when did Shia leave...",
 			""
 		}
 	},
@@ -4094,7 +4094,7 @@ return {
 			"",
 			false,
 			"",
-			"Don’t worry, dreams and reality are always the opposite.",
+			"Don't worry, dreams and reality are always the opposite.",
 			""
 		}
 	},
@@ -4719,7 +4719,7 @@ return {
 			"",
 			false,
 			"",
-			"Alright, I’ll let it go this time. I know she's just trying to do what's best for me. We are family, after all.",
+			"Alright, I'll let it go this time. I know she's just trying to do what's best for me. We are family, after all.",
 			""
 		}
 	},
@@ -4784,7 +4784,7 @@ return {
 			"",
 			false,
 			"",
-			"Back then, everyone thought I was a weak, cowardly kid and didn’t want to play with me… Shia was the first person who really believed in me.",
+			"Back then, everyone thought I was a weak, cowardly kid and didn't want to play with me… Shia was the first person who really believed in me.",
 			""
 		}
 	},
@@ -5869,7 +5869,7 @@ return {
 			"",
 			false,
 			"",
-			" <size=50>Wh-What IS that thing—?!",
+			"<size=50>Wh-What IS that thing—?!",
 			""
 		}
 	},

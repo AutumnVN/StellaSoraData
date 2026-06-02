@@ -506,7 +506,7 @@ return {
 			"",
 			false,
 			"",
-			"Karin... I'm sure your grandma wouldn't lie to you. If she wasn't telling the truth, it must've been a white lie.",
+			"Karin... I'm sure she wouldn't lie. If she wasn't telling the truth, it must've been a white lie.",
 			""
 		}
 	},
@@ -4010,7 +4010,7 @@ return {
 			"",
 			false,
 			"",
-			"She glances around. A green light flickers in the darkness, like a familiar summon.",
+			"She glances around. A green light flickers in the darkness, like a familiar summons.",
 			""
 		}
 	},

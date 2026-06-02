@@ -5,7 +5,7 @@ return {
 			"ep_mainline_001",
 			"Act Five",
 			"Seeing is Deceiving",
-			"All the clues suggest that their grandma lied.==RT==The \"ghost ship\" is merely a decoy to mislead others.==RT==\"Facing the truth requires courage.\"",
+			"All the clues suggest that their grandma lied.==RT==The \"Ghost Ship\" is merely a decoy to mislead others.==RT==\"Facing the truth requires courage.\"",
 			0
 		}
 	},
@@ -1148,7 +1148,7 @@ return {
 			"",
 			false,
 			"",
-			"Agh—! That's Blinding!",
+			"Agh—! That's blinding!",
 			""
 		}
 	},
@@ -3744,7 +3744,7 @@ return {
 			"",
 			false,
 			"",
-			"She didn't get hurt, yet pretended to be seriously injured...==W== Was it to deepen people’s fear of the Ghost Ship?",
+			"She didn't get hurt, yet pretended to be seriously injured...==W== Was it to deepen people's fear of the Ghost Ship?",
 			""
 		}
 	},

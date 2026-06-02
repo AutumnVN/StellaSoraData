@@ -5,7 +5,7 @@ return {
 			"ep_mainline_001",
 			"Act Two",
 			"From the Ghost Ship",
-			"Two strange rabbit girls rescued you. They’re heading out to find the source of the ghost ship's glow.",
+			"Two strange rabbit girls rescued you. They're heading out to find the source of the ghost ship's glow.",
 			0
 		}
 	},
@@ -4476,7 +4476,7 @@ return {
 			"",
 			false,
 			"",
-			"Wow, I'm impressed you manage sail out this far.==RT==I honestly thought this was just a regular fishing boat...",
+			"Wow, I'm impressed you managed to sail out this far.==RT==I honestly thought this was just a regular fishing boat...",
 			""
 		}
 	},

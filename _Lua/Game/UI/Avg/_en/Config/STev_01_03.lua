@@ -1812,7 +1812,7 @@ return {
 			"",
 			false,
 			"",
-			"Since then, the light has appeared every few years. Whether it's a coincidence or not, it always shows up after continuous summer downpours. And since that’s when storms are most frequent, no one dares to go out to sea.",
+			"Since then, the light has appeared every few years. Whether it's a coincidence or not, it always shows up after continuous summer downpours. And since that's when storms are most frequent, no one dares to go out to sea.",
 			""
 		}
 	},
@@ -3539,7 +3539,7 @@ return {
 			"",
 			false,
 			"",
-			"Sounds good, but what if ==SEX=='s actually bad person?",
+			"Sounds good, but what if ==SEX=='s actually a bad person?",
 			""
 		}
 	},

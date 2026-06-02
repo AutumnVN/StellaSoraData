@@ -497,7 +497,7 @@ return {
 			"",
 			false,
 			"",
-			"What we need to do is \"devalue\" the diary—to make her think it's worthless, and trick her to hand it over willingly.",
+			"What we need to do is \"devalue\" the diary—to make her think it's worthless, and trick her into handing it over willingly.",
 			""
 		}
 	},
@@ -1769,7 +1769,7 @@ return {
 			"",
 			false,
 			"",
-			"That's right! Only a person selfish like you would think everyone's the same! Grandma would never sell whale bones!",
+			"That's right! Only a person as selfish as you would think everyone's the same! Grandma would never sell whale bones!",
 			""
 		}
 	},
@@ -7813,7 +7813,7 @@ return {
 			"",
 			false,
 			"",
-			"What did I say? Such magical thing must be worth a lot.",
+			"What did I say? Such a magical thing must be worth a lot.",
 			""
 		}
 	},
@@ -9034,7 +9034,7 @@ return {
 			"",
 			false,
 			"",
-			"M-Maybe there are still places where Lantern Artifacts haven't been put in use...",
+			"M-Maybe there are still places where Lantern Artifacts haven't been put to use...",
 			""
 		}
 	},
@@ -11161,7 +11161,7 @@ return {
 			"",
 			false,
 			"",
-			"==RT====RT====RT====A-1==\"... Calor Month 18th, Cloudy.==RT==This is my third day on the island. Whally helped me recover the boat, but it was too damaged to repair.\"==P====RT====RT==\"==A-1==Calor Month 21st, Cloudy.==RT==I found a dying Hexhorn Whale on the beach. Whally was very sad. I could only watch as it stopped breathing.==RT==I collected some shells and placed them beside it, hoping it would have a long, peaceful dream.\"==P====RT====RT====A-1==\"Calor Month 30th, Sunny.==RT==I built a new ship and was ready to go back. Whally didn't want me to leave. I don't know if I can protect their home from other people in the future.\"",
+			"==RT====RT====RT====A-1==\"... Calor Month 18th, Cloudy.==RT==This is my third day on the island.==RT==Whally helped me recover the boat, but it was too damaged to repair.\"==P====RT====RT==\"==A-1==Calor Month 21st, Cloudy.==RT==I found a dying Hexhorn Whale on the beach. Whally was very sad. I could only watch as it stopped breathing.==RT==I collected some shells and placed them beside it,==RT==hoping it would have a long, peaceful dream.\"==P====RT====RT====A-1==\"Calor Month 30th, Sunny.==RT==I built a new ship and was ready to go back. Whally didn't want me to leave.==RT==I don't know if I can protect their home from other people in the future.\"",
 			""
 		}
 	},
@@ -11607,7 +11607,7 @@ return {
 			"",
 			false,
 			"",
-			"==RT====RT====A-1==\"Shia, congratulations. You've figured out the truth through your own efforts. You must be an amazing seafaring Trekker now.\"==P====RT====RT====A-1==\"The source of the light is these bones. It is neither a ghost ship, nor treasures.==RT==You must be surprised, right? Only a third-rate Trekker would be discouraged by it not being treasures.\"==P====RT====RT====A-1==\"I believe you understand, that this island is the sacred resting place of Hexhorn Whales. To prevent greedy people from disturbing them, I will make up a ghost ship story. Please continue to protect this island in my place.\"",
+			"==RT====RT====A-1==\"Shia, congratulations. You've figured out the truth through your own efforts.==RT==You must be an amazing seafaring Trekker now.\"==P====RT====RT====A-1==\"The source of the light is these bones. It is neither a ghost ship, nor treasures.==RT==You must be surprised, right?==RT==Only a third-rate Trekker would be discouraged by it not being treasures.\"==P====RT====RT====A-1==\"I believe you understand, that this island is the sacred resting place of Hexhorn Whales.==RT==To prevent greedy people from disturbing them,==RT==I will make up a ghost ship story. Please continue to protect this island in my place.\"",
 			""
 		}
 	},
@@ -11805,7 +11805,7 @@ return {
 			"",
 			false,
 			"",
-			"==RT====RT====A-1==\"I'm sorry, Shia. Please forgive me for keeping this from you all this time. You were still young, and I was worried you might accidentally let it slip. It would bring too much danger, and I fear I couldn't protect you.\"==P====RT====RT====A-1==\"You must be all grown up now, right? I really wish I could see what you've become... But unfortunately, I won't have the chance.==P====RT====RT====A-1==Alright, don't be sad. Even if I've left this world, I will always be by your side, just like the sea.==P====RT====RT====A-1==<size=60>You are my most precious treasure.\"",
+			"==RT====RT====A-1==\"I'm sorry, Shia. Please forgive me for keeping this from you all this time.==RT==You were still young, and I was worried you might accidentally let it slip.==RT==It would bring too much danger, and I fear I couldn't protect you.\"==P====RT====RT====A-1==\"You must be all grown up now, right? I really wish I could see what you've become... But unfortunately, I won't have the chance.==P====RT====RT====A-1==Alright, don't be sad. Even if I've left this world, I will always be by your side, just like the sea.==P====RT====RT====A-1==<size=60>You are my most precious treasure.\"",
 			""
 		}
 	},

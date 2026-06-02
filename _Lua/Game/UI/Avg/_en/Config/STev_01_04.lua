@@ -2420,7 +2420,7 @@ return {
 			"",
 			false,
 			"",
-			"She said \"You've got a trustworthy scent, Boss\".... To be honest, I don't really get it either.",
+			"She said \"You've got a trustworthy scent, Boss\"... To be honest, I don't really get it either.",
 			""
 		}
 	},
@@ -5157,7 +5157,7 @@ return {
 			"",
 			false,
 			"",
-			"We won’t know for sure until we find them. They might have already left.",
+			"We won't know for sure until we find them. They might have already left.",
 			""
 		}
 	},
