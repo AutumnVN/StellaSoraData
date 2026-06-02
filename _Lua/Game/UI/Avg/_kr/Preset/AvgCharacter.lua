@@ -178,7 +178,7 @@ return {
 	{
 		id = "avg1_131",
 		name = "블롯치",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#fff1c0"
 	},
 	{
 		id = "avg1_132",
@@ -222,7 +222,7 @@ return {
 	},
 	{
 		id = "avg1_140",
-		name = "***",
+		name = "스파클",
 		name_bg_color = "#91aca8",
 		ver = "1.11.0"
 	},
@@ -316,6 +316,12 @@ return {
 		ver = "1.6.0"
 	},
 	{
+		id = "avg1_160",
+		name = "***",
+		name_bg_color = "#b0e0f6",
+		ver = "1.13.0"
+	},
+	{
 		id = "avg1_163",
 		name = "그레이스혼",
 		name_bg_color = "#6690de",
@@ -349,6 +355,12 @@ return {
 		ver = "1.10.0"
 	},
 	{
+		id = "avg2_944",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.12.0"
+	},
+	{
 		id = "avg2_945",
 		name = "***",
 		name_bg_color = "#0ABEC5",
@@ -359,6 +371,18 @@ return {
 		name = "극장의 유령",
 		name_bg_color = "#0ABEC5",
 		ver = "1.9.0"
+	},
+	{
+		id = "avg2_947",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg2_948",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg2_949",
@@ -922,7 +946,7 @@ return {
 	{
 		id = "avg3_179",
 		name = "뮈샤",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#8695b8"
 	},
 	{
 		id = "avg3_180",
@@ -942,12 +966,12 @@ return {
 	{
 		id = "avg3_183",
 		name = "요셉",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#97b8a0"
 	},
 	{
 		id = "avg3_184",
 		name = "그레이 부인",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#b2cdc9"
 	},
 	{
 		id = "avg3_185",
@@ -1086,7 +1110,7 @@ return {
 	},
 	{
 		id = "avg3_212",
-		name = "***",
+		name = "레오",
 		name_bg_color = "#cd5d4b",
 		ver = "1.11.0"
 	},
@@ -1116,13 +1140,13 @@ return {
 	},
 	{
 		id = "avg3_221",
-		name = "***",
+		name = "라보라비",
 		name_bg_color = "#789eba",
 		ver = "1.11.0"
 	},
 	{
 		id = "avg3_222",
-		name = "***",
+		name = "강아지 기계",
 		name_bg_color = "#a5cdc3",
 		ver = "1.11.0"
 	},
@@ -2720,6 +2744,77 @@ return {
 		name = "사쿠A",
 		name_bg_color = "#5a91ca",
 		reuse = "avg1_164"
+	},
+	{
+		id = "avg3_1294",
+		name = "모래전갈 졸개(여) B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1295",
+		name = "모래전갈 졸개(여) C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1296",
+		name = "모래전갈 졸개(여) D",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1297",
+		name = "모래전갈 졸개(남) B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1298",
+		name = "모래전갈 졸개(남) C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1299",
+		name = "모래전갈 졸개(남) D",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1300",
+		name = "무나 기술자A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_143",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1301",
+		name = "무나 기술자B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_144",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1302",
+		name = "무나 기술자C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_141",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1303",
+		name = "그레이스혼A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg1_163",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1304",
+		name = "***",
+		name_bg_color = "#8e65ad",
+		reuse = "avg1_114",
+		ver = "1.12.0"
 	},
 	{
 		id = "avg4_100",

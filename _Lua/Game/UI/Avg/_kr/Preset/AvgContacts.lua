@@ -53,8 +53,8 @@ return {
 		id = 114,
 		icon = "Icon/Head/head_11401_S",
 		name = "샤통",
-		landmark = "미라슈 풍미묘 골목 14동 꼭대기 층",
-		signature = "음악 격투 탄막 게임 대리 접수"
+		landmark = "밀라시 유레카 워터바",
+		signature = "샤통님이 가장 쎄!"
 	},
 	{
 		id = 115,
@@ -134,6 +134,13 @@ return {
 		signature = "진심!"
 	},
 	{
+		id = 131,
+		icon = "Icon/Head/head_13101_S",
+		name = "블롯치",
+		landmark = "블롯치의 이동 상점",
+		signature = "딱 붙어 있어, 돈 쓰는 건 숨 쉬는 것만큼 쉽거든"
+	},
+	{
 		id = 132,
 		icon = "Icon/Head/head_13201_S",
 		name = "미네르바",
@@ -171,7 +178,7 @@ return {
 	{
 		id = 140,
 		icon = "Icon/Head/head_14001_S",
-		name = "***",
+		name = "스파클",
 		landmark = "현재 이동 중입니다. 급한 일은 직접 전화 주세요.",
 		signature = "급한 일만 연락 부탁",
 		ver = "1.11.0"
@@ -338,6 +345,13 @@ return {
 		name = "익명",
 		landmark = "",
 		signature = ""
+	},
+	{
+		id = 989,
+		icon = "Icon/Head/head_group_S",
+		name = "비상 연락 관리팀",
+		landmark = "",
+		signature = "차단해도 퇴장 금지, 퇴장해도 차단 금지."
 	},
 	{
 		id = 9152,
