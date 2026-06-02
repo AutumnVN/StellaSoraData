@@ -512,6 +512,7 @@ function PanelManager.OnConfirmBackToLogIn()
 	if objCurPanel == nil then
 		return
 	end
+	PanelManager.CloseAllDisposablePanel()
 	if objCurPanel._bAddToBackHistory ~= true then
 		objCurPanel:_PreExit()
 		objCurPanel:_Exit()

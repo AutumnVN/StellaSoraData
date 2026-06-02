@@ -214,14 +214,14 @@ function PenguinCardFlipCtrl:RefreshHandRank()
 	end
 end
 function PenguinCardFlipCtrl:RefreshRoundScore()
-	local nScore = math.floor(self._panel.mapLevel.nScore + 0.5 + 1.0E-9)
-	local nRoundScore = math.floor(self._panel.mapLevel.nRoundScore + 0.5 + 1.0E-9)
-	local nRoundValue = math.floor(self._panel.mapLevel.nRoundValue + 0.5 + 1.0E-9)
+	local nScore = math.floor(self._panel.mapLevel.nScore)
+	local nRoundScore = math.floor(self._panel.mapLevel.nRoundScore)
+	local nRoundValue = math.floor(self._panel.mapLevel.nRoundValue)
 	NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	NovaAPI.SetTMPText(self._mapNode.txtRoundScore, self:ThousandsNumber(nRoundScore))
 	NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(nRoundValue))
 	local nRatio = self._panel.mapLevel.nRoundMultiRatio > 0 and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
-	NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, math.floor(nRatio * 100 + 0.5 + 1.0E-9) / 100)
+	NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, math.floor(nRatio * 100) / 100)
 end
 function PenguinCardFlipCtrl:RefreshQuest()
 	if self._panel.mapLevel.nQuestTurn < 0 then
@@ -306,8 +306,8 @@ function PenguinCardFlipCtrl:QuitScoreAni()
 		if not self.bEndScore and self._panel.mapLevel.nRoundMultiRatio and self._panel.mapLevel.nRoundRatio and self._panel.mapLevel.nRoundValue and self._panel.mapLevel.nRoundScore then
 			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(math.floor(self._panel.mapLevel.nRoundValue)))
 			local nRatio = self._panel.mapLevel.nRoundMultiRatio > 0 and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
-			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, math.floor(nRatio * 100 + 0.5 + 1.0E-9) / 100)
-			local nRoundScore = math.floor(self._panel.mapLevel.nRoundScore + 0.5 + 1.0E-9)
+			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreRatio, math.floor(nRatio * 100) / 100)
+			local nRoundScore = math.floor(self._panel.mapLevel.nRoundScore)
 			NovaAPI.SetTMPText(self._mapNode.txtRoundScore, self:ThousandsNumber(nRoundScore))
 		end
 	end
@@ -326,7 +326,7 @@ function PenguinCardFlipCtrl:PlayScoreAni()
 		local tw1 = DOTween.To(function()
 			return self.mapHandRankScore.nBeforeValue
 		end, function(v)
-			local nScore = math.floor(v + 0.5 + 1.0E-9)
+			local nScore = math.floor(v)
 			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(nScore))
 		end, self.mapHandRankScore.nAfterValue, nTextTime)
 		local tw2 = self._mapNode.trRoundScoreBase:DOScale(1.2, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart)
@@ -372,7 +372,7 @@ function PenguinCardFlipCtrl:PlayScoreAni()
 		local tw1 = DOTween.To(function()
 			return self.mapHandRankScore.nAfterValue
 		end, function(v)
-			local nScore = math.floor(v + 0.5 + 1.0E-9)
+			local nScore = math.floor(v)
 			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(nScore))
 		end, self._panel.mapLevel.nRoundValue, nTextTime)
 		local tw2 = self._mapNode.trRoundScoreBase:DOScale(1.2, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart)
@@ -391,7 +391,7 @@ function PenguinCardFlipCtrl:PlayScoreAni()
 		self.sequence:Append(tw3)
 	end
 	local nRatio = self._panel.mapLevel.nRoundMultiRatio > 0 and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
-	nRatio = math.floor(nRatio * 100 + 0.5 + 1.0E-9) / 100
+	nRatio = math.floor(nRatio * 100) / 100
 	if self.mapHandRankScore and self.mapHandRankScore.nAfterRatio ~= nRatio then
 		local tw1 = DOTween.To(function()
 			return self.mapHandRankScore.nAfterRatio
@@ -419,7 +419,7 @@ function PenguinCardFlipCtrl:PlayScoreAni()
 	local tw1 = DOTween.To(function()
 		return 0
 	end, function(v)
-		local nScore = math.floor(v + 0.5 + 1.0E-9)
+		local nScore = math.floor(v)
 		NovaAPI.SetTMPText(self._mapNode.txtRoundScore, self:ThousandsNumber(nScore))
 	end, self._panel.mapLevel.nRoundScore, nTextTime):OnComplete(callback)
 	local tw2 = self._mapNode.trRoundScore:DOScale(1.1, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart)
@@ -503,7 +503,7 @@ end
 function PenguinCardFlipCtrl:OnEvent_ChangeRoundScore(nBeforeValue, nBeforeRatio, nBeforeScore, bFromHandRank)
 	if bFromHandRank then
 		local nRatio = self._panel.mapLevel.nRoundMultiRatio > 0 and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
-		nRatio = math.floor(nRatio * 100 + 0.5 + 1.0E-9) / 100
+		nRatio = math.floor(nRatio * 100) / 100
 		self.mapHandRankScore = {
 			nBeforeValue = nBeforeValue,
 			nAfterValue = self._panel.mapLevel.nRoundValue,
@@ -525,7 +525,7 @@ function PenguinCardFlipCtrl:OnEvent_ChangeRoundScore(nBeforeValue, nBeforeRatio
 		DOTween.To(function()
 			return nBeforeValue
 		end, function(v)
-			local nScore = math.floor(v + 0.5 + 1.0E-9)
+			local nScore = math.floor(v)
 			NovaAPI.SetTMPText(self._mapNode.txtRoundScoreBase, self:ThousandsNumber(nScore))
 		end, self._panel.mapLevel.nRoundValue, nTextTime)
 		local callback = dotween_callback_handler(self, function()
@@ -534,7 +534,7 @@ function PenguinCardFlipCtrl:OnEvent_ChangeRoundScore(nBeforeValue, nBeforeRatio
 		self._mapNode.trRoundScoreBase:DOScale(1.2, ScaleUpTime / self._panel.mapLevel.nSpeed):SetEase(Ease.OutQuart):SetUpdate(true):OnComplete(callback)
 	end
 	local nRatio = 0 < self._panel.mapLevel.nRoundMultiRatio and self._panel.mapLevel.nRoundRatio * self._panel.mapLevel.nRoundMultiRatio or self._panel.mapLevel.nRoundRatio
-	nRatio = math.floor(nRatio * 100 + 0.5 + 1.0E-9) / 100
+	nRatio = math.floor(nRatio * 100) / 100
 	if nBeforeRatio ~= nRatio then
 		WwiseManger:PostEvent("Mode_Card_integral")
 		DOTween.To(function()
@@ -596,7 +596,7 @@ function PenguinCardFlipCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
 	DOTween.To(function()
 		return nBefore
 	end, function(v)
-		local nScore = math.floor(v + 0.5 + 1.0E-9)
+		local nScore = math.floor(v)
 		NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	end, self._panel.mapLevel.nScore, 0.5):OnComplete(callback)
 end

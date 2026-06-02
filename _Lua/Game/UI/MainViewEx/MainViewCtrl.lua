@@ -635,6 +635,7 @@ function MainViewCtrl:AddActivityBanner()
 	local tb_activityBanner = PlayerData.Activity:GetActivityBannerList()
 	for _, value in pairs(tb_activityBanner) do
 		table.insert(self.tbBannerList, {
+			nId = value:GetActId(),
 			nType = GameEnum.bannerType.Activity,
 			actData = value,
 			nFuncType = GameEnum.OpenFuncType.Activity
@@ -658,6 +659,7 @@ function MainViewCtrl:AddOtherBanner()
 					return
 				end
 				table.insert(self.tbBannerList, {
+					nId = mapLineData.Id,
 					nType = GameEnum.bannerType.OpenFunc,
 					sBanner = mapLineData.bannerName,
 					nJumpTo = jumpToNum,
@@ -669,6 +671,7 @@ function MainViewCtrl:AddOtherBanner()
 			local channelName = CS.ClientConfig.ClientPublishChannelName
 			if SDKManager:IsSDKInit() and clientPublishRegion == CS.ClientPublishRegion.CN and (channelName == "Official" or channelName == "TEST_1" or channelName == "Taptap") then
 				table.insert(self.tbBannerList, {
+					nId = mapLineData.Id,
 					nType = GameEnum.bannerType.Community,
 					sBanner = mapLineData.bannerName
 				})
@@ -679,6 +682,7 @@ function MainViewCtrl:AddOtherBanner()
 				local channelName = CS.ClientConfig.ClientPublishChannelName
 				if SDKManager:IsSDKInit() and clientPublishRegion == CS.ClientPublishRegion.CN and (channelName == "Official" or channelName == "TEST_1" or channelName == "Taptap" or channelName == "TEST_2") then
 					table.insert(self.tbBannerList, {
+						nId = mapLineData.Id,
 						nType = GameEnum.bannerType.Payment,
 						sBanner = mapLineData.bannerName
 					})
@@ -689,6 +693,7 @@ function MainViewCtrl:AddOtherBanner()
 			local nCloseTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapLineData.Param2)
 			if nOpenTime <= nCurTime and nCloseTime >= nCurTime then
 				table.insert(self.tbBannerList, {
+					nId = mapLineData.Id,
 					nType = mapLineData.BannerType,
 					sBanner = mapLineData.bannerName,
 					sParam = mapLineData.Param3
@@ -710,6 +715,7 @@ function MainViewCtrl:AddOtherBanner()
 			local bUnlock = PlayerData.Base:CheckFunctionUnlock(nFuncType, false)
 			if bUnlock and nOpenTime <= nCurTime and nCloseTime >= nCurTime then
 				table.insert(self.tbBannerList, {
+					nId = mapLineData.Id,
 					nType = GameEnum.bannerType.TimeLimit_Func,
 					sBanner = mapLineData.bannerName,
 					nJumpTo = nJumpToId,
@@ -736,6 +742,7 @@ function MainViewCtrl:AddOtherBanner()
 			if mapLineData.Param1 == "" then
 				if sPlatform == "" then
 					table.insert(self.tbBannerList, {
+						nId = mapLineData.Id,
 						nType = GameEnum.bannerType.JumpToUrl,
 						sBanner = mapLineData.bannerName,
 						sUrl = sUrl,
@@ -750,6 +757,7 @@ function MainViewCtrl:AddOtherBanner()
 						local sOptionType = tbOptionList[nIndex]
 						local bInside = sOptionType == "0"
 						table.insert(self.tbBannerList, {
+							nId = mapLineData.Id,
 							nType = GameEnum.bannerType.JumpToUrl,
 							sBanner = mapLineData.bannerName,
 							sUrl = sUrl,
@@ -764,6 +772,7 @@ function MainViewCtrl:AddOtherBanner()
 				if nOpenTime <= nCurTime and nCloseTime >= nCurTime then
 					if sPlatform == "" then
 						table.insert(self.tbBannerList, {
+							nId = mapLineData.Id,
 							nType = GameEnum.bannerType.JumpToUrl,
 							sBanner = mapLineData.bannerName,
 							sUrl = sUrl,
@@ -778,6 +787,7 @@ function MainViewCtrl:AddOtherBanner()
 							local sOptionType = tbOptionList[nIndex]
 							local bInside = sOptionType == "0"
 							table.insert(self.tbBannerList, {
+								nId = mapLineData.Id,
 								nType = GameEnum.bannerType.JumpToUrl,
 								sBanner = mapLineData.bannerName,
 								sUrl = sUrl,
@@ -813,6 +823,7 @@ function MainViewCtrl:AddOtherBanner()
 					local bInside = sOptionType == "0"
 					if SDKManager:IsSDKInit() then
 						table.insert(self.tbBannerList, {
+							nId = mapLineData.Id,
 							nType = GameEnum.bannerType.SeaPayment,
 							sBanner = mapLineData.bannerName,
 							sUrl = sUrl,
@@ -842,6 +853,7 @@ function MainViewCtrl:AddGachaBanner()
 		local mapPoolCfgData = ConfigTable.GetData("Gacha", nPoolId)
 		if mapPoolCfgData ~= nil and mapPoolCfgData.BannerRes ~= nil and mapPoolCfgData.BannerRes ~= "" then
 			table.insert(self.tbBannerList, {
+				nId = nPoolId,
 				nType = GameEnum.bannerType.Gacha,
 				sBanner = mapPoolCfgData.BannerRes,
 				nJumpTo = nPoolId,
@@ -1576,6 +1588,20 @@ function MainViewCtrl:OnBtnClick_btnActBanner()
 			end
 		end
 	end
+	local tab = {}
+	table.insert(tab, {
+		"role_id",
+		tostring(PlayerData.Base._nPlayerId)
+	})
+	table.insert(tab, {
+		"banner_type",
+		tostring(bannerData.nType)
+	})
+	table.insert(tab, {
+		"banner_id",
+		tostring(bannerData.nId)
+	})
+	NovaAPI.UserEventUpload("scrolling_banner_click", tab)
 end
 function MainViewCtrl:OnDrag_ActBanner(mDrag)
 	if mDrag.DragEventType == AllEnum.UIDragType.DragStart then

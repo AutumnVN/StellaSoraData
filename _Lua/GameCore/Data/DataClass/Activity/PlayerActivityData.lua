@@ -84,14 +84,15 @@ function PlayerActivityData:InitActivityCfg()
 end
 function PlayerActivityData:CacheAllActivityData(mapNetMsg)
 	if mapNetMsg.List ~= nil then
+		PlayerData.ActivityAvg:ResetCachedAvgData()
 		for _, v in ipairs(mapNetMsg.List) do
 			local nActId = v.Id
 			local actCfg = ConfigTable.GetData("Activity", nActId)
 			if nil ~= actCfg then
-				if actCfg.ActivityType == GameEnum.activityType.Avg then
-					self:RefreshActivityAvgData(nActId, v.Avg)
-				elseif actCfg.ActivityType == GameEnum.activityType.Story then
-					PlayerData.ActivityAvg:CacheAvgData(v.StoryChapter)
+				if actCfg.ActivityType == GameEnum.activityType.Story then
+					PlayerData.ActivityAvg:CacheAvgData(v.StoryChapter, nActId)
+				elseif actCfg.ActivityType == GameEnum.activityType.HistoryStory then
+					PlayerData.ActivityAvg:CacheAvgData(v.HistoryStoryChapter, nActId)
 				end
 			end
 			if nil ~= actCfg then
@@ -144,6 +145,7 @@ function PlayerActivityData:CacheAllActivityData(mapNetMsg)
 				end
 			end
 		end
+		PlayerData.ActivityAvg:RefreshAvgRedDot()
 	end
 	self:RefreshLoginRewardPopUpList()
 	self:RefreshActivityRedDot()
@@ -217,7 +219,7 @@ function PlayerActivityData:CreateActivityIns(actData)
 		actIns = JointDrillActData.new(actData)
 	elseif actCfg.ActivityType == GameEnum.activityType.Levels then
 		actIns = ActivityLevelTypeData.new(actData)
-	elseif actCfg.ActivityType == GameEnum.activityType.Avg or actCfg.ActivityType == GameEnum.activityType.Story then
+	elseif actCfg.ActivityType == GameEnum.activityType.HistoryStory or actCfg.ActivityType == GameEnum.activityType.Story then
 		PlayerData.ActivityAvg:CacheActivityAvgData(actData)
 	elseif actCfg.ActivityType == GameEnum.activityType.Task then
 		actIns = ActivityTaskData.new(actData)

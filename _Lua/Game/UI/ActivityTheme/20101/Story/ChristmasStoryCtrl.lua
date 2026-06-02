@@ -201,7 +201,7 @@ function ChristmasStoryCtrl:RefreshStoryNode(goNode, index, isBranch, callback)
 	local animator = animRoot:GetComponent("Animator")
 	local goOpen = animRoot.transform:Find("goOpen")
 	local goUnOpen = isBranch == false and goNode.transform:Find("goUnOpen") or goNode.transform.parent:Find("goUnOpen")
-	local bOpen, nOpenTime = actAvgData:IsOpen(avgId)
+	local bOpen, nOpenTime = actAvgData:IsOpen(avgId, self.nActId)
 	btnStoryNode.gameObject:SetActive(true)
 	goOpen.gameObject:SetActive(bOpen)
 	goUnOpen.gameObject:SetActive(not bOpen)
@@ -367,7 +367,7 @@ function ChristmasStoryCtrl:RefreshNeedHideNode()
 	for i = 1, #self.tbStoryNode do
 		local goNode = self.tbStoryNode[i]
 		local avgId = goNode.node.name
-		local bOpen = actAvgData:IsOpen(avgId)
+		local bOpen = actAvgData:IsOpen(avgId, self.nActId)
 		local avgCfg = actAvgData:GetStoryCfgData(avgId)
 		local isUnlock = actAvgData:IsUnlock(avgCfg.ConditionId)
 		local bShowTimelock = false

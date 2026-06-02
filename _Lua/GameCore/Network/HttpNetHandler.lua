@@ -98,6 +98,7 @@ local player_data_succeed_ack = function(mapMsgData)
 	PlayerData.PopUp:RefreshPopUp()
 	PlayerData.TutorialData:CacheTutorialData(mapMsgData.TutorialLevels)
 	PlayerData.Story:CacheLastStory(mapMsgData.LastRead)
+	PlayerData.Avg:CachePersonalityData(mapMsgData.PersonalityModels)
 	PlayerData.Char:UpdateAllCharRecordInfoRedDot()
 	if CS.SDKManager.Instance:IsSDKInit() then
 		CS.SDKManager.Instance:RoleInfoUpload(tostring(PlayerData.Base._nPlayerId), PlayerData.Base._sPlayerNickName, mapMsgData.ServerTs)
@@ -1258,6 +1259,7 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.build_convert_group_reward_receive_succeed_ack] = HttpNetHandlerPlus.build_convert_group_reward_receive_succeed_ack,
 		[NetMsgId.Id.build_convert_group_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.activity_story_settle_succeed_ack] = HttpNetHandlerPlus.activity_story_settle_succeed_ack,
+		[NetMsgId.Id.activity_history_story_settle_succeed_ack] = HttpNetHandlerPlus.activity_history_story_settle_succeed_ack,
 		[NetMsgId.Id.milkout_settle_succeed_ack] = HttpNetHandlerPlus.milkout_settle_succeed_ack,
 		[NetMsgId.Id.milkout_settle_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.milkout_character_unlock_notify] = HttpNetHandlerPlus.milkout_character_unlock_notify,

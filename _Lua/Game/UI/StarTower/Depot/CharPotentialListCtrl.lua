@@ -1,4 +1,5 @@
 local CharPotentialListCtrl = class("CharPotentialListCtrl", BaseCtrl)
+local LocalData = require("GameCore.Data.LocalData")
 CharPotentialListCtrl._mapNodeConfig = {
 	txtCharName = {sComponentName = "TMP_Text"},
 	txtHas = {sComponentName = "TMP_Text"},
@@ -40,6 +41,7 @@ function CharPotentialListCtrl:RefreshPotential(nCharId, mapPotential, bShowAll,
 	NovaAPI.SetTMPText(self._mapNode.txtAll, string.format("/%s", nAllCount))
 	self.nHasCount = 0
 	local nPotentialCount = 1
+	self:RefreshRecommendPotential()
 	local createPotentialItem = function(tbPotential, rtContent)
 		if 0 < #tbPotential then
 			for k, v in ipairs(tbPotential) do
@@ -47,10 +49,10 @@ function CharPotentialListCtrl:RefreshPotential(nCharId, mapPotential, bShowAll,
 					local itemObj = instantiate(goPotentialItem, rtContent)
 					itemObj.gameObject:SetActive(true)
 					local itemCtrl = self:BindCtrlByNode(itemObj, "Game.UI.StarTower.Depot.DepotPotentialItemCtrl")
-					itemCtrl:InitItem(v.nId, v.nLevel, v.nPotentialAdd, true)
+					itemCtrl:InitItem(v.nId, v.nLevel, v.nPotentialAdd, true, nil, self:GetRecommendPotentialLevel(v.nId))
 					table.insert(self.tbPotentialItemCtrl, itemCtrl)
 				else
-					self.tbPotentialItemCtrl[nPotentialCount]:InitItem(v.nId, v.nLevel, v.nPotentialAdd, true)
+					self.tbPotentialItemCtrl[nPotentialCount]:InitItem(v.nId, v.nLevel, v.nPotentialAdd, true, nil, self:GetRecommendPotentialLevel(v.nId))
 				end
 				self.nHasCount = self.nHasCount + v.nUnlock
 				nPotentialCount = nPotentialCount + 1
@@ -63,6 +65,50 @@ function CharPotentialListCtrl:RefreshPotential(nCharId, mapPotential, bShowAll,
 	NovaAPI.SetTMPText(self._mapNode.txtHas, self.nHasCount)
 	self:SwitchPotentialAll(bShowAll)
 	self:SetPotentialBuildName(nCharId, bMaster)
+end
+function CharPotentialListCtrl:OnSwitchPotentialRecommendChange(showRecomm)
+	for _, listItem in ipairs(self.tbPotentialItemCtrl) do
+		if showRecomm then
+			listItem:RefreshRecommend(self:GetRecommendPotentialLevel(listItem:GetPotentialID()))
+		else
+			listItem:RefreshRecommend(-1)
+		end
+	end
+end
+function CharPotentialListCtrl:GetRecommendPotentialLevel(nId)
+	if not self.recommendList then
+		self:RefreshRecommendPotential()
+	end
+	if not self.recommendList then
+		return -1
+	end
+	for _, tb in ipairs(self.recommendList) do
+		if tb.nId == nId then
+			return tb.nLevel
+		end
+	end
+	return -1
+end
+function CharPotentialListCtrl:GetPotenRecommendStatus()
+	return PlayerData.StarTower:GetPotenRecommendStatus(self._panel.nStarTowerId)
+end
+function CharPotentialListCtrl:RefreshRecommendPotential()
+	self.bPotentialRecommend, self.ispreSelect = self:GetPotenRecommendStatus()
+	if not self.ispreSelect then
+		self.recommendList = nil
+		return
+	end
+	if not self.bPotentialRecommend then
+		self.recommendList = nil
+		return
+	end
+	local potemtilalList = {}
+	for _, v in ipairs(self.mapPotential) do
+		for _, tb in ipairs(v) do
+			table.insert(potemtilalList, tb.nId)
+		end
+	end
+	self.recommendList = PlayerData.StarTower:GetRecommendList(self._panel.nStarTowerId, self._panel.tbTeam, potemtilalList)
 end
 function CharPotentialListCtrl:SwitchPotentialAll(bShowAll)
 	local nPotentialIndex = 1

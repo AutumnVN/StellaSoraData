@@ -555,21 +555,6 @@ function AvgData:CalcPersonality(nId)
 	}
 	local tbPersonality = self.mapPersonality
 	local tbPersonalityFactor = self.mapPersonalityFactor
-	local personality, personalityFactor = PlayerData.ActivityAvg:GetTouchMainlinePersonalityData()
-	if personality ~= nil then
-		for sAvgId, v in pairs(personality) do
-			if tbPersonality[sAvgId] == nil then
-				tbPersonality[sAvgId] = v
-			end
-		end
-	end
-	if personalityFactor ~= nil then
-		for sAvgId, v in pairs(personalityFactor) do
-			if tbPersonalityFactor[sAvgId] == nil then
-				tbPersonalityFactor[sAvgId] = v
-			end
-		end
-	end
 	local nFactor = 1
 	for sAvgId, v in pairs(tbPersonality) do
 		for nGroupId, vv in pairs(v) do
@@ -583,6 +568,12 @@ function AvgData:CalcPersonality(nId)
 				_idx = 3
 			end
 			tbPData[_idx].nCount = tbPData[_idx].nCount + nFactor
+		end
+	end
+	for k, v in pairs(self.mapActivityPersonality) do
+		for i, vv in ipairs(v) do
+			tbPData[i].nCount = tbPData[i].nCount + vv
+			nTotalCount = nTotalCount + vv
 		end
 	end
 	for i, v in ipairs(tbPData) do
@@ -1213,7 +1204,36 @@ function AvgData:CacheEvData()
 	end
 	ForEachTableLine(DataTable.Story, forEachLine_Story)
 end
-function AvgData:GetPersonalityData()
-	return self.mapPersonality, self.mapPersonalityFactor
+function AvgData:CachePersonalityData(actPersonalityData)
+	self.mapActivityPersonality = {}
+	for k, v in pairs(actPersonalityData) do
+		self.mapActivityPersonality[v.ChapterId] = {
+			v.A,
+			v.B,
+			v.C
+		}
+	end
+end
+function AvgData:RefreshActPersonalityData(nChapterId, personalityData, personalityFactorData)
+	local tbPData = {
+		0,
+		0,
+		0
+	}
+	local nFactor = 1
+	for sAvgId, v in pairs(personalityData) do
+		for nGroupId, vv in pairs(v) do
+			nFactor = 1
+			if personalityFactorData[sAvgId] ~= nil then
+				nFactor = personalityFactorData[sAvgId][nGroupId] or 1
+			end
+			local _idx = vv
+			if _idx == 4 then
+				_idx = 3
+			end
+			tbPData[_idx] = tbPData[_idx] + nFactor
+		end
+	end
+	self.mapActivityPersonality[nChapterId] = tbPData
 end
 return AvgData

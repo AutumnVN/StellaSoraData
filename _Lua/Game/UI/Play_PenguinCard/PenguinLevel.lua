@@ -96,6 +96,7 @@ function PenguinLevel:ClearLevelData()
 	self.nCurTurn = 0
 	self.nCurRound = 0
 	self.nHp = 3
+	self.bPreTurnWin = false
 	if self.tbBuffPool == nil then
 		self.tbBuffPool = {}
 	end
@@ -167,7 +168,7 @@ function PenguinLevel:QuitGame(callback)
 			local bOpen = actData:CheckActivityOpen()
 			if bOpen then
 				bAct = true
-				local nScore = math.floor(self.nScore + 0.5 + 1.0E-9)
+				local nScore = math.floor(self.nScore)
 				actData:SendActivityPenguinCardSettleReq(self.nLevelId, self.nStar, nScore, callback)
 			else
 				EventManager.Hit(EventId.OpenMessageBox, {
@@ -1034,8 +1035,8 @@ function PenguinLevel:ChangeRoundScore(nAddValue, nAddRatio, nAddMultiRatio, bFr
 	self.nRoundRatio = self.nRoundRatio + nAddRatio
 	local nBeforeAllRatio = 0 < nBeforeMultiRatio and nBeforeMultiRatio * nBeforeRatio or nBeforeRatio
 	local nAfterAllRatio = self.nRoundMultiRatio > 0 and self.nRoundRatio * self.nRoundMultiRatio or self.nRoundRatio
-	nBeforeAllRatio = math.floor(nBeforeAllRatio * 100 + 0.5 + 1.0E-9) / 100
-	nAfterAllRatio = math.floor(nAfterAllRatio * 100 + 0.5 + 1.0E-9) / 100
+	nBeforeAllRatio = math.floor(nBeforeAllRatio * 100) / 100
+	nAfterAllRatio = math.floor(nAfterAllRatio * 100) / 100
 	self.nRoundScore = self.nRoundValue * nAfterAllRatio
 	local nAddScore = self.nRoundScore - nBeforeScore
 	self.nTurnScore = self.nTurnScore + nAddScore

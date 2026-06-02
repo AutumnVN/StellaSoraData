@@ -129,25 +129,23 @@ function ActivityAvgData:SafeCheck()
 	end
 	return true
 end
-function ActivityAvgData:CacheAvgData(StoryInfo)
+function ActivityAvgData:ResetCachedAvgData()
 	self.tbStoryIds = {}
-	self.tbTempStoryIds = {}
 	self.tbEvIds = {}
-	self.tbTempEvIds = {}
 	self.mapChosen = {}
-	self.mapTempCL = {}
 	self.mapLatest = {}
-	self.mapTempLatestCnt = {}
 	self.mapPersonality = {}
-	self.mapTempPersonality = {}
 	self.mapPersonalityFactor = {}
-	self.mapTempPersonalityFactor = {}
-	self.mapTempPersonalityCnt = {}
+	self.selBuildIdMap = {}
+	self.selBuildId = nil
+	self.mapRecentStoryId = decodeJson(LocalData.GetPlayerLocalData("ActivityRecentStoryId")) or {}
+end
+function ActivityAvgData:CacheAvgData(StoryInfo, nActivityId)
 	if StoryInfo == nil then
 		return
 	end
 	if StoryInfo.BuildId then
-		self:SetSelBuildId(StoryInfo.BuildId)
+		self:SetSelBuildId(StoryInfo.BuildId, nActivityId)
 	end
 	for i, nEvId in ipairs(StoryInfo.Evidences) do
 		local cfgData_Evidence = ConfigTable.GetData("ActivityStoryEvidence", nEvId)
@@ -174,7 +172,10 @@ function ActivityAvgData:CacheAvgData(StoryInfo)
 		if mapCfgDataStory == nil then
 			printError("Stroy Cfg Missing:" .. Story.Id)
 		else
-			table.insert(self.tbStoryIds, mapCfgDataStory.StoryId)
+			local bReceive = Story.Receive ~= nil and Story.Receive == true or Story.Receive == nil
+			if table.indexof(self.tbStoryIds, mapCfgDataStory.StoryId) <= 0 and bReceive then
+				table.insert(self.tbStoryIds, mapCfgDataStory.StoryId)
+			end
 			local sAvgId = mapCfgDataStory.AvgLuaName
 			for __, StoryChoice in pairs(Story.Major) do
 				if self.mapChosen[sAvgId] == nil then
@@ -197,31 +198,11 @@ function ActivityAvgData:CacheAvgData(StoryInfo)
 				self.mapPersonalityFactor[sAvgId][StoryChoice.Group] = func_Parse(StoryChoice.Value, 3)
 			end
 		end
-		local chapterCfgData = ConfigTable.GetData("ActivityStoryChapter", mapCfgDataStory.ChapterId)
-		if chapterCfgData ~= nil and chapterCfgData.IsPersonalityTouchMainline then
-			if self.tbTouchMainlinePersonality == nil then
-				self.tbTouchMainlinePersonality = {}
-			end
-			local value = self.mapPersonality[mapCfgDataStory.AvgLuaName]
-			self.tbTouchMainlinePersonality[mapCfgDataStory.AvgLuaName] = value
-			if self.tbTouchMainlinePersonalityFactor == nil then
-				self.tbTouchMainlinePersonalityFactor = {}
-			end
-			local factor = self.mapPersonalityFactor[mapCfgDataStory.AvgLuaName]
-			self.tbTouchMainlinePersonalityFactor[mapCfgDataStory.AvgLuaName] = factor
-		end
 	end
-	self.mapRecentStoryId = decodeJson(LocalData.GetPlayerLocalData("ActivityRecentStoryId")) or {}
-	self:RefreshAvgRedDot()
 end
 function ActivityAvgData:GetChapterIdByActivityId(activityId)
 	local chapterId
-	local forEachLine_ActivityStoryChapter = function(mapLineData)
-		if mapLineData.ActivityId == activityId then
-			chapterId = mapLineData.Id
-		end
-	end
-	ForEachTableLine(ConfigTable.Get("ActivityStoryChapter"), forEachLine_ActivityStoryChapter)
+	chapterId = ConfigTable.GetData("ActivityStoryChapter", activityId)
 	return chapterId
 end
 function ActivityAvgData:GetChapterStoryNumIds(nChapterId)
@@ -361,13 +342,11 @@ function ActivityAvgData:IsUnlock(nConditionIntId)
 	local bResult = bMustEvIds == true and bOneOfEvIds == true and bMustStoryIds == true and bOneOfStoryIds == true and bNeedLv == true and bMustAchievementIds == true and bMustActivityLevel == true
 	return bResult, tbResult
 end
-function ActivityAvgData:IsOpen(sAvgId)
+function ActivityAvgData:IsOpen(sAvgId, nActivityId)
 	local cfg = self:GetStoryCfgData(sAvgId)
-	local chapterConfig = ConfigTable.GetData("ActivityStoryChapter", cfg.ChapterId)
-	local activityId = chapterConfig.ActivityId
 	local nOpenTime = 0
-	if self.tbActAvgList[activityId] ~= nil then
-		nOpenTime = self.tbActAvgList[activityId].nOpenTime
+	if self.tbActAvgList[nActivityId] ~= nil then
+		nOpenTime = self.tbActAvgList[nActivityId].nOpenTime
 	end
 	nOpenTime = CS.ClientManager.Instance:GetNextRefreshTime(nOpenTime) - 86400
 	local curTime = CS.ClientManager.Instance.serverTimeStamp
@@ -498,168 +477,43 @@ function ActivityAvgData:MarkChoosedPersonality(sAvgId, nGroupId, nIndex, nFacto
 	nCurCnt = nCurCnt + 1
 	self.mapTempPersonalityCnt[sAvgId][nGroupId][nIndex] = nCurCnt
 end
-function ActivityAvgData:CalcPersonality(nId, nChapterId, bTouchMainline)
-	local cfgData_SRP = ConfigTable.GetData("StoryRolePersonality", nId)
-	local tbPersonalityBaseNum = cfgData_SRP.BaseValue
-	local nTotalCount = tbPersonalityBaseNum[1] + tbPersonalityBaseNum[2] + tbPersonalityBaseNum[3]
-	local tbPData = {
-		{
-			nIndex = 1,
-			nCount = tbPersonalityBaseNum[1],
-			nPercent = 0
-		},
-		{
-			nIndex = 2,
-			nCount = tbPersonalityBaseNum[2],
-			nPercent = 0
-		},
-		{
-			nIndex = 3,
-			nCount = tbPersonalityBaseNum[3],
-			nPercent = 0
-		}
-	}
+function ActivityAvgData:CalcPersonality(nId)
+	return PlayerData.Avg:CalcPersonality(nId)
+end
+function ActivityAvgData:_ResolveBuildIdKey(nActivityId)
+	return nActivityId or self.CURRENT_ACTIVITY_ID
+end
+function ActivityAvgData:_FilterPersonalityByChapter(nChapterId)
 	local tbPersonality = {}
 	local tbPersonalityFactor = {}
-	if nChapterId ~= nil then
-		for sAvgId, v in pairs(self.mapPersonality) do
-			local cfgData = self:GetStoryCfgData(sAvgId)
-			if cfgData ~= nil and cfgData.ChapterId == nChapterId then
-				tbPersonality[sAvgId] = v
-				if self.mapPersonalityFactor[sAvgId] ~= nil then
-					tbPersonalityFactor[sAvgId] = self.mapPersonalityFactor[sAvgId]
-				end
-			end
-		end
-	else
-		tbPersonality = self.mapPersonality
-		tbPersonalityFactor = self.mapPersonalityFactor
-	end
-	if bTouchMainline == true then
-		local mainlinePersonality, mainlinePersonalityFactor = PlayerData.Avg:GetPersonalityData()
-		if mainlinePersonality ~= nil then
-			for sAvgId, v in pairs(mainlinePersonality) do
-				if tbPersonality[sAvgId] == nil then
-					tbPersonality[sAvgId] = v
-				end
-			end
-		end
-		if mainlinePersonalityFactor ~= nil then
-			for sAvgId, v in pairs(mainlinePersonalityFactor) do
-				if tbPersonalityFactor[sAvgId] == nil then
-					tbPersonalityFactor[sAvgId] = v
-				end
+	for sAvgId, v in pairs(self.mapPersonality) do
+		local cfgData = self:GetStoryCfgData(sAvgId)
+		if cfgData ~= nil and cfgData.ChapterId == nChapterId then
+			tbPersonality[sAvgId] = v
+			if self.mapPersonalityFactor[sAvgId] ~= nil then
+				tbPersonalityFactor[sAvgId] = self.mapPersonalityFactor[sAvgId]
 			end
 		end
 	end
-	local nFactor = 1
-	for sAvgId, v in pairs(tbPersonality) do
-		for nGroupId, vv in pairs(v) do
-			nFactor = 1
-			if tbPersonalityFactor[sAvgId] ~= nil then
-				nFactor = tbPersonalityFactor[sAvgId][nGroupId] or 1
-			end
-			nTotalCount = nTotalCount + nFactor
-			local _idx = vv
-			if _idx == 4 then
-				_idx = 3
-			end
-			tbPData[_idx].nCount = tbPData[_idx].nCount + nFactor
-		end
-	end
-	for i, v in ipairs(tbPData) do
-		tbPData[i].nPercent = tbPData[i].nCount / nTotalCount
-	end
-	local tbRetPercent = {
-		tbPData[1].nPercent,
-		tbPData[2].nPercent,
-		tbPData[3].nPercent
-	}
-	local sTitle, sFace, sHead
-	table.sort(tbPData, function(a, b)
-		return a.nCount > b.nCount
-	end)
-	local nMaxIndex = tbPData[1].nIndex
-	local nMaxPercent = tbPData[1].nPercent
-	if 0.9 <= nMaxPercent then
-		local tbTitle = {
-			cfgData_SRP.Amax,
-			cfgData_SRP.Bmax,
-			cfgData_SRP.Cmax
-		}
-		local tbFace = {
-			cfgData_SRP.AmaxFace,
-			cfgData_SRP.BmaxFace,
-			cfgData_SRP.CmaxFace
-		}
-		local tbHead = {
-			cfgData_SRP.AmaxHead,
-			cfgData_SRP.BmaxHead,
-			cfgData_SRP.CmaxHead
-		}
-		sTitle = tbTitle[nMaxIndex]
-		sFace = tbFace[nMaxIndex]
-		sHead = tbHead[nMaxIndex]
-	elseif 0.5 <= nMaxPercent then
-		local tbTitle = {
-			cfgData_SRP.Aplus,
-			cfgData_SRP.Bplus,
-			cfgData_SRP.Cplus
-		}
-		local tbFace = {
-			cfgData_SRP.AplusFace,
-			cfgData_SRP.BplusFace,
-			cfgData_SRP.CplusFace
-		}
-		local tbHead = {
-			cfgData_SRP.AplusHead,
-			cfgData_SRP.BplusHead,
-			cfgData_SRP.CplusHead
-		}
-		sTitle = tbTitle[nMaxIndex]
-		sFace = tbFace[nMaxIndex]
-		sHead = tbHead[nMaxIndex]
-	elseif math.abs(tbPData[2].nPercent - tbPData[3].nPercent) < 0.1 then
-		sTitle = cfgData_SRP.Normal
-		sFace = cfgData_SRP.NormalFace
-		sHead = cfgData_SRP.NormalHead
-	else
-		local tbTitleFace = {
-			{
-				tbIdxs = {1, 2},
-				sTitle = cfgData_SRP.Ab,
-				sFace = cfgData_SRP.AbFace,
-				sHead = cfgData_SRP.AbHead
-			},
-			{
-				tbIdxs = {1, 3},
-				sTitle = cfgData_SRP.Ac,
-				sFace = cfgData_SRP.AcFace,
-				sHead = cfgData_SRP.AcHead
-			},
-			{
-				tbIdxs = {2, 3},
-				sTitle = cfgData_SRP.Bc,
-				sFace = cfgData_SRP.BcFace,
-				sHead = cfgData_SRP.BcHead
-			}
-		}
-		local nBiggerIndex = tbPData[2].nIndex
-		for i, v in ipairs(tbTitleFace) do
-			if 0 < table.indexof(v.tbIdxs, nMaxIndex) and 0 < table.indexof(v.tbIdxs, nBiggerIndex) then
-				sTitle = v.sTitle
-				sFace = v.sFace
-				sHead = v.sHead
-				break
-			end
-		end
-	end
-	return tbRetPercent, sTitle, sFace, tbPData, nTotalCount, sHead
+	return tbPersonality, tbPersonalityFactor
 end
-function ActivityAvgData:SetSelBuildId(nBuildId)
+function ActivityAvgData:SetSelBuildId(nBuildId, nActivityId)
+	if self.selBuildIdMap == nil then
+		self.selBuildIdMap = {}
+	end
+	local key = self:_ResolveBuildIdKey(nActivityId)
+	if key ~= nil then
+		self.selBuildIdMap[key] = nBuildId
+	end
 	self.selBuildId = nBuildId
 end
-function ActivityAvgData:GetCachedBuildId()
+function ActivityAvgData:GetCachedBuildId(nActivityId)
+	if self.selBuildIdMap ~= nil then
+		local key = self:_ResolveBuildIdKey(nActivityId)
+		if key ~= nil and self.selBuildIdMap[key] ~= nil then
+			return self.selBuildIdMap[key]
+		end
+	end
 	return self.selBuildId
 end
 function ActivityAvgData:CacheActivityAvgData(msgData)
@@ -677,15 +531,9 @@ function ActivityAvgData:RefreshActivityAvgData(nActId, msgData)
 	self:RefreshAvgRedDot()
 end
 function ActivityAvgData:GetStoryIdListByActivityId(activityId)
-	local chapterId
-	local foreachStoryChapter = function(mapData)
-		if mapData.ActivityId == activityId then
-			chapterId = mapData.Id
-		end
-	end
-	ForEachTableLine(ConfigTable.Get("ActivityStoryChapter"), foreachStoryChapter)
-	local list = self:SortStoryList(chapterId)
-	return list, chapterId
+	local chapterConfig = ConfigTable.GetData("ActivityStoryChapter", activityId)
+	local list = self:SortStoryList(chapterConfig.ChapterId)
+	return list, chapterConfig.ChapterId
 end
 function ActivityAvgData:SortStoryList(chapterId)
 	local list = self.CFG_ChapterStoryNumIds[chapterId]
@@ -817,35 +665,36 @@ end
 function ActivityAvgData:RefreshAvgRedDot()
 	local tbActGroupRedDot = {}
 	for k, v in pairs(self.CFG_ChapterStoryNumIds) do
-		local chapterCfg = ConfigTable.GetData("ActivityStoryChapter", k)
-		local actId = chapterCfg.ActivityId
-		for _, storyId in pairs(v) do
-			local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(actId)
-			if bInActGroup then
-				if tbActGroupRedDot[nActGroupId] == nil then
-					tbActGroupRedDot[nActGroupId] = false
+		local actIds = self:GetActivityIdsByChapterId(k)
+		for _, actId in pairs(actIds) do
+			for _, storyId in pairs(v) do
+				local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(actId)
+				if bInActGroup then
+					if tbActGroupRedDot[nActGroupId] == nil then
+						tbActGroupRedDot[nActGroupId] = false
+					end
+					local cfg = ConfigTable.GetData("ActivityStory", storyId)
+					local isUnlock = self:IsUnlock(cfg.ConditionId)
+					local isClicked = LocalData.GetPlayerLocalData("Act_Story_New" .. actId .. storyId) == true
+					local isNew = self:IsStoryReaded(storyId) == false
+					local curTime = CS.ClientManager.Instance.serverTimeStamp
+					local _ActAvg = self.tbActAvgList[actId]
+					local isOpen = false
+					if _ActAvg ~= nil then
+						isOpen = self:IsOpen(cfg.StoryId)
+					end
+					local actGroupData = PlayerData.Activity:GetActivityGroupDataById(nActGroupId)
+					local bActGroupUnlock = actGroupData:IsUnlock()
+					local bNew = isUnlock and isNew and not isClicked and isOpen and bActGroupUnlock
+					if bNew == true then
+						tbActGroupRedDot[nActGroupId] = true
+					end
+					RedDotManager.SetValid(RedDotDefine.Activity_GroupNew_Avg_Group, {
+						nActGroupId,
+						actId,
+						storyId
+					}, bNew)
 				end
-				local cfg = ConfigTable.GetData("ActivityStory", storyId)
-				local isUnlock = self:IsUnlock(cfg.ConditionId)
-				local isClicked = LocalData.GetPlayerLocalData("Act_Story_New" .. actId .. storyId) == true
-				local isNew = self:IsStoryReaded(storyId) == false
-				local curTime = CS.ClientManager.Instance.serverTimeStamp
-				local _ActAvg = self.tbActAvgList[actId]
-				local isOpen = false
-				if _ActAvg ~= nil then
-					isOpen = self:IsOpen(cfg.StoryId)
-				end
-				local actGroupData = PlayerData.Activity:GetActivityGroupDataById(nActGroupId)
-				local bActGroupUnlock = actGroupData:IsUnlock()
-				local bNew = isUnlock and isNew and not isClicked and isOpen and bActGroupUnlock
-				if bNew == true then
-					tbActGroupRedDot[nActGroupId] = true
-				end
-				RedDotManager.SetValid(RedDotDefine.Activity_GroupNew_Avg_Group, {
-					nActGroupId,
-					actId,
-					storyId
-				}, bNew)
 			end
 		end
 	end
@@ -921,7 +770,7 @@ function ActivityAvgData:SendMsg_STORY_ENTER(nActivityId, nStoryId, nBuildId, bN
 			self:SetRecentStoryId(nStoryId)
 		end
 		if nBuildId ~= 0 then
-			self.selBuildId = nBuildId
+			self:SetSelBuildId(nBuildId, nActivityId)
 		end
 		self.CURRENT_STORY_ID = nStoryId
 		local mapCfgData_Story = ConfigTable.GetData("ActivityStory", nStoryId)
@@ -955,11 +804,20 @@ function ActivityAvgData:SendMsg_STORY_ENTER(nActivityId, nStoryId, nBuildId, bN
 		end
 		PlayerData.Avg:ChangeActivityAvgState(true)
 	end
-	HttpNetHandler.SendMsg(NetMsgId.Id.activity_story_apply_req, {
-		ActivityId = nActivityId,
-		StoryId = nStoryId,
-		BuildId = nBuildId
-	}, nil, func_cb)
+	local actConfig = ConfigTable.GetData("Activity", nActivityId)
+	if actConfig.ActivityType == GameEnum.activityType.HistoryStory then
+		HttpNetHandler.SendMsg(NetMsgId.Id.activity_history_story_apply_req, {
+			ActivityId = nActivityId,
+			StoryId = nStoryId,
+			BuildId = nBuildId
+		}, nil, func_cb)
+	else
+		HttpNetHandler.SendMsg(NetMsgId.Id.activity_story_apply_req, {
+			ActivityId = nActivityId,
+			StoryId = nStoryId,
+			BuildId = nBuildId
+		}, nil, func_cb)
+	end
 	self.CURRENT_ACTIVITY_ID = nActivityId
 end
 function ActivityAvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
@@ -1120,12 +978,9 @@ function ActivityAvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 		self.mapTempPersonalityCnt = {}
 		func_overwrite(self.mapTempPersonalityFactor, self.mapPersonalityFactor)
 		self.mapTempPersonalityFactor = {}
-		for avgId, v in pairs(self.mapPersonality) do
-			self.tbTouchMainlinePersonality[avgId] = v
-		end
-		for avgId, v in pairs(self.mapPersonalityFactor) do
-			self.tbTouchMainlinePersonalityFactor[avgId] = v
-		end
+		local actChapterConfig = ConfigTable.GetData("ActivityStoryChapter", self.CURRENT_ACTIVITY_ID)
+		local tbActPersonality, tbActPersonalityFactor = self:_FilterPersonalityByChapter(actChapterConfig.ChapterId)
+		PlayerData.Avg:RefreshActPersonalityData(actChapterConfig.ChapterId, tbActPersonality, tbActPersonalityFactor)
 		if callBack ~= nil then
 			callBack(mapChangeInfo)
 		end
@@ -1170,7 +1025,12 @@ function ActivityAvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 	end
 	printLog("发送通关消息")
 	PlayerData.Avg:ChangeActivityAvgState(false)
-	HttpNetHandler.SendMsg(NetMsgId.Id.activity_story_settle_req, mapSendMsgData, nil, func_succ)
+	local actConfig = ConfigTable.GetData("Activity", self.CURRENT_ACTIVITY_ID)
+	if actConfig.ActivityType == GameEnum.activityType.HistoryStory then
+		HttpNetHandler.SendMsg(NetMsgId.Id.activity_history_story_settle_req, mapSendMsgData, nil, func_succ)
+	else
+		HttpNetHandler.SendMsg(NetMsgId.Id.activity_story_settle_req, mapSendMsgData, nil, func_succ)
+	end
 	self.CURRENT_STORY_ID = 0
 end
 function ActivityAvgData:OnEvent_AvgSTEnd()
@@ -1209,15 +1069,7 @@ function ActivityAvgData:GetRecentStoryId(nChapterId)
 			table.sort(tbChapterList, function(a, b)
 				return a < b
 			end)
-			for i = #tbChapterList, 1, -1 do
-				local v = tbChapterList[i]
-				if self.tbStoryIds[v] then
-					nStoryId = v
-					break
-				end
-			end
-			local chapterConfig = ConfigTable.GetData("ActivityStoryChapter", nChapterId)
-			nStoryId = chapterConfig.UnlockShowStoryId
+			return tbChapterList[1]
 		end
 	end
 	return nStoryId
@@ -1242,7 +1094,24 @@ end
 function ActivityAvgData:OnEvent_UpdateWorldClass()
 	self:RefreshAvgRedDot()
 end
-function ActivityAvgData:GetTouchMainlinePersonalityData()
-	return self.tbTouchMainlinePersonality, self.tbTouchMainlinePersonalityFactor
+function ActivityAvgData:GetActivityChapterConfigByChapterId(chapterId)
+	local config
+	local forEachLine_StoryChapter = function(chapterConfig)
+		if chapterConfig.ChapterId == chapterId then
+			config = chapterConfig
+		end
+	end
+	ForEachTableLine(ConfigTable.Get("ActivityStoryChapter"), forEachLine_StoryChapter)
+	return config
+end
+function ActivityAvgData:GetActivityIdsByChapterId(chapterId)
+	local tbActivityIds = {}
+	local forEachLine_StoryChapter = function(chapterConfig)
+		if chapterConfig.ChapterId == chapterId and self:HasActivityData(chapterConfig.Id) then
+			table.insert(tbActivityIds, chapterConfig.Id)
+		end
+	end
+	ForEachTableLine(ConfigTable.Get("ActivityStoryChapter"), forEachLine_StoryChapter)
+	return tbActivityIds
 end
 return ActivityAvgData

@@ -44,13 +44,13 @@ function PenguinCardQuestItemCtrl:Refresh(mapQuest)
 	if mapQuest.nType == GameEnum.PenguinCardQuestType.Score then
 		self._mapNode.txtProgress[1].gameObject:SetActive(true)
 		self._mapNode.txtProgress[2].gameObject:SetActive(false)
-		local nAimCount = math.floor(mapQuest.nAimCount + 0.5 + 1.0E-9)
+		local nAimCount = math.floor(mapQuest.nAimCount)
 		local sAim = "<color=#b7d65d>" .. self:ThousandsNumber(nAimCount) .. "</color>"
 		NovaAPI.SetTMPText(self._mapNode.txtProgress[1], sAim .. "/" .. self:ThousandsNumber(math.floor(mapQuest.nMaxAim)))
 	else
 		self._mapNode.txtProgress[1].gameObject:SetActive(false)
 		self._mapNode.txtProgress[2].gameObject:SetActive(true)
-		local nAimCount = math.floor(mapQuest.nAimCount + 0.5 + 1.0E-9)
+		local nAimCount = math.floor(mapQuest.nAimCount)
 		local sAim = "<color=#b7d65d>" .. self:ThousandsNumber(nAimCount) .. "</color>"
 		NovaAPI.SetTMPText(self._mapNode.txtProgress[2], sAim .. "/" .. self:ThousandsNumber(math.floor(mapQuest.nMaxAim)))
 	end
@@ -92,13 +92,13 @@ function PenguinCardQuestItemCtrl:RefreshFail(mapQuest)
 	if mapQuest.nType == GameEnum.PenguinCardQuestType.Score then
 		self._mapNode.txtProgressFail[1].gameObject:SetActive(true)
 		self._mapNode.txtProgressFail[2].gameObject:SetActive(false)
-		local nAimCount = math.floor(mapQuest.nAimCount + 0.5 + 1.0E-9)
+		local nAimCount = math.floor(mapQuest.nAimCount)
 		local sAim = "<color=#b7d65d>" .. self:ThousandsNumber(nAimCount) .. "</color>"
 		NovaAPI.SetTMPText(self._mapNode.txtProgressFail[1], sAim .. "/" .. self:ThousandsNumber(math.floor(mapQuest.nMaxAim)))
 	else
 		self._mapNode.txtProgressFail[1].gameObject:SetActive(false)
 		self._mapNode.txtProgressFail[2].gameObject:SetActive(true)
-		local nAimCount = math.floor(mapQuest.nAimCount + 0.5 + 1.0E-9)
+		local nAimCount = math.floor(mapQuest.nAimCount)
 		local sAim = "<color=#b7d65d>" .. self:ThousandsNumber(nAimCount) .. "</color>"
 		NovaAPI.SetTMPText(self._mapNode.txtProgressFail[2], sAim .. "/" .. self:ThousandsNumber(math.floor(mapQuest.nMaxAim)))
 	end

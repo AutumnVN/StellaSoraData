@@ -1,4 +1,5 @@
 local DepotPotentialItemCtrl = class("DepotPotentialItemCtrl", BaseCtrl)
+local LayoutRebuilder = CS.UnityEngine.UI.LayoutRebuilder
 DepotPotentialItemCtrl._mapNodeConfig = {
 	btnItem = {
 		sComponentName = "UIButton",
@@ -24,7 +25,10 @@ DepotPotentialItemCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "StarTower_Depot_Potential_Lock"
 	},
-	imgMask = {}
+	imgMask = {},
+	recomContainer = {},
+	imageRecomBg = {},
+	txtReCount = {sComponentName = "TMP_Text"}
 }
 DepotPotentialItemCtrl._mapEventConfig = {
 	SelectDepotPotential = "OnEvent_SelectDepotPotential"
@@ -34,11 +38,14 @@ local level_txt_color = {
 	[1] = "#264278",
 	[2] = "#2c5fd5"
 }
-function DepotPotentialItemCtrl:InitItem(nPotentialId, nLevel, nPotentialAdd, bShowAdd, bHideChoose)
+function DepotPotentialItemCtrl:InitItem(nPotentialId, nLevel, nPotentialAdd, bShowAdd, bHideChoose, recommendLv)
 	self.nPotentialId = nPotentialId
 	self.nLevel = nLevel
 	self.nPotentialAdd = nPotentialAdd
 	self.bHideChoose = bHideChoose
+	function self.WaitLayoutTxtFunc()
+		self:WaitLayoutTxt()
+	end
 	local itemCfg = ConfigTable.GetData_Item(nPotentialId)
 	local potentialCfg = ConfigTable.GetData("Potential", nPotentialId)
 	if nil == potentialCfg or nil == itemCfg then
@@ -48,6 +55,7 @@ function DepotPotentialItemCtrl:InitItem(nPotentialId, nLevel, nPotentialAdd, bS
 	self._mapNode.imgMask.gameObject:SetActive(nLevel <= 0)
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.canvasGroup, 1)
 	local bSpecial = itemCfg.Stype == GameEnum.itemStype.SpecificPotential
+	self.bSpecial = bSpecial
 	self._mapNode.goNormal.gameObject:SetActive(not bSpecial)
 	self._mapNode.goSpecial.gameObject:SetActive(bSpecial)
 	if not bSpecial then
@@ -55,7 +63,10 @@ function DepotPotentialItemCtrl:InitItem(nPotentialId, nLevel, nPotentialAdd, bS
 	else
 		self:SetSpecialPotential(itemCfg, potentialCfg)
 	end
-	self._mapNode.imgChoose.gameObject:SetActive(false)
+	if recommendLv == nil then
+		recommendLv = -1
+	end
+	self:RefreshRecommend(recommendLv)
 end
 function DepotPotentialItemCtrl:SetNormalPotential(itemCfg, potentialCfg, bShowAdd)
 	local sFrame = AllEnum.FrameType_New.PotentialS .. AllEnum.FrameColor_New[itemCfg.Rarity]
@@ -80,6 +91,27 @@ function DepotPotentialItemCtrl:RefreshPreselectionLevel(nLevel)
 	self._mapNode.imgLock.gameObject:SetActive(nLevel <= 0)
 	self._mapNode.imgMask.gameObject:SetActive(nLevel <= 0)
 	NovaAPI.SetTMPText(self._mapNode.txtLevelValue, self.nLevel)
+end
+function DepotPotentialItemCtrl:GetPotentialID()
+	return self.nPotentialId
+end
+function DepotPotentialItemCtrl:RefreshRecommend(recommendLv)
+	self.recommendLv = recommendLv
+	self._mapNode.recomContainer.gameObject:SetActive(-1 < recommendLv)
+	if -1 < recommendLv then
+		if self.bSpecial then
+			self._mapNode.txtReCount.text = ""
+		else
+			self._mapNode.txtReCount.text = recommendLv
+		end
+	end
+	if -1 < recommendLv then
+		local wait = function()
+			coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+			CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.imageRecomBg.gameObject:GetComponent("RectTransform"))
+		end
+		cs_coroutine.start(wait)
+	end
 end
 function DepotPotentialItemCtrl:OnBtnClick_Item()
 	EventManager.Hit("SelectDepotPotential", self.nPotentialId, self.nLevel, self.nPotentialAdd, self._mapNode.btnItem)

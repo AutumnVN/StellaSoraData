@@ -208,7 +208,7 @@ function PenguinCardPrepareCtrl:RefreshAddRollCost()
 	end
 end
 function PenguinCardPrepareCtrl:RefreshScore()
-	local nScore = math.floor(self._panel.mapLevel.nScore + 0.5 + 1.0E-9)
+	local nScore = math.floor(self._panel.mapLevel.nScore)
 	NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	if self._panel.mapLevel.tbStarScore[3] > 0 then
 		local nStar = self._panel.mapLevel:GetStar()
@@ -464,7 +464,7 @@ function PenguinCardPrepareCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
 	DOTween.To(function()
 		return nBefore
 	end, function(v)
-		local nScore = math.floor(v + 0.5 + 1.0E-9)
+		local nScore = math.floor(v)
 		NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	end, self._panel.mapLevel.nScore, 0.5):OnComplete(callback)
 	if self._panel.mapLevel.tbStarScore[3] > 0 then

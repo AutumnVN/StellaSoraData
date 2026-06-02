@@ -148,6 +148,12 @@ function PopUpManager.InterruptPopUp(index)
 	_bInterruptPopUp = true
 	_interruptPopUpIndex = index
 end
+function PopUpManager.ResetInterruptPopUp()
+	_bInterruptPopUp = false
+	_interruptPopUpIndex = 0
+	_tbPopUpCache = {}
+	_bInPopUpQueue = false
+end
 function PopUpManager.OpenPopUpPanelByType(nType, callback)
 	local nRemoveIdx = 0
 	for nIdx, data in ipairs(_tbPopUpQueue) do

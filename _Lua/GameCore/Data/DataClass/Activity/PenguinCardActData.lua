@@ -90,8 +90,12 @@ end
 function PenguinCardActData:GetQuestMaxProgress(nId)
 	local nMax = 0
 	local mapCfg = ConfigTable.GetData("ActivityPenguinCardQuest", nId)
-	if mapCfg and (mapCfg.FinishType == GameEnum.activityQuestCompleteCond.ActivityPenguinCardLevelPassedScore or mapCfg.FinishType == GameEnum.activityQuestCompleteCond.ActivityPenguinCardLevelPassedWithStar) then
-		nMax = 1
+	if mapCfg then
+		if mapCfg.FinishType == GameEnum.activityQuestCompleteCond.ActivityPenguinCardLevelPassedScore or mapCfg.FinishType == GameEnum.activityQuestCompleteCond.ActivityPenguinCardLevelPassedWithStar then
+			nMax = 1
+		else
+			nMax = mapCfg.AimNumShow
+		end
 	end
 	return nMax
 end

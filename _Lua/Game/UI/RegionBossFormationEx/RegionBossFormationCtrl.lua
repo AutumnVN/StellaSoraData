@@ -577,20 +577,20 @@ function RegionBossFormationCtrl:OnEnable()
 		end
 	elseif self.nType == AllEnum.RegionBossFormationType.WeeklyCopies then
 		self.selLvId = PlayerData.RogueBoss:GetSelLvId()
-		self.cacheData = PlayerData.RogueBoss:GetCacheWeeklyBossMsg(self.selLvId)
+		self.cacheData = PlayerData.RogueBoss:GetCacheWeeklyBuildID(self.selLvId)
 		self.isHaveTeam = false
 		local tempBuildId = PlayerData.RogueBoss:GetSelBuildId()
 		self.mbuildId = 0
 		if tempBuildId ~= 0 then
 			self.mbuildId = tempBuildId
 		elseif self.cacheData then
-			self.mbuildId = self.cacheData.BuildId
+			self.mbuildId = self.cacheData
 		elseif self.cacheData == nil then
 			local tempTab = ConfigTable.GetData("WeekBossLevel", self.selLvId)
 			if 1 < tempTab.Difficulty then
-				local tempCacheData = PlayerData.RogueBoss:GetCacheWeeklyBossMsg(tempTab.PreLevelId)
+				local tempCacheData = PlayerData.RogueBoss:GetCacheWeeklyBuildID(tempTab.PreLevelId)
 				if tempCacheData then
-					self.mbuildId = tempCacheData.BuildId
+					self.mbuildId = tempCacheData
 				end
 			end
 		end

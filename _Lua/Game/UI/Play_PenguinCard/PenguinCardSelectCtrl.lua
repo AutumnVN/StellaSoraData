@@ -92,27 +92,6 @@ function PenguinCardSelectCtrl:Awake()
 end
 function PenguinCardSelectCtrl:OnEnable()
 	self:Refresh()
-	local mapActivityData = ConfigTable.GetData("Activity", self.nActId)
-	if mapActivityData ~= nil then
-		local nGroupId = mapActivityData.MidGroupId
-		local mapGroupData = PlayerData.Activity:GetActivityGroupDataById(nGroupId)
-		if mapGroupData ~= nil then
-			local actData = mapGroupData:GetActivityDataByIndex(AllEnum.ActivityThemeFuncIndex.Task)
-			if actData ~= nil then
-				RedDotManager.RegisterNode(RedDotDefine.Activity_Group_Task_Group, {
-					nGroupId,
-					actData.ActivityId,
-					mapActivityData.MiniGameRedDot
-				}, self._mapNode.reddotQuest)
-			else
-				self._mapNode.reddotQuest:SetActive(false)
-			end
-		else
-			self._mapNode.reddotQuest:SetActive(false)
-		end
-	else
-		self._mapNode.reddotQuest:SetActive(false)
-	end
 end
 function PenguinCardSelectCtrl:OnDisable()
 	for k, v in pairs(self.tbGridCtrl) do

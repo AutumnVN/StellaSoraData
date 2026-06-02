@@ -59,7 +59,11 @@ function PenguinCardQuestCellCtrl:Refresh(nActId, mapQuest)
 	end
 	NovaAPI.SetTMPText(self._mapNode.TMPTitle, mapCfg.Desc)
 	if mapQuest.nMax > 0 then
-		self._mapNode.imgBarFill.sizeDelta = Vector2(mapQuest.nCur / mapQuest.nMax * 508, 27)
+		local nLen = mapQuest.nCur / mapQuest.nMax * 508
+		if nLen < 60 and 0 < nLen then
+			nLen = 60
+		end
+		self._mapNode.imgBarFill.sizeDelta = Vector2(nLen, 27)
 	else
 		self._mapNode.imgBarFill.sizeDelta = Vector2(508, 27)
 	end

@@ -288,6 +288,63 @@ function PlayerStarTowerData:StarTowerEnd()
 		self.LevelData = nil
 	end
 end
+function PlayerStarTowerData:IsPreselectionData(nTowerId)
+	local mapStarTower = ConfigTable.GetData("StarTower", nTowerId)
+	if mapStarTower then
+		local nTeamIndex = PlayerData.StarTower:GetGroupFormation(mapStarTower.GroupId)
+		local nPreselectionId = PlayerData.Team:GetTeamPreselectionId(nTeamIndex)
+		local mapPreselectionData = PlayerData.PotentialPreselection:GetPreselectionById(nPreselectionId)
+		return mapPreselectionData ~= nil, mapPreselectionData
+	end
+	return false
+end
+function PlayerStarTowerData:GetPotenRecommendStatus(nTowerId)
+	local bPotentialRecommend = false
+	local ispreSelect = self:IsPreselectionData(nTowerId)
+	if not ispreSelect then
+		return bPotentialRecommend, ispreSelect
+	end
+	local bPotentialRecommend = true
+	local bPa = LocalData.GetPlayerLocalData("PotentialAllSwitchRecomm")
+	if nil ~= bPa then
+		bPotentialRecommend = bPa
+	else
+		local nState = ConfigTable.GetConfigNumber("PotentialAllSwitchRecomm")
+		bPotentialRecommend = nState == 1
+	end
+	return bPotentialRecommend, true
+end
+function PlayerStarTowerData:GetRecommendList(nTowerId, tbTeam, tbPotential)
+	local ispreSelect, mapPreselectionData = self:IsPreselectionData(nTowerId)
+	if not ispreSelect or mapPreselectionData == nil or tbTeam == nil then
+		return
+	end
+	local tbRecommend = {}
+	for k, v in ipairs(mapPreselectionData.tbCharPotential) do
+		if k == 1 then
+			if tbTeam[k] == v.nCharId then
+				for _, potential in ipairs(v.tbPotential) do
+					if table.indexof(tbPotential, potential.nId) > 0 then
+						table.insert(tbRecommend, {
+							nId = potential.nId,
+							nLevel = potential.nLevel
+						})
+					end
+				end
+			end
+		elseif 1 < table.indexof(tbTeam, v.nCharId) then
+			for _, potential in ipairs(v.tbPotential) do
+				if table.indexof(tbPotential, potential.nId) > 0 then
+					table.insert(tbRecommend, {
+						nId = potential.nId,
+						nLevel = potential.nLevel
+					})
+				end
+			end
+		end
+	end
+	return tbRecommend
+end
 function PlayerStarTowerData:GiveUpReconnect(nTowerId, tbMember, bShowConfirm, giveUpCallback)
 	local callback = function(_, msgData)
 		local tbRes = {}
