@@ -178,7 +178,7 @@ return {
 	{
 		id = 140,
 		icon = "Icon/Head/head_14001_S",
-		name = "***",
+		name = "斯帕克拉",
 		landmark = "移动中，请联系本人",
 		signature = "无事勿扰",
 		ver = "1.11.0"
@@ -345,6 +345,13 @@ return {
 		name = "匿名",
 		landmark = "",
 		signature = ""
+	},
+	{
+		id = 989,
+		icon = "Icon/Head/head_group_S",
+		name = "防失联小组",
+		landmark = "",
+		signature = "拉黑不退群,退群不拉黑"
 	},
 	{
 		id = 9152,
