@@ -178,7 +178,7 @@ return {
 	{
 		id = "avg1_131",
 		name = "布洛可",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#fff1c0"
 	},
 	{
 		id = "avg1_132",
@@ -222,7 +222,7 @@ return {
 	},
 	{
 		id = "avg1_140",
-		name = "***",
+		name = "斯帕克拉",
 		name_bg_color = "#91aca8",
 		ver = "1.11.0"
 	},
@@ -316,6 +316,12 @@ return {
 		ver = "1.6.0"
 	},
 	{
+		id = "avg1_160",
+		name = "***",
+		name_bg_color = "#b0e0f6",
+		ver = "1.13.0"
+	},
+	{
 		id = "avg1_163",
 		name = "格蕾霍恩",
 		name_bg_color = "#6690de",
@@ -349,6 +355,12 @@ return {
 		ver = "1.10.0"
 	},
 	{
+		id = "avg2_944",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.12.0"
+	},
+	{
 		id = "avg2_945",
 		name = "***",
 		name_bg_color = "#0ABEC5",
@@ -359,6 +371,18 @@ return {
 		name = "劇院魅影",
 		name_bg_color = "#0ABEC5",
 		ver = "1.9.0"
+	},
+	{
+		id = "avg2_947",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg2_948",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg2_949",
@@ -922,7 +946,7 @@ return {
 	{
 		id = "avg3_179",
 		name = "米夏",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#8695b8"
 	},
 	{
 		id = "avg3_180",
@@ -942,12 +966,12 @@ return {
 	{
 		id = "avg3_183",
 		name = "約瑟夫",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#97b8a0"
 	},
 	{
 		id = "avg3_184",
 		name = "灰夫人",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#b2cdc9"
 	},
 	{
 		id = "avg3_185",
@@ -1086,7 +1110,7 @@ return {
 	},
 	{
 		id = "avg3_212",
-		name = "***",
+		name = "萊歐",
 		name_bg_color = "#cd5d4b",
 		ver = "1.11.0"
 	},
@@ -1116,13 +1140,13 @@ return {
 	},
 	{
 		id = "avg3_221",
-		name = "***",
+		name = "兔子派",
 		name_bg_color = "#789eba",
 		ver = "1.11.0"
 	},
 	{
 		id = "avg3_222",
-		name = "***",
+		name = "機械小狗",
 		name_bg_color = "#a5cdc3",
 		ver = "1.11.0"
 	},
@@ -2720,6 +2744,84 @@ return {
 		name = "朔A",
 		name_bg_color = "#5a91ca",
 		reuse = "avg1_164"
+	},
+	{
+		id = "avg3_1294",
+		name = "沙蠍雜兵（女）B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1295",
+		name = "沙蠍雜兵（女）C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1296",
+		name = "沙蠍雜兵（女）D",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_208"
+	},
+	{
+		id = "avg3_1297",
+		name = "沙蠍雜兵（男）B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1298",
+		name = "沙蠍雜兵（男）C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1299",
+		name = "沙蠍雜兵（男）D",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_209"
+	},
+	{
+		id = "avg3_1300",
+		name = "柔光工匠A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_143",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1301",
+		name = "柔光工匠B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_144",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1302",
+		name = "柔光工匠C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_141",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1303",
+		name = "格蕾霍恩A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg1_163",
+		ver = "1.11.0"
+	},
+	{
+		id = "avg3_1304",
+		name = "***",
+		name_bg_color = "#8e65ad",
+		reuse = "avg1_114",
+		ver = "1.12.0"
+	},
+	{
+		id = "avg3_1305",
+		name = "***",
+		name_bg_color = "#b0e0f6",
+		reuse = "avg1_160",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg4_100",
