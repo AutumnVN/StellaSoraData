@@ -178,7 +178,7 @@ return {
 	{
 		id = 140,
 		icon = "Icon/Head/head_14001_S",
-		name = "***",
+		name = "スパクル",
 		landmark = "必要なときは連絡してください",
 		signature = "迷惑な人は即ブロックしちゃうから",
 		ver = "1.11.0"
@@ -345,6 +345,13 @@ return {
 		name = "匿名",
 		landmark = "",
 		signature = ""
+	},
+	{
+		id = 989,
+		icon = "Icon/Head/head_group_S",
+		name = "スパクルを監視する会",
+		landmark = "",
+		signature = "ブロックするなら退会するな！退会するならブロックするな！"
 	},
 	{
 		id = 9152,
