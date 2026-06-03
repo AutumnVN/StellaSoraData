@@ -98,7 +98,7 @@ function MallPkgPopupCtrl:RefreshName()
 						self:AddTimer(0, 0.034, function()
 							nPosX = nPosX - 1
 							if nPosX < -nWidth then
-								nPosX = 0
+								nPosX = nMaxWidth
 							end
 							rtName2.anchoredPosition = Vector2(nPosX, 0)
 						end, true, true)
