@@ -83,6 +83,7 @@ function ScoreBossLevel:CalCharFixedEffect(nCharId, bMainChar, tbDiscId)
 	return stActorInfo
 end
 function ScoreBossLevel:OnEvent_LoadLevelRefresh()
+	EventManager.Hit("ResetBossHUD")
 	self.isCanPause = true
 	local mapAllEft, mapDiscEft, mapNoteEffect, tbNoteInfo = PlayerData.Build:GetBuildAllEft(self.mapBuildData.nBuildId)
 	safe_call_cs_func(CS.AdventureModuleHelper.SetNoteInfo, tbNoteInfo)

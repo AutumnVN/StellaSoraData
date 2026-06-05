@@ -509,11 +509,9 @@ function PanelManager.Home()
 	DoBackToTarget(nBackToIdx)
 end
 function PanelManager.OnConfirmBackToLogIn()
-	if objCurPanel == nil then
-		return
-	end
+	EventManager.Hit("ForceCloseAllBeforeBackLogin")
 	PanelManager.CloseAllDisposablePanel()
-	if objCurPanel._bAddToBackHistory ~= true then
+	if objCurPanel ~= nil and objCurPanel._bAddToBackHistory ~= true then
 		objCurPanel:_PreExit()
 		objCurPanel:_Exit()
 		objCurPanel:_Destroy()

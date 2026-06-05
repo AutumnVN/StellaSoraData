@@ -632,6 +632,10 @@ function BossHUDCtrl:OpenUI(bossId, nDataId, nType, nBloodType, bRefresh)
 		printError(string.format("boss血条已被EntityId为%d绑定 %d重复绑定不生效", self.bossId, bossId))
 		return
 	end
+	local info = AdventureModuleHelper.GetEntityInfo(bossId)
+	if info == nil then
+		return
+	end
 	if not bRefresh then
 		self:InitUI(bossId, nDataId, nType, nBloodType)
 	else
