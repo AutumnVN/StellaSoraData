@@ -110,6 +110,18 @@ local OnEvent_AvgSTEnd = function(_)
 		func_AvgSTEnd()
 	end
 end
+function AvgManager.ForceCloseAll(_)
+	if objAvgPanel ~= nil then
+		objAvgPanel:_PreExit()
+		objAvgPanel:_Exit()
+		objAvgPanel:_Destroy()
+		objAvgPanel = nil
+	end
+	OnEvent_AvgBBEnd(_)
+	bInAvg = false
+	nTransitionType = 0
+	NovaAPI.SetScreenSleepTimeout(false)
+end
 local function Uninit(_)
 	if objAvgPanel ~= nil then
 		OnEvent_AvgSTEnd(_)
@@ -119,6 +131,7 @@ local function Uninit(_)
 	OnEvent_AvgBBEnd(_)
 	EventManager.Remove(EventId.AvgBubbleShow, AvgManager, OnEvent_AvgBBStart)
 	EventManager.Remove(EventId.AvgBubbleExit, AvgManager, OnEvent_AvgBBEnd)
+	EventManager.Remove("ForceCloseAllBeforeBackLogin", AvgManager, AvgManager.ForceCloseAll)
 	EventManager.Remove(EventId.CSLuaManagerShutdown, AvgManager, Uninit)
 end
 function AvgManager.Init()
@@ -126,6 +139,7 @@ function AvgManager.Init()
 	EventManager.Add("StoryDialog_DialogEnd", AvgManager, OnEvent_AvgSTEnd)
 	EventManager.Add(EventId.AvgBubbleShow, AvgManager, OnEvent_AvgBBStart)
 	EventManager.Add(EventId.AvgBubbleExit, AvgManager, OnEvent_AvgBBEnd)
+	EventManager.Add("ForceCloseAllBeforeBackLogin", AvgManager, AvgManager.ForceCloseAll)
 	EventManager.Add(EventId.CSLuaManagerShutdown, AvgManager, Uninit)
 end
 function AvgManager.CheckInAvg()
