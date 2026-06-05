@@ -438,7 +438,7 @@ const BULLET_TYPE = {
 const CHARGING_RATE_TYPE = {
     1: 'Super High',
     2: 'High',
-    3: 'Mid',
+    3: 'Medium',
     4: 'Low',
 };
 
