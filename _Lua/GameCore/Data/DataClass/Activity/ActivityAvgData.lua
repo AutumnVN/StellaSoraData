@@ -681,7 +681,7 @@ function ActivityAvgData:RefreshAvgRedDot()
 					local _ActAvg = self.tbActAvgList[actId]
 					local isOpen = false
 					if _ActAvg ~= nil then
-						isOpen = self:IsOpen(cfg.StoryId)
+						isOpen = self:IsOpen(cfg.StoryId, actId)
 					end
 					local actGroupData = PlayerData.Activity:GetActivityGroupDataById(nActGroupId)
 					local bActGroupUnlock = actGroupData:IsUnlock()
