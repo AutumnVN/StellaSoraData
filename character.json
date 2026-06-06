@@ -65835,7 +65835,7 @@
             "energyLimit": null,
             "desc": "Summons a ##Advertising Doll#4017# near the target. When the Doll is on the battlefield, Donna enters ##Agile#2015# state.\u000bThe doll deals <color=#fb8037>&Param1&</color> of ATK as AoE Aqua Minion DMG every 4s and taunts the target.\u000bThe ##Advertising Doll#4017# and Donna's Auto Attack in ##Agile#2015# state can trigger ##Aqua Mark#1018#, dealing <color=#fb8037>&Param4&</color> of ATK as AoE Aqua Mark DMG and inflicting ##Chill#1027#.",
             "descCN": "在目标附近召唤##「宣传人偶」#4017#。人偶存在时，多娜进入##灵巧#2015#状态。\u000b人偶每4秒造成攻击力<color=#fb8037>&Param1&</color>的范围水系仆从伤害并嘲讽目标。\u000b##「宣传人偶」#4017#和##灵巧#2015#状态期间的普攻可触发##水系印记#1018#，造成攻击力<color=#fb8037>&Param4&</color>的范围水系印记伤害，并附加##寒冷#1027#。",
-            "descJP": "12秒間、敵の近くに##呼び込みトーナちゃん#4017#を召喚する。##呼び込みトーナちゃん#4017#が存在する時、トーナは##速達#2015#状態になる。\u000b##呼び込みトーナちゃん#4017#は4秒ごとに、範囲内に攻撃力の<color=#fb8037>&Param1&</color>の水属性の従者ダメージを与え、敵を挑発する。\u000b##呼び込みトーナちゃん#4017#または##速達#2015#状態中の通常攻撃は##水属性の印#1018#を発動させることができる。発動させると、範囲内に攻撃力の<color=#fb8037>&Param4&</color>の水属性の印ダメージを与え、##寒冷#1027#を付与する。",
+            "descJP": "12秒間、敵の近くに##呼び込みトーナちゃん#4017#を召喚する。##呼び込みトーナちゃん#4017#が存在する時、トーナは##速達#2015#状態になる。\u000b##呼び込みトーナちゃん#4017#は4秒ごとに、範囲内に攻撃力の<color=#fb8037>&Param1&</color>の水属性の従者ダメージを与え、敵を挑発する。\u000b##呼び込みトーナちゃん#4017#または##速達#2015#状態中の通常攻撃は##水属性の印#1018#を発動させることができる。発動させると、範囲内に攻撃力の&Param4&の水属性の印ダメージを与え、##寒冷#1027#を付与する。",
             "descKR": "목표 주변에 ##「홍보 인형」#4017#을 소환한다. 인형이 있을 때 토나가 ##민첩#2015# 상태가 된다.\u000b인형은 4초마다 공격력 <color=#fb8037>&Param1&</color>의 물 속성 범위 소환물 피해를 입히며 목표를 도발한다.\u000b##「홍보 인형」#4017# 및 ##민첩#2015# 상태 기간의 일반 공격은 ##물 속성 표식#1018#을 발동할 수 있으며, 공격력 <color=#fb8037>&Param4&</color>의 물 속성 범위 표식 피해를 입히고 ##한랭#1027#을 부여한다.",
             "damageType": [
                 "Minion (from Skill, scale with Skill)",
@@ -85500,6 +85500,3968 @@
             }
         ]
     },
+    "140": {
+        "id": 140,
+        "name": "Sparkla",
+        "star": 5,
+        "element": "Terra",
+        "class": "Vanguard",
+        "attackType": "Ranged",
+        "style": "Creative",
+        "force": "Neo Grace Organization",
+        "tag": [
+            "Vanguard",
+            "Creative",
+            "Neo Grace Organization"
+        ],
+        "cnCv": "Song Zhengnan",
+        "jpCv": "Ayane Kudo",
+        "birthday": "July 26th",
+        "loveGift": [
+            "Stellanite Enchantment",
+            "Moonlit Companion",
+            "Cosmic Form",
+            "Gilded Ceramic Bowl",
+            "Blossom Porcelain Cup",
+            "Mystic Potion Kettle",
+            "Rising Star",
+            "Emerging Talent",
+            "Shining Star"
+        ],
+        "hateGift": [
+            "Whisper Wind Spinner",
+            "Chilling Wind Spinner",
+            "Blazing Wind Spinner"
+        ],
+        "date": [
+            {
+                "id": 140301,
+                "name": "Arcade Amateurs",
+                "clue": "Visit the Market to unlock",
+                "secondChoice": "There's an event you can join in the game area."
+            },
+            {
+                "id": 140302,
+                "name": "Fairy Tale Fanatic",
+                "clue": "Visit the Academy to unlock",
+                "secondChoice": "Gonna look around inside the library."
+            }
+        ],
+        "fixedStat": {
+            "Attack Range": 10,
+            "Walk Speed": 6,
+            "Run Speed": 8
+        },
+        "normalAtk": {
+            "id": 14010000,
+            "name": "Neo Bunny Blast",
+            "nameCN": "柔光兔兔弹",
+            "nameJP": "ラビットバレット",
+            "nameKR": "무나 토끼탄",
+            "energyLimit": 2.49,
+            "desc": "Sparkla fires three volleys from her wheelchair-mounted energy guns at the target.\u000bStrike 1: <color=#fb8037>&Param1& of ATK</color> as Terra Auto Attack DMG.\u000bStrike 2: <color=#fb8037>&Param2& of ATK</color> as Terra Auto Attack DMG.\u000bStrike 3: <color=#fb8037>&Param3& of ATK x2</color> as Terra Auto Attack DMG.",
+            "descCN": "斯帕克拉控制轮椅两侧的能量枪，向目标进行3次射击。\u000b一段：攻击力<color=#fb8037>&Param1&</color>地系普攻伤害\u000b二段：攻击力<color=#fb8037>&Param2&</color>地系普攻伤害\u000b三段：攻击力<color=#fb8037>&Param3&x2</color>地系普攻伤害",
+            "descJP": "スーパーオートラビの両サイドにあるエネルギーガンを制御し、敵に3連射を行う。\u000b1撃目：攻撃力の<color=#fb8037>&Param1&</color>の地属性の通常攻撃ダメージを与える。\u000b2撃目：攻撃力の<color=#fb8037>&Param2&</color>の地属性の通常攻撃ダメージを与える。\u000b3撃目：攻撃力の<color=#fb8037>&Param3&x2</color>の地属性の通常攻撃ダメージを与える。",
+            "descKR": "스파클이 휠체어 양쪽의 에너지건을 제어하여, 목표를 향해 3회 사격한다. \u000b1단계: 공격력 <color=#fb8037>&Param1&</color>의 땅 속성 일반 공격 피해\u000b2단계: 공격력 <color=#fb8037>&Param2&</color>의 땅 속성 일반 공격 피해\u000b3단계: 공격력 <color=#fb8037>&Param3&x2</color>의 땅 속성 일반 공격 피해",
+            "damageType": [
+                "Auto Attack (2.49e, from Normal attack, scale with Normal attack)",
+                "Auto Attack (1.25e, from Normal attack, scale with Normal attack)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "254%/292%/330%/444%/480%/515%/586%/617%/647%/708%/759%/810%/861%",
+                "254%/292%/330%/444%/480%/515%/586%/617%/647%/708%/759%/810%/861%",
+                "381%/438%/495%/666%/720%/773%/880%/925%/971%/1062%/1139%/1215%/1291%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Auto Attack (2.49e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (2.49e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (1.25e, from Normal attack, scale with Normal attack)"
+                }
+            ],
+            "icon": "14001_Normal"
+        },
+        "skill": {
+            "id": 14031000,
+            "name": "Rabbit Pie Tempo Switch",
+            "nameCN": "兔子派重速切换",
+            "nameJP": "ラボラビチェンジ",
+            "nameKR": "라보라비 모드 전환",
+            "cooldown": "5s",
+            "energyLimit": 66.93,
+            "desc": "Tap or hold to have Sparkla transform her wheelchair into one of two modes for 10s.\u000b<color=#0abec5>Tap</color>\u000bEnters ###4033#, lobbing bombs at the target and dealing <color=#fb8037>&Param1& of ATK</color> as Terra Skill DMG.\u000b<color=#0abec5>Hold</color>\u000bEnters ##Bunny Rapid Fire Mode#4034#, unleashing a rapid stream of shots at the target and dealing <color=#fb8037>&Param2& of ATK x3</color> as Terra Skill DMG.\u000bBoth ##Bunny Jaws Mode#4033# and ##Bunny Rapid Fire Mode#4034# can trigger ##Terra Mark#1020#, dealing &Param3& of ATK as AoE Terra Mark DMG.\u000bEnters cooldown when the transformation ends.",
+            "descCN": "斯帕克拉控制轮椅，依据点按、长按，变形成不同的模式，持续10秒。\u000b<color=#0abec5>点按</color>\u000b进入###4033#，向目标抛射炸弹，造成攻击力<color=#fb8037>&Param1&</color>地系技能伤害。\u000b<color=#0abec5>长按</color>\u000b进入##兔兔速射模式#4034#，向目标高速射击，造成攻击力<color=#fb8037>&Param2&x3</color>地系技能伤害。\u000b##兔兔大开口模式#4033#和##兔兔速射模式#4034#均可触发##地系印记#1020#，造成攻击力&Param3&的范围地系印记伤害。\u000b在变形结束后，进入冷却。",
+            "descJP": "スパクルがスーパーオートラビを10秒間、スキルボタンの入力（タップまたは長押し）に応じたモードへ移行させる。\u000b<color=#0abec5>タップ時</color>\u000b##タンクモード#4033#に移行し、敵に爆弾を投射する。攻撃力の<color=#fb8037>&Param1&</color>の地属性のスキルダメージを与える。\u000b<color=#0abec5>長押し時</color>\u000b##バーストモード#4034#に移行し、敵に高速射撃を行い、攻撃力の<color=#fb8037>&Param2&x3</color>の地属性のスキルダメージを与える。\u000b##タンクモード#4033#と##バーストモード#4034#は、いずれも##地属性の印#1020#を発動させることができ、発動させると、範囲内に攻撃力の&Param3&の地属性の印ダメージを与える。\u000bいずれかのモード終了後、スキルクールタイムに入る。",
+            "descKR": "스파클이 휠체어를 제어하며, 짧게 누르거나 길게 눌러 다른 모드로 변형한다. 10초간 지속된다. \u000b<color=#0abec5>짧게 누르기:</color>\u000b##토끼 대개방 모드#4033#에 진입해, 목표에게 폭탄을 던져 공격력 <color=#fb8037>&Param1&</color>의 땅 속성 스킬 피해를 입힌다. \u000b<color=#0abec5>길게 누르기:</color>\u000b##토끼 속사 모드#4034#에 진입해, 목표에게 빠른 속도로 사격하여 공격력 <color=#fb8037>&Param2&x3</color>의 땅 속성 스킬 피해를 입힌다. \u000b##토끼 대개방 모드#4033#와 ##토끼 속사 모드#4034#는 모두 ##땅 속성 표식#1020#을 발동할 수 있고, 공격력 &Param3&의 땅 속성 범위 표식 피해를 입힌다. \u000b변형 종료 후 쿨타임이 적용된다.",
+            "damageType": [
+                "Skill (11.16e, from Skill, scale with Skill)",
+                "Skill (3.52e, from Skill, scale with Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "213%/245%/277%/373%/403%/433%/493%/518%/544%/595%/638%/681%/723%",
+                "57%/66%/74%/100%/108%/116%/132%/139%/146%/159%/171%/182%/193%",
+                "37%/48.1%/59.1%/70.2%/81.2%/92.3%/103.4%/114.4%/125.5%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (11.16e, from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Skill (3.52e, from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "14001_Skill_Main"
+        },
+        "supportSkill": {
+            "id": 14032000,
+            "name": "Homing Bunny Volley",
+            "nameCN": "兔兔追踪炮",
+            "nameJP": "サポラビジャベリン",
+            "nameKR": "토끼 추적포",
+            "cooldown": "12s",
+            "desc": "Sparkla's wheelchair-mounted mechanical arms fire Bunny Fireworks at the target location, with 2 Bunny Fireworks per volley, 13 volleys in total.\u000bThe Bunny Fireworks land near the target in random patterns, each dealing <color=#fb8037>&Param1& of ATK</color> as Terra Skill DMG.\u000bBunny Fireworks can trigger ##Terra Mark#1020#, dealing &Param2& of ATK as AoE Terra Mark DMG.",
+            "descCN": "斯帕克拉控制轮椅伸出机械臂向目标位置发射「兔兔礼花」，每轮发射2发，共发射13轮。\u000b「兔兔礼花」在发射后会在目标附近随机落下，造成攻击力<color=#fb8037>&Param1&</color>地系技能伤害。\u000b「兔兔礼花」可触发##地系印记#1020#，造成攻击力&Param2&的范围地系印记伤害。",
+            "descJP": "スパクルがスーパーオートラビのアームを展開し、敵に向けてラビットボムを発射し、1回につき2発、合計13回発射を行う。\u000bラビットボムは発射後に敵周辺へランダムに降り注ぎ、攻撃力の<color=#fb8037>&Param1&</color>の地属性のスキルダメージを与える。\u000bラビットボムは##地属性の印#1020#を発動させることができ、発動させると、範囲内に攻撃力の&Param2&の地属性の印ダメージを与える。",
+            "descKR": "스파클이 휠체어를 제어해 기계 팔을 뻗어 목표 위치에 「토끼 폭죽」을 발사한다. 매회 2발을 발사하며, 총 13회 발사한다. \u000b「토끼 폭죽」은 발사 후 목표 주변에 랜덤으로 떨어져 공격력 <color=#fb8037>&Param1&</color>의 땅 속성 스킬 피해를 입힌다. \u000b「토끼 폭죽」은 ##땅 속성 표식#1020#을 발동할 수 있고, 공격력 &Param2&의 땅 속성 범위 표식 피해를 입힌다.",
+            "damageType": [
+                "Skill (from Skill, scale with Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "10.1%/11.7%/13.2%/17.7%/19.2%/20.6%/23.4%/24.6%/25.8%/28.3%/30.3%/32.3%/34.4%",
+                "37%/48.1%/59.1%/70.2%/81.2%/92.3%/103.4%/114.4%/125.5%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "14001_Skill_Support"
+        },
+        "ultimate": {
+            "id": 14040000,
+            "name": "All-Out Bunny Barrage",
+            "nameCN": "兔兔全域火力压制",
+            "nameJP": "ラボラビフルバースト",
+            "nameKR": "토끼 화력 제압",
+            "cooldown": "40s",
+            "energy": 357,
+            "desc": "Sparkla takes a nap in her wheelchair and orders her doll to attack nearby targets, dealing <color=#fb8037>&Param1& of ATK x10</color> as AoE Terra Ultimate DMG.\u000bWhen she wakes up, she fires a Bunny Firework Cannon at the target location, dealing <color=#fb8037>&Param2& of ATK</color> as AoE Terra Ultimate DMG.\u000bThis Ultimate can trigger ##Terra Mark#1020#, dealing &Param3& of ATK as AoE Terra Mark DMG.",
+            "descCN": "斯帕克拉在轮椅上休息，命令玩偶自动打击附近的目标，造成攻击力<color=#fb8037>&Param1&x10</color>范围地系绝招伤害。\u000b斯帕克拉醒来后再对目标发射「兔兔礼花炮」，造成攻击力<color=#fb8037>&Param2&</color>范围地系绝招伤害。\u000b绝招可触发##地系印记#1020#，造成攻击力&Param3&的范围地系印记伤害。",
+            "descJP": "スパクルがスーパーオートラビの上で休憩する。ラボラビに周囲の敵を自動攻撃させるように命令し、範囲内に攻撃力の<color=#fb8037>&Param1&x10</color>の地属性の必殺技ダメージを与える。\u000bスパクルが目を覚ました時、敵のいる地点に大口径ラビットミサイルを発射し、範囲内に攻撃力の<color=#fb8037>&Param2&</color>の地属性の必殺技ダメージを与える。\u000b必殺技は##地属性の印#1020#を発動させることができ、発動させると、範囲内の敵に攻撃力の&Param3&の地属性の印ダメージを与える。",
+            "descKR": "스파클이 휠체어 위에서 휴식을 취하며, 인형에게 명령하여 자동으로 자신 주변의 목표를 타격해 공격력 <color=#fb8037>&Param1&x10</color>의 땅 속성 범위 필살기 피해를 입힌다. \u000b스파클이 깨어난 후, 다시 목표에게 「토끼 폭죽포」를 발사해, 공격력 <color=#fb8037>&Param2&</color>의 땅 속성 범위 필살기 피해를 입힌다. \u000b필살기는 ##땅 속성 표식#1020#을 발동할 수 있고, 공격력 &Param3&의 땅 속성 범위 표식 피해를 입힌다.",
+            "damageType": [
+                "Ultimate (from Ultimate, scale with Ultimate)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "194%/223%/252%/339%/367%/394%/448%/471%/495%/541%/580%/619%/658%",
+                "978%/1125%/1271%/1711%/1848%/1985%/2259%/2376%/2494%/2729%/2924%/3120%/3315%",
+                "37%/48.1%/59.1%/70.2%/81.2%/92.3%/103.4%/114.4%/125.5%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
+                },
+                {
+                    "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
+                },
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "14001_Ultra"
+        },
+        "potential": {
+            "mainCore": [
+                {
+                    "id": 514001,
+                    "name": "Bunny-Ear Volley",
+                    "nameCN": "跃耳极射",
+                    "nameJP": "ラビットバースト",
+                    "nameKR": "쫑긋 사격",
+                    "desc": "When Sparkla is in ##Bunny Rapid Fire Mode#4034#, activates Bunny Rapid Fire to unleash a hail of fire on the target, dealing <color=#0abec5>&Param1& of ATK x7</color> as Terra Skill DMG. Can trigger ##Terra Mark#1020#.\u000bBunny Rapid Fire has a Cooldown of 3s.\u000bWhen in an All-Terra squad, increases Bunny Rapid Fire's &Param2& by <color=#0abec5>&Param3&</color>.",
+                    "descCN": "斯帕克拉处于##兔兔速射模式#4034#期间，激活技能「兔兔速射」：对目标倾泻火力，造成攻击力<color=#0abec5>&Param1&x7</color>的地系技能伤害，可触发##地系印记#1020#。\u000b「兔兔速射」的冷却为3秒。\u000b当全队均为地系角色时，「兔兔速射」造成的&Param2&提升<color=#0abec5>&Param3&</color>。",
+                    "descJP": "スパクルの##バーストモード#4034#持続中、主力スキルが「連射ラビット」に変化する。\u000b「連射ラビット」は敵に猛烈な射撃を浴びせ、攻撃力の<color=#0abec5>&Param1&x7</color>の地属性のスキルダメージを与え、##地属性の印#1020#を発動させることができる。\u000b「連射ラビット」のクールタイムは3秒。\u000bチーム内に地属性巡遊者が3体いる時、「連射ラビット」の与える&Param2&が<color=#0abec5>&Param3&</color>増加する。",
+                    "descKR": "스파클이 ##토끼 속사 모드#4034#일 때, 스킬 「토끼 속사」가 활성화되어 목표에게 화력을 쏟아 공격력 <color=#0abec5>&Param1&x7</color>의 땅 속성 스킬 피해를 입힌다. ##땅 속성 표식#1020#을 발동할 수 있다. \u000b「토끼 속사」는 3초의 쿨타임이 적용된다. \u000b팀 전체가 땅 속성 캐릭터일 경우 「토끼 속사」가 입히는 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [
+                        "Skill (0.62e, from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "48%/55%/62%/83%/90%/97%/110%/116%/121%/133%/142%/152%/161%",
+                        "Skill DMG",
+                        "80%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (0.62e, from Skill, scale with Skill)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_01",
+                    "rarity": "core"
+                },
+                {
+                    "id": 514002,
+                    "name": "Click-Clack Echoes",
+                    "nameCN": "咔哒叠响",
+                    "nameJP": "眠れるバラの姫",
+                    "nameKR": "찰칵 연쇄음",
+                    "desc": "Increases the &Param4& of ##Bunny Rapid Fire Mode#4034# by <color=#0abec5>&Param5&</color>.\u000bWhen Sparkla deals damage with ##Bunny Rapid Fire Mode#4034# to a target, inflicts 1 stack of Stellar Crystal. At <color=#0abec5>&Param1&</color> stacks, the target becomes Stellar Crystallized for <color=#0abec5>&Param2&</color>s.\u000bStellar Crystallized target will be <color=#0abec5>stunned</color> and immune to Stellar Crystal.\u000bWhen Sparkla deals damage with ##Bunny Rapid Fire Mode#4034# to a Stellar Crystallized target, deals an additional <color=#0abec5>&Param3&</color> of ATK as Terra Skill DMG. Can trigger ##Terra Mark#1020#.",
+                    "descCN": "##兔兔速射模式#4034#造成的&Param4&提升<color=#0abec5>&Param5&</color>。\u000b##兔兔速射模式#4034#对目标造成伤害时附加1层「星晶」，叠加至<color=#0abec5>&Param1&</color>层时消耗所有层数使目标「星晶化」，持续<color=#0abec5>&Param2&</color>秒。\u000b「星晶化」的目标处于<color=#0abec5>眩晕</color>状态，无法被附加「星晶」。\u000b##兔兔速射模式#4034#对「星晶化」的目标造成伤害时，额外造成攻击力<color=#0abec5>&Param3&</color>的地系技能伤害，可触发##地系印记#1020#。",
+                    "descJP": "##バーストモード#4034#の与える&Param4&が<color=#0abec5>&Param5&</color>増加する。\u000b##バーストモード#4034#で敵にダメージを与えると呪いのトゲを1付与するようになる。呪いのトゲが<color=#0abec5>&Param1&</color>に達した時、全ての呪いのトゲを消費して敵を<color=#0abec5>&Param2&</color>秒間、おやすみ状態にする。\u000bおやすみ状態の敵は<color=#0abec5>スタン</color>し、呪いのトゲを付与することができなくなる。\u000b##バーストモード#4034#でおやすみ状態の敵にダメージを与えた時、追加で攻撃力の<color=#0abec5>&Param3&</color>の地属性のスキルダメージを与え、##地属性の印#1020#を発動させることができる。",
+                    "descKR": "##토끼 속사 모드#4034#가 입히는 &Param4_kr1& <color=#0abec5>&Param5&</color> 증가한다. \u000b##토끼 속사 모드#4034#가 목표에게 피해를 입히면 「별빛 결정」 1스택을 부여하고, <color=#0abec5>&Param1&</color>스택이 중첩되면 모든 스택을 소모해 목표를 「별빛 결정화」 상태로 만든다. <color=#0abec5>&Param2&</color>초간 지속된다.\u000b「별빛 결정화」 상태의 목표는 <color=#0abec5>기절</color> 상태에 빠지며, 「별빛 결정」을 부여할 수 없다. \u000b##토끼 속사 모드#4034#가 「별빛 결정화」 상태의 목표에게 피해를 입히면 공격력 <color=#0abec5>&Param3&</color>의 땅 속성 스킬 피해를 추가로 입히며, ##땅 속성 표식#1020#을 발동할 수 있다.\u000bParam4: &Param4& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_14002",
+                        "Icon_LandCrystal"
+                    ],
+                    "params": [
+                        20,
+                        5,
+                        "64%/73%/83%/111%/120%/129%/147%/154%/162%/177%/190%/203%/215%",
+                        "Skill DMG",
+                        "22%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "buffIcon": "Icon_14002"
+                        },
+                        {
+                            "buffIcon": "Icon_LandCrystal"
+                        },
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)",
+                            "buffIcon": "Icon_14002"
+                        },
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)",
+                            "buffIcon": "Icon_14002"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_02",
+                    "rarity": "core"
+                },
+                {
+                    "id": 514003,
+                    "name": "Fluffy Rechamber",
+                    "nameCN": "布偶重膛",
+                    "nameJP": "ラビットボマー",
+                    "nameKR": "인형의 묵직한 총성",
+                    "desc": "When Sparkla is in ##Bunny Jaws Mode#4033#, activates Bunny Roar. After a brief charge-up, deals <color=#0abec5>&Param1& of ATK</color> as AoE Terra Skill DMG. Can trigger ##Terra Mark#1020#.\u000bWhen channeling Bunny Roar, Sparkla cannot move or dodge. Sparkla can only cast Bunny Roar once while in ##Bunny Jaws Mode#4033#.\u000bWhen in an All-Terra squad, Sparkla gains a shield equal to <color=#0abec5>&Param2&</color> of her Base HP while Bunny Roar is active, and increases the &Param3& of Bunny Jaws Mode by <color=#0abec5>&Param4&</color>.",
+                    "descCN": "斯帕克拉处于##兔兔大开口模式#4033#期间，激活技能「兔兔吼」：短暂蓄力后，造成攻击力<color=#0abec5>&Param1&</color>的范围地系技能伤害，可触发##地系印记#1020#。\u000b「兔兔吼」期间斯帕克拉无法移动和闪避。每次进入##兔兔大开口模式#4033#，只能施放1次「兔兔吼」。\u000b当全队均为地系角色时，「兔兔吼」期间获得基础生命<color=#0abec5>&Param2&</color>的护盾，并且「兔兔吼」造成的&Param3&提升<color=#0abec5>&Param4&</color>。",
+                    "descJP": "スパクルの##タンクモード#4033#持続中、主力スキルが「固定ラビキャノン」に変化する。\u000b「固定ラビキャノン」発動後、短時間チャージを行った後、敵に攻撃力の<color=#0abec5>&Param1&</color>の地属性のスキルダメージを与え、##地属性の印#1020#を発動させることができる。\u000b「固定ラビキャノン」の発動中、スパクルは移動と回避を行うことができなくなる。##タンクモード#4033#に移行するたび、「固定ラビキャノン」を1回発動できる。\u000bチーム内に地属性巡遊者が3体いる時、「固定ラビキャノン」の発動中にスパクルは、基礎HPの<color=#0abec5>&Param2&</color>のシールドを獲得し、さらに「固定ラビキャノン」の与える&Param3&が<color=#0abec5>&Param4&</color>増加する。",
+                    "descKR": "스파클이 ##토끼 대개방 모드#4033#일 때, 스킬 「토끼의 포효」가 활성화되어 짧은 차징 후 공격력 <color=#0abec5>&Param1&</color>의 땅 속성 범위 스킬 피해를 입힌다. ##땅 속성 표식#1020#을 발동할 수 있다. \u000b「토끼의 포효」 기간 중 스파클은 이동하거나 회피할 수 없다. ##토끼 대개방 모드#4033#에 진입할 때마다 「토끼의 포효」를 1회 시전할 수 있다. \u000b팀 전체가 땅 속성 캐릭터일 경우, 「토끼의 포효」 기간 중 기본 HP <color=#0abec5>&Param2&</color>의 보호막을 획득하고, 「토끼의 포효」가 입히는 &Param3_kr1& <color=#0abec5>&Param4&</color> 증가한다.\u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [
+                        "Skill (2.67e, from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "243%/280%/316%/425%/459%/493%/561%/591%/620%/678%/727%/775%/824%",
+                        "20%",
+                        "Skill DMG",
+                        "91%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (2.67e, from Skill, scale with Skill)"
+                        },
+                        {},
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_03",
+                    "rarity": "core"
+                },
+                {
+                    "id": 514004,
+                    "name": "Neo Radiance Burst",
+                    "nameCN": "柔光溢射",
+                    "nameJP": "ムーナリロード",
+                    "nameKR": "무나 오버플로우",
+                    "desc": "Increases the &Param1& of ##Bunny Jaws Mode#4033# by <color=#0abec5>&Param2&</color>.\u000bWhen Sparkla is in ##Bunny Jaws Mode#4033#, gains <color=#0abec5>1</color> bottle of Instant Neo Solution every 2s.\u000bWhen in ##Bunny Jaws Mode#4033#, Sparkla can consume up to <color=#0abec5>2</color> bottles of Instant Neo Solution to fire additional shells, each solution can generate <color=#0abec5>1</color> shell.\u000bWhen ##Bunny Jaws Mode#4033# ends, nullifies all Instant Neo Solution.",
+                    "descCN": "##兔兔大开口模式#4033#造成的&Param1&提升<color=#0abec5>&Param2&</color>。\u000b当斯帕克拉处于##兔兔大开口模式#4033#期间，每2秒获得<color=#0abec5>1</color>瓶「速效柔光溶剂」。\u000b##兔兔大开口模式#4033#每次射击时，将消耗「速效柔光溶剂」，每消耗1瓶，额外发射<color=#0abec5>1</color>枚炮弹。每次射击最多消耗<color=#0abec5>2</color>瓶。\u000b##兔兔大开口模式#4033#结束时会清除所有「速效柔光溶剂」。",
+                    "descJP": "##タンクモード#4033#の与える&Param1&が<color=#0abec5>&Param2&</color>増加する。\u000bスパクルの##タンクモード#4033#持続中、2秒ごとにインスタントムーナ液を<color=#0abec5>1</color>獲得する。\u000b##タンクモード#4033#での射撃時、インスタントムーナ液を消費し、1消費するごとに追加で砲弾を<color=#0abec5>1</color>発発射する。1回の射撃につき最大<color=#0abec5>2</color>まで消費できる。\u000b##タンクモード#4033#終了時、インスタントムーナ液はリセットされる。",
+                    "descKR": "##토끼 대개방 모드#4033#가 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다. \u000b스파클이 ##토끼 대개방 모드#4033#일 때, 2초마다 「즉효 무나 용액」을 <color=#0abec5>1</color>병 획득한다. \u000b##토끼 대개방 모드#4033# 사격 시마다 「즉효 무나 용액」을 소모하여, 1병마다 포탄을 <color=#0abec5>1</color>개 추가로 발사한다. 매회 사격에 최대 <color=#0abec5>2</color>병 소모할 수 있다.\u000b##토끼 대개방 모드#4033# 종료 시 모든 「즉효 무나 용액」을 제거한다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_14004"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "35%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)",
+                            "buffIcon": "Icon_14004"
+                        },
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)",
+                            "buffIcon": "Icon_14004"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_04",
+                    "rarity": "core"
+                }
+            ],
+            "mainNormal": [
+                {
+                    "id": 514005,
+                    "name": "Leap Barrage",
+                    "nameCN": "聚跃极射",
+                    "nameJP": "アリシアの大冒険",
+                    "nameKR": "집중 사격",
+                    "desc": "When Sparkla triggers ##Terra Mark#1020# in ##Bunny Rapid Fire Mode#4034#, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
+                    "descCN": "斯帕克拉处于##兔兔速射模式#4034#期间，触发##地系印记#1020#时，自身&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "スパクルの##バーストモード#4034#持続中、##地属性の印#1020#を発動させた時、&Param3&秒間、自身の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "스파클이 ##토끼 속사 모드#4034#일 때, ##땅 속성 표식#1020#을 발동하면 자신의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "4%/6.4%/8.8%/11.2%/13.6%/16%/18.4%/20.8%/23.2%",
+                        10,
+                        5
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_01",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514006,
+                    "name": "Hover-Rail Volley",
+                    "nameCN": "浮轨伴射",
+                    "nameJP": "空飛ぶ少年",
+                    "nameKR": "부유 궤도 사격",
+                    "desc": "##Bunny Rapid Fire Mode#4034# allows Sparkla to levitate. She can attack the target while dashing, and her &Param1& is increased by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "斯帕克拉处于##兔兔速射模式#4034#期间变为浮空，疾跑时可以继续攻击目标，造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "スパクルの##バーストモード#4034#持続中、飛行するようになる。飛行時、ダッシュ中も敵に攻撃をすることができるようになり、与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "스파클이 ##토끼 속사 모드#4034#일 때, 부유 상태로 변경된다. 빠른 발놀림 시 목표를 지속적으로 공격할 수 있으며, 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "31%/50%/69%/87%/106%/125%/143%/162%/181%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_06",
+                    "corner": "Triangle",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 514007,
+                    "name": "Clockwork Resonance",
+                    "nameCN": "齿轮叩契",
+                    "nameJP": "ひらめきの連鎖",
+                    "nameKR": "톱니바퀴의 맞물림",
+                    "desc": "Each Sparkla's skill cast increases Sparkla's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
+                    "descCN": "斯帕克拉每次施放技能时，自身&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "スパクルがスキルを発動するたびに、&Param3&秒間、自身の&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "스파클이 스킬을 시전할 때마다 자신의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "2.6%/4.2%/5.8%/7.4%/9%/10.6%/12.2%/13.8%/15.4%",
+                        7,
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_01",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514008,
+                    "name": "Cyclone Dial",
+                    "nameCN": "旋钮气浪",
+                    "nameJP": "天才の切り札",
+                    "nameKR": "다이얼 기류",
+                    "desc": "When Sparkla is in ##Bunny Jaws Mode#4033#, each shot deals <color=#ec6d21>&Param1& of ATK</color> as AoE Terra Skill DMG to enemies in front and knocks them back. Can trigger ##Terra Mark#1020#.\u000bWhen casting Bunny Roar, each shot deals <color=#ec6d21>&Param2& of ATK</color> as AoE Terra Skill DMG to enemies in front and knocks them back. Can trigger ##Terra Mark#1020#.",
+                    "descCN": "斯帕克拉处于##兔兔大开口模式#4033#期间，每次射击时对前方造成攻击力<color=#ec6d21>&Param1&</color>的范围地系技能伤害并击退目标，可触发##地系印记#1020#。\u000b「兔兔吼」射击时对前方造成攻击力<color=#ec6d21>&Param2&</color>的范围地系技能伤害并击退目标，可触发##地系印记#1020#。",
+                    "descJP": "スパクルの##タンクモード#4033#持続中、射撃のたびに前方の範囲内へ攻撃力の<color=#ec6d21>&Param1&</color>の地属性のスキルダメージを与え、敵をノックバックさせる。この攻撃は##地属性の印#1020#を発動させることができる。\u000b「固定ラビキャノン」による射撃時、前方の範囲内へ攻撃力の<color=#ec6d21>&Param2&</color>の地属性のスキルダメージを与え、敵をノックバックさせる。この攻撃は##地属性の印#1020#を発動させることができる。",
+                    "descKR": "스파클이 ##토끼 대개방 모드#4033#일 때, 사격할 때마다 전방에 공격력 <color=#ec6d21>&Param1&</color>의 땅 속성 범위 스킬 피해를 입히고, 목표를 넉백시킨다. ##땅 속성 표식#1020#을 발동할 수 있다. \u000b「토끼의 포효」 사격 시 전방에 공격력 <color=#ec6d21>&Param2&</color>의 땅 속성 범위 스킬 피해를 입히고, 목표를 넉백시킨다. ##땅 속성 표식#1020#을 발동할 수 있다.",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "23.9%/38.2%/52.5%/66.8%/81.1%/95.5%/109.8%/124.1%/138.4%",
+                        "289%/462%/636%/809%/982%/1156%/1329%/1502%/1676%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill)"
+                        },
+                        {
+                            "damageType": "Skill (from Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_08",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514009,
+                    "name": "Ticking Aftershock",
+                    "nameCN": "滴答余响",
+                    "nameJP": "かわいさ爆発",
+                    "nameKR": "째깍 잔향",
+                    "desc": "When Sparkla is in ##Bunny Jaws Mode#4033#, gains Super Armor and increases own &Param2& by <color=#ec6d21>&Param3&</color>.\u000bAfter the shells fired in ##Bunny Jaws Mode#4033# explode, 5 Booby Traps are randomly deployed within the blast radius, each Booby Trap dealing <color=#ec6d21>&Param1& of ATK</color> as Terra Skill DMG. Can trigger ##Terra Mark#1020#.\u000bShells fired by Bunny Roar scatter 10 Booby Traps over a much larger area.",
+                    "descCN": "斯帕克拉处于##兔兔大开口模式#4033#期间，获得霸体，自身&Param2&提升<color=#ec6d21>&Param3&</color>。\u000b##兔兔大开口模式#4033#发射的炮弹爆炸后，会在伤害范围内随机散布5颗「诡雷」，每颗「诡雷」造成攻击力<color=#ec6d21>&Param1&</color>的地系技能伤害，可触发##地系印记#1020#。\u000b「兔兔吼」发射的炮弹会在更大范围内散布10颗「诡雷」。",
+                    "descJP": "スパクルの##タンクモード#4033#持続中、自身の&Param2&が<color=#ec6d21>&Param3&</color>増加し、スーパーアーマーを獲得する。\u000b##タンクモード#4033#で発射された砲弾が着弾すると、ダメージ範囲内にランダムでメルヘンボムを5個散布する。各メルヘンボムは攻撃力の<color=#ec6d21>&Param1&</color>の地属性のスキルダメージを与え、##地属性の印#1020#を発動させることができる。\u000b「固定ラビキャノン」で発射された砲弾は、より広範囲にメルヘンボムを10個散布する。",
+                    "descKR": "스파클이 ##토끼 대개방 모드#4033#일 때, 저지 불가를 획득하며 자신의 자신의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다.\u000b##토끼 대개방 모드#4033#가 발사하는 포탄의 폭파 후, 피해 범위 내에 랜덤으로 「함정 포탄」을 5개 배치하고 각 「함정 포탄」이 공격력 <color=#ec6d21>&Param1&</color>의 땅 속성 스킬 피해를 입힌다. ##땅 속성 표식#1020#을 발동할 수 있다.\u000b「토끼의 포효」가 발사하는 포탄은 더욱 큰 범위에 「함정 포탄」 10개를 뿌린다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "21.2%/33.9%/46.6%/59.3%/72%/84.7%/97.5%/110.2%/122.9%",
+                        "Skill DMG",
+                        "19%/30%/41%/52%/63%/74%/85%/96%/107%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_09",
+                    "corner": "Triangle",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 514011,
+                    "name": "Harmonic Barrage",
+                    "nameCN": "集束余韵",
+                    "nameJP": "ラボラビの本気",
+                    "nameKR": "집중 폭격의 끝맛",
+                    "desc": "When Sparkla casts the Main Skill to transform, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bWhen the transformation ends, deals <color=#ec6d21>&Param4&</color> of ATK as AoE Terra Skill DMG to up to 6 nearby targets. Can trigger ##Terra Mark#1020#.",
+                    "descCN": "斯帕克拉施放主控技变形时，自身&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。\u000b在变形结束时，对自身周围最多6个目标，造成攻击力<color=#ec6d21>&Param4&</color>的范围地系技能伤害，可触发##地系印记#1020#。",
+                    "descJP": "スパクルが主力スキルで変形した時、&Param3&秒間、自身の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。\u000b変形終了時、自身の周囲の最大6体の敵に攻撃力の<color=#ec6d21>&Param4&</color>の地属性のスキルダメージを与え、##地属性の印#1020#を発動させることができる。",
+                    "descKR": "스파클이 메인 스킬을 시전하여 변형하면 자신의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다. \u000b변형 종료 시, 자신 주변 최대 6개 목표에게 공격력 <color=#ec6d21>&Param4&</color>의 땅 속성 범위 스킬 피해를 입힌다. ##땅 속성 표식#1020#을 발동할 수 있다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "13%/21%/29%/37%/45%/53%/61%/69%/77%",
+                        12,
+                        "94%/151%/208%/265%/321%/378%/435%/491%/548%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "damageType": "Skill (from Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_11",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 514013,
+                    "name": "Prism Convergence",
+                    "nameCN": "阔镜聚华",
+                    "nameJP": "緑の街の魔法使い",
+                    "nameKR": "유리에 모인 빛",
+                    "desc": "Increases Sparkla's &Param1& to distant targets by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "斯帕克拉对远离自身的目标造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "スパクルは、自身から離れている敵に与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "스파클이 자신과 멀리 떨어진 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Terra DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Terra DMG",
+                        "13%/21%/29%/37%/45%/53%/61%/69%/77%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Terra DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Terra DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_10",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514010,
+                    "name": "Static Strike",
+                    "nameCN": "以静制动",
+                    "nameJP": "マイペースガード",
+                    "nameKR": "부동의 위엄",
+                    "desc": "When Sparkla enters ##Bunny Jaws Mode#4033#, gains a shield equal to <color=#ec6d21>&Param1&</color> of her Base HP for &Param2&s.\u000bWhen Sparkla remains stationary in ##Bunny Jaws Mode#4033#, increases her &Param4& by <color=#ec6d21>&Param5&</color> every &Param3&s for a total of &Param6&s, up to &Param7& stacks.",
+                    "descCN": "斯帕克拉进入##兔兔大开口模式#4033#时，获得自身基础生命值<color=#ec6d21>&Param1&</color>的护盾，持续&Param2&秒。\u000b斯帕克拉处于##兔兔大开口模式#4033#期间不移动时，每&Param3&秒自身&Param4&提升<color=#ec6d21>&Param5&</color>，持续&Param6&秒，可叠加&Param7&层。",
+                    "descJP": "スパクルが##タンクモード#4033#移行時、&Param2&秒間持続する、自身の基礎HPの<color=#ec6d21>&Param1&</color>分のシールドを獲得する。\u000bスパクルの##タンクモード#4033#持続中、移動せず静止している間、&Param3&秒ごとに&Param6&秒間、自身の&Param4&が<color=#ec6d21>&Param5&</color>上昇する。この効果は&Param7&回まで重複できる。",
+                    "descKR": "스파클이 ##토끼 대개방 모드#4033#에 진입하면 자신의 기본 HP <color=#ec6d21>&Param1&</color>의 보호막을 획득한다. &Param2&초간 지속된다. \u000b스파클이 ##토끼 대개방 모드#4033#일 때 이동하지 않으면 &Param3&초마다 자신의 &Param4_kr1& <color=#ec6d21>&Param5&</color> 증가한다. &Param6&초간 지속되며, 최대 &Param7&스택 중첩된다.\u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "7%/10%/12%/14%/17%/19%/22%/24%/26%",
+                        10,
+                        1,
+                        "ATK",
+                        "4.5%/7.2%/9.9%/12.6%/15.3%/18%/20.7%/23.4%/26.1%",
+                        5,
+                        5
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {},
+                        {},
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_03",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514012,
+                    "name": "Velvet Prowl",
+                    "nameCN": "绒步循影",
+                    "nameJP": "ガラスの靴の魔法",
+                    "nameKR": "래빗 스텝",
+                    "desc": "Sparkla can dodge one more time.\u000bAfter dodging, increases Sparkla's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bThis effect can only be triggered once every &Param4&s.",
+                    "descCN": "斯帕克拉闪避次数提升1次。\u000b闪避后，斯帕克拉的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。\u000b该效果&Param4&秒最多触发一次。",
+                    "descJP": "スパクルの回避の発動可能回数が1回増加する。\u000b回避発動後、&Param3&秒間、スパクルの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。\u000bこの効果は&Param4&秒ごとに1回まで発動できる。",
+                    "descKR": "스파클의 회피 횟수가 1회 증가한다. \u000b회피 후 스파클의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다. \u000b해당 효과는 &Param4&초마다 최대 1회 발동한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "10%/17%/23%/29%/35%/41%/48%/54%/60%",
+                        6,
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {}
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_21",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                }
+            ],
+            "common": [
+                {
+                    "id": 514041,
+                    "name": "Solution Support",
+                    "nameCN": "溶剂支援",
+                    "nameJP": "ムーナパーティー",
+                    "nameKR": "용액의 도움",
+                    "desc": "When &Param1& (Ultimate) ends, drops 3 bottles of Potent Neo Solution on the ground. The Main Trekker can absorb them on contact, with each bottle increasing their &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.\u000bWhen a Terra Trekker absorbs 3 bottles of Potent Neo Solution and deals Auto Attack DMG, Sparkla deals an additional <color=#ec6d21>&Param5&</color> of her ATK as Terra Ultimate DMG. This effect can only be triggered once every &Param6&s.",
+                    "descCN": "绝招「&Param1&」结束时，在地上洒落3瓶「强效柔光溶剂」，主控角色靠近时可以吸收，每瓶使其&Param2&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒。\u000b当地系角色吸收3瓶「强效柔光溶剂」后，造成普攻伤害时，额外造成斯帕克拉攻击力<color=#ec6d21>&Param5&</color>的地系绝招伤害。每&Param6&秒最多触发一次。",
+                    "descJP": "スパクルの必殺技終了時、地面にハイムーナ液を3つ設置するようになる。主力巡遊者がこれに近づくことで獲得でき、ハイムーナ液1につき、&Param4&秒間、その巡遊者の&Param2&が<color=#ec6d21>&Param3&</color>上昇する。\u000b地属性巡遊者がハイムーナ液を3保持していて、通常攻撃でダメージを与えた時、スパクルが追撃を与え、攻撃力の<color=#ec6d21>&Param5&</color>の地属性の必殺技ダメージを与える。この効果は&Param6&秒ごとに1回まで発動する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "필살기 「&Param1&」 종료 시, 지면에 「강력 무나 용액」 3병을 뿌리고, 메인 캐릭터가 가까이 가면 흡수한다. 1병마다 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가하며, &Param4&초간 지속된다. \u000b땅 속성 캐릭터가 「강력 무나 용액」 3병을 흡수한 후, 일반 공격 피해를 입히면 스파클 공격력 <color=#ec6d21>&Param5&</color>의 땅 속성 필살기 피해를 추가로 입힌다. &Param6&초마다 최대 1회 발동한다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [
+                        "Ultimate (from Ultimate)"
+                    ],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "All-Out Bunny Barrage",
+                        "ATK",
+                        "7%/11%/16%/20%/24%/29%/33%/37%/42%",
+                        10,
+                        "86%/137%/189%/240%/292%/343%/394%/446%/497%",
+                        0.5
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "damageType": "Ultimate (from Ultimate)"
+                        },
+                        {}
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_41",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514042,
+                    "name": "Wonderland Bound",
+                    "nameCN": "奇境跃壤",
+                    "nameJP": "メルヘンワールド",
+                    "nameKR": "기묘한 땅",
+                    "desc": "Increases the Attack Range of the Bunny Firework Cannon fired by &Param1& (Ultimate). Instantly eliminates normal targets within range, and inflicts Bleeding on elite and boss targets. Deals DMG to the target once per second for &Param2&s, dealing <color=#ec6d21>&Param3& of ATK</color> as Terra Mark Ultimate DMG in total.",
+                    "descCN": "绝招「&Param1&」发射的「兔兔礼花炮」的伤害范围提升，直接消灭范围内普通目标，并对精英和首领目标，附加流血：每秒造成1次伤害，持续&Param2&秒，共造成攻击力<color=#ec6d21>&Param3&</color>的地系绝招伤害。",
+                    "descJP": "スパクルの必殺技で発射される大口径ラビットミサイルのダメージ範囲が拡大する。範囲内のノーマル敵を即座に撃破し、エリートおよび首領にスリップを付与する。\u000bスリップ：&Param2&秒間、1秒ごとにダメージを与え、合計攻撃力の<color=#ec6d21>&Param3&</color>の地属性の必殺技ダメージを与える。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "필살기 &Param1_kr1& 발사하는 「토끼 폭죽포」의 피해 범위가 증가하고, 범위 내 일반 목표를 바로 처치한다. 또한 정예와 보스 목표에게 출혈을 부여해 1초마다 피해를 1회 입힌다. &Param2&초간 지속되며 총 공격력 <color=#ec6d21>&Param3&</color>의 땅 속성 필살기 피해를 입힌다.\u000bParam1: &Param1& (Skill,Title)",
+                    "damageType": [
+                        "Ultimate (from Ultimate)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_Bleed"
+                    ],
+                    "params": [
+                        "All-Out Bunny Barrage",
+                        10,
+                        "178%/285%/391%/498%/605%/711%/818%/925%/1031%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "buffIcon": "Icon_CommonBuff_Bleed"
+                        },
+                        {
+                            "damageType": "Ultimate (from Ultimate)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_42",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514043,
+                    "name": "Leap of Finale",
+                    "nameCN": "跃印终章",
+                    "nameJP": "エバーアフター",
+                    "nameKR": "종결의 낙인",
+                    "desc": "When &Param1& (Ultimate) triggers ##Terra Mark#1020#, increases the &Param2& of this Ultimate by <color=#ec6d21>&Param3&</color>,  stacking up to &Param4& times.",
+                    "descCN": "绝招「&Param1&」触发##地系印记#1020#时，本次绝招造成的&Param2&提升<color=#ec6d21>&Param3&</color>，可叠加&Param4&层。",
+                    "descJP": "スパクルの必殺技が##地属性の印#1020#を発動させた時、今回の必殺技で与える&Param2&が<color=#ec6d21>&Param3&</color>増加する。この効果は&Param4&回まで重複できる。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "필살기 &Param1_kr1& ##땅 속성 표식#1020#을 발동하면, 이번 필살기가 입히는 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Ultimate DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "All-Out Bunny Barrage",
+                        "Ultimate DMG",
+                        "3%/5%/7%/9%/11%/13%/15%/17%/19%",
+                        7
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Ultimate DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Ultimate DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_43",
+                    "corner": "Round",
+                    "rarity": "common"
+                }
+            ],
+            "supportCore": [
+                {
+                    "id": 514021,
+                    "name": "Bunny Backfire",
+                    "nameCN": "背兔鸣火",
+                    "nameJP": "ラボラビファイア",
+                    "nameKR": "토끼의 폭발",
+                    "desc": "When Sparkla casts &Param1& (Support Skill) in an all-Terra squad, the doll also fires a Bunny Firework, bringing the total to <color=#0abec5>3</color> per volley.\u000bIncreases the Support Skill's &Param2& by <color=#0abec5>&Param3&</color>.",
+                    "descCN": "当全队为地系角色时，援护技「&Param1&」期间，玩偶也会发射「兔兔礼花」，每轮发射提升至<color=#0abec5>3</color>发。\u000b援护技造成的&Param2&提升<color=#0abec5>&Param3&</color>。",
+                    "descJP": "チーム内に地属性の巡遊者が3体いる時、スパクルの支援スキル持続中、ラボラビもラビットボムを発射するようになり、1回ごとの発射数が<color=#0abec5>3</color>発に増加する。\u000b支援スキルの与える&Param2&が<color=#0abec5>&Param3&</color>増加する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "팀 전체가 땅 속성 캐릭터일 때, 지원 스킬 「&Param1&」 기간 중 인형도 「토끼 폭죽」을 발사한다. 매회 발사는 <color=#0abec5>3</color>발까지 증가한다. \u000b지원 스킬이 입히는 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Homing Bunny Volley",
+                        "Skill DMG",
+                        "20%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_21",
+                    "rarity": "core"
+                },
+                {
+                    "id": 514022,
+                    "name": "Rolling Support",
+                    "nameCN": "轮辙援护",
+                    "nameJP": "ラボラビチャージ",
+                    "nameKR": "휠체어의 엄호",
+                    "desc": "When casting &Param1& (Support Skill), Sparkla gains Energy each time a Bunny Firework is fired.\u000bWhen the Support Skill ends, Sparkla consumes all Energy, with each point increasing her &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s.\u000bShe then charges toward the target in her chair, dealing <color=#0abec5>&Param5&</color> of ATK as Terra Skill DMG and inflicting Bleeding, which deals DMG to the target once every 0.3s for 3s, dealing <color=#0abec5>&Param6&</color> of ATK as Terra Skill DMG in total.",
+                    "descCN": "援护技「&Param1&」期间，每次发射「兔兔礼花」，斯帕克拉都会积蓄能量。\u000b援护技结束时，斯帕克拉将消耗所有能量，每1点使自身&Param2&提升<color=#0abec5>&Param3&</color>，持续&Param4&秒。\u000b然后驾驶轮椅冲向目标，造成攻击力<color=#0abec5>&Param5&</color>的地系技能伤害并附加流血：0.3秒造成1次伤害，持续3秒，共造成攻击力<color=#0abec5>&Param6&</color>的地系技能伤害。",
+                    "descJP": "スパクルの支援スキル持続中、ラビットボムを発射するたびにスパクルはエネルギーを獲得するようになる。\u000b支援スキル終了時、スパクルは全てのエネルギーを消費し、&Param4&秒間、エネルギー1につき自身の&Param2&が<color=#0abec5>&Param3&</color>増加する。\u000bその後、スーパーオートラビを走らせ敵に突撃し、攻撃力の<color=#0abec5>&Param5&</color>の地属性のスキルダメージを与え、スリップを付与する。\u000bスリップ：3秒間、0.3秒ごとに1回ダメージを与え、合計攻撃力の<color=#0abec5>&Param6&</color>の地属性のスキルダメージを与える。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 「&Param1&」 기간 중 「토끼 폭죽」을 발사할 때마다 스파클이 SP를 축적한다. \u000b지원 스킬 종료 시 스파클은 모든 SP를 소모하고, SP 1포인트마다 자신의 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다. &Param4&초간 지속된다. \u000b이후 휠체어를 움직여 목표에게 돌진하며 공격력 <color=#0abec5>&Param5&</color>의 땅 속성 스킬 피해를 입히고, 출혈을 부여해 0.3초마다 피해를 입힌다. 출혈은 3초간 지속되며 총 공격력 <color=#0abec5>&Param6&</color>의 땅 속성 스킬 피해를 입힌다.\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Homing Bunny Volley",
+                        "Skill DMG",
+                        "1.2%",
+                        5,
+                        "61.2%/70.4%/79.5%/107.1%/115.6%/124.2%/141.3%/148.7%/156%/170.7%/182.9%/195.2%/207.4%",
+                        "73.4%/84.4%/95.5%/128.5%/138.8%/149.1%/169.6%/178.4%/187.2%/204.9%/219.5%/234.2%/248.9%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        },
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_22",
+                    "rarity": "core"
+                },
+                {
+                    "id": 514023,
+                    "name": "Covering Fire",
+                    "nameCN": "火力援护",
+                    "nameJP": "アフターサービス",
+                    "nameKR": "화력 지원",
+                    "desc": "Increases Sparkla's &Param4& by <color=#0abec5>&Param5&</color>.\u000bWhen &Param1& (Support Skill) ends, Sparkla follows the Terra Main Trekker for <color=#0abec5>&Param2&</color>s and provides fire support, dealing <color=#0abec5>&Param3&</color> of ATK as Terra Auto Attack DMG to the target.",
+                    "descCN": "斯帕克拉的&Param4&提升<color=#0abec5>&Param5&</color>。\u000b援护技「&Param1&」结束后，斯帕克拉会持续跟随地系主控角色，持续<color=#0abec5>&Param2&</color>秒。跟随期间斯帕克拉发射子弹攻击目标，造成攻击力<color=#0abec5>&Param3&</color>的地系普攻伤害。",
+                    "descJP": "スパクルの&Param4&が<color=#0abec5>&Param5&</color>増加する。\u000bスパクルの支援スキル終了後、スパクルは地属性の主力巡遊者に<color=#0abec5>&Param2&</color>秒間、持続的に追従する。追従中、スパクルは弾丸を発射して敵に攻撃力の<color=#0abec5>&Param3&</color>の地属性の通常攻撃ダメージを与える。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "스파클의 &Param4_kr1& <color=#0abec5>&Param5&</color> 증가한다.\u000b지원 스킬 「&Param1&」 종료 후 스파클은 <color=#0abec5>&Param2&</color>초간 지속적으로 땅 속성 메인 캐릭터를 따라다닌다. 따라다니는 기간에 스파클은 총알을 발사해 목표를 공격하여 공격력 <color=#0abec5>&Param3&</color>의 땅 속성 일반 공격 피해를 입힌다.\u000bParam4: &Param4& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [
+                        "Auto Attack (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Auto Attack Damage (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Homing Bunny Volley",
+                        8,
+                        "94.3%/108.5%/122.6%/165.1%/178.3%/191.5%/217.9%/229.2%/240.6%/263.2%/282.1%/300.9%/319.8%",
+                        "Auto Attack Damage",
+                        "20%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {},
+                        {
+                            "damageType": "Auto Attack (from Skill, scale with Skill)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_23",
+                    "rarity": "core"
+                },
+                {
+                    "id": 514024,
+                    "name": "Incendiary Volley",
+                    "nameCN": "火力投射",
+                    "nameJP": "創造の力",
+                    "nameKR": "화력 포격",
+                    "desc": "When Sparkla is on the battlefield, deals <color=#0abec5>&Param2&</color> of ATK as AoE Terra Auto Attack DMG to targets every 3.5s.\u000bFor each Terra Trekker in the squad, increases the &Param3& of this effect by <color=#0abec5>&Param4&</color>.",
+                    "descCN": "斯帕克拉在场时，每3.5秒对目标造成攻击力<color=#0abec5>&Param2&</color>的范围地系普攻伤害。\u000b队伍中每个地系角色，使该效果造成的&Param3&提升<color=#0abec5>&Param4&</color>。",
+                    "descJP": "スパクルがフィールドにいる時、3.5秒ごとに敵に攻撃力の<color=#0abec5>&Param2&</color>の地属性の通常攻撃ダメージを与える。\u000bチーム内の地属性の巡遊者1体につき、この攻撃で与える&Param3&が<color=#0abec5>&Param4&</color>増加する。",
+                    "descKR": "스파클이 필드에 있을 때 3.5초마다 목표에게 공격력 <color=#0abec5>&Param2&</color>의 땅 속성 범위 일반 공격 피해를 입힌다. \u000b팀 내 땅 속성 캐릭터마다 해당 효과가 입히는 &Param3_kr1& <color=#0abec5>&Param4&</color> 증가한다.\u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [
+                        "Auto Attack (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Auto Attack Damage (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "",
+                        "20.8%/24%/27.1%/36.5%/39.4%/42.3%/48.1%/50.6%/53.1%/58.1%/62.3%/66.4%/70.6%",
+                        "Auto Attack Damage",
+                        "10%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "damageType": "Auto Attack (from Skill, scale with Skill)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_24",
+                    "rarity": "core"
+                }
+            ],
+            "supportNormal": [
+                {
+                    "id": 514025,
+                    "name": "Furball Fusillade",
+                    "nameCN": "兔兔集束",
+                    "nameJP": "サポラビ効果",
+                    "nameKR": "토끼 집속탄",
+                    "desc": "When Sparkla casts &Param1& (Support Skill), deals <color=#ec6d21>&Param2&</color> of ATK as AoE Terra Skill DMG to nearby targets.",
+                    "descCN": "斯帕克拉施放援护技「&Param1&」时，对自身周围的目标造成攻击力<color=#ec6d21>&Param2&</color>的范围地系技能伤害。",
+                    "descJP": "スパクルの支援スキル発動時、自身の周囲の敵に攻撃力の<color=#ec6d21>&Param2&</color>の地属性のスキルダメージを与える。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "스파클이 지원 스킬 「&Param1&」 시전 시, 자신 주변의 목표에게 공격력 <color=#ec6d21>&Param2&</color>의 땅 속성 범위 스킬 피해를 입힌다.",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Homing Bunny Volley",
+                        "36.6%/58.5%/80.5%/102.4%/124.3%/146.3%/168.2%/190.2%/212.1%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "damageType": "Skill (from Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_25",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 514026,
+                    "name": "Bunny Blitz",
+                    "nameCN": "协兔爆发",
+                    "nameJP": "冒険のときめき",
+                    "nameKR": "토끼 협동 폭발",
+                    "desc": "When Sparkla casts &Param1& (Support Skill), increases her &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.",
+                    "descCN": "斯帕克拉施放援护技「&Param1&」时，自身的&Param2&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒。",
+                    "descJP": "スパクルの支援スキル発動時、&Param4&秒間、自身の&Param2&が<color=#ec6d21>&Param3&</color>上昇する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "스파클이 지원 스킬 「&Param1&」 시전 시, 자신의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속된다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Homing Bunny Volley",
+                        "ATK",
+                        "20%/32%/44%/56%/68%/80%/92%/104%/116%",
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_21",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514027,
+                    "name": "Gauge Overdrive",
+                    "nameCN": "刻度爆表",
+                    "nameJP": "夢を叶えるランプ",
+                    "nameKR": "계측 한계 초과",
+                    "desc": "When Bunny Firework triggers a ##Terra Mark#1020#, increases Sparkla's &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s, up to &Param5& stacks.\u000bParam1: &Param1& (Skill,Title)",
+                    "descCN": "「兔兔礼花」触发##地系印记#1020#时，斯帕克拉的&Param2&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒，可叠加&Param5&层。\u000bParam1: &Param1& (Skill,Title)",
+                    "descJP": "ラビットボムが##地属性の印#1020#を発動させた時、&Param4&秒間、スパクルの&Param2&が<color=#ec6d21>&Param3&</color>増加する。この効果は&Param5&回まで重複する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "「토끼 폭죽」이 ##땅 속성 표식#1020#을 발동하면, 스파클의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "Terra DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Homing Bunny Volley",
+                        "Terra DMG",
+                        "4.2%/6.7%/9.3%/11.8%/14.3%/16.9%/19.4%/22%/24.5%",
+                        7,
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "Terra DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Terra DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_21",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514028,
+                    "name": "Bunny Munitions Boost",
+                    "nameCN": "兔兔弹强化",
+                    "nameJP": "弾丸アップデート",
+                    "nameKR": "토끼탄 강화",
+                    "desc": "Sparkla's bullets can pierce through targets, and their &Param1& is increased by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "斯帕克拉的子弹可穿透目标，造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "スパクルの弾丸が敵を貫通するようになり、与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "스파클의 총알이 목표를 관통할 수 있고, 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Auto Attack Damage (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Auto Attack Damage",
+                        "16.2%/26%/35.7%/45.5%/55.2%/65%/74.7%/84.5%/94.2%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_28",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 514030,
+                    "name": "Pressure Surge",
+                    "nameCN": "膛压渐升",
+                    "nameJP": "圧力上昇中",
+                    "nameKR": "압력 상승",
+                    "desc": "When &Param1& (Support Skill) ends, increases Sparkla's &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.",
+                    "descCN": "援护技「&Param1&」结束后，斯帕克拉的&Param2&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒。",
+                    "descJP": "スパクルの支援スキル終了後、&Param4&秒間、スパクルの&Param2&が<color=#ec6d21>&Param3&</color>増加する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 「&Param1&」 종료 후, 스파클의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속된다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Homing Bunny Volley",
+                        "Auto Attack Damage",
+                        "16.7%/26.8%/36.8%/46.9%/56.9%/67%/77%/87.1%/97.1%",
+                        8
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_23",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514031,
+                    "name": "Artisan's Pride",
+                    "nameCN": "工匠的自傲",
+                    "nameJP": "発明家のプライド",
+                    "nameKR": "장인의 자부심",
+                    "desc": "Increases Sparkla's &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "斯帕克拉的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "スパクルの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "스파클의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_11",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514032,
+                    "name": "Prodigy's Oath",
+                    "nameCN": "以天才之名",
+                    "nameJP": "無限のアイデア",
+                    "nameKR": "천재의 이름으로",
+                    "desc": "Increases Sparkla's &Param2& by &Param3&.\u000bWhen &Param1& (Ultimate) ends, increases Sparkla's &Param4& by <color=#ec6d21>&Param5&</color> for &Param6&s.",
+                    "descCN": "斯帕克拉的&Param2&提升&Param3&。\u000b绝招「&Param1&」结束时，斯帕克拉的&Param4&提升<color=#ec6d21>&Param5&</color>，持续&Param6&秒。",
+                    "descJP": "スパクルの&Param2&が&Param3&増加する。\u000bスパクルの必殺技終了時、&Param6&秒間、スパクルの&Param4&が<color=#ec6d21>&Param5&</color>増加する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "스파클의 &Param2_kr1& &Param3& 증가한다. \u000b필살기 「&Param1&」 종료 시, 스파클의 &Param4_kr1& <color=#ec6d21>&Param5&</color> 증가한다. &Param6&초간 지속된다.\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Skill DMG",
+                        "Terra DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon",
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "All-Out Bunny Barrage",
+                        "Skill DMG",
+                        "20%",
+                        "Terra DMG",
+                        "24%/38.4%/52.8%/67.2%/81.6%/96%/110.4%/124.8%/139.2%",
+                        15
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Terra DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Terra DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_14",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514029,
+                    "name": "Rabbit's Watch",
+                    "nameCN": "兔子的钟表",
+                    "nameJP": "白ウサギの時計",
+                    "nameKR": "토끼의 시계",
+                    "desc": "While Sparkla is on the battlefield, increases her &Param1& by <color=#ec6d21>&Param2&</color> per second, up to &Param3& stacks.\u000bThis effect will be removed when she leaves the battlefield.",
+                    "descCN": "斯帕克拉在场时，自身的&Param1&每秒提升<color=#ec6d21>&Param2&</color>，可叠加&Param3&层。\u000b该效果在斯帕克拉离场时清除。",
+                    "descJP": "スパクルがフィールドにいる時、時間経過とともに自身の&Param1&が<color=#ec6d21>&Param2&</color>増加する。\u000bこの効果は&Param3&回重複でき、フィールドから離れるとリセットされる。",
+                    "descKR": "스파클이 필드에 있을 때 자신의 &Param1_kr1& 1초마다 <color=#ec6d21>&Param2&</color> 증가한다. 최대 &Param3&스택 중첩된다.\u000b해당 효과는 스파클이 필드를 떠날 때 제거된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Auto Attack Damage",
+                        "0.7%/1.1%/1.5%/1.9%/2.3%/2.8%/3.2%/3.6%/4%",
+                        15
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "14001_Potential_23",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 514033,
+                    "name": "Max Overclock",
+                    "nameCN": "超频运转",
+                    "nameJP": "オーバークロック",
+                    "nameKR": "과부하 가동",
+                    "desc": "Increases the &Param1& of Terra Trekkers in the squad by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "队伍中地系角色的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "チーム内の地属性巡遊者の&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "팀 내 땅 속성 캐릭터의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "7.5%/12%/16.5%/21%/25.5%/30%/34.5%/39%/43.5%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Skill DMG",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_15",
+                    "corner": "Round",
+                    "rarity": "rare"
+                }
+            ]
+        },
+        "talent": [
+            {
+                "name": "Genius Artisan",
+                "boost": [
+                    {
+                        "name": "Genius Artisan",
+                        "nameCN": "天才工匠",
+                        "nameJP": "天才マイスター",
+                        "nameKR": "천재 장인",
+                        "desc": "When Sparkla triggers a ##Terra Mark#1020#, increases her ATK by <color=#0abec5>&Param1&</color> for &Param2&s, up to &Param3& stacks.",
+                        "descCN": "斯帕克拉触发##地系印记#1020#后，攻击力提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，可叠加&Param3&层。",
+                        "descJP": "スパクルが##地属性の印#1020#を発動させた後の&Param2&秒間、攻撃力が<color=#0abec5>&Param1&</color>上昇する。この効果は&Param3&回まで重複できる。",
+                        "descKR": "스파클이 ##땅 속성 표식#1020#을 발동한 후, 공격력이 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속되며, 최대 &Param3&스택 중첩된다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "5%",
+                            8,
+                            4
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Blacklist",
+                "boost": [
+                    {
+                        "name": "Blacklist",
+                        "nameCN": "拉黑名单",
+                        "nameJP": "ブラックリスト",
+                        "nameKR": "블랙리스트",
+                        "desc": "When Sparkla deals DMG, increases her Skill DMG by <color=#0abec5>&Param1&</color> for &Param2&s, up to &Param3& stacks.",
+                        "descCN": "斯帕克拉造成伤害时，技能伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，可叠加&Param3&层。",
+                        "descJP": "スパクルがダメージを与えた後の&Param2&秒間、スキルダメージが<color=#0abec5>&Param1&</color>増加する。この効果は&Param3&回まで重複できる。",
+                        "descKR": "스파클이 피해를 입힐 때 스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속되며, 최대 &Param3&스택 중첩된다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "3.8%",
+                            4,
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Invention Blueprint",
+                "boost": [
+                    {
+                        "name": "Invention Blueprint",
+                        "nameCN": "发明蓝图",
+                        "nameJP": "奇跡の設計図",
+                        "nameKR": "발명가의 설계도",
+                        "desc": "When Sparkla casts a skill, increases her ATK by <color=#0abec5>&Param1&</color> for &Param2&s.",
+                        "descCN": "斯帕克拉施放技能时，攻击力提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
+                        "descJP": "スパクルがスキルを発動した後の&Param2&秒間、攻撃力が<color=#0abec5>&Param1&</color>上昇する。",
+                        "descKR": "스파클이 스킬을 시전할 때 공격력이 <color=#0abec5>&Param1&</color> 증가하며 &Param2&초간 지속된다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "20%",
+                            18
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Fairy Tale Friends",
+                "boost": [
+                    {
+                        "name": "Fairy Tale Friends",
+                        "nameCN": "童话中的朋友",
+                        "nameJP": "童話のお友達",
+                        "nameKR": "동화 속 친구",
+                        "desc": "When any Trekker applies a ##Terra Mark#1020# to a target, increases Sparkla's Terra DMG by <color=#0abec5>&Param1&</color> for &Param2&s, up to &Param3& stacks.",
+                        "descCN": "任意角色对目标附加##地系印记#1020#后，斯帕克拉地系伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，可叠加&Param3&层。",
+                        "descJP": "チーム内の巡遊者が敵に##地属性の印#1020#付与後の&Param2&秒間、スパクルの地属性ダメージが<color=#0abec5>&Param1&</color>増加する。この効果は&Param3&回まで重複できる。",
+                        "descKR": "캐릭터가 목표에게 ##땅 속성 표식#1020#을 부여한 후 스파클의 땅 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속되며, 최대 &Param3&스택 중첩된다.",
+                        "effectType": [
+                            "Terra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "4%",
+                            5,
+                            5
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Terra DMG (base)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Rhymes of the Wonderbox",
+                "boost": [
+                    {
+                        "name": "Rhymes of the Wonderbox",
+                        "nameCN": "盒中的童谣",
+                        "nameJP": "ラボラビの子守歌",
+                        "nameKR": "상자 속 동요",
+                        "desc": "Increases the Terra DMG dealt by Sparkla to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "斯帕克拉对精英及以上目标造成的地系伤害提升<color=#0abec5>&Param1&</color>。",
+                        "descJP": "スパクルはエリート以上の敵に与える地属性ダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "스파클이 정예 이상 목표에게 입히는 땅 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [],
+                        "addAttrType": [
+                            "Terra DMG (base)"
+                        ],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "24%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "addAttrType": "Terra DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Skill DMG Boost",
+                        "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
+                        "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Skill DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Skill DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "stat": [
+            {
+                "Level": 1,
+                "HP": 807,
+                "ATK": 114,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 2,
+                "HP": 1049,
+                "ATK": 148,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 3,
+                "HP": 1291,
+                "ATK": 182,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 4,
+                "HP": 1533,
+                "ATK": 216,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 5,
+                "HP": 1775,
+                "ATK": 250,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 6,
+                "HP": 2017,
+                "ATK": 284,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 7,
+                "HP": 2259,
+                "ATK": 318,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 8,
+                "HP": 2502,
+                "ATK": 352,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 9,
+                "HP": 2744,
+                "ATK": 386,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 2986,
+                "ATK": 420,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 3583,
+                "ATK": 504,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 11,
+                "HP": 3825,
+                "ATK": 538,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 12,
+                "HP": 4067,
+                "ATK": 572,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 13,
+                "HP": 4309,
+                "ATK": 606,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 14,
+                "HP": 4551,
+                "ATK": 640,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 15,
+                "HP": 4793,
+                "ATK": 674,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 16,
+                "HP": 5035,
+                "ATK": 708,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 17,
+                "HP": 5278,
+                "ATK": 742,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 18,
+                "HP": 5520,
+                "ATK": 776,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 19,
+                "HP": 5762,
+                "ATK": 811,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 6004,
+                "ATK": 845,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 7206,
+                "ATK": 1014,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 21,
+                "HP": 7448,
+                "ATK": 1048,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 22,
+                "HP": 7690,
+                "ATK": 1082,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 23,
+                "HP": 7932,
+                "ATK": 1116,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 24,
+                "HP": 8175,
+                "ATK": 1150,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 25,
+                "HP": 8417,
+                "ATK": 1184,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 26,
+                "HP": 8659,
+                "ATK": 1218,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 27,
+                "HP": 8901,
+                "ATK": 1252,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 28,
+                "HP": 9143,
+                "ATK": 1286,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 29,
+                "HP": 9385,
+                "ATK": 1320,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 9627,
+                "ATK": 1354,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 11556,
+                "ATK": 1626,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 31,
+                "HP": 11798,
+                "ATK": 1660,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 32,
+                "HP": 12040,
+                "ATK": 1694,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 33,
+                "HP": 12282,
+                "ATK": 1728,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 34,
+                "HP": 12524,
+                "ATK": 1762,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 35,
+                "HP": 12766,
+                "ATK": 1796,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 36,
+                "HP": 13008,
+                "ATK": 1830,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 37,
+                "HP": 13250,
+                "ATK": 1864,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 38,
+                "HP": 13492,
+                "ATK": 1898,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 39,
+                "HP": 13734,
+                "ATK": 1932,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 13977,
+                "ATK": 1966,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 16769,
+                "ATK": 2359,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 41,
+                "HP": 17011,
+                "ATK": 2393,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 42,
+                "HP": 17253,
+                "ATK": 2427,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 43,
+                "HP": 17495,
+                "ATK": 2461,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 44,
+                "HP": 17737,
+                "ATK": 2495,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 45,
+                "HP": 17979,
+                "ATK": 2529,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 46,
+                "HP": 18221,
+                "ATK": 2563,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 47,
+                "HP": 18463,
+                "ATK": 2597,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 48,
+                "HP": 18705,
+                "ATK": 2631,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 49,
+                "HP": 18947,
+                "ATK": 2665,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 19190,
+                "ATK": 2700,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 23031,
+                "ATK": 3240,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 51,
+                "HP": 23273,
+                "ATK": 3274,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 52,
+                "HP": 23515,
+                "ATK": 3308,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 53,
+                "HP": 23757,
+                "ATK": 3342,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 54,
+                "HP": 23999,
+                "ATK": 3376,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 55,
+                "HP": 24241,
+                "ATK": 3410,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 56,
+                "HP": 24483,
+                "ATK": 3444,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 57,
+                "HP": 24725,
+                "ATK": 3478,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 58,
+                "HP": 24967,
+                "ATK": 3512,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 59,
+                "HP": 25209,
+                "ATK": 3546,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 25452,
+                "ATK": 3580,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 30543,
+                "ATK": 4297,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 61,
+                "HP": 30786,
+                "ATK": 4331,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 62,
+                "HP": 31028,
+                "ATK": 4365,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 63,
+                "HP": 31270,
+                "ATK": 4399,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 64,
+                "HP": 31512,
+                "ATK": 4433,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 65,
+                "HP": 31754,
+                "ATK": 4467,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 66,
+                "HP": 31996,
+                "ATK": 4501,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 67,
+                "HP": 32238,
+                "ATK": 4535,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 68,
+                "HP": 32480,
+                "ATK": 4569,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 69,
+                "HP": 32722,
+                "ATK": 4603,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 32964,
+                "ATK": 4637,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 39557,
+                "ATK": 5565,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 71,
+                "HP": 39799,
+                "ATK": 5599,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 72,
+                "HP": 40041,
+                "ATK": 5633,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 73,
+                "HP": 40283,
+                "ATK": 5667,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 74,
+                "HP": 40526,
+                "ATK": 5701,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 75,
+                "HP": 40768,
+                "ATK": 5735,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 76,
+                "HP": 41010,
+                "ATK": 5769,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 77,
+                "HP": 41252,
+                "ATK": 5803,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 78,
+                "HP": 41494,
+                "ATK": 5837,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 79,
+                "HP": 41736,
+                "ATK": 5871,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 41978,
+                "ATK": 5905,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 50370,
+                "ATK": 7086,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 81,
+                "HP": 50613,
+                "ATK": 7120,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 82,
+                "HP": 50855,
+                "ATK": 7154,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 83,
+                "HP": 51097,
+                "ATK": 7188,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 84,
+                "HP": 51339,
+                "ATK": 7222,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 85,
+                "HP": 51581,
+                "ATK": 7256,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 86,
+                "HP": 51823,
+                "ATK": 7290,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 87,
+                "HP": 52065,
+                "ATK": 7324,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 88,
+                "HP": 52307,
+                "ATK": 7358,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 89,
+                "HP": 52549,
+                "ATK": 7392,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 90,
+                "HP": 52791,
+                "ATK": 7426,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 91,
+                "HP": 52791,
+                "ATK": 7426,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Wick": 5,
+                "Dorra": 7900
+            },
+            {
+                "Faint Wick": 5,
+                "Lumen Essence": 10,
+                "Dorra": 19800
+            },
+            {
+                "Faint Wick": 10,
+                "Lumen Essence": 15,
+                "Dorra": 44400
+            },
+            {
+                "Faint Wick": 15,
+                "Lumen Essence": 25,
+                "Dorra": 66600
+            },
+            {
+                "Faint Wick": 20,
+                "Lumen Essence": 40,
+                "Dorra": 146100
+            },
+            {
+                "Faint Wick": 30,
+                "Lumen Essence": 55,
+                "Eternal Gloom Core": 20,
+                "Dorra": 291600
+            },
+            {
+                "Lumen Essence": 75,
+                "Eternal Gloom Core": 30,
+                "Dorra": 560200
+            },
+            {
+                "Lumen Essence": 95,
+                "Eternal Gloom Core": 50,
+                "Dorra": 1121300
+            }
+        ],
+        "skillUpgrade": [
+            {
+                "Kung Fu Game Cartridge": 6,
+                "Chess Piece of Skill": 2,
+                "Dorra": 13300
+            },
+            {
+                "Kung Fu Game Cartridge": 12,
+                "Chess Piece of Skill": 6,
+                "Dorra": 17600
+            },
+            {
+                "Kung Fu Game Cartridge": 24,
+                "Fighting Game Cartridge": 3,
+                "Chess Piece of Skill": 10,
+                "Dorra": 49800
+            },
+            {
+                "Kung Fu Game Cartridge": 38,
+                "Fighting Game Cartridge": 8,
+                "Chess Piece of Skill": 24,
+                "Dorra": 100000
+            },
+            {
+                "Kung Fu Game Cartridge": 70,
+                "Fighting Game Cartridge": 14,
+                "Phantom Game Cartridge": 6,
+                "Chess Piece of Skill": 55,
+                "Dorra": 400000
+            },
+            {
+                "Forest Elf Fang": 1,
+                "Fighting Game Cartridge": 50,
+                "Phantom Game Cartridge": 18,
+                "Chess Piece of Skill": 232,
+                "Dorra": 900000
+            },
+            {
+                "Forest Elf Fang": 2,
+                "Fighting Game Cartridge": 90,
+                "Phantom Game Cartridge": 34,
+                "Chess Piece of Skill": 323,
+                "Dorra": 1600000
+            },
+            {
+                "Forest Elf Fang": 3,
+                "Fighting Game Cartridge": 140,
+                "Phantom Game Cartridge": 50,
+                "Chess Piece of Skill": 478,
+                "Dorra": 2300000
+            },
+            {
+                "Forest Elf Fang": 6,
+                "Fighting Game Cartridge": 200,
+                "Phantom Game Cartridge": 70,
+                "Chess Piece of Skill": 927,
+                "Dorra": 3400000
+            }
+        ]
+    },
     "141": {
         "id": 141,
         "name": "Chixia",
@@ -97395,10 +101357,10 @@
                     "nameCN": "漱影落振",
                     "nameJP": "影隠れの型",
                     "nameKR": "그림자 낙하",
-                    "desc": "Chitose can dodge one more time.\u000bHer &Param1& is increased by <color=#ec6d21>&Param2&</color>. After dodging or casting Torrent Flash (Main Skill), she can deliver the last strike of her Auto Attack immediately, and if this Auto Attack deals DMG, she gains 5 stacks of Edge. This effect triggers once per second.\u000bEdge: While this effect is active, increases the &Param3& of Chitose's first 5 Auto Attacks by <color=#ec6d21>&Param4&</color>. Chitose loses 1 stack after completing the first 5 Auto Attacks.\u000bParam7: &Param7& (OnceAdditionalAttribute,AttributeType1) \u000bParam8: &Param8& (OnceAdditionalAttribute,Value1)",
+                    "desc": "Chitose can dodge one more time.\u000bHer &Param1& is increased by <color=#ec6d21>&Param2&</color>. After dodging or casting Torrent Flash (Main Skill), she can deliver the last strike of her Auto Attack immediately, and if this Auto Attack deals DMG, she gains 5 stacks of Edge. This effect triggers once per second.\u000bEdge: While this effect is active, increases the &Param3& of Chitose's first 5 Auto Attacks by <color=#ec6d21>&Param4&</color>. Chitose loses 1 stack after completing each one of the first 5 Auto Attacks.\u000bParam7: &Param7& (OnceAdditionalAttribute,AttributeType1) \u000bParam8: &Param8& (OnceAdditionalAttribute,Value1)",
                     "descCN": "千都世闪避次数提升1次。\u000b&Param1&提升<color=#ec6d21>&Param2&</color>，施放主控技「泷闪」或闪避后可直接施放最后一段普攻。最后一段普攻造成伤害时，获得5层「锋决」，该效果每秒可触发1次。\u000b「锋决」：该效果存在时，前5段普攻造成的&Param3&提升<color=#ec6d21>&Param4&</color>，每次施放前5段普攻后消耗1层。\u000bParam7: &Param7& (OnceAdditionalAttribute,AttributeType1) \u000bParam8: &Param8& (OnceAdditionalAttribute,Value1)",
                     "descJP": "チトセの回避の発動可能回数が1回増加する。\u000b&Param1&が<color=#ec6d21>&Param2&</color>増加する。主力スキルか回避発動後、次の通常攻撃は最終撃を発動するようになる。チトセの最終撃でダメージを与えた時、自身は瞬刃を5獲得する、この効果は1秒ごとに1回発動できる。瞬刃を保有している時、通常攻撃の1撃目から5撃目まで与える&Param3&が<color=#ec6d21>&Param4&</color>増加し、通常攻撃の1撃目から5撃目は、発動するたびに瞬刃を1消費する。\u000bParam7: &Param7& (OnceAdditionalAttribute,AttributeType1) \u000bParam8: &Param8& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "치토세의 회피 횟수가 1회 증가한다. \u000b&Param1&가 <color=#ec6d21>&Param2&</color> 증가하고, 메인 스킬 「여울빛」을 시전하거나, 회피 후 마지막 단계 일반 공격을 즉시 시전한다. 마지막 단계 일반 공격이 피해를 입히면 「칼날의 결단」 5스택을 획득한다. 해당 효과는 1초마다 최대 1회 발동한다. \u000b「칼날의 결단」: 해당 효과를 보유하면 첫 5단계 일반 공격이 입히는 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 첫 5단계 일반 공격을 시전한 후 1스택을 소모한다.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam7: &Param7& (OnceAdditionalAttribute,AttributeType1) \u000bParam8: &Param8& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "치토세의 회피 횟수가 1회 증가한다. \u000b&Param1&가 <color=#ec6d21>&Param2&</color> 증가하고, 메인 스킬 「여울빛」을 시전하거나, 회피 후 마지막 단계 일반 공격을 즉시 시전한다. 마지막 단계 일반 공격이 피해를 입히면 「칼날의 결단」 5스택을 획득한다. 해당 효과는 1초마다 최대 1회 발동한다. \u000b「칼날의 결단」: 해당 효과를 보유하면 첫 5단계 일반 공격이 입히는 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 첫 5단계 일반 공격을 시전 시 1단계마다 1스택을 소모한다.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam7: &Param7& (OnceAdditionalAttribute,AttributeType1) \u000bParam8: &Param8& (OnceAdditionalAttribute,Value1)",
                     "damageType": [],
                     "effectType": [
                         "Auto Attack Damage (base)"
