@@ -435,6 +435,13 @@ const BULLET_TYPE = {
     5: 'EnergyGun',
 };
 
+const CHARGE_RATE_TYPE = {
+    1: 'Super High',
+    2: 'High',
+    3: 'Medium',
+    4: 'Low',
+};
+
 function collectParamsFrom(obj) {
     if (!obj) return [];
 
@@ -957,4 +964,5 @@ module.exports = {
     MONSTER_EPIC_TYPE,
     CHARACTER_ATTACK_TYPE,
     BULLET_TYPE,
+    CHARGE_RATE_TYPE,
 };
