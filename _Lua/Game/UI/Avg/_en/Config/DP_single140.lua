@@ -43,7 +43,7 @@ return {
 			"",
 			false,
 			"",
-			"呵呵，這下又找到靈感了。",
+			"Heh. Inspiration strikes again.",
 			""
 		}
 	},
@@ -57,7 +57,7 @@ return {
 			"",
 			false,
 			"",
-			"接下來三天…不，兩天，我可能會走不開。當然，如果有急事找我的話，隨時聯絡喔～",
+			"I'll be completely swamped for the next three... Actually, two days. But if it's an emergency, my line is always open.",
 			""
 		}
 	},
@@ -105,7 +105,7 @@ return {
 			"",
 			false,
 			"",
-			"收獲了不少有趣的材料。",
+			"Got my hands on some fascinating materials.",
 			""
 		}
 	},
@@ -119,7 +119,7 @@ return {
 			"",
 			false,
 			"",
-			"嗯…有些似乎也在我的需求清單上。能不能商量一下，分我一點怎麼樣？",
+			"Hmm... A few of those are actually on my own wishlist. Up for a trade?",
 			""
 		}
 	},

@@ -11715,7 +11715,7 @@ return {
 			"",
 			false,
 			"",
-			"Ten points for touching the relic without being consumed.",
+			"Ten points for calmly look for a breakthrough.",
 			""
 		}
 	},
@@ -11783,7 +11783,7 @@ return {
 			"",
 			false,
 			"",
-			"And since you made my body feel so light... I'll take off a point. Total Heresy Score: ninety-nine.",
+			"Ten points for touching the relic without being consumed.",
 			""
 		}
 	},
@@ -11839,7 +11839,7 @@ return {
 			"",
 			false,
 			"",
-			"Tyrant... \"Great ==SEX12==,\" next time we meet, I'm coming to collect that last point.",
+			"And since you made my body feel so light... I'll take off a point. Total Heresy Score: ninety-nine.",
 			""
 		}
 	},
@@ -11903,7 +11903,7 @@ return {
 			"",
 			false,
 			"",
-			"I can hardly wait.",
+			"I can hardly wait~",
 			""
 		}
 	},
