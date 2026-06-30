@@ -91,7 +91,7 @@ for (let id = 100; id <= 200; id++) {
             name: `${id} ${characterId[id] || ''}`,
             desc: '',
             star: 0,
-            element: '',
+            element: getElementFromSkillUpgrade(id) || '',
             class: '',
             attackType: '',
             style: '',
@@ -889,5 +889,22 @@ function getSpecialSkills(id) {
         params: params.every(v => v === params[0]) ? params[0] : params.join('/'),
         damageType: DAMAGE_TYPE[hitdamage.DamageType],
     };
+}
 
+function getElementFromSkillUpgrade(charId) {
+    const skillUpgrades = Object.keys(CHARACTERSKILLUPGRADE)
+        .filter(key => CHARACTERSKILLUPGRADE[key].Group === +charId);
+    if (!skillUpgrades || skillUpgrades.length === 0) return '';
+
+    const lastSkillUpgrade = CHARACTERSKILLUPGRADE[skillUpgrades[skillUpgrades.length - 1]];
+    const elementMap = {
+        0: 'Terra',
+        1: 'Umbra',
+        2: 'Ignis',
+        4: 'Ventus',
+        5: 'Lux',
+        6: 'Aqua'
+    };
+
+    return elementMap[`${lastSkillUpgrade.Tid1}`.slice(3, 4)] || '';
 }

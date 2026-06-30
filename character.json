@@ -23705,13 +23705,13 @@
                     "params": [
                         "19%/30%/41%/52%/63%/74%/85%/96%/107%",
                         "38%/60%/82%/104%/126%/148%/181%/203%/145%",
-                        "57%/89.99%/123%/156%/189%/221.99%/277%/310%/183%",
+                        "57%/90%/123%/156%/189%/222%/277%/310%/183%",
                         "76%/120%/164%/208%/252%/296%/373%/417%/221%",
-                        "95%/150%/205%/260%/315%/370%/468.99%/524%/259%",
-                        "114%/180%/246%/312%/378%/444%/564.99%/631%/296.99%",
-                        "132.99%/210%/287%/364%/441%/518%/660.99%/738%/334.99%",
-                        "151.99%/240%/328%/416%/504%/592%/756.99%/845%/372.99%",
-                        "170.99%/269.99%/369%/468%/567%/666%/853%/952%/410.99%",
+                        "95%/150%/205%/260%/315%/370%/469%/524%/259%",
+                        "114%/180%/246%/312%/378%/444%/565%/631%/297%",
+                        "133%/210%/287%/364%/441%/518%/661%/738%/335%",
+                        "152%/240%/328%/416%/504%/592%/757%/845%/373%",
+                        "171%/270%/369%/468%/567%/666%/853%/952%/411%",
                         "Skill DMG"
                     ],
                     "paramsTooltips": [
@@ -24057,13 +24057,13 @@
                     "params": [
                         "9%/14%/20%/25%/30%/35%/41%/46%/51%",
                         "18%/28%/40%/50%/60%/70%/82%/92%/102%",
-                        "27%/42%/60%/75%/89.99%/104.99%/123%/138%/153%",
+                        "27%/42%/60%/75%/90%/105%/123%/138%/153%",
                         "36%/56%/80%/100%/120%/140%/164%/184%/204%",
-                        "44.99%/70%/100%/125%/150%/175%/205%/230%/255%",
-                        "53.99%/84%/120%/150%/180%/210%/246%/276%/305.99%",
-                        "62.99%/98%/140%/175%/210%/245%/287%/322%/356.99%",
-                        "71.99%/112%/159.99%/200%/240%/280%/328%/368%/407.99%",
-                        "80.99%/126%/179.99%/225%/269.99%/315%/369%/414%/458.99%",
+                        "45%/70%/100%/125%/150%/175%/205%/230%/255%",
+                        "54%/84%/120%/150%/180%/210%/246%/276%/306%",
+                        "63%/98%/140%/175%/210%/245%/287%/322%/357%",
+                        "72%/112%/160%/200%/240%/280%/328%/368%/408%",
+                        "81%/126%/180%/225%/270%/315%/369%/414%/459%",
                         "Ultimate DMG"
                     ],
                     "paramsTooltips": [
@@ -27156,6 +27156,3988 @@
             },
             {
                 "Tidal Essence": 6,
+                "Barrage Game Cartridge": 200,
+                "Demon Bee Game Cartridge": 70,
+                "Chess Piece of Skill": 927,
+                "Dorra": 3400000
+            }
+        ]
+    },
+    "114": {
+        "id": 114,
+        "name": "Chaton",
+        "star": 5,
+        "element": "Ignis",
+        "class": "Vanguard",
+        "attackType": "Ranged",
+        "style": "Creative",
+        "force": "White Cat Troupe",
+        "tag": [
+            "Vanguard",
+            "Creative",
+            "White Cat Troupe"
+        ],
+        "cnCv": "Raby",
+        "jpCv": "Ayane Sakura",
+        "birthday": "August 5th",
+        "loveGift": [
+            "Love Candle",
+            "Blazing Wings",
+            "Fiery Honeypot",
+            "Rising Star",
+            "Emerging Talent",
+            "Shining Star",
+            "Summer Chill Crushed Ice",
+            "Fragrant Ice Delight",
+            "Sweet IceFurry"
+        ],
+        "hateGift": [
+            "Gilded Ceramic Bowl",
+            "Blossom Porcelain Cup",
+            "Mystic Potion Kettle"
+        ],
+        "date": [
+            {
+                "id": 114301,
+                "name": "Gimme Sugar",
+                "clue": "Visit the Dessert Shop to unlock",
+                "secondChoice": "Haven't had enough. Let's order some more."
+            },
+            {
+                "id": 114302,
+                "name": "Not Her Day",
+                "clue": "Visit the Market to unlock",
+                "secondChoice": "There's an event you can join in the game area."
+            }
+        ],
+        "fixedStat": {
+            "Charge Rate": "Super High",
+            "Energy Cost": "Medium",
+            "Attack Range": 8,
+            "Walk Speed": 4.875,
+            "Run Speed": 6.5,
+            "Bullet Type": "Rifle",
+            "Ammo": 30
+        },
+        "normalAtk": {
+            "id": 11410000,
+            "name": "Full-Auto Trigger",
+            "nameCN": "全自动扳机",
+            "nameJP": "オートトリガー",
+            "nameKR": "전자동 방아쇠",
+            "energyLimit": null,
+            "desc": "Fires rapidly at the target. Each shot deals <color=#fb8037>&Param1&</color> of ATK as Ignis Auto Attack DMG.\u000bMagazine contains 30 ammo.\u000bWhen Chaton is in the ##Evil Eye Unleashed#4035# state, upgrades &Param3& (Auto Attack) to Dark Burst, each shot dealing <color=#fb8037>&Param2&</color> of ATK as Ignis Ultimate DMG and consuming no ammo.",
+            "descCN": "向目标快速连射，每次造成攻击力<color=#fb8037>&Param1&</color>的火系普攻伤害。\u000b弹夹容量为30。\u000b##魔眼解放#4035#状态下，普攻「&Param3&」强化为「黑暗爆发」，每次造成攻击力<color=#fb8037>&Param2&</color>的火系绝招伤害，且不消耗弹药。",
+            "descJP": "敵に高速連射を行い、1回ごとに攻撃力の<color=#fb8037>&Param1&</color>の火属性の通常攻撃ダメージを与える。\u000b装弾数は30発。\u000b##魔眼解放#4035#状態中、通常攻撃が「インフィニティフレア」に変化する。\u000b「インフィニティフレア」：1回ごとに攻撃力の<color=#fb8037>&Param2&</color>の火属性の必殺技ダメージを与える。この攻撃は弾薬を消費しない。\u000bParam3: &Param3& (Skill,Title)",
+            "descKR": "빠른 속도로 목표를 연속 사격하여, 매회 공격력 <color=#fb8037>&Param1&</color>의 불 속성 일반 공격 피해를 입힌다. \u000b탄창 용량은 30이다. \u000b##마안 해방#4035# 상태에서 일반 공격 &Param3_kr1& 「암흑 폭발」로 강화되어 매회 공격력 <color=#fb8037>&Param2&</color>의 불 속성 필살기 피해를 입힌다. 또한 탄약을 소모하지 않는다.\u000bParam3: &Param3& (Skill,Title)",
+            "damageType": [
+                "Auto Attack (1.55e, from Normal attack, scale with Normal attack)",
+                "Ultimate (0.72e, from Ultimate, scale with Normal attack)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "20.7%/23.8%/26.9%/36.2%/39.1%/42%/47.8%/50.3%/52.7%/57.7%/61.8%/66%/70.1%",
+                "8.6%/9.9%/11.2%/15%/16.2%/17.4%/19.9%/20.9%/21.9%/24%/25.7%/27.4%/29.1%",
+                "Full-Auto Trigger"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Auto Attack (1.55e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Ultimate (0.72e, from Ultimate, scale with Normal attack)"
+                },
+                {}
+            ],
+            "icon": "11401_Normal"
+        },
+        "skill": {
+            "id": 11431000,
+            "name": "Sniper Operation",
+            "nameCN": "狙击作战",
+            "nameJP": "パイロディザスター",
+            "nameKR": "저격 작전",
+            "cooldown": "6s",
+            "energyLimit": 6.34,
+            "desc": "Chaton uses different attack methods depending on whether the skill button is tapped or held.\u000b<color=#0abec5>Tap:</color> activates ##Dark Ray#4036#.\u000bChaton fires a laser at the target, dealing <color=#fb8037>&Param1&</color> of ATK as Ignis Skill DMG and inflicting Dark Mark for &Param6&s. Chaton deals <color=#fb8037>&Param2&</color> of ATK as Ignis Skill DMG to targets inflicted with Dark Mark every 2s.\u000b<color=#0abec5>Hold:</color> activates ##Bouncing Kitty Bomb#4037#.\u000bChaton throws 2 Bouncing Bombs at the target, each dealing <color=#fb8037>&Param3&</color> of ATK as AoE Ignis Skill DMG. Bouncing Bombs then bounce to nearby targets, up to 5 times.\u000b&Param4& (Main Skill) can trigger ##Ignis Mark#1016# and generate Conflagration: deals &Param5& of ATK as Ignis Mark DMG.",
+            "descCN": "猫眼依据点按、长按，施放不同的攻击方式。\u000b<color=#0abec5>点按</color>时，发动##暗黑射线#4036#。\u000b猫眼向目标发射激光，造成攻击力<color=#fb8037>&Param1&</color>的火系技能伤害并施加「暗黑标记」，持续&Param6&秒。对附加「暗黑标记」的目标，每2秒造成攻击力<color=#fb8037>&Param2&</color>的火系技能伤害。\u000b<color=#0abec5>长按</color>时，发动##猫猫弹球#4037#。\u000b猫眼向目标投掷2枚「弹球炸弹」，每枚造成攻击力<color=#fb8037>&Param3&</color>的范围火系技能伤害，「弹球炸弹」随后弹向附近其他目标，最多弹射5次。\u000b主控技「&Param4&」可触发##火焰印记#1016#，产生「灼炎」：造成攻击力&Param5&的火系印记伤害。",
+            "descJP": "シャトンはスキルボタンの入力（タップまたは長押し）に応じて異なる攻撃を行う。\u000b<color=#0abec5>タップ時</color>\u000b##空に堕ちる焔#4036#が発動する。敵にポジトロンシュートを放ち、攻撃力の<color=#fb8037>&Param1&</color>の火属性のスキルダメージを与え、&Param6&秒間、魔痕を付与する。魔痕は付与された敵に対して、2秒ごとに攻撃力の<color=#fb8037>&Param2&</color>の火属性のスキルダメージを与える。\u000b<color=#0abec5>長押し時</color>\u000b##ネコ神への祈り#4037#が発動する。ネコ神爆弾2つ投擲し、1つごとに範囲内に攻撃力の<color=#fb8037>&Param3&</color>の火属性のスキルダメージを与える。ネコ神爆弾は敵に命中した後、近くの敵に最大5回まで跳ね返る。\u000b主力スキルは##火属性の印#1016#を発動させることができ、発動させると、灼炎を発生させ、周囲の敵に攻撃力の&Param5&の火属性の印ダメージを与える。\u000bParam4: &Param4& (Skill,Title)",
+            "descKR": "샤통이 짧게 누르기와 길게 누르기에 따라 다른 공격 방식을 시전한다. \u000b<color=#0abec5>짧게 누르면</color> ##암흑 레이저#4036#를 발동한다. \u000b샤통이 목표에게 레이저를 발사해 공격력 <color=#fb8037>&Param1&</color>의 불 속성 스킬 피해를 입히고, 「암흑 표식」을 부여한다. &Param6&초간 지속된다. 「암흑 표식」을 부여한 목표에게 2초마다 공격력 <color=#fb8037>&Param2&</color>의 불 속성 스킬 피해를 입힌다. \u000b<color=#0abec5>길게 누르면</color> ##냥냥 통통볼#4037#을 발동한다. \u000b샤통이 목표에게 「통통 폭탄」2개를 던져, 각 공격력 <color=#fb8037>&Param3&</color>의 불 속성 범위 스킬 피해를 입힌다. 이후 「통통 폭탄」이 주변 다른 목표에게 튕긴다. 최대 5회 튕길 수 있다. \u000b메인 스킬 &Param4_kr1& ##화염 표식#1016#을 발동할 수 있으며, 「작열하는 불꽃」을 생성해 공격력 &Param5&의 불 속성 표식 피해를 입힌다.\u000bParam4: &Param4& (Skill,Title)",
+            "damageType": [
+                "Skill (6.34e, from Skill, scale with Skill)",
+                "Skill (from Skill, scale with Skill)",
+                "Skill (3.17e, from Skill, scale with Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": [
+                "224%/257%/291%/391%/423%/454%/516%/543%/570%/624%/668%/713%/758%",
+                "64%/74%/83%/112%/121%/130%/148%/156%/163%/179%/191%/204%/217%",
+                "62%/72%/81%/109%/118%/127%/144%/152%/159%/174%/187%/199%/212%",
+                "Sniper Operation",
+                "28.7%/37.2%/45.8%/54.4%/63%/71.5%/80.1%/88.7%/97.2%",
+                14
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (6.34e, from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Skill (3.17e, from Skill, scale with Skill)"
+                },
+                {},
+                {
+                    "damageType": "Mark"
+                },
+                {
+                    "buffIcon": "No Icon"
+                }
+            ],
+            "icon": "11401_Skill_Main"
+        },
+        "supportSkill": {
+            "id": 11432000,
+            "name": "Blitz Assault",
+            "nameCN": "快速突击",
+            "nameJP": "ファントムロール",
+            "nameKR": "빠른 돌격",
+            "cooldown": "16s",
+            "desc": "Rolls toward the target and fires Penetrating Bullets, penetrating the target and dealing <color=#fb8037>&Param1&</color> of ATK as Ignis Skill DMG. This action is performed 3 times in succession.\u000b&Param2& (Support Skill) can trigger ##Ignis Mark#1016# and generate Conflagration: deals &Param3& of ATK as Ignis Mark DMG.",
+            "descCN": "向目标翻滚射击，发射「贯穿弹」，穿透目标造成攻击力<color=#fb8037>&Param1&</color>的火系技能伤害，此行动会连续进行3次。\u000b援护技「&Param2&」可触发##火焰印记#1016#，产生「灼炎」：造成攻击力&Param3&的火系印记伤害。",
+            "descJP": "敵に向かってローリングをしつつ、貫通弾を発射し、攻撃力の<color=#fb8037>&Param1&</color>の火属性のスキルダメージを与える。この行動は連続して3回行われる。\u000b支援スキルは##火属性の印#1016#を発動させることができ、発動させると、灼炎を発生させ、攻撃力の&Param3&の火属性の印ダメージを与える。\u000bParam2: &Param2& (Skill,Title)",
+            "descKR": "목표에게 구르기 사격하여 「관통 탄환」을 발사한다. 목표를 관통하며 공격력 <color=#fb8037>&Param1&</color>의 불 속성 스킬 피해를 입힌다. 해당 행동은 연속으로 3회 진행한다. \u000b지원 스킬 &Param2_kr1& ##화염 표식#1016#을 발동할 수 있으며, 「작열하는 불꽃」을 생성해 공격력 &Param3&의 불 속성 표식 피해를 입힌다.\u000bParam2: &Param2& (Skill,Title)",
+            "damageType": [
+                "Skill (from Skill, scale with Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "205.2%/236%/266.7%/359.1%/387.8%/416.6%/474%/498.6%/523.2%/572.5%/613.5%/654.5%/695.6%",
+                "Blitz Assault",
+                "28.7%/37.2%/45.8%/54.4%/63%/71.5%/80.1%/88.7%/97.2%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {},
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "11401_Skill_Support"
+        },
+        "ultimate": {
+            "id": 11440000,
+            "name": "Dark Evil Eye",
+            "nameCN": "暗黑魔眼",
+            "nameJP": "魔眼解放",
+            "nameKR": "암흑의 마안",
+            "cooldown": "30s",
+            "energy": 228,
+            "desc": "Unseals Evil Eye to inflict Cat Eye Mark on all nearby targets for &Param3&s, then sweep fires, dealing <color=#fb8037>&Param1& x8</color> of ATK as AoE Ignis Ultimate DMG and detonating Cat Eye Marks to deal <color=#fb8037>&Param2&</color> of ATK as Ignis Ultimate DMG.\u000b&Param4& (Ultimate) can trigger ##Ignis Mark#1016#, generating Conflagration: deals &Param5& of ATK as Ignis Mark DMG.\u000bAfter casting the Ultimate, Chaton enters the ##Evil Eye Unleashed#4035# state for &Param6&s while gaining Super Armor, enhancing her Auto Attacks to Dark Burst, increasing her &Param7& by &Param8& and her &Param9& by &Param10&.",
+            "descCN": "解封魔眼对周围所有目标施加「喵眼标记」，持续&Param3&秒，再扫射四周造成攻击力<color=#fb8037>&Param1&x8</color>的范围火系绝招伤害，随后引爆「喵眼标记」造成攻击力<color=#fb8037>&Param2&</color>的火系绝招伤害。\u000b绝招「&Param4&」可触发##火焰印记#1016#，产生「灼炎」：造成攻击力&Param5&的火系印记伤害。\u000b施放绝招后，猫眼进入##魔眼解放#4035#状态，持续&Param6&秒，期间猫眼获得霸体，普攻强化为「黑暗爆发」，&Param7&提升&Param8&，&Param9&提升&Param10&。",
+            "descJP": "シャトンはイビルアイを解き放つ。周囲のすべての敵に、&Param3&秒間持続するアビスグレアを付与し、さらに周囲を掃射して、範囲内に攻撃力の<color=#fb8037>&Param1&x8</color>の火属性の必殺技ダメージを与える。その後、アビスグレアを爆発させて攻撃力の<color=#fb8037>&Param2&</color>の火属性の必殺技ダメージを与える。\u000b必殺技は##火属性の印#1016#を発動させることができ、発動させると、灼炎を発生させ、攻撃力の&Param5&の火属性の印ダメージを与える。\u000b必殺技発動後、シャトンは&Param6&秒間、##魔眼解放##4035#状態に移行する。##魔眼解放##4035#状態持続中、シャトンはスーパーアーマーを獲得し、通常攻撃が「インフィニティフレア」に変化し、&Param7&が&Param8&増加し、&Param9&が&Param10&上昇する。\u000bParam4: &Param4& (Skill,Title)",
+            "descKR": "마안을 해방해 주변 모든 목표에게 「묘안 표식」을 부여한다. &Param3&초간 지속된다. 또한 주변을 난사해 공격력 <color=#fb8037>&Param1&x8</color>의 불 속성 범위 필살기 피해를 입힌다. 이후 「묘안 표식」을 폭발시켜 공격력 <color=#fb8037>&Param2&</color>의 불 속성 필살기 피해를 입힌다. \u000b필살기 &Param4_kr1& ##화염 표식#1016#을 발동할 수 있으며, 「작열하는 불꽃」을 생성해 공격력 &Param5&의 불 속성 표식 피해를 입힌다. \u000b필살기 시전 후, 샤통이 ##마안 해방#4035# 상태에 진입한다. &Param6&초간 지속된다. 기간 중 샤통은 저지 불가 상태를 획득하며, 일반 공격이 「암흑 폭발」로 강화되어 &Param7_kr1& &Param8& 증가하고, &Param9_kr1& &Param10& 증가한다.\u000bParam4: &Param4& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype) \u000bParam9: &Param9& (EffectValue,EffectTypeFirstSubtype)",
+            "damageType": [
+                "Ultimate (from Ultimate, scale with Ultimate)",
+                "Mark"
+            ],
+            "effectType": [
+                "ELEMENTTYPE_:(Ignis) Ultimate DMG",
+                "Movement Speed (%)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": [
+                "153%/176%/199%/268%/290%/311%/354%/372%/391%/428%/458%/489%/520%",
+                "180%/207%/234%/316%/341%/366%/417%/438%/460%/503%/539%/575%/611%",
+                15,
+                "Dark Evil Eye",
+                "28.7%/37.2%/45.8%/54.4%/63%/71.5%/80.1%/88.7%/97.2%",
+                15,
+                "Ultimate DMG",
+                "20%",
+                "Movement Speed",
+                "30%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
+                },
+                {
+                    "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
+                },
+                {
+                    "buffIcon": "No Icon"
+                },
+                {},
+                {
+                    "damageType": "Mark"
+                },
+                {
+                    "buffIcon": "No Icon"
+                },
+                {
+                    "effectType": "ELEMENTTYPE_:(Ignis) Ultimate DMG"
+                },
+                {
+                    "effectType": "ELEMENTTYPE_:(Ignis) Ultimate DMG"
+                },
+                {
+                    "effectType": "Movement Speed (%)"
+                },
+                {
+                    "effectType": "Movement Speed (%)"
+                }
+            ],
+            "icon": "11401_Ultra"
+        },
+        "potential": {
+            "mainCore": [
+                {
+                    "id": 511401,
+                    "name": "Area Explosion",
+                    "nameCN": "广域爆破",
+                    "nameJP": "昏き呼び声",
+                    "nameKR": "광역 폭파",
+                    "desc": "Each time a Bouncing Bomb lands, it deals an additional <color=#0abec5>&Param1&</color> of ATK as AoE Ignis Skill DMG.\u000bIncreases the &Param2& dealt by the Bouncing Bomb by <color=#0abec5>&Param3&</color>.",
+                    "descCN": "「弹球炸弹」每次落地时，额外造成攻击力<color=#0abec5>&Param1&</color>的范围火系技能伤害。\u000b「弹球炸弹」造成的&Param2&提升<color=#0abec5>&Param3&</color>。",
+                    "descJP": "ネコ神爆弾が着地するたび、範囲内に追加で攻撃力の<color=#0abec5>&Param1&</color>の火属性のスキルダメージを与える。\u000bネコ神爆弾が与える&Param2&が<color=#0abec5>&Param3&</color>増加する。",
+                    "descKR": "「통통 폭탄」이 땅에 떨어질 때마다 공격력 <color=#0abec5>&Param1&</color>의 불 속성 범위 스킬 피해를 추가로 입힌다. \u000b「통통 폭탄」이 입히는 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "7.4%/8.5%/9.7%/13%/14%/15.1%/17.2%/18%/18.9%/20.7%/22.2%/23.7%/25.2%",
+                        "Skill DMG",
+                        "25%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_01",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511402,
+                    "name": "Overwhelming Throw",
+                    "nameCN": "饱和投掷",
+                    "nameJP": "漆黒の帳",
+                    "nameKR": "포화 투척",
+                    "desc": "When holding &Param1& (Main Skill), Chaton throws <color=#0abec5>2</color> additional Bouncing Bombs.\u000bIncreases the &Param2& dealt by the Bouncing Bomb by <color=#0abec5>&Param3&</color>.",
+                    "descCN": "长按主控技「&Param1&」时，猫眼额外投掷<color=#0abec5>2</color>枚「弹球炸弹」。\u000b「弹球炸弹」造成的&Param2&提升<color=#0abec5>&Param3&</color>。",
+                    "descJP": "主力スキルを長押しした時、シャトンは追加で<color=#0abec5>2</color>つのネコ神爆弾を投擲する。\u000bネコ神爆弾が与える&Param2&が<color=#0abec5>&Param3&</color>増加する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "메인 스킬 &Param1_kr3& 길게 누르면 샤통이 「통통 폭탄」 <color=#0abec5>2</color>개를 추가로 투척한다. \u000b「통통 폭탄」이 입히는 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Sniper Operation",
+                        "Skill DMG",
+                        "25%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_02",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511403,
+                    "name": "Meowth's Curse",
+                    "nameCN": "喵神诅咒",
+                    "nameJP": "ネコ神の呪い",
+                    "nameKR": "야옹신의 저주",
+                    "desc": "Reduces Dark Mark's Attack Interval by <color=#0abec5>50%</color>.\u000bIncreases Chaton's &Param1& to targets inflicted with Dark Mark by <color=#0abec5>&Param2&</color>.",
+                    "descCN": "「暗黑标记」的伤害间隔缩短<color=#0abec5>50%</color>。\u000b猫眼对附带「暗黑标记」的目标造成的&Param1&提升<color=#0abec5>&Param2&</color>。",
+                    "descJP": "魔痕のダメージ間隔が<color=#0abec5>50%</color>短縮される。\u000bシャトンは魔痕が付与された敵に与える&Param1&が<color=#0abec5>&Param2&</color>増加する。",
+                    "descKR": "「암흑 표식」의 피해 간격이 <color=#0abec5>50%</color> 감소한다. \u000b샤통이 「암흑 표식」을 보유한 목표에게 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "10%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_03",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511404,
+                    "name": "Reincarnation of Darkness",
+                    "nameCN": "黑暗轮回",
+                    "nameJP": "漆黒の輪舞曲",
+                    "nameKR": "암흑의 윤회",
+                    "desc": "Increases the &Param2& dealt by ##Dark Ray#4036# by <color=#0abec5>&Param3&</color>.\u000bEnhances Dark Mark when the laser hits a target inflicted with Dark Mark, increasing the DMG Multiplier dealt by Dark Mark by <color=#0abec5>&Param4&</color>, stacking up to 3 times.\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,114504001) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill,114504002) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill,114504003)",
+                    "descCN": "##黑暗射线#4036#造成的&Param2&提升<color=#0abec5>&Param3&</color>。\u000b激光命中附带「暗黑标记」的目标时，强化「暗黑标记」，使「暗黑标记」造成的伤害倍率提升<color=#0abec5>&Param4&</color>，该效果可以叠加3次。\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,114504001) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill,114504002) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill,114504003)",
+                    "descJP": "##空に堕ちる焔#4036#の与える&Param2&が<color=#0abec5>&Param3&</color>増加する。\u000b魔痕が付与されている敵にポジトロンシュートが命中時、魔痕のダメージ倍率を<color=#0abec5>&Param4&</color>増加させる。この効果は3回まで重複できる。\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,114504001) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill,114504002) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill,114504003)",
+                    "descKR": "##암흑 레이저#4036#가 입히는 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다.\u000b레이저가 「암흑 표식」을 보유한 목표를 명중하면 「암흑 표식」이 강화되어, 「암흑 표식」이 입히는 피해 배율이 <color=#0abec5>&Param4&</color> 증가한다. 해당 효과는 최대 3회 중첩된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,114504001) \u000bHiddenParam2: &HiddenParam2& (HitDamage,Skill,114504002) \u000bHiddenParam3: &HiddenParam3& (HitDamage,Skill,114504003)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill) (hidden)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Sniper Operation",
+                        "Skill DMG",
+                        "10%",
+                        "85%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {}
+                    ],
+                    "hiddenParams": [
+                        "118%/136%/154%/207%/224%/240%/274%/288%/302%/330%/354%/378%/401%",
+                        "173%/199%/225%/302%/327%/351%/399%/420%/441%/482%/517%/551%/586%",
+                        "227%/261%/295%/398%/429%/461%/525%/552%/579%/634%/679%/725%/770%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        },
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        },
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "icon": "11401_Potential_04",
+                    "rarity": "core"
+                }
+            ],
+            "mainNormal": [
+                {
+                    "id": 511405,
+                    "name": "Chain Bounce",
+                    "nameCN": "多重弹跳",
+                    "nameJP": "連鎖するカルマ",
+                    "nameKR": "다중 통통탄",
+                    "desc": "The Bouncing Bomb bounces 1 more time.\u000bIncreases the &Param1& when a Bouncing Bomb deals DMG by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "「弹球炸弹」的弹射次数提升1次。\u000b「弹球炸弹」造成伤害时的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "ネコ神爆弾の跳ね返り回数が1回増加する。\u000bネコ神爆弾がダメージを与える時のみ、シャトンの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "「통통 폭탄」의 튕기기 횟수가 1회 증가한다. \u000b「통통 폭탄」이 피해를 입힐 시의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "ATK (%)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "ATK",
+                        "28.5%/45.6%/62.7%/79.8%/96.9%/114%/131.1%/148.2%/165.3%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "ATK (%)"
+                        },
+                        {
+                            "addAttrType": "ATK (%)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_05",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511406,
+                    "name": "Efficient Use",
+                    "nameCN": "节约使用",
+                    "nameJP": "収束する業火",
+                    "nameKR": "절약 사용",
+                    "desc": "When a Bouncing Bomb runs out of bounces, it returns to Chaton and grants her Spark.\u000bWhen holding &Param1& (Main Skill), Chaton consumes Spark to increase her &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s and throws an Explosive Bomb at the target, dealing <color=#ec6d21>&Param5&</color> of ATK as AoE Ignis Skill DMG.\u000bThe Explosive Bomb cannot bounce.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,114506002)",
+                    "descCN": "「弹球炸弹」的弹射次数用尽后会返回猫眼身边，使猫眼获得「火苗」。\u000b长按主控技「&Param1&」时，猫眼会消耗「火苗」，自身&Param2&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒，并对目标掷出一颗「爆裂弹球」，造成攻击力<color=#ec6d21>&Param5&</color>的范围火系技能伤害。\u000b「爆裂弹球」不会弹射。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,114506002)",
+                    "descJP": "跳ね返り回数が無くなるとネコ神爆弾はシャトンの元に戻り、シャトンは火種を獲得する。\u000b主力スキルを長押しした時、シャトンは火種を消費し、&Param4&秒間、自身の&Param2&が<color=#ec6d21>&Param3&</color>増加する。さらに敵にネコ神爆弾改を1つ投擲するようになり、範囲内に攻撃力の<color=#ec6d21>&Param5&</color>の火属性のスキルダメージを与える。\u000bネコ神爆弾改は跳ね返らない。\u000bParam1: &Param1& (Skill,Title)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,114506002)",
+                    "descKR": "「통통 폭탄」이 튕기기 횟수를 전부 사용한 후 샤통 주변으로 돌아가, 샤통이 「불씨」를 획득한다. \u000b메인 스킬 &Param1_kr3& 길게 누르면 샤통이 「불씨」를 소모해 자신의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속된다. 또한 목표에게 「폭발 구슬」 1개를 던져 공격력 <color=#ec6d21>&Param5&</color>의 불 속성 범위 스킬 피해를 입힌다. \u000b「폭발 구슬」은 튕기지 않는다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,114506002)",
+                    "damageType": [
+                        "Skill (from Skill)",
+                        "Skill (from Skill) (hidden)"
+                    ],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Ignis) Skill Crit DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_CritDamageUp"
+                    ],
+                    "params": [
+                        "Sniper Operation",
+                        "Skill Crit DMG",
+                        "11%/18%/25%/32%/38%/45%/52%/59%/66%",
+                        5,
+                        "154%/246%/338%/430%/522%/614%/706%/798%/890%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ignis) Skill Crit DMG",
+                            "buffIcon": "Icon_CommonBuff_CritDamageUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ignis) Skill Crit DMG",
+                            "buffIcon": "Icon_CommonBuff_CritDamageUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_CritDamageUp"
+                        },
+                        {
+                            "damageType": "Skill (from Skill)"
+                        }
+                    ],
+                    "hiddenParams": [
+                        "7.81%/10.41%/13.01%/15.61%/18.21%/20.81%/23.41%/26.01%/28.61%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill)"
+                        }
+                    ],
+                    "icon": "11401_Potential_06",
+                    "corner": "Triangle",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511407,
+                    "name": "Deadly Verdict",
+                    "nameCN": "致命裁定",
+                    "nameJP": "闇の胎動",
+                    "nameKR": "치명적 단죄",
+                    "desc": "Increases a Bouncing Bomb's &Param1& by <color=#ec6d21>&Param2&</color>.\u000bWhen a Bouncing Bomb lands a Crit Hit, increases the &Param3& the target takes from it by <color=#ec6d21>&Param4&</color> for &Param5&s, stacking up to &Param6& times.",
+                    "descCN": "「弹球炸弹」的&Param1&提升<color=#ec6d21>&Param2&</color>。\u000b「弹球炸弹」造成暴击时，使目标受到「弹球炸弹」造成的&Param3&提升<color=#ec6d21>&Param4&</color>，持续&Param5&秒，可叠加&Param6&层。",
+                    "descJP": "ネコ神爆弾の&Param1&が<color=#ec6d21>&Param2&</color>増加する。\u000bネコ神爆弾が会心時、&Param5&秒間、ネコ神爆弾の&Param3&が<color=#ec6d21>&Param4&</color>増加する。この効果は&Param6&回まで重複できる。",
+                    "descKR": "「통통 폭탄」의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. \u000b「통통 폭탄」이 치명타를 입힐 때, 「통통 폭탄」이 목표에게 입히는 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. &Param5&초간 지속되며, 최대 &Param6&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Crit DMG (base)",
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Crit DMG",
+                        "8%/12%/17%/21%/26%/30%/35%/39%/44%",
+                        "Skill DMG",
+                        "6.4%/10.2%/14.1%/17.9%/21.8%/25.6%/29.4%/33.3%/37.1%",
+                        10,
+                        5
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Crit DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Crit DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_02",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511409,
+                    "name": "Lucky Bullet",
+                    "nameCN": "幸运子弹",
+                    "nameJP": "慟哭の聖譚曲",
+                    "nameKR": "행운의 총알",
+                    "desc": "Increases the &Param1& of ##Dark Ray#4036# by <color=#ec6d21>&Param2&</color>.\u000bWhen the laser lands a Crit Hit, resets the Main Skill's Cooldown and increases the &Param3& dealt by ##Dark Ray#4036# by <color=#ec6d21>&Param4&</color> for &Param7&s. This effect can be triggered once every &Param6&s.\u000bParam5: &Param5& (Skill,Title)",
+                    "descCN": "##黑暗射线#4036#的&Param1&提升<color=#ec6d21>&Param2&</color>。\u000b当激光造成暴击时，重置主控技的冷却，并使##黑暗射线#4036#造成的&Param3&提升<color=#ec6d21>&Param4&</color>，持续&Param7&秒，该效果每&Param6&秒最多触发1次。\u000bParam5: &Param5& (Skill,Title)",
+                    "descJP": "##空に堕ちる焔#4036#の&Param1&が<color=#ec6d21>&Param2&</color>増加する。\u000bポジトロンシュートが会心時、主力スキルのクールタイムをリセットし、さらに&Param7&秒間、##空に堕ちる焔#4036#の与える&Param3&が<color=#ec6d21>&Param4&</color>増加する。この効果は&Param6&秒ごとに1回まで発動できる。\u000bParam5: &Param5& (Skill,Title)",
+                    "descKR": "##암흑 레이저#4036#의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. \u000b레이저가 치명타를 입히면 메인 스킬의 쿨타임이 초기화되고, ##암흑 레이저#4036#가 입히는 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. &Param7&초간 지속되며, 해당 효과는 &Param6&초마다 최대 1회 발동한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam5: &Param5& (Skill,Title)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "14%/23%/32%/40%/49%/58%/66%/75%/84%",
+                        "Skill DMG",
+                        "4%/6.4%/9%/11%/14%/16%/18%/21%/23%",
+                        "Sniper Operation",
+                        12,
+                        12
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {},
+                        {},
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_09",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511410,
+                    "name": "Hunting Mark",
+                    "nameCN": "猎杀标记",
+                    "nameJP": "黄昏の澱",
+                    "nameKR": "사냥의 표식",
+                    "desc": "After Dark Mark lands a Crit Hit, increases the &Param1& of Dark Mark when it deals DMG by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "当「暗黑标记」造成暴击后，使「暗黑标记」造成伤害时的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "魔痕が会心を与えた後、&Param3&秒間、魔痕がダメージを与える時のみ、シャトンの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回重複できる。",
+                    "descKR": "「암흑 표식」이 치명타를 입힌 후, 「암흑 표식」이 피해를 입힐 시의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "ATK (%)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "1.4%/2.2%/3.1%/3.9%/4.8%/5.6%/6.4%/7.3%/8.1%",
+                        4,
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "addAttrType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_03",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511411,
+                    "name": "Mobile Combat",
+                    "nameCN": "机动作战",
+                    "nameJP": "雷鳴の如く",
+                    "nameKR": "기동 작전",
+                    "desc": "Chaton can dodge one more time.\u000bWhen Chaton casts &Param1& (Main Skill), increases her &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.",
+                    "descCN": "猫眼闪避次数增加1次。\u000b猫眼施放主控技「&Param1&」时，使自身&Param2&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒。",
+                    "descJP": "シャトンの回避の発動可能回数が1回増加する。\u000b主力スキル発動時、&Param4&秒間、シャトンの&Param2&が<color=#ec6d21>&Param3&</color>増加する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "샤통의 회피 횟수가 1회 증가한다. \u000b샤통이 메인 스킬 &Param1_kr3& 시전하면 자신의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "Ignis DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Sniper Operation",
+                        "Ignis DMG",
+                        "10%/14%/17%/21%/24%/28%/31%/35%/38%",
+                        6
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "Ignis DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Ignis DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_21",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511412,
+                    "name": "Dominant Firepower",
+                    "nameCN": "优势火力",
+                    "nameJP": "神速の狩人",
+                    "nameKR": "압도적인 화력",
+                    "desc": "Activates the rapid-fire mode for Chaton's &Param1& (Auto Attack), increasing her attack frequency. When Chaton is in the ##Evil Eye Unleashed#4035# state, this effect changes to increasing her &Param6& by &Param7&.\u000bWhen Chaton triggers a mark, increases her &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s, stacking up to &Param5& times.",
+                    "descCN": "激活猫眼普攻「&Param1&」的连射模式，提升攻击频率。该效果在猫眼处于##魔眼解放#4035#状态时，变为使猫眼的&Param6&提升&Param7&。\u000b猫眼触发印记时，使自身&Param2&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒，可叠加&Param5&层。",
+                    "descJP": "シャトンの通常攻撃「&Param1&」は連射モードになり、攻撃頻度が上昇する。この効果はシャトンが##魔眼解放#4035#状態の時、シャトンの&Param6&を&Param7&上昇させる効果へと変化する。\u000bシャトンが印を発動させた時、&Param4&秒間、自身の&Param2&が<color=#ec6d21>&Param3&</color>上昇する。この効果は&Param5&回まで重複できる。",
+                    "descKR": "샤통 일반 공격 「&Param1&」의 연속 사격 모드가 활성화되어, 공격 빈도가 증가한다. 해당 효과는 샤통이 ##마안 해방#4035# 상태일 때, 샤통의 &Param6_kr1& &Param7& 증가하는 것으로 변경된다.\u000b샤통이 표식을 발동하면 자신의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)",
+                        "Attack Speed (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp",
+                        "Icon_CommonBuff_AttackSpeedUp"
+                    ],
+                    "params": [
+                        "Full-Auto Trigger",
+                        "ATK",
+                        "2.1%/3.4%/4.6%/5.9%/7.1%/8.4%/9.7%/10.9%/12.2%",
+                        5,
+                        5,
+                        "Attack Speed",
+                        "60%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Attack Speed (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackSpeedUp"
+                        },
+                        {
+                            "effectType": "Attack Speed (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackSpeedUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_16",
+                    "corner": "Triangle",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511408,
+                    "name": "Mark of Darkness",
+                    "nameCN": "黑暗烙印",
+                    "nameJP": "漆黒の刻印",
+                    "nameKR": "암흑 낙인",
+                    "desc": "Increases the &Param1& dealt by ##Dark Ray#4036# by <color=#ec6d21>&Param2&</color>.\u000bChaton's Auto Attack deals an additional <color=#ec6d21>&Param3&</color> of ATK as Ignis Skill DMG to targets inflicted with Dark Mark. This effect can be triggered once per second.\u000bParam4: &Param4& (Skill,Title)",
+                    "descCN": "##黑暗射线#4036#造成的&Param1&提升<color=#ec6d21>&Param2&</color>。\u000b猫眼的普攻对附带「暗黑标记」的目标造成伤害时，额外造成攻击力<color=#ec6d21>&Param3&</color>的火系技能伤害，每秒可触发1次。\u000bParam4: &Param4& (Skill,Title)",
+                    "descJP": "##空に堕ちる焔#4036#の与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。\u000bシャトンの通常攻撃は魔痕が付与された敵にダメージを与えた時、追加で攻撃力の<color=#ec6d21>&Param3&</color>の火属性のスキルダメージを与える。この効果は1秒ごとに1回発動できる。\u000bParam4: &Param4& (Skill,Title)",
+                    "descKR": "##암흑 레이저#4036#가 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. \u000b샤통의 일반 공격이 「암흑 표식」을 보유한 목표에게 피해를 입힐 때 공격력 <color=#ec6d21>&Param3&</color>의 불 속성 스킬 피해를 추가로 입힌다. 1초마다 1회 발동할 수 있다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (Skill,Title)",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Skill DMG",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%",
+                        "91%/146%/201%/255%/310%/365%/419%/474%/529%",
+                        "Sniper Operation"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "damageType": "Skill (from Skill)"
+                        },
+                        {}
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_04",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511413,
+                    "name": "Foe Annihilation",
+                    "nameCN": "强敌断灭",
+                    "nameJP": "堕天する翼",
+                    "nameKR": "강적 처단",
+                    "desc": "Increases Chaton's &Param2& dealt to targets with HP greater than &Param1& by <color=#ec6d21>&Param3&</color>.",
+                    "descCN": "猫眼对当前生命高于&Param1&的目标，造成的&Param2&提升<color=#ec6d21>&Param3&</color>。",
+                    "descJP": "シャトンは、残りHPが&Param1&より高い敵に与える&Param2&が<color=#ec6d21>&Param3&</color>増加する。",
+                    "descKR": "샤통이 현재 HP가 &Param1& 이상인 목표에게 입히는 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Ignis DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "20%",
+                        "Ignis DMG",
+                        "14%/23%/31%/40%/48%/57%/65%/74%/82%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "Ignis DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Ignis DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_23",
+                    "corner": "Round",
+                    "rarity": "common"
+                }
+            ],
+            "common": [
+                {
+                    "id": 511441,
+                    "name": "Curse Fall",
+                    "nameCN": "诅咒降临",
+                    "nameJP": "覗き込む闇",
+                    "nameKR": "저주의 강림",
+                    "desc": "&Param1& (Ultimate) and Dark Burst (while ##Evil Eye Unleashed#4035# is active) deal an additional <color=#ec6d21>&Param2&</color> of ATK as Ignis Ultimate DMG to targets inflicted with Cat Eye Mark.",
+                    "descCN": "绝招「&Param1&」与##魔眼解放#4035#状态下的「黑暗爆发」对附带「喵眼标记」的目标造成伤害时，额外造成攻击力<color=#ec6d21>&Param2&</color>的火系绝招伤害。",
+                    "descJP": "シャトンの必殺技および##魔眼解放#4035#持続中の「インフィニティフレア」は、アビスグレアが付与された敵にダメージを与えた時、追加で攻撃力の<color=#ec6d21>&Param2&</color>の火属性の必殺技ダメージを与えるようになる。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "필살기 &Param1_kr4& ##마안 해방#4035# 상태의 「암흑 폭발」이 「묘안 표식」을 보유한 목표에게 피해를 입히면, 공격력 <color=#ec6d21>&Param2&</color>의 불 속성 필살기 피해를 추가로 입힌다.\u000bParam1: &Param1& (Skill,Title)",
+                    "damageType": [
+                        "Ultimate (from Ultimate)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Dark Evil Eye",
+                        "14%/22.4%/30.7%/39.1%/47.5%/55.9%/64.3%/72.6%/81%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "damageType": "Ultimate (from Ultimate)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_41",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511442,
+                    "name": "Penetrating Bullet",
+                    "nameCN": "贯穿射击",
+                    "nameJP": "ピアスショット",
+                    "nameKR": "관통 사격",
+                    "desc": "Increases the duration of ##Evil Eye Unleashed#4035# to &Param3&s.\u000bIncreases Chaton's &Param1& by <color=#ec6d21>&Param2&</color>.\u000bAllows bullets fired by Dark Burst to penetrate targets.",
+                    "descCN": "##魔眼解放#4035#状态的持续时间提升至&Param3&秒。\u000b猫眼的&Param1&提升<color=#ec6d21>&Param2&</color>。\u000b使「黑暗爆发」射出的子弹可穿透目标。",
+                    "descJP": "##魔眼解放#4035#状態の持続時間が&Param3&秒に延長される。\u000bシャトンの&Param1&が<color=#ec6d21>&Param2&</color>増加する。\u000b「インフィニティフレア」で発射される弾丸は敵を貫通するようになる。",
+                    "descKR": "##마안 해방#4035# 상태의 지속 시간이 &Param3&초로 증가한다. \u000b샤통의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. \u000b「암흑 폭발」이 발사하는 총알은 목표를 관통할 수 있다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Ultimate DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Ultimate DMG",
+                        "43%/68%/94%/119%/145%/170%/196%/222%/247%",
+                        20
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ignis) Ultimate DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Ultimate DMG (base)"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_41",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511443,
+                    "name": "Doom's Echo",
+                    "nameCN": "灾厄余响",
+                    "nameJP": "破滅の残響",
+                    "nameKR": "재앙의 잔향",
+                    "desc": "Cat Eye Mark remains on the target after the Ultimate ends. Increases Chaton's &Param1& to targets inflicted with Cat Eye Mark by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "「喵眼标记」在绝招结束后会继续残留在目标身上，猫眼对附带「喵眼标记」的目标造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "必殺技のアビスグレアは、爆発後も敵に残り続けるようになる。シャトンはアビスグレアが付与された敵に与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "「묘안 표식」이 필살기 종료 후 계속하여 목표에게 남아, 샤통이 「묘안 표식」을 보유한 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Ignis DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Ignis DMG",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Ignis DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Ignis DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_41",
+                    "corner": "Round",
+                    "rarity": "common"
+                }
+            ],
+            "supportCore": [
+                {
+                    "id": 511421,
+                    "name": "Ambush Operation",
+                    "nameCN": "奇袭作战",
+                    "nameJP": "黒き祝福",
+                    "nameKR": "기습 작전",
+                    "desc": "When each shot of &Param1& (Support Skill) hits its first target, inflicts Tier 1 Lock and deals an additional <color=#0abec5>&Param2&</color> of ATK as AoE Ignis Skill DMG.\u000bWhen a target is already inflicted with Tier 1 Lock, the effect upgrades to Tier 2 Lock, dealing <color=#0abec5>&Param3&</color> of ATK as AoE Ignis Skill DMG.\u000bWhen a target is already inflicted with Tier 2 Lock, the effect upgrades to Tier 3 Lock, dealing <color=#0abec5>&Param4&</color> of ATK as AoE Ignis Skill DMG.",
+                    "descCN": "援护技「&Param1&」每次射击命中首个目标时，附加「1阶锁定」，并额外造成攻击力<color=#0abec5>&Param2&</color>的范围火系技能伤害。\u000b当目标附带「1阶锁定」时，强化为「2阶锁定」，造成攻击力<color=#0abec5>&Param3&</color>的范围火系技能伤害。\u000b当目标附带「2阶锁定」时，强化为「3阶锁定」，造成攻击力<color=#0abec5>&Param4&</color>的范围火系技能伤害。",
+                    "descJP": "シャトンの支援スキルは、各射撃が最初の敵に命中した時、黒き祝福Lv.1を付与し、追加で範囲内に攻撃力の<color=#0abec5>&Param2&</color>の火属性のスキルダメージを与える。\u000b敵に黒き祝福Lv.1が付与されている時、黒き祝福Lv.2に強化され、範囲内に攻撃力の<color=#0abec5>&Param3&</color>の火属性のスキルダメージを与える。\u000b敵に黒き祝福Lv.2が付与されている時、黒き祝福Lv.3に強化され、範囲内に攻撃力の<color=#0abec5>&Param4&</color>の火属性のスキルダメージを与える。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 &Param1_kr1& 사격으로 첫 목표를 명중할 때마다 「1단계 고정」을 부여하고, 공격력 <color=#0abec5>&Param2&</color>의 불 속성 범위 스킬 피해를 추가로 입힌다. \u000b목표가 「1단계 고정」을 보유하면 「2단계 고정」으로 강화되어 공격력 <color=#0abec5>&Param3&</color>의 불 속성 범위 스킬 피해를 입힌다. \u000b목표가 「2단계 고정」을 보유하면, 「3단계 고정」으로 강화되어 공격력 <color=#0abec5>&Param4&</color>의 불 속성 범위 스킬 피해를 입힌다.\u000bParam1: &Param1& (Skill,Title)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Blitz Assault",
+                        "125.7%/144.6%/163.4%/220%/237.6%/255.2%/290.4%/305.4%/320.5%/350.7%/375.8%/401%/426.1%",
+                        "167.6%/192.7%/217.9%/293.3%/316.8%/340.3%/387.2%/407.3%/427.4%/467.6%/501.1%/534.6%/568.2%",
+                        "188.6%/216.9%/245.2%/330.1%/356.5%/382.9%/435.7%/458.3%/480.9%/526.2%/563.9%/601.7%/639.4%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        },
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        },
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_21",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511422,
+                    "name": "Strike While the Iron is Hot",
+                    "nameCN": "胜势追击",
+                    "nameJP": "ベリアルシュート",
+                    "nameKR": "승리 추격",
+                    "desc": "Increases the &Param2& of &Param1& (Support Skill) by <color=#0abec5>&Param3&</color>.\u000bWhen Penetrating Bullet lands a Crit Hit, &Param1& (Support Skill) fires 1 additional shot. This effect can be triggered <color=#0abec5>2</color> times per Support Skill cast.",
+                    "descCN": "援护技「&Param1&」造成的&Param2&提升<color=#0abec5>&Param3&</color>。\u000b当「贯穿弹」暴击时，本次援护技「&Param1&」额外射击1次。该效果每次援护技最多触发<color=#0abec5>2</color>次。",
+                    "descJP": "シャトンの支援スキルは、与える&Param2&が<color=#0abec5>&Param3&</color>増加する。\u000b貫通弾が会心時、今回の支援スキルは追加で1回射撃する。この効果は支援スキル1回につき最大<color=#0abec5>2</color>回まで発動できる。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 &Param1_kr1& 입히는 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다. \u000b「관통 탄환」이 치명타를 입히면, 이번 지원 스킬 &Param1_kr1& 추가로 1회 사격한다. 해당 효과는 지원 스킬마다 최대 <color=#0abec5>2</color>회 발동한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Blitz Assault",
+                        "Skill DMG",
+                        "15.6%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_22",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511423,
+                    "name": "Combat Frenzy",
+                    "nameCN": "恋战情绪",
+                    "nameJP": "忌まわしき翼",
+                    "nameKR": "전장의 갈망",
+                    "desc": "Increases the &Param2& dealt by &Param1& (Support Skill) by <color=#0abec5>&Param3&</color>.\u000bEach time the Support Skill fires, shoots <color=#0abec5>2</color> additional Penetrating Bullets.",
+                    "descCN": "援护技「&Param1&」造成的&Param2&提升<color=#0abec5>&Param3&</color>。\u000b援护技每次射击时，额外发射<color=#0abec5>2</color>颗「贯穿弹」。",
+                    "descJP": "シャトンの支援スキルは与える&Param2&が<color=#0abec5>&Param3&</color>増加する。\u000b支援スキルの各射撃時、追加で<color=#0abec5>2</color>発の貫通弾を発射する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 &Param1_kr1& 입히는 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다. \u000b지원 스킬이 사격할 때마다 「관통 탄환」 <color=#0abec5>2</color>개를 추가로 발사한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Blitz Assault",
+                        "Skill DMG",
+                        "25.6%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_23",
+                    "rarity": "core"
+                },
+                {
+                    "id": 511424,
+                    "name": "Core Blast",
+                    "nameCN": "中心开花",
+                    "nameJP": "闇より出でし輩",
+                    "nameKR": "중심의 분열",
+                    "desc": "Increases the &Param2& of &Param1& (Support Skill) by <color=#0abec5>&Param3&</color>.\u000bWhen Penetrating Bullet deals DMG, it splits into <color=#0abec5>12</color> Small Penetrating Bullets, dealing <color=#0abec5>&Param4&</color> of ATK as Ignis Skill DMG. It splits up to &Param5& times per Tumbling Shot.",
+                    "descCN": "援护技「&Param1&」造成的&Param2&提升<color=#0abec5>&Param3&</color>。\u000b「贯穿弹」造成伤害时，分裂为<color=#0abec5>12</color>颗「小型贯穿弹」，造成攻击力<color=#0abec5>&Param4&</color>的火系技能伤害。每次翻滚射击，最多分裂&Param5&次。",
+                    "descJP": "シャトンの支援スキルは与える&Param2&が<color=#0abec5>&Param3&</color>増加する。\u000b貫通弾がダメージを与えた時、<color=#0abec5>12</color>発の小型貫通弾に分裂し、攻撃力の<color=#0abec5>&Param4&</color>の火属性のスキルダメージを与える。ローリング射撃1回につき、&Param5&回まで分裂する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 &Param1_kr1& 입히는 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다. \u000b「관통 탄환」이 피해를 입히면, <color=#0abec5>12</color>개의 「소형 관통 탄환」으로 분열되어 공격력 <color=#0abec5>&Param4&</color>의 불 속성 스킬 피해를 입힌다. 구르기 사격 시마다 최대 &Param5&회 분열된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Blitz Assault",
+                        "Skill DMG",
+                        "12%",
+                        "9%/10.3%/11.7%/15.7%/17%/18.2%/20.7%/21.8%/22.9%/25.1%/26.8%/28.6%/30.4%",
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        },
+                        {}
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_24",
+                    "rarity": "core"
+                }
+            ],
+            "supportNormal": [
+                {
+                    "id": 511425,
+                    "name": "Evil Eye Gaze",
+                    "nameCN": "魔眼锁定",
+                    "nameJP": "魔眼の射手",
+                    "nameKR": "마안 고정",
+                    "desc": "Increases the &Param2& of &Param1& (Support Skill) by <color=#ec6d21>&Param3&</color>.\u000bWhen casting the Support Skill, Evil Eye locks onto the target's current position, dealing <color=#ec6d21>&Param4&</color> of ATK as AoE Ignis Skill DMG every 0.4s for 8s.",
+                    "descCN": "援护技「&Param1&」造成的&Param2&提升<color=#ec6d21>&Param3&</color>。\u000b施放援护技时，魔眼锁定目标当前位置，每0.4秒造成攻击力<color=#ec6d21>&Param4&</color>的范围火系技能伤害，持续8秒。",
+                    "descJP": "シャトンの支援スキルは、与える&Param2&が<color=#ec6d21>&Param3&</color>増加する。\u000b支援スキルの発動時、魔眼が敵のいる地点を狙い、8秒間、範囲内に0.4秒ごとに攻撃力の<color=#ec6d21>&Param4&</color>の火属性のスキルダメージを与え続ける。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 &Param1_kr1& 입히는 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. \u000b지원 스킬 시전 시, 마안이 목표의 현재 위치를 고정해 0.4초마다 공격력 <color=#ec6d21>&Param4&</color>의 불 속성 범위 스킬 피해를 입힌다. 8초간 지속된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Blitz Assault",
+                        "Skill DMG",
+                        "6%/9.6%/13.2%/16.8%/20.4%/24%/27.6%/31.2%/34.8%",
+                        "17.5%/28.1%/38.6%/49.1%/59.6%/70.1%/80.7%/91.2%/101.7%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "damageType": "Skill (from Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_25",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511426,
+                    "name": "Excess Amplification",
+                    "nameCN": "超额增幅",
+                    "nameJP": "オーバーブースト",
+                    "nameKR": "초과 증폭",
+                    "desc": "Increases the &Param1& Chaton deals to targets inflicted with Lock, increasing <color=#ec6d21>&Param2&</color> for each tier of Lock.",
+                    "descCN": "猫眼对附带「锁定」的目标造成的&Param1&提升，根据「锁定」阶段，每阶提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "シャトンは黒き祝福が付与されている敵に与える&Param1&が、黒き祝福のレベル1ごとに<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "샤통이 「고정」을 보유한 목표에게 입히는 &Param1_kr1& 증가한다. 「고정」 단계에 따라 단계마다 <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Skill DMG",
+                        "8.3%/13.3%/18.3%/23.3%/28.3%/33.3%/38.3%/43.3%/48.3%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_21",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511427,
+                    "name": "Relentless Suppression",
+                    "nameCN": "持续压制",
+                    "nameJP": "サプレッション",
+                    "nameKR": "지속적인 제압",
+                    "desc": "While &Param1& (Support Skill) is active, increases the &Param2& dealt by Chaton to the current target by <color=#ec6d21>&Param3&</color> per second, stacking up to &Param4& times.",
+                    "descCN": "援护技「&Param1&」持续期间，猫眼对当前目标造成的&Param2&每秒提升<color=#ec6d21>&Param3&</color>，可叠加&Param4&层",
+                    "descJP": "シャトンの支援スキル発動中、シャトンはターゲットの敵に与える&Param2&が1秒ごとに、<color=#ec6d21>&Param3&</color>が増加する。この効果は&Param4&回重複できる。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 「&Param1&」 지속 기간에 샤통이 현재 목표에게 입히는 &Param2_kr1& 1초마다 <color=#ec6d21>&Param3&</color> 증가한다. 최대 &Param4&스택 중첩된다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Ignis DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Blitz Assault",
+                        "Ignis DMG",
+                        "2.7%/4.3%/6%/7.6%/9.2%/10.9%/12.5%/14.1%/15.8%",
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "Ignis DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "Ignis DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_22",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511428,
+                    "name": "One Stone Two Birds",
+                    "nameCN": "一石二鸟",
+                    "nameJP": "ツインショット",
+                    "nameKR": "일석이조",
+                    "desc": "Increases Chaton's &Param2& by <color=#ec6d21>&Param3&</color>.\u000bEach time &Param1& (Support Skill) fires, shoots 2 additional Meow Bombs.\u000bThe bombs shoot forward in a straight line 3 times, dealing <color=#ec6d21>&Param4&</color> of ATK as AoE Ignis Skill DMG each time.",
+                    "descCN": "猫眼的&Param2&提升<color=#ec6d21>&Param3&</color>。\u000b援护技「&Param1&」每次射击时，额外发射2颗「猫猫炸弹」。\u000b「猫猫炸弹」会向前直线弹射3次，每次造成攻击力<color=#ec6d21>&Param4&</color>的范围火系技能伤害。",
+                    "descJP": "シャトンは自身の&Param2&が<color=#ec6d21>&Param3&</color>増加する。\u000b支援スキルの各射撃時、追加で2発のぷにぷにボムを発射する。\u000bぷにぷにボムは前方直線上に3回跳ね、そのたび範囲内に攻撃力の<color=#ec6d21>&Param4&</color>の火属性のスキルダメージを敵に与える。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "샤통의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. \u000b지원 스킬 &Param1_kr1& 사격할 때마다 「냥냥 폭탄」 2개를 추가로 발사한다. \u000b「냥냥 폭탄」이 전방 직선을 향해 3회 튕기며, 매회 공격력 <color=#ec6d21>&Param4&</color>의 불 속성 범위 스킬 피해를 입힌다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Ignis) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Blitz Assault",
+                        "Skill DMG",
+                        "6%/9.6%/13.2%/16.8%/20.4%/24%/27.6%/31.2%/34.8%",
+                        "18.8%/30.1%/41.3%/52.6%/63.9%/75.2%/86.4%/97.7%/109%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ignis) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ignis) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "damageType": "Skill (from Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_28",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 511430,
+                    "name": "Minor Fling",
+                    "nameCN": "不值一提",
+                    "nameJP": "支配する混沌",
+                    "nameKR": "하찮은 존재",
+                    "desc": "&Param1& (Support Skill) instantly eliminates normal targets with HP below &Param2&.\u000bIncreases the &Param3& dealt to elite or boss targets with HP below &Param5& by <color=#ec6d21>&Param4&</color>.",
+                    "descCN": "援护技「&Param1&」对当前生命低于&Param2&的普通目标造成伤害时，直接消灭目标。\u000b对当前生命低于&Param5&的精英或首领目标造成伤害时，造成的&Param3&提升<color=#ec6d21>&Param4&</color>.",
+                    "descJP": "シャトンの支援スキルは、残りHPが&Param2&未満のノーマル敵にダメージを与えた時、その敵を即座に撃破するようになり、残りHPが&Param5&未満のエリートや首領にダメージを与えた時、与える&Param3&が<color=#ec6d21>&Param4&</color>増加する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 &Param1_kr1& 현재 HP가 &Param2& 미만인 일반 목표에게 피해를 입히면, 목표를 바로 처치한다. \u000b현재 HP가 &Param5& 미만인 정예 또는 보스 목표에게 피해를 입히면, 입히는 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Ignis DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Blitz Assault",
+                        "30%",
+                        "Ignis DMG",
+                        "16.5%/26.4%/36.3%/46.2%/56.1%/66%/75.9%/85.8%/95.7%",
+                        "80%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {},
+                        {
+                            "addAttrType": "Ignis DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Ignis DMG (base)"
+                        },
+                        {}
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_30",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511431,
+                    "name": "Energy Overflow",
+                    "nameCN": "能量充盈",
+                    "nameJP": "フルチャージ",
+                    "nameKR": "넘치는 에너지",
+                    "desc": "When Chaton's Energy is full, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "当猫眼的能量充满时，猫眼的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
+                    "descJP": "シャトンのSPが上限に達した時、&Param3&秒間、シャトンの&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "샤통의 SP가 가득 차면, 샤통의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Ignis) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "24%/38.4%/52.8%/67.2%/81.6%/96%/110.4%/124.8%/139.2%",
+                        20
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ignis) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ignis) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_22",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511432,
+                    "name": "Swift Assault",
+                    "nameCN": "快速强袭",
+                    "nameJP": "目覚める邪心",
+                    "nameKR": "빠른 강습",
+                    "desc": "While &Param1& (Support Skill) is active, increases Chaton's &Param2& by <color=#ec6d21>&Param3&</color>.",
+                    "descCN": "援护技「&Param1&」期间，猫眼的&Param2&提升<color=#ec6d21>&Param3&</color>。",
+                    "descJP": "シャトンの支援スキル発動中、自身の&Param2&が<color=#ec6d21>&Param3&</color>増加する。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 「&Param1&」 기간 중, 샤통의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Ignis) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Blitz Assault",
+                        "Skill DMG",
+                        "12%/19.2%/26.4%/33.6%/40.8%/48%/55.2%/62.4%/69.6%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ignis) Skill DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ignis) Skill DMG",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_11",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511429,
+                    "name": "Burnt Rifling",
+                    "nameCN": "灼热膛线",
+                    "nameJP": "フレイムバレル",
+                    "nameKR": "뜨거운 총열",
+                    "desc": "When &Param1& (Support Skill) lands a Crit Hit, increases the &Param2& it deals by <color=#ec6d21>&Param3&</color>, stacking up to &Param4& times.",
+                    "descCN": "援护技「&Param1&」每次造成暴击时，本次援护技造成的&Param2&提升<color=#ec6d21>&Param3&</color>，可叠加&Param4&层。",
+                    "descJP": "シャトンの支援スキルが会心発生時、今回の支援スキルの与える&Param2&が<color=#ec6d21>&Param3&</color>増加する。この効果は&Param4&回まで重複できる。\u000bParam1: &Param1& (Skill,Title)",
+                    "descKR": "지원 스킬 &Param1_kr1& 치명타를 입히면, 이번 지원 스킬이 입히는 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ignis) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Blitz Assault",
+                        "Skill DMG",
+                        "3%/4.8%/6.6%/8.4%/10.2%/12%/13.8%/15.6%/17.4%",
+                        5
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "(Ignis) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "11401_Potential_23",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 511433,
+                    "name": "Burning Passion",
+                    "nameCN": "热情似火",
+                    "nameJP": "パッショネイト",
+                    "nameKR": "불 같은 열정",
+                    "desc": "Increases the &Param1& of Ignis Trekkers in the squad by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "队伍中火系角色的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "チーム内の火属性巡遊者の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "팀 내 불 속성 캐릭터의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "ATK",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_15",
+                    "corner": "Round",
+                    "rarity": "rare"
+                }
+            ]
+        },
+        "talent": [
+            {
+                "name": "Dark Power Slayer",
+                "boost": [
+                    {
+                        "name": "Dark Power Slayer",
+                        "nameCN": "黑暗弑神之力",
+                        "nameJP": "ネコ神の使者",
+                        "nameKR": "칠흑의 살신력",
+                        "desc": "When any Trekker applies an ##Ignis Mark#1016# to a target, increases Chaton's Crit DMG by <color=#0abec5>&Param1&</color> for &Param2&s, up to &Param3& stacks",
+                        "descCN": "任意角色对目标附加##火系印记#1016#后，猫眼的暴击伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，可叠加&Param3&层",
+                        "descJP": "チーム内の巡遊者が敵に##火属性の印#1016#を付与した後、&Param2&秒間、シャトンの会心ダメージが<color=#0abec5>&Param1&</color>増加する。この効果は&Param3&回まで重複できる。",
+                        "descKR": "캐릭터가 목표에게 ##불 속성 표식#1016#을 부여한 후 샤통의 치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속되며 최대 &Param3&스택 중첩된다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "8%",
+                            5,
+                            4
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Meowth's Emissary",
+                "boost": [
+                    {
+                        "name": "Meowth's Emissary",
+                        "nameCN": "上古喵神使者",
+                        "nameJP": "漆黒の血族",
+                        "nameKR": "야옹신의 사자",
+                        "desc": "After Chaton deals Crit DMG to a target, her Skill DMG is increased by <color=#0abec5>&Param1&</color> for &Param2&s",
+                        "descCN": "猫眼对目标造成暴击时，技能伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒",
+                        "descJP": "シャトンが会心時、&Param2&秒間、スキルダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "샤통이 목표에게 치명타를 입히면 스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
+                        "effectType": [
+                            "ELEMENTTYPE_:(Ignis) Skill DMG"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "28%",
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ELEMENTTYPE_:(Ignis) Skill DMG",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Enhanced  Barrel",
+                "boost": [
+                    {
+                        "name": "Enhanced  Barrel",
+                        "nameCN": "加重枪管",
+                        "nameJP": "エースオブネコ",
+                        "nameKR": "가중 총열",
+                        "desc": "When Chaton casts a skill, the skill's ATK is increased by <color=#0abec5>&Param1&</color> for &Param2&s",
+                        "descCN": "猫眼施放技能时，攻击力提升<color=#0abec5>&Param1&</color>，持续&Param2&秒",
+                        "descJP": "シャトンがスキル使用時、&Param2&秒間、攻撃力が<color=#0abec5>&Param1&</color>上昇する。",
+                        "descKR": "샤통이 스킬을 시전하면 공격력이 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "20%",
+                            8
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Target Indicator",
+                "boost": [
+                    {
+                        "name": "Target Indicator",
+                        "nameCN": "目标指示器",
+                        "nameJP": "開眼の刻",
+                        "nameKR": "목표 지시기",
+                        "desc": "While ##Evil Eye Unleashed#4035# is active, increases Chaton's Ultimate DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "##魔眼解放#4035#状态下，猫眼的绝招伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "##魔眼解放#4035#状態中、シャトンの必殺技ダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "##마안 해방#4035# 상태에서 샤통의 필살기 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [],
+                        "addAttrType": [
+                            "(Ignis) Ultimate DMG (base)"
+                        ],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "30%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "addAttrType": "(Ignis) Ultimate DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Shooting Metronome",
+                "boost": [
+                    {
+                        "name": "Shooting Metronome",
+                        "nameCN": "射击节拍器",
+                        "nameJP": "神も屠る力",
+                        "nameKR": "사격 메트로놈",
+                        "desc": "Increases Chaton's Ignis DMG dealt to elite or higher-tier targets by <color=#0abec5>&Param1&</color>",
+                        "descCN": "猫眼对精英及以上目标造成的火系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "シャトンはエリート以上の敵に与える火属性ダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "샤통이 정예 및 이상 목표에게 입히는 불 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [],
+                        "addAttrType": [
+                            "Ignis DMG (base)"
+                        ],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "24%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "addAttrType": "Ignis DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Crit DMG Boost",
+                        "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
+                        "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "3%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "stat": [
+            {
+                "Level": 1,
+                "HP": 788,
+                "ATK": 115,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 2,
+                "HP": 1025,
+                "ATK": 150,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 3,
+                "HP": 1262,
+                "ATK": 184,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 4,
+                "HP": 1498,
+                "ATK": 219,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 5,
+                "HP": 1735,
+                "ATK": 254,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 6,
+                "HP": 1971,
+                "ATK": 288,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 7,
+                "HP": 2208,
+                "ATK": 323,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 8,
+                "HP": 2444,
+                "ATK": 357,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 9,
+                "HP": 2681,
+                "ATK": 392,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 2917,
+                "ATK": 427,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 3501,
+                "ATK": 512,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 11,
+                "HP": 3737,
+                "ATK": 546,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 12,
+                "HP": 3974,
+                "ATK": 581,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 13,
+                "HP": 4210,
+                "ATK": 616,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 14,
+                "HP": 4447,
+                "ATK": 650,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 15,
+                "HP": 4684,
+                "ATK": 685,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 16,
+                "HP": 4920,
+                "ATK": 719,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 17,
+                "HP": 5157,
+                "ATK": 754,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 18,
+                "HP": 5393,
+                "ATK": 789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 19,
+                "HP": 5630,
+                "ATK": 823,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 5866,
+                "ATK": 858,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 7041,
+                "ATK": 1029,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 21,
+                "HP": 7278,
+                "ATK": 1064,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 22,
+                "HP": 7514,
+                "ATK": 1099,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 23,
+                "HP": 7751,
+                "ATK": 1133,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 24,
+                "HP": 7987,
+                "ATK": 1168,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 25,
+                "HP": 8224,
+                "ATK": 1202,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 26,
+                "HP": 8460,
+                "ATK": 1237,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 27,
+                "HP": 8697,
+                "ATK": 1272,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 28,
+                "HP": 8933,
+                "ATK": 1306,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 29,
+                "HP": 9170,
+                "ATK": 1341,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 9407,
+                "ATK": 1375,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 11291,
+                "ATK": 1651,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 31,
+                "HP": 11528,
+                "ATK": 1685,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 32,
+                "HP": 11764,
+                "ATK": 1720,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 33,
+                "HP": 12001,
+                "ATK": 1755,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 34,
+                "HP": 12237,
+                "ATK": 1789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 35,
+                "HP": 12474,
+                "ATK": 1824,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 36,
+                "HP": 12710,
+                "ATK": 1858,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 37,
+                "HP": 12947,
+                "ATK": 1893,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 38,
+                "HP": 13183,
+                "ATK": 1927,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 39,
+                "HP": 13420,
+                "ATK": 1962,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 13656,
+                "ATK": 1997,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 16385,
+                "ATK": 2396,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 41,
+                "HP": 16621,
+                "ATK": 2430,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 42,
+                "HP": 16858,
+                "ATK": 2465,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 43,
+                "HP": 17094,
+                "ATK": 2499,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 44,
+                "HP": 17331,
+                "ATK": 2534,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 45,
+                "HP": 17567,
+                "ATK": 2568,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 46,
+                "HP": 17804,
+                "ATK": 2603,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 47,
+                "HP": 18040,
+                "ATK": 2638,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 48,
+                "HP": 18277,
+                "ATK": 2672,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 49,
+                "HP": 18514,
+                "ATK": 2707,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 18750,
+                "ATK": 2741,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 22503,
+                "ATK": 3290,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 51,
+                "HP": 22740,
+                "ATK": 3325,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 52,
+                "HP": 22976,
+                "ATK": 3359,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 53,
+                "HP": 23213,
+                "ATK": 3394,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 54,
+                "HP": 23449,
+                "ATK": 3428,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 55,
+                "HP": 23686,
+                "ATK": 3463,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 56,
+                "HP": 23922,
+                "ATK": 3498,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 57,
+                "HP": 24159,
+                "ATK": 3532,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 58,
+                "HP": 24396,
+                "ATK": 3567,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 59,
+                "HP": 24632,
+                "ATK": 3601,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 24869,
+                "ATK": 3636,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 29844,
+                "ATK": 4363,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 61,
+                "HP": 30081,
+                "ATK": 4398,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 62,
+                "HP": 30317,
+                "ATK": 4433,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 63,
+                "HP": 30554,
+                "ATK": 4467,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 64,
+                "HP": 30790,
+                "ATK": 4502,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 65,
+                "HP": 31027,
+                "ATK": 4536,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 66,
+                "HP": 31263,
+                "ATK": 4571,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 67,
+                "HP": 31500,
+                "ATK": 4605,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 68,
+                "HP": 31736,
+                "ATK": 4640,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 69,
+                "HP": 31973,
+                "ATK": 4675,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 32209,
+                "ATK": 4709,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 38651,
+                "ATK": 5651,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 71,
+                "HP": 38888,
+                "ATK": 5686,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 72,
+                "HP": 39124,
+                "ATK": 5720,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 73,
+                "HP": 39361,
+                "ATK": 5755,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 74,
+                "HP": 39597,
+                "ATK": 5789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 75,
+                "HP": 39834,
+                "ATK": 5824,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 76,
+                "HP": 40071,
+                "ATK": 5859,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 77,
+                "HP": 40307,
+                "ATK": 5893,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 78,
+                "HP": 40544,
+                "ATK": 5928,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 79,
+                "HP": 40780,
+                "ATK": 5962,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 41017,
+                "ATK": 5997,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 49217,
+                "ATK": 7196,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 81,
+                "HP": 49453,
+                "ATK": 7230,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 82,
+                "HP": 49690,
+                "ATK": 7265,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 83,
+                "HP": 49927,
+                "ATK": 7300,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 84,
+                "HP": 50163,
+                "ATK": 7334,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 85,
+                "HP": 50400,
+                "ATK": 7369,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 86,
+                "HP": 50636,
+                "ATK": 7403,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 87,
+                "HP": 50873,
+                "ATK": 7438,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 88,
+                "HP": 51109,
+                "ATK": 7472,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 89,
+                "HP": 51346,
+                "ATK": 7507,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 90,
+                "HP": 51582,
+                "ATK": 7542,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 91,
+                "HP": 51582,
+                "ATK": 7542,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            }
+        ],
+        "upgrade": [
+            {
+                "Count's Rewards": 5,
+                "Dorra": 7900
+            },
+            {
+                "Count's Rewards": 5,
+                "Count's Cellaring": 10,
+                "Dorra": 19800
+            },
+            {
+                "Count's Rewards": 10,
+                "Count's Cellaring": 15,
+                "Dorra": 44400
+            },
+            {
+                "Count's Rewards": 15,
+                "Count's Cellaring": 25,
+                "Dorra": 66600
+            },
+            {
+                "Count's Rewards": 20,
+                "Count's Cellaring": 40,
+                "Dorra": 146100
+            },
+            {
+                "Count's Rewards": 30,
+                "Count's Cellaring": 55,
+                "Count's Gift": 20,
+                "Dorra": 291600
+            },
+            {
+                "Count's Cellaring": 75,
+                "Count's Gift": 30,
+                "Dorra": 560200
+            },
+            {
+                "Count's Cellaring": 95,
+                "Count's Gift": 50,
+                "Dorra": 1121300
+            }
+        ],
+        "skillUpgrade": [
+            {
+                "Shooter Game Cartridge": 6,
+                "Chess Piece of Skill": 2,
+                "Dorra": 13300
+            },
+            {
+                "Shooter Game Cartridge": 12,
+                "Chess Piece of Skill": 6,
+                "Dorra": 17600
+            },
+            {
+                "Shooter Game Cartridge": 24,
+                "Barrage Game Cartridge": 3,
+                "Chess Piece of Skill": 10,
+                "Dorra": 49800
+            },
+            {
+                "Shooter Game Cartridge": 38,
+                "Barrage Game Cartridge": 8,
+                "Chess Piece of Skill": 24,
+                "Dorra": 100000
+            },
+            {
+                "Shooter Game Cartridge": 70,
+                "Barrage Game Cartridge": 14,
+                "Demon Bee Game Cartridge": 6,
+                "Chess Piece of Skill": 55,
+                "Dorra": 400000
+            },
+            {
+                "Colossus Core": 1,
+                "Barrage Game Cartridge": 50,
+                "Demon Bee Game Cartridge": 18,
+                "Chess Piece of Skill": 232,
+                "Dorra": 900000
+            },
+            {
+                "Colossus Core": 2,
+                "Barrage Game Cartridge": 90,
+                "Demon Bee Game Cartridge": 34,
+                "Chess Piece of Skill": 323,
+                "Dorra": 1600000
+            },
+            {
+                "Colossus Core": 3,
+                "Barrage Game Cartridge": 140,
+                "Demon Bee Game Cartridge": 50,
+                "Chess Piece of Skill": 478,
+                "Dorra": 2300000
+            },
+            {
+                "Colossus Core": 6,
                 "Barrage Game Cartridge": 200,
                 "Demon Bee Game Cartridge": 70,
                 "Chess Piece of Skill": 927,
@@ -58739,7 +62721,7 @@
                     "damageType": [],
                     "effectType": [
                         "ATK (%)",
-                        "Attack Speed (%)"
+                        "Attack Speed (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -58757,7 +62739,7 @@
                             "effectType": "ATK (%)"
                         },
                         {
-                            "effectType": "Attack Speed (%)",
+                            "effectType": "Attack Speed (base)",
                             "buffIcon": "Icon_CommonBuff_AttackSpeedUp"
                         },
                         {
@@ -65869,10 +69851,10 @@
             "nameKR": "장마의 추격",
             "cooldown": "24s",
             "energyLimit": null,
-            "desc": "Summons a ##Advertising Doll#4017# near the target. When the Doll is on the battlefield, Donna enters ##Agile#2015# state.\u000bThe doll deals <color=#fb8037>&Param1&</color> of ATK as AoE Aqua Minion DMG every 4s and taunts the target.\u000bThe ##Advertising Doll#4017# and Donna's Auto Attack in ##Agile#2015# state can trigger ##Aqua Mark#1018#, dealing <color=#fb8037>&Param4&</color> of ATK as AoE Aqua Mark DMG and inflicting ##Chill#1027#.",
-            "descCN": "在目标附近召唤##「宣传人偶」#4017#。人偶存在时，多娜进入##灵巧#2015#状态。\u000b人偶每4秒造成攻击力<color=#fb8037>&Param1&</color>的范围水系仆从伤害并嘲讽目标。\u000b##「宣传人偶」#4017#和##灵巧#2015#状态期间的普攻可触发##水系印记#1018#，造成攻击力<color=#fb8037>&Param4&</color>的范围水系印记伤害，并附加##寒冷#1027#。",
+            "desc": "Summons a ##Advertising Doll#4017# near the target. When the Doll is on the battlefield, Donna enters ##Agile#2015# state.\u000bThe doll deals <color=#fb8037>&Param1&</color> of ATK as AoE Aqua Minion DMG every 4s and taunts the target.\u000bThe ##Advertising Doll#4017# and Donna's Auto Attack in ##Agile#2015# state can trigger ##Aqua Mark#1018#, dealing &Param4& of ATK as AoE Aqua Mark DMG and inflicting ##Chill#1027#.",
+            "descCN": "在目标附近召唤##「宣传人偶」#4017#。人偶存在时，多娜进入##灵巧#2015#状态。\u000b人偶每4秒造成攻击力<color=#fb8037>&Param1&</color>的范围水系仆从伤害并嘲讽目标。\u000b##「宣传人偶」#4017#和##灵巧#2015#状态期间的普攻可触发##水系印记#1018#，造成攻击力&Param4&的范围水系印记伤害，并附加##寒冷#1027#。",
             "descJP": "12秒間、敵の近くに##呼び込みトーナちゃん#4017#を召喚する。##呼び込みトーナちゃん#4017#が存在する時、トーナは##速達#2015#状態になる。\u000b##呼び込みトーナちゃん#4017#は4秒ごとに、範囲内に攻撃力の<color=#fb8037>&Param1&</color>の水属性の従者ダメージを与え、敵を挑発する。\u000b##呼び込みトーナちゃん#4017#または##速達#2015#状態中の通常攻撃は##水属性の印#1018#を発動させることができる。発動させると、範囲内に攻撃力の&Param4&の水属性の印ダメージを与え、##寒冷#1027#を付与する。",
-            "descKR": "목표 주변에 ##「홍보 인형」#4017#을 소환한다. 인형이 있을 때 토나가 ##민첩#2015# 상태가 된다.\u000b인형은 4초마다 공격력 <color=#fb8037>&Param1&</color>의 물 속성 범위 소환물 피해를 입히며 목표를 도발한다.\u000b##「홍보 인형」#4017# 및 ##민첩#2015# 상태 기간의 일반 공격은 ##물 속성 표식#1018#을 발동할 수 있으며, 공격력 <color=#fb8037>&Param4&</color>의 물 속성 범위 표식 피해를 입히고 ##한랭#1027#을 부여한다.",
+            "descKR": "목표 주변에 ##「홍보 인형」#4017#을 소환한다. 인형이 있을 때 토나가 ##민첩#2015# 상태가 된다.\u000b인형은 4초마다 공격력 <color=#fb8037>&Param1&</color>의 물 속성 범위 소환물 피해를 입히며 목표를 도발한다.\u000b##「홍보 인형」#4017# 및 ##민첩#2015# 상태 기간의 일반 공격은 ##물 속성 표식#1018#을 발동할 수 있으며, 공격력 &Param4&의 물 속성 범위 표식 피해를 입히고 ##한랭#1027#을 부여한다.",
             "damageType": [
                 "Minion (from Skill, scale with Skill)",
                 "Auto Attack (3.09e, from Skill, scale with Normal attack)",
@@ -66428,7 +70410,7 @@
                     "nameCN": "雨幕朦胧",
                     "nameJP": "トーナちゃんガード",
                     "nameKR": "흐린 비안개",
-                    "desc": "The #Advertising Doll#4017# gains a shield equal to <color=#ec6d21>&Param1&</color> of its base HP for &Param2&s.\u000bWhen the shield disappears, the doll deals <color=#ec6d21>&Param3&</color> of ATK as AoE Aqua Minion DMG.\u000bParam10: &Param10& (Skill,Title)",
+                    "desc": "The ##Advertising Doll#4017# gains a shield equal to <color=#ec6d21>&Param1&</color> of its base HP for &Param2&s.\u000bWhen the shield disappears, the doll deals <color=#ec6d21>&Param3&</color> of ATK as AoE Aqua Minion DMG.\u000bParam10: &Param10& (Skill,Title)",
                     "descCN": "##「宣传人偶」#4017#获得自身基础生命值<color=#ec6d21>&Param1&</color>的护盾，持续&Param2&秒。\u000b护盾消失时，人偶对周围造成攻击力<color=#ec6d21>&Param3&</color>的范围水系仆从伤害。\u000bParam10: &Param10& (Skill,Title)",
                     "descJP": "##呼び込みトーナちゃん#4017#は&Param2&秒間、基礎HPの<color=#ec6d21>&Param1&</color>分のシールドを獲得する。\u000bシールドが消失時、##呼び込みトーナちゃん#4017#は周囲の範囲内に攻撃力の<color=#ec6d21>&Param3&</color>の水属性の従者ダメージを与える。\u000bParam10: &Param10& (Skill,Title)",
                     "descKR": "##「홍보 인형」#4017#이 자신 기본 HP <color=#ec6d21>&Param1&</color>의 보호막을 획득하며 &Param2&초간 지속된다. \u000b보호막이 사라질 때 인형이 주변에 공격력 <color=#ec6d21>&Param3&</color>의 물 속성 범위 소환물 피해를 입힌다.\u000bParam10: &Param10& (Skill,Title)",
@@ -108898,7 +112880,9 @@
                     ],
                     "addAttrType": [],
                     "effectData": [],
-                    "buffIcon": [],
+                    "buffIcon": [
+                        "Icon_Buff_14701_514702"
+                    ],
                     "params": [
                         "11.4%/12.5%/13.7%/17.1%/18.2%/19.3%/21.6%/22.8%/23.9%/26.2%/27.3%/28.4%/29.6%",
                         "Minion DMG",
@@ -108909,10 +112893,12 @@
                             "damageType": "Minion (from Skill, scale with Skill)"
                         },
                         {
-                            "effectType": "Minion DMG (base)"
+                            "effectType": "Minion DMG (base)",
+                            "buffIcon": "Icon_Buff_14701_514702"
                         },
                         {
-                            "effectType": "Minion DMG (base)"
+                            "effectType": "Minion DMG (base)",
+                            "buffIcon": "Icon_Buff_14701_514702"
                         }
                     ],
                     "hiddenParams": [],
@@ -108936,17 +112922,21 @@
                     ],
                     "addAttrType": [],
                     "effectData": [],
-                    "buffIcon": [],
+                    "buffIcon": [
+                        "Icon_Buff_14701_514702"
+                    ],
                     "params": [
                         "Minion DMG",
                         "21%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Minion DMG (base)"
+                            "effectType": "Minion DMG (base)",
+                            "buffIcon": "Icon_Buff_14701_514702"
                         },
                         {
-                            "effectType": "Minion DMG (base)"
+                            "effectType": "Minion DMG (base)",
+                            "buffIcon": "Icon_Buff_14701_514702"
                         }
                     ],
                     "hiddenParams": [],
@@ -109100,7 +113090,7 @@
                     "nameCN": "堕天二重奏",
                     "nameJP": "漆黒のデュオ",
                     "nameKR": "타락 2중주",
-                    "desc": "When casting Melodic Seraphim (Ultimate), ##Demonic Boomboxes#4016# play at the same time, dealing <color=#ec6d21>&Param1& x13</color> of ATK as Umbra Minion DMG in a large area.",
+                    "desc": "When casting Melodic Seraphim (Ultimate), ##Demonic Boomboxes#4016# plays at the same time, dealing <color=#ec6d21>&Param1& x13</color> of ATK as Umbra Minion DMG in a large area.",
                     "descCN": "施放绝招「律动堕天使」时，##恶魔音响#4016#同时演奏，造成攻击力<color=#ec6d21>&Param1&x13</color>的大范围暗系仆从伤害。",
                     "descJP": "キャラメルの必殺技発動時、##悪魔のスピーカー#4016#が同時に演奏し、広範囲に攻撃力の<color=#ec6d21>&Param1&x13</color>の闇属性の従者ダメージを与えるようになる。",
                     "descKR": "필살기 「리듬의 타락천사」 시전 시 ##악마의 스피커#4016#가 동시에 연주해 공격력 <color=#ec6d21>&Param1&x13</color>의 큰 범위의 어둠 속성 소환물 피해를 입힌다.",
@@ -109213,7 +113203,7 @@
                     "nameCN": "暗灭音击",
                     "nameJP": "薄冥の音撃",
                     "nameKR": "암멸의 음격",
-                    "desc": "When Caramel or #4016#Demonic Boombox## triggers an ##Umbra Mark: Gloom#2018#, increases their &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "desc": "When Caramel or ##Demonic Boombox#4016# triggers an ##Umbra Mark: Gloom#2018#, increases their &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "descCN": "焦糖或##恶魔音响#4016#触发##暗系印记:暗影#2018#时，其&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
                     "descJP": "キャラメルか##悪魔のスピーカー#4016#が##闇属性の印：暗影#2018#を発動させた時から&Param3&秒間、自身の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
                     "descKR": "캐러멜 또는 ##악마의 스피커#4016#가 ##어둠 속성 표식: 암영#2018#을 발동하면 해당 &Param1&이 <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.",
@@ -129006,7 +132996,7 @@
                     "nameKR": "작위의 분노",
                     "desc": "While transformed into Sir Laru, Snowish Laru's shots and &Param1& can trigger ##Ignis Mark#1016# and inflict Conflagration, dealing &Param2& of ATK as Ignis Mark DMG.\u000bIncreases Snowish Laru's &Param3& by <color=#ec6d21>&Param4&</color>.",
                     "descCN": "圣夜菈露变身「菈露爵士」期间，枪械射击攻和技能「&Param1&」可触发##火焰印记#1016#，产生「灼炎」：造成攻击力&Param2&的火系印记伤害。\u000b圣夜菈露的&Param3&提升<color=#ec6d21>&Param4&</color>。",
-                    "descJP": "ラール（聖夜）がラール人形に変身している間、射撃と「&Param1&」は##火属性の印#1016#を発動させることができる。\u000bラール（聖夜）の&Param3&が<color=#ec6d21>&Param4&</color>上昇する。\u000bParam2: &Param2& (HitDamage,Mark)",
+                    "descJP": "ラール（聖夜）がラール人形に変身している間、射撃と「&Param1&」は##火属性の印#1016#を発動させることができ、灼炎を発生させ、攻撃力の&Param2&の火属性の印ダメージを与える。\u000bラール（聖夜）の&Param3&が<color=#ec6d21>&Param4&</color>上昇する。",
                     "descKR": "라루(이브)가 「라루 경」으로 변신한 기간 중, 총기 사격과 스킬 「&Param1&」 모두 ##화염 표식#1016#을 발동할 수 있고, 「작열하는 불꽃」을 생성해 공격력 &Param2&의 불 속성 표식 피해를 입힌다. \u000b라루(이브)의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Mark"
@@ -129725,7 +133715,7 @@
                     "nameKR": "하트의 사면",
                     "desc": "Increases the combat duration of ##Colonel Walnut#4023# and ##General Curly#4024# by 50% and their &Param1& by <color=#ec6d21>&Param2&</color>.\u000bParam3: &Param3& (BuffValue,LaminatedNum)",
                     "descCN": "##「胡桃上校」#4023#和##「卷毛大将」#4024#的作战时间提升50%，&Param1&提升<color=#ec6d21>&Param2&</color>。\u000bParam3: &Param3& (BuffValue,LaminatedNum)",
-                    "descJP": "##クルミ大佐#4023#と##巻き毛将軍#4024#の持続時間が<color=#ec6d21>50%</color>延長され、&Param1&が<color=#ec6d21>&Param2&</color>増加する。\u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                    "descJP": "##クルミ大佐#4023#と##巻き毛将軍#4024#の持続時間が50%延長され、&Param1&が<color=#ec6d21>&Param2&</color>増加する。\u000bParam3: &Param3& (BuffValue,LaminatedNum)",
                     "descKR": "##「호두 대령」#4023#과 ##「곱슬 장군」#4024#의 전투 시간이 50% 증가하고, &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
