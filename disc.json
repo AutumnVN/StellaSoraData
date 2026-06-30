@@ -8758,7 +8758,8 @@
             "Ultimate"
         ],
         "char": [
-            null
+            "Iris",
+            "Noya"
         ],
         "mainSkill": {
             "id": 3003,
@@ -10496,7 +10497,9 @@
             "Skills"
         ],
         "char": [
-            null
+            "Teresa",
+            "Donna",
+            "Freesia"
         ],
         "mainSkill": {
             "id": 3006,
@@ -11652,7 +11655,9 @@
             "Skills"
         ],
         "char": [
-            null
+            "Iris",
+            "Noya",
+            "Amber"
         ],
         "mainSkill": {
             "id": 3008,
@@ -12808,7 +12813,8 @@
             "Skills"
         ],
         "char": [
-            null
+            "Shimiao",
+            "Jinglin"
         ],
         "mainSkill": {
             "id": 3010,
@@ -13384,7 +13390,8 @@
             "Ultimate"
         ],
         "char": [
-            null
+            "Chaton",
+            "Kasimira"
         ],
         "mainSkill": {
             "id": 3011,
@@ -15701,7 +15708,8 @@
             "Element"
         ],
         "char": [
-            null
+            "Nazuna",
+            "Nazuka"
         ],
         "mainSkill": {
             "id": 3015,
@@ -22654,7 +22662,8 @@
             "DMG RES"
         ],
         "char": [
-            null
+            "Kasimira",
+            "Chaton"
         ],
         "mainSkill": {
             "id": 4001,
@@ -23289,7 +23298,8 @@
             "VUL"
         ],
         "char": [
-            null
+            "Nanoha",
+            "Otoha"
         ],
         "mainSkill": {
             "id": 4002,
@@ -23919,7 +23929,8 @@
             "Element"
         ],
         "char": [
-            null
+            "Firefly",
+            "Canace"
         ],
         "mainSkill": {
             "id": 4003,
@@ -27690,7 +27701,9 @@
             "Shield"
         ],
         "char": [
-            null
+            "Iris",
+            "Noya",
+            "Amber"
         ],
         "mainSkill": {
             "id": 4009,
@@ -28941,7 +28954,9 @@
             "Shield"
         ],
         "char": [
-            null
+            "Teresa",
+            "Donna",
+            "Freesia"
         ],
         "mainSkill": {
             "id": 4011,
@@ -30824,7 +30839,9 @@
             "Shield"
         ],
         "char": [
-            null
+            "Nazuka",
+            "Fuyuka",
+            "Nazuna"
         ],
         "mainSkill": {
             "id": 4014,
@@ -39587,6 +39604,626 @@
             }
         ]
     },
+    "214029": {
+        "id": 214029,
+        "name": "The Cat's Treasure",
+        "star": 5,
+        "element": "Ignis",
+        "tag": [
+            "Skills",
+            "VUL",
+            "Crit DMG"
+        ],
+        "char": [
+            "Chaton"
+        ],
+        "mainSkill": {
+            "id": 4029,
+            "name": "The Cat's Treasure",
+            "nameCN": "猫之珍藏",
+            "nameJP": "欲しかったもの",
+            "nameKR": "고양이의 보물",
+            "desc": "When the Ignis Main Trekker casts a skill, increases own Skill DMG by <color=#ec6d21>{1}</color> for 9s and grants 1 stack of Dark Evil Eye for 9s, stacking up to 3 times.\u000bWhen the Ignis Main Trekker deals Skill DMG, 1/2/3 stacks of Dark Evil Eye increase Ignis Skill DMG taken by the target by <color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>/<color=#ec6d21>{4}</color> for 9s.",
+            "descCN": "火系主控角色施放技能时，自身技能伤害提升<color=#ec6d21>{1}</color>，持续9秒，并获得1层「暗黑魔眼」，持续9秒，可叠加3层。\u000b火系主控角色造成技能伤害时，1/2/3层「暗黑魔眼」对目标附加：受到火系技能伤害提升<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>/<color=#ec6d21>{4}</color>，持续9秒。",
+            "descJP": "火属性の主力巡遊者がスキル発動時、9秒間、自身のスキルダメージが<color=#ec6d21>{1}</color>増加する。さらに9秒間持続する、魔なる瞳を獲得する。魔なる瞳は3回まで重複できる。\u000b火属性の巡遊者がスキルダメージを与えた時、付与されている魔なる瞳の数1/2/3に応じて、敵に以下の効果を付与する：9秒間、火属性のスキル被ダメージが<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>/<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "불 속성 메인 캐릭터가 스킬을 시전하면 자신의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. 9초간 지속된다. 또한 「마안」을 1스택 획득한다. 9초간 지속되며, 최대 3스택 중첩된다. \u000b불 속성 메인 캐릭터가 스킬 피해를 입히면, 「마안」 1/2/3스택이 목표의 받는 불 속성 스킬 피해를 <color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>/<color=#ec6d21>{4}</color> 증가시킨다. 9초간 지속된다.",
+            "effectType": [
+                "Skill DMG (base)",
+                "ELEMENTTYPE_:(Ignis) Skill DMG Taken"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "25%,5%,10%,15%/30%,6%,12%,18%/35%,7%,14%,21%/40%,8%,16%,24%/45%,9%,18%,27%/50%,10%,20%,30%",
+            "icon": "DiscSkill_214029",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill1": {
+            "id": 40291,
+            "name": "Meowth's Curse",
+            "nameCN": "喵神诅咒",
+            "nameJP": "ネコ神の呪い",
+            "nameKR": "야옹신의 저주",
+            "desc": "Increases the squad's Ignis DMG by <color=#ec6d21>{1}</color>.\u000bEach stack of Dark Evil Eye additionally increases own Skill Crit DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "全队火系伤害提升<color=#ec6d21>{1}</color>。\u000b每层「暗黑魔眼」获得额外效果：使自身技能暴击伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム全体の火属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b魔なる瞳に追加効果が付与される：自身のスキル会心ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 전체의 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「마안」 1스택마다 추가 효과를 획득해, 자신의 스킬 치명타 피해가 <color=#ec6d21>{2}</color> 증가한다.",
+            "effectType": [
+                "Ignis DMG (base)",
+                "Skill Crit DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "6%,6%/12%,8%/18%,10%/24%,12%/30%,14%",
+            "requirements": [
+                {
+                    "Melody of Skill": 10,
+                    "Melody of Ignis": 10
+                },
+                {
+                    "Melody of Skill": 25,
+                    "Melody of Ignis": 25
+                },
+                {
+                    "Melody of Skill": 40,
+                    "Melody of Ignis": 40
+                },
+                {
+                    "Melody of Skill": 55,
+                    "Melody of Ignis": 55
+                },
+                {
+                    "Melody of Skill": 70,
+                    "Melody of Ignis": 70
+                }
+            ],
+            "icon": "DiscSkill_3",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill2": {
+            "id": 40292,
+            "name": "Doomfire",
+            "nameCN": "灭世烈焰",
+            "nameJP": "烈火滅世",
+            "nameKR": "종말의 불꽃",
+            "desc": "When Dark Evil Eye is at max stacks, increases own Ignis DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "「暗黑魔眼」满层时，自身火系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "魔なる瞳が上限に達した時、自身の火属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "「마안」이 최대 스택 달성 시, 자신의 불 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
+            "effectType": [],
+            "addAttrType": [
+                "Ignis DMG (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [],
+            "params": "9%/18%/27%/36%/45%",
+            "requirements": [
+                {
+                    "Melody of Luck": 15,
+                    "Melody of Skill": 15,
+                    "Melody of Ignis": 15
+                },
+                {
+                    "Melody of Luck": 30,
+                    "Melody of Skill": 30,
+                    "Melody of Ignis": 30
+                },
+                {
+                    "Melody of Luck": 45,
+                    "Melody of Skill": 45,
+                    "Melody of Ignis": 45
+                },
+                {
+                    "Melody of Luck": 60,
+                    "Melody of Skill": 60,
+                    "Melody of Ignis": 60
+                },
+                {
+                    "Melody of Luck": 75,
+                    "Melody of Skill": 75,
+                    "Melody of Ignis": 75
+                }
+            ],
+            "icon": "DiscSkill_13",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "supportNote": [
+            {
+                "Melody of Pummel": 4,
+                "Melody of Luck": 2
+            },
+            {
+                "Melody of Pummel": 5,
+                "Melody of Luck": 2
+            },
+            {
+                "Melody of Pummel": 6,
+                "Melody of Luck": 2
+            },
+            {
+                "Melody of Pummel": 6,
+                "Melody of Luck": 3
+            },
+            {
+                "Melody of Pummel": 7,
+                "Melody of Luck": 3
+            },
+            {
+                "Melody of Pummel": 8,
+                "Melody of Luck": 3
+            },
+            {
+                "Melody of Pummel": 8,
+                "Melody of Luck": 4
+            },
+            {
+                "Melody of Pummel": 9,
+                "Melody of Luck": 4
+            },
+            {
+                "Melody of Pummel": 10,
+                "Melody of Luck": 4
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 15,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 20,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 24,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 29,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 33,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 47,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 51,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 56,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 67,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 71,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 76,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 80,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 85,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 89,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 94,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 98,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 103,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 107,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 112,
+                "Ignis DMG": "3%"
+            },
+            {
+                "ATK": 134,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 138,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 143,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 147,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 152,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 156,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 161,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 165,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 170,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 174,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 179,
+                "Ignis DMG": "5%"
+            },
+            {
+                "ATK": 215,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 219,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 224,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 228,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 233,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 237,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 242,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 246,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 251,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 255,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 260,
+                "Ignis DMG": "7%"
+            },
+            {
+                "ATK": 312,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 316,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 321,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 325,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 330,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 334,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 339,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 343,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 348,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 352,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 357,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 428,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 433,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 437,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 442,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 446,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 451,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 455,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 460,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 464,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 469,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 473,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 568,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 572,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 577,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 581,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 586,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 590,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 595,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 599,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 604,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 608,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 613,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 735,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 740,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 744,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 749,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 753,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 758,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 762,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 767,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 771,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 776,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 780,
+                "Ignis DMG": "13%"
+            },
+            {
+                "ATK": 936,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 941,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 945,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 950,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 954,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 959,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 963,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 968,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 972,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 977,
+                "Ignis DMG": "15%"
+            },
+            {
+                "ATK": 981,
+                "Ignis DMG": "15%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Duloos Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Duloos Breath": 6,
+                "Duloos Soul Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Duloos Breath": 13,
+                "Duloos Soul Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Duloos Breath": 20,
+                "Duloos Soul Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Duloos Breath": 26,
+                "Duloos Soul Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Duloos Breath": 40,
+                "Duloos Soul Remnant": 73,
+                "Duloos Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Duloos Soul Remnant": 100,
+                "Duloos Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Duloos Soul Remnant": 126,
+                "Duloos Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
     "214030": {
         "id": 214030,
         "name": "A Moment in the Afternoon",
@@ -40228,7 +40865,8 @@
             "DMG RES"
         ],
         "char": [
-            null
+            "Chitose",
+            "Freesia"
         ],
         "mainSkill": {
             "id": 4031,
@@ -41496,7 +42134,8 @@
             "DMG RES"
         ],
         "char": [
-            null
+            "Coronis",
+            "Gerie"
         ],
         "mainSkill": {
             "id": 4033,
@@ -52730,6 +53369,628 @@
             {
                 "Emberflies Soul": 126,
                 "Evernight Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214053": {
+        "id": 214053,
+        "name": "Joyful Gathering",
+        "star": 5,
+        "element": "Ignis",
+        "tag": [
+            "Skills",
+            "Shield",
+            "ATK"
+        ],
+        "char": [
+            "Chaton"
+        ],
+        "mainSkill": {
+            "id": 4053,
+            "name": "Joyful Gathering",
+            "nameCN": "欢聚时刻",
+            "nameJP": "団らんのひととき",
+            "nameKR": "환희의 순간",
+            "desc": "When the Ignis Main Trekker casts a skill, increases own Skill DMG by <color=#ec6d21>{1}</color> for 12s and grants 1 stack of Dark Blessing for 12s, stacking up to 3 times.\u000bWhen the Ignis Main Trekker deals Skill DMG, 1/2/3 stacks of Dark Blessing grant a shield equal to <color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>/<color=#ec6d21>{4}</color> of Base Max HP for 20s to self. This effect can be triggered once every 30s.",
+            "descCN": "火系主控角色施放技能时，自身技能伤害提升<color=#ec6d21>{1}</color>，持续12秒，并获得1层「黑暗加护」，持续12秒，可叠加3层。\u000b火系主控角色造成技能伤害时，1/2/3层「黑暗加护」使自身获得基础最大生命<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>/<color=#ec6d21>{4}</color>的护盾，持续20秒，该效果每30秒最多触发1次。",
+            "descJP": "火属性の主力巡遊者がスキルを発動した時、12秒間、自身のスキルダメージが<color=#ec6d21>{1}</color>増加する。さらに12秒間持続する、漆黒の加護を獲得する。漆黒の加護は3回まで重複できる。\u000b火属性の主力巡遊者がスキルダメージを与えた時、付与されている漆黒の加護の数1/2/3に応じて、20秒間、自身に最大HPの<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>/<color=#ec6d21>{4}</color>のシールドを付与する。この効果は30秒ごとに1回発動できる。",
+            "descKR": "불 속성 메인 캐릭터가 스킬을 시전하면 자신의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. 12초간 지속된다. 또한 「암흑의 가호」를 1스택 획득한다. 12초간 지속되며, 최대 3스택 중첩된다. \u000b불 속성 메인 캐릭터가 스킬 피해를 입히면, 「암흑의 가호」 1/2/3스택이 자신에게 기본 최대 HP <color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>/<color=#ec6d21>{4}</color>의 보호막을 부여한다. 20초간 지속되며, 해당 효과는 30초마다 최대 1회 발동한다.",
+            "effectType": [
+                "Skill DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "10%,2%,4%,6%/12%,2.4%,4.8%,7.2%/14%,2.8%,5.6%,8.4%/16%,3.2%,6.4%,9.6%/18%,3.6%,7.2%,10.8%/20%,4%,8%,12%",
+            "icon": "DiscSkill_214053",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill1": {
+            "id": 40531,
+            "name": "Meowth's Triumph",
+            "nameCN": "喵神凯旋",
+            "nameJP": "ネコ神の凱旋",
+            "nameKR": "야옹신의 승리",
+            "desc": "Each stack of Dark Blessing additionally increases own Skill DMG by <color=#ec6d21>{1}</color>.",
+            "descCN": "每层「黑暗加护」获得额外效果：使自身技能伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "漆黒の加護に追加効果が付与される：自身のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "「암흑의 가호」 1스택마다 추가 효과를 획득해, 자신의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다.",
+            "effectType": [
+                "Skill DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "1.5%/3%/4.5%/6%/7.5%",
+            "requirements": [
+                {
+                    "Melody of Skill": 10,
+                    "Melody of Ignis": 10
+                },
+                {
+                    "Melody of Skill": 25,
+                    "Melody of Ignis": 25
+                },
+                {
+                    "Melody of Skill": 40,
+                    "Melody of Ignis": 40
+                },
+                {
+                    "Melody of Skill": 55,
+                    "Melody of Ignis": 55
+                },
+                {
+                    "Melody of Skill": 70,
+                    "Melody of Ignis": 70
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill2": {
+            "id": 40532,
+            "name": "Dark Ceremony",
+            "nameCN": "黑暗庆典",
+            "nameJP": "漆黒の式典",
+            "nameKR": "암흑의 축제",
+            "desc": "Increases the ATK of Ignis Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen Dark Blessing is at max stacks, increases own Ultimate DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "队伍中火系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b「黑暗加护」满层时，自身绝招伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の火属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000b漆黒の加護が上限に達した時、自身の必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 불 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b「암흑의 가호」 최대 스택 달성 시 자신의 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다.",
+            "effectType": [
+                "ATK (%)"
+            ],
+            "addAttrType": [
+                "Ultimate DMG (base)"
+            ],
+            "effectData": [
+                "NOTHING, SELF, ACTORELEMENTTYPE, Ignis | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "buffIcon": [],
+            "params": "2%,8%/4%,16%/6%,24%/8%,32%/10%,40%",
+            "requirements": [
+                {
+                    "Melody of Pummel": 15,
+                    "Melody of Burst": 15,
+                    "Melody of Ignis": 15
+                },
+                {
+                    "Melody of Pummel": 30,
+                    "Melody of Burst": 30,
+                    "Melody of Ignis": 30
+                },
+                {
+                    "Melody of Pummel": 45,
+                    "Melody of Burst": 45,
+                    "Melody of Ignis": 45
+                },
+                {
+                    "Melody of Pummel": 60,
+                    "Melody of Burst": 60,
+                    "Melody of Ignis": 60
+                },
+                {
+                    "Melody of Pummel": 75,
+                    "Melody of Burst": 75,
+                    "Melody of Ignis": 75
+                }
+            ],
+            "icon": "DiscSkill_1",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "supportNote": [
+            {
+                "Melody of Focus": 3,
+                "Melody of Ultimate": 3
+            },
+            {
+                "Melody of Focus": 3,
+                "Melody of Ultimate": 4
+            },
+            {
+                "Melody of Focus": 4,
+                "Melody of Ultimate": 4
+            },
+            {
+                "Melody of Focus": 4,
+                "Melody of Ultimate": 5
+            },
+            {
+                "Melody of Focus": 5,
+                "Melody of Ultimate": 5
+            },
+            {
+                "Melody of Focus": 5,
+                "Melody of Ultimate": 6
+            },
+            {
+                "Melody of Focus": 6,
+                "Melody of Ultimate": 6
+            },
+            {
+                "Melody of Focus": 6,
+                "Melody of Ultimate": 7
+            },
+            {
+                "Melody of Focus": 7,
+                "Melody of Ultimate": 7
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 14,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 18,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 22,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 26,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 30,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 34,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 46,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 50,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 60,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 64,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 68,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 72,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 77,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 80,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 85,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 88,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 93,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 96,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 101,
+                "Ignis DMG": "2%"
+            },
+            {
+                "ATK": 121,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 124,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 129,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 132,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 137,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 140,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 145,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 149,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 153,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 157,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 161,
+                "Ignis DMG": "4%"
+            },
+            {
+                "ATK": 194,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 197,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 202,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 205,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 210,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 213,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 218,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 221,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 226,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 230,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 234,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 281,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 284,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 289,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 293,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 297,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 301,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 305,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 309,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 313,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 317,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 321,
+                "Ignis DMG": "6%"
+            },
+            {
+                "ATK": 385,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 390,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 393,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 398,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 401,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 406,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 410,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 414,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 418,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 422,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 426,
+                "Ignis DMG": "8%"
+            },
+            {
+                "ATK": 511,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 515,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 519,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 523,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 527,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 531,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 536,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 539,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 544,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 547,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 552,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 662,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 666,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 670,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 674,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 678,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 682,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 686,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 690,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 694,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 698,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 702,
+                "Ignis DMG": "10%"
+            },
+            {
+                "ATK": 842,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 847,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 851,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 855,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 859,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 863,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 867,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 871,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 875,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 879,
+                "Ignis DMG": "12%"
+            },
+            {
+                "ATK": 883,
+                "Ignis DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Eerie Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Eerie Breath": 6,
+                "Phantom Step Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Eerie Breath": 13,
+                "Phantom Step Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Eerie Breath": 20,
+                "Phantom Step Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Eerie Breath": 26,
+                "Phantom Step Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Eerie Breath": 40,
+                "Phantom Step Remnant": 73,
+                "Frenzied Waltz Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Phantom Step Remnant": 100,
+                "Frenzied Waltz Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Phantom Step Remnant": 126,
+                "Frenzied Waltz Essence": 66,
                 "Dorra": 1513800
             }
         ]
