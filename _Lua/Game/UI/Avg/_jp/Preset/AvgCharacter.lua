@@ -254,7 +254,7 @@ return {
 	{
 		id = "avg1_146",
 		name = "ベニト",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#84afff"
 	},
 	{
 		id = "avg1_147",
@@ -316,6 +316,12 @@ return {
 		ver = "1.6.0"
 	},
 	{
+		id = "avg1_160",
+		name = "***",
+		name_bg_color = "#b0e0f6",
+		ver = "1.13.0"
+	},
+	{
 		id = "avg1_163",
 		name = "グレースホルン",
 		name_bg_color = "#6690de",
@@ -349,6 +355,12 @@ return {
 		ver = "1.10.0"
 	},
 	{
+		id = "avg2_944",
+		name = "捕草蝎",
+		name_bg_color = "#0ABEC5",
+		ver = "1.12.0"
+	},
+	{
 		id = "avg2_945",
 		name = "***",
 		name_bg_color = "#0ABEC5",
@@ -359,6 +371,18 @@ return {
 		name = "劇場の幻影",
 		name_bg_color = "#0ABEC5",
 		ver = "1.9.0"
+	},
+	{
+		id = "avg2_947",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg2_948",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg2_949",
@@ -846,7 +870,7 @@ return {
 	},
 	{
 		id = "avg3_164",
-		name = "いおり",
+		name = "イオリ",
 		name_bg_color = "#fac89b"
 	},
 	{
@@ -1109,6 +1133,18 @@ return {
 		ver = "1.9.0"
 	},
 	{
+		id = "avg3_218",
+		name = "米拉什居民男",
+		name_bg_color = "#0ABEC5",
+		ver = "1.12.0"
+	},
+	{
+		id = "avg3_219",
+		name = "米拉什居民女",
+		name_bg_color = "#0ABEC5",
+		ver = "1.12.0"
+	},
+	{
 		id = "avg3_220",
 		name = "メルクリア",
 		name_bg_color = "#9787b1",
@@ -1125,6 +1161,12 @@ return {
 		name = "机械小狗",
 		name_bg_color = "#a5cdc3",
 		ver = "1.11.0"
+	},
+	{
+		id = "avg3_223",
+		name = "***",
+		name_bg_color = "#a5cdc3",
+		ver = "1.15.0"
 	},
 	{
 		id = "avg3_873",
@@ -1844,7 +1886,7 @@ return {
 	},
 	{
 		id = "avg3_1047",
-		name = "电话那头的男人",
+		name = "通话另一端的男人",
 		name_bg_color = "#0ABEC5"
 	},
 	{
@@ -2789,7 +2831,64 @@ return {
 		id = "avg3_1304",
 		name = "シャトンA",
 		name_bg_color = "#8e65ad",
-		reuse = "avg1_114"
+		reuse = "avg1_114",
+		ver = "1.12.0"
+	},
+	{
+		id = "avg3_1305",
+		name = "***",
+		name_bg_color = "#b0e0f6",
+		reuse = "avg1_160",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1306",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_948",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1307",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_948",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1308",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_947",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1309",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_947",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1310",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_991",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1311",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_100",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1312",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_101",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg4_100",
