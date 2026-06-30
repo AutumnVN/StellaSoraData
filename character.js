@@ -82,17 +82,40 @@ Object.keys(POTENTIAL['513332']).forEach(key => {
     }
 });
 
-for (const id of [...new Set([...Object.keys(CHARACTER), ...Object.keys(characterId)])]) {
-    let char = {};
+for (let id = 100; id <= 200; id++) {
+    let char = undefined;
 
-    if (!CHARACTER[id]) {
+    if (!CHARACTER[id] && (getUpgrades(id).length || getSkillUpgrades(id).length)) {
         char = {
             id: +id,
-            name: characterId[id] || '',
+            name: `${id} ${characterId[id] || ''}`,
+            desc: '',
+            star: 0,
+            element: getElementFromSkillUpgrade(id) || '',
+            class: '',
+            attackType: '',
+            style: '',
+            force: '',
+            tag: [],
+            cnCv: '',
+            jpCv: '',
+            birthday: '',
+            loveGift: [],
+            hateGift: [],
+            date: [],
+            fixedStat: {},
+            normalAtk: undefined,
+            skill: undefined,
+            supportSkill: undefined,
+            ultimate: undefined,
+            special: [],
+            potential: {},
+            talent: [],
+            stat: {},
             upgrade: getUpgrades(id),
             skillUpgrade: getSkillUpgrades(id),
         };
-    } else {
+    } else if (CHARACTER[id]) {
         char = {
             id: +id,
             name: LANG_CHARACTER[CHARACTER[id].Name],
@@ -201,8 +224,6 @@ for (const id of [...new Set([...Object.keys(CHARACTER), ...Object.keys(characte
             skillUpgrade: getSkillUpgrades(id),
         };
     }
-
-    if (!char.name) char.name = `${id} ${characterId[id] || ''}`;
 
     if (!LANG_CHARACTER[CHARACTER[id]?.Name]) {
         unreleased[id] = char;
@@ -869,5 +890,22 @@ function getSpecialSkills(id) {
         params: params.every(v => v === params[0]) ? params[0] : params.join('/'),
         damageType: DAMAGE_TYPE[hitdamage.DamageType],
     };
+}
 
+function getElementFromSkillUpgrade(charId) {
+    const skillUpgrades = Object.keys(CHARACTERSKILLUPGRADE)
+        .filter(key => CHARACTERSKILLUPGRADE[key].Group === +charId);
+    if (!skillUpgrades || skillUpgrades.length === 0) return '';
+
+    const lastSkillUpgrade = CHARACTERSKILLUPGRADE[skillUpgrades[skillUpgrades.length - 1]];
+    const elementMap = {
+        0: 'Terra',
+        1: 'Umbra',
+        2: 'Ignis',
+        4: 'Ventus',
+        5: 'Lux',
+        6: 'Aqua'
+    };
+
+    return elementMap[`${lastSkillUpgrade.Tid1}`.slice(3, 4)] || '';
 }
