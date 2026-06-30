@@ -22,7 +22,7 @@ const blitz = {};
 
 for (const id in SCOREBOSSLEVEL) {
     const scoreBossLevel = SCOREBOSSLEVEL[id];
-    if (!scoreBossLevel.SummonLevelUp) continue;
+    if (!scoreBossLevel.SummonLevelUp || ["998", "999"].includes(id)) continue;
 
     const scoreGetSwitch = SCOREGETSWITCH[`${scoreBossLevel.ScoreGetSwitchGroup}001`];
     const monster = MONSTER[scoreBossLevel.MonsterId];
