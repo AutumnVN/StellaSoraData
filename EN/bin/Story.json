@@ -11,6 +11,7 @@
     "ConditionId": "C01_05",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -25,7 +26,8 @@
     "Recommend": "5",
     "Aim": "Story.100.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "101": {
     "Id": 101,
@@ -39,6 +41,7 @@
     "ConditionId": "",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -49,7 +52,8 @@
     "Recommend": "",
     "Aim": "Story.101.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "102": {
     "Id": 102,
@@ -63,6 +67,7 @@
     "ConditionId": "C01_01",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -75,7 +80,8 @@
     "Recommend": "",
     "Aim": "Story.102.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "103": {
     "Id": 103,
@@ -89,6 +95,7 @@
     "ConditionId": "C01_02",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -101,7 +108,8 @@
     "Recommend": "",
     "Aim": "Story.103.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "104": {
     "Id": 104,
@@ -115,6 +123,7 @@
     "ConditionId": "C01_03",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -127,7 +136,8 @@
     "Recommend": "",
     "Aim": "Story.104.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "105": {
     "Id": 105,
@@ -141,6 +151,7 @@
     "ConditionId": "C01_04",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -153,7 +164,8 @@
     "Recommend": "",
     "Aim": "Story.105.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "106": {
     "Id": 106,
@@ -167,6 +179,7 @@
     "ConditionId": "CBA01_05",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -179,7 +192,8 @@
     "Recommend": "",
     "Aim": "Story.106.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "107": {
     "Id": 107,
@@ -193,6 +207,7 @@
     "ConditionId": "C01_06",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -205,7 +220,8 @@
     "Recommend": "",
     "Aim": "Story.107.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "108": {
     "Id": 108,
@@ -219,6 +235,7 @@
     "ConditionId": "C01_07_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -231,7 +248,8 @@
     "Recommend": "",
     "Aim": "Story.108.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "109": {
     "Id": 109,
@@ -245,6 +263,7 @@
     "ConditionId": "C01_07_c",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -257,7 +276,8 @@
     "Recommend": "",
     "Aim": "Story.109.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "110": {
     "Id": 110,
@@ -271,6 +291,7 @@
     "ConditionId": "C01_07_b",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -283,7 +304,8 @@
     "Recommend": "",
     "Aim": "Story.110.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "111": {
     "Id": 111,
@@ -297,6 +319,7 @@
     "ConditionId": "C01_08",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -310,7 +333,8 @@
     "Recommend": "",
     "Aim": "Story.111.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "112": {
     "Id": 112,
@@ -324,6 +348,7 @@
     "ConditionId": "C01_09",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 104,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
     "ParentStoryId": [
@@ -336,7 +361,8 @@
     "Recommend": "",
     "Aim": "Story.112.3",
     "IsLast": true,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "201": {
     "Id": 201,
@@ -350,6 +376,7 @@
     "ConditionId": "C02_03",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -365,7 +392,8 @@
     "Recommend": "5",
     "Aim": "Story.201.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "202": {
     "Id": 202,
@@ -379,6 +407,7 @@
     "ConditionId": "C02_09",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -393,7 +422,8 @@
     "Recommend": "5",
     "Aim": "Story.202.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "203": {
     "Id": 203,
@@ -407,6 +437,7 @@
     "ConditionId": "C02_10",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -421,7 +452,8 @@
     "Recommend": "5",
     "Aim": "Story.203.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "204": {
     "Id": 204,
@@ -435,6 +467,7 @@
     "ConditionId": "",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -445,7 +478,8 @@
     "Recommend": "",
     "Aim": "Story.204.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "205": {
     "Id": 205,
@@ -459,6 +493,7 @@
     "ConditionId": "C02_02_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -471,7 +506,8 @@
     "Recommend": "",
     "Aim": "Story.205.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "206": {
     "Id": 206,
@@ -485,6 +521,7 @@
     "ConditionId": "C02_02_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -497,7 +534,8 @@
     "Recommend": "",
     "Aim": "Story.206.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "207": {
     "Id": 207,
@@ -511,6 +549,7 @@
     "ConditionId": "C02_02_c",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -523,7 +562,8 @@
     "Recommend": "",
     "Aim": "Story.207.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "208": {
     "Id": 208,
@@ -537,6 +577,7 @@
     "ConditionId": "C02_03_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -549,7 +590,8 @@
     "Recommend": "",
     "Aim": "Story.208.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "209": {
     "Id": 209,
@@ -563,6 +605,7 @@
     "ConditionId": "C02_03_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -575,7 +618,8 @@
     "Recommend": "",
     "Aim": "Story.209.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "210": {
     "Id": 210,
@@ -589,6 +633,7 @@
     "ConditionId": "CBA02_03",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -601,7 +646,8 @@
     "Recommend": "",
     "Aim": "Story.210.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "211": {
     "Id": 211,
@@ -615,6 +661,7 @@
     "ConditionId": "C02_04",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -627,7 +674,8 @@
     "Recommend": "",
     "Aim": "Story.211.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "212": {
     "Id": 212,
@@ -641,6 +689,7 @@
     "ConditionId": "C02_05",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -653,7 +702,8 @@
     "Recommend": "",
     "Aim": "Story.212.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "213": {
     "Id": 213,
@@ -667,6 +717,7 @@
     "ConditionId": "C02_06",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -679,7 +730,8 @@
     "Recommend": "",
     "Aim": "Story.213.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "214": {
     "Id": 214,
@@ -693,6 +745,7 @@
     "ConditionId": "C02_07",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -705,7 +758,8 @@
     "Recommend": "",
     "Aim": "Story.214.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "215": {
     "Id": 215,
@@ -719,6 +773,7 @@
     "ConditionId": "C02_08",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -731,7 +786,8 @@
     "Recommend": "",
     "Aim": "Story.215.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "216": {
     "Id": 216,
@@ -745,6 +801,7 @@
     "ConditionId": "CBA02_09",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -757,7 +814,8 @@
     "Recommend": "",
     "Aim": "Story.216.3",
     "IsLast": false,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "217": {
     "Id": 217,
@@ -771,6 +829,7 @@
     "ConditionId": "CBA02_10",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 104,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
     "ParentStoryId": [
@@ -783,7 +842,8 @@
     "Recommend": "",
     "Aim": "Story.217.3",
     "IsLast": true,
-    "AvgMotion": "style_20"
+    "AvgMotion": "style_20",
+    "MemoryType": 0
   },
   "301": {
     "Id": 301,
@@ -797,6 +857,7 @@
     "ConditionId": "C03_04",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -811,7 +872,8 @@
     "Recommend": "",
     "Aim": "Story.301.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "302": {
     "Id": 302,
@@ -825,6 +887,7 @@
     "ConditionId": "C03_09",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -839,7 +902,8 @@
     "Recommend": "",
     "Aim": "Story.302.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "304": {
     "Id": 304,
@@ -853,6 +917,7 @@
     "ConditionId": "",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -863,7 +928,8 @@
     "Recommend": "",
     "Aim": "Story.304.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "305": {
     "Id": 305,
@@ -877,6 +943,7 @@
     "ConditionId": "C03_00_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -889,7 +956,8 @@
     "Recommend": "",
     "Aim": "Story.305.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "306": {
     "Id": 306,
@@ -903,6 +971,7 @@
     "ConditionId": "C03_00_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -915,7 +984,8 @@
     "Recommend": "",
     "Aim": "Story.306.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "307": {
     "Id": 307,
@@ -929,6 +999,7 @@
     "ConditionId": "C03_01",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -941,7 +1012,8 @@
     "Recommend": "",
     "Aim": "Story.307.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "308": {
     "Id": 308,
@@ -955,6 +1027,7 @@
     "ConditionId": "C03_02",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -967,7 +1040,8 @@
     "Recommend": "",
     "Aim": "Story.308.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "309": {
     "Id": 309,
@@ -981,6 +1055,7 @@
     "ConditionId": "C03_03",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -993,7 +1068,8 @@
     "Recommend": "",
     "Aim": "Story.309.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "310": {
     "Id": 310,
@@ -1007,6 +1083,7 @@
     "ConditionId": "CBA03_04",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1019,7 +1096,8 @@
     "Recommend": "",
     "Aim": "Story.310.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "311": {
     "Id": 311,
@@ -1033,6 +1111,7 @@
     "ConditionId": "C03_05_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1045,7 +1124,8 @@
     "Recommend": "",
     "Aim": "Story.311.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "312": {
     "Id": 312,
@@ -1059,6 +1139,7 @@
     "ConditionId": "C03_05_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1071,7 +1152,8 @@
     "Recommend": "",
     "Aim": "Story.312.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "313": {
     "Id": 313,
@@ -1085,6 +1167,7 @@
     "ConditionId": "C03_05_c",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -1097,7 +1180,8 @@
     "Recommend": "",
     "Aim": "Story.313.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "314": {
     "Id": 314,
@@ -1111,6 +1195,7 @@
     "ConditionId": "C03_06",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1124,7 +1209,8 @@
     "Recommend": "",
     "Aim": "Story.314.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "315": {
     "Id": 315,
@@ -1138,6 +1224,7 @@
     "ConditionId": "C03_07",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1150,7 +1237,8 @@
     "Recommend": "",
     "Aim": "Story.315.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "316": {
     "Id": 316,
@@ -1164,6 +1252,7 @@
     "ConditionId": "C03_08",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1176,7 +1265,8 @@
     "Recommend": "",
     "Aim": "Story.316.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "317": {
     "Id": 317,
@@ -1190,6 +1280,7 @@
     "ConditionId": "CBA03_09",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1202,7 +1293,8 @@
     "Recommend": "",
     "Aim": "Story.317.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "318": {
     "Id": 318,
@@ -1216,6 +1308,7 @@
     "ConditionId": "C03_10",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 104,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
     "ParentStoryId": [
@@ -1228,7 +1321,8 @@
     "Recommend": "",
     "Aim": "Story.318.3",
     "IsLast": true,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "401": {
     "Id": 401,
@@ -1242,6 +1336,7 @@
     "ConditionId": "C04_04",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1258,7 +1353,8 @@
     "Recommend": "",
     "Aim": "Story.401.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "402": {
     "Id": 402,
@@ -1272,6 +1368,7 @@
     "ConditionId": "C04_09",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1286,7 +1383,8 @@
     "Recommend": "",
     "Aim": "Story.402.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "403": {
     "Id": 403,
@@ -1300,6 +1398,7 @@
     "ConditionId": "",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -1310,7 +1409,8 @@
     "Recommend": "",
     "Aim": "Story.403.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "404": {
     "Id": 404,
@@ -1324,6 +1424,7 @@
     "ConditionId": "C04_01",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1336,7 +1437,8 @@
     "Recommend": "",
     "Aim": "Story.404.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "405": {
     "Id": 405,
@@ -1350,6 +1452,7 @@
     "ConditionId": "C04_03_a",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -1362,7 +1465,8 @@
     "Recommend": "",
     "Aim": "Story.405.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "406": {
     "Id": 406,
@@ -1376,6 +1480,7 @@
     "ConditionId": "C04_03_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1388,7 +1493,8 @@
     "Recommend": "",
     "Aim": "Story.406.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "407": {
     "Id": 407,
@@ -1402,6 +1508,7 @@
     "ConditionId": "C04_03_c",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1414,7 +1521,8 @@
     "Recommend": "",
     "Aim": "Story.407.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "408": {
     "Id": 408,
@@ -1428,6 +1536,7 @@
     "ConditionId": "C04_04_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1441,7 +1550,8 @@
     "Recommend": "",
     "Aim": "Story.408.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "409": {
     "Id": 409,
@@ -1455,6 +1565,7 @@
     "ConditionId": "C04_04_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1468,7 +1579,8 @@
     "Recommend": "",
     "Aim": "Story.409.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "410": {
     "Id": 410,
@@ -1482,6 +1594,7 @@
     "ConditionId": "C04_04_c",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1495,7 +1608,8 @@
     "Recommend": "",
     "Aim": "Story.410.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "411": {
     "Id": 411,
@@ -1509,6 +1623,7 @@
     "ConditionId": "CBA04_04",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1521,7 +1636,8 @@
     "Recommend": "",
     "Aim": "Story.411.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "412": {
     "Id": 412,
@@ -1535,6 +1651,7 @@
     "ConditionId": "C04_05",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1547,7 +1664,8 @@
     "Recommend": "",
     "Aim": "Story.412.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "413": {
     "Id": 413,
@@ -1561,6 +1679,7 @@
     "ConditionId": "C04_06",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1573,7 +1692,8 @@
     "Recommend": "",
     "Aim": "Story.413.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "414": {
     "Id": 414,
@@ -1587,6 +1707,7 @@
     "ConditionId": "C04_07",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1599,7 +1720,8 @@
     "Recommend": "",
     "Aim": "Story.414.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "415": {
     "Id": 415,
@@ -1613,6 +1735,7 @@
     "ConditionId": "C04_08",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1625,7 +1748,8 @@
     "Recommend": "",
     "Aim": "Story.415.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "416": {
     "Id": 416,
@@ -1639,6 +1763,7 @@
     "ConditionId": "CBA04_09",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1651,7 +1776,8 @@
     "Recommend": "",
     "Aim": "Story.416.3",
     "IsLast": false,
-    "AvgMotion": "style_19"
+    "AvgMotion": "style_19",
+    "MemoryType": 0
   },
   "417": {
     "Id": 417,
@@ -1665,6 +1791,7 @@
     "ConditionId": "C04_10",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 104,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
     "ParentStoryId": [
@@ -1677,7 +1804,8 @@
     "Recommend": "",
     "Aim": "Story.417.3",
     "IsLast": true,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "501": {
     "Id": 501,
@@ -1691,6 +1819,7 @@
     "ConditionId": "C05_05",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1707,7 +1836,8 @@
     "Recommend": "",
     "Aim": "Story.501.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "502": {
     "Id": 502,
@@ -1721,6 +1851,7 @@
     "ConditionId": "C05_07",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1735,7 +1866,8 @@
     "Recommend": "",
     "Aim": "Story.502.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "503": {
     "Id": 503,
@@ -1749,6 +1881,7 @@
     "ConditionId": "C05_09",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1763,7 +1896,8 @@
     "Recommend": "",
     "Aim": "Story.503.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "504": {
     "Id": 504,
@@ -1777,6 +1911,7 @@
     "ConditionId": "",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -1787,7 +1922,8 @@
     "Recommend": "",
     "Aim": "Story.504.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "505": {
     "Id": 505,
@@ -1801,6 +1937,7 @@
     "ConditionId": "C05_00",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1813,7 +1950,8 @@
     "Recommend": "",
     "Aim": "Story.505.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "506": {
     "Id": 506,
@@ -1827,6 +1965,7 @@
     "ConditionId": "C05_01",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1839,7 +1978,8 @@
     "Recommend": "",
     "Aim": "Story.506.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "507": {
     "Id": 507,
@@ -1853,6 +1993,7 @@
     "ConditionId": "C05_02_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1865,7 +2006,8 @@
     "Recommend": "",
     "Aim": "Story.507.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "508": {
     "Id": 508,
@@ -1879,6 +2021,7 @@
     "ConditionId": "C05_02_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1891,7 +2034,8 @@
     "Recommend": "",
     "Aim": "Story.508.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "509": {
     "Id": 509,
@@ -1905,6 +2049,7 @@
     "ConditionId": "C05_02_c",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1917,7 +2062,8 @@
     "Recommend": "",
     "Aim": "Story.509.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "510": {
     "Id": 510,
@@ -1931,6 +2077,7 @@
     "ConditionId": "C05_03",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1943,7 +2090,8 @@
     "Recommend": "",
     "Aim": "Story.510.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "511": {
     "Id": 511,
@@ -1957,6 +2105,7 @@
     "ConditionId": "C05_04",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1969,7 +2118,8 @@
     "Recommend": "",
     "Aim": "Story.511.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "512": {
     "Id": 512,
@@ -1983,6 +2133,7 @@
     "ConditionId": "CBA05_05",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -1995,7 +2146,8 @@
     "Recommend": "",
     "Aim": "Story.512.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "513": {
     "Id": 513,
@@ -2009,6 +2161,7 @@
     "ConditionId": "C05_06",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2021,7 +2174,8 @@
     "Recommend": "",
     "Aim": "Story.513.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "514": {
     "Id": 514,
@@ -2035,6 +2189,7 @@
     "ConditionId": "CBA05_08",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2047,7 +2202,8 @@
     "Recommend": "",
     "Aim": "Story.514.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "515": {
     "Id": 515,
@@ -2061,6 +2217,7 @@
     "ConditionId": "C05_08_a",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -2073,7 +2230,8 @@
     "Recommend": "",
     "Aim": "Story.515.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "516": {
     "Id": 516,
@@ -2087,6 +2245,7 @@
     "ConditionId": "C05_08_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2099,7 +2258,8 @@
     "Recommend": "",
     "Aim": "Story.516.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "517": {
     "Id": 517,
@@ -2113,6 +2273,7 @@
     "ConditionId": "C05_08_c",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -2125,7 +2286,8 @@
     "Recommend": "",
     "Aim": "Story.517.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "518": {
     "Id": 518,
@@ -2139,6 +2301,7 @@
     "ConditionId": "CBA05_10",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2151,7 +2314,8 @@
     "Recommend": "",
     "Aim": "Story.518.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "519": {
     "Id": 519,
@@ -2165,6 +2329,7 @@
     "ConditionId": "C05_10",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 104,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
     "ParentStoryId": [
@@ -2177,7 +2342,8 @@
     "Recommend": "",
     "Aim": "Story.519.3",
     "IsLast": true,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "601": {
     "Id": 601,
@@ -2191,6 +2357,7 @@
     "ConditionId": "CBA06_01",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2206,7 +2373,8 @@
     "Recommend": "",
     "Aim": "Story.601.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "602": {
     "Id": 602,
@@ -2220,6 +2388,7 @@
     "ConditionId": "CBA06_02",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2234,7 +2403,8 @@
     "Recommend": "",
     "Aim": "Story.602.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "603": {
     "Id": 603,
@@ -2248,6 +2418,7 @@
     "ConditionId": "CBA06_03",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2262,7 +2433,8 @@
     "Recommend": "",
     "Aim": "Story.603.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "604": {
     "Id": 604,
@@ -2276,6 +2448,7 @@
     "ConditionId": "",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -2286,7 +2459,8 @@
     "Recommend": "",
     "Aim": "Story.604.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "605": {
     "Id": 605,
@@ -2300,6 +2474,7 @@
     "ConditionId": "C06_01",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2312,7 +2487,8 @@
     "Recommend": "",
     "Aim": "Story.605.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "606": {
     "Id": 606,
@@ -2326,6 +2502,7 @@
     "ConditionId": "C06_02_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2338,7 +2515,8 @@
     "Recommend": "",
     "Aim": "Story.606.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "607": {
     "Id": 607,
@@ -2352,6 +2530,7 @@
     "ConditionId": "C06_02_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2364,7 +2543,8 @@
     "Recommend": "",
     "Aim": "Story.607.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "608": {
     "Id": 608,
@@ -2378,6 +2558,7 @@
     "ConditionId": "C06_02_c",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2390,7 +2571,8 @@
     "Recommend": "",
     "Aim": "Story.608.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "609": {
     "Id": 609,
@@ -2404,6 +2586,7 @@
     "ConditionId": "C06_03_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2416,7 +2599,8 @@
     "Recommend": "",
     "Aim": "Story.609.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "610": {
     "Id": 610,
@@ -2430,6 +2614,7 @@
     "ConditionId": "C06_03_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2442,7 +2627,8 @@
     "Recommend": "",
     "Aim": "Story.610.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "611": {
     "Id": 611,
@@ -2456,6 +2642,7 @@
     "ConditionId": "C06_04_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2468,7 +2655,8 @@
     "Recommend": "",
     "Aim": "Story.611.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "612": {
     "Id": 612,
@@ -2482,6 +2670,7 @@
     "ConditionId": "C06_04_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2494,7 +2683,8 @@
     "Recommend": "",
     "Aim": "Story.612.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "613": {
     "Id": 613,
@@ -2508,6 +2698,7 @@
     "ConditionId": "C06_05_a",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -2520,7 +2711,8 @@
     "Recommend": "",
     "Aim": "Story.613.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "614": {
     "Id": 614,
@@ -2534,6 +2726,7 @@
     "ConditionId": "C06_05_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2546,7 +2739,8 @@
     "Recommend": "",
     "Aim": "Story.614.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "615": {
     "Id": 615,
@@ -2560,6 +2754,7 @@
     "ConditionId": "C06_06",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2572,7 +2767,8 @@
     "Recommend": "",
     "Aim": "Story.615.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "616": {
     "Id": 616,
@@ -2586,6 +2782,7 @@
     "ConditionId": "C06_07",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2598,7 +2795,8 @@
     "Recommend": "",
     "Aim": "Story.616.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "617": {
     "Id": 617,
@@ -2612,6 +2810,7 @@
     "ConditionId": "C06_08",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2624,7 +2823,8 @@
     "Recommend": "",
     "Aim": "Story.617.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "618": {
     "Id": 618,
@@ -2638,6 +2838,7 @@
     "ConditionId": "C06_09",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2650,7 +2851,8 @@
     "Recommend": "",
     "Aim": "Story.618.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "619": {
     "Id": 619,
@@ -2664,6 +2866,7 @@
     "ConditionId": "C06_10",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2676,7 +2879,8 @@
     "Recommend": "",
     "Aim": "Story.619.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "620": {
     "Id": 620,
@@ -2690,6 +2894,7 @@
     "ConditionId": "C06_11",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2702,7 +2907,8 @@
     "Recommend": "",
     "Aim": "Story.620.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "621": {
     "Id": 621,
@@ -2716,6 +2922,7 @@
     "ConditionId": "C06_12",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2728,7 +2935,8 @@
     "Recommend": "",
     "Aim": "Story.621.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "622": {
     "Id": 622,
@@ -2742,6 +2950,7 @@
     "ConditionId": "C06_13",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 104,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
     "ParentStoryId": [
@@ -2754,7 +2963,8 @@
     "Recommend": "",
     "Aim": "Story.622.3",
     "IsLast": true,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "801": {
     "Id": 801,
@@ -2768,6 +2978,7 @@
     "ConditionId": "CBA07_01",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2782,7 +2993,8 @@
     "Recommend": "",
     "Aim": "Story.801.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "802": {
     "Id": 802,
@@ -2796,6 +3008,7 @@
     "ConditionId": "CBA07_02",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2810,7 +3023,8 @@
     "Recommend": "",
     "Aim": "Story.802.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "803": {
     "Id": 803,
@@ -2824,6 +3038,7 @@
     "ConditionId": "CBA07_03",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2839,7 +3054,8 @@
     "Recommend": "",
     "Aim": "Story.803.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "804": {
     "Id": 804,
@@ -2853,6 +3069,7 @@
     "ConditionId": "",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -2863,7 +3080,8 @@
     "Recommend": "",
     "Aim": "Story.804.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "805": {
     "Id": 805,
@@ -2877,6 +3095,7 @@
     "ConditionId": "C07_01",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2889,7 +3108,8 @@
     "Recommend": "",
     "Aim": "Story.805.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "806": {
     "Id": 806,
@@ -2903,6 +3123,7 @@
     "ConditionId": "C07_02",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2915,7 +3136,8 @@
     "Recommend": "",
     "Aim": "Story.806.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "807": {
     "Id": 807,
@@ -2929,6 +3151,7 @@
     "ConditionId": "C07_03",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2941,7 +3164,8 @@
     "Recommend": "",
     "Aim": "Story.807.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "808": {
     "Id": 808,
@@ -2955,6 +3179,7 @@
     "ConditionId": "C07_04",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -2967,7 +3192,8 @@
     "Recommend": "",
     "Aim": "Story.808.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "809": {
     "Id": 809,
@@ -2981,6 +3207,7 @@
     "ConditionId": "C07_05_c",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -2993,7 +3220,8 @@
     "Recommend": "",
     "Aim": "Story.809.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "810": {
     "Id": 810,
@@ -3007,6 +3235,7 @@
     "ConditionId": "C07_05_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3019,7 +3248,8 @@
     "Recommend": "",
     "Aim": "Story.810.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "811": {
     "Id": 811,
@@ -3033,6 +3263,7 @@
     "ConditionId": "C07_05_b",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3045,7 +3276,8 @@
     "Recommend": "",
     "Aim": "Story.811.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "812": {
     "Id": 812,
@@ -3059,6 +3291,7 @@
     "ConditionId": "C07_06_ba",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -3071,7 +3304,8 @@
     "Recommend": "",
     "Aim": "Story.812.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "813": {
     "Id": 813,
@@ -3085,6 +3319,7 @@
     "ConditionId": "C07_06_bb",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -3097,7 +3332,8 @@
     "Recommend": "",
     "Aim": "Story.813.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "814": {
     "Id": 814,
@@ -3111,6 +3347,7 @@
     "ConditionId": "C07_06_bc",
     "IsBranch": true,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 112,
     "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
@@ -3123,7 +3360,8 @@
     "Recommend": "",
     "Aim": "Story.814.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "815": {
     "Id": 815,
@@ -3137,6 +3375,7 @@
     "ConditionId": "C07_06_a",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3149,7 +3388,8 @@
     "Recommend": "",
     "Aim": "Story.815.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "816": {
     "Id": 816,
@@ -3163,6 +3403,7 @@
     "ConditionId": "C07_07",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3175,7 +3416,8 @@
     "Recommend": "",
     "Aim": "Story.816.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "817": {
     "Id": 817,
@@ -3189,6 +3431,7 @@
     "ConditionId": "C07_08",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3201,7 +3444,8 @@
     "Recommend": "",
     "Aim": "Story.817.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "818": {
     "Id": 818,
@@ -3215,6 +3459,7 @@
     "ConditionId": "C07_09",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3227,7 +3472,8 @@
     "Recommend": "",
     "Aim": "Story.818.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "819": {
     "Id": 819,
@@ -3241,6 +3487,7 @@
     "ConditionId": "C07_12",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3253,7 +3500,8 @@
     "Recommend": "",
     "Aim": "Story.819.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "820": {
     "Id": 820,
@@ -3267,6 +3515,7 @@
     "ConditionId": "C07_10",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3279,7 +3528,8 @@
     "Recommend": "",
     "Aim": "Story.820.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "821": {
     "Id": 821,
@@ -3293,6 +3543,7 @@
     "ConditionId": "C07_11",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3305,7 +3556,8 @@
     "Recommend": "",
     "Aim": "Story.821.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "822": {
     "Id": 822,
@@ -3319,6 +3571,7 @@
     "ConditionId": "C07_13",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3331,7 +3584,8 @@
     "Recommend": "",
     "Aim": "Story.822.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "823": {
     "Id": 823,
@@ -3345,6 +3599,7 @@
     "ConditionId": "C07_14",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3357,7 +3612,8 @@
     "Recommend": "",
     "Aim": "Story.823.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "824": {
     "Id": 824,
@@ -3371,6 +3627,7 @@
     "ConditionId": "C07_15",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
@@ -3384,7 +3641,8 @@
     "Recommend": "",
     "Aim": "Story.824.3",
     "IsLast": false,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "825": {
     "Id": 825,
@@ -3398,6 +3656,7 @@
     "ConditionId": "C07_16",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 104,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
     "ParentStoryId": [
@@ -3410,7 +3669,8 @@
     "Recommend": "",
     "Aim": "Story.825.3",
     "IsLast": true,
-    "AvgMotion": "style_21"
+    "AvgMotion": "style_21",
+    "MemoryType": 0
   },
   "6501": {
     "Id": 6501,
@@ -3424,6 +3684,7 @@
     "ConditionId": "CBA06x5_01",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3436,7 +3697,8 @@
     "Recommend": "",
     "Aim": "Story.6501.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "6502": {
     "Id": 6502,
@@ -3450,6 +3712,7 @@
     "ConditionId": "CBA06x5_02",
     "IsBranch": false,
     "IsBattle": true,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3462,7 +3725,8 @@
     "Recommend": "",
     "Aim": "Story.6502.3",
     "IsLast": false,
-    "AvgMotion": ""
+    "AvgMotion": "",
+    "MemoryType": 0
   },
   "6503": {
     "Id": 6503,
@@ -3476,6 +3740,7 @@
     "ConditionId": "",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3486,7 +3751,8 @@
     "Recommend": "",
     "Aim": "Story.6503.3",
     "IsLast": false,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   },
   "6504": {
     "Id": 6504,
@@ -3500,6 +3766,7 @@
     "ConditionId": "C06x5_01",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3510,7 +3777,8 @@
     "Recommend": "",
     "Aim": "Story.6504.3",
     "IsLast": false,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   },
   "6505": {
     "Id": 6505,
@@ -3524,6 +3792,7 @@
     "ConditionId": "C06x5_02",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3534,7 +3803,8 @@
     "Recommend": "",
     "Aim": "Story.6505.3",
     "IsLast": false,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   },
   "6506": {
     "Id": 6506,
@@ -3548,6 +3818,7 @@
     "ConditionId": "C06x5_03",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3558,7 +3829,8 @@
     "Recommend": "",
     "Aim": "Story.6506.3",
     "IsLast": false,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   },
   "6507": {
     "Id": 6507,
@@ -3572,6 +3844,7 @@
     "ConditionId": "C06x5_04",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3582,7 +3855,8 @@
     "Recommend": "",
     "Aim": "Story.6507.3",
     "IsLast": false,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   },
   "6508": {
     "Id": 6508,
@@ -3596,6 +3870,7 @@
     "ConditionId": "C06x5_05",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3606,7 +3881,8 @@
     "Recommend": "",
     "Aim": "Story.6508.3",
     "IsLast": false,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   },
   "6509": {
     "Id": 6509,
@@ -3620,6 +3896,7 @@
     "ConditionId": "C06x5_06",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3630,7 +3907,8 @@
     "Recommend": "",
     "Aim": "Story.6509.3",
     "IsLast": false,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   },
   "6510": {
     "Id": 6510,
@@ -3644,6 +3922,7 @@
     "ConditionId": "C06x5_07",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3654,7 +3933,8 @@
     "Recommend": "",
     "Aim": "Story.6510.3",
     "IsLast": false,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   },
   "6511": {
     "Id": 6511,
@@ -3668,6 +3948,7 @@
     "ConditionId": "C06x5_08",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [],
@@ -3678,7 +3959,8 @@
     "Recommend": "",
     "Aim": "Story.6511.3",
     "IsLast": false,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   },
   "6512": {
     "Id": 6512,
@@ -3692,6 +3974,7 @@
     "ConditionId": "C06x5_09",
     "IsBranch": false,
     "IsBattle": false,
+    "EnterMethod": 0,
     "Reward": 104,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
     "ParentStoryId": [],
@@ -3702,6 +3985,7 @@
     "Recommend": "",
     "Aim": "Story.6512.3",
     "IsLast": true,
-    "AvgMotion": "style_42"
+    "AvgMotion": "style_42",
+    "MemoryType": 0
   }
 }

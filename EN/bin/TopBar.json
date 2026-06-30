@@ -2079,15 +2079,29 @@
     "DelayShow": false,
     "HideHome": false
   },
-  "GoldenSpyLevelSelectPanel": {
-    "Id": "GoldenSpyLevelSelectPanel",
-    "Title": "TopBar.GoldenSpyLevelSelectPanel.1",
+  "GoldenSpyLevelSelectPanel_400008": {
+    "Id": "GoldenSpyLevelSelectPanel_400008",
+    "Title": "TopBar.GoldenSpyLevelSelectPanel_400008.1",
     "EntryId": 0,
     "HideBack": false,
     "Energy": false,
     "Coin": true,
     "CoinIds": [
       73109
+    ],
+    "HideCoinAdd": false,
+    "DelayShow": false,
+    "HideHome": false
+  },
+  "GoldenSpyLevelSelectPanel_400012": {
+    "Id": "GoldenSpyLevelSelectPanel_400012",
+    "Title": "TopBar.GoldenSpyLevelSelectPanel_400012.1",
+    "EntryId": 0,
+    "HideBack": false,
+    "Energy": false,
+    "Coin": true,
+    "CoinIds": [
+      73112
     ],
     "HideCoinAdd": false,
     "DelayShow": false,
@@ -2417,6 +2431,70 @@
     "Energy": false,
     "Coin": false,
     "CoinIds": [],
+    "HideCoinAdd": false,
+    "DelayShow": false,
+    "HideHome": false
+  },
+  "ActivityLevelsSelectPanel_10109": {
+    "Id": "ActivityLevelsSelectPanel_10109",
+    "Title": "TopBar.ActivityLevelsSelectPanel_10109.1",
+    "EntryId": 0,
+    "HideBack": false,
+    "Energy": true,
+    "Coin": false,
+    "CoinIds": [],
+    "HideCoinAdd": false,
+    "DelayShow": false,
+    "HideHome": false
+  },
+  "Shop_10109": {
+    "Id": "Shop_10109",
+    "Title": "TopBar.Shop_10109.1",
+    "EntryId": 0,
+    "HideBack": false,
+    "Energy": false,
+    "Coin": true,
+    "CoinIds": [],
+    "HideCoinAdd": false,
+    "DelayShow": false,
+    "HideHome": false
+  },
+  "Task_10109": {
+    "Id": "Task_10109",
+    "Title": "TopBar.Task_10109.1",
+    "EntryId": 0,
+    "HideBack": false,
+    "Energy": false,
+    "Coin": true,
+    "CoinIds": [
+      73112
+    ],
+    "HideCoinAdd": false,
+    "DelayShow": false,
+    "HideHome": false
+  },
+  "GunStormStory_10109": {
+    "Id": "GunStormStory_10109",
+    "Title": "TopBar.GunStormStory_10109.1",
+    "EntryId": 0,
+    "HideBack": false,
+    "Energy": false,
+    "Coin": false,
+    "CoinIds": [],
+    "HideCoinAdd": false,
+    "DelayShow": false,
+    "HideHome": false
+  },
+  "GunStormPanel": {
+    "Id": "GunStormPanel",
+    "Title": "TopBar.GunStormPanel.1",
+    "EntryId": 0,
+    "HideBack": false,
+    "Energy": false,
+    "Coin": true,
+    "CoinIds": [
+      73112
+    ],
     "HideCoinAdd": false,
     "DelayShow": false,
     "HideHome": false
