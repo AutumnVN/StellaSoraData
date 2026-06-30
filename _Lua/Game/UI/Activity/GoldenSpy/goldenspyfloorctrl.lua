@@ -1,5 +1,5 @@
 local GoldenSpyFloorCtrl = class("GoldenSpyFloorCtrl", BaseCtrl)
-local LevelPrefabPath = "UI_Activity/_400008/LevelPrefab/"
+local LevelPrefabPath = "UI_Activity/_%s/LevelPrefab/"
 GoldenSpyFloorCtrl._mapNodeConfig = {
 	HookCtrl = {
 		sNodeName = "HookRoot",
@@ -54,7 +54,7 @@ function GoldenSpyFloorCtrl:Init(levelId, floorId, levelCtrl)
 		return
 	end
 	local nPrefabName = self.levelCtrl.GoldenSpyLevelData:GetLevelPrefabName()
-	local goLevelPerfab = self:LoadAsset(LevelPrefabPath .. nPrefabName .. ".prefab")
+	local goLevelPerfab = self:LoadAsset(string.format(LevelPrefabPath, self.levelCtrl.nActId) .. nPrefabName .. ".prefab")
 	self.prefab = instantiate(goLevelPerfab, self._mapNode.floorItemRoot)
 	self.prefab.transform.localPosition = Vector3.zero
 	self.prefab.transform.localScale = Vector3.one
@@ -240,7 +240,7 @@ function GoldenSpyFloorCtrl:Shoot(nSpeed, nRadius, nFactor, onRetractComplete, o
 		end
 	end)
 end
-function GoldenSpyFloorCtrl:RemoveItem(itemCtrl)
+function GoldenSpyFloorCtrl:RemoveItem(itemCtrl, bForce)
 	local bDelSuccess = false
 	local itemId = itemCtrl:GetItemCfg().Id
 	for i = #self.tbItem, 1, -1 do
@@ -252,7 +252,7 @@ function GoldenSpyFloorCtrl:RemoveItem(itemCtrl)
 		end
 	end
 	if bDelSuccess then
-		self.levelCtrl.GoldenSpyFloorData:DeleteItem(itemId)
+		self.levelCtrl.GoldenSpyFloorData:DeleteItem(itemId, bForce)
 	end
 end
 function GoldenSpyFloorCtrl:DropItem()

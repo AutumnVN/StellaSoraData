@@ -59,7 +59,7 @@ function MessageBoxItemListCtrl:OnGridRefresh(goGrid, gridIndex)
 	if not self.tbGridCtrl[nInstanceID] then
 		self.tbGridCtrl[nInstanceID] = self:BindCtrlByNode(goGrid, "Game.UI.TemplateEx.TemplateItemCtrl")
 	end
-	self.tbGridCtrl[nInstanceID]:SetItem(mapData.nId, nil, mapData.nCount, nil, mapData.bReceived, mapData.bFirstPass, mapData.bThreePass, true)
+	self.tbGridCtrl[nInstanceID]:SetItem(mapData.nId, nil, mapData.nCount, nil, mapData.bReceived, mapData.bFirstPass, mapData.bThreePass, true, nil, nil, mapData.bExtraDrop, mapData.bDoubleDrop)
 end
 function MessageBoxItemListCtrl:OnGridBtnClick(goGrid, gridIndex)
 	local nIndex = gridIndex + 1

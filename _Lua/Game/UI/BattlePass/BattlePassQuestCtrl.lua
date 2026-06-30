@@ -32,7 +32,9 @@ BattlePassQuestCtrl._mapNodeConfig = {
 		sLanguageId = "BattlePassReceiveAll"
 	},
 	redDotDailyQuest = {},
-	redDotWeekQuest = {}
+	redDotWeekQuest = {},
+	txt_DailyTime = {sComponentName = "TMP_Text", nCount = 2},
+	txt_WeeklyTime = {sComponentName = "TMP_Text", nCount = 2}
 }
 BattlePassQuestCtrl._mapEventConfig = {
 	BattlePassQuestReceive = "OnEvent_QuestReceive",
@@ -55,19 +57,6 @@ function BattlePassQuestCtrl:FadeOut()
 end
 function BattlePassQuestCtrl:OnEnable()
 	self._mapNode.togDaily:SetText(ConfigTable.GetUIText("BattlePassRewardDaily"))
-	if self._panel.questTab == 1 then
-		self.curTab = 1
-		self._mapNode.togDaily:SetDefault(true)
-		self._mapNode.togWeek:SetDefault(false)
-		self._mapNode.srQuestDaily.gameObject:SetActive(true)
-		self._mapNode.srQuestWeekly.gameObject:SetActive(false)
-	else
-		self.curTab = 2
-		self._mapNode.togDaily:SetDefault(false)
-		self._mapNode.togWeek:SetDefault(true)
-		self._mapNode.srQuestDaily.gameObject:SetActive(false)
-		self._mapNode.srQuestWeekly.gameObject:SetActive(true)
-	end
 	self.togRefreshTimer = nil
 end
 function BattlePassQuestCtrl:OnDisable()
@@ -104,11 +93,17 @@ function BattlePassQuestCtrl:Refresh(nExpThisWeek, nCurLevel)
 		return a.nTid < b.nTid
 	end
 	local bHasComplete = false
+	local bDailyAllComplete = true
+	local bQuestAllComplete = true
 	local nIdx = 0
 	for _, mapQuestData in pairs(mapDailyQuest) do
 		if mapQuestData.nStatus == 1 then
 			bHasComplete = true
 			nIdx = 1
+		end
+		if 2 > mapQuestData.nStatus then
+			bDailyAllComplete = false
+			bQuestAllComplete = false
 		end
 		table.insert(self.tbDaily, mapQuestData)
 	end
@@ -119,7 +114,13 @@ function BattlePassQuestCtrl:Refresh(nExpThisWeek, nCurLevel)
 				nIdx = 2
 			end
 		end
+		if 2 > mapQuestData.nStatus then
+			bQuestAllComplete = false
+		end
 		table.insert(self.tbWeekly, mapQuestData)
+	end
+	if nIdx < 1 then
+		nIdx = not bDailyAllComplete and 1 or 2
 	end
 	self:SetWeeklyTogText()
 	table.sort(self.tbDaily, sort)
@@ -131,7 +132,7 @@ function BattlePassQuestCtrl:Refresh(nExpThisWeek, nCurLevel)
 	if self.togRefreshTimer == nil then
 		self.togRefreshTimer = self:AddTimer(0, 60, "SetWeeklyTogText", true, true, true, nil)
 	end
-	return bHasComplete, nIdx
+	return bHasComplete, nIdx, bQuestAllComplete
 end
 function BattlePassQuestCtrl:SetToggle(nIdx)
 	if nIdx == 1 then
@@ -281,12 +282,16 @@ function BattlePassQuestCtrl:SetWeeklyTogText()
 		local nDay = math.floor(sumTime / 86400)
 		local nHour = math.floor((sumTime - nDay * 86400) / 3600)
 		local nHourReal = (sumTime - nDay * 86400) / 3600
+		self._mapNode.togWeek:SetText(ConfigTable.GetUIText("BattlePassQuset"))
 		if 0 < nDay then
-			self._mapNode.togWeek:SetText(orderedFormat(ConfigTable.GetUIText("BattlePassQusetWeekly"), nDay, nHour))
+			NovaAPI.SetTMPText(self._mapNode.txt_WeeklyTime[1], orderedFormat(ConfigTable.GetUIText("BattlePassQusetWeekly"), nDay, nHour))
+			NovaAPI.SetTMPText(self._mapNode.txt_WeeklyTime[2], orderedFormat(ConfigTable.GetUIText("BattlePassQusetWeekly"), nDay, nHour))
 		elseif 1 < nHourReal then
-			self._mapNode.togWeek:SetText(orderedFormat(ConfigTable.GetUIText("BattlePassQusetWeeklyHour"), nHour))
+			NovaAPI.SetTMPText(self._mapNode.txt_WeeklyTime[1], orderedFormat(ConfigTable.GetUIText("BattlePassQusetWeeklyHour"), nHour))
+			NovaAPI.SetTMPText(self._mapNode.txt_WeeklyTime[2], orderedFormat(ConfigTable.GetUIText("BattlePassQusetWeeklyHour"), nHour))
 		else
-			self._mapNode.togWeek:SetText(ConfigTable.GetUIText("Depot_LeftTime_LessThenHour"))
+			NovaAPI.SetTMPText(self._mapNode.txt_WeeklyTime[1], ConfigTable.GetUIText("Depot_LeftTime_LessThenHour"))
+			NovaAPI.SetTMPText(self._mapNode.txt_WeeklyTime[2], ConfigTable.GetUIText("Depot_LeftTime_LessThenHour"))
 		end
 	else
 		self._mapNode.togWeek.gameObject:SetActive(false)

@@ -1299,7 +1299,8 @@ AllEnum.OptionType = {
 AllEnum.RewardType = {
 	First = 1,
 	Three = 2,
-	Extra = 3
+	Extra = 3,
+	Double = 4
 }
 AllEnum.FormationEnterType = {
 	MainLine = 0,

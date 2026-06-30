@@ -9,6 +9,7 @@ GameEnum.monsterEpicType = {
 	BOSSRUSH = 7,
 	JOINTDRILLBOSS = 8
 }
+GameEnum.subBossType = {NORMAL = 5, HUNTBOSS = 4}
 GameEnum.actorMovType = {
 	STATIC = 1,
 	WALK = 2,
@@ -73,6 +74,7 @@ GameEnum.roguelikeLevelStyle = {
 	Main_7_1 = 20,
 	Main_7_2 = 21,
 	Main_8_1 = 22,
+	Main_8_2 = 23,
 	Roguelike_non = 101,
 	Roguelike_miniboss = 102,
 	Roguelike_shilaimu = 103,
@@ -121,6 +123,7 @@ GameEnum.roguelikeLevelStyle = {
 	StoryActivity_10 = 446,
 	StoryActivity_11 = 451,
 	StoryActivity_12 = 456,
+	StoryActivity_12_Boss01 = 457,
 	StoryActivity_13 = 461,
 	StoryActivity_14 = 466,
 	Training = 901
@@ -250,7 +253,8 @@ GameEnum.worldLevelType = {
 	BrickBreaker = 21,
 	TowerDefense = 22,
 	Tutorial = 23,
-	ActivityStory = 24
+	ActivityStory = 24,
+	TraceHunt = 25
 }
 GameEnum.dynamicLevelType = {
 	JointDrill = 1,
@@ -258,7 +262,9 @@ GameEnum.dynamicLevelType = {
 	Trial = 3,
 	Tutorial = 4,
 	JointDrill_2 = 5,
-	BattlePresetTeamEditor = 6
+	BattlePresetTeamEditor = 6,
+	SoldierChess = 7,
+	TraceHunt = 8
 }
 GameEnum.mainLineType = {Mainline = 1, Branchline = 2}
 GameEnum.hurtFlashTintType = {
@@ -519,7 +525,9 @@ GameEnum.itemType = {
 	Title = 12,
 	Honor = 13,
 	HeadItem = 14,
-	LevelHonor = 15
+	LevelHonor = 15,
+	TraceRequest = 16,
+	HuntPermit = 17
 }
 GameEnum.expireType = {
 	ExpireMin = 1,
@@ -746,7 +754,13 @@ GameEnum.activityQuestCompleteCond = {
 	ActivityGoldenSpyAccUseSkill = 148,
 	ActivityPenguinCardClearScore = 149,
 	ActivityPenguinCardClearStar = 150,
-	ActivityPenguinCardTotalScore = 151
+	ActivityPenguinCardTotalScore = 151,
+	ActivityIceCreamCumulativeOrder = 152,
+	ActivityIceCreamSingleOrder = 153,
+	ActivityIceCreamCumulativeScore = 154,
+	ActivityIceCreamLevelPassed = 155,
+	ActivityIceCreamCumulativeUseItem = 156,
+	ActivityIceCreamCumulativeCombo = 157
 }
 GameEnum.chatCond = {
 	CharacterAcquire = 5,
@@ -1443,7 +1457,8 @@ GameEnum.stateAttributeType = {
 	UNPARALLELED = 38,
 	INDEFENSE = 39,
 	DODGE = 40,
-	MAX = 41
+	TOUGHNESS_BORKEN = 41,
+	MAX = 42
 }
 GameEnum.playerAttributeType = {
 	ADD_ENERGY = 0,
@@ -1847,7 +1862,10 @@ GameEnum.activityType = {
 	ThrowGift = 19,
 	GoldenSpy = 20,
 	Double = 21,
-	HistoryStory = 22
+	HistoryStory = 22,
+	IceCream = 23,
+	FollowSocialMedia = 24,
+	Soldier = 25
 }
 GameEnum.activityOpenType = {
 	None = 0,
@@ -2281,7 +2299,8 @@ GameEnum.OpenFuncType = {
 	BattlePass = 28,
 	NickNameReset = 29,
 	WeeklyQuest = 30,
-	QuestNewbie = 31
+	QuestNewbie = 31,
+	TraceHunt = 32
 }
 GameEnum.TowerQuestType = {Core = 1, Normal = 2}
 GameEnum.poolType = {Elite = 1, Boss = 2}
@@ -2525,7 +2544,9 @@ GameEnum.activityThemeType = {
 	Viewfinder_10107 = 11,
 	BreakOut_30102 = 12,
 	Swim_11100 = 13,
-	Tech_10108 = 14
+	Tech_10108 = 14,
+	GunStorm_10109 = 15,
+	Summer_20103 = 16
 }
 GameEnum.ActivityLevelType = {
 	Explore = 1,
@@ -2809,7 +2830,8 @@ GameEnum.GoldenSpyBuffEffect = {
 	AddHookRadius = 7,
 	AddHookK = 8,
 	AddTimeInFloor = 9,
-	LabelAddPercentage = 10
+	LabelAddPercentage = 10,
+	AddBuffRefreshCount = 11
 }
 GameEnum.GoldenSpyBuffQty = {}
 GameEnum.GoldenSpyBuffType = {
@@ -2843,4 +2865,90 @@ GameEnum.CharEnergyCostSpeed = {
 	Mid = 3,
 	Low = 4
 }
+GameEnum.EnterMethod = {Default = 0, JumpFormation = 1}
+GameEnum.MainlineMemoryNodeType = {None = 0, DiscType = 1}
+GameEnum.ChessRarity = {
+	White = 1,
+	Green = 2,
+	Blue = 3,
+	Purple = 4,
+	Gold = 5,
+	Color = 6
+}
+GameEnum.ChessType = {
+	Balance = 0,
+	Vanguard = 1,
+	Support = 2
+}
+GameEnum.ChessboardType = {Front = 0, Back = 1}
+GameEnum.ChessAssistOnStageType = {
+	Front = 0,
+	Back = 1,
+	NotAppearing = 2
+}
+GameEnum.ChessPartnerType = {
+	DiGuoWeiDui = 0,
+	LianHeZhongYe = 1,
+	HuiFengJuLeBu = 2
+}
+GameEnum.ActivityIceCreamLevelType = {
+	Teaching = 1,
+	Common = 2,
+	Advanced = 3,
+	Infinite = 4
+}
+GameEnum.IceBuffEffect = {
+	Time = 1,
+	Patience = 2,
+	Score = 3,
+	HP = 4,
+	Order = 5
+}
+GameEnum.iceChar = {
+	NormalChar = 1,
+	Low = 2,
+	SpecialChar = 3
+}
+GameEnum.iceOption = {
+	Cone = 1,
+	IceBall = 2,
+	Topping = 3
+}
+GameEnum.soldierNodeType = {
+	Event = 1,
+	Battle = 2,
+	BossBattle = 3
+}
+GameEnum.soldierEventType = {BattleOptions = 1}
+GameEnum.soldierLevelName = {
+	Simple = 1,
+	Medium = 2,
+	Difficult = 3,
+	Nightmare = 4
+}
+GameEnum.soldierCardUnloadType = {
+	GradeChallengeClear = 1,
+	FromNodeOnwards = 2,
+	AtStage = 3,
+	FromStageOnwards = 4
+}
+GameEnum.TraceHuntLogType = {
+	TraceStart = 1,
+	Tracing = 2,
+	TraceBeforeEnd = 3,
+	TraceEnd = 4,
+	TraceInterrupt = 5,
+	TraceRestart = 6,
+	HuntBeforeStart = 7,
+	HuntStart = 8,
+	HuntPlayer = 9,
+	HuntNPC = 10,
+	HuntPlayerFatal = 11,
+	HuntNPCFatal = 12,
+	HuntEnd = 13,
+	Settlement = 14,
+	HuntAfterStart = 15,
+	HuntInterrupt = 16
+}
+GameEnum.TDLevelGamePlayType = {None = 1, Hot = 2}
 return GameEnum

@@ -1273,7 +1273,10 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.activity_penguin_card_quest_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
 		[NetMsgId.Id.activity_gds_settle_succeed_ack] = HttpNetHandlerPlus.activity_gds_settle_succeed_ack,
 		[NetMsgId.Id.activity_gds_settle_failed_ack] = NOTHING_NEED_TO_BE_DONE,
-		[NetMsgId.Id.clear_all_activity_golden_spy_levels_notify] = HttpNetHandlerPlus.clear_all_activity_golden_spy_levels_notify
+		[NetMsgId.Id.clear_all_activity_golden_spy_levels_notify] = HttpNetHandlerPlus.clear_all_activity_golden_spy_levels_notify,
+		[NetMsgId.Id.activity_double_quest_reward_receive_succeed_ack] = HttpNetHandlerPlus.activity_double_quest_reward_receive_succeed_ack,
+		[NetMsgId.Id.activity_double_quest_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.activity_double_reward_times_notify] = HttpNetHandlerPlus.activity_double_reward_times_notify
 	}
 end
 function HttpNetHandler.Init()

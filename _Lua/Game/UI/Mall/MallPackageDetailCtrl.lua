@@ -199,9 +199,11 @@ function MallPackageDetailCtrl:OnBtnClick_Buy()
 	if nCurrencyType == GameEnum.currencyType.Cash then
 		PlayerData.Mall:BuyPackage(self.sId, mapCfg.StatisticalGroup)
 	else
+		local bShowConfirm = false
 		if nCurrencyType == GameEnum.currencyType.Item then
 			local nHas = 0
 			if mapCfg.CurrencyItemId == AllEnum.CoinItemId.FREESTONE or mapCfg.CurrencyItemId == AllEnum.CoinItemId.STONE then
+				bShowConfirm = true
 				nHas = PlayerData.Coin:GetCoinCount(AllEnum.CoinItemId.FREESTONE) + PlayerData.Coin:GetCoinCount(AllEnum.CoinItemId.STONE)
 			else
 				nHas = PlayerData.Coin:GetCoinCount(mapCfg.CurrencyItemId)
@@ -220,7 +222,19 @@ function MallPackageDetailCtrl:OnBtnClick_Buy()
 				return
 			end
 		end
-		PlayerData.Mall:SendMallPackageOrderReq(self.sId)
+		if bShowConfirm then
+			local msg = {
+				nType = AllEnum.MessageBox.Confirm,
+				sContent = orderedFormat(ConfigTable.GetUIText("Mall_Package_Buy_Confirm") or "", mapCfg.CurrencyItemQty, mapCfg.CurrencyItemId, mapCfg.DetailName),
+				callbackConfirm = function()
+					PlayerData.Mall:SendMallPackageOrderReq(self.sId)
+				end,
+				bBlur = false
+			}
+			EventManager.Hit(EventId.OpenMessageBox, msg)
+		else
+			PlayerData.Mall:SendMallPackageOrderReq(self.sId)
+		end
 	end
 end
 function MallPackageDetailCtrl:OnBtnClick_Disable()

@@ -63,15 +63,15 @@ function SkillInstanceLevel:OnEvent_LevelResult(tbStar, bAbandon)
 			nStarCount = nStarCount + 1
 		end
 	end
-	local callback = function(tbStarReward, tbFirstReward, tbThreeStarItems, tbSurpriseItems, nExp, mapChangeInfo)
+	local callback = function(tbStarReward, tbFirstReward, tbThreeStarItems, tbSurpriseItems, tbDoubleItems, nExp, mapChangeInfo)
 		local waitCallback = function()
 			NovaAPI.InputEnable()
 			if 0 < nStar then
-				self:PlaySuccessPerform(tbFirstReward, tbStarReward, tbThreeStarItems, tbSurpriseItems, nExp, tbStar, mapChangeInfo)
+				self:PlaySuccessPerform(tbFirstReward, tbStarReward, tbThreeStarItems, tbSurpriseItems, tbDoubleItems, nExp, tbStar, mapChangeInfo)
 			else
 				EventManager.Hit(EventId.ClosePanel, PanelId.BtnTips)
 				local sLarge, sSmall = "", ""
-				EventManager.Hit(EventId.OpenPanel, PanelId.SkillInstanceResult, false, tbStar, {}, {}, {}, 0, false, sLarge, sSmall, self.nLevelId, self.tbCharId, mapChangeInfo, {}, self.tbCharDamage)
+				EventManager.Hit(EventId.OpenPanel, PanelId.SkillInstanceResult, false, tbStar, {}, {}, {}, 0, false, sLarge, sSmall, self.nLevelId, self.tbCharId, mapChangeInfo, {}, {}, self.tbCharDamage)
 				self.parent:LevelEnd()
 			end
 		end
@@ -124,7 +124,7 @@ function SkillInstanceLevel:UnBindEvent()
 		end
 	end
 end
-function SkillInstanceLevel:PlaySuccessPerform(FirstRewardItems, tbStarReward, tbThreeStarItems, tbSurpriseItems, nExp, tbStar, mapChangeInfo)
+function SkillInstanceLevel:PlaySuccessPerform(FirstRewardItems, tbStarReward, tbThreeStarItems, tbSurpriseItems, tbDoubleItems, nExp, tbStar, mapChangeInfo)
 	local func_SettlementFinish = function(bSuccess)
 	end
 	local tbChar = self.tbCharId
@@ -143,7 +143,7 @@ function SkillInstanceLevel:PlaySuccessPerform(FirstRewardItems, tbStarReward, t
 	local function openBattleResultPanel()
 		EventManager.Remove("SettlementPerformLoadFinish", self, openBattleResultPanel)
 		local sLarge, sSmall = "", ""
-		EventManager.Hit(EventId.OpenPanel, PanelId.SkillInstanceResult, true, tbStar, tbStarReward or {}, FirstRewardItems or {}, tbThreeStarItems or {}, nExp or 0, false, sLarge, sSmall, self.nLevelId, self.tbCharId, mapChangeInfo, tbSurpriseItems or {}, self.tbCharDamage)
+		EventManager.Hit(EventId.OpenPanel, PanelId.SkillInstanceResult, true, tbStar, tbStarReward or {}, FirstRewardItems or {}, tbThreeStarItems or {}, nExp or 0, false, sLarge, sSmall, self.nLevelId, self.tbCharId, mapChangeInfo, tbSurpriseItems or {}, tbDoubleItems or {}, self.tbCharDamage)
 		self.bSettle = false
 		self.parent:LevelEnd()
 		self:UnBindEvent()

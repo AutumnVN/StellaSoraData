@@ -531,7 +531,7 @@ function PhoneCtrl:Awake()
 		if nil ~= tbParam[2] and self._panel.nSelectCharId == nil then
 			self._panel.nSelectCharId = tbParam[2]
 		end
-		if self._panel.nSelectCharId == nil then
+		if nil ~= tbParam[3] and self.bSetGridPos == nil then
 			self.bSetGridPos = tbParam[3]
 		end
 	end

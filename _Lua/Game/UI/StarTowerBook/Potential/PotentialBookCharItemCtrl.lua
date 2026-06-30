@@ -28,7 +28,6 @@ function PotentialBookCharItemCtrl:InitItem(nCharId)
 	self._mapNode.imgNormal.gameObject:SetActive(nCharId ~= 0)
 	self._mapNode.imgLockMask.gameObject:SetActive(nCharId ~= 0 and not bUnlock)
 	self._mapNode.goUnlock.gameObject:SetActive(nCharId ~= 0 and bUnlock)
-	self._mapNode.imgLockMask.gameObject:SetActive(not bUnlock)
 	self._mapNode.imgChar.gameObject:SetActive(bUnlock)
 	if nCharId ~= 0 then
 		local mapCharCfg = ConfigTable.GetData_Character(nCharId)

@@ -30,7 +30,8 @@ BossPanelCtrl._mapEventConfig = {
 	ShowCenterHpBar = "OnEvent_ShowCenterHpBar",
 	Level_Settlement = "OnEvent_ResetBossHUD",
 	ResetBossHUD = "OnEvent_ResetBossHUD",
-	InputEnable = "OnEvent_InputEnable"
+	InputEnable = "OnEvent_InputEnable",
+	ADVENTURE_LEVEL_UNLOAD_COMPLETE = "OnEvent_ResetBossHUD"
 }
 function BossPanelCtrl:Awake()
 	self.bInputEnable = false
@@ -224,7 +225,7 @@ end
 function BossPanelCtrl:OnEvent_ResetBossHUD()
 	self.bInit = true
 	self.nBloodType = 0
-	for _, v in ipairs(self.tbBossCtrl) do
+	for _, v in pairs(self.tbBossCtrl) do
 		v:CloseUI()
 	end
 	self:CloseUI()

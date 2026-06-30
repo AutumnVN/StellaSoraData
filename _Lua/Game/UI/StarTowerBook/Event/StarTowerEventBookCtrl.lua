@@ -1,10 +1,7 @@
 local StarTowerEventBookCtrl = class("StarTowerEventBookCtrl", BaseCtrl)
-local sRootPath = Settings.AB_ROOT_PATH
 local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
-local ResType = GameResourceLoader.ResType
 local typeof = typeof
 local Path = require("path")
-local ResTypeAny = GameResourceLoader.ResType.Any
 local Offset = CS.Actor2DOffsetData
 local Actor2DManager = require("Game.Actor2D.Actor2DManager")
 StarTowerEventBookCtrl._mapNodeConfig = {
@@ -68,9 +65,6 @@ function StarTowerEventBookCtrl:Init()
 	self.nSelectEventId = 0
 	self:RefreshEventList()
 	self:RefreshSelectEvent()
-	self:AddTimer(1, 0.1, function()
-		local nWidth = self._mapNode.rtTxtAreaCn2.sizeDelta.x
-	end, true, true, true)
 end
 function StarTowerEventBookCtrl:Back()
 	self:UnRegisterRedDot()
@@ -78,9 +72,9 @@ function StarTowerEventBookCtrl:Back()
 end
 function StarTowerEventBookCtrl:RefreshSelectEvent()
 	local eventData = self.mapEventBook[self.nSelectIndex]
-	self._mapNode.goEventLock.gameObject:SetActive(eventData.Status == AllEnum.BookQuestStatus.UnComplete)
-	self._mapNode.goEventUnlock.gameObject:SetActive(eventData.Status ~= AllEnum.BookQuestStatus.UnComplete)
 	if eventData ~= nil then
+		self._mapNode.goEventLock.gameObject:SetActive(eventData.Status == AllEnum.BookQuestStatus.UnComplete)
+		self._mapNode.goEventUnlock.gameObject:SetActive(eventData.Status ~= AllEnum.BookQuestStatus.UnComplete)
 		NovaAPI.SetVerticalNormalizedPosition(self._mapNode.eventDescSv, 1)
 		NovaAPI.SetTMPText(self._mapNode.txtEventName, eventData.CfgData.Name)
 		NovaAPI.SetTMPText(self._mapNode.txtEventDesc, eventData.CfgData.Story)
@@ -163,7 +157,7 @@ function StarTowerEventBookCtrl:GetCharPortrait(imgBody, imgFace, nCharId, nType
 		mapSkinData = ConfigTable.GetData("NPCSkin", nSkinId)
 	end
 	if mapSkinData == nil then
-		return
+		return Vector3.zero, Vector3.one
 	end
 	local sAssetPath = mapSkinData.Portrait
 	local sFace = "002"
@@ -213,10 +207,6 @@ function StarTowerEventBookCtrl:RefreshEventList()
 	end
 	self._mapNode.btnReceiveAllEvent.gameObject:SetActive(bShowAllReceive)
 	NovaAPI.SetTMPText(self._mapNode.txtCollect, string.format("%s/%s", nCount, nAllCount))
-end
-function StarTowerEventBookCtrl:GetCharBgPath(nSkinId, sFace)
-	local sPortrait = string.format("Actor2D/Character/%s/atlas_png/a/%s_%s.png", nSkinId, nSkinId, "001")
-	local sFace = string.format("Actor2D/Character/%s/atlas_png/a/%s_%s.png", nSkinId, nSkinId, "002")
 end
 function StarTowerEventBookCtrl:OnRefreshGrid(goGrid, gridIndex)
 	local nInstanceID = goGrid:GetInstanceID()

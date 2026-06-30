@@ -110,8 +110,13 @@ function StorySetCtrl:RefreshChapter()
 					end
 				end
 			end
-			if nNewIndex <= 0 and PlayerData.StorySet:IsChapterAllRead(nRecentChapterId) and 0 >= table.indexof(self.tbChapter, nRecentChapterId) and #self.tbChapter > 0 then
-				nNewIndex = 1
+			if nNewIndex <= 0 and PlayerData.StorySet:IsChapterAllRead(nRecentChapterId) and #self.tbChapter > 0 then
+				for _, v in ipairs(self.tbChapter) do
+					if v.nId == nRecentChapterId then
+						nNewIndex = 1
+						break
+					end
+				end
 			end
 			if 0 < nNewIndex then
 				local wait = function()
@@ -323,8 +328,6 @@ function StorySetCtrl:ShowGetReward()
 		self.tbReward = nil
 		self.bTransitionEnd = false
 	end
-end
-function StorySetCtrl:FilterSectionList()
 end
 function StorySetCtrl:UpdateChapterList()
 	if self.tbTabData == nil then

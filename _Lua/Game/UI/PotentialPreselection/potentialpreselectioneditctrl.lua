@@ -172,6 +172,8 @@ PotentialPreselectionEditCtrl._mapEventConfig = {
 	[EventId.UIHomeConfirm] = "OnEvent_BackHome"
 }
 PotentialPreselectionEditCtrl._mapRedDotConfig = {}
+local COLOR_PREFER = Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764)
+local COLOR_NO_PREFER = Color(0.5803921568627451, 0.6666666666666666, 0.7529411764705882)
 function PotentialPreselectionEditCtrl:InitSelectList()
 	self.tbSelectCharList = {}
 	if self.initPreselectData ~= nil and next(self.initPreselectData) ~= nil then
@@ -198,6 +200,9 @@ function PotentialPreselectionEditCtrl:CheckPotentialSpecialCount()
 	return true
 end
 function PotentialPreselectionEditCtrl:ChangePanel()
+	if self.nTeamIndex == nil or self.curPreselectData == nil then
+		return
+	end
 	self._mapNode.btnPreviewRoot.gameObject:SetActive(self._panel.nPanelType == AllEnum.PreselectionPanelType.Preview)
 	self._mapNode.btnEditRoot.gameObject:SetActive(self._panel.nPanelType ~= AllEnum.PreselectionPanelType.Preview)
 	self._mapNode.btn_Preference.gameObject:SetActive(self._panel.nPanelType == AllEnum.PreselectionPanelType.Preview)
@@ -224,7 +229,7 @@ function PotentialPreselectionEditCtrl:RefreshContent()
 	self._mapNode.goPotential.gameObject:SetActive(not self.bEmpty)
 	NovaAPI.SetTMPText(self._mapNode.txtPreselectionName, self.curPreselectData.sName)
 	self._mapNode.btn_PreferenceIcon.interactable = self.curPreselectData.bPreference
-	NovaAPI.SetTMPColor(self._mapNode.txtLike, self.curPreselectData.bPreference and Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764) or Color(0.5803921568627451, 0.6666666666666666, 0.7529411764705882))
+	NovaAPI.SetTMPColor(self._mapNode.txtLike, self.curPreselectData.bPreference and COLOR_PREFER or COLOR_NO_PREFER)
 	if self.bEmpty then
 		self:SetEmpty()
 		return
@@ -596,7 +601,7 @@ function PotentialPreselectionEditCtrl:OnBtnClick_Preference()
 		local callback = function()
 			self.curPreselectData = PlayerData.PotentialPreselection:GetPreselectionById(self.curPreselectData.nId)
 			self._mapNode.btn_PreferenceIcon.interactable = self.curPreselectData.bPreference
-			NovaAPI.SetTMPColor(self._mapNode.txtLike, self.curPreselectData.bPreference and Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764) or Color(0.5803921568627451, 0.6666666666666666, 0.7529411764705882))
+			NovaAPI.SetTMPColor(self._mapNode.txtLike, self.curPreselectData.bPreference and COLOR_PREFER or COLOR_NO_PREFER)
 		end
 		PlayerData.PotentialPreselection:SendPreselectionPreference(tbCheckIn, tbCheckOut, callback)
 	end

@@ -32,7 +32,9 @@ StarTowerFastBattlePanel._tbDefine = {
 }
 function StarTowerFastBattlePanel:Awake()
 	self.trUIRoot = GameObject.Find("---- UI ----").transform
-	local tbStarTowerInfo = self:GetPanelParam()[1]
+	local tbParams = self:GetPanelParam()
+	assert(type(tbParams) == "table" and tbParams[1] ~= nil, "StarTowerFastBattlePanel: 缺少初始化参数")
+	local tbStarTowerInfo = tbParams[1]
 	local luaClass = require("Game.Adventure.StarTower.StarTowerSweepData")
 	self.LevelData = luaClass.new(tbStarTowerInfo.Meta.Id)
 	self.LevelData:Init(tbStarTowerInfo.Meta, tbStarTowerInfo.Room, tbStarTowerInfo.Bag)

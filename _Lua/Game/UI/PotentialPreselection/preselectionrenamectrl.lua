@@ -62,6 +62,9 @@ function PreselectionRenameCtrl:Open()
 	self:PlayInAni()
 end
 function PreselectionRenameCtrl:Refresh()
+	if self.mapPreselection == nil then
+		return
+	end
 	local bInit = NovaAPI.IsDirtyWordsInit()
 	if not bInit then
 		NovaAPI.InitDirtyWords()

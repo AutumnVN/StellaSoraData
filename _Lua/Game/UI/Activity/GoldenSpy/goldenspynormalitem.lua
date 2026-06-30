@@ -16,7 +16,7 @@ function GoldenSpyNormalItem:InitData()
 	local nScore = self.itemCfg.Score
 	for _, v in ipairs(self.floorCtrl.levelCtrl.GoldenSpyLevelData:GetBuffData()) do
 		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == self.itemCfg.ItemType and self:IsBuffActive(v) then
+		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == self.itemCfg.ItemType and self.floorCtrl.levelCtrl.GoldenSpyLevelData:CheckBuffActive(v) then
 			nScore = nScore + buffCfg.Params[2]
 		end
 	end
@@ -37,29 +37,6 @@ function GoldenSpyNormalItem:GetHitArea()
 		height = self._mapNode.HitArea.sizeDelta.y
 	}
 	return hitArea
-end
-function GoldenSpyNormalItem:IsBuffActive(buffData)
-	local bResult = false
-	local nCurFloor = self.floorCtrl.levelCtrl.GoldenSpyLevelData:GetCurFloor()
-	local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", buffData.buffId)
-	if buffCfg == nil then
-		return false
-	end
-	if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-		if buffData.bActive and table.indexof(buffData.tbActiveFloor, nCurFloor) > 0 then
-			bResult = true
-		end
-	elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-		if buffData.bActive and table.indexof(buffData.tbActiveFloor, nCurFloor) > 0 then
-			bResult = true
-		end
-	elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-		if buffData.bActive then
-			bResult = true
-		end
-	elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-	end
-	return bResult
 end
 function GoldenSpyNormalItem:OnSkill_InVision()
 	self.floorCtrl:RemoveItem(self)
@@ -85,7 +62,7 @@ function GoldenSpyNormalItem:OnEvent_GoldenSpy_ItemUpdateScore(tbBuff)
 	local nScore = self.itemCfg.Score
 	for _, v in ipairs(tbBuff) do
 		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == self.itemCfg.ItemType and self:IsBuffActive(v) then
+		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == self.itemCfg.ItemType and self.floorCtrl.levelCtrl.GoldenSpyLevelData:CheckBuffActive(v) then
 			nScore = nScore + buffCfg.Params[2]
 		end
 	end

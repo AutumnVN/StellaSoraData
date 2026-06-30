@@ -19,8 +19,10 @@ function GoldenSpyLevelData:InitData()
 		tbItems = {}
 	}
 	self.nCompleteTaskCount = 0
+	self.nBuffRefreshCount = 0
 	self.nLevelType = nil
 	self.tbRandomPrefabName = {}
+	self.tempPointData = nil
 end
 function GoldenSpyLevelData:StartLevel(levelId)
 	self.levelId = levelId
@@ -36,12 +38,71 @@ function GoldenSpyLevelData:StartLevel(levelId)
 		self.tbSkillData[v[1]] = v[2]
 		self.tbUsedSkill[v[1]] = 0
 	end
+	self.nBuffRefreshCount = self.levelConfig.BuffRefeshCount
+end
+function GoldenSpyLevelData:RestartCurrentFloor()
+	if self.tempPointData == nil then
+		self:InitData()
+		self:StartLevel(self.levelId)
+		return
+	end
+	self.nCurScore = self.tempPointData.nCurScore
+	self.tbCatchItem = self.tempPointData.tbCatchItem
+	self.tbBuff = self.tempPointData.tbBuff
+	self.tbUsedSkill = self.tempPointData.tbUsedSkill
+	self.tbSkillData = self.tempPointData.tbSkillData
+	self.nCompleteTaskCount = self.tempPointData.nCompleteTaskCount
+	self.nBuffRefreshCount = self.tempPointData.nBuffRefreshCount
+	local tbList = {}
+	for i = 1, #self.tempPointData.tbRandomPrefabName do
+		table.insert(tbList, self.tempPointData.tbRandomPrefabName[i])
+	end
+	self.tbRandomPrefabName = tbList
+	self.floorData:InitData()
+	self.floorData:StartFloor(self.levelId, self.nCurFloorId)
 end
 function GoldenSpyLevelData:NextFloor()
 	self.nCurFloor = self.nCurFloor + 1
 	self.nCurFloorId = self.levelConfig.FloorList[self.nCurFloor]
 	self.floorData:InitData()
 	self.floorData:StartFloor(self.levelId, self.nCurFloorId)
+	local tbCatchItem = {}
+	for k, v in pairs(self.tbCatchItem) do
+		tbCatchItem[k] = {
+			itemId = k,
+			itemCount = v.itemCount
+		}
+	end
+	local tbBuff = {}
+	for k, v in pairs(self.tbBuff) do
+		tbBuff[k] = {
+			buffId = v.buffId,
+			tbActiveFloor = v.tbActiveFloor,
+			bActive = v.bActive
+		}
+	end
+	local tbUsedSkill = {}
+	for k, v in pairs(self.tbUsedSkill) do
+		tbUsedSkill[k] = v
+	end
+	local tbSkillData = {}
+	for k, v in pairs(self.tbSkillData) do
+		tbSkillData[k] = v
+	end
+	local tbRandomPrefabName = {}
+	for i = 1, #self.tbRandomPrefabName do
+		table.insert(tbRandomPrefabName, self.tbRandomPrefabName[i])
+	end
+	self.tempPointData = {
+		nCurScore = self.nCurScore,
+		tbCatchItem = tbCatchItem,
+		tbBuff = tbBuff,
+		tbUsedSkill = tbUsedSkill,
+		tbSkillData = tbSkillData,
+		nCompleteTaskCount = self.nCompleteTaskCount,
+		nBuffRefreshCount = self.nBuffRefreshCount,
+		tbRandomPrefabName = tbRandomPrefabName
+	}
 end
 function GoldenSpyLevelData:GetFloorData()
 	return self.floorData
@@ -100,21 +161,8 @@ function GoldenSpyLevelData:CatchedItem(nItemId, itemCtrl)
 	end
 	for _, v in ipairs(self.tbBuff) do
 		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == itemCfg.ItemType then
-			if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-				if v.bActive and table.indexof(v.tbActiveFloor, self.nCurFloor) > 0 then
-					nScore = nScore + buffCfg.Params[2]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-				if v.bActive and table.indexof(v.tbActiveFloor, self.nCurFloor) > 0 then
-					nScore = nScore + buffCfg.Params[2]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-				if v.bActive then
-					nScore = nScore + buffCfg.Params[2]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-			end
+		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == itemCfg.ItemType and self:CheckBuffActive(v) then
+			nScore = nScore + buffCfg.Params[2]
 		end
 	end
 	self.nCurScore = self.nCurScore + nScore
@@ -161,21 +209,8 @@ function GoldenSpyLevelData:RefreshTask()
 	local nExWeight = 0
 	for _, v in ipairs(self.tbBuff) do
 		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddTaskWeight then
-			if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-				if v.bActive and 0 < table.indexof(v.tbActiveFloor, self.nCurFloor) then
-					nExWeight = nExWeight + buffCfg.Params[1]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-				if v.bActive and 0 < table.indexof(v.tbActiveFloor, self.nCurFloor) then
-					nExWeight = nExWeight + buffCfg.Params[1]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-				if v.bActive then
-					nExWeight = nExWeight + buffCfg.Params[1]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-			end
+		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddTaskWeight and self:CheckBuffActive(v) then
+			nExWeight = nExWeight + buffCfg.Params[1]
 		end
 	end
 	local tbRandomTaskConfig = {}
@@ -231,24 +266,9 @@ function GoldenSpyLevelData:RefreshTask()
 	end
 	for _, v in ipairs(self.tbBuff) do
 		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddExScoreFactor then
-			if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-				if v.bActive and 0 < table.indexof(v.tbActiveFloor, self.nCurFloor) then
-					nScore = nScore * (1 + buffCfg.Params[1] / 100.0)
-					nScore = math.floor(nScore)
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-				if v.bActive and 0 < table.indexof(v.tbActiveFloor, self.nCurFloor) then
-					nScore = nScore * (1 + buffCfg.Params[1] / 100.0)
-					nScore = math.floor(nScore)
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-				if v.bActive then
-					nScore = nScore * (1 + buffCfg.Params[1] / 100.0)
-					nScore = math.floor(nScore)
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-			end
+		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddExScoreFactor and self:CheckBuffActive(v) then
+			nScore = nScore * (1 + buffCfg.Params[1] / 100.0)
+			nScore = math.floor(nScore)
 		end
 	end
 	self.taskData = {nScore = nScore, tbItems = tbItems}
@@ -308,34 +328,54 @@ function GoldenSpyLevelData:AddBuff(nBuffId)
 		if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddSkillUseCount then
 			self.tbSkillData[buffCfg.Params[1]] = (self.tbSkillData[buffCfg.Params[1]] or 0) + buffCfg.Params[2]
 			EventManager.Hit("GoldenSpy_UpdateSkillCount", buffCfg.Params[1], self.tbSkillData[buffCfg.Params[1]])
+		elseif buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddBuffRefreshCount then
+			self.nBuffRefreshCount = self.nBuffRefreshCount + buffCfg.Params[1]
 		end
 	end
 	table.insert(self.tbBuff, buffEntity)
-	if self.taskData ~= nil and 0 < self.taskData.nScore and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddExScoreFactor then
-		if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-			if buffEntity.bActive and 0 < table.indexof(buffEntity.tbActiveFloor, self.nCurFloor) then
-				self.taskData.nScore = self.taskData.nScore * (1 + buffCfg.Params[1] / 100.0)
-				self.taskData.nScore = math.floor(self.taskData.nScore)
-				EventManager.Hit("GoldenSpy_UpdateTaskScore", self.taskData.nScore)
-			end
-		elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-			if buffEntity.bActive and 0 < table.indexof(buffEntity.tbActiveFloor, self.nCurFloor) then
-				self.taskData.nScore = self.taskData.nScore * (1 + buffCfg.Params[1] / 100.0)
-				self.taskData.nScore = math.floor(self.taskData.nScore)
-				EventManager.Hit("GoldenSpy_UpdateTaskScore", self.taskData.nScore)
-			end
-		elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-			if buffEntity.bActive then
-				self.taskData.nScore = self.taskData.nScore * (1 + buffCfg.Params[1] / 100.0)
-				self.taskData.nScore = math.floor(self.taskData.nScore)
-				EventManager.Hit("GoldenSpy_UpdateTaskScore", self.taskData.nScore)
-			end
-		elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-		end
+	if self.taskData ~= nil and 0 < self.taskData.nScore and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddExScoreFactor and self:CheckBuffActive(buffEntity) then
+		self.taskData.nScore = self.taskData.nScore * (1 + buffCfg.Params[1] / 100.0)
+		self.taskData.nScore = math.floor(self.taskData.nScore)
+		EventManager.Hit("GoldenSpy_UpdateTaskScore", self.taskData.nScore)
 	end
 	if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore then
 		EventManager.Hit("GoldenSpy_ItemUpdateScore", self.tbBuff)
 	end
+end
+function GoldenSpyLevelData:CheckBuffActive(buffEntity)
+	local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", buffEntity.buffId)
+	if buffCfg == nil then
+		return false
+	end
+	local bActive = false
+	if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
+		if buffEntity.bActive and table.indexof(buffEntity.tbActiveFloor, self.nCurFloor) > 0 then
+			bActive = true
+		end
+	elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
+		if buffEntity.bActive and table.indexof(buffEntity.tbActiveFloor, self.nCurFloor) > 0 then
+			bActive = true
+		end
+	elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
+		if buffEntity.bActive then
+			bActive = true
+		end
+	elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
+	end
+	return bActive
+end
+function GoldenSpyLevelData:GetRefreshCount()
+	return self.nBuffRefreshCount
+end
+function GoldenSpyLevelData:UseRefreshCount()
+	if self.nBuffRefreshCount <= 0 then
+		return false
+	end
+	self.nBuffRefreshCount = self.nBuffRefreshCount - 1
+	return true
+end
+function GoldenSpyLevelData:AddRefreshCount(nCount)
+	self.nBuffRefreshCount = self.nBuffRefreshCount + nCount
 end
 function GoldenSpyLevelData:GetSkillData()
 	return self.tbSkillData

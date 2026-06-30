@@ -146,6 +146,7 @@ function PlayerDiscData:GetDiscSkillByNote(tbDisc, tbHasNote, nNeedNote)
 							end
 						end
 						table.insert(tbSkill, {
+							nCurLevel = nCurLayer,
 							nId = nSubSkillId,
 							tbNote = tbNote,
 							nMaxLayerNoteNeed = nMaxLayerNoteNeed
@@ -205,6 +206,7 @@ function PlayerDiscData:GetDiscSkillByNoteCurrentLevel(tbDisc, tbHasNote, nNeedN
 							end
 						end
 						table.insert(tbSkill, {
+							nCurLevel = nCurLayer,
 							nId = nSubSkillId,
 							tbNote = tbNote,
 							nMaxLayerNoteNeed = nMaxLayerNoteNeed

@@ -67,7 +67,9 @@ RaidCountCtrl._mapNodeConfig = {
 	txtBtnCancel = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "MessageBox_Cancel"
-	}
+	},
+	imgDoubleDrop = {},
+	txtDoubleDrop = {sComponentName = "TMP_Text"}
 }
 RaidCountCtrl._mapEventConfig = {
 	[EventId.UpdateEnergy] = "OnEvent_Energy"
@@ -78,9 +80,11 @@ function RaidCountCtrl:Open(nId, nEnergy, nType, nActId)
 	self.nSelectCount = 1
 	self.nType = nType
 	self.nActId = nActId
+	self.nRemainDoubleCount = 0
 	for i = 1, 2 do
 		self:SetSprite_Coin(self._mapNode.imgEnergy, AllEnum.CoinItemId.Energy)
 	end
+	self:RefreshDoubleCount()
 	self:RefreshData()
 	self:RefreshCount()
 	self:RefreshBar()
@@ -89,7 +93,11 @@ end
 function RaidCountCtrl:RefreshData()
 	self.nCurEnergy = PlayerData.Base:GetCurEnergy().nEnergy
 	local nCount = math.floor(self.nCurEnergy / self.nEnergy)
-	self.nMaxCount = 1 < nCount and nCount or 1
+	if self.nRemainDoubleCount > 0 then
+		self.nMaxCount = self.nRemainDoubleCount
+	else
+		self.nMaxCount = 1 < nCount and nCount or 1
+	end
 	NovaAPI.SetSliderMaxValue(self._mapNode.Slider, self.nMaxCount)
 	NovaAPI.SetSliderMinValue(self._mapNode.Slider, 1)
 	NovaAPI.SetSliderInteractable(self._mapNode.Slider, self.nMaxCount > 1)
@@ -116,6 +124,27 @@ function RaidCountCtrl:RefreshReduceButton(bAble)
 end
 function RaidCountCtrl:RefreshBar()
 	NovaAPI.SetSliderValue(self._mapNode.Slider, self.nSelectCount)
+end
+function RaidCountCtrl:RefreshDoubleCount()
+	self._mapNode.imgDoubleDrop.gameObject:SetActive(false)
+	local actData = PlayerData.Activity:GetActivityDataByType(GameEnum.activityType.Double)
+	if actData ~= nil and actData:CheckActShow() then
+		local tbInstanceType = actData:GetInstanceType()
+		if table.indexof(tbInstanceType, self.nType) > 0 then
+			self._mapNode.imgDoubleDrop.gameObject:SetActive(true)
+			local nDoubleCount, nMaxDoubleCount = actData:GetDoubleDropsTimes()
+			local nCurEnergy = PlayerData.Base:GetCurEnergy().nEnergy
+			local nCount = math.floor(nCurEnergy / self.nEnergy)
+			local nRemainDoubleCount = nMaxDoubleCount - nDoubleCount
+			if 0 < nRemainDoubleCount then
+				self.nRemainDoubleCount = math.max(math.min(nRemainDoubleCount, nCount), 1)
+			else
+				self.nRemainDoubleCount = 0
+			end
+			local str = actData:GetDropString()
+			NovaAPI.SetTMPText(self._mapNode.txtDoubleDrop, str)
+		end
+	end
 end
 function RaidCountCtrl:PlayInAni()
 	self.gameObject:SetActive(true)
@@ -215,17 +244,18 @@ function RaidCountCtrl:OnBtnClick_Confirm(btn)
 		nMaxExp = nFullExp
 	}
 	local callback = function(mapData, mapChangeInfo)
+		EventManager.Hit("RaidSuccess")
 		EventManager.Hit("RaidShowReward", mapData, mapBefore, mapChangeInfo)
 	end
-	if self.nType == 1 then
+	if self.nType == GameEnum.instanceType.DailyInstance then
 		PlayerData.DailyInstance:SendDailyInstanceRaidReq(self.nId, self.nSelectCount, callback)
-	elseif self.nType == 2 then
+	elseif self.nType == GameEnum.instanceType.RegionBoss then
 		PlayerData.RogueBoss:Sweep(self.nId, self.nSelectCount, callback)
-	elseif self.nType == 3 then
+	elseif self.nType == GameEnum.instanceType.CharGemInstance then
 		PlayerData.EquipmentInstance:SendEquipmentInstanceRaidReq(self.nId, self.nSelectCount, callback)
-	elseif self.nType == 4 then
+	elseif self.nType == GameEnum.instanceType.SkillInstance then
 		PlayerData.SkillInstance:SendSkillInstanceRaidReq(self.nId, self.nSelectCount, callback)
-	elseif self.nType == 5 then
+	elseif self.nType == 0 then
 		local activityLevelsData = PlayerData.Activity:GetActivityDataById(self.nActId)
 		activityLevelsData:SendActivityLevelsSweepReq(self.nActId, self.nId, self.nSelectCount, callback)
 	end
@@ -240,6 +270,7 @@ function RaidCountCtrl:OnEvent_Energy()
 	if self.nId == nil then
 		return
 	end
+	self:RefreshDoubleCount()
 	self:RefreshData()
 	self:RefreshCount()
 end

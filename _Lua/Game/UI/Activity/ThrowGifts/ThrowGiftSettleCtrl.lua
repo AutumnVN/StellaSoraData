@@ -15,10 +15,11 @@ ThrowGiftSettleCtrl._mapNodeConfig = {
 		sActionIconType = "Dark"
 	},
 	txtBtnClose = {
+		nCount = 2,
 		sComponentName = "TMP_Text",
 		sLanguageId = "ThrowGift_Settle_Close"
 	},
-	txtBtnConfirm = {sComponentName = "TMP_Text"},
+	txtBtnConfirm = {nCount = 2, sComponentName = "TMP_Text"},
 	TMPSettleScoreTitle = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "ThrowGift_Settle_ScoreTitle"
@@ -67,7 +68,9 @@ end
 function ThrowGiftSettleCtrl:ShowSettle(bWin, nScore, nGift, nPenguin, bShowPenguin, bNextUnlock, changeInfo, nLevelId)
 	self.bWin = bWin
 	GamepadUIManager.EnableGamepadUI("ThrowGiftSettle", self.tbGamepadUINode)
-	NovaAPI.SetTMPText(self._mapNode.txtBtnConfirm, self.bWin and ConfigTable.GetUIText("ThrowGift_Settle_NextLevel") or ConfigTable.GetUIText("ThrowGift_Settle_Restart"))
+	local sConfirm = self.bWin and ConfigTable.GetUIText("ThrowGift_Settle_NextLevel") or ConfigTable.GetUIText("ThrowGift_Settle_Restart")
+	NovaAPI.SetTMPText(self._mapNode.txtBtnConfirm[1], sConfirm)
+	NovaAPI.SetTMPText(self._mapNode.txtBtnConfirm[2], sConfirm)
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
 		NovaAPI.SetCanvasGroupAlpha(self.canvasGroup, 1)

@@ -557,10 +557,13 @@ function PlayerQuestData:ReceiveTourReward(nTid, callback)
 		end
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
 		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+		local bWasInBatch = self._bInBatchReceive
 		if callback ~= nil then
 			callback(mapMsgData)
 		end
-		EventManager.Hit(EventId.TourQuestReceived, mapMsgData.Rewards, mapMsgData.Change)
+		if not bWasInBatch then
+			EventManager.Hit(EventId.TourQuestReceived, mapMsgData.Rewards, mapMsgData.Change)
+		end
 		self:UpdateQuestRedDot("TourGuide")
 	end
 	PlayerData.State:SetMailOverflow(false)
@@ -571,10 +574,13 @@ function PlayerQuestData:ReceiveTourGroupReward(callback)
 		self.nCurTourGroupOrderIndex = self.nCurTourGroupOrderIndex + 1
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
 		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+		local bWasInBatch = self._bInBatchReceive
 		if callback ~= nil then
 			callback(mapMsgData)
 		end
-		EventManager.Hit(EventId.TourGroupReceived, mapMsgData.Rewards, mapMsgData.Change)
+		if not bWasInBatch then
+			EventManager.Hit(EventId.TourGroupReceived, mapMsgData.Rewards, mapMsgData.Change)
+		end
 		self:UpdateQuestRedDot("TourGuide")
 	end
 	PlayerData.State:SetMailOverflow(false)
@@ -654,10 +660,12 @@ function PlayerQuestData:ReceiveTeamFormationReward(nTid, nGroupId, callback)
 		local cb = function()
 			EventManager.Hit("UpdateTeamFormationGroup")
 		end
-		UTILS.OpenReceiveByDisplayItem(tbItem, mapMsgData, cb)
+		if not self._bInBatchReceive then
+			UTILS.OpenReceiveByDisplayItem(tbItem, mapMsgData, cb)
+		end
 		self:UpdateQuestRedDot("Assist")
 		if callback ~= nil then
-			callback(mapMsgData)
+			callback(mapMsgData, tbItem, mapMsgData)
 		end
 	end
 	PlayerData.State:SetMailOverflow(false)
@@ -729,14 +737,28 @@ function PlayerQuestData:ReceiveTeamFormationGroupReward(nGroupId, nAttributeIdx
 		local cb = function()
 			EventManager.Hit("UpdateTeamFormationGroup", bAttributeComplete, nNextGroupId)
 		end
-		UTILS.OpenReceiveByDisplayItem(tbItem, mapMsgData.Change, cb)
+		if not self._bInBatchReceive then
+			UTILS.OpenReceiveByDisplayItem(tbItem, mapMsgData.Change, cb)
+		end
 		self:UpdateQuestRedDot("Assist")
 		if callback ~= nil then
-			callback(mapMsgData)
+			callback(mapMsgData, tbItem, mapMsgData.Change, bAttributeComplete, nNextGroupId)
 		end
 	end
 	PlayerData.State:SetMailOverflow(false)
 	HttpNetHandler.SendMsg(NetMsgId.Id.quest_assist_group_reward_receive_req, msg, nil, Callback)
+end
+function PlayerQuestData:SetBatchReceiveFlag(bOn)
+	self._nBatchReceiveCount = self._nBatchReceiveCount or 0
+	if bOn then
+		self._nBatchReceiveCount = self._nBatchReceiveCount + 1
+	else
+		self._nBatchReceiveCount = self._nBatchReceiveCount - 1
+		if self._nBatchReceiveCount < 0 then
+			self._nBatchReceiveCount = 0
+		end
+	end
+	self._bInBatchReceive = self._nBatchReceiveCount > 0
 end
 function PlayerQuestData:ReceiveDailyReward(nTid, callback)
 	local msg = {Value = nTid}
@@ -764,10 +786,13 @@ function PlayerQuestData:ReceiveDailyReward(nTid, callback)
 		end
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+		local bWasInBatch = self._bInBatchReceive
 		if callback ~= nil then
-			callback()
+			callback(mapDecodedChangeInfo, mapMsgData)
 		end
-		EventManager.Hit(EventId.DailyQuestReceived, mapMsgData)
+		if not bWasInBatch then
+			EventManager.Hit(EventId.DailyQuestReceived, mapMsgData)
+		end
 		self:UpdateQuestRedDot("Daily")
 	end
 	PlayerData.State:SetMailOverflow(false)
@@ -793,14 +818,17 @@ function PlayerQuestData:ReceiveDailyActiveReward(callBack)
 		self:UpdateDailyQuestRedDot()
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
 		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
-		if callBack ~= nil then
-			callBack()
-		end
 		local tbShowReward = {}
 		for id, count in pairs(tbReward) do
 			table.insert(tbShowReward, {id = id, count = count})
 		end
-		EventManager.Hit(EventId.DailyQuestActiveReceived, tbShowReward)
+		local bWasInBatch = self._bInBatchReceive
+		if callBack ~= nil then
+			callBack(tbShowReward, mapDecodedChangeInfo)
+		end
+		if not bWasInBatch then
+			EventManager.Hit(EventId.DailyQuestActiveReceived, tbShowReward)
+		end
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.quest_daily_active_reward_receive_req, {}, nil, callback)
 end
@@ -830,10 +858,13 @@ function PlayerQuestData:ReceiveWeeklyReward(nTid, callback)
 		end
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+		local bWasInBatch = self._bInBatchReceive
 		if callback ~= nil then
-			callback()
+			callback(mapDecodedChangeInfo, mapMsgData)
 		end
-		EventManager.Hit(EventId.WeeklyQuestReceived, mapMsgData)
+		if not bWasInBatch then
+			EventManager.Hit(EventId.WeeklyQuestReceived, mapMsgData)
+		end
 		self:UpdateQuestRedDot("Weekly")
 	end
 	PlayerData.State:SetMailOverflow(false)
@@ -859,14 +890,17 @@ function PlayerQuestData:ReceiveWeeklyActiveReward(callBack)
 		self:UpdateWeeklyQuestRedDot()
 		local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
 		HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
-		if callBack ~= nil then
-			callBack()
-		end
 		local tbShowReward = {}
 		for id, count in pairs(tbReward) do
 			table.insert(tbShowReward, {id = id, count = count})
 		end
-		EventManager.Hit(EventId.WeeklyQuestActiveReceived, tbShowReward)
+		local bWasInBatch = self._bInBatchReceive
+		if callBack ~= nil then
+			callBack(tbShowReward, mapDecodedChangeInfo)
+		end
+		if not bWasInBatch then
+			EventManager.Hit(EventId.WeeklyQuestActiveReceived, tbShowReward)
+		end
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.quest_weekly_active_reward_receive_req, {}, nil, callback)
 end

@@ -70,7 +70,7 @@ function BattlePassRewardCtrl:Refresh(tbReward, bPremium, nBattlePassLevel)
 end
 function BattlePassRewardCtrl:SetLevelPos()
 	if self.nBattlePassLevel ~= nil then
-		self._mapNode.svRewardList:SetScrollGridPos(self.nBattlePassLevel - 1)
+		self._mapNode.svRewardList:SetScrollGridPos(self.nBattlePassLevel - 2)
 	end
 end
 function BattlePassRewardCtrl:PlayUnlockAnim(tbShowRewardIdx)

@@ -534,7 +534,8 @@ function NpcOptionCtrl:RefreshNoteList()
 							end
 							table.insert(self.tbShowInfo, {
 								nId = mapData.nId,
-								tbNote = tbNoteInfo
+								tbNote = tbNoteInfo,
+								nCurrentLevel = mapData.nCurLevel
 							})
 							mapSkillId[mapData.nId] = true
 						end
@@ -553,16 +554,27 @@ end
 function NpcOptionCtrl:OnDiscSkillInfoGridRefresh(goGrid, nIdx)
 	local mapSkill = self.tbShowInfo[nIdx + 1]
 	local tbNoteCount = {}
+	local tbNoteCountMask = {}
 	local tbimgIconCount = {}
+	local tbimgIconCountMask = {}
 	local TMPSkillTitle = goGrid.transform:Find("btnGrid/AnimRoot/TMPSkillTitle"):GetComponent("TMP_Text")
+	local TMPSkillTitleMask = goGrid.transform:Find("btnGrid/AnimRoot/goDeactiveMask/TMPSkillTitleMask"):GetComponent("TMP_Text")
 	local imgIcon = goGrid.transform:Find("btnGrid/AnimRoot/imgIconBg/imgIcon"):GetComponent("Image")
 	local imgIconBg = goGrid.transform:Find("btnGrid/AnimRoot/imgIconBg"):GetComponent("Image")
+	local imgIconBgMask = goGrid.transform:Find("btnGrid/AnimRoot/goDeactiveMask/imgIconBgMask"):GetComponent("Image")
+	local goDeactiveMask = goGrid.transform:Find("btnGrid/AnimRoot/goDeactiveMask").gameObject
 	tbNoteCount[1] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount1"):GetComponent("TMP_Text")
 	tbNoteCount[2] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount2"):GetComponent("TMP_Text")
 	tbNoteCount[3] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount3"):GetComponent("TMP_Text")
+	tbNoteCountMask[1] = goGrid.transform:Find("btnGrid/AnimRoot/goDeactiveMask/TMPNoteCountMask1"):GetComponent("TMP_Text")
+	tbNoteCountMask[2] = goGrid.transform:Find("btnGrid/AnimRoot/goDeactiveMask/TMPNoteCountMask2"):GetComponent("TMP_Text")
+	tbNoteCountMask[3] = goGrid.transform:Find("btnGrid/AnimRoot/goDeactiveMask/TMPNoteCountMask3"):GetComponent("TMP_Text")
 	tbimgIconCount[1] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount1/imgIconCount1"):GetComponent("Image")
 	tbimgIconCount[2] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount2/imgIconCount2"):GetComponent("Image")
 	tbimgIconCount[3] = goGrid.transform:Find("btnGrid/AnimRoot/TMPNoteCount3/imgIconCount3"):GetComponent("Image")
+	tbimgIconCountMask[1] = goGrid.transform:Find("btnGrid/AnimRoot/goDeactiveMask/TMPNoteCountMask1/imgIconCountMask1"):GetComponent("Image")
+	tbimgIconCountMask[2] = goGrid.transform:Find("btnGrid/AnimRoot/goDeactiveMask/TMPNoteCountMask2/imgIconCountMask2"):GetComponent("Image")
+	tbimgIconCountMask[3] = goGrid.transform:Find("btnGrid/AnimRoot/goDeactiveMask/TMPNoteCountMask3/imgIconCountMask3"):GetComponent("Image")
 	local mapSkillCfg = ConfigTable.GetData("SecondarySkill", mapSkill.nId)
 	if mapSkillCfg == nil then
 		goGrid:SetActive(false)
@@ -571,30 +583,44 @@ function NpcOptionCtrl:OnDiscSkillInfoGridRefresh(goGrid, nIdx)
 		goGrid:SetActive(true)
 	end
 	NovaAPI.SetTMPText(TMPSkillTitle, mapSkillCfg.Name)
+	NovaAPI.SetTMPText(TMPSkillTitleMask, mapSkillCfg.Name)
 	self:SetPngSprite(imgIcon, mapSkillCfg.Icon .. AllEnum.DiscSkillIconSurfix.Small)
 	self:SetPngSprite(imgIconBg, mapSkillCfg.IconBg .. AllEnum.DiscSkillIconSurfix.Small)
+	self:SetPngSprite(imgIconBgMask, mapSkillCfg.IconBg .. AllEnum.DiscSkillIconSurfix.Small)
+	local bMask = false
 	for i = 1, 3 do
 		if mapSkill.tbNote[i] ~= nil then
 			tbNoteCount[i].gameObject:SetActive(true)
+			tbNoteCountMask[i].gameObject:SetActive(true)
 			tbimgIconCount[i].gameObject:SetActive(true)
+			tbimgIconCountMask[i].gameObject:SetActive(true)
 			local mapNote = ConfigTable.GetData("SubNoteSkill", mapSkill.tbNote[i][1])
 			if mapNote ~= nil then
 				local sNoteIconPath = mapNote.Icon .. AllEnum.DiscSkillIconSurfix.Small
 				self:SetPngSprite(tbimgIconCount[i], sNoteIconPath)
+				self:SetPngSprite(tbimgIconCountMask[i], sNoteIconPath)
 			end
 			local nCurCount = self.tbNote[mapSkill.tbNote[i][1]] == nil and 0 or self.tbNote[mapSkill.tbNote[i][1]]
 			local sCount = ""
+			local sMaskCount = nCurCount .. "/" .. mapSkill.tbNote[i][2]
 			if nCurCount >= mapSkill.tbNote[i][2] then
 				sCount = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_4"), nCurCount, mapSkill.tbNote[i][2])
 			else
 				sCount = orderedFormat(ConfigTable.GetUIText("StarTower_Depot_Note_Change_5"), nCurCount, mapSkill.tbNote[i][2])
+				if 1 > mapSkill.nCurrentLevel then
+					bMask = true
+				end
 			end
 			NovaAPI.SetTMPText(tbNoteCount[i], sCount)
+			NovaAPI.SetTMPText(tbNoteCountMask[i], sMaskCount)
 		else
 			tbNoteCount[i].gameObject:SetActive(false)
+			tbNoteCountMask[i].gameObject:SetActive(false)
 			tbimgIconCount[i].gameObject:SetActive(false)
+			tbimgIconCountMask[i].gameObject:SetActive(false)
 		end
 	end
+	goDeactiveMask:SetActive(bMask)
 end
 function NpcOptionCtrl:SetCoinActive(bActive)
 	self._mapNode.imgCoinBg:SetActive(bActive)

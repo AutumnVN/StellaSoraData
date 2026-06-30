@@ -687,6 +687,20 @@ function PlayerMallData:CollectEnqueue(nOrderId, nType)
 	if not self._tbOrderCollect then
 		self._tbOrderCollect = {}
 	end
+	if self._bProcessingOrder and #self._tbOrderCollect == 0 then
+		local bHasWait = false
+		for _, v in pairs(self._tbWaitingOrderCollect) do
+			if v.nOrderId == nOrderId then
+				bHasWait = true
+				printError("订单：" .. nOrderId .. "    重复进入等待列表")
+				break
+			end
+		end
+		if not bHasWait then
+			table.insert(self._tbWaitingOrderCollect, {nOrderId = nOrderId, nType = nType})
+		end
+		return
+	end
 	table.insert(self._tbOrderCollect, {nOrderId = nOrderId, nType = nType})
 end
 function PlayerMallData:SendBattlePassOrderReq(nMode, nVersion, callback)

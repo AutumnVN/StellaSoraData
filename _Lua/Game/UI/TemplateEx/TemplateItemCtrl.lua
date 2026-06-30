@@ -35,11 +35,11 @@ TemplateItemCtrl._mapNodeConfig = {
 	txtX = {sComponentName = "TMP_Text"},
 	imgFirstPass = {},
 	imgThreePass = {},
-	imgExtra = {},
+	imgExtra = {sComponentName = "Image"},
 	imgElement = {sComponentName = "Image"}
 }
 TemplateItemCtrl._mapEventConfig = {}
-function TemplateItemCtrl:SetItem(nItemId, nRarity, nCount, nExpire, bReceived, bFirstPass, bThreePass, bFullShow, bMat, bHideTime, bExtraDrop)
+function TemplateItemCtrl:SetItem(nItemId, nRarity, nCount, nExpire, bReceived, bFirstPass, bThreePass, bFullShow, bMat, bHideTime, bExtraDrop, bDoubleDrop)
 	local nStar = 0
 	if nItemId and nItemId ~= 0 then
 		local mapCfg = ConfigTable.GetData_Item(nItemId)
@@ -57,7 +57,7 @@ function TemplateItemCtrl:SetItem(nItemId, nRarity, nCount, nExpire, bReceived, 
 	self:_SwitchType(GameEnum.itemType.Item)
 	self:_SetCommon(nItemId, nRarity, 0, nStar, nil, nExpire, bReceived, bHideTime)
 	self:_SetCount(nCount, bFullShow, bMat)
-	self:_SetPassState(bFirstPass, bThreePass, bExtraDrop)
+	self:_SetPassState(bFirstPass, bThreePass, bExtraDrop, bDoubleDrop)
 end
 function TemplateItemCtrl:SetChar(nItemId, nCount, bReceived, nRewardType)
 	self:_SwitchType(GameEnum.itemType.Char)
@@ -70,7 +70,7 @@ function TemplateItemCtrl:SetChar(nItemId, nCount, bReceived, nRewardType)
 	else
 		self:_SetCount()
 	end
-	self:_SetPassState(nRewardType and nRewardType == AllEnum.RewardType.First, nRewardType and nRewardType == AllEnum.RewardType.Three, false)
+	self:_SetPassState(nRewardType and nRewardType == AllEnum.RewardType.First, nRewardType and nRewardType == AllEnum.RewardType.Three, false, false)
 end
 function TemplateItemCtrl:SetSelect(bSelect)
 	self._mapNode.Select:SetActive(bSelect)
@@ -203,10 +203,22 @@ function TemplateItemCtrl:_SetCount(nCount, bFullShow, bMat)
 		self._mapNode.txtCount.gameObject:SetActive(false)
 	end
 end
-function TemplateItemCtrl:_SetPassState(bFirstPass, bThreePass, bExtraDrop)
+function TemplateItemCtrl:_SetPassState(bFirstPass, bThreePass, bExtraDrop, bDoubleDrop)
 	self._mapNode.imgFirstPass:SetActive(bFirstPass)
 	self._mapNode.imgThreePass:SetActive(bThreePass)
-	self._mapNode.imgExtra:SetActive(bExtraDrop)
+	local bShowExtra = bExtraDrop or bDoubleDrop
+	self._mapNode.imgExtra.gameObject:SetActive(bShowExtra)
+	if bShowExtra then
+		local imgLanExtra = self._mapNode.imgExtra.transform:GetChild(0):GetComponent("Image")
+		if imgLanExtra ~= nil and imgLanExtra:IsNull() == false then
+			if bDoubleDrop then
+				self:SetAtlasSprite(imgLanExtra, "05_language", "zs_bag_drops_1")
+			else
+				self:SetAtlasSprite(imgLanExtra, "05_language", "zs_bag_drops")
+			end
+			imgLanExtra:SetNativeSize()
+		end
+	end
 end
 function TemplateItemCtrl:_SwitchType(enumType)
 	self._mapNode.Item:SetActive(enumType == GameEnum.itemType.Item)

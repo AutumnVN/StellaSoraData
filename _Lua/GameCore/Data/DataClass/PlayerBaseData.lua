@@ -1241,6 +1241,10 @@ function PlayerBaseData:Event_CreateRole()
 		"role_id",
 		tostring(self._nPlayerId)
 	})
+	table.insert(tab_1, {
+		"personality_id",
+		PlayerData.Avg:GetPersonalityId()
+	})
 	NovaAPI.UserEventUpload("role_login", tab_1)
 end
 function PlayerBaseData:PrologueEventUpload(index)

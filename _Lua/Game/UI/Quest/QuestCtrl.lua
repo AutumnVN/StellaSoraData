@@ -344,8 +344,24 @@ function QuestCtrl:OnEnable()
 		end
 	end
 	if self._panel.nCurTab == nil then
-		if PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.DailyQuest) then
+		local bDailyUnlock = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.DailyQuest)
+		local bWeeklyUnlock = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.WeeklyQuest)
+		local bDaily = RedDotManager.GetValid(RedDotDefine.Task_Daily) and bDailyUnlock
+		local bWeekly = RedDotManager.GetValid(RedDotDefine.Task_Weekly) and bWeeklyUnlock
+		local bTourGuide = RedDotManager.GetValid(RedDotDefine.Task_Guide)
+		local bWorldClass = RedDotManager.GetValid(RedDotDefine.WorldClass)
+		if bDaily then
 			self._panel.nCurTab = AllEnum.QuestPanelTab.DailyQuest
+		elseif bWeekly then
+			self._panel.nCurTab = AllEnum.QuestPanelTab.WeeklyQuest
+		elseif bTourGuide then
+			self._panel.nCurTab = AllEnum.QuestPanelTab.GuideQuest
+		elseif bWorldClass then
+			self._panel.nCurTab = AllEnum.QuestPanelTab.WorldClass
+		elseif bDailyUnlock then
+			self._panel.nCurTab = AllEnum.QuestPanelTab.DailyQuest
+		elseif bWeeklyUnlock then
+			self._panel.nCurTab = AllEnum.QuestPanelTab.WeeklyQuest
 		else
 			self._panel.nCurTab = AllEnum.QuestPanelTab.GuideQuest
 		end
@@ -501,7 +517,7 @@ function QuestCtrl:OnEvent_UpdateWorldClass()
 	self:RefreshTabUnlock()
 end
 function QuestCtrl:OnEvent_QuestDataRefresh(questType)
-	if questType == "TourGuide" or questType == "Daily" then
+	if questType == "TourGuide" or questType == "Daily" or questType == "Weekly" then
 		self:RefreshQuestList()
 	end
 end

@@ -41,27 +41,38 @@ GoldenSpyResultCtrl._mapNodeConfig = {
 	},
 	txt_ttValue = {sComponentName = "TMP_Text"},
 	img_finish = {},
-	FinishRoot = {}
+	FinishRoot = {},
+	btn_goNext2 = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_GoNext2"
+	},
+	txt_goNext2 = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "GoldenSpy_Result_GoNext2"
+	}
 }
 GoldenSpyResultCtrl._mapEventConfig = {}
 GoldenSpyResultCtrl._mapRedDotConfig = {}
 function GoldenSpyResultCtrl:Awake()
 	local tbParam = self:GetPanelParam()
 	if type(tbParam) == "table" then
-		self.bResult = tbParam[1]
-		self.nLevelId = tbParam[2]
-		self.nCurFloorId = tbParam[3]
-		self.nFloor = tbParam[4]
-		self.nTotalFloor = tbParam[5]
-		self.nCurScore = tbParam[6]
-		self.finishCallback = tbParam[7]
-		self.goNextCallback = tbParam[8]
-		self.bSuccess = tbParam[9]
+		self.data = tbParam[1]
 	end
+	self.bResult = self.data.bResult
+	self.nLevelId = self.data.nLevelId
+	self.nCurFloorId = self.data.nCurFloorId
+	self.nFloor = self.data.nFloor
+	self.nTotalFloor = self.data.nTotalFloor
+	self.nCurScore = self.data.nCurScore
+	self.finishCallback = self.data.finishCallback
+	self.goNextCallback = self.data.goNextCallback
+	self.bSuccess = self.data.bSuccess
+	self.bCanGoNextLevel = self.data.bCanGoNextLevel
+	self.goNextLevelCallback = self.data.goNextLevelCallback
 	self.levelCfg = ConfigTable.GetData("GoldenSpyLevel", self.nLevelId)
 	self.floorCfg = ConfigTable.GetData("GoldenSpyFloor", self.nCurFloorId)
 	self._mapNode.GoNextRoot:SetActive(not self.bResult)
-	self._mapNode.FinishRoot:SetActive(self.bResult)
+	self:SetFinishActive(self.bResult)
 	self:SetContent()
 	if self.bSuccess then
 		for i, v in ipairs(self._mapNode.txt_title) do
@@ -127,29 +138,46 @@ function GoldenSpyResultCtrl:SetFinishTarget()
 	NovaAPI.SetTMPText(txt_target4, ConfigTable.GetUIText("GoldenSpy_Result_FinishTarget4"))
 	NovaAPI.SetTMPText(txt_value4, orderedFormat(ConfigTable.GetUIText("GoldenSpy_Result_TargetValue2"), self.nCurScore))
 end
-function GoldenSpyResultCtrl:OnBtnClick_Finish()
-	if self.bResult then
-		local callback = function()
-			local wait = function()
-				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-				EventManager.Hit(EventId.ClosePanel, PanelId.GoldenSpyResultPanel)
+function GoldenSpyResultCtrl:SetFinishActive(bActive)
+	if bActive then
+		local callback = function(msgData, nextGroupId, nextLevelId)
+			self._mapNode.FinishRoot:SetActive(true)
+			local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(msgData)
+			UTILS.OpenReceiveByChangeInfo(msgData)
+			self.nextGroupId = nextGroupId
+			self.nextLevelId = nextLevelId
+			if self.bSuccess and self.nextGroupId ~= nil and self.nextLevelId ~= nil then
+				self._mapNode.btn_goNext2.gameObject:SetActive(true)
+			else
+				self._mapNode.btn_goNext2.gameObject:SetActive(false)
 			end
-			cs_coroutine.start(wait)
 		end
 		if self.finishCallback ~= nil then
 			self.finishCallback(callback)
 		end
 	else
+		self._mapNode.FinishRoot:SetActive(false)
+	end
+end
+function GoldenSpyResultCtrl:OnBtnClick_Finish()
+	if self.bResult then
+		EventManager.Hit(EventId.ClosePanel, self._panel._nPanelId)
+	else
 		self.bResult = true
 		self._mapNode.GoNextRoot:SetActive(not self.bResult)
-		self._mapNode.FinishRoot:SetActive(self.bResult)
+		self:SetFinishActive(self.bResult)
 	end
 end
 function GoldenSpyResultCtrl:OnBtnClick_GoNext()
-	EventManager.Hit(EventId.ClosePanel, PanelId.GoldenSpyResultPanel)
+	EventManager.Hit(EventId.ClosePanel, self._panel._nPanelId)
 	if self.goNextCallback ~= nil then
 		self.goNextCallback()
+	end
+end
+function GoldenSpyResultCtrl:OnBtnClick_GoNext2()
+	EventManager.Hit(EventId.ClosePanel, self._panel._nPanelId)
+	if self.goNextCallback ~= nil then
+		self.goNextLevelCallback(self.nextGroupId, self.nextLevelId)
 	end
 end
 return GoldenSpyResultCtrl

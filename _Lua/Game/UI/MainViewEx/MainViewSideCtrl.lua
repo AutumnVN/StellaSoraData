@@ -177,8 +177,6 @@ function MainViewSideCtrl:CheckCommunityEnable()
 	local channelName = CS.ClientConfig.ClientPublishChannelName
 	if clientPublishRegion == CS.ClientPublishRegion.CN and (channelName == "Official" or channelName == "TEST_1" or channelName == "Taptap") then
 		bEnable = true
-	else
-		bEnable = false
 	end
 	return bEnable
 end
@@ -206,7 +204,7 @@ function MainViewSideCtrl:CheckCodeEnable()
 	local tbPublishChannerl = string.split(sEnableStr, ",")
 	local fullChannnel = CS.ClientConfig.FullClientPublishChannelName
 	local sClient = string.sub(fullChannnel, 4)
-	for _, channel in pairs(tbPublishChannerl) do
+	for _, channel in ipairs(tbPublishChannerl) do
 		if string.match(sClient, channel) ~= nil then
 			bEnable = true
 			break

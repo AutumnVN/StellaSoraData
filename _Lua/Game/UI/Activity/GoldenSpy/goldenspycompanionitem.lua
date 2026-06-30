@@ -380,7 +380,7 @@ function GoldenSpyCompanionItem:_CheckVision()
 			local hitArea = item.Ctrl:GetHitArea()
 			if hitArea and self:_HitAreaInSector(hitArea, vx, vy, forwardAngle, halfAngle, radius) then
 				if item.Ctrl == self.floorCtrl.catchedItem then
-					goto lbl_229
+					goto lbl_176
 				end
 				if item.Ctrl:GetItemCfg().ItemType == GameEnum.GoldenSpyItem.Boom then
 					item.Ctrl:Boom(nil)
@@ -390,22 +390,8 @@ function GoldenSpyCompanionItem:_CheckVision()
 					local tbHasBuff = self.floorCtrl.levelCtrl.GoldenSpyLevelData:GetBuffData()
 					for _, v in ipairs(tbHasBuff) do
 						local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-						if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == itemCfg.ItemType then
-							local curFloor = self.floorCtrl.levelCtrl.GoldenSpyLevelData:GetCurFloor()
-							if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-								if v.bActive and table.indexof(v.tbActiveFloor, curFloor) > 0 then
-									nScore = nScore + buffCfg.Params[2]
-								end
-							elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-								if v.bActive and table.indexof(v.tbActiveFloor, curFloor) > 0 then
-									nScore = nScore + buffCfg.Params[2]
-								end
-							elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-								if v.bActive then
-									nScore = nScore + buffCfg.Params[2]
-								end
-							elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-							end
+						if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == itemCfg.ItemType and self.floorCtrl.levelCtrl.GoldenSpyLevelData:CheckBuffActive(v) then
+							nScore = nScore + buffCfg.Params[2]
 						end
 					end
 					self._mapNode.animator:Play("Patrol_attack")
@@ -424,7 +410,7 @@ function GoldenSpyCompanionItem:_CheckVision()
 			end
 			tbRemoveItems = {}
 		end
-		::lbl_229::
+		::lbl_176::
 	end
 end
 function GoldenSpyCompanionItem:_StartVisionCheck()

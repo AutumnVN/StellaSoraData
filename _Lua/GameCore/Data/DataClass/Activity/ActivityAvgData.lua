@@ -685,7 +685,8 @@ function ActivityAvgData:RefreshAvgRedDot()
 					end
 					local actGroupData = PlayerData.Activity:GetActivityGroupDataById(nActGroupId)
 					local bActGroupUnlock = actGroupData:IsUnlock()
-					local bNew = isUnlock and isNew and not isClicked and isOpen and bActGroupUnlock
+					local bActGroupOpen = actGroupData:CheckActivityGroupOpen()
+					local bNew = isUnlock and isNew and not isClicked and isOpen and bActGroupUnlock and bActGroupOpen
 					if bNew == true then
 						tbActGroupRedDot[nActGroupId] = true
 					end
@@ -973,6 +974,7 @@ function ActivityAvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 		end
 		self.mapTempCL = {}
 		self.mapTempLatestCnt = {}
+		local sOldPid = PlayerData.Avg:GetPersonalityId()
 		func_overwrite(self.mapTempPersonality, self.mapPersonality)
 		self.mapTempPersonality = {}
 		self.mapTempPersonalityCnt = {}
@@ -981,6 +983,7 @@ function ActivityAvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 		local actChapterConfig = ConfigTable.GetData("ActivityStoryChapter", self.CURRENT_ACTIVITY_ID)
 		local tbActPersonality, tbActPersonalityFactor = self:_FilterPersonalityByChapter(actChapterConfig.ChapterId)
 		PlayerData.Avg:RefreshActPersonalityData(actChapterConfig.ChapterId, tbActPersonality, tbActPersonalityFactor)
+		PlayerData.Avg:PersonalityChangedUpload(sOldPid)
 		if callBack ~= nil then
 			callBack(mapChangeInfo)
 		end

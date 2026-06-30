@@ -33,16 +33,16 @@ function StorySetSectionItemCtrl:RefreshItem(data)
 		NovaAPI.SetTMPText(self._mapNode.txtTitle, mapCfg.Title)
 		NovaAPI.SetTMPText(self._mapNode.txtDesc, mapCfg.Desc)
 		nChapterId = mapCfg.ChapterId
-	end
-	for _, v in ipairs(self._mapNode.txtItemCount) do
-		v.gameObject:SetActive(nStatus ~= AllEnum.StorySetStatus.Received)
-		NovaAPI.SetTMPText(v, string.format("x%s", mapCfg.RewardItem1Qty))
-	end
-	if nStatus == AllEnum.StorySetStatus.UnLock then
-		local mapItemCfg = ConfigTable.GetData_Item(mapCfg.RewardItem1Tid)
-		if mapItemCfg ~= nil then
-			for _, v in ipairs(self._mapNode.imgItem) do
-				self:SetPngSprite(v, mapItemCfg.Icon)
+		for _, v in ipairs(self._mapNode.txtItemCount) do
+			v.gameObject:SetActive(nStatus ~= AllEnum.StorySetStatus.Received)
+			NovaAPI.SetTMPText(v, string.format("x%s", mapCfg.RewardItem1Qty))
+		end
+		if nStatus == AllEnum.StorySetStatus.UnLock then
+			local mapItemCfg = ConfigTable.GetData_Item(mapCfg.RewardItem1Tid)
+			if mapItemCfg ~= nil then
+				for _, v in ipairs(self._mapNode.imgItem) do
+					self:SetPngSprite(v, mapItemCfg.Icon)
+				end
 			end
 		end
 	end
@@ -66,9 +66,5 @@ end
 function StorySetSectionItemCtrl:OnDestroy()
 end
 function StorySetSectionItemCtrl:OnRelease()
-end
-function StorySetSectionItemCtrl:OnBtnClick_AAA()
-end
-function StorySetSectionItemCtrl:OnEvent_AAA()
 end
 return StorySetSectionItemCtrl

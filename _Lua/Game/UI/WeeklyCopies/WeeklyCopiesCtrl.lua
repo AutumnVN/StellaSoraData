@@ -181,6 +181,9 @@ function WeeklyCopiesCtrl:OnEnable()
 	elseif self.curSelectBossType ~= nil then
 		self.initSelTypeId = self.curSelectBossType.Id
 	end
+	if self.initSelTypeId == 0 then
+		self.initSelTypeId = self._panel.curSelMonster
+	end
 	self:SetSprite_Coin(self._mapNode.imgTicketIcon, AllEnum.CoinItemId.RogueHardCoreTick)
 	self:SetSprite_Coin(self._mapNode.imgIconTicketBtn, AllEnum.CoinItemId.RogueHardCoreTick)
 	local nTicketCount = PlayerData.Item:GetItemCountByID(AllEnum.CoinItemId.RogueHardCoreTick)
@@ -243,6 +246,7 @@ function WeeklyCopiesCtrl:OnEnable()
 						return
 					end
 					self.curSelectBossType = bossTypeData
+					self._panel.curSelMonster = bossTypeData.Id
 					self:RefreshSelectMonster(i - 1)
 				end, btn.gameObject, i)
 				btn.onClick:AddListener(func_Handler)

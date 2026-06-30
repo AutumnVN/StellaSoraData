@@ -45,7 +45,7 @@ function StarTowerBookCtrl:RefreshPanel()
 	self._mapNode.EventRoot.gameObject:SetActive(self._panel.nPanelType == AllEnum.StarTowerBookPanelType.Event)
 	self._mapNode.AffinityRoot.gameObject:SetActive(self._panel.nPanelType == AllEnum.StarTowerBookPanelType.Affinity)
 	self._mapNode.goBg.gameObject:SetActive(true)
-	if self.nLastPanelType ~= nil and self.nLastPanelType == AllEnum.StarTowerBookPanelType.Event or self.nLastPanelType == AllEnum.StarTowerBookPanelType.Affinity or self._panel.nPanelType == AllEnum.StarTowerBookPanelType.Event or self._panel.nPanelType == AllEnum.StarTowerBookPanelType.Affinity then
+	if self.nLastPanelType ~= nil and (self.nLastPanelType == AllEnum.StarTowerBookPanelType.Event or self.nLastPanelType == AllEnum.StarTowerBookPanelType.Affinity) or self._panel.nPanelType == AllEnum.StarTowerBookPanelType.Event or self._panel.nPanelType == AllEnum.StarTowerBookPanelType.Affinity then
 		self._mapNode.goBg.gameObject:SetActive(false)
 		return
 	end
@@ -90,11 +90,9 @@ function StarTowerBookCtrl:OnDestroy()
 end
 function StarTowerBookCtrl:OnRelease()
 end
-function StarTowerBookCtrl:OnBtnClick_AAA()
-end
 function StarTowerBookCtrl:OnEvent_ChangeStarTowerBookPanel(nPanelType)
-	self._panel.nPanelType = nPanelType
 	self.nLastPanelType = self._panel.nPanelType
+	self._panel.nPanelType = nPanelType
 	if self._panel.nPanelType == AllEnum.StarTowerBookPanelType.Potential then
 		self:RefreshPanel()
 		self._mapNode.PotentialRoot:Init()

@@ -87,6 +87,7 @@ function RaidRewardCtrl:RefreshData(tbReward, mapChangeInfo)
 	self.nExp = 0
 	self.tbReward = {}
 	local tbAfter = {}
+	local tbAfterDouble = {}
 	for k, v in pairs(tbReward) do
 		self.nExp = self.nExp + v.Exp
 		if not self.tbReward[k] then
@@ -99,7 +100,8 @@ function RaidRewardCtrl:RefreshData(tbReward, mapChangeInfo)
 						Id = mapReward.Id,
 						Tid = mapReward.Tid,
 						Qty = mapReward.Qty,
-						Rarity = ConfigTable.GetData_Item(mapReward.Tid).Rarity
+						Rarity = ConfigTable.GetData_Item(mapReward.Tid).Rarity,
+						ExtraDrop = 0
 					})
 				else
 					if not tbAfter[mapReward.Tid] then
@@ -111,7 +113,8 @@ function RaidRewardCtrl:RefreshData(tbReward, mapChangeInfo)
 					Id = mapReward.Id,
 					Tid = mapReward.Tid,
 					Qty = mapReward.Qty,
-					Rarity = ConfigTable.GetData_Item(mapReward.Tid).Rarity
+					Rarity = ConfigTable.GetData_Item(mapReward.Tid).Rarity,
+					ExtraDrop = 0
 				})
 			end
 		end
@@ -125,7 +128,8 @@ function RaidRewardCtrl:RefreshData(tbReward, mapChangeInfo)
 					Id = 0,
 					Tid = mapReward.Tid,
 					Qty = mapReward.Qty,
-					Rarity = ConfigTable.GetData_Item(mapReward.Tid).Rarity
+					Rarity = ConfigTable.GetData_Item(mapReward.Tid).Rarity,
+					ExtraDrop = 0
 				})
 			end
 		end
@@ -139,7 +143,23 @@ function RaidRewardCtrl:RefreshData(tbReward, mapChangeInfo)
 					Id = 0,
 					Tid = mapReward.Tid,
 					Qty = mapReward.Qty,
-					Rarity = ConfigTable.GetData_Item(mapReward.Tid).Rarity
+					Rarity = ConfigTable.GetData_Item(mapReward.Tid).Rarity,
+					ExtraDrop = 0
+				})
+			end
+		end
+		if v.DoubleItems ~= nil then
+			for _, mapReward in pairs(v.DoubleItems) do
+				if not tbAfterDouble[mapReward.Tid] then
+					tbAfterDouble[mapReward.Tid] = 0
+				end
+				tbAfterDouble[mapReward.Tid] = tbAfterDouble[mapReward.Tid] + mapReward.Qty
+				table.insert(self.tbReward[k], {
+					Id = 0,
+					Tid = mapReward.Tid,
+					Qty = mapReward.Qty,
+					Rarity = ConfigTable.GetData_Item(mapReward.Tid).Rarity,
+					ExtraDrop = AllEnum.RewardType.Double
 				})
 			end
 		end
@@ -152,24 +172,40 @@ function RaidRewardCtrl:RefreshData(tbReward, mapChangeInfo)
 			Id = 0,
 			Tid = k,
 			Qty = v,
-			Rarity = ConfigTable.GetData_Item(k).Rarity
+			Rarity = ConfigTable.GetData_Item(k).Rarity,
+			ExtraDrop = 0
+		})
+	end
+	for k, v in pairs(tbAfterDouble) do
+		table.insert(self.tbResult, {
+			Id = 0,
+			Tid = k,
+			Qty = v,
+			Rarity = ConfigTable.GetData_Item(k).Rarity,
+			ExtraDrop = AllEnum.RewardType.Double
 		})
 	end
 	for k, _ in pairs(self.tbReward) do
 		table.sort(self.tbReward[k], function(a, b)
+			if a.ExtraDrop == b.ExtraDrop then
+				if a.Rarity ~= b.Rarity then
+					return a.Rarity < b.Rarity
+				else
+					return a.Tid < b.Tid
+				end
+			end
+			return a.ExtraDrop < b.ExtraDrop
+		end)
+	end
+	table.sort(self.tbResult, function(a, b)
+		if a.ExtraDrop == b.ExtraDrop then
 			if a.Rarity ~= b.Rarity then
 				return a.Rarity < b.Rarity
 			else
 				return a.Tid < b.Tid
 			end
-		end)
-	end
-	table.sort(self.tbResult, function(a, b)
-		if a.Rarity ~= b.Rarity then
-			return a.Rarity < b.Rarity
-		else
-			return a.Tid < b.Tid
 		end
+		return a.ExtraDrop < b.ExtraDrop
 	end)
 end
 function RaidRewardCtrl:RefreshInfo()
@@ -238,7 +274,7 @@ function RaidRewardCtrl:OnGridRefresh(goGrid, gridIndex)
 	for i = 1, nAll do
 		if mapData[i] then
 			self.tbGridObj[nInstanceID][i].gameObject:SetActive(true)
-			self.tbGridObj[nInstanceID][i]:SetItem(mapData[i].Tid, nil, mapData[i].Qty, nil, nil, nil, nil, true)
+			self.tbGridObj[nInstanceID][i]:SetItem(mapData[i].Tid, nil, mapData[i].Qty, nil, nil, nil, nil, true, nil, nil, mapData[i].ExtraDrop == 1, mapData[i].ExtraDrop == AllEnum.RewardType.Double)
 		else
 			self.tbGridObj[nInstanceID][i].gameObject:SetActive(false)
 		end
@@ -248,7 +284,7 @@ function RaidRewardCtrl:RefreshResult()
 	for i = 1, 7 do
 		self._mapNode.goAllItem[i].gameObject:SetActive(false)
 		if self.tbResult[i] then
-			self._mapNode.goAllItem[i]:SetItem(self.tbResult[i].Tid, nil, self.tbResult[i].Qty, nil, nil, nil, nil, true)
+			self._mapNode.goAllItem[i]:SetItem(self.tbResult[i].Tid, nil, self.tbResult[i].Qty, nil, nil, nil, nil, true, nil, nil, self.tbResult[i].ExtraDrop == 1, self.tbResult[i].ExtraDrop == AllEnum.RewardType.Double)
 		end
 	end
 	self._mapNode.btnReview.gameObject:SetActive(7 < #self.tbResult)
@@ -438,7 +474,9 @@ function RaidRewardCtrl:OnBtnClick_Review(btn)
 	for _, v in pairs(self.tbResult) do
 		table.insert(tbList, {
 			nId = v.Tid,
-			nCount = v.Qty
+			nCount = v.Qty,
+			bExtraDrop = v.ExtraDrop == 1,
+			bDoubleDrop = v.ExtraDrop == AllEnum.RewardType.Double
 		})
 	end
 	local msg = {

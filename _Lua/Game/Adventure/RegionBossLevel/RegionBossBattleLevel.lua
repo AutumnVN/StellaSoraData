@@ -102,6 +102,10 @@ function RegionBossBattleLevel:SettleRegionBoss(isWin)
 			for i, v in ipairs(mapMsgData.AwardItems) do
 				table.insert(CacheRewardTab, v)
 			end
+			for i, v in ipairs(mapMsgData.DoubleItems) do
+				v.rewardType = AllEnum.RewardType.Double
+				table.insert(CacheRewardTab, v)
+			end
 			if isWin then
 				self:PlaySuccessPerform(ConfigTable.GetData("RegionBossLevel", self.nLevelId).FloorId, self.nBuildId, nExp, CacheRewardTab, mapMsgData.Change, false)
 			else

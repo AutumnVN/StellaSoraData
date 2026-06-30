@@ -570,6 +570,10 @@ function Avg_4_TalkCtrl:OnL2DAnimEvent_BtnClick()
 		self.twDOText:Kill(true)
 		self.twDOText = nil
 	end
+	if type(self.tbPage) == "table" and self.nPageIndex == #self.tbPage and type(self.tbLogData) == "table" then
+		EventManager.Hit(EventId.AvgMarkLog, self.tbLogData)
+		self.tbLogData = nil
+	end
 	self:OnBtnClick_GoOn()
 end
 function Avg_4_TalkCtrl:OnL2DAnimEvent_Done()
@@ -718,7 +722,11 @@ function Avg_4_TalkCtrl:_SetWaitingVisible(bVisible)
 		rt = self._mapNode.rtWaiting_White
 	end
 	rt.localScale = bVisible == true and Vector3.one or Vector3.zero
-	EventManager.Hit(EventId.AvgLogBtnEnable, bVisible == true and self.bForceDisableBtn_LogHide == false)
+	EventManager.Hit(EventId.AvgLogBtnEnable, bVisible == true)
+	if bVisible == true and type(self.tbPage) == "table" and self.nPageIndex == #self.tbPage and type(self.tbLogData) == "table" then
+		EventManager.Hit(EventId.AvgMarkLog, self.tbLogData)
+		self.tbLogData = nil
+	end
 end
 function Avg_4_TalkCtrl:_ResetWaitingPos()
 	local nX, nY, bCanScroll = 0, 0, false
@@ -1003,6 +1011,7 @@ function Avg_4_TalkCtrl:SetTalk(tbParam)
 	self.bWhite = nil
 	nDelayTime = self.nContentTextDelay_1
 	self.bNeedPlayPageSound = false
+	self.tbLogData = {}
 	self.tbLogData.nType = AllEnum.AvgLogType.Talk
 	self.tbLogData.sAvgId = sAvgCharId
 	self.tbLogData.sVoice = sVoiceName
@@ -1145,6 +1154,10 @@ function Avg_4_TalkCtrl:SetTalk(tbParam)
 		self.nPageIndex = 1
 		NovaAPI.SetText_RubyTMP(self.curTMP, sContent)
 		self.timerSubtitle = self:AddTimer(1, nDuration, "_SubtitleDone", true, true, true)
+		if bMarkInLog == true then
+			EventManager.Hit(EventId.AvgMarkLog, self.tbLogData)
+			self.tbLogData = nil
+		end
 	else
 		if bFixTmpPosY == true then
 			self:_ProcTmpPosY(sContent, sAvgCharId == "0")
@@ -1203,7 +1216,8 @@ function Avg_4_TalkCtrl:SetTalk(tbParam)
 		WwiseAudioMgr:WwiseVoice_PlayInAVG(sVoiceName)
 	end
 	if bMarkInLog == true then
-		EventManager.Hit(EventId.AvgMarkLog, self.tbLogData)
+	else
+		self.tbLogData = nil
 	end
 	return -1
 end

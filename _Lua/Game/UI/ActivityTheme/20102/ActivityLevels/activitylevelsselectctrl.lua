@@ -876,7 +876,7 @@ function ActivityLevelsSelectCtrl:OnClickBtnRaid()
 	end
 	self:AddTimer(1, 0.2, function()
 		local nNeedEnergy = self.curRequireEnergy
-		EventManager.Hit(EventId.OpenPanel, PanelId.Raid, self.selectLevelData.baseData.Id, nNeedEnergy, 5, self.nActId)
+		EventManager.Hit(EventId.OpenPanel, PanelId.Raid, self.selectLevelData.baseData.Id, nNeedEnergy, 0, self.nActId)
 	end, true, true, true)
 end
 function ActivityLevelsSelectCtrl:OnEvent_ClosePanel(nPanelId)

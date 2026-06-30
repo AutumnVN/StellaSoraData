@@ -47,7 +47,8 @@ function BookQuestItemCtrl:SetProgress(nProgress, nAllProgress, nStatus)
 	self._mapNode.goComplete.gameObject:SetActive(nStatus == AllEnum.BookQuestStatus.Complete)
 	self._mapNode.goReceived.gameObject:SetActive(nStatus == AllEnum.BookQuestStatus.Received)
 	if nStatus == AllEnum.BookQuestStatus.UnComplete then
-		self._mapNode.imgBar.sizeDelta = Vector2(nProgress / nAllProgress * self.nAllWidth, self._mapNode.imgBar.sizeDelta.y)
+		local fRatio = 0 < nAllProgress and nProgress / nAllProgress or 0
+		self._mapNode.imgBar.sizeDelta = Vector2(fRatio * self.nAllWidth, self._mapNode.imgBar.sizeDelta.y)
 		NovaAPI.SetTMPText(self._mapNode.txtProgress, string.format("%s/%s", nProgress, nAllProgress))
 	else
 		self._mapNode.imgBar.sizeDelta = Vector2(self.nAllWidth, self._mapNode.imgBar.sizeDelta.y)

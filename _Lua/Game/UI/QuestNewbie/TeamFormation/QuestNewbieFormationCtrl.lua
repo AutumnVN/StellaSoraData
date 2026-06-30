@@ -1,6 +1,18 @@
 local QuestNewbieFormationCtrl = class("QuestNewbieFormationCtrl", BaseCtrl)
 local LocalData = require("GameCore.Data.LocalData")
 local Event = require("GameCore.Event.Event")
+local appendOrStack = function(tbDst, mapItem, sIdKey, sQtyKey, sExtraKey)
+	if mapItem == nil then
+		return
+	end
+	for _, v in ipairs(tbDst) do
+		if v[sIdKey] == mapItem[sIdKey] and v[sExtraKey] == mapItem[sExtraKey] then
+			v[sQtyKey] = (v[sQtyKey] or 0) + (mapItem[sQtyKey] or 0)
+			return
+		end
+	end
+	table.insert(tbDst, mapItem)
+end
 QuestNewbieFormationCtrl._mapNodeConfig = {
 	goTeamSelect = {},
 	ctrlTeam = {
@@ -360,6 +372,9 @@ function QuestNewbieFormationCtrl:RefreshShow(nCurGroup)
 	end
 	local bGroupReceived = PlayerData.Quest:CheckTeamFormationGroupReward(self.nAttributeIdx, self.nCurShowGroupIdxInAttr)
 	local bCanReceive = bAllReceive and not bGroupReceived
+	self._bChapterCanReceive = bCanReceive
+	self._bListCanReceive = bFastReceive
+	bFastReceive = bFastReceive or bCanReceive
 	self._mapNode.btnReceiveChapter.gameObject:SetActive(bCanReceive)
 	self._mapNode.btnReceiveChapterGray.gameObject:SetActive(not bCanReceive and not bGroupReceived)
 	self._mapNode.txtActComplete.gameObject:SetActive(bGroupReceived)
@@ -532,11 +547,109 @@ function QuestNewbieFormationCtrl:OnBtnClick_FastReceive()
 			curShowGroupIdx = idx
 		end
 	end
+	local questGroupCfg = self.tbAllGroup[curShowGroupIdx]
 	local nId = 0
-	if self.tbAllGroup[curShowGroupIdx] ~= nil then
-		nId = self.tbAllGroup[curShowGroupIdx].Id
+	if questGroupCfg ~= nil then
+		nId = questGroupCfg.Id
 	end
-	PlayerData.Quest:ReceiveTeamFormationReward(0, nId, nil)
+	local bListCanReceive = self._bListCanReceive
+	local bChapterCanReceive = self._bChapterCanReceive
+	if not bListCanReceive and not bChapterCanReceive then
+		return
+	end
+	if bListCanReceive then
+		PlayerData.Quest:ReceiveTeamFormationReward(0, nId, nil)
+	else
+		self:_DoReceiveChapter(questGroupCfg, nil)
+	end
+end
+function QuestNewbieFormationCtrl:_CheckChapterUnlockedAfterList()
+	if PlayerData.Quest:CheckTeamFormationGroupReward(self.nAttributeIdx, self.nCurShowGroupIdxInAttr) then
+		return false
+	end
+	if self.mapCurPageQuest == nil then
+		return false
+	end
+	for _, mapData in ipairs(self.mapCurPageQuest) do
+		if mapData.nStatus ~= 2 then
+			return false
+		end
+	end
+	return true
+end
+function QuestNewbieFormationCtrl:_AccumulateDisplayItem(tbItem, mapChangeInput)
+	if tbItem == nil and mapChangeInput == nil then
+		return
+	end
+	local mapTrans = PlayerData.Item:ProcessTransChangeInfo(mapChangeInput)
+	local tbReward, tbSpReward = PlayerData.Item:ProcessRewardDisplayItem(tbItem, mapTrans)
+	if tbReward ~= nil then
+		for _, v in ipairs(tbReward) do
+			appendOrStack(self._mapMergedReward.tbReward, v, "id", "count", "rewardType")
+		end
+	end
+	if tbSpReward ~= nil then
+		for _, v in ipairs(tbSpReward) do
+			table.insert(self._mapMergedReward.tbSpReward, v)
+		end
+	end
+	if mapTrans ~= nil then
+		for _, v in ipairs(mapTrans.tbSrc or {}) do
+			appendOrStack(self._mapMergedReward.tbSrc, v, "Tid", "Qty")
+		end
+		for _, v in ipairs(mapTrans.tbDst or {}) do
+			appendOrStack(self._mapMergedReward.tbDst, v, "Tid", "Qty")
+		end
+	end
+end
+function QuestNewbieFormationCtrl:_DoReceiveChapter(questGroupCfg, callback)
+	if questGroupCfg == nil then
+		if callback ~= nil then
+			callback(nil)
+		end
+		return
+	end
+	local bDropBuild = questGroupCfg.ShowBuildId ~= nil and questGroupCfg.ShowBuildId > 0
+	if bDropBuild then
+		local CheckBuildCountCallBack = function(nBuildCount)
+			local nMaxBuildCount = ConfigTable.GetConfigNumber("StarTowerBuildNumberMax")
+			local bCanReceive = nBuildCount < nMaxBuildCount
+			if bCanReceive then
+				PlayerData.Quest:ReceiveTeamFormationGroupReward(questGroupCfg.Id, self.nAttributeIdx, callback)
+			else
+				if callback ~= nil then
+					callback(nil)
+				end
+				local confirmCallback = function()
+					EventManager.Hit(EventId.OpenPanel, PanelId.StarTowerBuildBriefList)
+				end
+				local msg = {
+					nType = AllEnum.MessageBox.Confirm,
+					sContent = ConfigTable.GetUIText("BUILD_04"),
+					sConfirm = ConfigTable.GetUIText("RoguelikeBuild_BuildCount_BtnManage"),
+					callbackConfirm = confirmCallback
+				}
+				EventManager.Hit(EventId.OpenMessageBox, msg)
+			end
+		end
+		PlayerData.Build:GetBuildCount(CheckBuildCountCallBack)
+	else
+		PlayerData.Quest:ReceiveTeamFormationGroupReward(questGroupCfg.Id, self.nAttributeIdx, callback)
+	end
+end
+function QuestNewbieFormationCtrl:_FlushBatchReceive(bAttributeComplete, nNextGroupId)
+	PlayerData.Quest:SetBatchReceiveFlag(false)
+	local mapMerged = self._mapMergedReward or {
+		tbReward = {},
+		tbSpReward = {},
+		tbSrc = {},
+		tbDst = {}
+	}
+	self._mapMergedReward = nil
+	local refreshFunc = function()
+		EventManager.Hit("UpdateTeamFormationGroup", bAttributeComplete, nNextGroupId)
+	end
+	UTILS.OpenReceiveByReward(mapMerged, refreshFunc)
 end
 function QuestNewbieFormationCtrl:OnBtnClick_FastReceiveGray()
 	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Affinity_Reward_Tips"))

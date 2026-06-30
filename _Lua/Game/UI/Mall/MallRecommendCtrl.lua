@@ -248,10 +248,26 @@ function MallRecommendCtrl:SetTimer()
 end
 function MallRecommendCtrl:RefreshRecommend(tbList)
 	self.tbRecommendConfig = {}
-	local forEachMap = function(mapData)
+	local tempMapBySort = {}
+	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+	ForEachTableLine(DataTable.MallRecommendGroup, function(mapData)
+		if mapData.StartTime == "" or mapData.EndTime == "" then
+			return
+		end
+		local nStartTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapData.StartTime)
+		local nEndTime = CS.ClientManager.Instance:ISO8601StrToTimeStamp(mapData.EndTime)
+		if nStartTime > nCurTime or nEndTime < nCurTime then
+			return
+		end
+		local sortValue = mapData.Sort
+		if tempMapBySort[sortValue] == nil or mapData.Id > tempMapBySort[sortValue].Id then
+			tempMapBySort[sortValue] = mapData
+			self:SetNextRefreshTime(nEndTime - nCurTime)
+		end
+	end)
+	for _, mapData in pairs(tempMapBySort) do
 		table.insert(self.tbRecommendConfig, mapData)
 	end
-	ForEachTableLine(DataTable.MallRecommendGroup, forEachMap)
 	table.sort(self.tbRecommendConfig, function(a, b)
 		return a.Sort < b.Sort
 	end)

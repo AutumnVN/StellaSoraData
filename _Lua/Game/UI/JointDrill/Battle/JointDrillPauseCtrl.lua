@@ -101,9 +101,11 @@ function JointDrillPauseCtrl:PlayInAni()
 	self._mapNode.goBlur:SetActive(true)
 	local wait = function()
 		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-		self._mapNode.safeAreaRoot:SetActive(true)
-		self._mapNode.aniWindow:Play("t_window_04_t_in")
-		EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
+		if self.bShow then
+			self._mapNode.safeAreaRoot:SetActive(true)
+			self._mapNode.aniWindow:Play("t_window_04_t_in")
+			EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
+		end
 	end
 	cs_coroutine.start(wait)
 end
@@ -153,9 +155,16 @@ function JointDrillPauseCtrl:PlayCloseAni(callback)
 	self._mapNode.aniWindow:Play("t_window_04_t_out")
 	self._mapNode.aniBlur:SetTrigger("tOut")
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.2)
-	self:AddTimer(1, 0.2, "OnPanelClose", true, true, true, callback)
+	self:AddTimer(1, 0.2, "ClosePanel", true, true, true, callback)
 end
-function JointDrillPauseCtrl:OnPanelClose(_, callback)
+function JointDrillPauseCtrl:ClosePanel(_, callback)
+	if self._mapNode == nil or not self.bShow then
+		return
+	end
+	self:OnPanelClose(callback)
+end
+function JointDrillPauseCtrl:OnPanelClose(callback)
+	self.bShow = false
 	PanelManager.InputEnable()
 	GamepadUIManager.DisableGamepadUI("JointDrillPauseCtrl")
 	EventManager.Hit(EventId.BattleDashboardVisible, true)
@@ -164,7 +173,6 @@ function JointDrillPauseCtrl:OnPanelClose(_, callback)
 	if callback then
 		callback()
 	end
-	self.bShow = false
 end
 function JointDrillPauseCtrl:Awake()
 	self.nAllChallengeTime = ConfigTable.GetConfigNumber("JointDrill_Challenge_Time_Max")
@@ -299,9 +307,6 @@ function JointDrillPauseCtrl:OnEvent_RefreshChallengeTime(nTime)
 	NovaAPI.SetTMPText(self._mapNode.txtChallengeTime, string.format("%02d:%02d", nMin, nSec))
 end
 function JointDrillPauseCtrl:OnEvent_CloseJointDrillPause()
-	if self._mapNode == nil or not self.bShow then
-		return
-	end
-	self:OnPanelClose()
+	self:ClosePanel()
 end
 return JointDrillPauseCtrl

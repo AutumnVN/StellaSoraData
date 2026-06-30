@@ -83,7 +83,6 @@ function ScoreBossLevel:CalCharFixedEffect(nCharId, bMainChar, tbDiscId)
 	return stActorInfo
 end
 function ScoreBossLevel:OnEvent_LoadLevelRefresh()
-	EventManager.Hit("ResetBossHUD")
 	self.isCanPause = true
 	local mapAllEft, mapDiscEft, mapNoteEffect, tbNoteInfo = PlayerData.Build:GetBuildAllEft(self.mapBuildData.nBuildId)
 	safe_call_cs_func(CS.AdventureModuleHelper.SetNoteInfo, tbNoteInfo)
@@ -159,6 +158,7 @@ function ScoreBossLevel:OnEvent_HpChanged(hp, hpMax)
 	end
 	if hp > self.BossCurLvMinHp then
 		self.BossCurLvMinHp = hp
+		return
 	end
 	if hp <= self.BossCurLvMinHp then
 		self.BossCurLvMinHp = hp
@@ -182,11 +182,11 @@ function ScoreBossLevel:OnEvent_BossRushMonsterLevelChanged(oldLevel, battleLeve
 		end
 	end
 	self.parent:HPLevelChanged()
-	self.isDontChangeHp = false
 end
 function ScoreBossLevel:OnEvent_BossRushMonsterBattleAttrChanged()
 	local healthInfo = CS.AdventureModuleHelper.GetEntityHealthInfo(self.BossId)
 	self.BossMaxHp = healthInfo ~= nil and healthInfo.hpMax or 0
+	self.isDontChangeHp = false
 end
 function ScoreBossLevel:ScoreBossResultTime(nTime)
 	self.nTime = nTime

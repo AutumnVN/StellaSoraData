@@ -143,14 +143,18 @@ SkillInstanceLevelSelectCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "RegusBoss_SatisfyConditions_UnLock"
 	},
-	Conditions_ = {nCount = 2}
+	Conditions_ = {nCount = 2},
+	imgDoubleDrop = {},
+	txtDoubleDrop = {sComponentName = "TMP_Text"},
+	txtDoubleDropCount = {sComponentName = "TMP_Text"}
 }
 SkillInstanceLevelSelectCtrl._mapEventConfig = {
 	[EventId.UIHomeConfirm] = "OnEvent_Home",
 	[EventId.UIBackConfirm] = "OnEvent_Back",
 	SkillInstanceRaidOpen = "OnEvent_RaidOpen",
 	[EventId.UpdateWorldClass] = "OnEvent_UpdateWorldClass",
-	[EventId.UpdateEnergy] = "OnEvent_UpdateEnergy"
+	[EventId.UpdateEnergy] = "OnEvent_UpdateEnergy",
+	RaidSuccess = "OnEvent_RaidSuccess"
 }
 function SkillInstanceLevelSelectCtrl:Awake()
 	self.nEnergyRequire = 0
@@ -403,6 +407,12 @@ function SkillInstanceLevelSelectCtrl:RefreshSkillInstanceInfo(nGroupId, nHard, 
 	self._mapNode.btnGo.gameObject:SetActive(isUnLock)
 	self._mapNode.btnLock.gameObject:SetActive(not isUnLock)
 	self._mapNode.ListConditions:SetActive(not isUnLock)
+	self._mapNode.imgDoubleDrop:SetActive(false)
+	self.actData = PlayerData.Activity:GetActivityDataByType(GameEnum.activityType.Double)
+	if self.actData ~= nil and self.actData:CheckActShow() and self.actData:CheckInstanceType(GameEnum.instanceType.SkillInstance) then
+		self._mapNode.imgDoubleDrop:SetActive(isUnLock)
+		self:RefreshDoubleDropCount()
+	end
 	if not isUnLock then
 		local imgConditions_Lock_WC = self._mapNode.Conditions_[1].gameObject.transform:Find("imgConditions_Lock").gameObject
 		local imgConditions_UnLock_WC = self._mapNode.Conditions_[1].gameObject.transform:Find("imgConditions_UnLock").gameObject
@@ -532,7 +542,7 @@ function SkillInstanceLevelSelectCtrl:OnBtnClick_Raid()
 	end
 	local mapSkillInstanceData = self.mapAllSkillInstance[self.nCurGroupId][self.curSelectHard]
 	local nNeedEnergy = mapSkillInstanceData.EnergyConsume
-	EventManager.Hit(EventId.OpenPanel, PanelId.Raid, mapSkillInstanceData.Id, nNeedEnergy, 4)
+	EventManager.Hit(EventId.OpenPanel, PanelId.Raid, mapSkillInstanceData.Id, nNeedEnergy, GameEnum.instanceType.SkillInstance)
 end
 function SkillInstanceLevelSelectCtrl:OnBtnClick_Lock()
 	self:OnBtnClick_TogTips(nil, self.curSelectHard)
@@ -543,6 +553,17 @@ end
 function SkillInstanceLevelSelectCtrl:OnEvent_RaidOpen()
 	self._mapNode.animInfo:Play("EquipmentInstanceInfo_in", 0, 1)
 	self._mapNode.animBack:Play("tc_top_back_01_t_in", 0, 1)
+end
+function SkillInstanceLevelSelectCtrl:RefreshDoubleDropCount()
+	if self.actData ~= nil and self.actData:CheckActShow() and self.actData:CheckInstanceType(GameEnum.instanceType.SkillInstance) then
+		local _, str = self.actData:GetDropString()
+		local nCount, nMaxCount = self.actData:GetDoubleDropsTimes()
+		NovaAPI.SetTMPText(self._mapNode.txtDoubleDrop, str)
+		NovaAPI.SetTMPText(self._mapNode.txtDoubleDropCount, string.format("%s/%s", nMaxCount - nCount, nMaxCount))
+	end
+end
+function SkillInstanceLevelSelectCtrl:OnEvent_RaidSuccess()
+	self:RefreshDoubleDropCount()
 end
 function SkillInstanceLevelSelectCtrl:OnEvent_UpdateWorldClass()
 	self:RefreshLevelUnlock()

@@ -122,7 +122,6 @@ function CharPotentialListCtrl:OnDisable()
 	for nInstanceId, objCtrl in pairs(self.tbPotentialItemCtrl) do
 		local obj = objCtrl.gameObject
 		self:UnbindCtrlByNode(objCtrl)
-		self.tbPotentialItemCtrl[nInstanceId] = nil
 		destroy(obj)
 	end
 	self.tbPotentialItemCtrl = {}

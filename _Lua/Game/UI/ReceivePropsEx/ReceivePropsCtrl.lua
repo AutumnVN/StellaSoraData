@@ -85,7 +85,7 @@ function ReceivePropsCtrl:RefreshNormal()
 			if mapCfg.Type == GameEnum.itemType.Char or mapCfg.Type == GameEnum.itemType.CharacterSkin then
 				ctrlObj:SetChar(nItemId, v.count, nil, v.rewardType)
 			else
-				ctrlObj:SetItem(nItemId, mapCfg.Rarity, v.count, nil, nil, v.rewardType and v.rewardType == AllEnum.RewardType.First, v.rewardType and v.rewardType == AllEnum.RewardType.Three, true, false, false, v.rewardType and v.rewardType == AllEnum.RewardType.Extra)
+				ctrlObj:SetItem(nItemId, mapCfg.Rarity, v.count, nil, nil, v.rewardType and v.rewardType == AllEnum.RewardType.First, v.rewardType and v.rewardType == AllEnum.RewardType.Three, true, false, false, v.rewardType and v.rewardType == AllEnum.RewardType.Extra, v.rewardType and v.rewardType == AllEnum.RewardType.Double)
 			end
 		end
 		local btnGrid = goItem:GetComponent("UIButton")
@@ -170,7 +170,7 @@ function ReceivePropsCtrl:OnGridRefresh(goGrid, gridIndex)
 		if mapCfg.Type == GameEnum.itemType.Char or mapCfg.Type == GameEnum.itemType.CharacterSkin then
 			self.tbGridCtrl[nInstanceId]:SetChar(mapItem.id, mapItem.count, nil, mapItem.rewardType)
 		else
-			self.tbGridCtrl[nInstanceId]:SetItem(mapItem.id, mapCfg.Rarity, mapItem.count, nil, nil, mapItem.rewardType and mapItem.rewardType == AllEnum.RewardType.First, mapItem.rewardType and mapItem.rewardType == AllEnum.RewardType.Three, true, false, true, mapItem.rewardType and mapItem.rewardType == AllEnum.RewardType.Extra)
+			self.tbGridCtrl[nInstanceId]:SetItem(mapItem.id, mapCfg.Rarity, mapItem.count, nil, nil, mapItem.rewardType and mapItem.rewardType == AllEnum.RewardType.First, mapItem.rewardType and mapItem.rewardType == AllEnum.RewardType.Three, true, false, true, mapItem.rewardType and mapItem.rewardType == AllEnum.RewardType.Extra, mapItem.rewardType and mapItem.rewardType == AllEnum.RewardType.Double)
 		end
 	end
 	if not self.tbState[nIndex] then

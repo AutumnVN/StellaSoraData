@@ -241,7 +241,7 @@ function PlayerDailyInstanceData:MsgSettleDailyInstance(nLevelId, nBuildId, nSta
 			}
 		end
 		if callback ~= nil then
-			callback(mapMsgData.Select, mapMsgData.First, mapMsgData.Exp, mapMsgData.Change)
+			callback(mapMsgData.Select, mapMsgData.First, mapMsgData.DoubleItems, mapMsgData.Exp, mapMsgData.Change)
 		end
 		self:EventUpload(1, nLevelId, nBuildId)
 	end

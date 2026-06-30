@@ -15,6 +15,7 @@ LevelMenuResourceCtrl._mapNodeConfig = {
 	},
 	LockEquipment = {},
 	TMPCondEquipment = {sComponentName = "TMP_Text"},
+	imgEquipmentDoubleDrop = {},
 	btnSkill = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Skill"
@@ -29,6 +30,7 @@ LevelMenuResourceCtrl._mapNodeConfig = {
 	},
 	LockSkill = {},
 	TMPCondSkill = {sComponentName = "TMP_Text"},
+	imgSkillDoubleDrop = {},
 	btnRegion = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_RogueBoss"
@@ -44,6 +46,7 @@ LevelMenuResourceCtrl._mapNodeConfig = {
 	LockRegion = {},
 	TMPCondRegion = {sComponentName = "TMP_Text"},
 	redDotRegion = {},
+	imgRegionDoubleDrop = {},
 	btnTimes = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_DailyInstance"
@@ -58,6 +61,7 @@ LevelMenuResourceCtrl._mapNodeConfig = {
 	},
 	LockTimes = {},
 	TMPCondTimes = {sComponentName = "TMP_Text"},
+	imgTimesDoubleDrop = {},
 	rtEnergyBarFill = {
 		sComponentName = "RectTransform"
 	},
@@ -128,6 +132,16 @@ function LevelMenuResourceCtrl:RefreshFuncOpen()
 	else
 		self._mapNode.LockEquipment:SetActive(false)
 	end
+end
+function LevelMenuResourceCtrl:RefreshDropUp(actData)
+	local tbDoubleType = {}
+	if actData ~= nil then
+		tbDoubleType = actData:GetDoubleFuncType()
+	end
+	self._mapNode.imgTimesDoubleDrop.gameObject:SetActive(table.indexof(tbDoubleType, GameEnum.OpenFuncType.DailyInstance) > 0)
+	self._mapNode.imgRegionDoubleDrop.gameObject:SetActive(0 < table.indexof(tbDoubleType, GameEnum.OpenFuncType.RegionBoss))
+	self._mapNode.imgSkillDoubleDrop.gameObject:SetActive(0 < table.indexof(tbDoubleType, GameEnum.OpenFuncType.SkillInstance))
+	self._mapNode.imgEquipmentDoubleDrop.gameObject:SetActive(0 < table.indexof(tbDoubleType, GameEnum.OpenFuncType.CharGemInstance))
 end
 function LevelMenuResourceCtrl:Awake()
 	self:RefreshChooseImg(0)

@@ -27,10 +27,12 @@ local WinterNight_10105Data = require("GameCore.Data.DataClass.Activity.WinterNi
 local Postal_10106Data = require("GameCore.Data.DataClass.Activity.Postal_10106Data")
 local Viewfinder_10107Data = require("GameCore.Data.DataClass.Activity.Viewfinder_10107Data")
 local Tech_10108Data = require("GameCore.Data.DataClass.Activity.Tech_10108Data")
+local GunStorm_10109Data = require("GameCore.Data.DataClass.Activity.GunStorm_10109Data")
 local PenguinCardActData = require("GameCore.Data.DataClass.Activity.PenguinCardActData")
 local GoldenSpyData = require("GameCore.Data.DataClass.Activity.GoldenSpyData")
 local Solodance_20102Data = require("GameCore.Data.DataClass.Activity.Solodance_20102Data")
 local SwimTheme_11100Data = require("GameCore.Data.DataClass.Activity.SwimTheme_11100Data")
+local DoubleDropsActData = require("GameCore.Data.DataClass.Activity.DoubleDropsActData")
 function PlayerActivityData:Init()
 	self.bCacheActData = false
 	self.tbAllActivity = {}
@@ -142,6 +144,8 @@ function PlayerActivityData:CacheAllActivityData(mapNetMsg)
 					self:RefreshPenguinCardActData(nActId, v.PenguinCard)
 				elseif actCfg.ActivityType == GameEnum.activityType.GoldenSpy then
 					self:RefreshGoldenSpyActData(nActId, v.GDS)
+				elseif actCfg.ActivityType == GameEnum.activityType.Double then
+					self:RefreshDoubleDropsActData(nActId, v.Double)
 				end
 			end
 		end
@@ -239,6 +243,8 @@ function PlayerActivityData:CreateActivityIns(actData)
 		actIns = PenguinCardActData.new(actData)
 	elseif actCfg.ActivityType == GameEnum.activityType.GoldenSpy then
 		actIns = GoldenSpyData.new(actData)
+	elseif actCfg.ActivityType == GameEnum.activityType.Double then
+		actIns = DoubleDropsActData.new(actData)
 	end
 	if actIns ~= nil then
 		self.tbAllActivity[actData.Id] = actIns
@@ -302,6 +308,13 @@ end
 function PlayerActivityData:GetActivityDataById(nActId)
 	return self.tbAllActivity[nActId] or nil
 end
+function PlayerActivityData:GetActivityDataByType(nActType)
+	for _, v in pairs(self.tbAllActivity) do
+		if v:GetActType() == nActType then
+			return v
+		end
+	end
+end
 function PlayerActivityData:CacheActivityGroupData()
 	local foreachActGroup = function(mapData)
 		self:CreateActivityGroupIns(mapData)
@@ -346,6 +359,8 @@ function PlayerActivityData:CreateActivityGroupIns(actData)
 			actIns = SwimTheme_11100Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Tech_10108 then
 			actIns = Tech_10108Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.GunStorm_10109 then
+			actIns = GunStorm_10109Data.new(actData)
 		end
 		self.tbAllActivityGroup[actData.Id] = actIns
 		PlayerData.ActivityAvg:RefreshAvgRedDot()
@@ -474,7 +489,11 @@ function PlayerActivityData:RefreshSingleQuest(questData)
 		if nil ~= self.tbAllActivity[questData.ActivityId] then
 			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 		end
-	elseif actCfg.ActivityType == GameEnum.activityType.PenguinCard and nil ~= self.tbAllActivity[questData.ActivityId] then
+	elseif actCfg.ActivityType == GameEnum.activityType.PenguinCard then
+		if nil ~= self.tbAllActivity[questData.ActivityId] then
+			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
+		end
+	elseif actCfg.ActivityType == GameEnum.activityType.Double and nil ~= self.tbAllActivity[questData.ActivityId] then
 		self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 	end
 end
@@ -616,6 +635,11 @@ function PlayerActivityData:RefreshActivityCGData(msgData)
 end
 function PlayerActivityData:IsCGPlayed(nActId)
 	return table.indexof(self.tbReadedCG, nActId) > 0
+end
+function PlayerActivityData:RefreshDoubleDropsActData(nActId, msgData)
+	if nil ~= self.tbAllActivity[nActId] then
+		self.tbAllActivity[nActId]:RefreshDoubleDropsActData(nActId, msgData)
+	end
 end
 function PlayerActivityData:GetActivityBannerList()
 	local tbList = {}
