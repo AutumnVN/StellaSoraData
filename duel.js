@@ -19,7 +19,7 @@ const LANG_TRAVELERDUELCHALLENGEAFFIX = require('./EN/language/en_US/TravelerDue
 const duel = {};
 
 for (const id in TRAVELERDUELBOSSLEVEL) {
-    if (!MONSTER[PREVIEWMONSTERGROUP[TRAVELERDUELBOSSLEVEL[id].PreviewMonsterGroupId].MonsterIds[0]]) continue;
+    if (!MONSTER[PREVIEWMONSTERGROUP[TRAVELERDUELBOSSLEVEL[id].PreviewMonsterGroupId].MonsterIds[0]] || !MONSTERMANUAL[MONSTERSKIN[MONSTER[PREVIEWMONSTERGROUP[TRAVELERDUELBOSSLEVEL[id].PreviewMonsterGroupId].MonsterIds[0]].FAId].MonsterManual]) continue;
 
     const monsterId = PREVIEWMONSTERGROUP[TRAVELERDUELBOSSLEVEL[id].PreviewMonsterGroupId].MonsterIds[0];
     const monster = MONSTER[monsterId];
