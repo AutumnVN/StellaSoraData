@@ -1,5 +1,5 @@
 local GoldenSpyBuffCellCtrl = class("GoldenSpyBuffCellCtrl", BaseCtrl)
-local BuffSpritePath = "UI_Activity/_400008/SpriteAtlas/Buff/"
+local BuffSpritePath = "UI_Activity/_%s/SpriteAtlas/Buff/"
 local buff_state_color = {
 	[1] = Color(0.8549019607843137, 0.37254901960784315, 0.9137254901960784, 1),
 	[2] = Color(0.42745098039215684, 0.4470588235294118, 0.8509803921568627, 1)
@@ -18,7 +18,7 @@ GoldenSpyBuffCellCtrl._mapRedDotConfig = {}
 function GoldenSpyBuffCellCtrl:Awake()
 	self._mapNode.img_selected:SetActive(false)
 end
-function GoldenSpyBuffCellCtrl:SetData(data)
+function GoldenSpyBuffCellCtrl:SetData(data, nActId, tipsPanelId)
 	self.data = data
 	self.buffId = self.data.buffData.buffId
 	self.buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", self.buffId)
@@ -47,9 +47,9 @@ function GoldenSpyBuffCellCtrl:SetData(data)
 	self._mapNode.btn_buff.onClick:RemoveAllListeners()
 	self._mapNode.btn_buff.onClick:AddListener(function()
 		self._mapNode.img_selected:SetActive(true)
-		EventManager.Hit(EventId.OpenPanel, PanelId.GoldenSpyBuffTipsPanel, self._mapNode.btn_buff.transform, self.buffId)
+		EventManager.Hit(EventId.OpenPanel, tipsPanelId, self._mapNode.btn_buff.transform, self.buffId)
 	end)
-	self:SetPngSprite(self._mapNode.img_icon, BuffSpritePath .. self.buffCfg.Icon .. "_s")
+	self:SetPngSprite(self._mapNode.img_icon, string.format(BuffSpritePath, nActId) .. self.buffCfg.Icon .. "_s")
 end
 function GoldenSpyBuffCellCtrl:OnEvent_BuffTipsClose()
 	self._mapNode.img_selected:SetActive(false)

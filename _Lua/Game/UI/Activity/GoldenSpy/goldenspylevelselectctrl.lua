@@ -1,5 +1,5 @@
 local GoldenSpyLevelSelectCtrl = class("GoldenSpyLevelSelectCtrl", BaseCtrl)
-local UIAssetPath = "UI_Activity/_400008/SpriteAtlas/"
+local UIAssetPath = "UI_Activity/_%s/SpriteAtlas/"
 local PanelTab = {Group = 1, Level = 2}
 local GroupState = {
 	Normal = 1,
@@ -42,6 +42,14 @@ GoldenSpyLevelSelectCtrl._mapNodeConfig = {
 	img_Pass = {},
 	go_lockTips = {},
 	txt_lockTips = {sComponentName = "TMP_Text"},
+	btnRight = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Right"
+	},
+	btnLeft = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_Left"
+	},
 	btn_level = {
 		nCount = 2,
 		sComponentName = "UIButton",
@@ -85,12 +93,20 @@ function GoldenSpyLevelSelectCtrl:OnEnable()
 		self._mapNode.reddot_task:SetActive(false)
 	end
 	if self._panel.nPanelTab == PanelTab.Level then
-		local groupCfg = ConfigTable.GetData("GoldenSpyLevelGroup", self._panel.nSelectGroupId)
-		for _, v in ipairs(groupCfg.LevelList) do
-			local levelData = self.GoldenSpyActData:GetLevelDataById(v)
-			if levelData ~= nil and not levelData.bFirstComplete then
-				self._panel.nSelectLevelId = v
-				break
+		local lastGroupId, lastLevelId = self.GoldenSpyActData:GetLastLevelData()
+		if lastGroupId ~= 0 then
+			self._panel.nSelectGroupId = lastGroupId
+		end
+		if lastLevelId ~= 0 then
+			self._panel.nSelectLevelId = lastLevelId
+		else
+			local groupCfg = ConfigTable.GetData("GoldenSpyLevelGroup", self._panel.nSelectGroupId)
+			for _, v in ipairs(groupCfg.LevelList) do
+				local levelData = self.GoldenSpyActData:GetLevelDataById(v)
+				if levelData ~= nil and not levelData.bFirstComplete then
+					self._panel.nSelectLevelId = v
+					break
+				end
 			end
 		end
 	end
@@ -161,7 +177,7 @@ function GoldenSpyLevelSelectCtrl:InitGroupData()
 					img_pass.gameObject:SetActive(false)
 					table.insert(tbPointList, point)
 				end
-				self:SetPngSprite(bg, UIAssetPath .. groupCfg.IconPath)
+				self:SetPngSprite(bg, string.format(UIAssetPath, self.nActivityId) .. groupCfg.IconPath)
 				NovaAPI.SetTMPText(txt_GroupName, groupCfg.GroupName)
 				for m, n in ipairs(groupCfg.LevelList) do
 					local levelData = self.GoldenSpyActData:GetLevelDataById(n)
@@ -177,7 +193,7 @@ function GoldenSpyLevelSelectCtrl:InitGroupData()
 				local bg_lock = lockByPreGroupRoot.transform:Find("bg"):GetComponent("Image")
 				local txt_GroupName_Lock = lockByPreGroupRoot.transform:Find("bg_GroupName/txt_GroupName"):GetComponent("TMP_Text")
 				local txt_lock = lockByPreGroupRoot.transform:Find("txt_lock"):GetComponent("TMP_Text")
-				self:SetPngSprite(bg_lock, UIAssetPath .. groupCfg.IconPath)
+				self:SetPngSprite(bg_lock, string.format(UIAssetPath, self.nActivityId) .. groupCfg.IconPath)
 				NovaAPI.SetTMPText(txt_GroupName_Lock, groupCfg.GroupName)
 				local nIndex = table.indexof(self.tbGroupIdList, v)
 				if 1 < nIndex then
@@ -217,7 +233,7 @@ function GoldenSpyLevelSelectCtrl:InitLevelData()
 	local txt_score = levelRoot.transform:Find("AnimRoot/Image/txt_score"):GetComponent("TMP_Text")
 	local txt_target = levelRoot.transform:Find("AnimRoot/db_reward/txt_target"):GetComponent("TMP_Text")
 	NovaAPI.SetTMPText(txt_GroupName, groupCfg.GroupName)
-	self:SetPngSprite(img_level, UIAssetPath .. levelCfg.IconPath)
+	self:SetPngSprite(img_level, string.format(UIAssetPath, self.nActivityId) .. levelCfg.IconPath)
 	NovaAPI.SetTMPText(txt_levelName, levelCfg.LevelName)
 	local nTotalFloor = #levelCfg.FloorList
 	NovaAPI.SetTMPText(txt_floorCount, orderedFormat(ConfigTable.GetUIText("GoldenSpy_TotalFloor"), nTotalFloor))
@@ -248,6 +264,18 @@ function GoldenSpyLevelSelectCtrl:InitLevelData()
 		end
 	end
 	self._mapNode.img_Pass.gameObject:SetActive(levelData.bFirstComplete)
+	local preGroupId = self.GoldenSpyActData:GetPreGroup(self._panel.nSelectGroupId)
+	local nextGroupId = self.GoldenSpyActData:GetNextGroup(self._panel.nSelectGroupId)
+	local bCanGoNextGroup = false
+	if nextGroupId ~= nil then
+		local groupData = self.GoldenSpyActData:GetLevelGroupDataById(nextGroupId)
+		local time = CS.ClientManager.Instance.serverTimeStamp
+		if time >= groupData.nStartTime and self.GoldenSpyActData:CheckPreGroupPassByGroupId(nextGroupId) then
+			bCanGoNextGroup = true
+		end
+	end
+	self._mapNode.btnRight.gameObject:SetActive(nextGroupId ~= nil and bCanGoNextGroup)
+	self._mapNode.btnLeft.gameObject:SetActive(preGroupId ~= nil)
 end
 function GoldenSpyLevelSelectCtrl:GetTimeText(remainTime)
 	local sTimeStr = ""
@@ -289,7 +317,7 @@ function GoldenSpyLevelSelectCtrl:OnBtnClick_Task()
 		if mapGroupData ~= nil then
 			local actData = mapGroupData:GetActivityDataByIndex(AllEnum.ActivityThemeFuncIndex.Task)
 			if actData ~= nil then
-				EventManager.Hit(EventId.OpenPanel, PanelId.Task_20102, actData.ActivityId, 4)
+				EventManager.Hit(EventId.OpenPanel, PanelId.Task_10109, actData.ActivityId, 4)
 			end
 		end
 	end
@@ -326,17 +354,67 @@ end
 function GoldenSpyLevelSelectCtrl:OnBtnClick_Go()
 	self.GoldenSpyActData:StartLevel(self._panel.nSelectGroupId, self._panel.nSelectLevelId)
 end
+function GoldenSpyLevelSelectCtrl:OnBtnClick_Right()
+	local nextGroupId = self.GoldenSpyActData:GetNextGroup(self._panel.nSelectGroupId)
+	if nextGroupId ~= nil then
+		self._panel.nSelectGroupId = nextGroupId
+		local groupCfg = ConfigTable.GetData("GoldenSpyLevelGroup", self._panel.nSelectGroupId)
+		local tempLevelId = groupCfg.LevelList[1]
+		for _, v in ipairs(groupCfg.LevelList) do
+			local levelData = self.GoldenSpyActData:GetLevelDataById(v)
+			if levelData ~= nil then
+				tempLevelId = v
+				if not levelData.bFirstComplete then
+					break
+				end
+			end
+		end
+		self._panel.nSelectLevelId = tempLevelId
+		for i = 1, 2 do
+			local levelCount = #groupCfg.LevelList
+			self._mapNode.btn_level[i].gameObject:SetActive(i <= levelCount)
+			self._mapNode.img_select[i].gameObject:SetActive(self._panel.nSelectLevelId == groupCfg.LevelList[i])
+		end
+		self:InitLevelData()
+		self.GoldenSpyActData:EnterGroupSelect(self._panel.nSelectGroupId)
+	end
+end
+function GoldenSpyLevelSelectCtrl:OnBtnClick_Left()
+	local preGroupId = self.GoldenSpyActData:GetPreGroup(self._panel.nSelectGroupId)
+	if preGroupId ~= nil then
+		self._panel.nSelectGroupId = preGroupId
+		local groupCfg = ConfigTable.GetData("GoldenSpyLevelGroup", self._panel.nSelectGroupId)
+		local tempLevelId = groupCfg.LevelList[1]
+		for _, v in ipairs(groupCfg.LevelList) do
+			local levelData = self.GoldenSpyActData:GetLevelDataById(v)
+			if levelData ~= nil then
+				tempLevelId = v
+				if not levelData.bFirstComplete then
+					break
+				end
+			end
+		end
+		self._panel.nSelectLevelId = tempLevelId
+		for i = 1, 2 do
+			local levelCount = #groupCfg.LevelList
+			self._mapNode.btn_level[i].gameObject:SetActive(i <= levelCount)
+			self._mapNode.img_select[i].gameObject:SetActive(self._panel.nSelectLevelId == groupCfg.LevelList[i])
+		end
+		self:InitLevelData()
+		self.GoldenSpyActData:EnterGroupSelect(self._panel.nSelectGroupId)
+	end
+end
 function GoldenSpyLevelSelectCtrl:OnEvent_BackHome(nPanelId)
-	if nPanelId == PanelId.GoldenSpyLevelSelectPanel then
+	if nPanelId == self._panel._nPanelId then
 		if self._panel.nPanelTab == PanelTab.Group then
-			EventManager.Hit(EventId.ClosePanel, PanelId.GoldenSpyLevelSelectPanel)
+			EventManager.Hit(EventId.ClosePanel, self._panel._nPanelId)
 		elseif self._panel.nPanelTab == PanelTab.Level then
 			self:SwitchPanelTab(PanelTab.Group)
 		end
 	end
 end
 function GoldenSpyLevelSelectCtrl:OnEvent_Home(nPanelId)
-	if nPanelId == PanelId.GoldenSpyLevelSelectPanel then
+	if nPanelId == self._panel._nPanelId then
 		PanelManager.Home()
 	end
 end

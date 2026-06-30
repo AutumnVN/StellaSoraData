@@ -633,14 +633,21 @@ function AvgEditorMultiLanTool:_Export_Text(tbLuaData)
 			})
 			for j = 2, 4 do
 				local sContent = v.param[j]
-				if type(sContent) == "string" and sContent ~= "" then
+				local sContent_ = v.param[j + 3]
+				if type(sContent) == "string" and sContent ~= "" or type(sContent_) == "string" and sContent_ ~= "" then
+					if type(sContent) ~= "string" then
+						sContent = ""
+					end
+					if type(sContent_) ~= "string" then
+						sContent = ""
+					end
 					if self.nFromLanIdx == 1 then
 						table.insert(tbExportData, {
 							"【id:" .. tostring(i) .. "】" .. string.format("[手机选项] 组:%s 选项:%d", sGroupId, j - 1),
 							"",
 							self:_ProcText(sContent, true),
 							"",
-							"",
+							self:_ProcText(sContent_, true),
 							"",
 							"",
 							"",
@@ -657,7 +664,7 @@ function AvgEditorMultiLanTool:_Export_Text(tbLuaData)
 							"",
 							self:_ProcText(sContent, true),
 							"",
-							"",
+							self:_ProcText(sContent_, true),
 							""
 						})
 					end
@@ -1428,10 +1435,16 @@ function AvgEditorMultiLanTool:_Import_Text(tbTranslatedData, tbLuaData)
 		nTranslatedDataIndex = nTranslatedDataIndex + 1
 		return tbTranslatedData[nTranslatedDataIndex]
 	end
-	local func_GetColumn_H_D = function(rowData)
-		local sText = rowData[7]
+	local func_GetColumn_H_D = function(rowData, target, backup)
+		if target == nil then
+			target = 7
+		end
+		if backup == nil then
+			backup = 3
+		end
+		local sText = rowData[target]
 		if sText == nil or sText == "" then
-			sText = rowData[3]
+			sText = rowData[backup]
 		end
 		return sText
 	end
@@ -1467,9 +1480,11 @@ function AvgEditorMultiLanTool:_Import_Text(tbTranslatedData, tbLuaData)
 			nTranslatedDataIndex = nTranslatedDataIndex + 1
 			for j = 2, 4 do
 				local sContent = v.param[j]
-				if type(sContent) == "string" and sContent ~= "" then
+				local sContent_ = v.param[j + 3]
+				if type(sContent) == "string" and sContent ~= "" or type(sContent_) == "string" and sContent_ ~= "" then
 					local rowData = func_GetTranslatedData()
 					v.param[j] = self:_ProcText(func_GetColumn_H_D(rowData), false)
+					v.param[j + 3] = self:_ProcText(func_GetColumn_H_D(rowData, 9, 5), false)
 				end
 			end
 		elseif sCmdName == "SetPhoneMsgChoiceJumpTo" then

@@ -78,7 +78,7 @@ function GoldenSpyBoomItem:Boom(callback)
 					if ctrl:GetItemCfg().ItemType == GameEnum.GoldenSpyItem.Boom then
 						return
 					end
-					self.floorCtrl:RemoveItem(ctrl)
+					self.floorCtrl:RemoveItem(ctrl, true)
 				end)
 			end
 		end

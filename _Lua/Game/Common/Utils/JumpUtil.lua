@@ -74,7 +74,7 @@ function JumpUtil.JumpTo(jumpId, ...)
 	elseif nType == GameEnum.jumpType.DailyInstanceLevel then
 		local nHard = mapJumpTo.Param[1]
 		local nDailyType = mapJumpTo.Param[2]
-		if nDailyType == nil or nDailyType == 0 then
+		if nDailyType == nil then
 			EventManager.Hit(EventId.OpenPanel, PanelId.LevelMenu, 3)
 		else
 			EventManager.Hit(EventId.OpenPanel, PanelId.DailyInstanceLevelSelect, nHard, nDailyType, true)

@@ -425,27 +425,16 @@ function StarTowerFateCardBookCtrl:OnBtnClick_CardItem(btn, nIdx)
 	else
 		local animFinishFunc = function()
 			RedDotManager.SetValid(RedDotDefine.StarTowerBook_FateCard_New, cardData.nId, false)
-			if cardData.nStatus == AllEnum.FateCardBookStatus.Lock then
-				NovaAPI.SetTMPText(self._mapNode.txtUnlockTip, cardCfg.UnlockTip)
-				self._mapNode.goCardTip.gameObject:SetActive(false)
-				self._mapNode.goBlur.gameObject:SetActive(true)
-				local wait = function()
-					coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-					self._mapNode.goCardTip.gameObject:SetActive(true)
-				end
-				cs_coroutine.start(wait)
-			else
-				self._mapNode.goCardDetail.gameObject:SetActive(false)
-				self._mapNode.goBlur.gameObject:SetActive(true)
-				local wait = function()
-					coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-					self._mapNode.goCardDetail.gameObject:SetActive(true)
-				end
-				cs_coroutine.start(wait)
-				EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
-				self:OnBtnClick_CardTypeSurvivor()
-				NovaAPI.SetTMPText(self._mapNode.txtArea, ConfigTable.GetUIText("StarTower_Event_Book_Source") .. cardCfg.Source)
+			self._mapNode.goCardDetail.gameObject:SetActive(false)
+			self._mapNode.goBlur.gameObject:SetActive(true)
+			local wait = function()
+				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+				self._mapNode.goCardDetail.gameObject:SetActive(true)
 			end
+			cs_coroutine.start(wait)
+			EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
+			self:OnBtnClick_CardTypeSurvivor()
+			NovaAPI.SetTMPText(self._mapNode.txtArea, ConfigTable.GetUIText("StarTower_Event_Book_Source") .. cardCfg.Source)
 		end
 		self.nClickIndex = nIdx
 		if self._mapNode.goCardItem[nIdx] ~= nil then

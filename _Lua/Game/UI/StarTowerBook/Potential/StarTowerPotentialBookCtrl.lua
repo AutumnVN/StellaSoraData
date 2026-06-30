@@ -301,6 +301,10 @@ function StarTowerPotentialBookCtrl:InitPotentialList()
 	self._mapNode.btnReceiveAllPotential.gameObject:SetActive(false)
 	local mapCharCfg = ConfigTable.GetData_Character(self.nCharId)
 	if mapCharCfg ~= nil then
+		RedDotManager.RegisterNode(RedDotDefine.StarTowerBook_Potential_Reward, {
+			mapCharCfg.EET,
+			self.nCharId
+		}, self._mapNode.redDotReward)
 		NovaAPI.SetTMPText(self._mapNode.txtCharName, mapCharCfg.Name)
 		local nSkinId = mapCharCfg.DefaultSkinId
 		local mapSkin = ConfigTable.GetData_CharacterSkin(nSkinId)
@@ -320,13 +324,6 @@ function StarTowerPotentialBookCtrl:InitPotentialList()
 	})
 	self._mapNode.btnReward.gameObject:SetActive(not bCanReceive)
 	self._mapNode.btnReceiveReward.gameObject:SetActive(bCanReceive)
-	local mapCharCfg = ConfigTable.GetData_Character(self.nCharId)
-	if mapCharCfg ~= nil then
-		RedDotManager.RegisterNode(RedDotDefine.StarTowerBook_Potential_Reward, {
-			mapCharCfg.EET,
-			self.nCharId
-		}, self._mapNode.redDotReward)
-	end
 end
 function StarTowerPotentialBookCtrl:SwitchPotentialType()
 	self._mapNode.goAssist.gameObject:SetActive(self.bMasterPotential)
@@ -406,13 +403,15 @@ function StarTowerPotentialBookCtrl:RefreshReceiveAllBtn()
 	for _, v in ipairs(tbCharHave) do
 		local nCharID = v.nId
 		local mapCharCfg = ConfigTable.GetData_Character(nCharID)
-		local bCanReceive = RedDotManager.GetValid(RedDotDefine.StarTowerBook_Potential_Reward, {
-			mapCharCfg.EET,
-			nCharID
-		})
-		if bCanReceive and not self.bPotentialList then
-			self._mapNode.btnReceiveAllPotential.gameObject:SetActive(true)
-			break
+		if mapCharCfg ~= nil then
+			local bCanReceive = RedDotManager.GetValid(RedDotDefine.StarTowerBook_Potential_Reward, {
+				mapCharCfg.EET,
+				nCharID
+			})
+			if bCanReceive and not self.bPotentialList then
+				self._mapNode.btnReceiveAllPotential.gameObject:SetActive(true)
+				break
+			end
 		end
 	end
 end

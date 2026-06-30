@@ -5410,6 +5410,41 @@
     "Votype": "thankEx",
     "SkinId": 0
   },
+  "1145801": {
+    "Id": 1145801,
+    "VoResource": "vo_114_ui_valentine_001",
+    "CharacterId": 114,
+    "Votype": "valentine",
+    "SkinId": 0
+  },
+  "1145901": {
+    "Id": 1145901,
+    "VoResource": "vo_114_ui_xmas_001",
+    "CharacterId": 114,
+    "Votype": "xmas",
+    "SkinId": 0
+  },
+  "1146001": {
+    "Id": 1146001,
+    "VoResource": "vo_114_ui_newyear_001",
+    "CharacterId": 114,
+    "Votype": "newyear",
+    "SkinId": 0
+  },
+  "1146101": {
+    "Id": 1146101,
+    "VoResource": "vo_114_ui_birth_001",
+    "CharacterId": 114,
+    "Votype": "birth",
+    "SkinId": 0
+  },
+  "1146201": {
+    "Id": 1146201,
+    "VoResource": "vo_114_ui_yourbirth_001",
+    "CharacterId": 114,
+    "Votype": "yourbirth",
+    "SkinId": 0
+  },
   "1144601": {
     "Id": 1144601,
     "VoResource": "vo_story_114_001_confirm",
@@ -25042,6 +25077,139 @@
     "Id": 81100901,
     "VoResource": "vo_110_ui_swap_004",
     "CharacterId": 8110,
+    "Votype": "exhang_npc",
+    "SkinId": 0
+  },
+  "81140101": {
+    "Id": 81140101,
+    "VoResource": "vo_114_ui_greet_001",
+    "CharacterId": 8114,
+    "Votype": "greet_npc",
+    "SkinId": 0
+  },
+  "81140102": {
+    "Id": 81140102,
+    "VoResource": "vo_114_ui_greet_002",
+    "CharacterId": 8114,
+    "Votype": "greet_npc",
+    "SkinId": 0
+  },
+  "81140201": {
+    "Id": 81140201,
+    "VoResource": "vo_114_ui_greetmorn_001",
+    "CharacterId": 8114,
+    "Votype": "greetmorn_npc",
+    "SkinId": 0
+  },
+  "81140301": {
+    "Id": 81140301,
+    "VoResource": "vo_114_ui_greetnoon_001",
+    "CharacterId": 8114,
+    "Votype": "greetnoon_npc",
+    "SkinId": 0
+  },
+  "81140401": {
+    "Id": 81140401,
+    "VoResource": "vo_114_ui_greetnight_001",
+    "CharacterId": 8114,
+    "Votype": "greetnight_npc",
+    "SkinId": 0
+  },
+  "81140501": {
+    "Id": 81140501,
+    "VoResource": "vo_114_ui_posterchat_001",
+    "CharacterId": 8114,
+    "Votype": "posterchat_npc",
+    "SkinId": 0
+  },
+  "81140502": {
+    "Id": 81140502,
+    "VoResource": "vo_114_ui_posterchat_002",
+    "CharacterId": 8114,
+    "Votype": "posterchat_npc",
+    "SkinId": 0
+  },
+  "81140503": {
+    "Id": 81140503,
+    "VoResource": "vo_114_ui_posterchat_003",
+    "CharacterId": 8114,
+    "Votype": "posterchat_npc",
+    "SkinId": 0
+  },
+  "81140504": {
+    "Id": 81140504,
+    "VoResource": "vo_114_ui_posterchat_004",
+    "CharacterId": 8114,
+    "Votype": "posterchat_npc",
+    "SkinId": 0
+  },
+  "81140505": {
+    "Id": 81140505,
+    "VoResource": "vo_114_ui_posterchat_005",
+    "CharacterId": 8114,
+    "Votype": "posterchat_npc",
+    "SkinId": 0
+  },
+  "81140601": {
+    "Id": 81140601,
+    "VoResource": "vo_story_114_001_confirm",
+    "CharacterId": 8114,
+    "Votype": "limited",
+    "SkinId": 0
+  },
+  "81140602": {
+    "Id": 81140602,
+    "VoResource": "vo_story_114_006_excit",
+    "CharacterId": 8114,
+    "Votype": "limited",
+    "SkinId": 0
+  },
+  "81140603": {
+    "Id": 81140603,
+    "VoResource": "vo_story_114_008_happy",
+    "CharacterId": 8114,
+    "Votype": "limited",
+    "SkinId": 0
+  },
+  "81140604": {
+    "Id": 81140604,
+    "VoResource": "vo_story_114_013_catchphrase",
+    "CharacterId": 8114,
+    "Votype": "limited",
+    "SkinId": 0
+  },
+  "81140701": {
+    "Id": 81140701,
+    "VoResource": "vo_story_114_012_catchphrase",
+    "CharacterId": 8114,
+    "Votype": "hfc_npc",
+    "SkinId": 0
+  },
+  "81140702": {
+    "Id": 81140702,
+    "VoResource": "vo_story_114_003_question",
+    "CharacterId": 8114,
+    "Votype": "hfc_npc",
+    "SkinId": 0
+  },
+  "81140801": {
+    "Id": 81140801,
+    "VoResource": "vo_114_ui_hang_001",
+    "CharacterId": 8114,
+    "Votype": "hang_npc",
+    "SkinId": 0
+  },
+  "81140802": {
+    "Id": 81140802,
+    "VoResource": "vo_story_114_004_confuse",
+    "CharacterId": 8114,
+    "Votype": "hang_npc",
+    "SkinId": 0
+  },
+  "81140901": {
+    "Id": 81140901,
+    "VoResource": "vo_story_114_009_sigh",
+    "CharacterId": 8114,
     "Votype": "exhang_npc",
     "SkinId": 0
   },

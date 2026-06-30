@@ -1,7 +1,7 @@
 local GoldenSpyToolBoxCtrl = class("GoldenSpyToolBoxCtrl", BaseCtrl)
 local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
-local BuffSpritePath = "UI_Activity/_400008/SpriteAtlas/Buff/"
-local ItemSpritePath = "UI_Activity/_400008/SpriteAtlas/Item/"
+local BuffSpritePath = "UI_Activity/_%s/SpriteAtlas/Buff/"
+local ItemSpritePath = "UI_Activity/_%s/SpriteAtlas/Item/"
 GoldenSpyToolBoxCtrl._mapNodeConfig = {
 	txt_toolBox = {
 		sComponentName = "TMP_Text",
@@ -38,9 +38,11 @@ function GoldenSpyToolBoxCtrl:OnDisable()
 end
 function GoldenSpyToolBoxCtrl:OnDestroy()
 end
-function GoldenSpyToolBoxCtrl:Show(tbItem, tbBuff, callback)
+function GoldenSpyToolBoxCtrl:Show(tbItem, tbBuff, callback, nActId, tipsPanelId)
 	self.gameObject:SetActive(true)
 	self._mapNode.safeAreaRoot:SetActive(false)
+	self.nActId = nActId
+	self.nTipsPanelId = tipsPanelId
 	self:RefreshBuffList(tbBuff)
 	self:RefreshItemList(tbItem)
 	self.callback = callback
@@ -73,7 +75,7 @@ function GoldenSpyToolBoxCtrl:OnRefreshBuffGrid(goGrid, gridIndex)
 		objCtrl = self:BindCtrlByNode(goGrid, "Game.UI.Activity.GoldenSpy.GoldenSpyBuffCellCtrl")
 		self.mapBuffCellCtrl[nInstanceId] = objCtrl
 	end
-	objCtrl:SetData(self.tbBuff[nIndex])
+	objCtrl:SetData(self.tbBuff[nIndex], self.nActId, self.nTipsPanelId)
 end
 function GoldenSpyToolBoxCtrl:RefreshItemList(tbItem)
 	self.tbShowItem = tbItem
@@ -95,7 +97,7 @@ function GoldenSpyToolBoxCtrl:OnRefreshItemGrid(goGrid, gridIndex)
 	end
 	local img_icon = goGrid.transform:Find("db/icon"):GetComponent("Image")
 	local txt_score = goGrid.transform:Find("db/txt_score"):GetComponent("TMP_Text")
-	self:SetPngSprite(img_icon, ItemSpritePath .. itemCfg.IconPath .. "_s")
+	self:SetPngSprite(img_icon, string.format(ItemSpritePath, self.nActId) .. itemCfg.IconPath .. "_s")
 	NovaAPI.SetTMPText(txt_score, itemScore)
 end
 function GoldenSpyToolBoxCtrl:OnBtnClick_Close()

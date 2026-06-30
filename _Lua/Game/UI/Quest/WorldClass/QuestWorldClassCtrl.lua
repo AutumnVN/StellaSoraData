@@ -46,7 +46,9 @@ QuestWorldClassCtrl._mapNodeConfig = {
 	goLevelItem = {
 		sCtrlName = "Game.UI.Quest.WorldClass.WorldClassItemCtrl"
 	},
-	rtLevelLsv = {},
+	rtLevelLsv = {
+		sComponentName = "RectTransform"
+	},
 	levelLsv = {
 		sComponentName = "LoopScrollView"
 	},
@@ -58,6 +60,16 @@ QuestWorldClassCtrl._mapNodeConfig = {
 	rectContentSize = {
 		sNodeName = "txtContentSize",
 		sComponentName = "RectTransform"
+	},
+	btnFastReceive = {sComponentName = "UIButton"},
+	txtBtnFastReceive = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Quest_Fast_Receive_Btn_Text"
+	},
+	btnFastReceiveGray = {sComponentName = "UIButton"},
+	txtBtnFastReceiveGray = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "Quest_Fast_Receive_Btn_Text"
 	}
 }
 QuestWorldClassCtrl._mapEventConfig = {
@@ -129,6 +141,28 @@ function QuestWorldClassCtrl:RefreshDemonList()
 	local posX = self._mapNode.rtWorldClassLsv.anchoredPosition.x
 	local posY = bMax and worldClassLsvPosY_1 or worldClassLsvPosY_2
 	self._mapNode.rtWorldClassLsv.anchoredPosition = Vector2(posX, posY)
+	self:RefreshFastReceiveBtn()
+end
+function QuestWorldClassCtrl:RefreshFastReceiveBtn()
+	self.tbWorldClassFastReceive = {}
+	for _, mapData in ipairs(self.tbWorldClass or {}) do
+		if mapData.nType == AllEnum.WorldClassType.LevelUp then
+			local nMin = mapData.nMinLevel or 1
+			local nMax = math.min(mapData.nMaxLevel or self.nCurWorldClass, self.nCurWorldClass)
+			for nLv = nMin, nMax do
+				if PlayerData.Base:GetWorldClassState(nLv) then
+					table.insert(self.tbWorldClassFastReceive, nLv)
+				end
+			end
+		end
+	end
+	local bCanReceive = #self.tbWorldClassFastReceive > 0
+	if self._mapNode.btnFastReceive ~= nil then
+		self._mapNode.btnFastReceive.gameObject:SetActive(bCanReceive)
+	end
+	if self._mapNode.btnFastReceiveGray ~= nil then
+		self._mapNode.btnFastReceiveGray.gameObject:SetActive(not bCanReceive)
+	end
 end
 function QuestWorldClassCtrl:OnWorldClassGridRefresh(goGrid, nGridIndex)
 	local nIndex = nGridIndex + 1
@@ -152,7 +186,10 @@ function QuestWorldClassCtrl:RefreshLevelInfo(nIndex)
 	self._mapNode.rtWorldClassList.gameObject:SetActive(false)
 	local data = self.tbWorldClass[nIndex]
 	if data ~= nil then
-		self._mapNode.goLevelItem:SetItem(data)
+		local goBtnFastReceive = self._mapNode.btnFastReceive
+		local goBtnFastReceiveGray = self._mapNode.btnFastReceiveGray
+		local rtLevelLsv = self._mapNode.rtLevelLsv
+		self._mapNode.goLevelItem:SetItem(data, goBtnFastReceive, goBtnFastReceiveGray, rtLevelLsv)
 		if data.nType == AllEnum.WorldClassType.LevelUp then
 			self._mapNode.rtLevelLsv.gameObject:SetActive(true)
 			self._mapNode.rtQuestLsv.gameObject:SetActive(false)
@@ -215,7 +252,7 @@ function QuestWorldClassCtrl:RefreshLevelUpInfo(data)
 	end
 	self._mapNode.levelLsv:InitEx(self.tbLevelGridHeight, self, self.OnLevelGridRefresh)
 	if 1 < nIndex then
-		self:AddTimer(1, 0.1, function()
+		self:AddTimer(1, 0.15, function()
 			if PlayerData.Guide:CheckInGuideGroup(9) then
 				nIndex = 2
 			end
@@ -343,5 +380,16 @@ function QuestWorldClassCtrl:OnEvent_DemonAdvanceSuccess()
 end
 function QuestWorldClassCtrl:OnEvent_DisableScrollView(bDisable)
 	NovaAPI.SetScrollRectVertical(self._mapNode.levelLsv, not bDisable)
+end
+function QuestWorldClassCtrl:OnBtnClick_FastReceive()
+	if self.tbWorldClassFastReceive == nil or #self.tbWorldClassFastReceive == 0 then
+		return
+	end
+	PlayerData.Base:SendPlayerWorldClassRewardReceiveReq(nil, nil, function()
+		self:RefreshFastReceiveBtn()
+	end, 1)
+end
+function QuestWorldClassCtrl:OnBtnClick_FastReceiveGray()
+	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("DoubleDrop_Reward_Receive_Tip"))
 end
 return QuestWorldClassCtrl

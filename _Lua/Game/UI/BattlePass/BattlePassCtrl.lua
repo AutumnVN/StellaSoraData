@@ -147,7 +147,8 @@ function BattlePassCtrl:OnEnable()
 		end
 		self.mapBattlePassInfo = mapData
 		self._mapNode.panelRoot.gameObject:SetActive(true)
-		local bHasComplete, nQuestIdx = self:Refresh()
+		local bHasComplete, nQuestIdx, bQuestAllComplete, bFullLevel = self:Refresh()
+		local bHasRewardReceive = self._mapNode.rt_RewardList.bAllReceive
 		EventManager.Hit(EventId.SetTransition)
 		self._mapNode.rtMainContent:Play("BattlePassPanel_in")
 		self._mapNode.rt_RewardList:PlayInAnim()
@@ -167,7 +168,14 @@ function BattlePassCtrl:OnEnable()
 		if nQuestIdx ~= 0 then
 			self._mapNode.rt_QuestList:SetToggle(nQuestIdx)
 		end
-		if bHasComplete or self._panel.tog == 2 then
+		if not (not bHasRewardReceive or bHasComplete) or bFullLevel or self._panel.tog == 1 then
+			self.curTog = 1
+			self._mapNode.rtToggleTop:SetState(false)
+			NovaAPI.SetCanvasGroupAlpha(self._mapNode.CGReward, 1)
+			NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.CGReward, true)
+			NovaAPI.SetCanvasGroupAlpha(self._mapNode.CGQuest, 0)
+			NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.CGQuest, false)
+		else
 			self.curTog = 2
 			self._panel.tog = 2
 			self._mapNode.rtToggleTop:SetState(true)
@@ -175,13 +183,6 @@ function BattlePassCtrl:OnEnable()
 			NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.CGReward, false)
 			NovaAPI.SetCanvasGroupAlpha(self._mapNode.CGQuest, 1)
 			NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.CGQuest, true)
-		else
-			self.curTog = 1
-			self._mapNode.rtToggleTop:SetState(false)
-			NovaAPI.SetCanvasGroupAlpha(self._mapNode.CGReward, 1)
-			NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.CGReward, true)
-			NovaAPI.SetCanvasGroupAlpha(self._mapNode.CGQuest, 0)
-			NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.CGQuest, false)
 		end
 		self._mapNode.rt_RewardList:SetLevelPos()
 		if self._panel.bOpenPremium then
@@ -231,14 +232,16 @@ function BattlePassCtrl:Refresh()
 	end
 	NovaAPI.SetTMPText(self._mapNode.TMPLevel, self.mapBattlePassInfo.nLevel)
 	local bFullLevel = false
-	if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) == nil then
+	if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false) == nil then
 		bFullLevel = true
+		self._mapNode.TMPProgress.gameObject:SetActive(false)
 		NovaAPI.SetTMPText(self._mapNode.TMPProgress, string.format("%d/%d", self.mapBattlePassInfo.nExp, self.mapBattlePassInfo.nExp))
 		self._mapNode.imgProgressBarFillMask.sizeDelta = Vector2(nExpBarLength, nExpBarHeight)
 		self._mapNode.btnLevelDetail.gameObject:SetActive(false)
 		self._mapNode.TMPLevelMax.gameObject:SetActive(true)
 	else
-		local nExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
+		self._mapNode.TMPProgress.gameObject:SetActive(true)
+		local nExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false).Exp
 		NovaAPI.SetTMPText(self._mapNode.TMPProgress, string.format("%d/%d", self.mapBattlePassInfo.nExp, nExp))
 		self._mapNode.imgProgressBarFillMask.sizeDelta = Vector2(nExpBarLength * self.mapBattlePassInfo.nExp / nExp, nExpBarHeight)
 		self._mapNode.btnLevelDetail.gameObject:SetActive(true)
@@ -254,9 +257,9 @@ function BattlePassCtrl:Refresh()
 	else
 		self._mapNode.rtCoverRoot.localScale = Vector3.zero
 	end
-	local bHasComplete, nQuestIdx = self._mapNode.rt_QuestList:Refresh(self.mapBattlePassInfo.nExpThisWeek, self.mapBattlePassInfo.nLevel, true)
+	local bHasComplete, nQuestIdx, bQuestAllComplete = self._mapNode.rt_QuestList:Refresh(self.mapBattlePassInfo.nExpThisWeek, self.mapBattlePassInfo.nLevel, true)
 	self._mapNode.rt_RewardList:Refresh(self.mapBattlePassInfo.tbReward, 0 < self.mapBattlePassInfo.nCurMode, self.mapBattlePassInfo.nLevel)
-	return bHasComplete and not bFullLevel, nQuestIdx
+	return bHasComplete and not bFullLevel, nQuestIdx, bQuestAllComplete, bFullLevel
 end
 function BattlePassCtrl:SwitchShowDiscAnim()
 	if self.tbDisc ~= nil and #self.tbDisc > 0 then
@@ -387,8 +390,8 @@ function BattlePassCtrl:OnEvent_BattlePassQuestReceive()
 		nMaxLevel = -1,
 		nMaxExp = 1
 	}
-	if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) ~= nil then
-		mapBefore.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
+	if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false) ~= nil then
+		mapBefore.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false).Exp
 	end
 	local callback = function(mapData)
 		self.mapBattlePassInfo = mapData
@@ -400,12 +403,12 @@ function BattlePassCtrl:OnEvent_BattlePassQuestReceive()
 			nMaxLevel = -1,
 			nMaxExp = 0
 		}
-		if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) == nil then
+		if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false) == nil then
 			mapAfter.nExp = 1
 			mapAfter.nMaxExp = 1
 			mapAfter.nMaxLevel = afterLevel
 		else
-			mapAfter.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
+			mapAfter.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false).Exp
 		end
 		local animCallback = function()
 			if beforeLevel ~= afterLevel then
@@ -421,13 +424,15 @@ function BattlePassCtrl:OnEvent_BattlePassQuestReceive()
 				EventManager.Hit(EventId.OpenPanel, PanelId.BattlePassUpgrade, callabck, mapLevelData)
 			end
 			NovaAPI.SetTMPText(self._mapNode.TMPLevel, self.mapBattlePassInfo.nLevel)
-			if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) == nil then
+			if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false) == nil then
+				self._mapNode.TMPProgress.gameObject:SetActive(false)
 				NovaAPI.SetTMPText(self._mapNode.TMPProgress, string.format("%d/%d", self.mapBattlePassInfo.nExp, self.mapBattlePassInfo.nExp))
 				self._mapNode.imgProgressBarFillMask.sizeDelta = Vector2(nExpBarLength, nExpBarHeight)
 				self._mapNode.btnLevelDetail.gameObject:SetActive(false)
 				self._mapNode.TMPLevelMax.gameObject:SetActive(true)
 			else
-				local nExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
+				self._mapNode.TMPProgress.gameObject:SetActive(true)
+				local nExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false).Exp
 				NovaAPI.SetTMPText(self._mapNode.TMPProgress, string.format("%d/%d", self.mapBattlePassInfo.nExp, nExp))
 				self._mapNode.imgProgressBarFillMask.sizeDelta = Vector2(nExpBarLength * self.mapBattlePassInfo.nExp / nExp, nExpBarHeight)
 				self._mapNode.btnLevelDetail.gameObject:SetActive(true)
@@ -566,9 +571,9 @@ function BattlePassCtrl:OnEvent_BattlePassBuyLevel()
 			nMaxLevel = -1,
 			nMaxExp = 1
 		}
-		if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) ~= nil then
-			mapAfter.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
-			mapBefore.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
+		if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false) ~= nil then
+			mapAfter.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false).Exp
+			mapBefore.nMaxExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false).Exp
 		else
 			mapAfter.nExp = 1
 			mapAfter.nMaxExp = 1
@@ -577,13 +582,15 @@ function BattlePassCtrl:OnEvent_BattlePassBuyLevel()
 		local animCallback = function()
 			self.mapBattlePassInfo = mapData
 			NovaAPI.SetTMPText(self._mapNode.TMPLevel, self.mapBattlePassInfo.nLevel)
-			if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) == nil then
+			if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false) == nil then
+				self._mapNode.TMPProgress.gameObject:SetActive(false)
 				NovaAPI.SetTMPText(self._mapNode.TMPProgress, string.format("%d/%d", self.mapBattlePassInfo.nExp, self.mapBattlePassInfo.nExp))
 				self._mapNode.imgProgressBarFillMask.sizeDelta = Vector2(nExpBarLength, nExpBarHeight)
 				self._mapNode.btnLevelDetail.gameObject:SetActive(false)
 				self._mapNode.TMPLevelMax.gameObject:SetActive(true)
 			else
-				local nExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
+				self._mapNode.TMPProgress.gameObject:SetActive(true)
+				local nExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false).Exp
 				NovaAPI.SetTMPText(self._mapNode.TMPProgress, string.format("%d/%d", self.mapBattlePassInfo.nExp, nExp))
 				self._mapNode.imgProgressBarFillMask.sizeDelta = Vector2(nExpBarLength * self.mapBattlePassInfo.nExp / nExp, nExpBarHeight)
 				self._mapNode.btnLevelDetail.gameObject:SetActive(true)
@@ -609,13 +616,15 @@ function BattlePassCtrl:OnEvent_BattlePassPremiumSuccess()
 	local callback = function(mapData)
 		self.mapBattlePassInfo = mapData
 		NovaAPI.SetTMPText(self._mapNode.TMPLevel, self.mapBattlePassInfo.nLevel)
-		if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1) == nil then
+		if ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false) == nil then
+			self._mapNode.TMPProgress.gameObject:SetActive(false)
 			NovaAPI.SetTMPText(self._mapNode.TMPProgress, string.format("%d/%d", self.mapBattlePassInfo.nExp, self.mapBattlePassInfo.nExp))
 			self._mapNode.imgProgressBarFillMask.sizeDelta = Vector2(nExpBarLength, nExpBarHeight)
 			self._mapNode.btnLevelDetail.gameObject:SetActive(false)
 			self._mapNode.TMPLevelMax.gameObject:SetActive(true)
 		else
-			local nExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1).Exp
+			self._mapNode.TMPProgress.gameObject:SetActive(true)
+			local nExp = ConfigTable.GetData("BattlePassLevel", self.mapBattlePassInfo.nLevel + 1, false).Exp
 			NovaAPI.SetTMPText(self._mapNode.TMPProgress, string.format("%d/%d", self.mapBattlePassInfo.nExp, nExp))
 			self._mapNode.imgProgressBarFillMask.sizeDelta = Vector2(nExpBarLength * self.mapBattlePassInfo.nExp / nExp, nExpBarHeight)
 			self._mapNode.btnLevelDetail.gameObject:SetActive(true)

@@ -219,7 +219,7 @@ function PlayerEquipmentInstanceData:MsgSettleEquipmentInstance(nLevelId, nBuild
 			}
 		end
 		if callback ~= nil then
-			callback(mapMsgData.AwardItems, mapMsgData.FirstItems, mapMsgData.SurpriseItems, mapMsgData.Exp, mapMsgData.Change)
+			callback(mapMsgData.AwardItems, mapMsgData.FirstItems, mapMsgData.SurpriseItems, mapMsgData.DoubleItems, mapMsgData.Exp, mapMsgData.Change)
 		end
 		self._EndTime = CS.ClientManager.Instance.serverTimeStampWithTimeZone
 		local tabUpLevel = {}

@@ -675,7 +675,14 @@ function AvgEditorQuickPreview:OnRefreshChoiceGrid(goSv, tbParam)
 			local rtTxtSelection = btnSelection.transform:Find("AnimRoot/txtSelection"):GetComponent("RectTransform")
 			local rtImgBg = btnSelection.transform:Find("AnimRoot/imgBg"):GetComponent("RectTransform")
 			local rtSelection = goSelection:GetComponent("RectTransform")
-			local sContent = ProcAvgTextContent(tbParam[i + 1], self._panel.nCurLanguageIdx)
+			local nOffset = 0
+			if PlayerBaseData:GetPlayerSex() == true then
+				nOffset = 3
+			end
+			local sContent = ProcAvgTextContent(tbParam[i + 1 + nOffset], self._panel.nCurLanguageIdx)
+			if type(sContent) ~= "string" or sContent == "" then
+				sContent = ProcAvgTextContent(tbParam[i + 1], self._panel.nCurLanguageIdx)
+			end
 			NovaAPI.SetTMPText(txtSelection, sContent)
 			local nHeight = self:_CalcChoiceHeight(sContent)
 			rtTxtSelection.sizeDelta = Vector2(rtTxtSelection.sizeDelta.x, nHeight)

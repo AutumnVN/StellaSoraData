@@ -165,14 +165,18 @@ DailyInstanceLevelSelectCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "RegusBoss_SatisfyConditions_UnLock"
 	},
-	Conditions_ = {nCount = 2}
+	Conditions_ = {nCount = 2},
+	imgDoubleDrop = {},
+	txtDoubleDrop = {sComponentName = "TMP_Text"},
+	txtDoubleDropCount = {sComponentName = "TMP_Text"}
 }
 DailyInstanceLevelSelectCtrl._mapEventConfig = {
 	[EventId.UIHomeConfirm] = "OnEvent_Home",
 	[EventId.UIBackConfirm] = "OnEvent_Back",
 	ChangeDailyInstanceRewardMode = "OnEvent_ChangeDailyInstanceRewardMode",
 	[EventId.UpdateWorldClass] = "OnEvent_UpdateWorldClass",
-	[EventId.UpdateEnergy] = "OnEvent_UpdateEnergy"
+	[EventId.UpdateEnergy] = "OnEvent_UpdateEnergy",
+	RaidSuccess = "OnEvent_RaidSuccess"
 }
 function DailyInstanceLevelSelectCtrl:Awake()
 	self.mapLevelGrid = {}
@@ -418,6 +422,12 @@ function DailyInstanceLevelSelectCtrl:RefreshDailyInstanceInfo(nType, nHard, bLo
 	self._mapNode.btnGo.gameObject:SetActive(isUnLock)
 	self._mapNode.btnLock.gameObject:SetActive(not isUnLock)
 	self._mapNode.ListConditions:SetActive(not isUnLock)
+	self._mapNode.imgDoubleDrop:SetActive(false)
+	self.actData = PlayerData.Activity:GetActivityDataByType(GameEnum.activityType.Double)
+	if self.actData ~= nil and self.actData:CheckActShow() and self.actData:CheckInstanceType(GameEnum.instanceType.DailyInstance) then
+		self._mapNode.imgDoubleDrop:SetActive(isUnLock)
+		self:RefreshDoubleDropCount()
+	end
 	if not isUnLock then
 		local imgConditions_Lock_WC = self._mapNode.Conditions_[1].gameObject.transform:Find("imgConditions_Lock").gameObject
 		local imgConditions_UnLock_WC = self._mapNode.Conditions_[1].gameObject.transform:Find("imgConditions_UnLock").gameObject
@@ -437,6 +447,14 @@ function DailyInstanceLevelSelectCtrl:RefreshDailyInstanceInfo(nType, nHard, bLo
 		NovaAPI.SetTMPColor(tex_ConditionsTips_PL, isPreLevelStar and Color(0.3686274509803922, 0.5372549019607843, 0.7058823529411765) or Color(0.14901960784313725, 0.25882352941176473, 0.47058823529411764))
 	end
 	PlayerData.DailyInstance:SetRewardType(nType)
+end
+function DailyInstanceLevelSelectCtrl:RefreshDoubleDropCount()
+	if self.actData ~= nil and self.actData:CheckActShow() and self.actData:CheckInstanceType(GameEnum.instanceType.DailyInstance) then
+		local _, str = self.actData:GetDropString()
+		local nCount, nMaxCount = self.actData:GetDoubleDropsTimes()
+		NovaAPI.SetTMPText(self._mapNode.txtDoubleDrop, str)
+		NovaAPI.SetTMPText(self._mapNode.txtDoubleDropCount, string.format("%s/%s", nMaxCount - nCount, nMaxCount))
+	end
 end
 function DailyInstanceLevelSelectCtrl:OnEvent_Home(nPanelId)
 	if self._panel._nPanelId ~= nPanelId then
@@ -533,7 +551,7 @@ function DailyInstanceLevelSelectCtrl:OnBtnClick_Raid()
 	end
 	local mapDailyInstanceData = self.mapAllDailyInstance[self.curSelectHard]
 	local nNeedEnergy = mapDailyInstanceData.ThreeStarEnergyConsume
-	EventManager.Hit(EventId.OpenPanel, PanelId.Raid, mapDailyInstanceData.Id, nNeedEnergy, 1)
+	EventManager.Hit(EventId.OpenPanel, PanelId.Raid, mapDailyInstanceData.Id, nNeedEnergy, GameEnum.instanceType.DailyInstance)
 end
 function DailyInstanceLevelSelectCtrl:OnBtnClick_Lock()
 	self:OnBtnClick_TogTips(nil, self.curSelectHard)
@@ -547,5 +565,8 @@ end
 function DailyInstanceLevelSelectCtrl:OnEvent_UpdateEnergy()
 	local nHas = PlayerData.Base:GetCurEnergy()
 	NovaAPI.SetTMPColor(self._mapNode.txtTicketsCount, nHas.nEnergy < self.curRequireEnergy and Red_Unable or Blue_Normal)
+end
+function DailyInstanceLevelSelectCtrl:OnEvent_RaidSuccess()
+	self:RefreshDoubleDropCount()
 end
 return DailyInstanceLevelSelectCtrl

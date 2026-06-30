@@ -75,7 +75,7 @@ return {
 		icon = "Icon/Head/head_11701_S",
 		name = "璟麟",
 		landmark = "菲萊城亞斯文街八號",
-		signature = "懷璟食府歡迎您，若要訂位請提前致電"
+		signature = "懷璟食府歡迎您，若要訂位請提前聯絡"
 	},
 	{
 		id = 118,

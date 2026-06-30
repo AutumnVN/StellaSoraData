@@ -207,27 +207,44 @@ function RedDotManager.PrintRedDot(sKey, param, bLeaf)
 		return
 	end
 	local node = RedDotManager.GetNode(sNodeKey)
-	if nil ~= node then
-		node:PrintRedDot(bLeaf, tbNode)
+	if nil == node then
+		return
 	end
-	if tbNode ~= nil and #tbNode ~= 0 then
-		for k, v in ipairs(tbNode) do
-			local tbKey = {}
-			table.insert(tbKey, v.sNodeKey)
-			if bLeaf then
-				v:GetParentKey(tbKey)
-			end
-			local sCurKey = ""
-			for i = #tbKey, 1, -1 do
-				if i == #tbKey then
-					sCurKey = tbKey[i]
-				else
-					sCurKey = sCurKey .. "->" .. tbKey[i]
-				end
-			end
-			local bindObjCount = v:GetBindObjCount()
-			printError(string.format("[RedDot] key = %s, redDotCount = %s, bindObjCount = %s", sCurKey, v.nRedDotCount, bindObjCount))
+	node:PrintRedDot(bLeaf, tbNode, 0)
+	if tbNode == nil or #tbNode == 0 then
+		return
+	end
+	local COLOR_NODE = "#4FC3F7"
+	local COLOR_LEAF = "#B5E853"
+	local COLOR_ACTIVE = "#FF5252"
+	local escape = function(v)
+		local s = tostring(v)
+		s = s:gsub("<", "＜")
+		s = s:gsub(">", "＞")
+		return s
+	end
+	local wrap = function(sColor, sText)
+		return string.format("<color=%s>%s</color>", sColor, sText)
+	end
+	local tbLines = {}
+	table.insert(tbLines, string.format("[RedDot] ===== Tree of [%s] =====", escape(sNodeKey)))
+	for _, item in ipairs(tbNode) do
+		local curNode = item.node
+		local nDepth = item.depth or 0
+		local sIndent = string.rep("│  ", nDepth)
+		local sBranch = 0 < nDepth and "├─ " or ""
+		local bIsLeaf = nil == curNode.tbChildNodeList or #curNode.tbChildNodeList == 0
+		local sTagRaw = bIsLeaf and "[Leaf]" or "[Node]"
+		local sTag = wrap(bIsLeaf and COLOR_LEAF or COLOR_NODE, sTagRaw)
+		local bindObjCount = curNode:GetBindObjCount()
+		local sValid = escape(curNode:GetValid())
+		local sInfo = string.format("%s  count=%s  bind=%s  valid=%s", escape(curNode.sNodeKey), tostring(curNode.nRedDotCount), tostring(bindObjCount), sValid)
+		if curNode.nRedDotCount and 0 < curNode.nRedDotCount then
+			sInfo = wrap(COLOR_ACTIVE, sInfo)
 		end
+		table.insert(tbLines, string.format("%s%s%s %s", sIndent, sBranch, sTag, sInfo))
 	end
+	table.insert(tbLines, "[RedDot] ===== End =====")
+	printError(table.concat(tbLines, "\n"))
 end
 return RedDotManager

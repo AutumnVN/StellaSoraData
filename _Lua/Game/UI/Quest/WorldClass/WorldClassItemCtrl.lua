@@ -63,8 +63,14 @@ local worldClass_CanReceive = 3
 local worldClass_Received = 4
 local totalLength = 674
 local totalHeight = 37
-function WorldClassItemCtrl:SetItem(itemData)
+function WorldClassItemCtrl:SetItem(itemData, goBtnFastReceive, goBtnFastReceiveGray, rtLevelLsv)
 	self.itemData = itemData
+	self.goBtnFastReceive = goBtnFastReceive or nil
+	self.goBtnFastReceiveGray = goBtnFastReceiveGray or nil
+	self.rtLevelLsv = rtLevelLsv or nil
+	if self.nLsvDefaultHeight == nil and rtLevelLsv ~= nil then
+		self.nLsvDefaultHeight = rtLevelLsv.offsetMin
+	end
 	self.nCurWorldClass = PlayerData.Base:GetWorldClass()
 	if itemData.nType == AllEnum.WorldClassType.LevelUp then
 		self:SetLevelUpItem()
@@ -185,16 +191,44 @@ function WorldClassItemCtrl:SetAdvanceItem()
 	RedDotManager.RegisterNode(RedDotDefine.WorldClass_Advance, self.itemData.nId, self._mapNode.redDot, nil, nil, true)
 end
 function WorldClassItemCtrl:RefreshRewardState()
-	self._mapNode.goingTip.gameObject:SetActive(self.nState == worldClass_Going)
+	self._mapNode.goingTip.gameObject:SetActive(self.nState == worldClass_Going or self.nState == worldClass_CanReceive)
 	self._mapNode.imgComplete.gameObject:SetActive(self.nState == worldClass_Received)
 	self._mapNode.txtLock.gameObject:SetActive(self.nState == worldClass_Lock)
-	self._mapNode.btnReceive.gameObject:SetActive(self.nState == worldClass_CanReceive)
+	if self.goBtnFastReceive == nil then
+		return
+	end
+	if self.handlerBtn == nil then
+		self.handlerBtn = {}
+	end
+	self.goBtnFastReceive.gameObject:SetActive(self.nState == worldClass_CanReceive)
+	self.goBtnFastReceive.onClick:RemoveAllListeners()
+	self.handlerBtn[1] = ui_handler(self, self.OnBtnClick_Receive)
+	self.goBtnFastReceive.onClick:AddListener(self.handlerBtn[1])
+	self.goBtnFastReceiveGray.gameObject:SetActive(self.nState ~= worldClass_CanReceive)
+	self.goBtnFastReceiveGray.onClick:RemoveAllListeners()
+	self.handlerBtn[2] = ui_handler(self, self.OnBtnClick_ReceiveGray)
+	self.goBtnFastReceiveGray.onClick:AddListener(self.handlerBtn[2])
+	if self.nState == worldClass_Received then
+		self.rtLevelLsv.offsetMin = self.nLsvDefaultHeight
+		self.goBtnFastReceive.gameObject:SetActive(false)
+		self.goBtnFastReceiveGray.gameObject:SetActive(false)
+	else
+		local v2 = Vector2(self.nLsvDefaultHeight.x, self.nLsvDefaultHeight.y + 100)
+		self.rtLevelLsv.offsetMin = v2
+	end
 end
 function WorldClassItemCtrl:Awake()
 end
 function WorldClassItemCtrl:OnEnable()
 end
 function WorldClassItemCtrl:OnDisable()
+	if self.goBtnFastReceive ~= nil then
+		self.goBtnFastReceive.onClick:RemoveListener(self.handlerBtn[1])
+		self.handlerBtn[1] = nil
+		self.goBtnFastReceiveGray.onClick:RemoveListener(self.handlerBtn[2])
+		self.handlerBtn[2] = nil
+		self.handlerBtn = {}
+	end
 end
 function WorldClassItemCtrl:OnDestroy()
 end
@@ -209,6 +243,9 @@ function WorldClassItemCtrl:OnBtnClick_Receive()
 	else
 		PlayerData.Base:SendPlayerWorldClassAdvanceReq(self.itemData.nId)
 	end
+end
+function WorldClassItemCtrl:OnBtnClick_ReceiveGray()
+	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("DoubleDrop_Reward_Receive_Tip"))
 end
 function WorldClassItemCtrl:OnBtnClick_RewardItem(btn, nIndex)
 	local nTid = self.tbReward[nIndex].nId

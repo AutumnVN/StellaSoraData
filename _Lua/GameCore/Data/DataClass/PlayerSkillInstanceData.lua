@@ -221,7 +221,7 @@ function PlayerSkillInstanceData:MsgSettleSkillInstance(nLevelId, nBuildId, nSta
 			}
 		end
 		if callback ~= nil then
-			callback(mapMsgData.AwardItems, mapMsgData.FirstItems, mapMsgData.ThreeStarItems, mapMsgData.SurpriseItems, mapMsgData.Exp, mapMsgData.Change)
+			callback(mapMsgData.AwardItems, mapMsgData.FirstItems, mapMsgData.ThreeStarItems, mapMsgData.SurpriseItems, mapMsgData.DoubleItems, mapMsgData.Exp, mapMsgData.Change)
 		end
 		self._EndTime = CS.ClientManager.Instance.serverTimeStampWithTimeZone
 		local tabUpLevel = {}

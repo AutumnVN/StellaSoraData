@@ -1,9 +1,9 @@
 local GoldenSpyLevelCtrl = class("GoldenSpyLevelCtrl", BaseCtrl)
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
 local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
-local ItemSpritePath = "UI_Activity/_400008/SpriteAtlas/Item/"
-local SpritePath = "UI_Activity/_400008/SpriteAtlas/"
-local PrefabPath = "UI_Activity/_400008/"
+local ItemSpritePath = "UI_Activity/_%s/SpriteAtlas/Item/"
+local SpritePath = "UI_Activity/_%s/SpriteAtlas/"
+local PrefabPath = "UI_Activity/_%s/"
 local BoomSkillId = 1001
 local FrozenSkillId = 1002
 local PlayerActivityData = PlayerData.Activity
@@ -82,7 +82,11 @@ GoldenSpyLevelCtrl._mapNodeConfig = {
 	imgWarning = {},
 	skill_Boom = {},
 	go_CompanionAddScore = {},
-	txt_CompanionAddScore = {sComponentName = "TMP_Text"}
+	txt_CompanionAddScore = {sComponentName = "TMP_Text"},
+	targetScoreCtrl = {
+		sNodeName = "TargetScorePanel",
+		sCtrlName = "Game.UI.Activity.GoldenSpy.GoldenSpyTargetScoreCtrl"
+	}
 }
 GoldenSpyLevelCtrl._mapEventConfig = {
 	GoldenSpy_Exit_OnClick = "GoldenSpy_Exit_OnClick",
@@ -96,6 +100,7 @@ GoldenSpyLevelCtrl._mapEventConfig = {
 	[EventId.ClosePanel] = "OnEvent_CloseDic",
 	GoldenSpyHookResumeSwing = "OnEvent_GoldenSpyHookResumeSwing",
 	GoldenSpyHookStartExtend = "OnEvent_GoldenSpyHookStartExtend",
+	GoldenSpy_TargetScore_Close = "OnEvent_GoldenSpy_TargetScore_Close",
 	GM_GoldenSpy_RefreshTask = "OnEvent_GM_GoldenSpy_RefreshTask",
 	GM_GoldenSpy_AddSkill = "OnEvent_GM_GoldenSpy_AddSkill",
 	GM_GoldenSpy_AddBuff = "OnEvent_GM_GoldenSpy_AddBuff",
@@ -104,6 +109,7 @@ GoldenSpyLevelCtrl._mapEventConfig = {
 function GoldenSpyLevelCtrl:Awake()
 	self._mapNode.PausePanel.gameObject:SetActive(false)
 	self._mapNode.ToolBoxPanel.gameObject:SetActive(false)
+	self._mapNode.targetScoreCtrl.gameObject:SetActive(false)
 	self.tbGamepadUINode = self:GetGamepadUINode()
 	local param = self:GetPanelParam()
 	if type(param) == "table" then
@@ -128,7 +134,7 @@ function GoldenSpyLevelCtrl:Awake()
 	end
 	local groupCfg = ConfigTable.GetData("GoldenSpyLevelGroup", self.nGroupId)
 	if groupCfg ~= nil then
-		local goLightPerfab = self:LoadAsset(PrefabPath .. groupCfg.LightName .. ".prefab")
+		local goLightPerfab = self:LoadAsset(string.format(PrefabPath, self.nActId) .. groupCfg.LightName .. ".prefab")
 		self.lightPrefab = instantiate(goLightPerfab, self._mapNode.platformRoot)
 		local tr = self.lightPrefab.transform:GetComponent("RectTransform")
 		tr.anchoredPosition = Vector2.zero
@@ -153,9 +159,10 @@ end
 function GoldenSpyLevelCtrl:EnterGame()
 	self._mapNode.ActorAnimRoot:Play("ActorPanel_Jump")
 	self.bInCharAnimator = false
-	self:AddTimer(1, 0.7, function()
-		self:StartFloor()
+	self:AddTimer(1, 1.7, function()
+		self:ShowTargetScore()
 	end, true, true, true)
+	EventManager.Hit(EventId.TemporaryBlockInput, 1.7)
 	if self.nLevelType == GameEnum.GoldenSpyLevelType.Quest or self.nLevelType == GameEnum.GoldenSpyLevelType.Random then
 		self.GoldenSpyLevelData:RefreshTask()
 		self:UpdateTaskUI()
@@ -167,7 +174,7 @@ function GoldenSpyLevelCtrl:Init()
 	if self.floorCfg == nil then
 		return
 	end
-	self:SetPngSprite(self._mapNode.img_bg, SpritePath .. self.floorCfg.BgName)
+	self:SetPngSprite(self._mapNode.img_bg, string.format(SpritePath, self.nActId) .. self.floorCfg.BgName)
 	local nFloor = self.GoldenSpyLevelData:GetCurFloor()
 	local nTotalFloor = self.GoldenSpyLevelData:GetTotalFloor()
 	local sFloorText = orderedFormat(ConfigTable.GetUIText("GoldenSpy_Floor"), nFloor, nTotalFloor)
@@ -271,6 +278,9 @@ function GoldenSpyLevelCtrl:StartFloor()
 	end
 end
 function GoldenSpyLevelCtrl:FinishFloor()
+	if self.bInPause then
+		self:GoldenSpy_Continue_OnClick()
+	end
 	WwiseAudioMgr:PostEvent("Mode_steal_get_stop")
 	self:ClearTimer()
 	self.bStartFloor = false
@@ -289,11 +299,12 @@ function GoldenSpyLevelCtrl:FinishFloor()
 			tbItems = self.GoldenSpyLevelData:GetCatchItemData(),
 			tbSkills = self.GoldenSpyLevelData:GetUsedSkillData()
 		}
-		self.GoldenSpyActData:FinishLevel(self.nLevelId, data, function()
+		self.GoldenSpyActData:FinishLevel(self.nLevelId, data, function(msgData)
 			if callback ~= nil then
-				callback()
+				local nextGroupId, nextLevelId = self.GoldenSpyActData:GetNextLevel(self.nGroupId, self.nLevelId)
+				callback(msgData, nextGroupId, nextLevelId)
 			end
-			EventManager.Hit(EventId.ClosePanel, PanelId.GoldenSpyPanel)
+			EventManager.Hit(EventId.ClosePanel, self._panel._nPanelId)
 		end)
 	end
 	local goNextCallback = function()
@@ -305,17 +316,50 @@ function GoldenSpyLevelCtrl:FinishFloor()
 	else
 		bSuccess = self.nCurScore >= self.floorCfg.GoalScore
 	end
+	local goNextLevelCallback = function(nextGroupId, nextLevelId)
+		if nextGroupId == nil or nextLevelId == nil then
+			return
+		end
+		local wait = function()
+			self.GoldenSpyActData:EnterGroupSelect(nextGroupId)
+			self.GoldenSpyActData:StartLevel(nextGroupId, nextLevelId)
+		end
+		cs_coroutine.start(wait)
+	end
+	local data = {
+		bResult = bFinish,
+		nLevelId = self.nLevelId,
+		nCurFloorId = nCurFloorId,
+		nFloor = nFloor,
+		nTotalFloor = nTotalFloor,
+		nCurScore = self.nCurScore,
+		finishCallback = finishCallback,
+		goNextCallback = goNextCallback,
+		bSuccess = bSuccess,
+		bCanGoNextLevel = bCanGoNextLevel,
+		goNextLevelCallback = goNextLevelCallback
+	}
+	if not self.GoldenSpyActData:CheckActivityOpen() then
+		EventManager.Hit(EventId.OpenMessageBox, {
+			nType = AllEnum.MessageBox.Alert,
+			sContent = ConfigTable.GetUIText("Activity_End_Notice"),
+			callbackConfirm = function()
+				PanelManager.Home()
+			end
+		})
+		return
+	end
 	if bSuccess then
 		if self.animator ~= nil then
 			self.animator:Play("GoldenSpyPanel_out")
 			self:AddTimer(1, 1.4, function()
-				EventManager.Hit(EventId.OpenPanel, PanelId.GoldenSpyResultPanel, bFinish, self.nLevelId, nCurFloorId, nFloor, nTotalFloor, self.nCurScore, finishCallback, goNextCallback, bSuccess)
+				EventManager.Hit(EventId.OpenPanel, self._panel.nResultPanelId, data)
 			end, true, true, true)
 		else
-			EventManager.Hit(EventId.OpenPanel, PanelId.GoldenSpyResultPanel, bFinish, self.nLevelId, nCurFloorId, nFloor, nTotalFloor, self.nCurScore, finishCallback, goNextCallback, bSuccess)
+			EventManager.Hit(EventId.OpenPanel, self._panel.nResultPanelId, data)
 		end
 	else
-		EventManager.Hit(EventId.OpenPanel, PanelId.GoldenSpyResultPanel, bFinish, self.nLevelId, nCurFloorId, nFloor, nTotalFloor, self.nCurScore, finishCallback, goNextCallback, bSuccess)
+		EventManager.Hit(EventId.OpenPanel, self._panel.nResultPanelId, data)
 	end
 end
 function GoldenSpyLevelCtrl:GoNextFloor()
@@ -353,6 +397,9 @@ function GoldenSpyLevelCtrl:CatchedComplete(itemCtrl)
 	local oldScore = self.nCurScore
 	local bFinishTask, addScore = self.GoldenSpyLevelData:CatchedItem(nItemId, itemCtrl)
 	addScore = math.floor(addScore or 0)
+	if NovaAPI.IsEditorPlatform() then
+		print("GoldenSpyLevelCtrl:抓到的道具分", addScore)
+	end
 	self.nCurScore = self.GoldenSpyLevelData:GetCurScore()
 	self.nCurScore = math.floor(self.nCurScore)
 	local newAddScore = self.nCurScore - oldScore
@@ -364,6 +411,9 @@ function GoldenSpyLevelCtrl:CatchedComplete(itemCtrl)
 		self.AddScoreTimer = nil
 	end
 	self.AddScoreTimer = self:AddTimer(1, 0.8, function()
+		if not self.bStartFloor then
+			return
+		end
 		if self._mapNode.go_AddScore == nil then
 			return
 		end
@@ -387,6 +437,9 @@ function GoldenSpyLevelCtrl:CatchedComplete(itemCtrl)
 			taskAnimator:Play("go_Task_switch")
 			self:UpdateTaskIcon()
 			local timer = self:AddTimer(1, 0.75, function()
+				if not self.bStartFloor then
+					return
+				end
 				self:UpdateTaskUI()
 			end, true, true, true)
 			table.insert(self.tbTimer, timer)
@@ -444,7 +497,7 @@ function GoldenSpyLevelCtrl:UpdateTaskUI()
 			local img_icon = self._mapNode.target[i].transform:Find("img_icon"):GetComponent("Image")
 			local icon_cg = img_icon:GetComponent("CanvasGroup")
 			local imgGet = self._mapNode.target[i].transform:Find("img_get"):GetComponent("Image")
-			self:SetPngSprite(img_icon, ItemSpritePath .. itemCfg.IconPath .. "_s")
+			self:SetPngSprite(img_icon, string.format(ItemSpritePath, self.nActId) .. itemCfg.IconPath .. "_s")
 			if v.bFinish then
 				imgGet.gameObject:SetActive(true)
 				NovaAPI.SetCanvasGroupAlpha(icon_cg, 0.3)
@@ -501,108 +554,28 @@ function GoldenSpyLevelCtrl:AddRandomBuff(nPoolId, callback)
 							break
 						end
 					end
-					if bIsLabel then
-						if hasBuffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-							if n.bActive and table.indexof(n.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) > 0 then
-								v.weight = v.weight * (1 + hasBuffCfg.Params[2] / 100.0)
-							end
-						elseif hasBuffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-							if n.bActive and table.indexof(n.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) > 0 then
-								v.weight = v.weight * (1 + hasBuffCfg.Params[2] / 100.0)
-							end
-						elseif hasBuffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-							if n.bActive then
-								v.weight = v.weight * (1 + hasBuffCfg.Params[2] / 100.0)
-							end
-						elseif hasBuffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-						end
+					if bIsLabel and self.GoldenSpyLevelData:CheckBuffActive(n) then
+						v.weight = v.weight * (1 + hasBuffCfg.Params[2] / 100.0)
 					end
 				end
 			end
 		end
 	end
-	local tbBuff = {}
-	for i = 1, 3 do
-		local buff, index = self:RandomBuff(tbBuffPool)
-		table.insert(tbBuff, buff.buffId)
-		table.remove(tbBuffPool, index)
-	end
-	self:ShowBuffSelect(tbBuff, callback)
-	return tbBuff
+	self:ShowBuffSelect(tbBuffPool, callback)
 end
-function GoldenSpyLevelCtrl:RandomBuff(tbBuffPool)
-	local tbBuffCount = {}
-	local tbHasBuff = self.GoldenSpyLevelData:GetBuffData()
-	local tbRemoveBuffIds = {}
-	for _, v in ipairs(tbHasBuff) do
-		tbBuffCount[v.buffId] = (tbBuffCount[v.buffId] or 0) + 1
-	end
-	for k, v in pairs(tbBuffCount) do
-		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", k)
-		if buffCfg ~= nil and v >= buffCfg.MaxCount then
-			table.insert(tbRemoveBuffIds, k)
-		end
-	end
-	for i = #tbBuffPool, 1, -1 do
-		for _, v in ipairs(tbRemoveBuffIds) do
-			if tbBuffPool[i].buffId == v then
-				table.remove(tbBuffPool, i)
-				break
-			end
-		end
-	end
-	local nTotalWeight = 0
-	for i, v in ipairs(tbBuffPool) do
-		nTotalWeight = nTotalWeight + math.floor(v.weight)
-	end
-	local nRandom = math.random(1, nTotalWeight)
-	local nSum = 0
-	local nIndex = 0
-	local buffData
-	for i, v in ipairs(tbBuffPool) do
-		nSum = nSum + v.weight
-		if nRandom <= nSum then
-			buffData = v
-			nIndex = i
-			break
-		end
-	end
-	if NovaAPI.IsEditorPlatform() then
-		print("GoldenSpyLevelCtrl: tbBuffPool:--------------------------------")
-		for i, v in ipairs(tbBuffPool) do
-			local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-			print("GoldenSpyLevelCtrl: buffId:", v.buffId, " Name:", buffCfg.Name, " weight:", v.weight, " TotalWeight:", nTotalWeight, " 概率：", v.weight / nTotalWeight * 100, "%")
-		end
-	end
-	return buffData, nIndex
-end
-function GoldenSpyLevelCtrl:ShowBuffSelect(tbBuff, callback)
+function GoldenSpyLevelCtrl:ShowBuffSelect(tbBuffPool, callback)
 	self:Pause()
 	local tbShowItem = {}
 	local tbItems = self.GoldenSpyFloorData:GetItems()
 	local tbHasBuff = self.GoldenSpyLevelData:GetBuffData()
-	local curFloor = self.GoldenSpyLevelData:GetCurFloor()
 	for _, v in pairs(tbItems) do
 		local itemCfg = ConfigTable.GetData("GoldenSpyItem", v.itemId)
 		if itemCfg ~= nil and itemCfg.ShowValue ~= false then
 			local nScore = itemCfg.Score
 			for _, n in ipairs(tbHasBuff) do
 				local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", n.buffId)
-				if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore then
-					if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-						if n.bActive and table.indexof(n.tbActiveFloor, curFloor) > 0 and buffCfg.Params[1] == itemCfg.ItemType then
-							nScore = nScore + buffCfg.Params[2]
-						end
-					elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-						if n.bActive and table.indexof(n.tbActiveFloor, curFloor) > 0 and buffCfg.Params[1] == itemCfg.ItemType then
-							nScore = nScore + buffCfg.Params[2]
-						end
-					elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-						if n.bActive and buffCfg.Params[1] == itemCfg.ItemType then
-							nScore = nScore + buffCfg.Params[2]
-						end
-					elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-					end
+				if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and self.GoldenSpyLevelData:CheckBuffActive(n) and buffCfg.Params[1] == itemCfg.ItemType then
+					nScore = nScore + buffCfg.Params[2]
 				end
 			end
 			local itemData = {
@@ -620,7 +593,13 @@ function GoldenSpyLevelCtrl:ShowBuffSelect(tbBuff, callback)
 		end
 	end
 	local tbSortBuff = self:SortBuff(tbHasBuff)
-	EventManager.Hit(EventId.OpenPanel, PanelId.GoldenSpyBuffSelectPanel, tbShowItem, tbSortBuff, tbBuff, selectedCallback)
+	local getRefreshCallback = function()
+		return self.GoldenSpyLevelData:GetRefreshCount()
+	end
+	local refreshCallback = function()
+		self.GoldenSpyLevelData:UseRefreshCount()
+	end
+	EventManager.Hit(EventId.OpenPanel, self._panel.nBuffSelectPanelId, tbShowItem, tbSortBuff, tbBuffPool, selectedCallback, getRefreshCallback, refreshCallback, self.nActId)
 end
 function GoldenSpyLevelCtrl:GetHookBaseSpeed()
 	local levelCfg = ConfigTable.GetData("GoldenSpyLevel", self.nLevelId)
@@ -634,21 +613,8 @@ function GoldenSpyLevelCtrl:GetHookBaseSpeed()
 	local nSpeed = cfg.BaseSpeed
 	for _, v in ipairs(self.GoldenSpyLevelData:GetBuffData()) do
 		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddSpeed then
-			if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-				if v.bActive and 0 < table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) then
-					nSpeed = nSpeed + buffCfg.Params[1]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-				if v.bActive and 0 < table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) then
-					nSpeed = nSpeed + buffCfg.Params[1]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-				if v.bActive then
-					nSpeed = nSpeed + buffCfg.Params[1]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-			end
+		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddSpeed and self.GoldenSpyLevelData:CheckBuffActive(v) then
+			nSpeed = nSpeed + buffCfg.Params[1]
 		end
 	end
 	return nSpeed
@@ -661,21 +627,8 @@ function GoldenSpyLevelCtrl:GetHookRadius()
 	local nRadius = cfg.BaseRadius
 	for _, v in ipairs(self.GoldenSpyLevelData:GetBuffData()) do
 		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookRadius then
-			if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-				if v.bActive and 0 < table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) then
-					nRadius = nRadius + buffCfg.Params[1]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-				if v.bActive and 0 < table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) then
-					nRadius = nRadius + buffCfg.Params[1]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-				if v.bActive then
-					nRadius = nRadius + buffCfg.Params[1]
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-			end
+		if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookRadius and self.GoldenSpyLevelData:CheckBuffActive(v) then
+			nRadius = nRadius + buffCfg.Params[1]
 		end
 	end
 	return nRadius
@@ -828,6 +781,9 @@ function GoldenSpyLevelCtrl:OnBtnClick_Pause()
 	local bHasDic = self.floorCfg.DictionaryID ~= 0
 	self._mapNode.PausePanel:Open(bHasDic)
 end
+function GoldenSpyLevelCtrl:ShowTargetScore()
+	self._mapNode.targetScoreCtrl:ShowPanel(self.floorCfg.GoalScore, self.nCurScore)
+end
 function GoldenSpyLevelCtrl:OnBtnClick_Hook()
 	if self.bInCharAnimator then
 		return
@@ -844,44 +800,15 @@ function GoldenSpyLevelCtrl:OnBtnClick_Hook()
 	local nFactor = cfg.BaseFactor
 	for _, v in ipairs(self.GoldenSpyLevelData:GetBuffData()) do
 		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-		if buffCfg ~= nil then
-			if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-				if v.bActive and table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) > 0 then
-					if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.SpeedUpHook then
-						nSpeed = nSpeed + buffCfg.Params[1]
-					end
-					if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookRadius then
-						nRadius = nRadius + buffCfg.Params[1]
-					end
-					if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookK then
-						nFactor = nFactor + buffCfg.Params[1]
-					end
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-				if v.bActive and table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) > 0 then
-					if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.SpeedUpHook then
-						nSpeed = nSpeed + buffCfg.Params[1]
-					end
-					if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookRadius then
-						nRadius = nRadius + buffCfg.Params[1]
-					end
-					if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookK then
-						nFactor = nFactor + buffCfg.Params[1]
-					end
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-				if v.bActive then
-					if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.SpeedUpHook then
-						nSpeed = nSpeed + buffCfg.Params[1]
-					end
-					if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookRadius then
-						nRadius = nRadius + buffCfg.Params[1]
-					end
-					if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookK then
-						nFactor = nFactor + buffCfg.Params[1]
-					end
-				end
-			elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
+		if buffCfg ~= nil and self.GoldenSpyLevelData:CheckBuffActive(v) then
+			if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.SpeedUpHook then
+				nSpeed = nSpeed + buffCfg.Params[1]
+			end
+			if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookRadius then
+				nRadius = nRadius + buffCfg.Params[1]
+			end
+			if buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddHookK then
+				nFactor = nFactor + buffCfg.Params[1]
 			end
 		end
 	end
@@ -901,21 +828,8 @@ function GoldenSpyLevelCtrl:OnBtnClick_Hook()
 		local itemNormalWeight = itemCtrl:GetWeight()
 		for _, v in ipairs(self.GoldenSpyLevelData:GetBuffData()) do
 			local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-			if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.ReduceItemWeight then
-				if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-					if v.bActive and table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) > 0 and itemCtrl.nItemId == buffCfg.Params[1] then
-						itemNormalWeight = itemNormalWeight - buffCfg.Params[2]
-					end
-				elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-					if v.bActive and table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) > 0 and itemCtrl.nItemId == buffCfg.Params[1] then
-						itemNormalWeight = itemNormalWeight - buffCfg.Params[2]
-					end
-				elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-					if v.bActive and itemCtrl.nItemId == buffCfg.Params[1] then
-						itemNormalWeight = itemNormalWeight - buffCfg.Params[2]
-					end
-				elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-				end
+			if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.ReduceItemWeight and self.GoldenSpyLevelData:CheckBuffActive(v) and itemCtrl.nItemId == buffCfg.Params[1] then
+				itemNormalWeight = itemNormalWeight - buffCfg.Params[2]
 			end
 		end
 		itemNormalWeight = math.max(0, itemNormalWeight)
@@ -936,21 +850,8 @@ function GoldenSpyLevelCtrl:OnBtnClick_Hook()
 			local nScore = itemCfg.Score
 			for _, v in ipairs(self.GoldenSpyLevelData:GetBuffData()) do
 				local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-				if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == itemCfg.ItemType then
-					if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-						if v.bActive and table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) > 0 then
-							nScore = nScore + buffCfg.Params[2]
-						end
-					elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-						if v.bActive and table.indexof(v.tbActiveFloor, self.GoldenSpyLevelData:GetCurFloor()) > 0 then
-							nScore = nScore + buffCfg.Params[2]
-						end
-					elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-						if v.bActive then
-							nScore = nScore + buffCfg.Params[2]
-						end
-					elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-					end
+				if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == itemCfg.ItemType and self.GoldenSpyLevelData:CheckBuffActive(v) then
+					nScore = nScore + buffCfg.Params[2]
 				end
 			end
 			if nScore >= cfg.GetHighValue then
@@ -1028,6 +929,8 @@ function GoldenSpyLevelCtrl:OnBtnClick_Boom()
 			end
 		end, true, true, true)
 		table.insert(self.tbTimer, timer)
+	else
+		EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("GoldenSpy_NoneBoom"))
 	end
 end
 function GoldenSpyLevelCtrl:OnBtnClick_Frozen()
@@ -1072,7 +975,9 @@ function GoldenSpyLevelCtrl:OnBtnClick_Frozen()
 	local timer = self:AddTimer(1, nTime, function()
 		self._mapNode.floorCtrl:StopFrozen()
 		self.bInFrozen = false
-		WwiseAudioMgr:PostEvent("Mode_steal_ice_break")
+		if self._mapNode.floorCtrl:CheckHasFrozenItem() then
+			WwiseAudioMgr:PostEvent("Mode_steal_ice_break")
+		end
 	end, true, true, true)
 	table.insert(self.tbTimer, timer)
 	local img_frozenCD = self._mapNode.img_frozenCD
@@ -1097,7 +1002,7 @@ function GoldenSpyLevelCtrl:OnBtnClick_ToolBox()
 			local nScore = itemCfg.Score
 			for _, n in ipairs(tbHasBuff) do
 				local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", n.buffId)
-				if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and buffCfg.Params[1] == itemCfg.ItemType then
+				if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.AddScore and self.GoldenSpyLevelData:CheckBuffActive(n) and buffCfg.Params[1] == itemCfg.ItemType then
 					nScore = nScore + buffCfg.Params[2]
 				end
 			end
@@ -1112,7 +1017,7 @@ function GoldenSpyLevelCtrl:OnBtnClick_ToolBox()
 		self:Resume()
 	end
 	local tbSortBuff = self:SortBuff(tbHasBuff)
-	self._mapNode.ToolBoxPanel:Show(tbShowItem, tbSortBuff, callback)
+	self._mapNode.ToolBoxPanel:Show(tbShowItem, tbSortBuff, callback, self.nActId, self._panel.nTipsPanelId)
 end
 function GoldenSpyLevelCtrl:GoldenSpy_Exit_OnClick()
 	self.bInPause = false
@@ -1125,8 +1030,7 @@ function GoldenSpyLevelCtrl:GoldenSpy_Restart_OnClick()
 	self.bInPause = false
 	self._mapNode.floorCtrl:Exit()
 	self:ClearTimer()
-	self.GoldenSpyLevelData:InitData()
-	self.GoldenSpyLevelData:StartLevel(self.nLevelId)
+	self.GoldenSpyLevelData:RestartCurrentFloor()
 	self.animator:Play("GoldenSpyPanel_in")
 	self:Init()
 	self:InitSkill(true)
@@ -1215,6 +1119,9 @@ end
 function GoldenSpyLevelCtrl:OnEvent_GoldenSpyHookStartExtend()
 	local hookMask = self._mapNode.btn_Hook.transform:Find("AnimRoot/mask"):GetComponent("Image")
 	hookMask.gameObject:SetActive(true)
+end
+function GoldenSpyLevelCtrl:OnEvent_GoldenSpy_TargetScore_Close()
+	self:StartFloor()
 end
 function GoldenSpyLevelCtrl:OnEvent_GM_GoldenSpy_RefreshTask()
 	if self.nLevelType == GameEnum.GoldenSpyLevelType.Quest or self.nLevelType == GameEnum.GoldenSpyLevelType.Random then

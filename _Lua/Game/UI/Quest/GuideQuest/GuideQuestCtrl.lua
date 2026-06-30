@@ -1,4 +1,16 @@
 local GuideQuestCtrl = class("GuideQuestCtrl", BaseCtrl)
+local appendOrStack = function(tbDst, mapItem, sIdKey, sQtyKey, sExtraKey)
+	if mapItem == nil then
+		return
+	end
+	for _, v in ipairs(tbDst) do
+		if v[sIdKey] == mapItem[sIdKey] and v[sExtraKey] == mapItem[sExtraKey] then
+			v[sQtyKey] = (v[sQtyKey] or 0) + (mapItem[sQtyKey] or 0)
+			return
+		end
+	end
+	table.insert(tbDst, mapItem)
+end
 GuideQuestCtrl._mapNodeConfig = {
 	txtChapter = {sComponentName = "TMP_Text"},
 	btnRewardItem = {
@@ -142,6 +154,9 @@ function GuideQuestCtrl:RefreshShow(nCurGroup)
 	end
 	local bGroupReceived = PlayerData.Quest:CheckTourGroupReward(questGroupCfg.Order)
 	local bCanReceive = bAllReceive and not bGroupReceived
+	self._bListCanReceive = bFastReceive
+	self._bChapterCanReceive = bCanReceive
+	bFastReceive = bFastReceive or bCanReceive
 	self._mapNode.btnReceiveChapter.gameObject:SetActive(bCanReceive)
 	self._mapNode.btnReceiveChapterGray.gameObject:SetActive(not bCanReceive and not bGroupReceived)
 	self._mapNode.txtActComplete.gameObject:SetActive(bGroupReceived)
@@ -258,9 +273,72 @@ function GuideQuestCtrl:OnBtnClick_ReceiveChapter()
 	PlayerData.Quest:ReceiveTourGroupReward()
 end
 function GuideQuestCtrl:OnBtnClick_FastReceive()
-	PlayerData.Quest:ReceiveTourReward(0, nil)
+	local bListCanReceive = self._bListCanReceive == true
+	local bChapterCanReceive = self._bChapterCanReceive == true
+	if not bListCanReceive and not bChapterCanReceive then
+		return
+	end
+	if bListCanReceive then
+		PlayerData.Quest:ReceiveTourReward(0)
+	else
+		PlayerData.Quest:ReceiveTourGroupReward(nil)
+	end
+end
+function GuideQuestCtrl:_CheckChapterUnlockedAfterList()
+	if PlayerData.Quest:CheckTourGroupReward(self.nCurOrder) then
+		return false
+	end
+	if self.mapCurQuests == nil then
+		return false
+	end
+	for _, mapData in ipairs(self.mapCurQuests) do
+		if mapData.nStatus ~= 2 then
+			return false
+		end
+	end
+	return true
+end
+function GuideQuestCtrl:_AccumulateTourReward(mapMsgData)
+	if mapMsgData == nil then
+		return
+	end
+	local mapTrans = PlayerData.Item:ProcessTransChangeInfo(mapMsgData.Change)
+	local tbReward, tbSpReward = PlayerData.Item:ProcessRewardDisplayItem(mapMsgData.Rewards, mapTrans)
+	if tbReward ~= nil then
+		for _, v in ipairs(tbReward) do
+			appendOrStack(self._mapMergedReward.tbReward, v, "id", "count", "rewardType")
+		end
+	end
+	if tbSpReward ~= nil then
+		for _, v in ipairs(tbSpReward) do
+			table.insert(self._mapMergedReward.tbSpReward, v)
+		end
+	end
+	if mapTrans ~= nil then
+		for _, v in ipairs(mapTrans.tbSrc or {}) do
+			appendOrStack(self._mapMergedReward.tbSrc, v, "Tid", "Qty")
+		end
+		for _, v in ipairs(mapTrans.tbDst or {}) do
+			appendOrStack(self._mapMergedReward.tbDst, v, "Tid", "Qty")
+		end
+	end
+end
+function GuideQuestCtrl:_FlushBatchReceive()
+	PlayerData.Quest:SetBatchReceiveFlag(false)
+	local mapMerged = self._mapMergedReward or {
+		tbReward = {},
+		tbSpReward = {},
+		tbSrc = {},
+		tbDst = {}
+	}
+	self._mapMergedReward = nil
+	local refreshFunc = function()
+		EventManager.Hit(EventId.QuestDataRefresh, "TourGuide")
+	end
+	UTILS.OpenReceiveByReward(mapMerged, refreshFunc)
 end
 function GuideQuestCtrl:OnBtnClick_FastReceiveGray()
+	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("DoubleDrop_Reward_Receive_Tip"))
 end
 function GuideQuestCtrl:OnBtnClick_RewardItem(btn, nIndex)
 	if self.tbChapterReward[nIndex] ~= nil then

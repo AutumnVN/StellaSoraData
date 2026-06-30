@@ -283,7 +283,6 @@ function StarTowerFastBattleCtrl:RefreshRoomIcon()
 	else
 		self._mapNode.imgRed:SetActive(false)
 		local _, color = ColorUtility.TryParseHtmlString("#08D3D4")
-		NovaAPI.SetImageColor(self._mapNode.imgSkillTypeBg, color)
 		NovaAPI.SetImageColor(self._mapNode.imgFloorNum[1], color)
 		NovaAPI.SetImageColor(self._mapNode.imgFloorNum[2], color)
 		local _, color2 = ColorUtility.TryParseHtmlString("#4CFEFF")
@@ -501,7 +500,7 @@ function StarTowerFastBattleCtrl:OnFastBattleButtonClick()
 	if not self.bHandleOver or self.bPause then
 		return
 	end
-	if self.nNextCaseId < 0 or self.nNextCaseId < 0 then
+	if self.nNextCaseId < 0 or 0 > self.nNextRoomType then
 		return
 	end
 	self:EnterRoom()
@@ -583,7 +582,7 @@ function StarTowerFastBattleCtrl:OnEvent_RefreshFastBattleInfo(tbChangeFateCard,
 			end
 		end
 	end
-	for _, changeInfo in pairs(tbChangeFateCard) do
+	for _, changeInfo in ipairs(tbChangeFateCard) do
 		if changeInfo[4] == 1 then
 			local mapItem = ConfigTable.GetData_Item(changeInfo[1])
 			if nil ~= mapItem then

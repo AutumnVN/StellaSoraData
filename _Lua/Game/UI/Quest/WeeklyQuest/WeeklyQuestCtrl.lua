@@ -1,4 +1,16 @@
 local WeeklyQuestCtrl = class("WeeklyQuestCtrl", BaseCtrl)
+local appendOrStack = function(tbDst, mapItem, sIdKey, sQtyKey, sExtraKey)
+	if mapItem == nil then
+		return
+	end
+	for _, v in ipairs(tbDst) do
+		if v[sIdKey] == mapItem[sIdKey] and v[sExtraKey] == mapItem[sExtraKey] then
+			v[sQtyKey] = (v[sQtyKey] or 0) + (mapItem[sQtyKey] or 0)
+			return
+		end
+	end
+	table.insert(tbDst, mapItem)
+end
 WeeklyQuestCtrl._mapNodeConfig = {
 	txtActValue = {sComponentName = "TMP_Text"},
 	imgActive = {sComponentName = "Image"},
@@ -127,13 +139,15 @@ function WeeklyQuestCtrl:Refresh(tbWeeklyQuest)
 		self:SetPngSprite(self._mapNode.imgActive, mapItemCfg.Icon)
 	end
 	self:RefreshActivityNode()
-	local bFastReceive = false
+	local bListCanReceive = false
 	for _, mapData in ipairs(self.tbWeeklyQuest) do
 		if mapData.nStatus == 1 then
-			bFastReceive = true
+			bListCanReceive = true
 			break
 		end
 	end
+	local bActCanReceive = self.tbCanReceiveAct ~= nil and 0 < #self.tbCanReceiveAct
+	local bFastReceive = bListCanReceive or bActCanReceive
 	for _, mapData in ipairs(self.tbWeeklyQuest) do
 		local questConfig = ConfigTable.GetData("WeeklyQuest", mapData.nTid)
 		if questConfig ~= nil then
@@ -223,10 +237,95 @@ end
 function WeeklyQuestCtrl:OnBtnClick_ActReceive()
 	PlayerData.Quest:ReceiveWeeklyActiveReward()
 end
+function WeeklyQuestCtrl:_RecalcCanReceiveAct()
+	local nActiveCount = 0
+	for _, mapWeeklyQuest in ipairs(self.tbWeeklyQuest or {}) do
+		if mapWeeklyQuest.nStatus == 2 then
+			local mapQuestData = ConfigTable.GetData("WeeklyQuest", mapWeeklyQuest.nTid)
+			if mapQuestData ~= nil then
+				nActiveCount = nActiveCount + mapQuestData.Active
+			end
+		end
+	end
+	self.nActiveCount = nActiveCount
+	self.tbCanReceiveAct = {}
+	for k, mapData in ipairs(self.tbQuestActive or {}) do
+		local bComplete = nActiveCount >= mapData.Active
+		local bReceived = PlayerData.Quest:CheckWeeklyActiveReceive(mapData.Id)
+		if bComplete and not bReceived then
+			table.insert(self.tbCanReceiveAct, k)
+		end
+	end
+end
 function WeeklyQuestCtrl:OnBtnClick_FastReceive()
-	PlayerData.Quest:ReceiveWeeklyReward(0)
+	local bListCanReceive = false
+	for _, mapData in ipairs(self.tbWeeklyQuest) do
+		if mapData.nStatus == 1 then
+			bListCanReceive = true
+			break
+		end
+	end
+	local bActCanReceive = self.tbCanReceiveAct ~= nil and #self.tbCanReceiveAct > 0
+	if not bListCanReceive and not bActCanReceive then
+		return
+	end
+	if bListCanReceive then
+		PlayerData.Quest:ReceiveWeeklyReward(0)
+	else
+		PlayerData.Quest:ReceiveWeeklyActiveReward()
+	end
+end
+function WeeklyQuestCtrl:_AccumulateListChange(mapMsgData)
+	if mapMsgData == nil then
+		return
+	end
+	local mapReward = PlayerData.Item:ProcessRewardChangeInfo(mapMsgData)
+	if mapReward == nil then
+		return
+	end
+	for _, v in ipairs(mapReward.tbReward or {}) do
+		appendOrStack(self._mapMergedReward.tbReward, v, "id", "count", "rewardType")
+	end
+	for _, v in ipairs(mapReward.tbSpReward or {}) do
+		table.insert(self._mapMergedReward.tbSpReward, v)
+	end
+	for _, v in ipairs(mapReward.tbSrc or {}) do
+		appendOrStack(self._mapMergedReward.tbSrc, v, "Tid", "Qty")
+	end
+	for _, v in ipairs(mapReward.tbDst or {}) do
+		appendOrStack(self._mapMergedReward.tbDst, v, "Tid", "Qty")
+	end
+end
+function WeeklyQuestCtrl:_AccumulateDisplayReward(tbShowReward)
+	if tbShowReward == nil then
+		return
+	end
+	for _, v in ipairs(tbShowReward) do
+		appendOrStack(self._mapMergedReward.tbReward, v, "id", "count", "rewardType")
+	end
+end
+function WeeklyQuestCtrl:_FlushBatchReceive()
+	PlayerData.Quest:SetBatchReceiveFlag(false)
+	local mapMerged = self._mapMergedReward or {
+		tbReward = {},
+		tbSpReward = {},
+		tbSrc = {},
+		tbDst = {}
+	}
+	self._mapMergedReward = nil
+	local refreshFunc = function()
+		EventManager.Hit(EventId.QuestDataRefresh, "Weekly")
+	end
+	local tipCallback = function()
+		local bOpen = PlayerData.Base:TryOpenWorldClassUpgrade(refreshFunc)
+		if not bOpen then
+			refreshFunc()
+		end
+	end
+	UTILS.OpenReceiveByReward(mapMerged, tipCallback)
 end
 function WeeklyQuestCtrl:OnBtnClick_FastReceiveGray()
+	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("DoubleDrop_Reward_Receive_Tip"))
 end
 function WeeklyQuestCtrl:OnBtnClick_NodeItem(btn, nIndex)
 	local bCanReceive = false

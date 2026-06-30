@@ -203,6 +203,14 @@ function MainlineExCtrl:OnEvent_SelectMainlineBattle(bConfirm)
 		EventManager.Hit(EventId.OpenPanel, PanelId.RegionBossFormation, AllEnum.RegionBossFormationType.Story, 0, self.avgId)
 	end
 	if bConfirm then
+		local storyCfgData = PlayerData.Avg:GetStoryCfgData(self.avgId)
+		if storyCfgData ~= nil then
+			local nBattleType = storyCfgData.EnterMethod
+			if nBattleType == GameEnum.EnterMethod.JumpFormation then
+				PlayerData.Avg:SendMsg_STORY_ENTER(self.avgId, 0)
+				return
+			end
+		end
 		EventManager.Hit(EventId.SetTransition, 2, OpenPanel)
 	end
 end

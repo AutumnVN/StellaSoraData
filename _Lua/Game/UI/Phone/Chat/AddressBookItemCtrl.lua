@@ -43,8 +43,8 @@ function AddressBookItemCtrl:RefreshChatContent(nChatId)
 	end
 	self.chatData = chatData
 	local nProcess = 1
-	if self.chatData.nStatus == AllEnum.PhoneChatState.Complete then
-		nProcess = #self.chatData.avgMsg
+	if self.chatData.nStatus == AllEnum.PhoneChatState.Complete and PlayerData.Phone:EnsureChatAvgLoaded(self.chatData) then
+		nProcess = self.chatData.nAllProcess
 	end
 	local chatMsg = PlayerData.Phone:GetChatMsg(self.chatData, nProcess)
 	local sContent = ""

@@ -6,6 +6,7 @@ WeeklyCopiesPanel._tbDefine = {
 	}
 }
 function WeeklyCopiesPanel:Awake()
+	self.curSelMonster = 0
 end
 function WeeklyCopiesPanel:OnEnable()
 end

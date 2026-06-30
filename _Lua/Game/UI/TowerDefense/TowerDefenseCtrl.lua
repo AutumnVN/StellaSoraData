@@ -5,8 +5,7 @@ local WwiseAudioMgr = CS.WwiseAudioManager.Instance
 local barMaxLength = 200
 local bar_exp_minX = -98
 local bar_exp_maxX = 106
-local bar_item_minX = 3
-local bar_item_maxX = 215
+local itemBarWidth = 215
 local Time = CS.UnityEngine.Time
 local cardAnimCD = 0.1
 local ItemType = {
@@ -101,6 +100,7 @@ TowerDefenseCtrl._mapNodeConfig = {
 	go_item = {},
 	cd_mask = {},
 	img_disable = {},
+	bg_Itembar = {},
 	item_bar = {
 		sComponentName = "RectTransform"
 	},
@@ -224,7 +224,9 @@ TowerDefenseCtrl._mapEventConfig = {
 	ResetEnergy = "OnEvent_UpdateEnergy",
 	TowerDefenseShowFullScreenPanel = "OnEvent_OnPause",
 	TowerDefenseShowHideScreenPanel = "OnEvent_OnResume",
-	ActivityTowerDefenseLevelSettleFailed = "OnEvent_ActivityTowerDefenseLevelSettleFailed"
+	ActivityTowerDefenseLevelSettleFailed = "OnEvent_ActivityTowerDefenseLevelSettleFailed",
+	TOWERDEFENSE_SHOW_ITEM_ENERGY = "OnEvent_ShowItemEnergy",
+	TOWERDEFENSE_UPDATE_ITEM_ENERGY = "OnEvent_UpdateItemEnergy"
 }
 TowerDefenseCtrl._mapRedDotConfig = {}
 function TowerDefenseCtrl:Awake()
@@ -1235,5 +1237,25 @@ function TowerDefenseCtrl:OnEvent_ActivityTowerDefenseLevelSettleFailed()
 		EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseResultPanel, false, sLevelName, tbTarget, cb, msgData, 0)
 	end
 	self.TowerDefenseData:RequestFinishLevelFailed(self.nLevelId, 0, requestCb)
+end
+function TowerDefenseCtrl:OnEvent_UpdateItemEnergy(curValue, maxValue, nTime, bAuto)
+	curValue = math.max(0, maxValue - curValue)
+	if self.itemTweener ~= nil then
+		self.itemTweener:Kill()
+	end
+	if bAuto then
+		self.itemTweener = DOTween.To(function()
+			return maxValue - curValue
+		end, function(v)
+			self._mapNode.item_bar.sizeDelta = Vector2(itemBarWidth * (v / maxValue), self._mapNode.item_bar.sizeDelta.y)
+		end, maxValue, nTime):OnComplete(function()
+			self._mapNode.item_bar.sizeDelta = Vector2(itemBarWidth, self._mapNode.bar.sizeDelta.y)
+		end)
+	else
+		self._mapNode.item_bar.sizeDelta = Vector2(itemBarWidth * ((maxValue - curValue) / maxValue), self._mapNode.item_bar.sizeDelta.y)
+	end
+end
+function TowerDefenseCtrl:OnEvent_ShowItemEnergy(bIsShow)
+	self._mapNode.bg_Itembar:SetActive(bIsShow)
 end
 return TowerDefenseCtrl

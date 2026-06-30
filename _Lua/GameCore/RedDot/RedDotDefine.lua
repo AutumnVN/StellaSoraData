@@ -99,6 +99,7 @@ local RedDotDefine = {
 	Activity_PenguinCard_Level = "Activity.PenguinCard.Level.<param>",
 	Activity_Group_PenguinCard_Level = "Activity_Group_New.<param>.PenguinCard",
 	Activity_Group_TrekkerVersus = "Activity.Group.<param>.TrekkerVersus",
+	Activity_DoubleDrop_Quest = "Activity.DoubleDrop.<param>",
 	ActivityLevel = "Activity_Group_New.<param>.ActivityLevel",
 	ActivityLevel_Explore = "Activity_Group_New.<param>.ActivityLevel.Explore",
 	ActivityLevel_Explore_Level = "Activity_Group_New.<param>.ActivityLevel.Explore.<param>",

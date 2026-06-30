@@ -78,10 +78,6 @@ function HttpNetHandlerPlus.activity_story_reward_receive_succeed_ack(mapMsgData
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
-function HttpNetHandlerPlus.activity_history_story_settle_succeed_ack(mapMsgData)
-	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
-	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
-end
 function HttpNetHandlerPlus.activity_task_reward_receive_succeed_ack(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
@@ -240,6 +236,10 @@ function HttpNetHandlerPlus.activity_story_settle_succeed_ack(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
+function HttpNetHandlerPlus.activity_history_story_settle_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
 function HttpNetHandlerPlus.milkout_settle_succeed_ack(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
@@ -271,9 +271,19 @@ end
 function HttpNetHandlerPlus.activity_gds_settle_succeed_ack(mapMsgData)
 	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
-	UTILS.OpenReceiveByChangeInfo(mapMsgData)
 end
 function HttpNetHandlerPlus.clear_all_activity_golden_spy_levels_notify(mapMsgData)
 	EventManager.Hit("ClearAllGoldenSpyLevels", mapMsgData)
+end
+function HttpNetHandlerPlus.activity_double_quest_reward_receive_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
+function HttpNetHandlerPlus.activity_double_reward_times_notify(mapMsgData)
+	local actData = PlayerData.Activity:GetActivityDataById(mapMsgData.ActivityId)
+	if actData ~= nil then
+		actData:UpdateDoubleCount(mapMsgData.UseTimes)
+		EventManager.Hit("UpdateInstanceDoubleCount")
+	end
 end
 return HttpNetHandlerPlus

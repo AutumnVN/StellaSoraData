@@ -74,6 +74,16 @@ TowerDefenseLevelDetailCtrl._mapNodeConfig = {
 	goDragMin = {sComponentName = "Transform"},
 	goDragMax = {sComponentName = "Transform"},
 	special_item = {},
+	db_fixed = {},
+	txt_fixed = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "TowerDef_Fixed"
+	},
+	db_head = {},
+	txt_head = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "TowerDef_Head"
+	},
 	animator = {
 		sNodeName = "----SafeAreaRoot_Detail---",
 		sComponentName = "Animator"
@@ -243,13 +253,18 @@ function TowerDefenseLevelDetailCtrl:UpdateCharacter()
 	local teamCharacterCount = floorConfig.MemberNum
 	if teamCharacterCount == 0 then
 		self.tbCharGuideId = {}
-		local foreach = function(data)
-			if data.ActivityId == self.nActId and data.GuideType == GameEnum.TowerDefGuideType.Character and table.indexof(floorConfig.TeamGroup, data.ObjectId) > 0 then
-				table.insert(self.tbCharGuideId, data.Id)
+		for k, v in ipairs(floorConfig.TeamGroup) do
+			local foreach = function(data)
+				if data.ActivityId == self.nActId and data.GuideType == GameEnum.TowerDefGuideType.Character and data.ObjectId == v then
+					table.insert(self.tbCharGuideId, data.Id)
+					return
+				end
 			end
+			ForEachTableLine(DataTable.TowerDefenseGuide, foreach)
 		end
-		ForEachTableLine(DataTable.TowerDefenseGuide, foreach)
 	end
+	self._mapNode.db_fixed:SetActive(teamCharacterCount == 0)
+	self._mapNode.db_head:SetActive(teamCharacterCount ~= 0)
 	for i = 1, 6 do
 		if teamCharacterCount == 0 then
 			if i > #self.tbCharGuideId then
@@ -260,7 +275,7 @@ function TowerDefenseLevelDetailCtrl:UpdateCharacter()
 			NovaAPI.SetTMPText(self._mapNode.txt_charCount, string.format("<color=#ffde6a>%d</color>/%d", #self.tbCharGuideId, #self.tbCharGuideId))
 			self:InitDragOrderList()
 		else
-			if teamCharacterCount < i then
+			if i > teamCharacterCount then
 				self._mapNode.team_character[i]:SetData(-1, false, i)
 			elseif i > #self.tbCharGuideId then
 				self._mapNode.team_character[i]:SetData(0, true, i)

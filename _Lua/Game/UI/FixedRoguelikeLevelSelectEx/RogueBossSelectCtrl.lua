@@ -221,7 +221,10 @@ RogueBossSelectCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "RegusBoss_SatisfyConditions_UnLock"
 	},
-	Conditions_ = {nCount = 2}
+	Conditions_ = {nCount = 2},
+	imgDoubleDrop = {},
+	txtDoubleDrop = {sComponentName = "TMP_Text"},
+	txtDoubleDropCount = {sComponentName = "TMP_Text"}
 }
 RogueBossSelectCtrl._mapEventConfig = {
 	[EventId.UIHomeConfirm] = "OnEvent_Home",
@@ -230,7 +233,8 @@ RogueBossSelectCtrl._mapEventConfig = {
 	[EventId.UpdateWorldClass] = "OnEvent_UpdateWorldClass",
 	SelectRogueBossItem = "OnEvent_SelectRogueBossItem",
 	StartLoopScrollSnap = "OnEvent_StartLoopScrollSnap",
-	StartDragLoopScrollSnap = "OnEvent_StartDragLoopScrollSnap"
+	StartDragLoopScrollSnap = "OnEvent_StartDragLoopScrollSnap",
+	RaidSuccess = "OnEvent_RaidSuccess"
 }
 RogueBossSelectCtrl._mapRedDotConfig = {
 	[RedDotDefine.Map_RogueBoss] = {sNodeName = "redDotHard"}
@@ -609,6 +613,12 @@ function RogueBossSelectCtrl:RefreshLevelInfo(nGroupId, nDifficult)
 	self._mapNode.btnGo.gameObject:SetActive(isUnLock)
 	self._mapNode.btnLock.gameObject:SetActive(not isUnLock)
 	self._mapNode.ListConditions:SetActive(not isUnLock)
+	self._mapNode.imgDoubleDrop:SetActive(false)
+	self.actData = PlayerData.Activity:GetActivityDataByType(GameEnum.activityType.Double)
+	if self.actData ~= nil and self.actData:CheckActShow() and self.actData:CheckInstanceType(GameEnum.instanceType.RegionBoss) then
+		self._mapNode.imgDoubleDrop:SetActive(isUnLock)
+		self:RefreshDoubleDropCount()
+	end
 	if not isUnLock and not isHandCoreType then
 		local imgConditions_Lock_WC = self._mapNode.Conditions_[1].gameObject.transform:Find("imgConditions_Lock").gameObject
 		local imgConditions_UnLock_WC = self._mapNode.Conditions_[1].gameObject.transform:Find("imgConditions_UnLock").gameObject
@@ -816,7 +826,7 @@ function RogueBossSelectCtrl:OnClickBtnRaid()
 	end
 	local mapRogueBossLevel = self.mapAllLevel[self.curGroupId][self.curSelectHard]
 	local nNeedEnergy = mapRogueBossLevel.EnergyConsume
-	EventManager.Hit(EventId.OpenPanel, PanelId.Raid, mapRogueBossLevel.Id, nNeedEnergy, 2)
+	EventManager.Hit(EventId.OpenPanel, PanelId.Raid, mapRogueBossLevel.Id, nNeedEnergy, GameEnum.instanceType.RegionBoss)
 end
 function RogueBossSelectCtrl:OnBtnClick_Lock()
 	self:OnBtnClick_TogTips(nil, self.SelectDifficult)
@@ -931,6 +941,17 @@ function RogueBossSelectCtrl:SetBgImg()
 	self:SetPngSprite(self._mapNode.BG1, "Image/UIBG/bg_stage_01")
 	self._mapNode.FXNormal:SetActive(true)
 	self._mapNode.FXHard:SetActive(false)
+end
+function RogueBossSelectCtrl:RefreshDoubleDropCount()
+	if self.actData ~= nil and self.actData:CheckActShow() and self.actData:CheckInstanceType(GameEnum.instanceType.RegionBoss) then
+		local _, str = self.actData:GetDropString()
+		local nCount, nMaxCount = self.actData:GetDoubleDropsTimes()
+		NovaAPI.SetTMPText(self._mapNode.txtDoubleDrop, str)
+		NovaAPI.SetTMPText(self._mapNode.txtDoubleDropCount, string.format("%s/%s", nMaxCount - nCount, nMaxCount))
+	end
+end
+function RogueBossSelectCtrl:OnEvent_RaidSuccess()
+	self:RefreshDoubleDropCount()
 end
 function RogueBossSelectCtrl:OnBtnClick_BossTick(btn)
 	local curCoinItmeId = AllEnum.CoinItemId.RogueHardCoreTick

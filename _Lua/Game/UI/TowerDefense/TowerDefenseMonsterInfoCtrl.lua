@@ -54,7 +54,7 @@ TowerDefenseMonsterInfoCtrl._mapNodeConfig = {
 	},
 	txtStoryTitle = {
 		sComponentName = "TMP_Text",
-		sLanguageId = "EnemyInfo_Window_StoryTitle"
+		sLanguageId = "TowerDefense_Monster_Brief"
 	}
 }
 TowerDefenseMonsterInfoCtrl._mapEventConfig = {
@@ -181,7 +181,12 @@ function TowerDefenseMonsterInfoCtrl:RefreshMonsterInfo(nMonsterId)
 	else
 		self._mapNode.goMonsterType:SetActive(false)
 	end
-	NovaAPI.SetTMPText(self._mapNode.txtStory, monsterManual.Desc)
+	local tdMonsterConfig = ConfigTable.GetData("TowerDefenseMonster", nMonsterId)
+	if tdMonsterConfig == nil then
+		printError(string.format("TowerDefenseMonster数据为空！！！id = [%s]", nMonsterId))
+		return
+	end
+	NovaAPI.SetTMPText(self._mapNode.txtStory, tdMonsterConfig.Brief)
 	LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.goStory)
 	local eets = monsterAdjust.EET
 	self:RefreshAbility(monsterManual)

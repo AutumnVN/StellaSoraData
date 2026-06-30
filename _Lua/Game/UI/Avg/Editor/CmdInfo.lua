@@ -1291,8 +1291,15 @@ function CmdInfo.VisualizedCmd_SetPhoneMsgChoiceBegin(ctrl, tr, param)
 	NovaAPI.SetInputFieldText(tr:Find("groupId_mask/input_GroupId"):GetComponent("InputField"), param[1])
 	ctrl:SetAvgCharId(tr, param[8])
 	local nOffset = 0
-	for i = 1, 3 do
-		NovaAPI.SetInputFieldText(tr:Find("content/input_Content_" .. tostring(i)):GetComponent("InputField"), param[i + 1 + nOffset])
+	local bIsMale = PlayerBaseData:GetPlayerSex() == true
+	for i = 1, 6 do
+		local trInputContent = tr:Find("content/input_Content_" .. tostring(i))
+		NovaAPI.SetInputFieldText(trInputContent:GetComponent("InputField"), param[i + 1])
+		if i <= 3 then
+			trInputContent.gameObject:SetActive(bIsMale == false)
+		else
+			trInputContent.gameObject:SetActive(bIsMale == true)
+		end
 	end
 end
 function CmdInfo.TbDataToCfgStr_SetPhoneMsgChoiceBegin(ctrl, tbParam)
@@ -1300,11 +1307,14 @@ function CmdInfo.TbDataToCfgStr_SetPhoneMsgChoiceBegin(ctrl, tbParam)
 	local txt2 = Avg_ProcEnquotes(tbParam[2] or "")
 	local txt3 = Avg_ProcEnquotes(tbParam[3] or "")
 	local txt4 = Avg_ProcEnquotes(tbParam[4] or "")
-	return string.format(sCmd, tbParam[1], txt2, txt3, txt4, tbParam[5], tbParam[6], tbParam[7], tbParam[8])
+	local txt5 = Avg_ProcEnquotes(tbParam[5] or "")
+	local txt6 = Avg_ProcEnquotes(tbParam[6] or "")
+	local txt7 = Avg_ProcEnquotes(tbParam[7] or "")
+	return string.format(sCmd, tbParam[1], txt2, txt3, txt4, txt5, txt6, txt7, tbParam[8])
 end
 function CmdInfo.ParseParam_SetPhoneMsgChoiceBegin(ctrl, tr, tbParam)
 	tbParam[1] = NovaAPI.GetInputFieldText(tr:Find("groupId_mask/input_GroupId"):GetComponent("InputField"))
-	for i = 1, 3 do
+	for i = 1, 6 do
 		tbParam[i + 1] = ctrl:GetInputTalkContent(tr, "content/input_Content_" .. tostring(i))
 	end
 	tbParam[8] = ctrl:GetAvgCharId(tr)

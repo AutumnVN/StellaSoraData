@@ -296,7 +296,7 @@ function TowerDefenseGuideCtrl:UpdateDetail()
 			return
 		end
 		NovaAPI.SetTMPText(self._mapNode.txt_itemName, config.Name)
-		NovaAPI.SetTMPText(self._mapNode.txt_itemCD, ConfigTable.GetUIText("TowerDef_CD") .. config.Cd .. "s")
+		NovaAPI.SetTMPText(self._mapNode.txt_itemCD, ConfigTable.GetUIText("TowerDef_CD") .. config.Cd .. ConfigTable.GetUIText("CommonTips_CDSec"))
 		NovaAPI.SetTMPText(self._mapNode.txt_des, config.Des)
 		self._mapNode.item_detail:SetActive(true)
 	end

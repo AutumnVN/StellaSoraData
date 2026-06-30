@@ -14,6 +14,14 @@ GameTableDefine.CommonTable = {
 			"Desc"
 		}
 	},
+	ActivityDouble = {
+		Key = true,
+		Lang = {"DesText"}
+	},
+	ActivityDoubleQuest = {
+		Key = true,
+		Lang = {"Desc"}
+	},
 	ActivityGoods = {
 		Key = true,
 		Lang = {"Name", "Desc"}
@@ -697,6 +705,7 @@ GameTableDefine.CommonTable = {
 	Monster = {Key = true},
 	MonsterActionBranch = {Key = true},
 	MonsterAI = {Key = true},
+	MonsterAttackAjust = {},
 	MonsterAttributeContact = {Key = true},
 	MonsterBornGroup = {},
 	MonsterGroup = {Key = true},

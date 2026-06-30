@@ -1,8 +1,8 @@
 local GoldenSpyBuffSelectCtrl = class("GoldenSpyBuffSelectCtrl", BaseCtrl)
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
 local GamepadUIManager = require("GameCore.Module.GamepadUIManager")
-local BuffSpritePath = "UI_Activity/_400008/SpriteAtlas/Buff/"
-local ItemSpritePath = "UI_Activity/_400008/SpriteAtlas/Item/"
+local BuffSpritePath = "UI_Activity/_%s/SpriteAtlas/Buff/"
+local ItemSpritePath = "UI_Activity/_%s/SpriteAtlas/Item/"
 local bg_buff = {
 	[1] = "bg_goldenspy_game_buff_04",
 	[2] = "bg_goldenspy_game_buff_02",
@@ -66,9 +66,20 @@ GoldenSpyBuffSelectCtrl._mapNodeConfig = {
 	txt_toolBox = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "GoldenSpy_ToolBox_Title"
-	}
+	},
+	btn_Refresh = {
+		sComponentName = "NaviButton",
+		callback = "OnBtnClick_Refresh"
+	},
+	txt_Refresh = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "GoldenSpy_Refresh_Title"
+	},
+	txt_num = {sComponentName = "TMP_Text"}
 }
-GoldenSpyBuffSelectCtrl._mapEventConfig = {}
+GoldenSpyBuffSelectCtrl._mapEventConfig = {
+	GM_GoldenSpy_RefeshBuff = "OnEvent_GM_GoldenSpy_RefeshBuff"
+}
 GoldenSpyBuffSelectCtrl._mapRedDotConfig = {}
 function GoldenSpyBuffSelectCtrl:Awake()
 	self._mapNode.root:SetActive(false)
@@ -79,12 +90,17 @@ function GoldenSpyBuffSelectCtrl:Awake()
 	if type(param) == "table" then
 		self.tbShowItem = param[1]
 		self.tbBuff = param[2]
-		self.tbSelectBuff = param[3]
+		self.tbBuffPool = param[3]
 		self.selectedCallback = param[4]
+		self.getRefreshCallback = param[5]
+		self.refreshCallback = param[6]
+		self.nActId = param[7]
 	end
 	self.mapBuffCellCtrl = {}
+	self.tbSelectBuff = self:RandomSelectBuff()
 	self:ShowBuffSelect(self.tbShowItem, self.tbBuff, self.tbSelectBuff, self.selectedCallback)
 	self.bConfirmed = false
+	self:RefreshRefreshCount()
 end
 function GoldenSpyBuffSelectCtrl:OnEnable()
 	local wait = function()
@@ -112,6 +128,65 @@ function GoldenSpyBuffSelectCtrl:OnDestroy()
 	end
 	self.mapBuffCellCtrl = {}
 end
+function GoldenSpyBuffSelectCtrl:RandomSelectBuff()
+	local tbSelectBuff = {}
+	local tempPool = self:CopyTable(self.tbBuffPool)
+	for i = 1, 3 do
+		local buff, index = self:RandomBuff(tempPool)
+		table.insert(tbSelectBuff, buff.buffId)
+		table.remove(tempPool, index)
+	end
+	return tbSelectBuff
+end
+function GoldenSpyBuffSelectCtrl:RandomBuff(tbBuffPool)
+	local tbBuffCount = {}
+	local tbRemoveBuffIds = {}
+	for _, v in ipairs(self.tbBuff) do
+		tbBuffCount[v.buffData.buffId] = (tbBuffCount[v.buffData.buffId] or 0) + 1
+	end
+	for k, v in pairs(tbBuffCount) do
+		local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", k)
+		if buffCfg ~= nil and v >= buffCfg.MaxCount then
+			table.insert(tbRemoveBuffIds, k)
+		end
+	end
+	for i = #tbBuffPool, 1, -1 do
+		for _, v in ipairs(tbRemoveBuffIds) do
+			if tbBuffPool[i].buffId == v then
+				table.remove(tbBuffPool, i)
+				break
+			end
+		end
+	end
+	local nTotalWeight = 0
+	for i, v in ipairs(tbBuffPool) do
+		nTotalWeight = nTotalWeight + math.floor(v.weight)
+	end
+	local nRandom = math.random(1, nTotalWeight)
+	local nSum = 0
+	local nIndex = 0
+	local buffData
+	for i, v in ipairs(tbBuffPool) do
+		nSum = nSum + v.weight
+		if nRandom <= nSum then
+			buffData = v
+			nIndex = i
+			break
+		end
+	end
+	if NovaAPI.IsEditorPlatform() then
+		print("GoldenSpyLevelCtrl: tbBuffPool:--------------------------------")
+		for i, v in ipairs(tbBuffPool) do
+			local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
+			print("GoldenSpyLevelCtrl: buffId:", v.buffId, " Name:", buffCfg.Name, " weight:", v.weight, " TotalWeight:", nTotalWeight, " 概率：", v.weight / nTotalWeight * 100, "%")
+		end
+	end
+	return buffData, nIndex
+end
+function GoldenSpyBuffSelectCtrl:RefreshRefreshCount()
+	local nRefreshCount = self.getRefreshCallback() or 0
+	NovaAPI.SetTMPText(self._mapNode.txt_num, nRefreshCount)
+end
 function GoldenSpyBuffSelectCtrl:ShowBuffSelect(tbShowItem, tbBuff, tbSelectBuff, selectedCallback)
 	self.selectedCallback = selectedCallback
 	self:RefreshItemList(tbShowItem)
@@ -130,7 +205,7 @@ function GoldenSpyBuffSelectCtrl:OnRefreshItemGrid(goGrid, gridIndex)
 	end
 	local img_icon = goGrid.transform:Find("db/icon"):GetComponent("Image")
 	local txt_score = goGrid.transform:Find("db/txt_score"):GetComponent("TMP_Text")
-	self:SetPngSprite(img_icon, ItemSpritePath .. itemCfg.IconPath .. "_s")
+	self:SetPngSprite(img_icon, string.format(ItemSpritePath, self.nActId) .. itemCfg.IconPath .. "_s")
 	NovaAPI.SetTMPText(txt_score, itemScore)
 end
 function GoldenSpyBuffSelectCtrl:RefreshBuffSelectList(tbSelectBuff)
@@ -151,11 +226,11 @@ function GoldenSpyBuffSelectCtrl:RefreshBuffSelectList(tbSelectBuff)
 			local txt_des = btn.transform:Find("AnimRoot/CardRoot/txt_des"):GetComponent("TMP_Text")
 			local db_type = btn.transform:Find("AnimRoot/CardRoot/db_type"):GetComponent("Image")
 			local txt_type = btn.transform:Find("AnimRoot/CardRoot/db_type/txt_type"):GetComponent("TMP_Text")
-			self:SetSprite(img_db, "UI_Activity/_400008/SpriteAtlas/" .. bg_buff[buffCfg.BuffType])
-			self:SetPngSprite(img_icon, BuffSpritePath .. buffCfg.Icon .. "_m")
+			self:SetSprite(img_db, string.format("UI_Activity/_%s/SpriteAtlas/", self.nActId) .. bg_buff[buffCfg.BuffType])
+			self:SetPngSprite(img_icon, string.format(BuffSpritePath, self.nActId) .. buffCfg.Icon .. "_m")
 			NovaAPI.SetTMPText(txt_name, buffCfg.Name)
 			NovaAPI.SetTMPText(txt_des, buffCfg.Desc)
-			self:SetPngSprite(db_type, "UI_Activity/_400008/SpriteAtlas/" .. bg_type[buffCfg.BuffType])
+			self:SetPngSprite(db_type, string.format("UI_Activity/_%s/SpriteAtlas/", self.nActId) .. bg_type[buffCfg.BuffType])
 			NovaAPI.SetTMPText(txt_type, ConfigTable.GetUIText(buff_type_lang[buffCfg.BuffType]))
 			goSelect:SetActive(false)
 			local tbEffectItem = buffCfg.ConnectItems
@@ -169,7 +244,7 @@ function GoldenSpyBuffSelectCtrl:RefreshBuffSelectList(tbSelectBuff)
 				local goItem = tbItemGO[i]
 				local itemCfg = ConfigTable.GetData("GoldenSpyItem", tbEffectItem[i])
 				local img_icon = goItem.transform:Find("itemIcon"):GetComponent("Image")
-				self:SetPngSprite(img_icon, ItemSpritePath .. itemCfg.IconPath .. "_s")
+				self:SetPngSprite(img_icon, string.format(ItemSpritePath, self.nActId) .. itemCfg.IconPath .. "_s")
 				goItem:SetActive(true)
 			end
 		end
@@ -201,7 +276,7 @@ function GoldenSpyBuffSelectCtrl:OnRefreshBuffGrid(goGrid, gridIndex)
 		objCtrl = self:BindCtrlByNode(goGrid, "Game.UI.Activity.GoldenSpy.GoldenSpyBuffCellCtrl")
 		self.mapBuffCellCtrl[nInstanceId] = objCtrl
 	end
-	objCtrl:SetData(self.tbBuff[nIndex])
+	objCtrl:SetData(self.tbBuff[nIndex], self.nActId, self._panel.nTipsPanelId)
 end
 function GoldenSpyBuffSelectCtrl:ResetSelect(tbUI)
 	self.nSelectIdx = 0
@@ -219,6 +294,13 @@ function GoldenSpyBuffSelectCtrl:ResetSelect(tbUI)
 			end
 		end
 	end, true, true, true)
+end
+function GoldenSpyBuffSelectCtrl:CopyTable(tb)
+	local tbTemp = {}
+	for _, v in ipairs(tb) do
+		table.insert(tbTemp, v)
+	end
+	return tbTemp
 end
 function GoldenSpyBuffSelectCtrl:OnBtnClick_BuffItem(btn, nIndex)
 	if nil == self.tbSelectBuff[nIndex] or self.nSelectIdx == nIndex then
@@ -262,10 +344,32 @@ function GoldenSpyBuffSelectCtrl:OnBtnClick_Confirm(btn, nIndex)
 			self.selectedCallback(self.tbSelectBuff[self.nSelectIdx])
 			local wait = function()
 				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-				EventManager.Hit(EventId.ClosePanel, PanelId.GoldenSpyBuffSelectPanel)
+				EventManager.Hit(EventId.ClosePanel, self._panel._nPanelId)
 			end
 			cs_coroutine.start(wait)
 		end, true, true, true, nil)
 	end
+end
+function GoldenSpyBuffSelectCtrl:OnBtnClick_Refresh(btn, nIndex)
+	local nRefreshCount = self.getRefreshCallback() or 0
+	if nRefreshCount <= 0 then
+		return
+	end
+	self.tbSelectBuff = self:RandomSelectBuff()
+	self:RefreshBuffSelectList(self.tbSelectBuff)
+	self:ResetSelect(self._mapNode.btnBuff)
+	if self.refreshCallback ~= nil then
+		self.refreshCallback()
+	end
+	self:RefreshRefreshCount()
+	self._mapNode.animCtrl:Play("GoldenSpyBuffSelectPanel_in1Empty")
+	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
+end
+function GoldenSpyBuffSelectCtrl:OnEvent_GM_GoldenSpy_RefeshBuff()
+	self.tbSelectBuff = self:RandomSelectBuff()
+	self:RefreshBuffSelectList(self.tbSelectBuff)
+	self:ResetSelect(self._mapNode.btnBuff)
+	self._mapNode.animCtrl:Play("GoldenSpyBuffSelectPanel_in1Empty")
+	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)
 end
 return GoldenSpyBuffSelectCtrl

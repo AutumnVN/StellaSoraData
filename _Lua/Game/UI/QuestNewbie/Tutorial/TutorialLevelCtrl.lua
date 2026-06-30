@@ -172,9 +172,6 @@ function TutorialLevelCtrl:OnEvent_QuestDataRefresh(questType)
 	end
 end
 function TutorialLevelCtrl:OnEvent_TutorialQuestReceived(msgData)
-	local refreshFunc = function()
-		self:Refresh()
-	end
-	UTILS.OpenReceiveByChangeInfo(msgData, refreshFunc)
+	self:Refresh()
 end
 return TutorialLevelCtrl

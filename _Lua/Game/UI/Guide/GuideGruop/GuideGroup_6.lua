@@ -60,6 +60,7 @@ function GuideGroup_6:Step_1()
 	self.parent:PlayTypeMask(self.msg)
 end
 function GuideGroup_6:Step_2()
+	EventManager.Hit("Guide_SelectQuestPage", AllEnum.QuestPanelTab.GuideQuest)
 	self.msg = {
 		BindIcon = "QuestPanel/----SafeAreaRoot----/rtLevel",
 		Size = {340, 350},

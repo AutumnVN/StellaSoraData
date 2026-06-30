@@ -89,8 +89,14 @@ function PotentialPreselectionCtrl:RefreshPanel()
 end
 function PotentialPreselectionCtrl:RefreshList()
 	self.tbAllPreselectionList = PlayerData.PotentialPreselection:GetPreselectionList()
-	if self.tbPreselectionList == nil then
-		self.tbPreselectionList = self.tbAllPreselectionList
+	self.tbPreselectionList = {}
+	for _, v in pairs(self.tbAllPreselectionList) do
+		local mapMainChar = v.tbCharPotential[1]
+		local nCharId = mapMainChar.nCharId
+		local isFilter = PlayerData.Filter:CheckFilterByCharAndOption(nCharId, self._panel.tbOption)
+		if isFilter then
+			table.insert(self.tbPreselectionList, v)
+		end
 	end
 	NovaAPI.SetTMPText(self._mapNode.txt_BuildCount, string.format("%d/%d", #self.tbAllPreselectionList, self.nAllBuildCount))
 	local isDirty = PlayerData.Filter:IsDirtyByOption(self._panel.tbOption)
@@ -203,7 +209,6 @@ end
 function PotentialPreselectionCtrl:OnDisable()
 	for nInstanceId, objCtrl in pairs(self.mapGridCtrl or {}) do
 		self:UnbindCtrlByNode(objCtrl)
-		self.mapGridCtrl[nInstanceId] = nil
 	end
 	self.mapGridCtrl = {}
 	self._panel.mapCacheFilter = {}
@@ -265,19 +270,9 @@ function PotentialPreselectionCtrl:OnBtnClick_CloseDelete()
 end
 function PotentialPreselectionCtrl:OnEvent_RefreshByFilter()
 	self._panel.mapCacheFilter = {}
-	self.tbPreselectionList = {}
-	for _, v in pairs(self.tbAllPreselectionList) do
-		local mapMainChar = v.tbCharPotential[1]
-		local nCharId = mapMainChar.nCharId
-		local isFilter = PlayerData.Filter:CheckFilterByCharAndOption(nCharId, self._panel.tbOption)
-		if isFilter then
-			table.insert(self.tbPreselectionList, v)
-		end
-	end
 	self:RefreshList()
 end
 function PotentialPreselectionCtrl:OnEvent_DeleteSuc()
-	self.tbPreselectionList = nil
 	self:RefreshList()
 end
 function PotentialPreselectionCtrl:OnEvent_RefreshPreselectionList()

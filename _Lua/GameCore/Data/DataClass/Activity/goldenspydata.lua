@@ -12,6 +12,8 @@ function GoldenSpyData:Init()
 	self.tbLevelData = {}
 	self.cacheEnterFloorList = {}
 	self:AddListeners()
+	self.nGroupId = 0
+	self.nLevelId = 0
 end
 function GoldenSpyData:AddListeners()
 	EventManager.Add(EventId.IsNewDay, self, self.OnEvent_NewDay)
@@ -174,7 +176,13 @@ function GoldenSpyData:RefreshRedDot()
 	end
 	local actGroupId = ConfigTable.GetData("Activity", self.nActId).MidGroupId
 	for _, groupData in pairs(self.tbLevelGroupData) do
-		if CS.ClientManager.Instance.serverTimeStamp < groupData.nStartTime and groupData.nStartTime ~= 0 then
+		local isOpen = self:CheckActivityOpen()
+		if not isOpen then
+			RedDotManager.SetValid(RedDotDefine.Activity_GoldenSpy_Group, {
+				actGroupId,
+				groupData.nId
+			}, false)
+		elseif CS.ClientManager.Instance.serverTimeStamp < groupData.nStartTime and groupData.nStartTime ~= 0 then
 			RedDotManager.SetValid(RedDotDefine.Activity_GoldenSpy_Group, {
 				actGroupId,
 				groupData.nId
@@ -194,9 +202,17 @@ function GoldenSpyData:RefreshRedDot()
 end
 function GoldenSpyData:StartLevel(groupId, levelId)
 	self.nGroupId = groupId
+	self.nLevelId = levelId
 	self.GoldenSpyLevelData:InitData()
 	self.GoldenSpyLevelData:StartLevel(levelId)
-	EventManager.Hit(EventId.OpenPanel, PanelId.GoldenSpyPanel, self.nActId, self.nGroupId, levelId)
+	local config = ConfigTable.GetData("GoldenSpyControl", self.nActId)
+	if config == nil then
+		return
+	end
+	EventManager.Hit(EventId.OpenPanel, config.LevelPanelId, self.nActId, self.nGroupId, levelId)
+end
+function GoldenSpyData:GetLastLevelData()
+	return self.nGroupId, self.nLevelId
 end
 function GoldenSpyData:FinishLevel(levelId, data, callback)
 	local items = {}
@@ -221,7 +237,7 @@ function GoldenSpyData:FinishLevel(levelId, data, callback)
 		Items = items,
 		Skills = skills
 	}
-	local callback = function(_, msgData)
+	local msgCallback = function(_, msgData)
 		local oldLevelData = self:GetLevelDataById(levelId)
 		local levelCfg = ConfigTable.GetData("GoldenSpyLevel", levelId)
 		local levelData = {
@@ -231,10 +247,10 @@ function GoldenSpyData:FinishLevel(levelId, data, callback)
 		}
 		self:UpdateLevelData(levelData)
 		if callback ~= nil then
-			callback()
+			callback(msgData)
 		end
 	end
-	HttpNetHandler.SendMsg(NetMsgId.Id.activity_gds_settle_req, mapMsg, nil, callback)
+	HttpNetHandler.SendMsg(NetMsgId.Id.activity_gds_settle_req, mapMsg, nil, msgCallback)
 end
 function GoldenSpyData:EnterFloor(floorId)
 	if table.indexof(self.cacheEnterFloorList, floorId) == 0 then
@@ -247,5 +263,54 @@ function GoldenSpyData:GetFloorIsNew(floorId)
 		return true
 	end
 	return false
+end
+function GoldenSpyData:GetNextLevel(nGroupId, nCurLevelId)
+	local groupCfg = ConfigTable.GetData("GoldenSpyLevelGroup", nGroupId)
+	if groupCfg == nil then
+		return nil, nil
+	end
+	local levelList = groupCfg.LevelList
+	local nIndex = table.indexof(levelList, nCurLevelId)
+	if nIndex == 0 then
+		return nil, nil
+	end
+	if nIndex < #levelList then
+		return nGroupId, levelList[nIndex + 1]
+	end
+	local nNextGroupId = self:GetNextGroup(nGroupId)
+	if nNextGroupId == nil then
+		return nil, nil
+	end
+	local nextGroupData = self:GetLevelGroupDataById(nNextGroupId)
+	if nextGroupData == nil then
+		return nil, nil
+	end
+	local nextGroupConfig = ConfigTable.GetData("GoldenSpyLevelGroup", nNextGroupId)
+	if nextGroupConfig == nil then
+		return nil, nil
+	end
+	if CS.ClientManager.Instance.serverTimeStamp < nextGroupData.nStartTime and nextGroupData.nStartTime ~= 0 then
+		return nil, nil
+	elseif not self:CheckPreGroupPassByGroupId(nNextGroupId) then
+		return nil, nil
+	else
+		return nNextGroupId, nextGroupConfig.LevelList[1]
+	end
+end
+function GoldenSpyData:GetNextGroup(nCurGroupId)
+	local tbGroupList = ConfigTable.GetData("GoldenSpyControl", self.nActId).LevelGroupList
+	local nIndex = table.indexof(tbGroupList, nCurGroupId)
+	if nIndex == #tbGroupList then
+		return nil
+	end
+	return tbGroupList[nIndex + 1]
+end
+function GoldenSpyData:GetPreGroup(nCurGroupId)
+	local tbGroupList = ConfigTable.GetData("GoldenSpyControl", self.nActId).LevelGroupList
+	local nIndex = table.indexof(tbGroupList, nCurGroupId)
+	if nIndex == 1 then
+		return nil
+	end
+	return tbGroupList[nIndex - 1]
 end
 return GoldenSpyData

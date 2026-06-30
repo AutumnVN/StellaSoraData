@@ -132,10 +132,17 @@ end
 function TransitionCtrl:OpenTransition(nType, nParam)
 	self._panel:ChangeStatus(AllEnum.TransitionStatus.IsPlayingInAnim)
 	EventManager.Hit(EventId.BlockInput, true)
-	self.nType = nType
+	local sName
+	if type(nType) == "number" then
+		sName = string.format("style_%d", nType)
+		self.nType = nType
+	else
+		sName = tostring(nType)
+		local sStyle = string.gsub(sName, "style_", "")
+		self.nType = tonumber(sStyle)
+	end
 	self.animStyle = nil
 	local goStyle
-	local sName = string.format("style_%d", nType)
 	goStyle = self._mapNode.TransitionRoot:Find(sName)
 	if goStyle ~= nil and goStyle:IsNull() == false then
 		goStyle = goStyle.gameObject
@@ -147,7 +154,7 @@ function TransitionCtrl:OpenTransition(nType, nParam)
 	if goStyle ~= nil and goStyle:IsNull() == false then
 		goStyle:SetActive(true)
 		self._mapNode.TransitionRoot.localScale = Vector3.one
-		local func_Set = self[string.format("Set_%d", nType)]
+		local func_Set = self[string.format("Set_%d", self.nType)]
 		if type(func_Set) == "function" then
 			func_Set(self, goStyle, nParam)
 		end

@@ -143,14 +143,22 @@ end
 function RedDotNode:CheckLeafNode()
 	return nil == self.tbChildNodeList or #self.tbChildNodeList == 0
 end
-function RedDotNode:PrintRedDot(bLeaf, tbNode)
+function RedDotNode:PrintRedDot(bLeaf, tbNode, nDepth)
 	if self.sNodeKey == "Root" then
+		if bLeaf and nil ~= self.tbChildNodeList then
+			for _, v in ipairs(self.tbChildNodeList) do
+				v:PrintRedDot(true, tbNode, 0)
+			end
+		end
 		return
 	end
-	table.insert(tbNode, self)
+	table.insert(tbNode, {
+		node = self,
+		depth = nDepth or 0
+	})
 	if bLeaf and nil ~= self.tbChildNodeList then
 		for _, v in ipairs(self.tbChildNodeList) do
-			v:PrintRedDot(true, tbNode)
+			v:PrintRedDot(true, tbNode, (nDepth or 0) + 1)
 		end
 	end
 end

@@ -24,7 +24,8 @@ function GoldenSpyFloorData:SetItem(itemId)
 	end
 	self.tbItem[itemId].itemCount = self.tbItem[itemId].itemCount + 1
 end
-function GoldenSpyFloorData:DeleteItem(itemId)
+function GoldenSpyFloorData:DeleteItem(itemId, bForce)
+	bForce = bForce or false
 	if self.tbItem[itemId] == nil then
 		return
 	end
@@ -33,7 +34,7 @@ function GoldenSpyFloorData:DeleteItem(itemId)
 		self.tbItem[itemId] = nil
 	end
 	local itemCfg = ConfigTable.GetData("GoldenSpyItem", itemId)
-	if itemCfg.ItemType == GameEnum.GoldenSpyItem.BuffItem then
+	if itemCfg.ItemType == GameEnum.GoldenSpyItem.BuffItem and not bForce then
 		return
 	end
 	local nCount = 0

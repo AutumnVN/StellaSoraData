@@ -120,7 +120,7 @@ function PeriodicQuestActData:GetCanReceiveRewardGroup()
 	local nGroupId = 0
 	local nCurDay = self:GetCurOpenDay()
 	for _, v in pairs(self.tbAllQuestList) do
-		if nCurDay >= v.nDay and v.nStatus == AllEnum.ActQuestStatus.Complete and nGroupId < v.nGroupId then
+		if nCurDay >= v.nDay and v.nStatus == AllEnum.ActQuestStatus.Complete and (0 == nGroupId or nGroupId > v.nGroupId) then
 			nGroupId = v.nGroupId
 		end
 	end

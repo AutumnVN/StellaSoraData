@@ -96,8 +96,14 @@ function PlayerTutorialData:GetNextLevelId(levelId)
 	end
 	return nNextlevelId
 end
-function PlayerTutorialData:GetLevelReward(levelId)
+function PlayerTutorialData:GetLevelReward(levelId, callback)
 	local mapSendMsg = {Value = levelId}
+	if self:GetLevelData(levelId).LevelStatus == AllEnum.ActQuestStatus.Received then
+		if callback ~= nil then
+			callback()
+		end
+		return
+	end
 	local succ_cb = function(_, mapData)
 		self:UpdateLevel({
 			nlevelId = levelId,
@@ -105,6 +111,12 @@ function PlayerTutorialData:GetLevelReward(levelId)
 		})
 		local bIsNew = LocalData.GetPlayerLocalData("Tutorial_IsNew")
 		self:RefreshRedDot(bIsNew)
+		local closeCallback = function()
+			if callback ~= nil then
+				callback()
+			end
+		end
+		UTILS.OpenReceiveByChangeInfo(mapData, closeCallback)
 		EventManager.Hit(EventId.TutorialQuestReceived, mapData)
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.tutorial_level_reward_receive_req, mapSendMsg, nil, succ_cb)

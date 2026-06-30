@@ -532,6 +532,30 @@ function AvgData:MarkChoosedPersonality(sAvgId, nGroupId, nIndex, nFactor)
 	nCurCnt = nCurCnt + 1
 	self.mapTempPersonalityCnt[sAvgId][nGroupId][nIndex] = nCurCnt
 end
+function AvgData:GetPersonalityId()
+	local _, _, sFace = self:CalcPersonality(1)
+	return sFace and tostring(sFace) or ""
+end
+function AvgData:PersonalityChangedUpload(sOldPersonalityId)
+	local sNewPersonalityId = self:GetPersonalityId()
+	if sOldPersonalityId == sNewPersonalityId then
+		return
+	end
+	local tabEvt = {}
+	table.insert(tabEvt, {
+		"before_personality",
+		sOldPersonalityId
+	})
+	table.insert(tabEvt, {
+		"after_personality",
+		sNewPersonalityId
+	})
+	table.insert(tabEvt, {
+		"role_id",
+		tostring(PlayerData.Base._nPlayerId)
+	})
+	NovaAPI.UserEventUpload("personality_change", tabEvt)
+end
 function AvgData:CalcPersonality(nId)
 	local cfgData_SRP = ConfigTable.GetData("StoryRolePersonality", nId)
 	local tbPersonalityBaseNum = cfgData_SRP.BaseValue
@@ -940,11 +964,15 @@ function AvgData:SendMsg_STORY_DONE(callBack, tbBattleEvents)
 		end
 		self.mapTempCL = {}
 		self.mapTempLatestCnt = {}
+		local sOldPid = next(self.mapTempPersonality) ~= nil and self:GetPersonalityId()
 		func_overwrite(self.mapTempPersonality, self.mapPersonality)
 		self.mapTempPersonality = {}
 		self.mapTempPersonalityCnt = {}
 		func_overwrite(self.mapTempPersonalityFactor, self.mapPersonalityFactor)
 		self.mapTempPersonalityFactor = {}
+		if sOldPid then
+			self:PersonalityChangedUpload(sOldPid)
+		end
 		if callBack ~= nil then
 			callBack(mapChangeInfo)
 		end

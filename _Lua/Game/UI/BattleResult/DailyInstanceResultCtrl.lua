@@ -120,6 +120,7 @@ function DailyInstanceResultCtrl:OnEnable()
 	local tbChar = tbParam[11]
 	self.mapChangeInfo = tbParam[12]
 	self.tbCharDamage = tbParam[13]
+	local DoubleItems = tbParam[14]
 	for i = 1, 2 do
 		self._mapNode.btnDamageResult[i].gameObject:SetActive(self.tbCharDamage ~= nil and 0 < #self.tbCharDamage)
 	end
@@ -150,6 +151,10 @@ function DailyInstanceResultCtrl:OnEnable()
 	end
 	for _, v in pairs(ChestRewardItems) do
 		v.rewardType = AllEnum.RewardType.Three
+		table.insert(self.mapReward, v)
+	end
+	for _, v in pairs(DoubleItems) do
+		v.rewardType = AllEnum.RewardType.Double
 		table.insert(self.mapReward, v)
 	end
 	self:RefreshWorldClass(nExp)

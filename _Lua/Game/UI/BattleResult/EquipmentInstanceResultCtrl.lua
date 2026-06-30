@@ -121,7 +121,8 @@ function EquipmentInstanceResultCtrl:OnEnable()
 	local tbChar = tbParam[11]
 	self.mapChangeInfo = tbParam[12]
 	local SurpriseItems = tbParam[13]
-	self.tbCharDamage = tbParam[14] or {}
+	local DoubleItems = tbParam[14]
+	self.tbCharDamage = tbParam[15] or {}
 	for i = 1, 2 do
 		self._mapNode.btnDamageResult[i].gameObject:SetActive(self.tbCharDamage ~= nil and 0 < #self.tbCharDamage)
 	end
@@ -156,6 +157,10 @@ function EquipmentInstanceResultCtrl:OnEnable()
 	end
 	for _, v in pairs(SurpriseItems) do
 		v.rewardType = AllEnum.RewardType.Extra
+		table.insert(self.mapReward, v)
+	end
+	for _, v in pairs(DoubleItems) do
+		v.rewardType = AllEnum.RewardType.Double
 		table.insert(self.mapReward, v)
 	end
 	self:RefreshWorldClass(nExp)

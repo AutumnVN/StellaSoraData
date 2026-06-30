@@ -39,7 +39,8 @@ local sActTypePath = {
 	[GameEnum.activityType.JointDrill] = "JointDrill",
 	[GameEnum.activityType.Advertise] = "Advertise",
 	[GameEnum.activityType.Task] = "ActivityTask",
-	[GameEnum.activityType.PenguinCard] = "PenguinCard"
+	[GameEnum.activityType.PenguinCard] = "PenguinCard",
+	[GameEnum.activityType.Double] = "DoubleDrop"
 }
 function ActivityListCtrl:InitActivityList(nCurActId)
 	local tbActList = PlayerData.Activity:GetSortedActList()
@@ -380,6 +381,26 @@ function ActivityListCtrl:AddPenguinCardActivityCtrl(actData)
 	actCtrl.gameObject:SetActive(true)
 	actCtrl:InitActData(actData)
 end
+function ActivityListCtrl:AddDoubleDropActivityCtrl(actData)
+	local actCtrl = self.tbActCtrlObj[actData:GetActId()]
+	if nil == actCtrl then
+		local mapActCfg = ConfigTable.GetData("ActivityDouble", actData:GetActId())
+		if not mapActCfg then
+			return
+		end
+		local sFolder = sActTypePath[GameEnum.activityType.Double]
+		if sFolder == nil then
+			return
+		end
+		local sPrefabPath = string.format(sEntranceFolder, mapActCfg.UIAssets)
+		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.rtContent)
+		local sCtrlPath = string.format("Game.UI.Activity.%s.%s", sFolder, mapActCfg.CtrlName)
+		actCtrl = self:BindCtrlByNode(goObj, sCtrlPath)
+		self.tbActCtrlObj[actData:GetActId()] = actCtrl
+	end
+	actCtrl.gameObject:SetActive(true)
+	actCtrl:InitActData(actData)
+end
 function ActivityListCtrl:RefreshSelectActivity(bResetDay)
 	for _, v in pairs(self.tbActCtrlObj) do
 		v.gameObject:SetActive(false)
@@ -414,6 +435,8 @@ function ActivityListCtrl:RefreshSelectActivity(bResetDay)
 			self:AddBdConvertActivityCtrl(actData.actData)
 		elseif actType == GameEnum.activityType.PenguinCard then
 			self:AddPenguinCardActivityCtrl(actData.actData)
+		elseif actType == GameEnum.activityType.Double then
+			self:AddDoubleDropActivityCtrl(actData.actData)
 		end
 	elseif actData.nType == AllEnum.ActivityMainType.ActivityGroup then
 		self.nSelectActId = actData.actData:GetActGroupId()

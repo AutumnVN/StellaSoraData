@@ -530,6 +530,10 @@ function LoginCtrl:OnServerCallBack(sendMsg)
 			"role_id",
 			tostring(PlayerData.Base._nPlayerId)
 		})
+		table.insert(tab, {
+			"personality_id",
+			PlayerData.Avg:GetPersonalityId()
+		})
 		NovaAPI.UserEventUpload("role_login", tab)
 		NovaAPI.SetBuglyPlayerUid(tostring(PlayerData.Base._nPlayerId))
 		NovaAPI.TryUploadFile()

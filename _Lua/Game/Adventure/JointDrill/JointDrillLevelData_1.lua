@@ -11,6 +11,7 @@ local mapEventConfig = {
 	BattlePause = "OnEvent_Pause",
 	JointDrill_StartTiming = "OnEvent_BattleStart",
 	JointDrill_MonsterSpawn = "OnEvent_MonsterSpawn",
+	JointDrill_WaitLvChange = "OnEvent_WaitLvChange",
 	JointDrill_BattleLvsToggle = "OnEvent_BattleLvsToggle",
 	ADVENTURE_LEVEL_UNLOAD_COMPLETE = "OnEvent_UnloadComplete",
 	JointDrill_Gameplay_Time = "OnEvent_JointDrill_Gameplay_Time",
@@ -38,6 +39,8 @@ function JointDrillLevelData_1:Init(parent, nLevelId, nBuildId, nCurLevel, nLeve
 	self.mapFloor = nil
 	self.nGameTime = self.parent:GetGameTime()
 	self.bInResult = false
+	self.bInProcess = false
+	self.nBossId = 0
 	if not self.bChangeLevel then
 		self.nDamageValue = 0
 		self.tbCharDamage = {}
@@ -555,12 +558,25 @@ function JointDrillLevelData_1:OnEvent_MonsterSpawn(nBossId)
 	self.parent:JointDrillSync(self.nCurLevel, self.nGameTime, self.nDamageValue, nHp, nHpMax, data)
 	self.mapInitTempData = clone(self.mapTempData)
 end
+function JointDrillLevelData_1:OnEvent_WaitLvChange()
+	if self.bInProcess then
+		return
+	end
+	self.bInProcess = true
+	self.bChangeLevel = true
+	self.bRestart = false
+	EventManager.Hit("CloseJointDrillPause")
+	EventManager.Hit(EventId.CloseMessageBox)
+	PanelManager.InputDisable()
+	EventManager.Hit(EventId.BlockInput, true)
+end
 function JointDrillLevelData_1:OnEvent_BattleLvsToggle(nBattleLv, nTotalTime, nDamageValue)
 	if nBattleLv < self.nCurLevel then
 		return
 	end
-	self.bChangeLevel = true
-	self.bRestart = false
+	if not self.bChangeLevel then
+		return
+	end
 	nTotalTime = math.min(self.mapLevel.BattleTime * 1000, self:GetSyncGameTime(nTotalTime))
 	self.nCurLevel = nBattleLv + 1
 	self.nDamageValue = self.nDamageValue + nDamageValue
@@ -568,14 +584,15 @@ function JointDrillLevelData_1:OnEvent_BattleLvsToggle(nBattleLv, nTotalTime, nD
 	local bBoss = self.mapFloor.FloorType == GameEnum.JointDrillFloorType.Boss
 	self:CacheTempData(true, bBoss, false, true, true)
 	self.parent:AddJointDrillTeam(self.mapBuildData, nTotalTime, self.nDamageValue)
-	PanelManager.InputDisable()
 	self.parent:StopRecord()
 	local func = function()
 		local syncCallback = function()
 			PanelManager.InputEnable()
 			EventManager.Hit("CloseJointDrillPause")
+			EventManager.Hit(EventId.CloseMessageBox)
 			local wait = function()
 				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+				EventManager.Hit(EventId.BlockInput, false)
 				AdventureModuleHelper.LevelStateChanged(false)
 			end
 			cs_coroutine.start(wait)
@@ -607,7 +624,9 @@ function JointDrillLevelData_1:OnEvent_JointDrill_Gameplay_Time(nTime)
 	self:SyncGameTime(nTime)
 end
 function JointDrillLevelData_1:OnEvent_Pause()
-	EventManager.Hit("OpenJointDrillPause", self.nLevelId, self.tbCharId, self.nGameTime)
+	if self.nBossId ~= 0 then
+		EventManager.Hit("OpenJointDrillPause", self.nLevelId, self.tbCharId, self.nGameTime)
+	end
 end
 function JointDrillLevelData_1:OnEvent_DamageValue(nDamageValue)
 	self.nDamageValue = self.nDamageValue + nDamageValue
@@ -617,6 +636,10 @@ function JointDrillLevelData_1:OnEvent_GiveUpBattle()
 	self:CheckJointDrillGameOver()
 end
 function JointDrillLevelData_1:OnEvent_RestartJointDrill()
+	if self.bInProcess then
+		return
+	end
+	self.bInProcess = true
 	self.bRestart = true
 	self.bChangeLevel = false
 	self.parent:SetGameTime(0)
@@ -629,6 +652,7 @@ function JointDrillLevelData_1:OnEvent_RestartJointDrill()
 	EventManager.Hit("JointDrillReset")
 end
 function JointDrillLevelData_1:OnEvent_RetreatJointDrill()
+	self.bInProcess = true
 	local callback = function()
 		local sRecord = self.parent:EncodeTempDataJson(self.mapInitTempData)
 		self.parent:ResetRecord(sRecord)

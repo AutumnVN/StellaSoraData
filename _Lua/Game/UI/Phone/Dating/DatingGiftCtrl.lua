@@ -165,20 +165,21 @@ function DatingGiftCtrl:RefreshSendGift()
 end
 function DatingGiftCtrl:RefreshItemList()
 	self.tbItemData = {}
+	local tbAllItem = {}
 	local listCount = 0
 	local foreachAffinityGift = function(mapData)
-		local count = PlayerData.Item:GetItemCountByID(mapData.Id)
-		if 0 < count then
-			for i = 1, count do
-				listCount = listCount + 1
-				local itemData = ConfigTable.GetData_Item(mapData.Id)
-				table.insert(self.tbItemData, {
+		local nCount = PlayerData.Item:GetItemCountByID(mapData.Id)
+		if 0 < nCount then
+			local itemData = ConfigTable.GetData_Item(mapData.Id)
+			if itemData ~= nil then
+				table.insert(tbAllItem, {
 					nTid = itemData.Id,
 					nRarity = itemData.Rarity,
-					nCount = 1,
+					nCount = nCount,
 					nExpire = itemData.ExpireType,
 					favourLevel = self:GetGiftFavourLevelById(itemData.Id)
 				})
+				listCount = listCount + nCount
 			end
 		end
 	end
@@ -190,7 +191,7 @@ function DatingGiftCtrl:RefreshItemList()
 			self:UnbindCtrlByNode(objCtrl)
 			self.tbGridCtrl[nInstanceId] = nil
 		end
-		table.sort(self.tbItemData, function(a, b)
+		table.sort(tbAllItem, function(a, b)
 			if a.favourLevel == b.favourLevel then
 				if a.nRarity == b.nRarity then
 					return a.nTid < b.nTid
@@ -199,6 +200,17 @@ function DatingGiftCtrl:RefreshItemList()
 			end
 			return a.favourLevel < b.favourLevel
 		end)
+		for _, v in ipairs(tbAllItem) do
+			for i = 1, v.nCount do
+				table.insert(self.tbItemData, {
+					nTid = v.nTid,
+					nRarity = v.nRarity,
+					nCount = 1,
+					nExpire = v.nExpire,
+					favourLevel = v.favourLevel
+				})
+			end
+		end
 		self._mapNode.loopsvGiftList:Init(listCount, self, self.RefreshItemGrid, self.OnBtn_ClickItemGrid)
 	end
 end

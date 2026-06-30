@@ -119,8 +119,9 @@ local mapConfig = {
 	[PanelId.GachaSpin] = {bEvent = true},
 	[PanelId.JointDrillLevelSelect_510003] = {bEvent = true},
 	[PanelId.PotentialPreselectionEdit] = {bEvent = true},
-	[PanelId.GoldenSpyLevelSelectPanel] = {bEvent = true},
-	[PanelId.JointDrillLevelSelect_510005] = {bEvent = true}
+	[PanelId.GoldenSpyLevelSelectPanel_400008] = {bEvent = true},
+	[PanelId.JointDrillLevelSelect_510005] = {bEvent = true},
+	[PanelId.GoldenSpyLevelSelectPanel_400012] = {bEvent = true}
 }
 function TopBarCtrl:CreateCoin(tbCoin, bHideCoinAdd)
 	self.mapCoinIndex, self.mapItemIndex = nil, nil

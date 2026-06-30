@@ -95,7 +95,7 @@ function GoldenSpyBuffTipsCtrl:SetTipsPosition(rtTarget, rtContent, safeAreaRoot
 end
 function GoldenSpyBuffTipsCtrl:OnBtnClick_ClosePanel()
 	NovaAPI.SetComponentEnableByName(self.rtTarget.gameObject, "TopGridCanvas", false)
-	EventManager.Hit(EventId.ClosePanel, PanelId.GoldenSpyBuffTipsPanel)
+	EventManager.Hit(EventId.ClosePanel, self._panel._nPanelId)
 	EventManager.Hit("GoldenSpyBuffTipsClose")
 end
 return GoldenSpyBuffTipsCtrl

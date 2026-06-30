@@ -132,8 +132,4 @@ function StorySetChapterItemCtrl:OnDestroy()
 end
 function StorySetChapterItemCtrl:OnRelease()
 end
-function StorySetChapterItemCtrl:OnBtnClick_AAA()
-end
-function StorySetChapterItemCtrl:OnEvent_AAA()
-end
 return StorySetChapterItemCtrl

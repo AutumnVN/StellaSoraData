@@ -97,6 +97,7 @@ function ActivityLevelsInstanceResultCtrl:Awake()
 	self._mapNode.goGacha.gameObject:SetActive(false)
 end
 function ActivityLevelsInstanceResultCtrl:OnEnable()
+	self.bOpenReward = false
 	local tbParam = self:GetPanelParam()
 	local nResultState = 0
 	if #tbParam == 2 and tbParam[1] == false then
@@ -323,6 +324,10 @@ function ActivityLevelsInstanceResultCtrl:OnBtnClick_Close(btn)
 	end
 end
 function ActivityLevelsInstanceResultCtrl:OpenReward()
+	if self.bOpenReward then
+		return
+	end
+	self.bOpenReward = true
 	if #self.mapReward > 0 then
 		local nAnimTime = 2
 		self._mapNode.goGacha.gameObject:SetActive(true)

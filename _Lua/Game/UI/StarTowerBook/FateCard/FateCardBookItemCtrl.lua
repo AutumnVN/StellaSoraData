@@ -51,8 +51,6 @@ function FateCardBookItemCtrl:RegisterRedDot()
 		RedDotManager.RegisterNode(RedDotDefine.StarTowerBook_FateCard_New, self.nId, self._mapNode.redDotCard)
 	end
 end
-function FateCardBookItemCtrl:UnRegisterRedDot()
-end
 function FateCardBookItemCtrl:PlayClickAnim(bClick)
 	if bClick then
 		self._mapNode.animCard:Play("CardBookItem_in")

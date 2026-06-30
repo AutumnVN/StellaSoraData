@@ -465,8 +465,6 @@ function MainViewCtrl:RefreshResources()
 		end
 	end
 end
-function MainViewCtrl:RefreshBanner()
-end
 function MainViewCtrl:RefreshEnergy()
 	local nMaxEnergy = ConfigTable.GetConfigNumber("EnergyMaxLimit")
 	local nCurEnergy = PlayerData.Base:GetCurEnergy().nEnergy
@@ -482,7 +480,7 @@ function MainViewCtrl:RefreshItemExpire()
 	end
 	local nCurTime = CS.ClientManager.Instance.serverTimeStamp
 	local nRemainTime = nMinExpire - nCurTime
-	if nRemainTime ~= nil and nRemainTime < 604800 and 0 < nRemainTime then
+	if nRemainTime < 604800 and 0 < nRemainTime then
 		local sTipStr = ""
 		self._mapNode.goEnergyTip.gameObject:SetActive(true)
 		if 86400 <= nRemainTime then
@@ -633,7 +631,7 @@ function MainViewCtrl:SetBanner()
 end
 function MainViewCtrl:AddActivityBanner()
 	local tb_activityBanner = PlayerData.Activity:GetActivityBannerList()
-	for _, value in pairs(tb_activityBanner) do
+	for _, value in ipairs(tb_activityBanner) do
 		table.insert(self.tbBannerList, {
 			nId = value:GetActId(),
 			nType = GameEnum.bannerType.Activity,
@@ -871,12 +869,14 @@ function MainViewCtrl:RefreshActivityBanner()
 	table.insert(tbCurBannerList, self.tbBannerList[nextIndex])
 	for k, v in ipairs(self._mapNode.imgActBanner) do
 		local bannerData = tbCurBannerList[k]
-		if bannerData.nType == GameEnum.bannerType.Activity then
-			if nil ~= bannerData.actData then
-				self:SetPngSprite(v, "Icon/Banner/" .. bannerData.actData:GetBannerPng())
+		if bannerData ~= nil then
+			if bannerData.nType == GameEnum.bannerType.Activity then
+				if nil ~= bannerData.actData then
+					self:SetPngSprite(v, "Icon/Banner/" .. bannerData.actData:GetBannerPng())
+				end
+			else
+				self:SetPngSprite(v, "Icon/Banner/" .. bannerData.sBanner)
 			end
-		else
-			self:SetPngSprite(v, "Icon/Banner/" .. bannerData.sBanner)
 		end
 	end
 	self._mapNode.imgPointBg[self.nLastActBannerIdx].transform:Find("imgPoint").gameObject:SetActive(false)
@@ -890,7 +890,7 @@ function MainViewCtrl:StartActBannerTimer()
 end
 function MainViewCtrl:ResetActBannerTimer()
 	if nil ~= self.actBannerTimer then
-		TimerManager.Remove(self.actBannerTimer, false)
+		self.actBannerTimer:Cancel(false)
 	end
 	self.actBannerTimer = nil
 end
@@ -973,11 +973,11 @@ function MainViewCtrl:ChangeViewState(nState, bPlayAnim)
 	if bPlayAnim then
 		local nLastAnimName = view_state_anim[self.nViewState]
 		local nAnimName = view_state_anim[nState]
-		local bPlayAnim = true
+		local bShouldPlayAnim = true
 		if nLastAnimName == nAnimName or nLastAnimName == "tLogin" and nAnimName == "tIn" then
-			bPlayAnim = false
+			bShouldPlayAnim = false
 		end
-		if bPlayAnim then
+		if bShouldPlayAnim then
 			EventManager.Hit(EventId.TemporaryBlockInput, 0.7)
 			self:PlayViewAnim(view_state_anim[nState])
 		end
@@ -1015,17 +1015,17 @@ function MainViewCtrl:RefreshLeftActivityList()
 		for index, actData in ipairs(self.tbActivityPrepareShowList) do
 			if actData.countDownTimer ~= nil then
 				actData.countDownTimer:Cancel()
-				if actData.bRegisterNode then
-					RedDotManager.UnRegisterNode(RedDotDefine.Activity_Group, {
-						actData.actGroupData:GetActGroupId()
-					}, self._mapNode.activityRedDot_[index])
-					RedDotManager.UnRegisterNode(RedDotDefine.Activity_GroupNew, {
-						actData.actGroupData:GetActGroupId()
-					}, self._mapNode.activityRedDotNew_[index])
-				end
 			end
 			if actData.countDownEnterTimer ~= nil then
 				actData.countDownEnterTimer:Cancel()
+			end
+			if actData.bRegisterNode then
+				RedDotManager.UnRegisterNode(RedDotDefine.Activity_Group, {
+					actData.actGroupData:GetActGroupId()
+				}, self._mapNode.activityRedDot_[index])
+				RedDotManager.UnRegisterNode(RedDotDefine.Activity_GroupNew, {
+					actData.actGroupData:GetActGroupId()
+				}, self._mapNode.activityRedDotNew_[index])
 			end
 		end
 	end

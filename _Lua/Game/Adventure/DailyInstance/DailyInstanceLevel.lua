@@ -63,15 +63,15 @@ function DailyInstanceLevel:OnEvent_LevelResult(tbStar, bAbandon)
 			nStarCount = nStarCount + 1
 		end
 	end
-	local callback = function(tbSelectReward, tbFirstReward, nExp, mapChangeInfo)
+	local callback = function(tbSelectReward, tbFirstReward, tbDoubleItems, nExp, mapChangeInfo)
 		local waitCallback = function()
 			NovaAPI.InputEnable()
 			if 0 < nStar then
-				self:PlaySuccessPerform(tbFirstReward, tbSelectReward, nExp, tbStar, mapChangeInfo)
+				self:PlaySuccessPerform(tbFirstReward, tbSelectReward, tbDoubleItems, nExp, tbStar, mapChangeInfo)
 			else
 				EventManager.Hit(EventId.ClosePanel, PanelId.BtnTips)
 				local sLarge, sSmall = "", ""
-				EventManager.Hit(EventId.OpenPanel, PanelId.DailyInstanceResultPanel, false, tbStar, {}, {}, {}, 0, false, sLarge, sSmall, self.nLevelId, self.tbCharId, mapChangeInfo, self.tbCharDamage)
+				EventManager.Hit(EventId.OpenPanel, PanelId.DailyInstanceResultPanel, false, tbStar, {}, {}, {}, 0, false, sLarge, sSmall, self.nLevelId, self.tbCharId, mapChangeInfo or {}, self.tbCharDamage, {})
 				self.parent:LevelEnd()
 			end
 		end
@@ -124,7 +124,7 @@ function DailyInstanceLevel:UnBindEvent()
 		end
 	end
 end
-function DailyInstanceLevel:PlaySuccessPerform(FirstRewardItems, tbSelectReward, nExp, tbStar, mapChangeInfo)
+function DailyInstanceLevel:PlaySuccessPerform(FirstRewardItems, tbSelectReward, tbDoubleItems, nExp, tbStar, mapChangeInfo)
 	local func_SettlementFinish = function(bSuccess)
 	end
 	local tbChar = self.tbCharId
@@ -143,7 +143,7 @@ function DailyInstanceLevel:PlaySuccessPerform(FirstRewardItems, tbSelectReward,
 	local function openBattleResultPanel()
 		EventManager.Remove("SettlementPerformLoadFinish", self, openBattleResultPanel)
 		local sLarge, sSmall = "", ""
-		EventManager.Hit(EventId.OpenPanel, PanelId.DailyInstanceResultPanel, true, tbStar, tbSelectReward or {}, FirstRewardItems or {}, {}, nExp or 0, false, sLarge, sSmall, self.nLevelId, self.tbCharId, mapChangeInfo, self.tbCharDamage)
+		EventManager.Hit(EventId.OpenPanel, PanelId.DailyInstanceResultPanel, true, tbStar, tbSelectReward or {}, FirstRewardItems or {}, {}, nExp or 0, false, sLarge, sSmall, self.nLevelId, self.tbCharId, mapChangeInfo, self.tbCharDamage, tbDoubleItems or {})
 		self.bSettle = false
 		self.parent:LevelEnd()
 		self:UnBindEvent()

@@ -58,6 +58,7 @@ local AvgPreset = {
 		"deserted_village_room_night_a",
 		"deserted_village_room_night_b",
 		"desert_daylight",
+		"desert_notower_daylight",
 		"dessert_house_inside",
 		"dessert_house_inside_dusk",
 		"dojo_daylight",
@@ -105,6 +106,10 @@ local AvgPreset = {
 		"japanese_pond_daylight",
 		"jewelry_store_inside",
 		"luckyoasis_forest_daylight",
+		"mine_inside",
+		"mirage_eyphkabar_inside_daylight",
+		"mirage_eyphkabar_inside_dusk",
+		"mirage_street_daylight",
 		"mood_1",
 		"mood_2",
 		"mood_3",
@@ -313,6 +318,9 @@ local AvgPreset = {
 		"story_event_08_001_a",
 		"story_event_08_002",
 		"story_event_08_003",
+		"story_event_09_001",
+		"story_event_09_001_a",
+		"story_event_09_002",
 		"story_main_00_001",
 		"story_main_00_002",
 		"story_main_00_003_FP",
@@ -533,10 +541,15 @@ local AvgPreset = {
 		"story_tales_13_001",
 		"story_tales_14_001",
 		"story_tales_14_001_a",
-		"story_tales_15_001"
+		"story_tales_15_001",
+		"story_tales_16_001",
+		"story_tales_16_001_a",
+		"story_tales_16_001_b"
 	},
 	FgResName = {
 		"circle_light",
+		"sniper_black",
+		"sniper_white",
 		"story_main_01_032_FP",
 		"story_main_01_032_MP",
 		"story_main_01_033",
@@ -5708,6 +5721,7 @@ local AvgPreset = {
 			"fx_avg_powerup_loop",
 			""
 		},
+		{"style_4", ""},
 		{
 			"--分割线，以下特效含后期效果--",
 			""

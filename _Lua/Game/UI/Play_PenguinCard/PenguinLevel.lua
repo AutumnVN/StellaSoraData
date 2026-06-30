@@ -96,7 +96,6 @@ function PenguinLevel:ClearLevelData()
 	self.nCurTurn = 0
 	self.nCurRound = 0
 	self.nHp = 3
-	self.bPreTurnWin = false
 	if self.tbBuffPool == nil then
 		self.tbBuffPool = {}
 	end

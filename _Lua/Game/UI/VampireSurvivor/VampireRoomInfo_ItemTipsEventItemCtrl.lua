@@ -49,7 +49,7 @@ function VampireRoomInfo_ItemTipsEventItemCtrl:OnTipItemHide()
 	})
 	self.animRoot:Play("TemplateTip_out")
 	self:AddTimer(1, nInAnimLen, function()
-		EventManager.Hit("StarTowerTipsShowEnd", self, 1)
+		EventManager.Hit("StarTowerTipsShowEnd", self, 2)
 	end, true, true, true, nil)
 end
 function VampireRoomInfo_ItemTipsEventItemCtrl:Awake()

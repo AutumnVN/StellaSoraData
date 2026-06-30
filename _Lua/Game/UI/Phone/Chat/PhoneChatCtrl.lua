@@ -119,6 +119,9 @@ function PhoneChatCtrl:RefreshChatContent(nSelectChatId, bReset, bRestart, bCoun
 		self:OpenHistoryList()
 	end
 	if nil ~= self.chatData then
+		if not PlayerData.Phone:EnsureChatAvgLoaded(self.chatData) then
+			return
+		end
 		if bRestart and self.chatData.nStatus ~= AllEnum.PhoneChatState.Complete then
 			self.nChatProcess = 0
 			self.nInitProcess = 0
@@ -138,6 +141,7 @@ function PhoneChatCtrl:RefreshChatContent(nSelectChatId, bReset, bRestart, bCoun
 		self:ResetPhone()
 		self._mapNode.goPhone:_SetAutoPlayState(false)
 		if self.nChatProcess > 1 then
+			PlayerData.Phone:EnsureChatHistoryParsed(self.chatData)
 			self:RevertHistoryList()
 		else
 			self:RefreshContent()
@@ -185,8 +189,8 @@ function PhoneChatCtrl:CheckNextMessage(nCurProcess, index)
 	end
 end
 function PhoneChatCtrl:RevertHistoryList()
-	local selectionData = PlayerData.Phone:GetHistoryPhoneSelectionData(self.nSelectChatId)
-	local historyData = PlayerData.Phone:GetHistoryPhoneMsgData(self.nSelectChatId)
+	local selectionData = PlayerData.Phone:GetHistoryPhoneSelectionData(self.nSelectChatId, self.chatData)
+	local historyData = PlayerData.Phone:GetHistoryPhoneMsgData(self.nSelectChatId, self.chatData)
 	if historyData ~= nil then
 		self._mapNode.goPhone:SetHistoryPhoneMsg(historyData, selectionData)
 	end
@@ -314,6 +318,7 @@ function PhoneChatCtrl:OnDisable()
 	self.nInitProcess = 0
 	self.tbSelection = {}
 	self.nSelectChatId = nil
+	self.receiveRewardCb = nil
 end
 function PhoneChatCtrl:OnDestroy()
 end
@@ -379,6 +384,9 @@ function PhoneChatCtrl:OnEvent_RecordChatProcessSuccess(mapChangeInfo)
 	self.tbSelection = {}
 	if self.chatData.tbSelection ~= nil then
 		self.tbSelection = self.chatData.tbSelection
+	end
+	if self.receiveRewardCb ~= nil then
+		return
 	end
 	if self.chatData.nStatus == AllEnum.PhoneChatState.Complete then
 		local tbPlot = CacheTable.GetData("_PlotChat", self.nSelectChatId)

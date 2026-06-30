@@ -587,7 +587,7 @@ function ActivityLevelsSelectCtrl:OnClickBtnRaid()
 		return
 	end
 	local nNeedEnergy = self.curRequireEnergy
-	EventManager.Hit(EventId.OpenPanel, PanelId.Raid, self.selectLevelData.baseData.Id, nNeedEnergy, 5, self.nActId)
+	EventManager.Hit(EventId.OpenPanel, PanelId.Raid, self.selectLevelData.baseData.Id, nNeedEnergy, 0, self.nActId)
 end
 function ActivityLevelsSelectCtrl:OnBtnClick_EnemyInfo()
 	EventManager.Hit("OpenActivityLevelsMonsterInfo", self.PreviewMonsterGroupId)

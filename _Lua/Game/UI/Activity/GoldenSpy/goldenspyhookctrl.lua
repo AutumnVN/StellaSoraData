@@ -270,22 +270,8 @@ function GoldenSpyHookCtrl:StartExtend(speed, radius, factor, onComplete, onCatc
 				local itemNormalWeight = item.Ctrl:GetWeight()
 				for _, v in ipairs(self:GetBuffData()) do
 					local buffCfg = ConfigTable.GetData("GoldenSpyBuffCard", v.buffId)
-					if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.ReduceItemWeight then
-						local curFloor = self.levelData:GetCurFloor()
-						if buffCfg.BuffType == GameEnum.GoldenSpyBuffType.TemporaryBuff then
-							if v.bActive and table.indexof(v.tbActiveFloor, curFloor) > 0 and itemCfg.ItemType == buffCfg.Params[1] then
-								itemNormalWeight = itemNormalWeight - buffCfg.Params[2]
-							end
-						elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.DelayBuff then
-							if v.bActive and table.indexof(v.tbActiveFloor, curFloor) > 0 and itemCfg.ItemType == buffCfg.Params[1] then
-								itemNormalWeight = itemNormalWeight - buffCfg.Params[2]
-							end
-						elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.PermanentBuff then
-							if v.bActive and itemCfg.ItemType == buffCfg.Params[1] then
-								itemNormalWeight = itemNormalWeight - buffCfg.Params[2]
-							end
-						elseif buffCfg.BuffType == GameEnum.GoldenSpyBuffType.SkillCountBuff then
-						end
+					if buffCfg ~= nil and buffCfg.EffectType == GameEnum.GoldenSpyBuffEffect.ReduceItemWeight and self.levelData:CheckBuffActive(v) then
+						itemNormalWeight = itemNormalWeight - buffCfg.Params[2]
 					end
 				end
 				itemNormalWeight = math.max(0, itemNormalWeight)

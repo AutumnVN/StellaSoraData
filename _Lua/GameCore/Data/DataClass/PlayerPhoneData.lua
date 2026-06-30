@@ -6,6 +6,8 @@ function PlayerPhoneData:Init()
 	self.tbChatMsgCache = {}
 	self.tbPhoneMsgChoiceTarget = {}
 	self.tbPhoneMsgGroupData = {}
+	self.tbPhoneMsgGroupMeta = {}
+	self.tbPhoneMsgMetaParsed = {}
 	self.tbHistoryMsg = {}
 	self.tbHistorySelection = {}
 	self.tbNewChatList = {}
@@ -35,6 +37,8 @@ end
 function PlayerPhoneData:GetChatState(chatData)
 	if chatData.nProcess == 0 then
 		return AllEnum.PhoneChatState.New
+	elseif chatData.nAllProcess == nil then
+		return AllEnum.PhoneChatState.UnComplete
 	elseif chatData.nProcess < chatData.nAllProcess then
 		return AllEnum.PhoneChatState.UnComplete
 	elseif chatData.nProcess >= chatData.nAllProcess then
@@ -44,17 +48,19 @@ end
 function PlayerPhoneData:CreateNewChat(mapMsgData)
 	local chatData = {}
 	chatData.nChatId = mapMsgData.Id
-	chatData.nProcess = mapMsgData.Process
-	chatData.tbSelection = mapMsgData.Options
-	local chatAvgMsg = self:GetAVGPhoneMsg(chatData.nChatId)
-	if nil == chatAvgMsg then
-		return
+	chatData.nProcess = mapMsgData.Process or 0
+	chatData.tbSelection = mapMsgData.Options or {}
+	chatData.bHistoryParsed = false
+	local chatCfg = ConfigTable.GetData("Chat", chatData.nChatId)
+	if chatCfg == nil then
+		return nil
 	end
-	chatData.avgMsg = chatAvgMsg
-	chatData.nAllProcess = #chatAvgMsg
-	chatData.nStatus = self:GetChatState(chatData)
 	if chatData.nProcess > 0 then
-		self:ParseAvgHistoryPhoneMsgData(chatData.nChatId, chatData.avgMsg, chatData.nProcess, chatData.tbSelection)
+		if not self:EnsureChatAvgMetaLoaded(chatData) then
+			return nil
+		end
+	else
+		chatData.nStatus = self:GetChatState(chatData)
 	end
 	return chatData
 end
@@ -117,7 +123,8 @@ function PlayerPhoneData:RefreshChatProcess(nAddressId, nChatId, nProcess, tbSel
 			chatData.nProcess = nProcess
 			if nil ~= tbSelection then
 				chatData.tbSelection = tbSelection
-				local data = chatData.avgMsg[lastProcess]
+				self:EnsureChatAvgLoaded(chatData)
+				local data = chatData.avgMsg and chatData.avgMsg[lastProcess]
 				if data ~= nil and data.cmd == "SetPhoneMsgChoiceBegin" then
 					local nGroupId = tonumber(data.param[1]) or 0
 					if nGroupId == #tbSelection then
@@ -140,7 +147,8 @@ function PlayerPhoneData:RefreshChatProcess(nAddressId, nChatId, nProcess, tbSel
 				end
 			end
 			chatData.nStatus = self:GetChatState(chatData)
-			self:UpdateHistoryPhoneMsgData(nChatId, chatData.avgMsg[nProcess], nProcess)
+			chatData.bHistoryParsed = false
+			self:ClearHistoryPhoneMsgData(nChatId)
 		end
 		self:RefreshAddressStatus(nAddressId)
 	end
@@ -375,6 +383,9 @@ function PlayerPhoneData:CheckNewChat(nAddressId, callback)
 end
 function PlayerPhoneData:GetNextProcess(nAddressId, nChatId, nProcess)
 	local chatData = self:GetChatData(nAddressId, nChatId)
+	if not self:EnsureChatAvgLoaded(chatData) then
+		return nProcess
+	end
 	local nNextProcess = nProcess
 	local tbMsg = chatData.avgMsg[nNextProcess]
 	if nil ~= tbMsg and tbMsg.cmd == "SetPhoneMsgChoiceJumpTo" then
@@ -396,7 +407,9 @@ function PlayerPhoneData:CheckChatComplete(nChatId)
 		local dataAddress = self.tbAddressBook[nAddressId]
 		if nil ~= dataAddress and nil ~= dataAddress.tbChatList then
 			local chatData = dataAddress.tbChatList[nChatId]
-			return chatData.nProcess >= chatData.nAllProcess
+			if self:EnsureChatAvgMetaLoaded(chatData) then
+				return chatData.nProcess >= chatData.nAllProcess
+			end
 		end
 	end
 	printError(string.format("聊天未解锁，请检查配置！！chatId = [%s])", nChatId))
@@ -430,17 +443,10 @@ end
 function PlayerPhoneData:GetAVGPhoneMsg(nChatId, sLanguage)
 	local chatCfg = ConfigTable.GetData("Chat", nChatId)
 	if nil ~= chatCfg then
-		if sLanguage == nil then
-			sLanguage = Settings.sCurrentTxtLanguage
-		end
-		local nCurLanguageIdx = GetLanguageIndex(sLanguage)
-		local sAvgCfgPath = GetAvgLuaRequireRoot(nCurLanguageIdx) .. "Config/" .. chatCfg.AVGId
+		local sAvgCfgPath = self:GetAVGPhoneCfgPath(chatCfg, sLanguage)
 		if nil == self.tbChatMsgCache[sAvgCfgPath] then
-			local ok, tbAllAvgCfg = pcall(require, sAvgCfgPath)
-			if not ok then
-				printError("AvgId对应的配置文件没有找到，path：" .. sAvgCfgPath .. ". error: " .. tbAllAvgCfg)
-				return
-			else
+			local tbAllAvgCfg = self:LoadAVGPhoneCfg(chatCfg, sLanguage)
+			if tbAllAvgCfg ~= nil then
 				self.tbChatMsgCache[sAvgCfgPath] = {}
 				local sMsgGroup
 				for i, v in ipairs(tbAllAvgCfg) do
@@ -449,8 +455,13 @@ function PlayerPhoneData:GetAVGPhoneMsg(nChatId, sLanguage)
 						self.tbChatMsgCache[sAvgCfgPath][sMsgGroup] = {}
 						self.tbPhoneMsgGroupData[chatCfg.AVGId .. sMsgGroup] = {}
 						self.tbPhoneMsgGroupData[chatCfg.AVGId .. sMsgGroup].nStartCmdId = i
+						self.tbPhoneMsgGroupMeta[chatCfg.AVGId .. sMsgGroup] = {nStartCmdId = i, nAllProcess = 0}
 					elseif v.cmd ~= "End" then
 						table.insert(self.tbChatMsgCache[sAvgCfgPath][sMsgGroup], v)
+						local tbMeta = self.tbPhoneMsgGroupMeta[chatCfg.AVGId .. sMsgGroup]
+						if tbMeta ~= nil then
+							tbMeta.nAllProcess = tbMeta.nAllProcess + 1
+						end
 						if v.cmd == "SetPhoneMsgChoiceBegin" then
 							if self.tbPhoneMsgChoiceTarget[chatCfg.AVGId .. sMsgGroup] == nil then
 								self.tbPhoneMsgChoiceTarget[chatCfg.AVGId .. sMsgGroup] = {}
@@ -494,12 +505,100 @@ function PlayerPhoneData:GetAVGPhoneMsg(nChatId, sLanguage)
 						end
 					end
 				end
+				self.tbPhoneMsgMetaParsed[sAvgCfgPath] = true
 			end
 		end
 		if nil ~= self.tbChatMsgCache[sAvgCfgPath] then
 			return self.tbChatMsgCache[sAvgCfgPath][chatCfg.AVGGroupId]
 		end
 	end
+end
+function PlayerPhoneData:GetAVGPhoneCfgPath(chatCfg, sLanguage)
+	if chatCfg == nil then
+		return nil
+	end
+	if sLanguage == nil then
+		sLanguage = Settings.sCurrentTxtLanguage
+	end
+	local nCurLanguageIdx = GetLanguageIndex(sLanguage)
+	return GetAvgLuaRequireRoot(nCurLanguageIdx) .. "Config/" .. chatCfg.AVGId
+end
+function PlayerPhoneData:LoadAVGPhoneCfg(chatCfg, sLanguage)
+	local sAvgCfgPath = self:GetAVGPhoneCfgPath(chatCfg, sLanguage)
+	if sAvgCfgPath == nil then
+		return nil
+	end
+	local ok, tbAllAvgCfg = pcall(require, sAvgCfgPath)
+	if not ok then
+		printError("AvgId对应的配置文件没有找到，path：" .. sAvgCfgPath .. ". error: " .. tbAllAvgCfg)
+		return nil
+	end
+	return tbAllAvgCfg, sAvgCfgPath
+end
+function PlayerPhoneData:ParseAVGPhoneMeta(chatCfg, sLanguage)
+	local tbAllAvgCfg, sAvgCfgPath = self:LoadAVGPhoneCfg(chatCfg, sLanguage)
+	if tbAllAvgCfg == nil then
+		return nil
+	end
+	if self.tbPhoneMsgMetaParsed[sAvgCfgPath] then
+		return sAvgCfgPath
+	end
+	local sMsgGroup
+	for i, v in ipairs(tbAllAvgCfg) do
+		if v.cmd == "SetGroupId" then
+			sMsgGroup = v.param[1]
+			local sKey = chatCfg.AVGId .. sMsgGroup
+			self.tbPhoneMsgGroupMeta[sKey] = {nStartCmdId = i, nAllProcess = 0}
+		elseif v.cmd ~= "End" and sMsgGroup ~= nil then
+			local sKey = chatCfg.AVGId .. sMsgGroup
+			local tbMeta = self.tbPhoneMsgGroupMeta[sKey]
+			if tbMeta ~= nil then
+				tbMeta.nAllProcess = tbMeta.nAllProcess + 1
+			end
+		end
+	end
+	self.tbPhoneMsgMetaParsed[sAvgCfgPath] = true
+	return sAvgCfgPath
+end
+function PlayerPhoneData:GetAVGPhoneMsgMeta(nChatId, sLanguage)
+	local chatCfg = ConfigTable.GetData("Chat", nChatId)
+	if chatCfg ~= nil then
+		local sKey = chatCfg.AVGId .. chatCfg.AVGGroupId
+		if self.tbPhoneMsgGroupMeta[sKey] == nil then
+			self:ParseAVGPhoneMeta(chatCfg, sLanguage)
+		end
+		return self.tbPhoneMsgGroupMeta[sKey]
+	end
+end
+function PlayerPhoneData:EnsureChatAvgMetaLoaded(chatData)
+	if chatData == nil then
+		return false
+	end
+	if chatData.nAllProcess ~= nil then
+		return true
+	end
+	local tbMeta = self:GetAVGPhoneMsgMeta(chatData.nChatId)
+	if tbMeta == nil then
+		return false
+	end
+	chatData.nAllProcess = tbMeta.nAllProcess
+	chatData.nStatus = self:GetChatState(chatData)
+	return true
+end
+function PlayerPhoneData:EnsureChatAvgLoaded(chatData)
+	if chatData == nil then
+		return false
+	end
+	if chatData.avgMsg ~= nil then
+		return true
+	end
+	chatData.avgMsg = self:GetAVGPhoneMsg(chatData.nChatId)
+	if chatData.avgMsg == nil then
+		return false
+	end
+	chatData.nAllProcess = #chatData.avgMsg
+	chatData.nStatus = self:GetChatState(chatData)
+	return true
 end
 function PlayerPhoneData:ParseAvgHistoryPhoneMsgData(nChatId, tbMsgData, nProcess, tbSelection)
 	self:ClearHistoryPhoneMsgData(nChatId)
@@ -565,10 +664,31 @@ function PlayerPhoneData:ParseAvgHistoryPhoneMsgData(nChatId, tbMsgData, nProces
 		end
 	end
 end
+function PlayerPhoneData:EnsureChatHistoryParsed(chatData)
+	if chatData == nil then
+		return
+	end
+	if chatData.bHistoryParsed == true then
+		return
+	end
+	if not self:EnsureChatAvgLoaded(chatData) then
+		return
+	end
+	if chatData.nProcess ~= nil and chatData.nProcess > 0 then
+		self:ParseAvgHistoryPhoneMsgData(chatData.nChatId, chatData.avgMsg, chatData.nProcess, chatData.tbSelection)
+	else
+		self:ClearHistoryPhoneMsgData(chatData.nChatId)
+	end
+	chatData.bHistoryParsed = true
+end
 function PlayerPhoneData:GetAvgStartCmdId(nChatId)
 	local chatCfg = ConfigTable.GetData("Chat", nChatId)
 	if chatCfg ~= nil then
-		local tbData = self.tbPhoneMsgGroupData[chatCfg.AVGId .. chatCfg.AVGGroupId]
+		local sKey = chatCfg.AVGId .. chatCfg.AVGGroupId
+		local tbData = self.tbPhoneMsgGroupData[sKey]
+		if tbData == nil then
+			tbData = self:GetAVGPhoneMsgMeta(nChatId)
+		end
 		if tbData ~= nil then
 			return tbData.nStartCmdId
 		end
@@ -606,39 +726,53 @@ function PlayerPhoneData:UpdateHistoryPhoneMsgData(nChatId, tbMsgData, nProcess)
 	}
 	table.insert(self.tbHistoryMsg[nChatId], data)
 end
-function PlayerPhoneData:GetHistoryPhoneMsgData(nChatId)
+function PlayerPhoneData:GetHistoryPhoneMsgData(nChatId, chatData)
+	if chatData ~= nil then
+		self:EnsureChatHistoryParsed(chatData)
+	end
 	if self.tbHistoryMsg[nChatId] == nil then
 		self.tbHistoryMsg[nChatId] = {}
 	end
 	return self.tbHistoryMsg[nChatId]
 end
-function PlayerPhoneData:GetHistoryPhoneSelectionData(nChatId)
+function PlayerPhoneData:GetHistoryPhoneSelectionData(nChatId, chatData)
+	if chatData ~= nil then
+		self:EnsureChatHistoryParsed(chatData)
+	end
 	if self.tbHistorySelection[nChatId] == nil then
 		self.tbHistorySelection[nChatId] = {}
 	end
 	return self.tbHistorySelection[nChatId]
 end
 function PlayerPhoneData:GetChatMsg(chatData, nIndex)
+	self:EnsureChatAvgLoaded(chatData)
 	local avgGroupMsg = chatData.avgMsg
 	if nil ~= avgGroupMsg then
 		if nIndex == 1 then
 			return avgGroupMsg[nIndex]
 		else
+			self:EnsureChatHistoryParsed(chatData)
 			local tbChatList = self.tbHistoryMsg[chatData.nChatId]
-			return tbChatList[#tbChatList]
+			if tbChatList ~= nil then
+				return tbChatList[#tbChatList]
+			end
 		end
 	end
 end
 function PlayerPhoneData:GetChatContent(chatData, nIndex)
+	self:EnsureChatAvgLoaded(chatData)
 	local avgGroupMsg = chatData.avgMsg
 	if nil ~= avgGroupMsg then
 		local tbAvgMsg = avgGroupMsg[nIndex]
 		if nIndex == 1 then
 			return ProcAvgTextContent(tbAvgMsg.param[3], GetLanguageIndex(Settings.sCurrentTxtLanguage))
 		else
+			self:EnsureChatHistoryParsed(chatData)
 			local tbChatList = self.tbHistoryMsg[chatData.nChatId]
-			local chatData = tbChatList[#tbChatList]
-			return ProcAvgTextContent(chatData.param[3], GetLanguageIndex(Settings.sCurrentTxtLanguage))
+			local historyChatData = tbChatList and tbChatList[#tbChatList]
+			if historyChatData ~= nil then
+				return ProcAvgTextContent(historyChatData.param[3], GetLanguageIndex(Settings.sCurrentTxtLanguage))
+			end
 		end
 	end
 end
@@ -684,10 +818,6 @@ function PlayerPhoneData:SendAddressListReq(callback)
 end
 function PlayerPhoneData:SendChatProcess(nAddressId, nChatId, nProcess, tbSelection, bEnd, callback)
 	local httpCall = function(mapMsgData)
-		if nil == self.tbHistoryMsg[nChatId] or nil == next(self.tbHistoryMsg[nChatId]) then
-			local chatData = self:GetChatData(nAddressId, nChatId)
-			self:ParseAvgHistoryPhoneMsgData(nChatId, chatData.avgMsg, nProcess, tbSelection)
-		end
 		self:RefreshChatProcess(nAddressId, nChatId, nProcess, tbSelection)
 		if nil ~= callback then
 			callback()

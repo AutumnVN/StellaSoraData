@@ -172,31 +172,38 @@ function TutorialResultCtrl:ClosePanel()
 		return
 	end
 	self.bProcessingClose = true
-	CS.AdventureModuleHelper.ResumeLogic()
-	if NovaAPI.GetCurrentModuleName() == "MainMenuModuleScene" then
-		EventManager.Hit(EventId.CloesCurPanel)
-		PlayerData.Base:OnBackToMainMenuModule()
-	else
-		NovaAPI.SetCanvasGroupAlpha(self._mapNode.Mask, 0)
-		self._mapNode.Mask.gameObject:SetActive(true)
-		EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
-		local sequence = DOTween.Sequence()
-		sequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
-		sequence:AppendCallback(function()
-			if self.bSuccess then
-				NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
-				self._mapNode.imgBlurredBg:SetActive(false)
-			else
-				local function levelEndCallback()
-					EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
+	local levelEndCallback = function()
+		CS.AdventureModuleHelper.ResumeLogic()
+		if NovaAPI.GetCurrentModuleName() == "MainMenuModuleScene" then
+			EventManager.Hit(EventId.CloesCurPanel)
+			PlayerData.Base:OnBackToMainMenuModule()
+		else
+			NovaAPI.SetCanvasGroupAlpha(self._mapNode.Mask, 0)
+			self._mapNode.Mask.gameObject:SetActive(true)
+			EventManager.Hit(EventId.TemporaryBlockInput, 0.5)
+			local sequence = DOTween.Sequence()
+			sequence:Append(self._mapNode.Mask:DOFade(1, 0.5):SetUpdate(true))
+			sequence:AppendCallback(function()
+				if self.bSuccess then
 					NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
 					self._mapNode.imgBlurredBg:SetActive(false)
+				else
+					local function levelEndCallback()
+						EventManager.Remove("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
+						NovaAPI.EnterModule("MainMenuModuleScene", true, 17)
+						self._mapNode.imgBlurredBg:SetActive(false)
+					end
+					EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
+					CS.AdventureModuleHelper.LevelStateChanged(true, 0, true)
 				end
-				EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
-				CS.AdventureModuleHelper.LevelStateChanged(true, 0, true)
-			end
-		end)
-		sequence:SetUpdate(true)
+			end)
+			sequence:SetUpdate(true)
+		end
+	end
+	if self.bSuccess then
+		PlayerData.TutorialData:GetLevelReward(self.nLevelId, levelEndCallback)
+	else
+		levelEndCallback()
 	end
 end
 function TutorialResultCtrl:Close()

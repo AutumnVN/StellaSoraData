@@ -82,6 +82,7 @@ LevelMenuCtrl._mapNodeConfig = {
 	TMPDailyInstanceEnergy1 = {sComponentName = "TMP_Text"},
 	imgResourceIcon1_ = {nCount = 3, sComponentName = "Image"},
 	imgResourceIcon2_ = {nCount = 3, sComponentName = "Image"},
+	imgDoubleDrop = {},
 	btnInfinity = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Infinity"
@@ -156,6 +157,7 @@ LevelMenuCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "LevelMenu_Resource_Goto"
 	},
+	txtDoubleDrop = {sComponentName = "TMP_Text"},
 	TMPTime = {nCount = 2, sComponentName = "TMP_Text"},
 	goStarTower = {
 		sNodeName = "---StarTower---",
@@ -279,6 +281,15 @@ function LevelMenuCtrl:SelectResourceItem(nType)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtResourceName, sName)
 	NovaAPI.SetTMPText(self._mapNode.txtResourceDesc, sDesc)
+	self._mapNode.txtDoubleDrop.gameObject:SetActive(false)
+	if self.doubleActData ~= nil then
+		local tbFuncType = self.doubleActData:GetDoubleFuncType()
+		if table.indexof(tbFuncType, nType) > 0 then
+			self._mapNode.txtDoubleDrop.gameObject:SetActive(true)
+			local str = self.doubleActData:GetDropString()
+			NovaAPI.SetTMPText(self._mapNode.txtDoubleDrop, str)
+		end
+	end
 end
 function LevelMenuCtrl:RefreshActivityList()
 	if self.tbActivityShowList ~= nil then
@@ -696,6 +707,13 @@ function LevelMenuCtrl:OnEnable()
 				self.resourceSequence:SetUpdate(true)
 			end, true, true, true)
 		end
+		self.doubleActData = nil
+		local actData = PlayerData.Activity:GetActivityDataByType(GameEnum.activityType.Double)
+		if actData ~= nil and actData:CheckActShow() then
+			self.doubleActData = actData
+		end
+		self._mapNode.imgDoubleDrop.gameObject:SetActive(self.doubleActData ~= nil)
+		self._mapNode.goResource:RefreshDropUp(self.doubleActData)
 		if self._panel.panelType == nil then
 			self._panel.panelType = phone_page_main
 		elseif self._panel.panelType == phone_page_starTower then
