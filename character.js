@@ -191,9 +191,9 @@ for (const id in CHARACTER) {
         skillUpgrade: getSkillUpgrades(id),
     };
 
-    if (char.name === '???') char.name = `${id} ${characterId[id] || ''}`;
+    if (!char.name) char.name = `${id} ${characterId[id] || ''}`;
 
-    if (LANG_CHARACTER[CHARACTER[id].Name] === '???') {
+    if (!LANG_CHARACTER[CHARACTER[id].Name]) {
         unreleased[id] = char;
     } else {
         character[id] = char;
