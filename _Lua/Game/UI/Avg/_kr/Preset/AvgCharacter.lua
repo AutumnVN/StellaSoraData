@@ -254,7 +254,7 @@ return {
 	{
 		id = "avg1_146",
 		name = "베니토",
-		name_bg_color = "#0ABEC5"
+		name_bg_color = "#84afff"
 	},
 	{
 		id = "avg1_147",
@@ -356,7 +356,7 @@ return {
 	},
 	{
 		id = "avg2_944",
-		name = "***",
+		name = "독침 전갈",
 		name_bg_color = "#0ABEC5",
 		ver = "1.12.0"
 	},
@@ -1133,6 +1133,18 @@ return {
 		ver = "1.9.0"
 	},
 	{
+		id = "avg3_218",
+		name = "미라슈 주민(남)",
+		name_bg_color = "#0ABEC5",
+		ver = "1.12.0"
+	},
+	{
+		id = "avg3_219",
+		name = "미라슈 주민(여)",
+		name_bg_color = "#0ABEC5",
+		ver = "1.12.0"
+	},
+	{
 		id = "avg3_220",
 		name = "메르쿠리아",
 		name_bg_color = "#9787b1",
@@ -1149,6 +1161,12 @@ return {
 		name = "강아지 기계",
 		name_bg_color = "#a5cdc3",
 		ver = "1.11.0"
+	},
+	{
+		id = "avg3_223",
+		name = "***",
+		name_bg_color = "#a5cdc3",
+		ver = "1.15.0"
 	},
 	{
 		id = "avg3_873",
@@ -2811,10 +2829,66 @@ return {
 	},
 	{
 		id = "avg3_1304",
-		name = "***",
+		name = "샤통A",
 		name_bg_color = "#8e65ad",
 		reuse = "avg1_114",
 		ver = "1.12.0"
+	},
+	{
+		id = "avg3_1305",
+		name = "***",
+		name_bg_color = "#b0e0f6",
+		reuse = "avg1_160",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1306",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_948",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1307",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_948",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1308",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_947",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1309",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_947",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1310",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_991",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1311",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_100",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1312",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg3_101",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg4_100",
