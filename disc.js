@@ -169,10 +169,10 @@ function getMainSkillEffectData(id) {
 function getMainSkillBuffIcons(id) {
     const buffIcons = [];
 
-    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}0`) && k.length === 7);
+    const buffKeys = Object.keys(BUFF).filter(k => k.startsWith(`${id}0`) && k.length === 7);
 
-    for (const effectKey of effectKeys) {
-        let buffId = +effectKey;
+    for (const buffKey of buffKeys) {
+        let buffId = +buffKey;
         if (!BUFF[buffId]) continue;
 
         const buffIcon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon';
@@ -288,10 +288,10 @@ function getSeconarySkillEffectData(id) {
 function getSecondarySkillBuffIcons(id) {
     const buffIcons = [];
 
-    const effectKeys = Object.keys(EFFECT).filter(k => k.startsWith(`${id}`) && k.length === 7);
+    const buffKeys = Object.keys(BUFF).filter(k => k.startsWith(`${id}`) && k.length === 7);
 
-    for (const effectKey of effectKeys) {
-        let buffId = +effectKey;
+    for (const buffKey of buffKeys) {
+        let buffId = +buffKey;
         if (!BUFF[buffId]) continue;
 
         const buffIcon = BUFF[buffId].Icon ? BUFF[buffId].Icon.split('/').pop() : 'No Icon';
