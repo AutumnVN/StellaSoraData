@@ -23949,6 +23949,7 @@
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
+                "No Icon",
                 "Icon_DiscBuff_214003",
                 "Icon_CommonBuff_AttackUp"
             ],
@@ -24574,6 +24575,7 @@
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
+                "Icon_DiscBuff_214004",
                 "No Icon",
                 "Icon_CommonBuff_DefenseDown"
             ],
@@ -27102,7 +27104,9 @@
                 "Skill DMG Taken (base)"
             ],
             "effectData": [],
-            "buffIcon": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214008"
+            ],
             "params": "5,20,10,10%,20,12%/5,20,10,12%,20,14.4%/5,20,10,14%,20,16.8%/5,20,10,16%,20,19.2%/5,20,10,18%,20,21.6%/5,20,10,20%,20,24%",
             "icon": "DiscSkill_214008",
             "iconBg": "db_DiscSkill_5"
@@ -31491,6 +31495,7 @@
                 "BEHIT, ENEMY, ACTORELEMENTTYPE, Ventus | SELF, DEFAULT | SELF, DEFAULT"
             ],
             "buffIcon": [
+                "Icon_DiscBuff_214015",
                 "Icon_CommonBuff_DefenseDown"
             ],
             "params": "20%,5,1.5%,6,10/24%,5,1.8%,6,10/28%,5,2.1%,6,10/32%,5,2.4%,6,10/36%,5,2.7%,6,10/40%,5,3%,6,10",
@@ -32114,6 +32119,7 @@
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
+                "Icon_DiscBuff_214016",
                 "Icon_CommonBuff_DefenseDown"
             ],
             "params": "6%,12%,18%,2.5%,5%,7.5%/7.2%,14.4%,21.6%,3%,6%,9%/8.4%,16.8%,25.2%,3.5%,7%,10.5%/9.6%,19.2%,28.8%,4%,8%,12%/10.8%,21.6%,32.4%,4.5%,9%,13.5%/12%,24%,36%,5%,10%,15%",
@@ -37193,7 +37199,9 @@
                 "Skill DMG (base)"
             ],
             "effectData": [],
-            "buffIcon": [],
+            "buffIcon": [
+                "No Icon"
+            ],
             "params": "7%,3/14%,3/21%,3/28%,3/35%,3",
             "requirements": [
                 {
@@ -39634,6 +39642,7 @@
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
+                "Icon_DiscBuff_214029",
                 "No Icon"
             ],
             "params": "25%,5%,10%,15%/30%,6%,12%,18%/35%,7%,14%,21%/40%,8%,16%,24%/45%,9%,18%,27%/50%,10%,20%,30%",
@@ -47808,6 +47817,7 @@
                 "NOTHING, SELF, SELF_BE_ASSISTANT, AND, SELF, ACTORELEMENTTYPE | SELF, DEFAULT | SELF, DEFAULT"
             ],
             "buffIcon": [
+                "No Icon",
                 "Icon_DiscBuff_214044"
             ],
             "params": "20%,15%,4/24%,18%,4/28%,21%,4/32%,24%,4/36%,27%,4/40%,30%,4",
@@ -48433,7 +48443,9 @@
                 "Skill DMG Taken (base)"
             ],
             "effectData": [],
-            "buffIcon": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214045_1"
+            ],
             "params": "20%,5,20,15%/24%,5,20,18%/28%,5,20,21%/32%,5,20,24%/36%,5,20,27%/40%,5,20,30%",
             "icon": "DiscSkill_214045",
             "iconBg": "db_DiscSkill_6"
@@ -48500,6 +48512,7 @@
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
+                "Icon_DiscBuff_214045_2",
                 "No Icon"
             ],
             "params": "5,7.5%,30,15%,30/5,10%,30,20%,30/5,12.5%,30,25%,30/5,15%,30,30%,30/5,17.5%,30,35%,30",
@@ -49054,7 +49067,9 @@
             ],
             "addAttrType": [],
             "effectData": [],
-            "buffIcon": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214046"
+            ],
             "params": "3%,25,10/3.6%,25,10/4.2%,25,10/4.8%,25,10/5.4%,25,10/6%,25,10",
             "icon": "DiscSkill_214046",
             "iconBg": "db_DiscSkill_4"
@@ -49676,7 +49691,9 @@
                 "Skill DMG (base)"
             ],
             "effectData": [],
-            "buffIcon": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214047"
+            ],
             "params": "5,20,10,5%,20,6%/5,20,10,6%,20,7.2%/5,20,10,7%,20,8.4%/5,20,10,8%,20,9.6%/5,20,10,9%,20,10.8%/5,20,10,10%,20,12%",
             "icon": "DiscSkill_214047",
             "iconBg": "db_DiscSkill_5"
@@ -50296,6 +50313,8 @@
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
+                "No Icon",
+                "Icon_DiscBuff_214048A1",
                 "Icon_DiscBuff_214048B1"
             ],
             "params": "20%,12.25,1%,18,15/24%,12.25,1.2%,18,15/28%,12.25,1.4%,18,15/32%,12.25,1.6%,18,15/36%,12.25,1.8%,18,15/40%,12.25,2%,18,15",
@@ -51536,7 +51555,9 @@
                 "Skill DMG (base)"
             ],
             "effectData": [],
-            "buffIcon": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214050"
+            ],
             "params": "5%,5,20,6%/6%,5,20,7.2%/7%,5,20,8.4%/8%,5,20,9.6%/9%,5,20,10.8%/10%,5,20,12%",
             "icon": "DiscSkill_214050",
             "iconBg": "db_DiscSkill_6"
@@ -52158,6 +52179,7 @@
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
+                "No Icon",
                 "Icon_DiscBuff_214051A",
                 "Icon_DiscBuff_214051"
             ],
@@ -52783,6 +52805,7 @@
             ],
             "effectData": [],
             "buffIcon": [
+                "Icon_DiscBuff_214052",
                 "No Icon"
             ],
             "params": "15,7%,5%/15,8.4%,6%/15,9.8%,7%/15,11.2%,8%/15,12.6%,9%/15,14%,10%",
@@ -52849,7 +52872,9 @@
                 "Ultimate DMG (base)"
             ],
             "effectData": [],
-            "buffIcon": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214052"
+            ],
             "params": "12%/24%/36%/48%/60%",
             "requirements": [
                 {
@@ -53402,6 +53427,7 @@
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
+                "Icon_DiscBuff_214053",
                 "No Icon"
             ],
             "params": "10%,2%,4%,6%/12%,2.4%,4.8%,7.2%/14%,2.8%,5.6%,8.4%/16%,3.2%,6.4%,9.6%/18%,3.6%,7.2%,10.8%/20%,4%,8%,12%",
@@ -54026,6 +54052,7 @@
             ],
             "effectData": [],
             "buffIcon": [
+                "Icon_DiscBuff_214054",
                 "Icon_CommonBuff_DefenseDown"
             ],
             "params": "15,15%,10,25%/15,18%,10,30%/15,21%,10,35%/15,24%,10,40%/15,27%,10,45%/15,30%,10,50%",
@@ -54093,6 +54120,7 @@
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
+                "Icon_DiscBuff_214054",
                 "No Icon"
             ],
             "params": "8%/16%/24%/32%/40%",
