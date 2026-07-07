@@ -6460,7 +6460,7 @@ return {
 			"",
 			false,
 			"",
-			"Hey, I believe in an equal working to slacking ratio, that's all. You can't perform at your peak without proper rest!",
+			"Hey, I believe in an equal working-to-slacking ratio, that's all. You can't perform at your peak without proper rest!",
 			""
 		}
 	},

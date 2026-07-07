@@ -5374,7 +5374,7 @@ return {
 			"",
 			false,
 			"",
-			"Come to think of it, I haven't taken a break in ages. When did I last apply for a leave?",
+			"Come to think of it, I haven't taken a break in ages. When did I last apply for leave?",
 			""
 		}
 	},
