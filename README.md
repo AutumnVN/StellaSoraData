@@ -1,43 +1,6 @@
 # 斯特拉索拉数据
 
-☝️🙏👌
-
-## <b>📅  Character Dating Speical Event Table</b>
-
-<details id="dating-CN">
-  <summary>🖼️ Table - CN </summary>
-  <p align="center">
-    <img src="./_Metadata/_DatingEvents/dating-CN.jpg">
-  </p>
-</details>
-
-<details id="dating-EN">
-  <summary>🖼️ Table - EN </summary>
-  <p align="center">
-    <img src="./_Metadata/_DatingEvents/dating-EN.jpg">
-  </p>
-</details>
-
-<details id="dating-JP">
-  <summary>🖼️ Table - JP </summary>
-  <p align="center">
-    <img src="./_Metadata/_DatingEvents/dating-JP.jpg">
-  </p>
-</details>
-
-<details id="dating-KR">
-  <summary>🖼️ Table - KR </summary>
-  <p align="center">
-    <img src="./_Metadata/_DatingEvents/dating-KR.jpg">
-  </p>
-</details>
-
-<details id="dating-TW">
-  <summary>🖼️ Table - TW </summary>
-  <p align="center">
-    <img src="./_Metadata/_DatingEvents/dating-TW.jpg">
-  </p>
-</details>
+  <!-- update commit message: `<Date>` `<[data.arcx|lua.arcx]LatestPatchVersion>` `<ClientVersion_GameVersion_PatchVersion>` -->
 
 ## Special Thanks
 
