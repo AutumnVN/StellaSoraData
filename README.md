@@ -1,6 +1,10 @@
 # 斯特拉索拉数据
 
-  <!-- update commit message: `<Date>` `<[data.arcx|lua.arcx]LatestPatchVersion>` `<ClientVersion_GameVersion_PatchVersion>` -->
+<!-- 
+update commit message: 
+`chore(CN): auto-update data v120 (p18) [c1.9.0_g1.12.1_p20]`
+chore(region): auto-update <[data|lua]> <[data.arcx|lua.arcx]LatestPatchVersion>(PatchNumber) <ClientVersion_GameVersion_LatestPatchNumber(Including other patches)>
+-->
 
 ## Special Thanks
 
