@@ -1,0 +1,30 @@
+{
+  "1": {
+    "Id": 1,
+    "ChessType": 1,
+    "Name": "SoldierChessType.1.1",
+    "Icon": "ChessTypeFight",
+    "PositionType": [
+      1
+    ]
+  },
+  "2": {
+    "Id": 2,
+    "ChessType": 2,
+    "Name": "SoldierChessType.2.1",
+    "Icon": "ChessTypeSupport",
+    "PositionType": [
+      2
+    ]
+  },
+  "3": {
+    "Id": 3,
+    "ChessType": 0,
+    "Name": "SoldierChessType.3.1",
+    "Icon": "ChessTypeBalance",
+    "PositionType": [
+      1,
+      2
+    ]
+  }
+}
