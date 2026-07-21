@@ -87,6 +87,17 @@
     "DungeonDelay": 45000,
     "IntroCutscene": "fx_m50581_base_Born"
   },
+  "6009109": {
+    "Id": 6009109,
+    "SceneName": "Levels/Roguelike/Roguelike_4/Roguelike_4_Boss_002",
+    "ConfigPrefabName": "RegionBoss_DuoBiTaiDeng_Lv2",
+    "Theme": 110,
+    "BGM": "roguelike_combatLamp_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 9,
+    "DungeonDelay": 45000,
+    "IntroCutscene": "fx_m50581_base_Born"
+  },
   "6010101": {
     "Id": 6010101,
     "SceneName": "Levels/Roguelike/Roguelike_3/Roguelike_3_Boss_001",
@@ -175,6 +186,17 @@
     "DungeonDelay": 45000,
     "IntroCutscene": "fx_50531DaGuanZi_base_Born"
   },
+  "6010109": {
+    "Id": 6010109,
+    "SceneName": "Levels/Roguelike/Roguelike_3/Roguelike_3_Boss_001",
+    "ConfigPrefabName": "RegionBoss_DaGuanZi_Lv2",
+    "Theme": 106,
+    "BGM": "roguelike_combatGuanzi_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 9,
+    "DungeonDelay": 45000,
+    "IntroCutscene": "fx_50531DaGuanZi_base_Born"
+  },
   "6011101": {
     "Id": 6011101,
     "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_003",
@@ -260,6 +282,17 @@
     "BGM": "roguelike_combatTiaoWuJi_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
     "MonsterLv": 8,
+    "DungeonDelay": 38000,
+    "IntroCutscene": "fx_m50521_base_born_timeline"
+  },
+  "6011109": {
+    "Id": 6011109,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_003",
+    "ConfigPrefabName": "RegionBoss_TiaoWuJi_Lv2",
+    "Theme": 104,
+    "BGM": "roguelike_combatTiaoWuJi_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "MonsterLv": 9,
     "DungeonDelay": 38000,
     "IntroCutscene": "fx_m50521_base_born_timeline"
   }
