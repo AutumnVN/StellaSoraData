@@ -9,6 +9,10 @@
             "hash": 15160955355793907260
         },
         {
+            "name": "emmy_init.lua",
+            "hash": 16475298494092262150
+        },
+        {
             "name": "fsm.lua",
             "hash": 3900786946170050432
         },
@@ -95,6 +99,10 @@
         {
             "name": "game/codegen/table.pb",
             "hash": 4193651726447307971
+        },
+        {
+            "name": "game/spine/spinemanager.lua",
+            "hash": 6204385354363564072
         },
         {
             "name": "game/ui/templatectrl.lua",
@@ -273,6 +281,10 @@
             "hash": 3381087247081611643
         },
         {
+            "name": "gamecore/ui/uiobjs.lua",
+            "hash": 17621658388470870456
+        },
+        {
             "name": "game/actor2d/editor/actor2deditorctrl.lua",
             "hash": 4805837338998509243
         },
@@ -401,6 +413,14 @@
             "hash": 11174359690497499180
         },
         {
+            "name": "game/adventure/soldier/soldierbattle.lua",
+            "hash": 12100203745054519655
+        },
+        {
+            "name": "game/adventure/soldier/soldierleveldata.lua",
+            "hash": 17777428699445848100
+        },
+        {
             "name": "game/adventure/startower/roguelike_tempdata.pb",
             "hash": 11670575114397345535
         },
@@ -419,6 +439,10 @@
         {
             "name": "game/adventure/story/storylevel.lua",
             "hash": 17152592216077662193
+        },
+        {
+            "name": "game/adventure/tracehunt/tracehuntlevel.lua",
+            "hash": 2880478439591921299
         },
         {
             "name": "game/adventure/travelerduellevel/travelerduelleveldata.lua",
@@ -489,24 +513,28 @@
             "hash": 12096289308962293499
         },
         {
-            "name": "game/ui/activitypopup/activitybreakout_30101popupctrl.lua",
-            "hash": 11264587598686554382
+            "name": "game/ui/activitypopup/activitybreakoutpopupctrl.lua",
+            "hash": 4347063399989059502
         },
         {
             "name": "game/ui/activitypopup/activitychristmas_20101popupctrl.lua",
             "hash": 17162094445844913979
         },
         {
+            "name": "game/ui/activitypopup/activitydoubledrop_103001popupctrl.lua",
+            "hash": 678437100198885446
+        },
+        {
             "name": "game/ui/activitypopup/activitydream_10102popupctrl.lua",
             "hash": 6489264607502033859
         },
         {
-            "name": "game/ui/activitypopup/activityjointdrill_510001popupctrl.lua",
-            "hash": 3955861652077486565
+            "name": "game/ui/activitypopup/activitygunstorm_10109popupctrl.lua",
+            "hash": 17589520435676834168
         },
         {
-            "name": "game/ui/activitypopup/activityjointdrill_510003popupctrl.lua",
-            "hash": 11450496952736389032
+            "name": "game/ui/activitypopup/activityjointdrillpopupctrl.lua",
+            "hash": 9368453735982960400
         },
         {
             "name": "game/ui/activitypopup/activitymiracle_10103popupctrl.lua",
@@ -525,6 +553,10 @@
             "hash": 16856795322479549645
         },
         {
+            "name": "game/ui/activitypopup/activitysoldierpopupctrl.lua",
+            "hash": 1567709569463678307
+        },
+        {
             "name": "game/ui/activitypopup/activitysolodance_20102popupctrl.lua",
             "hash": 6457223267040887502
         },
@@ -533,16 +565,36 @@
             "hash": 7831237447559904453
         },
         {
+            "name": "game/ui/activitypopup/activitysummeradv_10110popupctrl.lua",
+            "hash": 9117335212346679289
+        },
+        {
+            "name": "game/ui/activitypopup/activitysummercheckin_20103popupctrl.lua",
+            "hash": 14113615010285452403
+        },
+        {
             "name": "game/ui/activitypopup/activityswimpopupctrl.lua",
             "hash": 9720494848904071286
+        },
+        {
+            "name": "game/ui/activitypopup/activityswim_11100popupctrl.lua",
+            "hash": 3050391900200148379
         },
         {
             "name": "game/ui/activitypopup/activitytaskpopupctrl_01.lua",
             "hash": 5914836607676310171
         },
         {
+            "name": "game/ui/activitypopup/activitytech_10108popupctrl.lua",
+            "hash": 4388132094641535925
+        },
+        {
             "name": "game/ui/activitypopup/activitytowerdefensepopupctrl.lua",
             "hash": 13682645635866613366
+        },
+        {
+            "name": "game/ui/activitypopup/activityviewfinder_10107popupctrl.lua",
+            "hash": 12927736278588451104
         },
         {
             "name": "game/ui/activitypopup/activitywinternight_10105popupctrl.lua",
@@ -785,6 +837,10 @@
             "hash": 8547429086880931018
         },
         {
+            "name": "game/ui/battle/tracehuntbattlepanel.lua",
+            "hash": 1694804798465661697
+        },
+        {
             "name": "game/ui/battle/vampiresurvivorbattlepanel.lua",
             "hash": 2944737301952392239
         },
@@ -821,8 +877,8 @@
             "hash": 17132275589613211585
         },
         {
-            "name": "game/ui/battlepass/battlepassqusetgridctrl.lua",
-            "hash": 12759885172070236078
+            "name": "game/ui/battlepass/battlepassquestgridctrl.lua",
+            "hash": 9785981505315305143
         },
         {
             "name": "game/ui/battlepass/battlepassrewardctrl.lua",
@@ -983,22 +1039,6 @@
         {
             "name": "game/ui/characterfavour/characterfavourctrl.lua",
             "hash": 6411925928205565123
-        },
-        {
-            "name": "game/ui/characterfavour/charfavourexpupctrl.lua",
-            "hash": 5123619783052073937
-        },
-        {
-            "name": "game/ui/characterfavour/charfavourexpuppanel.lua",
-            "hash": 14934228632818127027
-        },
-        {
-            "name": "game/ui/characterfavour/charfavourgiftctrl.lua",
-            "hash": 15309397735466334586
-        },
-        {
-            "name": "game/ui/characterfavour/charfavourgiftpanel.lua",
-            "hash": 6212734396689558106
         },
         {
             "name": "game/ui/characterfavour/charfavourlevelupctrl.lua",
@@ -1781,6 +1821,14 @@
             "hash": 8783264938542943592
         },
         {
+            "name": "game/ui/friendex/friendaddstrangerctrl.lua",
+            "hash": 11487616170130956
+        },
+        {
+            "name": "game/ui/friendex/friendaddstrangerpanel.lua",
+            "hash": 15998566290296638430
+        },
+        {
             "name": "game/ui/friendex/friendcartectrl.lua",
             "hash": 10446526175563711388
         },
@@ -2031,6 +2079,10 @@
         {
             "name": "game/ui/infinitytower/infinitytowerselecttowerpanel.lua",
             "hash": 16529439704300987854
+        },
+        {
+            "name": "game/ui/jointdrill/jointdrillcontext.lua",
+            "hash": 16933300972897502655
         },
         {
             "name": "game/ui/lampnotice/lampnoticectrl.lua",
@@ -2477,8 +2529,8 @@
             "hash": 14973366382447447676
         },
         {
-            "name": "game/ui/play_breakout_30101/breakoutleveldetailctr.lua",
-            "hash": 9915861696688751158
+            "name": "game/ui/play_breakout_30101/breakoutleveldetailctrl.lua",
+            "hash": 12661806230691103017
         },
         {
             "name": "game/ui/play_breakout_30101/breakoutleveldetailpanel.lua",
@@ -2521,20 +2573,44 @@
             "hash": 3283861495377012952
         },
         {
+            "name": "game/ui/play_breakout_30102/breakoutleveldetailpanel.lua",
+            "hash": 14496825264623414456
+        },
+        {
+            "name": "game/ui/play_breakout_30102/breakoutplaypanel.lua",
+            "hash": 10975976164913508100
+        },
+        {
+            "name": "game/ui/play_breakout_30102/breakoutresultpanel.lua",
+            "hash": 12643772853730922578
+        },
+        {
+            "name": "game/ui/play_breakout_30102/levelselectpanel.lua",
+            "hash": 17286056661357800047
+        },
+        {
+            "name": "game/ui/play_breakout_30103/breakoutleveldetailpanel.lua",
+            "hash": 3986519838006549422
+        },
+        {
+            "name": "game/ui/play_breakout_30103/breakoutplaypanel.lua",
+            "hash": 10545129146090006929
+        },
+        {
+            "name": "game/ui/play_breakout_30103/breakoutresultpanel.lua",
+            "hash": 9294954729477524314
+        },
+        {
+            "name": "game/ui/play_breakout_30103/levelselectpanel.lua",
+            "hash": 9918961630248806962
+        },
+        {
             "name": "game/ui/play_cookie/cookieboardctrl.lua",
             "hash": 5096724792909963935
         },
         {
-            "name": "game/ui/play_cookie/cookieboardpanel.lua",
-            "hash": 1620064524103557350
-        },
-        {
             "name": "game/ui/play_cookie/cookiegamectrl.lua",
             "hash": 2630966128152420857
-        },
-        {
-            "name": "game/ui/play_cookie/cookiegamepanel.lua",
-            "hash": 7139301817392315372
         },
         {
             "name": "game/ui/play_cookie/cookiegamequestctrl.lua",
@@ -2557,204 +2633,24 @@
             "hash": 349529476488372448
         },
         {
-            "name": "game/ui/play_cookie/cookiequestpanel.lua",
-            "hash": 3053448617788906340
-        },
-        {
             "name": "game/ui/play_cookie/cookiescoreboardctrl.lua",
             "hash": 8608453401490586648
         },
         {
-            "name": "game/ui/play_cookie_400004/cookieboardctrl.lua",
-            "hash": 9260459227878056420
+            "name": "game/ui/play_icecreamtruck/icecreamleveldetailctrl.lua",
+            "hash": 6497818591438924940
         },
         {
-            "name": "game/ui/play_cookie_400004/cookieboardpanel.lua",
-            "hash": 14525534696692740838
+            "name": "game/ui/play_icecreamtruck/icecreamlevelgroupctrl.lua",
+            "hash": 5918732751205702726
         },
         {
-            "name": "game/ui/play_cookie_400004/cookiegamectrl.lua",
-            "hash": 12533647226694722105
+            "name": "game/ui/play_icecreamtruck/icecreamlevelsselectctrl.lua",
+            "hash": 3787466334796408315
         },
         {
-            "name": "game/ui/play_cookie_400004/cookiegamepanel.lua",
-            "hash": 7420500929833627732
-        },
-        {
-            "name": "game/ui/play_cookie_400004/cookiegamequestctrl.lua",
-            "hash": 12898653999359746613
-        },
-        {
-            "name": "game/ui/play_cookie_400004/cookiegridctrl.lua",
-            "hash": 16718211902530772372
-        },
-        {
-            "name": "game/ui/play_cookie_400004/cookielevelgridctrl.lua",
-            "hash": 6921262344096132774
-        },
-        {
-            "name": "game/ui/play_cookie_400004/cookiequestcellctrl.lua",
-            "hash": 13865946610210187426
-        },
-        {
-            "name": "game/ui/play_cookie_400004/cookiequestctrl.lua",
-            "hash": 4894295919073170040
-        },
-        {
-            "name": "game/ui/play_cookie_400004/cookiequestpanel.lua",
-            "hash": 10361646677007869210
-        },
-        {
-            "name": "game/ui/play_cookie_400004/cookiescoreboardctrl.lua",
-            "hash": 2741434862398323263
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookieboardctrl.lua",
-            "hash": 279914467034792087
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookieboardpanel.lua",
-            "hash": 5443650351948562723
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookiegamectrl.lua",
-            "hash": 9691518252073977422
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookiegamepanel.lua",
-            "hash": 12985571994692318639
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookiegamequestctrl.lua",
-            "hash": 12590414435874319468
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookiegridctrl.lua",
-            "hash": 8305125040711370237
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookielevelgridctrl.lua",
-            "hash": 15678964036693533560
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookiequestcellctrl.lua",
-            "hash": 7017949475458115465
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookiequestctrl.lua",
-            "hash": 3320518490766833126
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookiequestpanel.lua",
-            "hash": 1334886545507744215
-        },
-        {
-            "name": "game/ui/play_cookie_400006/cookiescoreboardctrl.lua",
-            "hash": 12282229088024827050
-        },
-        {
-            "name": "game/ui/play_mining/mininggamectrl.lua",
-            "hash": 10681901278242137251
-        },
-        {
-            "name": "game/ui/play_mining/mininggameguidecardctrl.lua",
-            "hash": 17515139370370623883
-        },
-        {
-            "name": "game/ui/play_mining/mininggameguidectrl.lua",
-            "hash": 4692173385936047673
-        },
-        {
-            "name": "game/ui/play_mining/mininggameguidepanel.lua",
-            "hash": 17358875194367953452
-        },
-        {
-            "name": "game/ui/play_mining/mininggamepanel.lua",
-            "hash": 11982282594942522237
-        },
-        {
-            "name": "game/ui/play_mining/mininggamequestctrl.lua",
-            "hash": 12241543408644992745
-        },
-        {
-            "name": "game/ui/play_mining/mininggamequestpanel.lua",
-            "hash": 14815403655560877175
-        },
-        {
-            "name": "game/ui/play_mining/mininggridcellctrl.lua",
-            "hash": 12451441981216875849
-        },
-        {
-            "name": "game/ui/play_mining/mininggridlistctrl.lua",
-            "hash": 751119905943864561
-        },
-        {
-            "name": "game/ui/play_mining/miningquestcellctrl.lua",
-            "hash": 9675819329100467259
-        },
-        {
-            "name": "game/ui/play_mining/miningstorycellctrl.lua",
-            "hash": 17092641898681685719
-        },
-        {
-            "name": "game/ui/play_mining/miningstoryctrl.lua",
-            "hash": 5410907190054337150
-        },
-        {
-            "name": "game/ui/play_mining/miningstorypanel.lua",
-            "hash": 5931971617910477541
-        },
-        {
-            "name": "game/ui/play_mining_400002/mininggamectrl.lua",
-            "hash": 243446292082298430
-        },
-        {
-            "name": "game/ui/play_mining_400002/mininggameguidecardctrl.lua",
-            "hash": 12232091373833881107
-        },
-        {
-            "name": "game/ui/play_mining_400002/mininggameguidectrl.lua",
-            "hash": 9754900897551808138
-        },
-        {
-            "name": "game/ui/play_mining_400002/mininggameguidepanel.lua",
-            "hash": 14307654214312842667
-        },
-        {
-            "name": "game/ui/play_mining_400002/mininggamepanel.lua",
-            "hash": 7478453908957553074
-        },
-        {
-            "name": "game/ui/play_mining_400002/mininggamequestctrl.lua",
-            "hash": 15896538835038596373
-        },
-        {
-            "name": "game/ui/play_mining_400002/mininggamequestpanel.lua",
-            "hash": 12824138507008848613
-        },
-        {
-            "name": "game/ui/play_mining_400002/mininggridcellctrl.lua",
-            "hash": 8650144328743619740
-        },
-        {
-            "name": "game/ui/play_mining_400002/mininggridlistctrl.lua",
-            "hash": 17763178399644412631
-        },
-        {
-            "name": "game/ui/play_mining_400002/miningquestcellctrl.lua",
-            "hash": 17836068378493180567
-        },
-        {
-            "name": "game/ui/play_mining_400002/miningstorycellctrl.lua",
-            "hash": 9630778741028222571
-        },
-        {
-            "name": "game/ui/play_mining_400002/miningstoryctrl.lua",
-            "hash": 14491187123730095936
-        },
-        {
-            "name": "game/ui/play_mining_400002/miningstorypanel.lua",
-            "hash": 14766348076570118408
+            "name": "game/ui/play_icecreamtruck/icecreamlevelsselectpanel.lua",
+            "hash": 5393208301733887371
         },
         {
             "name": "game/ui/play_penguincard/penguinbasecardctrl.lua",
@@ -3233,6 +3129,38 @@
             "hash": 3162483097868096344
         },
         {
+            "name": "game/ui/soldier/soldierlevelselectctrl.lua",
+            "hash": 3098171333901602509
+        },
+        {
+            "name": "game/ui/soldier/soldierlevelselectpanel.lua",
+            "hash": 14080098766244220203
+        },
+        {
+            "name": "game/ui/soldier/soldiermainviewctrl.lua",
+            "hash": 16900329834110404320
+        },
+        {
+            "name": "game/ui/soldier/soldiermainviewpanel.lua",
+            "hash": 8366844255204758538
+        },
+        {
+            "name": "game/ui/soldier/soldierquestctrl.lua",
+            "hash": 6676674082221945448
+        },
+        {
+            "name": "game/ui/soldier/soldierquestpanel.lua",
+            "hash": 7056307801873377210
+        },
+        {
+            "name": "game/ui/soldier/soldiertestenterctrl.lua",
+            "hash": 4342829370338502179
+        },
+        {
+            "name": "game/ui/soldier/soldiertestenterpanel.lua",
+            "hash": 313554516689723710
+        },
+        {
             "name": "game/ui/startower/startowermapctrl.lua",
             "hash": 5586826041527461921
         },
@@ -3447,6 +3375,18 @@
         {
             "name": "game/ui/successbarex/successbarctrl.lua",
             "hash": 3667920173905990451
+        },
+        {
+            "name": "game/ui/successbarex/tracehuntsucbarctrl.lua",
+            "hash": 3142081073491100604
+        },
+        {
+            "name": "game/ui/successbarex/tracehuntsucbarpanel.lua",
+            "hash": 7678855226004180610
+        },
+        {
+            "name": "game/ui/successbarex/tracehuntupgradesucctrl.lua",
+            "hash": 5211044525912961830
         },
         {
             "name": "game/ui/templateex/templateaffinitylevelctrl.lua",
@@ -3725,6 +3665,10 @@
             "hash": 120895610488056209
         },
         {
+            "name": "game/ui/towerdefense/towerdefenseselectedcharctrl.lua",
+            "hash": 15387717298269995563
+        },
+        {
             "name": "game/ui/towerdefense/towerdefenseselectpanel.lua",
             "hash": 16906650404406455856
         },
@@ -3747,6 +3691,62 @@
         {
             "name": "game/ui/towerdefense/towerdeftipspanel.lua",
             "hash": 10584129964339304871
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntctrl.lua",
+            "hash": 8881187149736340297
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntfriendgridctrl.lua",
+            "hash": 14801841365083087362
+        },
+        {
+            "name": "game/ui/tracehunt/tracehunthandbookctrl.lua",
+            "hash": 185848764400521001
+        },
+        {
+            "name": "game/ui/tracehunt/tracehunthandbookpanel.lua",
+            "hash": 15635614335768386966
+        },
+        {
+            "name": "game/ui/tracehunt/tracehunthelpctrl.lua",
+            "hash": 406664810642511134
+        },
+        {
+            "name": "game/ui/tracehunt/tracehunthelppanel.lua",
+            "hash": 1863042727305597780
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntlevelctrl.lua",
+            "hash": 18230323789901147760
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntlevelinfoctrl.lua",
+            "hash": 12102710405702583144
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntlevelpanel.lua",
+            "hash": 2627506019635278956
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntlogctrl.lua",
+            "hash": 12028024724933167875
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntpanel.lua",
+            "hash": 572423616828934368
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntpausectrl.lua",
+            "hash": 946495724446886385
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntresultctrl.lua",
+            "hash": 18024796106129522679
+        },
+        {
+            "name": "game/ui/tracehunt/tracehuntresultpanel.lua",
+            "hash": 7602577932103459224
         },
         {
             "name": "game/ui/transitionex/transitionctrl.lua",
@@ -3867,6 +3867,50 @@
         {
             "name": "game/ui/trekkerversus_600002/trekkerversusquestgridctrl.lua",
             "hash": 17171698127340613665
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/tdbattleresultctrl.lua",
+            "hash": 16514748290755419788
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/tdbattleresultpanel.lua",
+            "hash": 16324788807771922446
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/travelerduelchallengeaffixgrid.lua",
+            "hash": 14378248086824724707
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/travelerduelchallengeinfoctrl.lua",
+            "hash": 12378895603694968448
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/trekkerversusctrl.lua",
+            "hash": 13000536022726416052
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/trekkerversusdifficultyctrl.lua",
+            "hash": 7793972484498080798
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/trekkerversusduelhistorygridctrl.lua",
+            "hash": 9830001591973448079
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/trekkerversusgiftquestgridctrl.lua",
+            "hash": 16935870737351765887
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/trekkerversuspanel.lua",
+            "hash": 7191792526035990914
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/trekkerversusquestctrl.lua",
+            "hash": 17283696334965037732
+        },
+        {
+            "name": "game/ui/trekkerversus_600003/trekkerversusquestgridctrl.lua",
+            "hash": 4178950839919012526
         },
         {
             "name": "game/ui/trialbattle/charpotentiallistctrl.lua",
@@ -4317,6 +4361,10 @@
             "hash": 10639075430256849857
         },
         {
+            "name": "gamecore/data/dataclass/playertracehuntdata.lua",
+            "hash": 3456188606864089497
+        },
+        {
             "name": "gamecore/data/dataclass/playertravelerdueldata.lua",
             "hash": 7542328680308481835
         },
@@ -4401,6 +4449,26 @@
             "hash": 10412422222465253627
         },
         {
+            "name": "game/ui/activity/doubledrop/doubledropactctrl.lua",
+            "hash": 1452468728211165150
+        },
+        {
+            "name": "game/ui/activity/doubledrop/doubledropactquestctrl.lua",
+            "hash": 7346643861964898142
+        },
+        {
+            "name": "game/ui/activity/doubledrop/doubledropactquestpanel_103001.lua",
+            "hash": 16796125941210541147
+        },
+        {
+            "name": "game/ui/activity/doubledrop/doubledropinsitemctrl.lua",
+            "hash": 8223869150483563464
+        },
+        {
+            "name": "game/ui/activity/followsocialmedia/followsocialmediaactctrl.lua",
+            "hash": 10545218124693577864
+        },
+        {
             "name": "game/ui/activity/goldenspy/goldenspybaseitem.lua",
             "hash": 18260315074504295287
         },
@@ -4421,16 +4489,8 @@
             "hash": 7687449466442829826
         },
         {
-            "name": "game/ui/activity/goldenspy/goldenspybuffselectpanel.lua",
-            "hash": 16387356657646291848
-        },
-        {
             "name": "game/ui/activity/goldenspy/goldenspybufftipsctrl.lua",
             "hash": 4235178725896816836
-        },
-        {
-            "name": "game/ui/activity/goldenspy/goldenspybufftipspanel.lua",
-            "hash": 5755683027166419014
         },
         {
             "name": "game/ui/activity/goldenspy/goldenspycompanionitem.lua",
@@ -4461,16 +4521,8 @@
             "hash": 15384597278693293266
         },
         {
-            "name": "game/ui/activity/goldenspy/goldenspylevelpanel.lua",
-            "hash": 17997909989415145381
-        },
-        {
             "name": "game/ui/activity/goldenspy/goldenspylevelselectctrl.lua",
             "hash": 8218534907955018203
-        },
-        {
-            "name": "game/ui/activity/goldenspy/goldenspylevelselectpanel.lua",
-            "hash": 103947266266320257
         },
         {
             "name": "game/ui/activity/goldenspy/goldenspynormalitem.lua",
@@ -4489,16 +4541,20 @@
             "hash": 5182700122259289780
         },
         {
-            "name": "game/ui/activity/goldenspy/goldenspyresultpanel.lua",
-            "hash": 14298286567513335529
-        },
-        {
             "name": "game/ui/activity/goldenspy/goldenspysafeboxitem.lua",
             "hash": 5968574136947678329
         },
         {
+            "name": "game/ui/activity/goldenspy/goldenspytargetscorectrl.lua",
+            "hash": 14801758137249429137
+        },
+        {
             "name": "game/ui/activity/goldenspy/goldenspytoolboxctrl.lua",
             "hash": 7315755467733059906
+        },
+        {
+            "name": "game/ui/activity/jointdrill/jointdrillactctrl.lua",
+            "hash": 1272938020447074943
         },
         {
             "name": "game/ui/activity/loginreward/loginrewardctrl.lua",
@@ -4529,6 +4585,10 @@
             "hash": 13560642989956935072
         },
         {
+            "name": "game/ui/activity/loginreward/loginsprewardctrl_list_01.lua",
+            "hash": 16171752129074983174
+        },
+        {
             "name": "game/ui/activity/loginreward/loginsprewardctrl_lsv.lua",
             "hash": 8981900278940794636
         },
@@ -4537,8 +4597,40 @@
             "hash": 7004864428383181983
         },
         {
+            "name": "game/ui/activity/loginreward/loginsprewarditemctrl_01.lua",
+            "hash": 474705295537387761
+        },
+        {
             "name": "game/ui/activity/mining/activityminingctrl.lua",
             "hash": 8871783611790916297
+        },
+        {
+            "name": "game/ui/activity/mining/mininggamectrl.lua",
+            "hash": 17542380753470633434
+        },
+        {
+            "name": "game/ui/activity/mining/mininggameguidecardctrl.lua",
+            "hash": 9445014642061161027
+        },
+        {
+            "name": "game/ui/activity/mining/mininggameguidectrl.lua",
+            "hash": 16295031297695549927
+        },
+        {
+            "name": "game/ui/activity/mining/mininggamequestctrl.lua",
+            "hash": 4142696474847209039
+        },
+        {
+            "name": "game/ui/activity/mining/mininggridcellctrl.lua",
+            "hash": 2380693944079997976
+        },
+        {
+            "name": "game/ui/activity/mining/mininggridlistctrl.lua",
+            "hash": 17092230721189295713
+        },
+        {
+            "name": "game/ui/activity/mining/miningquestcellctrl.lua",
+            "hash": 2553842108236754580
         },
         {
             "name": "game/ui/activity/penguincard/penguincardactctrl.lua",
@@ -4559,6 +4651,10 @@
         {
             "name": "game/ui/activity/periodicquest/periodicquestitemctrl.lua",
             "hash": 11970312765515529323
+        },
+        {
+            "name": "game/ui/activity/soldier/soldieractctrl.lua",
+            "hash": 17852379139978478917
         },
         {
             "name": "game/ui/activity/throwgifts/throwgiftctrl.lua",
@@ -4597,12 +4693,20 @@
             "hash": 16340216479756196768
         },
         {
+            "name": "game/ui/activity/throwgifts/throwgiftlevelselectpanel_400009.lua",
+            "hash": 11276888548161105389
+        },
+        {
             "name": "game/ui/activity/throwgifts/throwgiftleveltracklinectrl.lua",
             "hash": 6028619495030436300
         },
         {
             "name": "game/ui/activity/throwgifts/throwgiftpanel.lua",
             "hash": 3858712668868166312
+        },
+        {
+            "name": "game/ui/activity/throwgifts/throwgiftpanel_400009.lua",
+            "hash": 5041379551962797103
         },
         {
             "name": "game/ui/activity/throwgifts/throwgiftpausectrl.lua",
@@ -4697,6 +4801,66 @@
             "hash": 14846427506441024035
         },
         {
+            "name": "game/ui/activitytheme/10107/activityviewfinderctrl.lua",
+            "hash": 14637970772179512425
+        },
+        {
+            "name": "game/ui/activitytheme/10107/viewfinderthemectrl.lua",
+            "hash": 9681867936580607465
+        },
+        {
+            "name": "game/ui/activitytheme/10107/viewfinderthemepanel.lua",
+            "hash": 13393355426496953278
+        },
+        {
+            "name": "game/ui/activitytheme/10108/activitytechctrl.lua",
+            "hash": 17917116879784447182
+        },
+        {
+            "name": "game/ui/activitytheme/10108/techthemectrl.lua",
+            "hash": 17963555692638410848
+        },
+        {
+            "name": "game/ui/activitytheme/10108/techthemepanel.lua",
+            "hash": 9585806594369175430
+        },
+        {
+            "name": "game/ui/activitytheme/10109/activitygunstormctrl.lua",
+            "hash": 564796255039824899
+        },
+        {
+            "name": "game/ui/activitytheme/10109/gunstormctrl.lua",
+            "hash": 10103054729459131203
+        },
+        {
+            "name": "game/ui/activitytheme/10109/gunstormpanel.lua",
+            "hash": 10542557761110167990
+        },
+        {
+            "name": "game/ui/activitytheme/10110/activitysummeradvctrl.lua",
+            "hash": 9404875091304508830
+        },
+        {
+            "name": "game/ui/activitytheme/10110/summeradvctrl.lua",
+            "hash": 15115981525049790438
+        },
+        {
+            "name": "game/ui/activitytheme/10110/summeradvpanel.lua",
+            "hash": 18408815893334533977
+        },
+        {
+            "name": "game/ui/activitytheme/11100/activityswim_11100ctrl.lua",
+            "hash": 5742947293464875482
+        },
+        {
+            "name": "game/ui/activitytheme/11100/swimtheme_11100ctrl.lua",
+            "hash": 18430000799038519284
+        },
+        {
+            "name": "game/ui/activitytheme/11100/swimtheme_11100panel.lua",
+            "hash": 6600147665843869525
+        },
+        {
             "name": "game/ui/activitytheme/20101/activitychristmasctrl.lua",
             "hash": 9801535289670539130
         },
@@ -4721,6 +4885,18 @@
             "hash": 3823471107029372273
         },
         {
+            "name": "game/ui/activitytheme/20103/activitysummercheckinctrl.lua",
+            "hash": 4185957136498929296
+        },
+        {
+            "name": "game/ui/activitytheme/20103/summercheckinthemectrl.lua",
+            "hash": 3927136163533979315
+        },
+        {
+            "name": "game/ui/activitytheme/20103/summercheckinthemepanel.lua",
+            "hash": 11891391140570970210
+        },
+        {
             "name": "game/ui/activitytheme/30101/activitybreakoutctrl.lua",
             "hash": 12056265770027263634
         },
@@ -4731,6 +4907,30 @@
         {
             "name": "game/ui/activitytheme/30101/breakoutthemepanel.lua",
             "hash": 18061625375081743352
+        },
+        {
+            "name": "game/ui/activitytheme/30102/activitybreakoutctrl.lua",
+            "hash": 453893736409962749
+        },
+        {
+            "name": "game/ui/activitytheme/30102/breakoutthemectrl.lua",
+            "hash": 4894554882347399308
+        },
+        {
+            "name": "game/ui/activitytheme/30102/breakoutthemepanel.lua",
+            "hash": 13220338076474340646
+        },
+        {
+            "name": "game/ui/activitytheme/30103/activitybreakoutctrl.lua",
+            "hash": 4606768779675525931
+        },
+        {
+            "name": "game/ui/activitytheme/30103/breakoutthemectrl.lua",
+            "hash": 11201918888586825162
+        },
+        {
+            "name": "game/ui/activitytheme/30103/breakoutthemepanel.lua",
+            "hash": 12507220170025490744
         },
         {
             "name": "game/ui/activitytheme/levelcommon/activitylevelsinstancepausectrl.lua",
@@ -5073,6 +5273,10 @@
             "hash": 15991263551174864813
         },
         {
+            "name": "game/ui/guide/guidegruop/guidegroup_401.lua",
+            "hash": 13339264507384162254
+        },
+        {
             "name": "game/ui/guide/guidegruop/guidegroup_41.lua",
             "hash": 15606007618503505469
         },
@@ -5401,108 +5605,88 @@
             "hash": 5091943516080675552
         },
         {
-            "name": "game/ui/play_mining/400003/mininggamectrl.lua",
-            "hash": 11740275471806440340
+            "name": "game/ui/play_cookie/400010/cookieboardpanel.lua",
+            "hash": 14562033573512379735
         },
         {
-            "name": "game/ui/play_mining/400003/mininggameguidecardctrl.lua",
-            "hash": 12764321228237280634
+            "name": "game/ui/play_cookie/400010/cookiegamepanel.lua",
+            "hash": 15475570172860115859
         },
         {
-            "name": "game/ui/play_mining/400003/mininggameguidectrl.lua",
-            "hash": 5045605596982147345
+            "name": "game/ui/play_cookie/400010/cookiequestpanel.lua",
+            "hash": 4683173252806259060
         },
         {
-            "name": "game/ui/play_mining/400003/mininggameguidepanel.lua",
-            "hash": 5059953243365379077
+            "name": "game/ui/play_cookie/400016/cookieboardpanel.lua",
+            "hash": 678179354921127147
         },
         {
-            "name": "game/ui/play_mining/400003/mininggamepanel.lua",
-            "hash": 5720725349412457934
+            "name": "game/ui/play_cookie/400016/cookiegamepanel.lua",
+            "hash": 1603936512561181493
         },
         {
-            "name": "game/ui/play_mining/400003/mininggamequestctrl.lua",
-            "hash": 11239607685059585447
+            "name": "game/ui/play_cookie/400016/cookiequestpanel.lua",
+            "hash": 8199201362397535659
         },
         {
-            "name": "game/ui/play_mining/400003/mininggamequestpanel.lua",
-            "hash": 7974178495740237005
+            "name": "game/ui/play_icecreamtruck/play/customeritemctrl.lua",
+            "hash": 12434675300938119104
         },
         {
-            "name": "game/ui/play_mining/400003/mininggridcellctrl.lua",
-            "hash": 5943706836104234804
+            "name": "game/ui/play_icecreamtruck/play/customerqueuectrl.lua",
+            "hash": 17601996502841362819
         },
         {
-            "name": "game/ui/play_mining/400003/mininggridlistctrl.lua",
-            "hash": 7149046343409082007
+            "name": "game/ui/play_icecreamtruck/play/customersctrl.lua",
+            "hash": 11098876497271659471
         },
         {
-            "name": "game/ui/play_mining/400003/miningquestcellctrl.lua",
-            "hash": 17189202469610855026
+            "name": "game/ui/play_icecreamtruck/play/icecreambackpackctrl.lua",
+            "hash": 1558762220812072667
         },
         {
-            "name": "game/ui/play_mining/400003/miningstorycellctrl.lua",
-            "hash": 4278637951640246200
+            "name": "game/ui/play_icecreamtruck/play/icecreambuffruntimectrl.lua",
+            "hash": 18064558521212602698
         },
         {
-            "name": "game/ui/play_mining/400003/miningstoryctrl.lua",
-            "hash": 10742830600295581860
+            "name": "game/ui/play_icecreamtruck/play/icecreambuffsctrl.lua",
+            "hash": 4568314950532608928
         },
         {
-            "name": "game/ui/play_mining/400003/miningstorypanel.lua",
-            "hash": 7452908041761115063
+            "name": "game/ui/play_icecreamtruck/play/icecreamleveldata.lua",
+            "hash": 4626769726651672860
         },
         {
-            "name": "game/ui/play_mining/400007/mininggamectrl.lua",
-            "hash": 6309668815282046279
+            "name": "game/ui/play_icecreamtruck/play/icecreamordersctrl.lua",
+            "hash": 3984721273682435188
         },
         {
-            "name": "game/ui/play_mining/400007/mininggameguidecardctrl.lua",
-            "hash": 14061593817791159516
+            "name": "game/ui/play_icecreamtruck/play/icecreamresultctrl.lua",
+            "hash": 9764300566802375423
         },
         {
-            "name": "game/ui/play_mining/400007/mininggameguidectrl.lua",
-            "hash": 4726194953032343246
+            "name": "game/ui/play_icecreamtruck/play/icecreamtruckgamectrl.lua",
+            "hash": 14943991062763311311
         },
         {
-            "name": "game/ui/play_mining/400007/mininggameguidepanel.lua",
-            "hash": 11259163959370995617
+            "name": "game/ui/play_icecreamtruck/play/icecreamtruckgamepanel.lua",
+            "hash": 17991587968624594270
         },
         {
-            "name": "game/ui/play_mining/400007/mininggamepanel.lua",
-            "hash": 14062373898969176518
+            "name": "game/ui/play_icecreamtruck/play/icecreamtruckpausectrl.lua",
+            "hash": 16788171901283189670
         },
         {
-            "name": "game/ui/play_mining/400007/mininggamequestctrl.lua",
-            "hash": 4547656483718109667
+            "name": "game/ui/play_icecreamtruck/play/icecreamutils.lua",
+            "hash": 8222207695312352852
         },
         {
-            "name": "game/ui/play_mining/400007/mininggamequestpanel.lua",
-            "hash": 6280392982715637330
+            "name": "game/ui/play_icecreamtruck/play/scorecalculationctrl.lua",
+            "hash": 3209687417492851390
         },
         {
-            "name": "game/ui/play_mining/400007/mininggridcellctrl.lua",
-            "hash": 1227524282935614082
-        },
-        {
-            "name": "game/ui/play_mining/400007/mininggridlistctrl.lua",
-            "hash": 3569549132632841362
-        },
-        {
-            "name": "game/ui/play_mining/400007/miningquestcellctrl.lua",
-            "hash": 6093773185734631788
-        },
-        {
-            "name": "game/ui/play_mining/400007/miningstorycellctrl.lua",
-            "hash": 1225300999237655564
-        },
-        {
-            "name": "game/ui/play_mining/400007/miningstoryctrl.lua",
-            "hash": 2742666599969489575
-        },
-        {
-            "name": "game/ui/play_mining/400007/miningstorypanel.lua",
-            "hash": 13217194754873065253
+            "name": "game/ui/play_penguincard/normalmode/penguinlevel_normal.lua",
+            "hash": 15578305914236345539
         },
         {
             "name": "game/ui/quest/assistant/assistantctrl.lua",
@@ -5603,6 +5787,298 @@
         {
             "name": "game/ui/skillinstanceroominfo/skillinstanceslime/skillinstanceslimectrl.lua",
             "hash": 13200712081917729173
+        },
+        {
+            "name": "game/ui/soldier/battle/skilldisplayctrl.lua",
+            "hash": 1727765782234924557
+        },
+        {
+            "name": "game/ui/soldier/battle/soldierbattlepanel.lua",
+            "hash": 10395836435009267676
+        },
+        {
+            "name": "game/ui/soldier/battle/soldierbattleresultctrl.lua",
+            "hash": 16451117735459405133
+        },
+        {
+            "name": "game/ui/soldier/battle/soldierbattleresultpanel.lua",
+            "hash": 14521763489587295937
+        },
+        {
+            "name": "game/ui/soldier/battle/soldiermaincharitemctrl.lua",
+            "hash": 7755370766103248621
+        },
+        {
+            "name": "game/ui/soldier/battle/soldierpausectrl.lua",
+            "hash": 10860900249214938314
+        },
+        {
+            "name": "game/ui/soldier/battle/soldierroominfoctrl.lua",
+            "hash": 9378294093320796099
+        },
+        {
+            "name": "game/ui/soldier/battle/soldierskilldisplayctrl.lua",
+            "hash": 12330420545657690336
+        },
+        {
+            "name": "game/ui/soldier/battle/soldierskilldisplayitemctrl.lua",
+            "hash": 998568431864183323
+        },
+        {
+            "name": "game/ui/soldier/battle/soldiersubcharitemctrl.lua",
+            "hash": 13709516320686695120
+        },
+        {
+            "name": "game/ui/soldier/battleevent/soldieraddbuffitemctrl.lua",
+            "hash": 14832418005635235706
+        },
+        {
+            "name": "game/ui/soldier/battleevent/soldierbattleeventctrl.lua",
+            "hash": 15043052695250530415
+        },
+        {
+            "name": "game/ui/soldier/battleevent/soldierbattleeventitemctrl.lua",
+            "hash": 4918993231198802591
+        },
+        {
+            "name": "game/ui/soldier/battleevent/soldierbattleeventpanel.lua",
+            "hash": 3279223291025531928
+        },
+        {
+            "name": "game/ui/soldier/battleevent/soldierresolveadisputectrl.lua",
+            "hash": 15790799627833711149
+        },
+        {
+            "name": "game/ui/soldier/battleevent/soldierresolveadisputepanel.lua",
+            "hash": 12545466085573349522
+        },
+        {
+            "name": "game/ui/soldier/characterattritips/soldiercharattritipsctrl.lua",
+            "hash": 14324202325055855624
+        },
+        {
+            "name": "game/ui/soldier/characterattritips/soldiercharattritipspanel.lua",
+            "hash": 5358494318402139349
+        },
+        {
+            "name": "game/ui/soldier/charactertips/soldiercharskilldetailctrl.lua",
+            "hash": 13206139937270245318
+        },
+        {
+            "name": "game/ui/soldier/charactertips/soldiercharskilldetailpanel.lua",
+            "hash": 7363299436418548424
+        },
+        {
+            "name": "game/ui/soldier/charactertips/soldiercharskillpreviewctrl.lua",
+            "hash": 714812363973845462
+        },
+        {
+            "name": "game/ui/soldier/charactertips/soldiercharskillpreviewpanel.lua",
+            "hash": 9344741680476753385
+        },
+        {
+            "name": "game/ui/soldier/charactertips/soldierchartipsctrl.lua",
+            "hash": 5360052054230200182
+        },
+        {
+            "name": "game/ui/soldier/charactertips/soldierchartipspanel.lua",
+            "hash": 642114490197761003
+        },
+        {
+            "name": "game/ui/soldier/goldtipspanel/soldiergoldtipsctrl.lua",
+            "hash": 1002986392172304249
+        },
+        {
+            "name": "game/ui/soldier/goldtipspanel/soldiergoldtipspanel.lua",
+            "hash": 4252936681820009412
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookcarddetailctrl.lua",
+            "hash": 12487746262955815612
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookcharctrl.lua",
+            "hash": 2613794430124944016
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookchardetailctrl.lua",
+            "hash": 5361958562098544501
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookcharitemctrl.lua",
+            "hash": 4861072696561217371
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookctrl.lua",
+            "hash": 4457603143559002985
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookpanel.lua",
+            "hash": 844882273290081354
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookpartnerctrl.lua",
+            "hash": 13076141995954940220
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookpartnerdetailctrl.lua",
+            "hash": 13048131494464774315
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookpartnerdetailpanel.lua",
+            "hash": 10876326769446018969
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookpartneritemctrl.lua",
+            "hash": 2390868424452357673
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookselectctrl.lua",
+            "hash": 9411324008242244789
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookselectpanel.lua",
+            "hash": 11392277007451794354
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookstartercardctrl.lua",
+            "hash": 13159098293416434258
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierhandbookstrategycardctrl.lua",
+            "hash": 10752599291186368159
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierselectstartercarditemctrl.lua",
+            "hash": 17472725345042233910
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierselectstartercarditempanel.lua",
+            "hash": 3697853304483213118
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierselectstrategycarditemctrl.lua",
+            "hash": 13725547684133996723
+        },
+        {
+            "name": "game/ui/soldier/handbook/soldierselectstrategycarditempanel.lua",
+            "hash": 14382788090414338066
+        },
+        {
+            "name": "game/ui/soldier/partnertipspanel/soldierpartnertipscarditemctrl.lua",
+            "hash": 8569749773536137482
+        },
+        {
+            "name": "game/ui/soldier/partnertipspanel/soldierpartnertipsctrl.lua",
+            "hash": 469563345933745935
+        },
+        {
+            "name": "game/ui/soldier/partnertipspanel/soldierpartnertipsdesitemctrl.lua",
+            "hash": 11567979010069070526
+        },
+        {
+            "name": "game/ui/soldier/partnertipspanel/soldierpartnertipspanel.lua",
+            "hash": 740783315398552023
+        },
+        {
+            "name": "game/ui/soldier/recommend/soldierrecommendcellctrl.lua",
+            "hash": 10765677241428154280
+        },
+        {
+            "name": "game/ui/soldier/recommend/soldierrecommendctrl.lua",
+            "hash": 883594754324833125
+        },
+        {
+            "name": "game/ui/soldier/recommend/soldierrecommenddetailctrl.lua",
+            "hash": 15036187535956522074
+        },
+        {
+            "name": "game/ui/soldier/recommend/soldierrecommenddetailpanel.lua",
+            "hash": 3281738775635960562
+        },
+        {
+            "name": "game/ui/soldier/recommend/soldierrecommendpanel.lua",
+            "hash": 15791194339715756657
+        },
+        {
+            "name": "game/ui/soldier/recommend/spliderrecommendpartnerctrl.lua",
+            "hash": 2569590853644175723
+        },
+        {
+            "name": "game/ui/soldier/sandtable/soldierpartnerlistctrl.lua",
+            "hash": 1119318978015546256
+        },
+        {
+            "name": "game/ui/soldier/sandtable/soldiersandtablecharitemctrl.lua",
+            "hash": 2527806981254400317
+        },
+        {
+            "name": "game/ui/soldier/sandtable/soldiersandtablectrl.lua",
+            "hash": 3129065941696341719
+        },
+        {
+            "name": "game/ui/soldier/sandtable/soldiersandtablefxctrl.lua",
+            "hash": 3076055189331618552
+        },
+        {
+            "name": "game/ui/soldier/sandtable/soldiersandtableothercharitemctrl.lua",
+            "hash": 10537694506296256545
+        },
+        {
+            "name": "game/ui/soldier/sandtable/soldiersandtablepanel.lua",
+            "hash": 6837587363983834055
+        },
+        {
+            "name": "game/ui/soldier/selectaddbuff/soldieraddbuffctrl.lua",
+            "hash": 9453965235926853307
+        },
+        {
+            "name": "game/ui/soldier/selectaddbuff/soldieraddbuffpanel.lua",
+            "hash": 7341359512829091735
+        },
+        {
+            "name": "game/ui/soldier/selectpolicy/soldierpolicyitemctrl.lua",
+            "hash": 11960187405940973456
+        },
+        {
+            "name": "game/ui/soldier/selectpolicy/soldierselectpolicyctrl.lua",
+            "hash": 13439416572266997512
+        },
+        {
+            "name": "game/ui/soldier/selectpolicy/soldierselectpolicypanel.lua",
+            "hash": 16956515424519190059
+        },
+        {
+            "name": "game/ui/soldier/shopprobability/soldiershopprobabilityctrl.lua",
+            "hash": 5178347448323750866
+        },
+        {
+            "name": "game/ui/soldier/shopprobability/soldiershopprobabilityitemctrl.lua",
+            "hash": 4435078629799277155
+        },
+        {
+            "name": "game/ui/soldier/shopprobability/soldiershopprobabilitypanel.lua",
+            "hash": 16198633207900589392
+        },
+        {
+            "name": "game/ui/soldier/template/soldierchargridctrl.lua",
+            "hash": 14163219104607135022
+        },
+        {
+            "name": "game/ui/soldier/template/soldieritemgridctrl.lua",
+            "hash": 11853909097089210895
+        },
+        {
+            "name": "game/ui/soldier/template/soldierpotentialitemctrl.lua",
+            "hash": 14559811623015176172
+        },
+        {
+            "name": "game/ui/soldier/template/soldierstartercarditemctrl.lua",
+            "hash": 11600923214620589661
+        },
+        {
+            "name": "game/ui/soldier/template/soldierstrategycarditemctrl.lua",
+            "hash": 10495266933738192053
         },
         {
             "name": "game/ui/startower/build/buildattrpreviewctrl.lua",
@@ -6069,12 +6545,28 @@
             "hash": 12691817206036699337
         },
         {
+            "name": "gamecore/data/dataclass/activity/doubledropsactdata.lua",
+            "hash": 4837693478469802942
+        },
+        {
             "name": "gamecore/data/dataclass/activity/dream_10102data.lua",
             "hash": 16640305671130730566
         },
         {
+            "name": "gamecore/data/dataclass/activity/followsocialmediadata.lua",
+            "hash": 7998295691700711193
+        },
+        {
             "name": "gamecore/data/dataclass/activity/goldenspydata.lua",
             "hash": 2753274630192850236
+        },
+        {
+            "name": "gamecore/data/dataclass/activity/gunstorm_10109data.lua",
+            "hash": 11856637088632010363
+        },
+        {
+            "name": "gamecore/data/dataclass/activity/icecreamactdata.lua",
+            "hash": 1986682165703686145
         },
         {
             "name": "gamecore/data/dataclass/activity/jointdrillactdata.lua",
@@ -6113,6 +6605,10 @@
             "hash": 9500757055914764055
         },
         {
+            "name": "gamecore/data/dataclass/activity/soldieractdata.lua",
+            "hash": 5711400249226261039
+        },
+        {
             "name": "gamecore/data/dataclass/activity/solodance_20102data.lua",
             "hash": 3914344618944018233
         },
@@ -6121,8 +6617,24 @@
             "hash": 13912572928293349367
         },
         {
+            "name": "gamecore/data/dataclass/activity/summer_10110data.lua",
+            "hash": 3590136636301366635
+        },
+        {
+            "name": "gamecore/data/dataclass/activity/summer_20103data.lua",
+            "hash": 4797975734255313069
+        },
+        {
             "name": "gamecore/data/dataclass/activity/swimthemedata.lua",
             "hash": 8040769322745227492
+        },
+        {
+            "name": "gamecore/data/dataclass/activity/swimtheme_11100data.lua",
+            "hash": 15599299523214576105
+        },
+        {
+            "name": "gamecore/data/dataclass/activity/tech_10108data.lua",
+            "hash": 17685951966457630719
         },
         {
             "name": "gamecore/data/dataclass/activity/throwgiftdata.lua",
@@ -6143,6 +6655,10 @@
         {
             "name": "gamecore/data/dataclass/activity/trialactdata.lua",
             "hash": 11916209039151363608
+        },
+        {
+            "name": "gamecore/data/dataclass/activity/viewfinder_10107data.lua",
+            "hash": 949727072971525619
         },
         {
             "name": "gamecore/data/dataclass/activity/winternight_10105data.lua",
@@ -6167,6 +6683,22 @@
         {
             "name": "gamecore/data/dataclass/handbookdata/handbookstorysetdata.lua",
             "hash": 13355505311962595715
+        },
+        {
+            "name": "gamecore/data/dataclass/soldier/playersoldierdata.lua",
+            "hash": 4158528621748410172
+        },
+        {
+            "name": "gamecore/data/dataclass/soldier/playersoldierquestdata.lua",
+            "hash": 5381229620881565614
+        },
+        {
+            "name": "gamecore/data/dataclass/soldier/playersoldierrecommenddata.lua",
+            "hash": 13563093129674672986
+        },
+        {
+            "name": "gamecore/data/dataclass/soldier/soldierattrdata.lua",
+            "hash": 14698710347561695311
         },
         {
             "name": "gamecore/data/dataclass/tutorial/playertutorialdata.lua",
@@ -6225,12 +6757,44 @@
             "hash": 1061877627877419943
         },
         {
-            "name": "game/ui/activity/jointdrill/_510001/jointdrillactctrl.lua",
-            "hash": 9920229061909113123
+            "name": "game/ui/activity/goldenspy/400008/goldenspybuffselectpanel.lua",
+            "hash": 11682772689924859702
         },
         {
-            "name": "game/ui/activity/jointdrill/_510003/jointdrillactctrl.lua",
-            "hash": 16636368050436992047
+            "name": "game/ui/activity/goldenspy/400008/goldenspybufftipspanel.lua",
+            "hash": 4688365630530939313
+        },
+        {
+            "name": "game/ui/activity/goldenspy/400008/goldenspylevelpanel.lua",
+            "hash": 758720762112470756
+        },
+        {
+            "name": "game/ui/activity/goldenspy/400008/goldenspylevelselectpanel.lua",
+            "hash": 8589033665828621921
+        },
+        {
+            "name": "game/ui/activity/goldenspy/400008/goldenspyresultpanel.lua",
+            "hash": 7213191171631671741
+        },
+        {
+            "name": "game/ui/activity/goldenspy/400012/goldenspybuffselectpanel.lua",
+            "hash": 8172915430801742206
+        },
+        {
+            "name": "game/ui/activity/goldenspy/400012/goldenspybufftipspanel.lua",
+            "hash": 15699395615365708429
+        },
+        {
+            "name": "game/ui/activity/goldenspy/400012/goldenspylevelpanel.lua",
+            "hash": 143225676570344056
+        },
+        {
+            "name": "game/ui/activity/goldenspy/400012/goldenspylevelselectpanel.lua",
+            "hash": 5646403132294691005
+        },
+        {
+            "name": "game/ui/activity/goldenspy/400012/goldenspyresultpanel.lua",
+            "hash": 9887589111839658460
         },
         {
             "name": "game/ui/activity/loginreward/_301001/loginrewardctrl_01.lua",
@@ -6303,6 +6867,46 @@
         {
             "name": "game/ui/activity/loginreward/_301033/loginrewardpopupctrl_01.lua",
             "hash": 3334181038956199898
+        },
+        {
+            "name": "game/ui/activity/loginreward/_301041/loginrewardpopupctrl_01.lua",
+            "hash": 9480744262272559647
+        },
+        {
+            "name": "game/ui/activity/loginreward/_301041/loginsprewardctrl_01.lua",
+            "hash": 3839381124180926174
+        },
+        {
+            "name": "game/ui/activity/loginreward/_301042/loginrewardctrl_01.lua",
+            "hash": 749731131545105231
+        },
+        {
+            "name": "game/ui/activity/loginreward/_301042/loginrewardpopupctrl_01.lua",
+            "hash": 17508791113509894822
+        },
+        {
+            "name": "game/ui/activity/mining/400011/mininggameguidepanel.lua",
+            "hash": 14314358966684408425
+        },
+        {
+            "name": "game/ui/activity/mining/400011/mininggamepanel.lua",
+            "hash": 961156600347424849
+        },
+        {
+            "name": "game/ui/activity/mining/400011/mininggamequestpanel.lua",
+            "hash": 15530029669860295251
+        },
+        {
+            "name": "game/ui/activity/mining/400014/mininggameguidepanel.lua",
+            "hash": 18347699197714459178
+        },
+        {
+            "name": "game/ui/activity/mining/400014/mininggamepanel.lua",
+            "hash": 1248800231626580489
+        },
+        {
+            "name": "game/ui/activity/mining/400014/mininggamequestpanel.lua",
+            "hash": 5222008147408795205
         },
         {
             "name": "game/ui/activity/periodicquest/_101002/periodicquestctrl_01.lua",
@@ -6565,6 +7169,154 @@
             "hash": 12485985941185351325
         },
         {
+            "name": "game/ui/activitytheme/10107/shop/activityshopgoodsitemctrl.lua",
+            "hash": 13215879059400434425
+        },
+        {
+            "name": "game/ui/activitytheme/10107/shop/activityshoppanel.lua",
+            "hash": 6811195207892236125
+        },
+        {
+            "name": "game/ui/activitytheme/10107/story/viewfinderstoryctrl.lua",
+            "hash": 13810262657395034113
+        },
+        {
+            "name": "game/ui/activitytheme/10107/story/viewfinderstorypanel.lua",
+            "hash": 7561704161548116131
+        },
+        {
+            "name": "game/ui/activitytheme/10107/task/viewfindertaskpanel.lua",
+            "hash": 12423652130927054962
+        },
+        {
+            "name": "game/ui/activitytheme/10108/activitylevels/activitylevelslvctrl.lua",
+            "hash": 3539476490102671098
+        },
+        {
+            "name": "game/ui/activitytheme/10108/activitylevels/activitylevelsselectctrl.lua",
+            "hash": 8156507761984495936
+        },
+        {
+            "name": "game/ui/activitytheme/10108/activitylevels/activitylevelsselectpanel.lua",
+            "hash": 13424884952593183748
+        },
+        {
+            "name": "game/ui/activitytheme/10108/shop/activityshopgoodsitemctrl.lua",
+            "hash": 10030372120213971437
+        },
+        {
+            "name": "game/ui/activitytheme/10108/shop/activityshoppanel.lua",
+            "hash": 10783606595326759074
+        },
+        {
+            "name": "game/ui/activitytheme/10108/story/techstoryctrl.lua",
+            "hash": 13226662193360766964
+        },
+        {
+            "name": "game/ui/activitytheme/10108/story/techstorypanel.lua",
+            "hash": 9927493198382112557
+        },
+        {
+            "name": "game/ui/activitytheme/10108/task/techtaskpanel.lua",
+            "hash": 6733623258621582176
+        },
+        {
+            "name": "game/ui/activitytheme/10109/activitylevels/activitylevelslvctrl.lua",
+            "hash": 2074715231763024242
+        },
+        {
+            "name": "game/ui/activitytheme/10109/activitylevels/activitylevelsselectctrl.lua",
+            "hash": 13288530236894427652
+        },
+        {
+            "name": "game/ui/activitytheme/10109/activitylevels/activitylevelsselectpanel.lua",
+            "hash": 16188139316504587046
+        },
+        {
+            "name": "game/ui/activitytheme/10109/shop/activityshopgoodsitemctrl.lua",
+            "hash": 13042179554452473005
+        },
+        {
+            "name": "game/ui/activitytheme/10109/shop/activityshoppanel.lua",
+            "hash": 13970729682501487656
+        },
+        {
+            "name": "game/ui/activitytheme/10109/story/gunstormstoryctrl.lua",
+            "hash": 14095413984522358145
+        },
+        {
+            "name": "game/ui/activitytheme/10109/story/gunstormstorypanel.lua",
+            "hash": 15629095837634476908
+        },
+        {
+            "name": "game/ui/activitytheme/10109/task/gunstormtaskctrl.lua",
+            "hash": 1114614951065949350
+        },
+        {
+            "name": "game/ui/activitytheme/10109/task/gunstormtaskpanel.lua",
+            "hash": 4616124827642347315
+        },
+        {
+            "name": "game/ui/activitytheme/10110/activitylevels/activitylevelslvctrl.lua",
+            "hash": 6879769712295813366
+        },
+        {
+            "name": "game/ui/activitytheme/10110/activitylevels/activitylevelsselectctrl.lua",
+            "hash": 11291878208855551673
+        },
+        {
+            "name": "game/ui/activitytheme/10110/activitylevels/activitylevelsselectpanel.lua",
+            "hash": 18039804814097887529
+        },
+        {
+            "name": "game/ui/activitytheme/10110/shop/activityshopgoodsitemctrl.lua",
+            "hash": 1261086278334479558
+        },
+        {
+            "name": "game/ui/activitytheme/10110/shop/activityshoppanel.lua",
+            "hash": 9045967447776496805
+        },
+        {
+            "name": "game/ui/activitytheme/10110/story/summeradvstoryctrl.lua",
+            "hash": 9594017911755370707
+        },
+        {
+            "name": "game/ui/activitytheme/10110/story/summeradvstorypanel.lua",
+            "hash": 16625917236180059269
+        },
+        {
+            "name": "game/ui/activitytheme/10110/task/summeradvtaskpanel.lua",
+            "hash": 12120145164069535459
+        },
+        {
+            "name": "game/ui/activitytheme/11100/activitylevels/activitylevelsselectctrl.lua",
+            "hash": 2130042533846255537
+        },
+        {
+            "name": "game/ui/activitytheme/11100/activitylevels/activitylevelsselectpanel.lua",
+            "hash": 11068271146740573350
+        },
+        {
+            "name": "game/ui/activitytheme/11100/shop/activityshopgoodsitemctrl.lua",
+            "hash": 16750950356337179203
+        },
+        {
+            "name": "game/ui/activitytheme/11100/shop/activityshoppanel.lua",
+            "hash": 5803010416560158116
+        },
+        {
+            "name": "game/ui/activitytheme/11100/story/swimthemestory_11100ctrl.lua",
+            "hash": 489056155845184802
+        },
+        {
+            "name": "game/ui/activitytheme/11100/story/swimthemestory_11100panel.lua",
+            "hash": 9870032108563977523
+        },
+        {
+            "name": "game/ui/activitytheme/11100/task/swimtask_11100panel.lua",
+            "hash": 11490688809832861600
+        },
+        {
             "name": "game/ui/activitytheme/20101/activitylevels/activitylevelslvctrl.lua",
             "hash": 17073598604757713684
         },
@@ -6653,16 +7405,40 @@
             "hash": 4012974105016418483
         },
         {
-            "name": "game/ui/activitytheme/30101/shop/activityshopctrl.lua",
-            "hash": 17882059166364320633
+            "name": "game/ui/activitytheme/20103/activitylevels/activitylevelslvctrl.lua",
+            "hash": 6150479041274156025
         },
         {
-            "name": "game/ui/activitytheme/30101/shop/activityshopgoodsctrl.lua",
-            "hash": 6131001255180981649
+            "name": "game/ui/activitytheme/20103/activitylevels/activitylevelsselectctrl.lua",
+            "hash": 15070148522029693366
         },
         {
-            "name": "game/ui/activitytheme/30101/shop/activityshopgoodsdetailctrl.lua",
-            "hash": 4585260467282491959
+            "name": "game/ui/activitytheme/20103/activitylevels/activitylevelsselectpanel.lua",
+            "hash": 6300660174985265485
+        },
+        {
+            "name": "game/ui/activitytheme/20103/shop/activityshopgoodsitemctrl.lua",
+            "hash": 123036664914096303
+        },
+        {
+            "name": "game/ui/activitytheme/20103/shop/activityshoppanel.lua",
+            "hash": 12624217932393718529
+        },
+        {
+            "name": "game/ui/activitytheme/20103/story/summercheckinstoryctrl.lua",
+            "hash": 444696620360768690
+        },
+        {
+            "name": "game/ui/activitytheme/20103/story/summercheckinstorypanel.lua",
+            "hash": 6421137248267200292
+        },
+        {
+            "name": "game/ui/activitytheme/20103/task/summercheckintaskctrl.lua",
+            "hash": 10053236035179264326
+        },
+        {
+            "name": "game/ui/activitytheme/20103/task/summercheckintaskpanel.lua",
+            "hash": 11435851702998035841
         },
         {
             "name": "game/ui/activitytheme/30101/shop/activityshopgoodsitemctrl.lua",
@@ -6673,20 +7449,44 @@
             "hash": 13445586123872707611
         },
         {
-            "name": "game/ui/activitytheme/30101/shop/activityshoppopupctrl.lua",
-            "hash": 9707200432627156233
-        },
-        {
-            "name": "game/ui/activitytheme/30101/shop/activityshoppopuppanel.lua",
-            "hash": 8482024721599955331
-        },
-        {
             "name": "game/ui/activitytheme/30101/task/breakouttaskctrl.lua",
             "hash": 16580363465150781635
         },
         {
             "name": "game/ui/activitytheme/30101/task/breakouttaskpanel.lua",
             "hash": 2203636865942069715
+        },
+        {
+            "name": "game/ui/activitytheme/30102/shop/activityshopgoodsitemctrl.lua",
+            "hash": 14724488281058421188
+        },
+        {
+            "name": "game/ui/activitytheme/30102/shop/activityshoppanel.lua",
+            "hash": 7658273454407599340
+        },
+        {
+            "name": "game/ui/activitytheme/30102/task/breakouttaskctrl.lua",
+            "hash": 2778412414680831928
+        },
+        {
+            "name": "game/ui/activitytheme/30102/task/breakouttaskpanel.lua",
+            "hash": 16402683600486057288
+        },
+        {
+            "name": "game/ui/activitytheme/30103/shop/activityshopgoodsitemctrl.lua",
+            "hash": 16363149633894734843
+        },
+        {
+            "name": "game/ui/activitytheme/30103/shop/activityshoppanel.lua",
+            "hash": 6442111622922993327
+        },
+        {
+            "name": "game/ui/activitytheme/30103/task/breakouttaskctrl.lua",
+            "hash": 6732524393899436632
+        },
+        {
+            "name": "game/ui/activitytheme/30103/task/breakouttaskpanel.lua",
+            "hash": 16897750171883870245
         },
         {
             "name": "game/ui/activitytheme/swim/activitylevels/activitylevelsselectctrl.lua",
@@ -6821,6 +7621,18 @@
             "hash": 2946324364941958786
         },
         {
+            "name": "game/ui/avg/_tw/config/bbm07_bt01.lua",
+            "hash": 16585847051602753955
+        },
+        {
+            "name": "game/ui/avg/_tw/config/bbm07_bt02.lua",
+            "hash": 7603246498327358376
+        },
+        {
+            "name": "game/ui/avg/_tw/config/bbm07_bt03.lua",
+            "hash": 7817122535410814060
+        },
+        {
             "name": "game/ui/avg/_tw/config/cg_103_01.lua",
             "hash": 11579794239498764510
         },
@@ -6903,6 +7715,30 @@
         {
             "name": "game/ui/avg/_tw/config/cg_113_03.lua",
             "hash": 1066232011489803018
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_114_01.lua",
+            "hash": 10197664696216384552
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_114_02.lua",
+            "hash": 10867926173106129481
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_114_03.lua",
+            "hash": 13482257754740992717
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_115_01.lua",
+            "hash": 7914206957731188095
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_115_02.lua",
+            "hash": 4166197619175506293
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_115_03.lua",
+            "hash": 8952597737687180606
         },
         {
             "name": "game/ui/avg/_tw/config/cg_116_01.lua",
@@ -7073,6 +7909,18 @@
             "hash": 10347378755592696764
         },
         {
+            "name": "game/ui/avg/_tw/config/cg_140_01.lua",
+            "hash": 10500091841564790857
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_140_02.lua",
+            "hash": 4942481657050695639
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_140_03.lua",
+            "hash": 17997307260524052769
+        },
+        {
             "name": "game/ui/avg/_tw/config/cg_141_01.lua",
             "hash": 9957433124698855437
         },
@@ -7217,6 +8065,18 @@
             "hash": 1928100773480255747
         },
         {
+            "name": "game/ui/avg/_tw/config/cg_160_01.lua",
+            "hash": 17952606926863298414
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_160_02.lua",
+            "hash": 1399226796894542873
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_160_03.lua",
+            "hash": 14474246531549844367
+        },
+        {
             "name": "game/ui/avg/_tw/config/cg_disc4004.lua",
             "hash": 13455270952197007183
         },
@@ -7261,6 +8121,10 @@
             "hash": 3749980190519515792
         },
         {
+            "name": "game/ui/avg/_tw/config/cg_disc4029.lua",
+            "hash": 14657710817235428465
+        },
+        {
             "name": "game/ui/avg/_tw/config/cg_disc4036.lua",
             "hash": 17523544645196045140
         },
@@ -7283,6 +8147,18 @@
         {
             "name": "game/ui/avg/_tw/config/cg_disc4048.lua",
             "hash": 3010235377384360517
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_disc4051.lua",
+            "hash": 12387887825200080473
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_disc4054.lua",
+            "hash": 7244160473012191628
+        },
+        {
+            "name": "game/ui/avg/_tw/config/cg_disc4055.lua",
+            "hash": 10203615354069942796
         },
         {
             "name": "game/ui/avg/_tw/config/cg_npc133_01.lua",
@@ -7321,6 +8197,10 @@
             "hash": 14870190825585806530
         },
         {
+            "name": "game/ui/avg/_tw/config/dp_multi02.lua",
+            "hash": 16812597905661045911
+        },
+        {
             "name": "game/ui/avg/_tw/config/dp_single01.lua",
             "hash": 15791691661096250942
         },
@@ -7341,12 +8221,28 @@
             "hash": 566601893917911531
         },
         {
+            "name": "game/ui/avg/_tw/config/dp_single114.lua",
+            "hash": 11884398188972660092
+        },
+        {
+            "name": "game/ui/avg/_tw/config/dp_single115.lua",
+            "hash": 6598236004901122959
+        },
+        {
             "name": "game/ui/avg/_tw/config/dp_single130.lua",
             "hash": 16403685346095355613
         },
         {
+            "name": "game/ui/avg/_tw/config/dp_single140.lua",
+            "hash": 13931572511288672062
+        },
+        {
             "name": "game/ui/avg/_tw/config/dp_single145.lua",
             "hash": 18032869297925520117
+        },
+        {
+            "name": "game/ui/avg/_tw/config/dp_single160.lua",
+            "hash": 16549148017347065052
         },
         {
             "name": "game/ui/avg/_tw/config/gd_gacha.lua",
@@ -7385,6 +8281,10 @@
             "hash": 13874791423153536593
         },
         {
+            "name": "game/ui/avg/_tw/config/pm11102.lua",
+            "hash": 16345269524200238306
+        },
+        {
             "name": "game/ui/avg/_tw/config/pm11201.lua",
             "hash": 1118260266863320906
         },
@@ -7401,8 +8301,20 @@
             "hash": 6046756859884450430
         },
         {
+            "name": "game/ui/avg/_tw/config/pm11401.lua",
+            "hash": 14870728818687184052
+        },
+        {
+            "name": "game/ui/avg/_tw/config/pm11501.lua",
+            "hash": 908244179665707518
+        },
+        {
             "name": "game/ui/avg/_tw/config/pm11601.lua",
             "hash": 10931576735390163535
+        },
+        {
+            "name": "game/ui/avg/_tw/config/pm11602.lua",
+            "hash": 17074061936005143274
         },
         {
             "name": "game/ui/avg/_tw/config/pm11701.lua",
@@ -7457,8 +8369,16 @@
             "hash": 4759730163567076217
         },
         {
+            "name": "game/ui/avg/_tw/config/pm12602.lua",
+            "hash": 8331664283899868617
+        },
+        {
             "name": "game/ui/avg/_tw/config/pm12701.lua",
             "hash": 17206756638781829067
+        },
+        {
+            "name": "game/ui/avg/_tw/config/pm12702.lua",
+            "hash": 1632484254659432225
         },
         {
             "name": "game/ui/avg/_tw/config/pm13001.lua",
@@ -7489,6 +8409,10 @@
             "hash": 5080839537803951972
         },
         {
+            "name": "game/ui/avg/_tw/config/pm14001.lua",
+            "hash": 4839420562026476930
+        },
+        {
             "name": "game/ui/avg/_tw/config/pm14101.lua",
             "hash": 14218695584606708376
         },
@@ -7499,6 +8423,10 @@
         {
             "name": "game/ui/avg/_tw/config/pm14201.lua",
             "hash": 15443583656352233476
+        },
+        {
+            "name": "game/ui/avg/_tw/config/pm14202.lua",
+            "hash": 18047285332433849761
         },
         {
             "name": "game/ui/avg/_tw/config/pm14301.lua",
@@ -7517,6 +8445,10 @@
             "hash": 7328082634438048047
         },
         {
+            "name": "game/ui/avg/_tw/config/pm14702.lua",
+            "hash": 6352946259385339010
+        },
+        {
             "name": "game/ui/avg/_tw/config/pm14901.lua",
             "hash": 6576159944301034048
         },
@@ -7527,6 +8459,10 @@
         {
             "name": "game/ui/avg/_tw/config/pm15001.lua",
             "hash": 2270632580428451826
+        },
+        {
+            "name": "game/ui/avg/_tw/config/pm15002.lua",
+            "hash": 5787460949005997349
         },
         {
             "name": "game/ui/avg/_tw/config/pm15501.lua",
@@ -7547,6 +8483,10 @@
         {
             "name": "game/ui/avg/_tw/config/pm15901.lua",
             "hash": 14832986895998741939
+        },
+        {
+            "name": "game/ui/avg/_tw/config/pm16001.lua",
+            "hash": 13840734485641164244
         },
         {
             "name": "game/ui/avg/_tw/config/stev_01_01.lua",
@@ -7759,6 +8699,142 @@
         {
             "name": "game/ui/avg/_tw/config/stev_05_08.lua",
             "hash": 8390371244178666136
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_07_01.lua",
+            "hash": 12883897964692288487
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_07_02.lua",
+            "hash": 15124458704289876373
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_07_03.lua",
+            "hash": 7240864577145218699
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_07_04.lua",
+            "hash": 7493638585415565766
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_07_05.lua",
+            "hash": 11297531596110055348
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_07_06.lua",
+            "hash": 4986600401829917523
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_07_07.lua",
+            "hash": 7400425549245571148
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_07_08.lua",
+            "hash": 13429328920153249801
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_07_09.lua",
+            "hash": 5134543189107220702
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_08_01.lua",
+            "hash": 4511761566040692677
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_08_02.lua",
+            "hash": 11308408216139596837
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_08_03.lua",
+            "hash": 2029352233131341986
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_08_04.lua",
+            "hash": 13618333117735822079
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_08_05.lua",
+            "hash": 822194944652947258
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_08_06.lua",
+            "hash": 13563410841771141454
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_08_07.lua",
+            "hash": 8191567053351031838
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_08_08.lua",
+            "hash": 5908263247191014155
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_09_01.lua",
+            "hash": 9747730349511335398
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_09_02.lua",
+            "hash": 11538187040329180482
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_09_03.lua",
+            "hash": 10301818544795575267
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_09_04.lua",
+            "hash": 13452297881929511701
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_09_05.lua",
+            "hash": 3864731419565058819
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_09_06.lua",
+            "hash": 5035550290976265485
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_09_07.lua",
+            "hash": 15416715777170037815
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_09_08.lua",
+            "hash": 7313744795171745462
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_10_01.lua",
+            "hash": 8983371012653875627
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_10_02.lua",
+            "hash": 2295490144320419689
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_10_03.lua",
+            "hash": 16298392179224307314
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_10_04.lua",
+            "hash": 17844672987969157723
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_10_05.lua",
+            "hash": 318896255435835953
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_10_06.lua",
+            "hash": 13177623531349575890
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_10_07.lua",
+            "hash": 3319950932731371195
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_10_08.lua",
+            "hash": 7475352084759347930
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stev_10_09.lua",
+            "hash": 3809693843851243114
         },
         {
             "name": "game/ui/avg/_tw/config/stm00_01.lua",
@@ -8173,6 +9249,94 @@
             "hash": 14213720404347409444
         },
         {
+            "name": "game/ui/avg/_tw/config/stm07_00.lua",
+            "hash": 15007078688720792648
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_01.lua",
+            "hash": 6262254235956966382
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_02.lua",
+            "hash": 3821994562991122349
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_03.lua",
+            "hash": 3872698515824545823
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_04.lua",
+            "hash": 17305429376736236778
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_05_a.lua",
+            "hash": 8702854432525315521
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_05_b.lua",
+            "hash": 10162507490033405835
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_05_c.lua",
+            "hash": 8455328259029438530
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_06_a.lua",
+            "hash": 5978803221994765164
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_06_ba.lua",
+            "hash": 3854565213812347273
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_06_bb.lua",
+            "hash": 12081729459660261257
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_06_bc.lua",
+            "hash": 8530744729149719130
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_07.lua",
+            "hash": 10639259826955465493
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_08.lua",
+            "hash": 15743887486718476599
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_09.lua",
+            "hash": 14630324436736166945
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_10.lua",
+            "hash": 6460125164151625865
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_11.lua",
+            "hash": 10551879807484063183
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_12.lua",
+            "hash": 12535028870974673792
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_13.lua",
+            "hash": 2086100626772679265
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_14.lua",
+            "hash": 11478997011029682207
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_15.lua",
+            "hash": 12887433635857503896
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stm07_16.lua",
+            "hash": 13460592105142126939
+        },
+        {
             "name": "game/ui/avg/_tw/config/stsp_01_01.lua",
             "hash": 9126795359047379033
         },
@@ -8349,6 +9513,30 @@
             "hash": 8095804475559642271
         },
         {
+            "name": "game/ui/avg/_tw/config/stsp_15_01.lua",
+            "hash": 12540407538706815156
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stsp_15_02.lua",
+            "hash": 8928877348390455174
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stsp_15_03.lua",
+            "hash": 4725395878296144264
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stsp_16_01.lua",
+            "hash": 5550584287587504024
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stsp_16_02.lua",
+            "hash": 15510772150597702023
+        },
+        {
+            "name": "game/ui/avg/_tw/config/stsp_16_03.lua",
+            "hash": 11909723067005854545
+        },
+        {
             "name": "game/ui/avg/_tw/preset/avgcharacter.lua",
             "hash": 14028001432418365849
         },
@@ -8359,6 +9547,106 @@
         {
             "name": "game/ui/avg/_tw/preset/avguitext.lua",
             "hash": 5930853729271730796
+        },
+        {
+            "name": "game/ui/play_icecreamtruck/play/buff/buffitembase.lua",
+            "hash": 5985130339711562931
+        },
+        {
+            "name": "game/ui/play_icecreamtruck/play/buff/buffitem_autoorder.lua",
+            "hash": 12531998511450880202
+        },
+        {
+            "name": "game/ui/play_icecreamtruck/play/buff/buffitem_life.lua",
+            "hash": 2925334124084296457
+        },
+        {
+            "name": "game/ui/play_icecreamtruck/play/buff/buffitem_patience.lua",
+            "hash": 2427932806950590759
+        },
+        {
+            "name": "game/ui/play_icecreamtruck/play/buff/buffitem_scoremul.lua",
+            "hash": 14714772933505445741
+        },
+        {
+            "name": "game/ui/play_icecreamtruck/play/buff/buffitem_timeslow.lua",
+            "hash": 4490556730597655634
+        },
+        {
+            "name": "game/ui/soldier/charactertips/components/soldiercharpotentialdetailctrl.lua",
+            "hash": 17846846654249291415
+        },
+        {
+            "name": "game/ui/soldier/charactertips/components/soldierchartalentdetailpanel.lua",
+            "hash": 7263455079868023150
+        },
+        {
+            "name": "game/ui/soldier/charactertips/items/soldiercharskilldetailitemctrl.lua",
+            "hash": 3325941257613521382
+        },
+        {
+            "name": "game/ui/soldier/charactertips/items/soldiercharskillitemctrl.lua",
+            "hash": 15260815330485702246
+        },
+        {
+            "name": "game/ui/soldier/sandtable/components/soldierbuffctrl.lua",
+            "hash": 15745386856194545039
+        },
+        {
+            "name": "game/ui/soldier/sandtable/components/soldierbufftipsctrl.lua",
+            "hash": 3101552761259870047
+        },
+        {
+            "name": "game/ui/soldier/sandtable/components/soldierbufftipspanel.lua",
+            "hash": 5315227518313971409
+        },
+        {
+            "name": "game/ui/soldier/sandtable/components/soldiereffectdesctrl.lua",
+            "hash": 782319621434342674
+        },
+        {
+            "name": "game/ui/soldier/sandtable/components/soldiernodetipsctrl.lua",
+            "hash": 9195786415785415723
+        },
+        {
+            "name": "game/ui/soldier/sandtable/components/soldiershopctrl.lua",
+            "hash": 13598626662184786058
+        },
+        {
+            "name": "game/ui/soldier/sandtable/items/soldierbuffitemctrl.lua",
+            "hash": 7612704164792553879
+        },
+        {
+            "name": "game/ui/soldier/sandtable/items/soldierbufftipsitemctrl.lua",
+            "hash": 11655361861907449414
+        },
+        {
+            "name": "game/ui/soldier/sandtable/items/soldiercharcardshopitemctrl.lua",
+            "hash": 17465864271048614342
+        },
+        {
+            "name": "game/ui/soldier/sandtable/items/soldiercharcardshoppartneritemctrl.lua",
+            "hash": 8185342894793282436
+        },
+        {
+            "name": "game/ui/soldier/sandtable/items/soldiereffectdesitemctrl.lua",
+            "hash": 1487905964520587391
+        },
+        {
+            "name": "game/ui/soldier/sandtable/items/soldiernodeitemctrl.lua",
+            "hash": 14253367026160368475
+        },
+        {
+            "name": "game/ui/soldier/template/character/soldiercharcarditemctrl.lua",
+            "hash": 2429303184906240945
+        },
+        {
+            "name": "game/ui/soldier/template/character/soldiercharitemctrl.lua",
+            "hash": 8642962673959275294
+        },
+        {
+            "name": "game/ui/soldier/template/character/soldiercharsupportcarditemctrl.lua",
+            "hash": 17860662193227141403
         }
     ]
 }
