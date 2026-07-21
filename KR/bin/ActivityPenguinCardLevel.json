@@ -232,5 +232,77 @@
     ],
     "FloorId": 304,
     "ScoreLevel": true
+  },
+  "1041": {
+    "Id": 1041,
+    "ActivityId": 800004,
+    "Duration": 0,
+    "Name": "ActivityPenguinCardLevel.1041.1",
+    "Prev": 0,
+    "Item1": 0,
+    "Qty1": 0,
+    "Item2": 0,
+    "Qty2": 0,
+    "StarScore": [
+      2000,
+      9990,
+      9999
+    ],
+    "FloorId": 401,
+    "ScoreLevel": false
+  },
+  "1042": {
+    "Id": 1042,
+    "ActivityId": 800004,
+    "Duration": 0,
+    "Name": "ActivityPenguinCardLevel.1042.1",
+    "Prev": 1041,
+    "Item1": 0,
+    "Qty1": 0,
+    "Item2": 0,
+    "Qty2": 0,
+    "StarScore": [
+      30000,
+      99990,
+      99999
+    ],
+    "FloorId": 402,
+    "ScoreLevel": false
+  },
+  "1043": {
+    "Id": 1043,
+    "ActivityId": 800004,
+    "Duration": 0,
+    "Name": "ActivityPenguinCardLevel.1043.1",
+    "Prev": 1042,
+    "Item1": 0,
+    "Qty1": 0,
+    "Item2": 0,
+    "Qty2": 0,
+    "StarScore": [
+      50000,
+      99990,
+      99999
+    ],
+    "FloorId": 403,
+    "ScoreLevel": false
+  },
+  "1044": {
+    "Id": 1044,
+    "ActivityId": 800004,
+    "Duration": 0,
+    "Name": "ActivityPenguinCardLevel.1044.1",
+    "Prev": 1043,
+    "Item1": 0,
+    "Qty1": 0,
+    "Item2": 0,
+    "Qty2": 0,
+    "StarScore": [
+      200000,
+      999990,
+      999999
+    ],
+    "FloorId": 404,
+    "ScoreLevel": true
   }
 }

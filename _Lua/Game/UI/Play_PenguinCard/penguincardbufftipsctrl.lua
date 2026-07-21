@@ -22,6 +22,8 @@ function PenguinCardBuffTipsCtrl:Refresh(mapBuff)
 		sSuffix = orderedFormat(ConfigTable.GetUIText("PenguinCard_BuffDescSuffix_Count"), mapBuff.nDurationParam - mapBuff.nDurationCount)
 	elseif mapBuff.nDurationType == GameEnum.PenguinCardBuffDuration.Turn then
 		sSuffix = orderedFormat(ConfigTable.GetUIText("PenguinCard_BuffDescSuffix_Turn"), mapBuff.nDurationParam - mapBuff.nDurationCount)
+	elseif mapBuff.nDurationType == GameEnum.PenguinCardBuffDuration.Round then
+		sSuffix = orderedFormat(ConfigTable.GetUIText("PenguinCard_BuffDescSuffix_Round"), mapBuff.nDurationParam - mapBuff.nDurationCount)
 	end
 	NovaAPI.SetTMPText(self._mapNode.txtDesc, mapBuff:GetDesc() .. sSuffix)
 	NovaAPI.SetTMPText(self._mapNode.txtName, mapBuff.sName)

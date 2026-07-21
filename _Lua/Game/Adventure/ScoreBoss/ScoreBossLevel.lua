@@ -156,14 +156,12 @@ function ScoreBossLevel:OnEvent_HpChanged(hp, hpMax)
 		self.parent:DamageToScore(hpMax - hp, self.SwitchRate, self.BattleLv)
 		return
 	end
-	if hp > self.BossCurLvMinHp then
-		self.BossCurLvMinHp = hp
+	if hp >= self.BossCurLvMinHp then
+		printError("联合讨伐血量hp出现抖动" .. hp .. "    " .. hpMax .. "   " .. self.BattleLv)
 		return
 	end
-	if hp <= self.BossCurLvMinHp then
-		self.BossCurLvMinHp = hp
-		self.parent:DamageToScore(hpMax - hp, self.SwitchRate, self.BattleLv)
-	end
+	self.BossCurLvMinHp = hp
+	self.parent:DamageToScore(hpMax - hp, self.SwitchRate, self.BattleLv)
 end
 function ScoreBossLevel:OnEvent_BossRushMonsterLevelChanged(oldLevel, battleLevel)
 	if self.isSettlement then

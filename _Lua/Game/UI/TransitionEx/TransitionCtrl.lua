@@ -98,7 +98,7 @@ function TransitionCtrl:_Out(sEventFrom, callback)
 		printLog("[转场]正常开幕(" .. sEventFrom .. ")，落幕 anim done，frameCount: " .. sFrameCount)
 		self:_MarkCallback(callback, false)
 		self:CloseTransition()
-		EventManager.Hit("InputEnable", false)
+		EventManager.Hit("InputEnable", false, true)
 	elseif self._panel:GetTransitionStatus() == AllEnum.TransitionStatus.IsPlayingOutAnim then
 		printLog("[转场]重复开幕(" .. sEventFrom .. ")，开幕 anim playing，frameCount: " .. sFrameCount)
 		self:_MarkCallback(callback, false)
@@ -203,7 +203,7 @@ function TransitionCtrl:OnTimer_AnimDone(timer, bIn)
 		self.animStyle = nil
 		self.nType = nil
 		self._mapNode.TransitionRoot.localScale = Vector3.zero
-		EventManager.Hit("InputEnable", true)
+		EventManager.Hit("InputEnable", true, true)
 		self:_DoCallback(bIn)
 		EventManager.Hit(EventId.TransAnimOutClear)
 		EventManager.Hit(EventId.BlockInput, false)
@@ -320,5 +320,11 @@ function TransitionCtrl:Set_22(goStyle, nParam)
 	self.nStarTowerImgIndex = self.nStarTowerImgIndex % 3 + 1
 	local showImage = tbImage[self.nStarTowerImgIndex]
 	showImage.gameObject:SetActive(true)
+end
+function TransitionCtrl:Set_53(goStyle, nParam)
+	local normalChess = goStyle.transform:Find("Chess/NormalChess")
+	local harChess = goStyle.transform:Find("Chess/HarChess")
+	normalChess.gameObject:SetActive(nParam == 10101)
+	harChess.gameObject:SetActive(nParam == 10201)
 end
 return TransitionCtrl

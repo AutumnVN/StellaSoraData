@@ -91,6 +91,7 @@ local player_data_succeed_ack = function(mapMsgData)
 	PlayerData.Dating:CacheDatingCharIds(mapMsgData.DatingCharIds)
 	PlayerData.VampireSurvivor:CacheLevelData(mapMsgData.VampireSurvivorRecord)
 	PlayerData.SkillInstance:CacheSkillInstanceLevel(mapMsgData.SkillInstances)
+	PlayerData.TraceHunt:CacheItemInfo(mapMsgData.HuntPermit, mapMsgData.TraceRequest)
 	NovaAPI.SetRetryCount()
 	PlayerData.Base:SetNextRefreshTime(mapMsgData.ServerTs)
 	PlayerData.Dispatch.CacheDispatchData(mapMsgData.Agent)
@@ -763,7 +764,7 @@ local activity_mining_supplement_reward_notify = function(mapMsgData)
 	EventManager.Hit("Mining_Supplement_Reward", mapMsgData)
 end
 local activity_mining_quest_reward_receive_succeed_ack = function(mapMsgData)
-	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.ChangeInfo)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
 	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 end
 local activity_mining_story_reward_receive_succeed_ack = function(mapMsgData)
@@ -1276,7 +1277,32 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.clear_all_activity_golden_spy_levels_notify] = HttpNetHandlerPlus.clear_all_activity_golden_spy_levels_notify,
 		[NetMsgId.Id.activity_double_quest_reward_receive_succeed_ack] = HttpNetHandlerPlus.activity_double_quest_reward_receive_succeed_ack,
 		[NetMsgId.Id.activity_double_quest_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
-		[NetMsgId.Id.activity_double_reward_times_notify] = HttpNetHandlerPlus.activity_double_reward_times_notify
+		[NetMsgId.Id.activity_double_reward_times_notify] = HttpNetHandlerPlus.activity_double_reward_times_notify,
+		[NetMsgId.Id.activity_share_reward_receive_succeed_ack] = HttpNetHandlerPlus.activity_share_reward_receive_succeed_ack,
+		[NetMsgId.Id.activity_share_reward_receive_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.trace_hunt_settle_succeed_ack] = HttpNetHandlerPlus.trace_hunt_settle_succeed_ack,
+		[NetMsgId.Id.trace_hunt_settle_failed_ack] = HttpNetHandlerPlus.trace_hunt_settle_failed_ack,
+		[NetMsgId.Id.trace_hunt_trace_succeed_ack] = HttpNetHandlerPlus.trace_hunt_trace_succeed_ack,
+		[NetMsgId.Id.trace_hunt_boss_reward_receive_succeed_ack] = HttpNetHandlerPlus.trace_hunt_boss_reward_receive_succeed_ack,
+		[NetMsgId.Id.trace_hunt_new_control_notify] = HttpNetHandlerPlus.trace_hunt_new_control_notify,
+		[NetMsgId.Id.trace_hunt_state_notify] = HttpNetHandlerPlus.trace_hunt_state_notify,
+		[NetMsgId.Id.trace_hunt_item_change_notify] = HttpNetHandlerPlus.trace_hunt_item_change_notify,
+		[NetMsgId.Id.activity_ice_cream_level_settle_succeed_ack] = HttpNetHandlerPlus.activity_ice_cream_level_settle_succeed_ack,
+		[NetMsgId.Id.activity_ice_cream_level_settle_failed_ack] = NOTHING_NEED_TO_BE_DONE,
+		[NetMsgId.Id.clear_all_activity_iceCream_levels_notify] = HttpNetHandlerPlus.clear_all_activity_iceCream_levels_notify,
+		[NetMsgId.Id.soldier_apply_succeed_ack] = HttpNetHandlerPlus.soldier_apply_succeed_ack,
+		[NetMsgId.Id.soldier_apply_failed_ack] = HttpNetHandlerPlus.soldier_apply_failed_ack,
+		[NetMsgId.Id.soldier_give_up_succeed_ack] = HttpNetHandlerPlus.soldier_give_up_succeed_ack,
+		[NetMsgId.Id.soldier_give_up_failed_ack] = HttpNetHandlerPlus.soldier_give_up_failed_ack,
+		[NetMsgId.Id.soldier_info_succeed_ack] = HttpNetHandlerPlus.soldier_info_succeed_ack,
+		[NetMsgId.Id.soldier_info_failed_ack] = HttpNetHandlerPlus.soldier_info_failed_ack,
+		[NetMsgId.Id.soldier_interact_succeed_ack] = HttpNetHandlerPlus.soldier_interact_succeed_ack,
+		[NetMsgId.Id.soldier_interact_failed_ack] = HttpNetHandlerPlus.soldier_interact_failed_ack,
+		[NetMsgId.Id.sd_soldier_info_notify] = HttpNetHandlerPlus.sd_soldier_info_notify,
+		[NetMsgId.Id.sd_soldier_effect_notify] = HttpNetHandlerPlus.sd_soldier_effect_notify,
+		[NetMsgId.Id.sd_shop_data_notify] = HttpNetHandlerPlus.sd_shop_data_notify,
+		[NetMsgId.Id.sd_item_change_notify] = HttpNetHandlerPlus.sd_item_change_notify,
+		[NetMsgId.Id.sd_buff_card_add_notify] = HttpNetHandlerPlus.sd_buff_card_add_notify
 	}
 end
 function HttpNetHandler.Init()
@@ -1472,5 +1498,6 @@ function HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
 	PlayerData.Disc:CreateNewDisc(mapDecodedChangeInfo["proto.Disc"])
 	PlayerData.Base:ChangeHonorTitle(mapDecodedChangeInfo["proto.Honor"])
 	PlayerData.HeadData:ChangePlayerHead(mapDecodedChangeInfo["proto.HeadIcon"])
+	PlayerData.TraceHunt:ChangeItem(mapDecodedChangeInfo["proto.TraceHuntItem"])
 end
 return HttpNetHandler

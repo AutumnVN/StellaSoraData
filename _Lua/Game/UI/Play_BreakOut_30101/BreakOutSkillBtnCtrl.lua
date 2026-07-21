@@ -316,10 +316,11 @@ function BreakOutSkillBtnCtrl:OnEvent_ChangeKeyLayout()
 	self:SetCDTextSize()
 end
 function BreakOutSkillBtnCtrl:GetCanUseSkill()
-	local bUseSkill = self.nCurCharId == 14501 and self.bEnableShoot
+	local bUseSkill = self.bSkillChar and self.bEnableShoot
 	return not bUseSkill
 end
-function BreakOutSkillBtnCtrl:OnEvent_GetShootState(bEnableShoot)
+function BreakOutSkillBtnCtrl:OnEvent_GetShootState(bEnableShoot, bNeedSkillUseTip)
 	self.bEnableShoot = bEnableShoot
+	self.bSkillChar = bNeedSkillUseTip
 end
 return BreakOutSkillBtnCtrl

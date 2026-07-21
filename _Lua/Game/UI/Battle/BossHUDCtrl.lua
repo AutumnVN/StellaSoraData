@@ -628,7 +628,7 @@ function BossHUDCtrl:RefreshUI(bossId, nDataId, nType, nBloodType)
 	self:SetHp(self.nBeforeHp, self.nBeforeHpMax)
 end
 function BossHUDCtrl:OpenUI(bossId, nDataId, nType, nBloodType, bRefresh)
-	if self.bossId ~= 0 and self.bossId ~= nil and bReinit then
+	if self.bossId ~= 0 and self.bossId ~= nil then
 		printError(string.format("boss血条已被EntityId为%d绑定 %d重复绑定不生效", self.bossId, bossId))
 		return
 	end

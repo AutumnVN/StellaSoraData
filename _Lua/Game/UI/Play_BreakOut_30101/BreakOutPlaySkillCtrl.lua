@@ -186,7 +186,7 @@ function BreakOutPlaySkillCtrl:SetActionBind()
 		set(v)
 	end
 end
-function BreakOutPlaySkillCtrl:OnEvent_RefreshShootState(bEnableShoot)
+function BreakOutPlaySkillCtrl:OnEvent_RefreshShootState(bEnableShoot, bNeedSkillUseTip)
 	self.tbDefine_BreakOutPlayBtn[1].BreakOutSkillBtnCtrl:SetMainAlpha(bEnableShoot)
 end
 function BreakOutPlaySkillCtrl:OnEvent_RefreshSkillState(CharacterId, SkillId, nCurSkillEnergy, nMaxSkillEnergy, nCurCDTime)

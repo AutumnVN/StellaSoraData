@@ -14,11 +14,11 @@ local newDayTime = UTILS.GetDayRefreshTimeOffset()
 local LocalData = require("GameCore.Data.LocalData")
 PenguinCardPrepareCtrl._mapNodeConfig = {
 	txtAddMax = {
-		nCount = 3,
+		nCount = 4,
 		sComponentName = "TMP_Text",
 		sLanguageId = "PenguinCard_AddBtnMax"
 	},
-	imgDiscount = {nCount = 3},
+	imgDiscount = {nCount = 4},
 	btnAddRound = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_AddRound"
@@ -52,6 +52,17 @@ PenguinCardPrepareCtrl._mapNodeConfig = {
 	txtAddRollCost = {sComponentName = "TMP_Text"},
 	goAddRollOn = {},
 	goAddRollOff = {},
+	btnAddCheck = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_AddCheckRound"
+	},
+	txtBtnAddCheck = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "PenguinCard_Btn_AddCheckRound"
+	},
+	txtAddCheckCost = {sComponentName = "TMP_Text"},
+	goAddCheckOn = {},
+	goAddCheckOff = {},
 	txtScore = {sComponentName = "TMP_Text"},
 	imgStarOff = {nCount = 3},
 	imgStarOn = {nCount = 3},
@@ -114,7 +125,9 @@ PenguinCardPrepareCtrl._mapEventConfig = {
 	PenguinCard_AddRound = "OnEvent_AddRound",
 	PenguinCard_AddSlot = "OnEvent_AddSlot",
 	PenguinCard_AddRoll = "OnEvent_AddRoll",
+	PenguinCard_AddCheckRound = "OnEvent_AddCheckRound",
 	PenguinCard_ChangeScore = "OnEvent_ChangeScore",
+	PenguinCard_ChangeStar = "OnEvent_ChangeStar",
 	PenguinCard_RollPenguinCard = "OnEvent_RollPenguinCard",
 	PenguinCard_SelectPenguinCard = "OnEvent_SelectPenguinCard",
 	PenguinCard_SalePenguinCard = "OnEvent_SalePenguinCard",
@@ -126,6 +139,7 @@ function PenguinCardPrepareCtrl:Refresh()
 	self:RefreshAddRound()
 	self:RefreshAddSlot()
 	self:RefreshAddRoll()
+	self:RefreshAddCheckRound()
 	self:RefreshScore()
 	self:RefreshLeftTurn()
 	self:RefreshRoll()
@@ -205,6 +219,25 @@ function PenguinCardPrepareCtrl:RefreshAddRollCost()
 		self._mapNode.imgDiscount[3]:SetActive(true)
 	else
 		NovaAPI.SetTMPColor(self._mapNode.txtAddRollCost, Black)
+	end
+end
+function PenguinCardPrepareCtrl:RefreshAddCheckRound()
+	self._mapNode.btnAddCheck.gameObject:SetActive(false)
+end
+function PenguinCardPrepareCtrl:RefreshAddCheckRoundCost()
+	if self._panel.mapLevel.nCheckRoundLimit < 0 or self._panel.mapLevel.nCheckRoundLimit >= self._panel.mapLevel.nMaxCheckRound then
+		return
+	end
+	local nCost = self._panel.mapLevel.tbCheckRoundUpgradeCost[self._panel.mapLevel.nCheckRoundLimit + 1] * self._panel.mapLevel.nUpgradeDiscount
+	nCost = math.ceil(nCost)
+	NovaAPI.SetTMPText(self._mapNode.txtAddCheckCost, self:ThousandsNumber(nCost))
+	if nCost > self._panel.mapLevel.nScore then
+		NovaAPI.SetTMPColor(self._mapNode.txtAddCheckCost, Red_Unable)
+	elseif 1 > self._panel.mapLevel.nUpgradeDiscount then
+		NovaAPI.SetTMPColor(self._mapNode.txtAddCheckCost, Green)
+		self._mapNode.imgDiscount[4]:SetActive(true)
+	else
+		NovaAPI.SetTMPColor(self._mapNode.txtAddCheckCost, Black)
 	end
 end
 function PenguinCardPrepareCtrl:RefreshScore()
@@ -384,6 +417,9 @@ end
 function PenguinCardPrepareCtrl:OnBtnClick_AddRound(btn)
 	self._panel.mapLevel:AddRound()
 end
+function PenguinCardPrepareCtrl:OnBtnClick_AddCheckRound(btn)
+	self._panel.mapLevel:AddCheckRound()
+end
 function PenguinCardPrepareCtrl:OnBtnClick_Roll(btn)
 	self._panel.mapLevel:RollPenguinCard()
 end
@@ -433,6 +469,7 @@ function PenguinCardPrepareCtrl:OnEvent_AddRoll()
 	self:RefreshAddRoll()
 	self:RefreshAddSlot()
 	self:RefreshAddRound()
+	self:RefreshAddCheckRound()
 	self:RefreshRollDesc()
 	self:RefreshRollCost()
 	local ani = self._mapNode.trBtnRoll:Find("AnimRoot"):GetComponent("Animator")
@@ -442,16 +479,25 @@ function PenguinCardPrepareCtrl:OnEvent_AddSlot()
 	self:RefreshAddRoll()
 	self:RefreshAddSlot()
 	self:RefreshAddRound()
+	self:RefreshAddCheckRound()
 end
 function PenguinCardPrepareCtrl:OnEvent_AddRound()
 	self:RefreshAddRoll()
 	self:RefreshAddSlot()
 	self:RefreshAddRound()
+	self:RefreshAddCheckRound()
 end
-function PenguinCardPrepareCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
+function PenguinCardPrepareCtrl:OnEvent_AddCheckRound()
+	self:RefreshAddRoll()
+	self:RefreshAddSlot()
+	self:RefreshAddRound()
+	self:RefreshAddCheckRound()
+end
+function PenguinCardPrepareCtrl:OnEvent_ChangeScore(nBefore)
 	self:RefreshAddRoundCost()
 	self:RefreshAddSlotCost()
 	self:RefreshAddRollCost()
+	self:RefreshAddCheckRoundCost()
 	self:RefreshRollCost()
 	if nBefore < self._panel.mapLevel.nScore and self._panel.mapLevel.nGameState == PenguinCardUtils.GameState.Prepare then
 		WwiseManger:PostEvent("Mode_Card_coin")
@@ -467,6 +513,8 @@ function PenguinCardPrepareCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
 		local nScore = math.floor(v)
 		NovaAPI.SetTMPText(self._mapNode.txtScore, self:ThousandsNumber(nScore))
 	end, self._panel.mapLevel.nScore, 0.5):OnComplete(callback)
+end
+function PenguinCardPrepareCtrl:OnEvent_ChangeStar(nBeforeStar, nStar)
 	if self._panel.mapLevel.tbStarScore[3] > 0 then
 		local nPos = self:GetStarPos(nStar, self._panel.mapLevel.nScore)
 		self._mapNode.imgStarProgress:DOSizeDelta(Vector2(nPos, 24), 0.5):SetEase(Ease.OutQuad)

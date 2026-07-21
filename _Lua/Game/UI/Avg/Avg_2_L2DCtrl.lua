@@ -74,7 +74,7 @@ function Avg_2_L2DCtrl:CtrlL2D(tbParam)
 	local nDuration = tbParam[5]
 	local bWait = tbParam[6]
 	if self.goInsL2D ~= nil then
-		NovaAPI.PlayL2DAnim(self.goInsL2D.transform, sAnimName, false)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsL2D.transform, sAnimName, false)
 	end
 	WwiseAudioMgr:WwiseVoice_PlayInAVG(sVoiceName)
 	return -1
@@ -207,7 +207,7 @@ function Avg_2_L2DCtrl:SetCharL2D(tbParam)
 		if goInsL2D ~= nil and objOffset ~= nil then
 			if nType == 0 then
 				if sAnim ~= "" then
-					NovaAPI.PlayL2DAnim(goInsL2D.transform, sAnim, false, true)
+					NovaAPIHotfix.PlayL2DAnim(goInsL2D.transform, sAnim, false, true)
 				end
 				if sEmoji ~= "" then
 					self:_SetEmoji(sAvgCharId, goInsL2D.transform:Find("----emoji----/emoji_root"), sEmoji, true)
@@ -236,7 +236,7 @@ function Avg_2_L2DCtrl:SetCharL2D(tbParam)
 		self.mapCharL2DIns[sAvgCharId] = goInsL2D
 		local tr = goInsL2D.transform
 		tr:SetLayerRecursively(self.nLayerIndex)
-		NovaAPI.PlayL2DAnim(tr, "idle", true)
+		NovaAPIHotfix.PlayL2DAnim(tr, "idle", true)
 		local trEmojiRoot = tr:Find("----emoji----")
 		if trEmojiRoot == nil then
 			trEmojiRoot = instantiate(self.goEmojiRoot, tr)

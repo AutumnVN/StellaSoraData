@@ -1,5 +1,8 @@
 local AvgEditorQuickPreview = class("AvgEditorQuickPreview", BaseCtrl)
 local PlayerBaseData = PlayerData.Base
+local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
+local ResType = GameResourceLoader.ResType
 local LayoutRebuilder = CS.UnityEngine.UI.LayoutRebuilder
 local max_chat_width = 708
 local max_choice_width = 650
@@ -842,6 +845,14 @@ function AvgEditorQuickPreview:ShowAvgBubbleInPrologue(tbParam)
 		end
 	end
 end
+function AvgEditorQuickPreview:_ParseBBHeadIcon(sParam1)
+	local sIcon = sParam1
+	if string.find(sParam1, "_BB_") == nil then
+		sIcon = sParam1 .. "_BB_001"
+	end
+	local tb = string.split(sIcon, "_BB_")
+	return tb[1], tb[2]
+end
 function AvgEditorQuickPreview:PopupBubble3(tbParam)
 	if self.timer ~= nil then
 		self.timer:Cancel()
@@ -851,6 +862,8 @@ function AvgEditorQuickPreview:PopupBubble3(tbParam)
 		return
 	end
 	local sAvgCharId = tbParam[1]
+	local sResName = sAvgCharId
+	sAvgCharId, sResName = self:_ParseBBHeadIcon(sAvgCharId)
 	sAvgCharId = AdjustMainRoleAvgCharId(sAvgCharId)
 	local sContent = ProcAvgTextContentFallback(self._panel.sTxtLan, self._panel.sVoLan, self._panel.bIsPlayerMale, tbParam[3], tbParam[6], tbParam[9], tbParam[10])
 	sContent = ProcAvgTextContent(sContent, self._panel.nCurLanguageIdx)
@@ -866,7 +879,9 @@ function AvgEditorQuickPreview:PopupBubble3(tbParam)
 	end
 	local bShadowMask = tbParam[8] == 1
 	local func_ReSetBubble = function()
-		self:SetAvgCharHeadIconByPrefab(self._mapNode.img_head, string.format("Icon/AvgHead/%s/%s_GD.prefab", sAvgCharId, sAvgCharId))
+		local sFullPath = string.format("Icon/AvgHead/%s/%s_BB_%s.png", sAvgCharId, sAvgCharId, sResName)
+		local _sprite = GameResourceLoader.LoadAsset(ResType.Any, Settings.AB_ROOT_PATH .. sFullPath, typeof(Sprite), "UI", self._panel._nPanelId)
+		NovaAPI.SetImageSpriteAsset(self._mapNode.img_head, _sprite)
 		NovaAPI.SetEnable_Gradient2(self._mapNode.img_head.gameObject, bShadowMask)
 		NovaAPI.SetText_RubyTMP(self._mapNode.tmp_SpeakerName, sName)
 		NovaAPI.SetText_RubyTMP(self._mapNode.tmp_Content3, sContent)

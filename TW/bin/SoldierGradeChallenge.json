@@ -1,0 +1,30 @@
+{
+  "10101": {
+    "Id": 10101,
+    "KeyGradeId": 101,
+    "GradeLevel": 1,
+    "Name": "SoldierGradeChallenge.10101.1",
+    "Icon": "",
+    "OppoLevelShow": 1,
+    "DiffcultyTemplateLv": 1,
+    "AffixCount": 0,
+    "AffixGroupId": 0,
+    "NodeGroupId": 101,
+    "Score": 1000,
+    "UnlockGradeLevel": 0
+  },
+  "10201": {
+    "Id": 10201,
+    "KeyGradeId": 102,
+    "GradeLevel": 1,
+    "Name": "SoldierGradeChallenge.10201.1",
+    "Icon": "",
+    "OppoLevelShow": 10,
+    "DiffcultyTemplateLv": 1,
+    "AffixCount": 0,
+    "AffixGroupId": 0,
+    "NodeGroupId": 102,
+    "Score": 3000,
+    "UnlockGradeLevel": 10101
+  }
+}

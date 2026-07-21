@@ -742,10 +742,7 @@ function Avg_4_TalkCtrl:_ResetWaitingPos()
 				local sEndLineContent = tbSplit[nLen]
 				NovaAPI.SetText_RubyTMP(self._mapNode.rubyTmp_FS_EndLine, sEndLineContent)
 				LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.rtEndLine)
-				nX = self._mapNode.rtEndLine.rect.width
-				if nSVFS_Width < nX then
-					nX = nX % nSVFS_Width
-				end
+				nX = NovaAPI.AvgCalcTMPLastWordPos(self._mapNode.rubyTmp_FS_EndLine)
 				if string.find(sEndLineContent, "<align=\"right\">") ~= nil then
 					nX = nSVFS_Width
 				elseif string.find(sEndLineContent, "<align=\"center\">") ~= nil then

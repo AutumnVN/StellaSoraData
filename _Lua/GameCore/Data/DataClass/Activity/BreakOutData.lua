@@ -3,7 +3,6 @@ local BreakOutData = class("BreakOutData", ActivityDataBase)
 local LocalData = require("GameCore.Data.LocalData")
 local RapidJson = require("rapidjson")
 local RedDotManager = require("GameCore.RedDot.RedDotManager")
-local ClientManager = CS.ClientManager.Instance
 local BreakOutLevelData = require("GameCore.Data.DataClass.Activity.BreakOutLevelData")
 function BreakOutData:Init()
 	self.allLevelData = {}
@@ -391,7 +390,7 @@ function BreakOutData:ShowActivityClosedAlert()
 	EventManager.Hit(EventId.OpenMessageBox, msg)
 end
 function BreakOutData:ForceExitOnFinishFail()
-	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutPlayPanelS2)
-	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanelS2)
+	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutPlayPanelS3)
+	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanelS3)
 end
 return BreakOutData

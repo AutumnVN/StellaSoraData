@@ -75,6 +75,7 @@ GameEnum.roguelikeLevelStyle = {
 	Main_7_2 = 21,
 	Main_8_1 = 22,
 	Main_8_2 = 23,
+	Main_8_3 = 24,
 	Roguelike_non = 101,
 	Roguelike_miniboss = 102,
 	Roguelike_shilaimu = 103,
@@ -126,6 +127,10 @@ GameEnum.roguelikeLevelStyle = {
 	StoryActivity_12_Boss01 = 457,
 	StoryActivity_13 = 461,
 	StoryActivity_14 = 466,
+	StoryActivity_15 = 471,
+	StoryActivity_16 = 476,
+	StoryActivity_16_01 = 477,
+	StoryActivity_17 = 481,
 	Training = 901
 }
 GameEnum.roguelikeFloorFunction = {
@@ -527,7 +532,8 @@ GameEnum.itemType = {
 	HeadItem = 14,
 	LevelHonor = 15,
 	TraceRequest = 16,
-	HuntPermit = 17
+	HuntPermit = 17,
+	SoldierItem = 18
 }
 GameEnum.expireType = {
 	ExpireMin = 1,
@@ -710,8 +716,10 @@ GameEnum.achievementCond = {
 GameEnum.activityAcceptCond = {WorldClassSpecific = 71}
 GameEnum.activityBreakoutCharUnlockCond = {ActivityBreakoutWinSpecificLevel = 117}
 GameEnum.activityQuestCompleteCond = {
+	EnergyDeplete = 39,
 	ItemsAdd = 48,
 	ItemsDeplete = 49,
+	LoginTotal = 51,
 	StoryClear = 63,
 	WorldClassSpecific = 71,
 	ActivityCookieLevelAccPackage = 96,
@@ -760,7 +768,8 @@ GameEnum.activityQuestCompleteCond = {
 	ActivityIceCreamCumulativeScore = 154,
 	ActivityIceCreamLevelPassed = 155,
 	ActivityIceCreamCumulativeUseItem = 156,
-	ActivityIceCreamCumulativeCombo = 157
+	ActivityIceCreamCumulativeCombo = 157,
+	ActivitySoldierScore = 158
 }
 GameEnum.chatCond = {
 	CharacterAcquire = 5,
@@ -913,6 +922,7 @@ GameEnum.questCompleteCond = {
 	DiscWithSpecificQuantityPhaseAndAttr = 122,
 	WeekBossClearTotal = 123,
 	ActivityStoryReadStory = 124,
+	ActivitySoldierScore = 158,
 	ClientReport = 200,
 	TowerBattleTimes = 501,
 	TowerBossChallengeSpecificHighRewardWithTotal = 502,
@@ -1355,7 +1365,8 @@ GameEnum.takeEffect = {
 	CERTAIN_MARK_TYPE = 51,
 	BE_MIANCONTROL = 52,
 	BE_ASSISTANT = 53,
-	CERTAIN_DAMAGETYPE = 54
+	CERTAIN_DAMAGETYPE = 54,
+	ASSISTANT_IN_BATTLE = 55
 }
 GameEnum.effectType = {
 	STATE_CAHNGE = 1,
@@ -1514,7 +1525,8 @@ GameEnum.itemStype = {
 	PlayHead = 45,
 	CharacterSkin = 46,
 	SouvenirEnergyItem = 47,
-	Build = 48
+	Build = 48,
+	Chess = 49
 }
 GameEnum.targetType = {
 	AllActor = 1,
@@ -1544,7 +1556,8 @@ GameEnum.levelType = {
 	JointDrill = 12,
 	SkillInstance = 13,
 	DailyInstance = 14,
-	EquipmentInstance = 15
+	EquipmentInstance = 15,
+	TraceHunt = 16
 }
 GameEnum.levelEliteType = {
 	Common = 1,
@@ -1962,14 +1975,16 @@ GameEnum.levelTypeData = {
 	BreakCount = 4,
 	Note = 5,
 	DiscSkill = 6,
-	BuildLevel = 7
+	BuildLevel = 7,
+	SoldierLevel = 8
 }
 GameEnum.blockPriorityType = {
 	None = 0,
 	Priority1 = 1,
 	Priority2 = 2,
 	Priority3 = 3,
-	Priority4 = 4
+	Priority4 = 4,
+	PriorityHighest = 999
 }
 GameEnum.equipmentType = {
 	Square = 1,
@@ -2012,7 +2027,8 @@ GameEnum.BrickDropType = {
 	BrickBoom = 6,
 	BrickBoomBall = 7,
 	BrickInv = 8,
-	BrickSplit = 9
+	BrickSplit = 9,
+	BrickPortal_Hole = 10
 }
 GameEnum.starTowerRoomType = {
 	BattleRoom = 0,
@@ -2546,7 +2562,8 @@ GameEnum.activityThemeType = {
 	Swim_11100 = 13,
 	Tech_10108 = 14,
 	GunStorm_10109 = 15,
-	Summer_20103 = 16
+	Summer_20103 = 16,
+	Summer_10110 = 17
 }
 GameEnum.ActivityLevelType = {
 	Explore = 1,
@@ -2689,9 +2706,7 @@ GameEnum.JointDrillMode = {JointDrill_Mode_1 = 1, JointDrill_Mode_2 = 2}
 GameEnum.PenguinBaseCardSuit = {
 	Red = 1,
 	Blue = 2,
-	Green = 3,
-	All = 4,
-	Empty = 5
+	Green = 3
 }
 GameEnum.PenguinCardTriggerPhase = {
 	Dealing = 1,
@@ -2752,7 +2767,8 @@ GameEnum.PenguinCardQuestType = {
 GameEnum.PenguinCardBuffDuration = {
 	FullGame = 1,
 	Count = 2,
-	Turn = 3
+	Turn = 3,
+	Round = 4
 }
 GameEnum.ThrowGiftSpawnPointType = {
 	None = 0,
@@ -2880,16 +2896,31 @@ GameEnum.ChessType = {
 	Vanguard = 1,
 	Support = 2
 }
-GameEnum.ChessboardType = {Front = 0, Back = 1}
 GameEnum.ChessAssistOnStageType = {
 	Front = 0,
 	Back = 1,
 	NotAppearing = 2
 }
 GameEnum.ChessPartnerType = {
-	DiGuoWeiDui = 0,
-	LianHeZhongYe = 1,
-	HuiFengJuLeBu = 2
+	KongBaiLvTuan = 1,
+	WanSongWu = 2,
+	HuaLingLvTuan = 3,
+	EnCiYiZhi = 4,
+	JiQiRen = 5,
+	DiGuoWeiDui = 6,
+	DiLiXieHui = 7,
+	ZiYouLvRen = 8,
+	HuiFengJuLeBu = 9,
+	LianHeZhongYe = 10,
+	SenLinPengYou = 11,
+	XiaLuoKe = 12,
+	ShengCunDaRen = 13,
+	MuYuEnDian = 14,
+	BaiBuChuanYang = 15,
+	DianFengZhanShi = 16,
+	MeiLiManYi = 17,
+	RenDuoShiZhong = 18,
+	MoYu = 19
 }
 GameEnum.ActivityIceCreamLevelType = {
 	Teaching = 1,
@@ -2917,9 +2948,15 @@ GameEnum.iceOption = {
 GameEnum.soldierNodeType = {
 	Event = 1,
 	Battle = 2,
-	BossBattle = 3
+	MidBossBattle = 3,
+	FinalBossBattle = 4
 }
-GameEnum.soldierEventType = {BattleOptions = 1}
+GameEnum.soldierEventType = {
+	FinalBossBattle = 1,
+	MidBossBattle = 2,
+	NormalBattle = 3,
+	BattleOptions = 4
+}
 GameEnum.soldierLevelName = {
 	Simple = 1,
 	Medium = 2,
@@ -2932,6 +2969,7 @@ GameEnum.soldierCardUnloadType = {
 	AtStage = 3,
 	FromStageOnwards = 4
 }
+GameEnum.SoldierPositionType = {FightPosition = 1, SupportPosition = 2}
 GameEnum.TraceHuntLogType = {
 	TraceStart = 1,
 	Tracing = 2,
@@ -2951,4 +2989,134 @@ GameEnum.TraceHuntLogType = {
 	HuntInterrupt = 16
 }
 GameEnum.TDLevelGamePlayType = {None = 1, Hot = 2}
+GameEnum.SoldierPartnerNumType = {GE = 1, EQ = 2}
+GameEnum.SoldierClientCond = {
+	None = 1,
+	Partner = 2,
+	PositionType = 3,
+	SoldierCount = 4,
+	SoldierLevel = 5,
+	SoldierAttr = 6,
+	SoldierId = 7,
+	PartnerCount = 8
+}
+GameEnum.SoldierClientEffectTarget = {
+	None = 0,
+	All = 1,
+	Partner = 2,
+	SoldierId = 3
+}
+GameEnum.SoldierClientEffect = {
+	None = 1,
+	AmendAttr = 2,
+	PercentAmendAttr = 3,
+	PartnerTag = 4,
+	BattleAttrHalve = 5
+}
+GameEnum.soldierBuffCond = {
+	CurrentNodeEqual = 1,
+	CurrentNodeAfterKeep = 2,
+	CurrentNodeSpecific = 3,
+	NextNodes = 4,
+	EnterNodeCountKeep = 5,
+	EnterNodeCountEqual = 6,
+	EnterNodeCountEqualLoop = 7,
+	CurrentStageSpecific = 8,
+	CurrentStage = 9,
+	NextNodeType = 11,
+	BattleCount = 12,
+	BattleCountLoop = 13,
+	BattleVictoryCount = 14,
+	BattleVictoryCountLoop = 15,
+	BattleDefeatCount = 16,
+	BattleDefeatCountLoop = 17,
+	BattleContinuousVictoryCount = 18,
+	BattleContinuousVictoryCountLoop = 19,
+	BattleContinuousDefeatCount = 20,
+	BattleContinuousDefeatCountLoop = 21,
+	BattleContinuousDefeatCountKeep = 22,
+	BattleContinuousVictoryCountKeep = 23,
+	ShopLevelSpecific = 24,
+	ShopLevelUpgrade = 25,
+	ShopLevelKeep = 26,
+	ShopRefreshCountKeep = 28,
+	ShopRefreshCountLoop = 30,
+	ShopPurchaseChess = 32,
+	ShopPurchaseChessLoop = 33,
+	ShopPurchaseChessCost = 34,
+	ShopPurchaseChessCostLoop = 35,
+	ShopPurchaseChessPartner = 36,
+	ShopPurchaseChessPartnerLoop = 37,
+	ShopPurchaseChessType = 38,
+	ShopPurchaseChessTypeLoop = 39,
+	ShopChessSell = 40,
+	ShopChessSellLoop = 41,
+	ShopPurchaseExpCount = 42,
+	ShopPurchaseExpCountLoop = 43,
+	HpEqual = 44,
+	HpGreaterThan = 45,
+	HpLessThan = 46,
+	ResAdd = 47,
+	ResDeductKeep = 48,
+	ResDeductLoop = 49,
+	ResKeep = 50,
+	ChessMergeSpecificStar = 51,
+	ChessMergeSpecificStarWithCost = 52,
+	ChessMergeSpecificStarWithType = 53,
+	ChessMergeSpecificStarWithPartner = 54,
+	DeployChessSpecificCountWithCost = 55,
+	DeployChessSpecificCountWithType = 56,
+	DeployChessSpecificCountWithPartner = 57,
+	UsageQuota = 58,
+	UsageQuotaPerNode = 59,
+	ShopRefreshCount = 60,
+	ResDeduct = 61,
+	DeployChessEqualCountWithPartner = 62,
+	HpGreaterThanLoop = 63,
+	HpLessThanLoop = 64,
+	DeployChessEqualCountWithType = 65
+}
+GameEnum.soldierBuffEffect = {
+	GainItem = 1,
+	ChessAdd = 2,
+	ChessAddPartner = 3,
+	HpAdd = 4,
+	HpDeduct = 5,
+	HpSet = 6,
+	ShopRandomFreeRefresh = 7,
+	ShopDisablePurchase = 8,
+	ShopDisableRefresh = 9,
+	ChessDeploySell = 10,
+	PartnerActivateAddCount = 11,
+	PartnerSpecificAddCount = 12,
+	NodeTypeModify = 13,
+	ShopAddExp = 14,
+	ResMultiply = 15,
+	ResSet = 16,
+	RandomChessAddByStar = 17,
+	RandomChessAddByStarAndCost = 18,
+	RandomChessAddByType = 19,
+	ShopRefreshDiscount = 20,
+	ShopPurchaseExpDiscount = 21,
+	GainResScale = 22,
+	HoldResScale = 23,
+	ShopRandomRarityWeightDouble = 24,
+	GetTwoDice = 25,
+	RandomStrategyCardSpecificRarity = 26,
+	LeftmostWaitingChessChange = 27,
+	LeftmostWaitingChessSpecificCostChange = 28,
+	ShopRandomChessBecomeAnotherHigherCost = 29,
+	ExchangeHpAndGold = 30,
+	ShopGoodsProbabilityBecomingHigherStar = 31,
+	ChessWeightUpWithSpecificPartner = 32,
+	ClientEffect = 33
+}
+GameEnum.PartnerLevelQuality = {
+	None = 0,
+	Copper = 1,
+	Silver = 2,
+	Gold = 3,
+	Color = 4
+}
+GameEnum.SoldierCharacterType = {Actor = 1, Monster = 2}
 return GameEnum

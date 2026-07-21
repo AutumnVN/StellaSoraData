@@ -286,8 +286,10 @@ function StarTowerShopCtrl:Clear()
 	self.tbGoods = nil
 	self.tbGoodsList = nil
 	self.tbBuyGridList = nil
+	self.mapSelectGoods = nil
 end
 function StarTowerShopCtrl:OpenBuyPanel(bOpen, mapGoods, bUnable, bQuit)
+	self.mapSelectGoods = mapGoods
 	if not bOpen then
 		if bQuit then
 			self._mapNode.t_fullscreen_blur_blue:SetActive(false)
@@ -528,6 +530,20 @@ function StarTowerShopCtrl:OnBtn_CloseBuy()
 	self:OpenBuyPanel(false)
 end
 function StarTowerShopCtrl:OnBtn_Confirm()
+	if self.mapSelectGoods ~= nil and self.mapSelectGoods.nType == 2 then
+		local nNoteId = self.mapSelectGoods.nGoodsId
+		local nCurCount = self.mapNoteCount[nNoteId] == nil and 0 or self.mapNoteCount[nNoteId]
+		local nMaxCount = ConfigTable.GetConfigNumber("DiscSubNoteSkillMaxLevel")
+		if nCurCount >= nMaxCount then
+			local sNoteName = ""
+			local mapNoteCfg = ConfigTable.GetData("SubNoteSkill", nNoteId)
+			if mapNoteCfg ~= nil then
+				sNoteName = mapNoteCfg.Name
+			end
+			EventManager.Hit(EventId.OpenMessageBox, orderedFormat(ConfigTable.GetUIText("StarTower_Shop_Note_Max"), sNoteName))
+			return
+		end
+	end
 	local callback = function(nCoin)
 		self:OpenBuyPanel(false, nil, nil, true)
 		for _, mapGoods in pairs(self.tbGoods) do

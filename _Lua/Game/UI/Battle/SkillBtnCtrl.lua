@@ -1,6 +1,8 @@
 local SkillBtnCtrl = class("SkillBtnCtrl", BaseCtrl)
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
 local LocalSettingData = require("GameCore.Data.LocalSettingData")
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
+local ResType = GameResourceLoader.ResType
 local NormalCDSize = 34
 local eftColor = {
 	[1] = "#00B7FF",
@@ -36,6 +38,11 @@ SkillBtnCtrl._mapNodeConfig = {
 		sComponentName = "Image"
 	},
 	ICON = {sComponentName = "Image"},
+	LightLoop = {
+		sNodeName = "LightLoop_",
+		nCount = 6,
+		sComponentName = "GameObject"
+	},
 	transformCD = {sNodeName = "CD", sComponentName = "Transform"},
 	TMP_CD = {sNodeName = "CD_TMP", sComponentName = "TMP_Text"},
 	transformCharge = {sNodeName = "Charge", sComponentName = "Transform"},
@@ -122,6 +129,9 @@ function SkillBtnCtrl:InitSkillBtn(EET, icon, bShowSection, charId, actionId, bI
 		NovaAPI.SetImageColor(self._mapNode.imageFXFire, _colorFire)
 		NovaAPI.SetImageColor(self._mapNode.Img_Charge_glow, _color)
 		self:SetAtlasSprite(self._mapNode.imageType, "15_battle", "skill_btn_b_type_" .. tostring(EET))
+		local sPath = Settings.AB_ROOT_PATH .. "UI/Battle/FX/Textures/btnSkill_qte_0" .. tostring(EET) .. ".png"
+		local sp = GameResourceLoader.LoadAsset(ResType.Any, sPath, typeof(Sprite), "UI", self._panel._nPanelId)
+		NovaAPI.SetImageSpriteAsset(self._mapNode.imageQteLoading, sp)
 	end
 	self:SetPngSprite(self._mapNode.ICON, icon)
 	self._mapNode.transformCharge.localScale = Vector3.zero
@@ -133,6 +143,9 @@ function SkillBtnCtrl:InitSkillBtn(EET, icon, bShowSection, charId, actionId, bI
 		self.parentCanvasGroup = self.gameObject.transform.parent.parent.parent:GetComponent("CanvasGroup")
 	else
 		self.parentCanvasGroup = self.gameObject.transform.parent.parent:GetComponent("CanvasGroup")
+	end
+	for i, v in ipairs(self._mapNode.LightLoop) do
+		v:SetActive(bEnable)
 	end
 end
 function SkillBtnCtrl:SetEmptySkillBtn()
@@ -294,6 +307,9 @@ end
 function SkillBtnCtrl:Set_SkillHintActive(bActive)
 	self._mapNode.transformQTE.localScale = bActive == true and Vector3.one or Vector3.zero
 	self._mapNode.imageQteLoading.transform.localScale = bActive == true and Vector3.zero or Vector3.one
+end
+function SkillBtnCtrl:Set_LightGroup(bEnable)
+	self._mapNode.LightLoop[self.EET]:SetActive(bEnable)
 end
 function SkillBtnCtrl:SetSupSkillStateByUltimate(bForbidden)
 	self._mapNode.transformX.localScale = bForbidden == true and Vector3.one or Vector3.zero

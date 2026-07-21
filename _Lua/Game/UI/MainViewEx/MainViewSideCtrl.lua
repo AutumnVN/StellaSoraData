@@ -225,14 +225,14 @@ function MainViewSideCtrl:InitToolBox()
 	self._mapNode.btnToolBox.gameObject:SetActive(bEnable)
 end
 function MainViewSideCtrl:CheckToolBoxEnable()
-	local bEnable = false
-	local clientPublishRegion = CS.ClientConfig.ClientPublishRegion
-	if clientPublishRegion == CS.ClientPublishRegion.CN then
-		bEnable = true
-	else
-		bEnable = false
+	if NovaAPI.IsReviewServerEnv() then
+		return false
 	end
-	return bEnable
+	local clientPublishRegion = CS.ClientConfig.ClientPublishRegion
+	if clientPublishRegion == CS.ClientPublishRegion.JP then
+		return false
+	end
+	return true
 end
 function MainViewSideCtrl:InitQuestNewbie()
 	local bEnable = self:CheckBtnEnable(BtnType.QuestNewbie)

@@ -1,5 +1,7 @@
 local LayoutRebuilder = CS.UnityEngine.UI.LayoutRebuilder
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
+local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
+local ResType = GameResourceLoader.ResType
 local BubbleVoiceManager = require("Game.Actor2D.BubbleVoiceManager")
 local AvgBubbleCtrl = class("AvgBubbleCtrl", BaseCtrl)
 AvgBubbleCtrl._mapNodeConfig = {
@@ -255,6 +257,14 @@ function AvgBubbleCtrl:_CalcWidthAndHeight(sContent)
 	end
 	return nBgWidth, nGridHeight
 end
+function AvgBubbleCtrl:_ParseBBHeadIcon(sParam1)
+	local sIcon = sParam1
+	if string.find(sParam1, "_BB_") == nil then
+		sIcon = sParam1 .. "_BB_001"
+	end
+	local tb = string.split(sIcon, "_BB_")
+	return tb[1], tb[2]
+end
 function AvgBubbleCtrl:ShowAvgBubbleInPrologue()
 	self.nCurRawDataIndex = self.nCurRawDataIndex + 1
 	if self.nCurRawDataIndex > self.nAllCount then
@@ -295,6 +305,8 @@ function AvgBubbleCtrl:PopupBubble3()
 	end
 	local param = self._panel.tbAvgBBCmdCfg[self.nCurRawDataIndex].param
 	local sAvgCharId = param[1]
+	local sResName = sAvgCharId
+	sAvgCharId, sResName = self:_ParseBBHeadIcon(sAvgCharId)
 	sAvgCharId = AdjustMainRoleAvgCharId(sAvgCharId)
 	local sContent = ProcAvgTextContentFallback(self._panel.sTxtLan, self._panel.sVoLan, self._panel.bIsPlayerMale, param[3], param[6], param[9], param[10])
 	sContent = ProcAvgTextContent(sContent, self._panel.nCurLanguageIdx)
@@ -310,7 +322,9 @@ function AvgBubbleCtrl:PopupBubble3()
 	end
 	local bShadowMask = param[8] == 1
 	local func_ReSetBubble = function()
-		self:SetAvgCharHeadIconByPrefab(self._mapNode.img_head, string.format("Icon/AvgHead/%s/%s_GD.prefab", sAvgCharId, sAvgCharId))
+		local sFullPath = string.format("Icon/AvgHead/%s/%s_BB_%s.png", sAvgCharId, sAvgCharId, sResName)
+		local _sprite = GameResourceLoader.LoadAsset(ResType.Any, Settings.AB_ROOT_PATH .. sFullPath, typeof(Sprite), "UI", self._panel._nPanelId)
+		NovaAPI.SetImageSpriteAsset(self._mapNode.img_head, _sprite)
 		NovaAPI.SetEnable_Gradient2(self._mapNode.img_head.gameObject, bShadowMask)
 		NovaAPI.SetText_RubyTMP(self._mapNode.tmp_SpeakerName, sName)
 		NovaAPI.SetText_RubyTMP(self._mapNode.tmp_Content3, sContent)

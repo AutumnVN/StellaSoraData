@@ -51,6 +51,7 @@ function ChapterLineCtrl:Awake()
 	self.lineAnimTime = 0.14
 	self.tbBranchGrid = {}
 	self.tbLockedBranchGrid = {}
+	self.tbSpecialParentGrid = {}
 	self.bFocusNotReadNode = true
 	self.Rect = self._mapNode.tranContent:GetComponent("RectTransform")
 	self:CacheCurChapterConfig()
@@ -110,15 +111,7 @@ function ChapterLineCtrl:RefreshFocusNode()
 		end
 	end
 end
-function ChapterLineCtrl:Refresh()
-	self._mapNode.goImgMaskRoot.transform:SetParent(self._mapNode.tranContent)
-	self._mapNode.goImgMaskRoot.transform:SetAsFirstSibling()
-	self:RefreshFocusNode()
-	self.tbGridList = {}
-	self.tbTimeStampList = {}
-	self.tbDepthLockCount = {}
-	self.maxUnlockDepth = 1
-	self.maxStoryDepth = 1
+function ChapterLineCtrl:RefreshGridDepthInfo()
 	for i = 1, self._mapNode.tranContent.childCount - 1 do
 		local gridRoot = self._mapNode.tranContent:GetChild(i):Find("goGrid")
 		local goTimeStamp = self._mapNode.tranContent:GetChild(i):Find("goTimeStamp")
@@ -137,6 +130,12 @@ function ChapterLineCtrl:Refresh()
 			})
 			local storyConfig = AvgData:GetStoryCfgData(avgId)
 			local bUnlock = AvgData:IsUnlock(storyConfig.ConditionId, storyConfig.StoryId)
+			if storyConfig.MemoryType ~= GameEnum.MainlineMemoryNodeType.None and self.tbSpecialParentGrid[avgId] == nil then
+				self.tbSpecialParentGrid[avgId] = {}
+				for k, v in pairs(storyConfig.ParentStoryId) do
+					table.insert(self.tbSpecialParentGrid[avgId], v)
+				end
+			end
 			if i > self.maxStoryDepth then
 				self.maxStoryDepth = i
 			end
@@ -149,6 +148,17 @@ function ChapterLineCtrl:Refresh()
 	table.sort(self.tbGridList, function(a, b)
 		return a.depth < b.depth
 	end)
+end
+function ChapterLineCtrl:Refresh()
+	self._mapNode.goImgMaskRoot.transform:SetParent(self._mapNode.tranContent)
+	self._mapNode.goImgMaskRoot.transform:SetAsFirstSibling()
+	self:RefreshFocusNode()
+	self.tbGridList = {}
+	self.tbTimeStampList = {}
+	self.tbDepthLockCount = {}
+	self.maxUnlockDepth = 1
+	self.maxStoryDepth = 1
+	self:RefreshGridDepthInfo()
 	self:RefreshCurNodeDepthByNewUnlock()
 	self:RefreshUnlockAnimList()
 	self.tbBranchOverflowDepths = {}
@@ -187,7 +197,6 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 	local avgId = goGrid.name
 	local storyConfig = AvgData:GetStoryCfgData(avgId)
 	local bUnlock = AvgData:IsUnlock(storyConfig.ConditionId, avgId)
-	local goLeftBorder = goGrid:Find("goLeftBorder")
 	local bAllLock = 1 < gridDepth and true or false
 	for i = 1, #storyConfig.ParentStoryId do
 		local parentConfig = AvgData:GetStoryCfgData(storyConfig.ParentStoryId[i])
@@ -201,8 +210,21 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 	end
 	self.tbDepthLockCount[gridDepth].Node.gameObject:SetActive(self.tbDepthLockCount[gridDepth].DisableCount < self.tbDepthLockCount[gridDepth].ChildCount)
 	local allParentDepthLock = true
-	if self.tbDepthLockCount[gridDepth - 1] ~= nil and self.tbDepthLockCount[gridDepth - 1] ~= nil then
+	if self.tbDepthLockCount[gridDepth - 1] ~= nil then
 		allParentDepthLock = self.tbDepthLockCount[gridDepth - 1].DisableCount == self.tbDepthLockCount[gridDepth - 1].ChildCount
+	end
+	for i = 1, #storyConfig.ParentStoryId do
+		local parentId = storyConfig.ParentStoryId[i]
+		for _, gridInfo in ipairs(self.tbGridList) do
+			if gridInfo.avgId == parentId and gridInfo.depth == gridDepth then
+				local parentConfig = AvgData:GetStoryCfgData(parentId)
+				local parentUnlock = AvgData:IsUnlock(parentConfig.ConditionId, parentConfig.StoryId)
+				if not parentUnlock then
+					allParentDepthLock = true
+				end
+				break
+			end
+		end
 	end
 	local bNeedPlayUnlockAnim = false
 	for k, v in ipairs(self.tbNeedPlayUnlockAnimGird) do
@@ -218,11 +240,15 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 	local btnEnter = goGrid:Find("btnEnter"):GetComponent("UIButton")
 	local NormalRoot = btnEnter.transform:Find("AnimRoot/NormalRoot")
 	local BattleRoot = btnEnter.transform:Find("AnimRoot/BattleRoot")
+	local SpecialRoot = btnEnter.transform:Find("AnimRoot/SpecialRoot")
 	local BranchRoot = goGrid:Find("BranchRoot")
 	local LockRoot = btnEnter.transform:Find("AnimRoot/LockRoot")
 	local imgClue = goGrid:Find("imgClue")
 	local lineContinue = goGrid:Find("lineContinue")
 	local goRightBorder = goGrid:Find("goRightBorder")
+	local goLeftBorder = goGrid:Find("goLeftBorder")
+	local imgLeftPoint_1 = goGrid:Find("imgLeftPoint_1")
+	local imgRightPoint_1 = goGrid:Find("imgRightPoint_1")
 	local txtUnlock = LockRoot:Find("txtUnlock"):GetComponent("TMP_Text")
 	local cgComp = storyConfig.IsBattle and NormalRoot:GetComponent("CanvasGroup") or BattleRoot:GetComponent("CanvasGroup")
 	NovaAPI.SetCanvasGroupAlpha(cgComp, bUnlock and 1 or 0.5)
@@ -240,7 +266,21 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 	imgClue.gameObject:SetActive(storyConfig.HasEvidence and bUnlock and not bReaded)
 	local bShowLineContinue = not bUnlock and gridDepth > self.maxUnlockDepth
 	lineContinue.gameObject:SetActive(bShowLineContinue)
+	local isSpecial = storyConfig.MemoryType ~= GameEnum.MainlineMemoryNodeType.None
 	local rootTrans = storyConfig.IsBattle and BattleRoot or NormalRoot
+	if isSpecial then
+		if SpecialRoot == nil then
+			return
+		end
+		if storyConfig.MemoryType == GameEnum.MainlineMemoryNodeType.DiscType then
+			rootTrans = SpecialRoot:Find("Type" .. GameEnum.MainlineMemoryNodeType.DiscType)
+		end
+	end
+	NormalRoot.gameObject:SetActive(not storyConfig.IsBattle and not isSpecial)
+	BattleRoot.gameObject:SetActive(storyConfig.IsBattle and not isSpecial)
+	if isSpecial and SpecialRoot ~= nil then
+		SpecialRoot.gameObject:SetActive(not bNeedPlayUnlockAnim)
+	end
 	rootTrans.gameObject:SetActive(bUnlock)
 	local imgFocus = rootTrans:Find("imgFocus")
 	local RedDot = rootTrans:Find("RedDot")
@@ -283,15 +323,33 @@ function ChapterLineCtrl:RefreshGrid(goGrid, gridDepth)
 		NovaAPI.SetTMPText(txtLevelName, storyConfig.Title)
 		NovaAPI.SetTMPText(txtLevelIndex, storyConfig.Index)
 		NovaAPI.SetTMPText(txtNewUnlock, ConfigTable.GetUIText("Story_NewStory_Unlock"))
-		if not storyConfig.IsBattle then
+		if not storyConfig.IsBattle and not isSpecial then
 			local imgClueReaded = goReaded:Find("imgClueReaded")
 			imgClueReaded.gameObject:SetActive(storyConfig.HasEvidence)
 		end
 		self:PlayUnlockAnim(rootTrans, "Empty")
+		if isSpecial and SpecialRoot ~= nil then
+			local zsBg1 = rootTrans:Find("imgBg/zsBg1")
+			local zsBg2 = rootTrans:Find("imgBg/zsBg2")
+			zsBg2.gameObject:SetActive(not bFocus)
+			zsBg1.gameObject:SetActive(not bFocus)
+			goLeftBorder.gameObject:SetActive(false)
+			goRightBorder.gameObject:SetActive(false)
+			imgRightPoint_1.gameObject:SetActive(false)
+			imgLeftPoint_1.gameObject:SetActive(false)
+		end
 	end
 	NovaAPI.SetTMPText(txtUnlock, ConfigTable.GetUIText("Story_Unkown_Chapter"))
 	for i = 1, goRightBorder.childCount do
 		goRightBorder:GetChild(i - 1).gameObject:SetActive(not bShowLineContinue)
+	end
+	if not isSpecial then
+		local isParentSpecial = self:CheckIsParentSpecialNode(avgId)
+		local isChildSpecial = self:CheckIsChildSpecialNode(avgId)
+		goLeftBorder.gameObject:SetActive(not isParentSpecial)
+		goRightBorder.gameObject:SetActive(not isChildSpecial)
+		imgRightPoint_1.gameObject:SetActive(not isChildSpecial)
+		imgLeftPoint_1.gameObject:SetActive(not isParentSpecial and 1 < gridDepth)
 	end
 	if self.tbBranch[avgId] ~= nil then
 		if bNeedPlayUnlockAnim == false and 0 < table.indexof(self.tbLockedBranchGrid, avgId) then
@@ -507,8 +565,6 @@ function ChapterLineCtrl:CheckLineReasonable(grid)
 					if not (math.abs(screenDist - lineWidthScreen) <= 18) then
 						if screenDist > lineWidthScreen then
 							lineRect.sizeDelta = Vector2(newSizeDelta, lineRect.sizeDelta.y)
-							print("拉伸线段", grid.name, "原宽度", lineWidthScreen, "新宽度", newSizeDelta)
-							print("点A屏幕坐标", parentBorderPos.right, "点B屏幕坐标", curBorderPos.left)
 						elseif screenDist < lineWidthScreen then
 							lineRect.sizeDelta = Vector2(newSizeDelta, lineRect.sizeDelta.y)
 							self.tbShortenedLines[avgId] = {
@@ -597,6 +653,8 @@ function ChapterLineCtrl:RefreshUnlockAnimList()
 			end
 		else
 			for _, parentNode in pairs(storyConfig.ParentStoryId) do
+				local panentConfig = AvgData:GetStoryCfgData(parentNode)
+				local parentId = panentConfig.Id
 				if cachedGird[parentNode] ~= nil then
 					local parentStoryConfig = AvgData:GetStoryCfgData(parentNode)
 					local bHasPlayedAnim = LocalData.GetPlayerLocalData("MainlineUnlock_" .. storyConfig.Id)
@@ -608,7 +666,7 @@ function ChapterLineCtrl:RefreshUnlockAnimList()
 							self.curShouldPlayDepth = v.depth
 						end
 					end
-				elseif table.indexof(self.tbFocusNode, parentNode) > 0 then
+				elseif table.indexof(self.tbFocusNode, parentId) > 0 then
 					local parentStoryConfig = AvgData:GetStoryCfgData(parentNode)
 					local bHasPlayedAnim = LocalData.GetPlayerLocalData("MainlineUnlock_" .. parentStoryConfig.Id)
 					if bHasPlayedAnim == nil or bHasPlayedAnim == 0 then
@@ -633,7 +691,42 @@ function ChapterLineCtrl:DoPlayUnlockAnim(depth)
 			table.insert(nodes, node)
 		end
 	end
-	for _, node in pairs(nodes) do
+	local samDepthAvgIds = {}
+	for _, node in ipairs(nodes) do
+		samDepthAvgIds[node.avgId] = true
+	end
+	local parentNodes = {}
+	local childNodes = {}
+	for _, node in ipairs(nodes) do
+		local storyConfig = AvgData:GetStoryCfgData(node.avgId)
+		local bIsSameDepthChild = false
+		for _, parentId in pairs(storyConfig.ParentStoryId) do
+			if samDepthAvgIds[parentId] then
+				bIsSameDepthChild = true
+				break
+			end
+		end
+		if bIsSameDepthChild then
+			table.insert(childNodes, node)
+		else
+			table.insert(parentNodes, node)
+		end
+	end
+	self._samDepthChildNodes = self._samDepthChildNodes or {}
+	self._samDepthChildNodes[depth] = childNodes
+	self._samDepthParentCount = self._samDepthParentCount or {}
+	self._samDepthParentCount[depth] = #parentNodes
+	for _, node in ipairs(parentNodes) do
+		self:PlayGridUnlockAnim(node, depth)
+	end
+end
+function ChapterLineCtrl:DoPlaySameDepthChildAnim(depth)
+	local childNodes = self._samDepthChildNodes and self._samDepthChildNodes[depth]
+	if childNodes == nil or #childNodes == 0 then
+		return
+	end
+	self._samDepthChildNodes[depth] = nil
+	for _, node in ipairs(childNodes) do
 		self:PlayGridUnlockAnim(node, depth)
 	end
 end
@@ -668,9 +761,14 @@ function ChapterLineCtrl:PlayNormalNodeUnlockAnim(nodeInfo, depth)
 	local batteleNode = grid:Find("btnEnter/AnimRoot/BattleRoot")
 	local normalNode = grid:Find("btnEnter/AnimRoot/NormalRoot")
 	local lockNode = grid:Find("btnEnter/AnimRoot/LockRoot")
+	local specialNode = grid:Find("btnEnter/AnimRoot/SpecialRoot")
 	batteleNode.gameObject:SetActive(false)
 	normalNode.gameObject:SetActive(false)
 	lockNode.gameObject:SetActive(false)
+	local isSpecial = storyConfig.MemoryType ~= GameEnum.MainlineMemoryNodeType.None
+	if isSpecial then
+		specialNode.gameObject:SetActive(false)
+	end
 	local rootNode
 	local bNewUnlock = 0 < table.indexof(self.tbLockedPlayedAnim, nodeInfo.avgId)
 	if bNewUnlock then
@@ -678,7 +776,14 @@ function ChapterLineCtrl:PlayNormalNodeUnlockAnim(nodeInfo, depth)
 		table.removebyvalue(self.tbLockedPlayedAnim, nodeInfo.avgId)
 	end
 	if bUnlock then
-		rootNode = storyConfig.IsBattle == true and batteleNode or normalNode
+		if isSpecial then
+			local specialNode = specialNode:Find("Type" .. storyConfig.MemoryType)
+			if specialNode ~= nil then
+				rootNode = specialNode
+			end
+		else
+			rootNode = storyConfig.IsBattle == true and batteleNode or normalNode
+		end
 	else
 		rootNode = lockNode
 		table.insert(self.tbLockedPlayedAnim, nodeInfo.avgId)
@@ -699,7 +804,8 @@ function ChapterLineCtrl:PlayNormalNodeUnlockAnim(nodeInfo, depth)
 		self:AddTimer(1, time, function()
 			imgRightPoint_1.gameObject:SetActive(bRightActived)
 			if not bUnlock then
-				if bRightActived then
+				local isParentSpecial = self:CheckIsParentSpecialNode(nodeInfo.avgId)
+				if bRightActived or isParentSpecial then
 					goLineContinue.gameObject:SetActive(true)
 					self:PlayLineAnim(goLineContinue)
 				end
@@ -710,19 +816,41 @@ function ChapterLineCtrl:PlayNormalNodeUnlockAnim(nodeInfo, depth)
 				local bFocus = table.indexof(self.tbFocusNode, storyConfig.Id) > 0 and (not bReaded or self.bFocusLastNode)
 				imgFocus.gameObject:SetActive(bFocus)
 				RedDot.gameObject:SetActive(bFocus and not bReaded)
-				self:DoPlayUnlockAnim(depth + 1)
+				if self._samDepthParentCount and self._samDepthParentCount[depth] ~= nil then
+					self._samDepthParentCount[depth] = self._samDepthParentCount[depth] - 1
+					if 0 >= self._samDepthParentCount[depth] then
+						self._samDepthParentCount[depth] = nil
+						self:DoPlaySameDepthChildAnim(depth)
+						self:DoPlayUnlockAnim(depth + 1)
+					end
+				else
+					self:DoPlayUnlockAnim(depth + 1)
+				end
 			end
 		end, true, true, true)
 	end
 	self:AddTimer(1, PlayLineAnimTime, function()
 		lockNode.gameObject:SetActive(false)
 		rootNode.gameObject:SetActive(true)
-		local animName = bUnlock and "BattleRoot_in" or "LockRoot_in"
+		if isSpecial then
+			specialNode.gameObject:SetActive(true)
+		end
+		local animName = ""
+		if isSpecial and bUnlock then
+			animName = "SpecialRoot_in"
+		else
+			animName = bUnlock and "BattleRoot_in" or "LockRoot_in"
+		end
 		if bUnlock then
 			LocalData.SetPlayerLocalData("MainlineUnlock_" .. storyConfig.Id, 1)
-			CS.WwiseAudioManager.Instance:PostEvent("ui_mainline_level")
+			if isSpecial then
+				WwiseAudioMgr:PostEvent("ui_mainline_memory_unlock")
+			else
+				WwiseAudioMgr:PostEvent("ui_mainline_level")
+			end
 		end
 		local animTime = self:PlayUnlockAnim(rootNode, animName)
+		animTime = animTime == 0 and 0.01 or animTime
 		DoAfterAnim(animTime)
 	end, true, true, true)
 end
@@ -945,5 +1073,29 @@ function ChapterLineCtrl:ForbidClick()
 	self:AddTimer(1, 1.5, function()
 		self.bCanClick = true
 	end, true, true, true)
+end
+function ChapterLineCtrl:CheckIsParentSpecialNode(avgId)
+	local storyConfig = AvgData:GetStoryCfgData(avgId)
+	if storyConfig == nil then
+		return false
+	end
+	for _, parentId in pairs(storyConfig.ParentStoryId) do
+		local parentConfig = AvgData:GetStoryCfgData(parentId)
+		return parentConfig ~= nil and parentConfig.MemoryType ~= GameEnum.MainlineMemoryNodeType.None
+	end
+	return false
+end
+function ChapterLineCtrl:CheckIsChildSpecialNode(avgId)
+	for k, v in pairs(self.tbSpecialParentGrid) do
+		for _, parentId in ipairs(v) do
+			if parentId == avgId then
+				local childId = k
+				local childConfig = AvgData:GetStoryCfgData(childId)
+				local isUnlock = AvgData:IsUnlock(childConfig.ConditionId, childConfig.StoryId)
+				return isUnlock
+			end
+		end
+	end
+	return false
 end
 return ChapterLineCtrl

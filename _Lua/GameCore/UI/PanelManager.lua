@@ -456,6 +456,9 @@ local ResetTouchEffect = function()
 		NovaAPI.ResetTouchEffect(trNode:Find("TouchEffectUI/fxContainer"), objMain, objSlide)
 	end
 end
+local RegisterTextGetContentFun = function()
+	CS.TextMeshProWrap.GetTextFunc = ConfigTable.GetUIText
+end
 function PanelManager.Init()
 	local goUIRoot = GameObject.Find("==== UI ROOT ====")
 	if goUIRoot ~= nil then
@@ -482,6 +485,7 @@ function PanelManager.Init()
 	tbBackHistory = {}
 	tbDisposablePanel = {}
 	mapDefinePanel = require("GameCore.UI.PanelDefine")
+	RegisterTextGetContentFun()
 	AddEventCallback()
 	InitGuidePanel()
 	InitTransitionPanel()

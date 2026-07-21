@@ -1,10 +1,12 @@
 local ConfigData = require("GameCore.Data.ConfigData")
 local TimerManager = require("GameCore.Timer.TimerManager")
 local GameResourceLoader = require("Game.Common.Resource.GameResourceLoader")
+local UIObjs = require("GameCore.UI.UIObjs")
 local ResType = GameResourceLoader.ResType
 local AdventureModuleHelper = CS.AdventureModuleHelper
 local BaseCtrl = class("BaseCtrl")
 local sRootPath = Settings.AB_ROOT_PATH
+local InUnityEditor = NovaAPI.IsEditorPlatform()
 local bDebugLog = false
 local typeof = typeof
 function BaseCtrl:ctor(goPrefabInstance, objPanel)
@@ -14,6 +16,13 @@ function BaseCtrl:ctor(goPrefabInstance, objPanel)
 	self._mapLoadAssets = {}
 	self._mapHandler = {}
 	self._mapNode = {}
+	local csUIObjs = goPrefabInstance:GetComponent("UIObjsReference")
+	if csUIObjs and not csUIObjs:IsNull() then
+		self._uiObjs = UIObjs.new(csUIObjs, self)
+		if not self._mapNodeConfig then
+			self._mapNodeConfig = {}
+		end
+	end
 	self:ParsePrefab(goPrefabInstance)
 	if type(self.Awake) == "function" then
 		self:Awake()
@@ -102,16 +111,83 @@ function BaseCtrl:_Destroy()
 	self._mapLoadAssets = nil
 	self._mapHandler = nil
 	self._mapNode = nil
+	self._uiObjs = nil
 end
 function BaseCtrl:_Release()
 	if self.gameObject ~= nil and self.gameObject:IsNull() == false and type(self.OnRelease) == "function" then
 		self:OnRelease()
 	end
 end
+function BaseCtrl:_FillMapNodeConfigByUIObjs(mapNodeConfig)
+	if self._uiObjs == nil or type(mapNodeConfig) ~= "table" then
+		return
+	end
+	local mapCoveredByCount = {}
+	local tbInject = {}
+	for sKey, mapConfig in pairs(mapNodeConfig) do
+		local nCount = mapConfig.nCount
+		if type(nCount) == "number" then
+			local sNodeName = mapConfig.sNodeName or sKey
+			if mapConfig.sNodeName == nil then
+				mapConfig.sNodeName = sNodeName
+			end
+			local _, sTypeName = self._uiObjs:Get(sNodeName .. "1")
+			if mapConfig.sComponentName == nil and mapConfig.sCtrlName == nil and sTypeName ~= nil then
+				mapConfig.sComponentName = sTypeName
+			end
+			if mapConfig.sCtrlName ~= nil and type(mapConfig.callback) == "string" and sTypeName ~= nil then
+				local sShadowKey = sKey .. "__BtnHandler"
+				if mapNodeConfig[sShadowKey] == nil and tbInject[sShadowKey] == nil then
+					tbInject[sShadowKey] = {
+						nCount = nCount,
+						sNodeName = sNodeName,
+						sComponentName = sTypeName,
+						callback = mapConfig.callback
+					}
+				end
+			end
+			for i = 1, nCount do
+				mapCoveredByCount[sNodeName .. tostring(i)] = true
+			end
+		else
+			local uiObj, sTypeName = self._uiObjs:Get(sKey)
+			if uiObj ~= nil then
+				if mapConfig.sNodeName == nil then
+					mapConfig.sNodeName = sKey
+				end
+				if mapConfig.sComponentName == nil and mapConfig.sCtrlName == nil then
+					mapConfig.sComponentName = sTypeName
+				end
+				if mapConfig.sCtrlName ~= nil and type(mapConfig.callback) == "string" then
+					local sShadowKey = sKey .. "__BtnHandler"
+					if mapNodeConfig[sShadowKey] == nil and tbInject[sShadowKey] == nil then
+						tbInject[sShadowKey] = {
+							sNodeName = mapConfig.sNodeName or sKey,
+							sComponentName = sTypeName,
+							callback = mapConfig.callback
+						}
+					end
+				end
+			end
+		end
+	end
+	for sShadowKey, shadowConfig in pairs(tbInject) do
+		mapNodeConfig[sShadowKey] = shadowConfig
+	end
+	for _, sKey in ipairs(self._uiObjs._keys) do
+		if mapNodeConfig[sKey] == nil and not mapCoveredByCount[sKey] then
+			local uiObj, sTypeName = self._uiObjs:Get(sKey)
+			if uiObj ~= nil and sTypeName ~= nil then
+				mapNodeConfig[sKey] = {sNodeName = sKey, sComponentName = sTypeName}
+			end
+		end
+	end
+end
 function BaseCtrl:_ParseNode(mapNodeConfig)
 	if self.gameObject ~= nil and type(mapNodeConfig) == "table" then
+		self:_FillMapNodeConfigByUIObjs(mapNodeConfig)
 		local trPrefabRoot = self.gameObject.transform
-		local mapNode = {}
+		local mapNode
 		local function func_MarkAllNode(trRoot)
 			local nChildCount = trRoot.childCount - 1
 			for i = 0, nChildCount do
@@ -122,7 +198,20 @@ function BaseCtrl:_ParseNode(mapNodeConfig)
 				end
 			end
 		end
-		func_MarkAllNode(trPrefabRoot)
+		local func_GetGoByName = function(sName)
+			if self._uiObjs ~= nil then
+				local uiObj = self._uiObjs[sName]
+				if uiObj ~= nil then
+					local uiType = self._uiObjs._objTypeMaps[sName]
+					return uiType == "GameObject" and uiObj or uiObj.gameObject
+				end
+			end
+			if mapNode == nil then
+				mapNode = {}
+				func_MarkAllNode(trPrefabRoot)
+			end
+			return mapNode[sName]
+		end
 		for sKey, mapConfig in pairs(mapNodeConfig) do
 			local sNodeName = mapConfig.sNodeName
 			local nCount = mapConfig.nCount
@@ -146,7 +235,7 @@ function BaseCtrl:_ParseNode(mapNodeConfig)
 			for nIndex, sName in ipairs(tbNodeName) do
 				local bComponentFound = true
 				local objNode
-				local goNode = mapNode[sName]
+				local goNode = func_GetGoByName(sName)
 				if goNode ~= nil then
 					if type(sCtrlName) == "string" then
 						local objCtrl
@@ -162,6 +251,10 @@ function BaseCtrl:_ParseNode(mapNodeConfig)
 							objCtrl = luaClass.new(goNode, self._panel)
 							objCtrl._nGoInstanceId = nGoInstanceId
 							table.insert(self._panel._tbObjChildCtrl, objCtrl)
+							if InUnityEditor and goNode and goNode.gameObject then
+								local sPanelName = objCtrl._panel.__cname
+								NovaAPI.AttachPrefabLuaInspector(goNode.gameObject, sCtrlName, sPanelName, nil)
+							end
 						end
 						objCtrl:ParsePrefab(goNode)
 						objNode = objCtrl
@@ -704,11 +797,6 @@ function BaseCtrl:OnEvent_AvgSpeedUp_Timer(nRate)
 		end
 	end
 end
-function BaseCtrl:SetAvgCharHeadIconByPrefab(img, sPrefabPath)
-	local sFullPath = sRootPath .. sPrefabPath
-	local prefab = GameResourceLoader.LoadAsset(ResType.Any, sFullPath, typeof(GameObject), "UI", self._panel._nPanelId)
-	NovaAPI.SetImageSpriteWithPrefab(img, prefab)
-end
 function BaseCtrl:AddTimer(nTargetCount, nInterval, sCallbackName, bAutoRun, bDestroyWhenComplete, nScaleType, tbParam)
 	local callback
 	if type(sCallbackName) == "function" then
@@ -816,6 +904,10 @@ function BaseCtrl:BindCtrlByNode(goNode, sCtrlName)
 		objCtrl = luaClass.new(goNode, self._panel)
 		table.insert(self._panel._tbObjDyncChildCtrl, objCtrl)
 		objCtrl:_Enter()
+		if InUnityEditor and goNode and goNode.gameObject then
+			local sPanelName = self._panel.__cname
+			NovaAPI.AttachPrefabLuaInspector(goNode.gameObject, sCtrlName, sPanelName, nil)
+		end
 	end
 	return objCtrl
 end

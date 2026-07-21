@@ -374,7 +374,7 @@ function PenguinCardQuestSelectCtrl:OnEvent_DeleteBuff(nIndex)
 		end, true, true, true)
 	end
 end
-function PenguinCardQuestSelectCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
+function PenguinCardQuestSelectCtrl:OnEvent_ChangeScore(nBefore)
 	if nBefore < self._panel.mapLevel.nScore and self._panel.mapLevel.nGameState == PenguinCardUtils.GameState.Quest then
 		WwiseManger:PostEvent("Mode_Card_coin")
 	end

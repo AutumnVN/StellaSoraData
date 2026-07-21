@@ -286,4 +286,71 @@ function HttpNetHandlerPlus.activity_double_reward_times_notify(mapMsgData)
 		EventManager.Hit("UpdateInstanceDoubleCount")
 	end
 end
+function HttpNetHandlerPlus.activity_share_reward_receive_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+	UTILS.OpenReceiveByChangeInfo(mapMsgData)
+end
+function HttpNetHandlerPlus.trace_hunt_settle_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.ChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
+function HttpNetHandlerPlus.trace_hunt_settle_failed_ack(mapMsgData)
+	PlayerData.TraceHunt:ReceiveTraceHuntSettleFailed()
+end
+function HttpNetHandlerPlus.trace_hunt_trace_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.ChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
+function HttpNetHandlerPlus.trace_hunt_boss_reward_receive_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.ChangeInfo)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
+function HttpNetHandlerPlus.trace_hunt_new_control_notify(mapMsgData)
+	PlayerData.TraceHunt:SetNewControl(true)
+end
+function HttpNetHandlerPlus.trace_hunt_state_notify(mapMsgData)
+	PlayerData.TraceHunt:UpdateBossRewardRedDot(true)
+end
+function HttpNetHandlerPlus.trace_hunt_item_change_notify(mapMsgData)
+	PlayerData.TraceHunt:ChangeItemNotify(mapMsgData)
+end
+function HttpNetHandlerPlus.activity_ice_cream_level_settle_succeed_ack(mapMsgData)
+	local mapDecodedChangeInfo = UTILS.DecodeChangeInfo(mapMsgData.Change)
+	HttpNetHandler.ProcChangeInfo(mapDecodedChangeInfo)
+end
+function HttpNetHandlerPlus.clear_all_activity_iceCream_levels_notify(mapMsgData)
+	EventManager.Hit("ClearAllIceLevels", mapMsgData)
+end
+function HttpNetHandlerPlus.soldier_interact_succeed_ack(mapMsgData)
+end
+function HttpNetHandlerPlus.soldier_interact_failed_ack(mapMsgData)
+end
+function HttpNetHandlerPlus.soldier_apply_succeed_ack(mapMsgData)
+end
+function HttpNetHandlerPlus.soldier_apply_failed_ack(mapMsgData)
+end
+function HttpNetHandlerPlus.soldier_give_up_succeed_ack(mapMsgData)
+end
+function HttpNetHandlerPlus.soldier_give_up_failed_ack(mapMsgData)
+end
+function HttpNetHandlerPlus.soldier_info_succeed_ack(mapMsgData)
+end
+function HttpNetHandlerPlus.soldier_info_failed_ack(mapMsgData)
+end
+function HttpNetHandlerPlus.sd_soldier_info_notify(mapMsgData)
+	PlayerData.SoldierData:OnSoldierInfoNotify(mapMsgData)
+end
+function HttpNetHandlerPlus.sd_soldier_effect_notify(mapMsgData)
+	PlayerData.SoldierData:OnSoldierEffectNotify(mapMsgData)
+end
+function HttpNetHandlerPlus.sd_shop_data_notify(mapMsgData)
+	PlayerData.SoldierData:OnShopDataNotify(mapMsgData)
+end
+function HttpNetHandlerPlus.sd_item_change_notify(mapMsgData)
+	PlayerData.SoldierData:OnItemChangeNotify(mapMsgData)
+end
+function HttpNetHandlerPlus.sd_buff_card_add_notify(mapMsgData)
+	PlayerData.SoldierData:OnBuffCardAddNotify(mapMsgData)
+end
 return HttpNetHandlerPlus

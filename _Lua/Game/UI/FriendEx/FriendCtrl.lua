@@ -148,7 +148,7 @@ function FriendCtrl:OpenCtrl()
 end
 function FriendCtrl:SetDefaultTog()
 	if self.nCurTog == nil then
-		self.nCurTog = Tog.Info
+		self.nCurTog = self._panel.nDefaultTog or Tog.Info
 	end
 	for i = 1, 3 do
 		self._mapNode.ctrlTog[i]:SetDefault(i == self.nCurTog)

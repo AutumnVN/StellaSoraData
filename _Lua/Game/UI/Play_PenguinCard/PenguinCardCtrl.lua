@@ -133,6 +133,7 @@ function PenguinCardCtrl:RunState_Dealing()
 	self._mapNode.Prepare.gameObject:SetActive(false)
 	self._mapNode.Flip.gameObject:SetActive(true)
 	self._mapNode.Flip:Refresh_Dealing()
+	self._mapNode.Slot:Refresh()
 	EventManager.Hit("Guide_PassiveCheck_Msg", "Guide_PenguinCard_302")
 end
 function PenguinCardCtrl:QuitState_Dealing(nNextState)
@@ -180,7 +181,11 @@ function PenguinCardCtrl:QuitState_Settlement(nNextState)
 		self._mapNode.Flip:PlayOutAni()
 		WwiseManger:PostEvent("Mode_Card_dissolve")
 	elseif nNextState == PenguinCardUtils.GameState.Dealing then
-		self._mapNode.Flip:PlayRoundAni()
+		if self._panel.mapLevel.bRestoreSnapshot then
+			self._mapNode.Flip:PlayRoundBackAni()
+		else
+			self._mapNode.Flip:PlayRoundAni()
+		end
 	elseif nNextState == PenguinCardUtils.GameState.Complete then
 		self._mapNode.Slot:PlayOutAni()
 		self._mapNode.Flip:PlayOutAni()
@@ -277,7 +282,7 @@ function PenguinCardCtrl:OnEvent_AddBuff(mapBuff)
 	end
 	btn.onClick:AddListener(click)
 end
-function PenguinCardCtrl:OnEvent_DeleteBuff(nIndex, nDelayTime)
+function PenguinCardCtrl:OnEvent_DeleteBuff(nIndex, nDelayTime, bSkipAni)
 	if not self.tbBuffItem or next(self.tbBuffItem) == nil then
 		return
 	end
@@ -291,6 +296,10 @@ function PenguinCardCtrl:OnEvent_DeleteBuff(nIndex, nDelayTime)
 		end, true, true, true)
 	end
 	if goBuff:IsNull() == false then
+		if bSkipAni then
+			destroy(goBuff)
+			return
+		end
 		if nDelayTime and 0 < nDelayTime then
 			self:AddTimer(1, nDelayTime, play, true, true, true)
 		else

@@ -4,6 +4,7 @@ function PlayerSideBannerData:Init()
 	self.tbDictionaryEntry = {}
 	self.tbAchievement = {}
 	self.tbFavour = {}
+	self.tbItem = {}
 	EventManager.Add("DispatchMsgDone", self, self.OnEvent_TryOpenSideBanner)
 end
 function PlayerSideBannerData:UnInit()
@@ -79,12 +80,24 @@ function PlayerSideBannerData:TryOpenSideBanner(bLimit)
 			})
 		end
 	end
+	if next(self.tbItem) ~= nil then
+		for _, v in ipairs(self.tbItem) do
+			table.insert(mapData, {
+				nType = AllEnum.SideBaner.Item,
+				mapReward = {
+					id = v.nId,
+					count = v.nCount
+				}
+			})
+		end
+	end
 	if next(mapData) == nil then
 		return
 	end
 	self.tbDictionaryEntry = {}
 	self.tbAchievement = {}
 	self.tbFavour = {}
+	self.tbItem = {}
 	EventManager.Hit("OpenSideBanner", mapData)
 end
 function PlayerSideBannerData:AddDictionaryEntry(nId)
@@ -95,5 +108,8 @@ function PlayerSideBannerData:AddAchievement(nId)
 end
 function PlayerSideBannerData:AddFavour(nId)
 	table.insert(self.tbFavour, nId)
+end
+function PlayerSideBannerData:AddItem(nId, nCount)
+	table.insert(self.tbItem, {nId = nId, nCount = nCount})
 end
 return PlayerSideBannerData

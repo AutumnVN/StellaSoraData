@@ -270,6 +270,14 @@ return {
 		signature = "Out on vacation."
 	},
 	{
+		id = 160,
+		icon = "Icon/Head/head_16001_S",
+		name = "Suntide Willow",
+		landmark = "Trekkers' House, Emor",
+		signature = "Stay safe at the beach!",
+		ver = "1.13.0"
+	},
+	{
 		id = 3136,
 		icon = "Icon/Head/head_npc13601_S",
 		name = "Ruby",

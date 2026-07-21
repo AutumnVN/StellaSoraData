@@ -40,7 +40,9 @@ local sActTypePath = {
 	[GameEnum.activityType.Advertise] = "Advertise",
 	[GameEnum.activityType.Task] = "ActivityTask",
 	[GameEnum.activityType.PenguinCard] = "PenguinCard",
-	[GameEnum.activityType.Double] = "DoubleDrop"
+	[GameEnum.activityType.Double] = "DoubleDrop",
+	[GameEnum.activityType.FollowSocialMedia] = "FollowSocialMedia",
+	[GameEnum.activityType.Soldier] = "Soldier"
 }
 function ActivityListCtrl:InitActivityList(nCurActId)
 	local tbActList = PlayerData.Activity:GetSortedActList()
@@ -205,7 +207,7 @@ function ActivityListCtrl:AddMiningActivityCtrl(actData)
 		if sFolder == nil then
 			return
 		end
-		local sPrefabPath = string.format(sEntranceFolder_old, sFolder, miningActCfg.UIAssets)
+		local sPrefabPath = string.format(sEntranceFolder, miningActCfg.UIAssets)
 		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.rtContent)
 		local sCtrlPath = string.format("Game.UI.Activity.%s.%s", sFolder, miningActCfg.CtrlName)
 		actCtrl = self:BindCtrlByNode(goObj, sCtrlPath)
@@ -401,6 +403,46 @@ function ActivityListCtrl:AddDoubleDropActivityCtrl(actData)
 	actCtrl.gameObject:SetActive(true)
 	actCtrl:InitActData(actData)
 end
+function ActivityListCtrl:AddFollowSocialMediaActivityCtrl(actData)
+	local actCtrl = self.tbActCtrlObj[actData:GetActId()]
+	if nil == actCtrl then
+		local sFolder = sActTypePath[GameEnum.activityType.FollowSocialMedia]
+		if sFolder == nil then
+			return
+		end
+		local mapActCfg = ConfigTable.GetData("FollowSocialMediaControl", actData:GetActId())
+		if not mapActCfg then
+			return
+		end
+		local sPrefabPath = string.format(sEntranceFolder, mapActCfg.UIAssets)
+		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.rtContent)
+		local sCtrlPath = string.format("Game.UI.Activity.%s.%s", sFolder, mapActCfg.CtrlName)
+		actCtrl = self:BindCtrlByNode(goObj, sCtrlPath)
+		self.tbActCtrlObj[actData:GetActId()] = actCtrl
+	end
+	actCtrl.gameObject:SetActive(true)
+	actCtrl:InitActData(actData)
+end
+function ActivityListCtrl:AddSoldierActivityCtrl(actData)
+	local actCtrl = self.tbActCtrlObj[actData:GetActId()]
+	if nil == actCtrl then
+		local sFolder = sActTypePath[GameEnum.activityType.Soldier]
+		if sFolder == nil then
+			return
+		end
+		local mapActCfg = ConfigTable.GetData("SoldierControl", actData:GetActId())
+		if not mapActCfg then
+			return
+		end
+		local sPrefabPath = string.format(sEntranceFolder, mapActCfg.UIAssets)
+		local goObj = self:CreatePrefabInstance(sPrefabPath, self._mapNode.rtContent)
+		local sCtrlPath = string.format("Game.UI.Activity.%s.%s", sFolder, mapActCfg.CtrlName)
+		actCtrl = self:BindCtrlByNode(goObj, sCtrlPath)
+		self.tbActCtrlObj[actData:GetActId()] = actCtrl
+	end
+	actCtrl.gameObject:SetActive(true)
+	actCtrl:InitActData(actData)
+end
 function ActivityListCtrl:RefreshSelectActivity(bResetDay)
 	for _, v in pairs(self.tbActCtrlObj) do
 		v.gameObject:SetActive(false)
@@ -437,6 +479,10 @@ function ActivityListCtrl:RefreshSelectActivity(bResetDay)
 			self:AddPenguinCardActivityCtrl(actData.actData)
 		elseif actType == GameEnum.activityType.Double then
 			self:AddDoubleDropActivityCtrl(actData.actData)
+		elseif actType == GameEnum.activityType.FollowSocialMedia then
+			self:AddFollowSocialMediaActivityCtrl(actData.actData)
+		elseif actType == GameEnum.activityType.Soldier then
+			self:AddSoldierActivityCtrl(actData.actData)
 		end
 	elseif actData.nType == AllEnum.ActivityMainType.ActivityGroup then
 		self.nSelectActId = actData.actData:GetActGroupId()

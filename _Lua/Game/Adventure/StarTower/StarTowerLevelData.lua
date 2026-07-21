@@ -5,6 +5,7 @@ local PATH = "Game.Adventure.StarTower.StarTowerRoom."
 local ConfigData = require("GameCore.Data.ConfigData")
 local PB = require("pb")
 local FP = CS.TrueSync.FP
+local FDP = CS.TrueSync.FDP
 local WwiseAudioMgr = CS.WwiseAudioManager.Instance
 local ModuleManager = require("GameCore.Module.ModuleManager")
 local SDKManager = CS.SDKManager.Instance
@@ -1956,11 +1957,11 @@ function StarTowerLevelData:CacheTempData()
 					table.insert(self.mapCharacterTempData.skillInfo, {
 						nCharId = charTid,
 						nSkillId = clsSkillInfo.skillId,
-						nCd = FP.ToInt(clsSkillInfo.currentUseInterval),
+						nCd = clsSkillInfo.currentUseInterval.RawValue,
 						nSectionAmount = clsSkillInfo.currentSectionAmount,
-						nSectionResumeTime = FP.ToInt(clsSkillInfo.currentResumeTime),
-						nUseTimeHint = FP.ToInt(clsSkillInfo.currentUseTimeHint),
-						nEnergy = FP.ToInt(clsSkillInfo.currentEnergy)
+						nSectionResumeTime = clsSkillInfo.currentResumeTime.RawValue,
+						nUseTimeHint = clsSkillInfo.currentUseTimeHint.RawValue,
+						nEnergy = clsSkillInfo.currentEnergy._raw
 					})
 				end
 			end
@@ -2370,10 +2371,10 @@ function StarTowerLevelData:ResetSkill()
 			local stSkillInfo = CS.Lua2CSharpInfo_ResetSkillInfo()
 			stSkillInfo.skillId = skillInfo.nSkillId
 			stSkillInfo.currentSectionAmount = skillInfo.nSectionAmount
-			stSkillInfo.cd = FP.FromFloat(skillInfo.nCd).RawValue
-			stSkillInfo.currentResumeTime = FP.FromFloat(skillInfo.nSectionResumeTime).RawValue
-			stSkillInfo.currentUseTimeHint = FP.FromFloat(skillInfo.nUseTimeHint).RawValue
-			stSkillInfo.energy = FP.FromFloat(skillInfo.nEnergy).RawValue
+			stSkillInfo.cd = skillInfo.nCd
+			stSkillInfo.currentResumeTime = skillInfo.nSectionResumeTime
+			stSkillInfo.currentUseTimeHint = skillInfo.nUseTimeHint
+			stSkillInfo.energy = skillInfo.nEnergy
 			if ret[skillInfo.nCharId] == nil then
 				ret[skillInfo.nCharId] = {}
 			end

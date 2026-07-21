@@ -1003,7 +1003,7 @@ function Actor2DManager.SkipCGAnim(nIndex)
 	if tbRenderer == nil then
 		printError("未找到 Renderer")
 	end
-	NovaAPI.SkipL2DCGAnim(tbRenderer.trL2DIns)
+	NovaAPIHotfix.SkipL2DCGAnim(tbRenderer.trL2DIns)
 end
 function Actor2DManager.PlayL2DAnim(tr, sAnimName, bLoop, bForcePlay)
 	if tr == nil then
@@ -1016,7 +1016,7 @@ function Actor2DManager.PlayL2DAnim(tr, sAnimName, bLoop, bForcePlay)
 		local sSurfix = GetLanguageSurfixByIndex(GetLanguageIndex(Settings.sCurrentVoLanguage))
 		sAnimName = sAnimName .. sSurfix
 	end
-	NovaAPI.PlayL2DAnim(tr, sAnimName, bLoop, bForcePlay)
+	NovaAPIHotfix.PlayL2DAnim(tr, sAnimName, bLoop, bForcePlay)
 end
 function Actor2DManager.SetActor2D_PNG(trActor2D_PNG, nPanelId, nCharId, nSkinId, param)
 	local tbConfig = mapPanelConfig[nPanelId]

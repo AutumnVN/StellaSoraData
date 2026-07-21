@@ -1,14 +1,16 @@
 local RogueBossSelectCtrl = class("RogueBossSelectCtrl", BaseCtrl)
 local Actor2DManager = require("Game.Actor2D.Actor2DManager")
 local mapToggle = {
-	[1] = GameEnum.diffculty.Diffculty_1,
-	[2] = GameEnum.diffculty.Diffculty_2,
-	[3] = GameEnum.diffculty.Diffculty_3,
-	[4] = GameEnum.diffculty.Diffculty_4,
-	[5] = GameEnum.diffculty.Diffculty_5,
-	[6] = GameEnum.diffculty.Diffculty_6,
-	[7] = GameEnum.diffculty.Diffculty_7,
-	[8] = GameEnum.diffculty.Diffculty_8
+	[1] = 1,
+	[2] = 2,
+	[3] = 3,
+	[4] = 4,
+	[5] = 5,
+	[6] = 6,
+	[7] = 7,
+	[8] = 8,
+	[9] = 9,
+	[10] = 10
 }
 RogueBossSelectCtrl._mapNodeConfig = {
 	rtBossList = {},
@@ -44,24 +46,24 @@ RogueBossSelectCtrl._mapNodeConfig = {
 	togCtrl = {
 		sNodeName = "tog",
 		sCtrlName = "Game.UI.TemplateEx.TemplateToggleCtrl",
-		nCount = 8
+		nCount = 10
 	},
 	tog = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_HardTog",
-		nCount = 8
+		nCount = 10
 	},
 	imgLockMask = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_TogTips",
-		nCount = 8
+		nCount = 10
 	},
-	rt_Targets = {nCount = 8},
-	rt_LockMsg = {nCount = 8},
+	rt_Targets = {nCount = 10},
+	rt_LockMsg = {nCount = 10},
 	txt_LockMsg = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "RegusBoss_LevelUnLock",
-		nCount = 8
+		nCount = 10
 	},
 	txtLockCondition = {sComponentName = "TMP_Text", nCount = 8},
 	txtTitleSkill = {
@@ -726,13 +728,16 @@ end
 function RogueBossSelectCtrl:SetTogList(nHard)
 	if self.regionType == GameEnum.RegionType.NormalRegion then
 		self._mapNode.rt_Toggle:SetActive(true)
+		local nToggleY = 6 < nHard and 295 or 0
+		self._mapNode.rt_Toggle.transform.localPosition = Vector3(self._mapNode.rt_Toggle.transform.localPosition.x, nToggleY, self._mapNode.rt_Toggle.transform.localPosition.z)
 		if nHard ~= 0 then
-			for i = 1, 8 do
+			for i = 1, 10 do
 				self._mapNode.togCtrl[i]:SetDefault(nHard == mapToggle[i])
 			end
 		end
 		self.tbLockWorldClass = {}
-		for i = 1, 8 do
+		local tmpCount = #self.mapAllLevel[self.curGroupId]
+		for i = 1, tmpCount do
 			if self.mapAllLevel[self.curGroupId][i] == nil then
 				self._mapNode.togCtrl[i].gameObject:SetActive(false)
 			else

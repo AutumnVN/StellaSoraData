@@ -131,6 +131,20 @@ LevelMenuCtrl._mapNodeConfig = {
 		sLanguageId = "LevelMenu_ScoreBoss"
 	},
 	redDotScoreBoss = {},
+	btnTraceHunt = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_TraceHunt"
+	},
+	txtTraceHunt = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "LevelMenu_TraceHunt"
+	},
+	txtHuntCount = {sComponentName = "TMP_Text"},
+	txtTraceTime = {sComponentName = "TMP_Text"},
+	iconHunt = {sComponentName = "Image"},
+	imgTraceHuntTime = {},
+	redDotTraceHuntGift = {},
+	redDotTraceHuntMax = {},
 	imgCover = {nCount = 2, sComponentName = "Image"},
 	imgGoodsRoot = {nCount = 2, sComponentName = "Animator"},
 	imgGoods = {nCount = 2, sComponentName = "Image"},
@@ -208,6 +222,12 @@ LevelMenuCtrl._mapRedDotConfig = {
 	},
 	[RedDotDefine.VampireQuest] = {
 		sNodeName = "redDotVampire"
+	},
+	[RedDotDefine.TraceHunt_Item] = {
+		sNodeName = "redDotTraceHuntMax"
+	},
+	[RedDotDefine.TraceHunt_Reward] = {
+		sNodeName = "redDotTraceHuntGift"
 	}
 }
 local sumHeight = 563
@@ -449,6 +469,44 @@ function LevelMenuCtrl:RefreshActivityList()
 		end
 	end
 end
+function LevelMenuCtrl:RefreshTraceHunt()
+	local bFuncUnlock = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.TraceHunt, false)
+	self._mapNode.btnTraceHunt.gameObject:SetActive(bFuncUnlock)
+	if not bFuncUnlock then
+		return
+	end
+	local nTraceItemId = ConfigTable.GetConfigNumber("TraceHuntRequestItemTid")
+	self:SetSprite_Coin(self._mapNode.iconHunt, nTraceItemId)
+	local tbMax = ConfigTable.GetConfigArray("TraceHuntRequestItem")
+	local nHasCoin = PlayerData.TraceHunt:GetTraceTokenCount()
+	NovaAPI.SetTMPText(self._mapNode.txtHuntCount, self:ThousandsNumber(nHasCoin) .. "/" .. tbMax[3])
+	self:RefreshTraceHuntTime()
+end
+function LevelMenuCtrl:RefreshTraceHuntTime()
+	local nControlId = PlayerData.TraceHunt:GetCurControlId()
+	local nShowDay = ConfigTable.GetConfigNumber("TraceHuntControlEmergencyTime")
+	local nRemainTime = PlayerData.TraceHunt:GetControlLeftTime()
+	local bCountDown = 0 < nControlId and nRemainTime <= nShowDay * 86400
+	self._mapNode.imgTraceHuntTime:SetActive(bCountDown)
+	if bCountDown then
+		self:StartTraceHuntTimer()
+	end
+end
+function LevelMenuCtrl:StartTraceHuntTimer()
+	if self.traceHuntTimer ~= nil then
+		self.traceHuntTimer:Cancel()
+		self.traceHuntTimer = nil
+	end
+	local refreshTime = function()
+		local nRemainTime = PlayerData.TraceHunt:GetControlLeftTime()
+		local sTime = self:RefreshTimeout(nRemainTime)
+		NovaAPI.SetTMPText(self._mapNode.txtTraceTime, sTime)
+	end
+	refreshTime()
+	self.traceHuntTimer = self:AddTimer(0, 1, function()
+		refreshTime()
+	end, true, true, true)
+end
 function LevelMenuCtrl:RefreshTimeout(remainTime)
 	local sTimeStr = ""
 	if remainTime <= 60 then
@@ -577,6 +635,16 @@ function LevelMenuCtrl:SetHintLayout(bEnabled)
 	self._mapNode.goStarTowerHintLayout.enabled = bEnabled
 	self._mapNode.layoutElement.enabled = not bEnabled
 end
+function LevelMenuCtrl:ClearTimer()
+	if self.traceHuntTimer ~= nil then
+		self.traceHuntTimer:Cancel()
+		self.traceHuntTimer = nil
+	end
+	if self.phoneTimer ~= nil then
+		self.phoneTimer:Cancel()
+		self.phoneTimer = nil
+	end
+end
 function LevelMenuCtrl:Awake()
 	local tbParam = self:GetPanelParam()
 	if type(tbParam) == "table" then
@@ -682,6 +750,7 @@ function LevelMenuCtrl:OnEnable()
 		self:StartPhoneTimer()
 		self:RefreshFuncOpen()
 		self:RefreshActivityList()
+		self:RefreshTraceHunt()
 		self.nCurResIconIndex = 1
 		self:RefreshResourceIcon()
 		for k, v in ipairs(self._mapNode.imgResourceIcon1_) do
@@ -751,10 +820,7 @@ function LevelMenuCtrl:OnEnable()
 	PlayerData.StarTower:SendTowerGrowthDetailReq(callback)
 end
 function LevelMenuCtrl:OnDisable()
-	if self.phoneTimer ~= nil then
-		self.phoneTimer:Cancel()
-		self.phoneTimer = nil
-	end
+	self:ClearTimer()
 	Actor2DManager.UnsetActor2D()
 	if self.resourceTimer ~= nil then
 		self.resourceTimer:Cancel()
@@ -892,6 +958,22 @@ function LevelMenuCtrl:OnBtnClick_ActivityEntrance(btn, nIndex)
 			end
 		end
 	end
+end
+function LevelMenuCtrl:OnBtnClick_TraceHunt(btn)
+	local callback = function()
+		if PlayerData.TraceHunt:GetControlLeftTime() <= 0 then
+			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("TraceHunt_Tips_ControlInterrupt"))
+			return
+		end
+		if self._mapNode ~= nil then
+			self:RefreshTraceHuntTime()
+		end
+		local func = function()
+			EventManager.Hit(EventId.OpenPanel, PanelId.TraceHunt)
+		end
+		EventManager.Hit(EventId.SetTransition, 49, func)
+	end
+	PlayerData.TraceHunt:SendTraceHuntInfoReq(callback)
 end
 function LevelMenuCtrl:OnBtnClick_ScoreBoss(btn)
 	local openScoreBossPanel = function()

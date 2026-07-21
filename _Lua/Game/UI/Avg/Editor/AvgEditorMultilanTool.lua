@@ -768,16 +768,24 @@ function AvgEditorMultiLanTool:_Export_Text(tbLuaData)
 				"",
 				""
 			})
-			local tbContent = v.param[4]
+			local tbContent, tbContent_
+			if self.nFromLanIdx == 1 then
+				tbContent = v.param[4]
+				tbContent_ = v.param[11]
+			else
+				tbContent = v.param[13]
+				tbContent_ = v.param[14]
+			end
 			for j, sContent in ipairs(tbContent) do
 				if type(sContent) == "string" and sContent ~= "" then
+					local sContent_ = tbContent_[j]
 					if self.nFromLanIdx == 1 then
 						table.insert(tbExportData, {
 							"【id:" .. tostring(i) .. "】" .. string.format("[常规选项] 组:%s 选项:%d", sGroupId, j),
 							"",
 							self:_ProcText(sContent, true),
 							"",
-							"",
+							self:_ProcText(sContent_, true),
 							"",
 							"",
 							"",
@@ -794,7 +802,7 @@ function AvgEditorMultiLanTool:_Export_Text(tbLuaData)
 							"",
 							self:_ProcText(sContent, true),
 							"",
-							"",
+							self:_ProcText(sContent_, true),
 							""
 						})
 					end
@@ -2022,8 +2030,8 @@ function AvgEditorMultiLanTool:CheckWaitSignal(tbLuaData, nTxtLanIdx)
 			end
 			nCheckId = i
 			sAnim = tbParam[3]
-			nNextEventCountCn = NovaAPI.CheckL2DAnimEventCount(goL2D, tbParam[3] .. "_cn")
-			nNextEventCountJp = NovaAPI.CheckL2DAnimEventCount(goL2D, tbParam[3] .. "_jp")
+			nNextEventCountCn = NovaAPIHotfix.CheckL2DAnimEventCount(goL2D, tbParam[3] .. "_cn")
+			nNextEventCountJp = NovaAPIHotfix.CheckL2DAnimEventCount(goL2D, tbParam[3] .. "_jp")
 			nCn = nNextEventCountCn
 			nJp = nNextEventCountJp
 		end

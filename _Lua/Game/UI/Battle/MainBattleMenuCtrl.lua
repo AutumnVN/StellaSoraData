@@ -66,7 +66,14 @@ function MainBattleMenuCtrl:OnBtn_FullMap()
 		AdventureModuleHelper.SetMapCameraActive(false)
 	end
 end
-function MainBattleMenuCtrl:OnEvent_InputEnable(bEnable)
+function MainBattleMenuCtrl:OnEvent_InputEnable(bEnable, bEnableByTrans)
+	if bEnableByTrans == true then
+		if bEnable == true and self.ENABLE == false then
+			return
+		end
+	else
+		self.ENABLE = bEnable
+	end
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.canvas_group, bEnable == true and 1 or 0)
 	NovaAPI.SetCanvasGroupInteractable(self._mapNode.canvas_group, bEnable == true)
 	NovaAPI.SetCanvasGroupBlocksRaycasts(self._mapNode.canvas_group, bEnable == true)

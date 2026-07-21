@@ -159,6 +159,82 @@
     "Id": "StoryUnlockTime",
     "Value": "2026-01-20T12:00:00+08:00"
   },
+  "TraceHuntMaxHuntProgress": {
+    "Id": "TraceHuntMaxHuntProgress",
+    "Value": "10000"
+  },
+  "TraceHuntMaxTraceProgress": {
+    "Id": "TraceHuntMaxTraceProgress",
+    "Value": "10000"
+  },
+  "TraceHuntAutoAssistCount": {
+    "Id": "TraceHuntAutoAssistCount",
+    "Value": "2"
+  },
+  "TraceHuntRequestItem": {
+    "Id": "TraceHuntRequestItem",
+    "Value": "10,20,60"
+  },
+  "TraceHuntPermitItem": {
+    "Id": "TraceHuntPermitItem",
+    "Value": "50,4,12"
+  },
+  "TraceHuntRequestItemTid": {
+    "Id": "TraceHuntRequestItemTid",
+    "Value": "38"
+  },
+  "TraceHuntPermitItemTid": {
+    "Id": "TraceHuntPermitItemTid",
+    "Value": "39"
+  },
+  "TraceHuntBossHuntLimitTime": {
+    "Id": "TraceHuntBossHuntLimitTime",
+    "Value": "3600"
+  },
+  "TraceHuntRecommendationLimit": {
+    "Id": "TraceHuntRecommendationLimit",
+    "Value": "3"
+  },
+  "TraceHuntTokenTid": {
+    "Id": "TraceHuntTokenTid",
+    "Value": "37"
+  },
+  "TraceHuntPieceNeedTraceProgress": {
+    "Id": "TraceHuntPieceNeedTraceProgress",
+    "Value": "20,40,60,80,100"
+  },
+  "TraceHuntRefreshHelpCD": {
+    "Id": "TraceHuntRefreshHelpCD",
+    "Value": "120"
+  },
+  "TraceHuntPieceSuffixOrder": {
+    "Id": "TraceHuntPieceSuffixOrder",
+    "Value": "_LT,_LB,_RT,_RB,_Center"
+  },
+  "TraceHuntHelpEmergencyTime": {
+    "Id": "TraceHuntHelpEmergencyTime",
+    "Value": "300"
+  },
+  "TraceHuntShopID": {
+    "Id": "TraceHuntShopID",
+    "Value": "4"
+  },
+  "TraceHuntBossTimeLimit": {
+    "Id": "TraceHuntBossTimeLimit",
+    "Value": "60"
+  },
+  "TraceHuntMaxMultiTrace": {
+    "Id": "TraceHuntMaxMultiTrace",
+    "Value": "5"
+  },
+  "TraceHuntControlEmergencyTime": {
+    "Id": "TraceHuntControlEmergencyTime",
+    "Value": "5"
+  },
+  "TraceHuntNPCId": {
+    "Id": "TraceHuntNPCId",
+    "Value": "916402"
+  },
   "VampireTalentResetTimeInterval": {
     "Id": "VampireTalentResetTimeInterval",
     "Value": "30"
@@ -235,6 +311,50 @@
     "Id": "Cookie_ErrorTime",
     "Value": "0.8"
   },
+  "IceCreamMaxTotalScore": {
+    "Id": "IceCreamMaxTotalScore",
+    "Value": "5000000"
+  },
+  "IceCreamUseItemLimit": {
+    "Id": "IceCreamUseItemLimit",
+    "Value": "999"
+  },
+  "IceCreamFeverTime": {
+    "Id": "IceCreamFeverTime",
+    "Value": "10"
+  },
+  "IceCreamMaxLevelId": {
+    "Id": "IceCreamMaxLevelId",
+    "Value": "2017"
+  },
+  "IceCreamSpecialCustomerId": {
+    "Id": "IceCreamSpecialCustomerId",
+    "Value": "966002"
+  },
+  "IceCreamSpecialCustomerOrderNum": {
+    "Id": "IceCreamSpecialCustomerOrderNum",
+    "Value": "6"
+  },
+  "IceCreamSpecialCustomerProbability": {
+    "Id": "IceCreamSpecialCustomerProbability",
+    "Value": "0.5"
+  },
+  "IceCreamGuidanceDuration": {
+    "Id": "IceCreamGuidanceDuration",
+    "Value": "2"
+  },
+  "IceCreamPatienceGroup": {
+    "Id": "IceCreamPatienceGroup",
+    "Value": "10"
+  },
+  "IceCreamPatienceLowerValue": {
+    "Id": "IceCreamPatienceLowerValue",
+    "Value": "5"
+  },
+  "IceCreamPatiencePerReduce": {
+    "Id": "IceCreamPatiencePerReduce",
+    "Value": "2"
+  },
   "JointDrill_Challenge_Tickets_Id": {
     "Id": "JointDrill_Challenge_Tickets_Id",
     "Value": "36"
@@ -271,6 +391,10 @@
     "Id": "PenguinCardMaxBuyLimit",
     "Value": "5"
   },
+  "PenguinCardMaxCheckRound": {
+    "Id": "PenguinCardMaxCheckRound",
+    "Value": "3"
+  },
   "PenguinCardRoundUpgradeCost": {
     "Id": "PenguinCardRoundUpgradeCost",
     "Value": "0,500,3000,20000,50000"
@@ -283,6 +407,10 @@
     "Id": "PenguinCardBuyLimitUpgradeCost",
     "Value": "0,100,800,1500,5000"
   },
+  "PenguinCardCheckRoundUpgradeCost": {
+    "Id": "PenguinCardCheckRoundUpgradeCost",
+    "Value": "1500,3000,6000"
+  },
   "PenguinCardFeverScore": {
     "Id": "PenguinCardFeverScore",
     "Value": "999"
@@ -290,6 +418,10 @@
   "PenguinCardRollCount": {
     "Id": "PenguinCardRollCount",
     "Value": "3"
+  },
+  "PenguinCardCheckRoundBuffId": {
+    "Id": "PenguinCardCheckRoundBuffId",
+    "Value": "701"
   },
   "PhoneChatTimeInterval": {
     "Id": "PhoneChatTimeInterval",
@@ -402,6 +534,46 @@
   "Dating_Event_Base_Affinity": {
     "Id": "Dating_Event_Base_Affinity",
     "Value": "25"
+  },
+  "SoldierInitialCoinNumber": {
+    "Id": "SoldierInitialCoinNumber",
+    "Value": "5"
+  },
+  "SoldierInitialChessNumber": {
+    "Id": "SoldierInitialChessNumber",
+    "Value": "3"
+  },
+  "SoldierChessCostToQuantity": {
+    "Id": "SoldierChessCostToQuantity",
+    "Value": "{\"1\":27,\"2\":27,\"3\":18,\"4\":9,\"5\":9}"
+  },
+  "SoldierChessEventBattle": {
+    "Id": "SoldierChessEventBattle",
+    "Value": "5,11,16"
+  },
+  "SoldierCoinWinningStreak": {
+    "Id": "SoldierCoinWinningStreak",
+    "Value": "{\"0\":1,\"2\":2,\"5\":3}"
+  },
+  "SoldierCoinLosingStreak": {
+    "Id": "SoldierCoinLosingStreak",
+    "Value": "{\"0\":1,\"2\":2,\"5\":3}"
+  },
+  "SoldierCoinInterest": {
+    "Id": "SoldierCoinInterest",
+    "Value": "10,1,5"
+  },
+  "SoldierBuyExp": {
+    "Id": "SoldierBuyExp",
+    "Value": "4,4"
+  },
+  "SoldierRefreshCost": {
+    "Id": "SoldierRefreshCost",
+    "Value": "2"
+  },
+  "SoldierSkillCoinMax": {
+    "Id": "SoldierSkillCoinMax",
+    "Value": "300"
   },
   "DailyShopSignReward": {
     "Id": "DailyShopSignReward",
@@ -821,15 +993,15 @@
   },
   "TouchEffect_Main": {
     "Id": "TouchEffect_Main",
-    "Value": ""
+    "Value": "2026Summer/P_Main_Summer"
   },
   "TouchEffect_Slide": {
     "Id": "TouchEffect_Slide",
-    "Value": ""
+    "Value": "2026Summer/P_Slide_Summer"
   },
   "RedDot": {
     "Id": "RedDot",
-    "Value": ""
+    "Value": "zs_common_new_4_summer"
   },
   "TrekkerVersusInitHotValue": {
     "Id": "TrekkerVersusInitHotValue",

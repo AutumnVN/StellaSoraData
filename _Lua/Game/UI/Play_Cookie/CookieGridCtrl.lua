@@ -13,10 +13,10 @@ local CookieShapeEnum = {
 	Lens = 4
 }
 local IconPathDefault = {
-	[CookieShapeEnum.Gear] = "UI_Activity/_400010/SpriteAtlas/Sprite/zs_cookie_01",
-	[CookieShapeEnum.Lens] = "UI_Activity/_400010/SpriteAtlas/Sprite/zs_cookie_04",
-	[CookieShapeEnum.Ruler] = "UI_Activity/_400010/SpriteAtlas/Sprite/zs_cookie_03",
-	[CookieShapeEnum.Wrench] = "UI_Activity/_400010/SpriteAtlas/Sprite/zs_cookie_02"
+	[CookieShapeEnum.Gear] = "UI_Activity/_400016/SpriteAtlas/Sprite/zs_cookie_01",
+	[CookieShapeEnum.Lens] = "UI_Activity/_400016/SpriteAtlas/Sprite/zs_cookie_04",
+	[CookieShapeEnum.Ruler] = "UI_Activity/_400016/SpriteAtlas/Sprite/zs_cookie_03",
+	[CookieShapeEnum.Wrench] = "UI_Activity/_400016/SpriteAtlas/Sprite/zs_cookie_02"
 }
 local nPerfectTiming = 0.33
 local colorPerfect = Color(1.0, 0.302, 0.796, 1.0)

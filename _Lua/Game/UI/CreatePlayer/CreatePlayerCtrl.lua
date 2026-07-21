@@ -145,10 +145,10 @@ function CreatePlayerCtrl:Awake()
 	self._mapNode.tbCamera.targetTexture = self.tbRT
 	NovaAPI.SetTexture(self._mapNode.tbRawImg, self.tbRT)
 	self:CreateL2DInstance()
-	NovaAPI.PlayL2DAnim(self.goInsFemaleAnim1, "createplayer1_F_idle", true, true)
-	NovaAPI.PlayL2DAnim(self.goInsMaleAnim1, "createplayer1_M_idle", true, true)
-	NovaAPI.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_ready", true, true)
-	NovaAPI.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_ready", true, true)
+	NovaAPIHotfix.PlayL2DAnim(self.goInsFemaleAnim1, "createplayer1_F_idle", true, true)
+	NovaAPIHotfix.PlayL2DAnim(self.goInsMaleAnim1, "createplayer1_M_idle", true, true)
+	NovaAPIHotfix.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_ready", true, true)
+	NovaAPIHotfix.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_ready", true, true)
 	self._mapNode.tbCamera.enabled = false
 	self.bIdCreateCharacter = false
 	self.sex = 0
@@ -192,7 +192,7 @@ function CreatePlayerCtrl:OnBtn_LeftStart(btn)
 	end
 	self:SetCanvasGroup(self._mapNode.cgStart, false)
 	self.goInsAnim1Ctrl:Play("createplayer_L_in")
-	NovaAPI.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_in", false, true)
+	NovaAPIHotfix.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_in", false, true)
 	self.sex = MALE
 	self:AddTimer(1, 0.7, "timerCallback_start_DONE", true, true, true)
 	CS.WwiseAudioManager.Instance:PostEvent("ui_creation_enter")
@@ -203,7 +203,7 @@ function CreatePlayerCtrl:OnBtn_RightStart(btn)
 	end
 	self:SetCanvasGroup(self._mapNode.cgStart, false)
 	self.goInsAnim1Ctrl:Play("createplayer_R_in")
-	NovaAPI.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_in", false, true)
+	NovaAPIHotfix.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_in", false, true)
 	self.sex = FEMALE
 	self:AddTimer(1, 1, "timerCallback_start_DONE", true, true, true)
 	CS.WwiseAudioManager.Instance:PostEvent("ui_creation_enter")
@@ -221,12 +221,12 @@ function CreatePlayerCtrl:OnBtn_LeftSelect(btn)
 	self.goInsAnim1Ctrl:Play("createplayer_L_switch")
 	if self.sex == MALE then
 		self.sex = FEMALE
-		NovaAPI.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_leftin", false, true)
-		NovaAPI.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_leftout", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_leftin", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_leftout", false, true)
 	elseif self.sex == FEMALE then
 		self.sex = MALE
-		NovaAPI.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_leftout", false, true)
-		NovaAPI.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_leftin", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_leftout", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_leftin", false, true)
 	end
 	self:SetCanvasGroup(self._mapNode.cgSelect, false)
 	self:AddTimer(1, 1, "timerCallback_selecting_DONE", true, true, true)
@@ -240,12 +240,12 @@ function CreatePlayerCtrl:OnBtn_RightSelect(btn)
 	self.goInsAnim1Ctrl:Play("createplayer_R_switch")
 	if self.sex == MALE then
 		self.sex = FEMALE
-		NovaAPI.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_rightin", false, true)
-		NovaAPI.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_rightout", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_rightin", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_rightout", false, true)
 	elseif self.sex == FEMALE then
 		self.sex = MALE
-		NovaAPI.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_rightout", false, true)
-		NovaAPI.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_rightin", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_rightout", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_rightin", false, true)
 	end
 	self:SetCanvasGroup(self._mapNode.cgSelect, false)
 	self:AddTimer(1, 1, "timerCallback_selecting_DONE", true, true, true)
@@ -267,9 +267,9 @@ function CreatePlayerCtrl:OnBtn_Select(btn)
 	self.goInsAnim1Ctrl:Play("createplayer_oe")
 	self._animator:Play("CreatePlayerUI_name_in")
 	if self.sex == MALE then
-		NovaAPI.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_t", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_t", false, true)
 	elseif self.sex == FEMALE then
-		NovaAPI.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_t", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_t", false, true)
 	end
 	self:AddTimer(1, 1, "timerCallback_selected_DONE", true, true, true)
 	CS.WwiseAudioManager.Instance:PostEvent("ui_creation_confrim")
@@ -288,9 +288,9 @@ function CreatePlayerCtrl:OnBtn_Back(btn)
 	self.goInsAnim1Ctrl:Play("createplayer_oe_out")
 	self._animator:Play("CreatePlayerUI_name_out")
 	if self.sex == MALE then
-		NovaAPI.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_out", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsMaleAnim2, "createplayer2_M_out", false, true)
 	elseif self.sex == FEMALE then
-		NovaAPI.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_out", false, true)
+		NovaAPIHotfix.PlayL2DAnim(self.goInsFemaleAnim2, "createplayer2_F_out", false, true)
 	end
 	self:AddTimer(1, 0.6, "timerCallback_selectback_DONE", true, true, true)
 end

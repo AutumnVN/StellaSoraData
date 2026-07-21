@@ -31,6 +31,7 @@ function PlayerStateData:CacheStateData(mapMsgData)
 		PlayerData.ScoreBoss:UpdateRedDot(mapMsgData.ScoreBoss)
 		PlayerData.Activity:UpdateActivityState(mapMsgData.Activities)
 		PlayerData.StorySet:UpdateStorySetState(mapMsgData.StorySet)
+		PlayerData.TraceHunt:UpdateBossRewardRedDot(mapMsgData.TraceHunt.BossRewardCanReceive)
 		self.nVampireId = mapMsgData.VampireSurvivorId
 	else
 		self.bMailState = false

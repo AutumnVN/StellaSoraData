@@ -317,7 +317,7 @@ return {
 	},
 	{
 		id = "avg1_160",
-		name = "***",
+		name = "ウィロー",
 		name_bg_color = "#b0e0f6",
 		ver = "1.13.0"
 	},
@@ -349,6 +349,36 @@ return {
 		name_bg_color = "#0ABEC5"
 	},
 	{
+		id = "avg2_938",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg2_939",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg2_940",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.0.0"
+	},
+	{
+		id = "avg2_941",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.0.0"
+	},
+	{
+		id = "avg2_942",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.0.0"
+	},
+	{
 		id = "avg2_943",
 		name = "禁断丽容",
 		name_bg_color = "#0ABEC5",
@@ -362,7 +392,7 @@ return {
 	},
 	{
 		id = "avg2_945",
-		name = "***",
+		name = "ヤドカリ",
 		name_bg_color = "#0ABEC5",
 		ver = "1.13.0"
 	},
@@ -374,13 +404,13 @@ return {
 	},
 	{
 		id = "avg2_947",
-		name = "***",
+		name = "黎明近卫士兵女",
 		name_bg_color = "#0ABEC5",
 		ver = "1.13.0"
 	},
 	{
 		id = "avg2_948",
-		name = "***",
+		name = "黎明近卫士兵男",
 		name_bg_color = "#0ABEC5",
 		ver = "1.13.0"
 	},
@@ -860,7 +890,7 @@ return {
 	},
 	{
 		id = "avg3_159",
-		name = "パーラミー",
+		name = "カナタ",
 		name_bg_color = "#b73947"
 	},
 	{
@@ -1167,6 +1197,90 @@ return {
 		name = "***",
 		name_bg_color = "#a5cdc3",
 		ver = "1.15.0"
+	},
+	{
+		id = "avg3_224",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.15.0"
+	},
+	{
+		id = "avg3_225",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.0.0"
+	},
+	{
+		id = "avg3_226",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.0.0"
+	},
+	{
+		id = "avg3_227",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.0.0"
+	},
+	{
+		id = "avg3_228",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.0.0"
+	},
+	{
+		id = "avg3_229",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.0.0"
+	},
+	{
+		id = "avg3_230",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.1.0"
+	},
+	{
+		id = "avg3_231",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.1.0"
+	},
+	{
+		id = "avg3_232",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.1.0"
+	},
+	{
+		id = "avg3_233",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_234",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_235",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.2.0"
+	},
+	{
+		id = "avg3_236",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.2.0"
+	},
+	{
+		id = "avg3_237",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		ver = "2.2.0"
 	},
 	{
 		id = "avg3_873",
@@ -1691,7 +1805,7 @@ return {
 	},
 	{
 		id = "avg3_977",
-		name = "焦急的旅人",
+		name = "焦る協会員",
 		name_bg_color = "#0ABEC5"
 	},
 	{
@@ -2836,58 +2950,65 @@ return {
 	},
 	{
 		id = "avg3_1305",
-		name = "***",
+		name = "泳薇洛A",
 		name_bg_color = "#b0e0f6",
 		reuse = "avg1_160",
 		ver = "1.13.0"
 	},
 	{
 		id = "avg3_1306",
-		name = "***",
+		name = "黎明近卫士兵男A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_948",
 		ver = "1.13.0"
 	},
 	{
 		id = "avg3_1307",
-		name = "***",
+		name = "黎明近卫士兵男B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_948",
 		ver = "1.13.0"
 	},
 	{
 		id = "avg3_1308",
-		name = "***",
+		name = "黎明近卫士兵女A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_947",
 		ver = "1.13.0"
 	},
 	{
 		id = "avg3_1309",
-		name = "***",
+		name = "黎明近卫士兵女B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_947",
 		ver = "1.13.0"
 	},
 	{
 		id = "avg3_1310",
-		name = "***",
+		name = "灰风成员乙",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_991",
 		ver = "1.13.0"
 	},
 	{
 		id = "avg3_1311",
-		name = "***",
+		name = "塞拉女A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_100",
 		ver = "1.13.0"
 	},
 	{
 		id = "avg3_1312",
-		name = "***",
+		name = "塞拉男A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg3_101",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1313",
+		name = "エリーA",
+		name_bg_color = "#555559",
+		reuse = "avg1_139",
 		ver = "1.13.0"
 	},
 	{
@@ -2909,6 +3030,18 @@ return {
 		id = "avg4_103",
 		name = "火垂发光",
 		name_bg_color = "#0ABEC5"
+	},
+	{
+		id = "avg4_104",
+		name = "一块左侧的石头",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
+	},
+	{
+		id = "avg4_105",
+		name = "一块右侧的石头",
+		name_bg_color = "#0ABEC5",
+		ver = "1.13.0"
 	},
 	{
 		id = "avg4_999",

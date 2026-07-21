@@ -197,7 +197,7 @@
   "win": {
     "Id": "win",
     "Probability": 100,
-    "ResType": 3,
+    "ResType": 4,
     "CombatOnly": false,
     "WorldLevelTypes": [
       11
@@ -212,7 +212,7 @@
   "lose": {
     "Id": "lose",
     "Probability": 100,
-    "ResType": 3,
+    "ResType": 4,
     "CombatOnly": false,
     "WorldLevelTypes": [
       11
@@ -1801,6 +1801,96 @@
   },
   "TrekkerVersus_defeat": {
     "Id": "TrekkerVersus_defeat",
+    "Probability": 100,
+    "ResType": 4,
+    "CombatOnly": false,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 0.0,
+    "VoPlayer": 3,
+    "Priority": 2,
+    "DateTrigger": false,
+    "Date": ""
+  },
+  "poster_th_trace0": {
+    "Id": "poster_th_trace0",
+    "Probability": 100,
+    "ResType": 4,
+    "CombatOnly": false,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 0.0,
+    "VoPlayer": 3,
+    "Priority": 3,
+    "DateTrigger": false,
+    "Date": ""
+  },
+  "poster_th_trace1": {
+    "Id": "poster_th_trace1",
+    "Probability": 100,
+    "ResType": 4,
+    "CombatOnly": false,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 0.0,
+    "VoPlayer": 3,
+    "Priority": 3,
+    "DateTrigger": false,
+    "Date": ""
+  },
+  "poster_th_hunt0": {
+    "Id": "poster_th_hunt0",
+    "Probability": 100,
+    "ResType": 4,
+    "CombatOnly": false,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 0.0,
+    "VoPlayer": 3,
+    "Priority": 3,
+    "DateTrigger": false,
+    "Date": ""
+  },
+  "greet_th_trace0": {
+    "Id": "greet_th_trace0",
+    "Probability": 100,
+    "ResType": 4,
+    "CombatOnly": false,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 0.0,
+    "VoPlayer": 3,
+    "Priority": 2,
+    "DateTrigger": false,
+    "Date": ""
+  },
+  "greet_th_trace1": {
+    "Id": "greet_th_trace1",
+    "Probability": 100,
+    "ResType": 4,
+    "CombatOnly": false,
+    "WorldLevelTypes": [
+      11
+    ],
+    "Bubble": true,
+    "Cd": 0.0,
+    "VoPlayer": 3,
+    "Priority": 2,
+    "DateTrigger": false,
+    "Date": ""
+  },
+  "greet_th_hunt0": {
+    "Id": "greet_th_hunt0",
     "Probability": 100,
     "ResType": 4,
     "CombatOnly": false,

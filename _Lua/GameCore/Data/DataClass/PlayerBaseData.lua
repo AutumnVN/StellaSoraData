@@ -172,6 +172,7 @@ function PlayerBaseData:CacheEnergyInfo(mapData)
 		self._nEnergyTime = mapData.Energy.IsPrimary == true and mapData.Energy.NextDuration + nServerTime or 0
 		self._nEnergyBatteryTime = mapData.Energy.IsPrimary == true and 0 or mapData.Energy.NextDuration + nServerTime
 		self._nBuyEnergyCount = mapData.Count
+		NotificationManager.UnregisterNotification(10000000, 0)
 		if self._mapEnergyTimer ~= nil then
 			self._mapEnergyTimer:Cancel(nil)
 		end
@@ -182,6 +183,11 @@ function PlayerBaseData:CacheEnergyInfo(mapData)
 			self._mapEnergyBatteryTimer = TimerManager.Add(1, mapData.Energy.NextDuration, self, self.HandleEnergyBatteryTimer, true, true, false)
 		else
 			self._mapEnergyTimer = TimerManager.Add(1, mapData.Energy.NextDuration, self, self.HandleEnergyTimer, true, true, false)
+		end
+		if LocalSettingData.GetLocalSettingData("Energy") and self._nCurEnergy < ConfigTable.GetConfigNumber("EnergyMaxLimit") then
+			local nEmptyEnergy = ConfigTable.GetConfigNumber("EnergyMaxLimit") - self._nCurEnergy - 1
+			local nTime = ConfigTable.GetConfigNumber("EnergyGain") * 60 * nEmptyEnergy + self._nEnergyTime
+			NotificationManager.RegisterNotification(10000000, 0, nTime)
 		end
 	end
 end
@@ -416,6 +422,12 @@ function PlayerBaseData:ChangeEnergy(mapData)
 		end
 		EventManager.Hit(EventId.UpdateEnergyBattery)
 		EventManager.Hit(EventId.UpdateEnergy)
+		NotificationManager.UnregisterNotification(10000000, 0)
+		if LocalSettingData.GetLocalSettingData("Energy") and self._nCurEnergy < ConfigTable.GetConfigNumber("EnergyMaxLimit") then
+			local nEmptyEnergy = ConfigTable.GetConfigNumber("EnergyMaxLimit") - self._nCurEnergy - 1
+			local nTime = ConfigTable.GetConfigNumber("EnergyGain") * 60 * nEmptyEnergy + self._nEnergyTime
+			NotificationManager.RegisterNotification(10000000, 0, nTime)
+		end
 	end
 end
 function PlayerBaseData:ChangeTitle(mapData)
@@ -1311,5 +1323,11 @@ function PlayerBaseData:OnCS2LuaEvent_AppFocus(bFocus)
 	end
 end
 function PlayerBaseData:OnEvent_SettingsNotificationClose()
+	NotificationManager.UnregisterNotification(10000000, 0)
+	if LocalSettingData.GetLocalSettingData("Energy") and self._nCurEnergy < ConfigTable.GetConfigNumber("EnergyMaxLimit") then
+		local nEmptyEnergy = ConfigTable.GetConfigNumber("EnergyMaxLimit") - self._nCurEnergy - 1
+		local nTime = ConfigTable.GetConfigNumber("EnergyGain") * 60 * nEmptyEnergy + self._nEnergyTime
+		NotificationManager.RegisterNotification(10000000, 0, nTime)
+	end
 end
 return PlayerBaseData

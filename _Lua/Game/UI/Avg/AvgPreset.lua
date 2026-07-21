@@ -9,6 +9,7 @@ local AvgPreset = {
 		"beach_shipwreck_night",
 		"beach_wasteland_daylight",
 		"beach_wasteland_night",
+		"beach_wasteland_storm",
 		"beilin_house",
 		"beilin_house_dusk",
 		"beilin_street",
@@ -30,6 +31,8 @@ local AvgPreset = {
 		"city_alley_dusk",
 		"city_alley_night",
 		"city_alley_night_winter",
+		"city_creche_inside_daylight",
+		"city_creche_outside_daylight",
 		"city_park_daylight",
 		"city_park_daylight_winter",
 		"city_park_dusk",
@@ -52,6 +55,8 @@ local AvgPreset = {
 		"court_inside",
 		"court_outside",
 		"court_outside_rain",
+		"deck_alter",
+		"deck_alter_storm",
 		"deck_daylight",
 		"deck_night",
 		"deserted_village_night",
@@ -82,6 +87,7 @@ local AvgPreset = {
 		"forest_daylight_3",
 		"forest_night_1",
 		"forest_night_2_a",
+		"forest_rain",
 		"forest_room_daylight_a",
 		"forest_room_daylight_b",
 		"forest_winter",
@@ -106,10 +112,19 @@ local AvgPreset = {
 		"japanese_pond_daylight",
 		"jewelry_store_inside",
 		"luckyoasis_forest_daylight",
+		"mansion_garden_daylight",
 		"mine_inside",
+		"mine_secretroom",
+		"mirage_creche_inside_daylight",
+		"mirage_creche_inside_night",
+		"mirage_creche_outside_daylight",
 		"mirage_eyphkabar_inside_daylight",
 		"mirage_eyphkabar_inside_dusk",
+		"mirage_street2_daylight",
+		"mirage_street_2_daylight",
 		"mirage_street_daylight",
+		"mirage_street_daylight_tower",
+		"mirage_street_night",
 		"mood_1",
 		"mood_2",
 		"mood_3",
@@ -169,6 +184,7 @@ local AvgPreset = {
 		"tower_inside",
 		"tower_inside_arcade",
 		"tower_intel",
+		"tower_laundryroom",
 		"tower_phoenix_bossroom",
 		"tower_planetarium",
 		"tower_rest",
@@ -236,7 +252,9 @@ local AvgPreset = {
 		"uniseed_shop",
 		"uniseed_warehouse",
 		"uniseed_warehouse_daylight",
+		"view_sea_daylight",
 		"view_sea_flying",
+		"view_sea_ship",
 		"view_sea_sunrise",
 		"view_secret_laboratory_a",
 		"view_secret_laboratory_b",
@@ -321,6 +339,14 @@ local AvgPreset = {
 		"story_event_09_001",
 		"story_event_09_001_a",
 		"story_event_09_002",
+		"story_event_10_001",
+		"story_event_10_002",
+		"story_event_10_002_a_FP",
+		"story_event_10_002_a_MP",
+		"story_event_10_003",
+		"story_event_11_001",
+		"story_event_11_002",
+		"story_event_11_003",
 		"story_main_00_001",
 		"story_main_00_002",
 		"story_main_00_003_FP",
@@ -507,6 +533,24 @@ local AvgPreset = {
 		"story_main_07_010_a",
 		"story_main_07_010_b",
 		"story_main_07_011",
+		"story_main_08_001",
+		"story_main_08_002",
+		"story_main_08_002_a",
+		"story_main_08_002_b",
+		"story_main_08_002_c",
+		"story_main_08_003",
+		"story_main_08_003_c",
+		"story_main_08_003_d",
+		"story_main_08_006",
+		"story_main_08_007",
+		"story_main_08_007_a",
+		"story_main_08_007_b",
+		"story_main_08_007_c",
+		"story_main_08_008",
+		"story_main_08_009",
+		"story_main_08_010_FP",
+		"story_main_08_010_MP",
+		"story_main_08_011",
 		"story_main_be_01_001_FP",
 		"story_main_be_01_001_MP",
 		"story_main_be_01_002",
@@ -525,6 +569,7 @@ local AvgPreset = {
 		"story_main_be_06_001",
 		"story_main_be_06_002",
 		"story_main_be_06_003",
+		"story_main_be_08_001",
 		"story_tales_01_001",
 		"story_tales_02_001",
 		"story_tales_03_001",
@@ -544,7 +589,8 @@ local AvgPreset = {
 		"story_tales_15_001",
 		"story_tales_16_001",
 		"story_tales_16_001_a",
-		"story_tales_16_001_b"
+		"story_tales_16_001_b",
+		"story_tales_17_001"
 	},
 	FgResName = {
 		"circle_light",
@@ -561,6 +607,8 @@ local AvgPreset = {
 		"story_main_02_021",
 		"story_main_03_005_c",
 		"story_main_07_007_c",
+		"story_main_08_003_a",
+		"story_main_08_003_b",
 		"story_tales_13_001_a",
 		"story_tales_13_001_b",
 		"story_tales_13_001_c"
@@ -585,7 +633,9 @@ local AvgPreset = {
 		"4045_B",
 		"4051_B",
 		"4054_B",
-		"4029_B"
+		"4029_B",
+		"4055_B",
+		"4057_B"
 	},
 	BgEffectResName = {
 		"0",
@@ -2070,9 +2120,15 @@ local AvgPreset = {
 		"k",
 		"l",
 		"aa",
-		"ab"
+		"ab",
+		"ba",
+		"bb",
+		"bc"
 	},
 	CharPose_1 = {
+		"ca",
+		"cb",
+		"cc",
 		"ac",
 		"ad",
 		"p",
@@ -5017,6 +5073,66 @@ local AvgPreset = {
 				},
 				false
 			}
+		},
+		{
+			"lengzhanLP",
+			{
+				{
+					{
+						5.0,
+						0.0,
+						0.0
+					},
+					{
+						0.3,
+						0.3,
+						0.0
+					},
+					{
+						2.0,
+						2.0,
+						0.0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						0,
+						0,
+						0
+					}
+				},
+				{
+					{
+						0.0,
+						0.0,
+						0.0
+					},
+					{
+						0.1,
+						0.1,
+						0.1
+					},
+					{
+						2.0,
+						2.0,
+						2.0
+					},
+					{
+						1,
+						1,
+						1
+					},
+					{
+						0,
+						0,
+						0
+					}
+				},
+				true
+			}
 		}
 	},
 	CharEnter = {
@@ -5719,6 +5835,34 @@ local AvgPreset = {
 		},
 		{
 			"fx_avg_powerup_loop",
+			""
+		},
+		{
+			"fx_avg_magiccircle",
+			""
+		},
+		{
+			"fx_avg_throw_paper",
+			""
+		},
+		{
+			"fx_avg_tears_fell",
+			""
+		},
+		{
+			"fx_avg_ripples",
+			""
+		},
+		{
+			"fx_avg_smoke",
+			""
+		},
+		{
+			"fx_avg_allie_blade",
+			""
+		},
+		{
+			"fx_avg_close_eye",
 			""
 		},
 		{"style_4", ""},

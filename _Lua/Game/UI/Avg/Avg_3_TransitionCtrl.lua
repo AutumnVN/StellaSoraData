@@ -20,10 +20,10 @@ Avg_3_TransitionCtrl._mapNodeConfig = {
 		sNodeName = "imgCurtain",
 		sComponentName = "UIEffectAndTransition"
 	},
-	tbStyle = {nCount = 6, sNodeName = "style_"},
-	tbAnim = {
+	tbAvgTrans = {nCount = 6, sNodeName = "AvgTrans_"},
+	tbAvgTransAnim = {
 		nCount = 6,
-		sNodeName = "style_",
+		sNodeName = "AvgTrans_",
 		sComponentName = "Animator"
 	},
 	goWordTrans = {},
@@ -86,7 +86,7 @@ function Avg_3_TransitionCtrl:OnEvent_AvgSpeedUp(nRate)
 		return
 	end
 	self:OnEvent_AvgSpeedUp_Timer(nRate)
-	for index, value in ipairs(self._mapNode.tbAnim) do
+	for index, value in ipairs(self._mapNode.tbAvgTransAnim) do
 		NovaAPI.SetAnimatorSpeed(value, nRate)
 	end
 	NovaAPI.SetAnimatorSpeed(self._mapNode.animWordTrans, nRate)
@@ -163,7 +163,7 @@ function Avg_3_TransitionCtrl:SetTrans(tbParam)
 		nColorRGB = 1
 	end
 	if nStyle == 0 or nStyle == 1 then
-		for i, v in ipairs(self._mapNode.tbStyle) do
+		for i, v in ipairs(self._mapNode.tbAvgTrans) do
 			v:SetActive(false)
 		end
 		local tweener
@@ -227,7 +227,7 @@ function Avg_3_TransitionCtrl:SetTrans(tbParam)
 	else
 		nStyle = nStyle - 1
 		self._mapNode.imgCurtain.gameObject:SetActive(false)
-		for i, v in ipairs(self._mapNode.tbStyle) do
+		for i, v in ipairs(self._mapNode.tbAvgTrans) do
 			v:SetActive(nStyle == i)
 		end
 		local sTriggerName = "tIn"
@@ -260,7 +260,7 @@ function Avg_3_TransitionCtrl:SetTrans(tbParam)
 		if nCloseOpen ~= 0 then
 			sTriggerName = "tOut"
 		end
-		self._mapNode.tbAnim[nStyle]:SetTrigger(sTriggerName)
+		self._mapNode.tbAvgTransAnim[nStyle]:SetTrigger(sTriggerName)
 		nDuration = tbData[nStyle][nCloseOpen]
 		bWait = true
 	end
@@ -289,7 +289,7 @@ function Avg_3_TransitionCtrl:_Done(timer, tbParam)
 		EventManager.Hit(EventId.AvgClearAllChar)
 	end
 	if nCloseOpen ~= 0 then
-		for i, v in ipairs(self._mapNode.tbStyle) do
+		for i, v in ipairs(self._mapNode.tbAvgTrans) do
 			v:SetActive(false)
 		end
 	end
@@ -429,10 +429,10 @@ function Avg_3_TransitionCtrl:RestoreAll(bActive, tbHistoryData)
 			self._mapNode.eft.enabled = false
 			self._mapNode.eft.effectFactorTr = 1
 			nTransStyle = nTransStyle - 1
-			for i, v in ipairs(self._mapNode.tbStyle) do
+			for i, v in ipairs(self._mapNode.tbAvgTrans) do
 				v:SetActive(nTransStyle == i)
 				if nTransStyle == i then
-					self._mapNode.tbAnim[i]:CrossFade("Base Layer.in", 0, -1, 1, 0)
+					self._mapNode.tbAvgTransAnim[i]:CrossFade("Base Layer.in", 0, -1, 1, 0)
 				end
 			end
 		end
@@ -441,7 +441,7 @@ function Avg_3_TransitionCtrl:RestoreAll(bActive, tbHistoryData)
 		self._mapNode.eft.enabled = false
 		NovaAPI.SetImageColor(self._mapNode.imgCurtain, Color.black)
 		self._mapNode.eft.effectFactorTr = 1
-		for i, v in ipairs(self._mapNode.tbStyle) do
+		for i, v in ipairs(self._mapNode.tbAvgTrans) do
 			v:SetActive(false)
 		end
 	end

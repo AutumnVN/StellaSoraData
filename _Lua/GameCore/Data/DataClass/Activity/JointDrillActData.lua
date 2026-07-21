@@ -2,11 +2,19 @@ local ActivityDataBase = require("GameCore.Data.DataClass.Activity.ActivityDataB
 local JointDrillActData = class("JointDrillActData", ActivityDataBase)
 local ClientManager = CS.ClientManager.Instance
 local TimerManager = require("GameCore.Timer.TimerManager")
+local LocalData = require("GameCore.Data.LocalData")
+local sJointDrillDailyEnterKeyPrefix = "JointDrillDailyEnter_"
+local GetDailyEnterLocalKey = function(nActId)
+	return sJointDrillDailyEnterKeyPrefix .. tostring(nActId)
+end
 function JointDrillActData:Init()
 	self.jointDrillActCfg = nil
 	self.nJointDrillType = 0
 	self.nActStatus = 0
 	self.actTimer = nil
+	self.bDailyEnterLoaded = false
+	self.nDailyEnterNextRefreshTime = nil
+	self.bDailyEnterRedDotValid = false
 	self.tbPassedLevels = {}
 	self.tbQuests = {}
 	self.nTotalScore = 0
@@ -54,6 +62,7 @@ function JointDrillActData:RefreshJointDrillActData(msgData)
 		self.tbQuests = msgData.Quests
 	end
 	self:RefreshJointDrillQuestRedDot()
+	self:RefreshDailyEnterRedDot()
 	self:StartActTimer()
 end
 function JointDrillActData:GetChallengeStartTime()
@@ -75,6 +84,44 @@ function JointDrillActData:RefreshJointDrillQuestRedDot()
 		end
 	end
 	RedDotManager.SetValid(RedDotDefine.JointDrillQuest, nil, bHasReward)
+end
+function JointDrillActData:CheckInChallengeTime()
+	local nChallengeStartTime = self:GetChallengeStartTime()
+	local nChallengeEndTime = self:GetChallengeEndTime()
+	if nChallengeStartTime == nil or nChallengeEndTime == nil then
+		return false
+	end
+	local nCurTime = ClientManager.serverTimeStamp
+	return nChallengeStartTime <= nCurTime and nChallengeEndTime > nCurTime
+end
+function JointDrillActData:CheckEnteredToday()
+	if not self.bDailyEnterLoaded then
+		local sData = LocalData.GetPlayerLocalData(GetDailyEnterLocalKey(self.nActId))
+		self.nDailyEnterNextRefreshTime = tonumber(sData)
+		self.bDailyEnterLoaded = true
+	end
+	local nCurTime = ClientManager.serverTimeStamp
+	return self.nDailyEnterNextRefreshTime ~= nil and nCurTime < self.nDailyEnterNextRefreshTime
+end
+function JointDrillActData:RefreshDailyEnterRedDot()
+	local bShowRedDot = self:CheckInChallengeTime() and not self:CheckEnteredToday()
+	if self.bDailyEnterRedDotValid == bShowRedDot then
+		return
+	end
+	self.bDailyEnterRedDotValid = bShowRedDot
+	RedDotManager.SetValid(RedDotDefine.JointDrillDailyEnter, self.nActId, bShowRedDot)
+end
+function JointDrillActData:MarkEnteredToday()
+	if not self:CheckInChallengeTime() then
+		self:RefreshDailyEnterRedDot()
+		return
+	end
+	local nNowTime = ClientManager.serverTimeStamp
+	local nNextRefreshTime = ClientManager:GetNextRefreshTime(nNowTime)
+	self.nDailyEnterNextRefreshTime = nNextRefreshTime
+	self.bDailyEnterLoaded = true
+	LocalData.SetPlayerLocalData(GetDailyEnterLocalKey(self.nActId), tostring(nNextRefreshTime))
+	self:RefreshDailyEnterRedDot()
 end
 function JointDrillActData:RefreshQuestData(questData)
 	local bHasData = false
@@ -141,6 +188,7 @@ function JointDrillActData:StartActTimer()
 			self.nActStatus = AllEnum.JointDrillActStatus.Closed
 			nRemainTime = 0
 		end
+		self:RefreshDailyEnterRedDot()
 		EventManager.Hit("RefreshJointDrillActTime", self.nActStatus, nRemainTime)
 		if nRemainTime <= 0 and self.actTimer ~= nil and self.nActStatus == AllEnum.JointDrillActStatus.Closed then
 			self.actTimer:Cancel()

@@ -751,7 +751,7 @@ function MainViewCtrl:AddOtherBanner()
 					local tbPlatformList = string.split(sPlatform, ",")
 					local tbOptionList = string.split(sOption, ",")
 					local nIndex = table.indexof(tbPlatformList, curPlatform)
-					if nIndex ~= nil then
+					if nIndex ~= nil and 0 < nIndex then
 						local sOptionType = tbOptionList[nIndex]
 						local bInside = sOptionType == "0"
 						table.insert(self.tbBannerList, {
@@ -781,7 +781,7 @@ function MainViewCtrl:AddOtherBanner()
 						local tbPlatformList = string.split(sPlatform, ",")
 						local tbOptionList = string.split(sOption, ",")
 						local nIndex = table.indexof(tbPlatformList, curPlatform)
-						if nIndex ~= nil then
+						if nIndex ~= nil and 0 < nIndex then
 							local sOptionType = tbOptionList[nIndex]
 							local bInside = sOptionType == "0"
 							table.insert(self.tbBannerList, {
@@ -816,7 +816,7 @@ function MainViewCtrl:AddOtherBanner()
 				local tbOptionList = string.split(sOption, ",")
 				local nIndex = table.indexof(tbPlatformList, curPlatform)
 				local sPid = mapLineData.Param6
-				if nIndex ~= nil then
+				if nIndex ~= nil and 0 < nIndex then
 					local sOptionType = tbOptionList[nIndex]
 					local bInside = sOptionType == "0"
 					if SDKManager:IsSDKInit() then
@@ -1111,6 +1111,9 @@ function MainViewCtrl:RefreshLeftActivityList()
 end
 function MainViewCtrl:RefreshActivityFastEntrance()
 	for k, v in ipairs(self._mapNode.btnActivityFast) do
+		if self.tbActivityFast ~= nil and self.tbActivityFast[k] ~= nil and self.tbActivityFast[k]:GetActType() == GameEnum.activityType.JointDrill and self._mapNode.goActivityFastRedDot[k] ~= nil then
+			RedDotManager.UnRegisterNode(RedDotDefine.JointDrillDailyEnter, self.tbActivityFast[k]:GetActId(), self._mapNode.goActivityFastRedDot[k].gameObject)
+		end
 		v.gameObject:SetActive(false)
 		if self._mapNode.goActivityFastRedDot[k] ~= nil then
 			self._mapNode.goActivityFastRedDot[k].gameObject:SetActive(false)
@@ -1162,9 +1165,15 @@ function MainViewCtrl:RefreshActivityFastEntrance()
 					nActGroupId,
 					v:GetActId()
 				}, self._mapNode.goActivityFastRedDot[k], nil, nil, true)
+			elseif nActType == GameEnum.activityType.JointDrill then
+				v:RefreshDailyEnterRedDot()
+				RedDotManager.RegisterNode(RedDotDefine.JointDrillDailyEnter, v:GetActId(), self._mapNode.goActivityFastRedDot[k], nil, nil, true)
 			end
 			if nActType == GameEnum.activityType.Breakout then
 				RedDotManager.RegisterNode(RedDotDefine.Activity_GroupNew, actCfg.MidGroupId, self._mapNode.goActivityFastRedDotNew[k], nil, nil, true)
+			end
+			if nActType == GameEnum.activityType.Soldier then
+				RedDotManager.RegisterNode(RedDotDefine.Solider, v:GetActId(), self._mapNode.goActivityFastRedDotNew[k], nil, nil, true)
 			end
 		end
 	end
@@ -1418,6 +1427,8 @@ function MainViewCtrl:OnBtnClick_ActivityFast(btn, nIndex)
 			EventManager.Hit(EventId.SetTransition, 30, func)
 		elseif nActType == GameEnum.activityType.TowerDefense then
 			EventManager.Hit(EventId.OpenPanel, PanelId.TowerDefenseSelectPanel, actDataIns:GetActId())
+		elseif nActType == GameEnum.activityType.Soldier then
+			EventManager.Hit(EventId.OpenPanel, PanelId.SoldierMainViewPanel)
 		else
 			local callback = function()
 				PlayerData.Activity:OpenActivityPanel(actDataIns:GetActId())

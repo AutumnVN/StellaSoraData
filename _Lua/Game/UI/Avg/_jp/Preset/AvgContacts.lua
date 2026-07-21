@@ -256,6 +256,14 @@ return {
 		signature = "求：ぬいぐるみ"
 	},
 	{
+		id = 157,
+		icon = "Icon/Head/head_15701_S",
+		name = "***",
+		landmark = "セルスティ-サンライズ通り78番地",
+		signature = "よく効く酔い止めあるデスよ",
+		ver = "1.14.0"
+	},
+	{
 		id = 158,
 		icon = "Icon/Head/head_15801_S",
 		name = "ラール（聖夜）",
@@ -268,6 +276,14 @@ return {
 		name = "クルニス（華服）",
 		landmark = "フィーリエ-アッシュエリア診療所",
 		signature = "休暇中につき休診"
+	},
+	{
+		id = 160,
+		icon = "Icon/Head/head_16001_S",
+		name = "ウィロー（水着）",
+		landmark = "アモール地理セン",
+		signature = "ビーチでの安全確認も忘れずに",
+		ver = "1.13.0"
 	},
 	{
 		id = 3136,

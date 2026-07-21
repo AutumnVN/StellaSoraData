@@ -76,7 +76,7 @@ end
 function GuideGroup_303:Step_3()
 	self.msg = {
 		BindIcon = "PenguinCardPanel/----SafeAreaRoot----/---Prepare---/--Upgrade--",
-		Deviation = {0, 55},
+		Deviation = {0, 70},
 		Size = {420, 420},
 		Head = "Icon/Head/head_917401",
 		Desc = "Guide_303_3",

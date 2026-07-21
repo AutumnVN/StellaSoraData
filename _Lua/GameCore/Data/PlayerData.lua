@@ -131,6 +131,9 @@ function PlayerData.Init()
 	local PlayerScoreBossData = require("GameCore.Data.DataClass.PlayerScoreBossData")
 	PlayerData.ScoreBoss = PlayerScoreBossData.new()
 	PlayerData.ScoreBoss:Init()
+	local PlayerTraceHuntData = require("GameCore.Data.DataClass.PlayerTraceHuntData")
+	PlayerData.TraceHunt = PlayerTraceHuntData.new()
+	PlayerData.TraceHunt:Init()
 	local GameAnnouncementData = require("GameCore.Data.DataClass.GameAnnouncementData")
 	PlayerData.AnnouncementData = GameAnnouncementData.new()
 	PlayerData.AnnouncementData:Init()
@@ -164,6 +167,9 @@ function PlayerData.Init()
 	local PotentialPreselection = require("GameCore.Data.DataClass.PlayerPotentialPreselectionData")
 	PlayerData.PotentialPreselection = PotentialPreselection.new()
 	PlayerData.PotentialPreselection:Init()
+	local SoldierData = require("GameCore.Data.DataClass.Soldier.PlayerSoldierData")
+	PlayerData.SoldierData = SoldierData.new()
+	PlayerData.SoldierData:Init()
 	local foreachEnumDesc = function(mapData)
 		CacheTable.SetField("_EnumDesc", mapData.EnumName, mapData.Value, mapData.Key)
 	end
@@ -224,6 +230,8 @@ function PlayerData.UnInit()
 	PlayerData.SideBanner = nil
 	PlayerData.ScoreBoss:UnInit()
 	PlayerData.ScoreBoss = nil
+	PlayerData.TraceHunt:UnInit()
+	PlayerData.TraceHunt = nil
 	PlayerData.AnnouncementData = nil
 	PlayerData.JointDrill_1:UnInit()
 	PlayerData.JointDrill_1 = nil
@@ -232,5 +240,7 @@ function PlayerData.UnInit()
 	PlayerData.Trial = nil
 	PlayerData.StorySet = nil
 	PlayerData.Story = nil
+	PlayerData.SoldierData:UnInit()
+	PlayerData.SoldierData = nil
 end
 return PlayerData

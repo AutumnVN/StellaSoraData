@@ -68,7 +68,8 @@ function CmdInfo.VisualizedCmd_CtrlBg(ctrl, tr, param)
 			ctrl.listEaseType[0],
 			1,
 			true,
-			0
+			0,
+			nil
 		}
 	end
 	ctrl:SetDDIndex(tr, "stage_bgfg/dd_Stage", param[1])
@@ -80,17 +81,23 @@ function CmdInfo.VisualizedCmd_CtrlBg(ctrl, tr, param)
 	ctrl:SetInputNum(tr, "scale_gray/input_Gray", param[7])
 	ctrl:SetInputNum(tr, "alpha_brightness/input_Alpha", param[8])
 	ctrl:SetInputNum(tr, "alpha_brightness/input_Brightness", param[9])
-	ctrl:SetInputNum(tr, "input_Blur", param[10])
+	ctrl:SetInputNum(tr, "blur_rotate/input_Blur", param[10])
 	ctrl:SetDD(tr, "shake_ease/dd_ShakeType", ctrl.listBgShakeType, ctrl.listBgShakeType:IndexOf(param[11]))
 	ctrl:SetDD(tr, "shake_ease/dd_EaseType", ctrl.listEaseType, ctrl.listEaseType:IndexOf(param[12]))
 	ctrl:SetInputDuration(tr, "input_Duration", param[13])
 	ctrl:SetTog(tr, "tog_Wait", param[14])
 	ctrl:SetDDIndex(tr, "stage_bgfg/dd_bg_fg", param[15])
+	ctrl:SetInputNum(tr, "blur_rotate/input_Rotate", param[16])
 	ctrl:SetNoteAbsolutePos(tr, "txtNote", param[2], param[3], param[4], param[5])
 end
 function CmdInfo.TbDataToCfgStr_CtrlBg(ctrl, tbParam)
-	local sCmd = "  {cmd=\"CtrlBg\",param={%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,\"%s\",\"%s\",%s,%s,%s}},"
-	return string.format(sCmd, tostring(tbParam[1]), tostring(tbParam[2]), tostring(tbParam[3]), tostring(tbParam[4]), tostring(tbParam[5]), tostring(tbParam[6]), tostring(tbParam[7]), tostring(tbParam[8]), tostring(tbParam[9]), tostring(tbParam[10]), tbParam[11], tbParam[12], tostring(tbParam[13]), tostring(tbParam[14]), tostring(tbParam[15]))
+	if tbParam[16] == nil then
+		local sCmd = "  {cmd=\"CtrlBg\",param={%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,\"%s\",\"%s\",%s,%s,%s}},"
+		return string.format(sCmd, tostring(tbParam[1]), tostring(tbParam[2]), tostring(tbParam[3]), tostring(tbParam[4]), tostring(tbParam[5]), tostring(tbParam[6]), tostring(tbParam[7]), tostring(tbParam[8]), tostring(tbParam[9]), tostring(tbParam[10]), tbParam[11], tbParam[12], tostring(tbParam[13]), tostring(tbParam[14]), tostring(tbParam[15]))
+	else
+		local sCmd = "  {cmd=\"CtrlBg\",param={%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,\"%s\",\"%s\",%s,%s,%s,%s}},"
+		return string.format(sCmd, tostring(tbParam[1]), tostring(tbParam[2]), tostring(tbParam[3]), tostring(tbParam[4]), tostring(tbParam[5]), tostring(tbParam[6]), tostring(tbParam[7]), tostring(tbParam[8]), tostring(tbParam[9]), tostring(tbParam[10]), tbParam[11], tbParam[12], tostring(tbParam[13]), tostring(tbParam[14]), tostring(tbParam[15]), tostring(tbParam[16]))
+	end
 end
 function CmdInfo.ParseParam_CtrlBg(ctrl, tr, tbParam)
 	tbParam[1] = ctrl:GetDDIndex(tr, "stage_bgfg/dd_Stage")
@@ -102,12 +109,13 @@ function CmdInfo.ParseParam_CtrlBg(ctrl, tr, tbParam)
 	tbParam[7] = ctrl:GetInputNum(tr, "scale_gray/input_Gray")
 	tbParam[8] = ctrl:GetInputNum(tr, "alpha_brightness/input_Alpha")
 	tbParam[9] = ctrl:GetInputNum(tr, "alpha_brightness/input_Brightness")
-	tbParam[10] = ctrl:GetInputNum(tr, "input_Blur")
+	tbParam[10] = ctrl:GetInputNum(tr, "blur_rotate/input_Blur")
 	tbParam[11] = ctrl:GetDD(tr, "shake_ease/dd_ShakeType")
 	tbParam[12] = ctrl:GetDD(tr, "shake_ease/dd_EaseType")
 	tbParam[13] = ctrl:GetInputDuration(tr, "input_Duration")
 	tbParam[14] = ctrl:GetTog(tr, "tog_Wait")
 	tbParam[15] = ctrl:GetDDIndex(tr, "stage_bgfg/dd_bg_fg")
+	tbParam[16] = ctrl:GetInputNum(tr, "blur_rotate/input_Rotate")
 	ctrl:SetNoteAbsolutePos(tr, "txtNote", tbParam[2], tbParam[3], tbParam[4], tbParam[5])
 end
 function CmdInfo.VisualizedCmd_SetStage(ctrl, tr, param)
@@ -201,7 +209,8 @@ function CmdInfo.VisualizedCmd_SetFx(ctrl, tr, param)
 			nil,
 			0,
 			false,
-			false
+			false,
+			0
 		}
 	end
 	ctrl:SetDDIndex(tr, "dd_Stage", param[1])
@@ -215,10 +224,16 @@ function CmdInfo.VisualizedCmd_SetFx(ctrl, tr, param)
 	ctrl:SetTog(tr, "tog_Wait", param[9])
 	ctrl:SetNoteAbsolutePos(tr, "txtNote", 0.5, 0.5, (param[5] or 0) / 100, (param[6] or 0) / 100)
 	ctrl:SetTog(tr, "tog_EnablePP", param[10] == false)
+	ctrl:SetInputNum(tr, "input_Rotate", param[11] or 0)
 end
 function CmdInfo.TbDataToCfgStr_SetFx(ctrl, tbParam)
-	local sCmd = "  {cmd=\"SetFx\",param={%s,\"%s\",%s,%s,%s,%s,%s,%s,%s,%s}},"
-	return string.format(sCmd, tostring(tbParam[1]), tbParam[2], tostring(tbParam[3]), tostring(tbParam[4]), tostring(tbParam[5]), tostring(tbParam[6]), tostring(tbParam[7]), tostring(tbParam[8]), tostring(tbParam[9]), tostring(tbParam[10] == true))
+	if tbParam[11] == nil then
+		local sCmd = "  {cmd=\"SetFx\",param={%s,\"%s\",%s,%s,%s,%s,%s,%s,%s,%s}},"
+		return string.format(sCmd, tostring(tbParam[1]), tbParam[2], tostring(tbParam[3]), tostring(tbParam[4]), tostring(tbParam[5]), tostring(tbParam[6]), tostring(tbParam[7]), tostring(tbParam[8]), tostring(tbParam[9]), tostring(tbParam[10] == true))
+	else
+		local sCmd = "  {cmd=\"SetFx\",param={%s,\"%s\",%s,%s,%s,%s,%s,%s,%s,%s,%s}},"
+		return string.format(sCmd, tostring(tbParam[1]), tbParam[2], tostring(tbParam[3]), tostring(tbParam[4]), tostring(tbParam[5]), tostring(tbParam[6]), tostring(tbParam[7]), tostring(tbParam[8]), tostring(tbParam[9]), tostring(tbParam[10] == true), tostring(tbParam[11]))
+	end
 end
 function CmdInfo.ParseParam_SetFx(ctrl, tr, tbParam)
 	tbParam[1] = ctrl:GetDDIndex(tr, "dd_Stage")
@@ -231,6 +246,14 @@ function CmdInfo.ParseParam_SetFx(ctrl, tr, tbParam)
 	tbParam[8] = ctrl:GetInputDuration(tr, "input_Duration")
 	tbParam[9] = ctrl:GetTog(tr, "tog_Wait")
 	tbParam[10] = ctrl:GetTog(tr, "tog_EnablePP") == false
+	local nRotate = ctrl:GetInputNum(tr, "input_Rotate")
+	if tbParam[11] == nil then
+		if nRotate ~= 0 then
+			tbParam[11] = nRotate
+		end
+	else
+		tbParam[11] = nRotate
+	end
 	ctrl:SetNoteAbsolutePos(tr, "txtNote", 0.5, 0.5, (tbParam[5] or 0) / 100, (tbParam[6] or 0) / 100)
 end
 function CmdInfo.VisualizedCmd_SetFrontObj(ctrl, tr, param)
@@ -769,6 +792,32 @@ function CmdInfo.ParseParam_SetCharL2D(ctrl, tr, tbParam)
 	tbParam[4] = NovaAPI.GetInputFieldText(tr:Find("input_L2DAnim"):GetComponent("InputField"))
 	tbParam[5] = ctrl:GetInputDuration(tr, "input_Duration")
 end
+function CmdInfo.VisualizedCmd_PlayGradient2Anim(ctrl, tr, param)
+	if param == nil then
+		return {
+			ctrl.tbAvgCharId[3],
+			0,
+			0,
+			0,
+			false
+		}
+	end
+	ctrl:SetAvgCharId(tr, param[1])
+	NovaAPI.SetInputFieldText(tr:Find("input_Start"):GetComponent("InputField"), param[2])
+	NovaAPI.SetInputFieldText(tr:Find("input_End"):GetComponent("InputField"), param[3])
+	ctrl:SetInputDuration(tr, "input_Duration", param[4])
+	ctrl:SetTog(tr, "tog_Wait", param[5])
+end
+function CmdInfo.TbDataToCfgStr_PlayGradient2Anim(ctrl, tbParam)
+	return string.format("  {cmd=\"PlayGradient2Anim\",param={\"%s\",%s,%s,%s,%s}},", tbParam[1], tostring(tbParam[2]), tostring(tbParam[3]), tostring(tbParam[4]), tostring(tbParam[5]))
+end
+function CmdInfo.ParseParam_PlayGradient2Anim(ctrl, tr, tbParam)
+	tbParam[1] = ctrl:GetAvgCharId(tr)
+	tbParam[2] = NovaAPI.GetInputFieldText(tr:Find("input_Start"):GetComponent("InputField"))
+	tbParam[3] = NovaAPI.GetInputFieldText(tr:Find("input_End"):GetComponent("InputField"))
+	tbParam[4] = ctrl:GetInputDuration(tr, "input_Duration")
+	tbParam[5] = ctrl:GetTog(tr, "tog_Wait")
+end
 function CmdInfo.VisualizedCmd_SetTalk(ctrl, tr, param)
 	if param == nil then
 		return {
@@ -1229,6 +1278,7 @@ function CmdInfo.VisualizedCmd_SetChoiceJumpTo(ctrl, tr, param)
 	end
 	NovaAPI.SetInputFieldText(tr:Find("input_GroupId"):GetComponent("InputField"), param[1])
 	NovaAPI.SetInputFieldText(tr:Find("input_ChoiceIndex"):GetComponent("InputField"), param[2])
+	NovaAPI.SetToggleIsOn(tr:Find("enable_in_visualize_preview"):GetComponent("Toggle"), param.enable_in_visualize_preview)
 end
 function CmdInfo.TbDataToCfgStr_SetChoiceJumpTo(ctrl, tbParam)
 	return string.format("  {cmd=\"SetChoiceJumpTo\",param={\"%s\",\"%s\"}},", tbParam[1], tbParam[2])
@@ -1236,6 +1286,7 @@ end
 function CmdInfo.ParseParam_SetChoiceJumpTo(ctrl, tr, tbParam)
 	tbParam[1] = NovaAPI.GetInputFieldText(tr:Find("input_GroupId"):GetComponent("InputField"))
 	tbParam[2] = NovaAPI.GetInputFieldText(tr:Find("input_ChoiceIndex"):GetComponent("InputField"))
+	tbParam.enable_in_visualize_preview = NovaAPI.GetToggleIsOn(tr:Find("enable_in_visualize_preview"):GetComponent("Toggle"))
 end
 function CmdInfo.VisualizedCmd_SetChoiceRollback(ctrl, tr, param)
 	if param == nil then
@@ -1325,6 +1376,7 @@ function CmdInfo.VisualizedCmd_SetPhoneMsgChoiceJumpTo(ctrl, tr, param)
 	end
 	NovaAPI.SetInputFieldText(tr:Find("input_GroupId"):GetComponent("InputField"), param[1])
 	NovaAPI.SetInputFieldText(tr:Find("input_ChoiceIndex"):GetComponent("InputField"), param[2])
+	NovaAPI.SetToggleIsOn(tr:Find("enable_in_visualize_preview"):GetComponent("Toggle"), param.enable_in_visualize_preview)
 end
 function CmdInfo.TbDataToCfgStr_SetPhoneMsgChoiceJumpTo(ctrl, tbParam)
 	return string.format("  {cmd=\"SetPhoneMsgChoiceJumpTo\",param={\"%s\",\"%s\"}},", tbParam[1], tbParam[2])
@@ -1332,6 +1384,7 @@ end
 function CmdInfo.ParseParam_SetPhoneMsgChoiceJumpTo(ctrl, tr, tbParam)
 	tbParam[1] = NovaAPI.GetInputFieldText(tr:Find("input_GroupId"):GetComponent("InputField"))
 	tbParam[2] = NovaAPI.GetInputFieldText(tr:Find("input_ChoiceIndex"):GetComponent("InputField"))
+	tbParam.enable_in_visualize_preview = NovaAPI.GetToggleIsOn(tr:Find("enable_in_visualize_preview"):GetComponent("Toggle"))
 end
 function CmdInfo.VisualizedCmd_SetPhoneMsgChoiceEnd(ctrl, tr, param)
 	if param == nil then
@@ -1471,6 +1524,7 @@ function CmdInfo.VisualizedCmd_SetMajorChoiceJumpTo(ctrl, tr, param)
 	end
 	NovaAPI.SetInputFieldText(tr:Find("input_GroupId"):GetComponent("InputField"), tostring(param[1]))
 	NovaAPI.SetInputFieldText(tr:Find("input_ChoiceIndex"):GetComponent("InputField"), tostring(param[2]))
+	NovaAPI.SetToggleIsOn(tr:Find("enable_in_visualize_preview"):GetComponent("Toggle"), param.enable_in_visualize_preview)
 end
 function CmdInfo.TbDataToCfgStr_SetMajorChoiceJumpTo(ctrl, tbParam)
 	return string.format("  {cmd=\"SetMajorChoiceJumpTo\",param={%s,%s}},", tostring(tbParam[1]), tostring(tbParam[2]))
@@ -1478,6 +1532,7 @@ end
 function CmdInfo.ParseParam_SetMajorChoiceJumpTo(ctrl, tr, tbParam)
 	tbParam[1] = tonumber(NovaAPI.GetInputFieldText(tr:Find("input_GroupId"):GetComponent("InputField")))
 	tbParam[2] = tonumber(NovaAPI.GetInputFieldText(tr:Find("input_ChoiceIndex"):GetComponent("InputField")))
+	tbParam.enable_in_visualize_preview = NovaAPI.GetToggleIsOn(tr:Find("enable_in_visualize_preview"):GetComponent("Toggle"))
 end
 function CmdInfo.VisualizedCmd_SetMajorChoiceRollover(ctrl, tr, param)
 	if param == nil then
@@ -1555,6 +1610,7 @@ function CmdInfo.VisualizedCmd_SetPersonalityChoiceJumpTo(ctrl, tr, param)
 	end
 	NovaAPI.SetInputFieldText(tr:Find("input_GroupId"):GetComponent("InputField"), tostring(param[1]))
 	NovaAPI.SetInputFieldText(tr:Find("input_ChoiceIndex"):GetComponent("InputField"), tostring(param[2]))
+	NovaAPI.SetToggleIsOn(tr:Find("enable_in_visualize_preview"):GetComponent("Toggle"), param.enable_in_visualize_preview)
 end
 function CmdInfo.TbDataToCfgStr_SetPersonalityChoiceJumpTo(ctrl, tbParam)
 	return string.format("  {cmd=\"SetPersonalityChoiceJumpTo\",param={%s,%s}},", tostring(tbParam[1]), tostring(tbParam[2]))
@@ -1562,6 +1618,7 @@ end
 function CmdInfo.ParseParam_SetPersonalityChoiceJumpTo(ctrl, tr, tbParam)
 	tbParam[1] = tonumber(NovaAPI.GetInputFieldText(tr:Find("input_GroupId"):GetComponent("InputField")))
 	tbParam[2] = tonumber(NovaAPI.GetInputFieldText(tr:Find("input_ChoiceIndex"):GetComponent("InputField")))
+	tbParam.enable_in_visualize_preview = NovaAPI.GetToggleIsOn(tr:Find("enable_in_visualize_preview"):GetComponent("Toggle"))
 end
 function CmdInfo.VisualizedCmd_SetPersonalityChoiceRollover(ctrl, tr, param)
 	if param == nil then

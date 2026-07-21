@@ -256,6 +256,14 @@ return {
 		signature = "你有看見過我的布娃娃嗎？"
 	},
 	{
+		id = 157,
+		icon = "Icon/Head/head_15701_S",
+		name = "***",
+		landmark = "塞爾斯泰晨曦街78號",
+		signature = "變態…",
+		ver = "1.14.0"
+	},
+	{
 		id = 158,
 		icon = "Icon/Head/head_15801_S",
 		name = "聖夜菈露",
@@ -268,6 +276,14 @@ return {
 		name = "緋春柯洛妮絲",
 		landmark = "菲萊的「那個」診所",
 		signature = "休假外出中"
+	},
+	{
+		id = 160,
+		icon = "Icon/Head/head_16001_S",
+		name = "沐夏薇洛",
+		landmark = "埃摩協會之家",
+		signature = "在海邊也要注意安全喔！",
+		ver = "1.13.0"
 	},
 	{
 		id = 3136,

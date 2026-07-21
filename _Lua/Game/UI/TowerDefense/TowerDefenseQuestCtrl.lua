@@ -98,7 +98,15 @@ function TowerDefenseQuestCtrl:SetData(nActId, bIsSubPanel)
 	table.sort(self.tbGroup, function(a, b)
 		return a < b
 	end)
-	self.nSelecedGroupId = self.tbGroup[1]
+	local nSelectIndex = 1
+	for i, v in ipairs(self.tbGroup) do
+		local bRed = RedDotManager.GetValid(RedDotDefine.Activity_TowerDefense_QuestGroup, {v})
+		if bRed then
+			nSelectIndex = i
+			break
+		end
+	end
+	self.nSelecedGroupId = self.tbGroup[nSelectIndex]
 	self._mapNode.Group_loop_sv:Init(#self.tbGroup, self, self.OnRefreshGroupGrid)
 	self:UpdateQuestList(self.nSelecedGroupId)
 end

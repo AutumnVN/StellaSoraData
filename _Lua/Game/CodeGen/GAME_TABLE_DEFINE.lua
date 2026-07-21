@@ -30,6 +30,16 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"DesText"}
 	},
+	ActivityIceCreamLevel = {
+		Key = true,
+		Lang = {
+			"IslandName",
+			"Name",
+			"Des",
+			"PassScoreDes",
+			"OrderNumDes"
+		}
+	},
 	ActivityLevelsFloor = {Key = true},
 	ActivityLevelsLevel = {
 		Key = true,
@@ -243,6 +253,7 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Name", "Desc"}
 	},
+	CharacterSpine = {Key = true},
 	CharacterTag = {
 		Key = true,
 		Lang = {"Title"}
@@ -450,6 +461,11 @@ GameTableDefine.CommonTable = {
 		}
 	},
 	FloorBuff = {Key = true},
+	FollowSocialMediaControl = {Key = true},
+	FollowSocialMediaLinkConfig = {
+		Key = true,
+		Lang = {"Name"}
+	},
 	Force = {
 		Key = true,
 		Lang = {"Title"}
@@ -532,6 +548,15 @@ GameTableDefine.CommonTable = {
 	HonorCharacter = {Key = true},
 	HonorLevel = {Key = true},
 	HtmlConfig = {Key = true},
+	IceCreamBuff = {
+		Key = true,
+		Lang = {"Name", "Desc"}
+	},
+	IceCreamBuffPool = {Key = true},
+	IceCreamChar = {Key = true},
+	IceCreamCharPool = {Key = true},
+	IceCreamCreate = {Key = true},
+	IceCreamFever = {},
 	InfinityTower = {
 		Key = true,
 		Lang = {"Name"}
@@ -686,12 +711,19 @@ GameTableDefine.CommonTable = {
 		Key = true,
 		Lang = {"Title"}
 	},
-	MiningControl = {Key = true},
+	MiningControl = {
+		Key = true,
+		Lang = {"Desc"}
+	},
 	MiningDemoConfig = {Key = true},
 	MiningDemoRewardConfig = {},
 	MiningQuest = {
 		Key = true,
 		Lang = {"QuestDes"}
+	},
+	MiningQuestGroup = {
+		Key = true,
+		Lang = {"GroupName"}
 	},
 	MiningStory = {Key = true},
 	MiningSupport = {
@@ -705,7 +737,7 @@ GameTableDefine.CommonTable = {
 	Monster = {Key = true},
 	MonsterActionBranch = {Key = true},
 	MonsterAI = {Key = true},
-	MonsterAttackAjust = {},
+	MonsterAttackAjust = {Key = true},
 	MonsterAttributeContact = {Key = true},
 	MonsterBornGroup = {},
 	MonsterGroup = {Key = true},
@@ -923,6 +955,92 @@ GameTableDefine.CommonTable = {
 	SkillInstanceType = {
 		Key = true,
 		Lang = {"Name"}
+	},
+	SoldierBuff = {Key = true},
+	SoldierCardEffect = {Key = true},
+	SoldierCharacter = {
+		Key = true,
+		Lang = {"Name"}
+	},
+	SoldierChessAI = {Key = true},
+	SoldierChessType = {
+		Key = true,
+		Lang = {"Name"}
+	},
+	SoldierClientBuff = {Key = true},
+	SoldierControl = {
+		Key = true,
+		Lang = {"DesText"}
+	},
+	SoldierEventBattlePool = {
+		Key = true,
+		Lang = {"Title", "Name"}
+	},
+	SoldierEventPlan = {Key = true},
+	SoldierFloor = {Key = true},
+	SoldierGradeChallenge = {
+		Key = true,
+		Lang = {"Name"}
+	},
+	SoldierKeyGrade = {
+		Key = true,
+		Lang = {"Name"}
+	},
+	SoldierLabelMark = {Key = true},
+	SoldierNodePlan = {Key = true},
+	SoldierPartner = {
+		Key = true,
+		Lang = {"Name", "Desc"}
+	},
+	SoldierPartnerGroup = {
+		Key = true,
+		Lang = {"Name", "Desc"}
+	},
+	SoldierPositionEffect = {
+		Key = true,
+		Lang = {
+			"Name",
+			"KeyEffectDes"
+		}
+	},
+	SoldierPotential = {
+		Key = true,
+		Lang = {"Name", "Des"}
+	},
+	SoldierQuest = {
+		Key = true,
+		Lang = {"Desc"}
+	},
+	SoldierQuestGroup = {
+		Key = true,
+		Lang = {"Des"}
+	},
+	SoldierRecommendBuilds = {
+		Key = true,
+		Lang = {"Title", "Desc"}
+	},
+	SoldierSeason = {Key = true},
+	SoldierShopLevel = {},
+	SoldierShopPool = {Key = true},
+	SoldierSkin = {
+		Key = true,
+		Lang = {"Name"}
+	},
+	SoldierStarterCard = {
+		Key = true,
+		Lang = {
+			"Name",
+			"Des",
+			"Desc"
+		}
+	},
+	SoldierStrategyCard = {
+		Key = true,
+		Lang = {
+			"Name",
+			"Des",
+			"Desc"
+		}
 	},
 	StarTower = {
 		Key = true,
@@ -1166,6 +1284,17 @@ GameTableDefine.CommonTable = {
 	},
 	TowerDefenseStory = {Key = true},
 	TowerDefenseTeamExp = {Key = true},
+	TraceHuntBoss = {Key = true},
+	TraceHuntControl = {Key = true},
+	TraceHuntFloor = {Key = true},
+	TraceHuntLevel = {},
+	TraceHuntLogEntryTemplate = {
+		Key = true,
+		Lang = {"Desc"}
+	},
+	TraceHuntScoreSwitch = {Key = true},
+	TraceHuntSelfHuntExtraCost = {},
+	TraceHuntStar = {},
 	Trap = {Key = true},
 	TrapAttribute = {Key = true},
 	TravelerDuelBoss = {
