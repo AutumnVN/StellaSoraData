@@ -1726,5 +1726,53 @@
     "CharAdvanceCond": "",
     "Rewards": "{\"2\":30}",
     "PicSource": "Icon/MapEpisode/ep_character_15903"
+  },
+  "16001": {
+    "Id": 16001,
+    "Char": 160,
+    "Name": "Plot.16001.1",
+    "Desc": "Plot.16001.2",
+    "AvgId": "CG_160_01",
+    "PlotType": 1,
+    "Mainlines": [],
+    "PrePlot": 0,
+    "UnlockAffinityLevel": 1,
+    "UnlockSkinId": 0,
+    "ConnectChatId": 0,
+    "CharAdvanceCond": "",
+    "Rewards": "{\"2\":30}",
+    "PicSource": "Icon/MapEpisode/ep_character_16001"
+  },
+  "16002": {
+    "Id": 16002,
+    "Char": 160,
+    "Name": "Plot.16002.1",
+    "Desc": "Plot.16002.2",
+    "AvgId": "CG_160_02",
+    "PlotType": 1,
+    "Mainlines": [],
+    "PrePlot": 16001,
+    "UnlockAffinityLevel": 5,
+    "UnlockSkinId": 0,
+    "ConnectChatId": 0,
+    "CharAdvanceCond": "",
+    "Rewards": "{\"2\":30}",
+    "PicSource": "Icon/MapEpisode/ep_character_16002"
+  },
+  "16003": {
+    "Id": 16003,
+    "Char": 160,
+    "Name": "Plot.16003.1",
+    "Desc": "Plot.16003.2",
+    "AvgId": "CG_160_03",
+    "PlotType": 1,
+    "Mainlines": [],
+    "PrePlot": 16002,
+    "UnlockAffinityLevel": 10,
+    "UnlockSkinId": 0,
+    "ConnectChatId": 0,
+    "CharAdvanceCond": "",
+    "Rewards": "{\"2\":30}",
+    "PicSource": "Icon/MapEpisode/ep_character_16003"
   }
 }

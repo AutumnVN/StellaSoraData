@@ -1,1 +1,233 @@
-{}
+{
+  "101": {
+    "Id": 101,
+    "GroupId": 101,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.101.1",
+    "CompleteCond": 51,
+    "CompleteCondParams": "[1]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 30
+  },
+  "102": {
+    "Id": 102,
+    "GroupId": 101,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.102.1",
+    "CompleteCond": 51,
+    "CompleteCondParams": "[2]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 40
+  },
+  "103": {
+    "Id": 103,
+    "GroupId": 101,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.103.1",
+    "CompleteCond": 51,
+    "CompleteCondParams": "[3]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 60
+  },
+  "104": {
+    "Id": 104,
+    "GroupId": 101,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.104.1",
+    "CompleteCond": 51,
+    "CompleteCondParams": "[4]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 100
+  },
+  "105": {
+    "Id": 105,
+    "GroupId": 101,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.105.1",
+    "CompleteCond": 51,
+    "CompleteCondParams": "[5]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 120
+  },
+  "111": {
+    "Id": 111,
+    "GroupId": 102,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.111.1",
+    "CompleteCond": 39,
+    "CompleteCondParams": "[200]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 10
+  },
+  "112": {
+    "Id": 112,
+    "GroupId": 102,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.112.1",
+    "CompleteCond": 39,
+    "CompleteCondParams": "[300]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 10
+  },
+  "113": {
+    "Id": 113,
+    "GroupId": 102,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.113.1",
+    "CompleteCond": 39,
+    "CompleteCondParams": "[400]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 20
+  },
+  "114": {
+    "Id": 114,
+    "GroupId": 102,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.114.1",
+    "CompleteCond": 39,
+    "CompleteCondParams": "[600]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 40
+  },
+  "115": {
+    "Id": 115,
+    "GroupId": 102,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.115.1",
+    "CompleteCond": 39,
+    "CompleteCondParams": "[800]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 50
+  },
+  "116": {
+    "Id": 116,
+    "GroupId": 102,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.116.1",
+    "CompleteCond": 39,
+    "CompleteCondParams": "[1000]",
+    "JumpTo": 0,
+    "RewardId": 120006,
+    "RewardQty": 80
+  },
+  "121": {
+    "Id": 121,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.121.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,500]",
+    "JumpTo": 0,
+    "RewardId": 1,
+    "RewardQty": 2000000
+  },
+  "122": {
+    "Id": 122,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.122.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,1000]",
+    "JumpTo": 0,
+    "RewardId": 50003,
+    "RewardQty": 40
+  },
+  "123": {
+    "Id": 123,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.123.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,1500]",
+    "JumpTo": 0,
+    "RewardId": 32000,
+    "RewardQty": 200
+  },
+  "124": {
+    "Id": 124,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.124.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,2000]",
+    "JumpTo": 0,
+    "RewardId": 30,
+    "RewardQty": 10
+  },
+  "125": {
+    "Id": 125,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.125.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,2500]",
+    "JumpTo": 0,
+    "RewardId": 82007,
+    "RewardQty": 300
+  },
+  "126": {
+    "Id": 126,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.126.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,3000]",
+    "JumpTo": 0,
+    "RewardId": 50004,
+    "RewardQty": 20
+  },
+  "127": {
+    "Id": 127,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.127.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,3500]",
+    "JumpTo": 0,
+    "RewardId": 32000,
+    "RewardQty": 200
+  },
+  "128": {
+    "Id": 128,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.128.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,4000]",
+    "JumpTo": 0,
+    "RewardId": 33912,
+    "RewardQty": 10
+  },
+  "129": {
+    "Id": 129,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.129.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,4500]",
+    "JumpTo": 0,
+    "RewardId": 82007,
+    "RewardQty": 300
+  },
+  "130": {
+    "Id": 130,
+    "GroupId": 103,
+    "ActivityId": 400014,
+    "QuestDes": "MiningQuest.130.1",
+    "CompleteCond": 107,
+    "CompleteCondParams": "[400014,5000]",
+    "JumpTo": 0,
+    "RewardId": 35000,
+    "RewardQty": 20
+  }
+}

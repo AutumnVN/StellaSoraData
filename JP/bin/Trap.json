@@ -2712,6 +2712,45 @@
     "RotSpd": 0,
     "MoveSpd": 0
   },
+  "50915001": {
+    "Id": 50915001,
+    "Name": "",
+    "FCId": 5091501,
+    "Model": "Actor/Monster/31302ZhangYuPaoTai/31302ZhangYuPaoTai_Trap",
+    "ModelScale": 10000,
+    "BuffFXScale": 10000,
+    "ColliderScale": 10000,
+    "AttributeId": "1300101",
+    "Templete": 3130048,
+    "BuffIds": [
+      990010050,
+      990010100,
+      313020000
+    ],
+    "TurnOffBuffIds": [],
+    "TurnOnBuffIds": [],
+    "InterruptSkill": true,
+    "SubType": 2,
+    "Faction": 3,
+    "Filter": [
+      2
+    ],
+    "IgnoreCollision": true,
+    "ActiveEff": "",
+    "ShapeType": 1,
+    "Width": 0.0,
+    "Length": 0.0,
+    "Radius": 99.0,
+    "InnerRadius": 0.0,
+    "Angle": 0.0,
+    "Offset": [],
+    "Rotation": 0.0,
+    "IsMove": false,
+    "IsBlock": true,
+    "MovAcc": 0,
+    "RotSpd": 0,
+    "MoveSpd": 0
+  },
   "50931001": {
     "Id": 50931001,
     "Name": "",
