@@ -256,6 +256,14 @@ return {
 		signature = "내 인형 본 적 있어?"
 	},
 	{
+		id = 157,
+		icon = "Icon/Head/head_15701_S",
+		name = "***",
+		landmark = "셀스티 태청희거리 7호",
+		signature = "변태……",
+		ver = "1.14.0"
+	},
+	{
 		id = 158,
 		icon = "Icon/Head/head_15801_S",
 		name = "라루(이브)",
@@ -268,6 +276,14 @@ return {
 		name = "크루니스(새해)",
 		landmark = "필리에의 ‘진료소’ ",
 		signature = "휴가 중."
+	},
+	{
+		id = 160,
+		icon = "Icon/Head/head_16001_S",
+		name = "윌로(여름)",
+		landmark = "아모르 지리 센터",
+		signature = "바닷가에 있어도 안전 조심!",
+		ver = "1.13.0"
 	},
 	{
 		id = 3136,
@@ -351,7 +367,7 @@ return {
 		icon = "Icon/Head/head_group_S",
 		name = "비상 연락 관리팀",
 		landmark = "",
-		signature = "차단해도 퇴장 금지, 퇴장해도 차단 금지."
+		signature = "차단해도 탈퇴 금지, 탈퇴해도 차단 금지"
 	},
 	{
 		id = 9152,
