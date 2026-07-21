@@ -84,6 +84,13 @@ function PenguinCardQuestCtrl:InitData(nActId)
 	self.actData = PlayerData.Activity:GetActivityDataById(self.nActId)
 	self.tbGroup = self.actData:GetQuestGroup()
 	self.nSelectIndex = 1
+	for i, v in ipairs(self.tbGroup) do
+		local bRed = RedDotManager.GetValid(RedDotDefine.Activity_PenguinCard_QuestGroup, {v})
+		if bRed then
+			self.nSelectIndex = i
+			break
+		end
+	end
 	self.nSelecedGroupId = self.tbGroup[self.nSelectIndex]
 end
 function PenguinCardQuestCtrl:Refresh()

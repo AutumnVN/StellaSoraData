@@ -28,11 +28,16 @@ local Postal_10106Data = require("GameCore.Data.DataClass.Activity.Postal_10106D
 local Viewfinder_10107Data = require("GameCore.Data.DataClass.Activity.Viewfinder_10107Data")
 local Tech_10108Data = require("GameCore.Data.DataClass.Activity.Tech_10108Data")
 local GunStorm_10109Data = require("GameCore.Data.DataClass.Activity.GunStorm_10109Data")
+local Summer_10110Data = require("GameCore.Data.DataClass.Activity.Summer_10110Data")
 local PenguinCardActData = require("GameCore.Data.DataClass.Activity.PenguinCardActData")
 local GoldenSpyData = require("GameCore.Data.DataClass.Activity.GoldenSpyData")
 local Solodance_20102Data = require("GameCore.Data.DataClass.Activity.Solodance_20102Data")
 local SwimTheme_11100Data = require("GameCore.Data.DataClass.Activity.SwimTheme_11100Data")
 local DoubleDropsActData = require("GameCore.Data.DataClass.Activity.DoubleDropsActData")
+local FollowSocialMediaData = require("GameCore.Data.DataClass.Activity.FollowSocialMediaData")
+local Summer_20103Data = require("GameCore.Data.DataClass.Activity.Summer_20103Data")
+local IceCreamActData = require("GameCore.Data.DataClass.Activity.IceCreamActData")
+local SoldierActData = require("GameCore.Data.DataClass.Activity.SoldierActData")
 function PlayerActivityData:Init()
 	self.bCacheActData = false
 	self.tbAllActivity = {}
@@ -146,6 +151,12 @@ function PlayerActivityData:CacheAllActivityData(mapNetMsg)
 					self:RefreshGoldenSpyActData(nActId, v.GDS)
 				elseif actCfg.ActivityType == GameEnum.activityType.Double then
 					self:RefreshDoubleDropsActData(nActId, v.Double)
+				elseif actCfg.ActivityType == GameEnum.activityType.FollowSocialMedia then
+					self:RefreshFollowSocialMediaActData(nActId, v.Share)
+				elseif actCfg.ActivityType == GameEnum.activityType.IceCream then
+					self:RefreshIceCreamActData(nActId, v.IceCream)
+				elseif actCfg.ActivityType == GameEnum.activityType.Soldier then
+					self:RefreshSoldierActData(nActId, v.Soldier)
 				end
 			end
 		end
@@ -245,6 +256,12 @@ function PlayerActivityData:CreateActivityIns(actData)
 		actIns = GoldenSpyData.new(actData)
 	elseif actCfg.ActivityType == GameEnum.activityType.Double then
 		actIns = DoubleDropsActData.new(actData)
+	elseif actCfg.ActivityType == GameEnum.activityType.FollowSocialMedia then
+		actIns = FollowSocialMediaData.new(actData)
+	elseif actCfg.ActivityType == GameEnum.activityType.IceCream then
+		actIns = IceCreamActData.new(actData)
+	elseif actCfg.ActivityType == GameEnum.activityType.Soldier then
+		actIns = SoldierActData.new(actData)
 	end
 	if actIns ~= nil then
 		self.tbAllActivity[actData.Id] = actIns
@@ -361,6 +378,10 @@ function PlayerActivityData:CreateActivityGroupIns(actData)
 			actIns = Tech_10108Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.GunStorm_10109 then
 			actIns = GunStorm_10109Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Summer_10110 then
+			actIns = Summer_10110Data.new(actData)
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Summer_20103 then
+			actIns = Summer_20103Data.new(actData)
 		end
 		self.tbAllActivityGroup[actData.Id] = actIns
 		PlayerData.ActivityAvg:RefreshAvgRedDot()
@@ -493,7 +514,11 @@ function PlayerActivityData:RefreshSingleQuest(questData)
 		if nil ~= self.tbAllActivity[questData.ActivityId] then
 			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 		end
-	elseif actCfg.ActivityType == GameEnum.activityType.Double and nil ~= self.tbAllActivity[questData.ActivityId] then
+	elseif actCfg.ActivityType == GameEnum.activityType.Double then
+		if nil ~= self.tbAllActivity[questData.ActivityId] then
+			self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
+		end
+	elseif actCfg.ActivityType == GameEnum.activityType.Soldier and nil ~= self.tbAllActivity[questData.ActivityId] then
 		self.tbAllActivity[questData.ActivityId]:RefreshQuestData(questData)
 	end
 end
@@ -601,6 +626,21 @@ end
 function PlayerActivityData:RefreshGoldenSpyActData(nActId, msgData)
 	if nil ~= self.tbAllActivity[nActId] then
 		self.tbAllActivity[nActId]:RefreshGoldenSpyActData(nActId, msgData)
+	end
+end
+function PlayerActivityData:RefreshFollowSocialMediaActData(nActId, msgData)
+	if nil ~= self.tbAllActivity[nActId] then
+		self.tbAllActivity[nActId]:RefreshFollowSocialMediaActData(nActId, msgData)
+	end
+end
+function PlayerActivityData:RefreshIceCreamActData(nActId, msgData)
+	if nil ~= self.tbAllActivity[nActId] then
+		self.tbAllActivity[nActId]:RefreshIceCreamActData(nActId, msgData)
+	end
+end
+function PlayerActivityData:RefreshSoldierActData(nActId, msgData)
+	if nil ~= self.tbAllActivity[nActId] then
+		self.tbAllActivity[nActId]:RefreshSoldierActData(nActId, msgData)
 	end
 end
 function PlayerActivityData:RefreshActivityLevelGameActData(nActId, msgData)

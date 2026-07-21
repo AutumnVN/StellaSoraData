@@ -11,6 +11,7 @@ Vector2 = CS.UnityEngine.Vector2
 Vector3 = CS.UnityEngine.Vector3
 Quaternion = CS.UnityEngine.Quaternion
 NovaAPI = CS.NovaAPI
+NovaAPIHotfix = CS.NovaAPIHotfix
 CSTimerManager = CS.TimerManager
 DOTween = CS.DG.Tweening.DOTween
 Sequence = CS.DG.Tweening.DOTween.Sequence
@@ -163,6 +164,9 @@ function FormatNum(num)
 	end
 end
 function FormatEffectValue(nValue, bPercent, nFormat)
+	if type(nValue) == "userdata" then
+		nValue = nValue:AsFloat()
+	end
 	if bPercent then
 		nValue = nValue * 100
 	end
@@ -260,7 +264,59 @@ function indexOfPose(sPose)
 		"aw",
 		"ax",
 		"ay",
-		"az"
+		"az",
+		"ba",
+		"bb",
+		"bc",
+		"bd",
+		"be",
+		"bf",
+		"bg",
+		"bh",
+		"bi",
+		"bj",
+		"bk",
+		"bl",
+		"bm",
+		"bn",
+		"bo",
+		"bp",
+		"bq",
+		"br",
+		"bs",
+		"bt",
+		"bu",
+		"bv",
+		"bw",
+		"bx",
+		"by",
+		"bz",
+		"ca",
+		"cb",
+		"cc",
+		"cd",
+		"ce",
+		"cf",
+		"cg",
+		"ch",
+		"ci",
+		"cj",
+		"ck",
+		"cl",
+		"cm",
+		"cn",
+		"co",
+		"cp",
+		"cq",
+		"cr",
+		"cs",
+		"ct",
+		"cu",
+		"cv",
+		"cw",
+		"cx",
+		"cy",
+		"cz"
 	}
 	local nIdx = table.indexof(tbCharPose, sPose)
 	if nIdx < 0 then
@@ -844,6 +900,9 @@ end
 local GetDiscAttributeId = function(nGroupId, nPhase, nLevel)
 	return nGroupId * 1000 + nPhase * 100 + nLevel
 end
+local GetSoldierTempleteAttrId = function(nTemplateId, nStar)
+	return nTemplateId * 1000 + nStar * 10 + 1
+end
 local GetDiscExtraAttributeId = function(nGroupId, nStar)
 	return nGroupId * 10 + nStar
 end
@@ -1339,7 +1398,10 @@ local ParseDesc = function(mapDescConfig, nCompareLevelType, nCompareLevel, bSim
 							local nCharId = tonumber(string.sub(sKey, 1, 3))
 							nLevel = UTILS.QueryLevelInfo(nCharId, mapData.levelTypeData, mapData.LevelData, mapData.MainOrSupport)
 						end
-						if (mapData.levelTypeData == GameEnum.levelTypeData.Exclusive or mapData.levelTypeData == GameEnum.levelTypeData.Note) and nOverrideLevel ~= nil then
+						if (mapData.levelTypeData == GameEnum.levelTypeData.Exclusive or mapData.levelTypeData == GameEnum.levelTypeData.Note or mapData.levelTypeData == GameEnum.levelTypeData.SoldierLevel) and nOverrideLevel ~= nil then
+							nLevel = nOverrideLevel
+						end
+						if nCompareLevelType == GameEnum.levelTypeData.SoldierLevel and mapData.levelTypeData == GameEnum.levelTypeData.SkillSlot and nOverrideLevel ~= nil then
 							nLevel = nOverrideLevel
 						end
 						if sParseType == "DamageNum" and sTable == "HitDamage" then
@@ -1931,7 +1993,8 @@ local ServerChannel_US = {
 	[1] = "us_android_official",
 	[2] = "us_ios_official",
 	[4] = "us_android_onestore",
-	[8] = "us_pc_official"
+	[8] = "us_pc_official",
+	[128] = "us_pc_steam"
 }
 local ServerChannel_KR = {
 	[1] = "kr_android_official",
@@ -2151,6 +2214,7 @@ _G.UTILS = {
 	GetCharacterAttributeId = GetCharacterAttributeId,
 	GetDiscAttributeId = GetDiscAttributeId,
 	GetDiscExtraAttributeId = GetDiscExtraAttributeId,
+	GetSoldierTempleteAttrId = GetSoldierTempleteAttrId,
 	GetPotentialId = GetPotentialId,
 	SubDesc = SubDesc,
 	ParseDesc = ParseDesc,

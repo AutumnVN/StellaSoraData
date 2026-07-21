@@ -67,7 +67,7 @@ OurRegimentTaskCtrl._mapRedDotConfig = {}
 function OurRegimentTaskCtrl:OnEnable()
 	local tbParam = self:GetPanelParam()
 	self.nActivityId = type(tbParam) == "table" and tbParam[1] or nil
-	self.nCurGroupIndex = tbParam[2] or 1
+	self.nCurGroupIndex = tbParam[2]
 	if type(self.nActivityId) ~= "number" then
 		self.nActivityId = nil
 	end
@@ -82,9 +82,6 @@ function OurRegimentTaskCtrl:BuildData(nActivityId)
 	end
 	if self.tbGroupId == nil then
 		self.tbGroupId = {}
-	end
-	if self.nCurGroupIndex == nil then
-		self.nCurGroupIndex = 1
 	end
 	if type(nActivityId) ~= "number" then
 		return
@@ -197,6 +194,30 @@ function OurRegimentTaskCtrl:BuildData(nActivityId)
 		for ii, vv in ipairs(tbTaskData) do
 			mapData.tbTaskId[ii] = vv.nTaskId
 		end
+	end
+	if self.nCurGroupIndex == nil then
+		local bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(self.nActivityId)
+		local nFirstReddot = 1
+		for i, v in ipairs(self.tbData) do
+			local bRed = false
+			if bInActGroup == false then
+				bRed = RedDotManager.GetValid(RedDotDefine.Activity_Group_Task_Group, {
+					self.nActivityId,
+					v.nGroupId
+				})
+			else
+				bRed = RedDotManager.GetValid(RedDotDefine.Activity_Group_Task_Group, {
+					nActGroupId,
+					self.nActivityId,
+					v.nGroupId
+				})
+			end
+			if bRed then
+				nFirstReddot = i
+				break
+			end
+		end
+		self.nCurGroupIndex = nFirstReddot
 	end
 end
 function OurRegimentTaskCtrl:refresh_Tab()

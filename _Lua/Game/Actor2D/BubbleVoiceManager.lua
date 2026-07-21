@@ -49,7 +49,7 @@ local nSpeed = 1
 local LoadAll = function()
 	if InUnityEditor == true then
 		sPath_BubbleData = NovaAPI.ApplicationDataPath .. "/../../GameDataTables/text_data/bubble/" .. sLanFolder .. "/BubbleData.json"
-		sPath_BubbleOffset = NovaAPI.ApplicationDataPath .. "/../../GameDataTables/text_data/bubble/BubbleOffset.json"
+		sPath_BubbleOffset = NovaAPI.ApplicationDataPath .. "/../AvgExcelToLua/Avg/bubble/BubbleOffset.json"
 		sPath_VoResLen = NovaAPI.ApplicationDataPath .. "/../../GameDataTables/text_data/bubble/VoResLen.json"
 	elseif RUNNING_BBV_EDITOR == true or AVG_EDITOR == true then
 		sPath_BubbleData = NovaAPI.StreamingAssetsPath .. "/../../../" .. sLanFolder .. "/BBV/BubbleData.json"

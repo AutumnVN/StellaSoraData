@@ -331,6 +331,8 @@ function RegionBossBuildCtrl:OnBtnClickGrid(nIdx, itemCtrl)
 		PlayerData.VampireSurvivor:CacheSelectedBuildId(self.selLvId, self.nIdx, self.tbCurShow[nIdx].nBuildId)
 	elseif self.nType == AllEnum.RegionBossFormationType.ScoreBoss then
 		PlayerData.ScoreBoss:SetSelBuildId(self.tbCurShow[nIdx].nBuildId, self.selLvId)
+	elseif self.nType == AllEnum.RegionBossFormationType.TraceHunt then
+		PlayerData.TraceHunt:SetSelBuildId(self.tbCurShow[nIdx].nBuildId)
 	elseif self.nType == AllEnum.RegionBossFormationType.SkillInstance then
 		PlayerData.SkillInstance:SetSelBuildId(self.tbCurShow[nIdx].nBuildId, self.selLvId)
 	elseif self.nType == AllEnum.RegionBossFormationType.WeeklyCopies then

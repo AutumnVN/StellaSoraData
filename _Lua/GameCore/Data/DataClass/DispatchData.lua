@@ -12,6 +12,17 @@ local OnEvent_NewDay = function()
 	EventManager.Hit("UpdateDispatchData")
 end
 local OnEvent_SettingsNotificationClose = function()
+	if tbAllDispatchData == nil then
+		return
+	end
+	for k, v in pairs(tbAllDispatchData) do
+		if v.State == AllEnum.DispatchState.Accepting then
+			NotificationManager.UnregisterNotification(20000000, v.Data.Id)
+		end
+		if LocalSettingData.GetLocalSettingData("Dispatch") then
+			NotificationManager.RegisterNotification(20000000, v.Data.Id, v.Data.StartTime + v.Data.ProcessTime * 60)
+		end
+	end
 end
 local Init = function()
 	EventManager.Add(EventId.IsNewDay, DispatchData, OnEvent_NewDay)
@@ -24,10 +35,12 @@ local CacheDispatchData = function(data)
 		return
 	end
 	for k, v in pairs(data.Infos) do
+		NotificationManager.UnregisterNotification(20000000, v.Id)
 		local state = AllEnum.DispatchState.Accepting
 		if v.ProcessTime * 60 + v.StartTime <= CS.ClientManager.Instance.serverTimeStamp then
 			state = AllEnum.DispatchState.Complete
-		else
+		elseif LocalSettingData.GetLocalSettingData("Dispatch") then
+			NotificationManager.RegisterNotification(20000000, v.Id, v.StartTime + v.ProcessTime * 60)
 		end
 		tbAllDispatchData[v.Id] = {Data = v, State = state}
 	end
@@ -347,6 +360,9 @@ local ReqApplyAgent = function(agentList, agentData, callback)
 			if callback ~= nil then
 				callback()
 			end
+			if LocalSettingData.GetLocalSettingData("Dispatch") then
+				NotificationManager.RegisterNotification(20000000, v.Id, v.BeginTime + agentData[v.Id].ProcessTime * 60)
+			end
 		end
 		EventManager.Hit(EventId.DispatchRefreshPanel, AllEnum.DispatchState.Accepting)
 		bReqApplyAgent = false
@@ -376,6 +392,7 @@ local ReqGiveUpAgent = function(dispatchId, callback)
 			callback()
 		end
 		EventManager.Hit(EventId.DispatchRefreshPanel)
+		NotificationManager.UnregisterNotification(20000000, dispatchId)
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.agent_give_up_req, mapData, nil, func_callback)
 end

@@ -6,10 +6,10 @@ local nArrowOffect = 9.5
 local leftSafeEdge = 30
 CommonTipsBaseCtrl.minTipHeight = 300
 CommonTipsBaseCtrl.maxTipHeight = 770
-function CommonTipsBaseCtrl:EnableGamepadUI(btn)
+function CommonTipsBaseCtrl:EnableGamepadUI(btn, bEnableVirtualMouse)
 	if GamepadUIManager.GetInputState() then
 		btn.gameObject:SetActive(true)
-		GamepadUIManager.EnableGamepadUI("CommonTipsBaseCtrl", self:GetGamepadUINode())
+		GamepadUIManager.EnableGamepadUI("CommonTipsBaseCtrl", self:GetGamepadUINode(), nil, bEnableVirtualMouse)
 	end
 end
 function CommonTipsBaseCtrl:DisableGamepadUI()

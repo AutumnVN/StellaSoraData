@@ -51,6 +51,7 @@ local LoadBattleData = function()
 	end
 end
 local LoadNotificationData = function()
+	LocalSettingData.mapData.Notification = LoadLocalData("NotificationFirst", true)
 	LocalSettingData.mapData.Energy = LoadLocalData("Energy", true)
 	LocalSettingData.mapData.Dispatch = LoadLocalData("Dispatch", true)
 end

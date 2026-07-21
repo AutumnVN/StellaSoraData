@@ -9,7 +9,8 @@ SideBannerCtrl._mapNodeConfig = {
 	goEntry = {},
 	goReward = {},
 	goFavour = {},
-	goAchievement = {}
+	goAchievement = {},
+	goItem = {}
 }
 SideBannerCtrl._mapEventConfig = {}
 function SideBannerCtrl:Popup(tbList)
@@ -59,6 +60,8 @@ function SideBannerCtrl:CreateBanner(mapData)
 		return self:CreateFavour(mapData)
 	elseif mapData.nType == AllEnum.SideBaner.Achievement then
 		return self:CreateAchievement(mapData)
+	elseif mapData.nType == AllEnum.SideBaner.Item then
+		return self:CreateItem(mapData)
 	end
 end
 function SideBannerCtrl:CreateEntry(mapData)
@@ -211,6 +214,27 @@ function SideBannerCtrl:CreateAchievement(mapData)
 		animator = aniItem,
 		transform = trRoot,
 		height = nHeight
+	}
+	return mapAfter
+end
+function SideBannerCtrl:CreateItem(mapData)
+	local goItem = instantiate(self._mapNode.goItem, self._mapNode.rtContent)
+	goItem:SetActive(true)
+	local trRoot = goItem.transform:Find("AnimRoot")
+	local txtTitle = trRoot:Find("imgBg/txtTitle"):GetComponent("TMP_Text")
+	local aniItem = trRoot:GetComponent("Animator")
+	local txtItemCount = trRoot:Find("imgBg/txtItemCount"):GetComponent("TMP_Text")
+	local imgItemIcon = trRoot:Find("imgBg/imgItemIcon"):GetComponent("Image")
+	local mapCfg = ConfigTable.GetData_Item(mapData.mapReward.id)
+	if mapCfg then
+		self:SetPngSprite(imgItemIcon, mapCfg.Icon)
+	end
+	NovaAPI.SetTMPText(txtItemCount, "×" .. mapData.mapReward.count)
+	NovaAPI.SetTMPText(txtTitle, ConfigTable.GetUIText("GachaItemTIpsTitle"))
+	local mapAfter = {
+		animator = aniItem,
+		transform = trRoot,
+		height = 140
 	}
 	return mapAfter
 end

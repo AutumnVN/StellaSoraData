@@ -63,7 +63,9 @@ AllEnum.CoinItemId = {
 	NormalSingleTicket = 501,
 	LimitedSingleTicket = 502,
 	DailyQuestActive = 61,
-	WeeklyQuestActive = 63
+	WeeklyQuestActive = 63,
+	TraceHunt = 37,
+	SoldierCurrency = 40
 }
 AllEnum.QuestStatus = {Undone = false, Done = true}
 AllEnum.CharHeadIconSurfix = {
@@ -410,6 +412,13 @@ AllEnum.AttachAttr = {
 		bPlayer = true
 	}
 }
+AllEnum.SoldierCharAttr = {
+	{sKey = "Energy"},
+	{
+		sKey = "InitialEnergy"
+	},
+	{sKey = "Recovery"}
+}
 AllEnum.CharConfigType = {
 	Attr = 1,
 	Char = 2,
@@ -476,7 +485,8 @@ AllEnum.WorldMapNodeType = {
 	Trial = 14,
 	JointDrill = 15,
 	ActivityLevels = 16,
-	ActivityStory = 17
+	ActivityStory = 17,
+	TraceHunt = 18
 }
 AllEnum.FrameColor_New = {
 	[0] = "0",
@@ -793,7 +803,8 @@ AllEnum.SideBaner = {
 	Achievement = 1,
 	DictionaryReward = 2,
 	DictionaryEntry = 3,
-	Favour = 4
+	Favour = 4,
+	Item = 5
 }
 AllEnum.RMBOrderType = {Mall = 1, BattlePass = 2}
 AllEnum.AvgLogType = {
@@ -1090,6 +1101,7 @@ AllEnum.Star_Tag = {
 	[809] = {sLanguage = 809},
 	[810] = {sLanguage = 810},
 	[811] = {sLanguage = 811},
+	[817] = {sLanguage = 817},
 	[818] = {sLanguage = 818},
 	[823] = {sLanguage = 823}
 }
@@ -1321,7 +1333,8 @@ AllEnum.RegionBossFormationType = {
 	JointDrill = 11,
 	ActivityLevels = 12,
 	ActivityStory = 13,
-	JointDrill_2 = 14
+	JointDrill_2 = 14,
+	TraceHunt = 15
 }
 AllEnum.EnergyPanelType = {
 	Main = 1,
@@ -1591,4 +1604,111 @@ AllEnum.GoldenSpyBuffType = {
 	UnactiveBuff = 3
 }
 AllEnum.GamepadIconSuffix = {Light = "", Dark = "_2"}
+AllEnum.SoldierHandbookType = {
+	Character = 1,
+	Partner = 2,
+	StarterCard = 3,
+	StrategyCard = 4
+}
+AllEnum.SoliderNoteTypeCfg = {
+	[GameEnum.soldierNodeType.Event] = {
+		Icon = "SoldierNodeType_Event",
+		Language = "SoldierNodeType_Event"
+	},
+	[GameEnum.soldierNodeType.Battle] = {
+		Icon = "SoldierNodeType_Battle",
+		Language = "SoldierNodeType_Battle"
+	},
+	[GameEnum.soldierNodeType.MidBossBattle] = {
+		Icon = "SoldierNodeType_MidBossBattle",
+		Language = "SoldierNodeType_MidBossBattle"
+	},
+	[GameEnum.soldierNodeType.FinalBossBattle] = {
+		Icon = "SoldierNodeType_FinalBossBattle",
+		Language = "SoldierNodeType_FinalBossBattle"
+	}
+}
+AllEnum.SoldierChessIconSurfix = {
+	S = "_S",
+	M = "_M",
+	L = "_L",
+	XL = "_XL",
+	Fight = "_Fight",
+	Sup = "_Sup"
+}
+AllEnum.SoldierPartnerLevelIcon = {
+	[GameEnum.PartnerLevelQuality.None] = {
+		bg = "PartnerQuality_00",
+		levelIcon = "PartnerLevelQuality_00"
+	},
+	[GameEnum.PartnerLevelQuality.Copper] = {
+		bg = "PartnerQuality_01",
+		levelIcon = "PartnerLevelQuality_01"
+	},
+	[GameEnum.PartnerLevelQuality.Silver] = {
+		bg = "PartnerQuality_02",
+		levelIcon = "PartnerLevelQuality_02"
+	},
+	[GameEnum.PartnerLevelQuality.Gold] = {
+		bg = "PartnerQuality_03",
+		levelIcon = "PartnerLevelQuality_03"
+	},
+	[GameEnum.PartnerLevelQuality.Color] = {
+		bg = "PartnerQuality_04",
+		levelIcon = "PartnerLevelQuality_04"
+	}
+}
+AllEnum.SoldierChessRarityIcon = {
+	[GameEnum.ChessRarity.White] = "ChessQuality_01",
+	[GameEnum.ChessRarity.Green] = "ChessQuality_02",
+	[GameEnum.ChessRarity.Blue] = "ChessQuality_03",
+	[GameEnum.ChessRarity.Purple] = "ChessQuality_04",
+	[GameEnum.ChessRarity.Gold] = "ChessQuality_05",
+	[GameEnum.ChessRarity.Color] = "ChessQuality_05"
+}
+AllEnum.SoldierStrategyCardRarityIcon = {
+	[GameEnum.itemRarity.N] = "StrategyCardQuality_01",
+	[GameEnum.itemRarity.M] = "StrategyCardQuality_02",
+	[GameEnum.itemRarity.R] = "StrategyCardQuality_03"
+}
+AllEnum.SoldierItemRarityIcon = {
+	[GameEnum.itemRarity.N] = "SoldierItemQuality_01",
+	[GameEnum.itemRarity.M] = "SoldierItemQuality_02",
+	[GameEnum.itemRarity.R] = "SoldierItemQuality_03",
+	[GameEnum.itemRarity.SR] = "SoldierItemQuality_04",
+	[GameEnum.itemRarity.SSR] = "SoldierItemQuality_05"
+}
+AllEnum.SoldierPositionStr = {
+	[GameEnum.SoldierPositionType.FightPosition] = {
+		sLanguageId = "Soldier_Handbook_Vanguard",
+		sIcon = ""
+	},
+	[GameEnum.SoldierPositionType.SupportPosition] = {
+		sLanguageId = "Soldier_Handbook_Support",
+		sIcon = ""
+	}
+}
+AllEnum.SoldierResultType = {
+	NodeSuccess = 1,
+	NodeFail = 2,
+	ChallengeSuccess = 3,
+	ChallengeFail = 4
+}
+AllEnum.SoldierRewardSource = {
+	Apply = 1,
+	EventBattle = 2,
+	Battle = 3,
+	CardWipe = 4
+}
+AllEnum.SoldierCardType = {
+	UnknownCard = "Undefined",
+	StartedCard = "Starter",
+	StrategyCard = "Strategy"
+}
+AllEnum.SoldierPositionType = {
+	Fight = 1,
+	Support = 2,
+	Waiting = 3,
+	Other = 4
+}
 return AllEnum

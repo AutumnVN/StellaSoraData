@@ -105,9 +105,9 @@ end
 function TowerDefenseCharacterDetailCtrl:RefreshInfoData()
 	local nEntityId = self.TowerdefenseLevelData:GetCharacterEntityId(self.nSelectedId)
 	local Info = AdventureModuleHelper.GetEntityInfo(nEntityId)
-	local atk = Info ~= nil and Info.atk or 0
+	local atk = Info ~= nil and Info.atk:AsFloat() or 0
 	NovaAPI.SetTMPText(self._mapNode.txt_attackValue, tostring(atk))
-	local atkSpeed = Info ~= nil and Info.normalAttackSpd or 0
+	local atkSpeed = Info ~= nil and Info.normalAttackSpd:AsFloat() or 0
 	atkSpeed = clearFloat(atkSpeed)
 	NovaAPI.SetTMPText(self._mapNode.txt_AttackSpeedValue, FormatEffectValue(atkSpeed, true, GameEnum.ValueFormat.TDP))
 	local config = ConfigTable.GetData("TowerDefenseCharacter", self.nSelectedId)

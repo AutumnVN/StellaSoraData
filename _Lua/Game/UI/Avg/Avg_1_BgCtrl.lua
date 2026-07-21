@@ -391,6 +391,7 @@ function Avg_1_BgCtrl:CtrlBg(tbParam)
 	local nDuration = tbParam[12]
 	local bWait = tbParam[13]
 	local bIsFG = tbParam[14] == 1
+	local nRotate = tbParam[15]
 	local enumEase = Ease[sEaseType]
 	local rt, goIns, eft, img = self.rtBg, self.goCurBgIns, self.eftBg, self.imgBg
 	if bIsFG == true then
@@ -427,9 +428,10 @@ function Avg_1_BgCtrl:CtrlBg(tbParam)
 	end
 	if sShakeType ~= nil and sShakeType ~= "none" then
 		local tb = self.mapPresetShake[sShakeType]
-		if type(tb) == "table" then
+		local _sT = type(tb)
+		if _sT == "table" then
 			NovaAPI.DoShakeEffect(goIns, tb[1], tb[2], tb[3])
-		else
+		elseif _sT == "number" and tb == 1 then
 			NovaAPI.StopShakeEffect(goIns)
 		end
 	end
@@ -491,6 +493,15 @@ function Avg_1_BgCtrl:CtrlBg(tbParam)
 			end
 		end
 	end
+	if type(nRotate) == "number" then
+		if 0 < nDuration then
+			local tweener = img.transform:DOLocalRotate(Vector3(0, 0, nRotate), nDuration, RotateMode.FastBeyond360)
+			tweener:SetUpdate(true)
+			tweener:SetEase(enumEase)
+		else
+			img.transform.localRotation = Quaternion.Euler(0, 0, nRotate)
+		end
+	end
 	if bWait == true and 0 < nDuration then
 		return nDuration
 	else
@@ -508,6 +519,7 @@ function Avg_1_BgCtrl:SetFx(tbParam)
 	local nDuration = tbParam[7]
 	local bWait = tbParam[8]
 	local bEnablePP = tbParam[9] == false
+	local nRotate = tbParam[10]
 	local map, trRoot
 	if nPosIndex == 0 then
 		map = self.mapBgFx
@@ -524,12 +536,13 @@ function Avg_1_BgCtrl:SetFx(tbParam)
 		nPosX = nPosX or 0
 		nPosY = nPosY or 0
 		nScale = nScale or 1
+		nRotate = nRotate or 0
 		local bIsLoop, goFXIns = NovaAPI.PlayFX(self:EnablePostProcessing(bEnablePP), assetPath, self._panel.nSpeedRate or 1)
 		local trFxPlayer = goFXIns.transform
 		trFxPlayer:SetLayerRecursively(self.nLayerIndex)
 		trFxPlayer:SetParent(trRoot)
 		trFxPlayer.localPosition = Vector3(nPosX, nPosY, 0)
-		trFxPlayer.localRotation = Quaternion.identity
+		trFxPlayer.localRotation = Quaternion.Euler(0, 0, nRotate)
 		nScale = self.nRatioScale * nScale
 		trFxPlayer.localScale = Vector3(nScale, nScale, nScale)
 		self._panel:PlayFxSound(sFxName, true)
@@ -614,6 +627,8 @@ function Avg_1_BgCtrl:RestoreAll(bActive, tbDataBg, tbDataFg, mapBgFx, mapFgFx, 
 		bEnablePP = true
 	end
 	GameUIUtils.SetCameraPostProcessing(self._mapNode.camera, bEnablePP)
+	local nRotate = tbDataBg.nRotate
+	self.rtBg.transform.localRotation = Quaternion.Euler(0, 0, nRotate)
 	sResName = tbDataFg.sResName
 	if sResName ~= "" then
 		if self.goCurFgIns == nil then
@@ -639,6 +654,8 @@ function Avg_1_BgCtrl:RestoreAll(bActive, tbDataBg, tbDataFg, mapBgFx, mapFgFx, 
 		else
 			NovaAPI.SetImageColor(self.imgFg, Color(tbDataFg.nBrightness, tbDataFg.nBrightness, tbDataFg.nBrightness, tbDataFg.nAlpha))
 		end
+		nRotate = tbDataFg.nRotate
+		self.rtFg.transform.localRotation = Quaternion.Euler(0, 0, nRotate)
 	end
 	self.mapBgFx = {}
 	self.mapFgFx = {}
@@ -677,7 +694,7 @@ function Avg_1_BgCtrl:RestoreAll(bActive, tbDataBg, tbDataFg, mapBgFx, mapFgFx, 
 						trFxPlayer:SetLayerRecursively(self.nLayerIndex)
 						trFxPlayer:SetParent(trRoot)
 						trFxPlayer.localPosition = Vector3(v.x, v.y, 0)
-						trFxPlayer.localRotation = Quaternion.identity
+						trFxPlayer.localRotation = Quaternion.Euler(0, 0, v.r or 0)
 						local ns = v.s * self.nRatioScale
 						trFxPlayer.localScale = Vector3(ns, ns, ns)
 						if bIsLoop == true then

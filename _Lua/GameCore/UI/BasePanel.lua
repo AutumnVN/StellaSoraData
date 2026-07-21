@@ -6,6 +6,7 @@ local sTopBarCtrlLua = "Game.UI.TopBarEx.TopBarCtrl"
 local sSafeAreaRoot = "----SafeAreaRoot----"
 local bDebugLog = false
 local typeof = typeof
+local InUnityEditor = NovaAPI.IsEditorPlatform()
 function BasePanel:ctor(nIndex, nPanelId, tbParam)
 	self._nIndex = nIndex
 	self._nPanelId = nPanelId
@@ -114,7 +115,10 @@ function BasePanel:_PreEnter(callback, goSnapshot)
 						rt.anchoredPosition = Vector2.zero
 					end
 				end
-				NovaAPI.ProcResPathNote(goPrefabInstance, GameResourceLoader.MakeBundleGroup("UI", self._nPanelId))
+				if InUnityEditor then
+					local sPanelName = self.__cname
+					NovaAPI.AttachPrefabLuaInspector(goPrefabInstance, sLuaClassName, sPanelName, sPrefabFullPath)
+				end
 				if objCtrl == nil then
 					objCtrl = luaClassName.new(goPrefabInstance, self)
 					table.insert(self._tbObjCtrl, objCtrl)

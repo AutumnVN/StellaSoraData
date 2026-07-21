@@ -1,7 +1,7 @@
 local ActivityDataBase = require("GameCore.Data.DataClass.Activity.ActivityDataBase")
 local PenguinCardActData = class("PenguinCardActData", ActivityDataBase)
 local LocalData = require("GameCore.Data.LocalData")
-local PenguinLevel = require("Game.UI.Play_PenguinCard.PenguinLevel")
+local PenguinLevel = require("Game.UI.Play_PenguinCard.NormalMode.PenguinLevel_Normal")
 local ClientManager = CS.ClientManager.Instance
 local RapidJson = require("rapidjson")
 function PenguinCardActData:Init()

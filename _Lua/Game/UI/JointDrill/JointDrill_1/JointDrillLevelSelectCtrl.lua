@@ -593,6 +593,7 @@ function JointDrillLevelSelectCtrl:OnEnable()
 	if self.actDataIns == nil then
 		return
 	end
+	self.actDataIns:MarkEnteredToday()
 	self.nActStatus = self.actDataIns:GetActStatus()
 	self._mapNode.goSmoke.gameObject:SetActive(false)
 	self._mapNode.goSmoke.gameObject:SetActive(true)

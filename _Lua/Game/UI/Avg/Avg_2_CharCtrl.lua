@@ -135,6 +135,7 @@ function Avg_2_CharCtrl:ClearCharData(timer, data, bForceClear)
 	data.eftGrayAndTrans.enabled = false
 	data.rtEmoji.anchoredPosition = Vector2.zero
 	data.rtEmoji.localScale = Vector3.one
+	NovaAPI.PlayGradient2Anim(data.rawImage.gameObject, 0, 1, 0)
 	if data.trFrame ~= nil then
 		data.trFrame.gameObject:SetActive(false)
 		data.trFrame = nil
@@ -723,9 +724,10 @@ function Avg_2_CharCtrl:_SetShake(eftShake, sShakeType, animator)
 			animator:SetTrigger("none")
 			animator.enabled = false
 		end
-		if type(tb) == "table" then
+		local _sT = type(tb)
+		if _sT == "table" then
 			NovaAPI.DoShakeEffect(eftShake, tb[1], tb[2], tb[3])
-		else
+		elseif _sT == "number" and tb == 1 then
 			NovaAPI.StopShakeEffect(eftShake)
 		end
 	end
@@ -758,6 +760,9 @@ function Avg_2_CharCtrl:_SetExit(mapCharData, nDuration)
 	else
 		self:ClearCharData(nil, mapCharData, false)
 	end
+end
+function Avg_2_CharCtrl:_SetGradient2(mapCharData, nStart, nEnd, nDuration)
+	NovaAPI.PlayGradient2Anim(mapCharData.rawImage.gameObject, nStart, nEnd, nDuration)
 end
 function Avg_2_CharCtrl:SetChar(tbParam)
 	self:LoadPresetShake()
@@ -1006,6 +1011,27 @@ function Avg_2_CharCtrl:PlayCharAnim(tbParam)
 		return 0
 	end
 end
+function Avg_2_CharCtrl:PlayGradient2Anim(tbParam)
+	local sAvgCharId = tbParam[1]
+	local nStart = tbParam[2]
+	local nEnd = tbParam[3]
+	local nDuration = tbParam[4]
+	local bWait = tbParam[5]
+	sAvgCharId = AdjustMainRoleAvgCharId(sAvgCharId)
+	local mapCharData, bIsNew = self:GetCharData(sAvgCharId)
+	if bIsNew == true then
+		printError("Avg PlayGradient2Anim 指令配置中，含逻辑错误，不应该直接控制一个 '未入场的角色' 。")
+		return -1
+	end
+	if mapCharData ~= nil then
+		self:_SetGradient2(mapCharData, nStart, nEnd, nDuration)
+	end
+	if bWait == true and 0 < nDuration then
+		return nDuration
+	else
+		return 0
+	end
+end
 function Avg_2_CharCtrl:_SetCharHeadOffset(tr, sAvgCharId, sPose, nFrameIndex)
 	local rt = tr.gameObject:GetComponent("RectTransform")
 	sAvgCharId = self._panel:GetAvgCharReuseRes(sAvgCharId)
@@ -1170,6 +1196,7 @@ function Avg_2_CharCtrl:RestoreAll(bActive, tbHistoryData)
 			self:_SetBright(mapCharData, data.nBright, 0, nil)
 			self:_SetColor(mapCharData, Color(1, 1, 1, data.nAlpha), 0, nil)
 			self:_SetRotate(data.nRotateType, mapCharData, data.nRotate, 0, nil)
+			self:_SetGradient2(mapCharData, 1, data.nBlackOffset, 0)
 			if data.sAnim ~= "" then
 				mapCharData.animator.enabled = true
 				mapCharData.animator:CrossFade("Base Layer." .. data.sAnim, 0, -1, 1, 0)

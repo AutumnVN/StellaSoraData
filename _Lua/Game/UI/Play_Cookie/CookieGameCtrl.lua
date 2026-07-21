@@ -144,11 +144,13 @@ function CookieGameCtrl:RefreshQuestInfo()
 	if self.tbQuestGroupId == 0 then
 		return
 	end
+	local questActData = PlayerData.Activity:GetActivityDataById(nQuestActId)
+	local mapActivityTaskDatas = questActData and questActData.mapActivityTaskDatas or nil
 	local func_Parse_ActivityTask = function(mapData)
 		if mapData.ActivityTaskGroupId == self.tbQuestGroupId then
 			self.nTotalMiniGameQuest = self.nTotalMiniGameQuest + 1
 			local _nTaskId = mapData.Id
-			local taskData = PlayerData.Activity:GetActivityDataById(nQuestActId).mapActivityTaskDatas[_nTaskId]
+			local taskData = mapActivityTaskDatas and mapActivityTaskDatas[_nTaskId] or nil
 			if taskData ~= nil and taskData.nStatus == AllEnum.ActQuestStatus.Received then
 				self.nCompletedMiniGameQuest = self.nCompletedMiniGameQuest + 1
 			end
@@ -396,7 +398,7 @@ function CookieGameCtrl:OnBtnClick_Enter()
 	end
 	local nScoreNeedToPass = levelData.FirstCompletionScore
 	local openPanel = function()
-		EventManager.Hit(EventId.OpenPanel, PanelId.CookieBoardPanel_400010, self.nLevelId, bRhythmlMode, bPipeLineMode, levelData.CountDownLimit, self.nActId, nScoreNeedToPass or 0)
+		EventManager.Hit(EventId.OpenPanel, PanelId.CookieBoardPanel_400016, self.nLevelId, bRhythmlMode, bPipeLineMode, levelData.CountDownLimit, self.nActId, nScoreNeedToPass or 0)
 	end
 	local nRandom = math.random(46, 47)
 	EventManager.Hit(EventId.SetTransition, nRandom, openPanel)

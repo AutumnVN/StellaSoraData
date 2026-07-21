@@ -57,11 +57,13 @@ function PlayerHandbookData:UpdateHandbook(msgData)
 			local curResult = UTILS.IsBitSet(tbData, nIndex)
 			if lastResult ~= curResult and nil ~= self.tbHandbookCfgData[msgData.Type] then
 				local id = self.tbHandbookCfgData[msgData.Type][nIndex]
-				if nil == self.tbHandbookData[id] then
-					local handbookData = self:CreateHandbook(msgData.Type, id, 1)
-					self.tbHandbookData[id] = handbookData
-				else
-					self.tbHandbookData[id]:UpdateUnlockState(1)
+				if id ~= nil then
+					if nil == self.tbHandbookData[id] then
+						local handbookData = self:CreateHandbook(msgData.Type, id, 1)
+						self.tbHandbookData[id] = handbookData
+					else
+						self.tbHandbookData[id]:UpdateUnlockState(1)
+					end
 				end
 			end
 		end

@@ -474,7 +474,8 @@ function AvgEditorCtrl:PrepareConstCmdParamOptions()
 				"CtrlCharHead",
 				"SetL2D",
 				"CtrlL2D",
-				"SetCharL2D"
+				"SetCharL2D",
+				"PlayGradient2Anim"
 			}
 		},
 		{
@@ -532,7 +533,8 @@ function AvgEditorCtrl:PrepareConstCmdParamOptions()
 		"CtrlChar",
 		"PlayCharAnim",
 		"SetCharHead",
-		"CtrlCharHead"
+		"CtrlCharHead",
+		"PlayGradient2Anim"
 	}
 	self.tbGroupC = {"SetFilm", "SetTrans"}
 	self.tbGroupD = {
@@ -620,7 +622,7 @@ function AvgEditorCtrl:GetAvgCharReuseRes(sAvgCharId)
 	if sReuse == nil then
 		return sAvgCharId
 	else
-		return sReuse
+		return AdjustMainRoleAvgCharId(sReuse)
 	end
 end
 function AvgEditorCtrl:GetCmdColor(sCmdName)
@@ -1144,6 +1146,12 @@ function AvgEditorCtrl:CreateCmdIns(sAvgId)
 		self:OnEditEnd_inputJumpToID()
 		self._mapNode.loopSV:ForceRefresh()
 	end
+	self.mapEnableChoicePreivew = {
+		SetChoiceJumpTo = {},
+		SetMajorChoiceJumpTo = {},
+		SetPersonalityChoiceJumpTo = {},
+		SetPhoneMsgChoiceJumpTo = {}
+	}
 end
 function AvgEditorCtrl:OnRefreshGrid(go)
 	local nTransformIndex = tonumber(go.name)
@@ -1224,6 +1232,27 @@ function AvgEditorCtrl:OnValueChanged(go)
 	if type(func) == "function" then
 		func(self, trCmd, self.tbTempCmdParam or tbCmdData.param)
 	end
+	if self.mapEnableChoicePreivew[sCmdName] ~= nil then
+		self:Proc_EnableChoicePreview(tbCmdData)
+	end
+end
+function AvgEditorCtrl:Proc_EnableChoicePreview(tbCmdData)
+	local sCmd = tbCmdData.cmd
+	local mapJumpTo = self.mapEnableChoicePreivew[sCmd]
+	local sGroupId = tostring(tbCmdData.param[1])
+	local sJumpIdx = tostring(tbCmdData.param[2])
+	local bEnable = tbCmdData.param.enable_in_visualize_preview == true
+	if bEnable == true then
+		mapJumpTo[sGroupId] = sJumpIdx
+	else
+		mapJumpTo[sGroupId] = "1"
+	end
+	for i, v in ipairs(self.tbAvgCfg) do
+		if v.cmd == sCmd and tostring(v.param[1]) == sGroupId then
+			v.param.enable_in_visualize_preview = mapJumpTo[sGroupId] == v.param[2]
+		end
+	end
+	self._mapNode.loopSV:ForceRefresh()
 end
 function AvgEditorCtrl:OnBtnClick_BackToMain(btn)
 	delChildren(self._mapNode.cmdContent)
@@ -1741,7 +1770,57 @@ function AvgEditorCtrl:GetAvgTalkVoice(tr)
 	local togVoice = root:Find("togSkip"):GetComponent("Toggle")
 	return NovaAPI.GetInputFieldText(voiceContent), NovaAPI.GetToggleIsOn(togVoice)
 end
+function AvgEditorCtrl:Check_SkipChoiceContent(sCmdName, tbParam)
+	local nCount = #self.tbChoiceCmdName
+	local mapJumpTo = self.mapEnableChoicePreivew[sCmdName]
+	if mapJumpTo ~= nil then
+		local sGroupId = tostring(tbParam[1])
+		local sIdx = tostring(tbParam[2])
+		local sEnabledIdx = mapJumpTo[sGroupId] or "1"
+		if sCmdName == self.tbChoiceCmdName[nCount] and sGroupId == self.tbChoiceGroupId[nCount] then
+			self.tbChoiceEnabled[nCount] = sIdx == sEnabledIdx
+		else
+			table.insert(self.tbChoiceCmdName, sCmdName)
+			table.insert(self.tbChoiceGroupId, sGroupId)
+			table.insert(self.tbChoiceEnabled, sIdx == sEnabledIdx)
+		end
+		return true
+	else
+		local sLastCmdName = self.tbChoiceCmdName[nCount]
+		local sLastGroupId = self.tbChoiceGroupId[nCount]
+		local bEnable = self.tbChoiceEnabled[nCount]
+		if bEnable == nil then
+			bEnable = true
+		end
+		if sLastCmdName == "SetChoiceJumpTo" and sCmdName == "SetChoiceEnd" and sLastGroupId == tbParam[1] then
+			table.remove(self.tbChoiceCmdName, nCount)
+			table.remove(self.tbChoiceGroupId, nCount)
+			table.remove(self.tbChoiceEnabled, nCount)
+			return true
+		elseif sLastCmdName == "SetMajorChoiceJumpTo" and sCmdName == "SetMajorChoiceEnd" and sLastGroupId == tbParam[1] then
+			table.remove(self.tbChoiceCmdName, nCount)
+			table.remove(self.tbChoiceGroupId, nCount)
+			table.remove(self.tbChoiceEnabled, nCount)
+			return true
+		elseif sLastCmdName == "SetPersonalityChoiceJumpTo" and sCmdName == "SetPersonalityChoiceEnd" and sLastGroupId == tbParam[1] then
+			table.remove(self.tbChoiceCmdName, nCount)
+			table.remove(self.tbChoiceGroupId, nCount)
+			table.remove(self.tbChoiceEnabled, nCount)
+			return true
+		elseif sLastCmdName == "SetPhoneMsgChoiceJumpTo" and sCmdName == "SetPhoneMsgChoiceEnd" and sLastGroupId == tbParam[1] then
+			table.remove(self.tbChoiceCmdName, nCount)
+			table.remove(self.tbChoiceGroupId, nCount)
+			table.remove(self.tbChoiceEnabled, nCount)
+			return true
+		else
+			return bEnable == true
+		end
+	end
+end
 function AvgEditorCtrl:GetHistoryData_Stage(bPreview)
+	self.tbChoiceCmdName = {}
+	self.tbChoiceGroupId = {}
+	self.tbChoiceEnabled = {}
 	local mapData = {
 		[1] = {},
 		[2] = {},
@@ -1772,7 +1851,8 @@ function AvgEditorCtrl:GetHistoryData_Stage(bPreview)
 				nAlpha = 1,
 				nBrightness = 1,
 				nBlur = 0,
-				bEnablePP = false
+				bEnablePP = false,
+				nRotate = 0
 			},
 			fg = {
 				sResName = "",
@@ -1784,7 +1864,8 @@ function AvgEditorCtrl:GetHistoryData_Stage(bPreview)
 				nGray = 0,
 				nAlpha = 1,
 				nBrightness = 1,
-				nBlur = 0
+				nBlur = 0,
+				nRotate = 0
 			},
 			stage = {
 				nPivotX = 0.5,
@@ -1809,12 +1890,14 @@ function AvgEditorCtrl:GetHistoryData_Stage(bPreview)
 		return mapData
 	end
 	if self.nCurTransformIndex > 0 then
+		local bEnable = false
 		for i = 1, self.nCurTransformIndex do
 			local tbCmdData = self.tbAvgCfg[i]
 			local sCmdName = tbCmdData.cmd
 			local tbParam = tbCmdData.param
+			bEnable = self:Check_SkipChoiceContent(sCmdName, tbParam)
 			local nIdx = 0
-			if tbParam ~= nil then
+			if tbParam ~= nil and bEnable == true then
 				nIdx = tbParam[1]
 				if sCmdName == "SetBg" then
 					nIdx = nIdx + 1
@@ -1852,6 +1935,7 @@ function AvgEditorCtrl:GetHistoryData_Stage(bPreview)
 					data.nAlpha = tbParam[8] or data.nAlpha
 					data.nBrightness = tbParam[9] or data.nBrightness
 					data.nBlur = tbParam[10] or data.nBlur
+					data.nRotate = tbParam[16] or data.nRotate
 				elseif sCmdName == "SetStage" then
 					nIdx = nIdx + 2
 					local data = mapData[nIdx]
@@ -1900,7 +1984,8 @@ function AvgEditorCtrl:GetHistoryData_Stage(bPreview)
 								x = tbParam[5] or 0,
 								y = tbParam[6] or 0,
 								s = tbParam[7] or 1,
-								bFxEnablePP = tbParam[10] or false
+								bFxEnablePP = tbParam[10] or false,
+								r = tbParam[11] or 0
 							})
 						else
 							data[sFxName] = nil
@@ -1930,6 +2015,9 @@ function AvgEditorCtrl:GetHistoryData_Stage(bPreview)
 	return mapData
 end
 function AvgEditorCtrl:GetHistoryData_Char(bPreview)
+	self.tbChoiceCmdName = {}
+	self.tbChoiceGroupId = {}
+	self.tbChoiceEnabled = {}
 	local mapData = {
 		[1] = {},
 		[2] = {},
@@ -1972,7 +2060,8 @@ function AvgEditorCtrl:GetHistoryData_Char(bPreview)
 			nFramePosX = 0,
 			nFramePosY = 0,
 			nFrameScale = 1,
-			nBgType = 0
+			nBgType = 0,
+			nBlackOffset = 1
 		}
 	end
 	local funcGetCorrectSortOrder = function(nOrder)
@@ -1994,130 +2083,142 @@ function AvgEditorCtrl:GetHistoryData_Char(bPreview)
 		return mapData
 	end
 	if self.nCurTransformIndex > 0 then
+		local bEnable = false
 		for i = 1, self.nCurTransformIndex do
 			local tbCmdData = self.tbAvgCfg[i]
 			local sCmdName = tbCmdData.cmd
 			local tbParam = tbCmdData.param
-			if sCmdName == "SetChar" then
-				if tbParam[1] == 0 then
-					local data = mapData[funcGetData("")]
-					if data ~= nil then
-						data.nStageType = tbParam[2] + 1
-						local sKey = tbParam[3]
-						data.sAvgCharId = AdjustMainRoleAvgCharId(tbParam[4])
-						data.sBody = tbParam[5]
-						data.sFace = tbParam[6]
-						data.sEmoji = tbParam[7]
-						data.nSortOrder = funcGetCorrectSortOrder(tbParam[8] or data.nSortOrder)
-						if sKey == "none" then
-							data.nPosX = tbParam[9] or data.nPosX
-							data.nPosY = tbParam[10] or data.nPosY
-							data.nScale = tbParam[11] or data.nScale
-							data.nGray = tbParam[12] or data.nGray
-							data.nBright = tbParam[13] or data.nBright
-							data.nAlpha = tbParam[14] or data.nAlpha
-							data.nBlur = tbParam[17] or data.nBlur
-						else
-							local dataPreset
-							for i, v in ipairs(self._panel.tbAvgPreset.CharEnter) do
-								if v[1] == sKey then
-									dataPreset = v[2]
-									break
+			bEnable = self:Check_SkipChoiceContent(sCmdName, tbParam)
+			if bEnable == true then
+				if sCmdName == "SetChar" then
+					if tbParam[1] == 0 then
+						local data = mapData[funcGetData("")]
+						if data ~= nil then
+							data.nStageType = tbParam[2] + 1
+							local sKey = tbParam[3]
+							data.sAvgCharId = AdjustMainRoleAvgCharId(tbParam[4])
+							data.sBody = tbParam[5]
+							data.sFace = tbParam[6]
+							data.sEmoji = tbParam[7]
+							data.nSortOrder = funcGetCorrectSortOrder(tbParam[8] or data.nSortOrder)
+							if sKey == "none" then
+								data.nPosX = tbParam[9] or data.nPosX
+								data.nPosY = tbParam[10] or data.nPosY
+								data.nScale = tbParam[11] or data.nScale
+								data.nGray = tbParam[12] or data.nGray
+								data.nBright = tbParam[13] or data.nBright
+								data.nAlpha = tbParam[14] or data.nAlpha
+								data.nBlur = tbParam[17] or data.nBlur
+							else
+								local dataPreset
+								for i, v in ipairs(self._panel.tbAvgPreset.CharEnter) do
+									if v[1] == sKey then
+										dataPreset = v[2]
+										break
+									end
+								end
+								if dataPreset ~= nil then
+									data.nPosX = dataPreset.nPosX[2]
+									data.nPosY = dataPreset.nPosY[2]
+									data.nScale = dataPreset.nScale[2]
+									data.nGray = dataPreset.nGray[2]
+									data.nBright = dataPreset.nBright[2]
+									data.nAlpha = dataPreset.nAlpha[2]
+									data.nBlur = dataPreset.nBlur[2]
 								end
 							end
-							if dataPreset ~= nil then
-								data.nPosX = dataPreset.nPosX[2]
-								data.nPosY = dataPreset.nPosY[2]
-								data.nScale = dataPreset.nScale[2]
-								data.nGray = dataPreset.nGray[2]
-								data.nBright = dataPreset.nBright[2]
-								data.nAlpha = dataPreset.nAlpha[2]
-								data.nBlur = dataPreset.nBlur[2]
-							end
+						end
+					else
+						local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[4]))
+						funcReset(nIndex)
+					end
+				elseif sCmdName == "CtrlChar" then
+					local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[1]))
+					local data = mapData[nIndex]
+					if data ~= nil then
+						if tbParam[17] == true then
+							funcReset(nIndex)
+						else
+							data.sBody = tbParam[2] or data.sBody
+							data.sFace = tbParam[3] or data.sFace
+							data.sEmoji = tbParam[4] or data.sEmoji
+							data.nSortOrder = funcGetCorrectSortOrder(tbParam[5] or data.nSortOrder)
+							data.nPosX = tbParam[6] or data.nPosX
+							data.nPosY = tbParam[7] or data.nPosY
+							data.nScale = tbParam[8] or data.nScale
+							data.nGray = tbParam[9] or data.nGray
+							data.nBright = tbParam[10] or data.nBright
+							data.nAlpha = tbParam[11] or data.nAlpha
+							data.nRotateType = tbParam[15] or data.nRotateType
+							data.nRotate = tbParam[16] or data.nRotate
+							data.nBlur = tbParam[20] or data.nBlur
 						end
 					end
-				else
-					local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[4]))
-					funcReset(nIndex)
-				end
-			elseif sCmdName == "CtrlChar" then
-				local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[1]))
-				local data = mapData[nIndex]
-				if data ~= nil then
-					if tbParam[17] == true then
-						funcReset(nIndex)
-					else
-						data.sBody = tbParam[2] or data.sBody
-						data.sFace = tbParam[3] or data.sFace
-						data.sEmoji = tbParam[4] or data.sEmoji
-						data.nSortOrder = funcGetCorrectSortOrder(tbParam[5] or data.nSortOrder)
-						data.nPosX = tbParam[6] or data.nPosX
-						data.nPosY = tbParam[7] or data.nPosY
-						data.nScale = tbParam[8] or data.nScale
-						data.nGray = tbParam[9] or data.nGray
-						data.nBright = tbParam[10] or data.nBright
-						data.nAlpha = tbParam[11] or data.nAlpha
-						data.nRotateType = tbParam[15] or data.nRotateType
-						data.nRotate = tbParam[16] or data.nRotate
-						data.nBlur = tbParam[20] or data.nBlur
-					end
-				end
-			elseif sCmdName == "PlayCharAnim" then
-				local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[1]))
-				local data = mapData[nIndex]
-				if data ~= nil then
-					if tbParam[3] == true then
-						funcReset(nIndex)
-					else
-						data.sAnim = tbParam[2]
-					end
-				end
-			elseif sCmdName == "SetCharHead" then
-				if tbParam[1] == 0 then
-					local data = mapData[funcGetData("")]
+				elseif sCmdName == "PlayCharAnim" then
+					local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[1]))
+					local data = mapData[nIndex]
 					if data ~= nil then
-						data.nStageType = 1
-						data.nPosY = 0.5
-						data.sAvgCharId = AdjustMainRoleAvgCharId(tbParam[6])
-						data.sBody = tbParam[7]
-						data.sFace = tbParam[8]
-						data.sEmoji = tbParam[9]
-						data.nPosX = tbParam[11] or data.nPosX
-						data.nPosY = tbParam[12] or data.nPosY
-						data.nScale = tbParam[13] or data.nScale
-						data.nGray = tbParam[14] or data.nGray
-						data.nBright = tbParam[15] or data.nBright
-						data.nAlpha = tbParam[16] or data.nAlpha
-						data.nBlur = tbParam[19] or data.nBlur
-						data.IsCharHead = true
-						data.nStagePos = tbParam[2] + 1
-						data.nBgType = tbParam[10]
-						data.nFramePosX = tbParam[3] or data.nFramePosX
-						data.nFramePosY = tbParam[4] or data.nFramePosY
-						data.nFrameScale = tbParam[5] or data.nFrameScale
+						if tbParam[3] == true then
+							funcReset(nIndex)
+						else
+							data.sAnim = tbParam[2]
+						end
 					end
-				else
-					local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[6]))
-					funcReset(nIndex)
-				end
-			elseif sCmdName == "CtrlCharHead" then
-				local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[4]))
-				local data = mapData[nIndex]
-				if data ~= nil then
-					data.nFramePosX = tbParam[1] or data.nFramePosX
-					data.nFramePosY = tbParam[2] or data.nFramePosY
-					data.nFrameScale = tbParam[3] or data.nFrameScale
-					data.nBgType = tbParam[5]
-				end
-			elseif sCmdName == "SetTrans" then
-				if tbParam[5] == true then
-					for i = 1, 6 do
-						funcReset(i)
+				elseif sCmdName == "SetCharHead" then
+					if tbParam[1] == 0 then
+						local data = mapData[funcGetData("")]
+						if data ~= nil then
+							data.nStageType = 1
+							data.nPosY = 0.5
+							data.sAvgCharId = AdjustMainRoleAvgCharId(tbParam[6])
+							data.sBody = tbParam[7]
+							data.sFace = tbParam[8]
+							data.sEmoji = tbParam[9]
+							data.nPosX = tbParam[11] or data.nPosX
+							data.nPosY = tbParam[12] or data.nPosY
+							data.nScale = tbParam[13] or data.nScale
+							data.nGray = tbParam[14] or data.nGray
+							data.nBright = tbParam[15] or data.nBright
+							data.nAlpha = tbParam[16] or data.nAlpha
+							data.nBlur = tbParam[19] or data.nBlur
+							data.IsCharHead = true
+							data.nStagePos = tbParam[2] + 1
+							data.nBgType = tbParam[10]
+							data.nFramePosX = tbParam[3] or data.nFramePosX
+							data.nFramePosY = tbParam[4] or data.nFramePosY
+							data.nFrameScale = tbParam[5] or data.nFrameScale
+						end
+					else
+						local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[6]))
+						funcReset(nIndex)
 					end
-				end
-			elseif sCmdName == "Clear" and tbParam[1] == true then
-				for i = 1, 6 do
-					funcReset(i)
+				elseif sCmdName == "CtrlCharHead" then
+					local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[4]))
+					local data = mapData[nIndex]
+					if data ~= nil then
+						data.nFramePosX = tbParam[1] or data.nFramePosX
+						data.nFramePosY = tbParam[2] or data.nFramePosY
+						data.nFrameScale = tbParam[3] or data.nFrameScale
+						data.nBgType = tbParam[5]
+					end
+				elseif sCmdName == "SetTrans" then
+					if tbParam[5] == true then
+						for i = 1, 6 do
+							funcReset(i)
+						end
+					end
+				elseif sCmdName == "Clear" then
+					if tbParam[1] == true then
+						for i = 1, 6 do
+							funcReset(i)
+						end
+					end
+				elseif sCmdName == "PlayGradient2Anim" then
+					local nIndex = funcGetData(AdjustMainRoleAvgCharId(tbParam[1]))
+					local data = mapData[nIndex]
+					if data ~= nil then
+						data.nBlackOffset = tbParam[3]
+					end
 				end
 			end
 		end
@@ -2125,6 +2226,9 @@ function AvgEditorCtrl:GetHistoryData_Char(bPreview)
 	return mapData
 end
 function AvgEditorCtrl:GetHistoryData_Trans(bPreview)
+	self.tbChoiceCmdName = {}
+	self.tbChoiceGroupId = {}
+	self.tbChoiceEnabled = {}
 	local mapData = {
 		nFilmIn = 1,
 		bTransIn = 1,
@@ -2134,20 +2238,24 @@ function AvgEditorCtrl:GetHistoryData_Trans(bPreview)
 		return mapData
 	end
 	if 0 < self.nCurTransformIndex then
+		local bEnable = false
 		for i = 1, self.nCurTransformIndex do
 			local tbCmdData = self.tbAvgCfg[i]
 			local sCmdName = tbCmdData.cmd
 			local tbParam = tbCmdData.param
-			if sCmdName == "SetFilm" then
-				mapData.nFilmIn = tbParam[1]
-			elseif sCmdName == "SetTrans" then
-				local nCloseOpen = tbParam[1]
-				if nCloseOpen == 0 then
-					mapData.bTransIn = 0
-					mapData.nTransStyle = tbParam[2]
-				elseif nCloseOpen == 1 then
-					mapData.bTransIn = 1
-					mapData.nTransStyle = 0
+			bEnable = self:Check_SkipChoiceContent(sCmdName, tbParam)
+			if bEnable == true then
+				if sCmdName == "SetFilm" then
+					mapData.nFilmIn = tbParam[1]
+				elseif sCmdName == "SetTrans" then
+					local nCloseOpen = tbParam[1]
+					if nCloseOpen == 0 then
+						mapData.bTransIn = 0
+						mapData.nTransStyle = tbParam[2]
+					elseif nCloseOpen == 1 then
+						mapData.bTransIn = 1
+						mapData.nTransStyle = 0
+					end
 				end
 			end
 		end
@@ -2155,6 +2263,9 @@ function AvgEditorCtrl:GetHistoryData_Trans(bPreview)
 	return mapData
 end
 function AvgEditorCtrl:GetHistoryData_Talk(bPreview)
+	self.tbChoiceCmdName = {}
+	self.tbChoiceGroupId = {}
+	self.tbChoiceEnabled = {}
 	local mapData = {
 		nType = -1,
 		sAvgCharId = "0",
@@ -2169,41 +2280,54 @@ function AvgEditorCtrl:GetHistoryData_Talk(bPreview)
 		return mapData
 	end
 	if 0 < self.nCurTransformIndex then
+		local bEnable = false
 		for i = 1, self.nCurTransformIndex do
 			local tbCmdData = self.tbAvgCfg[i]
 			local sCmdName = tbCmdData.cmd
 			local tbParam = tbCmdData.param
-			if sCmdName == "SetTalk" then
-				mapData.nClearType = tbParam[4]
-				if mapData.nClearType == 0 then
-					mapData.nType = -1
-					mapData.sAvgCharId = "0"
-					mapData.sContent = ""
-					mapData.sBody = nil
-					mapData.sFace = nil
-					mapData.sEmoji = nil
-					mapData.nMaskVisible = 0
-				else
-					mapData.nType = tbParam[1]
-					mapData.sAvgCharId = AdjustMainRoleAvgCharId(tbParam[2])
-					mapData.sContent = tbParam[3]
-				end
-			elseif sCmdName == "SetMainRoleTalk" then
-				mapData.sAvgCharId = tbParam[9] or "avg3_100"
-				if tbParam[1] > 2 then
-					mapData.sAvgCharId = "0"
-					mapData.sBody = nil
-					mapData.sFace = nil
-					mapData.sEmoji = nil
-					mapData.nMaskVisible = 0
-				else
-					mapData.nMaskVisible = tbParam[2]
-					mapData.sBody = tbParam[6]
-					mapData.sFace = tbParam[3]
-					mapData.sEmoji = tbParam[4]
-				end
-			elseif sCmdName == "SetTrans" then
-				if tbParam[6] == true then
+			bEnable = self:Check_SkipChoiceContent(sCmdName, tbParam)
+			if bEnable == true then
+				if sCmdName == "SetTalk" then
+					mapData.nClearType = tbParam[4]
+					if mapData.nClearType == 0 then
+						mapData.nType = -1
+						mapData.sAvgCharId = "0"
+						mapData.sContent = ""
+						mapData.sBody = nil
+						mapData.sFace = nil
+						mapData.sEmoji = nil
+						mapData.nMaskVisible = 0
+					else
+						mapData.nType = tbParam[1]
+						mapData.sAvgCharId = AdjustMainRoleAvgCharId(tbParam[2])
+						mapData.sContent = tbParam[3]
+					end
+				elseif sCmdName == "SetMainRoleTalk" then
+					mapData.sAvgCharId = tbParam[9] or "avg3_100"
+					if tbParam[1] > 2 then
+						mapData.sAvgCharId = "0"
+						mapData.sBody = nil
+						mapData.sFace = nil
+						mapData.sEmoji = nil
+						mapData.nMaskVisible = 0
+					else
+						mapData.nMaskVisible = tbParam[2]
+						mapData.sBody = tbParam[6]
+						mapData.sFace = tbParam[3]
+						mapData.sEmoji = tbParam[4]
+					end
+				elseif sCmdName == "SetTrans" then
+					if tbParam[6] == true then
+						mapData.nType = -1
+						mapData.sAvgCharId = "0"
+						mapData.sContent = ""
+						mapData.nClearType = 0
+						mapData.sBody = nil
+						mapData.sFace = nil
+						mapData.sEmoji = nil
+						mapData.nMaskVisible = 0
+					end
+				elseif sCmdName == "Clear" and tbParam[4] == true then
 					mapData.nType = -1
 					mapData.sAvgCharId = "0"
 					mapData.sContent = ""
@@ -2213,15 +2337,6 @@ function AvgEditorCtrl:GetHistoryData_Talk(bPreview)
 					mapData.sEmoji = nil
 					mapData.nMaskVisible = 0
 				end
-			elseif sCmdName == "Clear" and tbParam[4] == true then
-				mapData.nType = -1
-				mapData.sAvgCharId = "0"
-				mapData.sContent = ""
-				mapData.nClearType = 0
-				mapData.sBody = nil
-				mapData.sFace = nil
-				mapData.sEmoji = nil
-				mapData.nMaskVisible = 0
 			end
 		end
 	end

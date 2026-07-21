@@ -33,12 +33,19 @@ end
 function MiningGameData:CacheAllQuestData(questListData)
 	self.tbQuestDataList = {}
 	for _, v in pairs(questListData) do
-		local questData = {
-			nId = v.Id,
-			nStatus = self:QuestServer2Client(v.Status),
-			progress = v.Progress
-		}
-		table.insert(self.tbQuestDataList, questData)
+		local config = ConfigTable.GetData("MiningQuest", v.Id)
+		if config ~= nil then
+			local nGroupId = config.GroupId
+			local questData = {
+				nId = v.Id,
+				nStatus = self:QuestServer2Client(v.Status),
+				progress = v.Progress
+			}
+			if self.tbQuestDataList[nGroupId] == nil then
+				self.tbQuestDataList[nGroupId] = {}
+			end
+			table.insert(self.tbQuestDataList[nGroupId], questData)
+		end
 	end
 	self:RefreshQuestReddot()
 end
@@ -48,43 +55,79 @@ end
 function MiningGameData:GetQuestData(nQuestId)
 	local questData
 	for _, v in pairs(self.tbQuestDataList) do
-		if v.nId == nQuestId then
-			questData = v
+		for _, v2 in ipairs(v) do
+			if v2.nId == nQuestId then
+				questData = v2
+				break
+			end
 		end
 	end
 	return questData
 end
-function MiningGameData:GetCompleteCount()
+function MiningGameData:GetAllReceivedCount()
 	local nCount = 0
 	for _, v in pairs(self.tbQuestDataList) do
-		if v.nStatus == AllEnum.ActQuestStatus.Complete or v.nStatus == AllEnum.ActQuestStatus.Received then
+		for _, v2 in ipairs(v) do
+			if v2.nStatus == AllEnum.ActQuestStatus.Received then
+				nCount = nCount + 1
+			end
+		end
+	end
+	return nCount
+end
+function MiningGameData:GetAllQuestCount()
+	local nCount = 0
+	for _, v in pairs(self.tbQuestDataList) do
+		nCount = nCount + #v
+	end
+	return nCount
+end
+function MiningGameData:GetAllGroupId()
+	local tbGroupId = {}
+	for k, _ in pairs(self.tbQuestDataList) do
+		table.insert(tbGroupId, k)
+	end
+	return tbGroupId
+end
+function MiningGameData:GetQuestbyGroupId(nGroupId)
+	return self.tbQuestDataList[nGroupId]
+end
+function MiningGameData:GetGroupQuestReceiveCount(nGroupId)
+	local nCount = 0
+	for _, v in pairs(self.tbQuestDataList[nGroupId]) do
+		if v.nStatus == AllEnum.ActQuestStatus.Received then
 			nCount = nCount + 1
 		end
 	end
 	return nCount
 end
 function MiningGameData:RefreshQuestData(questData)
+	for _, v in pairs(self.tbQuestDataList) do
+		for _, v2 in ipairs(v) do
+			if v2.nId == questData.Id then
+				v2.nStatus = self:QuestServer2Client(questData.Status)
+				v2.progress = questData.Progress
+				break
+			end
+		end
+	end
+	self:RefreshQuestReddot()
+	EventManager.Hit("MiningQuestUpdate")
 end
 function MiningGameData:RefreshQuestReddot()
 	local bTabReddot = false
-	if next(self.tbQuestDataList) ~= nil then
-		for _, v in pairs(self.tbQuestDataList) do
-			local bReddot = v.nStatus == AllEnum.ActQuestStatus.Complete
-			RedDotManager.SetValid(RedDotDefine.Activity_Mining_Quest, v.nId, bReddot)
+	for _, v in pairs(self.tbQuestDataList) do
+		for _, v2 in ipairs(v) do
+			local bReddot = v2.nStatus == AllEnum.ActQuestStatus.Complete
+			local nGroupId = ConfigTable.GetData("MiningQuest", v2.nId).GroupId
+			RedDotManager.SetValid(RedDotDefine.Activity_Mining_Quest, {
+				nGroupId,
+				v2.nId
+			}, bReddot)
 			bTabReddot = bTabReddot or bReddot
 		end
 	end
-	RedDotManager.SetValid(RedDotDefine.Activity_Tab, self.nActId, bTabReddot or self.bIsFirst)
-end
-function MiningGameData:HasFinishQuest(...)
-	local bHasFinish = false
-	for _, v in pairs(self.tbQuestDataList) do
-		if v.nStatus == AllEnum.ActQuestStatus.Complete then
-			bHasFinish = true
-			break
-		end
-	end
-	return bHasFinish
+	RedDotManager.SetValid(RedDotDefine.Activity_Mining_AllQuest, self.nActId, bTabReddot)
 end
 function MiningGameData:QuestServer2Client(nStatus)
 	if nStatus == 0 then
@@ -173,6 +216,7 @@ function MiningGameData:RefreshMiningGameActData(actId, msgData)
 	end
 	self:InitCurDicData()
 	self.nScore = msgData.Score
+	self:CacheAllQuestData(msgData.Quests)
 end
 function MiningGameData:GetIsFirstIn()
 	return self.bIsFirst
@@ -377,13 +421,15 @@ function MiningGameData:RequestFinishAvg(storyId, callback)
 		StoryId = storyId
 	}, nil, msgCallback)
 end
-function MiningGameData:SendQuestReceive(nQuestId)
+function MiningGameData:SendQuestReceive(nQuestId, nGroupId)
 	local callback = function(_, msgData)
-		UTILS.OpenReceiveByChangeInfo(msgData.ChangeInfo, nil)
+		UTILS.OpenReceiveByChangeInfo(msgData, nil)
 		if nQuestId == 0 then
-			for _, v in pairs(self.tbQuestDataList) do
-				if v.nStatus == AllEnum.ActQuestStatus.Complete then
-					v.nStatus = AllEnum.ActQuestStatus.Received
+			if nGroupId ~= 0 then
+				for _, v in pairs(self.tbQuestDataList[nGroupId]) do
+					if v.nStatus == AllEnum.ActQuestStatus.Complete then
+						v.nStatus = AllEnum.ActQuestStatus.Received
+					end
 				end
 			end
 		else
@@ -393,11 +439,13 @@ function MiningGameData:SendQuestReceive(nQuestId)
 			end
 		end
 		EventManager.Hit("MiningQuestUpdate")
+		self:UpdateAxe()
 		self:RefreshQuestReddot()
 	end
 	HttpNetHandler.SendMsg(NetMsgId.Id.activity_mining_quest_reward_receive_req, {
 		ActivityId = self.nActId,
-		QuestId = nQuestId
+		QuestId = nQuestId,
+		GroupId = nGroupId
 	}, nil, callback)
 end
 return MiningGameData

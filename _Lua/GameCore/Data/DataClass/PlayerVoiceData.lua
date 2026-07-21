@@ -339,7 +339,7 @@ function PlayerVoiceData:PlayBoardClickVoice()
 		end
 	end
 end
-function PlayerVoiceData:PlayBoardNPCClickVoice(nNpcId, nSkinId)
+function PlayerVoiceData:PlayBoardNPCClickVoice(nNpcId, nSkinId, sClickVoiceKey)
 	self.bNpc = true
 	self.nNpcId = nNpcId
 	self.nNPCSkinId = nSkinId or 0
@@ -354,7 +354,11 @@ function PlayerVoiceData:PlayBoardNPCClickVoice(nNpcId, nSkinId)
 			table.insert(tbVoiceKey, "hfc_npc")
 			self:ResetBoardClickTimer()
 		else
-			table.insert(tbVoiceKey, "posterchat_npc")
+			local sKey = "posterchat_npc"
+			if sClickVoiceKey then
+				sKey = sClickVoiceKey
+			end
+			table.insert(tbVoiceKey, sKey)
 		end
 		self:PlayCharVoice(tbVoiceKey, curBoardCharId, self.nNPCSkinId, true)
 	end

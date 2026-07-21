@@ -117,7 +117,14 @@ function AutoBattleCtrl:OnClick_AutoBattleClose()
 	end
 	self.animator:Play("AutoBattle_Close")
 end
-function AutoBattleCtrl:OnEvent_InputEnable(bEnable)
+function AutoBattleCtrl:OnEvent_InputEnable(bEnable, bEnableByTrans)
+	if bEnableByTrans == true then
+		if bEnable == true and self.ENABLE == false then
+			return
+		end
+	else
+		self.ENABLE = bEnable
+	end
 	if self.nType == GameEnum.worldLevelType.PrologueBattleLevel then
 		self.gameObject.transform.localScale = Vector3.zero
 		self._mapNode.btnAutoBattleOpen.interactable = false

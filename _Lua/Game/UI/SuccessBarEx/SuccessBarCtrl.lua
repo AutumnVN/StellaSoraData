@@ -53,6 +53,7 @@ function SuccessBarCtrl:PlayContentAni()
 			end
 		end)
 		sequence:AppendInterval(0.067)
+		sequence:SetUpdate(true)
 	end
 end
 function SuccessBarCtrl:StartShowSkinPanel()

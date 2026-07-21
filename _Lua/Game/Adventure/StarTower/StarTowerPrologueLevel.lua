@@ -1,6 +1,8 @@
 local LocalData = require("GameCore.Data.LocalData")
 local SDKManager = CS.SDKManager.Instance
 local PB = require("pb")
+local FP = CS.TrueSync.FP
+local FDP = CS.TrueSync.FDP
 local mapPrologueConfig = {
 	nDifficulty = 1,
 	tbStage = {99901},
@@ -1338,7 +1340,7 @@ function StarTowerPrologueLevel:CacheTempData()
 						nSectionAmount = clsSkillInfo.currentSectionAmount,
 						nSectionResumeTime = clsSkillInfo.currentResumeTime.RawValue,
 						nUseTimeHint = clsSkillInfo.currentUseTimeHint.RawValue,
-						nEnergy = clsSkillInfo.currentEnergy.RawValue
+						nEnergy = clsSkillInfo.currentEnergy._raw
 					})
 				end
 			end

@@ -406,6 +406,23 @@ function RegionBossFormationCtrl:OpenScoreBossBattle()
 		PlayerData.ScoreBoss:SendEnterScoreBossApplyReq(self.selLvId, self.mbuildId)
 	end
 end
+function RegionBossFormationCtrl:OpenTraceHuntBattle()
+	if self.isHaveTeam then
+		if PlayerData.TraceHunt:GetControlLeftTime() <= 0 then
+			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("TraceHunt_Tips_ControlInterrupt"))
+			return
+		end
+		if 0 < self.Other[2] then
+			local nCurTime = CS.ClientManager.Instance.serverTimeStamp
+			local nLeft = self.Other[2] + ConfigTable.GetConfigNumber("TraceHuntBossHuntLimitTime") - nCurTime
+			if nLeft <= 0 then
+				EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("TraceHunt_Tips_HuntInterrupt"))
+				return
+			end
+		end
+		PlayerData.TraceHunt:SendTraceHuntApplyReq(self.Other[1], self.selLvId, self.mbuildId, self.Other[2], self.Other[3])
+	end
+end
 function RegionBossFormationCtrl:OpenActivityLevelsBattle()
 	if self.isHaveTeam then
 		local nCurTime = CS.ClientManager.Instance.serverTimeStamp
@@ -557,6 +574,15 @@ function RegionBossFormationCtrl:OnEnable()
 			self.mbuildId = PlayerData.ScoreBoss:GetLevelBuild(self.selLvId)
 		end
 		if self.mbuildId == 0 then
+		end
+		if self.mbuildId ~= 0 then
+			self.isHaveTeam = true
+		end
+	elseif self.nType == AllEnum.RegionBossFormationType.TraceHunt then
+		self.mbuildId = 0
+		local tempBuildId = PlayerData.TraceHunt:GetCachedBuild()
+		if tempBuildId ~= 0 then
+			self.mbuildId = tempBuildId
 		end
 		if self.mbuildId ~= 0 then
 			self.isHaveTeam = true
@@ -790,6 +816,8 @@ function RegionBossFormationCtrl:OnBtnClick_Start(btn)
 			end
 		end
 		PlayerData.ScoreBoss:JudgeOtherLevelHaveSameChar(self.selLvId, self.mbuildId, callBack)
+	elseif self.nType == AllEnum.RegionBossFormationType.TraceHunt then
+		self:OpenTraceHuntBattle()
 	elseif self.nType == AllEnum.RegionBossFormationType.SkillInstance then
 		self:OpenSkillInstance()
 	elseif self.nType == AllEnum.RegionBossFormationType.WeeklyCopies then

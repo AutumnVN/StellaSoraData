@@ -131,7 +131,7 @@ function PenguinCard:Trigger(nTriggerPhase, mapTriggerSource, callback)
 	if nTriggerPhase ~= self.nTriggerPhase then
 		return
 	end
-	local bAble = PenguinCardUtils.CheckTriggerAble(self.nTriggerType, self.tbTriggerParam, self.nTriggerProbability, mapTriggerSource)
+	local bAble = PenguinCardUtils.CheckTriggerAble(self.nTriggerType, self.tbTriggerParam, self.nTriggerProbability, mapTriggerSource, self.nEffectType)
 	if not bAble then
 		return
 	end
@@ -182,5 +182,20 @@ function PenguinCard:Growth(nTriggerPhase, mapTriggerSource)
 end
 function PenguinCard:GetIdByLevel(nGroupId, nLevel)
 	return nGroupId * 100 + nLevel
+end
+function PenguinCard:Serialize()
+	return {
+		nId = self.nId,
+		nSlotIndex = self.nSlotIndex,
+		nTriggerCount = self.nTriggerCount,
+		nGrowthLayer = self.nGrowthLayer,
+		bHighLight = self.bHighLight
+	}
+end
+function PenguinCard:Deserialize(mapData)
+	self:Init(mapData.nId, mapData.nGrowthLayer)
+	self.nSlotIndex = mapData.nSlotIndex
+	self.nTriggerCount = mapData.nTriggerCount
+	self.bHighLight = mapData.bHighLight
 end
 return PenguinCard

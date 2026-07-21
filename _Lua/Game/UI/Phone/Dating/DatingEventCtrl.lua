@@ -174,26 +174,31 @@ function DatingEventCtrl:AddEvent(tbEvent, tbEventId)
 	end
 end
 function DatingEventCtrl:StartEvent()
-	if self.tbEventItemCtrl[self.nCurIndex] ~= nil then
-		self.tbEventItemCtrl[self.nCurIndex].gameObject:SetActive(true)
-		self._mapNode.btnNextEvent.gameObject:SetActive(not self.tbEventItemCtrl[self.nCurIndex]:GetBranch() and not self.bSkip)
-		local wait = function()
-			coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
-			NovaAPI.SetVerticalNormalizedPosition(self._mapNode.eventListSV, 0)
-		end
-		cs_coroutine.start(wait)
-		local eventData = self.tbEvent[self.nEventId]
-		self.nEventId = self.nEventId + 1
-		if eventData.bLast then
-			self.nLastEventId = eventData.nEventId
-			self.nEventIndex = self.nEventIndex + 1
-			self._mapNode.rtImgTimeMin:DOLocalRotate(Vector3(0, 0, -360), 1.2, RotateMode.FastBeyond360):SetUpdate(true)
-			self._mapNode.rtImgTimeHour:DOLocalRotate(Vector3(0, 0, -self.nEventIndex / #self.tbEventId * 360), 1.2):SetUpdate(true)
-			EventManager.Hit("DatingEventAction", self.nCurIndex, eventData.sResponse, eventData.nAffinity)
-		end
-		self.nCurEventId = eventData.nEventId
-		self.tbEventItemCtrl[self.nCurIndex]:StartEvent(self.bSpeed and 2 or 1, self.bAuto or self.bSkip)
+	local itemCtrl = self.tbEventItemCtrl[self.nCurIndex]
+	if itemCtrl == nil then
+		return
 	end
+	itemCtrl.gameObject:SetActive(true)
+	self._mapNode.btnNextEvent.gameObject:SetActive(not itemCtrl:GetBranch() and not self.bSkip)
+	local eventData = self.tbEvent[self.nEventId]
+	self.nEventId = self.nEventId + 1
+	if eventData.bLast then
+		self.nLastEventId = eventData.nEventId
+		self.nEventIndex = self.nEventIndex + 1
+		self._mapNode.rtImgTimeMin:DOLocalRotate(Vector3(0, 0, -360), 1.2, RotateMode.FastBeyond360):SetUpdate(true)
+		self._mapNode.rtImgTimeHour:DOLocalRotate(Vector3(0, 0, -self.nEventIndex / #self.tbEventId * 360), 1.2):SetUpdate(true)
+		EventManager.Hit("DatingEventAction", self.nCurIndex, eventData.sResponse, eventData.nAffinity)
+	end
+	self.nCurEventId = eventData.nEventId
+	local wait = function()
+		CS.UnityEngine.Canvas.ForceUpdateCanvases()
+		CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._mapNode.goContent)
+		NovaAPI.SetVerticalNormalizedPosition(self._mapNode.eventListSV, 0)
+		CS.UnityEngine.Canvas.ForceUpdateCanvases()
+		coroutine.yield(nil)
+		itemCtrl:StartEvent(self.bSpeed and 2 or 1, self.bAuto or self.bSkip)
+	end
+	cs_coroutine.start(wait)
 end
 function DatingEventCtrl:Awake()
 	self.tbEventItemCtrl = {}

@@ -165,7 +165,7 @@ function TrekkerVersusData:GetCurFanData()
 end
 function TrekkerVersusData:GetDuelHistory()
 	table.sort(self.tbDuelHistory, function(a, b)
-		return a.SelfHotValue > b.SelfHotValue
+		return a.RivalHotValue > b.RivalHotValue
 	end)
 	return self.tbDuelHistory
 end
@@ -426,7 +426,7 @@ function TrekkerVersusData:RequestReceiveScheduleReward(nActId, nScheduleType)
 			end
 			if nScheduleType == 1 then
 				local foreachHeatQuest = function(mapQuestData)
-					if mapQuestData.TargetValue <= self.nSelfHotValue and table.indexof(self.tbHotValueRewardIds, mapQuestData.Id) <= 0 then
+					if mapQuestData.GroupId == self.nActId and mapQuestData.TargetValue <= self.nSelfHotValue and table.indexof(self.tbHotValueRewardIds, mapQuestData.Id) <= 0 then
 						table.insert(self.tbHotValueRewardIds, mapQuestData.Id)
 					end
 				end
@@ -564,7 +564,7 @@ function TrekkerVersusData:RefreshQusetRedDot()
 	end
 	local bHeatQuestVisible = false
 	local foreachHeatReward = function(mapData)
-		if mapData.TargetValue <= self.nSelfHotValue and table.indexof(self.tbHotValueRewardIds, mapData.Id) <= 0 then
+		if mapData.GroupId == self.nActId and mapData.TargetValue <= self.nSelfHotValue and table.indexof(self.tbHotValueRewardIds, mapData.Id) <= 0 then
 			bHeatQuestVisible = true
 		end
 	end
@@ -575,6 +575,14 @@ function TrekkerVersusData:RefreshQusetRedDot()
 			self.nActId
 		}, bHeatQuestVisible)
 	end
+end
+function TrekkerVersusData:GetCanReceiveAllQuestReward()
+	for _, mapQuest in pairs(self.mapQuests) do
+		if mapQuest.Status == 1 then
+			return true
+		end
+	end
+	return false
 end
 function TrekkerVersusData:GetFirstIn()
 	local bFirst = self.bFirstIn

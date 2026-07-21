@@ -116,4 +116,18 @@ end
 function PenguinCardQuest:CheckComplete()
 	return self.nAimCount >= self.nMaxAim
 end
+function PenguinCardQuest:Serialize()
+	return {
+		nId = self.nId,
+		nTurnCount = self.nTurnCount,
+		nAimCount = self.nAimCount,
+		nBuffId = self.nBuffId
+	}
+end
+function PenguinCardQuest:Deserialize(mapData)
+	self:Init(mapData.nId)
+	self.nTurnCount = mapData.nTurnCount
+	self.nAimCount = mapData.nAimCount
+	self.nBuffId = mapData.nBuffId
+end
 return PenguinCardQuest

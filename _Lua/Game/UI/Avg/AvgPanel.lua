@@ -156,6 +156,7 @@ function AvgPanel:BindCmdProcFunc()
 	self.mapProcFunc.SetL2D = self:FindCmdProcFunc("Avg_2_L2DCtrl", "SetL2D")
 	self.mapProcFunc.CtrlL2D = self:FindCmdProcFunc("Avg_2_L2DCtrl", "CtrlL2D")
 	self.mapProcFunc.SetCharL2D = self:FindCmdProcFunc("Avg_2_L2DCtrl", "SetCharL2D")
+	self.mapProcFunc.PlayGradient2Anim = self:FindCmdProcFunc("Avg_2_CharCtrl", "PlayGradient2Anim")
 	self.mapProcFunc.SetFilm = self:FindCmdProcFunc("Avg_3_TransitionCtrl", "SetFilm")
 	self.mapProcFunc.SetTrans = self:FindCmdProcFunc("Avg_3_TransitionCtrl", "SetTrans")
 	self.mapProcFunc.SetWordTrans = self:FindCmdProcFunc("Avg_3_TransitionCtrl", "SetWordTrans")
@@ -565,7 +566,7 @@ function AvgPanel:GetAvgCharReuseRes(sAvgCharId)
 	elseif tbChar.reuse == nil then
 		return sAvgCharId
 	else
-		return tbChar.reuse
+		return AdjustMainRoleAvgCharId(tbChar.reuse)
 	end
 end
 function AvgPanel:AddTimer(nTargetCount, nInterval, sCallbackName, bAutoRun, bDestroyWhenComplete, nScaleType, tbParam)

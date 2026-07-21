@@ -197,11 +197,11 @@ function JointDrillLevelData_1:CacheTempData(bCharacter, bBoss, bChangeTeam, bCh
 						table.insert(self.mapTempData.mapCharacterTempData.skillInfo, {
 							nCharId = charTid,
 							nSkillId = clsSkillInfo.skillId,
-							nCd = FP.ToInt(clsSkillInfo.currentUseInterval),
+							nCd = clsSkillInfo.currentUseInterval.RawValue,
 							nSectionAmount = clsSkillInfo.currentSectionAmount,
-							nSectionResumeTime = FP.ToInt(clsSkillInfo.currentResumeTime),
-							nUseTimeHint = FP.ToInt(clsSkillInfo.currentUseTimeHint),
-							nEnergy = FP.ToInt(clsSkillInfo.currentEnergy)
+							nSectionResumeTime = clsSkillInfo.currentResumeTime.RawValue,
+							nUseTimeHint = clsSkillInfo.currentUseTimeHint.RawValue,
+							nEnergy = clsSkillInfo.currentEnergy._raw
 						})
 					end
 				end
@@ -342,10 +342,10 @@ function JointDrillLevelData_1:ResetSkill()
 			local stSkillInfo = CS.Lua2CSharpInfo_ResetSkillInfo()
 			stSkillInfo.skillId = skillInfo.nSkillId
 			stSkillInfo.currentSectionAmount = skillInfo.nSectionAmount
-			stSkillInfo.cd = FP.FromFloat(skillInfo.nCd).RawValue
-			stSkillInfo.currentResumeTime = FP.FromFloat(skillInfo.nSectionResumeTime).RawValue
-			stSkillInfo.currentUseTimeHint = FP.FromFloat(skillInfo.nUseTimeHint).RawValue
-			stSkillInfo.energy = FP.FromFloat(skillInfo.nEnergy).RawValue
+			stSkillInfo.cd = skillInfo.nCd
+			stSkillInfo.currentResumeTime = skillInfo.nSectionResumeTime
+			stSkillInfo.currentUseTimeHint = skillInfo.nUseTimeHint
+			stSkillInfo.energy = skillInfo.nEnergy
 			if ret[skillInfo.nCharId] == nil then
 				ret[skillInfo.nCharId] = {}
 			end

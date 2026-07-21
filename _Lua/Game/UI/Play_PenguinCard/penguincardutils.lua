@@ -13,7 +13,8 @@ PenguinCardUtils.SuitName = {
 	[GameEnum.PenguinBaseCardSuit.Red] = "<sprite name=\"icon_PengCard_Fire_small\">",
 	[GameEnum.PenguinBaseCardSuit.Green] = "<sprite name=\"icon_PengCard_Wind_small\">"
 }
-function PenguinCardUtils.CheckTriggerAble(nTriggerType, tbTriggerParam, nTriggerProbability, mapTriggerSource)
+function PenguinCardUtils.CheckTriggerAble(nTriggerType, tbTriggerParam, nTriggerProbability, mapTriggerSource, nEffectType)
+	local randomValue = math.random(0, 100)
 	local bAble = false
 	if nTriggerType == GameEnum.PenguinCardTriggerType.None then
 		bAble = true
@@ -46,7 +47,19 @@ function PenguinCardUtils.CheckTriggerAble(nTriggerType, tbTriggerParam, nTrigge
 			end
 			bAble = true
 		elseif nTriggerType == GameEnum.PenguinCardTriggerType.BaseCardId and mapTriggerSource.BaseCard then
-			bAble = mapTriggerSource.BaseCard.nId == tbTriggerParam[1]
+			for _, v in ipairs(tbTriggerParam) do
+				if mapTriggerSource.BaseCard.nId == v then
+					bAble = true
+					break
+				end
+			end
+			if nEffectType == GameEnum.PenguinCardEffectType.ReplaceBaseCard then
+				if mapTriggerSource.BaseCard.bReplaced == true then
+					return false
+				elseif bAble and nTriggerProbability >= randomValue then
+					mapTriggerSource.BaseCard.bReplaced = true
+				end
+			end
 		elseif nTriggerType == GameEnum.PenguinCardTriggerType.RepeatHandRank and mapTriggerSource.HandRankCount and mapTriggerSource.HandRank then
 			bAble = false
 			for id, count in pairs(mapTriggerSource.HandRankCount) do
@@ -64,7 +77,6 @@ function PenguinCardUtils.CheckTriggerAble(nTriggerType, tbTriggerParam, nTrigge
 			end
 		end
 	end
-	local randomValue = math.random(0, 100)
 	return bAble and nTriggerProbability >= randomValue
 end
 function PenguinCardUtils.CheckGrowthLayer(nGrowthTriggerType, tbGrowthTriggerParam, mapTriggerSource)
@@ -83,8 +95,13 @@ function PenguinCardUtils.CheckGrowthLayer(nGrowthTriggerType, tbGrowthTriggerPa
 	elseif nGrowthTriggerType == GameEnum.PenguinCardGrowthTriggerType.SuitCountInCard and mapTriggerSource.BaseCard then
 		local nAimSuit = tbGrowthTriggerParam[1]
 		local mapCfg = ConfigTable.GetData("PenguinBaseCard", mapTriggerSource.BaseCard.nId)
-		if mapCfg and nAimSuit == mapCfg.Suit1 then
-			nAdd = mapCfg.SuitCount1
+		if mapCfg then
+			for i = 1, 3 do
+				if 0 < mapCfg["Suit" .. i] and 0 < mapCfg["SuitCount" .. i] and nAimSuit == mapCfg["Suit" .. i] then
+					nAdd = mapCfg["SuitCount" .. i]
+					break
+				end
+			end
 		end
 	end
 	return nAdd
@@ -141,7 +158,7 @@ function PenguinCardUtils.SetEffectDesc(mapCfg, nGrowthLayer)
 		end
 	end
 	local ParseEffectParam = function(tbParam, nIndex)
-		if nEffectType == GameEnum.PenguinCardEffectType.AddBaseCardWeight then
+		if nEffectType == GameEnum.PenguinCardEffectType.AddBaseCardWeight or nEffectType == GameEnum.PenguinCardEffectType.ReplaceBaseCard then
 			local tbId = {}
 			for k, _ in pairs(tbParam) do
 				local nId = tonumber(k)
@@ -153,15 +170,6 @@ function PenguinCardUtils.SetEffectDesc(mapCfg, nGrowthLayer)
 				return a < b
 			end)
 			local nBaseCardId = tbId[nIndex]
-			if nBaseCardId == nil then
-				return sError
-			end
-			local mapBase = ConfigTable.GetData("PenguinBaseCard", nBaseCardId)
-			if mapBase then
-				return mapBase.Title
-			end
-		elseif nEffectType == GameEnum.PenguinCardEffectType.ReplaceBaseCard then
-			local nBaseCardId = tbParam[nIndex]
 			if nBaseCardId == nil then
 				return sError
 			end

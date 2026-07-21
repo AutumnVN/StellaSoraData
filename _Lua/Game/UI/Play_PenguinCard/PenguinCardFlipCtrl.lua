@@ -50,6 +50,17 @@ PenguinCardFlipCtrl._mapNodeConfig = {
 		sLanguageId = "PenguinCard_Btn_FlipAll"
 	},
 	goShowAllOn = {},
+	imgCheckRound = {},
+	txtCheckRound = {sComponentName = "TMP_Text"},
+	btnCheckRound = {
+		sComponentName = "UIButton",
+		callback = "OnBtnClick_CheckRound"
+	},
+	txtBtnCheckRound = {
+		sComponentName = "TMP_Text",
+		sLanguageId = "PenguinCard_Btn_CheckRound"
+	},
+	goCheckRoundOff = {},
 	btnAuto = {
 		sComponentName = "UIButton",
 		callback = "OnBtnClick_Auto"
@@ -132,6 +143,8 @@ PenguinCardFlipCtrl._mapEventConfig = {
 function PenguinCardFlipCtrl:Refresh_Dealing()
 	self._mapNode.imgNextRound:SetActive(false)
 	self._mapNode.btnNextRound.gameObject:SetActive(false)
+	self._mapNode.imgCheckRound:SetActive(false)
+	self._mapNode.btnCheckRound.gameObject:SetActive(false)
 	self._mapNode.imgRoundTitleBg:SetActive(false)
 	self._mapNode.goNextRoundOn:SetActive(false)
 	self._mapNode.btnShowAll.gameObject:SetActive(true)
@@ -145,27 +158,27 @@ function PenguinCardFlipCtrl:Refresh_Dealing()
 	self._mapNode.aniRoundScoreRatioBg.gameObject:SetActive(true)
 	self._mapNode.aniHandRankBg:Play("PengUinCard_HandRank_Off", 1, 0)
 	for i = 1, 5 do
-		self._mapNode.btnShow[i].interactable = true
+		self._mapNode.btnShow[i].interactable = false
 		self._mapNode.PenguinBaseCard[i]:Refresh(self._panel.mapLevel.tbBaseCardId[i])
 		self._mapNode.PenguinBaseCard[i]:PlayInAni()
 	end
-	if self._panel.mapLevel.nCurRound == 1 then
-		self.animator:Play("PengUinCard_Flip_in", 0, 0)
-		local nAnimTime = NovaAPI.GetAnimClipLength(self.animator, {
-			"PengUinCard_Flip_in"
-		})
-		EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
+	if self._panel.mapLevel.bCheckRound then
+		self.animator:Play("PengUinCard_Flip_Card_shuffle", 0, 0)
+		WwiseManger:PostEvent("Mode_Card_re")
 	else
-		self.animator:Play("PengUinCard_Flip_Card_in", 0, 0)
-		local nAnimTime = NovaAPI.GetAnimClipLength(self.animator, {
-			"PengUinCard_Flip_Card_in"
-		})
-		EventManager.Hit(EventId.TemporaryBlockInput, nAnimTime)
+		if self._panel.mapLevel.nCurRound == 1 then
+			self.animator:Play("PengUinCard_Flip_in", 0, 0)
+		else
+			self.animator:Play("PengUinCard_Flip_Card_in", 0, 0)
+		end
+		WwiseManger:PostEvent("Mode_Card_nextround")
 	end
-	WwiseManger:PostEvent("Mode_Card_nextround")
 end
 function PenguinCardFlipCtrl:Refresh_Flip()
 	self._mapNode.btnShowAll.interactable = true
+	for i = 1, 5 do
+		self._mapNode.btnShow[i].interactable = true
+	end
 	self:StartShowAllOn()
 	self.mapHandRankScore = {}
 end
@@ -175,12 +188,15 @@ function PenguinCardFlipCtrl:Refresh_Settlement()
 	end
 	self._mapNode.btnNextRound.gameObject:SetActive(true)
 	self._mapNode.btnNextRound.interactable = false
+	self._mapNode.btnCheckRound.interactable = false
 	self:AddTimer(1, 2 / self._panel.mapLevel.nSpeed, function()
 		self._mapNode.btnNextRound.interactable = true
+		self._mapNode.btnCheckRound.interactable = true
 	end, true, true, true)
 	self._mapNode.btnShowAll.gameObject:SetActive(false)
 	self._mapNode.goShowAllOn:SetActive(false)
 	self:RefreshRoundCount()
+	self:RefreshCheckRoundCount()
 	self._mapNode.aniHandRankBg:Play("PengUinCard_HandRank_On", 0, 0)
 	self:RefreshHandRank()
 	for i = 1, 5 do
@@ -199,13 +215,21 @@ function PenguinCardFlipCtrl:RefreshRoundCount()
 		NovaAPI.SetTMPText(self._mapNode.txtRoundTip, ConfigTable.GetUIText("PenguinCard_NextRoundTip"))
 	end
 end
+function PenguinCardFlipCtrl:RefreshCheckRoundCount()
+	NovaAPI.SetTMPText(self._mapNode.txtCheckRound, orderedFormat(ConfigTable.GetUIText("PenguinCard_LeftCheckRound"), self._panel.mapLevel.nCheckRoundLimit - self._panel.mapLevel.nCheckRoundCount))
+	self._mapNode.goCheckRoundOff:SetActive(self._panel.mapLevel.bCheckRound or self._panel.mapLevel.nCheckRoundLimit <= self._panel.mapLevel.nCheckRoundCount)
+	self._mapNode.btnCheckRound.gameObject:SetActive(self._panel.mapLevel.nCheckRoundLimit > 0)
+	self._mapNode.imgCheckRound:SetActive(self._panel.mapLevel.nCheckRoundLimit > 0)
+end
 function PenguinCardFlipCtrl:RefreshHandRank()
 	local nAll = #self._panel.mapLevel.tbHandRank
-	for i = 1, 6 do
-		self._mapNode.imgSuitCount[i].gameObject:SetActive(i <= nAll)
-		if i <= nAll then
-			local sName = AllEnum.PenguinCardSuitSprite[self._panel.mapLevel.tbHandRank[i]]
-			self:SetSprite(self._mapNode.imgSuitCount[i], "UI/Play_PenguinCard/SpriteAtlas/Sprite/" .. sName)
+	if 0 < nAll then
+		for i = 1, 6 do
+			self._mapNode.imgSuitCount[i].gameObject:SetActive(i <= nAll)
+			if i <= nAll then
+				local sName = AllEnum.PenguinCardSuitSprite[self._panel.mapLevel.tbHandRank[i]]
+				self:SetSprite(self._mapNode.imgSuitCount[i], "UI/Play_PenguinCard/SpriteAtlas/Sprite/" .. sName)
+			end
 		end
 	end
 	local mapCfg = ConfigTable.GetData("PenguinCardHandRank", self._panel.mapLevel.nHandRankId)
@@ -297,6 +321,31 @@ function PenguinCardFlipCtrl:PlayRoundAni()
 	self.animator:Play("PengUinCard_Flip_Card_out", 0, 0)
 	self._mapNode.aniHandRankBg:Play("PengUinCard_HandRank_Off", 0, 0)
 	self:QuitScoreAni()
+end
+function PenguinCardFlipCtrl:PlayRoundBackAni()
+	for i = 1, 5 do
+		self._mapNode.PenguinBaseCard[i]:PlayFlipBackAni()
+	end
+	self._mapNode.aniHandRankBg:Play("PengUinCard_HandRank_Off", 0, 0)
+	self._mapNode.imgRoundTitleBg:SetActive(false)
+	if self._panel.mapLevel.mapQuest ~= nil then
+		local bComplete = self._panel.mapLevel.mapQuest:CheckComplete()
+		self._mapNode.imgQuestComplete:SetActive(bComplete)
+		if not bComplete then
+			local nP = self._panel.mapLevel.mapQuest.nAimCount / self._panel.mapLevel.mapQuest.nMaxAim
+			if 1 < nP then
+				nP = 1
+			end
+			local nPos = nP * QuestPos
+			self._mapNode.imgQuestProgress:DOSizeDelta(Vector2(nPos, 24), 0.5):SetEase(Ease.OutQuad)
+		end
+	end
+	self:QuitScoreAni()
+	self:RefreshRoundScore()
+	self._mapNode.aniRoundScoreBaseBg.gameObject:SetActive(false)
+	self._mapNode.aniRoundScoreBaseBg.gameObject:SetActive(true)
+	self._mapNode.aniRoundScoreRatioBg.gameObject:SetActive(false)
+	self._mapNode.aniRoundScoreRatioBg.gameObject:SetActive(true)
 end
 function PenguinCardFlipCtrl:QuitScoreAni()
 	if self.sequence then
@@ -474,15 +523,13 @@ function PenguinCardFlipCtrl:OnBtnClick_ShowAll(btn)
 	self._panel.mapLevel:ShowBaseCard()
 end
 function PenguinCardFlipCtrl:OnBtnClick_NextRound(btn)
-	self._panel.mapLevel:StopAuto()
+	self._panel.mapLevel:NextRound()
 	self:QuitScoreAni()
-	if self._panel.mapLevel:GetRoundLimitInTurn() == self._panel.mapLevel.nCurRound and self._panel.mapLevel.nCurTurn < self._panel.mapLevel.nMaxTurn then
-		local callback = function()
-			self._panel.mapLevel:SwitchGameState()
-		end
-		EventManager.Hit("PenguinCard_OpenLog", self._panel.mapLevel.nCurTurn, false, callback)
-	else
-		self._panel.mapLevel:SwitchGameState()
+end
+function PenguinCardFlipCtrl:OnBtnClick_CheckRound(btn)
+	local bAble = self._panel.mapLevel:CheckRound()
+	if bAble then
+		self:QuitScoreAni()
 	end
 end
 function PenguinCardFlipCtrl:OnBtnClick_Auto(btn)
@@ -560,9 +607,9 @@ function PenguinCardFlipCtrl:OnEvent_ShowBaseCard(nIndex)
 		self._mapNode.btnShow[nIndex].interactable = false
 	end
 end
-function PenguinCardFlipCtrl:OnEvent_ReplaceBaseCard(nIndex)
+function PenguinCardFlipCtrl:OnEvent_ReplaceBaseCard(nIndex, bStone)
 	self._mapNode.PenguinBaseCard[nIndex]:Refresh(self._panel.mapLevel.tbBaseCardId[nIndex], true)
-	self._mapNode.PenguinBaseCard[nIndex]:PlayReplaceAni()
+	self._mapNode.PenguinBaseCard[nIndex]:PlayReplaceAni(bStone)
 	self._mapNode.btnShow[nIndex].interactable = false
 end
 function PenguinCardFlipCtrl:OnEvent_ChangeHp(nChange)
@@ -584,7 +631,7 @@ end
 function PenguinCardFlipCtrl:OnEvent_SelectQuest()
 	self:RefreshQuest()
 end
-function PenguinCardFlipCtrl:OnEvent_ChangeScore(nBefore, nBeforeStar, nStar)
+function PenguinCardFlipCtrl:OnEvent_ChangeScore(nBefore)
 	if nBefore < self._panel.mapLevel.nScore and self._panel.mapLevel.nGameState == PenguinCardUtils.GameState.Settlement then
 		WwiseManger:PostEvent("Mode_Card_coin")
 	end

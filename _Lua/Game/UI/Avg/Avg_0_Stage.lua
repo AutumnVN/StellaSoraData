@@ -712,9 +712,10 @@ function Avg_0_Stage:CtrlStage(tbParam)
 	end
 	if sShakeType ~= nil then
 		local tb = self.mapPresetShake[sShakeType]
-		if type(tb) == "table" then
+		local _sT = type(tb)
+		if _sT == "table" then
 			NovaAPI.DoShakeEffect(shake, tb[1], tb[2], tb[3])
-		else
+		elseif _sT == "number" and tb == 1 then
 			NovaAPI.StopShakeEffect(shake)
 		end
 	end

@@ -81,6 +81,15 @@ function PenguinCardBuff:AddDuration_Turn()
 	end
 	return true
 end
+function PenguinCardBuff:AddDuration_Round()
+	if self.nDurationType == GameEnum.PenguinCardBuffDuration.Round then
+		self.nDurationCount = self.nDurationCount + 1
+		if self.nDurationCount >= self.nDurationParam then
+			return false
+		end
+	end
+	return true
+end
 function PenguinCardBuff:AddGrowthLayer()
 	self.nGrowthLayer = self.nGrowthLayer + 1
 end
@@ -111,7 +120,7 @@ function PenguinCardBuff:Trigger(nTriggerPhase, mapTriggerSource, callback)
 	if nTriggerPhase ~= self.nTriggerPhase then
 		return false
 	end
-	local bAble = PenguinCardUtils.CheckTriggerAble(self.nTriggerType, self.tbTriggerParam, self.nTriggerProbability, mapTriggerSource)
+	local bAble = PenguinCardUtils.CheckTriggerAble(self.nTriggerType, self.tbTriggerParam, self.nTriggerProbability, mapTriggerSource, self.nEffectType)
 	if not bAble then
 		return false
 	end
@@ -139,5 +148,19 @@ function PenguinCardBuff:Trigger(nTriggerPhase, mapTriggerSource, callback)
 	end
 	EventManager.Hit("PenguinCardBuffTriggered", self.nId)
 	return true
+end
+function PenguinCardBuff:Serialize()
+	return {
+		nId = self.nId,
+		nTriggerCount = self.nTriggerCount,
+		nDurationCount = self.nDurationCount,
+		nGrowthLayer = self.nGrowthLayer
+	}
+end
+function PenguinCardBuff:Deserialize(mapData)
+	self:Init(mapData.nId)
+	self.nTriggerCount = mapData.nTriggerCount
+	self.nDurationCount = mapData.nDurationCount
+	self.nGrowthLayer = mapData.nGrowthLayer
 end
 return PenguinCardBuff

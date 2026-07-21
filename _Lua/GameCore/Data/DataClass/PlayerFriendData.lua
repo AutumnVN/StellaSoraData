@@ -92,6 +92,21 @@ end
 function PlayerFriendData:GetEnergyCount()
 	return self._nEnergyCount
 end
+function PlayerFriendData:CacheFriendAddStranger(mapFriend)
+	self.mapStrangerFriend = mapFriend
+end
+function PlayerFriendData:TryOpenFriendAddStranger()
+	if not self.mapStrangerFriend then
+		return
+	end
+	local mapFriend = clone(self.mapStrangerFriend)
+	self.mapStrangerFriend = nil
+	local wait = function()
+		coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+		EventManager.Hit(EventId.OpenPanel, PanelId.FriendAddStranger, mapFriend)
+	end
+	cs_coroutine.start(wait)
+end
 function PlayerFriendData:JudgeEnergyGetAble()
 	if not self._tbFriendList then
 		return false
@@ -108,7 +123,7 @@ function PlayerFriendData:JudgeEnergySendAble()
 		return false
 	end
 	for _, v in pairs(self._tbFriendList) do
-		if v.bSendEnergy == false then
+		if not v.bSendEnergy then
 			return true
 		end
 	end

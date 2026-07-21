@@ -28,9 +28,9 @@ BossPanelCtrl._mapEventConfig = {
 	RefreshCenterHpBar = "OnEvent_RefreshCenterHpBar",
 	MonsterBossDead = "OnEvent_MonsterBossDead",
 	ShowCenterHpBar = "OnEvent_ShowCenterHpBar",
+	InputEnable = "OnEvent_InputEnable",
 	Level_Settlement = "OnEvent_ResetBossHUD",
 	ResetBossHUD = "OnEvent_ResetBossHUD",
-	InputEnable = "OnEvent_InputEnable",
 	ADVENTURE_LEVEL_UNLOAD_COMPLETE = "OnEvent_ResetBossHUD"
 }
 function BossPanelCtrl:Awake()
@@ -154,6 +154,10 @@ function BossPanelCtrl:RefreshBossPanel(bRefresh)
 	self.nLastBossCount = #self.tbBoss
 end
 function BossPanelCtrl:CloseUI()
+	if #self.tbBoss == 0 and next(self.tbBossCtrl) == nil then
+		self._mapNode.BossCanvas.enabled = false
+		return
+	end
 	NovaAPI.SetCanvasGroupAlpha(self._mapNode.BossCanvasGroup, 1)
 	self.bossHUDCloseAnimTweener = Sequence()
 	self.bossHUDCloseAnimTweener:Append(self._mapNode.BossCanvasGroup:DOFade(0, 0.5))

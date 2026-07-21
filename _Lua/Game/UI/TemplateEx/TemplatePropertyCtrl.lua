@@ -84,6 +84,18 @@ function TemplatePropertyCtrl:SetNote(nNoteId, nLevel1, nLevel2, bShowArrow)
 		self._mapNode.txtValue1.gameObject:SetActive(false)
 	end
 end
+function TemplatePropertyCtrl:SetSoldierAttr(mapAttrData)
+	local mapAttributeDesc = self:_GetAttributeDesc(mapAttrData.sKey)
+	if not mapAttributeDesc then
+		return
+	end
+	local sValue = self:_TransValueFormat(mapAttrData.nValue, mapAttributeDesc.isPercent, mapAttributeDesc.Format)
+	if mapAttrData.sLanguageId ~= nil then
+		self:_RefreshContent(mapAttributeDesc.Icon, ConfigTable.GetUIText(mapAttrData.sLanguageId), sValue)
+	else
+		self:_RefreshContent(mapAttributeDesc.Icon, mapAttributeDesc.Desc, sValue)
+	end
+end
 function TemplatePropertyCtrl:_GetAttributeDesc(sKey)
 	local mapAttributeDesc = CacheTable.GetData("_AttributeDesc", sKey)
 	if mapAttributeDesc == nil then

@@ -588,7 +588,9 @@ function CookieBoardCtrl:NextBox()
 			if self.timerBeat ~= nil then
 				self.timerBeat:Cancel()
 			end
-			self.timerBeat = self:AddTimer(0, self.nBeatInterval, self.OnEvent_Beat, true, true, true)
+			if self.bRhythmMode and self.nBeatInterval ~= nil then
+				self.timerBeat = self:AddTimer(0, self.nBeatInterval, self.OnEvent_Beat, true, true, true)
+			end
 			if self.timerRound ~= nil then
 				self.timerRound:Cancel()
 			end
@@ -889,7 +891,9 @@ function CookieBoardCtrl:GameTrigger()
 	self:SetEnvironmentBeat(true)
 	self.nPrevTime = CS.UnityEngine.Time.time
 	self.timerRound = self:AddTimer(0, 0.034, self.OnEvent_Time, true, true, true)
-	self.timerBeat = self:AddTimer(0, self.nBeatInterval, self.OnEvent_Beat, true, true, true)
+	if self.bRhythmMode and self.nBeatInterval ~= nil then
+		self.timerBeat = self:AddTimer(0, self.nBeatInterval, self.OnEvent_Beat, true, true, true)
+	end
 	local sEvent = self:GetSwitchBoxSoundEvent()
 	CS.WwiseAudioManager.Instance:PostEvent(sEvent)
 	self.bGameStarted = true
@@ -1032,26 +1036,30 @@ function CookieBoardCtrl:PlayPathEffect()
 end
 function CookieBoardCtrl:PlayHitEffect(nHitType)
 	self:ResetEff()
+	local objNextCtrl = self.nextCtrl
+	if objNextCtrl == nil or objNextCtrl.gameObject == nil then
+		return
+	end
 	local nAnimLength = 0.75
 	if nHitType == GameEnum.CookieRhythmlResult.Perfect or nHitType == GameEnum.CookieRhythmlResult.Excellent then
 		NovaAPI.SetTMPText(self._mapNode.txtPerfectCombo, string.format("x%d", self.nPerfectCombo))
 		self._mapNode.txtPerfectCombo.gameObject:SetActive(self.nPerfectCombo >= 2)
 		self._mapNode.animPerfectEff.gameObject:SetActive(true)
-		self._mapNode.animPerfectEff.transform:SetParent(self.nextCtrl.gameObject.transform, false)
+		self._mapNode.animPerfectEff.transform:SetParent(objNextCtrl.gameObject.transform, false)
 		nAnimLength = NovaAPI.GetAnimClipLength(self._mapNode.animPerfectEff, {
 			"CookieBoard_HitEffect_perfect"
 		})
 		self._mapNode.animPerfectEff:Play("CookieBoard_HitEffect_perfect", 0, 0)
 	elseif nHitType == GameEnum.CookieRhythmlResult.Good then
 		self._mapNode.animExcellentEff.gameObject:SetActive(true)
-		self._mapNode.animExcellentEff.transform:SetParent(self.nextCtrl.gameObject.transform, false)
+		self._mapNode.animExcellentEff.transform:SetParent(objNextCtrl.gameObject.transform, false)
 		nAnimLength = NovaAPI.GetAnimClipLength(self._mapNode.animExcellentEff, {
 			"CookieBoard_HitEffect_excellent"
 		})
 		self._mapNode.animExcellentEff:Play("CookieBoard_HitEffect_excellent", 0, 0)
 	elseif nHitType == GameEnum.CookieRhythmlResult.Miss then
 		self._mapNode.animMissEff.gameObject:SetActive(true)
-		self._mapNode.animMissEff.transform:SetParent(self.nextCtrl.gameObject.transform, false)
+		self._mapNode.animMissEff.transform:SetParent(objNextCtrl.gameObject.transform, false)
 		nAnimLength = NovaAPI.GetAnimClipLength(self._mapNode.animMissEff, {
 			"CookieBoard_HitEffect_miss"
 		})
@@ -1261,7 +1269,7 @@ end
 function CookieBoardCtrl:OnBtn_ConfirmGameOver()
 	local closePanel = function()
 		CS.WwiseAudioManager.Instance:PostEvent("mode_cookie_1_stop")
-		EventManager.Hit(EventId.ClosePanel, PanelId.CookieBoardPanel_400010)
+		EventManager.Hit(EventId.ClosePanel, PanelId.CookieBoardPanel_400016)
 	end
 	local rewardChangeInfo = self.cookieData:GetLevelReward()
 	if rewardChangeInfo ~= nil and #rewardChangeInfo.Props > 0 then
@@ -1467,6 +1475,11 @@ end
 function CookieBoardCtrl:OnEnable()
 	GamepadUIManager.EnableGamepadUI("CookieBoardCtrl", self.tbGamepadUINode)
 	self.mapLevelConfig = ConfigTable.GetData("CookieLevel", self.nLevelId)
+	if self.mapLevelConfig == nil or self.mapLevelConfig.Id ~= self.nLevelId then
+		printError("CookieLevel config missing or level id mismatch, levelId:" .. tostring(self.nLevelId))
+		EventManager.Hit(EventId.CloesCurPanel)
+		return
+	end
 	self.nPackModel = self.mapLevelConfig.PackModel
 	self.tbFloor = {}
 	ForEachTableLine(ConfigTable.Get("CookieFloor"), function(tbData)
@@ -1474,6 +1487,11 @@ function CookieBoardCtrl:OnEnable()
 			table.insert(self.tbFloor, tbData)
 		end
 	end)
+	if self.tbFloor == nil or #self.tbFloor == 0 then
+		printError("CookieFloor config missing, levelId:" .. tostring(self.nLevelId) .. ", floorId:" .. tostring(self.mapLevelConfig.FloorId))
+		EventManager.Hit(EventId.CloesCurPanel)
+		return
+	end
 	self.tbPathGroup = {}
 	ForEachTableLine(ConfigTable.Get("CookiePackagePathsGroup"), function(tbData)
 		table.insert(self.tbPathGroup, tbData)

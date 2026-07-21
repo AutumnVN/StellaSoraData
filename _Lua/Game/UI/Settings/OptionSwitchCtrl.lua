@@ -25,6 +25,11 @@ function OptionSwitchCtrl:Init(callback, bOn)
 	self._mapNode.btnSwitch[1].gameObject:SetActive(not self.bOn)
 	self._mapNode.btnSwitch[2].gameObject:SetActive(self.bOn)
 end
+function OptionSwitchCtrl:SetOn(bOn)
+	self.bOn = bOn
+	self._mapNode.btnSwitch[1].gameObject:SetActive(not self.bOn)
+	self._mapNode.btnSwitch[2].gameObject:SetActive(self.bOn)
+end
 function OptionSwitchCtrl:OnBtnClick_Switch(btn, nIndex)
 	self.bOn = not self.bOn
 	self.callback()

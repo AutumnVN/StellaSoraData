@@ -880,6 +880,14 @@ function PlayerItemData:ProcessRewardChangeInfo(mapChangeInfo)
 				end
 			end
 		end
+		if type(mapDecodeInfo["proto.TraceHuntItem"]) == "table" then
+			for _, mapData in ipairs(mapDecodeInfo["proto.TraceHuntItem"]) do
+				local itemInfo = ConfigTable.GetData_Item(mapData.Tid)
+				if itemInfo and 0 < mapData.ConvertQty + mapData.GrantQty then
+					add_reward(mapData.Tid, mapData.ConvertQty + mapData.GrantQty)
+				end
+			end
+		end
 		for nId, nCount in pairs(tbRewardById) do
 			if nCount <= 0 then
 				tbRewardById[nId] = nil

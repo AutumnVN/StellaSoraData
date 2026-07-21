@@ -7,6 +7,11 @@ FriendPanel._tbDefine = {
 }
 function FriendPanel:Awake()
 	self.tbAddCache = {}
+	self.nDefaultTog = nil
+	local tbParam = self:GetPanelParam()
+	if type(tbParam) == "table" then
+		self.nDefaultTog = tbParam[1]
+	end
 end
 function FriendPanel:OnEnable()
 end
