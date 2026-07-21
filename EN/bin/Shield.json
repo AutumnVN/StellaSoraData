@@ -39,6 +39,42 @@
     "TimeSuperposition": 1,
     "NotShieldScale": true
   },
+  "250100601": {
+    "Id": 250100601,
+    "BindEffect": "FX/Buff/fx_buff_common_Shield",
+    "TimeSuperposition": 2,
+    "NotShieldScale": true
+  },
+  "250100801": {
+    "Id": 250100801,
+    "BindEffect": "FX/Buff/fx_buff_common_Shield",
+    "TimeSuperposition": 2,
+    "NotShieldScale": true
+  },
+  "250103901": {
+    "Id": 250103901,
+    "BindEffect": "FX/Buff/fx_buff_common_Shield",
+    "TimeSuperposition": 2,
+    "NotShieldScale": true
+  },
+  "250103902": {
+    "Id": 250103902,
+    "BindEffect": "FX/Buff/fx_buff_common_Shield",
+    "TimeSuperposition": 2,
+    "NotShieldScale": true
+  },
+  "250103903": {
+    "Id": 250103903,
+    "BindEffect": "FX/Buff/fx_buff_common_Shield",
+    "TimeSuperposition": 2,
+    "NotShieldScale": true
+  },
+  "260110521": {
+    "Id": 260110521,
+    "BindEffect": "FX/Buff/fx_buff_common_Shield",
+    "TimeSuperposition": 2,
+    "NotShieldScale": true
+  },
   "4009020": {
     "Id": 4009020,
     "TimeSuperposition": 2
@@ -276,6 +312,14 @@
   },
   "14003011": {
     "Id": 14003011,
+    "TimeSuperposition": 2,
+    "NotRemove": true
+  },
+  "16012001": {
+    "Id": 16012001,
+    "levelTypeData": 1,
+    "LevelData": 516012,
+    "BindEffect": "Actor/Character/16001/Buff/fx_16001_buff_Skill_Sup_Bubble",
     "TimeSuperposition": 2,
     "NotRemove": true
   },
