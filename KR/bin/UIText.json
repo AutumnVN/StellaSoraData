@@ -1483,6 +1483,14 @@
     "Id": "PenguinCard_Btn_AddRoll",
     "Text": "UIText.PenguinCard_Btn_AddRoll.1"
   },
+  "PenguinCard_Btn_AddCheckRound": {
+    "Id": "PenguinCard_Btn_AddCheckRound",
+    "Text": "UIText.PenguinCard_Btn_AddCheckRound.1"
+  },
+  "PenguinCard_AddCheckRoundSuccess": {
+    "Id": "PenguinCard_AddCheckRoundSuccess",
+    "Text": "UIText.PenguinCard_AddCheckRoundSuccess.1"
+  },
   "PenguinCard_AddBtnMax": {
     "Id": "PenguinCard_AddBtnMax",
     "Text": "UIText.PenguinCard_AddBtnMax.1"
@@ -1506,6 +1514,14 @@
   "PenguinCard_LeftRound": {
     "Id": "PenguinCard_LeftRound",
     "Text": "UIText.PenguinCard_LeftRound.1"
+  },
+  "PenguinCard_Btn_CheckRound": {
+    "Id": "PenguinCard_Btn_CheckRound",
+    "Text": "UIText.PenguinCard_Btn_CheckRound.1"
+  },
+  "PenguinCard_LeftCheckRound": {
+    "Id": "PenguinCard_LeftCheckRound",
+    "Text": "UIText.PenguinCard_LeftCheckRound.1"
   },
   "PenguinCard_FlipAllCardTip": {
     "Id": "PenguinCard_FlipAllCardTip",
@@ -1795,6 +1811,10 @@
     "Id": "PenguinCard_BuffDescSuffix_Count",
     "Text": "UIText.PenguinCard_BuffDescSuffix_Count.1"
   },
+  "PenguinCard_BuffDescSuffix_Round": {
+    "Id": "PenguinCard_BuffDescSuffix_Round",
+    "Text": "UIText.PenguinCard_BuffDescSuffix_Round.1"
+  },
   "PenguinCard_Tip_NoneQuest": {
     "Id": "PenguinCard_Tip_NoneQuest",
     "Text": "UIText.PenguinCard_Tip_NoneQuest.1"
@@ -1802,6 +1822,538 @@
   "PenguinCard_Quest_FailDesc": {
     "Id": "PenguinCard_Quest_FailDesc",
     "Text": "UIText.PenguinCard_Quest_FailDesc.1"
+  },
+  "PenguinCard_CheckRound_RoundFail": {
+    "Id": "PenguinCard_CheckRound_RoundFail",
+    "Text": "UIText.PenguinCard_CheckRound_RoundFail.1"
+  },
+  "PenguinCard_CheckRound_TurnFail": {
+    "Id": "PenguinCard_CheckRound_TurnFail",
+    "Text": "UIText.PenguinCard_CheckRound_TurnFail.1"
+  },
+  "Soldier_Entrance": {
+    "Id": "Soldier_Entrance",
+    "Text": "UIText.Soldier_Entrance.1"
+  },
+  "Soldier_RewardPre": {
+    "Id": "Soldier_RewardPre",
+    "Text": "UIText.Soldier_RewardPre.1"
+  },
+  "Soldier_ActDesc": {
+    "Id": "Soldier_ActDesc",
+    "Text": "UIText.Soldier_ActDesc.1"
+  },
+  "Soldier_Handbook": {
+    "Id": "Soldier_Handbook",
+    "Text": "UIText.Soldier_Handbook.1"
+  },
+  "Soldier_Quest": {
+    "Id": "Soldier_Quest",
+    "Text": "UIText.Soldier_Quest.1"
+  },
+  "Soldier_Recommend": {
+    "Id": "Soldier_Recommend",
+    "Text": "UIText.Soldier_Recommend.1"
+  },
+  "Soldier_Go": {
+    "Id": "Soldier_Go",
+    "Text": "UIText.Soldier_Go.1"
+  },
+  "Soldier_QuestPanelTitle": {
+    "Id": "Soldier_QuestPanelTitle",
+    "Text": "UIText.Soldier_QuestPanelTitle.1"
+  },
+  "Soldier_Quest_GetAllReward": {
+    "Id": "Soldier_Quest_GetAllReward",
+    "Text": "UIText.Soldier_Quest_GetAllReward.1"
+  },
+  "Soldier_Quest_Complete": {
+    "Id": "Soldier_Quest_Complete",
+    "Text": "UIText.Soldier_Quest_Complete.1"
+  },
+  "Soldier_Quest_ReceiveNone": {
+    "Id": "Soldier_Quest_ReceiveNone",
+    "Text": "UIText.Soldier_Quest_ReceiveNone.1"
+  },
+  "Soldier_Level_Select_CurLevelProgress_Title": {
+    "Id": "Soldier_Level_Select_CurLevelProgress_Title",
+    "Text": "UIText.Soldier_Level_Select_CurLevelProgress_Title.1"
+  },
+  "Soldier_Level_Select_Continue": {
+    "Id": "Soldier_Level_Select_Continue",
+    "Text": "UIText.Soldier_Level_Select_Continue.1"
+  },
+  "Soldier_Level_Select_DoResult": {
+    "Id": "Soldier_Level_Select_DoResult",
+    "Text": "UIText.Soldier_Level_Select_DoResult.1"
+  },
+  "Soldier_Level_Select_GoResult": {
+    "Id": "Soldier_Level_Select_GoResult",
+    "Text": "UIText.Soldier_Level_Select_GoResult.1"
+  },
+  "Soldier_Handbook_SkillTitle": {
+    "Id": "Soldier_Handbook_SkillTitle",
+    "Text": "UIText.Soldier_Handbook_SkillTitle.1"
+  },
+  "Soldier_Handbook_PotentialTitle": {
+    "Id": "Soldier_Handbook_PotentialTitle",
+    "Text": "UIText.Soldier_Handbook_PotentialTitle.1"
+  },
+  "Soldier_Handbook_Character": {
+    "Id": "Soldier_Handbook_Character",
+    "Text": "UIText.Soldier_Handbook_Character.1"
+  },
+  "Soldier_Handbook_Partner": {
+    "Id": "Soldier_Handbook_Partner",
+    "Text": "UIText.Soldier_Handbook_Partner.1"
+  },
+  "Soldier_Handbook_StarterCard": {
+    "Id": "Soldier_Handbook_StarterCard",
+    "Text": "UIText.Soldier_Handbook_StarterCard.1"
+  },
+  "Soldier_Handbook_StrategyCard": {
+    "Id": "Soldier_Handbook_StrategyCard",
+    "Text": "UIText.Soldier_Handbook_StrategyCard.1"
+  },
+  "Soldier_Handbook_Vanguard": {
+    "Id": "Soldier_Handbook_Vanguard",
+    "Text": "UIText.Soldier_Handbook_Vanguard.1"
+  },
+  "Soldier_Handbook_Support": {
+    "Id": "Soldier_Handbook_Support",
+    "Text": "UIText.Soldier_Handbook_Support.1"
+  },
+  "Soldier_Handbook_PartnerDetail": {
+    "Id": "Soldier_Handbook_PartnerDetail",
+    "Text": "UIText.Soldier_Handbook_PartnerDetail.1"
+  },
+  "Soldier_Handbook_PartnerCharListTitle": {
+    "Id": "Soldier_Handbook_PartnerCharListTitle",
+    "Text": "UIText.Soldier_Handbook_PartnerCharListTitle.1"
+  },
+  "Soldier_Detail_CharTitle": {
+    "Id": "Soldier_Detail_CharTitle",
+    "Text": "UIText.Soldier_Detail_CharTitle.1"
+  },
+  "Soldier_Recommend_Apply": {
+    "Id": "Soldier_Recommend_Apply",
+    "Text": "UIText.Soldier_Recommend_Apply.1"
+  },
+  "Soldier_Recommend_Cancel": {
+    "Id": "Soldier_Recommend_Cancel",
+    "Text": "UIText.Soldier_Recommend_Cancel.1"
+  },
+  "Soldier_Recommend_Tips": {
+    "Id": "Soldier_Recommend_Tips",
+    "Text": "UIText.Soldier_Recommend_Tips.1"
+  },
+  "Soldier_Recommend_Build": {
+    "Id": "Soldier_Recommend_Build",
+    "Text": "UIText.Soldier_Recommend_Build.1"
+  },
+  "Soldier_Battle_Speed": {
+    "Id": "Soldier_Battle_Speed",
+    "Text": "UIText.Soldier_Battle_Speed.1"
+  },
+  "Soldier_Battle_Btn_Partner": {
+    "Id": "Soldier_Battle_Btn_Partner",
+    "Text": "UIText.Soldier_Battle_Btn_Partner.1"
+  },
+  "Soldier_Battle_Btn_Char": {
+    "Id": "Soldier_Battle_Btn_Char",
+    "Text": "UIText.Soldier_Battle_Btn_Char.1"
+  },
+  "Soldier_Battle_GiveUp": {
+    "Id": "Soldier_Battle_GiveUp",
+    "Text": "UIText.Soldier_Battle_GiveUp.1"
+  },
+  "Soldier_Battle_Result": {
+    "Id": "Soldier_Battle_Result",
+    "Text": "UIText.Soldier_Battle_Result.1"
+  },
+  "Soldier_Btn_Restart": {
+    "Id": "Soldier_Btn_Restart",
+    "Text": "UIText.Soldier_Btn_Restart.1"
+  },
+  "Soldier_Btn_Result": {
+    "Id": "Soldier_Btn_Result",
+    "Text": "UIText.Soldier_Btn_Result.1"
+  },
+  "Soldier_Btn_Leave": {
+    "Id": "Soldier_Btn_Leave",
+    "Text": "UIText.Soldier_Btn_Leave.1"
+  },
+  "Soldier_Battle_Card_Title": {
+    "Id": "Soldier_Battle_Card_Title",
+    "Text": "UIText.Soldier_Battle_Card_Title.1"
+  },
+  "Soldier_Battle_Partner_Title": {
+    "Id": "Soldier_Battle_Partner_Title",
+    "Text": "UIText.Soldier_Battle_Partner_Title.1"
+  },
+  "Soldier_Battle_Char_Title": {
+    "Id": "Soldier_Battle_Char_Title",
+    "Text": "UIText.Soldier_Battle_Char_Title.1"
+  },
+  "Soldier_Battle_Level": {
+    "Id": "Soldier_Battle_Level",
+    "Text": "UIText.Soldier_Battle_Level.1"
+  },
+  "Soldier_Level_Select_Reward": {
+    "Id": "Soldier_Level_Select_Reward",
+    "Text": "UIText.Soldier_Level_Select_Reward.1"
+  },
+  "Soldier_Level_Select_Challenge": {
+    "Id": "Soldier_Level_Select_Challenge",
+    "Text": "UIText.Soldier_Level_Select_Challenge.1"
+  },
+  "Soldier_Level_Select_NodeIndex": {
+    "Id": "Soldier_Level_Select_NodeIndex",
+    "Text": "UIText.Soldier_Level_Select_NodeIndex.1"
+  },
+  "Soldier_Level_Select_Lock1": {
+    "Id": "Soldier_Level_Select_Lock1",
+    "Text": "UIText.Soldier_Level_Select_Lock1.1"
+  },
+  "Soldier_Level_Select_Lock2": {
+    "Id": "Soldier_Level_Select_Lock2",
+    "Text": "UIText.Soldier_Level_Select_Lock2.1"
+  },
+  "SoldierNodeType_Event": {
+    "Id": "SoldierNodeType_Event",
+    "Text": "UIText.SoldierNodeType_Event.1"
+  },
+  "SoldierNodeType_Battle": {
+    "Id": "SoldierNodeType_Battle",
+    "Text": "UIText.SoldierNodeType_Battle.1"
+  },
+  "SoldierNodeType_MidBossBattle": {
+    "Id": "SoldierNodeType_MidBossBattle",
+    "Text": "UIText.SoldierNodeType_MidBossBattle.1"
+  },
+  "SoldierNodeType_FinalBossBattle": {
+    "Id": "SoldierNodeType_FinalBossBattle",
+    "Text": "UIText.SoldierNodeType_FinalBossBattle.1"
+  },
+  "Soldier_Pause_Schedule": {
+    "Id": "Soldier_Pause_Schedule",
+    "Text": "UIText.Soldier_Pause_Schedule.1"
+  },
+  "SoldierNodeTips_Title": {
+    "Id": "SoldierNodeTips_Title",
+    "Text": "UIText.SoldierNodeTips_Title.1"
+  },
+  "Soldier_Sandtable_TextLvTitle": {
+    "Id": "Soldier_Sandtable_TextLvTitle",
+    "Text": "UIText.Soldier_Sandtable_TextLvTitle.1"
+  },
+  "Soldier_Sandtable_MaxLevel": {
+    "Id": "Soldier_Sandtable_MaxLevel",
+    "Text": "UIText.Soldier_Sandtable_MaxLevel.1"
+  },
+  "Soldier_Sandtable_BuyExpTitle": {
+    "Id": "Soldier_Sandtable_BuyExpTitle",
+    "Text": "UIText.Soldier_Sandtable_BuyExpTitle.1"
+  },
+  "Soldier_Sandtable_Shop": {
+    "Id": "Soldier_Sandtable_Shop",
+    "Text": "UIText.Soldier_Sandtable_Shop.1"
+  },
+  "Soldier_GoldTips_Title": {
+    "Id": "Soldier_GoldTips_Title",
+    "Text": "UIText.Soldier_GoldTips_Title.1"
+  },
+  "Soldier_GoldTips_Desc": {
+    "Id": "Soldier_GoldTips_Desc",
+    "Text": "UIText.Soldier_GoldTips_Desc.1"
+  },
+  "Soldier_GoldTips_Income": {
+    "Id": "Soldier_GoldTips_Income",
+    "Text": "UIText.Soldier_GoldTips_Income.1"
+  },
+  "Soldier_GoldTips_Winningstreak": {
+    "Id": "Soldier_GoldTips_Winningstreak",
+    "Text": "UIText.Soldier_GoldTips_Winningstreak.1"
+  },
+  "Soldier_GoldTips_Losingingstreak": {
+    "Id": "Soldier_GoldTips_Losingingstreak",
+    "Text": "UIText.Soldier_GoldTips_Losingingstreak.1"
+  },
+  "Soldier_GoldTips_BasicReward": {
+    "Id": "Soldier_GoldTips_BasicReward",
+    "Text": "UIText.Soldier_GoldTips_BasicReward.1"
+  },
+  "Soldier_Result_Prestige": {
+    "Id": "Soldier_Result_Prestige",
+    "Text": "UIText.Soldier_Result_Prestige.1"
+  },
+  "Soldier_Result_WinningTitle": {
+    "Id": "Soldier_Result_WinningTitle",
+    "Text": "UIText.Soldier_Result_WinningTitle.1"
+  },
+  "Soldier_Result_LosingingTitle": {
+    "Id": "Soldier_Result_LosingingTitle",
+    "Text": "UIText.Soldier_Result_LosingingTitle.1"
+  },
+  "Soldier_Result_StatisticsTitle": {
+    "Id": "Soldier_Result_StatisticsTitle",
+    "Text": "UIText.Soldier_Result_StatisticsTitle.1"
+  },
+  "Soldier_Result_CoinsTitle": {
+    "Id": "Soldier_Result_CoinsTitle",
+    "Text": "UIText.Soldier_Result_CoinsTitle.1"
+  },
+  "Soldier_Result_AwardTitle": {
+    "Id": "Soldier_Result_AwardTitle",
+    "Text": "UIText.Soldier_Result_AwardTitle.1"
+  },
+  "Soldier_Result_ScoreTitle": {
+    "Id": "Soldier_Result_ScoreTitle",
+    "Text": "UIText.Soldier_Result_ScoreTitle.1"
+  },
+  "Soldier_Result_Imntergral": {
+    "Id": "Soldier_Result_Imntergral",
+    "Text": "UIText.Soldier_Result_Imntergral.1"
+  },
+  "Soldier_Result_Settlement": {
+    "Id": "Soldier_Result_Settlement",
+    "Text": "UIText.Soldier_Result_Settlement.1"
+  },
+  "Soldier_Result_Quit": {
+    "Id": "Soldier_Result_Quit",
+    "Text": "UIText.Soldier_Result_Quit.1"
+  },
+  "Soldier_Result_ExperienceTitle": {
+    "Id": "Soldier_Result_ExperienceTitle",
+    "Text": "UIText.Soldier_Result_ExperienceTitle.1"
+  },
+  "Soldier_GoldTips_Interest": {
+    "Id": "Soldier_GoldTips_Interest",
+    "Text": "UIText.Soldier_GoldTips_Interest.1"
+  },
+  "Soldier_GoldTips_Other": {
+    "Id": "Soldier_GoldTips_Other",
+    "Text": "UIText.Soldier_GoldTips_Other.1"
+  },
+  "Soldier_Select_Policy_Title": {
+    "Id": "Soldier_Select_Policy_Title",
+    "Text": "UIText.Soldier_Select_Policy_Title.1"
+  },
+  "Soldier_Policy_ReRoll_Count": {
+    "Id": "Soldier_Policy_ReRoll_Count",
+    "Text": "UIText.Soldier_Policy_ReRoll_Count.1"
+  },
+  "Soldier_Select_Confirm": {
+    "Id": "Soldier_Select_Confirm",
+    "Text": "UIText.Soldier_Select_Confirm.1"
+  },
+  "Soldier_Select_PolicyItem_Effect_Title": {
+    "Id": "Soldier_Select_PolicyItem_Effect_Title",
+    "Text": "UIText.Soldier_Select_PolicyItem_Effect_Title.1"
+  },
+  "SoldierBattleEvent_Label": {
+    "Id": "SoldierBattleEvent_Label",
+    "Text": "UIText.SoldierBattleEvent_Label.1"
+  },
+  "SoldierBattleEvent_RemainRewardCount": {
+    "Id": "SoldierBattleEvent_RemainRewardCount",
+    "Text": "UIText.SoldierBattleEvent_RemainRewardCount.1"
+  },
+  "SoldierBattleEvent_Back": {
+    "Id": "SoldierBattleEvent_Back",
+    "Text": "UIText.SoldierBattleEvent_Back.1"
+  },
+  "SoldierBattleEvent_FinalPoint": {
+    "Id": "SoldierBattleEvent_FinalPoint",
+    "Text": "UIText.SoldierBattleEvent_FinalPoint.1"
+  },
+  "Soldier_InBattle": {
+    "Id": "Soldier_InBattle",
+    "Text": "UIText.Soldier_InBattle.1"
+  },
+  "Soldier_Resolveadispute_SucessTip": {
+    "Id": "Soldier_Resolveadispute_SucessTip",
+    "Text": "UIText.Soldier_Resolveadispute_SucessTip.1"
+  },
+  "Soldier_Resolveadispute_Confirm": {
+    "Id": "Soldier_Resolveadispute_Confirm",
+    "Text": "UIText.Soldier_Resolveadispute_Confirm.1"
+  },
+  "Soldier_Sandtable_Go": {
+    "Id": "Soldier_Sandtable_Go",
+    "Text": "UIText.Soldier_Sandtable_Go.1"
+  },
+  "Soldier_Sandtable_ShopCell": {
+    "Id": "Soldier_Sandtable_ShopCell",
+    "Text": "UIText.Soldier_Sandtable_ShopCell.1"
+  },
+  "Soldier_FinishTitle": {
+    "Id": "Soldier_FinishTitle",
+    "Text": "UIText.Soldier_FinishTitle.1"
+  },
+  "Soldier_FinishTips": {
+    "Id": "Soldier_FinishTips",
+    "Text": "UIText.Soldier_FinishTips.1"
+  },
+  "Soldier_SaveAndQuit": {
+    "Id": "Soldier_SaveAndQuit",
+    "Text": "UIText.Soldier_SaveAndQuit.1"
+  },
+  "Soldier_SaveAndExit": {
+    "Id": "Soldier_SaveAndExit",
+    "Text": "UIText.Soldier_SaveAndExit.1"
+  },
+  "Soldier_BattleEventItem_Challenge": {
+    "Id": "Soldier_BattleEventItem_Challenge",
+    "Text": "UIText.Soldier_BattleEventItem_Challenge.1"
+  },
+  "Soldier_BuyExp_Tips1": {
+    "Id": "Soldier_BuyExp_Tips1",
+    "Text": "UIText.Soldier_BuyExp_Tips1.1"
+  },
+  "Soldier_BuyExp_Tips2": {
+    "Id": "Soldier_BuyExp_Tips2",
+    "Text": "UIText.Soldier_BuyExp_Tips2.1"
+  },
+  "Soldier_SwapChess_Tips": {
+    "Id": "Soldier_SwapChess_Tips",
+    "Text": "UIText.Soldier_SwapChess_Tips.1"
+  },
+  "SoldierBattleEvent_GoToDice": {
+    "Id": "SoldierBattleEvent_GoToDice",
+    "Text": "UIText.SoldierBattleEvent_GoToDice.1"
+  },
+  "Soldier_Sandtable_GoBackEvent": {
+    "Id": "Soldier_Sandtable_GoBackEvent",
+    "Text": "UIText.Soldier_Sandtable_GoBackEvent.1"
+  },
+  "Soldier_Recommend_Use": {
+    "Id": "Soldier_Recommend_Use",
+    "Text": "UIText.Soldier_Recommend_Use.1"
+  },
+  "Soldier_Resolveadispute_Title": {
+    "Id": "Soldier_Resolveadispute_Title",
+    "Text": "UIText.Soldier_Resolveadispute_Title.1"
+  },
+  "Soldier_Strategy_Title": {
+    "Id": "Soldier_Strategy_Title",
+    "Text": "UIText.Soldier_Strategy_Title.1"
+  },
+  "Solider_Starter_Title": {
+    "Id": "Solider_Starter_Title",
+    "Text": "UIText.Solider_Starter_Title.1"
+  },
+  "Soldier_Recommend_BuildTitle": {
+    "Id": "Soldier_Recommend_BuildTitle",
+    "Text": "UIText.Soldier_Recommend_BuildTitle.1"
+  },
+  "Soldier_Sandtable_PositionEffect": {
+    "Id": "Soldier_Sandtable_PositionEffect",
+    "Text": "UIText.Soldier_Sandtable_PositionEffect.1"
+  },
+  "Soldier_Battle_Pause": {
+    "Id": "Soldier_Battle_Pause",
+    "Text": "UIText.Soldier_Battle_Pause.1"
+  },
+  "Soldier_Handbook_CharDetail": {
+    "Id": "Soldier_Handbook_CharDetail",
+    "Text": "UIText.Soldier_Handbook_CharDetail.1"
+  },
+  "Soldier_Shop_Refresh": {
+    "Id": "Soldier_Shop_Refresh",
+    "Text": "UIText.Soldier_Shop_Refresh.1"
+  },
+  "Soldier_Shop_Refresh_Free": {
+    "Id": "Soldier_Shop_Refresh_Free",
+    "Text": "UIText.Soldier_Shop_Refresh_Free.1"
+  },
+  "Soldier_Shop_Refresh_Disable": {
+    "Id": "Soldier_Shop_Refresh_Disable",
+    "Text": "UIText.Soldier_Shop_Refresh_Disable.1"
+  },
+  "Soldier_Sandtable_Reward": {
+    "Id": "Soldier_Sandtable_Reward",
+    "Text": "UIText.Soldier_Sandtable_Reward.1"
+  },
+  "Soldier_BattleEvent_RemainRewardCount": {
+    "Id": "Soldier_BattleEvent_RemainRewardCount",
+    "Text": "UIText.Soldier_BattleEvent_RemainRewardCount.1"
+  },
+  "Soldier_Death_Tips": {
+    "Id": "Soldier_Death_Tips",
+    "Text": "UIText.Soldier_Death_Tips.1"
+  },
+  "Soldier_OverChessCount_Tips": {
+    "Id": "Soldier_OverChessCount_Tips",
+    "Text": "UIText.Soldier_OverChessCount_Tips.1"
+  },
+  "Soldier_OverBench_Tips": {
+    "Id": "Soldier_OverBench_Tips",
+    "Text": "UIText.Soldier_OverBench_Tips.1"
+  },
+  "Soldier_NoFightChess_Tips": {
+    "Id": "Soldier_NoFightChess_Tips",
+    "Text": "UIText.Soldier_NoFightChess_Tips.1"
+  },
+  "Soldier_InsufficientCoin_Tips": {
+    "Id": "Soldier_InsufficientCoin_Tips",
+    "Text": "UIText.Soldier_InsufficientCoin_Tips.1"
+  },
+  "Soldier_Battle_LevelPause": {
+    "Id": "Soldier_Battle_LevelPause",
+    "Text": "UIText.Soldier_Battle_LevelPause.1"
+  },
+  "Soldier_EmptyPosition_Tips": {
+    "Id": "Soldier_EmptyPosition_Tips",
+    "Text": "UIText.Soldier_EmptyPosition_Tips.1"
+  },
+  "Soldier_Sandtable_TemporaryReturn_Tips": {
+    "Id": "Soldier_Sandtable_TemporaryReturn_Tips",
+    "Text": "UIText.Soldier_Sandtable_TemporaryReturn_Tips.1"
+  },
+  "Soldier_Event_NeedPoint": {
+    "Id": "Soldier_Event_NeedPoint",
+    "Text": "UIText.Soldier_Event_NeedPoint.1"
+  },
+  "Soldier_Vanguard_Skill": {
+    "Id": "Soldier_Vanguard_Skill",
+    "Text": "UIText.Soldier_Vanguard_Skill.1"
+  },
+  "Soldier_Support_Skill": {
+    "Id": "Soldier_Support_Skill",
+    "Text": "UIText.Soldier_Support_Skill.1"
+  },
+  "Soldier_BattleEventItem_RewardItem": {
+    "Id": "Soldier_BattleEventItem_RewardItem",
+    "Text": "UIText.Soldier_BattleEventItem_RewardItem.1"
+  },
+  "Soldier_AutoBattle_Tips": {
+    "Id": "Soldier_AutoBattle_Tips",
+    "Text": "UIText.Soldier_AutoBattle_Tips.1"
+  },
+  "Soldier_ShopProbability_Title": {
+    "Id": "Soldier_ShopProbability_Title",
+    "Text": "UIText.Soldier_ShopProbability_Title.1"
+  },
+  "Soldier_ShopProbability_ChessCost": {
+    "Id": "Soldier_ShopProbability_ChessCost",
+    "Text": "UIText.Soldier_ShopProbability_ChessCost.1"
+  },
+  "Soldier_Quest_JumpTo": {
+    "Id": "Soldier_Quest_JumpTo",
+    "Text": "UIText.Soldier_Quest_JumpTo.1"
+  },
+  "Soldier_Quest_Receive": {
+    "Id": "Soldier_Quest_Receive",
+    "Text": "UIText.Soldier_Quest_Receive.1"
+  },
+  "Soldier_RecommendDetail_Tips": {
+    "Id": "Soldier_RecommendDetail_Tips",
+    "Text": "UIText.Soldier_RecommendDetail_Tips.1"
+  },
+  "Solider_Trace": {
+    "Id": "Solider_Trace",
+    "Text": "UIText.Solider_Trace.1"
   },
   "OUTFIT_04": {
     "Id": "OUTFIT_04",
@@ -3015,6 +3567,22 @@
     "Id": "DoubleDrop_Reward_Receive_Tip",
     "Text": "UIText.DoubleDrop_Reward_Receive_Tip.1"
   },
+  "Settings_Notification_Tip": {
+    "Id": "Settings_Notification_Tip",
+    "Text": "UIText.Settings_Notification_Tip.1"
+  },
+  "Settings_Notification_Confirm": {
+    "Id": "Settings_Notification_Confirm",
+    "Text": "UIText.Settings_Notification_Confirm.1"
+  },
+  "StarTower_Shop_Note_Max": {
+    "Id": "StarTower_Shop_Note_Max",
+    "Text": "UIText.StarTower_Shop_Note_Max.1"
+  },
+  "Soldier_NotEnoughChess_Tips": {
+    "Id": "Soldier_NotEnoughChess_Tips",
+    "Text": "UIText.Soldier_NotEnoughChess_Tips.1"
+  },
   "Level_2_5_1": {
     "Id": "Level_2_5_1",
     "Text": "UIText.Level_2_5_1.1"
@@ -3606,6 +4174,318 @@
   "TowerDefense_Monster_Brief": {
     "Id": "TowerDefense_Monster_Brief",
     "Text": "UIText.TowerDefense_Monster_Brief.1"
+  },
+  "TraceHunt_Pause_RewardPreview": {
+    "Id": "TraceHunt_Pause_RewardPreview",
+    "Text": "UIText.TraceHunt_Pause_RewardPreview.1"
+  },
+  "TraceHunt_Pause_CurStar": {
+    "Id": "TraceHunt_Pause_CurStar",
+    "Text": "UIText.TraceHunt_Pause_CurStar.1"
+  },
+  "TraceHunt_GiveUpTips_Main": {
+    "Id": "TraceHunt_GiveUpTips_Main",
+    "Text": "UIText.TraceHunt_GiveUpTips_Main.1"
+  },
+  "TraceHunt_GiveUpTips_Sub": {
+    "Id": "TraceHunt_GiveUpTips_Sub",
+    "Text": "UIText.TraceHunt_GiveUpTips_Sub.1"
+  },
+  "TraceHunt_RestartBattle_Tips": {
+    "Id": "TraceHunt_RestartBattle_Tips",
+    "Text": "UIText.TraceHunt_RestartBattle_Tips.1"
+  },
+  "TraceHunt_Settlement_Ready": {
+    "Id": "TraceHunt_Settlement_Ready",
+    "Text": "UIText.TraceHunt_Settlement_Ready.1"
+  },
+  "TraceHunt_Result_Star": {
+    "Id": "TraceHunt_Result_Star",
+    "Text": "UIText.TraceHunt_Result_Star.1"
+  },
+  "TraceHunt_Result_Exp": {
+    "Id": "TraceHunt_Result_Exp",
+    "Text": "UIText.TraceHunt_Result_Exp.1"
+  },
+  "TraceHunt_Result_Return": {
+    "Id": "TraceHunt_Result_Return",
+    "Text": "UIText.TraceHunt_Result_Return.1"
+  },
+  "TraceHunt_Result_Cost": {
+    "Id": "TraceHunt_Result_Cost",
+    "Text": "UIText.TraceHunt_Result_Cost.1"
+  },
+  "TraceHunt_Board_Title": {
+    "Id": "TraceHunt_Board_Title",
+    "Text": "UIText.TraceHunt_Board_Title.1"
+  },
+  "TraceHunt_TraceProgress": {
+    "Id": "TraceHunt_TraceProgress",
+    "Text": "UIText.TraceHunt_TraceProgress.1"
+  },
+  "TraceHunt_HuntProgress": {
+    "Id": "TraceHunt_HuntProgress",
+    "Text": "UIText.TraceHunt_HuntProgress.1"
+  },
+  "TraceHunt_Btn_Shop": {
+    "Id": "TraceHunt_Btn_Shop",
+    "Text": "UIText.TraceHunt_Btn_Shop.1"
+  },
+  "TraceHunt_Btn_HandBook": {
+    "Id": "TraceHunt_Btn_HandBook",
+    "Text": "UIText.TraceHunt_Btn_HandBook.1"
+  },
+  "TraceHunt_Btn_Help": {
+    "Id": "TraceHunt_Btn_Help",
+    "Text": "UIText.TraceHunt_Btn_Help.1"
+  },
+  "TraceHunt_Btn_Hunt": {
+    "Id": "TraceHunt_Btn_Hunt",
+    "Text": "UIText.TraceHunt_Btn_Hunt.1"
+  },
+  "TraceHunt_Btn_HuntAgain": {
+    "Id": "TraceHunt_Btn_HuntAgain",
+    "Text": "UIText.TraceHunt_Btn_HuntAgain.1"
+  },
+  "TraceHunt_Btn_Trace": {
+    "Id": "TraceHunt_Btn_Trace",
+    "Text": "UIText.TraceHunt_Btn_Trace.1"
+  },
+  "TraceHunt_Btn_MultiTrace": {
+    "Id": "TraceHunt_Btn_MultiTrace",
+    "Text": "UIText.TraceHunt_Btn_MultiTrace.1"
+  },
+  "TraceHunt_Btn_Skip": {
+    "Id": "TraceHunt_Btn_Skip",
+    "Text": "UIText.TraceHunt_Btn_Skip.1"
+  },
+  "TraceHunt_Btn_Reward": {
+    "Id": "TraceHunt_Btn_Reward",
+    "Text": "UIText.TraceHunt_Btn_Reward.1"
+  },
+  "TraceHunt_Btn_HelpHunt": {
+    "Id": "TraceHunt_Btn_HelpHunt",
+    "Text": "UIText.TraceHunt_Btn_HelpHunt.1"
+  },
+  "TraceHunt_Btn_FriendAdd": {
+    "Id": "TraceHunt_Btn_FriendAdd",
+    "Text": "UIText.TraceHunt_Btn_FriendAdd.1"
+  },
+  "TraceHunt_Btn_FriendRecommend": {
+    "Id": "TraceHunt_Btn_FriendRecommend",
+    "Text": "UIText.TraceHunt_Btn_FriendRecommend.1"
+  },
+  "TraceHunt_AutoCount": {
+    "Id": "TraceHunt_AutoCount",
+    "Text": "UIText.TraceHunt_AutoCount.1"
+  },
+  "TraceHunt_HuntLevelTitle": {
+    "Id": "TraceHunt_HuntLevelTitle",
+    "Text": "UIText.TraceHunt_HuntLevelTitle.1"
+  },
+  "TraceHunt_HuntLevel": {
+    "Id": "TraceHunt_HuntLevel",
+    "Text": "UIText.TraceHunt_HuntLevel.1"
+  },
+  "TraceHunt_ControlRefresh_Sec": {
+    "Id": "TraceHunt_ControlRefresh_Sec",
+    "Text": "UIText.TraceHunt_ControlRefresh_Sec.1"
+  },
+  "TraceHunt_ControlRefresh_Min": {
+    "Id": "TraceHunt_ControlRefresh_Min",
+    "Text": "UIText.TraceHunt_ControlRefresh_Min.1"
+  },
+  "TraceHunt_ControlRefresh_Hour": {
+    "Id": "TraceHunt_ControlRefresh_Hour",
+    "Text": "UIText.TraceHunt_ControlRefresh_Hour.1"
+  },
+  "TraceHunt_ControlRefresh_Day": {
+    "Id": "TraceHunt_ControlRefresh_Day",
+    "Text": "UIText.TraceHunt_ControlRefresh_Day.1"
+  },
+  "TraceHunt_HuntRefresh_Sec": {
+    "Id": "TraceHunt_HuntRefresh_Sec",
+    "Text": "UIText.TraceHunt_HuntRefresh_Sec.1"
+  },
+  "TraceHunt_HuntRefresh_Min": {
+    "Id": "TraceHunt_HuntRefresh_Min",
+    "Text": "UIText.TraceHunt_HuntRefresh_Min.1"
+  },
+  "TraceHunt_HuntRefresh_Hour": {
+    "Id": "TraceHunt_HuntRefresh_Hour",
+    "Text": "UIText.TraceHunt_HuntRefresh_Hour.1"
+  },
+  "TraceHunt_FriendHuntRefresh_Sec": {
+    "Id": "TraceHunt_FriendHuntRefresh_Sec",
+    "Text": "UIText.TraceHunt_FriendHuntRefresh_Sec.1"
+  },
+  "TraceHunt_FriendHuntRefresh_Min": {
+    "Id": "TraceHunt_FriendHuntRefresh_Min",
+    "Text": "UIText.TraceHunt_FriendHuntRefresh_Min.1"
+  },
+  "TraceHunt_FriendHuntRefresh_Hour": {
+    "Id": "TraceHunt_FriendHuntRefresh_Hour",
+    "Text": "UIText.TraceHunt_FriendHuntRefresh_Hour.1"
+  },
+  "TraceHunt_Tips_TraceItemNotEnough": {
+    "Id": "TraceHunt_Tips_TraceItemNotEnough",
+    "Text": "UIText.TraceHunt_Tips_TraceItemNotEnough.1"
+  },
+  "TraceHunt_Tips_HuntItemNotEnough": {
+    "Id": "TraceHunt_Tips_HuntItemNotEnough",
+    "Text": "UIText.TraceHunt_Tips_HuntItemNotEnough.1"
+  },
+  "TraceHunt_Tips_HuntInterrupt": {
+    "Id": "TraceHunt_Tips_HuntInterrupt",
+    "Text": "UIText.TraceHunt_Tips_HuntInterrupt.1"
+  },
+  "TraceHunt_Tips_ControlInterrupt": {
+    "Id": "TraceHunt_Tips_ControlInterrupt",
+    "Text": "UIText.TraceHunt_Tips_ControlInterrupt.1"
+  },
+  "TraceHunt_Log_Percent": {
+    "Id": "TraceHunt_Log_Percent",
+    "Text": "UIText.TraceHunt_Log_Percent.1"
+  },
+  "TraceHunt_Log_Count": {
+    "Id": "TraceHunt_Log_Count",
+    "Text": "UIText.TraceHunt_Log_Count.1"
+  },
+  "TraceHunt_Log_Tracing": {
+    "Id": "TraceHunt_Log_Tracing",
+    "Text": "UIText.TraceHunt_Log_Tracing.1"
+  },
+  "TraceHunt_HandBook_DefaultName": {
+    "Id": "TraceHunt_HandBook_DefaultName",
+    "Text": "UIText.TraceHunt_HandBook_DefaultName.1"
+  },
+  "TraceHunt_HandBook_Activity": {
+    "Id": "TraceHunt_HandBook_Activity",
+    "Text": "UIText.TraceHunt_HandBook_Activity.1"
+  },
+  "TraceHunt_HandBook_CompleteTitle": {
+    "Id": "TraceHunt_HandBook_CompleteTitle",
+    "Text": "UIText.TraceHunt_HandBook_CompleteTitle.1"
+  },
+  "TraceHunt_HandBook_HelpTitle": {
+    "Id": "TraceHunt_HandBook_HelpTitle",
+    "Text": "UIText.TraceHunt_HandBook_HelpTitle.1"
+  },
+  "TraceHunt_Help_BossEmpty": {
+    "Id": "TraceHunt_Help_BossEmpty",
+    "Text": "UIText.TraceHunt_Help_BossEmpty.1"
+  },
+  "TraceHunt_Help_ListEmpty": {
+    "Id": "TraceHunt_Help_ListEmpty",
+    "Text": "UIText.TraceHunt_Help_ListEmpty.1"
+  },
+  "TraceHunt_Help_HuntRewardRange": {
+    "Id": "TraceHunt_Help_HuntRewardRange",
+    "Text": "UIText.TraceHunt_Help_HuntRewardRange.1"
+  },
+  "TraceHunt_Help_Stranger": {
+    "Id": "TraceHunt_Help_Stranger",
+    "Text": "UIText.TraceHunt_Help_Stranger.1"
+  },
+  "TraceHunt_Cur_Score": {
+    "Id": "TraceHunt_Cur_Score",
+    "Text": "UIText.TraceHunt_Cur_Score.1"
+  },
+  "TraceHunt_MaxStarWin": {
+    "Id": "TraceHunt_MaxStarWin",
+    "Text": "UIText.TraceHunt_MaxStarWin.1"
+  },
+  "TraceHunt_ControlTimeOverInBattle": {
+    "Id": "TraceHunt_ControlTimeOverInBattle",
+    "Text": "UIText.TraceHunt_ControlTimeOverInBattle.1"
+  },
+  "TraceHunt_ControlTimeOverInFirstBattle": {
+    "Id": "TraceHunt_ControlTimeOverInFirstBattle",
+    "Text": "UIText.TraceHunt_ControlTimeOverInFirstBattle.1"
+  },
+  "TraceHunt_LevelEffect_MaxStar": {
+    "Id": "TraceHunt_LevelEffect_MaxStar",
+    "Text": "UIText.TraceHunt_LevelEffect_MaxStar.1"
+  },
+  "TraceHunt_LevelEffect_TokenRate": {
+    "Id": "TraceHunt_LevelEffect_TokenRate",
+    "Text": "UIText.TraceHunt_LevelEffect_TokenRate.1"
+  },
+  "TraceHunt_LevelEffect_LuckyRate": {
+    "Id": "TraceHunt_LevelEffect_LuckyRate",
+    "Text": "UIText.TraceHunt_LevelEffect_LuckyRate.1"
+  },
+  "TraceHunt_LevelEffect_AddRate": {
+    "Id": "TraceHunt_LevelEffect_AddRate",
+    "Text": "UIText.TraceHunt_LevelEffect_AddRate.1"
+  },
+  "TraceHunt_LevelEffect_FreeRate": {
+    "Id": "TraceHunt_LevelEffect_FreeRate",
+    "Text": "UIText.TraceHunt_LevelEffect_FreeRate.1"
+  },
+  "TraceHunt_Level_Title": {
+    "Id": "TraceHunt_Level_Title",
+    "Text": "UIText.TraceHunt_Level_Title.1"
+  },
+  "TraceHunt_Level_CurLevel": {
+    "Id": "TraceHunt_Level_CurLevel",
+    "Text": "UIText.TraceHunt_Level_CurLevel.1"
+  },
+  "TraceHunt_Level_Progress": {
+    "Id": "TraceHunt_Level_Progress",
+    "Text": "UIText.TraceHunt_Level_Progress.1"
+  },
+  "TraceHunt_Level_Reset": {
+    "Id": "TraceHunt_Level_Reset",
+    "Text": "UIText.TraceHunt_Level_Reset.1"
+  },
+  "TraceHunt_Level_NeedWorldClass": {
+    "Id": "TraceHunt_Level_NeedWorldClass",
+    "Text": "UIText.TraceHunt_Level_NeedWorldClass.1"
+  },
+  "TraceHunt_Level_LevelName": {
+    "Id": "TraceHunt_Level_LevelName",
+    "Text": "UIText.TraceHunt_Level_LevelName.1"
+  },
+  "TraceHunt_Coin_Rule": {
+    "Id": "TraceHunt_Coin_Rule",
+    "Text": "UIText.TraceHunt_Coin_Rule.1"
+  },
+  "TraceHunt_Coin_Daily": {
+    "Id": "TraceHunt_Coin_Daily",
+    "Text": "UIText.TraceHunt_Coin_Daily.1"
+  },
+  "TraceHunt_Coin_Time": {
+    "Id": "TraceHunt_Coin_Time",
+    "Text": "UIText.TraceHunt_Coin_Time.1"
+  },
+  "TraceHunt_Topbar_Sub": {
+    "Id": "TraceHunt_Topbar_Sub",
+    "Text": "UIText.TraceHunt_Topbar_Sub.1"
+  },
+  "TraceHunt_HuntEnd": {
+    "Id": "TraceHunt_HuntEnd",
+    "Text": "UIText.TraceHunt_HuntEnd.1"
+  },
+  "TraceHunt_MultiHuntWarning": {
+    "Id": "TraceHunt_MultiHuntWarning",
+    "Text": "UIText.TraceHunt_MultiHuntWarning.1"
+  },
+  "TraceHunt_Btn_MultiHuntWarningConfirm": {
+    "Id": "TraceHunt_Btn_MultiHuntWarningConfirm",
+    "Text": "UIText.TraceHunt_Btn_MultiHuntWarningConfirm.1"
+  },
+  "TraceHunt_Btn_MultiHuntWarningCancel": {
+    "Id": "TraceHunt_Btn_MultiHuntWarningCancel",
+    "Text": "UIText.TraceHunt_Btn_MultiHuntWarningCancel.1"
+  },
+  "TraceHunt_HuntLogEmpty": {
+    "Id": "TraceHunt_HuntLogEmpty",
+    "Text": "UIText.TraceHunt_HuntLogEmpty.1"
+  },
+  "TraceHunt_TraceLogEmpty": {
+    "Id": "TraceHunt_TraceLogEmpty",
+    "Text": "UIText.TraceHunt_TraceLogEmpty.1"
   },
   "Lv": {
     "Id": "Lv",
@@ -4619,6 +5499,14 @@
     "Id": "Diffculty_8",
     "Text": "UIText.Diffculty_8.1"
   },
+  "Diffculty_9": {
+    "Id": "Diffculty_9",
+    "Text": "UIText.Diffculty_9.1"
+  },
+  "Diffculty_10": {
+    "Id": "Diffculty_10",
+    "Text": "UIText.Diffculty_10.1"
+  },
   "RoguelikeBuild_Manage_ListScoreTitle": {
     "Id": "RoguelikeBuild_Manage_ListScoreTitle",
     "Text": "UIText.RoguelikeBuild_Manage_ListScoreTitle.1"
@@ -5183,6 +6071,10 @@
     "Id": "Tips_Continue",
     "Text": "UIText.Tips_Continue.1"
   },
+  "Tips_Continue_Refresh": {
+    "Id": "Tips_Continue_Refresh",
+    "Text": "UIText.Tips_Continue_Refresh.1"
+  },
   "Bonus_Merge_Hint": {
     "Id": "Bonus_Merge_Hint",
     "Text": "UIText.Bonus_Merge_Hint.1"
@@ -5562,6 +6454,10 @@
   "Friend_Rename_TimeCDWarning2": {
     "Id": "Friend_Rename_TimeCDWarning2",
     "Text": "UIText.Friend_Rename_TimeCDWarning2.1"
+  },
+  "Friend_AddStranger": {
+    "Id": "Friend_AddStranger",
+    "Text": "UIText.Friend_AddStranger.1"
   },
   "Talent_Skill_Normal": {
     "Id": "Talent_Skill_Normal",
@@ -7170,6 +8066,14 @@
   "TravelerDuel_UploadCancelHint": {
     "Id": "TravelerDuel_UploadCancelHint",
     "Text": "UIText.TravelerDuel_UploadCancelHint.1"
+  },
+  "TravelerDuel_AffixSelectTitle": {
+    "Id": "TravelerDuel_AffixSelectTitle",
+    "Text": "UIText.TravelerDuel_AffixSelectTitle.1"
+  },
+  "TravelerDuel_AffixSelfSelectTitle": {
+    "Id": "TravelerDuel_AffixSelfSelectTitle",
+    "Text": "UIText.TravelerDuel_AffixSelfSelectTitle.1"
   },
   "Level_TargetTitle": {
     "Id": "Level_TargetTitle",
@@ -10411,6 +11315,10 @@
     "Id": "LevelMenu_Vampire",
     "Text": "UIText.LevelMenu_Vampire.1"
   },
+  "LevelMenu_TraceHunt": {
+    "Id": "LevelMenu_TraceHunt",
+    "Text": "UIText.LevelMenu_TraceHunt.1"
+  },
   "LevelMenu_SEquipment": {
     "Id": "LevelMenu_SEquipment",
     "Text": "UIText.LevelMenu_SEquipment.1"
@@ -11010,6 +11918,10 @@
   "TravelerDuel_ChallengeTitle": {
     "Id": "TravelerDuel_ChallengeTitle",
     "Text": "UIText.TravelerDuel_ChallengeTitle.1"
+  },
+  "TravelerDuel_Reward_Btn": {
+    "Id": "TravelerDuel_Reward_Btn",
+    "Text": "UIText.TravelerDuel_Reward_Btn.1"
   },
   "Login_Quit": {
     "Id": "Login_Quit",
@@ -12278,6 +13190,10 @@
   "JointDrill_Difficulty_Name_5": {
     "Id": "JointDrill_Difficulty_Name_5",
     "Text": "UIText.JointDrill_Difficulty_Name_5.1"
+  },
+  "JointDrill_Difficulty_Name_6": {
+    "Id": "JointDrill_Difficulty_Name_6",
+    "Text": "UIText.JointDrill_Difficulty_Name_6.1"
   },
   "JointDrill_Challenge_Time_Text": {
     "Id": "JointDrill_Challenge_Time_Text",
@@ -15098,5 +16014,185 @@
   "Potential_Recommend_Show": {
     "Id": "Potential_Recommend_Show",
     "Text": "UIText.Potential_Recommend_Show.1"
+  },
+  "IceCreamTruck_PlayTitle": {
+    "Id": "IceCreamTruck_PlayTitle",
+    "Text": "UIText.IceCreamTruck_PlayTitle.1"
+  },
+  "IceCreamTruck_LevelLockName": {
+    "Id": "IceCreamTruck_LevelLockName",
+    "Text": "UIText.IceCreamTruck_LevelLockName.1"
+  },
+  "IceCreamTruck_LevelLockPreTitle": {
+    "Id": "IceCreamTruck_LevelLockPreTitle",
+    "Text": "UIText.IceCreamTruck_LevelLockPreTitle.1"
+  },
+  "IceCreamTruck_LevelLockPreTip": {
+    "Id": "IceCreamTruck_LevelLockPreTip",
+    "Text": "UIText.IceCreamTruck_LevelLockPreTip.1"
+  },
+  "IceCreamTruck_LevelTarget": {
+    "Id": "IceCreamTruck_LevelTarget",
+    "Text": "UIText.IceCreamTruck_LevelTarget.1"
+  },
+  "IceCreamTruck_LevelAward": {
+    "Id": "IceCreamTruck_LevelAward",
+    "Text": "UIText.IceCreamTruck_LevelAward.1"
+  },
+  "IceCreamTruck_MaxScore": {
+    "Id": "IceCreamTruck_MaxScore",
+    "Text": "UIText.IceCreamTruck_MaxScore.1"
+  },
+  "IceCreamTruck_Open": {
+    "Id": "IceCreamTruck_Open",
+    "Text": "UIText.IceCreamTruck_Open.1"
+  },
+  "IceCreamTruck_Target": {
+    "Id": "IceCreamTruck_Target",
+    "Text": "UIText.IceCreamTruck_Target.1"
+  },
+  "IceCreamTruck_NextIsland": {
+    "Id": "IceCreamTruck_NextIsland",
+    "Text": "UIText.IceCreamTruck_NextIsland.1"
+  },
+  "IceCreamTruck_TimeTips": {
+    "Id": "IceCreamTruck_TimeTips",
+    "Text": "UIText.IceCreamTruck_TimeTips.1"
+  },
+  "IceCreamTruck_StarOpen": {
+    "Id": "IceCreamTruck_StarOpen",
+    "Text": "UIText.IceCreamTruck_StarOpen.1"
+  },
+  "IceCreamTruck_AllScore": {
+    "Id": "IceCreamTruck_AllScore",
+    "Text": "UIText.IceCreamTruck_AllScore.1"
+  },
+  "IceCreamTruck_CurrentScore": {
+    "Id": "IceCreamTruck_CurrentScore",
+    "Text": "UIText.IceCreamTruck_CurrentScore.1"
+  },
+  "IceCreamTruck_FinishOrder": {
+    "Id": "IceCreamTruck_FinishOrder",
+    "Text": "UIText.IceCreamTruck_FinishOrder.1"
+  },
+  "IceCreamTruck_MaxCombos": {
+    "Id": "IceCreamTruck_MaxCombos",
+    "Text": "UIText.IceCreamTruck_MaxCombos.1"
+  },
+  "IceCreamTruck_HistoryMaxScore": {
+    "Id": "IceCreamTruck_HistoryMaxScore",
+    "Text": "UIText.IceCreamTruck_HistoryMaxScore.1"
+  },
+  "IceCreamTruck_Fail": {
+    "Id": "IceCreamTruck_Fail",
+    "Text": "UIText.IceCreamTruck_Fail.1"
+  },
+  "IceCreamTruck_Succeed": {
+    "Id": "IceCreamTruck_Succeed",
+    "Text": "UIText.IceCreamTruck_Succeed.1"
+  },
+  "IceCreamTruck_Bag": {
+    "Id": "IceCreamTruck_Bag",
+    "Text": "UIText.IceCreamTruck_Bag.1"
+  },
+  "IceCreamTruck_BagTitle": {
+    "Id": "IceCreamTruck_BagTitle",
+    "Text": "UIText.IceCreamTruck_BagTitle.1"
+  },
+  "IceCreamTruck_Empty": {
+    "Id": "IceCreamTruck_Empty",
+    "Text": "UIText.IceCreamTruck_Empty.1"
+  },
+  "IceCreamTruck_EmptyTips": {
+    "Id": "IceCreamTruck_EmptyTips",
+    "Text": "UIText.IceCreamTruck_EmptyTips.1"
+  },
+  "IceCreamTruck_Exit_Confirm": {
+    "Id": "IceCreamTruck_Exit_Confirm",
+    "Text": "UIText.IceCreamTruck_Exit_Confirm.1"
+  },
+  "IceCreamTruck_Re_Confirm": {
+    "Id": "IceCreamTruck_Re_Confirm",
+    "Text": "UIText.IceCreamTruck_Re_Confirm.1"
+  },
+  "IceCreamTruck_Fever": {
+    "Id": "IceCreamTruck_Fever",
+    "Text": "UIText.IceCreamTruck_Fever.1"
+  },
+  "IceCreamTruck_F": {
+    "Id": "IceCreamTruck_F",
+    "Text": "UIText.IceCreamTruck_F.1"
+  },
+  "IceCreamTruck_E1": {
+    "Id": "IceCreamTruck_E1",
+    "Text": "UIText.IceCreamTruck_E1.1"
+  },
+  "IceCreamTruck_V": {
+    "Id": "IceCreamTruck_V",
+    "Text": "UIText.IceCreamTruck_V.1"
+  },
+  "IceCreamTruck_E2": {
+    "Id": "IceCreamTruck_E2",
+    "Text": "UIText.IceCreamTruck_E2.1"
+  },
+  "IceCreamTruck_R": {
+    "Id": "IceCreamTruck_R",
+    "Text": "UIText.IceCreamTruck_R.1"
+  },
+  "IceCreamTruck_DoubleTitle": {
+    "Id": "IceCreamTruck_DoubleTitle",
+    "Text": "UIText.IceCreamTruck_DoubleTitle.1"
+  },
+  "IceCreamTruck_BuffUseTips": {
+    "Id": "IceCreamTruck_BuffUseTips",
+    "Text": "UIText.IceCreamTruck_BuffUseTips.1"
+  },
+  "IceCreamTruck_IceCreamBadTips": {
+    "Id": "IceCreamTruck_IceCreamBadTips",
+    "Text": "UIText.IceCreamTruck_IceCreamBadTips.1"
+  },
+  "IceCreamTruck_BtnEnd": {
+    "Id": "IceCreamTruck_BtnEnd",
+    "Text": "UIText.IceCreamTruck_BtnEnd.1"
+  },
+  "IceCreamTruck_BtnRestart": {
+    "Id": "IceCreamTruck_BtnRestart",
+    "Text": "UIText.IceCreamTruck_BtnRestart.1"
+  },
+  "IceCreamTruck_BtnNext": {
+    "Id": "IceCreamTruck_BtnNext",
+    "Text": "UIText.IceCreamTruck_BtnNext.1"
+  },
+  "IceCreamTruck_ScoreTarget": {
+    "Id": "IceCreamTruck_ScoreTarget",
+    "Text": "UIText.IceCreamTruck_ScoreTarget.1"
+  },
+  "IceCreamTruck_Endless": {
+    "Id": "IceCreamTruck_Endless",
+    "Text": "UIText.IceCreamTruck_Endless.1"
+  },
+  "IceCreamTruck_BuffTips_101": {
+    "Id": "IceCreamTruck_BuffTips_101",
+    "Text": "UIText.IceCreamTruck_BuffTips_101.1"
+  },
+  "IceCreamTruck_BuffTips_102": {
+    "Id": "IceCreamTruck_BuffTips_102",
+    "Text": "UIText.IceCreamTruck_BuffTips_102.1"
+  },
+  "IceCreamTruck_BuffTips_103": {
+    "Id": "IceCreamTruck_BuffTips_103",
+    "Text": "UIText.IceCreamTruck_BuffTips_103.1"
+  },
+  "IceCreamTruck_BuffTips_104": {
+    "Id": "IceCreamTruck_BuffTips_104",
+    "Text": "UIText.IceCreamTruck_BuffTips_104.1"
+  },
+  "IceCreamTruck_BuffTips_105": {
+    "Id": "IceCreamTruck_BuffTips_105",
+    "Text": "UIText.IceCreamTruck_BuffTips_105.1"
+  },
+  "IceCreamTruck_BuffAutomaticTips": {
+    "Id": "IceCreamTruck_BuffAutomaticTips",
+    "Text": "UIText.IceCreamTruck_BuffAutomaticTips.1"
   }
 }
