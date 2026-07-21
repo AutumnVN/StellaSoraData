@@ -15,6 +15,7 @@ const EFFECT = require('./EN/bin/Effect.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
 const BUFF = require('./EN/bin/Buff.json');
 const ONCEADDITTIONALATTRIBUTEVALUE = require('./EN/bin/OnceAdditionalAttributeValue.json');
+const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
 const LANG_ITEM = require('./EN/language/en_US/Item.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_DISCTAG = require('./EN/language/en_US/DiscTag.json');
@@ -52,7 +53,7 @@ for (const id in DISC) {
         star: ITEM[id].Rarity === 1 ? 5 : ITEM[id].Rarity === 2 ? 4 : 3,
         element: LANG_UITEXT[`UIText.T_Element_Attr_${DISC[id].EET}.1`],
         tag: DISC[id].Tags?.map(tagId => LANG_DISCTAG[DISCTAG[tagId].Title]) || [],
-        char: DISCIP[id]?.CharId?.map(charId => characterId[charId]) || [],
+        char: DISCIP[id]?.CharId?.map(charId => LANG_CHARACTER[`Character.${charId}.1`] || characterId[charId]) || [],
         mainSkill: getMainSkill(DISC[id].MainSkillGroupId),
         secondarySkill1: getSeconarySkill(DISC[id].SecondarySkillGroupId1),
         secondarySkill2: getSeconarySkill(DISC[id].SecondarySkillGroupId2),
