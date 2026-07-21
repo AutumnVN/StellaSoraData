@@ -124,5 +124,23 @@
     "Duration": 3,
     "DurationParam": 2,
     "Icon": "icon_buff_06"
+  },
+  "701": {
+    "Id": 701,
+    "Title": "PenguinCardBuff.701.1",
+    "Desc": "PenguinCardBuff.701.2",
+    "ForcedReplacement": true,
+    "TriggerPhase": 2,
+    "TriggerType": 5,
+    "TriggerParam": "[101,102,103]",
+    "TriggerProbability": 50,
+    "TriggerLimit": 4,
+    "TriggerLimitParam": 1,
+    "EffectType": 1,
+    "EffectParam": "{\"104\":60,\"105\":40}",
+    "GrowthEffectParam": "",
+    "Duration": 4,
+    "DurationParam": 1,
+    "Icon": "icon_buff_07"
   }
 }

@@ -862,5 +862,29 @@
     "Desc2": "DatingStartEndEvent.140102.2",
     "Desc3": "DatingStartEndEvent.140102.3",
     "Response": "shy"
+  },
+  "160101": {
+    "Id": 160101,
+    "DatingEventType": 1,
+    "DatingEventParams": [
+      160
+    ],
+    "Affinity": 0,
+    "Desc1": "DatingStartEndEvent.160101.1",
+    "Desc2": "DatingStartEndEvent.160101.2",
+    "Desc3": "DatingStartEndEvent.160101.3",
+    "Response": "greet"
+  },
+  "160102": {
+    "Id": 160102,
+    "DatingEventType": 2,
+    "DatingEventParams": [
+      160
+    ],
+    "Affinity": 0,
+    "Desc1": "DatingStartEndEvent.160102.1",
+    "Desc2": "DatingStartEndEvent.160102.2",
+    "Desc3": "DatingStartEndEvent.160102.3",
+    "Response": "shy"
   }
 }

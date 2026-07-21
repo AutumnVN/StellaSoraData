@@ -3886,5 +3886,53 @@
     "IsPercent": false,
     "Icon": "",
     "Format": 1
+  },
+  "10011": {
+    "Id": 10011,
+    "TypeID": 0,
+    "Type2ID": 0,
+    "Desc": "EffectDesc.10011.1",
+    "RandomAttrDesc": "EffectDesc.10011.2",
+    "Attribute": "Energy",
+    "WordID": 0,
+    "IsPercent": false,
+    "Icon": "Icon/ZZZOther/icon_common_chainfo_crl",
+    "Format": 1
+  },
+  "10021": {
+    "Id": 10021,
+    "TypeID": 0,
+    "Type2ID": 0,
+    "Desc": "EffectDesc.10021.1",
+    "RandomAttrDesc": "EffectDesc.10021.2",
+    "Attribute": "InitialEnergy",
+    "WordID": 0,
+    "IsPercent": false,
+    "Icon": "Icon/ZZZOther/icon_common_skillinfo_eny",
+    "Format": 1
+  },
+  "10031": {
+    "Id": 10031,
+    "TypeID": 0,
+    "Type2ID": 0,
+    "Desc": "EffectDesc.10031.1",
+    "RandomAttrDesc": "EffectDesc.10031.2",
+    "Attribute": "Recovery",
+    "WordID": 0,
+    "IsPercent": false,
+    "Icon": "Icon/ZZZOther/icon_common_chainfo_elt",
+    "Format": 2
+  },
+  "10041": {
+    "Id": 10041,
+    "TypeID": 0,
+    "Type2ID": 0,
+    "Desc": "EffectDesc.10041.1",
+    "RandomAttrDesc": "EffectDesc.10041.2",
+    "Attribute": "ATKSPD_P",
+    "WordID": 0,
+    "IsPercent": true,
+    "Icon": "Icon/ZZZOther/icon_common_chainfo_ats",
+    "Format": 1
   }
 }

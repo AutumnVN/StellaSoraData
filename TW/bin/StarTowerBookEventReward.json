@@ -1678,5 +1678,47 @@
     "ItemId": 2,
     "ItemQty": 10,
     "IsBanned": false
+  },
+  "16001": {
+    "Id": 16001,
+    "Name": "StarTowerBookEventReward.16001.1",
+    "Story": "StarTowerBookEventReward.16001.2",
+    "Type": 1,
+    "NPCId": 160,
+    "Sort": 124,
+    "Source": "StarTowerBookEventReward.16001.3",
+    "CompleteCond": 94,
+    "CompleteCondParams": "[160,1]",
+    "ItemId": 2,
+    "ItemQty": 10,
+    "IsBanned": false
+  },
+  "16002": {
+    "Id": 16002,
+    "Name": "StarTowerBookEventReward.16002.1",
+    "Story": "StarTowerBookEventReward.16002.2",
+    "Type": 1,
+    "NPCId": 160,
+    "Sort": 125,
+    "Source": "StarTowerBookEventReward.16002.3",
+    "CompleteCond": 94,
+    "CompleteCondParams": "[160,2]",
+    "ItemId": 2,
+    "ItemQty": 10,
+    "IsBanned": false
+  },
+  "16003": {
+    "Id": 16003,
+    "Name": "StarTowerBookEventReward.16003.1",
+    "Story": "StarTowerBookEventReward.16003.2",
+    "Type": 1,
+    "NPCId": 160,
+    "Sort": 126,
+    "Source": "StarTowerBookEventReward.16003.3",
+    "CompleteCond": 94,
+    "CompleteCondParams": "[160,3]",
+    "ItemId": 2,
+    "ItemQty": 10,
+    "IsBanned": false
   }
 }
