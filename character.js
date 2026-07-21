@@ -10,6 +10,7 @@ const HITDAMAGE = require('./EN/bin/HitDamage.json');
 const EFFECT = require('./EN/bin/Effect.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
 const BUFF = require('./EN/bin/Buff.json');
+const BUFFVALUE = require('./EN/bin/BuffValue.json');
 const ITEM = require('./EN/bin/Item.json');
 const POTENTIAL = require('./EN/bin/Potential.json');
 const ATTRIBUTE = require('./EN/bin/Attribute.json');
@@ -273,6 +274,24 @@ function getSkillEffectTypes(skillId) {
     const effectTypes = [];
 
     const params = collectParamsFrom(SKILL[skillId]).filter(p => p && p.startsWith('Effect'));
+
+    const buffParams = collectParamsFrom(SKILL[skillId]).filter(p => p && (p.startsWith('Buff')));
+
+    for (const param of buffParams) {
+        const p = param.split(',');
+
+        let buffId = +p[2];
+        if (!BUFFVALUE[buffId]) buffId += 10;
+        if (!BUFFVALUE[buffId]) continue;
+
+        const effectIds = BUFFVALUE[buffId].Effects;
+
+        for (const effectId of effectIds) {
+            if (!EFFECTVALUE[effectId]) continue;
+
+            params.push(`EffectValue,NoLevel,${effectId},EffectTypeFirstSubtype,Enum,EAT`);
+        }
+    }
 
     for (const param of params) {
         const p = param.split(',');
@@ -601,6 +620,24 @@ function getPotentialEffectTypes(potId) {
 
     const params = collectParamsFrom(POTENTIAL[potId]).filter(p => p && p.startsWith('Effect'));
 
+    const buffParams = collectParamsFrom(POTENTIAL[potId]).filter(p => p && (p.startsWith('Buff')));
+
+    for (const param of buffParams) {
+        const p = param.split(',');
+
+        let buffId = +p[2];
+        if (!BUFFVALUE[buffId]) buffId += 10;
+        if (!BUFFVALUE[buffId]) continue;
+
+        const effectIds = BUFFVALUE[buffId].Effects;
+
+        for (const effectId of effectIds) {
+            if (!EFFECTVALUE[effectId]) continue;
+
+            params.push(`EffectValue,NoLevel,${effectId},EffectTypeFirstSubtype,Enum,EAT`);
+        }
+    }
+
     for (const param of params) {
         const p = param.split(',');
 
@@ -781,6 +818,24 @@ function getTalentEffectTypes(talentId) {
     const effectTypes = [];
 
     const params = collectParamsFrom(TALENT[talentId]).filter(p => p && p.startsWith('Effect'));
+
+    const buffParams = collectParamsFrom(TALENT[talentId]).filter(p => p && (p.startsWith('Buff')));
+
+    for (const param of buffParams) {
+        const p = param.split(',');
+
+        let buffId = +p[2];
+        if (!BUFFVALUE[buffId]) buffId += 10;
+        if (!BUFFVALUE[buffId]) continue;
+
+        const effectIds = BUFFVALUE[buffId].Effects;
+
+        for (const effectId of effectIds) {
+            if (!EFFECTVALUE[effectId]) continue;
+
+            params.push(`EffectValue,NoLevel,${effectId},EffectTypeFirstSubtype,Enum,EAT`);
+        }
+    }
 
     for (const param of params) {
         const p = param.split(',');
