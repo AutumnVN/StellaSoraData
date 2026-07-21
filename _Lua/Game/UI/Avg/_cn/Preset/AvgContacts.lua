@@ -75,7 +75,7 @@ return {
 		icon = "Icon/Head/head_11701_S",
 		name = "璟麟",
 		landmark = "菲莱城阿斯旺街八号",
-		signature = "怀璟食府欢迎您，定桌请提前致电"
+		signature = "怀璟食府欢迎您，定桌请提前联络"
 	},
 	{
 		id = 118,
@@ -256,6 +256,14 @@ return {
 		signature = "你有看见过我的布娃娃吗？"
 	},
 	{
+		id = 157,
+		icon = "Icon/Head/head_15701_S",
+		name = "***",
+		landmark = "塞尔斯泰晨曦街78号",
+		signature = "变态……",
+		ver = "1.14.0"
+	},
+	{
 		id = 158,
 		icon = "Icon/Head/head_15801_S",
 		name = "菈露（圣夜）",
@@ -268,6 +276,14 @@ return {
 		name = "科洛妮丝（新春）",
 		landmark = "菲莱的“那个”诊所",
 		signature = "休假外出中。"
+	},
+	{
+		id = 160,
+		icon = "Icon/Head/head_16001_S",
+		name = "薇洛（盛夏）",
+		landmark = "埃摩协会之家",
+		signature = "在海边也要注意安全！",
+		ver = "1.13.0"
 	},
 	{
 		id = 3136,
