@@ -132,7 +132,7 @@
   "win": {
     "Id": "win",
     "probability": 100,
-    "resType": 3,
+    "resType": 4,
     "worldLevelTypes": [
       11
     ],
@@ -142,7 +142,7 @@
   "lose": {
     "Id": "lose",
     "probability": 100,
-    "resType": 3,
+    "resType": 4,
     "worldLevelTypes": [
       11
     ],
@@ -1313,6 +1313,72 @@
   },
   "TrekkerVersus_defeat": {
     "Id": "TrekkerVersus_defeat",
+    "probability": 100,
+    "resType": 4,
+    "worldLevelTypes": [
+      11
+    ],
+    "bubble": true,
+    "voPlayer": 3,
+    "priority": 2
+  },
+  "poster_th_trace0": {
+    "Id": "poster_th_trace0",
+    "probability": 100,
+    "resType": 4,
+    "worldLevelTypes": [
+      11
+    ],
+    "bubble": true,
+    "voPlayer": 3,
+    "priority": 3
+  },
+  "poster_th_trace1": {
+    "Id": "poster_th_trace1",
+    "probability": 100,
+    "resType": 4,
+    "worldLevelTypes": [
+      11
+    ],
+    "bubble": true,
+    "voPlayer": 3,
+    "priority": 3
+  },
+  "poster_th_hunt0": {
+    "Id": "poster_th_hunt0",
+    "probability": 100,
+    "resType": 4,
+    "worldLevelTypes": [
+      11
+    ],
+    "bubble": true,
+    "voPlayer": 3,
+    "priority": 3
+  },
+  "greet_th_trace0": {
+    "Id": "greet_th_trace0",
+    "probability": 100,
+    "resType": 4,
+    "worldLevelTypes": [
+      11
+    ],
+    "bubble": true,
+    "voPlayer": 3,
+    "priority": 2
+  },
+  "greet_th_trace1": {
+    "Id": "greet_th_trace1",
+    "probability": 100,
+    "resType": 4,
+    "worldLevelTypes": [
+      11
+    ],
+    "bubble": true,
+    "voPlayer": 3,
+    "priority": 2
+  },
+  "greet_th_hunt0": {
+    "Id": "greet_th_hunt0",
     "probability": 100,
     "resType": 4,
     "worldLevelTypes": [
