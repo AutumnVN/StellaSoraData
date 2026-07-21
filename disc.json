@@ -8749,6 +8749,1175 @@
             }
         ]
     },
+    "213001": {
+        "id": 213001,
+        "name": "Zesty Curiosity",
+        "star": 4,
+        "element": "None",
+        "tag": [
+            "HP",
+            "Crit DMG"
+        ],
+        "char": [],
+        "mainSkill": {
+            "id": 3001,
+            "name": "Zesty Curiosity",
+            "nameCN": "柠柚好奇",
+            "nameJP": "爽やかな香り",
+            "nameKR": "레몬과 유자의 호기심",
+            "desc": "Increases the Main Trekker's HP by <color=#ec6d21>{1}</color>.\u000bWhen the Main Trekker dodges, increases the squad's Crit DMG by <color=#ec6d21>{2}</color> for {3}s.",
+            "descCN": "主控角色生命值提升<color=#ec6d21>{1}</color>。\u000b主控角色闪避时，全队暴击伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "主力巡遊者のHPが<color=#ec6d21>{1}</color>増加する。\u000b主力巡遊者が回避時、{3}秒間、チーム全体の会心ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "메인 캐릭터의 HP가 <color=#ec6d21>{1}</color> 증가한다. \u000b메인 캐릭터 회피 시, 팀 전체의 치명타 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
+            "effectType": [
+                "HP (%)",
+                "ADDBUFF:Crit DMG",
+                "Crit DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [
+                "NOTHING, SELF, DEFAULT, AND, SELF, SELF_BE_MAINCONTROL | SELF, DEFAULT | SELF, DEFAULT",
+                "CASTSKILL, SELF, SKILLSLOTTYPE, 1, AND, SELF, SELF_BE_MAINCONTROL | SELF, DEFAULT | FULL_TEAM, DEFAULT"
+            ],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "5%,6%,4/6%,7.2%,4/7%,8.4%,4/8%,9.6%,4/9%,10.8%,4/10%,12%,4",
+            "icon": "DiscSkill_3",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "secondarySkill1": {
+            "id": 30011,
+            "name": "Flowing Amber",
+            "nameCN": "橙光流转",
+            "nameJP": "桃色に染まる世界",
+            "nameKR": "빛의 흐름",
+            "desc": "When the Main Trekker casts a skill, increases Support Trekkers' Skill DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen the Main Trekker casts an Ultimate, increases Support Trekkers' Ultimate DMG by <color=#ec6d21>{3}</color> for {4}s.",
+            "descCN": "主控角色释放技能时，援护角色技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b主控角色释放绝招时，援护角色绝招伤害提升<color=#ec6d21>{3}</color>，持续{4}秒。",
+            "descJP": "主力巡遊者がスキル発動時、{2}秒間、支援巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000b主力巡遊者が必殺技発動時、{4}秒間、支援巡遊者の必殺技ダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "메인 캐릭터가 스킬을 시전하면, 지원 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b메인 캐릭터가 필살기를 시전하면 지원 캐릭터의 필살기 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속된다.",
+            "effectType": [
+                "ADDBUFF:Skill DMG",
+                "Skill DMG (base)",
+                "ADDBUFF:Ultimate DMG",
+                "Ultimate DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [
+                "CASTSKILL, SELF, SKILLSLOTTYPE, 2, AND, SELF, SELF_BE_MAINCONTROL | SELF, DEFAULT | ASSISTANT_PLAYER, DEFAULT",
+                "CASTSKILL, SELF, SKILLSLOTTYPE, 4, AND, SELF, SELF_BE_MAINCONTROL | SELF, DEFAULT | ASSISTANT_PLAYER, DEFAULT"
+            ],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "3%,12,7.2%,12/6%,12,14.4%,12/9%,12,21.6%,12/12%,12,28.8%,12/15%,12,36%,12",
+            "requirements": [
+                {
+                    "Melody of Burst": 10,
+                    "Melody of Skill": 10,
+                    "Melody of Ultimate": 10
+                },
+                {
+                    "Melody of Burst": 25,
+                    "Melody of Skill": 25,
+                    "Melody of Ultimate": 25
+                },
+                {
+                    "Melody of Burst": 40,
+                    "Melody of Skill": 40,
+                    "Melody of Ultimate": 40
+                },
+                {
+                    "Melody of Burst": 55,
+                    "Melody of Skill": 55,
+                    "Melody of Ultimate": 55
+                },
+                {
+                    "Melody of Burst": 70,
+                    "Melody of Skill": 70,
+                    "Melody of Ultimate": 70
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_3"
+        },
+        "supportNote": [
+            {
+                "Melody of Burst": 3,
+                "Melody of Stamina": 3
+            },
+            {
+                "Melody of Burst": 3,
+                "Melody of Stamina": 3
+            },
+            {
+                "Melody of Burst": 3,
+                "Melody of Stamina": 4
+            },
+            {
+                "Melody of Burst": 3,
+                "Melody of Stamina": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Stamina": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Stamina": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Stamina": 5
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Stamina": 5
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Stamina": 5
+            }
+        ],
+        "stat": [
+            {
+                "HP": 90,
+                "ATK": 10
+            },
+            {
+                "HP": 90,
+                "ATK": 13
+            },
+            {
+                "HP": 90,
+                "ATK": 16
+            },
+            {
+                "HP": 90,
+                "ATK": 19
+            },
+            {
+                "HP": 90,
+                "ATK": 22
+            },
+            {
+                "HP": 90,
+                "ATK": 25
+            },
+            {
+                "HP": 90,
+                "ATK": 28
+            },
+            {
+                "HP": 90,
+                "ATK": 31
+            },
+            {
+                "HP": 90,
+                "ATK": 34
+            },
+            {
+                "HP": 90,
+                "ATK": 37
+            },
+            {
+                "HP": 410,
+                "ATK": 45
+            },
+            {
+                "HP": 410,
+                "ATK": 47
+            },
+            {
+                "HP": 410,
+                "ATK": 51
+            },
+            {
+                "HP": 410,
+                "ATK": 53
+            },
+            {
+                "HP": 410,
+                "ATK": 57
+            },
+            {
+                "HP": 410,
+                "ATK": 59
+            },
+            {
+                "HP": 410,
+                "ATK": 63
+            },
+            {
+                "HP": 410,
+                "ATK": 65
+            },
+            {
+                "HP": 410,
+                "ATK": 69
+            },
+            {
+                "HP": 410,
+                "ATK": 71
+            },
+            {
+                "HP": 410,
+                "ATK": 75
+            },
+            {
+                "HP": 800,
+                "ATK": 89
+            },
+            {
+                "HP": 800,
+                "ATK": 92
+            },
+            {
+                "HP": 800,
+                "ATK": 95
+            },
+            {
+                "HP": 800,
+                "ATK": 98
+            },
+            {
+                "HP": 800,
+                "ATK": 101
+            },
+            {
+                "HP": 800,
+                "ATK": 104
+            },
+            {
+                "HP": 800,
+                "ATK": 107
+            },
+            {
+                "HP": 800,
+                "ATK": 110
+            },
+            {
+                "HP": 800,
+                "ATK": 113
+            },
+            {
+                "HP": 800,
+                "ATK": 116
+            },
+            {
+                "HP": 800,
+                "ATK": 119
+            },
+            {
+                "HP": 1290,
+                "ATK": 143
+            },
+            {
+                "HP": 1290,
+                "ATK": 146
+            },
+            {
+                "HP": 1290,
+                "ATK": 149
+            },
+            {
+                "HP": 1290,
+                "ATK": 152
+            },
+            {
+                "HP": 1290,
+                "ATK": 155
+            },
+            {
+                "HP": 1290,
+                "ATK": 158
+            },
+            {
+                "HP": 1290,
+                "ATK": 161
+            },
+            {
+                "HP": 1290,
+                "ATK": 164
+            },
+            {
+                "HP": 1290,
+                "ATK": 167
+            },
+            {
+                "HP": 1290,
+                "ATK": 170
+            },
+            {
+                "HP": 1290,
+                "ATK": 173
+            },
+            {
+                "HP": 1870,
+                "ATK": 208
+            },
+            {
+                "HP": 1870,
+                "ATK": 211
+            },
+            {
+                "HP": 1870,
+                "ATK": 214
+            },
+            {
+                "HP": 1870,
+                "ATK": 217
+            },
+            {
+                "HP": 1870,
+                "ATK": 220
+            },
+            {
+                "HP": 1870,
+                "ATK": 223
+            },
+            {
+                "HP": 1870,
+                "ATK": 226
+            },
+            {
+                "HP": 1870,
+                "ATK": 229
+            },
+            {
+                "HP": 1870,
+                "ATK": 232
+            },
+            {
+                "HP": 1870,
+                "ATK": 235
+            },
+            {
+                "HP": 1870,
+                "ATK": 238
+            },
+            {
+                "HP": 2570,
+                "ATK": 285
+            },
+            {
+                "HP": 2570,
+                "ATK": 289
+            },
+            {
+                "HP": 2570,
+                "ATK": 291
+            },
+            {
+                "HP": 2570,
+                "ATK": 295
+            },
+            {
+                "HP": 2570,
+                "ATK": 297
+            },
+            {
+                "HP": 2570,
+                "ATK": 301
+            },
+            {
+                "HP": 2570,
+                "ATK": 303
+            },
+            {
+                "HP": 2570,
+                "ATK": 307
+            },
+            {
+                "HP": 2570,
+                "ATK": 309
+            },
+            {
+                "HP": 2570,
+                "ATK": 313
+            },
+            {
+                "HP": 2570,
+                "ATK": 315
+            },
+            {
+                "HP": 3410,
+                "ATK": 379
+            },
+            {
+                "HP": 3410,
+                "ATK": 381
+            },
+            {
+                "HP": 3410,
+                "ATK": 385
+            },
+            {
+                "HP": 3410,
+                "ATK": 387
+            },
+            {
+                "HP": 3410,
+                "ATK": 391
+            },
+            {
+                "HP": 3410,
+                "ATK": 393
+            },
+            {
+                "HP": 3410,
+                "ATK": 397
+            },
+            {
+                "HP": 3410,
+                "ATK": 399
+            },
+            {
+                "HP": 3410,
+                "ATK": 403
+            },
+            {
+                "HP": 3410,
+                "ATK": 405
+            },
+            {
+                "HP": 3410,
+                "ATK": 409
+            },
+            {
+                "HP": 4410,
+                "ATK": 490
+            },
+            {
+                "HP": 4410,
+                "ATK": 493
+            },
+            {
+                "HP": 4410,
+                "ATK": 496
+            },
+            {
+                "HP": 4410,
+                "ATK": 499
+            },
+            {
+                "HP": 4410,
+                "ATK": 502
+            },
+            {
+                "HP": 4410,
+                "ATK": 505
+            },
+            {
+                "HP": 4410,
+                "ATK": 508
+            },
+            {
+                "HP": 4410,
+                "ATK": 511
+            },
+            {
+                "HP": 4410,
+                "ATK": 514
+            },
+            {
+                "HP": 4410,
+                "ATK": 517
+            },
+            {
+                "HP": 4410,
+                "ATK": 520
+            },
+            {
+                "HP": 5620,
+                "ATK": 624
+            },
+            {
+                "HP": 5620,
+                "ATK": 627
+            },
+            {
+                "HP": 5620,
+                "ATK": 630
+            },
+            {
+                "HP": 5620,
+                "ATK": 633
+            },
+            {
+                "HP": 5620,
+                "ATK": 636
+            },
+            {
+                "HP": 5620,
+                "ATK": 639
+            },
+            {
+                "HP": 5620,
+                "ATK": 642
+            },
+            {
+                "HP": 5620,
+                "ATK": 645
+            },
+            {
+                "HP": 5620,
+                "ATK": 648
+            },
+            {
+                "HP": 5620,
+                "ATK": 651
+            },
+            {
+                "HP": 5620,
+                "ATK": 654
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 85
+            },
+            {
+                "ATK": 169
+            },
+            {
+                "ATK": 254
+            },
+            {
+                "ATK": 338
+            },
+            {
+                "ATK": 423
+            }
+        ],
+        "upgrade": [
+            {
+                "Eerie Breath": 5,
+                "Dorra": 9000
+            },
+            {
+                "Eerie Breath": 5,
+                "Phantom Step Remnant": 11,
+                "Dorra": 22600
+            },
+            {
+                "Eerie Breath": 11,
+                "Phantom Step Remnant": 17,
+                "Dorra": 50900
+            },
+            {
+                "Eerie Breath": 17,
+                "Phantom Step Remnant": 28,
+                "Dorra": 76400
+            },
+            {
+                "Eerie Breath": 22,
+                "Phantom Step Remnant": 45,
+                "Dorra": 167600
+            },
+            {
+                "Eerie Breath": 34,
+                "Phantom Step Remnant": 62,
+                "Frenzied Waltz Essence": 22,
+                "Dorra": 334600
+            },
+            {
+                "Phantom Step Remnant": 85,
+                "Frenzied Waltz Essence": 34,
+                "Dorra": 642800
+            },
+            {
+                "Phantom Step Remnant": 107,
+                "Frenzied Waltz Essence": 56,
+                "Dorra": 1286700
+            }
+        ]
+    },
+    "213002": {
+        "id": 213002,
+        "name": "Seasonal Waves",
+        "star": 4,
+        "element": "None",
+        "tag": [
+            "ATK",
+            "Auto Attack"
+        ],
+        "char": [
+            "Nazuka",
+            "Fuyuka",
+            "Nazuna"
+        ],
+        "mainSkill": {
+            "id": 3002,
+            "name": "Seasonal Waves",
+            "nameCN": "季节波形",
+            "nameJP": "四季折々",
+            "nameKR": "일렁이는 계절",
+            "desc": "Increases Support Trekkers' ATK by <color=#ec6d21>{1}</color>.\u000bWhen Support Trekkers are on the battlefield, increases the Auto Attack DMG dealt by the Main Trekker by <color=#ec6d21>{2}</color>.",
+            "descCN": "援护角色攻击力提升<color=#ec6d21>{1}</color>。\u000b援护角色在场时，主控角色造成的普攻伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "支援巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000b支援巡遊者がフィールドに存在時、主力巡遊者の与える通常攻撃ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "지원 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b지원 캐릭터가 필드에 있으면 메인 캐릭터가 입히는 일반 공격 피해가 <color=#ec6d21>{2}</color> 증가한다.",
+            "effectType": [
+                "ATK (%)",
+                "HITTED_ADDITIONAL_:Auto Attack Damage (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [
+                "NOTHING, SELF, DEFAULT, AND, SELF, SELF_BE_ASSISTANT | SELF, DEFAULT | SELF, DEFAULT",
+                "HITTING, SELF, DEFAULT | SELF | MAINCONTROL_PLAYER, DEFAULT"
+            ],
+            "buffIcon": [],
+            "params": "5%,8%/6%,9.6%/7%,11.2%/8%,12.8%/9%,14.4%/10%,16%",
+            "icon": "DiscSkill_1",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "secondarySkill1": {
+            "id": 30021,
+            "name": "Drowsy Delights",
+            "nameCN": "甜梦微醺",
+            "nameJP": "淡い夢に酔いしれて",
+            "nameKR": "나른하고 달콤한 꿈결",
+            "desc": "When any Support Trekker casts a skill, increases the Main Trekker's Skill DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen any Support Character casts an Ultimate, increases Main Trekker's Ultimate DMG by <color=#ec6d21>{3}</color> for {4}s.",
+            "descCN": "任意援护角色释放技能时，主控角色技能伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b任意援护角色释放绝招时，主控角色绝招伤害提升<color=#ec6d21>{3}</color>，持续{4}秒。",
+            "descJP": "チーム内の支援巡遊者がスキル発動時、{2}秒間、主力巡遊者のスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000bチーム内の支援巡遊者が必殺技発動時、{4}秒間、主力巡遊者の必殺技ダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "지원 캐릭터가 스킬을 시전하면, 메인 캐릭터의 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b지원 캐릭터가 필살기를 시전하면, 메인 캐릭터의 필살기 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속된다.",
+            "effectType": [
+                "ADDBUFF:Skill DMG",
+                "Skill DMG (base)",
+                "ADDBUFF:Ultimate DMG",
+                "Ultimate DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [
+                "CASTSKILL, SELF, SKILLSLOTTYPE, 2, AND, SELF, SELF_BE_ASSISTANT | SELF, DEFAULT | MAINCONTROL_PLAYER, DEFAULT",
+                "CASTSKILL, SELF, SKILLSLOTTYPE, 4, AND, SELF, SELF_BE_ASSISTANT | SELF, DEFAULT | MAINCONTROL_PLAYER, DEFAULT"
+            ],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "3%,12,7.2%,12/6%,12,14.4%,12/9%,12,21.6%,12/12%,12,28.8%,12/15%,12,36%,12",
+            "requirements": [
+                {
+                    "Melody of Pummel": 10,
+                    "Melody of Skill": 10,
+                    "Melody of Ultimate": 10
+                },
+                {
+                    "Melody of Pummel": 25,
+                    "Melody of Skill": 25,
+                    "Melody of Ultimate": 25
+                },
+                {
+                    "Melody of Pummel": 40,
+                    "Melody of Skill": 40,
+                    "Melody of Ultimate": 40
+                },
+                {
+                    "Melody of Pummel": 55,
+                    "Melody of Skill": 55,
+                    "Melody of Ultimate": 55
+                },
+                {
+                    "Melody of Pummel": 70,
+                    "Melody of Skill": 70,
+                    "Melody of Ultimate": 70
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_1"
+        },
+        "supportNote": [
+            {
+                "Melody of Stamina": 3,
+                "Melody of Focus": 3
+            },
+            {
+                "Melody of Stamina": 3,
+                "Melody of Focus": 3
+            },
+            {
+                "Melody of Stamina": 4,
+                "Melody of Focus": 3
+            },
+            {
+                "Melody of Stamina": 4,
+                "Melody of Focus": 3
+            },
+            {
+                "Melody of Stamina": 4,
+                "Melody of Focus": 4
+            },
+            {
+                "Melody of Stamina": 4,
+                "Melody of Focus": 4
+            },
+            {
+                "Melody of Stamina": 5,
+                "Melody of Focus": 4
+            },
+            {
+                "Melody of Stamina": 5,
+                "Melody of Focus": 4
+            },
+            {
+                "Melody of Stamina": 5,
+                "Melody of Focus": 4
+            }
+        ],
+        "stat": [
+            {
+                "HP": 90,
+                "ATK": 10
+            },
+            {
+                "HP": 90,
+                "ATK": 13
+            },
+            {
+                "HP": 90,
+                "ATK": 16
+            },
+            {
+                "HP": 90,
+                "ATK": 19
+            },
+            {
+                "HP": 90,
+                "ATK": 22
+            },
+            {
+                "HP": 90,
+                "ATK": 25
+            },
+            {
+                "HP": 90,
+                "ATK": 28
+            },
+            {
+                "HP": 90,
+                "ATK": 31
+            },
+            {
+                "HP": 90,
+                "ATK": 34
+            },
+            {
+                "HP": 90,
+                "ATK": 37
+            },
+            {
+                "HP": 410,
+                "ATK": 45
+            },
+            {
+                "HP": 410,
+                "ATK": 47
+            },
+            {
+                "HP": 410,
+                "ATK": 51
+            },
+            {
+                "HP": 410,
+                "ATK": 53
+            },
+            {
+                "HP": 410,
+                "ATK": 57
+            },
+            {
+                "HP": 410,
+                "ATK": 59
+            },
+            {
+                "HP": 410,
+                "ATK": 63
+            },
+            {
+                "HP": 410,
+                "ATK": 65
+            },
+            {
+                "HP": 410,
+                "ATK": 69
+            },
+            {
+                "HP": 410,
+                "ATK": 71
+            },
+            {
+                "HP": 410,
+                "ATK": 75
+            },
+            {
+                "HP": 800,
+                "ATK": 89
+            },
+            {
+                "HP": 800,
+                "ATK": 92
+            },
+            {
+                "HP": 800,
+                "ATK": 95
+            },
+            {
+                "HP": 800,
+                "ATK": 98
+            },
+            {
+                "HP": 800,
+                "ATK": 101
+            },
+            {
+                "HP": 800,
+                "ATK": 104
+            },
+            {
+                "HP": 800,
+                "ATK": 107
+            },
+            {
+                "HP": 800,
+                "ATK": 110
+            },
+            {
+                "HP": 800,
+                "ATK": 113
+            },
+            {
+                "HP": 800,
+                "ATK": 116
+            },
+            {
+                "HP": 800,
+                "ATK": 119
+            },
+            {
+                "HP": 1290,
+                "ATK": 143
+            },
+            {
+                "HP": 1290,
+                "ATK": 146
+            },
+            {
+                "HP": 1290,
+                "ATK": 149
+            },
+            {
+                "HP": 1290,
+                "ATK": 152
+            },
+            {
+                "HP": 1290,
+                "ATK": 155
+            },
+            {
+                "HP": 1290,
+                "ATK": 158
+            },
+            {
+                "HP": 1290,
+                "ATK": 161
+            },
+            {
+                "HP": 1290,
+                "ATK": 164
+            },
+            {
+                "HP": 1290,
+                "ATK": 167
+            },
+            {
+                "HP": 1290,
+                "ATK": 170
+            },
+            {
+                "HP": 1290,
+                "ATK": 173
+            },
+            {
+                "HP": 1870,
+                "ATK": 208
+            },
+            {
+                "HP": 1870,
+                "ATK": 211
+            },
+            {
+                "HP": 1870,
+                "ATK": 214
+            },
+            {
+                "HP": 1870,
+                "ATK": 217
+            },
+            {
+                "HP": 1870,
+                "ATK": 220
+            },
+            {
+                "HP": 1870,
+                "ATK": 223
+            },
+            {
+                "HP": 1870,
+                "ATK": 226
+            },
+            {
+                "HP": 1870,
+                "ATK": 229
+            },
+            {
+                "HP": 1870,
+                "ATK": 232
+            },
+            {
+                "HP": 1870,
+                "ATK": 235
+            },
+            {
+                "HP": 1870,
+                "ATK": 238
+            },
+            {
+                "HP": 2570,
+                "ATK": 285
+            },
+            {
+                "HP": 2570,
+                "ATK": 289
+            },
+            {
+                "HP": 2570,
+                "ATK": 291
+            },
+            {
+                "HP": 2570,
+                "ATK": 295
+            },
+            {
+                "HP": 2570,
+                "ATK": 297
+            },
+            {
+                "HP": 2570,
+                "ATK": 301
+            },
+            {
+                "HP": 2570,
+                "ATK": 303
+            },
+            {
+                "HP": 2570,
+                "ATK": 307
+            },
+            {
+                "HP": 2570,
+                "ATK": 309
+            },
+            {
+                "HP": 2570,
+                "ATK": 313
+            },
+            {
+                "HP": 2570,
+                "ATK": 315
+            },
+            {
+                "HP": 3410,
+                "ATK": 379
+            },
+            {
+                "HP": 3410,
+                "ATK": 381
+            },
+            {
+                "HP": 3410,
+                "ATK": 385
+            },
+            {
+                "HP": 3410,
+                "ATK": 387
+            },
+            {
+                "HP": 3410,
+                "ATK": 391
+            },
+            {
+                "HP": 3410,
+                "ATK": 393
+            },
+            {
+                "HP": 3410,
+                "ATK": 397
+            },
+            {
+                "HP": 3410,
+                "ATK": 399
+            },
+            {
+                "HP": 3410,
+                "ATK": 403
+            },
+            {
+                "HP": 3410,
+                "ATK": 405
+            },
+            {
+                "HP": 3410,
+                "ATK": 409
+            },
+            {
+                "HP": 4410,
+                "ATK": 490
+            },
+            {
+                "HP": 4410,
+                "ATK": 493
+            },
+            {
+                "HP": 4410,
+                "ATK": 496
+            },
+            {
+                "HP": 4410,
+                "ATK": 499
+            },
+            {
+                "HP": 4410,
+                "ATK": 502
+            },
+            {
+                "HP": 4410,
+                "ATK": 505
+            },
+            {
+                "HP": 4410,
+                "ATK": 508
+            },
+            {
+                "HP": 4410,
+                "ATK": 511
+            },
+            {
+                "HP": 4410,
+                "ATK": 514
+            },
+            {
+                "HP": 4410,
+                "ATK": 517
+            },
+            {
+                "HP": 4410,
+                "ATK": 520
+            },
+            {
+                "HP": 5620,
+                "ATK": 624
+            },
+            {
+                "HP": 5620,
+                "ATK": 627
+            },
+            {
+                "HP": 5620,
+                "ATK": 630
+            },
+            {
+                "HP": 5620,
+                "ATK": 633
+            },
+            {
+                "HP": 5620,
+                "ATK": 636
+            },
+            {
+                "HP": 5620,
+                "ATK": 639
+            },
+            {
+                "HP": 5620,
+                "ATK": 642
+            },
+            {
+                "HP": 5620,
+                "ATK": 645
+            },
+            {
+                "HP": 5620,
+                "ATK": 648
+            },
+            {
+                "HP": 5620,
+                "ATK": 651
+            },
+            {
+                "HP": 5620,
+                "ATK": 654
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 85
+            },
+            {
+                "ATK": 169
+            },
+            {
+                "ATK": 254
+            },
+            {
+                "ATK": 338
+            },
+            {
+                "ATK": 423
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Light Breath": 5,
+                "Dorra": 9000
+            },
+            {
+                "Faint Light Breath": 5,
+                "Emberflies Soul": 11,
+                "Dorra": 22600
+            },
+            {
+                "Faint Light Breath": 11,
+                "Emberflies Soul": 17,
+                "Dorra": 50900
+            },
+            {
+                "Faint Light Breath": 17,
+                "Emberflies Soul": 28,
+                "Dorra": 76400
+            },
+            {
+                "Faint Light Breath": 22,
+                "Emberflies Soul": 45,
+                "Dorra": 167600
+            },
+            {
+                "Faint Light Breath": 34,
+                "Emberflies Soul": 62,
+                "Evernight Essence": 22,
+                "Dorra": 334600
+            },
+            {
+                "Emberflies Soul": 85,
+                "Evernight Essence": 34,
+                "Dorra": 642800
+            },
+            {
+                "Emberflies Soul": 107,
+                "Evernight Essence": 56,
+                "Dorra": 1286700
+            }
+        ]
+    },
     "213003": {
         "id": 213003,
         "name": "Scorching Night's End",
@@ -26487,10 +27656,10 @@
             "nameCN": "决胜击打",
             "nameJP": "勝負を決める一振り",
             "nameKR": "승부의 일격",
-            "desc": "When a Lux Main Trekker hits a target, increases the ATK of Lux Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {3}s.\u000bWhen any Lux Trekker hits a stunned target, increases this effect by an additional <color=#ec6d21>{2}</color> for {4}s.",
-            "descCN": "光系主控角色技能命中时，队伍中光系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{3}秒。\u000b任意光系角色命中眩晕目标时，该效果额外提升<color=#ec6d21>{2}</color>，持续{4}秒。",
-            "descJP": "光属性の主力巡遊者のスキルが敵に命中時から{3}秒間、チーム内の光属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の光属性巡遊者の攻撃がスタン状態の敵に命中時から{4}秒間、追加で<color=#ec6d21>{2}</color>上昇する。",
-            "descKR": "빛 속성 메인 캐릭터의 스킬이 명중하면, 팀 내 빛 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {3}초간 지속된다. \u000b빛 속성 캐릭터가 기절 상태의 목표를 명중하면, 해당 효과가 <color=#ec6d21>{2}</color> 추가로 증가한다. {4}초간 지속된다.",
+            "desc": "When a Lux Main Trekker hits a target with a skill, increases the ATK of Lux Trekkers in the squad and their Minions by <color=#ec6d21>{1}</color> for {3}s.\u000bWhen any Lux Trekker hits a stunned target or a target under Resilience Break, increases this effect by an additional <color=#ec6d21>{2}</color> for {4}s.",
+            "descCN": "光系主控角色技能命中时，队伍中光系角色及其仆从攻击力提升<color=#ec6d21>{1}</color>，持续{3}秒。\u000b任意光系角色命中眩晕或破韧状态目标时，该效果额外提升<color=#ec6d21>{2}</color>，持续{4}秒。",
+            "descJP": "光属性の主力巡遊者のスキルが敵に命中時から{3}秒間、チーム内の光属性巡遊者およびその従者は攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000bチーム内の光属性巡遊者の攻撃がスタンまたはブレイク状態の敵に命中時から{4}秒間、追加で<color=#ec6d21>{2}</color>上昇する。",
+            "descKR": "빛 속성 메인 캐릭터의 스킬이 명중하면, 팀 내 빛 속성 캐릭터 및 그 소환물의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {3}초간 지속된다. \u000b빛 속성 캐릭터가 기절 혹은 내성 무시 상태의 목표를 명중하면, 해당 효과가 <color=#ec6d21>{2}</color> 추가로 증가한다. {4}초간 지속된다.",
             "effectType": [
                 "ADDBUFF:ATK",
                 "ATK (%)"
@@ -26498,7 +27667,7 @@
             "addAttrType": [],
             "effectData": [
                 "HITTING, SELF, SKILLSLOTTYPE, 2, AND, SELF, ACTORELEMENTTYPE | SELF, SELF_BE_MAINCONTROL | FULL_TEAM_AND_SUMMONED, ACTORELEMENTTYPE, Lux",
-                "HITTING, ENEMY, CARRYBUFFIDENTIFYING, Stun, AND, SELF, ACTORELEMENTTYPE | SELF, DEFAULT | FULL_TEAM_AND_SUMMONED, ACTORELEMENTTYPE, Lux"
+                "HITTING, ENEMY, CARRYBUFFIDENTIFYING, Stun, OR, ENEMY, CARRYBUFFIDENTIFYING | SELF, ACTORELEMENTTYPE, Lux | FULL_TEAM_AND_SUMMONED, ACTORELEMENTTYPE, Lux"
             ],
             "buffIcon": [
                 "No Icon"
@@ -45925,7 +47094,7 @@
             "Ultimate"
         ],
         "char": [
-            "Laru"
+            "Snowish Laru"
         ],
         "mainSkill": {
             "id": 4041,
@@ -46550,7 +47719,7 @@
             "Auto Attack"
         ],
         "char": [
-            "Coronis"
+            "Springseek Coronis"
         ],
         "mainSkill": {
             "id": 4042,
@@ -47796,7 +48965,7 @@
             "Crit DMG"
         ],
         "char": [
-            "Coronis"
+            "Springseek Coronis"
         ],
         "mainSkill": {
             "id": 4044,
@@ -50294,7 +51463,7 @@
             "Skills"
         ],
         "char": [
-            "Laru"
+            "Snowish Laru"
         ],
         "mainSkill": {
             "id": 4048,
@@ -54642,6 +55811,1255 @@
             {
                 "Phantom Step Remnant": 126,
                 "Frenzied Waltz Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214055": {
+        "id": 214055,
+        "name": "Fleeting Glimmers",
+        "star": 5,
+        "element": "Aqua",
+        "tag": [
+            "VUL",
+            "Crit DMG",
+            "Charge"
+        ],
+        "char": [
+            "Suntide Willow"
+        ],
+        "mainSkill": {
+            "id": 4055,
+            "name": "Fleeting Glimmers",
+            "nameCN": "浮光掠影",
+            "nameJP": "揺らめく光の向こう側",
+            "nameKR": "수면 위의 빛과 그림자",
+            "desc": "Increases the squad's Aqua DMG by <color=#ec6d21>{1}</color>.\u000bWhen an Aqua Support Trekker casts a skill or for every 5s they are on the field, grants Tide Weave to the squad for {2}s, stacking up to {3} times.\u000bWhen a Trekker with Tide Weave inflicts ##Aqua Mark#1018# to a target, it additionally increases this target's Aqua Skill DMG Taken by <color=#ec6d21>{4}</color> for {5}s.",
+            "descCN": "全队水系伤害提升<color=#ec6d21>{1}</color>。\u000b水系辅助角色施放技能时或每在场5秒，为全队附加「潮絮」，持续{2}秒，可叠加{3}层。\u000b附带「潮絮」的角色对目标附加##水系印记#1018#时，额外使目标受到水系技能伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。",
+            "descJP": "チーム全体の水属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000b水属性のサポーター巡遊者がスキル発動時、あるいは、水属性のサポーター巡遊者がフィールドに5秒間存在するごとに、チーム全体に{2}秒間、タイドフリースを付与する。この効果は最大{3}回まで重複できる。\u000bタイドフリースが付与された巡遊者は、敵に##水属性の印#1018#を付与した時、{5}秒間、敵の水属性のスキル被ダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "팀 전체 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.\u000b물 속성 서포터 캐릭터가 스킬을 시전하거나 필드에 5초 있을 때마다 팀 전체에게 「조수」를 부여한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.\u000b「조수」를 보유한 캐릭터가 목표에게 ##물 속성 표식#1018#을 부여할 때 목표가 받는 물 속성 스킬 피해가 추가로 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
+            "effectType": [
+                "Aqua DMG (base)",
+                "ELEMENTTYPE_:(Aqua) Skill DMG Taken"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214055_Buff",
+                "Icon_DiscBuff_214055_Debuff"
+            ],
+            "params": "20%,6,4,15%,4/24%,6,4,18%,4/28%,6,4,21%,4/32%,6,4,24%,4/36%,6,4,27%,4/40%,6,4,30%,4",
+            "icon": "DiscSkill_214055",
+            "iconBg": "db_DiscSkill_5"
+        },
+        "secondarySkill1": {
+            "id": 40551,
+            "name": "Azure Echo",
+            "nameCN": "碧海回音",
+            "nameJP": "蒼海のプリズム",
+            "nameKR": "푸른 바다의 메아리",
+            "desc": "Increases the Crit DMG of Aqua Trekkers by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker with Tide Weave triggers an ##Aqua Mark#1018#, the target takes <color=#ec6d21>{2}</color> increased Aqua Auto Attack DMG for {3}s.",
+            "descCN": "队伍中水系角色暴击伤害提升<color=#ec6d21>{1}</color>。\u000b附带「潮絮」的任意角色触发##水系印记#1018#时，该目标受到水系普攻伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
+            "descJP": "チーム内の水属性巡遊者の会心ダメージが<color=#ec6d21>{1}</color>増加する。\u000bタイドフリースが付与されたチーム内の巡遊者が##水属性の印#1018#を発動させた時、{3}秒間、その敵の水属性の通常攻撃被ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 물 속성 캐릭터의 치명타 피해가 <color=#ec6d21>{1}</color> 증가한다.\u000b「조수」를 보유한 캐릭터가 ##물 속성 표식#1018#을 발동하면 해당 목표가 받는 물 속성 일반 공격 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다.",
+            "effectType": [
+                "Crit DMG (base)",
+                "ELEMENTTYPE_:(Aqua) Auto Attack DMG Taken"
+            ],
+            "addAttrType": [],
+            "effectData": [
+                "NOTHING, SELF, ACTORELEMENTTYPE, Aqua | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "buffIcon": [
+                "Icon_DiscBuff_214055_Debuff"
+            ],
+            "params": "12%,10%,4/16%,15%,4/20%,20%,4/24%,25%,4/28%,30%,4",
+            "requirements": [
+                {
+                    "Melody of Pummel": 10,
+                    "Melody of Aqua": 10
+                },
+                {
+                    "Melody of Pummel": 25,
+                    "Melody of Aqua": 25
+                },
+                {
+                    "Melody of Pummel": 40,
+                    "Melody of Aqua": 40
+                },
+                {
+                    "Melody of Pummel": 55,
+                    "Melody of Aqua": 55
+                },
+                {
+                    "Melody of Pummel": 70,
+                    "Melody of Aqua": 70
+                }
+            ],
+            "icon": "DiscSkill_3",
+            "iconBg": "db_DiscSkill_5"
+        },
+        "secondarySkill2": {
+            "id": 40552,
+            "name": "Sun-Kissed Sands",
+            "nameCN": "白沙映日",
+            "nameJP": "陽光照らす白浜",
+            "nameKR": "하얀 모래에 비친 햇빛",
+            "desc": "Tide Weave gains an additional effect: Each stack increases own Aqua DMG by <color=#ec6d21>{1}</color>, and increases the ATK of Aqua Support Trekkers by an additional <color=#ec6d21>{2}</color> per stack.\u000bAfter an Aqua Support Trekker casts their Ultimate, each stack of Tide Weave they possess restores Energy equal to <color=#ec6d21>{3}</color> of their Max Energy, up to <color=#ec6d21>{4}</color>.",
+            "descCN": "「潮絮」获得额外效果：每层使自身水系伤害提升<color=#ec6d21>{1}</color>，水系辅助角色攻击力每层额外提升<color=#ec6d21>{2}</color>。\u000b水系辅助角色施放绝招后，附带的每层「潮絮」为自身获得最大能量的<color=#ec6d21>{3}</color>的能量，最多获得<color=#ec6d21>{4}</color>点。",
+            "descJP": "タイドフリースに追加効果が付与される：タイドフリース1ごとに自身の水属性ダメージが<color=#ec6d21>{1}</color>増加する。さらに、水属性のサポーター巡遊者の攻撃力は、タイドフリース1ごとに追加で<color=#ec6d21>{2}</color>上昇する。\u000b水属性のサポーター巡遊者が必殺技発動後、タイドフリース1ごとに、自身の最大SPの<color=#ec6d21>{3}</color>のSPを獲得する。この効果は最大でSPを<color=#ec6d21>{4}</color>獲得できる。",
+            "descKR": "「조수」가 추가 효과를 획득해 1스택마다 자신의 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. 물 속성 서포터 캐릭터의 공격력이 1스택마다 추가로 <color=#ec6d21>{2}</color> 증가한다.\u000b물 속성 서포터 캐릭터가 필살기 시전 후 보유한 「조수」 1스택마다 자신이 최대 SP <color=#ec6d21>{3}</color>의 SP를 획득한다. 최대 <color=#ec6d21>{4}</color> 획득한다.",
+            "effectType": [
+                "Aqua DMG (base)",
+                "ATK (%)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "2%,2%,1.5%,20/4%,4%,3%,40/6%,6%,4.5%,55/8%,8%,6%,70/10%,10%,7.5%,85",
+            "requirements": [
+                {
+                    "Melody of Pummel": 15,
+                    "Melody of Luck": 15,
+                    "Melody of Aqua": 15
+                },
+                {
+                    "Melody of Pummel": 30,
+                    "Melody of Luck": 30,
+                    "Melody of Aqua": 30
+                },
+                {
+                    "Melody of Pummel": 45,
+                    "Melody of Luck": 45,
+                    "Melody of Aqua": 45
+                },
+                {
+                    "Melody of Pummel": 60,
+                    "Melody of Luck": 60,
+                    "Melody of Aqua": 60
+                },
+                {
+                    "Melody of Pummel": 75,
+                    "Melody of Luck": 75,
+                    "Melody of Aqua": 75
+                }
+            ],
+            "icon": "DiscSkill_7",
+            "iconBg": "db_DiscSkill_5"
+        },
+        "supportNote": [
+            {
+                "Melody of Luck": 2,
+                "Melody of Aqua": 4
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Aqua": 5
+            },
+            {
+                "Melody of Luck": 2,
+                "Melody of Aqua": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Aqua": 6
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Aqua": 7
+            },
+            {
+                "Melody of Luck": 3,
+                "Melody of Aqua": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Aqua": 8
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Aqua": 9
+            },
+            {
+                "Melody of Luck": 4,
+                "Melody of Aqua": 10
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 15,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 20,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 24,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 29,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 33,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 38,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 42,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 47,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 51,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 56,
+                "Auto Attack DMG": "6%"
+            },
+            {
+                "ATK": 67,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 71,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 76,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 80,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 85,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 89,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 94,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 98,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 103,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 107,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 112,
+                "Auto Attack DMG": "9%"
+            },
+            {
+                "ATK": 134,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 138,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 143,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 147,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 152,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 156,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 161,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 165,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 170,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 174,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 179,
+                "Auto Attack DMG": "12%"
+            },
+            {
+                "ATK": 215,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 219,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 224,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 228,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 233,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 237,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 242,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 246,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 251,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 255,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 260,
+                "Auto Attack DMG": "15%"
+            },
+            {
+                "ATK": 312,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 316,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 321,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 325,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 330,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 334,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 339,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 343,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 348,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 352,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 357,
+                "Auto Attack DMG": "18%"
+            },
+            {
+                "ATK": 428,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 433,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 437,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 442,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 446,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 451,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 455,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 460,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 464,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 469,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 473,
+                "Auto Attack DMG": "22%"
+            },
+            {
+                "ATK": 568,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 572,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 577,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 581,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 586,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 590,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 595,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 599,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 604,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 608,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 613,
+                "Auto Attack DMG": "26%"
+            },
+            {
+                "ATK": 735,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 740,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 744,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 749,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 753,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 758,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 762,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 767,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 771,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 776,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 780,
+                "Auto Attack DMG": "30%"
+            },
+            {
+                "ATK": 936,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 941,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 945,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 950,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 954,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 959,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 963,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 968,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 972,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 977,
+                "Auto Attack DMG": "35%"
+            },
+            {
+                "ATK": 981,
+                "Auto Attack DMG": "35%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Light Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Faint Light Breath": 6,
+                "Emberflies Soul": 13,
+                "Dorra": 26700
+            },
+            {
+                "Faint Light Breath": 13,
+                "Emberflies Soul": 20,
+                "Dorra": 59900
+            },
+            {
+                "Faint Light Breath": 20,
+                "Emberflies Soul": 33,
+                "Dorra": 89900
+            },
+            {
+                "Faint Light Breath": 26,
+                "Emberflies Soul": 53,
+                "Dorra": 197200
+            },
+            {
+                "Faint Light Breath": 40,
+                "Emberflies Soul": 73,
+                "Evernight Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Emberflies Soul": 100,
+                "Evernight Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Emberflies Soul": 126,
+                "Evernight Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214056": {
+        "id": 214056,
+        "name": "Dappled Sunlight",
+        "star": 5,
+        "element": "Aqua",
+        "tag": [
+            "Element",
+            "ATK",
+            "Ultimate"
+        ],
+        "char": [
+            "Suntide Willow"
+        ],
+        "mainSkill": {
+            "id": 4056,
+            "name": "Dappled Sunlight",
+            "nameCN": "斑驳夏影",
+            "nameJP": "友との夏休み",
+            "nameKR": "일렁이는 여름의 잔영",
+            "desc": "When an Aqua Support Trekker casts a Skill, or every 5s they are on the field, they grant 1 stack of Ripple Echo to the entire squad: Increases Aqua DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to {3} times.\u000bWhen a Trekker granted Ripple Echo triggers ##Aqua Mark#1018#, increases this Trekker's ATK by <color=#ec6d21>{4}</color> for {5}s.",
+            "descCN": "水系辅助角色施放技能时或每在场5秒，为全队附加1层「涟音」：水系伤害提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加{3}层。\u000b附带「涟音」的角色触发##水系印记#1018#时，该角色攻击力提升<color=#ec6d21>{4}</color>，持续{5}秒。",
+            "descJP": "水属性のサポーター巡遊者がスキル発動時、あるいは、水属性のサポーター巡遊者がフィールドに5秒間存在するごとに、チーム全体に{2}秒間、リプルノートを1付与する\u000bリプルノート：水属性ダメージが<color=#ec6d21>{1}</color>増加する。この効果は最大{3}回まで重複できる。\u000bリプルノートが付与された巡遊者は##水属性の印#1018#を発動させた時、{5}秒間、その巡遊者の攻撃力が<color=#ec6d21>{4}</color>上昇する。",
+            "descKR": "물 속성 서포터 캐릭터가 스킬 시전 시 혹은 필드에 5초 있을 때마다 팀 전체에게 「물결의 소리」 1스택을 부여하여 물 속성 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속되며, 최대 {3}스택 중첩된다.\u000b「물결의 소리」를 보유한 캐릭터가 ##물 속성 표식#1018#을 발동할 때 해당 캐릭터의 공격력이 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
+            "effectType": [
+                "Aqua DMG (base)",
+                "ATK (%)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214056_Buff",
+                "No Icon"
+            ],
+            "params": "2.5%,6,2,5%,10/3%,6,2,6%,10/3.5%,6,2,7%,10/4%,6,2,8%,10/4.5%,6,2,9%,10/5%,6,2,10%,10",
+            "icon": "DiscSkill_214056",
+            "iconBg": "db_DiscSkill_5"
+        },
+        "secondarySkill1": {
+            "id": 40561,
+            "name": "Summer Time Whispers",
+            "nameCN": "夏日私语",
+            "nameJP": "流水のささやき",
+            "nameKR": "여름의 귓속말",
+            "desc": "Increases the Ultimate DMG of Aqua Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bRipple Echo gains an additional effect: Each stack increases own Aqua DMG dealt by <color=#ec6d21>{2}</color>.",
+            "descCN": "队伍中水系角色绝招伤害提升<color=#ec6d21>{1}</color>。\u000b「涟音」获得额外效果：每层使自身水系伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の水属性巡遊者の必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000bリプルノートに追加効果が付与される：リプルノート1ごとに自身の水属性ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 물 속성 캐릭터의 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다.\u000b「물결의 소리」가 추가 효과를 획득해 1스택마다 자신의 물 속성 피해가 <color=#ec6d21>{2}</color> 증가한다.",
+            "effectType": [
+                "ELEMENTTYPE_:(Aqua) Ultimate DMG",
+                "Aqua DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [
+                "NOTHING, SELF, ACTORELEMENTTYPE, Aqua | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "6%,1%/12%,2%/18%,3%/24%,4%/30%,5%",
+            "requirements": [
+                {
+                    "Melody of Ultimate": 10,
+                    "Melody of Aqua": 10
+                },
+                {
+                    "Melody of Ultimate": 25,
+                    "Melody of Aqua": 25
+                },
+                {
+                    "Melody of Ultimate": 40,
+                    "Melody of Aqua": 40
+                },
+                {
+                    "Melody of Ultimate": 55,
+                    "Melody of Aqua": 55
+                },
+                {
+                    "Melody of Ultimate": 70,
+                    "Melody of Aqua": 70
+                }
+            ],
+            "icon": "DiscSkill_12",
+            "iconBg": "db_DiscSkill_5"
+        },
+        "secondarySkill2": {
+            "id": 40562,
+            "name": "Summer Isle Song",
+            "nameCN": "夏屿轻歌",
+            "nameJP": "島のハミング",
+            "nameKR": "가벼운 여름의 노래",
+            "desc": "When Ripple Echo is at max stacks, increases own Aqua Skill DMG by an additional <color=#ec6d21>{1}</color>.",
+            "descCN": "「涟音」满层时，自身水系技能伤害额外提升<color=#ec6d21>{1}</color>。",
+            "descJP": "リプルノートが上限に達した時、自身の水属性のスキルダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "「물결의 소리」가 최대 스택이 되면 자신의 물 속성 스킬 피해가 추가로 <color=#ec6d21>{1}</color> 증가한다.",
+            "effectType": [],
+            "addAttrType": [
+                "Skill DMG (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [],
+            "params": "4.5%/9%/13.5%/18%/22.5%",
+            "requirements": [
+                {
+                    "Melody of Pummel": 15,
+                    "Melody of Focus": 15,
+                    "Melody of Aqua": 15
+                },
+                {
+                    "Melody of Pummel": 30,
+                    "Melody of Focus": 30,
+                    "Melody of Aqua": 30
+                },
+                {
+                    "Melody of Pummel": 45,
+                    "Melody of Focus": 45,
+                    "Melody of Aqua": 45
+                },
+                {
+                    "Melody of Pummel": 60,
+                    "Melody of Focus": 60,
+                    "Melody of Aqua": 60
+                },
+                {
+                    "Melody of Pummel": 75,
+                    "Melody of Focus": 75,
+                    "Melody of Aqua": 75
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_5"
+        },
+        "supportNote": [
+            {
+                "Melody of Burst": 3,
+                "Melody of Skill": 3
+            },
+            {
+                "Melody of Burst": 3,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Skill": 7
+            },
+            {
+                "Melody of Burst": 7,
+                "Melody of Skill": 7
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 14,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 18,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 22,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 26,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 30,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 34,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 46,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 50,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 60,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 64,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 68,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 72,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 77,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 80,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 85,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 88,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 93,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 96,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 101,
+                "Aqua DMG": "2%"
+            },
+            {
+                "ATK": 121,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 124,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 129,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 132,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 137,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 140,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 145,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 149,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 153,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 157,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 161,
+                "Aqua DMG": "4%"
+            },
+            {
+                "ATK": 194,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 197,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 202,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 205,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 210,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 213,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 218,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 221,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 226,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 230,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 234,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 281,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 284,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 289,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 293,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 297,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 301,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 305,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 309,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 313,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 317,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 321,
+                "Aqua DMG": "6%"
+            },
+            {
+                "ATK": 385,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 390,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 393,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 398,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 401,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 406,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 410,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 414,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 418,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 422,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 426,
+                "Aqua DMG": "8%"
+            },
+            {
+                "ATK": 511,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 515,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 519,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 523,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 527,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 531,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 536,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 539,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 544,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 547,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 552,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 662,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 666,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 670,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 674,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 678,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 682,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 686,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 690,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 694,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 698,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 702,
+                "Aqua DMG": "10%"
+            },
+            {
+                "ATK": 842,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 847,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 851,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 855,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 859,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 863,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 867,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 871,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 875,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 879,
+                "Aqua DMG": "12%"
+            },
+            {
+                "ATK": 883,
+                "Aqua DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Duloos Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Duloos Breath": 6,
+                "Duloos Soul Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Duloos Breath": 13,
+                "Duloos Soul Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Duloos Breath": 20,
+                "Duloos Soul Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Duloos Breath": 26,
+                "Duloos Soul Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Duloos Breath": 40,
+                "Duloos Soul Remnant": 73,
+                "Duloos Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Duloos Soul Remnant": 100,
+                "Duloos Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Duloos Soul Remnant": 126,
+                "Duloos Essence": 66,
                 "Dorra": 1513800
             }
         ]

@@ -1,4 +1,842 @@
 {
+    "100100": {
+        "activityId": 600003,
+        "name": "[Cat-stle Siege] Chaton ???",
+        "icon": "monsterhead_70021MaoYan_Fire_L",
+        "type": "Overlord",
+        "mechanic": [
+            [
+                {
+                    "name": "Full-auto Fire",
+                    "desc": "Enhanced Assault Mode: Fires more bullets during Rapid Fire.",
+                    "diff": 5,
+                    "icon": "duelaffix_400101"
+                }
+            ],
+            [
+                {
+                    "name": "Dark Ray",
+                    "desc": "Enhanced Sniper Mode: Unleashes a more powerful dark ray after Dark Bullet.",
+                    "diff": 5,
+                    "icon": "duelaffix_400102"
+                }
+            ],
+            [
+                {
+                    "name": "All Out",
+                    "desc": "Enhanced Assault Mode: After continuous firing, Chaton summons a magic circle to fire Kitty Bullets outward.",
+                    "diff": 5,
+                    "icon": "duelaffix_400103"
+                }
+            ],
+            [
+                {
+                    "name": "Secondary Beam",
+                    "desc": "Enhanced Sniper Mode: Adds a follow-up attack to Laser Beam.",
+                    "diff": 5,
+                    "icon": "duelaffix_400104"
+                }
+            ],
+            [
+                {
+                    "name": "Furious Kitty",
+                    "desc": "Fires more Kitty Bullets during Kitty Barrage.",
+                    "diff": 5,
+                    "icon": "duelaffix_400105"
+                }
+            ],
+            [
+                {
+                    "name": "Eye of the Meow Lord",
+                    "desc": "Eye of the Demon Lord has increased tracking duration and tracking speed.",
+                    "diff": 5,
+                    "icon": "duelaffix_400106"
+                }
+            ],
+            [
+                {
+                    "name": "DMG Increase: Lesser",
+                    "desc": "Increases all enemy DMG dealt by <color=#ec6d21>10%</color>",
+                    "diff": 1,
+                    "icon": "duelaffix_40101"
+                },
+                {
+                    "name": "DMG Increase: Medium",
+                    "desc": "Increases all enemy DMG dealt by <color=#ec6d21>20%</color>",
+                    "diff": 2,
+                    "icon": "duelaffix_40102"
+                },
+                {
+                    "name": "DMG Increase: Greater",
+                    "desc": "Increases all enemy DMG dealt by <color=#ec6d21>30%</color>",
+                    "diff": 4,
+                    "icon": "duelaffix_40103"
+                }
+            ],
+            [
+                {
+                    "name": "Blood Thirst",
+                    "desc": "Reduces Max HP by <color=#ec6d21>-50%</color>; restores main Trekker's Max HP by <color=#ec6d21>0.8%</color> each time her Skill DMG is dealt.",
+                    "diff": 2,
+                    "icon": "duelaffix_40301"
+                }
+            ],
+            [
+                {
+                    "name": "Crit Tuning: DMG",
+                    "desc": "Increases Crit DMG for the squad by <color=#ec6d21>40%</color>, but reduces Crit Rate by <color=#ec6d21>-30%</color>.",
+                    "diff": 2,
+                    "icon": "duelaffix_41301"
+                },
+                {
+                    "name": "Crit Tuning: Rate",
+                    "desc": "Increases Crit Rate for the squad by <color=#ec6d21>15%</color>, but reduces Crit DMG by <color=#ec6d21>-30%</color>.",
+                    "diff": 2,
+                    "icon": "duelaffix_41302"
+                }
+            ],
+            [
+                {
+                    "name": "Sluggish: Lesser",
+                    "desc": "Increases Skill Cooldown for the squad by <color=#ec6d21>5%</color>.",
+                    "diff": 1,
+                    "icon": "duelaffix_40201"
+                },
+                {
+                    "name": "Sluggish: Medium",
+                    "desc": "Increases Skill Cooldown for the squad by <color=#ec6d21>10%</color>.",
+                    "diff": 2,
+                    "icon": "duelaffix_40202"
+                },
+                {
+                    "name": "Sluggish: Greater",
+                    "desc": "Increases Skill Cooldown for the squad by <color=#ec6d21>20%</color>.",
+                    "diff": 4,
+                    "icon": "duelaffix_40203"
+                }
+            ],
+            [
+                {
+                    "name": "Demon's Wrath: Lesser",
+                    "desc": "Each time Chaton is hit by a skill attack, increases all DMG dealt by <color=#ec6d21>1%</color> for <color=#ec6d21>3</color>s. Stacks up to <color=#ec6d21>10</color> times; max 1 stack per second.",
+                    "diff": 1,
+                    "icon": "duelaffix_41701"
+                },
+                {
+                    "name": "Demon's Wrath: Medium",
+                    "desc": "Each time Chaton is hit by a skill attack, increases all DMG dealt by <color=#ec6d21>2.1%</color> for <color=#ec6d21>3</color>s. Stacks up to <color=#ec6d21>10</color> times; max 1 stack per second.",
+                    "diff": 2,
+                    "icon": "duelaffix_41702"
+                },
+                {
+                    "name": "Demon's Wrath: Greater",
+                    "desc": "Each time Chaton is hit by a skill attack, increases all DMG dealt by <color=#ec6d21>3.2%</color> for <color=#ec6d21>3</color>s. Stacks up to <color=#ec6d21>10</color> times; max 1 stack per second.",
+                    "diff": 4,
+                    "icon": "duelaffix_41703"
+                }
+            ],
+            [
+                {
+                    "name": "Mark Fade",
+                    "desc": "Reduces the squad's Mark DMG by <color=#ec6d21>-80%</color> and increases Ultimate DMG by <color=#ec6d21>20%</color>",
+                    "diff": 2,
+                    "icon": "duelaffix_41101"
+                },
+                {
+                    "name": "Auto Attack Nerf",
+                    "desc": "Reduces the squad's Auto Attack DMG by <color=#ec6d21>-80%</color> and increases Skill DMG by <color=#ec6d21>20%</color>",
+                    "diff": 2,
+                    "icon": "duelaffix_41102"
+                },
+                {
+                    "name": "Skill Nerf",
+                    "desc": "Reduces the squad's Skill DMG by <color=#ec6d21>-80%</color> and increases Minion DMG by <color=#ec6d21>20%</color>",
+                    "diff": 2,
+                    "icon": "duelaffix_41103"
+                }
+            ],
+            [
+                {
+                    "name": "Demon's Body",
+                    "desc": "Chaton initially takes <color=#ec6d21>-5%</color> reduced DMG. Every <color=#ec6d21>4</color>s, increases DMG RES by <color=#ec6d21>-0.2%</color>. Stacks up to <color=#ec6d21>45</color> times.",
+                    "diff": 1,
+                    "icon": "duelaffix_41201"
+                },
+                {
+                    "name": "Demon's Body: Greater",
+                    "desc": "Chaton initially takes <color=#ec6d21>-10%</color> reduced DMG. Every <color=#ec6d21>2</color>s, increases DMG RES by <color=#ec6d21>-0.5%</color>. Stacks up to <color=#ec6d21>80</color> times.",
+                    "diff": 6,
+                    "icon": "duelaffix_41202"
+                }
+            ],
+            [
+                {
+                    "name": "Disrupted Rhythm",
+                    "desc": "When the Main Trekker is hit, reduces Skill DMG by <color=#ec6d21>-15%</color> for <color=#ec6d21>5</color>s. This effect can be triggered once every <color=#ec6d21>5</color>s.",
+                    "diff": 1,
+                    "icon": "duelaffix_40701"
+                },
+                {
+                    "name": "Disrupted Rhythm: Greater",
+                    "desc": "When the Main Trekker is hit, reduces Skill DMG by <color=#ec6d21>-35%</color> for <color=#ec6d21>5</color>s. This effect can be triggered once every <color=#ec6d21>5</color>s.",
+                    "diff": 4,
+                    "icon": "duelaffix_40702"
+                }
+            ],
+            [
+                {
+                    "name": "Quick Cycle",
+                    "desc": "Reduces Ultimate DMG for the squad by <color=#ec6d21>-40%</color>, but increases Charge Efficiency by <color=#ec6d21>25%</color>.",
+                    "diff": 2,
+                    "icon": "duelaffix_41501"
+                }
+            ],
+            [
+                {
+                    "name": "Battle Fatigue",
+                    "desc": "Within <color=#ec6d21>10</color>s after any squadmate casts a skill, reduces Energy Regen by <color=#ec6d21>-20%</color>.",
+                    "diff": 2,
+                    "icon": "duelaffix_40501"
+                }
+            ],
+            [
+                {
+                    "name": "Demon's Mark",
+                    "desc": "When the Main Trekker is hit, increases DMG they take by <color=#ec6d21>2%</color> for <color=#ec6d21>5</color>s. Stacks up to <color=#ec6d21>10</color> times.",
+                    "diff": 1,
+                    "icon": "duelaffix_41601"
+                },
+                {
+                    "name": "Demon's Mark: Greater",
+                    "desc": "When the Main Trekker is hit, increases DMG they take by <color=#ec6d21>5%</color> for <color=#ec6d21>5</color>s. Stacks up to <color=#ec6d21>10</color> times.",
+                    "diff": 4,
+                    "icon": "duelaffix_41602"
+                }
+            ],
+            [
+                {
+                    "name": "Battle Enraged",
+                    "desc": "Reduces DMG dealt by Support Trekkers by <color=#ec6d21>-40%</color>. Each time the Main Trekker takes a hit, increases DMG dealt by Support Trekkers by <color=#ec6d21>20%</color> for <color=#ec6d21>8</color>s. Stacks up to <color=#ec6d21>2</color> times.",
+                    "diff": 2,
+                    "icon": "duelaffix_40601"
+                }
+            ],
+            [
+                {
+                    "name": "Cost of Assault",
+                    "desc": "Increases Skill DMG for the squad by <color=#ec6d21>15%</color>, but increases DMG Taken by <color=#ec6d21>30%</color>.",
+                    "diff": 4,
+                    "icon": "duelaffix_40901"
+                },
+                {
+                    "name": "Defensive Stand",
+                    "desc": "Reduces Skill DMG for the squad by <color=#ec6d21>-15%</color>, but reduces DMG Taken by <color=#ec6d21>-30%</color>.",
+                    "diff": 4,
+                    "icon": "duelaffix_40902"
+                }
+            ],
+            [
+                {
+                    "name": "Deterioration: Lesser",
+                    "desc": "Every <color=#ec6d21>10</color>s in battle, reduces DMG dealt by all Trekkers in the squad by <color=#ec6d21>-1.2%</color>. Stacks up to <color=#ec6d21>12</color> times.",
+                    "diff": 1,
+                    "icon": "duelaffix_41401"
+                },
+                {
+                    "name": "Deterioration: Medium",
+                    "desc": "Every <color=#ec6d21>10</color>s in battle, reduces DMG dealt by all Trekkers in the squad by <color=#ec6d21>-2.4%</color>. Stacks up to <color=#ec6d21>12</color> times.",
+                    "diff": 2,
+                    "icon": "duelaffix_41402"
+                },
+                {
+                    "name": "Deterioration: Greater",
+                    "desc": "Every <color=#ec6d21>10</color>s in battle, reduces DMG dealt by all Trekkers in the squad by <color=#ec6d21>-3.6%</color>. Stacks up to <color=#ec6d21>12</color> times.",
+                    "diff": 6,
+                    "icon": "duelaffix_41403"
+                }
+            ],
+            [
+                {
+                    "name": "Cost of Evasion",
+                    "desc": "After dodging, the Main Trekker loses <color=#ec6d21>-30</color> Ultimate Energy.",
+                    "diff": 6,
+                    "icon": "duelaffix_40801"
+                }
+            ],
+            [
+                {
+                    "name": "Emergency Healing",
+                    "desc": "When the Main Trekker's HP falls below <color=#ec6d21>10%</color>, immediately restores HP equal to <color=#ec6d21>80%</color> of Max HP, but all DMG dealt is reduced by <color=#ec6d21>-25%</color> for <color=#ec6d21>20</color>s. Cooldown: <color=#ec6d21>60</color>s.",
+                    "diff": 2,
+                    "icon": "duelaffix_41901"
+                },
+                {
+                    "name": "Cost of Healing",
+                    "desc": "The Main Trekker restores HP equal to <color=#ec6d21>8%</color> of Max HP every <color=#ec6d21>5</color>s, but increases DMG Taken by <color=#ec6d21>30%</color>.",
+                    "diff": 2,
+                    "icon": "duelaffix_41902"
+                }
+            ],
+            [
+                {
+                    "name": "Co-op Combat",
+                    "desc": "Reduces DMG dealt by the Main Trekker by <color=#ec6d21>-40%</color>. Each time a Support Trekker deals DMG, increases the Main Trekker's DMG dealt by <color=#ec6d21>2%</color> for <color=#ec6d21>5</color>s. Stacks up to <color=#ec6d21>20</color> times.",
+                    "diff": 6,
+                    "icon": "duelaffix_40401"
+                },
+                {
+                    "name": "Solo Combat",
+                    "desc": "Increases DMG dealt by the Main Trekker by <color=#ec6d21>20%</color>. After casting a Support Skill, reduces DMG dealt by the Main Trekker by <color=#ec6d21>-40%</color> for <color=#ec6d21>5</color>s.",
+                    "diff": 6,
+                    "icon": "duelaffix_40402"
+                }
+            ],
+            [
+                {
+                    "name": "Pain into Power",
+                    "desc": "Increases the Main Trekker's DMG by <color=#ec6d21>50%</color>, but restores <color=#ec6d21>20</color> Energy upon taking DMG. This effect can be triggered once every <color=#ec6d21>2</color>s.",
+                    "diff": 6,
+                    "icon": "duelaffix_41801"
+                }
+            ],
+            [
+                {
+                    "name": "Distraction Tactics",
+                    "desc": "Increases Energy Regen for Support Trekkers by <color=#ec6d21>20%</color>, but reduces DMG dealt by the Main Trekker by <color=#ec6d21>-20%</color>.",
+                    "diff": 2,
+                    "icon": "duelaffix_41001"
+                }
+            ]
+        ],
+        "weakTo": [
+            "Aqua"
+        ],
+        "resistTo": "None",
+        "stat": {
+            "HP": 1600000,
+            "ATK": 2143,
+            "DEF": 500,
+            "Hit Rate": "100%",
+            "Attack Speed": "100%",
+            "Aqua DMG": "100%",
+            "Ignis DMG": "100%",
+            "Terra DMG": "100%",
+            "Ventus DMG": "100%",
+            "Lux DMG": "100%",
+            "Umbra DMG": "100%",
+            "Mark DMG Taken": "100%",
+            "Resilience": 960000,
+            "Aqua RES": 250,
+            "Ignis RES": 570,
+            "Terra RES": 570,
+            "Ventus RES": 570,
+            "Lux RES": 570,
+            "Umbra RES": 570
+        },
+        "diff": [
+            {},
+            {
+                "ATK": 13,
+                "HP": 1160000,
+                "Resilience": 696000
+            },
+            {
+                "ATK": 26,
+                "HP": 2320000,
+                "Resilience": 1392000
+            },
+            {
+                "ATK": 39,
+                "HP": 3480000,
+                "Resilience": 2088000
+            },
+            {
+                "ATK": 52,
+                "HP": 4640000,
+                "Resilience": 2784000
+            },
+            {
+                "ATK": 65,
+                "HP": 5800000,
+                "Resilience": 3480000
+            },
+            {
+                "ATK": 78,
+                "HP": 6960000,
+                "Resilience": 4176000
+            },
+            {
+                "ATK": 91,
+                "HP": 8120000,
+                "Resilience": 4872000
+            },
+            {
+                "ATK": 104,
+                "HP": 9280000,
+                "Resilience": 5568000
+            },
+            {
+                "ATK": 117,
+                "HP": 10440000,
+                "Resilience": 6264000
+            },
+            {
+                "ATK": 130,
+                "HP": 11600000,
+                "Resilience": 6960000
+            },
+            {
+                "ATK": 143,
+                "HP": 12760000,
+                "Resilience": 7656000
+            },
+            {
+                "ATK": 156,
+                "HP": 13920000,
+                "Resilience": 8352000
+            },
+            {
+                "ATK": 169,
+                "HP": 15080000,
+                "Resilience": 9048000
+            },
+            {
+                "ATK": 182,
+                "HP": 16240000,
+                "Resilience": 9744000
+            },
+            {
+                "ATK": 195,
+                "HP": 17400000,
+                "Resilience": 10440000
+            },
+            {
+                "ATK": 208,
+                "HP": 18560000,
+                "Resilience": 11136000
+            },
+            {
+                "ATK": 221,
+                "HP": 19720000,
+                "Resilience": 11832000
+            },
+            {
+                "ATK": 234,
+                "HP": 20880000,
+                "Resilience": 12528000
+            },
+            {
+                "ATK": 247,
+                "HP": 22040000,
+                "Resilience": 13224000
+            },
+            {
+                "ATK": 260,
+                "HP": 23200000,
+                "Resilience": 13920000
+            },
+            {
+                "ATK": 273,
+                "HP": 24360000,
+                "Resilience": 14616000
+            },
+            {
+                "ATK": 286,
+                "HP": 25520000,
+                "Resilience": 15312000
+            },
+            {
+                "ATK": 299,
+                "HP": 26680000,
+                "Resilience": 16008000
+            },
+            {
+                "ATK": 312,
+                "HP": 27840000,
+                "Resilience": 16704000
+            },
+            {
+                "ATK": 325,
+                "HP": 29000000,
+                "Resilience": 17400000
+            },
+            {
+                "ATK": 338,
+                "HP": 30160000,
+                "Resilience": 18096000
+            },
+            {
+                "ATK": 351,
+                "HP": 31320000,
+                "Resilience": 18792000
+            },
+            {
+                "ATK": 364,
+                "HP": 32480000,
+                "Resilience": 19488000
+            },
+            {
+                "ATK": 377,
+                "HP": 33640000,
+                "Resilience": 20184000
+            },
+            {
+                "ATK": 390,
+                "HP": 34800000,
+                "Resilience": 20880000
+            },
+            {
+                "ATK": 403,
+                "HP": 35960000,
+                "Resilience": 21576000
+            },
+            {
+                "ATK": 416,
+                "HP": 37120000,
+                "Resilience": 22272000
+            },
+            {
+                "ATK": 429,
+                "HP": 38280000,
+                "Resilience": 22968000
+            },
+            {
+                "ATK": 442,
+                "HP": 39440000,
+                "Resilience": 23664000
+            },
+            {
+                "ATK": 455,
+                "HP": 40600000,
+                "Resilience": 24360000
+            },
+            {
+                "ATK": 468,
+                "HP": 41760000,
+                "Resilience": 25056000
+            },
+            {
+                "ATK": 481,
+                "HP": 42920000,
+                "Resilience": 25752000
+            },
+            {
+                "ATK": 494,
+                "HP": 44080000,
+                "Resilience": 26448000
+            },
+            {
+                "ATK": 507,
+                "HP": 45240000,
+                "Resilience": 27144000
+            },
+            {
+                "ATK": 536,
+                "HP": 46400000,
+                "Resilience": 27840000
+            },
+            {
+                "ATK": 574,
+                "HP": 66600000,
+                "Resilience": 39960000
+            },
+            {
+                "ATK": 612,
+                "HP": 86800000,
+                "Resilience": 52080000
+            },
+            {
+                "ATK": 650,
+                "HP": 107000000,
+                "Resilience": 64200000
+            },
+            {
+                "ATK": 688,
+                "HP": 127200000,
+                "Resilience": 76320000
+            },
+            {
+                "ATK": 726,
+                "HP": 147400000,
+                "Resilience": 88440000
+            },
+            {
+                "ATK": 764,
+                "HP": 167600000,
+                "Resilience": 100560000
+            },
+            {
+                "ATK": 802,
+                "HP": 187800000,
+                "Resilience": 112680000
+            },
+            {
+                "ATK": 840,
+                "HP": 208000000,
+                "Resilience": 124800000
+            },
+            {
+                "ATK": 878,
+                "HP": 228200000,
+                "Resilience": 136920000
+            },
+            {
+                "ATK": 1286,
+                "HP": 248400000,
+                "Resilience": 149040000
+            },
+            {
+                "ATK": 1339,
+                "HP": 262150000,
+                "Resilience": 158580000
+            },
+            {
+                "ATK": 1392,
+                "HP": 275900000,
+                "Resilience": 168120000
+            },
+            {
+                "ATK": 1445,
+                "HP": 289650000,
+                "Resilience": 177660000
+            },
+            {
+                "ATK": 1498,
+                "HP": 303400000,
+                "Resilience": 187200000
+            },
+            {
+                "ATK": 1551,
+                "HP": 317150000,
+                "Resilience": 196740000
+            },
+            {
+                "ATK": 1604,
+                "HP": 330900000,
+                "Resilience": 206280000
+            },
+            {
+                "ATK": 1657,
+                "HP": 344650000,
+                "Resilience": 215820000
+            },
+            {
+                "ATK": 1710,
+                "HP": 358400000,
+                "Resilience": 225360000
+            },
+            {
+                "ATK": 1763,
+                "HP": 372150000,
+                "Resilience": 234900000
+            },
+            {
+                "ATK": 1816,
+                "HP": 385900000,
+                "Resilience": 244440000
+            },
+            {
+                "ATK": 1869,
+                "HP": 399650000,
+                "Resilience": 253980000
+            },
+            {
+                "ATK": 1922,
+                "HP": 413400000,
+                "Resilience": 263520000
+            },
+            {
+                "ATK": 1975,
+                "HP": 427150000,
+                "Resilience": 273060000
+            },
+            {
+                "ATK": 2028,
+                "HP": 440900000,
+                "Resilience": 282600000
+            },
+            {
+                "ATK": 2081,
+                "HP": 454650000,
+                "Resilience": 292140000
+            },
+            {
+                "ATK": 2134,
+                "HP": 468400000,
+                "Resilience": 301680000
+            },
+            {
+                "ATK": 2187,
+                "HP": 482150000,
+                "Resilience": 311220000
+            },
+            {
+                "ATK": 2240,
+                "HP": 495900000,
+                "Resilience": 320760000
+            },
+            {
+                "ATK": 2293,
+                "HP": 509650000,
+                "Resilience": 330300000
+            },
+            {
+                "ATK": 2143,
+                "HP": 523400000,
+                "Resilience": 314040000
+            },
+            {
+                "ATK": 2145,
+                "HP": 532566666,
+                "Resilience": 315540000
+            },
+            {
+                "ATK": 2147,
+                "HP": 541733332,
+                "Resilience": 317040000
+            },
+            {
+                "ATK": 2149,
+                "HP": 550899998,
+                "Resilience": 318540000
+            },
+            {
+                "ATK": 2151,
+                "HP": 560066664,
+                "Resilience": 320040000
+            },
+            {
+                "ATK": 2153,
+                "HP": 569233330,
+                "Resilience": 321540000
+            },
+            {
+                "ATK": 2155,
+                "HP": 578399996,
+                "Resilience": 323040000
+            },
+            {
+                "ATK": 2157,
+                "HP": 587566662,
+                "Resilience": 324540000
+            },
+            {
+                "ATK": 2159,
+                "HP": 596733328,
+                "Resilience": 326040000
+            },
+            {
+                "ATK": 2161,
+                "HP": 605899994,
+                "Resilience": 327540000
+            },
+            {
+                "ATK": 2163,
+                "HP": 615066660,
+                "Resilience": 329040000
+            },
+            {
+                "ATK": 2165,
+                "HP": 624233326,
+                "Resilience": 330540000
+            },
+            {
+                "ATK": 2167,
+                "HP": 633399992,
+                "Resilience": 332040000
+            },
+            {
+                "ATK": 2169,
+                "HP": 642566658,
+                "Resilience": 333540000
+            },
+            {
+                "ATK": 2171,
+                "HP": 651733324,
+                "Resilience": 335040000
+            },
+            {
+                "ATK": 2173,
+                "HP": 660899990,
+                "Resilience": 336540000
+            },
+            {
+                "ATK": 2175,
+                "HP": 670066656,
+                "Resilience": 338040000
+            },
+            {
+                "ATK": 2177,
+                "HP": 679233322,
+                "Resilience": 339540000
+            },
+            {
+                "ATK": 2179,
+                "HP": 688399988,
+                "Resilience": 341040000
+            },
+            {
+                "ATK": 2181,
+                "HP": 697566654,
+                "Resilience": 342540000
+            },
+            {
+                "ATK": 2183,
+                "HP": 706733320,
+                "Resilience": 344040000
+            },
+            {
+                "ATK": 2185,
+                "HP": 715899986,
+                "Resilience": 345540000
+            },
+            {
+                "ATK": 2187,
+                "HP": 725066652,
+                "Resilience": 347040000
+            },
+            {
+                "ATK": 2189,
+                "HP": 734233318,
+                "Resilience": 348540000
+            },
+            {
+                "ATK": 2191,
+                "HP": 743399984,
+                "Resilience": 350040000
+            },
+            {
+                "ATK": 2193,
+                "HP": 752566650,
+                "Resilience": 351540000
+            },
+            {
+                "ATK": 2195,
+                "HP": 761733316,
+                "Resilience": 353040000
+            },
+            {
+                "ATK": 2197,
+                "HP": 770899982,
+                "Resilience": 354540000
+            },
+            {
+                "ATK": 2199,
+                "HP": 780066648,
+                "Resilience": 356040000
+            },
+            {
+                "ATK": 2201,
+                "HP": 789233314,
+                "Resilience": 357540000
+            },
+            {
+                "ATK": 2221,
+                "HP": 798400000,
+                "Resilience": 359040000
+            }
+        ]
+    },
     "200100": {
         "activityId": 600001,
         "name": "[Maid For You] Nanoha???",
@@ -292,510 +1130,510 @@
         "diff": [
             {},
             {
-                "ATK": 32,
-                "HP": 672000,
-                "Resilience": 403200
+                "ATK": 13,
+                "HP": 1160000,
+                "Resilience": 696000
             },
             {
-                "ATK": 64,
-                "HP": 1344000,
-                "Resilience": 806400
+                "ATK": 26,
+                "HP": 2320000,
+                "Resilience": 1392000
             },
             {
-                "ATK": 96,
-                "HP": 2016000,
-                "Resilience": 1209600
+                "ATK": 39,
+                "HP": 3480000,
+                "Resilience": 2088000
             },
             {
-                "ATK": 128,
-                "HP": 2688000,
-                "Resilience": 1612800
+                "ATK": 52,
+                "HP": 4640000,
+                "Resilience": 2784000
             },
             {
-                "ATK": 160,
-                "HP": 3360000,
-                "Resilience": 2016000
+                "ATK": 65,
+                "HP": 5800000,
+                "Resilience": 3480000
             },
             {
-                "ATK": 192,
-                "HP": 4032000,
-                "Resilience": 2419200
+                "ATK": 78,
+                "HP": 6960000,
+                "Resilience": 4176000
             },
             {
-                "ATK": 224,
-                "HP": 4704000,
-                "Resilience": 2822400
+                "ATK": 91,
+                "HP": 8120000,
+                "Resilience": 4872000
             },
             {
-                "ATK": 256,
-                "HP": 5376000,
-                "Resilience": 3225600
+                "ATK": 104,
+                "HP": 9280000,
+                "Resilience": 5568000
             },
             {
-                "ATK": 288,
-                "HP": 6048000,
-                "Resilience": 3628800
+                "ATK": 117,
+                "HP": 10440000,
+                "Resilience": 6264000
             },
             {
-                "ATK": 320,
-                "HP": 6720000,
-                "Resilience": 4032000
+                "ATK": 130,
+                "HP": 11600000,
+                "Resilience": 6960000
             },
             {
-                "ATK": 352,
-                "HP": 7392000,
-                "Resilience": 4435200
+                "ATK": 143,
+                "HP": 12760000,
+                "Resilience": 7656000
             },
             {
-                "ATK": 384,
-                "HP": 8064000,
-                "Resilience": 4838400
+                "ATK": 156,
+                "HP": 13920000,
+                "Resilience": 8352000
+            },
+            {
+                "ATK": 169,
+                "HP": 15080000,
+                "Resilience": 9048000
+            },
+            {
+                "ATK": 182,
+                "HP": 16240000,
+                "Resilience": 9744000
+            },
+            {
+                "ATK": 195,
+                "HP": 17400000,
+                "Resilience": 10440000
+            },
+            {
+                "ATK": 208,
+                "HP": 18560000,
+                "Resilience": 11136000
+            },
+            {
+                "ATK": 221,
+                "HP": 19720000,
+                "Resilience": 11832000
+            },
+            {
+                "ATK": 234,
+                "HP": 20880000,
+                "Resilience": 12528000
+            },
+            {
+                "ATK": 247,
+                "HP": 22040000,
+                "Resilience": 13224000
+            },
+            {
+                "ATK": 260,
+                "HP": 23200000,
+                "Resilience": 13920000
+            },
+            {
+                "ATK": 273,
+                "HP": 24360000,
+                "Resilience": 14616000
+            },
+            {
+                "ATK": 286,
+                "HP": 25520000,
+                "Resilience": 15312000
+            },
+            {
+                "ATK": 299,
+                "HP": 26680000,
+                "Resilience": 16008000
+            },
+            {
+                "ATK": 312,
+                "HP": 27840000,
+                "Resilience": 16704000
+            },
+            {
+                "ATK": 325,
+                "HP": 29000000,
+                "Resilience": 17400000
+            },
+            {
+                "ATK": 338,
+                "HP": 30160000,
+                "Resilience": 18096000
+            },
+            {
+                "ATK": 351,
+                "HP": 31320000,
+                "Resilience": 18792000
+            },
+            {
+                "ATK": 364,
+                "HP": 32480000,
+                "Resilience": 19488000
+            },
+            {
+                "ATK": 377,
+                "HP": 33640000,
+                "Resilience": 20184000
+            },
+            {
+                "ATK": 390,
+                "HP": 34800000,
+                "Resilience": 20880000
+            },
+            {
+                "ATK": 403,
+                "HP": 35960000,
+                "Resilience": 21576000
             },
             {
                 "ATK": 416,
-                "HP": 8736000,
-                "Resilience": 5241600
+                "HP": 37120000,
+                "Resilience": 22272000
             },
             {
-                "ATK": 448,
-                "HP": 9408000,
-                "Resilience": 5644800
+                "ATK": 429,
+                "HP": 38280000,
+                "Resilience": 22968000
             },
             {
-                "ATK": 480,
-                "HP": 10080000,
-                "Resilience": 6048000
+                "ATK": 442,
+                "HP": 39440000,
+                "Resilience": 23664000
             },
             {
-                "ATK": 512,
-                "HP": 10752000,
-                "Resilience": 6451200
+                "ATK": 455,
+                "HP": 40600000,
+                "Resilience": 24360000
             },
             {
-                "ATK": 544,
-                "HP": 11424000,
-                "Resilience": 6854400
+                "ATK": 468,
+                "HP": 41760000,
+                "Resilience": 25056000
             },
             {
-                "ATK": 576,
-                "HP": 12096000,
-                "Resilience": 7257600
+                "ATK": 481,
+                "HP": 42920000,
+                "Resilience": 25752000
             },
             {
-                "ATK": 608,
-                "HP": 12768000,
-                "Resilience": 7660800
+                "ATK": 494,
+                "HP": 44080000,
+                "Resilience": 26448000
             },
             {
-                "ATK": 640,
-                "HP": 13440000,
-                "Resilience": 8064000
+                "ATK": 507,
+                "HP": 45240000,
+                "Resilience": 27144000
             },
             {
-                "ATK": 672,
-                "HP": 14112000,
-                "Resilience": 8467200
+                "ATK": 536,
+                "HP": 46400000,
+                "Resilience": 27840000
             },
             {
-                "ATK": 704,
-                "HP": 14784000,
-                "Resilience": 8870400
+                "ATK": 574,
+                "HP": 66600000,
+                "Resilience": 39960000
             },
             {
-                "ATK": 736,
-                "HP": 15456000,
-                "Resilience": 9273600
+                "ATK": 612,
+                "HP": 86800000,
+                "Resilience": 52080000
             },
             {
-                "ATK": 768,
-                "HP": 16128000,
-                "Resilience": 9676800
+                "ATK": 650,
+                "HP": 107000000,
+                "Resilience": 64200000
             },
             {
-                "ATK": 800,
-                "HP": 16800000,
-                "Resilience": 10080000
+                "ATK": 688,
+                "HP": 127200000,
+                "Resilience": 76320000
             },
             {
-                "ATK": 880,
-                "HP": 19866666,
-                "Resilience": 11920000
+                "ATK": 726,
+                "HP": 147400000,
+                "Resilience": 88440000
             },
             {
-                "ATK": 960,
-                "HP": 22933332,
-                "Resilience": 13760000
+                "ATK": 764,
+                "HP": 167600000,
+                "Resilience": 100560000
             },
             {
-                "ATK": 1040,
-                "HP": 25999998,
-                "Resilience": 15600000
+                "ATK": 802,
+                "HP": 187800000,
+                "Resilience": 112680000
             },
             {
-                "ATK": 1120,
-                "HP": 29066664,
-                "Resilience": 17440000
+                "ATK": 840,
+                "HP": 208000000,
+                "Resilience": 124800000
             },
             {
-                "ATK": 1200,
-                "HP": 32133330,
-                "Resilience": 19280000
+                "ATK": 878,
+                "HP": 228200000,
+                "Resilience": 136920000
             },
             {
-                "ATK": 1280,
-                "HP": 35199996,
-                "Resilience": 21120000
+                "ATK": 1286,
+                "HP": 248400000,
+                "Resilience": 149040000
             },
             {
-                "ATK": 1360,
-                "HP": 38266662,
-                "Resilience": 22960000
+                "ATK": 1339,
+                "HP": 262150000,
+                "Resilience": 158580000
             },
             {
-                "ATK": 1440,
-                "HP": 41333328,
-                "Resilience": 24800000
+                "ATK": 1392,
+                "HP": 275900000,
+                "Resilience": 168120000
             },
             {
-                "ATK": 1520,
-                "HP": 44399994,
-                "Resilience": 26640000
+                "ATK": 1445,
+                "HP": 289650000,
+                "Resilience": 177660000
             },
             {
-                "ATK": 1600,
-                "HP": 47466660,
-                "Resilience": 28480000
+                "ATK": 1498,
+                "HP": 303400000,
+                "Resilience": 187200000
             },
             {
-                "ATK": 1680,
-                "HP": 50533326,
-                "Resilience": 30320000
+                "ATK": 1551,
+                "HP": 317150000,
+                "Resilience": 196740000
             },
             {
-                "ATK": 1760,
-                "HP": 53599992,
-                "Resilience": 32160000
+                "ATK": 1604,
+                "HP": 330900000,
+                "Resilience": 206280000
             },
             {
-                "ATK": 1840,
-                "HP": 56666658,
-                "Resilience": 34000000
+                "ATK": 1657,
+                "HP": 344650000,
+                "Resilience": 215820000
             },
             {
-                "ATK": 1920,
-                "HP": 59733324,
-                "Resilience": 35840000
+                "ATK": 1710,
+                "HP": 358400000,
+                "Resilience": 225360000
             },
             {
-                "ATK": 2000,
-                "HP": 62800000,
-                "Resilience": 37680000
+                "ATK": 1763,
+                "HP": 372150000,
+                "Resilience": 234900000
             },
             {
-                "ATK": 2043,
-                "HP": 68666666,
-                "Resilience": 41200000
+                "ATK": 1816,
+                "HP": 385900000,
+                "Resilience": 244440000
             },
             {
-                "ATK": 2086,
-                "HP": 74533332,
-                "Resilience": 44720000
+                "ATK": 1869,
+                "HP": 399650000,
+                "Resilience": 253980000
             },
             {
-                "ATK": 2129,
-                "HP": 80399998,
-                "Resilience": 48240000
+                "ATK": 1922,
+                "HP": 413400000,
+                "Resilience": 263520000
             },
             {
-                "ATK": 2172,
-                "HP": 86266664,
-                "Resilience": 51760000
+                "ATK": 1975,
+                "HP": 427150000,
+                "Resilience": 273060000
             },
             {
-                "ATK": 2215,
-                "HP": 92133330,
-                "Resilience": 55280000
+                "ATK": 2028,
+                "HP": 440900000,
+                "Resilience": 282600000
             },
             {
-                "ATK": 2258,
-                "HP": 97999996,
-                "Resilience": 58800000
+                "ATK": 2081,
+                "HP": 454650000,
+                "Resilience": 292140000
             },
             {
-                "ATK": 2301,
-                "HP": 103866662,
-                "Resilience": 62320000
-            },
-            {
-                "ATK": 2344,
-                "HP": 109733328,
-                "Resilience": 65840000
-            },
-            {
-                "ATK": 2387,
-                "HP": 115599994,
-                "Resilience": 69360000
-            },
-            {
-                "ATK": 2430,
-                "HP": 121466660,
-                "Resilience": 72880000
-            },
-            {
-                "ATK": 2473,
-                "HP": 127333326,
-                "Resilience": 76400000
-            },
-            {
-                "ATK": 2516,
-                "HP": 133199992,
-                "Resilience": 79920000
-            },
-            {
-                "ATK": 2559,
-                "HP": 139066658,
-                "Resilience": 83440000
-            },
-            {
-                "ATK": 2602,
-                "HP": 144933324,
-                "Resilience": 86960000
-            },
-            {
-                "ATK": 2645,
-                "HP": 150799990,
-                "Resilience": 90480000
-            },
-            {
-                "ATK": 2688,
-                "HP": 156666656,
-                "Resilience": 94000000
-            },
-            {
-                "ATK": 2731,
-                "HP": 162533322,
-                "Resilience": 97520000
-            },
-            {
-                "ATK": 2774,
-                "HP": 168399988,
-                "Resilience": 101040000
-            },
-            {
-                "ATK": 2817,
-                "HP": 174266654,
-                "Resilience": 104560000
-            },
-            {
-                "ATK": 2860,
-                "HP": 180133320,
-                "Resilience": 108080000
-            },
-            {
-                "ATK": 2903,
-                "HP": 185999986,
-                "Resilience": 111600000
-            },
-            {
-                "ATK": 2946,
-                "HP": 191866652,
-                "Resilience": 115120000
-            },
-            {
-                "ATK": 2989,
-                "HP": 197733318,
-                "Resilience": 118640000
-            },
-            {
-                "ATK": 3032,
-                "HP": 203599984,
-                "Resilience": 122160000
-            },
-            {
-                "ATK": 3075,
-                "HP": 209466650,
-                "Resilience": 125680000
-            },
-            {
-                "ATK": 3118,
-                "HP": 215333316,
-                "Resilience": 129200000
-            },
-            {
-                "ATK": 3161,
-                "HP": 221199982,
-                "Resilience": 132720000
-            },
-            {
-                "ATK": 3204,
-                "HP": 227066648,
-                "Resilience": 136240000
-            },
-            {
-                "ATK": 3247,
-                "HP": 232933314,
-                "Resilience": 139760000
-            },
-            {
-                "ATK": 3300,
-                "HP": 238800000,
-                "Resilience": 143280000
-            },
-            {
-                "ATK": 3350,
-                "HP": 257466666,
-                "Resilience": 150480000
-            },
-            {
-                "ATK": 3400,
-                "HP": 276133332,
-                "Resilience": 157680000
-            },
-            {
-                "ATK": 3450,
-                "HP": 294799998,
-                "Resilience": 164880000
-            },
-            {
-                "ATK": 3500,
-                "HP": 313466664,
-                "Resilience": 172080000
-            },
-            {
-                "ATK": 3550,
-                "HP": 332133330,
-                "Resilience": 179280000
-            },
-            {
-                "ATK": 3600,
-                "HP": 350799996,
-                "Resilience": 186480000
-            },
-            {
-                "ATK": 3650,
-                "HP": 369466662,
-                "Resilience": 193680000
-            },
-            {
-                "ATK": 3700,
-                "HP": 388133328,
-                "Resilience": 200880000
-            },
-            {
-                "ATK": 3750,
-                "HP": 406799994,
-                "Resilience": 208080000
-            },
-            {
-                "ATK": 3800,
-                "HP": 425466660,
-                "Resilience": 215280000
-            },
-            {
-                "ATK": 3850,
-                "HP": 444133326,
-                "Resilience": 222480000
-            },
-            {
-                "ATK": 3900,
-                "HP": 462799992,
-                "Resilience": 229680000
-            },
-            {
-                "ATK": 3950,
-                "HP": 481466658,
-                "Resilience": 236880000
-            },
-            {
-                "ATK": 4000,
-                "HP": 500133324,
-                "Resilience": 244080000
-            },
-            {
-                "ATK": 4050,
-                "HP": 518799990,
-                "Resilience": 251280000
-            },
-            {
-                "ATK": 4100,
-                "HP": 537466656,
-                "Resilience": 258480000
-            },
-            {
-                "ATK": 4150,
-                "HP": 556133322,
-                "Resilience": 265680000
-            },
-            {
-                "ATK": 4200,
-                "HP": 574799988,
-                "Resilience": 272880000
-            },
-            {
-                "ATK": 4250,
-                "HP": 593466654,
-                "Resilience": 280080000
-            },
-            {
-                "ATK": 4300,
-                "HP": 612133320,
-                "Resilience": 287280000
-            },
-            {
-                "ATK": 4350,
-                "HP": 630799986,
-                "Resilience": 294480000
-            },
-            {
-                "ATK": 4400,
-                "HP": 649466652,
+                "ATK": 2134,
+                "HP": 468400000,
                 "Resilience": 301680000
             },
             {
-                "ATK": 4450,
-                "HP": 668133318,
-                "Resilience": 308880000
+                "ATK": 2187,
+                "HP": 482150000,
+                "Resilience": 311220000
             },
             {
-                "ATK": 4500,
-                "HP": 686799984,
-                "Resilience": 316080000
+                "ATK": 2240,
+                "HP": 495900000,
+                "Resilience": 320760000
             },
             {
-                "ATK": 4550,
-                "HP": 705466650,
-                "Resilience": 323280000
+                "ATK": 2293,
+                "HP": 509650000,
+                "Resilience": 330300000
             },
             {
-                "ATK": 4600,
-                "HP": 724133316,
-                "Resilience": 330480000
+                "ATK": 2143,
+                "HP": 523400000,
+                "Resilience": 314040000
             },
             {
-                "ATK": 4650,
-                "HP": 742799982,
-                "Resilience": 337680000
+                "ATK": 2145,
+                "HP": 532566666,
+                "Resilience": 315540000
             },
             {
-                "ATK": 4700,
-                "HP": 761466648,
-                "Resilience": 344880000
+                "ATK": 2147,
+                "HP": 541733332,
+                "Resilience": 317040000
             },
             {
-                "ATK": 4750,
-                "HP": 780133314,
-                "Resilience": 352080000
+                "ATK": 2149,
+                "HP": 550899998,
+                "Resilience": 318540000
             },
             {
-                "ATK": 4800,
-                "HP": 798800000,
-                "Resilience": 359280000
+                "ATK": 2151,
+                "HP": 560066664,
+                "Resilience": 320040000
+            },
+            {
+                "ATK": 2153,
+                "HP": 569233330,
+                "Resilience": 321540000
+            },
+            {
+                "ATK": 2155,
+                "HP": 578399996,
+                "Resilience": 323040000
+            },
+            {
+                "ATK": 2157,
+                "HP": 587566662,
+                "Resilience": 324540000
+            },
+            {
+                "ATK": 2159,
+                "HP": 596733328,
+                "Resilience": 326040000
+            },
+            {
+                "ATK": 2161,
+                "HP": 605899994,
+                "Resilience": 327540000
+            },
+            {
+                "ATK": 2163,
+                "HP": 615066660,
+                "Resilience": 329040000
+            },
+            {
+                "ATK": 2165,
+                "HP": 624233326,
+                "Resilience": 330540000
+            },
+            {
+                "ATK": 2167,
+                "HP": 633399992,
+                "Resilience": 332040000
+            },
+            {
+                "ATK": 2169,
+                "HP": 642566658,
+                "Resilience": 333540000
+            },
+            {
+                "ATK": 2171,
+                "HP": 651733324,
+                "Resilience": 335040000
+            },
+            {
+                "ATK": 2173,
+                "HP": 660899990,
+                "Resilience": 336540000
+            },
+            {
+                "ATK": 2175,
+                "HP": 670066656,
+                "Resilience": 338040000
+            },
+            {
+                "ATK": 2177,
+                "HP": 679233322,
+                "Resilience": 339540000
+            },
+            {
+                "ATK": 2179,
+                "HP": 688399988,
+                "Resilience": 341040000
+            },
+            {
+                "ATK": 2181,
+                "HP": 697566654,
+                "Resilience": 342540000
+            },
+            {
+                "ATK": 2183,
+                "HP": 706733320,
+                "Resilience": 344040000
+            },
+            {
+                "ATK": 2185,
+                "HP": 715899986,
+                "Resilience": 345540000
+            },
+            {
+                "ATK": 2187,
+                "HP": 725066652,
+                "Resilience": 347040000
+            },
+            {
+                "ATK": 2189,
+                "HP": 734233318,
+                "Resilience": 348540000
+            },
+            {
+                "ATK": 2191,
+                "HP": 743399984,
+                "Resilience": 350040000
+            },
+            {
+                "ATK": 2193,
+                "HP": 752566650,
+                "Resilience": 351540000
+            },
+            {
+                "ATK": 2195,
+                "HP": 761733316,
+                "Resilience": 353040000
+            },
+            {
+                "ATK": 2197,
+                "HP": 770899982,
+                "Resilience": 354540000
+            },
+            {
+                "ATK": 2199,
+                "HP": 780066648,
+                "Resilience": 356040000
+            },
+            {
+                "ATK": 2201,
+                "HP": 789233314,
+                "Resilience": 357540000
+            },
+            {
+                "ATK": 2221,
+                "HP": 798400000,
+                "Resilience": 359040000
             }
         ]
     },
     "300100": {
         "activityId": 600002,
-        "name": "[War in the Backpack] Firefly",
+        "name": "[War in the Backpack] Firefly ???",
         "icon": "monsterhead_70031HuoChui_Light_L",
         "type": "Overlord",
         "mechanic": [
@@ -1130,504 +1968,504 @@
         "diff": [
             {},
             {
-                "ATK": 32,
-                "HP": 672000,
-                "Resilience": 403200
+                "ATK": 13,
+                "HP": 1160000,
+                "Resilience": 696000
             },
             {
-                "ATK": 64,
-                "HP": 1344000,
-                "Resilience": 806400
+                "ATK": 26,
+                "HP": 2320000,
+                "Resilience": 1392000
             },
             {
-                "ATK": 96,
-                "HP": 2016000,
-                "Resilience": 1209600
+                "ATK": 39,
+                "HP": 3480000,
+                "Resilience": 2088000
             },
             {
-                "ATK": 128,
-                "HP": 2688000,
-                "Resilience": 1612800
+                "ATK": 52,
+                "HP": 4640000,
+                "Resilience": 2784000
             },
             {
-                "ATK": 160,
-                "HP": 3360000,
-                "Resilience": 2016000
+                "ATK": 65,
+                "HP": 5800000,
+                "Resilience": 3480000
             },
             {
-                "ATK": 192,
-                "HP": 4032000,
-                "Resilience": 2419200
+                "ATK": 78,
+                "HP": 6960000,
+                "Resilience": 4176000
             },
             {
-                "ATK": 224,
-                "HP": 4704000,
-                "Resilience": 2822400
+                "ATK": 91,
+                "HP": 8120000,
+                "Resilience": 4872000
             },
             {
-                "ATK": 256,
-                "HP": 5376000,
-                "Resilience": 3225600
+                "ATK": 104,
+                "HP": 9280000,
+                "Resilience": 5568000
             },
             {
-                "ATK": 288,
-                "HP": 6048000,
-                "Resilience": 3628800
+                "ATK": 117,
+                "HP": 10440000,
+                "Resilience": 6264000
             },
             {
-                "ATK": 320,
-                "HP": 6720000,
-                "Resilience": 4032000
+                "ATK": 130,
+                "HP": 11600000,
+                "Resilience": 6960000
             },
             {
-                "ATK": 352,
-                "HP": 7392000,
-                "Resilience": 4435200
+                "ATK": 143,
+                "HP": 12760000,
+                "Resilience": 7656000
             },
             {
-                "ATK": 384,
-                "HP": 8064000,
-                "Resilience": 4838400
+                "ATK": 156,
+                "HP": 13920000,
+                "Resilience": 8352000
+            },
+            {
+                "ATK": 169,
+                "HP": 15080000,
+                "Resilience": 9048000
+            },
+            {
+                "ATK": 182,
+                "HP": 16240000,
+                "Resilience": 9744000
+            },
+            {
+                "ATK": 195,
+                "HP": 17400000,
+                "Resilience": 10440000
+            },
+            {
+                "ATK": 208,
+                "HP": 18560000,
+                "Resilience": 11136000
+            },
+            {
+                "ATK": 221,
+                "HP": 19720000,
+                "Resilience": 11832000
+            },
+            {
+                "ATK": 234,
+                "HP": 20880000,
+                "Resilience": 12528000
+            },
+            {
+                "ATK": 247,
+                "HP": 22040000,
+                "Resilience": 13224000
+            },
+            {
+                "ATK": 260,
+                "HP": 23200000,
+                "Resilience": 13920000
+            },
+            {
+                "ATK": 273,
+                "HP": 24360000,
+                "Resilience": 14616000
+            },
+            {
+                "ATK": 286,
+                "HP": 25520000,
+                "Resilience": 15312000
+            },
+            {
+                "ATK": 299,
+                "HP": 26680000,
+                "Resilience": 16008000
+            },
+            {
+                "ATK": 312,
+                "HP": 27840000,
+                "Resilience": 16704000
+            },
+            {
+                "ATK": 325,
+                "HP": 29000000,
+                "Resilience": 17400000
+            },
+            {
+                "ATK": 338,
+                "HP": 30160000,
+                "Resilience": 18096000
+            },
+            {
+                "ATK": 351,
+                "HP": 31320000,
+                "Resilience": 18792000
+            },
+            {
+                "ATK": 364,
+                "HP": 32480000,
+                "Resilience": 19488000
+            },
+            {
+                "ATK": 377,
+                "HP": 33640000,
+                "Resilience": 20184000
+            },
+            {
+                "ATK": 390,
+                "HP": 34800000,
+                "Resilience": 20880000
+            },
+            {
+                "ATK": 403,
+                "HP": 35960000,
+                "Resilience": 21576000
             },
             {
                 "ATK": 416,
-                "HP": 8736000,
-                "Resilience": 5241600
+                "HP": 37120000,
+                "Resilience": 22272000
             },
             {
-                "ATK": 448,
-                "HP": 9408000,
-                "Resilience": 5644800
+                "ATK": 429,
+                "HP": 38280000,
+                "Resilience": 22968000
             },
             {
-                "ATK": 480,
-                "HP": 10080000,
-                "Resilience": 6048000
+                "ATK": 442,
+                "HP": 39440000,
+                "Resilience": 23664000
             },
             {
-                "ATK": 512,
-                "HP": 10752000,
-                "Resilience": 6451200
+                "ATK": 455,
+                "HP": 40600000,
+                "Resilience": 24360000
             },
             {
-                "ATK": 544,
-                "HP": 11424000,
-                "Resilience": 6854400
+                "ATK": 468,
+                "HP": 41760000,
+                "Resilience": 25056000
             },
             {
-                "ATK": 576,
-                "HP": 12096000,
-                "Resilience": 7257600
+                "ATK": 481,
+                "HP": 42920000,
+                "Resilience": 25752000
             },
             {
-                "ATK": 608,
-                "HP": 12768000,
-                "Resilience": 7660800
+                "ATK": 494,
+                "HP": 44080000,
+                "Resilience": 26448000
             },
             {
-                "ATK": 640,
-                "HP": 13440000,
-                "Resilience": 8064000
+                "ATK": 507,
+                "HP": 45240000,
+                "Resilience": 27144000
             },
             {
-                "ATK": 672,
-                "HP": 14112000,
-                "Resilience": 8467200
+                "ATK": 536,
+                "HP": 46400000,
+                "Resilience": 27840000
             },
             {
-                "ATK": 704,
-                "HP": 14784000,
-                "Resilience": 8870400
+                "ATK": 574,
+                "HP": 66600000,
+                "Resilience": 39960000
             },
             {
-                "ATK": 736,
-                "HP": 15456000,
-                "Resilience": 9273600
+                "ATK": 612,
+                "HP": 86800000,
+                "Resilience": 52080000
             },
             {
-                "ATK": 768,
-                "HP": 16128000,
-                "Resilience": 9676800
+                "ATK": 650,
+                "HP": 107000000,
+                "Resilience": 64200000
             },
             {
-                "ATK": 800,
-                "HP": 16800000,
-                "Resilience": 10080000
+                "ATK": 688,
+                "HP": 127200000,
+                "Resilience": 76320000
             },
             {
-                "ATK": 880,
-                "HP": 19866666,
-                "Resilience": 11920000
+                "ATK": 726,
+                "HP": 147400000,
+                "Resilience": 88440000
             },
             {
-                "ATK": 960,
-                "HP": 22933332,
-                "Resilience": 13760000
+                "ATK": 764,
+                "HP": 167600000,
+                "Resilience": 100560000
             },
             {
-                "ATK": 1040,
-                "HP": 25999998,
-                "Resilience": 15600000
+                "ATK": 802,
+                "HP": 187800000,
+                "Resilience": 112680000
             },
             {
-                "ATK": 1120,
-                "HP": 29066664,
-                "Resilience": 17440000
+                "ATK": 840,
+                "HP": 208000000,
+                "Resilience": 124800000
             },
             {
-                "ATK": 1200,
-                "HP": 32133330,
-                "Resilience": 19280000
+                "ATK": 878,
+                "HP": 228200000,
+                "Resilience": 136920000
             },
             {
-                "ATK": 1280,
-                "HP": 35199996,
-                "Resilience": 21120000
+                "ATK": 1286,
+                "HP": 248400000,
+                "Resilience": 149040000
             },
             {
-                "ATK": 1360,
-                "HP": 38266662,
-                "Resilience": 22960000
+                "ATK": 1339,
+                "HP": 262150000,
+                "Resilience": 158580000
             },
             {
-                "ATK": 1440,
-                "HP": 41333328,
-                "Resilience": 24800000
+                "ATK": 1392,
+                "HP": 275900000,
+                "Resilience": 168120000
             },
             {
-                "ATK": 1520,
-                "HP": 44399994,
-                "Resilience": 26640000
+                "ATK": 1445,
+                "HP": 289650000,
+                "Resilience": 177660000
             },
             {
-                "ATK": 1600,
-                "HP": 47466660,
-                "Resilience": 28480000
+                "ATK": 1498,
+                "HP": 303400000,
+                "Resilience": 187200000
             },
             {
-                "ATK": 1680,
-                "HP": 50533326,
-                "Resilience": 30320000
+                "ATK": 1551,
+                "HP": 317150000,
+                "Resilience": 196740000
             },
             {
-                "ATK": 1760,
-                "HP": 53599992,
-                "Resilience": 32160000
+                "ATK": 1604,
+                "HP": 330900000,
+                "Resilience": 206280000
             },
             {
-                "ATK": 1840,
-                "HP": 56666658,
-                "Resilience": 34000000
+                "ATK": 1657,
+                "HP": 344650000,
+                "Resilience": 215820000
             },
             {
-                "ATK": 1920,
-                "HP": 59733324,
-                "Resilience": 35840000
+                "ATK": 1710,
+                "HP": 358400000,
+                "Resilience": 225360000
             },
             {
-                "ATK": 2000,
-                "HP": 62800000,
-                "Resilience": 37680000
+                "ATK": 1763,
+                "HP": 372150000,
+                "Resilience": 234900000
             },
             {
-                "ATK": 2043,
-                "HP": 68666666,
-                "Resilience": 41200000
+                "ATK": 1816,
+                "HP": 385900000,
+                "Resilience": 244440000
             },
             {
-                "ATK": 2086,
-                "HP": 74533332,
-                "Resilience": 44720000
+                "ATK": 1869,
+                "HP": 399650000,
+                "Resilience": 253980000
             },
             {
-                "ATK": 2129,
-                "HP": 80399998,
-                "Resilience": 48240000
+                "ATK": 1922,
+                "HP": 413400000,
+                "Resilience": 263520000
             },
             {
-                "ATK": 2172,
-                "HP": 86266664,
-                "Resilience": 51760000
+                "ATK": 1975,
+                "HP": 427150000,
+                "Resilience": 273060000
             },
             {
-                "ATK": 2215,
-                "HP": 92133330,
-                "Resilience": 55280000
+                "ATK": 2028,
+                "HP": 440900000,
+                "Resilience": 282600000
             },
             {
-                "ATK": 2258,
-                "HP": 97999996,
-                "Resilience": 58800000
+                "ATK": 2081,
+                "HP": 454650000,
+                "Resilience": 292140000
             },
             {
-                "ATK": 2301,
-                "HP": 103866662,
-                "Resilience": 62320000
-            },
-            {
-                "ATK": 2344,
-                "HP": 109733328,
-                "Resilience": 65840000
-            },
-            {
-                "ATK": 2387,
-                "HP": 115599994,
-                "Resilience": 69360000
-            },
-            {
-                "ATK": 2430,
-                "HP": 121466660,
-                "Resilience": 72880000
-            },
-            {
-                "ATK": 2473,
-                "HP": 127333326,
-                "Resilience": 76400000
-            },
-            {
-                "ATK": 2516,
-                "HP": 133199992,
-                "Resilience": 79920000
-            },
-            {
-                "ATK": 2559,
-                "HP": 139066658,
-                "Resilience": 83440000
-            },
-            {
-                "ATK": 2602,
-                "HP": 144933324,
-                "Resilience": 86960000
-            },
-            {
-                "ATK": 2645,
-                "HP": 150799990,
-                "Resilience": 90480000
-            },
-            {
-                "ATK": 2688,
-                "HP": 156666656,
-                "Resilience": 94000000
-            },
-            {
-                "ATK": 2731,
-                "HP": 162533322,
-                "Resilience": 97520000
-            },
-            {
-                "ATK": 2774,
-                "HP": 168399988,
-                "Resilience": 101040000
-            },
-            {
-                "ATK": 2817,
-                "HP": 174266654,
-                "Resilience": 104560000
-            },
-            {
-                "ATK": 2860,
-                "HP": 180133320,
-                "Resilience": 108080000
-            },
-            {
-                "ATK": 2903,
-                "HP": 185999986,
-                "Resilience": 111600000
-            },
-            {
-                "ATK": 2946,
-                "HP": 191866652,
-                "Resilience": 115120000
-            },
-            {
-                "ATK": 2989,
-                "HP": 197733318,
-                "Resilience": 118640000
-            },
-            {
-                "ATK": 3032,
-                "HP": 203599984,
-                "Resilience": 122160000
-            },
-            {
-                "ATK": 3075,
-                "HP": 209466650,
-                "Resilience": 125680000
-            },
-            {
-                "ATK": 3118,
-                "HP": 215333316,
-                "Resilience": 129200000
-            },
-            {
-                "ATK": 3161,
-                "HP": 221199982,
-                "Resilience": 132720000
-            },
-            {
-                "ATK": 3204,
-                "HP": 227066648,
-                "Resilience": 136240000
-            },
-            {
-                "ATK": 3247,
-                "HP": 232933314,
-                "Resilience": 139760000
-            },
-            {
-                "ATK": 3300,
-                "HP": 238800000,
-                "Resilience": 143280000
-            },
-            {
-                "ATK": 3350,
-                "HP": 257466666,
-                "Resilience": 150480000
-            },
-            {
-                "ATK": 3400,
-                "HP": 276133332,
-                "Resilience": 157680000
-            },
-            {
-                "ATK": 3450,
-                "HP": 294799998,
-                "Resilience": 164880000
-            },
-            {
-                "ATK": 3500,
-                "HP": 313466664,
-                "Resilience": 172080000
-            },
-            {
-                "ATK": 3550,
-                "HP": 332133330,
-                "Resilience": 179280000
-            },
-            {
-                "ATK": 3600,
-                "HP": 350799996,
-                "Resilience": 186480000
-            },
-            {
-                "ATK": 3650,
-                "HP": 369466662,
-                "Resilience": 193680000
-            },
-            {
-                "ATK": 3700,
-                "HP": 388133328,
-                "Resilience": 200880000
-            },
-            {
-                "ATK": 3750,
-                "HP": 406799994,
-                "Resilience": 208080000
-            },
-            {
-                "ATK": 3800,
-                "HP": 425466660,
-                "Resilience": 215280000
-            },
-            {
-                "ATK": 3850,
-                "HP": 444133326,
-                "Resilience": 222480000
-            },
-            {
-                "ATK": 3900,
-                "HP": 462799992,
-                "Resilience": 229680000
-            },
-            {
-                "ATK": 3950,
-                "HP": 481466658,
-                "Resilience": 236880000
-            },
-            {
-                "ATK": 4000,
-                "HP": 500133324,
-                "Resilience": 244080000
-            },
-            {
-                "ATK": 4050,
-                "HP": 518799990,
-                "Resilience": 251280000
-            },
-            {
-                "ATK": 4100,
-                "HP": 537466656,
-                "Resilience": 258480000
-            },
-            {
-                "ATK": 4150,
-                "HP": 556133322,
-                "Resilience": 265680000
-            },
-            {
-                "ATK": 4200,
-                "HP": 574799988,
-                "Resilience": 272880000
-            },
-            {
-                "ATK": 4250,
-                "HP": 593466654,
-                "Resilience": 280080000
-            },
-            {
-                "ATK": 4300,
-                "HP": 612133320,
-                "Resilience": 287280000
-            },
-            {
-                "ATK": 4350,
-                "HP": 630799986,
-                "Resilience": 294480000
-            },
-            {
-                "ATK": 4400,
-                "HP": 649466652,
+                "ATK": 2134,
+                "HP": 468400000,
                 "Resilience": 301680000
             },
             {
-                "ATK": 4450,
-                "HP": 668133318,
-                "Resilience": 308880000
+                "ATK": 2187,
+                "HP": 482150000,
+                "Resilience": 311220000
             },
             {
-                "ATK": 4500,
-                "HP": 686799984,
-                "Resilience": 316080000
+                "ATK": 2240,
+                "HP": 495900000,
+                "Resilience": 320760000
             },
             {
-                "ATK": 4550,
-                "HP": 705466650,
-                "Resilience": 323280000
+                "ATK": 2293,
+                "HP": 509650000,
+                "Resilience": 330300000
             },
             {
-                "ATK": 4600,
-                "HP": 724133316,
-                "Resilience": 330480000
+                "ATK": 2143,
+                "HP": 523400000,
+                "Resilience": 314040000
             },
             {
-                "ATK": 4650,
-                "HP": 742799982,
-                "Resilience": 337680000
+                "ATK": 2145,
+                "HP": 532566666,
+                "Resilience": 315540000
             },
             {
-                "ATK": 4700,
-                "HP": 761466648,
-                "Resilience": 344880000
+                "ATK": 2147,
+                "HP": 541733332,
+                "Resilience": 317040000
             },
             {
-                "ATK": 4750,
-                "HP": 780133314,
-                "Resilience": 352080000
+                "ATK": 2149,
+                "HP": 550899998,
+                "Resilience": 318540000
             },
             {
-                "ATK": 4800,
-                "HP": 798800000,
-                "Resilience": 359280000
+                "ATK": 2151,
+                "HP": 560066664,
+                "Resilience": 320040000
+            },
+            {
+                "ATK": 2153,
+                "HP": 569233330,
+                "Resilience": 321540000
+            },
+            {
+                "ATK": 2155,
+                "HP": 578399996,
+                "Resilience": 323040000
+            },
+            {
+                "ATK": 2157,
+                "HP": 587566662,
+                "Resilience": 324540000
+            },
+            {
+                "ATK": 2159,
+                "HP": 596733328,
+                "Resilience": 326040000
+            },
+            {
+                "ATK": 2161,
+                "HP": 605899994,
+                "Resilience": 327540000
+            },
+            {
+                "ATK": 2163,
+                "HP": 615066660,
+                "Resilience": 329040000
+            },
+            {
+                "ATK": 2165,
+                "HP": 624233326,
+                "Resilience": 330540000
+            },
+            {
+                "ATK": 2167,
+                "HP": 633399992,
+                "Resilience": 332040000
+            },
+            {
+                "ATK": 2169,
+                "HP": 642566658,
+                "Resilience": 333540000
+            },
+            {
+                "ATK": 2171,
+                "HP": 651733324,
+                "Resilience": 335040000
+            },
+            {
+                "ATK": 2173,
+                "HP": 660899990,
+                "Resilience": 336540000
+            },
+            {
+                "ATK": 2175,
+                "HP": 670066656,
+                "Resilience": 338040000
+            },
+            {
+                "ATK": 2177,
+                "HP": 679233322,
+                "Resilience": 339540000
+            },
+            {
+                "ATK": 2179,
+                "HP": 688399988,
+                "Resilience": 341040000
+            },
+            {
+                "ATK": 2181,
+                "HP": 697566654,
+                "Resilience": 342540000
+            },
+            {
+                "ATK": 2183,
+                "HP": 706733320,
+                "Resilience": 344040000
+            },
+            {
+                "ATK": 2185,
+                "HP": 715899986,
+                "Resilience": 345540000
+            },
+            {
+                "ATK": 2187,
+                "HP": 725066652,
+                "Resilience": 347040000
+            },
+            {
+                "ATK": 2189,
+                "HP": 734233318,
+                "Resilience": 348540000
+            },
+            {
+                "ATK": 2191,
+                "HP": 743399984,
+                "Resilience": 350040000
+            },
+            {
+                "ATK": 2193,
+                "HP": 752566650,
+                "Resilience": 351540000
+            },
+            {
+                "ATK": 2195,
+                "HP": 761733316,
+                "Resilience": 353040000
+            },
+            {
+                "ATK": 2197,
+                "HP": 770899982,
+                "Resilience": 354540000
+            },
+            {
+                "ATK": 2199,
+                "HP": 780066648,
+                "Resilience": 356040000
+            },
+            {
+                "ATK": 2201,
+                "HP": 789233314,
+                "Resilience": 357540000
+            },
+            {
+                "ATK": 2221,
+                "HP": 798400000,
+                "Resilience": 359040000
             }
         ]
     }

@@ -150,6 +150,38 @@
         "type": "Res",
         "rarity": "SR"
     },
+    "37": {
+        "id": 37,
+        "name": "Hunter Medal",
+        "desc": "A certificate obtained through Operation: Shadow Siege. Can be exchanged for items in the Shop.",
+        "literary": "A Guild medal of appreciation for pioneer Trekkers—those who always answer the hunt or lead the first wave of investigation.",
+        "type": "Res",
+        "rarity": "R"
+    },
+    "38": {
+        "id": 38,
+        "name": "Tracking Permit",
+        "desc": "Used in Operation: Shadow Siege to track targets for siege operations.",
+        "literary": "Submit target intelligence to officially initiate an Operation: Shadow Siege.",
+        "type": "Res",
+        "rarity": "R"
+    },
+    "39": {
+        "id": 39,
+        "name": "Hunt License",
+        "desc": "Used in Operation: Shadow Siege to join the Hunt against pinpointed targets.",
+        "literary": "Allows participation in ongoing siege operations initiated by other Guilds.",
+        "type": "Res",
+        "rarity": "R"
+    },
+    "40": {
+        "id": 40,
+        "name": "Talent Gold",
+        "desc": "Used in Through Hostile Depths.",
+        "literary": "An exquisitely carved gold coin said to be a token that allows one to seek assistance from the Tyrant.",
+        "type": "Res",
+        "rarity": "SR"
+    },
     "51": {
         "id": 51,
         "name": "Starlight Core",
@@ -460,6 +492,14 @@
         "type": "Char",
         "rarity": "SSR"
     },
+    "160": {
+        "id": 160,
+        "name": "Suntide Willow",
+        "desc": "Proof of invitation to add Suntide Willow to your squad",
+        "literary": "Sun, sand, and surf—this is the vacation she truly deserves.",
+        "type": "Char",
+        "rarity": "SSR"
+    },
     "401": {
         "id": 401,
         "name": "Everbright Wishes: Stardust",
@@ -510,6 +550,14 @@
         "id": 512,
         "name": "Night Blossom Limited Ticket",
         "desc": "A token used exclusively for recruiting in Fading Sakura, Sinking Dark Moon.",
+        "literary": "Set the direction, embrace an unforgettable encounter.",
+        "type": "Item",
+        "rarity": "SSR"
+    },
+    "513": {
+        "id": 513,
+        "name": "Suntide Limited Ticket",
+        "desc": "An exclusive certificate used for recruiting in Warm Up Before Jumping In!.",
         "literary": "Set the direction, embrace an unforgettable encounter.",
         "type": "Item",
         "rarity": "SSR"
@@ -832,6 +880,14 @@
         "type": "CharShard",
         "rarity": "SSR"
     },
+    "1600": {
+        "id": 1600,
+        "name": "Suntide Willow's Soul Key",
+        "desc": "Activates Trekker Talents.",
+        "literary": "Sun, sand, and surf—this is the vacation she truly deserves.",
+        "type": "CharShard",
+        "rarity": "SSR"
+    },
     "10301": {
         "id": 10301,
         "name": "Amber: Default",
@@ -921,6 +977,14 @@
         "name": "The 1/365th of You",
         "desc": "Certificate that unlocks Iris's exclusive appearance \"The 1/365th of You\"!",
         "literary": "In the pale winter sunlight, you hold a warm drink as your breath creates a white mist. You, who see yourself as just ordinary, are the one who makes this day special.",
+        "type": "CharacterSkin",
+        "rarity": "SR"
+    },
+    "11104": {
+        "id": 11104,
+        "name": "Drifting Together on Gentle Waves",
+        "desc": "Certificate that unlocks Iris's exclusive appearance: Drifting Together on Gentle Wavese!",
+        "literary": "Uh... I'll do my best to keep this inflatable steady, but please be careful getting on board.\u000b—A-And of course, if you fall into the water, I'll definitely pull you back up!",
         "type": "CharacterSkin",
         "rarity": "SR"
     },
@@ -1429,6 +1493,18 @@
     "15902": {
         "id": 15902,
         "name": "Springseek Coronis: Awakened",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "16001": {
+        "id": 16001,
+        "name": "Suntide Willow: Default",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "16002": {
+        "id": 16002,
+        "name": "Suntide Willow: Awakened",
         "type": "CharacterSkin",
         "rarity": "SSR"
     },
@@ -2272,8 +2348,16 @@
     },
     "71018": {
         "id": 71018,
-        "name": "Prefix Title: Darkness",
-        "desc": "Used to unlock the title: Darkness",
+        "name": "Prefix Title: Dark",
+        "desc": "Used to unlock the title: Dark",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "71019": {
+        "id": 71019,
+        "name": "Prefix Title: All-Rounder",
+        "desc": "Unlocks the title: All-Rounder",
         "literary": "A small card inscribed with magical words.",
         "type": "Item",
         "rarity": "SR"
@@ -2416,8 +2500,16 @@
     },
     "72018": {
         "id": 72018,
-        "name": "Suffix Title: The Great",
-        "desc": "Used to unlock the title: The Great",
+        "name": "Suffix Title: Lord",
+        "desc": "Used to unlock the title: Lord",
+        "literary": "A small card inscribed with magical words.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "72019": {
+        "id": 72019,
+        "name": "Suffix Title: Safety Officer",
+        "desc": "Unlocks the title: Safety Officer",
         "literary": "A small card inscribed with magical words.",
         "type": "Item",
         "rarity": "SR"
@@ -2515,6 +2607,14 @@
         "name": "\"Dark Magic Bullet\"",
         "desc": "Currency earned via active participation in the A Sandstorm of Gunfire event. Can be used to redeem items in the Event Shop.",
         "literary": "Special ammunition infused with dark energy. It can only be fired from Chaton' sniper rifle and is extremely precious. Try to make every shot count.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "73113": {
+        "id": 73113,
+        "name": "Sunlit Conch",
+        "desc": "Currency earned via active participation in the event: Sunlit Breeze, Azure Seas: Checking In for A Cozy Summer~. Can be used to redeem items in the Event Shop.",
+        "literary": "When the tide recedes, the sea leaves behind its gifts. Press close and listen. You can still hear the seaside summer.",
         "type": "Item",
         "rarity": "SR"
     },
@@ -3389,6 +3489,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "112160": {
+        "id": 112160,
+        "name": "Safety Advisor",
+        "desc": "Unlocks the Honor Title: Safety Advisor.",
+        "literary": "Proof of friendship with Suntide Willow!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "114001": {
         "id": 114001,
         "name": "Hello Gamer",
@@ -3645,6 +3753,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "116013": {
+        "id": 116013,
+        "name": "Sunlit Breeze, Azure Seas: Checking In for A Cozy Summer~",
+        "desc": "Unlocks the Honor Title: Sunlit Breeze, Azure Seas: Checking In for A Cozy Summer~.",
+        "literary": "Proof of a great success in the Sunlit Breeze, Azure Seas: Checking In for A Cozy Summer~ event!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "117001": {
         "id": 117001,
         "name": "Season 1 Endgame Ace",
@@ -3762,6 +3878,30 @@
         "name": "Season 5 Endgame Elite",
         "desc": "Unlocks the Honor Title: Season 5 Endgame Elite",
         "literary": "Proof of fighting tenaciously in Season 5 of A Finale Echoing and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117051": {
+        "id": 117051,
+        "name": "Season 6 Endgame Ace",
+        "desc": "Unlocks the Honor Title: Season 6 Endgame Ace.",
+        "literary": "Proof of fighting tenaciously in Season 6 of A Finale Echoing and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117052": {
+        "id": 117052,
+        "name": "Season 6 Endgame Master",
+        "desc": "Unlocks the Honor Title: Season 6 Endgame Master.",
+        "literary": "Proof of fighting tenaciously in Season 6 of A Finale Echoing and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117053": {
+        "id": 117053,
+        "name": "Season 6 Endgame Elite",
+        "desc": "Unlocks the Honor Title: Season 6 Endgame Elite.",
+        "literary": "Proof of fighting tenaciously in Season 6 of A Finale Echoing and achieving the honor of Elite!",
         "type": "Honor",
         "rarity": "SSR"
     },
@@ -3981,6 +4121,126 @@
         "type": "Honor",
         "rarity": "SR"
     },
+    "118091": {
+        "id": 118091,
+        "name": "Season 10 Hunting Ace",
+        "desc": "Unlocks the Honor Title: Season 10 Hunting Ace.",
+        "literary": "Proof of a stellar performance in Season 10 of Boss Blitz and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118092": {
+        "id": 118092,
+        "name": "Season 10 Hunting Master",
+        "desc": "Unlocks the Honor Title: Season 10 Hunting Master.",
+        "literary": "Proof of a stellar performance in Season 10 of Boss Blitz and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118093": {
+        "id": 118093,
+        "name": "Season 10 Hunting Elite",
+        "desc": "Unlocks the Honor Title: Season 10 Hunting Elite.",
+        "literary": "Proof of a stellar performance in Season 10 of Boss Blitz and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
+    "118101": {
+        "id": 118101,
+        "name": "Season 11 Hunting Ace",
+        "desc": "Unlocks the Honor Title: Season 11 Hunting Ace.",
+        "literary": "Proof of a stellar performance in Season 11 of Boss Blitz and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118102": {
+        "id": 118102,
+        "name": "Season 11 Hunting Master",
+        "desc": "Unlocks the Honor Title: Season 11 Hunting Master.",
+        "literary": "Proof of a stellar performance in Season 11 of Boss Blitz and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118103": {
+        "id": 118103,
+        "name": "Season 11 Hunting Elite",
+        "desc": "Unlocks the Honor Title: Season 11 Hunting Elite.",
+        "literary": "Proof of a stellar performance in Season 11 of Boss Blitz and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
+    "118111": {
+        "id": 118111,
+        "name": "Season 12 Hunting Ace",
+        "desc": "Unlocks the Honor Title: Season 12 Hunting Ace.",
+        "literary": "Proof of a stellar performance in Season 12 of Boss Blitz and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118112": {
+        "id": 118112,
+        "name": "Season 12 Hunting Master",
+        "desc": "Unlocks the Honor Title: Season 12 Hunting Master.",
+        "literary": "Proof of a stellar performance in Season 12 of Boss Blitz and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118113": {
+        "id": 118113,
+        "name": "Season 12 Hunting Elite",
+        "desc": "Unlocks the Honor Title: Season 12 Hunting Elite.",
+        "literary": "Proof of a stellar performance in Season 12 of Boss Blitz and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
+    "118121": {
+        "id": 118121,
+        "name": "Season 13 Hunting Ace",
+        "desc": "Unlocks the Honor Title: Season 13 Hunting Ace.",
+        "literary": "Proof of a stellar performance in Season 13 of Boss Blitz and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118122": {
+        "id": 118122,
+        "name": "Season 13 Hunting Master",
+        "desc": "Unlocks the Honor Title: Season 13 Hunting Master.",
+        "literary": "Proof of a stellar performance in Season 13 of Boss Blitz and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118123": {
+        "id": 118123,
+        "name": "Season 13 Hunting Elite",
+        "desc": "Unlocks the Honor Title: Season 13 Hunting Elite.",
+        "literary": "Proof of a stellar performance in Season 13 of Boss Blitz and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
+    "118131": {
+        "id": 118131,
+        "name": "Season 14 Hunting Ace",
+        "desc": "Unlocks the Honor Title: Season 14 Hunting Ace.",
+        "literary": "Proof of a stellar performance in Season 14 of Boss Blitz and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118132": {
+        "id": 118132,
+        "name": "Season 14 Hunting Master",
+        "desc": "Unlocks the Honor Title: Season 14 Hunting Master.",
+        "literary": "Proof of a stellar performance in Season 14 of Boss Blitz and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "118133": {
+        "id": 118133,
+        "name": "Season 14 Hunting Elite",
+        "desc": "Unlocks the Honor Title: Season 14 Hunting Elite.",
+        "literary": "Proof of a stellar performance in Season 14 of Boss Blitz and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SR"
+    },
     "119011": {
         "id": 119011,
         "name": "Space Cadet S1",
@@ -4010,6 +4270,13 @@
         "name": "Lili Bae Club",
         "desc": "Unlock the Honor Title: Lili Bae Club",
         "literary": "Proof of a stellar performance and support for Lilibea in \"Summit Show: War in the Backpack\"",
+        "rarity": "SR"
+    },
+    "119902": {
+        "id": 119902,
+        "name": "Cat-stle Siege Title Series",
+        "desc": "Unlock the Honor Title series: Cat-stle Siege",
+        "literary": "Proof of a stellar performance and support for Lilibea in Summit Show: Cat-stle Siege",
         "rarity": "SR"
     },
     "120001": {
@@ -4048,6 +4315,14 @@
         "id": 120005,
         "name": "Beach Treasure Shovel",
         "desc": "Daring Adventure! The Ghost Ship Haunts the Deep Exclusive Event Item",
+        "literary": "A treasure shovel said to bring good fortune. Unfortunately, it's not very durable.",
+        "type": "Item",
+        "rarity": "R"
+    },
+    "120006": {
+        "id": 120006,
+        "name": "Beach Treasure Shovel",
+        "desc": "<Lucky Treasure Shovel> Exclusive Event Item",
         "literary": "A treasure shovel said to bring good fortune. Unfortunately, it's not very durable.",
         "type": "Item",
         "rarity": "R"
@@ -4322,17 +4597,17 @@
     },
     "199023": {
         "id": 199023,
-        "name": "Shimiao's exclusive appearance: Feeling Spicy? Take the Heat!",
-        "desc": "Shimiao's exclusive appearance: Feeling Spicy? Take the Heat!",
-        "literary": "Shimiao's exclusive appearance: Feeling Spicy? Take the Heat!",
+        "name": "Shimiao's exclusive appearance:\nFeeling Spicy? Take the Heat!",
+        "desc": "Shimiao's exclusive appearance:\nFeeling Spicy? Take the Heat!",
+        "literary": "Shimiao's exclusive appearance:\nFeeling Spicy? Take the Heat!",
         "type": "Item",
         "rarity": "SSR"
     },
     "199024": {
         "id": 199024,
-        "name": "Limited-Time Avatar: Slacker Master",
-        "desc": "Limited-Time Avatar: Slacker Master",
-        "literary": "Limited-Time Avatar: Slacker Master",
+        "name": "Limited-Time Avatar:\nSlacker Master",
+        "desc": "Limited-Time Avatar:\nSlacker Master",
+        "literary": "Limited-Time Avatar:\nSlacker Master",
         "type": "Item",
         "rarity": "SSR"
     },
@@ -4454,6 +4729,20 @@
         "literary": "Once the war horn sounds, there's no going back.\nFight! Fight until the bitter end!",
         "type": "Disc",
         "rarity": "R"
+    },
+    "213001": {
+        "id": 213001,
+        "name": "Zesty Curiosity",
+        "literary": "\"Isn't a laundry room for washing clothes?\"\n\"Aren't oranges just for eating?\"\n\"What are we doing here?\"\n\"Stop chatting and look at the camera...\"\n\"This is the hottest photo trend right now!\"",
+        "type": "Disc",
+        "rarity": "SR"
+    },
+    "213002": {
+        "id": 213002,
+        "name": "Seasonal Waves",
+        "literary": "In spring and summer's embrace, petals dance in the air;\nin autumn and winter's chill, rain drizzles relentlessly.\nThe scenes mirrored in your eyes\nfluctuate with the changing seasons,\nhow am I supposed to understand them?",
+        "type": "Disc",
+        "rarity": "SR"
     },
     "213003": {
         "id": 213003,
@@ -4717,7 +5006,7 @@
     "214014": {
         "id": 214014,
         "name": "Sweet Times",
-        "literary": "We trekked, picked, and laughed with our friends, sharing sweet fruit that burst with juice in our mouths.",
+        "literary": "We trekked, picked, and laughed with our friends,\nsharing sweet fruit that burst with juice in our mouths.",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -4822,7 +5111,7 @@
     "214030": {
         "id": 214030,
         "name": "A Moment in the Afternoon",
-        "literary": "The girl burst in with the afternoon sun,\nbringing with her the aroma of snacks.\nFries? Grilled fish? Or a loaf of fluffy, warm bread?\nYou had to grab something\nto enjoy this stolen moment of peace.",
+        "literary": "The girl burst in with the afternoon sun,\nbringing with her the aroma of snacks.\nFries? Grilled fish? Or a loaf of fluffy, warm bread?\nYou got to grab something\nto enjoy this stolen moment of peace.",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -4892,7 +5181,7 @@
     "214042": {
         "id": 214042,
         "name": "Wine Warm, Lamps Alight",
-        "literary": "Midnight bells chime to welcome the Springseek Festival\u000bas fireworks set the night sky ablaze.\u000bAmid the revelry, the crowd wishes\u000bthat there is joy and peace for the days and years ahead.",
+        "literary": "Midnight bells chime to welcome the Springseek Festival\nas fireworks set the night sky ablaze.\nAmid the revelry, the crowd wishes\nthat there is joy and peace for the days and years ahead.",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -4906,7 +5195,7 @@
     "214044": {
         "id": 214044,
         "name": "Veiled Dawn of Spring",
-        "literary": "The drawn curtains create a cozy, warm retreat.\u000bHer smile is tender,\u000bbut the syringe in her hand glints chillingly.\u000b\"Don't be afraid. It will be over before you know it.\"",
+        "literary": "The drawn curtains create a cozy, warm retreat.\nHer smile is tender,\nbut the syringe in her hand glints chillingly.\n\"Don't be afraid. It will be over before you know it.\"",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -4977,6 +5266,20 @@
         "id": 214054,
         "name": "Little Paradise",
         "literary": "A little paradise that's ours alone,\u000brunning with her through the dim lamplight.\u000bDon't be afraid of stumbling—I'll hold your hand tight,\u000buntil we make it to the end together.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
+    "214055": {
+        "id": 214055,
+        "name": "Fleeting Glimmers",
+        "literary": "Sunlight filters through the clear water,\nwarming the ocean with a gentle glow.\nA girl gazes up at the shimmering light—\nwhat lies beyond those ripples?",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
+    "214056": {
+        "id": 214056,
+        "name": "Dappled Sunlight",
+        "literary": "Broken patterns of light drift across her hair,\nas she steps into a flowing stream.\nThe forest wind follows the sound of insects,\nwhispering that midsummer has quietly arrived.",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -5115,6 +5418,22 @@
         "literary": "Once the war horn sounds, there's no going back.\u000bFight! Fight until the bitter end!",
         "type": "DiscLimitBreak",
         "rarity": "R"
+    },
+    "223001": {
+        "id": 223001,
+        "name": "Zesty Curiosity Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "\"Isn't a laundry room for washing clothes?\"\u000b\"Aren't oranges just for eating?\"\u000b\"What are we doing here?\"\u000b\"Stop chatting and look at the camera...\"\u000b\"This is the hottest photo trend right now!\"",
+        "type": "DiscLimitBreak",
+        "rarity": "SR"
+    },
+    "223002": {
+        "id": 223002,
+        "name": "Seasonal Waves Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "In spring and summer's embrace, petals dance in the air;\u000bin autumn and winter's chill, rain drizzles relentlessly.\u000bThe scenes mirrored in your eyes\u000bfluctuate with the changing seasons,\u000bhow am I supposed to understand them?",
+        "type": "DiscLimitBreak",
+        "rarity": "SR"
     },
     "223003": {
         "id": 223003,
@@ -5416,7 +5735,7 @@
         "id": 224014,
         "name": "Sweet Times Melody",
         "desc": "Material required for the Crescendo of specific Discs.",
-        "literary": "We trekked, picked, and laughed with our friends, sharing sweet fruit that burst with juice in our mouths.",
+        "literary": "We trekked, picked, and laughed with our friends,\u000bsharing sweet fruit that burst with juice in our mouths.",
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
@@ -5713,6 +6032,22 @@
         "name": "Little Paradise Melody",
         "desc": "Material required for the Crescendo of specific Discs.",
         "literary": "A little paradise that's ours alone,\u000brunning with her through the dim lamplight.\u000bDon't be afraid of stumbling—I'll hold your hand tight,\u000buntil we make it to the end together.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224055": {
+        "id": 224055,
+        "name": "Fleeting Glimmers Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "Sunlight filters through the clear water,\u000bwarming the ocean with a gentle glow.\u000bA girl gazes up at the shimmering light—\u000bwhat lies beyond those ripples?",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224056": {
+        "id": 224056,
+        "name": "Dappled Sunlight Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "Broken patterns of light drift across her hair,\u000bas she steps into a flowing stream.\u000bThe forest wind follows the sound of insects,\u000bwhispering that midsummer has quietly arrived.",
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
@@ -10172,13 +10507,13 @@
         "id": 514225,
         "name": "Dark: Demon Mark",
         "type": "Potential",
-        "rarity": "SR"
+        "rarity": "SSR"
     },
     "514226": {
         "id": 514226,
         "name": "Dark: Mirage",
         "type": "Potential",
-        "rarity": "SSR"
+        "rarity": "SR"
     },
     "514227": {
         "id": 514227,
@@ -10208,7 +10543,7 @@
         "id": 514231,
         "name": "Void Blessing",
         "type": "Potential",
-        "rarity": "SR"
+        "rarity": "SSR"
     },
     "514232": {
         "id": 514232,
@@ -10220,7 +10555,7 @@
         "id": 514233,
         "name": "Gift of Darkness",
         "type": "Potential",
-        "rarity": "SSR"
+        "rarity": "SR"
     },
     "514241": {
         "id": 514241,
@@ -11979,5 +12314,395 @@
         "name": "United Flame",
         "type": "Potential",
         "rarity": "SR"
+    },
+    "516001": {
+        "id": 516001,
+        "name": "Bubble Flurry",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "516002": {
+        "id": 516002,
+        "name": "Rippling Radiance",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "516003": {
+        "id": 516003,
+        "name": "Rhythmic Bubbles",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "516004": {
+        "id": 516004,
+        "name": "Rainbow Rebound",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "516005": {
+        "id": 516005,
+        "name": "Enduring Bubble",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516006": {
+        "id": 516006,
+        "name": "Dreamlike Illusion",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516007": {
+        "id": 516007,
+        "name": "Clustered Foam",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "516008": {
+        "id": 516008,
+        "name": "Foam Echo",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516009": {
+        "id": 516009,
+        "name": "Touch 'n' Bounce",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516010": {
+        "id": 516010,
+        "name": "Wavering Glow",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "516011": {
+        "id": 516011,
+        "name": "Singing Shores",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516012": {
+        "id": 516012,
+        "name": "Ocean Wanderer",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516013": {
+        "id": 516013,
+        "name": "Cumulus Drift",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "516021": {
+        "id": 516021,
+        "name": "Flying Droplets",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "516022": {
+        "id": 516022,
+        "name": "Flooding Shore",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "516023": {
+        "id": 516023,
+        "name": "Rhythm Surge",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "516024": {
+        "id": 516024,
+        "name": "Thunderous Surf",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "516025": {
+        "id": 516025,
+        "name": "Words Unchanged",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516026": {
+        "id": 516026,
+        "name": "Hovering Gale",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "516027": {
+        "id": 516027,
+        "name": "Eternal Tide",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516028": {
+        "id": 516028,
+        "name": "Engulfing Tide",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516029": {
+        "id": 516029,
+        "name": "Receding Echoes",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516030": {
+        "id": 516030,
+        "name": "Prismatic Bubbles",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "516031": {
+        "id": 516031,
+        "name": "Prismatic Barrier",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516032": {
+        "id": 516032,
+        "name": "Tender Seas",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516033": {
+        "id": 516033,
+        "name": "Balmy Surf",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "516041": {
+        "id": 516041,
+        "name": "Tidal Warning",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516042": {
+        "id": 516042,
+        "name": "Shore Regulation",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "516043": {
+        "id": 516043,
+        "name": "Marine Justice",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "2501001": {
+        "id": 2501001,
+        "name": "Noya",
+        "rarity": "SSR"
+    },
+    "2501002": {
+        "id": 2501002,
+        "name": "Iris",
+        "rarity": "SSR"
+    },
+    "2501003": {
+        "id": 2501003,
+        "name": "Amber",
+        "rarity": "SSR"
+    },
+    "2501004": {
+        "id": 2501004,
+        "name": "Freesia",
+        "rarity": "SSR"
+    },
+    "2501005": {
+        "id": 2501005,
+        "name": "Donna",
+        "rarity": "SSR"
+    },
+    "2501006": {
+        "id": 2501006,
+        "name": "Teresa",
+        "rarity": "SSR"
+    },
+    "2501007": {
+        "id": 2501007,
+        "name": "Fuyuka",
+        "rarity": "SSR"
+    },
+    "2501008": {
+        "id": 2501008,
+        "name": "Nazuna",
+        "rarity": "SSR"
+    },
+    "2501009": {
+        "id": 2501009,
+        "name": "Nazuka",
+        "rarity": "SSR"
+    },
+    "2501010": {
+        "id": 2501010,
+        "name": "Gerie",
+        "rarity": "SSR"
+    },
+    "2501011": {
+        "id": 2501011,
+        "name": "Sparkla",
+        "rarity": "SSR"
+    },
+    "2501012": {
+        "id": 2501012,
+        "name": "Wraith",
+        "rarity": "SSR"
+    },
+    "2501013": {
+        "id": 2501013,
+        "name": "Tilia",
+        "rarity": "SSR"
+    },
+    "2501014": {
+        "id": 2501014,
+        "name": "Firefly",
+        "rarity": "SSR"
+    },
+    "2501015": {
+        "id": 2501015,
+        "name": "Canace",
+        "rarity": "SSR"
+    },
+    "2501016": {
+        "id": 2501016,
+        "name": "Laru",
+        "rarity": "SSR"
+    },
+    "2501017": {
+        "id": 2501017,
+        "name": "Willow",
+        "rarity": "SSR"
+    },
+    "2501018": {
+        "id": 2501018,
+        "name": "Chitose",
+        "rarity": "SSR"
+    },
+    "2501019": {
+        "id": 2501019,
+        "name": "Shia",
+        "rarity": "SSR"
+    },
+    "2501020": {
+        "id": 2501020,
+        "name": "Minova",
+        "rarity": "SSR"
+    },
+    "2501021": {
+        "id": 2501021,
+        "name": "Guard Squire",
+        "rarity": "SSR"
+    },
+    "2501022": {
+        "id": 2501022,
+        "name": "Guard Knight",
+        "rarity": "SSR"
+    },
+    "2501023": {
+        "id": 2501023,
+        "name": "Guard Captain",
+        "rarity": "SSR"
+    },
+    "2501024": {
+        "id": 2501024,
+        "name": "Guard Sergeant",
+        "rarity": "SSR"
+    },
+    "2501025": {
+        "id": 2501025,
+        "name": "Exhausted Employee",
+        "rarity": "SSR"
+    },
+    "2501026": {
+        "id": 2501026,
+        "name": "Veteran Employee",
+        "rarity": "SSR"
+    },
+    "2501027": {
+        "id": 2501027,
+        "name": "Vollara",
+        "rarity": "SSR"
+    },
+    "2501028": {
+        "id": 2501028,
+        "name": "Neuvira",
+        "rarity": "SSR"
+    },
+    "2501029": {
+        "id": 2501029,
+        "name": "Sturdy Batter",
+        "rarity": "SSR"
+    },
+    "2501030": {
+        "id": 2501030,
+        "name": "Clever Technician",
+        "rarity": "SSR"
+    },
+    "2501031": {
+        "id": 2501031,
+        "name": "Shrubshrews Warrior",
+        "rarity": "SSR"
+    },
+    "2501032": {
+        "id": 2501032,
+        "name": "Citadel Shrubshrew",
+        "rarity": "SSR"
+    },
+    "2501033": {
+        "id": 2501033,
+        "name": "Spirit of Brutality",
+        "rarity": "SSR"
+    },
+    "2501034": {
+        "id": 2501034,
+        "name": "Sherlock",
+        "rarity": "SSR"
+    },
+    "2501035": {
+        "id": 2501035,
+        "name": "Howling Owl",
+        "rarity": "SSR"
+    },
+    "2501036": {
+        "id": 2501036,
+        "name": "Armadillo Fish",
+        "rarity": "SSR"
+    },
+    "2501037": {
+        "id": 2501037,
+        "name": "Firefang",
+        "rarity": "SSR"
+    },
+    "2501038": {
+        "id": 2501038,
+        "name": "Captain Ⅴacuum",
+        "rarity": "SSR"
+    },
+    "2501039": {
+        "id": 2501039,
+        "name": "Vacuum Kitty",
+        "rarity": "SSR"
+    },
+    "2501040": {
+        "id": 2501040,
+        "name": "Bomber Chicken",
+        "rarity": "SSR"
+    },
+    "2701001": {
+        "id": 2701001,
+        "name": "Random Piece",
+        "desc": "A random chess piece.",
+        "literary": "Who's dropping in to save the day this time?",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "2701002": {
+        "id": 2701002,
+        "name": "Random Blessing",
+        "desc": "A chance to select a random blessing.",
+        "literary": "Fingers crossed for a good draw this time!",
+        "type": "Item",
+        "rarity": "SSR"
     }
 }
