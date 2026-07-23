@@ -116,6 +116,9 @@ function PlayerSoldierRecommendData:GetRecommendData(bInSoldier)
 	end
 end
 function PlayerSoldierRecommendData:SaveData()
+	self.nRecommendId = self:GetRecommendId()
+	self.nInSoldierRecommendId = self:GetInSoldierRecommendId()
+	self.bInSoldierChanged = self:GetInSoldierChanged()
 	LocalData.SetPlayerLocalData("SoldierRecommend_Id", tostring(self.nRecommendId))
 	LocalData.SetPlayerLocalData("SoldierInSoldierRecommend_Id", tostring(self.nInSoldierRecommendId))
 	LocalData.SetPlayerLocalData("SoldierInSoldierChanged", self.bInSoldierChanged)
