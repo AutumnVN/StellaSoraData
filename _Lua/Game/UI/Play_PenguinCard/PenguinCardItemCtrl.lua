@@ -32,7 +32,6 @@ PenguinCardItemCtrl._mapEventConfig = {
 	PenguinCardGrowth = "OnEvent_Growth"
 }
 function PenguinCardItemCtrl:Refresh_Select(mapCard, nSelectIndex, bRoll)
-	self.mapCard = mapCard
 	self.nSelectIndex = nSelectIndex
 	self._mapNode.txtLevel.gameObject:SetActive(false)
 	self._mapNode.txtName.gameObject:SetActive(true)
@@ -51,10 +50,10 @@ function PenguinCardItemCtrl:Refresh_Select(mapCard, nSelectIndex, bRoll)
 	self._mapNode.AnimRoot:Play("PengUinCard_Bd_Shopin", 0, 0)
 end
 function PenguinCardItemCtrl:Refresh_Slot(mapCard)
-	self.mapCard = mapCard
+	self.nSlotIndex = mapCard.nSlotIndex
 	self.nEffectCount = 0
 	self.bWaitPlay = false
-	local bAble = self.mapCard:GetActiveState()
+	local bAble = mapCard:GetActiveState()
 	self._mapNode.txtLevel.gameObject:SetActive(bAble)
 	self._mapNode.txtName.gameObject:SetActive(false)
 	self._mapNode.imgBg:SetActive(false)
@@ -76,7 +75,11 @@ function PenguinCardItemCtrl:Refresh_Slot(mapCard)
 	end
 end
 function PenguinCardItemCtrl:RefreshUpgrade(nGroupId)
-	if self.mapCard.nGroupId == nGroupId then
+	if self.nSelectIndex == nil then
+		return
+	end
+	local mapCard = self._panel.mapLevel.tbSelectablePenguinCard[self.nSelectIndex]
+	if mapCard.nGroupId == nGroupId then
 		self._mapNode.imgUp:SetActive(false)
 	end
 end
@@ -145,40 +148,44 @@ function PenguinCardItemCtrl:PlayTriggerAni()
 	self:PlayEffectAni()
 end
 function PenguinCardItemCtrl:PlayEffectAni()
+	if self.nSlotIndex == nil then
+		return
+	end
+	local mapCard = self._panel.mapLevel.tbPenguinCard[self.nSlotIndex]
 	if self.nEffectCount == nil then
 		self.nEffectCount = 0
 	end
 	local sDesc = ""
-	if self.mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips then
-		local nValue = self.mapCard.tbEffectParam[1]
-		if self.mapCard.nGrowthType ~= GameEnum.PenguinCardGrowthType.None then
-			nValue = nValue + self.mapCard.nGrowthLayer * self.mapCard.tbGrowthEffectParam[1]
+	if mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips then
+		local nValue = mapCard.tbEffectParam[1]
+		if mapCard.nGrowthType ~= GameEnum.PenguinCardGrowthType.None then
+			nValue = nValue + mapCard.nGrowthLayer * mapCard.tbGrowthEffectParam[1]
 		end
 		self.nEffectCount = self.nEffectCount + nValue
 		sDesc = orderedFormat(ConfigTable.GetUIText("PenguinCard_Trigger_AddScore"), self.nEffectCount)
-	elseif self.mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier then
-		local nValue = self.mapCard.tbEffectParam[1]
-		if self.mapCard.nGrowthType ~= GameEnum.PenguinCardGrowthType.None then
-			nValue = nValue + self.mapCard.nGrowthLayer * self.mapCard.tbGrowthEffectParam[1]
+	elseif mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier then
+		local nValue = mapCard.tbEffectParam[1]
+		if mapCard.nGrowthType ~= GameEnum.PenguinCardGrowthType.None then
+			nValue = nValue + mapCard.nGrowthLayer * mapCard.tbGrowthEffectParam[1]
 		end
 		self.nEffectCount = self.nEffectCount + nValue
 		sDesc = orderedFormat(ConfigTable.GetUIText("PenguinCard_Trigger_AddRatio"), self.nEffectCount)
-	elseif self.mapCard.nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier then
-		local nValue = self.mapCard.tbEffectParam[1]
-		if self.mapCard.nGrowthType ~= GameEnum.PenguinCardGrowthType.None then
-			nValue = nValue + self.mapCard.nGrowthLayer * self.mapCard.tbGrowthEffectParam[1]
+	elseif mapCard.nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier then
+		local nValue = mapCard.tbEffectParam[1]
+		if mapCard.nGrowthType ~= GameEnum.PenguinCardGrowthType.None then
+			nValue = nValue + mapCard.nGrowthLayer * mapCard.tbGrowthEffectParam[1]
 		end
 		self.nEffectCount = self.nEffectCount + nValue
 		sDesc = orderedFormat(ConfigTable.GetUIText("PenguinCard_Trigger_MultiRatio"), self.nEffectCount)
 	end
 	self._mapNode.goTrigger:SetActive(sDesc ~= "")
-	if self.mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips then
+	if mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseBasicChips then
 		self._mapNode.txtTrigger[1].gameObject:SetActive(false)
 		self._mapNode.txtTrigger[2].gameObject:SetActive(true)
 		NovaAPI.SetTMPText(self._mapNode.txtTrigger[2], sDesc)
 		self._mapNode.aniTrigger[2]:Play("PengUinCard_Bd_Trigger_in", 0, 0)
 		self._mapNode.aniTrigger[2].speed = self._panel.mapLevel.nSpeed
-	elseif self.mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier or self.mapCard.nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier then
+	elseif mapCard.nEffectType == GameEnum.PenguinCardEffectType.IncreaseMultiplier or mapCard.nEffectType == GameEnum.PenguinCardEffectType.MultiMultiplier then
 		self._mapNode.txtTrigger[1].gameObject:SetActive(true)
 		self._mapNode.txtTrigger[2].gameObject:SetActive(false)
 		NovaAPI.SetTMPText(self._mapNode.txtTrigger[1], sDesc)
@@ -193,26 +200,37 @@ end
 function PenguinCardItemCtrl:OnDisable()
 end
 function PenguinCardItemCtrl:OnBtnClick_OpenInfo()
-	if self.nSelectIndex and self._panel.mapLevel.bSelectedPenguinCard then
-		return
+	if self.nSelectIndex and not self._panel.mapLevel.bSelectedPenguinCard then
+		local mapCard = self._panel.mapLevel.tbSelectablePenguinCard[self.nSelectIndex]
+		EventManager.Hit("PenguinCard_OpenInfo", mapCard, self.nSelectIndex)
+	elseif self.nSlotIndex then
+		local mapCard = self._panel.mapLevel.tbPenguinCard[self.nSlotIndex]
+		EventManager.Hit("PenguinCard_OpenInfo", mapCard)
 	end
-	EventManager.Hit("PenguinCard_OpenInfo", self.mapCard, self.nSelectIndex)
 end
 function PenguinCardItemCtrl:OnEvent_Triggered(nSlotIndex)
-	if not (self.mapCard and self.mapCard ~= 0 and self.mapCard.nSlotIndex) or nSlotIndex ~= self.mapCard.nSlotIndex then
+	if self.nSlotIndex == nil then
 		return
 	end
-	if self.mapCard.nTriggerPhase == GameEnum.PenguinCardTriggerPhase.Settlement then
+	local mapCard = self._panel.mapLevel.tbPenguinCard[self.nSlotIndex]
+	if mapCard == 0 or nSlotIndex ~= mapCard.nSlotIndex then
+		return
+	end
+	if mapCard.nTriggerPhase == GameEnum.PenguinCardTriggerPhase.Settlement then
 		self.bWaitPlay = true
 		return
 	end
 	self:PlayTriggerAni()
 end
 function PenguinCardItemCtrl:OnEvent_Growth(nSlotIndex)
-	if not (self.mapCard and self.mapCard ~= 0 and self.mapCard.nSlotIndex) or nSlotIndex ~= self.mapCard.nSlotIndex then
+	if self.nSlotIndex == nil then
 		return
 	end
-	local bAble = self.mapCard:GetActiveState()
+	local mapCard = self._panel.mapLevel.tbPenguinCard[self.nSlotIndex]
+	if mapCard == 0 or nSlotIndex ~= mapCard.nSlotIndex then
+		return
+	end
+	local bAble = mapCard:GetActiveState()
 	self._mapNode.goDisable:SetActive(not bAble)
 	self._mapNode.txtLevel.gameObject:SetActive(bAble)
 end
