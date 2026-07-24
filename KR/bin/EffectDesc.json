@@ -3256,5 +3256,38 @@
     "Desc": "EffectDesc.70043.1",
     "RandomAttrDesc": "EffectDesc.70043.2",
     "Format": 1
+  },
+  "10011": {
+    "Id": 10011,
+    "Desc": "EffectDesc.10011.1",
+    "RandomAttrDesc": "EffectDesc.10011.2",
+    "Attribute": "Energy",
+    "Icon": "Icon/ZZZOther/icon_common_chainfo_crl",
+    "Format": 1
+  },
+  "10021": {
+    "Id": 10021,
+    "Desc": "EffectDesc.10021.1",
+    "RandomAttrDesc": "EffectDesc.10021.2",
+    "Attribute": "InitialEnergy",
+    "Icon": "Icon/ZZZOther/icon_common_skillinfo_eny",
+    "Format": 1
+  },
+  "10031": {
+    "Id": 10031,
+    "Desc": "EffectDesc.10031.1",
+    "RandomAttrDesc": "EffectDesc.10031.2",
+    "Attribute": "Recovery",
+    "Icon": "Icon/ZZZOther/icon_common_chainfo_elt",
+    "Format": 2
+  },
+  "10041": {
+    "Id": 10041,
+    "Desc": "EffectDesc.10041.1",
+    "RandomAttrDesc": "EffectDesc.10041.2",
+    "Attribute": "ATKSPD_P",
+    "isPercent": true,
+    "Icon": "Icon/ZZZOther/icon_common_chainfo_ats",
+    "Format": 1
   }
 }

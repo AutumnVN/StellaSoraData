@@ -13566,6 +13566,60 @@
     "Weight": 5,
     "BlockPriority": 4
   },
+  "6310011": {
+    "Id": 6310011,
+    "EpicLv": 7,
+    "FCId": 5008199,
+    "FAId": 9912102,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 50000,
+    "RefRng": 990000,
+    "ActRng": 130000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 6310010,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 5,
+    "BlockPriority": 4
+  },
+  "6310012": {
+    "Id": 6310012,
+    "EpicLv": 7,
+    "FCId": 5008199,
+    "FAId": 9912103,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 50000,
+    "RefRng": 990000,
+    "ActRng": 130000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 6310010,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 5,
+    "BlockPriority": 4
+  },
   "6310020": {
     "Id": 6310020,
     "EpicLv": 7,
@@ -13596,7 +13650,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310020
   },
   "6310021": {
@@ -13797,7 +13851,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 4,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "6310040": {
     "Id": 6310040,
@@ -13919,7 +13973,7 @@
     "IsToughnessRecorver": true,
     "Tag1": "BossRush",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310050
   },
   "6310051": {
@@ -14120,7 +14174,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310060
   },
   "6310061": {
@@ -14351,7 +14405,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310080
   },
   "6310081": {
@@ -14530,7 +14584,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 5,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310070
   },
   "6310072": {
@@ -14615,7 +14669,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 5,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310070
   },
   "6310090": {
@@ -14791,7 +14845,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310130
   },
   "6310132": {
@@ -14816,7 +14870,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310130
   },
   "6310133": {
@@ -14841,7 +14895,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310130
   },
   "6310134": {
@@ -14866,7 +14920,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310130
   },
   "6310120": {
@@ -14951,7 +15005,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 4,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "6310150": {
     "Id": 6310150,
@@ -14983,7 +15037,7 @@
     "IsToughnessRecorver": true,
     "Tag1": "BossRush",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310150
   },
   "6310151": {
@@ -15184,7 +15238,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310140
   },
   "6310141": {
@@ -15447,7 +15501,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310180
   },
   "6310181": {
@@ -15622,7 +15676,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310190
   },
   "6310192": {
@@ -15647,7 +15701,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310190
   },
   "6310193": {
@@ -15672,7 +15726,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310190
   },
   "6310194": {
@@ -15697,7 +15751,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6310190
   },
   "9999001": {
@@ -15836,7 +15890,7 @@
   },
   "9999007": {
     "Id": 9999007,
-    "EpicLv": 4,
+    "EpicLv": 5,
     "BloodType": 1,
     "FCId": 9912101,
     "FAId": 9912101,
@@ -34411,7 +34465,7 @@
     "Id": 7150610,
     "EpicLv": 2,
     "BloodType": 3,
-    "FCId": 1306121,
+    "FCId": 1306122,
     "FAId": 1306121,
     "MovType": 2,
     "RunSpd": 60000,
@@ -34442,7 +34496,7 @@
     "Id": 7150620,
     "EpicLv": 2,
     "BloodType": 3,
-    "FCId": 1306131,
+    "FCId": 1306132,
     "FAId": 1306111,
     "MovType": 2,
     "RunSpd": 60000,
@@ -34473,7 +34527,7 @@
     "Id": 7150630,
     "EpicLv": 2,
     "BloodType": 3,
-    "FCId": 1306141,
+    "FCId": 1306142,
     "FAId": 1306131,
     "MovType": 2,
     "RunSpd": 60000,
@@ -34504,7 +34558,7 @@
     "Id": 7150640,
     "EpicLv": 2,
     "BloodType": 3,
-    "FCId": 1306151,
+    "FCId": 1306152,
     "FAId": 1306141,
     "MovType": 2,
     "RunSpd": 60000,
@@ -34535,7 +34589,7 @@
     "Id": 7150650,
     "EpicLv": 2,
     "BloodType": 3,
-    "FCId": 1306161,
+    "FCId": 1306162,
     "FAId": 1306151,
     "MovType": 2,
     "RunSpd": 60000,
@@ -35191,7 +35245,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7158100
   },
   "7158200": {
@@ -35645,7 +35699,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "7170300": {
     "Id": 7170300,
@@ -38713,7 +38767,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "Tag1": "RedChess",
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010101
   },
   "7010102": {
@@ -38739,7 +38793,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010101
   },
   "7010103": {
@@ -38765,7 +38819,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010101
   },
   "7010104": {
@@ -38817,7 +38871,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010101
   },
   "7010106": {
@@ -38843,7 +38897,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010101
   },
   "7010107": {
@@ -38872,7 +38926,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "Tag1": "GreenChess",
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010107
   },
   "7010108": {
@@ -38898,7 +38952,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010107
   },
   "7010109": {
@@ -38924,7 +38978,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010107
   },
   "7010110": {
@@ -38976,7 +39030,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010107
   },
   "7010112": {
@@ -39002,7 +39056,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010107
   },
   "7010113": {
@@ -39034,7 +39088,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "Tag1": "RedChess",
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010101
   },
   "7010114": {
@@ -39066,7 +39120,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "Tag1": "GreenChess",
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010107
   },
   "7010115": {
@@ -39095,7 +39149,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "Tag1": "RedChess",
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010115
   },
   "7010116": {
@@ -39121,7 +39175,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010115
   },
   "7010117": {
@@ -39147,7 +39201,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010115
   },
   "7010118": {
@@ -39199,7 +39253,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010115
   },
   "7010120": {
@@ -39225,7 +39279,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010115
   },
   "7010121": {
@@ -39254,7 +39308,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "Tag1": "GreenChess",
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010121
   },
   "7010122": {
@@ -39279,7 +39333,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010121
   },
   "7010123": {
@@ -39305,7 +39359,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010121
   },
   "7010124": {
@@ -39357,7 +39411,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010121
   },
   "7010126": {
@@ -39383,7 +39437,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010121
   },
   "7010127": {
@@ -39415,7 +39469,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "Tag1": "RedChess",
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010115
   },
   "7010128": {
@@ -39447,8 +39501,389 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "Tag1": "GreenChess",
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 7010121
+  },
+  "7010129": {
+    "Id": 7010129,
+    "EpicLv": 8,
+    "BloodType": 8,
+    "FCId": 7200101,
+    "FAId": 7200101,
+    "MovType": 3,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010129,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "Tag1": "RedChess",
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010129
+  },
+  "7010130": {
+    "Id": 7010130,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200301,
+    "FAId": 7200301,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010130,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010129
+  },
+  "7010131": {
+    "Id": 7010131,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200401,
+    "FAId": 7200401,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010130,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010129
+  },
+  "7010132": {
+    "Id": 7010132,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200501,
+    "FAId": 7200501,
+    "MovType": 3,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010130,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 3,
+    "MonsterTeamId": 7010129
+  },
+  "7010133": {
+    "Id": 7010133,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200601,
+    "FAId": 7200601,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010130,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010129
+  },
+  "7010134": {
+    "Id": 7010134,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200701,
+    "FAId": 7200701,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010141,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010129
+  },
+  "7010135": {
+    "Id": 7010135,
+    "EpicLv": 8,
+    "BloodType": 8,
+    "FCId": 7200201,
+    "FAId": 7200201,
+    "MovType": 3,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010129,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "Tag1": "GreenChess",
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010135
+  },
+  "7010136": {
+    "Id": 7010136,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200301,
+    "FAId": 7200302,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010130,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010135
+  },
+  "7010137": {
+    "Id": 7010137,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200401,
+    "FAId": 7200402,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010130,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010135
+  },
+  "7010138": {
+    "Id": 7010138,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200501,
+    "FAId": 7200502,
+    "MovType": 3,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010130,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 3,
+    "MonsterTeamId": 7010135
+  },
+  "7010139": {
+    "Id": 7010139,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200601,
+    "FAId": 7200602,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010130,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010135
+  },
+  "7010140": {
+    "Id": 7010140,
+    "EpicLv": 5,
+    "BloodType": 2,
+    "FCId": 7200701,
+    "FAId": 7200702,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010141,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010135
+  },
+  "7010141": {
+    "Id": 7010141,
+    "EpicLv": 8,
+    "BloodType": 8,
+    "FCId": 7200101,
+    "FAId": 7200101,
+    "MovType": 3,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010134,
+    "BuffIds": [
+      720010100
+    ],
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "Tag1": "RedChess",
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010129
+  },
+  "7010142": {
+    "Id": 7010142,
+    "EpicLv": 8,
+    "BloodType": 8,
+    "FCId": 7200201,
+    "FAId": 7200201,
+    "MovType": 3,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 130000,
+    "VisionDeg": 1800000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 990000,
+    "RotSpd": 3600000,
+    "Templete": 7010134,
+    "BuffIds": [
+      720010110
+    ],
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 99,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "Tag1": "GreenChess",
+    "BlockPriority": 999,
+    "MonsterTeamId": 7010135
   },
   "1230001": {
     "Id": 1230001,
@@ -47485,6 +47920,342 @@
     "Weight": 2,
     "BlockPriority": 2
   },
+  "1230296": {
+    "Id": 1230296,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5002121,
+    "FAId": 5002103,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 600000,
+    "HearRng": 70000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001033,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 3,
+    "BlockPriority": 2
+  },
+  "1230297": {
+    "Id": 1230297,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5002301,
+    "FAId": 5003103,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 18000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 1200000,
+    "HearRng": 100000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001030,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 3,
+    "BlockPriority": 1
+  },
+  "1230298": {
+    "Id": 1230298,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5021104,
+    "FAId": 5021104,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 600000,
+    "HearRng": 70000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001030,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 2,
+    "BlockPriority": 2
+  },
+  "1230299": {
+    "Id": 1230299,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5012161,
+    "FAId": 5012105,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 600000,
+    "HearRng": 70000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001035,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 3,
+    "BlockPriority": 2
+  },
+  "1230300": {
+    "Id": 1230300,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5021104,
+    "FAId": 5021104,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 18000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 1200000,
+    "HearRng": 100000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001030,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 3,
+    "BlockPriority": 1
+  },
+  "1230301": {
+    "Id": 1230301,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5014121,
+    "FAId": 5014102,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 600000,
+    "HearRng": 70000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001030,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 2,
+    "BlockPriority": 2
+  },
+  "1230302": {
+    "Id": 1230302,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5002121,
+    "FAId": 5002103,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 600000,
+    "HearRng": 70000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001032,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 3,
+    "BlockPriority": 2
+  },
+  "1230303": {
+    "Id": 1230303,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5055107,
+    "FAId": 5055105,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 18000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 1200000,
+    "HearRng": 100000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001030,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 3,
+    "BlockPriority": 1
+  },
+  "1230304": {
+    "Id": 1230304,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5021104,
+    "FAId": 5021104,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 600000,
+    "HearRng": 70000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001030,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 2,
+    "BlockPriority": 2
+  },
+  "1230305": {
+    "Id": 1230305,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5012161,
+    "FAId": 5012105,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 600000,
+    "HearRng": 70000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001032,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 3,
+    "BlockPriority": 2
+  },
+  "1230306": {
+    "Id": 1230306,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5021104,
+    "FAId": 5021104,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 18000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 1200000,
+    "HearRng": 100000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001030,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 3,
+    "BlockPriority": 1
+  },
+  "1230307": {
+    "Id": 1230307,
+    "EpicLv": 4,
+    "BloodType": 1,
+    "FCId": 5014121,
+    "FAId": 5014102,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 50000,
+    "VisionDeg": 600000,
+    "HearRng": 70000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 10001030,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 2,
+    "BlockPriority": 2
+  },
   "1300101": {
     "Id": 1300101,
     "EpicLv": 5,
@@ -48401,7 +49172,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 1300701
   },
   "1300702": {
@@ -49099,7 +49870,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 5,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "1400407": {
     "Id": 1400407,
@@ -49285,7 +50056,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 5,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "1400501": {
     "Id": 1400501,
@@ -50334,7 +51105,7 @@
     "Weight": 99,
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "1400360": {
     "Id": 1400360,
@@ -50390,7 +51161,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 1400450
   },
   "1400420": {
@@ -50471,7 +51242,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 1400450
   },
   "1400460": {
@@ -51206,7 +51977,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 4,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "1653001": {
     "Id": 1653001,
@@ -51260,7 +52031,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 1653001
   },
   "1653003": {
@@ -51285,7 +52056,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 1653001
   },
   "1653004": {
@@ -51310,7 +52081,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 1653001
   },
   "1653005": {
@@ -51335,7 +52106,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 1653001
   },
   "1603101": {
@@ -51412,7 +52183,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "1700101": {
     "Id": 1700101,
@@ -52157,7 +52928,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 1200312
   },
   "1200313": {
@@ -53605,7 +54376,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6009101
   },
   "6009102": {
@@ -53740,7 +54511,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6009111
   },
   "6009112": {
@@ -53875,7 +54646,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6009121
   },
   "6009122": {
@@ -54067,7 +54838,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6009131
   },
   "6009132": {
@@ -54987,7 +55758,7 @@
     "IsToughnessRecorver": true,
     "Tag1": "Easy",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6201101
   },
   "6201102": {
@@ -55097,7 +55868,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "6201111": {
     "Id": 6201111,
@@ -55129,7 +55900,7 @@
     "IsToughnessRecorver": true,
     "Tag1": "Normal",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6201111
   },
   "6201112": {
@@ -55239,7 +56010,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "6201121": {
     "Id": 6201121,
@@ -55272,7 +56043,7 @@
     "Tag1": "Normal",
     "Tag2": "Boss",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6201121
   },
   "6201122": {
@@ -55382,7 +56153,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "6201131": {
     "Id": 6201131,
@@ -55415,7 +56186,7 @@
     "Tag1": "Hard",
     "Tag2": "Boss",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6201131
   },
   "6201132": {
@@ -55525,7 +56296,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "6202101": {
     "Id": 6202101,
@@ -55834,7 +56605,7 @@
     "IsToughnessRecorver": true,
     "Tag2": "Boss",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6203101
   },
   "6203102": {
@@ -55922,7 +56693,7 @@
     "IsToughnessRecorver": true,
     "Tag2": "Boss",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6203111
   },
   "6203112": {
@@ -56347,7 +57118,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 5,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "6204105": {
     "Id": 6204105,
@@ -56486,7 +57257,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 5,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6205101
   },
   "6205103": {
@@ -56601,7 +57372,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 5,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6205111
   },
   "6205113": {
@@ -56713,7 +57484,7 @@
     "IsToughnessRecorver": true,
     "Tag1": "Easy",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6206101
   },
   "6206102": {
@@ -56795,7 +57566,7 @@
     "IsToughnessRecorver": true,
     "Tag1": "Normal",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6206111
   },
   "6206112": {
@@ -56878,7 +57649,7 @@
     "Tag1": "Normal",
     "Tag2": "Boss",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6206121
   },
   "6206122": {
@@ -56990,7 +57761,7 @@
     "Tag1": "Hard",
     "Tag2": "Boss",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6206131
   },
   "6206132": {
@@ -57102,7 +57873,7 @@
     "Tag1": "Hard",
     "Tag2": "Boss",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 6206131
   },
   "6400700": {
@@ -66369,7 +67140,7 @@
     "SubType": 1,
     "Faction": 6,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 3060091
   },
   "3060101": {
@@ -67188,7 +67959,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 3090001
   },
   "3090012": {
@@ -67213,7 +67984,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 3090002
   },
   "3090003": {
@@ -67298,7 +68069,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 3090003
   },
   "3090014": {
@@ -67323,7 +68094,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 3090003
   },
   "3090015": {
@@ -67348,7 +68119,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 3090003
   },
   "3090016": {
@@ -67373,7 +68144,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 3090003
   },
   "3090017": {
@@ -67398,7 +68169,7 @@
     "SubType": 1,
     "Faction": 3,
     "Weight": 99,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "3090021": {
     "Id": 3090021,
@@ -69237,6 +70008,716 @@
     "BlockPriority": 4,
     "MonsterTeamId": 3120111
   },
+  "3130001": {
+    "Id": 3130001,
+    "EpicLv": 2,
+    "BloodType": 3,
+    "FCId": 3130101,
+    "FAId": 3130101,
+    "MovType": 2,
+    "RunSpd": 40000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 18000,
+    "MovAcc": 700000,
+    "VisionRng": 250000,
+    "VisionDeg": 1200000,
+    "HearRng": 990000,
+    "RefRng": 990000,
+    "ActRng": 990000,
+    "DisActRng": 990000,
+    "SearchRng": 900000,
+    "RotSpd": 6000000,
+    "Templete": 3130001,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 5,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "Tag1": "Monster1",
+    "AttackHintType": 1,
+    "BlockPriority": 3,
+    "MonsterTeamId": 3130001
+  },
+  "3130002": {
+    "Id": 3130002,
+    "EpicLv": 5,
+    "FCId": 3130104,
+    "FAId": 3130201,
+    "MovType": 2,
+    "RunSpd": 60000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 100000,
+    "VisionDeg": 1200000,
+    "HearRng": 3600000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130002,
+    "BuffIds": [
+      313020000
+    ],
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130001
+  },
+  "3130003": {
+    "Id": 3130003,
+    "EpicLv": 5,
+    "FCId": 3130105,
+    "FAId": 3130301,
+    "MovType": 2,
+    "RunSpd": 60000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 100000,
+    "VisionDeg": 1200000,
+    "HearRng": 3600000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130003,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130001
+  },
+  "3130004": {
+    "Id": 3130004,
+    "EpicLv": 5,
+    "FCId": 3130106,
+    "FAId": 9990001,
+    "MovType": 2,
+    "RunSpd": 24000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 900000,
+    "VisionDeg": 3600000,
+    "HearRng": 900000,
+    "RefRng": 900000,
+    "ActRng": 900000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 60000000,
+    "Templete": 3130004,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130001
+  },
+  "3130005": {
+    "Id": 3130005,
+    "EpicLv": 5,
+    "FCId": 3130107,
+    "FAId": 9990001,
+    "MovType": 2,
+    "RunSpd": 25000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 900000,
+    "VisionDeg": 3600000,
+    "HearRng": 900000,
+    "RefRng": 900000,
+    "ActRng": 900000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 60000000,
+    "Templete": 3130005,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130001
+  },
+  "3130006": {
+    "Id": 3130006,
+    "EpicLv": 5,
+    "FCId": 3130108,
+    "FAId": 9990001,
+    "MovType": 2,
+    "RunSpd": 25000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 900000,
+    "VisionDeg": 3600000,
+    "HearRng": 900000,
+    "RefRng": 900000,
+    "ActRng": 900000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 60000000,
+    "Templete": 3130006,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130001
+  },
+  "3130007": {
+    "Id": 3130007,
+    "EpicLv": 5,
+    "FCId": 3130109,
+    "FAId": 9990001,
+    "MovType": 2,
+    "RunSpd": 13000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 900000,
+    "VisionDeg": 3600000,
+    "HearRng": 900000,
+    "RefRng": 900000,
+    "ActRng": 900000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 60000000,
+    "Templete": 3130007,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130001
+  },
+  "3130011": {
+    "Id": 3130011,
+    "EpicLv": 2,
+    "BloodType": 3,
+    "FCId": 3130101,
+    "FAId": 3130101,
+    "MovType": 2,
+    "RunSpd": 40000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 18000,
+    "MovAcc": 700000,
+    "VisionRng": 250000,
+    "VisionDeg": 1200000,
+    "HearRng": 990000,
+    "RefRng": 990000,
+    "ActRng": 990000,
+    "DisActRng": 990000,
+    "SearchRng": 900000,
+    "RotSpd": 6000000,
+    "Templete": 3130011,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 5,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "AttackHintType": 1,
+    "BlockPriority": 3,
+    "MonsterTeamId": 3130011
+  },
+  "3130012": {
+    "Id": 3130012,
+    "EpicLv": 5,
+    "FCId": 3130104,
+    "FAId": 3130201,
+    "MovType": 2,
+    "RunSpd": 60000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 100000,
+    "VisionDeg": 1200000,
+    "HearRng": 3600000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130012,
+    "BuffIds": [
+      313020000
+    ],
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130011
+  },
+  "3130013": {
+    "Id": 3130013,
+    "EpicLv": 5,
+    "FCId": 3130105,
+    "FAId": 3130301,
+    "MovType": 2,
+    "RunSpd": 60000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 100000,
+    "VisionDeg": 1200000,
+    "HearRng": 3600000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130013,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130011
+  },
+  "3130014": {
+    "Id": 3130014,
+    "EpicLv": 5,
+    "FCId": 3130106,
+    "FAId": 9990001,
+    "MovType": 2,
+    "RunSpd": 24000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 900000,
+    "VisionDeg": 3600000,
+    "HearRng": 900000,
+    "RefRng": 900000,
+    "ActRng": 900000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 60000000,
+    "Templete": 3130014,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130011
+  },
+  "3130015": {
+    "Id": 3130015,
+    "EpicLv": 5,
+    "FCId": 3130107,
+    "FAId": 9990001,
+    "MovType": 2,
+    "RunSpd": 25000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 900000,
+    "VisionDeg": 3600000,
+    "HearRng": 900000,
+    "RefRng": 900000,
+    "ActRng": 900000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 60000000,
+    "Templete": 3130015,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130011
+  },
+  "3130016": {
+    "Id": 3130016,
+    "EpicLv": 5,
+    "FCId": 3130108,
+    "FAId": 9990001,
+    "MovType": 2,
+    "RunSpd": 25000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 900000,
+    "VisionDeg": 3600000,
+    "HearRng": 900000,
+    "RefRng": 900000,
+    "ActRng": 900000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 60000000,
+    "Templete": 3130016,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130011
+  },
+  "3130017": {
+    "Id": 3130017,
+    "EpicLv": 5,
+    "FCId": 3130109,
+    "FAId": 9990001,
+    "MovType": 2,
+    "RunSpd": 13000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 900000,
+    "VisionDeg": 3600000,
+    "HearRng": 900000,
+    "RefRng": 900000,
+    "ActRng": 900000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 60000000,
+    "Templete": 3130017,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 999,
+    "MonsterTeamId": 3130011
+  },
+  "3130021": {
+    "Id": 3130021,
+    "EpicLv": 2,
+    "BloodType": 3,
+    "FCId": 5017103,
+    "FAId": 5017101,
+    "MovType": 2,
+    "RunSpd": 60000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 40000,
+    "MovAcc": 1000000,
+    "VisionRng": 120000,
+    "VisionDeg": 1200000,
+    "HearRng": 60000,
+    "RefRng": 990000,
+    "ActRng": 990000,
+    "DisActRng": 1000000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130021,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 5,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "BlockPriority": 4,
+    "MonsterTeamId": 3130021
+  },
+  "3130022": {
+    "Id": 3130022,
+    "EpicLv": 5,
+    "FCId": 5017111,
+    "FAId": 5017102,
+    "MovType": 2,
+    "RunSpd": 35000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 18000,
+    "MovAcc": 700000,
+    "VisionRng": 100000,
+    "VisionDeg": 1200000,
+    "HearRng": 3600000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130022,
+    "BuffIds": [
+      501710001
+    ],
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 3,
+    "MonsterTeamId": 3130021
+  },
+  "3130031": {
+    "Id": 3130031,
+    "EpicLv": 2,
+    "BloodType": 3,
+    "FCId": 5017103,
+    "FAId": 5017101,
+    "MovType": 2,
+    "RunSpd": 60000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 40000,
+    "MovAcc": 1000000,
+    "VisionRng": 120000,
+    "VisionDeg": 1200000,
+    "HearRng": 60000,
+    "RefRng": 990000,
+    "ActRng": 990000,
+    "DisActRng": 1000000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130031,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 5,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "Tag1": "Hard",
+    "BlockPriority": 4,
+    "MonsterTeamId": 3130031
+  },
+  "3130032": {
+    "Id": 3130032,
+    "EpicLv": 5,
+    "FCId": 5017111,
+    "FAId": 5017102,
+    "MovType": 2,
+    "RunSpd": 35000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 18000,
+    "MovAcc": 700000,
+    "VisionRng": 100000,
+    "VisionDeg": 1200000,
+    "HearRng": 3600000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130032,
+    "BuffIds": [
+      501710001
+    ],
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "BlockPriority": 3,
+    "MonsterTeamId": 3130031
+  },
+  "3130041": {
+    "Id": 3130041,
+    "EpicLv": 5,
+    "BloodType": 1,
+    "FCId": 5006101,
+    "FAId": 5006101,
+    "MovType": 2,
+    "RunSpd": 35000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 21000,
+    "MovAcc": 700000,
+    "VisionRng": 300000,
+    "VisionDeg": 1200000,
+    "HearRng": 300000,
+    "RefRng": 900000,
+    "ActRng": 980000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130041,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 1,
+    "BlockPriority": 1
+  },
+  "3130042": {
+    "Id": 3130042,
+    "EpicLv": 5,
+    "BloodType": 1,
+    "FCId": 5015103,
+    "FAId": 5015103,
+    "MovType": 2,
+    "RunSpd": 40000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 24000,
+    "MovAcc": 700000,
+    "VisionRng": 150000,
+    "VisionDeg": 1200000,
+    "HearRng": 150000,
+    "RefRng": 900000,
+    "ActRng": 900000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 3130042,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 2,
+    "BlockPriority": 2
+  },
+  "3130043": {
+    "Id": 3130043,
+    "EpicLv": 5,
+    "BloodType": 1,
+    "FCId": 1001601,
+    "FAId": 1001601,
+    "MovType": 2,
+    "RunSpd": 30000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 8000,
+    "MovAcc": 700000,
+    "VisionRng": 80000,
+    "VisionDeg": 600000,
+    "HearRng": 30000,
+    "RefRng": 400000,
+    "ActRng": 300000,
+    "DisActRng": 250000,
+    "SearchRng": 250000,
+    "RotSpd": 3000000,
+    "Templete": 3130043,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 3,
+    "BlockPriority": 2
+  },
+  "3130044": {
+    "Id": 3130044,
+    "EpicLv": 5,
+    "BloodType": 1,
+    "FCId": 3001101,
+    "FAId": 3001101,
+    "MovType": 2,
+    "RunSpd": 40000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 18000,
+    "MovAcc": 700000,
+    "VisionRng": 60000,
+    "VisionDeg": 3600000,
+    "HearRng": 60000,
+    "RefRng": 3600000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 980000,
+    "RotSpd": 3000000,
+    "Templete": 3130044,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 2,
+    "BlockPriority": 2
+  },
+  "3130045": {
+    "Id": 3130045,
+    "EpicLv": 5,
+    "BloodType": 1,
+    "FCId": 3011101,
+    "FAId": 3011101,
+    "MovType": 2,
+    "RunSpd": 40000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 20000,
+    "MovAcc": 700000,
+    "VisionRng": 80000,
+    "VisionDeg": 3600000,
+    "HearRng": 80000,
+    "RefRng": 3600000,
+    "ActRng": 300000,
+    "DisActRng": 900000,
+    "SearchRng": 900000,
+    "RotSpd": 2400000,
+    "Templete": 3130045,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 1,
+    "BlockPriority": 2
+  },
+  "3130046": {
+    "Id": 3130046,
+    "EpicLv": 4,
+    "BloodType": 2,
+    "FCId": 3002101,
+    "FAId": 3002101,
+    "MovType": 2,
+    "RunSpd": 50000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 16000,
+    "MovAcc": 700000,
+    "VisionRng": 120000,
+    "VisionDeg": 3600000,
+    "HearRng": 80000,
+    "RefRng": 3600000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 980000,
+    "RotSpd": 2400000,
+    "Templete": 3130046,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 3,
+    "BlockPriority": 3
+  },
+  "3130047": {
+    "Id": 3130047,
+    "EpicLv": 4,
+    "BloodType": 2,
+    "FCId": 3012101,
+    "FAId": 3012101,
+    "MovType": 2,
+    "RunSpd": 20000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 15000,
+    "MovAcc": 700000,
+    "VisionRng": 120000,
+    "VisionDeg": 3600000,
+    "HearRng": 120000,
+    "RefRng": 3600000,
+    "ActRng": 990000,
+    "DisActRng": 980000,
+    "SearchRng": 980000,
+    "RotSpd": 3000000,
+    "Templete": 3130047,
+    "SubType": 1,
+    "Faction": 3,
+    "Weight": 3,
+    "BlockPriority": 3
+  },
   "5000100": {
     "Id": 5000100,
     "EpicLv": 5,
@@ -70943,7 +72424,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5001000
   },
   "5001100": {
@@ -72871,7 +74352,7 @@
     "Weight": 5,
     "ToughnessBrokenTime": 100000,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5050400
   },
   "5050401": {
@@ -72901,7 +74382,7 @@
       2
     ],
     "Weight": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5050400
   },
   "5050402": {
@@ -72931,7 +74412,7 @@
       2
     ],
     "Weight": 4,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5050400
   },
   "5050403": {
@@ -72996,7 +74477,7 @@
     "Weight": 5,
     "ToughnessBrokenTime": 100000,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5050410
   },
   "5050411": {
@@ -73029,7 +74510,7 @@
     ],
     "Weight": 1,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5050410
   },
   "5050412": {
@@ -73059,7 +74540,7 @@
       2
     ],
     "Weight": 4,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5050410
   },
   "5050413": {
@@ -73399,7 +74880,7 @@
     ],
     "Weight": 99,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5050640
   },
   "5050650": {
@@ -73490,7 +74971,7 @@
     "Weight": 5,
     "ToughnessBrokenTime": 100000,
     "AttackHintType": 1,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "5050800": {
     "Id": 5050800,
@@ -73732,7 +75213,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051010
   },
   "5051012": {
@@ -73761,7 +75242,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051010
   },
   "5051001": {
@@ -73790,7 +75271,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051000
   },
   "5051100": {
@@ -73913,7 +75394,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051200
   },
   "5051210": {
@@ -73976,7 +75457,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051210
   },
   "5051300": {
@@ -74036,7 +75517,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051300
   },
   "5051302": {
@@ -74065,7 +75546,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051300
   },
   "5051310": {
@@ -74128,7 +75609,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051310
   },
   "5051312": {
@@ -74157,7 +75638,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051310
   },
   "5051400": {
@@ -74189,7 +75670,7 @@
     "ToughnessBrokenTime": 100000,
     "Tag1": "Hard",
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5051400
   },
   "5051401": {
@@ -74666,7 +76147,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5060400
   },
   "5060401": {
@@ -74699,7 +76180,7 @@
     ],
     "Weight": 1,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5060400
   },
   "5060402": {
@@ -74729,7 +76210,7 @@
       2
     ],
     "Weight": 4,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5060400
   },
   "5060403": {
@@ -75058,7 +76539,7 @@
     ],
     "Weight": 99,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5060640
   },
   "5060650": {
@@ -75158,7 +76639,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4
+    "BlockPriority": 999
   },
   "5060800": {
     "Id": 5060800,
@@ -75316,7 +76797,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5061000
   },
   "5061100": {
@@ -75409,7 +76890,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5061200
   },
   "5061300": {
@@ -75473,7 +76954,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5061300
   },
   "5061302": {
@@ -75502,7 +76983,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5061300
   },
   "5070100": {
@@ -77336,7 +78817,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070900
   },
   "5070901": {
@@ -77370,7 +78851,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070900
   },
   "5070902": {
@@ -77404,7 +78885,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070900
   },
   "5070903": {
@@ -77438,7 +78919,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070900
   },
   "5070910": {
@@ -77471,7 +78952,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070910
   },
   "5070911": {
@@ -77505,7 +78986,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070910
   },
   "5070912": {
@@ -77539,7 +79020,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070910
   },
   "5070913": {
@@ -77573,7 +79054,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070910
   },
   "5070920": {
@@ -77606,7 +79087,7 @@
     "ToughnessBrokenTime": 100000,
     "IsToughnessRecorver": true,
     "AttackHintType": 1,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070920
   },
   "5070921": {
@@ -77640,7 +79121,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070920
   },
   "5070922": {
@@ -77674,7 +79155,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070920
   },
   "5070923": {
@@ -77708,7 +79189,7 @@
       2
     ],
     "Weight": 99,
-    "BlockPriority": 4,
+    "BlockPriority": 999,
     "MonsterTeamId": 5070920
   },
   "5070924": {
@@ -78714,9 +80195,9 @@
     "FCId": 16000011,
     "FAId": 16000011,
     "MovType": 1,
-    "RunSpd": 100000,
+    "RunSpd": 30000,
     "TransSpdScale": 6000,
-    "WalkSpd": 35000,
+    "WalkSpd": 30000,
     "MovAcc": 600000,
     "VisionRng": 200000,
     "VisionDeg": 750000,
@@ -79424,5 +80905,140 @@
     ],
     "Weight": 4,
     "BlockPriority": 2
+  },
+  "6400110": {
+    "Id": 6400110,
+    "EpicLv": 2,
+    "SubBossType": 4,
+    "BloodType": 7,
+    "FCId": 1001239,
+    "FAId": 1001201,
+    "MovType": 2,
+    "RunSpd": 45000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 16000,
+    "MovAcc": 700000,
+    "VisionRng": 150000,
+    "VisionDeg": 3600000,
+    "HearRng": 140000,
+    "RefRng": 900000,
+    "ActRng": 140000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 6400110,
+    "BuffIds": [
+      100129910
+    ],
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "AttackHintType": 1,
+    "BlockPriority": 3
+  },
+  "6400120": {
+    "Id": 6400120,
+    "EpicLv": 2,
+    "SubBossType": 4,
+    "BloodType": 7,
+    "FCId": 5018103,
+    "FAId": 5018101,
+    "MovType": 2,
+    "RunSpd": 50000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 80000,
+    "MovAcc": 700000,
+    "VisionRng": 990000,
+    "VisionDeg": 3600000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 300000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 6400120,
+    "BuffIds": [
+      501810002
+    ],
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "AttackHintType": 1,
+    "BlockPriority": 3,
+    "MonsterTeamId": 6400120
+  },
+  "6400121": {
+    "Id": 6400121,
+    "EpicLv": 5,
+    "BloodType": 1,
+    "FCId": 5018101,
+    "FAId": 5018101,
+    "MovType": 2,
+    "RunSpd": 25000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 25000,
+    "MovAcc": 700000,
+    "VisionRng": 990000,
+    "VisionDeg": 3600000,
+    "HearRng": 990000,
+    "RefRng": 900000,
+    "ActRng": 990000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 3000000,
+    "Templete": 6400121,
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 99,
+    "BlockPriority": 4,
+    "MonsterTeamId": 6400120
+  },
+  "6400130": {
+    "Id": 6400130,
+    "EpicLv": 2,
+    "SubBossType": 4,
+    "BloodType": 7,
+    "FCId": 5025112,
+    "FAId": 5025111,
+    "MovType": 2,
+    "RunSpd": 60000,
+    "TransSpdScale": 6000,
+    "WalkSpd": 15000,
+    "MovAcc": 700000,
+    "VisionRng": 300000,
+    "VisionDeg": 1200000,
+    "HearRng": 140000,
+    "RefRng": 900000,
+    "ActRng": 140000,
+    "DisActRng": 990000,
+    "SearchRng": 990000,
+    "RotSpd": 5000000,
+    "Templete": 6400130,
+    "BuffIds": [
+      100129910
+    ],
+    "SubType": 1,
+    "Faction": 3,
+    "TrapTagIds": [
+      2
+    ],
+    "Weight": 4,
+    "ToughnessBrokenTime": 100000,
+    "IsToughnessRecorver": true,
+    "AttackHintType": 1,
+    "BlockPriority": 3
   }
 }

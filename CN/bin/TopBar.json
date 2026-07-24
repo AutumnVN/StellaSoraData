@@ -363,19 +363,19 @@
     "Id": "TrialLevelSelect",
     "Title": "TopBar.TrialLevelSelect.1"
   },
-  "JointDrillBuildList_510001": {
-    "Id": "JointDrillBuildList_510001",
-    "Title": "TopBar.JointDrillBuildList_510001.1",
+  "JointDrillBuildList_Mode1": {
+    "Id": "JointDrillBuildList_Mode1",
+    "Title": "TopBar.JointDrillBuildList_Mode1.1",
     "EntryId": 201602
   },
-  "JointDrillLevelSelect_510001": {
-    "Id": "JointDrillLevelSelect_510001",
-    "Title": "TopBar.JointDrillLevelSelect_510001.1",
+  "JointDrillLevelSelect_Mode1": {
+    "Id": "JointDrillLevelSelect_Mode1",
+    "Title": "TopBar.JointDrillLevelSelect_Mode1.1",
     "EntryId": 201601
   },
-  "JointDrillRanking_510001": {
-    "Id": "JointDrillRanking_510001",
-    "Title": "TopBar.JointDrillRanking_510001.1"
+  "JointDrillRanking_Mode1": {
+    "Id": "JointDrillRanking_Mode1",
+    "Title": "TopBar.JointDrillRanking_Mode1.1"
   },
   "TowerDefenseCharacterDetailPanel": {
     "Id": "TowerDefenseCharacterDetailPanel",
@@ -751,19 +751,19 @@
       73110
     ]
   },
-  "JointDrillBuildList_510003": {
-    "Id": "JointDrillBuildList_510003",
-    "Title": "TopBar.JointDrillBuildList_510003.1",
+  "JointDrillBuildList_Mode2": {
+    "Id": "JointDrillBuildList_Mode2",
+    "Title": "TopBar.JointDrillBuildList_Mode2.1",
     "EntryId": 201602
   },
-  "JointDrillLevelSelect_510003": {
-    "Id": "JointDrillLevelSelect_510003",
-    "Title": "TopBar.JointDrillLevelSelect_510003.1",
+  "JointDrillLevelSelect_Mode2": {
+    "Id": "JointDrillLevelSelect_Mode2",
+    "Title": "TopBar.JointDrillLevelSelect_Mode2.1",
     "EntryId": 201601
   },
-  "JointDrillRanking_510003": {
-    "Id": "JointDrillRanking_510003",
-    "Title": "TopBar.JointDrillRanking_510003.1"
+  "JointDrillRanking_Mode2": {
+    "Id": "JointDrillRanking_Mode2",
+    "Title": "TopBar.JointDrillRanking_Mode2.1"
   },
   "Shop_10104": {
     "Id": "Shop_10104",
@@ -1041,20 +1041,6 @@
     "Id": "CookieBoardPanel_400010",
     "Title": "TopBar.CookieBoardPanel_400010.1"
   },
-  "JointDrillBuildList_510005": {
-    "Id": "JointDrillBuildList_510005",
-    "Title": "TopBar.JointDrillBuildList_510005.1",
-    "EntryId": 201602
-  },
-  "JointDrillLevelSelect_510005": {
-    "Id": "JointDrillLevelSelect_510005",
-    "Title": "TopBar.JointDrillLevelSelect_510005.1",
-    "EntryId": 201601
-  },
-  "JointDrillRanking_510005": {
-    "Id": "JointDrillRanking_510005",
-    "Title": "TopBar.JointDrillRanking_510005.1"
-  },
   "Task_11100": {
     "Id": "Task_11100",
     "Title": "TopBar.Task_11100.1",
@@ -1123,5 +1109,95 @@
     "CoinIds": [
       73112
     ]
+  },
+  "SoldierTestEnter": {
+    "Id": "SoldierTestEnter",
+    "Title": "TopBar.SoldierTestEnter.1"
+  },
+  "TraceHunt": {
+    "Id": "TraceHunt",
+    "Title": "TopBar.TraceHunt.1",
+    "EntryId": 201701
+  },
+  "TraceHuntHelp": {
+    "Id": "TraceHuntHelp",
+    "Title": "TopBar.TraceHuntHelp.1",
+    "EntryId": 201701
+  },
+  "TraceHuntHandBook": {
+    "Id": "TraceHuntHandBook",
+    "Title": "TopBar.TraceHuntHandBook.1",
+    "EntryId": 201701
+  },
+  "ActivityLevelsSelectPanel_20103": {
+    "Id": "ActivityLevelsSelectPanel_20103",
+    "Title": "TopBar.ActivityLevelsSelectPanel_20103.1",
+    "Energy": true
+  },
+  "Shop_20103": {
+    "Id": "Shop_20103",
+    "Title": "TopBar.Shop_20103.1",
+    "Coin": true
+  },
+  "Task_20103": {
+    "Id": "Task_20103",
+    "Title": "TopBar.Task_20103.1",
+    "Coin": true,
+    "CoinIds": [
+      73113
+    ]
+  },
+  "SummerCheckinStory_20103": {
+    "Id": "SummerCheckinStory_20103",
+    "Title": "TopBar.SummerCheckinStory_20103.1"
+  },
+  "Main_20103": {
+    "Id": "Main_20103",
+    "Title": "TopBar.Main_20103.1",
+    "Coin": true,
+    "CoinIds": [
+      73113
+    ]
+  },
+  "IceCreamLevelsSelectPanel": {
+    "Id": "IceCreamLevelsSelectPanel",
+    "Title": "TopBar.IceCreamLevelsSelectPanel.1",
+    "Coin": true,
+    "CoinIds": [
+      73113
+    ]
+  },
+  "MiningGame_400014": {
+    "Id": "MiningGame_400014",
+    "Title": "TopBar.MiningGame_400014.1",
+    "EntryId": 400101
+  },
+  "MiningGameGuidePanel_400014": {
+    "Id": "MiningGameGuidePanel_400014",
+    "Title": "TopBar.MiningGameGuidePanel_400014.1"
+  },
+  "SoldierMainViewPanel": {
+    "Id": "SoldierMainViewPanel",
+    "Title": "TopBar.SoldierMainViewPanel.1"
+  },
+  "SoldierLevelSelectPanel": {
+    "Id": "SoldierLevelSelectPanel",
+    "Title": "TopBar.SoldierLevelSelectPanel.1"
+  },
+  "SoldierHandbookPanel": {
+    "Id": "SoldierHandbookPanel",
+    "Title": "TopBar.SoldierHandbookPanel.1"
+  },
+  "SoldierRecommendPanel": {
+    "Id": "SoldierRecommendPanel",
+    "Title": "TopBar.SoldierRecommendPanel.1"
+  },
+  "SoldierHandbookSelectPanel": {
+    "Id": "SoldierHandbookSelectPanel",
+    "Title": "TopBar.SoldierHandbookSelectPanel.1"
+  },
+  "SoldierRecommendDetailPanel": {
+    "Id": "SoldierRecommendDetailPanel",
+    "Title": "TopBar.SoldierRecommendDetailPanel.1"
   }
 }

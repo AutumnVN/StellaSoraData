@@ -989,6 +989,30 @@
     "Template": "ErrorCode.112901.1",
     "ShowType": 1
   },
+  "11300": {
+    "Id": 11300,
+    "Title": "ErrTraceHuntControlEnd",
+    "Template": "ErrorCode.11300.1",
+    "ShowType": 1
+  },
+  "11301": {
+    "Id": 11301,
+    "Title": "ErrTraceHuntBossTimeout",
+    "Template": "ErrorCode.11301.1",
+    "ShowType": 1
+  },
+  "11401": {
+    "Id": 11401,
+    "Title": "ErrSoldierNoData",
+    "Template": "ErrorCode.11401.1",
+    "ShowType": 1
+  },
+  "11402": {
+    "Id": 11402,
+    "Title": "ErrSoldierInProgress",
+    "Template": "ErrorCode.11402.1",
+    "ShowType": 1
+  },
   "119901": {
     "Id": 119901,
     "Title": "ErrCapOverflow",
@@ -1072,5 +1096,11 @@
     "Title": "ErrDataUpdated",
     "Template": "ErrorCode.119914.1",
     "ShowType": 3
+  },
+  "119915": {
+    "Id": 119915,
+    "Title": "ErrActivityNotExist",
+    "Template": "ErrorCode.119915.1",
+    "ShowType": 1
   }
 }
