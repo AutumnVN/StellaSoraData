@@ -283,7 +283,7 @@ function getSkillEffectTypes(skillId) {
         if (!BUFFVALUE[buffId]) buffId += 10;
         if (!BUFFVALUE[buffId]) continue;
 
-        const effectIds = BUFFVALUE[buffId].Effects;
+        const effectIds = BUFFVALUE[buffId].Effects || [];
 
         for (const effectId of effectIds) {
             if (!EFFECTVALUE[effectId]) continue;
@@ -628,7 +628,7 @@ function getPotentialEffectTypes(potId) {
         if (!BUFFVALUE[buffId]) buffId += 10;
         if (!BUFFVALUE[buffId]) continue;
 
-        const effectIds = BUFFVALUE[buffId].Effects;
+        const effectIds = BUFFVALUE[buffId].Effects || [];
 
         for (const effectId of effectIds) {
             if (!EFFECTVALUE[effectId]) continue;
@@ -827,7 +827,7 @@ function getTalentEffectTypes(talentId) {
         if (!BUFFVALUE[buffId]) buffId += 10;
         if (!BUFFVALUE[buffId]) continue;
 
-        const effectIds = BUFFVALUE[buffId].Effects;
+        const effectIds = BUFFVALUE[buffId].Effects || [] || [];
 
         for (const effectId of effectIds) {
             if (!EFFECTVALUE[effectId]) continue;
