@@ -937,6 +937,38 @@ function formatAddAttrType(type, paramType, element) {
     return result;
 }
 
+function badScaleAfterLevel(params) {
+    const levelParams = params
+        .filter(param => typeof param === 'string' && param.includes('/') && param.split('/').length === 9)
+        .map(param => param.split('/').map(p => parseFloat(p)));
+
+    if (!levelParams.length) return undefined;
+
+    const diffsByParam = levelParams.map(levels => levels.slice(1).map((value, index) => value - levels[index]));
+
+    const average = values => values.reduce((sum, value) => sum + value, 0) / values.length;
+
+    for (let i = 2; i < 9; i++) {
+        for (const diffs of diffsByParam) {
+            if (diffs.some(diff => !Number.isFinite(diff) || diff < 0)) continue;
+
+            const firstZeroDiffIndex = diffs.findIndex(diff => diff === 0);
+            if (firstZeroDiffIndex !== -1 && firstZeroDiffIndex < diffs.length - 1) continue;
+
+            const headDiffs = diffs.slice(0, i - 1);
+            const tailDiffs = diffs.slice(i - 1);
+            const headAverage = average(headDiffs);
+            const tailAverage = average(tailDiffs);
+
+            if (tailDiffs[0] <= headAverage * 0.5 && tailAverage <= headAverage * 0.5) {
+                return i;
+            }
+        }
+    }
+
+    return undefined;
+}
+
 module.exports = {
     collectParamsFrom,
     collectUnusedParamsFrom,
@@ -948,6 +980,7 @@ module.exports = {
     getEffectData,
     formatEffectType,
     formatAddAttrType,
+    badScaleAfterLevel,
     ATTR_TYPE,
     SPECIAL_ATTR_TYPE,
     PARAM_TYPE,

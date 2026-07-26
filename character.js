@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, resolveParamsTooltips, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber, CHARACTER_ATTACK_TYPE, BULLET_TYPE, CHARGE_RATE_TYPE } = require('./utils');
+const { collectParamsFrom, resolveParam, resolveParamsTooltips, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber, CHARACTER_ATTACK_TYPE, BULLET_TYPE, CHARGE_RATE_TYPE, badScaleAfterLevel } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -477,6 +477,7 @@ function getPotentials(charId) {
             icon: (ITEM[id].Icon || ITEM[id].Icon2).split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
+            badScaleAfterLevel: badScaleAfterLevel(getPotentialParams(id)),
         })),
         common: pot.CommonPotentialIds.map(id => ({
             id,
@@ -500,6 +501,7 @@ function getPotentials(charId) {
             icon: (ITEM[id].Icon || ITEM[id].Icon2).split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
+            badScaleAfterLevel: badScaleAfterLevel(getPotentialParams(id)),
         })),
         supportCore: pot.AssistSpecificPotentialIds.map(id => ({
             id,
@@ -546,6 +548,7 @@ function getPotentials(charId) {
             icon: (ITEM[id].Icon || ITEM[id].Icon2).split('/').pop(),
             corner: CORNER_TYPE[POTENTIAL[id].Corner],
             rarity: getPotentialRarity(id),
+            badScaleAfterLevel: badScaleAfterLevel(getPotentialParams(id)),
         })),
     }
 }
