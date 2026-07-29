@@ -13193,7 +13193,8 @@
                         "descJP": "フィレンが##シャドウサーヴァント#4002#を召喚時、&Param2&秒間、フィレンの攻撃力が<color=#0abec5>&Param1&</color>上昇し、さらにフィールドにいる##シャドウサーヴァント#4002#の従者ダメージが<color=#0abec5>&Param1&</color>増加する。",
                         "descKR": "피렌이 ##어둠의 그림자#4002#를 소환할 때, 피렌의 공격력이 <color=#0abec5>&Param1&</color> 증가한다. 또한 필드에 있는 ##어둠의 그림자#4002#의 소환물 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                         "effectType": [
-                            "ATK (%)"
+                            "ATK (%)",
+                            "Minion DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -13469,7 +13470,8 @@
                         "descJP": "フィレンがスキルを発動時、&Param2&秒間、フィレンの攻撃力が<color=#0abec5>&Param1&</color>上昇し、さらにフィールドにいる##シャドウサーヴァント#4002#の従者ダメージが<color=#0abec5>&Param1&</color>増加する。",
                         "descKR": "피렌이 스킬을 시전하면, 피렌의 공격력이 <color=#0abec5>&Param1&</color> 증가한다. 또한 필드에 있는 ##어둠의 그림자#4002#의 소환물 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                         "effectType": [
-                            "ATK (%)"
+                            "ATK (%)",
+                            "Minion DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -27394,7 +27396,8 @@
             ],
             "effectType": [
                 "ELEMENTTYPE_:(Ignis) Ultimate DMG",
-                "Movement Speed (%)"
+                "Movement Speed (%)",
+                "STATE_CHANGE:SUPERARMOR"
             ],
             "addAttrType": [],
             "effectData": [],
@@ -42858,12 +42861,15 @@
                 "Mark"
             ],
             "effectType": [
-                "ADD_TAG"
+                "ADD_TAG",
+                "STATE_CHANGE:BONDAGE",
+                "ADDBUFF"
             ],
             "addAttrType": [],
             "effectData": [],
             "buffIcon": [
-                "No Icon"
+                "No Icon",
+                "Icon_CommonBuff_Tie"
             ],
             "params": [
                 "19.3%/21.3%/23.2%/29%/30.9%/32.9%/36.7%/38.7%/40.6%/44.5%/46.4%/48.3%/50.3%",
@@ -128712,12 +128718,14 @@
                     "descKR": "펭귄 인형의 크기와 이동 속도가 대폭 증가한다. 펭귄 인형이 피해를 입히면 목표의 &Param1&가 <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.",
                     "damageType": [],
                     "effectType": [
-                        "Terra DMG Taken (base)"
+                        "Terra DMG Taken (base)",
+                        "Movement Speed (%)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [
-                        "Icon_CommonBuff_DefenseDown"
+                        "Icon_CommonBuff_DefenseDown",
+                        "No Icon"
                     ],
                     "params": [
                         "Terra DMG Taken",
