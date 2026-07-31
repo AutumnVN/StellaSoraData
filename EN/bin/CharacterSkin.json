@@ -2161,6 +2161,36 @@
     "GachaL2D": "Actor2D/Character/14201/14201_LF.prefab",
     "EffectScaleValue": 10000
   },
+  "14203": {
+    "Id": 14203,
+    "Name": "CharacterSkin.14203.1",
+    "Desc": "CharacterSkin.14203.2",
+    "CharId": 142,
+    "Type": 3,
+    "SourceDesc": 7,
+    "SkinExtraTag": [
+      4
+    ],
+    "Transform": "{\"1\":100}",
+    "WalkAnimationSpd": 27500,
+    "RunAnimationSpd": 56250,
+    "SpRunAnimationSpd": 60000,
+    "ModelScale": 12500,
+    "ColliderScale": 10000,
+    "ModelShowScale": 10000,
+    "ModelEndScale": 10000,
+    "Icon": "Icon/Head/head_14203",
+    "Portrait": "Actor2D/Character/14203/14203_a.spriteatlas",
+    "Bg": "Image/CharBg/beach_dusk",
+    "Offset": "Actor2D/Character/14203/14203.asset",
+    "L2D": "Actor2D/Character/14203/14203_L.prefab",
+    "CharacterCG": 14201,
+    "Model": "Actor/Character/14201/14201_Actor",
+    "Model_Show": "Actor/Character/14201/Timeline/14201_Ready",
+    "Model_End": "Actor/Character/14201/Timeline/14201_Victory",
+    "GachaL2D": "Actor2D/Character/14201/14201_LF.prefab",
+    "EffectScaleValue": 10000
+  },
   "14301": {
     "Id": 14301,
     "Name": "CharacterSkin.14301.1",
