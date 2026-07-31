@@ -94,7 +94,7 @@
                 "Mark"
             ],
             "effectType": [
-                "Auto Attack Damage (base)"
+                "Auto Attack DMG (base)"
             ],
             "addAttrType": [],
             "effectData": [],
@@ -119,7 +119,7 @@
                     "damageType": "Mark"
                 },
                 {
-                    "effectType": "Auto Attack Damage (base)",
+                    "effectType": "Auto Attack DMG (base)",
                     "buffIcon": "Icon_CommonBuff_AttackUp"
                 },
                 {
@@ -209,7 +209,7 @@
                     "descKR": "메인 스킬 「로큰롤 불꽃」 시전 후 탄약 <color=#0abec5>36</color>발을 즉시 장전한다. \u000b탄창을 다 사용할 때까지 일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -219,7 +219,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -334,7 +334,7 @@
                     "descKR": "코하쿠의 치명타 &Param4&회 누적 시 극한 회피 후 탄창을 즉시 가득 채우고, 일반 공격 피해가 <color=#ec6d21>&Param1&</color> 증가한다. &Param2&초간 지속된다. \u000b해당 효과는 &Param3&초마다 최대 1회 발동한다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -349,7 +349,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {},
@@ -375,21 +375,21 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
                         "0.7%/1.1%/1.5%/1.9%/2.3%/2.7%/3.1%/3.5%/3.9%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         36
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {}
                     ],
@@ -412,7 +412,7 @@
                     "damageType": [],
                     "effectType": [
                         "Attack Speed (base)",
-                        "Auto Attack Damage (base)",
+                        "Auto Attack DMG (base)",
                         "STATE_CHANGE:SUPERARMOR"
                     ],
                     "addAttrType": [],
@@ -424,24 +424,24 @@
                         "35%",
                         "15%/24%/33%/43%/52%/61%/70%/79%/88%",
                         8,
-                        "Auto Attack Damage",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG",
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
                             "effectType": "Attack Speed (base)"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
                             "buffIcon": "Icon_CommonBuff_AttackSpeedUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -15794,7 +15794,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
@@ -15812,7 +15812,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {},
                         {},
@@ -15843,7 +15843,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
@@ -15861,7 +15861,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {},
                         {},
@@ -16219,7 +16219,7 @@
                         "STATE_CHANGE:STUN"
                     ],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -16239,7 +16239,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_Stun"
                         },
                         {},
@@ -20111,20 +20111,20 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
                         "17%/27%/38%/48%/58%/69%/79%/89%/100%",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -20146,7 +20146,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -20156,11 +20156,11 @@
                         "1.7%/2.7%/3.7%/4.7%/5.7%/6.7%/7.7%/8.7%/9.7%",
                         3,
                         10,
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
@@ -20170,7 +20170,7 @@
                             "buffIcon": "No Icon"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         }
                     ],
@@ -20906,7 +20906,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -20916,7 +20916,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -21026,7 +21026,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -21036,7 +21036,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -21182,7 +21182,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -21192,7 +21192,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -21302,7 +21302,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -21312,7 +21312,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -21462,7 +21462,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -21472,7 +21472,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -21582,7 +21582,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -21592,7 +21592,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -21738,7 +21738,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -21748,7 +21748,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -21858,7 +21858,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -21868,7 +21868,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -22014,7 +22014,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -22024,7 +22024,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -22134,7 +22134,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -22144,7 +22144,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -23864,7 +23864,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -23872,15 +23872,15 @@
                     ],
                     "params": [
                         "15%/25%/34%/43%/52%/61%/71%/80%/89%",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         }
                     ],
@@ -23903,7 +23903,7 @@
                     "damageType": [],
                     "effectType": [
                         "Attack Speed (%)",
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -23916,7 +23916,7 @@
                         5,
                         6,
                         "Attack Speed",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
@@ -23924,7 +23924,7 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
                             "buffIcon": "Icon_CommonBuff_AttackUp"
@@ -23937,7 +23937,7 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -24861,7 +24861,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -24871,7 +24871,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -24981,7 +24981,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -24991,7 +24991,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -25137,7 +25137,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -25147,7 +25147,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -25257,7 +25257,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -25267,7 +25267,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -25413,7 +25413,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -25423,7 +25423,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -25533,7 +25533,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -25543,7 +25543,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -25693,7 +25693,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -25703,7 +25703,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -25813,7 +25813,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -25823,7 +25823,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -25969,7 +25969,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -25979,7 +25979,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
@@ -26089,7 +26089,7 @@
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
                         "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -26099,7 +26099,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     }
@@ -31437,7 +31437,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "(Lux) Auto Attack Damage (base)"
+                        "(Lux) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -31446,16 +31446,16 @@
                     "params": [
                         "Star Barrage",
                         "65%",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {},
                         {
-                            "addAttrType": "(Lux) Auto Attack Damage (base)",
+                            "addAttrType": "(Lux) Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
-                            "addAttrType": "(Lux) Auto Attack Damage (base)",
+                            "addAttrType": "(Lux) Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         }
                     ],
@@ -31629,20 +31629,20 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "(Lux) Auto Attack Damage (base)"
+                        "(Lux) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
                         "20%/32%/44%/56%/68%/80%/92%/104%/116%",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "(Lux) Auto Attack Damage (base)"
+                            "addAttrType": "(Lux) Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "(Lux) Auto Attack Damage (base)"
+                            "addAttrType": "(Lux) Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -32162,13 +32162,13 @@
                     ],
                     "effectType": [],
                     "addAttrType": [
-                        "(Lux) Auto Attack Damage (base)"
+                        "(Lux) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
                         "163%/188%/212%/285%/308%/331%/377%/396%/416%/455%/488%/520%/553%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "31%"
                     ],
                     "paramsTooltips": [
@@ -32176,10 +32176,10 @@
                             "damageType": "Auto Attack (from Skill, scale with Skill)"
                         },
                         {
-                            "addAttrType": "(Lux) Auto Attack Damage (base)"
+                            "addAttrType": "(Lux) Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "(Lux) Auto Attack Damage (base)"
+                            "addAttrType": "(Lux) Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -32410,7 +32410,7 @@
                         "Movement Speed (%)"
                     ],
                     "addAttrType": [
-                        "(Lux) Auto Attack Damage (base)"
+                        "(Lux) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -32419,19 +32419,19 @@
                     "params": [
                         "4.1%/6.6%/9.1%/11.6%/14.1%/16.6%/19.1%/21.6%/24.1%",
                         15,
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "100%"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "(Lux) Auto Attack Damage (base)",
+                            "addAttrType": "(Lux) Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
                             "buffIcon": "No Icon"
                         },
                         {
-                            "addAttrType": "(Lux) Auto Attack Damage (base)",
+                            "addAttrType": "(Lux) Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
@@ -35459,21 +35459,21 @@
                     "descKR": "레이센의 &Param1&가 <color=#0abec5>&Param2&</color> 증가한다. 매회 일반 공격이 에너지 포탄 <color=#0abec5>2</color>개를 추가로 발사한다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "29%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -35604,21 +35604,21 @@
                     "descKR": "레이센의 &Param1&가 <color=#ec6d21>&Param2&</color> 증가하고, 에너지 포탄 피해 범위가 30% 증가한다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "21%/34%/47%/60%/73%/85%/98%/111%/124%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -35639,7 +35639,7 @@
                     "descKR": "레이센의 &Param1&가 <color=#ec6d21>&Param2&</color> 증가하고, 일반 공격의 &Param3&이 <color=#ec6d21>&Param4&</color> 추가 증가한다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [
                         "Resilience Break Efficiency (base)"
@@ -35647,17 +35647,17 @@
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "11%/17%/24%/30%/36%/43%/49%/56%/62%",
                         "Resilience Break Efficiency",
                         "30%/40%/50%/61%/71%/81%/91%/101%/111%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
                             "addAttrType": "Resilience Break Efficiency (base)"
@@ -35684,7 +35684,7 @@
                     "descKR": "레이센의 회피 횟수가 1회 증가한다. 회피하면 레이센의 &Param1&가 <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -35692,18 +35692,18 @@
                         "No Icon"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "21%/34%/47%/60%/73%/85%/98%/111%/124%",
                         8,
                         1
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
@@ -35778,7 +35778,7 @@
                     "descKR": "레이센의 &Param1&가 <color=#ec6d21>&Param2&</color> 증가한다. \u000b메인 스킬 「콩알 회오리」의 일반 공격 강화 지속 시간이 50% 연장된다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -35786,16 +35786,16 @@
                         "No Icon"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "26%/41%/56%/71%/87%/102%/117%/133%/148%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         }
                     ],
@@ -39438,7 +39438,7 @@
                     "descKR": "메인 스킬 「&Param1&」이 ##빛 속성 표식: 광명#2016#을 보유한 목표에게 피해를 입히면 &Param4&가 <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -39449,19 +39449,19 @@
                         "Thunder Strike",
                         "77%/122%/168%/214%/260%/306%/352%/398%/444%",
                         8,
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {},
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         }
                     ],
@@ -39483,7 +39483,7 @@
                     "descKR": "메인 스킬 「&Param1&」가 목표를 처치하면 &Param4&가 <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -39494,19 +39494,19 @@
                         "Thunder Strike",
                         "72%/115%/158%/201%/244%/287%/330%/373%/416%",
                         4,
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {},
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         }
                     ],
@@ -46917,7 +46917,7 @@
                     "damageType": [],
                     "effectType": [
                         "Attack Speed (%)",
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -46930,7 +46930,7 @@
                         5,
                         3,
                         "Attack Speed",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
@@ -46938,7 +46938,7 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
                             "buffIcon": "Icon_CommonBuff_AttackUp"
@@ -46951,7 +46951,7 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -46973,7 +46973,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -46981,15 +46981,15 @@
                     ],
                     "params": [
                         "12%/18%/25%/32%/39%/46%/53%/60%/67%",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         }
                     ],
@@ -48715,7 +48715,7 @@
                         "descJP": "ナノハの通常攻撃でダメージを与えた後の&Param2&秒間、自身の通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する。",
                         "descKR": "나노하가 목표에게 일반 공격 피해를 입힌 후, 일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                         "effectType": [
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -48728,7 +48728,7 @@
                         ],
                         "paramsTooltips": [
                             {
-                                "effectType": "Auto Attack Damage (base)",
+                                "effectType": "Auto Attack DMG (base)",
                                 "buffIcon": "No Icon"
                             },
                             {
@@ -50625,14 +50625,14 @@
                     ],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
                         "11.1%/12.2%/13.3%/16.7%/17.8%/18.9%/21.1%/22.2%/23.3%/25.6%/26.7%/27.8%/28.9%",
                         "16.9%/18.6%/20.3%/25.3%/27%/28.7%/32.1%/33.8%/35.4%/38.8%/40.5%/42.2%/43.9%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "300%"
                     ],
                     "paramsTooltips": [
@@ -50643,10 +50643,10 @@
                             "damageType": "Auto Attack (2.07e, from Normal attack, scale with Normal attack)"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -50791,7 +50791,7 @@
                     "descKR": "메인 스킬 「별의 순환」을 시전하거나 팀원이 지원 스킬을 시전하면, 카나체의 &Param1&가 <color=#ec6d21>&Param2&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param3&스택 중첩된다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -50799,18 +50799,18 @@
                         "Icon_CommonBuff_AttackUp"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "9%/15%/20%/26%/31%/37%/42%/48%/53%",
                         3,
                         8
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -50964,21 +50964,21 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "165%/263%/362%/461%/560%/659%/757%/856%/955%",
                         5
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {}
                     ],
@@ -58231,7 +58231,7 @@
                     "damageType": [],
                     "effectType": [
                         "Movement Speed (%)",
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -58257,7 +58257,7 @@
                             "buffIcon": "Icon_CommonBuff_MoveSpeedDown"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {},
@@ -58488,7 +58488,7 @@
                     "effectType": [],
                     "addAttrType": [
                         "Ultimate DMG (base)",
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -58512,7 +58512,7 @@
                             "buffIcon": "No Icon"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {
                             "buffIcon": "No Icon"
@@ -58955,7 +58955,7 @@
                     "descKR": "프리지아가 ##광화#2014# 상태에서 스킬 시전 후 일반 공격 피해가 <color=#ec6d21>&Param1&</color> 증가한다. &Param2&초간 지속되며, 최대 &Param3&스택 중첩된다.\u000bParam10: &Param10& (Skill,Title)",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -58976,7 +58976,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_CritDamageUp"
                         },
                         {
@@ -59014,7 +59014,7 @@
                         "STATE_CHANGE:FROZEN"
                     ],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -59042,7 +59042,7 @@
                         },
                         {},
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {},
@@ -59696,7 +59696,7 @@
                     "descKR": "지원 스킬 「&Param10&」 시전 후 <color=#ec6d21>&Param1&</color> 확률로 팀 전체 &Param5&가 <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -59708,7 +59708,7 @@
                         "30%/48%/66%/84%/102%/120%/138%/156%/174%",
                         15,
                         2,
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "",
                         "",
                         "",
@@ -59718,7 +59718,7 @@
                     "paramsTooltips": [
                         {},
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -59728,7 +59728,7 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {},
@@ -66734,7 +66734,7 @@
                     "descKR": "테레사가 「솟아오른 보호막」을 획득하면, 테레사의 &Param3&가 <color=#ec6d21>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -66744,18 +66744,18 @@
                     "params": [
                         "41%/65%/89%/113%/138%/162%/186%/211%/235%",
                         8,
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         }
                     ],
@@ -67307,7 +67307,7 @@
                     "descKR": "「파도 영역」 내 물 속성 캐릭터의 &Param3&가 1초마다 <color=#ec6d21>&Param1&</color> 증가한다. 최대 &Param4&스택 중첩된다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -67317,19 +67317,19 @@
                     "params": [
                         "13%/20%/28%/35%/43%/51%/58%/66%/73%",
                         5,
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         5
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -74556,7 +74556,7 @@
                     "damageType": [],
                     "effectType": [
                         "Attack Speed (%)",
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -74568,7 +74568,7 @@
                         "20%",
                         "89%/142%/195%/248%/301%/354%/407%/460%/513%",
                         6,
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {},
@@ -74576,14 +74576,14 @@
                             "effectType": "Attack Speed (%)"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackSpeedUp"
                         },
                         {
                             "buffIcon": "Icon_CommonBuff_AttackSpeedUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackSpeedUp"
                         }
                     ],
@@ -82332,20 +82332,20 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
                         "12%/19%/26%/34%/41%/48%/55%/62%/70%",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -82398,7 +82398,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -82408,12 +82408,12 @@
                         "10%/16%/22%/28%/35%/41%/47%/53%/59%",
                         3,
                         8,
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "Ignis Infusion"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -82423,7 +82423,7 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {}
@@ -82617,7 +82617,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [
@@ -82625,15 +82625,15 @@
                     ],
                     "params": [
                         "50%/80%/110%/140%/171%/201%/231%/261%/291%",
-                        "Auto Attack Damage"
+                        "Auto Attack DMG"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)",
+                            "addAttrType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         }
                     ],
@@ -90641,7 +90641,7 @@
                     ],
                     "effectType": [],
                     "addAttrType": [
-                        "(Terra) Auto Attack Damage (base)"
+                        "(Terra) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
@@ -90649,7 +90649,7 @@
                         "Homing Bunny Volley",
                         8,
                         "94.3%/108.5%/122.6%/165.1%/178.3%/191.5%/217.9%/229.2%/240.6%/263.2%/282.1%/300.9%/319.8%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "20%"
                     ],
                     "paramsTooltips": [
@@ -90659,10 +90659,10 @@
                             "damageType": "Auto Attack (from Skill, scale with Skill)"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -90685,14 +90685,14 @@
                     ],
                     "effectType": [],
                     "addAttrType": [
-                        "(Terra) Auto Attack Damage (base)"
+                        "(Terra) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
                         "",
                         "20.8%/24%/27.1%/36.5%/39.4%/42.3%/48.1%/50.6%/53.1%/58.1%/62.3%/66.4%/70.6%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "10%"
                     ],
                     "paramsTooltips": [
@@ -90701,10 +90701,10 @@
                             "damageType": "Auto Attack (from Skill, scale with Skill)"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -90854,20 +90854,20 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "(Terra) Auto Attack Damage (base)"
+                        "(Terra) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "16.2%/26%/35.7%/45.5%/55.2%/65%/74.7%/84.5%/94.2%"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -90888,7 +90888,7 @@
                     "descKR": "지원 스킬 「&Param1&」 종료 후, 스파클의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속된다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                        "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -90897,18 +90897,18 @@
                     ],
                     "params": [
                         "Homing Bunny Volley",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "16.7%/26.8%/36.8%/46.9%/56.9%/67%/77%/87.1%/97.1%",
                         8
                     ],
                     "paramsTooltips": [
                         {},
                         {
-                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage",
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage",
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -91029,7 +91029,7 @@
                     "descKR": "스파클이 필드에 있을 때 자신의 &Param1_kr1& 1초마다 <color=#ec6d21>&Param2&</color> 증가한다. 최대 &Param3&스택 중첩된다.\u000b해당 효과는 스파클이 필드를 떠날 때 제거된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                        "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -91037,17 +91037,17 @@
                         "Icon_CommonBuff_AttackUp"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "0.7%/1.1%/1.5%/1.9%/2.3%/2.8%/3.2%/3.6%/4%",
                         15
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage",
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage",
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -97659,7 +97659,7 @@
                     "descKR": "메인 스킬 「어둠의 연타」를 시전 후 <color=#0abec5>&Param1&</color>초 동안 일반 공격 피해 범위 증가와 &Param4& <color=#0abec5>&Param2&</color> 증가, &Param5& <color=#0abec5>&Param3&</color> 증가를 획득한다. ##어둠 속성 표식: 암영#2018#을 부여할 수 있다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)",
+                        "Auto Attack DMG (base)",
                         "Attack Speed (base)"
                     ],
                     "addAttrType": [],
@@ -97671,7 +97671,7 @@
                         8,
                         "60%",
                         "35%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "Attack Speed"
                     ],
                     "paramsTooltips": [
@@ -97679,14 +97679,14 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
                             "effectType": "Attack Speed (base)"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -101669,20 +101669,20 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "(Ventus) Auto Attack Damage (base)"
+                        "(Ventus) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "15%/23%/32%/41%/50%/59%/67%/76%/85%"
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "(Ventus) Auto Attack Damage (base)"
+                            "addAttrType": "(Ventus) Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "(Ventus) Auto Attack Damage (base)"
+                            "addAttrType": "(Ventus) Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -101703,7 +101703,7 @@
                     "descKR": "메인 스킬 「풍차의 춤」의 참격이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. \u000b레이스의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_:(Ventus) Auto Attack Damage"
+                        "ELEMENTTYPE_:(Ventus) Auto Attack DMG"
                     ],
                     "addAttrType": [
                         "(Ventus) Skill DMG (base)"
@@ -101713,7 +101713,7 @@
                     "params": [
                         "Skill DMG",
                         "8%/12%/17%/21%/26%/30%/35%/39%/44%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "13%/21%/28%/36%/44%/51%/59%/67%/74%"
                     ],
                     "paramsTooltips": [
@@ -101724,10 +101724,10 @@
                             "addAttrType": "(Ventus) Skill DMG (base)"
                         },
                         {
-                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack Damage"
+                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack DMG"
                         },
                         {
-                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack Damage"
+                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack DMG"
                         }
                     ],
                     "hiddenParams": [],
@@ -101748,7 +101748,7 @@
                     "descKR": "메인 스킬 「풍차의 춤」의 참격이 피해를 입히면, 레이스의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_:(Ventus) Auto Attack Damage"
+                        "ELEMENTTYPE_:(Ventus) Auto Attack DMG"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -101756,18 +101756,18 @@
                         "Icon_CommonBuff_AttackUp"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "14%/22%/31%/39%/47%/55%/64%/72%/80%",
                         5,
                         1
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack Damage",
+                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack Damage",
+                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -102640,7 +102640,7 @@
                         "descKR": "레이스가 ##바람 속성 표식#1017#을 발동한 후, 스킬 피해가 <color=#0abec5>&Param1&</color> 증가하고, 일반 공격 피해가 <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속된다.",
                         "effectType": [
                             "Skill DMG (base)",
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -102658,7 +102658,7 @@
                                 "buffIcon": "No Icon"
                             },
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             },
                             {
                                 "buffIcon": "No Icon"
@@ -103201,7 +103201,7 @@
                         "descKR": "캐릭터가 목표에게 ##바람 속성 표식#1017#을 부여한 후, 레이스의 스킬 피해가 <color=#0abec5>&Param1&</color> 증가하고, 일반 공격 피해가 <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속된다.",
                         "effectType": [
                             "Skill DMG (base)",
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -103219,7 +103219,7 @@
                                 "buffIcon": "No Icon"
                             },
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             },
                             {
                                 "buffIcon": "No Icon"
@@ -105495,7 +105495,7 @@
                     "descKR": "치토세의 회피 횟수가 1회 증가한다. \u000b&Param1&가 <color=#ec6d21>&Param2&</color> 증가하고, 메인 스킬 「여울빛」을 시전하거나, 회피 후 마지막 단계 일반 공격을 즉시 시전한다. 마지막 단계 일반 공격이 피해를 입히면 「칼날의 결단」 5스택을 획득한다. 해당 효과는 1초마다 최대 1회 발동한다. \u000b「칼날의 결단」: 해당 효과를 보유하면 첫 5단계 일반 공격이 입히는 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 첫 5단계 일반 공격을 시전 시 1단계마다 1스택을 소모한다.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam7: &Param7& (OnceAdditionalAttribute,AttributeType1) \u000bParam8: &Param8& (OnceAdditionalAttribute,Value1)",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [
                         "Aqua DMG (base)"
@@ -105505,7 +105505,7 @@
                         "Icon_Buff_14401_514405"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "12%/20%/27%/35%/42%/49%/57%/64%/72%",
                         "Aqua DMG",
                         "38%/60%/83%/105%/128%/150%/153%/156%/160%",
@@ -105516,11 +105516,11 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_Buff_14401_514405"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_Buff_14401_514405"
                         },
                         {
@@ -105561,7 +105561,7 @@
                     "descKR": "「등사」가 피해를 입히면 &Param1&가 <color=#ec6d21>&Param2&</color> 증가한다. &Param5&초간 지속되며, 최대 &Param6&스택 중첩된다. 동시에 마지막 단계 일반 공격의 &Param7_kr1& <color=#ec6d21>&Param8&</color> 증가한다. 최대 8스택 중첩되며, 해당 효과는 0.4초마다 1회 발동할 수 있다. 마지막 단계의 일반 공격을 시전한 후 해당 버프는 즉시 사라진다.\u000bParam7: &Param7& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [
                         "Aqua DMG (base)"
@@ -105572,7 +105572,7 @@
                         "Icon_CommonBuff_AttackSpeedUp"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "1.6%/2.6%/3.6%/4.6%/5.6%/6.6%/7.6%/8.6%/9.6%",
                         "EffectValue,NoLevel,14406011,EffectTypeFirstSubtype,Enum,EAT",
                         "EffectValue,NoLevel,14406011,EffectTypeParam1,HdPct",
@@ -105583,11 +105583,11 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_Buff_14401_514406"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_Buff_14401_514406"
                         },
                         {
@@ -109328,7 +109328,7 @@
                     "descKR": "오토하의 일반 공격으로 공격 시 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. &Param5&초간 지속되며, 최대 &Param6&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)",
+                        "Auto Attack DMG (base)",
                         "Ultimate DMG (base)"
                     ],
                     "addAttrType": [],
@@ -109337,7 +109337,7 @@
                         "Icon_CommonBuff_AttackUp"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "4.6%/6.1%/7.6%/9.1%/10.6%/12.1%/13.6%/15.1%/16.6%",
                         "Ultimate DMG",
                         "8.4%/11.2%/14%/16.8%/19.6%/22.4%/25.2%/28%/30.8%",
@@ -109346,11 +109346,11 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -112948,7 +112948,7 @@
                     "descKR": "캐러멜의 &Param1&가 <color=#0abec5>&Param2&</color> 증가한다. 일반 공격은 ##인기#4015# 1스택을 소모해 바로 <color=#0abec5>마지막 단계</color>를 시전할 수 있다. \u000b캐러멜과 ##악마의 스피커#4016#가 ##어둠 속성 표식: 암영#2018#을 발동하면 ##인기#4015# 1스택을 획득한다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -112956,16 +112956,16 @@
                         "Icon_Buff_14701_514702"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "10%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_Buff_14701_514702"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_Buff_14701_514702"
                         }
                     ],
@@ -113161,7 +113161,7 @@
                     "descKR": "캐러멜이 ##악마의 스피커#4016#에 가까워지면 &Param1&가 <color=#ec6d21>&Param2&</color> 증가한다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -113169,16 +113169,16 @@
                         "No Icon"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "14%/22%/30%/38%/46%/54%/62%/70%/78%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "No Icon"
                         }
                     ],
@@ -116633,7 +116633,7 @@
                 "Mark"
             ],
             "effectType": [
-                "Auto Attack Damage (base)"
+                "Auto Attack DMG (base)"
             ],
             "addAttrType": [],
             "effectData": [],
@@ -116642,7 +116642,7 @@
                 "86%/98%/111%/150%/162%/174%/198%/208%/218%/239%/256%/273%/290%",
                 "57%/66%/74%/100%/108%/116%/132%/139%/145%/159%/171%/182%/193%",
                 "25.2%/29%/32.7%/44.1%/47.6%/51.1%/58.2%/61.2%/64.2%/70.2%/75.3%/80.3%/85.3%",
-                "Auto Attack Damage",
+                "Auto Attack DMG",
                 "30%",
                 "37%/48%/59%/70%/81%/92%/103%/114%/125%"
             ],
@@ -116657,10 +116657,10 @@
                     "damageType": "Skill (1.64e, from Skill, scale with Skill)"
                 },
                 {
-                    "effectType": "Auto Attack Damage (base)"
+                    "effectType": "Auto Attack DMG (base)"
                 },
                 {
-                    "effectType": "Auto Attack Damage (base)"
+                    "effectType": "Auto Attack DMG (base)"
                 },
                 {
                     "damageType": "Mark"
@@ -116755,7 +116755,7 @@
                     "descKR": "「소슬」 상태에서 그레이의 이동 속도가 <color=#0abec5>&Param3&</color> 증가하고, &Param1&가 <color=#0abec5>&Param2&</color> 증가한다. 또한 「소슬」 상태가 더이상 「철창」 주변의 제한을 받지 않는다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)",
+                        "Auto Attack DMG (base)",
                         "Movement Speed (base)"
                     ],
                     "addAttrType": [],
@@ -116764,17 +116764,17 @@
                         "Icon_CommonBuff_AttackUp"
                     ],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "47%",
                         "15%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)",
+                            "effectType": "Auto Attack DMG (base)",
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
@@ -116941,31 +116941,31 @@
                     "descKR": "&Param1&가 <color=#ec6d21>&Param2&</color> 증가한다. \u000b일반 공격이 ##내성 무시#1006# 목표에게 입히는 피해가 <color=#ec6d21>&Param4&</color> 추가로 증가한다.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "18%/29%/40%/50%/61%/72%/83%/94%/104%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "36%/58%/79%/100%/120%/140%/170%/190%/210%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -116986,21 +116986,21 @@
                     "descKR": "&Param1&가 <color=#ec6d21>&Param2&</color> 증가한다. \u000b「철창」이 사라질 때 그레이가 「소슬」 상태일 경우 해당 상태가 4초 동안 이어진다.",
                     "damageType": [],
                     "effectType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "27%/43%/59%/75%/91%/107%/123%/139%/155%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -120764,7 +120764,7 @@
                     "damageType": [],
                     "effectType": [
                         "Attack Speed (base)",
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "addAttrType": [],
                     "effectData": [],
@@ -120784,7 +120784,7 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "effectType": "Auto Attack Damage (base)"
+                            "effectType": "Auto Attack DMG (base)"
                         },
                         {
                             "buffIcon": "Icon_CommonBuff_AttackUp"
@@ -124636,7 +124636,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
@@ -124654,7 +124654,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {},
                         {},
@@ -124795,7 +124795,7 @@
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
-                        "Auto Attack Damage (base)"
+                        "Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
@@ -124813,7 +124813,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "addAttrType": "Auto Attack Damage (base)"
+                            "addAttrType": "Auto Attack DMG (base)"
                         },
                         {},
                         {},
@@ -136675,13 +136675,13 @@
                     ],
                     "effectType": [],
                     "addAttrType": [
-                        "(Terra) Auto Attack Damage (base)"
+                        "(Terra) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
                         "32%/37%/41%/56%/60%/65%/74%/77%/81%/89%/95%/102%/108%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "35%"
                     ],
                     "paramsTooltips": [
@@ -136689,10 +136689,10 @@
                             "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -136837,31 +136837,31 @@
                     "descKR": "크루니스(새해)의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, 원거리의 목표에게 &Param3_kr1& 추가로 <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                        "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                     ],
                     "addAttrType": [
-                        "(Terra) Auto Attack Damage (base)"
+                        "(Terra) Auto Attack DMG (base)"
                     ],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "5%/7%/10%/13%/15%/18%/21%/23%/26%",
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "11%/17%/23%/29%/36%/42%/48%/55%/61%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                         },
                         {
-                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack Damage (base)"
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
                         }
                     ],
                     "hiddenParams": [],
@@ -137021,21 +137021,21 @@
                     "descKR": "크루니스(새해)의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. 「결정 상태」 기간 중, 자신이 ##땅 속성 표식#1020#을 발동하면 해당 상태가 0.6초 연장된다. 1회 스킬 기간 중 최대 3초 연장될 수 있다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
-                        "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                        "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                     ],
                     "addAttrType": [],
                     "effectData": [],
                     "buffIcon": [],
                     "params": [
-                        "Auto Attack Damage",
+                        "Auto Attack DMG",
                         "19%/30%/41%/52%/64%/75%/86%/97%/108%"
                     ],
                     "paramsTooltips": [
                         {
-                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                         },
                         {
-                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack Damage"
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                         }
                     ],
                     "hiddenParams": [],
@@ -142612,7 +142612,7 @@
                         "descKR": "윌로가 필드에 있을 때 &Param1&초마다 메인 캐릭터의 스킬 피해가 <color=#0abec5>&Param2&</color> 증가하며, 일반 공격 피해가 <color=#0abec5>&Param3&</color> 증가한다. 최대 <color=#0abec5>18%</color> 증가할 수 있다.",
                         "effectType": [
                             "Skill DMG (base)",
-                            "Auto Attack Damage (base)"
+                            "Auto Attack DMG (base)"
                         ],
                         "addAttrType": [],
                         "effectData": [],
@@ -142631,7 +142631,7 @@
                                 "buffIcon": "Icon_CommonBuff_AttackUp"
                             },
                             {
-                                "effectType": "Auto Attack Damage (base)"
+                                "effectType": "Auto Attack DMG (base)"
                             }
                         ]
                     },
