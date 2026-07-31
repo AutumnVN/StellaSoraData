@@ -16,6 +16,12 @@ const LANG_SCOREBOSSGETCONTROL = require('./EN/language/en_US/ScoreBossGetContro
 const LANG_SCOREBOSSABILITY = require('./EN/language/en_US/ScoreBossAbility.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
 const LANG_MONSTERMANUAL = require('./EN/language/en_US/MonsterManual.json');
+const CN_SCOREBOSSGETCONTROL = require('./CN/language/zh_CN/ScoreBossGetControl.json');
+const CN_SCOREBOSSABILITY = require('./CN/language/zh_CN/ScoreBossAbility.json');;
+const JP_SCOREBOSSGETCONTROL = require('./JP/language/ja_JP/ScoreBossGetControl.json');
+const JP_SCOREBOSSABILITY = require('./JP/language/ja_JP/ScoreBossAbility.json');
+const KR_SCOREBOSSGETCONTROL = require('./KR/language/ko_KR/ScoreBossGetControl.json');
+const KR_SCOREBOSSABILITY = require('./KR/language/ko_KR/ScoreBossAbility.json');
 const { MONSTER_EPIC_TYPE, formatEffectType, collectParamsFrom, resolveParam, iHateFloatingPointNumber } = require('./utils');
 
 const blitz = {};
@@ -41,11 +47,17 @@ for (const id in SCOREBOSSLEVEL) {
             {
                 name: LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet]?.Name],
                 desc: getScoreBossGetControlDesc(scoreBossLevel.NonDamageScoreGet),
+                descCN: getScoreBossGetControlDesc(scoreBossLevel.NonDamageScoreGet, 'CN'),
+                descJP: getScoreBossGetControlDesc(scoreBossLevel.NonDamageScoreGet, 'JP'),
+                descKR: getScoreBossGetControlDesc(scoreBossLevel.NonDamageScoreGet, 'KR'),
                 icon: SCOREBOSSGETCONTROL[scoreBossLevel.NonDamageScoreGet]?.IconSource?.split('/')?.pop(),
             },
             {
                 name: LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility]?.Name],
                 desc: getScoreBossAbilityDesc(scoreBossLevel.ScoreBossAbility),
+                descCN: getScoreBossAbilityDesc(scoreBossLevel.ScoreBossAbility, 'CN'),
+                descJP: getScoreBossAbilityDesc(scoreBossLevel.ScoreBossAbility, 'JP'),
+                descKR: getScoreBossAbilityDesc(scoreBossLevel.ScoreBossAbility, 'KR'),
                 icon: SCOREBOSSABILITY[scoreBossLevel.ScoreBossAbility]?.IconSource?.split('/')?.pop(),
                 effectType: getBlitzEffectType(scoreBossLevel.MonsterId),
                 buffIcon: getBlitzBuffIcon(scoreBossLevel.MonsterId),
@@ -103,8 +115,24 @@ for (const id in SCOREBOSSLEVEL) {
 
 writeFileSync('./blitz.json', JSON.stringify(blitz, null, 4));
 
-function getScoreBossGetControlDesc(id) {
+function getScoreBossGetControlDesc(id, lang = 'EN') {
     let result = LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[id]?.Desc];
+
+    switch (lang) {
+        case 'CN':
+            result = CN_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[id]?.Desc];
+            break;
+        case 'JP':
+            result = JP_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[id]?.Desc];
+            break;
+        case 'KR':
+            result = KR_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[id]?.Desc];
+            break;
+        default:
+            result = LANG_SCOREBOSSGETCONTROL[SCOREBOSSGETCONTROL[id]?.Desc];
+            break;
+    }
+
     const params = collectParamsFrom(SCOREBOSSGETCONTROL[id]);
     const resolvedParams = resolveParam(params);
 
@@ -117,8 +145,22 @@ function getScoreBossGetControlDesc(id) {
     return result;
 }
 
-function getScoreBossAbilityDesc(id) {
+function getScoreBossAbilityDesc(id, lang = 'EN') {
     let result = LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[id]?.Desc];
+    switch (lang) {
+        case 'CN':
+            result = CN_SCOREBOSSABILITY[SCOREBOSSABILITY[id]?.Desc];
+            break;
+        case 'JP':
+            result = JP_SCOREBOSSABILITY[SCOREBOSSABILITY[id]?.Desc];
+            break;
+        case 'KR':
+            result = KR_SCOREBOSSABILITY[SCOREBOSSABILITY[id]?.Desc];
+            break;
+        default:
+            result = LANG_SCOREBOSSABILITY[SCOREBOSSABILITY[id]?.Desc];
+            break;
+    }
     const params = collectParamsFrom(SCOREBOSSABILITY[id]);
     const resolvedParams = resolveParam(params);
 

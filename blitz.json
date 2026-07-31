@@ -8,11 +8,17 @@
             {
                 "name": "Bounty: Armor Break",
                 "desc": "Each Resilience Break inflicted on the boss by friendly units grants <color=#ec6d21>400</color> Technique Score, up to <color=#ec6d21>5</color> times, totaling <color=#ec6d21>2000</color> points.",
+                "descCN": "己方每次使首领敌人进入「破韧」可获得<color=#ec6d21>400</color>技巧得分，最多触发<color=#ec6d21>5</color>次，共计<color=#ec6d21>2000</color>分",
+                "descJP": "味方が首領を「ブレイク」状態にするたびに、スコアを<color=#ec6d21>400</color>ポイント獲得できる（最大<color=#ec6d21>5</color>回、合計<color=#ec6d21>2000</color>ポイントまで）",
+                "descKR": "전체 아군이 보스 적을 「내성 무시」 상태에 빠뜨릴 때마다 기술 점수 <color=#ec6d21>400</color>포인트를 획득한다. 최대 <color=#ec6d21>5</color>회 발동할 수 있어 총 <color=#ec6d21>2000</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_Tongyongdefen_003"
             },
             {
                 "name": "!NONEED!",
                 "desc": "None",
+                "descCN": "无",
+                "descJP": "*****",
+                "descKR": "없음",
                 "icon": "Icon_Bossrush_Teshujizhi_001",
                 "effectType": [
                     "Final DMG (%)"
@@ -2440,11 +2446,17 @@
             {
                 "name": "Bounty: Knife Destroyer",
                 "desc": "Each Blade thrown by the boss and destroyed by friendly units grants <color=#ec6d21>180</color> Technique Score, up to <color=#ec6d21>30</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "己方每击破1把首领敌人投掷出的「刀」可获得<color=#ec6d21>180</color>技巧得分，最多触发<color=#ec6d21>30</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が投げた「カトラリー」を破壊するたびに、スコアを<color=#ec6d21>180</color>ポイント獲得できる（最大<color=#ec6d21>30</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "전체 아군이 보스 적이 던진 「칼」 1개를 파괴할 때마다 기술 점수 <color=#ec6d21>180</color>포인트를 획득한다. 최대 <color=#ec6d21>30</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_Chushi_001"
             },
             {
                 "name": "Pyro Blight",
                 "desc": "The boss gains a Fire Ring, increasing their DMG dealt by <color=#ec6d21>30%</color> and continuously dealing DMG to your squad within the ring.\nTriggering 3 Elemental Marks on the boss within 5s grants the squad Enhancement, increasing Auto Attack DMG by <color=#ec6d21>30%</color> for 10s, and disables the boss's Fire Ring for 10s.",
+                "descCN": "首领敌人拥有「火环」使首领敌人造成伤害提升<color=#ec6d21>30%</color>，且持续对环内的玩家角色造成伤害。\n当己方在5秒内，对首领敌人累计触发3次「元素印记」后，可获得「强化」使全队普攻伤害提升<color=#ec6d21>30%</color>持续10秒，同时让首领敌人「火环」失效10秒",
+                "descJP": "首領は「火の環」を保持しており、与ダメージが<color=#ec6d21>30%</color>増加する。さらに、「火の環」の中の巡遊者にダメージを与え続ける。\n味方が5秒以内に、首領に「印」を合計で3回発動させると、10秒間、チーム全体の通常攻撃ダメージが<color=#ec6d21>30%</color>増加する。さらに、首領の「火の環」が10秒間消失する。",
+                "descKR": "보스 적이 「불의 고리」를 보유하면 보스 적이 입히는 피해가 <color=#ec6d21>30%</color> 증가하고, 지속적으로 범위 내 유저 캐릭터에게 피해를 입힌다.\r\n전체 아군이 5초 동안 보스 적에게 「원소 표식」을 누적 3회 발동한 후 「강화」를 획득하여 팀 전체의 일반 공격 피해가 <color=#ec6d21>30%</color> 증가하여, 10초간 지속된다. 동시에 보스 적이 보유한 「불의 고리」가 10초 동안 무효화된다.",
                 "icon": "Icon_Bossrush_Teshujizhi_002",
                 "effectType": [
                     "Final DMG (%)",
@@ -4973,11 +4985,17 @@
             {
                 "name": "Bounty: Blower Bane",
                 "desc": "Whenever a boss casts a skill with Tornado, dodging the Tornado grants <color=#ec6d21>540</color> Technique Score, up to <color=#ec6d21>10</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "每当首领敌人释放附带「龙卷风」的技能期间，不被龙卷风命中可获得<color=#ec6d21>540</color>技巧得分，最多触发<color=#ec6d21>10</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が竜巻を発生させるたびに、その竜巻を回避すると、スコアを<color=#ec6d21>540</color>ポイント獲得できる（最大<color=#ec6d21>10</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스 적이 「토네이도」를 포함한 스킬을 시전 기간 중마다 토네이도에게 명중되지 않으면 기술 점수 <color=#ec6d21>540</color>포인트를 획득한다. 최대 <color=#ec6d21>10</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_JinDuanLiRong_001"
             },
             {
                 "name": "Fervent Combat",
                 "desc": "The boss gains 1 stack of Battle Frenzy every 5 seconds, increasing the DMG it deals by <color=#ec6d21>10%</color> (up to 5 stacks).\nWhen the Main Trekker triggers a Mark, removes 1 stack of Battle Frenzy from the boss. Successfully removing a stack of Battle Frenzy restores 20 Energy for the squad, and increases the boss's Ultimate DMG Taken by <color=#ec6d21>100%</color>, lasting for 10s and resets when triggered again.",
+                "descCN": "首领每5秒获得1层「酣战」,使自身造成的伤害提升<color=#ec6d21>10%</color>，最多叠加5层。\n主控角色触发「印记」时，移除1层「酣战」。成功移除「酣战」时，全队获得20点能量，并使首领受到绝招伤害提升<color=#ec6d21>100%</color>，持续10秒，每次触发重置时间",
+                "descJP": "首領は5秒ごとに「激戦」を1獲得する。「激戦」1ごとに、与ダメージが<color=#ec6d21>10%</color>増加する。この効果は5回まで重複できる。\n主力巡遊者が「印」を発動させた時、首領の「激戦」を1消費させる。\n\n首領の「激戦」を消費することに成功した時、チーム全体がSPを20獲得し、10秒間、必殺技被ダメージを<color=#ec6d21>100%</color>上昇させる。この効果は発動するたびに持続時間がリセットされる。",
+                "descKR": "보스가 5초마다 「결투」 1스택을 획득하여 자신이 입히는 피해가 <color=#ec6d21>10%</color> 증가한다. 최대 5스택 중첩된다.\n메인 캐릭터가 「표식」을 발동할 시 「결투」 1스택을 제거한다. 「결투」를 성공적으로 제거하면 팀 전체가 SP 20포인트를 획득한다. 동시에 보스가 받는 필살기 피해가 <color=#ec6d21>100%</color> 증가하며 10초간 지속된다. 발동될 때마다 시간 카운팅이 초기화된다.",
                 "icon": "Icon_Bossrush_Teshujizhi_006",
                 "effectType": [
                     "Final DMG (base)",
@@ -7506,11 +7524,17 @@
             {
                 "name": "Bounty: Combo",
                 "desc": "Dealing continuous DMG to a boss for <color=#ec6d21>5</color>s by friendly units grants <color=#ec6d21>360</color> Technique Score, up to <color=#ec6d21>15</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "己方持续攻击首领<color=#ec6d21>5</color>秒可获得<color=#ec6d21>360</color>技巧得分，最多触发<color=#ec6d21>15</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "味方が首領を5秒間攻撃し続けるたびに、スコアを<color=#ec6d21>360</color>ポイント獲得できる（最大<color=#ec6d21>15</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "전체 아군이 보스를 <color=#ec6d21>5</color>초간 지속적으로 공격하면 기술 점수 <color=#ec6d21>360</color>포인트를 획득한다. 최대 <color=#ec6d21>15</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_Tongyongdefen_001"
             },
             {
                 "name": "Devouring Dark Ring",
                 "desc": "When the boss possesses Dark Ring, its DMG increases by <color=#ec6d21>30%</color>, and it deals an additional AoE DMG every 5s.\nDealing 20 hits to the boss within 3s disables the boss's Dark Ring for 15s. The boss also takes <color=#ec6d21>65%</color> more Skill DMG dealt by Support Trekkers during this period.",
+                "descCN": "首领拥有「暗环」时自身造成伤害提升<color=#ec6d21>30%</color>，且每5秒额外造成一次范围伤害。\n当己方在3秒内对首领累计造成20次伤害后，使「暗环」失效15秒，期间首领受到援护角色造成的技能伤害提升<color=#ec6d21>65%</color>",
+                "descJP": "首領が「闇の環」を保持している時、与ダメージが<color=#ec6d21>30%</color>増加し、5秒ごとに追加の範囲ダメージを1回与える。\n味方が3秒以内に、首領に累計20回ダメージを与えてから15秒間、首領の「闇の環」は消失し、支援巡遊者から受けるスキルダメージが<color=#ec6d21>65%</color>増加する。",
+                "descKR": "보스가 「다크링」을 보유할 시 자신이 입히는 피해가 <color=#ec6d21>30%</color> 증가한다. 5초마다 추가로 범위 피해를 1회 입힌다.\n전체 아군이 3초 내에 보스에게 누적 20회의 피해를 입힐 시, 「다크링」이 15초간 무효되며 해당 기간 동안 보스가 지원 캐릭터에게 받는 스킬 피해가 <color=#ec6d21>65%</color> 증가한다.",
                 "icon": "Icon_Bossrush_Teshujizhi_005",
                 "effectType": [
                     "Final DMG (base)",
@@ -10040,11 +10064,17 @@
             {
                 "name": "Bounty: Balloon Shooter",
                 "desc": "Every <color=#ec6d21>3</color> Wind Puff minions destroyed grants <color=#ec6d21>675</color> Technique Score, up to <color=#ec6d21>8</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "每当击破<color=#ec6d21>3</color>只首领敌人召唤的仆从「风鼓仔」时可获得<color=#ec6d21>675</color>技巧得分，最多触发<color=#ec6d21>8</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が召喚した従者「フワフワバルーン」を<color=#ec6d21>3</color>体撃破するたびに、<color=#ec6d21>675</color>ポイントのスコアを獲得できる。（最大<color=#ec6d21>8</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스 적이 소환한 소환물 「바람돌이」 <color=#ec6d21>3</color>마리를 처치할 때마다 기술 점수 <color=#ec6d21>675</color>포인트를 획득한다. 최대 <color=#ec6d21>8</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_FengShanJi_001"
             },
             {
                 "name": "Reality Shift",
                 "desc": "The boss shifts between Illusion Form and Reality Form every <color=#ec6d21>15s</color>.\nIn Reality Form, the boss takes <color=#ec6d21>50%</color> more Minion DMG. Triggering a mark increases the current form's duration by <color=#ec6d21>0.6</color>s. It can only be triggered once per sec.\nIn Illusion Form, the boss takes <color=#ec6d21>50%</color> increased Skill DMG. Dealing Minion DMG each time increases the current form's duration by <color=#ec6d21>0.6</color>s. It can only be triggered once per sec.",
+                "descCN": "首领敌人会在【真影状态】和【幻灭状态】状态以<color=#ec6d21>15秒</color>为时间间隔切换。\n【幻灭状态】中，首领受到的仆从伤害提升<color=#ec6d21>50%</color>。每造成1次印记触发都会使当前状态的持续时间延长<color=#ec6d21>0.6</color>秒，每秒最多触发1次。\n【真影状态】中，首领受到的技能伤害提升<color=#ec6d21>50%</color>。每造成1次仆从伤害都会使当前状态的持续时间延长<color=#ec6d21>0.6</color>秒，每秒最多触发1次。",
+                "descJP": "首領は「真影状態」と「幻滅状態」を<color=#ec6d21>15秒</color>ごとに切り替える。\n「幻滅状態」中、首領が受ける従者からのダメージが<color=#ec6d21>50%</color>増加する。印の効果が1回発動するたびに、現在の状態の持続時間が<color=#ec6d21>0.6</color>秒延長される。この効果は1秒ごとに1回まで発動できる。\n「真影状態」中、首領が受けるスキルダメージが<color=#ec6d21>50%</color>増加する。従者が首領にダメージを与えるたび、現在の状態の継続時間が<color=#ec6d21>0.6</color>秒延長される。この効果は1秒ごとに1回まで発動できる。",
+                "descKR": "보스 적이 「진영 상태」와 「환멸 상태」를 <color=#ec6d21>15초</color> 간격으로 전환한다. \n「환멸 상태」 중 보스가 받는 소환물 피해가 <color=#ec6d21>50%</color> 증가한다. 표식을 1회 발동할 때마다 현재 상태의 지속 시간이 <color=#ec6d21>0.6</color>초 연장된다. 1초마다 최대 1회 발동한다. \n「진영 상태」 중 보스가 받는 스킬 피해가 <color=#ec6d21>50%</color> 증가한다. 소환물 피해를 1회 입힐 때마다 현재 상태의 지속 시간이 <color=#ec6d21>0.6</color>초 연장된다. 1초마다 최대 1회 발동한다.",
                 "icon": "Icon_Bossrush_Teshujizhi_007",
                 "effectType": [
                     "Skill DMG (%)"
@@ -12572,11 +12602,17 @@
             {
                 "name": "Bounty: Pearl Cascade",
                 "desc": "Whenever a Light Bulb summoned by the boss lands, destroying it grants <color=#ec6d21>900</color> Technique Score, up to <color=#ec6d21>6</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "每当首领敌人召唤的「灯泡」落地时，摧毁「灯泡」可获得<color=#ec6d21>900</color>技巧得分，最多触发<color=#ec6d21>6</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が召喚した「デンキュー」が落下した際、それを破壊すると<color=#ec6d21>900</color>ポイントのスコアを獲得できる。（最大<color=#ec6d21>6</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스 적이 소환한 「전구」가 떨어질 때마다 「전구」를 파괴하여 기술 점수 <color=#ec6d21>900</color>포인트를 획득한다. 최대 <color=#ec6d21>6</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_TaiDeng_002"
             },
             {
                 "name": "Call Down the Thunder",
                 "desc": "When the boss has Thunderbolt, its DMG is increased by <color=#ec6d21>30%</color> and deals additional DMG in a small area 4 times every 3s.\nDealing Support Skill DMG <color=#ec6d21>20</color> times to the boss within <color=#ec6d21>5</color>s disables Thunderbolt for 15s, and increases the Skill DMG the boss takes from Support Trekkers by <color=#ec6d21>40%</color> for the duration.",
+                "descCN": "首领拥有「落雷」时自身造成伤害提升<color=#ec6d21>30%</color>，且每3秒额外造成4次小范围伤害；\n当己方<color=#ec6d21>5</color>秒内对首领累计造成<color=#ec6d21>20</color>次援护角色技能伤害，使「落雷」失效15秒，期间首领受到援护角色造成的技能伤害提升<color=#ec6d21>40%</color>",
+                "descJP": "首領が「落雷」を保有している間、自身の与えるダメージが<color=#ec6d21>30%</color>増加し、3秒ごとに追加で4回小範囲にダメージを与える。\n味方が<color=#ec6d21>5</color>秒以内に、支援巡遊者のスキルで首領に累計<color=#ec6d21>20</color>回ダメージを与えると、「落雷」は15秒間無効化され、その間首領が支援巡遊者から受けるスキルダメージが<color=#ec6d21>40%</color>増加する。",
+                "descKR": "보스가 「낙뢰」를 보유할 시 자신이 입히는 피해가 <color=#ec6d21>30%</color> 증가한다. 3초마다 추가로 작은 범위 피해를 4회 입힌다. \n전체 아군이 <color=#ec6d21>5</color>초 동안 보스에게 누적 <color=#ec6d21>20</color>회의 지원 캐릭터 스킬 피해를 입힐 시, 「낙뢰」가 15초간 무효되며 해당 기간 동안 보스가 지원 캐릭터에게 받는 스킬 피해가 <color=#ec6d21>40%</color> 증가한다.",
                 "icon": "Icon_Bossrush_Teshujizhi_008",
                 "effectType": [
                     "Minion DMG Taken (base)",
@@ -15105,11 +15141,17 @@
             {
                 "name": "Bounty: Blade Collector",
                 "desc": "Each Blade reclaimed by the boss increases Technique Score by <color=#ec6d21>270</color>, up to <color=#ec6d21>20</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "首领每成功收回一把「刀」可获得<color=#ec6d21>270</color>技巧得分，最多触发<color=#ec6d21>20</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が「刀」を回収するたびに<color=#ec6d21>270</color>のスコアを獲得する。（最大<color=#ec6d21>20</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스가 「칼」 한 자루를 회수할 때마다 기술 점수 <color=#ec6d21>270</color>포인트를 획득한다. 최대 <color=#ec6d21>20</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_Chushi_002"
             },
             {
                 "name": "Momentum",
                 "desc": "The boss gains a <color=#ec6d21>30%</color> DMG Boost. For each player Minion on the field, the boss deals <color=#ec6d21>10%</color> less DMG and is afflicted with <color=#ec6d21>10%</color> VUL. This effect stacks up to 3 times and persists for <color=#ec6d21>3</color>s after the Minion disappears.",
+                "descCN": "首领拥有<color=#ec6d21>30%</color>的伤害提升。每当1名玩家阵营仆从在场时，首领会暂时减少<color=#ec6d21>10%</color>伤害并额外附加<color=#ec6d21>10%</color>易伤。该效果最多可叠加3层，并在仆从消失后持续<color=#ec6d21>3</color>秒。",
+                "descJP": "首領の与えるダメージが<color=#ec6d21>30%</color>増加する。フィールドに味方の従者が1体存在するごとに、首領の与えるダメージが<color=#ec6d21>10%</color>減少し、さらに被ダメージが<color=#ec6d21>10%</color>増加する。この効果は3回まで重複でき、従者が消滅した後も<color=#ec6d21>3</color>秒間持続する。",
+                "descKR": "보스가 <color=#ec6d21>30%</color>의 피해 증가를 보유한다. 필드에 있는 유저 진영의 소환물 1개마다, 보스의 피해가 일시적으로 <color=#ec6d21>10%</color> 감소하고, 취약 &Param3_kr3& 추가로 부여한다. 해당 효과는 최대 3스택 중첩되며, 소환물이 사라진 후 <color=#ec6d21>3</color>초간 지속된다.",
                 "icon": "Icon_Bossrush_Teshujizhi_009",
                 "effectType": [
                     "Final DMG (base)",
@@ -17639,11 +17681,17 @@
             {
                 "name": "Bounty: Petal Dodger",
                 "desc": "Each successful dodge from the boss's flower volley increases Technique Score by <color=#ec6d21>675</color>, up to <color=#ec6d21>8</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "每次首领指挥花朵进行齐射时，成功完成躲避即获得<color=#ec6d21>675</color>技巧得分，最多触发<color=#ec6d21>8</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が花を指揮して一斉射撃を行うたびに、それを回避すると<color=#ec6d21>675</color>のスコアを獲得する。（最大<color=#ec6d21>8</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스가 꽃잎을 지휘하여 발사할 때마다 회피에 성공하면 기술 점수 <color=#ec6d21>675</color>포인트를 획득한다. 최대 <color=#ec6d21>8</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_FengNiao_003"
             },
             {
                 "name": "Focus",
                 "desc": "The boss gains a stack of Focus after taking DMG for <color=#ec6d21>20</color> times, boosting its DMG Dealt by <color=#ec6d21>15%</color>.\nTriggering a Mark <color=#ec6d21>2</color> times within <color=#ec6d21>6</color>s clears all Focus stacks. For the next <color=#ec6d21>20</color>s, the boss takes <color=#ec6d21>65%</color> more DMG from Support Skills. This effect triggers up to once every <color=#ec6d21>15</color>s. Retriggering resets the duration.",
+                "descCN": "首领每受到<color=#ec6d21>20</color>次伤害即附加一层【专注】，使自身造成伤害提升<color=#ec6d21>15%</color>。\n在<color=#ec6d21>6</color>秒内成功进行<color=#ec6d21>2</color>次印记触发后，清空当前的【专注】。接下来<color=#ec6d21>20</color>秒内Boss受到的援护角色技能伤害提升<color=#ec6d21>65%</color>。该效果每<color=#ec6d21>15</color>秒最多触发1次，重复触发重置持续时间。",
+                "descJP": "首領は<color=#ec6d21>20</color>回ダメージを受けるたびに「専念」を1獲得し、自身の与えるダメージが<color=#ec6d21>15%</color>上昇する。\n<color=#ec6d21>6</color>秒以内に印を<color=#ec6d21>2</color>回発動すると、「専念」をすべて解除できる。解除後<color=#ec6d21>20</color>秒間、首領が支援巡遊者から受けるスキルダメージが<color=#ec6d21>65%</color>上昇する。この効果は<color=#ec6d21>15</color>秒ごとに1回まで発動できる。再度発動すると持続時間がリセットされる。",
+                "descKR": "보스가 <color=#ec6d21>20</color>회의 피해를 입을 때마다 「집중」 1스택을 부여하여 자신이 입히는 피해가 <color=#ec6d21>15%</color> 증가한다.\n<color=#ec6d21>6</color>초 내에 표식을 <color=#ec6d21>2</color>회 발동한다면, 현재 보유하고 있는 「집중」은 모두 제거된다. 다음 <color=#ec6d21>20</color>초간 보스가 받는 지원 캐릭터의 스킬 피해가 <color=#ec6d21>65%</color> 증가한다. 해당 효과는 <color=#ec6d21>15</color>초간 최대 1회 발동하며, 중복으로 발동 시 지속 시간이 초기화된다.",
                 "icon": "Icon_Bossrush_Teshujizhi_010",
                 "effectType": [
                     "Final DMG (%)",
@@ -20173,11 +20221,17 @@
             {
                 "name": "Bounty: Nimble Reflexes",
                 "desc": "Whenever the boss casts a Charge skill, dodging the Charge grants <color=#ec6d21>675</color> Technique Score, up to <color=#ec6d21>8</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "首领释放冲锋技能期间，不被冲锋命中可获得<color=#ec6d21>675</color>技巧得分，最多触发<color=#ec6d21>8</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領の突進攻撃を回避すると、<color=#ec6d21>675</color>ポイントのテクニックスコアを獲得する。（最大<color=#ec6d21>8</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스의 돌진 스킬 시전 기간 중, 돌진에 명중되지 않으면 기술 점수 <color=#ec6d21>675</color>포인트를 획득한다. 최대 <color=#ec6d21>8</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_DaGuanZi_001"
             },
             {
                 "name": "Baron Stance",
                 "desc": "The boss alternates between Warrior and Honeypot forms, switching every <color=#ec6d21>30</color>s and clearing all its debuffs (Resilience Break does not count toward the timer).\nIn Warrior form, Count of the Duloos takes <color=#ec6d21>30%</color> reduced Ultimate DMG and <color=#ec6d21>65%</color> increased Auto Attack DMG.\nIn Honeypot form, Count of the Duloos takes <color=#ec6d21>30%</color> reduced Mark DMG and <color=#ec6d21>65%</color> increased Skill DMG.",
+                "descCN": "首领会在【猛士】和【蜜罐】形态间来回切换，每战斗<color=#ec6d21>30</color>秒后切换至另一形态并清除自身所有负面效果。（破韧不计入时间）\n在【猛士】形态时，热嘟噗噜男爵受到的绝招伤害额外减少<color=#ec6d21>30%</color>，受到的普攻伤害额外增加<color=#ec6d21>65%</color>\n在【蜜罐】形态时，热嘟噗噜男爵受到的印记伤害额外减少<color=#ec6d21>30%</color>，受到的技能伤害额外增加<color=#ec6d21>65%</color>",
+                "descJP": "首領は交互に「男爵」モードと「ツボ」モードで切り替わる。戦闘中、<color=#ec6d21>30</color>秒ごとに別のモードへ切り替わる。切り替わる時、自身にかかっているすべてのデバフが解除される（ブレイク状態を除く）。\n「男爵」モード中、空壺ノ王の必殺技被ダメージが追加で<color=#ec6d21>30%</color>減少し、通常攻撃被ダメージが追加で<color=#ec6d21>65%</color>増加する。\n「ツボ」モード中、空壺ノ王の印被ダメージが追加で<color=#ec6d21>30%</color>減少し、スキル被ダメージが追加で<color=#ec6d21>65%</color>増加する。",
+                "descKR": "보스가 「용사」와 「꿀단지」 형태를 번갈아 전환한다. 전투 <color=#ec6d21>30</color>초마다 다른 형태로 전환하며, 자신에게 부여된 모든 약화 효과를 제거한다. (내성 무시 포함되지 않음)\n「용사」 형태일 때, 뚜두뚜두 남작이 받는 필살기 피해가 <color=#ec6d21>30%</color> 추가 감소하고, 받는 일반 공격 피해가 <color=#ec6d21>65%</color> 추가 증가한다. \n「꿀단지」 형태일 때, 뚜두뚜두 남작이 받는 표식 피해가 <color=#ec6d21>30%</color> 추가 감소하고, 받는 스킬 피해가 <color=#ec6d21>65%</color> 추가 증가한다.",
                 "icon": "Icon_Bossrush_DaGuanZi_003",
                 "effectType": [
                     "Final DMG (base)",
@@ -22707,11 +22761,17 @@
             {
                 "name": "Bounty: Watch Your Step",
                 "desc": "Whenever the boss casts a skill that triggers Ground Fissure, dodging the Ground Fissure grants <color=#ec6d21>540</color> Technique Score, up to <color=#ec6d21>10</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "每当首领敌人释放附带「地面裂隙」的技能期间，不被「地面裂隙」命中可获得<color=#ec6d21>540</color>技巧得分，最多触发<color=#ec6d21>10</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領の地割れ攻撃を回避すると、<color=#ec6d21>540</color>ポイントのテクニックスコアを獲得する。（最大<color=#ec6d21>10</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스 적의 「지면 균열」을 포함한 스킬 시전 기간 중, 「지면 균열」에 명중되지 않으면 기술 점수 <color=#ec6d21>540</color>포인트를 획득한다. 최대 <color=#ec6d21>10</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_ShaSha_001"
             },
             {
                 "name": "Aqua Ring",
                 "desc": "While the boss possesses Water Ring, its DMG is increased by <color=#ec6d21>30%</color>, and it deals AoE DMG every 5s.\nDealing <color=#ec6d21>10</color> instances of DMG to the boss within 5s disables Water Ring for <color=#ec6d21>20</color>s. When Water Ring is disabled:\nDealing <color=#ec6d21>20</color> instances of Support DMG to the boss within 5s increases the Auto Attack DMG the boss takes by<color=#ec6d21>45%</color>.\nDealing <color=#ec6d21>10</color> instances of Main Trekker DMG within 5s increases the Skill DMG the boss takes from Support Trekkers by <color=#ec6d21>45%</color>.",
+                "descCN": "首领拥有「水环」时自身造成伤害提升<color=#ec6d21>30%</color>，且每5秒造成一次范围伤害。\n当己方在5秒内对首领累计造成<color=#ec6d21>10</color>次伤害后，使「水环」失效<color=#ec6d21>20</color>秒。\n在失效期间，当己方在5秒内对首领累计造成<color=#ec6d21>20</color>次援护角色伤害后，首领受到的普攻伤害提升<color=#ec6d21>45%</color>\n在失效期间，当己方在5秒内对首领累计造成<color=#ec6d21>10</color>次主控角色伤害时，首领受到的援护角色技能伤害提升<color=#ec6d21>45%</color>",
+                "descJP": "首領に「水のリング」が付与されている時、自身が与えるダメージが<color=#ec6d21>30%</color>増加し、5秒ごとに範囲ダメージを与えるようになる。\n5秒以内に、味方が首領に与えたダメージが累計<color=#ec6d21>10</color>回に達すると、「水のリング」は<color=#ec6d21>20</color>秒間無効化される。\n「水のリング」が無効化されている時\n5秒以内に、支援巡遊者が首領に与えたダメージが累計<color=#ec6d21>20</color>回に達すると、首領の通常攻撃被ダメージが<color=#ec6d21>45%</color>増加する。\n「水のリング」が無効化されている時\n5秒以内に、主力巡遊者が首領に与えたダメージが累計<color=#ec6d21>10</color>回に達すると、首領の支援巡遊者からのスキル被ダメージが<color=#ec6d21>45%</color>増加する。",
+                "descKR": "보스가 「물의 고리」를 보유하면 자신이 입히는 피해가 <color=#ec6d21>30%</color> 증가하고, 5초마다 범위 피해를 1회 입힌다. \n전체 아군이 5초 동안 보스에게 누적 <color=#ec6d21>10</color>회의 피해를 입힌 후, 「물의 고리」가 <color=#ec6d21>20</color>초 동안 무효가 되고, 무효 기간 중 다음 효과가 적용된다. \n전체 아군이 5초 동안 보스에게 누적 <color=#ec6d21>20</color>회의 지원 캐릭터 피해를 입힌 후, 보스가 받는 일반 공격 피해가 <color=#ec6d21>45%</color> 증가한다. \n전체 아군이 5초 동안 보스에게 누적 <color=#ec6d21>10</color>회의 메인 캐릭터 피해를 입히면, 보스가 받는 지원 캐릭터의 스킬 피해가 <color=#ec6d21>45%</color> 증가한다.",
                 "icon": "Icon_Bossrush_Teshujizhi_004",
                 "effectType": [
                     "Skill DMG Taken (base)",
@@ -25240,11 +25300,17 @@
             {
                 "name": "Rippling Flash",
                 "desc": "Gain <color=#ec6d21>675</color> Technique Score each time you avoid taking DMG from a boss's melee skill. Can be triggered up to <color=#ec6d21>8</color> times, for a total of <color=#ec6d21>5400</color> points.",
+                "descCN": "每次成功在首领的近战技能中不受伤害时，获得<color=#ec6d21>675</color>技巧得分，最多触发<color=#ec6d21>8</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領の近接スキル使用中にダメージを受けなかった時、<color=#ec6d21>675</color>ポイントのテクニックスコアを獲得する。（最大<color=#ec6d21>8</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스가 근거리 스킬 시전 시 피해를 받지 않으면 기술 점수 <color=#ec6d21>675</color>포인트를 획득한다. 최대 <color=#ec6d21>8</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_HaSaNa_002"
             },
             {
                 "name": "Resonance of Power",
                 "desc": "For every <color=#ec6d21>1</color> skill cast by the Main Trekker, all Support Trekkers' Skill DMG is intensified by <color=#ec6d21>40%</color> for <color=#ec6d21>9</color>s.\nFor every <color=#ec6d21>50</color> times Support Trekkers deal DMG, the Main Trekker's Skill DMG is intensified by <color=#ec6d21>40%</color> for <color=#ec6d21>12</color>s.\nRe-triggering refreshes the duration; effects do not stack.",
+                "descCN": "主控角色每释放<color=#ec6d21>1</color>次技能，所有援护角色技能伤害强度增加<color=#ec6d21>40%</color>，持续<color=#ec6d21>9</color>秒。\n援护角色每造成<color=#ec6d21>50</color>次伤害，主控角色技能伤害强度增加<color=#ec6d21>40%</color>，持续<color=#ec6d21>12</color>秒。\n重复触发时，重置时间，不叠加效果。",
+                "descJP": "主力巡遊者がスキルを<color=#ec6d21>1</color>回発動するたびに、<color=#ec6d21>9</color>秒間、すべての支援巡遊者のスキルダメージ強度が<color=#ec6d21>40%</color>増加する。この効果は再発動時に持続時間が更新され、効果は重複しない。\n支援巡遊者が<color=#ec6d21>50</color>回ダメージを与えるごとに、<color=#ec6d21>12</color>秒間、主力巡遊者のスキルダメージ強度が<color=#ec6d21>40%</color>増加する。\nこの効果は再発動時に持続時間が更新され、効果は重複しない。",
+                "descKR": "메인 캐릭터가 스킬을 <color=#ec6d21>1</color>회 시전할 때마다 모든 지원 캐릭터의 스킬 피해 강도가 <color=#ec6d21>40%</color> 증가한다. <color=#ec6d21>9</color>초간 지속된다.\n지원 캐릭터가 피해를 <color=#ec6d21>50</color>회 입힐 때마다 메인 캐릭터의 스킬 피해 강도가 <color=#ec6d21>40%</color> 증가한다. <color=#ec6d21>12</color>초간 지속된다.\n중복으로 발동 시 시간이 초기화되며 중첩되지 않는다.",
                 "icon": "Icon_Bossrush_Teshujizhi_011",
                 "effectType": [
                     "Skill DMG (%)"
@@ -27772,11 +27838,17 @@
             {
                 "name": "Bounty: Wind Dodger",
                 "desc": "Whenever a boss casts a skill with Tornado, dodging the Tornado grants <color=#ec6d21>675</color> Technique Score, up to <color=#ec6d21>8</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "每当首领敌人释放附带「龙卷风」的技能时，不被「龙卷风」命中可获得<color=#ec6d21>675</color>技巧得分，最多触发<color=#ec6d21>8</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が竜巻を発生させるたびに、その竜巻を回避すると、スコアを<color=#ec6d21>675</color>ポイント獲得できる（最大<color=#ec6d21>8</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스 적이 「토네이도」를 포함한 스킬을 시전할 때마다 「토네이도」에게 명중되지 않으면 기술 점수 <color=#ec6d21>675</color>포인트를 획득한다. 최대 <color=#ec6d21>8</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_Fengcao_001"
             },
             {
                 "name": "Combo Break",
                 "desc": "For every <color=#ec6d21>10</color> instances of Skill DMG dealt to the boss, the boss's Ultimate DMG Taken is intensified by <color=#ec6d21>10%</color> for <color=#ec6d21>8</color>s, stacking up to <color=#ec6d21>6</color> times.\nFor every <color=#ec6d21>1</color> instance of Mark DMG dealt to the boss, the boss's Skill DMG Taken is intensified by <color=#ec6d21>4%</color> for <color=#ec6d21>6</color>s, stacking up to <color=#ec6d21>5</color> times.",
+                "descCN": "己方每对首领造成<color=#ec6d21>10</color>次技能伤害，首领受到绝招伤害强度增加<color=#ec6d21>10%</color>，最多叠加<color=#ec6d21>6</color>层，持续<color=#ec6d21>8</color>秒。\n己方每对首领造成<color=#ec6d21>1</color>次印记伤害，首领受到技能伤害强度增加<color=#ec6d21>4%</color>，最多叠加<color=#ec6d21>5</color>层，持续<color=#ec6d21>6</color>秒。",
+                "descJP": "味方が首領にスキルダメージを<color=#ec6d21>10</color>回与えるごとに、<color=#ec6d21>8</color>秒間、首領の必殺技被ダメージ強度が<color=#ec6d21>10%</color>増加する。この効果は<color=#ec6d21>6</color>回まで重複できる。\n味方が首領に印ダメージを<color=#ec6d21>1</color>回与えるごとに、<color=#ec6d21>6</color>秒間、首領のスキル被ダメージ強度が<color=#ec6d21>4%</color>増加する。この効果は<color=#ec6d21>5</color>回まで重複できる。",
+                "descKR": "전체 아군이 보스에게 스킬 피해를 <color=#ec6d21>10</color>회 입힐 때마다 보스가 받는 필살기 피해 강도가 <color=#ec6d21>10%</color> 증가한다. 최대 <color=#ec6d21>6</color>스택 중첩되며, <color=#ec6d21>8</color>초간 지속된다.\n전체 아군이 보스에게 표식 피해를 <color=#ec6d21>1</color>회 입힐 때마다 보스가 받는 스킬 피해 강도가 <color=#ec6d21>4%</color> 증가한다. 최대 <color=#ec6d21>5</color>스택 중첩되며, <color=#ec6d21>6</color>초간 지속된다.",
                 "icon": "Icon_Bossrush_Teshujizhi_012",
                 "effectType": [
                     "Ultimate DMG Taken (%)",
@@ -30306,11 +30378,17 @@
             {
                 "name": "Bounty: Pearl Cascade",
                 "desc": "Whenever a Light Bulb summoned by the boss lands, destroying it grants <color=#ec6d21>900</color> Technique Score, up to <color=#ec6d21>6</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "每当首领敌人召唤的「灯泡」落地时，摧毁「灯泡」可获得<color=#ec6d21>900</color>技巧得分，最多触发<color=#ec6d21>6</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が召喚した「デンキュー」が落下した際、それを破壊すると<color=#ec6d21>900</color>ポイントのスコアを獲得できる。（最大<color=#ec6d21>6</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스 적이 소환한 「전구」가 떨어질 때마다 「전구」를 파괴하여 기술 점수 <color=#ec6d21>900</color>포인트를 획득한다. 최대 <color=#ec6d21>6</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_TaiDeng_002"
             },
             {
                 "name": "Call Down the Thunder",
                 "desc": "When the boss has Thunderbolt, its DMG is increased by <color=#ec6d21>30%</color> and deals additional DMG in a small area 4 times every 3s.\nDealing Mark DMG <color=#ec6d21>3</color> times to the boss within <color=#ec6d21>5</color>s disables Thunderbolt for 15s, and intensifies the Skill DMG the boss takes by <color=#ec6d21>40%</color> for the duration.",
+                "descCN": "首领拥有「落雷」时自身造成伤害提升<color=#ec6d21>30%</color>，且每3秒额外造成4次小范围伤害；\n当己方<color=#ec6d21>5</color>秒内对首领累计造成<color=#ec6d21>3</color>次印记伤害，使「落雷」失效15秒，期间首领受到的技能伤害强度增加<color=#ec6d21>40%</color>",
+                "descJP": "首領が「落雷」を保有している間、自身の与えるダメージが<color=#ec6d21>30%</color>増加し、3秒ごとに追加で4回小範囲にダメージを与える。\n味方が<color=#ec6d21>5</color>秒以内に、首領に印ダメージを累計<color=#ec6d21>3</color>回与えると、「落雷」は15秒間無効化され、その間首領のスキル被ダメージ強度が<color=#ec6d21>40%</color>増加する。",
+                "descKR": "보스가 「낙뢰」를 보유할 시 자신이 입히는 피해가 <color=#ec6d21>30%</color> 증가한다. 3초마다 추가로 작은 범위 피해를 4회 입힌다. \n전체 아군이 <color=#ec6d21>5</color>초 동안 보스에게 누적 <color=#ec6d21>3</color>회의 표식 피해를 입힐 시, 「낙뢰」가 15초간 무효되며 해당 기간 동안 보스가 받는 스킬 피해 강도가 <color=#ec6d21>40%</color> 증가한다.",
                 "icon": "Icon_Bossrush_Teshujizhi_008",
                 "effectType": [
                     "Final DMG (%)",
@@ -32840,11 +32918,17 @@
             {
                 "name": "Bounty: Blower Bane",
                 "desc": "Whenever a boss casts a skill with Tornado, dodging the Tornado grants <color=#ec6d21>540</color> Technique Score, up to <color=#ec6d21>10</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "每当首领敌人释放附带「龙卷风」的技能期间，不被龙卷风命中可获得<color=#ec6d21>540</color>技巧得分，最多触发<color=#ec6d21>10</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が竜巻を発生させるたびに、その竜巻を回避すると、スコアを<color=#ec6d21>540</color>ポイント獲得できる（最大<color=#ec6d21>10</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스 적이 「토네이도」를 포함한 스킬을 시전 기간 중마다 토네이도에게 명중되지 않으면 기술 점수 <color=#ec6d21>540</color>포인트를 획득한다. 최대 <color=#ec6d21>10</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_JinDuanLiRong_001"
             },
             {
                 "name": "Skillful Refinement",
                 "desc": "For every <color=#ec6d21>1</color>s a Support Trekker remains on the battlefield, applies 1 stack of Build-Up to themselves and the Main Trekker. \nEach stack of Build-Up provides <color=#ec6d21>2%</color> of Skill DMG intensity and <color=#ec6d21>2%</color> Auto Attack DMG intensity, stacking up to <color=#ec6d21>10</color> times. Each stack lasts for <color=#ec6d21>8</color>s, and every stack gained resets this duration.\nTwo Support Trekkers can each apply Build-Up to the Main Trekker; the stack limit and effects are calculated separately and can exist simultaneously.",
+                "descCN": "援护角色每驻场<color=#ec6d21>1</color>秒，为自己与主控角色叠加1层【蓄势】。\n每层【蓄势】提供<color=#ec6d21>2%</color>技能伤害强度和<color=#ec6d21>2%</color>普攻伤害强度，最多叠加<color=#ec6d21>10</color>层，每次叠加时重置持续时间，持续<color=#ec6d21>8</color>秒。\n两名援护角色可分别为主控角色叠加【蓄势】，层数上限与效果分别计算，可同时存在。",
+                "descJP": "支援巡遊者がフィールドに<color=#ec6d21>1</color>秒残るごとに、自身と主力巡遊者は「モメンタム」を1獲得する。\n「モメンタム」1につき、スキルダメージ強度が<color=#ec6d21>2%</color>増加し、通常攻撃ダメージ強度が<color=#ec6d21>2%</color>増加する。この効果は最大<color=#ec6d21>10</color>回まで重複できる。「モメンタム」は<color=#ec6d21>8</color>秒間持続し、獲得するたびに持続時間がリセットされる。\n2体の支援巡遊者は、それぞれ独立して主力巡遊者に「モメンタム」を付与できる。重複上限および効果は個別に計算され、同時に存在できる。",
+                "descKR": "지원 캐릭터가 필드에 <color=#ec6d21>1</color>초간 존재할 때마다 자신과 메인 캐릭터에게 「기세 축적」 1스택을 제공한다.\n「기세 축적」 1스택마다 스킬 피해 강도 <color=#ec6d21>2%</color>, 일반 공격 피해 강도 <color=#ec6d21>2%</color>를 제공하며, 최대 <color=#ec6d21>10</color>스택 중첩된다. 중첩될 때마다 지속 시간이 초기화되며, <color=#ec6d21>8</color>초간 지속된다.\n지원 캐릭터 2명 각자 메인 캐릭터에게 「기세 축적」을 제공할 수 있다. 최대 스택 및 효과는 단독으로 계산되며 동시에 존재할 수 있다.",
                 "icon": "Icon_Bossrush_Teshujizhi_014",
                 "effectType": [
                     "Skill DMG (%)",
@@ -35373,11 +35457,17 @@
             {
                 "name": "Bounty: Shifting Footwork",
                 "desc": "Avoid getting hit by Rapid Leapstrike, Blaze Bound, and Furious Stride grants <color=#ec6d21>1350</color> Technique Score, up to <color=#ec6d21>4</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "避免被「连续跃击」或「灼热腾跃」或「恼怒乱步」命中可获得<color=#ec6d21>1350</color>技巧得分，最多触发<color=#ec6d21>4</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "連続ジャンプ攻撃、灼熱ジャンプ攻撃、狂乱のステップ攻撃を回避した時、<color=#ec6d21>1350</color>ポイントのテクニックスコアを獲得する。（最大<color=#ec6d21>4</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "「연속 점프 공격」, 「뜨거운 도약」, 「분노의 스텝」의 공격을 회피하면 기술 점수 <color=#ec6d21>1350</color>포인트를 획득한다. 최대 <color=#ec6d21>4</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_DaGuanZi_004"
             },
             {
                 "name": "The Count's Majesty",
                 "desc": "Count of the Duloos starts with 1 stack of Resistance and gains an additional stack every 5s. Each stack of Resistance reduces his DMG Taken by <color=#ec6d21>8%</color>, stacking up to <color=#ec6d21>10</color> times.\nWhen the Main Trekker triggers a Mark, 1 stack of Resistance is removed from Count of the Duloos, and all Support Trekkers on the battlefield gain 1 stack of Amplification. Each stack increases DMG by <color=#ec6d21>15%</color>, stacking up to <color=#ec6d21>5</color> times, lasting 20s.",
+                "descCN": "热嘟噗噜男爵初始拥有1层「抵御」，且每5秒获得1层「抵御」，每层「抵御」使热嘟噗噜男爵受到的伤害降低<color=#ec6d21>8%</color>，最多叠加<color=#ec6d21>10</color>层。\n当己方主控角色触发印记后，可移除热嘟噗噜男爵1层「抵御」，并为在场援护角色提供1层「增幅」，每层「增幅」提高<color=#ec6d21>15%</color>伤害，最多叠加<color=#ec6d21>5</color>层，持续20秒。",
+                "descJP": "空壺ノ王は戦闘開始時に「レジスト」を1保有しており、5秒ごとに「レジスト」を1獲得する。「レジスト」1につき、空壺ノ王の被ダメージが<color=#ec6d21>8%</color>減少する。この効果は<color=#ec6d21>10</color>回まで重複できる。\n味方の主力巡遊者が印を発動させた時、空壺ノ王は「レジスト」を1失い、さらにフィールド上の支援巡遊者に「アドレナリン」を1付与する。20秒間、「アドレナリン」1につき、ダメージが<color=#ec6d21>15%</color>増加する。この効果は<color=#ec6d21>5</color>回まで重複できる。",
+                "descKR": "뚜두뚜두 남작은 초기에 「저항」 1스택을 보유하며, 5초마다 「저항」 1스택을 획득한다. 「저항」 1스택마다 뚜두뚜두 남작이 받는 피해가 <color=#ec6d21>8%</color> 감소한다. 최대 <color=#ec6d21>10</color>스택 중첩된다.\n메인 캐릭터가 표식을 발동하면 뚜두뚜두 남작의 「저항」을 1스택 제거하며, 필드에 있는 지원 캐릭터에게 「증폭」 1스택을 제공한다. 「증폭」 1스택마다 피해가 <color=#ec6d21>15%</color> 증가한다. 최대 <color=#ec6d21>5</color>스택 중첩되며, 20초간 지속된다.",
                 "icon": "Icon_Bossrush_DaGuanZi_002",
                 "effectType": [
                     "Final DMG Taken (base)",
@@ -37907,11 +37997,17 @@
             {
                 "name": "Bounty - Spotless",
                 "desc": "Avoiding the boss's shooting skills grants <color=#ec6d21>1080</color> Technique Score, up to <color=#ec6d21>5</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "避免被首领的射击技能命中可获得<color=#ec6d21>1080</color>技巧得分，最多触发<color=#ec6d21>5</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領の射撃スキルを被弾しなかった時、<color=#ec6d21>1080</color>のテクニックスコアを獲得する。（最大<color=#ec6d21>5</color>回、合計<color=#ec6d21>5400</color>ポイントまで）。",
+                "descKR": "보스의 사격 스킬을 회피하면 기술 점수 <color=#ec6d21>1080</color>포인트를 획득한다. 최대 <color=#ec6d21>5</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_FengShanJi_002"
             },
             {
                 "name": "Stormy Zeal",
                 "desc": "Every <color=#ec6d21>3</color> Wind Puff minions destroyed grants [Inspiration], granting the entire squad <color=#ec6d21>40%</color> Skill Damage Power for <color=#ec6d21>10</color>s.\nWhenever the Main Trekker uses a skill, the remaining duration of [Inspiration] is extended by <color=#ec6d21>5</color>s (up to a max of <color=#ec6d21>20</color>s).",
+                "descCN": "每击破<color=#ec6d21>3</color>只首领敌人召唤的仆从「风鼓仔」可获得【鼓舞】，为全队提供<color=#ec6d21>40%</color>技能伤害强度，持续<color=#ec6d21>10</color>秒。\n每当主控角色释放技能时，【鼓舞】的当前持续时长延长<color=#ec6d21>5</color>秒（最大不超过<color=#ec6d21>20</color>秒）。",
+                "descJP": "首領が召喚した従者「フワフワバルーン」を<color=#ec6d21>3</color>体撃破するたびに、鼓舞を獲得し、<color=#ec6d21>10</color>秒間、チーム全体はスキルダメージ強度が<color=#ec6d21>40%</color>増加する。\n主力巡遊者がスキルを発動するたびに、鼓舞の効果時間が<color=#ec6d21>5</color>秒延長される（最大<color=#ec6d21>20</color>秒まで）。",
+                "descKR": "보스 적이 소환하는 소환물 「바람돌이」 <color=#ec6d21>3</color>마리를 처치할 때마다 「격려」를 획득해 팀 전체에게 <color=#ec6d21>40%</color>의 스킬 피해 강도를 제공한다. <color=#ec6d21>10</color>초간 지속된다. \n메인 캐릭터가 스킬을 시전할 때마다 「격려」의 현재 지속 시간이 <color=#ec6d21>5</color>초 연장된다. 최대 <color=#ec6d21>20</color>초 연장할 수 있다.",
                 "icon": "Icon_Bossrush_Teshujizhi_015",
                 "effectType": [
                     "Skill DMG (%)"
@@ -40439,11 +40535,17 @@
             {
                 "name": "Bounty: Knife Destroyer",
                 "desc": "Each Blade thrown by the boss and destroyed by friendly units grants <color=#ec6d21>180</color> Technique Score, up to <color=#ec6d21>30</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "己方每击破1把首领敌人投掷出的「刀」可获得<color=#ec6d21>180</color>技巧得分，最多触发<color=#ec6d21>30</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が投げた「カトラリー」を破壊するたびに、スコアを<color=#ec6d21>180</color>ポイント獲得できる（最大<color=#ec6d21>30</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "전체 아군이 보스 적이 던진 「칼」 1개를 파괴할 때마다 기술 점수 <color=#ec6d21>180</color>포인트를 획득한다. 최대 <color=#ec6d21>30</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_Chushi_001"
             },
             {
                 "name": "Fight Fire with Fire",
                 "desc": "The boss enemy possesses Fire Ring, continuously dealing DMG to the Main Trekker within the ring. Every time the Main Trekker triggers <color=#ec6d21>5</color> Elemental Marks on the boss enemy, the squad gains Enhancement: Skill DMG is intensified by <color=#ec6d21>80%</color> for <color=#ec6d21>10</color> seconds. During this period, the boss enemy's Fire Ring is disabled and cannot be triggered again.",
+                "descCN": "首领敌人拥有「火环」，持续对环内的主控角色造成伤害。\n主控角色每对首领敌人触发<color=#ec6d21>5</color>次「元素印记」，可获得「强化」：全队提升<color=#ec6d21>80%</color>技能伤害强度，持续<color=#ec6d21>10</color>秒，在此期间首领敌人「火环」失效，且不会重复触发。",
+                "descJP": "首領は「火の環」を保持しており、範囲内の主力巡遊者に対して、持続的にダメージを与える。\n主力巡遊者が首領に対して、印を<color=#ec6d21>5</color>回発動させるごとに、「火の力」を獲得する。\n「火の力」：<color=#ec6d21>10</color>秒間、チーム全体のスキルダメージ強度が<color=#ec6d21>80%</color>増加する。この効果は重複せず、持続中、首領の「火の環」を無効化する。",
+                "descKR": "보스 적이 「불의 고리」를 보유하여 지속적으로 고리 안에 있는 메인 캐릭터에게 피해를 입힌다.\n메인 캐릭터가 보스 적에게 「원소 표식」 <color=#ec6d21>5</color>회 발동할 때마다 「강화」를 획득하여 팀 전체의 스킬 피해 강도가 <color=#ec6d21>80%</color> 증가한다. <color=#ec6d21>10</color>초간 지속된다. 해당 기간 동안 보스 적의 「불의 고리」가 무효화되며 중복으로 발동하지 않는다.",
                 "icon": "Icon_Bossrush_Teshujizhi_002",
                 "effectType": [
                     "Skill DMG (%)"
@@ -42971,11 +43073,17 @@
             {
                 "name": "Bounty: Sealing Tower of Sand",
                 "desc": "Each time a Quicksand Pillar on the field is put to sleep, grants <color=#ec6d21>1350</color> Technique Score, up to <color=#ec6d21>4</color> times, for a total of <color=#ec6d21>5400</color> points.",
+                "descCN": "每次成功使场地中的「流沙柱」陷入沉睡时，获得<color=#ec6d21>1350</color>技巧得分，最多触发<color=#ec6d21>4</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "フィールド上の「流砂の柱」を休眠状態にすることに成功するたび、スコアを<color=#ec6d21>1350</color>ポイント獲得できる。（最大<color=#ec6d21>4</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "필드에 있는 「모래 기둥」을 수면시킬 때마다 기술 점수 <color=#ec6d21>1350</color>포인트를 획득한다. 최대 <color=#ec6d21>4</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_HaSaNa_001"
             },
             {
                 "name": "Fatigue on Hit",
                 "desc": "The boss enemy possesses <color=#ec6d21>80%</color> DMG RES against Auto Attack/Skill/Mark DMG.\nEvery time the Main Trekker deals <color=#ec6d21>6</color> instances of Auto Attack/Skill/Mark DMG to the boss enemy, its RES against that specific DMG type is reduced by <color=#ec6d21>10%</color> until dropping to 0. After that, each subsequent trigger increases the DMG taken from that specific DMG type by <color=#ec6d21>10%</color>, up to a maximum of <color=#ec6d21>40%</color>.",
+                "descCN": "首领敌人初始对普攻/技能/印记伤害具有<color=#ec6d21>80%</color>伤害减免。\n主控角色每对首领敌人造成<color=#ec6d21>6</color>次任意普攻/技能/印记伤害，首领敌人对该类型的伤害减免降低<color=#ec6d21>10%</color>，直至降低为0。此后再次触发时，首领敌人受到该类型伤害提升<color=#ec6d21>10%</color>，最高不超过<color=#ec6d21>40%</color>。",
+                "descJP": "首領は初期状態において、通常攻撃/スキル/印ダメージに対して<color=#ec6d21>80%</color>の被ダメージ軽減効果を保持する。\n主力巡遊者が首領に通常攻撃/スキル/印ダメージのいずれかを<color=#ec6d21>6</color>回与えるたびに、首領は該当するダメージタイプに対する被ダメージ軽減効果が<color=#ec6d21>10%</color>減少する。（最大0%まで）\n被ダメージ軽減効果が0%になった後、さらに条件を満たすと、首領は該当するダメージタイプの被ダメージが<color=#ec6d21>10%</color>増加する（最大<color=#ec6d21>40%</color>まで）。",
+                "descKR": "보스 적은 처음에 일반 공격/스킬/표식 피해에 <color=#ec6d21>80%</color> 피해 감소를 보유한다.\n메인 캐릭터가 임의로 보스 적에게 일반 공격/스킬/표식 피해를 <color=#ec6d21>6</color>회 입힐 때마다, 보스 적이 해당 유형의 피해에 대한 피해 감소가 <color=#ec6d21>10%</color> 감소한다. 최대 0까지 감소할 수 있다. 이후 다시 발동되면 보스 적이 받는 해당 유형의 피해가 <color=#ec6d21>10%</color> 증가한다. 최대 <color=#ec6d21>40%</color>까지 증가할 수 있다.",
                 "icon": "Icon_Bossrush_Teshujizhi_017",
                 "effectType": [
                     "Auto Attack DMG Taken (%)",
@@ -45506,11 +45614,17 @@
             {
                 "name": "Bounty: Wind Dodger",
                 "desc": "Whenever a boss casts a skill with Tornado, dodging the Tornado grants <color=#ec6d21>675</color> Technique Score, up to <color=#ec6d21>8</color> times, totaling <color=#ec6d21>5400</color> points.",
+                "descCN": "每当首领敌人释放附带「龙卷风」的技能时，不被「龙卷风」命中可获得<color=#ec6d21>675</color>技巧得分，最多触发<color=#ec6d21>8</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "首領が竜巻を発生させるたびに、その竜巻を回避すると、スコアを<color=#ec6d21>675</color>ポイント獲得できる（最大<color=#ec6d21>8</color>回、合計<color=#ec6d21>5400</color>ポイントまで）",
+                "descKR": "보스 적이 「토네이도」를 포함한 스킬을 시전할 때마다 「토네이도」에게 명중되지 않으면 기술 점수 <color=#ec6d21>675</color>포인트를 획득한다. 최대 <color=#ec6d21>8</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_Fengcao_001"
             },
             {
                 "name": "Armor-Piercing Wedge",
                 "desc": "After the Main Trekker deals Auto Attack DMG to the boss, the boss takes <color=#ec6d21>1.35%</color> increased Ultimate DMG for <color=#ec6d21>10</color>s, stacking up to <color=#ec6d21>10</color> times. This effect can be triggered once every 0.5s.\nIncreases the squad's DEF PEN by <color=#ec6d21>50</color>. Having a Support Trekker on the battlefield increases the squad's DEF PEN by <color=#ec6d21>60%</color>.",
+                "descCN": "主控角色对首领造成普攻伤害后，首领受到的绝招伤害强度提高<color=#ec6d21>1.35%</color>，持续<color=#ec6d21>10</color>秒，最多叠加<color=#ec6d21>10</color>层，每0.5秒最多触发一次。\n全队的防御穿透属性提高<color=#ec6d21>50</color>点，援护角色在场期间，全队的防御穿透属性提高<color=#ec6d21>60%</color>",
+                "descJP": "主力枠が首領に通常攻撃ダメージを与えた時、<color=#ec6d21>10</color>秒間、首領の必殺技被ダメージ強度が<color=#ec6d21>1.35%</color>増加する。この効果は<color=#ec6d21>10</color>回まで重複でき、0.5秒ごとに1回のみ発動する。\nチーム全体は防御貫通を<color=#ec6d21>50</color>獲得する。支援巡遊者がフィールドにいる間、追加でチーム全体は現在の防御貫通の<color=#ec6d21>60%</color>を獲得する。",
+                "descKR": "메인 캐릭터가 보스에게 일반 공격 피해를 입힌 후 보스가 받는 필살기 피해가 <color=#ec6d21>1.35%</color> 증가한다. <color=#ec6d21>10</color>초간 지속되며, 최대 <color=#ec6d21>10</color>스택 중첩된다. 0.5초마다 최대 1회 발동할 수 있다.\n팀 전체의 방어 관통 속성이 <color=#ec6d21>50</color> 증가한다. 지원 캐릭터가 필드에 있는 동안 팀 전체의 방어 관통 속성이 <color=#ec6d21>60%</color> 증가한다.",
                 "icon": "Icon_Bossrush_Teshujizhi_018",
                 "effectType": [
                     "Final DMG Taken (base)",
@@ -48041,11 +48155,17 @@
             {
                 "name": "Bounty: Hardworking Gardener",
                 "desc": "Each time a flower at the edge of the field is destroyed, gain <color=#ec6d21>540</color> Technique Score. This can trigger up to <color=#ec6d21>10</color> times, for a total of <color=#ec6d21>5400</color> points.",
+                "descCN": "每击破1次场边的花朵时，获得<color=#ec6d21>540</color>技巧得分，最多触发<color=#ec6d21>10</color>次，共计<color=#ec6d21>5400</color>分",
+                "descJP": "フィールド上の花を1体撃破するごとに、テクニックスコアを<color=#ec6d21>540</color>獲得する。（最大<color=#ec6d21>10</color>回まで発動、合計<color=#ec6d21>5400</color>ポイントまで。）",
+                "descKR": "필드 끝에 있는 꽃을 격파할 때마다 기술 점수 <color=#ec6d21>540</color>포인트를 획득한다. 최대 <color=#ec6d21>10</color>회 발동할 수 있어 총 <color=#ec6d21>5400</color>포인트를 획득할 수 있다.",
                 "icon": "Icon_Bossrush_FengNiao_001"
             },
             {
                 "name": "Tailor-Made",
                 "desc": "For every <color=#ec6d21>1</color>s a Support Trekker is on the battlefield, applies 1 stack of Build-Up to themselves and the Main Trekker. \nEach stack of Build-Up provides <color=#ec6d21>2.7%</color> of Skill DMG intensity and <color=#ec6d21>7.5%</color> Auto Attack intensity, stacking up to <color=#ec6d21>8</color> times. Each stack lasts for <color=#ec6d21>8</color>s, and every stack gained resets this duration.\nTwo Support Trekkers can each apply Build-Up to the Main Trekker; the stack limit and effects are calculated separately and can exist simultaneously.",
+                "descCN": "援护角色每驻场<color=#ec6d21>1</color>秒，为自己与主控角色叠加1层【蓄势】。\n每层【蓄势】提供<color=#ec6d21>2.7%</color>技能伤害强度与<color=#ec6d21>7.5%</color>普攻伤害强度，最多叠加<color=#ec6d21>8</color>层，每次叠加时重置持续时间，持续<color=#ec6d21>8</color>秒。\n两名援护角色可分别为主控角色叠加【蓄势】，层数上限与效果分别计算，可同时存在。",
+                "descJP": "支援巡遊者が出場して<color=#ec6d21>1</color>秒経過するごとに、自身と主力巡遊者に「モメンタム」を1付与する。\n「モメンタム」1につきスキルダメージ強度が<color=#ec6d21>2.7%</color>、通常攻撃ダメージ強度が<color=#ec6d21>7.5%</color>増加する。この効果は<color=#ec6d21>8</color>回まで重複できる。「モメンタム」は<color=#ec6d21>8</color>秒間持続し、獲得するたびに持続時間がリセットされる。\n2体の支援巡遊者は、それぞれ独立して主力巡遊者に「モメンタム」を付与できる。重複上限および効果は個別に計算され、同時に存在できる。",
+                "descKR": "지원 캐릭터가 필드에 <color=#ec6d21>1</color>초 머무를 때마다 자신과 메인 캐릭터에게 「기세 축적」 1스택을 제공한다.\n「기세 축적」 1스택마다 <color=#ec6d21>2.7%</color> 스킬 피해 강도와 <color=#ec6d21>7.5%</color> 일반 공격 피해 강도를 제공한다. 최대 <color=#ec6d21>8</color>스택 중첩된다. 중첩될 때마다 지속 시간이 초기화되며, <color=#ec6d21>8</color>초간 지속된다.\n지원 캐릭터 2명 각자 메인 캐릭터에게 「기세 축적」을 제공할 수 있다. 최대 스택 및 효과는 단독으로 계산되며 동시에 존재할 수 있다.",
                 "icon": "Icon_Bossrush_Teshujizhi_017",
                 "effectType": [
                     "Skill DMG (%)",
