@@ -346,10 +346,18 @@ function getStats(id) {
         .map(key => {
             const attr = ATTRIBUTE[key];
             return {
-                HP: attr.Hp,
-                ATK: attr.Atk,
+                HP: attr.Hp || undefined,
+                ATK: attr.Atk || undefined,
+                DEF: attr.Def || undefined,
+                "Crit Rate": attr.CritRate ? attr.CritRate / 100 + '%' : undefined,
+                "Crit DMG": attr.CritPower ? attr.CritPower / 100 + '%' : undefined,
+                "Auto Attack DMG": attr.NORMALDMG ? attr.NORMALDMG / 100 + '%' : undefined,
                 "Skill DMG": attr.SKILLDMG ? attr.SKILLDMG / 100 + '%' : undefined,
                 "Ultimate DMG": attr.ULTRADMG ? attr.ULTRADMG / 100 + '%' : undefined,
+                "Other DMG": attr.OTHERDMG ? attr.OTHERDMG / 100 + '%' : undefined,
+                "Mark DMG": attr.MARKDMG ? attr.MARKDMG / 100 + '%' : undefined,
+                "Derivative DMG": attr.PROJECTILEDMG ? attr.PROJECTILEDMG / 100 + '%' : undefined,
+                "Minion DMG": attr.SUMMONDMG ? attr.SUMMONDMG / 100 + '%' : undefined,
                 "Aqua DMG": attr.WEE ? attr.WEE / 100 + '%' : undefined,
                 "Ignis DMG": attr.FEE ? attr.FEE / 100 + '%' : undefined,
                 "Terra DMG": attr.SEE ? attr.SEE / 100 + '%' : undefined,
