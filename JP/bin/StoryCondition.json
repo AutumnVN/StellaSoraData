@@ -1040,7 +1040,7 @@
     "Id": 902,
     "ConditionId": "C08_02",
     "StoryId_a": [
-      "STm08_BT01"
+      "BAm08_01"
     ]
   },
   "903": {
@@ -1110,7 +1110,7 @@
     "Id": 912,
     "ConditionId": "C08_11",
     "StoryId_a": [
-      "STm08_BT02"
+      "BAm08_02"
     ]
   },
   "913": {
@@ -1144,6 +1144,9 @@
   "917": {
     "Id": 917,
     "ConditionId": "C08_16_a",
+    "EvIds_a": [
+      "E901"
+    ],
     "StoryId_a": [
       "STm08_15"
     ]
@@ -1151,6 +1154,9 @@
   "918": {
     "Id": 918,
     "ConditionId": "C08_16_b",
+    "EvIds_a": [
+      "E902"
+    ],
     "StoryId_a": [
       "STm08_15"
     ]
@@ -1215,7 +1221,7 @@
     "Id": 927,
     "ConditionId": "C08_21",
     "StoryId_a": [
-      "STm08_BT03"
+      "BAm08_03"
     ]
   },
   "6501": {

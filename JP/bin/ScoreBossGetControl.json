@@ -371,5 +371,21 @@
     "Value1": "1350",
     "Value2": "4",
     "Value3": "5400"
+  },
+  "1024": {
+    "Id": 1024,
+    "ScoreBossBehavior": 20,
+    "ScoreBossType": 1,
+    "Name": "ScoreBossGetControl.1024.1",
+    "Desc": "ScoreBossGetControl.1024.2",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_FengNiao_001",
+    "OnceScore": 540,
+    "MaxLimit": 5400,
+    "Param1": "ScoreBossGetControl,NoLevel,1024,Value1,Fixed",
+    "Param2": "ScoreBossGetControl,NoLevel,1024,Value2,Fixed",
+    "Param3": "ScoreBossGetControl,NoLevel,1024,Value3,Fixed",
+    "Value1": "540",
+    "Value2": "10",
+    "Value3": "5400"
   }
 }
