@@ -2309,7 +2309,7 @@
   },
   "902": {
     "Id": 902,
-    "StoryId": "STm08_BT01",
+    "StoryId": "BAm08_01",
     "Chapter": 9,
     "Index": "Story.902.4",
     "Title": "Story.902.1",
@@ -2339,7 +2339,7 @@
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
-      "STm08_BT01"
+      "BAm08_01"
     ],
     "AvgLuaName": "STm08_02",
     "Aim": "Story.903.3",
@@ -2486,7 +2486,7 @@
   },
   "912": {
     "Id": 912,
-    "StoryId": "STm08_BT02",
+    "StoryId": "BAm08_02",
     "Chapter": 9,
     "Index": "Story.912.4",
     "Title": "Story.912.1",
@@ -2517,7 +2517,7 @@
     "Reward": 102,
     "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
     "ParentStoryId": [
-      "STm08_BT02"
+      "BAm08_02"
     ],
     "AvgLuaName": "STm08_11",
     "Aim": "Story.913.3",
@@ -2587,6 +2587,7 @@
     "ParentStoryId": [
       "STm08_14"
     ],
+    "HasEvidence": true,
     "AvgLuaName": "STm08_15",
     "Aim": "Story.917.3",
     "AvgMotion": "style_48"
@@ -2715,46 +2716,11 @@
   },
   "925": {
     "Id": 925,
-    "StoryId": "STm08_18_b",
+    "StoryId": "BAm08_03",
     "Chapter": 9,
     "Index": "Story.925.4",
     "Title": "Story.925.1",
     "Desc": "Story.925.2",
-    "ConditionId": "C08_18_b",
-    "Reward": 102,
-    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
-    "ParentStoryId": [
-      "STm08_17_b"
-    ],
-    "AvgLuaName": "STm08_18_b",
-    "Aim": "Story.925.3",
-    "AvgMotion": "style_48"
-  },
-  "926": {
-    "Id": 926,
-    "StoryId": "STm08_19_b",
-    "Chapter": 9,
-    "Index": "Story.926.4",
-    "Title": "Story.926.1",
-    "Desc": "Story.926.2",
-    "ConditionId": "C08_19_b",
-    "IsBranch": true,
-    "Reward": 112,
-    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
-    "ParentStoryId": [
-      "STm08_18_b"
-    ],
-    "AvgLuaName": "STm08_19_b",
-    "Aim": "Story.926.3",
-    "AvgMotion": "style_48"
-  },
-  "927": {
-    "Id": 927,
-    "StoryId": "STm08_BT03",
-    "Chapter": 9,
-    "Index": "Story.927.4",
-    "Title": "Story.927.1",
-    "Desc": "Story.927.2",
     "TrialBuild": 803,
     "ConditionId": "C08_BT03",
     "IsBattle": true,
@@ -2767,24 +2733,59 @@
       1080301
     ],
     "PreviewMonsterGroupId": 10803,
-    "Aim": "Story.927.3"
+    "Aim": "Story.925.3"
+  },
+  "926": {
+    "Id": 926,
+    "StoryId": "STm08_21",
+    "Chapter": 9,
+    "Index": "Story.926.4",
+    "Title": "Story.926.1",
+    "Desc": "Story.926.2",
+    "ConditionId": "C08_21",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "BAm08_03"
+    ],
+    "AvgLuaName": "STm08_21",
+    "Aim": "Story.926.3",
+    "IsLast": true,
+    "AvgMotion": "style_48"
+  },
+  "927": {
+    "Id": 927,
+    "StoryId": "STm08_18_b",
+    "Chapter": 9,
+    "Index": "Story.927.4",
+    "Title": "Story.927.1",
+    "Desc": "Story.927.2",
+    "ConditionId": "C08_18_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm08_17_b"
+    ],
+    "AvgLuaName": "STm08_18_b",
+    "Aim": "Story.927.3",
+    "AvgMotion": "style_48"
   },
   "928": {
     "Id": 928,
-    "StoryId": "STm08_21",
+    "StoryId": "STm08_19_b",
     "Chapter": 9,
     "Index": "Story.928.4",
     "Title": "Story.928.1",
     "Desc": "Story.928.2",
-    "ConditionId": "C08_21",
-    "Reward": 102,
-    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ConditionId": "C08_19_b",
+    "IsBranch": true,
+    "Reward": 112,
+    "RewardDisplay": "[{\"Tid\":1,\"Qty\":666}]",
     "ParentStoryId": [
-      "STm08_BT03"
+      "STm08_18_b"
     ],
-    "AvgLuaName": "STm08_21",
+    "AvgLuaName": "STm08_19_b",
     "Aim": "Story.928.3",
-    "IsLast": true,
     "AvgMotion": "style_48"
   },
   "6501": {
