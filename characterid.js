@@ -1,6 +1,6 @@
 const { readFileSync, writeFileSync } = require('fs');
 
-const AVGCHARACTER = readFileSync('lua/game/ui/avg/_en/preset/avgcharacter.lua', 'utf-8');
+const AVGCHARACTER = readFileSync('./_Lua/Game/UI/Avg/_en/Preset/AvgCharacter.lua', 'utf-8');
 
 const characterId = {};
 
