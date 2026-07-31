@@ -73,7 +73,7 @@ const ATTR_TYPE = {
     53: 'Final DMG Taken',
     54: 'Final DMG Taken+',
     55: 'VUL Exploit',
-    56: 'Auto Attack Damage',
+    56: 'Auto Attack DMG',
     57: 'Skill DMG',
     58: 'Ultimate DMG',
     59: 'Other DMG',
