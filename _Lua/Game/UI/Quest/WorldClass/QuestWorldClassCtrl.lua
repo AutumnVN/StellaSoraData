@@ -344,6 +344,8 @@ function QuestWorldClassCtrl:OnDisable()
 		destroy(obj)
 	end
 	self.tbGridQuest = {}
+	self._mapNode.btnFastReceive.onClick:RemoveAllListeners()
+	self._mapNode.btnFastReceiveGray.onClick:RemoveAllListeners()
 end
 function QuestWorldClassCtrl:OnDestroy()
 end

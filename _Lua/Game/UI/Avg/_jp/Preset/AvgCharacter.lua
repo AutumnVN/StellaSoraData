@@ -1163,6 +1163,18 @@ return {
 		ver = "1.9.0"
 	},
 	{
+		id = "avg3_216",
+		name = "***",
+		name_bg_color = "#caaee2",
+		ver = "1.13.2"
+	},
+	{
+		id = "avg3_217",
+		name = "***",
+		name_bg_color = "#fffdf5",
+		ver = "1.13.2"
+	},
+	{
 		id = "avg3_218",
 		name = "米拉什居民男",
 		name_bg_color = "#0ABEC5",
@@ -1195,19 +1207,19 @@ return {
 	{
 		id = "avg3_223",
 		name = "***",
-		name_bg_color = "#a5cdc3",
+		name_bg_color = "#ecd09f",
 		ver = "1.15.0"
 	},
 	{
 		id = "avg3_224",
 		name = "***",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#73a4c8",
 		ver = "1.15.0"
 	},
 	{
 		id = "avg3_225",
 		name = "***",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#fffcdf",
 		ver = "2.0.0"
 	},
 	{
@@ -1250,7 +1262,7 @@ return {
 		id = "avg3_232",
 		name = "***",
 		name_bg_color = "#0ABEC5",
-		ver = "2.1.0"
+		ver = "1.13.2"
 	},
 	{
 		id = "avg3_233",
@@ -3010,6 +3022,41 @@ return {
 		name_bg_color = "#555559",
 		reuse = "avg1_139",
 		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1314",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_975",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1315",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_975",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1316",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_975",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1317",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_945",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1318",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_945",
+		ver = "1.14.0"
 	},
 	{
 		id = "avg4_100",

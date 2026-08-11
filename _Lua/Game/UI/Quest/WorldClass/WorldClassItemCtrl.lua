@@ -223,9 +223,7 @@ function WorldClassItemCtrl:OnEnable()
 end
 function WorldClassItemCtrl:OnDisable()
 	if self.goBtnFastReceive ~= nil then
-		self.goBtnFastReceive.onClick:RemoveListener(self.handlerBtn[1])
 		self.handlerBtn[1] = nil
-		self.goBtnFastReceiveGray.onClick:RemoveListener(self.handlerBtn[2])
 		self.handlerBtn[2] = nil
 		self.handlerBtn = {}
 	end

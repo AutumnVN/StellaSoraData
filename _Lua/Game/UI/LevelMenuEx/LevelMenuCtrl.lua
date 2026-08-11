@@ -962,11 +962,9 @@ end
 function LevelMenuCtrl:OnBtnClick_TraceHunt(btn)
 	local callback = function()
 		if PlayerData.TraceHunt:GetControlLeftTime() <= 0 then
+			self:RefreshTraceHuntTime()
 			EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("TraceHunt_Tips_ControlInterrupt"))
 			return
-		end
-		if self._mapNode ~= nil then
-			self:RefreshTraceHuntTime()
 		end
 		local func = function()
 			EventManager.Hit(EventId.OpenPanel, PanelId.TraceHunt)
