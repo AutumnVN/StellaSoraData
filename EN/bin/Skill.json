@@ -18586,6 +18586,15 @@
     "Desc": "Skill.9990011.2",
     "MaxLevel": 1
   },
+  "9990021": {
+    "Id": 9990021,
+    "Title": "Skill.9990021.1",
+    "FCPath": "AIScript.Monster.Trigger.AttackFromYiYe",
+    "Type": 2,
+    "BriefDesc": "Skill.9990021.13",
+    "Desc": "Skill.9990021.2",
+    "MaxLevel": 1
+  },
   "3012101": {
     "Id": 3012101,
     "Title": "Skill.3012101.1",
@@ -19529,6 +19538,33 @@
     "Desc": "Skill.3093125.2",
     "MaxLevel": 1
   },
+  "3093126": {
+    "Id": 3093126,
+    "Title": "Skill.3093126.1",
+    "FCPath": "AIScript.Monster._30931HaSaNa.SkillScript_DoubleHammerAttack_Transform",
+    "Type": 2,
+    "BriefDesc": "Skill.3093126.13",
+    "Desc": "Skill.3093126.2",
+    "MaxLevel": 1
+  },
+  "3093127": {
+    "Id": 3093127,
+    "Title": "Skill.3093127.1",
+    "FCPath": "AIScript.Monster._30931HaSaNa.SkillScript_DustSprayingWithBomb_Transform",
+    "Type": 2,
+    "BriefDesc": "Skill.3093127.13",
+    "Desc": "Skill.3093127.2",
+    "MaxLevel": 1
+  },
+  "3093128": {
+    "Id": 3093128,
+    "Title": "Skill.3093128.1",
+    "FCPath": "AIScript.Monster._30931HaSaNa.SkillScript_DustExplosion_Mainline_Transform",
+    "Type": 2,
+    "BriefDesc": "Skill.3093128.13",
+    "Desc": "Skill.3093128.2",
+    "MaxLevel": 1
+  },
   "1700101": {
     "Id": 1700101,
     "Title": "Skill.1700101.1",
@@ -19618,6 +19654,155 @@
     "BriefDesc": "Skill.1703104.13",
     "Desc": "Skill.1703104.2",
     "MaxLevel": 1
+  },
+  "1700199": {
+    "Id": 1700199,
+    "Title": "Skill.1700199.1",
+    "FCPath": "AIScript.Monster._17001ChangFuWeiBing.Special_Death",
+    "Type": 2,
+    "BriefDesc": "Skill.1700199.13",
+    "Desc": "Skill.1700199.2",
+    "MaxLevel": 1
+  },
+  "1700198": {
+    "Id": 1700198,
+    "Title": "Skill.1700198.1",
+    "FCPath": "AIScript.Monster._17001ChangFuWeiBing.Special_Spawn",
+    "Type": 2,
+    "BriefDesc": "Skill.1700198.13",
+    "Desc": "Skill.1700198.2",
+    "MaxLevel": 1
+  },
+  "1700197": {
+    "Id": 1700197,
+    "Title": "Skill.1700197.1",
+    "FCPath": "AIScript.Monster._17001ChangFuWeiBing.TurnWhenSneak",
+    "Type": 2,
+    "BriefDesc": "Skill.1700197.13",
+    "Desc": "Skill.1700197.2",
+    "MaxLevel": 1
+  },
+  "1800101": {
+    "Id": 1800101,
+    "Title": "Skill.1800101.1",
+    "FCPath": "AIScript.Monster._18001LiMingShuangDao.NormalAttack",
+    "Type": 2,
+    "BriefDesc": "Skill.1800101.13",
+    "Desc": "Skill.1800101.2",
+    "MaxLevel": 1
+  },
+  "1800102": {
+    "Id": 1800102,
+    "Title": "Skill.1800102.1",
+    "FCPath": "AIScript.Monster._18001LiMingShuangDao.Skill01_SpiralSlash",
+    "Type": 2,
+    "BriefDesc": "Skill.1800102.13",
+    "Desc": "Skill.1800102.2",
+    "MaxLevel": 1
+  },
+  "1800103": {
+    "Id": 1800103,
+    "Title": "Skill.1800103.1",
+    "FCPath": "AIScript.Monster._18001LiMingShuangDao.Skill02_DashSlash",
+    "Type": 2,
+    "BriefDesc": "Skill.1800103.13",
+    "Desc": "Skill.1800103.2",
+    "MaxLevel": 1
+  },
+  "1800104": {
+    "Id": 1800104,
+    "Title": "Skill.1800104.1",
+    "FCPath": "AIScript.Monster._18001LiMingShuangDao.Skill03_Dodge_F",
+    "Type": 2,
+    "BriefDesc": "Skill.1800104.13",
+    "Desc": "Skill.1800104.2",
+    "MaxLevel": 1
+  },
+  "1800105": {
+    "Id": 1800105,
+    "Title": "Skill.1800105.1",
+    "FCPath": "AIScript.Monster._18001LiMingShuangDao.Skill03_Dodge_B",
+    "Type": 2,
+    "BriefDesc": "Skill.1800105.13",
+    "Desc": "Skill.1800105.2",
+    "MaxLevel": 1
+  },
+  "1800106": {
+    "Id": 1800106,
+    "Title": "Skill.1800106.1",
+    "FCPath": "AIScript.Monster._18001LiMingShuangDao.Skill03_Dodge_L",
+    "Type": 2,
+    "BriefDesc": "Skill.1800106.13",
+    "Desc": "Skill.1800106.2",
+    "MaxLevel": 1
+  },
+  "1800107": {
+    "Id": 1800107,
+    "Title": "Skill.1800107.1",
+    "FCPath": "AIScript.Monster._18001LiMingShuangDao.Skill03_Dodge_R",
+    "Type": 2,
+    "BriefDesc": "Skill.1800107.13",
+    "Desc": "Skill.1800107.2",
+    "MaxLevel": 1
+  },
+  "1801101": {
+    "Id": 1801101,
+    "Title": "Skill.1801101.1",
+    "FCPath": "AIScript.Monster._18011LiMingFaShi.NormalAttack_Range",
+    "Type": 2,
+    "BriefDesc": "Skill.1801101.13",
+    "Desc": "Skill.1801101.2",
+    "MaxLevel": 1
+  },
+  "1801102": {
+    "Id": 1801102,
+    "Title": "Skill.1801102.1",
+    "FCPath": "AIScript.Monster._18011LiMingFaShi.NormalAttack_Melee",
+    "Type": 2,
+    "BriefDesc": "Skill.1801102.13",
+    "Desc": "Skill.1801102.2",
+    "MaxLevel": 1
+  },
+  "1801103": {
+    "Id": 1801103,
+    "Title": "Skill.1801103.1",
+    "FCPath": "AIScript.Monster._18011LiMingFaShi.Skill1_Shield",
+    "Type": 2,
+    "BriefDesc": "Skill.1801103.13",
+    "Desc": "Skill.1801103.2",
+    "MaxLevel": 1
+  },
+  "1801104": {
+    "Id": 1801104,
+    "Title": "Skill.1801104.1",
+    "FCPath": "AIScript.Monster._18011LiMingFaShi.Skill2_FallingStar",
+    "Type": 2,
+    "BriefDesc": "Skill.1801104.13",
+    "Desc": "Skill.1801104.2",
+    "MaxLevel": 1
+  },
+  "1801105": {
+    "Id": 1801105,
+    "Title": "Skill.1801105.1",
+    "FCPath": "AIScript.Monster._18011LiMingFaShi.Skill3_Teleport",
+    "Type": 2,
+    "BriefDesc": "Skill.1801105.13",
+    "Desc": "Skill.1801105.2",
+    "MaxLevel": 1
+  },
+  "1802101": {
+    "Id": 1802101,
+    "Title": "Skill.1802101.1",
+    "FCPath": "AIScript.Monster._18021FengGunCao.MoveAround",
+    "BriefDesc": "Skill.1802101.13",
+    "Desc": "Skill.1802101.2"
+  },
+  "1802102": {
+    "Id": 1802102,
+    "Title": "Skill.1802102.1",
+    "FCPath": "AIScript.Monster._18021FengGunCao.Die",
+    "BriefDesc": "Skill.1802102.13",
+    "Desc": "Skill.1802102.2"
   },
   "3110101": {
     "Id": 3110101,

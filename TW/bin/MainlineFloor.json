@@ -509,6 +509,37 @@
     "MonsterLv": 6,
     "IntroCutscene": "fx_m70001_base_boss_change_tl"
   },
+  "1080101": {
+    "Id": 1080101,
+    "SceneName": "Levels/Main/Philae/Philae_Main_8_1",
+    "ConfigPrefabName": "Philae_Main_8_1",
+    "Theme": 22,
+    "BGM": "waterBridge_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 6,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP89CircleControl"
+  },
+  "1080201": {
+    "Id": 1080201,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_8_2",
+    "ConfigPrefabName": "Mirage_Main_8_2",
+    "Theme": 23,
+    "BGM": "Desert_town_explore_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP89CircleControl"
+  },
+  "1080301": {
+    "Id": 1080301,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_8_3",
+    "ConfigPrefabName": "Mirage_Main_8_3",
+    "Theme": 24,
+    "BGM": "Desert_town_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6,
+    "IntroCutscene": "MapTimeline_m08_BT03_01",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP89CircleControl"
+  },
   "1060505": {
     "Id": 1060505,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_010_B_01",
