@@ -20,6 +20,8 @@ const TALENTGROUP = require('./EN/bin/TalentGroup.json');
 const DATINGCHARACTEREVENT = require('./EN/bin/DatingCharacterEvent.json');
 const DATINGBRANCH = require('./EN/bin/DatingBranch.json');
 const ONCEADDITTIONALATTRIBUTEVALUE = require('./EN/bin/OnceAdditionalAttributeValue.json');
+const GACHA = require('./EN/bin/Gacha.json');
+const GACHAPKG = require('./EN/bin/GachaPkg.json');
 const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
 const LANG_CHARACTERTAG = require('./EN/language/en_US/CharacterTag.json');
 const LANG_SKILL = require('./EN/language/en_US/Skill.json');
@@ -101,6 +103,7 @@ for (let id = 100; id <= 200; id++) {
             cnCv: '',
             jpCv: '',
             birthday: '',
+            source: [],
             loveGift: [],
             hateGift: [],
             date: [],
@@ -129,6 +132,7 @@ for (let id = 100; id <= 200; id++) {
             tag: CHARACTERDES[id].Tag.map(tagId => LANG_CHARACTERTAG[`CharacterTag.${tagId}.1`]),
             cnCv: LANG_CHARACTERDES[CHARACTERDES[id].CnCv],
             jpCv: LANG_CHARACTERDES[CHARACTERDES[id].JpCv],
+            source: getSource(id),
             birthday: LANG_CHARACTERARCHIVEBASEINFO[`CharacterArchiveBaseInfo.${id}02.2`],
             loveGift: getGifts(CHARACTERDES[id].PreferTags),
             hateGift: getGifts(CHARACTERDES[id].HateTags),
@@ -234,6 +238,35 @@ for (let id = 100; id <= 200; id++) {
 
 writeFileSync('./character.json', JSON.stringify(character, null, 4));
 writeFileSync('./unreleased.json', JSON.stringify(unreleased, null, 4));
+
+function getSource(id) {
+    const source = [];
+
+    if (Object.keys(GACHA[1]).some(key => key.endsWith('Pkg') && Object.values(GACHAPKG).some(pkg => pkg.PkgId === GACHA[1][key] && pkg.GoodsId === +id))) {
+        source.push('Permanent');
+        source.push('Standard');
+        source.push('Recruit');
+        source.push('Gacha');
+        source.push('Banner');
+        source.push('f2p');
+    } else if (Object.values(GACHA).some(gacha => gacha.GachaType === 1 && Object.values(GACHAPKG).some(pkg => pkg.PkgId === gacha.ATypeUpPkg && pkg.GoodsId === +id))) {
+        source.push('Limited');
+        source.push('Premium');
+        source.push('Recruit');
+        source.push('Gacha');
+        source.push('Banner');
+        source.push('p2w');
+    } else if (Object.values(GACHA).some(gacha => gacha.GachaType === 8 && Object.values(GACHAPKG).some(pkg => pkg.PkgId === gacha.ATypeUpPkg && pkg.GoodsId === +id))) {
+        source.push('Exclusive');
+        source.push('Premium');
+        source.push('Recruit');
+        source.push('Gacha');
+        source.push('Banner');
+        source.push('p2w');
+    }
+
+    return [...new Set(source)];
+}
 
 function getSkillParams(skillId) {
     const params = collectParamsFrom(SKILL[skillId]);

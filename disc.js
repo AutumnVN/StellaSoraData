@@ -15,6 +15,12 @@ const EFFECT = require('./EN/bin/Effect.json');
 const EFFECTVALUE = require('./EN/bin/EffectValue.json');
 const BUFF = require('./EN/bin/Buff.json');
 const ONCEADDITTIONALATTRIBUTEVALUE = require('./EN/bin/OnceAdditionalAttributeValue.json');
+const GACHA = require('./EN/bin/Gacha.json');
+const GACHAPKG = require('./EN/bin/GachaPkg.json');
+const BATTLEPASS = require('./EN/bin/BattlePass.json');
+const ACTIVITYGOODS = require('./EN/bin/ActivityGoods.json');
+const RESIDENTGOODS = require('./EN/bin/ResidentGoods.json');
+const LOGINREWARDGROUP = require('./EN/bin/LoginRewardGroup.json');
 const LANG_CHARACTER = require('./EN/language/en_US/Character.json');
 const LANG_ITEM = require('./EN/language/en_US/Item.json');
 const LANG_UITEXT = require('./EN/language/en_US/UIText.json');
@@ -54,6 +60,7 @@ for (const id in DISC) {
         element: LANG_UITEXT[`UIText.T_Element_Attr_${DISC[id].EET}.1`],
         tag: DISC[id].Tags?.map(tagId => LANG_DISCTAG[DISCTAG[tagId].Title]) || [],
         char: DISCIP[id]?.CharId?.map(charId => LANG_CHARACTER[`Character.${charId}.1`] || characterId[charId]) || [],
+        source: getSource(id),
         mainSkill: getMainSkill(DISC[id].MainSkillGroupId),
         secondarySkill1: getSeconarySkill(DISC[id].SecondarySkillGroupId1),
         secondarySkill2: getSeconarySkill(DISC[id].SecondarySkillGroupId2),
@@ -65,6 +72,88 @@ for (const id in DISC) {
 }
 
 writeFileSync('./disc.json', JSON.stringify(disc, null, 4));
+
+function getSource(id) {
+    const source = [];
+
+    if (DISC[id].AVGReadReward?.length) {
+        source.push('Signature');
+    }
+
+    if (Object.keys(GACHA[2]).some(key => key.endsWith('Pkg') && Object.values(GACHAPKG).some(pkg => pkg.PkgId === GACHA[2][key] && pkg.GoodsId === +id))) {
+        source.push('Permanent');
+        source.push('Standard');
+        source.push('Recruit');
+        source.push('Gacha');
+        source.push('Banner');
+        source.push('f2p');
+    } else if (Object.values(GACHA).some(gacha => gacha.GachaType === 3 && Object.values(GACHAPKG).some(pkg => pkg.PkgId === gacha.ATypeUpPkg && pkg.GoodsId === +id))) {
+        source.push('Limited');
+        source.push('Premium');
+        source.push('Recruit');
+        source.push('Gacha');
+        source.push('Banner');
+        source.push('p2w');
+    } else if (Object.values(GACHA).some(gacha => gacha.GachaType === 9 && Object.values(GACHAPKG).some(pkg => pkg.PkgId === gacha.ATypeUpPkg && pkg.GoodsId === +id))) {
+        source.push('Exclusive');
+        source.push('Premium');
+        source.push('Recruit');
+        source.push('Gacha');
+        source.push('Banner');
+        source.push('p2w');
+    }
+
+    const battlePassSelectorIds = [...new Set(Object.values(BATTLEPASS).map(bp => bp.OutfitPackageShowItem))];
+    for (const selectorId of battlePassSelectorIds) {
+        if (ITEM[selectorId]?.UseArgs && Object.keys(JSON.parse(ITEM[selectorId].UseArgs)).includes(id)) {
+            source.push('Battle Pass');
+            source.push('BP');
+            source.push('p2w');
+            break;
+        }
+    }
+
+    if (Object.values(ACTIVITYGOODS).some(g => g.ItemId === +id)) {
+        source.push('Event');
+        source.push('Shop');
+        source.push('f2p');
+    }
+
+    if (Object.values(RESIDENTGOODS).some(g => g.ItemId === +id)) {
+        const item = Object.values(RESIDENTGOODS).find(g => g.ItemId === +id);
+        switch (item.ShopId) {
+            case 1:
+                source.push('Journey Ticket');
+                source.push('JT');
+                source.push('Ascension');
+                break;
+            case 2:
+                source.push('Cataclysm Survivor');
+                source.push('CS');
+                source.push("Defender's Medal");
+                break;
+            case 3:
+                source.push('A Finale Echoing');
+                source.push('AFE');
+                source.push('Whispers of Decay');
+                break;
+            case 4:
+                source.push('Shadow Siege');
+                source.push('SS');
+                source.push('Hunter Medal');
+                break;
+        }
+        source.push('Shop');
+        source.push('f2p');
+    }
+
+    if (Object.values(LOGINREWARDGROUP).some(loginReward => Object.keys(loginReward).some(k => k.startsWith('RewardId') && loginReward[k] === +id))) {
+        source.push('Login Reward');
+        source.push('f2p');
+    }
+
+    return [...new Set(source)];
+}
 
 function getMainSkill(id) {
     const key = Object.keys(MAINSKILL).find(key => MAINSKILL[key].GroupId === id);
