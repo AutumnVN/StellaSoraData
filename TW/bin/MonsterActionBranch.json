@@ -7727,6 +7727,22 @@
     "TraceDuration": 10000,
     "Activate": true
   },
+  "509120201": {
+    "Id": 509120201,
+    "GroupId": 1,
+    "SkillId": 5091202,
+    "Priority": 1,
+    "Weight": 1,
+    "Rate": 10000,
+    "CD": 99990000,
+    "InitialCDPool": [
+      0
+    ],
+    "ReleaseDistance": 2000000,
+    "ReleaseAngle": 3600000,
+    "TraceDuration": 10000,
+    "Activate": true
+  },
   "509130101": {
     "Id": 509130101,
     "GroupId": 1,
@@ -7779,6 +7795,22 @@
     "Id": 509150101,
     "GroupId": 1,
     "SkillId": 5091501,
+    "Priority": 1,
+    "Weight": 1,
+    "Rate": 10000,
+    "CD": 99990000,
+    "InitialCDPool": [
+      0
+    ],
+    "ReleaseDistance": 2000000,
+    "ReleaseAngle": 3600000,
+    "TraceDuration": 10000,
+    "Activate": true
+  },
+  "509160101": {
+    "Id": 509160101,
+    "GroupId": 1,
+    "SkillId": 5091601,
     "Priority": 1,
     "Weight": 1,
     "Rate": 10000,

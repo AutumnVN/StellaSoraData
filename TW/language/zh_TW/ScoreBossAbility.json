@@ -38,7 +38,7 @@
   "ScoreBossAbility.100018.1": "受擊疲勞",
   "ScoreBossAbility.100018.2": "首領敵人初始對普攻/技能/印記傷害具有<color=#ec6d21>&Param1&</color>的傷害減免。\n主控角色每對首領敵人造成<color=#ec6d21>&Param2&</color>次任意的普攻/技能/印記傷害，首領敵人對該類型的傷害減免便會降低<color=#ec6d21>&Param3&</color>，直至降低為0。歸零後若再次觸發條件，首領敵人受到的該類型傷害將提升<color=#ec6d21>&Param4&</color>，最高不超過<color=#ec6d21>&Param5&</color>。",
   "ScoreBossAbility.100019.1": "破風之楔",
-  "ScoreBossAbility.100019.2": "主控角色對首領造成普攻傷害後，首領受到的絕招傷害強度提高<color=#ec6d21>&Param1&</color>，持續<color=#ec6d21>&Param2&</color>秒，最多疊加<color=#ec6d21>&Param3&</color>層，每0.5秒最多觸發一次。\n全隊的防禦穿透屬性提高<color=#ec6d21>&Param4&</color>點，援護角色在場期間，全隊的防禦穿透屬性提高<color=#ec6d21>&Param5&</color>",
+  "ScoreBossAbility.100019.2": "主控角色對首領造成普攻傷害後，首領受到的絕招傷害強度提高<color=#ec6d21>&Param1&</color>，持續<color=#ec6d21>&Param2&</color>秒，最多疊加<color=#ec6d21>&Param3&</color>層，每0.5秒最多觸發一次。\n全隊的防禦穿透屬性提高<color=#ec6d21>&Param4&</color>點，援護角色在場期間，全隊的防禦穿透屬性提高<color=#ec6d21>&Param5&</color>。",
   "ScoreBossAbility.100020.1": "私人訂製",
-  "ScoreBossAbility.100020.2": "援護角色每駐場<color=#ec6d21>&Param1&</color>秒，為自身與主控角色疊加1層【蓄勢】。\n每層【蓄勢】提供<color=#ec6d21>&Param2&</color>技能傷害強度與<color=#ec6d21>&Param5&</color>普攻傷害強度，最多疊加<color=#ec6d21>&Param3&</color>層，每次疊加時重置持續時間，持續<color=#ec6d21>&Param4&</color>秒。\n兩名援護角色可分別為主控角色疊加【蓄勢】，層數上限與效果分別計算，可同時存在。"
+  "ScoreBossAbility.100020.2": "援護角色每駐場<color=#ec6d21>&Param1&</color>秒，為自己與主控角色疊加1層【蓄勢】。\n每層【蓄勢】提供<color=#ec6d21>&Param2&</color>技能傷害強度與<color=#ec6d21>&Param5&</color>普攻傷害強度，最多疊加<color=#ec6d21>&Param3&</color>層，每次疊加時重置持續時間，持續<color=#ec6d21>&Param4&</color>秒。\n兩名援護角色可分別為主控角色疊加【蓄勢】，層數上限與效果分別計算，且可同時存在。"
 }
