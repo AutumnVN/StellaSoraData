@@ -601,7 +601,7 @@
   },
   "EnableExchange": {
     "Id": "EnableExchange",
-    "Value": "android_official,ios_official,pc_official,pc_taptap,android_bilibili,pc_bilibili,android_pre_bilibili,pc_pre_bilibili,android_exp,pc_exp,android_test_1,pc_test_1,android_none,pc_none"
+    "Value": "android_official,ios_official,pc_official,pc_exp,android_test_1,ios_test_1,pc_test_1,pc_test_2"
   },
   "LampNoticeScrollSpeed": {
     "Id": "LampNoticeScrollSpeed",
@@ -713,11 +713,19 @@
   },
   "EnergyBatteryGain": {
     "Id": "EnergyBatteryGain",
-    "Value": "8"
+    "Value": "18"
   },
   "EnergyBatteryMax": {
     "Id": "EnergyBatteryMax",
+    "Value": "2400"
+  },
+  "EnergyBatteryUIEnable": {
+    "Id": "EnergyBatteryUIEnable",
     "Value": "0"
+  },
+  "EnergyBatteryOpenTime": {
+    "Id": "EnergyBatteryOpenTime",
+    "Value": "2026-08-31T17:00:00+08:00"
   },
   "MailMax": {
     "Id": "MailMax",

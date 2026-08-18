@@ -300,6 +300,25 @@
     "EndType": 2,
     "EndTime": "2026-08-18T10:59:59+08:00"
   },
+  "17": {
+    "Id": 17,
+    "SortId": 17,
+    "PopUpType": 3,
+    "PopUpRes": "UI/MallPkgPopup/Popup_14",
+    "ScriptName": "OwnPopUp.MallPkgPopupCtrl",
+    "ScriptParams": "[\"pack.15_res\", \"pack.15_gift\", \"pack.15_disc_l\", \"pack.15_role_l\"]",
+    "PopRefreshType": 3,
+    "PopJumpType": 3,
+    "JumpToParams": 18,
+    "StartCondType": 71,
+    "StartCondParams": [
+      2
+    ],
+    "StartType": 2,
+    "StartTime": "2026-08-18T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-08T10:59:59+08:00"
+  },
   "1000": {
     "Id": 1000,
     "SortId": 1000,
@@ -463,6 +482,26 @@
     "PopRefreshType": 2,
     "PopJumpType": 2
   },
+  "1016": {
+    "Id": 1016,
+    "SortId": 1016,
+    "PopUpType": 2,
+    "ActivityId": 10110,
+    "PopUpRes": "UI_Activity/10110/PopUp",
+    "ScriptName": "ActivityPopUp.ActivitySummerAdv_10110PopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
+  },
+  "1017": {
+    "Id": 1017,
+    "SortId": 1017,
+    "PopUpType": 2,
+    "ActivityId": 30103,
+    "PopUpRes": "UI_Activity/30103/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityBreakOutPopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
+  },
   "2005": {
     "Id": 2005,
     "SortId": 2005,
@@ -613,6 +652,16 @@
     "StartCondParams": [
       1
     ]
+  },
+  "2018": {
+    "Id": 2018,
+    "SortId": 3011,
+    "PopUpType": 1,
+    "ActivityId": 103003,
+    "PopUpRes": "UI_Activity/_103001/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityDoubleDrop_103001PopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
   },
   "2019": {
     "Id": 2019,

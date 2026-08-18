@@ -627,5 +627,75 @@
     ],
     "DesText": "ActivityGroup.20103.1",
     "TabBgRes": "Icon/Banner/tab_activity_20103_lang"
+  },
+  "10110": {
+    "Id": 10110,
+    "ActivityGroupType": 1,
+    "ActivityThemeType": 17,
+    "StartTime": "2026-08-18T12:00:00+08:00",
+    "EndTime": "2026-09-01T04:00:00+08:00",
+    "EnterEndTime": "2026-09-08T10:59:59+08:00",
+    "EnterRes": "Icon/Banner/banner_activity_10110_m_lang",
+    "PanelId": 508,
+    "PreLimit": 1,
+    "LimitParam": "3",
+    "StartCondType": 71,
+    "StartCondParams": [
+      5
+    ],
+    "Enter": "{\"MiniGame\":[400015,1,525],\"Task\":[1011003,2,510],\"AVG\":[1011002,3,509],\"Store\":[1011004,4,511],\"Level\":[1011001,5,507]}",
+    "UIAssetsPrefab": "10110",
+    "CtrlName": "ActivitySummerAdvCtrl",
+    "RewardsShow": [
+      2,
+      214058,
+      116014,
+      502,
+      503,
+      20013,
+      35010,
+      35000,
+      32013,
+      20093,
+      21093,
+      30004,
+      50004,
+      30,
+      33022,
+      33032,
+      33042,
+      1
+    ],
+    "DesText": "ActivityGroup.10110.1",
+    "TabBgRes": "Icon/Banner/tab_activity_10110_lang"
+  },
+  "30103": {
+    "Id": 30103,
+    "ActivityGroupType": 3,
+    "ActivityThemeType": 19,
+    "StartTime": "2026-09-01T12:00:00+08:00",
+    "EndTime": "2026-09-08T10:59:59+08:00",
+    "EnterEndTime": "2026-09-11T03:59:59+08:00",
+    "PanelId": 513,
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "StartCondType": 71,
+    "StartCondParams": [
+      5
+    ],
+    "Enter": "{\"Task\":[3010302,2,514],\"Store\":[3010303,4,512],\"Level\":[3010301,5,0]}",
+    "UIAssetsPrefab": "30103",
+    "CtrlName": "ActivityBreakOutCtrl",
+    "RewardsShow": [
+      2,
+      119013,
+      33912,
+      30,
+      82007,
+      32000,
+      1
+    ],
+    "DesText": "ActivityGroup.30103.1",
+    "TabBgRes": "Icon/Banner/tab_activity_marble"
   }
 }

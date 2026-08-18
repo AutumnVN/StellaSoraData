@@ -1109,6 +1109,23 @@
     "Param6": "Effect,LevelUp,16000009,EffectTypeFirstSubtype,Enum,EAT",
     "Param7": "Effect,LevelUp,16000009,EffectTypeParam1,HdPct"
   },
+  "4045": {
+    "Id": 4045,
+    "Title": "Word.4045.1",
+    "Type": 1,
+    "Desc": "Word.4045.2",
+    "Color": "6A90EB",
+    "Icon": "0"
+  },
+  "4046": {
+    "Id": 4046,
+    "Title": "Word.4046.1",
+    "Type": 1,
+    "Desc": "Word.4046.2",
+    "Color": "6A90EB",
+    "Icon": "0",
+    "Param1": "BuffValue,NoLevel,15790012,Time,10K"
+  },
   "4047": {
     "Id": 4047,
     "Title": "Word.4047.1",
@@ -1116,6 +1133,16 @@
     "Desc": "Word.4047.2",
     "Color": "6A90EB",
     "Icon": "0"
+  },
+  "4051": {
+    "Id": 4051,
+    "Title": "Word.4051.1",
+    "Type": 1,
+    "Desc": "Word.4051.2",
+    "Color": "6A90EB",
+    "Icon": "0",
+    "Param1": "Buff,LevelUp,15700001,Time,10K",
+    "Param2": "HitDamage,DamageNum,157000002"
   },
   "4500": {
     "Id": 4500,

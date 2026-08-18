@@ -751,6 +751,14 @@
       73110
     ]
   },
+  "ThrowGiftPanel_400015": {
+    "Id": "ThrowGiftPanel_400015",
+    "Title": "TopBar.ThrowGiftPanel_400015.1",
+    "Coin": true,
+    "CoinIds": [
+      73114
+    ]
+  },
   "JointDrillBuildList_Mode2": {
     "Id": "JointDrillBuildList_Mode2",
     "Title": "TopBar.JointDrillBuildList_Mode2.1",
@@ -1186,18 +1194,77 @@
   },
   "SoldierHandbookPanel": {
     "Id": "SoldierHandbookPanel",
-    "Title": "TopBar.SoldierHandbookPanel.1"
+    "Title": "TopBar.SoldierHandbookPanel.1",
+    "HideHome": true
   },
   "SoldierRecommendPanel": {
     "Id": "SoldierRecommendPanel",
-    "Title": "TopBar.SoldierRecommendPanel.1"
+    "Title": "TopBar.SoldierRecommendPanel.1",
+    "HideHome": true
   },
   "SoldierHandbookSelectPanel": {
     "Id": "SoldierHandbookSelectPanel",
-    "Title": "TopBar.SoldierHandbookSelectPanel.1"
+    "Title": "TopBar.SoldierHandbookSelectPanel.1",
+    "HideHome": true
   },
   "SoldierRecommendDetailPanel": {
     "Id": "SoldierRecommendDetailPanel",
-    "Title": "TopBar.SoldierRecommendDetailPanel.1"
+    "Title": "TopBar.SoldierRecommendDetailPanel.1",
+    "HideHome": true
+  },
+  "BreakOutThemePanel_S3": {
+    "Id": "BreakOutThemePanel_S3",
+    "Title": "TopBar.BreakOutThemePanel_S3.1",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "Shop_30103": {
+    "Id": "Shop_30103",
+    "Title": "TopBar.Shop_30103.1",
+    "Coin": true
+  },
+  "Task_30103": {
+    "Id": "Task_30103",
+    "Title": "TopBar.Task_30103.1",
+    "Coin": true,
+    "CoinIds": [
+      73202
+    ]
+  },
+  "BreakOutLevelDetailPanelS3": {
+    "Id": "BreakOutLevelDetailPanelS3",
+    "Title": "TopBar.BreakOutLevelDetailPanelS3.1"
+  },
+  "ActivityLevelsSelectPanel_10110": {
+    "Id": "ActivityLevelsSelectPanel_10110",
+    "Title": "TopBar.ActivityLevelsSelectPanel_10110.1",
+    "Energy": true
+  },
+  "Shop_10110": {
+    "Id": "Shop_10110",
+    "Title": "TopBar.Shop_10110.1",
+    "Coin": true
+  },
+  "Task_10110": {
+    "Id": "Task_10110",
+    "Title": "TopBar.Task_10110.1",
+    "Coin": true,
+    "CoinIds": [
+      73114
+    ]
+  },
+  "SummerAdvStory_10110": {
+    "Id": "SummerAdvStory_10110",
+    "Title": "TopBar.SummerAdvStory_10110.1"
+  },
+  "SummerAdvPanel": {
+    "Id": "SummerAdvPanel",
+    "Title": "TopBar.SummerAdvPanel.1",
+    "Coin": true,
+    "CoinIds": [
+      73114
+    ]
   }
 }
