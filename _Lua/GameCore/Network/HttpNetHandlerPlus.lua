@@ -353,4 +353,8 @@ end
 function HttpNetHandlerPlus.sd_buff_card_add_notify(mapMsgData)
 	PlayerData.SoldierData:OnBuffCardAddNotify(mapMsgData)
 end
+function HttpNetHandlerPlus.score_boss_reset_score_notify()
+	PlayerData.ScoreBoss.isGetScInfo = false
+	PlayerData.ScoreBoss:GetScoreBossInstanceData(nil)
+end
 return HttpNetHandlerPlus

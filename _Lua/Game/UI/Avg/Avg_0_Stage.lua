@@ -715,7 +715,7 @@ function Avg_0_Stage:CtrlStage(tbParam)
 		local _sT = type(tb)
 		if _sT == "table" then
 			NovaAPI.DoShakeEffect(shake, tb[1], tb[2], tb[3])
-		elseif _sT == "number" and tb == 1 then
+		elseif _sT == "number" and (tb == 0 or tb == 1) then
 			NovaAPI.StopShakeEffect(shake)
 		end
 	end

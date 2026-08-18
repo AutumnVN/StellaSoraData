@@ -7041,7 +7041,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"stop",
 			"OutCubic",
 			1.0,
 			false
@@ -12087,7 +12087,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"stop",
 			"Linear",
 			0.0,
 			false
@@ -17520,7 +17520,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"stop",
 			"OutCubic",
 			1.0,
 			false

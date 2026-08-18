@@ -534,7 +534,6 @@ function ChapterLineCtrl:CheckLineReasonable(grid)
 	local goLeftBorder = grid:Find("goLeftBorder")
 	local uiCamera = GameCameraStackManager.Instance.uiCamera
 	if grid.gameObject.activeInHierarchy == false then
-		return
 	end
 	if self.tbShortenedLines == nil then
 		self.tbShortenedLines = {}
@@ -546,7 +545,7 @@ function ChapterLineCtrl:CheckLineReasonable(grid)
 			local parentAvgId = storyConfig.ParentStoryId[index]
 			local curBorderPos = self.tbGridBorderPos and self.tbGridBorderPos[avgId]
 			local parentBorderPos = self.tbGridBorderPos and self.tbGridBorderPos[parentAvgId]
-			if parentBorderPos.grid ~= nil and parentBorderPos.grid.gameObject.activeInHierarchy ~= false and curBorderPos ~= nil and curBorderPos.left ~= nil and parentBorderPos ~= nil and parentBorderPos.right ~= nil then
+			if curBorderPos ~= nil and curBorderPos.left ~= nil and parentBorderPos ~= nil and parentBorderPos.right ~= nil then
 				local isHitA, worldPosA = RectTransformUtility.ScreenPointToWorldPointInRectangle(grid, parentBorderPos.right, uiCamera)
 				local isHitB, worldPosB = RectTransformUtility.ScreenPointToWorldPointInRectangle(grid, curBorderPos.left, uiCamera)
 				local localPosA = grid:InverseTransformPoint(worldPosA)
@@ -563,6 +562,10 @@ function ChapterLineCtrl:CheckLineReasonable(grid)
 					local lineWidthScreen = lineRect.sizeDelta.x
 					local newSizeDelta = screenDist
 					if not (math.abs(screenDist - lineWidthScreen) <= 18) then
+						if 1 > lineRect.pivot.x then
+							lineRect.pivot = Vector2(1, 0.5)
+							lineRect.anchoredPosition = Vector2(0, 0)
+						end
 						if screenDist > lineWidthScreen then
 							lineRect.sizeDelta = Vector2(newSizeDelta, lineRect.sizeDelta.y)
 						elseif screenDist < lineWidthScreen then
@@ -1060,8 +1063,9 @@ function ChapterLineCtrl:CacheChapterBranchNode()
 end
 function ChapterLineCtrl:IsAllStoryCompleted()
 	for k, v in ipairs(self.tbGridList) do
-		if self.maxStoryDepth == v.depth and self.curChosenStory == v.grid.name then
-			local avgId = v.grid.name
+		local avgId = v.grid.name
+		local cfg = AvgData:GetStoryCfgData(avgId)
+		if cfg.IsLast and self.curChosenStory == v.grid.name then
 			local nStoryId = AvgData.CFG_Story[avgId]
 			return AvgData:IsStoryReaded(nStoryId)
 		end

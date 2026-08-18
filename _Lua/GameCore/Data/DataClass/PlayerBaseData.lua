@@ -361,23 +361,26 @@ function PlayerBaseData:GetPlayerAvgId()
 	return sName
 end
 function PlayerBaseData:HandleEnergyTimer()
+	if self._mapEnergyTimer ~= nil then
+		self._mapEnergyTimer:Cancel(nil)
+	end
 	if self._nCurEnergy < ConfigTable.GetConfigNumber("EnergyMaxLimit") then
 		self._nCurEnergy = self._nCurEnergy + 1
-		local nEnergyGain = ConfigTable.GetConfigNumber("EnergyGain") * 60
-		self._nEnergyTime = nEnergyGain + CS.ClientManager.Instance.serverTimeStamp
-		if self._mapEnergyTimer ~= nil then
-			self._mapEnergyTimer:Cancel(nil)
+		if self._mapEnergyBatteryTimer ~= nil then
+			self._mapEnergyBatteryTimer:Cancel(nil)
 		end
-		self._mapEnergyTimer = TimerManager.Add(1, nEnergyGain, self, self.HandleEnergyTimer, true, true, false)
+		if self._nCurEnergy < ConfigTable.GetConfigNumber("EnergyMaxLimit") then
+			local nEnergyGain = ConfigTable.GetConfigNumber("EnergyGain") * 60
+			self._nEnergyTime = nEnergyGain + CS.ClientManager.Instance.serverTimeStamp
+			self._mapEnergyTimer = TimerManager.Add(1, nEnergyGain, self, self.HandleEnergyTimer, true, true, false)
+		elseif self._nCurEnergyBattery < ConfigTable.GetConfigNumber("EnergyBatteryMax") then
+			local nEnergyBatteryGain = ConfigTable.GetConfigNumber("EnergyBatteryGain") * 60
+			self._nEnergyBatteryTime = nEnergyBatteryGain + CS.ClientManager.Instance.serverTimeStamp
+			self._mapEnergyBatteryTimer = TimerManager.Add(1, nEnergyBatteryGain, self, self.HandleEnergyBatteryTimer, true, true, false)
+		end
 		EventManager.Hit(EventId.UpdateEnergy)
-		if self._nCurEnergy >= ConfigTable.GetConfigNumber("EnergyMaxLimit") then
-			self:HandleEnergyBatteryTimer()
-		end
 	else
 		self._nEnergyTime = 0
-		if self._mapEnergyTimer ~= nil then
-			self._mapEnergyTimer:Cancel(nil)
-		end
 	end
 end
 function PlayerBaseData:HandleEnergyBatteryTimer()
@@ -1071,27 +1074,17 @@ function PlayerBaseData:SendEnergyInfoReq()
 			local nServerTime = CS.ClientManager.Instance.serverTimeStamp
 			self._nEnergyTime = msgData.IsPrimary == true and msgData.NextDuration + nServerTime or 0
 			self._nEnergyBatteryTime = msgData.IsPrimary == true and 0 or msgData.NextDuration + nServerTime
-			if msgData.NextDuration == 0 then
-				if self._mapEnergyTimer ~= nil then
-					self._mapEnergyTimer:Cancel()
-					self._mapEnergyTimer = nil
-				end
-				if self._mapEnergyBatteryTimer ~= nil then
-					self._mapEnergyBatteryTimer:Cancel()
-					self._mapEnergyBatteryTimer = nil
-				end
+			if self._mapEnergyTimer ~= nil then
+				self._mapEnergyTimer:Cancel()
+				self._mapEnergyTimer = nil
 			end
-			if msgData.IsPrimary == false then
-				if self._mapEnergyBatteryTimer ~= nil then
-					self._mapEnergyBatteryTimer:Cancel()
-					self._mapEnergyBatteryTimer = nil
-				end
+			if self._mapEnergyBatteryTimer ~= nil then
+				self._mapEnergyBatteryTimer:Cancel()
+				self._mapEnergyBatteryTimer = nil
+			end
+			if msgData.IsPrimary == false and msgData.NextDuration > 0 then
 				self._mapEnergyBatteryTimer = TimerManager.Add(1, msgData.NextDuration, self, self.HandleEnergyBatteryTimer, true, true, false)
-			else
-				if self._mapEnergyTimer ~= nil then
-					self._mapEnergyTimer:Cancel()
-					self._mapEnergyTimer = nil
-				end
+			elseif msgData.NextDuration > 0 then
 				self._mapEnergyTimer = TimerManager.Add(1, msgData.NextDuration, self, self.HandleEnergyTimer, true, true, false)
 			end
 			EventManager.Hit(EventId.UpdateEnergyBattery)

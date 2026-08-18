@@ -1,5 +1,5 @@
 
-²ì
+Øì
 client_table.protonova.client"Ù
 Achievement
 Id (RId
@@ -6753,21 +6753,22 @@ PreStoryId
 Lv (RLv
 Exp (RExp"Q
 table_TowerDefenseTeamExp4
-list (2 .nova.client.TowerDefenseTeamExpRlist"·
+list (2 .nova.client.TowerDefenseTeamExpRlist"Ý
 TraceHuntBoss
 Id (RId
 	MonsterId (R	MonsterId
-	IsSpecial (R	IsSpecial
-FloorId (RFloorId0
-ScoreGetSwitchGroup (RScoreGetSwitchGroup
-ClueIcon (	RClueIcon
+	IsSpecial (R	IsSpecial$
+SummonLevelUp (RSummonLevelUp
+FloorId (RFloorId0
+ScoreGetSwitchGroup (RScoreGetSwitchGroup
+ClueIcon (	RClueIcon
 
-TargetIcon (	R
+TargetIcon (	R
 TargetIcon 
-ProfileIcon (	RProfileIcon
-HeadIcon	 (	RHeadIcon
-Image
- (	RImage"E
+ProfileIcon	 (	RProfileIcon
+HeadIcon
+ (	RHeadIcon
+Image (	RImage"E
 table_TraceHuntBoss.
 list (2.nova.client.TraceHuntBossRlist"œ
 TraceHuntControl

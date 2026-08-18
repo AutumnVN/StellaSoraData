@@ -356,7 +356,7 @@ function PlayerActivityData:CreateActivityGroupIns(actData)
 			actIns = OurRegiment_10101Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Dream_10102 then
 			actIns = Dream_10102Data.new(actData)
-		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.BreakOut_30101 or actCfg.ActivityThemeType == GameEnum.activityThemeType.BreakOut_30102 then
+		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.BreakOut_30101 or actCfg.ActivityThemeType == GameEnum.activityThemeType.BreakOut_30102 or actCfg.ActivityThemeType == GameEnum.activityThemeType.BreakOut_30103 then
 			actIns = BreakOut_30101Data.new(actData)
 		elseif actCfg.ActivityThemeType == GameEnum.activityThemeType.Christmas_20101 then
 			actIns = Christmas_20101Data.new(actData)

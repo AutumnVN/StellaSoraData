@@ -141,6 +141,7 @@ function StarTowerResultCtrl:Refresh(teamMemberid, mapResult)
 	WwiseAudioMgr:PostEvent("mon_common_all_pause")
 	WwiseAudioMgr:PostEvent("rouguelike_outfit_resetVV")
 	WwiseAudioMgr:SetState("level", "None")
+	PlayerData.Voice:PlayBattleResultVoice(teamMemberid, self.bSuccess)
 	self.tbTeamMemberList = teamMemberid
 	local nAnimTime
 	if self.bSweep then

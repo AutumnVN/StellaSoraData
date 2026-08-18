@@ -323,7 +323,7 @@ function BreakOutData:RequestFinishLevel(arrayData, cb)
 				cb()
 			end
 		end
-		EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanelS2)
+		EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanelS3)
 		HttpNetHandler.SendMsg(NetMsgId.Id.milkout_settle_req, mapMsg, nil, failCallback)
 		return
 	end
@@ -336,7 +336,7 @@ function BreakOutData:RequestFinishLevel(arrayData, cb)
 			FirstComplete = arrayData.Win
 		})
 	end
-	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanelS2)
+	EventManager.Hit(EventId.ClosePanel, PanelId.BreakOutLevelDetailPanelS3)
 	HttpNetHandler.SendMsg(NetMsgId.Id.milkout_settle_req, mapMsg, nil, successCallback)
 end
 function BreakOutData:CreateTempData(nLevelId, bResult)

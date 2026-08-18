@@ -106,7 +106,7 @@ function BreakOutLevelData:GetIsFinishGame()
 	return self.bIsFinishGame
 end
 function BreakOutLevelData:OnEvent_AdventureModuleEnter()
-	EventManager.Hit(EventId.OpenPanel, PanelId.BreakOutPlayPanelS2, self.nActId, self.nLevelId, self.nCharacterNid)
+	EventManager.Hit(EventId.OpenPanel, PanelId.BreakOutPlayPanelS3, self.nActId, self.nLevelId, self.nCharacterNid)
 end
 function BreakOutLevelData:GetFloorHasDic(nFloorId)
 	local bResult = true

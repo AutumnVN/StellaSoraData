@@ -70,6 +70,7 @@ function TaskCommonCtrl_01:OnEnable()
 	self:refresh_Tab()
 	self:refresh_Task()
 	self:refresh_Group()
+	self:SetEndTimer()
 end
 function TaskCommonCtrl_01:FadeIn()
 	EventManager.Hit(EventId.SetTransition)
@@ -427,6 +428,39 @@ function TaskCommonCtrl_01:SetImgBar_FillAmount(mapTask, tr)
 	NovaAPI.SetImageFillAmount(imgProgessBar, nCur / nMax)
 	NovaAPI.SetTMPText(tr:Find("tmpTaskDesc"):GetComponent("TMP_Text"), mapTask.sDesc)
 	NovaAPI.SetTMPText(tr:Find("tmpTaskProgress"):GetComponent("TMP_Text"), string.format("%s/%s", tostring(nCur), tostring(nMax)))
+end
+function TaskCommonCtrl_01:SetEndTimer()
+	if self.endTimer ~= nil then
+		self.endTimer:Cancel(false)
+		self.endTimer = nil
+	end
+	if self.ins_ActivityTaskData == nil then
+		return
+	end
+	local nEndTime = self.ins_ActivityTaskData.nEndTime or 0
+	if nEndTime <= 0 then
+		return
+	end
+	local nRemain = nEndTime - CS.ClientManager.Instance.serverTimeStamp
+	if nRemain <= 0 then
+		self:AddTimer(1, 0, function()
+			self:OnActivityEnd()
+		end, true, true, true)
+		return
+	end
+	self.endTimer = self:AddTimer(1, nRemain, function()
+		self:OnActivityEnd()
+	end, true, true, false)
+end
+function TaskCommonCtrl_01:OnActivityEnd()
+	EventManager.Hit(EventId.OpenMessageBox, ConfigTable.GetUIText("Activity_End_Notice"))
+	EventManager.Hit(EventId.CloesCurPanel)
+end
+function TaskCommonCtrl_01:OnDisable()
+	if self.endTimer ~= nil then
+		self.endTimer:Cancel(false)
+		self.endTimer = nil
+	end
 end
 function TaskCommonCtrl_01:SetBigNum(number)
 	local nNum = number

@@ -258,7 +258,7 @@ return {
 	{
 		id = 157,
 		icon = "Icon/Head/head_15701_S",
-		name = "***",
+		name = "花铃",
 		landmark = "塞尔斯泰晨曦街78号",
 		signature = "变态……",
 		ver = "1.14.0"

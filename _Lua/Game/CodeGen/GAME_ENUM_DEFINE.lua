@@ -2316,7 +2316,8 @@ GameEnum.OpenFuncType = {
 	NickNameReset = 29,
 	WeeklyQuest = 30,
 	QuestNewbie = 31,
-	TraceHunt = 32
+	TraceHunt = 32,
+	EnergyBattery = 33
 }
 GameEnum.TowerQuestType = {Core = 1, Normal = 2}
 GameEnum.poolType = {Elite = 1, Boss = 2}
@@ -2563,7 +2564,8 @@ GameEnum.activityThemeType = {
 	Tech_10108 = 14,
 	GunStorm_10109 = 15,
 	Summer_20103 = 16,
-	Summer_10110 = 17
+	Summer_10110 = 17,
+	BreakOut_30103 = 19
 }
 GameEnum.ActivityLevelType = {
 	Explore = 1,

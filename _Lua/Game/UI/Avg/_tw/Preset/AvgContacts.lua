@@ -258,7 +258,7 @@ return {
 	{
 		id = 157,
 		icon = "Icon/Head/head_15701_S",
-		name = "***",
+		name = "花鈴",
 		landmark = "塞爾斯泰晨曦街78號",
 		signature = "變態…",
 		ver = "1.14.0"
@@ -291,6 +291,13 @@ return {
 		name = "紅寶石",
 		landmark = "聯合種業菲萊分公司",
 		signature = "胸懷大志氣昂昂～"
+	},
+	{
+		id = 3223,
+		icon = "Icon/Head/head_npc22301_S",
+		name = "卡特琳",
+		landmark = "",
+		signature = ""
 	},
 	{
 		id = 999,

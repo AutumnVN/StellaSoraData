@@ -24,20 +24,17 @@ IceCreamTruckPauseCtrl._mapNodeConfig = {
 	btn_exit = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Exit",
-		sAction = "Giveup",
-		sActionIconType = "Dark"
+		sAction = "Giveup"
 	},
 	btn_restart = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Restart",
-		sAction = "Retry",
-		sActionIconType = "Dark"
+		sAction = "Retry"
 	},
 	btn_continue = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_Continue",
-		sAction = "Back",
-		sActionIconType = "Dark"
+		sAction = "Back"
 	},
 	txt_SettleScoreTitle = {
 		sComponentName = "TMP_Text",
@@ -63,8 +60,7 @@ IceCreamTruckPauseCtrl._mapNodeConfig = {
 	btn_dic = {
 		sComponentName = "NaviButton",
 		callback = "OnBtnClick_OpenDic",
-		sAction = "Depot",
-		sActionIconType = "Dark"
+		sAction = "Depot"
 	},
 	txt_dic = {
 		nCount = 2,

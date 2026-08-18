@@ -67,12 +67,12 @@ function ActivityListCtrl:InitActivityList(nCurActId)
 		})
 	end
 	if nil ~= self.tbActList then
-		if nil ~= self._panel.nSelectActId and nil ~= self.nSelectActMainType then
+		if nil ~= self.nSelectActId and nil ~= self.nSelectActMainType then
 			local actData
 			if self.nSelectActMainType == AllEnum.ActivityMainType.Activity then
-				actData = PlayerData.Activity:GetActivityDataById(self._panel.nSelectActId)
+				actData = PlayerData.Activity:GetActivityDataById(self.nSelectActId)
 			elseif self.nSelectActMainType == AllEnum.ActivityMainType.ActivityGroup then
-				actData = PlayerData.Activity:GetActivityGroupDataById(self._panel.nSelectActId)
+				actData = PlayerData.Activity:GetActivityGroupDataById(self.nSelectActId)
 			end
 			local bOpen = false
 			if nil ~= actData then
@@ -87,12 +87,12 @@ function ActivityListCtrl:InitActivityList(nCurActId)
 					nType = AllEnum.MessageBox.Alert,
 					sContent = ConfigTable.GetUIText("Activity_Invalid_Tip_2")
 				})
-				self._panel.nSelectActId = nil
+				self.nSelectActId = nil
 			end
 		end
 		self.nSelectIndex = 1
-		if self._panel.nSelectActId ~= nil or nCurActId ~= nil then
-			local nActId = self._panel.nSelectActId == nil and nCurActId or self._panel.nSelectActId
+		if self.nSelectActId ~= nil or nCurActId ~= nil then
+			local nActId = self.nSelectActId == nil and nCurActId or self.nSelectActId
 			for k, actData in ipairs(self.tbActList) do
 				local actId = actData.nType == AllEnum.ActivityMainType.Activity and actData.actData:GetActId() or actData.actData:GetActGroupId()
 				if nil ~= nActId and actId == nActId then
@@ -453,7 +453,7 @@ function ActivityListCtrl:RefreshSelectActivity(bResetDay)
 	end
 	self.nSelectActMainType = actData.nType
 	if actData.nType == AllEnum.ActivityMainType.Activity then
-		self._panel.nSelectActId = actData.actData:GetActId()
+		self.nSelectActId = actData.actData:GetActId()
 		local actType = actData.actData:GetActType()
 		if actType == GameEnum.activityType.PeriodicQuest then
 			self:AddPeriodicActivityCtrl(actData.actData, bResetDay)
@@ -485,12 +485,12 @@ function ActivityListCtrl:RefreshSelectActivity(bResetDay)
 			self:AddSoldierActivityCtrl(actData.actData)
 		end
 	elseif actData.nType == AllEnum.ActivityMainType.ActivityGroup then
-		self._panel.nSelectActId = actData.actData:GetActGroupId()
+		self.nSelectActId = actData.actData:GetActGroupId()
 		self:AddActivityGroupCtrl(actData.actData)
 	end
-	if self._panel.nSelectActId ~= nil then
-		LocalData.SetPlayerLocalData("Activity_Tab_New_" .. self._panel.nSelectActId, 1)
-		RedDotManager.SetValid(RedDotDefine.Activity_New_Tab, self._panel.nSelectActId, false)
+	if self.nSelectActId ~= nil then
+		LocalData.SetPlayerLocalData("Activity_Tab_New_" .. self.nSelectActId, 1)
+		RedDotManager.SetValid(RedDotDefine.Activity_New_Tab, self.nSelectActId, false)
 	end
 end
 function ActivityListCtrl:FadeIn()
@@ -499,6 +499,7 @@ function ActivityListCtrl:FadeIn()
 end
 function ActivityListCtrl:Awake()
 	self.nSelectIndex = nil
+	self.nSelectActId = nil
 	self.nInitActId = nil
 	self.bPlayAnim = true
 	self.tbInitActIds = {}

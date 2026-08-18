@@ -208,7 +208,8 @@ return {
 	{
 		id = "avg1_137",
 		name = "埃莉諾",
-		name_bg_color = "#e78fab"
+		name_bg_color = "#e78fab",
+		reuseL2DPose = "b"
 	},
 	{
 		id = "avg1_138",
@@ -350,13 +351,13 @@ return {
 	},
 	{
 		id = "avg2_938",
-		name = "***",
+		name = "凍凍公爵",
 		name_bg_color = "#0ABEC5",
 		ver = "1.14.0"
 	},
 	{
 		id = "avg2_939",
-		name = "***",
+		name = "水塔樓星骸",
 		name_bg_color = "#0ABEC5",
 		ver = "1.14.0"
 	},
@@ -1163,6 +1164,18 @@ return {
 		ver = "1.9.0"
 	},
 	{
+		id = "avg3_216",
+		name = "岡希爾德",
+		name_bg_color = "#caaee2",
+		ver = "1.13.2"
+	},
+	{
+		id = "avg3_217",
+		name = "160號",
+		name_bg_color = "#fffdf5",
+		ver = "1.13.2"
+	},
+	{
 		id = "avg3_218",
 		name = "米拉什居民男",
 		name_bg_color = "#0ABEC5",
@@ -1195,19 +1208,19 @@ return {
 	{
 		id = "avg3_223",
 		name = "***",
-		name_bg_color = "#a5cdc3",
+		name_bg_color = "#ecd09f",
 		ver = "1.15.0"
 	},
 	{
 		id = "avg3_224",
 		name = "***",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#73a4c8",
 		ver = "1.15.0"
 	},
 	{
 		id = "avg3_225",
 		name = "***",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#fffcdf",
 		ver = "2.0.0"
 	},
 	{
@@ -1248,19 +1261,19 @@ return {
 	},
 	{
 		id = "avg3_232",
-		name = "***",
+		name = "天穹保險公司代表男",
 		name_bg_color = "#0ABEC5",
-		ver = "2.1.0"
+		ver = "1.13.2"
 	},
 	{
 		id = "avg3_233",
-		name = "***",
+		name = "希婭兔子玩偶",
 		name_bg_color = "#0ABEC5",
 		ver = "1.14.0"
 	},
 	{
 		id = "avg3_234",
-		name = "***",
+		name = "地理協會職員（女）",
 		name_bg_color = "#0ABEC5",
 		ver = "1.14.0"
 	},
@@ -3010,6 +3023,48 @@ return {
 		name_bg_color = "#555559",
 		reuse = "avg1_139",
 		ver = "1.13.0"
+	},
+	{
+		id = "avg3_1314",
+		name = "凍凍A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_975",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1315",
+		name = "凍凍B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_975",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1316",
+		name = "凍凍C",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_975",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1317",
+		name = "寄居蟹A",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_945",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1318",
+		name = "寄居蟹B",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg2_945",
+		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1319",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg1_136",
+		ver = "1.16.0"
 	},
 	{
 		id = "avg4_100",

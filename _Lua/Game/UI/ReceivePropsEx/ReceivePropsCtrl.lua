@@ -82,7 +82,7 @@ function ReceivePropsCtrl:RefreshNormal()
 		local ctrlObj = self:BindCtrlByNode(goItem, "Game.UI.TemplateEx.TemplateItemCtrl")
 		local mapCfg = ConfigTable.GetData_Item(nItemId)
 		if mapCfg then
-			if mapCfg.Type == GameEnum.itemType.Char or mapCfg.Type == GameEnum.itemType.CharacterSkin then
+			if mapCfg.Type == GameEnum.itemType.Char then
 				ctrlObj:SetChar(nItemId, v.count, nil, v.rewardType)
 			else
 				ctrlObj:SetItem(nItemId, mapCfg.Rarity, v.count, nil, nil, v.rewardType and v.rewardType == AllEnum.RewardType.First, v.rewardType and v.rewardType == AllEnum.RewardType.Three, true, false, false, v.rewardType and v.rewardType == AllEnum.RewardType.Extra, v.rewardType and v.rewardType == AllEnum.RewardType.Double)

@@ -1,4 +1,3 @@
-local SoldierBuffTipsPanel = require("Game.UI.Soldier.Sandtable.Components.SoldierBuffTipsPanel")
 local PanelId = {
 	AvgEditorMultiLanTool = -6,
 	ExeEditor = -4,
@@ -438,6 +437,8 @@ local PanelId = {
 	BreakOutLevelDetailPanelS3 = 515,
 	BreakOutResultPanelS3 = 516,
 	BreakOutPlayPanelS3 = 517,
+	ThrowGiftPanel_400015 = 525,
+	ThrowGiftLevelPanel_400015 = 526,
 	SoldierTestEnter = 99998,
 	GmTools = 99999
 }

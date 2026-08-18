@@ -256,6 +256,14 @@ return {
 		signature = "Have you seen my rag doll?"
 	},
 	{
+		id = 157,
+		icon = "Icon/Head/head_15701_S",
+		name = "Karin",
+		landmark = "78 Dawn Street, Sailstead",
+		signature = "Stay away perv",
+		ver = "1.14.0"
+	},
+	{
 		id = 158,
 		icon = "Icon/Head/head_15801_S",
 		name = "Snowish Laru",
@@ -283,6 +291,13 @@ return {
 		name = "Ruby",
 		landmark = "United Harvest (Philae)",
 		signature = "Bold in heart, brave in spirit!"
+	},
+	{
+		id = 3223,
+		icon = "Icon/Head/head_npc22301_S",
+		name = "Caterine",
+		landmark = "",
+		signature = ""
 	},
 	{
 		id = 999,

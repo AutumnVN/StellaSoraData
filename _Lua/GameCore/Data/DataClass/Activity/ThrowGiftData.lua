@@ -78,7 +78,7 @@ function ThrowGiftData:GetLevelNewStateInternal(nLevelId)
 		return false
 	end
 	local nOpenTime = self:GetActOpenTime()
-	if mapLevelCfgData.DayOpen ~= 0 and mapLevelCfgData.DayOpen ~= nil and nOpenTime ~= 0 then
+	if nOpenTime ~= 0 then
 		local nServerTimeStamp = CS.ClientManager.Instance.serverTimeStamp
 		local nUnlockTime = mapLevelCfgData.DayOpen * 86400 + nOpenTime
 		if nUnlockTime - nServerTimeStamp <= 0 then

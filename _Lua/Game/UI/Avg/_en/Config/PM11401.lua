@@ -132,7 +132,7 @@ return {
 			"",
 			false,
 			"",
-			"It's ME, THE GREAT CHATON!!!!",
+			"It's ME, THE GREAT CHATION!!!!",
 			""
 		}
 	},

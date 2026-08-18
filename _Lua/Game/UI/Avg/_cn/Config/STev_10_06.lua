@@ -2179,6 +2179,10 @@ return {
 		param = {0.5}
 	},
 	{
+		cmd = "Comment",
+		param = {"still"}
+	},
+	{
 		cmd = "CtrlStage",
 		param = {
 			0,
@@ -2190,7 +2194,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"JingTouYaoHuang",
+			"still",
 			"OutCubic",
 			0.5,
 			false
@@ -2330,6 +2334,10 @@ return {
 		}
 	},
 	{
+		cmd = "Comment",
+		param = {"still"}
+	},
+	{
 		cmd = "CtrlStage",
 		param = {
 			0,
@@ -2341,7 +2349,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"still",
 			"OutCubic",
 			0.5,
 			true
@@ -4609,6 +4617,10 @@ return {
 		}
 	},
 	{
+		cmd = "Comment",
+		param = {"still"}
+	},
+	{
 		cmd = "CtrlStage",
 		param = {
 			0,
@@ -4620,7 +4632,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"still",
 			"OutCubic",
 			0.5,
 			true

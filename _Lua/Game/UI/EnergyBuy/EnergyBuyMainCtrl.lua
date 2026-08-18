@@ -94,8 +94,9 @@ end
 function EnergyBuyMainCtrl:OnDestroy()
 end
 function EnergyBuyMainCtrl:ShowPanel()
-	local nEnergyBatteryMax = ConfigTable.GetConfigNumber("EnergyBatteryMax")
-	self._mapNode.goBatteryEnergy.gameObject:SetActive(0 < nEnergyBatteryMax)
+	local nEnergyBatteryUIEnable = ConfigTable.GetConfigNumber("EnergyBatteryUIEnable")
+	local bUnlock = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.EnergyBattery)
+	self._mapNode.goBatteryEnergy.gameObject:SetActive(0 < nEnergyBatteryUIEnable and bUnlock)
 	self._mapNode.goItem.gameObject:SetActive(false)
 	self._mapNode.animWindow:Play("t_window_04_t_in")
 	EventManager.Hit(EventId.TemporaryBlockInput, 0.3)

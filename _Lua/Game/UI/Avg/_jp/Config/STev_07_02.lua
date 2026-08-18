@@ -4162,7 +4162,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"stop",
 			"OutCubic",
 			1.0,
 			false

@@ -7041,7 +7041,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"stop",
 			"OutCubic",
 			1.0,
 			false
@@ -12087,7 +12087,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"stop",
 			"Linear",
 			0.0,
 			false
@@ -16416,7 +16416,7 @@ return {
 			"",
 			false,
 			"",
-			"                                                                                                      <size=52>菲萊的漣漪<color=#08d3d4></size>  <size=57>完</color></size>",
+			"<align=right><margin-right=6em><size=52>菲萊的漣漪<color=#08d3d4></size>  <size=57>完</color></size></margin></align>",
 			""
 		}
 	},
@@ -17520,7 +17520,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"stop",
 			"OutCubic",
 			1.0,
 			false

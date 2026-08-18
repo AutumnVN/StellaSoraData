@@ -93,7 +93,8 @@ TraceHuntHelpCtrl._mapNodeConfig = {
 TraceHuntHelpCtrl._mapEventConfig = {
 	FriendClosePop = "OnBtnClick_ClosePop",
 	[EventId.CoinResChange] = "RefreshRes",
-	TraceHuntItemChange = "RefreshRes"
+	TraceHuntItemChange = "RefreshRes",
+	[EventId.TransAnimOutClear] = "OnEvent_TransAnimOutClear"
 }
 TraceHuntHelpCtrl._mapRedDotConfig = {
 	[RedDotDefine.Friend_Apply] = {sNodeName = "redDotAdd"},
@@ -235,12 +236,17 @@ function TraceHuntHelpCtrl:OnEnable()
 	self.animator = self.gameObject:GetComponent("Animator")
 	self._mapNode.Info:SetActive(false)
 	self._mapNode.List:SetActive(false)
+	self.bGetInfo = false
 	local callback = function()
 		self._mapNode.Info:SetActive(true)
 		self._mapNode.List:SetActive(true)
+		self.bGetInfo = true
 		self:RefreshContent()
 		self:PlayInAni()
-		PlayerData.Friend:TryOpenFriendAddStranger()
+		local bInTransition = PanelManager.CheckInTransition()
+		if not bInTransition then
+			PlayerData.Friend:TryOpenFriendAddStranger()
+		end
 	end
 	PlayerData.TraceHunt:SendTraceHuntRecommendReq(callback)
 end
@@ -336,5 +342,10 @@ function TraceHuntHelpCtrl:OnBtnClick_TipsBg()
 	NovaAPI.SetButtonInteractable(self._mapNode.btnResCoin[2], true)
 	NovaAPI.SetComponentEnableByName(self._mapNode.goResCoin2, "TopGridCanvas", false)
 	self._mapNode.goTip.gameObject:SetActive(false)
+end
+function TraceHuntHelpCtrl:OnEvent_TransAnimOutClear(...)
+	if self.bGetInfo then
+		PlayerData.Friend:TryOpenFriendAddStranger()
+	end
 end
 return TraceHuntHelpCtrl

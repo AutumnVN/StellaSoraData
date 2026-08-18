@@ -238,7 +238,11 @@ function MainlineExCtrl:OnEvent_Story_RewardClosed()
 		if self.bAllCompleted then
 			AvgData:SetNewLockChapterIndex(self.curChapter)
 			self._mapNode.got_fullscreen_blur_01:SetActive(true)
-			self._mapNode.goChapterComplete:SetActive(true)
+			local wait = function()
+				coroutine.yield(CS.UnityEngine.WaitForEndOfFrame())
+				self._mapNode.goChapterComplete:SetActive(true)
+			end
+			cs_coroutine.start(wait)
 			self:AddTimer(1, 2.5, function()
 				if self.fromPanel ~= 0 and self.fromPanel ~= PanelId.StoryChapter then
 					EventManager.Hit(EventId.OpenPanel, PanelId.StoryChapter, self.fromPanel)

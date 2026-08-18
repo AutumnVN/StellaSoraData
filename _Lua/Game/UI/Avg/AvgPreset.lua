@@ -118,9 +118,9 @@ local AvgPreset = {
 		"mirage_creche_inside_daylight",
 		"mirage_creche_inside_night",
 		"mirage_creche_outside_daylight",
+		"mirage_creche_outside_night",
 		"mirage_eyphkabar_inside_daylight",
 		"mirage_eyphkabar_inside_dusk",
-		"mirage_street2_daylight",
 		"mirage_street_2_daylight",
 		"mirage_street_daylight",
 		"mirage_street_daylight_tower",
@@ -347,6 +347,8 @@ local AvgPreset = {
 		"story_event_11_001",
 		"story_event_11_002",
 		"story_event_11_003",
+		"story_event_12_001",
+		"story_event_12_002",
 		"story_main_00_001",
 		"story_main_00_002",
 		"story_main_00_003_FP",
@@ -546,8 +548,11 @@ local AvgPreset = {
 		"story_main_08_007_a",
 		"story_main_08_007_b",
 		"story_main_08_007_c",
+		"story_main_08_007_d",
 		"story_main_08_008",
 		"story_main_08_009",
+		"story_main_08_010_a_FP",
+		"story_main_08_010_a_MP",
 		"story_main_08_010_FP",
 		"story_main_08_010_MP",
 		"story_main_08_011",
@@ -570,6 +575,8 @@ local AvgPreset = {
 		"story_main_be_06_002",
 		"story_main_be_06_003",
 		"story_main_be_08_001",
+		"story_mpast_01_010",
+		"story_mpast_01_010_a",
 		"story_tales_01_001",
 		"story_tales_02_001",
 		"story_tales_03_001",
@@ -688,6 +695,7 @@ local AvgPreset = {
 	BgShakeType = {
 		{"none", 0},
 		{"stop", 1},
+		{"still", 2},
 		{
 			"Xiao",
 			{
@@ -2314,6 +2322,7 @@ local AvgPreset = {
 	CharShakeType = {
 		{"none", 0},
 		{"stop", 1},
+		{"still", 2},
 		{
 			"JuGong",
 			{
@@ -5865,7 +5874,26 @@ local AvgPreset = {
 			"fx_avg_close_eye",
 			""
 		},
-		{"style_4", ""},
+		{
+			"fx_avg_wave_lp",
+			""
+		},
+		{
+			"fx_avg_wave_2",
+			""
+		},
+		{
+			"fx_avg_splash_lp",
+			""
+		},
+		{
+			"fx_avg_splash_end",
+			""
+		},
+		{
+			"fx_avg_water_splash",
+			""
+		},
 		{
 			"--分割线，以下特效含后期效果--",
 			""

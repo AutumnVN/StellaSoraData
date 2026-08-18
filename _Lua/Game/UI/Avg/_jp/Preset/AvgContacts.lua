@@ -258,7 +258,7 @@ return {
 	{
 		id = 157,
 		icon = "Icon/Head/head_15701_S",
-		name = "***",
+		name = "カリン",
 		landmark = "セルスティ-サンライズ通り78番地",
 		signature = "よく効く酔い止めあるデスよ",
 		ver = "1.14.0"

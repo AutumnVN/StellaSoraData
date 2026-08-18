@@ -326,7 +326,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"still",
 			"OutSine",
 			1.0,
 			false

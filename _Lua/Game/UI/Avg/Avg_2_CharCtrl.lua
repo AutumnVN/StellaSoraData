@@ -727,7 +727,7 @@ function Avg_2_CharCtrl:_SetShake(eftShake, sShakeType, animator)
 		local _sT = type(tb)
 		if _sT == "table" then
 			NovaAPI.DoShakeEffect(eftShake, tb[1], tb[2], tb[3])
-		elseif _sT == "number" and tb == 1 then
+		elseif _sT == "number" and (tb == 0 or tb == 1) then
 			NovaAPI.StopShakeEffect(eftShake)
 		end
 	end

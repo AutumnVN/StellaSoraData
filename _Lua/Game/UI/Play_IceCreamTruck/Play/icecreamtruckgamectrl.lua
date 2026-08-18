@@ -257,6 +257,7 @@ function IceCreamTruckGameCtrl:OnDisable()
 		self.timerFeverCutinDeactivate = nil
 	end
 	self._nRestartGen = (self._nRestartGen or 0) + 1
+	SpineManager.ClearAll()
 end
 function IceCreamTruckGameCtrl:ReInitData()
 	self:InitData()
@@ -1786,6 +1787,7 @@ function IceCreamTruckGameCtrl:_TeardownForRestart()
 	self:_GuideClearGarbage()
 	self._goGarbageGuide = nil
 	self:UnregisterCondimentSpines()
+	self:_UnregisterFeverCatSpine()
 	self:_DestroyAllSauceInstances()
 end
 function IceCreamTruckGameCtrl:_ClearSafeHitQueue()

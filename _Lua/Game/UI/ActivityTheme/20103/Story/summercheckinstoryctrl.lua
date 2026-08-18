@@ -231,11 +231,15 @@ function SummerCheckinStoryCtrl:RefreshGridInfo(grid, gridIndex, bBranch, nBranc
 		NovaAPI.SetTMPText(txtTime, strTime)
 	end
 	local _bInActGroup, nActGroupId = PlayerData.Activity:IsActivityInActivityGroup(self.nActId)
-	RedDotManager.RegisterNode(RedDotDefine.Activity_GroupNew_Avg_Group, {
-		nActGroupId,
-		self.nActId,
-		avgcfg.Id
-	}, RedDot, nil, nil, true)
+	if _bInActGroup then
+		RedDotManager.RegisterNode(RedDotDefine.Activity_GroupNew_Avg_Group, {
+			nActGroupId,
+			self.nActId,
+			avgcfg.Id
+		}, RedDot, nil, nil, true)
+	else
+		RedDot.gameObject:SetActive(false)
+	end
 	local clickFuc = function()
 		if not bOpen or self.bCantClick then
 			return

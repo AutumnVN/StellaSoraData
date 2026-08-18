@@ -220,7 +220,7 @@ function ScoreBossLevel:PlaySuccessPerform(entryLevelId, totalScore, totalStar)
 	EventManager.Add("ADVENTURE_LEVEL_UNLOAD_COMPLETE", self, levelEndCallback)
 	local function openBattleResultPanel()
 		EventManager.Remove("SettlementPerformLoadFinish", self, openBattleResultPanel)
-		EventManager.Hit(EventId.OpenPanel, PanelId.ScoreBossResult, entryLevelId, totalScore, totalStar, self.tbCharDamage)
+		EventManager.Hit(EventId.OpenPanel, PanelId.ScoreBossResult, entryLevelId, totalScore, totalStar, self.tbCharDamage, self.tbCharId)
 	end
 	EventManager.Add("SettlementPerformLoadFinish", self, openBattleResultPanel)
 	CS.AdventureModuleHelper.LevelStateChanged(true)

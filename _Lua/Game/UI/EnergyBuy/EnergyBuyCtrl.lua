@@ -84,6 +84,9 @@ function EnergyBuyCtrl:StartRecoverTimer()
 	local nCurEnergyBattery = PlayerData.Base:GetCurEnergyBattery().nEnergyBattery
 	local nWorldClassMax = ConfigTable.GetConfigNumber("EnergyMaxLimit")
 	local nWorldClassBatteryMax = ConfigTable.GetConfigNumber("EnergyBatteryMax")
+	local nEnergyBatteryUIEnable = ConfigTable.GetConfigNumber("EnergyBatteryUIEnable")
+	local bUnlock = PlayerData.Base:CheckFunctionUnlock(GameEnum.OpenFuncType.EnergyBattery)
+	local bShowBattery = bUnlock and 0 < nEnergyBatteryUIEnable
 	if nCurEnergy < nWorldClassMax then
 		self.nNextRestore = PlayerData.Base:GetCurEnergy().nEnergyTime
 		self._mapNode.goRecoverTime.gameObject:SetActive(true)
@@ -92,7 +95,7 @@ function EnergyBuyCtrl:StartRecoverTimer()
 		if nil == self.recoverTimer then
 			self.recoverTimer = self:AddTimer(0, 1, "RefreshRecoverTime", true, true, false)
 		end
-	elseif nCurEnergy >= nWorldClassMax and nCurEnergyBattery < nWorldClassBatteryMax then
+	elseif nCurEnergy >= nWorldClassMax and nCurEnergyBattery < nWorldClassBatteryMax and bShowBattery then
 		self.nNextRestore = PlayerData.Base:GetCurEnergyBattery().nEnergyBatteryTime
 		self._mapNode.goRecoverTime.gameObject:SetActive(true)
 		NovaAPI.SetTMPText(self._mapNode.txtRecoverTime, ConfigTable.GetUIText("EnergyBattery_Recover_Time"))

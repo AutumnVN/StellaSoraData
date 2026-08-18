@@ -466,6 +466,10 @@ function PotentialSelectCtrl:OnDisable()
 	for k, v in ipairs(self._mapNode.btnPotential) do
 		v.onSelect:RemoveListener(self.handler[k])
 	end
+	if self.selectTimer ~= nil then
+		self.selectTimer:Cancel()
+		self.selectTimer = nil
+	end
 end
 function PotentialSelectCtrl:OnBtnClick_Depot()
 	self.bOpenDepot = true
@@ -673,7 +677,11 @@ function PotentialSelectCtrl:ResetSelect(tbUI)
 	})
 	local nAnimTime = nCardAnimTime > nPanelAnimTime and nCardAnimTime or nPanelAnimTime
 	nAnimTime = nAnimTime + 0.4
-	self:AddTimer(1, nAnimTime, function()
+	if self.selectTimer ~= nil then
+		self.selectTimer:Cancel()
+		self.selectTimer = nil
+	end
+	self.selectTimer = self:AddTimer(1, nAnimTime, function()
 		if self.nSelectIdx == 0 then
 			local nSelect = self.nRecommendIdx == 0 and 1 or self.nRecommendIdx
 			GamepadUIManager.ClearSelectedUI()

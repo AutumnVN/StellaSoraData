@@ -315,6 +315,10 @@ return {
 		param = {0.5}
 	},
 	{
+		cmd = "Comment",
+		param = {"still"}
+	},
+	{
 		cmd = "CtrlStage",
 		param = {
 			0,
@@ -326,7 +330,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"still",
 			"OutSine",
 			1.0,
 			false

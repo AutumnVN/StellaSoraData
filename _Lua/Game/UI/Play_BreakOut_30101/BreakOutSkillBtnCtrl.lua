@@ -133,6 +133,9 @@ function BreakOutSkillBtnCtrl:InitSkillBtn(EET, icon, skillId, actionId, charId,
 	self._mapNode.Action.gameObject:SetActive(true)
 	self._mapNode.Empty:SetActive(false)
 	self.parentCanvasGroup = self.gameObject.transform.parent.parent:GetComponent("CanvasGroup")
+	if self.ActionId == SKILL_SHOOT then
+		self._mapNode.transformQTE.localScale = Vector3.zero
+	end
 end
 function BreakOutSkillBtnCtrl:SetEmptySkillBtn()
 	self._mapNode.CanvasGroupMain.gameObject:SetActive(false)

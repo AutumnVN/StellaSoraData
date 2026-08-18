@@ -193,7 +193,9 @@ function PlayerTraceHuntData:CacheTraceHuntInfo(mapTraceHuntInfo)
 	self:UpdateControlData()
 	self:UpdateLevel(mapTraceHuntInfo.Level, mapTraceHuntInfo.Exp)
 	self:SetSelBuildId(mapTraceHuntInfo.BuildID)
-	self:UpdateBossRewardRedDot(self.nHuntProgress >= self.nMaxHuntProgress)
+	local bComplete = self:CheckHuntComplete()
+	local bInterrupt = self:CheckHuntInterrupt()
+	self:UpdateBossRewardRedDot(bComplete or bInterrupt)
 	if NovaAPI.IsEditorPlatform() then
 		printLog("TraceHunt 赛季id：" .. "  " .. mapTraceHuntInfo.ControlID)
 		printLog("TraceHunt Boss id：" .. "  " .. mapTraceHuntInfo.BossID)
@@ -630,7 +632,9 @@ function PlayerTraceHuntData:SendTraceHuntSettleReq(nBossId, callback)
 					self.nBossCreateTime = mapMainData.BossCreateTime
 					self:SetHuntTimer()
 				end
-				self:UpdateBossRewardRedDot(self.nHuntProgress >= self.nMaxHuntProgress)
+				local bComplete = self:CheckHuntComplete()
+				local bInterrupt = self:CheckHuntInterrupt()
+				self:UpdateBossRewardRedDot(bComplete or bInterrupt)
 			else
 				self:UpdateBossCollection(nBossId, 0, 1)
 				self.bRefreshHelpCD = false

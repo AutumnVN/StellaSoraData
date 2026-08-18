@@ -1168,6 +1168,8 @@ function MainViewCtrl:RefreshActivityFastEntrance()
 			elseif nActType == GameEnum.activityType.JointDrill then
 				v:RefreshDailyEnterRedDot()
 				RedDotManager.RegisterNode(RedDotDefine.JointDrillDailyEnter, v:GetActId(), self._mapNode.goActivityFastRedDot[k], nil, nil, true)
+			elseif nActType == GameEnum.activityType.Breakout then
+				RedDotManager.RegisterNode(RedDotDefine.Activity_Group, actCfg.MidGroupId, self._mapNode.goActivityFastRedDot[k], nil, nil, true)
 			end
 			if nActType == GameEnum.activityType.Breakout then
 				RedDotManager.RegisterNode(RedDotDefine.Activity_GroupNew, actCfg.MidGroupId, self._mapNode.goActivityFastRedDotNew[k], nil, nil, true)

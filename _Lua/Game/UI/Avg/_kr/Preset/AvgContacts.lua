@@ -258,7 +258,7 @@ return {
 	{
 		id = 157,
 		icon = "Icon/Head/head_15701_S",
-		name = "***",
+		name = "카린",
 		landmark = "셀스티 태청희거리 7호",
 		signature = "변태……",
 		ver = "1.14.0"
@@ -291,6 +291,13 @@ return {
 		name = "루비",
 		landmark = "아그리 유니온 필리에 지사",
 		signature = "가슴에 큰 뜻을 품고 의기양양하게~"
+	},
+	{
+		id = 3223,
+		icon = "Icon/Head/head_npc22301_S",
+		name = "카트린",
+		landmark = "",
+		signature = ""
 	},
 	{
 		id = 999,

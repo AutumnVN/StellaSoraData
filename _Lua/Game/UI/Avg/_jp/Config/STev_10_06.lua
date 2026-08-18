@@ -2190,7 +2190,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"JingTouYaoHuang",
+			"still",
 			"OutCubic",
 			0.5,
 			false
@@ -2341,7 +2341,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"still",
 			"OutCubic",
 			0.5,
 			true
@@ -4620,7 +4620,7 @@ return {
 			nil,
 			nil,
 			nil,
-			"none",
+			"still",
 			"OutCubic",
 			0.5,
 			true

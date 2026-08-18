@@ -41,12 +41,14 @@ function ScoreBossResultCtrl:OnEnable()
 	self.totalScore = tbParam[2]
 	self.totalStar = tbParam[3]
 	self.tbCharDamage = tbParam[4]
-	self.callback = tbParam[5]
+	local tbChar = tbParam[5]
+	self.callback = tbParam[6]
 	self._mapNode.btnDamageResult1.gameObject:SetActive(self.tbCharDamage ~= nil and #self.tbCharDamage > 0)
 	self:SetMsg()
 	WwiseManger:PostEvent("ui_loading_combatSFX_mute", nil, false)
 	WwiseManger:PlaySound("ui_roguelike_victory")
 	WwiseManger:SetState("system", "victory2")
+	PlayerData.Voice:PlayBattleResultVoice(tbChar, true)
 	self:AddTimer(1, 7.5, function()
 		for i = 1, #self._mapNode.ButtonClose do
 			self._mapNode.ButtonClose[i].gameObject:SetActive(true)

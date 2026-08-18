@@ -193,6 +193,7 @@ TraceHuntCtrl._mapNodeConfig = {
 		sComponentName = "TMP_Text",
 		sLanguageId = "Tips_Continue_Refresh"
 	},
+	Block = {},
 	redDotReward = {},
 	redDotHelp = {},
 	redDotResBar = {}
@@ -335,6 +336,9 @@ function TraceHuntCtrl:ChangeState()
 	self.animator:Play("TraceHuntSelectPanel_unlock_synthesis", 0, 0)
 	WwiseManger:PostEvent("mode_gongdou_get")
 	self:AddTimer(1, 1, function()
+		if self._mapNode == nil then
+			return
+		end
 		self:RefreshState()
 		self.bChangeState = false
 	end, true, true, true)
@@ -603,6 +607,9 @@ function TraceHuntCtrl:PlayPieceEndAni(bMaxTrace, nStartPiece, nEndPiece)
 						"TraceHuntSelectPanel_unlock" .. i
 					})
 					self:AddTimer(1, nTime, function()
+						if self._mapNode == nil then
+							return
+						end
 						self._mapNode.imgPieceOff[i]:SetActive(false)
 					end, true, true, true)
 				end
@@ -827,6 +834,9 @@ function TraceHuntCtrl:RefreshNewControl(bWait)
 		return
 	end
 	local open = function()
+		if self._mapNode == nil then
+			return
+		end
 		self._mapNode.blur:SetActive(true)
 		self._mapNode.Update:SetActive(true)
 		self._mapNode.aniUpdate:Play("TraceHuntHelpPanel_tips_in")
@@ -940,8 +950,16 @@ function TraceHuntCtrl:FadeIn()
 	if self._panel._nFadeInType == 1 then
 		EventManager.Hit(EventId.SetTransition)
 		self.animator:Play("TraceHuntSelectPanel_in", 0, 0)
+		local nAnimTime = NovaAPI.GetAnimClipLength(self.animator, {
+			"TraceHuntSelectPanel_in"
+		})
+		self._mapNode.Block:SetActive(true)
+		self:AddTimer(1, nAnimTime, function()
+			self._mapNode.Block:SetActive(false)
+		end, true, true, true)
 	elseif self._panel._nFadeInType == 2 then
 		self.animator:Play("TraceHuntSelectPanel_in", 0, 1)
+		self._mapNode.Block:SetActive(false)
 	end
 end
 function TraceHuntCtrl:Awake()

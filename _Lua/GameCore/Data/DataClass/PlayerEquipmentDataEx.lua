@@ -407,7 +407,7 @@ function PlayerEquipmentData:SendCharGemGenerateReq(nCharId, nSlotId, nGemIndex,
 	local successCallback = function(_, mapMainData)
 		local nGemId = self:GetGemIdBySlot(nCharId, nSlotId)
 		local equipmentData = EquipmentData.new(mapMainData.CharGem, nCharId, nGemId)
-		self.tbCharEquipment[nCharId][nSlotId][nGemIndex] = equipmentData
+		table.insert(self.tbCharEquipment[nCharId][nSlotId], equipmentData)
 		if callback then
 			callback()
 		end

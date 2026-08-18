@@ -1061,6 +1061,17 @@ function ThrowGiftsLevelCtrl:OnUpdate()
 		self._mapNode.rtScene.anchoredPosition = Vector2(nFinX, rtScenePos.y)
 	end
 end
+function ThrowGiftsLevelCtrl:CheckSpeed(nVy, nAngle)
+	local bSpeedCheck = true
+	if nAngle < 45 or 315 < nAngle then
+		bSpeedCheck = nVy <= 0
+	elseif nAngle < 135 or 225 < nAngle then
+		bSpeedCheck = true
+	else
+		bSpeedCheck = 0 <= nVy
+	end
+	return bSpeedCheck
+end
 function ThrowGiftsLevelCtrl:NormalGoalCheck(nCurPosX, nCurPosY)
 	local nSumX = nCurPosX - self.curGiftPenguin.mapStartPos.x
 	local nSumY = nCurPosY - self.curGiftPenguin.mapStartPos.y
@@ -1072,10 +1083,11 @@ function ThrowGiftsLevelCtrl:NormalGoalCheck(nCurPosX, nCurPosY)
 	local hitPos
 	for nId, mapAciveGoal in pairs(self.activeGoal) do
 		local GoalParentPos = mapAciveGoal.rtGoal.anchoredPosition
+		local nGoalParentAngle = mapAciveGoal.rtGoal.localEulerAngles.z % 360
 		local bHitGoal = self:CheckCollision(self.curGiftPenguin.tbBounds, mapAciveGoal.tbBoundsHitArea, nSumX, nSumY, mapAciveGoal.OffsetX, mapAciveGoal.OffsetY)
 		if bHitGoal then
 			local curVy = self.curGiftPenguin.nVelocityY
-			if 0 < curVy and self.curGiftPenguin.nSpecialType ~= 106 and self.curGiftPenguin.nSpecialType ~= 107 then
+			if not self:CheckSpeed(curVy, nGoalParentAngle) and self.curGiftPenguin.nSpecialType ~= 106 and self.curGiftPenguin.nSpecialType ~= 107 then
 				print("hit goal edge")
 				self:DestroyPenguin()
 				self.curGiftPenguin = nil
@@ -1165,8 +1177,9 @@ function ThrowGiftsLevelCtrl:BouncePenguinGoalCheck(nCurPosX, nCurPosY)
 	for nId, mapAciveGoal in pairs(self.activeGoal) do
 		local GoalParentPos = mapAciveGoal.rtGoal.anchoredPosition
 		local bHitGoal, bestNX, bestNY, minDepth = self:CheckCollision(self.curGiftPenguin.tbBounds, mapAciveGoal.tbBoundsHitArea, nSumX, nSumY, mapAciveGoal.OffsetX, mapAciveGoal.OffsetY)
+		local nGoalParentAngle = mapAciveGoal.rtGoal.localEulerAngles.z % 360
 		if bHitGoal then
-			if 0 < curVy then
+			if not self:CheckSpeed(curVy, nGoalParentAngle) then
 				if self.curGiftPenguin.nHitCount < 3 then
 					WwiseAudioMgr:PostEvent("Mode_Present_spring")
 					self.curGiftPenguin.nHitCount = self.curGiftPenguin.nHitCount + 1

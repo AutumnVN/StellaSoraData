@@ -44,14 +44,12 @@ IceCreamResultCtrl._mapNodeConfig = {
 	btn_InRestart = {
 		sComponentName = "NaviButton",
 		callback = "OnBtn_InRestart",
-		sAction = "Giveup",
-		sActionIconType = "Dark"
+		sAction = "Giveup"
 	},
 	btn_InNext = {
 		sComponentName = "NaviButton",
 		callback = "OnBtn_InNext",
-		sAction = "Giveup",
-		sActionIconType = "Dark"
+		sAction = "Giveup"
 	},
 	txtBtnClose = {
 		nCount = 4,

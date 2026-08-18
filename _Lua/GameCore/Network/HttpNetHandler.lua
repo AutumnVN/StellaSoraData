@@ -1209,6 +1209,7 @@ local BindProcessFunction = function()
 		[NetMsgId.Id.activity_mining_energy_convert_notify] = activity_mining_energy_convert_notify,
 		[NetMsgId.Id.activity_mining_enter_layer_notify] = HttpNetHandlerPlus.activity_mining_enter_layer_notify,
 		[NetMsgId.Id.score_boss_star_reward_receive_succeed_ack] = score_boss_star_reward_receive_succeed_ack,
+		[NetMsgId.Id.score_boss_reset_score_notify] = HttpNetHandlerPlus.score_boss_reset_score_notify,
 		[NetMsgId.Id.activity_cookie_settle_succeed_ack] = HttpNetHandlerPlus.activity_cookie_settle_succeed_ack,
 		[NetMsgId.Id.redeem_code_succeed_ack] = redeem_code_succeed_ack,
 		[NetMsgId.Id.redeem_code_failed_ack] = NOTHING_NEED_TO_BE_DONE,

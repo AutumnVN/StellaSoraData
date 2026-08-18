@@ -208,7 +208,8 @@ return {
 	{
 		id = "avg1_137",
 		name = "엘레노어",
-		name_bg_color = "#e78fab"
+		name_bg_color = "#e78fab",
+		reuseL2DPose = "b"
 	},
 	{
 		id = "avg1_138",
@@ -350,13 +351,13 @@ return {
 	},
 	{
 		id = "avg2_938",
-		name = "***",
+		name = "얼음 공작",
 		name_bg_color = "#0ABEC5",
 		ver = "1.14.0"
 	},
 	{
 		id = "avg2_939",
-		name = "***",
+		name = "물의 탑 성해",
 		name_bg_color = "#0ABEC5",
 		ver = "1.14.0"
 	},
@@ -890,7 +891,7 @@ return {
 	},
 	{
 		id = "avg3_159",
-		name = "피안",
+		name = "카나타",
 		name_bg_color = "#b73947"
 	},
 	{
@@ -1163,6 +1164,18 @@ return {
 		ver = "1.9.0"
 	},
 	{
+		id = "avg3_216",
+		name = "건힐트",
+		name_bg_color = "#caaee2",
+		ver = "1.13.2"
+	},
+	{
+		id = "avg3_217",
+		name = "160번",
+		name_bg_color = "#fffdf5",
+		ver = "1.13.2"
+	},
+	{
 		id = "avg3_218",
 		name = "미라슈 주민(남)",
 		name_bg_color = "#0ABEC5",
@@ -1195,19 +1208,19 @@ return {
 	{
 		id = "avg3_223",
 		name = "***",
-		name_bg_color = "#a5cdc3",
+		name_bg_color = "#ecd09f",
 		ver = "1.15.0"
 	},
 	{
 		id = "avg3_224",
 		name = "***",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#73a4c8",
 		ver = "1.15.0"
 	},
 	{
 		id = "avg3_225",
 		name = "***",
-		name_bg_color = "#0ABEC5",
+		name_bg_color = "#fffcdf",
 		ver = "2.0.0"
 	},
 	{
@@ -1248,19 +1261,19 @@ return {
 	},
 	{
 		id = "avg3_232",
-		name = "***",
+		name = "천궁보험 컴퍼니 대표(남)",
 		name_bg_color = "#0ABEC5",
-		ver = "2.1.0"
+		ver = "1.13.2"
 	},
 	{
 		id = "avg3_233",
-		name = "***",
+		name = "시아 토끼 인형",
 		name_bg_color = "#0ABEC5",
 		ver = "1.14.0"
 	},
 	{
 		id = "avg3_234",
-		name = "***",
+		name = "지리 협회 직원(여)",
 		name_bg_color = "#0ABEC5",
 		ver = "1.14.0"
 	},
@@ -3013,38 +3026,45 @@ return {
 	},
 	{
 		id = "avg3_1314",
-		name = "***",
+		name = "젤리젤리A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_975",
 		ver = "1.14.0"
 	},
 	{
 		id = "avg3_1315",
-		name = "***",
+		name = "젤리젤리B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_975",
 		ver = "1.14.0"
 	},
 	{
 		id = "avg3_1316",
-		name = "***",
+		name = "젤리젤리C",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_975",
 		ver = "1.14.0"
 	},
 	{
 		id = "avg3_1317",
-		name = "***",
+		name = "소라게A",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_945",
 		ver = "1.14.0"
 	},
 	{
 		id = "avg3_1318",
-		name = "***",
+		name = "소라게B",
 		name_bg_color = "#0ABEC5",
 		reuse = "avg2_945",
 		ver = "1.14.0"
+	},
+	{
+		id = "avg3_1319",
+		name = "***",
+		name_bg_color = "#0ABEC5",
+		reuse = "avg1_136",
+		ver = "1.16.0"
 	},
 	{
 		id = "avg4_100",

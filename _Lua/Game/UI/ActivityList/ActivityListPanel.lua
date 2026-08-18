@@ -6,7 +6,6 @@ ActivityListPanel._tbDefine = {
 	}
 }
 function ActivityListPanel:Awake()
-	self.nSelectActId = nil
 end
 function ActivityListPanel:OnEnable()
 end
