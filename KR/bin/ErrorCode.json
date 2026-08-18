@@ -433,122 +433,32 @@
   },
   "111301": {
     "Id": 111301,
-    "Title": "ErrGiftPackageInvalid",
+    "Title": "ErrGiftPackageExpired",
     "Template": "ErrorCode.111301.1",
     "ShowType": 1
   },
   "111302": {
     "Id": 111302,
-    "Title": "ErrGiftPackageExpired",
+    "Title": "ErrRedeemCodeReachedLimit",
     "Template": "ErrorCode.111302.1",
     "ShowType": 1
   },
   "111303": {
     "Id": 111303,
-    "Title": "ErrGiftPackError",
+    "Title": "ErrUserExchangeCountReachedLimit",
     "Template": "ErrorCode.111303.1",
     "ShowType": 1
   },
   "111304": {
     "Id": 111304,
-    "Title": "ErrRedeemCodeReachedLimit",
+    "Title": "ErrRedeemCodeInvalid",
     "Template": "ErrorCode.111304.1",
     "ShowType": 1
   },
   "111305": {
     "Id": 111305,
-    "Title": "ErrUserExchangeCountReachedLimit",
-    "Template": "ErrorCode.111305.1",
-    "ShowType": 1
-  },
-  "111306": {
-    "Id": 111306,
-    "Title": "ErrGiftPackageAlreadyExists",
-    "Template": "ErrorCode.111306.1",
-    "ShowType": 1
-  },
-  "111307": {
-    "Id": 111307,
-    "Title": "ErrGiftPackageInfoInvalid",
-    "Template": "ErrorCode.111307.1",
-    "ShowType": 1
-  },
-  "111308": {
-    "Id": 111308,
-    "Title": "ErrRedeemCodeItemListEmpty",
-    "Template": "ErrorCode.111308.1",
-    "ShowType": 1
-  },
-  "111309": {
-    "Id": 111309,
-    "Title": "ErrRedeemCodeCodeItemInvalid",
-    "Template": "ErrorCode.111309.1",
-    "ShowType": 1
-  },
-  "111310": {
-    "Id": 111310,
-    "Title": "ErrGiftPackageStartTimeError",
-    "Template": "ErrorCode.111310.1",
-    "ShowType": 1
-  },
-  "111311": {
-    "Id": 111311,
-    "Title": "ErrGiftPackageEndTimeError",
-    "Template": "ErrorCode.111311.1",
-    "ShowType": 1
-  },
-  "111312": {
-    "Id": 111312,
-    "Title": "ErrGiftPackageRedeemCodeQuantityExceedsLimit",
-    "Template": "ErrorCode.111312.1",
-    "ShowType": 1
-  },
-  "111313": {
-    "Id": 111313,
-    "Title": "ErrFixedRedeemCodeAlreadyExists",
-    "Template": "ErrorCode.111313.1",
-    "ShowType": 1
-  },
-  "111314": {
-    "Id": 111314,
-    "Title": "ErrFixedRedeemCodeCannotBeEmpty",
-    "Template": "ErrorCode.111314.1",
-    "ShowType": 1
-  },
-  "111315": {
-    "Id": 111315,
-    "Title": "ErrRedeemCodeQuantityCannotBeZero",
-    "Template": "ErrorCode.111315.1",
-    "ShowType": 1
-  },
-  "111316": {
-    "Id": 111316,
-    "Title": "ErrFixedRedeemCodeUserUsageQuantityRequired",
-    "Template": "ErrorCode.111316.1",
-    "ShowType": 1
-  },
-  "111317": {
-    "Id": 111317,
-    "Title": "ErrRedeemCodeInvalid",
-    "Template": "ErrorCode.111317.1",
-    "ShowType": 1
-  },
-  "111318": {
-    "Id": 111318,
-    "Title": "ErrRedeemCodeFailed",
-    "Template": "ErrorCode.111318.1",
-    "ShowType": 1
-  },
-  "111319": {
-    "Id": 111319,
     "Title": "ErrRedeemCodeAlreadyUsed",
-    "Template": "ErrorCode.111319.1",
-    "ShowType": 1
-  },
-  "111320": {
-    "Id": 111320,
-    "Title": "ErrRedeemFailed",
-    "Template": "ErrorCode.111320.1",
+    "Template": "ErrorCode.111305.1",
     "ShowType": 1
   },
   "111401": {
