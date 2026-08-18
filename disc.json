@@ -57771,5 +57771,1251 @@
                 "Dorra": 1513800
             }
         ]
+    },
+    "214057": {
+        "id": 214057,
+        "name": "Ride the Waves With Me",
+        "star": 5,
+        "element": "Umbra",
+        "tag": [
+            "VUL",
+            "Ultimate",
+            "Auto Attack"
+        ],
+        "char": [
+            "Karin"
+        ],
+        "source": [
+            "Signature",
+            "Limited",
+            "Premium",
+            "Recruit",
+            "Gacha",
+            "Banner",
+            "p2w"
+        ],
+        "mainSkill": {
+            "id": 4057,
+            "name": "Ride the Waves with Me",
+            "desc": "The Umbra Main Trekker gains Dark Tide for 15s after dealing Ultimate DMG, stacking up to 3 times.\u000bWhen the Umbra Main Trekker deals Auto Attack DMG, 1/2/3 stacks of Dark Tide inflict the following on the target: increases Umbra Auto Attack DMG Taken by <color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color> for 10s.\u000bWhen the Umbra Main Trekker deals Ultimate DMG, 1/2/3 stacks of Dark Tide inflict the following on the target: increases Umbra Ultimate DMG Taken by <color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color> for 10s.",
+            "descCN": "undefined",
+            "descJP": "undefined",
+            "descKR": "undefined",
+            "effectType": [
+                "ELEMENTTYPE_:(Umbra) Auto Attack DMG Taken",
+                "ELEMENTTYPE_:(Umbra) Ultimate DMG Taken"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "Icon_DiscBuff_214057_Buff",
+                "Icon_CommonBuff_DefenseDown"
+            ],
+            "params": "5%,10%,15%,3%,6%,9%/6%,12%,18%,3.6%,7.2%,10.8%/7%,14%,21%,4.2%,8.4%,12.6%/8%,16%,24%,4.8%,9.6%,14.4%/9%,18%,27%,5.4%,10.8%,16.2%/10%,20%,30%,6%,12%,18%",
+            "icon": "DiscSkill_214057",
+            "iconBg": "db_DiscSkill_6"
+        },
+        "secondarySkill1": {
+            "id": 40571,
+            "name": "Wave Riding",
+            "desc": "Increases the Ultimate Crit DMG dealt by Umbra Trekkers in the squad to targets inflicted with ##Dark Burn#2028# by <color=#ec6d21>{1}</color>.\u000bDark Tide gains an additional effect: Each stack increases own Ultimate DMG by <color=#ec6d21>{2}</color>.",
+            "descCN": "undefined",
+            "descJP": "undefined",
+            "descKR": "undefined",
+            "effectType": [
+                "ELEMENTTYPE_:(Umbra) Ultimate DMG"
+            ],
+            "addAttrType": [
+                "Ultimate Crit DMG (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "15%,4%/20%,8%/25%,12%/30%,16%/35%,20%",
+            "requirements": [
+                {
+                    "Melody of Skill": 10,
+                    "Melody of Umbra": 10
+                },
+                {
+                    "Melody of Skill": 25,
+                    "Melody of Umbra": 25
+                },
+                {
+                    "Melody of Skill": 40,
+                    "Melody of Umbra": 40
+                },
+                {
+                    "Melody of Skill": 55,
+                    "Melody of Umbra": 55
+                },
+                {
+                    "Melody of Skill": 70,
+                    "Melody of Umbra": 70
+                }
+            ],
+            "icon": "DiscSkill_1",
+            "iconBg": "db_DiscSkill_6"
+        },
+        "secondarySkill2": {
+            "id": 40572,
+            "name": "Solo Voyage",
+            "desc": "Increases the Auto Attack DMG dealt by Umbra Trekkers in the squad to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
+            "descCN": "undefined",
+            "descJP": "undefined",
+            "descKR": "undefined",
+            "effectType": [],
+            "addAttrType": [
+                "Auto Attack DMG (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [],
+            "params": "7.5%/15%/22.5%/30%/37.5%",
+            "requirements": [
+                {
+                    "Melody of Luck": 15,
+                    "Melody of Skill": 15,
+                    "Melody of Umbra": 15
+                },
+                {
+                    "Melody of Luck": 30,
+                    "Melody of Skill": 30,
+                    "Melody of Umbra": 30
+                },
+                {
+                    "Melody of Luck": 45,
+                    "Melody of Skill": 45,
+                    "Melody of Umbra": 45
+                },
+                {
+                    "Melody of Luck": 60,
+                    "Melody of Skill": 60,
+                    "Melody of Umbra": 60
+                },
+                {
+                    "Melody of Luck": 75,
+                    "Melody of Skill": 75,
+                    "Melody of Umbra": 75
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_6"
+        },
+        "supportNote": [
+            {
+                "Melody of Pummel": 4,
+                "Melody of Luck": 2
+            },
+            {
+                "Melody of Pummel": 5,
+                "Melody of Luck": 2
+            },
+            {
+                "Melody of Pummel": 6,
+                "Melody of Luck": 2
+            },
+            {
+                "Melody of Pummel": 6,
+                "Melody of Luck": 3
+            },
+            {
+                "Melody of Pummel": 7,
+                "Melody of Luck": 3
+            },
+            {
+                "Melody of Pummel": 8,
+                "Melody of Luck": 3
+            },
+            {
+                "Melody of Pummel": 8,
+                "Melody of Luck": 4
+            },
+            {
+                "Melody of Pummel": 9,
+                "Melody of Luck": 4
+            },
+            {
+                "Melody of Pummel": 10,
+                "Melody of Luck": 4
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 15,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 20,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 24,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 29,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 33,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 47,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 51,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 56,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 67,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 71,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 76,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 80,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 85,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 89,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 94,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 98,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 103,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 107,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 112,
+                "Umbra DMG": "3%"
+            },
+            {
+                "ATK": 134,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 138,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 143,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 147,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 152,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 156,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 161,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 165,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 170,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 174,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 179,
+                "Umbra DMG": "5%"
+            },
+            {
+                "ATK": 215,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 219,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 224,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 228,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 233,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 237,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 242,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 246,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 251,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 255,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 260,
+                "Umbra DMG": "7%"
+            },
+            {
+                "ATK": 312,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 316,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 321,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 325,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 330,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 334,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 339,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 343,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 348,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 352,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 357,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 428,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 433,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 437,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 442,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 446,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 451,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 455,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 460,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 464,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 469,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 473,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 568,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 572,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 577,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 581,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 586,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 590,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 595,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 599,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 604,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 608,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 613,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 735,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 740,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 744,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 749,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 753,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 758,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 762,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 767,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 771,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 776,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 780,
+                "Umbra DMG": "13%"
+            },
+            {
+                "ATK": 936,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 941,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 945,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 950,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 954,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 959,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 963,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 968,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 972,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 977,
+                "Umbra DMG": "15%"
+            },
+            {
+                "ATK": 981,
+                "Umbra DMG": "15%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Eerie Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Eerie Breath": 6,
+                "Phantom Step Remnant": 13,
+                "Dorra": 26700
+            },
+            {
+                "Eerie Breath": 13,
+                "Phantom Step Remnant": 20,
+                "Dorra": 59900
+            },
+            {
+                "Eerie Breath": 20,
+                "Phantom Step Remnant": 33,
+                "Dorra": 89900
+            },
+            {
+                "Eerie Breath": 26,
+                "Phantom Step Remnant": 53,
+                "Dorra": 197200
+            },
+            {
+                "Eerie Breath": 40,
+                "Phantom Step Remnant": 73,
+                "Frenzied Waltz Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Phantom Step Remnant": 100,
+                "Frenzied Waltz Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Phantom Step Remnant": 126,
+                "Frenzied Waltz Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
+    },
+    "214058": {
+        "id": 214058,
+        "name": "Summer March",
+        "star": 5,
+        "element": "Umbra",
+        "tag": [
+            "Auto Attack",
+            "Ultimate",
+            "Element"
+        ],
+        "char": [
+            "Karin"
+        ],
+        "source": [
+            "Event",
+            "Shop",
+            "f2p"
+        ],
+        "mainSkill": {
+            "id": 4058,
+            "name": "Summer March",
+            "desc": "Increases the Umbra Main Trekker's Auto Attack and Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bThe Umbra Main Trekker gains Surging Wave for {2}s when casting a skill, stacking up to {3} times.\u000bWhen a Trekker with Surging Wave deals Ultimate DMG, increases the Umbra DMG dealt by Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{4}</color> for {5}s.",
+            "descCN": "undefined",
+            "descJP": "undefined",
+            "descKR": "undefined",
+            "effectType": [
+                "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                "ELEMENTTYPE_:(Umbra) Ultimate DMG"
+            ],
+            "addAttrType": [
+                "Umbra DMG (base)"
+            ],
+            "effectData": [
+                "NOTHING, SELF, ACTORELEMENTTYPE, Umbra, AND, SELF, SELF_BE_MAINCONTROL | SELF, DEFAULT | SELF, DEFAULT"
+            ],
+            "buffIcon": [
+                "Icon_DiscBuff_214058_Buff",
+                "No Icon"
+            ],
+            "params": "7%,15,2,5%,30/8.4%,15,2,6%,30/9.8%,15,2,7%,30/11.2%,15,2,8%,30/12.6%,15,2,9%,30/14%,15,2,10%,30",
+            "icon": "DiscSkill_214058",
+            "iconBg": "db_DiscSkill_6"
+        },
+        "secondarySkill1": {
+            "id": 40581,
+            "name": "Joyful Wave",
+            "desc": "When the Umbra Main Trekker triggers a mark and inflicts ##Dark Burn#2028# on a target, increases own Auto Attack DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen Surging Wave is at max stacks, increases the Umbra DMG dealt by Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{3}</color>.",
+            "descCN": "undefined",
+            "descJP": "undefined",
+            "descKR": "undefined",
+            "effectType": [
+                "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+            ],
+            "addAttrType": [
+                "Umbra DMG (base)"
+            ],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "2.5%,10,2%/5%,10,4%/7.5%,10,6%/10%,10,8%/12.5%,10,10%",
+            "requirements": [
+                {
+                    "Melody of Pummel": 10,
+                    "Melody of Skill": 10
+                },
+                {
+                    "Melody of Pummel": 25,
+                    "Melody of Skill": 25
+                },
+                {
+                    "Melody of Pummel": 40,
+                    "Melody of Skill": 40
+                },
+                {
+                    "Melody of Pummel": 55,
+                    "Melody of Skill": 55
+                },
+                {
+                    "Melody of Pummel": 70,
+                    "Melody of Skill": 70
+                }
+            ],
+            "icon": "DiscSkill_4",
+            "iconBg": "db_DiscSkill_6"
+        },
+        "secondarySkill2": {
+            "id": 40582,
+            "name": "Undying Passion",
+            "desc": "Surging Wave gains an additional effect: Each stack increases own ATK by <color=#ec6d21>{1}</color>.",
+            "descCN": "undefined",
+            "descJP": "undefined",
+            "descKR": "undefined",
+            "effectType": [
+                "ATK (%)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": "2.4%/4.8%/7.2%/9.6%/12%",
+            "requirements": [
+                {
+                    "Melody of Pummel": 15,
+                    "Melody of Burst": 15,
+                    "Melody of Umbra": 15
+                },
+                {
+                    "Melody of Pummel": 30,
+                    "Melody of Burst": 30,
+                    "Melody of Umbra": 30
+                },
+                {
+                    "Melody of Pummel": 45,
+                    "Melody of Burst": 45,
+                    "Melody of Umbra": 45
+                },
+                {
+                    "Melody of Pummel": 60,
+                    "Melody of Burst": 60,
+                    "Melody of Umbra": 60
+                },
+                {
+                    "Melody of Pummel": 75,
+                    "Melody of Burst": 75,
+                    "Melody of Umbra": 75
+                }
+            ],
+            "icon": "DiscSkill_1",
+            "iconBg": "db_DiscSkill_6"
+        },
+        "supportNote": [
+            {
+                "Melody of Burst": 3,
+                "Melody of Skill": 3
+            },
+            {
+                "Melody of Burst": 3,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Skill": 4
+            },
+            {
+                "Melody of Burst": 4,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Skill": 5
+            },
+            {
+                "Melody of Burst": 5,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Skill": 6
+            },
+            {
+                "Melody of Burst": 6,
+                "Melody of Skill": 7
+            },
+            {
+                "Melody of Burst": 7,
+                "Melody of Skill": 7
+            }
+        ],
+        "stat": [
+            {
+                "ATK": 14,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 18,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 22,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 26,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 30,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 34,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 38,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 42,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 46,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 50,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 60,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 64,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 68,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 72,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 77,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 80,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 85,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 88,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 93,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 96,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 101,
+                "Umbra DMG": "2%"
+            },
+            {
+                "ATK": 121,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 124,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 129,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 132,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 137,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 140,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 145,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 149,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 153,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 157,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 161,
+                "Umbra DMG": "4%"
+            },
+            {
+                "ATK": 194,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 197,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 202,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 205,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 210,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 213,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 218,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 221,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 226,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 230,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 234,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 281,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 284,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 289,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 293,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 297,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 301,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 305,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 309,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 313,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 317,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 321,
+                "Umbra DMG": "6%"
+            },
+            {
+                "ATK": 385,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 390,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 393,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 398,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 401,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 406,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 410,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 414,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 418,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 422,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 426,
+                "Umbra DMG": "8%"
+            },
+            {
+                "ATK": 511,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 515,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 519,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 523,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 527,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 531,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 536,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 539,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 544,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 547,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 552,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 662,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 666,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 670,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 674,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 678,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 682,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 686,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 690,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 694,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 698,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 702,
+                "Umbra DMG": "10%"
+            },
+            {
+                "ATK": 842,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 847,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 851,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 855,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 859,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 863,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 867,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 871,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 875,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 879,
+                "Umbra DMG": "12%"
+            },
+            {
+                "ATK": 883,
+                "Umbra DMG": "12%"
+            }
+        ],
+        "dupe": [
+            {
+                "ATK": 130
+            },
+            {
+                "ATK": 260
+            },
+            {
+                "ATK": 390
+            },
+            {
+                "ATK": 520
+            },
+            {
+                "ATK": 650
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Light Breath": 6,
+                "Dorra": 10700
+            },
+            {
+                "Faint Light Breath": 6,
+                "Emberflies Soul": 13,
+                "Dorra": 26700
+            },
+            {
+                "Faint Light Breath": 13,
+                "Emberflies Soul": 20,
+                "Dorra": 59900
+            },
+            {
+                "Faint Light Breath": 20,
+                "Emberflies Soul": 33,
+                "Dorra": 89900
+            },
+            {
+                "Faint Light Breath": 26,
+                "Emberflies Soul": 53,
+                "Dorra": 197200
+            },
+            {
+                "Faint Light Breath": 40,
+                "Emberflies Soul": 73,
+                "Evernight Essence": 26,
+                "Dorra": 393700
+            },
+            {
+                "Emberflies Soul": 100,
+                "Evernight Essence": 40,
+                "Dorra": 756300
+            },
+            {
+                "Emberflies Soul": 126,
+                "Evernight Essence": 66,
+                "Dorra": 1513800
+            }
+        ]
     }
 }

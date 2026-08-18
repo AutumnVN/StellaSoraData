@@ -132616,6 +132616,3682 @@
             }
         ]
     },
+    "157": {
+        "id": 157,
+        "name": "Karin",
+        "star": 5,
+        "element": "Umbra",
+        "class": "Vanguard",
+        "attackType": "Ranged",
+        "style": "Creative",
+        "force": "Freelance Trekker",
+        "tag": [
+            "Vanguard",
+            "Creative",
+            "Freelance Trekker"
+        ],
+        "cnCv": "Karin",
+        "jpCv": "Yui Ogura",
+        "source": [
+            "Limited",
+            "Premium",
+            "Recruit",
+            "Gacha",
+            "Banner",
+            "p2w"
+        ],
+        "birthday": "September 1st",
+        "loveGift": [
+            "Card Photo Capturer",
+            "Reflective Photo Capturer",
+            "Ultra-Precision Photo Capturer",
+            "Portable Blower",
+            "Exquisite Blower",
+            "Deluxe Blower",
+            "Whisper Wind Spinner",
+            "Chilling Wind Spinner",
+            "Blazing Wind Spinner"
+        ],
+        "hateGift": [
+            "Love Candle",
+            "Blazing Wings",
+            "Fiery Honeypot"
+        ],
+        "date": [
+            {
+                "id": 157301,
+                "name": "A Sailor's Foresight",
+                "clue": "Visit the Port to unlock",
+                "secondChoice": "How about doing some night fishing?"
+            },
+            {
+                "id": 157302,
+                "name": "Cute Instinct",
+                "clue": "Visit Hot Spring Resort to unlock",
+                "secondChoice": "Let’s go soak in the hot springs."
+            }
+        ],
+        "fixedStat": {
+            "Charge Rate": "Medium",
+            "Energy Cost": "Medium",
+            "Attack Range": 8,
+            "Walk Speed": 4.875,
+            "Run Speed": 6.5
+        },
+        "normalAtk": {
+            "id": 15710000,
+            "name": "Fisher's Hunt",
+            "energyLimit": 3.3388,
+            "desc": "Fires cuttlefish shells, each dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Auto Attack DMG.\nKarin has ##Hunting Energy#4045# and can automatically consume 100 ##Hunting Energy#4045# to throw a chain, inflicting ##Hunter's Mark#4046# on the target and forming a link. While the chain is active, increases Karin's &Param2& by <color=#ec6d21>&Param3&</color>.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
+            "damageType": [
+                "Auto Attack (3.3388e, from Normal attack, scale with Normal attack)"
+            ],
+            "effectType": [
+                "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": [
+                "49%/56%/64%/86%/92%/99%/113%/119%/125%/136%/146%/156%/166%",
+                "Auto Attack DMG",
+                "5.8%/6.7%/7.6%/10.2%/11.1%/11.9%/13.5%/14.2%/15%/16.4%/17.5%/18.7%/20%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Auto Attack (3.3388e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                    "buffIcon": "No Icon"
+                },
+                {
+                    "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                    "buffIcon": "No Icon"
+                }
+            ],
+            "icon": "15701_Normal"
+        },
+        "skill": {
+            "id": 15731000,
+            "name": "Bait and Catch",
+            "cooldown": "10s",
+            "energyLimit": 30,
+            "desc": "Leaps into the air and launches a fishcake, dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Auto ATK DMG, then summons Boss Shark to devour the target, dealing <color=#ec6d21>&Param2&</color> of ATK as Umbra Ultimate DMG in a large area. Bait and Catch (Main Skill) can trigger ##Umbra Mark#1019#, dealing &Param3& of ATK as Umbra Mark DMG and inflicting ##Dark Burn#4051#.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Mark)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Mark)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Mark)",
+            "damageType": [
+                "Auto Attack (15e, from Skill, scale with Skill)",
+                "Ultimate (15e, from Skill, scale with Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "190%/218%/246%/332%/358%/385%/438%/461%/483%/529%/567%/605%/643%",
+                "300%/345%/390%/525%/566%/608%/692%/728%/764%/836%/896%/956%/1016%",
+                "38%/49%/61%/72%/83%/95%/106%/117%/129%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Auto Attack (15e, from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Ultimate (15e, from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "15701_Skill_Main"
+        },
+        "supportSkill": {
+            "id": 15732000,
+            "name": "Raging Sea",
+            "cooldown": "12s",
+            "desc": "Swings the harpoon chain repeatedly, dealing <color=#ec6d21>&Param1& x4</color> of ATK as AoE Umbra Skill DMG. During the skill, summons Boss Shark multiple times to pursue and devour targets, dealing <color=#ec6d21>&Param2& x4</color> of ATK as AoE Umbra Ultimate DMG. Finally, rides Boss Shark and performs a diving slam, dealing <color=#ec6d21>&Param3&</color> of ATK as Umbra Ultimate DMG in a large area. Raging Sea (Support Skill) can trigger ##Umbra Mark#1019#, dealing &Param4& of ATK as Umbra Mark DMG and inflicting ##Dark Burn#4051#.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Ultimate) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Ultimate) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Ultimate) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "damageType": [
+                "Skill (from Skill, scale with Skill)",
+                "Ultimate (from Skill, scale with Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "49%/56%/64%/86%/93%/100%/113%/119%/125%/137%/147%/156%/166%",
+                "38%/43%/49%/66%/71%/76%/87%/91%/96%/105%/113%/120%/128%",
+                "240%/276%/313%/421%/454%/488%/555%/584%/613%/671%/719%/767%/815%",
+                "38%/49%/61%/72%/83%/95%/106%/117%/129%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Ultimate (from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Ultimate (from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "15701_Skill_Support"
+        },
+        "ultimate": {
+            "id": 15740000,
+            "name": "Shark Assault",
+            "cooldown": "30s",
+            "energy": 300,
+            "desc": "Karin and Boss Shark clash in a ferocious fight, dealing <color=#ec6d21>&Param1& x14</color> of ATK as Umbra Ultimate DMG in a large area. Shark Assault (Ultimate) can trigger ##Umbra Mark#1019#, dealing &Param2& of ATK as Umbra Mark DMG and inflicting ##Dark Burn#4051#.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (HitDamage,Mark)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (HitDamage,Mark)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (HitDamage,Mark)",
+            "damageType": [
+                "Ultimate (from Ultimate, scale with Ultimate)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "109%/125%/142%/191%/206%/221%/252%/265%/278%/304%/326%/348%/370%",
+                "38%/49%/61%/72%/83%/95%/106%/117%/129%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
+                },
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "15701_Ultra"
+        },
+        "potential": {
+            "mainCore": [
+                {
+                    "id": 515701,
+                    "name": "Predator's Vortex",
+                    "desc": "Boss Shark's attacks summon a vortex of fish, dealing <color=#0abec5>&Param1& x7</color> of ATK as AoE Umbra Ultimate DMG and triggering ##Umbra Mark#1019#. This effect can only be triggered once every &Param4&s. Increases Karin's &Param2& against targets inflicted with ##Dark Burn#2028# by <color=#0abec5>&Param3&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1) \u000bParam4: &Param4& (ScriptParameterValue,CommonData)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1) \u000bParam4: &Param4& (ScriptParameterValue,CommonData)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1) \u000bParam4: &Param4& (ScriptParameterValue,CommonData)",
+                    "damageType": [
+                        "Ultimate (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Umbra) Ultimate Crit Rate (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "39%/44%/50%/68%/73%/78%/89%/94%/99%/108%/116%/123%/131%",
+                        "Ultimate Crit Rate",
+                        "12%",
+                        1.5
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Ultimate (from Skill, scale with Skill)"
+                        },
+                        {
+                            "addAttrType": "(Umbra) Ultimate Crit Rate (base)"
+                        },
+                        {
+                            "addAttrType": "(Umbra) Ultimate Crit Rate (base)"
+                        },
+                        {}
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_01",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515702,
+                    "name": "Shark Ambush",
+                    "desc": "After casting the Main Skill, Karin summons Boss Shark to follow her for <color=#0abec5>8</color>s. During this time, Boss Shark periodically lunges at the Main Trekker's target, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Ultimate DMG and triggering ##Umbra Mark#1019#. Increases Karin's &Param2& by <color=#0abec5>&Param3&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
+                    "damageType": [
+                        "Ultimate (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [
+                        "Ultimate Crit Rate (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "192%/221%/249%/336%/363%/389%/443%/466%/489%/535%/574%/612%/650%",
+                        "Ultimate Crit Rate",
+                        "18%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Ultimate (from Skill, scale with Skill)"
+                        },
+                        {
+                            "effectType": "Ultimate Crit Rate (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Ultimate Crit Rate (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_02",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515703,
+                    "name": "Scatter Shot",
+                    "desc": "When Karin hits a target inflicted with ##Hunter's Mark#4046# with Auto Attacks, she can additionally fire lob shots, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Auto ATK DMG. When Karin inflicts ##Hunter's Mark#4046# on a target, she instantly gains <color=#0abec5>3</color> buff stacks. After that, she loses <color=#0abec5>1</color> buff stack every <color=#0abec5>2</color>s. <color=#0abec5>Each</color> stack increases the number of bullets fired by Karin's Auto Attacks by <color=#0abec5>1</color>. When there is a target inflicted with ##Hunter's Mark#4046# on the field, increases Karin's &Param2& by <color=#0abec5>&Param3&</color> and &Param4& by <color=#0abec5>&Param5&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (EffectValue,EffectTypeFirstSubtype) \u000bParam5: &Param5& (EffectValue,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (EffectValue,EffectTypeFirstSubtype) \u000bParam5: &Param5& (EffectValue,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (EffectValue,EffectTypeFirstSubtype) \u000bParam5: &Param5& (EffectValue,EffectTypeParam1)",
+                    "damageType": [
+                        "Auto Attack (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [
+                        "ATK (%)",
+                        "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "26%/30%/33%/45%/49%/52%/59%/63%/66%/72%/77%/82%/87%",
+                        "ATK",
+                        "12%",
+                        "Auto Attack DMG",
+                        "15%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Auto Attack (from Skill, scale with Skill)"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_03",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515704,
+                    "name": "Hunting Dark Shackle",
+                    "desc": "Extends the duration of ##Hunter's Mark#4046# by <color=#0abec5>&Param1&</color>s. While Karin is linked to a target inflicted with ##Hunter's Mark#4046#, she deals <color=#0abec5>&Param2&</color> of ATK as AoE Umbra Auto ATK DMG to all targets along the link path and restores <color=#0abec5>10</color> ##Hunting Energy#4045# <color=#0abec5>per second</color>, which can trigger ##Umbra Mark#1019#. When Karin inflicts ##Hunter's Mark#4046# on a target, increases her &Param3& by <color=#0abec5>&Param4&</color> and &Param5& by <color=#0abec5>&Param6&</color> for &Param7&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1) \u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype) \u000bParam6: &Param6& (EffectValue,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1) \u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype) \u000bParam6: &Param6& (EffectValue,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1) \u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype) \u000bParam6: &Param6& (EffectValue,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time)",
+                    "damageType": [
+                        "Auto Attack (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [
+                        "ATK (%)",
+                        "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        3,
+                        "174%/200%/226%/304%/328%/353%/401%/422%/443%/485%/520%/554%/589%",
+                        "ATK",
+                        "15%",
+                        "Auto Attack DMG",
+                        "12%",
+                        7
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "damageType": "Auto Attack (from Skill, scale with Skill)"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_04",
+                    "rarity": "core"
+                }
+            ],
+            "mainNormal": [
+                {
+                    "id": 515705,
+                    "name": "Crashing Wave",
+                    "desc": "After Karin deals Ultimate DMG 5 times, Boss Shark follows up with a tail strike, dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Ultimate DMG  and triggering ##Umbra Mark#1019#. This effect can only be triggered once every &Param2&s. Increases Karin's &Param3& by <color=#ec6d21>&Param4&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (ScriptParameterValue,CommonData) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (ScriptParameterValue,CommonData) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (ScriptParameterValue,CommonData) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "damageType": [
+                        "Ultimate (from Skill)"
+                    ],
+                    "effectType": [
+                        "Ultimate Crit Rate (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "163%/261%/359%/457%/555%/652%/750%/848%/946%",
+                        2,
+                        "Ultimate Crit Rate",
+                        "3.7%/6%/8.2%/10.5%/12.7%/15%/16%/17%/18%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Ultimate (from Skill)"
+                        },
+                        {},
+                        {
+                            "effectType": "Ultimate Crit Rate (base)"
+                        },
+                        {
+                            "effectType": "Ultimate Crit Rate (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_05",
+                    "corner": "Diamond",
+                    "rarity": "rare",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 515706,
+                    "name": "Twin Predator",
+                    "desc": "When Boss Shark deals DMG, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> and the &Param3& of Umbra Versatile Trekkers by <color=#ec6d21>&Param4&</color> for &Param5&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "Ultimate Crit DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Ultimate Crit DMG",
+                        "7.5%/12%/16.5%/21%/25.5%/30%/34%/38%/42%",
+                        "Ultimate Crit DMG",
+                        "15%/24%/33%/42%/51%/60%/64%/68%/72%",
+                        5
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Ultimate Crit DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Ultimate Crit DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Ultimate Crit DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Ultimate Crit DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_16",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 515707,
+                    "name": "Hunter's Command",
+                    "desc": "In an all-Umbra squad, increases the &Param1& dealt by Boss Shark to targets inflicted with ##Dark Burn#2028# by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Skill Intensity (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Skill Intensity",
+                        "5.2%/8.4%/11.5%/14.7%/17.8%/21%/22%/23%/24%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Skill Intensity (base)"
+                        },
+                        {
+                            "addAttrType": "Skill Intensity (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_23",
+                    "corner": "Round",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 515708,
+                    "name": "Dark Shackle Detonation",
+                    "desc": "When an enemy target loses ##Hunter's Mark#4046#, deals <color=#ec6d21>&Param1&</color> of Karin's ATK as AoE Umbra Auto ATK DMG and triggering ##Umbra Mark#1019#. Increases Karin's &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "damageType": [
+                        "Auto Attack (from Skill)"
+                    ],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "268%/429%/590%/751%/911%/1072%/1233%/1394%/1555%",
+                        "Auto Attack DMG",
+                        "11.2%/18%/24.7%/31.5%/38.2%/45%/49%/52%/55%",
+                        8
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Auto Attack (from Skill)"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_08",
+                    "corner": "Diamond",
+                    "rarity": "rare",
+                    "badScaleAfterLevel": 7
+                },
+                {
+                    "id": 515709,
+                    "name": "High-Threat Target",
+                    "desc": "In an all-Umbra squad, when Bait and Catch (Main Skill) is on cooldown, increases the &Param1& dealt by Karin's Auto Attacks to targets inflicted with ##Dark Burn#2028# by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Skill Intensity (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Skill Intensity",
+                        "10%/16%/22%/28%/34%/40%/42%/44%/45%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Skill Intensity (base)"
+                        },
+                        {
+                            "addAttrType": "Skill Intensity (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_4",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 515711,
+                    "name": "Confidence Booster",
+                    "desc": "When Karin triggers an ##Umbra Mark#1019#, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "6%/9.6%/13.2%/16.8%/20.4%/24%/27.6%/31.2%/34.8%",
+                        5,
+                        2
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_10",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515713,
+                    "name": "Aura of Unity",
+                    "desc": "Each Umbra Trekker in the squad increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> and all Umbra Trekkers' &Param3& by <color=#ec6d21>&Param4&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "Umbra DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Umbra DMG",
+                        "3.2%/5.2%/7.1%/9.1%/11%/13%/14.9%/16.9%/18.8%",
+                        "Umbra DMG",
+                        "3.2%/5.2%/7.1%/9.1%/11%/13%/14.9%/16.9%/18.8%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Umbra DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Umbra DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Umbra DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Umbra DMG (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_20",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 515710,
+                    "name": "Hunting Suppression",
+                    "desc": "When Karin triggers ##Umbra Mark#1019# on a target with ##Hunter's Mark#4046#, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Auto Attack DMG",
+                        "5%/8%/11%/14%/17%/20%/22%/24%/26%",
+                        5,
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_Dark_1",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515712,
+                    "name": "Pursuit of the Shadow",
+                    "desc": "Karin can dodge one more time. When dodging, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%",
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_2",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                }
+            ],
+            "common": [
+                {
+                    "id": 515741,
+                    "name": "Unyielding Spirit",
+                    "desc": "Increases the &Param1& dealt by Shark Assault (Ultimate) to elite or higher-tier targets by <color=#ec6d21>&Param2&</color>. Increases Karin's &Param3& by <color=#ec6d21>&Param4&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [
+                        "Umbra DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Umbra DMG",
+                        "10%/16%/22%/28%/34%/40%/44%/47%/50%",
+                        "ATK",
+                        "5%/8%/11%/14%/17%/20%/23%/26%/29%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Umbra DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Umbra DMG (base)"
+                        },
+                        {
+                            "effectType": "ATK (%)"
+                        },
+                        {
+                            "effectType": "ATK (%)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_41",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515742,
+                    "name": "Deep-Sea Conflict",
+                    "desc": "While Shark Assault (Ultimate) is active, shoots <color=#ec6d21>&Param1&</color> bubbles every once in a while, each bubble dealing <color=#ec6d21>&Param2&</color> of ATK as AoE Umbra Ultimate DMG and triggering ##Umbra Mark#1019#. Increases Karin's &Param3& by <color=#ec6d21>&Param4&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "damageType": [
+                        "Ultimate (from Ultimate)"
+                    ],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Umbra) Ultimate DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "1/1/2/2/3/3/3/3/3",
+                        "27%/43%/59%/75%/91%/107%/123%/139%/155%",
+                        "Ultimate DMG",
+                        "14.5%/23.2%/31.9%/40.6%/49.3%/58%/65%/70%/75%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "damageType": "Ultimate (from Ultimate)"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Ultimate DMG"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Ultimate DMG"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_42",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515743,
+                    "name": "Self-Transcend",
+                    "desc": "When casting Shark Assault (Ultimate), increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s. Increases Karin's &Param4& by <color=#ec6d21>&Param5&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)",
+                        "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "17.5%/28%/38.5%/49%/59.5%/70%/80%/90%/100%",
+                        30,
+                        "Auto Attack DMG",
+                        "8.7%/14%/19.2%/24.5%/29.7%/35%/40%/45%/50%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_41",
+                    "corner": "Round",
+                    "rarity": "common"
+                }
+            ],
+            "supportCore": [
+                {
+                    "id": 515721,
+                    "name": "Shark's Phantom",
+                    "desc": "Boss Shark summoned by Raging Sea (Support Skill) can repeatedly bite the target, dealing <color=#0abec5>extra instances</color> of DMG to large targets.",
+                    "descCN": "undefined",
+                    "descJP": "undefined",
+                    "descKR": "undefined",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [],
+                    "paramsTooltips": [],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_21",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515722,
+                    "name": "Dark Bite Mark",
+                    "desc": "Boss Shark summoned by Raging Sea (Support Skill) leaves bite marks for 1s when dealing DMG. When Boss Shark deals DMG to a target with a bite mark, it detonates the bite mark, dealing <color=#0abec5>&Param1&</color> of ATK as single-target Umbra Ultimate DMG and triggering ##Umbra Mark#1019#.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+                    "damageType": [
+                        "Ultimate (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "151%/174%/197%/265%/286%/307%/350%/368%/386%/422%/452%/483%/513%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Ultimate (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_22",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515723,
+                    "name": "Tidal Lash",
+                    "desc": "When casting Raging Sea (Support Skill), Karin can swing additional chains, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Skill DMG.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "49%/56%/64%/86%/93%/100%/113%/119%/125%/137%/147%/156%/166%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_23",
+                    "rarity": "core"
+                },
+                {
+                    "id": 515724,
+                    "name": "Undercurrent Blast",
+                    "desc": "When Karin swings the chain to deal DMG during Raging Sea (Support Skill), triggers explosions that deal <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Skill DMG and triggering ##Umbra Mark#1019#. This effect can be triggered up to <color=#0abec5>4</color> times per chain swing.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "106%/122%/137%/185%/200%/215%/244%/257%/269%/295%/316%/337%/358%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_24",
+                    "rarity": "core"
+                }
+            ],
+            "supportNormal": [
+                {
+                    "id": 515725,
+                    "name": "Ocean Aftershock",
+                    "desc": "Boss Shark summoned by Raging Sea (Support Skill) triggers bubble explosions along its charge path, with each explosion dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Ultimate DMG and triggering ##Umbra Mark#1019#. Increases the &Param2& dealt by Boss Shark by <color=#ec6d21>&Param3&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [
+                        "Ultimate (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Umbra) Ultimate DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "21%/34%/46%/59%/72%/84%/97%/110%/122%",
+                        "Ultimate DMG",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Ultimate (from Skill)"
+                        },
+                        {
+                            "addAttrType": "(Umbra) Ultimate DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Umbra) Ultimate DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_25",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 515726,
+                    "name": "Pack Pursuit",
+                    "desc": "When Boss Shark from Raging Sea (Support Skill) deals DMG, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "2.5%/4%/5.5%/7%/8.5%/10%/11.5%/13%/14.5%",
+                        5,
+                        7
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_5",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515727,
+                    "name": "Apex Dominance",
+                    "desc": "Increases the &Param1& dealt by Boss Shark summoned by Raging Sea (Support Skill) to elite or lower-tier targets by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Umbra) Ultimate DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Ultimate DMG",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Umbra) Ultimate DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Umbra) Ultimate DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_4",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515728,
+                    "name": "Surging Rhythm",
+                    "desc": "When Karin swings the chain to deal DMG during Raging Sea (Support Skill), increases the &Param1& dealt by subsequent chain hits of this skill by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Umbra) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "2%/3.3%/4.5%/5.8%/7%/8.3%/9.5%/10.8%/12%",
+                        2,
+                        9
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Umbra) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "(Umbra) Skill DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_24",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 515730,
+                    "name": "Undercurrent Surge",
+                    "desc": "When any Umbra Trekker casts a Main Skill or Support Skill, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "3%/4.8%/6.6%/8.4%/10.2%/12%/13.8%/15.6%/17.4%",
+                        12,
+                        5
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_11",
+                    "corner": "Round",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515731,
+                    "name": "Awkward Inspiration",
+                    "desc": "Increases all Umbra Trekkers' &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "ATK",
+                        "12%/19.2%/26.4%/33.6%/40.8%/48%/55.2%/62.4%/69.6%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_12",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 515732,
+                    "name": "Competitive Spirit",
+                    "desc": "When casting Raging Sea (Support Skill), increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "Umbra DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Umbra DMG",
+                        "12%/19.2%/26.4%/33.6%/40.8%/48%/55.2%/62.4%/69.6%",
+                        15
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Umbra DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Umbra DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_15",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515729,
+                    "name": "Against the Tide",
+                    "desc": "Increases the &Param1& dealt by chain swings during Raging Sea (Support Skill) to elite or higher-tier targets by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Umbra) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Skill DMG",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Umbra) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Umbra) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "15701_Potential_23",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 515733,
+                    "name": "Moonlit Bond",
+                    "desc": "For each Umbra Trekker in the squad, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "Umbra DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Umbra DMG",
+                        "4%/6.4%/8.8%/11.2%/13.6%/16%/18.4%/20.8%/23.2%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Umbra DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Umbra DMG (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_20",
+                    "corner": "Round",
+                    "rarity": "common"
+                }
+            ]
+        },
+        "talent": [
+            {
+                "name": "Ripples of Grace",
+                "boost": [
+                    {
+                        "name": "Ripples of Grace",
+                        "desc": "When any Trekker applies an ##Umbra Mark#1019# on a target, increases Karin's Ultimate DMG by <color=#0abec5>&Param1&</color> for &Param2&s, up to &Param3& stacks.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "effectType": [
+                            "ELEMENTTYPE_:(Umbra) Ultimate DMG"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "5%",
+                            5,
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ELEMENTTYPE_:(Umbra) Ultimate DMG",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Ocean's Echo",
+                "boost": [
+                    {
+                        "name": "Ocean's Echo",
+                        "desc": "When Karin deals Auto Attack DMG or Ultimate DMG, increases her Crit DMG by <color=#0abec5>&Param1&</color> for &Param2&s.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "effectType": [
+                            "Crit DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "40%",
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Crit DMG (base)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Twilight's End",
+                "boost": [
+                    {
+                        "name": "Twilight's End",
+                        "desc": "When Karin triggers an Umbra Mark, increases her Auto Attack DMG by <color=#0abec5>&Param1&</color> and Ultimate DMG by <color=#0abec5>&Param2&</color> for &Param3&s.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "effectType": [
+                            "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                            "ELEMENTTYPE_:(Umbra) Ultimate DMG"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "40%",
+                            "20%",
+                            6
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "effectType": "ELEMENTTYPE_:(Umbra) Ultimate DMG"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Calm Summer Night",
+                "boost": [
+                    {
+                        "name": "Calm Summer Night",
+                        "desc": "When Karin casts her Ultimate, increases her ATK by <color=#0abec5>&Param1&</color> for &Param2&s.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "27%",
+                            25
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Heart as Waves",
+                "boost": [
+                    {
+                        "name": "Heart as Waves",
+                        "desc": "Increases Karin's Umbra DMG dealt to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "effectType": [],
+                        "addAttrType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "30%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "addAttrType": "Umbra DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Umbra DMG Boost",
+                        "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Umbra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Umbra DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "stat": [
+            {
+                "Level": 1,
+                "HP": 795,
+                "ATK": 115,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 2,
+                "HP": 1033,
+                "ATK": 150,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 3,
+                "HP": 1271,
+                "ATK": 184,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 4,
+                "HP": 1510,
+                "ATK": 219,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 5,
+                "HP": 1748,
+                "ATK": 254,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 6,
+                "HP": 1987,
+                "ATK": 288,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 7,
+                "HP": 2225,
+                "ATK": 323,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 8,
+                "HP": 2463,
+                "ATK": 357,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 9,
+                "HP": 2702,
+                "ATK": 392,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 2940,
+                "ATK": 427,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 3528,
+                "ATK": 512,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 11,
+                "HP": 3767,
+                "ATK": 546,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 12,
+                "HP": 4005,
+                "ATK": 581,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 13,
+                "HP": 4243,
+                "ATK": 616,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 14,
+                "HP": 4482,
+                "ATK": 650,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 15,
+                "HP": 4720,
+                "ATK": 685,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 16,
+                "HP": 4959,
+                "ATK": 719,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 17,
+                "HP": 5197,
+                "ATK": 754,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 18,
+                "HP": 5435,
+                "ATK": 789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 19,
+                "HP": 5674,
+                "ATK": 823,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 5912,
+                "ATK": 858,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 7096,
+                "ATK": 1029,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 21,
+                "HP": 7335,
+                "ATK": 1064,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 22,
+                "HP": 7573,
+                "ATK": 1099,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 23,
+                "HP": 7811,
+                "ATK": 1133,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 24,
+                "HP": 8050,
+                "ATK": 1168,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 25,
+                "HP": 8288,
+                "ATK": 1202,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 26,
+                "HP": 8526,
+                "ATK": 1237,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 27,
+                "HP": 8765,
+                "ATK": 1272,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 28,
+                "HP": 9003,
+                "ATK": 1306,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 29,
+                "HP": 9242,
+                "ATK": 1341,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 9480,
+                "ATK": 1375,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 11379,
+                "ATK": 1651,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 31,
+                "HP": 11618,
+                "ATK": 1685,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 32,
+                "HP": 11856,
+                "ATK": 1720,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 33,
+                "HP": 12094,
+                "ATK": 1755,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 34,
+                "HP": 12333,
+                "ATK": 1789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 35,
+                "HP": 12571,
+                "ATK": 1824,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 36,
+                "HP": 12810,
+                "ATK": 1858,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 37,
+                "HP": 13048,
+                "ATK": 1893,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 38,
+                "HP": 13286,
+                "ATK": 1927,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 39,
+                "HP": 13525,
+                "ATK": 1962,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 13763,
+                "ATK": 1997,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 16513,
+                "ATK": 2396,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 41,
+                "HP": 16751,
+                "ATK": 2430,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 42,
+                "HP": 16989,
+                "ATK": 2465,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 43,
+                "HP": 17228,
+                "ATK": 2499,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 44,
+                "HP": 17466,
+                "ATK": 2534,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 45,
+                "HP": 17705,
+                "ATK": 2568,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 46,
+                "HP": 17943,
+                "ATK": 2603,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 47,
+                "HP": 18181,
+                "ATK": 2638,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 48,
+                "HP": 18420,
+                "ATK": 2672,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 49,
+                "HP": 18658,
+                "ATK": 2707,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 18897,
+                "ATK": 2741,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 22679,
+                "ATK": 3290,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 51,
+                "HP": 22917,
+                "ATK": 3325,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 52,
+                "HP": 23156,
+                "ATK": 3359,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 53,
+                "HP": 23394,
+                "ATK": 3394,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 54,
+                "HP": 23633,
+                "ATK": 3428,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 55,
+                "HP": 23871,
+                "ATK": 3463,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 56,
+                "HP": 24109,
+                "ATK": 3498,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 57,
+                "HP": 24348,
+                "ATK": 3532,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 58,
+                "HP": 24586,
+                "ATK": 3567,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 59,
+                "HP": 24825,
+                "ATK": 3601,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 25063,
+                "ATK": 3636,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 30077,
+                "ATK": 4363,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 61,
+                "HP": 30316,
+                "ATK": 4398,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 62,
+                "HP": 30554,
+                "ATK": 4433,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 63,
+                "HP": 30792,
+                "ATK": 4467,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 64,
+                "HP": 31031,
+                "ATK": 4502,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 65,
+                "HP": 31269,
+                "ATK": 4536,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 66,
+                "HP": 31507,
+                "ATK": 4571,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 67,
+                "HP": 31746,
+                "ATK": 4605,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 68,
+                "HP": 31984,
+                "ATK": 4640,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 69,
+                "HP": 32223,
+                "ATK": 4675,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 32461,
+                "ATK": 4709,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 38953,
+                "ATK": 5651,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 71,
+                "HP": 39192,
+                "ATK": 5686,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 72,
+                "HP": 39430,
+                "ATK": 5720,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 73,
+                "HP": 39668,
+                "ATK": 5755,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 74,
+                "HP": 39907,
+                "ATK": 5789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 75,
+                "HP": 40145,
+                "ATK": 5824,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 76,
+                "HP": 40384,
+                "ATK": 5859,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 77,
+                "HP": 40622,
+                "ATK": 5893,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 78,
+                "HP": 40860,
+                "ATK": 5928,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 79,
+                "HP": 41099,
+                "ATK": 5962,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 41337,
+                "ATK": 5997,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 49601,
+                "ATK": 7196,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 81,
+                "HP": 49840,
+                "ATK": 7230,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 82,
+                "HP": 50078,
+                "ATK": 7265,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 83,
+                "HP": 50317,
+                "ATK": 7300,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 84,
+                "HP": 50555,
+                "ATK": 7334,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 85,
+                "HP": 50793,
+                "ATK": 7369,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 86,
+                "HP": 51032,
+                "ATK": 7403,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 87,
+                "HP": 51270,
+                "ATK": 7438,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 88,
+                "HP": 51509,
+                "ATK": 7472,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 89,
+                "HP": 51747,
+                "ATK": 7507,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 90,
+                "HP": 51985,
+                "ATK": 7542,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 91,
+                "HP": 51985,
+                "ATK": 7542,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            }
+        ],
+        "upgrade": [
+            {
+                "Faint Wick": 5,
+                "Dorra": 7900
+            },
+            {
+                "Faint Wick": 5,
+                "Lumen Essence": 10,
+                "Dorra": 19800
+            },
+            {
+                "Faint Wick": 10,
+                "Lumen Essence": 15,
+                "Dorra": 44400
+            },
+            {
+                "Faint Wick": 15,
+                "Lumen Essence": 25,
+                "Dorra": 66600
+            },
+            {
+                "Faint Wick": 20,
+                "Lumen Essence": 40,
+                "Dorra": 146100
+            },
+            {
+                "Faint Wick": 30,
+                "Lumen Essence": 55,
+                "Eternal Gloom Core": 20,
+                "Dorra": 291600
+            },
+            {
+                "Lumen Essence": 75,
+                "Eternal Gloom Core": 30,
+                "Dorra": 560200
+            },
+            {
+                "Lumen Essence": 95,
+                "Eternal Gloom Core": 50,
+                "Dorra": 1121300
+            }
+        ],
+        "skillUpgrade": [
+            {
+                "Shooter Game Cartridge": 6,
+                "Chess Piece of Skill": 2,
+                "Dorra": 13300
+            },
+            {
+                "Shooter Game Cartridge": 12,
+                "Chess Piece of Skill": 6,
+                "Dorra": 17600
+            },
+            {
+                "Shooter Game Cartridge": 24,
+                "Barrage Game Cartridge": 3,
+                "Chess Piece of Skill": 10,
+                "Dorra": 49800
+            },
+            {
+                "Shooter Game Cartridge": 38,
+                "Barrage Game Cartridge": 8,
+                "Chess Piece of Skill": 24,
+                "Dorra": 100000
+            },
+            {
+                "Shooter Game Cartridge": 70,
+                "Barrage Game Cartridge": 14,
+                "Demon Bee Game Cartridge": 6,
+                "Chess Piece of Skill": 55,
+                "Dorra": 400000
+            },
+            {
+                "Crimson Tempter": 1,
+                "Barrage Game Cartridge": 50,
+                "Demon Bee Game Cartridge": 18,
+                "Chess Piece of Skill": 232,
+                "Dorra": 900000
+            },
+            {
+                "Crimson Tempter": 2,
+                "Barrage Game Cartridge": 90,
+                "Demon Bee Game Cartridge": 34,
+                "Chess Piece of Skill": 323,
+                "Dorra": 1600000
+            },
+            {
+                "Crimson Tempter": 3,
+                "Barrage Game Cartridge": 140,
+                "Demon Bee Game Cartridge": 50,
+                "Chess Piece of Skill": 478,
+                "Dorra": 2300000
+            },
+            {
+                "Crimson Tempter": 6,
+                "Barrage Game Cartridge": 200,
+                "Demon Bee Game Cartridge": 70,
+                "Chess Piece of Skill": 927,
+                "Dorra": 3400000
+            }
+        ]
+    },
     "158": {
         "id": 158,
         "name": "Snowish Laru",
