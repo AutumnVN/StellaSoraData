@@ -1594,5 +1594,81 @@
     "DungeonDelay": 45000,
     "Theme": 101,
     "MonsterLv": 1
+  },
+  "1231571": {
+    "Id": 1231571,
+    "TrialChar": 157,
+    "TrialSectType": 1,
+    "SceneName": "Levels/TrainingLevels/TrainingLevels_01/TrainingLevels_01",
+    "ConfigPrefabName": "TutorialLevel_15701",
+    "TrialBuild": 15701,
+    "QuestFlow": [
+      1570101,
+      1570102,
+      1570103,
+      1570104
+    ],
+    "BGM": "travelerTrail_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "DungeonDelay": 45000,
+    "Theme": 101,
+    "MonsterLv": 1
+  },
+  "1231572": {
+    "Id": 1231572,
+    "TrialChar": 157,
+    "TrialSectType": 2,
+    "SceneName": "Levels/TrainingLevels/TrainingLevels_01/TrainingLevels_01",
+    "ConfigPrefabName": "TutorialLevel_15702",
+    "TrialBuild": 15702,
+    "QuestFlow": [
+      1570201,
+      1570202,
+      1570203,
+      1570204
+    ],
+    "BGM": "travelerTrail_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "DungeonDelay": 45000,
+    "Theme": 101,
+    "MonsterLv": 1
+  },
+  "1231573": {
+    "Id": 1231573,
+    "TrialChar": 157,
+    "TrialSectType": 3,
+    "SceneName": "Levels/TrainingLevels/TrainingLevels_01/TrainingLevels_01",
+    "ConfigPrefabName": "TutorialLevel_15703",
+    "TrialBuild": 15703,
+    "QuestFlow": [
+      1570301,
+      1570302,
+      1570303,
+      1570304
+    ],
+    "BGM": "travelerTrail_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "DungeonDelay": 45000,
+    "Theme": 101,
+    "MonsterLv": 1
+  },
+  "1231574": {
+    "Id": 1231574,
+    "TrialChar": 157,
+    "TrialSectType": 4,
+    "SceneName": "Levels/TrainingLevels/TrainingLevels_01/TrainingLevels_01",
+    "ConfigPrefabName": "TutorialLevel_15704",
+    "TrialBuild": 15704,
+    "QuestFlow": [
+      1570401,
+      1570402,
+      1570403,
+      1570404
+    ],
+    "BGM": "travelerTrail_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "DungeonDelay": 45000,
+    "Theme": 101,
+    "MonsterLv": 1
   }
 }
