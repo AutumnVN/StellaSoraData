@@ -57797,10 +57797,13 @@
         "mainSkill": {
             "id": 4057,
             "name": "Ride the Waves with Me",
+            "nameCN": "伴我航行",
+            "nameJP": "共に航る",
+            "nameKR": "함께하는 항해",
             "desc": "The Umbra Main Trekker gains Dark Tide for 15s after dealing Ultimate DMG, stacking up to 3 times.\u000bWhen the Umbra Main Trekker deals Auto Attack DMG, 1/2/3 stacks of Dark Tide inflict the following on the target: increases Umbra Auto Attack DMG Taken by <color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color> for 10s.\u000bWhen the Umbra Main Trekker deals Ultimate DMG, 1/2/3 stacks of Dark Tide inflict the following on the target: increases Umbra Ultimate DMG Taken by <color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color> for 10s.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "暗系主控角色造成绝招伤害后，自身获得「暗潮」，持续15秒，可叠加3层。\u000b暗系主控角色造成普攻伤害时，1/2/3层「暗潮」对目标附加：受到暗系普攻伤害提升<color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>，持续10秒。\u000b暗系主控角色造成绝招伤害时，1/2/3层「暗潮」对目标附加：受到暗系绝招伤害提升<color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color>，持续10秒。",
+            "descJP": "闇属性の主力巡遊者が必殺技ダメージを与えた後、自身に15秒間、暗潮を付与する。この効果は3回まで重複できる。\u000b闇属性の主力巡遊者が通常攻撃ダメージを与えた時、付与されている暗潮の数1/2/3のに応じて敵に以下の効果を付与する：10秒間、闇属性の通常攻撃被ダメージが<color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color>増加する。\u000b闇属性の主力巡遊者が必殺技ダメージを与えた時、付与されている暗潮の数1/2/3のに応じて敵に以下の効果を付与する：10秒間、闇属性の必殺技被ダメージが<color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color>増加する。",
+            "descKR": "어둠 속성 메인 캐릭터가 필살기 피해를 입힌 후, 자신이 「암조」를 획득한다. 15초간 지속되며, 최대 3스택 중첩된다. \u000b어둠 속성 메인 캐릭터가 일반 공격 피해를 입히면, 1/2/3스택의 「암조」가 목표의 받는 어둠 속성 일반 공격 피해를 각각 <color=#ec6d21>{1}</color>/<color=#ec6d21>{2}</color>/<color=#ec6d21>{3}</color> 증가시킨다. 10초간 지속된다. \u000b어둠 속성 메인 캐릭터가 필살기 피해를 입히면, 1/2/3스택의 「암조」가 목표의 받는 어둠 속성 필살기 피해를 각각 <color=#ec6d21>{4}</color>/<color=#ec6d21>{5}</color>/<color=#ec6d21>{6}</color> 증가시킨다. 10초간 지속된다.",
             "effectType": [
                 "ELEMENTTYPE_:(Umbra) Auto Attack DMG Taken",
                 "ELEMENTTYPE_:(Umbra) Ultimate DMG Taken"
@@ -57818,10 +57821,13 @@
         "secondarySkill1": {
             "id": 40571,
             "name": "Wave Riding",
+            "nameCN": "踏浪而行",
+            "nameJP": "ライドウェーブ",
+            "nameKR": "파도를 따라",
             "desc": "Increases the Ultimate Crit DMG dealt by Umbra Trekkers in the squad to targets inflicted with ##Dark Burn#2028# by <color=#ec6d21>{1}</color>.\u000bDark Tide gains an additional effect: Each stack increases own Ultimate DMG by <color=#ec6d21>{2}</color>.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "队伍中暗系角色对附带##暗灼#2028#的目标造成的绝招暴击伤害提升<color=#ec6d21>{1}</color>。\u000b「暗潮」获得额外效果：每层使自身绝招伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の闇属性巡遊者は##暗灼#2028#が付与された敵に与える必殺技会心ダメージが<color=#ec6d21>{1}</color>増加する。\u000b暗潮に追加効果が付与される：暗潮1ごとに自身の必殺技ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 어둠 속성 캐릭터가 ##어둠 작열#2028#을 보유한 목표에게 입히는 필살기 치명타 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「암조」가 추가 효과를 획득해, 스택마다 자신의 필살기 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "ELEMENTTYPE_:(Umbra) Ultimate DMG"
             ],
@@ -57861,10 +57867,13 @@
         "secondarySkill2": {
             "id": 40572,
             "name": "Solo Voyage",
+            "nameCN": "独自远航",
+            "nameJP": "ヴォヤージュ",
+            "nameKR": "홀로 나선 먼 바다",
             "desc": "Increases the Auto Attack DMG dealt by Umbra Trekkers in the squad to elite or higher-tier targets by <color=#ec6d21>{1}</color>.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "队伍中暗系角色对精英及以上目标造成的普攻伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "チーム内の闇属性巡遊者がエリート以上の敵に与える通常攻撃ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "팀 내 어둠 속성 캐릭터가 정예 이상 목표에게 입히는 일반 공격 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Auto Attack DMG (base)"
@@ -58415,10 +58424,13 @@
         "mainSkill": {
             "id": 4058,
             "name": "Summer March",
+            "nameCN": "夏日进行曲",
+            "nameJP": "サマーマーチ",
+            "nameKR": "여름 행진곡",
             "desc": "Increases the Umbra Main Trekker's Auto Attack and Ultimate DMG by <color=#ec6d21>{1}</color>.\u000bThe Umbra Main Trekker gains Surging Wave for {2}s when casting a skill, stacking up to {3} times.\u000bWhen a Trekker with Surging Wave deals Ultimate DMG, increases the Umbra DMG dealt by Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{4}</color> for {5}s.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "暗系主控角色普攻和绝招伤害提升<color=#ec6d21>{1}</color>。\u000b暗系主控角色施放技能时，自身获得「激浪」，持续{2}秒，可叠加{3}层。\u000b附带「激浪」的角色造成绝招伤害时，队伍中暗系角色及其仆从造成的暗系伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。",
+            "descJP": "闇属性の主力巡遊者の通常攻撃と必殺技ダメージが<color=#ec6d21>{1}</color>増加する。\u000b闇属性の主力巡遊者がスキル発動時、{2}秒間、自身はビッグウェーブを獲得する。この効果は{3}回まで重複できる。\u000bビッグウェーブを獲得している巡遊者が必殺技ダメージを与えた時、{5}秒間、闇属性の味方が与える闇属性ダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "어둠 속성 메인 캐릭터의 일반 공격과 필살기 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b어둠 속성 메인 캐릭터가 스킬을 시전하면, 자신이 「격랑」을 획득한다. {2}초간 지속되며, 최대 {3}스택 중첩된다. \u000b「격랑」을 보유한 캐릭터가 필살기 피해를 입히면, 팀 내 어둠 속성 캐릭터와 그 소환물이 입히는 어둠 속성 피해가 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
             "effectType": [
                 "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
                 "ELEMENTTYPE_:(Umbra) Ultimate DMG"
@@ -58440,10 +58452,13 @@
         "secondarySkill1": {
             "id": 40581,
             "name": "Joyful Wave",
+            "nameCN": "欢腾激浪",
+            "nameJP": "ライジングサージ",
+            "nameKR": "환희의 격랑",
             "desc": "When the Umbra Main Trekker triggers a mark and inflicts ##Dark Burn#2028# on a target, increases own Auto Attack DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen Surging Wave is at max stacks, increases the Umbra DMG dealt by Umbra Trekkers in the squad and their Minions by <color=#ec6d21>{3}</color>.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "暗系主控角色触发印记造成##暗灼#2028#效果时，自身普攻伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b「激浪」满层时，队伍中暗系角色及其仆从造成的暗系伤害额外提升<color=#ec6d21>{3}</color>。",
+            "descJP": "闇属性の主力巡遊者が印を発動させて##暗灼#2028#を付与した時、{2}秒間、自身の通常攻撃ダメージが<color=#ec6d21>{1}</color>増加する。\u000bビッグウェーブが上限に達している時、闇属性の味方が与える闇属性ダメージがさらに<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "어둠 속성 메인 캐릭터가 표식을 발동해 ##어둠 작열#2028# 효과를 입히면, 자신의 일반 공격 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b「격랑」이 최대 스택을 달성하면, 팀 내 어둠 속성 캐릭터와 그 소환물이 입히는 어둠 속성 피해가 추가로 <color=#ec6d21>{3}</color> 증가한다.",
             "effectType": [
                 "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
             ],
@@ -58483,10 +58498,13 @@
         "secondarySkill2": {
             "id": 40582,
             "name": "Undying Passion",
+            "nameCN": "热情不减",
+            "nameJP": "ホワイトキャップ",
+            "nameKR": "식지 않는 열정",
             "desc": "Surging Wave gains an additional effect: Each stack increases own ATK by <color=#ec6d21>{1}</color>.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "「激浪」获得额外效果：每层使自身攻击力提升<color=#ec6d21>{1}</color>。",
+            "descJP": "ビッグウェーブに追加効果が付与される：ビッグウェーブ1ごとに自身の攻撃力が<color=#ec6d21>{1}</color>上昇する。",
+            "descKR": "「격랑」이 추가 효과를 획득해, 스택마다 자신의 공격력이 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "ATK (%)"
             ],

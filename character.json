@@ -132681,11 +132681,14 @@
         "normalAtk": {
             "id": 15710000,
             "name": "Fisher's Hunt",
+            "nameCN": "渔狩追猎",
+            "nameJP": "怒涛の追撃",
+            "nameKR": "항해자의 추적",
             "energyLimit": 3.3388,
             "desc": "Fires cuttlefish shells, each dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Auto Attack DMG.\nKarin has ##Hunting Energy#4045# and can automatically consume 100 ##Hunting Energy#4045# to throw a chain, inflicting ##Hunter's Mark#4046# on the target and forming a link. While the chain is active, increases Karin's &Param2& by <color=#ec6d21>&Param3&</color>.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
+            "descCN": "发射墨鱼弹，每次造成攻击力<color=#ec6d21>&Param1&</color>的范围暗系普攻伤害。\n花铃拥有##狩能#4045#，可自动消耗100点##狩能#4045#抛出锁链，为目标附加##猎标#4046#并形成连线。连线期间，花铃的&Param2&提升<color=#ec6d21>&Param3&</color>。",
+            "descJP": "イカ墨弾を1発発射し、範囲内に攻撃力の<color=#ec6d21>&Param1&</color>の闇属性の通常攻撃ダメージを与える。\nカリンが##狩猟本能#4045#を保有時、自動的に##狩猟本能#4045#を100消費して鎖を放ち、敵1体に##デスデス#4046#を付与してチェインを形成する。チェイン持続中、カリンの&Param2&が<color=#ec6d21>&Param3&</color>増加する。",
+            "descKR": "먹물탄을 발사해 매회 공격력 <color=#ec6d21>&Param1&</color>의 어둠 속성 범위 일반 공격 피해를 입힌다. \n카린이 ##사냥 능력#4045#을 보유하며, 자동으로 ##사냥 능력#4045# 100포인트를 소모해 사슬을 던져 목표에게 ##사냥 표식#4046#을 부여하고 연결할 수 있다. 연결 기간 중, 카린의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
             "damageType": [
                 "Auto Attack (3.3388e, from Normal attack, scale with Normal attack)"
             ],
@@ -132720,12 +132723,15 @@
         "skill": {
             "id": 15731000,
             "name": "Bait and Catch",
+            "nameCN": "愿者上钩",
+            "nameJP": "入れ食いタイム",
+            "nameKR": "미끼에 걸린 자",
             "cooldown": "10s",
             "energyLimit": 30,
             "desc": "Leaps into the air and launches a fishcake, dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Auto ATK DMG, then summons Boss Shark to devour the target, dealing <color=#ec6d21>&Param2&</color> of ATK as Umbra Ultimate DMG in a large area. Bait and Catch (Main Skill) can trigger ##Umbra Mark#1019#, dealing &Param3& of ATK as Umbra Mark DMG and inflicting ##Dark Burn#4051#.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Mark)",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Mark)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Mark)",
+            "descCN": "跃起发射鱼饼干造成攻击力<color=#ec6d21>&Param1&</color>的范围暗系普攻伤害，随后引来「鲨老大」吞食造成攻击力<color=#ec6d21>&Param2&</color>的大范围暗系绝招伤害。主控技「愿者上钩」可触发##暗系印记#1019#，造成攻击力&Param3&的暗系印记伤害，附加##暗灼#4051#。",
+            "descJP": "跳躍してイカせんべいを発射し、範囲内に攻撃力の<color=#ec6d21>&Param1&</color>の闇属性の通常攻撃ダメージを与える。その後、サメ大将を呼び寄せ、丸呑み攻撃を行い、広範囲に攻撃力の<color=#ec6d21>&Param2&</color>の闇属性の必殺技ダメージを与える。\u000b主力スキルは##闇属性の印#1019#を発動させることができる。発動した時、攻撃力の&Param3&の闇属性の印ダメージを与え、##暗灼#4051#を付与する。",
+            "descKR": "점프하며 물고기 쿠키를 발사해 공격력 <color=#ec6d21>&Param1&</color>의 어둠 속성 범위 일반 공격 피해를 입힌다. 이후 「상어 대장」이 삼키도록 유도해 큰 범위에 공격력 <color=#ec6d21>&Param2&</color>의 어둠 속성 필살기 피해를 입힌다. 메인 스킬 「미끼에 걸린 자」가 ##어둠 속성 표식#1019#을 발동할 수 있고, 공격력 &Param3&의 어둠 속성 표식 피해를 입히며, ##어둠 작열#4051#을 부여한다.",
             "damageType": [
                 "Auto Attack (15e, from Skill, scale with Skill)",
                 "Ultimate (15e, from Skill, scale with Skill)",
@@ -132756,11 +132762,14 @@
         "supportSkill": {
             "id": 15732000,
             "name": "Raging Sea",
+            "nameCN": "怒海翻腾",
+            "nameJP": "レイジングタイド",
+            "nameKR": "광폭한 바다의 파도",
             "cooldown": "12s",
             "desc": "Swings the harpoon chain repeatedly, dealing <color=#ec6d21>&Param1& x4</color> of ATK as AoE Umbra Skill DMG. During the skill, summons Boss Shark multiple times to pursue and devour targets, dealing <color=#ec6d21>&Param2& x4</color> of ATK as AoE Umbra Ultimate DMG. Finally, rides Boss Shark and performs a diving slam, dealing <color=#ec6d21>&Param3&</color> of ATK as Umbra Ultimate DMG in a large area. Raging Sea (Support Skill) can trigger ##Umbra Mark#1019#, dealing &Param4& of ATK as Umbra Mark DMG and inflicting ##Dark Burn#4051#.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Ultimate) \u000bParam4: &Param4& (HitDamage,Mark)",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Ultimate) \u000bParam4: &Param4& (HitDamage,Mark)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (HitDamage,Ultimate) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "descCN": "连续挥舞鱼枪锁链，造成攻击力<color=#ec6d21>&Param1&x4</color>的范围暗系技能伤害，期间多次引来「鲨老大」追逐吞食，造成攻击力<color=#ec6d21>&Param2&x4</color>的范围暗系绝招伤害。最终骑乘「鲨老大」飞跃砸地造成攻击力<color=#ec6d21>&Param3&</color>的大范围暗系绝招伤害。援护技「怒海翻腾」可触发##暗系印记#1019#，造成攻击力&Param4&的暗系印记伤害，附加##暗灼#4051#。",
+            "descJP": "鎖を連続で振り回し、範囲内に攻撃力の<color=#ec6d21>&Param1&x4</color>の闇属性のスキルダメージを与える。同時にサメ大将が何度も追いかけて丸呑み攻撃を行い、広範囲に攻撃力の<color=#ec6d21>&Param2&x4</color>の闇属性の必殺技ダメージを与える。最後にサメ大将に乗り込んで飛び上がり、地面へ叩きつけ攻撃を行い、広範囲に攻撃力の<color=#ec6d21>&Param3&</color>の闇属性の必殺技ダメージを与える。支援スキルは##闇属性の印#1019#を発動できる。発動した時、攻撃力の&Param4&の闇属性の印ダメージを与え、##暗灼#4051#を付与する。",
+            "descKR": "작살총 사슬을 연속으로 휘둘러 공격력 <color=#ec6d21>&Param1&x4</color>의 어둠 속성 범위 필살기 피해를 입힌다. 기간 중 여러 차례 「상어 대장」을 불러 추격하며 삼켜 공격력 <color=#ec6d21>&Param2&x4</color>의 어둠 속성 범위 필살기 피해를 입힌다.\r\n최종적으로 「상어 대장」을 타고 도약해 땅을 내려 찍어 큰 범위에 공격력 <color=#ec6d21>&Param3&</color>의 어둠 속성 필살기 피해를 입힌다. 지원 스킬 「광폭한 바다의 파도」가 ##어둠 속성 표식#1019#을 발동해 공격력 &Param4&의 어둠 속성 표식 피해를 입힐 수 있고, ##어둠 작열#4051#을 부여한다.",
             "damageType": [
                 "Skill (from Skill, scale with Skill)",
                 "Ultimate (from Skill, scale with Skill)",
@@ -132795,12 +132804,15 @@
         "ultimate": {
             "id": 15740000,
             "name": "Shark Assault",
+            "nameCN": "狂鲨强袭",
+            "nameJP": "シャークパニッシュ",
+            "nameKR": "분노한 상어의 습격",
             "cooldown": "30s",
             "energy": 300,
             "desc": "Karin and Boss Shark clash in a ferocious fight, dealing <color=#ec6d21>&Param1& x14</color> of ATK as Umbra Ultimate DMG in a large area. Shark Assault (Ultimate) can trigger ##Umbra Mark#1019#, dealing &Param2& of ATK as Umbra Mark DMG and inflicting ##Dark Burn#4051#.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (HitDamage,Mark)",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (HitDamage,Mark)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (HitDamage,Mark)",
+            "descCN": "花铃和「鲨老大」激烈缠斗，造成攻击力<color=#ec6d21>&Param1&x14</color>的大范围暗系绝招伤害。绝招「狂鲨强袭」可触发##暗系印记#1019#，造成攻击力&Param2&的暗系印记伤害，附加##暗灼#4051#。",
+            "descJP": "カリンとサメ大将が激しくもつれ合い、広範囲に攻撃力の<color=#ec6d21>&Param1&x14</color>の闇属性の必殺技ダメージを与える。必殺技は##闇属性の印#1019#を発動できる。発動した時、攻撃力の&Param2&の闇属性の印ダメージを与え、##暗灼#4051#を付与する。",
+            "descKR": "카린과 「상어 대장」이 격렬하게 붙어 싸우며 큰 범위에 공격력 <color=#ec6d21>&Param1&x14</color>의 어둠 속성 필살기 피해를 입힌다. 필살기 「분노한 상어의 습격」이 ##어둠 속성 표식#1019#을 발동하여, 공격력 &Param2&의 어둠 속성 표식 피해를 입힐 수 있고, ##어둠 작열#4051#을 부여한다.",
             "damageType": [
                 "Ultimate (from Ultimate, scale with Ultimate)",
                 "Mark"
@@ -132828,10 +132840,13 @@
                 {
                     "id": 515701,
                     "name": "Predator's Vortex",
+                    "nameCN": "猎群涡流",
+                    "nameJP": "フィッシュネード",
+                    "nameKR": "포식자의 소용돌이",
                     "desc": "Boss Shark's attacks summon a vortex of fish, dealing <color=#0abec5>&Param1& x7</color> of ATK as AoE Umbra Ultimate DMG and triggering ##Umbra Mark#1019#. This effect can only be triggered once every &Param4&s. Increases Karin's &Param2& against targets inflicted with ##Dark Burn#2028# by <color=#0abec5>&Param3&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1) \u000bParam4: &Param4& (ScriptParameterValue,CommonData)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1) \u000bParam4: &Param4& (ScriptParameterValue,CommonData)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1) \u000bParam4: &Param4& (ScriptParameterValue,CommonData)",
+                    "descCN": "「鲨老大」发动攻击可引来鱼群涡流，造成攻击力<color=#0abec5>&Param1&x7</color>的范围暗系绝招伤害并触发##暗系印记#1019#，该效果每&Param4&秒可触发1次。花铃对附带##暗灼#2028#的目标造成的&Param2&提升<color=#0abec5>&Param3&</color>。",
+                    "descJP": "サメ大将が攻撃を行うと魚群の渦を呼び寄せ、範囲内に攻撃力の<color=#0abec5>&Param1&x7</color>の闇属性の必殺技ダメージを与え、##闇属性の印#1019#を発動させることができる。この効果は&Param4&秒ごとに1回発動できる。\nカリンは##暗灼#2028#が付与された敵に対して&Param2&が<color=#0abec5>&Param3&</color>上昇する。",
+                    "descKR": "「상어 대장」이 공격을 발동해 물고기떼 소용돌이를 일으켜 공격력 <color=#0abec5>&Param1&x7</color>의 어둠 속성 범위 필살기 피해를 입히며 ##어둠 속성 표식#1019#을 발동한다. 해당 효과는 &Param4&초마다 1회 발동할 수 있다. 카린이 ##어둠 작열#2028#을 보유한 목표에게 입히는 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
                         "Ultimate (from Skill, scale with Skill)"
                     ],
@@ -132867,10 +132882,13 @@
                 {
                     "id": 515702,
                     "name": "Shark Ambush",
+                    "nameCN": "鲨影潜袭",
+                    "nameJP": "シャークアタック",
+                    "nameKR": "상어 그림자의 습격",
                     "desc": "After casting the Main Skill, Karin summons Boss Shark to follow her for <color=#0abec5>8</color>s. During this time, Boss Shark periodically lunges at the Main Trekker's target, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Ultimate DMG and triggering ##Umbra Mark#1019#. Increases Karin's &Param2& by <color=#0abec5>&Param3&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
+                    "descCN": "花铃施放主控技后引来「鲨老大」跟随，持续时间<color=#0abec5>8</color>秒。期间「鲨老大」每隔一定时间对主控目标发动飞扑攻击，造成攻击力<color=#0abec5>&Param1&</color>的范围暗系绝招伤害并触发##暗系印记#1019#。花铃的&Param2&提升<color=#0abec5>&Param3&</color>。",
+                    "descJP": "カリンが主力スキルを発動時、<color=#0abec5>8</color>秒間、サメ大将がカリンを追従するようになる。追従中、サメ大将は一定時間ごとに敵へ飛びかかり攻撃を行い、範囲内に攻撃力の<color=#0abec5>&Param1&</color>の闇属性の必殺技ダメージを与え、##闇属性の印#1019#を発動させることができる。\nカリンの&Param2&が<color=#0abec5>&Param3&</color>上昇する。",
+                    "descKR": "카린이 메인 스킬을 시전한 후 「상어 대장」이 따라다닌다. <color=#0abec5>8</color>초간 지속된다. 기간 중 「상어 대장」이 일정 시간마다 메인 목표에게 덮치며 공격해 공격력 <color=#0abec5>&Param1&</color>의 어둠 속성 범위 필살기 피해를 입히며 ##어둠 속성 표식#1019#을 발동한다. 카린의 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다.\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Ultimate (from Skill, scale with Skill)"
                     ],
@@ -132908,10 +132926,13 @@
                 {
                     "id": 515703,
                     "name": "Scatter Shot",
+                    "nameCN": "猎弹散布",
+                    "nameJP": "スキャッター",
+                    "nameKR": "곳곳에 흩어진 탄환",
                     "desc": "When Karin hits a target inflicted with ##Hunter's Mark#4046# with Auto Attacks, she can additionally fire lob shots, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Auto ATK DMG. When Karin inflicts ##Hunter's Mark#4046# on a target, she instantly gains <color=#0abec5>3</color> buff stacks. After that, she loses <color=#0abec5>1</color> buff stack every <color=#0abec5>2</color>s. <color=#0abec5>Each</color> stack increases the number of bullets fired by Karin's Auto Attacks by <color=#0abec5>1</color>. When there is a target inflicted with ##Hunter's Mark#4046# on the field, increases Karin's &Param2& by <color=#0abec5>&Param3&</color> and &Param4& by <color=#0abec5>&Param5&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (EffectValue,EffectTypeFirstSubtype) \u000bParam5: &Param5& (EffectValue,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (EffectValue,EffectTypeFirstSubtype) \u000bParam5: &Param5& (EffectValue,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (EffectValue,EffectTypeFirstSubtype) \u000bParam5: &Param5& (EffectValue,EffectTypeParam1)",
+                    "descCN": "花铃对附带##猎标#4046#的目标普攻时，可额外发动吊射弹，造成攻击力<color=#0abec5>&Param1&</color>的范围暗系普攻伤害。花铃对目标附加##猎标#4046#时，立刻获得<color=#0abec5>3</color>层增益，之后每<color=#0abec5>2</color>秒减少<color=#0abec5>1</color>层，每<color=#0abec5>1</color>层增益使花铃普攻发射的子弹数量增加<color=#0abec5>1</color>枚。场中有附带##猎标#4046#的目标时，花铃的&Param2&提升<color=#0abec5>&Param3&</color>，&Param4&提升<color=#0abec5>&Param5&</color>",
+                    "descJP": "カリンは##デスデス#4046#が付与された敵に通常攻撃時、追加で曲射攻撃を行うようになり、範囲内に攻撃力の<color=#0abec5>&Param1&</color>の闇属性の通常攻撃ダメージを与える。カリンが敵に##デスデス#4046#を付与した時、即座にバフ効果を<color=#0abec5>3</color>獲得する。バフ効果は<color=#0abec5>2</color>秒ごとに<color=#0abec5>1</color>減少し、<color=#0abec5>1</color>につきカリンの通常攻撃で発射されるイカ墨弾の数が<color=#0abec5>1</color>発増加する。フィールド上に##デスデス#4046#が付与された敵が存在時、カリンの&Param2&が<color=#0abec5>&Param3&</color>上昇し、&Param4&が<color=#0abec5>&Param5&</color>増加する。",
+                    "descKR": "카린이 ##사냥 표식#4046#을 보유한 목표에게 일반 공격을 시전하면, 낙하 사격 총알을 추가로 발사해 공격력 <color=#0abec5>&Param1&</color>의 어둠 속성 범위 일반 공격 피해를 입힌다. 카린이 목표에게 ##사냥 표식#4046#을 부여하면 즉시 버프 <color=#0abec5>3</color>스택을 획득한다. 이후 <color=#0abec5>2</color>초마다 <color=#0abec5>1</color>스택 감소한다. 버프 <color=#0abec5>1</color>스택마다 카린의 일반 공격이 발사하는 총알이 <color=#0abec5>1</color>개 증가한다. 필드에 ##사냥 표식#4046#을 보유한 목표가 있으면, 카린의 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가하고, &Param4_kr1& <color=#0abec5>&Param5&</color> 증가한다.\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Auto Attack (from Skill, scale with Skill)"
                     ],
@@ -132960,10 +132981,13 @@
                 {
                     "id": 515704,
                     "name": "Hunting Dark Shackle",
+                    "nameCN": "追猎暗锁",
+                    "nameJP": "チェインハント",
+                    "nameKR": "추적의 어둠 사슬",
                     "desc": "Extends the duration of ##Hunter's Mark#4046# by <color=#0abec5>&Param1&</color>s. While Karin is linked to a target inflicted with ##Hunter's Mark#4046#, she deals <color=#0abec5>&Param2&</color> of ATK as AoE Umbra Auto ATK DMG to all targets along the link path and restores <color=#0abec5>10</color> ##Hunting Energy#4045# <color=#0abec5>per second</color>, which can trigger ##Umbra Mark#1019#. When Karin inflicts ##Hunter's Mark#4046# on a target, increases her &Param3& by <color=#0abec5>&Param4&</color> and &Param5& by <color=#0abec5>&Param6&</color> for &Param7&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1) \u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype) \u000bParam6: &Param6& (EffectValue,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time)",
-                    "descJP": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1) \u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype) \u000bParam6: &Param6& (EffectValue,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam4: &Param4& (EffectValue,EffectTypeParam1) \u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype) \u000bParam6: &Param6& (EffectValue,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time)",
+                    "descCN": "##猎标#4046#的持续时间延长<color=#0abec5>&Param1&</color>秒。花铃和附带##猎标#4046#的目标连线期间，每<color=#0abec5>1</color>秒对连线路径上的目标造成攻击力<color=#0abec5>&Param2&</color>范围暗系普攻伤害，并回复花铃<color=#0abec5>10</color>点##狩能#4045#，该伤害可触发##暗系印记#1019#。花铃对目标附加##猎标#4046#时，自身的&Param3&提升<color=#0abec5>&Param4&</color>，&Param5&提升<color=#0abec5>&Param6&</color>，持续&Param7&秒。",
+                    "descJP": "##デスデス#4046#の持続時間が<color=#0abec5>&Param1&</color>秒延長される。\nカリンと##デスデス#4046#が付与された敵が連結中、鎖に触れた敵へ<color=#0abec5>1</color>秒ごと、攻撃力の<color=#0abec5>&Param2&</color>の範囲闇属性の通常攻撃ダメージを与え、##闇属性の印#1019#を発動させることができ、さらにカリンの##狩猟本能#4045#が<color=#0abec5>10</color>回復する。\nカリンが敵に##デスデス#4046#を付与した時、&Param7&秒間、自身の&Param3&が<color=#0abec5>&Param4&</color>上昇し、&Param5&が<color=#0abec5>&Param6&</color>増加する。",
+                    "descKR": "##사냥 표식#4046#의 지속 시간이 <color=#0abec5>&Param1&</color>초 연장된다. 카린과 ##사냥 표식#4046#을 보유한 목표가 연결되는 동안 <color=#0abec5>1</color>초마다 연결 경로 상의 목표에게 공격력 <color=#0abec5>&Param2&</color>의 어둠 속성 범위 일반 공격 피해를 입히고, 카린의 ##사냥 능력#4045# <color=#0abec5>10</color>포인트를 회복한다. 해당 피해는 ##어둠 속성 표식#1019#을 발동할 수 있다. 카린이 목표에게 ##사냥 표식#4046#을 부여하면, 자신의 &Param3_kr1& <color=#0abec5>&Param4&</color> 증가하고, &Param5_kr1& <color=#0abec5>&Param6&</color> 증가한다. &Param7&초간 지속된다.\u000bParam3: &Param3& (EffectValue,EffectTypeFirstSubtype) \u000bParam5: &Param5& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Auto Attack (from Skill, scale with Skill)"
                     ],
@@ -133018,10 +133042,13 @@
                 {
                     "id": 515705,
                     "name": "Crashing Wave",
+                    "nameCN": "滔天巨浪",
+                    "nameJP": "タイダルバースト",
+                    "nameKR": "솟구치는 거대한 파도",
                     "desc": "After Karin deals Ultimate DMG 5 times, Boss Shark follows up with a tail strike, dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Ultimate DMG  and triggering ##Umbra Mark#1019#. This effect can only be triggered once every &Param2&s. Increases Karin's &Param3& by <color=#ec6d21>&Param4&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (ScriptParameterValue,CommonData) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (ScriptParameterValue,CommonData) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (ScriptParameterValue,CommonData) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descCN": "花铃累计造成5次绝招伤害时，引来「鲨老大」的尾击，造成攻击力<color=#ec6d21>&Param1&</color>的范围暗系绝招伤害并触发##暗系印记#1019#，该效果每&Param2&秒可触发1次。花铃的&Param3&提升<color=#ec6d21>&Param4&</color>",
+                    "descJP": "カリンが累計5回必殺技ダメージを与えた時、サメ大将を呼び寄せ、尻尾で追撃し、範囲内に攻撃力の<color=#ec6d21>&Param1&</color>の闇属性の必殺技ダメージを与え、##闇属性の印#1019#を発動させることができる。この効果は&Param2&秒ごとに1回のみ発動する。\nカリンの&Param3&が<color=#ec6d21>&Param4&</color>上昇する。",
+                    "descKR": "카린이 필살기 피해를 누적 5회 입히면, 「상어 대장」의 꼬리 공격을 유도해 공격력 <color=#ec6d21>&Param1&</color>의 어둠 속성 범위 필살기 피해를 입히며 ##어둠 속성 표식#1019#을 발동한다. 해당 효과는 &Param2&초마다 1회 발동할 수 있다. 카린의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Ultimate (from Skill)"
                     ],
@@ -133059,10 +133086,13 @@
                 {
                     "id": 515706,
                     "name": "Twin Predator",
+                    "nameCN": "双影狩猎",
+                    "nameJP": "ツインチェイス",
+                    "nameKR": "두 개의 그림자",
                     "desc": "When Boss Shark deals DMG, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> and the &Param3& of Umbra Versatile Trekkers by <color=#ec6d21>&Param4&</color> for &Param5&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (BuffValue,Time)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (BuffValue,Time)",
+                    "descCN": "「鲨老大」造成伤害时，花铃的&Param1&提升<color=#ec6d21>&Param2&</color>，暗系均衡角色的&Param3&提升<color=#ec6d21>&Param4&</color>，持续&Param5&秒。",
+                    "descJP": "サメ大将がダメージを与えた時、&Param5&秒間、カリンの&Param1&が<color=#ec6d21>&Param2&</color>増加し、闇属性のバランサー巡遊者の&Param3&が<color=#ec6d21>&Param4&</color>増加する。",
+                    "descKR": "「상어 대장」이 피해를 입히면 카린의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, 어둠 속성 밸런스 캐릭터의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. &Param5&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Ultimate Crit DMG (base)"
@@ -133110,10 +133140,13 @@
                 {
                     "id": 515707,
                     "name": "Hunter's Command",
+                    "nameCN": "追猎指示",
+                    "nameJP": "ハントシグナル",
+                    "nameKR": "추격 지시",
                     "desc": "In an all-Umbra squad, increases the &Param1& dealt by Boss Shark to targets inflicted with ##Dark Burn#2028# by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "全队都为暗系角色时，「鲨老大」对附带##暗灼#2028#的目标造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "チーム内に闇属性巡遊者が3体いる時、サメ大将は##暗灼#2028#が付与された敵に与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "팀 전체가 어둠 속성 캐릭터일 경우, 「상어 대장」이 ##어둠 작열#2028#을 보유한 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -133143,10 +133176,13 @@
                 {
                     "id": 515708,
                     "name": "Dark Shackle Detonation",
+                    "nameCN": "暗锁溢爆",
+                    "nameJP": "チェインバースト",
+                    "nameKR": "어둠 사슬의 폭발",
                     "desc": "When an enemy target loses ##Hunter's Mark#4046#, deals <color=#ec6d21>&Param1&</color> of Karin's ATK as AoE Umbra Auto ATK DMG and triggering ##Umbra Mark#1019#. Increases Karin's &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "descCN": "敌方目标失去##猎标#4046#时，造成花铃攻击力<color=#ec6d21>&Param1&</color>的范围暗系普攻伤害并触发##暗系印记#1019#，同时花铃的&Param2&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒.",
+                    "descJP": "敵に付与した##デスデス#4046#が消失時、範囲内にカリンの攻撃力の<color=#ec6d21>&Param1&</color>の闇属性の通常攻撃ダメージを与え、##闇属性の印#1019#を発動させることができ、さらに&Param4&秒間、カリンの&Param2&が<color=#ec6d21>&Param3&</color>増加する。",
+                    "descKR": "적 목표가 ##사냥 표식#4046#을 잃으면 카린 공격력 <color=#ec6d21>&Param1&</color>의 어둠 속성 범위 일반 공격 피해를 받으며, ##어둠 속성 표식#1019#이 발동된다. 또한 카린의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속된다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Auto Attack (from Skill)"
                     ],
@@ -133190,10 +133226,13 @@
                 {
                     "id": 515709,
                     "name": "High-Threat Target",
+                    "nameCN": "高危目标",
+                    "nameJP": "トローリング",
+                    "nameKR": "고위험 목표",
                     "desc": "In an all-Umbra squad, when Bait and Catch (Main Skill) is on cooldown, increases the &Param1& dealt by Karin's Auto Attacks to targets inflicted with ##Dark Burn#2028# by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "全队都为暗系角色时，在主控技「愿者上钩」冷却期间，花铃的普攻对附带##暗灼#2028#的目标造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "チーム内に闇属性巡遊者が3体おり、かつ主力スキルのクールタイム中である時、カリンの通常攻撃が##暗灼#2028#の付与された敵に与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "팀 전체가 어둠 속성 캐릭터이면, 메인 스킬 「미끼에 걸린 자」 쿨타임 중 카린의 일반 공격이 ##어둠 작열#2028#을 보유한 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -133223,10 +133262,13 @@
                 {
                     "id": 515711,
                     "name": "Confidence Booster",
+                    "nameCN": "信心倍增",
+                    "nameJP": "夜釣り",
+                    "nameKR": "사기 충전",
                     "desc": "When Karin triggers an ##Umbra Mark#1019#, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "花铃触发##暗系印记#1019#时，&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "カリンが##闇属性の印#1019#を発動させた時、&Param3&秒間、&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "카린이 ##어둠 속성 표식#1019#을 발동하면 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -133267,10 +133309,13 @@
                 {
                     "id": 515713,
                     "name": "Aura of Unity",
+                    "nameCN": "同谐气场",
+                    "nameJP": "サビキ釣り",
+                    "nameKR": "조화로운 기세",
                     "desc": "Each Umbra Trekker in the squad increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> and all Umbra Trekkers' &Param3& by <color=#ec6d21>&Param4&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descCN": "队伍中每1名暗系角色，使花铃的&Param1&提升<color=#ec6d21>&Param2&</color>，全队暗系角色的&Param3&提升<color=#ec6d21>&Param4&</color>。",
+                    "descJP": "チーム内に闇属性巡遊者が1名存在するごとに、カリンは&Param1&が<color=#ec6d21>&Param2&</color>増加し、チーム全体の闇属性巡遊者の&Param3&が<color=#ec6d21>&Param4&</color>増加する。",
+                    "descKR": "팀 내 어둠 속성 캐릭터 1명마다 카린의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, 팀 전체 어둠 속성 캐릭터의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Umbra DMG (base)"
@@ -133313,10 +133358,13 @@
                 {
                     "id": 515710,
                     "name": "Hunting Suppression",
+                    "nameCN": "狩猎压制",
+                    "nameJP": "素潜り漁",
+                    "nameKR": "사냥 제압",
                     "desc": "When Karin triggers ##Umbra Mark#1019# on a target with ##Hunter's Mark#4046#, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "花铃对附带##猎标#4046#的目标触发##暗系印记#1019#时，花铃的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "カリンは##デスデス#4046#が付与された敵に##闇属性の印#1019#を発動させた時、&Param3&秒間、カリンの&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "카린이 ##사냥 표식#4046#을 보유한 목표에게 ##어둠 속성 표식#1019#을 발동하면, 카린의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ELEMENTTYPE_:(Umbra) Auto Attack DMG"
@@ -133357,10 +133405,13 @@
                 {
                     "id": 515712,
                     "name": "Pursuit of the Shadow",
+                    "nameCN": "猎影追踪",
+                    "nameJP": "シャークチェイス",
+                    "nameKR": "그림자 추적",
                     "desc": "Karin can dodge one more time. When dodging, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descCN": "闪避技能次数增加1次。闪避时，花铃的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
+                    "descJP": "カリンの回避の発動可能回数が1回増加する。\u000b回避時、&Param3&秒間、カリンの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "회피 횟수가 1회 증가한다. 회피 시 카린의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -133399,10 +133450,13 @@
                 {
                     "id": 515741,
                     "name": "Unyielding Spirit",
+                    "nameCN": "不屈的精神",
+                    "nameJP": "渦潮",
+                    "nameKR": "불굴의 정신",
                     "desc": "Increases the &Param1& dealt by Shark Assault (Ultimate) to elite or higher-tier targets by <color=#ec6d21>&Param2&</color>. Increases Karin's &Param3& by <color=#ec6d21>&Param4&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descCN": "绝招「狂鲨强袭」对精英及以上目标造成的&Param1&提升<color=#ec6d21>&Param2&</color>。花铃的&Param3&提升<color=#ec6d21>&Param4&</color>。",
+                    "descJP": "カリンの必殺技がエリート以上の敵に与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。\nカリンの&Param3&が<color=#ec6d21>&Param4&</color>上昇する。",
+                    "descKR": "필살기 「분노한 상어의 습격」이 정예 이상 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. 카린의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -133441,10 +133495,13 @@
                 {
                     "id": 515742,
                     "name": "Deep-Sea Conflict",
+                    "nameCN": "绝海的斗争",
+                    "nameJP": "ディープシー",
+                    "nameKR": "외딴 바다의 투쟁",
                     "desc": "While Shark Assault (Ultimate) is active, shoots <color=#ec6d21>&Param1&</color> bubbles every once in a while, each bubble dealing <color=#ec6d21>&Param2&</color> of ATK as AoE Umbra Ultimate DMG and triggering ##Umbra Mark#1019#. Increases Karin's &Param3& by <color=#ec6d21>&Param4&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Ultimate) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descCN": "绝招「狂鲨强袭」期间，每隔一段时间喷出<color=#ec6d21>&Param1&</color>个水泡，每个水泡造成攻击力<color=#ec6d21>&Param2&</color>的范围暗系绝招伤害并触发##暗系印记#1019#。花铃的&Param3&提升<color=#ec6d21>&Param4&</color>。",
+                    "descJP": "カリンの必殺技発動中、持続的に泡を<color=#ec6d21>&Param1&</color>つ噴射して範囲内に攻撃力の<color=#ec6d21>&Param2&</color>の闇属性の必殺技ダメージを与え、##闇属性の印#1019#を発動させることができる。\nカリンの&Param3&が<color=#ec6d21>&Param4&</color>増加する。",
+                    "descKR": "필살기 「분노한 상어의 습격」 기간 중 일정 시간마다 물방울 <color=#ec6d21>&Param1&</color>개를 분출한다. 각 물방울은 공격력 <color=#ec6d21>&Param2&</color>의 어둠 속성 범위 필살기 피해를 입히며, ##어둠 속성 표식#1019#을 발동한다. 카린의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Ultimate (from Ultimate)"
                     ],
@@ -133481,10 +133538,13 @@
                 {
                     "id": 515743,
                     "name": "Self-Transcend",
+                    "nameCN": "自我的超越",
+                    "nameJP": "海底火山",
+                    "nameKR": "자아 초월",
                     "desc": "When casting Shark Assault (Ultimate), increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s. Increases Karin's &Param4& by <color=#ec6d21>&Param5&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
+                    "descCN": "施放绝招「狂鲨强袭」时，花铃的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。花铃的&Param4&提升<color=#ec6d21>&Param5&</color>",
+                    "descJP": "カリンの必殺技発動時、&Param3&秒間、カリンの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。\u000bカリンの&Param4&が<color=#ec6d21>&Param5&</color>上昇する。",
+                    "descKR": "필살기 「분노한 상어의 습격」 시전 시, 카린의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다. 카린의 &Param4_kr1& <color=#ec6d21>&Param5&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)",
@@ -133532,10 +133592,13 @@
                 {
                     "id": 515721,
                     "name": "Shark's Phantom",
+                    "nameCN": "巨鲨连影",
+                    "nameJP": "ギガシャーク",
+                    "nameKR": "거대 상어의 잔상",
                     "desc": "Boss Shark summoned by Raging Sea (Support Skill) can repeatedly bite the target, dealing <color=#0abec5>extra instances</color> of DMG to large targets.",
-                    "descCN": "undefined",
-                    "descJP": "undefined",
-                    "descKR": "undefined",
+                    "descCN": "援护技「怒海翻腾」的「鲨老大」可连续撕咬，对大型目标造成<color=#0abec5>额外次数</color>的伤害。",
+                    "descJP": "支援スキルのサメ大将が連続で丸呑み攻撃を行うようになる。サイズの大きい敵には、与えるダメージ回数が<color=#0abec5>より多く</color>なる。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」의 「상어 대장」이 연속으로 물어뜯어, 대형 목표에게 <color=#0abec5>추가 횟수</color>의 피해를 입힌다.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -133551,10 +133614,13 @@
                 {
                     "id": 515722,
                     "name": "Dark Bite Mark",
+                    "nameCN": "猎咬暗痕",
+                    "nameJP": "ダークバイト",
+                    "nameKR": "물어뜯은 흔적",
                     "desc": "Boss Shark summoned by Raging Sea (Support Skill) leaves bite marks for 1s when dealing DMG. When Boss Shark deals DMG to a target with a bite mark, it detonates the bite mark, dealing <color=#0abec5>&Param1&</color> of ATK as single-target Umbra Ultimate DMG and triggering ##Umbra Mark#1019#.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+                    "descCN": "援护技「怒海翻腾」的「鲨老大」造成伤害时产生齿痕，持续1秒。「鲨老大」对存在齿痕的目标造成伤害时，可引爆齿痕造成攻击力<color=#0abec5>&Param1&</color>的单体暗系绝招伤害并触发##暗系印记#1019#。",
+                    "descJP": "支援スキルのサメ大将がダメージを与えた時、1秒間持続する、噛み跡を付与する。サメ大将は噛み跡が付与されている敵にダメージを与えた時、噛み跡が爆発し、単体に攻撃力の<color=#0abec5>&Param1&</color>の闇属性の必殺技ダメージを与え、##闇属性の印#1019#を発動させることができる。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」의 「상어 대장」이 피해를 입히면 이빨 자국을 생성한다. 1초간 지속된다. 「상어 대장」이 이빨 자국을 보유한 목표에게 피해를 입히면 이빨 자국을 폭발시켜 공격력 <color=#0abec5>&Param1&</color>의 어둠 속성 단일 필살기 피해를 입히며, ##어둠 속성 표식#1019#을 발동한다.",
                     "damageType": [
                         "Ultimate (from Skill, scale with Skill)"
                     ],
@@ -133578,10 +133644,13 @@
                 {
                     "id": 515723,
                     "name": "Tidal Lash",
+                    "nameCN": "怒涛鞭策",
+                    "nameJP": "ハニーウィップ",
+                    "nameKR": "성난 파도의 채찍질",
                     "desc": "When casting Raging Sea (Support Skill), Karin can swing additional chains, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Skill DMG.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "descCN": "援护技「怒海翻腾」可额外挥舞更多锁链，额外挥动的锁链造成攻击力<color=#0abec5>&Param1&</color>的暗系范围技能伤害。",
+                    "descJP": "カリンの支援スキルは、より多くの鎖を振り回すようになり、追加の鎖は範囲内に攻撃力の<color=#0abec5>&Param1&</color>の闇属性のスキルダメージを与える。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」가 더 많은 사슬을 추가로 휘두른다. 추가로 휘두른 사슬이 공격력 <color=#0abec5>&Param1&</color>의 어둠 속성 범위 스킬 피해를 입힌다.",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -133605,10 +133674,13 @@
                 {
                     "id": 515724,
                     "name": "Undercurrent Blast",
+                    "nameCN": "暗流震爆",
+                    "nameJP": "アンダーサージ",
+                    "nameKR": "암류의 충격",
                     "desc": "When Karin swings the chain to deal DMG during Raging Sea (Support Skill), triggers explosions that deal <color=#0abec5>&Param1&</color> of ATK as AoE Umbra Skill DMG and triggering ##Umbra Mark#1019#. This effect can be triggered up to <color=#0abec5>4</color> times per chain swing.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "descCN": "援护技「怒海翻腾」挥舞锁链造成伤害时产生爆炸，造成攻击力<color=#0abec5>&Param1&</color>的暗系范围技能伤害并触发##暗系印记#1019#。该效果每次挥动时最多触发<color=#0abec5>4</color>次。",
+                    "descJP": "カリンの支援スキルで鎖を振り回してダメージを与えた時、爆発を発生させて範囲内に攻撃力の<color=#0abec5>&Param1&</color>の闇属性のスキルダメージを与え、##闇属性の印#1019#を発動させることができる。この効果は鎖を1回振るごとに最大<color=#0abec5>4</color>回まで発動する。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」가 사슬을 휘둘러 피해를 입히면 폭파가 일어나 공격력 <color=#0abec5>&Param1&</color>의 어둠 속성 범위 스킬 피해를 입히며 ##어둠 속성 표식#1019#을 발동한다. 해당 효과는 휘두를 때마다 최대 <color=#0abec5>4</color>회 발동한다.",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -133634,10 +133706,13 @@
                 {
                     "id": 515725,
                     "name": "Ocean Aftershock",
+                    "nameCN": "大海余震",
+                    "nameJP": "アフターショック",
+                    "nameKR": "바다의 여진",
                     "desc": "Boss Shark summoned by Raging Sea (Support Skill) triggers bubble explosions along its charge path, with each explosion dealing <color=#ec6d21>&Param1&</color> of ATK as AoE Umbra Ultimate DMG and triggering ##Umbra Mark#1019#. Increases the &Param2& dealt by Boss Shark by <color=#ec6d21>&Param3&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "援护技「怒海翻腾」的「鲨老大」冲锋路径上会引发水泡爆炸，每次爆炸造成攻击力<color=#ec6d21>&Param1&</color>的暗系范围绝招伤害并触发##暗系印记#1019#。「鲨老大」造成的&Param2&提升<color=#ec6d21>&Param3&</color>",
+                    "descJP": "支援スキルのサメ大将の進路上に泡の爆発を引き起こし、爆発ごとに範囲内に攻撃力の<color=#ec6d21>&Param1&</color>の闇属性の必殺技ダメージを与え、##闇属性の印#1019#を発動させることができる。サメ大将が与える&Param2&が<color=#ec6d21>&Param3&</color>増加する。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」의 「상어 대장」 돌진 경로 위에 물방울 폭파가 일어난다. 폭파마다 공격력 <color=#ec6d21>&Param1&</color>의 어둠 속성 범위 필살기 피해를 입히며 ##어둠 속성 표식#1019#을 발동한다. 「상어 대장」이 입히는 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [
                         "Ultimate (from Skill)"
                     ],
@@ -133672,10 +133747,13 @@
                 {
                     "id": 515726,
                     "name": "Pack Pursuit",
+                    "nameCN": "同猎追击",
+                    "nameJP": "ジョイントハント",
+                    "nameKR": "협동 추격",
                     "desc": "When Boss Shark from Raging Sea (Support Skill) deals DMG, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "援护技「怒海翻腾」的「鲨老大」造成伤害时，花铃的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "支援スキルのサメ大将がダメージを与えた時、&Param3&秒間、カリンの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」의 「상어 대장」이 피해를 입히면 카린의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -133716,10 +133794,13 @@
                 {
                     "id": 515727,
                     "name": "Apex Dominance",
+                    "nameCN": "上位压制",
+                    "nameJP": "水の利",
+                    "nameKR": "우위 제압",
                     "desc": "Increases the &Param1& dealt by Boss Shark summoned by Raging Sea (Support Skill) to elite or lower-tier targets by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "援护技「怒海翻腾」的「鲨老大」对精英及以下目标造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "支援スキルのサメ大将がエリート以下の敵に与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」의 「상어 대장」이 정예 이하 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -133748,10 +133829,13 @@
                 {
                     "id": 515728,
                     "name": "Surging Rhythm",
+                    "nameCN": "汹涌节奏",
+                    "nameJP": "サージングリズム",
+                    "nameKR": "격동의 리듬",
                     "desc": "When Karin swings the chain to deal DMG during Raging Sea (Support Skill), increases the &Param1& dealt by subsequent chain hits of this skill by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "援护技「怒海翻腾」挥舞锁链造成伤害时，本次技能后续锁链造成的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "カリンの支援スキルで鎖を振り回してダメージを与えるたびに、&Param3&秒間、以降に放たれる鎖が与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」가 사슬을 휘둘러 피해를 입히면 이번 스킬 후속의 사슬이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -133792,10 +133876,13 @@
                 {
                     "id": 515730,
                     "name": "Undercurrent Surge",
+                    "nameCN": "暗流翻涌",
+                    "nameJP": "ダークウェイブ",
+                    "nameKR": "들끊는 암류",
                     "desc": "When any Umbra Trekker casts a Main Skill or Support Skill, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "任意暗系角色施放主控技或援护技时，花铃的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "チーム内の闇属性巡遊者が主力スキルまたは支援スキルを発動した時、&Param3&秒間、カリンの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "어둠 속성 캐릭터가 메인 스킬 또는 지원 스킬 시전 시, 카린의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -133836,10 +133923,13 @@
                 {
                     "id": 515731,
                     "name": "Awkward Inspiration",
+                    "nameCN": "别扭鼓舞",
+                    "nameJP": "航海士の心得",
+                    "nameKR": "쑥스러운 격려",
                     "desc": "Increases all Umbra Trekkers' &Param1& by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descCN": "全队暗系角色的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "チーム内の闇属性巡遊者の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "팀 전체 어둠 속성 캐릭터의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -133872,10 +133962,13 @@
                 {
                     "id": 515732,
                     "name": "Competitive Spirit",
+                    "nameCN": "竞争心理",
+                    "nameJP": "ライバル心",
+                    "nameKR": "경쟁심리",
                     "desc": "When casting Raging Sea (Support Skill), increases Karin's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descCN": "施放援护技「怒海翻腾」时，花铃的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
+                    "descJP": "カリンの支援スキル発動時、&Param3&秒間、カリンの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」 시전 시, 카린의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Umbra DMG (base)"
@@ -133912,10 +134005,13 @@
                 {
                     "id": 515729,
                     "name": "Against the Tide",
+                    "nameCN": "迎浪而上",
+                    "nameJP": "波に乗って",
+                    "nameKR": "파도를 거슬러",
                     "desc": "Increases the &Param1& dealt by chain swings during Raging Sea (Support Skill) to elite or higher-tier targets by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "援护技「怒海翻腾」挥舞锁链对精英及以上目标造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "カリンの支援スキルの鎖の振り回し攻撃がエリート以上の敵に与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "지원 스킬 「광폭한 바다의 파도」가 사슬을 휘둘러 정예 이상 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -133944,10 +134040,13 @@
                 {
                     "id": 515733,
                     "name": "Moonlit Bond",
+                    "nameCN": "月夜同色",
+                    "nameJP": "超深海層",
+                    "nameKR": "달빛에 물든 밤",
                     "desc": "For each Umbra Trekker in the squad, increases Karin's &Param1& by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descCN": "全队每1名暗系角色，提升花铃的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "チーム内に闇属性巡遊者が1名存在するごとに、カリンは&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "팀 전체 어둠 속성 캐릭터 1명마다 카린의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Umbra DMG (base)"
@@ -133985,10 +134084,13 @@
                 "boost": [
                     {
                         "name": "Ripples of Grace",
+                        "nameCN": "清波荡漾时",
+                        "nameJP": "波揺らぐ時",
+                        "nameKR": "맑은 물결 일렁일 때",
                         "desc": "When any Trekker applies an ##Umbra Mark#1019# on a target, increases Karin's Ultimate DMG by <color=#0abec5>&Param1&</color> for &Param2&s, up to &Param3& stacks.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descCN": "任意角色对目标附加##暗系印记#1019#后，花铃的绝招伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，可叠加&Param3&层。",
+                        "descJP": "チーム内の巡遊者が敵に##闇属性の印#1019#を付与した後、&Param2&秒間、カリンの必殺技ダメージが<color=#0abec5>&Param1&</color>増加する。この効果は&Param3&回まで重複できる。",
+                        "descKR": "캐릭터가 목표에게 ##어둠 속성 표식#1019#을 부여한 후, 카린의 필살기 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속되며, 최대 &Param3&스택 중첩된다.",
                         "effectType": [
                             "ELEMENTTYPE_:(Umbra) Ultimate DMG"
                         ],
@@ -134017,10 +134119,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -134038,10 +134143,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -134059,10 +134167,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -134080,10 +134191,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -134101,10 +134215,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
@@ -134122,10 +134239,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -134143,10 +134263,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -134164,10 +134287,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -134185,10 +134311,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -134206,10 +134335,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
@@ -134232,10 +134364,13 @@
                 "boost": [
                     {
                         "name": "Ocean's Echo",
+                        "nameCN": "远海的潮鸣",
+                        "nameJP": "遠海からの潮鳴り",
+                        "nameKR": "먼 바다의 파도 소리",
                         "desc": "When Karin deals Auto Attack DMG or Ultimate DMG, increases her Crit DMG by <color=#0abec5>&Param1&</color> for &Param2&s.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descCN": "花铃造成普攻或绝招伤害时，暴击伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
+                        "descJP": "カリンが通常攻撃または必殺技ダメージを与えた時、&Param2&秒間、会心ダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "카린이 일반 공격 또는 필살기 피해를 입힌 후 치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -134260,10 +134395,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -134281,10 +134419,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -134302,10 +134443,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -134323,10 +134467,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -134344,10 +134491,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
@@ -134365,10 +134515,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -134386,10 +134539,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -134407,10 +134563,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -134428,10 +134587,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -134449,10 +134611,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
@@ -134475,10 +134640,13 @@
                 "boost": [
                     {
                         "name": "Twilight's End",
+                        "nameCN": "霞光落幕处",
+                        "nameJP": "夕陽沈む地",
+                        "nameKR": "노을빛 내리는 곳",
                         "desc": "When Karin triggers an Umbra Mark, increases her Auto Attack DMG by <color=#0abec5>&Param1&</color> and Ultimate DMG by <color=#0abec5>&Param2&</color> for &Param3&s.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "descCN": "花铃触发暗系印记后，普攻伤害提升<color=#0abec5>&Param1&</color>，绝招伤害提升<color=#0abec5>&Param2&</color>，持续&Param3&秒。",
+                        "descJP": "カリンが闇属性の印を発動させた後の&Param3&秒間、通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加し、必殺技ダメージが<color=#0abec5>&Param2&</color>増加する。",
+                        "descKR": "카린이 어둠 속성 표식을 발동한 후 일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가하고, 필살기 피해가 <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속된다.",
                         "effectType": [
                             "ELEMENTTYPE_:(Umbra) Auto Attack DMG",
                             "ELEMENTTYPE_:(Umbra) Ultimate DMG"
@@ -134508,10 +134676,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -134529,10 +134700,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -134550,10 +134724,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -134571,10 +134748,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -134592,10 +134772,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
@@ -134613,10 +134796,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -134634,10 +134820,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -134655,10 +134844,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -134676,10 +134868,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -134697,10 +134892,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
@@ -134723,10 +134921,13 @@
                 "boost": [
                     {
                         "name": "Calm Summer Night",
+                        "nameCN": "静驻在夏夜",
+                        "nameJP": "夏夜に佇みて",
+                        "nameKR": "여름밤에 머무르며",
                         "desc": "When Karin casts her Ultimate, increases her ATK by <color=#0abec5>&Param1&</color> for &Param2&s.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descCN": "花铃施放绝招后，攻击力提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
+                        "descJP": "カリンが必殺技発動後、&Param2&秒間、攻撃力が<color=#0abec5>&Param1&</color>上昇する。",
+                        "descKR": "카린이 필살기를 시전한 후 공격력이 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -134751,10 +134952,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -134772,10 +134976,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -134793,10 +135000,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -134814,10 +135024,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -134835,10 +135048,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
@@ -134856,10 +135072,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -134877,10 +135096,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -134898,10 +135120,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -134919,10 +135144,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -134940,10 +135168,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
@@ -134966,10 +135197,13 @@
                 "boost": [
                     {
                         "name": "Heart as Waves",
+                        "nameCN": "海浪似我心",
+                        "nameJP": "波寄せる心",
+                        "nameKR": "내 마음 같은 파도",
                         "desc": "Increases Karin's Umbra DMG dealt to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descCN": "花铃对精英及以上目标造成的暗系伤害提升<color=#0abec5>&Param1&</color>。",
+                        "descJP": "カリンはエリート以上の敵に与える闇属性ダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "카린이 정예 및 이상 목표에게 입히는 어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [],
                         "addAttrType": [
                             "Umbra DMG (base)"
@@ -134987,10 +135221,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -135008,10 +135245,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -135029,10 +135269,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -135050,10 +135293,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -135071,10 +135317,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
@@ -135092,10 +135341,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -135113,10 +135365,13 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
+                        "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -135134,10 +135389,13 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -135155,10 +135413,13 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
+                        "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -135176,10 +135437,13 @@
                     },
                     {
                         "name": "Umbra DMG Boost",
+                        "nameCN": "暗系伤害提升",
+                        "nameJP": "闇属性ダメージ強化",
+                        "nameKR": "어둠 속성 피해 증가",
                         "desc": "Increases Umbra DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "暗系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "闇属性ダメージが<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "어둠 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Umbra DMG (base)"
                         ],
