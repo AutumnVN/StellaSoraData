@@ -2681,5 +2681,472 @@
     "LeaveTriggerEvent": "amb_900001_all_stop",
     "IntroCutscene": "fx_m31301_base_Spawn",
     "LevelScript": "AIScript.LevelAndGroupController.Level.JiJuXieLevelController_Lv1"
+  },
+  "301401": {
+    "Id": 301401,
+    "MonsterLv": 1,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_008_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_14_008_A_01_Mir_N1",
+    "Mir": true,
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301402": {
+    "Id": 301402,
+    "MonsterLv": 2,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_001_B_01",
+    "ConfigPrefabName": "StoryActivity_14_001_B_01_N2_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301403": {
+    "Id": 301403,
+    "MonsterLv": 2,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_012_A_01",
+    "ConfigPrefabName": "StoryActivity_14_012_A_01_N2_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301404": {
+    "Id": 301404,
+    "MonsterLv": 3,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_016_B_01",
+    "ConfigPrefabName": "StoryActivity_14_016_B_01_N3_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301405": {
+    "Id": 301405,
+    "MonsterLv": 3,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_018_A_01",
+    "ConfigPrefabName": "StoryActivity_14_018_A_01_N3_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301406": {
+    "Id": 301406,
+    "MonsterLv": 4,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_002_D_06",
+    "ConfigPrefabName": "StoryActivity_14_002_D_06_N4",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301407": {
+    "Id": 301407,
+    "MonsterLv": 5,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_001_B_01",
+    "ConfigPrefabName": "StoryActivity_14_001_B_01_N5_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301408": {
+    "Id": 301408,
+    "MonsterLv": 5,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_008_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_14_008_A_01_Mir_N5_2",
+    "Mir": true,
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301409": {
+    "Id": 301409,
+    "MonsterLv": 6,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_012_A_01",
+    "ConfigPrefabName": "StoryActivity_14_012_A_01_N6_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301410": {
+    "Id": 301410,
+    "MonsterLv": 6,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_016_B_01",
+    "ConfigPrefabName": "StoryActivity_14_016_B_01_N6_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301411": {
+    "Id": 301411,
+    "MonsterLv": 7,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_018_A_01",
+    "ConfigPrefabName": "StoryActivity_14_018_A_01_N7_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301412": {
+    "Id": 301412,
+    "MonsterLv": 7,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_015_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_14_015_B_01_Mir_N7_2",
+    "Mir": true,
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301413": {
+    "Id": 301413,
+    "MonsterLv": 8,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_022_B_02",
+    "ConfigPrefabName": "StoryActivity_14_022_B_02_N8_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301414": {
+    "Id": 301414,
+    "MonsterLv": 8,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_003_B_06",
+    "ConfigPrefabName": "StoryActivity_14_003_B_06_N8_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301415": {
+    "Id": 301415,
+    "MonsterLv": 8,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_004_A_06",
+    "ConfigPrefabName": "StoryActivity_14_004_A_06_N8_3",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301416": {
+    "Id": 301416,
+    "MonsterLv": 9,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_011_B_06_Mir",
+    "ConfigPrefabName": "StoryActivity_14_011_B_06_Mir_N9",
+    "Mir": true,
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301417": {
+    "Id": 301417,
+    "MonsterLv": 10,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_003_B_06",
+    "ConfigPrefabName": "StoryActivity_14_003_B_06_N10_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301418": {
+    "Id": 301418,
+    "MonsterLv": 10,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_006_B_02",
+    "ConfigPrefabName": "StoryActivity_14_006_B_02_N10_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301419": {
+    "Id": 301419,
+    "MonsterLv": 11,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_020_A_06",
+    "ConfigPrefabName": "StoryActivity_14_020_A_06_N11_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301420": {
+    "Id": 301420,
+    "MonsterLv": 11,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_024_D_06",
+    "ConfigPrefabName": "StoryActivity_14_024_D_06_N11_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301421": {
+    "Id": 301421,
+    "MonsterLv": 12,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_001",
+    "ConfigPrefabName": "StoryActivity_14_DaShiLaiMu_N12",
+    "Theme": 103,
+    "BGM": "roguelike_combatShilaimu_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301422": {
+    "Id": 301422,
+    "MonsterLv": 13,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_008_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_14_008_A_01_Mir_H1",
+    "Mir": true,
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301423": {
+    "Id": 301423,
+    "MonsterLv": 14,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_001_B_01",
+    "ConfigPrefabName": "StoryActivity_14_001_B_01_H2_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301424": {
+    "Id": 301424,
+    "MonsterLv": 14,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_012_A_01",
+    "ConfigPrefabName": "StoryActivity_14_012_A_01_H2_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301425": {
+    "Id": 301425,
+    "MonsterLv": 15,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_011_B_06_Mir",
+    "ConfigPrefabName": "StoryActivity_14_011_B_06_Mir_H3",
+    "Mir": true,
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301426": {
+    "Id": 301426,
+    "MonsterLv": 16,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_016_B_01",
+    "ConfigPrefabName": "StoryActivity_14_016_B_01_H4_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301427": {
+    "Id": 301427,
+    "MonsterLv": 16,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_018_A_01",
+    "ConfigPrefabName": "StoryActivity_14_018_A_01_H4_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301428": {
+    "Id": 301428,
+    "MonsterLv": 17,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_004_A_06",
+    "ConfigPrefabName": "StoryActivity_14_004_A_06_H5",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301429": {
+    "Id": 301429,
+    "MonsterLv": 18,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_022_B_02",
+    "ConfigPrefabName": "StoryActivity_14_022_B_02_H6_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301430": {
+    "Id": 301430,
+    "MonsterLv": 18,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_020_A_06",
+    "ConfigPrefabName": "StoryActivity_14_020_A_06_H6_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301431": {
+    "Id": 301431,
+    "MonsterLv": 18,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_024_D_06",
+    "ConfigPrefabName": "StoryActivity_14_024_D_06_H6_3",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301432": {
+    "Id": 301432,
+    "MonsterLv": 19,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_003_B_06",
+    "ConfigPrefabName": "StoryActivity_14_003_B_06_H7_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301433": {
+    "Id": 301433,
+    "MonsterLv": 19,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_006_B_02",
+    "ConfigPrefabName": "StoryActivity_14_006_B_02_H7_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301434": {
+    "Id": 301434,
+    "MonsterLv": 20,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_001",
+    "ConfigPrefabName": "StoryActivity_14_DaShiLaiMu_H8",
+    "Theme": 103,
+    "BGM": "roguelike_combatShilaimu_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301435": {
+    "Id": 301435,
+    "MonsterLv": 21,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_022_B_02",
+    "ConfigPrefabName": "StoryActivity_14_022_B_02_C1_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301436": {
+    "Id": 301436,
+    "MonsterLv": 21,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_020_A_06",
+    "ConfigPrefabName": "StoryActivity_14_020_A_06_C1_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301437": {
+    "Id": 301437,
+    "MonsterLv": 22,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_015_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_14_015_B_01_Mir_C2_1",
+    "Mir": true,
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301438": {
+    "Id": 301438,
+    "MonsterLv": 22,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_002_D_06",
+    "ConfigPrefabName": "StoryActivity_14_002_D_06_C2_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301439": {
+    "Id": 301439,
+    "MonsterLv": 23,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_003_B_06",
+    "ConfigPrefabName": "StoryActivity_14_003_B_06_C3_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301440": {
+    "Id": 301440,
+    "MonsterLv": 23,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_004_A_06",
+    "ConfigPrefabName": "StoryActivity_14_004_A_06_C3_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301441": {
+    "Id": 301441,
+    "MonsterLv": 23,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_024_D_06",
+    "ConfigPrefabName": "StoryActivity_14_024_D_06_C3_3",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301442": {
+    "Id": 301442,
+    "MonsterLv": 24,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_001",
+    "ConfigPrefabName": "StoryActivity_14_DaShiLaiMu_C4",
+    "Theme": 103,
+    "BGM": "roguelike_combatShilaimu_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301443": {
+    "Id": 301443,
+    "MonsterLv": 91,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_022_B_02",
+    "ConfigPrefabName": "StoryActivity_14_022_B_02_Story_1",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301444": {
+    "Id": 301444,
+    "MonsterLv": 92,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_003_B_06",
+    "ConfigPrefabName": "StoryActivity_14_003_B_06_Story_2",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301445": {
+    "Id": 301445,
+    "MonsterLv": 93,
+    "SceneName": "Levels/StoryActivity/StoryActivity_14/StoryActivity_14_004_A_06",
+    "ConfigPrefabName": "StoryActivity_14_004_A_06_Story_3",
+    "Theme": 466,
+    "BGM": "rogueWater_combatChallenge_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301446": {
+    "Id": 301446,
+    "MonsterLv": 7,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_MiniBoss_001",
+    "ConfigPrefabName": "StoryActivity_14_DaShiLaiMu_Story_4",
+    "Theme": 103,
+    "BGM": "roguelike_combatShilaimu_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
   }
 }

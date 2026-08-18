@@ -2,6 +2,7 @@
   "1": {
     "Id": 1,
     "MonsterId": 6400110,
+    "SummonLevelUp": true,
     "FloorId": 10011,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_001",
@@ -13,6 +14,7 @@
   "2": {
     "Id": 2,
     "MonsterId": 6400120,
+    "SummonLevelUp": true,
     "FloorId": 10012,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_002",
@@ -24,6 +26,7 @@
   "3": {
     "Id": 3,
     "MonsterId": 6400130,
+    "SummonLevelUp": true,
     "FloorId": 10013,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_003",
@@ -35,6 +38,7 @@
   "1001": {
     "Id": 1001,
     "MonsterId": 6400110,
+    "SummonLevelUp": true,
     "FloorId": 10011,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_001",
@@ -46,6 +50,7 @@
   "1002": {
     "Id": 1002,
     "MonsterId": 6400120,
+    "SummonLevelUp": true,
     "FloorId": 10012,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_002",
@@ -57,6 +62,7 @@
   "1003": {
     "Id": 1003,
     "MonsterId": 6400130,
+    "SummonLevelUp": true,
     "FloorId": 10013,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_003",
@@ -67,29 +73,8 @@
   },
   "2003": {
     "Id": 2003,
-    "MonsterId": 6400110,
-    "FloorId": 10011,
-    "ScoreGetSwitchGroup": 1001,
-    "ClueIcon": "Icon/TraceHunt/TraceClue_001",
-    "TargetIcon": "Icon/TraceHunt/TraceTarget_001",
-    "ProfileIcon": "Icon/TraceHunt/TraceProfile_001",
-    "HeadIcon": "Icon/TraceHunt/TraceHead_001",
-    "Image": "Icon/TraceHunt/TraceImage_001"
-  },
-  "2004": {
-    "Id": 2004,
-    "MonsterId": 6400120,
-    "FloorId": 10012,
-    "ScoreGetSwitchGroup": 1001,
-    "ClueIcon": "Icon/TraceHunt/TraceClue_002",
-    "TargetIcon": "Icon/TraceHunt/TraceTarget_002",
-    "ProfileIcon": "Icon/TraceHunt/TraceProfile_002",
-    "HeadIcon": "Icon/TraceHunt/TraceHead_002",
-    "Image": "Icon/TraceHunt/TraceImage_002"
-  },
-  "2005": {
-    "Id": 2005,
     "MonsterId": 6400130,
+    "SummonLevelUp": true,
     "FloorId": 10013,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_003",
@@ -98,9 +83,34 @@
     "HeadIcon": "Icon/TraceHunt/TraceHead_003",
     "Image": "Icon/TraceHunt/TraceImage_003"
   },
+  "2004": {
+    "Id": 2004,
+    "MonsterId": 6500210,
+    "SummonLevelUp": true,
+    "FloorId": 10021,
+    "ScoreGetSwitchGroup": 1001,
+    "ClueIcon": "Icon/TraceHunt/TraceClue_004",
+    "TargetIcon": "Icon/TraceHunt/TraceTarget_004",
+    "ProfileIcon": "Icon/TraceHunt/TraceProfile_004",
+    "HeadIcon": "Icon/TraceHunt/TraceHead_004",
+    "Image": "Icon/TraceHunt/TraceImage_004"
+  },
+  "2005": {
+    "Id": 2005,
+    "MonsterId": 6500220,
+    "SummonLevelUp": true,
+    "FloorId": 10022,
+    "ScoreGetSwitchGroup": 1001,
+    "ClueIcon": "Icon/TraceHunt/TraceClue_005",
+    "TargetIcon": "Icon/TraceHunt/TraceTarget_005",
+    "ProfileIcon": "Icon/TraceHunt/TraceProfile_005",
+    "HeadIcon": "Icon/TraceHunt/TraceHead_005",
+    "Image": "Icon/TraceHunt/TraceImage_005"
+  },
   "3005": {
     "Id": 3005,
     "MonsterId": 6400110,
+    "SummonLevelUp": true,
     "FloorId": 10011,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_001",
@@ -112,6 +122,7 @@
   "3006": {
     "Id": 3006,
     "MonsterId": 6400120,
+    "SummonLevelUp": true,
     "FloorId": 10012,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_002",
@@ -123,6 +134,7 @@
   "3007": {
     "Id": 3007,
     "MonsterId": 6400130,
+    "SummonLevelUp": true,
     "FloorId": 10013,
     "ScoreGetSwitchGroup": 1001,
     "ClueIcon": "Icon/TraceHunt/TraceClue_003",
