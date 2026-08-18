@@ -955,5 +955,95 @@
       2080501,
       2080502
     ]
+  },
+  "3030102": {
+    "Id": 3030102,
+    "Type": 1,
+    "GoalType": [
+      21
+    ],
+    "InitShow": true,
+    "PoolType": true,
+    "ItemPool": 30301
+  },
+  "3030202": {
+    "Id": 3030202,
+    "Type": 1,
+    "GoalType": [
+      21
+    ],
+    "InitShow": true
+  },
+  "3030302": {
+    "Id": 3030302,
+    "Type": 1,
+    "GoalType": [
+      131
+    ],
+    "InitShow": true
+  },
+  "3030402": {
+    "Id": 3030402,
+    "Type": 1,
+    "GoalType": [
+      221
+    ],
+    "InitShow": true,
+    "PoolType": true,
+    "ItemPool": 30301
+  },
+  "3040102": {
+    "Id": 3040102,
+    "Type": 1,
+    "GoalType": [
+      22
+    ],
+    "InitShow": true,
+    "MoveX": 200,
+    "PoolType": true,
+    "ItemPool": 30401,
+    "ActiveCond": 2,
+    "SpawnParam": [
+      3040102
+    ]
+  },
+  "3040202": {
+    "Id": 3040202,
+    "Type": 1,
+    "GoalType": [
+      222
+    ],
+    "InitShow": true,
+    "MoveX": 300
+  },
+  "3060102": {
+    "Id": 3060102,
+    "Type": 1,
+    "GoalType": [
+      423
+    ],
+    "InitShow": true
+  },
+  "3060203": {
+    "Id": 3060203,
+    "Type": 1,
+    "GoalType": [
+      231
+    ],
+    "InitShow": true,
+    "MoveX": 320,
+    "PoolType": true,
+    "ItemPool": 30602
+  },
+  "3060303": {
+    "Id": 3060303,
+    "Type": 1,
+    "GoalType": [
+      32
+    ],
+    "InitShow": true,
+    "MoveX": 320,
+    "PoolType": true,
+    "ItemPool": 30601
   }
 }

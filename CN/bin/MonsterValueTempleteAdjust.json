@@ -21060,7 +21060,7 @@
   },
   "3140001": {
     "Id": 3140001,
-    "TemplateId": 273,
+    "TemplateId": 279,
     "EET": 7,
     "WERFix": 570,
     "FERFix": 570,
@@ -21071,7 +21071,7 @@
   },
   "3140002": {
     "Id": 3140002,
-    "TemplateId": 273,
+    "TemplateId": 279,
     "EET": 7,
     "WERFix": 570,
     "FERFix": 570,
@@ -21082,7 +21082,7 @@
   },
   "3140003": {
     "Id": 3140003,
-    "TemplateId": 274,
+    "TemplateId": 280,
     "EET": 7,
     "WERFix": 570,
     "FERFix": 570,
@@ -21093,7 +21093,7 @@
   },
   "3140004": {
     "Id": 3140004,
-    "TemplateId": 274,
+    "TemplateId": 280,
     "EET": 7,
     "WERFix": 570,
     "FERFix": 570,
@@ -21104,7 +21104,7 @@
   },
   "3140005": {
     "Id": 3140005,
-    "TemplateId": 275,
+    "TemplateId": 281,
     "EET": 7,
     "WERFix": 570,
     "FERFix": 570,
@@ -21115,18 +21115,20 @@
   },
   "3140007": {
     "Id": 3140007,
-    "TemplateId": 275,
+    "TemplateId": 281,
     "EET": 7,
+    "HpRatio": 2500,
     "WERFix": 570,
     "FERFix": 570,
     "SERFix": 570,
     "AERFix": 570,
     "LERFix": 570,
-    "DERFix": 570
+    "DERFix": 570,
+    "ToughnessRatio": 2500
   },
   "3140008": {
     "Id": 3140008,
-    "TemplateId": 276,
+    "TemplateId": 282,
     "EET": 7,
     "WERFix": 570,
     "FERFix": 570,
@@ -21137,7 +21139,7 @@
   },
   "3140009": {
     "Id": 3140009,
-    "TemplateId": 276,
+    "TemplateId": 283,
     "EET": 7,
     "WERFix": 570,
     "FERFix": 570,
@@ -21148,18 +21150,20 @@
   },
   "3140010": {
     "Id": 3140010,
-    "TemplateId": 276,
+    "TemplateId": 284,
     "EET": 7,
+    "HpRatio": 27500,
     "WERFix": 570,
     "FERFix": 570,
     "SERFix": 570,
     "AERFix": 570,
     "LERFix": 570,
-    "DERFix": 570
+    "DERFix": 570,
+    "ToughnessRatio": 27500
   },
   "3140012": {
     "Id": 3140012,
-    "TemplateId": 276,
+    "TemplateId": 284,
     "EET": 7,
     "WERFix": 570,
     "FERFix": 570,
@@ -24973,6 +24977,39 @@
   "6400130": {
     "Id": 6400130,
     "TemplateId": 9202,
+    "EET": 7,
+    "WERFix": 750,
+    "FERFix": 750,
+    "SERFix": 750,
+    "AERFix": 750,
+    "LERFix": 750,
+    "DERFix": 750
+  },
+  "6500210": {
+    "Id": 6500210,
+    "TemplateId": 9203,
+    "EET": 7,
+    "WERFix": 750,
+    "FERFix": 750,
+    "SERFix": 750,
+    "AERFix": 750,
+    "LERFix": 750,
+    "DERFix": 750
+  },
+  "6500220": {
+    "Id": 6500220,
+    "TemplateId": 9203,
+    "EET": 7,
+    "WERFix": 750,
+    "FERFix": 750,
+    "SERFix": 750,
+    "AERFix": 750,
+    "LERFix": 750,
+    "DERFix": 750
+  },
+  "6500221": {
+    "Id": 6500221,
+    "TemplateId": 9204,
     "EET": 7,
     "WERFix": 750,
     "FERFix": 750,

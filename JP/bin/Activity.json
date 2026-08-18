@@ -120,6 +120,21 @@
     "EndTime": "2026-08-18T03:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_103001_lang"
   },
+  "103003": {
+    "Id": 103003,
+    "SortId": 5,
+    "ActivityType": 21,
+    "Name": "紧急悬赏",
+    "PreLimit": 1,
+    "LimitParam": "3",
+    "PlayCond": 1,
+    "PlayCondParams": "3",
+    "StartType": 2,
+    "StartTime": "2026-09-01T04:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-08T03:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_103001_lang"
+  },
   "301001": {
     "Id": 301001,
     "SortId": 3,
@@ -448,6 +463,17 @@
     "EndTime": "2026-07-21T10:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_sidestory"
   },
+  "201015": {
+    "Id": 201015,
+    "SortId": 14,
+    "ActivityType": 13,
+    "Name": "诺瓦异闻-特丽莎",
+    "StartType": 2,
+    "StartTime": "2026-08-29T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-08T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_sidestory"
+  },
   "400000": {
     "Id": 400000,
     "MidGroupId": 10100,
@@ -642,6 +668,19 @@
     "BannerRes": "banner_activity_400014_lang",
     "TabBgRes": "Icon/Banner/tab_activity_400014_lang"
   },
+  "400015": {
+    "Id": 400015,
+    "MidGroupId": 10110,
+    "SortId": 5,
+    "ActivityType": 19,
+    "Name": "豪礼抛物线第3期",
+    "ActivityThemeType": 17,
+    "StartType": 2,
+    "StartTime": "2026-08-18T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-01T04:00:00+08:00",
+    "MiniGameRedDot": 1100304
+  },
   "500001": {
     "Id": 500001,
     "SortId": 6,
@@ -783,6 +822,22 @@
     "StartTime": "2026-08-11T12:00:00+08:00",
     "EndType": 2,
     "EndTime": "2026-08-18T11:00:00+08:00",
+    "BannerRes": "banner_activity_05",
+    "TabBgRes": "Icon/Banner/tab_activity_05"
+  },
+  "500010": {
+    "Id": 500010,
+    "SortId": 6,
+    "ActivityType": 14,
+    "Name": "BD兑换活动",
+    "PreLimit": 1,
+    "LimitParam": "10",
+    "PlayCond": 1,
+    "PlayCondParams": "10",
+    "StartType": 2,
+    "StartTime": "2026-09-01T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-08T11:00:00+08:00",
     "BannerRes": "banner_activity_05",
     "TabBgRes": "Icon/Banner/tab_activity_05"
   },
@@ -1213,6 +1268,28 @@
     "EndType": 2,
     "EndTime": "2026-08-25T10:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_trial_133"
+  },
+  "700127": {
+    "Id": 700127,
+    "SortId": 7,
+    "ActivityType": 6,
+    "Name": "浅试身手-花铃",
+    "StartType": 2,
+    "StartTime": "2026-08-18T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-08T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_trial_157_lang"
+  },
+  "700128": {
+    "Id": 700128,
+    "SortId": 7,
+    "ActivityType": 6,
+    "Name": "浅试身手-冬香",
+    "StartType": 2,
+    "StartTime": "2026-09-01T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-22T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_trial_134"
   },
   "1010001": {
     "Id": 1010001,
@@ -1990,5 +2067,102 @@
     "StartTime": "2026-07-21T12:00:00+08:00",
     "EndType": 2,
     "EndTime": "2026-08-11T10:59:59+08:00"
+  },
+  "1011001": {
+    "Id": 1011001,
+    "MidGroupId": 10110,
+    "SortId": 8,
+    "ActivityType": 9,
+    "Name": "花铃战斗关卡",
+    "ActivityThemeType": 17,
+    "StartType": 2,
+    "StartTime": "2026-08-18T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-01T04:00:00+08:00"
+  },
+  "1011002": {
+    "Id": 1011002,
+    "MidGroupId": 10110,
+    "SortId": 10,
+    "ActivityType": 17,
+    "Name": "花铃活动剧情",
+    "ActivityThemeType": 17,
+    "StartType": 2,
+    "StartTime": "2026-08-18T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-01T04:00:00+08:00"
+  },
+  "1011003": {
+    "Id": 1011003,
+    "MidGroupId": 10110,
+    "SortId": 11,
+    "ActivityType": 11,
+    "Name": "花铃活动任务",
+    "ActivityThemeType": 17,
+    "StartType": 2,
+    "StartTime": "2026-08-18T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-08T10:59:59+08:00"
+  },
+  "1011004": {
+    "Id": 1011004,
+    "MidGroupId": 10110,
+    "SortId": 12,
+    "ActivityType": 12,
+    "Name": "花铃活动商店",
+    "ActivityThemeType": 17,
+    "StartType": 2,
+    "StartTime": "2026-08-18T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-08T10:59:59+08:00"
+  },
+  "3010301": {
+    "Id": 3010301,
+    "MidGroupId": 30103,
+    "SortId": 5,
+    "ActivityType": 15,
+    "Name": "缭乱碎晶球第三期",
+    "ActivityThemeType": 19,
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-09-01T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-08T10:59:59+08:00",
+    "EnterRes": "Icon/Banner/banner_activity_30103_m_lang"
+  },
+  "3010302": {
+    "Id": 3010302,
+    "MidGroupId": 30103,
+    "SortId": 11,
+    "ActivityType": 11,
+    "Name": "缭乱碎晶球任务",
+    "ActivityThemeType": 19,
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-09-01T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-11T03:59:59+08:00"
+  },
+  "3010303": {
+    "Id": 3010303,
+    "MidGroupId": 30103,
+    "SortId": 12,
+    "ActivityType": 12,
+    "Name": "缭乱碎晶球商店",
+    "ActivityThemeType": 19,
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-09-01T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-11T03:59:59+08:00"
   }
 }

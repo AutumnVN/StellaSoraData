@@ -83,5 +83,39 @@
     "Icon": "Icon/Skill/11501_Skill_Main",
     "Attribute": 99782115,
     "Level": 1
+  },
+  "15701": {
+    "Id": 15701,
+    "CharId": 15701,
+    "Name": "BreakOutCharacter.15701.1",
+    "EET": 6,
+    "Model": "Actor/Character/15701/15701_Actor",
+    "ModelScale": 12500,
+    "Faction": 1,
+    "FCAIAction": "AIScript.BrickBreaker._15701.Action",
+    "FCComboGroup": "Character/15701/BreakOut/Combo/ComboGroup_BO_157",
+    "SkillId": 8215701,
+    "MP": 150,
+    "SkillCD": 20,
+    "Icon": "Icon/Skill/15701_Skill_Main",
+    "Attribute": 99782157,
+    "Level": 1
+  },
+  "16001": {
+    "Id": 16001,
+    "CharId": 16001,
+    "Name": "BreakOutCharacter.16001.1",
+    "EET": 1,
+    "Model": "Actor/Character/16001/16001_Actor",
+    "ModelScale": 12500,
+    "Faction": 1,
+    "FCAIAction": "AIScript.BrickBreaker._16001.Action",
+    "FCComboGroup": "Character/16001/BreakOut/Combo/ComboGroup_BO_160",
+    "SkillId": 8216001,
+    "MP": 150,
+    "SkillCD": 20,
+    "Icon": "Icon/Skill/16001_Skill_Main",
+    "Attribute": 99782160,
+    "Level": 1
   }
 }

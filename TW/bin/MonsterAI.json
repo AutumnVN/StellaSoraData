@@ -213,6 +213,30 @@
     "ActionAIPath": "AIScript.Monster.Activity.BreakOut.Action_2_8_ChuanSong",
     "ThinkInterval": 2000
   },
+  "8210321": {
+    "Id": 8210321,
+    "ComboGroupPath": "Monster/50241ShiZiDao/Combo/ComboGroup_Fire",
+    "SpawnShowSkillId": 9999989,
+    "DieSkillId": 9999990,
+    "ActionAIPath": "AIScript.Monster.Activity.BreakOut.Action_3_Common",
+    "ThinkInterval": 2000
+  },
+  "8210331": {
+    "Id": 8210331,
+    "ComboGroupPath": "Monster/50051DanZhuTouShou/Combo/Wind/ComboGroup_BreakOut",
+    "SpawnShowSkillId": 9999989,
+    "DieSkillId": 9999990,
+    "ActionAIPath": "AIScript.Monster.Activity.BreakOut.Action_3_Common",
+    "ThinkInterval": 2000
+  },
+  "8210381": {
+    "Id": 8210381,
+    "ComboGroupPath": "Monster/50051DanZhuTouShou/Combo/Wind/ComboGroup_BreakOut",
+    "SpawnShowSkillId": 9999989,
+    "DieSkillId": 9999990,
+    "ActionAIPath": "AIScript.Monster.Activity.BreakOut.Action_3_Boss",
+    "ThinkInterval": 2000
+  },
   "1000399": {
     "Id": 1000399,
     "ComboGroupPath": "Monster/10003ShuZhuangShu/Combo/ComboGroup",
@@ -3765,6 +3789,15 @@
     "ParallelAIPath": "AIScript.Monster._50081DaShiLaiMu.Parallel",
     "CheckAchievement": true
   },
+  "5008113": {
+    "Id": 5008113,
+    "ComboGroupPath": "Monster/50081DaShiLaiMu/Combo/ComboGroup_FixedRogueLikeStageOne",
+    "SpawnShowSkillId": 5008101,
+    "DieSkillId": 5008192,
+    "ActionAIPath": "AIScript.Monster._50081DaShiLaiMu.Action_Lv3",
+    "ThinkInterval": 2000,
+    "ParallelAIPath": "AIScript.Monster._50081DaShiLaiMu.Activity14.Parallel"
+  },
   "5008111": {
     "Id": 5008111,
     "ComboGroupPath": "Monster/50081DaShiLaiMu/Combo/ComboGroup_FixedRogueLikeStageOne",
@@ -5121,6 +5154,14 @@
     ],
     "ThinkInterval": 2000
   },
+  "5091202": {
+    "Id": 5091202,
+    "ComboGroupPath": "Monster/99101ColumnTrap/Combo/99101ZhuziTrap_ComboGroup",
+    "ActionBranchIds": [
+      509120201
+    ],
+    "ThinkInterval": 2000
+  },
   "5091301": {
     "Id": 5091301,
     "ComboGroupPath": "Monster/99101ColumnTrap/Combo/99101ZhuziTrap_ComboGroup",
@@ -5150,6 +5191,14 @@
     "ComboGroupPath": "Monster/31302ZhangYuPaoTai/Combo/ComboGroup",
     "ActionBranchIds": [
       509150101
+    ],
+    "ThinkInterval": 2000
+  },
+  "5091601": {
+    "Id": 5091601,
+    "ComboGroupPath": "Monster/99101ColumnTrap/Combo/99101ZhuziTrap_ComboGroup",
+    "ActionBranchIds": [
+      509160101
     ],
     "ThinkInterval": 2000
   },
@@ -9874,6 +9923,14 @@
     "ActionAIPath": "AIScript.Monster._Wind._50301MaoDa.Wind_Action_Lv2",
     "ThinkInterval": 2000
   },
+  "5030161": {
+    "Id": 5030161,
+    "ComboGroupPath": "Monster/50301MaoDa/Combo/Wind/ComboGroup_Wind",
+    "SpawnShowSkillId": 5030101,
+    "DieSkillId": 5030100,
+    "ActionAIPath": "AIScript.Monster._Wind._50301MaoDa.Wind_Action_Lv2_TraceHunt",
+    "ThinkInterval": 2000
+  },
   "5030102": {
     "Id": 5030102,
     "ComboGroupPath": "Monster/50301MaoDa/Combo/Wind/ComboGroup_Wind_Nuji",
@@ -11228,8 +11285,9 @@
     "ComboGroupPath": "Monster/31301JiJuXie/Combo/ComboGroup",
     "SpawnShowSkillId": 3130101,
     "DieSkillId": 3130102,
-    "ActionAIPath": "AIScript.Monster._31301JiJuXie.Action",
-    "ThinkInterval": 2000
+    "ActionAIPath": "AIScript.Monster._31301JiJuXie.Action_BossRush",
+    "ThinkInterval": 2000,
+    "ParallelAIPath": "AIScript.Monster._31301JiJuXie.Parrallel_BossRush"
   },
   "3130104": {
     "Id": 3130104,
@@ -11284,6 +11342,51 @@
     "ActionAIPath": "AIScript.Monster._31301JiJuXie.Action_UltraTornado",
     "ThinkInterval": 2000,
     "ParallelAIPath": "AIScript.Monster._31301JiJuXie.Parallel_UltraTornado"
+  },
+  "3130110": {
+    "Id": 3130110,
+    "ComboGroupPath": "Monster/31302ZhangYuPaoTai/Combo/ComboGroup",
+    "SpawnShowSkillId": 3130130,
+    "DieSkillId": 3130131,
+    "ActionAIPath": "AIScript.Monster._31301JiJuXie.Action_OctopusBattery_BossRush",
+    "ThinkInterval": 2000,
+    "ParallelAIPath": "AIScript.Monster._31301JiJuXie.Parallel_OctopusBattery_BossRush"
+  },
+  "3130111": {
+    "Id": 3130111,
+    "ComboGroupPath": "Monster/31303ZhiBingJi/Combo/ComboGroup",
+    "SpawnShowSkillId": 3130126,
+    "DieSkillId": 3130129,
+    "ActionAIPath": "AIScript.Monster._31301JiJuXie.Action_IceMaker_BossRush",
+    "ThinkInterval": 2000,
+    "ParallelAIPath": "AIScript.Monster._31301JiJuXie.Parallel_IceMaker"
+  },
+  "3130112": {
+    "Id": 3130112,
+    "ComboGroupPath": "Monster/31301JiJuXie/Combo/ComboGroup",
+    "SpawnShowSkillId": 3130117,
+    "DieSkillId": 3130119,
+    "ActionAIPath": "AIScript.Monster._31301JiJuXie.Action_TraceTornado_BossRush",
+    "ThinkInterval": 2000,
+    "ParallelAIPath": "AIScript.Monster._31301JiJuXie.Parallel_TraceTornado"
+  },
+  "3130113": {
+    "Id": 3130113,
+    "ComboGroupPath": "Monster/31301JiJuXie/Combo/ComboGroup",
+    "SpawnShowSkillId": 3130120,
+    "DieSkillId": 3130122,
+    "ActionAIPath": "AIScript.Monster._31301JiJuXie.Action_DashTornado_BossRush",
+    "ThinkInterval": 2000,
+    "ParallelAIPath": "AIScript.Monster._31301JiJuXie.Parallel_DashTornado"
+  },
+  "3130114": {
+    "Id": 3130114,
+    "ComboGroupPath": "Monster/31301JiJuXie/Combo/ComboGroup",
+    "SpawnShowSkillId": 3130123,
+    "DieSkillId": 3130125,
+    "ActionAIPath": "AIScript.Monster._31301JiJuXie.Action_SplitTornado_BossRush",
+    "ThinkInterval": 2000,
+    "ParallelAIPath": "AIScript.Monster._31301JiJuXie.Parallel_SplitTornado"
   },
   "11601111": {
     "Id": 11601111,

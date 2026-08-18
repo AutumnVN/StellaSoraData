@@ -1189,6 +1189,41 @@
     "Rewards": "{\"2\":30}",
     "PicSource": "Icon/MapEpisode/ep_character_15603"
   },
+  "15701": {
+    "Id": 15701,
+    "Char": 157,
+    "Name": "Plot.15701.1",
+    "Desc": "Plot.15701.2",
+    "AvgId": "CG_157_01",
+    "PlotType": 1,
+    "UnlockAffinityLevel": 1,
+    "Rewards": "{\"2\":30}",
+    "PicSource": "Icon/MapEpisode/ep_character_15701"
+  },
+  "15702": {
+    "Id": 15702,
+    "Char": 157,
+    "Name": "Plot.15702.1",
+    "Desc": "Plot.15702.2",
+    "AvgId": "CG_157_02",
+    "PlotType": 1,
+    "PrePlot": 15701,
+    "UnlockAffinityLevel": 5,
+    "Rewards": "{\"2\":30}",
+    "PicSource": "Icon/MapEpisode/ep_character_15702"
+  },
+  "15703": {
+    "Id": 15703,
+    "Char": 157,
+    "Name": "Plot.15703.1",
+    "Desc": "Plot.15703.2",
+    "AvgId": "CG_157_03",
+    "PlotType": 1,
+    "PrePlot": 15702,
+    "UnlockAffinityLevel": 10,
+    "Rewards": "{\"2\":30}",
+    "PicSource": "Icon/MapEpisode/ep_character_15703"
+  },
   "15801": {
     "Id": 15801,
     "Char": 158,
