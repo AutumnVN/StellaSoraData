@@ -339,5 +339,36 @@
     "Param4": "BuffValue,NoLevel,631020010,Time,10K",
     "Param5": "EffectValue,NoLevel,631020012,EffectTypeParam1,HdPct",
     "Value1": "1"
+  },
+  "100021": {
+    "Id": 100021,
+    "Name": "ScoreBossAbility.100021.1",
+    "Desc": "ScoreBossAbility.100021.2",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_019",
+    "ScriptID": [
+      "100021"
+    ],
+    "Param1": "BuffValue,NoLevel,631021010,LaminatedNum,Fixed",
+    "Param2": "EffectValue,NoLevel,631021011,EffectTypeParam1,HdPct",
+    "Param3": "ScoreBossAbility,NoLevel,100021,Value3,Fixed",
+    "Param4": "EffectValue,NoLevel,631021021,EffectTypeParam1,HdPct",
+    "Param5": "EffectValue,NoLevel,631021022,EffectTypeParam1,HdPct",
+    "Param6": "BuffValue,NoLevel,631021020,LaminatedNum,Fixed",
+    "Value3": "4"
+  },
+  "100022": {
+    "Id": 100022,
+    "Name": "ScoreBossAbility.100022.1",
+    "Desc": "ScoreBossAbility.100022.2",
+    "IconSource": "Icon/MonsterSkill/Bossrush/Icon_Bossrush_Teshujizhi_020",
+    "ScriptID": [
+      "100022"
+    ],
+    "Param1": "EffectValue,NoLevel,631021032,EffectTypeParam1,HdPct",
+    "Param2": "EffectValue,NoLevel,631021031,EffectTypeParam1,HdPct",
+    "Param3": "BuffValue,NoLevel,631021040,Time,10K",
+    "Param4": "BuffValue,NoLevel,631021040,LaminatedNum,Fixed",
+    "Param5": "BuffValue,NoLevel,631021030,Time,10K",
+    "Param6": "BuffValue,NoLevel,631021030,LaminatedNum,Fixed"
   }
 }
