@@ -32,6 +32,7 @@ jobs:
 
         git fetch upstream
         git fetch --all --prune
+        git merge --allow-unrelated-histories -X theirs --no-edit upstream/main
 
         SCRIPTS=(arena.js ascension.js blitz.js character.js characterid.js disc.js duel.js gacha.js ground.js item.js raid.js word.js)
         for script in "${SCRIPTS[@]}"; do
