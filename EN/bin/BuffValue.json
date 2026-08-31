@@ -17187,6 +17187,61 @@
     "ReplaceType": true,
     "ReplaceMode": true
   },
+  "631021010": {
+    "Id": 631021010,
+    "Sort": 99,
+    "Effects": [
+      631021011
+    ],
+    "Time": -10000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "631021020": {
+    "Id": 631021020,
+    "Sort": 99,
+    "Effects": [
+      631021021,
+      631021022
+    ],
+    "Time": -10000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "631021030": {
+    "Id": 631021030,
+    "Effects": [
+      631021031
+    ],
+    "Time": 100000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "631021040": {
+    "Id": 631021040,
+    "Effects": [
+      631021032
+    ],
+    "Time": 40000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
   "100090310": {
     "Id": 100090310,
     "Sort": 99,
