@@ -1141,6 +1141,36 @@
     "GachaL2D": "Actor2D/Character/12001/12001_LF.prefab",
     "EffectScaleValue": 10000
   },
+  "12003": {
+    "Id": 12003,
+    "Name": "CharacterSkin.12003.1",
+    "Desc": "CharacterSkin.12003.2",
+    "CharId": 120,
+    "Type": 3,
+    "SourceDesc": 7,
+    "SkinExtraTag": [
+      4
+    ],
+    "Transform": "{\"1\":100}",
+    "WalkAnimationSpd": 20000,
+    "RunAnimationSpd": 60625,
+    "SpRunAnimationSpd": 85625,
+    "ModelScale": 12500,
+    "ColliderScale": 10000,
+    "ModelShowScale": 10000,
+    "ModelEndScale": 10000,
+    "Icon": "Icon/Head/head_12003",
+    "Portrait": "Actor2D/Character/12003/12003_a.spriteatlas",
+    "Bg": "Image/CharBg/wog_academy_corridor",
+    "Offset": "Actor2D/Character/12003/12003.asset",
+    "L2D": "Actor2D/Character/12003/12003_L.prefab",
+    "CharacterCG": 12001,
+    "Model": "Actor/Character/12001/12001_Actor",
+    "Model_Show": "Actor/Character/12001/Timeline/12001_Ready",
+    "Model_End": "Actor/Character/12001/Timeline/12001_Victory",
+    "GachaL2D": "Actor2D/Character/12001/12001_LF.prefab",
+    "EffectScaleValue": 10000
+  },
   "12301": {
     "Id": 12301,
     "Name": "CharacterSkin.12301.1",
