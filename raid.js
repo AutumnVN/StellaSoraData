@@ -1,4 +1,5 @@
 const { writeFileSync } = require('fs');
+const ACTIVITY = require('./EN/bin/Activity.json');
 const JOINTDRILLAFFIX = require('./EN/bin/JointDrillAffix.json');
 const JOINTDRILLCONTROL = require('./EN/bin/JointDrillControl.json');
 const JOINTDRILLLEVEL = require('./EN/bin/JointDrillLevel.json');
@@ -21,9 +22,12 @@ for (const drillId in JOINTDRILLCONTROL) {
     const drillLevelGroupId = JOINTDRILLCONTROL[drillId].DrillLevelGroupId;
     const drillLevels = [...Object.values(JOINTDRILLLEVEL), ...Object.values(JOINTDRILL_2_LEVEL)].filter(level => level.DrillLevelGroupId === drillLevelGroupId);
     drillLevels.forEach(level => typeof level.BossId === 'number' && (level.BossId = [level.BossId]));
+    const season = drillLevelGroupId % 51000;
 
     raid[drillLevelGroupId] = {
-        name: `[${LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId[0]].FAId].MonsterManual].Name]}] ${LANG_JOINTDRILLLEVEL[drillLevels[0].SubName] || LANG_JOINTDRILL_2_LEVEL[drillLevels[0].SubName]}`,
+        id: drillLevelGroupId,
+        name: `[${LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId[0]].FAId].MonsterManual].Name]}] ${LANG_JOINTDRILLLEVEL[drillLevels[0].SubName] || LANG_JOINTDRILL_2_LEVEL[drillLevels[0].SubName]} S${season}`,
+        season,
         icon: MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId[0]].FAId].MonsterManual].Icon.split('/').pop(),
         icons: drillLevels[0].BossId.length > 1 && drillLevels[0].BossId.map(bossId => MONSTERMANUAL[MONSTERSKIN[MONSTER[bossId].FAId].MonsterManual].Icon.split('/').pop()) || undefined,
         type: MONSTER_EPIC_TYPE[MONSTER[drillLevels[0].BossId[0]].EpicLv],

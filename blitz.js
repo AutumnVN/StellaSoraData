@@ -1,5 +1,6 @@
 const { writeFileSync } = require('fs');
 const SCOREBOSSLEVEL = require('./EN/bin/ScoreBossLevel.json');
+const SCOREBOSSCONTROL = require('./EN/bin/ScoreBossControl.json');
 const SCOREBOSSGETCONTROL = require('./EN/bin/ScoreBossGetControl.json');
 const SCOREBOSSABILITY = require('./EN/bin/ScoreBossAbility.json');
 const SCOREGETSWITCH = require('./EN/bin/ScoreGetSwitch.json');
@@ -37,10 +38,12 @@ for (const id in SCOREBOSSLEVEL) {
     const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust?.TemplateId)?.[0];
     const monsterAttributeContact = MONSTERATTRIBUTECONTACT[scoreBossLevel.MonsterId];
     const monsterValueTemplateModify = Object.values(MONSTERVALUETEMPLETEMODIFY).filter(modify => modify.GroupId === monsterAttributeContact?.GroupId);
+    const season = Object.values(SCOREBOSSCONTROL).find(season => season.LevelGroup.includes(+id))?.Id;
 
     blitz[id] = {
         id: scoreBossLevel.MonsterId,
-        name: LANG_MONSTERMANUAL[monsterManual?.Name] || `${scoreBossLevel.MonsterId}`,
+        name: `${LANG_MONSTERMANUAL[monsterManual?.Name] || `${scoreBossLevel.MonsterId}`} S${season}`,
+        season,
         icon: scoreBossLevel.Image.split('/').pop(),
         type: MONSTER_EPIC_TYPE[monster?.EpicLv],
         mechanic: [
