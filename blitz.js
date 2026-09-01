@@ -42,7 +42,7 @@ for (const id in SCOREBOSSLEVEL) {
 
     blitz[id] = {
         id: scoreBossLevel.MonsterId,
-        name: `${LANG_MONSTERMANUAL[monsterManual?.Name] || `${scoreBossLevel.MonsterId}`} S${season}`,
+        name: LANG_MONSTERMANUAL[monsterManual?.Name] || `${scoreBossLevel.MonsterId}`,
         season,
         icon: scoreBossLevel.Image.split('/').pop(),
         type: MONSTER_EPIC_TYPE[monster?.EpicLv],

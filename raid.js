@@ -26,7 +26,7 @@ for (const drillId in JOINTDRILLCONTROL) {
 
     raid[drillLevelGroupId] = {
         id: drillLevelGroupId,
-        name: `[${LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId[0]].FAId].MonsterManual].Name]}] ${LANG_JOINTDRILLLEVEL[drillLevels[0].SubName] || LANG_JOINTDRILL_2_LEVEL[drillLevels[0].SubName]} S${season}`,
+        name: `[${LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId[0]].FAId].MonsterManual].Name]}] ${LANG_JOINTDRILLLEVEL[drillLevels[0].SubName] || LANG_JOINTDRILL_2_LEVEL[drillLevels[0].SubName]}`,
         season,
         icon: MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId[0]].FAId].MonsterManual].Icon.split('/').pop(),
         icons: drillLevels[0].BossId.length > 1 && drillLevels[0].BossId.map(bossId => MONSTERMANUAL[MONSTERSKIN[MONSTER[bossId].FAId].MonsterManual].Icon.split('/').pop()) || undefined,
