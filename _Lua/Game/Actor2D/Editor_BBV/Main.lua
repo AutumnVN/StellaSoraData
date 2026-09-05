@@ -1,1 +1,0 @@
-RUNNING_BBV_EDITOR = true
