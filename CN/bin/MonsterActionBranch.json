@@ -9667,8 +9667,8 @@
     "InitialCDPool": [
       150000
     ],
-    "ReleaseDistance": 150000,
-    "ReleaseAngle": 3600000,
+    "ReleaseDistance": 80000,
+    "ReleaseAngle": 150000,
     "TraceDuration": 50000,
     "ActiveConditionType1": 3,
     "ActiveParam1": "6",
@@ -9876,6 +9876,20 @@
     ],
     "ReleaseDistance": 990000,
     "ReleaseAngle": 3600000,
+    "TraceDuration": 50000,
+    "Activate": true
+  },
+  "130030116": {
+    "Id": 130030116,
+    "GroupId": 1,
+    "SkillId": 9999999,
+    "Weight": 1,
+    "Rate": 10000,
+    "InitialCDPool": [
+      0
+    ],
+    "ReleaseDistance": 150000,
+    "ReleaseAngle": 150000,
     "TraceDuration": 50000,
     "Activate": true
   },
@@ -17386,6 +17400,31 @@
     "Weight": 1,
     "Rate": 10000,
     "CD": 50000,
+    "ReleaseDistance": 30000,
+    "ReleaseAngle": 450000,
+    "TraceDuration": 50000,
+    "Activate": true
+  },
+  "13700011": {
+    "Id": 13700011,
+    "GroupId": 13700011,
+    "SkillId": 9999999,
+    "Priority": 5,
+    "Weight": 1,
+    "Rate": 10000,
+    "CD": 150000,
+    "ReleaseDistance": 30000,
+    "ReleaseAngle": 450000,
+    "TraceDuration": 50000,
+    "Activate": true
+  },
+  "13700012": {
+    "Id": 13700012,
+    "GroupId": 13700012,
+    "SkillId": 13732001,
+    "Priority": 1,
+    "Weight": 1,
+    "Rate": 10000,
     "ReleaseDistance": 30000,
     "ReleaseAngle": 450000,
     "TraceDuration": 50000,

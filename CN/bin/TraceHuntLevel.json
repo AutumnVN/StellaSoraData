@@ -4,7 +4,10 @@
     "Exp": 50,
     "WorldClass": 1,
     "MaxStar": 3,
-    "TokenRate": 100
+    "TokenRate": 100,
+    "DifficultyList": [
+      1
+    ]
   },
   "1": {
     "Level": 2,
@@ -12,6 +15,9 @@
     "WorldClass": 1,
     "MaxStar": 3,
     "TokenRate": 110,
+    "DifficultyList": [
+      1
+    ],
     "DisplayTokenRate": 10
   },
   "2": {
@@ -20,6 +26,9 @@
     "WorldClass": 1,
     "MaxStar": 3,
     "TokenRate": 110,
+    "DifficultyList": [
+      1
+    ],
     "DisplayLuckyRate": 5
   },
   "3": {
@@ -28,6 +37,9 @@
     "WorldClass": 1,
     "MaxStar": 3,
     "TokenRate": 120,
+    "DifficultyList": [
+      1
+    ],
     "DisplayTokenRate": 10
   },
   "4": {
@@ -36,6 +48,9 @@
     "WorldClass": 12,
     "MaxStar": 3,
     "TokenRate": 120,
+    "DifficultyList": [
+      1
+    ],
     "DisplayFreeRate": 3
   },
   "5": {
@@ -44,6 +59,9 @@
     "WorldClass": 12,
     "MaxStar": 4,
     "TokenRate": 130,
+    "DifficultyList": [
+      1
+    ],
     "DisplayMaxStar": 4,
     "DisplayTokenRate": 10
   },
@@ -53,6 +71,9 @@
     "WorldClass": 14,
     "MaxStar": 4,
     "TokenRate": 130,
+    "DifficultyList": [
+      1
+    ],
     "DisplayAddRate": 10
   },
   "7": {
@@ -61,6 +82,9 @@
     "WorldClass": 14,
     "MaxStar": 5,
     "TokenRate": 130,
+    "DifficultyList": [
+      1
+    ],
     "DisplayMaxStar": 5
   },
   "8": {
@@ -69,6 +93,9 @@
     "WorldClass": 14,
     "MaxStar": 5,
     "TokenRate": 130,
+    "DifficultyList": [
+      1
+    ],
     "DisplayLuckyRate": 5
   },
   "9": {
@@ -77,6 +104,9 @@
     "WorldClass": 14,
     "MaxStar": 5,
     "TokenRate": 150,
+    "DifficultyList": [
+      1
+    ],
     "DisplayTokenRate": 20
   },
   "10": {
@@ -85,6 +115,9 @@
     "WorldClass": 18,
     "MaxStar": 5,
     "TokenRate": 150,
+    "DifficultyList": [
+      1
+    ],
     "DisplayFreeRate": 3
   },
   "11": {
@@ -93,6 +126,9 @@
     "WorldClass": 18,
     "MaxStar": 6,
     "TokenRate": 150,
+    "DifficultyList": [
+      1
+    ],
     "DisplayMaxStar": 6
   },
   "12": {
@@ -101,6 +137,9 @@
     "WorldClass": 18,
     "MaxStar": 6,
     "TokenRate": 150,
+    "DifficultyList": [
+      1
+    ],
     "DisplayAddRate": 10
   },
   "13": {
@@ -109,6 +148,9 @@
     "WorldClass": 18,
     "MaxStar": 6,
     "TokenRate": 180,
+    "DifficultyList": [
+      1
+    ],
     "DisplayTokenRate": 30
   },
   "14": {
@@ -117,6 +159,9 @@
     "WorldClass": 22,
     "MaxStar": 6,
     "TokenRate": 180,
+    "DifficultyList": [
+      1
+    ],
     "DisplayLuckyRate": 5
   },
   "15": {
@@ -125,6 +170,9 @@
     "WorldClass": 22,
     "MaxStar": 7,
     "TokenRate": 180,
+    "DifficultyList": [
+      1
+    ],
     "DisplayMaxStar": 7
   },
   "16": {
@@ -133,6 +181,9 @@
     "WorldClass": 22,
     "MaxStar": 7,
     "TokenRate": 180,
+    "DifficultyList": [
+      1
+    ],
     "DisplayFreeRate": 3
   },
   "17": {
@@ -141,6 +192,9 @@
     "WorldClass": 22,
     "MaxStar": 7,
     "TokenRate": 220,
+    "DifficultyList": [
+      1
+    ],
     "DisplayTokenRate": 40
   },
   "18": {
@@ -148,7 +202,11 @@
     "Exp": 500,
     "WorldClass": 22,
     "MaxStar": 7,
-    "TokenRate": 220
+    "TokenRate": 220,
+    "DifficultyList": [
+      1,
+      2
+    ]
   },
   "19": {
     "Level": 20,
@@ -156,6 +214,10 @@
     "WorldClass": 22,
     "MaxStar": 7,
     "TokenRate": 260,
+    "DifficultyList": [
+      1,
+      2
+    ],
     "DisplayTokenRate": 40
   }
 }
