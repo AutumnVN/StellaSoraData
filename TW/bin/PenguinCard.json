@@ -1188,7 +1188,9 @@
     "TriggerParam": "[101]",
     "TriggerProbability": 50,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 1,
     "EffectParam": "{\"201\":100}",
@@ -1210,7 +1212,9 @@
     "TriggerParam": "[101]",
     "TriggerProbability": 50,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 2,
+    "TriggerLimitParam": [
+      2
+    ],
     "GrowthType": 1,
     "EffectType": 1,
     "EffectParam": "{\"201\":100}",
@@ -1232,7 +1236,9 @@
     "TriggerParam": "[101]",
     "TriggerProbability": 50,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 3,
+    "TriggerLimitParam": [
+      3
+    ],
     "GrowthType": 1,
     "EffectType": 1,
     "EffectParam": "{\"201\":100}",
@@ -1254,7 +1260,9 @@
     "TriggerParam": "[102]",
     "TriggerProbability": 50,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 1,
     "EffectParam": "{\"202\":100}",
@@ -1276,7 +1284,9 @@
     "TriggerParam": "[102]",
     "TriggerProbability": 50,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 2,
+    "TriggerLimitParam": [
+      2
+    ],
     "GrowthType": 1,
     "EffectType": 1,
     "EffectParam": "{\"202\":100}",
@@ -1298,7 +1308,9 @@
     "TriggerParam": "[102]",
     "TriggerProbability": 50,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 3,
+    "TriggerLimitParam": [
+      3
+    ],
     "GrowthType": 1,
     "EffectType": 1,
     "EffectParam": "{\"202\":100}",
@@ -1320,7 +1332,9 @@
     "TriggerParam": "[103]",
     "TriggerProbability": 50,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 1,
     "EffectParam": "{\"203\":100}",
@@ -1342,7 +1356,9 @@
     "TriggerParam": "[103]",
     "TriggerProbability": 50,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 2,
+    "TriggerLimitParam": [
+      2
+    ],
     "GrowthType": 1,
     "EffectType": 1,
     "EffectParam": "{\"203\":100}",
@@ -1364,7 +1380,9 @@
     "TriggerParam": "[103]",
     "TriggerProbability": 50,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 3,
+    "TriggerLimitParam": [
+      3
+    ],
     "GrowthType": 1,
     "EffectType": 1,
     "EffectParam": "{\"203\":100}",
@@ -2613,7 +2631,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 9,
     "EffectParam": "[20]",
@@ -2632,7 +2652,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 9,
     "EffectParam": "[30]",
@@ -2651,7 +2673,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 9,
     "EffectParam": "[40]",
@@ -2800,9 +2824,9 @@
     "GrowthTriggerPhase": 3,
     "GrowthTriggerType": 4,
     "GrowthTriggerParam": "[7,5,4]",
-    "GrowthEffectParam": "[0.5]",
+    "GrowthEffectParam": "[0.3]",
     "EffectType": 4,
-    "EffectParam": "[0.3]",
+    "EffectParam": "[0.2]",
     "Icon": "PengBuildCard_1540"
   },
   "16401": {
@@ -2822,9 +2846,9 @@
     "GrowthTriggerPhase": 3,
     "GrowthTriggerType": 4,
     "GrowthTriggerParam": "[3,2,1]",
-    "GrowthEffectParam": "[500]",
+    "GrowthEffectParam": "[300]",
     "EffectType": 3,
-    "EffectParam": "[300]",
+    "EffectParam": "[150]",
     "Icon": "PengBuildCard_1640"
   },
   "17401": {
@@ -3178,7 +3202,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[4101,5101,6101,9101,10101]",
@@ -3199,7 +3225,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 2,
+    "TriggerLimitParam": [
+      2
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[4101,5101,6101,9101,10101]",
@@ -3220,7 +3248,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 3,
+    "TriggerLimitParam": [
+      3
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[4101,5101,6101,9101,10101]",
@@ -3241,7 +3271,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[4201,5201,6201,9201,10201]",
@@ -3262,7 +3294,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 2,
+    "TriggerLimitParam": [
+      2
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[4201,5201,6201,9201,10201]",
@@ -3283,7 +3317,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 3,
+    "TriggerLimitParam": [
+      3
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[4201,5201,6201,9201,10201]",
@@ -3304,7 +3340,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[4301,5301,6301,9301,10301]",
@@ -3325,7 +3363,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 2,
+    "TriggerLimitParam": [
+      2
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[4301,5301,6301,9301,10301]",
@@ -3346,7 +3386,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 3,
+    "TriggerLimitParam": [
+      3
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[4301,5301,6301,9301,10301]",
@@ -3365,7 +3407,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 1,
+    "TriggerLimitParam": [
+      1
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[17401,18401,19401]",
@@ -3384,7 +3428,9 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 2,
+    "TriggerLimitParam": [
+      2
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[17401,18401,19401]",
@@ -3403,10 +3449,283 @@
     "TriggerType": 1,
     "TriggerProbability": 100,
     "TriggerLimit": 3,
-    "TriggerLimitParam": 3,
+    "TriggerLimitParam": [
+      3
+    ],
     "GrowthType": 1,
     "EffectType": 11,
     "EffectParam": "[17401,18401,19401]",
     "Icon": "PengBuildCard_600"
+  },
+  "100101": {
+    "Id": 100101,
+    "GroupId": 1001,
+    "Title": "PenguinCard.100101.1",
+    "Desc": "PenguinCard.100101.2",
+    "Rarity": 1,
+    "Level": 1,
+    "MaxLevel": 3,
+    "TriggerPhase": 11,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 12,
+    "EffectParam": "[-20]"
+  },
+  "100102": {
+    "Id": 100102,
+    "GroupId": 1001,
+    "Title": "PenguinCard.100102.1",
+    "Desc": "PenguinCard.100102.2",
+    "Rarity": 1,
+    "Level": 2,
+    "MaxLevel": 3,
+    "TriggerPhase": 11,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 12,
+    "EffectParam": "[-30]"
+  },
+  "100103": {
+    "Id": 100103,
+    "GroupId": 1001,
+    "Title": "PenguinCard.100103.1",
+    "Desc": "PenguinCard.100103.2",
+    "Rarity": 1,
+    "Level": 3,
+    "MaxLevel": 3,
+    "TriggerPhase": 11,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 12,
+    "EffectParam": "[-40]"
+  },
+  "100201": {
+    "Id": 100201,
+    "GroupId": 1002,
+    "Title": "PenguinCard.100201.1",
+    "Desc": "PenguinCard.100201.2",
+    "Rarity": 1,
+    "Level": 1,
+    "MaxLevel": 3,
+    "TriggerPhase": 11,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 15,
+    "EffectParam": "[-20]"
+  },
+  "100202": {
+    "Id": 100202,
+    "GroupId": 1002,
+    "Title": "PenguinCard.100202.1",
+    "Desc": "PenguinCard.100202.2",
+    "Rarity": 1,
+    "Level": 2,
+    "MaxLevel": 3,
+    "TriggerPhase": 11,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 15,
+    "EffectParam": "[-25]"
+  },
+  "100203": {
+    "Id": 100203,
+    "GroupId": 1002,
+    "Title": "PenguinCard.100203.1",
+    "Desc": "PenguinCard.100203.2",
+    "Rarity": 1,
+    "Level": 3,
+    "MaxLevel": 3,
+    "TriggerPhase": 11,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 15,
+    "EffectParam": "[-30]"
+  },
+  "100301": {
+    "Id": 100301,
+    "GroupId": 1003,
+    "Title": "PenguinCard.100301.1",
+    "Desc": "PenguinCard.100301.2",
+    "Rarity": 1,
+    "Level": 1,
+    "MaxLevel": 3,
+    "TriggerPhase": 11,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 13,
+    "EffectParam": "[1]"
+  },
+  "100302": {
+    "Id": 100302,
+    "GroupId": 1003,
+    "Title": "PenguinCard.100302.1",
+    "Desc": "PenguinCard.100302.2",
+    "Rarity": 1,
+    "Level": 2,
+    "MaxLevel": 3,
+    "TriggerPhase": 11,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 13,
+    "EffectParam": "[2]"
+  },
+  "100303": {
+    "Id": 100303,
+    "GroupId": 1003,
+    "Title": "PenguinCard.100303.1",
+    "Desc": "PenguinCard.100303.2",
+    "Rarity": 1,
+    "Level": 3,
+    "MaxLevel": 3,
+    "TriggerPhase": 11,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 13,
+    "EffectParam": "[3]"
+  },
+  "100401": {
+    "Id": 100401,
+    "GroupId": 1004,
+    "Title": "PenguinCard.100401.1",
+    "Desc": "PenguinCard.100401.2",
+    "Rarity": 1,
+    "Level": 1,
+    "MaxLevel": 3,
+    "TriggerPhase": 2,
+    "TriggerType": 5,
+    "TriggerParam": "[101,102,103]",
+    "TriggerProbability": 20,
+    "TriggerLimit": 5,
+    "TriggerLimitParam": [
+      1,
+      1
+    ],
+    "GrowthType": 1,
+    "EffectType": 1,
+    "EffectParam": "{\"104\":100}"
+  },
+  "100402": {
+    "Id": 100402,
+    "GroupId": 1004,
+    "Title": "PenguinCard.100402.1",
+    "Desc": "PenguinCard.100402.2",
+    "Rarity": 1,
+    "Level": 2,
+    "MaxLevel": 3,
+    "TriggerPhase": 2,
+    "TriggerType": 5,
+    "TriggerParam": "[101,102,103]",
+    "TriggerProbability": 20,
+    "TriggerLimit": 5,
+    "TriggerLimitParam": [
+      2,
+      1
+    ],
+    "GrowthType": 1,
+    "EffectType": 1,
+    "EffectParam": "{\"104\":100}"
+  },
+  "100403": {
+    "Id": 100403,
+    "GroupId": 1004,
+    "Title": "PenguinCard.100403.1",
+    "Desc": "PenguinCard.100403.2",
+    "Rarity": 1,
+    "Level": 3,
+    "MaxLevel": 3,
+    "TriggerPhase": 2,
+    "TriggerType": 5,
+    "TriggerParam": "[101,102,103]",
+    "TriggerProbability": 20,
+    "TriggerLimit": 5,
+    "TriggerLimitParam": [
+      3,
+      1
+    ],
+    "GrowthType": 1,
+    "EffectType": 1,
+    "EffectParam": "{\"104\":100}"
+  },
+  "100501": {
+    "Id": 100501,
+    "GroupId": 1005,
+    "Title": "PenguinCard.100501.1",
+    "Desc": "PenguinCard.100501.2",
+    "Rarity": 1,
+    "Level": 1,
+    "MaxLevel": 1,
+    "TriggerPhase": 12,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 17,
+    "EffectParam": "[1]"
+  },
+  "100601": {
+    "Id": 100601,
+    "GroupId": 1006,
+    "Title": "PenguinCard.100601.1",
+    "Desc": "PenguinCard.100601.2",
+    "Rarity": 1,
+    "Level": 1,
+    "MaxLevel": 3,
+    "TriggerPhase": 12,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 16,
+    "EffectParam": "[1,1]"
+  },
+  "100602": {
+    "Id": 100602,
+    "GroupId": 1006,
+    "Title": "PenguinCard.100602.1",
+    "Desc": "PenguinCard.100602.2",
+    "Rarity": 1,
+    "Level": 2,
+    "MaxLevel": 3,
+    "TriggerPhase": 12,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 16,
+    "EffectParam": "[1,1]"
+  },
+  "100603": {
+    "Id": 100603,
+    "GroupId": 1006,
+    "Title": "PenguinCard.100603.1",
+    "Desc": "PenguinCard.100603.2",
+    "Rarity": 1,
+    "Level": 3,
+    "MaxLevel": 3,
+    "TriggerPhase": 12,
+    "TriggerType": 1,
+    "TriggerProbability": 100,
+    "TriggerLimit": 1,
+    "GrowthType": 1,
+    "EffectType": 16,
+    "EffectParam": "[2,1]"
   }
 }
