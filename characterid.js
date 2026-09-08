@@ -1,6 +1,6 @@
 const { writeFileSync } = require('fs');
 
-const AVGCHARACTER_URL = 'https://github.com/MakoStar/StellaSoraData/raw/refs/heads/main/_Lua/Game/UI/Avg/_en/Preset/AvgCharacter.lua';
+const AVGCHARACTER_URL = 'https://github.com/MakoStar/ss-lua/raw/refs/heads/main/Lua/Game/UI/Avg/_en/Preset/AvgCharacter.lua';
 
 const characterId = {};
 
