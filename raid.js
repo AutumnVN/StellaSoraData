@@ -44,8 +44,7 @@ for (const drillId in JOINTDRILLCONTROL) {
             return {
                 name: LANG_UITEXT[`UIText.JointDrill_Difficulty_Name_${index + 1}.1`],
                 stat: level.BossId.map((bossId) => {
-                    if (!MONSTER[bossId]) return;
-                    return [bossId, bossId + 1].filter(bossId => MONSTER[bossId].EpicLv === 8).map(bossId => {
+                    return [bossId, bossId + 1].filter(bossId => MONSTER[bossId]?.EpicLv === 8).map(bossId => {
                         const monster = MONSTER[bossId];
                         const monsterValueTemplateAdjust = MONSTERVALUETEMPLETEADJUST[monster.Templete];
                         const monsterValueTemplate = Object.values(MONSTERVALUETEMPLETE).filter(templete => templete.TemplateId === monsterValueTemplateAdjust.TemplateId)[index];
