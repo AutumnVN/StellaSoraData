@@ -24,6 +24,8 @@ for (const drillId in JOINTDRILLCONTROL) {
     drillLevels.forEach(level => typeof level.BossId === 'number' && (level.BossId = [level.BossId]));
     const season = drillLevelGroupId % 51000;
 
+    if (!MONSTER[drillLevels[0].BossId[0]]) continue;
+
     raid[drillLevelGroupId] = {
         id: drillLevelGroupId,
         name: `[${LANG_MONSTERMANUAL[MONSTERMANUAL[MONSTERSKIN[MONSTER[drillLevels[0].BossId[0]].FAId].MonsterManual].Name]}] ${LANG_JOINTDRILLLEVEL[drillLevels[0].SubName] || LANG_JOINTDRILL_2_LEVEL[drillLevels[0].SubName]}`,
