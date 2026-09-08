@@ -283,6 +283,25 @@
     "EndType": 2,
     "EndTime": "2026-09-08T10:59:59+08:00"
   },
+  "18": {
+    "Id": 18,
+    "SortId": 18,
+    "PopUpType": 3,
+    "PopUpRes": "UI/MallPkgPopup/Popup_15",
+    "ScriptName": "OwnPopUp.MallPkgPopupCtrl",
+    "ScriptParams": "[\"pack.16_res\", \"pack.16_gift\", \"pack.16_disc_l\", \"pack.16_role_l\"]",
+    "PopRefreshType": 3,
+    "PopJumpType": 3,
+    "JumpToParams": 18,
+    "StartCondType": 71,
+    "StartCondParams": [
+      2
+    ],
+    "StartType": 2,
+    "StartTime": "2026-09-08T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-29T10:59:59+08:00"
+  },
   "1000": {
     "Id": 1000,
     "SortId": 1000,
@@ -466,6 +485,16 @@
     "PopRefreshType": 2,
     "PopJumpType": 2
   },
+  "1018": {
+    "Id": 1018,
+    "SortId": 1018,
+    "PopUpType": 2,
+    "ActivityId": 10111,
+    "PopUpRes": "UI_Activity/10111/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityCultivationManual_10111PopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
+  },
   "2005": {
     "Id": 2005,
     "SortId": 2005,
@@ -634,6 +663,27 @@
     "ActivityId": 900001,
     "PopUpRes": "UI_Activity/_900001/PopUp",
     "ScriptName": "ActivityPopUp.ActivitySoldierPopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
+  },
+  "2020": {
+    "Id": 2020,
+    "SortId": 2020,
+    "PopUpType": 1,
+    "ActivityId": 510007,
+    "PopUpRes": "UI_Activity/_510007/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityJointDrillPopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2,
+    "JumpToParams": 149
+  },
+  "2021": {
+    "Id": 2021,
+    "SortId": 3011,
+    "PopUpType": 1,
+    "ActivityId": 103004,
+    "PopUpRes": "UI_Activity/_103001/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityDoubleDrop_103001PopUpCtrl",
     "PopRefreshType": 2,
     "PopJumpType": 2
   }
