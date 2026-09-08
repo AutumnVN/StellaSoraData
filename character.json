@@ -89867,11 +89867,14 @@
         "normalAtk": {
             "id": 13710000,
             "name": "Tactical Combo",
+            "nameCN": "战术连式",
+            "nameJP": "エレガントチェイン",
+            "nameKR": "전술 콤보",
             "energyLimit": 5.93,
             "desc": "Quickly switches among multiple weapons to attack.\u000bStrike 1: <color=#ec6d21>&Param1&</color> of ATK as Ventus Auto Attack DMG.\u000bStrike 2: <color=#ec6d21>&Param2& x5</color> of ATK as Ventus Auto Attack DMG.\u000bStrike 3: <color=#ec6d21>&Param3& x5</color> of ATK as Ventus Auto Attack DMG.\u000bStrike 4: <color=#ec6d21>&Param4& x6</color> of ATK as Ventus Auto Attack DMG.\u000bStrike 5: <color=#ec6d21>&Param5& x7</color> of ATK as Ventus Auto Attack DMG.\u000bEleanor has ##Tactical Energy#4048#. She can automatically spend 10 ##Tactical Energy#4048# to activate Cross Slash, dealing <color=#ec6d21>&Param6&</color> of ATK as AoE Ventus Auto Attack DMG. Cross Slash can trigger ##Ventus Mark#1017# and create a Blossom, dealing &Param7& of ATK as AoE Ventus Mark DMG.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Auto Attack) \u000bParam5: &Param5& (HitDamage,Auto Attack) \u000bParam6: &Param6& (HitDamage,Auto Attack) \u000bParam7: &Param7& (HitDamage,Mark)",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Auto Attack) \u000bParam5: &Param5& (HitDamage,Auto Attack) \u000bParam6: &Param6& (HitDamage,Auto Attack) \u000bParam7: &Param7& (HitDamage,Mark)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Auto Attack) \u000bParam5: &Param5& (HitDamage,Auto Attack) \u000bParam6: &Param6& (HitDamage,Auto Attack) \u000bParam7: &Param7& (HitDamage,Mark)",
+            "descCN": "快速切换多种武器发动攻击。\u000b一段：攻击力<color=#ec6d21>&Param1&</color>风系普攻伤害\u000b二段：攻击力<color=#ec6d21>&Param2&x5</color>风系普攻伤害\u000b三段：攻击力<color=#ec6d21>&Param3&x5</color>风系普攻伤害\u000b四段：攻击力<color=#ec6d21>&Param4&x6</color>风系普攻伤害\u000b五段：攻击力<color=#ec6d21>&Param5&x7</color>风系普攻伤害\u000b埃莉诺拥有##战术储能#4048#，可自动消耗10点##战术储能#4048#发动「十字重斩」，造成攻击力<color=#ec6d21>&Param6&</color>范围风系普攻伤害。「十字重斩」可触发##风系印记#1017#，产生「绽放」：造成攻击力&Param7&范围风系印记伤害。",
+            "descJP": "複数の武器を素早く切り替えて攻撃を行う。\u000b1撃目：攻撃力の<color=#ec6d21>&Param1&</color>の風属性の通常攻撃ダメージを与える。\u000b2撃目：攻撃力の<color=#ec6d21>&Param2&x5</color>の風属性の通常攻撃ダメージを与える。\u000b3撃目：攻撃力の<color=#ec6d21>&Param3&x5</color>の風属性の通常攻撃ダメージを与える。\u000b4撃目：攻撃力の<color=#ec6d21>&Param4&x6</color>の風属性の通常攻撃ダメージを与える。\u000b5撃目：攻撃力の<color=#ec6d21>&Param5&x7</color>の風属性の通常攻撃ダメージを与える。\u000bエレノアは##令嬢のひらめき#4048#を所持しており、自動的に10ptを消費してレディ・クロスを発動し、範囲内に攻撃力の<color=#ec6d21>&Param6&</color>の風属性の通常攻撃ダメージを与える。レディ・クロスは##風属性の印#1017#を発動でき、発動させると、満開を発生させ、範囲内に攻撃力の&Param7&の風属性の印ダメージを与える。",
+            "descKR": "빠른 속도로 여러 무기를 교체하며 공격한다. \u000b1단계: 공격력 <color=#ec6d21>&Param1&</color>의 바람 속성 일반 공격 피해 \u000b2단계: 공격력 <color=#ec6d21>&Param2&x5</color>의 바람 속성 일반 공격 피해 \u000b3단계: 공격력 <color=#ec6d21>&Param3&x5</color>의 바람 속성 일반 공격 피해 \u000b4단계: 공격력 <color=#ec6d21>&Param4&x6</color>의 바람 속성 일반 공격 피해 \u000b5단계: 공격력 <color=#ec6d21>&Param5&x7</color>의 바람 속성 일반 공격 피해 \u000b엘레노어가 ##전술 에너지#4048#를 보유하며, 자동으로 ##전술 에너지#4048# 10포인트를 소모해 「크로스 참격」을 발동하여 공격력 <color=#ec6d21>&Param6&</color>의 바람 속성 범위 일반 공격 피해를 입힌다. 「크로스 참격」이 ##바람 속성 표식#1017#을 발동하여 「만개」를 생성해 공격력 &Param7&의 바람 속성 범위 표식 피해를 입힐 수 있다.",
             "damageType": [
                 "Auto Attack (1.17e, from Normal attack, scale with Normal attack)",
                 "Auto Attack (3.71e, from Normal attack, scale with Normal attack)",
@@ -89922,12 +89925,15 @@
         "skill": {
             "id": 13731000,
             "name": "Sentry Deployment",
+            "nameCN": "哨卫展开",
+            "nameJP": "フローラルガード",
+            "nameKR": "파수꾼 전개",
             "cooldown": "10s",
             "energyLimit": 7.37,
             "desc": "Spins rapidly to deal <color=#ec6d21>&Param1&x2</color> of ATK as AoE Ventus Skill DMG and gains the Vigil effect: multiple ##Sentries#4050# move around Eleanor for &Param2&s, dealing <color=#ec6d21>&Param3&</color> of ATK as AoE Ventus Skill DMG at intervals. Sentry Deployment (Main Skill) can trigger ##Ventus Mark#1017# and create Blossom, dealing &Param4& of ATK as AoE Ventus Mark DMG.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Mark)",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Mark)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "descCN": "快速旋转造成攻击力<color=#ec6d21>&Param1&x2</color>的范围风系技能伤害，并获得「警戒」效果：多个##哨兵#4050#环绕埃莉诺，持续&Param2&秒。期间每隔一段时间造成攻击力<color=#ec6d21>&Param3&</color>的范围风系技能伤害。主控技「哨卫展开」可触发##风系印记#1017#，产生「绽放」：造成攻击力&Param4&范围风系印记伤害。",
+            "descJP": "素早く回転して、範囲内に攻撃力の<color=#ec6d21>&Param1&x2</color>の風属性のスキルダメージを与え、警戒を獲得する。\u000b警戒：&Param2&秒間、複数の##フラワードローン#4050#がエレノアの周囲を旋回する。警戒持続中、一定時間ごとに範囲内に、攻撃力の<color=#ec6d21>&Param3&</color>の風属性のスキルダメージを与える。\u000b主力スキルは##風属性の印#1017#を発動でき、発動させると、満開を発生させ、範囲内に攻撃力の&Param4&の風属性の印ダメージを与える。",
+            "descKR": "빠르게 회전하며 공격력 <color=#ec6d21>&Param1&x2</color>의 바람 속성 범위 스킬 피해를 입힌다. 또한 「경계」 효과를 획득해 여러 명의 ##파수꾼#4050#이 엘레노어 주변을 둘러싼다. &Param2&초간 지속된다. 해당 기간 중 일정 시간마다 공격력 <color=#ec6d21>&Param3&</color>의 바람 속성 범위 스킬 피해를 입힌다. 메인 스킬 「파수꾼 전개」가 ##바람 속성 표식#1017#을 발동할 수 있고 「만개」를 생성해 공격력 &Param4&의 바람 속성 범위 표식 피해를 입힐 수 있다.",
             "damageType": [
                 "Skill (7.37e, from Skill, scale with Skill)",
                 "Mark"
@@ -89963,11 +89969,14 @@
         "supportSkill": {
             "id": 13732000,
             "name": "Armed Assault",
+            "nameCN": "武装强袭",
+            "nameJP": "フリーダムペイント",
+            "nameKR": "무장 습격",
             "cooldown": "12s",
             "desc": "Performs multiple jump slams, triggering explosions that deal <color=#ec6d21>&Param1& x9</color> of ATK as AoE Ventus Skill DMG. Every third slam generates 1 ##Sentry#4050# for 3s. Up to 3 Sentries can exist at the same time. ##Sentries#4050# can fire bullets that deal <color=#ec6d21>&Param2&</color> of Eleanor's ATK as Ventus Auto Attack DMG. Armed Assault (Support Skill) can inflict ##Ventus Mark: Breeze#2017#.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+            "descCN": "多次跳跃下砸，产生爆炸造成攻击力<color=#ec6d21>&Param1&x9</color>的范围风系技能伤害。每当第3次下砸时，产生1名##哨兵#4050#，持续3秒，最多存在3名。##哨兵#4050#可发射子弹造成埃莉诺攻击力<color=#ec6d21>&Param2&</color>的风系普攻伤害。援护技「武装强袭」可附加##风系印记：风息#2017#。",
+            "descJP": "複数回ジャンプして叩きつけ、爆発を起こし、範囲内に攻撃力の<color=#ec6d21>&Param1&x9</color>の風属性のスキルダメージを与える。\u000b叩きつけを3回行うたびに、##フラワードローン#4050#を1体生成する。フラワードローンは3秒間持続し、最大3体まで存在できる。##フラワードローン#4050#は弾丸を発射し、エレノアの攻撃力の<color=#ec6d21>&Param2&</color>の風属性の通常攻撃ダメージを与える。\u000b支援スキルは##風属性の印：風息#2017#を付与できる。",
+            "descKR": "수차례 점프해 찍어내리며 폭파를 일으켜 공격력 <color=#ec6d21>&Param1&x9</color>의 바람 속성 범위 스킬 피해를 입힌다. 3회 찍어내릴 때마다 ##파수꾼#4050# 1명을 생성한다. 3초간 지속되며, 최대 3명 존재한다. ##파수꾼#4050#이 총알을 발사해 엘레노어 공격력 <color=#ec6d21>&Param2&</color>의 바람 속성 일반 공격 피해를 입힌다. 지원 스킬 「무장 습격」이 ##바람 속성 표식: 풍식#2017#을 부여할 수 있다.",
             "damageType": [
                 "Skill (from Skill, scale with Skill)",
                 "Auto Attack (from Normal attack, scale with Skill)"
@@ -89993,12 +90002,15 @@
         "ultimate": {
             "id": 13740000,
             "name": "Firestorm",
+            "nameCN": "火力覆盖",
+            "nameJP": "ロケットパーティー",
+            "nameKR": "화력 지배",
             "cooldown": "35s",
             "energy": 275,
             "desc": "Eleanor fires a barrage of rockets, dealing AoE Ventus Ultimate DMG equal to <color=#ec6d21>&Param1& x14</color> of ATK.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+            "descCN": "埃莉诺发射大量火箭弹，造成攻击力<color=#ec6d21>&Param1&x14</color>的范围风系绝招伤害。",
+            "descJP": "エレノアが大量のロケット弾を発射し、範囲内に攻撃力の<color=#ec6d21>&Param1&x14</color>の風属性の必殺技ダメージを与える。",
+            "descKR": "엘레노어가 대량의 로켓탄을 발사해 공격력 <color=#ec6d21>&Param1&x14</color>의 바람 속성 범위 필살기 피해를 입힌다.",
             "damageType": [
                 "Ultimate (from Ultimate, scale with Ultimate)"
             ],
@@ -90021,10 +90033,13 @@
                 {
                     "id": 513701,
                     "name": "Tactical Protocol: Threshold",
+                    "nameCN": "战术协议：阈值",
+                    "nameJP": "令嬢戦術：開花",
+                    "nameKR": "전술 프로토콜: 임계",
                     "desc": "Cross Slash can attack 1 additional time. Increases Cross Slash's &Param1& by <color=#0abec5>&Param2&</color>. While Vigil is active, reduces the cooldown for gaining ##Tactical Energy#4048# for Eleanor's Auto Attacks by 1s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descCN": "「十字重斩」可额外攻击1次。「十字重斩」造成的&Param1&提升<color=#0abec5>&Param2&</color>。「警戒」期间，埃莉诺普攻获得##战术储能#4048#的冷却时间缩短1秒。",
+                    "descJP": "レディ・クロスは追加で1回攻撃するようになり、与える&Param1&が<color=#0abec5>&Param2&</color>増加する。\u000b警戒持続中、エレノアが通常攻撃ダメージを与えた時に##令嬢のひらめき#4048#を獲得する効果のクールタイムが1秒短縮される。",
+                    "descKR": "「크로스 참격」이 추가로 1회 공격한다. 「크로스 참격」이 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다. 「경계」 기간 중 엘레노어가 일반 공격을 통해 ##전술 에너지#4048#를 획득하는 쿨타임이 1초 감소한다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -90052,10 +90067,13 @@
                 {
                     "id": 513702,
                     "name": "Tactical Protocol: Detonation",
+                    "nameCN": "战术协议：爆破",
+                    "nameJP": "令嬢戦術：爆花",
+                    "nameKR": "전술 프로토콜: 폭파",
                     "desc": "Whenever Eleanor gains or spends ##Tactical Energy#4048#, fires 1 bomb that deals AoE Ventus Auto Attack DMG equal to <color=#0abec5>&Param1&</color> of ATK and can trigger ##Ventus Mark#1017#. Reduces the ##Tactical Energy#4048# consumed by Cross Slash by 4.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "descCN": "埃莉诺每次获得或消耗##战术储能#4048#时，发射1枚炸弹造成攻击力<color=#0abec5>&Param1&</color>的范围风系普攻伤害，可触发##风系印记#1017#。「十字重斩」消耗的##战术储能#4048#降低4点。",
+                    "descJP": "エレノアが##令嬢のひらめき#4048#を獲得または消費するたびに、爆弾を1発発射する。範囲内に攻撃力の<color=#0abec5>&Param1&</color>の風属性の通常攻撃ダメージを与え、##風属性の印#1017#を発動できる。\u000bレディ・クロスで消費する##令嬢のひらめき#4048#が4pt減少する。",
+                    "descKR": "엘레노어가 ##전술 에너지#4048#를 획득하거나 소모할 때마다 폭탄 1개를 발사해 공격력 <color=#0abec5>&Param1&</color>의 바람 속성 범위 일반 공격 피해를 입힌다. ##바람 속성 표식#1017#을 발동할 수 있다. 「크로스 참격」이 소모하는 ##전술 에너지#4048#가 4포인트 감소한다.",
                     "damageType": [
                         "Auto Attack (from Normal attack, scale with Normal attack)"
                     ],
@@ -90079,10 +90097,13 @@
                 {
                     "id": 513703,
                     "name": "Tactical Protocol: Overload",
+                    "nameCN": "战术协议：过载",
+                    "nameJP": "令嬢戦術：閃花",
+                    "nameKR": "전술 프로토콜: 과부하",
                     "desc": "Reduces Vigil's Attack Interval. When casting Cross Slash, increases Eleanor's &Param1& by <color=#0abec5>&Param2&</color> for &Param3&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descCN": "「警戒」造成伤害的间隔缩短。施放「十字重斩」时，埃莉诺的&Param1&提升<color=#0abec5>&Param2&</color>，持续&Param3&秒。",
+                    "descJP": "警戒は、ダメージを与える間隔が短縮される。\u000bレディ・クロス発動時、&Param3&秒間、エレノアの&Param1&が<color=#0abec5>&Param2&</color>上昇する。",
+                    "descKR": "「경계」가 피해를 입히는 간격이 단축된다. 「크로스 참격」을 시전할 때 엘레노어의 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -90118,10 +90139,13 @@
                 {
                     "id": 513704,
                     "name": "Tactical Protocol: Synergy",
+                    "nameCN": "战术协议：协同",
+                    "nameJP": "令嬢戦術：嵐花",
+                    "nameKR": "전술 프로토콜: 협동",
                     "desc": "When Eleanor's Vigil deals DMG to a target 2 times, it can deal an additional <color=#0abec5>&Param1&</color> of ATK as AoE Ventus Skill DMG. When casting Sentry Deployment (Main Skill), increases Eleanor's &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "descCN": "埃莉诺自身的「警戒」对目标累计造成2次伤害时，可额外造成攻击力<color=#0abec5>&Param1&</color>的范围风系技能伤害。施放主控技「哨卫展开」时，埃莉诺的&Param2&提升<color=#0abec5>&Param3&</color>，持续&Param4&秒。",
+                    "descJP": "エレノア自身の警戒が敵にダメージを累計2回与えた時、追加で範囲内に攻撃力の<color=#0abec5>&Param1&</color>の風属性のスキルダメージを与える。\u000b主力スキル発動時、&Param4&秒間、エレノアの&Param2&が<color=#0abec5>&Param3&</color>増加する。",
+                    "descKR": "엘레노어 자신의 「경계」가 목표에게 누적 2회 피해를 입히면, 공격력 <color=#0abec5>&Param1&</color>의 바람 속성 범위 스킬 피해를 추가로 입힌다. 메인 스킬 「파수꾼 전개」를 시전하면, 엘레노어의 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다. &Param4&초간 지속된다.\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -90165,10 +90189,13 @@
                 {
                     "id": 513705,
                     "name": "Double Rifts",
+                    "nameCN": "二重裂痕",
+                    "nameJP": "レディ・ブレイク",
+                    "nameKR": "이중 균열",
                     "desc": "Cross Slash can trigger additional explosions, dealing AoE Ventus Auto Attack DMG equal to <color=#ec6d21>&Param1&</color> of ATK. Increases Cross Slash's &Param2& against elite or higher-tier targets by <color=#ec6d21>&Param3&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "「十字重斩」可引发额外爆炸，造成攻击力<color=#ec6d21>&Param1&</color>的范围风系普攻伤害。「十字重斩」对精英及以上目标造成的&Param2&提升<color=#ec6d21>&Param3&</color>。",
+                    "descJP": "レディ・クロスは、追加で爆発を発生させるようになり、範囲内に攻撃力の<color=#ec6d21>&Param1&</color>の風属性の通常攻撃ダメージを与える。\u000bレディ・クロスはエリート以上の敵に与える&Param2&が<color=#ec6d21>&Param3&</color>増加する。",
+                    "descKR": "「크로스 참격」이 추가 폭파를 일으켜, 공격력 <color=#ec6d21>&Param1&</color>의 바람 속성 범위 일반 공격 피해를 입힌다. 「크로스 참격」이 정예 이상 목표에게 입히는 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [
                         "Auto Attack (from Normal attack)"
                     ],
@@ -90203,10 +90230,13 @@
                 {
                     "id": 513706,
                     "name": "Battle Fury",
+                    "nameCN": "战意激增",
+                    "nameJP": "ライジングハート",
+                    "nameKR": "전의 급증",
                     "desc": "When casting Cross Slash, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descCN": "施放「十字重斩」时，埃莉诺的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
+                    "descJP": "レディ・クロス発動時、&Param3&秒間、エレノアの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "「크로스 참격」을 시전할 때 엘레노어의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -90244,10 +90274,13 @@
                 {
                     "id": 513707,
                     "name": "Vortex Boost",
+                    "nameCN": "涡流增效",
+                    "nameJP": "フローラルストーム",
+                    "nameKR": "소용돌이 증폭",
                     "desc": "The last Auto Attack strike can trigger ##Ventus Mark#1017#. During Vigil, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descCN": "埃莉诺的普攻最后一击可触发##风系印记#1017#。「警戒」期间，埃莉诺的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "エレノアの通常攻撃の最終段で##風属性の印#1017#を発動できるようになる。警戒持続中、エレノアの&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "엘레노어 일반 공격 최후의 일격이 ##바람 속성 표식#1017#을 발동할 수 있다. 「경계」 기간 중, 엘레노어의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ELEMENTTYPE_:(Ventus) Auto Attack DMG"
@@ -90281,10 +90314,13 @@
                 {
                     "id": 513708,
                     "name": "Area Volley",
+                    "nameCN": "广域散射",
+                    "nameJP": "ワイドブルーム",
+                    "nameKR": "광범위 산탄",
                     "desc": "Increases Vigil's Attack Range and its &Param1& by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "「警戒」的伤害范围提升。「警戒」造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "警戒のダメージ範囲が拡大し、与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "「경계」의 피해 범위가 증가한다. 「경계」가 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -90313,10 +90349,13 @@
                 {
                     "id": 513709,
                     "name": "Zone Detection",
+                    "nameCN": "区域感知",
+                    "nameJP": "令嬢の覚悟",
+                    "nameKR": "구역 감지",
                     "desc": "When casting Sentry Deployment (Main Skill), each target near Eleanor increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "施放主控技「哨卫展开」时，周围每1名目标都会使埃莉诺的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "主力スキル発動時、周囲の敵1体につき、&Param3&秒間、エレノアの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "메인 스킬 「파수꾼 전개」를 시전할 때 주변 목표 1명마다 엘레노어의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -90358,10 +90397,13 @@
                 {
                     "id": 513711,
                     "name": "Annihilation Pulse",
+                    "nameCN": "歼灭脉冲",
+                    "nameJP": "お転婆令嬢",
+                    "nameKR": "섬멸 펄스",
                     "desc": "Firestorm (Ultimate) can trigger ##Ventus Mark#1017#. Increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descCN": "绝招「火力覆盖」可触发##风系印记#1017#。埃莉诺的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "エレノアの必殺技は##風属性の印#1017#を発動できるようになる。\u000bエレノアの&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "필살기 「화력 지배」가 ##바람 속성 표식#1017#을 발동할 수 있다. 엘레노어의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Ventus DMG (base)"
@@ -90391,10 +90433,13 @@
                 {
                     "id": 513713,
                     "name": "Wind Bond",
+                    "nameCN": "风灵链接",
+                    "nameJP": "冒険の風",
+                    "nameKR": "바람 정령의 연결",
                     "desc": "When triggering ##Ventus Mark#1017#, increases the &Param1& of all Ventus Trekkers in the squad by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "触发##风系印记#1017#时，全队风系角色的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "##風属性の印#1017#を発動させた時、&Param3&秒間、チーム全体の風属性巡遊者の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "##바람 속성 표식#1017#을 발동하면, 팀 전체 바람 속성 캐릭터의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -90435,10 +90480,13 @@
                 {
                     "id": 513710,
                     "name": "Chain Echo",
+                    "nameCN": "链路反馈",
+                    "nameJP": "優雅たる心",
+                    "nameKR": "연결 피드백",
                     "desc": "When Eleanor deals Auto Attack DMG, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times. This effect can only be triggered once per sec.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "埃莉诺造成普攻伤害时，&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。该效果每1秒最多触发1次。",
+                    "descJP": "エレノアが通常攻撃ダメージを与えた時、&Param3&秒間、&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。この効果は1秒ごとに1回まで発動できる。",
+                    "descKR": "엘레노어가 일반 공격 피해를 입히면, &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다. 해당 효과는 1초마다 최대 1회 발동한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ELEMENTTYPE_:(Ventus) Skill DMG"
@@ -90480,10 +90528,13 @@
                 {
                     "id": 513712,
                     "name": "Flicker Sequence",
+                    "nameCN": "闪烁序列",
+                    "nameJP": "風のステップ",
+                    "nameKR": "반짝임 서열",
                     "desc": "Decreases Dodge cooldown by 25%. Increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descCN": "闪避冷却时间缩减25%。埃莉诺的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "回避のクールタイムが25%短縮される。\u000bエレノアの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "회피 쿨타임이 25% 단축된다. 엘레노어의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -90515,10 +90566,13 @@
                 {
                     "id": 513741,
                     "name": "Reinforcement Command",
+                    "nameCN": "增援指令",
+                    "nameJP": "才能開花",
+                    "nameKR": "증원 명령",
                     "desc": "When Eleanor casts Firestorm (Ultimate), increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "埃莉诺施放绝招「火力覆盖」时，埃莉诺的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "エレノアの必殺技発動時、&Param3&秒間、エレノアの&Param1&が<color=#ec6d21>&Param2&</color>増加する。\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "필살기 「화력 지배」를 시전할 때, 엘레노어의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
                     "effectType": [
                         "Ventus DMG (base)"
@@ -90560,10 +90614,13 @@
                 {
                     "id": 513742,
                     "name": "Purge Command",
+                    "nameCN": "肃清指令",
+                    "nameJP": "令嬢のたしなみ",
+                    "nameKR": "숙청 명령",
                     "desc": "Increases Eleanor's &Param5& by <color=#ec6d21>&Param6&</color>. When Firestorm (Ultimate) deals DMG to a target, increases the &Param1& it deals to the target by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descCN": "埃莉诺的&Param5&提升<color=#ec6d21>&Param6&</color>。绝招「火力覆盖」对目标造成伤害时，提升绝招对该目标造成的&Param1&<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "エレノアの&Param5&が<color=#ec6d21>&Param6&</color>増加する。\nエレノアの必殺技が敵にダメージを与えた時、&Param3&秒間、その敵に対する&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "엘레노어의 &Param5_kr1& <color=#ec6d21>&Param6&</color> 증가한다. 필살기 「화력 지배」가 목표에게 피해를 입히면, 필살기가 해당 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Ventus DMG (base)"
@@ -90617,10 +90674,13 @@
                 {
                     "id": 513743,
                     "name": "Focus Command",
+                    "nameCN": "集中指令",
+                    "nameJP": "アドマイアレディ",
+                    "nameKR": "집중 명령",
                     "desc": "Increases Eleanor's &Param5& by <color=#ec6d21>&Param6&</color>. When any Ventus Trekker in the squad casts a Main Skill or Support Skill, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descCN": "埃莉诺的&Param5&提升<color=#ec6d21>&Param6&</color>。全队风系角色施放主控技或援护技时，埃莉诺的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "エレノアの&Param5&が<color=#ec6d21>&Param6&</color>上昇する。\u000bチーム内の風属性巡遊者が主力スキル、または支援スキルを発動時、&Param3&秒間、エレノアの&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "엘레노어의 &Param5_kr1& <color=#ec6d21>&Param6&</color> 증가한다. 팀 전체 바람 속성 캐릭터가 메인 스킬 또는 지원 스킬을 시전할 때, 엘레노어의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ELEMENTTYPE_:(Ventus) Ultimate DMG",
@@ -90673,10 +90733,13 @@
                 {
                     "id": 513721,
                     "name": "Chain Detonation",
+                    "nameCN": "连锁引爆",
+                    "nameJP": "ペイントバースト",
+                    "nameKR": "연쇄 폭발",
                     "desc": "Increases the &Param1& of jump slam explosions from Armed Assault (Support Skill) by <color=#0abec5>&Param2&</color>. Increases the number of explosions of each jump slam by 1. Resets when the Support Skill ends.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descCN": "援护技「武装强袭」下砸爆炸的&Param1&提升<color=#0abec5>&Param2&</color>。援护技「武装强袭」每次跳跃下砸时，引发的爆炸会比上一次增加1次，援护技结束时清除该效果。",
+                    "descJP": "支援スキルの叩きつけ爆発による&Param1&が<color=#0abec5>&Param2&</color>上昇する。支援スキルでジャンプして叩きつけるたびに、発生する爆発回数が前回より1回増加する。支援スキル終了時、この効果は解除される。",
+                    "descKR": "지원 스킬 「무장 습격」 찍어내리기 폭파의 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다. 지원 스킬 「무장 습격」이 점프하여 찍어내릴 때 발생하는 폭파가 이전보다 1회 증가하며, 지원 스킬 종료 시 해당 효과가 제거된다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -90704,10 +90767,13 @@
                 {
                     "id": 513722,
                     "name": "Seismic Spread",
+                    "nameCN": "震源扩张",
+                    "nameJP": "キャンバス拡張",
+                    "nameKR": "진원 확장",
                     "desc": "Increases the &Param3& of jump slam explosions from Armed Assault (Support Skill) by <color=#0abec5>&Param4&</color>. When there is only 1 Support Trekker in the squad, increases the Attack Range and &Param1& of each jump slam's explosion. After each explosion, increases &Param1& dealt by the following jump slam explosions by <color=#0abec5>&Param2&</color>, stacking up to 9 times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttributeValue,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttributeValue,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttributeValue,Value1)",
+                    "descCN": "援护技「武装强袭」下砸爆炸的&Param3&提升<color=#0abec5>&Param4&</color>。队伍中仅有1名辅助角色时，援护技「武装强袭」每次跳跃下砸时，本次援护技下砸爆炸的伤害范围提升，每次产生下砸爆炸后，后续下砸爆炸造成的&Param1&提升<color=#0abec5>&Param2&</color>，可叠加9层。",
+                    "descJP": "支援スキルの叩きつけによる爆発の&Param3&が<color=#0abec5>&Param4&</color>増加する。\u000bチーム内にサポート巡遊者が1名のみ存在する場合、支援スキルで叩きつけを行うたびに、今回の叩きつけによる爆発のダメージ範囲が拡大される。叩きつけによる爆発が発生するたびに、以降の叩きつけによる爆発が与える&Param1&が<color=#0abec5>&Param2&</color>増加する。この効果は9回まで重複できる。",
+                    "descKR": "지원 스킬 「무장 습격」 찍어내리기 폭파의 &Param3_kr1& <color=#0abec5>&Param4&</color> 증가한다. 팀 내에 서포터 캐릭터가 1명일 때, 지원 스킬 「무장 습격」이 점프하여 찍어내릴 때마다 이번 지원 스킬의 찍어내리기 폭파 피해 범위가 증가한다. 찍어내리기 폭파가 발생할 때마다, 이후 찍어내리기 폭파가 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다. 최대 9스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -90744,10 +90810,13 @@
                 {
                     "id": 513723,
                     "name": "Function Sustain",
+                    "nameCN": "机能续航",
+                    "nameJP": "ブルーミングタイム",
+                    "nameKR": "기능 지속",
                     "desc": "Increases ##Sentries'#4050# &Param5& by <color=#0abec5>&Param6&</color>. Each time a ##Sentry#4050# is generated, extends the duration of all existing ##Sentries#4050# on the field. Each jump slam from Armed Assault (Support Skill) increases ##Sentries'#4050# &Param1& by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam6: &Param6& (OnceAdditionalAttributeValue,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam6: &Param6& (OnceAdditionalAttributeValue,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam6: &Param6& (OnceAdditionalAttributeValue,Value1)",
+                    "descCN": "##哨兵#4050#的&Param5&提升<color=#0abec5>&Param6&</color>。每次产生##哨兵#4050#时，延长场中已有##哨兵#4050#的存在时间。援护技「武装强袭」每次跳跃下砸时，##哨兵#4050#造成的&Param1&提升<color=#0abec5>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "##フラワードローン#4050#の&Param5&が<color=#0abec5>&Param6&</color>上昇する。##フラワードローン#4050#を生成するたびに、フィールド上に存在する##フラワードローン#4050#の持続時間が延長される。支援スキルでジャンプして叩きつけるたびに、&Param3&秒間、##フラワードローン#4050#が与える&Param1&が<color=#0abec5>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "##파수꾼#4050#의 &Param5_kr1& <color=#0abec5>&Param6&</color> 증가한다. ##파수꾼#4050#이 생성될 때마다 필드에 존재하는 ##파수꾼#4050#의 지속 시간이 연장된다. 지원 스킬 「무장 습격」이 점프해 찍어내릴 때마다 ##파수꾼#4050#이 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -90796,10 +90865,13 @@
                 {
                     "id": 513724,
                     "name": "Cluster Barrage",
+                    "nameCN": "集群速射",
+                    "nameJP": "追撃ガード",
+                    "nameKR": "집중 속사",
                     "desc": "When ##Sentries'#4050# bullets deal DMG to the Main Trekker's target 3 times, deals an additional <color=#0abec5>&Param1&</color> of ATK as AoE Ventus Auto Attack DMG. This effect can be triggered once every 0.5s. Each ##Sentry#4050# on the field increases &Param2& of all ##Sentries#4050# on the field by <color=#0abec5>&Param3&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
+                    "descCN": "##哨兵#4050#的子弹对主控目标累计造成3次伤害时，额外造成攻击力<color=#0abec5>&Param1&</color>的范围风系普攻伤害，该效果每0.5秒可触发1次。场中每1名##哨兵#4050#可使全场##哨兵#4050#的&Param2&提升<color=#0abec5>&Param3&</color>。",
+                    "descJP": "##フラワードローン#4050#の弾丸がターゲットに累計3回ダメージを与えた時、追加で範囲内に攻撃力の<color=#0abec5>&Param1&</color>の風属性の通常攻撃ダメージを与える。この効果は0.5秒ごとに1回発動できる。フィールド上の##フラワードローン#4050#1体につき、すべての##フラワードローン#4050#の&Param2&が<color=#0abec5>&Param3&</color>上昇する。",
+                    "descKR": "##파수꾼#4050#의 총알이 메인 목표에게 누적 3회 피해를 입히면, 공격력 <color=#0abec5>&Param1&</color>의 바람 속성 범위 일반 공격 피해를 추가로 입힌다. 해당 효과는 0.5초마다 1회 발동할 수 있다. 필드의 ##파수꾼#4050# 1명마다 필드 전체 ##파수꾼#4050#의 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다.\u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Auto Attack (from Normal attack, scale with Skill)"
                     ],
@@ -90839,10 +90911,13 @@
                 {
                     "id": 513725,
                     "name": "Field Pull",
+                    "nameCN": "力场牵引",
+                    "nameJP": "冒険の彩り",
+                    "nameKR": "역장 견인",
                     "desc": "Increases the &Param3& of jump slam explosions from Armed Assault (Support Skill) by &Param4& and their &Param1& by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "援护技「武装强袭」下砸爆炸的&Param3&提升&Param4&，造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "支援スキルの叩きつけによる爆発の&Param3&が&Param4&上昇し、与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "지원 스킬 「무장 습격」 찍어내리기 폭파의 &Param3_kr1& &Param4& 증가하고, 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -90880,10 +90955,13 @@
                 {
                     "id": 513726,
                     "name": "Power Boost",
+                    "nameCN": "动力增压",
+                    "nameJP": "貴族のカリスマ",
+                    "nameKR": "동력 증압",
                     "desc": "When jump slam explosions from Armed Assault (Support Skill) deal DMG, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times. Increases the Ventus Vanguard Main Trekker's &Param5& by <color=#ec6d21>&Param6&</color> for &Param7&s, stacking up to &Param8& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time) \u000bParam8: &Param8& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time) \u000bParam8: &Param8& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time) \u000bParam8: &Param8& (BuffValue,LaminatedNum)",
+                    "descCN": "援护技「武装强袭」下砸爆炸造成伤害时，埃莉诺的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。同时风系先锋主控角色的&Param5&提升<color=#ec6d21>&Param6&</color>，持续&Param7&秒，可叠加&Param8&层。",
+                    "descJP": "支援スキルの叩きつけ爆発がダメージを与えた時、&Param3&秒間、エレノアの&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。さらに、&Param7&秒間、風属性のアタッカー主力巡遊者の&Param5&が<color=#ec6d21>&Param6&</color>増加する。この効果は&Param8&回まで重複できる。",
+                    "descKR": "지원 스킬 「무장 습격」의 찍어내리기 폭파가 피해를 입히면, 엘레노어의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다. 동시에 바람 속성 딜러 메인 캐릭터의 &Param5_kr1& <color=#ec6d21>&Param6&</color> 증가한다. &Param7&초간 지속되며, 최대 &Param8&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ELEMENTTYPE_:(Ventus) Skill DMG",
@@ -90942,10 +91020,13 @@
                 {
                     "id": 513727,
                     "name": "Shattering Blow",
+                    "nameCN": "破阵重击",
+                    "nameJP": "パワフルお嬢様",
+                    "nameKR": "파괴적인 타격",
                     "desc": "Increases the &Param1& of jump slam explosions from Armed Assault (Support Skill) by <color=#ec6d21>&Param2&</color> and &Param3& by <color=#ec6d21>&Param4&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "援护技「武装强袭」下砸爆炸造成的&Param1&提升<color=#ec6d21>&Param2&</color>，&Param3&提升<color=#ec6d21>&Param4&</color>。",
+                    "descJP": "支援スキルの叩きつけ爆発が与える&Param1&が<color=#ec6d21>&Param2&</color>増加し、&Param3&が<color=#ec6d21>&Param4&</color>増加する。",
+                    "descKR": "지원 스킬 「무장 습격」의 찍어내리기 폭파가 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -90984,10 +91065,13 @@
                 {
                     "id": 513728,
                     "name": "Piercing Trajectory",
+                    "nameCN": "贯穿弹道",
+                    "nameJP": "神器転換",
+                    "nameKR": "관통 탄도",
                     "desc": "Increases the size of bullets fired by ##Sentries#4050#, which can penetrate targets. Increases the &Param1& of ##Sentries#4050# against elite or higher-tier targets by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "##哨兵#4050#发射的子弹大小提升，可穿透目标。##哨兵#4050#对精英及以上目标造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "##フラワードローン#4050#が発射する弾丸のサイズが大きくなり、敵を貫通できるようになる。##フラワードローン#4050#がエリート以上の敵に与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "##파수꾼#4050#이 발사하는 총알 크기가 증가하고, 목표를 관통할 수 있다. ##파수꾼#4050#이 정예 이상 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -91016,10 +91100,13 @@
                 {
                     "id": 513730,
                     "name": "Precision Calibration",
+                    "nameCN": "精密校准",
+                    "nameJP": "エスコートダンス",
+                    "nameKR": "정밀 영점 조절",
                     "desc": "Increases ##Sentries'#4050# &Param1& by <color=#ec6d21>&Param2&</color>. When there are 3 ##Sentries#4050# on the field, increases the Ventus Vanguard Main Trekker's &Param3& by <color=#ec6d21>&Param4&</color> for 10s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "##哨兵#4050#的&Param1&提升<color=#ec6d21>&Param2&</color>。场中存在3名##哨兵#4050#可使风系先锋主控角色的&Param3&提升<color=#ec6d21>&Param4&</color>，持续10秒。",
+                    "descJP": "##フラワードローン#4050#の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。フィールド上に##フラワードローン#4050#が3体存在する時、10秒間、風属性のアタッカー主力巡遊者の&Param3&が<color=#ec6d21>&Param4&</color>増加する。",
+                    "descKR": "##파수꾼#4050#의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. 필드에 ##파수꾼#4050# 3명이 존재하면 바람 속성 딜러 메인 캐릭터의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 10초간 지속된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -91058,10 +91145,13 @@
                 {
                     "id": 513731,
                     "name": "Wind Resonance",
+                    "nameCN": "风灵谐振",
+                    "nameJP": "貴族のつとめ",
+                    "nameKR": "바람 정령의 공명",
                     "desc": "When any Trekker in the squad triggers ##Ventus Mark#1017#, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descCN": "全队触发##风系印记#1017#时，埃莉诺的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
+                    "descJP": "チーム全体は、##風属性の印#1017#を発動させた時、&Param3&秒間、エレノアの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "팀 전체가 ##바람 속성 표식#1017#을 발동하면, 엘레노어의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -91099,10 +91189,13 @@
                 {
                     "id": 513732,
                     "name": "Annihilation Echo",
+                    "nameCN": "歼灭余响",
+                    "nameJP": "お嬢様の本気",
+                    "nameKR": "섬멸의 잔향",
                     "desc": "Firestorm (Ultimate) can inflict ##Ventus Mark: Breeze#2017#. When Eleanor deals DMG to a target, increases the target's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "绝招「火力覆盖」可附加##风系印记：风息#2017#。埃莉诺对目标造成伤害时，使目标&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "エレノアの必殺技は##風属性の印：風息#2017#を付与できるようになる。\u000bエレノアが敵にダメージを与えた時、&Param3&秒間、敵の&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "필살기 「화력 지배」가 ##바람 속성 표식: 풍식#2017#을 부여할 수 있다. 엘레노어가 목표에게 피해를 입히면, 목표의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Ventus DMG Taken (base)"
@@ -91143,10 +91236,13 @@
                 {
                     "id": 513729,
                     "name": "Suppression Analysis",
+                    "nameCN": "压制解析",
+                    "nameJP": "審美眼",
+                    "nameKR": "제압 분석",
                     "desc": "Increases the &Param1& ##Sentries#4050# deal to the Main Trekker's target by <color=#ec6d21>&Param2&</color> and Eleanor's &Param3& by <color=#ec6d21>&Param4&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descCN": "##哨兵#4050#对主控目标造成的&Param1&提升<color=#ec6d21>&Param2&</color>。埃莉诺的&Param3&提升<color=#ec6d21>&Param4&</color>。",
+                    "descJP": "##フラワードローン#4050#がターゲットに与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。エレノアの&Param3&が<color=#ec6d21>&Param4&</color>上昇する。",
+                    "descKR": "##파수꾼#4050#이 메인 목표에게 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, 엘레노어의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -91186,10 +91282,13 @@
                 {
                     "id": 513733,
                     "name": "Power Amp",
+                    "nameCN": "战力增幅",
+                    "nameJP": "リーダーの片鱗",
+                    "nameKR": "전투력 증폭",
                     "desc": "When Eleanor deals DMG, increases the &Param1& of all Ventus Trekkers in the squad by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "埃莉诺造成伤害时，全队风系角色的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "エレノアがダメージを与えた時、&Param3&秒間、チーム全体の風属性巡遊者の&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "엘레노어가 피해를 입히면, 팀 전체 바람 속성 캐릭터의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Ventus DMG (base)"
@@ -91236,10 +91335,13 @@
                 "boost": [
                     {
                         "name": "Small Treat",
+                        "nameCN": "小手一挥",
+                        "nameJP": "籠を出た鳥",
+                        "nameKR": "손짓 한 번",
                         "desc": "When Eleanor deals Auto Attack DMG to a target, the target takes <color=#0abec5>&Param1&</color> more Ventus DMG for &Param2&s, stacking up to &Param3& times.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descCN": "埃莉诺对目标造成普攻伤害时，该目标受到的风系伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，可叠加&Param3&层。",
+                        "descJP": "エレノアが敵に通常攻撃ダメージを与えた時、&Param2&秒間、その敵の風属性被ダメージが<color=#0abec5>&Param1&</color>増加する。この効果は&Param3&回まで重複できる。",
+                        "descKR": "엘레노어가 목표에게 일반 공격 피해를 입히면, 해당 목표가 받는 바람 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속되며, 최대 &Param3&스택 중첩된다.",
                         "effectType": [
                             "Ventus DMG Taken (base)"
                         ],
@@ -91268,9 +91370,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -91288,9 +91390,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -91308,9 +91410,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -91328,9 +91430,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -91348,9 +91450,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -91368,9 +91470,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -91388,9 +91490,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -91408,9 +91510,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -91428,9 +91530,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -91448,9 +91550,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -91473,10 +91575,13 @@
                 "boost": [
                     {
                         "name": "Spree Mode",
+                        "nameCN": "买买买",
+                        "nameJP": "深窓の令嬢",
+                        "nameKR": "폭풍 구매",
                         "desc": "Increases Eleanors's ATK by <color=#0abec5>&Param1&</color>. When any Trekker in the squad triggers ##Ventus Mark#1017#, increases Eleanor's ATK by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                        "descCN": "埃莉诺攻击提升<color=#0abec5>&Param1&</color>。全队触发##风系印记#1017#后，埃莉诺攻击提升<color=#0abec5>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                        "descJP": "エレノアの攻撃力が<color=#0abec5>&Param1&</color>上昇する。チーム内の巡遊者が##風属性の印#1017#を発動させた後、&Param3&秒間、エレノアの攻撃力が<color=#0abec5>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
+                        "descKR": "엘레노어의 공격이 <color=#0abec5>&Param1&</color> 증가한다. 팀 전체가 ##바람 속성 표식#1017#을 발동한 후, 엘레노어의 공격이 <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -91509,9 +91614,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -91529,9 +91634,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -91549,9 +91654,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -91569,9 +91674,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -91589,9 +91694,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -91609,9 +91714,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -91629,9 +91734,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -91649,9 +91754,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -91669,9 +91774,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -91689,9 +91794,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -91714,10 +91819,13 @@
                 "boost": [
                     {
                         "name": "On the House",
+                        "nameCN": "这里我包场",
+                        "nameJP": "先輩の背中",
+                        "nameKR": "골든벨",
                         "desc": "When any Trekker inflicts ##Ventus Mark#1017# on a target, increases the Auto Attack DMG dealt by Ventus Trekkers in the squad by <color=#0abec5>&Param1&</color> and Skill DMG by <color=#0abec5>&Param2&</color> for &Param3&s.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "descCN": "任意角色对目标附加##风系印记#1017#后，队伍内风系角色普攻伤害提升<color=#0abec5>&Param1&</color>，技能伤害提升<color=#0abec5>&Param2&</color>，持续&Param3&秒。",
+                        "descJP": "チーム内の巡遊者が敵に##風属性の印#1017#を付与した後、&Param3&秒間、チーム内の風属性巡遊者の通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加し、スキルダメージが<color=#0abec5>&Param2&</color>増加する。",
+                        "descKR": "캐릭터가 목표에게 ##바람 속성 표식#1017#을 부여한 후, 팀 내 바람 속성 캐릭터의 일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가하고, 스킬 피해가 <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속된다.",
                         "effectType": [
                             "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
                             "ELEMENTTYPE_:(Ventus) Skill DMG"
@@ -91747,9 +91855,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -91767,9 +91875,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -91787,9 +91895,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -91807,9 +91915,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -91827,9 +91935,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -91847,9 +91955,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -91867,9 +91975,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -91887,9 +91995,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -91907,9 +92015,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -91927,9 +92035,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -91952,10 +92060,13 @@
                 "boost": [
                     {
                         "name": "My Treat Today",
+                        "nameCN": "今天我请客",
+                        "nameJP": "お嬢様巡遊者",
+                        "nameKR": "오늘은 내가 산다",
                         "desc": "After Eleanor casts a skill, increases her Auto Attack DMG by <color=#0abec5>&Param1&</color> and her Skill DMG by <color=#0abec5>&Param2&</color> for &Param3&s.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "descCN": "埃莉诺施放技能后，普攻伤害提升<color=#0abec5>&Param1&</color>，技能伤害提升<color=#0abec5>&Param2&</color>，持续&Param3&秒。",
+                        "descJP": "エレノアはスキル発動後、&Param3&秒間、通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加し、スキルダメージが<color=#0abec5>&Param2&</color>増加する。",
+                        "descKR": "엘레노어가 스킬을 시전한 후 일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가하고, 스킬 피해가 <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속된다.",
                         "effectType": [
                             "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
                             "ELEMENTTYPE_:(Ventus) Skill DMG"
@@ -91985,9 +92096,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -92005,9 +92116,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -92025,9 +92136,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -92045,9 +92156,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -92065,9 +92176,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -92085,9 +92196,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -92105,9 +92216,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -92125,9 +92236,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -92145,9 +92256,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -92165,9 +92276,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -92190,10 +92301,13 @@
                 "boost": [
                     {
                         "name": "Party Time",
+                        "nameCN": "大家一起嗨",
+                        "nameJP": "終わらない夢",
+                        "nameKR": "다같이 놀자",
                         "desc": "Increases Eleanor's Ventus DMG dealt to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descCN": "埃莉诺对精英及以上目标造成的风系伤害提升<color=#0abec5>&Param1&</color>。",
+                        "descJP": "エレノアはエリート以上の敵に与える風属性ダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "엘레노어가 정예 이상 목표에게 입히는 바람 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [],
                         "addAttrType": [
                             "Ventus DMG (base)"
@@ -92211,9 +92325,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -92231,9 +92345,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -92251,9 +92365,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -92271,9 +92385,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -92291,9 +92405,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -92311,9 +92425,9 @@
                     },
                     {
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -92331,9 +92445,9 @@
                     },
                     {
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -92351,9 +92465,9 @@
                     },
                     {
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -92371,9 +92485,9 @@
                     },
                     {
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -92391,9 +92505,9 @@
                     },
                     {
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -109553,9 +109667,9 @@
                     "nameJP": "蛟龍の尾",
                     "nameKR": "환상 비늘",
                     "desc": "When the Coiling Serpent hits a target, summons another Coiling Serpent, dealing <color=#fb8037>&Param1&x2</color> of ATK as Aqua Auto Attack DMG. This effect can only be triggered 3 times every 3s. Can trigger ##Aqua Mark#1018#.",
-                    "descCN": "「腾蛇」命中时，额外生成「腾蛇」，造成攻击力<color=#fb8037>&Param1&</color>的水系普攻伤害，该效果每3秒最多触发3次，可触发##水系印记#1018#。",
-                    "descJP": "騰蛇命中時、追加で騰蛇を生成し、攻撃力の<color=#fb8037>&Param1&</color>の水属性の通常攻撃ダメージを与えるようになる。この効果は3秒ごとに3回まで発動する。この騰蛇は##水属性の印#1018#を発動させることができる。",
-                    "descKR": "「등사」 명중 시, 「등사」를 추가로 생성해 공격력 <color=#fb8037>&Param1&</color>의 물 속성 일반 공격 피해를 입힌다. 해당 효과는 3초마다 최대 3회 발동하고, ##물 속성 표식#1018#을 발동할 수 있다.",
+                    "descCN": "「腾蛇」命中时，额外生成「腾蛇」，造成攻击力<color=#fb8037>&Param1&x2</color>的水系普攻伤害，该效果每3秒最多触发3次，可触发##水系印记#1018#。",
+                    "descJP": "騰蛇命中時、追加で騰蛇を生成し、攻撃力の<color=#fb8037>&Param1&x2</color>の水属性の通常攻撃ダメージを与えるようになる。この効果は3秒ごとに3回まで発動する。この騰蛇は##水属性の印#1018#を発動させることができる。",
+                    "descKR": "「등사」 명중 시, 「등사」를 추가로 생성해 공격력 <color=#fb8037>&Param1&x2</color>의 물 속성 일반 공격 피해를 입힌다. 해당 효과는 3초마다 최대 3회 발동하고, ##물 속성 표식#1018#을 발동할 수 있다.",
                     "damageType": [
                         "Auto Attack (from Normal attack)"
                     ],

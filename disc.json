@@ -59061,10 +59061,13 @@
         "mainSkill": {
             "id": 4059,
             "name": "Fly, O Caged Bird",
+            "nameCN": "飞吧，笼中鸟",
+            "nameJP": "飛びたて、籠の鳥",
+            "nameKR": "날아라, 새장 속 새여",
             "desc": "When a Ventus Versatile Trekker is on the battlefield, grants 1 stack of Starlit Hope on the Main Trekker for {1}s, stacking up to 10 times.\u000bWhen a Trekker with 5 stacks or more of Starlit Hope deals DMG, inflicts the following on the target: increases Ventus Skill DMG Taken by <color=#ec6d21>{2}</color> for {3}s.\u000bWhen a Trekker with 10 stacks of Starlit Hope deals DMG, additionally inflicts the following on the target: increases Ventus Auto Attack DMG Taken by <color=#ec6d21>{4}</color> for {5}s.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "风系均衡角色在场时，每秒为主控角色附加1层「希冀」，持续{1}秒，可叠加10层。\u000b附带大于等于5层「希冀」的角色造成伤害时，对目标附加：受到风系技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。\u000b附带10层「希冀」的角色造成伤害时，额外对目标附加：受到风系普攻伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。",
+            "descJP": "風属性のバランサー巡遊者がフィールドに存在時、1秒ごとに主力巡遊者に自由の羽を1付与する。自由の羽は{1}秒間持続し、10回まで重複できる。\u000b自由の羽を5以上付与された巡遊者がダメージを与えた時、{3}秒間、敵の風属性のスキル被ダメージが<color=#ec6d21>{2}</color>増加する。\u000b自由の羽を10付与された巡遊者がダメージを与えた時、{5}秒間、敵の風属性の通常攻撃被ダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "바람 속성 밸런스 캐릭터가 필드에 있으면, 1초마다 메인 캐릭터에게 「희망」 1스택을 부여한다. {1}초간 지속되며, 최대 10스택 중첩된다. \u000b「희망」을 5스택 이상 보유한 캐릭터가 피해를 입히면 목표가 받는 바람 속성 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다. \u000b「희망」을 10스택 보유한 캐릭터가 피해를 입히면, 목표가 받는 바람 속성 일반 공격 피해가 추가로 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
             "effectType": [
                 "ELEMENTTYPE_:(Ventus) Skill DMG Taken",
                 "ELEMENTTYPE_:(Ventus) Auto Attack DMG Taken"
@@ -59082,10 +59085,13 @@
         "secondarySkill1": {
             "id": 40591,
             "name": "Wings of Dream",
+            "nameCN": "梦想之翼",
+            "nameJP": "夢の翼",
+            "nameKR": "꿈의 날개",
             "desc": "Increases Ventus Versatile Trekkers' Auto Attack DMG and Skill DMG by <color=#ec6d21>{1}</color>.\u000bStarlit Hope gains an additional effect: Each stack increases own Skill Crit DMG by <color=#ec6d21>{2}</color>.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "风系均衡角色造成的普攻和技能伤害提升<color=#ec6d21>{1}</color>。\u000b「希冀」获得额外效果：每层使自身技能暴击伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "風属性のバランサー巡遊者が与える通常攻撃ダメージとスキルダメージが<color=#ec6d21>{1}</color>増加する。\u000b自由の羽に追加効果が付与される：自由の羽1ごとに、自身のスキル会心ダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "바람 속성 밸런스 캐릭터가 입히는 일반 공격과 스킬 피해가 <color=#ec6d21>{1}</color> 증가한다. \u000b「희망」이 추가 효과를 획득해, 1스택마다 자신의 스킬 치명타 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Auto Attack DMG (base)",
@@ -59123,10 +59129,13 @@
         "secondarySkill2": {
             "id": 40592,
             "name": "Voice of the Future",
+            "nameCN": "未来之声",
+            "nameJP": "未来への飛翔",
+            "nameKR": "미래의 소리",
             "desc": "When a Trekker with Starlit Hope triggers a Mark that inflicts Cyclone, increases the squad's Ventus Auto Attack DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bWhen a Trekker with Starlit Hope triggers a Mark that inflicts Blossom, increases the squad's Ventus Skill DMG by <color=#ec6d21>{3}</color> for {4}s.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "附带「希冀」的角色触发印记产生「气旋」时，全队风系普攻伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b附带「希冀」的角色触发印记产生「绽放」时，全队风系技能伤害提升<color=#ec6d21>{3}</color>，持续{4}秒。",
+            "descJP": "自由の羽が付与された巡遊者が印を発動させ、旋風を発生させた時、{2}秒間、チーム全体の風属性の通常攻撃ダメージが<color=#ec6d21>{1}</color>増加する。\u000b自由の羽が付与された巡遊者が印を発動させ、満開を発生させた時、{4}秒間、チーム全体の風属性のスキルダメージが<color=#ec6d21>{3}</color>増加する。",
+            "descKR": "「희망」을 보유한 캐릭터가 표식을 발동해 「선풍」을 생성하면, 팀 전체 바람 속성 일반 공격 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b「희망」을 보유한 캐릭터가 표식을 발동해 「만개」를 생성하면, 팀 전체 바람 속성 스킬 피해가 <color=#ec6d21>{3}</color> 증가한다. {4}초간 지속된다.",
             "effectType": [
                 "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
                 "ELEMENTTYPE_:(Ventus) Skill DMG"
@@ -59680,10 +59689,13 @@
         "mainSkill": {
             "id": 4060,
             "name": "Moment of Glory",
+            "nameCN": "荣誉时刻",
+            "nameJP": "栄光の瞬間",
+            "nameKR": "영광의 순간",
             "desc": "When a Ventus Versatile Trekker deals Auto Attack and Skill DMG, the Ventus Main Trekker gains 1 stack of Glory for {1}s, stacking up to {2} times.\u000bAt 10 stacks, increases the Ventus DMG dealt by Ventus Trekkers in the squad by <color=#ec6d21>{3}</color>.\u000bAt 20 stacks, increases the Auto Attack DMG dealt by Ventus Trekkers in the squad by an additional <color=#ec6d21>{4}</color>.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "风系均衡角色造成普攻和技能伤害时，风系主控角色获得1层「光荣」，持续{1}秒，可叠加{2}层。\u000b「光荣」层数达到10层时，队伍中风系角色造成的风系伤害提升<color=#ec6d21>{3}</color>。\u000b「光荣」层数达到20层时，额外使队伍中风系角色造成的普攻伤害提升<color=#ec6d21>{4}</color>。",
+            "descJP": "風属性のバランサー巡遊者が通常攻撃ダメージまたはスキルダメージを与えた時、風属性の主力巡遊者は栄光を1獲得する。栄光は{1}秒間持続し、{2}回まで重複できる。\u000b栄光が10に達している時、チーム内の風属性巡遊者が与える風属性ダメージが<color=#ec6d21>{3}</color>増加する。\u000b栄光が20に達している時、さらにチーム内の風属性巡遊者が与える通常攻撃ダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "바람 속성 밸런스 캐릭터가 일반 공격과 스킬 피해를 입히면, 바람 속성 메인 캐릭터가 「영광」 1스택을 획득한다. {1}초간 지속되며, 최대 {2}스택 중첩된다. \u000b「영광」 10스택 달성 시, 팀 내 바람 속성 캐릭터가 입히는 바람 속성 피해가 <color=#ec6d21>{3}</color> 증가한다. \u000b「영광」 20스택 달성 시 팀 내 바람 속성 캐릭터가 입히는 일반 공격 피해가 추가로 <color=#ec6d21>{4}</color> 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Ventus DMG (base)",
@@ -59700,10 +59712,13 @@
         "secondarySkill1": {
             "id": 40601,
             "name": "Path of Radiance",
+            "nameCN": "光辉道路",
+            "nameJP": "祝福の追い風",
+            "nameKR": "빛의 길",
             "desc": "Increases the ATK of Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bGlory gains an additional effect: Each stack increases own Skill DMG by <color=#ec6d21>{2}</color>.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "队伍中风系角色攻击力提升<color=#ec6d21>{1}</color>。\u000b「光荣」获得额外效果：每层使自身技能伤害提升<color=#ec6d21>{2}</color>。",
+            "descJP": "チーム内の風属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。\u000b栄光に追加効果が付与される：栄光1ごとに、自身のスキルダメージが<color=#ec6d21>{2}</color>増加する。",
+            "descKR": "팀 내 바람 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. \u000b「영광」이 추가 효과를 획득해, 1스택마다 자신의 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "ATK (%)"
             ],
@@ -59743,10 +59758,13 @@
         "secondarySkill2": {
             "id": 40602,
             "name": "Bright Prospects",
+            "nameCN": "远大前途",
+            "nameJP": "輝かしい未来",
+            "nameKR": "원대한 앞길",
             "desc": "When Glory is at max stacks, increases Ventus DMG dealt by Ventus Trekkers in the squad by <color=#ec6d21>{1}</color>.",
-            "descCN": "undefined",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descCN": "「光荣」满层时，队伍中风系角色造成的风系伤害提升<color=#ec6d21>{1}</color>。",
+            "descJP": "栄光が上限に達している時、チーム内の風属性巡遊者が与える風属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "「영광」 최대 스택 시 팀 내 바람 속성 캐릭터가 입히는 바람 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [],
             "addAttrType": [
                 "Ventus DMG (base)"
