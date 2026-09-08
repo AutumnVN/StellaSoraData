@@ -74575,7 +74575,7 @@
                     "nameCN": "街斗艺术",
                     "nameJP": "爆走準備",
                     "nameKR": "스트리트 파이트",
-                    "desc": "When &Param1& (Main Skill) triggers a ##Lux Mark#1015#, enhances Two Base Hit, increasing its DMG Multiplier by <color=#0abec5>&Param2&</color> and reducing its Attack Interval by <color=#0abec5>30%</color>.\u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)",
+                    "desc": "When &Param1& (Main Skill) triggers a ##Lux Mark#1015#, enhances Two Base Hit's DMG Multiplier by <color=#0abec5>&Param2&</color> and reduces its Attack Interval by <color=#0abec5>30%</color>.\u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)",
                     "descCN": "主控技「&Param1&」触发##光系印记#1015#后，「二垒打」的伤害倍率提升<color=#0abec5>&Param2&</color>，伤害间隔缩短<color=#0abec5>30%</color>。\u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)",
                     "descJP": "主力スキルで##光属性の印#1015#を発動させた後、二塁打が強化され、ダメージ倍率が<color=#0abec5>&Param2&</color>増加し、ダメージ間隔が<color=#0abec5>30%</color>短縮される。\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)",
                     "descKR": "메인 스킬 「&Param1&」가 ##빛 속성 표식#1015#을 발동한 후 「2루타」의 피해 배율이 <color=#0abec5>&Param2&</color> 증가하고, 피해 간격이 <color=#0abec5>30%</color> 감소한다.\u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)",
@@ -89797,6 +89797,3710 @@
                 "Evil Bloom Essence": 6,
                 "Barrage Game Cartridge": 200,
                 "Demon Bee Game Cartridge": 70,
+                "Chess Piece of Skill": 927,
+                "Dorra": 3400000
+            }
+        ]
+    },
+    "137": {
+        "id": 137,
+        "name": "Eleanor",
+        "star": 5,
+        "element": "Ventus",
+        "class": "Versatile",
+        "attackType": "Melee",
+        "style": "Steady",
+        "force": "Freelance Trekker",
+        "tag": [
+            "Versatile",
+            "Steady",
+            "Freelance Trekker"
+        ],
+        "cnCv": "Shi Conghao",
+        "jpCv": "Hanaiwa Kana",
+        "source": [
+            "Limited",
+            "Premium",
+            "Recruit",
+            "Gacha",
+            "Banner",
+            "p2w"
+        ],
+        "birthday": "March 24th",
+        "loveGift": [
+            "Portable Blower",
+            "Exquisite Blower",
+            "Deluxe Blower",
+            "Card Photo Capturer",
+            "Reflective Photo Capturer",
+            "Ultra-Precision Photo Capturer",
+            "Gilded Ceramic Bowl",
+            "Blossom Porcelain Cup",
+            "Mystic Potion Kettle"
+        ],
+        "hateGift": [
+            "Love Candle",
+            "Blazing Wings",
+            "Fiery Honeypot"
+        ],
+        "date": [
+            {
+                "id": 137301,
+                "name": "Feeding Time",
+                "clue": "Visit the Dessert Shop to unlock",
+                "secondChoice": "Haven't had enough. Let's order some more."
+            },
+            {
+                "id": 137302,
+                "name": "Diving in the Hot Spring",
+                "clue": "Visit Hot Spring Resort to unlock",
+                "secondChoice": "Let’s go soak in the hot springs."
+            }
+        ],
+        "fixedStat": {
+            "Charge Rate": "Medium",
+            "Energy Cost": "Medium",
+            "Attack Range": 3,
+            "Walk Speed": 5.25,
+            "Run Speed": 7
+        },
+        "normalAtk": {
+            "id": 13710000,
+            "name": "Tactical Combo",
+            "energyLimit": 5.93,
+            "desc": "Quickly switches among multiple weapons to attack.\u000bStrike 1: <color=#ec6d21>&Param1&</color> of ATK as Ventus Auto Attack DMG.\u000bStrike 2: <color=#ec6d21>&Param2& x5</color> of ATK as Ventus Auto Attack DMG.\u000bStrike 3: <color=#ec6d21>&Param3& x5</color> of ATK as Ventus Auto Attack DMG.\u000bStrike 4: <color=#ec6d21>&Param4& x6</color> of ATK as Ventus Auto Attack DMG.\u000bStrike 5: <color=#ec6d21>&Param5& x7</color> of ATK as Ventus Auto Attack DMG.\u000bEleanor has ##Tactical Energy#4048#. She can automatically spend 10 ##Tactical Energy#4048# to activate Cross Slash, dealing <color=#ec6d21>&Param6&</color> of ATK as AoE Ventus Auto Attack DMG. Cross Slash can trigger ##Ventus Mark#1017# and create a Blossom, dealing &Param7& of ATK as AoE Ventus Mark DMG.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Auto Attack) \u000bParam5: &Param5& (HitDamage,Auto Attack) \u000bParam6: &Param6& (HitDamage,Auto Attack) \u000bParam7: &Param7& (HitDamage,Mark)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Auto Attack) \u000bParam5: &Param5& (HitDamage,Auto Attack) \u000bParam6: &Param6& (HitDamage,Auto Attack) \u000bParam7: &Param7& (HitDamage,Mark)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Auto Attack) \u000bParam5: &Param5& (HitDamage,Auto Attack) \u000bParam6: &Param6& (HitDamage,Auto Attack) \u000bParam7: &Param7& (HitDamage,Mark)",
+            "damageType": [
+                "Auto Attack (1.17e, from Normal attack, scale with Normal attack)",
+                "Auto Attack (3.71e, from Normal attack, scale with Normal attack)",
+                "Auto Attack (5.93e, from Normal attack, scale with Normal attack)",
+                "Auto Attack (5.56e, from Normal attack, scale with Normal attack)",
+                "Auto Attack (2.96e, from Normal attack, scale with Normal attack)",
+                "Auto Attack (1.94e, from Normal attack, scale with Normal attack)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "31.7%/36.4%/41.2%/55.4%/59.8%/64.3%/73.1%/76.9%/80.7%/88.3%/94.7%/101%/107.3%",
+                "20.1%/23.2%/26.2%/35.3%/38.1%/40.9%/46.5%/48.9%/51.4%/56.2%/60.2%/64.3%/68.3%",
+                "32.2%/37%/41.8%/56.3%/60.8%/65.3%/74.4%/78.2%/82.1%/89.8%/96.2%/102.7%/109.1%",
+                "25.2%/28.9%/32.7%/44%/47.5%/51.1%/58.1%/61.1%/64.1%/70.2%/75.2%/80.2%/85.3%",
+                "11.5%/13.2%/14.9%/20.1%/21.7%/23.3%/26.5%/27.9%/29.3%/32%/34.3%/36.6%/38.9%",
+                "57.3%/65.9%/74.5%/100.3%/108.4%/116.4%/132.4%/139.3%/146.2%/160%/171.4%/182.9%/194.3%",
+                "24.8%/28.6%/32.3%/43.5%/46.9%/50.4%/57.4%/60.4%/63.3%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Auto Attack (1.17e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (3.71e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (5.93e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (5.56e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (2.96e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (1.94e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "13701_Normal"
+        },
+        "skill": {
+            "id": 13731000,
+            "name": "Sentry Deployment",
+            "cooldown": "10s",
+            "energyLimit": 7.37,
+            "desc": "Spins rapidly to deal <color=#ec6d21>&Param1&x2</color> of ATK as AoE Ventus Skill DMG and gains the Vigil effect: multiple ##Sentries#4050# move around Eleanor for &Param2&s, dealing <color=#ec6d21>&Param3&</color> of ATK as AoE Ventus Skill DMG at intervals. Sentry Deployment (Main Skill) can trigger ##Ventus Mark#1017# and create Blossom, dealing &Param4& of ATK as AoE Ventus Mark DMG.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "damageType": [
+                "Skill (7.37e, from Skill, scale with Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": [
+                "94%/108%/122%/164%/178%/191%/217%/228%/240%/262%/281%/300%/319%",
+                10,
+                "116%/133%/150%/202%/219%/235%/267%/281%/295%/323%/346%/369%/392%",
+                "24.8%/28.6%/32.3%/43.5%/46.9%/50.4%/57.4%/60.4%/63.3%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (7.37e, from Skill, scale with Skill)"
+                },
+                {
+                    "buffIcon": "No Icon"
+                },
+                {
+                    "damageType": "Skill (7.37e, from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "13701_Skill_Main"
+        },
+        "supportSkill": {
+            "id": 13732000,
+            "name": "Armed Assault",
+            "cooldown": "12s",
+            "desc": "Performs multiple jump slams, triggering explosions that deal <color=#ec6d21>&Param1& x9</color> of ATK as AoE Ventus Skill DMG. Every third slam generates 1 ##Sentry#4050# for 3s. Up to 3 Sentries can exist at the same time. ##Sentries#4050# can fire bullets that deal <color=#ec6d21>&Param2&</color> of Eleanor's ATK as Ventus Auto Attack DMG. Armed Assault (Support Skill) can inflict ##Ventus Mark: Breeze#2017#.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+            "damageType": [
+                "Skill (from Skill, scale with Skill)",
+                "Auto Attack (from Normal attack, scale with Skill)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "78.4%/90.1%/101.9%/137.1%/148.1%/159.1%/181%/190.4%/199.8%/218.6%/234.3%/250%/265.6%",
+                "47.1%/54.2%/61.3%/82.5%/89.1%/95.7%/108.9%/114.6%/120.2%/131.5%/141%/150.4%/159.8%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Auto Attack (from Normal attack, scale with Skill)"
+                }
+            ],
+            "icon": "13701_Skill_Support"
+        },
+        "ultimate": {
+            "id": 13740000,
+            "name": "Firestorm",
+            "cooldown": "35s",
+            "energy": 275,
+            "desc": "Eleanor fires a barrage of rockets, dealing AoE Ventus Ultimate DMG equal to <color=#ec6d21>&Param1& x14</color> of ATK.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+            "damageType": [
+                "Ultimate (from Ultimate, scale with Ultimate)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "118%/135%/153%/206%/222%/239%/272%/286%/300%/328%/352%/375%/399%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
+                }
+            ],
+            "icon": "13701_Ultra"
+        },
+        "potential": {
+            "mainCore": [
+                {
+                    "id": 513701,
+                    "name": "Tactical Protocol: Threshold",
+                    "desc": "Cross Slash can attack 1 additional time. Increases Cross Slash's &Param1& by <color=#0abec5>&Param2&</color>. While Vigil is active, reduces the cooldown for gaining ##Tactical Energy#4048# for Eleanor's Auto Attacks by 1s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Ventus DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Ventus DMG",
+                        "20%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Ventus DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Ventus DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_01",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513702,
+                    "name": "Tactical Protocol: Detonation",
+                    "desc": "Whenever Eleanor gains or spends ##Tactical Energy#4048#, fires 1 bomb that deals AoE Ventus Auto Attack DMG equal to <color=#0abec5>&Param1&</color> of ATK and can trigger ##Ventus Mark#1017#. Reduces the ##Tactical Energy#4048# consumed by Cross Slash by 4.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "damageType": [
+                        "Auto Attack (from Normal attack, scale with Normal attack)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "72%/83%/94%/126%/136%/146%/167%/175%/184%/201%/216%/230%/245%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_02",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513703,
+                    "name": "Tactical Protocol: Overload",
+                    "desc": "Reduces Vigil's Attack Interval. When casting Cross Slash, increases Eleanor's &Param1& by <color=#0abec5>&Param2&</color> for &Param3&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "40%",
+                        15
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_03",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513704,
+                    "name": "Tactical Protocol: Synergy",
+                    "desc": "When Eleanor's Vigil deals DMG to a target 2 times, it can deal an additional <color=#0abec5>&Param1&</color> of ATK as AoE Ventus Skill DMG. When casting Sentry Deployment (Main Skill), increases Eleanor's &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [
+                        "Ventus DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "193%/222%/252%/339%/366%/393%/447%/470%/493%/540%/578%/617%/656%",
+                        "Ventus DMG",
+                        "20%",
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        },
+                        {
+                            "effectType": "Ventus DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Ventus DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_04",
+                    "rarity": "core"
+                }
+            ],
+            "mainNormal": [
+                {
+                    "id": 513705,
+                    "name": "Double Rifts",
+                    "desc": "Cross Slash can trigger additional explosions, dealing AoE Ventus Auto Attack DMG equal to <color=#ec6d21>&Param1&</color> of ATK. Increases Cross Slash's &Param2& against elite or higher-tier targets by <color=#ec6d21>&Param3&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [
+                        "Auto Attack (from Normal attack)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Ventus DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "60%/96%/132%/168%/204%/240%/276%/312%/348%",
+                        "Ventus DMG",
+                        "7.5%/12%/16.5%/21%/25.5%/30%/34.5%/39%/43.5%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Auto Attack (from Normal attack)"
+                        },
+                        {
+                            "addAttrType": "Ventus DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Ventus DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_05",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513706,
+                    "name": "Battle Fury",
+                    "desc": "When casting Cross Slash, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "13.5%/21.6%/29.7%/37.8%/45.9%/54%/56.7%/59.4%/62.1%",
+                        6
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_01",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513707,
+                    "name": "Vortex Boost",
+                    "desc": "The last Auto Attack strike can trigger ##Ventus Mark#1017#. During Vigil, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Ventus) Auto Attack DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Auto Attack DMG",
+                        "15%/24%/33%/42%/51%/60%/63%/66%/69%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_05",
+                    "corner": "Round",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513708,
+                    "name": "Area Volley",
+                    "desc": "Increases Vigil's Attack Range and its &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ventus) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Skill DMG",
+                        "18%/28.8%/39.6%/50.4%/61.2%/72%/82.8%/93.6%/104.4%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ventus) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ventus) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_08",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513709,
+                    "name": "Zone Detection",
+                    "desc": "When casting Sentry Deployment (Main Skill), each target near Eleanor increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "4.7%/7.5%/10.3%/13.1%/15.9%/18.7%/19.6%/20.6%/21.5%",
+                        10,
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_03",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513711,
+                    "name": "Annihilation Pulse",
+                    "desc": "Firestorm (Ultimate) can trigger ##Ventus Mark#1017#. Increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "Ventus DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Ventus DMG",
+                        "12%/19.2%/26.4%/33.6%/40.8%/48%/50.4%/52.8%/55.2%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Ventus DMG (base)"
+                        },
+                        {
+                            "effectType": "Ventus DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_Wind_1",
+                    "corner": "Diamond",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513713,
+                    "name": "Wind Bond",
+                    "desc": "When triggering ##Ventus Mark#1017#, increases the &Param1& of all Ventus Trekkers in the squad by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "3%/4.8%/6.6%/8.4%/10.2%/12%/13.8%/15.6%/17.4%",
+                        5,
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_15",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513710,
+                    "name": "Chain Echo",
+                    "desc": "When Eleanor deals Auto Attack DMG, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times. This effect can only be triggered once per sec.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Ventus) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "3%/4.8%/6.6%/8.4%/10.2%/12%/12.6%/13.2%/13.8%",
+                        3,
+                        5
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_01",
+                    "corner": "Round",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513712,
+                    "name": "Flicker Sequence",
+                    "desc": "Decreases Dodge cooldown by 25%. Increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "ATK",
+                        "7.8%/12.5%/17.2%/21.8%/26.5%/31.2%/32.8%/34.3%/35.9%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)"
+                        },
+                        {
+                            "effectType": "ATK (%)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_2",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                }
+            ],
+            "common": [
+                {
+                    "id": 513741,
+                    "name": "Reinforcement Command",
+                    "desc": "When Eleanor casts Firestorm (Ultimate), increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.\u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "Ventus DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Ventus DMG",
+                        "16%/25.6%/35.2%/44.8%/54.4%/64%/67.2%/70.4%/73.6%",
+                        25,
+                        1
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Ventus DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Ventus DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_41",
+                    "corner": "Diamond",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513742,
+                    "name": "Purge Command",
+                    "desc": "Increases Eleanor's &Param5& by <color=#ec6d21>&Param6&</color>. When Firestorm (Ultimate) deals DMG to a target, increases the &Param1& it deals to the target by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "Ventus DMG (base)"
+                    ],
+                    "addAttrType": [
+                        "(Ventus) Ultimate DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Ultimate DMG",
+                        "2.4%/3.8%/5.2%/6.7%/8.1%/9.5%/10%/10.5%/10.9%",
+                        2,
+                        5,
+                        "Ventus DMG",
+                        "10%/16%/22%/28%/34%/40%/42%/44%/46%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ventus) Ultimate DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "(Ventus) Ultimate DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Ventus DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Ventus DMG (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_41",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513743,
+                    "name": "Focus Command",
+                    "desc": "Increases Eleanor's &Param5& by <color=#ec6d21>&Param6&</color>. When any Ventus Trekker in the squad casts a Main Skill or Support Skill, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Ventus) Ultimate DMG",
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Ultimate DMG",
+                        "1.6%/2.6%/3.5%/4.5%/5.4%/6.4%/6.7%/7%/7.4%",
+                        10,
+                        5,
+                        "ATK",
+                        "12%/19.2%/26.4%/33.6%/40.8%/48%/50.4%/52.8%/55.2%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Ultimate DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Ultimate DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)"
+                        },
+                        {
+                            "effectType": "ATK (%)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_41",
+                    "corner": "Round",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                }
+            ],
+            "supportCore": [
+                {
+                    "id": 513721,
+                    "name": "Chain Detonation",
+                    "desc": "Increases the &Param1& of jump slam explosions from Armed Assault (Support Skill) by <color=#0abec5>&Param2&</color>. Increases the number of explosions of each jump slam by 1. Resets when the Support Skill ends.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ventus) Skill Crit Rate (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Skill Crit Rate",
+                        "20%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ventus) Skill Crit Rate (base)"
+                        },
+                        {
+                            "addAttrType": "(Ventus) Skill Crit Rate (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_21",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513722,
+                    "name": "Seismic Spread",
+                    "desc": "Increases the &Param3& of jump slam explosions from Armed Assault (Support Skill) by <color=#0abec5>&Param4&</color>. When there is only 1 Support Trekker in the squad, increases the Attack Range and &Param1& of each jump slam's explosion. After each explosion, increases &Param1& dealt by the following jump slam explosions by <color=#0abec5>&Param2&</color>, stacking up to 9 times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttributeValue,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttributeValue,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttributeValue,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)",
+                        "Skill Crit DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "DMG multiplier",
+                        "12%",
+                        "Skill Crit DMG",
+                        "24%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "Skill Crit DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Skill Crit DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_22",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513723,
+                    "name": "Function Sustain",
+                    "desc": "Increases ##Sentries'#4050# &Param5& by <color=#0abec5>&Param6&</color>. Each time a ##Sentry#4050# is generated, extends the duration of all existing ##Sentries#4050# on the field. Each jump slam from Armed Assault (Support Skill) increases ##Sentries'#4050# &Param1& by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam6: &Param6& (OnceAdditionalAttributeValue,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam6: &Param6& (OnceAdditionalAttributeValue,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam6: &Param6& (OnceAdditionalAttributeValue,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)",
+                        "ATK (%)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "DMG multiplier",
+                        "13.8%",
+                        3,
+                        9,
+                        "ATK",
+                        "48%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "ATK (%)"
+                        },
+                        {
+                            "addAttrType": "ATK (%)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_23",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513724,
+                    "name": "Cluster Barrage",
+                    "desc": "When ##Sentries'#4050# bullets deal DMG to the Main Trekker's target 3 times, deals an additional <color=#0abec5>&Param1&</color> of ATK as AoE Ventus Auto Attack DMG. This effect can be triggered once every 0.5s. Each ##Sentry#4050# on the field increases &Param2& of all ##Sentries#4050# on the field by <color=#0abec5>&Param3&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (EffectValue,EffectTypeFirstSubtype) \u000bParam3: &Param3& (EffectValue,EffectTypeParam1)",
+                    "damageType": [
+                        "Auto Attack (from Normal attack, scale with Skill)"
+                    ],
+                    "effectType": [
+                        "Attack Speed (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "117%/134%/152%/204%/220%/236%/269%/282%/296%/324%/347%/370%/394%",
+                        "Attack Speed",
+                        "33%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Auto Attack (from Normal attack, scale with Skill)"
+                        },
+                        {
+                            "effectType": "Attack Speed (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Attack Speed (%)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_24",
+                    "rarity": "core"
+                }
+            ],
+            "supportNormal": [
+                {
+                    "id": 513725,
+                    "name": "Field Pull",
+                    "desc": "Increases the &Param3& of jump slam explosions from Armed Assault (Support Skill) by &Param4& and their &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)",
+                        "Skill Crit Rate (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "DMG multiplier",
+                        "9%/15%/20%/26%/31%/37%/43%/48%/54%",
+                        "Skill Crit Rate",
+                        "20%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "Skill Crit Rate (base)"
+                        },
+                        {
+                            "addAttrType": "Skill Crit Rate (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_25",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513726,
+                    "name": "Power Boost",
+                    "desc": "When jump slam explosions from Armed Assault (Support Skill) deal DMG, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times. Increases the Ventus Vanguard Main Trekker's &Param5& by <color=#ec6d21>&Param6&</color> for &Param7&s, stacking up to &Param8& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time) \u000bParam8: &Param8& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time) \u000bParam8: &Param8& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (BuffValue,Time) \u000bParam8: &Param8& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Ventus) Skill DMG",
+                        "ELEMENTTYPE_:(Ventus) Skill Crit DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "1%/1.6%/2.2%/2.8%/3.4%/4%/4.2%/4.4%/4.6%",
+                        3,
+                        10,
+                        "Skill Crit DMG",
+                        "1.3%/2%/2.8%/3.5%/4.3%/5%/5.3%/5.5%/5.8%",
+                        3,
+                        15
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Skill Crit DMG"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Ventus) Skill Crit DMG"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_21",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513727,
+                    "name": "Shattering Blow",
+                    "desc": "Increases the &Param1& of jump slam explosions from Armed Assault (Support Skill) by <color=#ec6d21>&Param2&</color> and &Param3& by <color=#ec6d21>&Param4&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)",
+                        "Ventus DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "DMG multiplier",
+                        "4.7%/7.5%/10.4%/13.2%/16%/18.8%/19.8%/20.7%/21.6%",
+                        "Ventus DMG",
+                        "20%/32%/44%/56%/68%/80%/84%/88%/92%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "Ventus DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Ventus DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_21",
+                    "corner": "Round",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513728,
+                    "name": "Piercing Trajectory",
+                    "desc": "Increases the size of bullets fired by ##Sentries#4050#, which can penetrate targets. Increases the &Param1& of ##Sentries#4050# against elite or higher-tier targets by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Ventus) Auto Attack DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Auto Attack DMG",
+                        "32%/50%/69%/88%/107%/126%/145%/164%/183%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ventus) Auto Attack DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ventus) Auto Attack DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_28",
+                    "corner": "Diamond",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513730,
+                    "name": "Precision Calibration",
+                    "desc": "Increases ##Sentries'#4050# &Param1& by <color=#ec6d21>&Param2&</color>. When there are 3 ##Sentries#4050# on the field, increases the Ventus Vanguard Main Trekker's &Param3& by <color=#ec6d21>&Param4&</color> for 10s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "ATK (%)",
+                        "(Ventus) Auto Attack DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "ATK",
+                        "10.5%/16.8%/23.1%/29.4%/35.7%/42%/44.1%/46.2%/48.3%",
+                        "Auto Attack DMG",
+                        "15%/24%/33%/42%/51%/60%/63%/66%/69%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "ATK (%)"
+                        },
+                        {
+                            "addAttrType": "ATK (%)"
+                        },
+                        {
+                            "addAttrType": "(Ventus) Auto Attack DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ventus) Auto Attack DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_23",
+                    "corner": "Round",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513731,
+                    "name": "Wind Resonance",
+                    "desc": "When any Trekker in the squad triggers ##Ventus Mark#1017#, increases Eleanor's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "20%/32%/44%/56%/68%/80%/84%/88%/92%",
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_Wind_1",
+                    "corner": "Diamond",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513732,
+                    "name": "Annihilation Echo",
+                    "desc": "Firestorm (Ultimate) can inflict ##Ventus Mark: Breeze#2017#. When Eleanor deals DMG to a target, increases the target's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "Ventus DMG Taken (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_DefenseDown"
+                    ],
+                    "params": [
+                        "Ventus DMG Taken",
+                        "5%/8%/11%/14%/17%/20%/23%/26%/29.1%",
+                        5,
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Ventus DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "effectType": "Ventus DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_11",
+                    "corner": "Triangle",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513729,
+                    "name": "Suppression Analysis",
+                    "desc": "Increases the &Param1& ##Sentries#4050# deal to the Main Trekker's target by <color=#ec6d21>&Param2&</color> and Eleanor's &Param3& by <color=#ec6d21>&Param4&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [
+                        "(Ventus) Auto Attack DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Auto Attack DMG",
+                        "9%/14.4%/19.8%/25.2%/30.6%/36%/37.8%/39.6%/41.4%",
+                        "ATK",
+                        "18%/28.8%/39.6%/50.4%/61.2%/72%/75.6%/79.2%/82.8%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Ventus) Auto Attack DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Ventus) Auto Attack DMG (base)"
+                        },
+                        {
+                            "effectType": "ATK (%)"
+                        },
+                        {
+                            "effectType": "ATK (%)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13701_Potential_23",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513733,
+                    "name": "Power Amp",
+                    "desc": "When Eleanor deals DMG, increases the &Param1& of all Ventus Trekkers in the squad by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "Ventus DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Ventus DMG",
+                        "1.3%/2.1%/2.9%/3.6%/4.4%/5.2%/5.5%/5.7%/6%",
+                        5,
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Ventus DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Ventus DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_15",
+                    "corner": "Round",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                }
+            ]
+        },
+        "talent": [
+            {
+                "name": "Small Treat",
+                "boost": [
+                    {
+                        "name": "Small Treat",
+                        "desc": "When Eleanor deals Auto Attack DMG to a target, the target takes <color=#0abec5>&Param1&</color> more Ventus DMG for &Param2&s, stacking up to &Param3& times.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "effectType": [
+                            "Ventus DMG Taken (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "3.5%",
+                            8,
+                            6
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Ventus DMG Taken (base)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Spree Mode",
+                "boost": [
+                    {
+                        "name": "Spree Mode",
+                        "desc": "Increases Eleanors's ATK by <color=#0abec5>&Param1&</color>. When any Trekker in the squad triggers ##Ventus Mark#1017#, increases Eleanor's ATK by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "33%",
+                            "5.5%",
+                            10,
+                            6
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            },
+                            {
+                                "effectType": "ATK (%)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "On the House",
+                "boost": [
+                    {
+                        "name": "On the House",
+                        "desc": "When any Trekker inflicts ##Ventus Mark#1017# on a target, increases the Auto Attack DMG dealt by Ventus Trekkers in the squad by <color=#0abec5>&Param1&</color> and Skill DMG by <color=#0abec5>&Param2&</color> for &Param3&s.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "effectType": [
+                            "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
+                            "ELEMENTTYPE_:(Ventus) Skill DMG"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "25%",
+                            "25%",
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "effectType": "ELEMENTTYPE_:(Ventus) Skill DMG"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "My Treat Today",
+                "boost": [
+                    {
+                        "name": "My Treat Today",
+                        "desc": "After Eleanor casts a skill, increases her Auto Attack DMG by <color=#0abec5>&Param1&</color> and her Skill DMG by <color=#0abec5>&Param2&</color> for &Param3&s.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                        "effectType": [
+                            "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
+                            "ELEMENTTYPE_:(Ventus) Skill DMG"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "32%",
+                            "32%",
+                            12
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ELEMENTTYPE_:(Ventus) Auto Attack DMG",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "effectType": "ELEMENTTYPE_:(Ventus) Skill DMG"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Party Time",
+                "boost": [
+                    {
+                        "name": "Party Time",
+                        "desc": "Increases Eleanor's Ventus DMG dealt to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "effectType": [],
+                        "addAttrType": [
+                            "Ventus DMG (base)"
+                        ],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "30%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "addAttrType": "Ventus DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "stat": [
+            {
+                "Level": 1,
+                "HP": 1345,
+                "ATK": 115,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 2,
+                "HP": 1753,
+                "ATK": 150,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 3,
+                "HP": 2158,
+                "ATK": 184,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 4,
+                "HP": 2563,
+                "ATK": 219,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 5,
+                "HP": 2967,
+                "ATK": 254,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 6,
+                "HP": 3372,
+                "ATK": 288,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 7,
+                "HP": 3777,
+                "ATK": 323,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 8,
+                "HP": 4181,
+                "ATK": 357,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 9,
+                "HP": 4586,
+                "ATK": 392,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 4990,
+                "ATK": 427,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 5989,
+                "ATK": 512,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 11,
+                "HP": 6393,
+                "ATK": 546,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 12,
+                "HP": 6798,
+                "ATK": 581,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 13,
+                "HP": 7203,
+                "ATK": 616,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 14,
+                "HP": 7607,
+                "ATK": 650,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 15,
+                "HP": 8012,
+                "ATK": 685,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 16,
+                "HP": 8417,
+                "ATK": 719,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 17,
+                "HP": 8821,
+                "ATK": 754,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 18,
+                "HP": 9226,
+                "ATK": 789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 19,
+                "HP": 9630,
+                "ATK": 823,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 10035,
+                "ATK": 858,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 12044,
+                "ATK": 1029,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 21,
+                "HP": 12449,
+                "ATK": 1064,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 22,
+                "HP": 12854,
+                "ATK": 1099,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 23,
+                "HP": 13258,
+                "ATK": 1133,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 24,
+                "HP": 13663,
+                "ATK": 1168,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 25,
+                "HP": 14068,
+                "ATK": 1202,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 26,
+                "HP": 14472,
+                "ATK": 1237,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 27,
+                "HP": 14877,
+                "ATK": 1272,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 28,
+                "HP": 15282,
+                "ATK": 1306,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 29,
+                "HP": 15686,
+                "ATK": 1341,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 16091,
+                "ATK": 1375,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 19314,
+                "ATK": 1651,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 31,
+                "HP": 19719,
+                "ATK": 1685,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 32,
+                "HP": 20123,
+                "ATK": 1720,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 33,
+                "HP": 20528,
+                "ATK": 1755,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 34,
+                "HP": 20933,
+                "ATK": 1789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 35,
+                "HP": 21337,
+                "ATK": 1824,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 36,
+                "HP": 21742,
+                "ATK": 1858,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 37,
+                "HP": 22146,
+                "ATK": 1893,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 38,
+                "HP": 22551,
+                "ATK": 1927,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 39,
+                "HP": 22956,
+                "ATK": 1962,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 23360,
+                "ATK": 1997,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 28028,
+                "ATK": 2396,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 41,
+                "HP": 28433,
+                "ATK": 2430,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 42,
+                "HP": 28837,
+                "ATK": 2465,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 43,
+                "HP": 29242,
+                "ATK": 2499,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 44,
+                "HP": 29647,
+                "ATK": 2534,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 45,
+                "HP": 30051,
+                "ATK": 2568,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 46,
+                "HP": 30456,
+                "ATK": 2603,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 47,
+                "HP": 30860,
+                "ATK": 2638,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 48,
+                "HP": 31265,
+                "ATK": 2672,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 49,
+                "HP": 31670,
+                "ATK": 2707,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 32074,
+                "ATK": 2741,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 38494,
+                "ATK": 3290,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 51,
+                "HP": 38899,
+                "ATK": 3325,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 52,
+                "HP": 39304,
+                "ATK": 3359,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 53,
+                "HP": 39708,
+                "ATK": 3394,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 54,
+                "HP": 40113,
+                "ATK": 3428,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 55,
+                "HP": 40517,
+                "ATK": 3463,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 56,
+                "HP": 40922,
+                "ATK": 3498,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 57,
+                "HP": 41327,
+                "ATK": 3532,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 58,
+                "HP": 41731,
+                "ATK": 3567,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 59,
+                "HP": 42136,
+                "ATK": 3601,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 42541,
+                "ATK": 3636,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 51052,
+                "ATK": 4363,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 61,
+                "HP": 51456,
+                "ATK": 4398,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 62,
+                "HP": 51861,
+                "ATK": 4433,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 63,
+                "HP": 52266,
+                "ATK": 4467,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 64,
+                "HP": 52670,
+                "ATK": 4502,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 65,
+                "HP": 53075,
+                "ATK": 4536,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 66,
+                "HP": 53480,
+                "ATK": 4571,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 67,
+                "HP": 53884,
+                "ATK": 4605,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 68,
+                "HP": 54289,
+                "ATK": 4640,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 69,
+                "HP": 54693,
+                "ATK": 4675,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 55098,
+                "ATK": 4709,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 66117,
+                "ATK": 5651,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 71,
+                "HP": 66521,
+                "ATK": 5686,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 72,
+                "HP": 66926,
+                "ATK": 5720,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 73,
+                "HP": 67330,
+                "ATK": 5755,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 74,
+                "HP": 67735,
+                "ATK": 5789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 75,
+                "HP": 68140,
+                "ATK": 5824,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 76,
+                "HP": 68544,
+                "ATK": 5859,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 77,
+                "HP": 68949,
+                "ATK": 5893,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 78,
+                "HP": 69354,
+                "ATK": 5928,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 79,
+                "HP": 69758,
+                "ATK": 5962,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 70163,
+                "ATK": 5997,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 84190,
+                "ATK": 7196,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 81,
+                "HP": 84595,
+                "ATK": 7230,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 82,
+                "HP": 84999,
+                "ATK": 7265,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 83,
+                "HP": 85404,
+                "ATK": 7300,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 84,
+                "HP": 85809,
+                "ATK": 7334,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 85,
+                "HP": 86213,
+                "ATK": 7369,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 86,
+                "HP": 86618,
+                "ATK": 7403,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 87,
+                "HP": 87023,
+                "ATK": 7438,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 88,
+                "HP": 87427,
+                "ATK": 7472,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 89,
+                "HP": 87832,
+                "ATK": 7507,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 90,
+                "HP": 88236,
+                "ATK": 7542,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 91,
+                "HP": 88236,
+                "ATK": 7542,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            }
+        ],
+        "upgrade": [
+            {
+                "Count's Rewards": 5,
+                "Dorra": 7900
+            },
+            {
+                "Count's Rewards": 5,
+                "Count's Cellaring": 10,
+                "Dorra": 19800
+            },
+            {
+                "Count's Rewards": 10,
+                "Count's Cellaring": 15,
+                "Dorra": 44400
+            },
+            {
+                "Count's Rewards": 15,
+                "Count's Cellaring": 25,
+                "Dorra": 66600
+            },
+            {
+                "Count's Rewards": 20,
+                "Count's Cellaring": 40,
+                "Dorra": 146100
+            },
+            {
+                "Count's Rewards": 30,
+                "Count's Cellaring": 55,
+                "Count's Gift": 20,
+                "Dorra": 291600
+            },
+            {
+                "Count's Cellaring": 75,
+                "Count's Gift": 30,
+                "Dorra": 560200
+            },
+            {
+                "Count's Cellaring": 95,
+                "Count's Gift": 50,
+                "Dorra": 1121300
+            }
+        ],
+        "skillUpgrade": [
+            {
+                "Kung Fu Game Cartridge": 6,
+                "Chess Piece of Skill": 2,
+                "Dorra": 13300
+            },
+            {
+                "Kung Fu Game Cartridge": 12,
+                "Chess Piece of Skill": 6,
+                "Dorra": 17600
+            },
+            {
+                "Kung Fu Game Cartridge": 24,
+                "Fighting Game Cartridge": 3,
+                "Chess Piece of Skill": 10,
+                "Dorra": 49800
+            },
+            {
+                "Kung Fu Game Cartridge": 38,
+                "Fighting Game Cartridge": 8,
+                "Chess Piece of Skill": 24,
+                "Dorra": 100000
+            },
+            {
+                "Kung Fu Game Cartridge": 70,
+                "Fighting Game Cartridge": 14,
+                "Phantom Game Cartridge": 6,
+                "Chess Piece of Skill": 55,
+                "Dorra": 400000
+            },
+            {
+                "Wind Essence": 1,
+                "Fighting Game Cartridge": 50,
+                "Phantom Game Cartridge": 18,
+                "Chess Piece of Skill": 232,
+                "Dorra": 900000
+            },
+            {
+                "Wind Essence": 2,
+                "Fighting Game Cartridge": 90,
+                "Phantom Game Cartridge": 34,
+                "Chess Piece of Skill": 323,
+                "Dorra": 1600000
+            },
+            {
+                "Wind Essence": 3,
+                "Fighting Game Cartridge": 140,
+                "Phantom Game Cartridge": 50,
+                "Chess Piece of Skill": 478,
+                "Dorra": 2300000
+            },
+            {
+                "Wind Essence": 6,
+                "Fighting Game Cartridge": 200,
+                "Phantom Game Cartridge": 70,
                 "Chess Piece of Skill": 927,
                 "Dorra": 3400000
             }
@@ -105848,7 +109552,7 @@
                     "nameCN": "逐浪幻鳞",
                     "nameJP": "蛟龍の尾",
                     "nameKR": "환상 비늘",
-                    "desc": "When the Coiling Serpent hits a target, summons another Coiling Serpent, dealing <color=#fb8037>&Param1& of ATK</color> as Aqua Auto Attack DMG. This effect can only be triggered 3 times every 3s. Can trigger ##Aqua Mark#1018#.",
+                    "desc": "When the Coiling Serpent hits a target, summons another Coiling Serpent, dealing <color=#fb8037>&Param1&x2</color> of ATK as Aqua Auto Attack DMG. This effect can only be triggered 3 times every 3s. Can trigger ##Aqua Mark#1018#.",
                     "descCN": "「腾蛇」命中时，额外生成「腾蛇」，造成攻击力<color=#fb8037>&Param1&</color>的水系普攻伤害，该效果每3秒最多触发3次，可触发##水系印记#1018#。",
                     "descJP": "騰蛇命中時、追加で騰蛇を生成し、攻撃力の<color=#fb8037>&Param1&</color>の水属性の通常攻撃ダメージを与えるようになる。この効果は3秒ごとに3回まで発動する。この騰蛇は##水属性の印#1018#を発動させることができる。",
                     "descKR": "「등사」 명중 시, 「등사」를 추가로 생성해 공격력 <color=#fb8037>&Param1&</color>의 물 속성 일반 공격 피해를 입힌다. 해당 효과는 3초마다 최대 3회 발동하고, ##물 속성 표식#1018#을 발동할 수 있다.",

@@ -388,6 +388,14 @@
         "type": "Char",
         "rarity": "SSR"
     },
+    "137": {
+        "id": 137,
+        "name": "Eleanor",
+        "desc": "Proof of invitation to add Eleanor to your squad",
+        "literary": "Take flight and soar toward a new world of freedom.",
+        "type": "Char",
+        "rarity": "SSR"
+    },
     "140": {
         "id": 140,
         "name": "Sparkla",
@@ -784,6 +792,14 @@
         "type": "CharShard",
         "rarity": "SSR"
     },
+    "1370": {
+        "id": 1370,
+        "name": "Eleanor's Soul Key",
+        "desc": "Activates Trekker Talents.",
+        "literary": "Take flight and soar toward a new world of freedom.",
+        "type": "CharShard",
+        "rarity": "SSR"
+    },
     "1400": {
         "id": 1400,
         "name": "Sparkla's Soul Key",
@@ -949,6 +965,14 @@
         "name": "This Is My Justice!",
         "desc": "Certificate that unlocks Tilia's exclusive appearance \"This Is My Justice!\"!",
         "literary": "Suit up, transform! My fighting spirit burns hotter than the sun!\u000bClad in the armor of justice, I'll defend every street like a knight—\u000bThis is my justice!",
+        "type": "CharacterSkin",
+        "rarity": "SR"
+    },
+    "10704": {
+        "id": 10704,
+        "name": "Shining Bright, Spirits High",
+        "desc": "Certificate that unlocks Tilia's exclusive appearance: Shining Bright, Spirits High!",
+        "literary": "The sunshine girl is getting ready to cheer you on!\u000bPut on your brightest smile and get ready for the next challenge!",
         "type": "CharacterSkin",
         "rarity": "SR"
     },
@@ -1147,8 +1171,8 @@
     "12003": {
         "id": 12003,
         "name": "The Formula for Victory",
-        "desc": "Certificate that unlocks Canace's exclusive appearance: !",
-        "literary": "Meticulous thinking, precise calculations, and textbook movements.\u000bSprint, jump, spike—everything executed exactly as planned, but the body just can't keep up with the mind.\u000b—Huh? What do you mean I'm number one on the popularity poll!?",
+        "desc": "Certificate that unlocks Canace's exclusive appearance \"The Formula for Victory\"!",
+        "literary": "Meticulous thinking, precise calculations, and textbook movements.\u000bSprint, jump, spike... I have everything perfectly planned out, but my body just can't keep up with my mind!\u000bHuh? How am I number one in the popularity poll?!",
         "type": "CharacterSkin",
         "rarity": "SR"
     },
@@ -1329,6 +1353,18 @@
         "name": "Carefree in the Golden Glow",
         "desc": "Certificate that unlocks Mistique's exclusive appearance \"Carefree in the Golden Glow\"!",
         "literary": "Even a witch who feeds on truth deserves a little break once in a while.\u000bStretching out while enjoying the sunset—what could be more relaxing than this?",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "13701": {
+        "id": 13701,
+        "name": "Eleanor: Default",
+        "type": "CharacterSkin",
+        "rarity": "SSR"
+    },
+    "13702": {
+        "id": 13702,
+        "name": "Eleanor: Awakened",
         "type": "CharacterSkin",
         "rarity": "SSR"
     },
@@ -2698,6 +2734,14 @@
         "type": "Item",
         "rarity": "SR"
     },
+    "73115": {
+        "id": 73115,
+        "name": "Paper Star",
+        "desc": "Currency earned via active participation in the Go, My Lady! Training Handbook Plus! event. Can be used to redeem items in the Event Shop.",
+        "literary": "When we were little, dreams were paper stars we display in a glass bottle, hoping they'd bring good luck. When we grow up, dreams become stars in the sky, and we won't stop until we firmly grasp one.",
+        "type": "Item",
+        "rarity": "SR"
+    },
     "73201": {
         "id": 73201,
         "name": "Banner of Clearance",
@@ -2952,6 +2996,52 @@
         "desc": "Grants a Disc of your choice: Scorching Night's End, ★Rolling Life★, Tranquil Retreat, Soda Shopping, Delusion, or The Shining.",
         "literary": "A precious Disc collection, handpicked from a massive disc library. Each track is worth savoring in detail.",
         "type": "OutfitCYO",
+        "rarity": "SR"
+    },
+    "86012": {
+        "id": 86012,
+        "name": "Gold Disc Pack: Series 1",
+        "desc": "Grants a Disc of your choice: Twin Moon Mischief, ★Bam Bam Girl★, Emerald Dream, Rainy Tune, Meow Rhythm, or Leaf Her to Me.",
+        "literary": "A precious Disc collection, handpicked from a massive disc library. Each track is worth savoring in detail.",
+        "type": "OutfitCYO",
+        "rarity": "SR"
+    },
+    "86016": {
+        "id": 86016,
+        "name": "Proving Grounds Overlord Material Rewards",
+        "desc": "Defeat Overlords in Proving Grounds for Overlord Material Rewards.",
+        "type": "Item",
+        "rarity": "SSR"
+    },
+    "86017": {
+        "id": 86017,
+        "name": "Proving Grounds Skill Cartridge Rewards",
+        "desc": "Defeat Overlords in Proving Grounds for Game Cartridge Rewards.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "86018": {
+        "id": 86018,
+        "name": "Cataclysm Survivor Disc Rewards",
+        "desc": "Exchange Defender's Medals obtained through Cataclysm Survivor for Discs such as Lemon & Black Tea, One Shot, One Down, Sparkling Moment, United by Fate, The Meow, and Colors Pierce the Grey.",
+        "literary": "A precious Disc collection, handpicked from a massive Disc library. A good melody is timeless.",
+        "type": "Item",
+        "rarity": "SSR"
+    },
+    "86019": {
+        "id": 86019,
+        "name": "Ascension Disc Rewards",
+        "desc": "Exchange Journey Tickets obtained through Ascension for Discs such as Miraculous Anthem, Love River's Curse, Pure White, Holiday Bubble, Sweet Invitation, and Vent It Out ♥.",
+        "literary": "A precious Disc collection, handpicked from a massive disc library. Each track is worth savoring in detail.",
+        "type": "Item",
+        "rarity": "SR"
+    },
+    "86020": {
+        "id": 86020,
+        "name": "Operation: Shadow Siege Disc Rewards",
+        "desc": "Exchange Hunter Medals obtained through Operation: Shadow Siege for Discs such as Zesty Curiosity and Seasonal Waves.",
+        "literary": "A precious Disc collection, handpicked from a massive disc library. Each track is worth savoring in detail.",
+        "type": "Item",
         "rarity": "SR"
     },
     "90001": {
@@ -3501,6 +3591,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "112137": {
+        "id": 112137,
+        "name": "Model Mentor",
+        "desc": "Unlocks the Honor Title: Model Mentor.",
+        "literary": "Proof of friendship with Eleanor!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "112140": {
         "id": 112140,
         "name": "Gear Spinner",
@@ -3893,6 +3991,14 @@
         "type": "Honor",
         "rarity": "SSR"
     },
+    "116015": {
+        "id": 116015,
+        "name": "Go, My Lady! Training Handbook Plus!",
+        "desc": "Unlocks the Honor Title: Go, My Lady! Training Handbook Plus.",
+        "literary": "Proof of a great success in the event: Go, My Lady! Training Handbook Plus!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
     "117001": {
         "id": 117001,
         "name": "Season 1 Endgame Ace",
@@ -4034,6 +4140,30 @@
         "name": "Season 6 Endgame Elite",
         "desc": "Unlocks the Honor Title: Season 6 Endgame Elite.",
         "literary": "Proof of fighting tenaciously in Season 6 of A Finale Echoing and achieving the honor of Elite!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117061": {
+        "id": 117061,
+        "name": "Season 7 Endgame Ace",
+        "desc": "Unlocks the Honor Title: Season 7 Endgame Ace.",
+        "literary": "Proof of fighting tenaciously in Season 7 of A Finale Echoing and achieving the honor of Ace!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117062": {
+        "id": 117062,
+        "name": "Season 7 Endgame Master",
+        "desc": "Unlocks the Honor Title: Season 7 Endgame Master",
+        "literary": "Proof of fighting tenaciously in Season 7 of A Finale Echoing and achieving the honor of Master!",
+        "type": "Honor",
+        "rarity": "SSR"
+    },
+    "117063": {
+        "id": 117063,
+        "name": "Season 7 Endgame Elite",
+        "desc": "Unlocks the Honor Title: Season 7 Endgame Elite.",
+        "literary": "Proof of fighting tenaciously in Season 7 of A Finale Echoing and achieving the honor of Elite!",
         "type": "Honor",
         "rarity": "SSR"
     },
@@ -4785,9 +4915,9 @@
     },
     "199028": {
         "id": 199028,
-        "name": "Limited-Time Avatar:\nSummer Fantasy",
-        "desc": "Limited-Time Avatar:\nSummer Fantasy",
-        "literary": "Limited-Time Avatar:\nSummer Fantasy",
+        "name": "Limited-Time Avatar: Summer Fantasy",
+        "desc": "Limited-Time Avatar: Summer Fantasy",
+        "literary": "Limited-Time Avatar: Summer Fantasy",
         "type": "Item",
         "rarity": "SSR"
     },
@@ -5474,6 +5604,20 @@
         "id": 214058,
         "name": "Summer March",
         "literary": "One by one, we count the seasons gone by,\nlaying yesterday's sorrows to rest.\nO summer memories, poured out with every burst of laughter,\nmay you never be carried away by the tides of time.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
+    "214059": {
+        "id": 214059,
+        "name": "Fly, O Caged Bird",
+        "literary": "The caged bird sings, its feathers shimmering in the sunlight.\nIt pauses, holding back its excitement.\nDespite the cage, its hope for tomorrow endures.\nOne day, it will spread its wings and soar toward its dreams and freedom.",
+        "type": "Disc",
+        "rarity": "SSR"
+    },
+    "214060": {
+        "id": 214060,
+        "name": "Moment of Glory",
+        "literary": "Her heart is pounding.\nThe cheers from the crowd, the shutter sound of photo capturers,\nand the lights illuminating the hall and sparkling like stars.\nFor the first time, people are here for her, looking at her with approval.\nThis is the most glorious moment of her life.",
         "type": "Disc",
         "rarity": "SSR"
     },
@@ -6258,6 +6402,22 @@
         "name": "Summer March Melody",
         "desc": "Material required for the Crescendo of specific Discs.",
         "literary": "One by one, we count the seasons gone by,\u000blaying yesterday's sorrows to rest.\u000bO summer memories, poured out with every burst of laughter,\u000bmay you never be carried away by the tides of time.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224059": {
+        "id": 224059,
+        "name": "Fly, O Caged Bird Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "The caged bird sings, its feathers shimmering in the sunlight.\u000bIt pauses, holding back its excitement.\u000bDespite the cage, its hope for tomorrow endures.\u000bOne day, it will spread its wings and soar toward its dreams and freedom.",
+        "type": "DiscLimitBreak",
+        "rarity": "SSR"
+    },
+    "224060": {
+        "id": 224060,
+        "name": "Moment of Glory Melody",
+        "desc": "Material required for the Crescendo of specific Discs.",
+        "literary": "Her heart is pounding.\u000bThe cheers from the crowd, the shutter sound of photo capturers,\u000band the lights illuminating the hall and sparkling like stars.\u000bFor the first time, people are here for her, looking at her with approval.\u000bThis is the most glorious moment of her life.",
         "type": "DiscLimitBreak",
         "rarity": "SSR"
     },
@@ -10263,6 +10423,180 @@
         "type": "Potential",
         "rarity": "SR"
     },
+    "513701": {
+        "id": 513701,
+        "name": "Tactical Protocol: Threshold",
+        "type": "SpecificPotential",
+        "rarity": "SR"
+    },
+    "513702": {
+        "id": 513702,
+        "name": "Tactical Protocol: Detonation",
+        "type": "SpecificPotential",
+        "rarity": "SR"
+    },
+    "513703": {
+        "id": 513703,
+        "name": "Tactical Protocol: Overload",
+        "type": "SpecificPotential",
+        "rarity": "SR"
+    },
+    "513704": {
+        "id": 513704,
+        "name": "Tactical Protocol: Synergy",
+        "type": "SpecificPotential",
+        "rarity": "SR"
+    },
+    "513705": {
+        "id": 513705,
+        "name": "Double Rifts",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513706": {
+        "id": 513706,
+        "name": "Battle Fury",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513707": {
+        "id": 513707,
+        "name": "Vortex Boost",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513708": {
+        "id": 513708,
+        "name": "Area Volley",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513709": {
+        "id": 513709,
+        "name": "Zone Detection",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513710": {
+        "id": 513710,
+        "name": "Chain Echo",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513711": {
+        "id": 513711,
+        "name": "Annihilation Pulse",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513712": {
+        "id": 513712,
+        "name": "Flicker Sequence",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513713": {
+        "id": 513713,
+        "name": "Wind Bond",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513721": {
+        "id": 513721,
+        "name": "Chain Detonation",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513722": {
+        "id": 513722,
+        "name": "Seismic Spread",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513723": {
+        "id": 513723,
+        "name": "Function Sustain",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513724": {
+        "id": 513724,
+        "name": "Cluster Barrage",
+        "type": "SpecificPotential",
+        "rarity": "SSR"
+    },
+    "513725": {
+        "id": 513725,
+        "name": "Field Pull",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513726": {
+        "id": 513726,
+        "name": "Power Boost",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513727": {
+        "id": 513727,
+        "name": "Shattering Blow",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513728": {
+        "id": 513728,
+        "name": "Piercing Trajectory",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513729": {
+        "id": 513729,
+        "name": "Suppression Analysis",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513730": {
+        "id": 513730,
+        "name": "Precision Calibration",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513731": {
+        "id": 513731,
+        "name": "Wind Resonance",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513732": {
+        "id": 513732,
+        "name": "Annihilation Echo",
+        "type": "Potential",
+        "rarity": "SSR"
+    },
+    "513733": {
+        "id": 513733,
+        "name": "Power Amp",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513741": {
+        "id": 513741,
+        "name": "Reinforcement Command",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513742": {
+        "id": 513742,
+        "name": "Purge Command",
+        "type": "Potential",
+        "rarity": "SR"
+    },
+    "513743": {
+        "id": 513743,
+        "name": "Focus Command",
+        "type": "Potential",
+        "rarity": "SR"
+    },
     "514001": {
         "id": 514001,
         "name": "Bunny-Ear Volley",
@@ -13076,16 +13410,16 @@
     "2701001": {
         "id": 2701001,
         "name": "Random Piece",
-        "desc": "A random chess piece.",
-        "literary": "Who's dropping in to save the day this time?",
+        "desc": "A Random Piece",
+        "literary": "A Random Piece",
         "type": "Item",
         "rarity": "SR"
     },
     "2701002": {
         "id": 2701002,
         "name": "Random Blessing",
-        "desc": "A chance to select a random blessing.",
-        "literary": "Fingers crossed for a good draw this time!",
+        "desc": "A Random Blessing",
+        "literary": "A Random Blessing",
         "type": "Item",
         "rarity": "SSR"
     }
