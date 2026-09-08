@@ -235,6 +235,22 @@
     "Id": "TraceHuntNPCId",
     "Value": "916402"
   },
+  "TraceHuntHardBossTimeLimit": {
+    "Id": "TraceHuntHardBossTimeLimit",
+    "Value": "45"
+  },
+  "TraceHuntHardBossShowAtk": {
+    "Id": "TraceHuntHardBossShowAtk",
+    "Value": "10"
+  },
+  "TraceHuntHardBossShowDef": {
+    "Id": "TraceHuntHardBossShowDef",
+    "Value": "10"
+  },
+  "TraceHuntHardOpenControlId": {
+    "Id": "TraceHuntHardOpenControlId",
+    "Value": "5"
+  },
   "VampireTalentResetTimeInterval": {
     "Id": "VampireTalentResetTimeInterval",
     "Value": "30"
@@ -375,6 +391,38 @@
     "Id": "JointDrill_Failed_Reward_Mail_Id",
     "Value": "2092"
   },
+  "PenguinCardHandCardCount": {
+    "Id": "PenguinCardHandCardCount",
+    "Value": "5"
+  },
+  "PenguinCardFeverScore": {
+    "Id": "PenguinCardFeverScore",
+    "Value": "999"
+  },
+  "PenguinCardRollCount": {
+    "Id": "PenguinCardRollCount",
+    "Value": "3"
+  },
+  "PenguinCardAideRollCount": {
+    "Id": "PenguinCardAideRollCount",
+    "Value": "2"
+  },
+  "PenguinCardCheckRoundBuffId": {
+    "Id": "PenguinCardCheckRoundBuffId",
+    "Value": "701"
+  },
+  "PenguinCardEndlessInitialAide": {
+    "Id": "PenguinCardEndlessInitialAide",
+    "Value": "1"
+  },
+  "PenguinCardEndlessRetryBuffId": {
+    "Id": "PenguinCardEndlessRetryBuffId",
+    "Value": "2000"
+  },
+  "PenguinCardMaxHP": {
+    "Id": "PenguinCardMaxHP",
+    "Value": "3"
+  },
   "PenguinCardMaxRound": {
     "Id": "PenguinCardMaxRound",
     "Value": "5"
@@ -382,10 +430,6 @@
   "PenguinCardMaxSlot": {
     "Id": "PenguinCardMaxSlot",
     "Value": "6"
-  },
-  "PenguinCardHandCardCount": {
-    "Id": "PenguinCardHandCardCount",
-    "Value": "5"
   },
   "PenguinCardMaxBuyLimit": {
     "Id": "PenguinCardMaxBuyLimit",
@@ -411,17 +455,37 @@
     "Id": "PenguinCardCheckRoundUpgradeCost",
     "Value": "1500,3000,6000"
   },
-  "PenguinCardFeverScore": {
-    "Id": "PenguinCardFeverScore",
-    "Value": "999"
+  "PenguinCardEndlessMaxRound": {
+    "Id": "PenguinCardEndlessMaxRound",
+    "Value": "6"
   },
-  "PenguinCardRollCount": {
-    "Id": "PenguinCardRollCount",
+  "PenguinCardEndlessInitialAdditionScore": {
+    "Id": "PenguinCardEndlessInitialAdditionScore",
+    "Value": "40,110,100,140"
+  },
+  "PenguinCardEndlessMaxAide": {
+    "Id": "PenguinCardEndlessMaxAide",
     "Value": "3"
   },
-  "PenguinCardCheckRoundBuffId": {
-    "Id": "PenguinCardCheckRoundBuffId",
-    "Value": "701"
+  "PenguinCardEndlessRoundUpgradeCost": {
+    "Id": "PenguinCardEndlessRoundUpgradeCost",
+    "Value": "0,0,350,560,600,780"
+  },
+  "PenguinCardEndlessScoreUpgradeCost": {
+    "Id": "PenguinCardEndlessScoreUpgradeCost",
+    "Value": "20,80,380,560"
+  },
+  "PenguinCardEndlessAideUpgradeCost": {
+    "Id": "PenguinCardEndlessAideUpgradeCost",
+    "Value": "0,70,150"
+  },
+  "PenguinCardEndlessRollCardCost": {
+    "Id": "PenguinCardEndlessRollCardCost",
+    "Value": "5,20,150,400,800"
+  },
+  "PenguinCardEndlessDebuffShowList": {
+    "Id": "PenguinCardEndlessDebuffShowList",
+    "Value": "2101,2111,2112,2121,2131,2132,2133,2141,2151"
   },
   "PhoneChatTimeInterval": {
     "Id": "PhoneChatTimeInterval",
@@ -601,7 +665,7 @@
   },
   "EnableExchange": {
     "Id": "EnableExchange",
-    "Value": "android_official,ios_official,pc_official,pc_exp,android_test_1,ios_test_1,pc_test_1,pc_test_2"
+    "Value": "android_official,ios_official,pc_official,pc_steam,pc_exp,pc_test_1_steam,android_test_1,ios_test_1,pc_test_1,pc_test_2_steam,pc_test_2"
   },
   "LampNoticeScrollSpeed": {
     "Id": "LampNoticeScrollSpeed",
@@ -833,7 +897,7 @@
   },
   "MaxHistoryPanel": {
     "Id": "MaxHistoryPanel",
-    "Value": "99"
+    "Value": "20"
   },
   "MainViewDragThreshold": {
     "Id": "MainViewDragThreshold",
@@ -919,6 +983,10 @@
     "Id": "HudResistanceTipInterval",
     "Value": "2"
   },
+  "HudDamageMergeInterval": {
+    "Id": "HudDamageMergeInterval",
+    "Value": "1"
+  },
   "AgentSpecialRewardsProp": {
     "Id": "AgentSpecialRewardsProp",
     "Value": "20"
@@ -1000,16 +1068,13 @@
     "Value": "201002"
   },
   "TouchEffect_Main": {
-    "Id": "TouchEffect_Main",
-    "Value": "2026Summer/P_Main_Summer"
+    "Id": "TouchEffect_Main"
   },
   "TouchEffect_Slide": {
-    "Id": "TouchEffect_Slide",
-    "Value": "2026Summer/P_Slide_Summer"
+    "Id": "TouchEffect_Slide"
   },
   "RedDot": {
-    "Id": "RedDot",
-    "Value": "zs_common_new_4_summer"
+    "Id": "RedDot"
   },
   "TrekkerVersusInitHotValue": {
     "Id": "TrekkerVersusInitHotValue",
@@ -1034,6 +1099,10 @@
   "TrekkerVersusIdleRewardMaxTime": {
     "Id": "TrekkerVersusIdleRewardMaxTime",
     "Value": "48"
+  },
+  "OwenHonorConvertItem": {
+    "Id": "OwenHonorConvertItem",
+    "Value": "1,20000"
   },
   "TravelerDuel_BottomBanner": {
     "Id": "TravelerDuel_BottomBanner",
