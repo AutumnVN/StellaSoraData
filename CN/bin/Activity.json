@@ -135,6 +135,21 @@
     "EndTime": "2026-09-08T03:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_103001_lang"
   },
+  "103004": {
+    "Id": 103004,
+    "SortId": 5,
+    "ActivityType": 21,
+    "Name": "紧急悬赏",
+    "PreLimit": 1,
+    "LimitParam": "3",
+    "PlayCond": 1,
+    "PlayCondParams": "3",
+    "StartType": 2,
+    "StartTime": "2026-09-22T04:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-29T03:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_103001_lang"
+  },
   "301001": {
     "Id": 301001,
     "SortId": 3,
@@ -681,6 +696,19 @@
     "EndTime": "2026-09-01T04:00:00+08:00",
     "MiniGameRedDot": 1100304
   },
+  "400016": {
+    "Id": 400016,
+    "MidGroupId": 10111,
+    "SortId": 4,
+    "ActivityType": 4,
+    "Name": "曲奇工坊5期",
+    "ActivityThemeType": 18,
+    "StartType": 2,
+    "StartTime": "2026-09-08T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-22T04:00:00+08:00",
+    "MiniGameRedDot": 1110304
+  },
   "500001": {
     "Id": 500001,
     "SortId": 6,
@@ -936,6 +964,22 @@
     "EndTime": "2026-08-12T03:59:59+08:00",
     "EnterRes": "Icon/Banner/banner_avtivity_m_2",
     "TabBgRes": "Icon/Banner/tab_activity_jointdrill_2"
+  },
+  "510007": {
+    "Id": 510007,
+    "SortId": 4,
+    "ActivityType": 7,
+    "Name": "总力战S7",
+    "PreLimit": 1,
+    "LimitParam": "6",
+    "PlayCond": 1,
+    "PlayCondParams": "10",
+    "StartType": 2,
+    "StartTime": "2026-09-21T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-30T03:59:59+08:00",
+    "EnterRes": "Icon/Banner/banner_avtivity_m_3_lang",
+    "TabBgRes": "Icon/Banner/tab_activity_jointdrill_3_lang"
   },
   "600001": {
     "Id": 600001,
@@ -1291,6 +1335,17 @@
     "EndTime": "2026-09-22T10:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_trial_134"
   },
+  "700129": {
+    "Id": 700129,
+    "SortId": 7,
+    "ActivityType": 6,
+    "Name": "浅试身手-埃莉诺",
+    "StartType": 2,
+    "StartTime": "2026-09-08T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-29T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_trial_137_lang"
+  },
   "1010001": {
     "Id": 1010001,
     "MidGroupId": 10100,
@@ -1551,9 +1606,22 @@
     "EndTime": "2026-08-04T04:00:00+08:00",
     "MiniGameRedDot": 2010305
   },
+  "800005": {
+    "Id": 800005,
+    "ActivityType": 18,
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-09-22T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-29T10:59:59+08:00",
+    "BannerRes": "banner_PengCard",
+    "TabBgRes": "Icon/Banner/tab_activity_PengCard"
+  },
   "900001": {
     "Id": 900001,
-    "SortId": 6,
     "ActivityType": 25,
     "PreLimit": 1,
     "LimitParam": "10",
@@ -2164,5 +2232,53 @@
     "StartTime": "2026-09-01T12:00:00+08:00",
     "EndType": 2,
     "EndTime": "2026-09-11T03:59:59+08:00"
+  },
+  "1011101": {
+    "Id": 1011101,
+    "MidGroupId": 10111,
+    "SortId": 8,
+    "ActivityType": 9,
+    "Name": "埃莉诺战斗关卡",
+    "ActivityThemeType": 18,
+    "StartType": 2,
+    "StartTime": "2026-09-08T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-22T04:00:00+08:00"
+  },
+  "1011102": {
+    "Id": 1011102,
+    "MidGroupId": 10111,
+    "SortId": 10,
+    "ActivityType": 17,
+    "Name": "埃莉诺活动剧情",
+    "ActivityThemeType": 18,
+    "StartType": 2,
+    "StartTime": "2026-09-08T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-22T04:00:00+08:00"
+  },
+  "1011103": {
+    "Id": 1011103,
+    "MidGroupId": 10111,
+    "SortId": 11,
+    "ActivityType": 11,
+    "Name": "埃莉诺活动任务",
+    "ActivityThemeType": 18,
+    "StartType": 2,
+    "StartTime": "2026-09-08T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-29T10:59:59+08:00"
+  },
+  "1011104": {
+    "Id": 1011104,
+    "MidGroupId": 10111,
+    "SortId": 12,
+    "ActivityType": 12,
+    "Name": "埃莉诺活动商店",
+    "ActivityThemeType": 18,
+    "StartType": 2,
+    "StartTime": "2026-09-08T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-09-29T10:59:59+08:00"
   }
 }

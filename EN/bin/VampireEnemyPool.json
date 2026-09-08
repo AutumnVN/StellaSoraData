@@ -1463,11 +1463,18 @@
     "WaveKeepTime": 60,
     "PoolType": 2
   },
-  "201": {
+  "200": {
     "PoolId": 1026,
     "WaveNum": 1,
     "MonsterLevel": 92,
     "EnemySetID": 102601,
+    "WaveKeepTime": 30
+  },
+  "201": {
+    "PoolId": 1026,
+    "WaveNum": 2,
+    "MonsterLevel": 93,
+    "EnemySetID": 102602,
     "WaveKeepTime": 30
   },
   "202": {
@@ -3788,18 +3795,25 @@
     "WaveKeepTime": 60,
     "PoolType": 2
   },
-  "518": {
+  "517": {
     "PoolId": 1295,
     "WaveNum": 1,
     "MonsterLevel": 85,
     "EnemySetID": 129501,
     "WaveKeepTime": 30
   },
-  "519": {
+  "518": {
     "PoolId": 1295,
     "WaveNum": 2,
     "MonsterLevel": 86,
     "EnemySetID": 129502,
+    "WaveKeepTime": 30
+  },
+  "519": {
+    "PoolId": 1295,
+    "WaveNum": 3,
+    "MonsterLevel": 87,
+    "EnemySetID": 129511,
     "WaveKeepTime": 30
   },
   "520": {
@@ -3817,11 +3831,18 @@
     "WaveKeepTime": 30,
     "PoolType": 1
   },
-  "522": {
+  "521": {
     "PoolId": 1295,
     "WaveNum": 5,
     "MonsterLevel": 89,
     "EnemySetID": 129513,
+    "WaveKeepTime": 30
+  },
+  "522": {
+    "PoolId": 1295,
+    "WaveNum": 6,
+    "MonsterLevel": 90,
+    "EnemySetID": 129514,
     "WaveKeepTime": 30
   },
   "523": {

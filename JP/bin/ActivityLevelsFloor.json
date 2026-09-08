@@ -3148,5 +3148,268 @@
     "BGM": "roguelike_combatShilaimu_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop",
     "LevelScript": "AIScript.LevelAndGroupController.Level.HualingActivity_LevelController"
+  },
+  "301501": {
+    "Id": 301501,
+    "MonsterLv": 1,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_013_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N1",
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop"
+  },
+  "301502": {
+    "Id": 301502,
+    "MonsterLv": 2,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_004_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N2",
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop"
+  },
+  "301503": {
+    "Id": 301503,
+    "MonsterLv": 3,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_001_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N3",
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop"
+  },
+  "301504": {
+    "Id": 301504,
+    "MonsterLv": 4,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_009_B_01",
+    "ConfigPrefabName": "StoryActivity_15_N4",
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop"
+  },
+  "301505": {
+    "Id": 301505,
+    "MonsterLv": 5,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N5",
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301506": {
+    "Id": 301506,
+    "MonsterLv": 6,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_011_B_01",
+    "ConfigPrefabName": "StoryActivity_15_N6",
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301507": {
+    "Id": 301507,
+    "MonsterLv": 7,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_006_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N7",
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301508": {
+    "Id": 301508,
+    "MonsterLv": 8,
+    "SceneName": "Levels/Main/City/City_Main_1_2_1",
+    "ConfigPrefabName": "StoryActivity_15_N8",
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop"
+  },
+  "301509": {
+    "Id": 301509,
+    "MonsterLv": 9,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_013_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_N9",
+    "Mir": true,
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301510": {
+    "Id": 301510,
+    "MonsterLv": 10,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_010_A_01",
+    "ConfigPrefabName": "StoryActivity_15_N10",
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301511": {
+    "Id": 301511,
+    "MonsterLv": 11,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_001_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_N11",
+    "Mir": true,
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301512": {
+    "Id": 301512,
+    "MonsterLv": 12,
+    "SceneName": "Levels/Main/City/City_Main_1_3_Daily_Money",
+    "ConfigPrefabName": "StoryActivity_15_N12",
+    "Theme": 4,
+    "BGM": "city_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop"
+  },
+  "301513": {
+    "Id": 301513,
+    "MonsterLv": 13,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_006_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H1",
+    "Mir": true,
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301514": {
+    "Id": 301514,
+    "MonsterLv": 14,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_009_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H2",
+    "Mir": true,
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301515": {
+    "Id": 301515,
+    "MonsterLv": 15,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H3",
+    "Mir": true,
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301516": {
+    "Id": 301516,
+    "MonsterLv": 16,
+    "SceneName": "Levels/Main/City/City_Main_1_2_1",
+    "ConfigPrefabName": "StoryActivity_15_H4",
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301517": {
+    "Id": 301517,
+    "MonsterLv": 17,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_013_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H5",
+    "Mir": true,
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301518": {
+    "Id": 301518,
+    "MonsterLv": 18,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_004_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_H6",
+    "Mir": true,
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301519": {
+    "Id": 301519,
+    "MonsterLv": 19,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_001_A_01",
+    "ConfigPrefabName": "StoryActivity_15_H7",
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301520": {
+    "Id": 301520,
+    "MonsterLv": 20,
+    "SceneName": "Levels/Main/City/City_Main_1_3_Daily_Money",
+    "ConfigPrefabName": "StoryActivity_15_H8",
+    "Theme": 4,
+    "BGM": "city_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301521": {
+    "Id": 301521,
+    "MonsterLv": 21,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_006_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_C1",
+    "Mir": true,
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301522": {
+    "Id": 301522,
+    "MonsterLv": 22,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_010_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_15_C2",
+    "Mir": true,
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301523": {
+    "Id": 301523,
+    "MonsterLv": 23,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01",
+    "ConfigPrefabName": "StoryActivity_15_C3",
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301524": {
+    "Id": 301524,
+    "MonsterLv": 24,
+    "SceneName": "Levels/Main/City/City_Main_1_3_Daily_Money",
+    "ConfigPrefabName": "StoryActivity_15_C4",
+    "Theme": 4,
+    "BGM": "city_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301525": {
+    "Id": 301525,
+    "MonsterLv": 91,
+    "SceneName": "Levels/StoryActivity/StoryActivity_2/StoryActivity_2_016_A_01",
+    "ConfigPrefabName": "StoryActivity_15_Story_1",
+    "Theme": 472,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301526": {
+    "Id": 301526,
+    "MonsterLv": 91,
+    "SceneName": "Levels/StoryActivity/StoryActivity_15/StoryActivity_15_011_B_01",
+    "ConfigPrefabName": "StoryActivity_15_Story_2",
+    "Theme": 471,
+    "BGM": "city_explore_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
   }
 }

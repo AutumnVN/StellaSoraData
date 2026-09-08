@@ -954,6 +954,14 @@
       73112
     ]
   },
+  "GoldenSpyLevelSelectPanel_400017": {
+    "Id": "GoldenSpyLevelSelectPanel_400017",
+    "Title": "TopBar.GoldenSpyLevelSelectPanel_400017.1",
+    "Coin": true,
+    "CoinIds": [
+      73116
+    ]
+  },
   "ActivityLevelsSelectPanel_10107": {
     "Id": "ActivityLevelsSelectPanel_10107",
     "Title": "TopBar.ActivityLevelsSelectPanel_10107.1",
@@ -1048,6 +1056,19 @@
   "CookieBoardPanel_400010": {
     "Id": "CookieBoardPanel_400010",
     "Title": "TopBar.CookieBoardPanel_400010.1"
+  },
+  "CookieGamePanel_400016": {
+    "Id": "CookieGamePanel_400016",
+    "Title": "TopBar.CookieGamePanel_400016.1",
+    "EntryId": 400301,
+    "Coin": true,
+    "CoinIds": [
+      73115
+    ]
+  },
+  "CookieBoardPanel_400016": {
+    "Id": "CookieBoardPanel_400016",
+    "Title": "TopBar.CookieBoardPanel_400016.1"
   },
   "Task_11100": {
     "Id": "Task_11100",
@@ -1266,5 +1287,47 @@
     "CoinIds": [
       73114
     ]
+  },
+  "ActivityLevelsSelectPanel_10111": {
+    "Id": "ActivityLevelsSelectPanel_10111",
+    "Title": "TopBar.ActivityLevelsSelectPanel_10111.1",
+    "Energy": true
+  },
+  "Shop_10111": {
+    "Id": "Shop_10111",
+    "Title": "TopBar.Shop_10111.1",
+    "Coin": true
+  },
+  "Task_10111": {
+    "Id": "Task_10111",
+    "Title": "TopBar.Task_10111.1",
+    "Coin": true,
+    "CoinIds": [
+      73115
+    ]
+  },
+  "CultivationManualStory_10111": {
+    "Id": "CultivationManualStory_10111",
+    "Title": "TopBar.CultivationManualStory_10111.1"
+  },
+  "CultivationManualPanel": {
+    "Id": "CultivationManualPanel",
+    "Title": "TopBar.CultivationManualPanel.1",
+    "Coin": true,
+    "CoinIds": [
+      73115
+    ]
+  },
+  "TrialSkinSelectPanel": {
+    "Id": "TrialSkinSelectPanel",
+    "Title": "TopBar.TrialSkinSelectPanel.1"
+  },
+  "TrialSkinFormationScenePanel": {
+    "Id": "TrialSkinFormationScenePanel",
+    "Title": "TopBar.TrialSkinFormationScenePanel.1"
+  },
+  "EventReminderPanel": {
+    "Id": "EventReminderPanel",
+    "Title": "TopBar.EventReminderPanel.1"
   }
 }
