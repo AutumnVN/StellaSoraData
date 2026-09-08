@@ -697,5 +697,46 @@
     ],
     "DesText": "ActivityGroup.30103.1",
     "TabBgRes": "Icon/Banner/tab_activity_marble"
+  },
+  "10111": {
+    "Id": 10111,
+    "ActivityGroupType": 1,
+    "ActivityThemeType": 18,
+    "StartTime": "2026-09-08T12:00:00+08:00",
+    "EndTime": "2026-09-22T04:00:00+08:00",
+    "EnterEndTime": "2026-09-29T10:59:59+08:00",
+    "EnterRes": "Icon/Banner/banner_activity_10111_m_lang",
+    "PanelId": 519,
+    "PreLimit": 1,
+    "LimitParam": "3",
+    "StartCondType": 71,
+    "StartCondParams": [
+      5
+    ],
+    "Enter": "{\"MiniGame\":[400016,1,501],\"Task\":[1011103,2,521],\"AVG\":[1011102,3,520],\"Store\":[1011104,4,522],\"Level\":[1011101,5,518]}",
+    "UIAssetsPrefab": "10111",
+    "CtrlName": "ActivityCultivationManualCtrl",
+    "RewardsShow": [
+      2,
+      214060,
+      116015,
+      502,
+      503,
+      21043,
+      35010,
+      35000,
+      20083,
+      32023,
+      21073,
+      30004,
+      50004,
+      30,
+      33032,
+      33022,
+      33082,
+      1
+    ],
+    "DesText": "ActivityGroup.10111.1",
+    "TabBgRes": "Icon/Banner/tab_activity_10111_lang"
   }
 }
