@@ -1944,17 +1944,17 @@
             },
             {
                 "name": "Arcane Energy Interception",
-                "desc": "Arcane Puppets generate arcane beams that channel arcane energy into the boss enemy. If uninterrupted long enough, the boss enemy gains an Arcane Barrier.\nThe Main Trekker can block the beams to stop the charge and gain buffs.\nDefeating Arcane Puppets grants your squad a temporary buff.",
+                "desc": "Arcane Puppets generate arcane beams that channel arcane energy into the boss target. If left uninterrupted for long enough, the boss target gains an Arcane Barrier that reduces their DMG Taken. The Main Trekker can block the beams to interrupt charging and gradually remove Arcane Barrier stacks. While blocking the beams, the squad's DMG dealt is increased.  Defeating Arcane Puppets also increases the squad's DMG dealt for a period of time.",
                 "icon": "Icon_JointDrill_MoShuShi_002"
             },
             {
                 "name": "Free-Floating Core",
-                "desc": "Olympia absorbs nearby Free-Floating Cores, detonating them to deal AoE DMG. Absorbing enough grants her an Arcane Barrier. If the Main Trekker touches a Core first, they absorb it instead and gain a temporary buff.",
+                "desc": "Olympia absorbs nearby Free-Floating Cores, detonating them to deal AoE DMG. Absorbing enough grants the boss target an Arcane Barrier that reduces the DMG Taken of the boss target. If the Main Trekker touches a Core first, they absorb it instead and increase the squad's DMG dealt for a period of time.",
                 "icon": "Icon_JointDrill_MoShuShi_003"
             },
             {
                 "name": "Royal Guard Puppet",
-                "desc": "Royal Guard Puppets attack as commanded by the boss enemy and cannot be targeted.",
+                "desc": "Royal Guard Puppets attack as commanded by the boss target and cannot be targeted.",
                 "icon": "Icon_JointDrill_MoShuShi_004"
             },
             {
@@ -1980,7 +1980,7 @@
                     [
                         {
                             "Type": "Raid",
-                            "HP": 4130000,
+                            "HP": 6195000,
                             "HP Bar": 20,
                             "Max Score": 720000,
                             "Score": "200000 + (340000 - time_in_seconds * 600) + 180000",
@@ -1995,7 +1995,7 @@
                             "Lux DMG": "100%",
                             "Umbra DMG": "100%",
                             "Mark DMG Taken": "100%",
-                            "Resilience": 2065000,
+                            "Resilience": 3097500,
                             "Aqua RES": 570,
                             "Ignis RES": 570,
                             "Terra RES": 570,
@@ -2012,7 +2012,7 @@
                     [
                         {
                             "Type": "Raid",
-                            "HP": 29900000,
+                            "HP": 44850000,
                             "HP Bar": 25,
                             "Max Score": 1440000,
                             "Score": "400000 + (680000 - time_in_seconds * 1200) + 360000",
@@ -2027,7 +2027,7 @@
                             "Lux DMG": "100%",
                             "Umbra DMG": "100%",
                             "Mark DMG Taken": "100%",
-                            "Resilience": 14950000,
+                            "Resilience": 22425000,
                             "Aqua RES": 570,
                             "Ignis RES": 570,
                             "Terra RES": 570,
@@ -2044,7 +2044,7 @@
                     [
                         {
                             "Type": "Raid",
-                            "HP": 63780000,
+                            "HP": 95670000,
                             "HP Bar": 30,
                             "Max Score": 2890000,
                             "Score": "800000 + (1370000 - time_in_seconds * 2400) + 720000",
@@ -2059,7 +2059,7 @@
                             "Lux DMG": "100%",
                             "Umbra DMG": "100%",
                             "Mark DMG Taken": "100%",
-                            "Resilience": 31890000,
+                            "Resilience": 47835000,
                             "Aqua RES": 570,
                             "Ignis RES": 570,
                             "Terra RES": 570,
@@ -2076,11 +2076,11 @@
                     [
                         {
                             "Type": "Raid",
-                            "HP": 210201100,
+                            "HP": 630603300,
                             "HP Bar": 40,
                             "Max Score": 5780000,
                             "Score": "1600000 + (2740000 - time_in_seconds * 4800) + 1440000",
-                            "ATK": 16544,
+                            "ATK": 13235,
                             "DEF": 500,
                             "Hit Rate": "100%",
                             "Attack Speed": "100%",
@@ -2091,7 +2091,7 @@
                             "Lux DMG": "100%",
                             "Umbra DMG": "100%",
                             "Mark DMG Taken": "100%",
-                            "Resilience": 105100550,
+                            "Resilience": 315301650,
                             "Aqua RES": 570,
                             "Ignis RES": 570,
                             "Terra RES": 570,
@@ -2108,11 +2108,11 @@
                     [
                         {
                             "Type": "Raid",
-                            "HP": 999694620,
+                            "HP": 2976468736,
                             "HP Bar": 60,
                             "Max Score": 9244000,
                             "Score": "2560000 + (4380000 - time_in_seconds * 6200) + 2304000",
-                            "ATK": 17064,
+                            "ATK": 15358,
                             "DEF": 500,
                             "Hit Rate": "100%",
                             "Attack Speed": "100%",
@@ -2123,7 +2123,7 @@
                             "Lux DMG": "100%",
                             "Umbra DMG": "100%",
                             "Mark DMG Taken": "100%",
-                            "Resilience": 499847310,
+                            "Resilience": 1488234368,
                             "Aqua RES": 750,
                             "Ignis RES": 750,
                             "Terra RES": 750,
@@ -2140,7 +2140,7 @@
                     [
                         {
                             "Type": "Raid",
-                            "HP": 2999083860,
+                            "HP": 7838961430,
                             "HP Bar": 80,
                             "Max Score": 14352000,
                             "Score": "3865600 + (6800000 - time_in_seconds * 8100) + 3686400",
@@ -2155,7 +2155,7 @@
                             "Lux DMG": "100%",
                             "Umbra DMG": "100%",
                             "Mark DMG Taken": "100%",
-                            "Resilience": 1499541930,
+                            "Resilience": 3919480715,
                             "Aqua RES": 750,
                             "Ignis RES": 2000,
                             "Terra RES": 750,
