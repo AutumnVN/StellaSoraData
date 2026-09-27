@@ -92,38 +92,7 @@ async function main() {
     for (let id = 100; id <= 200; id++) {
         let char = undefined;
 
-        if (!CHARACTER[id] && (getUpgrades(id).length || getSkillUpgrades(id).length)) {
-            char = {
-                id: +id,
-                name: `${id} ${characterId[id] || ''}`,
-                desc: '',
-                star: 0,
-                element: getElementFromSkillUpgrade(id) || '',
-                class: '',
-                attackType: '',
-                style: '',
-                force: '',
-                tag: [],
-                cnCv: '',
-                jpCv: '',
-                birthday: '',
-                source: [],
-                loveGift: [],
-                hateGift: [],
-                date: [],
-                fixedStat: {},
-                normalAtk: undefined,
-                skill: undefined,
-                supportSkill: undefined,
-                ultimate: undefined,
-                special: [],
-                potential: {},
-                talent: [],
-                stat: {},
-                upgrade: getUpgrades(id),
-                skillUpgrade: getSkillUpgrades(id),
-            };
-        } else if (CHARACTER[id]) {
+        if (CHARACTER[id]) {
             char = {
                 id: +id,
                 name: LANG_CHARACTER[CHARACTER[id].Name],
@@ -234,11 +203,42 @@ async function main() {
         } else if (hotfix[id]) {
             char = {
                 id: +id,
-                name: `${id} ${characterId[id] || ''} (hotfix.dll)`,
+                name: `${id} ${characterId[id] || ''} (dll)`,
                 desc: '',
                 star: 0,
                 element: LANG_UITEXT[`UIText.T_Element_Attr_${hotfix[id].element}.1`],
                 class: LANG_UITEXT[`UIText.Char_JobClass_${hotfix[id].class}.1`],
+                attackType: '',
+                style: '',
+                force: '',
+                tag: [],
+                cnCv: '',
+                jpCv: '',
+                birthday: '',
+                source: [],
+                loveGift: [],
+                hateGift: [],
+                date: [],
+                fixedStat: {},
+                normalAtk: undefined,
+                skill: undefined,
+                supportSkill: undefined,
+                ultimate: undefined,
+                special: [],
+                potential: {},
+                talent: [],
+                stat: {},
+                upgrade: getUpgrades(id),
+                skillUpgrade: getSkillUpgrades(id),
+            };
+        } else if (getUpgrades(id).length || getSkillUpgrades(id).length) {
+            char = {
+                id: +id,
+                name: `${id} ${characterId[id] || ''} (mats)`,
+                desc: '',
+                star: 0,
+                element: getElementFromSkillUpgrade(id) || '',
+                class: '',
                 attackType: '',
                 style: '',
                 force: '',
