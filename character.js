@@ -203,7 +203,7 @@ async function main() {
         } else if (hotfix[id]) {
             char = {
                 id: +id,
-                name: `${id} ${characterId[id] || ''} (dll)`,
+                name: `${id} ${characterId[id] || ''}`,
                 desc: '',
                 star: 0,
                 element: LANG_UITEXT[`UIText.T_Element_Attr_${hotfix[id].element}.1`],
@@ -234,7 +234,7 @@ async function main() {
         } else if (getUpgrades(id).length || getSkillUpgrades(id).length) {
             char = {
                 id: +id,
-                name: `${id} ${characterId[id] || ''} (mats)`,
+                name: `${id} ${characterId[id] || ''}`,
                 desc: '',
                 star: 0,
                 element: getElementFromSkillUpgrade(id) || '',
