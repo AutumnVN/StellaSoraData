@@ -3411,5 +3411,228 @@
     "BGM": "city_explore_setState",
     "LeaveTriggerEvent": "amb_city_all_stop",
     "LevelScript": "AIScript.LevelAndGroupController.Level.AiLiNuoActivity_LevelController"
+  },
+  "301601": {
+    "Id": 301601,
+    "MonsterLv": 1,
+    "SceneName": "Levels/StoryActivity/StoryActivity_12/StoryActivity_12_005_B_01",
+    "ConfigPrefabName": "StoryActivity_16_005_B_N1",
+    "Theme": 476,
+    "BGM": "maoYan_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_maoYan_all_stop"
+  },
+  "301602": {
+    "Id": 301602,
+    "MonsterLv": 2,
+    "SceneName": "Levels/StoryActivity/StoryActivity_12/StoryActivity_12_006_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_16_006_A_Mir_N2",
+    "Mir": true,
+    "Theme": 476,
+    "BGM": "maoYan_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_maoYan_all_stop"
+  },
+  "301603": {
+    "Id": 301603,
+    "MonsterLv": 3,
+    "SceneName": "Levels/StoryActivity/StoryActivity_12/StoryActivity_12_008_B_01",
+    "ConfigPrefabName": "StoryActivity_16_008_B_N3",
+    "Theme": 476,
+    "BGM": "maoYan_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_maoYan_all_stop"
+  },
+  "301604": {
+    "Id": 301604,
+    "MonsterLv": 4,
+    "SceneName": "Levels/StoryActivity/StoryActivity_12/StoryActivity_12_Boss_A",
+    "ConfigPrefabName": "StoryActivity_16_Boss_A_N4",
+    "Theme": 457,
+    "BGM": "maoYan_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_maoYan_all_stop"
+  },
+  "301605": {
+    "Id": 301605,
+    "MonsterLv": 5,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_007_A_01",
+    "ConfigPrefabName": "StoryActivity_16_007_A_N5",
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301606": {
+    "Id": 301606,
+    "MonsterLv": 6,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_009_A_01",
+    "ConfigPrefabName": "StoryActivity_16_009_A_N6",
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301607": {
+    "Id": 301607,
+    "MonsterLv": 7,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_010_B_01",
+    "ConfigPrefabName": "StoryActivity_16_010_B_N7",
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301608": {
+    "Id": 301608,
+    "MonsterLv": 8,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_011_B_01",
+    "ConfigPrefabName": "StoryActivity_16_011_B_N8",
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301609": {
+    "Id": 301609,
+    "MonsterLv": 9,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_009_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_16_009_A_Mir_N9",
+    "Mir": true,
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301610": {
+    "Id": 301610,
+    "MonsterLv": 10,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_010_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_16_010_B_Mir_N10",
+    "Mir": true,
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301611": {
+    "Id": 301611,
+    "MonsterLv": 11,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_013_B_01",
+    "ConfigPrefabName": "StoryActivity_16_013_B_N11",
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301612": {
+    "Id": 301612,
+    "MonsterLv": 12,
+    "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_MiniBoss_001_05",
+    "ConfigPrefabName": "StoryActivity_16_Boss_A_N12",
+    "Theme": 477,
+    "BGM": "prologue_mechaBoss_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301613": {
+    "Id": 301613,
+    "MonsterLv": 13,
+    "SceneName": "Levels/StoryActivity/StoryActivity_12/StoryActivity_12_006_A_01",
+    "ConfigPrefabName": "StoryActivity_16_006_A_H1",
+    "Theme": 476,
+    "BGM": "maoYan_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_maoYan_all_stop"
+  },
+  "301614": {
+    "Id": 301614,
+    "MonsterLv": 14,
+    "SceneName": "Levels/StoryActivity/StoryActivity_12/StoryActivity_12_008_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_16_008_B_Mir_H2",
+    "Mir": true,
+    "Theme": 476,
+    "BGM": "maoYan_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_maoYan_all_stop"
+  },
+  "301615": {
+    "Id": 301615,
+    "MonsterLv": 15,
+    "SceneName": "Levels/StoryActivity/StoryActivity_12/StoryActivity_12_Boss_A",
+    "ConfigPrefabName": "StoryActivity_16_Boss_A_H3",
+    "Theme": 457,
+    "BGM": "maoYan_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_maoYan_all_stop"
+  },
+  "301616": {
+    "Id": 301616,
+    "MonsterLv": 16,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_007_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_16_007_A_Mir_H4",
+    "Mir": true,
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301617": {
+    "Id": 301617,
+    "MonsterLv": 17,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_010_B_01",
+    "ConfigPrefabName": "StoryActivity_16_010_B_H5",
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301618": {
+    "Id": 301618,
+    "MonsterLv": 18,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_011_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_16_011_B_Mir_H6",
+    "Mir": true,
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301619": {
+    "Id": 301619,
+    "MonsterLv": 19,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_009_A_01",
+    "ConfigPrefabName": "StoryActivity_16_009_A_H7",
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301620": {
+    "Id": 301620,
+    "MonsterLv": 20,
+    "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_MiniBoss_001_05",
+    "ConfigPrefabName": "StoryActivity_16_Boss_A_H8",
+    "Theme": 477,
+    "BGM": "prologue_mechaBoss_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301621": {
+    "Id": 301621,
+    "MonsterLv": 21,
+    "SceneName": "Levels/StoryActivity/StoryActivity_12/StoryActivity_12_014_A_01",
+    "ConfigPrefabName": "StoryActivity_16_014_A_C1",
+    "Theme": 476,
+    "BGM": "maoYan_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_maoYan_all_stop"
+  },
+  "301622": {
+    "Id": 301622,
+    "MonsterLv": 22,
+    "SceneName": "Levels/StoryActivity/StoryActivity_12/StoryActivity_12_Boss_A",
+    "ConfigPrefabName": "StoryActivity_16_Boss_A_C2",
+    "Theme": 457,
+    "BGM": "maoYan_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_maoYan_all_stop"
+  },
+  "301623": {
+    "Id": 301623,
+    "MonsterLv": 23,
+    "SceneName": "Levels/StoryActivity/StoryActivity_16/StoryActivity_16_013_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_16_013_B_Mir_C3",
+    "Mir": true,
+    "Theme": 477,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301624": {
+    "Id": 301624,
+    "MonsterLv": 24,
+    "SceneName": "Levels/Roguelike/Roguelike_Common/Roguelike_MiniBoss_001_05",
+    "ConfigPrefabName": "StoryActivity_16_Boss_A_C4",
+    "Theme": 477,
+    "BGM": "prologue_mechaBoss_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop"
   }
 }
