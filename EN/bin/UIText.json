@@ -39,6 +39,10 @@
     "Id": "WaterMark_Trigger_Effect_05",
     "Text": "UIText.WaterMark_Trigger_Effect_05.1"
   },
+  "WaterMark_Trigger_Effect_06": {
+    "Id": "WaterMark_Trigger_Effect_06",
+    "Text": "UIText.WaterMark_Trigger_Effect_06.1"
+  },
   "LightMark_Trigger_Effect_01": {
     "Id": "LightMark_Trigger_Effect_01",
     "Text": "UIText.LightMark_Trigger_Effect_01.1"
@@ -3867,6 +3871,26 @@
     "Id": "Forest_2_4_Search_01",
     "Text": "UIText.Forest_2_4_Search_01.1"
   },
+  "Desert_9_5_Search_01": {
+    "Id": "Desert_9_5_Search_01",
+    "Text": "UIText.Desert_9_5_Search_01.1"
+  },
+  "Desert_9_5_Search_02": {
+    "Id": "Desert_9_5_Search_02",
+    "Text": "UIText.Desert_9_5_Search_02.1"
+  },
+  "Desert_9_5_Search_03": {
+    "Id": "Desert_9_5_Search_03",
+    "Text": "UIText.Desert_9_5_Search_03.1"
+  },
+  "Desert_9_5_Search_04": {
+    "Id": "Desert_9_5_Search_04",
+    "Text": "UIText.Desert_9_5_Search_04.1"
+  },
+  "Desert_9_5_Search_05": {
+    "Id": "Desert_9_5_Search_05",
+    "Text": "UIText.Desert_9_5_Search_05.1"
+  },
   "Move_Mobile": {
     "Id": "Move_Mobile",
     "Text": "UIText.Move_Mobile.1"
@@ -4431,6 +4455,10 @@
     "Id": "TraceHunt_Pause_CurStar",
     "Text": "UIText.TraceHunt_Pause_CurStar.1"
   },
+  "TraceHunt_Pause_NoneReward": {
+    "Id": "TraceHunt_Pause_NoneReward",
+    "Text": "UIText.TraceHunt_Pause_NoneReward.1"
+  },
   "TraceHunt_GiveUpTips_Main": {
     "Id": "TraceHunt_GiveUpTips_Main",
     "Text": "UIText.TraceHunt_GiveUpTips_Main.1"
@@ -4486,6 +4514,10 @@
   "TraceHunt_Btn_Help": {
     "Id": "TraceHunt_Btn_Help",
     "Text": "UIText.TraceHunt_Btn_Help.1"
+  },
+  "TraceHunt_Btn_HelpNoReward": {
+    "Id": "TraceHunt_Btn_HelpNoReward",
+    "Text": "UIText.TraceHunt_Btn_HelpNoReward.1"
   },
   "TraceHunt_Btn_Hunt": {
     "Id": "TraceHunt_Btn_Hunt",
@@ -4631,9 +4663,17 @@
     "Id": "TraceHunt_Help_HuntRewardRange",
     "Text": "UIText.TraceHunt_Help_HuntRewardRange.1"
   },
+  "TraceHunt_Help_HuntNoneReward": {
+    "Id": "TraceHunt_Help_HuntNoneReward",
+    "Text": "UIText.TraceHunt_Help_HuntNoneReward.1"
+  },
   "TraceHunt_Help_Stranger": {
     "Id": "TraceHunt_Help_Stranger",
     "Text": "UIText.TraceHunt_Help_Stranger.1"
+  },
+  "TraceHunt_Help_HuntNoneRewardMask": {
+    "Id": "TraceHunt_Help_HuntNoneRewardMask",
+    "Text": "UIText.TraceHunt_Help_HuntNoneRewardMask.1"
   },
   "TraceHunt_Cur_Score": {
     "Id": "TraceHunt_Cur_Score",
@@ -4670,6 +4710,14 @@
   "TraceHunt_LevelEffect_FreeRate": {
     "Id": "TraceHunt_LevelEffect_FreeRate",
     "Text": "UIText.TraceHunt_LevelEffect_FreeRate.1"
+  },
+  "TraceHunt_LevelEffect_Hard": {
+    "Id": "TraceHunt_LevelEffect_Hard",
+    "Text": "UIText.TraceHunt_LevelEffect_Hard.1"
+  },
+  "TraceHunt_LevelEffect_NoneRewardHelp": {
+    "Id": "TraceHunt_LevelEffect_NoneRewardHelp",
+    "Text": "UIText.TraceHunt_LevelEffect_NoneRewardHelp.1"
   },
   "TraceHunt_Level_Title": {
     "Id": "TraceHunt_Level_Title",
@@ -4734,6 +4782,46 @@
   "TraceHunt_TraceLogEmpty": {
     "Id": "TraceHunt_TraceLogEmpty",
     "Text": "UIText.TraceHunt_TraceLogEmpty.1"
+  },
+  "TraceHunt_HardSwitch_Title": {
+    "Id": "TraceHunt_HardSwitch_Title",
+    "Text": "UIText.TraceHunt_HardSwitch_Title.1"
+  },
+  "TraceHunt_HardSwitch_LevelLimit": {
+    "Id": "TraceHunt_HardSwitch_LevelLimit",
+    "Text": "UIText.TraceHunt_HardSwitch_LevelLimit.1"
+  },
+  "TraceHunt_HardSwitch_HuntItemLimit": {
+    "Id": "TraceHunt_HardSwitch_HuntItemLimit",
+    "Text": "UIText.TraceHunt_HardSwitch_HuntItemLimit.1"
+  },
+  "TraceHunt_HardSwitch_Open": {
+    "Id": "TraceHunt_HardSwitch_Open",
+    "Text": "UIText.TraceHunt_HardSwitch_Open.1"
+  },
+  "TraceHunt_HardSwitch_Close": {
+    "Id": "TraceHunt_HardSwitch_Close",
+    "Text": "UIText.TraceHunt_HardSwitch_Close.1"
+  },
+  "TraceHunt_HardSwitch_AffixAtk": {
+    "Id": "TraceHunt_HardSwitch_AffixAtk",
+    "Text": "UIText.TraceHunt_HardSwitch_AffixAtk.1"
+  },
+  "TraceHunt_HardSwitch_AffixDef": {
+    "Id": "TraceHunt_HardSwitch_AffixDef",
+    "Text": "UIText.TraceHunt_HardSwitch_AffixDef.1"
+  },
+  "TraceHunt_HardSwitch_AffixTime": {
+    "Id": "TraceHunt_HardSwitch_AffixTime",
+    "Text": "UIText.TraceHunt_HardSwitch_AffixTime.1"
+  },
+  "TraceHunt_HardSwitch_TipsTitle": {
+    "Id": "TraceHunt_HardSwitch_TipsTitle",
+    "Text": "UIText.TraceHunt_HardSwitch_TipsTitle.1"
+  },
+  "TraceHunt_HardSwitch_TipsDesc": {
+    "Id": "TraceHunt_HardSwitch_TipsDesc",
+    "Text": "UIText.TraceHunt_HardSwitch_TipsDesc.1"
   },
   "Lv": {
     "Id": "Lv",
@@ -16079,6 +16167,10 @@
     "Id": "GoldenSpy_Result_GoNext2",
     "Text": "UIText.GoldenSpy_Result_GoNext2.1"
   },
+  "GoldenSpy_CanNotChangeHook": {
+    "Id": "GoldenSpy_CanNotChangeHook",
+    "Text": "UIText.GoldenSpy_CanNotChangeHook.1"
+  },
   "StarTower_ResearchPreview": {
     "Id": "StarTower_ResearchPreview",
     "Text": "UIText.StarTower_ResearchPreview.1"
@@ -16487,6 +16579,18 @@
     "Id": "Potential_System_Preset_Rcmd",
     "Text": "UIText.Potential_System_Preset_Rcmd.1"
   },
+  "Activity_Mini_Game_10112": {
+    "Id": "Activity_Mini_Game_10112",
+    "Text": "UIText.Activity_Mini_Game_10112.1"
+  },
+  "Activity_Story1_10112": {
+    "Id": "Activity_Story1_10112",
+    "Text": "UIText.Activity_Story1_10112.1"
+  },
+  "Activity_Story2_10112": {
+    "Id": "Activity_Story2_10112",
+    "Text": "UIText.Activity_Story2_10112.1"
+  },
   "Vampire_PrevLevelNotComplete": {
     "Id": "Vampire_PrevLevelNotComplete",
     "Text": "UIText.Vampire_PrevLevelNotComplete.1"
@@ -16510,5 +16614,9 @@
   "JointDrill_Act_Challenge_End": {
     "Id": "JointDrill_Act_Challenge_End",
     "Text": "UIText.JointDrill_Act_Challenge_End.1"
+  },
+  "Mainline_Preview_Lock_Read": {
+    "Id": "Mainline_Preview_Lock_Read",
+    "Text": "UIText.Mainline_Preview_Lock_Read.1"
   }
 }
