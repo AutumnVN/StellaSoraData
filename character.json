@@ -124,7 +124,7 @@
                     "damageType": "Skill (2.89e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "effectType": "Auto Attack DMG (base)",
@@ -164,7 +164,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "10301_Skill_Support"
@@ -198,7 +198,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "10301_Ultra"
@@ -7919,7 +7919,7 @@
                     "damageType": "Skill (0.49e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "10801_Skill_Main"
@@ -8391,7 +8391,7 @@
                             "buffIcon": "Icon_CommonBuff_AttackUp"
                         },
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         }
                     ],
                     "hiddenParams": [],
@@ -11709,10 +11709,10 @@
                     "damageType": "Minion (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -11759,10 +11759,10 @@
                     "damageType": "Minion (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -11809,10 +11809,10 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -15540,7 +15540,7 @@
                     "damageType": "Skill (12.81e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11101_Skill_Main"
@@ -16170,7 +16170,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         },
                         {
                             "effectType": "ATK (%)",
@@ -19715,7 +19715,7 @@
                     "damageType": "Skill (2.48e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11201_Skill_Main"
@@ -19752,7 +19752,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11201_Skill_Support"
@@ -19786,7 +19786,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11201_Ultra"
@@ -23431,7 +23431,7 @@
                     "damageType": "Skill (2.62e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11301_Skill_Main"
@@ -23468,7 +23468,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11301_Skill_Support"
@@ -23503,7 +23503,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
@@ -27399,7 +27399,7 @@
                 },
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -27437,7 +27437,7 @@
                 },
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11401_Skill_Support"
@@ -27492,7 +27492,7 @@
                 },
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -31375,7 +31375,7 @@
                     "damageType": "Skill (3.26e, from Normal attack, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11501_Skill_Main"
@@ -31976,7 +31976,7 @@
                     "paramsTooltips": [
                         {},
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         },
                         {
                             "effectType": "ATK (%)",
@@ -35357,7 +35357,7 @@
                     "buffIcon": "No Icon"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11601_Skill_Main"
@@ -39133,7 +39133,7 @@
                     "damageType": "Skill (11.05e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11701_Skill_Main"
@@ -39636,7 +39636,7 @@
                     "paramsTooltips": [
                         {},
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         },
                         {
                             "effectType": "ATK (%)",
@@ -42981,7 +42981,7 @@
                     "damageType": "Skill (7.94e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -46808,7 +46808,7 @@
                     "damageType": "Skill (0.73e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11901_Skill_Main"
@@ -46841,7 +46841,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11901_Skill_Support"
@@ -46883,7 +46883,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "11901_Ultra"
@@ -50573,7 +50573,7 @@
                     "damageType": "Skill (1.32e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "12001_Skill_Main"
@@ -58264,7 +58264,7 @@
                     "damageType": "Skill (4.36e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "12501_Skill_Support"
@@ -58985,7 +58985,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         },
                         {
                             "effectType": "ATK (%)",
@@ -70121,7 +70121,7 @@
                     "damageType": "Auto Attack (3.09e, from Skill, scale with Normal attack)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13001_Skill_Main"
@@ -74464,7 +74464,7 @@
                     "damageType": "Skill (9.03e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13201_Skill_Main"
@@ -75038,7 +75038,7 @@
                     "paramsTooltips": [
                         {},
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         },
                         {
                             "effectType": "Skill DMG (base)",
@@ -78327,7 +78327,7 @@
                     "damageType": "Skill (2.19e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13301_Skill_Main"
@@ -78808,7 +78808,7 @@
                             "buffIcon": "No Icon"
                         },
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         }
                     ],
                     "hiddenParams": [],
@@ -82212,7 +82212,7 @@
                     "damageType": "Auto Attack (from Normal attack, scale with Normal attack)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13401_Normal"
@@ -82253,7 +82253,7 @@
                     "damageType": "Skill (19.74e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13401_Skill_Main"
@@ -82288,7 +82288,7 @@
                 },
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13401_Skill_Support"
@@ -82332,7 +82332,7 @@
                 },
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13401_Ultra"
@@ -86135,10 +86135,10 @@
                     "damageType": "Minion (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -89917,7 +89917,7 @@
                     "damageType": "Auto Attack (1.94e, from Normal attack, scale with Normal attack)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13701_Normal"
@@ -89961,7 +89961,7 @@
                     "damageType": "Skill (7.37e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13701_Skill_Main"
@@ -93800,7 +93800,7 @@
                 {},
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13901_Skill_Main"
@@ -93851,7 +93851,7 @@
                 {},
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13901_Skill_Support"
@@ -93913,7 +93913,7 @@
                 {},
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "13901_Ultra_A"
@@ -94060,7 +94060,7 @@
                             "buffIcon": "Icon_Buff_13901_Ultra_A"
                         },
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         }
                     ],
                     "hiddenParams": [],
@@ -97537,7 +97537,7 @@
                     "damageType": "Skill (3.52e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14001_Skill_Main"
@@ -97570,7 +97570,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14001_Skill_Support"
@@ -97608,7 +97608,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14001_Ultra"
@@ -101521,7 +101521,7 @@
                 },
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14101_Skill_Main"
@@ -101595,7 +101595,7 @@
                 {},
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14101_Ultra"
@@ -101931,7 +101931,7 @@
                     ],
                     "paramsTooltips": [
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         },
                         {
                             "effectType": "ATK (%)",
@@ -109240,7 +109240,7 @@
                     "damageType": "Skill (1.87e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14301_Skill_Main"
@@ -109277,7 +109277,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14301_Skill_Support"
@@ -109315,7 +109315,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14301_Ultra"
@@ -113087,7 +113087,7 @@
                     "damageType": "Skill (12.49e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14401_Skill_Main"
@@ -113124,7 +113124,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14401_Skill_Support"
@@ -113162,7 +113162,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14401_Ultra"
@@ -116907,7 +116907,7 @@
                     "damageType": "Skill (14.08e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14501_Skill_Main"
@@ -120640,10 +120640,10 @@
                     "buffIcon": "No Icon"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -120689,10 +120689,10 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -120735,10 +120735,10 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "buffIcon": "No Icon"
@@ -124513,7 +124513,7 @@
                     "effectType": "Auto Attack DMG (base)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14901_Skill_Main"
@@ -124550,7 +124550,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14901_Skill_Support"
@@ -124586,7 +124586,7 @@
                 },
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "14901_Ultra"
@@ -128369,7 +128369,7 @@
                     "damageType": "Skill (4.37e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15001_Skill_Main"
@@ -128407,7 +128407,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {
                     "damageType": "Skill (from Skill, scale with Skill)"
@@ -128444,7 +128444,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15001_Ultra"
@@ -132183,7 +132183,7 @@
                     "damageType": "Skill (0.74e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15501_Skill_Main"
@@ -132224,7 +132224,7 @@
                     "damageType": "Skill (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15501_Skill_Support"
@@ -132258,7 +132258,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15501_Ultra"
@@ -140356,7 +140356,7 @@
                     "damageType": "Ultimate (15e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15701_Skill_Main"
@@ -140398,7 +140398,7 @@
                     "damageType": "Ultimate (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15701_Skill_Support"
@@ -140432,7 +140432,7 @@
                     "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15701_Ultra"
@@ -144321,7 +144321,7 @@
                     "damageType": "Minion (from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15801_Skill_Main"
@@ -144403,7 +144403,7 @@
                 },
                 {},
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 },
                 {},
                 {}
@@ -144948,7 +144948,7 @@
                     "paramsTooltips": [
                         {},
                         {
-                            "damageType": "Mark"
+                            "damageType": "Mark (scale with Upgrade)"
                         },
                         {
                             "effectType": "ATK (%)",
@@ -148322,7 +148322,7 @@
                     "damageType": "Skill (0.3e, from Skill, scale with Skill)"
                 },
                 {
-                    "damageType": "Mark"
+                    "damageType": "Mark (scale with Upgrade)"
                 }
             ],
             "icon": "15901_Skill_Main"
