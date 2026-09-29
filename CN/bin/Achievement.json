@@ -10263,5 +10263,313 @@
     "Qty1": 1,
     "Tid2": 2,
     "Qty2": 10
+  },
+  "637": {
+    "Id": 637,
+    "AchieveId": 33401,
+    "Title": "Achievement.637.1",
+    "Desc": "Achievement.637.2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 10,
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "638": {
+    "Id": 638,
+    "AchieveId": 33402,
+    "Title": "Achievement.638.1",
+    "Desc": "Achievement.638.2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      637
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "639": {
+    "Id": 639,
+    "AchieveId": 33403,
+    "Title": "Achievement.639.1",
+    "Desc": "Achievement.639.2",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 40,
+    "Prerequisites": [
+      638
+    ],
+    "Tid1": 71024,
+    "Qty1": 1
+  },
+  "640": {
+    "Id": 640,
+    "AchieveId": 33404,
+    "Title": "Achievement.640.1",
+    "Desc": "Achievement.640.2",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      639
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "641": {
+    "Id": 641,
+    "AchieveId": 33405,
+    "Title": "Achievement.641.1",
+    "Desc": "Achievement.641.2",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 80,
+    "Prerequisites": [
+      640
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "642": {
+    "Id": 642,
+    "AchieveId": 33406,
+    "Title": "Achievement.642.1",
+    "Desc": "Achievement.642.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 100,
+    "Prerequisites": [
+      641
+    ],
+    "Tid1": 71025,
+    "Qty1": 1
+  },
+  "643": {
+    "Id": 643,
+    "AchieveId": 33407,
+    "Title": "Achievement.643.1",
+    "Desc": "Achievement.643.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 120,
+    "Prerequisites": [
+      642
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "644": {
+    "Id": 644,
+    "AchieveId": 33408,
+    "Title": "Achievement.644.1",
+    "Desc": "Achievement.644.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 150,
+    "Prerequisites": [
+      643
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "645": {
+    "Id": 645,
+    "AchieveId": 33409,
+    "Title": "Achievement.645.1",
+    "Desc": "Achievement.645.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 200,
+    "Prerequisites": [
+      644
+    ],
+    "Tid1": 71026,
+    "Qty1": 1
+  },
+  "646": {
+    "Id": 646,
+    "AchieveId": 33410,
+    "Title": "Achievement.646.1",
+    "Desc": "Achievement.646.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 159,
+    "AimNumShow": 500,
+    "Prerequisites": [
+      645
+    ],
+    "Tid1": 20,
+    "Qty1": 10
+  },
+  "647": {
+    "Id": 647,
+    "AchieveId": 33501,
+    "Title": "Achievement.647.1",
+    "Desc": "Achievement.647.2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 30,
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "648": {
+    "Id": 648,
+    "AchieveId": 33502,
+    "Title": "Achievement.648.1",
+    "Desc": "Achievement.648.2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 60,
+    "Prerequisites": [
+      647
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "649": {
+    "Id": 649,
+    "AchieveId": 33503,
+    "Title": "Achievement.649.1",
+    "Desc": "Achievement.649.2",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 120,
+    "Prerequisites": [
+      648
+    ],
+    "Tid1": 72024,
+    "Qty1": 1
+  },
+  "650": {
+    "Id": 650,
+    "AchieveId": 33504,
+    "Title": "Achievement.650.1",
+    "Desc": "Achievement.650.2",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 180,
+    "Prerequisites": [
+      649
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "651": {
+    "Id": 651,
+    "AchieveId": 33505,
+    "Title": "Achievement.651.1",
+    "Desc": "Achievement.651.2",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 240,
+    "Prerequisites": [
+      650
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "652": {
+    "Id": 652,
+    "AchieveId": 33506,
+    "Title": "Achievement.652.1",
+    "Desc": "Achievement.652.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 300,
+    "Prerequisites": [
+      651
+    ],
+    "Tid1": 72025,
+    "Qty1": 1
+  },
+  "653": {
+    "Id": 653,
+    "AchieveId": 33507,
+    "Title": "Achievement.653.1",
+    "Desc": "Achievement.653.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 360,
+    "Prerequisites": [
+      652
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "654": {
+    "Id": 654,
+    "AchieveId": 33508,
+    "Title": "Achievement.654.1",
+    "Desc": "Achievement.654.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 450,
+    "Prerequisites": [
+      653
+    ],
+    "Tid1": 2,
+    "Qty1": 20
+  },
+  "655": {
+    "Id": 655,
+    "AchieveId": 33509,
+    "Title": "Achievement.655.1",
+    "Desc": "Achievement.655.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 600,
+    "Prerequisites": [
+      654
+    ],
+    "Tid1": 72026,
+    "Qty1": 1
+  },
+  "656": {
+    "Id": 656,
+    "AchieveId": 33510,
+    "Title": "Achievement.656.1",
+    "Desc": "Achievement.656.2",
+    "Rarity": 1,
+    "Type": 3,
+    "CompleteCond": 160,
+    "AimNumShow": 1500,
+    "Tid1": 114005,
+    "Qty1": 1
+  },
+  "657": {
+    "Id": 657,
+    "AchieveId": 10510,
+    "Title": "Achievement.657.1",
+    "Desc": "Achievement.657.2",
+    "Rarity": 2,
+    "Type": 1,
+    "CompleteCond": 63,
+    "AimNumShow": 1,
+    "Prerequisites": [
+      636
+    ],
+    "Tid1": 111011,
+    "Qty1": 1,
+    "Tid2": 2,
+    "Qty2": 10
   }
 }

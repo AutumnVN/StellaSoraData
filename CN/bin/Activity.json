@@ -90,6 +90,22 @@
     "EnterRes": "Icon/Banner/banner_avtivity_towerdef_m",
     "TabBgRes": "Icon/Banner/tab_activity_towerdef"
   },
+  "102005": {
+    "Id": 102005,
+    "SortId": 5,
+    "ActivityType": 5,
+    "Name": "塔防",
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-10-13T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-20T11:00:00+08:00",
+    "EnterRes": "Icon/Banner/banner_avtivity_towerdef_m",
+    "TabBgRes": "Icon/Banner/tab_activity_towerdef"
+  },
   "103001": {
     "Id": 103001,
     "SortId": 5,
@@ -148,6 +164,21 @@
     "StartTime": "2026-09-22T04:00:00+08:00",
     "EndType": 2,
     "EndTime": "2026-09-29T03:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_103001_lang"
+  },
+  "103005": {
+    "Id": 103005,
+    "SortId": 5,
+    "ActivityType": 21,
+    "Name": "紧急悬赏",
+    "PreLimit": 1,
+    "LimitParam": "3",
+    "PlayCond": 1,
+    "PlayCondParams": "3",
+    "StartType": 2,
+    "StartTime": "2026-10-13T04:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-20T03:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_103001_lang"
   },
   "301001": {
@@ -489,6 +520,17 @@
     "EndTime": "2026-09-08T10:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_sidestory"
   },
+  "201016": {
+    "Id": 201016,
+    "SortId": 14,
+    "ActivityType": 13,
+    "Name": "诺瓦异闻-尘沙的梦",
+    "StartType": 2,
+    "StartTime": "2026-10-10T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-20T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_sidestory"
+  },
   "400000": {
     "Id": 400000,
     "MidGroupId": 10100,
@@ -709,6 +751,19 @@
     "EndTime": "2026-09-22T04:00:00+08:00",
     "MiniGameRedDot": 1110304
   },
+  "400017": {
+    "Id": 400017,
+    "MidGroupId": 10112,
+    "SortId": 4,
+    "ActivityType": 20,
+    "Name": "月华窃梦人",
+    "ActivityThemeType": 20,
+    "StartType": 2,
+    "StartTime": "2026-09-29T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-13T04:00:00+08:00",
+    "MiniGameRedDot": 1120304
+  },
   "500001": {
     "Id": 500001,
     "SortId": 6,
@@ -866,6 +921,22 @@
     "StartTime": "2026-09-01T12:00:00+08:00",
     "EndType": 2,
     "EndTime": "2026-09-08T11:00:00+08:00",
+    "BannerRes": "banner_activity_05",
+    "TabBgRes": "Icon/Banner/tab_activity_05"
+  },
+  "500011": {
+    "Id": 500011,
+    "SortId": 6,
+    "ActivityType": 14,
+    "Name": "BD兑换活动",
+    "PreLimit": 1,
+    "LimitParam": "10",
+    "PlayCond": 1,
+    "PlayCondParams": "10",
+    "StartType": 2,
+    "StartTime": "2026-10-13T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-20T11:00:00+08:00",
     "BannerRes": "banner_activity_05",
     "TabBgRes": "Icon/Banner/tab_activity_05"
   },
@@ -1345,6 +1416,28 @@
     "EndType": 2,
     "EndTime": "2026-09-29T10:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_trial_137_lang"
+  },
+  "700130": {
+    "Id": 700130,
+    "SortId": 7,
+    "ActivityType": 6,
+    "Name": "浅试身手-艾蕾",
+    "StartType": 2,
+    "StartTime": "2026-09-29T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-20T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_trial_139_lang"
+  },
+  "700131": {
+    "Id": 700131,
+    "SortId": 7,
+    "ActivityType": 6,
+    "Name": "浅试身手-翡冷翠",
+    "StartType": 2,
+    "StartTime": "2026-10-06T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-27T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_trial_110"
   },
   "1010001": {
     "Id": 1010001,
@@ -2280,5 +2373,41 @@
     "StartTime": "2026-09-08T12:00:00+08:00",
     "EndType": 2,
     "EndTime": "2026-09-29T10:59:59+08:00"
+  },
+  "1011201": {
+    "Id": 1011201,
+    "MidGroupId": 10112,
+    "SortId": 8,
+    "ActivityType": 9,
+    "Name": "艾蕾战斗关卡",
+    "ActivityThemeType": 20,
+    "StartType": 2,
+    "StartTime": "2026-09-29T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-13T04:00:00+08:00"
+  },
+  "1011203": {
+    "Id": 1011203,
+    "MidGroupId": 10112,
+    "SortId": 11,
+    "ActivityType": 11,
+    "Name": "艾蕾活动任务",
+    "ActivityThemeType": 20,
+    "StartType": 2,
+    "StartTime": "2026-09-29T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-20T10:59:59+08:00"
+  },
+  "1011204": {
+    "Id": 1011204,
+    "MidGroupId": 10112,
+    "SortId": 12,
+    "ActivityType": 12,
+    "Name": "艾蕾活动商店",
+    "ActivityThemeType": 20,
+    "StartType": 2,
+    "StartTime": "2026-09-29T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-20T10:59:59+08:00"
   }
 }

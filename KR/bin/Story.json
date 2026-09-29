@@ -2788,6 +2788,508 @@
     "Aim": "Story.928.3",
     "AvgMotion": "style_48"
   },
+  "1001": {
+    "Id": 1001,
+    "StoryId": "STm09_00_a",
+    "Comment": "1001",
+    "Chapter": 10,
+    "Index": "Story.1001.4",
+    "Title": "Story.1001.1",
+    "Desc": "Story.1001.2",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "AvgLuaName": "STm09_00_a",
+    "Aim": "Story.1001.3",
+    "AvgMotion": "style_48"
+  },
+  "1002": {
+    "Id": 1002,
+    "StoryId": "STm09_00_b",
+    "Comment": "1002",
+    "Chapter": 10,
+    "Index": "Story.1002.4",
+    "Title": "Story.1002.1",
+    "Desc": "Story.1002.2",
+    "ConditionId": "C09_00_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_00_a"
+    ],
+    "HasEvidence": true,
+    "AvgLuaName": "STm09_00_b",
+    "Aim": "Story.1002.3",
+    "AvgMotion": "style_48"
+  },
+  "1003": {
+    "Id": 1003,
+    "StoryId": "STm09_01_a",
+    "Comment": "1003",
+    "Chapter": 10,
+    "Index": "Story.1003.4",
+    "Title": "Story.1003.1",
+    "Desc": "Story.1003.2",
+    "ConditionId": "C09_01_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_00_b"
+    ],
+    "AvgLuaName": "STm09_01_a",
+    "Aim": "Story.1003.3",
+    "AvgMotion": "style_48"
+  },
+  "1004": {
+    "Id": 1004,
+    "StoryId": "BAm09_BT01",
+    "Comment": "1004",
+    "Chapter": 10,
+    "Index": "Story.1004.4",
+    "Title": "Story.1004.1",
+    "Desc": "Story.1004.2",
+    "TrialBuild": 901,
+    "ConditionId": "C09_BT01",
+    "IsBattle": true,
+    "EnterMethod": 1,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_01_a"
+    ],
+    "FloorId": [
+      1090101
+    ],
+    "PreviewMonsterGroupId": 10901,
+    "Recommend": "5",
+    "Aim": "Story.1004.3"
+  },
+  "1005": {
+    "Id": 1005,
+    "StoryId": "STm09_02_a",
+    "Comment": "1005",
+    "Chapter": 10,
+    "Index": "Story.1005.4",
+    "Title": "Story.1005.1",
+    "Desc": "Story.1005.2",
+    "ConditionId": "C09_02_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT01"
+    ],
+    "AvgLuaName": "STm09_02_a",
+    "Aim": "Story.1005.3",
+    "AvgMotion": "style_48"
+  },
+  "1006": {
+    "Id": 1006,
+    "StoryId": "STm09_03_a",
+    "Comment": "1006",
+    "Chapter": 10,
+    "Index": "Story.1006.4",
+    "Title": "Story.1006.1",
+    "Desc": "Story.1006.2",
+    "ConditionId": "C09_03_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_02_a"
+    ],
+    "AvgLuaName": "STm09_03_a",
+    "Aim": "Story.1006.3",
+    "AvgMotion": "style_48"
+  },
+  "1007": {
+    "Id": 1007,
+    "StoryId": "STm09_04_a",
+    "Comment": "1008",
+    "Chapter": 10,
+    "Index": "Story.1007.4",
+    "Title": "Story.1007.1",
+    "Desc": "Story.1007.2",
+    "ConditionId": "C09_04_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_03_a"
+    ],
+    "AvgLuaName": "STm09_04_a",
+    "Aim": "Story.1007.3",
+    "AvgMotion": "style_48"
+  },
+  "1008": {
+    "Id": 1008,
+    "StoryId": "STm09_05_a",
+    "Comment": "1009",
+    "Chapter": 10,
+    "Index": "Story.1008.4",
+    "Title": "Story.1008.1",
+    "Desc": "Story.1008.2",
+    "ConditionId": "C09_05_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_04_a"
+    ],
+    "AvgLuaName": "STm09_05_a",
+    "Aim": "Story.1008.3",
+    "AvgMotion": "style_48"
+  },
+  "1009": {
+    "Id": 1009,
+    "StoryId": "STm09_06_a",
+    "Comment": "1010",
+    "Chapter": 10,
+    "Index": "Story.1009.4",
+    "Title": "Story.1009.1",
+    "Desc": "Story.1009.2",
+    "ConditionId": "C09_06_a",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_05_a"
+    ],
+    "AvgLuaName": "STm09_06_a",
+    "Aim": "Story.1009.3",
+    "AvgMotion": "style_48"
+  },
+  "1010": {
+    "Id": 1010,
+    "StoryId": "BAm09_BT03",
+    "Comment": "1011",
+    "Chapter": 10,
+    "Index": "Story.1010.4",
+    "Title": "Story.1010.1",
+    "Desc": "Story.1010.2",
+    "TrialBuild": 903,
+    "ConditionId": "C09_BT03",
+    "IsBattle": true,
+    "EnterMethod": 1,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_06_a"
+    ],
+    "FloorId": [
+      1090301
+    ],
+    "PreviewMonsterGroupId": 10903,
+    "Recommend": "5",
+    "Aim": "Story.1010.3"
+  },
+  "1011": {
+    "Id": 1011,
+    "StoryId": "STm09_07_a",
+    "Comment": "1011",
+    "Chapter": 10,
+    "Index": "Story.1011.4",
+    "Title": "Story.1011.1",
+    "Desc": "Story.1011.2",
+    "ConditionId": "C09_07_a",
+    "IsBranch": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT03"
+    ],
+    "AvgLuaName": "STm09_07_a",
+    "Aim": "Story.1011.3",
+    "AvgMotion": "style_48"
+  },
+  "1012": {
+    "Id": 1012,
+    "StoryId": "STm09_01_b",
+    "Comment": "1003",
+    "Chapter": 10,
+    "Index": "Story.1012.4",
+    "Title": "Story.1012.1",
+    "Desc": "Story.1012.2",
+    "ConditionId": "C09_01_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_00_b"
+    ],
+    "AvgLuaName": "STm09_01_b",
+    "Aim": "Story.1012.3",
+    "AvgMotion": "style_48"
+  },
+  "1013": {
+    "Id": 1013,
+    "StoryId": "BAm09_BT02",
+    "Comment": "1004",
+    "Chapter": 10,
+    "Index": "Story.1013.4",
+    "Title": "Story.1013.1",
+    "Desc": "Story.1013.2",
+    "TrialBuild": 902,
+    "ConditionId": "C09_BT02",
+    "IsBattle": true,
+    "EnterMethod": 1,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_01_b"
+    ],
+    "FloorId": [
+      1090201
+    ],
+    "PreviewMonsterGroupId": 10902,
+    "Recommend": "5",
+    "Aim": "Story.1013.3"
+  },
+  "1014": {
+    "Id": 1014,
+    "StoryId": "STm09_02_b",
+    "Comment": "1005",
+    "Chapter": 10,
+    "Index": "Story.1014.4",
+    "Title": "Story.1014.1",
+    "Desc": "Story.1014.2",
+    "ConditionId": "C09_02_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT02"
+    ],
+    "AvgLuaName": "STm09_02_b",
+    "Aim": "Story.1014.3",
+    "AvgMotion": "style_48"
+  },
+  "1015": {
+    "Id": 1015,
+    "StoryId": "STm09_03_b",
+    "Comment": "1006",
+    "Chapter": 10,
+    "Index": "Story.1015.4",
+    "Title": "Story.1015.1",
+    "Desc": "Story.1015.2",
+    "ConditionId": "C09_03_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_02_b"
+    ],
+    "AvgLuaName": "STm09_03_b",
+    "Aim": "Story.1015.3",
+    "AvgMotion": "style_48"
+  },
+  "1016": {
+    "Id": 1016,
+    "StoryId": "STm09_04_b",
+    "Comment": "1007",
+    "Chapter": 10,
+    "Index": "Story.1016.4",
+    "Title": "Story.1016.1",
+    "Desc": "Story.1016.2",
+    "ConditionId": "C09_04_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_03_b"
+    ],
+    "AvgLuaName": "STm09_04_b",
+    "Aim": "Story.1016.3",
+    "AvgMotion": "style_48"
+  },
+  "1017": {
+    "Id": 1017,
+    "StoryId": "STm09_05_b",
+    "Comment": "1012",
+    "Chapter": 10,
+    "Index": "Story.1017.4",
+    "Title": "Story.1017.1",
+    "Desc": "Story.1017.2",
+    "ConditionId": "C09_05_b",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_04_b"
+    ],
+    "AvgLuaName": "STm09_05_b",
+    "Aim": "Story.1017.3",
+    "AvgMotion": "style_48"
+  },
+  "1018": {
+    "Id": 1018,
+    "StoryId": "STm09_06_b",
+    "Comment": "1012",
+    "Chapter": 10,
+    "Index": "Story.1018.4",
+    "Title": "Story.1018.1",
+    "Desc": "Story.1018.2",
+    "ConditionId": "C09_06_b",
+    "IsBranch": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_05_b"
+    ],
+    "AvgLuaName": "STm09_06_b",
+    "Aim": "Story.1018.3",
+    "AvgMotion": "style_48"
+  },
+  "1019": {
+    "Id": 1019,
+    "StoryId": "STm09_01_c",
+    "Comment": "1003",
+    "Chapter": 10,
+    "Index": "Story.1019.4",
+    "Title": "Story.1019.1",
+    "Desc": "Story.1019.2",
+    "ConditionId": "C09_01_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_00_b"
+    ],
+    "AvgLuaName": "STm09_01_c",
+    "Aim": "Story.1019.3",
+    "AvgMotion": "style_48"
+  },
+  "1020": {
+    "Id": 1020,
+    "StoryId": "BAm09_BT04",
+    "Comment": "1006",
+    "Chapter": 10,
+    "Index": "Story.1020.4",
+    "Title": "Story.1020.1",
+    "Desc": "Story.1020.2",
+    "TrialBuild": 904,
+    "ConditionId": "C09_BT04",
+    "IsBattle": true,
+    "EnterMethod": 1,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_01_c"
+    ],
+    "FloorId": [
+      1090401,
+      1090402,
+      1090403
+    ],
+    "PreviewMonsterGroupId": 10904,
+    "Recommend": "5",
+    "Aim": "Story.1020.3"
+  },
+  "1021": {
+    "Id": 1021,
+    "StoryId": "STm09_02_c",
+    "Comment": "1008",
+    "Chapter": 10,
+    "Index": "Story.1021.4",
+    "Title": "Story.1021.1",
+    "Desc": "Story.1021.2",
+    "ConditionId": "C09_02_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT04"
+    ],
+    "AvgLuaName": "STm09_02_c",
+    "Aim": "Story.1021.3",
+    "AvgMotion": "style_48"
+  },
+  "1022": {
+    "Id": 1022,
+    "StoryId": "STm09_03_c",
+    "Comment": "1011",
+    "Chapter": 10,
+    "Index": "Story.1022.4",
+    "Title": "Story.1022.1",
+    "Desc": "Story.1022.2",
+    "ConditionId": "C09_03_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_02_c"
+    ],
+    "AvgLuaName": "STm09_03_c",
+    "Aim": "Story.1022.3",
+    "AvgMotion": "style_48"
+  },
+  "1023": {
+    "Id": 1023,
+    "StoryId": "BAm09_BT05",
+    "Comment": "1013",
+    "Chapter": 10,
+    "Index": "Story.1023.4",
+    "Title": "Story.1023.1",
+    "Desc": "Story.1023.2",
+    "TrialBuild": 905,
+    "ConditionId": "C09_BT05",
+    "IsBattle": true,
+    "EnterMethod": 2,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_03_c"
+    ],
+    "FloorId": [
+      1090501
+    ],
+    "PreviewMonsterGroupId": 10905,
+    "Recommend": "5",
+    "Aim": "Story.1023.3"
+  },
+  "1024": {
+    "Id": 1024,
+    "StoryId": "STm09_04_c",
+    "Comment": "1014",
+    "Chapter": 10,
+    "Index": "Story.1024.4",
+    "Title": "Story.1024.1",
+    "Desc": "Story.1024.2",
+    "ConditionId": "C09_04_c",
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "BAm09_BT05"
+    ],
+    "AvgLuaName": "STm09_04_c",
+    "Aim": "Story.1024.3",
+    "AvgMotion": "style_48"
+  },
+  "1025": {
+    "Id": 1025,
+    "StoryId": "STm09_05_c",
+    "Comment": "1014",
+    "Chapter": 10,
+    "Index": "Story.1025.4",
+    "Title": "Story.1025.1",
+    "Desc": "Story.1025.2",
+    "ConditionId": "C09_05_c",
+    "IsBranch": true,
+    "Reward": 102,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":30}]",
+    "ParentStoryId": [
+      "STm09_04_c"
+    ],
+    "AvgLuaName": "STm09_05_c",
+    "Aim": "Story.1025.3",
+    "AvgMotion": "style_48"
+  },
+  "1026": {
+    "Id": 1026,
+    "StoryId": "STm09_01_d",
+    "Comment": "1002",
+    "Chapter": 10,
+    "Index": "Story.1026.4",
+    "Title": "Story.1026.1",
+    "Desc": "Story.1026.2",
+    "ConditionId": "C09_01_d",
+    "Reward": 104,
+    "RewardDisplay": "[{\"Tid\":2,\"Qty\":50}]",
+    "ParentStoryId": [
+      "STm09_00_b"
+    ],
+    "AvgLuaName": "STm09_01_d",
+    "Aim": "Story.1026.3",
+    "IsLast": true,
+    "AvgMotion": "style_3",
+    "MemoryType": 2
+  },
   "6501": {
     "Id": 6501,
     "StoryId": "BAm06x5_01",

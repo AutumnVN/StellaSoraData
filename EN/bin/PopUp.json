@@ -302,6 +302,25 @@
     "EndType": 2,
     "EndTime": "2026-09-29T10:59:59+08:00"
   },
+  "19": {
+    "Id": 19,
+    "SortId": 19,
+    "PopUpType": 3,
+    "PopUpRes": "UI/MallPkgPopup/Popup_16",
+    "ScriptName": "OwnPopUp.MallPkgPopupCtrl",
+    "ScriptParams": "[\"pack.17_res\", \"pack.17_gift\", \"pack.17_disc_l\", \"pack.17_role_l\"]",
+    "PopRefreshType": 3,
+    "PopJumpType": 3,
+    "JumpToParams": 18,
+    "StartCondType": 71,
+    "StartCondParams": [
+      2
+    ],
+    "StartType": 2,
+    "StartTime": "2026-09-29T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-10-20T10:59:59+08:00"
+  },
   "1000": {
     "Id": 1000,
     "SortId": 1000,
@@ -492,6 +511,16 @@
     "ActivityId": 10111,
     "PopUpRes": "UI_Activity/10111/PopUp",
     "ScriptName": "ActivityPopUp.ActivityCultivationManual_10111PopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
+  },
+  "1019": {
+    "Id": 1019,
+    "SortId": 1019,
+    "PopUpType": 2,
+    "ActivityId": 10112,
+    "PopUpRes": "UI_Activity/10112/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityLongestDay_10112PopUpCtrl",
     "PopRefreshType": 2,
     "PopJumpType": 2
   },
@@ -686,5 +715,29 @@
     "ScriptName": "ActivityPopUp.ActivityDoubleDrop_103001PopUpCtrl",
     "PopRefreshType": 2,
     "PopJumpType": 2
+  },
+  "2022": {
+    "Id": 2022,
+    "SortId": 3011,
+    "PopUpType": 1,
+    "ActivityId": 103005,
+    "PopUpRes": "UI_Activity/_103001/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityDoubleDrop_103001PopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
+  },
+  "2027": {
+    "Id": 2027,
+    "SortId": 2011,
+    "PopUpType": 1,
+    "ActivityId": 102005,
+    "PopUpRes": "UI_Activity/TowerDefense/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityTowerDefensePopUpCtrl",
+    "PopRefreshType": 1,
+    "PopJumpType": 2,
+    "StartCondType": 71,
+    "StartCondParams": [
+      1
+    ]
   }
 }

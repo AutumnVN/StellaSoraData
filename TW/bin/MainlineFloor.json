@@ -540,6 +540,72 @@
     "IntroCutscene": "MapTimeline_m08_BT03_01",
     "LevelScript": "AIScript.LevelAndGroupController.Level.EP89CircleControl"
   },
+  "1090101": {
+    "Id": 1090101,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_9_1",
+    "ConfigPrefabName": "Mirage_Main_9_1",
+    "Theme": 25,
+    "BGM": "Desert_town_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP9_LevelController"
+  },
+  "1090201": {
+    "Id": 1090201,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_9_1",
+    "ConfigPrefabName": "Mirage_Main_9_2",
+    "Theme": 26,
+    "BGM": "Desert_town_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.EP9_LevelController"
+  },
+  "1090301": {
+    "Id": 1090301,
+    "SceneName": "Levels/Main/Mirage/Mirage_Main_9_3",
+    "ConfigPrefabName": "Mirage_Main_9_3",
+    "Theme": 27,
+    "BGM": "Desert_town_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Desert_town_all_stop",
+    "MonsterLv": 6
+  },
+  "1090401": {
+    "Id": 1090401,
+    "SceneName": "Levels/Main/Desert/Desert_Main_9_4",
+    "ConfigPrefabName": "Desert_Main_9_4_1",
+    "Theme": 28,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop",
+    "MonsterLv": 6
+  },
+  "1090402": {
+    "Id": 1090402,
+    "SceneName": "Levels/Main/Desert/Desert_Main_9_4_1",
+    "ConfigPrefabName": "Desert_Main_9_4_2",
+    "Theme": 28,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop",
+    "MonsterLv": 6
+  },
+  "1090403": {
+    "Id": 1090403,
+    "SceneName": "Levels/Main/Desert/Desert_Main_1_2",
+    "ConfigPrefabName": "Desert_Main_9_4_3",
+    "Theme": 28,
+    "BGM": "prologue_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop",
+    "MonsterLv": 6
+  },
+  "1090501": {
+    "Id": 1090501,
+    "SceneName": "Levels/Main/Desert/Desert_Main_0_4_1",
+    "ConfigPrefabName": "Desert _Main_MainLine_9_5",
+    "Theme": 29,
+    "BGM": "prologue_mechaBoss_setState",
+    "LeaveTriggerEvent": "amb_prologue_all_stop",
+    "MonsterLv": 1,
+    "LevelScript": "AIScript.LevelAndGroupController.Level.GaoDa9_5_LevelController"
+  },
   "1060505": {
     "Id": 1060505,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_010_B_01",

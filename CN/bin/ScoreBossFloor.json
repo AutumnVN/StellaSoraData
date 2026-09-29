@@ -223,5 +223,22 @@
     "Theme": 111,
     "BGM": "roguelike_combatLiRong_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop"
+  },
+  "1001030": {
+    "Id": 1001030,
+    "SceneName": "Levels/StoryActivity/StoryActivity_13/StoryActivity_13_Boss_A_01",
+    "ConfigPrefabName": "StoryActivity_13_Boss_BossRush_1",
+    "Theme": 461,
+    "BGM": "amb_900001_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_900001_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.JiJuXieLevelController_Lv3"
+  },
+  "1001031": {
+    "Id": 1001031,
+    "SceneName": "Levels/Roguelike/Roguelike_2/Roguelike_2_Boss_002",
+    "ConfigPrefabName": "Roguelike_Boss_ShaSha_BossRush_3",
+    "Theme": 105,
+    "BGM": "roguelike_combatShasha_setState",
+    "LeaveTriggerEvent": "amb_roguelike_all_stop"
   }
 }
