@@ -793,9 +793,10 @@ function getDamageTypeFromOneParam(param) {
     const energyCharge = HITDAMAGE[p[2]].EnergyCharge;
     const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
     const levelData = HITDAMAGE[p[2]].LevelData;
+    const levelTypeData = HITDAMAGE[p[2]].levelTypeData;
     const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
     const energy = energyCharge && `${iHateFloatingPointNumber(energyCharge, '/', 10000)}e`
-    const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
+    const scaleWith = [5, 2, 4].includes(levelData) ? `scale with ${SKILL_SLOT_TYPE[levelData]}` : levelTypeData === 4 ? 'scale with Upgrade' : undefined;
     const combined = [energy, from, scaleWith].filter(v => v).join(', ');
 
     return `${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''}`;
