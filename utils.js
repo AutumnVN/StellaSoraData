@@ -978,6 +978,7 @@ module.exports = {
     iHateFloatingPointNumber,
     resolveParam,
     resolveParamsTooltips,
+    getDamageTypeFromOneParam,
     getEffectData,
     formatEffectType,
     formatAddAttrType,

@@ -1,5 +1,5 @@
 const { writeFileSync } = require('fs');
-const { collectParamsFrom, resolveParam, resolveParamsTooltips, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber, CHARACTER_ATTACK_TYPE, BULLET_TYPE, CHARGE_RATE_TYPE, badScaleAfterLevel } = require('./utils');
+const { collectParamsFrom, resolveParam, resolveParamsTooltips, getDamageTypeFromOneParam, ATTR_TYPE, DAMAGE_TYPE, EFFECT_TYPE, CORNER_TYPE, getEffectData, PARAM_TYPE, formatEffectType, formatAddAttrType, getSkillType, SKILL_SLOT_TYPE, collectUnusedParamsFrom, collectPotentialHiddenParamsFrom, iHateFloatingPointNumber, CHARACTER_ATTACK_TYPE, BULLET_TYPE, CHARGE_RATE_TYPE, badScaleAfterLevel } = require('./utils');
 const CHARACTER = require('./EN/bin/Character.json');
 const CHARACTERADVANCE = require('./EN/bin/CharacterAdvance.json');
 const CHARACTERDES = require('./EN/bin/CharacterDes.json');
@@ -322,19 +322,10 @@ function getSkillDamageTypes(skillId) {
     const params = collectParamsFrom(SKILL[skillId]).filter(p => p && p.startsWith('HitDamage'));
 
     for (const param of params) {
-        const p = param.split(',');
-        if (!HITDAMAGE[p[2]]) continue;
+        const damageType = getDamageTypeFromOneParam(param);
+        if (!damageType) continue;
 
-        const type = HITDAMAGE[p[2]].DamageType;
-        const energyCharge = HITDAMAGE[p[2]].EnergyCharge;
-        const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
-        const levelData = HITDAMAGE[p[2]].LevelData;
-        const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
-        const energy = energyCharge && `${iHateFloatingPointNumber(energyCharge, '/', 10000)}e`
-        const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
-        const combined = [energy, from, scaleWith].filter(v => v).join(', ');
-
-        damageTypes.push(`${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''}`);
+        damageTypes.push(damageType);
     }
 
     return [...new Set(damageTypes)];
@@ -666,35 +657,17 @@ function getPotentialDamageTypes(potId) {
     const hiddenParams = collectPotentialHiddenParamsFrom(POTENTIAL[potId], allSkillParams).params.filter(p => p && p.startsWith('HitDamage'));
 
     for (const param of params) {
-        const p = param.split(',');
-        if (!HITDAMAGE[p[2]]) continue;
+        const damageType = getDamageTypeFromOneParam(param);
+        if (!damageType) continue;
 
-        const type = HITDAMAGE[p[2]].DamageType;
-        const energyCharge = HITDAMAGE[p[2]].EnergyCharge;
-        const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
-        const levelData = HITDAMAGE[p[2]].LevelData;
-        const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
-        const energy = energyCharge && `${iHateFloatingPointNumber(energyCharge, '/', 10000)}e`
-        const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
-        const combined = [energy, from, scaleWith].filter(v => v).join(', ');
-
-        damageTypes.push(`${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''}`);
+        damageTypes.push(damageType);
     }
 
     for (const param of hiddenParams) {
-        const p = param.split(',');
-        if (!HITDAMAGE[p[2]]) continue;
+        const damageType = getDamageTypeFromOneParam(param);
+        if (!damageType) continue;
 
-        const type = HITDAMAGE[p[2]].DamageType;
-        const energyCharge = HITDAMAGE[p[2]].EnergyCharge;
-        const skillSlotType = HITDAMAGE[p[2]].SkillSlotType;
-        const levelData = HITDAMAGE[p[2]].LevelData;
-        const from = skillSlotType && `from ${SKILL_SLOT_TYPE[skillSlotType]}`;
-        const energy = energyCharge && `${iHateFloatingPointNumber(energyCharge, '/', 10000)}e`
-        const scaleWith = [5, 2, 4].includes(levelData) && `scale with ${SKILL_SLOT_TYPE[levelData]}`;
-        const combined = [energy, from, scaleWith].filter(v => v).join(', ');
-
-        damageTypes.push(`${DAMAGE_TYPE[type]}${combined ? ` (${combined})` : ''} (hidden)`);
+        damageTypes.push(`${damageType} (hidden)`);
     }
 
     return [...new Set(damageTypes)];
