@@ -93620,6 +93620,3790 @@
             }
         ]
     },
+    "139": {
+        "id": 139,
+        "name": "Allie",
+        "star": 5,
+        "element": "Aqua",
+        "class": "Vanguard",
+        "attackType": "Melee",
+        "style": "Steady",
+        "force": "Freelance Trekker",
+        "tag": [
+            "Vanguard",
+            "Steady",
+            "Freelance Trekker"
+        ],
+        "cnCv": "Zeng Tong",
+        "jpCv": "Erika Ishitobi",
+        "source": [
+            "Limited",
+            "Premium",
+            "Recruit",
+            "Gacha",
+            "Banner",
+            "p2w"
+        ],
+        "birthday": "March 21st",
+        "loveGift": [
+            "Gilded Ceramic Bowl",
+            "Blossom Porcelain Cup",
+            "Mystic Potion Kettle",
+            "Summer Chill Crushed Ice",
+            "Fragrant Ice Delight",
+            "Sweet IceFurry",
+            "Portable Blower",
+            "Exquisite Blower",
+            "Deluxe Blower"
+        ],
+        "hateGift": [
+            "Rising Star",
+            "Emerging Talent",
+            "Shining Star"
+        ],
+        "date": [
+            {
+                "id": 139301,
+                "name": "Call Your Parents",
+                "clue": "Visit the Academy to unlock",
+                "secondChoice": "Gonna look around inside the library."
+            },
+            {
+                "id": 139302,
+                "name": "The Charcoal Cake",
+                "clue": "Visit the Dessert Shop to unlock",
+                "secondChoice": "Haven't had enough. Let's order some more."
+            }
+        ],
+        "fixedStat": {
+            "Charge Rate": "High",
+            "Energy Cost": "Medium",
+            "Attack Range": 5,
+            "Walk Speed": 5.25,
+            "Run Speed": 7
+        },
+        "normalAtk": {
+            "id": 13910000,
+            "name": "Housework Slash",
+            "nameCN": "家务用重斩",
+            "nameJP": "お掃除開始",
+            "nameKR": "청소 시작",
+            "energyLimit": 6.1,
+            "desc": "Wields the long blade to deal DMG multiple times.\u000bStrike 1: <color=#fb8037>&Param1&</color> and <color=#fb8037>&Param2&</color> of ATK as Aqua Auto Attack DMG.\u000bStrike 2: <color=#fb8037>&Param3&</color> of ATK as Aqua Auto Attack DMG.\u000bStrike 3: <color=#fb8037>&Param4& x2</color> of ATK as Aqua Auto Attack DMG.\u000bStrike 4: <color=#fb8037>&Param5&</color>, <color=#fb8037>&Param6&</color>, and <color=#fb8037>&Param7&</color> of ATK as Aqua Auto Attack DMG.\u000bStrike 5: <color=#fb8037>&Param8&</color> of ATK as Aqua Auto Attack DMG.",
+            "descCN": "使用长刀，连续造成伤害。\u000b一段：攻击力<color=#fb8037>&Param1&</color>、<color=#fb8037>&Param2&</color>水系普攻伤害\u000b二段：攻击力<color=#fb8037>&Param3&</color>水系普攻伤害\u000b三段：攻击力<color=#fb8037>&Param4&x2</color>水系普攻伤害\u000b四段：攻击力<color=#fb8037>&Param5&</color>、<color=#fb8037>&Param6&</color>、<color=#fb8037>&Param7&</color>水系普攻伤害\u000b五段：攻击力<color=#fb8037>&Param8&</color>水系普攻伤害",
+            "descJP": "薙刀で連続攻撃を行う。\u000b1段目：攻撃力の<color=#fb8037>&Param1&</color>、<color=#fb8037>&Param2&</color>の水属性の通常攻撃ダメージを与える。\u000b2段目：攻撃力の<color=#fb8037>&Param3&</color>の水属性の通常攻撃ダメージを与える。\u000b3段目：攻撃力の<color=#fb8037>&Param4&x2</color>の水属性の通常攻撃ダメージを与える。\u000b4段目：攻撃力の<color=#fb8037>&Param5&</color>、<color=#fb8037>&Param6&</color>、<color=#fb8037>&Param7&</color>の水属性の通常攻撃ダメージを与える。\u000b5段目：攻撃力の<color=#fb8037>&Param8&</color>の水属性の通常攻撃ダメージを与える。",
+            "descKR": "월도를 사용해 연속으로 피해를 입힌다. \u000b1단계: 공격력 <color=#fb8037>&Param1&</color>, <color=#fb8037>&Param2&</color>의 물 속성 일반 공격 피해 \u000b2단계: 공격력 <color=#fb8037>&Param3&</color>의 물 속성 일반 공격 피해 \u000b3단계: 공격력 <color=#fb8037>&Param4&x2</color>의 물 속성 일반 공격 피해 \u000b4단계: 공격력 <color=#fb8037>&Param5&</color>, <color=#fb8037>&Param6&</color>, <color=#fb8037>&Param7&</color>의 물 속성 일반 공격 피해 \u000b5단계: 공격력 <color=#fb8037>&Param8&</color>의 물 속성 일반 공격 피해",
+            "damageType": [
+                "Auto Attack (2.8e, from Normal attack, scale with Normal attack)",
+                "Auto Attack (6.1e, from Normal attack, scale with Normal attack)",
+                "Auto Attack (2.1e, from Normal attack, scale with Normal attack)",
+                "Auto Attack (1.8e, from Normal attack, scale with Normal attack)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "17.1%/19.7%/22.3%/30%/32.4%/34.8%/39.5%/41.6%/43.6%/47.8%/51.2%/54.6%/58%",
+                "19%/21.8%/24.6%/33.2%/35.8%/38.5%/43.8%/46.1%/48.3%/52.9%/56.7%/60.5%/64.3%",
+                "29.2%/33.5%/37.9%/51%/55.1%/59.2%/67.3%/70.8%/74.3%/81.3%/87.2%/93%/98.8%",
+                "6.8%/7.8%/8.9%/11.9%/12.9%/13.8%/15.7%/16.6%/17.4%/19%/20.4%/21.7%/23.1%",
+                "17.6%/20.3%/22.9%/30.9%/33.4%/35.8%/40.8%/42.9%/45%/49.2%/52.8%/56.3%/59.8%",
+                "19.3%/22.1%/25%/33.7%/36.4%/39.1%/44.5%/46.8%/49.1%/53.7%/57.6%/61.4%/65.3%",
+                "20.9%/24%/27.1%/36.5%/39.4%/42.3%/48.2%/50.7%/53.2%/58.2%/62.3%/66.5%/70.7%",
+                "28.9%/33.2%/37.5%/50.5%/54.6%/58.6%/66.7%/70.1%/73.6%/80.5%/86.3%/92.1%/97.8%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Auto Attack (2.8e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (2.8e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (6.1e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (2.8e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (2.1e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (2.1e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (1.8e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (6.1e, from Normal attack, scale with Normal attack)"
+                }
+            ],
+            "icon": "13901_Normal"
+        },
+        "skill": {
+            "id": 13931000,
+            "name": "Sweeping Rush",
+            "nameCN": "扫堂突进",
+            "nameJP": "ママのしつけ",
+            "nameKR": "엄마의 가르침",
+            "cooldown": "7s",
+            "energyLimit": 30.6,
+            "desc": "Dashes to the target's location, dealing <color=#fb8037>&Param1& x3</color> and <color=#fb8037>&Param6& x3</color> of ATK as AoE Aqua Skill DMG, which can trigger ##Aqua Mark#1018# and generate ##Tidal Wave#4053#.\u000bWhen Sweeping Rush (Main Skill) deals DMG, obtains 1 Sweep Mark: increases own &Param2& by <color=#fb8037>&Param3&</color> for &Param4&s. Up to 3 Sweep Marks can exist, and this effect grants at most 1 Sweep Mark each time.\u000bParam5: &Param5& (BuffValue,LaminatedNum) \u000bParam9: &Param9& (HitDamage,Mark)",
+            "descCN": "穿梭至目标处，造成攻击力<color=#fb8037>&Param1&x3</color>、<color=#fb8037>&Param6&x3</color>范围水系技能伤害，可触发##水系印记#1018#，产生##潮汐#4053#。\u000b主控技「扫堂突进」造成伤害时，获得1个「清扫标记」：使自身&Param2&提升<color=#fb8037>&Param3&</color>，持续&Param4&秒，数量上限为3个，通过此方式每次最多获得1个「清扫标记」。\u000bParam5: &Param5& (BuffValue,LaminatedNum) \u000bParam9: &Param9& (HitDamage,Mark)",
+            "descJP": "複数回突進し、範囲内の敵に攻撃力の<color=#fb8037>&Param1&x3</color>、<color=#fb8037>&Param6&x3</color>の水属性のスキルダメージを与える。##水属性の印#1018#を発動させ、##霜華#4053#を発生させる。\u000b主力スキルがダメージを与えた時、愛のしるしを1獲得する。\u000b愛のしるし：&Param4&秒間、愛のしるし1につき自身の&Param2&が<color=#fb8037>&Param3&</color>増加する。愛のしるしは最大3まで同時に保有でき、この効果で一度に獲得できる愛のしるしは1まで。\u000bParam5: &Param5& (BuffValue,LaminatedNum) \u000bParam9: &Param9& (HitDamage,Mark)",
+            "descKR": "목표 위치로 이동하여 공격력 <color=#fb8037>&Param1&x3</color>, <color=#fb8037>&Param6&x3</color>의 물 속성 범위 스킬 피해를 입히고, ##물 속성 표식#1018#을 발동해 ##조석#4053#을 생성할 수 있다. \u000b메인 스킬 「엄마의 가르침」이 피해를 입히면 「청소 표식」 1개를 획득해 자신의 &Param2_kr1& <color=#fb8037>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 3개 획득할 수 있다. 해당 방식으로는 1회에 최대 1개의 「청소 표식」을 획득할 수 있다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (BuffValue,LaminatedNum) \u000bParam9: &Param9& (HitDamage,Mark)",
+            "damageType": [
+                "Skill (from Skill, scale with Skill)",
+                "Mark"
+            ],
+            "effectType": [
+                "Aqua DMG (base)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "No Icon"
+            ],
+            "params": [
+                "248%/285%/322%/434%/469%/503%/573%/603%/632%/692%/741%/791%/841%",
+                "Aqua DMG",
+                "3.3%",
+                12,
+                3,
+                "217%/250%/282%/380%/410%/440%/501%/527%/553%/605%/649%/692%/736%",
+                "",
+                "",
+                "63%/82%/101%/120%/139%/157%/176%/195%/214%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {
+                    "effectType": "Aqua DMG (base)",
+                    "buffIcon": "No Icon"
+                },
+                {
+                    "effectType": "Aqua DMG (base)",
+                    "buffIcon": "No Icon"
+                },
+                {
+                    "buffIcon": "No Icon"
+                },
+                {
+                    "buffIcon": "No Icon"
+                },
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {},
+                {},
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "13901_Skill_Main"
+        },
+        "supportSkill": {
+            "id": 13932000,
+            "name": "Sweeping Slashes",
+            "nameCN": "清扫连刃",
+            "nameJP": "プロのお片付け",
+            "nameKR": "전문가의 마무리 작업",
+            "cooldown": "12s",
+            "desc": "Wields the long blade to perform Cycling Slashes, dealing <color=#fb8037>&Param1& x4</color> of ATK as AoE Aqua Skill DMG. Then unleashes a powerful Finishing Slash and forms ice crystals, dealing <color=#fb8037>&Param2&</color> and <color=#fb8037>&Param3&</color> of ATK as AoE Aqua Skill DMG. When the Support Skill deals DMG, it can trigger ##Aqua Mark#1018# and generate ##Tide#4053#.\u000bParam9: &Param9& (HitDamage,Mark)",
+            "descCN": "挥动长刀「循环斩击」，造成攻击力<color=#fb8037>&Param1&x4</color>范围水系技能伤害，随后发动强力「收尾斩击」，并形成冰晶，分别造成攻击力<color=#fb8037>&Param2&</color>和<color=#fb8037>&Param3&</color>范围水系技能伤害。援护技造成伤害时，可触发##水系印记#1018#，产生##潮汐#4053#。\u000bParam9: &Param9& (HitDamage,Mark)",
+            "descJP": "薙刀で「スイープスラッシュ」を放ち、範囲内の敵に攻撃力の<color=#fb8037>&Param1&x4</color>の水属性のスキルダメージを与える。その後、「アイシクルスラッシュ」を放ち、氷晶を生成する。それぞれ範囲内の敵に攻撃力の<color=#fb8037>&Param2&</color>、<color=#fb8037>&Param3&</color>の水属性のスキルダメージを与える。支援スキルがダメージを与えた時、##水属性の印#1018#を発動させ、##霜華#4053#を発生させる。\u000bParam9: &Param9& (HitDamage,Mark)",
+            "descKR": "월도로 「순환 참격」을 가해 공격력 <color=#fb8037>&Param1&x4</color>의 물 속성 범위 스킬 피해를 입힌다. 이후 강력한 「마무리 참격」을 발동하고 얼음 결정을 생성하여 각 공격력 <color=#fb8037>&Param2&</color>, <color=#fb8037>&Param3&</color>의 물 속성 범위 스킬 피해를 입힌다. 지원 스킬이 피해를 입히면 ##물 속성 표식#1018#을 발동해 ##조석#4053#을 생성할 수 있다.\u000bParam9: &Param9& (HitDamage,Mark)",
+            "damageType": [
+                "Skill (from Skill, scale with Skill)",
+                "Mark"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "88%/101%/114%/154%/166%/178%/203%/214%/224%/245%/263%/280%/298%",
+                "158%/182%/206%/277%/299%/321%/365%/384%/403%/441%/473%/505%/536%",
+                "193%/222%/251%/338%/365%/392%/446%/470%/493%/539%/578%/617%/655%",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "63%/82%/101%/120%/139%/157%/176%/195%/214%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Skill (from Skill, scale with Skill)"
+                },
+                {},
+                {},
+                {},
+                {},
+                {},
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "13901_Skill_Support"
+        },
+        "ultimate": {
+            "id": 13940000,
+            "name": "Deep Sweep",
+            "nameCN": "大扫除",
+            "nameJP": "邪魔者大掃除",
+            "nameKR": "대청소",
+            "cooldown": "40s",
+            "energy": 275,
+            "desc": "Deep Sweep: Dust Off (Ultimate Phase 1): Deals <color=#fb8037>&Param1&</color> of ATK as AoE Aqua Ultimate DMG, and enters Sweeping Stance, increasing own &Param2& by <color=#fb8037>&Param3&</color> for &Param4&s. After casting Deep Sweep: Dust Off, unlocks Deep Sweep: Restore Order (Ultimate Phase 2) within a short time.\u000bDeep Sweep: Restore Order (Ultimate Phase 2): Pursues the target, dealing <color=#fb8037>&Param5&</color> of ATK as AoE Aqua Ultimate DMG.\u000bWhen the Ultimate deals DMG, it can trigger ##Aqua Mark#1018# and generate ##Tide#4053#.\u000bParam9: &Param9& (HitDamage,Mark)",
+            "descCN": "绝招一段「大扫除·除尘」：造成攻击力<color=#fb8037>&Param1&</color>范围水系绝招伤害，同时进入「清扫架势」：自身&Param2&提升<color=#fb8037>&Param3&</color>，持续&Param4&秒。施放「大扫除·除尘」后，短时间内解锁绝招二段「大扫除·归置」。\u000b绝招二段「大扫除·归置」：追击目标，造成攻击力<color=#fb8037>&Param5&</color>范围水系绝招伤害。\u000b绝招造成伤害时，可触发##水系印记#1018#，产生##潮汐#4053#。\u000bParam9: &Param9& (HitDamage,Mark)",
+            "descJP": "必殺技1段目「一掃」：発動と同時におしおきモードに移行し、&Param4&秒間、自身の&Param2&が<color=#fb8037>&Param3&</color>上昇する。その後、範囲内の敵に攻撃力の<color=#fb8037>&Param1&</color>の水属性の必殺技ダメージを与える。\u000b「一掃」発動後、一定時間必殺技2段目「粛清」が発動できるようになる。\u000b必殺技2段目「粛清」：敵を追撃し、範囲内の敵に攻撃力の<color=#fb8037>&Param5&</color>の水属性の必殺技ダメージを与える。\u000b必殺技がダメージを与えた時、##水属性の印#1018#を発動させ、##霜華#4053#を発生させる。\u000bParam9: &Param9& (HitDamage,Mark)",
+            "descKR": "필살기 1단계 「대청소·먼지 제거」: 공격력 <color=#fb8037>&Param1&</color>의 물 속성 범위 필살기 피해를 입히고, 「청소 태세」에 진입해 자신의 &Param2_kr1& <color=#fb8037>&Param3&</color> 증가한다. &Param4&초간 지속된다. 「대청소·먼지 제거」 시전 후 짧은 시간 동안 필살기 2단계 「대청소·정리정돈」을 해제한다. \u000b필살기 2단계 「대청소·정리정돈」: 목표를 추격해 공격력 <color=#fb8037>&Param5&</color>의 물 속성 범위 필살기 피해를 입힌다. \u000b필살기가 피해를 입히면 ##물 속성 표식#1018#을 발동해 ##조석#4053#을 생성할 수 있다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam9: &Param9& (HitDamage,Mark)",
+            "damageType": [
+                "Ultimate (from Ultimate, scale with Ultimate)",
+                "Mark"
+            ],
+            "effectType": [
+                "ATK (%)"
+            ],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [
+                "Icon_Buff_13901_Ultra_A"
+            ],
+            "params": [
+                "423%/486%/550%/740%/799%/859%/977%/1028%/1078%/1180%/1265%/1349%/1434%",
+                "ATK",
+                "11%/14%/18%/27%/30%/33%/40%/42%/45%/50%/55%/59%/63%",
+                15,
+                "358%/412%/466%/627%/677%/728%/828%/871%/914%/1000%/1072%/1143%/1215%",
+                "",
+                "",
+                "",
+                "63%/82%/101%/120%/139%/157%/176%/195%/214%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
+                },
+                {
+                    "effectType": "ATK (%)",
+                    "buffIcon": "Icon_Buff_13901_Ultra_A"
+                },
+                {
+                    "effectType": "ATK (%)",
+                    "buffIcon": "Icon_Buff_13901_Ultra_A"
+                },
+                {
+                    "buffIcon": "Icon_Buff_13901_Ultra_A"
+                },
+                {
+                    "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
+                },
+                {},
+                {},
+                {},
+                {
+                    "damageType": "Mark"
+                }
+            ],
+            "icon": "13901_Ultra_A"
+        },
+        "potential": {
+            "mainCore": [
+                {
+                    "id": 513901,
+                    "name": "Quick Sweep",
+                    "nameCN": "快速清扫",
+                    "nameJP": "母の愛",
+                    "nameKR": "빠른 청소",
+                    "desc": "In an all-Aqua squad, increases the maximum number of Sweep Marks to <color=#0abec5>5</color>. They no longer disappear over time, and each Sweep Mark additionally increases Allie's &Param2& by <color=#0abec5>&Param3&</color>. When the number of lit ##Sweep Mark#4052# reaches the maximum, Deep Sweep: Restore Order (Ultimate Phase 2) can be cast via the Main Skill.\u000bParam1: &Param1& (ScriptParameterValue,CommonData)",
+                    "descCN": "全队为水系角色时，「清扫标记」数量上限提升至<color=#0abec5>5</color>个，不会随时间消失，且每个「清扫标记」额外使艾蕾&Param2&提升<color=#0abec5>&Param3&</color>。##「清扫标记」#4052#点亮数量达到上限时，可通过主控技施放绝招二段「大扫除·归置」。\u000bParam1: &Param1& (ScriptParameterValue,CommonData)",
+                    "descJP": "チーム全員が水属性巡遊者の場合、愛のしるしの上限が<color=#0abec5>5</color>まで増加し、時間経過で消失しなくなる。\u000bチーム全員が水属性巡遊者の場合、愛のしるし1につき自身の&Param2&がさらに<color=#0abec5>&Param3&</color>上昇し、愛のしるしの点灯数が上限に達している時、主力スキルで必殺技2段目「粛清」を発動できる。\u000bParam1: &Param1& (ScriptParameterValue,CommonData)",
+                    "descKR": "팀 전체가 물 속성 캐릭터일 때, 「청소 표식」의 최대 수량이 <color=#0abec5>5</color>개로 증가하며, 시간에 따라 사라지지 않는다. 또한 「청소 표식」마다 엘리의 &Param2_kr1& 추가로 <color=#0abec5>&Param3&</color> 증가한다. ##「청소 표식」#4052#이 최대 스택을 달성하면 메인 스킬을 통해 필살기 2단계 「대청소·정리정돈」을 시전할 수 있다.\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "Crit Rate (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_Buff_13901_513901"
+                    ],
+                    "params": [
+                        5,
+                        "Crit Rate",
+                        "3%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "effectType": "Crit Rate (base)",
+                            "buffIcon": "Icon_Buff_13901_513901"
+                        },
+                        {
+                            "effectType": "Crit Rate (base)",
+                            "buffIcon": "Icon_Buff_13901_513901"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_01",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513902,
+                    "name": "Multi Sweep",
+                    "nameCN": "多重清扫",
+                    "nameJP": "おしおき追加",
+                    "nameKR": "다중 청소",
+                    "desc": "When casting Housework Slash (Auto Attack) or Sweeping Rush (Main Skill), generates a blade shadow that deals <color=#0abec5>&Param1&</color> of ATK as AoE Aqua Skill DMG, and gains 1 Sweep Mark. This effect can be triggered once every &Param4&s.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "descCN": "艾蕾施放普攻「家务用重斩」或主控技「扫堂突进」时，生成刀影，造成攻击力<color=#0abec5>&Param1&</color>的范围水系技能伤害，同时获得1个「清扫标记」，该效果每&Param4&秒可触发1次。\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "descJP": "通常攻撃、または主力スキル「ママのしつけ」発動時、氷刃を生成して範囲内の敵に攻撃力の<color=#0abec5>&Param1&</color>の水属性のスキルダメージを与え、同時に愛のしるしを1獲得する。この効果は&Param4&秒ごとに1回まで発動できる。\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "descKR": "엘리가 일반 공격 「청소 시작」 또는 메인 스킬 「엄마의 가르침」을 시전할 때 월도의 그림자를 생성해 공격력 <color=#0abec5>&Param1&</color>의 물 속성 범위 스킬 피해를 입힌다. 동시에 「청소 표식」 1개를 획득한다. 해당 효과는 &Param4&초마다 최대 1회 발동한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [
+                        "Skill (5.1e, from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Aqua DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "114%/131%/148%/199%/215%/231%/263%/277%/291%/318%/341%/363%/386%",
+                        "Aqua DMG",
+                        "OnceAdditionalAttribute,LevelUp,13902011,Value1,10KHdPct",
+                        4
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (5.1e, from Skill, scale with Skill)"
+                        },
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        },
+                        {}
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_02",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513903,
+                    "name": "Dusting Vortex",
+                    "nameCN": "除尘涡旋",
+                    "nameJP": "ママの本気",
+                    "nameKR": "먼지 제거 소용돌이",
+                    "desc": "When the number of lit Sweep Marks reaches the maximum, Deep Sweep: Dust Off (Ultimate Phase 1) can be cast via the Main Skill. Casting Ultimate Phase 1 by any means consumes all Sweep Marks and grants max stacks of Sweep Mark buffs. Cannot gain Sweep Marks while Sweeping Stance is active.",
+                    "descCN": "「清扫标记」点亮数量达到上限时，可通过主控技施放绝招一段「大扫除·除尘」。通过任意方式施放绝招一段「大扫除·除尘」时，吸收所有「清扫标记」，并获得满层「清扫标记」增益，「清扫架势」期间不可获得「清扫标记」。",
+                    "descJP": "愛のしるしの点灯数が上限に達している時、主力スキルで必殺技1段目「一掃」を発動できる。いずれかの方法で必殺技1段目「一掃」を発動した時、すべての愛のしるしを吸収し、愛のしるしの強化効果を最大数で獲得する。おしおきモード中は、愛のしるしを獲得できない。",
+                    "descKR": "「청소 표식」 활성화 수가 최대치를 달성하면, 메인 스킬을 통해 필살기 1단계 「대청소·먼지 제거」를 시전할 수 있다. 임의의 방식으로 「대청소·먼지 제거」를 시전하면 모든 「청소 표식」을 흡수하며, 최대 스택 「청소 표식」의 버프를 획득한다. 「청소 태세」 기간에는 「청소 표식」을 획득할 수 없다.",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [],
+                    "paramsTooltips": [],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_03",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513904,
+                    "name": "Sweep Extension",
+                    "nameCN": "清扫延续",
+                    "nameJP": "パワフルママ",
+                    "nameKR": "청소의 연속",
+                    "desc": "While Sweeping Stance of Deep Sweep: Dust Off (Ultimate Phase 1) is active, additionally increases Allie's &Param1& by <color=#0abec5>&Param2&</color>. Meanwhile, when Allie triggers ##Aqua Mark#1018# to generate ##Tidal Wave#4053#, if the target's Tide stacks reach <color=#0abec5>3</color> and <color=#0abec5>6</color>, additionally generates a Wave. Wave is enhanced to ##Abyssal Wave#4054#: deals <color=#0abec5>&Param3&</color> of ATK as AoE Mark DMG.",
+                    "descCN": "绝招一段「大扫除·除尘」的「清扫架势」期间，艾蕾&Param1&额外提升<color=#0abec5>&Param2&</color>，同时艾蕾触发##水系印记#1018#，产生##潮汐#4053#时，如果目标身上「潮」的层数达到<color=#0abec5>3</color>层和<color=#0abec5>6</color>层，额外生成「汐」。「汐」强化为##「溟汐」#4054#：造成攻击力<color=#0abec5>&Param3&</color>范围印记伤害。",
+                    "descJP": "必殺技1段目「一掃」によるおしおきモード持続中、追加でエリーの&Param1&が<color=#0abec5>&Param2&</color>増加する。\u000bおしおきモード持続中、##水属性の印#1018#を発動させて##霜華#4053#を発生させた時、敵に付与された霜が<color=#0abec5>3</color>または<color=#0abec5>6</color>に達している場合、追加で華を生成する。華は##凍華#4054#に強化され、範囲内の敵に攻撃力の<color=#0abec5>&Param3&</color>の印ダメージを与える。",
+                    "descKR": "필살기 1단계 「대청소·먼지 제거」의 「청소 태세」 기간 중 엘리의 &Param1_kr1& 추가로 <color=#0abec5>&Param2&</color> 증가한다. 또한 엘리가 ##물 속성 표식#1018#을 발동하여 ##조석#4053# 생성 시 목표가 보유한 「조」가 <color=#0abec5>3</color>스택 또는 <color=#0abec5>6</color>스택일 경우 「석」을 추가로 생성한다. 「석」은 ##「명석」#4054#으로 강화되어 공격력 <color=#0abec5>&Param3&</color>의 범위 표식 피해를 입힌다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [
+                        "Mark"
+                    ],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Aqua) Mark DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_Buff_13901_Ultra_A"
+                    ],
+                    "params": [
+                        "Mark DMG",
+                        "10%",
+                        "138%/179%/221%/262%/303%/344%/385%/427%/468%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Mark DMG",
+                            "buffIcon": "Icon_Buff_13901_Ultra_A"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Mark DMG",
+                            "buffIcon": "Icon_Buff_13901_Ultra_A"
+                        },
+                        {
+                            "damageType": "Mark"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_04",
+                    "rarity": "core"
+                }
+            ],
+            "mainNormal": [
+                {
+                    "id": 513905,
+                    "name": "Clothesline Stance",
+                    "nameCN": "晾衣杆执式",
+                    "nameJP": "お洗濯の心得",
+                    "nameKR": "빨랫대 공세",
+                    "desc": "All Ultimate DMG dealt by Deep Sweep: Restore Order (Ultimate Phase 2) becomes Skill DMG. When casting Deep Sweep: Restore Order (Ultimate Phase 2) or Sweeping Rush (Main Skill), increases own &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
+                    "descCN": "绝招二段「大扫除·归置」造成的绝招伤害均变为技能伤害。施放绝招二段「大扫除·归置」或主控技「扫堂突进」时，自身&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "必殺技2段目「粛清」が与える必殺技ダメージはスキルダメージに変換される。\u000b必殺技2段目「粛清」または主力スキル「ママのしつけ」発動時、&Param3&秒間、自身の&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "필살기 2단계 「대청소·정리정돈」이 입히는 필살기 피해가 스킬 피해로 변경된다. 필살기 2단계 「대청소·정리정돈」 또는 메인 스킬 「엄마의 가르침」 시전 시, 자신의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Aqua) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "2%/3.2%/4.4%/5.6%/6.8%/8%/8.4%/8.8%/9.2%",
+                        8,
+                        6
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_01",
+                    "corner": "Diamond",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513906,
+                    "name": "Sweeper's Blow",
+                    "nameCN": "扫把重斩",
+                    "nameJP": "ホコリ払い",
+                    "nameKR": "빗자루 중참",
+                    "desc": "When gaining a Sweep Mark, increases the &Param1& dealt by Sweeping Rush (Main Skill) and Multi Sweep (Potential) by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
+                    "descCN": "获得「清扫标记」时，主控技「扫堂突进」和潜能「多重清扫」造成的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "愛のしるし獲得時、&Param3&秒間、主力スキル「ママのしつけ」と素質「おしおき追加」は与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "「청소 표식」을 획득하면 메인 스킬 「엄마의 가르침」과 잠재력 「다중 청소」가 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Aqua) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "2.5%/4%/5.5%/7%/8.5%/10%/10.5%/11%/11.5%",
+                        8,
+                        6
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_01",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513907,
+                    "name": "Cleaver Ready",
+                    "nameCN": "柴刃装配",
+                    "nameJP": "ママの必需品",
+                    "nameKR": "낫 장착",
+                    "desc": "For the next <color=#ec6d21>&Param2&</color>s after casting Deep Sweep: Restore Order (Ultimate Phase 2), the trigger interval of blade shadow is reduced to <color=#ec6d21>&Param3&</color>s. This effect can be triggered only once every &Param4&s. In an all-Aqua squad, increases Allie's &Param5& by <color=#ec6d21>&Param6&</color> and &Param7& by <color=#ec6d21>&Param8&</color>.",
+                    "descCN": "施放绝招二段「大扫除·归置」后，接下来<color=#ec6d21>&Param2&</color>秒内，刀影的触发间隔降低至<color=#ec6d21>&Param3&</color>秒，该效果每&Param4&秒最多触发一次。全队为水系角色时，艾蕾&Param5&提升<color=#ec6d21>&Param6&</color>，&Param7&提升<color=#ec6d21>&Param8&</color>。",
+                    "descJP": "必殺技2段目「粛清」発動後、<color=#ec6d21>&Param2&</color>秒間、氷刃の発生間隔が<color=#ec6d21>&Param3&</color>秒まで短縮される。この効果は&Param4&秒ごとに1回まで発動できる。\u000bチーム全員が水属性巡遊者の場合、エリーの&Param5&が<color=#ec6d21>&Param6&</color>上昇し、&Param7&が<color=#ec6d21>&Param8&</color>増加する。",
+                    "descKR": "필살기 2단계 「대청소·정리정돈」 시전 후 <color=#ec6d21>&Param2&</color>초 동안 월도의 그림자의 발동 간격이 <color=#ec6d21>&Param3&</color>초로 감소한다. 해당 효과는 &Param4&초마다 최대 1회 발동한다. 팀 전체가 물 속성 캐릭터일 경우 엘리의 &Param5_kr1& <color=#ec6d21>&Param6&</color> 증가하고, &Param7_kr1& <color=#ec6d21>&Param8&</color> 증가한다.\u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam7: &Param7& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Aqua) Skill Crit Rate",
+                        "ELEMENTTYPE_:(Aqua) Skill Crit DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "ScriptParameter,LevelUp,13907001,CommonData,10K",
+                        "8/10/12/14/16/20/20/20/20",
+                        "3/3/2/2/1/1/1/1/1",
+                        15,
+                        "Skill Crit Rate",
+                        "5%/8%/11%/14%/17%/20%/20%/20%/20%",
+                        "Skill Crit DMG",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {},
+                        {},
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Skill Crit Rate",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Skill Crit Rate",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Skill Crit DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Skill Crit DMG",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_02",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513908,
+                    "name": "Wide Blade Arc",
+                    "nameCN": "拼刃横扫",
+                    "nameJP": "断捨離タイム",
+                    "nameKR": "칼날 휩쓸기",
+                    "desc": "In an all-Aqua squad, all DMG dealt by Deep Sweep: Dust Off (Ultimate Phase 1) and Housework Slash (Auto Attack) becomes Mark DMG. Meanwhile, every &Param1& increase in Auto Attack DMG additionally increases Allie's Mark DMG by &Param2&, up to <color=#ec6d21>&Param3&</color>. Reduces Allie's &Param4& by &Param5&.",
+                    "descCN": "全队为水系角色时，绝招一段「大扫除·除尘」造成的绝招伤害和普攻「家务用重斩」造成的普攻伤害均变为印记伤害，同时艾蕾每提升&Param1&普攻伤害可额外提升&Param2&印记伤害，通过此方式提升的印记伤害最高不超过<color=#ec6d21>&Param3&</color>。艾蕾&Param4&降低&Param5&。",
+                    "descJP": "チーム全員が水属性巡遊者の場合、必殺技1段目「一掃」が与える必殺技ダメージ、通常攻撃が与える通常攻撃ダメージは、印ダメージに変換される。\u000bチーム全員が水属性巡遊者の場合、エリーの通常攻撃ダメージが&Param1&増加するごとに、印ダメージも&Param2&増加するようになる。この効果による印ダメージ増加は最大<color=#ec6d21>&Param3&</color>まで獲得できる。\u000bエリーの&Param4&が&Param5&低下する。",
+                    "descKR": "팀 전체가 물 속성 캐릭터일 경우 필살기 1단계 「대청소·먼지 제거」가 입히는 필살기 피해와 일반 공격 「청소 시작」이 입히는 일반 공격 피해가 모두 표식 피해로 변경된다. 또한 엘리의 일반 공격 피해가 &Param1& 증가할 때마다 표식 피해가 추가로 &Param2& 증가한다. 해당 방식으로 증가하는 표식 피해는 최대 <color=#ec6d21>&Param3&</color>이다. 엘리의 &Param4_kr1& &Param5& 감소한다.\u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "Mark DMG (base)",
+                        "ELEMENTTYPE_:(Aqua) Mark Crit Rate"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [
+                        "HITTING, SELF, DEFAULT | SELF, DEFAULT | SELF, DEFAULT"
+                    ],
+                    "buffIcon": [],
+                    "params": [
+                        "1.3%",
+                        "1%",
+                        "50%/80%/110%/140%/170%/200%/210%/220%/230%",
+                        "Mark Crit Rate",
+                        "-100%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Mark DMG (base)"
+                        },
+                        {
+                            "effectType": "Mark DMG (base)"
+                        },
+                        {
+                            "effectType": "Mark DMG (base)"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Mark Crit Rate"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Mark Crit Rate"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_04",
+                    "corner": "Diamond",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513909,
+                    "name": "Pending Chore",
+                    "nameCN": "待清理点",
+                    "nameJP": "ママのお手本",
+                    "nameKR": "청소 대기 지점",
+                    "desc": "While Sweeping Stance is active, every <color=#ec6d21>&Param5&</color> times Wave is generated via ##Tidal Wave#4053#, grants 1 stack of Pending Chore, up to 4 stacks. Meanwhile, increases Allie's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks. Upon exiting Sweeping Stance, each stack of Pending Chore is converted into 1 Sweep Mark.",
+                    "descCN": "「清扫架势」期间，每通过##潮汐#4053#生成<color=#ec6d21>&Param5&</color>次「汐」，可获得1层「待清理点」，可叠加4层，同时艾蕾&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。退出「清扫架势」时，每层「待清理点」转化为1个「清扫标记」。",
+                    "descJP": "おしおきモード持続中、##霜華#4053#によって華を<color=#ec6d21>&Param5&</color>回発生させるごとに、ママポイントを1獲得し、この効果は最大4回まで重複でき、同時に&Param3&秒間、エリーの&Param1&が<color=#ec6d21>&Param2&</color>増加し、この効果は&Param4&回まで重複できる。\u000bおしおきモード終了時、ママポイント1につき愛のしるしを1獲得する。",
+                    "descKR": "「청소 태세」 기간 중 ##조석#4053#을 통해 「석」을 <color=#ec6d21>&Param5&</color>회 생성할 때마다 「청소 대기 지점」 1스택을 획득한다. 최대 4스택 중첩된다. 동시에 엘리의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다. 「청소 태세」를 종료할 때 「청소 대기 지점」 스택마다 「청소 표식」 1개로 전환된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "Auto Attack DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Auto Attack DMG",
+                        "10%/16%/22%/28%/34%/40%/41%/42%/44%",
+                        9,
+                        3,
+                        "2/2/2/1/1/1/1/1/1"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Auto Attack DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Auto Attack DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {}
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_03",
+                    "corner": "Triangle",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513911,
+                    "name": "Silent Paws",
+                    "nameCN": "黑足猫步",
+                    "nameJP": "黒猫ステップ",
+                    "nameKR": "검은 고양이의 발걸음",
+                    "desc": "When dodging or gaining a Shield, increases Allie's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "闪避或获得护盾时，艾蕾&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
+                    "descJP": "エリーが回避時、またはシールド獲得時、&Param3&秒間、エリーの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
+                    "descKR": "회피 또는 보호막 획득 시 엘리의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "10%/13%/17%/20%/23%/27%/30%/33%/37%",
+                        8
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_13",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 513913,
+                    "name": "Sweep Dash",
+                    "nameCN": "扫间穿行",
+                    "nameJP": "体の記憶",
+                    "nameKR": "빗자루 휩쓸기",
+                    "desc": "0.5s after holding Dodge to dash, immediately gains 3 Sweep Marks. This effect can be triggered once every &Param1&s.\u000bFor each Aqua Trekker in the squad, increases Allie's &Param2& by <color=#ec6d21>&Param3&</color>.",
+                    "descCN": "长按闪避进入疾跑状态后0.5秒，立即获得3个「清扫标记」，该效果每&Param1&秒可触发1次。\u000b队伍中每有1个水系角色，艾蕾&Param2&提升<color=#ec6d21>&Param3&</color>。",
+                    "descJP": "ダッシュしてから0.5秒後に愛のしるしを3獲得するようになる。この効果は&Param1&秒ごとに1回まで発動できる。\u000bチーム内の水属性巡遊者1体につき、エリーの&Param2&が<color=#ec6d21>&Param3&</color>増加する。",
+                    "descKR": "회피를 길게 눌러 빠른 발놀림 상태로 진입한 0.5초 후 「청소 표식」 3개를 즉시 획득한다. 해당 효과는 &Param1&초마다 최대 1회 발동한다. \u000b팀 내 물 속성 캐릭터 1명마다 엘리의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "Aqua DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        120,
+                        "Aqua DMG",
+                        "5%/8%/11%/14%/17%/20%/23%/26%/29%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Aqua DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Aqua DMG (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_15",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513910,
+                    "name": "Overtime Chore",
+                    "nameCN": "额外返工",
+                    "nameJP": "子どもの守護者",
+                    "nameKR": "추가 작업",
+                    "desc": "Increases Allie's &Param3& by <color=#ec6d21>&Param4&</color>. In an all-Aqua squad and while Sweeping Stance is active, Housework Slash (Auto Attack) is enhanced, increasing its &Param1& by <color=#ec6d21>&Param2&</color>. It can also trigger ##Aqua Mark#1018# to generate ##Tidal Wave#4053#.",
+                    "descCN": "艾蕾&Param3&提升<color=#ec6d21>&Param4&</color>。全队为水系角色并且艾蕾处于「清扫架势」期间，普攻「家务用重斩」形态增强，&Param1&提升<color=#ec6d21>&Param2&</color>，可触发##水系印记#1018#产生##潮汐#4053#。",
+                    "descJP": "エリーの&Param3&が<color=#ec6d21>&Param4&</color>増加する。\u000bチーム全員が水属性巡遊者、なおかつエリーがおしおきモード持続中の場合、通常攻撃は強化され、&Param1&が<color=#ec6d21>&Param2&</color>増加し、##水属性の印#1018#を発動できるようになり、さらに##霜華#4053#を発生させることができる。",
+                    "descKR": "엘리의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 팀 전체가 물 속성 캐릭터이고, 엘리가 「청소 태세」일 때 일반 공격 「청소 시작」의 형태가 강화되어 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. ##물 속성 표식#1018#을 발동해 ##조석#4053#을 생성할 수 있다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "Auto Attack DMG (base)"
+                    ],
+                    "addAttrType": [
+                        "DMG multiplier (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "DMG multiplier",
+                        "17.5%/28%/38.5%/49%/59.5%/70%/79.3%/92.2%/108.5%",
+                        "Auto Attack DMG",
+                        "15%/24%/33%/42%/51%/60%/63%/66%/69%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "effectType": "Auto Attack DMG (base)"
+                        },
+                        {
+                            "effectType": "Auto Attack DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_04",
+                    "corner": "Round",
+                    "rarity": "rare",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 513912,
+                    "name": "Repeated Sweep",
+                    "nameCN": "重复清理",
+                    "nameJP": "母のまごころ",
+                    "nameKR": "중복 청소",
+                    "desc": "When Allie deals Mark DMG, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
+                    "descCN": "艾蕾造成印记伤害时，自身&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "エリーが印ダメージを与えた時、&Param3&秒間、自身の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は持続し、&Param4&回まで重複できる。",
+                    "descKR": "엘리가 표식 피해를 입히면 자신의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "2%/3.2%/4.4%/5.6%/6.8%/8%/9.2%/10.4%/11.6%",
+                        5,
+                        6
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_Water_1",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                }
+            ],
+            "common": [
+                {
+                    "id": 513941,
+                    "name": "Purge Stance",
+                    "nameCN": "肃清架势",
+                    "nameJP": "子を守る覚悟",
+                    "nameKR": "숙청 태세",
+                    "desc": "When casting Deep Sweep (Ultimate), increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
+                    "descCN": "施放绝招「大扫除」时，自身&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "必殺技「邪魔者大掃除」発動時、&Param3&秒間、エリーの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "필살기 「대청소」 시전 시 자신의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "6%/9.6%/13.2%/16.8%/20%/24%/28%/31.2%/34.8%",
+                        15,
+                        2
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_20",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 513942,
+                    "name": "Swift Wipe",
+                    "nameCN": "快速除尘",
+                    "nameJP": "黒猫の悪魔",
+                    "nameKR": "빠른 먼지 제거",
+                    "desc": "Increases the burst range of Deep Sweep: Dust Off (Ultimate Phase 1) by <color=#ec6d21>&Param3&</color>, and increases its &Param4& dealt by <color=#ec6d21>&Param5&</color>.",
+                    "descCN": "绝招一段「大扫除·除尘」爆气范围提升<color=#ec6d21>&Param3&</color>，造成的&Param4&提升<color=#ec6d21>&Param5&</color>。",
+                    "descJP": "必殺技1段目「一掃」の攻撃範囲が<color=#ec6d21>&Param3&</color>拡大され、与える&Param4&が<color=#ec6d21>&Param5&</color>増加する。",
+                    "descKR": "필살기 1단계 「대청소·먼지 제거」의 폭발 범위가 <color=#ec6d21>&Param3&</color> 증가하고, 입히는 &Param4_kr1& <color=#ec6d21>&Param5&</color> 증가한다.",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "DMG multiplier",
+                        "50%/80%/110%/140%/170%/200%/230%/260%/290%",
+                        "20%/20%/35%/35%/50%/50%/50%/50%/50%",
+                        "DMG multiplier",
+                        "50%/80%/110%/140%/170%/200%/230%/260%/290%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {},
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_42",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 513943,
+                    "name": "Mirror Blade",
+                    "nameCN": "冰镜巨刃",
+                    "nameJP": "粛清の大鉈",
+                    "nameKR": "얼음 거울 대검",
+                    "desc": "Deep Sweep: Restore Order (Ultimate Phase 2) creates an additional long blade phantom that deals <color=#ec6d21>&Param3&</color> of ATK as AoE Aqua Ultimate DMG. Increases Ultimate Phase 2's &Param1& dealt by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "绝招二段「大扫除·归置」额外产生长刀虚影，造成攻击力<color=#ec6d21>&Param3&</color>的范围水系绝招伤害。绝招二段造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "必殺技2段目「粛清」は追加で薙刀の残像を生成し、追加で範囲内の敵に攻撃力の<color=#ec6d21>&Param3&</color>の水属性の必殺技ダメージを与えるようになる。\u000b必殺技2段目「粛清」が与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "필살기 2단계 「대청소·정리정돈」이 추가로 월도의 허상을 생성하여 공격력 <color=#ec6d21>&Param3&</color>의 물 속성 범위 필살기 피해를 추가로 입힌다. 필살기 2단계가 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [
+                        "Ultimate (from Ultimate)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "DMG multiplier",
+                        "8%/12%/17%/21%/26%/30%/35%/39%/44%",
+                        "337%/540%/742%/944%/1147%/1349%/1551%/1754%/1956%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "damageType": "Ultimate (from Ultimate)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_43",
+                    "corner": "Round",
+                    "rarity": "common"
+                }
+            ],
+            "supportCore": [
+                {
+                    "id": 513921,
+                    "name": "Frost Blade",
+                    "nameCN": "寒冰之刃",
+                    "nameJP": "歴戦の母",
+                    "nameKR": "서리의 칼날",
+                    "desc": "Cycling Slashes fires Frost Blades, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Aqua Skill DMG multiple times.",
+                    "descCN": "「循环斩击」不断发射寒冰之刃，连续造成攻击力<color=#0abec5>&Param1&</color>的范围水系技能伤害。",
+                    "descJP": "「スイープスラッシュ」がアイスエッジを連続で放つようになる。アイスエッジは1発ごとに範囲内の敵に攻撃力の<color=#0abec5>&Param1&</color>の水属性のスキルダメージを与える。",
+                    "descKR": "「순환 참격」으로 서리의 칼날을 계속하여 발사해 연속으로 공격력 <color=#0abec5>&Param1&</color>의 물 속성 범위 스킬 피해를 입힌다.",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "27.9%/32.1%/36.2%/48.8%/52.7%/56.6%/64.4%/67.8%/71.1%/77.8%/83.4%/89%/94.5%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_21",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513922,
+                    "name": "Repeat Sweep",
+                    "nameCN": "反复清理",
+                    "nameJP": "効率重視",
+                    "nameKR": "반복 청소",
+                    "desc": "Cycling Slashes can deal <color=#0abec5>8</color> more hits, and its &Param1& dealt is increased by <color=#0abec5>&Param2&</color>.\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,139522001)",
+                    "descCN": "「循环斩击」次数提升<color=#0abec5>8</color>次，且造成的&Param1&提升<color=#0abec5>&Param2&</color>。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,139522001)",
+                    "descJP": "「スイープスラッシュ」の攻撃回数が<color=#0abec5>8</color>回増加し、与える&Param1&が<color=#0abec5>&Param2&</color>増加する。\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,139522001)",
+                    "descKR": "「순환 참격」 횟수가 <color=#0abec5>8</color>회 증가하고, 해당 공격으로 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)\u000bHiddenParam1: &HiddenParam1& (HitDamage,Skill,139522001)",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill) (hidden)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Aqua DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Aqua DMG",
+                        "20%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [
+                        "36%/41%/46%/62%/67%/72%/82%/87%/91%/99%/107%/114%/121%"
+                    ],
+                    "hiddenParamsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "icon": "13901_Potential_22",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513923,
+                    "name": "Sweeper's Finale",
+                    "nameCN": "扫庭终式",
+                    "nameJP": "お掃除テクニック",
+                    "nameKR": "마당쓸기 초식",
+                    "desc": "Finishing Slash deals an additional <color=#0abec5>&Param1& x3</color> of ATK as AoE Aqua Skill DMG.",
+                    "descCN": "「收尾斩击」额外造成攻击力<color=#0abec5>&Param1&x3</color>的范围水系技能伤害。",
+                    "descJP": "「アイシクルスラッシュ」は、追加で範囲内の敵に攻撃力の<color=#0abec5>&Param1&x3</color>の水属性のスキルダメージを与えるようになる。",
+                    "descKR": "「마무리 참격」이 공격력 <color=#0abec5>&Param1&x3</color>의 물 속성 범위 스킬 피해를 추가로 입힌다.",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "127%/147%/166%/223%/241%/259%/294%/310%/325%/356%/381%/407%/432%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_23",
+                    "rarity": "core"
+                },
+                {
+                    "id": 513924,
+                    "name": "Accidental Ruin",
+                    "nameCN": "额外破坏",
+                    "nameJP": "制裁の氷晶",
+                    "nameKR": "추가 파괴",
+                    "desc": "The ice crystals formed by Finishing Slash will explode, dealing <color=#0abec5>&Param1&</color> of ATK as AoE Aqua Skill DMG again.",
+                    "descCN": "「收尾斩击」时生成的冰晶会爆炸，再次造成攻击力<color=#0abec5>&Param1&</color>的范围水系技能伤害。",
+                    "descJP": "「アイシクルスラッシュ」で生成する氷晶は、爆発するようになり、再度範囲内の敵に攻撃力の<color=#0abec5>&Param1&</color>の水属性のスキルダメージを与える。",
+                    "descKR": "「마무리 참격」 시 생성되는 얼음 결정이 폭파되고, 공격력 <color=#0abec5>&Param1&</color>의 물 속성 범위 스킬 피해를 입힌다.",
+                    "damageType": [
+                        "Skill (from Skill, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "127%/147%/166%/223%/241%/259%/294%/310%/325%/356%/381%/407%/432%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill, scale with Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_24",
+                    "rarity": "core"
+                }
+            ],
+            "supportNormal": [
+                {
+                    "id": 513925,
+                    "name": "Timber Splitter",
+                    "nameCN": "砍柴劈木",
+                    "nameJP": "薪割りのコツ",
+                    "nameKR": "장작 패기",
+                    "desc": "Additionally increases the &Param1& dealt by Cycling Slashes by <color=#ec6d21>&Param2&</color>. It is further increased by <color=#ec6d21>&Param4&</color> against targets with ##Resilience Break#1006#.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "descCN": "「循环斩击」造成的&Param1&额外提升<color=#ec6d21>&Param2&</color>，对##破韧#1006#目标额外提升<color=#ec6d21>&Param4&</color>。\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "descJP": "「スイープスラッシュ」が与える&Param1&が<color=#ec6d21>&Param2&</color>増加し、##ブレイク#1006#状態の敵に対してさらに<color=#ec6d21>&Param4&</color>増加する。\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "descKR": "「순환 참격」이 입히는 &Param1_kr1& 추가로 <color=#ec6d21>&Param2&</color> 증가하고, ##내성 무시#1006# 목표에게 추가로 <color=#ec6d21>&Param4&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Aqua) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Skill DMG",
+                        "12.2%/19.5%/26.8%/34.2%/41.5%/48.8%/56.1%/63.4%/70.8%",
+                        "Skill DMG",
+                        "6.1%/9.8%/13.4%/17.1%/20.7%/24.4%/28.1%/31.7%/35.4%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_22",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 513926,
+                    "name": "Frosty Gale",
+                    "nameCN": "寒风扫堂",
+                    "nameJP": "ママのお説教",
+                    "nameKR": "찬 바람의 습격",
+                    "desc": "When Cycling Slashes hits more than 3 targets, increases its &Param1& dealt by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "「循环斩击」命中的目标数量大于3个时，造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "「スイープスラッシュ」が命中した敵が4体以上の時、与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "「순환 참격」이 명중한 목표의 수가 3 이상일 때 해당 공격이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Aqua DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Aqua DMG",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_22",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 513927,
+                    "name": "Housework Hazard",
+                    "nameCN": "家务苦手",
+                    "nameJP": "母の責務",
+                    "nameKR": "집안일 초보",
+                    "desc": "For every 0.5s Allie is on the battlefield, increases her &Param1& dealt by <color=#ec6d21>&Param2&</color>, up to 4 stacks.",
+                    "descCN": "艾蕾每在场0.5秒，造成的&Param1&提升<color=#ec6d21>&Param2&</color>，可叠加4层。",
+                    "descJP": "エリーがフィールドに0.5秒いるごとに、エリーの与える&Param1&が<color=#ec6d21>&Param2&</color>増加するようになる。この効果は4回まで重複できる。",
+                    "descKR": "엘리가 필드에 머무르는 0.5초마다 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. 최대 4스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Aqua) Skill DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Skill DMG",
+                        "3%/4%/6%/7%/9%/10%/12%/13%/15%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Aqua) Skill DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_22",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513928,
+                    "name": "Deep Freeze",
+                    "nameCN": "特殊冻伤",
+                    "nameJP": "凍てつく敵意",
+                    "nameKR": "특수 동상",
+                    "desc": "Increases the &Param1& dealt by Finishing Slash and ice crystals by <color=#ec6d21>&Param2&</color>. It is additionally increased by <color=#ec6d21>&Param4&</color> against elite or higher-tier targets.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "descCN": "「收尾斩击」和冰晶造成的&Param1&提升<color=#ec6d21>&Param2&</color>，对精英及以上目标额外提升<color=#ec6d21>&Param4&</color>。\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "descJP": "「アイシクルスラッシュ」と氷晶が与える&Param1&が<color=#ec6d21>&Param2&</color>増加し、エリート以上の敵に対してさらに<color=#ec6d21>&Param4&</color>増加する。\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "descKR": "「마무리 참격」과 얼음 결정이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, 정예 이상 목표에게 <color=#ec6d21>&Param4&</color> 추가로 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Aqua) Skill DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Skill DMG",
+                        "11%/18%/25%/32%/39%/46%/52%/59%/66%",
+                        "Skill DMG",
+                        "6%/9%/13%/16%/19%/23%/26%/30%/33%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Aqua) Skill DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_24",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 513930,
+                    "name": "Crescent Icicle",
+                    "nameCN": "月半锥冰",
+                    "nameJP": "氷晶トラップ",
+                    "nameKR": "반달 얼음 송곳",
+                    "desc": "Increases the range of ice crystals. Finishing Slash generates 2 more ice crystals, each dealing <color=#ec6d21>&Param1&</color> of ATK as Aqua AoE Skill DMG.",
+                    "descCN": "「冰晶」范围提升。「收尾斩击」额外生成2道「冰晶」，分别造成攻击力<color=#ec6d21>&Param1&</color>的范围水系技能伤害。",
+                    "descJP": "氷晶の範囲が拡大される。\u000b「アイシクルスラッシュ」は追加で氷晶を2つ生成するようになり、それぞれ範囲内の敵に攻撃力の<color=#ec6d21>&Param1&</color>の水属性のスキルダメージを与える。",
+                    "descKR": "「얼음 결정」의 범위가 증가한다. 「마무리 참격」이 추가로 「얼음 결정」을 2개 생성하여 각 공격력 <color=#ec6d21>&Param1&</color>의 물 속성 범위 스킬 피해를 입힌다.",
+                    "damageType": [
+                        "Skill (from Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "117%/187%/257%/327%/397%/467%/537%/607%/677%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Skill (from Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_24",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 513931,
+                    "name": "Winter's Vigil",
+                    "nameCN": "雪夜守望",
+                    "nameJP": "ママの人脈",
+                    "nameKR": "눈 내리는 밤의 파수꾼",
+                    "desc": "When a Support Trekker is on the battlefield, increases &Param1& dealt by Allie by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "辅助角色在场时，艾蕾造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "サポーター巡遊者がフィールドにいる時、エリーの与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "서포터 캐릭터가 필드에 있을 때, 엘리가 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Aqua DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Aqua DMG",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_18",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 513932,
+                    "name": "Icy Aegis",
+                    "nameCN": "冰华加护",
+                    "nameJP": "過去との決別",
+                    "nameKR": "얼음꽃의 가호",
+                    "desc": "Increases Allie's &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "艾蕾&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "エリーの与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "엘리의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "Aqua DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Aqua DMG",
+                        "12%/19%/26%/34%/41%/48%/55%/62%/70%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Aqua DMG (base)"
+                        },
+                        {
+                            "effectType": "Aqua DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_11",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 513929,
+                    "name": "Solitary Chill",
+                    "nameCN": "寒锋独向",
+                    "nameJP": "黒猫の氷爪",
+                    "nameKR": "차가운 칼날이 가리키는 곳",
+                    "desc": "When Finishing Slash and ice crystals hit fewer than 4 targets, increases their &Param1& dealt by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "「收尾斩击」和冰晶命中的目标数量小于4个时，造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "「アイシクルスラッシュ」と氷晶が命中した敵が3体以下の場合、与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "「마무리 참격」과 얼음 결정이 명중한 목표의 수가 4 미만일 때 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Aqua DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Aqua DMG",
+                        "17%/27.2%/37.4%/47.6%/57.8%/68%/78.2%/88.4%/98.6%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Aqua DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "13901_Potential_23",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 513933,
+                    "name": "Moonglow Haven",
+                    "nameCN": "月白摇篮",
+                    "nameJP": "ヒナギクの子守歌",
+                    "nameKR": "순백의 요람",
+                    "desc": "In an all-Aqua squad, boosts the squad's &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "全队为水系角色时，全队&Param1&提升<color=#ec6d21>&Param2&</color>。",
+                    "descJP": "チーム内に水属性の巡遊者が3体いる時、チーム全体の&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "팀 전체가 물 속성 캐릭터일 때 팀 전체의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "damageType": [],
+                    "effectType": [
+                        "Aqua DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Aqua DMG",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Aqua DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Aqua DMG (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_15",
+                    "corner": "Round",
+                    "rarity": "rare"
+                }
+            ]
+        },
+        "talent": [
+            {
+                "name": "Special Cleaning Tools",
+                "boost": [
+                    {
+                        "name": "Special Cleaning Tools",
+                        "nameCN": "特殊清扫工具",
+                        "nameJP": "ヒナギクの家",
+                        "nameKR": "특수 청소 도구",
+                        "desc": "Increases Allie's Skill Crit Rate by <color=#0abec5>&Param1&</color>. While Sweeping Stance of Deep Sweep: Dust Off (Ultimate Phase 1) is active, increases Aqua DMG dealt by Allie by <color=#0abec5>&Param2&</color>.",
+                        "descCN": "艾蕾技能暴击率提升<color=#0abec5>&Param1&</color>。「大扫除·除尘」的「清扫架势」期间，艾蕾造成的水系伤害提升<color=#0abec5>&Param2&</color>。",
+                        "descJP": "エリーのスキル会心率が<color=#0abec5>&Param1&</color>上昇する。「一掃」によるおしおきモード持続中、エリーの与える水属性ダメージが<color=#0abec5>&Param2&</color>増加する。",
+                        "descKR": "엘리의 스킬 치명타율이 <color=#0abec5>&Param1&</color> 증가한다. 「대청소·먼지 제거」의 「청소 태세」 기간 중 엘리가 입히는 물 속성 피해가 <color=#0abec5>&Param2&</color> 증가한다.",
+                        "effectType": [],
+                        "addAttrType": [
+                            "Skill Crit Rate (base)",
+                            "Aqua DMG (base)"
+                        ],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "15%",
+                            "40%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "addAttrType": "Skill Crit Rate (base)"
+                            },
+                            {
+                                "addAttrType": "Aqua DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Sewing Kit",
+                "boost": [
+                    {
+                        "name": "Sewing Kit",
+                        "nameCN": "缝纫针线盒",
+                        "nameJP": "母は強し",
+                        "nameKR": "반짇고리",
+                        "desc": "When Allie casts Deep Sweep: Restore Order (Ultimate Phase 2), increases Skill DMG by <color=#0abec5>&Param1&</color> for &Param2&s. When she casts Deep Sweep: Dust Off (Ultimate Phase 1), increases Mark DMG by <color=#0abec5>&Param3&</color> for &Param4&s.",
+                        "descCN": "艾蕾施放「大扫除·归置」时，技能伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，施放「大扫除·除尘」时，印记伤害提升<color=#0abec5>&Param3&</color>，持续&Param4&秒。",
+                        "descJP": "エリーが「粛清」を発動した時、&Param2&秒間、スキルダメージが<color=#0abec5>&Param1&</color>増加する。「一掃」を発動した時、&Param4&秒間、印ダメージが<color=#0abec5>&Param3&</color>増加する。",
+                        "descKR": "엘리가 「대청소·정리정돈」을 시전하면 스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다. 「대청소·먼지 제거」를 시전하면 표식 피해가 <color=#0abec5>&Param3&</color> 증가한다. &Param4&초간 지속된다.",
+                        "effectType": [
+                            "ELEMENTTYPE_:(Aqua) Skill DMG",
+                            "ELEMENTTYPE_:(Aqua) Mark DMG"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "36%",
+                            15,
+                            "66%",
+                            15
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ELEMENTTYPE_:(Aqua) Skill DMG",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "effectType": "ELEMENTTYPE_:(Aqua) Mark DMG",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Morning Kiss",
+                "boost": [
+                    {
+                        "name": "Morning Kiss",
+                        "nameCN": "早安之吻",
+                        "nameJP": "友の残り香",
+                        "nameKR": "굿모닝 키스",
+                        "desc": "When any Trekker applies ##Aqua Mark#1018# on a target, increases Allie's ATK by <color=#0abec5>&Param1&</color> for &Param2&s, up to &Param3& stacks.",
+                        "descCN": "任意角色对目标附加##水系印记#1018#后，艾蕾攻击提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，可叠加&Param3&层。",
+                        "descJP": "チーム内の巡遊者が敵に##水属性の印#1018#を付与した時、&Param2&秒間、エリーの攻撃力が<color=#0abec5>&Param1&</color>上昇する。この効果は&Param3&回まで重複できる。",
+                        "descKR": "캐릭터가 목표에게 ##물 속성 표식#1018#을 부여한 후 엘리의 공격이 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속되며, 최대 &Param3&스택 중첩된다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "6%",
+                            6,
+                            4
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Afternoon Sweep",
+                "boost": [
+                    {
+                        "name": "Afternoon Sweep",
+                        "nameCN": "午后清扫",
+                        "nameJP": "昔日の誓い",
+                        "nameKR": "오후 청소",
+                        "desc": "When Allie triggers ##Aqua Mark#1018# or casts Deep Sweep (Ultimate), increases her Skill DMG by <color=#0abec5>&Param1&</color> and Mark DMG by <color=#0abec5>&Param2&</color> for &Param3&s, up to &Param4& stacks.",
+                        "descCN": "艾蕾触发##水系印记#1018#或施放绝招「大扫除」时，技能伤害提升<color=#0abec5>&Param1&</color>，印记伤害提升<color=#0abec5>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                        "descJP": "エリーが##水属性の印#1018#を発動させるか、必殺技「邪魔者大掃除」を発動した時、&Param3&秒間、スキルダメージが<color=#0abec5>&Param1&</color>増加し、印ダメージが<color=#0abec5>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                        "descKR": "엘리가 ##물 속성 표식#1018#을 발동하거나 필살기 「대청소」를 시전하면 스킬 피해가 <color=#0abec5>&Param1&</color> 증가하고, 표식 피해가 <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.",
+                        "effectType": [
+                            "ELEMENTTYPE_:(Aqua) Skill DMG",
+                            "ELEMENTTYPE_:(Aqua) Mark DMG"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "3%",
+                            "6%",
+                            8,
+                            5
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ELEMENTTYPE_:(Aqua) Skill DMG",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "effectType": "ELEMENTTYPE_:(Aqua) Mark DMG"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "All-Night Watch",
+                "boost": [
+                    {
+                        "name": "All-Night Watch",
+                        "nameCN": "彻夜守护",
+                        "nameJP": "子どもたちのママ",
+                        "nameKR": "긴 밤의 수호",
+                        "desc": "Increases Allie's Aqua DMG dealt to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "艾蕾对精英及以上目标造成的水系伤害提升<color=#0abec5>&Param1&</color>。",
+                        "descJP": "エリーはエリート以上の敵に与える水属性ダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "엘리가 정예 이상 목표에게 입히는 물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [],
+                        "addAttrType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "30%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "addAttrType": "Aqua DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            60
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            690
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "desc": "Increases Aqua DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "水系伤害提升<color=#0abec5>&Param1&</color>",
+                        "descJP": "水属性ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "물 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
+                        "effectType": [
+                            "Aqua DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Aqua DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "stat": [
+            {
+                "Level": 1,
+                "HP": 1345,
+                "ATK": 115,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 2,
+                "HP": 1753,
+                "ATK": 150,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 3,
+                "HP": 2158,
+                "ATK": 184,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 4,
+                "HP": 2563,
+                "ATK": 219,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 5,
+                "HP": 2967,
+                "ATK": 254,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 6,
+                "HP": 3372,
+                "ATK": 288,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 7,
+                "HP": 3777,
+                "ATK": 323,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 8,
+                "HP": 4181,
+                "ATK": 357,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 9,
+                "HP": 4586,
+                "ATK": 392,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 4990,
+                "ATK": 427,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 5989,
+                "ATK": 512,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 11,
+                "HP": 6393,
+                "ATK": 546,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 12,
+                "HP": 6798,
+                "ATK": 581,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 13,
+                "HP": 7203,
+                "ATK": 616,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 14,
+                "HP": 7607,
+                "ATK": 650,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 15,
+                "HP": 8012,
+                "ATK": 685,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 16,
+                "HP": 8417,
+                "ATK": 719,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 17,
+                "HP": 8821,
+                "ATK": 754,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 18,
+                "HP": 9226,
+                "ATK": 789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 19,
+                "HP": 9630,
+                "ATK": 823,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 10035,
+                "ATK": 858,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 12044,
+                "ATK": 1029,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 21,
+                "HP": 12449,
+                "ATK": 1064,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 22,
+                "HP": 12854,
+                "ATK": 1099,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 23,
+                "HP": 13258,
+                "ATK": 1133,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 24,
+                "HP": 13663,
+                "ATK": 1168,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 25,
+                "HP": 14068,
+                "ATK": 1202,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 26,
+                "HP": 14472,
+                "ATK": 1237,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 27,
+                "HP": 14877,
+                "ATK": 1272,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 28,
+                "HP": 15282,
+                "ATK": 1306,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 29,
+                "HP": 15686,
+                "ATK": 1341,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 16091,
+                "ATK": 1375,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 19314,
+                "ATK": 1651,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 31,
+                "HP": 19719,
+                "ATK": 1685,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 32,
+                "HP": 20123,
+                "ATK": 1720,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 33,
+                "HP": 20528,
+                "ATK": 1755,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 34,
+                "HP": 20933,
+                "ATK": 1789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 35,
+                "HP": 21337,
+                "ATK": 1824,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 36,
+                "HP": 21742,
+                "ATK": 1858,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 37,
+                "HP": 22146,
+                "ATK": 1893,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 38,
+                "HP": 22551,
+                "ATK": 1927,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 39,
+                "HP": 22956,
+                "ATK": 1962,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 23360,
+                "ATK": 1997,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 28028,
+                "ATK": 2396,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 41,
+                "HP": 28433,
+                "ATK": 2430,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 42,
+                "HP": 28837,
+                "ATK": 2465,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 43,
+                "HP": 29242,
+                "ATK": 2499,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 44,
+                "HP": 29647,
+                "ATK": 2534,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 45,
+                "HP": 30051,
+                "ATK": 2568,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 46,
+                "HP": 30456,
+                "ATK": 2603,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 47,
+                "HP": 30860,
+                "ATK": 2638,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 48,
+                "HP": 31265,
+                "ATK": 2672,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 49,
+                "HP": 31670,
+                "ATK": 2707,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 32074,
+                "ATK": 2741,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 38494,
+                "ATK": 3290,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 51,
+                "HP": 38899,
+                "ATK": 3325,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 52,
+                "HP": 39304,
+                "ATK": 3359,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 53,
+                "HP": 39708,
+                "ATK": 3394,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 54,
+                "HP": 40113,
+                "ATK": 3428,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 55,
+                "HP": 40517,
+                "ATK": 3463,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 56,
+                "HP": 40922,
+                "ATK": 3498,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 57,
+                "HP": 41327,
+                "ATK": 3532,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 58,
+                "HP": 41731,
+                "ATK": 3567,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 59,
+                "HP": 42136,
+                "ATK": 3601,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 42541,
+                "ATK": 3636,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 51052,
+                "ATK": 4363,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 61,
+                "HP": 51456,
+                "ATK": 4398,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 62,
+                "HP": 51861,
+                "ATK": 4433,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 63,
+                "HP": 52266,
+                "ATK": 4467,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 64,
+                "HP": 52670,
+                "ATK": 4502,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 65,
+                "HP": 53075,
+                "ATK": 4536,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 66,
+                "HP": 53480,
+                "ATK": 4571,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 67,
+                "HP": 53884,
+                "ATK": 4605,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 68,
+                "HP": 54289,
+                "ATK": 4640,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 69,
+                "HP": 54693,
+                "ATK": 4675,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 55098,
+                "ATK": 4709,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 66117,
+                "ATK": 5651,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 71,
+                "HP": 66521,
+                "ATK": 5686,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 72,
+                "HP": 66926,
+                "ATK": 5720,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 73,
+                "HP": 67330,
+                "ATK": 5755,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 74,
+                "HP": 67735,
+                "ATK": 5789,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 75,
+                "HP": 68140,
+                "ATK": 5824,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 76,
+                "HP": 68544,
+                "ATK": 5859,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 77,
+                "HP": 68949,
+                "ATK": 5893,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 78,
+                "HP": 69354,
+                "ATK": 5928,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 79,
+                "HP": 69758,
+                "ATK": 5962,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 70163,
+                "ATK": 5997,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 84190,
+                "ATK": 7196,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 81,
+                "HP": 84595,
+                "ATK": 7230,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 82,
+                "HP": 84999,
+                "ATK": 7265,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 83,
+                "HP": 85404,
+                "ATK": 7300,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 84,
+                "HP": 85809,
+                "ATK": 7334,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 85,
+                "HP": 86213,
+                "ATK": 7369,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 86,
+                "HP": 86618,
+                "ATK": 7403,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 87,
+                "HP": 87023,
+                "ATK": 7438,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 88,
+                "HP": 87427,
+                "ATK": 7472,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 89,
+                "HP": 87832,
+                "ATK": 7507,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 90,
+                "HP": 88236,
+                "ATK": 7542,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 91,
+                "HP": 88236,
+                "ATK": 7542,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            }
+        ],
+        "upgrade": [
+            {
+                "Backstage Ragged Hat": 5,
+                "Dorra": 7900
+            },
+            {
+                "Backstage Ragged Hat": 5,
+                "Spotlight Bowler": 10,
+                "Dorra": 19800
+            },
+            {
+                "Backstage Ragged Hat": 10,
+                "Spotlight Bowler": 15,
+                "Dorra": 44400
+            },
+            {
+                "Backstage Ragged Hat": 15,
+                "Spotlight Bowler": 25,
+                "Dorra": 66600
+            },
+            {
+                "Backstage Ragged Hat": 20,
+                "Spotlight Bowler": 40,
+                "Dorra": 146100
+            },
+            {
+                "Backstage Ragged Hat": 30,
+                "Spotlight Bowler": 55,
+                "Exeunt Bowler": 20,
+                "Dorra": 291600
+            },
+            {
+                "Spotlight Bowler": 75,
+                "Exeunt Bowler": 30,
+                "Dorra": 560200
+            },
+            {
+                "Spotlight Bowler": 95,
+                "Exeunt Bowler": 50,
+                "Dorra": 1121300
+            }
+        ],
+        "skillUpgrade": [
+            {
+                "Tapping Game Cartridge": 6,
+                "Chess Piece of Skill": 2,
+                "Dorra": 13300
+            },
+            {
+                "Tapping Game Cartridge": 12,
+                "Chess Piece of Skill": 6,
+                "Dorra": 17600
+            },
+            {
+                "Tapping Game Cartridge": 24,
+                "Rhythm Game Cartridge": 3,
+                "Chess Piece of Skill": 10,
+                "Dorra": 49800
+            },
+            {
+                "Tapping Game Cartridge": 38,
+                "Rhythm Game Cartridge": 8,
+                "Chess Piece of Skill": 24,
+                "Dorra": 100000
+            },
+            {
+                "Tapping Game Cartridge": 70,
+                "Rhythm Game Cartridge": 14,
+                "Magic Sound Game Cartridge": 6,
+                "Chess Piece of Skill": 55,
+                "Dorra": 400000
+            },
+            {
+                "Tidal Essence": 1,
+                "Rhythm Game Cartridge": 50,
+                "Magic Sound Game Cartridge": 18,
+                "Chess Piece of Skill": 232,
+                "Dorra": 900000
+            },
+            {
+                "Tidal Essence": 2,
+                "Rhythm Game Cartridge": 90,
+                "Magic Sound Game Cartridge": 34,
+                "Chess Piece of Skill": 323,
+                "Dorra": 1600000
+            },
+            {
+                "Tidal Essence": 3,
+                "Rhythm Game Cartridge": 140,
+                "Magic Sound Game Cartridge": 50,
+                "Chess Piece of Skill": 478,
+                "Dorra": 2300000
+            },
+            {
+                "Tidal Essence": 6,
+                "Rhythm Game Cartridge": 200,
+                "Magic Sound Game Cartridge": 70,
+                "Chess Piece of Skill": 927,
+                "Dorra": 3400000
+            }
+        ]
+    },
     "140": {
         "id": 140,
         "name": "Sparkla",

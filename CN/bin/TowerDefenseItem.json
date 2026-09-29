@@ -42,5 +42,31 @@
     "Script": "AIScript.TowerDefenseItem_Spray",
     "CardIcon": "UI/Play_TowerDefence/SpriteAtlas/Item/icon_tower_defense_Item_4",
     "Head": "Icon/Item/item_tf_4"
+  },
+  "1041": {
+    "Id": 1041,
+    "Name": "TowerDefenseItem.1041.1",
+    "Des": "TowerDefenseItem.1041.2",
+    "ItemTips": "TowerDefenseItem.1041.3",
+    "Amount": 5,
+    "ChargeScript": "AIScript.TowerDefenseItemCharge1",
+    "ChargeParam1": 1,
+    "ChargeParam2": 8,
+    "Script": "AIScript.TowerDefenseItem_Flare",
+    "CardIcon": "UI/Play_TowerDefence/SpriteAtlas/Item/icon_tower_defense_Item_5",
+    "Head": "Icon/Item/item_tf_5"
+  },
+  "1042": {
+    "Id": 1042,
+    "Name": "TowerDefenseItem.1042.1",
+    "Des": "TowerDefenseItem.1042.2",
+    "ItemTips": "TowerDefenseItem.1042.3",
+    "Amount": 5,
+    "ChargeScript": "AIScript.TowerDefenseItemCharge1",
+    "ChargeParam1": 3,
+    "ChargeParam2": 8,
+    "Script": "AIScript.TowerDefenseItem_Flare",
+    "CardIcon": "UI/Play_TowerDefence/SpriteAtlas/Item/icon_tower_defense_Item_5",
+    "Head": "Icon/Item/item_tf_5"
   }
 }

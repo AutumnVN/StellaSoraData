@@ -701,6 +701,24 @@
     "Avg": "DP_single137",
     "AVGGroupId": "13702"
   },
+  "13901": {
+    "Id": 13901,
+    "CharId": [
+      139
+    ],
+    "Weight": 50,
+    "Avg": "DP_single139",
+    "AVGGroupId": "13901"
+  },
+  "13902": {
+    "Id": 13902,
+    "CharId": [
+      139
+    ],
+    "Weight": 50,
+    "Avg": "DP_single139",
+    "AVGGroupId": "13902"
+  },
   "90101": {
     "Id": 90101,
     "CharId": [
@@ -1002,5 +1020,15 @@
     "Weight": 150,
     "Avg": "DP_multi03",
     "AVGGroupId": "7"
+  },
+  "90131": {
+    "Id": 90131,
+    "CharId": [
+      139,
+      114
+    ],
+    "Weight": 150,
+    "Avg": "DP_single139",
+    "AVGGroupId": "1"
   }
 }

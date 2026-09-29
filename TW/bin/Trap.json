@@ -2267,5 +2267,99 @@
     "IgnoreCollision": true,
     "ShapeType": 1,
     "radius": 99.0
+  },
+  "50932001": {
+    "Id": 50932001,
+    "FCId": 5009001,
+    "Model": "Actor/Monster/99013Dingci/99013Dingci_01_Actor",
+    "ModelScale": 10000,
+    "BuffFXScale": 10000,
+    "ColliderScale": 10000,
+    "AttributeId": "1300101",
+    "Templete": 1900100,
+    "BuffIds": [
+      990010050
+    ],
+    "InterruptSkill": true,
+    "SubType": 2,
+    "Faction": 4,
+    "Filter": [
+      2
+    ],
+    "IgnoreCollision": true,
+    "width": 4.0,
+    "length": 4.0
+  },
+  "50932011": {
+    "Id": 50932011,
+    "FCId": 5009311,
+    "Model": "Actor/Monster/99023ArrowTrap/99023_ArrowTrap",
+    "ModelScale": 10000,
+    "BuffFXScale": 10000,
+    "ColliderScale": 10000,
+    "AttributeId": "1300101",
+    "Templete": 1900100,
+    "BuffIds": [
+      990010050
+    ],
+    "InterruptSkill": true,
+    "SubType": 2,
+    "Faction": 4,
+    "Filter": [
+      2
+    ],
+    "ShapeType": 1,
+    "radius": 99.0
+  },
+  "50932021": {
+    "Id": 50932021,
+    "FCId": 9900591,
+    "Model": "Actor/Monster/99052RectAreaTrap/99052RectAreaTrap_Fire01_xu",
+    "ModelScale": 10000,
+    "BuffFXScale": 10000,
+    "ColliderScale": 10000,
+    "AttributeId": "1300101",
+    "Templete": 1900100,
+    "BuffIds": [
+      990010050
+    ],
+    "InterruptSkill": true,
+    "SubType": 2,
+    "Faction": 4,
+    "Filter": [
+      2
+    ],
+    "IgnoreCollision": true,
+    "ShapeType": 1,
+    "radius": 99.0
+  },
+  "50932031": {
+    "Id": 50932031,
+    "FCId": 9900910,
+    "Model": "Actor/Monster/99091SawTrap/99091SawTrap_1x8",
+    "ModelScale": 10000,
+    "BuffFXScale": 10000,
+    "ColliderScale": 10000,
+    "AttributeId": "1300101",
+    "Templete": 1900100,
+    "BuffIds": [
+      990010050
+    ],
+    "TurnOffBuffIds": [
+      1,
+      990010040
+    ],
+    "InterruptSkill": true,
+    "SubType": 2,
+    "Faction": 4,
+    "Filter": [
+      2
+    ],
+    "IgnoreCollision": true,
+    "ShapeType": 1,
+    "radius": 99.0,
+    "isMove": true,
+    "MovAcc": 200000,
+    "MoveSpd": 35000
   }
 }

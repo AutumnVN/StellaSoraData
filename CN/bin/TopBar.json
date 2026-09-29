@@ -1329,5 +1329,31 @@
   "EventReminderPanel": {
     "Id": "EventReminderPanel",
     "Title": "TopBar.EventReminderPanel.1"
+  },
+  "ActivityLevelsSelectPanel_10112": {
+    "Id": "ActivityLevelsSelectPanel_10112",
+    "Title": "TopBar.ActivityLevelsSelectPanel_10112.1",
+    "Energy": true
+  },
+  "Shop_10112": {
+    "Id": "Shop_10112",
+    "Title": "TopBar.Shop_10112.1",
+    "Coin": true
+  },
+  "Task_10112": {
+    "Id": "Task_10112",
+    "Title": "TopBar.Task_10112.1",
+    "Coin": true,
+    "CoinIds": [
+      73116
+    ]
+  },
+  "LongestDayPanel": {
+    "Id": "LongestDayPanel",
+    "Title": "TopBar.LongestDayPanel.1",
+    "Coin": true,
+    "CoinIds": [
+      73116
+    ]
   }
 }
