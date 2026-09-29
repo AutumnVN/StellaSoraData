@@ -1347,6 +1347,40 @@
             "No Icon"
         ]
     },
+    "4052": {
+        "name": "Sweep Mark",
+        "desc": "After casting Deep Sweep: Restore Order (Ultimate Phase 2) via the Main Skill, Sweep Marks switch from lit to unlit, but still retain all of their bonus effects.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "4053": {
+        "name": "Tide",
+        "desc": "When some Trekkers trigger Aqua Mark, deals <color=#fb8037>&Param4&</color> of ATK as Aqua Mark DMG, and inflicts 1 stack of Flood for &Param1&s, up to &Param2& stacks. When Flood is at max stacks, triggers Ebb that deals <color=#fb8037>&Param3&</color> of ATK as AoE Aqua Mark DMG, and removes Flood stacks.",
+        "params": [
+            10,
+            9,
+            "77%/100%/123%/145%/168%/191%/214%/237%/260%",
+            "63%/82%/101%/120%/139%/157%/176%/195%/214%"
+        ],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": [
+            "Icon_CommonBuff_Tide"
+        ]
+    },
+    "4054": {
+        "name": "Abyssal Wave",
+        "desc": "Abyssal Wave is treated as Wave and can trigger effects related to Wave.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
     "4501": {
         "name": "Fear",
         "desc": "The target has escaped and can no longer be attacked.",
