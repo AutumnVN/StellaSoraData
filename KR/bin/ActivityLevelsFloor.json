@@ -483,6 +483,15 @@
     "BGM": "mode_christmas_combatTalou_setState",
     "LeaveTriggerEvent": "amb_christmas_all_stop"
   },
+  "300417": {
+    "Id": 300417,
+    "MonsterLv": 8,
+    "SceneName": "Levels/StoryActivity/StoryActivity_4/StoryActivity_4_Boss_TaLou",
+    "ConfigPrefabName": "StoryActivity_TaLou_Lv1",
+    "Theme": 417,
+    "BGM": "mode_christmas_combatTalou_setState",
+    "LeaveTriggerEvent": "amb_christmas_all_stop"
+  },
   "300501": {
     "Id": 300501,
     "MonsterLv": 1,
@@ -823,6 +832,24 @@
     "BGM": "mode_springFestival2025_combatBoss_setstate",
     "LeaveTriggerEvent": "amb_SF_all_stop"
   },
+  "300621": {
+    "Id": 300621,
+    "MonsterLv": 1,
+    "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_004_A_02",
+    "ConfigPrefabName": "StoryActivity_6_004_A_Story1",
+    "Theme": 427,
+    "BGM": "mode_springFestival2025_combatNormal_setstate",
+    "LeaveTriggerEvent": "amb_SF_all_stop"
+  },
+  "300622": {
+    "Id": 300622,
+    "MonsterLv": 7,
+    "SceneName": "Levels/StoryActivity/StoryActivity_6/StoryActivity_6_Boss_A",
+    "ConfigPrefabName": "StoryActivity_6_Boss_A_Story2",
+    "Theme": 428,
+    "BGM": "mode_springFestival2025_combatBoss_setstate",
+    "LeaveTriggerEvent": "amb_SF_all_stop"
+  },
   "300701": {
     "Id": 300701,
     "MonsterLv": 1,
@@ -1006,6 +1033,24 @@
   "300720": {
     "Id": 300720,
     "MonsterLv": 20,
+    "SceneName": "Levels/StoryActivity/StoryActivity_7/StoryActivity_7_Boss_A_01",
+    "ConfigPrefabName": "StoryActivity_7_Boss_C4",
+    "Theme": 432,
+    "BGM": "amb_fengying_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_fengying_all_stop"
+  },
+  "300721": {
+    "Id": 300721,
+    "MonsterLv": 7,
+    "SceneName": "Levels/StoryActivity/StoryActivity_7/StoryActivity_7_006_A_02",
+    "ConfigPrefabName": "StoryActivity_7_006_N6",
+    "Theme": 431,
+    "BGM": "amb_fengying_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_fengying_all_stop"
+  },
+  "300722": {
+    "Id": 300722,
+    "MonsterLv": 7,
     "SceneName": "Levels/StoryActivity/StoryActivity_7/StoryActivity_7_Boss_A_01",
     "ConfigPrefabName": "StoryActivity_7_Boss_C4",
     "Theme": 432,
@@ -1196,6 +1241,25 @@
     "MonsterLv": 20,
     "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_Boss_A",
     "ConfigPrefabName": "StoryActivity_8_Boss_C4",
+    "Theme": 436,
+    "BGM": "amb_Duona_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Duona_all_stop"
+  },
+  "300821": {
+    "Id": 300821,
+    "MonsterLv": 7,
+    "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_010_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_8_010_N7_Mir",
+    "Mir": true,
+    "Theme": 436,
+    "BGM": "amb_Duona_combatNormal_setState",
+    "LeaveTriggerEvent": "amb_Duona_all_stop"
+  },
+  "300822": {
+    "Id": 300822,
+    "MonsterLv": 7,
+    "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_Boss_A",
+    "ConfigPrefabName": "StoryActivity_8_Boss_N8",
     "Theme": 436,
     "BGM": "amb_Duona_combatBoss_setState",
     "LeaveTriggerEvent": "amb_Duona_all_stop"
@@ -3634,5 +3698,233 @@
     "Theme": 477,
     "BGM": "prologue_mechaBoss_setState",
     "LeaveTriggerEvent": "amb_prologue_all_stop"
+  },
+  "301701": {
+    "Id": 301701,
+    "MonsterLv": 1,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_015_A_01",
+    "ConfigPrefabName": "StoryActivity_17_N1",
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301702": {
+    "Id": 301702,
+    "MonsterLv": 2,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_005_B_01",
+    "ConfigPrefabName": "StoryActivity_17_N2",
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301703": {
+    "Id": 301703,
+    "MonsterLv": 3,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_008_A_01",
+    "ConfigPrefabName": "StoryActivity_17_N3",
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301704": {
+    "Id": 301704,
+    "MonsterLv": 4,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_014_A_01",
+    "ConfigPrefabName": "StoryActivity_17_N4",
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop",
+    "IntroCutscene": "·"
+  },
+  "301705": {
+    "Id": 301705,
+    "MonsterLv": 5,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_007_A_01",
+    "ConfigPrefabName": "StoryActivity_17_N5",
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301706": {
+    "Id": 301706,
+    "MonsterLv": 6,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_014_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_17_N6",
+    "Mir": true,
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301707": {
+    "Id": 301707,
+    "MonsterLv": 7,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_008_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_17_N7",
+    "Mir": true,
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301708": {
+    "Id": 301708,
+    "MonsterLv": 8,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_Boss_C_01",
+    "ConfigPrefabName": "StoryActivity_17_N8",
+    "Theme": 481,
+    "BGM": "Ruin_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301709": {
+    "Id": 301709,
+    "MonsterLv": 9,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_008_A_01",
+    "ConfigPrefabName": "StoryActivity_17_N9",
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301710": {
+    "Id": 301710,
+    "MonsterLv": 10,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_005_B_01",
+    "ConfigPrefabName": "StoryActivity_17_N10",
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301711": {
+    "Id": 301711,
+    "MonsterLv": 11,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_014_A_01",
+    "ConfigPrefabName": "StoryActivity_17_N11",
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301712": {
+    "Id": 301712,
+    "MonsterLv": 12,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_Boss_D_01",
+    "ConfigPrefabName": "StoryActivity_17_N12",
+    "Theme": 481,
+    "BGM": "Ruin_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301713": {
+    "Id": 301713,
+    "MonsterLv": 13,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_015_A_01_Mirror",
+    "ConfigPrefabName": "StoryActivity_17_H1",
+    "Mir": true,
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301714": {
+    "Id": 301714,
+    "MonsterLv": 14,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_008_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_17_H2",
+    "Mir": true,
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301715": {
+    "Id": 301715,
+    "MonsterLv": 15,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_005_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_17_H3",
+    "Mir": true,
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301716": {
+    "Id": 301716,
+    "MonsterLv": 16,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_Boss_C_01",
+    "ConfigPrefabName": "StoryActivity_17_H4",
+    "Theme": 481,
+    "BGM": "Ruin_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301717": {
+    "Id": 301717,
+    "MonsterLv": 17,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_014_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_17_H5",
+    "Mir": true,
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301718": {
+    "Id": 301718,
+    "MonsterLv": 18,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_005_B_01_Mir",
+    "ConfigPrefabName": "StoryActivity_17_H6",
+    "Mir": true,
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301719": {
+    "Id": 301719,
+    "MonsterLv": 19,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_007_A_01_Mir",
+    "ConfigPrefabName": "StoryActivity_17_H7",
+    "Mir": true,
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301720": {
+    "Id": 301720,
+    "MonsterLv": 20,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_Boss_D_01",
+    "ConfigPrefabName": "StoryActivity_17_H8",
+    "Theme": 481,
+    "BGM": "Ruin_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301721": {
+    "Id": 301721,
+    "MonsterLv": 21,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_015_A_01_Mirror",
+    "ConfigPrefabName": "StoryActivity_17_C1",
+    "Mir": true,
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.ChenShaActivity_LevelController"
+  },
+  "301722": {
+    "Id": 301722,
+    "MonsterLv": 22,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_Boss_C_01",
+    "ConfigPrefabName": "StoryActivity_17_C2",
+    "Theme": 481,
+    "BGM": "Ruin_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
+  },
+  "301723": {
+    "Id": 301723,
+    "MonsterLv": 23,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_007_A_01",
+    "ConfigPrefabName": "StoryActivity_17_C3",
+    "Theme": 481,
+    "BGM": "Ruin_explore_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.ChenShaActivity_LevelController"
+  },
+  "301724": {
+    "Id": 301724,
+    "MonsterLv": 24,
+    "SceneName": "Levels/StoryActivity/StoryActivity_17/StoryActivity_17_Boss_D_01",
+    "ConfigPrefabName": "StoryActivity_17_C4",
+    "Theme": 481,
+    "BGM": "Ruin_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_Ruin_all_stop"
   }
 }

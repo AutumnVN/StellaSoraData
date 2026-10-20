@@ -699,6 +699,20 @@
     "InteractiveAction": true,
     "InteractiveActionId": 10003
   },
+  "915201": {
+    "Id": 915201,
+    "IsShow": true,
+    "CharId": 915201,
+    "Type": 1,
+    "SourceDesc": 1,
+    "ModelScale": 12500,
+    "Model": "Actor/NPC/NPC_915201/NPC_915201_Actor",
+    "Portrait": "Actor2D/NPC/915201/915201_a.spriteatlas",
+    "Offset": "Actor2D/NPC/915201/915201.asset",
+    "L2D": "Actor2D/NPC/915201/915201_L.prefab",
+    "InteractiveAction": true,
+    "InteractiveActionId": 10003
+  },
   "813701": {
     "Id": 813701,
     "IsShow": true,
@@ -724,6 +738,48 @@
     "Portrait": "Actor2D/Character/13901/13901_a.spriteatlas",
     "Offset": "Actor2D/Character/13901/13901.asset",
     "L2D": "Actor2D/Character/13901/13901_L.prefab",
+    "InteractiveAction": true,
+    "InteractiveActionId": 10003
+  },
+  "713901": {
+    "Id": 713901,
+    "IsShow": true,
+    "CharId": 7139,
+    "Type": 1,
+    "SourceDesc": 1,
+    "ModelScale": 10000,
+    "Model": "Actor/Character/13901/13901_Actor",
+    "Portrait": "Actor2D/Character/13901/13901_a.spriteatlas",
+    "Offset": "Actor2D/Character/13901/13901.asset",
+    "L2D": "Actor2D/Character/13901/13901_L.prefab",
+    "InteractiveAction": true,
+    "InteractiveActionId": 10003
+  },
+  "716201": {
+    "Id": 716201,
+    "IsShow": true,
+    "CharId": 7162,
+    "Type": 1,
+    "SourceDesc": 1,
+    "ModelScale": 10000,
+    "Model": "Actor/Character/16201/16201_Actor",
+    "Portrait": "Actor2D/Character/16201/16201_a.spriteatlas",
+    "Offset": "Actor2D/Character/16201/16201.asset",
+    "L2D": "Actor2D/Character/16201/16201_L.prefab",
+    "InteractiveAction": true,
+    "InteractiveActionId": 10003
+  },
+  "816201": {
+    "Id": 816201,
+    "IsShow": true,
+    "CharId": 8162,
+    "Type": 1,
+    "SourceDesc": 1,
+    "ModelScale": 10000,
+    "Model": "Actor/Character/16201/16201_Actor",
+    "Portrait": "Actor2D/Character/16201/16201_a.spriteatlas",
+    "Offset": "Actor2D/Character/16201/16201.asset",
+    "L2D": "Actor2D/Character/16201/16201_L.prefab",
     "InteractiveAction": true,
     "InteractiveActionId": 10003
   }

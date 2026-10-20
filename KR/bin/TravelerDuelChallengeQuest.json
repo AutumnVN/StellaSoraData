@@ -739,5 +739,281 @@
     "AwardItemNum1": 60,
     "AwardItemTid2": 1,
     "AwardItemNum2": 50000
+  },
+  "400100": {
+    "Id": 400100,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400100.1",
+    "AffixJumpTo": [
+      29050301,
+      29050201
+    ],
+    "CompleteCond": 65,
+    "CompleteCondParams": "[600004,29050301,29050201]",
+    "AwardItemTid1": 74201,
+    "AwardItemNum1": 600,
+    "AwardItemTid2": 1,
+    "AwardItemNum2": 50000
+  },
+  "400101": {
+    "Id": 400101,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400101.1",
+    "AffixJumpTo": [
+      500101,
+      29050103,
+      29051101
+    ],
+    "CompleteCond": 65,
+    "CompleteCondParams": "[600004,500101,29050103,29051101]",
+    "AwardItemTid1": 74201,
+    "AwardItemNum1": 600,
+    "AwardItemTid2": 50004,
+    "AwardItemNum2": 10
+  },
+  "400102": {
+    "Id": 400102,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400102.1",
+    "AffixJumpTo": [
+      500102,
+      29050702,
+      29050402
+    ],
+    "CompleteCond": 65,
+    "CompleteCondParams": "[600004,500102,29050702,29050402]",
+    "AwardItemTid1": 74201,
+    "AwardItemNum1": 600,
+    "AwardItemTid2": 82004,
+    "AwardItemNum2": 100
+  },
+  "400103": {
+    "Id": 400103,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400103.1",
+    "AffixJumpTo": [
+      500103,
+      29051202,
+      29050902
+    ],
+    "CompleteCond": 65,
+    "CompleteCondParams": "[600004,500103,29051202,29050902]",
+    "AwardItemTid1": 74201,
+    "AwardItemNum1": 600,
+    "AwardItemTid2": 1,
+    "AwardItemNum2": 50000
+  },
+  "400104": {
+    "Id": 400104,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400104.1",
+    "AffixJumpTo": [
+      500104,
+      29051001,
+      29050501
+    ],
+    "CompleteCond": 65,
+    "CompleteCondParams": "[600004,500104,29051001,29050501]",
+    "AwardItemTid1": 74201,
+    "AwardItemNum1": 600,
+    "AwardItemTid2": 50004,
+    "AwardItemNum2": 10
+  },
+  "400105": {
+    "Id": 400105,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400105.1",
+    "AffixJumpTo": [
+      500105,
+      29051801,
+      29051403
+    ],
+    "CompleteCond": 65,
+    "CompleteCondParams": "[600004,500105,29051801,29051403]",
+    "AwardItemTid1": 74201,
+    "AwardItemNum1": 600,
+    "AwardItemTid2": 82004,
+    "AwardItemNum2": 100
+  },
+  "400106": {
+    "Id": 400106,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400106.1",
+    "AffixJumpTo": [
+      500106,
+      29050801,
+      29051602
+    ],
+    "CompleteCond": 65,
+    "CompleteCondParams": "[600004,500106,29050801,29051602]",
+    "AwardItemTid1": 74201,
+    "AwardItemNum1": 600,
+    "AwardItemTid2": 1,
+    "AwardItemNum2": 50000
+  },
+  "400107": {
+    "Id": 400107,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400107.1",
+    "CompleteCond": 66,
+    "CompleteCondParams": "[1,0,600004]",
+    "AwardItemTid1": 2,
+    "AwardItemNum1": 50,
+    "AwardItemTid2": 1,
+    "AwardItemNum2": 50000
+  },
+  "400108": {
+    "Id": 400108,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400108.1",
+    "CompleteCond": 66,
+    "CompleteCondParams": "[1,10,600004]",
+    "AwardItemTid1": 2,
+    "AwardItemNum1": 50,
+    "AwardItemTid2": 50004,
+    "AwardItemNum2": 10
+  },
+  "400109": {
+    "Id": 400109,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400109.1",
+    "CompleteCond": 66,
+    "CompleteCondParams": "[1,20,600004]",
+    "AwardItemTid1": 2,
+    "AwardItemNum1": 50,
+    "AwardItemTid2": 82004,
+    "AwardItemNum2": 100
+  },
+  "400110": {
+    "Id": 400110,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400110.1",
+    "CompleteCond": 66,
+    "CompleteCondParams": "[1,30,600004]",
+    "AwardItemTid1": 2,
+    "AwardItemNum1": 50,
+    "AwardItemTid2": 50004,
+    "AwardItemNum2": 10
+  },
+  "400111": {
+    "Id": 400111,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400111.1",
+    "CompleteCond": 66,
+    "CompleteCondParams": "[1,40,600004]",
+    "AwardItemTid1": 2,
+    "AwardItemNum1": 50,
+    "AwardItemTid2": 82004,
+    "AwardItemNum2": 100
+  },
+  "400112": {
+    "Id": 400112,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400112.1",
+    "CompleteCond": 66,
+    "CompleteCondParams": "[1,50,600004]",
+    "AwardItemTid1": 1,
+    "AwardItemNum1": 22222,
+    "AwardItemTid2": 35001,
+    "AwardItemNum2": 100
+  },
+  "400113": {
+    "Id": 400113,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400113.1",
+    "CompleteCond": 66,
+    "CompleteCondParams": "[1,60,600004]",
+    "AwardItemTid1": 1,
+    "AwardItemNum1": 66666,
+    "AwardItemTid2": 35002,
+    "AwardItemNum2": 100
+  },
+  "400114": {
+    "Id": 400114,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400114.1",
+    "CompleteCond": 66,
+    "CompleteCondParams": "[1,70,600004]",
+    "AwardItemTid1": 50003,
+    "AwardItemNum1": 10,
+    "AwardItemTid2": 35003,
+    "AwardItemNum2": 100
+  },
+  "400115": {
+    "Id": 400115,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400115.1",
+    "CompleteCond": 67,
+    "CompleteCondParams": "[600004,2]",
+    "AwardItemTid1": 74202,
+    "AwardItemNum1": 60,
+    "AwardItemTid2": 1,
+    "AwardItemNum2": 50000
+  },
+  "400116": {
+    "Id": 400116,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400116.1",
+    "CompleteCond": 67,
+    "CompleteCondParams": "[600004,4]",
+    "AwardItemTid1": 74202,
+    "AwardItemNum1": 60,
+    "AwardItemTid2": 50004,
+    "AwardItemNum2": 10
+  },
+  "400117": {
+    "Id": 400117,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400117.1",
+    "CompleteCond": 67,
+    "CompleteCondParams": "[600004,6]",
+    "AwardItemTid1": 74202,
+    "AwardItemNum1": 60,
+    "AwardItemTid2": 82004,
+    "AwardItemNum2": 100
+  },
+  "400118": {
+    "Id": 400118,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400118.1",
+    "CompleteCond": 67,
+    "CompleteCondParams": "[600004,7]",
+    "AwardItemTid1": 74202,
+    "AwardItemNum1": 60,
+    "AwardItemTid2": 1,
+    "AwardItemNum2": 50000
+  },
+  "400119": {
+    "Id": 400119,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400119.1",
+    "CompleteCond": 67,
+    "CompleteCondParams": "[600004,9]",
+    "AwardItemTid1": 74202,
+    "AwardItemNum1": 60,
+    "AwardItemTid2": 50004,
+    "AwardItemNum2": 10
+  },
+  "400120": {
+    "Id": 400120,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400120.1",
+    "CompleteCond": 67,
+    "CompleteCondParams": "[600004,12]",
+    "AwardItemTid1": 74202,
+    "AwardItemNum1": 60,
+    "AwardItemTid2": 82004,
+    "AwardItemNum2": 100
+  },
+  "400121": {
+    "Id": 400121,
+    "GroupId": 4001,
+    "Title": "TravelerDuelChallengeQuest.400121.1",
+    "CompleteCond": 67,
+    "CompleteCondParams": "[600004,13]",
+    "AwardItemTid1": 74202,
+    "AwardItemNum1": 60,
+    "AwardItemTid2": 1,
+    "AwardItemNum2": 50000
   }
 }
