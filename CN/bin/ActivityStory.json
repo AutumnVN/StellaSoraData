@@ -428,7 +428,7 @@
     "IsBattle": true,
     "StoryId": "BAev02_01",
     "FloorId": [
-      1060401
+      300417
     ],
     "TrialBuild": 200010,
     "PreviewMonsterGroupId": 300408,
@@ -534,7 +534,7 @@
     "IsBattle": true,
     "StoryId": "STev_03_BT01",
     "FloorId": [
-      1060501
+      300621
     ],
     "TrialBuild": 200020,
     "PreviewMonsterGroupId": 300621,
@@ -610,7 +610,7 @@
     "IsBattle": true,
     "StoryId": "STev_03_BT02",
     "FloorId": [
-      1060601
+      300622
     ],
     "TrialBuild": 200030,
     "PreviewMonsterGroupId": 300622,
@@ -684,7 +684,7 @@
     "IsBattle": true,
     "StoryId": "STev_04_BT01",
     "FloorId": [
-      1060402
+      300721
     ],
     "TrialBuild": 200040,
     "PreviewMonsterGroupId": 300706,
@@ -829,7 +829,7 @@
     "IsBattle": true,
     "StoryId": "STev_04_BT02",
     "FloorId": [
-      1060404
+      300722
     ],
     "TrialBuild": 200060,
     "PreviewMonsterGroupId": 300708,
@@ -990,7 +990,7 @@
     "IsBattle": true,
     "StoryId": "STev_05_BT01",
     "FloorId": [
-      1060505
+      300821
     ],
     "TrialBuild": 200070,
     "PreviewMonsterGroupId": 300802,
@@ -1049,7 +1049,7 @@
     "IsBattle": true,
     "StoryId": "STev_05_BT02",
     "FloorId": [
-      1060506
+      300822
     ],
     "TrialBuild": 200080,
     "PreviewMonsterGroupId": 300808,
@@ -1307,6 +1307,7 @@
     "Aim": "ActivityStory.101070211.3",
     "AvgLuaName": "STev_07_09",
     "AvgMotion": "style_43",
+    "IsLast": true,
     "FirstCompleteReward": "{\"2\":50}",
     "Icon": "Icon/ActivityStory/ep_event07_11"
   },
@@ -2120,6 +2121,7 @@
     "Aim": "ActivityStory.101100211.3",
     "AvgLuaName": "STev_11_09",
     "AvgMotion": "style_44",
+    "IsLast": true,
     "FirstCompleteReward": "{\"2\":50}",
     "Icon": "Icon/ActivityStory/zs_summeradv_story_bg3"
   },
@@ -2327,6 +2329,7 @@
     "Aim": "ActivityStory.101110211.3",
     "AvgLuaName": "STev_12_09",
     "AvgMotion": "style_20",
+    "IsLast": true,
     "FirstCompleteReward": "{\"2\":50}",
     "Icon": "Icon/ActivityStory/ep_event12_11"
   }

@@ -1884,7 +1884,8 @@
     "IgnoreCollision": true,
     "ShapeType": 1,
     "radius": 99.0,
-    "isBlock": true
+    "isBlock": true,
+    "Tag1": "Die"
   },
   "50916001": {
     "Id": 50916001,
@@ -2202,6 +2203,30 @@
     "Id": 50916014,
     "FCId": 5091601,
     "Model": "Actor/Monster/99034BombTrap/99034BombTrap_Actor",
+    "ModelScale": 10000,
+    "BuffFXScale": 10000,
+    "ColliderScale": 10000,
+    "AttributeId": "1300101",
+    "Templete": 9100000,
+    "BuffIds": [
+      990010050,
+      990010100,
+      990010040
+    ],
+    "InterruptSkill": true,
+    "SubType": 2,
+    "Faction": 4,
+    "Filter": [
+      2
+    ],
+    "IgnoreCollision": true,
+    "ShapeType": 1,
+    "radius": 99.0
+  },
+  "50917001": {
+    "Id": 50917001,
+    "FCId": 5091701,
+    "Model": "Actor/Monster/99072CircleAreaTrap/99072_CircleAreaTrap",
     "ModelScale": 10000,
     "BuffFXScale": 10000,
     "ColliderScale": 10000,
