@@ -80,38 +80,6 @@
     "LeaveTriggerEvent": "amb_forestRuins_all_stop",
     "MonsterLv": 9
   },
-  "1100102": {
-    "Id": 1100102,
-    "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_1",
-    "ConfigPrefabName": "Countryside_Main_1",
-    "Theme": 1,
-    "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 10
-  },
-  "1100202": {
-    "Id": 1100202,
-    "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_2",
-    "ConfigPrefabName": "Countryside_Main_2",
-    "Theme": 1,
-    "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 10
-  },
-  "1100302": {
-    "Id": 1100302,
-    "SceneName": "Levels/Main/Countryside/CountrySide_Main_2_3",
-    "ConfigPrefabName": "Countryside_Main_3",
-    "Theme": 1,
-    "LeaveTriggerEvent": "amb_countryside_all_stop",
-    "MonsterLv": 10
-  },
-  "1100401": {
-    "Id": 1100401,
-    "SceneName": "Levels/Main/ForestRuins/Forest_Ruins_Main_2_4",
-    "ConfigPrefabName": "Countryside_Main_4",
-    "Theme": 7,
-    "LeaveTriggerEvent": "amb_forestRuins_all_stop",
-    "MonsterLv": 10
-  },
   "1200102": {
     "Id": 1200102,
     "SceneName": "Levels/Main/Desert/Desert_Main_0_5",
@@ -606,23 +574,34 @@
     "MonsterLv": 6,
     "LevelScript": "AIScript.LevelAndGroupController.Level.GaoDa9_5_LevelController"
   },
-  "1060505": {
-    "Id": 1060505,
-    "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_010_B_01",
-    "ConfigPrefabName": "StoryActivity_8_010_N2",
-    "Theme": 436,
-    "BGM": "amb_Duona_combatNormal_setState",
-    "LeaveTriggerEvent": "amb_Duona_all_stop",
-    "MonsterLv": 7
+  "1100101": {
+    "Id": 1100101,
+    "SceneName": "Levels/Main/Forest_New/Forest_Main_10_1",
+    "ConfigPrefabName": "Forest_Main_10_1",
+    "Theme": 30,
+    "BGM": "forest_explore_setState",
+    "LeaveTriggerEvent": "amb_forest_all_stop",
+    "MonsterLv": 6
   },
-  "1060506": {
-    "Id": 1060506,
-    "SceneName": "Levels/StoryActivity/StoryActivity_8/StoryActivity_8_Boss_A",
-    "ConfigPrefabName": "StoryActivity_8_Boss_N8",
-    "Theme": 436,
-    "BGM": "amb_Duona_combatBoss_setState",
-    "LeaveTriggerEvent": "amb_Duona_all_stop",
-    "MonsterLv": 7
+  "1100301": {
+    "Id": 1100301,
+    "SceneName": "Levels/JointDrill/JointDrill_03/JointDrill_03",
+    "ConfigPrefabName": "JointDrill_03_Stage1",
+    "Theme": 255,
+    "BGM": "Mode_JointDrill_magician_setState",
+    "LeaveTriggerEvent": "amb_city_all_stop",
+    "MonsterLv": 6,
+    "IntroCutscene": "fx_m72011_base_Born",
+    "LevelScript": "AIScript.LevelAndGroupController.Level.KuiLeiShiLevelController_Mainline"
+  },
+  "1100302": {
+    "Id": 1100302,
+    "SceneName": "Levels/JointDrill/JointDrill_03/JointDrill_03",
+    "ConfigPrefabName": "JointDrill_03_Stage2",
+    "Theme": 255,
+    "BGM": "Mode_JointDrill_magician2_setState",
+    "MonsterLv": 6,
+    "IntroCutscene": "fx_jointdrill_03_base_boss_change_tl"
   },
   "9920284": {
     "Id": 9920284,

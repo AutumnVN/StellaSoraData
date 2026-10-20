@@ -3714,6 +3714,20 @@
     "ReplaceType": true,
     "ReplaceMode": true
   },
+  "14110011": {
+    "Id": 14110011,
+    "Sort": 1,
+    "Effects": [
+      14110011
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
   "14111011": {
     "Id": 14111011,
     "Sort": 1,
@@ -10047,6 +10061,256 @@
     "Timing": 1,
     "ReplaceType": true
   },
+  "16290001": {
+    "Id": 16290001,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16290002": {
+    "Id": 16290002,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16290003": {
+    "Id": 16290003,
+    "Sort": 1,
+    "Effects": [
+      16290003
+    ],
+    "Time": 300000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16243011": {
+    "Id": 16243011,
+    "Sort": 1,
+    "Effects": [
+      16290003,
+      16243001
+    ],
+    "Time": 300000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16202011": {
+    "Id": 16202011,
+    "Sort": 1,
+    "Time": 600000,
+    "LaminatedNum": 17,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16204011": {
+    "Id": 16204011,
+    "Sort": 1,
+    "Time": 600000,
+    "LaminatedNum": 11,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16207011": {
+    "Id": 16207011,
+    "Sort": 1,
+    "Effects": [
+      16207001
+    ],
+    "Time": 120000,
+    "LaminatedNum": 2,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16207012": {
+    "Id": 16207012,
+    "Sort": 1,
+    "Effects": [
+      16207002
+    ],
+    "Time": 120000,
+    "LaminatedNum": 2,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16209011": {
+    "Id": 16209011,
+    "Sort": 1,
+    "Effects": [
+      16209001
+    ],
+    "Time": 120000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16212011": {
+    "Id": 16212011,
+    "Sort": 1,
+    "Effects": [
+      16212001
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16225011": {
+    "Id": 16225011,
+    "Sort": 1,
+    "Effects": [
+      16225001
+    ],
+    "Time": 120000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16226011": {
+    "Id": 16226011,
+    "Sort": 1,
+    "Effects": [
+      16226001
+    ],
+    "Time": 80000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16229011": {
+    "Id": 16229011,
+    "Sort": 1,
+    "Effects": [
+      16229001
+    ],
+    "Time": 200000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16231011": {
+    "Id": 16231011,
+    "Sort": 1,
+    "Effects": [
+      16231001
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16232011": {
+    "Id": 16232011,
+    "Sort": 1,
+    "Effects": [
+      16232001
+    ],
+    "Time": 150000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16233011": {
+    "Id": 16233011,
+    "Sort": 1,
+    "Effects": [
+      16233001
+    ],
+    "Time": 100000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "16296111": {
+    "Id": 16296111,
+    "Sort": 1,
+    "Time": 3000000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true
+  },
+  "16296211": {
+    "Id": 16296211,
+    "Sort": 1,
+    "Effects": [
+      16296211
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true
+  },
+  "16296411": {
+    "Id": 16296411,
+    "Sort": 1,
+    "Effects": [
+      16296411,
+      16296421
+    ],
+    "Time": 80000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true
+  },
   "5011": {
     "Id": 5011,
     "Sort": 1,
@@ -12723,7 +12987,7 @@
     "Id": 11950611,
     "Sort": 1,
     "Time": -10000,
-    "LaminatedNum": 3,
+    "LaminatedNum": 2,
     "Num": 1,
     "TimeSuperposition": 2,
     "Timing": 1,
@@ -12750,6 +13014,20 @@
     "Sort": 1,
     "Time": 30000,
     "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "11951011": {
+    "Id": 11951011,
+    "Sort": 1,
+    "Effects": [
+      11951001
+    ],
+    "Time": 300000,
+    "LaminatedNum": 1,
     "Num": 1,
     "TimeSuperposition": 2,
     "Timing": 1,
@@ -21797,6 +22075,75 @@
     "ReplaceType": true,
     "ReplaceMode": true
   },
+  "317010000": {
+    "Id": 317010000,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "317010010": {
+    "Id": 317010010,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "317010020": {
+    "Id": 317010020,
+    "Sort": 1,
+    "Effects": [
+      317010001
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "317010030": {
+    "Id": 317010030,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "317010040": {
+    "Id": 317010040,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "317010050": {
+    "Id": 317010050,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 35,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
   "311010000": {
     "Id": 311010000,
     "Sort": 1,
@@ -22299,6 +22646,107 @@
     "Sort": 1,
     "Time": -10000,
     "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "720140000": {
+    "Id": 720140000,
+    "Sort": 99,
+    "Effects": [
+      720140000
+    ],
+    "Time": 10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "720140140": {
+    "Id": 720140140,
+    "Effects": [
+      313010003
+    ],
+    "Time": 30000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "720140150": {
+    "Id": 720140150,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "720140160": {
+    "Id": 720140160,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "700619100": {
+    "Id": 700619100,
+    "Effects": [
+      700619101
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "700619200": {
+    "Id": 700619200,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "700619300": {
+    "Id": 700619300,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "700619400": {
+    "Id": 700619400,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "821620101": {
+    "Id": 821620101,
+    "Sort": 1,
+    "Time": 3000000,
+    "LaminatedNum": 5,
     "Num": 1,
     "TimeSuperposition": 2,
     "Timing": 1,
@@ -23629,6 +24077,235 @@
     "Num": 1,
     "TimeSuperposition": 2,
     "Timing": 2,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "710310011": {
+    "Id": 710310011,
+    "Effects": [
+      710310012
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "710310012": {
+    "Id": 710310012,
+    "Effects": [
+      710310013
+    ],
+    "Time": -10000,
+    "LaminatedNum": 999,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71031601": {
+    "Id": 71031601,
+    "Effects": [
+      710316011
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71031602": {
+    "Id": 71031602,
+    "Effects": [
+      710316021
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71031901": {
+    "Id": 71031901,
+    "Effects": [
+      710319011
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71040501": {
+    "Id": 71040501,
+    "Effects": [
+      710405011,
+      710405012
+    ],
+    "Time": 100000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71040701": {
+    "Id": 71040701,
+    "Effects": [
+      710407011
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71040702": {
+    "Id": 71040702,
+    "Effects": [
+      710407021
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71041601": {
+    "Id": 71041601,
+    "Effects": [
+      710416011
+    ],
+    "Time": 50000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71041602": {
+    "Id": 71041602,
+    "Effects": [
+      710416021
+    ],
+    "Time": 50000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71021601": {
+    "Id": 71021601,
+    "Sort": 1,
+    "Effects": [
+      710216011
+    ],
+    "Time": -10000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "710216011": {
+    "Id": 710216011,
+    "Sort": 1,
+    "Effects": [
+      710216012
+    ],
+    "Time": 990000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71021602": {
+    "Id": 71021602,
+    "Sort": 1,
+    "Effects": [
+      710216021
+    ],
+    "Time": -10000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "710216021": {
+    "Id": 710216021,
+    "Sort": 1,
+    "Effects": [
+      710216022
+    ],
+    "Time": 990000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71021603": {
+    "Id": 71021603,
+    "Sort": 1,
+    "Effects": [
+      710216031
+    ],
+    "Time": -10000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "710216031": {
+    "Id": 710216031,
+    "Sort": 1,
+    "Effects": [
+      710216032
+    ],
+    "Time": 990000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "71030801": {
+    "Id": 71030801,
+    "Sort": 1,
+    "Effects": [
+      710308011
+    ],
+    "Time": 40000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
     "ReplaceType": true,
     "ReplaceMode": true
   },
@@ -26660,6 +27337,522 @@
       290419012
     ],
     "Time": 200000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054080": {
+    "Id": 709054080,
+    "Effects": [
+      709054081
+    ],
+    "Time": 40000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054090": {
+    "Id": 709054090,
+    "Effects": [
+      709054091,
+      709054092
+    ],
+    "Time": 40000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054120": {
+    "Id": 709054120,
+    "Effects": [
+      709054122
+    ],
+    "Time": 40000,
+    "LaminatedNum": 4,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054130": {
+    "Id": 709054130,
+    "Effects": [
+      709054132
+    ],
+    "Time": 40000,
+    "LaminatedNum": 4,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054140": {
+    "Id": 709054140,
+    "Effects": [
+      709054142
+    ],
+    "Time": 40000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054160": {
+    "Id": 709054160,
+    "Effects": [
+      709054162,
+      709054163
+    ],
+    "Time": 600000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054165": {
+    "Id": 709054165,
+    "Effects": [
+      709054167,
+      709054168
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054170": {
+    "Id": 709054170,
+    "Effects": [
+      709054173,
+      709054174
+    ],
+    "Time": 300000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054174": {
+    "Id": 709054174,
+    "Effects": [
+      709054175,
+      709054176
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054178": {
+    "Id": 709054178,
+    "Time": 1200000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054150": {
+    "Id": 709054150,
+    "Effects": [
+      709054151
+    ],
+    "Time": 100000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054210": {
+    "Id": 709054210,
+    "Time": -10000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054211": {
+    "Id": 709054211,
+    "Effects": [
+      709054213
+    ],
+    "Time": -10000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054220": {
+    "Id": 709054220,
+    "Time": -10000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054221": {
+    "Id": 709054221,
+    "Effects": [
+      709054223
+    ],
+    "Time": -10000,
+    "LaminatedNum": 99,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054290": {
+    "Id": 709054290,
+    "Effects": [
+      709054292
+    ],
+    "Time": 20000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054300": {
+    "Id": 709054300,
+    "Effects": [
+      709054302
+    ],
+    "Time": 60000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054310": {
+    "Id": 709054310,
+    "Effects": [
+      709054312
+    ],
+    "Time": 40000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054320": {
+    "Id": 709054320,
+    "Effects": [
+      709054322
+    ],
+    "Time": 40000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054330": {
+    "Id": 709054330,
+    "Effects": [
+      709054332
+    ],
+    "Time": 40000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054350": {
+    "Id": 709054350,
+    "Effects": [
+      709054351
+    ],
+    "Time": 300000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054360": {
+    "Id": 709054360,
+    "Effects": [
+      709054363
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054261": {
+    "Id": 709054261,
+    "Effects": [
+      709054260
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054262": {
+    "Id": 709054262,
+    "Effects": [
+      709054260
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054263": {
+    "Id": 709054263,
+    "Effects": [
+      709054260
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054264": {
+    "Id": 709054264,
+    "Effects": [
+      709054260
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054265": {
+    "Id": 709054265,
+    "Effects": [
+      709054260
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054266": {
+    "Id": 709054266,
+    "Effects": [
+      709054260
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054267": {
+    "Id": 709054267,
+    "Effects": [
+      709054260
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054268": {
+    "Id": 709054268,
+    "Effects": [
+      709054260
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054269": {
+    "Id": 709054269,
+    "Effects": [
+      709054260
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054271": {
+    "Id": 709054271,
+    "Effects": [
+      709054270
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054272": {
+    "Id": 709054272,
+    "Effects": [
+      709054270
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054273": {
+    "Id": 709054273,
+    "Effects": [
+      709054270
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054274": {
+    "Id": 709054274,
+    "Effects": [
+      709054270
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054275": {
+    "Id": 709054275,
+    "Effects": [
+      709054270
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054276": {
+    "Id": 709054276,
+    "Effects": [
+      709054270
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054277": {
+    "Id": 709054277,
+    "Effects": [
+      709054270
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054278": {
+    "Id": 709054278,
+    "Effects": [
+      709054270
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "709054279": {
+    "Id": 709054279,
+    "Effects": [
+      709054270
+    ],
+    "Time": -10000,
     "LaminatedNum": 1,
     "Num": 1,
     "TimeSuperposition": 2,
@@ -42144,6 +43337,862 @@
     "ReplaceType": true,
     "ReplaceMode": true
   },
+  "4066000": {
+    "Id": 4066000,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066001": {
+    "Id": 4066001,
+    "Sort": 1,
+    "Effects": [
+      4066001
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066002": {
+    "Id": 4066002,
+    "Sort": 1,
+    "Effects": [
+      4066002
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066003": {
+    "Id": 4066003,
+    "Sort": 1,
+    "Effects": [
+      4066003
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066004": {
+    "Id": 4066004,
+    "Sort": 1,
+    "Effects": [
+      4066004
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066005": {
+    "Id": 4066005,
+    "Sort": 1,
+    "Effects": [
+      4066005
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066006": {
+    "Id": 4066006,
+    "Sort": 1,
+    "Effects": [
+      4066006
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066011": {
+    "Id": 4066011,
+    "Sort": 1,
+    "Effects": [
+      4066011
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066012": {
+    "Id": 4066012,
+    "Sort": 1,
+    "Effects": [
+      4066012
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066013": {
+    "Id": 4066013,
+    "Sort": 1,
+    "Effects": [
+      4066013
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066014": {
+    "Id": 4066014,
+    "Sort": 1,
+    "Effects": [
+      4066014
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066015": {
+    "Id": 4066015,
+    "Sort": 1,
+    "Effects": [
+      4066015
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066016": {
+    "Id": 4066016,
+    "Sort": 1,
+    "Effects": [
+      4066016
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066021": {
+    "Id": 4066021,
+    "Sort": 1,
+    "Effects": [
+      4066021
+    ],
+    "Time": 80000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066022": {
+    "Id": 4066022,
+    "Sort": 1,
+    "Effects": [
+      4066022
+    ],
+    "Time": 80000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066023": {
+    "Id": 4066023,
+    "Sort": 1,
+    "Effects": [
+      4066023
+    ],
+    "Time": 80000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066024": {
+    "Id": 4066024,
+    "Sort": 1,
+    "Effects": [
+      4066024
+    ],
+    "Time": 80000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066025": {
+    "Id": 4066025,
+    "Sort": 1,
+    "Effects": [
+      4066025
+    ],
+    "Time": 80000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066026": {
+    "Id": 4066026,
+    "Sort": 1,
+    "Effects": [
+      4066026
+    ],
+    "Time": 80000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066101": {
+    "Id": 4066101,
+    "Sort": 1,
+    "Effects": [
+      4066101
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066102": {
+    "Id": 4066102,
+    "Sort": 1,
+    "Effects": [
+      4066102
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066103": {
+    "Id": 4066103,
+    "Sort": 1,
+    "Effects": [
+      4066103
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066104": {
+    "Id": 4066104,
+    "Sort": 1,
+    "Effects": [
+      4066104
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066105": {
+    "Id": 4066105,
+    "Sort": 1,
+    "Effects": [
+      4066105
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066111": {
+    "Id": 4066111,
+    "Sort": 1,
+    "Effects": [
+      4066111,
+      4066121
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066112": {
+    "Id": 4066112,
+    "Sort": 1,
+    "Effects": [
+      4066112,
+      4066122
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066113": {
+    "Id": 4066113,
+    "Sort": 1,
+    "Effects": [
+      4066113,
+      4066123
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066114": {
+    "Id": 4066114,
+    "Sort": 1,
+    "Effects": [
+      4066114,
+      4066124
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066115": {
+    "Id": 4066115,
+    "Sort": 1,
+    "Effects": [
+      4066115,
+      4066125
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066201": {
+    "Id": 4066201,
+    "Sort": 1,
+    "Effects": [
+      4066201
+    ],
+    "Time": 120000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066202": {
+    "Id": 4066202,
+    "Sort": 1,
+    "Effects": [
+      4066202
+    ],
+    "Time": 120000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066203": {
+    "Id": 4066203,
+    "Sort": 1,
+    "Effects": [
+      4066203
+    ],
+    "Time": 120000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066204": {
+    "Id": 4066204,
+    "Sort": 1,
+    "Effects": [
+      4066204
+    ],
+    "Time": 120000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066205": {
+    "Id": 4066205,
+    "Sort": 1,
+    "Effects": [
+      4066205
+    ],
+    "Time": 120000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066211": {
+    "Id": 4066211,
+    "Sort": 1,
+    "Effects": [
+      4066211
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066212": {
+    "Id": 4066212,
+    "Sort": 1,
+    "Effects": [
+      4066212
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066213": {
+    "Id": 4066213,
+    "Sort": 1,
+    "Effects": [
+      4066213
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066214": {
+    "Id": 4066214,
+    "Sort": 1,
+    "Effects": [
+      4066214
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4066215": {
+    "Id": 4066215,
+    "Sort": 1,
+    "Effects": [
+      4066215
+    ],
+    "Time": -10000,
+    "LaminatedNum": 3,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067001": {
+    "Id": 4067001,
+    "Sort": 1,
+    "Effects": [
+      4067001
+    ],
+    "Time": 150000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067002": {
+    "Id": 4067002,
+    "Sort": 1,
+    "Effects": [
+      4067002
+    ],
+    "Time": 150000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067003": {
+    "Id": 4067003,
+    "Sort": 1,
+    "Effects": [
+      4067003
+    ],
+    "Time": 150000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067004": {
+    "Id": 4067004,
+    "Sort": 1,
+    "Effects": [
+      4067004
+    ],
+    "Time": 150000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067005": {
+    "Id": 4067005,
+    "Sort": 1,
+    "Effects": [
+      4067005
+    ],
+    "Time": 150000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067006": {
+    "Id": 4067006,
+    "Sort": 1,
+    "Effects": [
+      4067006
+    ],
+    "Time": 150000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067011": {
+    "Id": 4067011,
+    "Sort": 1,
+    "Effects": [
+      4067011
+    ],
+    "Time": 150000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067012": {
+    "Id": 4067012,
+    "Sort": 1,
+    "Effects": [
+      4067012
+    ],
+    "Time": 150000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067013": {
+    "Id": 4067013,
+    "Sort": 1,
+    "Effects": [
+      4067013
+    ],
+    "Time": 150000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067014": {
+    "Id": 4067014,
+    "Sort": 1,
+    "Effects": [
+      4067014
+    ],
+    "Time": 150000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067015": {
+    "Id": 4067015,
+    "Sort": 1,
+    "Effects": [
+      4067015
+    ],
+    "Time": 150000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067016": {
+    "Id": 4067016,
+    "Sort": 1,
+    "Effects": [
+      4067016
+    ],
+    "Time": 150000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067101": {
+    "Id": 4067101,
+    "Sort": 1,
+    "Effects": [
+      4067101
+    ],
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067102": {
+    "Id": 4067102,
+    "Sort": 1,
+    "Effects": [
+      4067102
+    ],
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067103": {
+    "Id": 4067103,
+    "Sort": 1,
+    "Effects": [
+      4067103
+    ],
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067104": {
+    "Id": 4067104,
+    "Sort": 1,
+    "Effects": [
+      4067104
+    ],
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067105": {
+    "Id": 4067105,
+    "Sort": 1,
+    "Effects": [
+      4067105
+    ],
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067201": {
+    "Id": 4067201,
+    "Sort": 1,
+    "Effects": [
+      4067201
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067202": {
+    "Id": 4067202,
+    "Sort": 1,
+    "Effects": [
+      4067202
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067203": {
+    "Id": 4067203,
+    "Sort": 1,
+    "Effects": [
+      4067203
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067204": {
+    "Id": 4067204,
+    "Sort": 1,
+    "Effects": [
+      4067204
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "4067205": {
+    "Id": 4067205,
+    "Sort": 1,
+    "Effects": [
+      4067205
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
   "250000001": {
     "Id": 250000001,
     "Sort": 1,
@@ -42877,6 +44926,471 @@
     "ReplaceType": true,
     "ReplaceMode": true
   },
+  "250105701": {
+    "Id": 250105701,
+    "Sort": 1,
+    "Effects": [
+      250105701
+    ],
+    "Time": 70000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105702": {
+    "Id": 250105702,
+    "Sort": 1,
+    "Effects": [
+      250105702
+    ],
+    "Time": 70000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105703": {
+    "Id": 250105703,
+    "Sort": 1,
+    "Effects": [
+      250105703
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105901": {
+    "Id": 250105901,
+    "Sort": 1,
+    "Effects": [
+      250105901
+    ],
+    "Time": 70000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105902": {
+    "Id": 250105902,
+    "Sort": 1,
+    "Effects": [
+      250105902
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106001": {
+    "Id": 250106001,
+    "Sort": 1,
+    "Effects": [
+      250106001
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106002": {
+    "Id": 250106002,
+    "Sort": 1,
+    "Effects": [
+      250106002
+    ],
+    "Time": -10000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106301": {
+    "Id": 250106301,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106401": {
+    "Id": 250106401,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106402": {
+    "Id": 250106402,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106403": {
+    "Id": 250106403,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106410": {
+    "Id": 250106410,
+    "Sort": 1,
+    "Effects": [
+      250106411,
+      250106412
+    ],
+    "Time": -10000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250104901": {
+    "Id": 250104901,
+    "Sort": 1,
+    "Time": 70000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250104902": {
+    "Id": 250104902,
+    "Sort": 1,
+    "Time": 140000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250104401": {
+    "Id": 250104401,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250104402": {
+    "Id": 250104402,
+    "Sort": 1,
+    "Effects": [
+      250104402
+    ],
+    "Time": 30000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250116501": {
+    "Id": 250116501,
+    "Sort": 1,
+    "Effects": [
+      250116501
+    ],
+    "Time": 100000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250104601": {
+    "Id": 250104601,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250104701": {
+    "Id": 250104701,
+    "Sort": 1,
+    "Effects": [
+      250104701
+    ],
+    "Time": 100000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105101": {
+    "Id": 250105101,
+    "Sort": 1,
+    "Time": 100000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105102": {
+    "Id": 250105102,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105201": {
+    "Id": 250105201,
+    "Sort": 1,
+    "Time": 100000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105301": {
+    "Id": 250105301,
+    "Sort": 1,
+    "Time": 100000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105501": {
+    "Id": 250105501,
+    "Sort": 1,
+    "Time": 70000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105502": {
+    "Id": 250105502,
+    "Sort": 1,
+    "Time": 140000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105503": {
+    "Id": 250105503,
+    "Sort": 1,
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105504": {
+    "Id": 250105504,
+    "Sort": 1,
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105505": {
+    "Id": 250105505,
+    "Sort": 1,
+    "Time": 100000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105801": {
+    "Id": 250105801,
+    "Sort": 1,
+    "Effects": [
+      250105801
+    ],
+    "Time": 100000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106101": {
+    "Id": 250106101,
+    "Sort": 1,
+    "Effects": [
+      250106101
+    ],
+    "Time": 100000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106201": {
+    "Id": 250106201,
+    "Sort": 1,
+    "Effects": [
+      250106201
+    ],
+    "Time": 10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106202": {
+    "Id": 250106202,
+    "Sort": 1,
+    "Effects": [
+      250106202
+    ],
+    "Time": 10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106203": {
+    "Id": 250106203,
+    "Sort": 1,
+    "Effects": [
+      250106203
+    ],
+    "Time": 10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250106204": {
+    "Id": 250106204,
+    "Sort": 1,
+    "Effects": [
+      250106204
+    ],
+    "Time": 10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250104201": {
+    "Id": 250104201,
+    "Sort": 1,
+    "Effects": [
+      250104201
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250141301": {
+    "Id": 250141301,
+    "Sort": 1,
+    "Effects": [
+      250141301
+    ],
+    "Time": -10000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "250105601": {
+    "Id": 250105601,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
   "260110111": {
     "Id": 260110111,
     "Sort": 1,
@@ -43171,6 +45685,21 @@
     "ReplaceType": true,
     "ReplaceMode": true
   },
+  "260111011": {
+    "Id": 260111011,
+    "Sort": 1,
+    "Effects": [
+      260111011,
+      260111012
+    ],
+    "Time": -10000,
+    "LaminatedNum": 999,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
   "260111111": {
     "Id": 260111111,
     "Sort": 1,
@@ -43204,6 +45733,20 @@
     "Sort": 1,
     "Time": -10000,
     "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260111511": {
+    "Id": 260111511,
+    "Sort": 1,
+    "Effects": [
+      260111511
+    ],
+    "Time": -10000,
+    "LaminatedNum": 60,
     "Num": 1,
     "TimeSuperposition": 2,
     "Timing": 1,
@@ -43245,7 +45788,7 @@
       260111613
     ],
     "Time": -10000,
-    "LaminatedNum": 5,
+    "LaminatedNum": 10,
     "Num": 1,
     "TimeSuperposition": 2,
     "Timing": 1,
@@ -43259,7 +45802,7 @@
       260111711
     ],
     "Time": 80000,
-    "LaminatedNum": 2,
+    "LaminatedNum": 3,
     "Num": 1,
     "TimeSuperposition": 2,
     "Timing": 1,
@@ -43273,7 +45816,7 @@
       260111712
     ],
     "Time": 80000,
-    "LaminatedNum": 5,
+    "LaminatedNum": 6,
     "Num": 1,
     "TimeSuperposition": 2,
     "Timing": 1,
@@ -43302,6 +45845,674 @@
     ],
     "Time": 40000,
     "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260111921": {
+    "Id": 260111921,
+    "Sort": 1,
+    "Effects": [
+      260111921
+    ],
+    "Time": 80000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112211": {
+    "Id": 260112211,
+    "Sort": 1,
+    "Effects": [
+      260112211,
+      260112212
+    ],
+    "Time": -10000,
+    "LaminatedNum": 12,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112221": {
+    "Id": 260112221,
+    "Sort": 1,
+    "Effects": [
+      260112221,
+      260112222
+    ],
+    "Time": -10000,
+    "LaminatedNum": 12,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112311": {
+    "Id": 260112311,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112312": {
+    "Id": 260112312,
+    "Sort": 1,
+    "Effects": [
+      260112312
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112411": {
+    "Id": 260112411,
+    "Sort": 1,
+    "Effects": [
+      260112411
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112412": {
+    "Id": 260112412,
+    "Sort": 1,
+    "Effects": [
+      260112412
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112421": {
+    "Id": 260112421,
+    "Sort": 1,
+    "Effects": [
+      260112421
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112422": {
+    "Id": 260112422,
+    "Sort": 1,
+    "Effects": [
+      260112422
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112431": {
+    "Id": 260112431,
+    "Sort": 1,
+    "Effects": [
+      260112431
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112432": {
+    "Id": 260112432,
+    "Sort": 1,
+    "Effects": [
+      260112432
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112441": {
+    "Id": 260112441,
+    "Sort": 1,
+    "Effects": [
+      260112441
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112442": {
+    "Id": 260112442,
+    "Sort": 1,
+    "Effects": [
+      260112442
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112451": {
+    "Id": 260112451,
+    "Sort": 1,
+    "Effects": [
+      260112451
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112511": {
+    "Id": 260112511,
+    "Sort": 1,
+    "Effects": [
+      260112511
+    ],
+    "Time": -10000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112611": {
+    "Id": 260112611,
+    "Sort": 1,
+    "Effects": [
+      260112611
+    ],
+    "Time": 40000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112621": {
+    "Id": 260112621,
+    "Sort": 1,
+    "Effects": [
+      260112621
+    ],
+    "Time": 10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112622": {
+    "Id": 260112622,
+    "Sort": 1,
+    "Effects": [
+      260112622
+    ],
+    "Time": -10000,
+    "LaminatedNum": 6,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112631": {
+    "Id": 260112631,
+    "Sort": 1,
+    "Effects": [
+      260112631
+    ],
+    "Time": 100000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112641": {
+    "Id": 260112641,
+    "Sort": 1,
+    "Effects": [
+      260112641
+    ],
+    "Time": 40000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112651": {
+    "Id": 260112651,
+    "Sort": 1,
+    "Effects": [
+      260112651
+    ],
+    "Time": 10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112652": {
+    "Id": 260112652,
+    "Sort": 1,
+    "Effects": [
+      260112652
+    ],
+    "Time": -10000,
+    "LaminatedNum": 6,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112661": {
+    "Id": 260112661,
+    "Sort": 1,
+    "Effects": [
+      260112661
+    ],
+    "Time": 100000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112671": {
+    "Id": 260112671,
+    "Sort": 1,
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112711": {
+    "Id": 260112711,
+    "Sort": 1,
+    "Effects": [
+      260112711
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112721": {
+    "Id": 260112721,
+    "Sort": 1,
+    "Effects": [
+      260112721
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112731": {
+    "Id": 260112731,
+    "Sort": 1,
+    "Effects": [
+      260112731
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112811": {
+    "Id": 260112811,
+    "Sort": 1,
+    "Effects": [
+      260112811
+    ],
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112821": {
+    "Id": 260112821,
+    "Sort": 1,
+    "Effects": [
+      260112821
+    ],
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112831": {
+    "Id": 260112831,
+    "Sort": 1,
+    "Effects": [
+      260112831,
+      260112832
+    ],
+    "Time": -10000,
+    "LaminatedNum": 20,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112841": {
+    "Id": 260112841,
+    "Sort": 1,
+    "Effects": [
+      260112841,
+      260112842
+    ],
+    "Time": -10000,
+    "LaminatedNum": 30,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260112851": {
+    "Id": 260112851,
+    "Sort": 1,
+    "Effects": [
+      260112851
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113011": {
+    "Id": 260113011,
+    "Sort": 1,
+    "Effects": [
+      260113011
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113021": {
+    "Id": 260113021,
+    "Sort": 1,
+    "Effects": [
+      260113021
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113031": {
+    "Id": 260113031,
+    "Sort": 1,
+    "Effects": [
+      260113031
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113041": {
+    "Id": 260113041,
+    "Sort": 1,
+    "Effects": [
+      260113041
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113111": {
+    "Id": 260113111,
+    "Sort": 1,
+    "Effects": [
+      260113111
+    ],
+    "Time": 12000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113121": {
+    "Id": 260113121,
+    "Sort": 1,
+    "Effects": [
+      260113121
+    ],
+    "Time": 12000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113211": {
+    "Id": 260113211,
+    "Sort": 1,
+    "Effects": [
+      260113211
+    ],
+    "Time": -10000,
+    "LaminatedNum": 5,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113212": {
+    "Id": 260113212,
+    "Sort": 1,
+    "Effects": [
+      260113211
+    ],
+    "Time": -10000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113221": {
+    "Id": 260113221,
+    "Sort": 1,
+    "Effects": [
+      260113221
+    ],
+    "Time": -10000,
+    "LaminatedNum": 10,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113411": {
+    "Id": 260113411,
+    "Sort": 1,
+    "Effects": [
+      260113411
+    ],
+    "Time": 50000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "260113511": {
+    "Id": 260113511,
+    "Sort": 1,
+    "Effects": [
+      260113511
+    ],
+    "Time": -10000,
+    "LaminatedNum": 1,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "100515011": {
+    "Id": 100515011,
+    "Effects": [
+      100515011
+    ],
+    "Time": -10000,
+    "LaminatedNum": 999,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "100515021": {
+    "Id": 100515021,
+    "Effects": [
+      100515021
+    ],
+    "Time": -10000,
+    "LaminatedNum": 999,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "271001201": {
+    "Id": 271001201,
+    "Sort": 1,
+    "Effects": [
+      271001201
+    ],
+    "Time": -10000,
+    "LaminatedNum": 999,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "271002101": {
+    "Id": 271002101,
+    "Sort": 1,
+    "Effects": [
+      271002101
+    ],
+    "Time": -10000,
+    "LaminatedNum": 999,
+    "Num": 1,
+    "TimeSuperposition": 2,
+    "Timing": 1,
+    "ReplaceType": true,
+    "ReplaceMode": true
+  },
+  "271002201": {
+    "Id": 271002201,
+    "Sort": 1,
+    "Effects": [
+      271002201
+    ],
+    "Time": -10000,
+    "LaminatedNum": 999,
     "Num": 1,
     "TimeSuperposition": 2,
     "Timing": 1,
