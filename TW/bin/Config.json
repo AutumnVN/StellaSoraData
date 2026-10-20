@@ -143,6 +143,50 @@
     "Id": "SubNoteSecondaryWeightArea",
     "Value": "100,200"
   },
+  "TowerVitaOptionMax": {
+    "Id": "TowerVitaOptionMax",
+    "Value": "5"
+  },
+  "TowerVitaEnergyId": {
+    "Id": "TowerVitaEnergyId",
+    "Value": "42"
+  },
+  "TowerVitaEnergyMax": {
+    "Id": "TowerVitaEnergyMax",
+    "Value": "10000"
+  },
+  "TowerVitaEnergyPurchasedPrice": {
+    "Id": "TowerVitaEnergyPurchasedPrice",
+    "Value": "2,10"
+  },
+  "TowerVitaEnergyPurchasedValue": {
+    "Id": "TowerVitaEnergyPurchasedValue",
+    "Value": "3000"
+  },
+  "TowerVitaEachActionConsumedEnergy": {
+    "Id": "TowerVitaEachActionConsumedEnergy",
+    "Value": "15"
+  },
+  "BuildModifierScoreMin": {
+    "Id": "BuildModifierScoreMin",
+    "Value": "5800"
+  },
+  "BuildPotentialModifierItem": {
+    "Id": "BuildPotentialModifierItem",
+    "Value": "35012,1"
+  },
+  "BuildPotentialModifierPointMax": {
+    "Id": "BuildPotentialModifierPointMax",
+    "Value": "5"
+  },
+  "BuildNoteModifierItem": {
+    "Id": "BuildNoteModifierItem",
+    "Value": "35013,1"
+  },
+  "BuildNoteModifierPointMax": {
+    "Id": "BuildNoteModifierPointMax",
+    "Value": "15"
+  },
   "StarTowerGrowthItemIds": {
     "Id": "StarTowerGrowthItemIds",
     "Value": "51"
@@ -153,11 +197,15 @@
   },
   "TimeUnlockStory": {
     "Id": "TimeUnlockStory",
-    "Value": "STm09_01_c"
+    "Value": "STm10001_10"
   },
   "StoryUnlockTime": {
     "Id": "StoryUnlockTime",
-    "Value": "2026-10-06T12:00:00+08:00"
+    "Value": "2026-10-30T12:00:00+08:00"
+  },
+  "StoryLastEnd_UnlockCondition_Chapter10": {
+    "Id": "StoryLastEnd_UnlockCondition_Chapter10",
+    "Value": "11"
   },
   "TraceHuntMaxHuntProgress": {
     "Id": "TraceHuntMaxHuntProgress",
@@ -315,6 +363,10 @@
     "Id": "VampireBaseBundle",
     "Value": "101,102"
   },
+  "VampireAutoSelectFateCardTime": {
+    "Id": "VampireAutoSelectFateCardTime",
+    "Value": "3"
+  },
   "Activity_Banner_Interval_Time": {
     "Id": "Activity_Banner_Interval_Time",
     "Value": "3"
@@ -323,13 +375,17 @@
     "Id": "TrekkerVersusAddHotValueRangePreMinute",
     "Value": "1000,3000"
   },
+  "MallActType": {
+    "Id": "MallActType",
+    "Value": "31"
+  },
   "Cookie_ErrorTime": {
     "Id": "Cookie_ErrorTime",
     "Value": "0.8"
   },
   "IceCreamMaxTotalScore": {
     "Id": "IceCreamMaxTotalScore",
-    "Value": "5000000"
+    "Value": "999999999"
   },
   "IceCreamUseItemLimit": {
     "Id": "IceCreamUseItemLimit",
@@ -370,6 +426,18 @@
   "IceCreamPatiencePerReduce": {
     "Id": "IceCreamPatiencePerReduce",
     "Value": "2"
+  },
+  "IceCreamPatienceShylock": {
+    "Id": "IceCreamPatienceShylock",
+    "Value": "10"
+  },
+  "IceCreamScoreShylock": {
+    "Id": "IceCreamScoreShylock",
+    "Value": "10"
+  },
+  "IceCreamOctopusClick": {
+    "Id": "IceCreamOctopusClick",
+    "Value": "3,6"
   },
   "JointDrill_Challenge_Tickets_Id": {
     "Id": "JointDrill_Challenge_Tickets_Id",
@@ -487,6 +555,14 @@
     "Id": "PenguinCardEndlessDebuffShowList",
     "Value": "2101,2111,2112,2121,2131,2132,2133,2141,2151"
   },
+  "ActivityReturneeRules": {
+    "Id": "ActivityReturneeRules",
+    "Value": "2,30,40"
+  },
+  "ActivityReturneeDuration": {
+    "Id": "ActivityReturneeDuration",
+    "Value": "15"
+  },
   "PhoneChatTimeInterval": {
     "Id": "PhoneChatTimeInterval",
     "Value": "24"
@@ -601,7 +677,7 @@
   },
   "SoldierInitialCoinNumber": {
     "Id": "SoldierInitialCoinNumber",
-    "Value": "5"
+    "Value": "4"
   },
   "SoldierInitialChessNumber": {
     "Id": "SoldierInitialChessNumber",
@@ -609,7 +685,11 @@
   },
   "SoldierChessCostToQuantity": {
     "Id": "SoldierChessCostToQuantity",
-    "Value": "{\"1\":27,\"2\":27,\"3\":18,\"4\":9,\"5\":9}"
+    "Value": "{\"1\":9,\"2\":9,\"3\":9,\"4\":9,\"5\":9}"
+  },
+  "SoldierBaseWeightToCost": {
+    "Id": "SoldierBaseWeightToCost",
+    "Value": "{\"1\":180,\"2\":180,\"3\":90,\"4\":0,\"5\":0}"
   },
   "SoldierChessEventBattle": {
     "Id": "SoldierChessEventBattle",
@@ -625,7 +705,7 @@
   },
   "SoldierCoinInterest": {
     "Id": "SoldierCoinInterest",
-    "Value": "10,1,5"
+    "Value": "10,1,2"
   },
   "SoldierBuyExp": {
     "Id": "SoldierBuyExp",
@@ -638,6 +718,134 @@
   "SoldierSkillCoinMax": {
     "Id": "SoldierSkillCoinMax",
     "Value": "300"
+  },
+  "SoldierPassedAllNodeScore": {
+    "Id": "SoldierPassedAllNodeScore",
+    "Value": "100"
+  },
+  "SoldierHpScoreRange": {
+    "Id": "SoldierHpScoreRange",
+    "Value": "{\"60\":20,\"80\":50}"
+  },
+  "SoldierChessTotalCostScore": {
+    "Id": "SoldierChessTotalCostScore",
+    "Value": "3,1"
+  },
+  "SoldierVersion": {
+    "Id": "SoldierVersion",
+    "Value": "v1.0.0"
+  },
+  "SoldierBattleReportRecentLimit": {
+    "Id": "SoldierBattleReportRecentLimit",
+    "Value": "10"
+  },
+  "SoldierBattleReportRecentTimeout": {
+    "Id": "SoldierBattleReportRecentTimeout",
+    "Value": "7776000"
+  },
+  "SoldierBattleReportFavoriteLimit": {
+    "Id": "SoldierBattleReportFavoriteLimit",
+    "Value": "10"
+  },
+  "SoldierBattleReportPublishTimeout": {
+    "Id": "SoldierBattleReportPublishTimeout",
+    "Value": "12960000"
+  },
+  "SoldierCardQualityAdjustGradeAdd": {
+    "Id": "SoldierCardQualityAdjustGradeAdd",
+    "Value": "{\"1\":0,\"2\":0,\"3\":0}"
+  },
+  "DormMaxPresetNum": {
+    "Id": "DormMaxPresetNum",
+    "Value": "20"
+  },
+  "DormDefaultPresetNum": {
+    "Id": "DormDefaultPresetNum",
+    "Value": "10"
+  },
+  "DormMaxRoomNum": {
+    "Id": "DormMaxRoomNum",
+    "Value": "4"
+  },
+  "DormInvitationRoleNormalNum": {
+    "Id": "DormInvitationRoleNormalNum",
+    "Value": "3"
+  },
+  "DormInvitationRoleRandNum": {
+    "Id": "DormInvitationRoleRandNum",
+    "Value": "1"
+  },
+  "DormDefaultFavorability": {
+    "Id": "DormDefaultFavorability",
+    "Value": "50"
+  },
+  "DormDefaultRoles": {
+    "Id": "DormDefaultRoles",
+    "Value": "0"
+  },
+  "DormRefreshTime": {
+    "Id": "DormRefreshTime",
+    "Value": "4,12,20"
+  },
+  "DormOverflowEnergyItem": {
+    "Id": "DormOverflowEnergyItem",
+    "Value": "510701"
+  },
+  "DormOverflowEnergyItemNumMax": {
+    "Id": "DormOverflowEnergyItemNumMax",
+    "Value": "8"
+  },
+  "DormRoleInteractionMaxNum": {
+    "Id": "DormRoleInteractionMaxNum",
+    "Value": "5"
+  },
+  "DormRoleInteractionDropId": {
+    "Id": "DormRoleInteractionDropId",
+    "Value": "4002"
+  },
+  "DormRoleFavorability": {
+    "Id": "DormRoleFavorability",
+    "Value": "300"
+  },
+  "DormRoleAffinityGiftMaxNum": {
+    "Id": "DormRoleAffinityGiftMaxNum",
+    "Value": "5"
+  },
+  "DormRoleAffinityGiftDailyNum": {
+    "Id": "DormRoleAffinityGiftDailyNum",
+    "Value": "1"
+  },
+  "DormFurnitureTab_Furniture": {
+    "Id": "DormFurnitureTab_Furniture",
+    "Value": "1,2,3,4,8"
+  },
+  "DormFurnitureTab_Fitment": {
+    "Id": "DormFurnitureTab_Fitment",
+    "Value": "5,6,7"
+  },
+  "DormFurnitureTab_Set": {
+    "Id": "DormFurnitureTab_Set",
+    "Value": "9,10"
+  },
+  "DormBlocksConvertProp": {
+    "Id": "DormBlocksConvertProp",
+    "Value": "1"
+  },
+  "DormNameResetTimeLimit": {
+    "Id": "DormNameResetTimeLimit",
+    "Value": "604800"
+  },
+  "DormHonorsItemId": {
+    "Id": "DormHonorsItemId",
+    "Value": "140001"
+  },
+  "DormHonorsId": {
+    "Id": "DormHonorsId",
+    "Value": "140001"
+  },
+  "DormLikeLimit": {
+    "Id": "DormLikeLimit",
+    "Value": "3"
   },
   "DailyShopSignReward": {
     "Id": "DailyShopSignReward",
@@ -759,6 +967,10 @@
     "Id": "TutorialSettlementDelayTime",
     "Value": "0"
   },
+  "DynamicDEFCap": {
+    "Id": "DynamicDEFCap",
+    "Value": "500"
+  },
   "EnergyObtainLimit": {
     "Id": "EnergyObtainLimit",
     "Value": "999"
@@ -785,7 +997,7 @@
   },
   "EnergyBatteryUIEnable": {
     "Id": "EnergyBatteryUIEnable",
-    "Value": "0"
+    "Value": "1"
   },
   "EnergyBatteryOpenTime": {
     "Id": "EnergyBatteryOpenTime",
@@ -985,7 +1197,7 @@
   },
   "HudDamageMergeInterval": {
     "Id": "HudDamageMergeInterval",
-    "Value": "1"
+    "Value": "0.4"
   },
   "AgentSpecialRewardsProp": {
     "Id": "AgentSpecialRewardsProp",
