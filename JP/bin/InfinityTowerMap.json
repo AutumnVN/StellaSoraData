@@ -44,6 +44,15 @@
     "BGM": "endlessTower_combatBoss_setState",
     "LeaveTriggerEvent": "amb_endlessTower_all_stop"
   },
+  "201030": {
+    "Id": 201030,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Fire",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_Liequan_Fire",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_Liequan_Fire",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
+  },
   "201040": {
     "Id": 201040,
     "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Fire",
@@ -76,6 +85,15 @@
     "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Fire",
     "ConfigPrefabName": "InfinityTower_MiniBoss_XingXing_Fire",
     "ContinuePrefabName": "InfinityTower_MiniBoss_XingXing_Fire",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
+  },
+  "201090": {
+    "Id": 201090,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Fire",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_Chuansong_Fire",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_Chuansong_Fire",
     "Theme": 105,
     "BGM": "endlessTower_combatBoss_setState",
     "LeaveTriggerEvent": "amb_endlessTower_all_stop"
@@ -134,6 +152,24 @@
     "BGM": "roguelike_combatShasha_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop"
   },
+  "401021": {
+    "Id": 401021,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Aqua",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_Chuansong_Water",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_Chuansong_Water",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
+  },
+  "401030": {
+    "Id": 401030,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Aqua",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Water",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Water",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
+  },
   "501001": {
     "Id": 501001,
     "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Earth",
@@ -175,6 +211,15 @@
     "SceneName": "Levels/Roguelike/Roguelike_3/Roguelike_3_Boss_001",
     "ConfigPrefabName": "InfinityTower_Boss_DaGuanZi_Ground",
     "ContinuePrefabName": "InfinityTower_Boss_DaGuanZi_Ground",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
+  },
+  "501020": {
+    "Id": 501020,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Earth",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Earth",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Earth",
     "Theme": 105,
     "BGM": "endlessTower_combatBoss_setState",
     "LeaveTriggerEvent": "amb_endlessTower_all_stop"
@@ -233,6 +278,24 @@
     "BGM": "DarkForest_combatBoss_setState",
     "LeaveTriggerEvent": "amb_forest_all_stop"
   },
+  "301040": {
+    "Id": 301040,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Wind",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_Liequan_Wind",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_Liequan_Wind",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
+  },
+  "301060": {
+    "Id": 301060,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Wind",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Wind",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Wind",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
+  },
   "701001": {
     "Id": 701001,
     "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Light",
@@ -272,8 +335,8 @@
   "701050": {
     "Id": 701050,
     "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Light",
-    "ConfigPrefabName": "Roguelike_MiniBoss_SanJianKe",
-    "ContinuePrefabName": "Roguelike_MiniBoss_SanJianKe",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_LieQuan_Light",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_LieQuan_Light",
     "Theme": 105,
     "BGM": "endlessTower_combatBoss_setState",
     "LeaveTriggerEvent": "amb_endlessTower_all_stop"
@@ -292,6 +355,15 @@
     "SceneName": "Levels/Roguelike/Roguelike_4/Roguelike_4_Boss_002",
     "ConfigPrefabName": "InfinityTower_Boss_TaiDeng_Light",
     "ContinuePrefabName": "InfinityTower_Boss_TaiDeng_Light",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
+  },
+  "701060": {
+    "Id": 701060,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Light",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Light",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Light",
     "Theme": 105,
     "BGM": "endlessTower_combatBoss_setState",
     "LeaveTriggerEvent": "amb_endlessTower_all_stop"
@@ -358,5 +430,23 @@
     "Theme": 105,
     "BGM": "roguelike_combatShasha_setState",
     "LeaveTriggerEvent": "amb_roguelike_all_stop"
+  },
+  "601090": {
+    "Id": 601090,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Dark",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_Liequan_Dark",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_Liequan_Dark",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
+  },
+  "601030": {
+    "Id": 601030,
+    "SceneName": "Levels/InfinityTower/InfinityTower_Common_01_Dark",
+    "ConfigPrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Dark",
+    "ContinuePrefabName": "InfinityTower_MiniBoss_XiaoGaoDa_Dark",
+    "Theme": 105,
+    "BGM": "endlessTower_combatBoss_setState",
+    "LeaveTriggerEvent": "amb_endlessTower_all_stop"
   }
 }

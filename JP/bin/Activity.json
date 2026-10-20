@@ -1,4 +1,18 @@
 {
+  "211002": {
+    "Id": 211002,
+    "SortId": 14,
+    "ActivityType": 28,
+    "Name": "关注有礼",
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 1,
+    "EndType": 1,
+    "BannerRes": "banner_activity_211002_lang",
+    "TabBgRes": "Icon/Banner/tab_activity_211002_lang"
+  },
   "101002": {
     "Id": 101002,
     "SortId": 99,
@@ -181,6 +195,21 @@
     "EndTime": "2026-10-20T03:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_103001_lang"
   },
+  "103006": {
+    "Id": 103006,
+    "SortId": 5,
+    "ActivityType": 21,
+    "Name": "紧急悬赏",
+    "PreLimit": 1,
+    "LimitParam": "3",
+    "PlayCond": 1,
+    "PlayCondParams": "3",
+    "StartType": 2,
+    "StartTime": "2026-11-03T04:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T03:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_103001_lang"
+  },
   "301001": {
     "Id": 301001,
     "SortId": 3,
@@ -352,6 +381,65 @@
     "EndType": 2,
     "EndTime": "2026-08-25T03:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_301042_lang"
+  },
+  "301051": {
+    "Id": 301051,
+    "SortId": 6,
+    "ActivityType": 2,
+    "Name": "周年L2D7日签到",
+    "PreLimit": 1,
+    "LimitParam": "2",
+    "PlayCond": 1,
+    "PlayCondParams": "2",
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_301051_lang",
+    "EntranceId": 1001
+  },
+  "301052": {
+    "Id": 301052,
+    "SortId": 6,
+    "ActivityType": 32,
+    "Name": "周年福利签到占位",
+    "PreLimit": 1,
+    "LimitParam": "2",
+    "PlayCond": 1,
+    "PlayCondParams": "2",
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_301052_lang",
+    "EntranceId": 1001
+  },
+  "301053": {
+    "Id": 301053,
+    "SortId": 6,
+    "ActivityType": 2,
+    "Name": "一周年时装赠送签到",
+    "PreLimit": 1,
+    "LimitParam": "2",
+    "PlayCond": 1,
+    "PlayCondParams": "2",
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_301053_lang",
+    "EntranceId": 1001
+  },
+  "302001": {
+    "Id": 302001,
+    "SortId": 1,
+    "ActivityType": 31,
+    "Name": "一周年5日付费签到礼包",
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00",
+    "HideFromActivityList": true
   },
   "201001": {
     "Id": 201001,
@@ -530,6 +618,37 @@
     "EndType": 2,
     "EndTime": "2026-10-20T10:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_sidestory"
+  },
+  "201017": {
+    "Id": 201017,
+    "SortId": 13,
+    "ActivityType": 13,
+    "Name": "心危盛典",
+    "PreLimit": 1,
+    "LimitParam": "3",
+    "PlayCond": 1,
+    "PlayCondParams": "4",
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_infinitytower"
+  },
+  "201018": {
+    "Id": 201018,
+    "SortId": 14,
+    "ActivityType": 13,
+    "Name": "周年特惠",
+    "PreLimit": 1,
+    "LimitParam": "2",
+    "PlayCond": 1,
+    "PlayCondParams": "2",
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_201018_lang",
+    "EntranceId": 1001
   },
   "400000": {
     "Id": 400000,
@@ -764,6 +883,18 @@
     "EndTime": "2026-10-13T04:00:00+08:00",
     "MiniGameRedDot": 1120304
   },
+  "400018": {
+    "Id": 400018,
+    "MidGroupId": 20104,
+    "SortId": 4,
+    "ActivityType": 27,
+    "Name": "速度与机擎",
+    "ActivityThemeType": 22,
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-03T04:00:00+08:00"
+  },
   "500001": {
     "Id": 500001,
     "SortId": 6,
@@ -940,6 +1071,22 @@
     "BannerRes": "banner_activity_05",
     "TabBgRes": "Icon/Banner/tab_activity_05"
   },
+  "500012": {
+    "Id": 500012,
+    "SortId": 6,
+    "ActivityType": 14,
+    "Name": "BD兑换活动",
+    "PreLimit": 1,
+    "LimitParam": "10",
+    "PlayCond": 1,
+    "PlayCondParams": "10",
+    "StartType": 2,
+    "StartTime": "2026-11-03T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T11:00:00+08:00",
+    "BannerRes": "banner_activity_05",
+    "TabBgRes": "Icon/Banner/tab_activity_05"
+  },
   "510001": {
     "Id": 510001,
     "SortId": 4,
@@ -1097,6 +1244,22 @@
     "StartTime": "2026-07-21T12:00:00+08:00",
     "EndType": 2,
     "EndTime": "2026-08-11T10:59:59+08:00",
+    "HideFromActivityList": true
+  },
+  "600004": {
+    "Id": 600004,
+    "SortId": 8,
+    "ActivityType": 16,
+    "Name": "巅峰秀场",
+    "PreLimit": 1,
+    "LimitParam": "10",
+    "PlayCond": 1,
+    "PlayCondParams": "10",
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00",
+    "EnterRes": "Icon/Banner/banner_travelerduel_r_lang",
     "HideFromActivityList": true
   },
   "700101": {
@@ -1439,6 +1602,28 @@
     "EndTime": "2026-10-27T10:59:59+08:00",
     "TabBgRes": "Icon/Banner/tab_activity_trial_110"
   },
+  "700132": {
+    "Id": 700132,
+    "SortId": 7,
+    "ActivityType": 6,
+    "Name": "浅试身手-源初尘沙",
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_trial_162_lang"
+  },
+  "700133": {
+    "Id": 700133,
+    "SortId": 7,
+    "ActivityType": 6,
+    "Name": "浅试身手-火垂",
+    "StartType": 2,
+    "StartTime": "2026-10-27T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-17T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_trial_115_lang"
+  },
   "1010001": {
     "Id": 1010001,
     "MidGroupId": 10100,
@@ -1712,6 +1897,20 @@
     "EndTime": "2026-09-29T10:59:59+08:00",
     "BannerRes": "banner_PengCard",
     "TabBgRes": "Icon/Banner/tab_activity_PengCard"
+  },
+  "800006": {
+    "Id": 800006,
+    "MidGroupId": 20104,
+    "ActivityType": 18,
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-03T04:00:00+08:00",
+    "MiniGameRedDot": 2010405
   },
   "900001": {
     "Id": 900001,
@@ -1992,6 +2191,22 @@
     "StartTime": "2026-05-26T12:00:00+08:00",
     "EndType": 2,
     "EndTime": "2026-06-05T03:59:59+08:00"
+  },
+  "1110701": {
+    "Id": 1110701,
+    "SortId": 3,
+    "ActivityType": 1,
+    "Name": "火垂卡池复刻纪念任务",
+    "SpecialParam": "1010702",
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-10-27T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-17T10:59:59+08:00",
+    "TabBgRes": "Icon/Banner/tab_activity_1110701_lang"
   },
   "1010701": {
     "Id": 1010701,
@@ -2409,5 +2624,90 @@
     "StartTime": "2026-09-29T12:00:00+08:00",
     "EndType": 2,
     "EndTime": "2026-10-20T10:59:59+08:00"
+  },
+  "2010401": {
+    "Id": 2010401,
+    "MidGroupId": 20104,
+    "SortId": 8,
+    "ActivityType": 9,
+    "Name": "原初尘沙战斗关卡",
+    "ActivityThemeType": 22,
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-03T04:00:00+08:00"
+  },
+  "2010403": {
+    "Id": 2010403,
+    "MidGroupId": 20104,
+    "SortId": 11,
+    "ActivityType": 11,
+    "Name": "原初尘沙活动任务",
+    "ActivityThemeType": 22,
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00"
+  },
+  "2010404": {
+    "Id": 2010404,
+    "MidGroupId": 20104,
+    "SortId": 12,
+    "ActivityType": 12,
+    "Name": "原初尘沙活动商店",
+    "ActivityThemeType": 22,
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00"
+  },
+  "3010401": {
+    "Id": 3010401,
+    "MidGroupId": 30104,
+    "SortId": 5,
+    "ActivityType": 15,
+    "Name": "缭乱碎晶球第四期",
+    "ActivityThemeType": 21,
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-11-03T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00",
+    "EnterRes": "Icon/Banner/banner_activity_30104_m_lang"
+  },
+  "3010402": {
+    "Id": 3010402,
+    "MidGroupId": 30104,
+    "SortId": 11,
+    "ActivityType": 11,
+    "Name": "缭乱碎晶球任务",
+    "ActivityThemeType": 21,
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-11-03T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-13T03:59:59+08:00"
+  },
+  "3010403": {
+    "Id": 3010403,
+    "MidGroupId": 30104,
+    "SortId": 12,
+    "ActivityType": 12,
+    "Name": "缭乱碎晶球商店",
+    "ActivityThemeType": 21,
+    "PreLimit": 1,
+    "LimitParam": "5",
+    "PlayCond": 1,
+    "PlayCondParams": "5",
+    "StartType": 2,
+    "StartTime": "2026-11-03T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-13T03:59:59+08:00"
   }
 }

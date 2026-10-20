@@ -3,7 +3,7 @@
     "Id": 2010101,
     "GroupId": 101,
     "Rarity": 5,
-    "Icon": "Soldier_00_BuffCard_Chess_08",
+    "Icon": "Soldier_00_BuffCard_Coin_01",
     "Name": "SoldierStrategyCard.2010101.1",
     "CardEffectId": 2010101,
     "Des": "SoldierStrategyCard.2010101.2",
@@ -13,7 +13,7 @@
     "Id": 2010102,
     "GroupId": 101,
     "Rarity": 5,
-    "Icon": "Soldier_00_BuffCard_Chess_05",
+    "Icon": "Soldier_00_BuffCard_Exp_01",
     "Name": "SoldierStrategyCard.2010102.1",
     "CardEffectId": 2010102,
     "Des": "SoldierStrategyCard.2010102.2",
@@ -23,7 +23,7 @@
     "Id": 2010103,
     "GroupId": 101,
     "Rarity": 5,
-    "Icon": "Soldier_00_BuffCard_Coin_02",
+    "Icon": "Soldier_00_BuffCard_Shop_01",
     "Name": "SoldierStrategyCard.2010103.1",
     "CardEffectId": 2010103,
     "Des": "SoldierStrategyCard.2010103.2",
@@ -33,7 +33,7 @@
     "Id": 2010104,
     "GroupId": 101,
     "Rarity": 5,
-    "Icon": "Soldier_00_BuffCard_Coin_01",
+    "Icon": "Soldier_00_BuffCard_Hp_01",
     "Name": "SoldierStrategyCard.2010104.1",
     "CardEffectId": 2010104,
     "Des": "SoldierStrategyCard.2010104.2",
@@ -43,7 +43,7 @@
     "Id": 2010105,
     "GroupId": 101,
     "Rarity": 5,
-    "Icon": "Soldier_00_BuffCard_Shop_01",
+    "Icon": "Soldier_00_BuffCard_Chess_08",
     "Name": "SoldierStrategyCard.2010105.1",
     "CardEffectId": 2010105,
     "Des": "SoldierStrategyCard.2010105.2",
@@ -63,7 +63,7 @@
     "Id": 2010107,
     "GroupId": 101,
     "Rarity": 5,
-    "Icon": "Soldier_00_BuffCard_Chess_06",
+    "Icon": "Soldier_00_BuffCard_Exp_01",
     "Name": "SoldierStrategyCard.2010107.1",
     "CardEffectId": 2010107,
     "Des": "SoldierStrategyCard.2010107.2",
@@ -73,51 +73,35 @@
     "Id": 2010108,
     "GroupId": 101,
     "Rarity": 5,
-    "Icon": "Soldier_00_BuffCard_Shop_02",
+    "Icon": "Soldier_00_BuffCard_Coin_02",
     "Name": "SoldierStrategyCard.2010108.1",
     "CardEffectId": 2010108,
     "Des": "SoldierStrategyCard.2010108.2",
-    "Desc": "SoldierStrategyCard.2010108.3"
+    "Desc": "SoldierStrategyCard.2010108.3",
+    "UnlockCond": 4,
+    "UnlockCondParams": [
+      2
+    ]
   },
   "2010109": {
     "Id": 2010109,
     "GroupId": 101,
     "Rarity": 5,
-    "Icon": "Soldier_00_BuffCard_Chess_06",
+    "Icon": "Soldier_00_BuffCard_Hp_02",
     "Name": "SoldierStrategyCard.2010109.1",
     "CardEffectId": 2010109,
     "Des": "SoldierStrategyCard.2010109.2",
-    "Desc": "SoldierStrategyCard.2010109.3",
-    "GradeLevelCond": 10201,
-    "UnlockCond": 4,
-    "UnlockCondParams": [
-      3
-    ]
-  },
-  "2010110": {
-    "Id": 2010110,
-    "GroupId": 101,
-    "Rarity": 5,
-    "Icon": "Soldier_00_BuffCard_Hp_02",
-    "Name": "SoldierStrategyCard.2010110.1",
-    "CardEffectId": 2010110,
-    "Des": "SoldierStrategyCard.2010110.2",
-    "Desc": "SoldierStrategyCard.2010110.3"
+    "Desc": "SoldierStrategyCard.2010109.3"
   },
   "2010111": {
     "Id": 2010111,
     "GroupId": 101,
-    "Rarity": 5,
+    "Rarity": 4,
     "Icon": "Soldier_00_BuffCard_Exp_01",
     "Name": "SoldierStrategyCard.2010111.1",
     "CardEffectId": 2010111,
     "Des": "SoldierStrategyCard.2010111.2",
-    "Desc": "SoldierStrategyCard.2010111.3",
-    "GradeLevelCond": 10201,
-    "UnlockCond": 4,
-    "UnlockCondParams": [
-      3
-    ]
+    "Desc": "SoldierStrategyCard.2010111.3"
   },
   "2010112": {
     "Id": 2010112,
@@ -139,61 +123,93 @@
     "Des": "SoldierStrategyCard.2010113.2",
     "Desc": "SoldierStrategyCard.2010113.3"
   },
-  "2010201": {
-    "Id": 2010201,
+  "2010116": {
+    "Id": 2010116,
     "GroupId": 101,
     "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Coin_01",
-    "Name": "SoldierStrategyCard.2010201.1",
-    "CardEffectId": 2010201,
-    "Des": "SoldierStrategyCard.2010201.2",
-    "Desc": "SoldierStrategyCard.2010201.3",
-    "GradeLevelCond": 10201,
-    "UnlockCond": 4,
-    "UnlockCondParams": [
-      3
-    ]
+    "Icon": "Soldier_00_BuffCard_Shop_01",
+    "Name": "SoldierStrategyCard.2010116.1",
+    "CardEffectId": 2010116,
+    "Des": "SoldierStrategyCard.2010116.2",
+    "Desc": "SoldierStrategyCard.2010116.3"
+  },
+  "2010117": {
+    "Id": 2010117,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Exp_01",
+    "Name": "SoldierStrategyCard.2010117.1",
+    "CardEffectId": 2010117,
+    "Des": "SoldierStrategyCard.2010117.2",
+    "Desc": "SoldierStrategyCard.2010117.3"
+  },
+  "2010118": {
+    "Id": 2010118,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Coin_02",
+    "Name": "SoldierStrategyCard.2010118.1",
+    "CardEffectId": 2010118,
+    "Des": "SoldierStrategyCard.2010118.2",
+    "Desc": "SoldierStrategyCard.2010118.3"
+  },
+  "2010119": {
+    "Id": 2010119,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Chess_06",
+    "Name": "SoldierStrategyCard.2010119.1",
+    "CardEffectId": 2010119,
+    "Des": "SoldierStrategyCard.2010119.2",
+    "Desc": "SoldierStrategyCard.2010119.3"
   },
   "2010202": {
     "Id": 2010202,
     "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Shop_08",
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Shop_03",
     "Name": "SoldierStrategyCard.2010202.1",
     "CardEffectId": 2010202,
     "Des": "SoldierStrategyCard.2010202.2",
     "Desc": "SoldierStrategyCard.2010202.3",
-    "GradeLevelCond": 10201,
     "UnlockCond": 4,
     "UnlockCondParams": [
-      3
+      2
     ]
   },
   "2010203": {
     "Id": 2010203,
     "GroupId": 101,
     "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Shop_06",
+    "Icon": "Soldier_00_BuffCard_Exp_01",
     "Name": "SoldierStrategyCard.2010203.1",
     "CardEffectId": 2010203,
     "Des": "SoldierStrategyCard.2010203.2",
-    "Desc": "SoldierStrategyCard.2010203.3"
+    "Desc": "SoldierStrategyCard.2010203.3",
+    "UnlockCond": 4,
+    "UnlockCondParams": [
+      3
+    ]
   },
   "2010204": {
     "Id": 2010204,
     "GroupId": 101,
     "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Shop_05",
+    "Icon": "Soldier_00_BuffCard_Chess_04",
     "Name": "SoldierStrategyCard.2010204.1",
     "CardEffectId": 2010204,
     "Des": "SoldierStrategyCard.2010204.2",
-    "Desc": "SoldierStrategyCard.2010204.3"
+    "Desc": "SoldierStrategyCard.2010204.3",
+    "UnlockCond": 4,
+    "UnlockCondParams": [
+      2
+    ]
   },
   "2010205": {
     "Id": 2010205,
     "GroupId": 101,
     "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Shop_01",
+    "Icon": "Soldier_00_BuffCard_Exp_02",
     "Name": "SoldierStrategyCard.2010205.1",
     "CardEffectId": 2010205,
     "Des": "SoldierStrategyCard.2010205.2",
@@ -203,28 +219,17 @@
     "Id": 2010206,
     "GroupId": 101,
     "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Chess_02",
+    "Icon": "Soldier_00_BuffCard_Shop_04",
     "Name": "SoldierStrategyCard.2010206.1",
     "CardEffectId": 2010206,
     "Des": "SoldierStrategyCard.2010206.2",
-    "Desc": "SoldierStrategyCard.2010206.3",
-    "GradeLevelCond": 10201
-  },
-  "2010207": {
-    "Id": 2010207,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Hp_05",
-    "Name": "SoldierStrategyCard.2010207.1",
-    "CardEffectId": 2010207,
-    "Des": "SoldierStrategyCard.2010207.2",
-    "Desc": "SoldierStrategyCard.2010207.3"
+    "Desc": "SoldierStrategyCard.2010206.3"
   },
   "2010208": {
     "Id": 2010208,
     "GroupId": 101,
     "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Exp_02",
+    "Icon": "Soldier_00_BuffCard_Hp_04",
     "Name": "SoldierStrategyCard.2010208.1",
     "CardEffectId": 2010208,
     "Des": "SoldierStrategyCard.2010208.2",
@@ -234,123 +239,17 @@
     "Id": 2010209,
     "GroupId": 101,
     "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Chess_04",
+    "Icon": "Soldier_00_BuffCard_Shop_07",
     "Name": "SoldierStrategyCard.2010209.1",
     "CardEffectId": 2010209,
     "Des": "SoldierStrategyCard.2010209.2",
     "Desc": "SoldierStrategyCard.2010209.3"
   },
-  "2010210": {
-    "Id": 2010210,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Chess_05",
-    "Name": "SoldierStrategyCard.2010210.1",
-    "CardEffectId": 2010210,
-    "Des": "SoldierStrategyCard.2010210.2",
-    "Desc": "SoldierStrategyCard.2010210.3"
-  },
-  "2010211": {
-    "Id": 2010211,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Hp_02",
-    "Name": "SoldierStrategyCard.2010211.1",
-    "CardEffectId": 2010211,
-    "Des": "SoldierStrategyCard.2010211.2",
-    "Desc": "SoldierStrategyCard.2010211.3"
-  },
-  "2010212": {
-    "Id": 2010212,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Chess_06",
-    "Name": "SoldierStrategyCard.2010212.1",
-    "CardEffectId": 2010212,
-    "Des": "SoldierStrategyCard.2010212.2",
-    "Desc": "SoldierStrategyCard.2010212.3"
-  },
-  "2010213": {
-    "Id": 2010213,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Chess_02",
-    "Name": "SoldierStrategyCard.2010213.1",
-    "CardEffectId": 2010213,
-    "Des": "SoldierStrategyCard.2010213.2",
-    "Desc": "SoldierStrategyCard.2010213.3"
-  },
-  "2010214": {
-    "Id": 2010214,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Chess_11",
-    "Name": "SoldierStrategyCard.2010214.1",
-    "CardEffectId": 2010214,
-    "Des": "SoldierStrategyCard.2010214.2",
-    "Desc": "SoldierStrategyCard.2010214.3"
-  },
-  "2010215": {
-    "Id": 2010215,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Shop_07",
-    "Name": "SoldierStrategyCard.2010215.1",
-    "CardEffectId": 2010215,
-    "Des": "SoldierStrategyCard.2010215.2",
-    "Desc": "SoldierStrategyCard.2010215.3"
-  },
-  "2010216": {
-    "Id": 2010216,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Chess_08",
-    "Name": "SoldierStrategyCard.2010216.1",
-    "CardEffectId": 2010216,
-    "Des": "SoldierStrategyCard.2010216.2",
-    "Desc": "SoldierStrategyCard.2010216.3"
-  },
-  "2010217": {
-    "Id": 2010217,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Partner_04",
-    "Name": "SoldierStrategyCard.2010217.1",
-    "CardEffectId": 2010217,
-    "Des": "SoldierStrategyCard.2010217.2",
-    "Desc": "SoldierStrategyCard.2010217.3",
-    "GradeLevelCond": 10201
-  },
-  "2010218": {
-    "Id": 2010218,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Exp_01",
-    "Name": "SoldierStrategyCard.2010218.1",
-    "CardEffectId": 2010218,
-    "Des": "SoldierStrategyCard.2010218.2",
-    "Desc": "SoldierStrategyCard.2010218.3"
-  },
-  "2010219": {
-    "Id": 2010219,
-    "GroupId": 101,
-    "Rarity": 4,
-    "Icon": "Soldier_00_BuffCard_Exp_01",
-    "Name": "SoldierStrategyCard.2010219.1",
-    "CardEffectId": 2010219,
-    "Des": "SoldierStrategyCard.2010219.2",
-    "Desc": "SoldierStrategyCard.2010219.3",
-    "GradeLevelCond": 10201,
-    "UnlockCond": 4,
-    "UnlockCondParams": [
-      2
-    ]
-  },
   "2010301": {
     "Id": 2010301,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Coin_03",
+    "Icon": "Soldier_00_BuffCard_Shop_05",
     "Name": "SoldierStrategyCard.2010301.1",
     "CardEffectId": 2010301,
     "Des": "SoldierStrategyCard.2010301.2",
@@ -360,16 +259,11 @@
     "Id": 2010302,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Hp_05",
+    "Icon": "Soldier_00_BuffCard_Exp_02",
     "Name": "SoldierStrategyCard.2010302.1",
     "CardEffectId": 2010302,
     "Des": "SoldierStrategyCard.2010302.2",
-    "Desc": "SoldierStrategyCard.2010302.3",
-    "GradeLevelCond": 10201,
-    "UnlockCond": 4,
-    "UnlockCondParams": [
-      3
-    ]
+    "Desc": "SoldierStrategyCard.2010302.3"
   },
   "2010303": {
     "Id": 2010303,
@@ -381,21 +275,11 @@
     "Des": "SoldierStrategyCard.2010303.2",
     "Desc": "SoldierStrategyCard.2010303.3"
   },
-  "2010304": {
-    "Id": 2010304,
-    "GroupId": 101,
-    "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Hp_02",
-    "Name": "SoldierStrategyCard.2010304.1",
-    "CardEffectId": 2010304,
-    "Des": "SoldierStrategyCard.2010304.2",
-    "Desc": "SoldierStrategyCard.2010304.3"
-  },
   "2010305": {
     "Id": 2010305,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Shop_06",
+    "Icon": "Soldier_00_BuffCard_Coin_03",
     "Name": "SoldierStrategyCard.2010305.1",
     "CardEffectId": 2010305,
     "Des": "SoldierStrategyCard.2010305.2",
@@ -405,18 +289,21 @@
     "Id": 2010306,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Dice_01",
+    "Icon": "Soldier_00_BuffCard_Hp_05",
     "Name": "SoldierStrategyCard.2010306.1",
     "CardEffectId": 2010306,
     "Des": "SoldierStrategyCard.2010306.2",
     "Desc": "SoldierStrategyCard.2010306.3",
-    "GradeLevelCond": 10201
+    "UnlockCond": 4,
+    "UnlockCondParams": [
+      2
+    ]
   },
   "2010307": {
     "Id": 2010307,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Chess_08",
+    "Icon": "Soldier_00_BuffCard_Hp_05",
     "Name": "SoldierStrategyCard.2010307.1",
     "CardEffectId": 2010307,
     "Des": "SoldierStrategyCard.2010307.2",
@@ -426,58 +313,37 @@
     "Id": 2010308,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Coin_02",
+    "Icon": "Soldier_00_BuffCard_Card_01",
     "Name": "SoldierStrategyCard.2010308.1",
     "CardEffectId": 2010308,
     "Des": "SoldierStrategyCard.2010308.2",
     "Desc": "SoldierStrategyCard.2010308.3"
   },
-  "2010309": {
-    "Id": 2010309,
-    "GroupId": 101,
-    "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Coin_01",
-    "Name": "SoldierStrategyCard.2010309.1",
-    "CardEffectId": 2010309,
-    "Des": "SoldierStrategyCard.2010309.2",
-    "Desc": "SoldierStrategyCard.2010309.3",
-    "GradeLevelCond": 10201
-  },
   "2010310": {
     "Id": 2010310,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Chess_11",
+    "Icon": "Soldier_00_BuffCard_Shop_05",
     "Name": "SoldierStrategyCard.2010310.1",
     "CardEffectId": 2010310,
     "Des": "SoldierStrategyCard.2010310.2",
-    "Desc": "SoldierStrategyCard.2010310.3",
-    "GradeLevelCond": 10201,
-    "UnlockCond": 4,
-    "UnlockCondParams": [
-      2
-    ]
+    "Desc": "SoldierStrategyCard.2010310.3"
   },
   "2010311": {
     "Id": 2010311,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Hp_05",
+    "Icon": "Soldier_00_BuffCard_Shop_01",
     "Name": "SoldierStrategyCard.2010311.1",
     "CardEffectId": 2010311,
     "Des": "SoldierStrategyCard.2010311.2",
-    "Desc": "SoldierStrategyCard.2010311.3",
-    "GradeLevelCond": 10201,
-    "UnlockCond": 4,
-    "UnlockCondParams": [
-      3
-    ]
+    "Desc": "SoldierStrategyCard.2010311.3"
   },
   "2010312": {
     "Id": 2010312,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Partner_02_06",
+    "Icon": "Soldier_00_BuffCard_Exp_01",
     "Name": "SoldierStrategyCard.2010312.1",
     "CardEffectId": 2010312,
     "Des": "SoldierStrategyCard.2010312.2",
@@ -487,10 +353,251 @@
     "Id": 2010313,
     "GroupId": 101,
     "Rarity": 3,
-    "Icon": "Soldier_00_BuffCard_Partner_02_09",
+    "Icon": "Soldier_00_BuffCard_Coin_03",
     "Name": "SoldierStrategyCard.2010313.1",
     "CardEffectId": 2010313,
     "Des": "SoldierStrategyCard.2010313.2",
     "Desc": "SoldierStrategyCard.2010313.3"
+  },
+  "2010314": {
+    "Id": 2010314,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Shop_02",
+    "Name": "SoldierStrategyCard.2010314.1",
+    "CardEffectId": 2010314,
+    "Des": "SoldierStrategyCard.2010314.2",
+    "Desc": "SoldierStrategyCard.2010314.3"
+  },
+  "2010315": {
+    "Id": 2010315,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Exp_02",
+    "Name": "SoldierStrategyCard.2010315.1",
+    "CardEffectId": 2010315,
+    "Des": "SoldierStrategyCard.2010315.2",
+    "Desc": "SoldierStrategyCard.2010315.3"
+  },
+  "2010316": {
+    "Id": 2010316,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Shop_06",
+    "Name": "SoldierStrategyCard.2010316.1",
+    "CardEffectId": 2010316,
+    "Des": "SoldierStrategyCard.2010316.2",
+    "Desc": "SoldierStrategyCard.2010316.3"
+  },
+  "2010318": {
+    "Id": 2010318,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Coin_02",
+    "Name": "SoldierStrategyCard.2010318.1",
+    "CardEffectId": 2010318,
+    "Des": "SoldierStrategyCard.2010318.2",
+    "Desc": "SoldierStrategyCard.2010318.3"
+  },
+  "2010319": {
+    "Id": 2010319,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Chess_11",
+    "Name": "SoldierStrategyCard.2010319.1",
+    "CardEffectId": 2010319,
+    "Des": "SoldierStrategyCard.2010319.2",
+    "Desc": "SoldierStrategyCard.2010319.3"
+  },
+  "2011204": {
+    "Id": 2011204,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_04",
+    "Name": "SoldierStrategyCard.2011204.1",
+    "CardEffectId": 2011204,
+    "Des": "SoldierStrategyCard.2011204.2",
+    "Desc": "SoldierStrategyCard.2011204.3",
+    "CharacterShow": [
+      2501016
+    ]
+  },
+  "2011206": {
+    "Id": 2011206,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_06",
+    "Name": "SoldierStrategyCard.2011206.1",
+    "CardEffectId": 2011206,
+    "Des": "SoldierStrategyCard.2011206.2",
+    "Desc": "SoldierStrategyCard.2011206.3",
+    "CharacterShow": [
+      2501023
+    ]
+  },
+  "2011209": {
+    "Id": 2011209,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_10",
+    "Name": "SoldierStrategyCard.2011209.1",
+    "CardEffectId": 2011209,
+    "Des": "SoldierStrategyCard.2011209.2",
+    "Desc": "SoldierStrategyCard.2011209.3",
+    "CharacterShow": [
+      2501026
+    ]
+  },
+  "2011210": {
+    "Id": 2011210,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_11",
+    "Name": "SoldierStrategyCard.2011210.1",
+    "CardEffectId": 2011210,
+    "Des": "SoldierStrategyCard.2011210.2",
+    "Desc": "SoldierStrategyCard.2011210.3",
+    "CharacterShow": [
+      2501037
+    ]
+  },
+  "2011213": {
+    "Id": 2011213,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_15",
+    "Name": "SoldierStrategyCard.2011213.1",
+    "CardEffectId": 2011213,
+    "Des": "SoldierStrategyCard.2011213.2",
+    "Desc": "SoldierStrategyCard.2011213.3"
+  },
+  "2011222": {
+    "Id": 2011222,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_22",
+    "Name": "SoldierStrategyCard.2011222.1",
+    "CardEffectId": 2011222,
+    "Des": "SoldierStrategyCard.2011222.2",
+    "Desc": "SoldierStrategyCard.2011222.3",
+    "CharacterShow": [
+      2501059
+    ]
+  },
+  "2011227": {
+    "Id": 2011227,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_27",
+    "Name": "SoldierStrategyCard.2011227.1",
+    "CardEffectId": 2011227,
+    "Des": "SoldierStrategyCard.2011227.2",
+    "Desc": "SoldierStrategyCard.2011227.3",
+    "CharacterShow": [
+      2501043
+    ]
+  },
+  "2011228": {
+    "Id": 2011228,
+    "GroupId": 101,
+    "Rarity": 4,
+    "Icon": "Soldier_00_BuffCard_Partner_01_28",
+    "Name": "SoldierStrategyCard.2011228.1",
+    "CardEffectId": 2011228,
+    "Des": "SoldierStrategyCard.2011228.2",
+    "Desc": "SoldierStrategyCard.2011228.3",
+    "CharacterShow": [
+      2501058
+    ]
+  },
+  "2011301": {
+    "Id": 2011301,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_06",
+    "Name": "SoldierStrategyCard.2011301.1",
+    "CardEffectId": 2011301,
+    "Des": "SoldierStrategyCard.2011301.2",
+    "Desc": "SoldierStrategyCard.2011301.3"
+  },
+  "2011302": {
+    "Id": 2011302,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_09",
+    "Name": "SoldierStrategyCard.2011302.1",
+    "CardEffectId": 2011302,
+    "Des": "SoldierStrategyCard.2011302.2",
+    "Desc": "SoldierStrategyCard.2011302.3"
+  },
+  "2011303": {
+    "Id": 2011303,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_04",
+    "Name": "SoldierStrategyCard.2011303.1",
+    "CardEffectId": 2011303,
+    "Des": "SoldierStrategyCard.2011303.2",
+    "Desc": "SoldierStrategyCard.2011303.3"
+  },
+  "2011304": {
+    "Id": 2011304,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_10",
+    "Name": "SoldierStrategyCard.2011304.1",
+    "CardEffectId": 2011304,
+    "Des": "SoldierStrategyCard.2011304.2",
+    "Desc": "SoldierStrategyCard.2011304.3"
+  },
+  "2011305": {
+    "Id": 2011305,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_14",
+    "Name": "SoldierStrategyCard.2011305.1",
+    "CardEffectId": 2011305,
+    "Des": "SoldierStrategyCard.2011305.2",
+    "Desc": "SoldierStrategyCard.2011305.3"
+  },
+  "2011307": {
+    "Id": 2011307,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_22",
+    "Name": "SoldierStrategyCard.2011307.1",
+    "CardEffectId": 2011307,
+    "Des": "SoldierStrategyCard.2011307.2",
+    "Desc": "SoldierStrategyCard.2011307.3"
+  },
+  "2011308": {
+    "Id": 2011308,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_27",
+    "Name": "SoldierStrategyCard.2011308.1",
+    "CardEffectId": 2011308,
+    "Des": "SoldierStrategyCard.2011308.2",
+    "Desc": "SoldierStrategyCard.2011308.3"
+  },
+  "2011309": {
+    "Id": 2011309,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_15",
+    "Name": "SoldierStrategyCard.2011309.1",
+    "CardEffectId": 2011309,
+    "Des": "SoldierStrategyCard.2011309.2",
+    "Desc": "SoldierStrategyCard.2011309.3"
+  },
+  "2011310": {
+    "Id": 2011310,
+    "GroupId": 101,
+    "Rarity": 3,
+    "Icon": "Soldier_00_BuffCard_Partner_02_28",
+    "Name": "SoldierStrategyCard.2011310.1",
+    "CardEffectId": 2011310,
+    "Des": "SoldierStrategyCard.2011310.2",
+    "Desc": "SoldierStrategyCard.2011310.3"
   }
 }

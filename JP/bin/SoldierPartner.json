@@ -152,7 +152,7 @@
     "PartnerLevelQuality": 3,
     "Desc": "SoldierPartner.10603.2",
     "Level": 3,
-    "Num": 5,
+    "Num": 6,
     "SoldierPartnerNumType": 1
   },
   "10604": {
@@ -162,15 +162,8 @@
     "PartnerLevelQuality": 4,
     "Desc": "SoldierPartner.10604.2",
     "Level": 4,
-    "Num": 6,
-    "SoldierPartnerNumType": 1,
-    "ServerEffect": [
-      1060401,
-      1060402,
-      1060403,
-      1060404,
-      1060405
-    ]
+    "Num": 7,
+    "SoldierPartnerNumType": 1
   },
   "10701": {
     "Id": 10701,
@@ -190,12 +183,16 @@
     "Desc": "SoldierPartner.10801.2",
     "Level": 1,
     "Num": 1,
-    "SoldierPartnerNumType": 2,
+    "SoldierPartnerNumType": 1,
     "ClientEffect": [
       1080101,
       1080102,
       1080103,
-      1080104
+      1080104,
+      1080105,
+      1080106,
+      1080107,
+      1080108
     ]
   },
   "10901": {
@@ -242,16 +239,56 @@
     "Id": 11001,
     "PartnerType": 10,
     "Name": "SoldierPartner.11001.1",
-    "PartnerLevelQuality": 3,
+    "PartnerLevelQuality": 1,
     "Desc": "SoldierPartner.11001.2",
     "Level": 1,
     "Num": 2,
     "SoldierPartnerNumType": 1,
-    "ServerEffect": [
-      1100101,
-      1100102,
-      1100103
-    ]
+    "ServerEffect": 301100
+  },
+  "11002": {
+    "Id": 11002,
+    "PartnerType": 10,
+    "Name": "SoldierPartner.11002.1",
+    "PartnerLevelQuality": 2,
+    "Desc": "SoldierPartner.11002.2",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301101
+  },
+  "11003": {
+    "Id": 11003,
+    "PartnerType": 10,
+    "Name": "SoldierPartner.11003.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.11003.2",
+    "Level": 3,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301101
+  },
+  "11004": {
+    "Id": 11004,
+    "PartnerType": 10,
+    "Name": "SoldierPartner.11004.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.11004.2",
+    "Level": 4,
+    "Num": 5,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301101
+  },
+  "11005": {
+    "Id": 11005,
+    "PartnerType": 10,
+    "Name": "SoldierPartner.11005.1",
+    "PartnerLevelQuality": 4,
+    "Desc": "SoldierPartner.11005.2",
+    "Level": 5,
+    "Num": 6,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301102
   },
   "11101": {
     "Id": 11101,
@@ -364,6 +401,21 @@
       1140203
     ]
   },
+  "11403": {
+    "Id": 11403,
+    "PartnerType": 14,
+    "Name": "SoldierPartner.11403.1",
+    "PartnerLevelQuality": 4,
+    "Desc": "SoldierPartner.11403.2",
+    "Level": 3,
+    "Num": 6,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1140301,
+      1140302,
+      1140303
+    ]
+  },
   "11501": {
     "Id": 11501,
     "PartnerType": 15,
@@ -371,7 +423,7 @@
     "PartnerLevelQuality": 1,
     "Desc": "SoldierPartner.11501.2",
     "Level": 1,
-    "Num": 1,
+    "Num": 2,
     "SoldierPartnerNumType": 1,
     "ClientEffect": [
       1150101,
@@ -385,7 +437,7 @@
     "PartnerLevelQuality": 2,
     "Desc": "SoldierPartner.11502.2",
     "Level": 2,
-    "Num": 2,
+    "Num": 4,
     "SoldierPartnerNumType": 1,
     "ClientEffect": [
       1150201,
@@ -399,11 +451,25 @@
     "PartnerLevelQuality": 3,
     "Desc": "SoldierPartner.11503.2",
     "Level": 3,
-    "Num": 3,
+    "Num": 6,
     "SoldierPartnerNumType": 1,
     "ClientEffect": [
       1150301,
       1150302
+    ]
+  },
+  "11504": {
+    "Id": 11504,
+    "PartnerType": 15,
+    "Name": "SoldierPartner.11504.1",
+    "PartnerLevelQuality": 4,
+    "Desc": "SoldierPartner.11504.2",
+    "Level": 4,
+    "Num": 8,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1150401,
+      1150402
     ]
   },
   "11601": {
@@ -413,27 +479,27 @@
     "PartnerLevelQuality": 1,
     "Desc": "SoldierPartner.11601.2",
     "Level": 1,
-    "Num": 1,
+    "Num": 2,
     "SoldierPartnerNumType": 1
   },
   "11602": {
     "Id": 11602,
     "PartnerType": 16,
     "Name": "SoldierPartner.11602.1",
-    "PartnerLevelQuality": 2,
+    "PartnerLevelQuality": 3,
     "Desc": "SoldierPartner.11602.2",
     "Level": 2,
-    "Num": 2,
+    "Num": 4,
     "SoldierPartnerNumType": 1
   },
   "11603": {
     "Id": 11603,
     "PartnerType": 16,
     "Name": "SoldierPartner.11603.1",
-    "PartnerLevelQuality": 3,
+    "PartnerLevelQuality": 4,
     "Desc": "SoldierPartner.11603.2",
     "Level": 3,
-    "Num": 3,
+    "Num": 6,
     "SoldierPartnerNumType": 1
   },
   "11701": {
@@ -443,7 +509,7 @@
     "PartnerLevelQuality": 1,
     "Desc": "SoldierPartner.11701.2",
     "Level": 1,
-    "Num": 1,
+    "Num": 2,
     "SoldierPartnerNumType": 1
   },
   "11702": {
@@ -453,7 +519,7 @@
     "PartnerLevelQuality": 2,
     "Desc": "SoldierPartner.11702.2",
     "Level": 2,
-    "Num": 2,
+    "Num": 3,
     "SoldierPartnerNumType": 1
   },
   "11703": {
@@ -463,7 +529,7 @@
     "PartnerLevelQuality": 3,
     "Desc": "SoldierPartner.11703.2",
     "Level": 3,
-    "Num": 3,
+    "Num": 4,
     "SoldierPartnerNumType": 1
   },
   "11801": {
@@ -530,13 +596,409 @@
     "Id": 11901,
     "PartnerType": 19,
     "Name": "SoldierPartner.11901.1",
-    "PartnerLevelQuality": 3,
+    "PartnerLevelQuality": 1,
     "Desc": "SoldierPartner.11901.2",
     "Level": 1,
     "Num": 2,
     "SoldierPartnerNumType": 1,
-    "ServerEffect": [
-      1190101
+    "ServerEffect": 301190
+  },
+  "11902": {
+    "Id": 11902,
+    "PartnerType": 19,
+    "Name": "SoldierPartner.11902.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.11902.2",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301190
+  },
+  "12001": {
+    "Id": 12001,
+    "PartnerType": 20,
+    "Name": "SoldierPartner.12001.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.12001.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12002": {
+    "Id": 12002,
+    "PartnerType": 20,
+    "Name": "SoldierPartner.12002.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.12002.2",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1,
+    "ServerEffect": 301200
+  },
+  "12101": {
+    "Id": 12101,
+    "PartnerType": 21,
+    "Name": "SoldierPartner.12101.1",
+    "PartnerLevelQuality": 5,
+    "Desc": "SoldierPartner.12101.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12201": {
+    "Id": 12201,
+    "PartnerType": 22,
+    "Name": "SoldierPartner.12201.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.12201.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12202": {
+    "Id": 12202,
+    "PartnerType": 22,
+    "Name": "SoldierPartner.12202.1",
+    "PartnerLevelQuality": 2,
+    "Desc": "SoldierPartner.12202.2",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "12203": {
+    "Id": 12203,
+    "PartnerType": 22,
+    "Name": "SoldierPartner.12203.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.12203.2",
+    "Level": 3,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "12204": {
+    "Id": 12204,
+    "PartnerType": 22,
+    "Name": "SoldierPartner.12204.1",
+    "PartnerLevelQuality": 4,
+    "Desc": "SoldierPartner.12204.2",
+    "Level": 4,
+    "Num": 5,
+    "SoldierPartnerNumType": 1
+  },
+  "12301": {
+    "Id": 12301,
+    "PartnerType": 23,
+    "Name": "SoldierPartner.12301.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.12301.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12302": {
+    "Id": 12302,
+    "PartnerType": 23,
+    "Name": "SoldierPartner.12302.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.12302.2",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "12401": {
+    "Id": 12401,
+    "PartnerType": 24,
+    "Name": "SoldierPartner.12401.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.12401.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12501": {
+    "Id": 12501,
+    "PartnerType": 25,
+    "Name": "SoldierPartner.12501.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.12501.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1250101,
+      1250102
     ]
+  },
+  "12502": {
+    "Id": 12502,
+    "PartnerType": 25,
+    "Name": "SoldierPartner.12502.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.12502.2",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1250201,
+      1250202
+    ]
+  },
+  "12601": {
+    "Id": 12601,
+    "PartnerType": 26,
+    "Name": "SoldierPartner.12601.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.12601.2",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 2
+  },
+  "12602": {
+    "Id": 12602,
+    "PartnerType": 26,
+    "Name": "SoldierPartner.12602.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.12602.2",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "12701": {
+    "Id": 12701,
+    "PartnerType": 27,
+    "Name": "SoldierPartner.12701.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.12701.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "Parameter1": 0.36
+  },
+  "12702": {
+    "Id": 12702,
+    "PartnerType": 27,
+    "Name": "SoldierPartner.12702.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.12702.2",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "Parameter1": 0.6
+  },
+  "12703": {
+    "Id": 12703,
+    "PartnerType": 27,
+    "Name": "SoldierPartner.12703.1",
+    "PartnerLevelQuality": 4,
+    "Desc": "SoldierPartner.12703.2",
+    "Level": 3,
+    "Num": 6,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1270101
+    ],
+    "Parameter1": 0.9
+  },
+  "12801": {
+    "Id": 12801,
+    "PartnerType": 28,
+    "Name": "SoldierPartner.12801.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.12801.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "12802": {
+    "Id": 12802,
+    "PartnerType": 28,
+    "Name": "SoldierPartner.12802.1",
+    "PartnerLevelQuality": 2,
+    "Desc": "SoldierPartner.12802.2",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "12803": {
+    "Id": 12803,
+    "PartnerType": 28,
+    "Name": "SoldierPartner.12803.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.12803.2",
+    "Level": 3,
+    "Num": 6,
+    "SoldierPartnerNumType": 1
+  },
+  "12804": {
+    "Id": 12804,
+    "PartnerType": 28,
+    "Name": "SoldierPartner.12804.1",
+    "PartnerLevelQuality": 4,
+    "Desc": "SoldierPartner.12804.2",
+    "Level": 4,
+    "Num": 8,
+    "SoldierPartnerNumType": 1
+  },
+  "12901": {
+    "Id": 12901,
+    "PartnerType": 29,
+    "Name": "SoldierPartner.12901.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.12901.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1290101,
+      1290102
+    ]
+  },
+  "12902": {
+    "Id": 12902,
+    "PartnerType": 29,
+    "Name": "SoldierPartner.12902.1",
+    "PartnerLevelQuality": 2,
+    "Desc": "SoldierPartner.12902.2",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1290201,
+      1290202
+    ]
+  },
+  "12903": {
+    "Id": 12903,
+    "PartnerType": 29,
+    "Name": "SoldierPartner.12903.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.12903.2",
+    "Level": 3,
+    "Num": 4,
+    "SoldierPartnerNumType": 1,
+    "ClientEffect": [
+      1290301,
+      1290302
+    ]
+  },
+  "13001": {
+    "Id": 13001,
+    "PartnerType": 30,
+    "Name": "SoldierPartner.13001.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.13001.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "13002": {
+    "Id": 13002,
+    "PartnerType": 30,
+    "Name": "SoldierPartner.13002.1",
+    "PartnerLevelQuality": 2,
+    "Desc": "SoldierPartner.13002.2",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "13003": {
+    "Id": 13003,
+    "PartnerType": 30,
+    "Name": "SoldierPartner.13003.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.13003.2",
+    "Level": 3,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "13101": {
+    "Id": 13101,
+    "PartnerType": 31,
+    "Name": "SoldierPartner.13101.1",
+    "PartnerLevelQuality": 2,
+    "Desc": "SoldierPartner.13101.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "13102": {
+    "Id": 13102,
+    "PartnerType": 31,
+    "Name": "SoldierPartner.13102.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.13102.2",
+    "Level": 2,
+    "Num": 3,
+    "SoldierPartnerNumType": 1
+  },
+  "13201": {
+    "Id": 13201,
+    "PartnerType": 32,
+    "Name": "SoldierPartner.13201.1",
+    "PartnerLevelQuality": 1,
+    "Desc": "SoldierPartner.13201.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "13202": {
+    "Id": 13202,
+    "PartnerType": 32,
+    "Name": "SoldierPartner.13202.1",
+    "PartnerLevelQuality": 3,
+    "Desc": "SoldierPartner.13202.2",
+    "Level": 2,
+    "Num": 4,
+    "SoldierPartnerNumType": 1
+  },
+  "13301": {
+    "Id": 13301,
+    "PartnerType": 33,
+    "Name": "SoldierPartner.13301.1",
+    "PartnerLevelQuality": 5,
+    "Desc": "SoldierPartner.13301.2",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1
+  },
+  "13401": {
+    "Id": 13401,
+    "PartnerType": 34,
+    "Name": "SoldierPartner.13401.1",
+    "PartnerLevelQuality": 5,
+    "Desc": "SoldierPartner.13401.2",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1
+  },
+  "13501": {
+    "Id": 13501,
+    "PartnerType": 35,
+    "Name": "SoldierPartner.13501.1",
+    "PartnerLevelQuality": 5,
+    "Desc": "SoldierPartner.13501.2",
+    "Level": 1,
+    "Num": 1,
+    "SoldierPartnerNumType": 1
+  },
+  "13601": {
+    "Id": 13601,
+    "PartnerType": 36,
+    "Name": "SoldierPartner.13601.1",
+    "PartnerLevelQuality": 5,
+    "Desc": "SoldierPartner.13601.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
+  },
+  "13701": {
+    "Id": 13701,
+    "PartnerType": 37,
+    "Name": "SoldierPartner.13701.1",
+    "PartnerLevelQuality": 5,
+    "Desc": "SoldierPartner.13701.2",
+    "Level": 1,
+    "Num": 2,
+    "SoldierPartnerNumType": 1
   }
 }

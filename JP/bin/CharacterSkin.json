@@ -370,6 +370,38 @@
     "GachaL2D": "Actor2D/Character/11001/11001_LF.prefab",
     "EffectScaleValue": 10000
   },
+  "11003": {
+    "Id": 11003,
+    "Name": "CharacterSkin.11003.1",
+    "Desc": "CharacterSkin.11003.2",
+    "CharId": 110,
+    "Type": 3,
+    "SourceDesc": 2,
+    "SkinExtraTag": [
+      4,
+      1
+    ],
+    "Transform": "{\"1\":100}",
+    "WalkAnimationSpd": 20000,
+    "RunAnimationSpd": 62500,
+    "SpRunAnimationSpd": 75000,
+    "ModelScale": 12500,
+    "ColliderScale": 10000,
+    "ModelShowScale": 10000,
+    "ModelEndScale": 10000,
+    "Icon": "Icon/Head/head_11003",
+    "Portrait": "Actor2D/Character/11003/11003_a.spriteatlas",
+    "Bg": "Image/CharBg/uniseed_basement_corelab",
+    "Offset": "Actor2D/Character/11003/11003.asset",
+    "L2D": "Actor2D/Character/11003/11003_L.prefab",
+    "CharacterCG": 11001,
+    "Model": "Actor/Character/11003/11003_Actor",
+    "Model_Show": "Actor/Character/11003/Timeline/11003_Ready",
+    "Model_End": "Actor/Character/11003/Timeline/11003_Victory",
+    "GachaL2D": "Actor2D/Character/11003/11003_LF.prefab",
+    "EffectScaleValue": 10000,
+    "TrialGroup": 11003
+  },
   "11101": {
     "Id": 11101,
     "Name": "CharacterSkin.11101.1",
@@ -584,6 +616,37 @@
     "Model_Show": "Actor/Character/11203/Timeline/11203_Ready",
     "Model_End": "Actor/Character/11203/Timeline/11203_Victory",
     "GachaL2D": "Actor2D/Character/11203/11203_LF.prefab",
+    "EffectScaleValue": 10000,
+    "TrialGroup": 11203
+  },
+  "11205": {
+    "Id": 11205,
+    "Name": "CharacterSkin.11205.1",
+    "Desc": "CharacterSkin.11205.2",
+    "CharId": 112,
+    "Type": 3,
+    "SourceDesc": 1,
+    "SkinExtraTag": [
+      4
+    ],
+    "Transform": "{\"1\":100}",
+    "WalkAnimationSpd": 25000,
+    "RunAnimationSpd": 62500,
+    "SpRunAnimationSpd": 68750,
+    "ModelScale": 12500,
+    "ColliderScale": 10000,
+    "ModelShowScale": 10000,
+    "ModelEndScale": 10000,
+    "Icon": "Icon/Head/head_11205",
+    "Portrait": "Actor2D/Character/11205/11205_a.spriteatlas",
+    "Bg": "Image/CharBg/carriage_inside_a",
+    "Offset": "Actor2D/Character/11205/11205.asset",
+    "L2D": "Actor2D/Character/11205/11205_L.prefab",
+    "CharacterCG": 11201,
+    "Model": "Actor/Character/11201/11201_Actor",
+    "Model_Show": "Actor/Character/11201/Timeline/11201_Ready",
+    "Model_End": "Actor/Character/11201/Timeline/11201_Victory",
+    "GachaL2D": "Actor2D/Character/11201/11201_LF.prefab",
     "EffectScaleValue": 10000
   },
   "11301": {
@@ -1139,7 +1202,8 @@
     "Model_Show": "Actor/Character/11903/Timeline/11903_Ready",
     "Model_End": "Actor/Character/11903/Timeline/11903_Victory",
     "GachaL2D": "Actor2D/Character/11903/11903_LF.prefab",
-    "EffectScaleValue": 10000
+    "EffectScaleValue": 10000,
+    "TrialGroup": 11903
   },
   "12001": {
     "Id": 12001,
@@ -2068,7 +2132,8 @@
     "Model_Show": "Actor/Character/13503/Timeline/13503_Ready",
     "Model_End": "Actor/Character/13503/Timeline/13503_Victory",
     "GachaL2D": "Actor2D/Character/13503/13503_LF.prefab",
-    "EffectScaleValue": 10000
+    "EffectScaleValue": 10000,
+    "TrialGroup": 13503
   },
   "13504": {
     "Id": 13504,
@@ -2625,7 +2690,8 @@
     "Model_Show": "Actor/Character/14403/Timeline/14403_Ready",
     "Model_End": "Actor/Character/14403/Timeline/14403_Victory",
     "GachaL2D": "Actor2D/Character/14403/14403_LF.prefab",
-    "EffectScaleValue": 10000
+    "EffectScaleValue": 10000,
+    "TrialGroup": 14403
   },
   "14501": {
     "Id": 14501,
@@ -2872,7 +2938,8 @@
     "Model_Show": "Actor/Character/14903/Timeline/14903_Ready",
     "Model_End": "Actor/Character/14903/Timeline/14903_Victory",
     "GachaL2D": "Actor2D/Character/14903/14903_LF.prefab",
-    "EffectScaleValue": 10000
+    "EffectScaleValue": 10000,
+    "TrialGroup": 14903
   },
   "15001": {
     "Id": 15001,
@@ -2997,6 +3064,38 @@
     "Model_End": "Actor/Character/15501/Timeline/15501_Victory",
     "GachaL2D": "Actor2D/Character/15501/15501_LF.prefab",
     "EffectScaleValue": 10000
+  },
+  "15503": {
+    "Id": 15503,
+    "Name": "CharacterSkin.15503.1",
+    "Desc": "CharacterSkin.15503.2",
+    "CharId": 155,
+    "Type": 3,
+    "SourceDesc": 2,
+    "SkinExtraTag": [
+      4,
+      1
+    ],
+    "Transform": "{\"1\":100}",
+    "WalkAnimationSpd": 18000,
+    "RunAnimationSpd": 55000,
+    "SpRunAnimationSpd": 100000,
+    "ModelScale": 12500,
+    "ColliderScale": 10000,
+    "ModelShowScale": 10000,
+    "ModelEndScale": 10000,
+    "Icon": "Icon/Head/head_15503",
+    "Portrait": "Actor2D/Character/15503/15503_a.spriteatlas",
+    "Bg": "Image/CharBg/view_sea_daylight",
+    "Offset": "Actor2D/Character/15503/15503.asset",
+    "L2D": "Actor2D/Character/15503/15503_L.prefab",
+    "CharacterCG": 15501,
+    "Model": "Actor/Character/15503/15503_Actor",
+    "Model_Show": "Actor/Character/15503/Timeline/15503_Ready",
+    "Model_End": "Actor/Character/15503/Timeline/15503_Victory",
+    "GachaL2D": "Actor2D/Character/15503/15503_LF.prefab",
+    "EffectScaleValue": 10000,
+    "TrialGroup": 15503
   },
   "15601": {
     "Id": 15601,
@@ -3342,6 +3441,68 @@
     "GachaL2D": "Actor2D/Character/16001/16001_LF.prefab",
     "EffectScaleValue": 10000,
     "SmoothTime": 1000
+  },
+  "16201": {
+    "Id": 16201,
+    "Name": "CharacterSkin.16201.1",
+    "Desc": "CharacterSkin.16201.2",
+    "IsShow": true,
+    "CharId": 162,
+    "Type": 1,
+    "SourceDesc": 1,
+    "SkinExtraTag": [
+      4
+    ],
+    "Transform": "{\"1\":100}",
+    "WalkAnimationSpd": 20625,
+    "RunAnimationSpd": 53000,
+    "SpRunAnimationSpd": 58625,
+    "ModelScale": 12500,
+    "ColliderScale": 10000,
+    "ModelShowScale": 10000,
+    "ModelEndScale": 10000,
+    "Icon": "Icon/Head/head_16201",
+    "Portrait": "Actor2D/Character/16201/16201_a.spriteatlas",
+    "Bg": "Image/CharBg/phylanis_street_inside_daylight",
+    "Offset": "Actor2D/Character/16201/16201.asset",
+    "L2D": "Actor2D/Character/16201/16201_L.prefab",
+    "CharacterCG": 16201,
+    "Model": "Actor/Character/16201/16201_Actor",
+    "Model_Show": "Actor/Character/16201/Timeline/16201_Ready",
+    "Model_End": "Actor/Character/16201/Timeline/16201_Victory",
+    "GachaL2D": "Actor2D/Character/16201/16201_LF.prefab",
+    "EffectScaleValue": 10000
+  },
+  "16202": {
+    "Id": 16202,
+    "Name": "CharacterSkin.16202.1",
+    "Desc": "CharacterSkin.16202.2",
+    "IsShow": true,
+    "CharId": 162,
+    "Type": 2,
+    "SourceDesc": 6,
+    "SkinExtraTag": [
+      4
+    ],
+    "Transform": "{\"1\":100}",
+    "WalkAnimationSpd": 20625,
+    "RunAnimationSpd": 53000,
+    "SpRunAnimationSpd": 58625,
+    "ModelScale": 12500,
+    "ColliderScale": 10000,
+    "ModelShowScale": 10000,
+    "ModelEndScale": 10000,
+    "Icon": "Icon/Head/head_16202",
+    "Portrait": "Actor2D/Character/16202/16202_a.spriteatlas",
+    "Bg": "Image/CharBg/phylanis_tower_throne_coffin",
+    "Offset": "Actor2D/Character/16202/16202.asset",
+    "L2D": "Actor2D/Character/16202/16202_L.prefab",
+    "CharacterCG": 16201,
+    "Model": "Actor/Character/16201/16201_Actor",
+    "Model_Show": "Actor/Character/16201/Timeline/16201_Ready",
+    "Model_End": "Actor/Character/16201/Timeline/16201_Victory",
+    "GachaL2D": "Actor2D/Character/16201/16201_LF.prefab",
+    "EffectScaleValue": 10000
   },
   "99701": {
     "Id": 99701,
