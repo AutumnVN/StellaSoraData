@@ -145,7 +145,7 @@
   },
   "39": {
     "Order": "sdAddBuffCard",
-    "ParamCount": 2
+    "ParamCount": 1
   },
   "40": {
     "Order": "sdAddChess",
@@ -167,11 +167,30 @@
     "Order": "sdDataSave"
   },
   "45": {
+    "Order": "sdResetRewardLevel"
+  },
+  "46": {
     "Order": "sdSetGradeChallengeId",
     "ParamCount": 1
   },
-  "46": {
+  "47": {
+    "Order": "sdSetRewardLevelAndExp",
+    "ParamCount": 2
+  },
+  "48": {
     "Order": "sdSkipNode",
     "ParamCount": 1
+  },
+  "49": {
+    "Order": "activityReturneeQuestComplete",
+    "ParamCount": 1
+  },
+  "50": {
+    "Order": "activityReturneeSetQuestPoint",
+    "ParamCount": 1
+  },
+  "51": {
+    "Order": "setActivityReturneeOpen",
+    "ParamCount": 2
   }
 }

@@ -321,6 +321,43 @@
     "EndType": 2,
     "EndTime": "2026-10-20T10:59:59+08:00"
   },
+  "21": {
+    "Id": 21,
+    "SortId": 21,
+    "PopUpType": 3,
+    "PopUpRes": "UI/MallPkgPopup/Popup_17",
+    "ScriptName": "OwnPopUp.MallPkgPopupCtrl",
+    "ScriptParams": "[\"pack.18_role_sel\", \"pack.18_gem\", \"pack.18_bd\", \"pack.18_celebration\"]",
+    "PopRefreshType": 3,
+    "PopJumpType": 3,
+    "JumpToParams": 18,
+    "StartCondType": 71,
+    "StartCondParams": [
+      2
+    ],
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-10T10:59:59+08:00"
+  },
+  "23": {
+    "Id": 23,
+    "SortId": 23,
+    "PopUpType": 3,
+    "PopUpRes": "UI/Soldier/SoldierPopUp",
+    "ScriptName": "Soldier.SoldierPopUpCtrl",
+    "PopRefreshType": 3,
+    "PopJumpType": 3,
+    "JumpToParams": 82,
+    "StartCondType": 71,
+    "StartCondParams": [
+      12
+    ],
+    "StartType": 2,
+    "StartTime": "2026-10-20T12:00:00+08:00",
+    "EndType": 2,
+    "EndTime": "2026-11-03T04:00:00+08:00"
+  },
   "1000": {
     "Id": 1000,
     "SortId": 1000,
@@ -524,6 +561,26 @@
     "PopRefreshType": 2,
     "PopJumpType": 2
   },
+  "1020": {
+    "Id": 1020,
+    "SortId": 1020,
+    "PopUpType": 2,
+    "ActivityId": 20104,
+    "PopUpRes": "UI_Activity/20104/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityDustDawn_20104PopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
+  },
+  "1021": {
+    "Id": 1021,
+    "SortId": 1021,
+    "PopUpType": 2,
+    "ActivityId": 30104,
+    "PopUpRes": "UI_Activity/30104/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityBreakOutPopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
+  },
   "2005": {
     "Id": 2005,
     "SortId": 2005,
@@ -721,6 +778,16 @@
     "SortId": 3011,
     "PopUpType": 1,
     "ActivityId": 103005,
+    "PopUpRes": "UI_Activity/_103001/PopUp",
+    "ScriptName": "ActivityPopUp.ActivityDoubleDrop_103001PopUpCtrl",
+    "PopRefreshType": 2,
+    "PopJumpType": 2
+  },
+  "2023": {
+    "Id": 2023,
+    "SortId": 3011,
+    "PopUpType": 1,
+    "ActivityId": 103006,
     "PopUpRes": "UI_Activity/_103001/PopUp",
     "ScriptName": "ActivityPopUp.ActivityDoubleDrop_103001PopUpCtrl",
     "PopRefreshType": 2,
