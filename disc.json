@@ -43285,7 +43285,7 @@
             "desc": "When inflicting Corrosion on a target, increases Umbra squadmates' ATK by <color=#ec6d21>{1}</color> for {2}s.",
             "descCN": "对目标附加「腐蚀」时，队伍中暗系角色攻击力提升<color=#ec6d21>{1}</color>，持续{2}秒。",
             "descJP": "敵に腐食を付与時から{2}秒間、チーム内の闇属性巡遊者の攻撃力が<color=#ec6d21>{1}</color>上昇する。",
-            "descKR": "목표에게 「부식」을 부여하면 팀 내 어둠 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. 2초간 지속된다.",
+            "descKR": "목표에게 「부식」을 부여하면 팀 내 어둠 속성 캐릭터의 공격력이 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다.",
             "effectType": [
                 "ATK (%)"
             ],
@@ -61585,10 +61585,12 @@
             "id": 4066,
             "name": "My Guiding Star",
             "nameCN": "指引前路的启明星",
+            "nameJP": "未来導く明星",
+            "nameKR": "앞길을 밝히는 샛별",
             "desc": "Increases the squad's HP by <color=#ec6d21>{1}</color>.\u000bAfter the Main Trekker triggers ##Lux Mark#1015# for the first time, gains 1 stack of Starwish.\u000bWhen a Trekker with Starwish deals Skill DMG to a target, increases the target's Lux Skill DMG Taken by <color=#ec6d21>{2}</color> for {3}s.\u000bWhen the Lux Main Trekker triggers the Mark to generate ##Lucent#4028#, increases own Crit Rate by <color=#ec6d21>{4}</color> for {5}s.",
             "descCN": "全队生命值提升<color=#ec6d21>{1}</color>。\u000b主控角色首次触发##光系印记#1015#后，获得1层「星愿」。\u000b附带「星愿」的角色对目标造成技能伤害时，使目标受到光系技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。\u000b光系主控角色触发印记产生##光耀#4028#时，自身暴击率提升<color=#ec6d21>{4}</color>，持续{5}秒。",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descJP": "チーム全員のHPが<color=#ec6d21>{1}</color>上昇する。\u000b主力巡遊者が初めて##光属性の印#1015#を発動させた時、暁光を1獲得する。\u000b暁光を付与された巡遊者が敵にスキルダメージを与えた時、{3}秒間、その敵の光属性のスキル被ダメージが<color=#ec6d21>{2}</color>増加する。\u000b光属性の主力巡遊者が印を発動させて##光輝#4028#を発生させた時、{5}秒間、自身の会心率が<color=#ec6d21>{4}</color>上昇する。",
+            "descKR": "팀 전체의 HP가 <color=#ec6d21>{1}</color> 증가한다. \u000b메인 캐릭터가 처음으로 ##빛 속성 표식#1015#을 발동한 후, 「별의 소원」을 1스택 획득한다. \u000b「별의 소원」을 보유한 캐릭터가 목표에게 스킬 피해를 입히면, 목표가 받는 빛 속성 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속된다. \u000b빛 속성 메인 캐릭터가 표식을 발동해 ##광휘#4028#를 생성하면 자신의 치명타율이 <color=#ec6d21>{4}</color> 증가한다. {5}초간 지속된다.",
             "effectType": [
                 "HP (%)",
                 "ELEMENTTYPE_:(Lux) Skill DMG Taken",
@@ -61608,10 +61610,12 @@
             "id": 40661,
             "name": "Shining Starwish",
             "nameCN": "星愿闪耀",
+            "nameJP": "暁光の輝き",
+            "nameKR": "별의 소원 섬광",
             "desc": "After a Versatile Trekker inflicts ##Lux Mark#1015# on a target for the first time, the Main Trekker gains 1 stack of Starwish.\u000bWhen a Trekker with Starwish deals Auto Attack DMG to a target, increases the target's Lux Auto Attack DMG Taken by <color=#ec6d21>{1}</color> for {2}s.\u000bStarwish gains an additional effect: each stack increases own Lux Skill DMG and Lux Auto Attack DMG by <color=#ec6d21>{3}</color>.",
             "descCN": "均衡角色首次对目标附加##光系印记#1015#后，主控角色获得1层「星愿」。\u000b附带「星愿」的角色对目标造成普攻伤害时，使目标受到光系普攻伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b「星愿」获得额外效果：每层使自身光系技能伤害和光系普攻伤害提升<color=#ec6d21>{3}</color>。",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descJP": "暁光に追加効果が付与される：暁光1ごとに、自身の光属性のスキルダメージと通常攻撃ダメージが<color=#ec6d21>{3}</color>増加する。\u000bバランサー巡遊者が初めて敵に##光属性の印#1015#を付与した時、主力巡遊者は暁光を1獲得する。\u000b暁光を付与された巡遊者が敵に通常攻撃ダメージを与えた時、{2}秒間、その敵の光属性の通常攻撃被ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "밸런스 캐릭터가 처음으로 목표에게 ##빛 속성 표식#1015#을 부여한 후, 메인 캐릭터가 「별의 소원」을 1스택 획득한다. \u000b「별의 소원」을 보유한 캐릭터가 목표에게 일반 공격 피해를 입히면 목표가 받는 빛 속성 일반 공격 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b「별의 소원」이 추가 효과를 획득해, 스택마다 자신의 빛 속성 스킬 피해와 빛 속성 일반 공격 피해가 <color=#ec6d21>{3}</color> 증가한다.",
             "effectType": [
                 "ELEMENTTYPE_:(Lux) Auto Attack DMG Taken",
                 "ELEMENTTYPE_:(Lux) Skill DMG",
@@ -61652,10 +61656,12 @@
             "id": 40662,
             "name": "Forging Tomorrow",
             "nameCN": "开拓明日",
+            "nameJP": "希望の夜明け",
+            "nameKR": "내일 개척",
             "desc": "After a Support Trekker inflicts ##Lux Mark#1015# on a target for the first time, the Main Trekker gains 1 stack of Starwish.\u000bWhen any Lux Trekker casts a skill, increases the Lux Main Trekker's Crit DMG by <color=#ec6d21>{1}</color> for {2}s.\u000bStarwish gains an additional effect: Each stack increases the Skill Crit DMG dealt by the Lux Main Trekker by <color=#ec6d21>{3}</color>.",
             "descCN": "辅助角色首次对目标附加##光系印记#1015#后，主控角色获得1层「星愿」。\u000b任意光系角色施放技能时，光系主控角色暴击伤害提升<color=#ec6d21>{1}</color>，持续{2}秒。\u000b「星愿」获得额外效果：每层使光系主控角色造成的技能暴击伤害提升<color=#ec6d21>{3}</color>。",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descJP": "暁光に追加効果が付与される：暁光1ごとに、光属性の主力巡遊者はスキル会心ダメージが<color=#ec6d21>{3}</color>増加する。\u000bサポーター巡遊者が初めて敵に##光属性の印#1015#を付与した時、主力巡遊者が暁光を1獲得する。\u000bチーム内の光属性巡遊者スキル発動時、{2}秒間、光属性の主力巡遊者は会心ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "서포터 캐릭터가 처음으로 목표에게 ##빛 속성 표식#1015#을 부여한 후, 메인 캐릭터가 「별의 소원」을 1스택 획득한다. \u000b빛 속성 캐릭터가 스킬을 시전하면 빛 속성 메인 캐릭터의 치명타 피해가 <color=#ec6d21>{1}</color> 증가한다. {2}초간 지속된다. \u000b「별의 소원」이 추가 효과를 획득해, 스택마다 빛 속성 메인 캐릭터가 입히는 스킬 치명타 피해가 <color=#ec6d21>{3}</color> 증가한다.",
             "effectType": [
                 "Crit DMG (base)",
                 "Skill Crit DMG (base)"
@@ -62210,10 +62216,12 @@
             "id": 4067,
             "name": "Eternal Brilliance",
             "nameCN": "永恒的闪耀",
+            "nameJP": "願い星の願い",
+            "nameKR": "영원히 반짝이는 빛",
             "desc": "When the Lux Main Trekker deals Auto Attack or Skill DMG {1} times in total, gains 1 stack of Eternity: increases Lux Skill DMG by <color=#ec6d21>{2}</color> for {3}s, up to 10 stacks.\u000bWhile the Main Trekker has Eternity, increases the squad's Lux DMG dealt by <color=#ec6d21>{4}</color>.",
             "descCN": "光系主控角色累计造成{1}次普攻或技能伤害时，获得1层「永恒」：光系技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒，可叠加10层。\u000b主控角色拥有「永恒」时，全队造成的光系伤害提升<color=#ec6d21>{4}</color>。",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descJP": "光属性の主力巡遊者が通常攻撃ダメージまたはスキルダメージを累計{1}回与えると、星願を1獲得する。\u000b星願：星願1ごとに、{3}秒間、光属性のスキルダメージが<color=#ec6d21>{2}</color>増加する。この効果は最大10回まで重複できる。\u000b主力巡遊者が星願を付与されている時、チーム全体の光属性ダメージが<color=#ec6d21>{4}</color>増加する。",
+            "descKR": "빛 속성 메인 캐릭터가 누적 {1}회 일반 공격 또는 스킬 피해 입힐 시, 「영원」을 1스택 획득해 빛 속성 스킬 피해가 <color=#ec6d21>{2}</color> 증가한다. {3}초간 지속되며, 최대 10스택 중첩된다. \u000b메인 캐릭터가 「영원」 보유 시 팀 전체가 입히는 빛 속성 피해가 <color=#ec6d21>{4}</color> 증가한다.",
             "effectType": [
                 "ELEMENTTYPE_:(Lux) Skill DMG"
             ],
@@ -62232,10 +62240,12 @@
             "id": 40671,
             "name": "Garden of Eternity",
             "nameCN": "永恒之庭",
+            "nameJP": "暁光の煌めき",
+            "nameKR": "영원의 정원",
             "desc": "For every {1}s a Lux Versatile Trekker is on the battlefield, grants the Main Trekker 1 stack of Eternity.\u000bEternity gains an additional effect: each stack increases own Lux Auto Attack DMG by <color=#ec6d21>{2}</color>.",
             "descCN": "光系均衡角色每在场{1}秒，为主控角色附加1层「永恒」。\u000b「永恒」获得额外效果：每层使自身光系普攻伤害提升<color=#ec6d21>{2}</color>。",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descJP": "星願に追加効果が付与される：星願1ごとに、自身の光属性の通常攻撃ダメージが<color=#ec6d21>{2}</color>増加する。\u000b光属性のバランサー巡遊者がフィールドにいる間、{1}秒ごとに主力巡遊者に星願を1付与する。",
+            "descKR": "빛 속성 밸런스 캐릭터가 필드에 {1}초 있을 때마다 메인 캐릭터에게 「영원」을 1스택 부여한다. \u000b「영원」이 추가 효과를 획득해, 스택마다 자신의 빛 속성 일반 공격 피해가 <color=#ec6d21>{2}</color> 증가한다.",
             "effectType": [
                 "ELEMENTTYPE_:(Lux) Auto Attack DMG"
             ],
@@ -62274,10 +62284,12 @@
             "id": 40672,
             "name": "Light of Humanity",
             "nameCN": "人心之光",
+            "nameJP": "願いの光",
+            "nameKR": "마음의 빛",
             "desc": "When a Lux Support Trekker casts a skill, grants the Main Trekker 1 stack of Eternity.\u000bEternity can stack up to 20 times. When Eternity is at max stacks, increases own Lux DMG dealt by <color=#ec6d21>{1}</color>.",
             "descCN": "光系辅助角色施放技能时，为主控角色附加1层「永恒」。\u000b「永恒」可叠加至20层，「永恒」满层时，自身造成的光系伤害提升<color=#ec6d21>{1}</color>。",
-            "descJP": "undefined",
-            "descKR": "undefined",
+            "descJP": "光属性のサポーター巡遊者がスキル発動時、主力巡遊者に星願を1付与する。\u000b星願は最大20回まで重複できる。星願が上限に達している時、自身の光属性ダメージが<color=#ec6d21>{1}</color>増加する。",
+            "descKR": "빛 속성 서포터 캐릭터가 스킬을 시전하면 메인 캐릭터에게 「영원」을 1스택 부여한다. \u000b「영원」은 20스택까지 중첩될 수 있다. 「영원」이 최대 스택에 도달하면, 자신이 입히는 빛 속성 피해가 <color=#ec6d21>{1}</color> 증가한다.",
             "effectType": [
                 "Lux DMG (base)"
             ],

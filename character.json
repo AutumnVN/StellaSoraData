@@ -31983,7 +31983,7 @@
                     "desc": "&Param1& (Ultimate) can trigger ##Lux Mark#1015# and summon a ##Lucent#4028#, dealing &Param2& of ATK as Lux Mark DMG.\u000bWhen the mark is triggered, increases own &Param6& by <color=#ec6d21>&Param3&</color> for &Param4&s, stacking up to &Param5& times.",
                     "descCN": "绝招「&Param1&」可触发##光系印记#1015#，产生##光耀#4028#：造成攻击力&Param2&的光系印记伤害。\u000b触发时，自身&Param6&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒，可叠加&Param5&层。",
                     "descJP": "ホタルの必殺技は##光属性の印#1015#を発動させることができるようになり、発動させると、##光輝#4028#を発生させ、攻撃力の&Param2&の光属性の印ダメージを与える。\u000b発動させた時から&Param4&秒間、自身の&Param6&が<color=#ec6d21>&Param3&</color>上昇する。この効果は&Param5&回重複できる\u000bParam1: &Param1& (Skill,Title)",
-                    "descKR": "필살기 「&Param1&」이 ##빛 속성 표식: 광명#1015#을 발동하고 ##광휘#4028#를 생성하여, 공격력 &Param2&의 빛 속성 표식 피해를 입힐 수 있다. \u000b발동 시, 자신의 &Param6_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam6: &Param6& (Effect,EffectTypeFirstSubtype)",
+                    "descKR": "필살기 「&Param1&」이 ##빛 속성 표식: 광명#1015#을 발동하고 ##광휘#4028#를 생성하여, 공격력 &Param2&의 빛 속성 표식 피해를 입힌다. \u000b발동 시, 자신의 &Param6_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam6: &Param6& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Mark (scale with Upgrade)"
                     ],
@@ -39643,7 +39643,7 @@
                     "desc": "&Param1& (Ultimate) can trigger ##Lux Mark: Radiance#2016# and summon a Thunderbolt, dealing &Param2& of ATK as Lux Mark DMG.\u000bWhen the mark is triggered, increases &Param6& by <color=#ec6d21>&Param3&</color> for &Param4&s, up to &Param5& stacks.",
                     "descCN": "绝招「&Param1&」可触发##光系印记：光明#2016#，产生「落雷」：造成攻击力&Param2&的光系印记伤害。\u000b触发时，&Param6&提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒，可叠加&Param5&层。",
                     "descJP": "必殺技は##光属性の印#2016#を発動させることができるようになる。発動させると、落雷が発生し、攻撃力の&Param2&の光属性の印ダメージを与える。\u000b発動させた時から&Param4&秒間、ジンリンの&Param6&が<color=#ec6d21>&Param3&</color>上昇する。この効果は&Param5&回まで重複できる。\u000bParam1: &Param1& (Skill,Title)",
-                    "descKR": "필살기 「&Param1&」가 ##빛 속성 표식: 광명#2016#을 발동하고 「낙뢰」를 생성하여, 공격력 &Param2&의 빛 속성 표식 피해를 입힐 수 있다. \u000b발동 시, &Param6_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초 동안 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam6: &Param6& (Effect,EffectTypeFirstSubtype)",
+                    "descKR": "필살기 「&Param1&」가 ##빛 속성 표식: 광명#2016#을 발동하고 「낙뢰」를 생성하여, 공격력 &Param2&의 빛 속성 표식 피해를 입힌다. \u000b발동 시, &Param6_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초 동안 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam6: &Param6& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Mark (scale with Upgrade)"
                     ],
@@ -46825,8 +46825,8 @@
             "energyLimit": 23.26,
             "desc": "Throws two sunflower shurikens, each flying back and forth 8 times and dealing <color=#ec6d21>&Param1&</color> of ATK as Ventus Skill DMG.\u000bFlowers Dance (Main Skill) can trigger ##Ventus Mark#1017# and create a Blossom, dealing &Param2& of ATK as AoE Ventus Mark DMG.",
             "descCN": "发射2枚向日葵飞镖，每1枚往返飞行8轮，每次可造成攻击力<color=#ec6d21>&Param1&</color>的风系技能伤害。\u000b主控技「花风舞」可触发##风系印记#1017#，产生「绽放」：造成攻击力&Param2&的范围风系印记伤害。",
-            "descJP": "手元に4回まで戻ってくる向日葵手裏剣を前方に2枚投げ、それぞれ攻撃力の<color=#ec6d21>&Param1&</color>の風属性のスキルダメージを与える。\u000b主力スキルは##風属性の印#1017#を発動させることができる。発動させると、満開を発生させ、範囲内に攻撃力の&Param2&の風属性の印ダメージを与える。",
-            "descKR": "해바라기 표창 2개를 발사해, 총 왕복 4회 비행한다. 매회 공격력 <color=#ec6d21>&Param1&</color>의 바람 속성 스킬 피해를 입힌다. \u000b메인 스킬 「꽃바람의 춤」이 ##바람 속성 표식#1017#을 발동하고, 「만개」를 생성해 공격력 &Param2&의 바람 속성 범위 표식 피해를 입힌다.",
+            "descJP": "向日葵手裏剣を2枚投げる。各手裏剣は8往復し、命中するたびに攻撃力の<color=#ec6d21>&Param1&</color>の風属性のスキルダメージを与える。\u000b主力スキルは##風属性の印#1017#を発動させることができる。発動させると、満開を発生させ、範囲内に攻撃力の&Param2&の風属性の印ダメージを与える。",
+            "descKR": "해바라기 표창 2개를 발사해, 각각 왕복 8회 비행한다. 매회 공격력 <color=#ec6d21>&Param1&</color>의 바람 속성 스킬 피해를 입힌다. \u000b메인 스킬 「꽃바람의 춤」이 ##바람 속성 표식#1017#을 발동하고, 「만개」를 생성해 공격력 &Param2&의 바람 속성 범위 표식 피해를 입힌다.",
             "damageType": [
                 "Skill (0.73e, from Skill, scale with Skill)",
                 "Mark (scale with Upgrade)"
@@ -46892,8 +46892,8 @@
             "energy": 285,
             "desc": "Generates 2 stationary clones that attack enemies with shurikens, dealing of ATK<color=#ec6d21>&Param1& x2, <color=#ec6d21>&Param2& x2</color>, and <color=#ec6d21></color>&Param3& x3</color> as Ventus Ultimate DMG.\u000bEach clone lasts for 25s. Up to 2 clones can be present simultaneously.\u000bWhen a clone deals DMG, it can trigger ##Ventus Mark#1017# and create a Blossom, dealing &Param4& of ATK as AoE Ventus Mark DMG.",
             "descCN": "产生2名不移动的分身协助战斗，分身发射飞镖造成花原攻击力<color=#ec6d21>&Param1&x2</color>、<color=#ec6d21>&Param2&x2</color>、<color=#ec6d21>&Param3&x3</color>的风系绝招伤害。\u000b分身存在时间25秒，最多存在2名。\u000b分身的伤害可触发##风系印记#1017#，产生「绽放」：造成攻击力&Param4&的范围风系印记伤害。",
-            "descJP": "移動しない分身を2体召喚して一緒に戦う。分身は手裏剣を投げ、ナノハの攻撃力の<color=#ec6d21>&Param1&x2</color>、<color=#ec6d21>&Param2&x2</color>、<color=#ec6d21>&Param3&x3</color>の風属性の必殺技ダメージを与える。\u000b分身は2体まで存在でき、10秒間持続する。\u000b分身のダメージは##風属性の印#1017#を発動させることができる。発動させると、満開を発生させ、範囲内に攻撃力の&Param4&の風属性の印ダメージを与える。",
-            "descKR": "이동하지 않는 분신 2명을 생성해 전투를 돕는다. 분신이 표창을 발사해 나노하 공격력 <color=#ec6d21>&Param1&x2</color>, <color=#ec6d21>&Param2&x2</color>, <color=#ec6d21>&Param3&x3</color>의 바람 속성 필살기 피해를 입힌다. \u000b분신은 10초 동안 존재하며, 최대 2명이 동시에 존재할 수 있다. \u000b분신의 피해는 ##바람 속성 표식: 풍식#1017#을 발동하고, 「만개」를 생성해 공격력 &Param4&의 바람 속성 범위 표식 피해를 입힌다.",
+            "descJP": "移動しない分身を2体召喚して一緒に戦う。分身は手裏剣を投げ、ナノハの攻撃力の<color=#ec6d21>&Param1&x2</color>、<color=#ec6d21>&Param2&x2</color>、<color=#ec6d21>&Param3&x3</color>の風属性の必殺技ダメージを与える。\u000b分身は最大2体まで存在でき、25秒間持続する。\u000b分身のダメージは##風属性の印#1017#を発動させることができる。発動させると、満開を発生させ、範囲内に攻撃力の&Param4&の風属性の印ダメージを与える。",
+            "descKR": "이동하지 않는 분신 2명을 생성해 전투를 돕는다. 분신이 표창을 발사해 나노하 공격력 <color=#ec6d21>&Param1&x2</color>, <color=#ec6d21>&Param2&x2</color>, <color=#ec6d21>&Param3&x3</color>의 바람 속성 필살기 피해를 입힌다. \u000b분신은 25초 동안 존재하며, 최대 2명이 동시에 존재할 수 있다. \u000b분신의 피해는 ##바람 속성 표식: 풍식#1017#을 발동하고, 「만개」를 생성해 공격력 &Param4&의 바람 속성 범위 표식 피해를 입힌다.",
             "damageType": [
                 "Ultimate (from Ultimate, scale with Ultimate)",
                 "Mark (scale with Upgrade)"
@@ -47108,8 +47108,8 @@
                     "nameKR": "환영의 동행",
                     "desc": "Increases Nanoha's &Param2& by <color=#ec6d21>&Param1&</color> for each active clone, stacking up to &Param3& times. Increases Nanoha's &Param4& by <color=#ec6d21>&Param5&</color> while Flowers Thrice (Ultimate) is on cooldown.",
                     "descCN": "每存在1名分身，使花原的&Param2&提升<color=#ec6d21>&Param1&</color>，可叠加&Param3&层。绝招「花镜月」冷却期间，花原的&Param4&提升<color=#ec6d21>&Param5&</color>。",
-                    "descJP": "分身1体ごとに、ナノハの&Param2&が<color=#ec6d21>&Param1&</color>増加する。\u000bParam3: &Param3& (BuffValue,LaminatedNum) \u000bParam4: &Param4& (OnceAdditionalAttribute,AttributeType1) \u000bParam5: &Param5& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "분신 1명마다 나노하의 &Param2&가 <color=#ec6d21>&Param1&</color> 증가한다.\u000bParam3: &Param3& (BuffValue,LaminatedNum) \u000bParam4: &Param4& (OnceAdditionalAttribute,AttributeType1) \u000bParam5: &Param5& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "分身が1体存在するごとに、ナノハの&Param2&が<color=#ec6d21>&Param1&</color>上昇する。この効果は&Param3&回まで重複できる。必殺技のクールタイム中、ナノハの&Param4&が<color=#ec6d21>&Param5&</color>上昇する。",
+                    "descKR": "분신 1명마다 나노하의 &Param2_kr1& <color=#ec6d21>&Param1&</color> 증가한다. 최대 &Param3&스택 중첩된다. 필살기 「화경월」 쿨타임 중, 나노하의 &Param4_kr1& <color=#ec6d21>&Param5&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -47211,8 +47211,8 @@
                     "nameKR": "먼 곳에서의 기도",
                     "desc": "When the sunflower shuriken cast by Flowers Dance (Main Skill) is farther from Nanoha, increases the &Param1& it deals by <color=#ec6d21>&Param2&</color>.",
                     "descCN": "主控技「花风舞」发射的向日葵飞镖距离花原较远时，造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
-                    "descJP": "主力スキルで投げた向日葵手裏剣はナノハから離れるほど与える&Param2&が増加する。最小で<color=#ec6d21>&Param1&</color>増加する。",
-                    "descKR": "메인 스킬 「꽃바람의 춤」이 발사하는 해바라기 표창과 나노하의 거리가 멀수록 입히는 &Param2_kr1& 증가한다. 최소 <color=#ec6d21>&Param1&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "主力スキルで投げた向日葵手裏剣がナノハから離れた位置にある時、与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
+                    "descKR": "메인 스킬 「꽃바람의 춤」이 발사하는 해바라기 표창과 나노하의 거리가 멀수록 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -47379,8 +47379,8 @@
                     "nameKR": "흩날리는 꽃잎 폭풍",
                     "desc": "When casting Flowers Dance (Main Skill), up to 2 active clones fire non-returning sunflower shurikens, each dealing <color=#ec6d21>&Param1&</color> of Nanoha's ATK as Ventus Skill DMG. Casting Flowers Thrice (Ultimate) increases Nanoha's &Param2& by <color=#ec6d21>&Param3&</color> for &Param4&s.",
                     "descCN": "施放主控技「花风舞」时，最多2名在场分身发射不折返的向日葵飞镖，每次造成花原攻击力<color=#ec6d21>&Param1&</color>的风系技能伤害。施放绝招「花镜月」时，花原的&Param2&提升<color=#ec6d21>&Param3&</color>，持续时间&Param4&秒。",
-                    "descJP": "主力スキル発動時、分身が、戻ってこない向日葵手裏剣を投げるようになる。それぞれナノハの攻撃力の<color=#ec6d21>&Param1&</color>の風属性のスキルダメージを与える。\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
-                    "descKR": "메인 스킬 「꽃바람의 춤」 시전 시 분신이 돌아오지 않는 해바라기 표창을 발사하여, 각 나노하의 공격력 <color=#ec6d21>&Param1&</color>의 바람 속성 스킬 피해를 입힌다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "descJP": "主力スキル発動時、フィールド上の分身のうち最大2体が折り返さない向日葵手裏剣を投げ、1回につきナノハの攻撃力の<color=#ec6d21>&Param1&</color>の風属性のスキルダメージを与える。必殺技発動時、&Param4&秒間、ナノハの&Param2&が<color=#ec6d21>&Param3&</color>増加する。",
+                    "descKR": "메인 스킬 「꽃바람의 춤」 시전 시 필드에 있는 최대 2명의 분신이 돌아오지 않는 해바라기 표창을 발사하여, 각 나노하 공격력 <color=#ec6d21>&Param1&</color>의 바람 속성 스킬 피해를 입힌다. 필살기 「화경월」 시전 시, 나노하의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속된다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Skill"
                     ],
@@ -74649,8 +74649,8 @@
                     "nameKR": "스트리트 파이트",
                     "desc": "Increases the DMG Multiplier of Three Base Hit from Ultimatum (Potential) by <color=#0abec5>&Param2&</color>.\u000bAfter &Param1& (Main Skill) triggers ##Lux Mark#1015#, increases the DMG Multiplier of Two Base Hit by <color=#0abec5>&Param2&</color> and reduces its Attack Interval by <color=#0abec5>30%</color>. Three Base Hit from Ultimatum also deals an additional <color=#0abec5>&Param4&</color> of ATK as AoE Lux Skill DMG.\u000bParam3: &Param3& (HitDamage,Skill)",
                     "descCN": "潜能「最后通牒」「三垒打」的伤害倍率提升<color=#0abec5>&Param2&</color>。\u000b主控技「&Param1&」触发##光系印记#1015#后，「二垒打」的伤害倍率提升<color=#0abec5>&Param2&</color>，伤害间隔缩短<color=#0abec5>30%</color>，且「最后通牒」「三垒打」额外造成攻击力<color=#0abec5>&Param4&</color>的范围光系技能伤害。\u000bParam3: &Param3& (HitDamage,Skill)",
-                    "descJP": "主力スキルで##光属性の印#1015#を発動させた後、二塁打が強化され、ダメージ倍率が<color=#0abec5>&Param2&</color>増加し、ダメージ間隔が<color=#0abec5>30%</color>短縮される。\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)",
-                    "descKR": "메인 스킬 「&Param1&」가 ##빛 속성 표식#1015#을 발동한 후 「2루타」의 피해 배율이 <color=#0abec5>&Param2&</color> 증가하고, 피해 간격이 <color=#0abec5>30%</color> 감소한다.\u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill)",
+                    "descJP": "素質「最後通牒」の「三塁打」のダメージ倍率が<color=#0abec5>&Param2&</color>増加する。\u000b主力スキルで##光属性の印#1015#を発動させると、「二塁打」のダメージ倍率が<color=#0abec5>&Param2&</color>増加し、ダメージを与える間隔が<color=#0abec5>30%</color>短縮され、さらに、「最後通牒」の「三塁打」は範囲内に攻撃力の<color=#0abec5>&Param4&</color>の光属性のスキルダメージを追加で与える。\u000bParam1: &Param1& (Skill,Title) \u000bParam3: &Param3& (HitDamage,Skill)",
+                    "descKR": "잠재력 「최후통첩」, 「3루타」의 피해 배율이 <color=#0abec5>&Param2&</color> 증가한다. \u000b메인 스킬 「&Param1&」이(가) ##빛 속성 표식#1015#을 발동한 후, 「2루타」의 피해 배율이 <color=#0abec5>&Param2&</color>증가하고, 피해 간격이 <color=#0abec5>30%</color> 감소한다. 또한 「최후통첩」 「3루타」가 공격력 <color=#0abec5>&Param4&</color>의 빛 속성 범위 스킬 피해를 추가로 입힌다.\u000bParam3: &Param3& (HitDamage,Skill)",
                     "damageType": [
                         "Skill (6.77e, from Skill, scale with Skill)",
                         "Skill (13.54e, from Skill, scale with Skill)"
@@ -74878,7 +74878,7 @@
                     "nameKR": "짜릿한 손맛",
                     "desc": "While Minova's Main Skill is active, each strike increases its Skill DMG by <color=#ec6d21>&Param2&</color>, stacking up to &Param3& times.\u000bParam1: &Param1& (Skill,Title) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
                     "descCN": "密涅瓦的主控技持续期间，造成的技能伤害逐次加强：每次提升伤害<color=#ec6d21>&Param2&</color>，可提升&Param3&次。\u000bParam1: &Param1& (Skill,Title) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
-                    "descJP": "ミネルバの主力スキル持続中、ダメージが徐々に増加する。ダメージは毎回<color=#ec6d21>&Param2&</color>増加する。この効果は&Param3&回重複できる。\u000bParam1: &Param1& (Skill,Title) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
+                    "descJP": "ミネルバの主力スキル持続中、スキルダメージが徐々に増加する。ダメージは毎回<color=#ec6d21>&Param2&</color>増加する。この効果は&Param3&回重複できる。\u000bParam1: &Param1& (Skill,Title) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
                     "descKR": "미네르바의 메인 스킬 지속 기간 중 피해가 점차 강화되어, 매회 스킬 피해가 <color=#ec6d21>&Param2&</color> 증가한다. 최대 &Param3&회 증가한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
@@ -75089,7 +75089,7 @@
                     "desc": "&Param1& (Ultimate) can trigger ##Lux Mark#1015# and summons a Thunderbolt, dealing &Param2& of ATK as Lux Mark DMG. After casting the Ultimate, increases Skill DMG by <color=#ec6d21>&Param3&</color> for &Param4&s.",
                     "descCN": "绝招「&Param1&」可触发##光系印记#1015#，产生「落雷」：造成攻击力&Param2&的光系印记伤害。施放绝招后，使技能伤害提升<color=#ec6d21>&Param3&</color>，持续&Param4&秒。",
                     "descJP": "ミネルバの必殺技は##光属性の印#1015#を発動させることができるようになり、発動させると、落雷を発生させ、攻撃力の&Param2&の光属性の印ダメージを与える。必殺技発動後の&Param4&秒間、スキルダメージが<color=#ec6d21>&Param3&</color>増加する。\u000bParam1: &Param1& (Skill,Title)",
-                    "descKR": "필살기 「&Param1&」이 ##빛 속성 표식#1015#을 발동할 수 있고, 「낙뢰」를 생성해 공격력 &Param2&의 빛 속성 표식 피해를 입힐 수 있다. 필살기 시전 후 스킬 피해가 <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속된다.",
+                    "descKR": "필살기 「&Param1&」이 ##빛 속성 표식#1015#을 발동할 수 있고, 「낙뢰」를 생성해 공격력 &Param2&의 빛 속성 표식 피해를 입힌다. 필살기 시전 후 스킬 피해가 <color=#ec6d21>&Param3&</color> 증가한다. &Param4&초간 지속된다.",
                     "damageType": [
                         "Mark (scale with Upgrade)"
                     ],
@@ -86406,7 +86406,7 @@
                     "nameKR": "순간 포착",
                     "desc": "When Mistique deals DMG, ##Pumpka Phantom#4007# will cast Whirlwind Slash, dealing <color=#0abec5>&Param1& x2</color> of ATK as AoE Umbra Minion DMG.\u000bThis effect can only be triggered once every 2.5s.",
                     "descCN": "雾语造成伤害时，##「南瓜影灵」#4007#施放旋风斩，造成攻击力<color=#0abec5>&Param1&x2</color>范围暗系仆从伤害。\u000b该效果每2.5秒最多触发1次。",
-                    "descJP": "ミスティのダメージを与えた時、##かぼちゃおばけ#4007#が旋風斬りを発動し、範囲内に攻撃力の<color=#0abec5>&Param1&x2</color>の闇属性の従者ダメージを与えるようになる。\u000bこの効果は2.5秒ごとに1回まで発動する。",
+                    "descJP": "ミスティのダメージを与えた時、##かぼちゃおばけ#4007#が回転斬りを発動し、範囲内に攻撃力の<color=#0abec5>&Param1&x2</color>の闇属性の従者ダメージを与えるようになる。\u000bこの効果は2.5秒ごとに1回まで発動する。",
                     "descKR": "미스티가 피해를 입히면 ##호박 유령#4007#이 선풍참을 시전해 공격력 <color=#0abec5>&Param1&x2</color>의 어둠 속성 범위 소환물 피해를 입힌다. \u000b해당 효과는 2.5초마다 최대 1회 발동한다.",
                     "damageType": [
                         "Minion (from Skill, scale with Skill)"
@@ -102085,8 +102085,8 @@
                     "nameKR": "화염 장막의 잔해",
                     "desc": "Casting Purifying Flames (Main Skill) grants a Shield equal to <color=#ec6d21>&Param1&</color> of Max HP and Super Armor while the Shield lasts.",
                     "descCN": "施放主控技「赤焰除妖」时，获得最大生命<color=#ec6d21>&Param1&</color>的护盾。该护盾持续期间获得霸体。",
-                    "descJP": "主力スキル発動時、最大HPの<color=#ec6d21>&Param1&</color>分のシールドを獲得するようになる。",
-                    "descKR": "메인 스킬 「붉은 화염」 시전 시 최대 HP의 <color=#ec6d21>&Param1&</color>에 해당하는 보호막을 획득한다.",
+                    "descJP": "主力スキル発動時、最大HPの<color=#ec6d21>&Param1&</color>分のシールドを獲得するようになり、シールドの持続中はスーパーアーマーを獲得する。",
+                    "descKR": "메인 스킬 「붉은 화염」 시전 시 최대 HP의 <color=#ec6d21>&Param1&</color>에 해당하는 보호막을 획득한다. 해당 보호막 지속 기간 중 저지 불가를 획득한다.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -106293,7 +106293,7 @@
                     "desc": "Abyssal Hunter (Support Skill) will also launch a finishing heavy strike, dealing <color=#0abec5>&Param1& of ATK</color> as Umbra Skill DMG.\u000bFor every <color=#0abec5>4</color> claw strikes, increases all friendly units' &Param2& by <color=#0abec5>&Param3&</color> for &Param4&s, stacking up to &Param5& times.",
                     "descCN": "援护技「深渊猎爪」增加最终重击，造成攻击力<color=#0abec5>&Param1&</color>的暗系技能伤害。\u000b珂赛特每<color=#0abec5>4</color>次挥爪，己方&Param2&提升<color=#0abec5>&Param3&</color>，持续&Param4&秒，可叠加&Param5&层。",
                     "descJP": "コゼットの支援スキルの最終撃の後に強撃が追加され、攻撃力の<color=#0abec5>&Param1&</color>の闇属性のスキルダメージを与える。コゼットが支援スキルのクロー攻撃を<color=#0abec5>4</color>回するごとに、&Param4&秒間、味方の&Param2&が<color=#0abec5>&Param3&</color>上昇する。この効果は&Param5&回重複できる。",
-                    "descKR": "지원 스킬 「심연의 발」의 최종 타격이 증가하여 공격력 <color=#0abec5>&Param1&</color>의 어둠 속성 스킬 피해를 입힐 수 있다. \u000b코제트가 발을 <color=#0abec5>4</color>회 휘두를 때마다 전체 아군의 &Param2&이 <color=#0abec5>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.",
+                    "descKR": "지원 스킬 「심연의 발」의 최종 타격이 증가하여 공격력 <color=#0abec5>&Param1&</color>의 어둠 속성 스킬 피해를 입힌다. \u000b코제트가 발을 <color=#0abec5>4</color>회 휘두를 때마다 전체 아군의 &Param2&이 <color=#0abec5>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -109508,8 +109508,8 @@
                     "nameKR": "격동의 돌풍",
                     "desc": "Whirling Onslaught (Main Skill) fires homing lasers instead of bullets, dealing AoE DMG. Increases the &Param1& dealt by Wraith's shots by <color=#0abec5>&Param2&</color>.",
                     "descCN": "主控技「风车连舞」的子弹变为激光，可追踪目标并造成范围伤害。风影的射击造成的&Param1&提升<color=#0abec5>&Param2&</color>。",
-                    "descJP": "主力スキルが発射する弾丸はレーザーに変化し、遠距離にいる敵を追尾するようになる。レイスのレーザーは、遠距離にいる敵に対して与える&Param1&が<color=#0abec5>&Param2&</color>増加する。",
-                    "descKR": "메인 스킬 「풍차의 춤」의 총알이 레이저로 바뀌며, 원거리 목표를 추적한다. 레이스가 사격으로 원거리 목표에게 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "descJP": "主力スキルの弾丸がレーザーに変化し、敵を追尾して範囲ダメージを与える。レイスの射撃で与える&Param1&が<color=#0abec5>&Param2&</color>増加する。",
+                    "descKR": "메인 스킬 「풍차의 춤」의 총알이 레이저로 바뀌며, 목표를 추적하며 범위 피해를 입힌다. 레이스의 사격이 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -124673,8 +124673,8 @@
             "energy": 285,
             "desc": "Generates 3 huge chain shovels, each dealing <color=#ec6d21>&Param1& of ATK x3</color> as Terra Ultimate DMG to targets along its path.\u000bDivine: Retribution of Evil (Ultimate) can trigger ##Terra Mark#1020#, dealing &Param3& of ATK as AoE Terra Mark DMG.",
             "descCN": "生成3根巨型链铲，分别对路径上的目标造成攻击力<color=#ec6d21>&Param1&x3</color>地系绝招伤害。\u000b绝招「天恩·恶兆神罚」可触发##地系印记#1020#，造成攻击力&Param3&的范围地系印记伤害。",
-            "descJP": "巨大なチェーンシャベルを生成し、経路上に攻撃力の<color=#ec6d21>&Param1&x3</color>の地属性の必殺技ダメージを与える。\u000b必殺技は##地属性の印#1020#を発動させることができる。発動させると、範囲内に攻撃力の&Param3&の地属性の印ダメージを与える。",
-            "descKR": "거대한 사슬삽을 생성해, 경로 상의 목표에게 공격력 <color=#ec6d21>&Param1&x3</color>의 땅 속성 필살기 피해를 입힌다. \u000b필살기 「천은·불길한 신의 형벌」이 ##땅 속성 표식#1020#을 발동하여, 공격력 &Param3&의 땅 속성 범위 표식 피해를 입힌다.",
+            "descJP": "巨大なチェーンシャベルを3本生成し、それぞれ経路上の敵に攻撃力の<color=#ec6d21>&Param1&x3</color>の地属性の必殺技ダメージを与える。\u000b必殺技は##地属性の印#1020#を発動させることができる。発動させると、範囲内に攻撃力の&Param3&の地属性の印ダメージを与える。",
+            "descKR": "거대한 사슬삽을 3개 생성해, 각각 경로상의 목표에게 공격력 <color=#ec6d21>&Param1&x3</color>의 땅 속성 필살기 피해를 입힌다. \u000b필살기 「천은·불길한 신의 형벌」이 ##땅 속성 표식#1020#을 발동하여, 공격력 &Param3&의 땅 속성 범위 표식 피해를 입힌다.",
             "damageType": [
                 "Ultimate (from Ultimate, scale with Ultimate)",
                 "Mark (scale with Upgrade)"
@@ -156284,11 +156284,13 @@
             "id": 16210000,
             "name": "Honed Sword Art",
             "nameCN": "百炼剑术",
+            "nameJP": "百錬の剣術",
+            "nameKR": "백련 검술",
             "energyLimit": 5.9837,
             "desc": "Wields the greatsword [Daybreak] and the longsword [Dawn] to deal continuous attacks.\u000bStrike 1: Swings the greatsword, dealing <color=#fb8037>&Param1& x2</color> of Max HP as Lux Auto Attack DMG.\u000bStrike 2: Swings the greatsword, dealing <color=#fb8037>&Param2& x3</color> of Max HP as Lux Auto Attack DMG.\u000bStrike 3: Swings the greatsword, dealing <color=#fb8037>&Param3& x2</color> of Max HP as Lux Auto Attack DMG.\u000bStrike 4: Swings the longsword and fires 2 Glows, each dealing <color=#fb8037>&Param4&</color> of Max HP as Lux Skill DMG.\u000bWhen Firstlight Noya is farther away from the target, her Auto Attacks become a sprint attack with the longsword, dealing <color=#fb8037>&Param5& x3</color> of Max HP as Lux Skill DMG. This effect can be triggered once every 1.5s.\u000bWhen Firstlight Noya's Auto Attacks deal DMG to a target with ##Glimmer#4029#, each stack of ##Glimmer#4029# on the target increases the &Param6& of this attack by <color=#fb8037>&Param7&</color>.",
             "descCN": "挥动巨剑「曙光」和长剑「拂晓」进行连绵不断的攻击。\u000b一段：挥动巨剑，造成最大生命<color=#fb8037>&Param1&x2</color>的光系普攻伤害\u000b二段：挥动巨剑，造成最大生命<color=#fb8037>&Param2&x3</color>的光系普攻伤害\u000b三段：挥动巨剑，造成最大生命<color=#fb8037>&Param3&x2</color>的光系普攻伤害\u000b四段：挥动长剑，发射2道「流光」，每道造成最大生命<color=#fb8037>&Param4&</color>的光系技能伤害\u000b源初尘沙距离目标较远时，普攻时使用长剑发动冲刺攻击，造成最大生命<color=#fb8037>&Param5&x3</color>的光系技能伤害，该效果每1.5秒可触发1次。\u000b源初尘沙的普攻对附带##闪烁#4029#的目标造成伤害时，目标附带的每1层##闪烁#4029#提升本次伤害的&Param6&<color=#fb8037>&Param7&</color>。",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Skill) \u000bParam5: &Param5& (HitDamage,Skill) \u000bParam6: &Param6& (OnceAdditionalAttribute,AttributeType1) \u000bParam7: &Param7& (OnceAdditionalAttribute,Value1)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Skill) \u000bParam5: &Param5& (HitDamage,Skill) \u000bParam6: &Param6& (OnceAdditionalAttribute,AttributeType1) \u000bParam7: &Param7& (OnceAdditionalAttribute,Value1)",
+            "descJP": "大剣と長剣を振るって連続攻撃する。\u000b1撃目：大剣を振るい、最大HPの<color=#fb8037>&Param1&x2</color>の光属性の通常攻撃ダメージを与える。\u000b2撃目：大剣を振るい、最大HPの<color=#fb8037>&Param2&x3</color>の光属性の通常攻撃ダメージを与える。\u000b3撃目：大剣を振るい、最大HPの<color=#fb8037>&Param3&x2</color>の光属性の通常攻撃ダメージを与える。\u000b4撃目：長剣を振るって光刃を2本放ち、1本につき最大HPの<color=#fb8037>&Param4&</color>の光属性のスキルダメージを与える。\u000b敵との距離が離れている時、セイナ（原点）は通常攻撃で長剣による突進攻撃を行い、最大HPの<color=#fb8037>&Param5&x3</color>の光属性のスキルダメージを与える。この効果は1.5秒ごとに1回発動できる。\u000bセイナ（原点）の通常攻撃は##残光#4029#が付与された敵にダメージを与えた時、その敵に付与されている##残光#4029#1につき、今回の攻撃で与える&Param6&が<color=#fb8037>&Param7&</color>増加する。",
+            "descKR": "대검 「서광」과 장검 「여명」을 휘둘러 끊임없이 공격한다.\u000b1단계: 대검을 휘둘러 최대 HP <color=#fb8037>&Param1&x2</color>의 빛 속성 일반 공격 피해를 입힌다.\u000b2단계: 대검을 휘둘러 최대 HP <color=#fb8037>&Param2&x3</color>의 빛 속성 일반 공격 피해를 입힌다. \u000b3단계: 대검을 휘둘러 최대 HP <color=#fb8037>&Param3&x2</color>의 빛 속성 일반 공격 피해를 입힌다. \u000b4단계: 장검을 휘둘러 「섬광」 2개를 발사하며, 각각 최대 HP <color=#fb8037>&Param4&</color>의 빛 속성 스킬 피해를 입힌다. \u000b세이나(기원)와 목표가 멀리 떨어진 경우 일반 공격 시 장검을 사용해 스퍼트 공격을 발동해 최대 HP <color=#fb8037>&Param5&x3</color>의 빛 속성 스킬 피해를 입힌다. 해당 효과는 1.5초마다 최대 1회 발동한다. \u000b세이나(기원)의 일반 공격이 ##반짝임#4029#을 보유한 목표에게 피해를 입히면 목표가 보유한 ##반짝임#4029# 1스택마다 이번 피해의 &Param6& <color=#fb8037>&Param7&</color> 증가한다.",
             "damageType": [
                 "Auto Attack (2.35e, from Normal attack, scale with Normal attack)",
                 "Auto Attack (3.525e, from Normal attack, scale with Normal attack)",
@@ -156343,12 +156345,14 @@
             "id": 16231000,
             "name": "Storm Flash: Radiance",
             "nameCN": "暴风闪·耀",
+            "nameJP": "砕耀斬",
+            "nameKR": "폭풍섬·빛",
             "cooldown": "10s",
             "energyLimit": 20.8888,
             "desc": "Rapidly swings the longsword [Dawn], dealing <color=#fb8037>&Param1& x5</color> of Max HP as AoE Lux Skill DMG. Then slams down with the greatsword [Daybreak], dealing <color=#fb8037>&Param2&</color> of Max HP as AoE Lux Auto Attack DMG, and generates 1 Starfall that deals <color=#fb8037>&Param3&</color> of Max HP as AoE Lux Auto Attack DMG.\u000bStorm Flash: Radiance (Main Skill) can trigger ##Lux Mark#1015# to generate ##Lucent#4028#: deals &Param4& of Max HP as AoE Lux Mark DMG and inflicts 1 stack of ##Glimmer#4029#.",
             "descCN": "快速挥舞长剑「拂晓」，造成最大生命<color=#fb8037>&Param1&x5</color>的范围光系技能伤害。随后使用巨剑「曙光」下劈，造成最大生命<color=#fb8037>&Param2&</color>的范围光系普攻伤害，同时产生1道「坠星」，造成最大生命<color=#fb8037>&Param3&</color>的范围光系普攻伤害。\u000b主控技「暴风闪·耀」可触发##光系印记#1015#，产生##光耀#4028#：造成最大生命&Param4&的范围光系印记伤害，并附加1层##闪烁#4029#。",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Mark)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "descJP": "長剣を素早く振るい、範囲内に最大HPの<color=#fb8037>&Param1&x5</color>の光属性のスキルダメージを与える。その後、大剣を振り下ろし、範囲内に最大HPの<color=#fb8037>&Param2&</color>の光属性の通常攻撃ダメージを与える。同時に星雷を1本生成し、範囲内に最大HPの<color=#fb8037>&Param3&</color>の光属性の通常攻撃ダメージを与える。\u000b主力スキルは##光属性の印#1015#を発動させることができる。発動時、##光輝#4028#を発生させ、範囲内に最大HPの&Param4&の光属性の印ダメージを与え、##残光#4029#を1付与する。",
+            "descKR": "빠르게 장검 「여명」을 휘둘러 최대 HP <color=#fb8037>&Param1&x5</color>의 빛 속성 범위 스킬 피해를 입힌다. 이후 대검 「서광」을 내리찍어 최대 HP <color=#fb8037>&Param2&</color>의 빛 속성 범위 일반 공격 피해를 입히는 동시에 「낙성」 1개를 생성해, 최대 HP <color=#fb8037>&Param3&</color>의 빛 속성 범위 일반 공격 피해를 입힌다. \u000b메인 스킬 「폭풍섬·빛」이 ##빛 속성 표식#1015#을 발동할 수 있고, ##광휘#4028#를 생성해 최대 HP &Param4&의 빛 속성 범위 표식 피해를 입힌다. ##반짝임#4029# 1스택을 부여한다.",
             "damageType": [
                 "Skill (2.1215e, from Skill, scale with Skill)",
                 "Auto Attack (10.2812e, from Skill, scale with Skill)",
@@ -156385,11 +156389,13 @@
             "id": 16232000,
             "name": "Thunderstrike: Break",
             "nameCN": "迅雷击·破",
+            "nameJP": "迅雷撃",
+            "nameKR": "신뢰격·파",
             "cooldown": "12s",
             "desc": "Spins rapidly with the longsword [Dawn], dealing <color=#fb8037>&Param1& x8</color> of Max HP as AoE Lux Skill DMG. Then thrusts the greatsword [Daybreak] into the ground to create continuous shockwaves, dealing <color=#fb8037>&Param2& x6</color> and <color=#fb8037>&Param3&</color> of Max HP as AoE Lux Auto Attack DMG.\u000bThunderstrike: Break (Support Skill) can trigger ##Lux Mark#1015# to generate ##Lucent#4028#: deals &Param4& of Max HP as AoE Lux Mark DMG and inflicts 1 stack of ##Glimmer#4029#.",
             "descCN": "手持长剑「拂晓」高速旋转，造成最大生命<color=#fb8037>&Param1&x8</color>的范围光系技能伤害。随后使用巨剑「曙光」插地持续震击，造成最大生命<color=#fb8037>&Param2&x6</color>、<color=#fb8037>&Param3&</color>的范围光系普攻伤害。\u000b援护技「迅雷击·破」可触发##光系印记#1015#，产生##光耀#4028#：造成最大生命&Param4&的范围光系印记伤害，并附加1层##闪烁#4029#。",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Mark)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack) \u000bParam4: &Param4& (HitDamage,Mark)",
+            "descJP": "長剣を持って高速回転し、範囲内に最大HPの<color=#fb8037>&Param1&x8</color>の光属性のスキルダメージを与える。その後、大剣を地面に突き立てて連続して衝撃を起こし、範囲内に最大HPの<color=#fb8037>&Param2&x6</color>、<color=#fb8037>&Param3&</color>の光属性の通常攻撃ダメージを与える。\u000b支援スキルは##光属性の印#1015#を発動させることができる。発動時、##光輝#4028#を発生させ、範囲内に最大HPの&Param4&の光属性の印ダメージを与え、##残光#4029#を1付与する。",
+            "descKR": "장검 「여명」을 들고 고속으로 회전하여 최대 HP <color=#fb8037>&Param1&x8</color>의 빛 속성 범위 스킬 피해를 입힌다. 이후 대검 「서광」을 땅에 꽂아 지속적으로 충격파를 일으켜 최대 HP <color=#fb8037>&Param2&x6</color>, <color=#fb8037>&Param3&</color>의 빛 속성 범위 일반 공격 피해를 입힌다. \u000b지원 스킬 「신뢰격·파」가 ##빛 속성 표식#1015#을 발동할 수 있고, ##광휘#4028#를 생성해 최대 HP &Param4&의 빛 속성 범위 표식 피해를 입히고, ##반짝임#4029# 1스택을 부여한다.",
             "damageType": [
                 "Skill (from Skill, scale with Skill)",
                 "Auto Attack (from Skill, scale with Skill)",
@@ -156425,12 +156431,14 @@
             "id": 16240000,
             "name": "Empyrean Starender",
             "nameCN": "煌闪极星断破斩",
+            "nameJP": "星芒破斬",
+            "nameKR": "극성섬광 파열참",
             "cooldown": "30s",
             "energy": 235,
             "desc": "Firstlight Noya's Ultimate has two forms, attacking with the greatsword [Daybreak] and the longsword [Dawn] respectively. She enters battle with the greatsword-form Ultimate by default.\u000bGreatsword Form: Leaps into the air and swings the greatsword, dealing <color=#fb8037>&Param1& x5</color> and <color=#fb8037>&Param2&</color> of Max HP as AoE Lux Auto Attack DMG in a large area.\u000bLongsword Form: Dashes quickly and attacks at high speed, dealing <color=#fb8037>&Param3& x7</color> of Max HP as AoE Lux Skill DMG in a large area, then generates a field that deals <color=#fb8037>&Param4& x7</color> of Max HP as AoE Lux Skill DMG in a large area.\u000bWhen casting Empyrean Starender (Ultimate), Firstlight Noya gains Starender: increases &Param5& by <color=#fb8037>&Param6&</color> for &Param7&s.\u000bEmpyrean Starender (Ultimate) can trigger ##Lux Mark#1015# to generate ##Lucent#4028#: deals &Param8& of Max HP as AoE Lux Mark DMG and inflicts 1 stack of ##Glimmer#4029#.",
             "descCN": "源初尘沙的绝招拥有双形态，分别使用巨剑「曙光」和长剑「拂晓」进行攻击，默认以巨剑形态的绝招进入战斗。\u000b巨剑形态：腾跃空中挥舞巨剑，造成最大生命<color=#fb8037>&Param1&x5</color>、<color=#fb8037>&Param2&</color>的大范围光系普攻伤害。\u000b长剑形态：快速闪身高速攻击，造成最大生命<color=#fb8037>&Param3&x7</color>的大范围光系技能伤害，随后产生领域，造成最大生命<color=#fb8037>&Param4&x7</color>的大范围光系技能伤害。\u000b施放绝招「煌闪极星断破斩」时，源初尘沙获得「极星」：&Param5&提升<color=#fb8037>&Param6&</color>，持续&Param7&秒。\u000b绝招「煌闪极星断破斩」可触发##光系印记#1015#，产生##光耀#4028#：造成最大生命&Param8&的范围光系印记伤害，并附加1层##闪烁#4029#。",
-            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (Buff,Time) \u000bParam8: &Param8& (HitDamage,Mark)",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Skill) \u000bParam4: &Param4& (HitDamage,Skill) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (Buff,Time) \u000bParam8: &Param8& (HitDamage,Mark)",
+            "descJP": "セイナ（原点）の必殺技は、大剣と長剣を使う2つの形態がある。戦闘開始時は大剣形態となる。\u000b大剣形態：空中へ跳び上がって大剣を振るい、広範囲に最大HPの<color=#fb8037>&Param1&x5</color>、<color=#fb8037>&Param2&</color>の光属性の通常攻撃ダメージを与える。\u000b長剣形態：素早く移動しながら連続攻撃を行い、広範囲に最大HPの<color=#fb8037>&Param3&x7</color>の光属性のスキルダメージを与える。その後、天剣陣を発生させ、広範囲に最大HPの<color=#fb8037>&Param4&x7</color>の光属性のスキルダメージを与える。\u000b必殺技発動時、セイナ（原点）は閃星を獲得し、&Param7&秒間、&Param5&が<color=#fb8037>&Param6&</color>上昇する。\u000b必殺技は##光属性の印#1015#を発動させることができる。発動時、##光輝#4028#を発生させ、範囲内に最大HPの&Param8&の光属性の印ダメージを与え、##残光#4029#を1付与する。",
+            "descKR": "세이나(기원)의 필살기는 두 가지의 형태가 있어, 각각 대검 「서광」과 장검 「여명」을 사용해 공격하며, 기본적으로 대검 형태의 필살기로 전투에 진입한다. \u000b대검 형태: 공중으로 도약해 대검을 휘두르며 큰 범위에 최대 HP <color=#fb8037>&Param1&x5</color>, <color=#fb8037>&Param2&</color>의 빛 속성 일반 공격 피해를 입힌다. \u000b장검 형태: 빠르게 몸을 날려 고속으로 공격해 큰 범위에 최대 HP <color=#fb8037>&Param3&x7</color>의 빛 속성 스킬 피해를 입힌다. 이후 영역을 생성해 큰 범위에 최대 HP <color=#fb8037>&Param4&x7</color>의 빛 속성 스킬 피해를 입힌다. \u000b필살기 「극성섬광 파열참」 시전 시, 세이나(기원)가 「극성」을 획득해, &Param5_kr1& <color=#fb8037>&Param6&</color> 증가한다. &Param7&초간 지속된다. \u000b필살기 「극성섬광 파열참」이 ##빛 속성 표식#1015#을 발동할 수 있고 ##광휘#4028#를 생성해 최대 HP &Param8&의 빛 속성 범위 표식 피해를 입힌다. 또한 ##반짝임#4029# 1스택을 부여한다.\u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype)",
             "damageType": [
                 "Auto Attack (from Ultimate, scale with Ultimate)",
                 "Skill (from Ultimate, scale with Ultimate)",
@@ -156490,10 +156498,12 @@
                     "id": 516201,
                     "name": "Lucent Blitz",
                     "nameCN": "流光极闪",
+                    "nameJP": "流星の閃き",
+                    "nameKR": "유성 섬광",
                     "desc": "Storm Flash: Radiance (Main Skill) unleashes <color=#0abec5>4</color> more longsword attacks and fires <color=#0abec5>9</color> Glows, each Glow dealing <color=#0abec5>&Param1&</color> of Max HP as Lux Skill DMG.",
                     "descCN": "主控技「暴风闪·耀」的长剑攻击次数提升<color=#0abec5>4</color>次，并发射<color=#0abec5>9</color>道「流光」，每道造成最大生命<color=#0abec5>&Param1&</color>的光系技能伤害。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "descJP": "主力スキルの長剣による攻撃回数が<color=#0abec5>4</color>回増加し、さらに光刃を<color=#0abec5>9</color>本放つようになる。光刃1本につき最大HPの<color=#0abec5>&Param1&</color>の光属性のスキルダメージを与える。",
+                    "descKR": "메인 스킬 「폭풍섬·빛」의 장검 공격 횟수가 <color=#0abec5>4</color>회 증가하고, <color=#0abec5>9</color>개의 「섬광」을 발사해 각각 최대 HP <color=#0abec5>&Param1&</color>의 빛 속성 스킬 피해를 입힌다.",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -156518,10 +156528,12 @@
                     "id": 516202,
                     "name": "Dawnflare",
                     "nameCN": "破晓闪耀",
+                    "nameJP": "暁の閃光",
+                    "nameKR": "새벽의 광휘",
                     "desc": "Firing a total of <color=#0abec5>&Param1&</color> Glows grants Radiance Flurry (Special Main Skill): swings the longsword to unleash a massive blade light that deals <color=#0abec5>&Param2& x6</color> of Max HP as Lux Skill DMG and can trigger ##Lux Mark#1015#.\u000bLongsword sprint attacks during Auto Attacks now fire <color=#0abec5>3</color> Glows, each dealing <color=#0abec5>&Param3&</color> of Max HP as Lux Skill DMG.",
                     "descCN": "源初尘沙每发射累计<color=#0abec5>&Param1&</color>道「流光」时，获得特殊主控技「流影光耀斩」：挥动长剑产生巨型剑光，造成最大生命<color=#0abec5>&Param2&x6</color>的光系技能伤害，可触发##光系印记#1015#。\u000b普攻中使用长剑发动冲刺攻击时，可发射<color=#0abec5>3</color>道「流光」，每道造成最大生命<color=#0abec5>&Param3&</color>的光系技能伤害。",
-                    "descJP": "undefined\u000bParam1: &Param1& (BuffValue,LaminatedNum) \u000bParam2: &Param2& (HitDamage,Skill) \u000bParam3: &Param3& (HitDamage,Skill)",
-                    "descKR": "undefined\u000bParam1: &Param1& (BuffValue,LaminatedNum) \u000bParam2: &Param2& (HitDamage,Skill) \u000bParam3: &Param3& (HitDamage,Skill)",
+                    "descJP": "セイナ（原点）が光刃を累計<color=#0abec5>&Param1&</color>本放つたびに、特殊主力スキル「暁光乱刃」を獲得する。\u000b「暁光乱刃」：長剣を振るって巨大な剣光を生み出し、最大HPの<color=#0abec5>&Param2&x6</color>の光属性のスキルダメージを与える。この攻撃は##光属性の印#1015#を発動させることができる。\u000b通常攻撃の長剣による突進攻撃を行う時、光刃を<color=#0abec5>3</color>本放つようになり、1本につき最大HPの<color=#0abec5>&Param3&</color>の光属性のスキルダメージを与える。",
+                    "descKR": "세이나(기원)가 「섬광」을 <color=#0abec5>&Param1&</color>개 발사할 때마다 특수 메인 스킬 「잔영섬광참」을 획득해, 장검을 휘둘러 생성한 거대한 검광으로 최대 HP <color=#0abec5>&Param2&x6</color>의 빛 속성 스킬 피해를 입힌다. ##빛 속성 표식#1015#을 발동할 수 있다. \u000b일반 공격 중 장검을 사용해 스퍼트 공격을 발동할 때 「섬광」 <color=#0abec5>3</color>개를 발사해 각각 최대 HP <color=#0abec5>&Param3&</color>의 빛 속성 스킬 피해를 입힌다.",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -156556,10 +156568,12 @@
                     "id": 516203,
                     "name": "Stardust Descent",
                     "nameCN": "拂尘坠光",
+                    "nameJP": "星雷の秘剣",
+                    "nameKR": "여명의 낙광",
                     "desc": "Storm Flash: Radiance (Main Skill) attacks additionally generate <color=#0abec5>2</color> Starfalls. Auto Attack sprints become greatsword attacks that deal <color=#0abec5>&Param1&</color> of Max HP as Lux Auto Attack DMG and generate 1 Starfall. Firstlight Noya triggering a Mark generates <color=#0abec5>1</color> Starfall, and this effect triggers only once every 1s. The above Starfalls deal <color=#0abec5>&Param2&</color> of Max HP as AoE Lux Auto Attack DMG.",
                     "descCN": "主控技「暴风闪·耀」攻击时，可额外产生<color=#0abec5>2</color>道「坠星」。普攻中冲刺攻击变为使用巨剑攻击，造成最大生命<color=#0abec5>&Param1&</color>的光系普攻伤害，并产生1道「坠星」。源初尘沙触发印记时，产生<color=#0abec5>1</color>道「坠星」，该效果每1秒最多触发1次。以上「坠星」攻击目标时，造成最大生命<color=#0abec5>&Param2&</color>的范围光系普攻伤害。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+                    "descJP": "主力スキル攻撃時、星雷を追加で<color=#0abec5>2</color>本生成させるようになる。通常攻撃の突進攻撃は大剣で行うようになり、最大HPの<color=#0abec5>&Param1&</color>の光属性の通常攻撃ダメージを与え、星雷を1本生成するようになる。セイナ（原点）が印を発動させた時、星雷を<color=#0abec5>1</color>本生成する。この効果は1秒ごとに1回発動できる。これらの星雷は、範囲内に最大HPの<color=#0abec5>&Param2&</color>の光属性の通常攻撃ダメージを与える。",
+                    "descKR": "메인 스킬 「폭풍섬·빛」 공격 시 「낙성」 <color=#0abec5>2</color>개를 추가로 생성할 수 있다. 일반 공격 중 스퍼트 공격이 대검 공격으로 변경되어 최대 HP <color=#0abec5>&Param1&</color>의 빛 속성 일반 공격 피해를 입히고, 「낙성」을 1개 생성한다. 세이나(기원)가 표식을 발동하면 「낙성」을 <color=#0abec5>1</color>개 생성할 수 있다. 해당 효과는 1초마다 최대 1회 발동한다. 위 「낙성」이 목표를 공격하면, 최대 HP <color=#0abec5>&Param2&</color>의 빛 속성 범위 일반 공격 피해를 입힌다.",
                     "damageType": [
                         "Auto Attack (5.5486e, from Normal attack, scale with Normal attack)",
                         "Auto Attack (from Skill, scale with Skill)"
@@ -156589,10 +156603,12 @@
                     "id": 516204,
                     "name": "Sinbreaker",
                     "nameCN": "破命断罪",
+                    "nameJP": "星剣の担い手",
+                    "nameKR": "운명 파괴의 단죄",
                     "desc": "Firstlight Noya absorbs lingering Starfalls nearby. For every <color=#0abec5>&Param1&</color> Starfalls absorbed, her next Auto Attack becomes Judgment Starfall (Special Auto Attack): channels energy into a massive downward greatsword strike, dealing <color=#0abec5>&Param2& x2</color> of Max HP as AoE Lux Auto Attack DMG, which can trigger ##Lux Mark#1015#.\u000bIncreases the greatsword's Attack Range and &Param3& during Auto Attacks by <color=#0abec5>&Param4&</color>. They can also trigger ##Lux Mark#1015#.",
                     "descCN": "源初尘沙可吸收附近残留的「坠星」，每累计吸收<color=#0abec5>&Param1&</color>道时，下次普攻时发动特殊普攻「断罪天星坠」：凝聚能量挥动巨剑，下砸造成最大生命<color=#0abec5>&Param2&x2</color>的范围大光系普攻伤害，可触发##光系印记#1015#。\u000b普攻中使用巨剑攻击时，伤害范围提升，造成的&Param3&提升<color=#0abec5>&Param4&</color>，可触发##光系印记#1015#。",
-                    "descJP": "undefined\u000bParam1: &Param1& (BuffValue,LaminatedNum) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (BuffValue,LaminatedNum) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "セイナ（原点）は周囲に残った星雷を吸収するようになる。累計<color=#0abec5>&Param1&</color>本吸収するたびに、次の通常攻撃で特殊通常攻撃「星震の斬撃」を発動する。\u000b「星震の斬撃」：大剣を振り下ろし、広範囲に最大HPの<color=#0abec5>&Param2&x2</color>の光属性の通常攻撃ダメージを与える。この攻撃は##光属性の印#1015#を発動させることができる。\u000b通常攻撃中の大剣による攻撃は、範囲が拡大され、与える&Param3&が<color=#0abec5>&Param4&</color>増加し、##光属性の印#1015#を発動させることができるようになる。",
+                    "descKR": "세이나(기원)가 주변에 남은 「낙성」을 흡수한다. 누적 <color=#0abec5>&Param1&</color>개 흡수 시마다 다음 일반 공격 시 특수 일반 공격 「단죄의 낙성」을 발동한다. 에너지를 모아 대검을 휘두르며 내리쳐 큰 범위에 최대 HP <color=#0abec5>&Param2&x2</color>의 빛 속성 일반 공격 피해를 입힌다. ##빛 속성 표식#1015#을 발동할 수 있다. \u000b일반 공격 중 대검을 사용해 공격할 때 피해 범위가 증가하고, 입히는 &Param3_kr1& <color=#0abec5>&Param4&</color> 증가한다. ##빛 속성 표식#1015#을 발동할 수 있다.\u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [
                         "Auto Attack (from Normal attack, scale with Skill)"
                     ],
@@ -156637,10 +156653,12 @@
                     "id": 516205,
                     "name": "Prism Warp",
                     "nameCN": "裁光折跃",
+                    "nameJP": "反鏡の刃",
+                    "nameKR": "심판의 빛 도약",
                     "desc": "Glows fired by Firstlight Noya return to hit targets, dealing <color=#fb8037>&Param1&</color> of Max HP as Lux Skill DMG.\u000bIncreases the &Param2& dealt by Firstlight Noya's longsword attacks and Glows by <color=#fb8037>&Param3&</color>.",
                     "descCN": "源初尘沙发射的「流光」可产生折返，攻击目标造成最大生命<color=#fb8037>&Param1&</color>的光系技能伤害。\u000b源初尘沙的长剑攻击和「流光」造成的&Param2&提升<color=#fb8037>&Param3&</color>。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "セイナ（原点）が放つ光刃は折り返すようになり、敵を攻撃し、最大HPの<color=#fb8037>&Param1&</color>の光属性のスキルダメージを与える。\u000bセイナ（原点）の長剣による攻撃と光刃の&Param2&が<color=#fb8037>&Param3&</color>上昇する。",
+                    "descKR": "세이나(기원)가 발사하는 「섬광」이 반사를 생성해 목표를 공격하여 최대 HP <color=#fb8037>&Param1&</color>의 빛 속성 스킬 피해를 입힌다. \u000b세이나(기원)의 장검 공격과 「섬광」이 입히는 &Param2_kr1& <color=#fb8037>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [
                         "Skill (from Skill)"
                     ],
@@ -156676,10 +156694,12 @@
                     "id": 516206,
                     "name": "Resolve: Blitz",
                     "nameCN": "觉悟·极闪",
+                    "nameJP": "彗星の構え",
+                    "nameKR": "각오·극섬광",
                     "desc": "Casting Radiance Flurry (Main Skill) switches Firstlight Noya's Ultimate to the longsword form.\u000bHer longsword attacks and Glows deal <color=#fb8037>&Param2&</color> more &Param1& to targets with ##Glimmer#4029#.",
                     "descCN": "施放主控技「流影光耀斩」时，源初尘沙的绝招切换为长剑形态。\u000b源初尘沙的长剑攻击和「流光」对附带##闪烁#4029#的目标造成的&Param1&提升<color=#fb8037>&Param2&</color>。",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "特殊主力スキル発動時、セイナ（原点）の必殺技が長剣形態に切り替わる。\u000b##残光#4029#が付与された敵に対し、セイナ（原点）の長剣による攻撃と光刃で与える&Param1&が<color=#fb8037>&Param2&</color>増加する。",
+                    "descKR": "메인 스킬 「잔영섬광참」 시전 시 세이나(기원)의 필살기가 장검 형태로 변경된다. \u000b세이나(기원)의 장검 공격과 「섬광」이 ##반짝임#4029#을 보유한 목표에게 입히는 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -156709,10 +156729,12 @@
                     "id": 516207,
                     "name": "Lucent Tide",
                     "nameCN": "流光浪影",
+                    "nameJP": "逆転の光明",
+                    "nameKR": "유성의 물결",
                     "desc": "Glows can trigger ##Lux Mark#1015# and have a &Param1&% chance to gain increased Attack Range.\u000bCasting the Main Skill increases Firstlight Noya's &Param2& by <color=#fb8037>&Param3&</color> and Lux Versatile Trekkers' &Param4& by <color=#fb8037>&Param5&</color> for &Param6&s, stacking up to &Param7& times.",
                     "descCN": "「流光」可触发##光系印记#1015#，同时有&Param1&%概率提升伤害范围。\u000b施放主控技时，源初尘沙的&Param2&提升<color=#fb8037>&Param3&</color>，光系均衡角色的&Param4&提升<color=#fb8037>&Param5&</color>，持续&Param6&秒，可叠加&Param7&层。",
-                    "descJP": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1) \u000bParam6: &Param6& (BuffValue,Time) \u000bParam7: &Param7& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1) \u000bParam6: &Param6& (BuffValue,Time) \u000bParam7: &Param7& (BuffValue,LaminatedNum)",
+                    "descJP": "光刃は##光属性の印#1015#を発動させることができるようになり、&Param1&%の確率で攻撃範囲が拡大される。\u000b主力スキル発動時、&Param6&秒間、セイナ（原点）の&Param2&が<color=#fb8037>&Param3&</color>上昇し、光属性のバランサー巡遊者の&Param4&が<color=#fb8037>&Param5&</color>増加する。この効果は&Param7&回まで重複できる。",
+                    "descKR": "「섬광」이 ##빛 속성 표식#1015#을 발동할 수 있고, &Param1&% 확률로 피해 범위가 증가한다. \u000b메인 스킬 시전 시 세이나(기원)의 &Param2_kr1& <color=#fb8037>&Param3&</color> 증가하고, 빛 속성 밸런스 캐릭터의 &Param4_kr1& <color=#fb8037>&Param5&</color> 증가한다. &Param6&초간 지속되며, 최대 &Param7&스택 중첩된다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Skill Crit Rate (base)",
@@ -156767,10 +156789,12 @@
                     "id": 516208,
                     "name": "Eclipse Phantom",
                     "nameCN": "断光残影",
+                    "nameJP": "残心の煌めき",
+                    "nameKR": "빛을 가르는 잔영",
                     "desc": "Casting Judgment Starfall (Special Auto Attack) generates a field that deals <color=#fb8037>&Param1& x6</color> of Max HP as Lux Auto Attack DMG.\u000bIncreases the &Param2& dealt by Firstlight Noya's greatsword attacks and Starfalls by <color=#fb8037>&Param3&</color>.",
                     "descCN": "施放特殊普攻「断罪天星坠」时，产生领域，造成最大生命<color=#fb8037>&Param1&x6</color>的光系普攻伤害。\u000b源初尘沙的巨剑攻击和「坠星」造成的&Param2&提升<color=#fb8037>&Param3&</color>。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "特殊通常攻撃発動時、星雷陣を生成させ、最大HPの<color=#fb8037>&Param1&x6</color>の光属性の通常攻撃ダメージを与えるようになる。\u000bセイナ（原点）の大剣による攻撃と星雷の&Param2&が<color=#fb8037>&Param3&</color>上昇する。",
+                    "descKR": "특수 일반 공격 「단죄의 낙성」 시전 시, 영역을 생성해 최대 HP <color=#fb8037>&Param1&x6</color>의 빛 속성 일반 공격 피해를 입힌다. \u000b세이나(기원)의 대검 공격과 「낙성」이 입히는 &Param2_kr1& <color=#fb8037>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [
                         "Auto Attack (from Skill)"
                     ],
@@ -156806,10 +156830,12 @@
                     "id": 516209,
                     "name": "Gavel of Absolution",
                     "nameCN": "断罪之槌",
+                    "nameJP": "断罪の雷",
+                    "nameKR": "단죄의 망치",
                     "desc": "When Starfalls dissipate, strike the target with a lightning bolt, dealing <color=#fb8037>&Param1&</color> of Max HP as Lux Auto Attack DMG.\u000bCasting the Main Skill increases Firstlight Noya's &Param2& by <color=#fb8037>&Param3&</color> for &Param4&.",
                     "descCN": "「坠星」消散时，发射1道雷电攻击目标，造成最大生命<color=#fb8037>&Param1&</color>的光系普攻伤害。\u000b施放主控技时，源初尘沙的&Param2&提升<color=#fb8037>&Param3&</color>，持续&Param4&秒。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (BuffValue,Time)",
+                    "descJP": "星雷が消滅時、雷撃を1本放つようになり、敵に最大HPの<color=#fb8037>&Param1&</color>の光属性の通常攻撃ダメージを与える。\u000b主力スキル発動時、&Param4&秒間、セイナ（原点）の&Param2&が<color=#fb8037>&Param3&</color>上昇する。",
+                    "descKR": "「낙성」이 흩어질 때 번개를 1개 발사해 목표를 공격해 최대 HP <color=#fb8037>&Param1&</color>의 빛 속성 일반 공격 피해를 입힌다. \u000b메인 스킬을 시전하면 세이나(기원)의 &Param2_kr1& <color=#fb8037>&Param3&</color> 증가한다. &Param4&초간 지속된다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Auto Attack (from Skill)"
                     ],
@@ -156853,10 +156879,12 @@
                     "id": 516210,
                     "name": "Resolve: Sunder",
                     "nameCN": "觉悟·断破",
+                    "nameJP": "極星の構え",
+                    "nameKR": "각오·파단",
                     "desc": "Casting Judgment Starfall (Special Auto Attack) switches Firstlight Noya's Ultimate to the greatsword form.\u000bIncreases the &Param1& dealt by her greatsword attacks and Starfalls by <color=#fb8037>&Param2&</color>.",
                     "descCN": "施放特殊普攻「断罪天星坠」时，源初尘沙的绝招切换为巨剑形态。\u000b尘沙的巨剑攻击和「坠星」造成的&Param1&提升<color=#fb8037>&Param2&</color>点。",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "特殊通常攻撃発動時、セイナ（原点）の必殺技が大剣形態に切り替わる。\u000bセイナ（原点）の大剣による攻撃と星雷は&Param1&を<color=#fb8037>&Param2&</color>獲得する。",
+                    "descKR": "특수 일반 공격 「단죄의 낙성」시전 시, 세이나(기원)의 필살기가 대검 형태로 변경된다. \u000b세이나의 대검 공격과 「낙성」이 입히는 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -156886,10 +156914,12 @@
                     "id": 516211,
                     "name": "Searing Sun",
                     "nameCN": "灼目的烈阳",
+                    "nameJP": "残光の標",
+                    "nameKR": "눈부신 태양",
                     "desc": "Increases Firstlight Noya's &Param1& dealt to targets with ##Glimmer#4029# by <color=#fb8037>&Param2&</color>.\u000bIncreases her &Param3& by <color=#fb8037>&Param4&</color>.",
                     "descCN": "源初尘沙对附带##闪烁#4029#的目标造成的&Param1&提升<color=#fb8037>&Param2&</color>。\u000b源初尘沙的&Param3&提升<color=#fb8037>&Param4&</color>点。",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1)",
+                    "descJP": "セイナ（原点）は##残光#4029#が付与された敵に与える&Param1&が<color=#fb8037>&Param2&</color>増加する。\u000bセイナ（原点）の&Param3&が<color=#fb8037>&Param4&</color>上昇する。",
+                    "descKR": "세이나(기원)가 ##반짝임#4029#을 보유한 목표에게 입히는 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다. \u000b세이나(기원)의 &Param3_kr1& <color=#fb8037>&Param4&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "HP (base)"
@@ -156929,10 +156959,12 @@
                     "id": 516212,
                     "name": "Astral Brilliance",
                     "nameCN": "群星的闪耀",
+                    "nameJP": "綺羅星の輝き",
+                    "nameKR": "뭇별의 광채",
                     "desc": "Each Lux Trekker in the squad increases Firstlight Noya's ##Lux PEN#2068# by <color=#fb8037>&Param2&</color>.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "descCN": "队伍中每1名光系角色，使源初尘沙的##光系穿透#2068#提升<color=#fb8037>&Param2&</color>点。\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descJP": "チーム内の光属性巡遊者1体につき、セイナ（原点）の##光属性耐性貫通#2068#が<color=#fb8037>&Param2&</color>上昇する。\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
+                    "descKR": "팀 내 빛 속성 캐릭터 1명마다 세이나(기원)의 ##빛 속성 관통#2068#이 <color=#fb8037>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Lux PEN (base)"
@@ -156966,10 +156998,12 @@
                     "id": 516213,
                     "name": "Veteran's Grit",
                     "nameCN": "百战的不屈",
+                    "nameJP": "歴戦の騎士",
+                    "nameKR": "꺾이지 않는 백전",
                     "desc": "Increases Firstlight Noya's &Param1& by <color=#fb8037>&Param2&</color>.",
                     "descCN": "源初尘沙的&Param1&提升<color=#fb8037>&Param2&</color>点。",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descJP": "セイナ（原点）の&Param1&が<color=#fb8037>&Param2&</color>上昇する。",
+                    "descKR": "세이나(기원)의 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "HP (base)"
@@ -157001,10 +157035,12 @@
                     "id": 516241,
                     "name": "Argent Mirage: Legion's End",
                     "nameCN": "白影流光破万敌",
+                    "nameJP": "閃光の奥義",
+                    "nameKR": "적을 베는 하얀 섬광",
                     "desc": "When casting the longsword form Empyrean Starender (Ultimate), fires 7 Glows that each deal <color=#fb8037>&Param1&</color>of Max HP as Lux Skill DMG.\u000bIncreases Firstlight Noya's &Param2& by <color=#fb8037>&Param3&</color>.",
                     "descCN": "源初尘沙发动长剑状态的绝招「煌闪极星断破斩」时，发射7道「流光」，每1道造成最大生命<color=#fb8037>&Param1&</color>的光系技能伤害。\u000b源初尘沙的&Param2&提升<color=#fb8037>&Param3&</color>。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
+                    "descJP": "セイナ（原点）は長剣形態の必殺技発動時、光刃を7本放つようになり、1本につき最大HPの<color=#fb8037>&Param1&</color>の光属性のスキルダメージを与える。\u000bセイナ（原点）の&Param2&が<color=#fb8037>&Param3&</color>増加する。",
+                    "descKR": "세이나(기원)가 장검 형태의 필살기 「극성섬광 파열참」을 시전하면 「섬광」을 7개 발사해, 1개마다 최대 HP <color=#fb8037>&Param1&</color>의 빛 속성 스킬 피해를 입힌다. \u000b세이나(기원)의 &Param2_kr1& <color=#fb8037>&Param3&</color> 증가한다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Skill (from Ultimate)"
                     ],
@@ -157040,10 +157076,12 @@
                     "id": 516242,
                     "name": "Empyrean Starfall: Devil's End",
                     "nameCN": "天煌星坠诛万恶",
+                    "nameJP": "明星の奥義",
+                    "nameKR": "악을 멸하는 낙하 별빛",
                     "desc": "The greatsword form Empyrean Starender (Ultimate) leaves behind a field that deals <color=#fb8037>&Param1& x6</color> of Max HP as Lux Auto Attack DMG.\u000bIncreases Firstlight Noya's &Param2& by <color=#fb8037>&Param3&</color>.",
                     "descCN": "源初尘沙施放巨剑状态的绝招「煌闪极星断破斩」后，产生领域，造成最大生命<color=#fb8037>&Param1&x6</color>的光系普攻伤害。\u000b源初尘沙的&Param2&提升<color=#fb8037>&Param3&</color>。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1)",
+                    "descJP": "セイナ（原点）は大剣形態の必殺技発動時、星雷陣を生成するようになり、最大HPの<color=#fb8037>&Param1&x6</color>の光属性の通常攻撃ダメージを与える。\u000bセイナ（原点）の&Param2&が<color=#fb8037>&Param3&</color>増加する。",
+                    "descKR": "세이나(기원)가 대검 형태의 필살기 「극성섬광 파열참」을 시전한 후 영역을 생성해 최대 HP <color=#fb8037>&Param1&x6</color>의 빛 속성 일반 공격 피해를 입힌다. \u000b세이나(기원)의 &Param2_kr1& <color=#fb8037>&Param3&</color> 증가한다.\u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Auto Attack (from Ultimate)"
                     ],
@@ -157079,10 +157117,12 @@
                     "id": 516243,
                     "name": "Guiding Star",
                     "nameCN": "启明之星",
+                    "nameJP": "閃星の戦乙女",
+                    "nameKR": "샛별",
                     "desc": "While in the Starender state, Noya gains <color=#fb8037>&Param2&</color> additional &Param1& and restores <color=#fb8037>&Param4&</color> Energy every &Param3&s.",
                     "descCN": "尘沙处于「极星」状态时，可额外提升自身的&Param1&<color=#fb8037>&Param2&</color>，同时每&Param3&秒回复<color=#fb8037>&Param4&</color>点能量。",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (ScriptParameter,CommonData) \u000bParam4: &Param4& (ScriptParameter,CommonData)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (ScriptParameter,CommonData) \u000bParam4: &Param4& (ScriptParameter,CommonData)",
+                    "descJP": "セイナ（原点）は閃星効果持続中、自身の&Param1&がさらに<color=#fb8037>&Param2&</color>増加し、&Param3&秒ごとにSPを<color=#fb8037>&Param4&</color>獲得するようになる。",
+                    "descKR": "세이나가 「극성」 상태일 때 자신의 &Param1_kr1& <color=#fb8037>&Param2&</color> 추가로 증가한다. 동시에 &Param3&초마다 SP를 <color=#fb8037>&Param4&</color> 회복한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Crit DMG (base)"
@@ -157122,10 +157162,12 @@
                     "id": 516221,
                     "name": "Tempest Scourge",
                     "nameCN": "雷祸之劫",
+                    "nameJP": "明星の騎士",
+                    "nameKR": "벼락의 재앙",
                     "desc": "The greatsword attack in Thunderstrike: Break (Support Skill) leaves behind a field that deals <color=#0abec5>&Param1& x6</color> of Max HP as Lux Auto Attack DMG.",
                     "descCN": "援护技「迅雷击·破」中巨剑攻击后，产生领域，造成最大生命<color=#0abec5>&Param1&x6</color>的光系普攻伤害。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "descJP": "支援スキルの大剣による攻撃後、最大HPの<color=#0abec5>&Param1&x6</color>の光属性の通常攻撃ダメージを与える星雷陣を生成するようになる。",
+                    "descKR": "지원 스킬 「신뢰격·파」의 대검 공격 후 영역을 생성해 최대 HP <color=#0abec5>&Param1&x6</color>의 빛 속성 일반 공격 피해를 입힌다.",
                     "damageType": [
                         "Auto Attack (from Skill, scale with Skill)"
                     ],
@@ -157150,10 +157192,12 @@
                     "id": 516222,
                     "name": "Inquisitor's Edge",
                     "nameCN": "罪裁之剑",
+                    "nameJP": "星雷の加勢",
+                    "nameKR": "단죄의 검",
                     "desc": "The greatsword attack in Thunderstrike: Break (Support Skill) generates <color=#0abec5>11</color> Starfalls, each dealing <color=#0abec5>&Param1&</color> of Max HP as Lux Auto Attack DMG.",
                     "descCN": "援护技「迅雷击·破」中巨剑攻击时，产生<color=#0abec5>11</color>道「坠星」，每道造成最大生命<color=#0abec5>&Param1&</color>的光系普攻伤害。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "descJP": "支援スキルの大剣による攻撃時、星雷を<color=#0abec5>11</color>本生成し、1本につき最大HPの<color=#0abec5>&Param1&</color>の光属性の通常攻撃ダメージを与える。",
+                    "descKR": "지원 스킬 「신뢰격·파」의 대검 공격 시 「낙성」 <color=#0abec5>11</color>개를 생성해 각각 최대 HP <color=#0abec5>&Param1&</color>의 빛 속성 일반 공격 피해를 입힌다.",
                     "damageType": [
                         "Auto Attack (from Skill, scale with Skill)"
                     ],
@@ -157178,10 +157222,12 @@
                     "id": 516223,
                     "name": "Skyrend Flash",
                     "nameCN": "破空之闪",
+                    "nameJP": "光刃の加勢",
+                    "nameKR": "허공을 가르는 섬광",
                     "desc": "The longsword attack in Thunderstrike: Break (Support Skill) continuously fires Glows at the target, each dealing <color=#0abec5>&Param1&</color> of Max HP as Lux Skill DMG.",
                     "descCN": "援护技「迅雷击·破」中长剑攻击时，持续发射「流光」，每1道造成最大生命<color=#0abec5>&Param1&</color>的光系技能伤害。",
-                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill)",
+                    "descJP": "支援スキルの長剣による攻撃時、光刃を連続して放つようになり、1本につき最大HPの<color=#0abec5>&Param1&</color>の光属性のスキルダメージを与える。",
+                    "descKR": "지원 스킬 「신뢰격·파」의 장검 공격 시 「섬광」을 지속 발사한다. 1개마다 최대 HP <color=#0abec5>&Param1&</color>의 빛 속성 스킬 피해를 입힌다.",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -157206,10 +157252,12 @@
                     "id": 516224,
                     "name": "Galeblade",
                     "nameCN": "追风之刃",
+                    "nameJP": "閃光の騎士",
+                    "nameKR": "바람을 쫓는 칼날",
                     "desc": "Thunderstrike: Break (Support Skill) performs <color=#0abec5>10</color> more longsword attacks.",
                     "descCN": "援护技「迅雷击·破」中长剑攻击的次数提升<color=#0abec5>10</color>次。",
-                    "descJP": "undefined",
-                    "descKR": "undefined",
+                    "descJP": "支援スキルの長剣による攻撃回数が<color=#0abec5>10</color>回増加する。",
+                    "descKR": "지원 스킬 「신뢰격·파」의 장검 공격 횟수가 <color=#0abec5>10</color>회 증가한다.",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [],
@@ -157228,10 +157276,12 @@
                     "id": 516225,
                     "name": "Radiant Sever",
                     "nameCN": "裁光断",
+                    "nameJP": "星雷波",
+                    "nameKR": "심판의 일섬",
                     "desc": "Increases the Attack Range of Starfalls generated by Thunderstrike: Break (Support Skill).\u000bEach generated Starfall increases Firstlight Noya's &Param1& by <color=#fb8037>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "援护技「迅雷击·破」产生「坠星」的伤害范围提升。\u000b每1次产生「坠星」时，尘沙的&Param1&提升<color=#fb8037>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "支援スキルで生成する星雷の攻撃範囲が拡大される。\u000b星雷を生成するたびに、&Param3&秒間、セイナ（原点）の&Param1&が<color=#fb8037>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "지원 스킬 「신뢰격·파」가 생성하는 「낙성」의 피해 범위가 증가한다. \u000b「낙성」 1회 생성 시마다 세이나의 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ELEMENTTYPE_:(Lux) Auto Attack DMG"
@@ -157273,10 +157323,12 @@
                     "id": 516226,
                     "name": "Aegis: Sunder",
                     "nameCN": "援护·断破",
+                    "nameJP": "明星の剣",
+                    "nameKR": "지원·파단",
                     "desc": "After the greatsword attack in Thunderstrike: Break (Support Skill), switches Firstlight Noya's Ultimate to the greatsword form.\u000bWhen her longsword attacks deal DMG, increases her &Param1& by <color=#fb8037>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "援护技「迅雷击·破」中巨剑攻击后，源初尘沙的绝招切换为巨剑形态。\u000b源初尘沙的长剑攻击造成伤害时，自身的&Param1&提升<color=#fb8037>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "支援スキルの大剣による攻撃後、セイナ（原点）の必殺技は大剣形態に切り替わる。\u000bセイナ（原点）が長剣による攻撃でダメージを与えた時から&Param3&秒間、自身の&Param1&が<color=#fb8037>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "지원 스킬 「신뢰격·파」의 대검 공격 후 세이나(기원)의 필살기가 대검 형태로 변경된다. \u000b세이나(기원)의 장검 공격이 피해를 입히면 자신의 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Lux DMG (base)"
@@ -157318,10 +157370,12 @@
                     "id": 516227,
                     "name": "Fiendbreaker",
                     "nameCN": "诛邪破",
+                    "nameJP": "明星の型",
+                    "nameKR": "악을 베는 일격",
                     "desc": "Increases the &Param1& dealt by Firstlight Noya's greatsword attacks and Starfalls by <color=#fb8037>&Param2&</color>.",
                     "descCN": "源初尘沙的巨剑攻击和「坠星」造成的&Param1&提升<color=#fb8037>&Param2&</color>。",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "セイナ（原点）の大剣による攻撃と星雷で与える&Param1&が<color=#fb8037>&Param2&</color>増加する。",
+                    "descKR": "세이나(기원)의 대검 공격과 「낙성」이 입히는 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157352,10 +157406,12 @@
                     "id": 516228,
                     "name": "Sunfire Cleave",
                     "nameCN": "烈阳斩",
+                    "nameJP": "光刃の極",
+                    "nameKR": "작열참",
                     "desc": "Glows have a &Param1&% chance to gain increased Attack Range when fired.\u000bIncreases the &Param2& dealt by Firstlight Noya's longsword attacks and Glows by <color=#fb8037>&Param3&</color>.",
                     "descCN": "发射「流光」时有&Param1&%概率提升伤害范围。\u000b源初尘沙的长剑攻击和「流光」造成的&Param2&提升<color=#fb8037>&Param3&</color>。",
-                    "descJP": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameterValue,CommonData) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "光刃を放つ時、&Param1&%の確率で攻撃範囲が拡大される。\u000bセイナ（原点）の長剣による攻撃と光刃の与える&Param2&が<color=#fb8037>&Param3&</color>増加する。",
+                    "descKR": "「섬광」 발사 시 &Param1&% 확률로 피해 범위가 증가한다. \u000b세이나(기원)의 장검 공격과 「섬광」이 입히는 &Param2_kr1& <color=#fb8037>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157387,10 +157443,12 @@
                     "id": 516229,
                     "name": "Aegis: Blitz",
                     "nameCN": "援护·极闪",
+                    "nameJP": "閃光の剣",
+                    "nameKR": "지원·극섬광",
                     "desc": "After the longsword attack in Thunderstrike: Break (Support Skill), switches Firstlight Noya's Ultimate to the longsword form.\u000bWhen her greatsword deals DMG, increases her &Param1& by <color=#fb8037>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "援护技「迅雷击·破」中长剑攻击后，源初尘沙的绝招切换为长剑形态。\u000b源初尘沙的巨剑造成伤害时，自身的&Param1&提升<color=#fb8037>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "支援スキルの長剣による攻撃後、セイナ（原点）の必殺技は長剣形態に切り替わる。\u000bセイナ（原点）が大剣でダメージを与えた時から&Param3&秒間、自身の&Param1&が<color=#fb8037>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "지원 스킬 「신뢰격·파」의 장검 공격 후 세이나(기원)의 필살기가 장검 형태로 변경된다. \u000b세이나(기원)의 대검이 피해를 입히면 자신의 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Lux DMG (base)"
@@ -157432,10 +157490,12 @@
                     "id": 516230,
                     "name": "Breath of Light",
                     "nameCN": "光之息",
+                    "nameJP": "閃光の型",
+                    "nameKR": "빛의 숨결",
                     "desc": "Increases the &Param1& dealt by Firstlight Noya's longsword attacks and Glows by <color=#fb8037>&Param2&</color>.",
                     "descCN": "源初尘沙的长剑攻击和「流光」造成的&Param1&提升<color=#fb8037>&Param2&</color>。",
-                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "セイナ（原点）の長剣による攻撃と光刃の与える&Param1&が<color=#fb8037>&Param2&</color>増加する。",
+                    "descKR": "세이나(기원)의 장검 공격과 「섬광」이 입히는 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157466,10 +157526,12 @@
                     "id": 516231,
                     "name": "No More Goodbyes",
                     "nameCN": "不再有离别",
+                    "nameJP": "絆の光",
+                    "nameKR": "더는 이별이 없도록",
                     "desc": "Each Lux Trekker in the squad increases all Lux Trekkers' &Param1& by <color=#fb8037>&Param2&</color>.",
                     "descCN": "队伍中每1名光系角色，使全队光系角色的&Param1&提升<color=#fb8037>&Param2&</color>。",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1)",
+                    "descJP": "チーム内の光属性巡遊者1体につき、チーム全体の光属性巡遊者の&Param1&が<color=#fb8037>&Param2&</color>増加する。",
+                    "descKR": "팀 내 빛 속성 캐릭터 1명마다 팀 전체 빛 속성 캐릭터의 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Lux DMG (base)"
@@ -157503,10 +157565,12 @@
                     "id": 516232,
                     "name": "No More Sorrow",
                     "nameCN": "不再有悲伤",
+                    "nameJP": "預けられる背中",
+                    "nameKR": "더는 슬픔이 없도록",
                     "desc": "When the Lux Main Trekker casts the Main Skill, increases Firstlight Noya's &Param1& by <color=#fb8037>&Param2&</color> for &Param3&s.",
                     "descCN": "光系主控角色施放主控技时，源初尘沙的&Param1&提升<color=#fb8037>&Param2&</color>，持续&Param3&秒。",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "光属性の主力巡遊者が主力スキル発動時、&Param3&秒間、セイナ（原点）の&Param1&が<color=#fb8037>&Param2&</color>増加する。",
+                    "descKR": "빛 속성 메인 캐릭터가 메인 스킬을 시전하면 세이나(기원)의 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Lux DMG (base)"
@@ -157544,10 +157608,12 @@
                     "id": 516233,
                     "name": "No More Chains",
                     "nameCN": "不再有压迫",
+                    "nameJP": "自由の渇望",
+                    "nameKR": "더는 억압이 없도록",
                     "desc": "When any Lux Trekker in the squad casts a Main Skill or Support Skill, increases Firstlight Noya's &Param1& by <color=#fb8037>&Param2&</color> for &Param3&, stacking up to &Param4& times.",
                     "descCN": "队伍中任意光系角色施放主控技或援护技时，源初尘沙的&Param1&提升<color=#fb8037>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
-                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "チーム内の光属性巡遊者が主力スキルまたは支援スキル発動時、&Param3&秒間、セイナ（原点）の&Param1&が<color=#fb8037>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "팀 내 빛 속성 메인 캐릭터가 메인 스킬 또는 지원 스킬을 시전하면 세이나(기원)의 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Lux DMG (base)"
@@ -157594,10 +157660,12 @@
                     {
                         "name": "Buried Past",
                         "nameCN": "埋葬的过往",
+                        "nameJP": "血と砂の過去",
+                        "nameKR": "묻혀진 과거",
                         "desc": "While in the Starender state, increases Firstlight Noya's Crit DMG by <color=#0abec5>&Param1&</color>. Dealing any DMG grants her Starender. Triggers once every 5 minutes.",
                         "descCN": "「极星」状态下，源初尘沙的暴击伤害提升<color=#0abec5>&Param1&</color>，源初尘沙造成任意伤害时获得「极星」，该效果每5分钟可触发1次。",
-                        "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descJP": "閃星効果持続中、セイナ（原点）の会心ダメージが<color=#0abec5>&Param1&</color>増加する。\u000bセイナ（原点）がダメージを与えた時、閃星を獲得するようになる。この効果は5分ごとに1回発動できる。",
+                        "descKR": "「극성」 상태에서 세이나(기원)의 치명타 피해가 <color=#0abec5>&Param1&</color> 증가하고, 세이나(기원)가 피해를 입히면 「극성」을 획득한다. 해당 효과는 5분마다 최대 1회 발동한다.",
                         "effectType": [],
                         "addAttrType": [
                             "Crit DMG (base)"
@@ -157619,10 +157687,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -157641,10 +157711,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -157663,10 +157735,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG Boost by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -157685,10 +157759,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Auto Attack DMG Boost +<color=#0abec5>&Param1&</color>.",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -157707,10 +157783,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Crit DMG Boost +<color=#0abec5>&Param1&</color>.",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -157729,10 +157807,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -157751,10 +157831,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -157773,10 +157855,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG Boost by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -157795,10 +157879,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Auto Attack DMG Boost +<color=#0abec5>&Param1&</color>.",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -157817,10 +157903,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Crit DMG Boost +<color=#0abec5>&Param1&</color>.",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -157844,10 +157932,12 @@
                     {
                         "name": "Night Watcher's Duty",
                         "nameCN": "守夜人之责",
+                        "nameJP": "閃銀騎士の責務",
+                        "nameKR": "섬은 기사의 책임",
                         "desc": "Increases Firstlight Noya's Max HP by <color=#0abec5>&Param1&</color>. Increases the DMG Multiplier of Radiance Flurry and Judgment Starfall against targets with ##Glimmer#4029# by <color=#0abec5>&Param2&</color>.",
                         "descCN": "源初尘沙的生命上限提升<color=#0abec5>&Param1&</color>，「流影光耀斩」和「断罪天星坠」对附带##闪烁#4029#的目标造成的伤害倍率提升<color=#0abec5>&Param2&</color>。",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                        "descJP": "セイナ（原点）の最大HPが<color=#0abec5>&Param1&</color>上昇する。特殊主力スキルと特殊通常攻撃は##残光#4029#が付与された敵に与えるダメージ倍率が<color=#0abec5>&Param2&</color>増加する。",
+                        "descKR": "세이나(기원)의 최대 HP가 <color=#0abec5>&Param1&</color> 증가하고, 「잔영섬광참」과 「단죄의 낙성」이 ##반짝임#4029#을 보유한 목표에게 입히는 피해 배율이 <color=#0abec5>&Param2&</color> 증가한다.",
                         "effectType": [
                             "HP (%)"
                         ],
@@ -157875,10 +157965,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -157897,10 +157989,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -157919,10 +158013,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -157941,10 +158037,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -157963,10 +158061,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -157985,10 +158085,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158007,10 +158109,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -158029,10 +158133,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -158051,10 +158157,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158073,10 +158181,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -158100,10 +158210,12 @@
                     {
                         "name": "Resolve Beyond Fate",
                         "nameCN": "跨越命运的觉悟",
+                        "nameJP": "運命を超える覚悟",
+                        "nameKR": "운명을 넘어선 깨달음",
                         "desc": "Increases Lux DMG dealt by Firstlight Noya against elite or higher-tier enemies by <color=#0abec5>&Param1&</color>.",
                         "descCN": "源初尘沙对精英以上敌人造成的光系伤害提升<color=#0abec5>&Param1&</color>。",
-                        "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descJP": "セイナ（原点）はエリート以上の敵に与える光属性ダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "세이나(기원)가 정예 이상 적에게 입히는 빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [],
                         "addAttrType": [
                             "Lux DMG (base)"
@@ -158122,10 +158234,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158144,10 +158258,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -158166,10 +158282,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -158188,10 +158306,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158210,10 +158330,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -158232,10 +158354,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158254,10 +158378,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -158276,10 +158402,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -158298,10 +158426,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158320,10 +158450,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -158347,10 +158479,12 @@
                     {
                         "name": "Shining in the Night",
                         "nameCN": "极星闪耀于黑夜",
+                        "nameJP": "闇夜に輝く一番星",
+                        "nameKR": "어둠 속에 빛나는 별",
                         "desc": "After triggering ##Lux Mark#1015#, Firstlight Noya's Auto Attack DMG increases by <color=#0abec5>&Param1&</color> for &Param2&s.",
                         "descCN": "触发##光系印记#1015#后，源初尘沙造成的普攻伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descJP": "セイナ（原点）が##光属性の印#1015#を発動させた後の&Param2&秒間、自身の通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する。",
+                        "descKR": "##빛 속성 표식#1015#을 발동한 후 세이나(기원)가 입히는 일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                         "effectType": [
                             "ELEMENTTYPE_:(Lux) Auto Attack DMG",
                             "ELEMENTTYPE_:(Lux) Skill DMG"
@@ -158377,10 +158511,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158399,10 +158535,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -158421,10 +158559,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -158443,10 +158583,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158465,10 +158607,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -158487,10 +158631,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158509,10 +158655,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -158531,10 +158679,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -158553,10 +158703,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158575,10 +158727,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -158602,10 +158756,12 @@
                     {
                         "name": "Meeting You at Dawn",
                         "nameCN": "与你相逢在黎明",
+                        "nameJP": "最高の名前",
+                        "nameKR": "당신을 만난 새벽",
                         "desc": "When Firstlight Noya's HP is above 20%, the DMG Multiplier of the longsword [Dawn] increases by <color=#0abec5>&Param1&</color>, and the greatsword [Daybreak] increases by <color=#0abec5>&Param2&</color>.",
                         "descCN": "源初尘沙的生命高于20%时，长剑「拂晓」造成的伤害倍率提升<color=#0abec5>&Param1&</color>，巨剑「曙光」造成的伤害倍率提升<color=#0abec5>&Param2&</color>。",
-                        "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                        "descJP": "セイナ（原点）のHPが20％を超えている時、長剣による攻撃のダメージ倍率が<color=#0abec5>&Param1&</color>増加し、大剣による攻撃のダメージ倍率が<color=#0abec5>&Param2&</color>増加する。",
+                        "descKR": "세이나(기원)의 HP가 20%보다 높을 경우 장검 「여명」이 입히는 피해 배율이 <color=#0abec5>&Param1&</color> 증가하고, 대검 「서광」이 입히는 피해 배율이 <color=#0abec5>&Param2&</color> 증가한다.",
                         "effectType": [],
                         "addAttrType": [
                             "DMG multiplier (base)"
@@ -158628,10 +158784,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158650,10 +158808,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -158672,10 +158832,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -158694,10 +158856,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158716,10 +158880,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
@@ -158738,10 +158904,12 @@
                     {
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
+                        "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158760,10 +158928,12 @@
                     {
                         "name": "Lux DMG Boost",
                         "nameCN": "光系伤害提升",
+                        "nameJP": "光属性ダメージ増加",
+                        "nameKR": "빛 속성 피해 증가",
                         "desc": "Increases Lux DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "光系伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "チーム全体の光属性ダメージが<color=#ec6d21>{1}</color>増加する。\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "빛 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Lux DMG (base)"
                         ],
@@ -158782,10 +158952,12 @@
                     {
                         "name": "Skill DMG Boost",
                         "nameCN": "技能伤害提升",
+                        "nameJP": "スキルダメージ増加",
+                        "nameKR": "스킬 피해 증가",
                         "desc": "Increases Skill DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "技能伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "スキルダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "스킬 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Skill DMG (base)"
                         ],
@@ -158804,10 +158976,12 @@
                     {
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
+                        "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158826,10 +159000,12 @@
                     {
                         "name": "Crit DMG Boost",
                         "nameCN": "暴击伤害提升",
+                        "nameJP": "会心ダメージ増加",
+                        "nameKR": "치명타 피해 증가",
                         "desc": "Increases Crit DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "暴击伤害提升<color=#0abec5>&Param1&</color>",
-                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "会心ダメージが<color=#0abec5>&Param1&</color>増加する",
+                        "descKR": "치명타 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Crit DMG (base)"
                         ],
