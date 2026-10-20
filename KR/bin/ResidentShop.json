@@ -4,6 +4,7 @@
     "ShopCoin": [
       12
     ],
+    "Type": 1,
     "Name": "ResidentShop.1.1",
     "Sequence": 1,
     "RefreshTimeType": 3,
@@ -15,6 +16,7 @@
     "ShopCoin": [
       31
     ],
+    "Type": 1,
     "Name": "ResidentShop.2.1",
     "Sequence": 3,
     "RefreshTimeType": 3,
@@ -26,6 +28,7 @@
     "ShopCoin": [
       34
     ],
+    "Type": 1,
     "Name": "ResidentShop.3.1",
     "Sequence": 4,
     "RefreshTimeType": 3,
@@ -37,12 +40,54 @@
     "ShopCoin": [
       37
     ],
+    "Type": 1,
     "Name": "ResidentShop.4.1",
     "Sequence": 5,
     "RefreshTimeType": 3,
     "RefreshInterval": 1,
     "UnlockCondType": 71,
     "UnlockCondParams": "[9]",
+    "OpenTime": "2025-11-10T12:00:00+08:00"
+  },
+  "5": {
+    "Id": 5,
+    "ShopCoin": [
+      35011
+    ],
+    "Type": 1,
+    "Name": "ResidentShop.5.1",
+    "Sequence": 6,
+    "RefreshTimeType": 3,
+    "RefreshInterval": 1,
+    "UnlockCondType": 71,
+    "UnlockCondParams": "[32]",
+    "OpenTime": "2025-11-10T12:00:00+08:00"
+  },
+  "101": {
+    "Id": 101,
+    "ShopCoin": [
+      41
+    ],
+    "Type": 2,
+    "Name": "ResidentShop.101.1",
+    "Sequence": 1,
+    "RefreshTimeType": 3,
+    "RefreshInterval": 1,
+    "UnlockCondType": 71,
+    "UnlockCondParams": "[5]",
+    "OpenTime": "2025-11-10T12:00:00+08:00"
+  },
+  "102": {
+    "Id": 102,
+    "ShopCoin": [
+      41
+    ],
+    "Type": 2,
+    "Name": "ResidentShop.102.1",
+    "Sequence": 2,
+    "RefreshInterval": 1,
+    "UnlockCondType": 71,
+    "UnlockCondParams": "[5]",
     "OpenTime": "2025-11-10T12:00:00+08:00"
   }
 }

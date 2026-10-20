@@ -84,7 +84,7 @@
     "Effect1": 2,
     "EffectParams1": [
       "CritRate",
-      "1500"
+      "600"
     ]
   },
   "1080102": {
@@ -97,14 +97,14 @@
     "CondParams2": [
       "2501018"
     ],
-    "TargetType": 3,
+    "TargetType": 2,
     "TargetParam": [
-      2501018
+      8
     ],
     "Effect1": 2,
     "EffectParams1": [
       "CritRate",
-      "1500"
+      "600"
     ]
   },
   "1080103": {
@@ -121,7 +121,7 @@
     "Effect1": 2,
     "EffectParams1": [
       "CritPower",
-      "3000"
+      "1200"
     ]
   },
   "1080104": {
@@ -134,14 +134,88 @@
     "CondParams2": [
       "2501019"
     ],
-    "TargetType": 3,
+    "TargetType": 2,
     "TargetParam": [
-      2501019
+      8
     ],
     "Effect1": 2,
     "EffectParams1": [
       "CritPower",
-      "3000"
+      "1200"
+    ]
+  },
+  "1080105": {
+    "Id": 1080105,
+    "Cond1": 2,
+    "CondParams1": [
+      "8"
+    ],
+    "Cond2": 7,
+    "CondParams2": [
+      "2501050"
+    ],
+    "TargetType": 1,
+    "Effect1": 3,
+    "EffectParams1": [
+      "Recovery",
+      "4"
+    ]
+  },
+  "1080106": {
+    "Id": 1080106,
+    "Cond1": 2,
+    "CondParams1": [
+      "8"
+    ],
+    "Cond2": 7,
+    "CondParams2": [
+      "2501050"
+    ],
+    "TargetType": 2,
+    "TargetParam": [
+      8
+    ],
+    "Effect1": 3,
+    "EffectParams1": [
+      "Recovery",
+      "4"
+    ]
+  },
+  "1080107": {
+    "Id": 1080107,
+    "Cond1": 2,
+    "CondParams1": [
+      "8"
+    ],
+    "Cond2": 7,
+    "CondParams2": [
+      "2501051"
+    ],
+    "TargetType": 1,
+    "Effect1": 3,
+    "EffectParams1": [
+      "ATKSPD_P",
+      "4"
+    ]
+  },
+  "1080108": {
+    "Id": 1080108,
+    "Cond1": 2,
+    "CondParams1": [
+      "8"
+    ],
+    "Cond2": 7,
+    "CondParams2": [
+      "2501051"
+    ],
+    "TargetType": 2,
+    "TargetParam": [
+      8
+    ],
+    "Effect1": 3,
+    "EffectParams1": [
+      "ATKSPD_P",
+      "4"
     ]
   },
   "1090401": {
@@ -251,7 +325,7 @@
     "Effect1": 3,
     "EffectParams1": [
       "Atk",
-      "5"
+      "3"
     ]
   },
   "1140102": {
@@ -268,17 +342,17 @@
     "Effect1": 3,
     "EffectParams1": [
       "Atk",
-      "20"
+      "30"
     ],
     "Effect2": 3,
     "EffectParams2": [
       "ATKSPD_P",
-      "100"
+      "50"
     ],
     "Effect3": 3,
     "EffectParams3": [
       "Recovery",
-      "60"
+      "25"
     ]
   },
   "1140103": {
@@ -299,10 +373,11 @@
   },
   "1140201": {
     "Id": 1140201,
+    "TargetType": 1,
     "Effect1": 3,
     "EffectParams1": [
       "Atk",
-      "5"
+      "3"
     ]
   },
   "1140202": {
@@ -319,17 +394,17 @@
     "Effect1": 3,
     "EffectParams1": [
       "Atk",
-      "20"
+      "30"
     ],
     "Effect2": 3,
     "EffectParams2": [
       "ATKSPD_P",
-      "100"
+      "50"
     ],
     "Effect3": 3,
     "EffectParams3": [
       "Recovery",
-      "60"
+      "25"
     ]
   },
   "1140203": {
@@ -348,13 +423,65 @@
       "1"
     ]
   },
+  "1140301": {
+    "Id": 1140301,
+    "TargetType": 1,
+    "Effect1": 3,
+    "EffectParams1": [
+      "Atk",
+      "3"
+    ]
+  },
+  "1140302": {
+    "Id": 1140302,
+    "Cond1": 3,
+    "CondParams1": [
+      "1"
+    ],
+    "Cond2": 6,
+    "CondParams2": [
+      "3",
+      "Atk"
+    ],
+    "Effect1": 3,
+    "EffectParams1": [
+      "Atk",
+      "60"
+    ],
+    "Effect2": 3,
+    "EffectParams2": [
+      "ATKSPD_P",
+      "100"
+    ],
+    "Effect3": 3,
+    "EffectParams3": [
+      "Recovery",
+      "50"
+    ]
+  },
+  "1140303": {
+    "Id": 1140303,
+    "Cond1": 3,
+    "CondParams1": [
+      "1"
+    ],
+    "Cond2": 6,
+    "CondParams2": [
+      "3",
+      "Atk"
+    ],
+    "Effect1": 4,
+    "EffectParams1": [
+      "1"
+    ]
+  },
   "1150101": {
     "Id": 1150101,
     "TargetType": 1,
     "Effect1": 2,
     "EffectParams1": [
       "CritRate",
-      "500"
+      "800"
     ]
   },
   "1150102": {
@@ -366,7 +493,7 @@
     "Effect1": 2,
     "EffectParams1": [
       "CritRate",
-      "500"
+      "1000"
     ]
   },
   "1150201": {
@@ -375,7 +502,7 @@
     "Effect1": 2,
     "EffectParams1": [
       "CritRate",
-      "1000"
+      "1600"
     ]
   },
   "1150202": {
@@ -387,7 +514,7 @@
     "Effect1": 2,
     "EffectParams1": [
       "CritRate",
-      "1000"
+      "2400"
     ]
   },
   "1150301": {
@@ -396,7 +523,7 @@
     "Effect1": 2,
     "EffectParams1": [
       "CritRate",
-      "1500"
+      "2000"
     ]
   },
   "1150302": {
@@ -408,7 +535,28 @@
     "Effect1": 2,
     "EffectParams1": [
       "CritRate",
-      "1500"
+      "3000"
+    ]
+  },
+  "1150401": {
+    "Id": 1150401,
+    "TargetType": 1,
+    "Effect1": 2,
+    "EffectParams1": [
+      "CritRate",
+      "3000"
+    ]
+  },
+  "1150402": {
+    "Id": 1150402,
+    "TargetType": 2,
+    "TargetParam": [
+      15
+    ],
+    "Effect1": 2,
+    "EffectParams1": [
+      "CritRate",
+      "4500"
     ]
   },
   "1180101": {
@@ -1095,11 +1243,200 @@
       "9000"
     ]
   },
+  "1250101": {
+    "Id": 1250101,
+    "TargetType": 1,
+    "Effect1": 2,
+    "EffectParams1": [
+      "CritPower",
+      "3000"
+    ]
+  },
+  "1250102": {
+    "Id": 1250102,
+    "TargetType": 2,
+    "TargetParam": [
+      25
+    ],
+    "Effect1": 2,
+    "EffectParams1": [
+      "CritPower",
+      "3000"
+    ]
+  },
+  "1250201": {
+    "Id": 1250201,
+    "TargetType": 1,
+    "Effect1": 2,
+    "EffectParams1": [
+      "CritPower",
+      "6000"
+    ]
+  },
+  "1250202": {
+    "Id": 1250202,
+    "TargetType": 2,
+    "TargetParam": [
+      25
+    ],
+    "Effect1": 2,
+    "EffectParams1": [
+      "CritPower",
+      "6000"
+    ]
+  },
+  "1270101": {
+    "Id": 1270101,
+    "TargetType": 2,
+    "TargetParam": [
+      27
+    ],
+    "Effect1": 3,
+    "EffectParams1": [
+      "Recovery",
+      "30"
+    ]
+  },
+  "1290101": {
+    "Id": 1290101,
+    "TargetType": 1,
+    "Effect1": 3,
+    "EffectParams1": [
+      "Recovery",
+      "10"
+    ]
+  },
+  "1290102": {
+    "Id": 1290102,
+    "TargetType": 2,
+    "TargetParam": [
+      29
+    ],
+    "Effect1": 3,
+    "EffectParams1": [
+      "Recovery",
+      "10"
+    ]
+  },
+  "1290201": {
+    "Id": 1290201,
+    "TargetType": 1,
+    "Effect1": 3,
+    "EffectParams1": [
+      "Recovery",
+      "15"
+    ]
+  },
+  "1290202": {
+    "Id": 1290202,
+    "TargetType": 2,
+    "TargetParam": [
+      29
+    ],
+    "Effect1": 3,
+    "EffectParams1": [
+      "Recovery",
+      "25"
+    ]
+  },
+  "1290301": {
+    "Id": 1290301,
+    "TargetType": 1,
+    "Effect1": 3,
+    "EffectParams1": [
+      "Recovery",
+      "30"
+    ]
+  },
+  "1290302": {
+    "Id": 1290302,
+    "TargetType": 2,
+    "TargetParam": [
+      29
+    ],
+    "Effect1": 3,
+    "EffectParams1": [
+      "Recovery",
+      "60"
+    ]
+  },
   "201021702": {
     "Id": 201021702,
     "Effect1": 5,
     "EffectParams1": [
       "Hp"
+    ]
+  },
+  "10007": {
+    "Id": 10007,
+    "Effect1": 7,
+    "EffectParams1": [
+      "Atk",
+      "20"
+    ]
+  },
+  "10008": {
+    "Id": 10008,
+    "Effect1": 7,
+    "EffectParams1": [
+      "Hp",
+      "20"
+    ]
+  },
+  "10011": {
+    "Id": 10011,
+    "Effect1": 7,
+    "EffectParams1": [
+      "ATKSPD_P",
+      "12"
+    ]
+  },
+  "10014": {
+    "Id": 10014,
+    "Effect1": 6,
+    "EffectParams1": [
+      "InitialEnergy",
+      "10"
+    ]
+  },
+  "10015": {
+    "Id": 10015,
+    "Effect1": 6,
+    "EffectParams1": [
+      "CritRate",
+      "500"
+    ]
+  },
+  "10016": {
+    "Id": 10016,
+    "Effect1": 7,
+    "EffectParams1": [
+      "Recovery",
+      "6"
+    ]
+  },
+  "10017": {
+    "Id": 10017,
+    "Effect1": 6,
+    "EffectParams1": [
+      "CritPower",
+      "1000"
+    ]
+  },
+  "10019": {
+    "Id": 10019,
+    "Effect1": 7,
+    "EffectParams1": [
+      "Atk",
+      "30"
+    ]
+  },
+  "10020": {
+    "Id": 10020,
+    "Effect1": 7,
+    "EffectParams1": [
+      "Hp",
+      "30"
     ]
   }
 }

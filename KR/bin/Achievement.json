@@ -10571,5 +10571,77 @@
     "Qty1": 1,
     "Tid2": 2,
     "Qty2": 10
+  },
+  "658": {
+    "Id": 658,
+    "AchieveId": 33601,
+    "Title": "Achievement.658.1",
+    "Desc": "Achievement.658.2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 1,
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "659": {
+    "Id": 659,
+    "AchieveId": 33602,
+    "Title": "Achievement.659.1",
+    "Desc": "Achievement.659.2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 5,
+    "Prerequisites": [
+      658
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "660": {
+    "Id": 660,
+    "AchieveId": 33603,
+    "Title": "Achievement.660.1",
+    "Desc": "Achievement.660.2",
+    "Rarity": 3,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 10,
+    "Prerequisites": [
+      659
+    ],
+    "Tid1": 2,
+    "Qty1": 5
+  },
+  "661": {
+    "Id": 661,
+    "AchieveId": 33604,
+    "Title": "Achievement.661.1",
+    "Desc": "Achievement.661.2",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 20,
+    "Prerequisites": [
+      660
+    ],
+    "Tid1": 2,
+    "Qty1": 10
+  },
+  "662": {
+    "Id": 662,
+    "AchieveId": 33605,
+    "Title": "Achievement.662.1",
+    "Desc": "Achievement.662.2",
+    "Rarity": 2,
+    "Type": 3,
+    "CompleteCond": 174,
+    "AimNumShow": 50,
+    "Prerequisites": [
+      661
+    ],
+    "Tid1": 2,
+    "Qty1": 10
   }
 }

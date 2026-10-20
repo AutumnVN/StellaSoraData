@@ -181,5 +181,80 @@
     "EnergyConsume": 30,
     "BaseAwardPreview": "[[2,50,1],[35001,15,0]]",
     "Icon": "Icon/MapChallenge/dailyInstance_001"
+  },
+  "1003": {
+    "Id": 1003,
+    "Type": 1,
+    "Difficulty": 4,
+    "Name": "CharGemInstance.1003.1",
+    "Desc": "CharGemInstance.1003.2",
+    "SuggestedPower": 90,
+    "SuggestedBuild": 33,
+    "PreLevelId": 1002,
+    "PreLevelStar": 1,
+    "NeedWorldClass": 32,
+    "FloorId": 6100204,
+    "PreviewMonsterGroupId": 10200,
+    "OneStarCondition": "[1]",
+    "TwoStarCondition": "[2,60]",
+    "ThreeStarCondition": "[2,40]",
+    "DropId": 100,
+    "DropGuaranteeType": 1,
+    "EnergyConsume": 30,
+    "FirstRewardPreview": [
+      2,
+      50
+    ],
+    "Icon": "Icon/MapChallenge/dailyInstance_003"
+  },
+  "2003": {
+    "Id": 2003,
+    "Type": 2,
+    "Difficulty": 4,
+    "Name": "CharGemInstance.2003.1",
+    "Desc": "CharGemInstance.2003.2",
+    "SuggestedPower": 90,
+    "SuggestedBuild": 33,
+    "PreLevelId": 2002,
+    "PreLevelStar": 1,
+    "NeedWorldClass": 32,
+    "FloorId": 6100304,
+    "PreviewMonsterGroupId": 10300,
+    "OneStarCondition": "[1]",
+    "TwoStarCondition": "[2,60]",
+    "ThreeStarCondition": "[2,40]",
+    "DropId": 200,
+    "DropGuaranteeType": 1,
+    "EnergyConsume": 30,
+    "FirstRewardPreview": [
+      2,
+      50
+    ],
+    "Icon": "Icon/MapChallenge/dailyInstance_004"
+  },
+  "3003": {
+    "Id": 3003,
+    "Type": 3,
+    "Difficulty": 4,
+    "Name": "CharGemInstance.3003.1",
+    "Desc": "CharGemInstance.3003.2",
+    "SuggestedPower": 90,
+    "SuggestedBuild": 33,
+    "PreLevelId": 3002,
+    "PreLevelStar": 1,
+    "NeedWorldClass": 32,
+    "FloorId": 6100104,
+    "PreviewMonsterGroupId": 10000,
+    "OneStarCondition": "[1]",
+    "TwoStarCondition": "[2,60]",
+    "ThreeStarCondition": "[2,40]",
+    "DropId": 300,
+    "DropGuaranteeType": 1,
+    "EnergyConsume": 30,
+    "FirstRewardPreview": [
+      2,
+      50
+    ],
+    "Icon": "Icon/MapChallenge/dailyInstance_001"
   }
 }

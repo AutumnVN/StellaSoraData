@@ -73,5 +73,18 @@
     "AUpGuaranteeTimes": 30,
     "BTypeProb": 800,
     "BTypeGuaranteeProb": 10000
+  },
+  "6": {
+    "Id": 6,
+    "Name": "GachaStorage.CharacterCardRewardPool.1",
+    "DefaultId": 516,
+    "DefaultQty": 1,
+    "CostId": 2,
+    "CostQty": 300,
+    "OncePreferred": "[{\"516\":1}]",
+    "TenTimesPreferred": "[{\"516\":10}]",
+    "ATypeGroup": 101,
+    "BTypeProb": 800,
+    "BTypeGuaranteeProb": 5000
   }
 }
