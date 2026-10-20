@@ -646,6 +646,58 @@
     "Desc": "JumpTo.78.1",
     "Icon": "Icon/JumpTo/btn_icon_system_TraceHunt"
   },
+  "79": {
+    "Id": 79,
+    "Type": 23,
+    "Param": [
+      1,
+      2
+    ],
+    "Desc": "JumpTo.79.1",
+    "Icon": "Icon/JumpTo/btn_icon_system_EquipmentInstance"
+  },
+  "80": {
+    "Id": 80,
+    "Type": 23,
+    "Param": [
+      2,
+      2
+    ],
+    "Desc": "JumpTo.80.1",
+    "Icon": "Icon/JumpTo/btn_icon_system_EquipmentInstance"
+  },
+  "81": {
+    "Id": 81,
+    "Type": 23,
+    "Param": [
+      3,
+      2
+    ],
+    "Desc": "JumpTo.81.1",
+    "Icon": "Icon/JumpTo/btn_icon_system_EquipmentInstance"
+  },
+  "82": {
+    "Id": 82,
+    "Type": 48,
+    "Desc": "JumpTo.82.1",
+    "Icon": "Icon/JumpTo/btn_icon_system_Soldier"
+  },
+  "83": {
+    "Id": 83,
+    "Type": 49,
+    "Desc": "JumpTo.83.1",
+    "Icon": "Icon/JumpTo/btn_icon_system_Dorm"
+  },
+  "84": {
+    "Id": 84,
+    "Type": 11,
+    "Param": [
+      2,
+      5
+    ],
+    "Desc": "JumpTo.84.1",
+    "Icon": "Icon/JumpTo/btn_icon_system_MallGem"
+  },
   "5005": {
     "Id": 5005,
     "Type": 40,
@@ -1450,5 +1502,14 @@
     ],
     "Desc": "JumpTo.21063001.1",
     "Icon": "Icon/JumpTo/btn_icon_system_Production"
+  },
+  "35010001": {
+    "Id": 35010001,
+    "Type": 10,
+    "Param": [
+      5
+    ],
+    "Desc": "JumpTo.35010001.1",
+    "Icon": "Icon/JumpTo/btn_icon_system_ResidentShop"
   }
 }

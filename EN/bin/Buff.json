@@ -1068,6 +1068,11 @@
     "Icon": "Icon/Buff/Icon_CommonBuff_DefenseDown",
     "IsShow": true
   },
+  "14110011": {
+    "Id": 14110011,
+    "GroupId": 14110011,
+    "BuffTag1": 943565682
+  },
   "14111011": {
     "Id": 14111011,
     "GroupId": 14111011,
@@ -3081,6 +3086,8 @@
     "BuffTag1": 1396103119,
     "BuffTag2": -2138561627,
     "BuffTag3": 2032157435,
+    "BuffTag4": 1701654431,
+    "BindEffect": "FX/Buff/fx_buff_LightTrigger_ShanShuo",
     "Icon": "Icon/Buff/Icon_CommonBuff_DefenseDown",
     "IsShow": true
   },
@@ -4187,6 +4194,152 @@
   "15596511": {
     "Id": 15596511,
     "GroupId": 15596511,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267
+  },
+  "16290001": {
+    "Id": 16290001,
+    "GroupId": 16290001,
+    "BuffTag1": 943565682,
+    "BuffTag2": 1647065043,
+    "BindEffect": "Actor/Character/16201/Buff/fx_16201_buff_Ultra_Icon_1",
+    "NotRemove": true
+  },
+  "16290002": {
+    "Id": 16290002,
+    "GroupId": 16290002,
+    "BuffTag1": 943565682,
+    "BuffTag2": 1212422350,
+    "BindEffect": "Actor/Character/16201/Buff/fx_16201_buff_Ultra_Icon_2",
+    "NotRemove": true
+  },
+  "16290003": {
+    "Id": 16290003,
+    "GroupId": 16290003,
+    "BuffTag1": 943565682,
+    "BuffTag2": 1278096873,
+    "BuffTag4": -719983267,
+    "BindEffect": "Actor/Character/16201/Buff/fx_16201_buff_Ultra_Power",
+    "Icon": "Icon/Buff/16201_Ultra_Buff",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16243011": {
+    "Id": 16243011,
+    "GroupId": 16243011,
+    "BuffTag1": 943565682,
+    "BuffTag2": 1278096873,
+    "BuffTag4": -719983267,
+    "BindEffect": "Actor/Character/16201/Buff/fx_16201_buff_Ultra_Power",
+    "Icon": "Icon/Buff/16201_Ultra_Buff",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16202011": {
+    "Id": 16202011,
+    "GroupId": 16202011,
+    "BindEffect": "Actor/Character/16201/Buff/fx_16201_buff_QingJian_pro_2"
+  },
+  "16204011": {
+    "Id": 16204011,
+    "GroupId": 16204011,
+    "BindEffect": "Actor/Character/16201/Buff/fx_16201_buff_ZhongJian_pro_1"
+  },
+  "16207011": {
+    "Id": 16207011,
+    "GroupId": 16207011,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16207012": {
+    "Id": 16207012,
+    "GroupId": 16207012,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16209011": {
+    "Id": 16209011,
+    "GroupId": 16209011,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16212011": {
+    "Id": 16212011,
+    "GroupId": 16212011,
+    "NotRemove": true
+  },
+  "16225011": {
+    "Id": 16225011,
+    "GroupId": 16225011,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16226011": {
+    "Id": 16226011,
+    "GroupId": 16226011,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16229011": {
+    "Id": 16229011,
+    "GroupId": 16229011,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16231011": {
+    "Id": 16231011,
+    "GroupId": 16231011,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16232011": {
+    "Id": 16232011,
+    "GroupId": 16232011,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16233011": {
+    "Id": 16233011,
+    "GroupId": 16233011,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "NotRemove": true
+  },
+  "16296111": {
+    "Id": 16296111,
+    "GroupId": 16296111
+  },
+  "16296211": {
+    "Id": 16296211,
+    "GroupId": 16296211
+  },
+  "16296411": {
+    "Id": 16296411,
+    "GroupId": 16296411,
     "BuffTag1": 943565682,
     "BuffTag2": -719983267
   },
@@ -5522,6 +5675,14 @@
     "BuffTag1": 943565682,
     "BuffTag2": -719983267,
     "Icon": "Icon/Buff/Icon_CommonBuff_Invincible",
+    "IsShow": true
+  },
+  "11951011": {
+    "Id": 11951011,
+    "GroupId": 11951011,
+    "BuffTag1": 943565682,
+    "BuffTag2": -719983267,
+    "Icon": "Icon/Buff/Icon_CommonBuff_CritDamageUp",
     "IsShow": true
   },
   "11951111": {
@@ -9577,6 +9738,35 @@
     "Id": 999002150,
     "GroupId": 999002150
   },
+  "317010000": {
+    "Id": 317010000,
+    "GroupId": 317010000,
+    "BindEffect": "Actor/Monster/StoryActivity_17/Buff/fx_storyactivity_17_buff_pro_1"
+  },
+  "317010010": {
+    "Id": 317010010,
+    "GroupId": 317010010,
+    "BindEffect": "Actor/Monster/StoryActivity_17/Buff/fx_storyactivity_17_buff_pro_0"
+  },
+  "317010020": {
+    "Id": 317010020,
+    "GroupId": 317010020,
+    "BindEffect": "Actor/Monster/72013RenOu_Xuhuan/Buff/fx_m72013_buff_fire"
+  },
+  "317010030": {
+    "Id": 317010030,
+    "GroupId": 317010030
+  },
+  "317010040": {
+    "Id": 317010040,
+    "GroupId": 317010040,
+    "BindEffect": "Actor/Monster/StoryActivity_17/Buff/fx_storyactivity_17_buff_pro_1"
+  },
+  "317010050": {
+    "Id": 317010050,
+    "GroupId": 317010050,
+    "BindEffect": "Actor/Monster/StoryActivity_17/Buff/fx_storyactivity_17_buff_pro_1"
+  },
   "311010000": {
     "Id": 311010000,
     "GroupId": 31101000,
@@ -9893,6 +10083,79 @@
     "Id": 720130109,
     "GroupId": 720130108,
     "BindEffect": "Actor/Monster/72012MoShuShi_Nv/Buff/fx_m72012_buff_Show",
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "720140000": {
+    "Id": 720140000,
+    "GroupId": 720140000,
+    "BuffTag1": -719983267,
+    "BindEffect": "Actor/Monster/50111BuffJingLing/Buff/Fx_50111BuffJiLing_buff_HuiXue_Common"
+  },
+  "720140140": {
+    "Id": 720140140,
+    "GroupId": 720140140,
+    "BuffTag1": -719983267,
+    "BindEffect": "FX/Buff/fx_buff_MoveSpdDown",
+    "Icon": "Icon/Buff/Icon_CommonBuff_MoveSpeedDown",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "720140150": {
+    "Id": 720140150,
+    "GroupId": 720140150,
+    "BindEffect": "Actor/Monster/StoryActivity_17/Buff/fx_storyactivity_17_buff_stone",
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "720140160": {
+    "Id": 720140160,
+    "GroupId": 720140160,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "700619100": {
+    "Id": 700619100,
+    "GroupId": 70061910,
+    "BindEffect": "Actor/Monster/70061WuYu/Buff/fx_m70061_buff_shield",
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "700619200": {
+    "Id": 700619200,
+    "GroupId": 70061920,
+    "BindEffect": "Actor/Monster/70061WuYu/Buff/fx_m70061_buff_ZhaoHuanWu01_strengthen",
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "700619300": {
+    "Id": 700619300,
+    "GroupId": 70061930,
+    "BindEffect": "Actor/Monster/70061WuYu/Buff/fx_m70061_buff_ZhaoHuanWu02_strengthen",
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "700619400": {
+    "Id": 700619400,
+    "GroupId": 70061940,
+    "BindEffect": "Actor/Monster/70061WuYu/Buff/fx_m70061_buff_ZhaoHuanWu03_strengthen",
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "821620101": {
+    "Id": 821620101,
+    "GroupId": 821620101,
+    "BindEffect": "Actor/Character/16201/Buff/fx_16201_buff_ZhongJianFollow",
+    "Icon": "Icon/Buff/16201_Ultra_Buff",
     "BuffNumEffectLevel": [
       0
     ]
@@ -10290,6 +10553,128 @@
   "710029006": {
     "Id": 710029006,
     "GroupId": 710029006
+  },
+  "710310011": {
+    "Id": 710310011,
+    "GroupId": 710310011
+  },
+  "710310012": {
+    "Id": 710310012,
+    "GroupId": 710310012,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_down",
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackDown",
+    "IsShow": true
+  },
+  "71031601": {
+    "Id": 71031601,
+    "GroupId": 71031601,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_up",
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "71031602": {
+    "Id": 71031602,
+    "GroupId": 71031602,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_up",
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "71031901": {
+    "Id": 71031901,
+    "GroupId": 71031901
+  },
+  "71040501": {
+    "Id": 71040501,
+    "GroupId": 71040501,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "71040701": {
+    "Id": 71040701,
+    "GroupId": 71040701,
+    "Icon": "Icon/Buff/Icon_CommonBuff_SkillDamageDown",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "71040702": {
+    "Id": 71040702,
+    "GroupId": 71040702,
+    "Icon": "Icon/Buff/Icon_CommonBuff_SkillDamageDown",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "71041601": {
+    "Id": 71041601,
+    "GroupId": 71041601,
+    "Icon": "Icon/Buff/Icon_CommonBuff_DefenseDown",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "71041602": {
+    "Id": 71041602,
+    "GroupId": 71041602,
+    "Icon": "Icon/Buff/Icon_CommonBuff_DefenseDown",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "71021601": {
+    "Id": 71021601,
+    "GroupId": 71021601,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_up",
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp"
+  },
+  "710216011": {
+    "Id": 710216011,
+    "GroupId": 710216011,
+    "BuffTag1": -1824092615,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_up",
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "71021602": {
+    "Id": 71021602,
+    "GroupId": 71021602,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_up",
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp"
+  },
+  "710216021": {
+    "Id": 710216021,
+    "GroupId": 710216021,
+    "BuffTag1": -1824092615,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_up",
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "71021603": {
+    "Id": 71021603,
+    "GroupId": 71021603,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_up",
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp"
+  },
+  "710216031": {
+    "Id": 710216031,
+    "GroupId": 710216031,
+    "BuffTag1": -1824092615,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_up",
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "71030801": {
+    "Id": 71030801,
+    "GroupId": 71030801,
+    "BuffTag1": 1925324471,
+    "BindEffect": "FX/Buff/fx_buff_effect_atk_down",
+    "Icon": "Icon/Buff/Icon_CommonBuff_DefenseDown",
+    "IsShow": true
   },
   "880010101": {
     "Id": 880010101,
@@ -11457,6 +11842,166 @@
     "BuffNumEffectLevel": [
       0
     ]
+  },
+  "709054080": {
+    "Id": 709054080,
+    "GroupId": 709054080
+  },
+  "709054090": {
+    "Id": 709054090,
+    "GroupId": 709054090
+  },
+  "709054120": {
+    "Id": 709054120,
+    "GroupId": 709054120
+  },
+  "709054130": {
+    "Id": 709054130,
+    "GroupId": 709054130
+  },
+  "709054140": {
+    "Id": 709054140,
+    "GroupId": 709054140
+  },
+  "709054160": {
+    "Id": 709054160,
+    "GroupId": 709054160
+  },
+  "709054165": {
+    "Id": 709054165,
+    "GroupId": 709054165
+  },
+  "709054170": {
+    "Id": 709054170,
+    "GroupId": 709054170
+  },
+  "709054174": {
+    "Id": 709054174,
+    "GroupId": 709054174
+  },
+  "709054178": {
+    "Id": 709054178,
+    "GroupId": 709054178
+  },
+  "709054150": {
+    "Id": 709054150,
+    "GroupId": 709054150
+  },
+  "709054210": {
+    "Id": 709054210,
+    "GroupId": 709054210
+  },
+  "709054211": {
+    "Id": 709054211,
+    "GroupId": 709054211
+  },
+  "709054220": {
+    "Id": 709054220,
+    "GroupId": 709054220
+  },
+  "709054221": {
+    "Id": 709054221,
+    "GroupId": 709054221
+  },
+  "709054290": {
+    "Id": 709054290,
+    "GroupId": 709054290
+  },
+  "709054300": {
+    "Id": 709054300,
+    "GroupId": 709054300
+  },
+  "709054310": {
+    "Id": 709054310,
+    "GroupId": 709054310
+  },
+  "709054320": {
+    "Id": 709054320,
+    "GroupId": 709054320
+  },
+  "709054330": {
+    "Id": 709054330,
+    "GroupId": 709054330
+  },
+  "709054350": {
+    "Id": 709054350,
+    "GroupId": 709054350
+  },
+  "709054360": {
+    "Id": 709054360,
+    "GroupId": 709054360
+  },
+  "709054261": {
+    "Id": 709054261,
+    "GroupId": 709054261
+  },
+  "709054262": {
+    "Id": 709054262,
+    "GroupId": 709054262
+  },
+  "709054263": {
+    "Id": 709054263,
+    "GroupId": 709054263
+  },
+  "709054264": {
+    "Id": 709054264,
+    "GroupId": 709054264
+  },
+  "709054265": {
+    "Id": 709054265,
+    "GroupId": 709054265
+  },
+  "709054266": {
+    "Id": 709054266,
+    "GroupId": 709054266
+  },
+  "709054267": {
+    "Id": 709054267,
+    "GroupId": 709054267
+  },
+  "709054268": {
+    "Id": 709054268,
+    "GroupId": 709054268
+  },
+  "709054269": {
+    "Id": 709054269,
+    "GroupId": 709054269
+  },
+  "709054271": {
+    "Id": 709054271,
+    "GroupId": 709054271
+  },
+  "709054272": {
+    "Id": 709054272,
+    "GroupId": 709054272
+  },
+  "709054273": {
+    "Id": 709054273,
+    "GroupId": 709054273
+  },
+  "709054274": {
+    "Id": 709054274,
+    "GroupId": 709054274
+  },
+  "709054275": {
+    "Id": 709054275,
+    "GroupId": 709054275
+  },
+  "709054276": {
+    "Id": 709054276,
+    "GroupId": 709054276
+  },
+  "709054277": {
+    "Id": 709054277,
+    "GroupId": 709054277
+  },
+  "709054278": {
+    "Id": 709054278,
+    "GroupId": 709054278
+  },
+  "709054279": {
+    "Id": 709054279,
+    "GroupId": 709054279
   },
   "8001021": {
     "Id": 8001021,
@@ -17420,6 +17965,320 @@
     "GroupId": 4062205,
     "BuffTag1": -719983267
   },
+  "4066000": {
+    "Id": 4066000,
+    "GroupId": 4066000,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214066_Buff",
+    "IsShow": true
+  },
+  "4066001": {
+    "Id": 4066001,
+    "GroupId": 4066001
+  },
+  "4066002": {
+    "Id": 4066002,
+    "GroupId": 4066002
+  },
+  "4066003": {
+    "Id": 4066003,
+    "GroupId": 4066003
+  },
+  "4066004": {
+    "Id": 4066004,
+    "GroupId": 4066004
+  },
+  "4066005": {
+    "Id": 4066005,
+    "GroupId": 4066005
+  },
+  "4066006": {
+    "Id": 4066006,
+    "GroupId": 4066006
+  },
+  "4066011": {
+    "Id": 4066011,
+    "GroupId": 4066011,
+    "BuffTag1": -2138561627
+  },
+  "4066012": {
+    "Id": 4066012,
+    "GroupId": 4066012,
+    "BuffTag1": -2138561627
+  },
+  "4066013": {
+    "Id": 4066013,
+    "GroupId": 4066013,
+    "BuffTag1": -2138561627
+  },
+  "4066014": {
+    "Id": 4066014,
+    "GroupId": 4066014,
+    "BuffTag1": -2138561627
+  },
+  "4066015": {
+    "Id": 4066015,
+    "GroupId": 4066015,
+    "BuffTag1": -2138561627
+  },
+  "4066016": {
+    "Id": 4066016,
+    "GroupId": 4066016,
+    "BuffTag1": -2138561627
+  },
+  "4066021": {
+    "Id": 4066021,
+    "GroupId": 4066021,
+    "BuffTag1": -719983267
+  },
+  "4066022": {
+    "Id": 4066022,
+    "GroupId": 4066022,
+    "BuffTag1": -719983267
+  },
+  "4066023": {
+    "Id": 4066023,
+    "GroupId": 4066023,
+    "BuffTag1": -719983267
+  },
+  "4066024": {
+    "Id": 4066024,
+    "GroupId": 4066024,
+    "BuffTag1": -719983267
+  },
+  "4066025": {
+    "Id": 4066025,
+    "GroupId": 4066025,
+    "BuffTag1": -719983267
+  },
+  "4066026": {
+    "Id": 4066026,
+    "GroupId": 4066026,
+    "BuffTag1": -719983267
+  },
+  "4066101": {
+    "Id": 4066101,
+    "GroupId": 4066101,
+    "BuffTag1": -2138561627
+  },
+  "4066102": {
+    "Id": 4066102,
+    "GroupId": 4066102,
+    "BuffTag1": -2138561627
+  },
+  "4066103": {
+    "Id": 4066103,
+    "GroupId": 4066103,
+    "BuffTag1": -2138561627
+  },
+  "4066104": {
+    "Id": 4066104,
+    "GroupId": 4066104,
+    "BuffTag1": -2138561627
+  },
+  "4066105": {
+    "Id": 4066105,
+    "GroupId": 4066105,
+    "BuffTag1": -2138561627
+  },
+  "4066111": {
+    "Id": 4066111,
+    "GroupId": 4066111
+  },
+  "4066112": {
+    "Id": 4066112,
+    "GroupId": 4066112
+  },
+  "4066113": {
+    "Id": 4066113,
+    "GroupId": 4066113
+  },
+  "4066114": {
+    "Id": 4066114,
+    "GroupId": 4066114
+  },
+  "4066115": {
+    "Id": 4066115,
+    "GroupId": 4066115
+  },
+  "4066201": {
+    "Id": 4066201,
+    "GroupId": 4066201,
+    "BuffTag1": -719983267
+  },
+  "4066202": {
+    "Id": 4066202,
+    "GroupId": 4066202,
+    "BuffTag1": -719983267
+  },
+  "4066203": {
+    "Id": 4066203,
+    "GroupId": 4066203,
+    "BuffTag1": -719983267
+  },
+  "4066204": {
+    "Id": 4066204,
+    "GroupId": 4066204,
+    "BuffTag1": -719983267
+  },
+  "4066205": {
+    "Id": 4066205,
+    "GroupId": 4066205,
+    "BuffTag1": -719983267
+  },
+  "4066211": {
+    "Id": 4066211,
+    "GroupId": 4066211
+  },
+  "4066212": {
+    "Id": 4066212,
+    "GroupId": 4066212
+  },
+  "4066213": {
+    "Id": 4066213,
+    "GroupId": 4066213
+  },
+  "4066214": {
+    "Id": 4066214,
+    "GroupId": 4066214
+  },
+  "4066215": {
+    "Id": 4066215,
+    "GroupId": 4066215
+  },
+  "4067001": {
+    "Id": 4067001,
+    "GroupId": 4067001,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067002": {
+    "Id": 4067002,
+    "GroupId": 4067002,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067003": {
+    "Id": 4067003,
+    "GroupId": 4067003,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067004": {
+    "Id": 4067004,
+    "GroupId": 4067004,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067005": {
+    "Id": 4067005,
+    "GroupId": 4067005,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067006": {
+    "Id": 4067006,
+    "GroupId": 4067006,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067011": {
+    "Id": 4067011,
+    "GroupId": 4067011,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067012": {
+    "Id": 4067012,
+    "GroupId": 4067012,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067013": {
+    "Id": 4067013,
+    "GroupId": 4067013,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067014": {
+    "Id": 4067014,
+    "GroupId": 4067014,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067015": {
+    "Id": 4067015,
+    "GroupId": 4067015,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067016": {
+    "Id": 4067016,
+    "GroupId": 4067016,
+    "BuffTag1": -719983267,
+    "Icon": "Icon/Buff/Icon_DiscBuff_214067_Buff",
+    "IsShow": true
+  },
+  "4067101": {
+    "Id": 4067101,
+    "GroupId": 4067101,
+    "BuffTag1": -719983267
+  },
+  "4067102": {
+    "Id": 4067102,
+    "GroupId": 4067102,
+    "BuffTag1": -719983267
+  },
+  "4067103": {
+    "Id": 4067103,
+    "GroupId": 4067103,
+    "BuffTag1": -719983267
+  },
+  "4067104": {
+    "Id": 4067104,
+    "GroupId": 4067104,
+    "BuffTag1": -719983267
+  },
+  "4067105": {
+    "Id": 4067105,
+    "GroupId": 4067105,
+    "BuffTag1": -719983267
+  },
+  "4067201": {
+    "Id": 4067201,
+    "GroupId": 4067201,
+    "BuffTag1": -719983267
+  },
+  "4067202": {
+    "Id": 4067202,
+    "GroupId": 4067202,
+    "BuffTag1": -719983267
+  },
+  "4067203": {
+    "Id": 4067203,
+    "GroupId": 4067203,
+    "BuffTag1": -719983267
+  },
+  "4067204": {
+    "Id": 4067204,
+    "GroupId": 4067204,
+    "BuffTag1": -719983267
+  },
+  "4067205": {
+    "Id": 4067205,
+    "GroupId": 4067205,
+    "BuffTag1": -719983267
+  },
   "250000001": {
     "Id": 250000001,
     "GroupId": 250000001
@@ -17714,6 +18573,188 @@
     "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
     "IsShow": true
   },
+  "250105701": {
+    "Id": 250105701,
+    "GroupId": 250105701,
+    "Icon": "Icon/Buff/Icon_CommonBuff_DefenseUp",
+    "IsShow": true
+  },
+  "250105702": {
+    "Id": 250105702,
+    "GroupId": 250105702,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "250105703": {
+    "Id": 250105703,
+    "GroupId": 250105703
+  },
+  "250105901": {
+    "Id": 250105901,
+    "GroupId": 250105901,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackSpeedUp",
+    "IsShow": true
+  },
+  "250105902": {
+    "Id": 250105902,
+    "GroupId": 250105902
+  },
+  "250106001": {
+    "Id": 250106001,
+    "GroupId": 250106001
+  },
+  "250106002": {
+    "Id": 250106002,
+    "GroupId": 250106002
+  },
+  "250106301": {
+    "Id": 250106301,
+    "GroupId": 250106301
+  },
+  "250106401": {
+    "Id": 250106401,
+    "GroupId": 250106401,
+    "BindEffect": "Actor/Monster/30931HaSaNa/Buff/fx_m30391_buff_hammer_1"
+  },
+  "250106402": {
+    "Id": 250106402,
+    "GroupId": 250106402,
+    "BindEffect": "Actor/Monster/30931HaSaNa/Buff/fx_m30391_buff_hammer_2"
+  },
+  "250106403": {
+    "Id": 250106403,
+    "GroupId": 250106403
+  },
+  "250106410": {
+    "Id": 250106410,
+    "GroupId": 250106410
+  },
+  "250104901": {
+    "Id": 250104901,
+    "GroupId": 250104901,
+    "BindEffect": "Actor/Character/15701/Buff/fx_15701_buff_Hunt_Line_shark"
+  },
+  "250104902": {
+    "Id": 250104902,
+    "GroupId": 250104902,
+    "BindEffect": "Actor/Character/15701/Buff/fx_15701_buff_Hunt_Line_shark"
+  },
+  "250104401": {
+    "Id": 250104401,
+    "GroupId": 250104401
+  },
+  "250104402": {
+    "Id": 250104402,
+    "GroupId": 250104402
+  },
+  "250116501": {
+    "Id": 250116501,
+    "GroupId": 250116501,
+    "BuffTag2": -2138561627,
+    "BindEffect": "FX/Buff/fx_buff_effect_def_down"
+  },
+  "250104601": {
+    "Id": 250104601,
+    "GroupId": 250104601
+  },
+  "250104701": {
+    "Id": 250104701,
+    "GroupId": 250104701,
+    "BuffTag2": -2138561627,
+    "BindEffect": "FX/Buff/fx_buff_effect_def_down"
+  },
+  "250105101": {
+    "Id": 250105101,
+    "GroupId": 250105101,
+    "BuffTag1": 69906403,
+    "BindEffect": "Actor/Character/13901/Buff/fx_13901_buff_Skill_Ultra",
+    "Icon": "Icon/Buff/Icon_Buff_13901_Ultra_A",
+    "IsShow": true
+  },
+  "250105102": {
+    "Id": 250105102,
+    "GroupId": 250105102,
+    "BuffTag1": -1601719893,
+    "BindEffect": "Actor/Character/13901/Buff/fx_13901_buff_Skill_Main"
+  },
+  "250105201": {
+    "Id": 250105201,
+    "GroupId": 250105201
+  },
+  "250105301": {
+    "Id": 250105301,
+    "GroupId": 250105301
+  },
+  "250105501": {
+    "Id": 250105501,
+    "GroupId": 250105501
+  },
+  "250105502": {
+    "Id": 250105502,
+    "GroupId": 250105502
+  },
+  "250105503": {
+    "Id": 250105503,
+    "GroupId": 250105503,
+    "BindEffect": "Actor/Character/11401/Buff/fx_11401_buff_Skill_Main_3_Short_Lock_P04_Strengthen_Lv1"
+  },
+  "250105504": {
+    "Id": 250105504,
+    "GroupId": 250105504,
+    "BindEffect": "Actor/Character/11401/Buff/fx_11401_buff_Skill_Main_3_Short_Lock_P04_Strengthen_Lv2"
+  },
+  "250105505": {
+    "Id": 250105505,
+    "GroupId": 250105505,
+    "BindEffect": "Actor/Character/11401/Buff/fx_11401_buff_Skill_Main_3_Short_Lock_P04_Strengthen_Lv3"
+  },
+  "250105801": {
+    "Id": 250105801,
+    "GroupId": 250105801,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "250106101": {
+    "Id": 250106101,
+    "GroupId": 250106101,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "250106201": {
+    "Id": 250106201,
+    "GroupId": 250106201,
+    "BindEffect": "Actor/Character/10701/Buff/fx_10701_buff_shield_life"
+  },
+  "250106202": {
+    "Id": 250106202,
+    "GroupId": 250106202,
+    "BindEffect": "Actor/Character/10701/Buff/fx_10701_buff_shield_life"
+  },
+  "250106203": {
+    "Id": 250106203,
+    "GroupId": 250106203,
+    "BindEffect": "Actor/Character/10701/Buff/fx_10701_buff_shield_life"
+  },
+  "250106204": {
+    "Id": 250106204,
+    "GroupId": 250106204,
+    "BindEffect": "Actor/Character/10701/Buff/fx_10701_buff_shield_life"
+  },
+  "250104201": {
+    "Id": 250104201,
+    "GroupId": 250104201
+  },
+  "250141301": {
+    "Id": 250141301,
+    "GroupId": 250141301,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "250105601": {
+    "Id": 250105601,
+    "GroupId": 250105601,
+    "BindEffect": "Actor/Character/16201/Buff/fx_16201_buff_ZhongJianFollow"
+  },
   "260110111": {
     "Id": 260110111,
     "GroupId": 260110111,
@@ -17842,6 +18883,10 @@
     "Id": 260110931,
     "GroupId": 260110931
   },
+  "260111011": {
+    "Id": 260111011,
+    "GroupId": 260111011
+  },
   "260111111": {
     "Id": 260111111,
     "GroupId": 260111111
@@ -17854,6 +18899,12 @@
     "Id": 260111211,
     "GroupId": 260111211,
     "BindEffect": "FX/Soldier/Buff/fx_soldier_buff_qie_strengthen"
+  },
+  "260111511": {
+    "Id": 260111511,
+    "GroupId": 260111511,
+    "Icon": "Icon/Buff/Icon_CommonBuff_CritDamageUp",
+    "IsShow": true
   },
   "260111611": {
     "Id": 260111611,
@@ -17908,6 +18959,270 @@
     "GroupId": 260111911,
     "BuffTag3": -1305978006,
     "BindEffect": "FX/Soldier/Buff/fx_soldier_buff_fish"
+  },
+  "260111921": {
+    "Id": 260111921,
+    "GroupId": 260111921,
+    "BindEffect": "FX/Soldier/Buff/fx_soldier_buff_boss_coming"
+  },
+  "260112211": {
+    "Id": 260112211,
+    "GroupId": 260112211,
+    "BindEffect": "Actor/Monster/30901ChiHou/Buff/fx_m30901_buff_strengthen",
+    "Icon": "Icon/Buff/Icon_CommonBuff_CritDamageUp",
+    "IsShow": true
+  },
+  "260112221": {
+    "Id": 260112221,
+    "GroupId": 260112221
+  },
+  "260112311": {
+    "Id": 260112311,
+    "GroupId": 260112311,
+    "BindEffect": "FX/Soldier/Buff/fx_soldier_buff_hunting",
+    "Icon": "Icon/Buff/Icon_CommonBuff_SkillDamageUp",
+    "IsShow": true
+  },
+  "260112312": {
+    "Id": 260112312,
+    "GroupId": 260112312
+  },
+  "260112411": {
+    "Id": 260112411,
+    "GroupId": 260112411,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackSpeedUp",
+    "IsShow": true
+  },
+  "260112412": {
+    "Id": 260112412,
+    "GroupId": 260112412
+  },
+  "260112421": {
+    "Id": 260112421,
+    "GroupId": 260112421,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true
+  },
+  "260112422": {
+    "Id": 260112422,
+    "GroupId": 260112422
+  },
+  "260112431": {
+    "Id": 260112431,
+    "GroupId": 260112431,
+    "Icon": "Icon/Buff/Icon_CommonBuff_Shield",
+    "IsShow": true
+  },
+  "260112432": {
+    "Id": 260112432,
+    "GroupId": 260112432
+  },
+  "260112441": {
+    "Id": 260112441,
+    "GroupId": 260112441,
+    "Icon": "Icon/Buff/Icon_CommonBuff_DefenseUp",
+    "IsShow": true
+  },
+  "260112442": {
+    "Id": 260112442,
+    "GroupId": 260112442
+  },
+  "260112451": {
+    "Id": 260112451,
+    "GroupId": 260112451,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackSpeedDown",
+    "IsShow": true
+  },
+  "260112511": {
+    "Id": 260112511,
+    "GroupId": 260112511,
+    "Icon": "Icon/Buff/Icon_CommonBuff_DefenseDown",
+    "IsShow": true
+  },
+  "260112611": {
+    "Id": 260112611,
+    "GroupId": 260112611,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackSpeedUp",
+    "IsShow": true
+  },
+  "260112621": {
+    "Id": 260112621,
+    "GroupId": 260112621
+  },
+  "260112622": {
+    "Id": 260112622,
+    "GroupId": 260112622,
+    "Icon": "Icon/Buff/Icon_CommonBuff_DefenseUp",
+    "IsShow": true
+  },
+  "260112631": {
+    "Id": 260112631,
+    "GroupId": 260112631,
+    "Icon": "Icon/Buff/Icon_CommonBuff_UltraDamageUp",
+    "IsShow": true
+  },
+  "260112641": {
+    "Id": 260112641,
+    "GroupId": 260112641,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackSpeedUp",
+    "IsShow": true
+  },
+  "260112651": {
+    "Id": 260112651,
+    "GroupId": 260112651
+  },
+  "260112652": {
+    "Id": 260112652,
+    "GroupId": 260112652,
+    "Icon": "Icon/Buff/Icon_CommonBuff_DefenseUp",
+    "IsShow": true
+  },
+  "260112661": {
+    "Id": 260112661,
+    "GroupId": 260112661,
+    "Icon": "Icon/Buff/Icon_CommonBuff_UltraDamageUp",
+    "IsShow": true
+  },
+  "260112671": {
+    "Id": 260112671,
+    "GroupId": 260112671,
+    "BindEffect": "FX/Soldier/Buff/fx_soldier_buff_commmander"
+  },
+  "260112711": {
+    "Id": 260112711,
+    "GroupId": 260112711
+  },
+  "260112721": {
+    "Id": 260112721,
+    "GroupId": 260112721
+  },
+  "260112731": {
+    "Id": 260112731,
+    "GroupId": 260112731
+  },
+  "260112811": {
+    "Id": 260112811,
+    "GroupId": 260112811,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackSpeedUp",
+    "IsShow": true
+  },
+  "260112821": {
+    "Id": 260112821,
+    "GroupId": 260112821,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackSpeedUp",
+    "IsShow": true
+  },
+  "260112831": {
+    "Id": 260112831,
+    "GroupId": 260112831,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackSpeedUp",
+    "IsShow": true
+  },
+  "260112841": {
+    "Id": 260112841,
+    "GroupId": 260112841,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackSpeedUp",
+    "IsShow": true
+  },
+  "260112851": {
+    "Id": 260112851,
+    "GroupId": 260112851,
+    "BindEffect": "FX/Soldier/Buff/fx_soldier_buff_full_power",
+    "Icon": "Icon/Buff/Icon_CommonBuff_NormalDamageUp",
+    "IsShow": true
+  },
+  "260113011": {
+    "Id": 260113011,
+    "GroupId": 260113011,
+    "Icon": "Icon/Buff/Icon_Buff_14701_514702",
+    "IsShow": true
+  },
+  "260113021": {
+    "Id": 260113021,
+    "GroupId": 260113021,
+    "Icon": "Icon/Buff/Icon_Buff_14701_514702",
+    "IsShow": true
+  },
+  "260113031": {
+    "Id": 260113031,
+    "GroupId": 260113031,
+    "Icon": "Icon/Buff/Icon_Buff_14701_514702",
+    "IsShow": true
+  },
+  "260113041": {
+    "Id": 260113041,
+    "GroupId": 260113041,
+    "Icon": "Icon/Buff/Icon_CommonBuff_Shield",
+    "IsShow": true
+  },
+  "260113111": {
+    "Id": 260113111,
+    "GroupId": 260113111,
+    "BindEffect": "FX/Soldier/Buff/fx_soldier_buff_sheild"
+  },
+  "260113121": {
+    "Id": 260113121,
+    "GroupId": 260113121,
+    "BindEffect": "FX/Soldier/Buff/fx_soldier_buff_sheild"
+  },
+  "260113211": {
+    "Id": 260113211,
+    "GroupId": 260113211,
+    "Icon": "Icon/Buff/Icon_CommonBuff_SkillDamageUp",
+    "IsShow": true
+  },
+  "260113212": {
+    "Id": 260113212,
+    "GroupId": 260113212,
+    "Icon": "Icon/Buff/Icon_CommonBuff_SkillDamageUp",
+    "IsShow": true
+  },
+  "260113221": {
+    "Id": 260113221,
+    "GroupId": 260113221,
+    "Icon": "Icon/Buff/Icon_CommonBuff_NormalDamageUp",
+    "IsShow": true
+  },
+  "260113411": {
+    "Id": 260113411,
+    "GroupId": 260113411,
+    "Icon": "Icon/Buff/Icon_CommonBuff_NormalDamageUp",
+    "IsShow": true
+  },
+  "260113511": {
+    "Id": 260113511,
+    "GroupId": 260113511,
+    "BindEffect": "FX/Soldier/Buff/fx_soldier_buff_headlines"
+  },
+  "100515011": {
+    "Id": 100515011,
+    "GroupId": 100515011,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "100515021": {
+    "Id": 100515021,
+    "GroupId": 100515021,
+    "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "271001201": {
+    "Id": 271001201,
+    "GroupId": 271001201
+  },
+  "271002101": {
+    "Id": 271002101,
+    "GroupId": 271002101
+  },
+  "271002201": {
+    "Id": 271002201,
+    "GroupId": 271002201
   },
   "1": {
     "Id": 1,

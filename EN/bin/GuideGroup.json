@@ -440,6 +440,26 @@
     "ScriptPath": "GuideGroup_52",
     "IsActive": true
   },
+  "53": {
+    "Id": 53,
+    "GuideDetectionType": 1,
+    "GuidePrepose2": 2,
+    "PreposeParams2": "[5]",
+    "GuideTrigger": 3,
+    "TriggerParams": "[573]",
+    "ScriptPath": "GuideGroup_53",
+    "IsActive": true
+  },
+  "55": {
+    "Id": 55,
+    "GuideDetectionType": 1,
+    "GuidePrepose2": 2,
+    "PreposeParams2": "[5]",
+    "GuideTrigger": 3,
+    "TriggerParams": "[571]",
+    "ScriptPath": "GuideGroup_55",
+    "IsActive": true
+  },
   "101": {
     "Id": 101,
     "GuideDetectionType": 2,
@@ -537,11 +557,210 @@
     "ScriptPath": "GuideGroup_304",
     "IsActive": true
   },
+  "305": {
+    "Id": 305,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_PenguinCard_305",
+    "GuidePrepose": 1,
+    "PreposeParams": "[304]",
+    "ScriptPath": "GuideGroup_305",
+    "IsActive": true
+  },
   "401": {
     "Id": 401,
     "GuideDetectionType": 2,
     "PassiveMsg": "Guide_TowerDefense_401",
     "ScriptPath": "GuideGroup_401",
+    "IsActive": true
+  },
+  "501": {
+    "Id": 501,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_501",
+    "ScriptPath": "GuideGroup_501",
+    "IsActive": true
+  },
+  "502": {
+    "Id": 502,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_502",
+    "GuidePrepose": 1,
+    "PreposeParams": "[501]",
+    "ScriptPath": "GuideGroup_502",
+    "IsActive": true
+  },
+  "503": {
+    "Id": 503,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_503",
+    "GuidePrepose": 1,
+    "PreposeParams": "[502]",
+    "ScriptPath": "GuideGroup_503",
+    "IsActive": true
+  },
+  "504": {
+    "Id": 504,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_504",
+    "GuidePrepose": 1,
+    "PreposeParams": "[503]",
+    "ScriptPath": "GuideGroup_504",
+    "IsActive": true
+  },
+  "505": {
+    "Id": 505,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_505",
+    "GuidePrepose": 1,
+    "PreposeParams": "[504]",
+    "ScriptPath": "GuideGroup_505",
+    "IsActive": true
+  },
+  "506": {
+    "Id": 506,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_506",
+    "GuidePrepose": 1,
+    "PreposeParams": "[505]",
+    "ScriptPath": "GuideGroup_506",
+    "IsActive": true
+  },
+  "507": {
+    "Id": 507,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_507",
+    "GuidePrepose": 1,
+    "PreposeParams": "[505]",
+    "ScriptPath": "GuideGroup_507",
+    "IsActive": true
+  },
+  "508": {
+    "Id": 508,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_508",
+    "GuidePrepose": 1,
+    "PreposeParams": "[505]",
+    "ScriptPath": "GuideGroup_508",
+    "IsActive": true
+  },
+  "509": {
+    "Id": 509,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_509",
+    "GuidePrepose": 1,
+    "PreposeParams": "[507]",
+    "ScriptPath": "GuideGroup_509",
+    "IsActive": true
+  },
+  "510": {
+    "Id": 510,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_Solider_510",
+    "GuidePrepose": 1,
+    "PreposeParams": "[505]",
+    "ScriptPath": "GuideGroup_510",
+    "IsActive": true
+  },
+  "521": {
+    "Id": 521,
+    "GuideDetectionType": 1,
+    "GuidePrepose": 1,
+    "PreposeParams": "[24]",
+    "GuidePrepose2": 4,
+    "PreposeParams2": "[35]",
+    "GuideTrigger": 3,
+    "TriggerParams": "[10]",
+    "TowerState": true,
+    "ScriptPath": "GuideGroup_521",
+    "IsActive": true
+  },
+  "522": {
+    "Id": 522,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_DormEnter",
+    "GuidePrepose": 1,
+    "PreposeParams": "[521]",
+    "GuidePrepose2": 8,
+    "PreposeParams2": "[500010]",
+    "GuideTrigger": 4,
+    "TowerState": true,
+    "ScriptPath": "GuideGroup_522",
+    "IsActive": true
+  },
+  "523": {
+    "Id": 523,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_DormEnter",
+    "GuidePrepose": 1,
+    "PreposeParams": "[522]",
+    "GuidePrepose2": 8,
+    "PreposeParams2": "[500011]",
+    "GuideTrigger": 4,
+    "TowerState": true,
+    "ScriptPath": "GuideGroup_523",
+    "IsActive": true
+  },
+  "524": {
+    "Id": 524,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_DormEnter",
+    "GuidePrepose": 1,
+    "PreposeParams": "[523]",
+    "GuidePrepose2": 8,
+    "PreposeParams2": "[500012]",
+    "GuideTrigger": 4,
+    "TowerState": true,
+    "ScriptPath": "GuideGroup_524",
+    "IsActive": true
+  },
+  "525": {
+    "Id": 525,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_DormEnter",
+    "GuidePrepose": 1,
+    "PreposeParams": "[524]",
+    "GuidePrepose2": 8,
+    "PreposeParams2": "[500013]",
+    "GuideTrigger": 4,
+    "TowerState": true,
+    "ScriptPath": "GuideGroup_525",
+    "IsActive": true
+  },
+  "526": {
+    "Id": 526,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_DormEnter",
+    "GuidePrepose": 1,
+    "PreposeParams": "[525]",
+    "GuidePrepose2": 9,
+    "PreposeParams2": "[50001]",
+    "GuideTrigger": 4,
+    "TowerState": true,
+    "ScriptPath": "GuideGroup_526",
+    "IsActive": true
+  },
+  "527": {
+    "Id": 527,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_DormEnter",
+    "GuidePrepose": 1,
+    "PreposeParams": "[526]",
+    "GuidePrepose2": 9,
+    "PreposeParams2": "[50002]",
+    "GuideTrigger": 4,
+    "TowerState": true,
+    "ScriptPath": "GuideGroup_527",
+    "IsActive": true
+  },
+  "528": {
+    "Id": 528,
+    "GuideDetectionType": 2,
+    "PassiveMsg": "Guide_DormEnterRoom2",
+    "GuidePrepose": 1,
+    "PreposeParams": "[527]",
+    "GuideTrigger": 4,
+    "TowerState": true,
+    "ScriptPath": "GuideGroup_528",
     "IsActive": true
   }
 }
