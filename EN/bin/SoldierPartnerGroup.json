@@ -10,7 +10,8 @@
       2501002,
       2501003
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_101"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_101",
+    "PartnerCatalogue": 1
   },
   "2": {
     "Id": 2,
@@ -23,7 +24,8 @@
       2501005,
       2501006
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_102"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_102",
+    "PartnerCatalogue": 1
   },
   "3": {
     "Id": 3,
@@ -36,7 +38,8 @@
       2501007,
       2501009
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_103"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_103",
+    "PartnerCatalogue": 1
   },
   "4": {
     "Id": 4,
@@ -48,10 +51,10 @@
       2501015,
       2501010,
       2501014,
-      2501016,
-      2501012
+      2501016
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_104"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_104",
+    "PartnerCatalogue": 1
   },
   "5": {
     "Id": 5,
@@ -65,7 +68,8 @@
       2501039,
       2501040
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_105"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_105",
+    "PartnerCatalogue": 2
   },
   "6": {
     "Id": 6,
@@ -78,9 +82,11 @@
       2501024,
       2501023,
       2501021,
-      2501022
+      2501022,
+      2501063
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_106"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_106",
+    "PartnerCatalogue": 1
   },
   "7": {
     "Id": 7,
@@ -91,7 +97,8 @@
     "ChessCharacterIds": [
       2501017
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_107"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_107",
+    "PartnerCatalogue": 1
   },
   "8": {
     "Id": 8,
@@ -101,8 +108,15 @@
     "Desc": "SoldierPartnerGroup.8.2",
     "ChessCharacterIds": [
       2501018,
-      2501019
-    ]
+      2501019,
+      2501046,
+      2501047,
+      2501050,
+      2501051,
+      2501053
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_108",
+    "PartnerCatalogue": 1
   },
   "9": {
     "Id": 9,
@@ -117,7 +131,8 @@
       2501029,
       2501030
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_109"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_109",
+    "PartnerCatalogue": 1
   },
   "10": {
     "Id": 10,
@@ -127,8 +142,13 @@
     "Desc": "SoldierPartnerGroup.10.2",
     "ChessCharacterIds": [
       2501026,
-      2501025
-    ]
+      2501025,
+      2501058,
+      2501045,
+      2501048
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_110",
+    "PartnerCatalogue": 1
   },
   "11": {
     "Id": 11,
@@ -145,7 +165,8 @@
       2501035,
       2501036
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_111"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_111",
+    "PartnerCatalogue": 1
   },
   "12": {
     "Id": 12,
@@ -156,7 +177,8 @@
     "ChessCharacterIds": [
       2501034
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_112"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_112",
+    "PartnerCatalogue": 1
   },
   "13": {
     "Id": 13,
@@ -165,12 +187,13 @@
     "Icon": "Soldier_00_Partner_113",
     "Desc": "SoldierPartnerGroup.13.2",
     "ChessCharacterIds": [
-      2501009,
+      2501056,
       2501020,
       2501001,
       2501033,
       2501006
-    ]
+    ],
+    "PartnerCatalogue": 2
   },
   "14": {
     "Id": 14,
@@ -182,8 +205,10 @@
       2501015,
       2501013,
       2501002,
-      2501016
-    ]
+      2501016,
+      2501062
+    ],
+    "PartnerCatalogue": 2
   },
   "15": {
     "Id": 15,
@@ -194,8 +219,14 @@
     "ChessCharacterIds": [
       2501003,
       2501005,
-      2501022
-    ]
+      2501022,
+      2501060,
+      2501049,
+      2501052,
+      2501055
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_115",
+    "PartnerCatalogue": 2
   },
   "16": {
     "Id": 16,
@@ -206,9 +237,12 @@
     "ChessCharacterIds": [
       2501018,
       2501004,
-      2501012
+      2501012,
+      2501007,
+      2501064
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_116"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_116",
+    "PartnerCatalogue": 2
   },
   "17": {
     "Id": 17,
@@ -219,9 +253,11 @@
     "ChessCharacterIds": [
       2501017,
       2501010,
-      2501019
+      2501019,
+      2501048
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_117"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_117",
+    "PartnerCatalogue": 2
   },
   "18": {
     "Id": 18,
@@ -230,11 +266,12 @@
     "Icon": "Soldier_00_Partner_118",
     "Desc": "SoldierPartnerGroup.18.2",
     "ChessCharacterIds": [
-      2501032,
+      2501057,
       2501021,
       2501029,
       2501031
-    ]
+    ],
+    "PartnerCatalogue": 2
   },
   "19": {
     "Id": 19,
@@ -244,8 +281,260 @@
     "Desc": "SoldierPartnerGroup.19.2",
     "ChessCharacterIds": [
       2501016,
-      2501036
+      2501036,
+      2501047,
+      2501008
     ],
-    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_119"
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_119",
+    "PartnerCatalogue": 2
+  },
+  "20": {
+    "Id": 20,
+    "PartnerType": 20,
+    "Name": "SoldierPartnerGroup.20.1",
+    "Icon": "Soldier_00_Partner_120",
+    "Desc": "SoldierPartnerGroup.20.2",
+    "ChessCharacterIds": [
+      2501041,
+      2501042,
+      2501043
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_120",
+    "PartnerCatalogue": 1
+  },
+  "21": {
+    "Id": 21,
+    "PartnerType": 21,
+    "Name": "SoldierPartnerGroup.21.1",
+    "Icon": "Soldier_00_Partner_121",
+    "Desc": "SoldierPartnerGroup.21.2",
+    "ChessCharacterIds": [
+      2501044,
+      2501055
+    ],
+    "PartnerCatalogue": 1
+  },
+  "22": {
+    "Id": 22,
+    "PartnerType": 22,
+    "Name": "SoldierPartnerGroup.22.1",
+    "Icon": "Soldier_00_Partner_122",
+    "Desc": "SoldierPartnerGroup.22.2",
+    "ChessCharacterIds": [
+      2501057,
+      2501059,
+      2501060,
+      2501064
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_122",
+    "PartnerCatalogue": 1
+  },
+  "23": {
+    "Id": 23,
+    "PartnerType": 23,
+    "Name": "SoldierPartnerGroup.23.1",
+    "Icon": "Soldier_00_Partner_123",
+    "Desc": "SoldierPartnerGroup.23.2",
+    "ChessCharacterIds": [
+      2501012,
+      2501061,
+      2501062
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_123",
+    "PartnerCatalogue": 1
+  },
+  "24": {
+    "Id": 24,
+    "PartnerType": 24,
+    "Name": "SoldierPartnerGroup.24.1",
+    "Icon": "Soldier_00_Partner_124",
+    "Desc": "SoldierPartnerGroup.24.2",
+    "ChessCharacterIds": [
+      2501019,
+      2501049
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_124",
+    "PartnerCatalogue": 1
+  },
+  "25": {
+    "Id": 25,
+    "PartnerType": 25,
+    "Name": "SoldierPartnerGroup.25.1",
+    "Icon": "Soldier_00_Partner_125",
+    "Desc": "SoldierPartnerGroup.25.2",
+    "ChessCharacterIds": [
+      2501061,
+      2501051,
+      2501052
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_125",
+    "PartnerCatalogue": 2
+  },
+  "26": {
+    "Id": 26,
+    "PartnerType": 26,
+    "Name": "SoldierPartnerGroup.26.1",
+    "Icon": "Soldier_00_Partner_126",
+    "Desc": "SoldierPartnerGroup.26.2",
+    "ChessCharacterIds": [
+      2501044,
+      2501048,
+      2501063,
+      2501064
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_126",
+    "PartnerCatalogue": 2
+  },
+  "27": {
+    "Id": 27,
+    "PartnerType": 27,
+    "Name": "SoldierPartnerGroup.27.1",
+    "Icon": "Soldier_00_Partner_127",
+    "Desc": "SoldierPartnerGroup.27.2",
+    "ChessCharacterIds": [
+      2501043,
+      2501047,
+      2501009,
+      2501062,
+      2501054
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_127",
+    "PartnerCatalogue": 2
+  },
+  "28": {
+    "Id": 28,
+    "PartnerType": 28,
+    "Name": "SoldierPartnerGroup.28.1",
+    "Icon": "Soldier_00_Partner_128",
+    "Desc": "SoldierPartnerGroup.28.2",
+    "ChessCharacterIds": [
+      2501040,
+      2501058,
+      2501059,
+      2501028,
+      2501044,
+      2501050,
+      2501055
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_128",
+    "PartnerCatalogue": 2
+  },
+  "29": {
+    "Id": 29,
+    "PartnerType": 29,
+    "Name": "SoldierPartnerGroup.29.1",
+    "Icon": "Soldier_00_Partner_129",
+    "Desc": "SoldierPartnerGroup.29.2",
+    "ChessCharacterIds": [
+      2501011,
+      2501042,
+      2501046,
+      2501015
+    ],
+    "PartnerCatalogue": 2
+  },
+  "30": {
+    "Id": 30,
+    "PartnerType": 30,
+    "Name": "SoldierPartnerGroup.30.1",
+    "Icon": "Soldier_00_Partner_130",
+    "Desc": "SoldierPartnerGroup.30.2",
+    "ChessCharacterIds": [
+      2501012,
+      2501041,
+      2501032,
+      2501045
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_130",
+    "PartnerCatalogue": 2
+  },
+  "31": {
+    "Id": 31,
+    "PartnerType": 31,
+    "Name": "SoldierPartnerGroup.31.1",
+    "Icon": "Soldier_00_Partner_131",
+    "Desc": "SoldierPartnerGroup.31.2",
+    "ChessCharacterIds": [
+      2501013,
+      2501063,
+      2501056
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_131",
+    "PartnerCatalogue": 2
+  },
+  "32": {
+    "Id": 32,
+    "PartnerType": 32,
+    "Name": "SoldierPartnerGroup.32.1",
+    "Icon": "Soldier_00_Partner_132",
+    "Desc": "SoldierPartnerGroup.32.2",
+    "ChessCharacterIds": [
+      2501011,
+      2501014,
+      2501050,
+      2501051
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_132",
+    "PartnerCatalogue": 2
+  },
+  "33": {
+    "Id": 33,
+    "PartnerType": 33,
+    "Name": "SoldierPartnerGroup.33.1",
+    "Icon": "Soldier_00_Partner_137",
+    "Desc": "SoldierPartnerGroup.33.2",
+    "ChessCharacterIds": [
+      2501056
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_137",
+    "PartnerCatalogue": 1
+  },
+  "34": {
+    "Id": 34,
+    "PartnerType": 34,
+    "Name": "SoldierPartnerGroup.34.1",
+    "Icon": "Soldier_00_Partner_135",
+    "Desc": "SoldierPartnerGroup.34.2",
+    "ChessCharacterIds": [
+      2501054
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_135",
+    "PartnerCatalogue": 2
+  },
+  "35": {
+    "Id": 35,
+    "PartnerType": 35,
+    "Name": "SoldierPartnerGroup.35.1",
+    "Icon": "Soldier_00_Partner_136",
+    "Desc": "SoldierPartnerGroup.35.2",
+    "ChessCharacterIds": [
+      2501053
+    ],
+    "PartnerCatalogue": 1
+  },
+  "36": {
+    "Id": 36,
+    "PartnerType": 36,
+    "Name": "SoldierPartnerGroup.36.1",
+    "Icon": "Soldier_00_Partner_133",
+    "Desc": "SoldierPartnerGroup.36.2",
+    "ChessCharacterIds": [
+      2501052,
+      2501053
+    ],
+    "PartnerCatalogue": 1
+  },
+  "37": {
+    "Id": 37,
+    "PartnerType": 37,
+    "Name": "SoldierPartnerGroup.37.1",
+    "Icon": "Soldier_00_Partner_134",
+    "Desc": "SoldierPartnerGroup.37.2",
+    "ChessCharacterIds": [
+      2501008,
+      2501034
+    ],
+    "Path": "AIScript.Soldier.SoldierPartner.SoldierPartner_134",
+    "PartnerCatalogue": 1
   }
 }

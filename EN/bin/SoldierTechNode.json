@@ -1,0 +1,495 @@
+{
+  "10001": {
+    "Id": 10001,
+    "NodeId": 1,
+    "Season": 1,
+    "Name": "SoldierTechNode.10001.1",
+    "Desc": "SoldierTechNode.10001.2",
+    "Position": [
+      1,
+      2
+    ],
+    "Type": 1,
+    "Priority": 1,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_101",
+    "ItemId1": 2701003,
+    "ItemQty1": 20
+  },
+  "10002": {
+    "Id": 10002,
+    "NodeId": 2,
+    "Season": 1,
+    "Name": "SoldierTechNode.10002.1",
+    "Desc": "SoldierTechNode.10002.2",
+    "Position": [
+      2,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10001
+    ],
+    "PreNodesLogic": true,
+    "Priority": 2,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_102",
+    "ItemId1": 2701003,
+    "ItemQty1": 20
+  },
+  "10003": {
+    "Id": 10003,
+    "NodeId": 3,
+    "Season": 1,
+    "Name": "SoldierTechNode.10003.1",
+    "Desc": "SoldierTechNode.10003.2",
+    "Position": [
+      3,
+      1
+    ],
+    "Type": 3,
+    "Param": 102,
+    "PreNodes": [
+      10002
+    ],
+    "PreNodesLogic": true,
+    "Priority": 3,
+    "ItemId1": 2701003,
+    "ItemQty1": 30
+  },
+  "10004": {
+    "Id": 10004,
+    "NodeId": 4,
+    "Season": 1,
+    "Name": "SoldierTechNode.10004.1",
+    "Desc": "SoldierTechNode.10004.2",
+    "Position": [
+      3,
+      2
+    ],
+    "Type": 3,
+    "Param": 103,
+    "PreNodes": [
+      10002
+    ],
+    "PreNodesLogic": true,
+    "Priority": 3,
+    "ItemId1": 2701003,
+    "ItemQty1": 30
+  },
+  "10005": {
+    "Id": 10005,
+    "NodeId": 5,
+    "Season": 1,
+    "Name": "SoldierTechNode.10005.1",
+    "Desc": "SoldierTechNode.10005.2",
+    "Position": [
+      3,
+      3
+    ],
+    "Type": 3,
+    "Param": 104,
+    "PreNodes": [
+      10002
+    ],
+    "PreNodesLogic": true,
+    "Priority": 3,
+    "ItemId1": 2701003,
+    "ItemQty1": 30
+  },
+  "10006": {
+    "Id": 10006,
+    "NodeId": 6,
+    "Season": 1,
+    "Name": "SoldierTechNode.10006.1",
+    "Desc": "SoldierTechNode.10006.2",
+    "Position": [
+      4,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10003,
+      10004,
+      10005
+    ],
+    "Priority": 4,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_103",
+    "ItemId1": 2701003,
+    "ItemQty1": 30
+  },
+  "10007": {
+    "Id": 10007,
+    "NodeId": 7,
+    "Season": 1,
+    "Name": "SoldierTechNode.10007.1",
+    "Desc": "SoldierTechNode.10007.2",
+    "Position": [
+      5,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10006
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10007
+    ],
+    "Priority": 5,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10008": {
+    "Id": 10008,
+    "NodeId": 8,
+    "Season": 1,
+    "Name": "SoldierTechNode.10008.1",
+    "Desc": "SoldierTechNode.10008.2",
+    "Position": [
+      5,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10006
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10008
+    ],
+    "Priority": 5,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10009": {
+    "Id": 10009,
+    "NodeId": 9,
+    "Season": 1,
+    "Name": "SoldierTechNode.10009.1",
+    "Desc": "SoldierTechNode.10009.2",
+    "Position": [
+      6,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10007,
+      10008
+    ],
+    "Priority": 6,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_104",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  },
+  "10010": {
+    "Id": 10010,
+    "NodeId": 10,
+    "Season": 1,
+    "Name": "SoldierTechNode.10010.1",
+    "Desc": "SoldierTechNode.10010.2",
+    "Position": [
+      7,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10009
+    ],
+    "PreNodesLogic": true,
+    "Priority": 7,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_105",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  },
+  "10011": {
+    "Id": 10011,
+    "NodeId": 11,
+    "Season": 1,
+    "Name": "SoldierTechNode.10011.1",
+    "Desc": "SoldierTechNode.10011.2",
+    "Position": [
+      7,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10009
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10011
+    ],
+    "Priority": 7,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10012": {
+    "Id": 10012,
+    "NodeId": 12,
+    "Season": 1,
+    "Name": "SoldierTechNode.10012.1",
+    "Desc": "SoldierTechNode.10012.2",
+    "Position": [
+      7,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10009
+    ],
+    "PreNodesLogic": true,
+    "EffectBattle": 10012,
+    "BattleType": 4,
+    "BattleTypeParam": 800,
+    "Priority": 7,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10013": {
+    "Id": 10013,
+    "NodeId": 13,
+    "Season": 1,
+    "Name": "SoldierTechNode.10013.1",
+    "Desc": "SoldierTechNode.10013.2",
+    "Position": [
+      8,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10010
+    ],
+    "PreNodesLogic": true,
+    "Priority": 8,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_106",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  },
+  "10014": {
+    "Id": 10014,
+    "NodeId": 14,
+    "Season": 1,
+    "Name": "SoldierTechNode.10014.1",
+    "Desc": "SoldierTechNode.10014.2",
+    "Position": [
+      8,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10010
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10014
+    ],
+    "Priority": 8,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10015": {
+    "Id": 10015,
+    "NodeId": 15,
+    "Season": 1,
+    "Name": "SoldierTechNode.10015.1",
+    "Desc": "SoldierTechNode.10015.2",
+    "Position": [
+      8,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10010
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10015
+    ],
+    "Priority": 8,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10016": {
+    "Id": 10016,
+    "NodeId": 16,
+    "Season": 1,
+    "Name": "SoldierTechNode.10016.1",
+    "Desc": "SoldierTechNode.10016.2",
+    "Position": [
+      9,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10014
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10016
+    ],
+    "Priority": 9,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10017": {
+    "Id": 10017,
+    "NodeId": 17,
+    "Season": 1,
+    "Name": "SoldierTechNode.10017.1",
+    "Desc": "SoldierTechNode.10017.2",
+    "Position": [
+      9,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10015
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10017
+    ],
+    "Priority": 9,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10018": {
+    "Id": 10018,
+    "NodeId": 18,
+    "Season": 1,
+    "Name": "SoldierTechNode.10018.1",
+    "Desc": "SoldierTechNode.10018.2",
+    "Position": [
+      10,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10016,
+      10017
+    ],
+    "Priority": 10,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_107",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  },
+  "10019": {
+    "Id": 10019,
+    "NodeId": 19,
+    "Season": 1,
+    "Name": "SoldierTechNode.10019.1",
+    "Desc": "SoldierTechNode.10019.2",
+    "Position": [
+      11,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10018
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10019
+    ],
+    "Priority": 11,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10020": {
+    "Id": 10020,
+    "NodeId": 20,
+    "Season": 1,
+    "Name": "SoldierTechNode.10020.1",
+    "Desc": "SoldierTechNode.10020.2",
+    "Position": [
+      11,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10018
+    ],
+    "PreNodesLogic": true,
+    "EffectClient": [
+      10020
+    ],
+    "Priority": 11,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10021": {
+    "Id": 10021,
+    "NodeId": 21,
+    "Season": 1,
+    "Name": "SoldierTechNode.10021.1",
+    "Desc": "SoldierTechNode.10021.2",
+    "Position": [
+      12,
+      1
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10019
+    ],
+    "PreNodesLogic": true,
+    "EffectBattle": 10021,
+    "BattleType": 1,
+    "BattleTypeParam": 600,
+    "Priority": 12,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10022": {
+    "Id": 10022,
+    "NodeId": 22,
+    "Season": 1,
+    "Name": "SoldierTechNode.10022.1",
+    "Desc": "SoldierTechNode.10022.2",
+    "Position": [
+      12,
+      3
+    ],
+    "Type": 2,
+    "PreNodes": [
+      10020
+    ],
+    "PreNodesLogic": true,
+    "EffectBattle": 10022,
+    "BattleType": 2,
+    "BattleTypeParam": 600,
+    "Priority": 12,
+    "Icon": "Icon/SoldierTech/SoldierTech_Attr",
+    "ItemId1": 2701003,
+    "ItemQty1": 15
+  },
+  "10023": {
+    "Id": 10023,
+    "NodeId": 23,
+    "Season": 1,
+    "Name": "SoldierTechNode.10023.1",
+    "Desc": "SoldierTechNode.10023.2",
+    "Position": [
+      13,
+      2
+    ],
+    "Type": 1,
+    "PreNodes": [
+      10021,
+      10022
+    ],
+    "Priority": 13,
+    "Icon": "Icon/SoldierTech/SoldierTechSp_108",
+    "ItemId1": 2701003,
+    "ItemQty1": 40
+  }
+}
