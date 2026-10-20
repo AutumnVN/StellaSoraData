@@ -10,7 +10,7 @@
     },
     "17": {
         "name": "Aqua DMG",
-        "desc": "Additional DMG multiplier when dealing Aqua DMG",
+        "desc": "Additional DMG Multiplier when dealing Aqua DMG",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -19,7 +19,7 @@
     },
     "18": {
         "name": "Ignis DMG",
-        "desc": "Additional DMG multiplier when dealing Ignis DMG",
+        "desc": "Additional DMG Multiplier when dealing Ignis DMG",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -28,7 +28,7 @@
     },
     "19": {
         "name": "Terra DMG",
-        "desc": "Additional DMG multiplier when dealing Terra DMG",
+        "desc": "Additional DMG Multiplier when dealing Terra DMG",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -37,7 +37,7 @@
     },
     "20": {
         "name": "Ventus DMG",
-        "desc": "Additional DMG multiplier when dealing Ventus DMG",
+        "desc": "Additional DMG Multiplier when dealing Ventus DMG",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -46,7 +46,7 @@
     },
     "21": {
         "name": "Lux DMG",
-        "desc": "Additional DMG multiplier when dealing Lux DMG",
+        "desc": "Additional DMG Multiplier when dealing Lux DMG",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -55,7 +55,7 @@
     },
     "22": {
         "name": "Umbra DMG",
-        "desc": "Additional DMG multiplier when dealing Umbra DMG",
+        "desc": "Additional DMG Multiplier when dealing Umbra DMG",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -82,7 +82,16 @@
     },
     "66": {
         "name": "VUL Exploit Multiplier",
-        "desc": "Additional DMG multiplier against targets with negative Elemental RES.",
+        "desc": "Additional DMG Multiplier against targets with negative Elemental RES.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "67": {
+        "name": "DEF",
+        "desc": "Reduces DMG this unit takes. DEF caps at 2,000 and can't be lowered by more than 500.",
         "params": [],
         "effectType": [],
         "addAttrType": [],
@@ -851,6 +860,60 @@
         "effectData": [],
         "buffIcons": []
     },
+    "2068": {
+        "name": "Lux PEN",
+        "desc": "DMG dealt penetrates part of the target's Elemental RES, up to 250.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "2069": {
+        "name": "Umbra PEN",
+        "desc": "DMG dealt penetrates part of the target's Elemental RES, up to 250.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "2070": {
+        "name": "Aqua PEN",
+        "desc": "DMG dealt penetrates part of the target's Elemental RES, up to 250.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "2071": {
+        "name": "Ignis PEN",
+        "desc": "DMG dealt penetrates part of the target's Elemental RES, up to 250.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "2072": {
+        "name": "Terra Penetration",
+        "desc": "DMG dealt penetrates part of the target's Elemental RES, up to 250.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
+    "2073": {
+        "name": "Ventus PEN",
+        "desc": "DMG dealt penetrates part of the target's Elemental RES, up to 250.",
+        "params": [],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
+    },
     "4002": {
         "name": "Shadow Clone",
         "desc": "Shadow Clone is &Param1&'s minion and has 100% of &Param1&'s ATK. It is immune to DMG and lasts for &Param2&s. Up to &Param3& Shadow Clones can exist at the same time.",
@@ -1274,6 +1337,17 @@
         "buffIcons": [
             "No Icon"
         ]
+    },
+    "4044": {
+        "name": "Swordsoul",
+        "desc": "Awakened Noya gains this when casting the Main Skill. When Swordsoul reaches 100 stacks, consumes all Swordsoul stacks and activates Finishing Move: deals <color=#fb8037>&Param1& of ATK x2</color> as AoE Lux Skill DMG to nearby targets.",
+        "params": [
+            "134%/155%/175%/235%/254%/273%/310%/327%/343%/376%/403%/427%/452%"
+        ],
+        "effectType": [],
+        "addAttrType": [],
+        "effectData": [],
+        "buffIcons": []
     },
     "4045": {
         "name": "Hunting Energy",

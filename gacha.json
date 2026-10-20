@@ -1,4 +1,14 @@
 {
+    "1001": {
+        "id": 1001,
+        "type": "disc",
+        "name": "One Starlit Year, One Destined Reunion",
+        "icon": "tab_gacha_1001_lang",
+        "rateUp5Star": [],
+        "rateUp4Star": [],
+        "startTime": "2026-10-20T12:00:00+08:00",
+        "endTime": "2026-11-10T10:59:59+08:00"
+    },
     "10110": {
         "id": 10110,
         "type": "character",
@@ -647,6 +657,33 @@
         "startTime": "2026-07-21T12:00:00+08:00",
         "endTime": "2026-08-11T10:59:59+08:00"
     },
+    "10162": {
+        "id": 10162,
+        "type": "character",
+        "name": "At the First Piercing Light",
+        "icon": "tab_gacha_10162_lang",
+        "rateUp5Star": [
+            {
+                "id": 162,
+                "name": "Firstlight Noya",
+                "element": "Lux"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 107,
+                "name": "Tilia",
+                "element": "Lux"
+            },
+            {
+                "id": 116,
+                "name": "Ridge",
+                "element": "Terra"
+            }
+        ],
+        "startTime": "2026-10-20T12:00:00+08:00",
+        "endTime": "2026-11-10T10:59:59+08:00"
+    },
     "11110": {
         "id": 11110,
         "type": "character",
@@ -673,6 +710,33 @@
         ],
         "startTime": "2026-10-06T12:00:00+08:00",
         "endTime": "2026-10-27T10:59:59+08:00"
+    },
+    "11115": {
+        "id": 11115,
+        "type": "character",
+        "name": "Stardust Rising in the Light",
+        "icon": "tab_gacha_11115_lang",
+        "rateUp5Star": [
+            {
+                "id": 115,
+                "name": "Firefly",
+                "element": "Lux"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 107,
+                "name": "Tilia",
+                "element": "Lux"
+            },
+            {
+                "id": 116,
+                "name": "Ridge",
+                "element": "Terra"
+            }
+        ],
+        "startTime": "2026-10-27T12:00:00+08:00",
+        "endTime": "2026-11-17T10:59:59+08:00"
     },
     "11119": {
         "id": 11119,
@@ -1484,6 +1548,33 @@
         "startTime": "2026-07-21T12:00:00+08:00",
         "endTime": "2026-08-11T10:59:59+08:00"
     },
+    "20162": {
+        "id": 20162,
+        "type": "disc",
+        "name": "Resolve at the Tip of My Sword",
+        "icon": "tab_gacha_20162_lang",
+        "rateUp5Star": [
+            {
+                "id": 214066,
+                "name": "My Guiding Star",
+                "element": "Lux"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 213005,
+                "name": "★Bam Bam Girl★",
+                "element": "Lux"
+            },
+            {
+                "id": 213020,
+                "name": "The Shining",
+                "element": "Terra"
+            }
+        ],
+        "startTime": "2026-10-20T12:00:00+08:00",
+        "endTime": "2026-11-10T10:59:59+08:00"
+    },
     "21110": {
         "id": 21110,
         "type": "disc",
@@ -1510,6 +1601,33 @@
         ],
         "startTime": "2026-10-06T12:00:00+08:00",
         "endTime": "2026-10-27T10:59:59+08:00"
+    },
+    "21115": {
+        "id": 21115,
+        "type": "disc",
+        "name": "If Only I Could Touch the Stars",
+        "icon": "tab_gacha_21115_lang",
+        "rateUp5Star": [
+            {
+                "id": 214051,
+                "name": "Stellar Destination",
+                "element": "Lux"
+            }
+        ],
+        "rateUp4Star": [
+            {
+                "id": 213006,
+                "name": "Good Night",
+                "element": "Lux"
+            },
+            {
+                "id": 213014,
+                "name": "The Knight's Smith",
+                "element": "Terra"
+            }
+        ],
+        "startTime": "2026-10-27T12:00:00+08:00",
+        "endTime": "2026-11-17T10:59:59+08:00"
     },
     "21119": {
         "id": 21119,
