@@ -4836,7 +4836,7 @@
                     "nameCN": "完美的回旋",
                     "nameJP": "栄光の凱旋",
                     "nameKR": "완벽한 회전",
-                    "desc": "Aegis of Light shields the main Trekker and then ricochets.\u000bWhen it hits the main Trekker, deals <color=#0abec5>&Param2& of Tilia's ATK</color> as AoE Lux Skill DMG and increases the Skill DMG taken by nearby enemies by <color=#0abec5>&Param3&</color>, lasting for &Param4&s, up to &Param5& stacks.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
+                    "desc": "Aegis of Light shields the main Trekker and then ricochets.\u000bUpon hitting the main Trekker, it creates a Lightning Array: Deals <color=#0abec5>&Param2& of Tilia's ATK</color> as AoE Lux Skill DMG and increases the Skill DMG taken by nearby enemies by <color=#0abec5>&Param3&</color>, lasting for &Param4&s. Stacks up to &Param5& times.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "descCN": "「圣光之盾」会飞向主控角色后再弹射。\u000b「圣光之盾」命中主控角色时，造成缇莉娅攻击力<color=#0abec5>&Param2&</color>的范围光系技能伤害，并使附近目标受到技能伤害提升<color=#0abec5>&Param3&</color>，持续&Param4&秒，可叠加&Param5&层。\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "descJP": "支援スキルの聖光の盾が、先に主力巡遊者に向かって飛び、その後に跳ね渡るようになる。\u000b聖光の盾が主力巡遊者に命中時、範囲内の敵にティリアの攻撃力の<color=#0abec5>&Param2&</color>の光属性のスキルダメージを与え、&Param4&秒間、その周囲の敵のスキル被ダメージを<color=#0abec5>&Param3&</color>増加させる。この効果は&Param5&回重複できる。\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "descKR": "「성광의 방패」가 메인 캐릭터를 향해 날아간 후, 다시 튕긴다. \u000b「성광의 방패」가 메인 캐릭터를 명중시키면 틸리아 공격력 <color=#0abec5>&Param2&</color>의 빛 속성 범위 스킬 피해를 입히고 주변 목표가 받는 스킬 피해가 <color=#0abec5>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
@@ -5116,7 +5116,7 @@
                     "nameCN": "破绽显露",
                     "nameJP": "好機発見",
                     "nameKR": "약점 노출",
-                    "desc": "Aegis of Light deals an additional &Param3& of ATK as AoE Lux Skill DMG to targets whose HP are below <color=#ec6d21>&Param2&</color>. Also increases the Skill DMG they take by &Param4& for &Param5&s, stacking up to &Param6& times.\u000bThis effect can only be triggered once every &Param8&s.\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
+                    "desc": "When Aegis of Light hits a target with HP below <color=#ec6d21>&Param2&</color>, it creates a Lightning Array: Deals &Param3& of Tilia's ATK as AoE Lux Skill DMG and increases the Skill DMG they take by &Param4& for &Param5&s, stacking up to &Param6& times.\u000bThis effect can only be triggered once every &Param8&s.\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "descCN": "「圣光之盾」对当前生命低于<color=#ec6d21>&Param2&</color>的目标额外造成攻击力&Param3&的范围光系技能伤害，并使其受到技能伤害提升&Param4&，持续&Param5&秒，可叠加&Param6&层。\u000b该效果每&Param8&秒最多触发1次。\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "descJP": "聖光の盾は、現在のHPが<color=#ec6d21>&Param2&</color>未満の敵たちに追加で、攻撃力の&Param3&の光属性のスキルダメージを与え、&Param5&秒間、それらの敵のスキル被ダメージを&Param4&増加させるようになる。この効果は&Param8&秒ごとに1回まで発動し、&Param6&回重複できる。\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "descKR": "「성광의 방패」가 현재 HP가 <color=#ec6d21>&Param2&</color>보다 낮은 목표에게 공격력 &Param3&의 빛 속성 범위 스킬 피해를 추가로 입히고, 대상이 받는 스킬 피해를 &Param4& 증가시킨다. &Param5&초간 지속되며, 최대 &Param6&스택 중첩된다. \u000b해당 효과는 &Param8&초마다 최대 1회 발동한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
@@ -156218,6 +156218,3704 @@
             }
         ]
     },
+    "161": {
+        "id": 161,
+        "name": "Leafia",
+        "star": 5,
+        "element": "Terra",
+        "class": "Versatile",
+        "attackType": "Ranged",
+        "style": "Steady",
+        "force": "Trekker Association",
+        "tag": [
+            "Versatile",
+            "Steady",
+            "Trekker Association"
+        ],
+        "cnCv": "Miao Zi",
+        "jpCv": "Chiyuki Miura",
+        "source": [
+            "Limited",
+            "Premium",
+            "Recruit",
+            "Gacha",
+            "Banner",
+            "p2w"
+        ],
+        "birthday": "March 5th",
+        "loveGift": [
+            "Love Candle",
+            "Blazing Wings",
+            "Fiery Honeypot",
+            "Card Capturer",
+            "Reflective Photo Capturer",
+            "Ultra-Precision Photo Capturer",
+            "Star Eclipse",
+            "Moonlit Companion",
+            "Cosmic Form"
+        ],
+        "hateGift": [
+            "Whisper Wind Spinner",
+            "Chilling Wind Spinner",
+            "Blazing Wind Spinner"
+        ],
+        "date": [
+            {
+                "id": 161301,
+                "name": "Expert Goofball",
+                "clue": "Visit the Cave to unlock",
+                "secondChoice": "Keep exploring deeper."
+            },
+            {
+                "id": 161302,
+                "name": "Opening Up",
+                "clue": "Visit Hot Spring Resort to unlock",
+                "secondChoice": "Let’s go soak in the hot springs."
+            }
+        ],
+        "fixedStat": {
+            "Charge Rate": "Medium",
+            "Energy Cost": "Medium",
+            "Attack Range": 7,
+            "Walk Speed": 4.875,
+            "Run Speed": 6.5
+        },
+        "normalAtk": {
+            "id": 16110000,
+            "name": "Crystal Generation",
+            "energyLimit": 15.24,
+            "desc": "Continuously generates Plotting Crystals.\nStrike 1: <color=#fb8037>&Param1&</color> of ATK as Terra Auto Attack DMG.\nStrike 2: <color=#fb8037>&Param2&</color> of ATK as Terra Auto Attack DMG.\nStrike 3: <color=#fb8037>&Param3&</color> of ATK as Terra Auto Attack DMG.\nWhen an Auto Attack deals DMG, there is a 10% chance to generate 1 Resource Marker, up to 1 per second.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+            "damageType": [
+                "Auto Attack (3.8e, from Normal attack, scale with Normal attack)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "66%/76%/86%/116%/125%/134%/153%/161%/169%/185%/198%/211%/224%",
+                "66%/76%/86%/116%/125%/134%/153%/161%/169%/185%/198%/211%/224%",
+                "66%/76%/86%/116%/125%/134%/153%/161%/169%/185%/198%/211%/224%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Auto Attack (3.8e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (3.8e, from Normal attack, scale with Normal attack)"
+                },
+                {
+                    "damageType": "Auto Attack (3.8e, from Normal attack, scale with Normal attack)"
+                }
+            ],
+            "icon": "16101_Normal"
+        },
+        "skill": {
+            "id": 16131000,
+            "name": "Crystal Vein Survey",
+            "cooldown": "18s",
+            "energyLimit": 12.5,
+            "desc": "Unleashes Stratum Echo, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Terra Skill DMG and generating 5 ##Resource Markers#4056#. When there are more than 10 ##Resource Markers#4056#, consumes 10 to generate 1 Observation Point for 10s (max 1 active). The Observation Point fires bullets at the Main Trekker's target every 3s, dealing <color=#fb8037>&Param2&</color> of ATK as Terra Auto Attack DMG. All these attacks can trigger ##Terra Mark#1020#, dealing &Param3& of ATK as AoE Terra Mark DMG.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Mark)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Mark)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Mark)",
+            "damageType": [
+                "Skill (10e, from Skill, scale with Skill)",
+                "Auto Attack (from Normal attack, scale with Skill)",
+                "Mark (scale with Upgrade)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "65%/74%/84%/113%/122%/131%/149%/157%/165%/180%/193%/206%/219%",
+                "19.4%/22.3%/25.2%/33.9%/36.6%/39.3%/44.7%/47%/49.4%/54%/57.9%/61.7%/65.6%",
+                "18%/23.4%/28.8%/34.1%/39.5%/44.9%/50.3%/55.7%/61%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Skill (10e, from Skill, scale with Skill)"
+                },
+                {
+                    "damageType": "Auto Attack (from Normal attack, scale with Skill)"
+                },
+                {
+                    "damageType": "Mark (scale with Upgrade)"
+                }
+            ],
+            "icon": "16101_Skill_Main"
+        },
+        "supportSkill": {
+            "id": 16132000,
+            "name": "Area Plotting",
+            "cooldown": "14s",
+            "desc": "Generates 1 Observation Point for 10s (max 1 active). Upon generation, the Observation Point performs a Vanguard Strike, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Terra Auto Attack DMG and generating Tactical Mapping. Tactical Mapping deals <color=#fb8037>&Param2&</color> of ATK as AoE Terra Auto Attack DMG every 2s, lasting until the Observation Point expires. All these attacks inflict ##Terra Mark: Earth Vein#2029#.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+            "damageType": [
+                "Auto Attack (from Normal attack, scale with Skill)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "117%/135%/152%/205%/222%/238%/271%/285%/299%/327%/351%/374%/397%",
+                "142%/164%/185%/249%/269%/289%/329%/346%/363%/397%/425%/454%/482%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Auto Attack (from Normal attack, scale with Skill)"
+                },
+                {
+                    "damageType": "Auto Attack (from Normal attack, scale with Skill)"
+                }
+            ],
+            "icon": "16101_Skill_Support"
+        },
+        "ultimate": {
+            "id": 16140000,
+            "name": "Terrain Mapping",
+            "cooldown": "30s",
+            "energy": 264,
+            "desc": "Unleashes Terrain Mapping for 20s, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Terra Ultimate DMG every 3s.",
+            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+            "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+            "damageType": [
+                "Ultimate (from Ultimate, scale with Ultimate)"
+            ],
+            "effectType": [],
+            "addAttrType": [],
+            "effectData": [],
+            "buffIcon": [],
+            "params": [
+                "97%/111%/126%/169%/183%/196%/224%/235%/247%/270%/289%/309%/328%"
+            ],
+            "paramsTooltips": [
+                {
+                    "damageType": "Ultimate (from Ultimate, scale with Ultimate)"
+                }
+            ],
+            "icon": "16101_Ultra"
+        },
+        "potential": {
+            "mainCore": [
+                {
+                    "id": 516101,
+                    "name": "Crystal Overclock",
+                    "desc": "After casting Crystal Vein Survey (Main Skill), Observation Points are no longer generated. When Leafia's Auto Attack deals DMG, it always generates 1 Resource Marker. Leafia's Auto Attack can also consume 3 ##Resource Markers#4056# to fire an Amplification Crystal, dealing <color=#0abec5>&Param3&</color> of ATK as Terra Auto Attack DMG, increasing that Auto Attack's &Param2& by <color=#0abec5>&Param1&</color>, and triggering ##Terra Mark#1020#.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+                    "damageType": [
+                        "Auto Attack (3.9e, from Normal attack, scale with Normal attack)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "50%",
+                        "DMG multiplier",
+                        "119%/137%/155%/208%/225%/242%/275%/289%/304%/332%/356%/380%/404%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "damageType": "Auto Attack (3.9e, from Normal attack, scale with Normal attack)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_01",
+                    "rarity": "core"
+                },
+                {
+                    "id": 516102,
+                    "name": "Focused Penetration",
+                    "desc": "Leafia's Auto Attacks generate 1 extra Resource Marker when dealing DMG. Auto Attack's &Param2& is increased by <color=#0abec5>&Param1&</color> and pierces targets. Any new ##Resource Markers#4056# are absorbed automatically.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "70%",
+                        "DMG multiplier"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_02",
+                    "rarity": "core"
+                },
+                {
+                    "id": 516103,
+                    "name": "Field Echo",
+                    "desc": "Auto Attacks no longer generate ##Resource Markers#4056# when dealing DMG. Reduces Main Skill Cooldown by <color=#0abec5>10s</color> and extends Observation Point duration by <color=#0abec5>20s</color>. Casting a skill directly generates 1 Observation Point without consuming ##Resource Markers#4056# (triggers once every 20s). Every <color=#0abec5>3</color> attacks, each Observation Point releases a wave that deals <color=#0abec5>&Param1&</color> of ATK as AoE Terra Auto Attack DMG.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "damageType": [
+                        "Auto Attack (from Normal attack, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "103%/118%/134%/180%/195%/209%/238%/250%/263%/287%/308%/328%/349%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Auto Attack (from Normal attack, scale with Skill)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_03",
+                    "rarity": "core"
+                },
+                {
+                    "id": 516104,
+                    "name": "Field Assault",
+                    "desc": "Observation Points fire bullets at targets every second, dealing <color=#0abec5>&Param1&</color> of ATK as Terra Auto Attack DMG and generating 1 Resource Marker every 3s. Each Resource Marker Leafia picks up increases Observation Point's &Param5& by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "damageType": [
+                        "Auto Attack (from Normal attack, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "32%/37%/42%/57%/61%/66%/75%/79%/83%/91%/97%/104%/110%",
+                        "5%",
+                        5,
+                        10,
+                        "DMG multiplier"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Auto Attack (from Normal attack, scale with Skill)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_04",
+                    "rarity": "core"
+                }
+            ],
+            "mainNormal": [
+                {
+                    "id": 516105,
+                    "name": "Terra DMG Amp",
+                    "desc": "When Amplification Crystals deal DMG, increases the targets' &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "Terra DMG Taken (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_DefenseDown"
+                    ],
+                    "params": [
+                        "Terra DMG Taken",
+                        "0.8%/1.3%/1.8%/2.2%/2.7%/3.2%/3.7%/4.2%/4.6%",
+                        5,
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_01",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516106,
+                    "name": "Terra Mark Resonance",
+                    "desc": "When Amplification Crystals trigger a ##Terra Mark#1020#, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "1.5%/2.4%/3.3%/4.2%/5.1%/6%/6.9%/7.8%/8.7%",
+                        10,
+                        10
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_01",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516107,
+                    "name": "Marker Overload",
+                    "desc": "Increases Leafia's &Param3& by <color=#ec6d21>&Param4&</color>. Firing Amplification Crystals has an 80% chance to launch an extra Vector Crystal without using ##Resource Markers#4056#, dealing <color=#ec6d21>&Param2&</color> of ATK as Terra Auto Attack DMG. Firing Amplification Crystals costs 1 less Resource Marker.\u000bParam1: &Param1& (ScriptParameter,CommonData)",
+                    "descCN": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [
+                        "Auto Attack (from Normal attack)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Auto Attack DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        80,
+                        "10.9%/17.4%/23.9%/30.4%/36.9%/43.4%/49.9%/56.4%/62.9%",
+                        "Auto Attack DMG",
+                        "20%/32%/44%/56%/68%/80%/92%/104%/116%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "damageType": "Auto Attack (from Normal attack)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_07",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 516108,
+                    "name": "Obsidian Field",
+                    "desc": "Increases the &Param1& of targets within the Observation Point range by <color=#ec6d21>&Param2&</color>, stacking up to &Param3& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "Terra DMG Taken (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_DefenseDown"
+                    ],
+                    "params": [
+                        "Terra DMG Taken",
+                        "2.7%/4.3%/5.9%/7.6%/9.2%/10.8%/12.4%/14%/15.7%",
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_04",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516109,
+                    "name": "Survey Field Amp",
+                    "desc": "When Observation Points deal DMG, increases their &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "ATK (%)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "ATK",
+                        "5%/8%/11%/14%/17%/20%/23%/26%/29%",
+                        10,
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_04",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516111,
+                    "name": "Mobility Amp",
+                    "desc": "Leafia can dodge one more time.\u000bWhen dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "9%/12%/16%/19%/22%/25%/28%/31%/34%",
+                        8
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_21",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516113,
+                    "name": "Earth Vein Synergy",
+                    "desc": "For each Terra Trekker on the squad, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Auto Attack DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Auto Attack DMG",
+                        "5%/8%/11%/14%/17%/20%/23%/26%/29%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_11",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 516110,
+                    "name": "Observer Array",
+                    "desc": "Can generate up to <color=#ec6d21>&Param1& Observation Points. Each active Observation Point on the field increases its &Param2& dealt by <color=#ec6d21>&Param3&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Auto Attack DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "1/1/1/2/2/3/3/3/3",
+                        "Auto Attack DMG",
+                        "7%/11%/15%/19%/23%/27%/31%/35%/39%"
+                    ],
+                    "paramsTooltips": [
+                        {},
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_10",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 516112,
+                    "name": "Terra Mark Awakening",
+                    "desc": "Terrain Mapping (Ultimate) can trigger ##Terra Marks#1020#. After casting the Ultimate, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "12%/19.2%/26.4%/33.6%/40.8%/48%/55.2%/62.4%/69.6%",
+                        25
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_Earth_1",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                }
+            ],
+            "common": [
+                {
+                    "id": 516141,
+                    "name": "Draw Zone Ascension",
+                    "desc": "When Terrain Mapping (Ultimate) deals DMG, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "ATK",
+                        "4%/6.4%/8.8%/11.2%/13.6%/16%/18.4%/20.8%/23.2%",
+                        20,
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_41",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516142,
+                    "name": "Draw Zone Bombardment",
+                    "desc": "Increases the &Param1& of Terrain Mapping (Ultimate) by <color=#ec6d21>&Param2&</color> and reduces its attack interval.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Ultimate DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Ultimate DMG",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Terra) Ultimate DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Ultimate DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_41",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516143,
+                    "name": "Draw Zone Support",
+                    "desc": "When the Terrain Mapping (Ultimate) is on cooldown or its energy is not full, all Terra Vanguard and Versatile Trekkers in the team gain <color=#ec6d21>&Param5&</color> increased &Param4&. When the Main Trekker is within the impact range of Terrain Mapping (Ultimate), increases all Terra Vanguard and Versatile Trekkers on the squad's &Param2& by <color=#ec6d21>&Param3&</color>.\u000bParam1: &Param1& (BuffValue,Time)",
+                    "descCN": "undefined\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Auto Attack DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        20,
+                        "Auto Attack DMG",
+                        "2.5%/4%/5.5%/7%/8.5%/10%/11.5%/13%/14.5%",
+                        "Auto Attack DMG",
+                        "13%/20%/28%/35%/43%/50%/58%/65%/73%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_41",
+                    "corner": "Round",
+                    "rarity": "common"
+                }
+            ],
+            "supportCore": [
+                {
+                    "id": 516121,
+                    "name": "Tactical Co-Draw",
+                    "desc": "Extends Observation Point duration by 10s. Up to 2 Observation Points can be present at the same time. Reduces Tactical Mapping's DMG dealing Interval and it can deal damage to the same target at most once per second. In an all-Terra squad, when Tactical Mapping deals DMG, increases the target's &Param1& by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "Terra DMG Taken (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_DefenseDown"
+                    ],
+                    "params": [
+                        "Terra DMG Taken",
+                        "6.7%",
+                        3,
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_21",
+                    "rarity": "core"
+                },
+                {
+                    "id": 516122,
+                    "name": "Observer Iteration",
+                    "desc": "Each time Leafia casts Area Plotting (Support Skill), Observation Points tier up once, increasing Tactical Mapping's &Param1& by <color=#0abec5>&Param2&</color>. This effect is permanent and stacks up to 4 times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "DMG multiplier",
+                        "14%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_22",
+                    "rarity": "core"
+                },
+                {
+                    "id": 516123,
+                    "name": "Vanguard Calibration",
+                    "desc": "Observation Points launch 1 Vanguard Strike outward every second. When Vanguard Strike deals DMG, increases the &Param1& of both itself and ##Calibration Mark#4055# by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times. Observation Points expire after 10s and inflict 1 stack of ##Calibration Mark#4055# on targets within range.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "DMG multiplier (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "DMG multiplier",
+                        "13.9%",
+                        4,
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "DMG multiplier (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "DMG multiplier (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_23",
+                    "rarity": "core"
+                },
+                {
+                    "id": 516124,
+                    "name": "Calibration Detonation",
+                    "desc": "No longer generates Tactical Mapping. Increases the &Param2& of Vanguard Strike and ##Calibration Mark#4055# by <color=#0abec5>&Param3&</color>. Vanguard Strike is enhanced to deal <color=#0abec5>&Param1&</color> of ATK as Terra Auto Attack DMG. When Vanguard Strike deals DMG, inflicts 1 stack of ##Calibration Mark#4055# on the target.  At 3 stacks, ##Calibration Mark#4055#, detonates immediately.",
+                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1)",
+                    "damageType": [
+                        "Auto Attack (from Normal attack, scale with Skill)"
+                    ],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Crit Rate (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "282%/324%/366%/493%/532%/572%/651%/685%/718%/786%/842%/899%/955%",
+                        "Crit Rate",
+                        "20%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "damageType": "Auto Attack (from Normal attack, scale with Skill)"
+                        },
+                        {
+                            "addAttrType": "Crit Rate (base)"
+                        },
+                        {
+                            "addAttrType": "Crit Rate (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_24",
+                    "rarity": "core"
+                }
+            ],
+            "supportNormal": [
+                {
+                    "id": 516125,
+                    "name": "Terra DMG Etching",
+                    "desc": "In an all-Terra squad, generating Observation Points increases the &Param1& of targets within Tactical Mapping by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Mark DMG Taken"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_DefenseDown"
+                    ],
+                    "params": [
+                        "Mark DMG Taken",
+                        "66%/106%/146%/185%/225%/265%/305%/344%/384%",
+                        15
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Mark DMG Taken",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Mark DMG Taken",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_21",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516126,
+                    "name": "Tier 2 Etching",
+                    "desc": "Once Observation Points tier up 2 times, increases Tactical Mapping's &Param1& by <color=#ec6d21>&Param2&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Auto Attack DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Auto Attack DMG",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_22",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516127,
+                    "name": "Ascending Draw Zone",
+                    "desc": "Each time Leafia casts Area Plotting (Support Skill), Observation Points tier up 2 times. When Tactical Mapping deals DMG, increases its &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Terra DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Terra DMG",
+                        "3%/4.8%/6.6%/8.4%/10.2%/12%/13.8%/15.6%/17.4%",
+                        3,
+                        5
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Terra DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "addAttrType": "Terra DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_27",
+                    "corner": "Round",
+                    "rarity": "rare"
+                },
+                {
+                    "id": 516128,
+                    "name": "Calibration Expansion",
+                    "desc": "Increases the &Param3& of Vanguard Strike and ##Calibration Mark#4055# by <color=#ec6d21>&Param4&</color>, and their &Param1& by <color=#ec6d21>&Param2&</color>. When a target with ##Calibration Mark#4055# takes DMG from the Main Vanguard Trekker, inflicts 1 additional stack of ##Calibration Mark#4055#. This effect can trigger once per second per target.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "(Terra) Auto Attack DMG (base)",
+                        "Crit Rate (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Auto Attack DMG",
+                        "13%/21%/29%/36%/44%/52%/60%/68%/75%",
+                        "Crit Rate",
+                        "6%/10%/14%/18%/21%/25%/26%/27%/28%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base), Crit Rate (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base), Crit Rate (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base), Crit Rate (base)"
+                        },
+                        {
+                            "addAttrType": "(Terra) Auto Attack DMG (base), Crit Rate (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_23",
+                    "corner": "Diamond",
+                    "rarity": "common",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 516130,
+                    "name": "Mark Suppression",
+                    "desc": "Increases the &Param1& of Vanguard Strike and ##Calibration Mark#4055# by <color=#ec6d21>&Param2&</color>, and their &Param3& by <color=#ec6d21>&Param4&</color>. When enhanced Vanguard Strike deals DMD, inflicts 2 stacks of ##Calibration Mark#4055# on the target.",
+                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "damageType": [],
+                    "effectType": [],
+                    "addAttrType": [
+                        "Terra DMG (base)",
+                        "(Terra) Normal Attack Crit DMG (base)"
+                    ],
+                    "effectData": [],
+                    "buffIcon": [],
+                    "params": [
+                        "Terra DMG",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%",
+                        "Normal Attack Crit DMG",
+                        "7.5%/12%/16.5%/21%/25.5%/30%/31.5%/33%/34.5%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "addAttrType": "Terra DMG (base), (Terra) Normal Attack Crit DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Terra DMG (base), (Terra) Normal Attack Crit DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Terra DMG (base), (Terra) Normal Attack Crit DMG (base)"
+                        },
+                        {
+                            "addAttrType": "Terra DMG (base), (Terra) Normal Attack Crit DMG (base)"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_30",
+                    "corner": "Round",
+                    "rarity": "rare",
+                    "badScaleAfterLevel": 6
+                },
+                {
+                    "id": 516131,
+                    "name": "Earth Vein Activation",
+                    "desc": "When Leafia inflicts ##Terra Mark: Earth Vein#2029#, increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "ATK",
+                        "4%/6%/9%/11%/14%/16%/18%/21%/23%",
+                        3,
+                        3
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_14",
+                    "corner": "Diamond",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516132,
+                    "name": "Earthen Deposition",
+                    "desc": "Terrain Mapping (Ultimate) can inflict ##Terra Mark: Earth Vein#2029#. When Terrain Mapping deals DMG, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "damageType": [],
+                    "effectType": [
+                        "Terra DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "Terra DMG",
+                        "12%/19%/26%/34%/41%/48%/55%/62%/70%",
+                        25
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Terra DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "Terra DMG (base)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_Earth_1",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516129,
+                    "name": "Mark Etching",
+                    "desc": "In an all-Terra squad, ##Calibration Mark#4055# DMG increases the target's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.\u000bIf there is only 1 Terra Trekker on the squad, ##Calibration Mark#4055# DMG increases the squad's &Param5& by <color=#ec6d21>&Param6&</color> and the target's &Param7& by <color=#ec6d21>&Param8&</color> for 3s, stacking up to 6 times.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (Effect,EffectTypeFirstSubtype) \u000bParam8: &Param8& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (Effect,EffectTypeFirstSubtype) \u000bParam8: &Param8& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (Effect,EffectTypeFirstSubtype) \u000bParam8: &Param8& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "Terra DMG Taken (base)",
+                        "Auto Attack DMG (base)"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "Icon_CommonBuff_DefenseDown",
+                        "Icon_CommonBuff_AttackUp"
+                    ],
+                    "params": [
+                        "Terra DMG Taken",
+                        "4.3%/6.9%/9.5%/12%/14.6%/17.2%/19.8%/22.4%/24.9%",
+                        3,
+                        3,
+                        "Auto Attack DMG",
+                        "2.2%/3.5%/4.8%/6.2%/7.5%/8.8%/10.1%/11.4%/12.8%",
+                        "Terra DMG Taken",
+                        "4.3%/6.9%/9.5%/12%/14.6%/17.2%/19.8%/22.4%/24.9%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "effectType": "Auto Attack DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Auto Attack DMG (base)",
+                            "buffIcon": "Icon_CommonBuff_AttackUp"
+                        },
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        },
+                        {
+                            "effectType": "Terra DMG Taken (base)",
+                            "buffIcon": "Icon_CommonBuff_DefenseDown"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "16101_Potential_24",
+                    "corner": "Triangle",
+                    "rarity": "common"
+                },
+                {
+                    "id": 516133,
+                    "name": "Leyline Amp",
+                    "desc": "In an all-Terra squad, increases the squad's &Param1& by <color=#ec6d21>&Param2&</color>.\u000bIf there is only 1 Terra Trekker on the squad, increases the squad's &Param3& by <color=#ec6d21>&Param4&</color> and increases Leafia's &Param5& by an additional <color=#ec6d21>&Param6&</color>.",
+                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "damageType": [],
+                    "effectType": [
+                        "ATK (%)",
+                        "ELEMENTTYPE_:(Terra) Auto Attack DMG"
+                    ],
+                    "addAttrType": [],
+                    "effectData": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
+                    "params": [
+                        "ATK",
+                        "15%/24%/33%/42%/51%/60%/69%/78%/87%",
+                        "ATK",
+                        "10%/16%/22%/28%/34%/40%/46%/52%/58%",
+                        "Auto Attack DMG",
+                        "14%/22%/30%/39%/47%/55%/58%/60%/63%"
+                    ],
+                    "paramsTooltips": [
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ATK (%)",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
+                            "buffIcon": "No Icon"
+                        },
+                        {
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
+                            "buffIcon": "No Icon"
+                        }
+                    ],
+                    "hiddenParams": [],
+                    "hiddenParamsTooltips": [],
+                    "icon": "Common_Potential_15",
+                    "corner": "Round",
+                    "rarity": "rare",
+                    "badScaleAfterLevel": 6
+                }
+            ]
+        },
+        "talent": [
+            {
+                "name": "Genius Surveyor",
+                "boost": [
+                    {
+                        "name": "Genius Surveyor",
+                        "desc": "When any Trekker inflicts a ##Terra Mark#1020# on a target, the target takes <color=#0abec5>&Param1&</color> more Terra DMG for &Param2&s, up to &Param3& stacks.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "effectType": [
+                            "Terra DMG Taken (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "5.2%",
+                            8,
+                            5
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Terra DMG Taken (base)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Starsea Voyage",
+                "boost": [
+                    {
+                        "name": "Starsea Voyage",
+                        "desc": "When Leafia deals Auto Attack DMG, increases her ATK by <color=#0abec5>&Param1&</color> for &Param2&s.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "45%",
+                            8
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Leader's Duty",
+                "boost": [
+                    {
+                        "name": "Leader's Duty",
+                        "desc": "When Leafia casts a skill, increases Terra Trekkers' Auto Attack DMG by <color=#0abec5>&Param1&</color> for &Param2&s.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "effectType": [
+                            "ELEMENTTYPE_:(Terra) Auto Attack DMG"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "30%",
+                            15,
+                            ",NoLevel,,"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            },
+                            {}
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Relentless Mapping",
+                "boost": [
+                    {
+                        "name": "Relentless Mapping",
+                        "desc": "When ##Terra Mark#1020# is triggered, increases Leafia's Terra DMG by <color=#0abec5>&Param1&</color> for &Param2&s.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "effectType": [
+                            "Terra DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [
+                            "No Icon"
+                        ],
+                        "params": [
+                            "30%",
+                            8
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Terra DMG (base)",
+                                "buffIcon": "No Icon"
+                            },
+                            {
+                                "buffIcon": "No Icon"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Wildland Sigil",
+                "boost": [
+                    {
+                        "name": "Wildland Sigil",
+                        "desc": "Increases Leafia's Auto Attack DMG to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "effectType": [],
+                        "addAttrType": [
+                            "(Terra) Auto Attack DMG (base)"
+                        ],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "40%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "addAttrType": "(Terra) Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            50
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "DEF Enhancement",
+                        "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "DEF (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            10
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "DEF (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HP Enhancement",
+                        "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "HP (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            575
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "HP (base)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ATK Enhancement",
+                        "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "ATK (%)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "1.5%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "ATK (%)"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Auto Attack DMG Boost",
+                        "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
+                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "effectType": [
+                            "Auto Attack DMG (base)"
+                        ],
+                        "addAttrType": [],
+                        "effectData": [],
+                        "buffIcon": [],
+                        "params": [
+                            "2.1%"
+                        ],
+                        "paramsTooltips": [
+                            {
+                                "effectType": "Auto Attack DMG (base)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "stat": [
+            {
+                "Level": 1,
+                "HP": 782,
+                "ATK": 114,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 2,
+                "HP": 1017,
+                "ATK": 149,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 3,
+                "HP": 1252,
+                "ATK": 183,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 4,
+                "HP": 1486,
+                "ATK": 217,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 5,
+                "HP": 1721,
+                "ATK": 252,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 6,
+                "HP": 1956,
+                "ATK": 286,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 7,
+                "HP": 2190,
+                "ATK": 320,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 8,
+                "HP": 2425,
+                "ATK": 355,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 9,
+                "HP": 2660,
+                "ATK": 389,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 2895,
+                "ATK": 423,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 10,
+                "HP": 3474,
+                "ATK": 508,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 11,
+                "HP": 3708,
+                "ATK": 542,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 12,
+                "HP": 3943,
+                "ATK": 577,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 13,
+                "HP": 4178,
+                "ATK": 611,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 14,
+                "HP": 4412,
+                "ATK": 645,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 15,
+                "HP": 4647,
+                "ATK": 680,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 16,
+                "HP": 4882,
+                "ATK": 714,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 17,
+                "HP": 5116,
+                "ATK": 748,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 18,
+                "HP": 5351,
+                "ATK": 782,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 19,
+                "HP": 5586,
+                "ATK": 817,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 5820,
+                "ATK": 851,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 20,
+                "HP": 6986,
+                "ATK": 1022,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 21,
+                "HP": 7221,
+                "ATK": 1056,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 22,
+                "HP": 7456,
+                "ATK": 1090,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 23,
+                "HP": 7690,
+                "ATK": 1125,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 24,
+                "HP": 7925,
+                "ATK": 1159,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 25,
+                "HP": 8160,
+                "ATK": 1193,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 26,
+                "HP": 8394,
+                "ATK": 1228,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 27,
+                "HP": 8629,
+                "ATK": 1262,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 28,
+                "HP": 8864,
+                "ATK": 1296,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 29,
+                "HP": 9098,
+                "ATK": 1330,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 9333,
+                "ATK": 1365,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 30,
+                "HP": 11203,
+                "ATK": 1638,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 31,
+                "HP": 11438,
+                "ATK": 1673,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 32,
+                "HP": 11672,
+                "ATK": 1707,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 33,
+                "HP": 11907,
+                "ATK": 1741,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 34,
+                "HP": 12142,
+                "ATK": 1775,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 35,
+                "HP": 12376,
+                "ATK": 1810,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 36,
+                "HP": 12611,
+                "ATK": 1844,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 37,
+                "HP": 12846,
+                "ATK": 1878,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 38,
+                "HP": 13080,
+                "ATK": 1913,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 39,
+                "HP": 13315,
+                "ATK": 1947,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 13550,
+                "ATK": 1981,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 40,
+                "HP": 16257,
+                "ATK": 2377,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 41,
+                "HP": 16491,
+                "ATK": 2412,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 42,
+                "HP": 16726,
+                "ATK": 2446,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 43,
+                "HP": 16961,
+                "ATK": 2480,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 44,
+                "HP": 17195,
+                "ATK": 2515,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 45,
+                "HP": 17430,
+                "ATK": 2549,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 46,
+                "HP": 17665,
+                "ATK": 2583,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 47,
+                "HP": 17899,
+                "ATK": 2617,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 48,
+                "HP": 18134,
+                "ATK": 2652,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 49,
+                "HP": 18369,
+                "ATK": 2686,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 18604,
+                "ATK": 2720,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 50,
+                "HP": 22327,
+                "ATK": 3265,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 51,
+                "HP": 22562,
+                "ATK": 3299,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 52,
+                "HP": 22797,
+                "ATK": 3334,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 53,
+                "HP": 23032,
+                "ATK": 3368,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 54,
+                "HP": 23266,
+                "ATK": 3402,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 55,
+                "HP": 23501,
+                "ATK": 3437,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 56,
+                "HP": 23736,
+                "ATK": 3471,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 57,
+                "HP": 23970,
+                "ATK": 3505,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 58,
+                "HP": 24205,
+                "ATK": 3540,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 59,
+                "HP": 24440,
+                "ATK": 3574,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 24674,
+                "ATK": 3608,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 60,
+                "HP": 29611,
+                "ATK": 4330,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 61,
+                "HP": 29846,
+                "ATK": 4364,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 62,
+                "HP": 30080,
+                "ATK": 4399,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 63,
+                "HP": 30315,
+                "ATK": 4433,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 64,
+                "HP": 30550,
+                "ATK": 4467,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 65,
+                "HP": 30784,
+                "ATK": 4502,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 66,
+                "HP": 31019,
+                "ATK": 4536,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 67,
+                "HP": 31254,
+                "ATK": 4570,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 68,
+                "HP": 31488,
+                "ATK": 4605,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 69,
+                "HP": 31723,
+                "ATK": 4639,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 31958,
+                "ATK": 4673,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 70,
+                "HP": 38349,
+                "ATK": 5608,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 71,
+                "HP": 38584,
+                "ATK": 5642,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 72,
+                "HP": 38819,
+                "ATK": 5677,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 73,
+                "HP": 39053,
+                "ATK": 5711,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 74,
+                "HP": 39288,
+                "ATK": 5745,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 75,
+                "HP": 39523,
+                "ATK": 5779,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 76,
+                "HP": 39758,
+                "ATK": 5814,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 77,
+                "HP": 39992,
+                "ATK": 5848,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 78,
+                "HP": 40227,
+                "ATK": 5882,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 79,
+                "HP": 40462,
+                "ATK": 5917,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 40696,
+                "ATK": 5951,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 80,
+                "HP": 48832,
+                "ATK": 7141,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 81,
+                "HP": 49067,
+                "ATK": 7175,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 82,
+                "HP": 49302,
+                "ATK": 7209,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 83,
+                "HP": 49537,
+                "ATK": 7244,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 84,
+                "HP": 49771,
+                "ATK": 7278,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 85,
+                "HP": 50006,
+                "ATK": 7312,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 86,
+                "HP": 50241,
+                "ATK": 7347,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 87,
+                "HP": 50475,
+                "ATK": 7381,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 88,
+                "HP": 50710,
+                "ATK": 7415,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 89,
+                "HP": 50945,
+                "ATK": 7450,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 90,
+                "HP": 51179,
+                "ATK": 7484,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            },
+            {
+                "Level": 91,
+                "HP": 51179,
+                "ATK": 7484,
+                "DEF": 190,
+                "Crit Rate": "5%",
+                "Crit DMG": "150%",
+                "Resilience Break Efficiency": "150%",
+                "VUL Exploit": "0%"
+            }
+        ],
+        "upgrade": [
+            {
+                "Count's Rewards": 5,
+                "Dorra": 7900
+            },
+            {
+                "Count's Rewards": 5,
+                "Count's Cellaring": 10,
+                "Dorra": 19800
+            },
+            {
+                "Count's Rewards": 10,
+                "Count's Cellaring": 15,
+                "Dorra": 44400
+            },
+            {
+                "Count's Rewards": 15,
+                "Count's Cellaring": 25,
+                "Dorra": 66600
+            },
+            {
+                "Count's Rewards": 20,
+                "Count's Cellaring": 40,
+                "Dorra": 146100
+            },
+            {
+                "Count's Rewards": 30,
+                "Count's Cellaring": 55,
+                "Count's Gift": 20,
+                "Dorra": 291600
+            },
+            {
+                "Count's Cellaring": 75,
+                "Count's Gift": 30,
+                "Dorra": 560200
+            },
+            {
+                "Count's Cellaring": 95,
+                "Count's Gift": 50,
+                "Dorra": 1121300
+            }
+        ],
+        "skillUpgrade": [
+            {
+                "Shooter Game Cartridge": 6,
+                "Chess Piece of Skill": 2,
+                "Dorra": 13300
+            },
+            {
+                "Shooter Game Cartridge": 12,
+                "Chess Piece of Skill": 6,
+                "Dorra": 17600
+            },
+            {
+                "Shooter Game Cartridge": 24,
+                "Barrage Game Cartridge": 3,
+                "Chess Piece of Skill": 10,
+                "Dorra": 49800
+            },
+            {
+                "Shooter Game Cartridge": 38,
+                "Barrage Game Cartridge": 8,
+                "Chess Piece of Skill": 24,
+                "Dorra": 100000
+            },
+            {
+                "Shooter Game Cartridge": 70,
+                "Barrage Game Cartridge": 14,
+                "Demon Bee Game Cartridge": 6,
+                "Chess Piece of Skill": 55,
+                "Dorra": 400000
+            },
+            {
+                "Forest Elf Essence": 1,
+                "Barrage Game Cartridge": 50,
+                "Demon Bee Game Cartridge": 18,
+                "Chess Piece of Skill": 232,
+                "Dorra": 900000
+            },
+            {
+                "Forest Elf Essence": 2,
+                "Barrage Game Cartridge": 90,
+                "Demon Bee Game Cartridge": 34,
+                "Chess Piece of Skill": 323,
+                "Dorra": 1600000
+            },
+            {
+                "Forest Elf Essence": 3,
+                "Barrage Game Cartridge": 140,
+                "Demon Bee Game Cartridge": 50,
+                "Chess Piece of Skill": 478,
+                "Dorra": 2300000
+            },
+            {
+                "Forest Elf Essence": 6,
+                "Barrage Game Cartridge": 200,
+                "Demon Bee Game Cartridge": 70,
+                "Chess Piece of Skill": 927,
+                "Dorra": 3400000
+            }
+        ]
+    },
     "162": {
         "id": 162,
         "name": "Firstlight Noya",
@@ -157119,7 +160817,7 @@
                     "nameCN": "启明之星",
                     "nameJP": "閃星の戦乙女",
                     "nameKR": "샛별",
-                    "desc": "While in the Starender state, Noya gains <color=#fb8037>&Param2&</color> additional &Param1& and restores <color=#fb8037>&Param4&</color> Energy every &Param3&s.",
+                    "desc": "While in the Starender state, Firstlight Noya gains <color=#fb8037>&Param2&</color> additional &Param1& and restores <color=#fb8037>&Param4&</color> Energy every &Param3&s.",
                     "descCN": "尘沙处于「极星」状态时，可额外提升自身的&Param1&<color=#fb8037>&Param2&</color>，同时每&Param3&秒回复<color=#fb8037>&Param4&</color>点能量。",
                     "descJP": "セイナ（原点）は閃星効果持続中、自身の&Param1&がさらに<color=#fb8037>&Param2&</color>増加し、&Param3&秒ごとにSPを<color=#fb8037>&Param4&</color>獲得するようになる。",
                     "descKR": "세이나(기원)가 「극성」 상태일 때 자신의 &Param1_kr1& <color=#fb8037>&Param2&</color> 추가로 증가한다. 동시에 &Param3&초마다 SP를 <color=#fb8037>&Param4&</color> 회복한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
