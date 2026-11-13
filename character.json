@@ -4837,7 +4837,7 @@
                     "nameJP": "栄光の凱旋",
                     "nameKR": "완벽한 회전",
                     "desc": "Aegis of Light shields the main Trekker and then ricochets.\u000bUpon hitting the main Trekker, it creates a Lightning Array: Deals <color=#0abec5>&Param2& of Tilia's ATK</color> as AoE Lux Skill DMG and increases the Skill DMG taken by nearby enemies by <color=#0abec5>&Param3&</color>, lasting for &Param4&s. Stacks up to &Param5& times.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
-                    "descCN": "「圣光之盾」会飞向主控角色后再弹射。\u000b「圣光之盾」命中主控角色时，造成缇莉娅攻击力<color=#0abec5>&Param2&</color>的范围光系技能伤害，并使附近目标受到技能伤害提升<color=#0abec5>&Param3&</color>，持续&Param4&秒，可叠加&Param5&层。\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
+                    "descCN": "「圣光之盾」会飞向主控角色后再弹射。\u000b「圣光之盾」命中主控角色时，产生「光击阵」：造成缇莉娅攻击力<color=#0abec5>&Param2&</color>的范围光系技能伤害，并使附近目标受到技能伤害提升<color=#0abec5>&Param3&</color>，持续&Param4&秒，可叠加&Param5&层。\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "descJP": "支援スキルの聖光の盾が、先に主力巡遊者に向かって飛び、その後に跳ね渡るようになる。\u000b聖光の盾が主力巡遊者に命中時、範囲内の敵にティリアの攻撃力の<color=#0abec5>&Param2&</color>の光属性のスキルダメージを与え、&Param4&秒間、その周囲の敵のスキル被ダメージを<color=#0abec5>&Param3&</color>増加させる。この効果は&Param5&回重複できる。\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "descKR": "「성광의 방패」가 메인 캐릭터를 향해 날아간 후, 다시 튕긴다. \u000b「성광의 방패」가 메인 캐릭터를 명중시키면 틸리아 공격력 <color=#0abec5>&Param2&</color>의 빛 속성 범위 스킬 피해를 입히고 주변 목표가 받는 스킬 피해가 <color=#0abec5>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
@@ -5117,7 +5117,7 @@
                     "nameJP": "好機発見",
                     "nameKR": "약점 노출",
                     "desc": "When Aegis of Light hits a target with HP below <color=#ec6d21>&Param2&</color>, it creates a Lightning Array: Deals &Param3& of Tilia's ATK as AoE Lux Skill DMG and increases the Skill DMG they take by &Param4& for &Param5&s, stacking up to &Param6& times.\u000bThis effect can only be triggered once every &Param8&s.\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
-                    "descCN": "「圣光之盾」对当前生命低于<color=#ec6d21>&Param2&</color>的目标额外造成攻击力&Param3&的范围光系技能伤害，并使其受到技能伤害提升&Param4&，持续&Param5&秒，可叠加&Param6&层。\u000b该效果每&Param8&秒最多触发1次。\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
+                    "descCN": "「圣光之盾」命中当前生命低于<color=#ec6d21>&Param2&</color>的目标时，产生「光击阵」：造成缇莉娅攻击力&Param3&的范围光系技能伤害，并使其受到技能伤害提升&Param4&，持续&Param5&秒，可叠加&Param6&层。\u000b该效果每&Param8&秒最多触发1次。\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "descJP": "聖光の盾は、現在のHPが<color=#ec6d21>&Param2&</color>未満の敵たちに追加で、攻撃力の&Param3&の光属性のスキルダメージを与え、&Param5&秒間、それらの敵のスキル被ダメージを&Param4&増加させるようになる。この効果は&Param8&秒ごとに1回まで発動し、&Param6&回重複できる。\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "descKR": "「성광의 방패」가 현재 HP가 <color=#ec6d21>&Param2&</color>보다 낮은 목표에게 공격력 &Param3&의 빛 속성 범위 스킬 피해를 추가로 입히고, 대상이 받는 스킬 피해를 &Param4& 증가시킨다. &Param5&초간 지속되며, 최대 &Param6&스택 중첩된다. \u000b해당 효과는 &Param8&초마다 최대 1회 발동한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
@@ -156283,9 +156283,10 @@
         "normalAtk": {
             "id": 16110000,
             "name": "Crystal Generation",
+            "nameCN": "晶簇生成",
             "energyLimit": 15.24,
             "desc": "Continuously generates Plotting Crystals.\nStrike 1: <color=#fb8037>&Param1&</color> of ATK as Terra Auto Attack DMG.\nStrike 2: <color=#fb8037>&Param2&</color> of ATK as Terra Auto Attack DMG.\nStrike 3: <color=#fb8037>&Param3&</color> of ATK as Terra Auto Attack DMG.\nWhen an Auto Attack deals DMG, there is a 10% chance to generate 1 Resource Marker, up to 1 per second.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+            "descCN": "连续生成「标绘结晶」。\n一段：攻击力<color=#fb8037>&Param1&</color>地系普攻伤害\n二段：攻击力<color=#fb8037>&Param2&</color>地系普攻伤害\n三段：攻击力<color=#fb8037>&Param3&</color>地系普攻伤害\n普通攻击造成伤害时，有10%概率产生1个##「资源标点」#4056#，每1秒最多产生1个。",
             "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
             "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
             "damageType": [
@@ -156316,10 +156317,11 @@
         "skill": {
             "id": 16131000,
             "name": "Crystal Vein Survey",
+            "nameCN": "晶脉勘定",
             "cooldown": "18s",
             "energyLimit": 12.5,
             "desc": "Unleashes Stratum Echo, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Terra Skill DMG and generating 5 ##Resource Markers#4056#. When there are more than 10 ##Resource Markers#4056#, consumes 10 to generate 1 Observation Point for 10s (max 1 active). The Observation Point fires bullets at the Main Trekker's target every 3s, dealing <color=#fb8037>&Param2&</color> of ATK as Terra Auto Attack DMG. All these attacks can trigger ##Terra Mark#1020#, dealing &Param3& of ATK as AoE Terra Mark DMG.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Mark)",
+            "descCN": "展开「地层回响」，造成攻击力<color=#fb8037>&Param1&</color>的范围地系技能伤害，产生5个##「资源标点」#4056#。##「资源标点」#4056#数量大于10个时，消耗10个##「资源标点」#4056#，生成1个「观测点」，持续10秒，最多存在1个。「观测点」每3秒对主控目标发射子弹，造成攻击力<color=#fb8037>&Param2&</color>的地系普攻伤害。以上攻击都可触发##地系印记#1020#，造成攻击力&Param3&的范围地系印记伤害。",
             "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Mark)",
             "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Mark)",
             "damageType": [
@@ -156352,9 +156354,10 @@
         "supportSkill": {
             "id": 16132000,
             "name": "Area Plotting",
+            "nameCN": "区域标绘",
             "cooldown": "14s",
             "desc": "Generates 1 Observation Point for 10s (max 1 active). Upon generation, the Observation Point performs a Vanguard Strike, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Terra Auto Attack DMG and generating Tactical Mapping. Tactical Mapping deals <color=#fb8037>&Param2&</color> of ATK as AoE Terra Auto Attack DMG every 2s, lasting until the Observation Point expires. All these attacks inflict ##Terra Mark: Earth Vein#2029#.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+            "descCN": "生成1个「观测点」，持续10秒，最多存在1个。「观测点」生成时进行「先导攻击」，造成攻击力<color=#fb8037>&Param1&</color>的范围地系普攻伤害，生成「战术制图」。「战术制图」每2秒造成攻击力<color=#fb8037>&Param2&</color>的范围地系普攻伤害，持续至「观测点」消失。以上攻击都会附加##地系印记：地脉#2029#。",
             "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
             "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
             "damageType": [
@@ -156381,10 +156384,11 @@
         "ultimate": {
             "id": 16140000,
             "name": "Terrain Mapping",
+            "nameCN": "地形映射",
             "cooldown": "30s",
             "energy": 264,
             "desc": "Unleashes Terrain Mapping for 20s, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Terra Ultimate DMG every 3s.",
-            "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+            "descCN": "展开「地形映射」，持续20秒，每3秒造成攻击力<color=#fb8037>&Param1&</color>的范围地系绝招伤害。",
             "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
             "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
             "damageType": [
@@ -156409,8 +156413,9 @@
                 {
                     "id": 516101,
                     "name": "Crystal Overclock",
+                    "nameCN": "结晶超频",
                     "desc": "After casting Crystal Vein Survey (Main Skill), Observation Points are no longer generated. When Leafia's Auto Attack deals DMG, it always generates 1 Resource Marker. Leafia's Auto Attack can also consume 3 ##Resource Markers#4056# to fire an Amplification Crystal, dealing <color=#0abec5>&Param3&</color> of ATK as Terra Auto Attack DMG, increasing that Auto Attack's &Param2& by <color=#0abec5>&Param1&</color>, and triggering ##Terra Mark#1020#.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+                    "descCN": "施放主控技能「晶脉勘定」后，不再生成「观测点」。优叶普攻造成伤害时，必定产生1个##「资源标点」#4056#。优叶普攻时可消耗3个##「资源标点」#4056#，发射「增幅结晶」造成攻击力<color=#0abec5>&Param3&</color>的地系普攻伤害，并使该次普攻的&Param2&提升<color=#0abec5>&Param1&</color>，可触发##地系印记#1020#。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
                     "damageType": [
@@ -156446,8 +156451,9 @@
                 {
                     "id": 516102,
                     "name": "Focused Penetration",
+                    "nameCN": "集束贯通",
                     "desc": "Leafia's Auto Attacks generate 1 extra Resource Marker when dealing DMG. Auto Attack's &Param2& is increased by <color=#0abec5>&Param1&</color> and pierces targets. Any new ##Resource Markers#4056# are absorbed automatically.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "descCN": "优叶普攻造成伤害时，额外产生1个##「资源标点」#4056#。优叶普攻的&Param2&提升<color=#0abec5>&Param1&</color>，可穿透目标。后续产生的##「资源标点」#4056#自动被吸收。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [],
@@ -156477,8 +156483,9 @@
                 {
                     "id": 516103,
                     "name": "Field Echo",
+                    "nameCN": "阵地回响",
                     "desc": "Auto Attacks no longer generate ##Resource Markers#4056# when dealing DMG. Reduces Main Skill Cooldown by <color=#0abec5>10s</color> and extends Observation Point duration by <color=#0abec5>20s</color>. Casting a skill directly generates 1 Observation Point without consuming ##Resource Markers#4056# (triggers once every 20s). Every <color=#0abec5>3</color> attacks, each Observation Point releases a wave that deals <color=#0abec5>&Param1&</color> of ATK as AoE Terra Auto Attack DMG.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "descCN": "普攻造成伤害时，不再产生##「资源标点」#4056#。主控技冷却时间缩短<color=#0abec5>10</color>秒。「观测点」持续时间延长<color=#0abec5>20</color>秒。施放技能时，不消耗##「资源标点」#4056#直接生成1个「观测点」，该效果每20秒最多触发1次。单个「观测点」每累计攻击<color=#0abec5>3</color>次，施放1次波动，造成攻击力<color=#0abec5>&Param1&</color>的范围地系普攻伤害。",
                     "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
                     "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
                     "damageType": [
@@ -156504,8 +156511,9 @@
                 {
                     "id": 516104,
                     "name": "Field Assault",
+                    "nameCN": "阵地强袭",
                     "desc": "Observation Points fire bullets at targets every second, dealing <color=#0abec5>&Param1&</color> of ATK as Terra Auto Attack DMG and generating 1 Resource Marker every 3s. Each Resource Marker Leafia picks up increases Observation Point's &Param5& by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "descCN": "「观测点」每秒对目标发射子弹，造成攻击力<color=#0abec5>&Param1&</color>的地系普攻伤害。每3秒产生1个##「资源标点」#4056#。优叶每拾取1个##「资源标点」#4056#，「观测点」造成的&Param5&提升<color=#0abec5>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1)",
                     "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
@@ -156555,8 +156563,9 @@
                 {
                     "id": 516105,
                     "name": "Terra DMG Amp",
+                    "nameCN": "地伤增幅",
                     "desc": "When Amplification Crystals deal DMG, increases the targets' &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "「增幅结晶」造成伤害时，使目标&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
@@ -156599,8 +156608,9 @@
                 {
                     "id": 516106,
                     "name": "Terra Mark Resonance",
+                    "nameCN": "地印共振",
                     "desc": "When Amplification Crystals trigger a ##Terra Mark#1020#, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "「增幅结晶」触发##地系印记#1020#时，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
@@ -156643,8 +156653,9 @@
                 {
                     "id": 516107,
                     "name": "Marker Overload",
+                    "nameCN": "标点过载",
                     "desc": "Increases Leafia's &Param3& by <color=#ec6d21>&Param4&</color>. Firing Amplification Crystals has an 80% chance to launch an extra Vector Crystal without using ##Resource Markers#4056#, dealing <color=#ec6d21>&Param2&</color> of ATK as Terra Auto Attack DMG. Firing Amplification Crystals costs 1 less Resource Marker.\u000bParam1: &Param1& (ScriptParameter,CommonData)",
-                    "descCN": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "优叶&Param3&提升<color=#ec6d21>&Param4&</color>。发射「增幅结晶」时，有80%概率不消耗##「资源标点」#4056#额外发射1颗「向量结晶」，造成攻击力<color=#ec6d21>&Param2&</color>的地系普攻伤害。每次发射「增幅结晶」消耗的##「资源标点」#4056#减少1个。\u000bParam1: &Param1& (ScriptParameter,CommonData)",
                     "descJP": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
                     "descKR": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
                     "damageType": [
@@ -156683,8 +156694,9 @@
                 {
                     "id": 516108,
                     "name": "Obsidian Field",
+                    "nameCN": "观测蚀域",
                     "desc": "Increases the &Param1& of targets within the Observation Point range by <color=#ec6d21>&Param2&</color>, stacking up to &Param3& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                    "descCN": "「观测点」范围内目标&Param1&提升<color=#ec6d21>&Param2&</color>，可叠加&Param3&层。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
                     "damageType": [],
@@ -156723,8 +156735,9 @@
                 {
                     "id": 516109,
                     "name": "Survey Field Amp",
+                    "nameCN": "测域增幅",
                     "desc": "When Observation Points deal DMG, increases their &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "「观测点」造成伤害时，「观测点」的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
@@ -156767,8 +156780,9 @@
                 {
                     "id": 516111,
                     "name": "Mobility Amp",
+                    "nameCN": "机动增幅",
                     "desc": "Leafia can dodge one more time.\u000bWhen dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descCN": "优叶闪避次数提升1次。\u000b闪避时，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
                     "damageType": [],
@@ -156807,8 +156821,9 @@
                 {
                     "id": 516113,
                     "name": "Earth Vein Synergy",
+                    "nameCN": "地脉协同",
                     "desc": "For each Terra Trekker on the squad, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "队伍中每有1个地系角色，优叶&Param1&提升<color=#ec6d21>&Param2&</color>。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
                     "damageType": [],
@@ -156839,8 +156854,9 @@
                 {
                     "id": 516110,
                     "name": "Observer Array",
+                    "nameCN": "观测联阵",
                     "desc": "Can generate up to <color=#ec6d21>&Param1& Observation Points. Each active Observation Point on the field increases its &Param2& dealt by <color=#ec6d21>&Param3&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "可至多生成<color=#ec6d21>&Param1&</color>个「观测点」。每有1个「观测点」，「观测点」造成的&Param2&提升<color=#ec6d21>&Param3&</color>。",
                     "descJP": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
                     "descKR": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
                     "damageType": [],
@@ -156873,8 +156889,9 @@
                 {
                     "id": 516112,
                     "name": "Terra Mark Awakening",
+                    "nameCN": "地印觉醒",
                     "desc": "Terrain Mapping (Ultimate) can trigger ##Terra Marks#1020#. After casting the Ultimate, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descCN": "绝招「地形映射」可触发##地系印记#1020#。施放绝招后，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
                     "damageType": [],
@@ -156915,8 +156932,9 @@
                 {
                     "id": 516141,
                     "name": "Draw Zone Ascension",
+                    "nameCN": "绘域升势",
                     "desc": "When Terrain Mapping (Ultimate) deals DMG, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "绝招「地形映射」造成伤害时，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，最多叠加&Param4&层。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
@@ -156959,8 +156977,9 @@
                 {
                     "id": 516142,
                     "name": "Draw Zone Bombardment",
+                    "nameCN": "绘域轰击",
                     "desc": "Increases the &Param1& of Terrain Mapping (Ultimate) by <color=#ec6d21>&Param2&</color> and reduces its attack interval.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "绝招「地形映射」造成的&Param1&提升<color=#ec6d21>&Param2&</color>，伤害间隔缩短。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
                     "damageType": [],
@@ -156991,8 +157010,9 @@
                 {
                     "id": 516143,
                     "name": "Draw Zone Support",
+                    "nameCN": "绘域协战",
                     "desc": "When the Terrain Mapping (Ultimate) is on cooldown or its energy is not full, all Terra Vanguard and Versatile Trekkers in the team gain <color=#ec6d21>&Param5&</color> increased &Param4&. When the Main Trekker is within the impact range of Terrain Mapping (Ultimate), increases all Terra Vanguard and Versatile Trekkers on the squad's &Param2& by <color=#ec6d21>&Param3&</color>.\u000bParam1: &Param1& (BuffValue,Time)",
-                    "descCN": "undefined\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
+                    "descCN": "绝招「地形映射」处于冷却或能量未满时，全队地系先锋和均衡角色&Param4&提升<color=#ec6d21>&Param5&</color>。主控角色处于绝招「地形映射」范围内时，全队地系先锋和均衡角色&Param2&提升<color=#ec6d21>&Param3&</color>。\u000bParam1: &Param1& (BuffValue,Time)",
                     "descJP": "undefined\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
                     "descKR": "undefined\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
                     "damageType": [],
@@ -157043,8 +157063,9 @@
                 {
                     "id": 516121,
                     "name": "Tactical Co-Draw",
+                    "nameCN": "战术联绘",
                     "desc": "Extends Observation Point duration by 10s. Up to 2 Observation Points can be present at the same time. Reduces Tactical Mapping's DMG dealing Interval and it can deal damage to the same target at most once per second. In an all-Terra squad, when Tactical Mapping deals DMG, increases the target's &Param1& by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "「观测点」持续时间延长10秒，最多同时存在2个「观测点」。「战术制图」伤害间隔缩短，对同一目标每秒最多造成1次伤害。全队为地系角色时，「战术制图」造成伤害可使目标&Param1&提升<color=#0abec5>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
@@ -157086,8 +157107,9 @@
                 {
                     "id": 516122,
                     "name": "Observer Iteration",
+                    "nameCN": "观测迭代",
                     "desc": "Each time Leafia casts Area Plotting (Support Skill), Observation Points tier up once, increasing Tactical Mapping's &Param1& by <color=#0abec5>&Param2&</color>. This effect is permanent and stacks up to 4 times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descCN": "优叶每施放1次援护技能「区域标绘」时，「观测点」进阶1次，使「战术制图」造成的&Param1&提升<color=#0abec5>&Param2&</color>，该效果不会消失，可叠加4次。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
                     "damageType": [],
@@ -157117,8 +157139,9 @@
                 {
                     "id": 516123,
                     "name": "Vanguard Calibration",
+                    "nameCN": "先导标定",
                     "desc": "Observation Points launch 1 Vanguard Strike outward every second. When Vanguard Strike deals DMG, increases the &Param1& of both itself and ##Calibration Mark#4055# by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times. Observation Points expire after 10s and inflict 1 stack of ##Calibration Mark#4055# on targets within range.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "「观测点」每秒向外发出1次「先导攻击」。「先导攻击」造成伤害时，使「先导攻击」和##标定印记#4055#造成的&Param1&提升<color=#0abec5>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。「观测点」持续10秒后消失，并对范围内目标附加1层##标定印记#4055#。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
@@ -157160,8 +157183,9 @@
                 {
                     "id": 516124,
                     "name": "Calibration Detonation",
+                    "nameCN": "标定引爆",
                     "desc": "No longer generates Tactical Mapping. Increases the &Param2& of Vanguard Strike and ##Calibration Mark#4055# by <color=#0abec5>&Param3&</color>. Vanguard Strike is enhanced to deal <color=#0abec5>&Param1&</color> of ATK as Terra Auto Attack DMG. When Vanguard Strike deals DMG, inflicts 1 stack of ##Calibration Mark#4055# on the target.  At 3 stacks, ##Calibration Mark#4055#, detonates immediately.",
-                    "descCN": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1)",
+                    "descCN": "不再生成「战术制图」。「先导攻击」和##标定印记#4055#&Param2&提升<color=#0abec5>&Param3&</color>。「先导攻击」获得强化，造成攻击力<color=#0abec5>&Param1&</color>的地系普攻伤害。「先导攻击」造成伤害时，对目标附加1层##标定印记#4055#。##标定印记#4055#叠加至3层时，立即引爆。",
                     "descJP": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1)",
                     "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1)",
                     "damageType": [
@@ -157199,8 +157223,9 @@
                 {
                     "id": 516125,
                     "name": "Terra DMG Etching",
+                    "nameCN": "地伤增绘",
                     "desc": "In an all-Terra squad, generating Observation Points increases the &Param1& of targets within Tactical Mapping by <color=#ec6d21>&Param2&</color> for &Param3&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descCN": "全队为地系角色时，生成「观测点」可使「战术制图」范围内目标&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
                     "damageType": [],
@@ -157239,8 +157264,9 @@
                 {
                     "id": 516126,
                     "name": "Tier 2 Etching",
+                    "nameCN": "二阶增绘",
                     "desc": "Once Observation Points tier up 2 times, increases Tactical Mapping's &Param1& by <color=#ec6d21>&Param2&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descCN": "「观测点」在进阶2次后，「战术制图」造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
                     "damageType": [],
@@ -157271,8 +157297,9 @@
                 {
                     "id": 516127,
                     "name": "Ascending Draw Zone",
+                    "nameCN": "跃阶绘域",
                     "desc": "Each time Leafia casts Area Plotting (Support Skill), Observation Points tier up 2 times. When Tactical Mapping deals DMG, increases its &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "优叶每施放1次援护技能「区域标绘」，「观测点」进阶2次。「战术制图」造成伤害时，「战术制图」造成的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
@@ -157315,8 +157342,9 @@
                 {
                     "id": 516128,
                     "name": "Calibration Expansion",
+                    "nameCN": "标定扩蚀",
                     "desc": "Increases the &Param3& of Vanguard Strike and ##Calibration Mark#4055# by <color=#ec6d21>&Param4&</color>, and their &Param1& by <color=#ec6d21>&Param2&</color>. When a target with ##Calibration Mark#4055# takes DMG from the Main Vanguard Trekker, inflicts 1 additional stack of ##Calibration Mark#4055#. This effect can trigger once per second per target.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "descCN": "「先导攻击」和##标定印记#4055#&Param3&提升<color=#ec6d21>&Param4&</color>，造成的&Param1&提升<color=#ec6d21>&Param2&</color>。附带##标定印记#4055#的目标受到主控先锋角色造成的伤害时，可额外附加1层##标定印记#4055#，该效果同一目标每秒最多触发1次。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
                     "damageType": [],
@@ -157357,8 +157385,9 @@
                 {
                     "id": 516130,
                     "name": "Mark Suppression",
+                    "nameCN": "重标压制",
                     "desc": "Increases the &Param1& of Vanguard Strike and ##Calibration Mark#4055# by <color=#ec6d21>&Param2&</color>, and their &Param3& by <color=#ec6d21>&Param4&</color>. When enhanced Vanguard Strike deals DMD, inflicts 2 stacks of ##Calibration Mark#4055# on the target.",
-                    "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "descCN": "「先导攻击」和##标定印记#4055#造成的&Param1&提升<color=#ec6d21>&Param2&</color>，造成的&Param3&提升<color=#ec6d21>&Param4&</color>。强化后的「先导攻击」造成伤害时，对目标附加2层##标定印记#4055#。",
                     "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
                     "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
                     "damageType": [],
@@ -157399,8 +157428,9 @@
                 {
                     "id": 516131,
                     "name": "Earth Vein Activation",
+                    "nameCN": "地脉激活",
                     "desc": "When Leafia inflicts ##Terra Mark: Earth Vein#2029#, increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descCN": "优叶附加##地系印记：地脉#2029#时，&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
                     "damageType": [],
@@ -157443,8 +157473,9 @@
                 {
                     "id": 516132,
                     "name": "Earthen Deposition",
+                    "nameCN": "厚土沉积",
                     "desc": "Terrain Mapping (Ultimate) can inflict ##Terra Mark: Earth Vein#2029#. When Terrain Mapping deals DMG, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descCN": "绝招「地形映射」可附加##地系印记：地脉#2029#。绝招「地形映射」造成伤害时，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
                     "damageType": [],
@@ -157483,8 +157514,9 @@
                 {
                     "id": 516129,
                     "name": "Mark Etching",
+                    "nameCN": "印记蚀刻",
                     "desc": "In an all-Terra squad, ##Calibration Mark#4055# DMG increases the target's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.\u000bIf there is only 1 Terra Trekker on the squad, ##Calibration Mark#4055# DMG increases the squad's &Param5& by <color=#ec6d21>&Param6&</color> and the target's &Param7& by <color=#ec6d21>&Param8&</color> for 3s, stacking up to 6 times.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (Effect,EffectTypeFirstSubtype) \u000bParam8: &Param8& (Effect,EffectTypeParam1)",
+                    "descCN": "全队为地系角色时，##标定印记#4055#造成伤害可使目标&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。\u000b全队仅有1名地系角色时，##标定印记#4055#造成伤害可使全队&Param5&提升<color=#ec6d21>&Param6&</color>，持续3秒，可叠加6层。并使目标&Param7&提升<color=#ec6d21>&Param8&</color>，持续3秒，可叠加6层。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (Effect,EffectTypeFirstSubtype) \u000bParam8: &Param8& (Effect,EffectTypeParam1)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (Effect,EffectTypeFirstSubtype) \u000bParam8: &Param8& (Effect,EffectTypeParam1)",
                     "damageType": [],
@@ -157549,8 +157581,9 @@
                 {
                     "id": 516133,
                     "name": "Leyline Amp",
+                    "nameCN": "地源增幅",
                     "desc": "In an all-Terra squad, increases the squad's &Param1& by <color=#ec6d21>&Param2&</color>.\u000bIf there is only 1 Terra Trekker on the squad, increases the squad's &Param3& by <color=#ec6d21>&Param4&</color> and increases Leafia's &Param5& by an additional <color=#ec6d21>&Param6&</color>.",
-                    "descCN": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descCN": "全队为地系角色时，全队&Param1&提升<color=#ec6d21>&Param2&</color>。\u000b全队仅有1名地系角色时，全队&Param3&提升<color=#ec6d21>&Param4&</color>，优叶&Param5&额外提升<color=#ec6d21>&Param6&</color>。",
                     "descJP": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
                     "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
                     "damageType": [],
@@ -157612,8 +157645,9 @@
                 "boost": [
                     {
                         "name": "Genius Surveyor",
+                        "nameCN": "天才测绘师",
                         "desc": "When any Trekker inflicts a ##Terra Mark#1020# on a target, the target takes <color=#0abec5>&Param1&</color> more Terra DMG for &Param2&s, up to &Param3& stacks.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descCN": "任意角色对目标附加##地系印记#1020#后，使目标受到地系伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，可叠加&Param3&层。",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
                         "effectType": [
@@ -157644,8 +157678,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157665,8 +157700,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157686,8 +157722,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157707,8 +157744,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157728,8 +157766,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157749,8 +157788,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157770,8 +157810,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157791,8 +157832,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157812,8 +157854,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157833,8 +157876,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157859,8 +157903,9 @@
                 "boost": [
                     {
                         "name": "Starsea Voyage",
+                        "nameCN": "星海征途",
                         "desc": "When Leafia deals Auto Attack DMG, increases her ATK by <color=#0abec5>&Param1&</color> for &Param2&s.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descCN": "优叶造成普攻伤害时，攻击力提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
                         "effectType": [
@@ -157887,8 +157932,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157908,8 +157954,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157929,8 +157976,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157950,8 +157998,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157971,8 +158020,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -157992,8 +158042,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158013,8 +158064,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158034,8 +158086,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158055,8 +158108,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158076,8 +158130,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158102,8 +158157,9 @@
                 "boost": [
                     {
                         "name": "Leader's Duty",
+                        "nameCN": "领队之责",
                         "desc": "When Leafia casts a skill, increases Terra Trekkers' Auto Attack DMG by <color=#0abec5>&Param1&</color> for &Param2&s.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descCN": "优叶施放技能时，队伍内地系角色普攻伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
                         "effectType": [
@@ -158132,8 +158188,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158153,8 +158210,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158174,8 +158232,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158195,8 +158254,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158216,8 +158276,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158237,8 +158298,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158258,8 +158320,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158279,8 +158342,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158300,8 +158364,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158321,8 +158386,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158347,8 +158413,9 @@
                 "boost": [
                     {
                         "name": "Relentless Mapping",
+                        "nameCN": "永不止步的勘测",
                         "desc": "When ##Terra Mark#1020# is triggered, increases Leafia's Terra DMG by <color=#0abec5>&Param1&</color> for &Param2&s.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descCN": "##地系印记#1020#被触发后，优叶地系伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
                         "effectType": [
@@ -158375,8 +158442,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158396,8 +158464,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158417,8 +158486,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158438,8 +158508,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158459,8 +158530,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158480,8 +158552,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158501,8 +158574,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158522,8 +158596,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158543,8 +158618,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158564,8 +158640,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158590,8 +158667,9 @@
                 "boost": [
                     {
                         "name": "Wildland Sigil",
+                        "nameCN": "沃野上的印痕",
                         "desc": "Increases Leafia's Auto Attack DMG to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descCN": "优叶对精英及以上目标造成普攻伤害提升<color=#0abec5>&Param1&</color>。",
                         "descJP": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
                         "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
                         "effectType": [],
@@ -158611,8 +158689,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158632,8 +158711,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158653,8 +158733,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158674,8 +158755,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158695,8 +158777,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158716,8 +158799,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158737,8 +158821,9 @@
                     },
                     {
                         "name": "DEF Enhancement",
+                        "nameCN": "防御强化",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158758,8 +158843,9 @@
                     },
                     {
                         "name": "HP Enhancement",
+                        "nameCN": "生命强化",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158779,8 +158865,9 @@
                     },
                     {
                         "name": "ATK Enhancement",
+                        "nameCN": "攻击强化",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -158800,8 +158887,9 @@
                     },
                     {
                         "name": "Auto Attack DMG Boost",
+                        "nameCN": "普攻伤害提升",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
-                        "descCN": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
                         "effectType": [
@@ -160580,7 +160668,7 @@
                     "nameJP": "極星の構え",
                     "nameKR": "각오·파단",
                     "desc": "Casting Judgment Starfall (Special Auto Attack) switches Firstlight Noya's Ultimate to the greatsword form.\u000bIncreases the &Param1& dealt by her greatsword attacks and Starfalls by <color=#fb8037>&Param2&</color>.",
-                    "descCN": "施放特殊普攻「断罪天星坠」时，源初尘沙的绝招切换为巨剑形态。\u000b尘沙的巨剑攻击和「坠星」造成的&Param1&提升<color=#fb8037>&Param2&</color>点。",
+                    "descCN": "施放特殊普攻「断罪天星坠」时，源初尘沙的绝招切换为巨剑形态。\u000b源初尘沙的巨剑攻击和「坠星」造成的&Param1&提升<color=#fb8037>&Param2&</color>点。",
                     "descJP": "特殊通常攻撃発動時、セイナ（原点）の必殺技が大剣形態に切り替わる。\u000bセイナ（原点）の大剣による攻撃と星雷は&Param1&を<color=#fb8037>&Param2&</color>獲得する。",
                     "descKR": "특수 일반 공격 「단죄의 낙성」시전 시, 세이나(기원)의 필살기가 대검 형태로 변경된다. \u000b세이나(기원)의 대검 공격과 「낙성」이 입히는 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
@@ -160818,7 +160906,7 @@
                     "nameJP": "閃星の戦乙女",
                     "nameKR": "샛별",
                     "desc": "While in the Starender state, Firstlight Noya gains <color=#fb8037>&Param2&</color> additional &Param1& and restores <color=#fb8037>&Param4&</color> Energy every &Param3&s.",
-                    "descCN": "尘沙处于「极星」状态时，可额外提升自身的&Param1&<color=#fb8037>&Param2&</color>，同时每&Param3&秒回复<color=#fb8037>&Param4&</color>点能量。",
+                    "descCN": "源初尘沙处于「极星」状态时，可额外提升自身的&Param1&<color=#fb8037>&Param2&</color>，同时每&Param3&秒回复<color=#fb8037>&Param4&</color>点能量。",
                     "descJP": "セイナ（原点）は閃星効果持続中、自身の&Param1&がさらに<color=#fb8037>&Param2&</color>増加し、&Param3&秒ごとにSPを<color=#fb8037>&Param4&</color>獲得するようになる。",
                     "descKR": "세이나(기원)가 「극성」 상태일 때 자신의 &Param1_kr1& <color=#fb8037>&Param2&</color> 추가로 증가한다. 동시에 &Param3&초마다 SP를 <color=#fb8037>&Param4&</color> 회복한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
@@ -160977,7 +161065,7 @@
                     "nameJP": "星雷波",
                     "nameKR": "심판의 일섬",
                     "desc": "Increases the Attack Range of Starfalls generated by Thunderstrike: Break (Support Skill).\u000bEach generated Starfall increases Firstlight Noya's &Param1& by <color=#fb8037>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "援护技「迅雷击·破」产生「坠星」的伤害范围提升。\u000b每1次产生「坠星」时，尘沙的&Param1&提升<color=#fb8037>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descCN": "援护技「迅雷击·破」产生「坠星」的伤害范围提升。\u000b每1次产生「坠星」时，源初尘沙的&Param1&提升<color=#fb8037>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "支援スキルで生成する星雷の攻撃範囲が拡大される。\u000b星雷を生成するたびに、&Param3&秒間、セイナ（原点）の&Param1&が<color=#fb8037>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
                     "descKR": "지원 스킬 「신뢰격·파」가 생성하는 「낙성」의 피해 범위가 증가한다. \u000b「낙성」 1회 생성 시마다 세이나(기원)의 &Param1_kr1& <color=#fb8037>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],

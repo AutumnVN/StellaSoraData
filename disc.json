@@ -62846,8 +62846,9 @@
         "mainSkill": {
             "id": 4068,
             "name": "Beneath Billowing Sails",
+            "nameCN": "帐幕下的酣梦",
             "desc": "Increases the Mark DMG of Terra Trekkers by <color=#ec6d21>{1}</color>.\u000bWhen a Versatile Terra Trekker deals DMG, inflicts Calibration on the target: Increases Terra Skill DMG taken by <color=#ec6d21>{2}</color> for {3}s.\u000bWhen a Versatile Terra Trekker deals Auto Attack DMG to a target inflicted with Calibration, inflicts an additional effect: Increases Auto Attack DMG taken by <color=#ec6d21>{4}</color> for {5}s.",
-            "descCN": "undefined",
+            "descCN": "队伍内地系角色印记伤害提升<color=#ec6d21>{1}</color>。\u000b地系均衡角色造成伤害时，对目标附加「定标」：受到地系技能伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。\u000b地系均衡角色对附带「定标」的目标造成普攻伤害时，附加额外效果：使目标受到普攻伤害提升<color=#ec6d21>{4}</color>，持续{5}秒。",
             "descJP": "undefined",
             "descKR": "undefined",
             "effectType": [
@@ -62870,8 +62871,9 @@
         "secondarySkill1": {
             "id": 40681,
             "name": "Tracker's Strike",
+            "nameCN": "觅迹之击",
             "desc": "Increases the squad's Terra DMG by <color=#ec6d21>{1}</color>.\u000bTerra Trekkers deal <color=#ec6d21>{2}</color> more Auto Attack and Skill DMG to targets inflicted with Calibration.",
-            "descCN": "undefined",
+            "descCN": "全队地系伤害提升<color=#ec6d21>{1}</color>。\u000b队伍内地系角色对附带「定标」的目标造成的普攻和技能伤害提升<color=#ec6d21>{2}</color>。",
             "descJP": "undefined",
             "descKR": "undefined",
             "effectType": [
@@ -62914,8 +62916,9 @@
         "secondarySkill2": {
             "id": 40682,
             "name": "Riding the Waves",
+            "nameCN": "破浪远航",
             "desc": "When a Support Trekker deals Auto Attack DMG, they gain 1 stack of Voyage: increases Terra Auto Attack DMG by <color=#ec6d21>{1}</color> for {2}s, stacking up to 5 times.\u000bTerra Main Trekkers deal <color=#ec6d21>{3}</color> more Skill DMG to targets inflicted with Calibration.",
-            "descCN": "undefined",
+            "descCN": "援护角色造成普攻伤害时，自身获得1层「巡途」：地系普攻伤害提升<color=#ec6d21>{1}</color>，持续{2}秒，可叠加5层。\u000b地系主控角色对附带「定标」的目标造成的技能伤害提升<color=#ec6d21>{3}</color>。",
             "descJP": "undefined",
             "descKR": "undefined",
             "effectType": [
@@ -63472,8 +63475,9 @@
         "mainSkill": {
             "id": 4069,
             "name": "Emergency Evacuation",
+            "nameCN": "紧急救援",
             "desc": "Increases the Auto Attack DMG of Support Terra Trekkers by <color=#ec6d21>{1}</color>.\u000bWhen a Versatile Terra Trekker casts a skill, inflicts Anchored on the Main Trekker: Increases Terra DMG by <color=#ec6d21>{2}</color> for {3}s, stacking up to 2 times.",
-            "descCN": "undefined",
+            "descCN": "地系援护角色普攻伤害提升<color=#ec6d21>{1}</color>。\u000b地系均衡角色施放技能时，为主控角色附加「锚定」：地系伤害提升<color=#ec6d21>{2}</color>，持续{3}秒，可叠加2层。",
             "descJP": "undefined",
             "descKR": "undefined",
             "effectType": [
@@ -63493,8 +63497,9 @@
         "secondarySkill1": {
             "id": 40691,
             "name": "Domain Scan",
+            "nameCN": "领域扫描",
             "desc": "Increases the Skill DMG of Terra Trekkers in the squad by <color=#ec6d21>{1}</color>.\u000bWhen any Trekker triggers a Terra Mark, increases Terra Trekkers' Ultimate DMG by <color=#ec6d21>{2}</color> for {3}s.",
-            "descCN": "undefined",
+            "descCN": "队伍中地系角色技能伤害提升<color=#ec6d21>{1}</color>。\u000b任意角色触发地系印记后，队伍中地系角色绝招伤害提升<color=#ec6d21>{2}</color>，持续{3}秒。",
             "descJP": "undefined",
             "descKR": "undefined",
             "effectType": [
@@ -63537,8 +63542,9 @@
         "secondarySkill2": {
             "id": 40692,
             "name": "Endless Voyage",
+            "nameCN": "无尽航界",
             "desc": "When Anchored is at max stacks, increases Terra Trekkers' ATK by <color=#ec6d21>{1}</color>.",
-            "descCN": "undefined",
+            "descCN": "「锚定」满层时，队伍内地系角色攻击力提升<color=#ec6d21>{1}</color>。",
             "descJP": "undefined",
             "descKR": "undefined",
             "effectType": [
