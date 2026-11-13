@@ -4839,7 +4839,7 @@
                     "desc": "Aegis of Light shields the main Trekker and then ricochets.\u000bUpon hitting the main Trekker, it creates a Lightning Array: Deals <color=#0abec5>&Param2& of Tilia's ATK</color> as AoE Lux Skill DMG and increases the Skill DMG taken by nearby enemies by <color=#0abec5>&Param3&</color>, lasting for &Param4&s. Stacks up to &Param5& times.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "descCN": "「圣光之盾」会飞向主控角色后再弹射。\u000b「圣光之盾」命中主控角色时，产生「光击阵」：造成缇莉娅攻击力<color=#0abec5>&Param2&</color>的范围光系技能伤害，并使附近目标受到技能伤害提升<color=#0abec5>&Param3&</color>，持续&Param4&秒，可叠加&Param5&层。\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "descJP": "聖光の盾は主力巡遊者に向かって飛んだ後、敵の間を跳ね渡るようになる。\u000b聖光の盾が主力巡遊者に命中した時、光撃陣を発生させる。\u000b光撃陣：範囲内の敵にティリアの攻撃力の<color=#0abec5>&Param2&</color>の光属性のスキルダメージを与え、&Param4&秒間、周囲の敵のスキル被ダメージを<color=#0abec5>&Param3&</color>増加させる。光撃陣の効果は&Param5&回重複できる。\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
-                    "descKR": "「성광의 방패」가 메인 캐릭터를 향해 날아간 후, 다시 튕긴다. \u000b「성광의 방패」가 메인 캐릭터를 명중시키면 틸리아 공격력 <color=#0abec5>&Param2&</color>의 빛 속성 범위 스킬 피해를 입히고 주변 목표가 받는 스킬 피해가 <color=#0abec5>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
+                    "descKR": "「성광의 방패」가 메인 캐릭터를 향해 날아간 후, 다시 튕긴다. \u000b「성광의 방패」가 메인 캐릭터를 명중시키면 「광격진」을 생성해 틸리아 공격력 <color=#0abec5>&Param2&</color>의 빛 속성 범위 스킬 피해를 입히고 주변 목표가 받는 스킬 피해가 <color=#0abec5>&Param3&</color> 증가한다. &Param4&초간 지속되며, 최대 &Param5&스택 중첩된다.\u000bParam1: &Param1& (Skill,Title) \u000bParam6: &Param6& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -5119,7 +5119,7 @@
                     "desc": "When Aegis of Light hits a target with HP below <color=#ec6d21>&Param2&</color>, it creates a Lightning Array: Deals &Param3& of Tilia's ATK as AoE Lux Skill DMG and increases the Skill DMG they take by &Param4& for &Param5&s, stacking up to &Param6& times.\u000bThis effect can only be triggered once every &Param8&s.\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "descCN": "「圣光之盾」命中当前生命低于<color=#ec6d21>&Param2&</color>的目标时，产生「光击阵」：造成缇莉娅攻击力&Param3&的范围光系技能伤害，并使其受到技能伤害提升&Param4&，持续&Param5&秒，可叠加&Param6&层。\u000b该效果每&Param8&秒最多触发1次。\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "descJP": "聖光の盾が現在のHPが<color=#ec6d21>&Param2&</color>未満の敵に命中した時、光撃陣を発生させる。\u000b光撃陣：範囲内にティリアの攻撃力の&Param3&の光属性のスキルダメージを与え、&Param5&秒間、命中した敵のスキル被ダメージを&Param4&増加させる。光撃陣の効果は&Param6&回重複できる。\u000bこの効果は&Param8&秒ごとに1回まで発動できる\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
-                    "descKR": "「성광의 방패」가 현재 HP가 <color=#ec6d21>&Param2&</color>보다 낮은 목표에게 공격력 &Param3&의 빛 속성 범위 스킬 피해를 추가로 입히고, 대상이 받는 스킬 피해를 &Param4& 증가시킨다. &Param5&초간 지속되며, 최대 &Param6&스택 중첩된다. \u000b해당 효과는 &Param8&초마다 최대 1회 발동한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
+                    "descKR": "「성광의 방패」가 현재 HP가 <color=#ec6d21>&Param2&</color>보다 낮은 목표를 명중하면, 「광격진」을 생성해 틸리아 공격력 &Param3&의 빛 속성 범위 스킬 피해를 추가로 입히고, 대상이 받는 스킬 피해를 &Param4& 증가시킨다. &Param5&초간 지속되며, 최대 &Param6&스택 중첩된다. \u000b해당 효과는 &Param8&초마다 최대 1회 발동한다.\u000bParam1: &Param1& (Skill,Title) \u000bParam7: &Param7& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Skill (from Skill, scale with Skill)"
                     ],
@@ -156285,11 +156285,12 @@
             "name": "Crystal Generation",
             "nameCN": "晶簇生成",
             "nameJP": "ファセットグロース",
+            "nameKR": "결정 생성",
             "energyLimit": 15.24,
             "desc": "Continuously generates Plotting Crystals.\nStrike 1: <color=#fb8037>&Param1&</color> of ATK as Terra Auto Attack DMG.\nStrike 2: <color=#fb8037>&Param2&</color> of ATK as Terra Auto Attack DMG.\nStrike 3: <color=#fb8037>&Param3&</color> of ATK as Terra Auto Attack DMG.\nWhen an Auto Attack deals DMG, there is a 10% chance to generate 1 Resource Marker, up to 1 per second.",
             "descCN": "连续生成「标绘结晶」。\n一段：攻击力<color=#fb8037>&Param1&</color>地系普攻伤害\n二段：攻击力<color=#fb8037>&Param2&</color>地系普攻伤害\n三段：攻击力<color=#fb8037>&Param3&</color>地系普攻伤害\n普通攻击造成伤害时，有10%概率产生1个##「资源标点」#4056#，每1秒最多产生1个。",
             "descJP": "アジマスマーカーを連続で生成する。\n1段目：攻撃力の<color=#fb8037>&Param1&</color>の地属性の通常攻撃ダメージを与える。\n2段目：攻撃力の<color=#fb8037>&Param2&</color>の地属性の通常攻撃ダメージを与える。\n3段目：攻撃力の<color=#fb8037>&Param3&</color>の地属性の通常攻撃ダメージを与える。\n通常攻撃がダメージを与えた時、10%の確率で##セオドライト#4056#を1個生成する。この効果で1秒に1個まで生成できる。",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+            "descKR": "「제도 결정」을 연속으로 생성한다. \n1단계: 공격력 <color=#fb8037>&Param1&</color>의 땅 속성 일반 공격 피해 \n2단계: 공격력 <color=#fb8037>&Param2&</color>의 땅 속성 일반 공격 피해 \n3단계: 공격력 <color=#fb8037>&Param3&</color>의 땅 속성 일반 공격 피해 \n일반 공격이 피해를 입히면 10% 확률로 ##「자원 마커」#4056#를 1개 생성한다. 1초마다 최대 1개 생성한다.",
             "damageType": [
                 "Auto Attack (3.8e, from Normal attack, scale with Normal attack)"
             ],
@@ -156320,12 +156321,13 @@
             "name": "Crystal Vein Survey",
             "nameCN": "晶脉勘定",
             "nameJP": "アーススキャニング",
+            "nameKR": "결정 광맥 탐지",
             "cooldown": "18s",
             "energyLimit": 12.5,
             "desc": "Unleashes Stratum Echo, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Terra Skill DMG and generating 5 ##Resource Markers#4056#. When there are more than 10 ##Resource Markers#4056#, consumes 10 to generate 1 Observation Point for 10s (max 1 active). The Observation Point fires bullets at the Main Trekker's target every 3s, dealing <color=#fb8037>&Param2&</color> of ATK as Terra Auto Attack DMG. All these attacks can trigger ##Terra Mark#1020#, dealing &Param3& of ATK as AoE Terra Mark DMG.",
             "descCN": "展开「地层回响」，造成攻击力<color=#fb8037>&Param1&</color>的范围地系技能伤害，产生5个##「资源标点」#4056#。##「资源标点」#4056#数量大于10个时，消耗10个##「资源标点」#4056#，生成1个「观测点」，持续10秒，最多存在1个。「观测点」每3秒对主控目标发射子弹，造成攻击力<color=#fb8037>&Param2&</color>的地系普攻伤害。以上攻击都可触发##地系印记#1020#，造成攻击力&Param3&的范围地系印记伤害。",
             "descJP": "アースウェーブを展開し、範囲内に攻撃力の<color=#fb8037>&Param1&</color>の地属性のスキルダメージを与え、##セオドライト#4056#を5個生成する。##セオドライト#4056#が10個を超えると、そのうち10個を消費して観測点を1つ生成する。\n観測点は10秒間持続し、同時に1つまで存在できる。観測点は3秒ごとに主力巡遊者のターゲットへ弾丸を発射し、攻撃力の<color=#fb8037>&Param2&</color>の地属性の通常攻撃ダメージを与える。\n上記の攻撃はいずれも##地属性の印#1020#を発動でき、範囲内に攻撃力の&Param3&の地属性の印ダメージを与える。",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Skill) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (HitDamage,Mark)",
+            "descKR": "「지층 울림」을 전개해 공격력 <color=#fb8037>&Param1&</color>의 땅 속성 범위 스킬 피해를 입히고, ##「자원 마커」#4056# 5개를 생성한다. ##「자원 마커」#4056#가 10개를 초과하면 ##「자원 마커」#4056# 10개를 소모해 「관측 지점」 1개를 생성한다. 10초간 지속되며, 최대 1개 존재한다. 「관측 지점」은 3초마다 메인 목표에게 총알을 발사해, 공격력 <color=#fb8037>&Param2&</color>의 땅 속성 일반 공격 피해를 입힌다. 위 공격은 모두 ##땅 속성 표식#1020#을 발동하고, 공격력 &Param3&의 땅 속성 범위 표식 피해를 입힌다.",
             "damageType": [
                 "Skill (10e, from Skill, scale with Skill)",
                 "Auto Attack (from Normal attack, scale with Skill)",
@@ -156358,11 +156360,12 @@
             "name": "Area Plotting",
             "nameCN": "区域标绘",
             "nameJP": "ゼロポイントピラー",
+            "nameKR": "구역 표식 매핑",
             "cooldown": "14s",
             "desc": "Generates 1 Observation Point for 10s (max 1 active). Upon generation, the Observation Point performs a Vanguard Strike, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Terra Auto Attack DMG and generating Tactical Mapping. Tactical Mapping deals <color=#fb8037>&Param2&</color> of ATK as AoE Terra Auto Attack DMG every 2s, lasting until the Observation Point expires. All these attacks inflict ##Terra Mark: Earth Vein#2029#.",
             "descCN": "生成1个「观测点」，持续10秒，最多存在1个。「观测点」生成时进行「先导攻击」，造成攻击力<color=#fb8037>&Param1&</color>的范围地系普攻伤害，生成「战术制图」。「战术制图」每2秒造成攻击力<color=#fb8037>&Param2&</color>的范围地系普攻伤害，持续至「观测点」消失。以上攻击都会附加##地系印记：地脉#2029#。",
             "descJP": "観測点を1つ生成する。観測点は10秒間持続し、同時に1つまで存在できる。観測点は生成時にスキャニングを行い、範囲内に攻撃力の<color=#fb8037>&Param1&</color>の地属性の通常攻撃ダメージを与える。その後、観測点を中心にレーダーマップを生成する。\nレーダーマップは2秒ごとに範囲内に攻撃力の<color=#fb8037>&Param2&</color>の地属性の通常攻撃ダメージを与える。この効果は観測点が消えるまで持続する。\n上記の攻撃はいずれも##地属性の印：地脈#2029#を付与できる。",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (HitDamage,Auto Attack)",
+            "descKR": "「관측 지점」 1개를 생성한다. 10초간 지속되며, 최대 1개 존재한다. 「관측 지점」 생성 시 「선제 공격」을 진행해 공격력 <color=#fb8037>&Param1&</color>의 땅 속성 범위 일반 공격 피해를 입히고 「전술 매핑」을 생성한다. 「전술 매핑」은 2초마다 공격력 <color=#fb8037>&Param2&</color>의 땅 속성 범위 일반 공격 피해를 입힌다. 「관측 지점」이 사라질 때까지 지속된다. 위 공격은 모두 ##땅 속성 표식: 지맥#2029#을 부여한다.",
             "damageType": [
                 "Auto Attack (from Normal attack, scale with Skill)"
             ],
@@ -156389,12 +156392,13 @@
             "name": "Terrain Mapping",
             "nameCN": "地形映射",
             "nameJP": "ジオ・マテリアライズ",
+            "nameKR": "지형 매핑",
             "cooldown": "30s",
             "energy": 264,
             "desc": "Unleashes Terrain Mapping for 20s, dealing <color=#fb8037>&Param1&</color> of ATK as AoE Terra Ultimate DMG every 3s.",
             "descCN": "展开「地形映射」，持续20秒，每3秒造成攻击力<color=#fb8037>&Param1&</color>的范围地系绝招伤害。",
             "descJP": "ジオ・マテリアライズを展開する。20秒間持続し、3秒ごとに範囲内に攻撃力の<color=#fb8037>&Param1&</color>の地属性の必殺技ダメージを与える。",
-            "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Ultimate)",
+            "descKR": "「지형 매핑」을 전개해 20초간 지속된다. 3초마다 공격력 <color=#fb8037>&Param1&</color>의 땅 속성 범위 필살기 피해를 입힌다.",
             "damageType": [
                 "Ultimate (from Ultimate, scale with Ultimate)"
             ],
@@ -156419,10 +156423,11 @@
                     "name": "Crystal Overclock",
                     "nameCN": "结晶超频",
                     "nameJP": "トータルステーション",
+                    "nameKR": "결정 오버클럭",
                     "desc": "After casting Crystal Vein Survey (Main Skill), Observation Points are no longer generated. When Leafia's Auto Attack deals DMG, it always generates 1 Resource Marker. Leafia's Auto Attack can also consume 3 ##Resource Markers#4056# to fire an Amplification Crystal, dealing <color=#0abec5>&Param3&</color> of ATK as Terra Auto Attack DMG, increasing that Auto Attack's &Param2& by <color=#0abec5>&Param1&</color>, and triggering ##Terra Mark#1020#.",
                     "descCN": "施放主控技能「晶脉勘定」后，不再生成「观测点」。优叶普攻造成伤害时，必定产生1个##「资源标点」#4056#。优叶普攻时可消耗3个##「资源标点」#4056#，发射「增幅结晶」造成攻击力<color=#0abec5>&Param3&</color>的地系普攻伤害，并使该次普攻的&Param2&提升<color=#0abec5>&Param1&</color>，可触发##地系印记#1020#。",
                     "descJP": "主力スキル発動後、観測点を生成しなくなる。スグハの通常攻撃がダメージを与えた時、##セオドライト#4056#を必ず1個生成する。スグハは通常攻撃時に##セオドライト#4056#を3個消費できるようになり、グランドアンカーを発射して攻撃力の<color=#0abec5>&Param3&</color>の地属性の通常攻撃ダメージを与える。さらに、その通常攻撃の&Param2&が<color=#0abec5>&Param1&</color>増加する。この攻撃は##地属性の印#1020#を発動させることができる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (HitDamage,Auto Attack)",
+                    "descKR": "메인 스킬 「결정 광맥 탐지」 시전 후, 「관측 지점」을 생성하지 않는다. 스구하의 일반 공격이 피해를 입히면, ##「자원 마커」#4056# 1개를 반드시 생성한다. 스구하가 일반 공격 시 ##「자원 마커」#4056# 3개를 소모해 「증폭 결정」을 발사해, <color=#0abec5>&Param3&</color>의 땅 속성 일반 공격 피해를 입힌다. 또한 해당 일반 공격의 &Param2_kr1& <color=#0abec5>&Param1&</color> 증가한다. ##땅 속성 표식#1020#을 발동할 수 있다.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
                         "Auto Attack (3.9e, from Normal attack, scale with Normal attack)"
                     ],
@@ -156458,10 +156463,11 @@
                     "name": "Focused Penetration",
                     "nameCN": "集束贯通",
                     "nameJP": "貫通測量",
+                    "nameKR": "집속 관통",
                     "desc": "Leafia's Auto Attacks generate 1 extra Resource Marker when dealing DMG. Auto Attack's &Param2& is increased by <color=#0abec5>&Param1&</color> and pierces targets. Any new ##Resource Markers#4056# are absorbed automatically.",
                     "descCN": "优叶普攻造成伤害时，额外产生1个##「资源标点」#4056#。优叶普攻的&Param2&提升<color=#0abec5>&Param1&</color>，可穿透目标。后续产生的##「资源标点」#4056#自动被吸收。",
                     "descJP": "スグハの通常攻撃がダメージを与えた時、##セオドライト#4056#を追加で1個生成する。スグハの通常攻撃の&Param2&が<color=#0abec5>&Param1&</color>増加し、攻撃が敵を貫通するようになる。以降に生成した##セオドライト#4056#は自動で吸収するようになる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "descKR": "스구하의 일반 공격이 피해를 입히면 ##「자원 마커」#4056# 1개를 추가로 생성한다. 스구하 일반 공격의 &Param2_kr1& <color=#0abec5>&Param1&</color> 증가하고, 목표를 관통한다. 이후 생성되는 ##「자원 마커」#4056#를 자동으로 흡수한다.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -156491,10 +156497,11 @@
                     "name": "Field Echo",
                     "nameCN": "阵地回响",
                     "nameJP": "エコー測深",
+                    "nameKR": "진지의 메아리",
                     "desc": "Auto Attacks no longer generate ##Resource Markers#4056# when dealing DMG. Reduces Main Skill Cooldown by <color=#0abec5>10s</color> and extends Observation Point duration by <color=#0abec5>20s</color>. Casting a skill directly generates 1 Observation Point without consuming ##Resource Markers#4056# (triggers once every 20s). Every <color=#0abec5>3</color> attacks, each Observation Point releases a wave that deals <color=#0abec5>&Param1&</color> of ATK as AoE Terra Auto Attack DMG.",
                     "descCN": "普攻造成伤害时，不再产生##「资源标点」#4056#。主控技冷却时间缩短<color=#0abec5>10</color>秒。「观测点」持续时间延长<color=#0abec5>20</color>秒。施放技能时，不消耗##「资源标点」#4056#直接生成1个「观测点」，该效果每20秒最多触发1次。单个「观测点」每累计攻击<color=#0abec5>3</color>次，施放1次波动，造成攻击力<color=#0abec5>&Param1&</color>的范围地系普攻伤害。",
                     "descJP": "通常攻撃がダメージを与えた時、##セオドライト#4056#を生成しなくなる。代わりに主力スキルのクールタイムが<color=#0abec5>10</color>秒短縮され、観測点の持続時間が<color=#0abec5>20</color>秒延長される。スキル発動時、##セオドライト#4056#を消費せずに観測点を1つ生成する。この効果は20秒ごとに1回まで発動できる。観測点は1つにつき、攻撃を<color=#0abec5>3</color>回行うごとに反響波を1回放ち、範囲内の敵に攻撃力の<color=#0abec5>&Param1&</color>の地属性の通常攻撃ダメージを与える。",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack)",
+                    "descKR": "일반 공격이 피해를 입혀도 ##「자원 마커」#4056#가 생성되지 않는다. 메인 스킬 쿨타임이 <color=#0abec5>10</color>초 단축되고, 「관측 지점」의 지속 시간이 <color=#0abec5>20</color>초 연장된다. 스킬 시전 시, ##「자원 마커」#4056#를 소모하지 않고 「관측 지점」 1개를 바로 생성한다. 해당 효과는 20초마다 최대 1회 발동한다. 단일 「관측 지점」이 누적 <color=#0abec5>3</color>회 공격한 후 파동을 1회 시전해 공격력 <color=#0abec5>&Param1&</color>의 땅 속성 범위 일반 공격 피해를 입힌다.",
                     "damageType": [
                         "Auto Attack (from Normal attack, scale with Skill)"
                     ],
@@ -156520,10 +156527,11 @@
                     "name": "Field Assault",
                     "nameCN": "阵地强袭",
                     "nameJP": "メテオアンカー",
+                    "nameKR": "진지 습격",
                     "desc": "Observation Points fire bullets at targets every second, dealing <color=#0abec5>&Param1&</color> of ATK as Terra Auto Attack DMG and generating 1 Resource Marker every 3s. Each Resource Marker Leafia picks up increases Observation Point's &Param5& by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "「观测点」每秒对目标发射子弹，造成攻击力<color=#0abec5>&Param1&</color>的地系普攻伤害。每3秒产生1个##「资源标点」#4056#。优叶每拾取1个##「资源标点」#4056#，「观测点」造成的&Param5&提升<color=#0abec5>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "観測点は1秒ごとに対象へ弾丸を発射するようになり、攻撃力の<color=#0abec5>&Param1&</color>の地属性の通常攻撃ダメージを与える。また、3秒ごとに##セオドライト#4056#を1個生成する。スグハが##セオドライト#4056#を1個拾うたびに、&Param3&秒間、観測点は与える&Param5&が<color=#0abec5>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1)",
+                    "descKR": "「관측 지점」이 1초마다 목표에게 총알을 발사해 공격력 <color=#0abec5>&Param1&</color>의 땅 속성 일반 공격 피해를 입힌다. 3초마다 ##「자원 마커」#4056#를 1개 생성한다. 스구하가 ##「자원 마커」#4056#를 1개 획득할 때마다 「관측 지점」이 입히는 &Param5_kr1& <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam5: &Param5& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
                         "Auto Attack (from Normal attack, scale with Skill)"
                     ],
@@ -156573,10 +156581,11 @@
                     "name": "Terra DMG Amp",
                     "nameCN": "地伤增幅",
                     "nameJP": "アースロケーション",
+                    "nameKR": "땅 피해 증폭",
                     "desc": "When Amplification Crystals deal DMG, increases the targets' &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "「增幅结晶」造成伤害时，使目标&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "グランドアンカーがダメージを与えた時、&Param3&秒間、敵の&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "「증폭 결정」이 피해를 입히면, 목표의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Terra DMG Taken (base)"
@@ -156619,10 +156628,11 @@
                     "name": "Terra Mark Resonance",
                     "nameCN": "地印共振",
                     "nameJP": "大地共鳴",
+                    "nameKR": "땅 표식의 공명",
                     "desc": "When Amplification Crystals trigger a ##Terra Mark#1020#, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "「增幅结晶」触发##地系印记#1020#时，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "グランドアンカーが##地属性の印#1020#を発動させた時、&Param3&秒間、スグハの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "「증폭 결정」이 ##땅 속성 표식#1020#을 발동하면, 스구하의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -156665,10 +156675,11 @@
                     "name": "Marker Overload",
                     "nameCN": "标点过载",
                     "nameJP": "測量士の勘",
+                    "nameKR": "마커 과부하",
                     "desc": "Increases Leafia's &Param3& by <color=#ec6d21>&Param4&</color>. Firing Amplification Crystals has an 80% chance to launch an extra Vector Crystal without using ##Resource Markers#4056#, dealing <color=#ec6d21>&Param2&</color> of ATK as Terra Auto Attack DMG. Firing Amplification Crystals costs 1 less Resource Marker.\u000bParam1: &Param1& (ScriptParameter,CommonData)",
                     "descCN": "优叶&Param3&提升<color=#ec6d21>&Param4&</color>。发射「增幅结晶」时，有80%概率不消耗##「资源标点」#4056#额外发射1颗「向量结晶」，造成攻击力<color=#ec6d21>&Param2&</color>的地系普攻伤害。每次发射「增幅结晶」消耗的##「资源标点」#4056#减少1个。\u000bParam1: &Param1& (ScriptParameter,CommonData)",
                     "descJP": "スグハの&Param3&が<color=#ec6d21>&Param4&</color>増加する。グランドアンカーの発射時、80%の確率で##セオドライト#4056#を消費せずにクリスタルアンカーを1個追加で発射するようになり、攻撃力の<color=#ec6d21>&Param2&</color>の地属性の通常攻撃ダメージを与える。グランドアンカーの発射時に消費する##セオドライト#4056#が1個減る。\u000bParam1: &Param1& (ScriptParameter,CommonData)",
-                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (HitDamage,Auto Attack) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "스구하의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 「증폭 결정」 발사 시, 80%의 확률로 ##「자원 마커」#4056#를 소모하지 않고 「벡터 결정」 1개를 추가로 발사해 공격력 <color=#ec6d21>&Param2&</color>의 땅 속성 일반 공격 피해를 입힌다. 「증폭 결정」을 발사할 때마다 소모하는 ##「자원 마커」#4056#가 1개 감소한다.\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [
                         "Auto Attack (from Normal attack)"
                     ],
@@ -156707,10 +156718,11 @@
                     "name": "Obsidian Field",
                     "nameCN": "观测蚀域",
                     "nameJP": "地形更新",
+                    "nameKR": "침식 영역 관측",
                     "desc": "Increases the &Param1& of targets within the Observation Point range by <color=#ec6d21>&Param2&</color>, stacking up to &Param3& times.",
                     "descCN": "「观测点」范围内目标&Param1&提升<color=#ec6d21>&Param2&</color>，可叠加&Param3&层。",
                     "descJP": "観測点の範囲内にいる敵の&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param3&回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                    "descKR": "「관측 지점」 범위 내 목표의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. 최대 &Param3&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Terra DMG Taken (base)"
@@ -156749,10 +156761,11 @@
                     "name": "Survey Field Amp",
                     "nameCN": "测域增幅",
                     "nameJP": "観測強化",
+                    "nameKR": "관측 범위 증폭",
                     "desc": "When Observation Points deal DMG, increases their &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "「观测点」造成伤害时，「观测点」的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "観測点がダメージを与えた時、&Param3&秒間、観測点の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "「관측 지점」이 피해를 입히면, 「관측 지점」의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -156795,10 +156808,11 @@
                     "name": "Mobility Amp",
                     "nameCN": "机动增幅",
                     "nameJP": "トラバースステップ",
+                    "nameKR": "기동 증폭",
                     "desc": "Leafia can dodge one more time.\u000bWhen dodging, increases her &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "descCN": "优叶闪避次数提升1次。\u000b闪避时，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
                     "descJP": "スグハの回避の発動可能回数が1回増加する。\u000b回避時、&Param3&秒間、スグハの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "스구하의 회피 횟수가 1회 증가한다. \u000b회피 시 스구하의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -156837,10 +156851,11 @@
                     "name": "Earth Vein Synergy",
                     "nameCN": "地脉协同",
                     "nameJP": "調査隊の連携",
+                    "nameKR": "지맥 시너지",
                     "desc": "For each Terra Trekker on the squad, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color>.",
                     "descCN": "队伍中每有1个地系角色，优叶&Param1&提升<color=#ec6d21>&Param2&</color>。",
                     "descJP": "チーム内の地属性巡遊者1体につき、スグハの&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "팀 내 땅 속성 캐릭터 1명마다 스구하의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -156871,10 +156886,11 @@
                     "name": "Observer Array",
                     "nameCN": "观测联阵",
                     "nameJP": "多角測量",
+                    "nameKR": "관측 연계",
                     "desc": "Can generate up to <color=#ec6d21>&Param1& Observation Points. Each active Observation Point on the field increases its &Param2& dealt by <color=#ec6d21>&Param3&</color>.",
                     "descCN": "可至多生成<color=#ec6d21>&Param1&</color>个「观测点」。每有1个「观测点」，「观测点」造成的&Param2&提升<color=#ec6d21>&Param3&</color>。",
                     "descJP": "フィールドに存在できる観測点の上限数：<color=#ec6d21>&Param1&</color>\u000bフィールド上の観測点1つにつき、観測点は与える&Param2&が<color=#ec6d21>&Param3&</color>増加する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "최대 「관측 지점」 <color=#ec6d21>&Param1&</color>개를 생성할 수 있다. 「관측 지점」 1개마다 「관측 지점」이 입히는 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다.\u000bParam2: &Param2& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -156907,10 +156923,11 @@
                     "name": "Terra Mark Awakening",
                     "nameCN": "地印觉醒",
                     "nameJP": "アトラスの恩寵",
+                    "nameKR": "땅 표식의 각성",
                     "desc": "Terrain Mapping (Ultimate) can trigger ##Terra Marks#1020#. After casting the Ultimate, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "descCN": "绝招「地形映射」可触发##地系印记#1020#。施放绝招后，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
                     "descJP": "必殺技は##地属性の印#1020#を発動させることができるようになる。必殺技発動後、&Param3&秒間、スグハの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "필살기 「지형 매핑」이 ##땅 속성 표식#1020#을 발동한다. 필살기 시전 후, 스구하의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -156951,10 +156968,11 @@
                     "name": "Draw Zone Ascension",
                     "nameCN": "绘域升势",
                     "nameJP": "フィードバック",
+                    "nameKR": "매핑 영역 강화",
                     "desc": "When Terrain Mapping (Ultimate) deals DMG, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "绝招「地形映射」造成伤害时，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，最多叠加&Param4&层。",
                     "descJP": "スグハの必殺技がダメージを与えた時、&Param3&秒間、スグハの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "필살기 「지형 매핑」이 피해를 입히면, 스구하의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -156997,10 +157015,11 @@
                     "name": "Draw Zone Bombardment",
                     "nameCN": "绘域轰击",
                     "nameJP": "地形掌握",
+                    "nameKR": "매핑 영역 폭격",
                     "desc": "Increases the &Param1& of Terrain Mapping (Ultimate) by <color=#ec6d21>&Param2&</color> and reduces its attack interval.",
                     "descCN": "绝招「地形映射」造成的&Param1&提升<color=#ec6d21>&Param2&</color>，伤害间隔缩短。",
                     "descJP": "スグハの必殺技は与える&Param1&が<color=#ec6d21>&Param2&</color>増加し、ダメージを与える間隔が短縮される。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "필살기 「지형 매핑」이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, 피해 간격이 단축된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157031,10 +157050,11 @@
                     "name": "Draw Zone Support",
                     "nameCN": "绘域协战",
                     "nameJP": "仲間の道しるべ",
+                    "nameKR": "매핑 영역 협공",
                     "desc": "When the Terrain Mapping (Ultimate) is on cooldown or its energy is not full, all Terra Vanguard and Versatile Trekkers in the team gain <color=#ec6d21>&Param5&</color> increased &Param4&. When the Main Trekker is within the impact range of Terrain Mapping (Ultimate), increases all Terra Vanguard and Versatile Trekkers on the squad's &Param2& by <color=#ec6d21>&Param3&</color>.\u000bParam1: &Param1& (BuffValue,Time)",
                     "descCN": "绝招「地形映射」处于冷却或能量未满时，全队地系先锋和均衡角色&Param4&提升<color=#ec6d21>&Param5&</color>。主控角色处于绝招「地形映射」范围内时，全队地系先锋和均衡角色&Param2&提升<color=#ec6d21>&Param3&</color>。\u000bParam1: &Param1& (BuffValue,Time)",
                     "descJP": "スグハの必殺技がクールタイム中、またはSPが満タンでない時、チーム内の地属性のアタッカー、バランサー巡遊者の&Param4&が<color=#ec6d21>&Param5&</color>増加する。\u000b主力巡遊者がスグハの必殺技の範囲内にいる時、チーム内の地属性のアタッカー、バランサー巡遊者の&Param2&が<color=#ec6d21>&Param3&</color>増加する。\u000bParam1: &Param1& (BuffValue,Time)",
-                    "descKR": "undefined\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeParam1) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeParam1)",
+                    "descKR": "필살기가 쿨타임 또는 SP가 가득 차지 않은 상태일 시, 팀 전체 땅 속성 딜러와 밸런스 캐릭터의 &Param4_kr1& <color=#ec6d21>&Param5&</color> 증가한다. 메인 캐릭터가 필살기 「지형 매핑」 범위 내에 있으면, 팀 전체 땅 속성 딜러 및 밸런스 캐릭터의 &Param2_kr1& <color=#ec6d21>&Param3&</color> 증가한다.\u000bParam1: &Param1& (BuffValue,Time) \u000bParam2: &Param2& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ELEMENTTYPE_:(Terra) Auto Attack DMG"
@@ -157085,10 +157105,11 @@
                     "name": "Tactical Co-Draw",
                     "nameCN": "战术联绘",
                     "nameJP": "アリダードサイト",
+                    "nameKR": "전술 연계 매핑",
                     "desc": "Extends Observation Point duration by 10s. Up to 2 Observation Points can be present at the same time. Reduces Tactical Mapping's DMG dealing Interval and it can deal damage to the same target at most once per second. In an all-Terra squad, when Tactical Mapping deals DMG, increases the target's &Param1& by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "「观测点」持续时间延长10秒，最多同时存在2个「观测点」。「战术制图」伤害间隔缩短，对同一目标每秒最多造成1次伤害。全队为地系角色时，「战术制图」造成伤害可使目标&Param1&提升<color=#0abec5>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "観測点の持続時間が10秒延長され、同時に2つまで存在できるようになる。レーダーマップのダメージ間隔が短縮され、同一の敵に対しては1秒ごとに1回までしかダメージを与えない。チーム全員が地属性巡遊者の場合、レーダーマップがダメージを与えた時、&Param3&秒間、敵の&Param1&が<color=#0abec5>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype) \u000bParam2: &Param2& (EffectValue,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "「관측 지점」의 지속 시간이 10초 연장되고, 「관측 지점」이 최대 2개 존재한다. 「전술 매핑」의 피해 간격이 단축되며, 동일 목표에게 1초마다 최대 피해를 1회 입힌다. 팀 전체가 땅 속성 캐릭터일 때 「전술 매핑」이 피해를 입히면 목표의 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (EffectValue,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Terra DMG Taken (base)"
@@ -157130,10 +157151,11 @@
                     "name": "Observer Iteration",
                     "nameCN": "观测迭代",
                     "nameJP": "カリブレーション",
+                    "nameKR": "관측 갱신",
                     "desc": "Each time Leafia casts Area Plotting (Support Skill), Observation Points tier up once, increasing Tactical Mapping's &Param1& by <color=#0abec5>&Param2&</color>. This effect is permanent and stacks up to 4 times.",
                     "descCN": "优叶每施放1次援护技能「区域标绘」时，「观测点」进阶1次，使「战术制图」造成的&Param1&提升<color=#0abec5>&Param2&</color>，该效果不会消失，可叠加4次。",
                     "descJP": "スグハが支援スキルを発動するたびに、観測点を1段階強化し、レーダーマップは与える&Param1&が<color=#0abec5>&Param2&</color>増加する。この効果は時間経過で消えず、4回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1)",
+                    "descKR": "스구하가 지원 스킬 「구역 표식 매핑」을 1회 시전할 때마다, 「관측 지점」이 1회 승급해 「전술 매핑」이 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다. 해당 효과는 사라지지 않으며, 최대 4스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157163,10 +157185,11 @@
                     "name": "Vanguard Calibration",
                     "nameCN": "先导标定",
                     "nameJP": "ブーストスキャン",
+                    "nameKR": "선제 조준",
                     "desc": "Observation Points launch 1 Vanguard Strike outward every second. When Vanguard Strike deals DMG, increases the &Param1& of both itself and ##Calibration Mark#4055# by <color=#0abec5>&Param2&</color> for &Param3&s, stacking up to &Param4& times. Observation Points expire after 10s and inflict 1 stack of ##Calibration Mark#4055# on targets within range.",
                     "descCN": "「观测点」每秒向外发出1次「先导攻击」。「先导攻击」造成伤害时，使「先导攻击」和##标定印记#4055#造成的&Param1&提升<color=#0abec5>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。「观测点」持续10秒后消失，并对范围内目标附加1层##标定印记#4055#。",
                     "descJP": "観測点は1秒ごとにスキャニングを1回放つ。スキャニングがダメージを与えた時、&Param3&秒間、スキャニングと##測量マーカー#4055#は与える&Param1&が<color=#0abec5>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。観測点は生成されてから10秒後に消滅し、同時に範囲内の敵に##測量マーカー#4055#を1付与する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "「관측 지점」이 1초마다 외부를 향해 「선제 공격」을 1회 발동한다. 「선제 공격」이 피해를 입히면 「선제 공격」과 ##조준 표식#4055#이 입히는 &Param1_kr1& <color=#0abec5>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다. 「관측 지점」은 10초 후 사라지며 범위 내 목표에게 ##조준 표식#4055#을 1스택 부여한다.\u000bParam1: &Param1& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157208,10 +157231,11 @@
                     "name": "Calibration Detonation",
                     "nameCN": "标定引爆",
                     "nameJP": "発破調査",
+                    "nameKR": "표식 기폭",
                     "desc": "No longer generates Tactical Mapping. Increases the &Param2& of Vanguard Strike and ##Calibration Mark#4055# by <color=#0abec5>&Param3&</color>. Vanguard Strike is enhanced to deal <color=#0abec5>&Param1&</color> of ATK as Terra Auto Attack DMG. When Vanguard Strike deals DMG, inflicts 1 stack of ##Calibration Mark#4055# on the target.  At 3 stacks, ##Calibration Mark#4055#, detonates immediately.",
                     "descCN": "不再生成「战术制图」。「先导攻击」和##标定印记#4055#&Param2&提升<color=#0abec5>&Param3&</color>。「先导攻击」获得强化，造成攻击力<color=#0abec5>&Param1&</color>的地系普攻伤害。「先导攻击」造成伤害时，对目标附加1层##标定印记#4055#。##标定印记#4055#叠加至3层时，立即引爆。",
                     "descJP": "レーダーマップを生成しなくなる。スキャニングと##測量マーカー#4055#の&Param2&が<color=#0abec5>&Param3&</color>上昇する。スキャニングが強化され、敵に攻撃力の<color=#0abec5>&Param1&</color>の地属性の通常攻撃ダメージを与える。スキャニングがダメージを与えた時、敵に##測量マーカー#4055#を1付与する。##測量マーカー#4055#が3になると、直ちに起爆するようになる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (HitDamage,Auto Attack) \u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttributeValue,Value1)",
+                    "descKR": "「전술 매핑」을 생성하지 않는다. 「선제 공격」과 ##조준 표식#4055#의 &Param2_kr1& <color=#0abec5>&Param3&</color> 증가한다. 「선제 공격」이 강화되어 공격력 <color=#0abec5>&Param1&</color>의 땅 속성 일반 공격 피해를 입힌다. 「선제 공격」이 피해를 입히면 목표에게 ##조준 표식#4055#을 1스택 부여한다. ##조준 표식#4055#이 3스택 중첩되면, 즉시 폭발한다.\u000bParam2: &Param2& (OnceAdditionalAttributeValue,AttributeType1)",
                     "damageType": [
                         "Auto Attack (from Normal attack, scale with Skill)"
                     ],
@@ -157249,10 +157273,11 @@
                     "name": "Terra DMG Etching",
                     "nameCN": "地伤增绘",
                     "nameJP": "地形分析",
+                    "nameKR": "땅 피해 증폭 매핑",
                     "desc": "In an all-Terra squad, generating Observation Points increases the &Param1& of targets within Tactical Mapping by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "descCN": "全队为地系角色时，生成「观测点」可使「战术制图」范围内目标&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
                     "descJP": "チーム全員が地属性巡遊者の場合、観測点生成時、&Param3&秒間、レーダーマップの範囲内にいる敵の&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "팀 전체가 땅 속성 캐릭터일 때, 「관측 지점」이 생성되어 「전술 매핑」 내 목표의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ELEMENTTYPE_:(Terra) Mark DMG Taken"
@@ -157291,10 +157316,11 @@
                     "name": "Tier 2 Etching",
                     "nameCN": "二阶增绘",
                     "nameJP": "段階マッピング",
+                    "nameKR": "2단계 증폭 매핑",
                     "desc": "Once Observation Points tier up 2 times, increases Tactical Mapping's &Param1& by <color=#ec6d21>&Param2&</color>.",
                     "descCN": "「观测点」在进阶2次后，「战术制图」造成的&Param1&提升<color=#ec6d21>&Param2&</color>。",
                     "descJP": "観測点が2段階強化されると、レーダーマップは与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1)",
+                    "descKR": "「관측 지점」이 2회 승급한 후, 「전술 매핑」이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157325,10 +157351,11 @@
                     "name": "Ascending Draw Zone",
                     "nameCN": "跃阶绘域",
                     "nameJP": "俯瞰考察",
+                    "nameKR": "도약 매핑 영역",
                     "desc": "Each time Leafia casts Area Plotting (Support Skill), Observation Points tier up 2 times. When Tactical Mapping deals DMG, increases its &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "优叶每施放1次援护技能「区域标绘」，「观测点」进阶2次。「战术制图」造成伤害时，「战术制图」造成的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "スグハが支援スキルを発動するたびに、観測点が2段階強化される。レーダーマップがダメージを与えた時、&Param3&秒間、レーダーマップは与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "스구하가 지원 스킬 「구역 표식 매핑」을 1회 시전할 때마다, 「관측 지점」이 2회 승급한다. 「전술 매핑」이 피해를 입히면, 「전술 매핑」이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157371,10 +157398,11 @@
                     "name": "Calibration Expansion",
                     "nameCN": "标定扩蚀",
                     "nameJP": "新たな道筋",
+                    "nameKR": "표식 침식 확산",
                     "desc": "Increases the &Param3& of Vanguard Strike and ##Calibration Mark#4055# by <color=#ec6d21>&Param4&</color>, and their &Param1& by <color=#ec6d21>&Param2&</color>. When a target with ##Calibration Mark#4055# takes DMG from the Main Vanguard Trekker, inflicts 1 additional stack of ##Calibration Mark#4055#. This effect can trigger once per second per target.",
                     "descCN": "「先导攻击」和##标定印记#4055#&Param3&提升<color=#ec6d21>&Param4&</color>，造成的&Param1&提升<color=#ec6d21>&Param2&</color>。附带##标定印记#4055#的目标受到主控先锋角色造成的伤害时，可额外附加1层##标定印记#4055#，该效果同一目标每秒最多触发1次。",
                     "descJP": "スキャニングと##測量マーカー#4055#の&Param3&が<color=#ec6d21>&Param4&</color>上昇し、与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。##測量マーカー#4055#が付与された敵がアタッカー主力巡遊者からダメージを受けた時、##測量マーカー#4055#を追加で1付与できる。この効果は同じ敵に対して1秒ごとに1回まで発動できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "descKR": "「선제 공격」과 ##조준 표식#4055#의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가하고, 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. ##조준 표식#4055#을 보유한 목표가 메인 딜러 캐릭터에게서 피해를 입으면 ##조준 표식#4055#을 1스택 추가로 부여한다. 해당 효과는 동일 목표에게 1초마다 최대 1회 발동한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157415,10 +157443,11 @@
                     "name": "Mark Suppression",
                     "nameCN": "重标压制",
                     "nameJP": "マーカー追加",
+                    "nameKR": "중첩 표식 제압",
                     "desc": "Increases the &Param1& of Vanguard Strike and ##Calibration Mark#4055# by <color=#ec6d21>&Param2&</color>, and their &Param3& by <color=#ec6d21>&Param4&</color>. When enhanced Vanguard Strike deals DMD, inflicts 2 stacks of ##Calibration Mark#4055# on the target.",
                     "descCN": "「先导攻击」和##标定印记#4055#造成的&Param1&提升<color=#ec6d21>&Param2&</color>，造成的&Param3&提升<color=#ec6d21>&Param4&</color>。强化后的「先导攻击」造成伤害时，对目标附加2层##标定印记#4055#。",
                     "descJP": "スキャニングと##測量マーカー#4055#は与える&Param1&が<color=#ec6d21>&Param2&</color>増加し、与える&Param3&が<color=#ec6d21>&Param4&</color>増加する。強化されたスキャニングがダメージを与えた時、敵に##測量マーカー#4055#を2付与する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam2: &Param2& (OnceAdditionalAttribute,Value1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2) \u000bParam4: &Param4& (OnceAdditionalAttribute,Value2)",
+                    "descKR": "「선제 공격」과 ##조준 표식#4055#이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 강화 후의 「선제 공격」이 피해를 입히면 목표에게 ##조준 표식#4055#을 2스택 부여한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157459,10 +157488,11 @@
                     "name": "Earth Vein Activation",
                     "nameCN": "地脉激活",
                     "nameJP": "地脈活用",
+                    "nameKR": "지맥 활성화",
                     "desc": "When Leafia inflicts ##Terra Mark: Earth Vein#2029#, increases &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
                     "descCN": "优叶附加##地系印记：地脉#2029#时，&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
                     "descJP": "スグハが##地属性の印：地脈#2029#を付与した時、&Param3&秒間、スグハの&Param1&が<color=#ec6d21>&Param2&</color>上昇する。この効果は&Param4&回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum)",
+                    "descKR": "스구하가 ##땅 속성 표식: 지맥#2029#을 부여하면 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)"
@@ -157505,10 +157535,11 @@
                     "name": "Earthen Deposition",
                     "nameCN": "厚土沉积",
                     "nameJP": "測量の申し子",
+                    "nameKR": "대지 퇴적",
                     "desc": "Terrain Mapping (Ultimate) can inflict ##Terra Mark: Earth Vein#2029#. When Terrain Mapping deals DMG, increases Leafia's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s.",
                     "descCN": "绝招「地形映射」可附加##地系印记：地脉#2029#。绝招「地形映射」造成伤害时，优叶&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒。",
                     "descJP": "スグハの必殺技は##地属性の印：地脈#2029#を付与できるようになる。スグハの必殺技がダメージを与えた時、&Param3&秒間、スグハの&Param1&が<color=#ec6d21>&Param2&</color>増加する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time)",
+                    "descKR": "필살기 「지형 매핑」이 ##땅 속성 표식: 지맥#2029#을 부여한다. 필살기 「지형 매핑」이 피해를 입히면 스구하의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Terra DMG (base)"
@@ -157547,10 +157578,11 @@
                     "name": "Mark Etching",
                     "nameCN": "印记蚀刻",
                     "nameJP": "侵食観察",
+                    "nameKR": "표식 에칭",
                     "desc": "In an all-Terra squad, ##Calibration Mark#4055# DMG increases the target's &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.\u000bIf there is only 1 Terra Trekker on the squad, ##Calibration Mark#4055# DMG increases the squad's &Param5& by <color=#ec6d21>&Param6&</color> and the target's &Param7& by <color=#ec6d21>&Param8&</color> for 3s, stacking up to 6 times.",
                     "descCN": "全队为地系角色时，##标定印记#4055#造成伤害可使目标&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。\u000b全队仅有1名地系角色时，##标定印记#4055#造成伤害可使全队&Param5&提升<color=#ec6d21>&Param6&</color>，持续3秒，可叠加6层。并使目标&Param7&提升<color=#ec6d21>&Param8&</color>，持续3秒，可叠加6层。",
                     "descJP": "チーム全員が地属性巡遊者の場合、##測量マーカー#4055#がダメージを与えた時、&Param3&秒間、敵の&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。\u000bチーム内の地属性巡遊者が1体のみ存在する場合、##測量マーカー#4055#がダメージを与えた時、3秒間、チーム全体の&Param5&が<color=#ec6d21>&Param6&</color>増加する。この効果は6回まで重複できる。また、3秒間、敵の&Param7&が<color=#ec6d21>&Param8&</color>増加する。この効果も6回まで重複できる。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (BuffValue,Time) \u000bParam4: &Param4& (BuffValue,LaminatedNum) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1) \u000bParam7: &Param7& (Effect,EffectTypeFirstSubtype) \u000bParam8: &Param8& (Effect,EffectTypeParam1)",
+                    "descKR": "팀 전체가 땅 속성 캐릭터일 때, ##조준 표식#4055#이 입히는 피해가 목표의 &Param1_kr3& <color=#ec6d21>&Param2&</color> 증가시킨다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다. \u000b팀 전체에 땅 속성 캐릭터가 1명일 때 ##조준 표식#4055#이 입히는 피해가 팀 전체의 &Param5_kr3& <color=#ec6d21>&Param6&</color> 증가시킨다. 3초간 지속되며, 최대 6스택 중첩된다. 또한 목표의 &Param7_kr3& <color=#ec6d21>&Param8&</color> 증가시킨다. 3초간 지속되며, 최대 6스택 중첩된다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam7: &Param7& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "Terra DMG Taken (base)",
@@ -157615,10 +157647,11 @@
                     "name": "Leyline Amp",
                     "nameCN": "地源增幅",
                     "nameJP": "冒険のロマン",
+                    "nameKR": "대지의 근원 증폭",
                     "desc": "In an all-Terra squad, increases the squad's &Param1& by <color=#ec6d21>&Param2&</color>.\u000bIf there is only 1 Terra Trekker on the squad, increases the squad's &Param3& by <color=#ec6d21>&Param4&</color> and increases Leafia's &Param5& by an additional <color=#ec6d21>&Param6&</color>.",
                     "descCN": "全队为地系角色时，全队&Param1&提升<color=#ec6d21>&Param2&</color>。\u000b全队仅有1名地系角色时，全队&Param3&提升<color=#ec6d21>&Param4&</color>，优叶&Param5&额外提升<color=#ec6d21>&Param6&</color>。",
                     "descJP": "チーム全員が地属性巡遊者の場合、チーム全体の&Param1&が<color=#ec6d21>&Param2&</color>上昇する。\u000bチーム内の地属性巡遊者が1体のみ存在する場合、チーム全体の&Param3&が<color=#ec6d21>&Param4&</color>上昇し、スグハの&Param5&がさらに<color=#ec6d21>&Param6&</color>増加する。",
-                    "descKR": "undefined\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam2: &Param2& (Effect,EffectTypeParam1) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam4: &Param4& (Effect,EffectTypeParam1) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype) \u000bParam6: &Param6& (Effect,EffectTypeParam1)",
+                    "descKR": "팀 전체가 땅 속성 캐릭터일 때, 팀 전체의 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. \u000b팀 전체에 땅 속성 캐릭터가 1명일 때, 팀 전체의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가하고, 스구하의 &Param5_kr1& <color=#ec6d21>&Param6&</color> 추가로 증가한다.\u000bParam1: &Param1& (Effect,EffectTypeFirstSubtype) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype) \u000bParam5: &Param5& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [],
                     "effectType": [
                         "ATK (%)",
@@ -157680,10 +157713,11 @@
                         "name": "Genius Surveyor",
                         "nameCN": "天才测绘师",
                         "nameJP": "天才測量士",
+                        "nameKR": "천재 측량사",
                         "desc": "When any Trekker inflicts a ##Terra Mark#1020# on a target, the target takes <color=#0abec5>&Param1&</color> more Terra DMG for &Param2&s, up to &Param3& stacks.",
                         "descCN": "任意角色对目标附加##地系印记#1020#后，使目标受到地系伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒，可叠加&Param3&层。",
                         "descJP": "チーム内の巡遊者が敵に##地属性の印#1020#を付与した時、&Param2&秒間、その敵の地属性被ダメージが<color=#0abec5>&Param1&</color>増加する。この効果は&Param3&回まで重複できる。",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time) \u000bParam3: &Param3& (BuffValue,LaminatedNum)",
+                        "descKR": "캐릭터가 목표에게 ##땅 속성 표식#1020#을 부여한 후 목표가 받는 땅 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속되며, 최대 &Param3&스택 중첩된다.",
                         "effectType": [
                             "Terra DMG Taken (base)"
                         ],
@@ -157714,10 +157748,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -157737,10 +157772,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -157760,10 +157796,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -157783,10 +157820,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -157806,10 +157844,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -157829,10 +157868,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -157852,10 +157892,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -157875,10 +157916,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -157898,10 +157940,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -157921,10 +157964,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -157949,10 +157993,11 @@
                         "name": "Starsea Voyage",
                         "nameCN": "星海征途",
                         "nameJP": "未踏の地への旅",
+                        "nameKR": "별바다 여정",
                         "desc": "When Leafia deals Auto Attack DMG, increases her ATK by <color=#0abec5>&Param1&</color> for &Param2&s.",
                         "descCN": "优叶造成普攻伤害时，攻击力提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
                         "descJP": "スグハが通常攻撃でダメージを与えた時、&Param2&秒間、攻撃力が<color=#0abec5>&Param1&</color>上昇する。",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descKR": "스구하가 일반 공격 피해를 입히면 공격력이 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -157979,10 +158024,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -158002,10 +158048,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -158025,10 +158072,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158048,10 +158096,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -158071,10 +158120,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158094,10 +158144,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -158117,10 +158168,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -158140,10 +158192,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158163,10 +158216,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -158186,10 +158240,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158214,10 +158269,11 @@
                         "name": "Leader's Duty",
                         "nameCN": "领队之责",
                         "nameJP": "隊長の責任",
+                        "nameKR": "대장의 책임",
                         "desc": "When Leafia casts a skill, increases Terra Trekkers' Auto Attack DMG by <color=#0abec5>&Param1&</color> for &Param2&s.",
                         "descCN": "优叶施放技能时，队伍内地系角色普攻伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
                         "descJP": "スグハがスキルを発動した時、&Param2&秒間、チーム内の地属性巡遊者の通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する。",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descKR": "스구하가 스킬을 시전하면, 팀 내 땅 속성 캐릭터의 일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                         "effectType": [
                             "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                         ],
@@ -158246,10 +158302,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -158269,10 +158326,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -158292,10 +158350,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158315,10 +158374,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -158338,10 +158398,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158361,10 +158422,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -158384,10 +158446,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -158407,10 +158470,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158430,10 +158494,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -158453,10 +158518,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158481,10 +158547,11 @@
                         "name": "Relentless Mapping",
                         "nameCN": "永不止步的勘测",
                         "nameJP": "終わりなき測量",
+                        "nameKR": "멈추지 않는 탐사",
                         "desc": "When ##Terra Mark#1020# is triggered, increases Leafia's Terra DMG by <color=#0abec5>&Param1&</color> for &Param2&s.",
                         "descCN": "##地系印记#1020#被触发后，优叶地系伤害提升<color=#0abec5>&Param1&</color>，持续&Param2&秒。",
                         "descJP": "##地属性の印#1020#が発動した時、&Param2&秒間、スグハの地属性ダメージが<color=#0abec5>&Param1&</color>増加する。",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1) \u000bParam2: &Param2& (BuffValue,Time)",
+                        "descKR": "##땅 속성 표식#1020#이 발동된 후, 스구하의 땅 속성 피해가 <color=#0abec5>&Param1&</color> 증가한다. &Param2&초간 지속된다.",
                         "effectType": [
                             "Terra DMG (base)"
                         ],
@@ -158511,10 +158578,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -158534,10 +158602,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -158557,10 +158626,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158580,10 +158650,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -158603,10 +158674,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158626,10 +158698,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -158649,10 +158722,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -158672,10 +158746,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158695,10 +158770,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -158718,10 +158794,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158746,10 +158823,11 @@
                         "name": "Wildland Sigil",
                         "nameCN": "沃野上的印痕",
                         "nameJP": "夢の地図",
+                        "nameKR": "들판에 남은 흔적",
                         "desc": "Increases Leafia's Auto Attack DMG to elite or higher-tier targets by <color=#0abec5>&Param1&</color>.",
                         "descCN": "优叶对精英及以上目标造成普攻伤害提升<color=#0abec5>&Param1&</color>。",
                         "descJP": "スグハはエリート以上の敵に与える通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する。",
-                        "descKR": "undefined\u000bParam1: &Param1& (OnceAdditionalAttributeValue,Value1)",
+                        "descKR": "스구하가 정예 이상 목표에게 입히는 일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [],
                         "addAttrType": [
                             "(Terra) Auto Attack DMG (base)"
@@ -158769,10 +158847,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -158792,10 +158871,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -158815,10 +158895,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158838,10 +158919,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -158861,10 +158943,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
@@ -158884,10 +158967,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases Base ATK by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础攻击提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 공격이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (base)"
                         ],
@@ -158907,10 +158991,11 @@
                         "name": "DEF Enhancement",
                         "nameCN": "防御强化",
                         "nameJP": "防御力強化",
+                        "nameKR": "방어 강화",
                         "desc": "Increases Base DEF by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础防御提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎防御力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 방어가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "DEF (base)"
                         ],
@@ -158930,10 +159015,11 @@
                         "name": "HP Enhancement",
                         "nameCN": "生命强化",
                         "nameJP": "HP強化",
+                        "nameKR": "HP 강화",
                         "desc": "Increases Base HP by <color=#0abec5>&Param1&</color>.",
                         "descCN": "基础生命提升<color=#0abec5>&Param1&</color>",
                         "descJP": "基礎HPが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "기본 HP가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "HP (base)"
                         ],
@@ -158953,10 +159039,11 @@
                         "name": "ATK Enhancement",
                         "nameCN": "攻击强化",
                         "nameJP": "攻撃力強化",
+                        "nameKR": "공격 강화",
                         "desc": "Increases ATK by <color=#0abec5>&Param1&</color>",
                         "descCN": "攻击力提升<color=#0abec5>&Param1&</color>",
                         "descJP": "攻撃力が<color=#0abec5>&Param1&</color>上昇する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "공격력이 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "ATK (%)"
                         ],
@@ -158976,10 +159063,11 @@
                         "name": "Auto Attack DMG Boost",
                         "nameCN": "普攻伤害提升",
                         "nameJP": "通常攻撃ダメージ増加",
+                        "nameKR": "일반 공격 피해 증가",
                         "desc": "Increases Auto Attack DMG by <color=#0abec5>&Param1&</color>",
                         "descCN": "普攻伤害提升<color=#0abec5>&Param1&</color>",
                         "descJP": "通常攻撃ダメージが<color=#0abec5>&Param1&</color>増加する",
-                        "descKR": "undefined\u000bParam1: &Param1& (EffectValue,EffectTypeParam1)",
+                        "descKR": "일반 공격 피해가 <color=#0abec5>&Param1&</color> 증가한다.",
                         "effectType": [
                             "Auto Attack DMG (base)"
                         ],
