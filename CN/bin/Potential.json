@@ -34196,8 +34196,8 @@
     "Desc": "Potential.516107.2",
     "Param1": "ScriptParameter,LevelUp,16107001,CommonData,10K",
     "Param2": "HitDamage,DamageNum,161100007",
-    "Param3": "OnceAdditionalAttribute,LevelUp,16107001,AttributeType1,Enum,EAT",
-    "Param4": "OnceAdditionalAttribute,LevelUp,16107001,Value1,10KHdPct"
+    "Param3": "Effect,LevelUp,16107001,EffectTypeFirstSubtype,Enum,EAT",
+    "Param4": "Effect,LevelUp,16107001,EffectTypeParam1,HdPct"
   },
   "516108": {
     "Id": 516108,
