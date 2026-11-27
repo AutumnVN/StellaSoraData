@@ -156679,16 +156679,18 @@
                     "desc": "Increases Leafia's &Param3& by <color=#ec6d21>&Param4&</color>. Firing Amplification Crystals has an 80% chance to launch an extra Vector Crystal without using ##Resource Markers#4056#, dealing <color=#ec6d21>&Param2&</color> of ATK as Terra Auto Attack DMG. Firing Amplification Crystals costs 1 less Resource Marker.\u000bParam1: &Param1& (ScriptParameter,CommonData)",
                     "descCN": "优叶&Param3&提升<color=#ec6d21>&Param4&</color>。发射「增幅结晶」时，有80%概率不消耗##「资源标点」#4056#额外发射1颗「向量结晶」，造成攻击力<color=#ec6d21>&Param2&</color>的地系普攻伤害。每次发射「增幅结晶」消耗的##「资源标点」#4056#减少1个。\u000bParam1: &Param1& (ScriptParameter,CommonData)",
                     "descJP": "スグハの&Param3&が<color=#ec6d21>&Param4&</color>増加する。グランドアンカーの発射時、80%の確率で##セオドライト#4056#を消費せずにクリスタルアンカーを1個追加で発射するようになり、攻撃力の<color=#ec6d21>&Param2&</color>の地属性の通常攻撃ダメージを与える。グランドアンカーの発射時に消費する##セオドライト#4056#が1個減る。\u000bParam1: &Param1& (ScriptParameter,CommonData)",
-                    "descKR": "스구하의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 「증폭 결정」 발사 시, 80%의 확률로 ##「자원 마커」#4056#를 소모하지 않고 「벡터 결정」 1개를 추가로 발사해 공격력 <color=#ec6d21>&Param2&</color>의 땅 속성 일반 공격 피해를 입힌다. 「증폭 결정」을 발사할 때마다 소모하는 ##「자원 마커」#4056#가 1개 감소한다.\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType1)",
+                    "descKR": "스구하의 &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 「증폭 결정」 발사 시, 80%의 확률로 ##「자원 마커」#4056#를 소모하지 않고 「벡터 결정」 1개를 추가로 발사해 공격력 <color=#ec6d21>&Param2&</color>의 땅 속성 일반 공격 피해를 입힌다. 「증폭 결정」을 발사할 때마다 소모하는 ##「자원 마커」#4056#가 1개 감소한다.\u000bParam1: &Param1& (ScriptParameter,CommonData) \u000bParam3: &Param3& (Effect,EffectTypeFirstSubtype)",
                     "damageType": [
                         "Auto Attack (from Normal attack)"
                     ],
-                    "effectType": [],
-                    "addAttrType": [
-                        "(Terra) Auto Attack DMG (base)"
+                    "effectType": [
+                        "ELEMENTTYPE_:(Terra) Auto Attack DMG"
                     ],
+                    "addAttrType": [],
                     "effectData": [],
-                    "buffIcon": [],
+                    "buffIcon": [
+                        "No Icon"
+                    ],
                     "params": [
                         80,
                         "10.9%/17.4%/23.9%/30.4%/36.9%/43.4%/49.9%/56.4%/62.9%",
@@ -156701,10 +156703,12 @@
                             "damageType": "Auto Attack (from Normal attack)"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
+                            "buffIcon": "No Icon"
                         },
                         {
-                            "addAttrType": "(Terra) Auto Attack DMG (base)"
+                            "effectType": "ELEMENTTYPE_:(Terra) Auto Attack DMG",
+                            "buffIcon": "No Icon"
                         }
                     ],
                     "hiddenParams": [],
@@ -157352,10 +157356,10 @@
                     "nameCN": "跃阶绘域",
                     "nameJP": "俯瞰考察",
                     "nameKR": "도약 매핑 영역",
-                    "desc": "Each time Leafia casts Area Plotting (Support Skill), Observation Points tier up 2 times. When Tactical Mapping deals DMG, increases its &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
-                    "descCN": "优叶每施放1次援护技能「区域标绘」，「观测点」进阶2次。「战术制图」造成伤害时，「战术制图」造成的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
-                    "descJP": "スグハが支援スキルを発動するたびに、観測点が2段階強化される。レーダーマップがダメージを与えた時、&Param3&秒間、レーダーマップは与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
-                    "descKR": "스구하가 지원 스킬 「구역 표식 매핑」을 1회 시전할 때마다, 「관측 지점」이 2회 승급한다. 「전술 매핑」이 피해를 입히면, 「전술 매핑」이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
+                    "desc": "Each time Leafia casts Area Plotting (Support Skill), Observation Points tier up 2 times when tiering up. When Tactical Mapping deals DMG, increases its &Param1& by <color=#ec6d21>&Param2&</color> for &Param3&s, stacking up to &Param4& times.",
+                    "descCN": "优叶每施放1次援护技能「区域标绘」，「观测点」在进阶时可进阶2次。「战术制图」造成伤害时，「战术制图」造成的&Param1&提升<color=#ec6d21>&Param2&</color>，持续&Param3&秒，可叠加&Param4&层。",
+                    "descJP": "スグハが支援スキルを発動した時、観測点が強化される場合は、一度に2段階強化される。レーダーマップがダメージを与えた時、&Param3&秒間、レーダーマップが与える&Param1&が<color=#ec6d21>&Param2&</color>増加する。この効果は&Param4&回まで重複できる。",
+                    "descKR": "스구하가 지원 스킬 「구역 표식 매핑」을 1회 시전할 때마다, 「관측 지점」 승급 시 2회 승급한다. 「전술 매핑」이 피해를 입히면, 「전술 매핑」이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가한다. &Param3&초간 지속되며, 최대 &Param4&스택 중첩된다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1)",
                     "damageType": [],
                     "effectType": [],
                     "addAttrType": [
@@ -157444,7 +157448,7 @@
                     "nameCN": "重标压制",
                     "nameJP": "マーカー追加",
                     "nameKR": "중첩 표식 제압",
-                    "desc": "Increases the &Param1& of Vanguard Strike and ##Calibration Mark#4055# by <color=#ec6d21>&Param2&</color>, and their &Param3& by <color=#ec6d21>&Param4&</color>. When enhanced Vanguard Strike deals DMD, inflicts 2 stacks of ##Calibration Mark#4055# on the target.",
+                    "desc": "Increases the &Param1& of Vanguard Strike and ##Calibration Mark#4055# by <color=#ec6d21>&Param2&</color>, and their &Param3& by <color=#ec6d21>&Param4&</color>. When enhanced Vanguard Strike deals DMG, inflicts 2 stacks of ##Calibration Mark#4055# on the target.",
                     "descCN": "「先导攻击」和##标定印记#4055#造成的&Param1&提升<color=#ec6d21>&Param2&</color>，造成的&Param3&提升<color=#ec6d21>&Param4&</color>。强化后的「先导攻击」造成伤害时，对目标附加2层##标定印记#4055#。",
                     "descJP": "スキャニングと##測量マーカー#4055#は与える&Param1&が<color=#ec6d21>&Param2&</color>増加し、与える&Param3&が<color=#ec6d21>&Param4&</color>増加する。強化されたスキャニングがダメージを与えた時、敵に##測量マーカー#4055#を2付与する。",
                     "descKR": "「선제 공격」과 ##조준 표식#4055#이 입히는 &Param1_kr1& <color=#ec6d21>&Param2&</color> 증가하고, &Param3_kr1& <color=#ec6d21>&Param4&</color> 증가한다. 강화 후의 「선제 공격」이 피해를 입히면 목표에게 ##조준 표식#4055#을 2스택 부여한다.\u000bParam1: &Param1& (OnceAdditionalAttribute,AttributeType1) \u000bParam3: &Param3& (OnceAdditionalAttribute,AttributeType2)",
