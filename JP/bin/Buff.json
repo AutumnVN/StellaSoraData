@@ -7493,11 +7493,15 @@
     "Icon": "Icon/Buff/Icon_CommonBuff_AttackUp",
     "IsShow": true
   },
+  "16107011": {
+    "Id": 16107011,
+    "GroupId": 16107011,
+    "BuffTag1": 943565682
+  },
   "16108011": {
     "Id": 16108011,
     "GroupId": 16108011,
     "BuffTag1": 943565682,
-    "BuffTag2": -2138561627,
     "Icon": "Icon/Buff/Icon_CommonBuff_DefenseDown",
     "IsShow": true
   },
@@ -8557,6 +8561,42 @@
   "631028020": {
     "Id": 631028020,
     "GroupId": 631028020,
+    "Icon": "Icon/Buff/Icon_CommonBuff_SkillDamageDown",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "631030010": {
+    "Id": 631030010,
+    "GroupId": 631030010,
+    "Icon": "Icon/Buff/Icon_CommonBuff_SkillDamageDown",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "631030020": {
+    "Id": 631030020,
+    "GroupId": 631030020,
+    "Icon": "Icon/Buff/Icon_CommonBuff_DefenseDown",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "631029010": {
+    "Id": 631029010,
+    "GroupId": 631029010,
+    "Icon": "Icon/Buff/Icon_CommonBuff_SkillDamageDown",
+    "IsShow": true,
+    "BuffNumEffectLevel": [
+      0
+    ]
+  },
+  "631029020": {
+    "Id": 631029020,
+    "GroupId": 631029020,
     "Icon": "Icon/Buff/Icon_CommonBuff_SkillDamageDown",
     "IsShow": true,
     "BuffNumEffectLevel": [
