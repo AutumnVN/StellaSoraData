@@ -28603,6 +28603,32 @@
     "UseArgs": "{\"101030\":1}",
     "Icon": "Icon/Item/item_22"
   },
+  "101031": {
+    "Id": 101031,
+    "Title": "Item.101031.1",
+    "Desc": "Item.101031.2",
+    "Literary": "Item.101031.3",
+    "Type": 2,
+    "Stype": 2,
+    "Rarity": 3,
+    "UseMode": 2,
+    "UseAction": 1,
+    "UseArgs": "{\"101031\":1}",
+    "Icon": "Icon/Item/item_22"
+  },
+  "101032": {
+    "Id": 101032,
+    "Title": "Item.101032.1",
+    "Desc": "Item.101032.2",
+    "Literary": "Item.101032.3",
+    "Type": 2,
+    "Stype": 2,
+    "Rarity": 3,
+    "UseMode": 2,
+    "UseAction": 1,
+    "UseArgs": "{\"101032\":1}",
+    "Icon": "Icon/Item/item_22"
+  },
   "199000": {
     "Id": 199000,
     "Title": "Item.199000.1",
@@ -28932,6 +28958,26 @@
     "Stype": 2,
     "Rarity": 1,
     "Icon": "Icon/PlayerHead/playerhead_130013_XXL"
+  },
+  "199033": {
+    "Id": 199033,
+    "Title": "Item.199033.1",
+    "Desc": "Item.199033.2",
+    "Literary": "Item.199033.3",
+    "Type": 2,
+    "Stype": 2,
+    "Rarity": 1,
+    "Icon": "Icon/Head/head_10803_XXL"
+  },
+  "199034": {
+    "Id": 199034,
+    "Title": "Item.199034.1",
+    "Desc": "Item.199034.2",
+    "Literary": "Item.199034.3",
+    "Type": 2,
+    "Stype": 2,
+    "Rarity": 1,
+    "Icon": "Icon/Item/item_130014"
   },
   "111001": {
     "Id": 111001,
@@ -31378,6 +31424,45 @@
     "DisHaving": true,
     "Icon": "Icon/PlayerHead/playerhead_130013_XXL"
   },
+  "130014": {
+    "Id": 130014,
+    "Title": "Item.130014.1",
+    "Desc": "Item.130014.2",
+    "Literary": "Item.130014.3",
+    "Type": 2,
+    "Stype": 2,
+    "Rarity": 2,
+    "UseMode": 2,
+    "UseAction": 2,
+    "UseArgs": "{\"1300141\":1,\"1300142\":1}",
+    "Display": true,
+    "DisHaving": true,
+    "Icon": "Icon/Item/item_130014"
+  },
+  "1300141": {
+    "Id": 1300141,
+    "Title": "Item.1300141.1",
+    "Desc": "Item.1300141.2",
+    "Literary": "Item.1300141.3",
+    "Type": 14,
+    "Stype": 45,
+    "Rarity": 2,
+    "Display": true,
+    "DisHaving": true,
+    "Icon": "Icon/PlayerHead/playerhead_130014_FP_XXL"
+  },
+  "1300142": {
+    "Id": 1300142,
+    "Title": "Item.1300142.1",
+    "Desc": "Item.1300142.2",
+    "Literary": "Item.1300142.3",
+    "Type": 14,
+    "Stype": 45,
+    "Rarity": 2,
+    "Display": true,
+    "DisHaving": true,
+    "Icon": "Icon/PlayerHead/playerhead_130014_MP_XXL"
+  },
   "131001": {
     "Id": 131001,
     "Title": "Item.131001.1",
@@ -32257,6 +32342,17 @@
     "Rarity": 2,
     "DisHaving": true,
     "Icon": "Icon/Head/head_10802_XXL"
+  },
+  "10803": {
+    "Id": 10803,
+    "Title": "Item.10803.1",
+    "Desc": "Item.10803.2",
+    "Literary": "Item.10803.3",
+    "Type": 10,
+    "Stype": 46,
+    "Rarity": 2,
+    "DisHaving": true,
+    "Icon": "Icon/Head/head_10803_XXL"
   },
   "11001": {
     "Id": 11001,
